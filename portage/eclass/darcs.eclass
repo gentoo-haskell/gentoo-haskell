@@ -80,7 +80,7 @@ darcs_fetch() {
 	fi
 
 	# in case EDARCS_DARCS_DIR is a symlink to a dir, get the real 
-        # dir's path, otherwise addwrite() doesn't work.
+	# dir's path, otherwise addwrite() doesn't work.
 	cd -P "$EDARCS_TOP_DIR" > /dev/null
 	EDARCS_TOP_DIR="`/bin/pwd`"
 
