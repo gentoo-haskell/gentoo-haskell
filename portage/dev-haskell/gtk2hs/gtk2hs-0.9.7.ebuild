@@ -29,7 +29,7 @@ pkg_setup() {
 	check_reqs
 }
 
-src_unpack () {
+src_unpack() {
 	base_src_unpack
 
 	# patch for GHC 6.4 compatability
