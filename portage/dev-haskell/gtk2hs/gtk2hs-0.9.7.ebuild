@@ -59,6 +59,16 @@ src_install() {
 		haddockifacedir="/usr/share/doc/${PF}" \
 		|| die "Make install failed"
 
+	# for some reason it creates the doc dir even if it is configured
+	# to not generate docs, so lets remove the empty dirs in that case
+	# (and lets be cautious and only remove them if they're empty)
+	if ! use doc; then
+		rmdir ${D}/usr/share/doc/${PF}/html
+		rmdir ${D}/usr/share/doc/${PF}
+		rmdir ${D}/usr/share/doc
+		rmdir ${D}/usr/share
+	fi
+
 	# arrange for the packages to be registered
 	if ghc-cabal; then
 		pkgext=cabal
