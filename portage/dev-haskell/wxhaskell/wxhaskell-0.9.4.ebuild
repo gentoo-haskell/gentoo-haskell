@@ -28,7 +28,6 @@ src_unpack() {
 }
 
 src_compile() {
-	local wxconfig
 	ghc-setup-pkg
 
 	#wxhaskell supports gtk or gtk2, but not unicode yet:
@@ -41,10 +40,9 @@ src_compile() {
 	[ "${ARCH}" = "amd64" ] && append-flags -fPIC
 
 	# non-standard configure, so econf is not an option
-	wxconfig="${WX_CONFIG}"
 	# --wx-config must appear first according to configure file comments 
 	./configure \
-		--wx-config=${wxconfig} \
+		--wx-config="${WX_CONFIG}" \
 		--prefix=${D}/usr \
 		--with-opengl \
 		--libdir=${D}/$(ghc-libdir) \
