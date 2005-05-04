@@ -5,12 +5,12 @@
 inherit base check-reqs ghc-package
 
 DESCRIPTION="GTK+-2.x bindings for Haskell"
-HOMEPAGE="http://gtk2hs.sourceforge.net/"
+HOMEPAGE="http://haskell.org/gtk2hs/"
 SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc" #add ~sparc once we have ghc ~sparc
+KEYWORDS="~x86 ~ppc -amd64" #add ~sparc once we have ghc ~sparc
 
 IUSE="doc gnome mozilla"
 
@@ -29,6 +29,13 @@ pkg_setup() {
 	check_reqs
 }
 
+src_unpack () {
+	base_src_unpack
+
+	# patch for GHC 6.4 compatability
+	epatch ${FILESDIR}/gtk2hs-0.9.7-ghc64.patch
+}
+
 src_compile() {
 	econf \
 		--libdir=$(ghc-libdir) \
@@ -41,7 +48,7 @@ src_compile() {
 		|| die "Configure failed"
 
 	# parallel build doesn't work, so specify -j1
-	emake -j1 HSTOOLFLAGS="-H300m -M350m" || die "Make failed"
+	emake -j1 HSTOOLFLAGS="-H380m -M380m" || die "Make failed"
 }
 
 src_install() {
@@ -53,18 +60,21 @@ src_install() {
 		|| die "Make install failed"
 
 	# arrange for the packages to be registered
-	sed -i "s:\${pkglibdir}:$(ghc-libdir)/gtk2hs:" \
-		${D}/$(ghc-libdir)/gtk2hs/*.pkg
+	if ghc-cabal; then
+		pkgext=cabal
+	else
+		pkgext=pkg
+	fi
 	ghc-setup-pkg \
-		"${D}/$(ghc-libdir)/gtk2hs/glib.pkg" \
-		"${D}/$(ghc-libdir)/gtk2hs/gtk.pkg" \
-		"${D}/$(ghc-libdir)/gtk2hs/mogul.pkg" \
+		"${D}/$(ghc-libdir)/gtk2hs/glib.${pkgext}" \
+		"${D}/$(ghc-libdir)/gtk2hs/gtk.${pkgext}" \
+		"${D}/$(ghc-libdir)/gtk2hs/mogul.${pkgext}" \
 		$(useq gnome && echo \
-			"${D}/$(ghc-libdir)/gtk2hs/glade.pkg" \
-			"${D}/$(ghc-libdir)/gtk2hs/gconf.pkg" \
-			"${D}/$(ghc-libdir)/gtk2hs/sourceview.pkg") \
+			"${D}/$(ghc-libdir)/gtk2hs/glade.${pkgext}" \
+			"${D}/$(ghc-libdir)/gtk2hs/gconf.${pkgext}" \
+			"${D}/$(ghc-libdir)/gtk2hs/sourceview.${pkgext}") \
 		$(useq mozilla && echo \
-			"${D}/$(ghc-libdir)/gtk2hs/mozembed.pkg")
+			"${D}/$(ghc-libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 
 	# build ghci .o files from .a files

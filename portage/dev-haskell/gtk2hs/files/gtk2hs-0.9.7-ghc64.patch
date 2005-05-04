@@ -1,0 +1,713 @@
+diff -N -U2 -r gtk2hs-0.9.7.orig/Makefile.am gtk2hs-0.9.7/Makefile.am
+--- gtk2hs-0.9.7.orig/Makefile.am	2005-01-24 14:58:29.000000000 +0000
++++ gtk2hs-0.9.7/Makefile.am	2005-05-04 13:47:04.000000000 +0100
+@@ -188,5 +188,5 @@
+ tools_c2hs_base_syntax_Parsers_hs_HCFLAGS = -fglasgow-exts
+ tools_c2hs_toplevel_C2HSConfig_hs_HCFLAGS = -fffi -fvia-C \
+-	'-\#include<tools/c2hs/toplevel/c2hs_config.h>'
++	'-\#include<c2hs_config.h>'
+ 
+ tools_c2hs_c2hsLocal_HSFILES		= \
+@@ -209,10 +209,10 @@
+ glib_PKGNAME = libHSglib_a
+ 
+-libHSglib_a_PACKAGE		= glib/glib.pkg
++libHSglib_a_PACKAGE		= glib/glib.$(PKGEXT)
+ libHSglib_a_PACKAGEDEPS		= 
+ libHSglib_a_HEADER 		= glib-object.h
+ libHSglib_a_PRECOMP		= glib/glib.precomp
+ libHSglib_a_LIBS		= $(GLIB_LIBS)
+-libHSglib_a_HCFLAGS		= -fffi
++libHSglib_a_HCFLAGS		= -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSglib_a_CFLAGS		= $(filter-out -I% -D%,$(GLIB_CFLAGS))
+ libHSglib_a_CPPFLAGS		= $(filter -I% -D%,$(GLIB_CFLAGS))
+@@ -281,10 +281,10 @@
+ gtk_PKGNAME = libHSgtk_a
+ 
+-libHSgtk_a_PACKAGE		= gtk/gtk.pkg
++libHSgtk_a_PACKAGE		= gtk/gtk.$(PKGEXT)
+ libHSgtk_a_PACKAGEDEPS		= 
+ libHSgtk_a_HEADER 		= gtk/gtk.h
+ libHSgtk_a_PRECOMP		= gtk/gtk.precomp
+ libHSgtk_a_LIBS			= $(GLIB_LIBS) $(GTK_LIBS)
+-libHSgtk_a_HCFLAGS		= -fffi
++libHSgtk_a_HCFLAGS		= -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSgtk_a_CFLAGS 		= $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS))
+ libHSgtk_a_CPPFLAGS 		= $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS))
+@@ -502,8 +502,8 @@
+ mogul_PKGNAME = libHSmogul_a
+ 
+-libHSmogul_a_PACKAGE		= mogul/mogul.pkg
++libHSmogul_a_PACKAGE		= mogul/mogul.$(PKGEXT)
+ libHSmogul_a_PACKAGEDEPS	= 
+ libHSmogul_a_LIBS		= 
+-libHSmogul_a_HCFLAGS		= 
++libHSmogul_a_HCFLAGS		= -I. $(if $(USE_CABAL),-ignore-package glib)
+ libHSmogul_a_CFLAGS 		= 
+ libHSmogul_a_CPPFLAGS 		= 
+@@ -548,10 +548,10 @@
+ glade_PKGNAME = libHSglade_a
+ 
+-libHSglade_a_PACKAGE		= glade/glade.pkg
++libHSglade_a_PACKAGE		= glade/glade.$(PKGEXT)
+ libHSglade_a_PACKAGEDEPS	= 
+ libHSglade_a_HEADER 		= glade/glade.h
+ libHSglade_a_PRECOMP		= glade/glade.precomp
+ libHSglade_a_LIBS		= $(GLIB_LIBS) $(GTK_LIBS) $(LIBGLADE_LIBS)
+-libHSglade_a_HCFLAGS		= -fffi
++libHSglade_a_HCFLAGS		= -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSglade_a_CFLAGS		= $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(LIBGLADE_CFLAGS))
+ libHSglade_a_CPPFLAGS		= $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(LIBGLADE_CFLAGS))
+@@ -621,10 +621,11 @@
+ gconf_PKGNAME = libHSgconf_a
+ 
+-libHSgconf_a_PACKAGE		= gconf/gconf.pkg
++libHSgconf_a_PACKAGE		= gconf/gconf.$(PKGEXT)
+ libHSgconf_a_PACKAGEDEPS	= 
+ libHSgconf_a_HEADER 		= gconf/gconf-client.h
+ libHSgconf_a_PRECOMP		= gconf/gconf.precomp
+ libHSgconf_a_LIBS		= $(GLIB_LIBS) $(GTK_LIBS) $(GCONF_LIBS)
+-libHSgconf_a_HCFLAGS		= -fglasgow-exts -fallow-overlapping-instances
++libHSgconf_a_HCFLAGS		= -fglasgow-exts -fallow-overlapping-instances \
++                                   $(if $(USE_CABAL),-ignore-package glib)
+ libHSgconf_a_CFLAGS		= $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(GCONF_CFLAGS))
+ libHSgconf_a_CPPFLAGS		= $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(GCONF_CFLAGS))
+@@ -701,10 +702,10 @@
+ sourceview_PKGNAME = libHSsourceview_a
+ 
+-libHSsourceview_a_PACKAGE	= sourceview/sourceview.pkg
++libHSsourceview_a_PACKAGE	= sourceview/sourceview.$(PKGEXT)
+ libHSsourceview_a_PACKAGEDEPS	= 
+ libHSsourceview_a_HEADER 	= sourceview.h
+ libHSsourceview_a_PRECOMP	= sourceview/sourceview.precomp
+ libHSsourceview_a_LIBS		= $(GLIB_LIBS) $(GTK_LIBS) $(SOURCEVIEW_LIBS)
+-libHSsourceview_a_HCFLAGS	= -fffi
++libHSsourceview_a_HCFLAGS	= -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSsourceview_a_CFLAGS	= $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(SOURCEVIEW_CFLAGS))
+ libHSsourceview_a_CPPFLAGS	= $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(SOURCEVIEW_CFLAGS)) -Isourceview
+@@ -785,10 +786,10 @@
+ mozembed_PKGNAME = libHSmozembed_a
+ 
+-libHSmozembed_a_PACKAGE		= mozembed/mozembed.pkg
++libHSmozembed_a_PACKAGE		= mozembed/mozembed.$(PKGEXT)
+ libHSmozembed_a_PACKAGEDEPS	= 
+ libHSmozembed_a_HEADER 		= gtkmozembed.h
+ libHSmozembed_a_PRECOMP		= mozembed/mozembed.precomp
+ libHSmozembed_a_LIBS		= $(GLIB_LIBS) $(GTK_LIBS) $(MOZEMBED_LIBS)
+-libHSmozembed_a_HCFLAGS		= -fffi
++libHSmozembed_a_HCFLAGS		= -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSmozembed_a_CFLAGS		= $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(MOZEMBED_CFLAGS))
+ libHSmozembed_a_CPPFLAGS	= $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(MOZEMBED_CFLAGS))
+@@ -952,8 +953,27 @@
+ ################################################################################
+ 
+-# Include all the .pkg files in the install set, they're useful to distributors
++# Include all the .pkg/.cabal files in the install set, they're useful to distributors
+ # and if your installation gets corrupt you can re-register the packages from them.
+ pkglib_DATA = $(foreach pkgname,$(pkglib_LIBRARIES), $(call getVar,$(pkgname),PACKAGE))
+ 
++# Before we install the .pkg/.cabal files we need to substitute for the ${pkglibdir}
++# and ${modules} variables.
++install-exec-local:
++	$(foreach pkgname,$(pkglib_LIBRARIES), \
++	sed 's:$${pkglibdir}:$(pkglibdir):g' $(call getVar,$(pkgname),PACKAGE) \
++	| sed 's:$${modules}:$(call getModules,$(pkgname)):' \
++	> $(call getVar,$(pkgname),PACKAGE).tmp; \
++	mv $(call getVar,$(pkgname),PACKAGE).tmp $(call getVar,$(pkgname),PACKAGE);)
++
++COMMA := ,
++getModules =									\
++	$(subst $(SPACE),$(COMMA) ,$(sort					\
++		$(foreach HSFILE,$(call getVar,$(1),HSFILES), 			\
++			$(patsubst $(firstword $(subst /, ,$(HSFILE))).%.hs, %,	\
++				$(subst /,.,$(HSFILE))				\
++			)							\
++		)								\
++	))
++
+ if ENABLE_PKGREG
+ 
+@@ -967,11 +987,11 @@
+ 	$(foreach pkgname,$(pkglib_LIBRARIES), \
+ 	rm -f $(DESTDIR)$(pkglibdir)/$(patsubst lib%.a,%.o,$(pkgname)); \
+-	prefix=$(prefix) exec_prefix=$(exec_prefix) pkglibdir=$(pkglibdir) \
+-	$(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
+-	--update-package $(GHCPKG_BUILD_GHCI_LIB) \
+-	--input-file=$(call getVar,$(pkgname),PACKAGE);)
++	sed 's:$${pkglibdir}:$(pkglibdir):g' $(call getVar,$(pkgname),PACKAGE) \
++	| sed 's:$${modules}:$(call getModules,$(pkgname)):' \
++	| $(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
++	--update-package $(GHCPKG_BUILD_GHCI_LIB);)
+ 
+ uninstall-hook :
+-	$(foreach pkgname,$(lib_LIBRARIES), \
++	$(foreach pkgname,$(pkglib_LIBRARIES), \
+ 	  $(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
+ 	  --remove-package=`cat $(call getVar,$(pkgname),PACKAGE) \
+diff -N -U2 -r gtk2hs-0.9.7.orig/Makefile.in gtk2hs-0.9.7/Makefile.in
+--- gtk2hs-0.9.7.orig/Makefile.in	2005-01-24 16:50:48.000000000 +0000
++++ gtk2hs-0.9.7/Makefile.in	2005-05-04 13:47:11.000000000 +0100
+@@ -82,9 +82,16 @@
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/gtk2hs.spec.in $(srcdir)/mk/common.mk \
+-	$(top_srcdir)/configure $(top_srcdir)/gconf/gconf.pkg.in \
++	$(top_srcdir)/configure $(top_srcdir)/gconf/gconf.cabal.in \
++	$(top_srcdir)/gconf/gconf.pkg.in \
++	$(top_srcdir)/glade/glade.cabal.in \
+ 	$(top_srcdir)/glade/glade.pkg.in \
+-	$(top_srcdir)/glib/glib.pkg.in $(top_srcdir)/gtk/gtk.pkg.in \
+-	$(top_srcdir)/mk/chsDepend.in $(top_srcdir)/mogul/mogul.pkg.in \
++	$(top_srcdir)/glib/glib.cabal.in \
++	$(top_srcdir)/glib/glib.pkg.in $(top_srcdir)/gtk/gtk.cabal.in \
++	$(top_srcdir)/gtk/gtk.pkg.in $(top_srcdir)/mk/chsDepend.in \
++	$(top_srcdir)/mogul/mogul.cabal.in \
++	$(top_srcdir)/mogul/mogul.pkg.in \
++	$(top_srcdir)/mozembed/mozembed.cabal.in \
+ 	$(top_srcdir)/mozembed/mozembed.pkg.in \
++	$(top_srcdir)/sourceview/sourceview.cabal.in \
+ 	$(top_srcdir)/sourceview/sourceview.pkg.in \
+ 	$(top_srcdir)/tools/c2hs/toplevel/C2HSConfig.hs.in AUTHORS \
+@@ -102,7 +109,10 @@
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec \
+-	mk/chsDepend glib/glib.pkg gtk/gtk.pkg mogul/mogul.pkg \
+-	glade/glade.pkg gconf/gconf.pkg sourceview/sourceview.pkg \
+-	mozembed/mozembed.pkg
++	mk/chsDepend glib/glib.pkg glib/glib.cabal gtk/gtk.pkg \
++	gtk/gtk.cabal mogul/mogul.pkg mogul/mogul.cabal \
++	glade/glade.pkg glade/glade.cabal gconf/gconf.pkg \
++	gconf/gconf.cabal sourceview/sourceview.pkg \
++	sourceview/sourceview.cabal mozembed/mozembed.pkg \
++	mozembed/mozembed.cabal
+ am__installdirs = "$(DESTDIR)$(pkglibdir)" "$(DESTDIR)$(hidir)" "$(DESTDIR)$(haddockifacedir)" "$(DESTDIR)$(htmldir)" "$(DESTDIR)$(pkglibdir)"
+ pkglibLIBRARIES_INSTALL = $(INSTALL_DATA)
+@@ -344,4 +354,5 @@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKGCONF = @PKGCONF@
++PKGEXT = @PKGEXT@
+ PKG_CONFIG = @PKG_CONFIG@
+ PWD = @PWD@
+@@ -363,4 +374,7 @@
+ TOP = @TOP@
+ TOUCH = @TOUCH@
++USE_CABAL = @USE_CABAL@
++USE_CABAL_FALSE = @USE_CABAL_FALSE@
++USE_CABAL_TRUE = @USE_CABAL_TRUE@
+ VERSION = @VERSION@
+ WIN32 = @WIN32@
+@@ -583,5 +597,5 @@
+ tools_c2hs_base_syntax_Parsers_hs_HCFLAGS = -fglasgow-exts
+ tools_c2hs_toplevel_C2HSConfig_hs_HCFLAGS = -fffi -fvia-C \
+-	'-\#include<tools/c2hs/toplevel/c2hs_config.h>'
++	'-\#include<c2hs_config.h>'
+ 
+ tools_c2hs_c2hsLocal_HSFILES = \
+@@ -598,10 +612,10 @@
+ ################################################################################
+ glib_PKGNAME = libHSglib_a
+-libHSglib_a_PACKAGE = glib/glib.pkg
++libHSglib_a_PACKAGE = glib/glib.$(PKGEXT)
+ libHSglib_a_PACKAGEDEPS = 
+ libHSglib_a_HEADER = glib-object.h
+ libHSglib_a_PRECOMP = glib/glib.precomp
+ libHSglib_a_LIBS = $(GLIB_LIBS)
+-libHSglib_a_HCFLAGS = -fffi
++libHSglib_a_HCFLAGS = -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSglib_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS))
+ libHSglib_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS))
+@@ -651,10 +665,10 @@
+ ################################################################################
+ gtk_PKGNAME = libHSgtk_a
+-libHSgtk_a_PACKAGE = gtk/gtk.pkg
++libHSgtk_a_PACKAGE = gtk/gtk.$(PKGEXT)
+ libHSgtk_a_PACKAGEDEPS = 
+ libHSgtk_a_HEADER = gtk/gtk.h
+ libHSgtk_a_PRECOMP = gtk/gtk.precomp
+ libHSgtk_a_LIBS = $(GLIB_LIBS) $(GTK_LIBS)
+-libHSgtk_a_HCFLAGS = -fffi
++libHSgtk_a_HCFLAGS = -fffi $(if $(USE_CABAL),-ignore-package glib)
+ libHSgtk_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS))
+ libHSgtk_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS))
+@@ -837,8 +851,8 @@
+ ################################################################################
+ mogul_PKGNAME = libHSmogul_a
+-libHSmogul_a_PACKAGE = mogul/mogul.pkg
++libHSmogul_a_PACKAGE = mogul/mogul.$(PKGEXT)
+ libHSmogul_a_PACKAGEDEPS = 
+ libHSmogul_a_LIBS = 
+-libHSmogul_a_HCFLAGS = 
++libHSmogul_a_HCFLAGS = -I. $(if $(USE_CABAL),-ignore-package glib)
+ libHSmogul_a_CFLAGS = 
+ libHSmogul_a_CPPFLAGS = 
+@@ -862,10 +876,10 @@
+ ################################################################################
+ @ENABLE_LIBGLADE_TRUE@glade_PKGNAME = libHSglade_a
+-@ENABLE_LIBGLADE_TRUE@libHSglade_a_PACKAGE = glade/glade.pkg
++@ENABLE_LIBGLADE_TRUE@libHSglade_a_PACKAGE = glade/glade.$(PKGEXT)
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_PACKAGEDEPS = 
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_HEADER = glade/glade.h
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_PRECOMP = glade/glade.precomp
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_LIBS = $(GLIB_LIBS) $(GTK_LIBS) $(LIBGLADE_LIBS)
+-@ENABLE_LIBGLADE_TRUE@libHSglade_a_HCFLAGS = -fffi
++@ENABLE_LIBGLADE_TRUE@libHSglade_a_HCFLAGS = -fffi $(if $(USE_CABAL),-ignore-package glib)
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(LIBGLADE_CFLAGS))
+ @ENABLE_LIBGLADE_TRUE@libHSglade_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(LIBGLADE_CFLAGS))
+@@ -905,10 +919,12 @@
+ ################################################################################
+ @ENABLE_GNOME_TRUE@gconf_PKGNAME = libHSgconf_a
+-@ENABLE_GNOME_TRUE@libHSgconf_a_PACKAGE = gconf/gconf.pkg
++@ENABLE_GNOME_TRUE@libHSgconf_a_PACKAGE = gconf/gconf.$(PKGEXT)
+ @ENABLE_GNOME_TRUE@libHSgconf_a_PACKAGEDEPS = 
+ @ENABLE_GNOME_TRUE@libHSgconf_a_HEADER = gconf/gconf-client.h
+ @ENABLE_GNOME_TRUE@libHSgconf_a_PRECOMP = gconf/gconf.precomp
+ @ENABLE_GNOME_TRUE@libHSgconf_a_LIBS = $(GLIB_LIBS) $(GTK_LIBS) $(GCONF_LIBS)
+-@ENABLE_GNOME_TRUE@libHSgconf_a_HCFLAGS = -fglasgow-exts -fallow-overlapping-instances
++@ENABLE_GNOME_TRUE@libHSgconf_a_HCFLAGS = -fglasgow-exts -fallow-overlapping-instances \
++@ENABLE_GNOME_TRUE@                                   $(if $(USE_CABAL),-ignore-package glib)
++
+ @ENABLE_GNOME_TRUE@libHSgconf_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(GCONF_CFLAGS))
+ @ENABLE_GNOME_TRUE@libHSgconf_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(GCONF_CFLAGS))
+@@ -952,10 +968,10 @@
+ ################################################################################
+ @ENABLE_GNOME_TRUE@sourceview_PKGNAME = libHSsourceview_a
+-@ENABLE_GNOME_TRUE@libHSsourceview_a_PACKAGE = sourceview/sourceview.pkg
++@ENABLE_GNOME_TRUE@libHSsourceview_a_PACKAGE = sourceview/sourceview.$(PKGEXT)
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_PACKAGEDEPS = 
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_HEADER = sourceview.h
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_PRECOMP = sourceview/sourceview.precomp
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_LIBS = $(GLIB_LIBS) $(GTK_LIBS) $(SOURCEVIEW_LIBS)
+-@ENABLE_GNOME_TRUE@libHSsourceview_a_HCFLAGS = -fffi
++@ENABLE_GNOME_TRUE@libHSsourceview_a_HCFLAGS = -fffi $(if $(USE_CABAL),-ignore-package glib)
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(SOURCEVIEW_CFLAGS))
+ @ENABLE_GNOME_TRUE@libHSsourceview_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(SOURCEVIEW_CFLAGS)) -Isourceview
+@@ -1006,10 +1022,10 @@
+ ################################################################################
+ @ENABLE_MOZEMBED_TRUE@mozembed_PKGNAME = libHSmozembed_a
+-@ENABLE_MOZEMBED_TRUE@libHSmozembed_a_PACKAGE = mozembed/mozembed.pkg
++@ENABLE_MOZEMBED_TRUE@libHSmozembed_a_PACKAGE = mozembed/mozembed.$(PKGEXT)
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_PACKAGEDEPS = 
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_HEADER = gtkmozembed.h
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_PRECOMP = mozembed/mozembed.precomp
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_LIBS = $(GLIB_LIBS) $(GTK_LIBS) $(MOZEMBED_LIBS)
+-@ENABLE_MOZEMBED_TRUE@libHSmozembed_a_HCFLAGS = -fffi
++@ENABLE_MOZEMBED_TRUE@libHSmozembed_a_HCFLAGS = -fffi $(if $(USE_CABAL),-ignore-package glib)
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_CFLAGS = $(filter-out -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(MOZEMBED_CFLAGS))
+ @ENABLE_MOZEMBED_TRUE@libHSmozembed_a_CPPFLAGS = $(filter -I% -D%,$(GLIB_CFLAGS) $(GTK_CFLAGS) $(MOZEMBED_CFLAGS))
+@@ -1085,7 +1101,17 @@
+ ################################################################################
+ 
+-# Include all the .pkg files in the install set, they're useful to distributors
++# Include all the .pkg/.cabal files in the install set, they're useful to distributors
+ # and if your installation gets corrupt you can re-register the packages from them.
+ pkglib_DATA = $(foreach pkgname,$(pkglib_LIBRARIES), $(call getVar,$(pkgname),PACKAGE))
++COMMA := ,
++getModules = \
++	$(subst $(SPACE),$(COMMA) ,$(sort					\
++		$(foreach HSFILE,$(call getVar,$(1),HSFILES), 			\
++			$(patsubst $(firstword $(subst /, ,$(HSFILE))).%.hs, %,	\
++				$(subst /,.,$(HSFILE))				\
++			)							\
++		)								\
++	))
++
+ 
+ # A file with CPP "defines" that reflect the current configuration.
+@@ -1188,16 +1214,30 @@
+ glib/glib.pkg: $(top_builddir)/config.status $(top_srcdir)/glib/glib.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++glib/glib.cabal: $(top_builddir)/config.status $(top_srcdir)/glib/glib.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ gtk/gtk.pkg: $(top_builddir)/config.status $(top_srcdir)/gtk/gtk.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++gtk/gtk.cabal: $(top_builddir)/config.status $(top_srcdir)/gtk/gtk.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ mogul/mogul.pkg: $(top_builddir)/config.status $(top_srcdir)/mogul/mogul.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++mogul/mogul.cabal: $(top_builddir)/config.status $(top_srcdir)/mogul/mogul.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ glade/glade.pkg: $(top_builddir)/config.status $(top_srcdir)/glade/glade.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++glade/glade.cabal: $(top_builddir)/config.status $(top_srcdir)/glade/glade.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ gconf/gconf.pkg: $(top_builddir)/config.status $(top_srcdir)/gconf/gconf.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++gconf/gconf.cabal: $(top_builddir)/config.status $(top_srcdir)/gconf/gconf.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ sourceview/sourceview.pkg: $(top_builddir)/config.status $(top_srcdir)/sourceview/sourceview.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++sourceview/sourceview.cabal: $(top_builddir)/config.status $(top_srcdir)/sourceview/sourceview.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ mozembed/mozembed.pkg: $(top_builddir)/config.status $(top_srcdir)/mozembed/mozembed.pkg.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++mozembed/mozembed.cabal: $(top_builddir)/config.status $(top_srcdir)/mozembed/mozembed.cabal.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ install-pkglibLIBRARIES: $(pkglib_LIBRARIES)
+ 	@$(NORMAL_INSTALL)
+@@ -1654,5 +1694,6 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+-install-exec-am: install-pkglibDATA install-pkglibLIBRARIES
++install-exec-am: install-exec-local install-pkglibDATA \
++	install-pkglibLIBRARIES
+ 
+ install-info: install-info-am
+@@ -1694,9 +1735,9 @@
+ 	distdir distuninstallcheck dvi dvi-am html html-am info \
+ 	info-am install install-am install-data install-data-am \
+-	install-exec install-exec-am install-haddockifaceDATA \
+-	install-htmlDATA install-info install-info-am install-man \
+-	install-nobase_hiSCRIPTS install-pkglibDATA \
+-	install-pkglibLIBRARIES install-strip installcheck \
+-	installcheck-am installcheck-local installdirs \
++	install-exec install-exec-am install-exec-local \
++	install-haddockifaceDATA install-htmlDATA install-info \
++	install-info-am install-man install-nobase_hiSCRIPTS \
++	install-pkglibDATA install-pkglibLIBRARIES install-strip \
++	installcheck installcheck-am installcheck-local installdirs \
+ 	maintainer-clean maintainer-clean-generic mostlyclean \
+ 	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
+@@ -1824,4 +1865,13 @@
+ 	)) echo All demos compiled ok, now try running one or two...
+ 
++# Before we install the .pkg/.cabal files we need to substitute for the ${pkglibdir}
++# and ${modules} variables.
++install-exec-local:
++	$(foreach pkgname,$(pkglib_LIBRARIES), \
++	sed 's:$${pkglibdir}:$(pkglibdir):g' $(call getVar,$(pkgname),PACKAGE) \
++	| sed 's:$${modules}:$(call getModules,$(pkgname)):' \
++	> $(call getVar,$(pkgname),PACKAGE).tmp; \
++	mv $(call getVar,$(pkgname),PACKAGE).tmp $(call getVar,$(pkgname),PACKAGE);)
++
+ # For distributors we usually do not want to register the packages using
+ # ghc-pkg at install time. That is usually left for a post-install action.
+@@ -1833,11 +1883,11 @@
+ @ENABLE_PKGREG_TRUE@	$(foreach pkgname,$(pkglib_LIBRARIES), \
+ @ENABLE_PKGREG_TRUE@	rm -f $(DESTDIR)$(pkglibdir)/$(patsubst lib%.a,%.o,$(pkgname)); \
+-@ENABLE_PKGREG_TRUE@	prefix=$(prefix) exec_prefix=$(exec_prefix) pkglibdir=$(pkglibdir) \
+-@ENABLE_PKGREG_TRUE@	$(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
+-@ENABLE_PKGREG_TRUE@	--update-package $(GHCPKG_BUILD_GHCI_LIB) \
+-@ENABLE_PKGREG_TRUE@	--input-file=$(call getVar,$(pkgname),PACKAGE);)
++@ENABLE_PKGREG_TRUE@	sed 's:$${pkglibdir}:$(pkglibdir):g' $(call getVar,$(pkgname),PACKAGE) \
++@ENABLE_PKGREG_TRUE@	| sed 's:$${modules}:$(call getModules,$(pkgname)):' \
++@ENABLE_PKGREG_TRUE@	| $(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
++@ENABLE_PKGREG_TRUE@	--update-package $(GHCPKG_BUILD_GHCI_LIB);)
+ 
+ @ENABLE_PKGREG_TRUE@uninstall-hook :
+-@ENABLE_PKGREG_TRUE@	$(foreach pkgname,$(lib_LIBRARIES), \
++@ENABLE_PKGREG_TRUE@	$(foreach pkgname,$(pkglib_LIBRARIES), \
+ @ENABLE_PKGREG_TRUE@	  $(GHCPKG) $(addprefix --config-file=,$(PKGCONF)) \
+ @ENABLE_PKGREG_TRUE@	  --remove-package=`cat $(call getVar,$(pkgname),PACKAGE) \
+@@ -1879,5 +1929,5 @@
+ 	$(if $(word 2,$($(PKG)_HSFILES)),\
+ 	  $(MAKE) $(AM_MAKEFLAGS) $($(PKG)_HSFILES); \
+-	  $(HC) -M $(addprefix -optdep,-f $@) \
++	  $(HC) -M $(addprefix -optdep,-f $@) -fglasgow-exts \
+ 	  $(HCFLAGS) $($(PKG)_HCFLAGS) -i$(pkgVPATH) \
+ 	  $(AM_CPPFLAGS) $($(PKG)_CPPFLAGS) $($(PKG)_HSFILES);) \
+diff -N -U2 -r gtk2hs-0.9.7.orig/configure gtk2hs-0.9.7/configure
+--- gtk2hs-0.9.7.orig/configure	2005-01-24 16:50:40.000000000 +0000
++++ gtk2hs-0.9.7/configure	2005-05-04 13:51:58.000000000 +0100
+@@ -309,5 +309,5 @@
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC USE_CABAL_TRUE USE_CABAL_FALSE GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF USE_CABAL PKGEXT HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+@@ -4770,4 +4770,37 @@
+ 
+ if ( IFS=".";
++      a="$GHC_VERSION";  b="6.4.0";
++      while test -n "$a$b"
++      do
++              set -- $a;  h1="$1";  shift 2>/dev/null;  a="$*"
++              set -- $b;  h2="$1";  shift 2>/dev/null;  b="$*"
++              test -n "$h1" || h1=0;  test -n "$h2" || h2=0
++              test ${h1} -eq ${h2} || break
++      done
++      test ${h1} -ge ${h2}
++    )
++then
++
++USE_CABAL=yes
++
++
++fi
++
++
++if test "$USE_CABAL" = "yes"; then
++  USE_CABAL_TRUE=
++  USE_CABAL_FALSE='#'
++else
++  USE_CABAL_TRUE='#'
++  USE_CABAL_FALSE=
++fi
++
++if test "$USE_CABAL" = "yes"; then
++  PKGEXT=cabal
++else
++  PKGEXT=pkg
++fi
++
++if ( IFS=".";
+       a="$GHC_VERSION";  b="6.0.0";
+       while test -n "$a$b"
+@@ -6336,8 +6369,10 @@
+ 
+ 
++
++
+           ac_config_files="$ac_config_files Makefile"
+ 
+ 
+-                                                                                                    ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg gtk/gtk.pkg mogul/mogul.pkg glade/glade.pkg gconf/gconf.pkg sourceview/sourceview.pkg mozembed/mozembed.pkg"
++                                                                                                                                                                          ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg glib/glib.cabal gtk/gtk.pkg gtk/gtk.cabal mogul/mogul.pkg mogul/mogul.cabal glade/glade.pkg glade/glade.cabal gconf/gconf.pkg gconf/gconf.cabal sourceview/sourceview.pkg sourceview/sourceview.cabal mozembed/mozembed.pkg mozembed/mozembed.cabal"
+           ac_config_commands="$ac_config_commands default"
+ cat >confcache <<\_ACEOF
+@@ -6446,4 +6481,11 @@
+    { (exit 1); exit 1; }; }
+ fi
++if test -z "${USE_CABAL_TRUE}" && test -z "${USE_CABAL_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"USE_CABAL\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"USE_CABAL\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
+ if test -z "${ENABLE_PKGREG_TRUE}" && test -z "${ENABLE_PKGREG_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"ENABLE_PKGREG\" was never defined.
+@@ -6951,10 +6993,17 @@
+   "mk/chsDepend" ) CONFIG_FILES="$CONFIG_FILES mk/chsDepend" ;;
+   "glib/glib.pkg" ) CONFIG_FILES="$CONFIG_FILES glib/glib.pkg" ;;
++  "glib/glib.cabal" ) CONFIG_FILES="$CONFIG_FILES glib/glib.cabal" ;;
+   "gtk/gtk.pkg" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.pkg" ;;
++  "gtk/gtk.cabal" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.cabal" ;;
+   "mogul/mogul.pkg" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.pkg" ;;
++  "mogul/mogul.cabal" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.cabal" ;;
+   "glade/glade.pkg" ) CONFIG_FILES="$CONFIG_FILES glade/glade.pkg" ;;
++  "glade/glade.cabal" ) CONFIG_FILES="$CONFIG_FILES glade/glade.cabal" ;;
+   "gconf/gconf.pkg" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.pkg" ;;
++  "gconf/gconf.cabal" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.cabal" ;;
+   "sourceview/sourceview.pkg" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.pkg" ;;
++  "sourceview/sourceview.cabal" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.cabal" ;;
+   "mozembed/mozembed.pkg" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.pkg" ;;
++  "mozembed/mozembed.cabal" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.cabal" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+   "default" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default" ;;
+@@ -7104,4 +7153,6 @@
+ s,@TMPDIR@,$TMPDIR,;t t
+ s,@HC@,$HC,;t t
++s,@USE_CABAL_TRUE@,$USE_CABAL_TRUE,;t t
++s,@USE_CABAL_FALSE@,$USE_CABAL_FALSE,;t t
+ s,@GHCPKG@,$GHCPKG,;t t
+ s,@ENABLE_PKGREG_TRUE@,$ENABLE_PKGREG_TRUE,;t t
+@@ -7169,4 +7220,6 @@
+ s,@GHCPKG_LISTLOCAL@,$GHCPKG_LISTLOCAL,;t t
+ s,@PKGCONF@,$PKGCONF,;t t
++s,@USE_CABAL@,$USE_CABAL,;t t
++s,@PKGEXT@,$PKGEXT,;t t
+ s,@HCFLAGS@,$HCFLAGS,;t t
+ s,@HSCPP@,$HSCPP,;t t
+diff -N -U2 -r gtk2hs-0.9.7.orig/configure.ac gtk2hs-0.9.7/configure.ac
+--- gtk2hs-0.9.7.orig/configure.ac	2005-01-24 16:31:14.000000000 +0000
++++ gtk2hs-0.9.7/configure.ac	2005-05-03 20:15:28.000000000 +0100
+@@ -195,4 +195,17 @@
+ ])
+ 
++dnl From ghc 6.4 onwards, ghc-pkg only understands the cabal package format
++dnl so we must produce and register .cabal files instead of the old .pkg
++dnl files.
++GTKHS_PROG_CHECK_VERSION($GHC_VERSION, -ge, 6.4.0, [
++USE_CABAL=yes
++])
++AM_CONDITIONAL(USE_CABAL, test "$USE_CABAL" = "yes")
++if test "$USE_CABAL" = "yes"; then
++  PKGEXT=cabal
++else
++  PKGEXT=pkg
++fi
++
+ dnl ghc-pkg 5 searches for libxxx.a, even on Windows. Hence, we need to
+ dnl create libraries with these names instead of the windows names.
+@@ -629,4 +642,6 @@
+ AC_SUBST(GHCPKG_LISTLOCAL)
+ AC_SUBST(PKGCONF)
++AC_SUBST(USE_CABAL)
++AC_SUBST(PKGEXT)
+ AC_SUBST(HCFLAGS)
+ AC_SUBST(C2HS)
+@@ -680,11 +695,11 @@
+   gtk2hs.spec
+   mk/chsDepend
+-  glib/glib.pkg
+-  gtk/gtk.pkg
+-  mogul/mogul.pkg
+-  glade/glade.pkg
+-  gconf/gconf.pkg
+-  sourceview/sourceview.pkg
+-  mozembed/mozembed.pkg],
++  glib/glib.pkg			glib/glib.cabal
++  gtk/gtk.pkg			gtk/gtk.cabal
++  mogul/mogul.pkg		mogul/mogul.cabal
++  glade/glade.pkg		glade/glade.cabal
++  gconf/gconf.pkg		gconf/gconf.cabal
++  sourceview/sourceview.pkg	sourceview/sourceview.cabal
++  mozembed/mozembed.pkg		mozembed/mozembed.cabal],
+   [chmod a+x mk/chsDepend && chmod a+x install-sh])
+ 
+diff -N -U2 -r gtk2hs-0.9.7.orig/gconf/gconf.cabal.in gtk2hs-0.9.7/gconf/gconf.cabal.in
+--- gtk2hs-0.9.7.orig/gconf/gconf.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/gconf/gconf.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,17 @@
++name: gconf
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/gconf
++library-dirs: @GCONF_LIBDIR_CQ@
++hs-libraries: HSgconf
++extra-libraries: @GCONF_LIBS_CQ@
++include-dirs: @GCONF_CFLAGS_CQ@
++includes: gconf/gconf-client.h
++depends: gtk-@PACKAGE_VERSION@
++extra-ld-opts: @GCONF_LIBEXTRA_CQ@
+diff -N -U2 -r gtk2hs-0.9.7.orig/glade/glade.cabal.in gtk2hs-0.9.7/glade/glade.cabal.in
+--- gtk2hs-0.9.7.orig/glade/glade.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/glade/glade.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,17 @@
++name: glade
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/glade
++library-dirs: @LIBGLADE_LIBDIR_CQ@
++hs-libraries: HSglade
++extra-libraries: @LIBGLADE_LIBS_CQ@
++include-dirs: @LIBGLADE_CFLAGS_CQ@
++includes: glade/glade.h
++depends: gtk-@PACKAGE_VERSION@
++extra-ld-opts: @LIBGLADE_LIBEXTRA_CQ@
+diff -N -U2 -r gtk2hs-0.9.7.orig/glib/glib.cabal.in gtk2hs-0.9.7/glib/glib.cabal.in
+--- gtk2hs-0.9.7.orig/glib/glib.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/glib/glib.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,17 @@
++name: glib
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/glib
++library-dirs: @GLIB_LIBDIR_CQ@
++hs-libraries: HSglib
++extra-libraries: @GLIB_LIBS_CQ@
++include-dirs: @GLIB_CFLAGS_CQ@
++includes: glib.h, glib-object.h
++depends: haskell98
++extra-ld-opts: @GLIB_LIBEXTRA_CQ@
+diff -N -U2 -r gtk2hs-0.9.7.orig/gtk/gtk.cabal.in gtk2hs-0.9.7/gtk/gtk.cabal.in
+--- gtk2hs-0.9.7.orig/gtk/gtk.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/gtk/gtk.cabal.in	2005-05-03 20:37:30.000000000 +0100
+@@ -0,0 +1,17 @@
++name: gtk
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/gtk
++library-dirs: @GTK_LIBDIR_CQ@
++hs-libraries: HSgtk
++extra-libraries: @GTK_LIBS_CQ@
++include-dirs: @GTK_CFLAGS_CQ@
++includes: gtk/gtk.h
++depends: glib-@PACKAGE_VERSION@
++extra-ld-opts: @GTK_LIBEXTRA_CQ@
+diff -N -U2 -r gtk2hs-0.9.7.orig/mk/common.mk gtk2hs-0.9.7/mk/common.mk
+--- gtk2hs-0.9.7.orig/mk/common.mk	2005-01-24 14:02:09.000000000 +0000
++++ gtk2hs-0.9.7/mk/common.mk	2005-05-03 20:15:28.000000000 +0100
+@@ -66,5 +66,5 @@
+ 	$(if $(word 2,$($(PKG)_HSFILES)),\
+ 	  $(MAKE) $(AM_MAKEFLAGS) $($(PKG)_HSFILES); \
+-	  $(HC) -M $(addprefix -optdep,-f $@) \
++	  $(HC) -M $(addprefix -optdep,-f $@) -fglasgow-exts \
+ 	  $(HCFLAGS) $($(PKG)_HCFLAGS) -i$(pkgVPATH) \
+ 	  $(AM_CPPFLAGS) $($(PKG)_CPPFLAGS) $($(PKG)_HSFILES);) \
+diff -N -U2 -r gtk2hs-0.9.7.orig/mogul/mogul.cabal.in gtk2hs-0.9.7/mogul/mogul.cabal.in
+--- gtk2hs-0.9.7.orig/mogul/mogul.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/mogul/mogul.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,13 @@
++name: mogul
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/mogul
++library-dirs: @GTK_LIBDIR_CQ@
++hs-libraries: HSmogul
++depends: gtk-@PACKAGE_VERSION@
+diff -N -U2 -r gtk2hs-0.9.7.orig/mozembed/mozembed.cabal.in gtk2hs-0.9.7/mozembed/mozembed.cabal.in
+--- gtk2hs-0.9.7.orig/mozembed/mozembed.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/mozembed/mozembed.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,17 @@
++name: mozembed
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/mozembed
++library-dirs: @MOZEMBED_LIBDIR_CQ@
++hs-libraries: HSmozembed
++extra-libraries: @MOZEMBED_LIBS_CQ@
++include-dirs: @MOZEMBED_CFLAGS_CQ@
++includes: gtkmozembed.h
++depends: gtk-@PACKAGE_VERSION@
++extra-ld-opts: @MOZEMBED_LIBEXTRA_CQ@
+diff -N -U2 -r gtk2hs-0.9.7.orig/sourceview/sourceview.cabal.in gtk2hs-0.9.7/sourceview/sourceview.cabal.in
+--- gtk2hs-0.9.7.orig/sourceview/sourceview.cabal.in	1970-01-01 01:00:00.000000000 +0100
++++ gtk2hs-0.9.7/sourceview/sourceview.cabal.in	2005-05-03 20:39:23.000000000 +0100
+@@ -0,0 +1,20 @@
++name: sourceview
++version: @PACKAGE_VERSION@
++license: LGPL
++license-file: COPYING.LIB
++maintainer: gtk2hs-users@lists.sourceforge.net
++stability: provisional
++homepage: http://gtk2hs.sourceforge.net/
++exposed: True
++exposed-modules: ${modules}
++import-dirs: @hidir@/sourceview
++library-dirs: @SOURCEVIEW_LIBDIR_CQ@
++hs-libraries: HSsourceview
++extra-libraries: @SOURCEVIEW_LIBS_CQ@
++include-dirs: @SOURCEVIEW_CFLAGS_CQ@
++includes: gtksourceview/gtksourceview.h, gtksourceview/gtksourcemarker.h,
++          gtksourceview/gtksourcelanguagesmanager.h,
++          gtksourceview/gtksourcetag.h, gtksourceview/gtksourcemarker.h,
++          gtksourceview/gtksourceiter.h
++depends: gtk-@PACKAGE_VERSION@
++extra-ld-opts: @SOURCEVIEW_LIBEXTRA_CQ@
