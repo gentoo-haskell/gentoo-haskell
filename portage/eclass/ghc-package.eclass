@@ -89,13 +89,11 @@ ghc-makeghcilib() {
 ghc-setup-pkg() {
 	local localpkgconf
 	localpkgconf="${S}/$(ghc-localpkgconf)"
-	echo '[' > ${localpkgconf}
-	while [ -n "$1" ]; do
-		cat "$1" >> ${localpkgconf}
-		shift
-		[ -n "$1" ] && echo ',' >> ${localpkgconf}
+	echo '[]' > ${localpkgconf}
+	for pkg in $*; do
+		$(ghc-getghcpkgbin) -f ${localpkgconf} -u --force \
+			< ${pkg}
 	done
-	echo ']' >> ${localpkgconf}
 }
 
 # fixes the library and import directories path
