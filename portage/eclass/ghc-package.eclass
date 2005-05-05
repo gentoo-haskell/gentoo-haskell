@@ -99,9 +99,9 @@ ghc-setup-pkg() {
 # fixes the library and import directories path
 # of the package configuration file
 ghc-fixlibpath() {
-    sed -i "s|$1|$(ghc-libdir)|" ${S}/$(ghc-localpkgconf)
+    sed -i "s|$1|$(ghc-libdir)|g" ${S}/$(ghc-localpkgconf)
 	if [[ -n "$2" ]]; then
-		sed -i "s|$2|$(ghc-libdir)/imports|" ${S}/$(ghc-localpkgconf)
+		sed -i "s|$2|$(ghc-libdir)/imports|g" ${S}/$(ghc-localpkgconf)
 	fi
 }
 
@@ -109,7 +109,7 @@ ghc-fixlibpath() {
 # file to its final destination
 ghc-install-pkg() {
 	mkdir -p ${D}/$(ghc-confdir)
-	cat ${S}/$(ghc-localpkgconf) | sed "s:${D}::" \
+	cat ${S}/$(ghc-localpkgconf) | sed "s|${D}||g" \
 		> ${D}/$(ghc-confdir)/$(ghc-localpkgconf)
 }
 
