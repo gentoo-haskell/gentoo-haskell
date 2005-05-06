@@ -1,3 +1,182 @@
+diff -N -U2 -r gtk2hs-0.9.7.orig/configure.ac gtk2hs-0.9.7/configure.ac
+--- gtk2hs-0.9.7.orig/configure.ac	2005-01-24 16:31:14.000000000 +0000
++++ gtk2hs-0.9.7/configure.ac	2005-05-03 20:15:28.000000000 +0100
+@@ -195,4 +195,17 @@
+ ])
+ 
++dnl From ghc 6.4 onwards, ghc-pkg only understands the cabal package format
++dnl so we must produce and register .cabal files instead of the old .pkg
++dnl files.
++GTKHS_PROG_CHECK_VERSION($GHC_VERSION, -ge, 6.4.0, [
++USE_CABAL=yes
++])
++AM_CONDITIONAL(USE_CABAL, test "$USE_CABAL" = "yes")
++if test "$USE_CABAL" = "yes"; then
++  PKGEXT=cabal
++else
++  PKGEXT=pkg
++fi
++
+ dnl ghc-pkg 5 searches for libxxx.a, even on Windows. Hence, we need to
+ dnl create libraries with these names instead of the windows names.
+@@ -629,4 +642,6 @@
+ AC_SUBST(GHCPKG_LISTLOCAL)
+ AC_SUBST(PKGCONF)
++AC_SUBST(USE_CABAL)
++AC_SUBST(PKGEXT)
+ AC_SUBST(HCFLAGS)
+ AC_SUBST(C2HS)
+@@ -680,11 +695,11 @@
+   gtk2hs.spec
+   mk/chsDepend
+-  glib/glib.pkg
+-  gtk/gtk.pkg
+-  mogul/mogul.pkg
+-  glade/glade.pkg
+-  gconf/gconf.pkg
+-  sourceview/sourceview.pkg
+-  mozembed/mozembed.pkg],
++  glib/glib.pkg			glib/glib.cabal
++  gtk/gtk.pkg			gtk/gtk.cabal
++  mogul/mogul.pkg		mogul/mogul.cabal
++  glade/glade.pkg		glade/glade.cabal
++  gconf/gconf.pkg		gconf/gconf.cabal
++  sourceview/sourceview.pkg	sourceview/sourceview.cabal
++  mozembed/mozembed.pkg		mozembed/mozembed.cabal],
+   [chmod a+x mk/chsDepend && chmod a+x install-sh])
+
+diff -N -U2 -r gtk2hs-0.9.7.orig/aclocal.m4 gtk2hs-0.9.7/aclocal.m4
+--- gtk2hs-0.9.7.orig/aclocal.m4	2005-01-24 16:50:40.000000000 +0000
++++ gtk2hs-0.9.7/aclocal.m4	2005-05-04 13:51:58.000000000 +0100
+@@ -12,4 +12,5 @@
+ # PARTICULAR PURPOSE.
+
++dnl this is a dummy patch, just to get the timestamps right
+
+ dnl PKG_CHECK_MODULES(GSTUFF, gtk+-2.0 >= 1.3 glib = 1.3.4, action-if, action-not)
+diff -N -U2 -r gtk2hs-0.9.7.orig/config.h.in gtk2hs-0.9.7/config.h.in
+--- gtk2hs-0.9.7.orig/config.h.in	2005-01-24 16:50:40.000000000 +0000
++++ gtk2hs-0.9.7/config.h.in	2005-05-04 13:51:58.000000000 +0100
+@@ -1,4 +1,5 @@
+ /* config.h.in.  Generated from configure.ac by autoheader.  */
+
++/* this is a dummy patch, just to get the timestamps right */
+
+ /* Hack to suppress warnings that these symbols clash with
+diff -N -U2 -r gtk2hs-0.9.7.orig/configure gtk2hs-0.9.7/configure
+--- gtk2hs-0.9.7.orig/configure	2005-01-24 16:50:40.000000000 +0000
++++ gtk2hs-0.9.7/configure	2005-05-04 13:51:58.000000000 +0100
+@@ -309,5 +309,5 @@
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC USE_CABAL_TRUE USE_CABAL_FALSE GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF USE_CABAL PKGEXT HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+@@ -4770,4 +4770,37 @@
+ 
+ if ( IFS=".";
++      a="$GHC_VERSION";  b="6.4.0";
++      while test -n "$a$b"
++      do
++              set -- $a;  h1="$1";  shift 2>/dev/null;  a="$*"
++              set -- $b;  h2="$1";  shift 2>/dev/null;  b="$*"
++              test -n "$h1" || h1=0;  test -n "$h2" || h2=0
++              test ${h1} -eq ${h2} || break
++      done
++      test ${h1} -ge ${h2}
++    )
++then
++
++USE_CABAL=yes
++
++
++fi
++
++
++if test "$USE_CABAL" = "yes"; then
++  USE_CABAL_TRUE=
++  USE_CABAL_FALSE='#'
++else
++  USE_CABAL_TRUE='#'
++  USE_CABAL_FALSE=
++fi
++
++if test "$USE_CABAL" = "yes"; then
++  PKGEXT=cabal
++else
++  PKGEXT=pkg
++fi
++
++if ( IFS=".";
+       a="$GHC_VERSION";  b="6.0.0";
+       while test -n "$a$b"
+@@ -6336,8 +6369,10 @@
+ 
+ 
++
++
+           ac_config_files="$ac_config_files Makefile"
+ 
+ 
+-                                                                                                    ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg gtk/gtk.pkg mogul/mogul.pkg glade/glade.pkg gconf/gconf.pkg sourceview/sourceview.pkg mozembed/mozembed.pkg"
++                                                                                                                                                                          ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg glib/glib.cabal gtk/gtk.pkg gtk/gtk.cabal mogul/mogul.pkg mogul/mogul.cabal glade/glade.pkg glade/glade.cabal gconf/gconf.pkg gconf/gconf.cabal sourceview/sourceview.pkg sourceview/sourceview.cabal mozembed/mozembed.pkg mozembed/mozembed.cabal"
+           ac_config_commands="$ac_config_commands default"
+ cat >confcache <<\_ACEOF
+@@ -6446,4 +6481,11 @@
+    { (exit 1); exit 1; }; }
+ fi
++if test -z "${USE_CABAL_TRUE}" && test -z "${USE_CABAL_FALSE}"; then
++  { { echo "$as_me:$LINENO: error: conditional \"USE_CABAL\" was never defined.
++Usually this means the macro was only invoked conditionally." >&5
++echo "$as_me: error: conditional \"USE_CABAL\" was never defined.
++Usually this means the macro was only invoked conditionally." >&2;}
++   { (exit 1); exit 1; }; }
++fi
+ if test -z "${ENABLE_PKGREG_TRUE}" && test -z "${ENABLE_PKGREG_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"ENABLE_PKGREG\" was never defined.
+@@ -6951,10 +6993,17 @@
+   "mk/chsDepend" ) CONFIG_FILES="$CONFIG_FILES mk/chsDepend" ;;
+   "glib/glib.pkg" ) CONFIG_FILES="$CONFIG_FILES glib/glib.pkg" ;;
++  "glib/glib.cabal" ) CONFIG_FILES="$CONFIG_FILES glib/glib.cabal" ;;
+   "gtk/gtk.pkg" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.pkg" ;;
++  "gtk/gtk.cabal" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.cabal" ;;
+   "mogul/mogul.pkg" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.pkg" ;;
++  "mogul/mogul.cabal" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.cabal" ;;
+   "glade/glade.pkg" ) CONFIG_FILES="$CONFIG_FILES glade/glade.pkg" ;;
++  "glade/glade.cabal" ) CONFIG_FILES="$CONFIG_FILES glade/glade.cabal" ;;
+   "gconf/gconf.pkg" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.pkg" ;;
++  "gconf/gconf.cabal" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.cabal" ;;
+   "sourceview/sourceview.pkg" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.pkg" ;;
++  "sourceview/sourceview.cabal" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.cabal" ;;
+   "mozembed/mozembed.pkg" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.pkg" ;;
++  "mozembed/mozembed.cabal" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.cabal" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+   "default" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default" ;;
+@@ -7104,4 +7153,6 @@
+ s,@TMPDIR@,$TMPDIR,;t t
+ s,@HC@,$HC,;t t
++s,@USE_CABAL_TRUE@,$USE_CABAL_TRUE,;t t
++s,@USE_CABAL_FALSE@,$USE_CABAL_FALSE,;t t
+ s,@GHCPKG@,$GHCPKG,;t t
+ s,@ENABLE_PKGREG_TRUE@,$ENABLE_PKGREG_TRUE,;t t
+@@ -7169,4 +7220,6 @@
+ s,@GHCPKG_LISTLOCAL@,$GHCPKG_LISTLOCAL,;t t
+ s,@PKGCONF@,$PKGCONF,;t t
++s,@USE_CABAL@,$USE_CABAL,;t t
++s,@PKGEXT@,$PKGEXT,;t t
+ s,@HCFLAGS@,$HCFLAGS,;t t
+ s,@HSCPP@,$HSCPP,;t t
+diff -N -U2 -r gtk2hs-0.9.7.orig/mk/common.mk gtk2hs-0.9.7/mk/common.mk
+--- gtk2hs-0.9.7.orig/mk/common.mk	2005-01-24 14:02:09.000000000 +0000
++++ gtk2hs-0.9.7/mk/common.mk	2005-05-03 20:15:28.000000000 +0100
+@@ -66,5 +66,5 @@
+ 	$(if $(word 2,$($(PKG)_HSFILES)),\
+ 	  $(MAKE) $(AM_MAKEFLAGS) $($(PKG)_HSFILES); \
+-	  $(HC) -M $(addprefix -optdep,-f $@) \
++	  $(HC) -M $(addprefix -optdep,-f $@) -fglasgow-exts \
+ 	  $(HCFLAGS) $($(PKG)_HCFLAGS) -i$(pkgVPATH) \
+ 	  $(AM_CPPFLAGS) $($(PKG)_CPPFLAGS) $($(PKG)_HSFILES);) \
 diff -N -U2 -r gtk2hs-0.9.7.orig/Makefile.am gtk2hs-0.9.7/Makefile.am
 --- gtk2hs-0.9.7.orig/Makefile.am	2005-01-24 14:58:29.000000000 +0000
 +++ gtk2hs-0.9.7/Makefile.am	2005-05-04 13:47:04.000000000 +0100
@@ -404,157 +583,6 @@ diff -N -U2 -r gtk2hs-0.9.7.orig/Makefile.in gtk2hs-0.9.7/Makefile.in
 +	  $(HC) -M $(addprefix -optdep,-f $@) -fglasgow-exts \
  	  $(HCFLAGS) $($(PKG)_HCFLAGS) -i$(pkgVPATH) \
  	  $(AM_CPPFLAGS) $($(PKG)_CPPFLAGS) $($(PKG)_HSFILES);) \
-diff -N -U2 -r gtk2hs-0.9.7.orig/configure gtk2hs-0.9.7/configure
---- gtk2hs-0.9.7.orig/configure	2005-01-24 16:50:40.000000000 +0000
-+++ gtk2hs-0.9.7/configure	2005-05-04 13:51:58.000000000 +0100
-@@ -309,5 +309,5 @@
- #endif"
- 
--ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
-+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP LN_S AR BASENAME GREP GZIP SED CUT TAR TOUCH RANLIB ac_ct_RANLIB EGREP TMPDIR HC USE_CABAL_TRUE USE_CABAL_FALSE GHCPKG ENABLE_PKGREG_TRUE ENABLE_PKGREG_FALSE PKG_CONFIG ENABLE_LIBGLADE_TRUE ENABLE_LIBGLADE_FALSE ENABLE_GNOME_TRUE ENABLE_GNOME_FALSE ENABLE_MOZEMBED_TRUE ENABLE_MOZEMBED_FALSE GLIB_CFLAGS GLIB_LIBS GTK_CFLAGS GTK_LIBS LIBGLADE_CFLAGS LIBGLADE_LIBS GCONF_CFLAGS GCONF_LIBS SOURCEVIEW_CFLAGS SOURCEVIEW_LIBS MOZEMBED_CFLAGS MOZEMBED_LIBS HAVE_GTK_VERSION_2_2_TRUE HAVE_GTK_VERSION_2_2_FALSE HAVE_GTK_VERSION_2_4_TRUE HAVE_GTK_VERSION_2_4_FALSE HAVE_GTK_VERSION_2_6_TRUE HAVE_GTK_VERSION_2_6_FALSE GLIB_CFLAGS_CQ GLIB_LIBS_CQ GLIB_LIBDIR_CQ GLIB_LIBEXTRA_CQ GTK_CFLAGS_CQ GTK_LIBS_CQ GTK_LIBDIR_CQ GTK_LIBEXTRA_CQ SOURCEVIEW_CFLAGS_CQ SOURCEVIEW_LIBS_CQ SOURCEVIEW_LIBDIR_CQ SOURCEVIEW_LIBEXTRA_CQ LIBGLADE_CFLAGS_CQ LIBGLADE_LIBS_CQ LIBGLADE_LIBDIR_CQ LIBGLADE_LIBEXTRA_CQ GCONF_CFLAGS_CQ GCONF_LIBS_CQ GCONF_LIBDIR_CQ GCONF_LIBEXTRA_CQ MOZEMBED_CFLAGS_CQ MOZEMBED_LIBS_CQ MOZEMBED_LIBDIR_CQ MOZEMBED_LIBEXTRA_CQ hidir C2HS HSC2HS HADDOCK BUILDDOCS_TRUE BUILDDOCS_FALSE PWD TOP BUILT_IN_C2HS MULTIPLE_CHS FOUR_WORD_CALLBACK GHCPKG_LISTLOCAL PKGCONF USE_CABAL PKGEXT HCFLAGS HSCPP MARSHALLDEFS DLPREFIX DLSUFFIX SLPREFIX SLSUFFIX WIN32 PATHSED HSCFLAGS C2HSFLAGS EXTRA_HFILES CREATE_TYPES GHCPKG_USE_AUTOLIBS GHCPKG_BUILD_GHCI_LIB GHC_DOCDIR LEGACY_FFI BEGIN_LEGACY_FFI END_LEGACY_FFI BEGIN_NEW_FFI END_NEW_FFI BEGIN_NHC END_NHC BEGIN_NOT_NHC END_NOT_NHC LIBOBJS LTLIBOBJS'
- ac_subst_files=''
- 
-@@ -4770,4 +4770,37 @@
- 
- if ( IFS=".";
-+      a="$GHC_VERSION";  b="6.4.0";
-+      while test -n "$a$b"
-+      do
-+              set -- $a;  h1="$1";  shift 2>/dev/null;  a="$*"
-+              set -- $b;  h2="$1";  shift 2>/dev/null;  b="$*"
-+              test -n "$h1" || h1=0;  test -n "$h2" || h2=0
-+              test ${h1} -eq ${h2} || break
-+      done
-+      test ${h1} -ge ${h2}
-+    )
-+then
-+
-+USE_CABAL=yes
-+
-+
-+fi
-+
-+
-+if test "$USE_CABAL" = "yes"; then
-+  USE_CABAL_TRUE=
-+  USE_CABAL_FALSE='#'
-+else
-+  USE_CABAL_TRUE='#'
-+  USE_CABAL_FALSE=
-+fi
-+
-+if test "$USE_CABAL" = "yes"; then
-+  PKGEXT=cabal
-+else
-+  PKGEXT=pkg
-+fi
-+
-+if ( IFS=".";
-       a="$GHC_VERSION";  b="6.0.0";
-       while test -n "$a$b"
-@@ -6336,8 +6369,10 @@
- 
- 
-+
-+
-           ac_config_files="$ac_config_files Makefile"
- 
- 
--                                                                                                    ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg gtk/gtk.pkg mogul/mogul.pkg glade/glade.pkg gconf/gconf.pkg sourceview/sourceview.pkg mozembed/mozembed.pkg"
-+                                                                                                                                                                          ac_config_files="$ac_config_files tools/c2hs/toplevel/C2HSConfig.hs gtk2hs.spec mk/chsDepend glib/glib.pkg glib/glib.cabal gtk/gtk.pkg gtk/gtk.cabal mogul/mogul.pkg mogul/mogul.cabal glade/glade.pkg glade/glade.cabal gconf/gconf.pkg gconf/gconf.cabal sourceview/sourceview.pkg sourceview/sourceview.cabal mozembed/mozembed.pkg mozembed/mozembed.cabal"
-           ac_config_commands="$ac_config_commands default"
- cat >confcache <<\_ACEOF
-@@ -6446,4 +6481,11 @@
-    { (exit 1); exit 1; }; }
- fi
-+if test -z "${USE_CABAL_TRUE}" && test -z "${USE_CABAL_FALSE}"; then
-+  { { echo "$as_me:$LINENO: error: conditional \"USE_CABAL\" was never defined.
-+Usually this means the macro was only invoked conditionally." >&5
-+echo "$as_me: error: conditional \"USE_CABAL\" was never defined.
-+Usually this means the macro was only invoked conditionally." >&2;}
-+   { (exit 1); exit 1; }; }
-+fi
- if test -z "${ENABLE_PKGREG_TRUE}" && test -z "${ENABLE_PKGREG_FALSE}"; then
-   { { echo "$as_me:$LINENO: error: conditional \"ENABLE_PKGREG\" was never defined.
-@@ -6951,10 +6993,17 @@
-   "mk/chsDepend" ) CONFIG_FILES="$CONFIG_FILES mk/chsDepend" ;;
-   "glib/glib.pkg" ) CONFIG_FILES="$CONFIG_FILES glib/glib.pkg" ;;
-+  "glib/glib.cabal" ) CONFIG_FILES="$CONFIG_FILES glib/glib.cabal" ;;
-   "gtk/gtk.pkg" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.pkg" ;;
-+  "gtk/gtk.cabal" ) CONFIG_FILES="$CONFIG_FILES gtk/gtk.cabal" ;;
-   "mogul/mogul.pkg" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.pkg" ;;
-+  "mogul/mogul.cabal" ) CONFIG_FILES="$CONFIG_FILES mogul/mogul.cabal" ;;
-   "glade/glade.pkg" ) CONFIG_FILES="$CONFIG_FILES glade/glade.pkg" ;;
-+  "glade/glade.cabal" ) CONFIG_FILES="$CONFIG_FILES glade/glade.cabal" ;;
-   "gconf/gconf.pkg" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.pkg" ;;
-+  "gconf/gconf.cabal" ) CONFIG_FILES="$CONFIG_FILES gconf/gconf.cabal" ;;
-   "sourceview/sourceview.pkg" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.pkg" ;;
-+  "sourceview/sourceview.cabal" ) CONFIG_FILES="$CONFIG_FILES sourceview/sourceview.cabal" ;;
-   "mozembed/mozembed.pkg" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.pkg" ;;
-+  "mozembed/mozembed.cabal" ) CONFIG_FILES="$CONFIG_FILES mozembed/mozembed.cabal" ;;
-   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
-   "default" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default" ;;
-@@ -7104,4 +7153,6 @@
- s,@TMPDIR@,$TMPDIR,;t t
- s,@HC@,$HC,;t t
-+s,@USE_CABAL_TRUE@,$USE_CABAL_TRUE,;t t
-+s,@USE_CABAL_FALSE@,$USE_CABAL_FALSE,;t t
- s,@GHCPKG@,$GHCPKG,;t t
- s,@ENABLE_PKGREG_TRUE@,$ENABLE_PKGREG_TRUE,;t t
-@@ -7169,4 +7220,6 @@
- s,@GHCPKG_LISTLOCAL@,$GHCPKG_LISTLOCAL,;t t
- s,@PKGCONF@,$PKGCONF,;t t
-+s,@USE_CABAL@,$USE_CABAL,;t t
-+s,@PKGEXT@,$PKGEXT,;t t
- s,@HCFLAGS@,$HCFLAGS,;t t
- s,@HSCPP@,$HSCPP,;t t
-diff -N -U2 -r gtk2hs-0.9.7.orig/configure.ac gtk2hs-0.9.7/configure.ac
---- gtk2hs-0.9.7.orig/configure.ac	2005-01-24 16:31:14.000000000 +0000
-+++ gtk2hs-0.9.7/configure.ac	2005-05-03 20:15:28.000000000 +0100
-@@ -195,4 +195,17 @@
- ])
- 
-+dnl From ghc 6.4 onwards, ghc-pkg only understands the cabal package format
-+dnl so we must produce and register .cabal files instead of the old .pkg
-+dnl files.
-+GTKHS_PROG_CHECK_VERSION($GHC_VERSION, -ge, 6.4.0, [
-+USE_CABAL=yes
-+])
-+AM_CONDITIONAL(USE_CABAL, test "$USE_CABAL" = "yes")
-+if test "$USE_CABAL" = "yes"; then
-+  PKGEXT=cabal
-+else
-+  PKGEXT=pkg
-+fi
-+
- dnl ghc-pkg 5 searches for libxxx.a, even on Windows. Hence, we need to
- dnl create libraries with these names instead of the windows names.
-@@ -629,4 +642,6 @@
- AC_SUBST(GHCPKG_LISTLOCAL)
- AC_SUBST(PKGCONF)
-+AC_SUBST(USE_CABAL)
-+AC_SUBST(PKGEXT)
- AC_SUBST(HCFLAGS)
- AC_SUBST(C2HS)
-@@ -680,11 +695,11 @@
-   gtk2hs.spec
-   mk/chsDepend
--  glib/glib.pkg
--  gtk/gtk.pkg
--  mogul/mogul.pkg
--  glade/glade.pkg
--  gconf/gconf.pkg
--  sourceview/sourceview.pkg
--  mozembed/mozembed.pkg],
-+  glib/glib.pkg			glib/glib.cabal
-+  gtk/gtk.pkg			gtk/gtk.cabal
-+  mogul/mogul.pkg		mogul/mogul.cabal
-+  glade/glade.pkg		glade/glade.cabal
-+  gconf/gconf.pkg		gconf/gconf.cabal
-+  sourceview/sourceview.pkg	sourceview/sourceview.cabal
-+  mozembed/mozembed.pkg		mozembed/mozembed.cabal],
-   [chmod a+x mk/chsDepend && chmod a+x install-sh])
- 
 diff -N -U2 -r gtk2hs-0.9.7.orig/gconf/gconf.cabal.in gtk2hs-0.9.7/gconf/gconf.cabal.in
 --- gtk2hs-0.9.7.orig/gconf/gconf.cabal.in	1970-01-01 01:00:00.000000000 +0100
 +++ gtk2hs-0.9.7/gconf/gconf.cabal.in	2005-05-03 20:39:23.000000000 +0100
@@ -639,16 +667,6 @@ diff -N -U2 -r gtk2hs-0.9.7.orig/gtk/gtk.cabal.in gtk2hs-0.9.7/gtk/gtk.cabal.in
 +includes: gtk/gtk.h
 +depends: glib-@PACKAGE_VERSION@
 +extra-ld-opts: @GTK_LIBEXTRA_CQ@
-diff -N -U2 -r gtk2hs-0.9.7.orig/mk/common.mk gtk2hs-0.9.7/mk/common.mk
---- gtk2hs-0.9.7.orig/mk/common.mk	2005-01-24 14:02:09.000000000 +0000
-+++ gtk2hs-0.9.7/mk/common.mk	2005-05-03 20:15:28.000000000 +0100
-@@ -66,5 +66,5 @@
- 	$(if $(word 2,$($(PKG)_HSFILES)),\
- 	  $(MAKE) $(AM_MAKEFLAGS) $($(PKG)_HSFILES); \
--	  $(HC) -M $(addprefix -optdep,-f $@) \
-+	  $(HC) -M $(addprefix -optdep,-f $@) -fglasgow-exts \
- 	  $(HCFLAGS) $($(PKG)_HCFLAGS) -i$(pkgVPATH) \
- 	  $(AM_CPPFLAGS) $($(PKG)_CPPFLAGS) $($(PKG)_HSFILES);) \
 diff -N -U2 -r gtk2hs-0.9.7.orig/mogul/mogul.cabal.in gtk2hs-0.9.7/mogul/mogul.cabal.in
 --- gtk2hs-0.9.7.orig/mogul/mogul.cabal.in	1970-01-01 01:00:00.000000000 +0100
 +++ gtk2hs-0.9.7/mogul/mogul.cabal.in	2005-05-03 20:39:23.000000000 +0100
