@@ -16,7 +16,7 @@ IUSE="doc gtk2"
 
 DEPEND="${DEPEND}
 	>=virtual/ghc-6.2
-	>=x11-libs/wxGTK-2.4.2-r2
+	=x11-libs/wxGTK-2.4.2*
 	doc? ( >=dev-haskell/haddock-0.6-r2 )"
 
 src_unpack() {
