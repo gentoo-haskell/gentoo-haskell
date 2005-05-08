@@ -1,0 +1,33 @@
+compiles/installs fine 
++dev-haskell/buddha-1.2	
++dev-haskell/hmake-3.10	
++dev-haskell/haddock-0.6-r3	
++dev-haskell/alex-2.0.1-r1
++dev-haskell/happy-1.15
++dev-haskell/lhs2tex-1.10_pre
++dev-haskell/drift-2.1.0	
++dev-haskell/hdoc-0.8.3	
++dev-haskell/haxml-1.12
++dev-utils/darcs-1.0.3_rc1
+
+error compiling
+-dev-haskell/hxt-4.02
+
+error installing 
+-dev-haskell/hs-plugins-0.9.8 
+(this package compiles perfectly well, it gives error installing, though
+it emerges fine)
+-dev-haskell/wxhaskell-0.9
+
+configure problems 
+
+already blocked by ghc6.4 in the tree
+!dev-haskell/c2hs-0.13.4
+!de-haskell/wash-2.3.1
+!dev-haskell/hsshellscript-2.3.0
+
+
+Ebuilds in the queue to be added to the tree [1]
+
+dev-haskell/hsql-1.4	error compiling
+
