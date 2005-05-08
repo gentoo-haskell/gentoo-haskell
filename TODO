@@ -16,3 +16,9 @@ Meeting 8 May 2005 results:
   o base ghc-bin-6.2.2-r1 on ghc-bin-6.4, add x86, ppc, sparc, amd64 (dcoutts)
   o long-term: support USE flags for ghc-bin (all)
 
+* Cabal eclass
+
+  o add already Cabalised packages to the overlay (dcoutts, araujo)
+  o find more candidates (all)
+  o test and improve eclass (all)
+
