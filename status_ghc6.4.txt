@@ -11,24 +11,17 @@ compiles/installs fine
 +dev-utils/darcs-1.0.3_rc1
 +dev-haskell/gtk2hs-0.9.7
 
-error compiling
--dev-haskell/hxt-4.02
-
-error installing 
--dev-haskell/hs-plugins-0.9.8 
-(this package compiles perfectly well, it gives error installing, though
-it emerges fine)
--dev-haskell/wxhaskell-0.9
-
-configure problems 
-
 already blocked by ghc6.4 in the tree
+!dev-haskell/wxhaskell-0.9
+!dev-haskell/hs-plugins-0.9.8 
+!dev-haskell/hxt-4.02
 !dev-haskell/c2hs-0.13.4
-!de-haskell/wash-2.3.1
+!dev-haskell/wash-2.3.1
 !dev-haskell/hsshellscript-2.3.0
 
 
 Ebuilds in the queue to be added to the tree [1]
 
+dev-haskell/hxt-5.00    requires cabal eclass
 dev-haskell/hsql-1.4	error compiling
 
