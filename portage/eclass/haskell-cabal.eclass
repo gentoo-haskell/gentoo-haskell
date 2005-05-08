@@ -4,6 +4,19 @@
 
 inherit ghc-package
 
+cabal-bootstrap() {
+	local setupmodule
+	if [[ -f ${S}/Setup.lhs ]]; then
+		setupmodule=${S}/Setup.lhs
+	else
+		if [[ -f ${S}/Setup.hs ]]; then
+			setupmodule=${S}/Setup.hs
+		else
+			die "No Setup.lhs or Setup.hs found"
+		fi
+	fi
+	$(ghc-getghc) -package Cabal ${setupmodule} -o setup
+}
 
 cabal-haddock() {
 	./setup haddock || die "setup haddock failed"
@@ -48,3 +61,12 @@ cabal-pkg() {
 	./register.sh
 	ghc-install-pkg
 }
+
+# exported function: cabal-style bootstrap configure and compile
+haskell-cabal_src_compile() {
+	cabal-bootstrap
+	cabal-configure
+	cabal-build
+}
+
+EXPORT_FUNCTIONS src_compile
