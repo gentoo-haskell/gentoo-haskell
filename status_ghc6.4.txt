@@ -9,6 +9,7 @@ compiles/installs fine
 +dev-haskell/hdoc-0.8.3	
 +dev-haskell/haxml-1.12
 +dev-utils/darcs-1.0.3_rc1
++dev-haskell/gtk2hs-0.9.7
 
 error compiling
 -dev-haskell/hxt-4.02
