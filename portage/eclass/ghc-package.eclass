@@ -92,7 +92,7 @@ ghc-setup-pkg() {
 	echo '[]' > ${localpkgconf}
 	for pkg in $*; do
 		$(ghc-getghcpkgbin) -f ${localpkgconf} -u --force \
-			< ${pkg}
+			< ${pkg} || die "ghc-setup-pkg: failed to register ${pkg}"
 	done
 }
 
