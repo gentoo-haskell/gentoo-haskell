@@ -1,1 +1,18 @@
-This could be a global file containing goals and priorities.
+
+Meeting 8 May 2005 results:
+
+* ghc-6.4
+
+  o test bootstrapping via ghc-bin-6.4 (dcoutts, araujo)
+  o test and modify ghc-updater (kosmikus)
+  o unmask by Wednesday, 11 May
+
+* wxhaskell
+
+  o new problems due to wxGTK-2.6 being available (kosmikus)
+
+* ghc-bin-6.*
+
+  o base ghc-bin-6.2.2-r1 on ghc-bin-6.4, add x86, ppc, sparc, amd64 (dcoutts)
+  o long-term: support USE flags for ghc-bin (all)
+
