@@ -39,6 +39,15 @@ cabal-copy() {
 	./setup copy \
 		--copy-prefix="${D}/usr" \
 		|| die "setup copy failed"
+
+	# make GHCi .o files for any packages
+	for lib in ${D}/usr/lib/*/libHS*.a; do
+		ghc-makeghcilib ${lib}
+	done
+
+	# cabal is a bit eager about creating dirs,
+	# so remove them if they are empty
+	rmdir ${D}/usr/bin
 }
 
 cabal-pkg() {
@@ -69,4 +78,10 @@ haskell-cabal_src_compile() {
 	cabal-build
 }
 
-EXPORT_FUNCTIONS src_compile
+# exported function: cabal-style bootstrap configure and compile
+haskell-cabal_src_install() {
+	cabal-copy
+	cabal-pkg
+}
+
+EXPORT_FUNCTIONS src_compile src_install
