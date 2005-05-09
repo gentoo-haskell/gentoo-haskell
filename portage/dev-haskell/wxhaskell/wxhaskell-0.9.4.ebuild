@@ -16,7 +16,7 @@ IUSE="doc gtk2"
 
 DEPEND="${DEPEND}
 	>=virtual/ghc-6.2
-	=x11-libs/wxGTK-2.4.2*
+	>=x11-libs/wxGTK-2.4.2
 	doc? ( >=dev-haskell/haddock-0.6-r2 )"
 
 src_unpack() {
@@ -28,6 +28,10 @@ src_unpack() {
 }
 
 src_compile() {
+	# use the highest possible wxGTK version, i.e., 2.6 by default
+	if has_version '>=x11-libs/wxGTK-2.6'; then
+		WX_GTK_VER=2.6
+	fi
 	ghc-setup-pkg
 
 	#wxhaskell supports gtk or gtk2, but not unicode yet:
