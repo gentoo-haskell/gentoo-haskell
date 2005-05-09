@@ -41,7 +41,7 @@ src_compile() {
 		need-wxwidgets gtk2
 	fi
 
-	[ "${ARCH}" = "amd64" ] && append-flags -fPIC
+	append-flags -fPIC
 
 	# non-standard configure, so econf is not an option
 	# --wx-config must appear first according to configure file comments 
