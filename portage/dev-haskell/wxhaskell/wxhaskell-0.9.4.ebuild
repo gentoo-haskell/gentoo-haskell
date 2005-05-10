@@ -41,6 +41,7 @@ src_compile() {
 		need-wxwidgets gtk2
 	fi
 
+	# every C compiler result ends up in a shared lib
 	append-flags -fPIC
 
 	# non-standard configure, so econf is not an option
