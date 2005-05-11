@@ -72,16 +72,22 @@ cabal-pkg() {
 }
 
 # exported function: cabal-style bootstrap configure and compile
-haskell-cabal_src_compile() {
+cabal_src_compile() {
 	cabal-bootstrap
 	cabal-configure
 	cabal-build
 }
+haskell-cabal_src_compile() {
+	cabal_src_compile
+}
 
 # exported function: cabal-style bootstrap configure and compile
-haskell-cabal_src_install() {
+cabal_src_install() {
 	cabal-copy
 	cabal-pkg
+}
+haskell-cabal_src_install() {
+	cabal_src_install
 }
 
 EXPORT_FUNCTIONS src_compile src_install
