@@ -23,6 +23,9 @@ src_unpack() {
 	unpack ${A}
 	# adapt to Gentoo path convention
 	sed -i 's:/doc/html:/share/doc/html:' ${S}/configure
+	# fix superfluous dependencies on hslibs packages
+	sed -i -e 's:,lang::' -e 's:,"lang"::' \
+		-e 's:,concurrent::' -e 's:,"concurrent"::' ${S}/configure
 	# fix Makefile to respect CXXFLAGS
 	sed -i 's:^\(WXC-CXXFLAGS.*=\):\1\$(CXXFLAGS) :' ${S}/makefile
 }
