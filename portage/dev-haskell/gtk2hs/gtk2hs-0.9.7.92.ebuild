@@ -61,12 +61,29 @@ src_install() {
 	else
 		pkgext=pkg
 	fi
-	ghc-setup-pkg "${D}/usr/$(get_libdir)/gtk2hs/*.${pkgext}"
+	ghc-setup-pkg \
+		"${D}/usr/$(get_libdir)/gtk2hs/glib.${pkgext}" \
+		"${D}/usr/$(get_libdir)/gtk2hs/gtk.${pkgext}" \
+		"${D}/usr/$(get_libdir)/gtk2hs/mogul.${pkgext}" \
+		$(useq gnome && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}" \
+			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
+			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}") \
+		$(useq mozilla && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 
 	# build ghci .o files from .a files
-	for hspkg in ${D}/usr/$(get_libdir)/gtk2hs/libHS*.a; do
-		ghc-makeghcilib ${hspkg}
-	done
+	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSglib.a
+	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSgtk.a
+	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSmogul.a
+	if use gnome; then
+		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSglade.a
+		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a
+		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a
+	fi
+	if use mozilla; then
+		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a
+	fi
 }
 
