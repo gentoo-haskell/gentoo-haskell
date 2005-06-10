@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/gtk2hs/gtk2hs-0.9.7.ebuild,v 1.2 2005/03/23 16:15:53 seemant Exp $
 
-inherit base ghc-package
+inherit base ghc-package multilib
 
 DESCRIPTION="GTK+-2.x bindings for Haskell"
 HOMEPAGE="http://haskell.org/gtk2hs/"
