@@ -7,11 +7,11 @@ inherit base ghc-package
 DESCRIPTION="GTK+-2.x bindings for Haskell"
 HOMEPAGE="http://haskell.org/gtk2hs/"
 #SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
-SRC_URI="http://haskell.org/~duncan/gtk2hs/${P}.tar.gz"
+SRC_URI="http://haskell.org/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc -amd64"
 
 IUSE="doc gnome mozilla"
 
@@ -26,7 +26,6 @@ DEPEND=">=virtual/ghc-5.04
 src_compile() {
 	econf \
 		--enable-packager-mode \
-		--with-hcflags=-H50m \
 		`use_enable gnome libglade` \
 		`use_enable gnome gconf` \
 		`use_enable gnome sourceview` \
@@ -62,29 +61,12 @@ src_install() {
 	else
 		pkgext=pkg
 	fi
-	ghc-setup-pkg \
-		"${D}/usr/lib/gtk2hs/glib.${pkgext}" \
-		"${D}/usr/lib/gtk2hs/gtk.${pkgext}" \
-		"${D}/usr/lib/gtk2hs/mogul.${pkgext}" \
-		$(useq gnome && echo \
-			"${D}/usr/lib/gtk2hs/glade.${pkgext}" \
-			"${D}/usr/lib/gtk2hs/gconf.${pkgext}" \
-			"${D}/usr/lib/gtk2hs/sourceview.${pkgext}") \
-		$(useq mozilla && echo \
-			"${D}/usr/lib/gtk2hs/mozembed.${pkgext}")
+	ghc-setup-pkg "${D}/usr/$(get_libdir)/gtk2hs/*.${pkgext}"
 	ghc-install-pkg
 
 	# build ghci .o files from .a files
-	ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSglib.a
-	ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSgtk.a
-	ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSmogul.a
-	if use gnome; then
-		ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSglade.a
-		ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSgconf.a
-		ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSsourceview.a
-	fi
-	if use mozilla; then
-		ghc-makeghcilib ${D}/usr/lib/gtk2hs/libHSmozembed.a
-	fi
+	for hspkg in ${D}/usr/$(get_libdir)/gtk2hs/libHS*.a; do
+		ghc-makeghcilib ${hspkg}
+	done
 }
 
