@@ -6,8 +6,7 @@ inherit base ghc-package multilib
 
 DESCRIPTION="GTK+-2.x bindings for Haskell"
 HOMEPAGE="http://haskell.org/gtk2hs/"
-#SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
-SRC_URI="http://haskell.org/gtk2hs/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
 
