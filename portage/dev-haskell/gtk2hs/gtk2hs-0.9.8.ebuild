@@ -10,7 +10,10 @@ SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc ~sparc -amd64"
+KEYWORDS="~x86 -amd64"
+#enable amd64 when ghc-6.4.1 is out
+#enable sparc when CFLAGS/-mcpu ebuild bug is fixed
+#enable ppc when it's been tested!
 
 IUSE="doc gnome mozilla"
 
