@@ -31,8 +31,11 @@ import System.Directory ( renameFile, doesFileExist )
 import qualified Distribution.Simple.Utils as Cabal ( defaultPackageDesc )                               
 import qualified Distribution.Simple.Configure as Cabal ( getPersistBuildConfig )
 import qualified Distribution.Simple.Utils as Cabal ( die )
-import qualified Distribution.PackageDescription as Cabal ( hasLibs, readPackageDescription )
+import qualified Distribution.PackageDescription as Cabal ( PackageDescription(..), 
+						hasLibs, readPackageDescription )
+import qualified Distribution.Package as Cabal ( PackageIdentifier(..) )
 import qualified Distribution.Simple.Register as Cabal ( writeInstalledConfig, installedPkgConfigFile )
+import qualified Distribution.Version as Cabal ( showVersion )
 
 main :: IO ()
 main = do
@@ -46,15 +49,9 @@ main = do
   Cabal.writeInstalledConfig pkg_descr lbi
   successful <- doesFileExist Cabal.installedPkgConfigFile
   unless successful $ Cabal.die "Package file didn't get created as it should have"
-  let newConfPath = changeFileExt pkg_descr_file "conf"
+  let newConfPath = Cabal.pkgName (Cabal.package pkg_descr)
+          ++ "-" ++ Cabal.showVersion (Cabal.pkgVersion (Cabal.package pkg_descr))
+	         ++ ".conf"
   renameFile Cabal.installedPkgConfigFile newConfPath
   putStrLn $ newConfPath ++ " successfully created."
 
--- | Change the expension of a filename
-changeFileExt :: FilePath -> String -> String
-changeFileExt fp ext = file ++ ('.':ext)
-  where
-  file = case (dropWhile (/= '.') $ reverse fp) of
-           ('.':xs) -> reverse xs
-           _ -> fp
-  
