@@ -4,21 +4,18 @@
 
 inherit base ghc-package
 
-IUSE="doc"
-
 DESCRIPTION="Dynamically Loaded Haskell Plugins"
 HOMEPAGE="http://www.cse.unsw.edu.au/~dons/hs-plugins/"
 SRC_URI="ftp://ftp.cse.unsw.edu.au/pub/users/dons/${PN}/${P}.tar.gz
-doc? ( http://www.cse.unsw.edu.au/~dons/${PN}/${PN}.html.tar.gz )"
+	doc? ( http://www.cse.unsw.edu.au/~dons/${PN}/${PN}.html.tar.gz )"
 
-SLOT="0"
-KEYWORDS="~x86"
 LICENSE="as-is"
+SLOT="0"
+KEYWORDS="~x86 ~amd64"
+IUSE="doc"
 
 DEPEND=">=virtual/ghc
 	>=dev-haskell/haskell-src-exts-0.2"
-
-RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
