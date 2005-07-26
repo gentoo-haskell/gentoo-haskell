@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="bootstrap"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
