@@ -39,15 +39,15 @@ src_install() {
 }
 
 pkg_postinst () {
-	ewarn "If you have an older version of Cabal installed, you may have to"
-	ewarn "specify which version you want when you run ghc.  For instance:"
-	ewarn ""
-	ewarn "  $ ghc -package Cabal"
-	ewarn "ghc-6.4: Error; multiple packages match Cabal: Cabal-1.0, Cabal-1.0.1"
-	ewarn ""
-	ewarn "If you want to avoid this situation, you can remove the"
-	ewarn "older version with:"
-	ewarn ""
-	ewarn "  $ ghc-pkg unregister Cabal-1.0"
+	einfo "If you have an older version of Cabal installed, you may have to"
+	einfo "specify which version you want when you run ghc.  For instance:"
+	einfo ""
+	einfo "  $ ghc -package Cabal"
+	einfo "ghc-6.4: Error; multiple packages match Cabal: Cabal-1.0, Cabal-${PV}"
+	einfo ""
+	einfo "If you want to avoid this situation, you can remove the"
+	einfo "older version with:"
+	einfo ""
+	einfo "  $ ghc-pkg unregister Cabal-1.0"
 }
 
