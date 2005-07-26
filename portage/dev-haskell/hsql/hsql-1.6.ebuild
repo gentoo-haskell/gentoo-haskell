@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="haddock"
 inherit haskell-cabal
 
 DESCRIPTION="SQL bindings for Haskell"
@@ -10,11 +11,10 @@ SRC_URI="mirror://sourceforge/htoolkit/HSQL-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE="doc postgresql sqlite odbc"
+KEYWORDS="~x86 ~amd64"
+IUSE="postgresql sqlite odbc"
 
-DEPEND="virtual/ghc
-	doc? ( dev-haskell/haddock )"
+DEPEND="virtual/ghc"
 
 PDEPEND="postgresql? ( =dev-haskell/hsql-postgresql-${PV} )
 	sqlite? ( =dev-haskell/hsql-sqlite3-${PV} )
@@ -22,19 +22,3 @@ PDEPEND="postgresql? ( =dev-haskell/hsql-postgresql-${PV} )
 
 S=${WORKDIR}/HSQL-${PV}/HSQL
 
-src_compile() {
-	cabal-bootstrap
-	cabal-configure
-	cabal-build
-	if use doc; then
-		cabal-haddock
-	fi
-}
-
-src_install() {
-	cabal-copy
-	cabal-pkg
-	if use doc; then
-		dohtml dist/doc/html/*
-	fi
-}
