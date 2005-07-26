@@ -4,13 +4,11 @@
 
 inherit ghc-package
 
-# We always use a standalone version of Cabal,
-# rather than the one that comes with GHC:
-DEPEND="${DEPEND} >cabal-1.0"
 
 for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
 		haddock) CABAL_USE_HADDOCK=yes;;
+		bootstrap) CABAL_BOOTSTRAP=yes;;
 		*) ewarn "Unknown entry in CABAL_FEATURES: ${feature}";;
 	esac
 done
@@ -19,6 +17,13 @@ if [[ -n ${CABAL_USE_HADDOCK} ]]; then
 	IUSE="${IUSE} doc"
 	DEPEND="${DEPEND} doc? ( >=dev-haskell/haddock-0.6 )"
 fi
+
+# We always use a standalone version of Cabal, rather than the one that comes
+# with GHC. But of course we can't depend on cabal when building cabal itself.
+if [[ -z ${CABAL_BOOTSTRAP} ]]; then
+	DEPEND="${DEPEND} >cabal-1.0"
+fi
+
 
 cabal-bootstrap() {
 	local setupmodule
@@ -33,9 +38,20 @@ cabal-bootstrap() {
 			die "No Setup.lhs or Setup.hs found"
 		fi
 	fi
-	cabalpackage=$(best_version cabal)
-	cabalversion=${cabalpackage#dev-haskell/cabal-}
-	$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup
+
+	if [[ -n ${CABAL_BOOTSTRAP} ]]; then
+		# When bootstrapping cabal we pull in the cabal libs from the
+		# cabal build directory
+		$(ghc-getghc) ${setupmodule} -o setup \
+			|| die "compiling ${setupmodule} failed"
+	else
+		# Normally we just build the setup program using the latest version of
+		# cabal that we have installed
+		cabalpackage=$(best_version cabal)
+		cabalversion=${cabalpackage#dev-haskell/cabal-}
+		$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup \
+			|| die "compiling ${setupmodule} failed"
+	fi
 }
 
 cabal-haddock() {
