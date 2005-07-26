@@ -39,19 +39,12 @@ cabal-bootstrap() {
 		fi
 	fi
 
-	if [[ -n ${CABAL_BOOTSTRAP} ]]; then
-		# When bootstrapping cabal we pull in the cabal libs from the
-		# cabal build directory
-		$(ghc-getghc) ${setupmodule} -o setup \
-			|| die "compiling ${setupmodule} failed"
-	else
-		# Normally we just build the setup program using the latest version of
-		# cabal that we have installed
-		cabalpackage=$(best_version cabal)
-		cabalversion=${cabalpackage#dev-haskell/cabal-}
-		$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup \
-			|| die "compiling ${setupmodule} failed"
-	fi
+	# We build the setup program using the latest version of
+	# cabal that we have installed
+	cabalpackage=$(best_version cabal)
+	cabalversion=${cabalpackage#dev-haskell/cabal-}
+	$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup \
+		|| die "compiling ${setupmodule} failed"
 }
 
 cabal-haddock() {
