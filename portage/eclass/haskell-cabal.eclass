@@ -4,8 +4,26 @@
 
 inherit ghc-package
 
+# We always use a standalone version of Cabal,
+# rather than the one that comes with GHC:
+DEPEND="${DEPEND} >cabal-1.0"
+
+for feature in ${CABAL_FEATURES}; do
+	case ${feature} in
+		haddock) CABAL_USE_HADDOCK=yes;;
+		*) ewarn "Unknown entry in CABAL_FEATURES: ${feature}";;
+	esac
+done
+
+if [[ -n ${CABAL_USE_HADDOCK} ]]; then
+	IUSE="${IUSE} doc"
+	DEPEND="${DEPEND} doc? ( >=dev-haskell/haddock-0.6 )"
+fi
+
 cabal-bootstrap() {
 	local setupmodule
+	local cabalpackage
+	local cabalversion
 	if [[ -f ${S}/Setup.lhs ]]; then
 		setupmodule=${S}/Setup.lhs
 	else
@@ -15,7 +33,9 @@ cabal-bootstrap() {
 			die "No Setup.lhs or Setup.hs found"
 		fi
 	fi
-	$(ghc-getghc) -package Cabal ${setupmodule} -o setup
+	cabalpackage=$(best_version cabal)
+	cabalversion=${cabalpackage#dev-haskell/cabal-}
+	$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup
 }
 
 cabal-haddock() {
@@ -76,15 +96,23 @@ cabal_src_compile() {
 	cabal-bootstrap
 	cabal-configure
 	cabal-build
+
+	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
+		cabal-haddock
+	fi
 }
 haskell-cabal_src_compile() {
 	cabal_src_compile
 }
 
-# exported function: cabal-style bootstrap configure and compile
+# exported function: cabal-style copy and register
 cabal_src_install() {
 	cabal-copy
 	cabal-pkg
+
+	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
+		dohtml dist/doc/html/*
+	fi
 }
 haskell-cabal_src_install() {
 	cabal_src_install
