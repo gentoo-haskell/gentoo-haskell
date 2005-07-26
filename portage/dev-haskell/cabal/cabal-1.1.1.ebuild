@@ -39,6 +39,8 @@ src_install() {
 }
 
 pkg_postinst () {
+	ghc-package_pkg_postinst
+
 	einfo "If you have an older version of Cabal installed, you may have to"
 	einfo "specify which version you want when you run ghc.  For instance:"
 	einfo ""
