@@ -19,6 +19,12 @@ DEPEND=">=virtual/ghc-6.2"
 
 S="${WORKDIR}/${PN}"
 
+src_compile() {
+	make setup
+	cabal-configure
+	cabal-build
+}
+
 src_install() {
 	cabal_src_install
 	
