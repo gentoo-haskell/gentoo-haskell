@@ -62,6 +62,7 @@ data EBuild = EBuild {
     keywords :: [String],
     iuse :: [String],
     depend :: [Dependency],
+    features :: [String],
 
     -- comments on various fields for communicating stuff to the user
     licenseComments :: String
@@ -90,6 +91,7 @@ ebuildTemplate = EBuild {
     keywords = ["~x86"],
     iuse = [],
     depend = [],
+    features = ["haddock"],
 
     licenseComments = ""
   }
@@ -105,12 +107,10 @@ cabal2ebuild pkg = ebuildTemplate {
     license         = convertLicense (Cabal.license pkg),
     licenseComments = licenseComment (Cabal.license pkg),
     depend          = defaultDepGHC
-                    : defaultDepHaddock
                     : convertDependencies (Cabal.buildDepends pkg)
   }
 
 defaultDepGHC     = OrLaterVersionOf "6.2.2" "virtual/ghc"
-defaultDepHaddock = DependIfUse "doc" (OrLaterVersionOf "0.6" "dev-haskell/haddock")
 
 -- map the cabal license type to the gentoo license string format
 convertLicense :: Cabal.License -> String
@@ -170,6 +170,7 @@ showEBuild ebuild =
   ss "# Distributed under the terms of the GNU General Public License v2". nl.
   ss "# $Header:  $". nl.
   nl.
+  ss "CABAL_FEATURES=". quote' (sepBy " " $ features ebuild). nl.
   ss "inherit haskell-cabal". nl.
   nl.
   ss "DESCRIPTION=". quote (description ebuild). nl.
