@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Functions that simulate the behavior of regular patterns using a Match monad for parsing lists"
@@ -10,27 +11,10 @@ SRC_URI="http://www.cs.chalmers.se/~d00nibro/haskell-src-exts/haskell-src-exts-$
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE="doc"
+KEYWORDS="~x86 ~amd64"
+IUSE=""
 
-DEPEND="virtual/ghc
-	doc? ( dev-haskell/haddock )"
+DEPEND="virtual/ghc"
 
 S=${WORKDIR}/haskell-src-exts/src/harp
 
-src_compile() {
-	cabal-bootstrap
-	cabal-configure
-	cabal-build
-	if use doc; then
-		cabal-haddock
-	fi
-}
-
-src_install() {
-	cabal-copy
-	cabal-pkg
-	if use doc; then
-		dohtml dist/doc/html/*
-	fi
-}
