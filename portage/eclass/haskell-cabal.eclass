@@ -85,7 +85,12 @@ cabal-cabal2conf() {
 cabal-pkg() {
 	local conffilename
 	conffilename=${P}.tmpconf
-	cabal-cabal2conf > ${conffilename}
+
+	# This could possibly fail if the .setup-config does not exist (eg if it
+	# is not using Distribution.Simple) or if the .setup-config was written by
+	# a different version of cabal to the one that cabal2conf was built with.
+	cabal-cabal2conf > ${conffilename} || die "cabal2conf failed"
+
 	ghc-setup-pkg ${conffilename}
 	ghc-install-pkg
 }
