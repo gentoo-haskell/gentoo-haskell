@@ -69,6 +69,11 @@ cabal-copy() {
 		--copy-prefix="${D}/usr" \
 		|| die "setup copy failed"
 
+	# make GHCi .o files for any packages
+	for lib in ${D}/usr/lib/*/libHS*.a; do
+		ghc-makeghcilib ${lib}
+	done
+
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
 	rmdir ${D}/usr/bin
