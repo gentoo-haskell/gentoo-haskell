@@ -62,7 +62,7 @@ pkg_postinst () {
 	einfo "specify which version you want when you run ghc.  For instance:"
 	einfo ""
 	einfo "  $ ghc -package Cabal"
-	einfo "ghc-6.4: Error; multiple packages match Cabal: Cabal-1.0, Cabal-${PV}"
+	einfo "  ghc-6.4: Error; multiple packages match Cabal: Cabal-1.0, Cabal-${PV}"
 	einfo ""
 	einfo "If you want to avoid this situation, you can remove the"
 	einfo "older version with:"
