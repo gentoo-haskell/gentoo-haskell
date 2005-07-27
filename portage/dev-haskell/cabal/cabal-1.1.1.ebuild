@@ -23,10 +23,22 @@ src_compile() {
 	make setup
 	cabal-configure
 	cabal-build
+
+	# This should build the cabal2conf program without rebuilding any of the
+	# cabal libs because we look in the dist/build dir for the .hi files and
+	# we link with the dist/build/libHSCabal-${PV}.a that has already been
+	# built. We're also careful to put the temporary build files in ${TMP} or
+	# otherwise ghc would try to write to ${FILESDIR} which is not allowed.
+	$(ghc-getghc) ${FILESDIR}/cabal2conf.hs -o ${S}/cabal2conf \
+		-odir ${TMP} -hidir ${TMP} \
+		-idist/build -Ldist/build -lHSCabal-${PV} \
+		|| die "building cabal2conf tool failed"
 }
 
 src_install() {
 	cabal_src_install
+
+	dosbin ${S}/cabal2conf
 	
 	# documentation (install directly; generation seems broken to me atm)
 	dohtml -r doc/users-guide
