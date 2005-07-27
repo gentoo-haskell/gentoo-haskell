@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bootstrap"
-inherit haskell-cabal
+inherit haskell-cabal eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
@@ -18,6 +18,11 @@ IUSE="doc"
 DEPEND=">=virtual/ghc-6.2"
 
 S="${WORKDIR}/${PN}"
+
+src_unpack() {
+	base_src_unpack
+	epatch ${FILESDIR}/ghcilibs.patch
+}
 
 src_compile() {
 	make setup
