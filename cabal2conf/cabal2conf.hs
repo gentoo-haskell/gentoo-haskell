@@ -25,17 +25,14 @@ module Main (main) where
 
 -- stdlib imports. compatible with ghc-6.2.2
 import Control.Monad ( unless )
-import System.Directory ( renameFile, doesFileExist )
+import System.Directory ( doesFileExist )
 
 -- cabal imports. should be compatible with Cabal-0.5 but not tested
 import qualified Distribution.Simple.Utils as Cabal ( defaultPackageDesc )                               
 import qualified Distribution.Simple.Configure as Cabal ( getPersistBuildConfig )
 import qualified Distribution.Simple.Utils as Cabal ( die )
-import qualified Distribution.PackageDescription as Cabal ( PackageDescription(..), 
-						hasLibs, readPackageDescription )
-import qualified Distribution.Package as Cabal ( PackageIdentifier(..) )
+import qualified Distribution.PackageDescription as Cabal ( hasLibs, readPackageDescription )
 import qualified Distribution.Simple.Register as Cabal ( writeInstalledConfig, installedPkgConfigFile )
-import qualified Distribution.Version as Cabal ( showVersion )
 
 main :: IO ()
 main = do
@@ -49,9 +46,6 @@ main = do
   Cabal.writeInstalledConfig pkg_descr lbi
   successful <- doesFileExist Cabal.installedPkgConfigFile
   unless successful $ Cabal.die "Package file didn't get created as it should have"
-  let newConfPath = Cabal.pkgName (Cabal.package pkg_descr)
-          ++ "-" ++ Cabal.showVersion (Cabal.pkgVersion (Cabal.package pkg_descr))
-	         ++ ".conf"
-  renameFile Cabal.installedPkgConfigFile newConfPath
-  putStrLn $ newConfPath ++ " successfully created."
+  packageFile <- readFile Cabal.installedPkgConfigFile
+  putStr packageFile
 
