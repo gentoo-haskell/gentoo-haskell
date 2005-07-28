@@ -22,6 +22,12 @@ S="${WORKDIR}/${PN}"
 src_unpack() {
 	base_src_unpack
 	epatch ${FILESDIR}/ghcilibs.patch
+
+	# Grrr, Cabal build-depends on the util package which is one of the old
+	# hslibs packages. Exposing util breaks lots of things. Fortunately cabal
+	# doesn't actually use anything fro util so we can remove it. A patch has
+	# been sent upstream so remove this hack on the next cabal iteration.
+	sed -i 's/Build-Depends: base, util/Build-Depends: base/' ${S}/Cabal.cabal
 }
 
 src_compile() {
