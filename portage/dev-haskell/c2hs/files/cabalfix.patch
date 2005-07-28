@@ -1,0 +1,11 @@
+--- c2hs.cabal	2005-07-15 14:10:47.000000000 +0200
++++ c2hs.cabal	2005-07-28 18:01:11.000000000 +0200
+@@ -15,6 +15,8 @@
+ 	libraries.  It extracts C interface information from vanilla header 
+ 	files and generates marshaling and signature code in Haskell.
+ Category:       Development tool
++Hs-Source-Dirs:	c2hs/lib
++Exposed-Modules: C2HS
+ 
+ Executable:     c2hs
+ Hs-Source-Dirs:	base/admin 
