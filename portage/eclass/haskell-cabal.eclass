@@ -106,7 +106,14 @@ cabal-copy() {
 
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
-	rmdir ${D}/usr/bin
+	rmdir ${D}/usr/bin 2> /dev/null
+
+	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
+	# no workaround.
+	# set the +x permission on executables
+	if [[ -d ${D}/usr/bin ]] ; then
+		chmod +x ${D}/usr/bin/*
+	fi
 }
 
 cabal-cabal2conf() {
@@ -148,13 +155,6 @@ haskell-cabal_src_compile() {
 cabal_src_install() {
 	cabal-copy
 	cabal-pkg
-
-	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
-	# no workaround.
-	# set the +x permission on executables
-	if [[ -d ${D}/usr/bin ]] ; then
-		chmod +x ${D}/usr/bin/*
-	fi
 
 	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
 		dohtml dist/doc/html/*
