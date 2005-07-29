@@ -15,12 +15,26 @@ KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
 DEPEND=">=virtual/ghc
-	>=dev-haskell/haskell-src-exts-0.2"
+	>=dev-haskell/haskell-src-exts-0.2
+	dev-haskell/cabal"
 
 src_unpack() {
 	unpack ${A}
 	# for package management
 	sed -i 's:\$(GHC_PKG) -u:\${GHC_PKGF} -u:' ${S}/Makefile
+
+	# specify an exact version of Cabal otherwise ghc complains when it
+	# matches multiple versions. Should be fixed upstream in the next version.
+	cabalpackage=$(best_version cabal)
+	cabalversion=${cabalpackage#dev-haskell/cabal-}
+
+	sed -i "s:-package Cabal:-package Cabal-${cabalversion}:" \
+		${S}/src/plugins/Makefile
+
+	# Also specify an exact version of Cabal otherwise ghc-pkg defaults it to
+	# the minimum version which is just wrong. Should be fixed in ghc-6.4.1
+	sed -i "s/depends:\(.*\) Cabal/depends:\1 Cabal-${cabalversion}/" \
+		${S}/src/plugins/plugins.conf.in.cpp
 }
 
 src_compile() {
