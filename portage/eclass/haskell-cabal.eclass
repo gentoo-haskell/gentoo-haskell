@@ -149,6 +149,13 @@ cabal_src_install() {
 	cabal-copy
 	cabal-pkg
 
+	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
+	# no workaround.
+	# set the +x permission on executables
+	if [[ -d ${D}/usr/bin ]] ; then
+		chmod +x ${D}/usr/bin/*
+	fi
+
 	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
 		dohtml dist/doc/html/*
 	fi
