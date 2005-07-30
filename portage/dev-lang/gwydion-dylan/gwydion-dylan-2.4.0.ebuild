@@ -12,7 +12,7 @@ KEYWORDS="~x86"
 IUSE="gtk"
 
 DEPEND="virtual/gwydion-dylan
-		dev-libs/boehm-gc
+		>=dev-libs/boehm-gc-6.4
 		gtk? ( =x11-libs/gtk+-1.2* )"
 RDEPEND=""
 
