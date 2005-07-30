@@ -3,14 +3,14 @@
 # $Header: $
 
 CABAL_FEATURES="haddock"
-inherit base eutils ghc-package haskell-cabal
+inherit base eutils haskell-cabal
 
 DESCRIPTION="An interface generator for Haskell"
 HOMEPAGE="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/"
 SRC_URI="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
-
 KEYWORDS="~x86"
 
 src_unpack() {
