@@ -15,7 +15,7 @@ RESTRICT="nostrip"
 LOC="/opt/gwydion-dylan"
 
 DEPEND=""
-RDEPEND="dev-libs/boehm-gc"
+RDEPEND=">=dev-libs/boehm-gc-6.4"
 
 PROVIDE="virtual/gwydion-dylan"
 
