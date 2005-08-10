@@ -15,6 +15,14 @@ KEYWORDS="~x86 ~ppc ~amd64"
 
 IUSE="doc"
 
+# TODO: ghc-6.4 doesn't let us install cabal-1.1.1 correctly. On a clean
+# install, the "make setup" call below causes ghc-6.4 to use cabal-1.0 which
+# is shipped with ghc-6.4 to build setup. As a result cabal2conf doesn't work
+# properly in the end, and probably other things are broken too. The same
+# problem might arise in general when new cabal versions are merged while
+# older ones are still installed. ghc-6.4 does not provide an easy way to
+# hide all Cabal packages. This problem doesn't arise with ghc-6.4.1.
+# Should we let cabal-1.1.1 depend on ghc-6.4.1? What about ghc-6.2 and cabal?
 DEPEND=">=virtual/ghc-6.2"
 
 S="${WORKDIR}/${PN}"
