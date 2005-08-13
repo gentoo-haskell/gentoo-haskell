@@ -15,7 +15,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="virtual/ghc
-	=dev-haskell/harp-${PV}"
+	=dev-haskell/harp-${PV}
+	dev-haskell/happy"
 
 S=${WORKDIR}/haskell-src-exts/src/haskell-src-exts
 
