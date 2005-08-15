@@ -159,6 +159,7 @@ ghc-unregister-pkg() {
 # help-function: reverse a list
 ghc-reverse() {
 	local result
+	local i
 	for i in $1; do
 		result="${i} ${result}"
 	done
@@ -168,17 +169,20 @@ ghc-reverse() {
 # show the packages in a package configuration file
 ghc-listpkg() {
 	local ghcpkgcall
-	if ghc-cabal; then
-		echo $($(ghc-getghcpkg) list -f $1) \
-			| sed \
-				-e "s|^.*${f}:\([^:]*\).*$|\1|" \
-				-e "s|/.*$||" \
-				-e "s|,| |g" -e "s|[()]||g"
-	else
-		echo $($(ghc-getghcpkgbin) -l -f $1) \
-			| cut -f2 -d':' \
-			| sed 's:,: :g'
-	fi
+	local i
+	for i in $*; do
+		if ghc-cabal; then
+			echo $($(ghc-getghcpkg) list -f ${i}) \
+				| sed \
+					-e "s|^.*${i}:\([^:]*\).*$|\1|" \
+					-e "s|/.*$||" \
+					-e "s|,| |g" -e "s|[()]||g"
+		else
+			echo $($(ghc-getghcpkgbin) -l -f ${i}) \
+				| cut -f2 -d':' \
+				| sed 's:,: :g'
+		fi
+	done
 }
 
 # exported function: registers the package-specific package
@@ -193,8 +197,27 @@ ghc-package_pkg_postinst() {
 # be left (necessary check because ghc packages are not
 # versioned)
 ghc-package_pkg_prerm() {
-	has_version "<${CATEGORY}/${PF}" || has_version ">${CATEGORY}/${PF}" \
-		|| ghc-unregister-pkg $(ghc-localpkgconf)
+	local i
+	local packages
+	local localpkgconf
+	localpkgconf="$(ghc-confdir)/$(ghc-localpkgconf)"
+
+	for i in $(ghc-confdir)/${PN}-*.conf; do
+		[[ "${i}" != "${localpkgconf}" ]] && packages="${packages} $(ghc-listpkg ${i})"
+	done
+	# packages contains the packages that are excluded
+
+	if [[ -f ${localpkgconf} ]]; then
+		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
+			if $(echo ${packages} | grep -q ${pkg}); then
+				einfo "Package ${pkg} is protected. "
+			else
+				ebegin "Unregistering ${pkg} "
+				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
+				eend $?
+			fi
+		done
+	fi
 }
 
 EXPORT_FUNCTIONS pkg_postinst pkg_prerm
