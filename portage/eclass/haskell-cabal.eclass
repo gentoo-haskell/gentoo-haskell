@@ -71,8 +71,17 @@ cabal-bootstrap() {
 
 	# We build the setup program using the latest version of
 	# cabal that we have installed
-	cabalpackage=$(best_version cabal)
-	cabalversion=${cabalpackage#dev-haskell/cabal-}
+	# Try if ghc-pkg can determine the latest version.
+	# If not, use portage.
+	cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
+	if [[ $? ]]; then
+		cabalversion=${cabalpackage#Cabal-}
+	else
+		cabalpackage=$(best_version cabal)
+		cabalversion=${cabalpackage#dev-haskell/cabal-}
+		cabalversion=${cabalversion%-r*}
+		cabalversion=${cabalversion%_pre*}
+	fi
 	$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup \
 		|| die "compiling ${setupmodule} failed"
 }
