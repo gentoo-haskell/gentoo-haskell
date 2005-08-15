@@ -1,0 +1,9 @@
+--- NewBinary/NewBinary.cabal	2005-05-05 18:01:21.000000000 +0200
++++ NewBinary/NewBinary.cabal	2005-08-15 23:25:30.000000000 +0200
+@@ -2,5 +2,5 @@
+ Version: 0.1
+ License: AllRightsReserved
+ ghc-options: -fglasgow-exts -cpp -package lang
+-Build-Depends: lang
++Build-Depends: lang,base
+ Exposed-modules: NewBinary.FastMutInt, NewBinary.Binary
