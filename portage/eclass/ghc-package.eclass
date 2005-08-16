@@ -171,15 +171,30 @@ ghc-reregister() {
 	fi
 }
 
-# unregisters ...
+# unregisters a package configuration file
+# protected are all packages that are still contained in
+# another package configuration file
 ghc-unregister-pkg() {
 	local localpkgconf
+	local i
+	local pkg
+	local protected
 	localpkgconf="$(ghc-confdir)/$1"
+
+	for i in $(ghc-confdir)/*.conf; do
+		[[ "${i}" != "${localpkgconf}" ]] && protected="${protected} $(ghc-listpkg ${i})"
+	done
+	# protected now contains the packages that cannot be unregistered yet
+
 	if [[ -f ${localpkgconf} ]]; then
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
-			ebegin "Unregistering ${pkg} "
-			$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
-			eend $?
+			if $(ghc-elem "${pkg}" "${protected}"); then
+				einfo "Package ${pkg} is protected."
+			else
+				ebegin "Unregistering ${pkg} "
+				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
+				eend $?
+			fi
 		done
 	fi
 }
@@ -228,33 +243,12 @@ ghc-package_pkg_postinst() {
 	ghc-register-pkg $(ghc-localpkgconf)
 }
 
-# exported function: unregisters the package-specific
-# package configuration file, under the condition that
-# after removal, no other instances of the package will
-# be left (necessary check because ghc packages are not
-# versioned)
+# exported function: unregisters the package-specific package
+# configuration file; a package contained therein is unregistered
+# only if it the same package is not also contained in another
+# package configuration file ...
 ghc-package_pkg_prerm() {
-	local i
-	local packages
-	local localpkgconf
-	localpkgconf="$(ghc-confdir)/$(ghc-localpkgconf)"
-
-	for i in $(ghc-confdir)/${PN}-*.conf; do
-		[[ "${i}" != "${localpkgconf}" ]] && packages="${packages} $(ghc-listpkg ${i})"
-	done
-	# packages contains the packages that are excluded
-
-	if [[ -f ${localpkgconf} ]]; then
-		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
-			if $(ghc-elem "${pkg}" "${packages}"); then
-				einfo "Package ${pkg} is protected."
-			else
-				ebegin "Unregistering ${pkg} "
-				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
-				eend $?
-			fi
-		done
-	fi
+	ghc-unregister-pkg $(ghc-localpkgconf)
 }
 
 EXPORT_FUNCTIONS pkg_postinst pkg_prerm
