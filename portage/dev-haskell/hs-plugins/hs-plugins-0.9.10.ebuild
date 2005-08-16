@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base ghc-package
+inherit ghc-package
 
 DESCRIPTION="Dynamically Loaded Haskell Plugins"
 HOMEPAGE="http://www.cse.unsw.edu.au/~dons/hs-plugins/"
@@ -23,17 +23,14 @@ src_unpack() {
 	# for package management
 	sed -i 's:\$(GHC_PKG) -u:\${GHC_PKGF} -u:' ${S}/Makefile
 
-	# specify an exact version of Cabal otherwise ghc complains when it
-	# matches multiple versions. Should be fixed upstream in the next version.
-	cabalpackage=$(best_version cabal)
-	cabalversion=${cabalpackage#dev-haskell/cabal-}
+	cabalversion=$(ghc-bestcabalversion)
 
-	sed -i "s:-package Cabal:-package Cabal-${cabalversion}:" \
+	sed -i "s:-package Cabal:-package ${cabalversion}:" \
 		${S}/src/plugins/Makefile
 
 	# Also specify an exact version of Cabal otherwise ghc-pkg defaults it to
 	# the minimum version which is just wrong. Should be fixed in ghc-6.4.1
-	sed -i "s/depends:\(.*\) Cabal/depends:\1 Cabal-${cabalversion}/" \
+	sed -i "s/depends:\(.*\) Cabal/depends:\1 ${cabalversion}/" \
 		${S}/src/plugins/plugins.conf.in.cpp
 }
 
