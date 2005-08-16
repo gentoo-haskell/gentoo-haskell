@@ -57,7 +57,6 @@ fi
 
 cabal-bootstrap() {
 	local setupmodule
-	local cabalpackage
 	local cabalversion
 	if [[ -f ${S}/Setup.lhs ]]; then
 		setupmodule=${S}/Setup.lhs
@@ -71,18 +70,9 @@ cabal-bootstrap() {
 
 	# We build the setup program using the latest version of
 	# cabal that we have installed
-	# Try if ghc-pkg can determine the latest version.
-	# If not, use portage.
-	cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
-	if [[ $? == 0 ]]; then
-		cabalversion=${cabalpackage#Cabal-}
-	else
-		cabalpackage=$(best_version cabal)
-		cabalversion=${cabalpackage#dev-haskell/cabal-}
-		cabalversion=${cabalversion%-r*}
-		cabalversion=${cabalversion%_pre*}
-	fi
-	$(ghc-getghc) -package Cabal-${cabalversion} ${setupmodule} -o setup \
+	cabalversion=$(ghc-bestcabalversion)
+	einfo "Using ${cabalversion}."
+	$(ghc-getghc) -package C${cabalversion} ${setupmodule} -o setup \
 		|| die "compiling ${setupmodule} failed"
 }
 

@@ -58,6 +58,29 @@ ghc-cabal() {
 	version_is_at_least "6.4" "$(ghc-version)"
 }
 
+# return the best version of the Cabal library that is available
+ghc-bestcabalversion() {
+	local cabalpackage
+	local cabalversion
+	if ghc-cabal; then
+		# Try if ghc-pkg can determine the latest version.
+		# If not, use portage.
+		cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
+		if [[ $? -eq 0 ]]; then
+			cabalversion=${cabalpackage#Cabal-}
+		else
+			cabalpackage=$(best_version cabal)
+			cabalversion=${cabalpackage#dev-haskell/cabal-}
+			cabalversion=${cabalversion%-r*}
+			cabalversion=${cabalversion%_pre*}
+		fi
+		echo Cabal-${cabalversion}
+	else
+		# older ghc's don't support package versioning
+		echo Cabal
+	fi
+}
+
 # returns the library directory
 _GHC_LIBDIR_CACHE=""
 ghc-libdir() {
