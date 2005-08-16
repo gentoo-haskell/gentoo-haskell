@@ -74,7 +74,7 @@ cabal-bootstrap() {
 	# Try if ghc-pkg can determine the latest version.
 	# If not, use portage.
 	cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
-	if [[ $? ]]; then
+	if [[ $? == 0 ]]; then
 		cabalversion=${cabalpackage#Cabal-}
 	else
 		cabalpackage=$(best_version cabal)
