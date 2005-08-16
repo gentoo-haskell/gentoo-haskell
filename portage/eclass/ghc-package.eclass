@@ -50,7 +50,10 @@ ghc-version() {
 	echo "${_GHC_VERSION_CACHE}"
 }
 
-# returns true for ghc >= 6.4
+# this function can be used to determine if ghc itself
+# uses the Cabal package format; it has nothing to do
+# with the Cabal libraries ... ghc uses the Cabal package
+# format since version 6.4
 ghc-cabal() {
 	version_is_at_least "6.4" "$(ghc-version)"
 }
