@@ -29,11 +29,13 @@ ghc-getghcpkg() {
 # returns the name of the ghc-pkg binary (ghc-pkg
 # itself usually is a shell script, and we have to
 # bypass the script under certain circumstances);
-# for Cabal, we add the global package config file,
-# because for some reason that's required
+# for Cabal, we add an empty global package config file,
+# because for some reason the global package file
+# must be specified
 ghc-getghcpkgbin() {
 	if ghc-cabal; then
-		echo $(ghc-libdir)/"ghc-pkg.bin" "--global-conf=$(ghc-libdir)/package.conf"
+		echo '[]' > ${T}/empty.conf
+		echo $(ghc-libdir)/"ghc-pkg.bin" "--global-conf=${T}/empty.conf"
 	else
 		echo $(ghc-libdir)/"ghc-pkg.bin"
 	fi
