@@ -166,6 +166,15 @@ ghc-reverse() {
 	echo ${result}
 }
 
+# help-function: element-check
+ghc-elem() {
+	local i
+	for i in $2; do
+		[[ "$1" == "${i}" ]] && return 0
+	done
+	return 1
+}
+
 # show the packages in a package configuration file
 ghc-listpkg() {
 	local ghcpkgcall
@@ -209,8 +218,8 @@ ghc-package_pkg_prerm() {
 
 	if [[ -f ${localpkgconf} ]]; then
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
-			if $(echo ${packages} | grep -q ${pkg}); then
-				einfo "Package ${pkg} is protected. "
+			if $(ghc-elem "${pkg}" "${packages}"); then
+				einfo "Package ${pkg} is protected."
 			else
 				ebegin "Unregistering ${pkg} "
 				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
