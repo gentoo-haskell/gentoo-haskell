@@ -20,7 +20,7 @@ DEPEND=">=virtual/ghc-5.04
 				 >=x11-libs/gtksourceview-0.6
 				 >=gnome-base/gconf-2 )
 		mozilla? ( >=www-client/mozilla-1.4 )
-		doc? ( >=dev-haskell/haddock-0.6 )"
+		doc? ( =dev-haskell/haddock-0.6* )"
 
 pkg_setup() {
 	# need this much memory (in MBytes) (does *not* check swap)
