@@ -1,0 +1,24 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+inherit haskell-cabal
+
+DESCRIPTION="A simple test for the (un-)register functions"
+HOMEPAGE=""
+SRC_URI=""
+
+LICENSE="GPL"
+SLOT="0"
+KEYWORDS="~x86"
+IUSE=""
+
+DEPEND="virtual/ghc"
+
+S=${WORKDIR}
+
+src_unpack() {
+	cp ${FILESDIR}/test-ghcpkg-upgrade.cabal ${S}
+	cp ${FILESDIR}/Setup.hs ${S}
+	cp ${FILESDIR}/Dummy.hs ${S}
+}
