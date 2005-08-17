@@ -9,9 +9,6 @@
 
 inherit versionator
 
-ECLASS="ghc-package"
-INHERITED="${INHERITED} ${ECLASS}"
-
 # promote /opt/ghc/bin to a better position in the search path
 PATH="/usr/bin:/opt/ghc/bin:${PATH}"
 
@@ -127,7 +124,7 @@ ghc-setup-pkg() {
 # fixes the library and import directories path
 # of the package configuration file
 ghc-fixlibpath() {
-    sed -i "s|$1|$(ghc-libdir)|g" ${S}/$(ghc-localpkgconf)
+	sed -i "s|$1|$(ghc-libdir)|g" ${S}/$(ghc-localpkgconf)
 	if [[ -n "$2" ]]; then
 		sed -i "s|$2|$(ghc-libdir)/imports|g" ${S}/$(ghc-localpkgconf)
 	fi
