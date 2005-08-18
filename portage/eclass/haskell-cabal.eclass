@@ -130,10 +130,15 @@ cabal-pkg() {
 	# This could possibly fail if the .setup-config does not exist (eg if it
 	# is not using Distribution.Simple) or if the .setup-config was written by
 	# a different version of cabal to the one that cabal2conf was built with.
-	cabal-cabal2conf > ${conffilename} || die "cabal2conf failed"
-
-	ghc-setup-pkg ${conffilename}
-	ghc-install-pkg
+	cabal-cabal2conf > ${conffilename}
+	case $? in
+		0)
+		ghc-setup-pkg ${conffilename}
+		ghc-install-pkg
+		;;
+		1) die "cabal2conf failed";;
+		2) einfo "No packages to register";;
+	esac
 }
 
 # exported function: cabal-style bootstrap configure and compile

@@ -26,6 +26,7 @@ module Main (main) where
 -- stdlib imports. compatible with ghc-6.2.2
 import Control.Monad ( unless )
 import System.Directory ( doesFileExist )
+import System.Exit
 
 -- cabal imports. should be compatible with Cabal-0.5 but not tested
 import qualified Distribution.Simple.Utils as Cabal ( defaultPackageDesc )                               
@@ -41,11 +42,11 @@ main = do
   pkg_descr <- Cabal.readPackageDescription pkg_descr_file
   -- read ./setup configure settings from .setup-config
   lbi <- Cabal.getPersistBuildConfig
-  unless (Cabal.hasLibs pkg_descr) (Cabal.die "There are no packages to be registered")
-  -- writes the package file to .installed-pkg-config
-  Cabal.writeInstalledConfig pkg_descr lbi
-  successful <- doesFileExist Cabal.installedPkgConfigFile
-  unless successful $ Cabal.die "Package file didn't get created as it should have"
-  packageFile <- readFile Cabal.installedPkgConfigFile
-  putStr packageFile
+  if Cabal.hasLibs pkg_descr then (do
+    -- writes the package file to .installed-pkg-config
+    Cabal.writeInstalledConfig pkg_descr lbi
+    successful <- doesFileExist Cabal.installedPkgConfigFile
+    unless successful $ Cabal.die "Package file didn't get created as it should have"
+    packageFile <- readFile Cabal.installedPkgConfigFile
+    putStr packageFile) else exitWith (ExitFailure 2)
 
