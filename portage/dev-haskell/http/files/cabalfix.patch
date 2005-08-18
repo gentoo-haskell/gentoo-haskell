@@ -1,0 +1,11 @@
+--- http-20050505/http.cabal	2005-05-05 18:19:59.000000000 +0200
++++ http-20050505/http.cabal	2005-08-18 14:09:45.000000000 +0200
+@@ -7,7 +7,7 @@
+ Maintainer: Bjorn Bringert <bjorn@bringert.net>
+ Homepage: http://www.haskell.org/http/
+ Description: A library for client-side HTTP
+-Build-depends: network, parsec, Crypto
++Build-depends: base, network, parsec, Crypto
+ Exposed-modules: 
+ 		 Network.HTTP, 
+ 		 Network.Browser
