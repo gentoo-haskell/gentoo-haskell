@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/haxml-1.12.ebuild,v 1.2 2005/04/05 16:23:19 kosmikus Exp $
 
 CABAL_FEATURES="haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN=HaXml
 MY_P=${MY_PN}-${PV}
@@ -23,6 +23,14 @@ IUSE="doc"
 DEPEND=">=virtual/ghc-6.2"
 
 S=${WORKDIR}/${MY_P}
+
+src_unpack() {
+	base_src_unpack
+
+	cd ${S}
+
+	rm -rf src/Text/PrettyPrint
+}
 
 src_install() {
 	cabal_src_install
