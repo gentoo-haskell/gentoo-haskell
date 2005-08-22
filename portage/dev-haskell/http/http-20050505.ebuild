@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/ghc"
+DEPEND="virtual/ghc
+	dev-haskell/crypto"
 
 src_unpack() {
 	base_src_unpack
