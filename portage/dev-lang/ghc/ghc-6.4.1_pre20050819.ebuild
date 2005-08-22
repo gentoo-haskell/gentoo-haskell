@@ -105,6 +105,7 @@ src_unpack() {
 	# mangler doesn't accept its output; yes, the 6.2 version
 	# should do ...
 	cd ${S}/ghc
+
 	pushd driver
 	setup_cflags
 
@@ -113,12 +114,6 @@ src_unpack() {
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
 	popd
 
-	cd docs/users_guide/
-	# use versionator or something
-	# epatch ${FILESDIR}/ghc-6.4-docbook.patch
-
-	cd ${S}/libraries
-	sed -i -e "s|I/O|I\\\\/O|" template-haskell/Language/Haskell/TH/Syntax.hs
 }
 
 src_compile() {
