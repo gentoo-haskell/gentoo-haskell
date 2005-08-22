@@ -10,7 +10,7 @@ HOMEPAGE="http://haskell.org/crypto/"
 SRC_URI="http://dev.gentoo.org/~kosmikus/${P}.tar.gz"
 
 LICENSE="BSD GPL"
-SLOT="${PV}"
+SLOT="${PV%_pre*}"
 KEYWORDS="~x86"
 IUSE=""
 

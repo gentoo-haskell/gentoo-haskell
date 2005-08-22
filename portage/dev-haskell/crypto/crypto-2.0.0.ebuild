@@ -19,5 +19,5 @@ S=${WORKDIR}/${PN}
 
 src_unpack() {
 	base_src_unpack
-	sed -i 's/Build-Depends:/Build-Depends: haskell98,/' ${S}/crypto.cabal
+	sed -i 's/Build-Depends:/Build-Depends: base, haskell98, mtl, QuickCheck, /' ${S}/crypto.cabal
 }
