@@ -51,7 +51,7 @@ src_compile() {
 	# otherwise ghc would try to write to ${FILESDIR} which is not allowed.
 	$(ghc-getghc) ${FILESDIR}/cabal2conf.hs -o ${S}/cabal2conf \
 		-odir ${TMP} -hidir ${TMP} \
-		-idist/build -Ldist/build -lHSCabal-${MY_PV} \
+		-idist/build -Ldist/build -lHSCabal-${MY_PV} -package unix \
 		|| die "building cabal2conf tool failed"
 }
 
