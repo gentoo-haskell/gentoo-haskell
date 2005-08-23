@@ -130,6 +130,9 @@ src_compile() {
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
+	# hide Cabal
+	echo "SRC_HC_OPTS+=$(ghc-hidecabal)" >> mk/build.mk
+
 	# determine what to do with documentation
 	if use doc; then
 		mydoc="html"

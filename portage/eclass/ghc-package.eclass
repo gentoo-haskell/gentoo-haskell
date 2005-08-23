@@ -78,6 +78,15 @@ ghc-bestcabalversion() {
 	fi
 }
 
+# hide all currently installed Cabal versions; this is required
+# with ghc-6.4 to bootstrap ghc correctly
+ghc-hidecabal() {
+	local pkg
+	for pkg in $(ghc-listpkg $(ghc-libdir)/package.conf); do
+		[[ ${pkg} == Cabal-* ]] && echo "-hide-package ${pkg}"
+	done
+}
+
 # returns the library directory
 _GHC_LIBDIR_CACHE=""
 ghc-libdir() {
