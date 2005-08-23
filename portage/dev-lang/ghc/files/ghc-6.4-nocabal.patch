@@ -1,0 +1,56 @@
+diff -Naur ghc-6.4.orig/ghc/compiler/Makefile ghc-6.4/ghc/compiler/Makefile
+--- ghc-6.4.orig/ghc/compiler/Makefile	2005-08-23 00:06:42.000000000 +0200
++++ ghc-6.4/ghc/compiler/Makefile	2005-08-23 00:07:37.000000000 +0200
+@@ -465,7 +465,7 @@
+ endif
+ endif
+ 
+-ifneq "$(findstring YES, $(bootstrapped) $(ghc_ge_603))" ""
++ifneq "$(findstring YES, $(bootstrapped))" ""
+ SRC_HC_OPTS += -package Cabal
+ endif
+ 
+diff -Naur ghc-6.4.orig/ghc/lib/compat/Makefile ghc-6.4/ghc/lib/compat/Makefile
+--- ghc-6.4.orig/ghc/lib/compat/Makefile	2005-08-23 00:06:42.000000000 +0200
++++ ghc-6.4/ghc/lib/compat/Makefile	2005-08-23 00:11:33.000000000 +0200
+@@ -36,17 +36,17 @@
+ 
+ ifeq "$(ghc_ge_603)" "YES"
+ # These modules are all provided in GHC 6.3+
+-EXCLUDED_SRCS += \
+-	System/Directory/Internals.hs \
+-	Distribution/Compat/ReadP.hs \
+-	Distribution/Extension.hs \
+-	Distribution/GetOpt.hs \
+-	Distribution/InstalledPackageInfo.hs \
+-	Distribution/License.hs \
+-	Distribution/Package.hs \
+-	Distribution/ParseUtils.hs \
+-	Distribution/Setup.hs \
+-	Distribution/Version.hs
++EXCLUDED_SRCS += \
++	System/Directory/Internals.hs
++# 	Distribution/Compat/ReadP.hs \
++# 	Distribution/Extension.hs \
++# 	Distribution/GetOpt.hs \
++# 	Distribution/InstalledPackageInfo.hs \
++# 	Distribution/License.hs \
++# 	Distribution/Package.hs \
++# 	Distribution/ParseUtils.hs \
++# 	Distribution/Setup.hs \
++# 	Distribution/Version.hs
+ endif
+ 
+ # Some explicit dependencies
+diff -Naur ghc-6.4.orig/ghc/utils/ghc-pkg/Makefile ghc-6.4/ghc/utils/ghc-pkg/Makefile
+--- ghc-6.4.orig/ghc/utils/ghc-pkg/Makefile	2005-08-23 00:06:42.000000000 +0200
++++ ghc-6.4/ghc/utils/ghc-pkg/Makefile	2005-08-23 00:10:26.000000000 +0200
+@@ -33,7 +33,7 @@
+ endif
+ 
+ ifeq "$(ghc_ge_603)" "YES"
+-SRC_HC_OPTS +=  -package Cabal
++# SRC_HC_OPTS +=  -package Cabal
+ endif
+ 
+ # On Windows, ghc-pkg is a standalone program

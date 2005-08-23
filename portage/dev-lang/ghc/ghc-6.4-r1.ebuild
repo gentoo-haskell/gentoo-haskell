@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.ebuild,v 1.7 2005/07/09 18:13:32 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.ebuild,v 1.8 2005/08/17 14:41:32 dcoutts Exp $
 
 # We abandon virtual/ghc in favor of || dependencies.
 # Here's a brief explanation of the new bootstrap logic:
@@ -34,7 +34,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 # re-add ~ppc64 once dependencies are fulfilled
-KEYWORDS="-alpha ~amd64 ~ppc -sparc ~x86"
+KEYWORDS="-alpha ~amd64 ~ppc ~sparc ~x86"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -97,12 +97,12 @@ setup_cflags() {
 src_unpack() {
 	base_src_unpack
 
-	# if use ppc64; then
-	# 	epatch "${FILESDIR}/ghc-6.4-powerpc.patch"
-	# fi
+	if use ppc64; then
+		epatch "${FILESDIR}/ghc-6.4-powerpc.patch"
+	fi
 
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-6.4.1-nocabal.patch"
+	epatch "${FILESDIR}/${PN}-6.4-nocabal.patch"
 	rm "${S}"/ghc/lib/compat/System/Directory/Internals*
 
 	# hardened-gcc needs to be disabled, because the
@@ -117,6 +117,12 @@ src_unpack() {
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
 	popd
 
+	cd docs/users_guide/
+	# use versionator or something
+	# epatch "${FILESDIR}/ghc-6.4-docbook.patch"
+
+	cd "${S}/libraries"
+	sed -i -e "s|I/O|I\\\\/O|" template-haskell/Language/Haskell/TH/Syntax.hs
 }
 
 src_compile() {
