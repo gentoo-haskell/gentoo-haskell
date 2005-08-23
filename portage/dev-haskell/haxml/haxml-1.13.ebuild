@@ -26,9 +26,8 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	base_src_unpack
-
+	# Text.PrettyPrint is already provided by ghc and produces a conflict
 	cd ${S}
-
 	rm -rf src/Text/PrettyPrint
 }
 
