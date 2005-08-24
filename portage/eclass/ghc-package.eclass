@@ -83,7 +83,7 @@ ghc-bestcabalversion() {
 ghc-hidecabal() {
 	local pkg
 	for pkg in $(ghc-listpkg $(ghc-libdir)/package.conf); do
-		[[ ${pkg} == Cabal-* ]] && echo "-hide-package ${pkg}"
+		[[ ${pkg} == Cabal-* ]] && echo -n " -hide-package ${pkg}"
 	done
 }
 
