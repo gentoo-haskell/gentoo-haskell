@@ -1,6 +1,6 @@
-diff -Naur ghc-6.4.orig/ghc/compiler/Makefile ghc-6.4/ghc/compiler/Makefile
---- ghc-6.4.orig/ghc/compiler/Makefile	2005-08-23 00:06:42.000000000 +0200
-+++ ghc-6.4/ghc/compiler/Makefile	2005-08-23 00:07:37.000000000 +0200
+diff -Naur ghc-6.4-orig/ghc/compiler/Makefile ghc-6.4/ghc/compiler/Makefile
+--- ghc-6.4-orig/ghc/compiler/Makefile	2005-08-31 20:27:50.000000000 +0200
++++ ghc-6.4/ghc/compiler/Makefile	2005-08-31 20:30:15.000000000 +0200
 @@ -465,7 +465,7 @@
  endif
  endif
@@ -10,14 +10,21 @@ diff -Naur ghc-6.4.orig/ghc/compiler/Makefile ghc-6.4/ghc/compiler/Makefile
  SRC_HC_OPTS += -package Cabal
  endif
  
-diff -Naur ghc-6.4.orig/ghc/lib/compat/Makefile ghc-6.4/ghc/lib/compat/Makefile
---- ghc-6.4.orig/ghc/lib/compat/Makefile	2005-08-23 00:06:42.000000000 +0200
-+++ ghc-6.4/ghc/lib/compat/Makefile	2005-08-23 00:11:33.000000000 +0200
-@@ -36,17 +36,17 @@
+@@ -767,6 +767,7 @@
+ 	$(MKDEPENDHS) -M -optdep-f -optdep.depend-BASE $(foreach way,$(WAYS),-optdep-s -optdep$(way)) $(foreach obj,$(MKDEPENDHS_OBJ_SUFFICES),-osuf $(obj)) $(MKDEPENDHS_OPTS) $(filter-out -split-objs, $(MKDEPENDHS_HC_OPTS)) $(HS_SRCS)
+ endif
+ 	$(MKDEPENDC) -f .depend-BASE $(MKDEPENDC_OPTS) $(foreach way,$(WAYS),-s $(way)) -- $(CC_OPTS) -- $(C_SRCS) 
++	$(SED) -i -e 's:^.*/lib/compat.*$$::' .depend-BASE
+ 	$(PERL) -pe 'binmode(stdin); binmode(stdout); s@^(\S*\.o)@stage$(stage)/$$1@g; s@(\S*\.hi)@stage$(stage)/$$1@g' <.depend-BASE >.depend-$(stage)
+ # The binmode stuff tells perl not to add stupid ^M's to the output
  
+diff -Naur ghc-6.4-orig/ghc/lib/compat/Makefile ghc-6.4/ghc/lib/compat/Makefile
+--- ghc-6.4-orig/ghc/lib/compat/Makefile	2005-08-31 20:27:49.000000000 +0200
++++ ghc-6.4/ghc/lib/compat/Makefile	2005-08-31 20:31:01.000000000 +0200
+@@ -37,16 +37,16 @@
  ifeq "$(ghc_ge_603)" "YES"
  # These modules are all provided in GHC 6.3+
--EXCLUDED_SRCS += \
+ EXCLUDED_SRCS += \
 -	System/Directory/Internals.hs \
 -	Distribution/Compat/ReadP.hs \
 -	Distribution/Extension.hs \
@@ -28,23 +35,22 @@ diff -Naur ghc-6.4.orig/ghc/lib/compat/Makefile ghc-6.4/ghc/lib/compat/Makefile
 -	Distribution/ParseUtils.hs \
 -	Distribution/Setup.hs \
 -	Distribution/Version.hs
-+EXCLUDED_SRCS += \
 +	System/Directory/Internals.hs
-+# 	Distribution/Compat/ReadP.hs \
-+# 	Distribution/Extension.hs \
-+# 	Distribution/GetOpt.hs \
-+# 	Distribution/InstalledPackageInfo.hs \
-+# 	Distribution/License.hs \
-+# 	Distribution/Package.hs \
-+# 	Distribution/ParseUtils.hs \
-+# 	Distribution/Setup.hs \
-+# 	Distribution/Version.hs
++#	Distribution/Compat/ReadP.hs \
++#	Distribution/Extension.hs \
++#	Distribution/GetOpt.hs \
++#	Distribution/InstalledPackageInfo.hs \
++#	Distribution/License.hs \
++#	Distribution/Package.hs \
++#	Distribution/ParseUtils.hs \
++#	Distribution/Setup.hs \
++#	Distribution/Version.hs
  endif
  
  # Some explicit dependencies
-diff -Naur ghc-6.4.orig/ghc/utils/ghc-pkg/Makefile ghc-6.4/ghc/utils/ghc-pkg/Makefile
---- ghc-6.4.orig/ghc/utils/ghc-pkg/Makefile	2005-08-23 00:06:42.000000000 +0200
-+++ ghc-6.4/ghc/utils/ghc-pkg/Makefile	2005-08-23 00:10:26.000000000 +0200
+diff -Naur ghc-6.4-orig/ghc/utils/ghc-pkg/Makefile ghc-6.4/ghc/utils/ghc-pkg/Makefile
+--- ghc-6.4-orig/ghc/utils/ghc-pkg/Makefile	2005-08-31 20:27:50.000000000 +0200
++++ ghc-6.4/ghc/utils/ghc-pkg/Makefile	2005-08-31 20:31:48.000000000 +0200
 @@ -33,7 +33,7 @@
  endif
  

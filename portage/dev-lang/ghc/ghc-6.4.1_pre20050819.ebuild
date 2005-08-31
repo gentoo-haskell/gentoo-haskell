@@ -97,26 +97,20 @@ setup_cflags() {
 src_unpack() {
 	base_src_unpack
 
-	# if use ppc64; then
-	# 	epatch "${FILESDIR}/ghc-6.4-powerpc.patch"
-	# fi
+	# TODO: test if ppc/ppc64 works without patch now ...
 
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-6.4.1-nocabal.patch"
-	# rm "${S}"/ghc/lib/compat/System/Directory/Internals*
 
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
 	# should do ...
-	cd "${S}/ghc"
-	pushd driver
+	cd "${S}/ghc/driver"
 	setup_cflags
 
 	epatch "${FILESDIR}/${PN}-6.2.hardened.patch"
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghc/ghc.sh
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
-	popd
-
 }
 
 src_compile() {

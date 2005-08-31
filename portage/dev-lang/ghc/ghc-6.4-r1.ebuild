@@ -97,29 +97,21 @@ setup_cflags() {
 src_unpack() {
 	base_src_unpack
 
-	if use ppc64; then
-		epatch "${FILESDIR}/ghc-6.4-powerpc.patch"
-	fi
+	# This patch is needed for both ppc & ppc64
+	epatch ${FILESDIR}/ghc-6.4-powerpc.patch
 
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-6.4-nocabal.patch"
-	rm "${S}"/ghc/lib/compat/System/Directory/Internals*
 
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
 	# should do ...
-	cd "${S}/ghc"
-	pushd driver
+	cd "${S}/ghc/driver"
 	setup_cflags
 
 	epatch "${FILESDIR}/${PN}-6.2.hardened.patch"
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghc/ghc.sh
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
-	popd
-
-	cd docs/users_guide/
-	# use versionator or something
-	# epatch "${FILESDIR}/ghc-6.4-docbook.patch"
 
 	cd "${S}/libraries"
 	sed -i -e "s|I/O|I\\\\/O|" template-haskell/Language/Haskell/TH/Syntax.hs
@@ -136,8 +128,11 @@ src_compile() {
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
-	# hide Cabal
-	echo "SRC_HC_OPTS+=$(ghc-hidecabal)" >> mk/build.mk
+	# hide cabal
+	if ghc-cabal; then
+		echo "GHC+=-ignore-package Cabal" >> mk/build.mk
+		echo "HC+=-ignore-package Cabal" >> mk/build.mk
+	fi
 
 	# determine what to do with documentation
 	if use doc; then
