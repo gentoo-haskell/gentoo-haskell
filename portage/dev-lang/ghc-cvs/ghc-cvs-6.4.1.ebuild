@@ -28,6 +28,7 @@ ECVS_AUTH="pserver"
 # ECVS_RUNAS="`whoami`"
 ECVS_PASS="cvs"
 ECVS_MODULE="fptools"
+ECVS_BRANCH="ghc-6.4-branch"
 
 IUSE="doc java opengl"
 
