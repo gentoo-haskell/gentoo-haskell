@@ -131,7 +131,10 @@ src_compile() {
 	echo '# Gentoo changes' > mk/build.mk
 
 	# hide Cabal
-	ghc-cabal && echo "GHC+=-ignore-package Cabal" >> mk/build.mk
+	if ghc-cabal; then
+		echo "GHC+=-ignore-package Cabal" >> mk/build.mk
+		echo "HC+=-ignore-package Cabal" >> mk/build.mk
+	fi
 
 	# determine what to do with documentation
 	if use doc; then
