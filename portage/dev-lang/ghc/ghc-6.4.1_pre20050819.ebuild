@@ -103,7 +103,7 @@ src_unpack() {
 
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-6.4.1-nocabal.patch"
-	rm "${S}"/ghc/lib/compat/System/Directory/Internals*
+	# rm "${S}"/ghc/lib/compat/System/Directory/Internals*
 
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
@@ -131,7 +131,7 @@ src_compile() {
 	echo '# Gentoo changes' > mk/build.mk
 
 	# hide Cabal
-	echo "SRC_HC_OPTS+=$(ghc-hidecabal)" >> mk/build.mk
+	ghc-cabal && echo "GHC+=-ignore-package Cabal" >> mk/build.mk
 
 	# determine what to do with documentation
 	if use doc; then

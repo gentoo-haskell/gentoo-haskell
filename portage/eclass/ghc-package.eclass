@@ -82,9 +82,11 @@ ghc-bestcabalversion() {
 # with ghc-6.4 to bootstrap ghc correctly
 ghc-hidecabal() {
 	local pkg
+	local r
 	for pkg in $(ghc-listpkg $(ghc-libdir)/package.conf); do
-		[[ ${pkg} == Cabal-* ]] && echo -n " -hide-package ${pkg}"
+		[[ ${pkg} == Cabal-* ]] && r="${r} -hide-package ${pkg}"
 	done
+	echo "${r}"
 }
 
 # returns the library directory
