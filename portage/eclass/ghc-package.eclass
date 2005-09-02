@@ -167,12 +167,11 @@ ghc-register-pkg() {
 # re-adds all available .conf files to the global
 # package conf file, to be used on a ghc reinstallation
 ghc-reregister() {
-	einfo "Re-adding packages ..."
-	einfo "(This may cause several warnings, but they should be harmless.)"
+	einfo "Re-adding packages (may cause several harmless warnings) ..."
 	if [ -d "$(ghc-confdir)" ]; then
 		pushd $(ghc-confdir) > /dev/null
 		for conf in *.conf; do
-			einfo "Processing ${conf} ..."
+#			einfo "Processing ${conf} ..."
 			ghc-register-pkg ${conf}
 		done
 		popd > /dev/null
