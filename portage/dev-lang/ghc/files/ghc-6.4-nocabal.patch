@@ -1,16 +1,20 @@
 diff -Naur ghc-6.4-orig/ghc/compiler/Makefile ghc-6.4/ghc/compiler/Makefile
 --- ghc-6.4-orig/ghc/compiler/Makefile	2005-08-31 20:27:50.000000000 +0200
-+++ ghc-6.4/ghc/compiler/Makefile	2005-08-31 20:30:15.000000000 +0200
-@@ -465,7 +465,7 @@
++++ ghc-6.4/ghc/compiler/Makefile	2005-08-31 21:10:28.000000000 +0200
+@@ -465,9 +465,11 @@
  endif
  endif
  
 -ifneq "$(findstring YES, $(bootstrapped) $(ghc_ge_603))" ""
 +ifneq "$(findstring YES, $(bootstrapped))" ""
++ifneq "$(stage)" "1"
  SRC_HC_OPTS += -package Cabal
  endif
++endif
  
-@@ -767,6 +767,7 @@
+ SRC_CC_OPTS += -Iparser -I. -O
+ SRC_HC_OPTS += -recomp $(GhcHcOpts) $(GhcStage$(stage)HcOpts)
+@@ -767,6 +769,7 @@
  	$(MKDEPENDHS) -M -optdep-f -optdep.depend-BASE $(foreach way,$(WAYS),-optdep-s -optdep$(way)) $(foreach obj,$(MKDEPENDHS_OBJ_SUFFICES),-osuf $(obj)) $(MKDEPENDHS_OPTS) $(filter-out -split-objs, $(MKDEPENDHS_HC_OPTS)) $(HS_SRCS)
  endif
  	$(MKDEPENDC) -f .depend-BASE $(MKDEPENDC_OPTS) $(foreach way,$(WAYS),-s $(way)) -- $(CC_OPTS) -- $(C_SRCS) 

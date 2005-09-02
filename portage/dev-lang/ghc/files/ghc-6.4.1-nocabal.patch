@@ -1,16 +1,20 @@
 diff -Naur ghc-6.4.1.20050819-orig/ghc/compiler/Makefile ghc-6.4.1.20050819/ghc/compiler/Makefile
---- ghc-6.4.1.20050819-orig/ghc/compiler/Makefile	2005-08-31 14:06:05.000000000 +0200
-+++ ghc-6.4.1.20050819/ghc/compiler/Makefile	2005-08-31 14:07:26.000000000 +0200
-@@ -475,7 +475,7 @@
+--- ghc-6.4.1.20050819-orig/ghc/compiler/Makefile	2005-09-01 11:05:00.000000000 +0200
++++ ghc-6.4.1.20050819/ghc/compiler/Makefile	2005-09-01 11:06:05.000000000 +0200
+@@ -475,9 +475,11 @@
  endif
  endif
  
 -ifneq "$(findstring YES, $(bootstrapped) $(ghc_ge_603))" ""
 +ifneq "$(findstring YES, $(bootstrapped))" ""
++ifneq "$(stage)" "1"
  SRC_HC_OPTS += -package Cabal
  endif
++endif
  
-@@ -763,6 +763,7 @@
+ ifeq "$(ghc_ge_603)" "YES"
+ # Ignore lang, to avoid potential clash with the Generics module if
+@@ -763,6 +765,7 @@
  	$(MKDEPENDHS) -M -optdep-f -optdep.depend-BASE $(foreach way,$(WAYS),-optdep-s -optdep$(way)) $(foreach obj,$(MKDEPENDHS_OBJ_SUFFICES),-osuf $(obj)) $(MKDEPENDHS_OPTS) $(filter-out -split-objs, $(MKDEPENDHS_HC_OPTS)) $(HS_SRCS)
  endif
  	$(MKDEPENDC) -f .depend-BASE $(MKDEPENDC_OPTS) $(foreach way,$(WAYS),-s $(way)) -- $(CC_OPTS) -- $(C_SRCS) 
@@ -19,8 +23,8 @@ diff -Naur ghc-6.4.1.20050819-orig/ghc/compiler/Makefile ghc-6.4.1.20050819/ghc/
  # The binmode stuff tells perl not to add stupid ^M's to the output
  
 diff -Naur ghc-6.4.1.20050819-orig/ghc/lib/compat/Makefile ghc-6.4.1.20050819/ghc/lib/compat/Makefile
---- ghc-6.4.1.20050819-orig/ghc/lib/compat/Makefile	2005-08-31 14:06:05.000000000 +0200
-+++ ghc-6.4.1.20050819/ghc/lib/compat/Makefile	2005-08-31 14:06:38.000000000 +0200
+--- ghc-6.4.1.20050819-orig/ghc/lib/compat/Makefile	2005-09-01 11:05:00.000000000 +0200
++++ ghc-6.4.1.20050819/ghc/lib/compat/Makefile	2005-09-01 11:05:19.000000000 +0200
 @@ -42,28 +42,28 @@
  ifeq "$(ghc_ge_603)" "YES"
  # These modules are all provided in GHC 6.3+
@@ -71,8 +75,8 @@ diff -Naur ghc-6.4.1.20050819-orig/ghc/lib/compat/Makefile ghc-6.4.1.20050819/gh
  
  # Some explicit dependencies
 diff -Naur ghc-6.4.1.20050819-orig/ghc/utils/ghc-pkg/Makefile ghc-6.4.1.20050819/ghc/utils/ghc-pkg/Makefile
---- ghc-6.4.1.20050819-orig/ghc/utils/ghc-pkg/Makefile	2005-08-31 14:06:05.000000000 +0200
-+++ ghc-6.4.1.20050819/ghc/utils/ghc-pkg/Makefile	2005-08-31 14:06:38.000000000 +0200
+--- ghc-6.4.1.20050819-orig/ghc/utils/ghc-pkg/Makefile	2005-09-01 11:05:00.000000000 +0200
++++ ghc-6.4.1.20050819/ghc/utils/ghc-pkg/Makefile	2005-09-01 11:05:19.000000000 +0200
 @@ -30,7 +30,7 @@
  endif
  
