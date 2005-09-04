@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="haddock"
-inherit haskell-cabal
+inherit base eutils haskell-cabal
 
 DESCRIPTION="Minimal interface to communicate with a Hackage server."
 HOMEPAGE=""
@@ -19,3 +19,8 @@ DEPEND=">=virtual/ghc-6.2.2
 		dev-haskell/cabal"
 
 S=${WORKDIR}/${PN}
+
+src_unpack() {
+	base_src_unpack
+	sed -i -e "s/Build-depends: /Build-depends: mtl, /" ${S}/HackageClient.cabal 
+}
