@@ -1,0 +1,9 @@
+Name:		HackPort
+Version:	0.1
+License:	GPL
+Author:		Henning Günther
+Build-Depends:	base, network, HTTP, Cabal, hackage-client
+Synopsis:	Hackage and Portage integration tool
+
+Executable:	hackport
+Main-Is:	Main.hs
