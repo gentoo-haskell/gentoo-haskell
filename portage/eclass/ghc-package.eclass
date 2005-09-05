@@ -78,15 +78,17 @@ ghc-bestcabalversion() {
 	fi
 }
 
-# hide all currently installed Cabal versions; this is required
-# with ghc-6.4 to bootstrap ghc correctly
-ghc-hidecabal() {
-	local pkg
-	local r
-	for pkg in $(ghc-listpkg $(ghc-libdir)/package.conf); do
-		[[ ${pkg} == Cabal-* ]] && r="${r} -hide-package ${pkg}"
+# check if a standalone Cabal version is available for the
+# currently used ghc; takes minimal version of Cabal as
+# an optional argument
+ghc-sanecabal() {
+	local f
+	local version
+	if [[ -z "$1" ]]; then version="1.0.1"; else version="$1"; fi
+	for f in $(ghc-confdir)/cabal-*; do
+		[[ -f "${f}" ]] && version_is_at_least "${version}" "${f#*cabal-}" && return
 	done
-	echo "${r}"
+	return 1
 }
 
 # returns the library directory

@@ -141,6 +141,17 @@ cabal-pkg() {
 	esac
 }
 
+# exported function: check if cabal is correctly installed for
+# the currently active ghc (we cannot guarantee this with portage)
+haskell-cabal_pkg_setup() {
+	if [[ -z ${CABAL_BOOTSTRAP} ]] && ! ghc-sanecabal; then
+		eerror "The package dev-haskell/cabal is not correctly installed for"
+		eerror "the currently active version of ghc ($(ghc-version)). Please"
+		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
+		die "cabal is not correctly installed"
+	fi
+}
+
 # exported function: cabal-style bootstrap configure and compile
 cabal_src_compile() {
 	cabal-bootstrap
@@ -168,4 +179,4 @@ haskell-cabal_src_install() {
 	cabal_src_install
 }
 
-EXPORT_FUNCTIONS src_compile src_install
+EXPORT_FUNCTIONS pkg_setup src_compile src_install
