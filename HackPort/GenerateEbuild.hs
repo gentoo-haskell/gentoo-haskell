@@ -14,12 +14,12 @@ mergeEbuild target category ebuild = do
 	createDirectoryIfMissing True epath
 	writeFile (epath++"/"++(name ebuild)++"-"++(version ebuild)++".ebuild") (showEBuild ebuild)
 
-hackage2ebuild :: String -> FilePath -> PackageIdentifier -> IO (Either String EBuild)
---                |         |           \the package
---                |         \a temp path to store the tarball
---                \the server
---                 
-hackage2ebuild server store pkg = do
+hackage2ebuild :: FilePath -> String -> FilePath -> PackageIdentifier -> IO (Either String EBuild)
+--                |            |         |           \the package
+--                |            |         \a temp path to store the tarball
+--                |            \the server
+--                \the tar executable
+hackage2ebuild tarCommand server store pkg = do
 	result <- Hackage.getPkgLocation server pkg
 	case result of
 		Nothing -> return (Left "Package not found on Hackage Server")
@@ -31,11 +31,11 @@ hackage2ebuild server store pkg = do
 					case tarballGetType tarball of
 						Nothing -> return $ Left "Couldn't guess compression type of tarball"
 						Just tarType -> do
-							files <- tarballGetFiles "/bin/tar" tarballloc tarType
+							files <- tarballGetFiles tarCommand tarballloc tarType
 							case findCabal files of
 								Nothing -> return $ Left "No cabal file found in tarball"
 								Just (caballoc,cabalname) -> do
-									cabalfile <- tarballExtractFile "/bin/tar" tarballloc tarType (caballoc++"/"++cabalname)
+									cabalfile <- tarballExtractFile tarCommand tarballloc tarType (caballoc++"/"++cabalname)
 									case parseDescription cabalfile of
 										ParseFailed err -> return $ Left ("Parsing '"++cabalname++"' failed: "++(showError err))
 										ParseOk descr -> return $ Right ((cabal2ebuild descr) {src_uri=tarball,cabalPath=Just caballoc})

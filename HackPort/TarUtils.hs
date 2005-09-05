@@ -2,11 +2,8 @@ module TarUtils
 	(TarType(..)
 	,tarballGetType
 	,tarballGetFiles
-	,tarballGetFiles'
 	,findCabal
-	,tarballFindCabal
 	,tarballExtractFile
-	,tarballExtractFile'
 	) where
 
 import System.Process (runInteractiveProcess, waitForProcess)
@@ -59,23 +56,11 @@ tarballGetFiles tarCommand tarball tartype = do
                ,"--file"
 	       ,tarball]
 
-tarballGetFiles' :: FilePath
-		 -> FilePath
-		 -> IO [FilePath]
-tarballGetFiles' tarCommand tarball = case tarballGetType tarball of
-	Nothing -> error $ printf "Couldn't determine compression type of '%s'." tarball
-	Just comptype -> tarballGetFiles tarCommand tarball comptype
-
 findCabal :: [FilePath] -> Maybe (FilePath,FilePath) --Finds the path where a .cabal file is and the name
 findCabal (x:xs) = case matchRegex cabalRegex x of
 	Just (loc:name:[]) -> Just (loc,name)
 	Nothing -> findCabal xs
 findCabal [] = Nothing
-
-tarballFindCabal :: FilePath -> FilePath -> IO (Maybe (FilePath,FilePath))
-tarballFindCabal tarCommand tarball = do
-	files <- tarballGetFiles' tarCommand tarball
-	return (findCabal files)
 
 tarballExtractFile :: FilePath -- the tar prog
                    -> FilePath -- the archive
@@ -83,13 +68,11 @@ tarballExtractFile :: FilePath -- the tar prog
                    -> FilePath -- the file
                    -> IO String
 tarballExtractFile tarCommand tarball tarType file = do
-	print "Extracting..."
 	(inch,outch,_,handle) <- runInteractiveProcess tarCommand args Nothing Nothing
 	hClose inch
 	res <- hGetContents outch
 	length res `seq` hClose outch
 	exitCode <- waitForProcess handle
-	print "Done..."
 	case exitCode of
 		ExitFailure err -> error $ printf "Failed to extract file '%s' from '%s': %s." file tarball (show err)
 		ExitSuccess -> return res
@@ -101,13 +84,3 @@ tarballExtractFile tarCommand tarball tarType file = do
 	       ,"--get"
 	       ,file]
 
-tarballExtractFile' :: FilePath
-                    -> FilePath
-		    -> FilePath
-		    -> IO String
-tarballExtractFile' tarCommand tarball file = case tarballGetType tarball of
-	Nothing -> error $ printf "Couldn't determine compression type of '%s'." tarball
-	Just comptype -> tarballExtractFile tarCommand tarball comptype file
-
-
-		    

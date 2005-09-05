@@ -62,8 +62,8 @@ parseConfig opts = case getOpt Permute options opts of
 	(popts,"merge":package:version:[],[]) -> Right (ropts popts,Merge package version)
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)
-	(_,_,[]) -> Left "Unknown opertation mode"
-	(_,_,errs) -> Left ("Error parsing flags: "++concat errs)
+	(_,_,[]) -> Left "Unknown opertation mode\n"
+	(_,_,errs) -> Left ("Error parsing flags:\n"++concat errs)
 	where
 	ropts op = optionsToConfig defaultConfig op
 
@@ -73,7 +73,7 @@ listAll cfg = do
 	putStr (unlines pkgs)
 
 usage :: IO ()
-usage = putStr (usageInfo "Usage: hackport [OPTION] MODE [MODETARGET]\n\twhere MODE is one of query,list or merge" options)
+usage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\nOptions:" options)
 
 query :: Config -> String -> IO ()
 query cfg name = do
@@ -85,7 +85,7 @@ merge cfg name vers = do
 	case parseVersion' vers of
 		Nothing -> putStr ("Error: couldn't parse version number '"++vers++"'\n")
 		Just realvers -> do
-			result <- hackage2ebuild (server cfg) (tmp cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
+			result <- hackage2ebuild (tarCommand cfg) (server cfg) (tmp cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
 			case result of
 				Left err -> putStr ("Error: "++err)
 				Right ebuild -> mergeEbuild (portageTree cfg) (portageCategory cfg) ebuild

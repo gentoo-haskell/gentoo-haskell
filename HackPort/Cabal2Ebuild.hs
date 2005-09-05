@@ -175,7 +175,7 @@ showEBuild ebuild =
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
   ss "DEPEND=". quote' (sepBy "\n\t\t" $ map showDepend $ depend ebuild). nl.
-     (case cabalPath ebuild of Nothing -> id ; Just cp -> ss "S=${WORKDIR}/". ss cp. nl)
+     (case cabalPath ebuild of Nothing -> id ; Just cp -> nl. ss "S=". quote ("${WORKDIR}/"++cp). nl)
   $ []
 
 showDepend (AnyVersionOf               package) = package
