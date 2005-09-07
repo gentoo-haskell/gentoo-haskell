@@ -1,6 +1,38 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal/cabal-0.5.ebuild,v 1.2 2005/03/18 23:34:54 kosmikus Exp $
+# $Header: $
+#
+# Original author: Duncan Coutts <dcoutts@gentoo.org>
+# Maintained by: Haskell herd <haskell@gentoo.org>
+#
+# This eclass is for packages that make use of the
+# Haskell Common Architecture for Building Applications
+# and Libraries (cabal).
+#
+# Basic instructions:
+#
+# Before inheriting the eclass, set CABAL_FEATURES to
+# reflect the tools and features that the package makes
+# use of.
+#
+# Currently supported features:
+#   haddock    --  for documentation generation
+#   alex       --  lexer/scanner generator
+#   happy      --  parser generator
+#   c2hs       --  C interface generator
+#   cpphs      --  C preprocessor clone written in Haskell
+#   profile    --  if package supports to build profiling-enabled libraries
+#   bootstrap  --  only used for the cabal package itself
+#
+# Dependencies on other cabal packages have to be specified
+# correctly.
+#
+# Cabal libraries should usually be SLOTted with "${PV}".
+#
+# Many Cabal packages require S to be manually set.
+#
+# Conforming Cabal packages don't require any function definitions
+# in the ebuild.
 
 inherit ghc-package
 
