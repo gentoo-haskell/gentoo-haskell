@@ -83,7 +83,7 @@ fi
 # We always use a standalone version of Cabal, rather than the one that comes
 # with GHC. But of course we can't depend on cabal when building cabal itself.
 if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
-	DEPEND="${DEPEND} >cabal-1.0"
+	DEPEND="${DEPEND} >dev-haskell/cabal-1.0"
 fi
 
 
