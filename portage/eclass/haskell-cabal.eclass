@@ -18,39 +18,39 @@ for feature in ${CABAL_FEATURES}; do
 	esac
 done
 
-if [[ -n ${CABAL_USE_HADDOCK} ]]; then
+if [[ -n "${CABAL_USE_HADDOCK}" ]]; then
 	IUSE="${IUSE} doc"
 	DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
 	cabalconf="${cabalconf} --with-haddock=/usr/bin/haddock"
 fi
 
-if [[ -n ${CABAL_USE_ALEX} ]]; then
+if [[ -n "${CABAL_USE_ALEX}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/alex"
 	cabalconf="${cabalconf} --with-alex=/usr/bin/alex"
 fi
 
-if [[ -n ${CABAL_USE_HAPPY} ]]; then
+if [[ -n "${CABAL_USE_HAPPY}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/happy"
 	cabalconf="${cabalconf} --with-happy=/usr/bin/happy"
 fi
 
-if [[ -n ${CABAL_USE_C2HS} ]]; then
+if [[ -n "${CABAL_USE_C2HS}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/c2hs"
 	cabalconf="${cabalconf} --with-c2hs=/usr/bin/c2hs"
 fi
 
-if [[ -n ${CABAL_USE_CPPHS} ]]; then
+if [[ -n "${CABAL_USE_CPPHS}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/cpphs"
 	cabalconf="${cabalconf} --with-cpphs=/usr/bin/cpphs"
 fi
 
-if [[ -n ${CABAL_USE_PROFILE} ]]; then
+if [[ -n "${CABAL_USE_PROFILE}" ]]; then
 	IUSE="${IUSE} profile"
 fi
 
 # We always use a standalone version of Cabal, rather than the one that comes
 # with GHC. But of course we can't depend on cabal when building cabal itself.
-if [[ -z ${CABAL_BOOTSTRAP} ]]; then
+if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
 	DEPEND="${DEPEND} >cabal-1.0"
 fi
 
@@ -58,11 +58,11 @@ fi
 cabal-bootstrap() {
 	local setupmodule
 	local cabalversion
-	if [[ -f ${S}/Setup.lhs ]]; then
-		setupmodule=${S}/Setup.lhs
+	if [[ -f "${S}/Setup.lhs" ]]; then
+		setupmodule="${S}/Setup.lhs"
 	else
-		if [[ -f ${S}/Setup.hs ]]; then
-			setupmodule=${S}/Setup.hs
+		if [[ -f "${S}/Setup.hs" ]]; then
+			setupmodule="${S}/Setup.hs"
 		else
 			die "No Setup.lhs or Setup.hs found"
 		fi
@@ -72,7 +72,7 @@ cabal-bootstrap() {
 	# cabal that we have installed
 	cabalversion=$(ghc-bestcabalversion)
 	einfo "Using ${cabalversion}."
-	$(ghc-getghc) -package ${cabalversion} ${setupmodule} -o setup \
+	$(ghc-getghc) -package "${cabalversion}" "${setupmodule}" -o setup \
 		|| die "compiling ${setupmodule} failed"
 }
 
@@ -81,7 +81,7 @@ cabal-haddock() {
 }
 
 cabal-configure() {
-	if [[ -n ${CABAL_USE_PROFILE} ]] && use profile; then
+	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
 		cabalconf="${cabalconf} --enable-executable-profiling"
 	fi
 
@@ -105,19 +105,19 @@ cabal-copy() {
 
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
-	rmdir ${D}/usr/bin 2> /dev/null
+	rmdir "${D}/usr/bin" 2> /dev/null
 
 	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
 	# no workaround.
 	# set the +x permission on executables
-	if [[ -d ${D}/usr/bin ]] ; then
-		chmod +x ${D}/usr/bin/*
+	if [[ -d "${D}/usr/bin" ]] ; then
+		chmod +x "${D}/usr/bin/"*
 	fi
 }
 
 cabal-cabal2conf() {
-	if [[ -n ${CABAL_BOOTSTRAP} ]]; then
-		${S}/cabal2conf
+	if [[ -n "${CABAL_BOOTSTRAP}" ]]; then
+		"${S}/cabal2conf"
 	else
 		cabal2conf
 	fi
@@ -125,15 +125,15 @@ cabal-cabal2conf() {
 
 cabal-pkg() {
 	local conffilename
-	conffilename=${P}.tmpconf
+	conffilename="${P}.tmpconf"
 
 	# This could possibly fail if the .setup-config does not exist (eg if it
 	# is not using Distribution.Simple) or if the .setup-config was written by
 	# a different version of cabal to the one that cabal2conf was built with.
-	cabal-cabal2conf > ${conffilename}
+	cabal-cabal2conf > "${conffilename}"
 	case $? in
 		0)
-		ghc-setup-pkg ${conffilename}
+		ghc-setup-pkg "${conffilename}"
 		ghc-install-pkg
 		;;
 		1) die "cabal2conf failed";;
@@ -144,7 +144,7 @@ cabal-pkg() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
-	if [[ -z ${CABAL_BOOTSTRAP} ]] && ! ghc-sanecabal; then
+	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
 		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
@@ -158,7 +158,7 @@ cabal_src_compile() {
 	cabal-configure
 	cabal-build
 
-	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
+	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
 		cabal-haddock
 	fi
 }
@@ -171,7 +171,7 @@ cabal_src_install() {
 	cabal-copy
 	cabal-pkg
 
-	if [[ -n ${CABAL_USE_HADDOCK} ]] && use doc; then
+	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
 		dohtml dist/doc/html/*
 	fi
 }
