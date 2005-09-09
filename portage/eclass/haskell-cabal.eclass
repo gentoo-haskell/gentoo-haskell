@@ -148,30 +148,16 @@ cabal-copy() {
 	fi
 }
 
-cabal-cabal2conf() {
-	if [[ -n "${CABAL_BOOTSTRAP}" ]]; then
-		"${S}/cabal2conf"
-	else
-		cabal2conf
-	fi
-}
-
 cabal-pkg() {
-	local conffilename
-	conffilename="${P}.tmpconf"
-
-	# This could possibly fail if the .setup-config does not exist (eg if it
-	# is not using Distribution.Simple) or if the .setup-config was written by
-	# a different version of cabal to the one that cabal2conf was built with.
-	cabal-cabal2conf > "${conffilename}"
-	case $? in
-		0)
-		ghc-setup-pkg "${conffilename}"
+	# This does not actually register since we're using /usr/bin/true instead
+	# of ghc-pkg. So it just leaves the .installed-pkg-config and we can
+	# register that ourselves (if it exists).
+	sed -i 's:ghc-pkg:/usr/bin/true:' .setup-config
+	./setup register || die "setup register failed"
+	if [[ -f .installed-pkg-config ]]; then
+		ghc-setup-pkg .installed-pkg-config
 		ghc-install-pkg
-		;;
-		1) die "cabal2conf failed";;
-		2) einfo "No packages to register";;
-	esac
+	fi
 }
 
 # exported function: check if cabal is correctly installed for
