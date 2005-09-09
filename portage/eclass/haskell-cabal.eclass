@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 #
-# Original author: Duncan Coutts <dcoutts@gentoo.org>
+# Original authors: Andres Loeh <kosmikus@gentoo.org>
+#					Duncan Coutts <dcoutts@gentoo.org>
 # Maintained by: Haskell herd <haskell@gentoo.org>
 #
 # This eclass is for packages that make use of the
