@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bootstrap"
-inherit haskell-cabal eutils base
+inherit haskell-cabal ghc-package eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
@@ -36,7 +36,11 @@ src_unpack() {
 	# hslibs packages. Exposing util breaks lots of things. Fortunately cabal
 	# doesn't actually use anything fro util so we can remove it. A patch has
 	# been sent upstream so remove this hack on the next cabal iteration.
-	sed -i 's/Build-Depends: base, util/Build-Depends: base/' ${S}/Cabal.cabal
+	if $(ghc-cabal); then
+		sed -i 's/Build-Depends: base, util/Build-Depends: base/' ${S}/Cabal.cabal
+	else
+		sed -i 's/Build-Depends: base, util/Build-Depends: base, unix/' ${S}/Cabal.cabal
+	fi
 }
 
 src_compile() {
