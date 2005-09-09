@@ -105,7 +105,7 @@ cabal-bootstrap() {
 	# cabal that we have installed
 	cabalversion=$(ghc-bestcabalversion)
 	einfo "Using ${cabalversion}."
-	$(ghc-getghc) -package "${cabalversion}" "${setupmodule}" -o setup \
+	$(ghc-getghc) -package "${cabalversion}" --make "${setupmodule}" -o setup \
 		|| die "compiling ${setupmodule} failed"
 }
 
