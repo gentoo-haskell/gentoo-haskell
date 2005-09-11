@@ -5,6 +5,9 @@ import System.Environment
 import System.Exit
 import Distribution.Package
 import Data.Version
+import Control.Exception
+import Data.Typeable
+import Error
 import Query
 import GenerateEbuild
 import Cabal2Ebuild
@@ -15,6 +18,7 @@ data HackPortOptions
 	| Category String
 	| Server String
 	| TempDir String
+	| Verify
 
 data OperationMode
 	= Query String
@@ -28,6 +32,7 @@ data Config = Config
 	, portageCategory	::String
 	, server		::String
 	, tmp			::String
+	, verify		::Bool
 	}
 
 defaultConfig :: Config
@@ -37,24 +42,27 @@ defaultConfig = Config
 	, portageCategory = "dev-haskell"
 	, server = "http://hackage.haskell.org/ModHackage/Hackage.hs?action=xmlrpc"
 	, tmp = "/tmp"
+	, verify = False
 	}
 
 options :: [OptDescr HackPortOptions]
-options = [Option ['t'] ["tar"] (ReqArg TarCommand "PATH") "Path to the \"tar\" executable"
-          ,Option ['p'] ["portage-tree"] (ReqArg PortageTree "PATH") "The portage tree to merge to"
+options = [Option ['p'] ["portage-tree"] (ReqArg PortageTree "PATH") "The portage tree to merge to"
 	  ,Option ['c'] ["portage-category"] (ReqArg Category "CATEGORY") "The cateory the program belongs to"
 	  ,Option ['s'] ["server"] (ReqArg Server "URL") "The Hackage server to query"
-	  ,Option [] ["temp-dir"] (ReqArg TempDir "PATH") "A temp directory where tarballs can be stored"
+	  ,Option ['t'] ["temp-dir"] (ReqArg TempDir "PATH") "A temp directory where tarballs can be stored"
+          ,Option [] ["tar"] (ReqArg TarCommand "PATH") "Path to the \"tar\" executable"
+	  ,Option [] ["verify"] (NoArg Verify) "Verify downloaded tarballs using GnuPG"
 	  ]
 
 optionsToConfig :: Config -> [HackPortOptions] -> Config
 optionsToConfig cfg [] = cfg
-optionsToConfig cfg (x:xs) = case x of
+optionsToConfig cfg (x:xs) = optionsToConfig (case x of
 	TarCommand str -> cfg { tarCommand = str }
 	PortageTree str -> cfg { portageTree = str }
 	Category str -> cfg { portageCategory = str }
 	Server str -> cfg { server = str }
 	TempDir str -> cfg { tmp = str }
+	Verify -> cfg { verify = True }) xs
 
 parseConfig :: [String] -> Either String (Config,OperationMode)
 parseConfig opts = case getOpt Permute options opts of
@@ -85,10 +93,8 @@ merge cfg name vers = do
 	case parseVersion' vers of
 		Nothing -> putStr ("Error: couldn't parse version number '"++vers++"'\n")
 		Just realvers -> do
-			result <- hackage2ebuild (tarCommand cfg) (server cfg) (tmp cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
-			case result of
-				Left err -> putStr ("Error: "++err)
-				Right ebuild -> mergeEbuild (portageTree cfg) (portageCategory cfg) ebuild
+			ebuild <- hackage2ebuild (tarCommand cfg) (server cfg) (tmp cfg) (verify cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
+			mergeEbuild (portageTree cfg) (portageCategory cfg) ebuild
 
 main :: IO ()
 main = do
@@ -97,8 +103,8 @@ main = do
 		Left err -> do
 			putStr err
 			exitWith (ExitFailure 1)
-		Right (config,mode) -> case mode of
+		Right (config,mode) -> (case mode of
 			ShowHelp -> usage
 			ListAll -> listAll config
 			Query pkg -> query config pkg
-			Merge pkg vers -> merge config pkg vers
+			Merge pkg vers -> merge config pkg vers) `catchDyn` (\x->putStr ((hackPortShowError (server config) Nothing x)++"\n"))

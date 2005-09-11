@@ -6,6 +6,9 @@ module TarUtils
 	,tarballExtractFile
 	) where
 
+import Error
+
+import Control.Exception
 import System.Process (runInteractiveProcess, waitForProcess)
 import System.IO (hClose, hGetContents)
 import Text.Printf (printf)
@@ -48,7 +51,7 @@ tarballGetFiles tarCommand tarball tartype = do
 	length files `seq` hClose outch
 	exitCode <- waitForProcess handle
 	case exitCode of
-		ExitFailure err -> error $ printf "Failed to get filelist from '%s': %s." tarball (show err)
+		ExitFailure err -> throwDyn $ UnpackingFailed tarball err
 		ExitSuccess -> return (lines files)
 	where
 	args = ["--list"
@@ -74,7 +77,7 @@ tarballExtractFile tarCommand tarball tarType file = do
 	length res `seq` hClose outch
 	exitCode <- waitForProcess handle
 	case exitCode of
-		ExitFailure err -> error $ printf "Failed to extract file '%s' from '%s': %s." file tarball (show err)
+		ExitFailure err -> throwDyn $ ExtractionFailed file tarball err
 		ExitSuccess -> return res
 	where
 	args = ["--to-stdout"
