@@ -166,7 +166,9 @@ src_compile() {
 
 	# the build does not seem to work all that
 	# well with parallel make
-	emake -j1 all || die "make failed"
+	emake -j1 all datadir="/usr/share/doc/${PF}" || die "make failed"
+	# the explicit datadir is required to make the haddock entries
+	# in the package.conf file point to the right place ...
 
 }
 
