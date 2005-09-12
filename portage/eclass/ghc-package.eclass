@@ -31,10 +31,10 @@ ghc-getghcpkg() {
 # must be specified
 ghc-getghcpkgbin() {
 	if ghc-cabal; then
-		echo '[]' > ${T}/empty.conf
-		echo $(ghc-libdir)/"ghc-pkg.bin" "--global-conf=${T}/empty.conf"
+		echo '[]' > "${T}/empty.conf"
+		echo "$(ghc-libdir)/ghc-pkg.bin" "--global-conf=${T}/empty.conf"
 	else
-		echo $(ghc-libdir)/"ghc-pkg.bin"
+		echo "$(ghc-libdir)/ghc-pkg.bin"
 	fi
 }
 
@@ -64,14 +64,14 @@ ghc-bestcabalversion() {
 		# If not, use portage.
 		cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
 		if [[ $? -eq 0 ]]; then
-			cabalversion=${cabalpackage#Cabal-}
+			cabalversion="${cabalpackage#Cabal-}"
 		else
-			cabalpackage=$(best_version cabal)
-			cabalversion=${cabalpackage#dev-haskell/cabal-}
-			cabalversion=${cabalversion%-r*}
-			cabalversion=${cabalversion%_pre*}
+			cabalpackage="$(best_version cabal)"
+			cabalversion="${cabalpackage#dev-haskell/cabal-}"
+			cabalversion="${cabalversion%-r*}"
+			cabalversion="${cabalversion%_pre*}"
 		fi
-		echo Cabal-${cabalversion}
+		echo "Cabal-${cabalversion}"
 	else
 		# older ghc's don't support package versioning
 		echo Cabal
@@ -102,7 +102,7 @@ ghc-libdir() {
 
 # returns the (Gentoo) library configuration directory
 ghc-confdir() {
-	echo $(ghc-libdir)/gentoo
+	echo "$(ghc-libdir)/gentoo"
 }
 
 # returns the name of the local (package-specific)
@@ -115,7 +115,7 @@ ghc-localpkgconf() {
 ghc-makeghcilib() {
 	local outfile
 	outfile="$(dirname $1)/$(basename $1 | sed 's:^lib\?\(.*\)\.a$:\1.o:')"
-	ld --relocatable --discard-all --output="${outfile}" --whole-archive $1
+	ld --relocatable --discard-all --output="${outfile}" --whole-archive "$1"
 }
 
 # creates a local (package-specific) package
@@ -127,28 +127,28 @@ ghc-makeghcilib() {
 ghc-setup-pkg() {
 	local localpkgconf
 	localpkgconf="${S}/$(ghc-localpkgconf)"
-	echo '[]' > ${localpkgconf}
+	echo '[]' > "${localpkgconf}"
 	for pkg in $*; do
-		$(ghc-getghcpkgbin) -f ${localpkgconf} -u --force \
-			< ${pkg} || die "failed to register ${pkg}"
+		$(ghc-getghcpkgbin) -f "${localpkgconf}" -u --force \
+			< "${pkg}" || die "failed to register ${pkg}"
 	done
 }
 
 # fixes the library and import directories path
 # of the package configuration file
 ghc-fixlibpath() {
-	sed -i "s|$1|$(ghc-libdir)|g" ${S}/$(ghc-localpkgconf)
+	sed -i "s|$1|$(ghc-libdir)|g" "${S}/$(ghc-localpkgconf)"
 	if [[ -n "$2" ]]; then
-		sed -i "s|$2|$(ghc-libdir)/imports|g" ${S}/$(ghc-localpkgconf)
+		sed -i "s|$2|$(ghc-libdir)/imports|g" "${S}/$(ghc-localpkgconf)"
 	fi
 }
 
 # moves the local (package-specific) package configuration
 # file to its final destination
 ghc-install-pkg() {
-	mkdir -p ${D}/$(ghc-confdir)
-	cat ${S}/$(ghc-localpkgconf) | sed "s|${D}||g" \
-		> ${D}/$(ghc-confdir)/$(ghc-localpkgconf)
+	mkdir -p "${D}/$(ghc-confdir)"
+	cat "${S}/$(ghc-localpkgconf)" | sed "s|${D}||g" \
+		> "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
 }
 
 # registers all packages in the local (package-specific)
@@ -156,10 +156,10 @@ ghc-install-pkg() {
 ghc-register-pkg() {
 	local localpkgconf
 	localpkgconf="$(ghc-confdir)/$1"
-	if [[ -f ${localpkgconf} ]]; then
-		for pkg in $(ghc-listpkg ${localpkgconf}); do
+	if [[ -f "${localpkgconf}" ]]; then
+		for pkg in $(ghc-listpkg "${localpkgconf}"); do
 			ebegin "Registering ${pkg} "
-			$(ghc-getghcpkgbin) -f ${localpkgconf} -s ${pkg} \
+			$(ghc-getghcpkgbin) -f "${localpkgconf}" -s "${pkg}" \
 				| $(ghc-getghcpkg) -u --force > /dev/null
 			eend $?
 		done
@@ -171,10 +171,10 @@ ghc-register-pkg() {
 ghc-reregister() {
 	einfo "Re-adding packages (may cause several harmless warnings) ..."
 	if [ -d "$(ghc-confdir)" ]; then
-		pushd $(ghc-confdir) > /dev/null
+		pushd "$(ghc-confdir)" > /dev/null
 		for conf in *.conf; do
 #			einfo "Processing ${conf} ..."
-			ghc-register-pkg ${conf}
+			ghc-register-pkg "${conf}"
 		done
 		popd > /dev/null
 	fi
@@ -195,16 +195,16 @@ ghc-unregister-pkg() {
 	done
 	# protected now contains the packages that cannot be unregistered yet
 
-	if [[ -f ${localpkgconf} ]]; then
+	if [[ -f "${localpkgconf}" ]]; then
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
 			if $(ghc-elem "${pkg}" "${protected}"); then
 				einfo "Package ${pkg} is protected."
-			elif ! $(ghc-getghcpkg) -s ${pkg} > /dev/null 2>&1; then
+			elif ! $(ghc-getghcpkg) -s "${pkg}" > /dev/null 2>&1; then
 				:
 				# einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
 			else
 				ebegin "Unregistering ${pkg} "
-				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
+				$(ghc-getghcpkg) -r "${pkg}" --force > /dev/null
 				eend $?
 			fi
 		done
@@ -218,7 +218,7 @@ ghc-reverse() {
 	for i in $1; do
 		result="${i} ${result}"
 	done
-	echo ${result}
+	echo "${result}"
 }
 
 # help-function: element-check
@@ -236,13 +236,13 @@ ghc-listpkg() {
 	local i
 	for i in $*; do
 		if ghc-cabal; then
-			echo $($(ghc-getghcpkg) list -f ${i}) \
+			echo $($(ghc-getghcpkg) list -f "${i}") \
 				| sed \
 					-e "s|^.*${i}:\([^:]*\).*$|\1|" \
 					-e "s|/.*$||" \
 					-e "s|,| |g" -e "s|[()]||g"
 		else
-			echo $($(ghc-getghcpkgbin) -l -f ${i}) \
+			echo $($(ghc-getghcpkgbin) -l -f "${i}") \
 				| cut -f2 -d':' \
 				| sed 's:,: :g'
 		fi
@@ -252,7 +252,7 @@ ghc-listpkg() {
 # exported function: registers the package-specific package
 # configuration file
 ghc-package_pkg_postinst() {
-	ghc-register-pkg $(ghc-localpkgconf)
+	ghc-register-pkg "$(ghc-localpkgconf)"
 }
 
 # exported function: unregisters the package-specific package
@@ -260,7 +260,7 @@ ghc-package_pkg_postinst() {
 # only if it the same package is not also contained in another
 # package configuration file ...
 ghc-package_pkg_prerm() {
-	ghc-unregister-pkg $(ghc-localpkgconf)
+	ghc-unregister-pkg "$(ghc-localpkgconf)"
 }
 
 EXPORT_FUNCTIONS pkg_postinst pkg_prerm
