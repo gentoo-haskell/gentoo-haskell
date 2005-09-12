@@ -200,7 +200,8 @@ ghc-unregister-pkg() {
 			if $(ghc-elem "${pkg}" "${protected}"); then
 				einfo "Package ${pkg} is protected."
 			elif ! $(ghc-getghcpkg) -s ${pkg} > /dev/null 2>&1; then
-				einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
+				:
+				# einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
 			else
 				ebegin "Unregistering ${pkg} "
 				$(ghc-getghcpkg) -r ${pkg} --force > /dev/null
