@@ -118,6 +118,11 @@ ghc-makeghcilib() {
 	ld --relocatable --discard-all --output="${outfile}" --whole-archive "$1"
 }
 
+# tests if a ghc package exists
+ghc-package-exists() {
+	$(ghc-getghcpkg) -s "$1" > /dev/null 2>&1
+}
+
 # creates a local (package-specific) package
 # configuration file; the arguments should be
 # uninstalled package description files, each
@@ -199,7 +204,7 @@ ghc-unregister-pkg() {
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
 			if $(ghc-elem "${pkg}" "${protected}"); then
 				einfo "Package ${pkg} is protected."
-			elif ! $(ghc-getghcpkg) -s "${pkg}" > /dev/null 2>&1; then
+			elif ! ghc-package-exists "${pkg}"; then
 				:
 				# einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
 			else

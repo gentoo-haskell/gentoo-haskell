@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bootstrap"
-inherit haskell-cabal ghc-package eutils base
+inherit haskell-cabal eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
@@ -37,7 +37,7 @@ src_unpack() {
 }
 
 src_compile() {
-	make setup
+	make setup HC="$(ghc-getghc) -ignore-package Cabal"
 	cabal-configure
 	cabal-build
 }
@@ -56,19 +56,11 @@ src_install() {
 }
 
 pkg_postinst () {
+	if ghc-cabal && ghc-package-exists "Cabal-1.0"; then
+	        ebegin "Unregistering ghc's built-in cabal "
+	        $(ghc-getghcpkg) unregister "Cabal-1.0" > /dev/null
+	        eend $?
+	fi
 	ghc-package_pkg_postinst
-
-	# TODO: write something more up-to-date here, and perhaps handle other
-	# Cabal installations semi-automatically at this point ...
-	# einfo "If you have an older version of Cabal installed, you may have to"
-	# einfo "specify which version you want when you run ghc.  For instance:"
-	# einfo ""
-	# einfo "  $ ghc -package Cabal"
-	# einfo "  ghc-6.4: Error; multiple packages match Cabal: Cabal-1.0, Cabal-${MY_PV}"
-	# einfo ""
-	# einfo "If you want to avoid this situation, you can remove the"
-	# einfo "older version with:"
-	# einfo ""
-	# einfo "  $ ghc-pkg unregister Cabal-1.0"
 }
 
