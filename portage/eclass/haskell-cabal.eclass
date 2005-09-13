@@ -84,7 +84,7 @@ fi
 # We always use a standalone version of Cabal, rather than the one that comes
 # with GHC. But of course we can't depend on cabal when building cabal itself.
 if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
-	DEPEND="${DEPEND} >dev-haskell/cabal-1.0"
+	DEPEND="${DEPEND} >=dev-haskell/cabal-1.1.3"
 fi
 
 
@@ -163,7 +163,7 @@ cabal-pkg() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
-	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal; then
+	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "1.1.3"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
 		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
