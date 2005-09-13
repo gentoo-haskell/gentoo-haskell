@@ -37,7 +37,11 @@ src_unpack() {
 }
 
 src_compile() {
-	make setup HC="$(ghc-getghc) -ignore-package Cabal"
+	if ghc-cabal; then
+		make setup HC="$(ghc-getghc) -ignore-package Cabal"
+	else
+		make setup HC="$(ghc-getghc)"
+	fi
 	cabal-configure
 	cabal-build
 }
