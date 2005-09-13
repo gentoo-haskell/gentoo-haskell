@@ -14,8 +14,7 @@ SLOT="${PV}"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/ghc
+DEPEND=">=virtual/ghc-6.4
 	>=dev-haskell/newbinary-0.1"
 
 S=${WORKDIR}/Crypto-${PV}
-
