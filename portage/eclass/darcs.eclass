@@ -137,7 +137,7 @@ darcs_src_unpack() {
 	shopt -s dotglob	# get any dotfiles too.
 	cp -Rf "$EDARCS_TOP_DIR/$EDARCS_LOCALREPO"/* "${WORKDIR}/${P}"
 
-	einfo "Version ${EDARCS_VERSION} is now in ${WORKDIR}/${P}"
+	einfo "Darcs repository contents are now in ${WORKDIR}/${P}"
 
 }
 
