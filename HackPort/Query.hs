@@ -29,9 +29,13 @@ getPackageVersions verb server name = do
 
 getPackages :: Verbosity -> String -> IO [String]
 getPackages verb server = do
-	pkgs <- listPackages server
+	pkgs <- getPackageIdentifiers server
 		`sayDebug` ("Getting package list from '"++server++"'... ",const "done.\n")
-		`catch` (\x->throwDyn $ ConnectionFailed (show x))
-	return $ nub $ map (\(pkg,_,_,_)->pkgName pkg) pkgs
+	return $ nub $ map pkgName pkgs
 	where
 	sayDebug = verboseDebug verb
+
+getPackageIdentifiers :: String -> IO [PackageIdentifier]
+getPackageIdentifiers server = do
+	pkgs <- listPackages server `catch` (\x->throwDyn $ ConnectionFailed (show x))
+	return $ map (\(pkg,_,_,_)->pkg) pkgs

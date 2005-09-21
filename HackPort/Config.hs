@@ -18,6 +18,7 @@ data OperationMode
 	= Query String
 	| Merge String String
 	| ListAll
+	| DiffTree
 	| ShowHelp
 
 data Config = Config
@@ -73,6 +74,8 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	(popts,"merge":_:_:rest,[]) -> Left ("'merge' takes 2 arguments("++show ((length rest)+2)++" given).\n")
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
 	(popts,"list":rest,[]) -> Left ("'list' takes zero arguments("++show (length rest)++" given).\n")
+	(popts,"diff":[],[]) -> Right (ropts popts,DiffTree)
+	(popts,"diff":rest,[]) -> Left ("'diff' takes zero arguments("++show (length rest)++" given).\n")
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)
 	(_,_,[]) -> Left "Unknown opertation mode\n"
 	(_,_,errs) -> Left ("Error parsing flags:\n"++concat errs)

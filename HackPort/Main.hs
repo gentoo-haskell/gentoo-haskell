@@ -7,6 +7,8 @@ import Data.Version
 import Control.Exception
 import Data.Typeable
 import System.IO
+import Data.Char
+import qualified Data.Set as Set
 
 import Error
 import Query
@@ -15,6 +17,15 @@ import Cabal2Ebuild
 import Bash
 import Config
 import Verbosity
+import Diff
+import Portage
+
+getPortageTree :: Config -> IO String
+getPortageTree cfg = case portageTree cfg of
+	Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf... ",\tree->"Found '"++tree++"'\n")
+	Just tree -> return tree
+	where
+	sayDebug=verboseDebug (verbosity cfg)
 
 listAll :: Config -> IO ()
 listAll cfg = do
@@ -28,9 +39,7 @@ query cfg name = do
 
 merge :: Config -> String -> String -> IO ()
 merge cfg name vers = do
-	portTree <- case portageTree cfg of
-		Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf... ",\tree->"Found '"++tree++"'\n")
-		Just tree -> return tree
+	portTree <- getPortageTree cfg
 	case parseVersion' vers of
 		Nothing -> putStr ("Error: couldn't parse version number '"++vers++"'\n")
 		Just realvers -> do
@@ -39,6 +48,21 @@ merge cfg name vers = do
 	where
 	sayDebug = verboseDebug (verbosity cfg)
 	sayNormal = verboseNormal (verbosity cfg)
+
+diff :: Config -> IO ()
+diff cfg = do
+	serverPkgs <- getPackageIdentifiers (server cfg)
+		`sayDebug` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
+	let serverPkgs'=map (\pkg->pkg {pkgName=map toLower (pkgName pkg)}) serverPkgs
+	portTree <- getPortageTree cfg
+	portagePkgs <- portageGetPackages portTree (portageCategory cfg)
+	let pkgDiff=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
+	putStr $ unlines $ map (\(DiffResult action pkg)->(case action of
+		Add->'+'
+		Remove->'-'
+		Stay->'='):(pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems pkgDiff)
+	where
+	sayDebug = verboseDebug (verbosity cfg)
 
 main :: IO ()
 main = do
@@ -51,7 +75,12 @@ main = do
 			ShowHelp -> hackageUsage
 			ListAll -> listAll config
 			Query pkg -> query config pkg
-			Merge pkg vers -> merge config pkg vers) `catchDyn` (\x->report (hackPortShowError (server config) x))
+			Merge pkg vers -> merge config pkg vers
+			DiffTree -> diff config) `catchDyn` (\x->report (hackPortShowError (server config) x))
 	where
 	report err = hPutStr stderr (err++"\n")
 
+instance Ord PackageIdentifier where
+	compare pkg1 pkg2 = case compare (pkgName pkg1) (pkgName pkg2) of
+		EQ -> compare (pkgVersion pkg1) (pkgVersion pkg2)
+		x -> x
