@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.cse.unsw.edu.au/pub/users/dons/${PN}/${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 -amd64" # currently broken on amd64
 IUSE="doc"
 
 DEPEND=">=virtual/ghc
