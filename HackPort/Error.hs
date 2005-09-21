@@ -20,6 +20,7 @@ data HackPortError
 	| BashError String
 	| NoOverlay
 	| MultipleOverlays [String]
+	| UnknownVerbosityLevel String
 	deriving (Typeable)
 
 type HackPortResult a = Either
@@ -41,3 +42,4 @@ hackPortShowError server package err = case err of
 	BashError str -> "Error while guessing your portage-overlay. Either set PORTDIR_OVERLAY in /etc/make.conf or use '-p path-to-overlay'.\nThe error was: \""++str++"\""
 	MultipleOverlays overlays -> "You have the following overlays available: '"++unwords overlays++"'. Please choose one by using '-p path-to-overlay'"
 	NoOverlay -> "You don't have PORTDIR_OVERLAY set in '/etc/make.conf'. Please set it or use '-p path-to-overlay'"
+	UnknownVerbosityLevel str -> "The verbosity level '"++str++"' is invalid. Please use debug,normal or silent"

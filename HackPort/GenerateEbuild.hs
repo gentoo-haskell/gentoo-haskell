@@ -4,6 +4,7 @@ import Cabal2Ebuild
 import Fetch
 import TarUtils
 import Error
+import Verbosity
 
 import Prelude hiding (catch)
 import Control.Exception
@@ -12,11 +13,14 @@ import Distribution.PackageDescription
 import Distribution.Package
 import System.Directory
 
-mergeEbuild :: FilePath -> String -> EBuild -> IO ()
-mergeEbuild target category ebuild = do
-	let epath = target++"/"++category++"/"++(name ebuild)
-	createDirectoryIfMissing True epath
-	writeFile (epath++"/"++(name ebuild)++"-"++(version ebuild)++".ebuild") (showEBuild ebuild)
+mergeEbuild :: Verbosity -> FilePath -> String -> EBuild -> IO ()
+mergeEbuild verb target category ebuild = do
+	let edir = target++"/"++category++"/"++(name ebuild)
+	let epath = edir++"/"++(name ebuild)++"-"++(version ebuild)++".ebuild"
+	createDirectoryIfMissing True edir
+	writeFile epath (showEBuild ebuild) `sayNormal` ("Merging to '"++epath++"'\n")
+	where
+	sayNormal = verboseNormal verb
 
 hackage2ebuild :: 
 	FilePath ->		-- ^ the tar executable
