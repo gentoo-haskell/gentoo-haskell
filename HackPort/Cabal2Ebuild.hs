@@ -177,7 +177,7 @@ showEBuild ebuild =
   ss "CABAL_FEATURES=". quote' (sepBy " " $ features ebuild). nl.
   ss "inherit haskell-cabal". nl.
   nl.
-  (maybe id (\x->ss "MY_P=". quote x. nl) (my_pn ebuild)).
+  (maybe id (\x->ss "MY_PN=". quote x. nl. ss "MY_P=". quote "${MY_PN}-${PV}". nl) (my_pn ebuild)).
   ss "DESCRIPTION=". quote (description ebuild). nl.
   ss "HOMEPAGE=". quote (homepage ebuild). nl.
   ss "SRC_URI=". quote (replaceVars (src_uri ebuild)).
