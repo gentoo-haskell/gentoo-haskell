@@ -11,6 +11,7 @@ import Error
 import Query
 import GenerateEbuild
 import Cabal2Ebuild
+import Bash
 
 data HackPortOptions
 	= TarCommand String
@@ -28,7 +29,7 @@ data OperationMode
 
 data Config = Config
 	{ tarCommand		::String
-	, portageTree		::String
+	, portageTree		::Maybe String
 	, portageCategory	::String
 	, server		::String
 	, tmp			::String
@@ -38,7 +39,7 @@ data Config = Config
 defaultConfig :: Config
 defaultConfig = Config
 	{ tarCommand = "/bin/tar"
-	, portageTree = "/usr/portage"
+	, portageTree = Nothing
 	, portageCategory = "dev-haskell"
 	, server = "http://hackage.haskell.org/ModHackage/Hackage.hs?action=xmlrpc"
 	, tmp = "/tmp"
@@ -58,7 +59,7 @@ optionsToConfig :: Config -> [HackPortOptions] -> Config
 optionsToConfig cfg [] = cfg
 optionsToConfig cfg (x:xs) = optionsToConfig (case x of
 	TarCommand str -> cfg { tarCommand = str }
-	PortageTree str -> cfg { portageTree = str }
+	PortageTree str -> cfg { portageTree = Just str }
 	Category str -> cfg { portageCategory = str }
 	Server str -> cfg { server = str }
 	TempDir str -> cfg { tmp = str }
@@ -90,11 +91,14 @@ query cfg name = do
 
 merge :: Config -> String -> String -> IO ()
 merge cfg name vers = do
+	portTree <- case portageTree cfg of
+		Nothing -> getOverlay
+		Just tree -> return tree
 	case parseVersion' vers of
 		Nothing -> putStr ("Error: couldn't parse version number '"++vers++"'\n")
 		Just realvers -> do
 			ebuild <- hackage2ebuild (tarCommand cfg) (server cfg) (tmp cfg) (verify cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
-			mergeEbuild (portageTree cfg) (portageCategory cfg) ebuild
+			mergeEbuild portTree (portageCategory cfg) ebuild
 
 main :: IO ()
 main = do
