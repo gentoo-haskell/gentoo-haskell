@@ -89,7 +89,7 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	ropts op = optionsToConfig defaultConfig op
 
 hackageUsage :: IO ()
-hackageUsage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\nOptions:" hackageOptions)
+hackageUsage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\n\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages\nOptions:" hackageOptions)
 
 parseVerbosity :: String -> Maybe Verbosity
 parseVerbosity "debug" = Just Debug
