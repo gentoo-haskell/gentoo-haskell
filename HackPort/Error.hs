@@ -6,7 +6,7 @@ import Distribution.Package
 
 data HackPortError
 	= ConnectionFailed String
-	| PackageNotFound
+	| PackageNotFound String
 	| InvalidTarballURL String String
 	| InvalidSignatureURL String String
 	| VerificationFailed String String
@@ -25,10 +25,10 @@ data HackPortError
 
 type HackPortResult a = Either
 
-hackPortShowError :: String -> Maybe PackageIdentifier -> HackPortError -> String
-hackPortShowError server package err = case err of
+hackPortShowError :: String -> HackPortError -> String
+hackPortShowError server err = case err of
 	ConnectionFailed reason -> "Connection to hackage server '"++server++"' failed: "++reason
-	PackageNotFound -> "Package '"++(maybe "" show package)++"' not found on server"
+	PackageNotFound pkg -> "Package '"++pkg++"' not found on server."
 	InvalidTarballURL url reason -> "Error while downloading tarball '"++url++"': "++reason
 	InvalidSignatureURL url reason -> "Error while downloading signature '"++url++"': "++reason
 	VerificationFailed file signature -> "Error while checking signature('"++signature++"') of '"++file++"'"
