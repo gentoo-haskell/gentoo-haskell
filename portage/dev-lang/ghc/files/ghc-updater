@@ -208,7 +208,7 @@ done
 
 eloginfo "Re-ordering packages to merge .."
 
-PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${PORTDIR}/dev-lang/python/files/depreorder.py ${PKGS_OK} | xargs)"
+PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${PORTDIR}/dev-lang/ghc/files/depsort.py ${PKGS_OK} | xargs)"
 
 eloginfo "Preparing to merge these packages in this order:"
 for pkg in $PKGS_OK_SORTED; do
