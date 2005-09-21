@@ -2,6 +2,8 @@ module Config where
 
 import System.Console.GetOpt
 import Control.Exception
+import Text.Regex
+
 import Error
 import Verbosity
 
@@ -30,6 +32,8 @@ data Config = Config
 	, verify		::Bool
 	, verbosity		::Verbosity
 	}
+
+packageRegex = mkRegex "^(.*?)-([0-9].*)$"
 
 defaultConfig :: Config
 defaultConfig = Config
@@ -69,7 +73,9 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	(popts,"query":package:[],[]) -> Right (ropts popts,Query package)
 	(popts,"query":package:rest,[]) -> Left ("'query' takes one argument("++show ((length rest)+1)++" given).\n")
 	(popts,"merge":[],[]) -> Left "Need a package's name and version to merge it.\n"
-	(popts,"merge":package:[],[]) -> Left ("Need version of '"++package++"' to merge. Find available versions using 'hackport query package-name.\n")
+	(popts,"merge":package:[],[]) -> case matchRegex packageRegex package of
+		Nothing ->Left ("Need version of '"++package++"' to merge. Find available versions using 'hackport query package-name.\n")
+		Just ([name,version]) -> Right (ropts popts,Merge name version)
 	(popts,"merge":package:version:[],[]) -> Right (ropts popts,Merge package version)
 	(popts,"merge":_:_:rest,[]) -> Left ("'merge' takes 2 arguments("++show ((length rest)+2)++" given).\n")
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
