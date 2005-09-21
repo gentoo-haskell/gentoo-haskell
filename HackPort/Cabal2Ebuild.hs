@@ -35,8 +35,9 @@ import qualified Distribution.Version as Cabal  (showVersion, Dependency(..),
 import qualified Distribution.License as Cabal  (License(..))
 --import qualified Distribution.Compiler as Cabal (CompilerFlavor(..))
 
-import Data.Char          (toLower)
+import Data.Char          (toLower,isUpper)
 import Data.Maybe         (catMaybes)
+import Text.Regex
 
 data EBuild = EBuild {
     name :: String,
@@ -52,7 +53,8 @@ data EBuild = EBuild {
     features :: [String],
     -- comments on various fields for communicating stuff to the user
     licenseComments :: String,
-    cabalPath :: Maybe String --If it's not ${WORKDIR}/${P}
+    cabalPath :: Maybe String, --If it's not ${WORKDIR}/${P}
+    my_pn :: Maybe String --If the package's name contains upper-case
   }
 
 type Package = String
@@ -80,12 +82,13 @@ ebuildTemplate = EBuild {
     depend = [],
     features = ["haddock"],
     licenseComments = "",
-    cabalPath = Nothing
+    cabalPath = Nothing,
+    my_pn = Nothing
   }
 
 cabal2ebuild :: Cabal.PackageDescription -> EBuild
 cabal2ebuild pkg = ebuildTemplate {
-    name        = map toLower (Cabal.pkgName (Cabal.package pkg)),
+    name        = map toLower cabalPkgName,
     version     = Cabal.showVersion (Cabal.pkgVersion (Cabal.package pkg)),
     description = if null (Cabal.synopsis pkg) then Cabal.description pkg
                                                else Cabal.synopsis pkg,
@@ -94,8 +97,10 @@ cabal2ebuild pkg = ebuildTemplate {
     license         = convertLicense (Cabal.license pkg),
     licenseComments = licenseComment (Cabal.license pkg),
     depend          = defaultDepGHC
-                    : convertDependencies (Cabal.buildDepends pkg)
-  }
+                    : convertDependencies (Cabal.buildDepends pkg),
+    my_pn = if any isUpper cabalPkgName then Just cabalPkgName else Nothing
+  } where
+  	cabalPkgName = Cabal.pkgName (Cabal.package pkg)
 
 defaultDepGHC     = OrLaterVersionOf "6.2.2" "virtual/ghc"
 
@@ -141,15 +146,27 @@ convertDependency (Cabal.Dependency name versionRange)
 --      = convert r1 ++ "&&" ++ convert r2
 
 standardLibs =
-  ["rts", "base", "haskell98"
+  ["rts"
+  ,"base"
+  ,"haskell98"
   ,"template-haskell"
   ,"unix"
   ,"parsec"
   ,"haskell-src"
   ,"network"
+  ,"QuickCheck"
+  ,"HUnit"
   ,"stm"
   ,"readline"
-  ,"lang", "concurrent", "posix", "util", "data", "text", "net", "hssource"]
+  ,"lang"
+  ,"concurrent"
+  ,"posix"
+  ,"util"
+  ,"data"
+  ,"text"
+  ,"net"
+  ,"hssource"
+  ,"mtl"]
 
 showEBuild :: EBuild -> String
 showEBuild ebuild =
@@ -160,9 +177,10 @@ showEBuild ebuild =
   ss "CABAL_FEATURES=". quote' (sepBy " " $ features ebuild). nl.
   ss "inherit haskell-cabal". nl.
   nl.
+  (maybe id (\x->ss "MY_P=". quote x. nl) (my_pn ebuild)).
   ss "DESCRIPTION=". quote (description ebuild). nl.
   ss "HOMEPAGE=". quote (homepage ebuild). nl.
-  ss "SRC_URI=". quote (src_uri ebuild).
+  ss "SRC_URI=". quote (replaceVars (src_uri ebuild)).
      (if null (src_uri ebuild) then ss "\t#Fixme: please fill in manually"
          else id). nl.
   ss "LICENSE=". quote (license ebuild).
@@ -175,8 +193,9 @@ showEBuild ebuild =
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
   ss "DEPEND=". quote' (sepBy "\n\t\t" $ map showDepend $ depend ebuild). nl.
-     (case cabalPath ebuild of Nothing -> id ; Just cp -> nl. ss "S=". quote ("${WORKDIR}/"++cp). nl)
+     (case cabalPath ebuild of Nothing -> id ; Just cp -> if cp==((name ebuild)++"-"++(version ebuild)) then id else nl. ss "S=". quote ("${WORKDIR}/"++(replaceVars cp)). nl)
   $ []
+  where replaceVars = replaceCommonVars (name ebuild) (my_pn ebuild) (version ebuild)
 
 showDepend (AnyVersionOf               package) = package
 showDepend (ThisVersionOf      version package) = "=" ++ package ++ "-" ++ version
@@ -201,3 +220,44 @@ sepBy :: String -> [String] -> ShowS
 sepBy s []     = id
 sepBy s [x]    = ss x
 sepBy s (x:xs) = ss x. ss s. sepBy s xs
+
+getRestIfPrefix ::
+	String ->	-- ^ the prefix
+	String ->	-- ^ the string
+	Maybe String
+getRestIfPrefix (p:ps) (x:xs) = if p==x then getRestIfPrefix ps xs else Nothing
+getRestIfPrefix [] rest = Just rest
+getRestIfPrefix _ [] = Nothing
+
+subStr ::
+	String ->	-- ^ the search string
+	String ->	-- ^ the string to be searched
+	Maybe (String,String)	-- ^ Just (pre,post) if string is found
+subStr sstr str = case getRestIfPrefix sstr str of
+	Nothing -> if null str then Nothing else case subStr sstr (tail str) of
+		Nothing -> Nothing
+		Just (pre,post) -> Just (head str:pre,post)
+	Just rest -> Just ([],rest)
+
+replaceMultiVars ::
+	[(String,String)] ->	-- ^ pairs of variable name and content
+	String ->		-- ^ string to be searched
+	String 			-- ^ the result
+replaceMultiVars [] str = str
+replaceMultiVars whole@((name,cont):rest) str = case subStr cont str of
+	Nothing -> replaceMultiVars rest str
+	Just (pre,post) -> (replaceMultiVars rest pre)++name++(replaceMultiVars whole post)
+
+replaceCommonVars ::
+	String ->	-- ^ PN
+	Maybe String ->	-- ^ MYPN
+	String ->	-- ^ PV
+	String ->	-- ^ the string to be replaced
+	String
+replaceCommonVars pn mypn pv str
+	= replaceMultiVars
+		([("${P}",pn++"-"++pv)]
+		++ maybe [] (\x->[("${MY_P}",x++"-"++pv)]) mypn
+		++[("${PN}",pn)]
+		++ maybe [] (\x->[("${MY_PN}",x)]) mypn
+		++[("${PV}",pv)]) str
