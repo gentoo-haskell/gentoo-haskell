@@ -67,9 +67,15 @@ optionsToConfig cfg (x:xs) = optionsToConfig (case x of
 
 parseConfig :: [String] -> Either String (Config,OperationMode)
 parseConfig opts = case getOpt Permute options opts of
+	(popts,"query":[],[]) -> Left "Need a package name to query.\n"
 	(popts,"query":package:[],[]) -> Right (ropts popts,Query package)
+	(popts,"query":package:rest,[]) -> Left ("'query' takes one argument("++show ((length rest)+1)++" given).\n")
+	(popts,"merge":[],[]) -> Left "Need a package's name and version to merge it.\n"
+	(popts,"merge":package:[],[]) -> Left ("Need version of '"++package++"' to merge. Find available versions using 'hackport query package-name.\n")
 	(popts,"merge":package:version:[],[]) -> Right (ropts popts,Merge package version)
+	(popts,"merge":_:_:rest,[]) -> Left ("'merge' takes 2 arguments("++show ((length rest)+2)++" given).\n")
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
+	(popts,"list":rest,[]) -> Left ("'list' takes zero arguments("++show (length rest)++" given).\n")
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)
 	(_,_,[]) -> Left "Unknown opertation mode\n"
 	(_,_,errs) -> Left ("Error parsing flags:\n"++concat errs)
