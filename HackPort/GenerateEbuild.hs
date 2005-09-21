@@ -37,7 +37,7 @@ hackage2ebuild verb tarCommand server store verify pkg = do
 	resolvedPackage <- Hackage.getPkgLocation server pkg
 		`sayDebug` ("Getting package location from '"++server++"'... ",maybe "\n" (\(tar,sig)->"Found tarball '"++tar++"' and signature '"++sig++"'\n"))
 		`catch` (\x->throwDyn $ ConnectionFailed (show x))
-	(tarball,sig) <- maybe (throwDyn PackageNotFound) return resolvedPackage
+	(tarball,sig) <- maybe (throwDyn (PackageNotFound (Right pkg))) return resolvedPackage
 	tarballPath <- (if verify then (do
 		(tarPath,sigPath) <- downloadFileVerify store tarball sig
 		removeFile sigPath
