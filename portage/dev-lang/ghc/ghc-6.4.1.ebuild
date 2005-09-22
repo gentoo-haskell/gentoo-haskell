@@ -99,9 +99,6 @@ src_unpack() {
 
 	# TODO: test if ppc/ppc64 works without patch now ...
 
-	#cd "${S}"
-	#epatch "${FILESDIR}/${PN}-6.4.1-nocabal.patch"
-
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
 	# should do ...
@@ -123,12 +120,6 @@ src_compile() {
 
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
-
-	# hide Cabal
-	if ghc-cabal; then
-		echo "GHC+=-ignore-package Cabal" >> mk/build.mk
-		echo "HC+=-ignore-package Cabal" >> mk/build.mk
-	fi
 
 	# determine what to do with documentation
 	if use doc; then
@@ -161,7 +152,6 @@ src_compile() {
 	use ppc || use ppc64 && echo "SplitObjs=NO" >> mk/build.mk
 	use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 
-	# (--enable-threaded-rts is no longer needed)
 	econf ${myconf} || die "econf failed"
 
 	# the build does not seem to work all that
