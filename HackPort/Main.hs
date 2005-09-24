@@ -12,7 +12,6 @@ import Data.List
 import qualified Data.Set as Set
 
 import Error
-import Query
 import GenerateEbuild
 import Cabal2Ebuild
 import Bash
