@@ -5,7 +5,7 @@ import System.Directory
 import Text.Regex
 import Data.Maybe
 import Data.Version
-import Query(parseVersion')
+import MaybeRead
 
 
 ebuildVersionRegex name = mkRegex ("^"++name++"\\-(.*?)\\.ebuild$")
@@ -35,7 +35,7 @@ portageGetPackageVersions portTree category name
 		let basedir=portTree++"/"++category++"/"++name++"/"
 		content <- getDirectoryContents basedir
 		let versions=map head (mapMaybe (matchRegex (ebuildVersionRegex name)) content)
-		return (mapMaybe parseVersion' versions)
+		return (mapMaybe (readPMaybe parseVersion) versions)
 
 filterPackages :: String -> [String] -> IO [String]
 filterPackages _ [] = return []

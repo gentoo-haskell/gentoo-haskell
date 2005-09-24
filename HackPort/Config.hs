@@ -3,9 +3,11 @@ module Config where
 import System.Console.GetOpt
 import Control.Exception
 import Text.Regex
+import Distribution.Package
 
 import Error
 import Verbosity
+import MaybeRead
 
 data HackPortOptions
 	= TarCommand String
@@ -18,9 +20,10 @@ data HackPortOptions
 
 data OperationMode
 	= Query String
-	| Merge String String
+	| Merge PackageIdentifier
 	| ListAll
 	| DiffTree
+	| Update
 	| ShowHelp
 
 data Config = Config
@@ -73,15 +76,16 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	(popts,"query":package:[],[]) -> Right (ropts popts,Query package)
 	(popts,"query":package:rest,[]) -> Left ("'query' takes one argument("++show ((length rest)+1)++" given).\n")
 	(popts,"merge":[],[]) -> Left "Need a package's name and version to merge it.\n"
-	(popts,"merge":package:[],[]) -> case matchRegex packageRegex package of
-		Nothing ->Left ("Need version of '"++package++"' to merge. Find available versions using 'hackport query package-name.\n")
-		Just ([name,version]) -> Right (ropts popts,Merge name version)
-	(popts,"merge":package:version:[],[]) -> Right (ropts popts,Merge package version)
-	(popts,"merge":_:_:rest,[]) -> Left ("'merge' takes 2 arguments("++show ((length rest)+2)++" given).\n")
+	(popts,"merge":package:[],[]) -> case readPMaybe parsePackageId package of
+		Nothing ->Left ("Could not parse '"++package++"' to a valid package. Valid packages use <name>-<version-number>-<version-postfix> where version consists only of numbers and points.\n")
+		Just pid -> Right (ropts popts,Merge pid)
+	(popts,"merge":_:rest,[]) -> Left ("'merge' takes 1 argument("++show ((length rest)+1)++" given).\n")
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
 	(popts,"list":rest,[]) -> Left ("'list' takes zero arguments("++show (length rest)++" given).\n")
 	(popts,"diff":[],[]) -> Right (ropts popts,DiffTree)
 	(popts,"diff":rest,[]) -> Left ("'diff' takes zero arguments("++show (length rest)++" given).\n")
+	(popts,"update":[],[]) -> Right (ropts popts,Update)
+	(popts,"update":rest,[]) -> Left ("'update' takes zero arguments("++show (length rest)++" given).\n")
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)
 	(_,_,[]) -> Left "Unknown opertation mode\n"
 	(_,_,errs) -> Left ("Error parsing flags:\n"++concat errs)
@@ -89,7 +93,7 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	ropts op = optionsToConfig defaultConfig op
 
 hackageUsage :: IO ()
-hackageUsage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\n\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages\nOptions:" hackageOptions)
+hackageUsage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\n\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages\n\t\"hackport [OPTION] update\" updates the local cache\nOptions:" hackageOptions)
 
 parseVerbosity :: String -> Maybe Verbosity
 parseVerbosity "debug" = Just Debug

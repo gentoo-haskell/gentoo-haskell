@@ -8,6 +8,7 @@ import Control.Exception
 import Data.Typeable
 import System.IO
 import Data.Char
+import Data.List
 import qualified Data.Set as Set
 
 import Error
@@ -19,6 +20,13 @@ import Config
 import Verbosity
 import Diff
 import Portage
+import Cache
+import MaybeRead
+
+readCache' :: Config -> FilePath -> IO Cache
+readCache' cfg portDir = let target=portDir++"/.hackagecache.xml" in readCache (portDir++"/.hackagecache.xml")
+		`sayDebug` ("Reading cache from '"++target++"'...",const "done.\n") where
+	sayDebug = verboseDebug (verbosity cfg)
 
 getPortageTree :: Config -> IO String
 getPortageTree cfg = case portageTree cfg of
@@ -29,31 +37,33 @@ getPortageTree cfg = case portageTree cfg of
 
 listAll :: Config -> IO ()
 listAll cfg = do
-	pkgs <- getPackages (verbosity cfg) (server cfg)
-	putStr (unlines pkgs)
+	portTree <- getPortageTree cfg
+	cache <- readCache' cfg portTree
+	putStr (unlines (map (showPackageId.(\(pkg,_,_)->pkg)) (packages cache)))
 
 query :: Config -> String -> IO ()
 query cfg name = do
-	pkgvers <- getPackageVersions (verbosity cfg) (server cfg) name
-	putStr (unlines (map showVersion pkgvers))
-
-merge :: Config -> String -> String -> IO ()
-merge cfg name vers = do
 	portTree <- getPortageTree cfg
-	case parseVersion' vers of
-		Nothing -> putStr ("Error: couldn't parse version number '"++vers++"'\n")
-		Just realvers -> do
-			ebuild <- hackage2ebuild (verbosity cfg) (tarCommand cfg) (server cfg) (tmp cfg) (verify cfg) (PackageIdentifier {pkgName=name,pkgVersion=realvers})
-			mergeEbuild (verbosity cfg) portTree (portageCategory cfg) ebuild
+	cache <- readCache' cfg portTree
+	let pkgs = filter (\(PackageIdentifier {pkgName=str},_,_)->str==name) (packages cache)
+	if null pkgs then throwDyn (PackageNotFound (Left name)) else putStr (unlines (map (showVersion.pkgVersion.(\(pkg,_,_)->pkg)) pkgs))
+
+merge :: Config -> PackageIdentifier -> IO ()
+merge cfg pid = do
+	portTree <- getPortageTree cfg
+	cache <- readCache' cfg portTree
+	let rpid = maybe (throwDyn (PackageNotFound (Right pid))) id (find (\(pkg,_,_)->pkg==pid) (packages cache))
+	ebuild <- hackage2ebuild (verbosity cfg) (tarCommand cfg) (tmp cfg) (verify cfg) rpid
+	mergeEbuild (verbosity cfg) portTree (portageCategory cfg) ebuild
 	where
 	sayDebug = verboseDebug (verbosity cfg)
 	sayNormal = verboseNormal (verbosity cfg)
 
 diff :: Config -> IO ()
 diff cfg = do
-	serverPkgs <- getPackageIdentifiers (server cfg)
-		`sayDebug` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
-	let serverPkgs'=map (\pkg->pkg {pkgName=map toLower (pkgName pkg)}) serverPkgs
+	portTree <- getPortageTree cfg
+	cache <- readCache' cfg portTree
+	let serverPkgs'=map (\(pkg,_,_)->pkg {pkgName=map toLower (pkgName pkg)}) (packages cache)
 	portTree <- getPortageTree cfg
 	portagePkgs <- portageGetPackages portTree (portageCategory cfg)
 	let pkgDiff=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
@@ -63,6 +73,17 @@ diff cfg = do
 		Stay->'='):(pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems pkgDiff)
 	where
 	sayDebug = verboseDebug (verbosity cfg)
+
+update :: Config -> IO ()
+update cfg = do
+	portTree <- getPortageTree cfg
+	cache <- getCacheFromServer (server cfg)
+		`sayDebug` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
+	let writeT = portTree++"/.hackagecache.xml"
+	writeCache writeT cache
+		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.\n")
+	where
+	sayDebug=verboseDebug (verbosity cfg)
 
 main :: IO ()
 main = do
@@ -75,8 +96,9 @@ main = do
 			ShowHelp -> hackageUsage
 			ListAll -> listAll config
 			Query pkg -> query config pkg
-			Merge pkg vers -> merge config pkg vers
-			DiffTree -> diff config) `catchDyn` (\x->report (hackPortShowError (server config) x))
+			Merge pkg -> merge config pkg
+			DiffTree -> diff config
+			Update -> update config) `catchDyn` (\x->report (hackPortShowError (server config) x))
 	where
 	report err = hPutStr stderr (err++"\n")
 

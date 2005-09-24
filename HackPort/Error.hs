@@ -21,6 +21,8 @@ data HackPortError
 	| NoOverlay
 	| MultipleOverlays [String]
 	| UnknownVerbosityLevel String
+	| WrongCacheVersion
+	| InvalidCache
 	deriving (Typeable)
 
 type HackPortResult a = Either
@@ -28,7 +30,7 @@ type HackPortResult a = Either
 hackPortShowError :: String -> HackPortError -> String
 hackPortShowError server err = case err of
 	ConnectionFailed reason -> "Connection to hackage server '"++server++"' failed: "++reason
-	PackageNotFound pkg -> "Package '"++(either show showPackageId pkg)++"' not found on server."
+	PackageNotFound pkg -> "Package '"++(either id showPackageId pkg)++"' not found on server."
 	InvalidTarballURL url reason -> "Error while downloading tarball '"++url++"': "++reason
 	InvalidSignatureURL url reason -> "Error while downloading signature '"++url++"': "++reason
 	VerificationFailed file signature -> "Error while checking signature('"++signature++"') of '"++file++"'"
@@ -43,3 +45,5 @@ hackPortShowError server err = case err of
 	MultipleOverlays overlays -> "You have the following overlays available: '"++unwords overlays++"'. Please choose one by using '-p path-to-overlay'"
 	NoOverlay -> "You don't have PORTDIR_OVERLAY set in '/etc/make.conf'. Please set it or use '-p path-to-overlay'"
 	UnknownVerbosityLevel str -> "The verbosity level '"++str++"' is invalid. Please use debug,normal or silent"
+	WrongCacheVersion -> "The version of the cache is too old. Please update the cache using 'hackport update'"
+	InvalidCache -> "Could not read the cache. Please ensure that it's up to date using 'hackport update'"

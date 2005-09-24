@@ -11,10 +11,6 @@ import Data.List (nub,find)
 import Text.ParserCombinators.ReadP
 import Prelude hiding(catch)
 
-parseVersion' :: String -> Maybe Version
-parseVersion' str = maybe Nothing (\x->Just (fst x)) (find (\(_,rest)->null rest) (parser str)) where
-	parser = readP_to_S parseVersion
-
 getPackageVersions :: Verbosity -> String -> String -> IO [Version]
 getPackageVersions verb server name = do
 	pkgs <- listPackages server 

@@ -8,7 +8,7 @@ import Verbosity
 
 import Prelude hiding (catch)
 import Control.Exception
-import Network.Hackage.Client as Hackage
+--import Network.Hackage.Client as Hackage
 import Distribution.PackageDescription
 import Distribution.Package
 import System.Directory
@@ -28,16 +28,11 @@ mergeEbuild verb target category ebuild = do
 hackage2ebuild ::
 	Verbosity ->		-- ^ verbosity level
 	FilePath ->		-- ^ the tar executable
-	String ->		-- ^ the hackage server
 	FilePath ->		-- ^ a temp path to store the tarball
 	Bool ->			-- ^ gpg verify the package?
-	PackageIdentifier ->	-- ^ the package
+	(PackageIdentifier,String,String) ->	-- ^ the package
 	IO EBuild
-hackage2ebuild verb tarCommand server store verify pkg = do
-	resolvedPackage <- Hackage.getPkgLocation server pkg
-		`sayDebug` ("Getting package location from '"++server++"'... ",maybe "\n" (\(tar,sig)->"Found tarball '"++tar++"' and signature '"++sig++"'\n"))
-		`catch` (\x->throwDyn $ ConnectionFailed (show x))
-	(tarball,sig) <- maybe (throwDyn (PackageNotFound (Right pkg))) return resolvedPackage
+hackage2ebuild verb tarCommand store verify (pkg,tarball,sig) = do
 	tarballPath <- (if verify then (do
 		(tarPath,sigPath) <- downloadFileVerify store tarball sig
 		removeFile sigPath
