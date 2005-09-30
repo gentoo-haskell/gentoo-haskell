@@ -37,7 +37,7 @@ hackage2ebuild verb tarCommand store verify (pkg,tarball,sig) = do
 		(tarPath,sigPath) <- downloadFileVerify store tarball sig
 		removeFile sigPath
 		return tarPath) else downloadTarball store tarball)
-		`sayDebug` ("Downloading tarball to '"++store++"'... ",const "done.\n")
+		`sayNormal` ("Downloading tarball from '"++tarball++"' to '"++store++"'... ",const "done.\n")
 	tarType <- maybe (removeFile tarballPath >> throwDyn (UnknownCompression tarball)) return (tarballGetType tarballPath)
 		`sayDebug` ("Guessing compression type of tarball... ",const "done.\n")
 	filesInTarball <- tarballGetFiles tarCommand tarballPath tarType

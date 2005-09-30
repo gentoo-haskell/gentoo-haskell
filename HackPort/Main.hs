@@ -77,12 +77,13 @@ update :: Config -> IO ()
 update cfg = do
 	portTree <- getPortageTree cfg
 	cache <- getCacheFromServer (server cfg)
-		`sayDebug` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
+		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
 	let writeT = portTree++"/.hackagecache.xml"
 	writeCache writeT cache
 		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.\n")
 	where
 	sayDebug=verboseDebug (verbosity cfg)
+	sayNormal=verboseNormal (verbosity cfg)
 
 main :: IO ()
 main = do
