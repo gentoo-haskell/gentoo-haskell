@@ -29,7 +29,7 @@ readCache' cfg portDir = let target=portDir++"/.hackagecache.xml" in readCache (
 
 getPortageTree :: Config -> IO String
 getPortageTree cfg = case portageTree cfg of
-	Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf... ",\tree->"Found '"++tree++"'\n")
+	Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf... \n",\tree->"Found '"++tree++"'\n")
 	Just tree -> return tree
 	where
 	sayDebug=verboseDebug (verbosity cfg)

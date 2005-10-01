@@ -13,7 +13,22 @@ getOverlay = do
 	case overlays of
 		[] -> throwDyn NoOverlay
 		[x] -> return x
-		mul -> throwDyn $ MultipleOverlays mul
+		mul -> search mul
+  where
+  search mul = do
+    let loop [] = throwDyn $ MultipleOverlays mul
+        loop (x:xs) = do
+          found <- doesFileExist (x ++ "/.hackagecache.xml")
+          if found
+            then return x
+            else loop xs
+    putStrLn "There are several overlays in your /etc/make.conf"
+    putStr $ unlines $ map (" * " ++) mul
+    putStrLn "Looking for one with a HackPort cache..."
+    overlay <- loop mul
+    putStrLn ("I choose " ++ overlay ++ 
+              "\nOverride my decision with hackport -p /my/overlay")
+    return overlay
 
 getOverlays :: IO [String]
 getOverlays = runBash "source /etc/make.conf;echo -n $PORTDIR_OVERLAY" >>= (return.words)
