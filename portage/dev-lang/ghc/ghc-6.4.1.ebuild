@@ -34,7 +34,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 # re-add ~ppc64 once dependencies are fulfilled
-KEYWORDS="-alpha ~amd64 ~ppc ~x86"
+KEYWORDS="-alpha ~amd64 ~x86 ~sparc"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -149,7 +149,7 @@ src_compile() {
 	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
-	use ppc || use ppc64 && echo "SplitObjs=NO" >> mk/build.mk
+	use ppc || use ppc64 || use sparc && echo "SplitObjs=NO" >> mk/build.mk
 	use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 
 	econf ${myconf} || die "econf failed"
