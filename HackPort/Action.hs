@@ -8,7 +8,12 @@ import Control.Monad.Error
 import System.IO
 import System.Environment
 
-type HPAction = ErrorT HackPortError (StateT (Config,Int) IO)
+type HPAction = ErrorT HackPortError (StateT HPState IO)
+
+data HPState = HPState
+	{ config :: Config
+	, indention :: Int
+	}
 
 verbose :: HPAction a -> (String,a->String) -> HPAction a
 verbose action (premsg,postmsg) = do
@@ -42,16 +47,18 @@ info str = do
 		_ -> echoLn str
 
 getCfg :: HPAction Config
-getCfg = get >>= return.fst
+getCfg = gets config
 
 lessIndent :: HPAction ()
-lessIndent = get >>= \(cfg,ind)->put (cfg,ind-1)
+lessIndent = modify $ \s -> s { indention = indention s - 1 }
 
 moreIndent :: HPAction ()
-moreIndent = get >>= \(cfg,ind)->put (cfg,ind+1)
+moreIndent = modify $ \s -> s { indention = indention s + 1 }
 
 echoIndent :: HPAction ()
-echoIndent = get >>= \(_,ind)->echo (replicate ind '\t')
+echoIndent = do
+	ind <- gets indention
+	echo (replicate ind '\t')
 
 indent :: HPAction a -> HPAction a
 indent action = do
@@ -74,11 +81,13 @@ loadConfig = do
 	args <- liftIO getArgs
 	case parseConfig args of
 		Left errmsg -> throwError (ArgumentError errmsg)
-		Right (cfg,opmode) -> get >>= \(_,ind) -> put (cfg,ind) >> return opmode
+		Right (cfg,opmode) -> do
+			modify $ \s -> s { config = cfg }
+			return opmode
 
 performHPAction :: HPAction a -> IO ()
 performHPAction action = do
-	res <- evalStateT (runErrorT action) (defaultConfig,0)
+	res <- evalStateT (runErrorT action) (HPState defaultConfig 0)
 	case res of
 		Left err -> hPutStr stderr (hackPortShowError err)
 		Right _ -> return ()
