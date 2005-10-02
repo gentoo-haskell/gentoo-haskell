@@ -4,103 +4,93 @@ import System.Environment
 import System.Exit
 import Distribution.Package
 import Data.Version
-import Control.Exception
+import Control.Monad.Trans
+import Control.Monad.Error
 import Data.Typeable
 import System.IO
 import Data.Char
 import Data.List
 import qualified Data.Set as Set
 
+import Action
 import Error
 import GenerateEbuild
 import Cabal2Ebuild
 import Bash
 import Config
-import Verbosity
 import Diff
 import Portage
 import Cache
 import MaybeRead
 
-readCache' :: Config -> FilePath -> IO Cache
-readCache' cfg portDir = let target=portDir++"/.hackagecache.xml" in readCache (portDir++"/.hackagecache.xml")
-		`sayDebug` ("Reading cache from '"++target++"'...",const "done.\n") where
-	sayDebug = verboseDebug (verbosity cfg)
+readCache' :: FilePath -> HPAction Cache
+readCache' portDir = let target=portDir++"/.hackagecache.xml" in readCache (portDir++"/.hackagecache.xml")
+		`sayDebug` ("Reading cache from '"++target++"'...",const "done.")
 
-getPortageTree :: Config -> IO String
-getPortageTree cfg = case portageTree cfg of
-	Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf... \n",\tree->"Found '"++tree++"'\n")
-	Just tree -> return tree
-	where
-	sayDebug=verboseDebug (verbosity cfg)
+getPortageTree :: HPAction String
+getPortageTree = do
+	cfg <- getCfg
+	case portageTree cfg of
+		Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf...",\tree->"Found '"++tree++"'")
+		Just tree -> return tree
 
-listAll :: Config -> IO ()
-listAll cfg = do
-	portTree <- getPortageTree cfg
-	cache <- readCache' cfg portTree
-	putStr (unlines (map (showPackageId.(\(pkg,_,_)->pkg)) (packages cache)))
+listAll :: HPAction ()
+listAll = do
+	cache <- getPortageTree >>= readCache'
+	liftIO $ putStr (unlines (map (showPackageId.(\(pkg,_,_)->pkg)) (packages cache)))
 
-query :: Config -> String -> IO ()
-query cfg name = do
-	portTree <- getPortageTree cfg
-	cache <- readCache' cfg portTree
+query :: String -> HPAction ()
+query name = do
+	portTree <- getPortageTree
+	cache <- readCache' portTree
 	let pkgs = filter (\(PackageIdentifier {pkgName=str},_,_)->str==name) (packages cache)
-	if null pkgs then throwDyn (PackageNotFound (Left name)) else putStr (unlines (map (showVersion.pkgVersion.(\(pkg,_,_)->pkg)) pkgs))
+	if null pkgs then throwError (PackageNotFound (Left name)) else liftIO (putStr (unlines (map (showVersion.pkgVersion.(\(pkg,_,_)->pkg)) pkgs)))
 
-merge :: Config -> PackageIdentifier -> IO ()
-merge cfg pid = do
-	portTree <- getPortageTree cfg
-	cache <- readCache' cfg portTree
-	let rpid = maybe (throwDyn (PackageNotFound (Right pid))) id (find (\(pkg,_,_)->pkg==pid) (packages cache))
-	ebuild <- hackage2ebuild (verbosity cfg) (tarCommand cfg) (tmp cfg) (verify cfg) rpid
-	mergeEbuild (verbosity cfg) portTree (portageCategory cfg) ebuild
-	where
-	sayDebug = verboseDebug (verbosity cfg)
-	sayNormal = verboseNormal (verbosity cfg)
+merge :: PackageIdentifier -> HPAction ()
+merge pid = do
+	portTree <- getPortageTree
+	cache <- readCache' portTree
+	rpid <- maybe (throwError (PackageNotFound (Right pid))) (return.id) (find (\(pkg,_,_)->pkg==pid) (packages cache))
+	ebuild <- hackage2ebuild rpid
+	mergeEbuild portTree ebuild
 
-diff :: Config -> IO ()
-diff cfg = do
-	portTree <- getPortageTree cfg
-	cache <- readCache' cfg portTree
+diff :: HPAction ()
+diff = do
+	cfg <- getCfg
+	portTree <- getPortageTree
+	cache <- readCache' portTree
 	let serverPkgs'=map (\(pkg,_,_)->pkg {pkgName=map toLower (pkgName pkg)}) (packages cache)
-	portTree <- getPortageTree cfg
-	portagePkgs <- portageGetPackages portTree (portageCategory cfg)
+	portTree <- getPortageTree
+	portagePkgs <- portageGetPackages portTree
 	let pkgDiff=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
-	putStr $ unlines $ map (\(DiffResult action pkg)->(case action of
+	liftIO $ putStr $ unlines $ map (\(DiffResult action pkg)->(case action of
 		Add->'+'
 		Remove->'-'
 		Stay->'='):(pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems pkgDiff)
-	where
-	sayDebug = verboseDebug (verbosity cfg)
 
-update :: Config -> IO ()
-update cfg = do
-	portTree <- getPortageTree cfg
-	cache <- getCacheFromServer (server cfg)
+update :: HPAction ()
+update = do
+	cfg <- getCfg
+	portTree <- getPortageTree
+	cache <- liftIO (getCacheFromServer (server cfg))
 		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
 	let writeT = portTree++"/.hackagecache.xml"
-	writeCache writeT cache
+	liftIO (writeCache writeT cache)
 		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.\n")
-	where
-	sayDebug=verboseDebug (verbosity cfg)
-	sayNormal=verboseNormal (verbosity cfg)
+
+hpmain :: HPAction ()
+hpmain = do
+	mode <- loadConfig
+	case mode of
+		ShowHelp -> liftIO hackageUsage
+		ListAll -> listAll
+		Query pkg -> query pkg
+		Merge pkg -> merge pkg
+		DiffTree -> diff
+		Update -> update
 
 main :: IO ()
-main = do
-	args <- getArgs
-	case parseConfig args of
-		Left err -> do
-			putStr err
-			exitWith (ExitFailure 1)
-		Right (config,mode) -> (case mode of
-			ShowHelp -> hackageUsage
-			ListAll -> listAll config
-			Query pkg -> query config pkg
-			Merge pkg -> merge config pkg
-			DiffTree -> diff config
-			Update -> update config) `catchDyn` (\x->report (hackPortShowError (server config) x))
-	where
-	report err = hPutStr stderr (err++"\n")
+main = performHPAction hpmain
 
 instance Ord PackageIdentifier where
 	compare pkg1 pkg2 = case compare (pkgName pkg1) (pkgName pkg2) of

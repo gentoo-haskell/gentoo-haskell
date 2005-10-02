@@ -6,7 +6,6 @@ import Text.Regex
 import Distribution.Package
 
 import Error
-import Verbosity
 import MaybeRead
 
 data HackPortOptions
@@ -35,6 +34,11 @@ data Config = Config
 	, verify		::Bool
 	, verbosity		::Verbosity
 	}
+
+data Verbosity
+	= Debug
+	| Normal
+	| Silent
 
 packageRegex = mkRegex "^(.*?)-([0-9].*)$"
 

@@ -2,6 +2,8 @@ module Cache where
 
 import MaybeRead
 import Error
+import Action
+
 import Text.XML.HaXml.Haskell2Xml
 import Text.XML.HaXml.Pretty
 import Text.XML.HaXml.Types
@@ -11,6 +13,7 @@ import Data.Version
 import Network.Hackage.Client
 import System.IO
 import Control.Exception
+import Control.Monad.Error
 import Prelude hiding(catch)
 
 thisVersion=Version { versionBranch=[0,1],versionTags=[] }
@@ -31,13 +34,13 @@ getCacheFromServer serv = do
 writeCache :: FilePath -> Cache -> IO ()
 writeCache path cache = writeFile path (show (document (cacheToXML cache)))
 
-readCache :: FilePath -> IO Cache
+readCache :: FilePath -> HPAction Cache
 readCache path = do
-	file <- readFile path `catch` const (throwDyn InvalidCache)
+	file <- liftIO (readFile path) `catchError` const (throwError InvalidCache)
 	case xmlParse' path file of
-		Left str -> throwDyn InvalidCache
+		Left str -> throwError InvalidCache
 		Right doc -> case cacheFromXML doc of
-			Nothing -> throwDyn InvalidCache
+			Nothing -> throwError InvalidCache
 			Just res -> return res
 
 cacheToXML :: Cache -> Document

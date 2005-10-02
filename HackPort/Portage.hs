@@ -1,39 +1,41 @@
 module Portage where
 
+import Control.Monad.Trans
 import Distribution.Package
 import System.Directory
 import Text.Regex
 import Data.Maybe
 import Data.Version
-import MaybeRead
 
+import MaybeRead
+import Action
+import Config
 
 ebuildVersionRegex name = mkRegex ("^"++name++"\\-(.*?)\\.ebuild$")
 
 portageGetPackages ::
 	String ->	-- ^ the portage dir
-	String ->	-- ^ the category
-	IO [PackageIdentifier]
-portageGetPackages portTree category
-	= do
-		let basedir=portTree++"/"++category++"/"
-		content <- getDirectoryContents basedir
-		pkgs <- filterPackages basedir content
-		identifiers <- mapM (\pkgname->
-			(portageGetPackageVersions portTree category pkgname
-				>>=(\pkgversions->return (map (\pkgv->PackageIdentifier{pkgName=pkgname,pkgVersion=pkgv}) pkgversions)))
-			) pkgs
-		return $ concat identifiers
+	HPAction [PackageIdentifier]
+portageGetPackages portTree = do
+	cfg <- getCfg
+	let basedir=portTree++"/"++(portageCategory cfg)++"/"
+	content <- liftIO $ getDirectoryContents basedir
+	pkgs <- liftIO $ filterPackages basedir content
+	identifiers <- mapM (\pkgname->
+		(portageGetPackageVersions portTree pkgname
+			>>=(\pkgversions->return (map (\pkgv->PackageIdentifier{pkgName=pkgname,pkgVersion=pkgv}) pkgversions)))
+		) pkgs
+	return $ concat identifiers
 
 portageGetPackageVersions ::
 	String ->	-- ^ the portage dir
-	String ->	-- ^ the category
 	String ->	-- ^ the package
-	IO [Version]
-portageGetPackageVersions portTree category name
+	HPAction [Version]
+portageGetPackageVersions portTree name
 	= do
-		let basedir=portTree++"/"++category++"/"++name++"/"
-		content <- getDirectoryContents basedir
+		cfg <- getCfg
+		let basedir=portTree++"/"++(portageCategory cfg)++"/"++name++"/"
+		content <- liftIO $ getDirectoryContents basedir
 		let versions=map head (mapMaybe (matchRegex (ebuildVersionRegex name)) content)
 		return (mapMaybe (readPMaybe parseVersion) versions)
 
