@@ -120,6 +120,17 @@ elog() {
 
 setup_portdir
 
+find_in_portdir() {
+	local f
+	for f in ${PORTDIR} ${PORTDIR_OVERLAYS}; do
+		if [[ -f "${f}/${1}" ]]; then
+			echo "${f}/${1}"
+			return 0
+		fi
+	done
+	return 1
+}
+
 if [ -z "${PORTDIR}" ]; then
 	eerror "Unable to proceed. Can not find PORTDIR. Make sure the command:"
 	eerror " "
@@ -208,7 +219,12 @@ done
 
 eloginfo "Re-ordering packages to merge .."
 
-PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${PORTDIR}/dev-lang/ghc/files/depsort.py ${PKGS_OK} | xargs)"
+DEPSORT=$(find_in_portdir "dev-lang/ghc/files/depsort.py")
+if [[ -z ${DEPSORT} ]]; then
+	eerror "Fatal error: File dev-lang/ghc/files/depsort.py in portage tree."
+	exit 1
+fi
+PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${DEPSORT} ${PKGS_OK} | xargs)"
 
 eloginfo "Preparing to merge these packages in this order:"
 for pkg in $PKGS_OK_SORTED; do
