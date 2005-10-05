@@ -31,7 +31,10 @@ getPortageTree :: HPAction String
 getPortageTree = do
 	cfg <- getCfg
 	case portageTree cfg of
-		Nothing -> getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf...",\tree->"Found '"++tree++"'")
+		Nothing -> do
+		  tree <- getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf...",\tree->"Found '"++tree++"'")
+		  setPortageTree $ Just tree
+		  return tree
 		Just tree -> return tree
 
 listAll :: HPAction ()

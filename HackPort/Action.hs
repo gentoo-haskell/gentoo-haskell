@@ -49,6 +49,10 @@ info str = do
 getCfg :: HPAction Config
 getCfg = gets config
 
+setPortageTree :: Maybe String -> HPAction ()
+setPortageTree mt = modify $ \hps -> 
+	hps { config = (config hps) { portageTree = mt } }
+
 lessIndent :: HPAction ()
 lessIndent = modify $ \s -> s { indention = indention s - 1 }
 
