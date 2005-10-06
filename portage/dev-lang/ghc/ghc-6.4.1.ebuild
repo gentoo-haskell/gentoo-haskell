@@ -1,19 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.ebuild,v 1.7 2005/07/09 18:13:32 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1.ebuild,v 1.5 2005/10/06 18:11:25 dcoutts Exp $
 
-# We abandon virtual/ghc in favor of || dependencies.
-# Here's a brief explanation of the new bootstrap logic:
+# Brief explanation of the bootstrap logic:
 #
 # ghc requires ghc-bin to bootstrap.
 # Therefore, 
-# (1) ghc depends on || (ghc-bin ghc)
-# (2) all packages that need ghc do the same
+# (1) both ghc-bin and ghc provide virtual/ghc
+# (2) virtual/ghc *must* default to ghc-bin
+# (3) ghc depends on virtual/ghc
 #
-# Having the binary first everywhere doesn't force
-# anyone to do the full bootstrap. Still, ghc-bin can
-# be removed from a system after the first successful
-# install of ghc.
+# This solution has the advantage that the binary distribution
+# can be removed once an forall after the first succesful install
+# of ghc.
 
 inherit base flag-o-matic eutils ghc-package
 
@@ -34,15 +33,15 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 # re-add ~ppc64 once dependencies are fulfilled
-KEYWORDS="-alpha ~amd64 ~x86 ~sparc"
+KEYWORDS="-alpha ~amd64 ~x86 ~sparc ~ppc"
 
 S="${WORKDIR}/${MY_P}"
 
-# we still provide virtual/ghc to maintain compatibility for now
 PROVIDE="virtual/ghc"
 
 # ghc cannot usually be bootstrapped using later versions ...
-DEPEND="|| ( <=dev-lang/ghc-bin-6.5 <=dev-lang/ghc-6.5 )
+DEPEND="<virtual/ghc-6.5
+	!>=virtual/ghc-6.6*
 	>=dev-lang/perl-5.6.1
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/make-3.79.1
