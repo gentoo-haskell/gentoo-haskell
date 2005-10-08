@@ -24,14 +24,17 @@ S="${WORKDIR}/${MY_PN}_${PV}"
 
 src_compile() {
 	emake GHC="$(ghc-getghc) -O" || die "emake failed"
+	if use doc ; then
+		cd doc
+		pdflatex LBNF-report.tex
+		pdflatex LBNF-report.tex
+	fi
 }
 
 src_install() {
 	dobin bnfc
 	if use doc ; then
 		cd doc
-		pdflatex LBNF-report.tex
-		pdflatex LBNF-report.tex
 		dodoc LBNF-report.pdf
 	fi
 }
