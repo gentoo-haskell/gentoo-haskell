@@ -65,6 +65,8 @@ RDEPEND="virtual/libc
 	>=sys-libs/readline-4.2
 	opengl? ( virtual/opengl virtual/glu virtual/glut )"
 
+PDEPEND=">=dev-haskell/cabal-1.1.3"
+
 SUPPORTED_CFLAGS=""
 
 # Setup supported CFLAGS.
