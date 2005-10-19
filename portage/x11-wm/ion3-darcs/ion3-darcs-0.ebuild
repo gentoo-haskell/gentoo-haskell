@@ -1,7 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
-# /var/darcsroot/gentoo-x86/x11-wm/ion3-darcs/ion3-darcs-99999999.ebuild,v 1.0 2005/10/16 12:06:54 ootput Exp $
+# $Header: $
 
 inherit darcs
 
