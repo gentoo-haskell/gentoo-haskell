@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1.ebuild,v 1.5 2005/10/06 18:11:25 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1.ebuild,v 1.6 2005/10/06 21:47:41 swegener Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -16,7 +16,8 @@
 
 inherit base flag-o-matic eutils ghc-package
 
-IUSE="doc java opengl"
+IUSE="doc opengl"
+#java use flag disabled because of bug #106992
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -41,7 +42,7 @@ PROVIDE="virtual/ghc"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="<virtual/ghc-6.5
-	!>=virtual/ghc-6.6*
+	!>=virtual/ghc-6.6
 	>=dev-lang/perl-5.6.1
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/make-3.79.1
@@ -52,11 +53,11 @@ DEPEND="<virtual/ghc-6.5
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.6-r2
-		java? ( >=dev-java/fop-0.20.5 ) )
+		>=dev-haskell/haddock-0.6-r2 )
 	opengl? ( virtual/opengl
 		virtual/glu
 		virtual/glut )"
+# removed: java? ( >=dev-java/fop-0.20.5 )
 
 RDEPEND="virtual/libc
 	>=sys-devel/gcc-2.95.3
@@ -125,9 +126,9 @@ src_compile() {
 	# determine what to do with documentation
 	if use doc; then
 		mydoc="html"
-		if use java; then
-			mydoc="${mydoc} ps"
-		fi
+#		if use java; then
+#			mydoc="${mydoc} ps"
+#		fi
 	else
 		mydoc=""
 		# needed to prevent haddock from being called
