@@ -85,11 +85,28 @@ update = do
 	cfg <- getCfg
 	portTree <- getPortageTree
 	cache <- liftIO (getCacheFromServer (server cfg))
-		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.\n")
+		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.")
 	let writeT = portTree++"/.hackagecache.xml"
 	liftIO (writeCache writeT cache)
-		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.\n")
+		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.")
 
+overlayonly :: Maybe String -> HPAction ()
+overlayonly pd = do
+	cfg <- getCfg
+	portdir <- maybe (getPortDir `sayDebug` ("Guessing portage main dir from /etc/make.conf...",\res->"found: "++res++".")) return pd
+	overlay <- getPortageTree
+	mainlinepkgs <- portageGetPackages portdir
+		`sayDebug` ("Getting package list from "++portdir++"...",const "done.")
+	overlaypkgs <- portageGetPackages overlay
+		`sayDebug` ("Getting package list from "++overlay++"...",const "done.")
+	info "These packages are in the overlay but not in the portage tree:"
+	let (_,diff,_) = diffSet (Set.fromList mainlinepkgs) (Set.fromList overlaypkgs)
+	let vindent = case verbosity cfg of
+		Silent -> id
+		_ -> indent
+	let showPkgSet set = mapM_ (\pkg->echoLn (pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems set)
+	vindent $ showPkgSet diff
+	
 hpmain :: HPAction ()
 hpmain = do
 	mode <- loadConfig
@@ -100,6 +117,7 @@ hpmain = do
 		Merge pkg -> merge pkg
 		DiffTree mode -> diff mode
 		Update -> update
+		OverlayOnly portdir -> overlayonly portdir
 
 main :: IO ()
 main = performHPAction hpmain

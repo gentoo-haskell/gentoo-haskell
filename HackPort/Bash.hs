@@ -38,6 +38,13 @@ getOverlay = do
 getOverlays :: HPAction [String]
 getOverlays = runBash "source /etc/make.conf;echo -n $PORTDIR_OVERLAY" >>= (return.words)
 
+getPortDir :: HPAction String
+getPortDir = do
+	dir <- runBash "source /etc/make.conf;echo -n $PORTDIR"
+	case dir of
+		"" -> return "/usr/portage"
+		_ -> return dir
+
 runBash ::
 	String -> -- ^ The command line
 	HPAction String -- ^ The command-line's output

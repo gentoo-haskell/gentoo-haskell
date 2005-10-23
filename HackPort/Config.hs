@@ -24,6 +24,7 @@ data OperationMode
 	| DiffTree DiffMode
 	| Update
 	| ShowHelp
+	| OverlayOnly (Maybe String)
 
 data DiffMode
 	= ShowAll
@@ -102,6 +103,9 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	(popts,"diff":arg1:args,[]) -> Left ("'diff' takes one argument("++show ((length args)+1)++" given).\n")
 	(popts,"update":[],[]) -> Right (ropts popts,Update)
 	(popts,"update":rest,[]) -> Left ("'update' takes zero arguments("++show (length rest)++" given).\n")
+	(popts,"overlayonly":[],[]) -> Right (ropts popts,OverlayOnly Nothing)
+	(popts,"overlayonly":portdir:[],[]) -> Right (ropts popts,OverlayOnly (Just portdir))
+	(popts,"overlayonly":arg:args,[]) -> Left ("'overlayonly' takes only one argument("++show ((length args)+1)++" given).\n")
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)
 	(_,_,[]) -> Left "Unknown opertation mode\n"
 	(_,_,errs) -> Left ("Error parsing flags:\n"++concat errs)
