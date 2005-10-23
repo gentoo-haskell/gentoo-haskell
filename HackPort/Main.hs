@@ -30,7 +30,8 @@ readCache' portDir = let target=portDir++"/.hackagecache.xml" in readCache (port
 listAll :: HPAction ()
 listAll = do
 	cache <- getPortageTree >>= readCache'
-	liftIO $ putStr (unlines (map (showPackageId.(\(pkg,_,_)->pkg)) (packages cache)))
+	liftIO $ putStr $ unlines 
+		[ showPackageId pkg | (pkg,_,_) <- sort $ packages cache ]
 
 query :: String -> HPAction ()
 query name = do
