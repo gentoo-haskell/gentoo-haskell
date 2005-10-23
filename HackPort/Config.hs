@@ -107,11 +107,12 @@ hackageUsage :: IO ()
 hackageUsage = putStr $ flip usageInfo hackageOptions $ unlines
 	[ "Usage:"
 	, "\t\"hackport [OPTION] MODE [MODETARGET]\""
-	, "\t\"hackport [OPTION] list\" lists all available packages"
-	, "\t\"hackport [OPTION] query PKG\" shows all versions of a package"
+	, "\t\"hackport [OPTION] list\" prints all available packages"
+	, "\t\"hackport [OPTION] query PKG\" prints all versions of a package"
 	, "\t\"hackport [OPTION] merge PKG-VERSION\" merges a package into the portage tree"
-	, "\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages"
+	, "\t\"hackport [OPTION] diff\" prints the difference between the portage-tree and the server's packages"
 	, "\t\"hackport [OPTION] update\" updates the local cache"
+	, "\t\"hackport [OPTION] overlayonly\" prints all ebuilds that exist only in the overlay"
 	, "Options:"
 	]
 
