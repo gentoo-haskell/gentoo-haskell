@@ -39,9 +39,7 @@ readCache path = do
 	file <- liftIO (readFile path) `catchError` const (throwError InvalidCache)
 	case xmlParse' path file of
 		Left str -> throwError InvalidCache
-		Right doc -> case cacheFromXML doc of
-			Nothing -> throwError InvalidCache
-			Just res -> return res
+		Right doc -> cacheFromXML doc
 
 cacheToXML :: Cache -> Document
 cacheToXML cache = Document prolog emptyST mainElement [] where
@@ -74,19 +72,20 @@ packageFromXML (CElem (Elem name attrs _)) = case name of
 	_ -> Nothing
 packageFromXML _ = Nothing
 
-cacheFromXML :: Document -> Maybe Cache
+cacheFromXML :: Document -> HPAction Cache
 cacheFromXML (Document _ _ mainElement []) = do
 	case mainElement of
-		Elem "cache" attrs cont -> do
+		Elem "cache" attrs cont -> case (do
 			version <- lookup "version" attrs
-			rversion <- case version of
+			case version of
 				AttValue [Left n] -> readPMaybe parseVersion n
-				_ -> Nothing
-			if rversion==thisVersion then do
-				ser <- case lookup "server" attrs of
-					Just (AttValue [Left n]) -> return n
-					_ -> Nothing
-				pkgs <- mapM packageFromXML cont
-				return (Cache {serverName=ser,packages=pkgs})
-				else throwDyn WrongCacheVersion
-		_ -> Nothing
+				_ -> Nothing) of
+				Nothing -> throwError InvalidCache
+				Just vers ->if vers==thisVersion then maybe (throwError InvalidCache) return (do
+					ser <- case lookup "server" attrs of
+						Just (AttValue [Left n]) -> return n
+						_ -> Nothing
+					pkgs <- mapM packageFromXML cont
+					return (Cache {serverName=ser,packages=pkgs}))
+					else throwError WrongCacheVersion
+		_ -> throwError InvalidCache

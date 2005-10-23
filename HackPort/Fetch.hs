@@ -7,11 +7,12 @@ import Network.HTTP (ConnError(..),Request(..),simpleHTTP
 import Network.URI (URI,uriPath,parseURI)
 import Text.Regex (Regex,mkRegex,matchRegex)
 import System.GPG
-import Control.Exception
+import Control.Monad.Error
 import System.Directory
 import Data.Typeable
 
 import Error
+import Action
 
 filenameRegex :: Regex
 filenameRegex = mkRegex "^.*?/([^/]*?)"
@@ -21,15 +22,15 @@ uriToFileName uri = maybe Nothing (\x->Just (head x)) (matchRegex filenameRegex 
 
 downloadURI :: FilePath		-- ^ a directory to store the file
             -> URI 		-- ^ the url
-            -> IO FilePath	-- ^ the path of the downloaded file
+            -> HPAction FilePath	-- ^ the path of the downloaded file
 downloadURI path uri = do
-	fileName <- maybe (throwDyn $ InvalidTarballURL (show uri) "URL doesn't contain a filename") return (uriToFileName uri)
-	httpResult <- simpleHTTP request
-	Response {rspCode=code,rspBody=body,rspReason=reason} <- either (\x->throwDyn $ DownloadFailed (show uri) "Connection failed") return httpResult
+	fileName <- maybe (throwError $ InvalidTarballURL (show uri) "URL doesn't contain a filename") return (uriToFileName uri)
+	httpResult <- liftIO $ simpleHTTP request
+	Response {rspCode=code,rspBody=body,rspReason=reason} <- either (\x->throwError $ DownloadFailed (show uri) "Connection failed") return httpResult
 	if code==(2,0,0) then (do
 		let writePath=path++"/"++fileName
-		writeFile writePath body
-		return writePath) else throwDyn $ DownloadFailed (show uri) ("Code "++show code++":"++reason)
+		liftIO $ writeFile writePath body
+		return writePath) else throwError $ DownloadFailed (show uri) ("Code "++show code++":"++reason)
 	where
 	request = Request
 		{rqURI=uri
@@ -42,33 +43,32 @@ downloadFileVerify ::
 	FilePath ->		-- ^ the directory to store the files
 	String ->		-- ^ the url of the tarball
 	String ->		-- ^ the url of the signature
-	IO (FilePath,FilePath)	-- ^ the tarballs and signatures path
+	HPAction (FilePath,FilePath)	-- ^ the tarballs and signatures path
 downloadFileVerify path url sigurl = do
 	tarballPath <- downloadTarball path url
-	sigPath <- downloadSig path sigurl `catch` (\x->removeFile tarballPath >> throwDyn x)
-	verified <- verifyFile stdOptions tarballPath sigPath
+	sigPath <- downloadSig path sigurl `catchError` (\x->liftIO (removeFile tarballPath) >> throwError x)
+	verified <- liftIO $ verifyFile stdOptions tarballPath sigPath
 	if verified then return (tarballPath,sigPath) else (do
-		removeFile tarballPath
-		removeFile sigPath
-		throwDyn $ VerificationFailed url sigurl)
+		liftIO $ removeFile tarballPath
+		liftIO $ removeFile sigPath
+		throwError $ VerificationFailed url sigurl)
 
 downloadTarball ::
 	FilePath ->
 	String ->
-	IO FilePath
+	HPAction FilePath
 downloadTarball dir url = download dir url InvalidTarballURL
 
 downloadSig ::
 	FilePath ->
 	String ->
-	IO FilePath
+	HPAction FilePath
 downloadSig dir url = download dir url InvalidSignatureURL
 
-download :: Typeable x =>
-	FilePath ->				-- ^ the folder to store the file in
-	String ->				-- ^ the url
-	(String -> String -> x) -> 		-- ^ a function to construct an error
-	IO FilePath				-- ^ the resulting file's path
+download :: FilePath				-- ^ the folder to store the file in
+	 -> String				-- ^ the url
+	 -> (String -> String -> HackPortError)	-- ^ a function to construct an error
+	 -> HPAction FilePath			-- ^ the resulting file's path
 download dir url errFunc = do
-	parsedURL <- maybe (throwDyn $ errFunc url "Parsing failed") return (parseURI url)
+	parsedURL <- maybe (throwError $ errFunc url "Parsing failed") return (parseURI url)
 	downloadURI dir parsedURL

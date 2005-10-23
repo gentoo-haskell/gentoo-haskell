@@ -30,10 +30,10 @@ hackage2ebuild ::
 	HPAction EBuild
 hackage2ebuild (pkg,tarball,sig) = do
 	cfg <- getCfg
-	tarballPath <- (if verify cfg then liftIO (do
+	tarballPath <- (if verify cfg then (do
 		(tarPath,sigPath) <- downloadFileVerify (tmp cfg) tarball sig
-		removeFile sigPath
-		return tarPath) else liftIO (downloadTarball (tmp cfg) tarball))
+		liftIO $ removeFile sigPath
+		return tarPath) else (downloadTarball (tmp cfg) tarball))
 		`sayNormal` ("Downloading tarball from '"++tarball++"' to '"++(tmp cfg)++"'... ",const "done.")
 	tarType <- maybe (liftIO (removeFile tarballPath) >> throwError (UnknownCompression tarball)) return (tarballGetType tarballPath)
 		`sayDebug` ("Guessing compression type of tarball... ",const "done.")

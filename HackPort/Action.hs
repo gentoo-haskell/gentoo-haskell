@@ -85,9 +85,22 @@ loadConfig = do
 	args <- liftIO getArgs
 	case parseConfig args of
 		Left errmsg -> throwError (ArgumentError errmsg)
-		Right (cfg,opmode) -> do
+		Right (opts,opmode) -> do
+			cfg <- foldM optionToConfig defaultConfig opts
 			modify $ \s -> s { config = cfg }
 			return opmode
+
+optionToConfig :: Config -> HackPortOptions -> HPAction Config
+optionToConfig cfg opt = case opt of
+	TarCommand str -> return cfg { tarCommand = str }
+	PortageTree str -> return cfg { portageTree = Just str }
+	Category str -> return cfg { portageCategory = str }
+	Server str -> return cfg { server = str }
+	TempDir str -> return cfg { tmp = str }
+	Verify -> return cfg { verify = True }
+	Verbosity str -> case parseVerbosity str of
+		Nothing -> throwError (UnknownVerbosityLevel str)
+		Just verb -> return cfg { verbosity=verb }
 
 performHPAction :: HPAction a -> IO ()
 performHPAction action = do
