@@ -27,16 +27,6 @@ readCache' :: FilePath -> HPAction Cache
 readCache' portDir = let target=portDir++"/.hackagecache.xml" in readCache (portDir++"/.hackagecache.xml")
 		`sayDebug` ("Reading cache from '"++target++"'...",const "done.")
 
-getPortageTree :: HPAction String
-getPortageTree = do
-	cfg <- getCfg
-	case portageTree cfg of
-		Nothing -> do
-		  tree <- getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf...",\tree->"Found '"++tree++"'")
-		  setPortageTree $ Just tree
-		  return tree
-		Just tree -> return tree
-
 listAll :: HPAction ()
 listAll = do
 	cache <- getPortageTree >>= readCache'
@@ -82,13 +72,8 @@ diff mode = do
 
 update :: HPAction ()
 update = do
-	cfg <- getCfg
-	portTree <- getPortageTree
-	cache <- liftIO (getCacheFromServer (server cfg))
-		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.")
-	let writeT = portTree++"/.hackagecache.xml"
-	liftIO (writeCache writeT cache)
-		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.")
+	updateCache
+	return ()
 
 overlayonly :: Maybe String -> HPAction ()
 overlayonly pd = do

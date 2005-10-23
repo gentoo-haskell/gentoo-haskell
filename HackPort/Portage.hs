@@ -7,6 +7,7 @@ import Text.Regex
 import Data.Maybe
 import Data.Version
 
+import Bash
 import MaybeRead
 import Action
 import Config
@@ -66,3 +67,16 @@ filterVersions base (x:xs) = do
 
 --diffPackageLists :: [PackageIdentifier] -> [PackageIdentifier] -> String
 --diffPackageLists 
+
+
+getPortageTree :: HPAction String
+getPortageTree = do
+	cfg <- getCfg
+	case portageTree cfg of
+		Nothing -> do
+		  tree <- getOverlay `sayDebug` ("Guessing overlay from /etc/make.conf...\n",\tree->"Found '"++tree++"'")
+		  setPortageTree $ Just tree
+		  return tree
+		Just tree -> return tree
+
+

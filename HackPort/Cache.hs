@@ -3,6 +3,8 @@ module Cache where
 import MaybeRead
 import Error
 import Action
+import Config
+import Portage
 
 import Text.XML.HaXml.Haskell2Xml
 import Text.XML.HaXml.Pretty
@@ -11,6 +13,7 @@ import Text.XML.HaXml.Parse
 import Distribution.Package
 import Data.Version
 import Network.Hackage.Client
+import System.Directory
 import System.IO
 import Control.Exception
 import Control.Monad.Error
@@ -34,12 +37,29 @@ getCacheFromServer serv = do
 writeCache :: FilePath -> Cache -> IO ()
 writeCache path cache = writeFile path (show (document (cacheToXML cache)))
 
+updateCache :: HPAction Cache
+updateCache = do
+	cfg <- getCfg
+	portTree <- getPortageTree
+	cache <- liftIO (getCacheFromServer (server cfg))
+		`sayNormal` ("Getting package list from '"++(server cfg)++"'... ",const "done.")
+	let writeT = portTree++"/.hackagecache.xml"
+	liftIO (writeCache writeT cache)
+		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.")
+	return cache
+
 readCache :: FilePath -> HPAction Cache
 readCache path = do
-	file <- liftIO (readFile path) `catchError` const (throwError InvalidCache)
-	case xmlParse' path file of
-		Left str -> throwError InvalidCache
-		Right doc -> cacheFromXML doc
+	exist <- liftIO (doesFileExist path)
+	case exist of
+	  True -> do
+	    xmlE <- liftM (xmlParse' path) (liftIO $ readFile path)
+				`catchError` const (throwError InvalidCache)
+	    let docE = xmlE >>= maybe (fail "") return . cacheFromXML
+	    either (const $ throwError InvalidCache) return docE
+	  False -> do
+	    info "No cache found in overlay, performing update..."
+	    updateCache 
 
 cacheToXML :: Cache -> Document
 cacheToXML cache = Document prolog emptyST mainElement [] where
