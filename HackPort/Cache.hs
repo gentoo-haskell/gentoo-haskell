@@ -15,11 +15,24 @@ import Data.Version
 import Network.Hackage.Client
 import System.Directory
 import System.IO
+import System.Time
 import Control.Exception
 import Control.Monad.Error
 import Prelude hiding(catch)
 
 thisVersion=Version { versionBranch=[0,1],versionTags=[] }
+
+-- | A long time. Used in checkCacheDate
+alarmingLongTime :: TimeDiff
+alarmingLongTime = TimeDiff 
+	{ tdYear = 0
+	, tdMonth = 0
+	, tdDay = 7
+	, tdHour = 0
+	, tdMin = 0
+	, tdSec = 0
+	, tdPicosec = 0
+	}
 
 data Cache = Cache
 	{ serverName::String
@@ -56,11 +69,24 @@ readCache path = do
 	  True -> do
 	    xmlE <- liftM (xmlParse' path) (liftIO $ readFile path)
 				`catchError` const (throwError InvalidCache)
+	    checkCacheDate path -- bug the user if his cache is old
 	    either (const $ throwError InvalidCache) cacheFromXML xmlE
 	  False -> do
 	    info "No cache found in overlay, performing update..."
 	    updateCache 
 
+-- | Bug the user if his cache is old
+checkCacheDate :: FilePath -> HPAction ()
+checkCacheDate file = do
+	cacheDate <- liftIO $ getModificationTime file
+	now <- liftIO $ getClockTime
+	let diff = normalizeTimeDiff $ diffClockTimes now cacheDate
+        when (diff > alarmingLongTime) $ do
+	  info $ unlines [
+	  	  "Your hackage cache is alarming old!"
+		, "It's " ++ timeDiffToString diff ++ "."
+		, "You may update it by 'hackport update', and then rerun your this execution."
+		]
 cacheToXML :: Cache -> Document
 cacheToXML cache = Document prolog emptyST mainElement [] where
 	prolog = Prolog Nothing [Comment "This file provides cached information for HackPort.\nYou can update this file by using 'hackport update'."] Nothing []
