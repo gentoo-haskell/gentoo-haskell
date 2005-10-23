@@ -34,6 +34,7 @@ type HackPortResult a = Either
 
 hackPortShowError :: HackPortError -> String
 hackPortShowError err = case err of
+	ArgumentError str -> "Argument error: "++str
 	ConnectionFailed server reason -> "Connection to hackage server '"++server++"' failed: "++reason
 	PackageNotFound pkg -> "Package '"++(either id showPackageId pkg)++"' not found on server."
 	InvalidTarballURL url reason -> "Error while downloading tarball '"++url++"': "++reason

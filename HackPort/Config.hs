@@ -21,9 +21,16 @@ data OperationMode
 	= Query String
 	| Merge PackageIdentifier
 	| ListAll
-	| DiffTree
+	| DiffTree DiffMode
 	| Update
 	| ShowHelp
+
+data DiffMode
+	= ShowAll
+	| ShowMissing
+	| ShowAdditions
+	| ShowCommon
+	deriving Eq
 
 data Config = Config
 	{ tarCommand		::String
@@ -86,8 +93,13 @@ parseConfig opts = case getOpt Permute hackageOptions opts of
 	(popts,"merge":_:rest,[]) -> Left ("'merge' takes 1 argument("++show ((length rest)+1)++" given).\n")
 	(popts,"list":[],[]) -> Right (ropts popts,ListAll)
 	(popts,"list":rest,[]) -> Left ("'list' takes zero arguments("++show (length rest)++" given).\n")
-	(popts,"diff":[],[]) -> Right (ropts popts,DiffTree)
-	(popts,"diff":rest,[]) -> Left ("'diff' takes zero arguments("++show (length rest)++" given).\n")
+	(popts,"diff":[],[]) -> Right (ropts popts,DiffTree ShowAll)
+	(popts,"diff":"all":[],[]) -> Right (ropts popts,DiffTree ShowAll)
+	(popts,"diff":"missing":[],[]) -> Right (ropts popts,DiffTree ShowMissing)
+	(popts,"diff":"additions":[],[]) -> Right (ropts popts,DiffTree ShowAdditions)
+	(popts,"diff":"common":[],[]) -> Right (ropts popts,DiffTree ShowCommon)
+	(popts,"diff":arg:[],[]) -> Left ("Unknown argument to 'diff': Use all,missing,additions or common.\n")
+	(popts,"diff":arg1:args,[]) -> Left ("'diff' takes one argument("++show ((length args)+1)++" given).\n")
 	(popts,"update":[],[]) -> Right (ropts popts,Update)
 	(popts,"update":rest,[]) -> Left ("'update' takes zero arguments("++show (length rest)++" given).\n")
 	(popts,[],[]) -> Right (ropts popts,ShowHelp)

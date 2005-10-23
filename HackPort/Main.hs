@@ -57,19 +57,28 @@ merge pid = do
 	ebuild <- hackage2ebuild rpid
 	mergeEbuild portTree ebuild
 
-diff :: HPAction ()
-diff = do
+diff :: DiffMode -> HPAction ()
+diff mode = do
 	cfg <- getCfg
 	portTree <- getPortageTree
 	cache <- readCache' portTree
 	let serverPkgs'=map (\(pkg,_,_)->pkg {pkgName=map toLower (pkgName pkg)}) (packages cache)
 	portTree <- getPortageTree
 	portagePkgs <- portageGetPackages portTree
-	let pkgDiff=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
-	liftIO $ putStr $ unlines $ map (\(DiffResult action pkg)->(case action of
-		Add->'+'
-		Remove->'-'
-		Stay->'='):(pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems pkgDiff)
+	let (inport,inhack,inboth)=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
+	let showPkgSet set = mapM_ (\pkg->echoLn (pkgName pkg++"-"++showVersion (pkgVersion pkg))) (Set.elems set)
+	let vindent = case verbosity cfg of
+		Silent -> id
+		_ -> indent
+	when (mode==ShowAll || mode==ShowMissing) (do
+		info "Packages in hackage, but not in the overlay:"
+		vindent $ showPkgSet inhack)
+	when (mode==ShowAll || mode==ShowAdditions) (do
+		info "Packages in the overlay, but not in hackage:"
+		vindent $ showPkgSet inport)
+	when (mode==ShowAll || mode==ShowCommon) (do
+		info "Packages in the overlay and hackage:"
+		vindent $ showPkgSet inboth)
 
 update :: HPAction ()
 update = do
@@ -89,7 +98,7 @@ hpmain = do
 		ListAll -> listAll
 		Query pkg -> query pkg
 		Merge pkg -> merge pkg
-		DiffTree -> diff
+		DiffTree mode -> diff mode
 		Update -> update
 
 main :: IO ()
