@@ -104,7 +104,16 @@ parseConfig opts = let
 		Right mod -> Right (popts,mod)
 
 hackageUsage :: IO ()
-hackageUsage = putStr (usageInfo "Usage:\t\"hackport [OPTION] MODE [MODETARGET]\"\n\t\"hackport [OPTION] list\" lists all available packages\n\t\"hackport [OPTION] query PKG\" shows all versions of a package\n\t\"hackport [OPTION] merge PKG VERSION\" merges a package into the portage tree\n\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages\n\t\"hackport [OPTION] update\" updates the local cache\nOptions:" hackageOptions)
+hackageUsage = putStr $ flip usageInfo hackageOptions $ unlines
+	[ "Usage:"
+	, "\t\"hackport [OPTION] MODE [MODETARGET]\""
+	, "\t\"hackport [OPTION] list\" lists all available packages"
+	, "\t\"hackport [OPTION] query PKG\" shows all versions of a package"
+	, "\t\"hackport [OPTION] merge PKG-VERSION\" merges a package into the portage tree"
+	, "\t\"hackport [OPTION] diff\" lists the difference between the portage-tree and the server's packages"
+	, "\t\"hackport [OPTION] update\" updates the local cache"
+	, "Options:"
+	]
 
 parseVerbosity :: String -> Maybe Verbosity
 parseVerbosity "debug" = Just Debug
