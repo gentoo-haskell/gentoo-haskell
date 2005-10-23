@@ -21,7 +21,6 @@ verbose action (premsg,postmsg) = do
 	echo premsg
 	flush
 	res <- indent action
-	echoIndent
 	echoLn (postmsg res)
 	return res
 
@@ -45,6 +44,14 @@ info str = do
 	case verbosity cfg of
 		Silent -> return ()
 		_ -> echoLn str
+
+-- | Prints a string iff in debug output mode
+whisper :: String -> HPAction ()
+whisper str = do
+	cfg <- getCfg
+	case verbosity cfg of
+		Debug -> echoLn str
+		_ -> return ()
 
 getCfg :: HPAction Config
 getCfg = gets config
@@ -106,5 +113,7 @@ performHPAction :: HPAction a -> IO ()
 performHPAction action = do
 	res <- evalStateT (runErrorT action) (HPState defaultConfig 0)
 	case res of
-		Left err -> hPutStr stderr (hackPortShowError err)
 		Right _ -> return ()
+		Left err -> do
+			hPutStrLn stderr "An error occurred. To get more info run with --verbosity=debug"
+			hPutStrLn stderr (hackPortShowError err)

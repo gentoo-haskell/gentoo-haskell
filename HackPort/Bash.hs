@@ -23,16 +23,16 @@ getOverlay = do
     let loop [] = throwError $ MultipleOverlays mul
         loop (x:xs) = (do
           found <- liftIO (doesFileExist (x ++ "/.hackagecache.xml"))
-	  	`sayDebug` ("Checking '"++x++"'...",\res->if res then "found.\n" else "not found.")
+	  	`sayDebug` ("Checking '"++x++"'...\n",\res->if res then "found.\n" else "not found.")
           if found
             then return x
             else loop xs) 
-    info "There are several overlays in your /etc/make.conf"
-    mapM (\x->info (" * " ++x)) mul
-    info "Looking for one with a HackPort cache..."
+    whisper "There are several overlays in your /etc/make.conf"
+    mapM (\x-> whisper (" * " ++x)) mul
+    whisper "Looking for one with a HackPort cache..."
     overlay <- loop mul
-    info ("I choose " ++ overlay) 
-    info "Override my decision with hackport -p /my/overlay"
+    whisper ("I choose " ++ overlay) 
+    whisper "Override my decision with hackport -p /my/overlay"
     return overlay
 
 getOverlays :: HPAction [String]
