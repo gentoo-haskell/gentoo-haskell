@@ -48,6 +48,7 @@ updateCache = do
 		`sayDebug` ("Writing cache to '"++writeT++"'... ",const "done.")
 	return cache
 
+-- | Read the cache from disk. If there is no cache then download it.
 readCache :: FilePath -> HPAction Cache
 readCache path = do
 	exist <- liftIO (doesFileExist path)
@@ -55,8 +56,7 @@ readCache path = do
 	  True -> do
 	    xmlE <- liftM (xmlParse' path) (liftIO $ readFile path)
 				`catchError` const (throwError InvalidCache)
-	    let docE = xmlE >>= maybe (fail "") return . cacheFromXML
-	    either (const $ throwError InvalidCache) return docE
+	    either (const $ throwError InvalidCache) cacheFromXML xmlE
 	  False -> do
 	    info "No cache found in overlay, performing update..."
 	    updateCache 
