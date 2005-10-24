@@ -153,8 +153,15 @@ cabal-pkg() {
 	# This does not actually register since we're using /usr/bin/true instead
 	# of ghc-pkg. So it just leaves the .installed-pkg-config and we can
 	# register that ourselves (if it exists).
+	local result
+	local err
+
 	sed -i 's:ghc-pkg:/usr/bin/true:' .setup-config
-	./setup register || die "setup register failed"
+	result="$(./setup register 2>&1)"
+	err="$?"
+	if ! echo ${result} | grep -q "no library to register"; then
+		$(exit "${err}") || die "setup register failed"
+	fi
 	if [[ -f .installed-pkg-config ]]; then
 		ghc-setup-pkg .installed-pkg-config
 		ghc-install-pkg
