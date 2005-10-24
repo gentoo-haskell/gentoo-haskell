@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~x86 -amd64" # currently broken on amd64
 IUSE="doc"
 
-DEPEND=">=virtual/ghc
+DEPEND="virtual/ghc
 	>=dev-haskell/haskell-src-exts-0.2
 	dev-haskell/cabal"
 
