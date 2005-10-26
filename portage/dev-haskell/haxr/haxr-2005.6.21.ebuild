@@ -12,8 +12,7 @@ MY_PV_DAY=$(get_version_component_range 3)
 (( ${MY_PV_DAY} < 10 )) && MY_PV_DAY="0${MY_PV_DAY}"
 MY_PV="${MY_PV_YEAR}${MY_PV_MONTH}${MY_PV_DAY}"
 
-DESCRIPTION="HaXR is a library for writing XML-RPC 
-client and server applications in Haskell."
+DESCRIPTION="HaXR is a library for writing XML-RPC client and server applications in Haskell."
 HOMEPAGE="http://www.haskell.org/haxr/"
 SRC_URI="http://www.haskell.org/haxr/download/${PN}-${MY_PV}.tar.gz"
 LICENSE="BSD"

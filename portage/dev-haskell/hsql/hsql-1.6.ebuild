@@ -12,11 +12,11 @@ SRC_URI="mirror://sourceforge/htoolkit/HSQL-${PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="postgresql sqlite odbc"
+IUSE="postgres sqlite odbc"
 
 DEPEND="virtual/ghc"
 
-PDEPEND="postgresql? ( =dev-haskell/hsql-postgresql-${PV} )
+PDEPEND="postgres? ( =dev-haskell/hsql-postgresql-${PV} )
 	sqlite? ( =dev-haskell/hsql-sqlite3-${PV} )
 	odbc? ( =dev-haskell/hsql-odbc-${PV} )"
 

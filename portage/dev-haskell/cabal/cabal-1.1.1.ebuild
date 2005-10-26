@@ -58,7 +58,7 @@ src_install() {
 	cabal_src_install
 
 	dosbin ${S}/cabal2conf
-	
+
 	# documentation (install directly; generation seems broken to me atm)
 	dohtml -r doc/users-guide
 	if use doc; then

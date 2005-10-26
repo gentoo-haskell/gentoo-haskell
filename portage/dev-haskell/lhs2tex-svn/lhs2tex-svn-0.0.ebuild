@@ -1,4 +1,4 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2005 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
@@ -18,8 +18,8 @@ KEYWORDS="~x86"
 DEPEND="virtual/ghc"
 
 src_compile() {
-        econf
-        emake -j1 || die "emake failed"
+	econf
+	emake -j1 || die "emake failed"
 }
 
 src_install () {

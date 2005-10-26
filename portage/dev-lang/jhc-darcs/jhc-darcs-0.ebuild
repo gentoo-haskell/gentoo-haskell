@@ -20,7 +20,7 @@ EDARCS_GET_CMD="get --partial"
 # drift is also needed!
 DEPEND="
 	>=dev-util/darcs-1.0.2
-	>=dev-haskell/drift-2.1.1" 
+	>=dev-haskell/drift-2.1.1"
 # RDEPEND=""
 
 JHCPATH="/usr/lib/${PF}"

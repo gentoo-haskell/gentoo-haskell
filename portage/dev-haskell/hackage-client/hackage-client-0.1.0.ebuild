@@ -18,9 +18,9 @@ DEPEND=">=virtual/ghc-6.2.2
 		dev-haskell/haxr
 		dev-haskell/cabal"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	base_src_unpack
-	sed -i -e "s/Build-depends: /Build-depends: mtl, /" ${S}/HackageClient.cabal 
+	sed -i -e "s/Build-depends: /Build-depends: mtl, /" "${S}/HackageClient.cabal"
 }

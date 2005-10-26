@@ -22,7 +22,7 @@ PROVIDE="virtual/gwydion-dylan"
 S="${WORKDIR}"
 
 src_compile() {
-  	mkdir -p ./${LOC}
+	mkdir -p ./${LOC}
 	mv usr/* ./${LOC}
 }
 

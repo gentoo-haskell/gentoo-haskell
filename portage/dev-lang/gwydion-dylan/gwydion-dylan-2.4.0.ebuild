@@ -25,7 +25,7 @@ src_compile() {
 		--mandir=/usr/share/man \
 		$(use_with gtk) \
 		|| die "./configure failed"
-	
+
 	emake -j1 || die "emake failed"
 }
 

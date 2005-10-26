@@ -52,7 +52,7 @@ DEPEND="${DEPEND}
 	>=sys-devel/flex-2.5.4a
 	>=dev-libs/gmp-4.1
 	>=dev-haskell/happy-1.15
-        >=dev-haskell/alex-2.0
+	>=dev-haskell/alex-2.0
 	>=sys-libs/readline-4.2
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
@@ -137,7 +137,7 @@ src_unpack() {
 
 src_compile() {
 	local myconf
-        myconf=$(use_enable opengl hopengl)
+	myconf=$(use_enable opengl hopengl)
 
 	WANT_AUTOCONF=2.5 autoreconf || die "autoreconf failed in fptools"
 
