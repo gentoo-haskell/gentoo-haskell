@@ -4,7 +4,7 @@
 
 inherit base ghc-package multilib
 
-DESCRIPTION="GTK+-2.x bindings for Haskell"
+DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
 SRC_URI="http://haskell.org/gtk2hs/${P}.tar.gz"
 #SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
@@ -14,12 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc"
 #enable sparc when CFLAGS/-mcpu ebuild bug is fixed
 
-IUSE="doc cairo gnome mozilla firefox"
+IUSE="doc gnome mozilla firefox"
 
-DEPEND=">=virtual/ghc-5.04
+DEPEND=">=virtual/ghc-5.04.3
 		amd64? ( >=virtual/ghc-6.4.1 )
 		>=x11-libs/gtk+-2
-		cairo? ( >=x11-libs/cairo-1.0 )
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6
 				 >=gnome-base/gconf-2 )
@@ -30,13 +29,13 @@ DEPEND=">=virtual/ghc-5.04
 src_compile() {
 	econf \
 		--enable-packager-mode \
-		`use_enable cairo cairo` \
-		`use_enable gnome libglade` \
-		`use_enable gnome gconf` \
-		`use_enable gnome sourceview` \
-		`use_enable mozilla mozilla` \
-		`use_enable firefox firefox` \
-		`use_enable doc docs` \
+		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
+		$(use_enable gnome libglade) \
+		$(use_enable gnome gconf) \
+		$(use_enable gnome sourceview) \
+		$(use_enable mozilla mozilla) \
+		$(use_enable firefox firefox) \
+		$(use_enable doc docs) \
 		|| die "Configure failed"
 
 	# parallel build doesn't work, so specify -j1
