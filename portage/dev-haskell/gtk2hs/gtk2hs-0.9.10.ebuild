@@ -46,7 +46,7 @@ src_compile() {
 src_install() {
 
 	make install \
-		DESTDIR=${D} \
+		DESTDIR="${D}" \
 		htmldir="/usr/share/doc/${PF}/html" \
 		haddockifacedir="/usr/share/doc/${PF}" \
 		|| die "Make install failed"
@@ -55,10 +55,10 @@ src_install() {
 	# to not generate docs, so lets remove the empty dirs in that case
 	# (and lets be cautious and only remove them if they're empty)
 	if ! use doc; then
-		rmdir ${D}/usr/share/doc/${PF}/html
-		rmdir ${D}/usr/share/doc/${PF}
-		rmdir ${D}/usr/share/doc
-		rmdir ${D}/usr/share
+		rmdir "${D}/usr/share/doc/${PF}/html"
+		rmdir "${D}/usr/share/doc/${PF}"
+		rmdir "${D}/usr/share/doc"
+		rmdir "${D}/usr/share"
 	fi
 
 	# arrange for the packages to be registered
@@ -83,21 +83,21 @@ src_install() {
 	ghc-install-pkg
 
 	# build ghci .o files from .a files
-	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSglib.a
+	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglib.a"
 	if use cairo; then
-		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHScairo.a
+		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHScairo.a"
 	fi
-	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSgtk.a
-	ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSmogul.a
+	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgtk.a"
+	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSmogul.a"
 	if use glade || use gnome; then
-		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSglade.a
+		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglade.a"
 	fi
 	if use gnome; then
-		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a
-		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a
+		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a"
+		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a"
 	fi
 	if use mozilla; then
-		ghc-makeghcilib ${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a
+		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a"
 	fi
 }
 
