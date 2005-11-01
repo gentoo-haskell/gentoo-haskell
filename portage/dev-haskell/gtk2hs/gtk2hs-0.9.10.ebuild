@@ -73,12 +73,12 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/cairo.${pkgext}") \
 		"${D}/usr/$(get_libdir)/gtk2hs/gtk.${pkgext}" \
 		"${D}/usr/$(get_libdir)/gtk2hs/mogul.${pkgext}" \
-		$(useq glade || useq gnome && echo
+		$(use glade || use gnome && echo
 			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
-		$(useq gnome && echo \
+		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
 			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}") \
-		$(useq mozilla && echo \
+		$(use mozilla && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 
