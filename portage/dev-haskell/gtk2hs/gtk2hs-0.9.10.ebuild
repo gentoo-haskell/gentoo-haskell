@@ -30,7 +30,7 @@ src_compile() {
 	econf \
 		--enable-packager-mode \
 		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
-		$(use_enable glade libglade)
+		$(use_enable glade libglade) \
 		$(use_enable gnome libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
@@ -73,7 +73,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/cairo.${pkgext}") \
 		"${D}/usr/$(get_libdir)/gtk2hs/gtk.${pkgext}" \
 		"${D}/usr/$(get_libdir)/gtk2hs/mogul.${pkgext}" \
-		$(use glade || use gnome && echo
+		$(use glade || use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
 		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
