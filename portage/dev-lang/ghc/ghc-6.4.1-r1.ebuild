@@ -145,6 +145,11 @@ src_compile() {
 	echo "SRC_CC_OPTS+=${SUPPORTED_CFLAGS}" >> mk/build.mk
 	echo "SRC_HC_OPTS+=${SUPPORTED_CFLAGS// -/ -optc-}" >> mk/build.mk
 
+	# circumvent a very strange bug that seems related with ghc producing too much
+	# output while being filtered through tee (e.g. due to portage logging)
+	# reported as bug #111183
+	echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
+
 	# force the config variable ArSupportsInput to be unset;
 	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
 	# incorrectly by the configure script
