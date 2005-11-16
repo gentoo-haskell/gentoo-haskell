@@ -17,4 +17,4 @@ emerge --buildpkgonly =ghc-$1 || exit
 
 echo "created /usr/portage/packages/dev-lang/ghc-$1.tbz2"
 echo "to make the ghc-bin file just move it:"
-echo "mv /usr/portage/packages/dev-lang/ghc-$1.tbz2 /usr/portage/distfiles/ghc-bin-$1.tbz2"
+echo "mv /usr/portage/packages/All/ghc-$1.tbz2 /usr/portage/distfiles/ghc-bin-$1.tbz2"
