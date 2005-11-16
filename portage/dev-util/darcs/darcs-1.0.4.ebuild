@@ -10,7 +10,6 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-# re-add ~amd64 once ghc-bin-6.2.2 exists
 KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE="doc"
 # disabled wxwindows use flag for now, as I got build errors
