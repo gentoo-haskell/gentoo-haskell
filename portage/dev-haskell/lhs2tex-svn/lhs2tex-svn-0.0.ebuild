@@ -4,18 +4,21 @@
 
 inherit subversion
 
-ESVN_REPO_URI="https://svn.cs.uu.nl:12443/repos/lhs2TeX/trunk"
+ESVN_REPO_URI="https://svn.cs.uu.nl:12443/repos/lhs2TeX/lhs2TeX/trunk"
 
 S="${WORKDIR}/lhs2TeX"
 
 DESCRIPTION="Preprocessor for typesetting Haskell sources with LaTeX"
-HOMEPAGE="http://www.informatik.uni-bonn.de/~ralf/software.html#lhs2tex"
+HOMEPAGE="http://www.informatik.uni-bonn.de/~andres/lhs2TeX/"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-DEPEND="virtual/ghc"
+DEPEND="virtual/ghc
+	>=dev-tex/polytable-0.8.2"
+
+RDEPEND=">=dev-tex/polytable-0.8.2"
 
 src_compile() {
 	econf
@@ -23,6 +26,6 @@ src_compile() {
 }
 
 src_install () {
-	DESTDIR="${D}" make install || die "installation failed"
+	DESTDIR="${D}" make install docdir="/usr/share/doc/${PF}" || die "installation failed"
 }
 
