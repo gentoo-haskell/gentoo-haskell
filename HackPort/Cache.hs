@@ -83,9 +83,9 @@ checkCacheDate file = do
 	let diff = normalizeTimeDiff $ diffClockTimes now cacheDate
         when (diff > alarmingLongTime) $ do
 	  info $ unlines [
-	  	  "Your hackage cache is alarming old!"
-		, "It's " ++ timeDiffToString diff ++ "."
-		, "You may update it by 'hackport update', and then rerun your this execution."
+	  	  "Your hackage cache is old!"
+		, "It's " ++ timeDiffToString diff ++ " old."
+		, "You may update it by 'hackport update', and then rerun this execution."
 		]
 cacheToXML :: Cache -> Document
 cacheToXML cache = Document prolog emptyST mainElement [] where
