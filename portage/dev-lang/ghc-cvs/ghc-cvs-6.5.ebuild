@@ -29,14 +29,15 @@ ECVS_AUTH="pserver"
 ECVS_PASS="cvs"
 ECVS_MODULE="fptools"
 
-IUSE="doc java opengl"
+IUSE="doc opengl"
+#java use flag disabled because of bug #106992
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~ppc -alpha ~amd64 -sparc"
+KEYWORDS="~x86 ~ppc -alpha ~amd64 ~sparc"
 
 S="${WORKDIR}/fptools"
 
@@ -56,10 +57,12 @@ DEPEND="${DEPEND}
 	>=sys-libs/readline-4.2
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
-		java? ( >=dev-java/fop-0.20.5 ) )
+		>=dev-libs/libxslt-1.1.2
+		>=dev-haskell/haddock-0.6-r2 )
 	opengl? ( virtual/opengl
 		virtual/glu
 		virtual/glut )"
+# removed: java? ( >=dev-java/fop-0.20.5 )
 
 RDEPEND="virtual/libc
 	>=sys-devel/gcc-2.95.3
@@ -118,21 +121,12 @@ src_unpack() {
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
 	# should do ...
-	cd ${S}/ghc
-	pushd driver
+	cd "${S}/ghc/driver"
 	setup_cflags
 
-	epatch ${FILESDIR}/${PN}-6.2.hardened.patch
+	epatch "${FILESDIR}/${PN}-6.2.hardened.patch"
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghc/ghc.sh
 	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
-	popd
-
-	# cd docs/users_guide/
-	# use versionator or something
-	# epatch ${FILESDIR}/ghc-6.4-docbook.patch
-
-	# cd ${S}/libraries
-	# sed -i -e "s|I/O|I\\\\/O|" template-haskell/Language/Haskell/TH/Syntax.hs
 }
 
 src_compile() {
@@ -147,10 +141,9 @@ src_compile() {
 	# determine what to do with documentation
 	if use doc; then
 		mydoc="html"
-		insttarget="${insttarget} install-docs"
-		if use java; then
-			mydoc="${mydoc} ps"
-		fi
+		#if use java; then
+		#	mydoc="${mydoc} ps"
+		#fi
 	else
 		mydoc=""
 		# needed to prevent haddock from being called
@@ -167,16 +160,20 @@ src_compile() {
 	echo "SRC_CC_OPTS+=${SUPPORTED_CFLAGS}" >> mk/build.mk
 	echo "SRC_HC_OPTS+=${SUPPORTED_CFLAGS// -/ -optc-}" >> mk/build.mk
 
+	# circumvent a very strange bug that seems related with ghc producing too much
+	# output while being filtered through tee (e.g. due to portage logging)
+	# reported as bug #111183
+	echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
+
 	# force the config variable ArSupportsInput to be unset;
 	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
 	# incorrectly by the configure script
 	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
-	use ppc || use amd64 && echo "SplitObjs=NO" >> mk/build.mk
-	use amd64 && echo "GhcUnregisterised=YES" >> mk/build.mk
+	use ppc || use ppc64 || use sparc && echo "SplitObjs=NO" >> mk/build.mk
+	use ppc64 && echo "GhcUnregisterised=YES" >> mk/build.mk
 
-	# (--enable-threaded-rts is no longer needed)
 	econf ${myconf} || die "econf failed"
 
 	# the build does not seem to work all that
@@ -186,7 +183,6 @@ src_compile() {
 }
 
 src_install () {
-	local mydoc
 	local insttarget
 
 	insttarget="install"
@@ -203,7 +199,7 @@ src_install () {
 		|| die "make ${insttarget} failed"
 
 	#need to remove ${D} from ghcprof script
-	cd ${D}/usr/bin
+	cd "${D}/usr/bin"
 	mv ghcprof ghcprof-orig
 	sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
 	chmod a+x ghcprof
