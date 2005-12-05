@@ -17,16 +17,16 @@ DEPEND=">=virtual/ghc-6.0"
 
 src_unpack() {
 	base_src_unpack
-	cd ${S}
-	epatch ${FILESDIR}/setupfix.patch
-	epatch ${FILESDIR}/cabalfix.patch
+	cd "${S}"
+	epatch "${FILESDIR}/setupfix.patch"
+	epatch "${FILESDIR}/cabalfix.patch"
 }
 src_install() {
 	cabal_src_install
 	exeinto /usr
 	dobin c2hs/c2hs
-	insinto /usr/lib/${P}
-	doins ${S}/c2hs/lib/C2HS.hs
-	exeinto /usr/lib/${P}
+	insinto "/usr/lib/${P}"
+	doins "${S}/c2hs/lib/C2HS.hs"
+	exeinto "/usr/lib/${P}"
 	doexe dist/build/c2hs/c2hs
 }
