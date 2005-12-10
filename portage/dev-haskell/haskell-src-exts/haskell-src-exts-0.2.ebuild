@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/haskell-src-exts/"
@@ -20,3 +20,13 @@ DEPEND="virtual/ghc
 
 S=${WORKDIR}/haskell-src-exts/src/haskell-src-exts
 
+src_unpack() {
+	base_src_unpack
+
+	# Make it work with ghc pre-6.4
+	sed -i 's/{-# OPTIONS_GHC /{-# OPTIONS /' \
+		${S}/Language/Haskell/Hsx/Syntax.hs \
+		${S}/Language/Haskell/Hsx/Parser.hs
+	sed -i 's/#ifdef __GLASGOW_HASKELL__/#if __GLASGOW_HASKELL__>=604/' \
+		${S}/Language/Haskell/Hsx/Syntax.hs
+}
