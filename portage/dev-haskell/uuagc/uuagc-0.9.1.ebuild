@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock"
 inherit haskell-cabal
 
 DESCRIPTION="The Utrecht University Attribute Grammar system"
