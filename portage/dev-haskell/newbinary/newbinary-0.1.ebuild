@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock"
+CABAL_FEATURES="lib haddock"
 inherit base eutils haskell-cabal
 
 DESCRIPTION="Binary interface for haskell"

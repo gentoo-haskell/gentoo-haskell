@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/haxml-1.12.ebuild,v 1.2 2005/04/05 16:23:19 kosmikus Exp $
 
-CABAL_FEATURES="haddock"
+CABAL_FEATURES="lib haddock"
 inherit base haskell-cabal
 
 MY_PN=HaXml

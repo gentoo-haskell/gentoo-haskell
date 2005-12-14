@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock profile"
+CABAL_FEATURES="lib haddock profile"
 inherit haskell-cabal
 
 DESCRIPTION="Collection of Haskell-related utilities"

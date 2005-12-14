@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="bin lib"
 inherit base haskell-cabal
 
 DESCRIPTION="The Haskell Cryptographic Library"

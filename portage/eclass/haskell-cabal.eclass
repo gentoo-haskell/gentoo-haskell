@@ -24,6 +24,8 @@
 #   cpphs      --  C preprocessor clone written in Haskell
 #   profile    --  if package supports to build profiling-enabled libraries
 #   bootstrap  --  only used for the cabal package itself
+#   bin        --  the package installs binaries
+#   lib        --  the package installs libraries
 #
 # Dependencies on other cabal packages have to be specified
 # correctly.
@@ -47,6 +49,8 @@ for feature in ${CABAL_FEATURES}; do
 		cpphs)     CABAL_USE_CPPHS=yes;;
 		profile)   CABAL_USE_PROFILE=yes;;
 		bootstrap) CABAL_BOOTSTRAP=yes;;
+		bin)       CABAL_HAS_BINARIES=yes;;
+		lib)       CABAL_HAS_LIBRARIES=yes;;
 		*) ewarn "Unknown entry in CABAL_FEATURES: ${feature}";;
 	esac
 done
@@ -87,6 +91,10 @@ if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
 	DEPEND="${DEPEND} >=dev-haskell/cabal-1.1.3"
 fi
 
+# Libraries require GHC to be installed.
+if [[ -n "${CABAL_HAS_LIBRARIES}" ]]; then
+	RDEPEND="${RDEPEND} virtual/ghc"
+fi
 
 cabal-bootstrap() {
 	local setupmodule
@@ -156,15 +164,15 @@ cabal-pkg() {
 	local result
 	local err
 
-	sed -i 's:ghc-pkg:/usr/bin/true:' .setup-config
-	result="$(./setup register 2>&1)"
-	err="$?"
-	if ! echo ${result} | grep -q "no library to register"; then
-		$(exit "${err}") || die "setup register failed"
-	fi
-	if [[ -f .installed-pkg-config ]]; then
-		ghc-setup-pkg .installed-pkg-config
-		ghc-install-pkg
+	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
+		sed -i 's:ghc-pkg:/usr/bin/true:' .setup-config
+		./setup register || die "setup register failed"
+		if [[ -f .installed-pkg-config ]]; then
+			ghc-setup-pkg .installed-pkg-config
+			ghc-install-pkg
+		else
+			die "setup register has not generated a package configuration file"
+		fi
 	fi
 }
 

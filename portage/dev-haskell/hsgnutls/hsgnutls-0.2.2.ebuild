@@ -3,7 +3,8 @@
 # $Header: $
 
 #Haddock doesn't work, because cabal has troubles with .chs files
-#CABAL_FEATURES="haddock"
+#CABAL_FEATURES="lib haddock"
+CABAL_FEATURES="lib"
 inherit base haskell-cabal
 
 DESCRIPTION="A haskell wrapper for the gnutls library."
