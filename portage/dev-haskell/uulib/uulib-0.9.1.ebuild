@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock cpphs"
+CABAL_FEATURES="haddock cpphs lib"
 inherit base haskell-cabal
 
 DESCRIPTION="The Utrecht University parsing, printing and DData libraries"

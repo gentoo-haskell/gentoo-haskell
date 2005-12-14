@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="bin"
 inherit base eutils haskell-cabal
 
 DESCRIPTION="An interface generator for Haskell"
