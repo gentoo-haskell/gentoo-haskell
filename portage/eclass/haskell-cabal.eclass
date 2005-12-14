@@ -51,7 +51,7 @@ for feature in ${CABAL_FEATURES}; do
 		bootstrap) CABAL_BOOTSTRAP=yes;;
 		bin)       CABAL_HAS_BINARIES=yes;;
 		lib)       CABAL_HAS_LIBRARIES=yes;;
-		*) ewarn "Unknown entry in CABAL_FEATURES: ${feature}";;
+		*) CABAL_UNKNOWN="${CABAL_UNKNOWN} ${feature}";;
 	esac
 done
 
@@ -184,6 +184,13 @@ haskell-cabal_pkg_setup() {
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
 		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
 		die "cabal is not correctly installed"
+	fi
+	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
+		eerror "Neither bin nor lib are in CABAL_FEATURES. Broken ebuild."
+		die "neither bin nor lib in CABAL_FEATURES"
+	fi
+	if [[ -n "${CABAL_UNKNOWN}" ]]; then
+		ewarn "Unknown entry in CABAL_FEATURES: ${CABAL_UNKNONW}"
 	fi
 }
 
