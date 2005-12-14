@@ -5,7 +5,7 @@
 inherit haskell-cabal
 
 DESCRIPTION="A parser generator for Haskell"
-HOMEPAGE="http://haskell.org/frown/" # TODO: fix
+HOMEPAGE="http://www.informatik.uni-bonn.de/~ralf/frown/"
 SRC_URI="http://www.informatik.uni-bonn.de/~ralf/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,3 +16,9 @@ DEPEND=">=virtual/ghc-6.2.2"
 RDEPEND=""
 
 S="${WORKDIR}/Frown-${PV}"
+
+src_install() {
+	haskell-cabal_src_install
+	dohtml -r Manual/html
+	dodoc COPYING COPYRIGHT Manual/Manual.ps
+}
