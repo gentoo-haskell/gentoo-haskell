@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="bootstrap profile"
+CABAL_FEATURES="bootstrap profile lib"
 inherit haskell-cabal eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"

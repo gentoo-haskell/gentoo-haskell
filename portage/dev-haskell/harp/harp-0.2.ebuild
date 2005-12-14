@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock"
+CABAL_FEATURES="haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="Functions that simulate the behavior of regular patterns using a Match monad for parsing lists"

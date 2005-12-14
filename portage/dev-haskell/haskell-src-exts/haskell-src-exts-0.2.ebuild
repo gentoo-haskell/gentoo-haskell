@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_FEATURES="lib"
 inherit base haskell-cabal
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
