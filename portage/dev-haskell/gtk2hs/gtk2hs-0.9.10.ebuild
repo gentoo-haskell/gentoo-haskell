@@ -24,7 +24,8 @@ RDEPEND=">=virtual/ghc-5.04.3
 				 >=gnome-base/gconf-2 )
 		mozilla? ( >=www-client/mozilla-1.4 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
-DEPEND="doc? ( >=dev-haskell/haddock-0.7 )"
+DEPEND="${RDEPEND}
+		doc? ( >=dev-haskell/haddock-0.7 )"
 
 src_compile() {
 	econf \
