@@ -33,7 +33,10 @@ exposed-modules:
 	Text.XML.HaXml.Xtract.Combinators,
 	Text.XML.HaXml.Xtract.Lex,
 	Text.XML.HaXml.Xtract.Parse
-hs-source-dir:	src
-build-depends:	base, haskell98
+depends:	haskell98
 extensions:	CPP
 exposed:	True
+hs-libraries:	HSHaXml
+import-dirs:	$libdir/imports/HaXml
+library-dirs:	$libdir
+

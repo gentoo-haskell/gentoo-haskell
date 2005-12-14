@@ -7,10 +7,10 @@ inherit eutils ghc-package
 DESCRIPTION="A liberalised cpp-a-like preprocessor for Haskell"
 HOMEPAGE="http://www.cs.york.ac.uk/fp/cpphs/"
 SRC_URI="http://www.cs.york.ac.uk/fp/cpphs/${P}.tar.gz"
-LICENSE="GPL"
+LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE=""
 DEPEND=">=virtual/ghc-5.04"
 

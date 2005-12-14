@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc -amd64" #add ~sparc once we have ghc ~sparc
+KEYWORDS="~x86 ~ppc -amd64 ~sparc"
 
 IUSE="doc gnome mozilla"
 
@@ -33,7 +33,7 @@ src_unpack() {
 	base_src_unpack
 
 	# patch for GHC 6.4 compatability
-	epatch ${FILESDIR}/gtk2hs-0.9.7-ghc64.patch
+	epatch ${FILESDIR}/gtk2hs-0.9.7-ghc64.patch.gz
 }
 
 src_compile() {

@@ -8,7 +8,7 @@ inherit base haskell-cabal
 DESCRIPTION="The Utrecht University parsing, printing and DData libraries"
 HOMEPAGE="http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem"
 SRC_URI="http://abaris.zoo.cs.uu.nl:8080/wiki/pub/HUT/Download/${P}-src.tar.gz"
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1-UUST"
 SLOT="0"
 
 KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
