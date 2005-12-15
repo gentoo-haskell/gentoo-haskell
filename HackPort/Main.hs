@@ -15,7 +15,6 @@ import qualified Data.Set as Set
 import Action
 import Error
 import GenerateEbuild
-import Cabal2Ebuild
 import Bash
 import Config
 import Diff

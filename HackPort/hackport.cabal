@@ -7,3 +7,6 @@ Synopsis:	Hackage and Portage integration tool
 
 Executable:	hackport
 Main-Is:	Main.hs
+
+Executable:     cabal2ebuild
+Main-Is:        cabal2ebuild.hs
