@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A parser generator for Haskell"
 HOMEPAGE="http://www.informatik.uni-bonn.de/~ralf/frown/"
-SRC_URI="http://www.informatik.uni-bonn.de/~ralf/${P}.tar.gz"
+SRC_URI="http://www.informatik.uni-bonn.de/~ralf/frown/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
@@ -17,6 +17,12 @@ DEPEND=">=virtual/ghc-6.2.2"
 RDEPEND=""
 
 S="${WORKDIR}/Frown-${PV}"
+
+src_unpack() {
+	unpack ${A}
+	# enabling optimisation is strongly recommended
+	echo "ghc-options: -O" >> ${S}/frown.cabal
+}
 
 src_install() {
 	haskell-cabal_src_install
