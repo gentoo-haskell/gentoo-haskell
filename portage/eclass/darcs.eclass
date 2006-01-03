@@ -18,9 +18,6 @@
 
 # TODO: support for tags, ...
 
-ECLASS=darcs
-INHERITED="$INHERITED $ECLASS"
-
 # Don't download anything other than the darcs repository
 SRC_URI=""
 
@@ -54,7 +51,7 @@ SRC_URI=""
 # --- end ebuild-configurable settings ---
 
 # add darcs to deps
-newdepend "dev-util/darcs"
+DEPEND="dev-util/darcs"
 
 # is called from darcs_src_unpack
 darcs_fetch() {
