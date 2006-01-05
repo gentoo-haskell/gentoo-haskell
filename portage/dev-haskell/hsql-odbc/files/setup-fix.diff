@@ -1,0 +1,21 @@
+--- ODBC/Setup.lhs.old	2005-12-15 21:57:18.000000000 +0100
++++ ODBC/Setup.lhs	2005-12-18 13:35:10.000000000 +0100
+@@ -2,17 +2,6 @@
+ 
+ \begin{code}
+ import Distribution.Simple
+-import Distribution.Setup
+-import Distribution.PackageDescription
+-import System.Info
+ 
+-main = defaultMainWithHooks defaultUserHooks{preConf=configure}
+-  where
+-    configure :: [String] -> ConfigFlags -> IO HookedBuildInfo
+-    configure args flags = do
+-      let binfo | os == "mingw32" = emptyBuildInfo{extraLibs=["odbc32"], ccOptions=["-Dmingw32_HOST_OS"]}
+-                | otherwise       = emptyBuildInfo{extraLibs=["odbc"]}
+-          hbi = (Just binfo,[])
+-      writeHookedBuildInfo "ODBC.buildinfo" hbi
+-      return hbi
++main = defaultMain
+ \end{code}
