@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock"
+CABAL_FEATURES="haddock lib"
 inherit haskell-cabal
 
 MY_PN=GnuPG
