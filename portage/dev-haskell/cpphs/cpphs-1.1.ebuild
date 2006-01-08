@@ -18,7 +18,7 @@ DEPEND=""
 RDEPEND=""
 
 src_install() {
-	haskell-cabal_src_install
+	cabal_src_install
 	dohtml docs/index.html
 	doman docs/cpphs.1
 }
