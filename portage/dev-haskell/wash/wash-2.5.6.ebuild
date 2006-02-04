@@ -6,7 +6,7 @@ inherit ghc-package
 
 # the installation bundle is called WashNGo
 MY_PN="WashNGo"
-MY_P=${MY_PN}-${PV}
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="WASH is a family of embedded domain-specific languages for
 programming Web applications"
@@ -22,20 +22,20 @@ DEPEND="virtual/ghc
 	doc? (dev-haskell/haddock)"
 RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	./configure \
-		--libdir=${D}/$(ghc-libdir) \
-		--prefix=${D}/usr \
+		--libdir="${D}/$(ghc-libdir)" \
+		--prefix="${D}/usr" \
 		--enable-register-package="${S}/$(ghc-localpkgconf)" \
-		`use_enable doc build-docs` || die "configure failed"
+		"$(use_enable doc build-docs)" || die "configure failed"
 	make all || die "make all failed"
 }
 
 src_install() {
 	ghc-setup-pkg
-	make exec_prefix=${D}/usr install || die "make install failed"
+	make exec_prefix="${D}/usr" install || die "make install failed"
 	ghc-install-pkg
 	dodoc README
 	if use doc; then
