@@ -8,6 +8,12 @@ Results of meeting 8/2/06:
 
 * remove ghc-6.0.1 and ghc-6.4.1 (leaving 6.4.1-r1)
 
+* remove hugs98-2005.3 (leaving 2005.3-r1)
+
+* remove darcs-1.0.5_rc1 and darcs-1.0.5_rc2
+
+* remove alex 2.0 (leaving 2.0.1-r1)
+
 == High priority ==
 
 * fix opengl issue with ghc and hugs
@@ -26,7 +32,10 @@ Results of meeting 8/2/06:
 
 * get other ebuilds marked stable on as many arches as we can test:
   alex-2.0.1-r1, c2hs-0.14.5, cabal-1.1.3, drift-2.1.2, gtk2hs-0.9.10,
-  haddock-0.7, happy-1.15
+  haddock-0.7, happy-1.15, hugs98-2005.3-r1, buddha-1.2.
+
+* get ebuilds marked ~amd64: helium, darcs, frown, harp, haskell-src-exts,
+  haxml, hs-plugins, hsshellscript, hxt, lhs2tex, uuagc, wash
 
 == New ebuilds ==
 
