@@ -16,7 +16,7 @@
 
 inherit base flag-o-matic eutils ghc-package
 
-IUSE="doc opengl"
+IUSE="doc opengl openal"
 #java use flag disabled because of bug #106992
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -56,7 +56,8 @@ DEPEND="<virtual/ghc-6.5
 		>=dev-haskell/haddock-0.6-r2 )
 	opengl? ( virtual/opengl
 		virtual/glu
-		virtual/glut )"
+		virtual/glut )
+	openal? ( media-libs/openal )"
 # removed: java? ( >=dev-java/fop-0.20.5 )
 
 RDEPEND="virtual/libc
@@ -113,12 +114,7 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf
 	local mydoc
-
-	if use opengl; then
-		myconf="--enable-hopengl"
-	fi
 
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
@@ -160,7 +156,11 @@ src_compile() {
 	use alpha || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 	use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
 
-	econf ${myconf} || die "econf failed"
+	econf \
+		$(use_enable opengl opengl) \
+		$(use_enable opengl glut) \
+		$(use_enable openal openal) \
+		|| die "econf failed"
 
 	# the build does not seem to work all that
 	# well with parallel make
