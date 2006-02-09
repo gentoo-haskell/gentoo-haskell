@@ -40,7 +40,7 @@ S="${WORKDIR}/${MY_P}"
 
 PROVIDE="virtual/ghc"
 
-RDEPEND="virtual/libc
+RDEPEND="
     >=sys-devel/gcc-2.95.3
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
@@ -53,8 +53,6 @@ RDEPEND="virtual/libc
 DEPEND="${RDEPEND}
 	<virtual/ghc-6.5
 	!>=virtual/ghc-6.6
-	>=sys-devel/make-3.79.1
-	>=sys-apps/sed-3.02.80
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
