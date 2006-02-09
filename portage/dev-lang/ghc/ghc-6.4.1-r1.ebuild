@@ -40,32 +40,26 @@ S="${WORKDIR}/${MY_P}"
 
 PROVIDE="virtual/ghc"
 
-# ghc cannot usually be bootstrapped using later versions ...
-DEPEND="<virtual/ghc-6.5
-	!>=virtual/ghc-6.6
+RDEPEND="virtual/libc
+    >=sys-devel/gcc-2.95.3
 	>=dev-lang/perl-5.6.1
-	>=sys-devel/gcc-2.95.3
-	>=sys-devel/make-3.79.1
-	>=sys-apps/sed-3.02.80
-	>=sys-devel/flex-2.5.4a
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
+	|| ( x11-libs/libX11 virtual/x11 )
+	opengl? ( virtual/opengl virtual/glu virtual/glut )
+	openal? ( media-libs/openal )"
+
+# ghc cannot usually be bootstrapped using later versions ...
+DEPEND="${RDEPEND}
+	<virtual/ghc-6.5
+	!>=virtual/ghc-6.6
+	>=sys-devel/make-3.79.1
+	>=sys-apps/sed-3.02.80
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.6-r2 )
-	opengl? ( virtual/opengl
-		virtual/glu
-		virtual/glut )
-	openal? ( media-libs/openal )"
+		>=dev-haskell/haddock-0.6-r2 )"
 # removed: java? ( >=dev-java/fop-0.20.5 )
-
-RDEPEND="virtual/libc
-	>=sys-devel/gcc-2.95.3
-	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-4.1
-	>=sys-libs/readline-4.2
-	opengl? ( virtual/opengl virtual/glu virtual/glut )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
