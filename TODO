@@ -6,13 +6,9 @@ Results of meeting 8/2/06:
 
 * remove hugs98-graphics
 
-* remove ghc-6.0.1 and ghc-6.4.1 (leaving 6.4.1-r1)
+* remove ghc-6.4.1 (leaving 6.4.1-r1)
 
 * remove hugs98-2005.3 (leaving 2005.3-r1)
-
-* remove darcs-1.0.5_rc1 and darcs-1.0.5_rc2
-
-* remove alex 2.0 (leaving 2.0.1-r1)
 
 == High priority ==
 
@@ -21,7 +17,7 @@ Results of meeting 8/2/06:
 * fix modular X dep issue with ghc and hugs
 
 * mark ghc-6.4.1 and ghc-bin-6.4.1 stable on all supported arches
-  then prune old versions of ghc (eg 5.04.3 6.4)
+  then prune old versions of ghc (eg 6.4)
 
 == Ebuild maintainance ==
 
