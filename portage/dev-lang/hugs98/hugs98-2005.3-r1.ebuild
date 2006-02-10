@@ -4,7 +4,7 @@
 
 inherit base flag-o-matic eutils versionator
 
-IUSE="opengl"
+IUSE="X opengl openal"
 
 # version numbering of Hugs is rather strange
 # we have to transform 2003.11 -> Nov2003
@@ -41,15 +41,38 @@ SLOT="0"
 KEYWORDS="~x86 ~sparc ~amd64 ~ppc"
 LICENSE="as-is"
 
-DEPEND="virtual/libc
+RDEPEND="
+	X? || ( x11-libs/libX11 virtual/x11 )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
+	openal? ( media-libs/openal )"
+DEPEND="${RDEPEND}
 	~app-text/docbook-sgml-dtd-4.2"
 
 src_unpack() {
 	base_src_unpack
 	cd ${S}
 	epatch ${WORKDIR}/${MY_P}-patch
-	cd ${S}/src
+
+	if ! use X; then
+		sed -i -e 's/X11//' -e 's/HGL//' "${S}/Makefile" \
+			"${S}/libraries/tools/convert_libraries" \
+			"${S}/libraries/tools/test_libraries"
+		rm -r "${S}/fptools/libraries/X11" "${S}/fptools/libraries/HGL"
+	fi
+
+	if ! use opengl; then
+		sed -i -e 's/OpenGL//' -e 's/GLUT//' "${S}/Makefile" \
+			"${S}/libraries/tools/convert_libraries" \
+			"${S}/libraries/tools/test_libraries"
+		rm -r "${S}/fptools/libraries/OpenGL" "${S}/fptools/libraries/GLUT"
+	fi
+
+	if ! use openal; then
+		sed -i 's/OpenAL//' "${S}/Makefile" \
+			"${S}/libraries/tools/convert_libraries" \
+			"${S}/libraries/tools/test_libraries"
+		rm -r "${S}/fptools/libraries/OpenAL"
+	fi
 }
 
 src_compile() {
@@ -61,22 +84,18 @@ src_compile() {
 	[ "${ARCH}" = "ppc" ] && filter-flags "-O?"
 
 	if use opengl; then
-		myconf="--enable-hopengl"
-		# the nvidia drivers *seem* not to work together
-		# with pthreads
-		[ ! -f /etc/env.d/09opengl ] \
-			|| [ -z "`grep opengl/nvidia/lib /etc/env.d/09opengl`" ] \
-			&& myconf="$myconf --with-pthreads" \
-			|| myconf="--with-pthreads"
+		myconf="--enable-opengl"
+		# the nvidia drivers *seem* not to work together with pthreads
+		if ! /usr/sbin/opengl-update --get-implementation | grep -q nvidia; then
+			myconf="$myconf --with-pthreads"
+		fi
 	fi
 
-	# cd ${S}/src/unix || die "source directory not found"
 	econf \
 		--build=${CHOST} \
 		--enable-ffi \
 		--enable-profiling \
 		${myconf} || die "econf failed"
-	# cd ..
 	emake || die "make failed"
 }
 
@@ -84,9 +103,9 @@ src_install () {
 	make install DESTDIR="${D}" || die "make install failed"
 
 	#somewhat clean-up installation of few docs
-	cd ${S}
+	cd "${S}"
 	dodoc Credits License Readme
-	cd ${D}/usr/lib/hugs
+	cd "${D}/usr/lib/hugs"
 	rm Credits License Readme
-	mv demos/ docs/ ${D}/usr/share/doc/${PF}
+	mv demos/ docs/ "${D}/usr/share/doc/${PF}"
 }
