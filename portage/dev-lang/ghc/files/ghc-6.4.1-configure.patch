@@ -18,21 +18,25 @@ diff -urwpN ghc-6.4.1/libraries/HGL/aclocal.m4 ghc-6.4.1.patched/libraries/HGL/a
 diff -urwpN ghc-6.4.1/libraries/HGL/configure.ac ghc-6.4.1.patched/libraries/HGL/configure.ac
 --- ghc-6.4.1/libraries/HGL/configure.ac	2005-05-08 08:19:45.000000000 -0400
 +++ ghc-6.4.1.patched/libraries/HGL/configure.ac	2006-02-11 02:07:47.000000000 -0400
-@@ -1,5 +1,8 @@
+@@ -1,5 +1,10 @@
  AC_INIT([Haskell Graphics Library], [3.1], [libraries@haskell.org], [HGL])
  
 +FP_ARG_HGL
 +
-+if test x"$enable_hgl" != xno; then 
++if test "$enable_hgl" = no; then
++  HGL_BUILD_PACKAGE=no
++else
  # Safety check: Ensure that we are in the correct source directory.
  AC_CONFIG_SRCDIR([Graphics/HGL.hs])
  
-@@ -53,3 +56,5 @@ AC_SUBST([BUILD_PACKAGE_BOOL])
- 
- AC_CONFIG_FILES([config.mk HGL.buildinfo])
- AC_OUTPUT
-+
+@@ -28,6 +33,7 @@ else
+   HGL_BUILD_PACKAGE=yes
+   PLATFORM=X11
+ fi
 +fi
+ AC_SUBST([HGL_BUILD_PACKAGE])
+ AC_SUBST([PLATFORM])
+
 diff -urwpN ghc-6.4.1/libraries/X11/aclocal.m4 ghc-6.4.1.patched/libraries/X11/aclocal.m4
 --- ghc-6.4.1/libraries/X11/aclocal.m4	2004-11-23 08:35:18.000000000 -0400
 +++ ghc-6.4.1.patched/libraries/X11/aclocal.m4	2006-02-11 02:07:38.000000000 -0400
@@ -53,18 +57,22 @@ diff -urwpN ghc-6.4.1/libraries/X11/aclocal.m4 ghc-6.4.1.patched/libraries/X11/a
 diff -urwpN ghc-6.4.1/libraries/X11/configure.ac ghc-6.4.1.patched/libraries/X11/configure.ac
 --- ghc-6.4.1/libraries/X11/configure.ac	2005-05-08 08:19:28.000000000 -0400
 +++ ghc-6.4.1.patched/libraries/X11/configure.ac	2006-02-11 02:07:38.000000000 -0400
-@@ -1,5 +1,8 @@
+@@ -1,5 +1,11 @@
  AC_INIT([Haskell X11 package], [1.1], [libraries@haskell.org], [X11])
  
 +FP_ARG_X11
 +
-+if test x"$enable_x11" != xno; then
++if test "$enable_x11" = no; then
++  X11_BUILD_PACKAGE=no
++  BUILD_PACKAGE_BOOL=False
++else
  # Safety check: Ensure that we are in the correct source directory.
  AC_CONFIG_SRCDIR([include/HsXlib.h])
  
-@@ -42,3 +45,5 @@ fi
- 
- AC_CONFIG_FILES([config.mk X11.buildinfo])
- AC_OUTPUT
-+
+@@ -24,6 +30,7 @@ else
+   X11_BUILD_PACKAGE=yes
+   BUILD_PACKAGE_BOOL=True
+ fi
 +fi
+ AC_SUBST([X11_BUILD_PACKAGE])
+ AC_SUBST([BUILD_PACKAGE_BOOL])
