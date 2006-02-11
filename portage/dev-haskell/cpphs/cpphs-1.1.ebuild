@@ -3,18 +3,18 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="A liberalised cpp-a-like preprocessor for Haskell"
 HOMEPAGE="http://haskell.org/cpphs/"
 SRC_URI="http://www.cs.york.ac.uk/fp/cpphs/${P}.tar.gz"
 
-LICENSE="LGPL"
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE=""
 
-DEPEND=""
+DEPEND="virtual/ghc"
 RDEPEND=""
 
 src_install() {
