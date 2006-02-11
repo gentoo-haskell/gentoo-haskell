@@ -35,8 +35,6 @@ Results of meeting 8/2/06:
 
 == New ebuilds ==
 
-* cpphs-1.1
-
 * haxml 1.13 or later
 
 * new wash version
@@ -58,6 +56,8 @@ Results of meeting 8/2/06:
 * add yhc and jhc when they are ready
 
 == Long term / speculative ==
+
+* figure out why all GHC binaries have executable stacks
 
 * make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
 
