@@ -95,6 +95,7 @@ src_unpack() {
 	# TODO: test if ppc/ppc64 works without patch now ...
 	cd ${S}
 	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
+	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
