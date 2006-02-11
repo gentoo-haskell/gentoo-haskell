@@ -14,9 +14,9 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base flag-o-matic eutils ghc-package
+inherit base flag-o-matic eutils autotools ghc-package
 
-IUSE="doc opengl openal"
+IUSE="doc X opengl openal"
 #java use flag disabled because of bug #106992
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -45,7 +45,7 @@ RDEPEND="
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
-	|| ( x11-libs/libX11 virtual/x11 )
+	X? || ( x11-libs/libX11 virtual/x11 )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
 	openal? ( media-libs/openal )"
 
@@ -93,6 +93,8 @@ src_unpack() {
 	base_src_unpack
 
 	# TODO: test if ppc/ppc64 works without patch now ...
+	cd ${S}
+	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
 
 	# hardened-gcc needs to be disabled, because the
 	# mangler doesn't accept its output; yes, the 6.2 version
@@ -148,10 +150,16 @@ src_compile() {
 	use alpha || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 	use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
 
+	# we've patched some configure.ac files do allow us to enable/disable the
+	# X11 and HGL packages, so we need to autoreconf.
+	eautoreconf
+
 	econf \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
+		$(use_enable X x11) \
+		$(use_enable X hgl) \
 		|| die "econf failed"
 
 	# the build does not seem to work all that
