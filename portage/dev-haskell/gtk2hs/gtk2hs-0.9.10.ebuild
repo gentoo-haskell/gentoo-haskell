@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/gtk2hs/gtk2hs-0.9.10.ebuild,v 1.1 2005/11/05 16:20:37 dcoutts Exp $
 
-inherit base ghc-package multilib
+inherit base eutils ghc-package multilib autotools
 
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86 ~ppc"
+KEYWORDS="~amd64 ~x86 ~ppc ~sparc"
 #enable sparc when CFLAGS/-mcpu ebuild bug is fixed
 
 IUSE="doc glade gnome mozilla firefox"
@@ -27,7 +27,16 @@ RDEPEND=">=virtual/ghc-5.04.3
 DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.7 )"
 
+src_unpack() {
+	base_src_unpack
+	cd "${S}"
+	epatch "${FILESDIR}/${PN}-0.9.10-cflags.patch"
+}
+
 src_compile() {
+	# only needed because of the cflags patch above.
+	eautoreconf
+
 	econf \
 		--enable-packager-mode \
 		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
