@@ -57,6 +57,8 @@ Results of meeting 8/2/06:
 
 == Long term / speculative ==
 
+* improve the GHC ebuild to use check-reqs in deciding about SplitObjs.
+
 * figure out why all GHC binaries have executable stacks
 
 * make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
