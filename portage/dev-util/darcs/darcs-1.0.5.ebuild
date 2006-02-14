@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.4.ebuild,v 1.1 2005/11/17 20:13:31 kosmikus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
 inherit base fixheadtails
 
@@ -12,7 +12,7 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc"
+KEYWORDS="~amd64 ppc x86 ~sparc"
 IUSE="doc"
 # disabled wxwindows use flag for now, as I got build errors
 
@@ -32,6 +32,11 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	base_src_unpack
 	ht_fix_all
+
+	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
+	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
+	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
+		${S}/autoconf.mk.in
 }
 
 src_compile() {
