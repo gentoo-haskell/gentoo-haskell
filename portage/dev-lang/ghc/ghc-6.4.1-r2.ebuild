@@ -14,7 +14,7 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base flag-o-matic eutils autotools ghc-package
+inherit base flag-o-matic eutils autotools ghc-package check-reqs
 
 IUSE="doc X opengl openal"
 #java use flag disabled because of bug #106992
@@ -45,7 +45,7 @@ RDEPEND="
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
-	X? || ( x11-libs/libX11 virtual/x11 )
+	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
 	openal? ( media-libs/openal )"
 
@@ -147,9 +147,20 @@ src_compile() {
 	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
-	use alpha || use ppc || use ppc64 || use sparc && echo "SplitObjs=NO" >> mk/build.mk
 	use alpha || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 	use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
+
+	# The SplitObjs feature doesn't work on several arches and it makes
+	# 'ar' take loads of RAM:
+	CHECKREQS_MEMORY="200"
+	if use alpha || use ppc || use ppc64 || use sparc; then
+		echo "SplitObjs=NO" >> mk/build.mk
+	elif ! check_reqs_conditional; then
+		einfo "Turning off ghc's 'Split Objs' feature because this machine"
+		einfo "does not have enough RAM for it. This will have the effect"
+		einfo "of making binaries produced by ghc considerably larger."
+		echo "SplitObjs=NO" >> mk/build.mk
+	fi
 
 	# we've patched some configure.ac files do allow us to enable/disable the
 	# X11 and HGL packages, so we need to autoreconf.
