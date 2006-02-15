@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1.ebuild,v 1.6 2005/10/06 21:47:41 swegener Exp $
 
@@ -41,7 +41,7 @@ S="${WORKDIR}/${MY_P}"
 PROVIDE="virtual/ghc"
 
 RDEPEND="
-    >=sys-devel/gcc-2.95.3
+	>=sys-devel/gcc-2.95.3
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
