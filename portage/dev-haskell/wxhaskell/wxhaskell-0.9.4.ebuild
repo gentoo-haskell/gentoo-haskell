@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/wxhaskell/wxhaskell-0.9.ebuild,v 1.2 2005/03/14 18:22:12 kosmikus Exp $
 
@@ -12,11 +12,12 @@ SLOT="0"
 
 KEYWORDS="~x86 ~ppc ~amd64"
 
-IUSE="doc gtk2"
+IUSE="doc"
 
-DEPEND="${DEPEND}
-	>=virtual/ghc-6.2
-	>=x11-libs/wxGTK-2.4.2
+RDEPEND=">=virtual/ghc-6.2
+	=x11-libs/wxGTK-2.6*"
+
+DEPEND="${RDEPEND}
 	doc? ( >=dev-haskell/haddock-0.6-r2 )"
 
 src_unpack() {
@@ -31,18 +32,12 @@ src_unpack() {
 }
 
 src_compile() {
-	# use the highest possible wxGTK version, i.e., 2.6 by default
-	if has_version '>=x11-libs/wxGTK-2.6'; then
-		WX_GTK_VER=2.6
-	fi
 	ghc-setup-pkg
 
-	#wxhaskell supports gtk or gtk2, but not unicode yet:
-	if ! use gtk2; then
-		need-wxwidgets gtk
-	else
-		need-wxwidgets gtk2
-	fi
+	#wxhaskell supports gtk or gtk2, but not unicode yet. However since the gtk2
+	#USE flag is deprecated we now only build with gtk2:
+	WX_GTK_VER=2.6
+	need-wxwidgets gtk2
 
 	# every C compiler result ends up in a shared lib
 	append-flags -fPIC
