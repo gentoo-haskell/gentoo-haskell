@@ -46,11 +46,13 @@ Results of meeting 8/2/06:
 
 * add yhc and jhc when they are ready
 
-== Long term / speculative ==
+== Harder ==
 
 * figure out why all GHC binaries have executable stacks
 
 * make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
+
+== Long term & continuing projects ==
 
 * help fix & improve cabal
 
@@ -58,8 +60,13 @@ Results of meeting 8/2/06:
 
 * improve HackPort tool
 
+== Speculative ==
+
+* SLOT libs
+
+* SLOT ghc (probly not possible with current portage)
+
+* eclectic/haskell-config (related to SLOTting ghc & libs)
+
 * tool to help sync between portage & darcs overlay
 
-* eclectic/haskell-config
-
-* SLOT ghc
