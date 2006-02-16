@@ -53,6 +53,7 @@ src_unpack() {
 	base_src_unpack
 	cd ${S}
 	epatch ${WORKDIR}/${MY_P}-patch
+	epatch ${FILESDIR}/${PN}-Mar2005-openal.patch
 
 	if ! use X; then
 		sed -i -e 's/X11//' -e 's/HGL//' "${S}/Makefile" \

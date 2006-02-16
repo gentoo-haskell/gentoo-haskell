@@ -1,0 +1,29 @@
+diff -urwpN hugs98-Mar2005-orig/fptools/libraries/OpenAL/Sound/OpenAL/ALC/Context.hs hugs98-Mar2005/fptools/libraries/OpenAL/Sound/OpenAL/ALC/Context.hs
+--- hugs98-Mar2005-orig/fptools/libraries/OpenAL/Sound/OpenAL/ALC/Context.hs	2006-02-16 07:42:41.000000000 +0100
++++ hugs98-Mar2005/fptools/libraries/OpenAL/Sound/OpenAL/ALC/Context.hs	2006-02-16 07:45:53.000000000 +0100
+@@ -66,10 +66,10 @@ foreign import CALLCONV unsafe "alcCreat
+ -- | Destroys the given context.
+ 
+ destroyContext :: Context -> IO ()
+-destroyContext = ignore . alcDestroyContext
++destroyContext = alcDestroyContext
+ 
+ foreign import CALLCONV unsafe "alcDestroyContext"
+-   alcDestroyContext :: Context -> IO ALCenum
++   alcDestroyContext :: Context -> IO () 
+ 
+ --------------------------------------------------------------------------------
+ 
+@@ -102,10 +102,10 @@ foreign import CALLCONV unsafe "alcMakeC
+ -- | Performs processing on a synced context, nop on an asynchronous context.
+ 
+ processContext :: Context -> IO ()
+-processContext = ignore . alcProcessContext
++processContext = alcProcessContext
+ 
+ foreign import CALLCONV unsafe "alcProcessContext"
+-   alcProcessContext :: Context -> IO Context
++   alcProcessContext :: Context -> IO ()
+ 
+ -- | Suspends processing on an asynchronous context. This is a legal nop on a
+ -- synced context.
