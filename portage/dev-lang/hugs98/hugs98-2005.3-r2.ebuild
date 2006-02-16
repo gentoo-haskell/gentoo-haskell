@@ -46,6 +46,7 @@ RDEPEND="
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
+	opengl? ( x11-base/opengl-update )
 	~app-text/docbook-sgml-dtd-4.2"
 
 src_unpack() {
