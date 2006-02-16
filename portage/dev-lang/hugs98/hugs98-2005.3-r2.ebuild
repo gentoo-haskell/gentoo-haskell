@@ -38,11 +38,11 @@ SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}.tar.gz
 HOMEPAGE="http://www.haskell.org/hugs/"
 
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~amd64 ~ppc"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 LICENSE="as-is"
 
 RDEPEND="
-	X? || ( x11-libs/libX11 virtual/x11 )
+	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
