@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/hugs98/hugs98-2005.3.ebuild,v 1.2 2005/03/19 12:34:14 kosmikus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/hugs98/hugs98-2005.3-r2.ebuild,v 1.2 2006/02/16 11:52:55 dcoutts Exp $
 
 inherit base flag-o-matic eutils versionator
 
@@ -32,7 +32,7 @@ HUGS_MONTH=$(transform_month ${HUGS_MONTH_NR})
 MY_PV="${HUGS_MONTH}$(get_major_version )"
 MY_P="${PN}-${MY_PV}"
 S=${WORKDIR}/${MY_P}
-DESCRIPTION="The HUGS98 Haskell interpreter"
+DESCRIPTION="The Hugs98 Haskell interpreter"
 SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}.tar.gz
 		 http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}-patch.gz"
 HOMEPAGE="http://www.haskell.org/hugs/"
@@ -53,7 +53,7 @@ src_unpack() {
 	base_src_unpack
 	cd ${S}
 	epatch ${WORKDIR}/${MY_P}-patch
-	epatch ${FILESDIR}/${PN}-Mar2005-openal.patch
+	epatch ${FILESDIR}/${P}-openal.patch
 
 	if ! use X; then
 		sed -i -e 's/X11//' -e 's/HGL//' "${S}/Makefile" \
