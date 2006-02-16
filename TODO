@@ -10,11 +10,9 @@ Results of meeting 8/2/06:
 
 * remove hugs98-2005.3 (leaving 2005.3-r1)
 
+* remove gtk2hs-0.9.7 (and the corresponding patch, leavine 0.9.9 & 0.9.10)
+
 == High priority ==
-
-* fix opengl issue with ghc and hugs
-
-* fix modular X dep issue with ghc and hugs
 
 * mark ghc-6.4.1 and ghc-bin-6.4.1 stable on all supported arches
   then prune old versions of ghc (eg 6.4)
@@ -22,9 +20,6 @@ Results of meeting 8/2/06:
 == Ebuild maintainance ==
 
 * add gtk2 use flag for wxhaskell, see bug #106560
-
-* get a recent version of gtk2hs fixed and marked stable on sparc and remove
-  the really old versions of gtk2hs
 
 * get other ebuilds marked stable on as many arches as we can test:
   alex-2.0.1-r1, c2hs-0.14.5, cabal-1.1.3, drift-2.1.2, gtk2hs-0.9.10,
@@ -52,8 +47,6 @@ Results of meeting 8/2/06:
 * add yhc and jhc when they are ready
 
 == Long term / speculative ==
-
-* improve the GHC ebuild to use check-reqs in deciding about SplitObjs.
 
 * figure out why all GHC binaries have executable stacks
 
