@@ -2,10 +2,6 @@ Results of meeting 8/2/06:
 
 == Easy ==
 
-* remove nhc98
-
-* remove hugs98-graphics
-
 * remove ghc-6.4 (leaving 6.4.1-r2)
 
 * remove gtk2hs-0.9.7 (and the corresponding patch, leavine 0.9.9 & 0.9.10)
