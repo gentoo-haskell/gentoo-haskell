@@ -16,6 +16,7 @@ KEYWORDS="x86 ppc ~amd64"
 IUSE="doc"
 
 RDEPEND=">=virtual/ghc-6.2
+	!>=virtual/ghc-6.4
 	=x11-libs/wxGTK-2.4*"
 
 DEPEND="${RDEPEND}
