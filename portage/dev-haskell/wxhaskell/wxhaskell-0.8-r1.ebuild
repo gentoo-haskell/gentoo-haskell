@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/wxhaskell/wxhaskell-0.9.ebuild,v 1.2 2005/03/14 18:22:12 kosmikus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/wxhaskell/wxhaskell-0.8-r1.ebuild,v 1.7 2006/02/17 10:59:58 dcoutts Exp $
 
 inherit flag-o-matic wxwidgets ghc-package
 
@@ -10,12 +10,13 @@ SRC_URI="mirror://sourceforge/wxhaskell/${PN}-src-${PV}.zip"
 LICENSE="wxWinLL-3"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ppc ~amd64"
+# potentially seriously broken on amd64, check carefully before re-enabling.
 
 IUSE="doc"
 
 RDEPEND=">=virtual/ghc-6.2
-	>=x11-libs/wxGTK-2.6.2"
+	>=x11-libs/wxGTK-2.4.*"
 
 DEPEND="${RDEPEND}
 	app-arch/unzip
@@ -51,7 +52,7 @@ src_compile() {
 
 	#wxhaskell supports gtk or gtk2, but not unicode yet. However since the gtk2
 	#USE flag is deprecated we now only build with gtk2:
-	WX_GTK_VER=2.6
+	WX_GTK_VER=2.4
 	need-wxwidgets gtk2
 
 	# every C compiler result ends up in a shared lib
