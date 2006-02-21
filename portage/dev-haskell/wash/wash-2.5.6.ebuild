@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ghc-package
+inherit base ghc-package
 
 # the installation bundle is called WashNGo
 MY_PN="WashNGo"
@@ -26,12 +26,27 @@ RDEPEND=">=virtual/ghc-6.4.1
 
 S="${WORKDIR}/${MY_P}"
 
+src_unpack() {
+	base_src_unpack
+
+	# don't use -O2 in HCFLAGS because it makes ghc take 700Mb of RAM
+	sed -i 's/-O2/-O/' \
+		"${S}/lib/WASH/Utility/Makefile" \
+		"${S}/lib/Makefile.HTML" \
+		"${S}/lib/Makefile.Mail" \
+		"${S}/lib/Makefile.Dbconnect" \
+		"${S}/lib/Makefile.Utility" \
+		"${S}/lib/Makefile.CGI"
+}
+
 src_compile() {
 	./configure \
 		--prefix="${D}/usr" \
 		--libdir="${D}/${P}" \
 		$(use_enable postgres dbconnect) \
 		$(use_enable doc build-docs) \
+		--with-hc=$(ghc-getghc) \
+		--with-hcflags="+RTS -M200m -RTS" \
 		--enable-register-package="${S}/$(ghc-localpkgconf)" \
 		|| die "configure failed"
 	make all || die "make all failed"
