@@ -5,17 +5,17 @@
 CABAL_FEATURES="haddock lib"
 inherit haskell-cabal
 
-DESCRIPTION="HDBC module for sqlite"
-HOMEPAGE="http://darcs.complete.org/hdbc-sqlite3/"
+DESCRIPTION="Sqlite v3 database driver for HDBC"
+HOMEPAGE="http://quux.org/devel/hdbc/"
 SRC_URI="http://quux.org/devel/hdbc/${PN}_${PV}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
+KEYWORDS="~x86 ~amd64"	#if possible try testing with "~ppc" and "~sparc"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.2.2
+DEPEND=">=virtual/ghc-6.4.1
 	>=dev-haskell/hdbc-${PV}
-	>=dev-db/sqlite-3.2.7"
+	>=dev-db/sqlite-3.2"
 
 S=${WORKDIR}/${PN}

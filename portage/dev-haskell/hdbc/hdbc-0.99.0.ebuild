@@ -6,16 +6,17 @@ CABAL_FEATURES="haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell Database Connectivity"
-HOMEPAGE="http://darcs.complete.org/hdbc/"
+HOMEPAGE="http://quux.org/devel/hdbc/"
 SRC_URI="http://quux.org/devel/hdbc/${PN}_${PV}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
-IUSE="postgres sqlite"
+KEYWORDS="~x86 ~amd64"	#if possible try testing with "~ppc" and "~sparc"
+IUSE="postgres sqlite odbc"
 
-DEPEND=">=virtual/ghc-6.2.2"
+DEPEND=">=virtual/ghc-6.4.1"
 PDEPEND="postgres? ( >=dev-haskell/hdbc-postgresql-${PV} )
-		 sqlite? ( >=dev-haskell/hdbc-sqlite3-${PV} )"
+		 sqlite? ( >=dev-haskell/hdbc-sqlite3-${PV} )
+		 odbc? ( >=dev-haskell/hdbc-odbc-${PV} )"
 
 S=${WORKDIR}/${PN}
