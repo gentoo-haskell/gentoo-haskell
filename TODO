@@ -15,23 +15,21 @@ Results of meeting 8/2/06:
   haddock-0.7, happy-1.15, hugs98-2005.3-r2, buddha-1.2.
 
 * get ebuilds marked ~amd64: helium,
-  hs-plugins, hsshellscript, hxt, lhs2tex, wash
+  hs-plugins, hsshellscript, hxt, lhs2tex
 
 == New ebuilds ==
 
-* haxml 1.13 or later
-
-* new wash version
-
-* hxt-5.3
+* hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
 
 * uulib-0.9.2
+
+* helium-1.6 (may not work on 64-bit arches)
 
 * darcsweb
 
 * ghc-darcs
 
-* hsql
+* hsql & hdbc (annyoingly, hsq-1.7 has an unversioned tarball)
 
 * add yhc and jhc when they are ready
 
