@@ -14,8 +14,9 @@ Results of meeting 8/2/06:
   alex-2.0.1-r1, c2hs-0.14.5, cabal-1.1.3, drift-2.1.2, gtk2hs-0.9.10,
   haddock-0.7, happy-1.15, hugs98-2005.3-r2, buddha-1.2.
 
-* get ebuilds marked ~amd64: helium,
-  hs-plugins, hsshellscript, hxt, lhs2tex
+* get ebuilds marked ~amd64: helium, hs-plugins, hsshellscript, hxt
+
+* get hsql & hdbc tested and unmasked
 
 == New ebuilds ==
 
@@ -28,8 +29,6 @@ Results of meeting 8/2/06:
 * darcsweb
 
 * ghc-darcs
-
-* hsql & hdbc (annyoingly, hsq-1.7 has an unversioned tarball)
 
 * add yhc and jhc when they are ready
 
