@@ -14,7 +14,7 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base flag-o-matic eutils autotools ghc-package check-reqs
+inherit base toolchain-funcs eutils autotools ghc-package check-reqs
 
 IUSE="doc X opengl openal"
 #java use flag disabled because of bug #106992
@@ -63,17 +63,18 @@ PDEPEND=">=dev-haskell/cabal-1.1.3"
 
 SUPPORTED_CFLAGS=""
 
-# Setup supported CFLAGS.
-check_cflags() {
-	OLD_CFLAGS="${CFLAGS}"
-	CFLAGS="$1"
-	strip-unsupported-flags
-	SUPPORTED_CFLAGS="${SUPPORTED_CFLAGS} ${CFLAGS}"
-	CFLAGS="${OLD_CFLAGS}"
-}
-
+# hardened-gcc needs to be disabled, because the mangler doesn't accept its
+# output. However not all versions of gcc understand all these flags, so we
+# will only disable them if the current gcc has been set to use them by
+# default. This is more future-proof for when upgrading gcc. However it will
+# not work so well if you switch to a hardened gcc profile.
 setup_cflags() {
-	check_cflags "-nopie -fno-stack-protector -fno-stack-protector-all"
+	if gcc-specs-pie; then 
+		echo -n ' -nopie'
+	fi
+	if gcc-specs-ssp; then
+		echo -n ' -fno-stack-protector'
+	fi
 }
 
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
@@ -97,15 +98,16 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 
-	# hardened-gcc needs to be disabled, because the
-	# mangler doesn't accept its output; yes, the 6.2 version
-	# should do ...
+	# hardened-gcc needs to be disabled, because the mangler doesn't accept
+	# its output; yes, the 6.2 version should do ...
+	#
+	# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
+	# non-exectable stack. This it a hack until ghc does it itself properly.
 	cd "${S}/ghc/driver"
-	setup_cflags
-
 	epatch "${FILESDIR}/${PN}-6.2.hardened.patch"
-	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghc/ghc.sh
-	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-}|" ghci/ghci.sh
+	SUPPORTED_CFLAGS=$(setup_cflags)
+	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-} -opta-Wa,--noexecstack|" ghc/ghc.sh
+	sed -i -e "s|@GHC_CFLAGS@|${SUPPORTED_CFLAGS// -/ -optc-} -opta-Wa,--noexecstack|" ghci/ghci.sh
 }
 
 src_compile() {
@@ -113,6 +115,15 @@ src_compile() {
 
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
+
+	# If you need to do a quick build then enable this bit and add debug to IUSE	
+	#if use debug; then
+	#	echo "SRC_HC_OPTS     = -H32m -O0 -fasm" >> mk/build.mk
+	#	echo "GhcStage1HcOpts = -O0" >> mk/build.mk
+	#	echo "GhcLibHcOpts    = -fgenerics" >> mk/build.mk
+	#	echo "GhcLibWays      =" >> mk/build.mk
+	#	echo "SplitObjs       = NO" >> mk/build.mk
+	#fi
 
 	# determine what to do with documentation
 	if use doc; then
@@ -127,14 +138,17 @@ src_compile() {
 	fi
 	echo XMLDocWays="${mydoc}" >> mk/build.mk
 
-	# disable the automatic PIC building which is considered as Prologue Junk by the Haskell Compiler
-	# thanks to Peter Simons for finding this and giving notice on bugs.gentoo.org
-	# (this is still necessary, even though we have the patch, because
-	# we might be bootstrapping from a version that didn't have the
-	# patch included)
-	setup_cflags
+	# disable the automatic PIE building which is considered as Prologue Junk
+	# by the Haskell Compiler thanks to Peter Simons for finding this and
+	# giving notice on bugs.gentoo.org (this is still necessary, even though
+	# we have the patch, because we might be bootstrapping from a version that
+	# didn't have the patch included)
+	#
+	# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
+	# non-exectable stack. This it a hack until ghc does it itself properly.
+	SUPPORTED_CFLAGS=$(setup_cflags)
 	echo "SRC_CC_OPTS+=${SUPPORTED_CFLAGS}" >> mk/build.mk
-	echo "SRC_HC_OPTS+=${SUPPORTED_CFLAGS// -/ -optc-}" >> mk/build.mk
+	echo "SRC_HC_OPTS+=${SUPPORTED_CFLAGS// -/ -optc-} -opta-Wa,--noexecstack" >> mk/build.mk
 
 	# circumvent a very strange bug that seems related with ghc producing too much
 	# output while being filtered through tee (e.g. due to portage logging)
@@ -148,7 +162,7 @@ src_compile() {
 
 	# Required for some architectures, because they don't support ghc fully ...
 	use alpha || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
-	use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
+	use alpha || use ppc64 && echo "GhcUnregisterised=YES" >> mk/build.mk
 
 	# The SplitObjs feature doesn't work on several arches and it makes
 	# 'ar' take loads of RAM:
