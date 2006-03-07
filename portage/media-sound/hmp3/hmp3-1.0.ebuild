@@ -20,7 +20,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-		|| ( media-libs/mpg321 media-libs/mpg123 )
+		|| ( media-sound/mpg321 media-sound/mpg123 )
 		sys-libs/ncurses"
 
 src_unpack() {
