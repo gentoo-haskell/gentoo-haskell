@@ -92,14 +92,14 @@ src_unpack() {
 	
 	GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector -opta-Wa,--noexecstack"
 	sed -i -e "s|@GHC_CFLAGS@|${GHC_CFLAGS}|" ghc/ghc.sh
-	sed -i -e "s|@GHC_CFLAGS@|${GHC_CFLAGS}|" ghci/ghci.sh
+	#sed -i -e "s|@GHC_CFLAGS@|${GHC_CFLAGS}|" ghci/ghci.sh
 
 	cd "${S}"
-	# We also need to use these flags when building ghc itself
-	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
-
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
+
+	# We also need to use these C flags when building ghc itself
+	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE	
 	#if use debug; then
