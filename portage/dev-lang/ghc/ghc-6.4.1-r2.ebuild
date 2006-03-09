@@ -83,22 +83,22 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
-	# its output; yes, the 6.2 version should do ...
-	#
+	# its output
+	GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
+
 	# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
 	# non-exectable stack. This it a hack until ghc does it itself properly.
-	cd "${S}/ghc/driver"
-	epatch "${FILESDIR}/${PN}-6.2.hardened.patch"
+	GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
 	
-	GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector -opta-Wa,--noexecstack"
-	sed -i -e "s|@GHC_CFLAGS@|${GHC_CFLAGS}|" ghc/ghc.sh
-	#sed -i -e "s|@GHC_CFLAGS@|${GHC_CFLAGS}|" ghci/ghci.sh
+	# Modify the ghc driver script to use these GHC_CFLAGS
+	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
+	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
+	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
 
-	cd "${S}"
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
-	# We also need to use these C flags when building ghc itself
+	# We also need to use these GHC_CFLAGS flags when building ghc itself
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE	
