@@ -73,6 +73,14 @@ PDEPEND=">=dev-haskell/cabal-1.1.3"
 # 	fi
 # }
 
+# hardened-gcc needs to be disabled, because the mangler doesn't accept
+# its output.
+GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
+
+# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
+# non-exectable stack. This it a hack until ghc does it itself properly.
+GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
+
 src_unpack() {
 	base_src_unpack
 
@@ -80,19 +88,13 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 
-	# hardened-gcc needs to be disabled, because the mangler doesn't accept
-	# its output
-	GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
-
-	# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
-	# non-exectable stack. This it a hack until ghc does it itself properly.
-	GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
-	
-	# Modify the ghc driver script to use these GHC_CFLAGS
+	# Modify the ghc driver script to use GHC_CFLAGS
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
 	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
 	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
+}
 
+src_compile() {
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
@@ -147,9 +149,6 @@ src_unpack() {
 		einfo "of making binaries produced by ghc considerably larger."
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
-}
-
-src_compile() {
 
 	# we've patched some configure.ac files do allow us to enable/disable the
 	# X11 and HGL packages, so we need to autoreconf.
