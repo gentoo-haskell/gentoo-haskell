@@ -60,8 +60,6 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
-SUPPORTED_CFLAGS=""
-
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
 # the following function causes the build to fail with an informative error message
 # in such a case.
