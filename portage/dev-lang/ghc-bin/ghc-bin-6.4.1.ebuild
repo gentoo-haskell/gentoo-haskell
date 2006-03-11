@@ -56,7 +56,7 @@ src_unpack() {
 		GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
 		sed -i -e '$s|-optc[a-z-]*||g' \
 			   -e 's|${TOPDIROPT}|$TOPDIROPT $GHC_CFLAGS|' \
-			   -e "s|#!/bin/bash|GHC_CFLAGS=${GHC_CFLAGS}|" \
+			   -e "s|#!/bin/bash|GHC_CFLAGS=\"${GHC_CFLAGS}\"|" \
 			usr/bin/ghc-${PV}
 
 		# For ghci we don't need these C flags at all
