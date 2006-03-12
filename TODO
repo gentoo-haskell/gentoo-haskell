@@ -16,13 +16,9 @@ Results of meeting 8/2/06:
 
 * get ebuilds marked ~amd64: helium, hs-plugins, hsshellscript, hxt
 
-* get hsql & hdbc tested and unmasked
-
 == New ebuilds ==
 
 * hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
-
-* uulib-0.9.2
 
 * helium-1.6 (may not work on 64-bit arches)
 
@@ -34,13 +30,12 @@ Results of meeting 8/2/06:
 
 == Harder ==
 
-* figure out why all GHC binaries have executable stacks
-
 * make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
 
-* sort out the problem with hardened profiles and cflags.
-
 == Long term & continuing projects ==
+
+* get ghc bugs fixed upstream, send patches and get a propper fix for the exec
+  stack problem.
 
 * help fix & improve cabal
 
