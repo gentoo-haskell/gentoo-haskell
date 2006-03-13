@@ -175,7 +175,7 @@ for content in `find ${PKG_DBDIR} -name CONTENTS`; do
     for d in ${OLD_PACKAGES_DIR}; do
         if fgrep "${d}/" ${content} > /dev/null; then
             PKGS_TO_REMERGE="${PKGS_TO_REMERGE} ${CATPKGVER}"
-            elogecho "Adding to list: ${CATPKGVER} (has files in ${d})"
+            elogecho "${CATPKGVER} has files in ${d}"
         fi
     done
 done    
