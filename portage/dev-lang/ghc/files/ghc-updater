@@ -146,11 +146,11 @@ fi
 # This last one is to cope with an old mistake
 # /usr/lib/ghc-bin-${OLD_GHC_VER}
 #
-OLD_PACKAGES_DIR_="/@(usr|opt)/@(lib|lib64)/@(ghc|ghc-bin)-*"
+OLD_PACKAGES_DIR_="/usr/@(lib|lib64)/@(ghc|ghc-bin)-* /opt/ghc/@(lib|lib64)/@(ghc|ghc-bin)-*"
 OLD_PACKAGES_DIR=""
-# Exclude new library dir:
+# Exclude new library dir and lib symlinks:
 for d in ${OLD_PACKAGES_DIR_}; do
-    [[ "${d}" == ${NEW_GHC_LIBDIR} ]] || OLD_PACKAGES_DIR="${OLD_PACKAGES_DIR}${d} "
+    [[ "${d}" == ${NEW_GHC_LIBDIR} ]] || [[ -L ${d%/*} ]] || OLD_PACKAGES_DIR="${OLD_PACKAGES_DIR}${d} "
 done
 
 eloginfo "Starting GHC Updater to $(which ghc), version ${NEW_GHC_VER} :"
