@@ -224,7 +224,11 @@ if [[ -z ${DEPSORT} ]]; then
 fi
 PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${DEPSORT} ${PKGS_OK} | xargs)"
 
-eloginfo "Preparing to merge these packages in this order:"
+if [[ -n ${PRETEND} ]]; then
+	eloginfo "These are the packages that would be merged, in order:"
+else
+	eloginfo "Preparing to merge these packages in this order:"
+fi
 for pkg in $PKGS_OK_SORTED; do
 	elogecho ">=$pkg"
 done
