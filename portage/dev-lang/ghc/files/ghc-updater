@@ -7,7 +7,6 @@
 # This script can be run as many times as you like. It will log the 
 # results in /var/log/ghc-updater.log
 #
-# OLD_GHC_VER     = old ghc version we are upgrading from
 # NEW_GHC_VER     = new ghc version we are upgrading to
 # PKGS_EXCEPTIONS = packages that should NOT be re-emerged for any reason
 # PKGS_MANUAL     = packages that should be re-emerged even if they don't
@@ -23,7 +22,6 @@
 #
 
 shopt -s nullglob
-shopt -s extglob
 
 NEW_GHC_VER=$(ghc --version | sed 's:^.*version ::')
 NEW_GHC_LIBDIR=$(ghc --print-libdir)
@@ -137,19 +135,18 @@ fi
 
 #
 #
-# Find all packages that have installed something in 
-# /usr/lib/ghc-${OLD_GHC_VER}
-# /usr/lib64/ghc-${OLD_GHC_VER}
-# /opt/ghc/lib/ghc-${OLD_GHC_VER}
-# /opt/ghc/lib64/ghc-${OLD_GHC_VER}
+# Find all packages that have installed something in
+# directories of the form
+#   /usr/lib/ghc-<version>
+# or similar.
 #
-# This last one is to cope with an old mistake
-# /usr/lib/ghc-bin-${OLD_GHC_VER}
+#   /usr/lib/ghc-bin-<version>
+# is included because an old ghc-bin ebuild was buggy and
+# installed to a wrong dir.
 #
-OLD_PACKAGES_DIR_="/usr/@(lib|lib64)/@(ghc|ghc-bin)-* /opt/ghc/@(lib|lib64)/@(ghc|ghc-bin)-*"
 OLD_PACKAGES_DIR=""
 # Exclude new library dir and lib symlinks:
-for d in ${OLD_PACKAGES_DIR_}; do
+for d in /{usr,opt/ghc}/lib{,64}/ghc{,-bin}-*; do
     [[ "${d}" == ${NEW_GHC_LIBDIR} ]] || [[ -L ${d%/*} ]] || OLD_PACKAGES_DIR="${OLD_PACKAGES_DIR}${d} "
 done
 
