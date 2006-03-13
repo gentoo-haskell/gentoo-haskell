@@ -22,8 +22,11 @@
 # PKGS_MASKED     = list of packages that are installed, but masked.
 #
 
-OLD_GHC_VER=$(ls -d /usr/lib/ghc-* | sed 's:^.*ghc-::' \
-		| sort -g | tail -n 2 | head -n 1)
+shopt -s nullglob
+
+OLD_GHC_VER=$(ls -d /usr/lib/ghc-* /opt/ghc/lib/ghc-* /opt/ghc/lib64/ghc-* \
+               | sed 's:^.*ghc-::' | sort -t . -n -k 1,1 -k 2,2 -k 3,3 \
+               | uniq | tail -n 2 | head -n 1)
 NEW_GHC_VER=$(ghc --version | sed 's:^.*version ::')
 
 PKGS_EXCEPTIONS="dev-lang/ghc dev-lang/ghc-bin"
@@ -147,10 +150,16 @@ fi
 #
 # Find all packages that have installed something in 
 # /usr/lib/ghc-${OLD_GHC_VER}
+# /usr/lib64/ghc-${OLD_GHC_VER}
+# /opt/ghc/lib/ghc-${OLD_GHC_VER}
+# /opt/ghc/lib64/ghc-${OLD_GHC_VER}
+#
+# This last one is to cope with an old mistake
 # /usr/lib/ghc-bin-${OLD_GHC_VER}
 #
-OLD_PACKAGES_DIR="/usr/lib/ghc-${OLD_GHC_VER} /usr/lib/ghc-bin-${OLD_GHC_VER} \
-	/opt/ghc/lib/ghc-${OLD_GHC_VER}"
+OLD_PACKAGES_DIR="/usr/lib/ghc-${OLD_GHC_VER} /usr/lib64/ghc-${OLD_GHC_VER}
+	/opt/ghc/lib/ghc-${OLD_GHC_VER} /opt/ghc/lib64/ghc-${OLD_GHC_VER} \
+	/usr/lib/ghc-bin-${OLD_GHC_VER}"
 
 eloginfo "Starting GHC Updater from ${OLD_GHC_VER} to ${NEW_GHC_VER} :"
 eloginfo "Searching for packages with files in the directories:"
