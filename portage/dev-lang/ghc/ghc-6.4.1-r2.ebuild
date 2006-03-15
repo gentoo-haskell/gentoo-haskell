@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1-r2.ebuild,v 1.2 2006/03/01 16:21:22 corsair Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.1-r2.ebuild,v 1.7 2006/03/15 10:51:05 dcoutts Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -16,9 +16,6 @@
 
 inherit base eutils autotools ghc-package check-reqs
 
-IUSE="doc X opengl openal"
-#java use flag disabled because of bug #106992
-
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
@@ -33,7 +30,9 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+IUSE="doc X opengl openal"
+#java use flag disabled because of bug #106992
 
 S="${WORKDIR}/${MY_P}"
 
@@ -60,6 +59,14 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
+# hardened-gcc needs to be disabled, because the mangler doesn't accept
+# its output.
+GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
+
+# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
+# non-exectable stack. This it a hack until ghc does it itself properly.
+GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
+
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
 # the following function causes the build to fail with an informative error message
 # in such a case.
@@ -72,14 +79,6 @@ PDEPEND=">=dev-haskell/cabal-1.1.3"
 # 		die "virtual/ghc version required to build"
 # 	fi
 # }
-
-# hardened-gcc needs to be disabled, because the mangler doesn't accept
-# its output.
-GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
-
-# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
-# non-exectable stack. This it a hack until ghc does it itself properly.
-GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
 
 src_unpack() {
 	base_src_unpack
@@ -98,8 +97,9 @@ src_compile() {
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
-	# We also need to use these GHC_CFLAGS flags when building ghc itself
+	# We also need to use the GHC_CFLAGS flags when building ghc itself
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
+	echo "SRC_CC_OPTS+=-Wa,--noexecstack" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE	
 	#if use debug; then
@@ -135,13 +135,13 @@ src_compile() {
 	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
-	use hppa || use alpha || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
-	use hppa || use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
+	use alpha || use hppa || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
+	use alpha || use hppa && echo "GhcUnregisterised=YES" >> mk/build.mk
 
 	# The SplitObjs feature doesn't work on several arches and it makes
 	# 'ar' take loads of RAM:
 	CHECKREQS_MEMORY="200"
-	if use alpha || use ppc || use ppc64 || use sparc; then
+	if use alpha || use hppa || use ppc || use ppc64 || use sparc; then
 		echo "SplitObjs=NO" >> mk/build.mk
 	elif ! check_reqs_conditional; then
 		einfo "Turning off ghc's 'Split Objs' feature because this machine"
@@ -208,8 +208,9 @@ pkg_postinst () {
 	einfo "want to unmerge it. It is no longer needed."
 	einfo
 	ewarn "IMPORTANT:"
-	ewarn "If you upgrade from another ghc version, please run"
-	ewarn "/usr/sbin/ghc-updater to re-merge all ghc-based"
-	ewarn "Haskell libraries."
+	ewarn "If you have upgraded from another version of ghc or"
+	ewarn "if you have switched from ghc-bin to ghc, please run:"
+	ewarn "	/usr/sbin/ghc-updater"
+	ewarn "to re-merge all ghc-based Haskell libraries."
 }
 
