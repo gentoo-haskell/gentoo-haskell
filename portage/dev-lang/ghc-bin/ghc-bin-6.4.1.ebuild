@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc-bin/ghc-bin-6.4.1.ebuild,v 1.6 2006/03/01 16:10:54 corsair Exp $
+# $Header: $
 
-inherit base multilib
+inherit base multilib ghc-package
 
 DESCRIPTION="Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -10,12 +10,13 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 SRC_URI="x86?  ( mirror://gentoo/${P}-x86.tbz2 )
 		 amd64? ( mirror://gentoo/${P}-amd64.tbz2 )
 		 alpha? ( mirror://gentoo/${P}-alpha.tbz2 )
+		 hppa? ( mirror://gentoo/${P}-hppa.tbz2 )
 		 sparc? ( mirror://gentoo/${P}-sparc.tbz2 )
 		 ppc? ( mirror://gentoo/${P}-ppc.tbz2 )
 		 ppc64? ( mirror://gentoo/${P}-ppc64.tbz2 )"
 
 LICENSE="as-is"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 SLOT="0"
 IUSE="" # use the non-binary version if you want to have more choice
 
@@ -40,7 +41,10 @@ src_unpack() {
 	# relocate from /usr to /opt/ghc
 	sed -i -e "s|/usr|${LOC}|g" \
 		usr/bin/ghc-${PV} usr/bin/ghci-${PV} usr/bin/ghc-pkg-${PV} \
-		usr/$(get_libdir)/ghc-${PV}/package.conf
+		usr/bin/hsc2hs usr/$(get_libdir)/ghc-${PV}/package.conf
+
+	sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
+		usr/bin/ghcprof
 
 	# fix hardened gcc flags in the ghc driver script
 	if grep -q GHC_CFLAGS usr/bin/ghc; then
@@ -55,7 +59,7 @@ src_unpack() {
 		# our line for setting GHC_CFLAGS= to the right set of flags.
 		GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
 		sed -i -e '$s|-optc[a-z-]*||g' \
-			   -e 's|${TOPDIROPT}|$TOPDIROPT $GHC_CFLAGS|' \
+			   -e 's|${TOPDIROPT}|${TOPDIROPT} ${GHC_CFLAGS}|' \
 			   -e "s|#!/bin/bash|GHC_CFLAGS=\"${GHC_CFLAGS}\"|" \
 			usr/bin/ghc-${PV}
 
@@ -80,6 +84,21 @@ src_compile() {
 
 src_install () {
 	mv * "${D}"
+
+	# remove this local copy of ghc-updater next time the .tbz2 files
+	# are rebuilt, since then we'll pick up the fix from the ghc ebuild
+	into /opt/ghc
+	dosbin ${FILESDIR}/ghc-updater
+
 	insinto /etc/env.d
 	doins "${FILESDIR}/10ghc"
+}
+
+pkg_postinst () {
+	ghc-reregister
+	ewarn "IMPORTANT:"
+	ewarn "If you have upgraded from another version of ghc-bin or"
+	ewarn "if you have switched from ghc to ghc-bin, please run:"
+	ewarn "	/opt/ghc/sbin/ghc-updater"
+	ewarn "to re-merge all ghc-based Haskell libraries."
 }
