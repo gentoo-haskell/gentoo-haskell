@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.0"
@@ -20,6 +20,7 @@ src_unpack() {
 	base_src_unpack
 	cd "${S}"
 	epatch "${FILESDIR}/setupfix.patch"
+	epatch "${FILESDIR}/ghc622inc.patch"
 }
 src_install() {
 	cabal_src_install

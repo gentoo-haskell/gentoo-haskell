@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/wash/wash-2.5.6.ebuild,v 1.2 2006/03/11 11:51:49 dcoutts Exp $
 
 inherit base ghc-package check-reqs
 
@@ -14,15 +14,15 @@ SRC_URI="http://www.informatik.uni-freiburg.de/~thiemann/haskell/WASH/${MY_P}.tg
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE="doc postgres"
 
-DEPEND=">=virtual/ghc-6.4.1
-		postgres? ( >=dev-haskell/c2hs-0.14.0 >=dev-db/postgresql-7.4.3 )
-		doc? ( dev-haskell/haddock )"
-
 RDEPEND=">=virtual/ghc-6.4.1
-		postgres? ( >=dev-db/postgresql-7.4.3 )"
+		postgres? ( >=dev-db/libpq-7.4.3 )"
+
+DEPEND="${RDEPEND}
+		postgres? ( >=dev-haskell/c2hs-0.14.0 )
+		doc? ( dev-haskell/haddock )"
 
 S="${WORKDIR}/${MY_P}"
 

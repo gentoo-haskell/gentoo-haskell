@@ -1,28 +1,31 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hsql-postgresql/hsql-postgresql-1.7.ebuild,v 1.5 2006/03/09 17:46:00 dcoutts Exp $
 
 CABAL_FEATURES="lib haddock"
-inherit eutils base haskell-cabal
+inherit base haskell-cabal
 
-DESCRIPTION="PostgreSQL bindings for Haskell"
+DESCRIPTION="PostgreSQL driver for HSQL"
 HOMEPAGE="http://htoolkit.sourceforge.net/"
-SRC_URI="mirror://sourceforge/htoolkit/HSQL.tar.gz"
+SRC_URI="mirror://gentoo/HSQL-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc
-	=dev-haskell/hsql-${PV}
-	dev-db/libpq"
+DEPEND=">=virtual/ghc-6.4.1
+	~dev-haskell/hsql-${PV}
+	>=dev-db/libpq-7"
 
-S=${WORKDIR}/HSQL/PostgreSQL
+S="${WORKDIR}/HSQL/PostgreSQL"
 
 src_unpack() {
 	base_src_unpack
-	cd ${S}
-	epatch ${FILESDIR}/setup-fix.diff
-	epatch ${FILESDIR}/cabal-fix.diff
+
+	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
+	echo '> main = defaultMain' >> "${S}/Setup.lhs"
+
+	( echo;	echo 'include-dirs: /usr/include/postgresql/server' ) \
+		>> "${S}/PostgreSQL.cabal"
 }

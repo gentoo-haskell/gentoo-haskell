@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/lhs2tex/lhs2tex-1.10_pre.ebuild,v 1.5 2005/01/01 18:05:45 eradicator Exp $
+# $Header: $
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.cs.uu.nl/~andres/lhs2tex"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${P/_pre/pre}"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/haxml-1.12.ebuild,v 1.2 2005/04/05 16:23:19 kosmikus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/haxml-1.13.ebuild,v 1.3 2006/02/28 12:41:18 dcoutts Exp $
 
 CABAL_FEATURES="lib haddock"
 inherit base haskell-cabal
@@ -14,21 +14,22 @@ SRC_URI="http://www.haskell.org/HaXml/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
-IUSE="doc"
+IUSE=""
 
 # actually, >=ghc-5.02 should be ok (if not using cabal)
 # hugs and nhc98 are ok too, somebody might want to add support for them
-DEPEND=">=virtual/ghc-6.2"
+DEPEND=">=virtual/ghc-6.2
+		>=dev-haskell/cabal-1.1.3-r1"
 
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	base_src_unpack
+
 	# Text.PrettyPrint is already provided by ghc and produces a conflict
-	cd ${S}
-	rm -rf src/Text/PrettyPrint
+	rm -rf "${S}/src/Text/PrettyPrint"
 }
 
 src_install() {

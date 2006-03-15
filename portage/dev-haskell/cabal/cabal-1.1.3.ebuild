@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="bootstrap profile lib"
+CABAL_FEATURES="bootstrap lib"
 inherit haskell-cabal eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
@@ -11,7 +11,7 @@ SRC_URI="http://haskell.org/cabal/release/rc/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc ~sparc ~amd64"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc"
 

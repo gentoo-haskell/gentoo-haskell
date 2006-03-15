@@ -7,11 +7,10 @@ inherit flag-o-matic wxwidgets ghc-package
 DESCRIPTION="a portable and native GUI library for Haskell"
 HOMEPAGE="http://wxhaskell.sourceforge.net/"
 SRC_URI="mirror://sourceforge/wxhaskell/${PN}-src-${PV}.zip"
+
 LICENSE="wxWinLL-3"
 SLOT="0"
-
-KEYWORDS="~x86 ~ppc ~amd64"
-
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND=">=virtual/ghc-6.2
@@ -27,11 +26,11 @@ pkg_setup() {
 		einfo "Please re-emerge wxGTK with USE=\"X -odbc -unicode\""
 		die "wxhaskell requires wxGTK to be built with USE=\"X -odbc -unicode\""
 	fi
-	if built_with_use x11-libs/wxGTK odbc || built_with_use x11-libs/wxGTK unicode; then
+	if built_with_use x11-libs/wxGTK odbc; then
 		einfo "Sadly wxhaskell does not work with wxGTK that has been built"
-		einfo "with USE=\"odbc\" or USE=\"unicode\"."
-		einfo "Please re-emerge wxGTK with USE=\"-odbc -unicode\""
-		die "wxhaskell requires wxGTK to be built with USE=\"-odbc -unicode\""
+		einfo "with USE=\"odbc\"."
+		einfo "Please re-emerge wxGTK with USE=\"-odbc\""
+		die "wxhaskell requires wxGTK to be built with USE=\"-odbc\""
 	fi
 }
 
@@ -61,9 +60,9 @@ src_compile() {
 	# --wx-config must appear first according to configure file comments 
 	./configure \
 		--wx-config="${WX_CONFIG}" \
-		--prefix=${D}/usr \
+		--prefix=/usr \
 		--with-opengl \
-		--libdir=${D}/$(ghc-libdir) \
+		--libdir=/usr/lib/${P} \
 		--package-conf=${S}/$(ghc-localpkgconf) \
 		|| die "./configure failed"
 
@@ -77,9 +76,14 @@ src_compile() {
 
 src_install() {
 	local f
-	emake -j1 install || die "make install failed"
-	for f in ${D}/$(ghc-libdir)/libwxc-*.so; do
-		mv ${f} ${D}/usr/lib
+
+	# don't register the packages, just install the files
+	emake -j1 install-files DESTDIR="${D}" || die "make install failed"
+
+	# the .so needs to be on the lib path
+	mkdir -p ${D}/usr/lib
+	for f in ${D}/usr/lib/${P}/libwxc-*.so; do
+		mv ${f} ${D}/usr/lib/
 	done
 
 	if use doc; then
@@ -87,5 +91,11 @@ src_install() {
 		cp -r samples ${D}/usr/share/doc/${PF}
 	fi
 
+	# substitute for the ${wxhlibdir} in package files and register them
+	# for ghc-6.2 change the package to be exposed by default.
+	sed -i -e "s:\${wxhlibdir}:${D}/usr/lib/${P}:" \
+		   -e "s:auto = False:auto = True:" \
+		   ${D}/usr/lib/${P}/*.pkg
+	ghc-setup-pkg ${D}/usr/lib/${P}/*.pkg
 	ghc-install-pkg
 }
