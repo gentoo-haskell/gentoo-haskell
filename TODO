@@ -4,6 +4,8 @@ Results of meeting 8/2/06:
 
 * remove ghc-6.4 (leaving 6.4.1-r2)
 
+* add cparrott as a new developer
+
 == High priority ==
 
 * mark ghc-6.4.1 and ghc-bin-6.4.1 stable on all supported arches
