@@ -191,8 +191,8 @@ showEBuild ebuild =
          else ss "\t#". ss (licenseComments ebuild)). nl.
   ss "SLOT=". quote (slot ebuild). nl.
   nl.
-  ss "KEYWORDS=". quote' (sepBy ", " $ keywords ebuild).
-     (ss "\t#if possible try testing with \"~amd64\", \"~ppc\" and \"~sparc\""). nl.
+  ss "#if possible try testing with \"~amd64\", \"~ppc\", \"~ppc64\" and \"~sparc\""). nl.
+  ss "KEYWORDS=". quote' (sepBy ", " $ keywords ebuild).nl.
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
   ss "DEPEND=". quote' (sepBy "\n\t\t" $ map showDepend $ depend ebuild). nl.

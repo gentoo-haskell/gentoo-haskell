@@ -42,7 +42,7 @@ ghc-getghcpkgbin() {
 _GHC_VERSION_CACHE=""
 ghc-version() {
 	if [[ -z "${_GHC_VERSION_CACHE}" ]]; then
-		_GHC_VERSION_CACHE="$($(ghc-getghc) --version | sed 's:^.*version ::')"
+		_GHC_VERSION_CACHE="$($(ghc-getghc) --numeric-version)"
 	fi
 	echo "${_GHC_VERSION_CACHE}"
 }

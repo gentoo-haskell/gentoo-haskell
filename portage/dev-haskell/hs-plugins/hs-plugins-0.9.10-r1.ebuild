@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.cse.unsw.edu.au/pub/users/dons/${PN}/${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 -amd64" # currently broken on amd64
+KEYWORDS="-amd64 ~ppc ~sparc ~x86" # currently broken on amd64
 IUSE="doc"
 
 DEPEND="virtual/ghc
@@ -53,4 +53,3 @@ src_install() {
 		dohtml ${WORKDIR}/${PN}/*
 	fi
 }
-

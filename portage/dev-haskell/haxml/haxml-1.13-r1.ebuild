@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/haxml-1.13.ebuild,v 1.3 2006/02/28 12:41:18 dcoutts Exp $
+# $Header: $
 
-CABAL_FEATURES="lib haddock"
+CABAL_FEATURES="lib bin haddock"
 inherit base haskell-cabal
 
 MY_PN=HaXml
@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/HaXml/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE=""
 
@@ -30,6 +30,15 @@ src_unpack() {
 
 	# Text.PrettyPrint is already provided by ghc and produces a conflict
 	rm -rf "${S}/src/Text/PrettyPrint"
+
+	# The HaXml.cabal file doesn't build the tools, so we add them in:
+	for binary in Canonicalise DtdToHaskell MkOneOf Validate Xtract; do
+		echo                                >> "${S}/HaXml.cabal"
+		echo "executable:     ${binary}"    >> "${S}/HaXml.cabal"
+		echo "main-is:        ${binary}.hs" >> "${S}/HaXml.cabal"
+		echo "hs-source-dirs: src/tools"    >> "${S}/HaXml.cabal"
+		echo "extensions:     CPP"          >> "${S}/HaXml.cabal"
+	done
 }
 
 src_install() {

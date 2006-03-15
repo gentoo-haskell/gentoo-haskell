@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 #
@@ -126,6 +126,10 @@ cabal-configure() {
 		cabalconf="${cabalconf} --enable-executable-profiling";
 		cabalconf="${cabalconf} --enable-library-profiling"
 	fi
+	# Building GHCi libs on ppc64 causes "TOC overflow".
+	if use ppc64; then
+		cabalconf="${cabalconf} --disable-library-for-ghci"
+	fi
 
 	./setup configure \
 		--ghc --prefix=/usr \
@@ -186,8 +190,7 @@ haskell-cabal_pkg_setup() {
 		die "cabal is not correctly installed"
 	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
-		eerror "Neither bin nor lib are in CABAL_FEATURES. Broken ebuild."
-		die "neither bin nor lib in CABAL_FEATURES"
+		eerror "QA: Neither bin nor lib are in CABAL_FEATURES."
 	fi
 	if [[ -n "${CABAL_UNKNOWN}" ]]; then
 		ewarn "Unknown entry in CABAL_FEATURES: ${CABAL_UNKNONW}"
