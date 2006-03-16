@@ -27,12 +27,6 @@ src_install() {
 	cp minidarcs.png ${D}${MY_HTDOCSDIR}
 	cp darcs.png ${D}${MY_HTDOCSDIR}
 	cp config.py.sample ${D}${MY_HTDOCSDIR}
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 	webapp_src_install
-}
-
-pkg_postinst() {
-	webapp_pkg_postinst
-	ewarn "You must copy config.py.sample to config.py and edit it to get it working."
-	ewarn "If you're using apache, be sure that \"Options ExecCGI\" and"
-	ewarn "\"AddHandler cgi-script .cgi\" are in your server config."
 }
