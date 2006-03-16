@@ -9,7 +9,7 @@ HOMEPAGE="http://users.auriga.wearlab.de/~alb/darcsweb/"
 SRC_URI="http://users.auriga.wearlab.de/~alb/darcsweb/files/${PV}/${P}.tar.bz2"
 
 LICENSE="public-domain"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
