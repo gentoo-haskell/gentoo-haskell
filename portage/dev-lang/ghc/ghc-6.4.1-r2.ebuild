@@ -132,7 +132,7 @@ src_compile() {
 	# force the config variable ArSupportsInput to be unset;
 	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
 	# incorrectly by the configure script
-	#echo "ArSupportsInput:=" >> mk/build.mk
+	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
 	use alpha || use hppa && echo "GhcWithInterpreter=NO" >> mk/build.mk
@@ -141,7 +141,7 @@ src_compile() {
 	# The SplitObjs feature doesn't work on several arches and it makes
 	# 'ar' take loads of RAM:
 	CHECKREQS_MEMORY="200"
-	if use alpha || use hppa; then
+	if use alpha || use hppa || use ppc64; then
 		echo "SplitObjs=NO" >> mk/build.mk
 	elif ! check_reqs_conditional; then
 		einfo "Turning off ghc's 'Split Objs' feature because this machine"
