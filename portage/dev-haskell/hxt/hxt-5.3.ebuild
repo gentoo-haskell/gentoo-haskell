@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hxt/hxt-5.00.ebuild,v 1.1 2005/04/26 10:59:54 kosmikus Exp $
 
-CABAL_FEATURES="lib"
-inherit fixheadtails base haskell-cabal
+CABAL_FEATURES="lib haddock"
+inherit base haskell-cabal
 
 MY_PN="HXT"
 MY_P=${MY_PN}-${PV}
@@ -14,8 +14,8 @@ SRC_URI="http://www.fh-wedel.de/~si/HXmlToolbox/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE="doc"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
 	dev-haskell/http"
@@ -24,7 +24,7 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	base_src_unpack
-	ht_fix_file "${S}/src/Makefile"
+
 	sed -i 's/build-depends:/build-depends: network,/' "${S}/hxt.cabal"
 }
 

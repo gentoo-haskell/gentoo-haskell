@@ -17,16 +17,11 @@ HOMEPAGE="http://www.haskell.org/http/"
 SRC_URI="http://www.haskell.org/http/download/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="BSD"
-SLOT="${PV}"
-KEYWORDS="~x86"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc
-	dev-haskell/crypto"
+DEPEND=">=virtual/ghc-6.4
+	>=dev-haskell/crypto-2.0"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
-
-src_unpack() {
-	base_src_unpack
-	epatch ${FILESDIR}/cabalfix.patch
-}
