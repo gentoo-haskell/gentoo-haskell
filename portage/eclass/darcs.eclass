@@ -34,7 +34,7 @@ SRC_URI=""
 [ -z "$EDARCS_UPDATE_CMD" ] && EDARCS_UPDATE_CMD="pull"
 
 # Where the darcs repositories are stored/accessed
-[ -z "$EDARCS_TOP_DIR" ] && EDARCS_TOP_DIR="${DISTDIR}/darcs-src"
+[ -z "$EDARCS_TOP_DIR" ] && EDARCS_TOP_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/darcs-src"
 
 # The URI to the repository.
 [ -z "$EDARCS_REPOSITORY" ] && EDARCS_REPOSITORY=""
