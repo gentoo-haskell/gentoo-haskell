@@ -28,6 +28,8 @@ src_unpack() {
 
 src_compile() {
 	# Fix hsshellscript.cabal library path
+	sed -i "s:glib:glib-2.0:" \
+			${S}/lib/hsshellscript.cabal
 	sed -i "s:@DEST_LIB:${HSLIB}:" \
 	        ${S}/lib/hsshellscript.cabal
 	sed -i "s:@DEST_IMPORTS:${HSLIB}/imports:" \
