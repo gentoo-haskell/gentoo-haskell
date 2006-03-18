@@ -70,7 +70,7 @@ fetch_pkg() {
 	local EDARCS_REPOSITORY EDARCS_LOCALREPO
 	EDARCS_REPOSITORY="${GHC_REPOSITORY}/packages/$1"
 	EDARCS_LOCALREPO="ghc/libraries/$1"
-	darcs_src_unpack
+	darcs_fetch
 }
 
 src_unpack() {
