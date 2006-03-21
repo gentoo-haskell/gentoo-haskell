@@ -1,0 +1,39 @@
+diff -urwpN ghc-6.4.1/ghc/rts/StgCRun.c ghc-6.4.1.patched/ghc/rts/StgCRun.c
+--- ghc-6.4.1/ghc/rts/StgCRun.c	2005-03-30 10:01:48.000000000 +0000
++++ ghc-6.4.1.patched/ghc/rts/StgCRun.c	2006-03-21 22:45:06.000000000 +0000
+@@ -179,6 +179,8 @@ StgRun(StgFunPtr f, StgRegTable *basereg
+ 
+ extern StgThreadReturnCode StgRun(StgFunPtr f, StgRegTable *basereg);
+ 
++static void StgRunIsImplementedInAssembler(void) GNUC3_ATTRIBUTE(used);
++
+ static void StgRunIsImplementedInAssembler(void)
+ {
+     __asm__ volatile (
+@@ -604,6 +606,8 @@ static void StgRunIsImplementedInAssembl
+ // *) The Link Register is saved to a different offset in the caller's stack frame
+ //    (Linux: 4(r1), Darwin 8(r1))
+ 
++static void StgRunIsImplementedInAssembler(void) GNUC3_ATTRIBUTE(used);
++
+ static void StgRunIsImplementedInAssembler(void)
+ {
+ 	__asm__ volatile (
+@@ -683,6 +687,8 @@ static void StgRunIsImplementedInAssembl
+ #ifdef linux_HOST_OS
+ extern StgThreadReturnCode StgRun(StgFunPtr f, StgRegTable *basereg);
+ 
++static void StgRunIsImplementedInAssembler(void) GNUC3_ATTRIBUTE(used);
++
+ static void StgRunIsImplementedInAssembler(void)
+ {
+         // r0 volatile
+@@ -833,6 +839,8 @@ static void StgRunIsImplementedInAssembl
+ #define LOCALS 31
+ #endif
+ 
++static void StgRunIsImplementedInAssembler(void) GNUC3_ATTRIBUTE(used);
++
+ static void StgRunIsImplementedInAssembler(void)
+ {
+     __asm__ volatile(
