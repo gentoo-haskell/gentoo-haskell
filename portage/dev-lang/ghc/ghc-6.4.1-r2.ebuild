@@ -102,7 +102,7 @@ src_compile() {
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 	echo "SRC_CC_OPTS+=-Wa,--noexecstack" >> mk/build.mk
 
-	# If you need to do a quick build then enable this bit and add debug to IUSE	
+	# If you need to do a quick build then enable this bit and add debug to IUSE
 	#if use debug; then
 	#	echo "SRC_HC_OPTS     = -H32m -O0 -fasm" >> mk/build.mk
 	#	echo "GhcStage1HcOpts = -O0" >> mk/build.mk
@@ -165,7 +165,7 @@ src_compile() {
 
 	# the build does not seem to work all that
 	# well with parallel make
-	emake -j1 all datadir="/usr/share/doc/${PF}" || die "make failed"
+	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
 	# in the package.conf file point to the right place ...
 
