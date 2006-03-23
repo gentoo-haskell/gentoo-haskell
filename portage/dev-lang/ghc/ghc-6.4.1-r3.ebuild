@@ -174,7 +174,7 @@ src_compile() {
 	echo "ArSupportsInput:=" >> mk/build.mk
 
 	# Required for some architectures, because they don't support ghc fully ...
-	use alpha || use hppa && echo "GhcWithInterpreter=NO" >> mk/build.mk
+	use alpha || use hppa || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 	use alpha || use hppa && echo "GhcUnregisterised=YES" >> mk/build.mk
 
 	# The SplitObjs feature doesn't work on several arches and it makes
