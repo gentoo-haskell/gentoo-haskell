@@ -72,7 +72,6 @@ PDEPEND=">=dev-haskell/cabal-1.1.3"
 # 	fi
 # }
 
-GHC_CFLAGS=""
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
@@ -134,8 +133,6 @@ src_unpack() {
 }
 
 src_compile() {
-	ghc_setup_cflags
-
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
