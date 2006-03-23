@@ -14,7 +14,7 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base eutils autotools ghc-package check-reqs
+inherit base eutils flag-o-matic autotools ghc-package check-reqs
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -59,14 +59,6 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
-# hardened-gcc needs to be disabled, because the mangler doesn't accept
-# its output.
-GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
-
-# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
-# non-exectable stack. This it a hack until ghc does it itself properly.
-GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
-
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
 # the following function causes the build to fail with an informative error message
 # in such a case.
@@ -80,8 +72,55 @@ GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
 # 	fi
 # }
 
+GHC_CFLAGS=""
+append-ghc-cflags() {
+	local flag compile assemble link
+	for flag in $*; do
+		case ${flag} in
+			compile)	compile="yes";;
+			assemble)	assemble="yes";;
+			link)		link="yes";;
+			*)
+				[[ ${compile}  ]] && GHC_CFLAGS="${GHC_CFLAGS} -optc${flag}"
+				[[ ${assemble} ]] && GHC_CFLAGS="${GHC_CFLAGS} -opta${flag}"
+				[[ ${link}     ]] && GHC_CFLAGS="${GHC_CFLAGS} -optl${flag}";;
+		esac
+	done
+}
+
+ghc_setup_cflags() {
+	# We need to be very careful with the CFLAGS we ask ghc to pass through to
+	# gcc. There are plenty of flags which will make gcc produce output that
+	# breaks ghc in various ways. The main ones we want to pass through are
+	# -mcpu / -march flags. These are important for arches like alpha & sparc.
+	# We also use these CFLAGS for building the C parts of ghc, ie the rts.
+	strip-flags
+	strip-unsupported-flags
+	filter-flags -fPIC
+
+	GHC_CFLAGS=""
+	for flag in ${CFLAGS}; do
+		case ${flag} in
+			-O*) append-ghc-cflags compile ${flag};;
+			-m*) append-ghc-cflags compile assemble ${flag};;
+			-g*) append-ghc-cflags compile assemble ${flag};;
+			   # ignore all other flags, including all -f* flags
+		esac
+	done
+
+	# hardened-gcc needs to be disabled, because the mangler doesn't accept
+	# its output.
+	append-ghc-cflags compile link	$(test-flags-CC -nopie)
+	append-ghc-cflags compile		$(test-flags-CC -fno-stack-protector)
+
+	# We also add -Wa,--noexecstack to get ghc to generate .o files with
+	# non-exectable stack. This it a hack until ghc does it itself properly.
+	append-ghc-cflags assemble		"-Wa,--noexecstack"
+}
+
 src_unpack() {
 	base_src_unpack
+	ghc_setup_cflags
 
 	cd ${S}
 	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
@@ -95,12 +134,14 @@ src_unpack() {
 }
 
 src_compile() {
+	ghc_setup_cflags
+
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
 	# We also need to use the GHC_CFLAGS flags when building ghc itself
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
-	echo "SRC_CC_OPTS+=-Wa,--noexecstack" >> mk/build.mk
+	echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE
 	#if use debug; then
