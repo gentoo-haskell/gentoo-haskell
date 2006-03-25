@@ -12,7 +12,7 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~sparc"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 # disabled wxwindows use flag for now, as I got build errors
 
@@ -54,7 +54,7 @@ src_compile() {
 	fi
 	econf ${myconf} || die "configure failed"
 	echo 'INSTALLWHAT=installbin' >> autoconf.mk
-	make all || die "make failed"
+	emake all || die "make failed"
 }
 
 src_test() {
