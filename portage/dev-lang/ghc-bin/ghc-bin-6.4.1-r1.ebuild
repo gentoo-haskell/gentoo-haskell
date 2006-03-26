@@ -7,7 +7,7 @@ inherit base multilib ghc-package
 DESCRIPTION="Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 # list all arches for proper digest building:
-SRC_URI="ia64?  ( mirror://gentoo/${P}-x86.tbz2 )"
+SRC_URI="ia64?  ( mirror://gentoo/${P}-ia64.tbz2 )"
 
 LICENSE="as-is"
 KEYWORDS="-* ~ia64"
