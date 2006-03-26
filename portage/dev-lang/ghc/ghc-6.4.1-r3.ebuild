@@ -178,6 +178,10 @@ src_compile() {
 	use alpha || use hppa || use ppc64 && echo "GhcWithInterpreter=NO" >> mk/build.mk
 	use alpha || use hppa && echo "GhcUnregisterised=YES" >> mk/build.mk
 
+	# On the other hand some arches do support some ghc features even though
+	# they're off by default
+	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
+
 	# The SplitObjs feature doesn't work on several arches and it makes
 	# 'ar' take loads of RAM:
 	CHECKREQS_MEMORY="200"
