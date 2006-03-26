@@ -12,7 +12,7 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 # disabled wxwindows use flag for now, as I got build errors
 
@@ -36,6 +36,10 @@ src_unpack() {
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
 	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
 		${S}/autoconf.mk.in
+
+	# On ia64 we need to tone down the level of inlining so we don't break some
+	# of the low level ghc/gcc interaction gubbins.
+	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 }
 
 src_compile() {
