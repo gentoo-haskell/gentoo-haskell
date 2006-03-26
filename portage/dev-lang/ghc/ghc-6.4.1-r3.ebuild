@@ -30,7 +30,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc X opengl openal"
 #java use flag disabled because of bug #106992
 
@@ -97,6 +97,10 @@ ghc_setup_cflags() {
 	strip-unsupported-flags
 	filter-flags -fPIC
 
+	# On ia64 ghc doesn't cope well with the assembler output of gcc if we use
+	# too high a level of optimisation. -O2 is too much while -O is ok.
+	use ia64 && replace-flags -O? -O
+
 	GHC_CFLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
@@ -130,7 +134,15 @@ src_unpack() {
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
 	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
 	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
+
+	# Patch to fix parallel make
 	sed -i 's/mkDerivedConstants.c : $(H_CONFIG)/mkDerivedConstants.c :	$(H_CONFIG) $(H_PLATFORM)/' "${S}/ghc/includes/Makefile"
+
+	# We need bigger tables on ia64 to be able to load larger packages
+	sed -i  -e 's/#define GOT_SIZE            0x20000/#define GOT_SIZE 0x40000/' \
+			-e 's/#define FUNCTION_TABLE_SIZE 0x10000/#define FUNCTION_TABLE_SIZE 0x20000/' \
+			-e 's/#define PLT_SIZE            0x08000/#define PLT_SIZE 0x16000/' \
+		"${S}/ghc/rts/Linker.c"
 }
 
 src_compile() {
