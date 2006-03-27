@@ -2,13 +2,9 @@ Results of meeting 8/2/06:
 
 == Easy ==
 
-* remove ghc-6.4 (leaving 6.4.1-r2)
-
 * add cparrott as a new developer
 
 == High priority ==
-
-* mark ghc-6.4.1 and ghc-bin-6.4.1 stable on all supported arches
 
 == Ebuild maintainance ==
 
@@ -22,10 +18,6 @@ Results of meeting 8/2/06:
 
 * darcsweb
 
-* ghc-6.4.2_rcN
-
-* ghc-darcs
-
 * add yhc and jhc when they are ready
 
 == Harder ==
@@ -37,7 +29,8 @@ Results of meeting 8/2/06:
 * get ghc bugs fixed upstream, send patches and get a propper fix for the exec
   stack problem.
 
-* help fix & improve cabal
+* help fix & improve cabal:
+  we need to be able to specify the libdir not just the prefix (lib/lib64)
 
 * make sure cabal-get integrates with gentoo/portage
 
