@@ -30,7 +30,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc X opengl openal"
 #java use flag disabled because of bug #106992
 
@@ -97,10 +97,15 @@ ghc_setup_cflags() {
 	strip-unsupported-flags
 	filter-flags -fPIC
 
+	# On ia64 ghc doesn't cope well with the assembler output of gcc if we use
+	# too high a level of optimisation. -O2 is too much while -O is ok.
+	# Since ghc passes -O to gcc anyway we can just ingore -O* on ia64.
+	# We can leave it in CFLAGS, but just not include it into GHC_CFLAGS.
+
 	GHC_CFLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
-			-O*) append-ghc-cflags compile ${flag};;
+			-O*) use ia64 || append-ghc-cflags compile ${flag};;
 			-m*) append-ghc-cflags compile assemble ${flag};;
 			-g*) append-ghc-cflags compile assemble ${flag};;
 			   # ignore all other flags, including all -f* flags
@@ -126,6 +131,7 @@ src_unpack() {
 	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
 	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
 
+	# Patch to fix parallel make
 	sed -i 's/mkDerivedConstants.c : $(H_CONFIG)/mkDerivedConstants.c :	$(H_CONFIG) $(H_PLATFORM)/' "${S}/ghc/includes/Makefile"
 }
 
@@ -169,6 +175,9 @@ src_compile() {
 	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
 	# incorrectly by the configure script
 	echo "ArSupportsInput:=" >> mk/build.mk
+
+	# Some arches do support some ghc features even though they're off by default
+	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
 
 	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
