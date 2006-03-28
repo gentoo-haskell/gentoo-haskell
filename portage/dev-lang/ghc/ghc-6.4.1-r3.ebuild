@@ -144,12 +144,6 @@ src_unpack() {
 
 	# Patch to fix parallel make
 	sed -i 's/mkDerivedConstants.c : $(H_CONFIG)/mkDerivedConstants.c :	$(H_CONFIG) $(H_PLATFORM)/' "${S}/ghc/includes/Makefile"
-
-	# We need bigger tables on ia64 to be able to load larger packages
-	sed -i  -e 's/#define GOT_SIZE            0x20000/#define GOT_SIZE 0x40000/' \
-			-e 's/#define FUNCTION_TABLE_SIZE 0x10000/#define FUNCTION_TABLE_SIZE 0x20000/' \
-			-e 's/#define PLT_SIZE            0x08000/#define PLT_SIZE 0x16000/' \
-		"${S}/ghc/rts/Linker.c"
 }
 
 src_compile() {
