@@ -97,17 +97,24 @@ ghc_setup_cflags() {
 	strip-unsupported-flags
 	filter-flags -fPIC
 
-	# On ia64 ghc doesn't cope well with the assembler output of gcc if we use
-	# too high a level of optimisation. -O2 is too much while -O is ok.
-	use ia64 && replace-flags -O? -O
-
 	GHC_CFLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
-			-O*) append-ghc-cflags compile ${flag};;
+
+			# These would just dup what ghc does anyway
+			-O|-O1) ;;
+
+			# We have to be really careful with more agressive -O flags
+			# as they do break ghc on some arches.
+			-O2|-O3|-Os) use ia64 || use sparc || append-ghc-cflags compile ${flag};;
+
+			# Arch and ABI flags are probably ok
 			-m*) append-ghc-cflags compile assemble ${flag};;
+
+			# Debugging flags are also probably ok
 			-g*) append-ghc-cflags compile assemble ${flag};;
-			   # ignore all other flags, including all -f* flags
+
+			# Ignore all other flags, including all -f* flags
 		esac
 	done
 
