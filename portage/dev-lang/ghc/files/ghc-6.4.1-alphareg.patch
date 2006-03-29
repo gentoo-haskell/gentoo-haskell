@@ -1,0 +1,24 @@
+diff -urwpN ghc-6.4.1.orig/ghc/includes/TailCalls.h ghc-6.4.1/ghc/includes/TailCalls.h
+--- ghc-6.4.1.orig/ghc/includes/TailCalls.h	2005-03-08 09:38:57.000000000 +0000
++++ ghc-6.4.1/ghc/includes/TailCalls.h	2006-03-29 15:19:56.000000000 +0100
+@@ -120,15 +120,13 @@ extern void __DISCARD__(void);
+ 
+ #ifdef alpha_HOST_ARCH
+ 
+-#if IN_STG_CODE
+-register void *_procedure __asm__("$27");
+-#endif
+-
+ #define JMP_(cont)				\
+-    do { _procedure = (void *)(cont);		\
++    {					\
++      void *__target;			\
+          __DISCARD__();				\
+-         goto *_procedure;			\
+-       } while(0)
++      __target = (void *)(cont);	\
++      goto *__target;			\
++    }
+ 
+ /* Don't need these for alpha mangling */
+ #define FB_
