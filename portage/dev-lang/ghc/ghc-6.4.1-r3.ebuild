@@ -137,6 +137,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-gcc41.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-alphareg.patch"
+	epatch "${FILESDIR}/${PN}-6.4.1-alphamangler.patch"
 
 	# Modify the ghc driver script to use GHC_CFLAGS
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
