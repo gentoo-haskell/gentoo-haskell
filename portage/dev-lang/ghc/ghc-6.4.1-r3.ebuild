@@ -31,8 +31,8 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="doc X opengl openal"
-#java use flag disabled because of bug #106992
+IUSE="doc X opengl openal java"
+# testing java use flag, see bug #106992
 
 S="${WORKDIR}/${MY_P}"
 
@@ -54,8 +54,8 @@ DEPEND="${RDEPEND}
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.6-r2 )"
-# removed: java? ( >=dev-java/fop-0.20.5 )
+		>=dev-haskell/haddock-0.6-r2
+		java? ( >=dev-java/fop-0.20.5 ) )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
@@ -169,9 +169,9 @@ src_compile() {
 	local mydoc
 	if use doc; then
 		mydoc="html"
-#		if use java; then
-#			mydoc="${mydoc} ps"
-#		fi
+		if use java; then
+			mydoc="${mydoc} pdf"
+		fi
 	else
 		mydoc=""
 		# needed to prevent haddock from being called
