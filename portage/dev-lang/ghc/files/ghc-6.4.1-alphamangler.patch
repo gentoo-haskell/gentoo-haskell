@@ -1,6 +1,6 @@
 diff -urwpN ghc-6.4.1/ghc/driver/mangler/ghc-asm.lprl ghc-6.4.1.patched/ghc/driver/mangler/ghc-asm.lprl
 --- ghc-6.4.1/ghc/driver/mangler/ghc-asm.lprl	2005-09-16 09:07:15.000000000 -0500
-+++ ghc-6.4.1.patched/ghc/driver/mangler/ghc-asm.lprl	2006-03-30 14:57:17.000000000 -0600
++++ ghc-6.4.1.patched/ghc/driver/mangler/ghc-asm.lprl	2006-04-03 13:11:11.000000000 -0500
 @@ -88,7 +88,32 @@ exit(0);
  sub init_TARGET_STUFF {
  
@@ -64,7 +64,22 @@ diff -urwpN ghc-6.4.1/ghc/driver/mangler/ghc-asm.lprl ghc-6.4.1.patched/ghc/driv
  		$chkcat[$infochk{$symb}] = 'DONE ALREADY';
  	    }
  
-@@ -1258,6 +1295,38 @@ sub mangle_asm {
+@@ -1252,12 +1289,53 @@ sub mangle_asm {
+ 		# If this is an entry point with an info table,
+                 # eliminate the entry symbol and all directives involving it.
+ 		if (defined($infochk{$symb}) && $TargetPlatform !~ /^ia64-/) {
++			# cparrott: existing match was broken on alpha, as it
++			# tossed out .globl directives for legitimate symbols!
++			# (e.g. .globl stg_dummy_ret should be tossed, but not
++			# .globl stg_dummy_ret_closure)
++			if ($TargetPlatform =~ /^alpha-/) {
++				$c =~ s/^.*$symb_(entry_ret)${T_POST_LBL}\n//;
++				$c =~ s/^\s*\..*$symb_(entry|ret)\n//g;
++			} else {
+ 			$c =~ s/^.*$symb_(entry|ret)${T_POST_LBL}\n//;
+ 			$c =~ s/^\s*\..*$symb.*\n//g;
+ 		}
++		}
  
  		print OUTASM $T_HDR_entry;
  
@@ -103,7 +118,7 @@ diff -urwpN ghc-6.4.1/ghc/driver/mangler/ghc-asm.lprl ghc-6.4.1.patched/ghc/driv
  		&print_doctored($c, 1); # NB: the 1!!!
  
  		$chkcat[$entrychk{$symb}] = 'DONE ALREADY';
-@@ -1587,7 +1656,7 @@ sub rev_tbl {
+@@ -1587,7 +1665,7 @@ sub rev_tbl {
      if ( $TargetPlatform =~ /^alpha-/ && $label =~ /^([A-Za-z0-9_]+):$/) {
          local ($ident) = $1;
          $before =~ s/^((\s*\.(file|loc)\s+[^\n]*\n)*)/$1\t.ent $ident\n/;
@@ -112,3 +127,60 @@ diff -urwpN ghc-6.4.1/ghc/driver/mangler/ghc-asm.lprl ghc-6.4.1.patched/ghc/driv
      }
  
      # Alphas: The heroic Simon Marlow found a bug in the Digital UNIX
+@@ -1595,30 +1673,32 @@ sub rev_tbl {
+     # first narrowed to 32 bits then sign-extended back to 64 bits.
+     # This obviously screws up our 64-bit bitmaps, so we work around
+     # the bug by replacing .quad with .align 3 + .long + .long [ccshan]
+-    if ( $TargetPlatform =~ /^alpha-/ ) {
+-	foreach (@words) {
+-	    if (/^\s*\.quad\s+([-+0-9].*\S)\s*$/ && length $1 >= 10) {
+-		local ($number) = $1;
+-		if ($number =~ /^([-+])?(0x?)?([0-9]+)$/) {
+-		    local ($sign, $base, $digits) = ($1, $2, $3);
+-		    $base = (10, 8, 16)[length $base];
+-		    local ($hi, $lo) = (0, 0);
+-		    foreach $i (split(//, $digits)) {
+-			$j = $lo * $base + $i;
+-			$lo = $j % 4294967296;
+-			$hi = $hi * $base + ($j - $lo) / 4294967296;
+-		    }
+-		    ($hi, $lo) = (4294967295 - $hi, 4294967296 - $lo)
+-			if $sign eq "-";
+-		    $_ = "\t.align 3\n\t.long $lo\n\t.long $hi\n";
+-		    # printf STDERR "TURNING %s into 0x %08x %08x\n", $number, $hi, $lo;
+-		} else {
+-		    print STDERR "Cannot handle \".quad $number\" in info table\n";
+-		    exit 1;
+-		}
+-	    }
+-	}
+-    }
++
++    # cparrott: apparently not necessary for Linux, seems buggy
++#    if ( $TargetPlatform =~ /^alpha-/ ) {
++#	foreach (@words) {
++#	    if (/^\s*\.quad\s+([-+0-9].*\S)\s*$/ && length $1 >= 10) {
++#		local ($number) = $1;
++#		if ($number =~ /^([-+])?(0x?)?([0-9]+)$/) {
++#		    local ($sign, $base, $digits) = ($1, $2, $3);
++#		    $base = (10, 8, 16)[length $base];
++#		    local ($hi, $lo) = (0, 0);
++#		    foreach $i (split(//, $digits)) {
++#			$j = $lo * $base + $i;
++#			$lo = $j % 4294967296;
++#			$hi = $hi * $base + ($j - $lo) / 4294967296;
++#		    }
++#		    ($hi, $lo) = (4294967295 - $hi, 4294967296 - $lo)
++#			if $sign eq "-";
++#		    $_ = "\t.align 3\n\t.long $lo\n\t.long $hi\n";
++#		    # printf STDERR "TURNING %s into 0x %08x %08x\n", $number, $hi, $lo;
++#		} else {
++#		    print STDERR "Cannot handle \".quad $number\" in info table\n";
++#		    exit 1;
++#		}
++#	    }
++#	}
++#    }
+ 
+     $tbl = $before
+ 	 . (($TargetPlatform !~ /^hppa/) ? '' : join("\n", @imports) . "\n")
