@@ -101,12 +101,9 @@ ghc_setup_cflags() {
 	for flag in ${CFLAGS}; do
 		case ${flag} in
 
-			# These would just dup what ghc does anyway
-			-O|-O1) ;;
-
-			# We have to be really careful with more agressive -O flags
-			# as they do break ghc on some arches.
-			-O2|-O3|-Os) use ia64 || use sparc || append-ghc-cflags compile ${flag};;
+			# Ignore extra optimisation (ghc passes -O to gcc anyway)
+			# -O2 and above break on too many systems
+			-O*|) ;;
 
 			# Arch and ABI flags are probably ok
 			-m*) append-ghc-cflags compile assemble ${flag};;
