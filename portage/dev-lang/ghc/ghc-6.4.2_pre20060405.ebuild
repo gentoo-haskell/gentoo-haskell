@@ -103,7 +103,7 @@ ghc_setup_cflags() {
 
 			# Ignore extra optimisation (ghc passes -O to gcc anyway)
 			# -O2 and above break on too many systems
-			-O*|) ;;
+			-O*) ;;
 
 			# Arch and ABI flags are probably ok
 			-m*) append-ghc-cflags compile assemble ${flag};;
