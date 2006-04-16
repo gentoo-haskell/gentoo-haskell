@@ -191,7 +191,7 @@ showEBuild ebuild =
          else ss "\t#". ss (licenseComments ebuild)). nl.
   ss "SLOT=". quote (slot ebuild). nl.
   nl.
-  ss "#if possible try testing with \"~amd64\", \"~ppc\", \"~ppc64\" and \"~sparc\""). nl.
+  ss "#if possible try testing with \"~amd64\", \"~ppc\", \"~ppc64\" and \"~sparc\"". nl.
   ss "KEYWORDS=". quote' (sepBy ", " $ keywords ebuild).nl.
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
