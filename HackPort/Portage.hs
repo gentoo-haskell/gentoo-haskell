@@ -12,7 +12,7 @@ import MaybeRead
 import Action
 import Config
 
-ebuildVersionRegex name = mkRegex ("^"++name++"\\-(.*?)\\.ebuild$")
+ebuildVersionRegex name = mkRegex ("^"++name++"-(.*)\\.ebuild$")
 
 portageGetPackages ::
 	String ->	-- ^ the portage dir
@@ -38,7 +38,10 @@ portageGetPackageVersions portTree name
 		let basedir=portTree++"/"++(portageCategory cfg)++"/"++name++"/"
 		content <- liftIO $ getDirectoryContents basedir
 		let versions=map head (mapMaybe (matchRegex (ebuildVersionRegex name)) content)
-		return (mapMaybe (readPMaybe parseVersion) versions)
+ 		return (mapMaybe (readPMaybe parseVersion . map underscore) versions)
+	where
+	underscore '_' = '-'
+	underscore x = x
 
 filterPackages :: String -> [String] -> IO [String]
 filterPackages _ [] = return []
