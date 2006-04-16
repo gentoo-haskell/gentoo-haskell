@@ -1,3 +1,4 @@
+#!/usr/bin/runhaskell
 module Main where
 
 import Distribution.Simple
