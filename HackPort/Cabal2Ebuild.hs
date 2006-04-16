@@ -173,7 +173,7 @@ standardLibs =
 
 showEBuild :: EBuild -> String
 showEBuild ebuild =
-  ss "# Copyright 1999-2005 Gentoo Foundation". nl.
+  ss "# Copyright 1999-2006 Gentoo Foundation". nl.
   ss "# Distributed under the terms of the GNU General Public License v2". nl.
   ss "# $Header:  $". nl.
   nl.
