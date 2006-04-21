@@ -6,6 +6,8 @@ Results of meeting 8/2/06:
 
 == High priority ==
 
+* ghc-6.4.2 with cabal 1.1.4 and the ghc testsuite for FEATURES="test"
+
 == Ebuild maintainance ==
 
 * get ebuilds marked ~amd64: helium, hs-plugins, hsshellscript, hxt
@@ -17,6 +19,8 @@ Results of meeting 8/2/06:
 * helium-1.6 (may not work on 64-bit arches)
 
 * darcsweb
+
+* MissingH
 
 * add yhc and jhc when they are ready
 
