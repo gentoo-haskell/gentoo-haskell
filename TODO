@@ -26,6 +26,10 @@ Results of meeting 8/2/06:
 
 == Harder ==
 
+* use the new virtuals system for virtual/ghc
+
+* make use of the libraries profiling stuff (that's in the cabal eclass) for more lib ebuilds
+
 * make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
 
 == Long term & continuing projects ==
