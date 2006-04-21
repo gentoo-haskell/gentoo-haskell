@@ -16,7 +16,7 @@ SLOT="0"
 
 S="${WORKDIR}/missingh"
 
-DEPEND="|| ( >=dev-lang/ghc-6.4.1 >=dev-lang/ghc-bin-6.4.1 )"
+DEPEND=">=virtual/ghc-6.4.1"
 
 src_unpack() {
 	base_src_unpack
