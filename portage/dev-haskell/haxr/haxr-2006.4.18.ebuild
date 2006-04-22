@@ -7,7 +7,9 @@ inherit base versionator haskell-cabal
 
 MY_PV_YEAR=$(get_version_component_range 1)
 MY_PV_MONTH=$(get_version_component_range 2)
+(( ${MY_PV_MONTH} < 10 )) && MY_PV_MONTH="0${MY_PV_MONTH}"
 MY_PV_DAY=$(get_version_component_range 3)
+(( ${MY_PV_DAY} < 10 )) && MY_PV_DAY="0${MY_PV_DAY}"
 MY_PV="${MY_PV_YEAR}${MY_PV_MONTH}${MY_PV_DAY}"
 
 DESCRIPTION="HaXR is a library for writing XML-RPC client and server applications in Haskell."
