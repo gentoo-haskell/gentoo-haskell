@@ -262,7 +262,7 @@ src_test() {
 				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
 				EXTRA_RUNTEST_OPTS="--output-summary=${summary}"
 
-		if grep -q '0 unexpected failures' "${summary}"; then
+		if grep -q ' 0 unexpected failures' "${summary}"; then
 			einfo "All tests passed ok"
 		else
 			ewarn "Some tests failed, for a summary see: ${summary}"
