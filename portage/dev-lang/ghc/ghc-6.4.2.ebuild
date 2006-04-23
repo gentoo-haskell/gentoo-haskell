@@ -26,12 +26,13 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
+SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
+		test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="doc X opengl openal"
+IUSE="test doc X opengl openal"
 #java use flag disabled because of bug #106992
 
 S="${WORKDIR}/${MY_P}"
@@ -133,6 +134,9 @@ src_unpack() {
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
 	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
 	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
+
+	# If we're using the testsuite then move it to into the build tree
+	use test && mv "${WORKDIR}/testsuite" "${S}/"
 }
 
 src_compile() {
@@ -248,3 +252,15 @@ pkg_postinst () {
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
 
+src_test() {
+	if use test; then
+		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
+		make -C "${S}/testsuite/tests/ghc-regress" \
+				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
+				EXTRA_RUNTEST_OPTS="--output-summary=${TMP}/testsuite-summary.txt" \
+			|| ewarn "Some tests failed, for details see: ${TMP}/testsuite-summary.txt"
+	else
+		ewarn "Sadly, due to some portage limitations you need both"
+		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
+	fi
+}
