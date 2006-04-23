@@ -254,11 +254,19 @@ pkg_postinst () {
 
 src_test() {
 	if use test; then
+		local summary
+		summary="${TMP}/testsuite-summary.txt"
+
 		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
 		make -C "${S}/testsuite/tests/ghc-regress" \
 				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
-				EXTRA_RUNTEST_OPTS="--output-summary=${TMP}/testsuite-summary.txt" \
-			|| ewarn "Some tests failed, for details see: ${TMP}/testsuite-summary.txt"
+				EXTRA_RUNTEST_OPTS="--output-summary=${summary}"
+
+		if grep -q '0 unexpected failures' "${summary}"; then
+			einfo "All tests passed ok"
+		else
+			ewarn "Some tests failed, for a summary see: ${summary}"
+		fi
 	else
 		ewarn "Sadly, due to some portage limitations you need both"
 		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
