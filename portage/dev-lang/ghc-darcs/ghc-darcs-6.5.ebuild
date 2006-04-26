@@ -196,13 +196,13 @@ src_install () {
 	nondef=""
 	for f in ${nonvers}; do
 		f=$(basename ${f})
-		mv ${f} ${f}-cvs
+		mv ${f} ${f}-darcs
 		if test -e /usr/bin/${f}; then
-			if test -L /usr/bin/${f} -a -e /usr/bin/${f}-cvs; then
-				if diff -q "/usr/bin/${f}" "/usr/bin/${f}-cvs" > /dev/null; then
+			if test -L /usr/bin/${f} -a -e /usr/bin/${f}-darcs; then
+				if diff -q "/usr/bin/${f}" "/usr/bin/${f}-darcs" > /dev/null; then
 					# link seems to be okay, recreate to keep
-					einfo "recreating link /usr/bin/${f} -> /usr/bin/${f}-cvs"
-					dosym /usr/bin/${f}-cvs /usr/bin/{f}
+					einfo "recreating link /usr/bin/${f} -> /usr/bin/${f}-darcs"
+					dosym /usr/bin/${f}-darcs /usr/bin/{f}
 					continue
 				fi
 			fi
@@ -211,15 +211,15 @@ src_install () {
 			nondef="${nondef} /usr/bin/${f}"
 		else
 			# interestingly, the file in question does not yet exist ...
-			einfo "creating new link /usr/bin/${f} -> /usr/bin/${f}-cvs"
-			dosym /usr/bin/${f}-cvs /usr/bin/${f}
+			einfo "creating new link /usr/bin/${f} -> /usr/bin/${f}-darcs"
+			dosym /usr/bin/${f}-darcs /usr/bin/${f}
 		fi
 	done
 	if test -n "${nondef}"; then
-		einfo "If you want to make the CVS version of GHC the default version,"
+		einfo "If you want to make the Darcs version of GHC the default version,"
 		einfo "you should create the following symbolic links:"
 		for f in ${nondef}; do
-			einfo "   ${f} -> ${f}-cvs"
+			einfo "   ln -s ${f}-darcs /usr/bin/${f}"
 		done
 		einfo "Note that this is optional."
 	fi
