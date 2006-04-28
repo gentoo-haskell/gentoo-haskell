@@ -17,6 +17,13 @@ Results of meeting 8/2/06:
 * hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
 
 * helium-1.6 (may not work on 64-bit arches)
+    An ebuild is in the overlay but it needs some more love.
+    Only tested on x86.
+    'hint' works with simple library and with type classes.
+    The other executables only works with the simple library, type classes
+    fail with:
+    Using overloaded Prelude while overloading is not enabled
+      Hint: Compile with --overloading, or use the simple Prelude
 
 * darcsweb
 
