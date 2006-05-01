@@ -8,34 +8,15 @@ inherit haskell-cabal eutils base
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
 #SRC_URI="http://haskell.org/cabal/release/rc/${P}.tar.gz"
-SRC_URI="http://dev.gentoo.org/~kosmikus/${P}.tar.gz"
+SRC_URI="http://haskell.org/~duncan/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc ~sparc ~amd64"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc"
 
 DEPEND=">=virtual/ghc-6.2"
-
-MY_PV="${PV/_pre*/}"
-S="${WORKDIR}/${PN}"
-
-src_unpack() {
-	base_src_unpack
-
-	# Grrr, Cabal build-depends on the util package which is one of the old
-	# hslibs packages. Exposing util breaks lots of things. Fortunately cabal
-	# doesn't actually use anything fro util so we can remove it. A patch has
-	# been sent upstream so remove this hack on the next cabal iteration.
-	# Update: Seems that solving this upstream causes problems on Windows, so
-	# this hack will remain for now.
-	if $(ghc-cabal); then
-		sed -i 's/Build-Depends: base, util/Build-Depends: base/' ${S}/Cabal.cabal
-	else
-		sed -i 's/Build-Depends: base, util/Build-Depends: base, unix/' ${S}/Cabal.cabal
-	fi
-}
 
 src_compile() {
 	if ghc-cabal; then
