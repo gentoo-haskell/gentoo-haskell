@@ -196,6 +196,7 @@ src_compile() {
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
+		$(use_enable openal alut) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
