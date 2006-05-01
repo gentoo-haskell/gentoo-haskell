@@ -7,8 +7,7 @@ inherit haskell-cabal eutils base
 
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
-#SRC_URI="http://haskell.org/cabal/release/rc/${P}.tar.gz"
-SRC_URI="http://haskell.org/~duncan/${P}.tar.gz"
+SRC_URI="http://haskell.org/cabal/release/${P}/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 
