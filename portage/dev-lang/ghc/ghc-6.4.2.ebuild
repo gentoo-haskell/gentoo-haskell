@@ -33,7 +33,6 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="test doc X opengl openal"
-#java use flag disabled because of bug #106992
 
 S="${WORKDIR}/${MY_P}"
 
@@ -53,11 +52,11 @@ DEPEND="${RDEPEND}
 	<virtual/ghc-6.5
 	!>=virtual/ghc-6.6
 	doc? (  ~app-text/docbook-xml-dtd-4.2
-		app-text/docbook-xsl-stylesheets
-		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.6-r2 )"
-# removed: java? ( >=dev-java/fop-0.20.5 )
+			app-text/docbook-xsl-stylesheets
+			>=dev-libs/libxslt-1.1.2
+			>=dev-haskell/haddock-0.6-r2 )"
 
+# TODO: this needs upgrading to 1.1.4
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
@@ -149,26 +148,21 @@ src_compile() {
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE
 	#if use debug; then
-	#	echo "SRC_HC_OPTS     = -H32m -O0 -fasm" >> mk/build.mk
-	#	echo "GhcStage1HcOpts = -O0" >> mk/build.mk
-	#	echo "GhcLibHcOpts    = -fgenerics" >> mk/build.mk
+	#	echo "SRC_HC_OPTS     = -H32m -O0" >> mk/build.mk
+	#	echo "GhcStage1HcOpts =" >> mk/build.mk
+	#	echo "GhcLibHcOpts    =" >> mk/build.mk
 	#	echo "GhcLibWays      =" >> mk/build.mk
 	#	echo "SplitObjs       = NO" >> mk/build.mk
 	#fi
 
 	# determine what to do with documentation
-	local mydoc
 	if use doc; then
-		mydoc="html"
-#		if use java; then
-#			mydoc="${mydoc} ps"
-#		fi
+		echo XMLDocWays="html" >> mk/build.mk
 	else
-		mydoc=""
+		echo XMLDocWays="" >> mk/build.mk
 		# needed to prevent haddock from being called
 		echo NO_HADDOCK_DOCS=YES >> mk/build.mk
 	fi
-	echo XMLDocWays="${mydoc}" >> mk/build.mk
 
 	# circumvent a very strange bug that seems related with ghc producing too much
 	# output while being filtered through tee (e.g. due to portage logging)
@@ -201,8 +195,6 @@ src_compile() {
 		$(use_enable X hgl) \
 		|| die "econf failed"
 
-	# the build does not seem to work all that
-	# well with parallel make
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
 	# in the package.conf file point to the right place ...
@@ -226,6 +218,7 @@ src_install () {
 		|| die "make ${insttarget} failed"
 
 	#need to remove ${D} from ghcprof script
+	# TODO: does this actually work?
 	cd "${D}/usr/bin"
 	mv ghcprof ghcprof-orig
 	sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
@@ -273,3 +266,4 @@ src_test() {
 		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
 	fi
 }
+
