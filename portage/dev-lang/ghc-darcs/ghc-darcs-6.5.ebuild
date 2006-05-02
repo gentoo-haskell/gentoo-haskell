@@ -181,8 +181,8 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
-	# make sure that we can execute ./configure
-	chmod u+x ./configure
+	# We're building from darcs so we need to autoreconf
+	eautoreconf
 
 	econf \
 		$(use_enable opengl opengl) \
