@@ -56,8 +56,7 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2
 			>=dev-haskell/haddock-0.6-r2 )"
 
-# TODO: this needs upgrading to 1.1.4
-PDEPEND=">=dev-haskell/cabal-1.1.3"
+PDEPEND=">=dev-haskell/cabal-1.1.4"
 
 # Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
 # the following function causes the build to fail with an informative error message
