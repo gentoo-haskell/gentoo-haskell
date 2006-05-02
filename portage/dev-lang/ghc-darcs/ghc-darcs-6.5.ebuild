@@ -22,7 +22,7 @@ GHC_REPOSITORY="http://darcs.haskell.org"
 EDARCS_REPOSITORY="${GHC_REPOSITORY}/ghc"
 EDARCS_GET_CMD="get --partial"
 
-inherit base eutils autotools darcs ghc-package check-reqs
+inherit base eutils flag-o-matic autotools darcs ghc-package check-reqs
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
