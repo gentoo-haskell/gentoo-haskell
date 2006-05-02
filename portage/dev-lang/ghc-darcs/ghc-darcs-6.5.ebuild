@@ -121,16 +121,16 @@ src_unpack() {
 	# get main GHC darcs repo
 	darcs_fetch
 	for pkg in $(cat "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}/libraries/default-packages"); do
- 		fetch_pkg "${pkg}"
+		fetch_pkg "${pkg}"
 	done
 	# copy everything
 	darcs_src_unpack
 	ghc_setup_cflags
 
 	# Modify the ghc driver script to use GHC_CFLAGS
-	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
-	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
-	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
+	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/driver/ghc/Makefile"
+	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/driver/ghc/Makefile"
+	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/driver/ghc/ghc.sh"
 }
 
 src_compile() {
@@ -255,7 +255,7 @@ src_install () {
 		einfo "Note that this is optional."
 	fi
 
-	cd ${S}/ghc
+	cd "${S}"
 	dodoc README ANNOUNCE LICENSE VERSION
 }
 
