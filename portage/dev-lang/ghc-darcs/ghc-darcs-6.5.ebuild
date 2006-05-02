@@ -29,7 +29,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc X opengl openal"
 
 # We don't provide virtual/ghc, although we could ...
@@ -54,15 +54,6 @@ DEPEND="${RDEPEND}
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
 		>=dev-haskell/haddock-0.6-r2 )"
-# removed: java? ( >=dev-java/fop-0.20.5 )
-
-# hardened-gcc needs to be disabled, because the mangler doesn't accept
-# its output.
-GHC_CFLAGS="-optc-nopie -optl-nopie -optc-fno-stack-protector"
-
-# We also add -opta-Wa,--noexecstack to get ghc to generate .o files with
-# non-exectable stack. This it a hack until ghc does it itself properly.
-GHC_CFLAGS="${GHC_CFLAGS} -opta-Wa,--noexecstack"
 
 # The following function fetches each of the sub-repositories that
 # ghc requires.
@@ -73,6 +64,59 @@ fetch_pkg() {
 	darcs_fetch
 }
 
+append-ghc-cflags() {
+	local flag compile assemble link
+	for flag in $*; do
+		case ${flag} in
+			compile)	compile="yes";;
+			assemble)	assemble="yes";;
+			link)		link="yes";;
+			*)
+				[[ ${compile}  ]] && GHC_CFLAGS="${GHC_CFLAGS} -optc${flag}"
+				[[ ${assemble} ]] && GHC_CFLAGS="${GHC_CFLAGS} -opta${flag}"
+				[[ ${link}     ]] && GHC_CFLAGS="${GHC_CFLAGS} -optl${flag}";;
+		esac
+	done
+}
+
+ghc_setup_cflags() {
+	# We need to be very careful with the CFLAGS we ask ghc to pass through to
+	# gcc. There are plenty of flags which will make gcc produce output that
+	# breaks ghc in various ways. The main ones we want to pass through are
+	# -mcpu / -march flags. These are important for arches like alpha & sparc.
+	# We also use these CFLAGS for building the C parts of ghc, ie the rts.
+	strip-flags
+	strip-unsupported-flags
+	filter-flags -fPIC
+
+	GHC_CFLAGS=""
+	for flag in ${CFLAGS}; do
+		case ${flag} in
+
+			# Ignore extra optimisation (ghc passes -O to gcc anyway)
+			# -O2 and above break on too many systems
+			-O*) ;;
+
+			# Arch and ABI flags are probably ok
+			-m*) append-ghc-cflags compile assemble ${flag};;
+
+			# Debugging flags are also probably ok
+			-g*) append-ghc-cflags compile assemble ${flag};;
+
+			# Ignore all other flags, including all -f* flags
+		esac
+	done
+
+	# hardened-gcc needs to be disabled, because the mangler doesn't accept
+	# its output.
+	append-ghc-cflags compile link	$(test-flags-CC -nopie)
+	append-ghc-cflags compile		$(test-flags-CC -fno-stack-protector)
+
+	# We also add -Wa,--noexecstack to get ghc to generate .o files with
+	# non-exectable stack. This it a hack until ghc does it itself properly.
+	append-ghc-cflags assemble		"-Wa,--noexecstack"
+}
+
 src_unpack() {
 	# get main GHC darcs repo
 	darcs_fetch
@@ -81,11 +125,12 @@ src_unpack() {
 	done
 	# copy everything
 	darcs_src_unpack
+	ghc_setup_cflags
 
-        # Modify the ghc driver script to use GHC_CFLAGS
-        echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
-        echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
-        sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
+	# Modify the ghc driver script to use GHC_CFLAGS
+	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
+	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
+	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
 }
 
 src_compile() {
@@ -94,30 +139,25 @@ src_compile() {
 
 	# We also need to use the GHC_CFLAGS flags when building ghc itself
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
-	echo "SRC_CC_OPTS+=-Wa,--noexecstack" >> mk/build.mk
+	echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE
 	#if use debug; then
-	#	echo "SRC_HC_OPTS     = -H32m -O0 -fasm" >> mk/build.mk
-	#	echo "GhcStage1HcOpts = -O0" >> mk/build.mk
-	#	echo "GhcLibHcOpts    = -fgenerics" >> mk/build.mk
+	#	echo "SRC_HC_OPTS     = -H32m -O0" >> mk/build.mk
+	#	echo "GhcStage1HcOpts =" >> mk/build.mk
+	#	echo "GhcLibHcOpts    =" >> mk/build.mk
 	#	echo "GhcLibWays      =" >> mk/build.mk
 	#	echo "SplitObjs       = NO" >> mk/build.mk
 	#fi
 
 	# determine what to do with documentation
-	local mydoc
 	if use doc; then
-		mydoc="html"
-#		if use java; then
-#			mydoc="${mydoc} ps"
-#		fi
+		echo XMLDocWays="html" >> mk/build.mk
 	else
-		mydoc=""
+		echo XMLDocWays="" >> mk/build.mk
 		# needed to prevent haddock from being called
 		echo NO_HADDOCK_DOCS=YES >> mk/build.mk
 	fi
-	echo XMLDocWays="${mydoc}" >> mk/build.mk
 
 	# circumvent a very strange bug that seems related with ghc producing too much
 	# output while being filtered through tee (e.g. due to portage logging)
@@ -129,25 +169,17 @@ src_compile() {
 	# incorrectly by the configure script
 	echo "ArSupportsInput:=" >> mk/build.mk
 
-	# Required for some architectures, because they don't support ghc fully ...
-	use alpha || use hppa && echo "GhcWithInterpreter=NO" >> mk/build.mk
-	use alpha || use hppa && echo "GhcUnregisterised=YES" >> mk/build.mk
+	# Some arches do support some ghc features even though they're off by default
+	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
 
-	# The SplitObjs feature doesn't work on several arches and it makes
-	# 'ar' take loads of RAM:
+	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
-	if use alpha || use hppa || use ppc64; then
-		echo "SplitObjs=NO" >> mk/build.mk
-	elif ! check_reqs_conditional; then
+	if ! check_reqs_conditional; then
 		einfo "Turning off ghc's 'Split Objs' feature because this machine"
 		einfo "does not have enough RAM for it. This will have the effect"
 		einfo "of making binaries produced by ghc considerably larger."
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
-
-	# we've patched some configure.ac files do allow us to enable/disable the
-	# X11 and HGL packages, so we need to autoreconf.
-	eautoreconf
 
 	# make sure that we can execute ./configure
 	chmod u+x ./configure
@@ -156,13 +188,12 @@ src_compile() {
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
+		$(use_enable openal alut) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
 
-	# the build does not seem to work all that
-	# well with parallel make
-	emake -j1 all datadir="/usr/share/doc/${PF}" || die "make failed"
+	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
 	# in the package.conf file point to the right place ...
 
