@@ -141,6 +141,9 @@ src_unpack() {
 
 	# Patch to fix parallel make
 	sed -i 's/mkDerivedConstants.c : $(H_CONFIG)/mkDerivedConstants.c :	$(H_CONFIG) $(H_PLATFORM)/' "${S}/ghc/includes/Makefile"
+
+	# Patch to fix make-3.81 hanging (backport of the fix in ghc-6.4.2)
+	sed -i -e 's/.SECONDARY://' "${S}/mk/suffix.mk"
 }
 
 src_compile() {
