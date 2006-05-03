@@ -45,7 +45,7 @@ RDEPEND="
 	>=sys-libs/readline-4.2
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
-	openal? ( media-libs/openal media-libs/freealut )"
+	openal? ( media-libs/openal )"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -190,7 +190,7 @@ src_compile() {
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
-		$(use_enable openal alut) \
+		--disable-alut \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
