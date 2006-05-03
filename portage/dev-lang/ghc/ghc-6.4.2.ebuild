@@ -31,7 +31,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="test doc X opengl openal"
 
 S="${WORKDIR}/${MY_P}"
@@ -45,7 +45,7 @@ RDEPEND="
 	>=sys-libs/readline-4.2
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
-	openal? ( media-libs/openal )"
+	openal? ( media-libs/openal media-libs/freealut )"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -104,11 +104,12 @@ ghc_setup_cflags() {
 			# -O2 and above break on too many systems
 			-O*) ;;
 
-			# Arch and ABI flags are probably ok
+			# Arch and ABI flags are what we're really after
 			-m*) append-ghc-cflags compile assemble ${flag};;
 
-			# Debugging flags are also probably ok
-			-g*) append-ghc-cflags compile assemble ${flag};;
+			# Debugging flags don't help either. You can't debug Haskell code
+			# at the C source level and the mangler discards the debug info.
+			-g*) ;;
 
 			# Ignore all other flags, including all -f* flags
 		esac

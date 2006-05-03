@@ -103,11 +103,12 @@ ghc_setup_cflags() {
 			# -O2 and above break on too many systems
 			-O*) ;;
 
-			# Arch and ABI flags are probably ok
+			# Arch and ABI flags are what we're really after
 			-m*) append-ghc-cflags compile assemble ${flag};;
 
-			# Debugging flags are also probably ok
-			-g*) append-ghc-cflags compile assemble ${flag};;
+			# Debugging flags don't help either. You can't debug Haskell code
+			# at the C source level and the mangler discards the debug info.
+			-g*) ;;
 
 			# Ignore all other flags, including all -f* flags
 		esac
