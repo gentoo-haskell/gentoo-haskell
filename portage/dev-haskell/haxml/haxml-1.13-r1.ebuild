@@ -36,7 +36,7 @@ src_unpack() {
 		echo                                >> "${S}/HaXml.cabal"
 		echo "executable:     ${binary}"    >> "${S}/HaXml.cabal"
 		echo "main-is:        ${binary}.hs" >> "${S}/HaXml.cabal"
-		echo "hs-source-dirs: src/tools"    >> "${S}/HaXml.cabal"
+		echo "hs-source-dirs: src/tools src">> "${S}/HaXml.cabal"
 		echo "extensions:     CPP"          >> "${S}/HaXml.cabal"
 	done
 }
