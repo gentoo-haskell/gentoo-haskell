@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-#FIXME: should include lib but the cpphs.cabal file doesn't specify the
-# expored-modules so no lib get's build. Have asked about this upstream.
-CABAL_FEATURES="bin"
+CABAL_FEATURES="bin lib profile"
 inherit eutils haskell-cabal
 
 DESCRIPTION="A liberalised cpp-a-like preprocessor for Haskell"
@@ -17,7 +15,13 @@ KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/ghc"
-RDEPEND=""
+
+src_unpack() {
+	unpack "${A}"
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-cabal.patch"
+}
 
 src_install() {
 	cabal_src_install
