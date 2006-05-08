@@ -129,6 +129,9 @@ src_unpack() {
 	base_src_unpack
 	ghc_setup_cflags
 
+	cd ${S}
+	epatch "${FILESDIR}/${PN}-6.4.2-alut.patch"
+
 	# Modify the ghc driver script to use GHC_CFLAGS
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
 	echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
