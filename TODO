@@ -2,7 +2,9 @@ Results of meeting 8/2/06:
 
 == Easy ==
 
-* add cparrott as a new developer
+* test hmake-3.11 with gcc4 and add it into portage
+
+* fix cpphs-1.2 to build a lib
 
 == High priority ==
 
