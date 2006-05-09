@@ -240,98 +240,6 @@ diff -Naur ghc/libraries/ALUT/examples/TestSuite/TestWaveforms.hs ghc/libraries/
     withProgNameAndArgs runALUT $ \_progName _args ->
 -      mapM_ playTone [ sine, square, sawtooth, (const (const whiteNoise)), impulse ]
 +      mapM_ playTone [ Sine, Square, Sawtooth, (const (const WhiteNoise)), Impulse ]
-diff -Naur ghc/libraries/ALUT/include/HsALUTConfig.h.in ghc/libraries/ALUT/include/HsALUTConfig.h.in
---- ghc/libraries/ALUT/include/HsALUTConfig.h.in	2006-04-18 21:36:54.000000000 +0200
-+++ ghc/libraries/ALUT/include/HsALUTConfig.h.in	1970-01-01 01:00:00.000000000 +0100
-@@ -1,88 +0,0 @@
--/* include/HsALUTConfig.h.in.  Generated from configure.ac by autoheader.  */
--
--/* C flags for ALUT, as a list of string literals. */
--#undef ALUT_CFLAGS
--
--/* Framework flags for ALUT, as a list of string literals. */
--#undef ALUT_FRAMEWORKS
--
--/* Library flags for ALUT, as a list of string literals. */
--#undef ALUT_LIBS
--
--/* The value of ALUT_API_MAJOR_VERSION. */
--#undef CONST_ALUT_API_MAJOR_VERSION
--
--/* The value of ALUT_API_MINOR_VERSION. */
--#undef CONST_ALUT_API_MINOR_VERSION
--
--/* The value of ALUT_LOADER_BUFFER. */
--#undef CONST_ALUT_LOADER_BUFFER
--
--/* The value of ALUT_LOADER_MEMORY. */
--#undef CONST_ALUT_LOADER_MEMORY
--
--/* The value of ALUT_WAVEFORM_IMPULSE. */
--#undef CONST_ALUT_WAVEFORM_IMPULSE
--
--/* The value of ALUT_WAVEFORM_SAWTOOTH. */
--#undef CONST_ALUT_WAVEFORM_SAWTOOTH
--
--/* The value of ALUT_WAVEFORM_SINE. */
--#undef CONST_ALUT_WAVEFORM_SINE
--
--/* The value of ALUT_WAVEFORM_SQUARE. */
--#undef CONST_ALUT_WAVEFORM_SQUARE
--
--/* The value of ALUT_WAVEFORM_WHITENOISE. */
--#undef CONST_ALUT_WAVEFORM_WHITENOISE
--
--/* Define to 1 if you have the <AL/alut.h> header file. */
--#undef HAVE_AL_ALUT_H
--
--/* Define to 1 if you have the <inttypes.h> header file. */
--#undef HAVE_INTTYPES_H
--
--/* Define to 1 if you have the <memory.h> header file. */
--#undef HAVE_MEMORY_H
--
--/* Define to 1 if you have the <OpenAL/alut.h> header file. */
--#undef HAVE_OPENAL_ALUT_H
--
--/* Define to 1 if you have the <stdint.h> header file. */
--#undef HAVE_STDINT_H
--
--/* Define to 1 if you have the <stdlib.h> header file. */
--#undef HAVE_STDLIB_H
--
--/* Define to 1 if you have the <strings.h> header file. */
--#undef HAVE_STRINGS_H
--
--/* Define to 1 if you have the <string.h> header file. */
--#undef HAVE_STRING_H
--
--/* Define to 1 if you have the <sys/stat.h> header file. */
--#undef HAVE_SYS_STAT_H
--
--/* Define to 1 if you have the <sys/types.h> header file. */
--#undef HAVE_SYS_TYPES_H
--
--/* Define to 1 if you have the <unistd.h> header file. */
--#undef HAVE_UNISTD_H
--
--/* Define to the address where bug reports for this package should be sent. */
--#undef PACKAGE_BUGREPORT
--
--/* Define to the full name of this package. */
--#undef PACKAGE_NAME
--
--/* Define to the full name and version of this package. */
--#undef PACKAGE_STRING
--
--/* Define to the one symbol short name of this package. */
--#undef PACKAGE_TARNAME
--
--/* Define to the version of this package. */
--#undef PACKAGE_VERSION
--
--/* Define to 1 if you have the ANSI C header files. */
--#undef STDC_HEADERS
 diff -Naur ghc/libraries/ALUT/package.conf.in ghc/libraries/ALUT/package.conf.in
 --- ghc/libraries/ALUT/package.conf.in	2006-03-21 16:58:03.000000000 +0100
 +++ ghc/libraries/ALUT/package.conf.in	2006-05-08 21:52:51.000000000 +0200
@@ -1040,3 +948,29 @@ diff -Naur ghc/libraries/ALUT/Sound/ALUT.hs ghc/libraries/ALUT/Sound/ALUT.hs
 -import Sound.ALUT.BuiltInSounds
  import Sound.ALUT.Version
  import Sound.ALUT.Sleep
+--- ghc/libraries/OpenAL/Sound/OpenAL/ALC/Capture.hs	2006-03-21 15:58:03.000000000 +0000
++++ ghc/libraries/OpenAL/Sound/OpenAL/ALC/Capture.hs	2006-05-09 11:46:50.000000000 +0100
+@@ -81,16 +81,18 @@
+ --------------------------------------------------------------------------------
+ 
+ captureNumSamples :: Device -> GettableStateVar NumSamples
+-captureNumSamples device =
+-   makeGettableStateVar $ getInteger (Just device) CaptureSamples
++captureNumSamples device = makeGettableStateVar $
++   fmap fromIntegral (getInteger (Just device) CaptureSamples)
+ 
+ --------------------------------------------------------------------------------
+ 
+ captureSamples :: Device -> Ptr a -> NumSamples -> IO ()
+-captureSamples = alcCaptureSamples . marshalDevice
++captureSamples device buf n = do
++   funPtr <- getCaptureFunc "alcCaptureSamples"
++   invokeCaptureSamples funPtr (marshalDevice device) buf n
+ 
+-foreign import CALLCONV unsafe "alcCaptureSamples"
+-   alcCaptureSamples :: ALCdevice -> Ptr a -> NumSamples -> IO ()
++foreign import CALLCONV unsafe "dynamic"
++   invokeCaptureSamples :: Invoker (ALCdevice -> Ptr a -> NumSamples -> IO ())
+ 
+ --------------------------------------------------------------------------------
+ 

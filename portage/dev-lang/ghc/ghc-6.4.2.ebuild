@@ -189,11 +189,15 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
+	# We've patched some configure.ac files to fix the OpenAL/ALUT bindings.
+	# So we need to autoreconf.
+	eautoreconf
+
 	econf \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
-		--disable-alut \
+		$(use_enable openal alut) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
