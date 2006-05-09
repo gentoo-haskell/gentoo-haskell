@@ -44,8 +44,9 @@ RDEPEND="
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
-	opengl? ( virtual/opengl virtual/glu virtual/glut )
-	openal? ( media-libs/openal )"
+	opengl? ( virtual/opengl
+			  virtual/glu virtual/glut
+			  openal? ( media-libs/openal ) )"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -58,18 +59,24 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.4"
 
-# Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
-# the following function causes the build to fail with an informative error message
-# in such a case.
-# pkg_setup() {
-# 	if ! has_version virtual/ghc; then
-# 		eerror "This ebuild needs a version of GHC to bootstrap from."
-# 		eerror "Please emerge dev-lang/ghc-bin to get a binary version."
-# 		eerror "You can either use the binary version directly or emerge"
-# 		eerror "dev-lang/ghc afterwards."
-# 		die "virtual/ghc version required to build"
-# 	fi
-# }
+pkg_setup() {
+	if use openal && ! use opengl; then
+		ewarn "The OpenAL bindings require the OpenGL bindings, however"
+		ewarn "USE=\"-opengl\" so the OpenAL bindings will not be built."
+		ewarn "To build the OpenAL bindings emerge with USE=\"openal opengl\""
+	fi
+
+	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
+	# releases, the following function causes the build to fail with an
+	# informative error message in such a case.
+	#if ! has_version virtual/ghc; then
+	#	eerror "This ebuild needs a version of GHC to bootstrap from."
+	#	eerror "Please emerge dev-lang/ghc-bin to get a binary version."
+	#	eerror "You can either use the binary version directly or emerge"
+	#	eerror "dev-lang/ghc afterwards."
+	#	die "virtual/ghc version required to build"
+	#fi
+}
 
 append-ghc-cflags() {
 	local flag compile assemble link
