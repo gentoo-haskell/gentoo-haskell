@@ -16,13 +16,6 @@ IUSE=""
 
 DEPEND="virtual/ghc"
 
-src_unpack() {
-	unpack "${A}"
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-cabal.patch"
-}
-
 src_install() {
 	cabal_src_install
 	dohtml docs/index.html
