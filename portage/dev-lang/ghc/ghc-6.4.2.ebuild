@@ -146,6 +146,11 @@ src_unpack() {
 
 	# If we're using the testsuite then move it to into the build tree
 	use test && mv "${WORKDIR}/testsuite" "${S}/"
+
+	# This is a hack for ia64. We can persuade ghc to avoid mangler errors
+	# if we turn down the optimisations in one problematic module.
+	use ia64 && sed -i -e 's/OPTIONS_GHC/OPTIONS_GHC -O0 -optc-O/' \
+		"${S}/libraries/base/GHC/Float.lhs"
 }
 
 src_compile() {
