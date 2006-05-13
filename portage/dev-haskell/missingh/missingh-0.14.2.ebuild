@@ -26,6 +26,14 @@ src_unpack() {
 
 	# change -O2 to -O
 	sed -i -e "s/GHC-Options: -O2/GHC-Options: -O/" "${S}/MissingH.cabal"
+
+	# update keywords
+	# those keywords changed names in Cabal-1.1.4, and their new names
+	# are valid in Cabal-1.1.3 too.
+	sed -i \
+		-e "s/AllowOverlappingInstances/OverlappingInstances/" \
+		-e "s/AllowUndecidableInstances/UndecidableInstances/" \
+		"${S}/MissingH.cabal"
 }
 
 src_install() {
