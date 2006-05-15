@@ -26,6 +26,8 @@ Results of meeting 8/2/06:
 
 * hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
 
+* hxt-5.5 was released 2006-03-03
+
 * helium-1.6 (may not work on 64-bit arches)
     An ebuild is in the overlay but it needs some more love.
     Only tested on x86.
@@ -38,6 +40,7 @@ Results of meeting 8/2/06:
 * darcsweb
 
 * MissingH
+    Working ebuild is in the overlay. Needs testing.
 
 * add yhc and jhc when they are ready
 
