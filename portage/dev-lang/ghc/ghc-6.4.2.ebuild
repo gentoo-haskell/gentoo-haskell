@@ -14,7 +14,7 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base eutils flag-o-matic autotools ghc-package check-reqs
+inherit base eutils flag-o-matic toolchain-funcs autotools ghc-package check-reqs
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -124,8 +124,8 @@ ghc_setup_cflags() {
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	append-ghc-cflags compile link	$(test-flags-CC -nopie)
-	append-ghc-cflags compile		$(test-flags-CC -fno-stack-protector)
+	gcc-specs-pie && append-ghc-cflags compile link	-nopie
+	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
 
 	# We also add -Wa,--noexecstack to get ghc to generate .o files with
 	# non-exectable stack. This it a hack until ghc does it itself properly.
