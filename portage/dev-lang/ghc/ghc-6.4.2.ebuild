@@ -132,6 +132,15 @@ ghc_setup_cflags() {
 	append-ghc-cflags assemble		"-Wa,--noexecstack"
 }
 
+ghc_setup_wrapper() {
+	echo '#!/bin/sh'
+	echo "GHCBIN=\"/usr/$(get_libdir)/ghc-$1/ghc-$1\";"
+	echo "TOPDIROPT=\"-B/usr/$(get_libdir)/ghc-$1\";"
+	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
+	echo '# Mini-driver for GHC'
+	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
+}
+
 src_unpack() {
 	base_src_unpack
 	ghc_setup_cflags
@@ -202,11 +211,15 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
+	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${TMP}/ghc.sh"
+	chmod +x "${TMP}/ghc.sh"
+
 	# We've patched some configure.ac files to fix the OpenAL/ALUT bindings.
 	# So we need to autoreconf.
 	eautoreconf
 
 	econf \
+		--with-ghc="${TMP}/ghc-wrapper" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
