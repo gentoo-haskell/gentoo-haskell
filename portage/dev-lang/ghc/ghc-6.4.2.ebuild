@@ -134,8 +134,8 @@ ghc_setup_cflags() {
 
 ghc_setup_wrapper() {
 	echo '#!/bin/sh'
-	echo "GHCBIN=\"/usr/$(get_libdir)/ghc-$1/ghc-$1\";"
-	echo "TOPDIROPT=\"-B/usr/$(get_libdir)/ghc-$1\";"
+	echo "GHCBIN=\"$(ghc-libdir)/ghc-$1\";"
+	echo "TOPDIROPT=\"-B$(ghc-libdir)\";"
 	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
 	echo '# Mini-driver for GHC'
 	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
