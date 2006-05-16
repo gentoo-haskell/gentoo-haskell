@@ -27,7 +27,8 @@ EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
 SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
-		test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )"
+		test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )
+		mirror://gentoo/${P}-alut.patch.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -146,7 +147,7 @@ src_unpack() {
 	ghc_setup_cflags
 
 	cd ${S}
-	epatch "${FILESDIR}/${P}-alut.patch"
+	epatch "${WORKDIR}/${P}-alut.patch"
 	epatch "${FILESDIR}/${P}-sparc32plus.patch"
 
 	# Modify the ghc driver script to use GHC_CFLAGS
