@@ -219,7 +219,7 @@ src_compile() {
 	eautoreconf
 
 	econf \
-		--with-ghc="${TMP}/ghc-wrapper" \
+		--with-ghc="${TMP}/ghc.sh" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use_enable openal openal) \
