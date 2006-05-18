@@ -16,7 +16,7 @@ SRC_URI="x86?  ( mirror://gentoo/${P}-x86.tbz2 )
 		 ppc64? ( mirror://gentoo/${P}-ppc64.tbz2 )"
 
 LICENSE="as-is"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ~ppc64 sparc x86"
 SLOT="0"
 IUSE="" # use the non-binary version if you want to have more choice
 
