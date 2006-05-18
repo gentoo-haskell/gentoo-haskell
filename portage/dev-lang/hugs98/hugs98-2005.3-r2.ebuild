@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/hugs98/hugs98-2005.3-r2.ebuild,v 1.2 2006/02/16 11:52:55 dcoutts Exp $
 
-inherit base flag-o-matic eutils versionator
+inherit base flag-o-matic eutils versionator multilib
 
 IUSE="X opengl openal"
 
@@ -38,7 +38,7 @@ SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}.tar.gz
 HOMEPAGE="http://www.haskell.org/hugs/"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 LICENSE="as-is"
 
 RDEPEND="
@@ -54,6 +54,7 @@ src_unpack() {
 	cd ${S}
 	epatch ${WORKDIR}/${MY_P}-patch
 	epatch ${FILESDIR}/${P}-openal.patch
+	epatch ${FILESDIR}/${P}-find.patch
 
 	if ! use X; then
 		sed -i -e 's/X11//' -e 's/HGL//' "${S}/Makefile" \
@@ -107,7 +108,7 @@ src_install () {
 	#somewhat clean-up installation of few docs
 	cd "${S}"
 	dodoc Credits License Readme
-	cd "${D}/usr/lib/hugs"
+	cd "${D}/usr/$(get_libdir)/hugs"
 	rm Credits License Readme
 	mv demos/ docs/ "${D}/usr/share/doc/${PF}"
 }
