@@ -225,7 +225,7 @@ src_compile() {
 		$(use_enable opengl glut) \
 		$(use openal && use opengl \
 			&& echo --enable-openal --enable-alut \
-			|| echo --disable-openal--disable-alut) \
+			|| echo --disable-openal --disable-alut) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
