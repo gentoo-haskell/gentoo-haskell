@@ -148,6 +148,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-6.4.1-configure.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-openal.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-gcc41.patch"
+	epatch "${FILESDIR}/${PN}-6.4.2-sparc32plus.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-alphareg.patch"
 	epatch "${FILESDIR}/${PN}-6.4.1-alphamangler.patch"
 
