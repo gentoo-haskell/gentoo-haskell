@@ -14,7 +14,7 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
-inherit base eutils flag-o-matic autotools ghc-package check-reqs
+inherit base eutils flag-o-matic toolchain-funcs autotools ghc-package check-reqs
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -43,8 +43,9 @@ RDEPEND="
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
-	opengl? ( virtual/opengl virtual/glu virtual/glut )
-	openal? ( media-libs/openal )"
+	opengl? ( virtual/opengl
+			  virtual/glu virtual/glut
+			  openal? ( media-libs/openal ) )"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -57,18 +58,24 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.3"
 
-# Portage's resolution of virtuals fails on virtual/ghc in some Portage releases,
-# the following function causes the build to fail with an informative error message
-# in such a case.
-# pkg_setup() {
-# 	if ! has_version virtual/ghc; then
-# 		eerror "This ebuild needs a version of GHC to bootstrap from."
-# 		eerror "Please emerge dev-lang/ghc-bin to get a binary version."
-# 		eerror "You can either use the binary version directly or emerge"
-# 		eerror "dev-lang/ghc afterwards."
-# 		die "virtual/ghc version required to build"
-# 	fi
-# }
+pkg_setup() {
+	if use openal && ! use opengl; then
+		ewarn "The OpenAL bindings require the OpenGL bindings, however"
+		ewarn "USE=\"-opengl\" so the OpenAL bindings will not be built."
+		ewarn "To build the OpenAL bindings emerge with USE=\"openal opengl\""
+	fi
+
+	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
+	# releases, the following function causes the build to fail with an
+	# informative error message in such a case.
+	#if ! has_version virtual/ghc; then
+	#	eerror "This ebuild needs a version of GHC to bootstrap from."
+	#	eerror "Please emerge dev-lang/ghc-bin to get a binary version."
+	#	eerror "You can either use the binary version directly or emerge"
+	#	eerror "dev-lang/ghc afterwards."
+	#	die "virtual/ghc version required to build"
+	#fi
+}
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -116,12 +123,21 @@ ghc_setup_cflags() {
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	append-ghc-cflags compile link	$(test-flags-CC -nopie)
-	append-ghc-cflags compile		$(test-flags-CC -fno-stack-protector)
+	gcc-specs-pie && append-ghc-cflags compile link	-nopie
+	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
 
 	# We also add -Wa,--noexecstack to get ghc to generate .o files with
 	# non-exectable stack. This it a hack until ghc does it itself properly.
 	append-ghc-cflags assemble		"-Wa,--noexecstack"
+}
+
+ghc_setup_wrapper() {
+	echo '#!/bin/sh'
+	echo "GHCBIN=\"$(ghc-libdir)/ghc-$1\";"
+	echo "TOPDIROPT=\"-B$(ghc-libdir)\";"
+	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
+	echo '# Mini-driver for GHC'
+	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
 }
 
 src_unpack() {
@@ -203,14 +219,20 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
+	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${TMP}/ghc.sh"
+	chmod +x "${TMP}/ghc.sh"
+
 	# we've patched some configure.ac files do allow us to enable/disable the
 	# X11 and HGL packages, so we need to autoreconf.
 	eautoreconf
 
 	econf \
+		--with-ghc="${TMP}/ghc.sh" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
-		$(use_enable openal openal) \
+		$(use openal && use opengl \
+			&& echo --enable-openal \
+			|| echo --disable-openal) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
