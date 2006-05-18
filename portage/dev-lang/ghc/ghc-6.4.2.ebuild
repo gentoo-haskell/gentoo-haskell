@@ -223,8 +223,9 @@ src_compile() {
 		--with-ghc="${TMP}/ghc.sh" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
-		$(use_enable openal openal) \
-		$(use_enable openal alut) \
+		$(use openal && use opengl \
+			&& echo --enable-openal --enable-alut \
+			|| echo --disable-openal--disable-alut) \
 		$(use_enable X x11) \
 		$(use_enable X hgl) \
 		|| die "econf failed"
