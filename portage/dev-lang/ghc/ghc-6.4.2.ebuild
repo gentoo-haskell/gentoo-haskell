@@ -14,6 +14,18 @@
 # can be removed once an forall after the first succesful install
 # of ghc.
 
+# Note to users of hardened gcc-3.x:
+#
+# If you emerge ghc with hardened gcc it should work fine (because we
+# turn off the hardened features that would otherwise break ghc).
+# However, emerging ghc while using a vanilla gcc and then switching to
+# hardened gcc (using gcc-config) will leave you with a broken ghc. To
+# fix it you would need to either switch back to vanilla gcc or re-emerge
+# ghc (or ghc-bin). Note that also if you are using hardened gcc-3.x and
+# you switch to gcc-4.x that this will also break ghc and you'll need to
+# re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
+# gcc-3.x and 4.x with no problems.
+
 inherit base eutils flag-o-matic toolchain-funcs autotools ghc-package check-reqs
 
 DESCRIPTION="The Glasgow Haskell Compiler"
