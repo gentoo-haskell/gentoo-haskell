@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 #
-# darcs eclsss author:  Andres Loeh <kosmikus@gentoo.org>
+# darcs eclass author:  Andres Loeh <kosmikus@gentoo.org>
 # tla eclass author:    <rphillips@gentoo.org>
 # Original Author:      Jeffrey Yasskin <jyasskin@mail.utexas.edu>
 #
