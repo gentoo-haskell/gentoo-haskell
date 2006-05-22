@@ -2,25 +2,13 @@ Results of meeting 8/2/06:
 
 == Easy ==
 
-* test hmake-3.11 with gcc4 and add it into portage
-
-* fix cpphs-1.2 to build a lib
-
 == High priority ==
-
-* ghc-6.4.2 with cabal 1.1.4 and the ghc testsuite for FEATURES="test"
-  Also check:
-    * does the ghcprof subst work
-
-* test all packages with new ghc-6.4.2 & cabal-1.1.3
-
-* test upgrading stable ghc to ghc-6.4.2
-
-* build .tbz2 packages for ghc-bin
 
 == Ebuild maintainance ==
 
 * get ebuilds marked ~amd64: helium, hs-plugins, hsshellscript, hxt
+
+* in the ghc ebuilds: does the ghcprof subst work
 
 == New ebuilds ==
 
