@@ -14,7 +14,7 @@
 # ebuild before inheriting.  then either leave the default src_unpack or extend
 # over darcs_src_unpack.
 
-# Most of the time, you will define only $EDARCS_REPOSITORY in your 
+# Most of the time, you will define only $EDARCS_REPOSITORY in your
 # ebuild.
 
 # TODO: support for tags, ...
@@ -23,7 +23,7 @@
 SRC_URI=""
 
 # You shouldn't change these settings yourself! The ebuild/eclass inheriting
-# this eclass will take care of that. 
+# this eclass will take care of that.
 
 # --- begin ebuild-configurable settings
 
@@ -40,13 +40,13 @@ SRC_URI=""
 # The URI to the repository.
 [ -z "$EDARCS_REPOSITORY" ] && EDARCS_REPOSITORY=""
 
-# The local directory to store the repository (useful to ensure a 
+# The local directory to store the repository (useful to ensure a
 # unique local name); relative to EDARCS_TOP_DIR
 [ -z "$EDARCS_LOCALREPO" ] && [ -n "$EDARCS_REPOSITORY" ] \
 	&& EDARCS_LOCALREPO="`basename $EDARCS_REPOSITORY`"
 
-# EDARCS_CLEAN: set this to something to get a clean copy when updating 
-# (removes the working directory, then uses $EDARCS_GET_CMD to 
+# EDARCS_CLEAN: set this to something to get a clean copy when updating
+# (removes the working directory, then uses $EDARCS_GET_CMD to
 # re-download it.)
 
 # --- end ebuild-configurable settings ---
@@ -77,7 +77,7 @@ darcs_fetch() {
 		export SANDBOX_WRITE="${SANDBOX_WRITE//:\/foobar:\/}"
 	fi
 
-	# in case EDARCS_DARCS_DIR is a symlink to a dir, get the real 
+	# in case EDARCS_DARCS_DIR is a symlink to a dir, get the real
 	# dir's path, otherwise addwrite() doesn't work.
 	cd -P "$EDARCS_TOP_DIR" > /dev/null
 	EDARCS_TOP_DIR="`/bin/pwd`"
@@ -99,7 +99,7 @@ darcs_fetch() {
 	local cmdupdate="${EDARCS_DARCS_CMD} ${EDARCS_UPDATE_CMD} --all ${EDARCS_REPOSITORY}"
 
 	if [ "${mode}" == "get" ]; then
-		einfo "Running $cmdget" 
+		einfo "Running $cmdget"
 		eval $cmdget || die "darcs get command failed"
 	elif [ "${mode}" == "update" ]; then
 		einfo "Running $cmdupdate"
@@ -124,7 +124,7 @@ darcs_src_unpack() {
 
 	einfo "Fetching darcs repository $EDARCS_REPOSITORY into $EDARCS_TOP_DIR..."
 	darcs_fetch
-	
+
 	einfo "Copying $EDARCS_LOCALREPO from $EDARCS_TOP_DIR..."
 	debug-print "Copying $EDARCS_LOCALREPO from $EDARCS_TOP_DIR..."
 
