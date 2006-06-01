@@ -9,7 +9,7 @@
 EDARCS_REPOSITORY="http://haskell.org/~andres/repos/exi"
 EDARCS_GET_CMD="get --partial"
 
-CABAL_FEATURES="bin lib"
+CABAL_FEATURES="bin lib haddock"
 
 inherit darcs haskell-cabal
 
