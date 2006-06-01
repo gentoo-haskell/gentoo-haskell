@@ -217,7 +217,7 @@ cabal_src_install() {
 	cabal-pkg
 
 	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-		dohtml dist/doc/html/*
+		dohtml -r dist/doc/html/*
 	fi
 }
 haskell-cabal_src_install() {
