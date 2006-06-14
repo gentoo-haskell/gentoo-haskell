@@ -174,6 +174,10 @@ src_unpack() {
 	# if we turn down the optimisations in one problematic module.
 	use ia64 && sed -i -e 's/OPTIONS_GHC/OPTIONS_GHC -O0 -optc-O/' \
 		"${S}/libraries/base/GHC/Float.lhs"
+
+	# Patch to fix a mis-compilation in the rts due to strict aliasing, should
+	# be fixed upstream for 6.4.3 and 6.6. Fixes bug #135651.
+	echo 'GC_HC_OPTS += -optc-fno-strict-aliasing' >> "${S}/ghc/rts/Makefile"
 }
 
 src_compile() {

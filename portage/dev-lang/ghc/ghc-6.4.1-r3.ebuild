@@ -174,6 +174,10 @@ src_unpack() {
 
 	# Patch to fix make-3.81 hanging (backport of the fix in ghc-6.4.2)
 	sed -i -e 's/.SECONDARY://' "${S}/mk/suffix.mk"
+
+	# Patch to fix a mis-compilation in the rts due to strict aliasing, should
+	# be fixed upstream for 6.4.3 and 6.6. Fixes bug #135651.
+	echo 'GC_HC_OPTS += -optc-fno-strict-aliasing' >> "${S}/ghc/rts/Makefile"
 }
 
 src_compile() {
