@@ -12,20 +12,17 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
-# disabled wxwindows use flag for now, as I got build errors
 
 DEPEND=">=net-misc/curl-7.10.2
 	virtual/mta
 	>=virtual/ghc-6.2.2
 	doc?  ( virtual/tetex
-		dev-tex/latex2html )"
-#	wxwindows?  ( dev-haskell/wxhaskell )
+			>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
 
 RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta"
-#	wxwindows?  ( dev-haskell/wxhaskell )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -36,24 +33,15 @@ src_unpack() {
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
 	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
 		${S}/autoconf.mk.in
+
+	# On ia64 we need to tone down the level of inlining so we don't break some
+	# of the low level ghc/gcc interaction gubbins.
+	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 }
 
 src_compile() {
-	local myconf
-#	myconf="`use_with wxwindows wx`"
-	# distribution contains garbage files
-	make clean || die "make clean failed"
-	if use doc ; then
-		sed -i "s:/doc:/doc/${PF}:" GNUmakefile
-	else
-		sed -i \
-			-e 's: installdocs::' \
-			-e 's:^.*BUILDDOC.*yes.*$::' \
-			-e 's/^.*TARGETS.*\(darcs\.ps\|manual\).*$/:/' \
-			configure
-	fi
-	econf ${myconf} || die "configure failed"
-	echo 'INSTALLWHAT=installbin' >> autoconf.mk
+	econf $(use_with doc docs) \
+		|| die "configure failed"
 	emake all || die "make failed"
 }
 
@@ -62,5 +50,8 @@ src_test() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "installation failed"
+	make DESTDIR=${D} installbin || die "installation failed"
+	if use doc; then
+		dohtml -r ${S}/docs/manual
+	fi
 }
