@@ -52,6 +52,7 @@ src_test() {
 src_install() {
 	make DESTDIR=${D} installbin || die "installation failed"
 	if use doc; then
-		dohtml -r ${S}/docs/manual
+		dodoc "${S}/darcs.ps"
+		dohtml -r "${S}/manual"
 	fi
 }
