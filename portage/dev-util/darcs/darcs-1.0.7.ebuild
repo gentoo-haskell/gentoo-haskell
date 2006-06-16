@@ -12,7 +12,7 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
@@ -50,7 +50,7 @@ src_test() {
 }
 
 src_install() {
-	make DESTDIR=${D} installbin || die "installation failed"
+	make DESTDIR="${D}" installbin || die "installation failed"
 	if use doc; then
 		dodoc "${S}/darcs.ps"
 		dohtml "${S}/manual/"*
