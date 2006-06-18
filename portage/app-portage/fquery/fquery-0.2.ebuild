@@ -6,8 +6,8 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="A fast replacement for equery"
-HOMEPAGE="http://home.exetel.com.au/tjaden/adelie/"
-SRC_URI="http://home.exetel.com.au/tjaden/adelie/${P}.tar.gz"
+HOMEPAGE="http://home.exetel.com.au/tjaden/fquery/"
+SRC_URI="http://home.exetel.com.au/tjaden/fquery/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
