@@ -30,9 +30,12 @@ SRC_URI=""
 # darcs command to run
 [ -z "$EDARCS_DARCS_CMD" ] && EDARCS_DARCS_CMD="darcs"
 
-# darcs commands with options
+# darcs commands with command-specific options
 [ -z "$EDARCS_GET_CMD" ] && EDARCS_GET_CMD="get"
 [ -z "$EDARCS_UPDATE_CMD" ] && EDARCS_UPDATE_CMD="pull"
+
+# options to pass to both the "get" and "update" commands
+[ -z "$EDARCS_OPTIONS" ] && EDARCS_OPTIONS="--set-scripts-executable"
 
 # Where the darcs repositories are stored/accessed
 [ -z "$EDARCS_TOP_DIR" ] && EDARCS_TOP_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/darcs-src"
@@ -95,8 +98,8 @@ darcs_fetch() {
 	fi
 
 	# commands to run
-	local cmdget="${EDARCS_DARCS_CMD} ${EDARCS_GET_CMD} --repo-name=${EDARCS_LOCALREPO} ${EDARCS_REPOSITORY}"
-	local cmdupdate="${EDARCS_DARCS_CMD} ${EDARCS_UPDATE_CMD} --all ${EDARCS_REPOSITORY}"
+	local cmdget="${EDARCS_DARCS_CMD} ${EDARCS_GET_CMD} ${EDARCS_OPTIONS} --repo-name=${EDARCS_LOCALREPO} ${EDARCS_REPOSITORY}"
+	local cmdupdate="${EDARCS_DARCS_CMD} ${EDARCS_UPDATE_CMD} --all ${EDARCS_OPTIONS} ${EDARCS_REPOSITORY}"
 
 	if [ "${mode}" == "get" ]; then
 		einfo "Running $cmdget"
@@ -117,6 +120,7 @@ darcs_src_unpack() {
 	EDARCS_DARCS_CMD=$EDARCS_DARCS_CMD
 	EDARCS_GET_CMD=$EDARCS_GET_CMD
 	EDARCS_UPDATE_CMD=$EDARCS_UPDATE_CMD
+	EDARCS_OPTIONS=$EDARCS_OPTIONS
 	EDARCS_TOP_DIR=$EDARCS_TOP_DIR
 	EDARCS_REPOSITORY=$EDARCS_REPOSITORY
 	EDARCS_LOCALREPO=$EDARCS_LOCALREPO
