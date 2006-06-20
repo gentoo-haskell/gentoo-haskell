@@ -46,7 +46,7 @@ RDEPEND="
 	opengl? ( virtual/opengl virtual/glu virtual/glut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
-	opengl? ( x11-base/opengl-update )
+	opengl? ( app-admin/eselect-opengl )
 	~app-text/docbook-sgml-dtd-4.2"
 
 src_unpack() {
@@ -89,7 +89,7 @@ src_compile() {
 	if use opengl; then
 		myconf="--enable-opengl"
 		# the nvidia drivers *seem* not to work together with pthreads
-		if ! /usr/sbin/opengl-update --get-implementation | grep -q nvidia; then
+		if ! /usr/bin/eselect opengl show | grep -q nvidia; then
 			myconf="$myconf --with-pthreads"
 		fi
 	fi
