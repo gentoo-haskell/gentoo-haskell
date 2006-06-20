@@ -25,6 +25,8 @@ Results of meeting 8/2/06:
     Using overloaded Prelude while overloading is not enabled
       Hint: Compile with --overloading, or use the simple Prelude
 
+* new hugs version
+
 * darcsweb
 
 * MissingH
