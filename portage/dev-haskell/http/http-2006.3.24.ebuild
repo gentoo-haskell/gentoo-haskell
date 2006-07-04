@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="lib haddock profile"
+CABAL_FEATURES="lib profile haddock"
 inherit base versionator eutils haskell-cabal
 
 MY_PV_YEAR=$(get_version_component_range 1)
@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-	>=dev-haskell/crypto-2.0"
+		>=dev-haskell/crypto-2.0"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_install() {
-	haskell-cabal_src_install
+	cabal_src_install
 
 	dodoc README LICENSE
 }
