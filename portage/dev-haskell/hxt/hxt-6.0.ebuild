@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hxt/hxt-5.00.ebuild,v 1.1 2005/04/26 10:59:54 kosmikus Exp $
 
-CABAL_FEATURES="lib haddock"
+CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 MY_PN="HXT"
@@ -18,14 +18,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-	dev-haskell/http"
+		dev-haskell/http"
 
 S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	base_src_unpack
 
-	sed -i 's/build-depends:/build-depends: network,/' "${S}/hxt.cabal"
+	sed -i 's/, Browser//' "${S}/hxt.cabal"
 }
 
 src_install() {
