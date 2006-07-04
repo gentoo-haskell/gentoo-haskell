@@ -7,21 +7,18 @@ inherit darcs
 DESCRIPTION="jhc new experimental ebuild for experimental HASKELL compiler ;)"
 HOMEPAGE="http://repetae.net/john/computer/jhc/"
 
-#LICENSE="don't know"
-# google groups mail said gpl..
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 EDARCS_REPOSITORY="http://repetae.net/john/repos/jhc"
 EDARCS_GET_CMD="get --partial"
 
-# I had this darcs version
-# drift is also needed!
-DEPEND="
-	>=dev-util/darcs-1.0.2
-	>=dev-haskell/drift-2.1.1"
-# RDEPEND=""
+DEPEND=">=virtual/ghc-6.4
+		>=dev-haskell/drift-2.1.1
+		dev-haskell/happy"
+RDEPEND=""
 
 JHCPATH="/usr/lib/${PF}"
 
