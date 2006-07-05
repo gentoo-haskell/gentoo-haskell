@@ -12,9 +12,17 @@ Results of meeting 8/2/06:
 
 == New ebuilds ==
 
+* hugs-2006.5
+
 * hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
 
-* hxt-5.5 was released 2006-03-03
+* hxt-6.0 was released 2006-07
+
+* http, in discussion with upstream about the crypto dep
+
+* crypto-3.0.3, in discussion with upstream about the newbinary dep
+
+* ldap: fixing build bugs with upstream
 
 * helium-1.6 (may not work on 64-bit arches)
     An ebuild is in the overlay but it needs some more love.
@@ -25,12 +33,7 @@ Results of meeting 8/2/06:
     Using overloaded Prelude while overloading is not enabled
       Hint: Compile with --overloading, or use the simple Prelude
 
-* new hugs version
-
 * darcsweb
-
-* MissingH
-    Working ebuild is in the overlay. Needs testing.
 
 * add yhc and jhc when they are ready
 
@@ -39,8 +42,6 @@ Results of meeting 8/2/06:
 * use the new virtuals system for virtual/ghc
 
 * make use of the libraries profiling stuff (that's in the cabal eclass) for more lib ebuilds
-
-* make the ghc-bin ebuild support all the same USE flags as the ghc ebuilds
 
 == Long term & continuing projects ==
 
