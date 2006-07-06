@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal darcs
+inherit eutils haskell-cabal darcs
 
 DESCRIPTION="hImerge is a graphical user interface for emerge (Gentoo's Portage system) written in Haskell using gtk2hs."
 HOMEPAGE="http://haskell.org/~luisfaraujo/himerge/"
@@ -18,10 +18,17 @@ EDARCS_LOCALREPO="himerge"
 
 DEPEND=">=dev-lang/ghc-6.4
 	dev-haskell/cabal
-	dev-haskell/gtk2hs
-	(|| ( www-client/mozilla-firefox 
-		www-client/mozilla ) )"
+	dev-haskell/gtk2hs"
 RDEPEND=""
+
+pkg_setup() {
+	if ! built_with_use -o dev-haskell/gtk2hs mozilla firefox ; then
+	   	echo
+		eerror "gtk2hs was not merged with the mozilla or firefox USE flag."
+		eerror "hImerge requires gtk2hs be compiled with any of these flags."
+		die "gtk2hs missing web browser support."
+	fi
+}
 
 src_install() {
 	cabal-copy
