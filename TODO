@@ -14,12 +14,6 @@ Results of meeting 8/2/06:
 
 * hugs-2006.5
 
-* hxt-5.3 (has new HTTP dep, we need to decide what to do about that)
-
-* hxt-6.0 was released 2006-07
-
-* http, in discussion with upstream about the crypto dep
-
 * crypto-3.0.3, in discussion with upstream about the newbinary dep
 
 * ldap: fixing build bugs with upstream
