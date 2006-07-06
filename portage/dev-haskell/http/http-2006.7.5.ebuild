@@ -30,6 +30,9 @@ src_unpack() {
 
 	# switch from -O2 to -O
 	sed -i -e "s/GHC-options: -O2/GHC-options: -O/" "${S}/http.cabal"
+	echo "Other-Modules: Network.HTTP.Base64," >> "${S}/http.cabal"
+	echo "               Network.HTTP.MD5,"    >> "${S}/http.cabal"
+	echo "               Network.HTTP.MD5Aux"  >> "${S}/http.cabal"
 }
 
 src_install() {
