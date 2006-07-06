@@ -14,9 +14,15 @@ Results of meeting 8/2/06:
 
 * hugs-2006.5
 
+* haskelldb: though the current release is very old, perhaps prod them
+  for a new release. The dev version supports HDBC I believe.
+
 * crypto-3.0.3, in discussion with upstream about the newbinary dep
 
 * ldap: fixing build bugs with upstream
+
+* magic: http://quux.org/devel/magic-haskell
+  note that debian has ver 1.0.3 but the current tarball is 1.0.1
 
 * helium-1.6 (may not work on 64-bit arches)
     An ebuild is in the overlay but it needs some more love.
