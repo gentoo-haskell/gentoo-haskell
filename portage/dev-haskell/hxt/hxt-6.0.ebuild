@@ -25,7 +25,10 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	base_src_unpack
 
-	sed -i 's/, Browser//' "${S}/hxt.cabal"
+	sed -i \
+		-e 's/, Browser//' \
+		-e 's/-O2/-O/' \
+		"${S}/hxt.cabal"
 }
 
 src_install() {
