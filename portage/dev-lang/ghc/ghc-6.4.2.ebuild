@@ -59,7 +59,7 @@ RDEPEND="
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl
 			  virtual/glu virtual/glut
-			  openal? ( media-libs/openal ) )"
+			  openal? ( media-libs/openal media-libs/freealut ) )"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
