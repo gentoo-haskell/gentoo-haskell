@@ -60,17 +60,12 @@ ghc-bestcabalversion() {
 	local cabalpackage
 	local cabalversion
 	if ghc-cabal; then
-		# Try if ghc-pkg can determine the latest version.
-		# If not, use portage.
-		cabalpackage="$($(ghc-getghcpkg) latest Cabal 2> /dev/null)"
-		if [[ $? -eq 0 ]]; then
-			cabalversion="${cabalpackage#Cabal-}"
-		else
-			cabalpackage="$(best_version cabal)"
-			cabalversion="${cabalpackage#dev-haskell/cabal-}"
-			cabalversion="${cabalversion%-r*}"
-			cabalversion="${cabalversion%_pre*}"
-		fi
+		# We ask portage, not ghc, so that we only pick up
+		# portage-installed cabal versions.
+		cabalpackage="$(best_version cabal)"
+		cabalversion="${cabalpackage#dev-haskell/cabal-}"
+		cabalversion="${cabalversion%-r*}"
+		cabalversion="${cabalversion%_pre*}"
 		echo "Cabal-${cabalversion}"
 	else
 		# older ghc's don't support package versioning
