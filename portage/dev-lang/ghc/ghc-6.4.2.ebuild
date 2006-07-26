@@ -178,6 +178,9 @@ src_unpack() {
 	# Patch to fix a mis-compilation in the rts due to strict aliasing, should
 	# be fixed upstream for 6.4.3 and 6.6. Fixes bug #135651.
 	echo 'GC_HC_OPTS += -optc-fno-strict-aliasing' >> "${S}/ghc/rts/Makefile"
+
+	# Don't strip binaries on install. See QA warnings in bug #140369.
+	sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 }
 
 src_compile() {
