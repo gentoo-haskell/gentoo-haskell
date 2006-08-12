@@ -21,17 +21,7 @@ EDARCS_GET_CMD="get --partial"
 
 S="${S}/module"
 
-src_unpack() {
-	darcs_src_unpack
-	echo "extra-libraries: dbus-1" >> ${S}/DBus.cabal
-}
-
 src_compile() {
-	# cabal hasn't got pkg-config support yet so we need to process
-	# the *.hsc files manually before cabal gets into the game
-	for f in $( find -name \*.hsc ); do
-		/usr/bin/hsc2hs `pkg-config --cflags dbus-1` \
-			-o "${S}/${f%.hsc}."{hs,hsc}
-	done
+	autoreconf
 	haskell-cabal_src_compile
 }
