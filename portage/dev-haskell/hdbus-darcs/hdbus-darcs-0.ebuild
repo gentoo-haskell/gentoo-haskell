@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="haddock lib"
-inherit base darcs haskell-cabal
+inherit base darcs haskell-cabal autotools
 
 DESCRIPTION="Haskell bindings for D-Bus"
 HOMEPAGE="http://neugierig.org/software/hdbus/"
@@ -22,6 +22,6 @@ EDARCS_GET_CMD="get --partial"
 S="${S}/module"
 
 src_compile() {
-	autoreconf
+	eautoreconf
 	haskell-cabal_src_compile
 }
