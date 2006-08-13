@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hmake/hmake-3.10.ebuild,v 1.7 2006/03/16 14:13:49 dcoutts Exp $
 
-inherit base eutils fixheadtails
+inherit base eutils fixheadtails ghc-package
 
 DESCRIPTION="a make tool for Haskell programs"
 HOMEPAGE="http://www.haskell.org/hmake/"
@@ -42,7 +42,7 @@ src_compile() {
 	./configure \
 		--prefix=/usr \
 		--mandir=/usr/share/man/man1 \
-		--buildwith=ghc \
+		--buildwith="$(ghc-getghc)" \
 		|| die "./configure failed"
 
 	# emake tested; parallel make does not work
