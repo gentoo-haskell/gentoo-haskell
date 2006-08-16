@@ -15,7 +15,7 @@ SRC_URI="http://www.cse.unsw.edu.au/~dons/${PN}/${MY_P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="-amd64 ~ppc ~sparc ~x86" # currently broken on amd64
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 DEPEND="virtual/ghc
