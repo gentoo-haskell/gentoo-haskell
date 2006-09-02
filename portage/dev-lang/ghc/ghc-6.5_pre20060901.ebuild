@@ -36,11 +36,10 @@ IS_SNAPSHOT="${PV%%*pre*}" # zero if snapshot
 MY_PV="${PV/_pre/.}"
 MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
-[[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
+[[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
-SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
-		test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )
-		mirror://gentoo/${P}-alut.patch.gz"
+SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
+#		"test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="as-is"
 SLOT="0"
