@@ -44,7 +44,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="test doc X opengl openal"
+IUSE="test doc"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -54,11 +54,7 @@ RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	>=sys-libs/readline-4.2
-	X? ( || ( x11-libs/libX11 virtual/x11 ) )
-	opengl? ( virtual/opengl
-			  virtual/glu virtual/glut
-			  openal? ( media-libs/openal media-libs/freealut ) )"
+	>=sys-libs/readline-4.2"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -71,13 +67,7 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=dev-haskell/cabal-1.1.4"
 
-pkg_setup() {
-	if use openal && ! use opengl; then
-		ewarn "The OpenAL bindings require the OpenGL bindings, however"
-		ewarn "USE=\"-opengl\" so the OpenAL bindings will not be built."
-		ewarn "To build the OpenAL bindings emerge with USE=\"openal opengl\""
-	fi
-
+#pkg_setup() {
 	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
 	# releases, the following function causes the build to fail with an
 	# informative error message in such a case.
@@ -88,7 +78,7 @@ pkg_setup() {
 	#	eerror "dev-lang/ghc afterwards."
 	#	die "virtual/ghc version required to build"
 	#fi
-}
+#}
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -226,13 +216,6 @@ src_compile() {
 
 	econf \
 		--with-ghc="${TMP}/ghc.sh" \
-		$(use_enable opengl opengl) \
-		$(use_enable opengl glut) \
-		$(use openal && use opengl \
-			&& echo --enable-openal --enable-alut \
-			|| echo --disable-openal --disable-alut) \
-		$(use_enable X x11) \
-		$(use_enable X hgl) \
 		|| die "econf failed"
 
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
