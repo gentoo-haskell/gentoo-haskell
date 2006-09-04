@@ -36,6 +36,9 @@
 #
 # Conforming Cabal packages don't require any function definitions
 # in the ebuild.
+#
+# Special flags to Cabal Configure can now be set by using
+# CABAL_CONFIGURE_FLAGS
 
 inherit ghc-package
 
@@ -136,6 +139,7 @@ cabal-configure() {
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
 		${cabalconf} \
+		${CABAL_CONFIGURE_FLAGS}
 		"$@" || die "setup configure failed"
 }
 
