@@ -161,6 +161,7 @@ src_unpack() {
 	cd ${S}
 	epatch "${WORKDIR}/${P}-alut.patch"
 	epatch "${FILESDIR}/${P}-sparc32plus.patch"
+	epatch "${FILESDIR}/${P}-sparcmangler.patch"
 
 	# Modify the ghc driver script to use GHC_CFLAGS
 	echo "SCRIPT_SUBST_VARS += GHC_CFLAGS" >> "${S}/ghc/driver/ghc/Makefile"
