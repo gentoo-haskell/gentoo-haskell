@@ -31,6 +31,7 @@ pkg_setup() {
 	# cause ghc take loads of memory. We try and limit ghc's heap size
 	# but it still takes a lot.
 	einfo "Some Wash modules take a lot of RAM and a very long time to compile."
+	einfo "Please be patient."
 	# We need aproximately this much memory: (does *not* check swap)
 	case "${ARCH}" in
 		alpha|*64) CHECKREQS_MEMORY="400" ;;
