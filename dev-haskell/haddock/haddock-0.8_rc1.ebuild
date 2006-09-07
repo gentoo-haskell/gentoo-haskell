@@ -32,7 +32,7 @@ src_compile () {
 		./configure --prefix=${D}/usr/ \
 			|| die 'error configuring documentation.'
 		make html || die 'error building documentation.'
-	fi	
+	fi
 }
 
 src_install () {
