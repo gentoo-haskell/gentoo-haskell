@@ -81,7 +81,6 @@ src_compile() {
 		--libdir="/usr/$(get_libdir)/${P}" \
 		$(use_enable postgres dbconnect) \
 		$(use_enable doc build-docs) \
-		--with-hc=$(ghc-getghc) \
 		--with-hcflags="+RTS -M${CHECKREQS_MEMORY}m -RTS" \
 		--enable-register-package="${S}/$(ghc-localpkgconf)" \
 		|| die "configure failed"
