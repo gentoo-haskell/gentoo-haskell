@@ -65,7 +65,7 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2
 			>=dev-haskell/haddock-0.7 )"
 
-PDEPEND=">=dev-haskell/cabal-1.1.4"
+PDEPEND=">=dev-haskell/cabal-1.1.5.9"
 
 #pkg_setup() {
 	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
