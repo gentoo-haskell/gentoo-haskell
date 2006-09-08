@@ -1,8 +1,10 @@
-Results of meeting 8/2/06:
 
 == Easy ==
 
-* test the src-extralibs ebuilds with ghc6.5.
+* test the src-extralibs ebuilds with ghc-6.5.
+
+* add blockers to all current ebuilds that don't build with ghc-6.5
+  eg haddock-0.7
 
 == High priority ==
 
@@ -17,7 +19,6 @@ Results of meeting 8/2/06:
 * add the following src-extralibs ebuilds for ghc6.5:
   - ALUT
   - GLUT
-  - ObjecIO
   - OpenAL
   - OpenGL
 
