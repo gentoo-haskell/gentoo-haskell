@@ -2,6 +2,8 @@ Results of meeting 8/2/06:
 
 == Easy ==
 
+* test the src-extralibs ebuilds with ghc6.5.
+
 == High priority ==
 
 == Ebuild maintainance ==
@@ -11,6 +13,15 @@ Results of meeting 8/2/06:
 * in the ghc ebuilds: does the ghcprof subst work
 
 == New ebuilds ==
+
+* add the following src-extralibs ebuilds for ghc6.5:
+  - ALUT
+  - GLUT
+  - ObjecIO
+  - OpenAL
+  - OpenGL
+
+* add new version of happy for ghc6.6.
 
 * hugs-2006.5
 
