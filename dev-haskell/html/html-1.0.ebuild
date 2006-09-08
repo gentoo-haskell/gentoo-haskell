@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock lib"
+CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 GHC_PV=6.5.20060907
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4.2"
+DEPEND="=virtual/ghc-6.5*"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 
