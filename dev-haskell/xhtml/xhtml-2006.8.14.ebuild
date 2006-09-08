@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib" #haddock documentation is currently broken
 inherit base haskell-cabal
 
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="XHTML combinator library for haskell"
 HOMEPAGE=""

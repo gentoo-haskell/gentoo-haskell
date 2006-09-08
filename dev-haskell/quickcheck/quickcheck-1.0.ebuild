@@ -6,7 +6,7 @@ CABAL_FEATURES="lib" #haddock can't parse this library yet
 inherit base haskell-cabal
 
 MY_PN=QuickCheck
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="An automatic, specification based testing utility for haskell
 programs"

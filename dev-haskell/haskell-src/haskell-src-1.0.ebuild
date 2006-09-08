@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib" #haddock doesn't process this right at the moment
 inherit base haskell-cabal
 
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="Haskell source library"
 HOMEPAGE=""

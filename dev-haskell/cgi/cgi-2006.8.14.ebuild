@@ -5,7 +5,7 @@
 CABAL_FEATURES="haddock lib"
 inherit base haskell-cabal
 
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="A haskell library for writing CGI programs"
 HOMEPAGE=""

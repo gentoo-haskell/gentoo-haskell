@@ -6,7 +6,7 @@ CABAL_FEATURES="lib" #haddock can't parse this library yet
 inherit haskell-cabal
 
 MY_PN=X11
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="X11 bindings for haskell"
 HOMEPAGE=""

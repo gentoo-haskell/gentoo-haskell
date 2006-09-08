@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib" #haddock can't parse this library yet
 inherit base haskell-cabal
 
-GHC_PV=6.5.20060901
+GHC_PV=6.5.20060907
 
 DESCRIPTION="Haskell network library"
 HOMEPAGE=""
