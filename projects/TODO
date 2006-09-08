@@ -17,10 +17,11 @@
 == New ebuilds ==
 
 * add the following src-extralibs ebuilds for ghc6.5:
-  - ALUT
   - GLUT
-  - OpenAL
-  - OpenGL
+
+* fix or report haddock build failures in ghc-extralibs:
+  haskell-src
+  network
 
 * add new version of happy for ghc6.6.
 
