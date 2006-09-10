@@ -139,7 +139,7 @@ cabal-configure() {
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
 		${cabalconf} \
-		${CABAL_CONFIGURE_FLAGS}
+		${CABAL_CONFIGURE_FLAGS} \
 		"$@" || die "setup configure failed"
 }
 
