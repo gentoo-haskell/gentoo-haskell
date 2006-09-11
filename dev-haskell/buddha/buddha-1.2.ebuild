@@ -45,5 +45,5 @@ src_install() {
 	#note that buddha's ghc packages do not need to be registered
 
 	#get rid of those 100's of pointless one-line 'wise' files:
-	rm -rf "{D}/usr/share/buddha/wise"*
+	rm "${D}/usr/share/buddha/wise"*
 }
