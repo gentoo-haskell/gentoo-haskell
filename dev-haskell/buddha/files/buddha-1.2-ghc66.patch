@@ -1,9 +1,10 @@
 diff -urwpN buddha-1.2.orig/data/buddhaHsBase.pkg.in buddha-1.2/data/buddhaHsBase.pkg.in
 --- buddha-1.2.orig/data/buddhaHsBase.pkg.in	1970-01-01 01:00:00.000000000 +0100
-+++ buddha-1.2/data/buddhaHsBase.pkg.in	2006-09-11 16:40:02.000000000 +0100
-@@ -0,0 +1,12 @@
++++ buddha-1.2/data/buddhaHsBase.pkg.in	2006-09-11 23:15:55.000000000 +0100
+@@ -0,0 +1,13 @@
 +name: buddhaHsBase
 +version: 1.2
++license: GPL
 +exposed: False
 +import-dirs: @ifacedir@
 +library-dirs: @libdir@
@@ -52,10 +53,11 @@ diff -urwpN buddha-1.2.orig/data/buddha.pkg.conf.in buddha-1.2/data/buddha.pkg.c
 -]
 diff -urwpN buddha-1.2.orig/data/buddha.pkg.in buddha-1.2/data/buddha.pkg.in
 --- buddha-1.2.orig/data/buddha.pkg.in	1970-01-01 01:00:00.000000000 +0100
-+++ buddha-1.2/data/buddha.pkg.in	2006-09-11 15:10:19.000000000 +0100
-@@ -0,0 +1,15 @@
++++ buddha-1.2/data/buddha.pkg.in	2006-09-11 23:15:43.000000000 +0100
+@@ -0,0 +1,16 @@
 +name: buddha
 +version: 1.2
++license: GPL
 +exposed: False
 +import-dirs: @ifacedir@
 +library-dirs: @libdir@
@@ -83,7 +85,7 @@ diff -urwpN buddha-1.2.orig/data/Main.hs.in buddha-1.2/data/Main.hs.in
  import Data.IORef 
 diff -urwpN buddha-1.2.orig/data/Makefile.am buddha-1.2/data/Makefile.am
 --- buddha-1.2.orig/data/Makefile.am	2004-05-17 03:28:18.000000000 +0100
-+++ buddha-1.2/data/Makefile.am	2006-09-11 18:47:09.000000000 +0100
++++ buddha-1.2/data/Makefile.am	2006-09-11 22:15:01.000000000 +0100
 @@ -8,14 +8,36 @@ include $(top_srcdir)/Makefile.am.global
  
  pkgdata_DATA = buddha.pkg.conf Main.hs buddha.conf
@@ -109,7 +111,7 @@ diff -urwpN buddha-1.2.orig/data/Makefile.am buddha-1.2/data/Makefile.am
 +
 +buddha.pkg: buddha.pkg.in FORCE
 +	rm -f buddha.pkg buddha.pkg.tmp
-+	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(pkgincludedir),g' buddha.pkg.in >buddha.pkg.tmp
++	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(includedir),g' buddha.pkg.in >buddha.pkg.tmp
 +	mv buddha.pkg.tmp buddha.pkg
 +
 +TOP:=$(shell pwd)/..
@@ -120,7 +122,7 @@ diff -urwpN buddha-1.2.orig/data/Makefile.am buddha-1.2/data/Makefile.am
 +
 +buddhaHsBase.pkg: buddhaHsBase.pkg.in FORCE
 +	rm -f buddhaHsBase.pkg buddhaHsBase.pkg.tmp
-+	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(pkgincludedir),g' buddhaHsBase.pkg.in >buddhaHsBase.pkg.tmp
++	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(includedir),g' buddhaHsBase.pkg.in >buddhaHsBase.pkg.tmp
 +	mv buddhaHsBase.pkg.tmp buddhaHsBase.pkg
  
  Main.hs: Main.hs.in FORCE
@@ -512,8 +514,15 @@ diff -urwpN buddha-1.2.orig/libbuddha/Internals.h buddha-1.2/libbuddha/Internals
  typedef union  _val Val;
 diff -urwpN buddha-1.2.orig/libbuddha/Makefile.am buddha-1.2/libbuddha/Makefile.am
 --- buddha-1.2.orig/libbuddha/Makefile.am	2004-05-16 12:25:50.000000000 +0100
-+++ buddha-1.2/libbuddha/Makefile.am	2006-09-11 16:55:56.000000000 +0100
-@@ -34,7 +34,7 @@ pkginclude_HEADERS = Hash.h Internals.h 
++++ buddha-1.2/libbuddha/Makefile.am	2006-09-11 22:29:13.000000000 +0100
+@@ -28,13 +28,13 @@ libbuddha_p_a_SOURCES = Advice.hs Defaul
+                  PrettyExp.hs GhcInternalsC.c HeapGraph.c ReEvalC.c ReifyC.c \
+                  SetReadLineStreams.c Counter.c
+ 
+-pkginclude_HEADERS = Hash.h Internals.h SetReadLineStreams.h Counter.h
++include_HEADERS = Hash.h Internals.h SetReadLineStreams.h Counter.h
+ 
+ ## GHC/Haskell specific stuff
  ## we don't need to specify the linker for this because we are just building
  ## a library -- to there is no linking to be done.
  
@@ -522,6 +531,15 @@ diff -urwpN buddha-1.2.orig/libbuddha/Makefile.am buddha-1.2/libbuddha/Makefile.
  GHC_FLAGS    = --make -O -prof -fglasgow-exts -fwarn-unused-imports -hisuf p_hi -no-link -no-hs-main 
  
  GHC_COMPILE_FLAGS = $(GHC_PACKAGES) $(GHC_FLAGS) $(DEFS) 
+@@ -48,7 +48,7 @@ SUFFIXES = .hs
+ 
+ ## make sure these get distributed
+ 
+-EXTRA_DIST = $(pkginclude_HEADERS)   
++EXTRA_DIST = $(include_HEADERS)   
+   
+ ## I can't get automake to play nicely with C files.
+ ## The reason is that we want to compile them with GHC not GCC
 diff -urwpN buddha-1.2.orig/libbuddha/Oracle.hs buddha-1.2/libbuddha/Oracle.hs
 --- buddha-1.2.orig/libbuddha/Oracle.hs	2004-05-13 10:04:56.000000000 +0100
 +++ buddha-1.2/libbuddha/Oracle.hs	2006-09-11 10:09:22.000000000 +0100
@@ -723,7 +741,7 @@ diff -urwpN buddha-1.2.orig/libbuddha/ReifyC.c buddha-1.2/libbuddha/ReifyC.c
                           , IntNode
 diff -urwpN buddha-1.2.orig/Makefile.am buddha-1.2/Makefile.am
 --- buddha-1.2.orig/Makefile.am	2004-04-28 05:10:00.000000000 +0100
-+++ buddha-1.2/Makefile.am	2006-09-11 15:51:11.000000000 +0100
++++ buddha-1.2/Makefile.am	2006-09-11 19:53:51.000000000 +0100
 @@ -4,6 +4,6 @@
  ## do not hand edit Makefile.in or Makefile as they will
  ## get clobbered next time automake and configure are run
@@ -732,6 +750,15 @@ diff -urwpN buddha-1.2.orig/Makefile.am buddha-1.2/Makefile.am
 +SUBDIRS = data libbuddha transform prelude scripts docs advice config debian examples 
  
  EXTRA_DIST = Makefile.am.global
+diff -urwpN buddha-1.2.orig/Makefile.am.global buddha-1.2/Makefile.am.global
+--- buddha-1.2.orig/Makefile.am.global	2004-04-28 05:10:00.000000000 +0100
++++ buddha-1.2/Makefile.am.global	2006-09-11 21:42:49.000000000 +0100
+@@ -1,4 +1,4 @@
+ ## this is the directory where we put interface files
+ ## this is used in a couple of places in the program
+ ## so we define it here for all those uses
+-AM_IFACEDIR=$(pkgdatadir)/ifaces
++AM_IFACEDIR=$(pkglibdir)/imports
 diff -urwpN buddha-1.2.orig/prelude/Buddha/IOPrims_B.hs buddha-1.2/prelude/Buddha/IOPrims_B.hs
 --- buddha-1.2.orig/prelude/Buddha/IOPrims_B.hs	2004-04-28 05:10:10.000000000 +0100
 +++ buddha-1.2/prelude/Buddha/IOPrims_B.hs	2006-09-11 11:57:38.000000000 +0100
@@ -746,7 +773,7 @@ diff -urwpN buddha-1.2.orig/prelude/Buddha/IOPrims_B.hs buddha-1.2/prelude/Buddh
  import qualified CPUTime (getCPUTime)
 diff -urwpN buddha-1.2.orig/prelude/Buddha/Makefile.am buddha-1.2/prelude/Buddha/Makefile.am
 --- buddha-1.2.orig/prelude/Buddha/Makefile.am	2004-05-16 11:35:34.000000000 +0100
-+++ buddha-1.2/prelude/Buddha/Makefile.am	2006-09-11 17:37:33.000000000 +0100
++++ buddha-1.2/prelude/Buddha/Makefile.am	2006-09-11 21:28:42.000000000 +0100
 @@ -40,9 +40,9 @@ libbuddhaHsBase_p_a_SOURCES = Array_B.hs
  ## we don't need to specify the linker for this because we are just building
  ## a library -- to there is no linking to be done.
@@ -1340,7 +1367,7 @@ diff -urwpN buddha-1.2.orig/transform/Infix.hs buddha-1.2/transform/Infix.hs
  -- as top-level infix decls
 diff -urwpN buddha-1.2.orig/transform/Makefile.am buddha-1.2/transform/Makefile.am
 --- buddha-1.2.orig/transform/Makefile.am	2004-05-16 12:26:39.000000000 +0100
-+++ buddha-1.2/transform/Makefile.am	2006-09-11 11:47:00.000000000 +0100
++++ buddha-1.2/transform/Makefile.am	2006-09-11 21:29:08.000000000 +0100
 @@ -15,7 +15,7 @@ buddha_real_SOURCES = BuddhaName.hs Erro
   
  ## GHC/Haskell specific stuff
