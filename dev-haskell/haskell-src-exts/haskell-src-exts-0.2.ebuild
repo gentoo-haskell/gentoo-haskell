@@ -20,11 +20,13 @@ S=${WORKDIR}/haskell-src-exts/src/haskell-src-exts
 
 src_unpack() {
 	base_src_unpack
-
+	epatch "${FILESDIR}/${P}-hiding-isSymbol.patch"
 	# Make it work with ghc pre-6.4
 	sed -i 's/{-# OPTIONS_GHC /{-# OPTIONS /' \
 		${S}/Language/Haskell/Hsx/Syntax.hs \
 		${S}/Language/Haskell/Hsx/Pretty.hs
 	sed -i 's/#ifdef __GLASGOW_HASKELL__/#if __GLASGOW_HASKELL__>=604/' \
 		${S}/Language/Haskell/Hsx/Syntax.hs
+	
+
 }

@@ -1,0 +1,31 @@
+--- src/haskell-src-exts/Language/Haskell/Hsx/Lexer.hs	2005-05-01 23:40:45.000000000 +0200
++++ /home/gour/tmp/haskell-src-exts/src/haskell-src-exts/Language/Haskell/Hsx/Lexer.hs	2006-09-10 15:22:35.000000000 +0200
+@@ -23,7 +23,7 @@
+ 
+ import Language.Haskell.Hsx.ParseMonad
+ 
+-import Data.Char
++import Data.Char hiding (isSymbol)
+ import Data.Ratio
+ 
+ data Token
+--- src/haskell-src-exts/Language/Haskell/Hsx/Transform.hs	2005-04-08 17:17:29.000000000 +0200
++++ /home/gour/tmp/haskell-src-exts/src/haskell-src-exts/Language/Haskell/Hsx/Transform.hs	2006-09-10 15:25:32.000000000 +0200
+@@ -1270,7 +1270,7 @@
+ 		    	HsIdent n -> fail $ "Attempting to bind variable "++n++
+ 					  " inside the context of a numerable regular pattern"
+ 		    	_	      -> fail $ "This should never ever ever happen...\
+-						  \ how the ¤#% did you do it??!?"
++						  \ how the #% did you do it??!?"
+ 
+       where -- | Generate a declaration for a @ binding.
+ 	    mkAsDecl :: SrcLoc -> MFunMetaInfo -> Tr HsName
+@@ -1429,7 +1429,7 @@
+   	-- of transformations of optional patterns should be able to call it...)
+   	mkOptDecl :: SrcLoc -> Bool -> MFunMetaInfo -> Tr MFunMetaInfo
+   	mkOptDecl s greedy nvt@(_, vs, t) = do
+-  		-- Un nome, s'il vouz plaît.
++  		-- Un nome, s'il vouz plaÃ®t.
+   		n <- genMatchName
+   		let -- Generate a generator for matching the subpattern
+   		    (g, val) = mkGenExp s nvt			-- (harp_valX, (foo, bar, ...)) <- harp_matchY
