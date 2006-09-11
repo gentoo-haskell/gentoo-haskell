@@ -22,9 +22,7 @@
   - GLUT
 
 * fix or report haddock build failures in ghc-extralibs:
-  haskell-src
   network
-  quickcheck
   time
   x11
   xhtml
