@@ -1,0 +1,1737 @@
+diff -urwpN buddha-1.2.orig/data/buddhaHsBase.pkg.in buddha-1.2/data/buddhaHsBase.pkg.in
+--- buddha-1.2.orig/data/buddhaHsBase.pkg.in	1970-01-01 01:00:00.000000000 +0100
++++ buddha-1.2/data/buddhaHsBase.pkg.in	2006-09-11 16:40:02.000000000 +0100
+@@ -0,0 +1,12 @@
++name: buddhaHsBase
++version: 1.2
++exposed: False
++import-dirs: @ifacedir@
++library-dirs: @libdir@
++hs-libraries: buddhaHsBase
++depends: base, haskell98, buddha
++exposed-modules: Array_B, Directory_B, LocalePrims_B, Prelude_B, Ratio_B,
++                 CPUTime_B, IOPrims_B, Locale_B, Prims_B, SystemPrims_B,
++                 Char_B, IO_B, Maybe_B, RandomPrims_B, System_B, Complex_B,
++		 Ix_B, Monad_B, Random_B, TimePrims_B, DirectoryPrims_B,
++		 List_B, Numeric_B, RatioPrims_B, Time_B
+diff -urwpN buddha-1.2.orig/data/buddha.pkg.conf.in buddha-1.2/data/buddha.pkg.conf.in
+--- buddha-1.2.orig/data/buddha.pkg.conf.in	2004-05-17 05:06:39.000000000 +0100
++++ buddha-1.2/data/buddha.pkg.conf.in	1970-01-01 01:00:00.000000000 +0100
+@@ -1,32 +0,0 @@
+-[
+-  Package
+-    {name = "@package@",
+-     import_dirs = ["@ifacedir@"],
+-     source_dirs = [],
+-     library_dirs = ["@libdir@"],
+-     hs_libraries = ["@package@"],
+-     extra_libraries = [],
+-     include_dirs = ["@includedir@"],
+-     c_includes = ["Internals.h", "SetReadLineStreams.h", "Hash.h", "Counter.h"],
+-     package_deps = ["lang","haskell98","parsec","readline"],
+-     extra_ghc_opts = [],
+-     extra_cc_opts = [],
+-     extra_ld_opts = [],
+-     framework_dirs = [],
+-     extra_frameworks = []},
+-  Package
+-    {name = "buddhaHsBase",
+-     import_dirs = ["@ifacedir@"],
+-     source_dirs = [],
+-     library_dirs = ["@libdir@"],
+-     hs_libraries = ["@package@HsBase"],
+-     extra_libraries = [],
+-     include_dirs = ["@includedir@"],
+-     c_includes = [],
+-     package_deps = ["@package@"],
+-     extra_ghc_opts = [],
+-     extra_cc_opts = [],
+-     extra_ld_opts = [],
+-     framework_dirs = [],
+-     extra_frameworks = []}
+-]
+diff -urwpN buddha-1.2.orig/data/buddha.pkg.in buddha-1.2/data/buddha.pkg.in
+--- buddha-1.2.orig/data/buddha.pkg.in	1970-01-01 01:00:00.000000000 +0100
++++ buddha-1.2/data/buddha.pkg.in	2006-09-11 15:10:19.000000000 +0100
+@@ -0,0 +1,15 @@
++name: buddha
++version: 1.2
++exposed: False
++import-dirs: @ifacedir@
++library-dirs: @libdir@
++hs-libraries: buddha
++include-dirs: @includedir@
++includes: Internals.h, SetReadLineStreams.h, Hash.h, Counter.h
++depends: base, haskell98, parsec, readline
++exposed-modules: DD, Buddha, Meta
++hidden-modules: Advice, Defaults, Help, DotGraph, GhcInternals,
++               IOUtils, Settings, ReifyHs, CLI, EDT, Graph, IsException,
++               Oracle, Terminal, EDTtoDotGraph, GraphToDotGraph, Data,
++               GraphToExp, IsThunk, Tables, FunEncode, TablesUnsafe,
++               AnsiColour, ColourString, Config, Platform
+diff -urwpN buddha-1.2.orig/data/Main.hs.in buddha-1.2/data/Main.hs.in
+--- buddha-1.2.orig/data/Main.hs.in	2004-05-17 04:35:41.000000000 +0100
++++ buddha-1.2/data/Main.hs.in	2006-09-11 16:27:18.000000000 +0100
+@@ -19,7 +19,7 @@ import qualified Main_B 
+ import IOPrims_B 
+    ( runIO )
+ import Prelude
+-import Posix 
++import System.Posix 
+ import Control.Concurrent 
+ import Control.Exception 
+ import Data.IORef 
+diff -urwpN buddha-1.2.orig/data/Makefile.am buddha-1.2/data/Makefile.am
+--- buddha-1.2.orig/data/Makefile.am	2004-05-17 03:28:18.000000000 +0100
++++ buddha-1.2/data/Makefile.am	2006-09-11 18:47:09.000000000 +0100
+@@ -8,14 +8,36 @@ include $(top_srcdir)/Makefile.am.global
+ 
+ pkgdata_DATA = buddha.pkg.conf Main.hs buddha.conf
+ 
++BUILT_SOURCES = buddha.pkg-inplace.conf
++
+ ## We always want these rules to fire to make sure that
+ ## the variable substitutions are made properly
+ ## hence the dependency on FORCE
+ 
+-buddha.pkg.conf: buddha.pkg.conf.in FORCE
+-	rm -f buddha.pkg.conf buddha.pkg.conf.tmp
+-	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(pkgincludedir),g' buddha.pkg.conf.in >buddha.pkg.conf.tmp
+-	mv buddha.pkg.conf.tmp buddha.pkg.conf 
++buddha.pkg.conf: buddha.pkg buddhaHsBase.pkg
++	echo '[]' > $@
++	ghc-pkg update buddha.pkg --force --package-conf=$@
++	ghc-pkg update buddhaHsBase.pkg --force --package-conf=$@
++
++buddha.pkg-inplace.conf: buddha.pkg-inplace
++	echo '[]' > $@
++	ghc-pkg update $< --force --package-conf=$@
++
++buddha.pkg: buddha.pkg.in FORCE
++	rm -f buddha.pkg buddha.pkg.tmp
++	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(pkgincludedir),g' buddha.pkg.in >buddha.pkg.tmp
++	mv buddha.pkg.tmp buddha.pkg
++
++TOP:=$(shell pwd)/..
++buddha.pkg-inplace: buddha.pkg.in FORCE
++	rm -f buddha.pkg-inplace buddha.pkg-inplace.tmp
++	sed 's,@libdir\@,$(TOP)/libbuddha,g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(TOP)/libbuddha,g; s,@includedir\@,$(TOP)/libbuddha,g' buddha.pkg.in >buddha.pkg-inplace.tmp
++	mv buddha.pkg-inplace.tmp buddha.pkg-inplace
++
++buddhaHsBase.pkg: buddhaHsBase.pkg.in FORCE
++	rm -f buddhaHsBase.pkg buddhaHsBase.pkg.tmp
++	sed 's,@libdir\@,$(pkglibdir),g; s,@package\@,$(PACKAGE),g; s,@ifacedir\@,$(AM_IFACEDIR),g; s,@includedir\@,$(pkgincludedir),g' buddhaHsBase.pkg.in >buddhaHsBase.pkg.tmp
++	mv buddhaHsBase.pkg.tmp buddhaHsBase.pkg
+ 
+ Main.hs: Main.hs.in FORCE
+ 	rm -f Main.hs Main.hs.tmp
+@@ -25,6 +47,6 @@ Main.hs: Main.hs.in FORCE
+ FORCE:
+  
+ ## get rid of all these files with make clean
+-CLEANFILES = buddha.pkg.conf Main.hs 
++CLEANFILES = buddha.pkg buddhaHsBase.pkg Main.hs buddha.pkg.conf buddha.pkg.conf.old buddha.pkg-inplace.conf.old
+ 
+-EXTRA_DIST = buddha.pkg.conf.in Main.hs.in buddha.conf
++EXTRA_DIST = buddha.pkg.in buddhaHsBase.pkg.in Main.hs.in buddha.conf
+diff -urwpN buddha-1.2.orig/libbuddha/Config.hs buddha-1.2/libbuddha/Config.hs
+--- buddha-1.2.orig/libbuddha/Config.hs	2004-05-14 04:49:56.000000000 +0100
++++ buddha-1.2/libbuddha/Config.hs	2006-09-11 10:11:01.000000000 +0100
+@@ -37,7 +37,7 @@
+ module Config 
+    ( config ) where
+ 
+-import IORef
++import Data.IORef
+    ( readIORef ) 
+ 
+ import Data 
+diff -urwpN buddha-1.2.orig/libbuddha/Data.hs buddha-1.2/libbuddha/Data.hs
+--- buddha-1.2.orig/libbuddha/Data.hs	2004-05-13 10:04:40.000000000 +0100
++++ buddha-1.2/libbuddha/Data.hs	2006-09-11 09:48:26.000000000 +0100
+@@ -64,7 +64,8 @@ module Data 
+    , dataDirectory
+    ) where
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Data.PackedString
+    ( PackedString )
+@@ -86,7 +87,7 @@ import IsThunk
+ import AnsiColour
+    ( Colour )
+ 
+-import IORef
++import Data.IORef
+    ( IORef
+    , newIORef
+    , readIORef
+@@ -243,7 +244,7 @@ getGlobalState
+ 
+ type EDT         = Int
+ type RecordArray = Array Int Record
+-type NodeMap     = FiniteMap Int [Int]
++type NodeMap     = Map Int [Int]
+ 
+ -- a record of a function call
+ data Record 
+@@ -284,13 +285,13 @@ data Derivation
+      }
+    deriving (Eq, Show)
+ 
+-type JudgeDatabase = FiniteMap PackedString [(Derivation, Judgement)]
++type JudgeDatabase = Map PackedString [(Derivation, Judgement)]
+ 
+ databaseSize :: JudgeDatabase -> Int
+-databaseSize db = sum [length entries | (_rep, entries) <- fmToList db]
++databaseSize db = sum [length entries | (_rep, entries) <- Map.toList db]
+ 
+ emptyJudgeDatabase :: JudgeDatabase
+-emptyJudgeDatabase = emptyFM
++emptyJudgeDatabase = Map.empty
+ 
+ data Judgement
+    = Correct 
+@@ -301,7 +302,7 @@ data Judgement
+ 
+ type Response = Either Judgement Command
+ 
+-type FunTable = FiniteMap Int [(Val, Val)]
++type FunTable = Map Int [(Val, Val)]
+ 
+ isUnevaluatedVal :: Val -> IO Bool
+ isUnevaluatedVal (V x)
+diff -urwpN buddha-1.2.orig/libbuddha/DD.hs buddha-1.2/libbuddha/DD.hs
+--- buddha-1.2.orig/libbuddha/DD.hs	2004-05-19 09:26:34.000000000 +0100
++++ buddha-1.2/libbuddha/DD.hs	2006-09-11 10:12:20.000000000 +0100
+@@ -102,9 +102,9 @@ import Buddha 
+    , FunRecord (FunRec)
+    )
+ 
+-import Data.FiniteMap
+-   ( emptyFM
+-   , addToFM_C
++import qualified Data.Map as Map
++   ( empty
++   , insertWith
+    )
+ 
+ import ColourString
+@@ -234,7 +234,7 @@ ddInit 
+                           { state_wasException    = False
+                           , state_judgeDatabase   = emptyJudgeDatabase
+                           , state_dataDir         = dataDir
+-                          , state_funTable        = mkFunTable emptyFM functionRecords
++                          , state_funTable        = mkFunTable Map.empty functionRecords
+                           , state_recordArray     = recordArray
+                           , state_nodeMap         = nodeMap
+                           , state_jumpStack       = []
+@@ -303,6 +303,6 @@ mkFunTable table [] = table 
+ mkFunTable table (FunRec ident arg result : rest)
+    = mkFunTable newTable rest
+    where
+-   newTable = addToFM_C combiner table ident [(arg, result)]
++   newTable = Map.insertWith combiner ident [(arg, result)] table
+    combiner :: [a] -> [a] -> [a]
+    combiner old [new] = new:old
+diff -urwpN buddha-1.2.orig/libbuddha/EDT.hs buddha-1.2/libbuddha/EDT.hs
+--- buddha-1.2.orig/libbuddha/EDT.hs	2004-05-20 04:37:20.000000000 +0100
++++ buddha-1.2/libbuddha/EDT.hs	2006-09-11 10:05:53.000000000 +0100
+@@ -49,19 +49,19 @@ import Meta 
+ import Buddha
+    ( Record (..) )
+ 
+-import Data.FiniteMap
+-   ( emptyFM
+-   , lookupFM
+-   , addListToFM_C
+-   , fmToList
++import qualified Data.Map as Map
++   ( empty
++   , lookup
++   , insertWith
++   , toList
+    ) 
+ 
+-import Data.Set
+-   ( Set
+-   , elementOf
+-   , addToSet
+-   , emptySet
++import qualified Data.Set as Set
++   ( member
++   , insert
++   , empty
+    )
++import Data.Set (Set)
+ 
+ import Data.Array
+    ( listArray
+@@ -110,10 +110,10 @@ mkRecordArray recs 
+ 
+ mkNodeMap :: [Record] -> NodeMap
+ mkNodeMap recs
+-   = mkNodeMapWorker emptyFM (parentChildList recs []) 
++   = mkNodeMapWorker Map.empty (parentChildList recs []) 
+    where
+    mkNodeMapWorker :: NodeMap -> [(Int,[Int])] -> NodeMap
+-   mkNodeMapWorker = addListToFM_C (\old [new] -> new:old) 
++   mkNodeMapWorker = foldl (\map (key, elt) -> Map.insertWith (\old [new] -> new:old) key elt map)
+    parentChildList :: [Record] -> [(Int,[Int])] -> [(Int,[Int])]
+    parentChildList [] acc = acc
+    parentChildList (Rec parent index _name _args _result _line _modName : recs) acc
+@@ -125,14 +125,14 @@ mkNodeMap recs
+ 
+ rootNodes :: NodeMap -> [EDT]
+ rootNodes nodeMap
+-   = case lookupFM nodeMap rootNumber of
++   = case Map.lookup rootNumber nodeMap of
+         Nothing -> []
+         Just nodes -> nodes
+ 
+ children :: EDT -> IO [EDT]
+ children edt 
+    = do nodeMap <- readGlobalState state_nodeMap
+-        case lookupFM nodeMap edt of
++        case Map.lookup edt nodeMap of
+            Nothing -> return []
+            Just kids -> return kids 
+ 
+@@ -167,24 +167,24 @@ recordToDerivation (Constant _index name
+ 
+ size :: EDT -> IO Integer
+ size node 
+-   = sizeWorker emptySet node
++   = sizeWorker Set.empty node
+    where
+    sizeWorker :: Set EDT -> EDT -> IO Integer
+    sizeWorker visited node
+-      | node `elementOf` visited = return 0
++      | node `Set.member` visited = return 0
+       | otherwise = do kids <- children node
+                        kidsSize <- mapM (sizeWorker newVisited) (nub kids)
+                        return $ 1 + sum kidsSize 
+                     where
+-                    newVisited = addToSet visited node
++                    newVisited = Set.insert node visited
+ 
+ depth :: EDT -> IO Integer
+ depth node 
+-   = depthWorker emptySet node
++   = depthWorker Set.empty node
+    where
+    depthWorker :: Set EDT -> EDT -> IO Integer
+    depthWorker visited node
+-      | node `elementOf` visited = return 0
++      | node `Set.member` visited = return 0
+       | otherwise
+            = do kids <- children node  
+                 if null kids 
+@@ -192,7 +192,7 @@ depth node 
+                     else do kidsSize <- mapM (depthWorker newVisited) (nub kids)
+                             return $ 1 + maximum kidsSize 
+              where
+-             newVisited = addToSet visited node
++             newVisited = Set.insert node visited
+ 
+ result :: EDT -> IO Val
+ result node
+@@ -217,7 +217,7 @@ name node
+ parents :: EDT -> IO [EDT]
+ parents node 
+    = do nodeMap <- readGlobalState state_nodeMap
+-        return $ lookupParents node $ fmToList nodeMap
++        return $ lookupParents node $ Map.toList nodeMap
+    where
+    lookupParents :: EDT -> [(EDT, [EDT])] -> [EDT] 
+    lookupParents seek [] = []
+diff -urwpN buddha-1.2.orig/libbuddha/GhcInternalsC.c buddha-1.2/libbuddha/GhcInternalsC.c
+--- buddha-1.2.orig/libbuddha/GhcInternalsC.c	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/GhcInternalsC.c	2006-09-11 10:22:27.000000000 +0100
+@@ -166,7 +166,12 @@ GraphNode *makeHeapGraph_ (StgClosure *o
+        }
+ #endif
+ 
++#if __GLASGOW_HASKELL__ >= 605
++       case MUT_VAR_CLEAN:
++       case MUT_VAR_DIRTY:
++#else
+        case MUT_VAR:
++#endif
+        {
+           node = makeHeapGraph_ (followMutVar (realObj)); 
+           break;
+@@ -179,8 +184,10 @@ GraphNode *makeHeapGraph_ (StgClosure *o
+        case CONSTR_1_1:
+        case CONSTR_0_2:
+        case CONSTR_2_0:
++#if __GLASGOW_HASKELL__ < 605
+        case CONSTR_INTLIKE:
+        case CONSTR_CHARLIKE:
++#endif
+        case CONSTR_STATIC:
+        case CONSTR_NOCAF_STATIC:
+        {
+@@ -360,8 +367,10 @@ Bool isAConstructor (int type)
+        case CONSTR_1_1:
+        case CONSTR_0_2:
+        case CONSTR_2_0:
++#if __GLASGOW_HASKELL__ < 605
+        case CONSTR_INTLIKE:
+        case CONSTR_CHARLIKE:
++#endif
+        case CONSTR_STATIC:
+        case CONSTR_NOCAF_STATIC:
+        {
+diff -urwpN buddha-1.2.orig/libbuddha/GraphToDotGraph.hs buddha-1.2/libbuddha/GraphToDotGraph.hs
+--- buddha-1.2.orig/libbuddha/GraphToDotGraph.hs	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/GraphToDotGraph.hs	2006-09-11 09:58:10.000000000 +0100
+@@ -38,7 +38,8 @@ import Graph 
+ 
+ import DotGraph
+ 
+-import Data.Set
++import qualified Data.Set as Set
++import Data.Set (Set)
+ 
+ import Monad
+    ( unless )
+@@ -80,7 +81,7 @@ run maxDepth initState (S comp)
+ initState = State { state_count    = 0 
+                   , state_stmts    = []
+                   , state_maxDepth = 0
+-                  , state_nodes    = emptySet 
++                  , state_nodes    = Set.empty
+                   }
+ 
+ select :: (State -> b) -> S b
+@@ -120,7 +121,7 @@ getMaxDepth = select state_maxDepth
+ nodeSeen :: String -> S Bool 
+ nodeSeen e
+    = do nodes <- getNodes
+-        return (elementOf e nodes)
++        return (Set.member e nodes)
+ 
+ getNodes :: S (Set String)
+ getNodes = select state_nodes 
+@@ -128,7 +129,7 @@ getNodes = select state_nodes 
+ addNode :: String -> S ()
+ addNode node
+    = S $ \s -> let oldNodes = state_nodes s 
+-                   newNodes = addToSet oldNodes node
++                   newNodes = Set.insert node oldNodes
+                in Right ((), s { state_nodes = newNodes })
+ 
+ unlessSeenNode :: String -> S () -> S () 
+diff -urwpN buddha-1.2.orig/libbuddha/GraphToExp.hs buddha-1.2/libbuddha/GraphToExp.hs
+--- buddha-1.2.orig/libbuddha/GraphToExp.hs	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/GraphToExp.hs	2006-09-11 10:07:37.000000000 +0100
+@@ -55,7 +55,8 @@ import Graph 
+ import Data
+    ( FunTable )
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import List 
+    ( nub )
+@@ -75,12 +76,12 @@ import System.IO.Unsafe
+ 
+ -- checking for cycles
+ 
+-type NameMap = FiniteMap Word String
++type NameMap = Map Word String
+ 
+ -- find out where any cycles occur in the graph and name them
+ cycleNodes :: Graph -> NameMap
+ cycleNodes graph
+-   = listToFM $ reverse $ zip (nub $ getCycles graph) nameSupply 
++   = Map.fromList $ reverse $ zip (nub $ getCycles graph) nameSupply 
+    where
+    nameSupply :: [String]
+    nameSupply = ["_x" ++ show i | i <- [1..]]
+@@ -122,7 +123,7 @@ run initState (S comp)
+         Left err -> error err
+         Right (result, newState) -> (result, newState)
+ 
+-initState funTable = State { state_nameMap = emptyFM 
++initState funTable = State { state_nameMap = Map.empty 
+                            , state_funTable = funTable
+                            }
+ 
+@@ -139,12 +140,12 @@ setNameMap nameMap
+ lookupNameMap :: Word -> S (Maybe String)
+ lookupNameMap i
+    = do nameMap <- getNameMap
+-        return $ lookupFM nameMap i
++        return $ Map.lookup i nameMap
+ 
+ lookupFunTable :: Int -> S (Maybe [(Val, Val)])
+ lookupFunTable i
+    = do table <- getFunTable
+-        return $ lookupFM table i
++        return $ Map.lookup i table
+         
+ graphToExp :: Bool -> FunTable -> Graph -> Exp
+ graphToExp detectCycles funTable g 
+diff -urwpN buddha-1.2.orig/libbuddha/Internals.h buddha-1.2/libbuddha/Internals.h
+--- buddha-1.2.orig/libbuddha/Internals.h	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/Internals.h	2006-09-11 10:41:45.000000000 +0100
+@@ -14,12 +14,29 @@
+ #define Fun          12 
+ #define Unknown      13
+ 
++#if __GLASGOW_HASKELL__>604
++
++#define GHC_RTS_USES_CAPABILITY
++#define CAP cap,
++
++#define app2(A, B) rts_apply(cap, (A),(B))
++#define app3(A, B, C) rts_apply(cap, rts_apply(cap, (A),(B)),(C))
++#define app4(A, B, C, D) rts_apply(cap, rts_apply(cap, rts_apply(cap, (A),(B)),(C)),(D))
++#define app5(A, B, C, D, E) rts_apply(cap, rts_apply(cap, rts_apply(cap, rts_apply((A),(B)),(C)),(D)),(E))
++#define app6(A, B, C, D, E, F) rts_apply(cap, rts_apply(cap, rts_apply(cap, rts_apply(cap, rts_apply(cap, (A),(B)),(C)),(D)),(E)),(F))
++
++#else
++
++#define CAP
++
+ #define app2(A, B) rts_apply((A),(B))
+ #define app3(A, B, C) rts_apply(rts_apply((A),(B)),(C))
+ #define app4(A, B, C, D) rts_apply(rts_apply(rts_apply((A),(B)),(C)),(D))
+ #define app5(A, B, C, D, E) rts_apply(rts_apply(rts_apply(rts_apply((A),(B)),(C)),(D)),(E))
+ #define app6(A, B, C, D, E, F) rts_apply(rts_apply(rts_apply(rts_apply(rts_apply((A),(B)),(C)),(D)),(E)),(F))
+ 
++#endif
++
+ 
+ typedef struct _graphNode GraphNode; 
+ typedef union  _val Val;
+diff -urwpN buddha-1.2.orig/libbuddha/Makefile.am buddha-1.2/libbuddha/Makefile.am
+--- buddha-1.2.orig/libbuddha/Makefile.am	2004-05-16 12:25:50.000000000 +0100
++++ buddha-1.2/libbuddha/Makefile.am	2006-09-11 16:55:56.000000000 +0100
+@@ -34,7 +34,7 @@ pkginclude_HEADERS = Hash.h Internals.h 
+ ## we don't need to specify the linker for this because we are just building
+ ## a library -- to there is no linking to be done.
+ 
+-GHC_PACKAGES = -package readline -package parsec -package text -package lang -package haskell-src -package-name buddha
++GHC_PACKAGES = -package readline -package parsec -package haskell-src -package-name buddha-$(VERSION)
+ GHC_FLAGS    = --make -O -prof -fglasgow-exts -fwarn-unused-imports -hisuf p_hi -no-link -no-hs-main 
+ 
+ GHC_COMPILE_FLAGS = $(GHC_PACKAGES) $(GHC_FLAGS) $(DEFS) 
+diff -urwpN buddha-1.2.orig/libbuddha/Oracle.hs buddha-1.2/libbuddha/Oracle.hs
+--- buddha-1.2.orig/libbuddha/Oracle.hs	2004-05-13 10:04:56.000000000 +0100
++++ buddha-1.2/libbuddha/Oracle.hs	2006-09-11 10:09:22.000000000 +0100
+@@ -36,9 +36,9 @@ module Oracle 
+ import List 
+    ( null )
+ 
+-import Data.FiniteMap 
+-   ( addToFM_C
+-   , lookupFM
++import qualified Data.Map as Map
++   ( insertWith
++   , lookup
+    )
+ 
+ import Data 
+@@ -114,7 +114,7 @@ judgementToRemember other   = True 
+ -- look for a derivation in the database
+ lookupDerivation :: JudgeDatabase -> Derivation -> Maybe Judgement
+ lookupDerivation db deriv
+-   = case lookupFM db (deriv_name deriv) of
++   = case Map.lookup (deriv_name deriv) db of
+         Nothing -> Nothing
+         Just entries -> lookupEntry entries deriv
+    where
+@@ -132,7 +132,7 @@ updateJudgeDatabase item@(deriv, judgeme
+    updater :: DebugState -> DebugState
+    updater state
+       = let oldJudgements = state_judgeDatabase state
+-            newJudgements = addToFM_C combiner oldJudgements (deriv_name deriv) [item]
++            newJudgements = Map.insertWith combiner (deriv_name deriv) [item] oldJudgements
+         in state { state_judgeDatabase = newJudgements } 
+    -- invariant: we only add to the map if it is not already there
+    -- this invariant is not checked in the code for efficiency
+diff -urwpN buddha-1.2.orig/libbuddha/ReEvalC.c buddha-1.2/libbuddha/ReEvalC.c
+--- buddha-1.2.orig/libbuddha/ReEvalC.c	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/ReEvalC.c	2006-09-11 10:34:53.000000000 +0100
+@@ -115,7 +115,13 @@ void compare (GraphNode *old, HaskellObj
+ /* force a value to WHNF */
+ void eval_whnf (HaskellObj in, HaskellObj *out)
+ {
++#ifdef GHC_RTS_USES_CAPABILITY
++   Capability *cap = rts_lock();
++   rts_eval (cap, in, out);
++   rts_unlock(cap);
++#else
+    rts_eval (in, out);
++#endif
+ }
+ 
+ void applyFunToArgs (HaskellObj obj, StgStablePtr fun)
+@@ -134,6 +140,10 @@ void applyFunToArgs (HaskellObj obj, Stg
+    StgStablePtr listStablePointer;
+    HaskellObj realFun;
+ 
++#ifdef GHC_RTS_USES_CAPABILITY
++   Capability *cap = rts_lock();
++#endif
++
+    /* this should be an STRef, whose first arg is a MutVar */
+    stref = removeIndirections (obj); 
+ 
+@@ -194,5 +204,9 @@ void applyFunToArgs (HaskellObj obj, Stg
+       listinfo = get_itbl (list);
+    }
+ 
++#ifdef GHC_RTS_USES_CAPABILITY
++    rts_unlock(cap);
++#endif
++
+    return;
+ }      
+diff -urwpN buddha-1.2.orig/libbuddha/ReifyC.c buddha-1.2/libbuddha/ReifyC.c
+--- buddha-1.2.orig/libbuddha/ReifyC.c	2004-04-28 05:10:06.000000000 +0100
++++ buddha-1.2/libbuddha/ReifyC.c	2006-09-11 10:48:13.000000000 +0100
+@@ -2,7 +2,11 @@
+ #include "Internals.h"
+ #include <stdio.h>
+ 
+-HaskellObj reifyC_ ( GraphNode* node
++HaskellObj reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                     Capability *cap,
++#endif
++                     GraphNode* node
+                    , StgClosure *AppNode
+                    , StgClosure *CharNode
+                    , StgClosure *IntNode
+@@ -13,6 +17,14 @@ HaskellObj reifyC_ ( GraphNode* node
+                    , StgClosure *Nil
+                    , StgClosure *Cons );
+ 
++#ifdef GHC_RTS_USES_CAPABILITY
++#define rts_mkWord(x)   rts_mkWord(cap, x)
++#define rts_mkInt(x)    rts_mkInt(cap, x)
++#define rts_mkChar(x)   rts_mkChar(cap, x)
++#define rts_mkFloat(x)  rts_mkFloat(cap, x)
++#define rts_mkDouble(x) rts_mkDouble(cap, x)
++#define rts_mkString(x) rts_mkString(cap, x)
++#endif
+ 
+ StgStablePtr reifyC ( StgStablePtr ptrObj
+                     , StgStablePtr ptrAppNode
+@@ -42,6 +54,10 @@ StgStablePtr reifyC ( StgStablePtr ptrOb
+ 
+    GraphNode *heapGraph;
+ 
++#ifdef GHC_RTS_USES_CAPABILITY
++   Capability *cap = rts_lock();
++#endif
++
+    heapGraph = makeHeapGraph (ptrObj);
+ 
+    /* it is important to do the stable pointer dereferencing AFTER the
+@@ -57,7 +73,11 @@ StgStablePtr reifyC ( StgStablePtr ptrOb
+    Nil         = (HaskellObj) deRefStablePtr (ptrNil);
+    Cons        = (HaskellObj) deRefStablePtr (ptrCons);
+ 
+-   graph = reifyC_ ( heapGraph 
++   graph = reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                     cap,
++#endif
++                     heapGraph 
+                    , AppNode
+                    , CharNode
+                    , IntNode
+@@ -71,10 +91,18 @@ StgStablePtr reifyC ( StgStablePtr ptrOb
+    freeGraph (heapGraph);
+    sptrGraph = (getStablePtr ((StgPtr) graph));
+ 
++#ifdef GHC_RTS_USES_CAPABILITY
++   rts_unlock(cap);
++#endif
++
+    return (sptrGraph);
+ }
+ 
+-HaskellObj reifyC_ ( GraphNode* node
++HaskellObj reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                     Capability *cap,
++#endif
++                     GraphNode* node
+                    , StgClosure *AppNode
+                    , StgClosure *CharNode
+                    , StgClosure *IntNode
+@@ -113,7 +141,11 @@ HaskellObj reifyC_ ( GraphNode* node
+             /* XXX probably should optimise the tail recursion */
+             for (i = node->numChildren - 1; i >= 0; i--)
+             {
+-               child = reifyC_ ( node->children[i] 
++               child = reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                                 cap,
++#endif
++	                         node->children[i] 
+                                , AppNode
+                                , CharNode
+                                , IntNode
+@@ -142,7 +174,11 @@ HaskellObj reifyC_ ( GraphNode* node
+       {
+          HaskellObj child;
+ 
+-         child = reifyC_ ( node->children[0]
++         child = reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                           cap,
++#endif
++                           node->children[0]
+                          , AppNode
+                          , CharNode
+                          , IntNode
+@@ -167,7 +203,11 @@ HaskellObj reifyC_ ( GraphNode* node
+       {
+          HaskellObj child;
+ 
+-         child = reifyC_ ( node->children[0]
++         child = reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                           cap,
++#endif
++                           node->children[0]
+                          , AppNode
+                          , CharNode
+                          , IntNode
+@@ -228,7 +268,11 @@ HaskellObj reifyC_ ( GraphNode* node
+       {
+          HaskellObj child;
+ 
+-         child = reifyC_ ( node->children[0]
++         child = reifyC_ (
++#ifdef GHC_RTS_USES_CAPABILITY
++                           cap,
++#endif
++                           node->children[0]
+                          , AppNode
+                          , CharNode
+                          , IntNode
+diff -urwpN buddha-1.2.orig/Makefile.am buddha-1.2/Makefile.am
+--- buddha-1.2.orig/Makefile.am	2004-04-28 05:10:00.000000000 +0100
++++ buddha-1.2/Makefile.am	2006-09-11 15:51:11.000000000 +0100
+@@ -4,6 +4,6 @@
+ ## do not hand edit Makefile.in or Makefile as they will
+ ## get clobbered next time automake and configure are run
+ 
+-SUBDIRS = libbuddha transform prelude scripts data docs advice config debian examples 
++SUBDIRS = data libbuddha transform prelude scripts docs advice config debian examples 
+ 
+ EXTRA_DIST = Makefile.am.global
+diff -urwpN buddha-1.2.orig/prelude/Buddha/IOPrims_B.hs buddha-1.2/prelude/Buddha/IOPrims_B.hs
+--- buddha-1.2.orig/prelude/Buddha/IOPrims_B.hs	2004-04-28 05:10:10.000000000 +0100
++++ buddha-1.2/prelude/Buddha/IOPrims_B.hs	2006-09-11 11:57:38.000000000 +0100
+@@ -88,7 +88,7 @@ module IOPrims_B
+                  , primBufferModeShowsPrec
+                  ) where
+ 
+-import IOExts (unsafePerformIO)
++import System.IO.Unsafe (unsafePerformIO)
+ import qualified Buddha as B (D, app, F, fio) 
+ import qualified Meta  (Exp (Eio))
+ import qualified CPUTime (getCPUTime)
+diff -urwpN buddha-1.2.orig/prelude/Buddha/Makefile.am buddha-1.2/prelude/Buddha/Makefile.am
+--- buddha-1.2.orig/prelude/Buddha/Makefile.am	2004-05-16 11:35:34.000000000 +0100
++++ buddha-1.2/prelude/Buddha/Makefile.am	2006-09-11 17:37:33.000000000 +0100
+@@ -40,9 +40,9 @@ libbuddhaHsBase_p_a_SOURCES = Array_B.hs
+ ## we don't need to specify the linker for this because we are just building
+ ## a library -- to there is no linking to be done.
+ 
+-INTERFACE_DIR = @top_srcdir@/libbuddha
+-GHC_PACKAGES  = -package lang -package-name buddhaHsBase
+-GHC_FLAGS     = --make -w -O -prof -fglasgow-exts -fno-implicit-prelude -hisuf p_hi -no-link -no-hs-main -i$(INTERFACE_DIR) 
++GHC_PACKAGES  = -package-conf $(top_srcdir)/data/buddha.pkg-inplace.conf -package buddha \
++		-package-name buddhaHsBase-$(VERSION)
++GHC_FLAGS     = --make -w -O -prof -fglasgow-exts -fno-implicit-prelude -hisuf p_hi -no-link -no-hs-main
+ 
+ GHC_COMPILE_FLAGS = $(GHC_PACKAGES) $(GHC_FLAGS) 
+ 
+diff -urwpN buddha-1.2.orig/prelude/Buddha/Prims_B.hs buddha-1.2/prelude/Buddha/Prims_B.hs
+--- buddha-1.2.orig/prelude/Buddha/Prims_B.hs	2004-05-03 06:07:00.000000000 +0100
++++ buddha-1.2/prelude/Buddha/Prims_B.hs	2006-09-11 11:57:58.000000000 +0100
+@@ -5,7 +5,7 @@ module Prims_B where
+ 
+ import qualified Buddha as B
+ import qualified Char
+-import qualified IOExts
++--import qualified IOExts
+ import qualified CPUTime
+ import GHC.Exts
+ import Prelude hiding (IOError)
+diff -urwpN buddha-1.2.orig/prelude/Buddha/RandomPrims_B.hs buddha-1.2/prelude/Buddha/RandomPrims_B.hs
+--- buddha-1.2.orig/prelude/Buddha/RandomPrims_B.hs	2004-04-28 05:10:10.000000000 +0100
++++ buddha-1.2/prelude/Buddha/RandomPrims_B.hs	2006-09-11 12:32:34.000000000 +0100
+@@ -14,7 +14,7 @@ module RandomPrims_B ( Random.StdGen
+ import Prelude
+ 
+ import qualified Random ( 
+-                        , StdGen
++                          StdGen
+                         , mkStdGen
+                         , RandomGen (..)
+                         , Random (..)
+diff -urwpN buddha-1.2.orig/scripts/buddha-mk.sh buddha-1.2/scripts/buddha-mk.sh
+--- buddha-1.2.orig/scripts/buddha-mk.sh	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/scripts/buddha-mk.sh	2006-09-11 18:17:31.000000000 +0100
+@@ -12,7 +12,7 @@
+ 
+ ghc=@ghcpath@
+ 
+-ghcArgs="-O --make -w -package-conf @datadir@/buddha.pkg.conf -prof -package buddha -package buddhaHsBase -package lang -package posix -fglasgow-exts -fno-implicit-prelude -fno-cse -o debug Main.hs"
++ghcArgs="-O --make -w -package-conf @datadir@/buddha.pkg.conf -prof -package base -package haskell98 -package unix -package buddha -package buddhaHsBase -fglasgow-exts -fno-implicit-prelude -fno-cse -o debug Main.hs"
+ 
+ if [ $# -eq 0 ]; then
+    $ghc $ghcArgs
+diff -urwpN buddha-1.2.orig/transform/Depend.hs buddha-1.2/transform/Depend.hs
+--- buddha-1.2.orig/transform/Depend.hs	2004-05-11 06:29:51.000000000 +0100
++++ buddha-1.2/transform/Depend.hs	2006-09-11 11:17:15.000000000 +0100
+@@ -41,7 +41,8 @@ import Data.Graph
+ 
+ import Text.ParserCombinators.Parsec
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import System          
+    ( system )
+@@ -61,14 +62,14 @@ import BuddhaName      
+ 
+ type ModName = String
+ 
+-dependParse :: String -> FiniteMap ModName [ModName] 
+-dependParse str = foldr processLine emptyFM $ lines str
++dependParse :: String -> Map ModName [ModName] 
++dependParse str = foldr processLine Map.empty $ lines str
+ 
+-processLine :: String -> FiniteMap ModName [ModName] -> FiniteMap ModName [ModName] 
++processLine :: String -> Map ModName [ModName] -> Map ModName [ModName] 
+ processLine line depends 
+    = case parse parseLine "" line of
+         Left err -> depends 
+-        Right (a, b) -> addToFM_C (\old new -> new ++ old) depends a [b] 
++        Right (a, b) -> Map.insertWith (\old new -> new ++ old) a [b] depends
+ 
+ parseLine :: Parser (String, String)
+ parseLine
+@@ -122,7 +123,7 @@ moduleName = many1 (noneOf ".")
+ 
+ edgeList :: String -> [(ModName, ModName, [ModName])]
+ edgeList str
+-   = [(m, m, deps) | (m, deps) <- fmToList $ dependParse str]
++   = [(m, m, deps) | (m, deps) <- Map.toList $ dependParse str]
+ 
+ moduleOrder :: String -> [ModName]
+ moduleOrder str
+diff -urwpN buddha-1.2.orig/transform/Ident.hs buddha-1.2/transform/Ident.hs
+--- buddha-1.2.orig/transform/Ident.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/Ident.hs	2006-09-11 11:22:18.000000000 +0100
+@@ -65,7 +65,8 @@ import IfaceUtils               
+    , IdentQual (..)
+    )
+ 
+-import Data.FiniteMap 
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Error                    
+    ( fatalError )
+@@ -104,7 +105,7 @@ data IdentInfo 
+      deriving Show
+ 
+   -- map from name to ident info
+-type IdentMap = FiniteMap HsQName IdentInfo
++type IdentMap = Map HsQName IdentInfo
+ 
+   -- pretty crude printing of ident map
+ showIdentMap :: IdentMap -> String
+@@ -114,13 +115,13 @@ showIdentMap identMap 
+    mapList = identMapToList identMap 
+ 
+ emptyIdentMap :: IdentMap
+-emptyIdentMap = emptyFM
++emptyIdentMap = Map.empty
+ 
+ identMapToList :: IdentMap -> [(HsQName, IdentInfo)]
+-identMapToList = fmToList
++identMapToList = Map.toList
+ 
+ listToIdentMap ::  [(HsQName, IdentInfo)] -> IdentMap
+-listToIdentMap = listToFM
++listToIdentMap = Map.fromList
+ 
+ lookupIdent :: IdentMap -> HsQName -> Maybe IdentInfo 
+ lookupIdent identMap name
+@@ -136,21 +137,21 @@ lookupIdent identMap name
+                                                  , identInfo_arity = 2 })
+                  other -> fatalError __FILE__ __LINE__ $ 
+                              "lookupIdent: unknown special symbol: " ++ show name
+-        other -> lookupFM identMap name 
++        other -> Map.lookup name identMap
+ 
+ plusIdentMap :: IdentMap -> IdentMap -> IdentMap
+-plusIdentMap = plusFM
++plusIdentMap = flip Map.union
+ 
+ --------------------------------------------------------------------------------
+ 
+ -- collect the constructor arities from a list of decls
+--- there should never be any duplicates, so plusFM is sufficient
++-- there should never be any duplicates, so Map.union is sufficient
+ constructorIdents :: (HsName -> HsQName) -> [HsDecl] -> IdentMap 
+ constructorIdents _qualifier [] = emptyIdentMap
+ constructorIdents qualifier (decl@(HsDataDecl _sloc _cntxt _name _args condecls _derives):decls)
+-   = conDeclIdents qualifier condecls `plusFM` constructorIdents qualifier decls
++   = conDeclIdents qualifier condecls `plusIdentMap` constructorIdents qualifier decls
+ constructorIdents qualifier ((HsNewTypeDecl _sloc _cntxt _name _args condecl _derives):decls)
+-   = conDeclIdents qualifier [condecl] `plusFM` constructorIdents qualifier decls
++   = conDeclIdents qualifier [condecl] `plusIdentMap` constructorIdents qualifier decls
+ constructorIdents qualifier (_anythingElse:decls)
+    = constructorIdents qualifier decls
+ 
+@@ -267,7 +268,7 @@ classMemberIdents qualifier (_otherDecl 
+ -- doesn't check for duplicates, probably should
+ -- XXX most definitely should - please fix me 
+ joinIdentMap :: IdentMap -> IdentMap -> IdentMap 
+-joinIdentMap map1 map2 = plusFM map1 map2
++joinIdentMap map1 map2 = Map.union map2 map1
+ 
+ --------------------------------------------------------------------------------
+ 
+diff -urwpN buddha-1.2.orig/transform/Iface.hs buddha-1.2/transform/Iface.hs
+--- buddha-1.2.orig/transform/Iface.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/Iface.hs	2006-09-11 11:35:42.000000000 +0100
+@@ -143,7 +143,8 @@ import qualified PPrint 
+ 
+ import qualified Language.Haskell.Pretty as Pretty
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import ParserUtils              
+    ( parseHsSource )
+@@ -214,10 +215,10 @@ import Monad                    
+ import Char                     
+    ( isUpper )
+ 
++import qualified Data.Set as Set
++   ( member )
+ import Data.Set                 
+-   ( Set 
+-   , elementOf 
+-   )
++   ( Set )
+ 
+ --------------------------------------------------------------------------------
+ 
+@@ -276,16 +277,16 @@ plusModIface iface1 iface2
+        Foo.Show -> [show]
+ -}
+ type AssocMap 
+-   = FiniteMap 
++   = Map 
+         HsQName    -- the type or class name
+         [HsName]   -- the datacons or members
+ 
+ emptyAssocMap :: AssocMap
+-emptyAssocMap = emptyFM
++emptyAssocMap = Map.empty
+ 
+ -- lookup a class or tycon in an association to find its members
+ lookupAssocMap :: AssocMap -> HsQName -> Maybe [HsName]
+-lookupAssocMap = lookupFM 
++lookupAssocMap = flip Map.lookup
+ 
+   -- pretty crude printing of an Association 
+ showAssocMap :: AssocMap -> String
+@@ -296,23 +297,23 @@ showAssocMap assocMap
+ 
+ -- convert a list into an AssocMap
+ listToAssocMap :: [(HsQName, [HsName])] -> AssocMap
+-listToAssocMap = listToFM 
++listToAssocMap = Map.fromList
+ 
+ listToAssocMap_C :: ([HsName] -> [HsName] -> [HsName])
+               -> [(HsQName, [HsName])] -> AssocMap
+ listToAssocMap_C combiner [] = emptyAssocMap
+ listToAssocMap_C combiner ((name, members):items)
+-   = addToFM_C combiner (listToAssocMap_C combiner items) name members 
++   = Map.insertWith combiner name members (listToAssocMap_C combiner items)
+ 
+ assocMapToList :: AssocMap -> [(HsQName, [HsName])]
+-assocMapToList = fmToList
++assocMapToList = Map.toList
+ 
+ -- join two association maps together
+ -- there is potential for overlap between the two
+ -- so we must sometimes combine them
+ plusAssocMap :: AssocMap -> AssocMap -> AssocMap
+ -- plusAssocMap = plusFM_C (\mems1 mems2 -> nub (mems1 ++ mems2))
+-plusAssocMap = plusFM_C union 
++plusAssocMap map1 map2 = Map.unionWith union map2 map1
+ 
+ -- collect the associations from a list of declarations
+ -- type synonyms result in empty associations!
+@@ -409,8 +410,8 @@ mkModIfaceSpecs modName ifaceAcc imports
+         let infixMap = modIface_infixMap totalIface
+         case lookupIdent identMap qName of
+            Nothing -> abortWithError ExportError errMsg
+-           Just info -> do let newIdentMapAcc = addToFM (modIface_idents ifaceAcc) qName info
+-                               extraFixitys   = filterFM (\name _ -> name == qName) infixMap  
++           Just info -> do let newIdentMapAcc = Map.insert qName info (modIface_idents ifaceAcc)
++                               extraFixitys   = Map.filterWithKey (\name _ -> name == qName) infixMap  
+                                newInfixMap    = extraFixitys `plusInfixMap` (modIface_infixMap ifaceAcc)
+                                newIfaceAcc    = ifaceAcc { modIface_idents   = newIdentMapAcc  
+                                                          , modIface_infixMap = newInfixMap
+@@ -432,8 +433,8 @@ mkModIfaceSpecs modName ifaceAcc imports
+             Just _  -> do let newSynMapAcc 
+                                  = case lookupSynonymMap synMap qName of
+                                       Nothing -> modIface_synonymMap ifaceAcc  
+-                                      Just info -> addToFM (modIface_synonymMap ifaceAcc) qName info 
+-                              newAssocsAcc = addToFM_C union (modIface_assocs ifaceAcc) qName []
++                                      Just info -> Map.insert qName info (modIface_synonymMap ifaceAcc)
++                              newAssocsAcc = Map.insertWith union qName [] (modIface_assocs ifaceAcc)
+                               newIfaceAcc  = ifaceAcc { modIface_synonymMap = newSynMapAcc 
+                                                       , modIface_assocs = newAssocsAcc
+                                                       } 
+@@ -462,9 +463,9 @@ mkModIfaceSpecs modName ifaceAcc imports
+                                                                 memsIdentInfoList
+                                                                 (modIface_idents ifaceAcc)  
+                                newAssocsAcc = addToFM_C union (modIface_assocs ifaceAcc) qName mems 
+-                               extraFixitys = filterFM (\name _ -> name `elem` qMems) infixMap  
++                               extraFixitys = Map.filter (\name _ -> name `elem` qMems) infixMap  
+                                newInfixMap = extraFixitys `plusInfixMap` (modIface_infixMap ifaceAcc)
+-                               extraRecords = filterFM (\name _ -> name `elem` qMems) recordMap 
++                               extraRecords = Map.filter (\name _ -> name `elem` qMems) recordMap 
+                                newRecordsAcc = addToFM_C union (modIface_recordMap ifaceAcc) qName extraRecords 
+                                newIfaceAcc = ifaceAcc { modIface_idents = newIdentsAcc 
+                                                       , modIface_assocs = newAssocsAcc
+@@ -499,8 +500,8 @@ mkModIfaceSpecs modName ifaceAcc imports
+                                        let newIdentsAcc = addListItemsToMap UnQualified
+                                                                 memsIdentInfoList
+                                                                 (modIface_idents ifaceAcc)  
+-                                           newAssocsAcc = addToFM_C union (modIface_assocs ifaceAcc) qName itemNames 
+-                                           extraFixitys = filterFM (\name _ -> name `elem` qItemNames) infixMap  
++                                           newAssocsAcc = Map.insertWith union qName itemNames (modIface_assocs ifaceAcc)
++                                           extraFixitys = Map.filterWithKey (\name _ -> name `elem` qItemNames) infixMap  
+                                            newInfixMap = extraFixitys `plusInfixMap` (modIface_infixMap ifaceAcc)
+                                            newRecordsAcc = addListItemsToMap UnQualified
+                                                               recordInfos
+@@ -560,15 +561,15 @@ mkModIfaceSpecs modName ifaceAcc imports
+                                        exportTycons = importInfo_tycons importInfo
+                                    return ModIface
+                                           { modIface_idents     
+-                                               = filterFM (\name _ -> name `elem` exportIdents) identMap 
++                                               = Map.filterWithKey (\name _ -> name `elem` exportIdents) identMap 
+                                           , modIface_assocs     
+-                                               = filterFM (\name _ -> name `elem` exportTycons) assocMap 
++                                               = Map.filterWithKey (\name _ -> name `elem` exportTycons) assocMap 
+                                           , modIface_infixMap   
+-                                               = filterFM (\name _ -> name `elem` exportIdents) infixMap 
++                                               = Map.filterWithKey (\name _ -> name `elem` exportIdents) infixMap 
+                                           , modIface_synonymMap 
+-                                               = filterFM (\name _ -> name `elem` exportTycons) synonymMap
++                                               = Map.filterWithKey (\name _ -> name `elem` exportTycons) synonymMap
+                                           , modIface_recordMap
+-                                               = filterFM (\name _ -> name `elem` exportIdents) recordMap 
++                                               = Map.filterWithKey (\name _ -> name `elem` exportIdents) recordMap 
+                                           }
+         let newIfaceAcc = ifaceAcc `plusModIface` newIface
+         mkModIfaceSpecs modName newIfaceAcc imports totalIface specs
+@@ -578,9 +579,9 @@ mkModIfaceSpecs modName ifaceAcc imports
+ 
+ -- find all the items in a finitemap whose key is a name which is
+ -- qualified to a certain module
+-filterMapQualified :: FiniteMap HsQName a -> Module -> FiniteMap HsQName a
++filterMapQualified :: Map HsQName a -> Module -> Map HsQName a
+ filterMapQualified map modName
+-   = filterFM (\name _ -> thisModQualified modName name) map
++   = Map.filterWithKey (\name _ -> thisModQualified modName name) map
+ 
+ fromCNameToName :: HsCName -> HsName
+ fromCNameToName (HsVarName name) = name
+@@ -1049,21 +1050,21 @@ importDecl ifacePath (HsImportDecl _sloc
+                             True  -> notElem
+                             False -> elem
+         -- filter out the things we need from the module interface
+-        let identList = identMapToList   $ filterFM (\name _ -> membership name importedIdents) 
++        let identList = identMapToList   $ Map.filterWithKey (\name _ -> membership name importedIdents) 
+                                                     ifaceIdents 
+-            infixList = infixMapToList   $ filterFM (\name _ -> membership name importedIdents) 
++            infixList = infixMapToList   $ Map.filterWithKey (\name _ -> membership name importedIdents) 
+                                                     ifaceInfixs 
+-            synList   = synonymMapToList $ filterFM (\name _ -> membership name importedTycons) 
++            synList   = synonymMapToList $ Map.filterWithKey (\name _ -> membership name importedTycons) 
+                                                     ifaceSynonyms 
+             assocList = case isHiding of
+                            -- remember to remove any items from the associations that are now
+                            -- hidden
+                            True -> assocMapToList $ removeHiddenAssocItems importedIdents $ 
+-                                                    filterFM (\name _ -> notElem name importedTycons)
++                                                    Map.filterWithKey (\name _ -> notElem name importedTycons)
+                                                     ifaceAssocs
+                            False -> importedAssocs
+         let importedRecords 
+-                = filterFM (\name _ -> membership name importedIdents)
++                = Map.filterWithKey (\name _ -> membership name importedIdents)
+                                                     ifaceRecords
+             recordList = case isHiding of
+                             True -> recordMapToList $ removeHiddenRecordItems importedIdents $ importedRecords
+@@ -1102,11 +1103,11 @@ importDecl ifacePath (HsImportDecl _sloc
+    where
+    removeHiddenAssocItems :: [HsQName] -> AssocMap -> AssocMap
+    removeHiddenAssocItems importedIdents assocs 
+-      = mapFM (\ _name items -> [item | item <- items, (UnQual item) `notElem` importedIdents])
++      = Map.map (\ items -> [item | item <- items, (UnQual item) `notElem` importedIdents])
+               assocs
+    removeHiddenRecordItems :: [HsQName] -> RecordMap -> RecordMap
+    removeHiddenRecordItems importedIdents records 
+-      = mapFM (\ _name items -> [item | item <- items, item `notElem` importedIdents])
++      = Map.map (\ items -> [item | item <- items, item `notElem` importedIdents])
+               records 
+                
+      
+@@ -1228,7 +1229,7 @@ emptyImportInfo = ImportInfo { importInf
+                              , importInfo_tycons = []
+                              }
+ 
+-type ImportMap = FiniteMap Module ImportInfo
++type ImportMap = Map Module ImportInfo
+ 
+ -- crude printing of an import map
+ showImportMap :: ImportMap -> String
+@@ -1240,17 +1241,17 @@ showImportMap importMap 
+    mapList = importMapToList importMap
+ 
+ lookupImportMap :: ImportMap -> Module -> Maybe ImportInfo
+-lookupImportMap = lookupFM
++lookupImportMap = flip Map.lookup
+ 
+ importMapToList :: ImportMap -> [(Module, ImportInfo)]
+-importMapToList = fmToList
++importMapToList = Map.toList
+ 
+ emptyImportMap :: ImportMap
+-emptyImportMap = emptyFM
++emptyImportMap = Map.empty
+ 
+ addToImportMap :: ImportMap -> Module -> ImportInfo -> ImportMap
+ addToImportMap map modName info
+-   = addToFM_C combiner map modName info
++   = Map.insertWith combiner modName info map
+    where
+    combiner :: ImportInfo -> ImportInfo -> ImportInfo
+    combiner info1 info2
+@@ -1269,16 +1270,16 @@ addToImportMap map modName info
+ {- the interface cache -}
+ 
+ -- map a module to its interface
+-type IfaceCache = FiniteMap Module ModIface
++type IfaceCache = Map Module ModIface
+ 
+ lookupIfaceCache :: IfaceCache -> Module -> Maybe ModIface
+-lookupIfaceCache = lookupFM
++lookupIfaceCache = flip Map.lookup
+ 
+ addIfaceToCache :: IfaceCache -> Module -> ModIface -> IfaceCache
+-addIfaceToCache = addToFM 
++addIfaceToCache map key elt = Map.insert key elt map 
+ 
+ emptyIfaceCache :: IfaceCache
+-emptyIfaceCache = emptyFM
++emptyIfaceCache = Map.empty
+ 
+ --------------------------------------------------------------------------------
+ 
+@@ -1304,7 +1305,7 @@ exportSelectors selNames assocs (Just sp
+    impliedSelectorsThingAll name
+       = case lookupAssocMap assocs name of
+            Nothing -> []
+-           Just items -> map HsEVar $ filter (\x -> elementOf x selNames) (map UnQual items)
++           Just items -> map HsEVar $ filter (\x -> Set.member x selNames) (map UnQual items)
+    impliedSelectorsWith :: HsExportSpec -> (HsExportSpec, [HsExportSpec])
+    impliedSelectorsWith (HsEThingWith thingName items)
+       = (HsEThingWith thingName newItems, selectors)
+@@ -1313,7 +1314,7 @@ exportSelectors selNames assocs (Just sp
+       partitionItems :: [HsCName] -> ([HsCName], [HsExportSpec])
+       partitionItems [] = ([], [])
+       partitionItems (item : rest)
+-         | qualifiedItemName `elementOf` selNames 
++         | qualifiedItemName `Set.member` selNames 
+               = (restItems, HsEVar qualifiedItemName : restSelectors)
+          | otherwise = (item : restItems, restSelectors)
+          where
+@@ -1341,7 +1342,7 @@ importSelectors selNames assocs (Just (h
+    impliedSelectorsThingAll name
+       = case lookupAssocMap assocs (UnQual name) of
+            Nothing -> []
+-           Just items -> map (HsIVar . unQualify) $ filter (\x -> elementOf x selNames) (map UnQual items)
++           Just items -> map (HsIVar . unQualify) $ filter (\x -> Set.member x selNames) (map UnQual items)
+    impliedSelectorsWith :: HsImportSpec -> (HsImportSpec, [HsImportSpec])
+    impliedSelectorsWith (HsIThingWith thingName items)
+       = (HsIThingWith thingName newItems, selectors)
+@@ -1350,7 +1351,7 @@ importSelectors selNames assocs (Just (h
+       partitionItems :: [HsCName] -> ([HsCName], [HsImportSpec])
+       partitionItems [] = ([], [])
+       partitionItems (item : rest)
+-         | UnQual itemName `elementOf` selNames 
++         | UnQual itemName `Set.member` selNames
+               = (restItems, HsIVar itemName : restSelectors)
+          | otherwise = (item : restItems, restSelectors)
+          where
+diff -urwpN buddha-1.2.orig/transform/IfaceUtils.hs buddha-1.2/transform/IfaceUtils.hs
+--- buddha-1.2.orig/transform/IfaceUtils.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/IfaceUtils.hs	2006-09-11 11:06:39.000000000 +0100
+@@ -38,7 +38,8 @@ module IfaceUtils 
+    , addListItemsToMap_C
+    ) where
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Language.Haskell.Syntax
+ 
+@@ -59,24 +60,24 @@ data IdentQual
+ -- used by AssocMap, IdentMap, InfixMap
+ 
+ insertMap :: IdentQual
+-          -> FiniteMap HsQName b 
++          -> Map HsQName b 
+           -> HsQName 
+           -> b 
+-          -> FiniteMap HsQName b 
++          -> Map HsQName b 
+ insertMap = insertMap_C (\old new -> new)
+ 
+ insertMap_C :: (b -> b -> b)
+             -> IdentQual
+-            -> FiniteMap HsQName b 
++            -> Map HsQName b 
+             -> HsQName 
+             -> b 
+-            -> FiniteMap HsQName b 
++            -> Map HsQName b 
+ insertMap_C combiner qualification thisMap qName entry
+    = case qualification of
+      Qualified
+         -> case qName of
+-              Qual mod name   -> addToFM_C combiner thisMap qName entry
+-              Special specCon -> addToFM_C combiner thisMap qName entry
++              Qual mod name   -> Map.insertWith combiner qName entry thisMap
++              Special specCon -> Map.insertWith combiner qName entry thisMap
+               UnQual name
+                  -> fatalError 
+                        __FILE__ __LINE__ $ 
+@@ -84,27 +85,27 @@ insertMap_C combiner qualification thisM
+                                  show qName
+      UnQualified
+         -> case qName of
+-              UnQual name     -> addToFM_C combiner thisMap qName entry
+-              Special specCon -> addToFM_C combiner thisMap qName entry
+-              Qual mod name   -> addToFM_C combiner thisMap (UnQual name) entry
++              UnQual name     -> Map.insertWith combiner qName entry thisMap
++              Special specCon -> Map.insertWith combiner qName entry thisMap
++              Qual mod name   -> Map.insertWith combiner (UnQual name) entry thisMap
+      QualAndUnQual
+         -> case qName of
+               Qual mod name
+-                 -> let map1 = addToFM_C combiner thisMap qName entry
+-                    in  addToFM_C combiner map1 (UnQual name) entry
++                 -> let map1 = Map.insertWith combiner qName entry thisMap
++                    in  Map.insertWith combiner (UnQual name) entry map1
+               UnQual name
+                  -> fatalError __FILE__ __LINE__ $ "insertMap_C: attempt to insert an unqualified ident when it must be qualified: " ++
+                                  show qName
+-              Special specCon -> addToFM_C combiner thisMap qName entry
++              Special specCon -> Map.insertWith combiner qName entry thisMap
+ 
+-addListItemsToMap :: IdentQual -> [(HsQName, b)] -> FiniteMap HsQName b -> FiniteMap HsQName b 
++addListItemsToMap :: IdentQual -> [(HsQName, b)] -> Map HsQName b -> Map HsQName b 
+ addListItemsToMap = addListItemsToMap_C (\old new -> new)
+ 
+ addListItemsToMap_C :: (b -> b -> b) 
+                     -> IdentQual
+                     -> [(HsQName, b)]
+-                    -> FiniteMap HsQName b 
+-                    -> FiniteMap HsQName b 
++                    -> Map HsQName b 
++                    -> Map HsQName b 
+ addListItemsToMap_C combiner idQual [] thisMap = thisMap 
+ addListItemsToMap_C combiner idQual ((qName,entry):rest) thisMap 
+   = addListItemsToMap_C combiner idQual rest $ 
+diff -urwpN buddha-1.2.orig/transform/Infix.hs buddha-1.2/transform/Infix.hs
+--- buddha-1.2.orig/transform/Infix.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/Infix.hs	2006-09-11 11:06:39.000000000 +0100
+@@ -56,7 +56,8 @@ module Infix 
+ 
+ import Language.Haskell.Syntax 
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Error
+    ( fatalError )
+@@ -72,16 +73,16 @@ data Fixity 
+      deriving Show
+ 
+ -- a mapping from qualified operator names to fixity information
+-type InfixMap = FiniteMap HsQName Fixity 
++type InfixMap = Map HsQName Fixity 
+ 
+ plusInfixMap :: InfixMap -> InfixMap -> InfixMap
+-plusInfixMap = plusFM
++plusInfixMap = flip Map.union
+ 
+ emptyInfixMap :: InfixMap
+-emptyInfixMap = emptyFM
++emptyInfixMap = Map.empty
+ 
+ infixMapToList :: InfixMap -> [(HsQName, Fixity)]
+-infixMapToList = fmToList
++infixMapToList = Map.toList
+ 
+ -- pretty crude illustration of infix map 
+ showInfixMap :: InfixMap -> String
+@@ -154,7 +155,7 @@ getFixityQName name 
+ lookupInfixMap :: HsQName -> InfixMap -> Maybe Fixity
+ lookupInfixMap (Special HsCons) _infixMap
+    = Just $ Fixity {fixity_assoc = HsAssocRight, fixity_prec  = 5}
+-lookupInfixMap name infixMap = lookupFM infixMap name 
++lookupInfixMap name infixMap = Map.lookup name infixMap
+ 
+ updateInfixMap :: [HsDecl] -> Infix ()
+ updateInfixMap decls
+@@ -421,7 +422,7 @@ insertLocalInfixDecls imap (HsInfixDecl 
+    insertLocalOps _fixity [] imap = imap
+    insertLocalOps fixity (op:ops) infixMap
+       = let opName = nameFromOp op
+-            map1   = addToFM infixMap (UnQual opName) fixity
++            map1   = Map.insert (UnQual opName) fixity infixMap
+         in insertLocalOps fixity ops map1 
+ insertLocalInfixDecls imap (otherDecl : decls) 
+    = insertLocalInfixDecls imap decls 
+@@ -443,8 +444,8 @@ insertTopInfixDecls modName imap (HsInfi
+       = let opName = nameFromOp op
+             -- insert qualified and unqualified versions of the name
+             -- into the infix table
+-            map1 = addToFM infixMap (UnQual opName) fixity 
+-            map2 = addToFM map1 (Qual modName $ opName) fixity 
++            map1 = Map.insert (UnQual opName) fixity infixMap
++            map2 = Map.insert (Qual modName $ opName) fixity map1
+         in  insertTopOps modName fixity ops map2
+ -- class decls can have infix decls and these are treated in the same way
+ -- as top-level infix decls
+diff -urwpN buddha-1.2.orig/transform/Makefile.am buddha-1.2/transform/Makefile.am
+--- buddha-1.2.orig/transform/Makefile.am	2004-05-16 12:26:39.000000000 +0100
++++ buddha-1.2/transform/Makefile.am	2006-09-11 11:47:00.000000000 +0100
+@@ -15,7 +15,7 @@ buddha_real_SOURCES = BuddhaName.hs Erro
+  
+ ## GHC/Haskell specific stuff
+ 
+-GHC_PACKAGES = -package text -package lang -package haskell-src
++GHC_PACKAGES = -package parsec -package haskell-src
+ GHC_FLAGS    = --make -O -fglasgow-exts -no-link -no-hs-main
+ # GHC_DEFS     = -DHASKELL_COMPILER=\"$(GHC)\" -DPACKAGE=\"$(PACKAGE)\" -DVERSION=\"$(VERSION)\" 
+ GHC_DEFS     = -DHASKELL_COMPILER=\"$(GHC)\" 
+diff -urwpN buddha-1.2.orig/transform/Record.hs buddha-1.2/transform/Record.hs
+--- buddha-1.2.orig/transform/Record.hs	2004-05-19 08:06:41.000000000 +0100
++++ buddha-1.2/transform/Record.hs	2006-09-11 11:13:41.000000000 +0100
+@@ -42,7 +42,8 @@ module Record 
+    , mkSelectorSet
+    ) where
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Language.Haskell.Syntax 
+ 
+@@ -64,21 +65,22 @@ import IfaceUtils 
+ import Error 
+    ( fatalError )
+ 
++import qualified Data.Set as Set 
++   ( fromList )
+ import Data.Set
+-   ( Set 
+-   , mkSet 
+-   )
++   ( Set )
++
+ 
+ --------------------------------------------------------------------------------
+ 
+ 
+-type RecordMap = FiniteMap HsQName [HsQName] 
++type RecordMap = Map HsQName [HsQName] 
+ 
+ emptyRecordMap :: RecordMap
+-emptyRecordMap = emptyFM
++emptyRecordMap = Map.empty
+ 
+ lookupRecord :: RecordMap -> HsQName -> Maybe [HsQName] 
+-lookupRecord = lookupFM
++lookupRecord = flip Map.lookup
+ 
+ showRecordMap :: RecordMap -> String
+ showRecordMap sigMap
+@@ -87,10 +89,10 @@ showRecordMap sigMap
+    mapList = recordMapToList sigMap
+ 
+ recordMapToList :: RecordMap -> [(HsQName, [HsQName])]
+-recordMapToList = fmToList
++recordMapToList = Map.toList
+ 
+ plusRecordMap :: RecordMap -> RecordMap -> RecordMap
+-plusRecordMap = plusFM
++plusRecordMap = flip Map.union
+ 
+ desugarRecords :: Module -> RecordMap -> [HsDecl] -> (RecordMap, [HsDecl], [HsDecl])
+ desugarRecords modName recMap decls
+@@ -144,8 +146,8 @@ recDeclToConDecl modName recMap (HsRecDe
+    recNameTys :: ([HsName], HsBangType) -> ([HsName], [HsBangType])
+    recNameTys (names, t) = (names, replicate (length names) t)
+    newRecMapUnQual :: RecordMap
+-   newRecMapUnQual = addToFM recMap (UnQual conName) (map UnQual argNames) 
+-   newRecMap = addToFM newRecMapUnQual (Qual modName conName) (map (Qual modName) argNames)
++   newRecMapUnQual = Map.insert (UnQual conName) (map UnQual argNames) recMap
++   newRecMap = Map.insert (Qual modName conName) (map (Qual modName) argNames) newRecMapUnQual
+ 
+ recDeclToConDecl _modName recMap conDecl@(HsConDecl sloc conName argTypes)
+    = (recMap, conDecl) 
+@@ -249,9 +251,11 @@ addListItemsToRecMap qualification modul
+       = (reQualify modName qName, map (reQualify modName) qNames) 
+    dropQualifyItem (qName, qNames)
+       = (dropQualifier qName, map dropQualifier qNames) 
+-   mapWithQualifiedOnly = addListToFM recMap qualifiedList
+-   mapWithBothQualifications = addListToFM mapWithQualifiedOnly unQualifiedList 
++   mapWithQualifiedOnly = foldl (\map (key,elt) -> Map.insert key elt map)
++                                recMap qualifiedList
++   mapWithBothQualifications = foldl (\map (key,elt) -> Map.insert key elt map)
++                                     mapWithQualifiedOnly unQualifiedList 
+ 
+ -- set of all selectors in the record map
+ mkSelectorSet :: RecordMap -> Set HsQName
+-mkSelectorSet records = mkSet $ concatMap snd $ recordMapToList records
++mkSelectorSet records = Set.fromList $ concatMap snd $ recordMapToList records
+diff -urwpN buddha-1.2.orig/transform/Synonym.hs buddha-1.2/transform/Synonym.hs
+--- buddha-1.2.orig/transform/Synonym.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/Synonym.hs	2006-09-11 11:06:39.000000000 +0100
+@@ -49,7 +49,8 @@ module Synonym 
+ 
+ import Language.Haskell.Syntax 
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import SyntaxUtils 
+    ( bogusSrcLoc
+@@ -70,20 +71,20 @@ data Synonym 
+      deriving Show
+ 
+ -- a map of all synonyms, indexed by the name of the synonym
+-type SynonymMap = FiniteMap HsQName Synonym 
++type SynonymMap = Map HsQName Synonym 
+ 
+ -- look for a typeconstructor in the synonym map
+ lookupSynonymMap :: SynonymMap -> HsQName -> Maybe Synonym
+-lookupSynonymMap = lookupFM
++lookupSynonymMap = flip Map.lookup
+ 
+ plusSynonymMap :: SynonymMap -> SynonymMap -> SynonymMap
+-plusSynonymMap = plusFM
++plusSynonymMap = flip Map.union
+ 
+ emptySynonymMap :: SynonymMap
+-emptySynonymMap = emptyFM
++emptySynonymMap = Map.empty
+ 
+ synonymMapToList :: SynonymMap -> [(HsQName, Synonym)]
+-synonymMapToList = fmToList
++synonymMapToList = Map.toList
+ 
+ -- pretty crude printing of synonym map 
+ showSynonymMap :: SynonymMap -> String
+@@ -180,8 +181,8 @@ insertModuleSyns modName synMap [] = syn
+ insertModuleSyns modName synMap (HsTypeDecl _sloc name args rhs : decls)
+    = let thisSynonym = Synonym { synonym_args = args
+                                , synonym_rhs  = rhs }
+-         map1 = addToFM synMap (UnQual name) thisSynonym
+-         map2 = addToFM map1 (Qual modName name) thisSynonym
++         map1 = Map.insert (UnQual name) thisSynonym synMap
++         map2 = Map.insert (Qual modName name) thisSynonym map1
+      in insertModuleSyns modName map2 decls
+ insertModuleSyns modName synMap (otherDecl : decls) 
+    = insertModuleSyns modName synMap decls
+@@ -194,7 +195,7 @@ declsToSynonymMap (HsTypeDecl _sloc name
+    = let thisSynonym = Synonym { synonym_args = args
+                                , synonym_rhs  = rhs }
+          restMap = declsToSynonymMap decls
+-     in addToFM restMap (UnQual name) thisSynonym
++     in Map.insert (UnQual name) thisSynonym restMap
+ declsToSynonymMap (otherDecl : decls) 
+    = declsToSynonymMap decls
+ 
+diff -urwpN buddha-1.2.orig/transform/Transform.hs buddha-1.2/transform/Transform.hs
+--- buddha-1.2.orig/transform/Transform.hs	2004-05-21 06:41:51.000000000 +0100
++++ buddha-1.2/transform/Transform.hs	2006-09-11 11:41:48.000000000 +0100
+@@ -78,7 +78,7 @@ import IfaceUtils               
+    , addListItemsToMap 
+    )
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
+ 
+ import IO                       
+    ( stderr 
+@@ -339,8 +339,8 @@ transformSrcFile ifacePath cmdLine iface
+         let consIdents = constructorIdents (Qual modName) declsNoSugar 
+         -- collect the ident infos of top level vars in this module 
+         let varsIdents = declIdents True (Qual modName) QualAndUnQual typeSigs declsNoSugar 
+-        -- no overlap between vars and cons, so plusFM is sufficient
+-        let moduleIdents = varsIdents `plusFM` consIdents
++        -- no overlap between vars and cons, so Map.union is sufficient
++        let moduleIdents = consIdents `Map.union` varsIdents
+         -- combine imported infos with constructor infos 
+         -- we use joinIdentMap to catch any overlapping values
+         let initialIdentMap = moduleIdents `joinIdentMap` importIdents
+@@ -644,7 +644,7 @@ transDecl' idents decl@(HsPatBind srcLoc
+      = location srcLoc $
+           do let whereSigs   = typeSigMapFromDecls wheres 
+                  whereIdents = declIdents False UnQual UnQualified whereSigs wheres 
+-                 newIdents   = idents `plusFM` whereIdents 
++                 newIdents   = whereIdents `Map.union` idents 
+              newWheres <- mapM (transDecl newIdents) wheres
+              (_, parentPVar, parentVar) <- freshVar
+              newRhs <- debugRhsConst newIdents Trust (patToString pat) rhs 
+@@ -657,7 +657,7 @@ transDecl' idents decl@(HsPatBind srcLoc
+           do -- pushConstantStack 
+              let whereSigs   = typeSigMapFromDecls wheres
+                  whereIdents = declIdents False UnQual UnQualified whereSigs wheres
+-                 newIdents   = idents `plusFM` whereIdents
++                 newIdents   = whereIdents `Map.union` idents
+              newWheres <- mapM (transDecl newIdents) wheres
+              transOpt <- getTransOpt
+              newRhs <- debugRhsConst newIdents transOpt (patToString pat) rhs
+@@ -687,7 +687,7 @@ transDecl' idents decl@(HsPatBind srcLoc
+         do -- pushConstantStack 
+            let whereSigs   = typeSigMapFromDecls wheres 
+                whereIdents = declIdents False UnQual UnQualified whereSigs wheres 
+-               newIdents   = idents `plusFM` whereIdents 
++               newIdents   = whereIdents `Map.union` idents 
+            newWheres <- mapM (transDecl newIdents) wheres
+            transOpt <- getTransOpt
+            newRhs <- debugRhsConst newIdents transOpt (patToString pat) rhs 
+@@ -700,7 +700,7 @@ transDecl' idents decl@(HsPatBind srcLoc
+         do -- pushConstantStack 
+            let whereSigs   = typeSigMapFromDecls wheres 
+                whereIdents = declIdents False UnQual UnQualified whereSigs wheres 
+-               newIdents   = idents `plusFM` whereIdents 
++               newIdents   = whereIdents `Map.union` idents 
+            newWheres <- mapM (transDecl newIdents) wheres
+            (_, newVarPat, newVarExp) <- freshVar
+            newRhs <- transExp newIdents newVarExp rhs 
+@@ -937,7 +937,7 @@ transMatch idents (HsMatch sloc funName 
+            let identMapWithPats = patsToIdentMap pats idents
+                whereSigs        = typeSigMapFromDecls wheres
+                whereIdents      = declIdents False UnQual UnQualified whereSigs wheres
+-               newIdents        = identMapWithPats `plusFM` whereIdents 
++               newIdents        = whereIdents `Map.union` identMapWithPats
+            newPats   <- mapM transPatAs pats
+            newWheres <- mapM (transDecl newIdents) wheres
+            (_, parentPVar, parentVar) <- freshVar
+@@ -1138,7 +1138,7 @@ transExp idents parentId exp@(HsApp _e1 
+ {- let expressions -}
+ transExp idents parentId (HsLet decls e)
+    = do let letSigs = typeSigMapFromDecls decls 
+-            newIdents = idents `plusFM` (declIdents False UnQual UnQualified letSigs decls)
++            newIdents = (declIdents False UnQual UnQualified letSigs decls) `Map.union` idents
+         newDecls <- mapM (transDecl newIdents) decls 
+         newExp <- transExp newIdents parentId e
+         return $ HsLet (concat newDecls) newExp 
+@@ -1316,7 +1316,7 @@ transAlt idents parentId (HsAlt sloc pat
+    = do let whereSigs        = typeSigMapFromDecls wheres 
+             whereIdents      = declIdents False UnQual UnQualified whereSigs wheres
+             identMapWithPats = patsToIdentMap [pat] idents
+-            newIdents        = identMapWithPats `plusFM` whereIdents 
++            newIdents        = whereIdents `Map.union` identMapWithPats
+         newPat <- transPat pat
+         newWheres <- mapM (transDecl newIdents) wheres
+         newExp <- transExp newIdents parentId e
+diff -urwpN buddha-1.2.orig/transform/TransMonad.hs buddha-1.2/transform/TransMonad.hs
+--- buddha-1.2.orig/transform/TransMonad.hs	2004-05-11 06:56:46.000000000 +0100
++++ buddha-1.2/transform/TransMonad.hs	2006-09-11 11:39:01.000000000 +0100
+@@ -76,12 +76,13 @@ import TransOpts  
+    , Context 
+    ) 
+ 
+-import Data.Set  
+-   ( Set
+-   , emptySet
+-   , addToSet 
+-   , elementOf 
++import qualified Data.Set as Set
++   ( empty
++   , insert
++   , member
+    )
++import Data.Set
++   ( Set )
+ 
+ import Stack     
+    ( emptyStack
+@@ -298,7 +299,7 @@ getTransOpt 
+ pushConstantStack :: Trans ()
+ pushConstantStack
+    = Trans (\state -> Right ( () , let oldStack = state_constantStack state 
+-                                       newStack = pushStack emptySet oldStack 
++                                       newStack = pushStack Set.empty oldStack 
+                              in state { state_constantStack = newStack } )) 
+ 
+ popConstantStack :: Trans ()
+@@ -314,7 +315,7 @@ popConstantStack
+ recordConstant :: HsQName -> Trans Bool
+ recordConstant name
+    = do constantSet <- getConstants
+-        if elementOf name constantSet 
++        if Set.member name constantSet 
+            then return True
+            else do addConstant name
+                    return False
+@@ -323,7 +324,7 @@ addConstant :: HsQName -> Trans ()
+ addConstant name
+    = Trans (\state -> Right (() , 
+                              let oldStack = state_constantStack state 
+-                                 newStack = case modifyTop (flip addToSet name) oldStack of
++                                 newStack = case modifyTop (Set.insert name) oldStack of
+                                                Nothing -> oldStack
+                                                Just modStack -> modStack
+                              in state { state_constantStack = newStack } )) 
+@@ -332,7 +333,7 @@ getConstants :: Trans (Set HsQName)
+ getConstants 
+    = Trans (\state -> let stack = state_constantStack state 
+                           constants = case peekStack stack of
+-                                         Nothing  -> emptySet 
++                                         Nothing  -> Set.empty
+                                          Just set -> set
+                       in Right ( constants, state ) )
+ 
+diff -urwpN buddha-1.2.orig/transform/TransOpts.hs buddha-1.2/transform/TransOpts.hs
+--- buddha-1.2.orig/transform/TransOpts.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/TransOpts.hs	2006-09-11 11:19:07.000000000 +0100
+@@ -41,7 +41,8 @@ module TransOpts 
+    )
+    where
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Text.ParserCombinators.Parsec
+ 
+@@ -76,22 +77,22 @@ defaultTransOpt = Suspect 
+ 
+ type Context = [String]
+ 
+-type ContextMap = FiniteMap Context TransOpt
++type ContextMap = Map Context TransOpt
+ 
+ showContextMap :: ContextMap -> String
+ showContextMap contextMap
+    = unlines $ map show mapList
+      where
+-     mapList = fmToList contextMap 
++     mapList = Map.toList contextMap 
+ 
+ lookupContextMap :: ContextMap -> Context -> Maybe TransOpt
+-lookupContextMap = lookupFM
++lookupContextMap = flip Map.lookup
+ 
+ emptyContextMap :: ContextMap
+-emptyContextMap = emptyFM
++emptyContextMap = Map.empty
+ 
+ addToContextMap :: ContextMap -> Context -> TransOpt -> ContextMap
+-addToContextMap = addToFM
++addToContextMap map key elt = Map.insert key elt map
+ 
+ --------------------------------------------------------------------------------
+ 
+@@ -106,7 +107,7 @@ processLine line contextMap
+    = case parse parseLine "" line of
+         -- parse failed don't alter the context map
+         Left err -> contextMap
+-        Right (context, opt) -> addToFM contextMap context opt
++        Right (context, opt) -> Map.insert context opt contextMap
+ 
+ parseLine :: Parser (Context, TransOpt)
+ parseLine 
+diff -urwpN buddha-1.2.orig/transform/TypeSigMap.hs buddha-1.2/transform/TypeSigMap.hs
+--- buddha-1.2.orig/transform/TypeSigMap.hs	2004-04-28 05:10:12.000000000 +0100
++++ buddha-1.2/transform/TypeSigMap.hs	2006-09-11 11:13:59.000000000 +0100
+@@ -35,19 +35,20 @@ module TypeSigMap 
+    , showTypeSigMap
+    ) where
+ 
+-import Data.FiniteMap
++import qualified Data.Map as Map
++import Data.Map (Map)
+ 
+ import Language.Haskell.Syntax 
+ 
+ --------------------------------------------------------------------------------
+ 
+-type TypeSigMap = FiniteMap HsName HsQualType
++type TypeSigMap = Map HsName HsQualType
+ 
+ emptyTypeSigMap :: TypeSigMap
+-emptyTypeSigMap = emptyFM
++emptyTypeSigMap = Map.empty
+ 
+ lookupTypeSig :: TypeSigMap -> HsName -> Maybe HsQualType
+-lookupTypeSig = lookupFM
++lookupTypeSig = flip Map.lookup
+ 
+ type Qualifier = HsQualType -> HsQualType
+ 
+@@ -58,13 +59,14 @@ typeSigMapFromDeclsQual :: Qualifier -> 
+ typeSigMapFromDeclsQual _qualifier [] = emptyTypeSigMap
+ 
+ typeSigMapFromDeclsQual qualifier (HsTypeSig _sloc names qualType : decls)
+-   = addListToFM (typeSigMapFromDeclsQual qualifier decls) newMembers
++   = foldl (\map (key,elt) -> Map.insert key elt map)
++           (typeSigMapFromDeclsQual qualifier decls) newMembers
+    where
+    newMembers = [ (ident, qualifier qualType) | ident <- names ]
+ 
+ typeSigMapFromDeclsQual qualifier 
+                         (HsClassDecl _sloc _cntxt className argNames memberDecls : decls)
+-   = plusFM (typeSigMapFromDeclsQual qualifier decls) newMembers
++   = Map.union newMembers (typeSigMapFromDeclsQual qualifier decls)
+    where
+    newMembers = typeSigMapFromDeclsQual newQualifier memberDecls
+    newQualifier :: Qualifier
+@@ -82,4 +84,4 @@ showTypeSigMap sigMap
+    mapList = typeSigMapToList sigMap
+ 
+ typeSigMapToList :: TypeSigMap -> [(HsName, HsQualType)]
+-typeSigMapToList = fmToList
++typeSigMapToList = Map.toList
