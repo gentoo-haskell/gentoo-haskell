@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 MY_PN="OpenAL"
-GHC_PV=6.5.20060907
+GHC_PV=6.5.20060910
 
 DESCRIPTION="A Haskell binding to the OpenAL cross-platform 3D audio API"
 HOMEPAGE=""
