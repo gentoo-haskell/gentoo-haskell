@@ -20,8 +20,8 @@ Libs I've used if not anything else mentioned:
 Some haddock docs might have failed, but since cabal didn't kill the setup
 if haddock barkes in 1.1.5.9.2, it has gone by unnoticed by me...
 
-dev-haskell/buddha-buddha-1.2
------------------------------
+dev-haskell/buddha-1.2
+----------------------
 
 ::
 
