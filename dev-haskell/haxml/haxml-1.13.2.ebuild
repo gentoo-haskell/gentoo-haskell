@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib bin profile haddock"
-inherit haskell-cabal
+inherit haskell-cabal base
 
 MY_PN=HaXml
 MY_P=${MY_PN}-${PV}
@@ -24,6 +24,13 @@ DEPEND=">=virtual/ghc-6.2
 		>=dev-haskell/cabal-1.1.3-r1"
 
 S=${WORKDIR}/${MY_P}
+
+src_unpack() {
+	base_src_unpack
+
+	# Don't warn so much, and don't compile with -O2
+	sed -i 's/GHC-Options: -Wall -O2/GHC-Options: -O/' "${S}/HaXml.cabal"
+}
 
 src_install() {
 	cabal_src_install
