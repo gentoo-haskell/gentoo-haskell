@@ -20,12 +20,16 @@ Libs I've used if not anything else mentioned:
 Some haddock docs might have failed, but since cabal didn't kill the setup
 if haddock barkes in 1.1.5.9.2, it has gone by unnoticed by me...
 
+This issue of not noticing if haddock failed is fixed in cabal-1.1.5.9.3.
+
 dev-haskell/buddha-1.2
 ----------------------
 
 ::
 
   ghc-6.5.20060906: unknown package: text
+
+Fixed by this *huge* patch `<../dev-haskell/buddha-1.2/files/buddha-1.2-ghc66.patch>`_.
 
 dev-haskell/c2hs-0.14.5
 -----------------------
@@ -35,13 +39,17 @@ dev-haskell/c2hs-0.14.5
   c2hs/c/CLexer.x:78:34: Module `Data.Set' does not export `mkSet'
   c2hs/c/CLexer.x:78:41: Module `Data.Set' does not export `addToSet'
   c2hs/c/CLexer.x:78:51: Module `Data.Set' does not export `elementOf'
- 
+
+Now fixed with this patch `<../dev-haskell/c2hs-0.14.5/files/c2hs-0.14.5-ghc66.patch>`_.
+
 dev-haskell/happy-1.15
 ----------------------
 
 ::
 
   LALR.lhs:626:34: Not in scope: `bounds'
+
+Now fixed with this patch `<../dev-haskell/happy-1.15/files/happy-1.15-ghc66.patch>`_.
 
 dev-haskell/haskell-src-exts-0.2
 --------------------------------
@@ -54,7 +62,9 @@ dev-haskell/haskell-src-exts-0.2
    or `isSymbol', imported from Data.Char
    at Language/Haskell/Hsx/Lexer.hs:26:0-15
 
- (repeaded 4 more times)
+ (repeated 4 more times)
+
+Now fixed with this patch `<../dev-haskell/haskell-src-exts-0.2/files/haskell-src-exts-0.2-hiding-isSymbol.patch>`_.
 
 dev-haskell/haxml-1.16
 ----------------------
@@ -64,12 +74,16 @@ dev-haskell/haxml-1.16
   src/Text/XML/HaXml/Escape.hs:57:7:
     Could not find module `Data.FiniteMap'
 
+Now fixed by new releases of haxml-1.13.2 and haxml-1.17.
+
 dev-haskell/hmake-3.11
 ----------------------
 
 ::
 
   ghc-6.5.20060906: unknown package: lang
+
+Now fixed with this patch `<../dev-haskell/hmake-3.11/files/hmake-3.11-ghc66.patch>`.
 
 dev-haskell/hsshellscript-2.6.3
 -------------------------------
@@ -86,6 +100,9 @@ dev-haskell/lhs2tex-1.11
   /var/tmp/portage/lhs2tex-1.11/work/lhs2tex-1.11/Setup.hs:11:7:
       Could not find module `Distribution.Compat.FilePath':
             it is hidden (in package Cabal-1.1.5.9.2)
+
+New Cabal-1.1.5.9.3 does not hide this module, but does hide Distribution.Compat.ReadP.
+So we still need a patch to make it use the standard ReadP module from base.
 
 dev-haskell/missingh-0.14.4
 ---------------------------
@@ -105,6 +122,9 @@ dev-haskell/uulib-0.9.2
           (the Coverage Condition fails for one of the functional dependencies)
       In the instance declaration for `InputState (inp, state) s p'
 
+This can be fixed by allowing undecidable instances, i.e. adding
+UndecidableInstances to the extensions field in the .cabal file.
+
 dev-haskell/wxhaskell-0.9.4
 ---------------------------
 
@@ -115,6 +135,9 @@ dev-haskell/wxhaskell-0.9.4
           Something is amiss; requested module
               wx:Graphics.UI.WXCore.Types differs from name found in the
               interface file wxcore:Graphics.UI.WXCore.Types
+
+This is tricky. The wx package needs to be registered locally before anything
+else can be built against it.
 
 dev-haskell/hsgnutls-0.2.2
 --------------------------
@@ -166,12 +189,6 @@ Problem with opengl remains though.
 Untested libs
 =============
 
-* dev-haskell/hdbc (needs deps I didn't want to install just yet)
-* dev-haskell/hdbc-*
-* hs-plugins (needs haskell-src-exts)
-* dev-haskell/hsql
-* dev-haskell/hsql-* (same as hdbc)
-* uuagc (need uulib)
 * cabal-get (obsolete)
 * fps (included in base)
 * gh (requires uuagc/uulib)

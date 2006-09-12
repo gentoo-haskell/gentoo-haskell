@@ -315,11 +315,13 @@ actually fixing anything :)</p>
 </ul>
 <p>Some haddock docs might have failed, but since cabal didn't kill the setup
 if haddock barkes in 1.1.5.9.2, it has gone by unnoticed by me...</p>
+<p>This issue of not noticing if haddock failed is fixed in cabal-1.1.5.9.3.</p>
 <div class="section">
 <h2><a id="dev-haskell-buddha-1-2" name="dev-haskell-buddha-1-2">dev-haskell/buddha-1.2</a></h2>
 <pre class="literal-block">
 ghc-6.5.20060906: unknown package: text
 </pre>
+<p>Fixed by this <em>huge</em> patch <a class="reference" href="../dev-haskell/buddha-1.2/files/buddha-1.2-ghc66.patch">../dev-haskell/buddha-1.2/files/buddha-1.2-ghc66.patch</a>.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-c2hs-0-14-5" name="dev-haskell-c2hs-0-14-5">dev-haskell/c2hs-0.14.5</a></h2>
@@ -328,12 +330,14 @@ c2hs/c/CLexer.x:78:34: Module `Data.Set' does not export `mkSet'
 c2hs/c/CLexer.x:78:41: Module `Data.Set' does not export `addToSet'
 c2hs/c/CLexer.x:78:51: Module `Data.Set' does not export `elementOf'
 </pre>
+<p>Now fixed with this patch <a class="reference" href="../dev-haskell/c2hs-0.14.5/files/c2hs-0.14.5-ghc66.patch">../dev-haskell/c2hs-0.14.5/files/c2hs-0.14.5-ghc66.patch</a>.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-happy-1-15" name="dev-haskell-happy-1-15">dev-haskell/happy-1.15</a></h2>
 <pre class="literal-block">
 LALR.lhs:626:34: Not in scope: `bounds'
 </pre>
+<p>Now fixed with this patch <a class="reference" href="../dev-haskell/happy-1.15/files/happy-1.15-ghc66.patch">../dev-haskell/happy-1.15/files/happy-1.15-ghc66.patch</a>.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-haskell-src-exts-0-2" name="dev-haskell-haskell-src-exts-0-2">dev-haskell/haskell-src-exts-0.2</a></h2>
@@ -344,8 +348,9 @@ LALR.lhs:626:34: Not in scope: `bounds'
   or `isSymbol', imported from Data.Char
   at Language/Haskell/Hsx/Lexer.hs:26:0-15
 
-(repeaded 4 more times)
+(repeated 4 more times)
 </pre>
+<p>Now fixed with this patch <a class="reference" href="../dev-haskell/haskell-src-exts-0.2/files/haskell-src-exts-0.2-hiding-isSymbol.patch">../dev-haskell/haskell-src-exts-0.2/files/haskell-src-exts-0.2-hiding-isSymbol.patch</a>.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-haxml-1-16" name="dev-haskell-haxml-1-16">dev-haskell/haxml-1.16</a></h2>
@@ -353,12 +358,14 @@ LALR.lhs:626:34: Not in scope: `bounds'
 src/Text/XML/HaXml/Escape.hs:57:7:
   Could not find module `Data.FiniteMap'
 </pre>
+<p>Now fixed by new releases of haxml-1.13.2 and haxml-1.17.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-hmake-3-11" name="dev-haskell-hmake-3-11">dev-haskell/hmake-3.11</a></h2>
 <pre class="literal-block">
 ghc-6.5.20060906: unknown package: lang
 </pre>
+<p>Now fixed with this patch <cite>&lt;../dev-haskell/hmake-3.11/files/hmake-3.11-ghc66.patch&gt;</cite>.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-hsshellscript-2-6-3" name="dev-haskell-hsshellscript-2-6-3">dev-haskell/hsshellscript-2.6.3</a></h2>
@@ -373,6 +380,8 @@ ghc-6.5.20060906: unknown package: lang
     Could not find module `Distribution.Compat.FilePath':
           it is hidden (in package Cabal-1.1.5.9.2)
 </pre>
+<p>New Cabal-1.1.5.9.3 does not hide this module, but does hide Distribution.Compat.ReadP.
+So we still need a patch to make it use the standard ReadP module from base.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-missingh-0-14-4" name="dev-haskell-missingh-0-14-4">dev-haskell/missingh-0.14.4</a></h2>
@@ -389,6 +398,8 @@ src/UU/Parsing/StateParser.hs:5:0:
         (the Coverage Condition fails for one of the functional dependencies)
     In the instance declaration for `InputState (inp, state) s p'
 </pre>
+<p>This can be fixed by allowing undecidable instances, i.e. adding
+UndecidableInstances to the extensions field in the .cabal file.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-wxhaskell-0-9-4" name="dev-haskell-wxhaskell-0-9-4">dev-haskell/wxhaskell-0.9.4</a></h2>
@@ -399,6 +410,8 @@ wx/src/Graphics/UI/WX/Types.hs:94:0:
             wx:Graphics.UI.WXCore.Types differs from name found in the
             interface file wxcore:Graphics.UI.WXCore.Types
 </pre>
+<p>This is tricky. The wx package needs to be registered locally before anything
+else can be built against it.</p>
 </div>
 <div class="section">
 <h2><a id="dev-haskell-hsgnutls-0-2-2" name="dev-haskell-hsgnutls-0-2-2">dev-haskell/hsgnutls-0.2.2</a></h2>
@@ -445,12 +458,6 @@ dist/build/tmp/Graphics/Rendering/OpenGL/GL/BeginEnd.hs:&quot;dist/build/tmp/Gra
 <div class="section">
 <h1><a id="untested-libs" name="untested-libs">Untested libs</a></h1>
 <ul class="simple">
-<li>dev-haskell/hdbc (needs deps I didn't want to install just yet)</li>
-<li>dev-haskell/hdbc-*</li>
-<li>hs-plugins (needs haskell-src-exts)</li>
-<li>dev-haskell/hsql</li>
-<li>dev-haskell/hsql-* (same as hdbc)</li>
-<li>uuagc (need uulib)</li>
 <li>cabal-get (obsolete)</li>
 <li>fps (included in base)</li>
 <li>gh (requires uuagc/uulib)</li>
