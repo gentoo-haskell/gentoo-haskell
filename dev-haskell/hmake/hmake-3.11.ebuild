@@ -27,7 +27,7 @@ RDEPEND="virtual/ghc
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-#	epatch ${FILESDIR}/ghc-version.patch
+	epatch "${FILESDIR}/${P}-ghc66.patch"
 
 	# fix all head/tail declarations
 	sed -i 's/tail -1/tail  -n 1/' src/hmake/MkConfig.hs
@@ -39,7 +39,7 @@ src_unpack() {
 src_compile() {
 	# package uses non-standard configure, therefore econf does
 	# not work ...
-	./configure \
+	READLINE='-package readline' ./configure \
 		--prefix=/usr \
 		--mandir=/usr/share/man/man1 \
 		--buildwith="$(ghc-getghc)" \
