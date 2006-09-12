@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="haddock cpphs lib"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="The Utrecht University parsing, printing and DData libraries"
 HOMEPAGE="http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem"
@@ -17,3 +17,9 @@ IUSE=""
 DEPEND=">=virtual/ghc-6.2.2
 		>=dev-haskell/cpphs-0.9"
 
+src_unpack() {
+	base_src_unpack
+
+	# GHC 6.6 is stricter in some class instance stuff
+	sed -i 's/Extensions:/Extensions: UndecidableInstances/' "${S}/uulib.cabal"
+}
