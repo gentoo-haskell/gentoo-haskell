@@ -114,6 +114,11 @@ dev-haskell/missingh-0.14.4
   MissingH/Str.hs:47:7:
       Could not find module `Text.Regex'
 
+The immediate issue can be fixed by depending on regex-compat, however MissingH
+also depends on Data.FiniteMap and exposes it in the interface so it's not
+totally clear how this should be fixed. We'll probably need to wait for a new
+upstream release.
+
 dev-haskell/uulib-0.9.2
 -----------------------
 
