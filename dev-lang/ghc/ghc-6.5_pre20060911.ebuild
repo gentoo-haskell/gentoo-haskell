@@ -165,6 +165,7 @@ src_unpack() {
 
 	# Temporary patch that needs testing before being pushed upstream:
 	# Fix the mangler on sparc
+	cd "${S}"
 	epatch "${FILESDIR}/ghc-6.4.2-sparcmangler.patch"
 }
 
