@@ -1,19 +1,21 @@
-======================================
-Packages failing with GHC 6.5.20060906
-======================================
+=============================
+Packages failing with GHC 6.5
+=============================
 
 :Authors: Lennart Kolmodin <kolmodin@gentoo.org>,
+          Duncan Coutts <dcoutts@gentoo.org>,
           Gentoo Haskell Herd <haskell@gentoo.org>
-:Updated: 2006-09-10
+:Updated: 2006-09-12
 
-Failed libs
-===========
+Failed packages
+===============
 
 Only the first error message is reported, as it is all I can see without
 actually fixing anything :)
 
-Libs I've used if not anything else mentioned:
+Packages I've used if not anything else mentioned:
 
+* GHC 6.5.20060906
 * haddock-0.8\_rc1
 * cabal-1.1.5.9.2
 
@@ -175,6 +177,10 @@ dev-haskell/shellac-0.3
 
   (and 7 more like it)
 
+
+GHC extra libs
+==============
+
 dev-haskell/opengl-2.1
 ----------------------
 
@@ -186,8 +192,84 @@ Cabal patch `Fri Sep  8 19:36:15 CEST 2006  Duncan Coutts <remove.this.part.dunc
 
 Problem with opengl remains though.
 
-Untested libs
-=============
+dev-haskell/openal-1.3
+----------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3.
+
+Haddock chokes on Sound/OpenAL/AL/Attenuation.hs::
+
+  dist/build/tmp/Sound/OpenAL/AL/Attenuation.hs:"dist/build/tmp/Sound/OpenAL/AL/Attenuation.hs":
+  207:16: Parse error
+
+dev-haskell/alut-2.0
+--------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3.
+
+::
+
+  dist/build/tmp/Sound/ALUT/Config.hs:"dist/build/tmp/Sound/ALUT/Config.hs": 219:16: Parse error
+
+
+dev-haskell/xhtml-2006.8.14
+---------------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3
+
+Haddock chokes again::
+
+  haddock: parse error in doc string: [TokSpecial '/',TokString "www.haskell.org",TokSpecial '/']
+
+
+dev-haskell/hunit-1.1
+---------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3
+
+Haddock::
+
+  dist/build/tmp/Test/HUnit/Lang.hs:"dist/build/tmp/Test/HUnit/Lang.hs": 69:1: Parse error
+
+
+dev-haskell/network-2.0
+-----------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3
+
+Haddock::
+
+  dist/build/tmp/Network/Socket.hs:"Network/Socket.hsc": 283:16: Parse error
+
+dev-haskell/time-1.0
+--------------------
+
+Used:
+
+* GHC 6.5.20060910
+* cabal-1.1.5.9.3
+
+::
+
+  ghc-6.5.20060910: does not exist: cbits/cbits/HsTime.c
+
+Untested packages
+=================
 
 * cabal-get (obsolete)
 * fps (included in base)
@@ -198,6 +280,5 @@ Untested libs
 * trhsx (requires haskell-src-exts)
 * hsp-darcs (requires haskell-src-exts)
 * hspr-darcs (requires haskell-src-exts)
-* requires (requires trhsx)
 
 .. vim: tw=76 ts=2 :
