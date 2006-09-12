@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
-GHC_PV=6.5.20060910
+GHC_PV=6.5.20060911
 
 DESCRIPTION="Monad transformer library"
 HOMEPAGE=""

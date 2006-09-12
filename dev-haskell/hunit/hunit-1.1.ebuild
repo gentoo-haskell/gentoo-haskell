@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 MY_PN="HUnit"
-GHC_PV=6.5.20060910
+GHC_PV=6.5.20060911
 
 DESCRIPTION="A unit testing framework for Haskell."
 HOMEPAGE=""
