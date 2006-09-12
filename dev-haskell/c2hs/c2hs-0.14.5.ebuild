@@ -21,6 +21,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/setupfix.patch"
 	epatch "${FILESDIR}/ghc622inc.patch"
+	epatch "${FILESDIR}/${P}-ghc66.patch"
 }
 src_install() {
 	cabal_src_install
