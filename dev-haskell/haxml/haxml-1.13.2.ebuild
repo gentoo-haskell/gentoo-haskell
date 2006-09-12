@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib bin profile haddock"
-inherit haskell-cabal base
+inherit base haskell-cabal
 
 MY_PN=HaXml
 MY_P=${MY_PN}-${PV}
