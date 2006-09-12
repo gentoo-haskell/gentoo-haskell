@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/wash/wash-2.5.6.ebuild,v 1.2 2006/03/11 11:51:49 dcoutts Exp $
 
-inherit base ghc-package check-reqs
+inherit base eutils ghc-package check-reqs autotools
 
 # the installation bundle is called WashNGo
 MY_PN="WashNGo"
@@ -43,39 +43,13 @@ pkg_setup() {
 src_unpack() {
 	base_src_unpack
 
-	# don't use -O2 in HCFLAGS because it makes ghc take 700Mb of RAM
-	sed -i 's/-O2/-O/' \
-		"${S}/lib/WASH/Utility/Makefile" \
-		"${S}/lib/Makefile.HTML" \
-		"${S}/lib/Makefile.Mail" \
-		"${S}/lib/Makefile.Dbconnect" \
-		"${S}/lib/Makefile.Utility" \
-		"${S}/lib/Makefile.CGI"
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-ghc66.patch"
 }
 
 src_compile() {
-	# Wash doesn't know how to use c2hs properly so we have to fix it.
-	if use postgres; then
-		# make it import a local copy of the C2HS module
-		pushd ${S}/lib/WASH/Dbconnect
-		c2hs --copy-library
-		popd
-		sed -i 's/C2HS/WASH.Dbconnect.C2HS/' \
-			"${S}/lib/WASH/Dbconnect/C2HS.hs" \
-			"${S}/lib/WASH/Dbconnect/Libpqfe.chs"
-		# make it not use the (non-existant) c2hs package
-		sed -i 's/-package c2hs//' \
-			"${S}/lib/Makefile.Dbconnect"
-		# add the local C2HS module to the hidden-modules
-		sed -i 's/DBCONNECT_HIDDEN=/DBCONNECT_HIDDEN= C2HS/' \
-			"${S}/lib/modules.mk"
-		# remove unecessary ld options
-		sed -i 's/$(EXTRA_LD_OPTS)//' "${S}/lib/Makefile"
-	fi
-	# Wash doesn't need to directly depend on the rts package
-	# it doesn't want the text package, it wants the parsec package
-	# there is no c2hs package!
-	sed -i -e 's/rts//' -e 's/text/parsec/' -e 's/c2hs//' "${S}/lib/Makefile"
+	# We've patched some build files
+	eautoreconf
 
 	./configure \
 		--prefix="/usr" \

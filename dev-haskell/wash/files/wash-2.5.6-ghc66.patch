@@ -1,0 +1,244 @@
+diff -urwpN WashNGo-2.5.6.orig/configure.in WashNGo-2.5.6/configure.in
+--- WashNGo-2.5.6.orig/configure.in	2005-11-10 15:24:31.000000000 +0000
++++ WashNGo-2.5.6/configure.in	2006-09-12 17:02:15.000000000 +0100
+@@ -110,17 +110,17 @@ GHCPKG_UPDATE="$GHCPKG $GHCPKG_OPT__UPDA
+ 
+ if test "$ENABLE_DBCONNECT" = "yes"; then
+   AC_PATH_PROG(C2HS,c2hs,[no])
+-  AC_PATH_PROG(PG_CONFIG,pg_config,[no],[$PATH:$PG_BINDIR])
++#  AC_PATH_PROG(PG_CONFIG,pg_config,[no],[$PATH:$PG_BINDIR])
+   if test "$C2HS" = "no" ; then
+     ENABLE_DBCONNECT="no"
+     C2HS=""
+     AC_MSG_WARN([--enable-dbconnect turned off because program c2hs was not found])
+   fi
+-  if test "$PG_CONFIG" = "no" ; then
+-    ENABLE_DBCONNECT="no"
+-    PG_CONFIG=""
+-    AC_MSG_WARN([--enable-dbconnect turned off because program pg_config was not found])
+-  fi
++#  if test "$PG_CONFIG" = "no" ; then
++#    ENABLE_DBCONNECT="no"
++#    PG_CONFIG=""
++#    AC_MSG_WARN([--enable-dbconnect turned off because program pg_config was not found])
++#  fi
+ else
+   C2HS=""
+   PG_CONFIG=""
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile WashNGo-2.5.6/lib/Makefile
+--- WashNGo-2.5.6.orig/lib/Makefile	2005-09-26 12:54:31.000000000 +0100
++++ WashNGo-2.5.6/lib/Makefile	2006-09-12 16:48:48.000000000 +0100
+@@ -27,7 +27,7 @@ HIDDEN_MODULES= \
+ 	$(addprefix WASH.Dbconnect.,$(DBCONNECT_HIDDEN))
+ 
+ ifeq ($(ENABLE_DBCONNECT),yes)
+-PACKAGE_DEPENDENCIES= rts haskell98 text c2hs
++PACKAGE_DEPENDENCIES= base haskell98 parsec
+ PGLIB=`$(PG_CONFIG) --libdir`
+ 
+ ## lib directory on target machine
+@@ -39,9 +39,9 @@ EXTRA_LD_OPTS=  -B dynamic \
+ 		-Wl,-rpath,$(PGLIB_TARGET)
+ 
+ EXTRA_LIBRARIES= pq
+-LD_OPTIONS= $(EXTRA_LD_OPTS)
++LD_OPTIONS=
+ else
+-PACKAGE_DEPENDENCIES= text haskell98
++PACKAGE_DEPENDENCIES= base haskell98 parsec
+ endif
+ 
+ DOCSOURCES= $(addsuffix .hs,$(subst .,/,$(EXPOSED_MODULES)))
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile.CGI WashNGo-2.5.6/lib/Makefile.CGI
+--- WashNGo-2.5.6.orig/lib/Makefile.CGI	2005-11-11 15:43:03.000000000 +0000
++++ WashNGo-2.5.6/lib/Makefile.CGI	2006-09-12 16:06:43.000000000 +0100
+@@ -16,7 +16,7 @@ all: libWashNGo.a
+ ######################################################################
+ # WASH-CGI
+ 
+-PACKAGE_DEPENDENCIES= haskell98 text
++PACKAGE_DEPENDENCIES= base haskell98 parsec
+ 
+ FILES= $(OTHER_FILES) $(HS_SOURCES)
+ OTHER_FILES= $(addprefix WASH/CGI/,Makefile README INSTALL LICENSE)
+@@ -31,11 +31,11 @@ libWashNGo.a: libWashNGo.a($(HS_SOURCES:
+ ######################################################################
+ # generic stuff
+ 
+-HC_SPEC_FLAGS=  -package-name $(PACKAGE)
++HC_SPEC_FLAGS=  -package-name $(PACKAGE) $(addprefix -package , $(PACKAGE_DEPENDENCIES))
+ HCINCLUDES=	
+ HCLOADFLAGS=
+ 
+-OPT=		-O2
++OPT=		-O
+ 
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HCINCLUDES) $(HCEXTRAFLAGS)
+ 
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile.Dbconnect WashNGo-2.5.6/lib/Makefile.Dbconnect
+--- WashNGo-2.5.6.orig/lib/Makefile.Dbconnect	2005-11-11 15:43:03.000000000 +0000
++++ WashNGo-2.5.6/lib/Makefile.Dbconnect	2006-09-12 17:32:06.000000000 +0100
+@@ -34,7 +34,7 @@ OTHER_FILES= $(addprefix WASH/Dbconnect/
+ EXAMPLE_FILES=examples/Makefile examples/Main.hs examples/Mystylesheet.hs \
+ 		examples/ducktales.sql examples/removeDucktales.sql
+ MODULES= $(EXPOSED_MODULES) $(HIDDEN_MODULES)
+-PACKAGE_DEPENDENCIES= haskell98
++PACKAGE_DEPENDENCIES= base haskell98
+ HIDDEN_MODULES=  $(DBCONNECT_HIDDEN)
+ EXPOSED_MODULES= $(DBCONNECT_EXPOSED)
+ HS_SOURCES= $(addprefix WASH/Dbconnect/,$(MODULES:=.hs))
+@@ -44,16 +44,16 @@ libWashNGo.a: libWashNGo.a($(HS_SOURCES:
+ 	$(RANLIB) $@
+ 
+ WASH/Dbconnect/Libpqfe.hs : WASH/Dbconnect/Libpqfe.chs
+-	$(C2HS) $(PGINCLUDE)/libpq-fe.h WASH/Dbconnect/Libpqfe.chs
++	$(C2HS) libpq-fe.h WASH/Dbconnect/Libpqfe.chs
+ 
+ ######################################################################
+ # generic stuff
+ 
+-HC_SPEC_FLAGS=  -package-name $(PACKAGE)
+-HCINCLUDES=	-fglasgow-exts -package c2hs -I.
++HC_SPEC_FLAGS=  -package-name $(PACKAGE) $(addprefix -package , $(PACKAGE_DEPENDENCIES))
++HCINCLUDES=	-fglasgow-exts -I.
+ HCLOADFLAGS=
+ 
+-OPT=		-O2 -ffi
++OPT=		-O -ffi
+ 
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HCINCLUDES) $(HCEXTRAFLAGS)
+ 
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile.HTML WashNGo-2.5.6/lib/Makefile.HTML
+--- WashNGo-2.5.6.orig/lib/Makefile.HTML	2005-11-11 15:43:03.000000000 +0000
++++ WashNGo-2.5.6/lib/Makefile.HTML	2006-09-12 16:07:11.000000000 +0100
+@@ -19,7 +19,7 @@ FILES=  $(OTHER_FILES) $(HS_SOURCES)
+ OTHER_FILES= $(addprefix WASH/HTML/,Makefile LICENSE)
+ 
+ MODULES= $(EXPOSED_MODULES)$(HIDDEN_MODULES)
+-PACKAGE_DEPENDENCIES= haskell98 text
++PACKAGE_DEPENDENCIES= base haskell98 
+ HIDDEN_MODULES= $(HTML_HIDDEN)
+ EXPOSED_MODULES= $(HTML_EXPOSED)
+ HS_SOURCES= $(addprefix WASH/HTML/,$(MODULES:=.hs))
+@@ -30,11 +30,11 @@ libWashNGo.a: libWashNGo.a($(HS_SOURCES:
+ ######################################################################
+ # generic stuff
+ 
+-HC_SPEC_FLAGS=  -package-name $(PACKAGE)
++HC_SPEC_FLAGS=  -package-name $(PACKAGE) $(addprefix -package , $(PACKAGE_DEPENDENCIES))
+ HCINCLUDES=	
+ HCLOADFLAGS=
+ 
+-OPT=		-O2
++OPT=		-O
+ 
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HCINCLUDES) $(HCEXTRAFLAGS)
+ 
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile.Mail WashNGo-2.5.6/lib/Makefile.Mail
+--- WashNGo-2.5.6.orig/lib/Makefile.Mail	2005-11-11 15:43:02.000000000 +0000
++++ WashNGo-2.5.6/lib/Makefile.Mail	2006-09-12 16:07:42.000000000 +0100
+@@ -18,7 +18,7 @@ all: libWashNGo.a
+ FILES= $(OTHER_FILES) $(HS_SOURCES)
+ OTHER_FILES= $(addprefix WASH/Mail/,Makefile LICENSE)
+ MODULES= $(EXPOSED_MODULES)$(HIDDEN_MODULES)
+-PACKAGE_DEPENDENCIES=  text
++PACKAGE_DEPENDENCIES= base haskell98 parsec
+ HIDDEN_MODULES=	$(Mail_HIDDEN)
+ EXPOSED_MODULES= $(Mail_EXPOSED)
+ HS_SOURCES= $(addprefix WASH/Mail/,$(MODULES:=.hs))
+@@ -29,11 +29,11 @@ libWashNGo.a: libWashNGo.a($(HS_SOURCES:
+ ######################################################################
+ # generic stuff
+ 
+-HC_SPEC_FLAGS=  -package-name $(PACKAGE)
++HC_SPEC_FLAGS=  -package-name $(PACKAGE) $(addprefix -package , $(PACKAGE_DEPENDENCIES))
+ HCINCLUDES=	
+ HCLOADFLAGS=
+ 
+-OPT=		-O2
++OPT=		-O
+ 
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HCINCLUDES) $(HCEXTRAFLAGS)
+ 
+diff -urwpN WashNGo-2.5.6.orig/lib/Makefile.Utility WashNGo-2.5.6/lib/Makefile.Utility
+--- WashNGo-2.5.6.orig/lib/Makefile.Utility	2005-11-11 15:43:02.000000000 +0000
++++ WashNGo-2.5.6/lib/Makefile.Utility	2006-09-12 15:50:36.000000000 +0100
+@@ -18,7 +18,7 @@ all: libWashNGo.a
+ FILES= $(OTHER_FILES) $(HS_SOURCES) $(C_SOURCES) $(H_SOURCES)
+ OTHER_FILES= $(addprefix WASH/Utility/,Makefile LICENSE)
+ MODULES= $(EXPOSED_MODULES)$(HIDDEN_MODULES)
+-PACKAGE_DEPENDENCIES= haskell98 text
++PACKAGE_DEPENDENCIES= base haskell98 parsec
+ HIDDEN_MODULES=  $(Utility_HIDDEN)
+ EXPOSED_MODULES= $(Utility_EXPOSED)
+ HS_SOURCES= $(addprefix WASH/Utility/,$(MODULES:=.hs))
+@@ -40,11 +40,11 @@ WASH/Utility/SHA1.o: WASH/Utility/SHA1-p
+ ######################################################################
+ # generic stuff
+ 
+-HC_SPEC_FLAGS=  -package-name $(PACKAGE)
++HC_SPEC_FLAGS=  -package-name $(PACKAGE) $(addprefix -package , $(PACKAGE_DEPENDENCIES))
+ HCINCLUDES=	
+ HCLOADFLAGS=
+ 
+-OPT=		-O2 -ffi
++OPT=		-O -ffi
+ 
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HCINCLUDES) $(HCEXTRAFLAGS)
+ 
+diff -urwpN WashNGo-2.5.6.orig/lib/WASH/CGI/GuaranteedCGI.hs WashNGo-2.5.6/lib/WASH/CGI/GuaranteedCGI.hs
+--- WashNGo-2.5.6.orig/lib/WASH/CGI/GuaranteedCGI.hs	2005-09-18 20:41:10.000000000 +0100
++++ WashNGo-2.5.6/lib/WASH/CGI/GuaranteedCGI.hs	2006-09-12 14:51:41.000000000 +0100
+@@ -73,7 +73,7 @@ import WASH.CGI.CGI (
+ 	, EmailAddress(..), CreditCardNumber(..), CreditCardExp(..)
+ 	, CGIOption(..), CGIOptions
+ 	, makeServlet, makeServletWithHook
+-	, FrameSet, FrameLayout(..), FrameSpacing(..),
++	, FrameSet, FrameLayout(..), FrameSpacing(..)
+ 	, makeFrameset, framesetPage
+ 	, Style(..)
+ 	)
+diff -urwpN WashNGo-2.5.6.orig/lib/WASH/CGI/SubmitXX.hs WashNGo-2.5.6/lib/WASH/CGI/SubmitXX.hs
+--- WashNGo-2.5.6.orig/lib/WASH/CGI/SubmitXX.hs	2005-09-14 14:27:09.000000000 +0100
++++ WashNGo-2.5.6/lib/WASH/CGI/SubmitXX.hs	2006-09-12 15:24:00.000000000 +0100
+@@ -1,4 +1,4 @@
+-{-# OPTIONS -fglasgow-exts #-}
++{-# OPTIONS -fglasgow-exts -fallow-undecidable-instances #-}
+ -- © 2002-2005 Peter Thiemann
+ -- |Extended-Haskell version of the submission functions.
+ module WASH.CGI.SubmitXX where
+diff -urwpN WashNGo-2.5.6.orig/lib/WASH/Dbconnect/Libpqfe.chs WashNGo-2.5.6/lib/WASH/Dbconnect/Libpqfe.chs
+--- WashNGo-2.5.6.orig/lib/WASH/Dbconnect/Libpqfe.chs	2005-09-14 14:27:09.000000000 +0100
++++ WashNGo-2.5.6/lib/WASH/Dbconnect/Libpqfe.chs	2006-09-12 17:22:19.000000000 +0100
+@@ -2,7 +2,8 @@ module WASH.Dbconnect.Libpqfe where 
+ --  c2hs /usr/include/postgresql/libpq-fe.h Libpq-fe.chs
+ --  ghc 
+ 
+-import C2HS
++import Foreign
++import Foreign.C
+ 
+ 
+ {#enum ConnStatusType as ConnStatusType  {underscoreToCase} deriving (Show, Eq)#}
+@@ -26,6 +27,9 @@ mExecStatusTypeToCInt =  (toEnum . fromE
+ mCIntToBool :: CInt -> Bool
+ mCIntToBool = (toEnum . fromEnum)
+ 
++cIntConv :: (Integral a, Integral b) => a -> b
++cIntConv  = fromIntegral
++
+ data X_PGconn = X_PGconn
+ data X_PQresult = X_PQresult
+ data X_PGresult = X_PGresult
+diff -urwpN WashNGo-2.5.6.orig/washparser/hs/Makefile WashNGo-2.5.6/washparser/hs/Makefile
+--- WashNGo-2.5.6.orig/washparser/hs/Makefile	2005-11-11 15:43:02.000000000 +0000
++++ WashNGo-2.5.6/washparser/hs/Makefile	2006-09-12 15:50:36.000000000 +0100
+@@ -9,7 +9,7 @@ OPT=
+ HCFLAGS=	$(OPT) $(HC_SPEC_FLAGS) $(HINCLUDES)
+ 
+ HINCLUDES=	$(HCPACKAGEFLAGS)
+-HCPACKAGEFLAGS=	-package text
++HCPACKAGEFLAGS= -package base -package haskell98 -package parsec
+ 
+ 
+ LINK.o=		$(HC) $(HCLOADFLAGS)
