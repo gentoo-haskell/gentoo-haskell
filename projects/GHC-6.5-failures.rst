@@ -29,7 +29,7 @@ dev-haskell/buddha-1.2
 
   ghc-6.5.20060906: unknown package: text
 
-Fixed by this *huge* patch `<../dev-haskell/buddha-1.2/files/buddha-1.2-ghc66.patch>`_.
+Fixed by this *huge* patch `<../dev-haskell/buddha/files/buddha-1.2-ghc66.patch>`_.
 
 dev-haskell/c2hs-0.14.5
 -----------------------
@@ -40,7 +40,7 @@ dev-haskell/c2hs-0.14.5
   c2hs/c/CLexer.x:78:41: Module `Data.Set' does not export `addToSet'
   c2hs/c/CLexer.x:78:51: Module `Data.Set' does not export `elementOf'
 
-Now fixed with this patch `<../dev-haskell/c2hs-0.14.5/files/c2hs-0.14.5-ghc66.patch>`_.
+Now fixed with this patch `<../dev-haskell/c2hs/files/c2hs-0.14.5-ghc66.patch>`_.
 
 dev-haskell/happy-1.15
 ----------------------
@@ -49,7 +49,7 @@ dev-haskell/happy-1.15
 
   LALR.lhs:626:34: Not in scope: `bounds'
 
-Now fixed with this patch `<../dev-haskell/happy-1.15/files/happy-1.15-ghc66.patch>`_.
+Now fixed with this patch `<../dev-haskell/happy/files/happy-1.15-ghc66.patch>`_.
 
 dev-haskell/haskell-src-exts-0.2
 --------------------------------
@@ -64,7 +64,7 @@ dev-haskell/haskell-src-exts-0.2
 
  (repeated 4 more times)
 
-Now fixed with this patch `<../dev-haskell/haskell-src-exts-0.2/files/haskell-src-exts-0.2-hiding-isSymbol.patch>`_.
+Now fixed with this patch `<../dev-haskell/haskell-src-exts/files/haskell-src-exts-0.2-hiding-isSymbol.patch>`_.
 
 dev-haskell/haxml-1.16
 ----------------------
@@ -83,7 +83,7 @@ dev-haskell/hmake-3.11
 
   ghc-6.5.20060906: unknown package: lang
 
-Now fixed with this patch `<../dev-haskell/hmake-3.11/files/hmake-3.11-ghc66.patch>`.
+Now fixed with this patch `<../dev-haskell/hmake/files/hmake-3.11-ghc66.patch>`_.
 
 dev-haskell/hsshellscript-2.6.3
 -------------------------------
