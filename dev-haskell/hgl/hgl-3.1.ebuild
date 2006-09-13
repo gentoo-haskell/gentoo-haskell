@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 MY_PN="HGL"
-GHC_PV=6.5.20060911
+GHC_PV=6.5.20060912
 
 DESCRIPTION="A simple graphics library based on X11 or Win32."
 HOMEPAGE=""

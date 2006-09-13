@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
-GHC_PV=6.5.20060911
+GHC_PV=6.5.20060912
 
 DESCRIPTION="Haskell network library"
 HOMEPAGE=""
