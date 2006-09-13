@@ -22,6 +22,7 @@ src_unpack() {
 	base_src_unpack
 
 	# Make it work with ghc 6.6
+	cd "${S}"
 	epatch "${FILESDIR}/${P}-hiding-isSymbol.patch"
 
 	# Make it work with ghc pre-6.4
