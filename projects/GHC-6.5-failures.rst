@@ -182,6 +182,21 @@ dev-haskell/shellac-0.3
 
   (and 7 more like it)
 
+dev-util/darcs-1.0.8
+--------------------
+
+::
+
+  Lcs.lhs:433:8: Not in scope: type constructor or class `HasBounds'
+
+
+dev-util/bnfc-2.2
+-----------------
+
+BNFC 2.2 had UTF8 troubles.
+
+Fixed in patch `<../dev-util/bnfc/files/bnfc-2.2-ghc66-utf8.patch>`_.
+
 
 GHC extra libs
 ==============
