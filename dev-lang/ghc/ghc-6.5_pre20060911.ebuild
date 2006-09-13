@@ -163,10 +163,12 @@ src_unpack() {
 	# Don't strip binaries on install. See QA warnings in bug #140369.
 	sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
-	# Temporary patch that needs testing before being pushed upstream:
+	# Temporary patches that needs testing before being pushed upstream:
 	# Fix the mangler on sparc
 	cd "${S}"
 	epatch "${FILESDIR}/ghc-6.4.2-sparcmangler.patch"
+	# Fix sparc split-objs linking problem
+	epatch "${FILESDIR}/ghc-6.5-norelax.patch"
 }
 
 src_compile() {
