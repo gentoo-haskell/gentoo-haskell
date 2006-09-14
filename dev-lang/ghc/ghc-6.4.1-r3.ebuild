@@ -236,15 +236,15 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
-	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${TMP}/ghc.sh"
-	chmod +x "${TMP}/ghc.sh"
+	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${T}/ghc.sh"
+	chmod +x "${T}/ghc.sh"
 
 	# we've patched some configure.ac files do allow us to enable/disable the
 	# X11 and HGL packages, so we need to autoreconf.
 	eautoreconf
 
 	econf \
-		--with-ghc="${TMP}/ghc.sh" \
+		--with-ghc="${T}/ghc.sh" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use openal && use opengl \

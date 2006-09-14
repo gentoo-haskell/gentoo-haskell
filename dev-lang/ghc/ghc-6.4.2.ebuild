@@ -232,15 +232,15 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
-	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${TMP}/ghc.sh"
-	chmod +x "${TMP}/ghc.sh"
+	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${T}/ghc.sh"
+	chmod +x "${T}/ghc.sh"
 
 	# We've patched some configure.ac files to fix the OpenAL/ALUT bindings.
 	# So we need to autoreconf.
 	eautoreconf
 
 	econf \
-		--with-ghc="${TMP}/ghc.sh" \
+		--with-ghc="${T}/ghc.sh" \
 		$(use_enable opengl opengl) \
 		$(use_enable opengl glut) \
 		$(use openal && use opengl \
@@ -304,7 +304,7 @@ pkg_postinst () {
 src_test() {
 	if use test; then
 		local summary
-		summary="${TMP}/testsuite-summary.txt"
+		summary="${T}/testsuite-summary.txt"
 
 		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
 		make -C "${S}/testsuite/tests/ghc-regress" \

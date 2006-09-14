@@ -218,11 +218,11 @@ src_compile() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
-	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${TMP}/ghc.sh"
-	chmod +x "${TMP}/ghc.sh"
+	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${T}/ghc.sh"
+	chmod +x "${T}/ghc.sh"
 
 	econf \
-		--with-ghc="${TMP}/ghc.sh" \
+		--with-ghc="${T}/ghc.sh" \
 		|| die "econf failed"
 
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
@@ -279,7 +279,7 @@ pkg_postinst () {
 src_test() {
 	if use test; then
 		local summary
-		summary="${TMP}/testsuite-summary.txt"
+		summary="${T}/testsuite-summary.txt"
 
 		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
 		make -C "${S}/testsuite/tests/ghc-regress" \
