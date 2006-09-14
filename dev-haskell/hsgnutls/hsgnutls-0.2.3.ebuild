@@ -5,7 +5,7 @@
 #Haddock doesn't work, because cabal has troubles with .chs files
 #CABAL_FEATURES="lib haddock"
 CABAL_FEATURES="lib"
-inherit base haskell-cabal
+inherit base eutils haskell-cabal
 
 DESCRIPTION="A haskell wrapper for the gnutls library."
 HOMEPAGE="http://www.cs.helsinki.fi/u/ekarttun/hsgnutls/"
@@ -22,8 +22,10 @@ RDEPEND=""
 
 src_unpack() {
 	base_src_unpack
+
 	cd ${S}
 	bash disable-network-alt.sh
+	epatch "${FILESDIR}/${P}-amd64.patch"
 
 	# None of the stuff in Setup.lhs is necessary
 	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
