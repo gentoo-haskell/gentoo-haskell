@@ -62,7 +62,7 @@ ghc-bestcabalversion() {
 	if ghc-cabal; then
 		# We ask portage, not ghc, so that we only pick up
 		# portage-installed cabal versions.
-		cabalpackage="$(best_version cabal)"
+		cabalpackage="$(best_version dev-haskell/cabal)"
 		cabalversion="${cabalpackage#dev-haskell/cabal-}"
 		cabalversion="${cabalversion%-r*}"
 		cabalversion="${cabalversion%_pre*}"
