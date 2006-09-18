@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 MY_PN=X11
-GHC_PV=6.5.20060912
+GHC_PV=6.5.20060917
 
 DESCRIPTION="X11 bindings for haskell"
 HOMEPAGE=""
