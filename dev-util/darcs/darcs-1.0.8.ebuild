@@ -51,6 +51,13 @@ src_test() {
 
 src_install() {
 	make DESTDIR="${D}" installbin || die "installation failed"
+	# The bash completion should be installed in /usr/share/bash-completion/
+	# rather than /etc/bash_completion.d/ . Fixes bug #148038.
+	mkdir "${D}/usr/share/bash-completion/" \
+		mv "${D}/etc/bash_completion.d/darcs" \
+		   "${D}/usr/share/bash-completion/" \
+		&& rmdir "${D}/etc/bash_completion.d" && "${D}/etc" \
+		|| die "fixing location of darcs bash completion failed"
 	if use doc; then
 		dodoc "${S}/darcs.ps"
 		dohtml "${S}/manual/"*
