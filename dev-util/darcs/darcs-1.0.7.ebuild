@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
-inherit base
+inherit base autotools
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://abridgegame.org/darcs"
@@ -29,6 +29,9 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	base_src_unpack
 
+	cd "${S}"
+	epatch "${FILESDIR}/darcs-1.0.8-ghc66.patch"
+
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
 	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
@@ -40,6 +43,9 @@ src_unpack() {
 }
 
 src_compile() {
+	# Since we've patched the build system:
+	eautoreconf
+
 	econf $(use_with doc docs) \
 		|| die "configure failed"
 	emake all || die "make failed"
