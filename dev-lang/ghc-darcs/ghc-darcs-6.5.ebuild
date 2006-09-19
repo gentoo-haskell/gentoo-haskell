@@ -30,7 +30,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="doc X opengl openal"
+IUSE="doc"
 
 # We don't provide virtual/ghc, although we could ...
 # PROVIDE="virtual/ghc"
@@ -39,10 +39,7 @@ RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	>=sys-libs/readline-4.2
-	X? ( || ( x11-libs/libX11 virtual/x11 ) )
-	opengl? ( virtual/opengl virtual/glu virtual/glut )
-	openal? ( media-libs/openal )"
+	>=sys-libs/readline-4.2"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
@@ -53,7 +50,7 @@ DEPEND="${RDEPEND}
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.6-r2 )"
+		>=dev-haskell/haddock-0.8_rc1 )"
 
 # The following function fetches each of the sub-repositories that
 # ghc requires.
@@ -120,7 +117,7 @@ ghc_setup_cflags() {
 src_unpack() {
 	# get main GHC darcs repo
 	darcs_fetch
-	for pkg in $(cat "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}/libraries/default-packages"); do
+	for pkg in $(cat "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}/libraries/core-packages"); do
 		fetch_pkg "${pkg}"
 	done
 	# copy everything
@@ -184,14 +181,7 @@ src_compile() {
 	# We're building from darcs so we need to autoreconf
 	eautoreconf
 
-	econf \
-		$(use_enable opengl opengl) \
-		$(use_enable opengl glut) \
-		$(use_enable openal openal) \
-		$(use_enable openal alut) \
-		$(use_enable X x11) \
-		$(use_enable X hgl) \
-		|| die "econf failed"
+	econf || die "econf failed"
 
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
