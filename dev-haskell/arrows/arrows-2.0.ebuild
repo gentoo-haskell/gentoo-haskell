@@ -23,6 +23,4 @@ S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 src_unpack() {
 	base_src_unpack
 	echo -n "	,UndecidableInstances" >> ${S}/arrows.cabal
-	echo "import Distribution.Simple" >> ${S}/Setup.hs
-	echo "main = defaultMain" >> ${S}/Setup.hs
 }
