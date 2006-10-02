@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 MY_PN=QuickCheck
-GHC_PV=6.5.20060917
+GHC_PV=6.5.20061001
 
 DESCRIPTION="An automatic, specification based testing utility for haskell programs"
 HOMEPAGE=""

@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 MY_PN="ALUT"
-GHC_PV=6.5.20060917
+GHC_PV=6.5.20061001
 
 DESCRIPTION="A Haskell binding for the OpenAL Utility Toolkit"
 HOMEPAGE=""
