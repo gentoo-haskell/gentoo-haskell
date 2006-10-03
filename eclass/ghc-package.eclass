@@ -3,6 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.9 2005/04/08 01:13:39 araujo Exp $
 #
 # Author: Andres Loeh <kosmikus@gentoo.org>
+# Maintained by: Haskell herd <haskell@gentoo.org>
 #
 # This eclass helps with the Glasgow Haskell Compiler's package
 # configuration utility.
