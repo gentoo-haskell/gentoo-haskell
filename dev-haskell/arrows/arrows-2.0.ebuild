@@ -19,8 +19,3 @@ IUSE=""
 DEPEND="=virtual/ghc-6.5*"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
-
-src_unpack() {
-	base_src_unpack
-	echo -n "	,UndecidableInstances" >> ${S}/arrows.cabal
-}
