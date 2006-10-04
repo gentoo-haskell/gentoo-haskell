@@ -189,6 +189,7 @@ dev-util/darcs-1.0.8
 
   Lcs.lhs:433:8: Not in scope: type constructor or class `HasBounds'
 
+Fixed in patch `<../dev-util/darcs/files/darcs-1.0.8-ghc66.patch>`_.
 
 dev-util/bnfc-2.2
 -----------------
@@ -200,6 +201,9 @@ Fixed in patch `<../dev-util/bnfc/files/bnfc-2.2-ghc66-utf8.patch>`_.
 
 GHC extra libs
 ==============
+
+All packages are now (2006-10-04) provided with Cabal's Setup.hs and play
+nice with haddock. The Gentoo Herd is happy once again.
 
 dev-haskell/opengl-2.1
 ----------------------
@@ -255,6 +259,7 @@ Haddock chokes again::
 
   haddock: parse error in doc string: [TokSpecial '/',TokString "www.haskell.org",TokSpecial '/']
 
+Fixed in source.
 
 dev-haskell/hunit-1.1
 ---------------------
