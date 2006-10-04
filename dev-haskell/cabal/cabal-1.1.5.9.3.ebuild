@@ -17,6 +17,13 @@ IUSE="doc"
 
 DEPEND=">=virtual/ghc-6.2"
 
+src_unpack() {
+	unpack "${A}"
+	#Temporary: just testing a patch to try and make the cpp/haddock bit work
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-cpp-haddock.patch"
+}
+
 src_compile() {
 	if ghc-cabal; then
 		make setup HC="$(ghc-getghc) -ignore-package Cabal"
