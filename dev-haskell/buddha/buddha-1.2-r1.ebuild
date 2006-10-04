@@ -42,3 +42,12 @@ src_install() {
 
 	#note that buddha's ghc packages do not need to be registered
 }
+
+pkg_postinst() {
+	echo
+	ewarn "WARNING: buddha-1.2 appears to generate code which is not"
+	ewarn "fully compatible with ghc 6.4 or later.  We are working this"
+	ewarn "with the upstream developers.  Please do not report this as a"
+	ewarn "bug, as we are already aware of the issue."
+	echo
+}
