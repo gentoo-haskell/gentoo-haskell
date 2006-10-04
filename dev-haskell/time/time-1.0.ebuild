@@ -22,8 +22,6 @@ S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 
 src_unpack() {
 	base_src_unpack
-	# fix path to C-Sources
-	sed -i 's@HsTime.c@cbits/HsTime.c@' ${S}/time.cabal
 	echo "import Distribution.Simple" >> ${S}/Setup.hs
 	echo "main = defaultMain" >> ${S}/Setup.hs
 }
