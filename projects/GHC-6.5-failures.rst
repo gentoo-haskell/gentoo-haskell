@@ -212,6 +212,8 @@ Cabal patch `Fri Sep  8 19:36:15 CEST 2006  Duncan Coutts <remove.this.part.dunc
 
 Problem with opengl remains though.
 
+Fixed in Cabal.
+
 dev-haskell/openal-1.3
 ----------------------
 
@@ -225,6 +227,8 @@ Haddock chokes on Sound/OpenAL/AL/Attenuation.hs::
   dist/build/tmp/Sound/OpenAL/AL/Attenuation.hs:"dist/build/tmp/Sound/OpenAL/AL/Attenuation.hs":
   207:16: Parse error
 
+Fixed in Cabal.
+
 dev-haskell/alut-2.0
 --------------------
 
@@ -237,6 +241,7 @@ Used:
 
   dist/build/tmp/Sound/ALUT/Config.hs:"dist/build/tmp/Sound/ALUT/Config.hs": 219:16: Parse error
 
+Fixed in Cabal.
 
 dev-haskell/xhtml-2006.8.14
 ---------------------------
@@ -263,6 +268,8 @@ Haddock::
 
   dist/build/tmp/Test/HUnit/Lang.hs:"dist/build/tmp/Test/HUnit/Lang.hs": 69:1: Parse error
 
+Fixed in Cabal.
+
 
 dev-haskell/network-2.0
 -----------------------
@@ -276,6 +283,8 @@ Haddock::
 
   dist/build/tmp/Network/Socket.hs:"Network/Socket.hsc": 283:16: Parse error
 
+Fixed in Cabal.
+
 dev-haskell/time-1.0
 --------------------
 
@@ -287,6 +296,8 @@ Used:
 ::
 
   ghc-6.5.20060910: does not exist: cbits/cbits/HsTime.c
+
+Fixed in source.
 
 Untested packages
 =================
