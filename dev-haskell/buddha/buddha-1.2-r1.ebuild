@@ -46,8 +46,8 @@ src_install() {
 pkg_postinst() {
 	echo
 	ewarn "WARNING: buddha-1.2 appears to generate code which is not"
-	ewarn "fully compatible with ghc 6.4 or later.  We are working this"
-	ewarn "with the upstream developers.  Please do not report this as a"
-	ewarn "bug, as we are already aware of the issue."
+	ewarn "fully compatible with ghc 6.4 or later.  We are working on this"
+	ewarn "issue with the upstream developers.  Please do not report this"
+	ewarn "as a bug, as we are already aware of the problem."
 	echo
 }
