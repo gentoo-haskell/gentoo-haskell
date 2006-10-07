@@ -19,9 +19,10 @@ DEPEND=">=virtual/ghc-6.2"
 
 src_unpack() {
 	unpack "${A}"
-	#Temporary: just testing a patch to try and make the cpp/haddock bit work
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-cpp-haddock.patch"
+	if ! $(ghc-cabal); then
+		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
+			${S}/Cabal.cabal
+	fi
 }
 
 src_compile() {
