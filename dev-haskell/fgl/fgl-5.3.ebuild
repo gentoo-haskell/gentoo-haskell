@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
-GHC_PV=6.5.20061001
+GHC_PV=6.5.20061006
 
 DESCRIPTION="A functional graph library for Haskell."
 HOMEPAGE=""
