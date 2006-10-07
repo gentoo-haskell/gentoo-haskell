@@ -31,7 +31,7 @@ SRC_URI=""
 [ -z "$EDARCS_DARCS_CMD" ] && EDARCS_DARCS_CMD="darcs"
 
 # darcs commands with command-specific options
-[ -z "$EDARCS_GET_CMD" ] && EDARCS_GET_CMD="get"
+[ -z "$EDARCS_GET_CMD" ] && EDARCS_GET_CMD="get --partial"
 [ -z "$EDARCS_UPDATE_CMD" ] && EDARCS_UPDATE_CMD="pull"
 
 # options to pass to both the "get" and "update" commands
