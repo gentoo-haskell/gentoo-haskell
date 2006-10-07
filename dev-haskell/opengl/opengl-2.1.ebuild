@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile" #even haddock-8.0-rc1 can't parse it
+CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 MY_PN=OpenGL
