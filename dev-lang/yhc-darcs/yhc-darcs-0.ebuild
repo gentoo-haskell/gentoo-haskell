@@ -26,3 +26,7 @@ src_compile() {
 src_install() {
 	scons install prefix="${D}/usr" || die "install failed"
 }
+
+src_test() {
+	scons test || die "test failed"
+}
