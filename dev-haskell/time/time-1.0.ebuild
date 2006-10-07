@@ -19,9 +19,3 @@ IUSE=""
 DEPEND="=virtual/ghc-6.5*"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
-
-src_unpack() {
-	base_src_unpack
-	echo "import Distribution.Simple" >> ${S}/Setup.hs
-	echo "main = defaultMain" >> ${S}/Setup.hs
-}
