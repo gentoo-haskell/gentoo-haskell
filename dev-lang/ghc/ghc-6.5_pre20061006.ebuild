@@ -164,9 +164,7 @@ src_unpack() {
 	sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
 	# Temporary patches that needs testing before being pushed upstream:
-	# Fix the mangler on sparc
 	cd "${S}"
-	epatch "${FILESDIR}/ghc-6.4.2-sparcmangler.patch"
 	# Fix sparc split-objs linking problem
 	epatch "${FILESDIR}/ghc-6.5-norelax.patch"
 }
