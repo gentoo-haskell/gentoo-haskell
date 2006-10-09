@@ -9,7 +9,7 @@ DESCRIPTION="A liberalised cpp-a-like preprocessor for Haskell"
 HOMEPAGE="http://haskell.org/cpphs/"
 SRC_URI="http://www.cs.york.ac.uk/fp/cpphs/${P}.tar.gz"
 
-LICENSE="LGPL-2.1"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE=""
