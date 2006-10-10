@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
-GHC_PV=6.5.20061006
+GHC_PV=6.5.20061008
 
 DESCRIPTION="XHTML combinator library for haskell"
 HOMEPAGE=""

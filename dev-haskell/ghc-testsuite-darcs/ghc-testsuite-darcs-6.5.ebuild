@@ -20,7 +20,7 @@ DEPEND="virtual/ghc
 
 # Sigh, the testsuite needs to be run inside a ghc build tree
 # Not necessarily a built tree mind you, it only needs a few .mk files.
-GHC_PV="6.5.20061001"
+GHC_PV="6.5.20061008"
 SRC_URI="http://www.haskell.org/ghc/dist/current/dist/ghc-${GHC_PV}-src.tar.bz2"
 EDARCS_REPOSITORY="http://darcs.haskell.org/testsuite"
 EDARCS_GET_CMD="get --partial"

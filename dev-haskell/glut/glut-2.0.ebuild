@@ -6,7 +6,7 @@ CABAL_FEATURES="lib"
 inherit haskell-cabal
 
 MY_PN=GLUT
-GHC_PV=6.5.20061006
+GHC_PV=6.5.20061008
 
 DESCRIPTION="GLUT bindings for haskell"
 HOMEPAGE="http://www.haskell.org/HOpenGL/"

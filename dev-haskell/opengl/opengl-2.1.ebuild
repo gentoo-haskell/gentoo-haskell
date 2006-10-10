@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 MY_PN=OpenGL
-GHC_PV=6.5.20061006
+GHC_PV=6.5.20061008
 
 DESCRIPTION="OpenGL bindings for haskell"
 HOMEPAGE=""
