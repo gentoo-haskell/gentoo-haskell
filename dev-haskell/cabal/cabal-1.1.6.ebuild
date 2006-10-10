@@ -38,7 +38,7 @@ src_compile() {
 src_install() {
 	cabal_src_install
 
-	# documentation (install directly; generation seems broken to me atm)
+	# documentation (install directly)
 	dohtml -r doc/users-guide
 	if use doc; then
 		dohtml -r doc/API
