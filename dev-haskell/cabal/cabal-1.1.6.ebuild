@@ -23,6 +23,8 @@ src_unpack() {
 		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
 			${S}/Cabal.cabal
 	fi
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-unlit.patch"
 }
 
 src_compile() {
