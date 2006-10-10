@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="bootstrap bin"
+CABAL_FEATURES="bin"
 inherit haskell-cabal eutils versionator
 
 MY_PF=$(replace_version_separator 3 '-' ${PF})
@@ -19,8 +19,9 @@ IUSE="doc"
 
 DEPEND=">=virtual/ghc-6.2
 	doc? (  ~app-text/docbook-xml-dtd-4.2
-		app-text/docbook-xsl-stylesheets
-		>=dev-libs/libxslt-1.1.2 )"
+			app-text/docbook-xsl-stylesheets
+			>=dev-libs/libxslt-1.1.2 )"
+RDEPEND=""
 
 S="${WORKDIR}/${MY_PF}"
 
