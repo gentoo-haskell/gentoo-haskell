@@ -10,7 +10,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Haskell utilities for parsing, filtering, transforming and generating XML documents"
 HOMEPAGE="http://www.cs.york.ac.uk/fp/HaXml-1.14/"
-SRC_URI="http://www.cs.york.ac.uk/fp/HaXml-1.14/${MY_P}.tar.gz"
+SRC_URI="ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/HaXml-1.15.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
