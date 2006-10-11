@@ -58,12 +58,12 @@ RDEPEND="
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
-	<virtual/ghc-6.5
-	!>=virtual/ghc-6.6
+	<virtual/ghc-6.7
+	!>=virtual/ghc-6.7
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2
-			>=dev-haskell/haddock-0.8_rc1 )"
+			>=dev-haskell/haddock-0.8 )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.6"
 
