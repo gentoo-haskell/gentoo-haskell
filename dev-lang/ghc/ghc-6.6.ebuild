@@ -153,7 +153,7 @@ src_unpack() {
 	sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/driver/ghc/ghc.sh"
 
 	# If we're using the testsuite then move it to into the build tree
-	use test && mv "${WORKDIR}/testsuite" "${S}/"
+#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
 	# This is a hack for ia64. We can persuade ghc to avoid mangler errors
 	# if we turn down the optimisations in one problematic module.
@@ -276,24 +276,24 @@ pkg_postinst () {
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
 
-src_test() {
-	if use test; then
-		local summary
-		summary="${T}/testsuite-summary.txt"
-
-		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
-		make -C "${S}/testsuite/tests/ghc-regress" \
-				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
-				EXTRA_RUNTEST_OPTS="--output-summary=${summary}"
-
-		if grep -q ' 0 unexpected failures' "${summary}"; then
-			einfo "All tests passed ok"
-		else
-			ewarn "Some tests failed, for a summary see: ${summary}"
-		fi
-	else
-		ewarn "Sadly, due to some portage limitations you need both"
-		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
-	fi
-}
+#src_test() {
+#	if use test; then
+#		local summary
+#		summary="${T}/testsuite-summary.txt"
+#
+#		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
+#		make -C "${S}/testsuite/tests/ghc-regress" \
+#				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
+#				EXTRA_RUNTEST_OPTS="--output-summary=${summary}"
+#
+#		if grep -q ' 0 unexpected failures' "${summary}"; then
+#			einfo "All tests passed ok"
+#		else
+#			ewarn "Some tests failed, for a summary see: ${summary}"
+#		fi
+#	else
+#		ewarn "Sadly, due to some portage limitations you need both"
+#		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
+#	fi
+#}
 
