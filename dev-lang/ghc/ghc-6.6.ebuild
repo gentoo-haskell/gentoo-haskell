@@ -38,8 +38,8 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
-SRC_URI="http://www.haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
-#		"test? ( http://haskell.org/ghc/dist/ghc-testsuite-${MY_PV}.tar.gz )"
+SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
+	test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="as-is"
 SLOT="0"
@@ -65,7 +65,7 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2
 			>=dev-haskell/haddock-0.8_rc1 )"
 
-PDEPEND=">=dev-haskell/cabal-1.1.5.9"
+PDEPEND=">=dev-haskell/cabal-1.1.6"
 
 #pkg_setup() {
 	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
@@ -178,12 +178,12 @@ src_compile() {
 	echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE
-	if use debug; then
-		echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
-		echo "GhcLibHcOpts    =" >> mk/build.mk
-		echo "GhcLibWays      =" >> mk/build.mk
-		echo "SplitObjs       = NO" >> mk/build.mk
-	fi
+	#if use debug; then
+	#	echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
+	#	echo "GhcLibHcOpts    =" >> mk/build.mk
+	#	echo "GhcLibWays      =" >> mk/build.mk
+	#	echo "SplitObjs       = NO" >> mk/build.mk
+	#fi
 
 	# determine what to do with documentation
 	if use doc; then
@@ -226,6 +226,7 @@ src_compile() {
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
 	# in the package.conf file point to the right place ...
+	# TODO: is this still required ?
 
 }
 
@@ -237,6 +238,7 @@ src_install () {
 
 	# the libdir0 setting is needed for amd64, and does not
 	# harm for other arches
+	#TODO: is this still required?
 	emake -j1 ${insttarget} \
 		prefix="${D}/usr" \
 		datadir="${D}/usr/share/doc/${PF}" \
