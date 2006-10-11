@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock cpphs lib"
+CABAL_FEATURES="haddock lib"
 inherit base haskell-cabal
 
 DESCRIPTION="The Utrecht University parsing, printing and DData libraries"
@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.2.2
-		>=dev-haskell/cpphs-0.9"
+DEPEND=">=virtual/ghc-6.2.2"
 
 src_unpack() {
 	base_src_unpack
