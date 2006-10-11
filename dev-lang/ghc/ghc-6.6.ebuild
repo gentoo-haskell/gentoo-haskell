@@ -38,8 +38,8 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
-SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
-	test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
+SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2"
+#	"test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="as-is"
 SLOT="0"
