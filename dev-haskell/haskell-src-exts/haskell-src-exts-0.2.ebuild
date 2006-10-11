@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc"
+DEPEND=">=virtual/ghc-6.2
+		dev-haskell/happy"
 
 S=${WORKDIR}/haskell-src-exts/src/haskell-src-exts
 
