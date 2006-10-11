@@ -44,7 +44,7 @@ SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="test doc"
+IUSE="doc"
 
 S="${WORKDIR}/${MY_P}"
 
