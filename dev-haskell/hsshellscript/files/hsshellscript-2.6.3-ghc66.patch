@@ -1,0 +1,44 @@
+diff -urwpN hsshellscript-2.6.3.orig/lib/hsshellscript.cabal hsshellscript-2.6.3/lib/hsshellscript.cabal
+--- hsshellscript-2.6.3.orig/lib/hsshellscript.cabal	2006-08-14 11:50:03.000000000 +0100
++++ hsshellscript-2.6.3/lib/hsshellscript.cabal	2006-09-12 13:35:12.000000000 +0100
+@@ -20,4 +20,3 @@ extra-libraries: glib
+ include-dirs: @DEST_IMPORTS
+ includes: @CINCLUDES
+ depends: base, haskell98, parsec, unix
+-extra-ghc-opts: -fglasgow-exts
+\ No newline at end of file
+diff -urwpN hsshellscript-2.6.3.orig/Makefile hsshellscript-2.6.3/Makefile
+--- hsshellscript-2.6.3.orig/Makefile	2006-08-14 11:50:03.000000000 +0100
++++ hsshellscript-2.6.3/Makefile	2006-09-12 13:35:50.000000000 +0100
+@@ -64,9 +64,9 @@ VERSION		= 2.6.3
+ HC 		= ghc
+ CC		= gcc
+ CFLAGS_GCC	= `pkg-config --cflags glib-2.0` -Ibuild -Isrc
+-CFLAGS_GHC	= -ibuild:src/lib:src/test -I. -odir build -hidir build -fglasgow-exts -package-name hsshellscript -O2
++CFLAGS_GHC	= -ibuild:src/lib:src/test -I. -odir build -hidir build -fglasgow-exts -package-name hsshellscript -O
+ PROFFLAGS	= -osuf p_o -hisuf p_hi -prof -auto-all
+-LIBS   		= -syslib lang -syslib text -syslib util build/libhsshellscript.a `pkg-config --libs glib-2.0`
++LIBS   		= -package unix -package parsec build/libhsshellscript.a `pkg-config --libs glib-2.0`
+ SRC_LIB_HS	= HsShellScript HsShellScript/Paths HsShellScript/Shell HsShellScript/Args HsShellScript/GetOpt
+ SRC_LIB_CHS	= HsShellScript/Commands HsShellScript/ProcErr HsShellScript/Misc 
+ LIB_HS		= $(foreach hs, $(SRC_LIB_HS), src/lib/$(hs).hs) $(foreach hs, $(SRC_LIB_CHS), build/$(hs).hs)
+diff -urwpN hsshellscript-2.6.3.orig/src/test/force_mv.hs hsshellscript-2.6.3/src/test/force_mv.hs
+--- hsshellscript-2.6.3.orig/src/test/force_mv.hs	2006-08-14 11:50:03.000000000 +0100
++++ hsshellscript-2.6.3/src/test/force_mv.hs	2006-09-12 13:25:00.000000000 +0100
+@@ -10,14 +10,14 @@ import Data.Bits
+ 
+ 
+ header = "force_mv <Parameter an mv>\n\
+-         \Der Aufruf ist wie mv, auﬂer daﬂ genau eine Quelle und ein Ziel erforderlich ist (also auch kein --target-directory)."
++         \Der Aufruf ist wie mv, au√üer da√ü genau eine Quelle und ein Ziel erforderlich ist (also auch kein --target-directory)."
+ 
+ 
+ main = mainwrapper $ do
+    (opts,pfade) <- fmap teilen $ getArgs
+    case pfade of
+       [quelle, ziel] -> force_cmd (\q z -> run "/bin/mv" (opts ++ [q, z])) quelle ziel
+-      _              -> failIO "Es muﬂ genau eine Quelle und genau ein Ziel angegeben werden."
++      _              -> failIO "Es mu√ü genau eine Quelle und genau ein Ziel angegeben werden."
+ 
+ 
+ -- Optionen von Pfaden trennen
