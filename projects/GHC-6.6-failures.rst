@@ -175,6 +175,9 @@ dev-haskell/wxhaskell-0.8-r1
 dev-haskell/wxhaskell-0.9
 dev-haskell/wxhaskell-0.9.4
 ----------------------
+wx/src/Graphics/UI/WX/Types.hs:94:0:
+    Bad interface file: out/wx/imports/Graphics/UI/WXCore/Types.hi
+        Something is amiss; requested module  wx:Graphics.UI.WXCore.Types differs from name found in the interface file wxcore:Graphics.UI.WXCore.Types
 
 
 
