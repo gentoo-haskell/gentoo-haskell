@@ -1,5 +1,5 @@
 =============================
-Packages failing with GHC 6.5
+Packages failing with GHC 6.6
 =============================
 
 :Authors: Lennart Kolmodin <kolmodin@gentoo.org>,
@@ -145,6 +145,7 @@ dev-haskell/hdbc-0.99.2
 
 dev-haskell/hdbc-1.0.0
 ----------------------
+needs mtl but builds fine
 
 dev-haskell/hdbc-odbc-0.99.0.0
 ------------------------------
@@ -154,6 +155,11 @@ dev-haskell/hdbc-odbc-0.99.2.1
 
 dev-haskell/hdbc-odbc-1.0.0.0
 -----------------------------
+needs mtl, fails with:
+
+::
+
+  dist/build/tmp/Database/HDBC/ODBC/Connection.hs:"Database/HDBC/ODBC/Connection.hsc": 77:43: Parse error
 
 dev-haskell/hdbc-postgresql-0.99.0.0
 ------------------------------------
@@ -163,6 +169,7 @@ dev-haskell/hdbc-postgresql-0.99.2.1
 
 dev-haskell/hdbc-postgresql-1.0.0.0
 -----------------------------------
+needs mtl, builds fine.
 
 dev-haskell/hdbc-sqlite-0.99.0.0
 --------------------------------
@@ -172,6 +179,11 @@ dev-haskell/hdbc-sqlite-0.99.2.0
 
 dev-haskell/hdbc-sqlite-1.0.0.0
 -------------------------------
+needs mtl, builds fine without doc, haddock fails with:
+
+::
+
+  dist/build/tmp/Database/HDBC/Sqlite3/Statement.hs:"Database/HDBC/Sqlite3/Statement.hsc": 46:15: parse error in doc string: [haddock: EOF token
 
 dev-haskell/hdoc-0.8.3
 ----------------------
@@ -196,18 +208,22 @@ dev-haskell/hs-plugins-1.0_rc0
 
 dev-haskell/hsql-1.7
 --------------------
+builds fine.
 
 dev-haskell/hsql-mysql-1.7
 --------------------------
 
 dev-haskell/hsql-odbc-1.7
 -------------------------
+builds fine.
 
 dev-haskell/hsql-postgresql-1.7
 -------------------------------
+builds fine.
 
 dev-haskell/hsql-sqlite-1.7
 ---------------------------
+builds fine.
 
 dev-haskell/hsshellscript-2.2.2
 -------------------------------
@@ -220,6 +236,7 @@ dev-haskell/hsshellscript-2.6.0
 
 dev-haskell/hsshellscript-2.6.3
 -------------------------------
+fails, needs package "lang".
 
 dev-haskell/http-2006.7.5
 -------------------------
