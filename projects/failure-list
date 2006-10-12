@@ -1,0 +1,64 @@
+#!/bin/bash
+
+cd ..
+
+EBUILDS=$(find . -name \*.ebuild | grep -v _darcs | sed -e "s/\.\\///" | sort)
+
+RST=projects/GHC-6.6-failures.rst
+
+PORTAGE=/usr/portage
+ESCAPED_PORTAGE="\\/usr\\/portage"
+
+if [[ "$1" == "--help" ]]; then
+  echo usage: $0
+  echo [12] package
+  echo 1. X means the package is present in $RST, otherwise not present
+  echo 2. P means the package is present in $PORTAGE
+  echo 2. C means the package is only present in $PORTAGE, not in the ovelay
+  exit 0
+fi
+
+# check packages that are in the overlay
+for EBUILD in ${EBUILDS}; do
+  PKG=$(echo "${EBUILD}" | sed -e s/.ebuild// | cut -d '/' -f 1,3)
+  echo -n "["
+  grep --quiet "^${PKG}" "${RST}"
+  if [[ $? -eq 0 ]]; then
+    echo -n "X"
+  else
+    echo -n " "
+  fi
+  if [[ -f "${PORTAGE}/${EBUILD}" ]]; then
+    echo -n "P"
+  else
+    echo -n " "
+  fi
+  echo "] ${PKG}"
+done
+
+
+# find packages in cvs that aren't in the overlay
+NAMES=$( echo "${EBUILDS}" | cut -d '/' -f 1,2 | uniq | sort )
+
+for NAME in ${NAMES}; do
+  if [[ ! -d "${PORTAGE}/${NAME}" ]]; then
+    continue
+  fi
+  for CVSNAME in $( find "${PORTAGE}/${NAME}" -name "*.ebuild" ); do
+    SHORT_CVSNAME=$( echo "$CVSNAME" | sed -e "s/${ESCAPED_PORTAGE}\///" )
+    if [[ -f "${SHORT_CVSNAME}" ]]; then
+      continue
+    fi
+    PKG=$( echo "${SHORT_CVSNAME}" | sed -e s/.ebuild// | cut -d '/' -f 1,3 )
+    echo -n "["
+    grep --quiet "^${PKG}" "${RST}"
+    if [[ $? -eq 0 ]]; then
+      echo -n "X"
+    else
+      echo -n " "
+    fi
+    echo "C] ${PKG}"
+  done
+done
+
+# vim: tw=76 ts=2 :
