@@ -118,6 +118,8 @@ fails with:
 
 dev-haskell/haddock-0.7
 -----------------------
+blocked by >=ghc-6.6.
+
 
 dev-haskell/haddock-0.8
 -----------------------
@@ -131,7 +133,6 @@ builds fine
 
 dev-haskell/harp-0.2
 --------------------
-
 builds fine
 
 
@@ -232,6 +233,7 @@ builds fine.
 dev-haskell/hsql-mysql-1.7
 --------------------------
 builds fine.
+
 
 dev-haskell/hsql-odbc-1.7
 -------------------------
