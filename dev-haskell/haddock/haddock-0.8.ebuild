@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND=">=virtual/ghc-6.4
-		>=dev-haskell/cabal-1.1.5
+		>=dev-haskell/cabal-1.1.4
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2 )"
