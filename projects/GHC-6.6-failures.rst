@@ -105,15 +105,15 @@ fails with:
 
 ::
 
-tools/c2hs/base/general/Binary.hs:59:7:
-    Could not find module `Data.FiniteMap':
-      Use -v to see a list of the files searched for.
-make[1]: *** Deleting file `tools/c2hs/c2hsLocal.deps'
-/usr/bin/ghc +RTS -RTS -c glib/System/Glib.hs -o glib/System/Glib.o -O -fffi -ignore-package glib -iglib -package-name glib '-#include<glib-object.h>' -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include
+  tools/c2hs/base/general/Binary.hs:59:7:
+      Could not find module `Data.FiniteMap':
+        Use -v to see a list of the files searched for.
+  make[1]: *** Deleting file `tools/c2hs/c2hsLocal.deps'
+  /usr/bin/ghc +RTS -RTS -c glib/System/Glib.hs -o glib/System/Glib.o -O -fffi -ignore-package glib -iglib -package-name glib '-#include<glib-object.h>' -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include
 
-glib/System/Glib.hs:12:0:
-    Failed to load interface for `System.Glib.UTFString':
-      Use -v to see a list of the files searched for.
+  glib/System/Glib.hs:12:0:
+      Failed to load interface for `System.Glib.UTFString':
+        Use -v to see a list of the files searched for.
 
 dev-haskell/haddock-0.6-r3
 --------------------------
