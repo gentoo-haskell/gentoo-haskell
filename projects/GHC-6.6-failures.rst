@@ -333,21 +333,12 @@ but otherwise builds fine
 
 dev-haskell/lhs2tex-1.10_pre
 ----------------------------
-
-fails, uses package "lang":
-
-::
-
-  ghc-6.6: unknown package: lang
+blocked by >=ghc-6.6.
 
 
 dev-haskell/lhs2tex-1.11
 ------------------------
-fails, uses package "lang":
-
-::
-
-  ghc-6.6: unknown package: lang
+blocked by >=ghc-6.6.
 
 This should be solved by a new lhs2tex-1.12 release.
 
