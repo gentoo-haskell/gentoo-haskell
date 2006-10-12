@@ -238,12 +238,23 @@ dev-haskell/hxt-5.00
 
 dev-haskell/hxt-6.0
 -------------------
+need network and hunit but builds fine
 
 dev-haskell/lhs2tex-1.10_pre
 ----------------------------
+fails, uses package "lang":
+
+::
+
+  ghc-6.6: unknown package: lang
 
 dev-haskell/lhs2tex-1.11
 ------------------------
+fails, uses package "lang":
+
+::
+
+  ghc-6.6: unknown package: lang
 
 dev-haskell/missingh-0.14.4
 ---------------------------
