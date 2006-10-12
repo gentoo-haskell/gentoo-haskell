@@ -247,9 +247,20 @@ dev-haskell/lhs2tex-1.11
 
 dev-haskell/missingh-0.14.4
 ---------------------------
+would require haskell-src, network, mtl and hunit.
+
+fails with:
+
+::
+
+  MissingH/Str.hs:47:7:
+      Could not find module `Text.Regex':
+        it is a member of package regex-compat-0.71, which is hidden
 
 dev-haskell/uuagc-0.9.1
 -----------------------
+
+works.
 
 dev-haskell/uulib-0.9.2
 -----------------------
