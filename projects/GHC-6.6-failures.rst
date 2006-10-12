@@ -166,6 +166,13 @@ dev-haskell/uulib-0.9.1
 dev-haskell/uulib-0.9.2
 ----------------------
 
+::
+
+  src/UU/Parsing/StateParser.hs:5:0:
+      Illegal instance declaration for `InputState (inp, state) s p'
+         (the Coverage Condition fails for one of the functional dependencies)
+     In the instance declaration for `InputState (inp, state) s p'
+
 dev-haskell/wash-2.0.6
 dev-haskell/wash-2.3.1
 dev-haskell/wash-2.5.6
@@ -175,9 +182,12 @@ dev-haskell/wxhaskell-0.8-r1
 dev-haskell/wxhaskell-0.9
 dev-haskell/wxhaskell-0.9.4
 ----------------------
-wx/src/Graphics/UI/WX/Types.hs:94:0:
-    Bad interface file: out/wx/imports/Graphics/UI/WXCore/Types.hi
-        Something is amiss; requested module  wx:Graphics.UI.WXCore.Types differs from name found in the interface file wxcore:Graphics.UI.WXCore.Types
+
+::
+
+  wx/src/Graphics/UI/WX/Types.hs:94:0:
+     Bad interface file: out/wx/imports/Graphics/UI/WXCore/Types.hi
+         Something is amiss; requested module  wx:Graphics.UI.WXCore.Types differs from name found in the interface file wxcore:Graphics.UI.WXCore.Types
 
 
 
