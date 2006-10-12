@@ -49,7 +49,6 @@ missing dep on dev-haskell/haskell-src, other than that it builds fine.
 
 dev-haskell/alex-2.0.1
 ----------------------
-
 builds fine
 
 
@@ -58,8 +57,7 @@ dev-haskell/c2hs-0.13.4
 
 dev-haskell/c2hs-0.14.5
 -----------------------
-
-builds fine (version 0.14.5)
+builds fine
 
 
 dev-haskell/cabal-1.1.3-r1
@@ -78,8 +76,7 @@ dev-haskell/cpphs-1.1
 
 dev-haskell/cpphs-1.2
 ---------------------
-
-builds fine (version 1.2)
+builds fine
 
 
 dev-haskell/drift-2.1.2
@@ -87,13 +84,11 @@ dev-haskell/drift-2.1.2
 
 dev-haskell/drift-2.2.0
 -----------------------
-
-builds fine (version 2.2.0)
+builds fine
 
 
 dev-haskell/frown-0.6.1-r1
 --------------------------
-
 builds fine
 
 
@@ -126,14 +121,12 @@ dev-haskell/haddock-0.7
 
 dev-haskell/haddock-0.8
 -----------------------
-
-builds fine (version 0.8)
+builds fine
 
 
 dev-haskell/happy-1.15
 ----------------------
-
-builds fine (version 1.15)
+builds fine
 
 
 dev-haskell/harp-0.2
@@ -197,6 +190,8 @@ builds fine
 
 dev-haskell/hmake-3.10
 ----------------------
+blocked by >=ghc-6.6.
+
 
 dev-haskell/hmake-3.11
 ----------------------
@@ -236,7 +231,7 @@ builds fine.
 
 dev-haskell/hsql-mysql-1.7
 --------------------------
-
+builds fine.
 
 dev-haskell/hsql-odbc-1.7
 -------------------------
