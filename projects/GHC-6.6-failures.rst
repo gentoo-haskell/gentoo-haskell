@@ -37,6 +37,11 @@ can just make it block on ghc-6.6 too *cough* wxhaskell *cough*.
 dev-haskell/buddha-1.2
 ----------------------
 
+dcoutts messed up the patch, but that's now fixed in cvs.
+
+missing dep on dev-haskell/haskell-src, other than that it builds fine.
+
+
 dev-haskell/alex-2.0.1
 ----------------------
 
