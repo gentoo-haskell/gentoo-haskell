@@ -11,10 +11,11 @@ ESCAPED_PORTAGE="\\/usr\\/portage"
 
 if [[ "$1" == "--help" ]]; then
   echo usage: $0
-  echo [12] package
+  echo [123] package
   echo 1. X means the package is present in $RST, otherwise not present
   echo 2. P means the package is present in $PORTAGE
   echo 2. C means the package is only present in $PORTAGE, not in the ovelay
+  echo 3. D means the package in the overlay is different from the $PORTAGE version
   exit 0
 fi
 
@@ -30,8 +31,27 @@ for EBUILD in ${EBUILDS}; do
   fi
   if [[ -f "${PORTAGE}/${EBUILD}" ]]; then
     echo -n "P"
-  else
-    echo -n " "
+
+    #ignore comment lines
+    T1=$( mktemp )
+    T2=$( mktemp )
+
+    cat "${EBUILD}" > $T1
+    cat "${PORTAGE}/${EBUILD}" > $T2
+    
+    sed -e "s/#.*//" -i "${T1}"
+    sed -e "s/#.*//" -i "${T2}"
+
+    diff -q "${T1}" "${T2}" > /dev/null
+   if [[ $? -eq 1 ]]; then
+      echo -n "D"
+    else
+      echo -n " "
+    fi
+    rm -f $T1
+    rm -f $T2
+   else
+    echo -n "  "
   fi
   echo "] ${PKG}"
 done
@@ -57,7 +77,7 @@ for NAME in ${NAMES}; do
     else
       echo -n " "
     fi
-    echo "C] ${PKG}"
+    echo "C ] ${PKG}"
   done
 done
 
