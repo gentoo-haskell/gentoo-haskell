@@ -35,6 +35,7 @@ can just make it block on ghc-6.6 too *cough* wxhaskell *cough*.
 
 
 dev-haskell/buddha-1.2
+dev-haskell/buddha-1.2-r1
 ----------------------
 
 dcoutts messed up the patch, but that's now fixed in cvs.
@@ -45,8 +46,9 @@ missing dep on dev-haskell/haskell-src, other than that it builds fine.
 dev-haskell/alex-2.0.1
 ----------------------
 
+works fine.
 
-dev-haskell/buddha-1.2-r1
+
 ----------------------
 
 dev-haskell/c2hs-0.13.4
@@ -79,6 +81,9 @@ dev-haskell/haddock-0.6-r3
 dev-haskell/haddock-0.7
 dev-haskell/haddock-0.8
 ----------------------
+
+version 0.8 works fine.
+
 
 dev-haskell/happy-1.14
 dev-haskell/happy-1.15
