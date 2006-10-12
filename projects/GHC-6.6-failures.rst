@@ -257,12 +257,7 @@ dev-haskell/uulib-0.9.1
 dev-haskell/uulib-0.9.2
 -----------------------
 
-::
-
-  src/UU/Parsing/StateParser.hs:5:0:
-      Illegal instance declaration for `InputState (inp, state) s p'
-         (the Coverage Condition fails for one of the functional dependencies)
-     In the instance declaration for `InputState (inp, state) s p'
+I stand corrected, it works.
 
 dev-haskell/wash-2.0.6
 ----------------------
