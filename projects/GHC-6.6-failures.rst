@@ -71,7 +71,7 @@ dev-haskell/cabal-1.1.4
 
 ::
 
-Distribution/Setup.hs:74:7:
+ Distribution/Setup.hs:74:7:
     Could not find module `Data.FiniteMap':
       Use -v to see a list of the files searched for.
 
@@ -376,7 +376,7 @@ though this only exists as of ghc-6.6 so will need conditional patching.
 
 
 dev-haskell/uuagc-0.9.1
-----------------------
+-----------------------
 
 builds fine
 
