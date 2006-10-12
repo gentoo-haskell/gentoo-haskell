@@ -127,6 +127,7 @@ dev-haskell/harp-0.2
 
 dev-haskell/haskell-src-exts-0.2
 --------------------------------
+builds fine.
 
 dev-haskell/haxml-1.12
 ----------------------
@@ -196,15 +197,25 @@ dev-haskell/hmake-3.11
 
 dev-haskell/hs-plugins-0.9.10-r1
 --------------------------------
+fails with:
+
+::
+
+  System/Plugins/LoadTypes.hs:31:0:
+      Bad interface file: /var/tmp/portage/hs-plugins-0.9.10-r1/work/hs-plugins-0.9.10/src/hi/Language/Hi/Parser.hi
+          Something is amiss; requested module  hi-0.9.10:Language.Hi.Parser differs from name found in the interface file hi:Language.Hi.Parser
 
 dev-haskell/hs-plugins-0.9.6
 ----------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hs-plugins-0.9.8
 ----------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hs-plugins-1.0_rc0
 ------------------------------
+builds fine.
 
 dev-haskell/hsql-1.7
 --------------------
@@ -227,12 +238,15 @@ builds fine.
 
 dev-haskell/hsshellscript-2.2.2
 -------------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hsshellscript-2.3.0
 -------------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hsshellscript-2.6.0
 -------------------------------
+works.
 
 dev-haskell/hsshellscript-2.6.3
 -------------------------------
@@ -240,18 +254,23 @@ fails, needs package "lang".
 
 dev-haskell/http-2006.7.5
 -------------------------
+works.
 
 dev-haskell/http-2006.7.7
 -------------------------
+works.
 
 dev-haskell/hxt-4.02
 --------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hxt-4.02-r1
 -----------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hxt-5.00
 --------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/hxt-6.0
 -------------------
