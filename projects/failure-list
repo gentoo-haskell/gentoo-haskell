@@ -90,7 +90,7 @@ for NAME in ${NAMES}; do
     else
       echo -n " "
     fi
-    echo "C ] ${PKG}"
+    echo "P ] ${PKG}"
   done
 done
 
