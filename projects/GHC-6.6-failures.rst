@@ -251,9 +251,6 @@ dev-haskell/missingh-0.14.4
 dev-haskell/uuagc-0.9.1
 -----------------------
 
-dev-haskell/uulib-0.9.1
------------------------
-
 dev-haskell/uulib-0.9.2
 -----------------------
 
