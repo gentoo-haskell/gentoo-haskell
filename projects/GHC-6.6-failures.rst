@@ -370,9 +370,11 @@ fails with:
 
 dev-haskell/wxhaskell-0.8-r1
 ----------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/wxhaskell-0.9
 -------------------------
+blocked by >=ghc-6.4.
 
 dev-haskell/wxhaskell-0.9.4
 ---------------------------
