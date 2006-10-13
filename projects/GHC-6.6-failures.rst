@@ -54,6 +54,8 @@ builds fine
 
 dev-haskell/c2hs-0.13.4
 -----------------------
+blocked by >=ghc-6.4.
+
 
 dev-haskell/c2hs-0.14.5
 -----------------------
@@ -64,6 +66,7 @@ dev-haskell/cabal-1.1.3-r1
 --------------------------
 blocked by >=ghc-6.6.
 
+
 dev-haskell/cabal-1.1.4
 -----------------------
 blocked by >=ghc-6.6.
@@ -73,6 +76,8 @@ This will be ok as we'll have cabal-1.1.6 in the tree shortly.
 
 dev-haskell/cpphs-1.1
 ---------------------
+builds fine
+
 
 dev-haskell/cpphs-1.2
 ---------------------
@@ -278,6 +283,7 @@ missing dep on:
 * dev-haskell/network
 * dev-haskell/mtl
 
+
 other than that it builds fine
 
 
@@ -303,6 +309,7 @@ missing dep on:
 * dev-haskell/network 
 * dev-haskell/hunit
 
+
 but otherwise builds fine
 
 
@@ -326,6 +333,7 @@ missing dep on:
 * dev-haskell/mtl
 * dev-haskell/haskell-src
 * dev-haskell/hunit
+
 
 fails with:
 
