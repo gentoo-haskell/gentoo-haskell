@@ -363,20 +363,18 @@ blocked by >=ghc-6.4.
 
 dev-haskell/wash-2.5.6
 ----------------------
-fails with:
+builds fine.
 
-::
-
-  M   -package text WASHOut.hs WASHData.hs WASHUtil.hs WASHParser.hs WASHClean.hs WASHFlags.hs WASHExpression.hs WASHGenerator.hs WASHMain.hs 
-  make[3]: M: command not found
 
 dev-haskell/wxhaskell-0.8-r1
 ----------------------------
 blocked by >=ghc-6.4.
 
+
 dev-haskell/wxhaskell-0.9
 -------------------------
 blocked by >=ghc-6.4.
+
 
 dev-haskell/wxhaskell-0.9.4
 ---------------------------
