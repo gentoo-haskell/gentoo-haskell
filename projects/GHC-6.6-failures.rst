@@ -86,6 +86,8 @@ builds fine
 
 dev-haskell/drift-2.1.2
 -----------------------
+builds fine
+
 
 dev-haskell/drift-2.2.0
 -----------------------
