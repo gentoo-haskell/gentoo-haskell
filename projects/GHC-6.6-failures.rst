@@ -399,4 +399,18 @@ dev-haskell/wxhaskell-0.9.4
 This is a hard one to fix.
 
 
+dev-util/bnfc-2.1.2
+-------------------
+
+* blocked >=ghc-6.6
+* committed to cvs
+
+
+dev-util/bnfc-2.2
+-----------------
+
+* patched to work with ghc-6.6
+* tested to work with ghc-6.4 too
+* committed to cvs
+
 .. vim: tw=76 ts=2 :
