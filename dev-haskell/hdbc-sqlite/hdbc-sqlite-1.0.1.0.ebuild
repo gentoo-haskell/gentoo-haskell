@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc-sqlite/hdbc-sqlite-0.99.0.0.ebuild,v 1.5 2006/03/09 17:41:59 dcoutts Exp $
 
-CABAL_FEATURES="lib haddock"
-inherit haskell-cabal versionator
+CABAL_FEATURES="lib profile haddock"
+inherit base haskell-cabal versionator
 
 DESCRIPTION="Sqlite v3 database driver for HDBC"
 HOMEPAGE="http://quux.org/devel/hdbc/"
@@ -21,3 +21,11 @@ DEPEND=">=virtual/ghc-6.4.1
 	>=dev-db/sqlite-3.2"
 
 S="${WORKDIR}/${PN}3"
+
+src_unpack() {
+	base_src_unpack
+
+	# Fix haddock markup
+	sed -i -e 's|execute/fetchrow|execute\\/fetchrow|' \
+		"${S}/Database/HDBC/Sqlite3/Statement.hsc"
+}
