@@ -15,7 +15,7 @@ diff -urwpN hsshellscript-2.6.3.orig/Makefile hsshellscript-2.6.3/Makefile
  CC		= gcc
  CFLAGS_GCC	= `pkg-config --cflags glib-2.0` -Ibuild -Isrc
 -CFLAGS_GHC	= -ibuild:src/lib:src/test -I. -odir build -hidir build -fglasgow-exts -package-name hsshellscript -O2
-+CFLAGS_GHC	= -ibuild:src/lib:src/test -I. -odir build -hidir build -fglasgow-exts -package-name hsshellscript -O
++CFLAGS_GHC	= -ibuild:src/lib:src/test -I. -odir build -hidir build -fglasgow-exts -package-name hsshellscript-2.6.3 -O
  PROFFLAGS	= -osuf p_o -hisuf p_hi -prof -auto-all
 -LIBS   		= -syslib lang -syslib text -syslib util build/libhsshellscript.a `pkg-config --libs glib-2.0`
 +LIBS   		= -package unix -package parsec build/libhsshellscript.a `pkg-config --libs glib-2.0`
@@ -30,7 +30,7 @@ diff -urwpN hsshellscript-2.6.3.orig/src/test/force_mv.hs hsshellscript-2.6.3/sr
  
  header = "force_mv <Parameter an mv>\n\
 -         \Der Aufruf ist wie mv, außer daß genau eine Quelle und ein Ziel erforderlich ist (also auch kein --target-directory)."
-+         \Der Aufruf ist wie mv, auÃŸer daÃŸ genau eine Quelle und ein Ziel erforderlich ist (also auch kein --target-directory)."
++         \Der Aufruf ist wie mv, auer da genau eine Quelle und ein Ziel erforderlich ist (also auch kein --target-directory)."
  
  
  main = mainwrapper $ do
@@ -38,7 +38,7 @@ diff -urwpN hsshellscript-2.6.3.orig/src/test/force_mv.hs hsshellscript-2.6.3/sr
     case pfade of
        [quelle, ziel] -> force_cmd (\q z -> run "/bin/mv" (opts ++ [q, z])) quelle ziel
 -      _              -> failIO "Es muß genau eine Quelle und genau ein Ziel angegeben werden."
-+      _              -> failIO "Es muÃŸ genau eine Quelle und genau ein Ziel angegeben werden."
++      _              -> failIO "Es mu genau eine Quelle und genau ein Ziel angegeben werden."
  
  
  -- Optionen von Pfaden trennen
