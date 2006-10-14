@@ -6,22 +6,22 @@ inherit base ghc-package multilib autotools
 
 DESCRIPTION="A declarative debugger for Haskell 98"
 HOMEPAGE="http://www.cs.mu.oz.au/~bjpop/buddha/"
-SRC_URI="http://www.cs.mu.oz.au/~bjpop/buddha/download/${P}.tar.gz"
+SRC_URI="http://www.cs.mu.oz.au/~bjpop/buddha/download/${P}.tar.gz
+		mirror://gentoo/${P}-ghc66.patch.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=virtual/ghc-6.0"
-
-DEPEND="${RDEPEND}"
+DEPEND=">=virtual/ghc-6.4"
+#will need dev-haskell/haskell-src for ghc-6.6
 
 src_unpack() {
 	base_src_unpack
 
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-ghc66.patch"
+	epatch "${WORKDIR}/${P}-ghc66.patch"
 
 	# Get rid of those 100's of pointless one-line 'wise' files:
 	sed -i 's/advice//' "${S}/Makefile.am"
