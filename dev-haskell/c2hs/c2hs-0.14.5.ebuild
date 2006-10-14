@@ -11,10 +11,10 @@ SRC_URI="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ia64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.0"
+DEPEND=">=virtual/ghc-6.4"
 
 src_unpack() {
 	base_src_unpack

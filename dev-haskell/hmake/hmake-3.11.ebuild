@@ -10,7 +10,7 @@ SRC_URI="http://www.haskell.org/hmake/${P}.tar.gz"
 
 LICENSE="nhc98"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ppc64 sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/ghc

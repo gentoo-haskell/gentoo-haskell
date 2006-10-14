@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hsql/hsql-1.7.ebuild,v 1.7 2006/03/11 21:31:06 dcoutts Exp $
 
 CABAL_FEATURES="lib haddock"
-inherit base ghc-package haskell-cabal
+inherit base eutils ghc-package haskell-cabal
 
 DESCRIPTION="SQL bindings for Haskell"
 HOMEPAGE="http://htoolkit.sourceforge.net/"

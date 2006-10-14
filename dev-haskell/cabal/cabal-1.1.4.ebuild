@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,11 +11,12 @@ SRC_URI="http://haskell.org/cabal/release/${P}/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.2"
+DEPEND=">=virtual/ghc-6.2
+		!>=virtual/ghc-6.6"
 
 src_unpack() {
 	unpack ${A}

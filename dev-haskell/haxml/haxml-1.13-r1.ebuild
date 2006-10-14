@@ -14,13 +14,14 @@ SRC_URI="http://www.haskell.org/HaXml/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 
 IUSE=""
 
 # actually, >=ghc-5.02 should be ok (if not using cabal)
 # hugs and nhc98 are ok too, somebody might want to add support for them
 DEPEND=">=virtual/ghc-6.2
+		!>=virtual/ghc-6.6
 		>=dev-haskell/cabal-1.1.3-r1"
 
 S=${WORKDIR}/${MY_P}

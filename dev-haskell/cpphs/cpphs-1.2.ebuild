@@ -11,7 +11,7 @@ SRC_URI="http://www.cs.york.ac.uk/fp/cpphs/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ia64 ~ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND="virtual/ghc"

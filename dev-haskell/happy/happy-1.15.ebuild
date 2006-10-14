@@ -9,7 +9,7 @@ HOMEPAGE="http://haskell.org/happy/"
 SRC_URI="http://haskell.cs.yale.edu/happy/dist/${PV}/${P}-src.tar.gz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE="doc"
 #java use flag disabled, bug #107019
 

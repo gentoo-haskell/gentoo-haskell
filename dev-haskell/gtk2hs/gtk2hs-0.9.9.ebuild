@@ -17,6 +17,7 @@ KEYWORDS="-amd64 ~x86 ~ppc"
 IUSE="doc gnome mozilla"
 
 DEPEND=">=virtual/ghc-5.04
+		!>=virtual/ghc-6.6
 		>=x11-libs/gtk+-2
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6

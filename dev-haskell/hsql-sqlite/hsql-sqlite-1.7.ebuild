@@ -7,22 +7,21 @@ inherit base haskell-cabal
 
 DESCRIPTION="SQLite3 driver HSQL"
 HOMEPAGE="http://htoolkit.sourceforge.net/"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+SRC_URI="mirror://gentoo/HSQL-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4.1
-	=dev-haskell/hsql-${PV}
+	~dev-haskell/hsql-${PV}
 	>=dev-db/sqlite-3.0"
 
-S=${WORKDIR}/HSQL/SQLite3
+S="${WORKDIR}/HSQL/SQLite3"
 
 src_unpack() {
 	base_src_unpack
-	cd ${S}
 
 	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
 	echo '> main = defaultMain' >> "${S}/Setup.lhs"
