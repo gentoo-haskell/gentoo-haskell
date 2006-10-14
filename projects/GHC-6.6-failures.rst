@@ -282,9 +282,9 @@ dev-haskell/http-2006.7.7
 works.
 
 missing dep on:
+
 * dev-haskell/network
 * dev-haskell/mtl
-
 
 other than that it builds fine
 
@@ -306,11 +306,10 @@ blocked by >=ghc-6.4.
 
 dev-haskell/hxt-6.0
 -------------------
-
 missing dep on:
+
 * dev-haskell/network 
 * dev-haskell/hunit
-
 
 but otherwise builds fine
 
@@ -331,11 +330,11 @@ dev-haskell/missingh-0.14.4
 ---------------------------
 
 missing dep on:
+
 * dev-haskell/network
 * dev-haskell/mtl
 * dev-haskell/haskell-src
 * dev-haskell/hunit
-
 
 fails with:
 
