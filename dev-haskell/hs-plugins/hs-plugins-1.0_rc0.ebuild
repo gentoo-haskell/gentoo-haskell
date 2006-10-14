@@ -33,7 +33,7 @@ src_unpack() {
 
 	# remove warning
 	sed -i -e "s/hs-source-dir/hs-source-dirs/" "${S}/plugins.cabal"
-	
+
 	chmod +x "${S}/configure"
 }
 
