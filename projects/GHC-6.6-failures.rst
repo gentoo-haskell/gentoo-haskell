@@ -152,16 +152,20 @@ dev-haskell/haxml-1.12
 ----------------------
 blocked by >=ghc-6.6.
 
+committed to cvs
+
 
 dev-haskell/haxml-1.13-r1
 -------------------------
 blocked by >=ghc-6.6.
 
+committed to cvs
 
 dev-haskell/haxml-1.13.2
 ------------------------
 builds fine
 
+committed to cvs
 
 dev-haskell/hdbc-1.0.0
 ----------------------
