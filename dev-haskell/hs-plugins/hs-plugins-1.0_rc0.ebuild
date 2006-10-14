@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 DEPEND="virtual/ghc
+	!>=virtual/ghc-6.6
 	>=dev-haskell/haskell-src-exts-0.2
 	dev-haskell/cabal"
 

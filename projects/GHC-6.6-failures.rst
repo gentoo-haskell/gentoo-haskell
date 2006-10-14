@@ -212,6 +212,10 @@ builds fine (version 3.11)
 
 dev-haskell/hs-plugins-0.9.10-r1
 --------------------------------
+blocked by >=ghc-6.6
+
+committed to cvs
+
 fails with:
 
 ::
@@ -233,7 +237,10 @@ blocked by >=ghc-6.4.
 
 dev-haskell/hs-plugins-1.0_rc0
 ------------------------------
-builds fine.
+blocked by >=ghc-6.6
+builds fine, although it doesn't work
+
+committed to cvs
 
 
 dev-haskell/hsql-1.7
