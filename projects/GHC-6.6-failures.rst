@@ -14,8 +14,9 @@ These are packages currently in portage cvs. Those are the ones we care
 about when it comes to this round of ghc-6.6 compatabilty testing.
 
 So make sure you're not using the overlay when you're testing these packages.
-For example use:
-PORTDIR_OVERLAY="" emerge -pv dev-haskell/foo
+For example use::
+
+  PORTDIR_OVERLAY="" emerge -pv dev-haskell/foo
 
 Only the first error message is reported, as it is all I can see without
 actually fixing anything :)
@@ -24,7 +25,7 @@ Packages We've used if not anything else mentioned:
 
 * GHC 6.6
 * haddock-0.8
-* cabal-1.1.6
+* cabal-1.1.6 with unlit patch
 
 Note that we're listing all the versions for each package, however it's
 only necessary to test the latest version with ghc-6.6. We can make previous

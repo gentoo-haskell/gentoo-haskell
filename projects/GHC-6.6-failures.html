@@ -310,15 +310,17 @@ ul.auto-toc {
 <p>These are packages currently in portage cvs. Those are the ones we care
 about when it comes to this round of ghc-6.6 compatabilty testing.</p>
 <p>So make sure you're not using the overlay when you're testing these packages.
-For example use:
-PORTDIR_OVERLAY=&quot;&quot; emerge -pv dev-haskell/foo</p>
+For example use:</p>
+<pre class="literal-block">
+PORTDIR_OVERLAY=&quot;&quot; emerge -pv dev-haskell/foo
+</pre>
 <p>Only the first error message is reported, as it is all I can see without
 actually fixing anything :)</p>
 <p>Packages We've used if not anything else mentioned:</p>
 <ul class="simple">
 <li>GHC 6.6</li>
 <li>haddock-0.8</li>
-<li>cabal-1.1.6</li>
+<li>cabal-1.1.6 with unlit patch</li>
 </ul>
 <p>Note that we're listing all the versions for each package, however it's
 only necessary to test the latest version with ghc-6.6. We can make previous
