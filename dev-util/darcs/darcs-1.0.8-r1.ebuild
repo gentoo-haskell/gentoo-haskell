@@ -16,7 +16,6 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
-	virtual/mta
 	>=virtual/ghc-6.2.2
 	doc?  ( virtual/tetex
 			>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
