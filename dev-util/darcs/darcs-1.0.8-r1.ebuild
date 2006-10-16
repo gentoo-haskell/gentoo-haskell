@@ -74,7 +74,8 @@ src_install() {
 pkg_postinst() {
 	ewarn "NOTE: in order for the darcs send command to work properly,"
 	ewarn "you must properly configure your mail transport agent to relay"
-	ewarn "outgoing mail.  We suggest using mail-mta/ssmtp if you do not"
-	ewarn "already have one installed, as it is easy to configure."
-	ewarn "Others, including postfix and sendmail, will also do just fine."
+	ewarn "outgoing mail.  mail-mta/ssmtp has been installed by default,"
+	ewarn "if you did not already have another agent (such as postfix)"
+	ewarn "installed previously.  If you are using ssmtp, please edit"
+	ewarn "/etc/ssmtp/ssmtp.conf with appropriate values for your site."
 }
