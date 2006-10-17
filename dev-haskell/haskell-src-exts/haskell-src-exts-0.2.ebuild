@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib happy"
-inherit base haskell-cabal
+inherit base haskell-cabal eutils
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/haskell-src-exts/"
