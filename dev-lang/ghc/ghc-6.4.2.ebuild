@@ -225,7 +225,7 @@ src_compile() {
 
 	# And some arches used to work ok, but bork with recent gcc versions
 	# See bug #145466 for ppc64.
-	use alpha && echo "GhcUnregisterised=YES" >> mk/build.mk
+	use ppc64 && echo "GhcUnregisterised=YES" >> mk/build.mk
 
 	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
