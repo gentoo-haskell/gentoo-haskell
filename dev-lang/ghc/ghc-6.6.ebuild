@@ -65,7 +65,7 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2
 			>=dev-haskell/haddock-0.8 )"
 
-PDEPEND=">=dev-haskell/cabal-1.1.6"
+PDEPEND=">=dev-haskell/cabal-1.1.6.1"
 
 #pkg_setup() {
 	# Portage's resolution of virtuals fails on virtual/ghc in some Portage
@@ -262,8 +262,8 @@ src_install () {
 }
 
 pkg_postinst () {
-	ebegin "Unregistering ghc's built-in cabal "
-	$(ghc-getghcpkg) unregister Cabal > /dev/null
+	ebegin "Hiding ghc's built-in cabal "
+	$(ghc-getghcpkg) hide Cabal > /dev/null
 	eend $?
 	ghc-reregister
 	einfo "If you have dev-lang/ghc-bin installed, you might"
