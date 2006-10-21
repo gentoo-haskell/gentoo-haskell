@@ -47,7 +47,7 @@ IUSE="doc X opengl openal"
 
 S="${WORKDIR}/${MY_P}"
 
-PROVIDE="virtual/ghc"
+#PROVIDE="virtual/ghc"
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
