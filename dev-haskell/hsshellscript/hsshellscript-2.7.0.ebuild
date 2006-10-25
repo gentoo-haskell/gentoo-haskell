@@ -11,11 +11,11 @@ SRC_URI="http://www.volker-wysk.de/hsshellscript/dist/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~ppc ~x86 ~amd64"
-IUSE=""
+IUSE="doc"
 
 DEPEND=">=virtual/ghc-6.4
 	>=dev-libs/glib-2.0
-	>=dev-haskell/haddock-0.6"
+	doc? ( >=dev-haskell/haddock-0.6 )"
 RDEPEND=""
 
 pkg_setup() {
@@ -32,17 +32,25 @@ src_unpack() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	make lib lib_p build/hsshellscript.pkg || die "emake failed"
+}
+
+src_test() { 
+	make tests 
 }
 
 src_install() {
 	ghc-setup-pkg "${S}/build/hsshellscript.pkg"
-	emake install \
+	make install \
 		DESTDIR="${D}" \
 		DEST_LIB="${HSLIB}" \
-		DEST_IMPORTS="${HSLIB}/imports" \
-		DEST_DOC="/usr/share/doc/${PF}" \
+		DEST_IMPORTS="${HSLIB}/imports" install_lib \
 		|| die "make failed"
+	
+	if use doc; then
+		make DEST_DOC="${D}/usr/share/doc/${PF}" install_doc
+	fi
+
 	ghc-makeghcilib "${D}/${HSLIB}/libhsshellscript.a"
 	ghc-install-pkg
 	fperms 0644 "${HSLIB}/imports/hsshellscript.h"
