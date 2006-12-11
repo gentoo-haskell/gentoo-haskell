@@ -13,7 +13,9 @@ SLOT="${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=virtual/ghc-6.4
+	>=sci-libs/gsl-1.4
+	virtual/lapack"
 
 EDARCS_REPOSITORY="http://dis.um.es/~alberto/GSLHaskell"
 EDARCS_GET_CMD="get --partial"
