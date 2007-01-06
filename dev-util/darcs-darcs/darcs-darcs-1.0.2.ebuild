@@ -47,6 +47,6 @@ src_test() {
 
 src_install() {
 	make DESTDIR=${D} install || die "installation failed"
-	einfo "Renaming the main executable to darcs-darcs."
+	elog "Renaming the main executable to darcs-darcs."
 	mv ${D}/usr/bin/darcs ${D}/usr/bin/${PN}
 }

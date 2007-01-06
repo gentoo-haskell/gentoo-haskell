@@ -210,9 +210,9 @@ src_compile() {
 	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
 	if ! check_reqs_conditional; then
-		einfo "Turning off ghc's 'Split Objs' feature because this machine"
-		einfo "does not have enough RAM for it. This will have the effect"
-		einfo "of making binaries produced by ghc considerably larger."
+		elog "Turning off ghc's 'Split Objs' feature because this machine"
+		elog "does not have enough RAM for it. This will have the effect"
+		elog "of making binaries produced by ghc considerably larger."
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
@@ -266,9 +266,9 @@ pkg_postinst () {
 	$(ghc-getghcpkg) hide Cabal > /dev/null
 	eend $?
 	ghc-reregister
-	einfo "If you have dev-lang/ghc-bin installed, you might"
-	einfo "want to unmerge it. It is no longer needed."
-	einfo
+	elog "If you have dev-lang/ghc-bin installed, you might"
+	elog "want to unmerge it. It is no longer needed."
+	elog
 	ewarn "IMPORTANT:"
 	ewarn "If you have upgraded from another version of ghc or"
 	ewarn "if you have switched from ghc-bin to ghc, please run:"

@@ -172,9 +172,9 @@ src_compile() {
 	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
 	if ! check_reqs_conditional; then
-		einfo "Turning off ghc's 'Split Objs' feature because this machine"
-		einfo "does not have enough RAM for it. This will have the effect"
-		einfo "of making binaries produced by ghc considerably larger."
+		elog "Turning off ghc's 'Split Objs' feature because this machine"
+		elog "does not have enough RAM for it. This will have the effect"
+		elog "of making binaries produced by ghc considerably larger."
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
@@ -237,12 +237,12 @@ src_install () {
 		fi
 	done
 	if test -n "${nondef}"; then
-		einfo "If you want to make the Darcs version of GHC the default version,"
-		einfo "you should create the following symbolic links:"
+		elog "If you want to make the Darcs version of GHC the default version,"
+		elog "you should create the following symbolic links:"
 		for f in ${nondef}; do
 			einfo "   ln -s ${f}-darcs /usr/bin/${f}"
 		done
-		einfo "Note that this is optional."
+		elog "Note that this is optional."
 	fi
 
 	cd "${S}"

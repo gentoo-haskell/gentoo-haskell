@@ -79,17 +79,17 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "To use helium's simple library (without overloading) use"
-	einfo " \$ texthint"
-	einfo " \$ helium"
-	einfo " \$ lvmrun"
-	einfo ""
-	einfo "To use the libraries with overloading, use"
-	einfo " \$ texthint-tc"
-	einfo " \$ helium-tc"
-	einfo " \$ lvmrun-tc"	
-	einfo ""
-	einfo "The graphical interface Hint has a switch in its GUI,"
-	einfo "  Interpreter->Configure...->Enable overloading"
+	elog "To use helium's simple library (without overloading) use"
+	elog " \$ texthint"
+	elog " \$ helium"
+	elog " \$ lvmrun"
+	elog ""
+	elog "To use the libraries with overloading, use"
+	elog " \$ texthint-tc"
+	elog " \$ helium-tc"
+	elog " \$ lvmrun-tc"	
+	elog ""
+	elog "The graphical interface Hint has a switch in its GUI,"
+	elog "  Interpreter->Configure...->Enable overloading"
 }
 

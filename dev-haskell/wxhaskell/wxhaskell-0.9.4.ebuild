@@ -22,14 +22,14 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	if ! built_with_use x11-libs/wxGTK X; then
-		einfo "wxhaskell needs wxGTK that has been built with X11 support."
-		einfo "Please re-emerge wxGTK with USE=\"X -odbc -unicode\""
+		eerror "wxhaskell needs wxGTK that has been built with X11 support."
+		eerror "Please re-emerge wxGTK with USE=\"X -odbc -unicode\""
 		die "wxhaskell requires wxGTK to be built with USE=\"X -odbc -unicode\""
 	fi
 	if built_with_use x11-libs/wxGTK odbc; then
-		einfo "Sadly wxhaskell does not work with wxGTK that has been built"
-		einfo "with USE=\"odbc\"."
-		einfo "Please re-emerge wxGTK with USE=\"-odbc\""
+		eerror "Sadly wxhaskell does not work with wxGTK that has been built"
+		eerror "with USE=\"odbc\"."
+		eerror "Please re-emerge wxGTK with USE=\"-odbc\""
 		die "wxhaskell requires wxGTK to be built with USE=\"-odbc\""
 	fi
 }

@@ -28,10 +28,10 @@ src_unpack() {
 pkg_postinst () {
 	ghc-package_pkg_postinst
 
-	einfo "You will probably want to emerge one or more HSQL backend."
-	einfo "These backends are available:"
-	einfo "		hsql-postgresql"
-	einfo "		hsql-mysql"
-	einfo "		hsql-sqlite"
-	einfo "		hsql-odbc"
+	elog "You will probably want to emerge one or more HSQL backend."
+	elog "These backends are available:"
+	elog "		hsql-postgresql"
+	elog "		hsql-mysql"
+	elog "		hsql-sqlite"
+	elog "		hsql-odbc"
 }
