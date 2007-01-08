@@ -286,6 +286,7 @@ ghc-package_pkg_setup() {
 		eerror "(2) Unmerge ghc-bin."
 		eerror "(3) Unmerge ghc."
 		eerror "You probably want option 1 or 2."
+		die "Inconsistent versions of ghc and ghc-bin."
 	fi
 }
 
