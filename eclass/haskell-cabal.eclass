@@ -187,6 +187,7 @@ cabal-pkg() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
+        ghc-package_pkg_setup
 	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "1.1.3"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
