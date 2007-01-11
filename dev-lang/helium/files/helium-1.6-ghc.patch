@@ -1,6 +1,6 @@
 diff -Naur helium-1.6.orig/Top/src/Top/Ordering/Tree.hs helium-1.6/Top/src/Top/Ordering/Tree.hs
 --- helium-1.6.orig/Top/src/Top/Ordering/Tree.hs	2006-02-05 17:35:54.000000000 +0100
-+++ helium-1.6/Top/src/Top/Ordering/Tree.hs	2007-01-11 00:56:28.000000000 +0100
++++ helium-1.6/Top/src/Top/Ordering/Tree.hs	2007-01-11 02:05:38.000000000 +0100
 @@ -36,12 +36,15 @@
  infixr 8 .>. , .>>. , .<. , .<<.
  
@@ -25,7 +25,7 @@ diff -Naur helium-1.6.orig/Top/src/Top/Ordering/Tree.hs helium-1.6/Top/src/Top/O
  ------------------------------------------------------------------------
 diff -Naur helium-1.6.orig/helium/aclocal.m4 helium-1.6/helium/aclocal.m4
 --- helium-1.6.orig/helium/aclocal.m4	1970-01-01 01:00:00.000000000 +0100
-+++ helium-1.6/helium/aclocal.m4	2007-01-11 00:38:23.000000000 +0100
++++ helium-1.6/helium/aclocal.m4	2007-01-11 02:05:40.000000000 +0100
 @@ -0,0 +1,56 @@
 +dnl Several of these functions are taken from the distribution of darcs
 +dnl (http://darcs.net), which is
@@ -85,7 +85,7 @@ diff -Naur helium-1.6.orig/helium/aclocal.m4 helium-1.6/helium/aclocal.m4
 +
 diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 --- helium-1.6.orig/helium/configure	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/configure	2007-01-11 00:59:19.000000000 +0100
++++ helium-1.6/helium/configure	2007-01-11 02:05:40.000000000 +0100
 @@ -1,46 +1,663 @@
  #! /bin/sh
 -
@@ -5188,7 +5188,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  echo "****************************************************"
 diff -Naur helium-1.6.orig/helium/configure.in helium-1.6/helium/configure.in
 --- helium-1.6.orig/helium/configure.in	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/configure.in	2007-01-11 00:59:05.000000000 +0100
++++ helium-1.6/helium/configure.in	2007-01-11 02:05:40.000000000 +0100
 @@ -128,6 +128,11 @@
  # AC_SUBST(HLIBDIR)
  # AC_SUBST(HDEMODIR)
@@ -5203,7 +5203,7 @@ diff -Naur helium-1.6.orig/helium/configure.in helium-1.6/helium/configure.in
  
 diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile.in
 --- helium-1.6.orig/helium/src/Makefile.in	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/src/Makefile.in	2007-01-11 00:50:30.000000000 +0100
++++ helium-1.6/helium/src/Makefile.in	2007-01-11 02:05:38.000000000 +0100
 @@ -25,6 +25,7 @@
  INSTALL = @INSTALL@
  MKDIR   = ../mkinstalldirs
@@ -5230,9 +5230,19 @@ diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile
  
  lvmrun:
  	@echo "****************************************************"
+@@ -240,7 +241,9 @@
+ 	@echo "****************************************************"
+ 	$(HC) $(HC_OPTS) -o $(HELIUMBINDIR)/texthint$(EXE) texthint/Main.o \
+                       utils/OSSpecific.o
++ifdef STRIP
+ 	$(STRIP) $(HELIUMBINDIR)/texthint$(EXE)
++endif
+ 
+ texthint/Main.o: utils/OSSpecific.hi texthint/Main.hs
+ 
 diff -Naur helium-1.6.orig/lvm/src/lib/makefile helium-1.6/lvm/src/lib/makefile
 --- helium-1.6.orig/lvm/src/lib/makefile	2006-02-05 17:35:50.000000000 +0100
-+++ helium-1.6/lvm/src/lib/makefile	2007-01-11 00:51:18.000000000 +0100
++++ helium-1.6/lvm/src/lib/makefile	2007-01-11 02:05:38.000000000 +0100
 @@ -20,7 +20,7 @@
  
  #the haskell compiler

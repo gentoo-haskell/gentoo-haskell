@@ -35,7 +35,8 @@ src_compile() {
 	# the ./configure of lvm is not the usual autotools configure
 
 	cd "${S}/lvm/src" && ./configure || die "lvm configure failed"
-	cd "${S}/helium" && econf --without-upx --without-ag || die "econf failed"
+	echo "STRIP=echo" >> config/makefile || die "lvm postconfigure failed"
+	cd "${S}/helium" && econf --without-strip --without-upx --without-ag || die "econf failed"
 	cd "${S}/helium/src" && make depend || die "make depend failed"
 
 	if use readline; then
