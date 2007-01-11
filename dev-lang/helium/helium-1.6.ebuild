@@ -21,39 +21,27 @@ RDEPEND="dev-libs/gmp
 
 src_unpack() {
 	unpack ${P}-src.tar.gz
-
-	# patch for readline support if requested
-	if use readline; then
-		epatch "${FILESDIR}/${P}-readline.patch"
-	fi
 	epatch "${FILESDIR}/${P}-ghc.patch"
 }
 
 src_compile() {
 	# helium consists of two components that have to be set up separately,
-	# lvm and the main compiler. lvm uses a non-standard build system:
+	# lvm and the main compiler. both build systems are slightly strange.
+        # lvm uses a completely non-standard build system:
 	# the ./configure of lvm is not the usual autotools configure
 
 	cd "${S}/lvm/src" && ./configure || die "lvm configure failed"
 	echo "STRIP=echo" >> config/makefile || die "lvm postconfigure failed"
-	cd "${S}/helium" && econf --without-strip --without-upx --without-ag || die "econf failed"
+	myconf="$(use_enable readline) --without-strip --without-upx --without-ag"
+	cd "${S}/helium" && econf --prefix="/usr/lib" ${myconf} || die "econf failed"
 	cd "${S}/helium/src" && make depend || die "make depend failed"
 
-	if use readline; then
-		EXTRA_HC_OPTS="${EXTRA_HC_OPTS} -package readline"
-	fi
-	emake -j1 EXTRA_HC_OPTS="${EXTRA_HC_OPTS}" \
-		|| die "make failed" # emake doesn't work safely
+	emake -j1 || die "make failed"
 }
 
 src_install() {
 	cd helium/src || die "cannot cd to helium/src"
-	make \
-		prefix="${D}/usr" \
-		bindir="${D}/usr/lib/helium/bin" \
-		libdir="${D}/usr/lib/helium/lib" \
-		demodir="${D}/usr/lib/helium/demo" \
-		install || die "make failed"
+	make install bindir="/usr/lib/helium/bin" DESTDIR="${D}" || die "make install failed"
 
 	# create wrappers
 	newbin "${FILESDIR}/helium-wrapper-${PV}" helium-wrapper

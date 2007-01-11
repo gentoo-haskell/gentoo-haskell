@@ -1,6 +1,6 @@
 diff -Naur helium-1.6.orig/Top/src/Top/Ordering/Tree.hs helium-1.6/Top/src/Top/Ordering/Tree.hs
 --- helium-1.6.orig/Top/src/Top/Ordering/Tree.hs	2006-02-05 17:35:54.000000000 +0100
-+++ helium-1.6/Top/src/Top/Ordering/Tree.hs	2007-01-11 02:05:38.000000000 +0100
++++ helium-1.6/Top/src/Top/Ordering/Tree.hs	2007-01-11 12:17:10.000000000 +0100
 @@ -36,12 +36,15 @@
  infixr 8 .>. , .>>. , .<. , .<<.
  
@@ -25,7 +25,7 @@ diff -Naur helium-1.6.orig/Top/src/Top/Ordering/Tree.hs helium-1.6/Top/src/Top/O
  ------------------------------------------------------------------------
 diff -Naur helium-1.6.orig/helium/aclocal.m4 helium-1.6/helium/aclocal.m4
 --- helium-1.6.orig/helium/aclocal.m4	1970-01-01 01:00:00.000000000 +0100
-+++ helium-1.6/helium/aclocal.m4	2007-01-11 02:05:40.000000000 +0100
++++ helium-1.6/helium/aclocal.m4	2007-01-11 12:17:10.000000000 +0100
 @@ -0,0 +1,56 @@
 +dnl Several of these functions are taken from the distribution of darcs
 +dnl (http://darcs.net), which is
@@ -85,8 +85,8 @@ diff -Naur helium-1.6.orig/helium/aclocal.m4 helium-1.6/helium/aclocal.m4
 +
 diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 --- helium-1.6.orig/helium/configure	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/configure	2007-01-11 02:05:40.000000000 +0100
-@@ -1,46 +1,663 @@
++++ helium-1.6/helium/configure	2007-01-11 12:17:10.000000000 +0100
+@@ -1,46 +1,664 @@
  #! /bin/sh
 -
  # Guess values for system-dependent variables and create Makefiles.
@@ -748,6 +748,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +INSTALL_DATA
 +LN_S
 +logger
++TEXTHINTGHCFLAGS
 +HELIUM
 +COREASM
 +LVMPATH
@@ -780,7 +781,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  no_recursion=
  prefix=NONE
  program_prefix=NONE
-@@ -49,94 +666,117 @@
+@@ -49,94 +667,117 @@
  silent=
  site=
  srcdir=
@@ -940,7 +941,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
    -exec-prefix | --exec_prefix | --exec-prefix | --exec-prefi \
    | --exec-pref | --exec-pre | --exec-pr | --exec-p | --exec- \
-@@ -145,116 +785,77 @@
+@@ -145,116 +786,77 @@
    -exec-prefix=* | --exec_prefix=* | --exec-prefix=* | --exec-prefi=* \
    | --exec-pref=* | --exec-pre=* | --exec-pr=* | --exec-p=* | --exec-=* \
    | --exec=* | --exe=* | --ex=*)
@@ -1086,7 +1087,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
      no_create=yes ;;
  
    -no-recursion | --no-recursion | --no-recursio | --no-recursi \
-@@ -268,26 +869,26 @@
+@@ -268,26 +870,26 @@
    -oldincludedir=* | --oldincludedir=* | --oldincludedi=* | --oldincluded=* \
    | --oldinclude=* | --oldinclud=* | --oldinclu=* | --oldincl=* | --oldinc=* \
    | --oldin=* | --oldi=* | --old=* | --ol=* | --o=*)
@@ -1117,7 +1118,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
    -program-transform-name | --program-transform-name \
    | --program-transform-nam | --program-transform-na \
-@@ -304,7 +905,17 @@
+@@ -304,7 +906,17 @@
    | --program-transfo=* | --program-transf=* \
    | --program-trans=* | --program-tran=* \
    | --progr-tra=* | --program-tr=* | --program-t=*)
@@ -1136,7 +1137,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
    -q | -quiet | --quiet | --quie | --qui | --qu | --q \
    | -silent | --silent | --silen | --sile | --sil)
-@@ -314,7 +925,7 @@
+@@ -314,7 +926,7 @@
      ac_prev=sbindir ;;
    -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
    | --sbi=* | --sb=*)
@@ -1145,7 +1146,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
    -sharedstatedir | --sharedstatedir | --sharedstatedi \
    | --sharedstated | --sharedstate | --sharedstat | --sharedsta \
-@@ -325,58 +936,53 @@
+@@ -325,58 +937,53 @@
    | --sharedstated=* | --sharedstate=* | --sharedstat=* | --sharedsta=* \
    | --sharedst=* | --shareds=* | --shared=* | --share=* | --shar=* \
    | --sha=* | --sh=*)
@@ -1224,7 +1225,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
    --x)
      # Obsolete; use --with-x.
-@@ -387,370 +993,1467 @@
+@@ -387,370 +994,1470 @@
      ac_prev=x_includes ;;
    -x-includes=* | --x-includes=* | --x-include=* | --x-includ=* | --x-inclu=* \
    | --x-incl=* | --x-inc=* | --x-in=* | --x-i=*)
@@ -1604,6 +1605,9 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
 +  --enable-logger
 +       Enable logging of error messages.
++
++  --disable-readline
++       No support for the readline lib in texthint.
 +
 +
 +Optional Packages:
@@ -2394,7 +2398,8 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 -cross_compiling=$ac_cv_prog_cc_cross
 +  test -n "$ac_ct_CC" && break
 +done
-+
+ 
+-cat > conftest.$ac_ext << EOF
 +  if test "x$ac_ct_CC" = x; then
 +    CC=""
 +  else
@@ -2412,11 +2417,9 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +  fi
 +fi
  
--cat > conftest.$ac_ext << EOF
-+fi
- 
 -#line 674 "configure"
 -#include "confdefs.h"
++fi
  
 -main(){return(0);}
 -EOF
@@ -2425,6 +2428,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 -  # If we can't run a trivial program, we are probably using a cross compiler.
 -  if (./conftest; exit) 2>/dev/null; then
 -    ac_cv_prog_cc_cross=no
++
 +test -z "$CC" && { { echo "$as_me:$LINENO: error: no acceptable C compiler found in \$PATH
 +See \`config.log' for more details." >&5
 +echo "$as_me: error: no acceptable C compiler found in \$PATH
@@ -2767,7 +2771,14 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +#ifndef __GNUC__
 +       choke me
 +#endif
-+
+ 
+-ac_test_CFLAGS="${CFLAGS+set}"
+-ac_save_CFLAGS="$CFLAGS"
+-CFLAGS=
+-echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+-echo "configure:738: checking whether ${CC-cc} accepts -g" >&5
+-if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
 +  ;
 +  return 0;
 +}
@@ -2851,14 +2862,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +else
 +  echo "$as_me: failed program was:" >&5
 +sed 's/^/| /' conftest.$ac_ext >&5
- 
--ac_test_CFLAGS="${CFLAGS+set}"
--ac_save_CFLAGS="$CFLAGS"
--CFLAGS=
--echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
--echo "configure:738: checking whether ${CC-cc} accepts -g" >&5
--if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
--  echo $ac_n "(cached) $ac_c" 1>&6
++
 +	CFLAGS=""
 +      cat >conftest.$ac_ext <<_ACEOF
 +/* confdefs.h.  */
@@ -2940,6 +2944,9 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +sed 's/^/| /' conftest.$ac_ext >&5
 +
 +
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
  fi
 -rm -f conftest*
  
@@ -2947,9 +2954,6 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  fi
  
 -echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
-+rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-+fi
-+
 +rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
 +   ac_c_werror_flag=$ac_save_c_werror_flag
 +fi
@@ -2961,7 +2965,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
      CFLAGS="-g -O2"
-@@ -764,109 +2467,136 @@
+@@ -764,109 +2471,136 @@
      CFLAGS=
    fi
  fi
@@ -3190,7 +3194,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
    SLASH="\\\\"
  fi
  
-@@ -874,45 +2604,50 @@
+@@ -874,45 +2608,50 @@
  # check for GHC
  # Extract the first word of "ghc", so it can be a program name with args.
  set dummy ghc; ac_word=$2
@@ -3266,7 +3270,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  else
    WithHc=$GHC
  
-@@ -921,55 +2656,63 @@
+@@ -921,55 +2660,63 @@
  
  
  if test "$WithHc" = "" -o "$WithHc" = "no"; then
@@ -3357,7 +3361,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  else
    WithAG=$AG
  
-@@ -978,17 +2721,19 @@
+@@ -978,17 +2725,19 @@
  
  
  if test "$WithAG" = "no" -o "$WithAG" = ""; then
@@ -3382,7 +3386,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  else
    WithStrip="yes"
  
-@@ -998,48 +2743,53 @@
+@@ -998,48 +2747,53 @@
  if test "$WithStrip" = "yes"; then
    # Extract the first word of "strip", so it can be a program name with args.
  set dummy strip; ac_word=$2
@@ -3461,7 +3465,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  else
    WithUpx="yes"
  
-@@ -1049,62 +2799,79 @@
+@@ -1049,62 +2803,79 @@
  if test "$WithUpx" = "yes"; then
    # Extract the first word of "upx", so it can be a program name with args.
  set dummy upx; ac_word=$2
@@ -3483,7 +3487,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 -  ?:/*)			 
 -  ac_cv_path_UPX="$UPX" # Let the user override the test with a dos path.
 -  ;;
--  *)
+   *)
 -  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
 -  ac_dummy="$PATH"
 -  for ac_dir in $ac_dummy; do 
@@ -3494,7 +3498,6 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 -    fi
 -  done
 -  IFS="$ac_save_ifs"
-+  *)
 +  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
 +for as_dir in $PATH
 +do
@@ -3541,13 +3544,14 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
      break
 -  elif test -f $ac_dir/install.sh; then
 +  elif test -f "$ac_dir/install.sh"; then
-     ac_aux_dir=$ac_dir
-     ac_install_sh="$ac_aux_dir/install.sh -c"
-     break
-+  elif test -f "$ac_dir/shtool"; then
 +    ac_aux_dir=$ac_dir
-+    ac_install_sh="$ac_aux_dir/shtool install -c"
++    ac_install_sh="$ac_aux_dir/install.sh -c"
 +    break
++  elif test -f "$ac_dir/shtool"; then
+     ac_aux_dir=$ac_dir
+-    ac_install_sh="$ac_aux_dir/install.sh -c"
++    ac_install_sh="$ac_aux_dir/shtool install -c"
+     break
    fi
  done
  if test -z "$ac_aux_dir"; then
@@ -3571,7 +3575,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  
  # Find a good install program.  We prefer a C program (faster),
  # so one script is as good as another.  But avoid the broken or
-@@ -1113,92 +2880,97 @@
+@@ -1113,92 +2884,97 @@
  # SunOS /usr/etc/install
  # IRIX /sbin/install
  # AIX /bin/install
@@ -3719,17 +3723,31 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  else
    log="no"
  
-@@ -1212,7 +2984,8 @@
+@@ -1212,7 +2988,22 @@
    logger="yes";
  fi
  
 -echo "configure: warning: Logger set to $logger" 1>&2
 +{ echo "$as_me:$LINENO: WARNING: Logger set to $logger" >&5
 +echo "$as_me: WARNING: Logger set to $logger" >&2;}
++
++# Check whether --enable-readline was given.
++if test "${enable_readline+set}" = set; then
++  enableval=$enable_readline; texthintreadline="$enableval"
++else
++  texthintreadline="yes"
++
++fi
++
++
++if test "$texthintreadline" = "yes"; then
++  TEXTHINTGHCFLAGS="-DTEXTHINTREADLINE -package readline"
++fi
++
  
  PWD=`pwd`
  HELIUM=${PWD}/bin/helium${EXEEXT}
-@@ -1228,280 +3001,1239 @@
+@@ -1228,280 +3019,1240 @@
  # AC_SUBST(HLIBDIR)
  # AC_SUBST(HDEMODIR)
  
@@ -3739,7 +3757,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3010 "configure"
++-- #line 3028 "configure"
 +import Text.ParserCombinators.Parsec
 +main = seq (oneOf) (putStr "Hello world.\n")
 +
@@ -3766,7 +3784,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3037 "configure"
++-- #line 3055 "configure"
 +import Text.ParserCombinators.Parsec
 +main = seq (oneOf) (putStr "Hello world.\n")
 +
@@ -3806,7 +3824,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3077 "configure"
++-- #line 3095 "configure"
 +import Text.ParserCombinators.Parsec
 +main = seq (oneOf) (putStr "Hello world.\n")
 +
@@ -3833,7 +3851,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3104 "configure"
++-- #line 3122 "configure"
 +import Text.ParserCombinators.Parsec
 +main = seq (oneOf) (putStr "Hello world.\n")
 +
@@ -3873,7 +3891,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3144 "configure"
++-- #line 3162 "configure"
 +import Control.Monad.State
 +main = seq (runState (modify (++"world")) "hello ") (putStr "Hello world.\n")
 +
@@ -3900,7 +3918,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +
 +
 +cat << \EOF > conftest.hs
-+-- #line 3171 "configure"
++-- #line 3189 "configure"
 +import Control.Monad.State
 +main = seq (runState (modify (++"world")) "hello ") (putStr "Hello world.\n")
 +
@@ -4800,6 +4818,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 +INSTALL_DATA!$INSTALL_DATA$ac_delim
 +LN_S!$LN_S$ac_delim
 +logger!$logger$ac_delim
++TEXTHINTGHCFLAGS!$TEXTHINTGHCFLAGS$ac_delim
 +HELIUM!$HELIUM$ac_delim
 +COREASM!$COREASM$ac_delim
 +LVMPATH!$LVMPATH$ac_delim
@@ -4816,7 +4835,7 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
 -    ac_dir_suffix="/`echo $ac_dir|sed 's%^\./%%'`"
 -    # A "../" for each directory in $ac_dir_suffix.
 -    ac_dots=`echo $ac_dir_suffix|sed 's%/[^/]*%../%g'`
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 62; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 63; then
 +    break
 +  elif $ac_last_try; then
 +    { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
@@ -5188,8 +5207,28 @@ diff -Naur helium-1.6.orig/helium/configure helium-1.6/helium/configure
  echo "****************************************************"
 diff -Naur helium-1.6.orig/helium/configure.in helium-1.6/helium/configure.in
 --- helium-1.6.orig/helium/configure.in	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/configure.in	2007-01-11 02:05:40.000000000 +0100
-@@ -128,6 +128,11 @@
++++ helium-1.6/helium/configure.in	2007-01-11 12:17:10.000000000 +0100
+@@ -114,6 +114,19 @@
+ AC_SUBST(logger)
+ AC_MSG_WARN([Logger set to $logger])
+ 
++AC_ARG_ENABLE(readline,
++[  --disable-readline
++       No support for the readline lib in texthint.
++],
++[texthintreadline="$enableval"],
++[texthintreadline="yes"]
++)
++
++if test "$texthintreadline" = "yes"; then
++  TEXTHINTGHCFLAGS="-DTEXTHINTREADLINE -package readline"
++fi
++AC_SUBST(TEXTHINTGHCFLAGS)
++
+ PWD=`pwd`
+ HELIUM=${PWD}/bin/helium${EXEEXT}
+ COREASM=${PWD}/../lvm/src/lib/coreasm
+@@ -128,6 +141,11 @@
  # AC_SUBST(HLIBDIR)
  # AC_SUBST(HDEMODIR)
  
@@ -5203,16 +5242,17 @@ diff -Naur helium-1.6.orig/helium/configure.in helium-1.6/helium/configure.in
  
 diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile.in
 --- helium-1.6.orig/helium/src/Makefile.in	2006-02-05 17:34:46.000000000 +0100
-+++ helium-1.6/helium/src/Makefile.in	2007-01-11 02:05:38.000000000 +0100
-@@ -25,6 +25,7 @@
++++ helium-1.6/helium/src/Makefile.in	2007-01-11 12:17:10.000000000 +0100
+@@ -25,6 +25,8 @@
  INSTALL = @INSTALL@
  MKDIR   = ../mkinstalldirs
  LOGGER  = @logger@
 +GHCFLAGS = @GHCFLAGS@
++TEXTHINTGHCFLAGS = @TEXTHINTGHCFLAGS@
  
  prefix      = @prefix@
  exec_prefix = @exec_prefix@
-@@ -48,7 +49,7 @@
+@@ -48,7 +50,7 @@
  PACKAGENET = 
  endif
  HC_OPTS = -static -fglasgow-exts -fallow-undecidable-instances -fallow-overlapping-instances \
@@ -5221,7 +5261,7 @@ diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile
  
  AG      = @WithAG@
  AG_OPTS = -mscfr
-@@ -210,7 +211,7 @@
+@@ -210,7 +212,7 @@
  	@echo "****************************************************"
  	@echo "  COREASM: the Core code compiler"
  	@echo "****************************************************"
@@ -5230,9 +5270,17 @@ diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile
  
  lvmrun:
  	@echo "****************************************************"
-@@ -240,7 +241,9 @@
+@@ -234,13 +236,15 @@
  	@echo "****************************************************"
- 	$(HC) $(HC_OPTS) -o $(HELIUMBINDIR)/texthint$(EXE) texthint/Main.o \
+ 	cd ../lib/simple; $(MAKE) 
+ 
+-texthint: texthint/Main.o utils/OSSpecific.o
++texthint: utils/OSSpecific.o
+ 	@echo "****************************************************"
+ 	@echo "  TextHint: the textual Helium interpreter"
+ 	@echo "****************************************************"
+-	$(HC) $(HC_OPTS) -o $(HELIUMBINDIR)/texthint$(EXE) texthint/Main.o \
++	$(HC) $(HC_OPTS) -cpp $(TEXTHINTGHCFLAGS) -o $(HELIUMBINDIR)/texthint$(EXE) texthint/Main.hs \
                        utils/OSSpecific.o
 +ifdef STRIP
  	$(STRIP) $(HELIUMBINDIR)/texthint$(EXE)
@@ -5240,9 +5288,103 @@ diff -Naur helium-1.6.orig/helium/src/Makefile.in helium-1.6/helium/src/Makefile
  
  texthint/Main.o: utils/OSSpecific.hi texthint/Main.hs
  
+@@ -429,29 +433,29 @@
+ 
+ install : smaller
+ 	# *** Copy sources to library directory
+-	$(MKDIR) $(bindir) $(libdir) $(demodir)
+-	$(INSTALL) -m 644 ../lib/simple/Prelude.hs $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/List.hs $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/Maybe.hs $(libdir)
+-	$(INSTALL) -m 755 $(HELIUMBINDIR)/$(MAIN)$(EXE) $(bindir)
+-	$(INSTALL) -m 755 $(LVMRUNTIMEDIR)/lvmrun$(EXE) $(bindir)
+-	$(INSTALL) -m 755 $(HELIUMBINDIR)/texthint$(EXE) $(bindir)
++	$(MKDIR) $(DESTDIR)$(bindir) $(DESTDIR)$(libdir) $(DESTDIR)$(demodir)
++	$(INSTALL) -m 644 ../lib/simple/Prelude.hs $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/List.hs $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/Maybe.hs $(DESTDIR)$(libdir)
++	$(INSTALL) -m 755 $(HELIUMBINDIR)/$(MAIN)$(EXE) $(DESTDIR)$(bindir)
++	$(INSTALL) -m 755 $(LVMRUNTIMEDIR)/lvmrun$(EXE) $(DESTDIR)$(bindir)
++	$(INSTALL) -m 755 $(HELIUMBINDIR)/texthint$(EXE) $(DESTDIR)$(bindir)
+ 	# *** Copying demos to demo directory
+-	$(INSTALL) -m 644 ../demo/Calendar.hs $(demodir)
+-	$(INSTALL) -m 644 ../demo/ParserLibrary.hs $(demodir)
+-	$(INSTALL) -m 644 ../demo/ParserDemo.hs $(demodir)
+-	$(INSTALL) -m 644 ../demo/TicTacToe.hs $(demodir)
++	$(INSTALL) -m 644 ../demo/Calendar.hs $(DESTDIR)$(demodir)
++	$(INSTALL) -m 644 ../demo/ParserLibrary.hs $(DESTDIR)$(demodir)
++	$(INSTALL) -m 644 ../demo/ParserDemo.hs $(DESTDIR)$(demodir)
++	$(INSTALL) -m 644 ../demo/TicTacToe.hs $(DESTDIR)$(demodir)
+ 	# *** Copy generated lvms and touch them
+-	$(INSTALL) -m 644 ../lib/simple/HeliumLang.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/List.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/LvmException.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/LvmIO.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/LvmLang.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/Maybe.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/Prelude.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/PreludePrim.lvm $(libdir)
+-	$(INSTALL) -m 644 ../lib/simple/Prelude.type $(libdir)
+-	touch $(libdir)/*.lvm
++	$(INSTALL) -m 644 ../lib/simple/HeliumLang.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/List.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/LvmException.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/LvmIO.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/LvmLang.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/Maybe.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/Prelude.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/PreludePrim.lvm $(DESTDIR)$(libdir)
++	$(INSTALL) -m 644 ../lib/simple/Prelude.type $(DESTDIR)$(libdir)
++	touch $(DESTDIR)$(libdir)/*.lvm
+ 
+ movetohome: smaller
+ 	# *** Copying simple library sources to distribution directory
+diff -Naur helium-1.6.orig/helium/src/texthint/Main.hs helium-1.6/helium/src/texthint/Main.hs
+--- helium-1.6.orig/helium/src/texthint/Main.hs	2006-02-05 17:34:36.000000000 +0100
++++ helium-1.6/helium/src/texthint/Main.hs	2007-01-11 12:17:10.000000000 +0100
+@@ -18,6 +18,10 @@
+ import OSSpecific(slash)
+ import Directory
+ 
++#ifdef TEXTHINTREADLINE
++import System.Console.Readline
++#endif
++
+ data State = 
+     State
+     { maybeModName :: Maybe String
+@@ -75,6 +79,12 @@
+         else
+             return initialState
+             
++#ifdef TEXTHINTREADLINE
++    -- Initialize readline
++    initialize
++    -- Deactivate filename completion
++    setCompletionEntryFunction (Just $ const $ return [])
++#endif
+     -- Enter read-eval-print loop            
+     loop stateAfterLoad
+     
+@@ -89,9 +99,15 @@
+ 
+ loop :: State -> IO State
+ loop state = do
++#ifdef TEXTHINTREADLINE
++    command'' <- readline (prompt state)
++    let command' = maybe ":q" id command''
++    addHistory command'
++#else
+     putStr (prompt state)
+     hFlush stdout
+     command' <- getLine
++#endif
+     let command = trim command'
+     newState <- case command of
+         (':':cmd:rest) -> 
 diff -Naur helium-1.6.orig/lvm/src/lib/makefile helium-1.6/lvm/src/lib/makefile
 --- helium-1.6.orig/lvm/src/lib/makefile	2006-02-05 17:35:50.000000000 +0100
-+++ helium-1.6/lvm/src/lib/makefile	2007-01-11 02:05:38.000000000 +0100
++++ helium-1.6/lvm/src/lib/makefile	2007-01-11 12:17:10.000000000 +0100
 @@ -20,7 +20,7 @@
  
  #the haskell compiler
