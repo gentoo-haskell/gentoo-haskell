@@ -12,11 +12,11 @@ else
 	fi;
 fi
 
-if [ "${BINNAME_LONG}" = "${BINNAME}" ]; then
-	HELIUM_LIBS="/usr/lib/helium/lib/simple";
-else
-	HELIUM_LIBS="/usr/lib/helium/lib";
-fi
+# if [ "${BINNAME_LONG}" = "${BINNAME}" ]; then
+#	HELIUM_LIBS="/usr/lib/helium/lib/simple";
+# else
+HELIUM_LIBS="/usr/lib/helium/lib";
+# fi
 
 if [ -z "${LVMPATH}" ]; then
 	LVMPATH=".:${HELIUM_LIBS}";

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils java-pkg
+inherit eutils java-pkg-opt-2 ghc-package
 
 DESCRIPTION="Helium (for learning Haskell)"
 HOMEPAGE="http://www.cs.uu.nl/helium"
@@ -24,26 +24,22 @@ RDEPEND="dev-libs/gmp
 src_unpack() {
 	unpack ${P}-src.tar.gz
 
-	# patch to install type class libraries too
-	epatch ${FILESDIR}/${P}-libraries.patch
-
 	# patch for readline support if requested
 	if use readline; then
 		epatch "${FILESDIR}/${P}-readline.patch"
 	fi
+	epatch "${FILESDIR}/${P}-ghc.patch"
 }
 
 src_compile() {
-	pushd lvm/src || die "cannot cd to lvm/src"
-	# TODO: need to replace config.guess & config.sub to work on amd64
-	./configure || die "lvm configure failed"
-	popd
-	cd helium || die "cannot cd to helium"
-	econf --without-upx --without-ag || die "econf failed"
-	cd src || die "cannot cd to src"
-	make depend || die "make depend failed"
+	# helium consists of two components that have to be set up separately,
+	# lvm and the main compiler. lvm uses a non-standard build system:
+	# the ./configure of lvm is not the usual autotools configure
 
-	EXTRA_HC_OPTS="-O"
+	cd "${S}/lvm/src" && ./configure || die "lvm configure failed"
+	cd "${S}/helium" && econf --without-upx --without-ag || die "econf failed"
+	cd "${S}/helium/src" && make depend || die "make depend failed"
+
 	if use readline; then
 		EXTRA_HC_OPTS="${EXTRA_HC_OPTS} -package readline"
 	fi
@@ -55,8 +51,7 @@ src_install() {
 	cd helium/src || die "cannot cd to helium/src"
 	make prefix="${D}/usr" \
 		bindir="${D}/usr/lib/helium/bin" \
-		libdir="${D}/usr/lib/helium/lib/simple" \
-		tclibdir="${D}/usr/lib/helium/lib" \
+		libdir="${D}/usr/lib/helium/lib" \
 		demodir="${D}/usr/lib/helium/demo" \
 		install || die "make failed"
 
@@ -73,23 +68,4 @@ src_install() {
 	dosym /usr/bin/helium-wrapper /usr/bin/helium
 	dosym /usr/bin/helium-wrapper /usr/bin/lvmrun
 	use java && dosym /usr/bin/helium-wrapper /usr/bin/hint
-	dosym /usr/bin/helium-wrapper /usr/bin/texthint-tc
-	dosym /usr/bin/helium-wrapper /usr/bin/helium-tc
-	dosym /usr/bin/helium-wrapper /usr/bin/lvmrun-tc
 }
-
-pkg_postinst() {
-	elog "To use helium's simple library (without overloading) use"
-	elog " \$ texthint"
-	elog " \$ helium"
-	elog " \$ lvmrun"
-	elog ""
-	elog "To use the libraries with overloading, use"
-	elog " \$ texthint-tc"
-	elog " \$ helium-tc"
-	elog " \$ lvmrun-tc"	
-	elog ""
-	elog "The graphical interface Hint has a switch in its GUI,"
-	elog "  Interpreter->Configure...->Enable overloading"
-}
-
