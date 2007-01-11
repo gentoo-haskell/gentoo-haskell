@@ -20,7 +20,7 @@ RDEPEND="dev-libs/gmp
 	readline? ( sys-libs/readline )"
 
 src_unpack() {
-	unpack ${P}-src.tar.gz
+	unpack ${A}
 	epatch "${FILESDIR}/${P}-ghc.patch"
 }
 
