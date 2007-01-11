@@ -26,15 +26,6 @@ fi
 export LVMPATH
 export TEMP
 
-if [ "${BINNAME}" = "hint" ]; then
-
-	JAVA="$(java-config --java)"
-        PROGCALL="${JAVA} -jar -DPATH=${PATH} -DLVMPATH=${LVMPATH} /usr/share/helium/lib/Hint.jar"
-
-else
-
-	PROGCALL="/usr/lib/helium/bin/${BINNAME}"
-
-fi
+PROGCALL="/usr/lib/helium/bin/${BINNAME}"
 
 ${PROGCALL} $*
