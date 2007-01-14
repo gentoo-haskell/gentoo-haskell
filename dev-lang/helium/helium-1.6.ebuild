@@ -27,7 +27,7 @@ src_unpack() {
 src_compile() {
 	# helium consists of two components that have to be set up separately,
 	# lvm and the main compiler. both build systems are slightly strange.
-        # lvm uses a completely non-standard build system:
+	# lvm uses a completely non-standard build system:
 	# the ./configure of lvm is not the usual autotools configure
 
 	cd "${S}/lvm/src" && ./configure || die "lvm configure failed"
