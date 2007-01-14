@@ -1,4 +1,11 @@
 
+== GHC 6.6 ==
+
+* figure out dependencies for ghc 6.6
+
+* currently (20070114) we can't use the ghc package as we unregister
+  cabal-1.1.6 which the ghc package depends on.
+
 == Easy ==
 
 * test the src-extralibs ebuilds with ghc-6.5.
