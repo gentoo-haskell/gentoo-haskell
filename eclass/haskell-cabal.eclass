@@ -166,14 +166,14 @@ cabal-copy() {
 }
 
 cabal-pkg() {
-	# This does not actually register since we're using /usr/bin/true instead
+	# This does not actually register since we're using true instead
 	# of ghc-pkg. So it just leaves the .installed-pkg-config and we can
 	# register that ourselves (if it exists).
 	local result
 	local err
 
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
-		sed -i "s|$(ghc-getghcpkg)|/usr/bin/true|" .setup-config
+		sed -i "s|$(ghc-getghcpkg)|$(which true)|" .setup-config
 		./setup register || die "setup register failed"
 		if [[ -f .installed-pkg-config ]]; then
 			ghc-setup-pkg .installed-pkg-config
