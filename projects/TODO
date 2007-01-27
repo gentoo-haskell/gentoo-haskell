@@ -30,6 +30,8 @@
   for a new release. The dev version supports HDBC I believe.
 
 * crypto-3.0.3, in discussion with upstream about the newbinary dep
+                crypto will switch to the binary library once it has a bit
+                layer
 
 * ldap: fixing build bugs with upstream
 
