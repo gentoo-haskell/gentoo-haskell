@@ -5,10 +5,14 @@
 inherit base ghc-package eutils
 
 MY_PN="BNFC"
+MY_PV="${PV%%_beta*}"
+
+IS_BETA="${PV%%*_beta*}"
+[[ -z "${IS_BETA}" ]] && MY_PV+=b
 
 DESCRIPTION="BNF Converter -- a sophisticated parser generator"
 HOMEPAGE="http://www.cs.chalmers.se/~markus/BNFC/"
-SRC_URI="http://www.cs.chalmers.se/~markus/BNFC/${MY_PN}_${PV}.tgz"
+SRC_URI="http://www.cs.chalmers.se/~markus/BNFC/${MY_PN}_${MY_PV}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
@@ -20,16 +24,10 @@ DEPEND=">=virtual/ghc-6.2
 
 RDEPEND="virtual/libc"
 
-S="${WORKDIR}/${MY_PN}_${PV}"
-
-src_unpack() {
-	base_src_unpack
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-ghc66-utf8.patch"
-}
+S="${WORKDIR}/${MY_PN}_${MY_PV}"
 
 src_compile() {
-	emake GHC="$(ghc-getghc) -O" || die "emake failed"
+	emake GHC="$(ghc-getghc) -O -fasm" || die "emake failed"
 	if use doc ; then
 		cd doc
 		pdflatex LBNF-report.tex
