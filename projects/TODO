@@ -59,8 +59,7 @@
 
 == Long term & continuing projects ==
 
-* get ghc bugs fixed upstream, send patches and get a propper fix for the exec
-  stack problem.
+* get ghc bugs fixed upstream, send patches
 
 * help fix & improve cabal:
   we need to be able to specify the libdir not just the prefix (lib/lib64)
