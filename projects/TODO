@@ -22,15 +22,6 @@
 
 * haxml-1.13.2: update for ghc 6.6 compatability.
 
-* fix or report haddock build failures in ghc-extralibs:
-  network
-  time
-  x11
-  xhtml
-  opengl
-  openal
-  alut
-
 * add new version of happy for ghc6.6.
 
 * hugs-2006.5
