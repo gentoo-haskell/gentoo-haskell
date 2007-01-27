@@ -22,9 +22,6 @@
 
 * haxml-1.13.2: update for ghc 6.6 compatability.
 
-* add the following src-extralibs ebuilds for ghc6.5:
-  - GLUT
-
 * fix or report haddock build failures in ghc-extralibs:
   network
   time

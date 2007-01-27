@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib"
+CABAL_FEATURES="haddock lib profile"
 inherit haskell-cabal
 
 MY_PN=GLUT
