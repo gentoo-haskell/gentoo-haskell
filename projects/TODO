@@ -64,6 +64,7 @@
 
 * help fix & improve cabal:
   we need to be able to specify the libdir not just the prefix (lib/lib64)
+  we'd like a --optimize flag so we don't have to add -O in all .cabal files
 
 * make sure cabal-get integrates with gentoo/portage
 
