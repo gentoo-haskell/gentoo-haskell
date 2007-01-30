@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome opengl svg firefox seamonkey"
 
-RDEPEND=">=virtual/ghc-5.04.3
-		amd64? ( || ( >=dev-lang/ghc-6.4.1 >=dev-lang/ghc-bin-6.4.1 ) )
+RDEPEND=">=virtual/ghc-6.0
+		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
@@ -36,7 +36,7 @@ src_compile() {
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
-		$(use_enable svg svg-cairo) \
+		$(use_enable svg svg) \
 		$(use_enable opengl opengl) \
 		$(use_enable seamonkey mozilla) \
 		$(use_enable firefox firefox) \
