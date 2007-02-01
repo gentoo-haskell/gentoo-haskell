@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="odbc postgres sqlite"
 
-DEPEND=">=virtual/ghc-6.4.1"
+DEPEND=">=virtual/ghc-6.4.1
+	>=dev-haskell/mtl-1.0"
 
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${PV}* )
 		 postgres? ( =dev-haskell/hdbc-postgresql-${PV}* )
