@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+inherit ghc-package
+
 DESCRIPTION="Monad transformer library"
 HOMEPAGE=""
 SRC_URI=""
@@ -14,5 +16,6 @@ IUSE=""
 DEPEND="=virtual/ghc-6.4*"
 
 pkg_setup () {
+	ghc-package_pkg_setup
 	einfo "This library is already provided by ghc. This ebuild does nothing."
 }
