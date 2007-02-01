@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=virtual/ghc-6.4 >=dev-haskell/network-1.0"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
