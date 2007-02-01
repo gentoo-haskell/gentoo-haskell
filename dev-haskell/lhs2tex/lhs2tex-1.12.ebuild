@@ -10,7 +10,7 @@ SRC_URI="http://www.informatik.uni-bonn.de/~loeh/lhs2tex/${P/_pre/pre}.tar.bz2"
 IUSE="doc"
 
 DESCRIPTION="Preprocessor for typesetting Haskell sources with LaTeX"
-HOMEPAGE="http://www.cs.uu.nl/~andres/lhs2tex"
+HOMEPAGE="http://www.informatik.uni-bonn.de/~loeh/lhs2tex"
 
 LICENSE="GPL-2"
 SLOT="0"
