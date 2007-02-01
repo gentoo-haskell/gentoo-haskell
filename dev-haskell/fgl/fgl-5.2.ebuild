@@ -4,7 +4,7 @@
 
 inherit ghc-package
 
-DESCRIPTION="An automatic, specification based testing utility for Haskell programs"
+DESCRIPTION="A functional graph library for Haskell."
 HOMEPAGE=""
 SRC_URI=""
 LICENSE="BSD"

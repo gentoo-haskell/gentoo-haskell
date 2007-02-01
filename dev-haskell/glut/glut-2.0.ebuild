@@ -2,26 +2,20 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock lib profile"
-inherit haskell-cabal
+inherit ghc-package
 
-MY_PN=GLUT
-GHC_PV=6.6
-
-DESCRIPTION="GLUT bindings for haskell"
+DESCRIPTION="GLUT bindings for Haskell"
 HOMEPAGE="http://www.haskell.org/HOpenGL/"
-SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
-
-# TODO: Install examples when the "examples" USE flag is set
+KEYWORDS="x86 amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6
-	dev-haskell/opengl
-	virtual/glu
-	virtual/glut"
+DEPEND="=virtual/ghc-6.4*"
 
-S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
+pkg_setup () {
+	ghc-package_pkg_setup
+	einfo "This library is already provided by ghc. This ebuild does nothing."
+}

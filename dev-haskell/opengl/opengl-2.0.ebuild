@@ -4,7 +4,7 @@
 
 inherit ghc-package
 
-DESCRIPTION="An automatic, specification based testing utility for Haskell programs"
+DESCRIPTION="OpenGL bindings for Haskell"
 HOMEPAGE=""
 SRC_URI=""
 LICENSE="BSD"
