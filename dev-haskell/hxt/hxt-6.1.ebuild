@@ -19,7 +19,8 @@ IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
 	>=dev-haskell/http-2006.7.7
-	>=dev-haskell/hunit-1.1"
+	>=dev-haskell/hunit-1.1
+	>=dev-haskell/network-1.0"
 
 S=${WORKDIR}/${MY_P}
 
