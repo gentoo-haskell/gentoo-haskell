@@ -304,4 +304,4 @@ ghc-package_pkg_prerm() {
 	ghc-unregister-pkg "$(ghc-localpkgconf)"
 }
 
-EXPORT_FUNCTIONS pkg_postinst pkg_prerm
+EXPORT_FUNCTIONS pkg_setup pkg_postinst pkg_prerm
