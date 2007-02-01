@@ -18,7 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-		dev-haskell/http"
+	>=dev-haskell/http-2006.7.7
+	>=dev-haskell/hunit-1.1"
 
 S=${WORKDIR}/${MY_P}
 
