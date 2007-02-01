@@ -14,8 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
-#will need dev-haskell/haskell-src for ghc-6.6
+DEPEND=">=virtual/ghc-6.4
+	>=dev-haskell/haskell-src-1.0"
 
 src_unpack() {
 	base_src_unpack
