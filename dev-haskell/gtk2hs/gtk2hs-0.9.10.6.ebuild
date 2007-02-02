@@ -21,8 +21,8 @@ RDEPEND=">=virtual/ghc-6.0
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6
-				 >=gnome-base/gconf-2 )
-		svg? ( x11-libs/libsvg-cairo )
+				 >=gnome-base/gconf-2
+				 >=gnome-base/librsvg-2.16)
 		opengl? ( x11-libs/gtkglext )
 		seamonkey? ( >=www-client/seamonkey-1.0.2 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
@@ -36,7 +36,7 @@ src_compile() {
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
-		$(use_enable svg svg) \
+		$(use_enable gnome svg) \
 		$(use_enable opengl opengl) \
 		$(use_enable seamonkey mozilla) \
 		$(use_enable firefox firefox) \
@@ -89,29 +89,4 @@ src_install() {
 		$(use seamonkey || use firefox && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
-
-	# build ghci .o files from .a files
-	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglib.a"
-	if has_version '>=x11-libs/gtk+-2.8'; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHScairo.a"
-	fi
-	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgtk.a"
-	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsoegtk.a"
-	if use glade || use gnome; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglade.a"
-	fi
-	if use gnome; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a"
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a"
-	fi
-	if use svg; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsvgcairo.a"
-	fi
-	if use opengl; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgtkglext.a"
-	fi
-	if use seamonkey || use firefox; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a"
-	fi
 }
-
