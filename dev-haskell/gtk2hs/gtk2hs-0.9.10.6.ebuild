@@ -13,9 +13,10 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl svg firefox seamonkey"
+IUSE="doc glade gnome opengl firefox seamonkey profile"
 
 RDEPEND=">=virtual/ghc-6.0
+		dev-haskell/mtl
 		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
@@ -41,6 +42,7 @@ src_compile() {
 		$(use_enable seamonkey mozilla) \
 		$(use_enable firefox firefox) \
 		$(use_enable doc docs) \
+		$(use_enable profile profiling) \
 		|| die "Configure failed"
 
 	# parallel build doesn't work, so specify -j1
