@@ -6,16 +6,17 @@ CABAL_FEATURES="bin"
 inherit autotools haskell-cabal
 
 DESCRIPTION="A lexical analyser generator for Haskell"
-SRC_URI="http://www.haskell.org/alex/dist/${PV}/${P/_/}.tar.gz"
 HOMEPAGE="http://www.haskell.org/alex"
+SRC_URI="http://www.haskell.org/alex/dist/${PV}/${P/_/}.tar.gz"
 
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-LICENSE="as-is"
 IUSE="doc"
 # java use flag disabled because of bug #107019
 
 DEPEND=">=virtual/ghc-6.2
+		>=dev-haskell/cabal-1.1.6
 	doc? (	~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2 )"
