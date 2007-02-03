@@ -10,6 +10,9 @@
 * add blockers to all current ebuilds that don't build with ghc-6.5
   eg haddock-0.7
 
+* running /opt/ghc/sbin/ghc-updater having just installed ghc-bin
+  doesn't find ghc on the path.
+
 == High priority ==
 
 == Ebuild maintainance ==
