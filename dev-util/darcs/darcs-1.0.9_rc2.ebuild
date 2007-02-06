@@ -33,7 +33,6 @@ src_unpack() {
 	base_src_unpack
 
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-ghc66.patch"
 
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
