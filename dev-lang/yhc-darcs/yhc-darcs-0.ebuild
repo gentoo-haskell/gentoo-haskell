@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-        dev-util/scons"
+	dev-util/scons"
 RDEPEND=""
 
 EDARCS_GET_CMD="get --partial"

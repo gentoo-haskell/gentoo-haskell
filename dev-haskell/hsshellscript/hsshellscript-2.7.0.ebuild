@@ -35,8 +35,8 @@ src_compile() {
 	make lib lib_p build/hsshellscript.pkg || die "emake failed"
 }
 
-src_test() { 
-	make tests 
+src_test() {
+	make tests
 }
 
 src_install() {
@@ -46,7 +46,7 @@ src_install() {
 		DEST_LIB="${HSLIB}" \
 		DEST_IMPORTS="${HSLIB}/imports" install_lib \
 		|| die "make failed"
-	
+
 	if use doc; then
 		make DEST_DOC="${D}/usr/share/doc/${PF}" install_doc
 	fi

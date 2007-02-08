@@ -17,12 +17,12 @@ IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	>=virtual/ghc-6.2.2
-    dev-haskell/quickcheck
-    dev-haskell/mtl
-    dev-haskell/html
-    sys-apps/diffutils
+	dev-haskell/quickcheck
+	dev-haskell/mtl
+	dev-haskell/html
+	sys-apps/diffutils
 	doc?  ( virtual/tetex
-			>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
+		>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
 
 RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta"
