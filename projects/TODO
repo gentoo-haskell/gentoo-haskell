@@ -11,7 +11,7 @@
   eg haddock-0.7
 
 * running /opt/ghc/sbin/ghc-updater having just installed ghc-bin
-  doesn't find ghc on the path.
+  doesn't find ghc on the path. [should be fixed now, please test]
 
 == High priority ==
 

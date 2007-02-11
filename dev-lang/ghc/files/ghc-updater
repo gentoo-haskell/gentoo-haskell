@@ -23,6 +23,9 @@
 
 shopt -s nullglob
 
+# fix the PATH to include the dirs where portage installs ghc
+PATH="/usr/bin:/opt/ghc/bin:${PATH}"
+
 NEW_GHC_VER=$(ghc --version | sed 's:^.*version ::')
 NEW_GHC_LIBDIR=$(ghc --print-libdir)
 
