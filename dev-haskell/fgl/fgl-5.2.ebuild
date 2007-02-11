@@ -19,3 +19,8 @@ pkg_setup () {
 	ghc-package_pkg_setup
 	einfo "This library is already provided by ghc. This ebuild does nothing."
 }
+
+src_install () {
+	dodir "$(ghc-libdir)"
+	touch "${D}/$(ghc-libdir)/.${P}.ghc-updater"
+}
