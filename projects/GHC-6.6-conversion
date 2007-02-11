@@ -25,4 +25,10 @@ now depends on mtl.
 tested with 6.4.2 and 6.6, works.
 
 
+crypto-3.0.3
+------------
 
+now depends on mtl.
+doesn't work with 6.6, though. compiles and installs fine,
+but on loading complains about a linker error with some symbol
+from NewBinary ...
