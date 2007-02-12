@@ -9,7 +9,7 @@ HOMEPAGE="http://www.cs.pdx.edu/~sheard/Omega/"
 MY_PV="3.0"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 LICENSE="as-is" # TODO: fix license, this is something different
 
 DEPEND=">=virtual/ghc-6.4"
