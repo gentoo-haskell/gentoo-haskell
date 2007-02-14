@@ -2,20 +2,25 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
-
-GHC_PV=6.6
+inherit ghc-package
 
 DESCRIPTION="HTML Haskell combinator library."
 HOMEPAGE=""
-SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6"
+DEPEND="=virtual/ghc-6.4*"
 
-S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
+pkg_setup () {
+	ghc-package_pkg_setup
+	einfo "This library is already provided by ghc. This ebuild does nothing."
+}
+
+src_install () {
+	dodir "$(ghc-libdir)"
+	touch "${D}/$(ghc-libdir)/.${P}.ghc-updater"
+}
