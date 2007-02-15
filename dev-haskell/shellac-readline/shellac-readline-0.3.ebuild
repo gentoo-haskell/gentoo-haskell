@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock lib"
-inherit base haskell-cabal
+CABAL_FEATURES="lib haddock"
+inherit haskell-cabal
 
 DESCRIPTION="Shellac is a framework for building read-eval-print style shells"
 HOMEPAGE="http://www.eecs.tufts.edu/~rdocki01/shellac.html"
@@ -11,15 +11,11 @@ SRC_URI="http://www.eecs.tufts.edu/~rdocki01/projects/${P}-source.tar.gz"
 
 LICENSE="BSD3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc"
-RDEPEND=""
+DEPEND=">=virtual/ghc-6.4
+		>=dev-haskell/shellac-0.2
+		>=dev-haskell/readline-1.0"
 
-src_unpack () {
-	base_src_unpack
-	cd ${WORKDIR}
-	mv ${P}-source ${P}
-
-}
+S="${WORKDIR}/${P}-source"
