@@ -16,5 +16,4 @@ IUSE=""
 
 DEPEND=">=virtual/ghc-6.6"
 
-S=${WORKDIR}/NewBinary
-
+S="${WORKDIR}/NewBinary"
