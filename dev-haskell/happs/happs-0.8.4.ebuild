@@ -8,8 +8,8 @@ inherit base haskell-cabal
 MY_PN="HAppS"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="This is a sample skeleton ebuild file"
-HOMEPAGE="http://foo.bar.com/"
+DESCRIPTION="HAppS is a Haskell framework for developing Internet services"
+HOMEPAGE="http://happs.org/"
 SRC_URI="http://happs.org/auto/${MY_P}.tar.gz"
 LICENSE="BSD3"
 
@@ -23,6 +23,7 @@ DEPEND=">=virtual/ghc-6.6
 	=dev-haskell/haxml-1.13*
 	dev-haskell/mtl
 	dev-haskell/network"
+#can be built with ghc 6.4 too but then requires another .cabal file
 
 S="${WORKDIR}/${MY_PN}"
 
