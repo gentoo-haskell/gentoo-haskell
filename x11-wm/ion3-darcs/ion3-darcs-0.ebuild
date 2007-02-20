@@ -14,9 +14,15 @@ IUSE="xinerama"
 EDARCS_REPOSITORY="http://iki.fi/tuomov/repos/ion-3"
 EDARCS_GET_CMD="get --partial --verbose"
 
-DEPEND="virtual/x11
-	app-misc/run-mailcap
-	>=dev-lang/lua-5.0.2"
+DEPEND="|| ( (
+				x11-libs/libICE
+				x11-libs/libXext
+				x11-libs/libSM
+				iontruetype? ( x11-libs/libXft )
+				xinerama? ( x11-libs/libXinerama ) )
+			virtual/x11 )
+		app-misc/run-mailcap
+		>=dev-lang/lua-5.0.2"
 
 # this functions checks wether the repository should be updated or downloaded
 # from scratch
