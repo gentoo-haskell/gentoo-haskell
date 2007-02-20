@@ -15,10 +15,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-	>=dev-haskell/mtl-1.0"
-        dev-haskell/newbinary"
+	>=dev-haskell/mtl-1.0
+	dev-haskell/newbinary"
 
-S=${WORKDIR}/Crypto-${PV}
+S="${WORKDIR}/Crypto-${PV}"
 
 src_unpack() {
 	base_src_unpack
