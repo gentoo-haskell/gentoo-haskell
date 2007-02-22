@@ -88,8 +88,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
 		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
-			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}") \
-		$(use svg && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}" \
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
