@@ -6,31 +6,34 @@ inherit base eutils ghc-package multilib autotools darcs
 
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
-LICENSE="LGPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
-#enable sparc when CFLAGS/-mcpu ebuild bug is fixed
 
-IUSE="doc glade gnome mozilla firefox"
+IUSE="doc glade gnome opengl firefox seamonkey profile"
 
 EDARCS_REPOSITORY="http://darcs.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
 EDARCS_LOCALREPO="gtk2hs"
 
-RDEPEND=">=dev-lang/ghc-6.4
+RDEPEND=">=virtual/ghc-6.0
+		dev-haskell/mtl
+		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6
-				 >=gnome-base/gconf-2 )
-		mozilla? ( >=www-client/mozilla-1.4 )
+				 >=gnome-base/gconf-2
+				 >=gnome-base/librsvg-2.16 )
+		opengl? ( x11-libs/gtkglext )
+		seamonkey? ( >=www-client/seamonkey-1.0.2 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
 DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.7 )"
 
 src_compile() {
-	# only needed because of the cflags patch above.
+	# needed because we're using the darcs version
 	eautoreconf
 
 	econf \
@@ -39,9 +42,12 @@ src_compile() {
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
-		$(use_enable mozilla mozilla) \
+		$(use_enable gnome svg) \
+		$(use_enable opengl opengl) \
+		$(use_enable seamonkey mozilla) \
 		$(use_enable firefox firefox) \
 		$(use_enable doc docs) \
+		$(use_enable profile profiling) \
 		|| die "Configure failed"
 
 	# parallel build doesn't work, so specify -j1
@@ -77,30 +83,17 @@ src_install() {
 		$(has_version '>=x11-libs/gtk+-2.8' && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/cairo.${pkgext}") \
 		"${D}/usr/$(get_libdir)/gtk2hs/gtk.${pkgext}" \
+		"${D}/usr/$(get_libdir)/gtk2hs/soegtk.${pkgext}" \
 		$(use glade || use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
 		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
 			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}") \
-		$(use mozilla || use firefox && echo \
+		$(use svg && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
+		$(use opengl && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
+		$(use seamonkey || use firefox && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
-
-	# build ghci .o files from .a files
-	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglib.a"
-	if has_version '>=x11-libs/gtk+-2.8'; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHScairo.a"
-	fi
-	ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgtk.a"
-	if use glade || use gnome; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSglade.a"
-	fi
-	if use gnome; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a"
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a"
-	fi
-	if use mozilla || use firefox; then
-		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a"
-	fi
 }
-
