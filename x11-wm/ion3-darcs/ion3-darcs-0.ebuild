@@ -1,4 +1,4 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,12 +9,11 @@ HOMEPAGE="http://www.modeemi.fi/tuomov/ion/"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="xinerama"
+IUSE="xinerama xft"
 
 EDARCS_REPOSITORY="http://iki.fi/tuomov/repos/ion-3"
-EDARCS_GET_CMD="get --partial --verbose"
 
-DEPEND="|| ( (
+RDEPEND="|| ( (
 				x11-libs/libICE
 				x11-libs/libXext
 				x11-libs/libSM
@@ -22,51 +21,34 @@ DEPEND="|| ( (
 				xinerama? ( x11-libs/libXinerama ) )
 			virtual/x11 )
 		app-misc/run-mailcap
-		>=dev-lang/lua-5.0.2"
-
-# this functions checks wether the repository should be updated or downloaded
-# from scratch
-# $1 is reposititory $2 is directory from which to call darcs pull
-download-darcs-repo() {
-	EDARCS_REPOSITORY="$1" EDARCS_LOCALREPO="$2" darcs_fetch
-}
+		>=dev-lang/lua-5.1"
+DEPEND="${RDEPEND}
+		dev-libs/libextl-darcs
+		dev-libs/libtu-darcs"
 
 src_unpack() {
-	download-darcs-repo http://iki.fi/tuomov/repos/ion-3 ion-3 || die "ion-3 repo download failure"
-	download-darcs-repo http://iki.fi/tuomov/repos/libtu-3 ion-3/libtu || die "libtu repo download failure"
-	download-darcs-repo http://iki.fi/tuomov/repos/libextl-3 ion-3/libextl || die "libextl repo download failure"
 	darcs_src_unpack
-	cd ${S}
 	# predist.sh is required, but should not call darcs anymore (we want control about internet access)
-	sed -i "s|^  *do_darcs_export.*$||" predist.sh
+	sed -i "s|^	 *do_darcs_export.*$||" predist.sh
 	/bin/bash predist.sh -snapshot
 }
 
 src_compile() {
-
+	cd ${S}/build/ac
 	autoreconf -i
-
-	local myconf=""
-
-	if has_version '>=x11-base/xfree-4.3.0'; then
-		myconf="${myconf} --disable-xfree86-textprop-bug-workaround"
-	fi
-
-	use hppa && myconf="${myconf} --disable-shared"
-
 	econf \
 		--sysconfdir=/etc/X11 \
-		`use_enable xinerama` \
+		$(use_enable iontruetype xft) \
+		$(use_enable xinerama) \
+		$(use_disable hppa shared) \
 		${myconf} || die
 
-	make \
-		DOCDIR=/usr/share/doc/${PF} || die
-
+	cd ${S}
+	emake DOCDIR="/usr/share/doc/${PF}" || die
 }
 
 src_install() {
-
-	make \
+	einstall \
 		prefix=${D}/usr \
 		ETCDIR=${D}/etc/X11/ion3 \
 		SHAREDIR=${D}/usr/share/ion3 \
@@ -77,7 +59,7 @@ src_install() {
 		MODULEDIR=${D}/usr/lib/ion3/mod \
 		LCDIR=${D}/usr/lib/ion3/lc \
 		VARDIR=${D}/var/cache/ion3 \
-		install || die
+		|| die
 
 	prepalldocs
 
@@ -88,6 +70,4 @@ src_install() {
 
 	insinto /usr/share/xsessions
 	doins ${FILESDIR}/ion3.desktop ${FILESDIR}/pwm3.desktop
-
 }
-
