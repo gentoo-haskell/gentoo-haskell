@@ -6,8 +6,8 @@ CABAL_FEATURES="lib profile haddock"
 inherit base haskell-cabal
 
 DESCRIPTION="Collection of Haskell-related utilities"
-HOMEPAGE="http://quux.org/devel/missingh"
-SRC_URI="http://quux.org/devel/missingh/missingh_${PV}.tar.gz"
+HOMEPAGE="http://software.complete.org/missingh"
+SRC_URI="http://software.complete.org/missingh/static/download_area/0.16/missingh_${PV}.tar.gz"
 
 LICENSE="GPL-2" # mixed licence, mostly GPL
 KEYWORDS="~amd64 ~x86"
