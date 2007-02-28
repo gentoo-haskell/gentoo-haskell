@@ -11,7 +11,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${P}.tar.gz"
 
 LICENSE="BSD3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 # works with ghc 6.4 too, but needs the fps package:
