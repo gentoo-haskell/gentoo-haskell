@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-inherit ghc-package multilib flag-o-matic
+inherit ghc-package flag-o-matic
 
 DESCRIPTION="A Haskell binding for the OpenAL Utility Toolkit"
 HOMEPAGE=""
