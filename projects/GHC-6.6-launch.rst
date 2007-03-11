@@ -112,6 +112,10 @@ Start rewrite other libs and apps to use the dummy libs
 This is only required for applications that can be compiled with GHC 6.6, as
 described above.
 
+Packages that today are marked as stable and can be compiled with GHC 6.6
+requires that the dummy libraries are marked as stable too. Thus we have to
+start rewriting the other packages until the dummys has been marked stable.
+
 
 Make new libs use the p.masked modular libs
 -------------------------------------------
