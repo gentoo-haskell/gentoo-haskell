@@ -86,6 +86,13 @@ Add GHC 6.6 to the tree
 
 This was done 7 March. It's p.masked.
 
+ghc-bin
+-------
+
+ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
+bootstrap ghc-6.6 unless there is a version of ghc already installed.
+I't a good idea anyway.
+
 Add modular libs
 ----------------
 
@@ -110,6 +117,15 @@ Make new libs use the p.masked modular libs
 -------------------------------------------
 
 Packages that only compiles with GHC 6.6 can be added to, if p.masked.
+
+p.unmasking
+-----------
+
+All p.masked packages can be unmasked when:
+
+1. ghc-bin-6.6 is in the tree
+#. All packages that can be compiled with GHC 6.6 is updated to modular deps
+#. We're confident with the testing
 
 ..
     cleaned up conversation from 2007-03-01

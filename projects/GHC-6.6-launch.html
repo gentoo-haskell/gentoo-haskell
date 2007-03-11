@@ -365,24 +365,39 @@ remove their packages and install fresh from the tree.</p>
 <p>This was done 7 March. It's p.masked.</p>
 </div>
 <div class="section">
-<h2><a id="add-modular-libs" name="add-modular-libs">3.2&nbsp;&nbsp;&nbsp;Add modular libs</a></h2>
+<h2><a id="ghc-bin" name="ghc-bin">3.2&nbsp;&nbsp;&nbsp;ghc-bin</a></h2>
+<p>ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
+bootstrap ghc-6.6 unless there is a version of ghc already installed.
+I't a good idea anyway.</p>
+</div>
+<div class="section">
+<h2><a id="add-modular-libs" name="add-modular-libs">3.3&nbsp;&nbsp;&nbsp;Add modular libs</a></h2>
 <p>Ie, only the modular libs from ghc-extralibs meant for GHC 6.6. They should
 also be p.masked.</p>
 </div>
 <div class="section">
-<h2><a id="add-dummy-libs" name="add-dummy-libs">3.3&nbsp;&nbsp;&nbsp;Add dummy libs</a></h2>
+<h2><a id="add-dummy-libs" name="add-dummy-libs">3.4&nbsp;&nbsp;&nbsp;Add dummy libs</a></h2>
 <p>The about 15 packages of ghc-extralibs has to be modeled as dummy libs
 too. They should be added as ~arch and then be stabilized by the arch teams
 asap.</p>
 </div>
 <div class="section">
-<h2><a id="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs" name="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs">3.4&nbsp;&nbsp;&nbsp;Start rewrite other libs and apps to use the dummy libs</a></h2>
+<h2><a id="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs" name="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs">3.5&nbsp;&nbsp;&nbsp;Start rewrite other libs and apps to use the dummy libs</a></h2>
 <p>This is only required for applications that can be compiled with GHC 6.6, as
 described above.</p>
 </div>
 <div class="section">
-<h2><a id="make-new-libs-use-the-p-masked-modular-libs" name="make-new-libs-use-the-p-masked-modular-libs">3.5&nbsp;&nbsp;&nbsp;Make new libs use the p.masked modular libs</a></h2>
+<h2><a id="make-new-libs-use-the-p-masked-modular-libs" name="make-new-libs-use-the-p-masked-modular-libs">3.6&nbsp;&nbsp;&nbsp;Make new libs use the p.masked modular libs</a></h2>
 <p>Packages that only compiles with GHC 6.6 can be added to, if p.masked.</p>
+</div>
+<div class="section">
+<h2><a id="p-unmasking" name="p-unmasking">3.7&nbsp;&nbsp;&nbsp;p.unmasking</a></h2>
+<p>All p.masked packages can be unmasked when:</p>
+<ol class="arabic simple">
+<li>ghc-bin-6.6 is in the tree</li>
+<li>All packages that can be compiled with GHC 6.6 is updated to modular deps</li>
+<li>We're confident with the testing</li>
+</ol>
 <!-- cleaned up conversation from 2007-03-01
 20:15 < dcoutts_> sure sure
 20:15 < dcoutts_> so we should add dummy packages now
