@@ -7,7 +7,6 @@ EBUILDS=$(find . -name \*.ebuild | grep -v _darcs | sed -e "s/\.\\///" | sort)
 RST=projects/GHC-6.6-failures.rst
 
 PORTAGE=/usr/portage
-ESCAPED_PORTAGE="\\/usr\\/portage"
 
 YELLOW="\033[33m"
 RED="\033[31m"
@@ -76,7 +75,7 @@ for NAME in ${NAMES}; do
 
   # find packages in portage 
   for CVSNAME in $( find "${PORTAGE}/${NAME}" -name "*.ebuild" ); do
-    SHORT_CVSNAME=$( echo "$CVSNAME" | sed -e "s/${ESCAPED_PORTAGE}\///" )
+    SHORT_CVSNAME=$( echo "$CVSNAME" | sed -e "s|${PORTAGE}/||" )
     if [[ -f "${SHORT_CVSNAME}" ]]; then
       # file alreay exist in overlay, which means we've already tested it
       continue
