@@ -106,17 +106,7 @@ The about 15 packages of ghc-extralibs has to be modeled as dummy libs
 too. They should be added as ~arch and then be stabilized by the arch teams
 asap.
 
-Start rewrite other libs and apps to use the dummy libs
--------------------------------------------------------
-
-This is only required for applications that can be compiled with GHC 6.6, as
-described above.
-
-Packages that today are marked as stable and can be compiled with GHC 6.6
-requires that the dummy libraries are marked as stable too. Thus we have to
-start rewriting the other packages until the dummys has been marked stable.
-
-The most common packages where added the 11th March, and have been marked as
+The most common libs where added the 11th March, and have been marked as
 stable on some arches:
 
 * dev-haskell/fgl-5.2
@@ -126,6 +116,17 @@ stable on some arches:
 * dev-haskell/hunit-1.1
 * dev-haskell/network-1.0
 * dev-haskell/quickcheck-1.0
+
+
+Start rewrite other libs and apps to use the dummy libs
+-------------------------------------------------------
+
+This is only required for applications that can be compiled with GHC 6.6, as
+described above.
+
+Packages that today are marked as stable and can be compiled with GHC 6.6
+requires that the dummy libraries are marked as stable too. Thus we have to
+start rewriting the other packages until the dummys has been marked stable.
 
 
 Make new libs use the p.masked modular libs
