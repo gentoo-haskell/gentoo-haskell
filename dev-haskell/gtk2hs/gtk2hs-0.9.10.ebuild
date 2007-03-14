@@ -13,16 +13,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 #enable sparc when CFLAGS/-mcpu ebuild bug is fixed
 
-IUSE="doc glade gnome mozilla firefox"
+IUSE="doc glade gnome firefox"
 
 RDEPEND=">=virtual/ghc-5.04.3
+		!>=virtual/ghc-6.6
 		amd64? ( || ( >=dev-lang/ghc-6.4.1 >=dev-lang/ghc-bin-6.4.1 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6
 				 >=gnome-base/gconf-2 )
-		mozilla? ( >=www-client/mozilla-1.4 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
 DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.7 )"
@@ -44,7 +44,6 @@ src_compile() {
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
-		$(use_enable mozilla mozilla) \
 		$(use_enable firefox firefox) \
 		$(use_enable doc docs) \
 		|| die "Configure failed"
@@ -88,7 +87,7 @@ src_install() {
 		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
 			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}") \
-		$(use mozilla || use firefox && echo \
+		$(use firefox && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 
@@ -106,7 +105,7 @@ src_install() {
 		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSgconf.a"
 		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSsourceview.a"
 	fi
-	if use mozilla || use firefox; then
+	if use firefox; then
 		ghc-makeghcilib "${D}/usr/$(get_libdir)/gtk2hs/libHSmozembed.a"
 	fi
 }
