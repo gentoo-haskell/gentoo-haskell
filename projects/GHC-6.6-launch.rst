@@ -116,6 +116,17 @@ Packages that today are marked as stable and can be compiled with GHC 6.6
 requires that the dummy libraries are marked as stable too. Thus we have to
 start rewriting the other packages until the dummys has been marked stable.
 
+The most common packages where added the 11th March, and have been marked as
+stable on some arches:
+
+* dev-haskell/fgl-5.2
+* dev-haskell/mtl-1.0
+* dev-haskell/haskell-src-1.0
+* dev-haskell/html-1.0
+* dev-haskell/hunit-1.1
+* dev-haskell/network-1.0
+* dev-haskell/quickcheck-1.0
+
 
 Make new libs use the p.masked modular libs
 -------------------------------------------
