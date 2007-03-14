@@ -16,12 +16,12 @@ PATH="/usr/bin:/opt/ghc/bin:${PATH}"
 # for later configuration using environment variables/
 # returns the name of the ghc executable
 ghc-getghc() {
-	which ghc
+	type -P ghc
 }
 
 # returns the name of the ghc-pkg executable
 ghc-getghcpkg() {
-	which ghc-pkg
+	type -P ghc-pkg
 }
 
 # returns the name of the ghc-pkg binary (ghc-pkg
