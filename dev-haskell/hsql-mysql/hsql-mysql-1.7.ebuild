@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=">=virtual/ghc-6.4.1
 	~dev-haskell/hsql-${PV}
-	=dev-db/mysql-4*"
+	>=virtual/mysql-4.0"
 
 S="${WORKDIR}/HSQL/MySQL"
 

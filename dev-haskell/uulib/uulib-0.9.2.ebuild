@@ -11,7 +11,7 @@ SRC_URI="http://abaris.zoo.cs.uu.nl:8080/wiki/pub/HUT/Download/${P}-src.tar.gz"
 LICENSE="LGPL-2.1-UUST"
 SLOT="0"
 
-KEYWORDS="amd64 ~ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.2.2"
