@@ -29,7 +29,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 # We don't provide virtual/ghc, although we could ...
@@ -43,14 +43,14 @@ RDEPEND="
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
-	<virtual/ghc-6.5
-	!>=virtual/ghc-6.6
+	<virtual/ghc-6.8
+	!>=virtual/ghc-6.8
 	>=dev-haskell/happy-1.15
 	>=dev-haskell/alex-2.0
 	doc? (  ~app-text/docbook-xml-dtd-4.2
-		app-text/docbook-xsl-stylesheets
-		>=dev-libs/libxslt-1.1.2
-		>=dev-haskell/haddock-0.8_rc1 )"
+			app-text/docbook-xsl-stylesheets
+			>=dev-libs/libxslt-1.1.2
+			>=dev-haskell/haddock-0.8 )"
 
 # The following function fetches each of the sub-repositories that
 # ghc requires.
@@ -94,11 +94,12 @@ ghc_setup_cflags() {
 			# -O2 and above break on too many systems
 			-O*) ;;
 
-			# Arch and ABI flags are probably ok
+			# Arch and ABI flags are what we're really after
 			-m*) append-ghc-cflags compile assemble ${flag};;
 
-			# Debugging flags are also probably ok
-			-g*) append-ghc-cflags compile assemble ${flag};;
+			# Debugging flags don't help either. You can't debug Haskell code
+			# at the C source level and the mangler discards the debug info.
+			-g*) ;;
 
 			# Ignore all other flags, including all -f* flags
 		esac
@@ -106,8 +107,8 @@ ghc_setup_cflags() {
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	append-ghc-cflags compile link	$(test-flags-CC -nopie)
-	append-ghc-cflags compile		$(test-flags-CC -fno-stack-protector)
+	gcc-specs-pie && append-ghc-cflags compile link	-nopie
+	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
 
 	# We also add -Wa,--noexecstack to get ghc to generate .o files with
 	# non-exectable stack. This it a hack until ghc does it itself properly.
@@ -140,8 +141,7 @@ src_compile() {
 
 	# If you need to do a quick build then enable this bit and add debug to IUSE
 	#if use debug; then
-	#	echo "SRC_HC_OPTS     = -H32m -O0" >> mk/build.mk
-	#	echo "GhcStage1HcOpts =" >> mk/build.mk
+	#	echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
 	#	echo "GhcLibHcOpts    =" >> mk/build.mk
 	#	echo "GhcLibWays      =" >> mk/build.mk
 	#	echo "SplitObjs       = NO" >> mk/build.mk
