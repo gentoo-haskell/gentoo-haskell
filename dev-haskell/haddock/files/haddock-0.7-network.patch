@@ -1,0 +1,12 @@
+--- haddock-0.7/haddock/src/Digraph.lhs   2003-07-28 16:32:43.000000000 +0200
++++ haddock-0.7.new/haddock/src/Digraph.lhs   2006-10-10 13:42:33.000000000 +0200
+@@ -43,7 +43,10 @@
+ import ST
+ #else
+ import Control.Monad.ST
+-import Data.Array.ST hiding (indices,bounds)
++import Data.Array.ST
++#if __GLASGOW_HASKELL__ <= 604
++       hiding (indices,bounds)
++#endif
+ #endif
