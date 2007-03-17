@@ -99,6 +99,28 @@ Add modular libs
 Ie, only the modular libs from ghc-extralibs meant for GHC 6.6. They should
 also be p.masked.
 
+Modular libs has been added for:
+
+* dev-haskell/arrows
+* dev-haskell/cgi
+* dev-haskell/fgl
+* dev-haskell/haskell-src
+* dev-haskell/html
+* dev-haskell/hunit
+* dev-haskell/mtl
+* dev-haskell/network
+* dev-haskell/quickcheck
+* dev-haskell/time
+* dev-haskell/xhtml
+
+Still missing for:
+
+* dev-haskell/alut
+* dev-haskell/glut
+* dev-havkell/hgl
+* dev-haskell/openal
+* dev-haskell/opengl
+
 Add dummy libs
 --------------
 
@@ -117,6 +139,13 @@ stable on some arches:
 * dev-haskell/network-1.0
 * dev-haskell/quickcheck-1.0
 
+Dummies missing:
+
+* dev-haskell/alut
+* dev-haskell/glut
+* dev-havkell/hgl
+* dev-haskell/openal
+* dev-haskell/opengl
 
 Start rewrite other libs and apps to use the dummy libs
 -------------------------------------------------------
