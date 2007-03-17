@@ -5,7 +5,7 @@
 inherit ghc-package flag-o-matic
 
 DESCRIPTION="A Haskell binding to the OpenAL cross-platform 3D audio API"
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI=""
 LICENSE="BSD"
 SLOT="0"

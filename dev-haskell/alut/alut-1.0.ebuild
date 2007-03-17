@@ -5,7 +5,7 @@
 inherit ghc-package flag-o-matic
 
 DESCRIPTION="A Haskell binding for the OpenAL Utility Toolkit"
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI=""
 LICENSE="BSD"
 SLOT="0"

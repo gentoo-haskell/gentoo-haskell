@@ -5,7 +5,7 @@
 inherit ghc-package flag-o-matic
 
 DESCRIPTION="X11 bindings for haskell"
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI=""
 LICENSE="BSD"
 SLOT="0"

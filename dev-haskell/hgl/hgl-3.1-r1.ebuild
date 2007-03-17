@@ -9,7 +9,7 @@ MY_PN="HGL"
 GHC_PV=6.6
 
 DESCRIPTION="A simple graphics library based on X11 or Win32."
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
 LICENSE="BSD"
 SLOT="0"

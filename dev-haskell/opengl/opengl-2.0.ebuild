@@ -5,7 +5,7 @@
 inherit ghc-package
 
 DESCRIPTION="OpenGL bindings for Haskell"
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
