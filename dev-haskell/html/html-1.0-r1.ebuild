@@ -8,7 +8,7 @@ inherit haskell-cabal
 GHC_PV=6.6
 
 DESCRIPTION="HTML Haskell combinator library."
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
