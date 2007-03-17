@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="x86 amd64"
 IUSE=""
 
-DEPEND="=virtual/ghc-6.4*"
+DEPEND="=dev-lang/ghc-6.4*"
 
 # GHC 6.4.1 provides openal-1.0
 # GHC 6.4.2 provides openal-1.2
