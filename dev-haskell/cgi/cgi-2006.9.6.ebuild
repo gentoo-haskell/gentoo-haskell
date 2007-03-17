@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=">=virtual/ghc-6.6
 	>=dev-haskell/mtl-1.0
-	>=dev-haskell/xhtml-2006.8.14
+	>=dev-haskell/xhtml-2006.9.13
 	>=dev-haskell/network-2.0"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
