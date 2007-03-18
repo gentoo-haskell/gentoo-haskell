@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.4
 RDEPEND=""
 
 pkg_setup() {
-	if ! built_with_use -o dev-haskell/gtk2hs mozilla firefox ; then
+	if ! built_with_use -o dev-haskell/gtk2hs firefox ; then
 	   	echo
 		eerror "gtk2hs was not merged with the mozilla or firefox USE flag."
 		eerror "hImerge requires gtk2hs be compiled with any of these flags."
