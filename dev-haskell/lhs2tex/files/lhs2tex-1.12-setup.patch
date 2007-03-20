@@ -1,0 +1,37 @@
+diff -Naur lhs2tex-1.12.orig/Setup.hs lhs2tex-1.12/Setup.hs
+--- lhs2tex-1.12.orig/Setup.hs	2007-03-20 22:33:03.000000000 +0100
++++ lhs2tex-1.12/Setup.hs	2007-03-20 22:33:22.000000000 +0100
+@@ -117,6 +117,8 @@
+                         hugsExists <- lookupProgram "hugs" (withPrograms lbi)
+                         hugs <- case hugsExists of
+                                   Nothing -> return ""
++                                  Just (Program { programLocation = EmptyLocation })
++                                          -> return ""
+                                   Just _  -> fmap fst (getProgram "hugs" (withPrograms lbi))
+                         let lhs2texDir = buildDir lbi `joinFileName` lhs2tex
+                         let lhs2texBin = lhs2texDir `joinFileName` lhs2tex
+@@ -278,20 +280,12 @@
+     do  let lhs2texDir = buildDir lbi `joinFileName` lhs2tex
+         let lhs2texBin = lhs2texDir `joinFileName` lhs2tex
+         let args    =  [ "-P" ++ lhs2texDir ++ ":" ]
++                     ++ [ "-o" ++ outf ]
+                      ++ (if v > 4 then ["-v"] else [])
+                      ++ params
+-        maybeExit $ runCommandRedirect v lhs2texBin args outf 
+-
+-runCommandRedirect  ::  Int                       -- ^ verbosity
+-                    ->  String                    -- ^ the command
+-                    ->  [String]                  -- ^ args
+-                    ->  FilePath                  -- ^ output file
+-                    ->  IO ExitCode
+-runCommandRedirect v cmd args f =
+-    do  (ex,out,err) <- runCommand v cmd args
+-        writeFile f out
+-        hPutStr stderr (unlines . lines $ err)
+-        return ex
++	(ex,_,err) <- runCommand v lhs2texBin args
++	hPutStr stderr (unlines . lines $ err)
++	maybeExit (return ex)
+ 
+ runCommandProgramConf  ::  Int                    -- ^ verbosity
+                        ->  String                 -- ^ program name

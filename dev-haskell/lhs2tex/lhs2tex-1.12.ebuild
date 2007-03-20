@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 SRC_URI="http://www.informatik.uni-bonn.de/~loeh/lhs2tex/${P/_pre/pre}.tar.bz2"
 
@@ -27,6 +27,7 @@ DEPEND=">=dev-haskell/cabal-1.1.6
 
 src_unpack() {
 	unpack ${A}
+	epatch "${FILESDIR}/lhs2tex-1.12-setup.patch"
 	cd ${S}
 	use doc && rm doc/Guide2.dontbuild
 }
