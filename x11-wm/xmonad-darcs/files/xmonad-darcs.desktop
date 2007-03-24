@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=xmonad
+Name=xmonad-darcs
 Comment=A lightweight window manager
 Exec=/etc/X11/Sessions/xmonad-darcs
 TryExec=xmonad-darcs
