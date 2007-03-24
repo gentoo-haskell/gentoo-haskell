@@ -19,4 +19,4 @@ DEPEND=">=virtual/ghc-6.4
 	>=dev-haskell/x11-1.2"
 
 EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/X11-extras"
-EDARCS_GET_CMD="get --partial --verbose"
+EDARCS_GET_CMD="get --partial"

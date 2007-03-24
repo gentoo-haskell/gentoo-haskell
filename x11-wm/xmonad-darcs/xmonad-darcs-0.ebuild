@@ -21,4 +21,19 @@ DEPEND=">=virtual/ghc-6.4
 	~dev-haskell/mtl-1.0"
 
 EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
-EDARCS_GET_CMD="get --partial --verbose"
+EDARCS_GET_CMD="get --partial"
+
+RESTRICT="strip"
+
+src_install() {
+	cabal_src_install
+
+	mv "${D}/usr/bin/xmonad"{,-darcs}
+
+	echo -e "#!/bin/sh\n/usr/bin/xmonad-darcs" > "${T}/${PN}"
+	exeinto /etc/X11/Sessions
+	doexe "${T}/${PN}"
+
+	insinto /usr/share/xsessions
+	doins "${FILESDIR}/${PN}.desktop"
+}
