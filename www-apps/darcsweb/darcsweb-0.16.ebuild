@@ -19,6 +19,7 @@ RDEPEND="dev-util/darcs
 src_install() {
 	webapp_src_preinst
 	dodoc README
+	newbin mkconfig.py darcsweb-mkconfig.py
 
 	chmod +x darcsweb.cgi
 
