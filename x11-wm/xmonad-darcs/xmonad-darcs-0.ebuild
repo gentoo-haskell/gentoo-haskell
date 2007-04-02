@@ -7,7 +7,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal darcs
 
 DESCRIPTION="A lightweight X11 window manager"
-HOMEPAGE="http://darcs.haskell.org/~sjanssen/xmonad"
+HOMEPAGE="http://www.xmonad.org"
 LICENSE="BSD"
 SLOT="0"
 
