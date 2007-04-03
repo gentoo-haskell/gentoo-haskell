@@ -1,0 +1,8 @@
+DIST haskell-src-exts-0.2.tar.gz 59520 RMD160 4fb15828c41cce431f947dcb549b3aa579367dcb SHA1 c4b9a76dbc6be91ba58835f7646b21750af68701 SHA256 f818f7f9ea079e4ee9689d8cb0a5d86b23603a9ba58f2fb047439e3c6f29b4d2
+EBUILD trhsx-0.2.ebuild 685 RMD160 ed4608cb4453d1343ead2fd91dc779a78a3a87fc SHA1 c4cc5ca0b3f890bd0c348c64cbe3f93c6cf4102a SHA256 489aaaa3069ae5dbc080ffb35ecc8adf4617bad0f0a8732fa94b7aec64e5b7f7
+MD5 eec408c5a17de0d8e658c615ffd8bff9 trhsx-0.2.ebuild 685
+RMD160 ed4608cb4453d1343ead2fd91dc779a78a3a87fc trhsx-0.2.ebuild 685
+SHA256 489aaaa3069ae5dbc080ffb35ecc8adf4617bad0f0a8732fa94b7aec64e5b7f7 trhsx-0.2.ebuild 685
+MD5 4bdb0f2eea0626f11f6d857caa1391c6 files/digest-trhsx-0.2 259
+RMD160 df546f2230daa874979146ec3ce2f2ba749f7f93 files/digest-trhsx-0.2 259
+SHA256 7817d91ce21644746cc0fdbe58944032ffe773b2853244e53505a03d9ffd69fb files/digest-trhsx-0.2 259

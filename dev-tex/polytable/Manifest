@@ -1,0 +1,8 @@
+DIST polytable-0.8.2.tar.gz 23443 RMD160 f1927e44bc1261acf963400c6c301e1c20b0e14a SHA1 9bdcdaf50f6fbea6f560904e6eb777e48f2fdde3 SHA256 0bb4adc399ede88816eb50fd0deff278c9ca2246540e06599fc68cfb3d2c9b0f
+EBUILD polytable-0.8.2.ebuild 746 RMD160 c5f3345f5b446e0c04cd0687cbe201623e847fde SHA1 07cc22f78a5920a58cbc1d7c2906edd53b215123 SHA256 baa156ed97c1176c8b889cebb9aceede08914cb5a79a6e00b56241be98b2d7ef
+MD5 f30870cd843127b9a7994ca7401fb99f polytable-0.8.2.ebuild 746
+RMD160 c5f3345f5b446e0c04cd0687cbe201623e847fde polytable-0.8.2.ebuild 746
+SHA256 baa156ed97c1176c8b889cebb9aceede08914cb5a79a6e00b56241be98b2d7ef polytable-0.8.2.ebuild 746
+MD5 845f53902b197452e02280e638e5ad3a files/digest-polytable-0.8.2 244
+RMD160 1a942afcc0a795031759a4f7ad7e2eefe45cba94 files/digest-polytable-0.8.2 244
+SHA256 985cec39306c006278b67dadb6b7e08cba1ecf7d8ac1c26c2fa7317c4551f3b6 files/digest-polytable-0.8.2 244

@@ -1,0 +1,7 @@
+EBUILD haskellcharts-darcs-0.ebuild 446 RMD160 ceaa9e448872e032751c9634ac5c5f0e29918439 SHA1 d7b9717c95fb0f007a330fc5af671bc1b53f6409 SHA256 d14d531c6c2dd32ff00bd8f41f82e2e01d9f5a99c85051eaec7a7384cb8ccac5
+MD5 11cfe47edcf3b664551b75ba3faf1ba2 haskellcharts-darcs-0.ebuild 446
+RMD160 ceaa9e448872e032751c9634ac5c5f0e29918439 haskellcharts-darcs-0.ebuild 446
+SHA256 d14d531c6c2dd32ff00bd8f41f82e2e01d9f5a99c85051eaec7a7384cb8ccac5 haskellcharts-darcs-0.ebuild 446
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-haskellcharts-darcs-0 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-haskellcharts-darcs-0 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-haskellcharts-darcs-0 0

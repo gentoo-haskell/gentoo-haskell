@@ -1,0 +1,8 @@
+DIST ghc-6.6-src.tar.bz2 4345587 RMD160 0d8d5cdde21e5ad86fba1023872be316316d14e7 SHA1 9876dbc46ef22684c2cc95e8dce49b2a1f47017e SHA256 79b2a29136d56c8120a526188297603304dc80d3093cda76fde939df7d4dcc7e
+EBUILD ghc-testsuite-darcs-6.5.ebuild 1370 RMD160 b847e66393ecc44178583bc45c20f5c3f6b4a838 SHA1 37fc5e65976d89e977dac488a603d14f80bdbca0 SHA256 2d837bfe66c568b1ce80855f5b2ea6c52501c7b726491c497bb0f90662403b60
+MD5 24493af41ebc54c446c27558aa797fac ghc-testsuite-darcs-6.5.ebuild 1370
+RMD160 b847e66393ecc44178583bc45c20f5c3f6b4a838 ghc-testsuite-darcs-6.5.ebuild 1370
+SHA256 2d837bfe66c568b1ce80855f5b2ea6c52501c7b726491c497bb0f90662403b60 ghc-testsuite-darcs-6.5.ebuild 1370
+MD5 2255c6442cd019753ca35bad1f71e78f files/digest-ghc-testsuite-darcs-6.5 241
+RMD160 6d3e93d9851cfbf07c6e6df35e1b7adbf5c01903 files/digest-ghc-testsuite-darcs-6.5 241
+SHA256 08a1beeb6d4f6f1f6c33e3db553861106f19cfc95d6c84ef410efdae2ae6bda6 files/digest-ghc-testsuite-darcs-6.5 241

@@ -1,0 +1,12 @@
+AUX hsgnutls-0.2.3-amd64.patch 1092 RMD160 563bc96a48bffc103a902fc1aec07ded0a24f136 SHA1 b8c5fc6215608feb7f847defa9f4c5b0135f59b4 SHA256 ec247906ddaef66b213f02fca38970d766291a0ff6e0b1d0fd534925a2dfddfb
+MD5 c1ce61a82d08b49f9416ebef2484bdfa files/hsgnutls-0.2.3-amd64.patch 1092
+RMD160 563bc96a48bffc103a902fc1aec07ded0a24f136 files/hsgnutls-0.2.3-amd64.patch 1092
+SHA256 ec247906ddaef66b213f02fca38970d766291a0ff6e0b1d0fd534925a2dfddfb files/hsgnutls-0.2.3-amd64.patch 1092
+DIST hsgnutls-0.2.3.tar.gz 19940 RMD160 a938478057241452838ca22caa1ae214a199dd8f SHA1 658b3c0cf0016878c8d39eaa591fdb691f33e20a SHA256 fb1ada1d0b7ef0d5b365671ebfda75edf5f9b08999ee4508c0d3a7618bcb6cee
+EBUILD hsgnutls-0.2.3.ebuild 840 RMD160 8bcfc57c2ebbbdf4fdbc2efc8e3eebdcfa2255cf SHA1 4ab0cd696d804c60bfb10def571e1763853e03ba SHA256 cc63f2bb1146f1b2396ea3008003b2bc6f4d566c00b46ed104711d07857af6ae
+MD5 225eafa66ea7f045ab8919cef352a871 hsgnutls-0.2.3.ebuild 840
+RMD160 8bcfc57c2ebbbdf4fdbc2efc8e3eebdcfa2255cf hsgnutls-0.2.3.ebuild 840
+SHA256 cc63f2bb1146f1b2396ea3008003b2bc6f4d566c00b46ed104711d07857af6ae hsgnutls-0.2.3.ebuild 840
+MD5 d40117ab08b790d19d7771b0304b2955 files/digest-hsgnutls-0.2.3 241
+RMD160 25ff4180d8e5119d834ddefccca54538993514ac files/digest-hsgnutls-0.2.3 241
+SHA256 d1ec74963e9a254f38687f125bfe7c95df6bab952da4db63a2400d95c94fbcd3 files/digest-hsgnutls-0.2.3 241

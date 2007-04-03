@@ -1,0 +1,15 @@
+DIST ghc-6.6-src-extralibs.tar.bz2 2015443 RMD160 63d87d02f42efc032c20de7394f3b29431fd8eed SHA1 b94974e255165703d882bb522ec44c5bdc4b0aec SHA256 1c811695d074c7560ca9bd7773523f817ccb57390044392a1ad92cf0079bea29
+EBUILD haskell-src-1.0-r1.ebuild 488 RMD160 4ffe666efa1dda49705cba35ca5d6b7871b23482 SHA1 cd9fe5cf2ad18733603f7b257be46274a87db117 SHA256 4a2ac85ce06ce025e8ccc434c4b57e564b1f490d36c527b1c5e7bab7ced5fecd
+MD5 da00ea52abc167a937b62dda599451d4 haskell-src-1.0-r1.ebuild 488
+RMD160 4ffe666efa1dda49705cba35ca5d6b7871b23482 haskell-src-1.0-r1.ebuild 488
+SHA256 4a2ac85ce06ce025e8ccc434c4b57e564b1f490d36c527b1c5e7bab7ced5fecd haskell-src-1.0-r1.ebuild 488
+EBUILD haskell-src-1.0.ebuild 513 RMD160 bd29a9d188eaacb94cee716f552676a217df7ded SHA1 8d2a97e56160a2487f2e8c8c6718575cc5fad308 SHA256 123d402b4e455a1540c8f56412ab1b656ea94cca0d0e8fc4d5146a4b8baf5e23
+MD5 ace9cd075fae89656c4ddf55ae0c456e haskell-src-1.0.ebuild 513
+RMD160 bd29a9d188eaacb94cee716f552676a217df7ded haskell-src-1.0.ebuild 513
+SHA256 123d402b4e455a1540c8f56412ab1b656ea94cca0d0e8fc4d5146a4b8baf5e23 haskell-src-1.0.ebuild 513
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-haskell-src-1.0 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-haskell-src-1.0 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-haskell-src-1.0 0
+MD5 b0aaaee1ff3100fe61c4b5465a83d24d files/digest-haskell-src-1.0-r1 271
+RMD160 9e701b77b90909120e2d836177e23072b5c482fb files/digest-haskell-src-1.0-r1 271
+SHA256 26ea98165d0363e112c4fe378fe3aa807b7bdce6cba608c8568cc599d361bbcb files/digest-haskell-src-1.0-r1 271
