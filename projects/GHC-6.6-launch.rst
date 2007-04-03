@@ -93,6 +93,8 @@ ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
 bootstrap ghc-6.6 unless there is a version of ghc already installed.
 I't a good idea anyway.
 
+Update 2007-03-16: ghc-bin-6.6 in the tree, ~amd64 ~x86
+
 Add modular libs
 ----------------
 
@@ -129,7 +131,7 @@ too. They should be added as ~arch and then be stabilized by the arch teams
 asap.
 
 The most common libs where added the 11th March, and have been marked as
-stable on some arches:
+~arch or stable on 2007-04-02:
 
 * dev-haskell/fgl-5.2
 * dev-haskell/mtl-1.0
