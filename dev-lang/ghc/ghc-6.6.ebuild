@@ -167,6 +167,9 @@ src_unpack() {
 	cd "${S}"
 	# Fix sparc split-objs linking problem
 	epatch "${FILESDIR}/ghc-6.5-norelax.patch"
+
+	# Disable threaded runtime build to work around RTS bugs on sparc
+	epatch "${FILESDIR}/ghc-6.6-nothreadedrts.patch"
 }
 
 src_compile() {
@@ -206,6 +209,17 @@ src_compile() {
 
 	# Some arches do support some ghc features even though they're off by default
 	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
+
+	# Workaround for threaded RTS bugs on sparc in ghc-6.6
+	# This is rather draconian, hopefully upstream fixes this soon.
+	if use sparc; then
+		echo "GhcUnregisterised=YES" >> mk/build.mk
+		echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
+		echo "GhcWithInterpreter=NO" >> mk/build.mk
+		echo "SplitObjs=NO" >> mk/build.mk
+		echo "GhcRTSWays := debug" >> mk/build.mk
+		echo "GhcNotThreaded=YES" >> mk/build.mk
+	fi
 
 	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
 	CHECKREQS_MEMORY="200"
