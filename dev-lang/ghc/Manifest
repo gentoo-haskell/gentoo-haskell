@@ -54,6 +54,10 @@ AUX ghc-6.5-norelax.patch 578 RMD160 f41d1b9f93cff339fac01660bfeed5d2aeb32757 SH
 MD5 406397414acecec0aa1eb548bac52099 files/ghc-6.5-norelax.patch 578
 RMD160 f41d1b9f93cff339fac01660bfeed5d2aeb32757 files/ghc-6.5-norelax.patch 578
 SHA256 fb1bdd958116b5b17b4233517c45bee243a9b4503b20469d23b3d716d2889cac files/ghc-6.5-norelax.patch 578
+AUX ghc-6.6-nothreadedrts.patch 665 RMD160 402c8eb78dc648e55d1d7e00c695b49abe0f293d SHA1 8d0bc56096ebe781371dffa668de48a97173cd32 SHA256 bdfb000a70d97bb7341dda5a2ec48bb7f688532ade830eb2d73c7fa6ef1eead1
+MD5 ec4b234602e907111db61eb1193c719e files/ghc-6.6-nothreadedrts.patch 665
+RMD160 402c8eb78dc648e55d1d7e00c695b49abe0f293d files/ghc-6.6-nothreadedrts.patch 665
+SHA256 bdfb000a70d97bb7341dda5a2ec48bb7f688532ade830eb2d73c7fa6ef1eead1 files/ghc-6.6-nothreadedrts.patch 665
 AUX ghc-updater 9145 RMD160 63df8e2b9518b8eb725f1af4156eeea261d6c96f SHA1 0b95a16fd2e49eea7550db2eeb52c4021aaa0257 SHA256 475cc9e093bd8140b32506f640b6644459fef9baf04ea0baa53d51b6b02e23e1
 MD5 0ecbc644de4685ffe5989130082846b9 files/ghc-updater 9145
 RMD160 63df8e2b9518b8eb725f1af4156eeea261d6c96f files/ghc-updater 9145
