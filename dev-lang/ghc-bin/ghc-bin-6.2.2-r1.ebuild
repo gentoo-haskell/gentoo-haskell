@@ -37,6 +37,5 @@ src_compile() {
 
 src_install () {
 	mv * ${D}
-	insinto /etc/env.d
-	doins ${FILESDIR}/10ghc
+	doenvd ${FILESDIR}/10ghc
 }

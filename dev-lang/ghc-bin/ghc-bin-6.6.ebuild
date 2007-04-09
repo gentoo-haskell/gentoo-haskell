@@ -132,8 +132,7 @@ src_install () {
 	mkdir "${D}/opt"
 	mv "${S}/usr" "${D}/opt/ghc"
 
-	insinto /etc/env.d
-	doins "${FILESDIR}/10ghc"
+	doenvd "${FILESDIR}/10ghc"
 }
 
 pkg_postinst () {

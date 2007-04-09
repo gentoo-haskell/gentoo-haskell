@@ -90,8 +90,7 @@ src_install () {
 	into /opt/ghc
 	dosbin ${FILESDIR}/ghc-updater
 
-	insinto /etc/env.d
-	doins "${FILESDIR}/10ghc"
+	doenvd "${FILESDIR}/10ghc"
 }
 
 pkg_postinst () {
