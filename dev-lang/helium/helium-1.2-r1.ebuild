@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="x86 -sparc ~ppc"
 IUSE="readline"
 
-DEPEND=">=virtual/ghc-6.2
+DEPEND="<virtual/ghc-6.4
 	!>=virtual/ghc-6.4
 	readline? ( sys-libs/readline )"
 RDEPEND="virtual/jdk
