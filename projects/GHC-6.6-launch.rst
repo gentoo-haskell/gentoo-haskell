@@ -67,9 +67,15 @@ use::
 
 to indicate when a package only can be compiled with the GHC 6.4 series.
 
-..
-  Why don't we use blocks? There was a good reason for this but I've forgot
-  it.
+This is due to that portage doesn't play well when a dependency and a block
+is overlapping. Take e.g. this dep::
+
+    DEPEND=">=virtual/ghc-6.4 !>=virtual/ghc-6.6"
+
+Unless you already have a ghc compiler, and assuming ghc-6.6 is stable,
+portage will first satisfy the first dependency with ghc-6.6. Secondly,
+it'll fail on the block of ghc-6.6. It does **NOT** figure out that using
+ghc-6.4.2 would satisfy both dependencies.
 
 As many packages has been changed recently, it's recommended that once this
 plan is implemented, users that have used the Gentoo Haskell overlay should
