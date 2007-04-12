@@ -4,7 +4,7 @@ GHC 6.6 Launch
 
 :Author: Lennart Kolmodin <kolmodin@gentoo.org>,
          Gentoo Haskell Herd <haskell@gentoo.org>
-:Updated: 2007-03-10
+:Updated: 2007-04-12
 
 .. sectnum::
 
@@ -42,7 +42,7 @@ also GHC 6.4) should depend on the modular libraries.
 
 To mirror this behavior for GHC 6.4 where the compiler already provides the
 libraries, we use dummy libraries as place holders. They will not do or
-install anything, but mearly exist to depended upon by packages that need
+install anything, but merely exist to depended upon by packages that need
 those libraries. The dummy libraries will only depend on the GHC 6.4
 compiler, while the real modular libs will depend on the GHC 6.6 series or
 newer. If an application/library is compiled against GHC 6.4 the dummy
@@ -91,9 +91,11 @@ ghc-bin
 
 ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
 bootstrap ghc-6.6 unless there is a version of ghc already installed.
-I't a good idea anyway.
+It's a good idea anyway.
 
 Update 2007-03-16: ghc-bin-6.6 in the tree, ~amd64 ~x86
+
+Update 2007-04-12: cparrot has added ~alpha, ~ppc and ~sparc
 
 Add modular libs
 ----------------
@@ -141,7 +143,8 @@ The most common libs where added the 11th March, and have been marked as
 * dev-haskell/network-1.0
 * dev-haskell/quickcheck-1.0
 
-Dummies missing:
+Dummies missing, just as all dummies, they only has to be added if an ebuild
+depends on that functionality:
 
 * dev-haskell/alut
 * dev-haskell/glut

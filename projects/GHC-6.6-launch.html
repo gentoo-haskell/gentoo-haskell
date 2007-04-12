@@ -300,7 +300,7 @@ ul.auto-toc {
 <tr><th class="docinfo-name">Author:</th>
 <td>Lennart Kolmodin &lt;<a class="reference" href="mailto:kolmodin&#64;gentoo.org">kolmodin&#64;gentoo.org</a>&gt;,
 Gentoo Haskell Herd &lt;<a class="reference" href="mailto:haskell&#64;gentoo.org">haskell&#64;gentoo.org</a>&gt;</td></tr>
-<tr class="field"><th class="docinfo-name">Updated:</th><td class="field-body">2007-03-10</td>
+<tr class="field"><th class="docinfo-name">Updated:</th><td class="field-body">2007-04-12</td>
 </tr>
 </tbody>
 </table>
@@ -329,7 +329,7 @@ package in the tree. Packages that can be compiled with GHC 6.6 (possibly
 also GHC 6.4) should depend on the modular libraries.</p>
 <p>To mirror this behavior for GHC 6.4 where the compiler already provides the
 libraries, we use dummy libraries as place holders. They will not do or
-install anything, but mearly exist to depended upon by packages that need
+install anything, but merely exist to depended upon by packages that need
 those libraries. The dummy libraries will only depend on the GHC 6.4
 compiler, while the real modular libs will depend on the GHC 6.6 series or
 newer. If an application/library is compiled against GHC 6.4 the dummy
@@ -368,7 +368,9 @@ remove their packages and install fresh from the tree.</p>
 <h2><a id="ghc-bin" name="ghc-bin">3.2&nbsp;&nbsp;&nbsp;ghc-bin</a></h2>
 <p>ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
 bootstrap ghc-6.6 unless there is a version of ghc already installed.
-I't a good idea anyway.</p>
+It's a good idea anyway.</p>
+<p>Update 2007-03-16: ghc-bin-6.6 in the tree, ~amd64 ~x86</p>
+<p>Update 2007-04-12: cparrot has added ~alpha, ~ppc and ~sparc</p>
 </div>
 <div class="section">
 <h2><a id="add-modular-libs" name="add-modular-libs">3.3&nbsp;&nbsp;&nbsp;Add modular libs</a></h2>
@@ -403,7 +405,7 @@ also be p.masked.</p>
 too. They should be added as ~arch and then be stabilized by the arch teams
 asap.</p>
 <p>The most common libs where added the 11th March, and have been marked as
-stable on some arches:</p>
+~arch or stable on 2007-04-02:</p>
 <ul class="simple">
 <li>dev-haskell/fgl-5.2</li>
 <li>dev-haskell/mtl-1.0</li>
@@ -413,7 +415,8 @@ stable on some arches:</p>
 <li>dev-haskell/network-1.0</li>
 <li>dev-haskell/quickcheck-1.0</li>
 </ul>
-<p>Dummies missing:</p>
+<p>Dummies missing, just as all dummies, they only has to be added if an ebuild
+depends on that functionality:</p>
 <ul class="simple">
 <li>dev-haskell/alut</li>
 <li>dev-haskell/glut</li>
