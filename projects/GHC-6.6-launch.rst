@@ -55,8 +55,20 @@ anything from depending on the modular libraries, as they are guarantied to
 all be dummy libraries. Thus there should be no requirement for those
 packages to use the modular libs.
 
-We won't use any dependency blocks to indicate when an ebuild can't be
-compiled with GHC 6.6. Rather we'll use::
+In addition to the dummy/extralibs plan, we should revise the use of blocks.
+When using a block, be careful with other dependencies on the same package.
+
+This is due to that portage doesn't play well when a dependency and a block
+is overlapping. Take e.g. this dependency::
+
+    DEPEND=">=virtual/ghc-6.4 !>=virtual/ghc-6.6"
+
+Unless you already have a ghc compiler, and assuming ghc-6.6 is stable,
+portage will first satisfy the first dependency with ghc-6.6. Secondly,
+it'll fail on the block of ghc-6.6. It does **NOT** figure out that using
+ghc-6.4.2 would satisfy both dependencies.
+
+Thus, the first dependency has to have an upper limit, say::
 
     DEPEND="<virtual/ghc-6.6"
 
@@ -67,15 +79,21 @@ use::
 
 to indicate when a package only can be compiled with the GHC 6.4 series.
 
-This is due to that portage doesn't play well when a dependency and a block
-is overlapping. Take e.g. this dep::
+Then, would there be a point in using both a dependency on the correct
+version and additionally a block, like so::
 
-    DEPEND=">=virtual/ghc-6.4 !>=virtual/ghc-6.6"
+    DEPEND="=virtual/ghc-6.4* !>=virtual/ghc-6.6"
 
-Unless you already have a ghc compiler, and assuming ghc-6.6 is stable,
-portage will first satisfy the first dependency with ghc-6.6. Secondly,
-it'll fail on the block of ghc-6.6. It does **NOT** figure out that using
-ghc-6.4.2 would satisfy both dependencies.
+Aye. Assume the user has ghc-bin-6.4.2 which he (or she!) used to compile
+ghc-6.4.2, and then one day installs ghc-6.6. The first dependency will be
+satisfied by ghc-bin-6.4.2, but it's actually ghc-6.6 that's going to be
+used to compile the package! (as ghc has precedence to ghc-bin). The block
+makes sure this doesn't happen.
+
+The current haskell-package.eclass in the overlay checks that your
+ghc{,-bin} versions is sane, but that code is not in portage's eclass (just
+yet). There is a discussion if it should be included or not. Also, that code
+is only executed once a package is actually installed.
 
 As many packages has been changed recently, it's recommended that once this
 plan is implemented, users that have used the Gentoo Haskell overlay should
