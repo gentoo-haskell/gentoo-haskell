@@ -6,19 +6,19 @@ CABAL_FEATURES="bin"
 inherit eutils haskell-cabal darcs
 
 DESCRIPTION="hImerge is a graphical user interface for emerge (Gentoo's Portage system) written in Haskell using gtk2hs."
-HOMEPAGE="http://haskell.org/~luisfaraujo/himerge/"
+HOMEPAGE="http://haskell.org/~luisfaraujo/"
 LICENSE="GPL-2.1"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-EDARCS_REPOSITORY="http://haskell.org/~luisfaraujo/himerge/"
+EDARCS_REPOSITORY="http://haskell.org/~luisfaraujo/himerge-darcs/"
 EDARCS_GET_CMD="get --partial --verbose"
-EDARCS_LOCALREPO="himerge"
+EDARCS_LOCALREPO="himerge-darcs"
 
-DEPEND=">=dev-lang/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.6
 	dev-haskell/cabal
-	dev-haskell/gtk2hs"
+	dev-haskell/gtk2hs-darcs"
 RDEPEND=""
 
 pkg_setup() {
@@ -33,7 +33,6 @@ pkg_setup() {
 src_install() {
 	cabal-copy
 	cabal-pkg
-	dodir /usr/local/share/himerge-icons
-	insinto /usr/local/share/himerge-icons
-	doins ${S}/himerge-icons/*
+	einfo "Installing data files."
+	./install_data
 }
