@@ -14,7 +14,7 @@ IUSE=""
 
 EDARCS_REPOSITORY="http://haskell.org/~luisfaraujo/himerge-darcs/"
 EDARCS_GET_CMD="get --partial --verbose"
-EDARCS_LOCALREPO="himerge-darcs"
+EDARCS_LOCALREPO="himerge"
 
 DEPEND=">=dev-lang/ghc-6.6
 	dev-haskell/cabal
