@@ -6,13 +6,13 @@ CABAL_FEATURES="bin"
 inherit eutils haskell-cabal darcs
 
 DESCRIPTION="hImerge is a graphical user interface for emerge (Gentoo's Portage system) written in Haskell using gtk2hs."
-HOMEPAGE="http://haskell.org/~luisfaraujo/"
+HOMEPAGE="http://www.fmap.us/himerge.html"
 LICENSE="GPL-2.1"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-EDARCS_REPOSITORY="http://haskell.org/~luisfaraujo/himerge-darcs/"
+EDARCS_REPOSITORY="http://haskell.org/himerge/himerge/"
 EDARCS_GET_CMD="get --partial --verbose"
 EDARCS_LOCALREPO="himerge"
 
