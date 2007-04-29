@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,8 +15,8 @@ KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.2
-		!>=virtual/ghc-6.6"
+DEPEND="<virtual/ghc-6.6
+	!>=virtual/ghc-6.6"
 
 src_unpack() {
 	unpack ${A}
