@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
@@ -12,18 +12,20 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	dev-haskell/html
+	dev-haskell/mtl
 	dev-haskell/quickcheck
 	>=virtual/ghc-6.2.2
 	doc?  ( virtual/tetex
 			>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
 
 RDEPEND=">=net-misc/curl-7.10.2
-	virtual/mta"
+	virtual/mta
+	dev-libs/gmp"
 
 S=${WORKDIR}/${MY_P}
 
