@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,7 +21,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4 >=dev-haskell/network-1.0"
+DEPEND=">=virtual/ghc-6.4
+		>=dev-haskell/network-1.0"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 

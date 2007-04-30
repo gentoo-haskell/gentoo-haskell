@@ -13,7 +13,8 @@ SLOT="0"
 KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND="=virtual/ghc-6.4*"
+DEPEND="=virtual/ghc-6.4*
+		!>=virtual/ghc-6.6"
 
 pkg_setup () {
 	ghc-package_pkg_setup

@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,6 +26,12 @@ src_unpack() {
 
 	# change -O2 to -O
 	sed -i -e "s/GHC-Options: -O2/GHC-Options: -O/" "${S}/MissingH.cabal"
+
+	# rexex module got it's onw package in 6.6 but before that it was in base
+	# so don't dep on the regex-compat package with ghc-6.4.x
+	if ! version_is_at_least "6.6" "$(ghc-version)"; then
+		sed -i -e "s/regex-compat,//" "${S}/MissingH.cabal"
+	fi
 }
 
 src_install() {
