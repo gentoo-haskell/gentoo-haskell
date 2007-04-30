@@ -313,7 +313,7 @@ if [ -n "${PKGS_FAILED}" -o -n "${PKGS_MISSING}" -o -n "${PKGS_MASKED}" ]; then
       echo
    fi
    
-   elog "Python update completed with errors."
+   elog "GHC update completed with errors."
    elog "Masked Packages:"
    for x in ${PKGS_MASKED}; do
    		elog $x
