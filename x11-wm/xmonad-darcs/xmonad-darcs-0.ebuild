@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="bin"
 
-inherit haskell-cabal darcs
+inherit haskell-cabal darcs savedconfig
 
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org"
@@ -13,7 +13,7 @@ SLOT="0"
 
 KEYWORDS="~x86"
 
-IUSE=""
+IUSE="savedconfig"
 
 DEPEND=">=virtual/ghc-6.4
 	>=dev-haskell/x11-1.2.1
@@ -24,6 +24,16 @@ EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
 EDARCS_GET_CMD="get --partial"
 
 RESTRICT="strip"
+
+src_unpack() {
+	darcs_src_unpack
+
+	cd "${WORKDIR}"
+
+	if use savedconfig; then
+		restore_config Config.hs
+	fi
+}
 
 src_install() {
 	cabal_src_install
@@ -36,4 +46,8 @@ src_install() {
 
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}/${PN}.desktop"
+
+	insinto /usr/share/${PN}
+	newins Config.hs ${PF}.Config.hs
+	save_config Config.hs
 }
