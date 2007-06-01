@@ -25,10 +25,12 @@ EDARCS_GET_CMD="get --partial"
 
 RESTRICT="strip"
 
+S="${WORKDIR}/${PN}-${PV}"
+
 src_unpack() {
 	darcs_src_unpack
 
-	cd "${WORKDIR}"
+	cd "${S}"
 
 	if use savedconfig; then
 		restore_config Config.hs
