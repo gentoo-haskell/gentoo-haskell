@@ -16,7 +16,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-	>=dev-haskell/x11-1.1
+	>=dev-haskell/x11-1.2.1
 	dev-haskell/x11-extras-darcs
 	~dev-haskell/mtl-1.0"
 
