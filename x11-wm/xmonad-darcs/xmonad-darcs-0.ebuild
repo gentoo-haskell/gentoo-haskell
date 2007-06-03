@@ -15,7 +15,7 @@ KEYWORDS="~x86"
 
 IUSE="savedconfig"
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=virtual/ghc-6.6
 	>=dev-haskell/x11-1.2.1
 	dev-haskell/x11-extras-darcs
 	~dev-haskell/mtl-1.0"
