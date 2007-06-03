@@ -38,7 +38,7 @@ src_compile() {
 		$(use_enable gnome sourceview) \
 		$(use_enable gnome svg) \
 		$(use_enable opengl opengl) \
-		$(use_enable seamonkey mozilla) \
+		$(use_enable seamonkey seamonkey) \
 		$(use_enable firefox firefox) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
