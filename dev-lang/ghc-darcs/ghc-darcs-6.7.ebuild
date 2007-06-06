@@ -132,6 +132,9 @@ src_unpack() {
 }
 
 src_compile() {
+	# darcs checkout requires to run this
+	sh boot
+
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
