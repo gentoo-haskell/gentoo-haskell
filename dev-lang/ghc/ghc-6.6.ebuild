@@ -38,9 +38,9 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
-SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2
-		 amd64?		( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
-#		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )
+SRC_URI="!bindist? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
+		 amd64?		( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
+		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 #		 alpha?		( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 #		 sparc?		( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
 #		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
@@ -51,9 +51,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc bindist"
 
-S="${WORKDIR}/${MY_P}"
-
-#PROVIDE="virtual/ghc"
+# bindist puts files directly into $WORKDIR
+# src puts files in $WORKDIR/$P
+S="${WORKDIR}"
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
@@ -70,6 +70,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/haddock-0.8 )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.6.1"
+
+LOC="/opt/ghc"
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -127,8 +129,8 @@ ghc_setup_cflags() {
 
 ghc_setup_wrapper() {
 	echo '#!/bin/sh'
-	echo "GHCBIN=\"${WORKDIR}/usr/$(get_libdir)/ghc-$PV/ghc-$PV\";"
-	echo "TOPDIROPT=\"-B${WORKDIR}/usr/$(get_libdir)/ghc-$PV\";"
+	echo "GHCBIN=\"$1\";"
+	echo "TOPDIROPT=\"-B$(dirname $1)\";"
 	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
 	echo '# Mini-driver for GHC'
 	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
@@ -141,7 +143,8 @@ src_unpack() {
 	if use bindist; then
 
 		# Setup the ghc wrapper script
-		ghc_setup_wrapper ${PV} > "${S}/usr/bin/ghc-${PV}"
+		GHCBIN="/opt/ghc/$(get_libdir)/$P/$P"
+		ghc_setup_wrapper "$GHCBIN" > "${S}/usr/bin/ghc-${PV}"
 
 		# Relocate from /usr to /opt/ghc
 		sed -i -e "s|/usr|${LOC}|g" \
@@ -189,7 +192,7 @@ src_unpack() {
 
 src_compile() {
 	if ! use bindist; then
- 
+
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
 
