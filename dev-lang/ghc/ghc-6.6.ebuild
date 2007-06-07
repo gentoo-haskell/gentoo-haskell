@@ -51,9 +51,14 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc bindist"
 
-# bindist puts files directly into $WORKDIR
-# src puts files in $WORKDIR/$P
-S="${WORKDIR}"
+if use bindist; then
+	# bindist puts files directly into ${WORKDIR}
+	S="${WORKDIR}"
+	LOC="/opt/ghc"
+else
+	# src does differently
+	S="${WORKDIR}/${MY_P}"
+fi
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
@@ -70,8 +75,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/haddock-0.8 )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.6.1"
-
-LOC="/opt/ghc"
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -143,7 +146,7 @@ src_unpack() {
 	if use bindist; then
 
 		# Setup the ghc wrapper script
-		GHCBIN="/opt/ghc/$(get_libdir)/$P/$P"
+		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
 		ghc_setup_wrapper "$GHCBIN" > "${S}/usr/bin/ghc-${PV}"
 
 		# Relocate from /usr to /opt/ghc
@@ -164,9 +167,13 @@ src_unpack() {
 		sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/driver/ghc/ghc.sh"
 
 		# Create the setup wrapper
-		GHC_INPLACE="${WORKDIR}/usr/$(get_libdir)/ghc-${PV}/ghc-${PV}"
-		GHC_CFLAGS="" ghc_setup_wrapper ${GHC_INPLACE} > "${T}/ghc.sh"
+		GHC_TOP="${WORKDIR}/usr/$(get_libdir)/${P}"
+		GHC_CFLAGS="" ghc_setup_wrapper "${GHC_TOP}/${P}" > "${T}/ghc.sh"
 		chmod +x "${T}/ghc.sh"
+
+		# Fix paths for workdir ghc
+		sed -i -e "s|/usr|${WORKDIR}/usr|g" \
+			"${GHC_TOP}/package.conf"
 
 		# If we're using the testsuite then move it to into the build tree
 	#	use test && mv "${WORKDIR}/testsuite" "${S}/"
