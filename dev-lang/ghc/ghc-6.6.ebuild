@@ -176,7 +176,7 @@ src_unpack() {
 			"${GHC_TOP}/package.conf"
 
 		# If we're using the testsuite then move it to into the build tree
-	#	use test && mv "${WORKDIR}/testsuite" "${S}/"
+		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
 		# This is a hack for ia64. We can persuade ghc to avoid mangler errors
 		# if we turn down the optimisations in one problematic module.
