@@ -4,15 +4,17 @@
 
 # Brief explanation of the bootstrap logic:
 #
-# ghc requires ghc-bin to bootstrap.
-# Therefore, 
-# (1) both ghc-bin and ghc provide virtual/ghc
-# (2) virtual/ghc *must* default to ghc-bin
-# (3) ghc depends on virtual/ghc
+# Previous ghc ebuilds have been split into two: ghc and ghc-bin,
+# where ghc-bin was primarily used for bootstrapping purposes.
+# From now on, these two ebuilds have been combined, with the
+# bindist USE flag used to determine whether or not the pre-built
+# binary package should be emerged or whether ghc should be compiled
+# from source.  If the latter, then the relevant ghc-bin for the
+# arch in question will be used in the working directory to compile
+# ghc from source.
 #
-# This solution has the advantage that the binary distribution
-# can be removed once an forall after the first succesful install
-# of ghc.
+# This solution has the advantage of allowing us to retain the one
+# ebuild for both packages, and thus phase out virtual/ghc.
 
 # Note to users of hardened gcc-3.x:
 #
@@ -46,9 +48,10 @@ SRC_URI="!bindist? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.ta
 #		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
 #	"test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc bindist"
 
 PROVIDE="virtual/ghc"
@@ -160,7 +163,7 @@ src_unpack() {
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
 			"${S}/usr/bin/ghcprof"
-	
+
 	else
 
 		# Modify the ghc driver script to use GHC_CFLAGS
@@ -195,7 +198,7 @@ src_unpack() {
 
 		# Disable threaded runtime build to work around RTS bugs on sparc
 		epatch "${FILESDIR}/ghc-6.6-nothreadedrts.patch"
-	
+
 	fi
 }
 
@@ -317,10 +320,22 @@ pkg_postinst () {
 	elog "If you have dev-lang/ghc-bin installed, you might"
 	elog "want to unmerge it. It is no longer needed."
 	elog
+
+	if use bindist; then
+		elog "You might need to run the following to get ghc to work:"
+		elog "   env-update && source /etc/profile"
+		elog
+	fi
+
 	ewarn "IMPORTANT:"
 	ewarn "If you have upgraded from another version of ghc or"
-	ewarn "if you have switched from ghc-bin to ghc, please run:"
-	ewarn "	/usr/sbin/ghc-updater"
+	ewarn "if you have switched between binary and source versions"
+	ewarn "of ghc, please run:"
+	if use bindist; then
+		ewarn "      /opt/ghc/sbin/ghc-updater"
+	else
+		ewarn "      /usr/sbin/ghc-updater"
+	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
 
