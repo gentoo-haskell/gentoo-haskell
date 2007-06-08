@@ -7,7 +7,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Utilities for filepath handling."
 HOMEPAGE="http://www-users.cs.york.ac.uk/~ndm/projects/libraries.php"
-SRC_URI="http://hackage.haskell.org/packages/archive/filepath/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 
