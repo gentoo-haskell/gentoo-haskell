@@ -51,6 +51,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc bindist"
 
+PROVIDE="virtual/ghc"
+
 if use bindist; then
 	# bindist puts files directly into ${WORKDIR}
 	S="${WORKDIR}"
