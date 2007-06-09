@@ -322,9 +322,10 @@ pkg_postinst () {
 	elog
 
 	if use bindist; then
-		elog "You might need to run the following to get ghc to work:"
+		elog "The envirenment has been set to use the binary distribution of"
+		elog "GHC. In order to activate it please run:"
 		elog "   env-update && source /etc/profile"
-		elog
+		elog "Otherwise this setting will become active the next time you login"
 	fi
 
 	ewarn "IMPORTANT:"
