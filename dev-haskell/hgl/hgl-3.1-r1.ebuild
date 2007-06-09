@@ -18,6 +18,6 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.6
-	dev-haskell/x11"
+	<=dev-haskell/x11-1.2"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
