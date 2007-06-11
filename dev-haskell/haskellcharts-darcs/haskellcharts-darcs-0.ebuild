@@ -15,5 +15,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=virtual/ghc-6.4
-	dev-haskell/gtk2hs"
+	>=dev-haskell/gtk2hs-0.9.11"
 
