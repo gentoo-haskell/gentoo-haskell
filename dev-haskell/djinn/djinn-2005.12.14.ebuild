@@ -7,9 +7,10 @@ inherit haskell-cabal
 
 MY_PN="Djinn"
 MY_P="${MY_PN}-${PV}"
+
 DESCRIPTION="A haskell proof generator"
 HOMEPAGE="http://www.augustsson.net/Darcs/Djinn/"
-SRC_URI="http://hackage.haskell.org/packages/unstable/Djinn/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/unstable/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 

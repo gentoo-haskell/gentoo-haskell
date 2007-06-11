@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Compression and decompression in the gzip and zlib formats"
 HOMEPAGE="http://www.haskell.org/~duncan/zlib/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD3"
 SLOT="0"
