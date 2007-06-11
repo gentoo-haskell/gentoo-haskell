@@ -17,6 +17,6 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"

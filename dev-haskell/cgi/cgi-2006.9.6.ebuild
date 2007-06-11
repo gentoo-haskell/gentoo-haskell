@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/mtl-1.0
 	>=dev-haskell/xhtml-2006.9.13
 	>=dev-haskell/network-2.0"

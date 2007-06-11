@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4"
 # tested with ghc-6.6 and ghc-6.6.1. probably works with ghc-6.4 too
 
 S="${WORKDIR}/${MY_P}"

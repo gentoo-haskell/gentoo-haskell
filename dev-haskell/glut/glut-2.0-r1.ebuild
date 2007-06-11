@@ -19,7 +19,7 @@ KEYWORDS="~x86 ~amd64"
 # TODO: Install examples when the "examples" USE flag is set
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	dev-haskell/opengl
 	virtual/glu
 	virtual/glut"
