@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin"
-inherit darcs haskell-cabal #elisp
+inherit darcs haskell-cabal elisp
 
 DESCRIPTION="Provides better support for editing Haskell by using GHC-Api. Currently only provides emacs support."
 HOMEPAGE="http://shim.haskellco.de/"
@@ -14,11 +14,44 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6
-	dev-haskell/cabal
-	dev-haskell/filepath
+
+RDEPEND=">=virtual/ghc-6.6
 	virtual/emacs
 	app-emacs/haskell-mode"
 
+DEPEND="${RDEPEND}
+	dev-haskell/cabal
+	dev-haskell/filepath"
 
+SITEFILE=70${PN}-gentoo.el
 
+src_unpack() {
+	darcs_src_unpack
+}
+
+src_compile() {
+	cabal_src_compile
+
+	elisp-compile *.el || die "elisp-compile failed!"
+}
+
+src_install() {
+	cabal_src_install
+
+	elisp-install ${PN} *.elc *.el || die "elisp-install failed!"
+
+	elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+
+}
+
+pkg_postinst() {
+	cabal_pkg_postinst
+
+	elisp-site-regen
+}
+
+pkg_postrm() {
+	cabal_pkg_postrm
+
+	elisp-site-regen
+}
