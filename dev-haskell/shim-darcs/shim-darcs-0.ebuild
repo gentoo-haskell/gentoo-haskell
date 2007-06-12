@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
+RESTRICT="nostrip" # already stripped
+
 RDEPEND=">=virtual/ghc-6.6
 	virtual/emacs
 	app-emacs/haskell-mode"
@@ -44,13 +46,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	cabal_pkg_postinst
-
 	elisp-site-regen
 }
 
 pkg_postrm() {
-	cabal_pkg_postrm
-
 	elisp-site-regen
 }
