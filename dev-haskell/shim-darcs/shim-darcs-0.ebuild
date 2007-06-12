@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-
 RDEPEND=">=virtual/ghc-6.6
 	virtual/emacs
 	app-emacs/haskell-mode"
