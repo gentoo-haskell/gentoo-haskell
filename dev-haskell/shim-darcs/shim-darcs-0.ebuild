@@ -22,6 +22,7 @@ RDEPEND=">=virtual/ghc-6.6
 
 DEPEND="${RDEPEND}
 	dev-haskell/cabal
+	dev-haskell/network
 	dev-haskell/filepath"
 
 SITEFILE=70${PN}-gentoo.el
