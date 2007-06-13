@@ -42,10 +42,10 @@ EXTRA_SRC_URI="${MY_PV}"
 
 SRC_URI="!bindist? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
 		 amd64?		( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )
+		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
 #		 alpha?		( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 #		 sparc?		( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
-#		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
 #	"test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="BSD"
