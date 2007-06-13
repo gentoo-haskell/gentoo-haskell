@@ -5,7 +5,6 @@
 CABAL_FEATURES="bin"
 
 XMONAD_REPOSITORY="${EDARCS_TOP_DIR}/xmonad"
-XMONAD_CONTRIB_REPOSITORY="${XMONAD_REPOSITORY}/XMonadContrib"
 
 EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
 
@@ -30,13 +29,13 @@ RESTRICT="strip"
 fetch_XMonadContrib() {
 	local EDARCS_REPOSITORY EDARCS_LOCALREPO
 	EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/XMonadContrib"
-	EDARCS_LOCALREPO="${XMONAD_CONTRIB_REPOSITORY}"
+	EDARCS_LOCALREPO="xmonad/XMonadContrib"
 	darcs_fetch
 }
 
 delete_XMonadContrib() {
-	if [ -d "${XMONAD_CONTRIB_REPOSITORY}" ]; then
-		rm -rf "${XMONAD_CONTRIB_REPOSITORY}"
+	if [ -d "${XMONAD_REPOSITORY}/XMonadContrib" ]; then
+		rm -rf "${XMONAD_REPOSITORY}/XMonadContrib"
 	fi
 }
 
