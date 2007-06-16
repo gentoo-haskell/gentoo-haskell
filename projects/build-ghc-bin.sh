@@ -5,8 +5,8 @@
 # tuning for pentium4 is probably a reasonable choice for p4s and athlons
 export CFLAGS="-O2 -pipe"
 
-# currently we must disable doc, X, opengl and openal support
-export USE="-doc -opengl -tetex -java -X -openal"
+# build with the documentation and enable bootstrapping
+export USE="-binary doc ghcbootstrap"
 
 echo "you may also need to set PORTDIR_OVERLAY=\"\""
 echo "and also ACCEPT_KEYWORDS=\"~\${arch}\""
