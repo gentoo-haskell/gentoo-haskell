@@ -7,7 +7,7 @@
 # Previous ghc ebuilds have been split into two: ghc and ghc-bin,
 # where ghc-bin was primarily used for bootstrapping purposes.
 # From now on, these two ebuilds have been combined, with the
-# bindist USE flag used to determine whether or not the pre-built
+# binary USE flag used to determine whether or not the pre-built
 # binary package should be emerged or whether ghc should be compiled
 # from source.  If the latter, then the relevant ghc-bin for the
 # arch in question will be used in the working directory to compile
@@ -40,7 +40,7 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
-SRC_URI="!bindist? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
 		 amd64?		( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
 		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )
 		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
@@ -52,12 +52,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="doc bindist"
+IUSE="binary doc"
 
 PROVIDE="virtual/ghc"
 
-if use bindist; then
-	# bindist puts files directly into ${WORKDIR}
+if use binary; then
+	# binary puts files directly into ${WORKDIR}
 	S="${WORKDIR}"
 	LOC="/opt/ghc"
 else
@@ -148,7 +148,7 @@ src_unpack() {
 	base_src_unpack
 	ghc_setup_cflags
 
-	if use bindist; then
+	if use binary; then
 
 		# Setup the ghc wrapper script
 		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
@@ -203,7 +203,7 @@ src_unpack() {
 }
 
 src_compile() {
-	if ! use bindist; then
+	if ! use binary; then
 
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
@@ -271,11 +271,11 @@ src_compile() {
 		# in the package.conf file point to the right place ...
 		# TODO: is this still required ?
 
-	fi # ! use bindist
+	fi # ! use binary
 }
 
 src_install () {
-	if use bindist; then
+	if use binary; then
 	  mkdir "${D}/opt"
 	  mv "${S}/usr" "${D}/opt/ghc"
 
@@ -321,7 +321,7 @@ pkg_postinst () {
 	elog "want to unmerge it. It is no longer needed."
 	elog
 
-	if use bindist; then
+	if use binary; then
 		elog "The envirenment has been set to use the binary distribution of"
 		elog "GHC. In order to activate it please run:"
 		elog "   env-update && source /etc/profile"
@@ -332,7 +332,7 @@ pkg_postinst () {
 	ewarn "If you have upgraded from another version of ghc or"
 	ewarn "if you have switched between binary and source versions"
 	ewarn "of ghc, please run:"
-	if use bindist; then
+	if use binary; then
 		ewarn "      /opt/ghc/sbin/ghc-updater"
 	else
 		ewarn "      /usr/sbin/ghc-updater"
