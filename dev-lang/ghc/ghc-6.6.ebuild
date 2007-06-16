@@ -52,7 +52,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="binary doc"
+IUSE="binary doc ghcbootstrap"
 
 PROVIDE="virtual/ghc"
 
@@ -143,6 +143,25 @@ ghc_setup_wrapper() {
 	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
 }
 
+pkg_setup() {
+	if use binary && use ghcbootstrap; then
+		ewarn
+		ewarn "USE=\"binary\" installs a precompiled binary"
+		ewarn "USE=\"ghcbootstrap\" compiles that very same binary"
+		ewarn "Are you sure you want to bootstrap?"
+		ewarn
+		die "Having set USE=\"binary ghcbootstrap\" makes no sense."
+	fi
+
+	if use ghcbootstrap && [[ -z $(type -P ghc) ]]; then
+		ewarn ""
+		ewarn "You requested bootstrapping,"
+		ewarn "but I could not find a ghc executable to bootstrap with"
+		ewarn ""
+		die "Could not find a ghc executable to bootstrap with"
+	fi
+}
+
 src_unpack() {
 	base_src_unpack
 	ghc_setup_cflags
@@ -171,13 +190,21 @@ src_unpack() {
 		sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/driver/ghc/ghc.sh"
 
 		# Create the setup wrapper
-		GHC_TOP="${WORKDIR}/usr/$(get_libdir)/${P}"
-		GHC_CFLAGS="" ghc_setup_wrapper "${GHC_TOP}/${P}" > "${T}/ghc.sh"
-		chmod +x "${T}/ghc.sh"
+		if use ghcbootstrap; then
+			# When we are bootstrapping, rely on the developer to have set a
+			# sane environment
 
-		# Fix paths for workdir ghc
-		sed -i -e "s|/usr|${WORKDIR}/usr|g" \
-			"${GHC_TOP}/package.conf"
+			echo -e '#!/bin/sh\nexec ghc $*' > "${T}/ghc.sh"
+		else
+			GHC_TOP="${WORKDIR}/usr/$(get_libdir)/${P}"
+			GHC_CFLAGS="" ghc_setup_wrapper "${GHC_TOP}/${P}" > "${T}/ghc.sh"
+
+			# Fix paths for workdir ghc
+			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
+				"${GHC_TOP}/package.conf"
+		fi
+
+		chmod +x "${T}/ghc.sh"
 
 		# If we're using the testsuite then move it to into the build tree
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
@@ -277,6 +304,8 @@ src_install () {
 	if use binary; then
 	  mkdir "${D}/opt"
 	  mv "${S}/usr" "${D}/opt/ghc"
+
+	  # TODO: remove the docs unless use doc
 
 	  doenvd "${FILESDIR}/10ghc"
 	else
