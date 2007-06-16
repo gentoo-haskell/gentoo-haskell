@@ -144,15 +144,6 @@ ghc_setup_wrapper() {
 }
 
 pkg_setup() {
-	if use binary && use ghcbootstrap; then
-		ewarn
-		ewarn "USE=\"binary\" installs a precompiled binary"
-		ewarn "USE=\"ghcbootstrap\" compiles that very same binary"
-		ewarn "Are you sure you want to bootstrap?"
-		ewarn
-		die "Having set USE=\"binary ghcbootstrap\" makes no sense."
-	fi
-
 	if use ghcbootstrap && [[ -z $(type -P ghc) ]]; then
 		ewarn ""
 		ewarn "You requested bootstrapping,"
