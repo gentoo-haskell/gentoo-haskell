@@ -71,9 +71,7 @@ RDEPEND="
 	>=dev-libs/gmp-4.1
 	=sys-libs/readline-5*"
 
-# ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
-	<dev-lang/ghc-6.7
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2
