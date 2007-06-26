@@ -5,20 +5,21 @@
 CABAL_FEATURES="bin"
 inherit darcs haskell-cabal elisp
 
-DESCRIPTION="Provides better support for editing Haskell by using GHC-Api. Currently only provides emacs support."
+DESCRIPTION="Provides better support for editing Haskell in emacs and vim"
 HOMEPAGE="http://shim.haskellco.de/"
 EDARCS_REPOSITORY="http://shim.haskellco.de/shim/"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="emacs vim-syntax"
 
 RESTRICT="nostrip" # already stripped
 
 RDEPEND=">=virtual/ghc-6.6
-	virtual/emacs
-	app-emacs/haskell-mode"
+	emacs? ( virtual/emacs
+			 app-emacs/haskell-mode)
+	vim-syntax? (app-editors/vim)"
 
 DEPEND="${RDEPEND}
 	dev-haskell/cabal
@@ -27,6 +28,14 @@ DEPEND="${RDEPEND}
 
 SITEFILE=70${PN}-gentoo.el
 
+pkg_setup() {
+	cabal_package_setup
+
+	if use vim-syntax ; then
+		ewarn "Vim support in shim is still experimental"
+	fi
+}
+
 src_unpack() {
 	darcs_src_unpack
 }
@@ -34,22 +43,46 @@ src_unpack() {
 src_compile() {
 	cabal_src_compile
 
-	elisp-compile *.el || die "elisp-compile failed!"
+	if use emacs ; then
+		elisp-compile *.el || die "elisp-compile failed!"
+	fi
 }
 
 src_install() {
 	cabal_src_install
 
-	elisp-install ${PN} *.elc *.el || die "elisp-install failed!"
+	if use emacs ; then
+		elisp-install ${PN} *.elc *.el || die "elisp-install failed!"
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+	fi
 
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+	if use vim-syntax ; then
+		insinto /usr/share/vim/vimfiles/autoload
+		doins vim/autoload/haskellcomplete.vim
 
+		cat vim/ftplugin/haskell.vim >> /usr/share/vim/vimfiles/haskell.vim
+	fi
 }
 
 pkg_postinst() {
-	elisp-site-regen
+	if use emacs ; then
+		elisp-site-regen
+	fi
+
+	dodoc README HACKING docs
+
+	elog "See /usr/share/doc/${PF}/README for more information"
+
+	if use emacs ; then
+		elog "Please see the following site for more information on"
+		elog "how to use shim (the configuration is available via the"
+		elog "site-gentoo.el file): "
+		elog "    http://shim.haskellco.de/trac/wiki/ShimHowto"
+	fi
 }
 
 pkg_postrm() {
-	elisp-site-regen
+	if use emacs ; then
+		elisp-site-regen
+	fi
 }
