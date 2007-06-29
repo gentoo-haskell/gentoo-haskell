@@ -18,8 +18,8 @@ RESTRICT="nostrip" # already stripped
 
 RDEPEND=">=virtual/ghc-6.6
 	emacs? ( virtual/emacs
-			 app-emacs/haskell-mode)
-	vim-syntax? (app-editors/vim)"
+			 app-emacs/haskell-mode )
+	vim-syntax? ( app-editors/vim )"
 
 DEPEND="${RDEPEND}
 	dev-haskell/cabal
