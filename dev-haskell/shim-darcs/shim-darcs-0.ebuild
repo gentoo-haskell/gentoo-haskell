@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin"
-inherit darcs haskell-cabal elisp
+inherit darcs haskell-cabal elisp-common
 
 DESCRIPTION="Provides better support for editing Haskell in emacs and vim"
 HOMEPAGE="http://shim.haskellco.de/"
