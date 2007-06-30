@@ -60,7 +60,12 @@ src_install() {
 		insinto /usr/share/vim/vimfiles/autoload
 		doins vim/autoload/haskellcomplete.vim
 
-		cat vim/ftplugin/haskell.vim >> /usr/share/vim/vimfiles/haskell.vim
+		if [ -f /usr/share/vim/vimfiles/haskell.vim ] ; then
+			cat vim/ftplugin/haskell.vim >> /usr/share/vim/vimfiles/ftplugin/haskell.vim
+		else
+			insinto /usr/share/vim/vimfiles/ftplugin
+			doins vim/ftplugin/haskell.vim
+		fi
 	fi
 }
 
