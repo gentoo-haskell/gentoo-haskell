@@ -76,7 +76,7 @@ DEPEND="${RDEPEND}
 			~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2
-			>=dev-haskell/haddock-0.8 ))"
+			>=dev-haskell/haddock-0.8 ) )"
 
 PDEPEND=">=dev-haskell/cabal-1.1.6.1"
 
