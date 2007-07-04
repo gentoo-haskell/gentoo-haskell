@@ -41,6 +41,10 @@ EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
+		 doc?		( binary?
+					( http://haskell.org/ghc/docs/${MY_PV}/libraries.html.tar.gz
+					  http://haskell.org/ghc/docs/${MY_PV}/users_guide.html.tar.gz )
+					)
 		 amd64?		( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
 		 x86?		( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )
 		 ppc?		( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
@@ -56,14 +60,11 @@ IUSE="binary doc ghcbootstrap"
 
 PROVIDE="virtual/ghc"
 
-if use binary; then
-	# binary puts files directly into ${WORKDIR}
-	S="${WORKDIR}"
-	LOC="/opt/ghc"
-else
-	# src does differently
-	S="${WORKDIR}/${MY_P}"
-fi
+# location for installation of binary version
+LOC="/opt/ghc"
+
+S="${WORKDIR}/${MY_P}"
+
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
@@ -154,10 +155,22 @@ pkg_setup() {
 }
 
 src_unpack() {
+	# Create the ${S} dir if we're using the binary version
+	use binary && mkdir "${S}"
+
 	base_src_unpack
 	ghc_setup_cflags
 
 	if use binary; then
+
+		# Move unpacked files to the expected place
+		mv "${WORKDIR}/usr" "${S}"
+
+		if use doc; then
+			mkdir "${S}/usr/share/doc/${MY_P}/html"
+			mv "${WORKDIR}/libraries" "${S}/usr/share/doc/${MY_P}/html/"
+			mv "${WORKDIR}/users_guide" "${S}/usr/share/doc/${MY_P}/html/"
+		fi
 
 		# Setup the ghc wrapper script
 		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
@@ -295,8 +308,6 @@ src_install () {
 	if use binary; then
 	  mkdir "${D}/opt"
 	  mv "${S}/usr" "${D}/opt/ghc"
-
-	  # TODO: remove the docs unless use doc
 
 	  doenvd "${FILESDIR}/10ghc"
 	else
