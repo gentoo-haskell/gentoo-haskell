@@ -41,18 +41,16 @@ EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
-		 doc? 	( binary? ( mirror://gentoo/${P}-libraries.tar.gz
-						    mirror://gentoo/${P}-users_guide.tar.gz ) )
 		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )
-		 ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
-		 alpha?	( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
-		 sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
+		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+#		 ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
+#		 alpha?	( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
+#		 sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #	"test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~x86"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap"
 
@@ -161,12 +159,6 @@ src_unpack() {
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
 
-		if use doc; then
-			mkdir "${S}/usr/share/doc/${MY_P}/html"
-			mv "${WORKDIR}/libraries" "${S}/usr/share/doc/${MY_P}/html/"
-			mv "${WORKDIR}/users_guide" "${S}/usr/share/doc/${MY_P}/html/"
-		fi
-
 		# Setup the ghc wrapper script
 		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
 		ghc_setup_wrapper "$GHCBIN" > "${S}/usr/bin/ghc-${PV}"
@@ -217,12 +209,12 @@ src_unpack() {
 		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
 		# Temporary patches that needs testing before being pushed upstream:
-		cd "${S}"
+#		cd "${S}"
 		# Fix sparc split-objs linking problem
-		epatch "${FILESDIR}/ghc-6.5-norelax.patch"
+#		epatch "${FILESDIR}/ghc-6.5-norelax.patch"
 
 		# Disable threaded runtime build to work around RTS bugs on sparc
-		epatch "${FILESDIR}/ghc-6.6-nothreadedrts.patch"
+#		epatch "${FILESDIR}/ghc-6.6-nothreadedrts.patch"
 
 	fi
 }
@@ -303,6 +295,9 @@ src_install () {
 	if use binary; then
 	  mkdir "${D}/opt"
 	  mv "${S}/usr" "${D}/opt/ghc"
+
+	  # Remove the docs if not requested
+	  use doc || rm -rf "${D}/opt/ghc/share/doc/${P}/html"
 
 	  doenvd "${FILESDIR}/10ghc"
 	else
