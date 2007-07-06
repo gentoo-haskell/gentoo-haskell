@@ -16,4 +16,20 @@ SLOT="0"
 
 S="${WORKDIR}/missingh"
 
-DEPEND=">=virtual/ghc-6.4.2"
+DEPEND=">=virtual/ghc-6.4.2
+	dev-haskell/hunit
+	dev-haskell/filepath
+	dev-haskell/hslogger"
+
+src_unpack() {
+	base_src_unpack
+	sed -i -e 's/FilePath/filepath/' "${S}/MissingH.cabal"
+	ed ${S}/src/System/Path/Glob.hs << EOF
+38
+c
+import System.FilePath
+.
+w
+EOF
+}
+
