@@ -18,6 +18,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-	<=dev-haskell/x11-1.2"
+	>=dev-haskell/cabal-1.1.6.2
+	>=dev-haskell/x11-1.2"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"

@@ -18,6 +18,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
+	>=dev-haskell/cabal-1.1.6.2
 	dev-haskell/opengl
 	dev-haskell/openal
 	media-libs/freealut"
