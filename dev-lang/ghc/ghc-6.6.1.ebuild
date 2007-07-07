@@ -72,7 +72,7 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2
 			>=dev-haskell/haddock-0.8 ) )"
 
-PDEPEND=">=dev-haskell/cabal-1.1.6.1"
+PDEPEND=">=dev-haskell/cabal-1.1.6.2"
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -333,9 +333,6 @@ src_install () {
 }
 
 pkg_postinst () {
-	ebegin "Hiding ghc's built-in cabal "
-	$(ghc-getghcpkg) hide Cabal > /dev/null
-	eend $?
 	ghc-reregister
 	elog "If you have dev-lang/ghc-bin installed, you might"
 	elog "want to unmerge it. It is no longer needed."
