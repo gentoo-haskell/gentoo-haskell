@@ -47,6 +47,8 @@ src_install() {
 	if test $(ghc-version) = ${GHC_PV}; then
 		dodir "$(ghc-libdir)"
 	    touch "${D}/$(ghc-libdir)/.${P}.ghc-updater"
+		mkdir -p "${D}/$(ghc-confdir)"
+		echo '[]' > "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
 	else
 		cabal_src_install
 
