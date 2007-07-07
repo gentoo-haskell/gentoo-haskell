@@ -26,10 +26,6 @@ AUX ghc-6.4.1-alphareg.patch 709 RMD160 db8aee3874b017cfcb60adf337985cb6758f8089
 MD5 8efb02efe9363c84cca462594ab8e666 files/ghc-6.4.1-alphareg.patch 709
 RMD160 db8aee3874b017cfcb60adf337985cb6758f8089 files/ghc-6.4.1-alphareg.patch 709
 SHA256 fbac10d545d14102fa3b4c51e0a329f0b38d74a76d750fe27436cd2888ce5423 files/ghc-6.4.1-alphareg.patch 709
-AUX ghc-6.4.1-confdir.patch 3490 RMD160 dce6cee3d883c1b4c91b5d6b112e35732eb6fe7a SHA1 842320bcdd8db4ca80e65468d35377c2c5378ca9 SHA256 6e1b4c5e0530a714a9960f8dfcbced561ad101c61b5e723b06144884ea69b42e
-MD5 dce0a27edfa77369a3400b0120c45296 files/ghc-6.4.1-confdir.patch 3490
-RMD160 dce6cee3d883c1b4c91b5d6b112e35732eb6fe7a files/ghc-6.4.1-confdir.patch 3490
-SHA256 6e1b4c5e0530a714a9960f8dfcbced561ad101c61b5e723b06144884ea69b42e files/ghc-6.4.1-confdir.patch 3490
 AUX ghc-6.4.1-configure.patch 2666 RMD160 26568ec35d05a3855ad8cf10593d15ccaedee847 SHA1 fa85ae68645d95f30e8052018fe1e82b763b9c25 SHA256 7519b2fa9a9faf4c3545ed471803f85bc102b2428eb9c53ea15ae457271d28b9
 MD5 e522470e9d323932951f9efdb3fbf7e8 files/ghc-6.4.1-configure.patch 2666
 RMD160 26568ec35d05a3855ad8cf10593d15ccaedee847 files/ghc-6.4.1-configure.patch 2666
