@@ -21,20 +21,6 @@ DEPEND=">=virtual/ghc-6.4.2
 	>=dev-haskell/filepath-1.0
 	>=dev-haskell/hslogger-1.0.1
 	>=dev-haskell/mtl-1.0
-	>=dev-haskell/haskell-src-1.0
 	>=dev-haskell/hunit-1.1
 	>=dev-haskell/network-1.0
 	>=dev-haskell/quickcheck-1.0"
-
-src_unpack() {
-	base_src_unpack
-	sed -i -e 's/FilePath/filepath/' "${S}/MissingH.cabal"
-	ed ${S}/src/System/Path/Glob.hs << EOF
-38
-c
-import System.FilePath
-.
-w
-EOF
-}
-
