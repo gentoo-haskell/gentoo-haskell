@@ -17,10 +17,10 @@ SLOT="0"
 S="${WORKDIR}/missingh"
 
 DEPEND=">=virtual/ghc-6.4.2
-		dev-haskell/mtl
-		dev-haskell/network
-		dev-haskell/quickcheck
-		dev-haskell/hunit"
+		>=dev-haskell/mtl-1.0
+		>=dev-haskell/quickcheck-1.0
+		>=dev-haskell/hunit-1.1
+		>=dev-haskell/network-1.0"
 
 src_unpack() {
 	base_src_unpack

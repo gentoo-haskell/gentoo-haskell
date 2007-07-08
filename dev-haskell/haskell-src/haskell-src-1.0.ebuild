@@ -18,7 +18,7 @@ DEPEND="=virtual/ghc-6.4*
 
 pkg_setup () {
 	ghc-package_pkg_setup
-	einfo "This library is already provided by ghc. This ebuild does nothing."
+	elog "This library is already provided by ghc. This ebuild does nothing."
 }
 
 src_install () {

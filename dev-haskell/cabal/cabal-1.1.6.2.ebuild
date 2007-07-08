@@ -21,7 +21,7 @@ GHC_PV="6.6.1"
 
 src_unpack() {
 	if test $(ghc-version) = ${GHC_PV}; then
-	    einfo "cabal-${PV} is included in ghc-${GHC_PV}, nothing to install."
+	    elog "cabal-${PV} is included in ghc-${GHC_PV}, nothing to install."
 	else
 		unpack "${A}"
 		if ! $(ghc-cabal); then
