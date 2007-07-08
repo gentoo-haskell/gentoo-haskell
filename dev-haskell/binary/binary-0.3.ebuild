@@ -14,4 +14,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6"
+DEPEND=">=dev-lang/ghc-6.6"

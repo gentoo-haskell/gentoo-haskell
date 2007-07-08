@@ -19,7 +19,7 @@ IUSE="doc"
 
 KEYWORDS="~x86"
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	=dev-haskell/haxml-1.13*
 	dev-haskell/mtl
 	dev-haskell/network"

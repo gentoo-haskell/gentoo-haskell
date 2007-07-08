@@ -1,7 +1,7 @@
-EBUILD mkcabal-darcs-0.1.ebuild 521 RMD160 c392483e686375f9cffc71d7132b71a6cf580e47 SHA1 7193b6df93a1d1bbc0b8abfec3c65a47c6c9faba SHA256 3c77cb2f63b4e8d26828330824c8b6be02319acdfa36fc0a6a8ae6dc1886dfe5
-MD5 2bc1439427ce2c1c4b6fd3eb93ebc40e mkcabal-darcs-0.1.ebuild 521
-RMD160 c392483e686375f9cffc71d7132b71a6cf580e47 mkcabal-darcs-0.1.ebuild 521
-SHA256 3c77cb2f63b4e8d26828330824c8b6be02319acdfa36fc0a6a8ae6dc1886dfe5 mkcabal-darcs-0.1.ebuild 521
+EBUILD mkcabal-darcs-0.1.ebuild 522 RMD160 c43518ef5b2f062da1d8cfda34ccb5988b839794 SHA1 89c9219fef01e3b9fe7bff9cb76d8833d3465e69 SHA256 43a8ec19840796ac34bc12435251b82c59b68008e621ca7f2d92abb2544a7cd5
+MD5 c4baafffd363467e238b54b778906b95 mkcabal-darcs-0.1.ebuild 522
+RMD160 c43518ef5b2f062da1d8cfda34ccb5988b839794 mkcabal-darcs-0.1.ebuild 522
+SHA256 43a8ec19840796ac34bc12435251b82c59b68008e621ca7f2d92abb2544a7cd5 mkcabal-darcs-0.1.ebuild 522
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-mkcabal-darcs-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-mkcabal-darcs-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-mkcabal-darcs-0.1 0

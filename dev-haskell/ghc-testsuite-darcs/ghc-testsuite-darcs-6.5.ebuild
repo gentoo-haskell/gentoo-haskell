@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="fast"
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 		dev-haskell/network
 		dev-haskell/mtl
 		dev-haskell/html

@@ -18,5 +18,5 @@ IUSE=""
 # 1) in DEPEND
 # 2) in zlib.cabal
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	>=sys-libs/zlib-1.2"
