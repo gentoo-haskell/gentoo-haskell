@@ -18,11 +18,16 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-	>=dev-haskell/cabal-1.1.6.2
 	dev-haskell/opengl
 	dev-haskell/openal
 	media-libs/freealut"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
+
+# Sadly Setup.hs in the ghc-6.6.1 extralibs was not tested with Cabal-1.1.6.x
+src_unpack() {
+	unpack "${A}"
+	sed -i -e "/type Hook/ s/UserHooks/Maybe UserHooks/" ${S}/Setup.hs
+}
 
 #TODO: install examples perhaps?
