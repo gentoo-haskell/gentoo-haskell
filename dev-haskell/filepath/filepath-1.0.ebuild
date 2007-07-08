@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="haddock lib"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Utilities for filepath handling."
 HOMEPAGE="http://www-users.cs.york.ac.uk/~ndm/projects/libraries.php"
