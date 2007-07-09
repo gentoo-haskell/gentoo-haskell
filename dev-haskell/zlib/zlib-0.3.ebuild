@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Compression and decompression in the gzip and zlib formats"
-HOMEPAGE="http://www.haskell.org/~duncan/zlib/"
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/zlib"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD3"
@@ -19,4 +19,4 @@ IUSE=""
 # 2) in zlib.cabal
 
 DEPEND=">=dev-lang/ghc-6.6
-	>=sys-libs/zlib-1.2"
+		>=sys-libs/zlib-1.2"
