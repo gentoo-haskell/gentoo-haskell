@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base eutils flag-o-matic toolchain-funcs ghc-package check-reqs
+inherit base eutils flag-o-matic toolchain-funcs ghc-package
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -50,7 +50,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap"
 
@@ -61,6 +61,7 @@ PROVIDE="virtual/ghc"
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
+	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	=sys-libs/readline-5*"
@@ -209,12 +210,9 @@ src_unpack() {
 		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
 		# Temporary patches that needs testing before being pushed upstream:
-#		cd "${S}"
+		cd "${S}"
 		# Fix sparc split-objs linking problem
-#		epatch "${FILESDIR}/ghc-6.5-norelax.patch"
-
-		# Disable threaded runtime build to work around RTS bugs on sparc
-#		epatch "${FILESDIR}/ghc-6.6-nothreadedrts.patch"
+		epatch "${FILESDIR}/ghc-6.5-norelax.patch"
 
 	fi
 }
@@ -251,32 +249,15 @@ src_compile() {
 		# reported as bug #111183
 		echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
-		# force the config variable ArSupportsInput to be unset;
-		# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
-		# incorrectly by the configure script
-		echo "ArSupportsInput:=" >> mk/build.mk
-
-		# Some arches do support some ghc features even though they're off by default
-		use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
-
-		# Workaround for threaded RTS bugs on sparc in ghc-6.6
-		# This is rather draconian, hopefully upstream fixes this soon.
-		if use sparc; then
+		# GHC build system knows to build unregisterised on alpha and hppa,
+		# but we have to tell it to build unregisterised on some other arches
+		if use ia64 || use ppc64 || use sparc; then
 		  echo "GhcUnregisterised=YES" >> mk/build.mk
 		  echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 		  echo "GhcWithInterpreter=NO" >> mk/build.mk
 		  echo "SplitObjs=NO" >> mk/build.mk
 		  echo "GhcRTSWays := debug" >> mk/build.mk
 		  echo "GhcNotThreaded=YES" >> mk/build.mk
-		fi
-
-		# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
-		CHECKREQS_MEMORY="200"
-		if ! check_reqs_conditional; then
-		  elog "Turning off ghc's 'Split Objs' feature because this machine"
-		  elog "does not have enough RAM for it. This will have the effect"
-		  elog "of making binaries produced by ghc considerably larger."
-		  echo "SplitObjs=NO" >> mk/build.mk
 		fi
 
 		econf \
