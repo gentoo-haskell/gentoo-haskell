@@ -18,8 +18,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-	dev-haskell/opengl
-	dev-haskell/openal
+	>=dev-haskell/opengl-2.2.1
+	>=dev-haskell/openal-1.3.1
 	media-libs/freealut"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
