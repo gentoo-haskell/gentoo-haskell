@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc-bin/ghc-bin-6.4.2-r1.ebuild,v 1.2 2007/04/12 18:07:11 kolmodin Exp $
+# $Header: $
 
 # Note to users of hardened gcc-3.x:
 #
@@ -26,7 +26,7 @@ KEYWORDS="ppc64"
 SLOT="0"
 IUSE="" # use the non-binary version if you want to have more choice
 
-RESTRICT="nostrip" # already stripped
+RESTRICT="strip" # already stripped
 
 LOC="/opt/ghc"
 

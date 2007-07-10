@@ -15,7 +15,7 @@ LICENSE="as-is"
 KEYWORDS="-alpha -amd64 ppc sparc x86"
 SLOT="0"
 
-RESTRICT="nostrip" # already stripped
+RESTRICT="strip" # already stripped
 
 LOC="/opt/ghc"
 
