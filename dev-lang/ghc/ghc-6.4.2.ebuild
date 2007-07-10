@@ -1,11 +1,11 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 # Brief explanation of the bootstrap logic:
 #
 # ghc requires ghc-bin to bootstrap.
-# Therefore, 
+# Therefore,
 # (1) both ghc-bin and ghc provide virtual/ghc
 # (2) virtual/ghc *must* default to ghc-bin
 # (3) ghc depends on virtual/ghc
@@ -26,7 +26,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base eutils flag-o-matic toolchain-funcs autotools ghc-package check-reqs
+inherit base eutils flag-o-matic toolchain-funcs autotools ghc-package
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
