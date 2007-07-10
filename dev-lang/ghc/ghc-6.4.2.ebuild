@@ -53,6 +53,7 @@ PROVIDE="virtual/ghc"
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
+	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2
@@ -171,11 +172,6 @@ src_unpack() {
 	# If we're using the testsuite then move it to into the build tree
 	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
-	# This is a hack for ia64. We can persuade ghc to avoid mangler errors
-	# if we turn down the optimisations in one problematic module.
-	use ia64 && sed -i -e 's/OPTIONS_GHC/OPTIONS_GHC -O0 -optc-O/' \
-		"${S}/libraries/base/GHC/Float.lhs"
-
 	# Patch to fix a mis-compilation in the rts due to strict aliasing,
 	# should be fixed upstream for 6.4.3 and 6.6. Fixes bug #135651.
 	echo 'GC_HC_OPTS += -optc-fno-strict-aliasing' >> "${S}/ghc/rts/Makefile"
@@ -215,25 +211,11 @@ src_compile() {
 	# reported as bug #111183
 	echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
-	# force the config variable ArSupportsInput to be unset;
-	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
-	# incorrectly by the configure script
-	echo "ArSupportsInput:=" >> mk/build.mk
-
-	# Some arches do support some ghc features even though they're off by default
-	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
-
 	# And some arches used to work ok, but bork with recent gcc versions
 	# See bug #145466 for ppc64.
-	use ppc64 && echo "GhcUnregisterised=YES" >> mk/build.mk
-
-	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
-	CHECKREQS_MEMORY="200"
-	if ! check_reqs_conditional; then
-		elog "Turning off ghc's 'Split Objs' feature because this machine"
-		elog "does not have enough RAM for it. This will have the effect"
-		elog "of making binaries produced by ghc considerably larger."
-		echo "SplitObjs=NO" >> mk/build.mk
+	if use ia64 || use ppc64; then
+		echo "GhcUnregisterised=YES" >> mk/build.mk
+		echo "GhcRTSWays := debug" >> mk/build.mk
 	fi
 
 	GHC_CFLAGS="" ghc_setup_wrapper $(ghc-version) > "${T}/ghc.sh"

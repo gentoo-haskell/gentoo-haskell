@@ -209,11 +209,6 @@ src_unpack() {
 		# If we're using the testsuite then move it to into the build tree
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
-		# This is a hack for ia64. We can persuade ghc to avoid mangler errors
-		# if we turn down the optimisations in one problematic module.
-		use ia64 && sed -i -e 's/OPTIONS_GHC/OPTIONS_GHC -O0 -optc-O/' \
-			"${S}/libraries/base/GHC/Float.lhs"
-
 		# Don't strip binaries on install. See QA warnings in bug #140369.
 		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 

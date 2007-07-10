@@ -201,11 +201,6 @@ src_unpack() {
 		# If we're using the testsuite then move it to into the build tree
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
-		# This is a hack for ia64. We can persuade ghc to avoid mangler errors
-		# if we turn down the optimisations in one problematic module.
-		use ia64 && sed -i -e 's/OPTIONS_GHC/OPTIONS_GHC -O0 -optc-O/' \
-			"${S}/libraries/base/GHC/Float.lhs"
-
 		# Don't strip binaries on install. See QA warnings in bug #140369.
 		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
@@ -251,7 +246,7 @@ src_compile() {
 
 		# GHC build system knows to build unregisterised on alpha and hppa,
 		# but we have to tell it to build unregisterised on some other arches
-		if use ia64 || use ppc64 || use sparc; then
+		if use ppc64 || use sparc; then
 		  echo "GhcUnregisterised=YES" >> mk/build.mk
 		  echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 		  echo "GhcWithInterpreter=NO" >> mk/build.mk
