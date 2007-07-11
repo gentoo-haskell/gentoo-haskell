@@ -18,7 +18,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
-	>=dev-haskell/cabal-1.1.6"
+		>=dev-haskell/cabal-1.1.6
+		x11-libs/libX11"
 # tested with ghc-6.6 and ghc-6.6.1. probably works with ghc-6.4 too
 
 S="${WORKDIR}/${MY_P}"

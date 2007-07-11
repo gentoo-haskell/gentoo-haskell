@@ -17,6 +17,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4
+		x11-libs/libX11"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
