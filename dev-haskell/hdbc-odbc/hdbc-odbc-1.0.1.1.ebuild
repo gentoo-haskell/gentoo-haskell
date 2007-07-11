@@ -21,13 +21,3 @@ DEPEND=">=virtual/ghc-6.4.1
 	>=dev-db/unixODBC-2.2"
 
 S="${WORKDIR}/${PN}"
-
-src_unpack () {
-	base_src_unpack
-
-	# Fudge some commented out code that haddock interprets as markup
-	# and then fails to parse:
-	sed -i -e 's/-- #{/ -- {/' \
-		"${S}/Database/HDBC/ODBC/TypeConv.hsc" \
-		"${S}/Database/HDBC/ODBC/Connection.hsc"
-}
