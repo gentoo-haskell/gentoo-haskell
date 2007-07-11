@@ -1,22 +1,10 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.4.ebuild,v 1.1 2005/03/11 16:30:24 kosmikus Exp $
 
 # THIS IS AN UNOFFICIAL EBUILD. PLEASE CONTACT kosmikus@gentoo.org DIRECTLY
 # IF YOU EXPERIENCE PROBLEMS. PLEASE DO NOT WRITE TO GENTOO-MAILING LISTS
 # AND DON'T FILE ANY BUGS IN BUGZILLA ABOUT THIS BUILD.
-
-# Brief explanation of the bootstrap logic:
-#
-# ghc requires ghc-bin to bootstrap.
-# Therefore, 
-# (1) both ghc-bin and ghc provide virtual/ghc
-# (2) virtual/ghc *must* default to ghc-bin
-# (3) ghc depends on virtual/ghc
-#
-# This solution has the advantage that the binary distribution
-# can be removed once an forall after the first succesful install
-# of ghc.
 
 GHC_REPOSITORY="http://darcs.haskell.org"
 EDARCS_REPOSITORY="${GHC_REPOSITORY}/ghc"
@@ -27,26 +15,23 @@ inherit base eutils flag-o-matic autotools darcs ghc-package check-reqs
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
-# We don't provide virtual/ghc, although we could ...
-# PROVIDE="virtual/ghc"
-
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
+	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	>=sys-libs/readline-4.2"
 
 # ghc cannot usually be bootstrapped using later versions ...
 DEPEND="${RDEPEND}
-	<virtual/ghc-6.8
-	!>=virtual/ghc-6.8
-	>=dev-haskell/happy-1.15
-	>=dev-haskell/alex-2.0
+	<dev-lang/ghc-6.8
+	>=dev-haskell/happy-1.16
+	>=dev-haskell/alex-2.1
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2
@@ -164,21 +149,15 @@ src_compile() {
 	# reported as bug #111183
 	echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
-	# force the config variable ArSupportsInput to be unset;
-	# ar in binutils >= 2.14.90.0.8-r1 seems to be classified
-	# incorrectly by the configure script
-	echo "ArSupportsInput:=" >> mk/build.mk
-
-	# Some arches do support some ghc features even though they're off by default
-	use ia64 && echo "GhcWithInterpreter=YES" >> mk/build.mk
-
-	# The SplitObjs feature makes 'ar'/'ranlib' take loads of RAM:
-	CHECKREQS_MEMORY="200"
-	if ! check_reqs_conditional; then
-		elog "Turning off ghc's 'Split Objs' feature because this machine"
-		elog "does not have enough RAM for it. This will have the effect"
-		elog "of making binaries produced by ghc considerably larger."
+	# GHC build system knows to build unregisterised on alpha and hppa,
+	# but we have to tell it to build unregisterised on some other arches
+	if use ppc64 || use sparc; then
+		echo "GhcUnregisterised=YES" >> mk/build.mk
+		echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
+		echo "GhcWithInterpreter=NO" >> mk/build.mk
 		echo "SplitObjs=NO" >> mk/build.mk
+		echo "GhcRTSWays := debug" >> mk/build.mk
+		echo "GhcNotThreaded=YES" >> mk/build.mk
 	fi
 
 	# We're building from darcs so we need to autoreconf
@@ -189,6 +168,7 @@ src_compile() {
 	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 	# the explicit datadir is required to make the haddock entries
 	# in the package.conf file point to the right place ...
+	# TODO: is this still required ?
 
 }
 
@@ -200,6 +180,7 @@ src_install () {
 
 	# the libdir0 setting is needed for amd64, and does not
 	# harm for other arches
+	#TODO: is this still required?
 	emake -j1 ${insttarget} \
 		prefix="${D}/usr" \
 		datadir="${D}/usr/share/doc/${PF}" \
@@ -209,6 +190,7 @@ src_install () {
 		|| die "make ${insttarget} failed"
 
 	#need to remove ${D} from ghcprof script
+	# TODO: does this actually work?
 	cd "${D}/usr/bin"
 	mv ghcprof ghcprof-orig
 	sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
@@ -251,4 +233,3 @@ src_install () {
 	cd "${S}"
 	dodoc README ANNOUNCE LICENSE VERSION
 }
-
