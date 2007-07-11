@@ -97,7 +97,7 @@ fi
 
 # Libraries require GHC to be installed.
 if [[ -n "${CABAL_HAS_LIBRARIES}" ]]; then
-	RDEPEND="${RDEPEND} virtual/ghc"
+	RDEPEND="${RDEPEND} dev-lang/ghc"
 fi
 
 cabal-bootstrap() {
