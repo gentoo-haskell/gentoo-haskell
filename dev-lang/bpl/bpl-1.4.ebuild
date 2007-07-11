@@ -12,7 +12,7 @@ KEYWORDS="~x86 ~amd64 ~ppc"
 
 # also requires mtl for ghc-6.6, but the dependency language is not
 # yet decided for this issue
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/frown-0.6
 	>=dev-haskell/alex-2.0"
 RDEPEND="dev-libs/gmp"

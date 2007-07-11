@@ -15,10 +15,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/x11-1.2.1
 	!dev-haskell/x11-extras-darcs"
 

@@ -3,6 +3,6 @@ EBUILD curry-0.9.11.ebuild 711 RMD160 5cb42ce004bbe5cf305f3bebb6d98a1f839fa6e4 S
 MD5 0ce0d33295ab0cba981caac4b733e091 curry-0.9.11.ebuild 711
 RMD160 5cb42ce004bbe5cf305f3bebb6d98a1f839fa6e4 curry-0.9.11.ebuild 711
 SHA256 87c4764c8398a52526e2396427b41eab5ac1e7e6e3ea118e3ffe0c70007e61e2 curry-0.9.11.ebuild 711
-MD5 729b28bc95dffa7521c7f98a056eeb02 files/digest-curry-0.9.11 241
-RMD160 d0cb5e89d36fcf87a16edf6ab662a12340e38614 files/digest-curry-0.9.11 241
-SHA256 e1be6bceb353c9125c5e078bf52c8e839c1dec4c2a20aa7c0aa140261b03341b files/digest-curry-0.9.11 241
+MD5 765802dd285e90cda7773cd23fe26ba2 files/digest-curry-0.9.11 176
+RMD160 6eee1fce229f24846ce76298db1561d1c331670f files/digest-curry-0.9.11 176
+SHA256 e1c52ddff582c2278b2db1d1e0ffe9f11e77727e06cd3f6d5ec394ecdeb79e06 files/digest-curry-0.9.11 176

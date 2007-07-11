@@ -15,7 +15,7 @@ IUSE=""
 EDARCS_REPOSITORY="http://repetae.net/john/repos/jhc"
 EDARCS_GET_CMD="get --partial"
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/drift-2.1.1
 		dev-haskell/happy"
 RDEPEND=""

@@ -13,8 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
-RDEPEND="<virtual/ghc-6.6
-	!>=virtual/ghc-6.6
+RDEPEND="<dev-lang/ghc-6.6
 	>=x11-libs/wxGTK-2.6.2"
 
 DEPEND="${RDEPEND}

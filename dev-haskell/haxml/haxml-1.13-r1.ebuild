@@ -20,8 +20,7 @@ IUSE=""
 
 # actually, >=ghc-5.02 should be ok (if not using cabal)
 # hugs and nhc98 are ok too, somebody might want to add support for them
-DEPEND=">=virtual/ghc-6.2
-		!>=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.2
 		>=dev-haskell/cabal-1.1.3-r1"
 
 S=${WORKDIR}/${MY_P}

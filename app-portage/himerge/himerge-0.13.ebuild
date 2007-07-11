@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/gtk2hs-0.9.11
 	>=app-portage/eix-0.9.3"
 RDEPEND=""

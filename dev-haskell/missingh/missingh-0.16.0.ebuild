@@ -16,7 +16,7 @@ SLOT="0"
 
 S="${WORKDIR}/missingh"
 
-DEPEND=">=virtual/ghc-6.4.2
+DEPEND=">=dev-lang/ghc-6.4.2
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/quickcheck-1.0
 		>=dev-haskell/hunit-1.1

@@ -13,7 +13,7 @@ SLOT="${PV}"
 KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.5_pre0"
+DEPEND=">=dev-lang/ghc-6.5_pre0"
 
 EDARCS_REPOSITORY="http://www.cse.unsw.edu.au/~dons/lambdabot"
 EDARCS_GET_CMD="get --partial"

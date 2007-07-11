@@ -10,14 +10,14 @@ AUX test-ghcpkg-upgrade.cabal 93 RMD160 31f133cb5e1d2f87ad5592005cef66829235faa2
 MD5 f544888dc2760bce1d12d3ae6ea372b7 files/test-ghcpkg-upgrade.cabal 93
 RMD160 31f133cb5e1d2f87ad5592005cef66829235faa2 files/test-ghcpkg-upgrade.cabal 93
 SHA256 99a7ce13c94482c201c22af52e72f4e9c29fb3059b75456b1abf2ad7e5ebb13b files/test-ghcpkg-upgrade.cabal 93
-EBUILD test-ghcpkg-upgrade-0.1-r1.ebuild 457 RMD160 ce5cc9ad9e29f8787b9f6f007b6a95bd79856f2c SHA1 80c296791520bcfc8360edc6b09e4fcf1ce5f50c SHA256 23a3b396ed21d39e64b244c2fe2f02b4e062b9ef784ddb7fccd3663119473a6b
-MD5 23e66b0540e917dc2313ee35df4bbd74 test-ghcpkg-upgrade-0.1-r1.ebuild 457
-RMD160 ce5cc9ad9e29f8787b9f6f007b6a95bd79856f2c test-ghcpkg-upgrade-0.1-r1.ebuild 457
-SHA256 23a3b396ed21d39e64b244c2fe2f02b4e062b9ef784ddb7fccd3663119473a6b test-ghcpkg-upgrade-0.1-r1.ebuild 457
-EBUILD test-ghcpkg-upgrade-0.1.ebuild 457 RMD160 ce5cc9ad9e29f8787b9f6f007b6a95bd79856f2c SHA1 80c296791520bcfc8360edc6b09e4fcf1ce5f50c SHA256 23a3b396ed21d39e64b244c2fe2f02b4e062b9ef784ddb7fccd3663119473a6b
-MD5 23e66b0540e917dc2313ee35df4bbd74 test-ghcpkg-upgrade-0.1.ebuild 457
-RMD160 ce5cc9ad9e29f8787b9f6f007b6a95bd79856f2c test-ghcpkg-upgrade-0.1.ebuild 457
-SHA256 23a3b396ed21d39e64b244c2fe2f02b4e062b9ef784ddb7fccd3663119473a6b test-ghcpkg-upgrade-0.1.ebuild 457
+EBUILD test-ghcpkg-upgrade-0.1-r1.ebuild 458 RMD160 2811f0c758b8e92c6409cf52da84d8fa0acd1007 SHA1 3f069569e1e58bfcb65af6eb1f4e1941a90ead2e SHA256 b116fdf30b95e7de80a169922b2d6f7aa1a1cb5b886985b71e51bbec8085d3b8
+MD5 c4438e344fb7e8891bafb5dc513b2cbb test-ghcpkg-upgrade-0.1-r1.ebuild 458
+RMD160 2811f0c758b8e92c6409cf52da84d8fa0acd1007 test-ghcpkg-upgrade-0.1-r1.ebuild 458
+SHA256 b116fdf30b95e7de80a169922b2d6f7aa1a1cb5b886985b71e51bbec8085d3b8 test-ghcpkg-upgrade-0.1-r1.ebuild 458
+EBUILD test-ghcpkg-upgrade-0.1.ebuild 458 RMD160 2811f0c758b8e92c6409cf52da84d8fa0acd1007 SHA1 3f069569e1e58bfcb65af6eb1f4e1941a90ead2e SHA256 b116fdf30b95e7de80a169922b2d6f7aa1a1cb5b886985b71e51bbec8085d3b8
+MD5 c4438e344fb7e8891bafb5dc513b2cbb test-ghcpkg-upgrade-0.1.ebuild 458
+RMD160 2811f0c758b8e92c6409cf52da84d8fa0acd1007 test-ghcpkg-upgrade-0.1.ebuild 458
+SHA256 b116fdf30b95e7de80a169922b2d6f7aa1a1cb5b886985b71e51bbec8085d3b8 test-ghcpkg-upgrade-0.1.ebuild 458
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-test-ghcpkg-upgrade-0.1 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-test-ghcpkg-upgrade-0.1 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-test-ghcpkg-upgrade-0.1 0

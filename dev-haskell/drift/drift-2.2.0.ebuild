@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE=""
 
-DEPEND=">=virtual/ghc-6"
+DEPEND=">=dev-lang/ghc-6"
 RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"

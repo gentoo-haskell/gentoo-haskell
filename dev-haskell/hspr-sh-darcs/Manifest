@@ -1,7 +1,7 @@
-EBUILD hspr-sh-darcs-0.2.ebuild 583 RMD160 a8641b85012f2e8af44531b42b8c919e6c7dbd27 SHA1 ec1ebe5edbe78473d920afd172a403ff0806f39f SHA256 abfa638cbb04d8deccdad5a483488f9904f273fca5e61eb14cf4bbcb9ecea0b9
-MD5 f3a594b42a9e919c00162891e3caee9e hspr-sh-darcs-0.2.ebuild 583
-RMD160 a8641b85012f2e8af44531b42b8c919e6c7dbd27 hspr-sh-darcs-0.2.ebuild 583
-SHA256 abfa638cbb04d8deccdad5a483488f9904f273fca5e61eb14cf4bbcb9ecea0b9 hspr-sh-darcs-0.2.ebuild 583
+EBUILD hspr-sh-darcs-0.2.ebuild 584 RMD160 0e5d42f536e521149f3ec27a560d5662e0a2102f SHA1 b430c490ffc6ac615a3b3506cc4bf1fb286aa8db SHA256 d8dacf37c0cc127219cbd32e1a3700ff7e2a5c753e3d6ccbaba4c1c133b92111
+MD5 c6ff61e1260c0a8243295e3c13c9b810 hspr-sh-darcs-0.2.ebuild 584
+RMD160 0e5d42f536e521149f3ec27a560d5662e0a2102f hspr-sh-darcs-0.2.ebuild 584
+SHA256 d8dacf37c0cc127219cbd32e1a3700ff7e2a5c753e3d6ccbaba4c1c133b92111 hspr-sh-darcs-0.2.ebuild 584
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-hspr-sh-darcs-0.2 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-hspr-sh-darcs-0.2 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-hspr-sh-darcs-0.2 0

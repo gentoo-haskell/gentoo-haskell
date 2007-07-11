@@ -17,7 +17,7 @@ EDARCS_REPOSITORY="http://darcs.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
 EDARCS_LOCALREPO="gtk2hs"
 
-RDEPEND=">=virtual/ghc-6.0
+RDEPEND=">=dev-lang/ghc-6.0
 		dev-haskell/mtl
 		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2

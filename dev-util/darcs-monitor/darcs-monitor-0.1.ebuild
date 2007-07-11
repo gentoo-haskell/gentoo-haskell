@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
 
-DEPEND=">=virtual/ghc-6.2
+DEPEND=">=dev-lang/ghc-6.2
 	dev-haskell/mtl
 	<=dev-haskell/haxml-1.13.2"
 #does not support >haxml-1.13.2. lower bound?

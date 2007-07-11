@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=sci-libs/gsl-1.4
 	virtual/lapack"
 

@@ -16,7 +16,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
-	>=virtual/ghc-6.2.2
+	>=dev-lang/ghc-6.2.2
 	dev-haskell/quickcheck
 	dev-haskell/mtl
 	dev-haskell/html

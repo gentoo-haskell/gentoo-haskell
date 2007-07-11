@@ -19,7 +19,7 @@ KEYWORDS="~x86"
 
 IUSE="savedconfig extensions"
 
-DEPEND=">=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/x11-1.2.1
 	dev-haskell/x11-extras-darcs
 	~dev-haskell/mtl-1.0"

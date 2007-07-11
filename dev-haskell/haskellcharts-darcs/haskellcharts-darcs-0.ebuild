@@ -14,6 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/gtk2hs-0.9.11"
 

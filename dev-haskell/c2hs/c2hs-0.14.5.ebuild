@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ia64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4"
 
 src_unpack() {
 	base_src_unpack

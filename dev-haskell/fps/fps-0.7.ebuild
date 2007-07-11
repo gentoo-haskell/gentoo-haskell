@@ -14,7 +14,7 @@ SLOT="${PV}"
 KEYWORDS="~amd64"	#if possible try testing with "~x86", "~ppc" and "~sparc"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4.1"
+DEPEND=">=dev-lang/ghc-6.4.1"
 
 src_unpack() {
 	base_src_unpack

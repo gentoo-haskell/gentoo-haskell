@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 # java use flag disabled because of bug #107019
 
-DEPEND=">=virtual/ghc-6.2
+DEPEND=">=dev-lang/ghc-6.2
 		>=dev-haskell/cabal-1.1.6
 	doc? (	~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets

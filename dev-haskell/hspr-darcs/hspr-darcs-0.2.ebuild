@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc dev-haskell/haskell-src-exts dev-haskell/harp dev-haskell/trhsx dev-haskell/hspr-sh-darcs"
+DEPEND="dev-lang/ghc dev-haskell/haskell-src-exts dev-haskell/harp dev-haskell/trhsx dev-haskell/hspr-sh-darcs"
 
 S=${WORKDIR}"/hspr-darcs-0.2/hspr"
 

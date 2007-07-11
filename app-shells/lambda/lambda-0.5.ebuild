@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc
+DEPEND="dev-lang/ghc
 		>=dev-haskell/shellac-0.5
 		dev-haskell/shellac-readline"
 

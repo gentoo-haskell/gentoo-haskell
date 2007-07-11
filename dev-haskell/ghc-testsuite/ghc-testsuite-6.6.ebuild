@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="fast"
 
-DEPEND="~virtual/ghc-${PV}
+DEPEND="~dev-lang/ghc-${PV}
 		dev-haskell/network
 		dev-haskell/mtl
 		dev-haskell/html

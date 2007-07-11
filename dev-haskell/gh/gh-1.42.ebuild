@@ -12,11 +12,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.2.2
+DEPEND=">=dev-lang/ghc-6.2.2
 	>=dev-haskell/uuagc-0.9.1
 	>=dev-haskell/frown-0.6
 	>=dev-haskell/drift-2.1.1"
-RDEPEND=">=virtual/ghc-6.2.2"
+RDEPEND=">=dev-lang/ghc-6.2.2"
 
 src_unpack() {
 	unpack ${A}

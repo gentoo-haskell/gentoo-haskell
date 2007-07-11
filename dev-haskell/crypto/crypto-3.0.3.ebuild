@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/mtl-1.0"
 
 S=${WORKDIR}/Crypto-${PV}

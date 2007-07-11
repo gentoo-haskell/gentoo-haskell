@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~ppc ~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	>=dev-libs/glib-2.0
 	>=dev-haskell/haddock-0.6"
 RDEPEND=""

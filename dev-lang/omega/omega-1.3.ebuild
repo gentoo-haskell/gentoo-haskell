@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 LICENSE="as-is" # TODO: fix license, this is something different
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4"
 
 S="${WORKDIR}/${PN}${MY_PV}"
 

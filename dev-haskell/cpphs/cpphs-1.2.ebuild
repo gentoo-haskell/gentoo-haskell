@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ia64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="virtual/ghc"
+DEPEND="dev-lang/ghc"
 
 src_install() {
 	cabal_src_install

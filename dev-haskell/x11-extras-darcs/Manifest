@@ -1,7 +1,7 @@
-EBUILD x11-extras-darcs-0.ebuild 572 RMD160 f41dcff019dff598995cb82457b5d28cbe9cd468 SHA1 71f07080ce1e8f796ef85b97fd92f50fbc4a9f16 SHA256 4fc367ab57934190c66f8de28a53df3bad9d0943843c6cf381f65fdfc040eaf6
-MD5 dc74cad5f6a0af4bf36b0a1dbe08bdfb x11-extras-darcs-0.ebuild 572
-RMD160 f41dcff019dff598995cb82457b5d28cbe9cd468 x11-extras-darcs-0.ebuild 572
-SHA256 4fc367ab57934190c66f8de28a53df3bad9d0943843c6cf381f65fdfc040eaf6 x11-extras-darcs-0.ebuild 572
+EBUILD x11-extras-darcs-0.ebuild 573 RMD160 44234bfd682ce30e65dd02a3611a412d837e0ea0 SHA1 fa7e5201fe36288a49526ffe6eff3e55b8d66f9d SHA256 9a587966fcfe0133ec0a3b08185019feb31bf258ea2ac14e38529e94abfb0aa8
+MD5 245b8483c407a82ba2a9e547fdbe4992 x11-extras-darcs-0.ebuild 573
+RMD160 44234bfd682ce30e65dd02a3611a412d837e0ea0 x11-extras-darcs-0.ebuild 573
+SHA256 9a587966fcfe0133ec0a3b08185019feb31bf258ea2ac14e38529e94abfb0aa8 x11-extras-darcs-0.ebuild 573
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-x11-extras-darcs-0 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-x11-extras-darcs-0 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-x11-extras-darcs-0 0

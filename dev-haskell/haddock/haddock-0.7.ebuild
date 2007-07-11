@@ -29,7 +29,7 @@ DEPEND="doc? ( ~app-text/docbook-xml-dtd-4.2
 RDEPEND=""
 
 pkg_setup() {
-	if ! has_version virtual/ghc; then
+	if ! has_version dev-lang/ghc; then
 		eerror "Due to a bug in the portage dependency resolution, emerge"
 		eerror "sometimes tries to merge haddock before a version of ghc"
 		eerror "is available on the system. This is usually triggered when"

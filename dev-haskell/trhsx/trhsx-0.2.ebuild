@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc \
+DEPEND="dev-lang/ghc \
 	dev-haskell/haskell-src-exts"
 
 S=${WORKDIR}/haskell-src-exts/src/trhsx

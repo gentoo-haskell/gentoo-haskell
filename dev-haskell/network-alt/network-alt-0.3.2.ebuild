@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
-	>=virtual/ghc-6.4.1
+	>=dev-lang/ghc-6.4.1
 	>=dev-haskell/fps-0.7"
 
 src_unpack() {

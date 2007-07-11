@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 	doc? ( app-text/docbook-sgml-utils )"
 # version of docbook-sgml-utils required?
 

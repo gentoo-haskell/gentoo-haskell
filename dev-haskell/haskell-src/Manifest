@@ -8,10 +8,10 @@ EBUILD haskell-src-1.0.1.ebuild 689 RMD160 18f9599c5e8f41a25bda142c45dfe54df512b
 MD5 7d8bf80656c814696902b8a2643a97f4 haskell-src-1.0.1.ebuild 689
 RMD160 18f9599c5e8f41a25bda142c45dfe54df512b10d haskell-src-1.0.1.ebuild 689
 SHA256 ee1383d54bd31910ccc5b38dc1cbc790aec4fce4f02496a7999da088adec6d4d haskell-src-1.0.1.ebuild 689
-EBUILD haskell-src-1.0.ebuild 577 RMD160 59dbddc6e806c931bc369fda2a67c782de1402af SHA1 0106aa9f2d6c8a6db8f1f60f2cac4e6be43374c3 SHA256 832ab77e9f43345a621130b35e616fa3e452ec9dcadd7b12531e2381577aae43
-MD5 1b5fc9baf52991079165b2fc43fa1230 haskell-src-1.0.ebuild 577
-RMD160 59dbddc6e806c931bc369fda2a67c782de1402af haskell-src-1.0.ebuild 577
-SHA256 832ab77e9f43345a621130b35e616fa3e452ec9dcadd7b12531e2381577aae43 haskell-src-1.0.ebuild 577
+EBUILD haskell-src-1.0.ebuild 557 RMD160 8bfaba573d7d3ccfe7e33a98d2c42ec0b4c4a647 SHA1 fe4caafa62747954a99da0bae987db5cc18e33b6 SHA256 8f975eca7ec7073ce6ad23e3ed282e2d78d72ceb08b081946d1445ec57ecdecb
+MD5 634cc256061d955d2203a88ef7a8587b haskell-src-1.0.ebuild 557
+RMD160 8bfaba573d7d3ccfe7e33a98d2c42ec0b4c4a647 haskell-src-1.0.ebuild 557
+SHA256 8f975eca7ec7073ce6ad23e3ed282e2d78d72ceb08b081946d1445ec57ecdecb haskell-src-1.0.ebuild 557
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-haskell-src-1.0 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-haskell-src-1.0 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-haskell-src-1.0 0

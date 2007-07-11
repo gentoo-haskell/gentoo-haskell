@@ -15,7 +15,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-DEPEND="virtual/ghc
+DEPEND="dev-lang/ghc
 	>=dev-tex/polytable-0.8.2"
 
 RDEPEND=">=dev-tex/polytable-0.8.2"

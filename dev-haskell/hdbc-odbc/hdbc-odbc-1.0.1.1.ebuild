@@ -16,7 +16,7 @@ IUSE=""
 
 hdbc_PV=$(get_version_component_range 1-3)
 
-DEPEND=">=virtual/ghc-6.4.1
+DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hdbc-${hdbc_PV}
 	>=dev-db/unixODBC-2.2"
 

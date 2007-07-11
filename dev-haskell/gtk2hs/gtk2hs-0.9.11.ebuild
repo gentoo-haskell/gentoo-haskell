@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome opengl firefox seamonkey profile"
 
-RDEPEND=">=virtual/ghc-6.0
+RDEPEND=">=dev-lang/ghc-6.0
 		dev-haskell/mtl
 		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2

@@ -18,7 +18,7 @@ EDARCS_REPOSITORY="http://www.cse.unsw.edu.au/~dons/code/h4sh"
 # by the author of h4sh
 EDARCS_GET_CMD="get --partial"
 
-DEPEND="virtual/ghc
+DEPEND="dev-lang/ghc
 	>=dev-haskell/hs-plugins-0.9.10
 	dev-haskell/fps"
 

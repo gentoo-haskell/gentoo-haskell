@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE="doc postgres"
 
-RDEPEND=">=virtual/ghc-6.4.1
+RDEPEND=">=dev-lang/ghc-6.4.1
 		postgres? ( >=dev-db/libpq-7.4.3 )"
 
 DEPEND="${RDEPEND}

@@ -14,6 +14,6 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4.1"
+DEPEND=">=dev-lang/ghc-6.4.1"
 
 S="${WORKDIR}/${PN}"

@@ -15,7 +15,7 @@ EDARCS_GET_CMD="get --verbose"
 
 DEPEND="sys-devel/autoconf
 	>=net-misc/curl-7.10.2
-	>=virtual/ghc-6.2
+	>=dev-lang/ghc-6.2
 	doc?  ( virtual/tetex
 		dev-tex/latex2html )"
 

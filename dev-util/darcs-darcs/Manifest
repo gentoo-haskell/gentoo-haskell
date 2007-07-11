@@ -1,7 +1,7 @@
-EBUILD darcs-darcs-1.0.2.ebuild 1300 RMD160 1a49e070a89ca5af64be8d7a2cabfb5c3ab4c1f9 SHA1 687761d75b8e54c105e232a3bce0474b5fedd2d6 SHA256 8589b681a71f8b03f98325ce3871750037914dee0dc8215ee6faccb7ada54831
-MD5 fa6e361285bda023ae21ec19d8acddc4 darcs-darcs-1.0.2.ebuild 1300
-RMD160 1a49e070a89ca5af64be8d7a2cabfb5c3ab4c1f9 darcs-darcs-1.0.2.ebuild 1300
-SHA256 8589b681a71f8b03f98325ce3871750037914dee0dc8215ee6faccb7ada54831 darcs-darcs-1.0.2.ebuild 1300
+EBUILD darcs-darcs-1.0.2.ebuild 1301 RMD160 44ef2faaff5157d22193337df4d6f1ef1086757b SHA1 a977b62d1630dc46ab0e3d1950b0f7eeb7afa520 SHA256 fd6b3ce822d69af0a9c9feb8ce9342722b2889d4aa0261ff0ff7cc1eb93a2352
+MD5 a176619ed562fc162ade1720a084f84e darcs-darcs-1.0.2.ebuild 1301
+RMD160 44ef2faaff5157d22193337df4d6f1ef1086757b darcs-darcs-1.0.2.ebuild 1301
+SHA256 fd6b3ce822d69af0a9c9feb8ce9342722b2889d4aa0261ff0ff7cc1eb93a2352 darcs-darcs-1.0.2.ebuild 1301
 MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-darcs-darcs-1.0.2 0
 RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-darcs-darcs-1.0.2 0
 SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-darcs-darcs-1.0.2 0

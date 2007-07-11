@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.2.2"
+DEPEND=">=dev-lang/ghc-6.2.2"
 RDEPEND=""
 
 S="${WORKDIR}/Frown-${PV}"

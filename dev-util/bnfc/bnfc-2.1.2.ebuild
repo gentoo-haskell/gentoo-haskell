@@ -11,8 +11,7 @@ KEYWORDS="~x86 ~ppc"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.2
-	!>=virtual/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.2
 	doc? ( virtual/tetex )"
 
 RDEPEND="virtual/libc"

@@ -17,7 +17,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.4
+DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/cabal-1.1.4
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets

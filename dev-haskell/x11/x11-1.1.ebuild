@@ -13,11 +13,11 @@ SLOT="0"
 KEYWORDS="x86 amd64"
 IUSE=""
 
-DEPEND="=virtual/ghc-6.4*"
+DEPEND="=dev-lang/ghc-6.4*"
 
 pkg_setup () {
 	ghc-package_pkg_setup
-	if ! built_with_use virtual/ghc X; then
+	if ! built_with_use dev-lang/ghc X; then
 		eerror "This library has to be provided by ghc."
 		eerror "Please re-emerge ghc with USE=\"X\""
 		die "dev-haskell/x11 requires ghc to be built with USE=\"X\""

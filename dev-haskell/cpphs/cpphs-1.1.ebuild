@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="virtual/ghc"
+DEPEND="dev-lang/ghc"
 RDEPEND=""
 
 src_install() {

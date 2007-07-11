@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4.1
+DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hsql-${PV}
 	>=dev-db/sqlite-3.0"
 

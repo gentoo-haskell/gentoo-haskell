@@ -23,6 +23,6 @@ KEYWORDS="~x86 ~amd64"
 RDEPEND=">=sys-apps/portage-2.1_pre4"
 
 DEPEND="${REPEND}
-	>=virtual/ghc-6.4.1
+	>=dev-lang/ghc-6.4.1
 	dev-haskell/fgl"
 

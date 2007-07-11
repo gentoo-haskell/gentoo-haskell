@@ -17,6 +17,6 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"	#if possible try testing with "~ppc" and "~sparc"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.2.2"
+DEPEND=">=dev-lang/ghc-6.2.2"
 
 S="${WORKDIR}/${MY_P}"

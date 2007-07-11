@@ -21,7 +21,7 @@ DEPEND="=dev-lang/ghc-6.4*"
 
 pkg_setup () {
 	ghc-package_pkg_setup
-	if ! built_with_use virtual/ghc openal; then
+	if ! built_with_use dev-lang/ghc openal; then
 		eerror "This library has to be provided by ghc."
 		eerror "Please re-emerge ghc with USE=\"openal\""
 		die "dev-haskell/openal requires ghc to be built with USE=\"openal\""

@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 IUSE="doc"
 
-DEPEND=">=virtual/ghc-6.2"
+DEPEND=">=dev-lang/ghc-6.2"
 
 GHC_PV="6.6.1"
 

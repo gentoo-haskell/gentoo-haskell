@@ -15,8 +15,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome firefox"
 
-RDEPEND=">=virtual/ghc-5.04.3
-		!>=virtual/ghc-6.6
+RDEPEND=">=dev-lang/ghc-5.04.3
 		amd64? ( || ( >=dev-lang/ghc-6.4.1 >=dev-lang/ghc-bin-6.4.1 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
