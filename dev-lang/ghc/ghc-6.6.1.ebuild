@@ -42,6 +42,7 @@ EXTRA_SRC_URI="${MY_PV}"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
 		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
+		 ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
 		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 #		 ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
 #		 alpha?	( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
@@ -50,7 +51,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ia64 ~x86"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap"
 
@@ -232,11 +233,11 @@ src_compile() {
 
 		# determine what to do with documentation
 		if use doc; then
-		  echo XMLDocWays="html" >> mk/build.mk
+			echo XMLDocWays="html" >> mk/build.mk
 		else
-		  echo XMLDocWays="" >> mk/build.mk
-		  # needed to prevent haddock from being called
-		  echo NO_HADDOCK_DOCS=YES >> mk/build.mk
+			echo XMLDocWays="" >> mk/build.mk
+			# needed to prevent haddock from being called
+			echo NO_HADDOCK_DOCS=YES >> mk/build.mk
 		fi
 
 		# circumvent a very strange bug that seems related with ghc producing too much
@@ -247,17 +248,17 @@ src_compile() {
 		# GHC build system knows to build unregisterised on alpha and hppa,
 		# but we have to tell it to build unregisterised on some other arches
 		if use ppc64 || use sparc; then
-		  echo "GhcUnregisterised=YES" >> mk/build.mk
-		  echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
-		  echo "GhcWithInterpreter=NO" >> mk/build.mk
-		  echo "SplitObjs=NO" >> mk/build.mk
-		  echo "GhcRTSWays := debug" >> mk/build.mk
-		  echo "GhcNotThreaded=YES" >> mk/build.mk
+			echo "GhcUnregisterised=YES" >> mk/build.mk
+			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
+			echo "GhcWithInterpreter=NO" >> mk/build.mk
+			echo "SplitObjs=NO" >> mk/build.mk
+			echo "GhcRTSWays := debug" >> mk/build.mk
+			echo "GhcNotThreaded=YES" >> mk/build.mk
 		fi
 
 		econf \
-		  --with-ghc="${T}/ghc.sh" \
-		  || die "econf failed"
+			--with-ghc="${T}/ghc.sh" \
+			|| die "econf failed"
 
 		emake all datadir="/usr/share/doc/${PF}" || die "make failed"
 		# the explicit datadir is required to make the haddock entries
@@ -269,42 +270,42 @@ src_compile() {
 
 src_install () {
 	if use binary; then
-	  mkdir "${D}/opt"
-	  mv "${S}/usr" "${D}/opt/ghc"
+		mkdir "${D}/opt"
+		mv "${S}/usr" "${D}/opt/ghc"
 
-	  # Remove the docs if not requested
-	  use doc || rm -rf "${D}/opt/ghc/share/doc/${P}/html"
+		# Remove the docs if not requested
+		use doc || rm -rf "${D}/opt/ghc/share/doc/${P}/html"
 
-	  doenvd "${FILESDIR}/10ghc"
+		doenvd "${FILESDIR}/10ghc"
 	else
-	  local insttarget
+		local insttarget
 
-	  insttarget="install"
-	  use doc && insttarget="${insttarget} install-docs"
+		insttarget="install"
+		use doc && insttarget="${insttarget} install-docs"
 
-	  # the libdir0 setting is needed for amd64, and does not
-	  # harm for other arches
-	  #TODO: is this still required?
-	  emake -j1 ${insttarget} \
-		  prefix="${D}/usr" \
-		  datadir="${D}/usr/share/doc/${PF}" \
-		  infodir="${D}/usr/share/info" \
-		  mandir="${D}/usr/share/man" \
-		  libdir0="${D}/usr/$(get_libdir)" \
-		  || die "make ${insttarget} failed"
+		# the libdir0 setting is needed for amd64, and does not
+		# harm for other arches
+		#TODO: is this still required?
+		emake -j1 ${insttarget} \
+			prefix="${D}/usr" \
+			datadir="${D}/usr/share/doc/${PF}" \
+			infodir="${D}/usr/share/info" \
+			mandir="${D}/usr/share/man" \
+			libdir0="${D}/usr/$(get_libdir)" \
+			|| die "make ${insttarget} failed"
 
-	  #need to remove ${D} from ghcprof script
-	  # TODO: does this actually work?
-	  cd "${D}/usr/bin"
-	  mv ghcprof ghcprof-orig
-	  sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
-	  chmod a+x ghcprof
-	  rm -f ghcprof-orig
+		#need to remove ${D} from ghcprof script
+		# TODO: does this actually work?
+		cd "${D}/usr/bin"
+		mv ghcprof ghcprof-orig
+		sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
+		chmod a+x ghcprof
+		rm -f ghcprof-orig
 
-	  cd "${S}"
-	  dodoc README ANNOUNCE LICENSE VERSION
+		cd "${S}"
+		dodoc README ANNOUNCE LICENSE VERSION
 
-	  dosbin ${FILESDIR}/ghc-updater
+		dosbin ${FILESDIR}/ghc-updater
 	fi
 }
 
