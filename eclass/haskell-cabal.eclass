@@ -90,8 +90,9 @@ fi
 
 # We always use a standalone version of Cabal, rather than the one that comes
 # with GHC. But of course we can't depend on cabal when building cabal itself.
+CABAL_MIN_VERSION=1.1.4
 if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
-	DEPEND="${DEPEND} >=dev-haskell/cabal-1.1.3"
+	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
 fi
 
 # Libraries require GHC to be installed.
@@ -134,10 +135,21 @@ cabal-configure() {
 		cabalconf="${cabalconf} --disable-library-for-ghci"
 	fi
 
+	# Note: with Cabal-1.1.6.x we still do not have enough control
+	# to put the docs into the right place. They're currently going
+	# into			/usr/share/${P}/ghc-x.y/doc/
+	# rather than	/usr/share/doc/${PF}/
+	# Because we can only set the datadir, not the docdir.
+
 	./setup configure \
 		--ghc --prefix=/usr \
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
+		--prefix=/usr \
+		--libdir=/usr/$(get_libdir) \
+		--libsubdir=${P}/ghc-$(ghc-version) \
+		--datadir=/usr/share/ \
+		--datasubdir=${P}/ghc-$(ghc-version) \
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
 		"$@" || die "setup configure failed"
@@ -150,7 +162,7 @@ cabal-build() {
 
 cabal-copy() {
 	./setup copy \
-		--copy-prefix="${D}/usr" \
+		--destdir="${D}" \
 		|| die "setup copy failed"
 
 	# cabal is a bit eager about creating dirs,
@@ -163,6 +175,7 @@ cabal-copy() {
 	if [[ -d "${D}/usr/bin" ]] ; then
 		chmod +x "${D}/usr/bin/"*
 	fi
+	# TODO: do we still need this?
 }
 
 cabal-pkg() {
@@ -188,7 +201,7 @@ cabal-pkg() {
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
 	ghc-package_pkg_setup
-	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "1.1.3"; then
+	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
 		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
@@ -222,7 +235,10 @@ cabal_src_install() {
 	cabal-pkg
 
 	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-		dohtml -r dist/doc/html/*
+		local cabalversion=$(ghc-extractportageversion dev-haskell/cabal)
+		if ! version_is_at_least "1.1.6" "${cabalversion}"; then
+			dohtml -r dist/doc/html/*
+		fi
 	fi
 }
 haskell-cabal_src_install() {
