@@ -36,8 +36,6 @@ RDEPEND=">=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
 	=sys-libs/readline-5*"
 
-PROVIDE="virtual/ghc"
-
 S="${WORKDIR}"
 
 append-ghc-cflags() {

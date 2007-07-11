@@ -61,8 +61,6 @@ IUSE="binary doc ghcbootstrap test X opengl openal"
 LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
 
-PROVIDE="virtual/ghc"
-
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17

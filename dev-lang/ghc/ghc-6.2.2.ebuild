@@ -45,8 +45,6 @@ IUSE="binary doc ghcbootstrap opengl"
 
 LOC="/opt/ghc" # location for installation of binary version
 
-PROVIDE="virtual/ghc"
-
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
