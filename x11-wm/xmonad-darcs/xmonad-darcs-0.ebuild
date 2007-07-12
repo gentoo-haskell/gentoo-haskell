@@ -22,7 +22,7 @@ IUSE="savedconfig extensions"
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/x11-1.2.1
 	dev-haskell/x11-extras-darcs
-	~dev-haskell/mtl-1.0"
+	>=dev-haskell/mtl-1.0"
 
 RESTRICT="strip"
 
