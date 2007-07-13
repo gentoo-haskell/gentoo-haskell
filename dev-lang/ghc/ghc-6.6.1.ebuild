@@ -55,6 +55,7 @@ LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
 
 RDEPEND="
+	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
@@ -62,11 +63,12 @@ RDEPEND="
 	=sys-libs/readline-5*"
 
 DEPEND="${RDEPEND}
-	ghcbootstrap? (	~app-text/docbook-xml-dtd-4.2
-					app-text/docbook-xsl-stylesheets
-					>=dev-libs/libxslt-1.1.2 )"
-# In the ghcbootstrap case we rely on the developer having both
-# >=ghc-5.04.3 and >=haddock-0.8 on their $PATH already
+	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
+							app-text/docbook-xsl-stylesheets
+							>=dev-libs/libxslt-1.1.2
+							>=dev-haskell/haddock-0.8 ) )"
+# In the ghcbootstrap case we rely on the developer having
+# >=ghc-5.04.3 on their $PATH already
 
 PDEPEND=">=dev-haskell/cabal-1.1.6.2"
 
@@ -131,10 +133,8 @@ pkg_setup() {
 		ewarn "use with the ghc ebuild's USE=\"binary\" feature."
 		use binary && \
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
-		use doc || \
-			die "USE=\"ghcbootstrap -doc\" is not a valid combination"
-		[[ -z $(type -P ghc) || -z $(type -P haddock) ]] && \
-			die "Could not find a ghc and haddock to bootstrap with."
+		[[ -z $(type -P ghc) ]] && \
+			die "Could not find a ghc to bootstrap with."
 	fi
 }
 
@@ -156,7 +156,7 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf" \
+			"${S}/usr/$(get_libdir)/${P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
@@ -174,8 +174,8 @@ src_unpack() {
 			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
 				"${WORKDIR}/usr/bin/ghc-${PV}" \
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
-				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
-				"${WORKDIR}/usr/bin/hsc2hs \
+				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+				"${WORKDIR}/usr/bin/hsc2hs" \
 				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
@@ -214,7 +214,7 @@ src_compile() {
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
-		if use ghcbootstrap; then
+		if use ghcbootstrap && use doc; then
 			echo XMLDocWays="html" >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
@@ -243,14 +243,16 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
-		econf || die "econf failed"
+		# the datadir override is required to make the haddock entries
+		# in the package.conf file point to the right place.
+		econf --datadir="/usr/share/doc/${P}" || die "econf failed"
 
 		emake || die "make failed"
 
 	fi # ! use binary
 }
 
-src_install () {
+src_install() {
 	if use binary; then
 		mkdir "${D}/opt"
 		mv "${S}/usr" "${D}/opt/ghc"
@@ -263,21 +265,21 @@ src_install () {
 
 		doenvd "${FILESDIR}/10ghc"
 	else
-		local insttarget
-
-		insttarget="install"
+		local insttarget="install"
 
 		# We only built docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
-		if use ghcbootstrap; then
-			insttarget="${insttarget} install-docs"
-		elif use doc; then
-			dohtml -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+		if use doc; then
+			if use ghcbootstrap; then
+				insttarget="${insttarget} install-docs"
+			else
+				dohtml -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+			fi
 		fi
 
 		# the libdir0 setting is needed for amd64, and does not
 		# harm for other arches
-		#TODO: is this still required?
+		#TODO: are any of these overrides still required? isn't econf enough?
 		emake -j1 ${insttarget} \
 			prefix="${D}/usr" \
 			datadir="${D}/usr/share/doc/${P}" \
@@ -286,14 +288,6 @@ src_install () {
 			libdir0="${D}/usr/$(get_libdir)" \
 			|| die "make ${insttarget} failed"
 
-		#need to remove ${D} from ghcprof script
-		# TODO: does this actually work?
-		cd "${D}/usr/bin"
-		mv ghcprof ghcprof-orig
-		sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
-		chmod a+x ghcprof
-		rm -f ghcprof-orig
-
 		cd "${S}"
 		dodoc README ANNOUNCE LICENSE VERSION
 
@@ -301,7 +295,7 @@ src_install () {
 	fi
 }
 
-pkg_postinst () {
+pkg_postinst() {
 	ghc-reregister
 	elog "If you have dev-lang/ghc-bin installed, you might"
 	elog "want to unmerge it. It is no longer needed."
@@ -324,4 +318,11 @@ pkg_postinst () {
 		ewarn "      /usr/sbin/ghc-updater"
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
+}
+
+pkg_prerm() {
+	# Delete the GHC package database
+	use binary && GHC_PREFIX="${ROOT}opt/ghc" || GHC_PREFIX="${ROOT}usr"
+	GHC_PKG_DB="${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
+	rm -f ${GHC_PKG_DB} ${GHC_PKG_DB}.old
 }

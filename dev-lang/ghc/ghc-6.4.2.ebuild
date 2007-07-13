@@ -66,6 +66,7 @@ LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
 
 RDEPEND="
+	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
@@ -182,7 +183,7 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf" \
+			"${S}/usr/$(get_libdir)/${P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
@@ -205,8 +206,8 @@ src_unpack() {
 			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
 				"${WORKDIR}/usr/bin/ghc-${PV}" \
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
-				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
-				"${WORKDIR}/usr/bin/hsc2hs \
+				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+				"${WORKDIR}/usr/bin/hsc2hs" \
 				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
@@ -271,7 +272,10 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
+		# the datadir override is required to make the haddock entries
+		# in the package.conf file point to the right place.
 		econf \
+			--datadir="/usr/share/doc/${P}" \
 			$(use_enable opengl opengl) \
 			$(use_enable opengl glut) \
 			$(use openal && use opengl \
@@ -286,33 +290,23 @@ src_compile() {
 	fi # ! use binary
 }
 
-src_install () {
+src_install() {
 	if use binary; then
 		mkdir "${D}/opt"
 		mv "${S}/usr" "${D}/opt/ghc"
 
 		doenvd "${FILESDIR}/10ghc"
 	else
-		local insttarget
-
 		# the libdir0 setting is needed for amd64, and does not
 		# harm for other arches
-		#TODO: is this still required?
+		#TODO: are any of these overrides still required? isn't econf enough?
 		emake -j1 install \
 			prefix="${D}/usr" \
 			datadir="${D}/usr/share/doc/${PF}" \
 			infodir="${D}/usr/share/info" \
 			mandir="${D}/usr/share/man" \
 			libdir0="${D}/usr/$(get_libdir)" \
-			|| die "make ${insttarget} failed"
-
-		#need to remove ${D} from ghcprof script
-		# TODO: does this actually work?
-		cd "${D}/usr/bin"
-		mv ghcprof ghcprof-orig
-		sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
-		chmod a+x ghcprof
-		rm -f ghcprof-orig
+			|| die "make install failed"
 
 		cd "${S}/ghc"
 		dodoc README ANNOUNCE LICENSE VERSION
@@ -354,6 +348,13 @@ pkg_postinst () {
 		ewarn "      /usr/sbin/ghc-updater"
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
+}
+
+pkg_prerm() {
+	# Delete the GHC package database
+	use binary && GHC_PREFIX="${ROOT}opt/ghc" || GHC_PREFIX="${ROOT}usr"
+	GHC_PKG_DB="${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
+	rm -f ${GHC_PKG_DB} ${GHC_PKG_DB}.old
 }
 
 src_test() {
