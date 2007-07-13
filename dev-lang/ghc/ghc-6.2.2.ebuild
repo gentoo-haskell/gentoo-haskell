@@ -49,6 +49,8 @@ IUSE="binary doc ghcbootstrap opengl"
 
 LOC="/opt/ghc" # location for installation of binary version
 
+PROVIDE="virtual/ghc"
+
 RDEPEND="
 	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
@@ -224,12 +226,13 @@ src_compile() {
 		# the datadir override is required to make the haddock entries
 		# in the package.conf file point to the right place.
 		econf \
-			--datadir="/usr/share/doc/${P}" \
 			$(use_enable opengl hopengl) \
 			|| die "econf failed"
 
 		# ghc-6.2.x build system does not support parallel make
-		emake -j1 || die "make failed"
+		emake -j1 datadir="/usr/share/doc/${P}" || die "make failed"
+		# the explicit datadir is required to make the haddock entries
+		# in the package.conf file point to the right place ...
 
 	fi # ! use binary
 }

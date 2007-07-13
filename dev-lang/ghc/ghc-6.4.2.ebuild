@@ -65,6 +65,8 @@ IUSE="binary doc ghcbootstrap test X opengl openal"
 LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
 
+PROVIDE="virtual/ghc"
+
 RDEPEND="
 	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
@@ -272,10 +274,7 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
-		# the datadir override is required to make the haddock entries
-		# in the package.conf file point to the right place.
 		econf \
-			--datadir="/usr/share/doc/${P}" \
 			$(use_enable opengl opengl) \
 			$(use_enable opengl glut) \
 			$(use openal && use opengl \
@@ -285,7 +284,9 @@ src_compile() {
 			$(use_enable X hgl) \
 			|| die "econf failed"
 
-		emake || die "make failed"
+		emake all datadir="/usr/share/doc/${P}" || die "make failed"
+		# the explicit datadir is required to make the haddock entries
+		# in the package.conf file point to the right place ...
 
 	fi # ! use binary
 }
