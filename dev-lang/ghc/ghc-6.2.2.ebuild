@@ -33,7 +33,11 @@ inherit base eutils flag-o-matic toolchain-funcs ghc-package
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-SRC_URI="http://haskell.org/ghc/dist/${PV}/ghc-${PV}-src.tar.bz2
+#TODO: as a quick hack, using ghc-6.6's docs
+# before adding to portage, upload appropriate versions to the mirrors 
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${PV}/ghc-${PV}-src.tar.bz2 )
+		 doc? 	( mirror://gentoo/ghc-6.6-libraries.tar.gz
+				  mirror://gentoo/ghc-6.6-users_guide.tar.gz )
 		 ppc?	( mirror://gentoo/ghc-bin-${PV}-r1-ppc.tbz2 )
 		 sparc?	( mirror://gentoo/ghc-bin-${PV}-r1-sparc.tbz2 )
 		 x86?	( mirror://gentoo/ghc-bin-${PV}-r1-x86.tbz2 )"
@@ -54,12 +58,9 @@ RDEPEND="
 	opengl? ( virtual/opengl
 			  virtual/glu virtual/glut )"
 
-DEPEND="${RDEPEND}
-	doc? (  ~app-text/docbook-sgml-dtd-3.1
-			>=app-text/docbook-dsssl-stylesheets-1.64
-			>=app-text/openjade-1.3.1
-			>=app-text/sgml-common-0.6.3
-			>=dev-haskell/haddock-0.6-r2 )"
+DEPEND="${RDEPEND}"
+# In the ghcbootstrap case we rely on the developer having
+# >=ghc-5.04.3 on their $PATH already
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -111,15 +112,6 @@ ghc_setup_cflags() {
 	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
 }
 
-ghc_setup_wrapper() {
-	echo '#!/bin/sh'
-	echo "GHCBIN=\"$1\";"
-	echo "TOPDIROPT=\"-B$(dirname $1)\";"
-	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
-	echo '# Mini-driver for GHC'
-	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
-}
-
 pkg_setup() {
 	if test $(gcc-major-version) -gt 3; then
 		eerror "ghc-6.2.2 does not work with gcc-4.x, only 3.x or older"
@@ -128,12 +120,16 @@ pkg_setup() {
 		die "ghc-6.2.2 does not work with gcc-4.x, only 3.x or older"
 	fi
 
-	if use ghcbootstrap && [[ -z $(type -P ghc) ]]; then
-		ewarn ""
-		ewarn "You requested bootstrapping,"
-		ewarn "but I could not find a ghc executable to bootstrap with"
-		ewarn ""
-		die "Could not find a ghc executable to bootstrap with"
+	if use ghcbootstrap; then
+		ewarn "You requested ghc bootstrapping, this is usually only used"
+		ewarn "by Gentoo developers to make binary .tbz2 packages for"
+		ewarn "use with the ghc ebuild's USE=\"binary\" feature."
+		use binary && \
+			die "USE=\"ghcbootstrap binary\" is not a valid combination."
+		use doc && \
+			die "USE=\"ghcbootstrap doc\" is not a valid combination"
+		[[ -z $(type -P ghc) ]] && \
+			die "Could not find a ghc to bootstrap with."
 	fi
 
 	if use binary; then
@@ -156,18 +152,9 @@ src_unpack() {
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
 
-		if use doc; then
-			mkdir "${S}/usr/share/doc/${MY_P}/html"
-			mv "${WORKDIR}/libraries" "${S}/usr/share/doc/${MY_P}/html/"
-			mv "${WORKDIR}/users_guide" "${S}/usr/share/doc/${MY_P}/html/"
-		fi
-
-		# Setup the ghc wrapper script
-		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
-		ghc_setup_wrapper "$GHCBIN" > "${S}/usr/bin/ghc-${PV}"
-
 		# Relocate from /usr to /opt/ghc
 		sed -i -e "s|/usr|${LOC}|g" \
+			"${S}/usr/bin/ghc-${PV}" \
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
@@ -182,22 +169,15 @@ src_unpack() {
 		echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/ghc/driver/ghc/Makefile"
 		sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/ghc/driver/ghc/ghc.sh"
 
-		# Create the setup wrapper
-		if use ghcbootstrap; then
-			# When we are bootstrapping, rely on the developer to have set a
-			# sane environment
-
-			echo -e '#!/bin/sh\nexec ghc $*' > "${T}/ghc.sh"
-		else
-			GHC_TOP="${WORKDIR}/usr/$(get_libdir)/${P}"
-			GHC_CFLAGS="" ghc_setup_wrapper "${GHC_TOP}/${P}" > "${T}/ghc.sh"
-
-			# Fix paths for workdir ghc
+		if ! use ghcbootstrap; then
+			# Relocate from /usr to ${WORKDIR}/usr
 			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
-				"${GHC_TOP}/package.conf"
+				"${WORKDIR}/usr/bin/ghc-${PV}" \
+				"${WORKDIR}/usr/bin/ghci-${PV}" \
+				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
+				"${WORKDIR}/usr/bin/hsc2hs \
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" 
 		fi
-
-		chmod +x "${T}/ghc.sh"
 
 		# Patch to fix a mis-compilation in the rts due to strict aliasing,
 		# should be fixed upstream for 6.4.3 and 6.6. Fixes bug #135651.
@@ -218,14 +198,11 @@ src_compile() {
 		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-		# determine what to do with documentation
-		if use doc; then
-			echo SGMLDocWays="html" >> mk/build.mk
-		else
-			echo SGMLDocWays="" >> mk/build.mk
-			# needed to prevent haddock from being called
-			echo NO_HADDOCK_DOCS=YES >> mk/build.mk
-		fi
+		# We can't depend on haddock so we never build docs
+		# and we rely on pre-built ones instead
+		echo SGMLDocWays="" >> mk/build.mk
+		# needed to prevent haddock from being called
+		echo NO_HADDOCK_DOCS=YES >> mk/build.mk
 
 		# circumvent a very strange bug that seems related with ghc producing too much
 		# output while being filtered through tee (e.g. due to portage logging)
@@ -236,18 +213,17 @@ src_compile() {
 		use ppc || use sparc && echo "SplitObjs=NO" >> mk/build.mk
 		use sparc && echo "GhcWithInterpreter=NO" >> mk/build.mk
 
-		# unset SGML_CATALOG_FILES because documentation installation
-		# breaks otherwise ...
-		SGML_CATALOG_FILES="" econf \
-			--with-ghc="${T}/ghc.sh" \
+		# Get ghc from the unpacked binary .tbz2
+		# except when bootstrapping we just pick ghc up off the path
+		use ghcbootstrap || \
+			export PATH="${WORKDIR}/usr/bin:${PATH}"
+
+		econf \
 			$(use_enable opengl hopengl) \
 			|| die "econf failed"
 
 		# ghc-6.2.x build system does not support parallel make
-		emake -j1 datadir="/usr/share/doc/${PF}" || die "make failed"
-		# the explicit datadir is required to make the haddock entries
-		# in the package.conf file point to the right place ...
-		# TODO: is this still required ?
+		emake -j1 || die "make failed"
 
 	fi # ! use binary
 }
@@ -261,13 +237,10 @@ src_install () {
 	else
 		local insttarget
 
-		insttarget="install"
-		use doc && insttarget="${insttarget} install-docs"
-
 		# the libdir0 setting is needed for amd64, and does not
 		# harm for other arches
 		#TODO: is this still required?
-		emake -j1 ${insttarget} \
+		emake -j1 install \
 			prefix="${D}/usr" \
 			datadir="${D}/usr/share/doc/${PF}" \
 			infodir="${D}/usr/share/info" \
@@ -287,6 +260,11 @@ src_install () {
 		dodoc README ANNOUNCE LICENSE VERSION
 
 		dosbin ${FILESDIR}/ghc-updater
+	fi
+
+	if use doc; then
+		dohtml -r "${WORKDIR}/libraries/"*
+		dohtml -r "${WORKDIR}/users_guide/"*
 	fi
 }
 
@@ -314,4 +292,3 @@ pkg_postinst () {
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
-

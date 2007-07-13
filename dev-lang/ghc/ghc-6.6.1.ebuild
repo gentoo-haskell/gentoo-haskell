@@ -44,10 +44,6 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
 		 ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
 		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
-#		 ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
-#		 alpha?	( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
-#		 sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
-#	"test? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/ghc-testsuite-${MY_PV}.tar.gz )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -66,11 +62,11 @@ RDEPEND="
 	=sys-libs/readline-5*"
 
 DEPEND="${RDEPEND}
-	doc? ( !binary? (
-			~app-text/docbook-xml-dtd-4.2
-			app-text/docbook-xsl-stylesheets
-			>=dev-libs/libxslt-1.1.2
-			>=dev-haskell/haddock-0.8 ) )"
+	ghcbootstrap? (	~app-text/docbook-xml-dtd-4.2
+					app-text/docbook-xsl-stylesheets
+					>=dev-libs/libxslt-1.1.2 )"
+# In the ghcbootstrap case we rely on the developer having both
+# >=ghc-5.04.3 and >=haddock-0.8 on their $PATH already
 
 PDEPEND=">=dev-haskell/cabal-1.1.6.2"
 
@@ -128,22 +124,17 @@ ghc_setup_cflags() {
 	append-ghc-cflags assemble		"-Wa,--noexecstack"
 }
 
-ghc_setup_wrapper() {
-	echo '#!/bin/sh'
-	echo "GHCBIN=\"$1\";"
-	echo "TOPDIROPT=\"-B$(dirname $1)\";"
-	echo "GHC_CFLAGS=\"${GHC_CFLAGS}\";"
-	echo '# Mini-driver for GHC'
-	echo 'exec $GHCBIN $TOPDIROPT $GHC_CFLAGS ${1+"$@"}'
-}
-
 pkg_setup() {
-	if use ghcbootstrap && [[ -z $(type -P ghc) ]]; then
-		ewarn ""
-		ewarn "You requested bootstrapping,"
-		ewarn "but I could not find a ghc executable to bootstrap with"
-		ewarn ""
-		die "Could not find a ghc executable to bootstrap with"
+	if use ghcbootstrap; then
+		ewarn "You requested ghc bootstrapping, this is usually only used"
+		ewarn "by Gentoo developers to make binary .tbz2 packages for"
+		ewarn "use with the ghc ebuild's USE=\"binary\" feature."
+		use binary && \
+			die "USE=\"ghcbootstrap binary\" is not a valid combination."
+		use doc || \
+			die "USE=\"ghcbootstrap -doc\" is not a valid combination"
+		[[ -z $(type -P ghc) || -z $(type -P haddock) ]] && \
+			die "Could not find a ghc and haddock to bootstrap with."
 	fi
 }
 
@@ -159,12 +150,9 @@ src_unpack() {
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
 
-		# Setup the ghc wrapper script
-		GHCBIN="${LOC}/$(get_libdir)/$P/$P"
-		ghc_setup_wrapper "$GHCBIN" > "${S}/usr/bin/ghc-${PV}"
-
 		# Relocate from /usr to /opt/ghc
 		sed -i -e "s|/usr|${LOC}|g" \
+			"${S}/usr/bin/ghc-${PV}" \
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
@@ -180,22 +168,15 @@ src_unpack() {
 		echo "GHC_CFLAGS = ${GHC_CFLAGS}"      >> "${S}/driver/ghc/Makefile"
 		sed -i -e 's|$TOPDIROPT|$TOPDIROPT $GHC_CFLAGS|' "${S}/driver/ghc/ghc.sh"
 
-		# Create the setup wrapper
-		if use ghcbootstrap; then
-			# When we are bootstrapping, rely on the developer to have set a
-			# sane environment
-
-			echo -e '#!/bin/sh\nexec ghc $*' > "${T}/ghc.sh"
-		else
-			GHC_TOP="${WORKDIR}/usr/$(get_libdir)/${P}"
-			GHC_CFLAGS="" ghc_setup_wrapper "${GHC_TOP}/${P}" > "${T}/ghc.sh"
-
-			# Fix paths for workdir ghc
+		if ! use ghcbootstrap; then
+			# Relocate from /usr to ${WORKDIR}/usr
 			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
-				"${GHC_TOP}/package.conf"
+				"${WORKDIR}/usr/bin/ghc-${PV}" \
+				"${WORKDIR}/usr/bin/ghci-${PV}" \
+				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
+				"${WORKDIR}/usr/bin/hsc2hs \
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" 
 		fi
-
-		chmod +x "${T}/ghc.sh"
 
 		# If we're using the testsuite then move it to into the build tree
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
@@ -229,8 +210,9 @@ src_compile() {
 		#	echo "SplitObjs       = NO" >> mk/build.mk
 		#fi
 
-		# determine what to do with documentation
-		if use doc; then
+		# We can't depend on haddock except when bootstrapping when we
+		# must build docs and include them into the binary .tbz2 package
+		if use ghcbootstrap; then
 			echo XMLDocWays="html" >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
@@ -254,14 +236,14 @@ src_compile() {
 			echo "GhcNotThreaded=YES" >> mk/build.mk
 		fi
 
-		econf \
-			--with-ghc="${T}/ghc.sh" \
-			|| die "econf failed"
+		# Get ghc from the unpacked binary .tbz2
+		# except when bootstrapping we just pick ghc up off the path
+		use ghcbootstrap || \
+			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
-		emake all datadir="/usr/share/doc/${PF}" || die "make failed"
-		# the explicit datadir is required to make the haddock entries
-		# in the package.conf file point to the right place ...
-		# TODO: is this still required ?
+		econf || die "econf failed"
+
+		emake || die "make failed"
 
 	fi # ! use binary
 }
@@ -279,14 +261,21 @@ src_install () {
 		local insttarget
 
 		insttarget="install"
-		use doc && insttarget="${insttarget} install-docs"
+
+		# We only built docs if we were bootstrapping, otherwise
+		# we copy them out of the unpacked binary .tbz2
+		if use ghcbootstrap; then
+			insttarget="${insttarget} install-docs"
+		elif use doc; then
+			dohtml -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+		fi
 
 		# the libdir0 setting is needed for amd64, and does not
 		# harm for other arches
 		#TODO: is this still required?
 		emake -j1 ${insttarget} \
 			prefix="${D}/usr" \
-			datadir="${D}/usr/share/doc/${PF}" \
+			datadir="${D}/usr/share/doc/${P}" \
 			infodir="${D}/usr/share/info" \
 			mandir="${D}/usr/share/man" \
 			libdir0="${D}/usr/$(get_libdir)" \
@@ -331,25 +320,3 @@ pkg_postinst () {
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
-
-#src_test() {
-#	if use test; then
-#		local summary
-#		summary="${T}/testsuite-summary.txt"
-#
-#		make -C "${S}/testsuite/" boot || die "Preparing the testsuite failed"
-#		make -C "${S}/testsuite/tests/ghc-regress" \
-#				TEST_HC="${S}/ghc/compiler/stage2/ghc-inplace" \
-#				EXTRA_RUNTEST_OPTS="--output-summary=${summary}"
-#
-#		if grep -q ' 0 unexpected failures' "${summary}"; then
-#			einfo "All tests passed ok"
-#		else
-#			ewarn "Some tests failed, for a summary see: ${summary}"
-#		fi
-#	else
-#		ewarn "Sadly, due to some portage limitations you need both"
-#		ewarn "USE=test and FEATURES=test to run the ghc testsuite"
-#	fi
-#}
-
