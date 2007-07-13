@@ -158,7 +158,8 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf"
+			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf" \
+			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
 			"${S}/usr/bin/ghcprof"
@@ -176,7 +177,8 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
 				"${WORKDIR}/usr/bin/hsc2hs \
-				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" 
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
+				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
 		# Patch to fix a mis-compilation in the rts due to strict aliasing,
@@ -263,8 +265,10 @@ src_install () {
 	fi
 
 	if use doc; then
-		dohtml -r "${WORKDIR}/libraries/"*
-		dohtml -r "${WORKDIR}/users_guide/"*
+		dohtml -r "${WORKDIR}/libraries/"* \
+			|| die "installing library docs failed"
+		dohtml -r "${WORKDIR}/users_guide/"* \
+			|| die "installing user guide failed"
 	fi
 }
 

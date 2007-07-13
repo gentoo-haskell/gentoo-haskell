@@ -156,7 +156,8 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf"
+			"${S}/usr/$(get_libdir)/ghc-${PV}/package.conf" \
+			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
 			"${S}/usr/bin/ghcprof"
@@ -175,7 +176,8 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV} \
 				"${WORKDIR}/usr/bin/hsc2hs \
-				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" 
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
+				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
 		# If we're using the testsuite then move it to into the build tree
@@ -254,7 +256,10 @@ src_install () {
 		mv "${S}/usr" "${D}/opt/ghc"
 
 		# Remove the docs if not requested
-		use doc || rm -rf "${D}/opt/ghc/share/doc/${P}/html"
+		if ! use doc; then
+			rm -rf "${D}/opt/ghc/share/doc/${P}/html" \
+				|| die "could not remove docs (P vs PF revision mismatch?)"
+		fi
 
 		doenvd "${FILESDIR}/10ghc"
 	else
