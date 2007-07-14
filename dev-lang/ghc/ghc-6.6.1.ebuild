@@ -275,7 +275,7 @@ src_install() {
 			if use ghcbootstrap; then
 				insttarget="${insttarget} install-docs"
 			else
-				dohtml -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+				dohtml -A haddock -r "${WORKDIR}/usr/share/doc/${P}/html/"*
 			fi
 		fi
 
