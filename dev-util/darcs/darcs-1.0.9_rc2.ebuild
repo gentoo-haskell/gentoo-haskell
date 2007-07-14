@@ -8,7 +8,7 @@ DESCRIPTION="David's Advanced Revision Control System is yet another replacement
 HOMEPAGE="http://abridgegame.org/darcs"
 MY_P0="${P/_rc/rc}"
 MY_P="${MY_P0/_pre/pre}"
-SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
+SRC_URI="http://darcs.net/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
