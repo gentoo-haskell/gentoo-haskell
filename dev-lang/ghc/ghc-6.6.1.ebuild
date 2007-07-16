@@ -321,10 +321,3 @@ pkg_postinst() {
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
 }
-
-pkg_prerm() {
-	# Delete the GHC package database
-	use binary && GHC_PREFIX="${ROOT}opt/ghc" || GHC_PREFIX="${ROOT}usr"
-	GHC_PKG_DB="${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
-	rm -f ${GHC_PKG_DB} ${GHC_PKG_DB}.old
-}
