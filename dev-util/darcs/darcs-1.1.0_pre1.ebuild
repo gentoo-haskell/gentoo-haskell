@@ -5,10 +5,10 @@
 inherit base autotools eutils
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
-HOMEPAGE="http://abridgegame.org/darcs"
+HOMEPAGE="http://darcs.net"
 MY_P0="${P/_rc/rc}"
 MY_P="${MY_P0/_pre/pre}"
-SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
+SRC_URI="http://darcs.net/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -33,8 +33,8 @@ S=${WORKDIR}/${MY_P}
 src_unpack() {
 	base_src_unpack
 
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-bashcomp.patch"
+	cd "${S}/tools"
+	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
