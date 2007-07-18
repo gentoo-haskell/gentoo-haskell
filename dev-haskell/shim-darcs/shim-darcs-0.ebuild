@@ -67,14 +67,19 @@ src_install() {
 			doins vim/ftplugin/haskell.vim
 		fi
 	fi
+
+#	cd ${S}
+	dodoc README HACKING
+
+	cd docs
+	dodoc *
+
 }
 
 pkg_postinst() {
 	if use emacs ; then
 		elisp-site-regen
 	fi
-
-	dodoc README HACKING docs
 
 	elog "See /usr/share/doc/${PF}/README for more information"
 
