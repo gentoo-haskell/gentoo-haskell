@@ -1,0 +1,79 @@
+--- haskell_doc.vim	2007-07-18 11:22:38.000000000 -0000
++++ haskell_doc.vim	2007-07-18 15:39:00.000000000 -0000
+@@ -39,14 +39,9 @@
+ " - from previous cached version via :ImportDocIndex
+ let g:docindex = {}
+ 
+-" program to open urls
+-"let g:docbrowser = "C:/Program Files/Mozilla Firefox/firefox.exe"
+-let g:docbrowser = "C:/Program Files/Opera/Opera.exe"
+-"let g:docbrowser = "C:/Program Files/Internet Explorer/IEXPLORE.exe"
+-
+ if (!exists("g:ghc") || !executable(g:ghc)) 
+   if !executable('ghc') 
+-    echoerr "can't find ghc. please set g:ghc, or extend $PATH"
++    echoerr "haskellmode plug-in: can't find ghc. please set g:ghc, or extend $PATH"
+     finish
+   else
+     let g:ghc = 'ghc'
+@@ -54,32 +49,36 @@
+ endif    
+ 
+ if !executable('ghc-pkg')
+-  echoerr "can't find ghc-pkg."
+-  finish
+-endif
+-
+-if !executable(g:docbrowser)
+-  echoerr "can't find documentation browser. please set g:docbrowser"
++  echoerr "haskellmode plug-in: can't find ghc-pkg."
+   finish
+ endif
+ 
+-let s:ghc_libdir   = substitute(system(g:ghc . ' --print-libdir'),'\n','','')
+-let s:docdir       = s:ghc_libdir . '/doc/html/'
++let s:ghcversion   = substitute(system(g:ghc . ' --numeric-version'),'\n','','')
++let s:docdir       = '/usr/share/doc/ghc-' . s:ghcversion . '/html/'
+ let s:libraries    = s:docdir . 'libraries/'
+ let s:guide        = s:docdir . 'users_guide/'
+ let s:index        = 'index.html'
+-let s:docindexfile = s:libraries . 'docindex.vim'
++let s:docindexfile = '/tmp/haddock_index.vim'
+ 
+ command! DocSettings call DocSettings()
+ function! DocSettings()
+-  for v in ["g:docbrowser","s:ghc_libdir","s:docdir","s:libraries","s:guide","s:docindexfile"]
+-    echo v '=' eval(v)
++  for v in ["g:haddock_browser","s:ghcversion","s:docdir","s:libraries","s:guide","s:docindexfile"]
++    if exists(v)
++      echo v '=' eval(v)
++    else
++      echo v '='
++    endif
+   endfor
+ endfunction
+ 
+ function! DocBrowser(url)
++    if (!exists("g:haddock_browser") || !executable(g:haddock_browser))
++      echo "haskellmode plug-in: can't find documentation browser. please set haddock_browser"
++      return
++    endif
++
+     " start browser to open url
+-    exe '!start ' . g:docbrowser . ' file://' . escape(a:url,'#%')
++    exe '!' . g:haddock_browser . ' file://' . escape(a:url,'#%')
+ 
+     " what if we don't have a browser? viewing the html isn't readable..
+     "let relative = match(a:url,'#')
+@@ -114,9 +113,9 @@
+   endif
+ 
+   if a:0==0 " no package specified
+-    let package = 'base\'
++    let package = 'base/'
+   else
+-    let package = a:1 . '\'
++    let package = a:1 . '/'
+   endif
+ 
+   if match(a:qualname,'\.')==-1 " unqualified name
