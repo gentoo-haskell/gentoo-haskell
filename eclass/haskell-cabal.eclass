@@ -40,7 +40,7 @@
 # Special flags to Cabal Configure can now be set by using
 # CABAL_CONFIGURE_FLAGS
 
-inherit ghc-package
+inherit ghc-package multilib
 
 
 for feature in ${CABAL_FEATURES}; do
