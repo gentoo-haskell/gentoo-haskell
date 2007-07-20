@@ -138,6 +138,8 @@ pkg_setup() {
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	fi
+
+	use binary && GHC_PREFIX="/opt/ghc" || GHC_PREFIX="/usr"
 }
 
 src_unpack() {
@@ -294,7 +296,11 @@ src_install() {
 		dodoc README ANNOUNCE LICENSE VERSION
 
 		dosbin ${FILESDIR}/ghc-updater
+
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
+			|| die "failed to copy package.conf"
 	fi
+	
 }
 
 pkg_postinst() {
@@ -320,4 +326,15 @@ pkg_postinst() {
 		ewarn "      /usr/sbin/ghc-updater"
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
+}
+
+pkg_prerm() {
+	# Overwrite the (potentially) modified package.conf with a copy of the
+	# original one, so that it will be removed during uninstall.
+
+	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
+
+	cp -p "${PKG}"{.shipped,}
+
+	[ -f ${PKG}.old ] && rm "${PKG}.old"
 }
