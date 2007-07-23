@@ -4,18 +4,20 @@ GHC 6.6 Launch
 
 :Author: Lennart Kolmodin <kolmodin@gentoo.org>,
          Gentoo Haskell Herd <haskell@gentoo.org>
-:Updated: 2007-04-12
+:Updated: 2007-07-23
 
 .. sectnum::
 
 Due to the restructure of bundled libraries from GHC 6.4 -> 6.6 we've had to
-rewrite ebuild dependencies between packages and libraries.
+rewrite ebuild dependencies between packages and libraries. While doing this
+we have also taken the chance to do some updates we've been ponding on in
+the past.
 
 This document describes some background on what's new in GHC 6.6 and the
 plan that has been carefully crafted on how to deal with it.
 
-I have tried to summarize what the Gentoo Haskell Heard has been up to the
-past months.
+We have tried to summarize what the Gentoo Haskell Heard has been up to the
+past months (or year...).
 
 Introduction
 ============
@@ -28,6 +30,11 @@ This makes the GHC installation much faster, as you only compile the libs
 you need. Also, it gives the advantage that when you'd like to update a
 library, you only have to recompile exactly that one, instead of recompiling
 everything like before.
+
+We have also merged the dev-lang/ghc-bin package into the dev-lang/ghc
+package, which you can get by using ``USE=binary``. The ghc-bin tarball is
+used to bootstrap the source ghc compiler, instead of relying on a
+preinstalled compiler.
 
 This can be modeled in Gentoo Linux' package management system, as
 we'll see next.
@@ -55,49 +62,24 @@ anything from depending on the modular libraries, as they are guarantied to
 all be dummy libraries. Thus there should be no requirement for those
 packages to use the modular libs.
 
-In addition to the dummy/extralibs plan, we should revise the use of blocks.
-When using a block, be careful with other dependencies on the same package.
 
-This is due to that portage doesn't play well when a dependency and a block
-is overlapping. Take e.g. this dependency::
+Why merge ghc and ghc-bin?
+==========================
 
-    DEPEND=">=virtual/ghc-6.4 !>=virtual/ghc-6.6"
-
-Unless you already have a ghc compiler, and assuming ghc-6.6 is stable,
-portage will first satisfy the first dependency with ghc-6.6. Secondly,
-it'll fail on the block of ghc-6.6. It does **NOT** figure out that using
-ghc-6.4.2 would satisfy both dependencies.
-
-Thus, the first dependency has to have an upper limit, say::
-
-    DEPEND="<virtual/ghc-6.6"
-
-to indicate that a package cannot be compiled with GHC 6.6. Similarly we'll
-use::
-
-    DEPEND="=virtual/ghc-6.4*"
-
-to indicate when a package only can be compiled with the GHC 6.4 series.
-
-Then, would there be a point in using both a dependency on the correct
-version and additionally a block, like so::
+It makes dependienceies simpler...::
 
     DEPEND="=virtual/ghc-6.4* !>=virtual/ghc-6.6"
 
-Aye. Assume the user has ghc-bin-6.4.2 which he (or she!) used to compile
+
+Assume the user has ghc-bin-6.4.2 which he (or she!) used to compile
 ghc-6.4.2, and then one day installs ghc-6.6. The first dependency will be
 satisfied by ghc-bin-6.4.2, but it's actually ghc-6.6 that's going to be
 used to compile the package! (as ghc has precedence to ghc-bin). The block
 makes sure this doesn't happen.
 
-The current haskell-package.eclass in the overlay checks that your
-ghc{,-bin} versions is sane, but that code is not in portage's eclass (just
-yet). There is a discussion if it should be included or not. Also, that code
-is only executed once a package is actually installed.
+With ghc only available as one package, you can simply say::
 
-As many packages has been changed recently, it's recommended that once this
-plan is implemented, users that have used the Gentoo Haskell overlay should
-remove their packages and install fresh from the tree.
+    DEPEND="=dev-lang/ghc-6.4*"
 
 Step by step
 ============
@@ -113,13 +95,12 @@ This was done 7 March. It's p.masked.
 ghc-bin
 -------
 
-ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
-bootstrap ghc-6.6 unless there is a version of ghc already installed.
-It's a good idea anyway.
-
 Update 2007-03-16: ghc-bin-6.6 in the tree, ~amd64 ~x86
 
 Update 2007-04-12: cparrot has added ~alpha, ~ppc and ~sparc
+
+Update 2007-07-23: the ghc-bin tarballs are usable, but the packages will go
+                   away.
 
 Add modular libs
 ----------------
@@ -195,11 +176,7 @@ Packages that only compiles with GHC 6.6 can be added to, if p.masked.
 p.unmasking
 -----------
 
-All p.masked packages can be unmasked when:
-
-1. ghc-bin-6.6 is in the tree
-#. All packages that can be compiled with GHC 6.6 is updated to modular deps
-#. We're confident with the testing
+???
 
 ..
     cleaned up conversation from 2007-03-01

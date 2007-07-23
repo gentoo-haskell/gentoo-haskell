@@ -300,16 +300,18 @@ ul.auto-toc {
 <tr><th class="docinfo-name">Author:</th>
 <td>Lennart Kolmodin &lt;<a class="reference" href="mailto:kolmodin&#64;gentoo.org">kolmodin&#64;gentoo.org</a>&gt;,
 Gentoo Haskell Herd &lt;<a class="reference" href="mailto:haskell&#64;gentoo.org">haskell&#64;gentoo.org</a>&gt;</td></tr>
-<tr class="field"><th class="docinfo-name">Updated:</th><td class="field-body">2007-04-12</td>
+<tr class="field"><th class="docinfo-name">Updated:</th><td class="field-body">2007-07-23</td>
 </tr>
 </tbody>
 </table>
 <p>Due to the restructure of bundled libraries from GHC 6.4 -&gt; 6.6 we've had to
-rewrite ebuild dependencies between packages and libraries.</p>
+rewrite ebuild dependencies between packages and libraries. While doing this
+we have also taken the chance to do some updates we've been ponding on in
+the past.</p>
 <p>This document describes some background on what's new in GHC 6.6 and the
 plan that has been carefully crafted on how to deal with it.</p>
-<p>I have tried to summarize what the Gentoo Haskell Heard has been up to the
-past months.</p>
+<p>We have tried to summarize what the Gentoo Haskell Heard has been up to the
+past months (or year...).</p>
 <div class="section">
 <h1><a id="introduction" name="introduction">1&nbsp;&nbsp;&nbsp;Introduction</a></h1>
 <p>In GHC 6.4 a lot of packages where bundled with the compiler. In GHC 6.6
@@ -319,6 +321,10 @@ available as a separate download. That bundle is called ghc-extralibs.</p>
 you need. Also, it gives the advantage that when you'd like to update a
 library, you only have to recompile exactly that one, instead of recompiling
 everything like before.</p>
+<p>We have also merged the dev-lang/ghc-bin package into the dev-lang/ghc
+package, which you can get by using <tt class="docutils literal"><span class="pre">USE=binary</span></tt>. The ghc-bin tarball is
+used to bootstrap the source ghc compiler, instead of relying on a
+preinstalled compiler.</p>
 <p>This can be modeled in Gentoo Linux' package management system, as
 we'll see next.</p>
 </div>
@@ -340,62 +346,41 @@ you need, regardless of compiler version.</p>
 anything from depending on the modular libraries, as they are guarantied to
 all be dummy libraries. Thus there should be no requirement for those
 packages to use the modular libs.</p>
-<p>In addition to the dummy/extralibs plan, we should revise the use of blocks.
-When using a block, be careful with other dependencies on the same package.</p>
-<p>This is due to that portage doesn't play well when a dependency and a block
-is overlapping. Take e.g. this dependency:</p>
-<pre class="literal-block">
-DEPEND=&quot;&gt;=virtual/ghc-6.4 !&gt;=virtual/ghc-6.6&quot;
-</pre>
-<p>Unless you already have a ghc compiler, and assuming ghc-6.6 is stable,
-portage will first satisfy the first dependency with ghc-6.6. Secondly,
-it'll fail on the block of ghc-6.6. It does <strong>NOT</strong> figure out that using
-ghc-6.4.2 would satisfy both dependencies.</p>
-<p>Thus, the first dependency has to have an upper limit, say:</p>
-<pre class="literal-block">
-DEPEND=&quot;&lt;virtual/ghc-6.6&quot;
-</pre>
-<p>to indicate that a package cannot be compiled with GHC 6.6. Similarly we'll
-use:</p>
-<pre class="literal-block">
-DEPEND=&quot;=virtual/ghc-6.4*&quot;
-</pre>
-<p>to indicate when a package only can be compiled with the GHC 6.4 series.</p>
-<p>Then, would there be a point in using both a dependency on the correct
-version and additionally a block, like so:</p>
+</div>
+<div class="section">
+<h1><a id="why-merge-ghc-and-ghc-bin" name="why-merge-ghc-and-ghc-bin">3&nbsp;&nbsp;&nbsp;Why merge ghc and ghc-bin?</a></h1>
+<p>It makes dependienceies simpler...:</p>
 <pre class="literal-block">
 DEPEND=&quot;=virtual/ghc-6.4* !&gt;=virtual/ghc-6.6&quot;
 </pre>
-<p>Aye. Assume the user has ghc-bin-6.4.2 which he (or she!) used to compile
+<p>Assume the user has ghc-bin-6.4.2 which he (or she!) used to compile
 ghc-6.4.2, and then one day installs ghc-6.6. The first dependency will be
 satisfied by ghc-bin-6.4.2, but it's actually ghc-6.6 that's going to be
 used to compile the package! (as ghc has precedence to ghc-bin). The block
 makes sure this doesn't happen.</p>
-<p>The current haskell-package.eclass in the overlay checks that your
-ghc{,-bin} versions is sane, but that code is not in portage's eclass (just
-yet). There is a discussion if it should be included or not. Also, that code
-is only executed once a package is actually installed.</p>
-<p>As many packages has been changed recently, it's recommended that once this
-plan is implemented, users that have used the Gentoo Haskell overlay should
-remove their packages and install fresh from the tree.</p>
+<p>With ghc only available as one package, you can simply say:</p>
+<pre class="literal-block">
+DEPEND=&quot;=dev-lang/ghc-6.4*&quot;
+</pre>
 </div>
 <div class="section">
-<h1><a id="step-by-step" name="step-by-step">3&nbsp;&nbsp;&nbsp;Step by step</a></h1>
+<h1><a id="step-by-step" name="step-by-step">4&nbsp;&nbsp;&nbsp;Step by step</a></h1>
 <p>The proposed actions of the scheme are listed below.</p>
 <div class="section">
-<h2><a id="add-ghc-6-6-to-the-tree" name="add-ghc-6-6-to-the-tree">3.1&nbsp;&nbsp;&nbsp;Add GHC 6.6 to the tree</a></h2>
+<h2><a id="add-ghc-6-6-to-the-tree" name="add-ghc-6-6-to-the-tree">4.1&nbsp;&nbsp;&nbsp;Add GHC 6.6 to the tree</a></h2>
 <p>This was done 7 March. It's p.masked.</p>
 </div>
 <div class="section">
-<h2><a id="ghc-bin" name="ghc-bin">3.2&nbsp;&nbsp;&nbsp;ghc-bin</a></h2>
-<p>ghc-bin-6.6 must be in the tree before unmasking of ghc-6.6 as emerge can't
-bootstrap ghc-6.6 unless there is a version of ghc already installed.
-It's a good idea anyway.</p>
+<h2><a id="ghc-bin" name="ghc-bin">4.2&nbsp;&nbsp;&nbsp;ghc-bin</a></h2>
 <p>Update 2007-03-16: ghc-bin-6.6 in the tree, ~amd64 ~x86</p>
 <p>Update 2007-04-12: cparrot has added ~alpha, ~ppc and ~sparc</p>
+<dl class="docutils">
+<dt>Update 2007-07-23: the ghc-bin tarballs are usable, but the packages will go</dt>
+<dd>away.</dd>
+</dl>
 </div>
 <div class="section">
-<h2><a id="add-modular-libs" name="add-modular-libs">3.3&nbsp;&nbsp;&nbsp;Add modular libs</a></h2>
+<h2><a id="add-modular-libs" name="add-modular-libs">4.3&nbsp;&nbsp;&nbsp;Add modular libs</a></h2>
 <p>Ie, only the modular libs from ghc-extralibs meant for GHC 6.6. They should
 also be p.masked.</p>
 <p>Modular libs has been added for:</p>
@@ -422,7 +407,7 @@ also be p.masked.</p>
 </ul>
 </div>
 <div class="section">
-<h2><a id="add-dummy-libs" name="add-dummy-libs">3.4&nbsp;&nbsp;&nbsp;Add dummy libs</a></h2>
+<h2><a id="add-dummy-libs" name="add-dummy-libs">4.4&nbsp;&nbsp;&nbsp;Add dummy libs</a></h2>
 <p>The about 15 packages of ghc-extralibs has to be modeled as dummy libs
 too. They should be added as ~arch and then be stabilized by the arch teams
 asap.</p>
@@ -448,7 +433,7 @@ depends on that functionality:</p>
 </ul>
 </div>
 <div class="section">
-<h2><a id="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs" name="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs">3.5&nbsp;&nbsp;&nbsp;Start rewrite other libs and apps to use the dummy libs</a></h2>
+<h2><a id="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs" name="start-rewrite-other-libs-and-apps-to-use-the-dummy-libs">4.5&nbsp;&nbsp;&nbsp;Start rewrite other libs and apps to use the dummy libs</a></h2>
 <p>This is only required for applications that can be compiled with GHC 6.6, as
 described above.</p>
 <p>Packages that today are marked as stable and can be compiled with GHC 6.6
@@ -456,17 +441,12 @@ requires that the dummy libraries are marked as stable too. Thus we have to
 start rewriting the other packages until the dummys has been marked stable.</p>
 </div>
 <div class="section">
-<h2><a id="make-new-libs-use-the-p-masked-modular-libs" name="make-new-libs-use-the-p-masked-modular-libs">3.6&nbsp;&nbsp;&nbsp;Make new libs use the p.masked modular libs</a></h2>
+<h2><a id="make-new-libs-use-the-p-masked-modular-libs" name="make-new-libs-use-the-p-masked-modular-libs">4.6&nbsp;&nbsp;&nbsp;Make new libs use the p.masked modular libs</a></h2>
 <p>Packages that only compiles with GHC 6.6 can be added to, if p.masked.</p>
 </div>
 <div class="section">
-<h2><a id="p-unmasking" name="p-unmasking">3.7&nbsp;&nbsp;&nbsp;p.unmasking</a></h2>
-<p>All p.masked packages can be unmasked when:</p>
-<ol class="arabic simple">
-<li>ghc-bin-6.6 is in the tree</li>
-<li>All packages that can be compiled with GHC 6.6 is updated to modular deps</li>
-<li>We're confident with the testing</li>
-</ol>
+<h2><a id="p-unmasking" name="p-unmasking">4.7&nbsp;&nbsp;&nbsp;p.unmasking</a></h2>
+<p>???</p>
 <!-- cleaned up conversation from 2007-03-01
 20:15 < dcoutts_> sure sure
 20:15 < dcoutts_> so we should add dummy packages now
