@@ -26,6 +26,9 @@ src_unpack() {
 
 	# Correct version number. Doh!
 	sed -i -e 's|version = "1.7"|version = "1.8"|' "${S}/HsColour.hs"
+
+	# Lower -O2 to -O
+	sed -i -e 's/-O2/-O/' "${S}/hscolour.cabal"
 }
 
 src_install() {
