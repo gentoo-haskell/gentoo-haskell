@@ -396,14 +396,14 @@ also be p.masked.</p>
 <li>dev-haskell/quickcheck</li>
 <li>dev-haskell/time</li>
 <li>dev-haskell/xhtml</li>
+<li>dev-haskell/alut</li>
+<li>dev-haskell/glut</li>
+<li>dev-haskell/openal</li>
+<li>dev-haskell/opengl</li>
 </ul>
 <p>Still missing for:</p>
 <ul class="simple">
-<li>dev-haskell/alut</li>
-<li>dev-haskell/glut</li>
 <li>dev-havkell/hgl</li>
-<li>dev-haskell/openal</li>
-<li>dev-haskell/opengl</li>
 </ul>
 </div>
 <div class="section">
@@ -446,7 +446,16 @@ start rewriting the other packages until the dummys has been marked stable.</p>
 </div>
 <div class="section">
 <h2><a id="p-unmasking" name="p-unmasking">4.7&nbsp;&nbsp;&nbsp;p.unmasking</a></h2>
-<p>???</p>
+<ul class="simple">
+<li>update ghc-6.6.1 ebuild in portage from the overlay version</li>
+<li>update ghc and cabal eclasses in portage from the overlay versions</li>
+<li>merge any changes in the modular libs from the overlay</li>
+<li>unmask ghc-6.6.1 and associated modular libs</li>
+<li>put combined ghc-6.4.2 and 6.2.2 ebuilds into portage</li>
+<li>mask ghc-bin asking people to move to ghc with USE=binary</li>
+<li>make all other ebuilds depend on dev-lang/ghc rather than virtual/ghc</li>
+<li>remove ghc-bin and the ghc virtual</li>
+</ul>
 <!-- cleaned up conversation from 2007-03-01
 20:15 < dcoutts_> sure sure
 20:15 < dcoutts_> so we should add dummy packages now
