@@ -186,7 +186,7 @@ cabal-pkg() {
 	local err
 
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
-		sed -i "s|$(ghc-getghcpkg)|$(which true)|" .setup-config
+		sed -i "s|$(ghc-getghcpkg)|$(type -P true)|" .setup-config
 		./setup register || die "setup register failed"
 		if [[ -f .installed-pkg-config ]]; then
 			ghc-setup-pkg .installed-pkg-config
