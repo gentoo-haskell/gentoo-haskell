@@ -121,14 +121,14 @@ Modular libs has been added for:
 * dev-haskell/quickcheck
 * dev-haskell/time
 * dev-haskell/xhtml
+* dev-haskell/alut
+* dev-haskell/glut
+* dev-haskell/openal
+* dev-haskell/opengl
 
 Still missing for:
 
-* dev-haskell/alut
-* dev-haskell/glut
 * dev-havkell/hgl
-* dev-haskell/openal
-* dev-haskell/opengl
 
 Add dummy libs
 --------------
@@ -176,7 +176,14 @@ Packages that only compiles with GHC 6.6 can be added to, if p.masked.
 p.unmasking
 -----------
 
-???
+* update ghc-6.6.1 ebuild in portage from the overlay version
+* update ghc and cabal eclasses in portage from the overlay versions
+* merge any changes in the modular libs from the overlay
+* unmask ghc-6.6.1 and associated modular libs
+* put combined ghc-6.4.2 and 6.2.2 ebuilds into portage
+* mask ghc-bin asking people to move to ghc with USE=binary
+* make all other ebuilds depend on dev-lang/ghc rather than virtual/ghc
+* remove ghc-bin and the ghc virtual
 
 ..
     cleaned up conversation from 2007-03-01
