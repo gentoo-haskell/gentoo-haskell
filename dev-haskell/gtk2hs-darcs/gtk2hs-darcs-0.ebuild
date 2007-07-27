@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit base eutils ghc-package multilib autotools darcs
+inherit base eutils ghc-package multilib toolchain-funcs versionator autotools darcs
 
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
@@ -11,15 +11,14 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl firefox seamonkey profile"
+IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
 
 EDARCS_REPOSITORY="http://darcs.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
 EDARCS_LOCALREPO="gtk2hs"
 
-RDEPEND=">=dev-lang/ghc-6.0
+RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
-		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
@@ -28,9 +27,10 @@ RDEPEND=">=dev-lang/ghc-6.0
 				 >=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
 		seamonkey? ( >=www-client/seamonkey-1.0.2 )
-		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
+		firefox? ( >=www-client/mozilla-firefox-1.0.4 )
+		xulrunner? ( net-libs/xulrunner )"
 DEPEND="${RDEPEND}
-		doc? ( >=dev-haskell/haddock-0.7 )"
+		doc? ( >=dev-haskell/haddock-0.8 )"
 
 src_compile() {
 	# needed because we're using the darcs version
@@ -38,14 +38,17 @@ src_compile() {
 
 	econf \
 		--enable-packager-mode \
+		$(version_is_at_least "4.2" "$(gcc-version)" && \
+			echo --disable-split-objs) \
 		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
 		$(use_enable gnome svg) \
 		$(use_enable opengl opengl) \
-		$(use_enable seamonkey mozilla) \
+		$(use_enable seamonkey seamonkey) \
 		$(use_enable firefox firefox) \
+		$(use_enable xulrunner xulrunner) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
 		|| die "Configure failed"
@@ -92,7 +95,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
-		$(use seamonkey || use firefox && echo \
+		$(use seamonkey || use firefox || use xulrunner && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 }
