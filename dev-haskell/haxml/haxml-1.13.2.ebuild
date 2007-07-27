@@ -39,7 +39,7 @@ src_install() {
 	cabal_src_install
 
 	if use doc; then
-		dohtml docs/* docs/brubeck.gif
+		dohtml docs/*
 		dodoc docs/icfp99.dvi docs/icfp99.ps.gz
 	fi
 }

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="lib bin haddock"
+CABAL_FEATURES="lib bin haddock profile"
 inherit base haskell-cabal
 
 MY_PN=HaXml
@@ -48,7 +48,7 @@ src_install() {
 	cabal_src_install
 
 	if use doc; then
-		dohtml -r docs/*
+		dohtml docs/*
 		dodoc docs/icfp99.dvi docs/icfp99.ps.gz
 	fi
 }
