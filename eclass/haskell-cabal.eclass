@@ -127,7 +127,6 @@ cabal-haddock() {
 
 cabal-configure() {
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
-		cabalconf="${cabalconf} --enable-executable-profiling";
 		cabalconf="${cabalconf} --enable-library-profiling"
 	fi
 	# Building GHCi libs on ppc64 causes "TOC overflow".
