@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="haddock lib"
+CABAL_FEATURES="haddock lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="Utilities for filepath handling."
@@ -11,8 +11,8 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 
-#if possible try testing with "~ppc"
-KEYWORDS="~x86 ~amd64 ~sparc"
+#if possible try testing with "~ppc" and "~sparc"
+KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4"
