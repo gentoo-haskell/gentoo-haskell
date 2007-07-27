@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/gtk2hs/gtk2hs-0.9.10-r1.ebuild,v 1.1 2006/04/07 21:29:31 araujo Exp $
 
-inherit base eutils ghc-package multilib
+inherit base eutils ghc-package multilib toolchain-funcs versionator
 
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
@@ -14,9 +14,8 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
 
-RDEPEND=">=dev-lang/ghc-6.0
+RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
-		amd64? ( || ( >=dev-lang/ghc-6.4.2 >=dev-lang/ghc-bin-6.4.2 ) )
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
@@ -28,7 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.0
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )
 		xulrunner? ( net-libs/xulrunner )"
 DEPEND="${RDEPEND}
-		doc? ( >=dev-haskell/haddock-0.7 )"
+		doc? ( >=dev-haskell/haddock-0.8 )"
 
 src_compile() {
 	econf \
@@ -90,7 +89,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
-		$(use seamonkey || use firefox && echo \
+		$(use seamonkey || use firefox || use xulrunner && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 }
