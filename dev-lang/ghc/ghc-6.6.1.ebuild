@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base eutils flag-o-matic toolchain-funcs ghc-package
+inherit base eutils flag-o-matic toolchain-funcs ghc-package versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -240,6 +240,11 @@ src_compile() {
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
+		fi
+
+		# GHC <6.8 doesn't support GCC >=4.2, split objects fails.
+		if version_is_at_least "4.2" "$(gcc-version)"; then
+			echo "SplitObjs=NO" >> mk/build.mk
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
