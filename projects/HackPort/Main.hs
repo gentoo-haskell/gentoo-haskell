@@ -38,7 +38,8 @@ query name = do
 	let pkgs = searchIndex (\str _ -> str==name) cache
 	if null pkgs
 		then throwError (PackageNotFound (Left name))
-		else liftIO (putStr (unlines (map (showVersion.pkgVersion.package) pkgs)))
+		else (liftIO . putStr . unlines) $
+		     map (showPackageId . package) pkgs
 
 merge :: PackageIdentifier -> HPAction ()
 merge pid = do
