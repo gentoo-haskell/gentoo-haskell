@@ -1,8 +1,8 @@
 Name:		HackPort
-Version:	0.1
+Version:	0.2
 License:	GPL
 Author:		Henning Günther
-Build-Depends:	base, network, mtl, HTTP, Cabal, filepath, regex-compat, tar, zlib
+Build-Depends:	base, network, mtl, HTTP, Cabal < 1.1.7, filepath, regex-compat, tar, zlib
 Synopsis:	Hackage and Portage integration tool
 
 Executable:	hackport
