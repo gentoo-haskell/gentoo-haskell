@@ -3,6 +3,7 @@ module Main where
 import System.Environment
 import System.Exit
 import Distribution.Package
+import Distribution.PackageDescription
 import Data.Version
 import Control.Monad.Trans
 import Control.Monad.Error
@@ -14,45 +15,49 @@ import qualified Data.Set as Set
 
 import Action
 import Error
+import Cabal2Ebuild
 import GenerateEbuild
 import Bash
 import Config
 import Diff
 import Portage
 import Cache
+import Index
 import MaybeRead
-
-readCache' :: FilePath -> HPAction Cache
-readCache' portDir = let target=portDir++"/.hackagecache.xml" in readCache (portDir++"/.hackagecache.xml")
-		`sayDebug` ("Reading cache from '"++target++"'...",const "done.")
 
 listAll :: HPAction ()
 listAll = do
-	cache <- getPortageTree >>= readCache'
+	cache <- getPortageTree >>= readCache
 	liftIO $ putStr $ unlines 
-		[ showPackageId pkg | (pkg,_,_) <- sort $ packages cache ]
+		[ name++"-"++vers | (name,vers,_) <- cache ]
 
 query :: String -> HPAction ()
 query name = do
 	portTree <- getPortageTree
-	cache <- readCache' portTree
-	let pkgs = filter (\(PackageIdentifier {pkgName=str},_,_)->str==name) (packages cache)
-	if null pkgs then throwError (PackageNotFound (Left name)) else liftIO (putStr (unlines (map (showVersion.pkgVersion.(\(pkg,_,_)->pkg)) pkgs)))
+	cache <- readCache portTree
+	let pkgs = searchIndex (\str _ -> str==name) cache
+	if null pkgs
+		then throwError (PackageNotFound (Left name))
+		else liftIO (putStr (unlines (map (showVersion.pkgVersion.package) pkgs)))
 
 merge :: PackageIdentifier -> HPAction ()
 merge pid = do
 	portTree <- getPortageTree
-	cache <- readCache' portTree
-	rpid <- maybe (throwError (PackageNotFound (Right pid))) (return.id) (find (\(pkg,_,_)->pkg==pid) (packages cache))
-	ebuild <- hackage2ebuild rpid
-	mergeEbuild portTree ebuild
+	cache <- readCache portTree
+	whisper $ "Searching for: "++pkgName pid++"-"++showVersion (pkgVersion pid)
+	let pkgs = searchIndex (\name vers -> name == pkgName pid && vers == showVersion (pkgVersion pid)) cache
+	case pkgs of
+		[] -> throwError (PackageNotFound (Right pid))
+		[pkg] -> do 
+			ebuild <- fixSrc pid (cabal2ebuild pkg)
+			mergeEbuild portTree ebuild
 
 diff :: DiffMode -> HPAction ()
 diff mode = do
 	cfg <- getCfg
 	portTree <- getPortageTree
-	cache <- readCache' portTree
-	let serverPkgs'=map (\(pkg,_,_)->pkg {pkgName=map toLower (pkgName pkg)}) (packages cache)
+	cache <- readCache portTree
+	let serverPkgs'=map (\(_,_,pd)-> (package pd) {pkgName=map toLower (pkgName $ package pd)}) cache
 	portTree <- getPortageTree
 	portagePkgs <- portageGetPackages portTree
 	let (inport,inhack,inboth)=diffSet (Set.fromList portagePkgs) (Set.fromList serverPkgs')
@@ -107,7 +112,7 @@ hpmain = do
 main :: IO ()
 main = performHPAction hpmain
 
-instance Ord PackageIdentifier where
+{-instance Ord PackageIdentifier where
 	compare pkg1 pkg2 = case compare (pkgName pkg1) (pkgName pkg2) of
 		EQ -> compare (pkgVersion pkg1) (pkgVersion pkg2)
-		x -> x
+		x -> x-}

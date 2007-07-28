@@ -77,10 +77,10 @@ ebuildTemplate = EBuild {
     src_uri = "",
     license = "",
     slot = "0",
-    keywords = ["~x86"],
+    keywords = ["~amd64","~x86"],
     iuse = [],
     depend = [],
-    features = ["haddock"],
+    features = ["profile","haddock"],
     licenseComments = "",
     cabalPath = Nothing,
     my_pn = Nothing
@@ -155,10 +155,6 @@ standardLibs =
   ,"template-haskell"
   ,"unix"
   ,"parsec"
-  ,"haskell-src"
-  ,"network"
-  ,"QuickCheck"
-  ,"HUnit"
   ,"stm"
   ,"readline"
   ,"lang"
@@ -192,7 +188,7 @@ showEBuild ebuild =
   ss "SLOT=". quote (slot ebuild). nl.
   nl.
   ss "#if possible try testing with \"~amd64\", \"~ppc\", \"~ppc64\" and \"~sparc\"". nl.
-  ss "KEYWORDS=". quote' (sepBy ", " $ keywords ebuild).nl.
+  ss "KEYWORDS=". quote' (sepBy " " $ keywords ebuild).nl.
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
   ss "DEPEND=". quote' (sepBy "\n\t\t" $ map showDepend $ depend ebuild). nl.

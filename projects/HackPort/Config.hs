@@ -1,5 +1,6 @@
 module Config where
 
+import Network.URI
 import System.Console.GetOpt
 import Control.Exception
 import Text.Regex
@@ -9,12 +10,10 @@ import Error
 import MaybeRead
 
 data HackPortOptions
-	= TarCommand String
-	| PortageTree String
+	= PortageTree String
 	| Category String
 	| Server String
 	| TempDir String
-	| Verify
 	| Verbosity String
 
 data OperationMode
@@ -34,12 +33,10 @@ data DiffMode
 	deriving Eq
 
 data Config = Config
-	{ tarCommand		::String
-	, portageTree		::Maybe String
+	{ portageTree		::Maybe String
 	, portageCategory	::String
-	, server		::String
+	, server		::URI
 	, tmp			::String
-	, verify		::Bool
 	, verbosity		::Verbosity
 	}
 
@@ -52,24 +49,21 @@ packageRegex = mkRegex "^(.*?)-([0-9].*)$"
 
 defaultConfig :: Config
 defaultConfig = Config
-	{ tarCommand = "/bin/tar"
-	, portageTree = Nothing
+	{ portageTree = Nothing
 	, portageCategory = "dev-haskell"
-	, server = "http://hackage.haskell.org/ModHackage/Hackage.hs?action=xmlrpc"
+	, server = URI "http:" (Just $ URIAuth "" "hackage.haskell.org" "") "/packages/archive/" "" ""
 	, tmp = "/tmp"
-	, verify = False
 	, verbosity = Normal
 	}
 
 hackageOptions :: [OptDescr HackPortOptions]
-hackageOptions = [Option ['p'] ["portage-tree"] (ReqArg PortageTree "PATH") "The portage tree to merge to"
-	  ,Option ['c'] ["portage-category"] (ReqArg Category "CATEGORY") "The cateory the program belongs to"
-	  ,Option ['s'] ["server"] (ReqArg Server "URL") "The Hackage server to query"
-	  ,Option ['t'] ["temp-dir"] (ReqArg TempDir "PATH") "A temp directory where tarballs can be stored"
-          ,Option [] ["tar"] (ReqArg TarCommand "PATH") "Path to the \"tar\" executable"
-	  ,Option [] ["verify"] (NoArg Verify) "Verify downloaded tarballs using GnuPG"
-	  ,Option ['v'] ["verbosity"] (ReqArg Verbosity "debug|normal|silent") "Set verbosity level(default is 'normal')"
-	  ]
+hackageOptions =
+	[Option ['p'] ["portage-tree"] (ReqArg PortageTree "PATH") "The portage tree to merge to"
+	,Option ['c'] ["portage-category"] (ReqArg Category "CATEGORY") "The cateory the program belongs to"
+	,Option ['s'] ["server"] (ReqArg Server "URL") "The Hackage server to query"
+	,Option ['t'] ["temp-dir"] (ReqArg TempDir "PATH") "A temp directory where tarballs can be stored"
+	,Option ['v'] ["verbosity"] (ReqArg Verbosity "debug|normal|silent") "Set verbosity level(default is 'normal')"
+	]
 
 parseConfig :: [String] -> Either String ([HackPortOptions],OperationMode)
 parseConfig opts = let

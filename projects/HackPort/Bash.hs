@@ -22,7 +22,7 @@ getOverlay = do
   search mul = do
     let loop [] = throwError $ MultipleOverlays mul
         loop (x:xs) = (do
-          found <- liftIO (doesFileExist (x ++ "/.hackagecache.xml"))
+          found <- liftIO (doesFileExist (x ++ "/00-index.tar.gz"))
 	  	`sayDebug` ("Checking '"++x++"'...\n",\res->if res then "found.\n" else "not found.")
           if found
             then return x

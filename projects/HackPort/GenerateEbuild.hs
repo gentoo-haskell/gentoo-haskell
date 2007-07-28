@@ -2,8 +2,8 @@ module GenerateEbuild where
 
 import Action
 import Cabal2Ebuild
-import Fetch
-import TarUtils
+--import Fetch
+--import TarUtils
 import Config
 import Error
 
@@ -13,6 +13,8 @@ import Control.Monad.Error
 import Control.Exception
 import Distribution.PackageDescription
 import Distribution.Package
+import Data.Version (showVersion)
+import Network.URI
 import System.Directory
 
 mergeEbuild :: FilePath -> EBuild -> HPAction ()
@@ -25,7 +27,19 @@ mergeEbuild target ebuild = do
 	liftIO (writeFile epath (showEBuild ebuild))
 		`sayNormal` ("Merging to '"++epath++"'... ",const "done.")
 
-hackage2ebuild ::
+fixSrc :: PackageIdentifier -> EBuild -> HPAction EBuild
+fixSrc p ebuild = if null (src_uri ebuild)
+	then (do
+		cfg <- getCfg
+		return $ ebuild
+			{src_uri = show $ (server cfg) {uriPath = (uriPath (server cfg))
+				++"/"++ pkgName p
+				++"/"++ showVersion (pkgVersion p)
+				++"/"++ pkgName p ++ "-" ++ showVersion (pkgVersion p) ++ ".tar.gz"}
+			})
+	else return ebuild
+
+{-hackage2ebuild ::
 	(PackageIdentifier,String,String) ->	-- ^ the package
 	HPAction EBuild
 hackage2ebuild (pkg,tarball,sig) = do
@@ -49,4 +63,4 @@ hackage2ebuild (pkg,tarball,sig) = do
 		ParseOk descr -> return descr
 		`sayDebug` ("Parsing '"++cabalName++"'... ",const "done.")
 	let ebuild=cabal2ebuild (packageDescription{pkgUrl=tarball}) --we don't trust the cabal file as we just successfully downloaded the tarbal somewhere
-	return ebuild {cabalPath=Just cabalDir}
+	return ebuild {cabalPath=Just cabalDir}-}

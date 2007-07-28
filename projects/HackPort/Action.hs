@@ -5,6 +5,7 @@ import Error
 
 import Control.Monad.State
 import Control.Monad.Error
+import Network.URI (parseURI)
 import System.IO
 import System.Environment
 
@@ -99,12 +100,12 @@ loadConfig = do
 
 optionToConfig :: Config -> HackPortOptions -> HPAction Config
 optionToConfig cfg opt = case opt of
-	TarCommand str -> return cfg { tarCommand = str }
 	PortageTree str -> return cfg { portageTree = Just str }
 	Category str -> return cfg { portageCategory = str }
-	Server str -> return cfg { server = str }
+	Server str -> case parseURI str of
+		Nothing -> throwError (InvalidServer str)
+		Just uri -> return cfg { server = uri }
 	TempDir str -> return cfg { tmp = str }
-	Verify -> return cfg { verify = True }
 	Verbosity str -> case parseVerbosity str of
 		Nothing -> throwError (UnknownVerbosityLevel str)
 		Just verb -> return cfg { verbosity=verb }
