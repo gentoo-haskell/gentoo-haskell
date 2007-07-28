@@ -16,28 +16,32 @@ import Distribution.Package
 import Data.Version (showVersion)
 import Network.URI
 import System.Directory
+import System.FilePath
 
 mergeEbuild :: FilePath -> EBuild -> HPAction ()
 mergeEbuild target ebuild = do
 	cfg <- getCfg
-	let edir = target++"/"++(portageCategory cfg)++"/"++(name ebuild)
-	let epath = edir++"/"++(name ebuild)++"-"++(version ebuild)++".ebuild"
+	let edir = target </> portageCategory cfg </> name ebuild
+	let epath = edir </> name ebuild ++"-"++ version ebuild <.> "ebuild"
 	liftIO (createDirectoryIfMissing True edir)
 		`sayDebug` ("Creating '"++edir++"'... ",const "done.")
 	liftIO (writeFile epath (showEBuild ebuild))
 		`sayNormal` ("Merging to '"++epath++"'... ",const "done.")
 
 fixSrc :: PackageIdentifier -> EBuild -> HPAction EBuild
-fixSrc p ebuild = if null (src_uri ebuild)
-	then (do
-		cfg <- getCfg
-		return $ ebuild
-			{src_uri = show $ (server cfg) {uriPath = (uriPath (server cfg))
-				++"/"++ pkgName p
-				++"/"++ showVersion (pkgVersion p)
-				++"/"++ pkgName p ++ "-" ++ showVersion (pkgVersion p) ++ ".tar.gz"}
-			})
-	else return ebuild
+fixSrc p ebuild | null (src_uri ebuild) = do
+	cfg <- getCfg
+	return $ ebuild {
+		src_uri = show $ (server cfg) {
+			uriPath = (uriPath (server cfg))
+				</> pkgName p
+				</> showVersion (pkgVersion p)
+				</> pkgName p ++ "-" ++
+					showVersion (pkgVersion p)
+				<.> "tar.gz"
+			}
+		}
+		| otherwise = return ebuild
 
 {-hackage2ebuild ::
 	(PackageIdentifier,String,String) ->	-- ^ the package
