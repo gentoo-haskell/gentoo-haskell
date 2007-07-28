@@ -105,7 +105,7 @@ cabal2ebuild pkg = ebuildTemplate {
   } where
   	cabalPkgName = Cabal.pkgName (Cabal.package pkg)
 
-defaultDepGHC     = OrLaterVersionOf "6.2.2" "virtual/ghc"
+defaultDepGHC     = OrLaterVersionOf "6.4.2" "dev-lang/ghc"
 
 -- map the cabal license type to the gentoo license string format
 convertLicense :: Cabal.License -> String
@@ -128,8 +128,8 @@ convertDependencies = catMaybes . map convertDependency
 
 convertDependency :: Cabal.Dependency -> Maybe Dependency
 convertDependency (Cabal.Dependency name versionRange)
-  | name `elem` standardLibs = Nothing      -- no explicit dep on standard libs
-  | otherwise                = Just $ convert versionRange
+  | name `elem` coreLibs = Nothing      -- no explicit dep on core libs
+  | otherwise            = Just $ convert versionRange
 
   where
     ebuildName = "dev-haskell/" ++ map toLower name
@@ -148,7 +148,7 @@ convertDependency (Cabal.Dependency name versionRange)
 --    convert (Cabal.IntersectVersionRanges r1 r2)
 --      = convert r1 ++ "&&" ++ convert r2
 
-standardLibs =
+coreLibs =
   ["rts"
   ,"base"
   ,"haskell98"
@@ -156,20 +156,11 @@ standardLibs =
   ,"unix"
   ,"parsec"
   ,"stm"
-  ,"readline"
-  ,"lang"
-  ,"concurrent"
-  ,"posix"
-  ,"util"
-  ,"data"
-  ,"text"
-  ,"net"
-  ,"hssource"
-  ,"mtl"]
+  ,"readline"]
 
 showEBuild :: EBuild -> String
 showEBuild ebuild =
-  ss "# Copyright 1999-2006 Gentoo Foundation". nl.
+  ss "# Copyright 1999-2007 Gentoo Foundation". nl.
   ss "# Distributed under the terms of the GNU General Public License v2". nl.
   ss "# $Header:  $". nl.
   nl.
@@ -182,12 +173,11 @@ showEBuild ebuild =
   ss "SRC_URI=". quote (replaceVars (src_uri ebuild)).
      (if null (src_uri ebuild) then ss "\t#Fixme: please fill in manually"
          else id). nl.
+  nl.
   ss "LICENSE=". quote (license ebuild).
      (if null (licenseComments ebuild) then id
          else ss "\t#". ss (licenseComments ebuild)). nl.
   ss "SLOT=". quote (slot ebuild). nl.
-  nl.
-  ss "#if possible try testing with \"~amd64\", \"~ppc\", \"~ppc64\" and \"~sparc\"". nl.
   ss "KEYWORDS=". quote' (sepBy " " $ keywords ebuild).nl.
   ss "IUSE=". quote' (sepBy ", " $ iuse ebuild). nl.
   nl.
