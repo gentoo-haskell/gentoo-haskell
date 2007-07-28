@@ -29,7 +29,7 @@ alarmingLongTime = TimeDiff
 	}
 
 cacheURI :: URI -> URI
-cacheURI uri = uri {uriPath = uriPath uri++"/00-index.tar.gz"}
+cacheURI uri = uri {uriPath = uriPath uri </> "00-index.tar.gz"}
 
 updateCache :: HPAction ()
 updateCache = do

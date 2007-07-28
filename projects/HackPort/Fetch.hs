@@ -9,6 +9,7 @@ import Text.Regex (Regex,mkRegex,matchRegex)
 import System.GPG
 import Control.Monad.Error
 import System.Directory
+import System.FilePath
 import Data.Typeable
 
 import Error
@@ -28,7 +29,7 @@ downloadURI path uri = do
 	httpResult <- liftIO $ simpleHTTP request
 	Response {rspCode=code,rspBody=body,rspReason=reason} <- either (\x->throwError $ DownloadFailed (show uri) "Connection failed") return httpResult
 	if code==(2,0,0) then (do
-		let writePath=path++"/"++fileName
+		let writePath=path </> fileName
 		liftIO $ writeFile writePath body
 		return writePath) else throwError $ DownloadFailed (show uri) ("Code "++show code++":"++reason)
 	where
