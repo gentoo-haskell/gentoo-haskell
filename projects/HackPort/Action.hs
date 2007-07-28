@@ -109,6 +109,7 @@ optionToConfig cfg opt = case opt of
 	Verbosity str -> case parseVerbosity str of
 		Nothing -> throwError (UnknownVerbosityLevel str)
 		Just verb -> return cfg { verbosity=verb }
+	Help -> return cfg
 
 performHPAction :: HPAction a -> IO ()
 performHPAction action = do

@@ -15,6 +15,7 @@ data HackPortOptions
 	| Server String
 	| TempDir String
 	| Verbosity String
+	| Help
 
 data OperationMode
 	= Query String
@@ -62,13 +63,17 @@ hackageOptions =
 	,Option ['c'] ["portage-category"] (ReqArg Category "CATEGORY") "The cateory the program belongs to"
 	,Option ['s'] ["server"] (ReqArg Server "URL") "The Hackage server to query"
 	,Option ['t'] ["temp-dir"] (ReqArg TempDir "PATH") "A temp directory where tarballs can be stored"
-	,Option ['v'] ["verbosity"] (ReqArg Verbosity "debug|normal|silent") "Set verbosity level(default is 'normal')"
+	,Option ['v'] ["verbosity"] (ReqArg Verbosity "debug|normal|silent") "Set verbosity level (default is 'normal')"
+	,Option ['h', '?'] ["help"] (NoArg Help) "Display this help message"
 	]
 
 parseConfig :: [String] -> Either String ([HackPortOptions],OperationMode)
 parseConfig opts = let
 	(popts,args,errs) = getOpt Permute hackageOptions opts
-	mode = if not (null errs) then Left ("Error while parsing flags:\n"++concat errs) else case args of
+	mode | not (null errs) = Left $ "Error while parsing flags:\n"
+	                             ++ concat errs
+	     | not (null [ () | Help <- popts ]) = Right ShowHelp
+	     | otherwise = case args of
 		"query":[] -> Left "Need a package name to query.\n"
 		"query":package:[] -> Right (Query package)
 		"query":package:rest -> Left ("'query' takes one argument("++show ((length rest)+1)++" given).\n")
