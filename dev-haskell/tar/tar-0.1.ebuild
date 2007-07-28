@@ -17,3 +17,10 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4.2
 		>=dev-haskell/binary-0.2
 		>=dev-haskell/unix-compat-0.1"
+
+src_unpack() {
+	unpack "${A}"
+
+	# fix haddock markup
+	sed -i -e 's|@/@|@\\/@|' "${S}/Codec/Archive/Tar/Types.hs"
+}
