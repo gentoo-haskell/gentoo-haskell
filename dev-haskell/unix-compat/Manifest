@@ -1,0 +1,12 @@
+DIST unix-compat-0.1.tar.gz 6212 RMD160 40b083dbfd481cf7892b4fbed165115a3732f53c SHA1 3d3a1f16f9df26eeff82d1bb6fc242d2362fbfbe SHA256 858eae0aef130b0707f34e03f3e06d038e8e9539b1a640dfc15fd28fac21f467
+EBUILD unix-compat-0.1.ebuild 478 RMD160 b24c9a729728eef4c2ae11699a3c4c3aa11a1d58 SHA1 824b1cba6d1a500ce72a7ccf6fd6253b59e4bdc7 SHA256 e0936371fe8dd8c3ee43ad6e4cb3fcfd91b982df165bdad4df0788f75fe1e681
+MD5 a32c08ec2eb2200da76b6d8ca2900a5d unix-compat-0.1.ebuild 478
+RMD160 b24c9a729728eef4c2ae11699a3c4c3aa11a1d58 unix-compat-0.1.ebuild 478
+SHA256 e0936371fe8dd8c3ee43ad6e4cb3fcfd91b982df165bdad4df0788f75fe1e681 unix-compat-0.1.ebuild 478
+MISC .unix-compat-0.1.ebuild.swp 12288 RMD160 80571d8c9793090e0ad8a8bd5b114fbbcfa3ff34 SHA1 2985b66d52268bd95e490553077c036e822e81ec SHA256 82903d8d1a79bd94b1a2502c1afe3531dedde8e75e004bfbe434aedd60a9b88a
+MD5 6e83b9152fe494e5f1dc97a13f1b9dc5 .unix-compat-0.1.ebuild.swp 12288
+RMD160 80571d8c9793090e0ad8a8bd5b114fbbcfa3ff34 .unix-compat-0.1.ebuild.swp 12288
+SHA256 82903d8d1a79bd94b1a2502c1afe3531dedde8e75e004bfbe434aedd60a9b88a .unix-compat-0.1.ebuild.swp 12288
+MD5 ea50aaf51d2f6ceff4c9c0d49cbf04f0 files/digest-unix-compat-0.1 241
+RMD160 a8155b36e5af02ada6c5fa0624eb9d0fc8a8af4a files/digest-unix-compat-0.1 241
+SHA256 a3eba9d57e42169bb8c5082da3d6c0fc2e42e225ba36c9db746b5c91d924460f files/digest-unix-compat-0.1 241
