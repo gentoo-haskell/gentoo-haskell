@@ -24,6 +24,12 @@ src_unpack() {
 
 	# change -O2 to -O
 	sed -i -e "s/GHC-Options: -O2/GHC-Options: -O/" "${S}/LDAP.cabal"
+
+	# Aarg! Fix version number
+	sed -i -e "s/Version: 0.5.2/Version: 0.6.1/" "${S}/LDAP.cabal"
+
+	# For some reason ldap_unbind is deprecated in openldap
+	echo "CC-Options: -DLDAP_DEPRECATED" >> "${S}/LDAP.cabal"
 }
 
 src_install() {
