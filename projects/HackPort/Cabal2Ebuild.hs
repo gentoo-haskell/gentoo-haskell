@@ -153,10 +153,14 @@ coreLibs =
   ,"base"
   ,"haskell98"
   ,"template-haskell"
+  ,"ghc"
   ,"unix"
   ,"parsec"
   ,"stm"
-  ,"readline"]
+  ,"readline"
+  ,"regex-base"
+  ,"regex-compat"
+  ,"regex-posix"]
 
 showEBuild :: EBuild -> String
 showEBuild ebuild =
