@@ -6,22 +6,19 @@ CABAL_FEATURES="bin"
 inherit darcs haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
-HOMEPAGE="http://www.haskell.org/~gentoo/gentoo-haskell/_darcs/current/projects/HackPort/"
+HOMEPAGE="http://www.haskell.org/~gentoo/hackport/"
+EDARCS_REPOSITORY="http://www.haskell.org/~gentoo/hackport/"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="<dev-haskell/cabal-1.1.7
-	dev-haskell/filepath
-	dev-haskell/http
-	dev-haskell/mtl
-	dev-haskell/network
-	dev-haskell/tar
-	dev-haskell/zlib"
-RDEPEND="${DEPEND}"
-
-EDARCS_GET_CMD="get --partial"
-EDARCS_REPOSITORY="http://www.haskell.org/~gentoo/gentoo-haskell/"
-S="${WORKDIR}/${P}/projects/HackPort/"
+DEPEND="dev-lang/ghc
+		<dev-haskell/cabal-1.1.7
+		dev-haskell/filepath
+		dev-haskell/http
+		dev-haskell/mtl
+		dev-haskell/network
+		dev-haskell/tar
+		dev-haskell/zlib"
