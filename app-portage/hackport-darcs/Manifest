@@ -1,0 +1,7 @@
+EBUILD hackport-darcs-0.ebuild 676 RMD160 b6f3869b2afbbdfd5899f112c454a87fbb90cc13 SHA1 50a90dea68e84e710569fe5b51d8f074cd871e2d SHA256 325f53f41285fc3efa01a02960aa4b7b45572f635eb82d9595a9867ac05eaaab
+MD5 36938979aeafc4dd728d635e148fe050 hackport-darcs-0.ebuild 676
+RMD160 b6f3869b2afbbdfd5899f112c454a87fbb90cc13 hackport-darcs-0.ebuild 676
+SHA256 325f53f41285fc3efa01a02960aa4b7b45572f635eb82d9595a9867ac05eaaab hackport-darcs-0.ebuild 676
+MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-hackport-darcs-0 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-hackport-darcs-0 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-hackport-darcs-0 0
