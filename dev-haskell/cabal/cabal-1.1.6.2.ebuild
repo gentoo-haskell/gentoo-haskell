@@ -8,31 +8,26 @@ inherit haskell-cabal eutils
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
 SRC_URI="http://haskell.org/cabal/release/${P}/${P}.tar.gz"
+
 LICENSE="as-is"
 SLOT="0"
-
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.2"
 
-GHC_PV="6.6.1"
+CABAL_CORE_LIB_GHC_PV="6.6.1"
 
 src_unpack() {
-	if test $(ghc-version) = ${GHC_PV}; then
-	    elog "cabal-${PV} is included in ghc-${GHC_PV}, nothing to install."
-	else
-		unpack "${A}"
-		if ! $(ghc-cabal); then
-			sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
-				${S}/Cabal.cabal
-		fi
+	unpack "${A}"
+	if ! $(ghc-cabal); then
+		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
+			${S}/Cabal.cabal
 	fi
 }
 
 src_compile() {
-	if ! test $(ghc-version) = ${GHC_PV}; then
+	if ! cabal-is-dummy-lib; then
 		if ghc-cabal; then
 			make setup HC="$(ghc-getghc) -ignore-package Cabal"
 		else
@@ -44,20 +39,14 @@ src_compile() {
 }
 
 src_install() {
-	if test $(ghc-version) = ${GHC_PV}; then
-		dodir "$(ghc-confdir)"
-		echo '[]' > "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
-	else
-		cabal_src_install
+	cabal_src_install
 
-		# documentation (install directly)
+	# documentation (install directly)
+	if use doc; then
 		dohtml -r doc/users-guide
-		if use doc; then
-			dohtml -r doc/API
-			dohtml -r doc/pkg-spec-html
-			dodoc doc/pkg-spec.pdf
-		fi
-		dodoc changelog copyright README releaseNotes TODO
+		dohtml -r doc/API
+		dohtml -r doc/pkg-spec-html
+		dodoc doc/pkg-spec.pdf
 	fi
+	dodoc changelog copyright README releaseNotes TODO
 }
-

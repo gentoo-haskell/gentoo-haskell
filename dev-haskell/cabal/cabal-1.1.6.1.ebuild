@@ -8,11 +8,10 @@ inherit haskell-cabal eutils
 DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
 HOMEPAGE="http://haskell.org/cabal"
 SRC_URI="http://haskell.org/cabal/release/${P}/${P}.tar.gz"
+
 LICENSE="as-is"
 SLOT="0"
-
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.2"
@@ -39,12 +38,11 @@ src_install() {
 	cabal_src_install
 
 	# documentation (install directly)
-	dohtml -r doc/users-guide
 	if use doc; then
+		dohtml -r doc/users-guide
 		dohtml -r doc/API
 		dohtml -r doc/pkg-spec-html
 		dodoc doc/pkg-spec.pdf
 	fi
 	dodoc changelog copyright README releaseNotes TODO
 }
-
