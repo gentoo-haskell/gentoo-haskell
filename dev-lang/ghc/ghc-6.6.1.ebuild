@@ -272,6 +272,11 @@ src_install() {
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 
+		# TODO: this will not be necessary after version 6.6.1 since the .tbz2
+		# packages will have been regenerated with package.conf.shipped files.
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
+			|| die "failed to copy package.conf"
+
 		doenvd "${FILESDIR}/10ghc"
 	else
 		local insttarget="install"
@@ -305,7 +310,6 @@ src_install() {
 		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
 			|| die "failed to copy package.conf"
 	fi
-	
 }
 
 pkg_postinst() {

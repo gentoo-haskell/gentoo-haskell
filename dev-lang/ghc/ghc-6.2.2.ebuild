@@ -242,6 +242,9 @@ src_install() {
 		mkdir "${D}/opt"
 		mv "${S}/usr" "${D}/opt/ghc"
 
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
+			|| die "failed to copy package.conf"
+
 		doenvd "${FILESDIR}/10ghc"
 	else
 		# the libdir0 setting is needed for amd64, and does not
@@ -259,6 +262,9 @@ src_install() {
 		dodoc README ANNOUNCE LICENSE VERSION
 
 		dosbin ${FILESDIR}/ghc-updater
+
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
+			|| die "failed to copy package.conf"
 	fi
 
 	if use doc; then
@@ -295,8 +301,12 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	# Delete the GHC package database
-	use binary && GHC_PREFIX="${ROOT}opt/ghc" || GHC_PREFIX="${ROOT}usr"
-	GHC_PKG_DB="${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
-	rm -f ${GHC_PKG_DB} ${GHC_PKG_DB}.old
+	# Overwrite the (potentially) modified package.conf with a copy of the
+	# original one, so that it will be removed during uninstall.
+
+	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
+
+	cp -p "${PKG}"{.shipped,}
+
+	[ -f ${PKG}.old ] && rm "${PKG}.old"
 }
