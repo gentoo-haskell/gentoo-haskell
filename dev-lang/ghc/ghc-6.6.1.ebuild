@@ -345,5 +345,5 @@ pkg_prerm() {
 
 	cp -p "${PKG}"{.shipped,}
 
-	[ -f ${PKG}.old ] && rm "${PKG}.old"
+	[[ -f ${PKG}.old ]] && rm "${PKG}.old"
 }
