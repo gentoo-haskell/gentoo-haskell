@@ -17,5 +17,3 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4.1
 		dev-haskell/mtl
 		dev-haskell/network"
-
-S="${WORKDIR}/${PN}"

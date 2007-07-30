@@ -1,0 +1,8 @@
+DIST syb-with-class-0.3.tar.gz 10650 RMD160 76c16c6a903c09cad2fe65fcd4fe376f4320575d SHA1 5550d1f289ebad2849f23a6ab4c1cc3f92cf6aef SHA256 597249f0949a5a066cfd948d3e68d2ea3701b9566702751d201eec67d8dd8a65
+EBUILD syb-with-class-0.3.ebuild 406 RMD160 435f3d7d851d36c48d1a344da746d717fdb4fb86 SHA1 b61dc8721fe3c336e598b50a292a16229e2dac2c SHA256 a98971c6a35f2a9dfd95f009fb9bd4b0121f8664d7458239081fdccac050981d
+MD5 4ba78b592fa820b43f22f7817640fa7e syb-with-class-0.3.ebuild 406
+RMD160 435f3d7d851d36c48d1a344da746d717fdb4fb86 syb-with-class-0.3.ebuild 406
+SHA256 a98971c6a35f2a9dfd95f009fb9bd4b0121f8664d7458239081fdccac050981d syb-with-class-0.3.ebuild 406
+MD5 11af91383fbe41b544a4816c904ba38d files/digest-syb-with-class-0.3 253
+RMD160 c227bbfeef0b9237e428ea2b8ec2554710a28f29 files/digest-syb-with-class-0.3 253
+SHA256 354c5ac54e1c297f8adece971ffa8bbba52df4001c46c4d896d2f3e121f50bce files/digest-syb-with-class-0.3 253

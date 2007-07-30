@@ -1,0 +1,8 @@
+DIST generic-xml-0.1.tar.gz 4252 RMD160 6b1ca670c0a1c52d82bcc035af24cbc2002e1265 SHA1 ed090cbff8154f10e67ad01481a0ac98ff81030b SHA256 4d5a61c57aea8d28c3452574c8e0cf2f2e90dd1df8e4c5c9c9967190184fde21
+EBUILD generic-xml-0.1.ebuild 478 RMD160 bf87d97e85ae2a2ccf2786f1bcdce047f9dc029f SHA1 7a7c170be075ad84663f6ada8f62cf867c18ae74 SHA256 ebd701f015663dbc74f89894c86a471e194c2b3f83ce030a650d4d6106c3551a
+MD5 3298c5035dfb18832cf902497b51a1ef generic-xml-0.1.ebuild 478
+RMD160 bf87d97e85ae2a2ccf2786f1bcdce047f9dc029f generic-xml-0.1.ebuild 478
+SHA256 ebd701f015663dbc74f89894c86a471e194c2b3f83ce030a650d4d6106c3551a generic-xml-0.1.ebuild 478
+MD5 6bcdae841bc784ec10eec66a3f9fae84 files/digest-generic-xml-0.1 241
+RMD160 fabb18f74aba70b56ec95f6e84db1aad70c5daea files/digest-generic-xml-0.1 241
+SHA256 ca194921c43bdd322b6cb9abfe678a8650c5ca85a9685859ea1806e9b894d6c0 files/digest-generic-xml-0.1 241

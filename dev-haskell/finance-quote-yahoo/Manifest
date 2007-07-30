@@ -1,0 +1,8 @@
+DIST Finance-Quote-Yahoo-0.2.tar.gz 5088 RMD160 758886dae81a97a9f15687194abe214a9025acab SHA1 9c1098986271bde99cb372d9ebbc3657cbfcd225 SHA256 4fd13bc54734ceba32b13b3eb771afe5bac6efa5848b1f4401db7ca6153c3adf
+EBUILD finance-quote-yahoo-0.2.ebuild 658 RMD160 40d00ae8cb1f1a0439e95dcfa0e6b6c8f67bf463 SHA1 a44b57bb7455d412d2e69666a2625a50b9e51e3e SHA256 59e26903a09c5c1356a3a54f04050e36d9de5fd5c3cd320fd815c68132786287
+MD5 403876cb1c1dcefb2ed91a582c19fbb9 finance-quote-yahoo-0.2.ebuild 658
+RMD160 40d00ae8cb1f1a0439e95dcfa0e6b6c8f67bf463 finance-quote-yahoo-0.2.ebuild 658
+SHA256 59e26903a09c5c1356a3a54f04050e36d9de5fd5c3cd320fd815c68132786287 finance-quote-yahoo-0.2.ebuild 658
+MD5 d806b3ecabce1a867b613a736c25f320 files/digest-finance-quote-yahoo-0.2 265
+RMD160 89b8f8e7e3b9580a4c02c0858b21a44bdda43f77 files/digest-finance-quote-yahoo-0.2 265
+SHA256 5a1752ee2f18d0efb2c50ae2e65cf3c0f2150638ccf707ab5efb94eaeea49f83 files/digest-finance-quote-yahoo-0.2 265
