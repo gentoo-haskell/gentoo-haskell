@@ -1,0 +1,16 @@
+DIST regex-posix-0.71.tar.gz 69235 RMD160 290b042b802903ab4c4baca3830e4fe10ce4060a SHA1 302867bfd8babc07dd66c6dcc6a9dce110f5926e SHA256 c1a49ed802a1acf295726d46cf2726d7f9ed8665f4dd83e1411b77e1dcb4a529
+DIST regex-posix-0.92.tar.gz 11736 RMD160 cfd62ce600daa5ad3b8165bc062b212028dfcdd3 SHA1 f32e33c8834e53ae18bdc00a84bf851791c90cce SHA256 648d08cd38b01a053800213ef65c795a8a96ab49ebfa108620c8d52fd8d6f98a
+EBUILD regex-posix-0.71.ebuild 503 RMD160 9025e90951b5e728a26906cc0a326f32a6f79b54 SHA1 66a9bcbe6ff54c8839c3afa000a13ea2ab4ece3c SHA256 ebc19336c076f291dd8081a17a2cee0ce001cfe1e18dae58c599744811e67a3a
+MD5 c6a64b600d4cf7a1db8197037f04f458 regex-posix-0.71.ebuild 503
+RMD160 9025e90951b5e728a26906cc0a326f32a6f79b54 regex-posix-0.71.ebuild 503
+SHA256 ebc19336c076f291dd8081a17a2cee0ce001cfe1e18dae58c599744811e67a3a regex-posix-0.71.ebuild 503
+EBUILD regex-posix-0.92.ebuild 473 RMD160 1a7981a16d979cfba083a1a00e9f3d9f290d1fd7 SHA1 f565c4b54438152391e6a1159ac98ee09e10e0b3 SHA256 97e891bb197bc76eb62aefc847cc78a4695e316ca5a83a8def5fbb71eadfeff1
+MD5 100f2579fd4cc5e58d0e6e983aa636ad regex-posix-0.92.ebuild 473
+RMD160 1a7981a16d979cfba083a1a00e9f3d9f290d1fd7 regex-posix-0.92.ebuild 473
+SHA256 97e891bb197bc76eb62aefc847cc78a4695e316ca5a83a8def5fbb71eadfeff1 regex-posix-0.92.ebuild 473
+MD5 ee17fe2a26393a80fae058f758a75047 files/digest-regex-posix-0.71 247
+RMD160 d1a4536dd0d6fb4fdccb41621eb4db5064478d2e files/digest-regex-posix-0.71 247
+SHA256 3a665713673f65732b9c29ff0b5f6c6f250c23a3afa8871a90c214bad2b3eb90 files/digest-regex-posix-0.71 247
+MD5 4cbb92fac2ba4ba872597293ceaf687d files/digest-regex-posix-0.92 247
+RMD160 f7311b6dc939bdb7abd98ce64ea145b5376c24a3 files/digest-regex-posix-0.92 247
+SHA256 cce976ca53c0936e315ef2ef2cdcdc6a6bbd6071148c8f8df62261f9e0f08d58 files/digest-regex-posix-0.92 247
