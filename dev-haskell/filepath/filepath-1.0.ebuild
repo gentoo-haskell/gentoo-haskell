@@ -16,3 +16,5 @@ KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4"
+
+CABAL_CORE_LIB_GHC_PV="6.6.1"
