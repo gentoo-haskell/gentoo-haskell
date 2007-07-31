@@ -15,3 +15,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2"
+RDEPEND="sci-visualization/gnuplot"
