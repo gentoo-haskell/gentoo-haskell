@@ -47,8 +47,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~x86"
-#KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap"
 
 LOC="/opt/ghc" # location for installation of binary version
@@ -137,6 +136,12 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
+	elif use alpha || use hppa || use ppc || use ppc64 || use sparc; then
+		eerror "No binary .tbz2 package available yet for these arches:"
+		eerror "  alpha, hppa, ppc, ppc64, sparc"
+		eerror "Please try emerging with USE=ghcbootstrap and report build"
+		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
+		die "No binary available for this arch yet, USE=ghcbootstrap"
 	fi
 
 	use binary && GHC_PREFIX="/opt/ghc" || GHC_PREFIX="/usr"
@@ -231,12 +236,13 @@ src_compile() {
 		# reported as bug #111183
 		echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
-		# but we have to tell it to build unregisterised on some other arches
-		if use ppc64 || use sparc; then
+		# but we have to tell it to build unregisterised on some arches
+		if use alpha || use hppa || use ppc64; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
-			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
+		fi
+		if use alpha || use hppa || use ppc64 || use sparc; then
+			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
