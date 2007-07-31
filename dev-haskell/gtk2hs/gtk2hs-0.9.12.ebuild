@@ -12,7 +12,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
+IUSE="doc glade gnome opengl svg firefox seamonkey profile xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
@@ -20,8 +20,8 @@ RDEPEND=">=dev-lang/ghc-6.2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
 				 >=x11-libs/gtksourceview-0.6
-				 >=gnome-base/gconf-2
-				 >=gnome-base/librsvg-2.16 )
+				 >=gnome-base/gconf-2 )
+		svg?   ( >=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
 		seamonkey? ( >=www-client/seamonkey-1.0.2 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )
@@ -38,7 +38,7 @@ src_compile() {
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome sourceview) \
-		$(use_enable gnome svg) \
+		$(use_enable svg svg) \
 		$(use_enable opengl opengl) \
 		$(use_enable seamonkey seamonkey) \
 		$(use_enable firefox firefox) \
@@ -85,8 +85,9 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
 		$(use gnome && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
-			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}" \
-			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
+			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}" ) \
+		$(use svg && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}")
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
 		$(use seamonkey || use firefox || use xulrunner && echo \
