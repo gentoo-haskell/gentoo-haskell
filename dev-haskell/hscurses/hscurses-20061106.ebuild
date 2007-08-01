@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="haddock lib"
+CABAL_FEATURES="haddock profile lib"
 inherit eutils haskell-cabal
 
 MY_P="${PN}-ds-${PV}"
@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="sys-libs/ncurses"
+DEPEND=">=dev-lang/ghc-6.2
+		sys-libs/ncurses"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
