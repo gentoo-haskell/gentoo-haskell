@@ -11,6 +11,15 @@
 
 == New ebuilds ==
 
+* new dev-haskell/ ebuilds from hackage that we should get into portage:
+  - cpphs-1.3
+  - regex-*
+  - xmonad
+
+* all the new missingh packages: hslogger, ftphs, configfile, anydbm
+
+* wash-2.12
+
 * hugs-2006.5
 
 * haskelldb: though the current release is very old, perhaps prod them
