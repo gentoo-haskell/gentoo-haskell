@@ -1,17 +1,5 @@
 
-== GHC 6.6 ==
-
-* figure out dependencies for ghc 6.6
-
 == Easy ==
-
-* test the src-extralibs ebuilds with ghc-6.5.
-
-* add blockers to all current ebuilds that don't build with ghc-6.5
-  eg haddock-0.7
-
-* running /opt/ghc/sbin/ghc-updater having just installed ghc-bin
-  doesn't find ghc on the path. [should be fixed now, please test]
 
 == High priority ==
 
@@ -23,10 +11,6 @@
 
 == New ebuilds ==
 
-* haxml-1.13.2: update for ghc 6.6 compatability.
-
-* add new version of happy for ghc6.6.
-
 * hugs-2006.5
 
 * haskelldb: though the current release is very old, perhaps prod them
@@ -35,11 +19,6 @@
 * crypto-3.0.3, in discussion with upstream about the newbinary dep
                 crypto will switch to the binary library once it has a bit
                 layer
-
-* ldap: fixing build bugs with upstream
-
-* magic: http://quux.org/devel/magic-haskell
-  note that debian has ver 1.0.3 but the current tarball is 1.0.1
 
 * helium-1.6 (may not work on 64-bit arches)
     An ebuild is in the overlay but it needs some more love.
@@ -56,17 +35,11 @@
 
 == Harder ==
 
-* use the new virtuals system for virtual/ghc
-
-* make use of the libraries profiling stuff (that's in the cabal eclass) for more lib ebuilds
-
 == Long term & continuing projects ==
 
 * get ghc bugs fixed upstream, send patches
 
-* help fix & improve cabal:
-  we need to be able to specify the libdir not just the prefix (lib/lib64)
-  we'd like a --optimize flag so we don't have to add -O in all .cabal files
+* help fix & improve cabal
 
 * make sure cabal-get integrates with gentoo/portage
 
