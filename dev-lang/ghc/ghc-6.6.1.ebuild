@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base eutils flag-o-matic toolchain-funcs ghc-package versionator
+inherit base bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -313,6 +313,8 @@ src_install() {
 
 		dosbin ${FILESDIR}/ghc-updater
 
+		dobashcompletion "${FILESDIR}/ghc-bash-completion"
+
 		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
 			|| die "failed to copy package.conf"
 	fi
@@ -341,6 +343,8 @@ pkg_postinst() {
 		ewarn "      /usr/sbin/ghc-updater"
 	fi
 	ewarn "to re-merge all ghc-based Haskell libraries."
+
+	bash-completion_pkg_postinst
 }
 
 pkg_prerm() {
