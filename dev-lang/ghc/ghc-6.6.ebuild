@@ -72,7 +72,10 @@ DEPEND="${RDEPEND}"
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND=">=dev-haskell/cabal-1.1.6.1"
+PDEPEND=">=dev-haskell/cabal-1.1.6.1
+		 >=dev-haskell/regex-base-0.71
+		 >=dev-haskell/regex-posix-0.71
+		 >=dev-haskell/regex-compat-0.71"
 
 append-ghc-cflags() {
 	local flag compile assemble link
