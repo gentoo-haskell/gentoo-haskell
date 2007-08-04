@@ -18,4 +18,4 @@ DEPEND=">=dev-lang/ghc-6.6
 		=dev-haskell/regex-base-0.7*
 		=dev-haskell/regex-posix-0.7*"
 
-CABAL_CORE_LIB_GHC_PV="6.6.1"
+CABAL_CORE_LIB_GHC_PV="6.6 6.6.1"
