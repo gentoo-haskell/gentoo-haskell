@@ -203,11 +203,12 @@ cabal-pkg() {
 # install no files since the package is already included with ghc.
 # However portage still records the dependency and we can upgrade the package
 # to a later one that's not included with ghc.
-# At the moment we assume that each package can be included in at most one
-# version of ghc. If this changes, CABAL_CORE_LIB_GHC_PV should become a list
-# and this function should be updated as appropriate.
+# You can also put a space separated list, eg CABAL_CORE_LIB_GHC_PV="6.6 6.6.1".
 cabal-is-dummy-lib() {
-	[[ "$(ghc-version)" == "${CABAL_CORE_LIB_GHC_PV}" ]]
+	for version in ${CABAL_CORE_LIB_GHC_PV[*]}; do
+		[[ "$(ghc-version)" == "$version" ]] && return 0
+	done
+	return 1
 }
 
 # exported function: check if cabal is correctly installed for
