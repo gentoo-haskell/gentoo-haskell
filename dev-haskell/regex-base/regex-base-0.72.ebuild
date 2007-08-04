@@ -5,9 +5,12 @@
 CABAL_FEATURES="profile haddock lib"
 inherit eutils haskell-cabal
 
+MY_PV="0.71"
+MY_P="regex-base-${MY_PV}"
+
 DESCRIPTION="Replaces/Enhances Text.Regex"
 HOMEPAGE="http://sourceforge.net/projects/lazy-regex"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${PN}-0.71.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -26,4 +29,4 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-0.71-0.72.patch"
 }
 
-S="${WORKDIR}/${PN}-0.71"
+S="${WORKDIR}/${MY_P}"
