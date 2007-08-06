@@ -143,6 +143,8 @@ pkg_setup() {
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	fi
+
+	use binary && GHC_PREFIX="/opt/ghc" || GHC_PREFIX="/usr"
 }
 
 src_unpack() {
@@ -332,5 +334,5 @@ pkg_prerm() {
 
 	cp -p "${PKG}"{.shipped,}
 
-	[ -f ${PKG}.old ] && rm "${PKG}.old"
+	[[ -f ${PKG}.old ]] && rm "${PKG}.old"
 }
