@@ -148,6 +148,12 @@ pkg_setup() {
 		die "No binary available for this arch yet, USE=ghcbootstrap"
 	fi
 
+	set_config
+}
+
+set_config() {
+	# make this a separate function and call it several times as portage doesn't
+	# remember the variables properly between the fuctions.
 	use binary && GHC_PREFIX="/opt/ghc" || GHC_PREFIX="/usr"
 }
 
@@ -351,6 +357,8 @@ pkg_postinst() {
 pkg_prerm() {
 	# Overwrite the (potentially) modified package.conf with a copy of the
 	# original one, so that it will be removed during uninstall.
+
+	set_config # load GHC_PREFIX
 
 	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
 
