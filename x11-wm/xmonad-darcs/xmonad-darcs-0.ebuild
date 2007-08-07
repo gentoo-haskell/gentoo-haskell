@@ -1,28 +1,26 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 CABAL_FEATURES="bin"
 
-XMONAD_REPOSITORY="${EDARCS_TOP_DIR}/xmonad"
-
-EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
-
 inherit haskell-cabal darcs savedconfig
 
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org"
+EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
+XMONAD_REPOSITORY="${EDARCS_TOP_DIR}/xmonad"
+
 LICENSE="BSD"
 SLOT="0"
-
-KEYWORDS="~x86"
-
+KEYWORDS="~amd64 ~x86"
 IUSE="savedconfig extensions"
 
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/x11-1.2.1
 	dev-haskell/x11-extras-darcs
 	>=dev-haskell/mtl-1.0"
+RDEPEND="${DEPEND}"
 
 RESTRICT="strip"
 
@@ -40,19 +38,21 @@ delete_XMonadContrib() {
 }
 
 src_unpack() {
+	darcs_src_unpack
+
 	if use extensions; then
 		fetch_XMonadContrib
 	else
 		delete_XMonadContrib
 	fi
 
-	darcs_src_unpack
-
 	cd "${S}"
 
 	if use savedconfig; then
 		restore_config Config.hs
 	fi
+
+	sed -i -e 's/unix>=1\.0/\0, readline>=1.0/' xmonad.cabal
 }
 
 src_install() {
