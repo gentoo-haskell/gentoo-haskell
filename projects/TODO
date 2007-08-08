@@ -15,6 +15,10 @@
   - regex-*
   - xmonad
 
+* get regex-{base,compat,posix} ~arch on all platforms
+
+* build binaries for ghc 6.6.1 for remaining platforms
+
 * all the new missingh packages: hslogger, ftphs, configfile, anydbm
 
 * wash-2.12
