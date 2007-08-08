@@ -38,7 +38,7 @@ src_unpack() {
 
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
-	sed -i 's:\($(addprefix -optc,$(CFLAGS) $(CPPFLAGS))\):\1 $(addprefix -opta,$(CFLAGS) $(CPPFLAGS)):' \
+	sed -i 's:\($(addprefix -optc,$(CFLAGS) $(CPPFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
 		"${S}/autoconf.mk.in"
 
 	# On ia64 we need to tone down the level of inlining so we don't break some
