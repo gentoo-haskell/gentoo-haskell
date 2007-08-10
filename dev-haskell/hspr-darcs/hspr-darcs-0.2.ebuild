@@ -3,8 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="haddock bin"
-inherit haskell-cabal
-inherit darcs
+inherit haskell-cabal darcs
 
 DESCRIPTION="hspr - the HSP Runtime Environment"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/hsp/"

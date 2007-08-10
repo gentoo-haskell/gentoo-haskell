@@ -3,8 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="haddock lib"
-inherit haskell-cabal
-inherit darcs
+inherit haskell-cabal darcs
 
 DESCRIPTION="hspr-sh - simple session handler for hspr"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/hsp/"

@@ -3,8 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="haddock lib"
-inherit haskell-cabal
-inherit darcs
+inherit haskell-cabal darcs
 
 DESCRIPTION="HSP - Haskell Server Pages (you might want hspr as well)"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/hsp/"
