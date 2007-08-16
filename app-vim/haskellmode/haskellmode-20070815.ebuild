@@ -44,5 +44,10 @@ pkg_postinst() {
 	elog
 	elog "  au BufEnter *.hs compiler ghc"
 	elog
+	elog "The first time you load haskellmode, you must generate a Haddock index. Do"
+	elog "this with the command:"
+	elog
+	elog "  :ExportDocIndex"
+	elog
 	elog "Consult the help documentation for further setup information."
 }
