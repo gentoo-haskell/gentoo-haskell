@@ -8,7 +8,7 @@ inherit eutils vim-plugin
 
 DESCRIPTION="vim plugin: Provides IDE-like features for Haskell development"
 HOMEPAGE="http://www.cs.kent.ac.uk/people/staff/cr3/toolbox/haskell/Vim/"
-SRC_URI="mirror://gentoo/${P}.zip"
+SRC_URI="http://gentooexperimental.org/~shillelagh/${P}.zip"
 
 LICENSE="BSD"
 SLOT=0
