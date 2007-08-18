@@ -246,6 +246,7 @@ src_compile() {
 		# reported as bug #111183
 		echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
+		# GHC build system knows to build unregisterised on alpha and hppa,
 		# but we have to tell it to build unregisterised on some arches
 		if use alpha || use hppa || use ppc64; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk

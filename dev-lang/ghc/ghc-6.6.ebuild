@@ -252,6 +252,11 @@ src_compile() {
 			echo "GhcNotThreaded=YES" >> mk/build.mk
 		fi
 
+		# GHC <6.8 doesn't support GCC >=4.2, split objects fails.
+		if version_is_at_least "4.2" "$(gcc-version)"; then
+			echo "SplitObjs=NO" >> mk/build.mk
+		fi
+
 		# Get ghc from the unpacked binary .tbz2
 		# except when bootstrapping we just pick ghc up off the path
 		use ghcbootstrap || \
