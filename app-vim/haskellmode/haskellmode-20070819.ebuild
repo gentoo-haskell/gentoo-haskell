@@ -37,17 +37,17 @@ pkg_postinst() {
 	elog "full usage info). You can persist these settings in your vimrc file, for"
 	elog "example:"
 	elog
-	elog "  let g:haddock_browser=\"/usr/bin/elinks\""
-	elog "  let g:haddock_browser_callformat=\"%s file://%s >/dev/null 2>&1 &\""
+	elog "    let g:haddock_browser=\"/usr/bin/elinks\""
+	elog "    let g:haddock_browser_callformat=\"%s file://%s >/dev/null 2>&1 &\""
 	elog
 	elog "To enable GHC compiler integration, also add the following to your vimrc:"
 	elog
-	elog "  au BufEnter *.hs compiler ghc"
+	elog "    au BufEnter *.hs compiler ghc"
 	elog
 	elog "The first time you load haskellmode, you must generate a Haddock index. Do"
 	elog "this with the command:"
 	elog
-	elog "  :ExportDocIndex"
+	elog "    :ExportDocIndex"
 	elog
 	elog "Consult the help documentation for further setup information."
 }
