@@ -1,12 +1,8 @@
 CATEGORIES:=$(wildcard *-*)
 EBUILDS:=$(wildcard *-*/*)
 MANIFESTS:=$(addsuffix /Manifest, $(EBUILDS))
-FILESDIR:=$(addsuffix /files, $(EBUILDS))
 
-all: ${FILESDIR} ${MANIFESTS} profiles/categories
-
-%/files:
-	mkdir -p $@
+all: ${MANIFESTS} profiles/categories
 
 %/Manifest: %/*.ebuild
 	$(foreach file,$?,ebuild $(file) digest;)
