@@ -5,8 +5,8 @@
 CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
-DESCRIPTION="A system-independent interface for user-level packet capture"
-HOMEPAGE=""
+DESCRIPTION="A library for various character encodings"
+HOMEPAGE="http://code.haskell.org/encoding/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -14,6 +14,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/network
-		net-libs/libpcap"
+DEPEND=">=dev-lang/ghc-6.4.2"

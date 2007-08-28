@@ -5,8 +5,8 @@
 CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
-DESCRIPTION="A system-independent interface for user-level packet capture"
-HOMEPAGE=""
+DESCRIPTION="A backtracking logic-programming monad."
+HOMEPAGE="http://code.haskell.org/~dolio/logict"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -15,5 +15,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/network
-		net-libs/libpcap"
+		>=dev-haskell/mtl-1.0.1"

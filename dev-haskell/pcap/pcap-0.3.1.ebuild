@@ -16,4 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/network
+		dev-haskell/time
 		net-libs/libpcap"

@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An ncurses mp3 player written in Haskell"
 HOMEPAGE="http://www.cse.unsw.edu.au/~dons/hmp3.html"
-SRC_URI="http://www.cse.unsw.edu.au/~dons/hmp3/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,7 +16,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
 		|| ( media-sound/mpg321 media-sound/mpg123 )
-		sys-libs/ncurses"
+		sys-libs/ncurses
+		>=dev-haskell/binary-0.2"
 
 src_unpack() {
 	unpack "${A}"
