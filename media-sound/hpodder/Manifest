@@ -1,0 +1,8 @@
+DIST hpodder-1.0.3.tar.gz 29059 RMD160 7c8933c1a092efeacd106b9955182af4eb6a2a3e SHA1 57eff6d9e4ade1ff2d35b20314395e52e5050ab3 SHA256 d05eebed472cdac3ca601e0e104a02e9b6ab614442361039a7d588d8004bebc0
+EBUILD hpodder-1.0.3.ebuild 659 RMD160 ae758d984c795b68274522898e54acae1db0d9ff SHA1 a2e5df7dffa29f4022323bc47f1155ad8cfb3ffc SHA256 c9aa2fecff17f4c836d5b466b53a60e3f70b8204e57c6af1a1ea35fccd72db0d
+MD5 f55f1d0aa4b55fdbd2ac9954ead2cad1 hpodder-1.0.3.ebuild 659
+RMD160 ae758d984c795b68274522898e54acae1db0d9ff hpodder-1.0.3.ebuild 659
+SHA256 c9aa2fecff17f4c836d5b466b53a60e3f70b8204e57c6af1a1ea35fccd72db0d hpodder-1.0.3.ebuild 659
+MD5 26355b89eaae28f437207c6d0bf4e3df files/digest-hpodder-1.0.3 238
+RMD160 483f54aa712192f21e8b236d9728057fafb85346 files/digest-hpodder-1.0.3 238
+SHA256 128ecdac14a68cba902ae8ea5db0854aba9951ecce78f0fc8255c27295aca84b files/digest-hpodder-1.0.3 238
