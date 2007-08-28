@@ -8,9 +8,9 @@ EBUILD binary-0.3.ebuild 474 RMD160 02b87326147db8843f5553049b22004f2b3467ef SHA
 MD5 ab05a37a57d91a2904fd1c921e5cec6e binary-0.3.ebuild 474
 RMD160 02b87326147db8843f5553049b22004f2b3467ef binary-0.3.ebuild 474
 SHA256 e674cc5124977fc9d8f530980bf7d7185905fd01a341c4d42d3eea45bedb1b3a binary-0.3.ebuild 474
-MD5 ddd4eb07f347ff8ad73bde57614b842a files/digest-binary-0.2 229
-RMD160 11672660dde0ad3fd70b59ad80823111c1fc5ed0 files/digest-binary-0.2 229
-SHA256 4a31ed49aa43c1e4186d7e3dfc01a1354401d5a01e4c9db3d05f569832ac8e29 files/digest-binary-0.2 229
+MD5 155bcac6c98e91bd6225ad60682473eb files/digest-binary-0.2 168
+RMD160 5f5991d7483bd494212ffad47f780a93ff44e047 files/digest-binary-0.2 168
+SHA256 382c37c6f96fcd64c019ad457869f04ace0f1b67998312a3762089b44057b6a9 files/digest-binary-0.2 168
 MD5 5e7e397bf47ebae4c5bf1c201e7ae386 files/digest-binary-0.3 229
 RMD160 acc96ceca793810607e965cf51e513b8d97f780e files/digest-binary-0.3 229
 SHA256 1c17006cc7e384eb67b1f753e066aee19c63a5f5cf37a434bf62d78c3deea813 files/digest-binary-0.3 229
