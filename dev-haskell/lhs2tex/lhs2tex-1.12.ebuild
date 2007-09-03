@@ -28,6 +28,7 @@ DEPEND=">=dev-haskell/cabal-1.1.6
 src_unpack() {
 	unpack ${A}
 	epatch "${FILESDIR}/lhs2tex-1.12-setup.patch"
+	epatch "${FILESDIR}/lhs2tex-1.12-regex.patch"
 	cd ${S}
 	use doc && rm doc/Guide2.dontbuild
 }
