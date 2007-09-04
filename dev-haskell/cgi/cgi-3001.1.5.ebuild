@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib"
-inherit haskell-cabal
+inherit haskell-cabal eutils
 
 DESCRIPTION="A library for writing CGI programs"
 HOMEPAGE=""
@@ -18,3 +18,8 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		>=dev-haskell/network-2.0
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/xhtml-3000.0.0"
+
+src_unpack() {
+	unpack "${A}"
+	epatch "${FILESDIR}/${P}-haddock.patch"
+}
