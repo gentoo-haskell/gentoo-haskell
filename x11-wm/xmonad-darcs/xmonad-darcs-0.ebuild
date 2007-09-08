@@ -13,13 +13,7 @@ XMONAD_REPOSITORY="${EDARCS_TOP_DIR}/xmonad"
 
 LICENSE="BSD"
 SLOT="0"
-v v v v v v v
-
-KEYWORDS="~x86 ~amd64"
-
-*************
 KEYWORDS="~amd64 ~x86"
-^ ^ ^ ^ ^ ^ ^
 IUSE="savedconfig extensions"
 
 DEPEND=">=dev-lang/ghc-6.6
