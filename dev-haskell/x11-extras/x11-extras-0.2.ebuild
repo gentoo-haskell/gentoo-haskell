@@ -23,10 +23,3 @@ DEPEND=">=dev-lang/ghc-6.4
 	!dev-haskell/x11-extras-darcs"
 
 S="${WORKDIR}/${MY_P}"
-
-src_unpack() {
-	base_src_unpack
-
-	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
-	echo '> main = defaultMain' >> "${S}/Setup.lhs"
-}

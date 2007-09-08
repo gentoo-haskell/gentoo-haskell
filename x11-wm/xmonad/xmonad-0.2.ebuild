@@ -29,9 +29,6 @@ src_unpack() {
 	if use savedconfig; then
 		restore_config Config.hs
 	fi
-
-	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
-	echo '> main = defaultMain' >> "${S}/Setup.lhs"
 }
 
 src_install() {
