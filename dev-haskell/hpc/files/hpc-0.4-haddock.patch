@@ -1,0 +1,77 @@
+diff -Naur hpc-0.4.orig/common/Trace/Hpc/Mix.hs hpc-0.4/common/Trace/Hpc/Mix.hs
+--- hpc-0.4.orig/common/Trace/Hpc/Mix.hs	2007-09-09 10:14:44.000000000 +0200
++++ hpc-0.4/common/Trace/Hpc/Mix.hs	2007-09-09 10:29:14.000000000 +0200
+@@ -36,13 +36,19 @@
+ -- tab stops are the size of a tab in the provided line:colunm values.
+ --  * In GHC, this is 1 (a tab is just a character)
+ --  * With hpc-tracer, this is 8 (a tab represents several spaces).
+-
+-data Mix = Mix 
+-	     FilePath		-- ^location of original file
+-	     Integer		-- ^time (in seconds) of original file's last update, since 1970.
+-	     Hash		-- ^hash of mix entry + timestamp
+-	     Int 		-- ^tab stop value.
+-	     [MixEntry] 	-- ^entries
++--
++-- Mix fp time hash tab entries
++--  * fp: location of original file
++--  * time: time (in seconds) of original file's last update, since 1970.
++--  * hash: hash of mix entry + timestamp
++--  * tab: tab stop value
++--  * entries: entries
++data Mix = Mix
++	     FilePath
++	     Integer
++	     Hash
++	     Int
++	     [MixEntry]
+ 	deriving (Show,Read)
+ 
+ -- We would rather use ClockTime in Mix, but ClockTime has no Read instance in 6.4 and before,
+diff -Naur hpc-0.4.orig/common/Trace/Hpc/Pix.hs hpc-0.4/common/Trace/Hpc/Pix.hs
+--- hpc-0.4.orig/common/Trace/Hpc/Pix.hs	2007-09-09 10:14:44.000000000 +0200
++++ hpc-0.4/common/Trace/Hpc/Pix.hs	2007-09-09 10:31:40.000000000 +0200
+@@ -15,10 +15,15 @@
+ 
+ data Pix = Pix [PixEntry] deriving (Read, Show)
+ 
++
++-- | PixEntry module hash tixs
++-- * module: Module Name
++-- * hash: Mix's hash number
++-- * tixs: Number of Tix's
+ data PixEntry = PixEntry
+-			String 	-- ^ Module Name
+- 			Hash	-- ^ Mix's hash number
+-    			Int	-- ^ Number of Tix's
++			String
++ 			Hash
++    			Int
+      deriving (Read, Show)
+ 
+ pixEntryModule    (PixEntry m _ _) = m
+diff -Naur hpc-0.4.orig/common/Trace/Hpc/Tix.hs hpc-0.4/common/Trace/Hpc/Tix.hs
+--- hpc-0.4.orig/common/Trace/Hpc/Tix.hs	2007-09-09 10:14:44.000000000 +0200
++++ hpc-0.4/common/Trace/Hpc/Tix.hs	2007-09-09 10:30:34.000000000 +0200
+@@ -16,11 +16,16 @@
+ data Tix = Tix [TixModule]
+ 	deriving (Read, Show, Eq)
+ 
+-data TixModule = TixModule 
+-		 String    -- ^module name
+-		 Hash	   -- ^hash number
+-		 Int 	   -- ^length of tix list (allows pre-allocation at parse time).
+-		 [Integer] -- ^actual ticks
++-- | TixModule module hash length ticks
++-- * module: module name
++-- * hash: hash number
++-- * length: length of tix list (allows pre-allocation at parse time).
++-- * ticks: actual ticks
++data TixModule = TixModule
++		 String
++		 Hash
++		 Int
++		 [Integer]
+ 	deriving (Read, Show, Eq)
+ 
+ tixModuleName :: TixModule -> String

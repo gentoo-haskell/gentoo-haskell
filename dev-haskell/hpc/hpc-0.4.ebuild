@@ -19,6 +19,13 @@ DEPEND=">=dev-lang/ghc-6.6"
 RDEPEND="${DEPEND}
 	dev-haskell/hmake"
 
+src_unpack() {
+	unpack "${A}"
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-haddock.patch"
+}
+
 src_install() {
 	haskell-cabal_src_install
 
