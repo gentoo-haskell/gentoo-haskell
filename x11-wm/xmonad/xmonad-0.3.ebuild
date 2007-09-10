@@ -53,6 +53,7 @@ src_install() {
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}/${PN}.desktop"
 
+	doman man/xmonad.1
 	insinto /usr/share/${PN}
 	newins Config.hs ${PF}.Config.hs
 	save_config Config.hs
