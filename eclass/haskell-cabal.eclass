@@ -155,6 +155,7 @@ cabal-configure() {
 }
 
 cabal-build() {
+	unset LANG LC_ALL LC_MESSAGES
 	./setup build \
 		|| die "setup build failed"
 }
