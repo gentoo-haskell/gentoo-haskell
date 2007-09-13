@@ -100,9 +100,26 @@ if [[ -n "${CABAL_HAS_LIBRARIES}" ]]; then
 	RDEPEND="${RDEPEND} dev-lang/ghc"
 fi
 
+# returns the version of cabal currently in use
+_CABAL_VERSION_CACHE=""
+cabal-version() {
+	if [[ -z "${_CABAL_VERSION_CACHE}" ]]; then
+		if [[ "${CABAL_BOOTSTRAP}" ]]; then
+			# We're bootstrapping vabal, so the vabal version is the version
+			# of this package itself.
+			_CABAL_VERSION_CACHE="${PV}"
+		else
+			# We ask portage, not ghc, so that we only pick up
+			# portage-installed cabal versions.
+			_CABAL_VERSION_CACHE="$(ghc-extractportageversion dev-haskell/cabal)"
+		fi
+	fi
+	echo "${_CABAL_VERSION_CACHE}"
+}
+
 cabal-bootstrap() {
 	local setupmodule
-	local cabalversion
+	local cabalpackage
 	if [[ -f "${S}/Setup.lhs" ]]; then
 		setupmodule="${S}/Setup.lhs"
 	else
@@ -115,9 +132,14 @@ cabal-bootstrap() {
 
 	# We build the setup program using the latest version of
 	# cabal that we have installed
-	cabalversion=$(ghc-bestcabalversion)
-	einfo "Using ${cabalversion}."
-	$(ghc-getghc) -package "${cabalversion}" --make "${setupmodule}" -o setup \
+	if version_is_at_least "6.4" "$(ghc-version)"; then
+		cabalpackage=Cabal-$(cabal-version)
+	else
+		# older ghc's don't support package versioning
+		cabalpackage=Cabal
+	fi
+	einfo "Using cabal-$(cabal-version)."
+	$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" -o setup \
 		|| die "compiling ${setupmodule} failed"
 }
 
@@ -134,7 +156,7 @@ cabal-configure() {
 		cabalconf="${cabalconf} --disable-library-for-ghci"
 	fi
 
-	if version_is_at_least "1.2.0" "${cabalversion}"; then
+	if version_is_at_least "1.2.0" "$(cabal-version)"; then
 		cabalconf="${cabalconf} --docdir=/usr/share/doc/${PF}"
 		# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
 		# it's better if the configure chatter is in the build logs:
@@ -192,7 +214,7 @@ cabal-pkg() {
 	local err
 
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
-		if version_is_at_least "1.2.0" "${cabalversion}"; then
+		if version_is_at_least "1.2.0" "$(cabal-version)"; then
 			# Newer cabal can generate a package conf for us:
 			./setup register --gen-pkg-config="${T}/${P}.conf"
 			ghc-setup-pkg "${T}/${P}.conf"
@@ -276,8 +298,7 @@ cabal_src_install() {
 		cabal-pkg
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-			local cabalversion=$(ghc-extractportageversion dev-haskell/cabal)
-			if ! version_is_at_least "1.1.6" "${cabalversion}"; then
+			if ! version_is_at_least "1.1.6" "$(cabal-version)"; then
 				dohtml -r dist/doc/html/*
 			fi
 		fi
