@@ -38,17 +38,14 @@ IS_SNAPSHOT="${PV%%*pre*}" # zero if snapshot
 MY_PV="${PV/_pre/.}"
 MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
-[[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
+[[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
-		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-		 ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
-		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="binary doc ghcbootstrap"
+IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
@@ -71,7 +68,7 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND=">=dev-haskell/cabal-1.1.6.2
+PDEPEND=">=dev-haskell/cabal-1.2
 		 >=dev-haskell/filepath-1.0
 		 >=dev-haskell/regex-base-0.72
 		 >=dev-haskell/regex-posix-0.71
@@ -140,9 +137,9 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ppc || use ppc64 || use sparc; then
+	elif use alpha || use amd64 || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
 		eerror "No binary .tbz2 package available yet for these arches:"
-		eerror "  alpha, hppa, ppc, ppc64, sparc"
+		eerror "  alpha, amd64, hppa, ia64, ppc, ppc64, sparc, x86"
 		eerror "Please try emerging with USE=ghcbootstrap and report build"
 		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
 		die "No binary available for this arch yet, USE=ghcbootstrap"
@@ -204,12 +201,6 @@ src_unpack() {
 
 		# Don't strip binaries on install. See QA warnings in bug #140369.
 		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
-
-		# Temporary patches that needs testing before being pushed upstream:
-		cd "${S}"
-		# Fix sparc split-objs linking problem
-		epatch "${FILESDIR}/ghc-6.5-norelax.patch"
-
 	fi
 }
 
@@ -223,13 +214,14 @@ src_compile() {
 		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-		# If you need to do a quick build then enable this bit and add debug to IUSE
-		#if use debug; then
-		#	echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
-		#	echo "GhcLibHcOpts    =" >> mk/build.mk
-		#	echo "GhcLibWays      =" >> mk/build.mk
-		#	echo "SplitObjs       = NO" >> mk/build.mk
-		#fi
+		# If you need to do a quick build then enable this bit and add
+		# ghcquickbuild to IUSE
+		if use ghcquickbuild; then
+			echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
+			echo "GhcLibHcOpts    =" >> mk/build.mk
+			echo "GhcLibWays      =" >> mk/build.mk
+			echo "SplitObjs       = NO" >> mk/build.mk
+		fi
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
@@ -251,17 +243,10 @@ src_compile() {
 		if use alpha || use hppa || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
-		fi
-		if use alpha || use hppa || use ppc64 || use sparc; then
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
-		fi
-
-		# GHC <6.8 doesn't support GCC >=4.2, split objects fails.
-		if version_is_at_least "4.2" "$(gcc-version)"; then
-			echo "SplitObjs=NO" >> mk/build.mk
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
@@ -271,9 +256,7 @@ src_compile() {
 
 		econf || die "econf failed"
 
-		emake all datadir="/usr/share/doc/${P}" || die "make failed"
-		# the explicit datadir is required to make the haddock entries
-		# in the package.conf file point to the right place ...
+		emake all || die "make failed"
 
 	fi # ! use binary
 }
@@ -289,11 +272,6 @@ src_install() {
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 
-		# TODO: this will not be necessary after version 6.6.1 since the .tbz2
-		# packages will have been regenerated with package.conf.shipped files.
-		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
-			|| die "failed to copy package.conf"
-
 		doenvd "${FILESDIR}/10ghc"
 	else
 		local insttarget="install"
@@ -308,15 +286,8 @@ src_install() {
 			fi
 		fi
 
-		# the libdir0 setting is needed for amd64, and does not
-		# harm for other arches
-		#TODO: are any of these overrides still required? isn't econf enough?
 		emake -j1 ${insttarget} \
-			prefix="${D}/usr" \
-			datadir="${D}/usr/share/doc/${P}" \
-			infodir="${D}/usr/share/info" \
-			mandir="${D}/usr/share/man" \
-			libdir0="${D}/usr/$(get_libdir)" \
+			DESTDIR="${D}" \
 			|| die "make ${insttarget} failed"
 
 		cd "${S}"
