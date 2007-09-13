@@ -105,7 +105,7 @@ _CABAL_VERSION_CACHE=""
 cabal-version() {
 	if [[ -z "${_CABAL_VERSION_CACHE}" ]]; then
 		if [[ "${CABAL_BOOTSTRAP}" ]]; then
-			# We're bootstrapping vabal, so the vabal version is the version
+			# We're bootstrapping cabal, so the cabal version is the version
 			# of this package itself.
 			_CABAL_VERSION_CACHE="${PV}"
 		else
