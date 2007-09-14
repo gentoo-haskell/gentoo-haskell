@@ -6,11 +6,10 @@
 # IF YOU EXPERIENCE PROBLEMS. PLEASE DO NOT WRITE TO GENTOO-MAILING LISTS
 # AND DON'T FILE ANY BUGS IN BUGZILLA ABOUT THIS BUILD.
 
-GHC_REPOSITORY="http://darcs.haskell.org"
+GHC_REPOSITORY="http://darcs.haskell.org/ghc-6.8"
 EDARCS_REPOSITORY="${GHC_REPOSITORY}/ghc"
-EDARCS_GET_CMD="get --partial"
 
-inherit base eutils flag-o-matic autotools darcs ghc-package check-reqs
+inherit base eutils flag-o-matic darcs ghc-package
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -18,9 +17,10 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="doc"
+IUSE="doc ghcquickbuild"
 
 RDEPEND="
+	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
@@ -127,13 +127,19 @@ src_compile() {
 	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 	echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-	# If you need to do a quick build then enable this bit and add debug to IUSE
-	#if use debug; then
-	#	echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
-	#	echo "GhcLibHcOpts    =" >> mk/build.mk
-	#	echo "GhcLibWays      =" >> mk/build.mk
-	#	echo "SplitObjs       = NO" >> mk/build.mk
-	#fi
+	# The settings that give you the fastest complete GHC build are these:
+	if use ghcquickbuild; then
+		echo "SRC_HC_OPTS     = -H64m -Onot -fasm" >> mk/build.mk
+		echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
+		echo "GhcStage2HcOpts = -Onot -fasm" >> mk/build.mk
+		echo "GhcLibHcOpts    = -Onot -fasm" >> mk/build.mk
+		echo "GhcLibWays      =" >> mk/build.mk
+		echo "SplitObjs       = NO" >> mk/build.mk
+	fi
+	# However, note that the libraries are built without optimisation, so
+	# this build isn't very useful. The resulting compiler will be very
+	# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
+	# timed at less than 8 minutes.
 
 	# determine what to do with documentation
 	if use doc; then
@@ -160,16 +166,9 @@ src_compile() {
 		echo "GhcNotThreaded=YES" >> mk/build.mk
 	fi
 
-	# We're building from darcs so we need to autoreconf
-	eautoreconf
-
 	econf || die "econf failed"
 
-	emake all datadir="/usr/share/doc/${PF}" || die "make failed"
-	# the explicit datadir is required to make the haddock entries
-	# in the package.conf file point to the right place ...
-	# TODO: is this still required ?
-
+	emake all || die "make failed"
 }
 
 src_install () {
@@ -178,24 +177,13 @@ src_install () {
 	insttarget="install"
 	use doc && insttarget="${insttarget} install-docs"
 
-	# the libdir0 setting is needed for amd64, and does not
-	# harm for other arches
-	#TODO: is this still required?
 	emake -j1 ${insttarget} \
-		prefix="${D}/usr" \
-		datadir="${D}/usr/share/doc/${PF}" \
-		infodir="${D}/usr/share/info" \
-		mandir="${D}/usr/share/man" \
-		libdir0="${D}/usr/$(get_libdir)" \
+		DESTDIR="${D}" \
 		|| die "make ${insttarget} failed"
 
 	#need to remove ${D} from ghcprof script
 	# TODO: does this actually work?
-	cd "${D}/usr/bin"
-	mv ghcprof ghcprof-orig
-	sed -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' ghcprof-orig > ghcprof
-	chmod a+x ghcprof
-	rm -f ghcprof-orig
+	sed -i -e 's:$FPTOOLS_TOP_ABS:#$FPTOOLS_TOP_ABS:' "${D}/usr/bin/ghcprof"
 
 	#rename non-version-specific files
 	nonvers=$(find -path "./*" -and -not -path "*${PV}*")
