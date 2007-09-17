@@ -169,7 +169,7 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/${P}/package.conf" \
+			"${S}/usr/$(get_libdir)/${MY_P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
@@ -189,7 +189,7 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 				"${WORKDIR}/usr/bin/hsc2hs" \
-				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
+				"${WORKDIR}/usr/$(get_libdir)/${MY_P}/package.conf" \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
@@ -299,7 +299,7 @@ src_install() {
 
 		dobashcompletion "${FILESDIR}/ghc-bash-completion"
 
-		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${MY_P}/package.conf"{,.shipped} \
 			|| die "failed to copy package.conf"
 	fi
 }
@@ -334,7 +334,7 @@ pkg_prerm() {
 
 	set_config # load GHC_PREFIX
 
-	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
+	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${MY_P}/package.conf"
 
 	cp -p "${PKG}"{.shipped,}
 
