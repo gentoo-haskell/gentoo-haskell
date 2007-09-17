@@ -211,14 +211,19 @@ src_compile() {
 		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-		# If you need to do a quick build then enable this bit and add
-		# ghcquickbuild to IUSE
+		# The settings that give you the fastest complete GHC build are these:
 		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H32m -O -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    =" >> mk/build.mk
+			echo "SRC_HC_OPTS     = -H64m -Onot -fasm" >> mk/build.mk
+			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
+			echo "GhcStage2HcOpts = -Onot -fasm" >> mk/build.mk
+			echo "GhcLibHcOpts    = -Onot -fasm" >> mk/build.mk
 			echo "GhcLibWays      =" >> mk/build.mk
 			echo "SplitObjs       = NO" >> mk/build.mk
 		fi
+		# However, note that the libraries are built without optimisation, so
+		# this build isn't very useful. The resulting compiler will be very
+		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
+		# timed at less than 8 minutes.
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
