@@ -34,13 +34,11 @@ DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
 # discover if this is a snapshot release
-IS_SNAPSHOT="${PV%%*pre*}" # zero if snapshot
-MY_PV="${PV/_pre/.}"
-MY_P="${PN}-${MY_PV}"
-EXTRA_SRC_URI="${MY_PV}"
-[[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
+IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
+EXTRA_SRC_URI="${PV}"
+[[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -48,7 +46,6 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 LOC="/opt/ghc" # location for installation of binary version
-S="${WORKDIR}/${MY_P}"
 
 PROVIDE="virtual/ghc"
 
@@ -169,7 +166,7 @@ src_unpack() {
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
-			"${S}/usr/$(get_libdir)/${MY_P}/package.conf" \
+			"${S}/usr/$(get_libdir)/${P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
@@ -189,7 +186,7 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 				"${WORKDIR}/usr/bin/hsc2hs" \
-				"${WORKDIR}/usr/$(get_libdir)/${MY_P}/package.conf" \
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
@@ -299,7 +296,7 @@ src_install() {
 
 		dobashcompletion "${FILESDIR}/ghc-bash-completion"
 
-		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${MY_P}/package.conf"{,.shipped} \
+		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
 			|| die "failed to copy package.conf"
 	fi
 }
@@ -334,7 +331,7 @@ pkg_prerm() {
 
 	set_config # load GHC_PREFIX
 
-	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${MY_P}/package.conf"
+	PKG="${ROOT}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"
 
 	cp -p "${PKG}"{.shipped,}
 
