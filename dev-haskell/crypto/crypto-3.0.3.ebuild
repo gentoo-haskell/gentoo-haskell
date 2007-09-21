@@ -26,8 +26,8 @@ src_unpack() {
 	# make local private copy of NewBinary module
 	mkdir -p "${S}/Gentoo/Private/NewBinary"
 	mv "${WORKDIR}/NewBinary/NewBinary/Binary.hs" \
-	   "${WORKDIR}/NewBinary/NewBinary/FastMutInt.lhs" \
-	   "${S}/Gentoo/Private/NewBinary/"
+		"${WORKDIR}/NewBinary/NewBinary/FastMutInt.lhs" \
+		"${S}/Gentoo/Private/NewBinary/"
 
 	# fix up references to the private local NewBinary module
 	sed -i 's/NewBinary/Gentoo.Private.NewBinary/' \
