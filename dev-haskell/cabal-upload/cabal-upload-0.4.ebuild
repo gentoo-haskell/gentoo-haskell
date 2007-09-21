@@ -6,7 +6,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Command-line tool for uploading packages to Hackage"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/cabal-upload"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
