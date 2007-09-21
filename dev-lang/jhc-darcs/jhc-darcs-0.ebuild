@@ -17,7 +17,9 @@ EDARCS_GET_CMD="get --partial"
 
 DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/drift-2.1.1
-		dev-haskell/happy"
+		dev-haskell/happy
+		dev-haskell/binary
+		dev-haskell/zlib"
 RDEPEND=""
 
 JHCPATH="/usr/lib/${PF}"
