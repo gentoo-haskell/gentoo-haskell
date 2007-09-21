@@ -6,7 +6,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Generate pretty graphs of darcs repository activity"
-HOMEPAGE=""
+HOMEPAGE="http://www.cse.unsw.edu.au/~dons/darcs-graph.html"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
