@@ -21,7 +21,7 @@ RDEPEND=""
 
 pkg_setup() {
 	if ! built_with_use -o dev-haskell/gtk2hs firefox seamonkey xulrunner; then
-	   	echo
+		echo
 		eerror "gtk2hs was not merged with the firefox or seamonkey USE flag."
 		eerror "Himerge requires gtk2hs be compiled with any of these flags."
 		die "gtk2hs missing web browser support."
