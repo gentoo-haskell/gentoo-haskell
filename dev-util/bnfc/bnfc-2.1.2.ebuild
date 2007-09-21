@@ -18,10 +18,6 @@ RDEPEND="virtual/libc"
 
 S="${WORKDIR}/BNFC"
 
-src_unpack() {
-	unpack ${A}
-}
-
 src_compile() {
 	emake GHC_OPTS=-O || die "emake failed"
 }
