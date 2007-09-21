@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal eutils
 
 DESCRIPTION="A library for writing CGI programs"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/cgi"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
