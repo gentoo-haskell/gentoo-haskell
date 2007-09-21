@@ -5,7 +5,7 @@
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Agda is a dependently typed programming language with good support for programming with inductively defined families of types."
+DESCRIPTION="A dependently typed programming languge"
 HOMEPAGE="http://appserv.cs.chalmers.se/users/ulfn/wiki/agda.php"
 
 MY_PN="Agda"
