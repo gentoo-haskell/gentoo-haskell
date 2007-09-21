@@ -6,7 +6,7 @@ CABAL_FEATURES="profile lib" # haddock docs do not build
 inherit haskell-cabal
 
 DESCRIPTION="Useful standard collections types and related functions."
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/collections"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
