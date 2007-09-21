@@ -26,10 +26,6 @@ src_unpack() {
 	sed -i "s|LangPrelude\\.prg|/usr/share/${P}/LangPrelude.prg|" Toplevel.hs
 }
 
-src_compile() {
-	emake || die "make failed"
-}
-
 src_install () {
 	dobin omega
 	dodoc OmegaManual.ps
