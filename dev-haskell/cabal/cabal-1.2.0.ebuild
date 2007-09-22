@@ -18,6 +18,11 @@ DEPEND=">=dev-lang/ghc-6.2"
 
 CABAL_CORE_LIB_GHC_PV=""
 
+src_unpack() {
+	unpack "${A}"
+	epatch "${FILESDIR}/${P}-simple.patch"
+}
+
 src_compile() {
 	if ! cabal-is-dummy-lib; then
 		make setup HC="$(ghc-getghc)"
