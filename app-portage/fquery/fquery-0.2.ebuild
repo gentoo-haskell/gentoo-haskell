@@ -9,7 +9,7 @@ DESCRIPTION="A fast replacement for equery"
 HOMEPAGE="http://home.exetel.com.au/tjaden/fquery/"
 SRC_URI="http://home.exetel.com.au/tjaden/fquery/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
