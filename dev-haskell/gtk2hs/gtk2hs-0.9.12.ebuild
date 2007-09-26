@@ -29,6 +29,14 @@ RDEPEND=">=dev-lang/ghc-6.2
 DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.8 )"
 
+src_unpack() {
+	unpack "${A}"
+
+	# Fix for recent glib that changes the type of the gtype typedef:
+	sed -i -e 's/(CULong)/(CULong, CUInt)/' \
+		"${S}/tools/hierarchyGen/Hierarchy.chs.template"
+}
+
 src_compile() {
 	econf \
 		--enable-packager-mode \
