@@ -15,4 +15,5 @@ KEYWORDS="~amd64 ~ia64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-		dev-haskell/mtl"
+		dev-haskell/mtl
+		dev-haskell/haddock"
