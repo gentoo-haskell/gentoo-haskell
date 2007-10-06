@@ -22,9 +22,9 @@ RDEPEND=">=dev-lang/ghc-6.2
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
-				 >=x11-libs/gtksourceview-0.6
-				 >=gnome-base/gconf-2
-				 >=gnome-base/librsvg-2.16 )
+				>=x11-libs/gtksourceview-0.6
+				>=gnome-base/gconf-2
+				>=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
 		seamonkey? ( >=www-client/seamonkey-1.0.2 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )
