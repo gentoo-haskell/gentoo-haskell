@@ -9,7 +9,7 @@ MY_PN="Shellac-readline"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Readline backend module for Shellac"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/Shellac-readline"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
