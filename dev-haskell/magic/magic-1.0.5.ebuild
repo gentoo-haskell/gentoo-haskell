@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="Interface to C file/magic library"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/magic"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
