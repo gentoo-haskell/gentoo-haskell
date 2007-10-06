@@ -7,7 +7,7 @@ inherit base ghc-package
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 SRC_URI="http://www.haskell.org/ghc/dist/${PV}/ghc-${PV}-src.tar.bz2
-		 http://www.haskell.org/ghc/dist/${PV}/ghc-testsuite-${PV}.tar.gz"
+	http://www.haskell.org/ghc/dist/${PV}/ghc-testsuite-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
