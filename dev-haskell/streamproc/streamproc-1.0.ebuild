@@ -9,7 +9,7 @@ DESCRIPTION="Monadic Stream Processor Arrow"
 HOMEPAGE="http://cryp.to/streamproc/"
 SRC_URI="http://cryp.to/streamproc/${P}.tar.gz"
 
-LICENSE="GPL"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
