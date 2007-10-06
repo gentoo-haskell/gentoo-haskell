@@ -9,7 +9,7 @@ DESCRIPTION="Binary serialisation library for Haskell"
 HOMEPAGE="http://www.n-heptane.com/nhlab/"
 SRC_URI="http://www.n-heptane.com/nhlab/NewBinary/NewBinary-2005-12-11.tar.gz"
 
-LICENSE="nhc98 GPL2"
+LICENSE="nhc98 GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
