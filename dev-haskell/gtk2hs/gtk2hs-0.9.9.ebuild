@@ -19,8 +19,8 @@ IUSE="doc gnome"
 DEPEND=">=dev-lang/ghc-5.04
 		>=x11-libs/gtk+-2
 		gnome? ( >=gnome-base/libglade-2
-				 >=x11-libs/gtksourceview-0.6
-				 >=gnome-base/gconf-2 )
+				>=x11-libs/gtksourceview-0.6
+				>=gnome-base/gconf-2 )
 		doc? ( >=dev-haskell/haddock-0.7 )"
 
 src_compile() {
