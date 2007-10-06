@@ -49,9 +49,9 @@ src_install() {
 
 pkg_postinst () {
 	if ghc-cabal && ghc-package-exists "Cabal-1.0"; then
-	        ebegin "Unregistering ghc's built-in cabal "
-	        $(ghc-getghcpkg) unregister "Cabal-1.0" > /dev/null
-	        eend $?
+		ebegin "Unregistering ghc's built-in cabal "
+		$(ghc-getghcpkg) unregister "Cabal-1.0" > /dev/null
+		eend $?
 	fi
 	ghc-package_pkg_postinst
 }
