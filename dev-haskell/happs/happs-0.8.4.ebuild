@@ -9,7 +9,7 @@ MY_PN="HAppS"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="HAppS is a Haskell framework for developing Internet services"
-HOMEPAGE=""
+HOMEPAGE="http://www.happs.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
