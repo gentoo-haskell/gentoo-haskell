@@ -9,7 +9,7 @@ DESCRIPTION="Shellac is a framework for building read-eval-print style shells"
 HOMEPAGE="http://www.eecs.tufts.edu/~rdocki01/shellac.html"
 SRC_URI="http://www.eecs.tufts.edu/~rdocki01/projects/${P}-source.tar.gz"
 
-LICENSE="BSD3"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="readline"
