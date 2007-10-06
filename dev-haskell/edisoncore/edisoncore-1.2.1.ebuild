@@ -9,7 +9,7 @@ MY_PN="EdisonCore"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library of efficient, purely-functional data structures (Core Implementations)"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/EdisonCore"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE=""	#Fixme: "OtherLicense", please fill in manually
