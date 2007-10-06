@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib bin"
 inherit haskell-cabal
 
 DESCRIPTION="Support for precise error locations in source files"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/loch"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
