@@ -9,7 +9,7 @@ MY_PN="Shellac"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for creating shell envinronments"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/Shellac"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
