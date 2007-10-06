@@ -9,7 +9,7 @@ MY_PN="FileManip"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Expressive file and directory manipulation for Haskell."
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/FileManip"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
