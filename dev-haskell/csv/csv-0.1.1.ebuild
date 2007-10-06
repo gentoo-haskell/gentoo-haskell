@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="CSV loader and dumper"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/csv"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
