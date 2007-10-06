@@ -9,7 +9,7 @@ MY_PN="HsSyck"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Fast, lightweight YAML loader and dumper"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/HsSyck"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
