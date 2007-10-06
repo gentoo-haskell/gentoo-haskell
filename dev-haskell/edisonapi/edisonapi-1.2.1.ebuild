@@ -9,7 +9,7 @@ MY_PN="EdisonAPI"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library of efficient, purely-functional data structures (API)"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/EdisonAPI"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE=""	#Fixme: "OtherLicense", please fill in manually
