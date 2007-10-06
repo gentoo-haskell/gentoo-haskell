@@ -9,7 +9,7 @@ DESCRIPTION="The Haskell Cryptographic Library"
 HOMEPAGE="http://haskell.org/crypto/"
 SRC_URI="http://haskell.org/crypto/src/Crypto-${PV}.tar.gz"
 
-LICENSE="BSD GPL"
+LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
