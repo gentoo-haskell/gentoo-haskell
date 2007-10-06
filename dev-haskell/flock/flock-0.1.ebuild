@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="Wrapper for flock(2)"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/flock"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE=""	#Fixme: "OtherLicense", please fill in manually
