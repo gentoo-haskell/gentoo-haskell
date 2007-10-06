@@ -10,7 +10,7 @@ command-line tool for evaluating terms of the pure, untyped lambda calculus."
 HOMEPAGE="http://www.eecs.tufts.edu/~rdocki01/lambda.html"
 SRC_URI="http://www.eecs.tufts.edu/~rdocki01/projects/${P}-source.tar.gz"
 
-LICENSE="GPL"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
