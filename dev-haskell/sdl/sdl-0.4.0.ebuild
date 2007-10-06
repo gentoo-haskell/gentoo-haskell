@@ -9,7 +9,7 @@ MY_PN="SDL"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Binding to libSDL"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SDL"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
