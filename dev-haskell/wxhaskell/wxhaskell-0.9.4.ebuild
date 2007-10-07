@@ -57,7 +57,7 @@ src_compile() {
 	append-flags -fPIC
 
 	# non-standard configure, so econf is not an option
-	# --wx-config must appear first according to configure file comments 
+	# --wx-config must appear first according to configure file comments
 	./configure \
 		--wx-config="${WX_CONFIG}" \
 		--prefix=/usr \
