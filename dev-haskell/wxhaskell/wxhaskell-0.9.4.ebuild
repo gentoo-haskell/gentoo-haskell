@@ -93,9 +93,10 @@ src_install() {
 
 	# substitute for the ${wxhlibdir} in package files and register them
 	# for ghc-6.2 change the package to be exposed by default.
-	sed -i -e "s:\${wxhlibdir}:${D}/usr/$(get_libdir)/${P}:" \
-		   -e "s:auto = False:auto = True:" \
-		   ${D}/usr/$(get_libdir)/${P}/*.pkg
+	sed -i \
+		-e "s:\${wxhlibdir}:${D}/usr/$(get_libdir)/${P}:" \
+		-e "s:auto = False:auto = True:" \
+		${D}/usr/$(get_libdir)/${P}/*.pkg
 	ghc-setup-pkg ${D}/usr/$(get_libdir)/${P}/*.pkg
 	ghc-install-pkg
 }
