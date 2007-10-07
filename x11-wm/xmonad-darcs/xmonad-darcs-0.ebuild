@@ -67,6 +67,10 @@ src_install() {
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}/${PN}.desktop"
 
+	runhaskell util/GenerateManpage.hs
+	mv man/xmonad{,-darcs}.1
+	doman man/xmonad-darcs.1
+
 	insinto /usr/share/${PN}
 	newins Config.hs ${PF}.Config.hs
 	save_config Config.hs
