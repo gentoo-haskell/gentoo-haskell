@@ -7,7 +7,7 @@ inherit eutils java-pkg
 DESCRIPTION="Helium (for learning Haskell)"
 HOMEPAGE="http://www.cs.uu.nl/helium"
 SRC_URI="http://www.cs.uu.nl/helium/distr/${P}-src.tar.gz
-	 http://www.cs.uu.nl/helium/distr/Hint.jar"
+	http://www.cs.uu.nl/helium/distr/Hint.jar"
 
 LICENSE="GPL-2"
 SLOT="0"
