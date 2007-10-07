@@ -8,7 +8,7 @@ inherit haskell-cabal darcs savedconfig
 
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org"
-EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/xmonad"
+EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 XMONAD_REPOSITORY="${EDARCS_TOP_DIR}/xmonad"
 
 LICENSE="BSD"
@@ -26,7 +26,7 @@ RESTRICT="strip"
 
 fetch_XMonadContrib() {
 	local EDARCS_REPOSITORY EDARCS_LOCALREPO
-	EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/XMonadContrib"
+	EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
 	EDARCS_LOCALREPO="xmonad/XMonadContrib"
 	darcs_fetch
 }
