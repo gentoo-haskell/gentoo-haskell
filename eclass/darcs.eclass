@@ -142,7 +142,7 @@ darcs_src_unpack() {
 
 	EDARCS_SHOPT=$(shopt -p dotglob)
 	shopt -s dotglob	# get any dotfiles too.
-	cp -Rf "$EDARCS_TOP_DIR/$EDARCS_LOCALREPO"/* "${WORKDIR}/${P}"
+	rsync -rlpgo --exclude="_darcs/"  "$EDARCS_TOP_DIR/$EDARCS_LOCALREPO"/* "${WORKDIR}/${P}"
 	eval ${EDARCS_SHOPT}    # reset shopt
 
 	einfo "Darcs repository contents are now in ${WORKDIR}/${P}"
