@@ -6,7 +6,7 @@ CABAL_FEATURES="profile haddock lib"
 inherit haskell-cabal
 
 DESCRIPTION="Portable POSIX-compatibility layer."
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/unix-compat"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
