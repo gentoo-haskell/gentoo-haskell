@@ -41,9 +41,9 @@ EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="current/dist"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
-		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-		 ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
-		 x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
+	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
+	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
 LICENSE="BSD"
 SLOT="0"
