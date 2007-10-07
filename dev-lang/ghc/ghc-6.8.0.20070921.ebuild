@@ -66,7 +66,7 @@ DEPEND="${RDEPEND}
 # >=ghc-5.04.3 on their $PATH already
 
 PDEPEND=">=dev-haskell/cabal-1.2
-		 >=dev-haskell/filepath-1.0"
+	>=dev-haskell/filepath-1.0"
 
 append-ghc-cflags() {
 	local flag compile assemble link
