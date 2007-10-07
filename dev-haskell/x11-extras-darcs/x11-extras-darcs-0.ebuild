@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/x11-1.2
 	!dev-haskell/x11-extras"
 
-EDARCS_REPOSITORY="http://darcs.haskell.org/~sjanssen/X11-extras"
+EDARCS_REPOSITORY="http://code.haskell.org/X11-extras"
 EDARCS_GET_CMD="get --partial"
 
 src_compile() {
