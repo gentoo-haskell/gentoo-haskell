@@ -23,11 +23,6 @@ src_unpack() {
 	use doc || sed -i "s|doc ||" Makefile
 }
 
-src_compile() {
-	econf || die "configure failed"
-	emake || die "make failed"
-}
-
 src_install () {
 	dodir /usr/bin
 	einstall \
