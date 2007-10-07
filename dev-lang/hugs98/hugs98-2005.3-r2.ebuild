@@ -34,7 +34,7 @@ MY_P="${PN}-${MY_PV}"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="The Hugs98 Haskell interpreter"
 SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}.tar.gz
-		 http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}-patch.gz"
+	http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}-patch.gz"
 HOMEPAGE="http://www.haskell.org/hugs/"
 
 SLOT="0"
