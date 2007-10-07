@@ -38,7 +38,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack "${A}"
-	
+
 	rm "${S}/configure"
 	sed -i -e "/Extensions/aGhc-Options: -O +RTS -M${CHECKREQS_MEMORY}m -RTS" \
 		"${S}/WASH.cabal"

@@ -65,8 +65,8 @@ src_compile() {
 src_install() {
 	ghc-setup-pkg
 	make prefix="${D}/usr" \
-		 PACKAGELIBDIR="${D}/usr/$(get_libdir)/${P}/ghc-$(ghc-version)" \
-		 install \
+		PACKAGELIBDIR="${D}/usr/$(get_libdir)/${P}/ghc-$(ghc-version)" \
+		install \
 		|| die "make install failed"
 	ghc-install-pkg
 
