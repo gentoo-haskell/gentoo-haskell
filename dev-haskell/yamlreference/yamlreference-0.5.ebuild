@@ -9,7 +9,7 @@ MY_PN="YamlReference"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="YAML reference implementation"
-HOMEPAGE="www.ben-kiki.org/oren/YamlReference"
+HOMEPAGE="http://www.ben-kiki.org/oren/YamlReference"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
