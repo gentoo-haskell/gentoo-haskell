@@ -19,3 +19,8 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
+
+src_unpack() {
+	unpack "${A}"
+	cabal-mksetup
+}
