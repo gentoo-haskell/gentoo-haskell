@@ -20,11 +20,7 @@ DEPEND=">=dev-lang/ghc-6.6"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 
-# Sadly Setup.hs in the ghc-6.6.1 extralibs was not tested with Cabal-1.1.6.x
 src_unpack() {
 	unpack "${A}"
-	sed -e "/type Hook/ s/UserHooks/Maybe UserHooks/" \
-		-e "/^runTestScript ::/ d" \
-		-e "s/maybeExit \\\$ //" \
-		-i ${S}/Setup.hs
+	cabal-mksetup
 }
