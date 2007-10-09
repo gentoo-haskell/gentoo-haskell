@@ -143,6 +143,20 @@ cabal-bootstrap() {
 		|| die "compiling ${setupmodule} failed"
 }
 
+cabal-mksetup() {
+	local setupdir
+
+	if [[ -n $1 ]]; then
+		setupdir=$1
+	else
+		setupdir=${S}
+	fi
+
+	rm -f "${setupdir}"/Setup.{lhs,hs}
+
+	echo 'import Distribution.Simple; main = defaultMain' > $setupdir/Setup.hs
+}
+
 cabal-haddock() {
 	./setup haddock || die "setup haddock failed"
 }
