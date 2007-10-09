@@ -17,3 +17,11 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/network
 		dev-haskell/mtl"
+
+src_unpack() {
+	unpack "${A}"
+	cabal-mksetup
+	sed -i \
+		-e "s/mtl/mtl, unix/" \
+		"${S}/hslogger.cabal"
+}
