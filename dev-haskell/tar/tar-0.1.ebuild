@@ -23,4 +23,6 @@ src_unpack() {
 
 	# fix haddock markup
 	sed -i -e 's|@/@|@\\/@|' "${S}/Codec/Archive/Tar/Types.hs"
+
+	cabal-mksetup
 }
