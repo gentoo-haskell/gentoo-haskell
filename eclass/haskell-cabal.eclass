@@ -154,7 +154,8 @@ cabal-mksetup() {
 
 	rm -f "${setupdir}"/Setup.{lhs,hs}
 
-	echo 'import Distribution.Simple; main = defaultMain' > $setupdir/Setup.hs
+	echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
+		> $setupdir/Setup.hs
 }
 
 cabal-haddock() {
