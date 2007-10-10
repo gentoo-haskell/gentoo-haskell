@@ -16,7 +16,7 @@ IUSE="doc"
 # java use flag disabled because of bug #107019
 
 DEPEND=">=dev-lang/ghc-6.2
-		>=dev-haskell/cabal-1.1.6
+		=dev-haskell/cabal-1.1.6*
 	doc? (	~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2 )"
