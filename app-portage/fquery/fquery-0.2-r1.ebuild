@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=virtual/ghc-6.4"
+DEPEND=">=dev-lang/ghc-6.4"
 
 src_unpack() {
 	unpack "${A}"
