@@ -90,7 +90,9 @@ fi
 
 # We always use a standalone version of Cabal, rather than the one that comes
 # with GHC. But of course we can't depend on cabal when building cabal itself.
-CABAL_MIN_VERSION=1.1.4
+if [[ -z ${CABAL_MIN_VERSION} ]]; then
+	CABAL_MIN_VERSION=1.1.4
+fi
 if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
 	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
 fi
