@@ -8,7 +8,7 @@ SRC_URI="http://danae.uni-muenster.de/~lux/curry/download/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6"
