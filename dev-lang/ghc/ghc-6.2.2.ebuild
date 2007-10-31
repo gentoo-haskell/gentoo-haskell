@@ -36,8 +36,8 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 #TODO: as a quick hack, using ghc-6.6's docs
 # before adding to portage, upload appropriate versions to the mirrors 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )
-		 doc? 	( mirror://gentoo/ghc-6.6-libraries.tar.gz
-				  mirror://gentoo/ghc-6.6-users_guide.tar.gz )
+		 doc? 	( mirror://gentoo/${P}-libraries.tar.gz
+				  mirror://gentoo/${P}-users_guide.tar.gz )
 		 ppc?	( mirror://gentoo/ghc-bin-${PV}-r1-ppc.tbz2 )
 		 sparc?	( mirror://gentoo/ghc-bin-${PV}-r1-sparc.tbz2 )
 		 x86?	( mirror://gentoo/ghc-bin-${PV}-r1-x86.tbz2 )"
