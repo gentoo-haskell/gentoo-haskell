@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/happy/happy-1.15.ebuild,v 1.13 2006/08/26 20:41:12 wormo Exp $
 
 CABAL_FEATURES="bin"
-ABAL_MIN_VERSION=1.2
+CABAL_MIN_VERSION=1.2
 inherit haskell-cabal autotools
 
 DESCRIPTION="A yacc-like parser generator for Haskell"
