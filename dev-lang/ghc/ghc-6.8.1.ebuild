@@ -34,9 +34,11 @@ DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
 # discover if this is a snapshot release
-IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
+# XXX: Temp hack, the 6.8.1 tarball is still under stable/dist
+#IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
 EXTRA_SRC_URI="${PV}"
-[[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
+#[[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
+EXTRA_SRC_URI="stable/dist"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
 
