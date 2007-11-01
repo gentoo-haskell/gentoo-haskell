@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
-inherit base
+inherit base eutils
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://abridgegame.org/darcs"
@@ -29,6 +29,15 @@ RDEPEND=">=net-misc/curl-7.10.2
 #	wxwindows?  ( dev-haskell/wxhaskell )"
 
 S=${WORKDIR}/${MY_P}
+
+pkg_setup() {
+	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
+		eerror "Building darcs with USE=\"doc\" requires that"
+		eerror "dev-tex/latex2html is built with at least one of"
+		eerror "USE=\"png\" and USE=\"gif\"."
+		die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
+	fi
+}
 
 src_unpack() {
 	base_src_unpack

@@ -30,6 +30,15 @@ RDEPEND=">=net-misc/curl-7.10.2
 
 S=${WORKDIR}/${MY_P}
 
+pkg_setup() {
+	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
+		eerror "Building darcs with USE=\"doc\" requires that"
+		eerror "dev-tex/latex2html is built with at least one of"
+		eerror "USE=\"png\" and USE=\"gif\"."
+		die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
+	fi
+}
+
 src_unpack() {
 	base_src_unpack
 
