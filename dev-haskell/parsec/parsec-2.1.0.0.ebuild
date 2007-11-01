@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
-GHC_PV=6.8.0.20071028
+GHC_PV=6.8.1
 
 DESCRIPTION="Monadic parser combinators"
 HOMEPAGE="http://haskell.org/ghc/"

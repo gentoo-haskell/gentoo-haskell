@@ -7,7 +7,7 @@ CABAL_MIN_VERSION=1.2
 inherit base haskell-cabal
 
 MY_PN="HUnit"
-GHC_PV=6.8.0.20071028
+GHC_PV=6.8.1
 
 DESCRIPTION="A unit testing framework for Haskell."
 HOMEPAGE="http://haskell.org/ghc/"

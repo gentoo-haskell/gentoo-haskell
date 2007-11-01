@@ -7,7 +7,7 @@ CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 MY_PN="HGL"
-GHC_PV=6.8.0.20071028
+GHC_PV=6.8.1
 
 DESCRIPTION="A simple graphics library based on X11 or Win32."
 HOMEPAGE="http://haskell.org/ghc/"

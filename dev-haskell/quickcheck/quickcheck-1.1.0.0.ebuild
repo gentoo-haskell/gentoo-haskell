@@ -7,7 +7,7 @@ CABAL_MIN_VERSION=1.2
 inherit base haskell-cabal
 
 MY_PN=QuickCheck
-GHC_PV=6.8.0.20071028
+GHC_PV=6.8.1
 
 DESCRIPTION="An automatic, specification based testing utility for Haskell programs"
 HOMEPAGE="http://haskell.org/ghc/"

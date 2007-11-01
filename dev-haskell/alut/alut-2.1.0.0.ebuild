@@ -7,7 +7,7 @@ CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 MY_PN="ALUT"
-GHC_PV=6.8.0.20071028
+GHC_PV=6.8.1
 
 DESCRIPTION="A Haskell binding for the OpenAL Utility Toolkit"
 HOMEPAGE="http://haskell.org/ghc/"
