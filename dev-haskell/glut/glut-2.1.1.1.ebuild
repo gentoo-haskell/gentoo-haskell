@@ -11,7 +11,7 @@ GHC_PV=6.8.1
 
 DESCRIPTION="GLUT bindings for haskell"
 HOMEPAGE="http://www.haskell.org/HOpenGL/"
-SRC_URI="http://www.haskell.org/ghc/dist/stable/dist/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"

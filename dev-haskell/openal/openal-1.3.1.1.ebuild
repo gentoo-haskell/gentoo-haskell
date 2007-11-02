@@ -11,7 +11,7 @@ GHC_PV=6.8.1
 
 DESCRIPTION="A Haskell binding to the OpenAL cross-platform 3D audio API"
 HOMEPAGE="http://haskell.org/ghc/"
-SRC_URI="http://www.haskell.org/ghc/dist/stable/dist/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
