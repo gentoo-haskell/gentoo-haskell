@@ -79,8 +79,8 @@ src_install() {
 		&& rmdir "${D}/etc" \
 		|| die "fixing location of darcs bash completion failed"
 	if use doc; then
-		dodoc "${S}/manual/darcs.ps"
-		dohtml -r "${S}/manual/"*
+		dodoc "${S}/doc/manual/darcs.ps"
+		dohtml -r "${S}/doc/manual/"*
 	fi
 }
 
