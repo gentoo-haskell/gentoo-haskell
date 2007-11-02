@@ -40,8 +40,6 @@ MY_P="${PN}-${MY_PV}"
 EXTRA_SRC_URI="${MY_PV}"
 [[ -z "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-#TODO: as a quick hack, using ghc-6.6's docs
-# before adding to portage, upload appropriate versions to the mirrors 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar.bz2 )
 		 doc? 	( mirror://gentoo/${P}-libraries.tar.gz
 				  mirror://gentoo/${P}-users_guide.tar.gz )
