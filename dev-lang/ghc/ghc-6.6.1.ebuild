@@ -44,7 +44,11 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
 	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
 	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
+v v v v v v v
+	ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
+*************
 	sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
+^ ^ ^ ^ ^ ^ ^
 	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
 LICENSE="BSD"
