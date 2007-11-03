@@ -231,10 +231,10 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
-		# the datadir override is required to make the haddock entries
-		# in the package.conf file point to the right place.
+		# Note that --disable-hopengl actually enables it. We have to ommit
+		# the flag to disable opengl.
 		econf \
-			$(use_enable opengl hopengl) \
+			$(use opengl && echo "--enable-hopengl") \
 			|| die "econf failed"
 
 		# ghc-6.2.x build system does not support parallel make
