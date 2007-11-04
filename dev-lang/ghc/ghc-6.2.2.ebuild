@@ -285,9 +285,6 @@ src_install() {
 
 pkg_postinst() {
 	ghc-reregister
-	elog "If you have dev-lang/ghc-bin installed, you might"
-	elog "want to unmerge it. It is no longer needed."
-	elog
 
 	if use binary; then
 		elog "The envirenment has been set to use the binary distribution of"
