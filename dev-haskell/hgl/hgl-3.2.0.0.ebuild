@@ -7,11 +7,11 @@ CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 MY_PN="HGL"
-GHC_PV=6.8.1
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A simple graphics library based on X11 or Win32."
 HOMEPAGE="http://haskell.org/ghc/"
-SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,4 +21,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/x11-1.2"
 
-S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
+S="${WORKDIR}/${MY_P}"

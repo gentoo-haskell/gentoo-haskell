@@ -7,11 +7,11 @@ CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 MY_PN="ALUT"
-GHC_PV=6.8.1
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A Haskell binding for the OpenAL Utility Toolkit"
 HOMEPAGE="http://haskell.org/ghc/"
-SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -23,6 +23,6 @@ DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/openal-1.3.1
 	media-libs/freealut"
 
-S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
+S="${WORKDIR}/${MY_P}"
 
 #TODO: install examples perhaps?

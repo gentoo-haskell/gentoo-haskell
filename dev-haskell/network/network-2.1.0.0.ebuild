@@ -6,11 +6,9 @@ CABAL_FEATURES="lib profile haddock"
 CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
-GHC_PV=6.8.1
-
 DESCRIPTION="Haskell network library"
 HOMEPAGE="http://haskell.org/ghc/"
-SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.tar.bz2"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,5 +17,3 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	dev-haskell/parsec"
-
-S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
