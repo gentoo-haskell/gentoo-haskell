@@ -157,8 +157,8 @@ pkg_setup() {
 	fi
 
 	if use binary; then
-		if use opengl || use openal || use X || use doc || use test; then
-			ewarn "The binary build does not include the docs, X, OpenGL or"
+		if use opengl || use openal || use X || use test; then
+			ewarn "The binary build does not include the X, OpenGL"
 			ewarn "or OpenAL bindings and does not support the testsuite."
 			ewarn "If you want those features, emerge with USE=\"-binary\""
 		fi
@@ -193,6 +193,21 @@ src_unpack() {
 			"${S}/usr/bin/hsc2hs" \
 			"${S}/usr/$(get_libdir)/${P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
+
+
+		# fix docs
+		if use doc; then
+			# correct the documentation and .haddock files path
+			sed -i -e \
+				"s|/opt/ghc/share/doc/${P}/html/libraries|/usr/share/doc/${P}/html/libraries|g" \
+				"${S}/usr/$(get_libdir)/${P}/package.conf"
+		else
+			# remove all doc stuff from package.conf
+			sed -i \
+				-e 's|haddockInterfaces = \[[^]]*\]|haddockInterfaces = \[\]|g' \
+				-e "s|haddockHTMLs = \[[^]]*\]|haddockHTMLs = \[\]|g" \
+				"${S}/usr/$(get_libdir)/${P}/package.conf"
+		fi
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
 			"${S}/usr/bin/ghcprof"
@@ -328,10 +343,13 @@ src_install() {
 	fi
 
 	if use doc; then
-		dohtml -r "${WORKDIR}/libraries/"* \
+		docinto "html/libraries"
+		dohtml -a haddock -r "${WORKDIR}/libraries/"* \
 			|| die "installing library docs failed"
+		docinto "html/users_guide"
 		dohtml -r "${WORKDIR}/users_guide/"* \
 			|| die "installing user guide failed"
+		docinto ""
 	fi
 }
 
