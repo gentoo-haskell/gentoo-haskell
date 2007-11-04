@@ -14,6 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND="~dev-lang/ghc-6.6.1"
+DEPEND="~dev-lang/ghc-6.4.2"
 
-CABAL_CORE_LIB_GHC_PV="6.6.1"
+CABAL_CORE_LIB_GHC_PV="6.4.2"
