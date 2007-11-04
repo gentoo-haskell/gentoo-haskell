@@ -344,7 +344,7 @@ src_install() {
 
 	if use doc; then
 		docinto "html/libraries"
-		dohtml -a haddock -r "${WORKDIR}/libraries/"* \
+		dohtml -A haddock -r "${WORKDIR}/libraries/"* \
 			|| die "installing library docs failed"
 		docinto "html/users_guide"
 		dohtml -r "${WORKDIR}/users_guide/"* \

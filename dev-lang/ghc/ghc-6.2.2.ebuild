@@ -276,14 +276,17 @@ src_install() {
 	fi
 
 	if use doc; then
-		dohtml -r "${WORKDIR}/libraries/"* \
+		docinto "html/libraries"
+		dohtml -A haddock -r "${WORKDIR}/libraries/"* \
 			|| die "installing library docs failed"
+		docinto "html/users_guide"
 		dohtml -r "${WORKDIR}/users_guide/"* \
 			|| die "installing user guide failed"
+		docinto ""
 	fi
 }
 
-pkg_postinst() {
+pkg_postinst () {
 	ghc-reregister
 
 	if use binary; then
