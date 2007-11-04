@@ -65,8 +65,11 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND=">=dev-haskell/cabal-1.2"
-#	>=dev-haskell/filepath-1.1
+PDEPEND=">=dev-haskell/cabal-1.2.2
+		>=dev-haskell/filepath-1.1.0
+		>=dev-haskell/bytestring-0.9.0
+		>=dev-haskell/readline-1.0.1
+		>=dev-haskell/unix-2.2.0"
 
 append-ghc-cflags() {
 	local flag compile assemble link
