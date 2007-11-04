@@ -222,10 +222,9 @@ src_compile() {
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
 			echo XMLDocWays="html" >> mk/build.mk
+			echo HADDOCK_DOCS=YES >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
-			# needed to prevent haddock from being called
-			echo NO_HADDOCK_DOCS=YES >> mk/build.mk
 		fi
 
 		# circumvent a very strange bug that seems related with ghc producing too much
