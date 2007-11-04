@@ -38,7 +38,8 @@ IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
 EXTRA_SRC_URI="${PV}"
 [[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
+	amd64?	( http://dev.gentoo.org/~dcoutts/ghc-bin-${PV}-amd64.tbz2 )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -62,12 +63,6 @@ DEPEND="${RDEPEND}
 							>=dev-haskell/haddock-0.8 ) )"
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
-
-PDEPEND=">=dev-haskell/cabal-1.2.2
-		>=dev-haskell/filepath-1.1.0
-		>=dev-haskell/bytestring-0.9.0
-		>=dev-haskell/readline-1.0.1
-		>=dev-haskell/unix-2.2.0"
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -132,9 +127,9 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use amd64 || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
+	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
 		eerror "No binary .tbz2 package available yet for these arches:"
-		eerror "  alpha, amd64, hppa, ia64, ppc, ppc64, sparc, x86"
+		eerror "  alpha, hppa, ia64, ppc, ppc64, sparc, x86"
 		eerror "Please try emerging with USE=ghcbootstrap and report build"
 		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
 		die "No binary available for this arch yet, USE=ghcbootstrap"
