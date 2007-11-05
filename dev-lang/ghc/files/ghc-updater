@@ -80,7 +80,11 @@ done
 # load the gentoo-style info macros, but hack to get around
 # it thinking this is an rc script
 EBUILD="1"
-source /sbin/functions.sh
+if [[ -e /lib/rcscripts/sh/functions.sh ]]; then
+       source /lib/rcscripts/sh/functions.sh
+else
+       source /sbin/functions.sh
+fi
 
 # misc helper functions
 eloginfo() {
