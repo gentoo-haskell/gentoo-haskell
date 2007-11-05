@@ -61,7 +61,6 @@ done
 if [[ -n "${CABAL_USE_HADDOCK}" ]]; then
 	IUSE="${IUSE} doc"
 	DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
-	cabalconf="${cabalconf} --with-haddock=/usr/bin/haddock"
 fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
@@ -165,6 +164,9 @@ cabal-haddock() {
 }
 
 cabal-configure() {
+	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
+		cabalconf="${cabalconf} --with-haddock=/usr/bin/haddock"
+	fi
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
 		cabalconf="${cabalconf} --enable-library-profiling"
 	fi
