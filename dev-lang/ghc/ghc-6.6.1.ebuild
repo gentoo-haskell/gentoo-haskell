@@ -206,7 +206,7 @@ src_unpack() {
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
 		# Don't strip binaries on install. See QA warnings in bug #140369.
-		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
+		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' "${S}/mk/config.mk.in"
 
 		# Temporary patches that needs testing before being pushed upstream:
 		cd "${S}"
@@ -325,7 +325,7 @@ src_install() {
 		cd "${S}"
 		dodoc README ANNOUNCE LICENSE VERSION
 
-		dosbin ${FILESDIR}/ghc-updater
+		dosbin "${FILESDIR}/ghc-updater"
 
 		dobashcompletion "${FILESDIR}/ghc-bash-completion"
 

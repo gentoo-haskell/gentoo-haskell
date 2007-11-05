@@ -214,7 +214,7 @@ src_unpack() {
 
 	else
 
-		cd ${S}
+		cd "${S}"
 		epatch "${WORKDIR}/${P}-alut.patch"
 		epatch "${FILESDIR}/${P}-sparc32plus.patch"
 		epatch "${FILESDIR}/${P}-sparcmangler.patch"
@@ -243,7 +243,7 @@ src_unpack() {
 		echo 'GC_HC_OPTS += -optc-fno-strict-aliasing' >> "${S}/ghc/rts/Makefile"
 
 		# Don't strip binaries on install. See QA warnings in bug #140369.
-		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
+		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' "${S}/mk/config.mk.in"
 	fi
 }
 
@@ -336,7 +336,7 @@ src_install() {
 		cd "${S}/ghc"
 		dodoc README ANNOUNCE LICENSE VERSION
 
-		dosbin ${FILESDIR}/ghc-updater
+		dosbin "${FILESDIR}/ghc-updater"
 
 		cp -p "${D}/${GHC_PREFIX}/$(get_libdir)/${P}/package.conf"{,.shipped} \
 			|| die "failed to copy package.conf"
