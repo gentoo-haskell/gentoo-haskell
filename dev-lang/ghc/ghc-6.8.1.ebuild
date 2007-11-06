@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
+#Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -249,7 +249,7 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
-		econf || die "econf failed"
+		econf --docdir=/usr/share/doc/${P} || die "econf failed"
 
 		emake all || die "make failed"
 
