@@ -4,7 +4,7 @@ MANIFESTS:=$(addsuffix /Manifest, $(EBUILDS))
 
 all: ${MANIFESTS} profiles/categories
 
-%/Manifest: %/*.ebuild %/files/*
+%/Manifest: %/*.ebuild
 	ebuild $(firstword $(wildcard $(dir $@)*.ebuild)) digest
 
 profiles/categories: ${CATEGORIES}
