@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator
+inherit base bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator autotools
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -249,6 +249,7 @@ src_compile() {
 		use ghcbootstrap || \
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 
+		eautoreconf
 		econf --docdir=/usr/share/doc/${P} || die "econf failed"
 
 		emake all || die "make failed"
