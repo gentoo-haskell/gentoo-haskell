@@ -9,6 +9,9 @@
 
 * in the ghc ebuilds: does the ghcprof subst work
 
+* update the x86 and amd64 ghc-bin-6.8.1 tarballs to reflect the proper location of the docs 
+  (/usr/share/doc/ghc-6.8.1 instead of /usr/share/doc/ghc)
+
 == New ebuilds ==
 
 * new dev-haskell/ ebuilds from hackage that we should get into portage:
@@ -58,6 +61,9 @@
 * improve HackPort tool
 
 == Speculative ==
+
+* Since there is no ghc-bin ebuild, do we really need /opt/ghc anymore? Can we just install to /usr 
+  instead?
 
 * SLOT libs
 
