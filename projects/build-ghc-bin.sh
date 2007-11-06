@@ -11,7 +11,7 @@ ghcpath() {
 if [[ "$#" == "0" ||  "$1" == "-h" || "$1" == "--help" ]]; then
     echo "Usage: $0 <ghc-version>"
     echo
-    echo "Welcome to the delecate task of bootstrapping ghc."
+    echo "Welcome to the delicate task of bootstrapping ghc."
     echo "This script assumes that you have a working GHC version setup in"
     echo "your path to be used for the bootstrapping."
     echo
