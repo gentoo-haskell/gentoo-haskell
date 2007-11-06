@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/ghc
-		<dev-haskell/cabal-1.1.7
+		dev-haskell/cabal
 		dev-haskell/filepath
 		dev-haskell/http
 		dev-haskell/mtl
