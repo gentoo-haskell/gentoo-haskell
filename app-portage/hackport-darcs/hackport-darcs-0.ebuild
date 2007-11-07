@@ -21,4 +21,5 @@ DEPEND="dev-lang/ghc
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/tar
-		dev-haskell/zlib"
+		dev-haskell/zlib
+		dev-haskell/regex-compat"
