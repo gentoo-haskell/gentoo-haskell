@@ -224,6 +224,7 @@ src_compile() {
 		if use ghcbootstrap && use doc; then
 			echo XMLDocWays="html" >> mk/build.mk
 			echo HADDOCK_DOCS=YES >> mk/build.mk
+			echo 'docdir = $(datarootdir)/doc/ghc-$(ProjectVersion)' >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
 		fi
