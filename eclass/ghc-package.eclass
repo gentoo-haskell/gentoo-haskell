@@ -267,7 +267,7 @@ ghc-listpkg() {
 				| sed \
 					-e "s|^.*${i}:\([^:]*\).*$|\1|" \
 					-e "s|/.*$||" \
-					-e "s|,| |g" -e "s|[()]||g"
+					-e "s|,| |g" -e "s|[(){}]||g"
 		else
 			echo $($(ghc-getghcpkgbin) -l -f "${i}") \
 				| cut -f2 -d':' \
