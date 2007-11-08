@@ -82,7 +82,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/gconf.package.conf" \
 			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.package.conf" ) \
 		$(use svg && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.package.conf")
+			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.package.conf") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.package.conf") \
 		$(use seamonkey || use firefox || use xulrunner && echo \
