@@ -16,7 +16,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/gtk2hs-0.9.11
-	>=dev-haskell/filepath-1.0"
+	>=dev-haskell/filepath-1.0
+	dev-haskell/regex-posix"
 
 pkg_setup() {
 	if ! built_with_use dev-haskell/gtk2hs gnome; then
