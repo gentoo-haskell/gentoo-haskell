@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
-		>=dev-haskell/x11-1.2.1
+		|| ( >=dev-haskell/x11-1.2.1 dev-haskell/x11-darcs )
 		>=dev-haskell/utf8-string-0.1"
 
 S="${WORKDIR}/${MY_P}"
