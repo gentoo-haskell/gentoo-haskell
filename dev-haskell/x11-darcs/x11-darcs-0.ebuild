@@ -18,6 +18,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/cabal-1.1.6
+		!dev-haskell/x11
 		x11-libs/libX11"
 
 src_compile() {
