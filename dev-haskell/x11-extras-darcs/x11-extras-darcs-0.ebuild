@@ -16,7 +16,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
-	>=dev-haskell/x11-1.2
+	|| (>=dev-haskell/x11-1.2 dev-haskell/x11-darcs)
 	!dev-haskell/x11-extras"
 
 EDARCS_REPOSITORY="http://code.haskell.org/X11-extras"
