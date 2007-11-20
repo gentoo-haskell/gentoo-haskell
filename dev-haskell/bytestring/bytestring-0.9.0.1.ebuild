@@ -3,6 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="haddock lib profile"
+CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 DESCRIPTION="Fast, packed, strict and lazy byte arrays with a list interface"
