@@ -142,7 +142,7 @@ pkg_setup() {
 set_config() {
 	# make this a separate function and call it several times as portage doesn't
 	# remember the variables properly between the fuctions.
-	use binary && GHC_PREFIX="/opt/ghc" || GHC_PREFIX="/usr"
+	use binary && GHC_PREFIX="${LOC}" || GHC_PREFIX="/usr"
 }
 
 src_unpack() {
@@ -157,14 +157,14 @@ src_unpack() {
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
 
-		# Relocate from /usr to /opt/ghc
+		# Relocate from /usr to ${LOC}
 		sed -i -e "s|/usr|${LOC}|g" \
 			"${S}/usr/bin/ghc-${PV}" \
 			"${S}/usr/bin/ghci-${PV}" \
 			"${S}/usr/bin/ghc-pkg-${PV}" \
 			"${S}/usr/bin/hsc2hs" \
 			"${S}/usr/$(get_libdir)/${P}/package.conf" \
-			|| die "Relocating ghc from /usr to /opt/ghc failed"
+			|| die "Relocating ghc from /usr to ${LOC} failed"
 
 		sed -i -e "s|/usr/$(get_libdir)|${LOC}/$(get_libdir)|" \
 			"${S}/usr/bin/ghcprof"
@@ -260,11 +260,11 @@ src_compile() {
 src_install() {
 	if use binary; then
 		mkdir "${D}/opt"
-		mv "${S}/usr" "${D}/opt/ghc"
+		mv "${S}/usr" "${D}${LOC}"
 
 		# Remove the docs if not requested
 		if ! use doc; then
-			rm -rf "${D}/opt/ghc/share/doc/${P}/html" \
+			rm -rf "${D}${LOC}/share/doc/${P}/html" \
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 
@@ -313,7 +313,7 @@ pkg_postinst() {
 	ewarn "if you have switched between binary and source versions"
 	ewarn "of ghc, please run:"
 	if use binary; then
-		ewarn "      /opt/ghc/sbin/ghc-updater"
+		ewarn "      ${LOC}/sbin/ghc-updater"
 	else
 		ewarn "      /usr/sbin/ghc-updater"
 	fi
