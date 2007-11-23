@@ -17,6 +17,7 @@ IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	>=dev-lang/ghc-6.2.2
+	<dev-lang/ghc-6.8.1
 	dev-haskell/quickcheck
 	dev-haskell/mtl
 	dev-haskell/html
