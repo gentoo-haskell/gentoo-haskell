@@ -9,8 +9,6 @@
 
 * remove old versions of cabal. Do we need anything other than 1.1.6.2?
 
-* add latest cpphs-1.5 to portage
-
 * add latest X11 to portage (assuming it doesn't require latest cabal)
 
 * ask for these to go stable:
