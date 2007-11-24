@@ -226,7 +226,7 @@ eloginfo "Re-ordering packages to merge .."
 
 DEPSORT=$(find_in_portdir "dev-lang/ghc/files/depsort.py")
 if [[ -z ${DEPSORT} ]]; then
-	eerror "Fatal error: File dev-lang/ghc/files/depsort.py in portage tree."
+	eerror "Fatal error: File dev-lang/ghc/files/depsort.py not in portage tree."
 	exit 1
 fi
 PKGS_OK_SORTED="$(${PORTAGE_PYTHON} ${DEPSORT} ${PKGS_OK} | xargs)"
