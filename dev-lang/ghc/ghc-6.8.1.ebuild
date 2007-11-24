@@ -47,7 +47,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
-LOC="/opt/ghc" # location for installation of binary version
+LOC="/usr" # location for installation of binary version
 
 RDEPEND="
 	!dev-lang/ghc-bin
@@ -225,6 +225,7 @@ src_compile() {
 			echo XMLDocWays="html" >> mk/build.mk
 			echo HADDOCK_DOCS=YES >> mk/build.mk
 			echo 'docdir = $(datarootdir)/doc/ghc-$(ProjectVersion)' >> mk/build.mk
+			echo 'htmldir = $(datarootdir)/doc/ghc-$(ProjectVersion)' >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
 		fi
