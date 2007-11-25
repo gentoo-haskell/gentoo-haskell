@@ -1,0 +1,64 @@
+--- regex-base-0.92-old/regex-base.cabal	2007-11-25 15:17:42.000000000 +0100
++++ regex-base-0.92/regex-base.cabal	2007-11-25 15:30:33.000000000 +0100
+@@ -13,29 +13,38 @@
+ Description:            Interface API for regex-posix,pcre,parsec,tdfa,dfa
+ Category:               Text
+ Tested-With:            GHC
+-Build-Depends:          base >= 2.0, mtl
+--- Data-Files:
+--- Extra-Source-Files:
+--- Extra-Tmp-Files:
+-Exposed-Modules:        Text.Regex.Base
++Cabal-Version:          >=1.2
++
++Flag splitBase
++  description:          Choose the new smaller, split-up base package.
++
++Library
++  if flag(splitBase)
++    Build-Depends:      base >= 3, mtl, containers, bytestring, array
++  else
++    Build-Depends:      base < 3, mtl    
++  -- Data-Files:
++  -- Extra-Source-Files:
++  -- Extra-Tmp-Files:
++  Exposed-Modules:      Text.Regex.Base
+                         Text.Regex.Base.RegexLike
+                         Text.Regex.Base.Context
+                         Text.Regex.Base.Impl
+-Buildable:              True
+--- Other-Modules:
+--- HS-Source-Dirs:         "."
+-Extensions:             MultiParamTypeClasses, FunctionalDependencies
+--- GHC-Options:            -Wall -Werror
+-GHC-Options:            -Wall -Werror -O2
+--- GHC-Options:            -Wall -ddump-minimal-GHC
+--- imports-Prof-Options:       -auto-all
+--- Hugs-Options:
+--- NHC-Options:
+--- Includes:
+--- Include-Dirs:
+--- C-Sources:
+--- Extra-Libraries:
+--- Extra-Lib-Dirs:
+--- CC-Options:
+--- LD-Options:
+--- Frameworks:
++  Buildable:              True
++  -- Other-Modules:
++  -- HS-Source-Dirs:         "."
++  Extensions:             MultiParamTypeClasses, FunctionalDependencies
++  -- GHC-Options:            -Wall -Werror
++  GHC-Options:            -Wall -O2
++  -- GHC-Options:            -Wall -ddump-minimal-GHC
++  -- imports-Prof-Options:       -auto-all
++  -- Hugs-Options:
++  -- NHC-Options:
++  -- Includes:
++  -- Include-Dirs:
++  -- C-Sources:
++  -- Extra-Libraries:
++  -- Extra-Lib-Dirs:
++  -- CC-Options:
++  -- LD-Options:
++  -- Frameworks:
