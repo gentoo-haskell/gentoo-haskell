@@ -1,0 +1,70 @@
+--- regex-posix-0.92-old/regex-posix.cabal	2007-11-25 18:21:29.000000000 +0100
++++ regex-posix-0.92/regex-posix.cabal	2007-11-25 18:19:29.000000000 +0100
+@@ -13,33 +13,42 @@
+ Description:            The posix regex backend for regex-base
+ Category:               Text
+ Tested-With:            GHC
+-Build-Depends:          regex-base >= 0.80, base >= 2.0
+--- Data-Files:
+--- Extra-Source-Files:
+--- Extra-Tmp-Files:
+--- This is the library
+-Exposed-Modules:        Text.Regex.Posix
++Cabal-Version:          >=1.2
++
++Flag splitBase
++  description:          Choose the new smaller, split-up base package.
++
++Library
++  if flag(splitBase)
++    Build-Depends:      regex-base >= 0.80, base >= 3, array, containers, bytestring
++  else
++    Build-Depends:      regex-base >= 0.80, base < 3
++  -- Data-Files:
++  -- Extra-Source-Files:
++  -- Extra-Tmp-Files:
++  -- This is the library
++  Exposed-Modules:      Text.Regex.Posix
+                         Text.Regex.Posix.Wrap
+                         Text.Regex.Posix.String
+                         Text.Regex.Posix.Sequence
+                         Text.Regex.Posix.ByteString
+                         Text.Regex.Posix.ByteString.Lazy
+--- Futher fields
+-Buildable:              True
+--- Other-Modules:
+--- HS-Source-Dirs:         "."
+-Extensions:             MultiParamTypeClasses, FunctionalDependencies
+-GHC-Options:            -Wall -Werror -O2
+--- GHC-Options:            -Wall -Werror
+--- GHC-Options:            -Wall -ddump-minimal-imports
+--- GHC-Prof-Options: 
+--- Hugs-Options:
+--- NHC-Options:
+--- C-Sources:
+--- LD-Options:
+--- Frameworks:
+-CC-Options:             -DHAVE_REGEX_H
+--- Includes:
+-Include-Dirs:           include
+--- Extra-Libraries:
+--- Extra-Lib-Dirs:
++  -- Futher fields
++  Buildable:            True
++  -- Other-Modules:
++  -- HS-Source-Dirs:         "."
++  Extensions:           MultiParamTypeClasses, FunctionalDependencies, CPP
++  GHC-Options:          -Wall -O2
++  -- GHC-Options:            -Wall -Werror
++  -- GHC-Options:            -Wall -ddump-minimal-imports
++  -- GHC-Prof-Options: 
++  -- Hugs-Options:
++  -- NHC-Options:
++  -- C-Sources:
++  -- LD-Options:
++  -- Frameworks:
++  CC-Options:             -DHAVE_REGEX_H
++  -- Includes:
++  Include-Dirs:           include
++  -- Extra-Libraries:
++  -- Extra-Lib-Dirs:
