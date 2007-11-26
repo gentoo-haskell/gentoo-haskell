@@ -4,11 +4,11 @@
 
 CABAL_FEATURES="bin lib profile haddock"
 
-inherit haskell-cabal darcs
-
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org/"
 EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
+
+inherit haskell-cabal darcs
 
 LICENSE="BSD"
 SLOT="0"
