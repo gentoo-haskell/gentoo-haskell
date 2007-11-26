@@ -19,12 +19,12 @@ KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${P/_pre/pre}"
 
-DEPEND=">=dev-haskell/cabal-1.1.6
+DEPEND=">=dev-haskell/cabal-1.2
 	>=dev-haskell/regex-compat-0.71
 	dev-haskell/mtl
 	dev-haskell/filepath
 	>=dev-tex/polytable-0.8.2
-	doc? ( dev-lang/hugs98 virtual/tetex )"
+	doc? ( dev-lang/hugs98 virtual/latex-base )"
 
 # one could argue that lhs2TeX RDEPENDs on tetex,
 # but technically, it does not ...
