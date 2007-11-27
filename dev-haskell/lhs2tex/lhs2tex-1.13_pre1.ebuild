@@ -6,7 +6,7 @@ CABAL_FEATURES="bin"
 CABAL_CONFIGURE_FLAGS="--datasubdir=${P}"
 inherit eutils haskell-cabal
 
-SRC_URI="http://www.informatik.uni-bonn.de/~loeh/lhs2tex/${P/_pre/pre}.tar.bz2"
+SRC_URI="http://www.cs.uu.nl/~andres/lhs2tex/${P/_pre/pre}.tar.bz2"
 
 IUSE="doc"
 
