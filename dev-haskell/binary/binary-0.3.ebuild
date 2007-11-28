@@ -6,7 +6,7 @@ CABAL_FEATURES="lib haddock profile"
 inherit haskell-cabal
 
 DESCRIPTION="Efficient, pure binary serialisation using lazy ByteStrings"
-HOMEPAGE="http://www.cse.unsw.edu.au/~dons/binary.html"
+HOMEPAGE="http://code.haskell.org/binary/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
