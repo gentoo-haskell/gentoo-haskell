@@ -161,15 +161,8 @@ src_unpack() {
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
-		# Don't strip binaries on install. See QA warnings in bug #140369.
-		# TODO: see if it works without this now. In ghc-6.8 there are two
-		# install targets, install and install-strip, we use install so
-		# hopefully the following hack is no longer needed
-		#sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
-
 		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
 		sed -i -e 's|docdir    := $(datarootdir)/doc/ghc|docdir := $(datarootdir)/doc/ghc-$(ProjectVersion)|' \
-			-e 's|htmldir   := $(docdir)|htmldir   := $(docdir)/html|' \
 			"${S}/mk/config.mk.in" \
 			|| die "fixing doc install path failed"
 	fi
@@ -243,7 +236,8 @@ src_install() {
 
 		# Remove the docs if not requested
 		if ! use doc; then
-			rm -rf "${D}/usr/share/doc/${P}/html" \
+			rm -rf "${D}/usr/share/doc/${P}/*/" \
+				"${D}/usr/share/doc/${P}/*.html" \
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 	else
@@ -255,7 +249,7 @@ src_install() {
 			if use ghcbootstrap; then
 				insttarget="${insttarget} install-docs"
 			else
-				dohtml -A haddock -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+				mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc"
 			fi
 		fi
 
@@ -263,8 +257,7 @@ src_install() {
 			DESTDIR="${D}" \
 			|| die "make ${insttarget} failed"
 
-		cd "${S}"
-		dodoc README ANNOUNCE LICENSE VERSION
+		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
 		dosbin ${FILESDIR}/ghc-updater
 
