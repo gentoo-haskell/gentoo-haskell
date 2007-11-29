@@ -168,9 +168,10 @@ src_unpack() {
 		#sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
 
 		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
-		sed -i -e 's|docdir    := $(datarootdir)/doc/ghc|docdir \
-			:= $(datarootdir)/doc/ghc-$(ProjectVersion)|' \
-			"${S}/mk/config.mk.in"
+		sed -i -e 's|docdir    := $(datarootdir)/doc/ghc|docdir := $(datarootdir)/doc/ghc-$(ProjectVersion)|' \
+			-e 's|htmldir   := $(docdir)|htmldir   := $(docdir)/html|' \
+			"${S}/mk/config.mk.in" \
+			|| die "fixing doc install path failed"
 	fi
 }
 
