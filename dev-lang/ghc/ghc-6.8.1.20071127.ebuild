@@ -249,7 +249,9 @@ src_install() {
 			if use ghcbootstrap; then
 				insttarget="${insttarget} install-docs"
 			else
-				mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc"
+				mkdir -p "${D}/usr/share/doc"
+				mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc" \
+					|| die "failed to copy docs"
 			fi
 		fi
 
