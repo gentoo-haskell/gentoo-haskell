@@ -30,7 +30,7 @@
 
 inherit base bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator
 
-DESCRIPTION="The Glasgow Haskell Compiler"
+DESCRIPTION="The Glorious Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
 # discover if this is a snapshot release
@@ -225,7 +225,7 @@ src_compile() {
 			echo XMLDocWays="html" >> mk/build.mk
 			echo HADDOCK_DOCS=YES >> mk/build.mk
 			echo 'docdir = $(datarootdir)/doc/ghc-$(ProjectVersion)' >> mk/build.mk
-			echo 'htmldir = $(datarootdir)/doc/ghc-$(ProjectVersion)' >> mk/build.mk
+			echo 'htmldir = $(docdir)/html' >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
 		fi
@@ -279,7 +279,8 @@ src_install() {
 			if use ghcbootstrap; then
 				insttarget="${insttarget} install-docs"
 			else
-				dohtml -A haddock -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+				dohtml -A haddock -f LICENSE -r "${WORKDIR}/usr/share/doc/${P}/html/"*
+				#dodoc "${WORKDIR}/usr/share/doc/${P}/"
 			fi
 		fi
 
@@ -302,22 +303,11 @@ src_install() {
 pkg_postinst() {
 	ghc-reregister
 
-	if use binary; then
-		elog "The envirenment has been set to use the binary distribution of"
-		elog "GHC. In order to activate it please run:"
-		elog "   env-update && source /etc/profile"
-		elog "Otherwise this setting will become active the next time you login"
-	fi
-
 	ewarn "IMPORTANT:"
 	ewarn "If you have upgraded from another version of ghc or"
 	ewarn "if you have switched between binary and source versions"
 	ewarn "of ghc, please run:"
-	if use binary; then
-		ewarn "      ${LOC}/sbin/ghc-updater"
-	else
-		ewarn "      /usr/sbin/ghc-updater"
-	fi
+	ewarn "      /usr/sbin/ghc-updater"
 	ewarn "to re-merge all ghc-based Haskell libraries."
 
 	bash-completion_pkg_postinst
