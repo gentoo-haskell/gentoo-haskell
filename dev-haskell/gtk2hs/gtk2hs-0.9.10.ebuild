@@ -20,7 +20,7 @@ RDEPEND=">=dev-lang/ghc-5.04.3
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
-				>=x11-libs/gtksourceview-0.6
+				<x11-libs/gtksourceview-2.0
 				>=gnome-base/gconf-2 )
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )"
 DEPEND="${RDEPEND}

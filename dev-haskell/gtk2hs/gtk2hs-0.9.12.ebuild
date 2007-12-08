@@ -19,7 +19,7 @@ RDEPEND=">=dev-lang/ghc-6.2
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
-				>=x11-libs/gtksourceview-0.6
+				<x11-libs/gtksourceview-2.0
 				>=gnome-base/gconf-2 )
 		svg?   ( >=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
