@@ -4,7 +4,7 @@
 
 inherit base flag-o-matic eutils versionator multilib
 
-IUSE="X opengl openal"
+IUSE="X opengl openal doc"
 
 # version numbering of Hugs is rather strange
 # we have to transform 2003.11 -> Nov2003
@@ -64,7 +64,8 @@ src_unpack() {
 	base_src_unpack
 
 	cd ${S}
-	epatch ${FILESDIR}/hugs98-2005.3-find.patch
+	epatch "${FILESDIR}/hugs98-2005.3-find.patch"
+	epatch "${FILESDIR}/hugs98-2005.3-conditional-doc.patch"
 }
 
 src_compile() {
@@ -91,10 +92,18 @@ src_compile() {
 		$(use_enable openal) \
 		${myconf} || die "econf failed"
 	emake || die "make failed"
+
+	if use doc; then
+		emake doc || die "make doc failed"
+	fi
 }
 
 src_install () {
-	make install DESTDIR="${D}" || die "make install failed"
+	emake install DESTDIR="${D}" || die "make install failed"
+
+	if use doc; then
+		emake install_doc DESTDIR="${D}" || die "make install_doc failed"
+	fi
 
 	#somewhat clean-up installation of few docs
 	cd "${S}"
