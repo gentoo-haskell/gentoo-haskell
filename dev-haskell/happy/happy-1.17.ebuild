@@ -16,6 +16,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.4
+		dev-haskell/mtl
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets )"
 RDEPEND=""
