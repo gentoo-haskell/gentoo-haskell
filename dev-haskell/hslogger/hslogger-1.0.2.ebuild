@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib"
-inherit haskell-cabal
+inherit haskell-cabal versionator
 
 DESCRIPTION="Versatile logging framework"
 HOMEPAGE="http://software.complete.org/hslogger"
@@ -21,7 +21,14 @@ DEPEND=">=dev-lang/ghc-6.4.2
 src_unpack() {
 	unpack "${A}"
 	cabal-mksetup
-	sed -i \
-		-e "s/mtl/mtl, unix/" \
+	sed -i -e "s/mtl/mtl, unix/" \
 		"${S}/hslogger.cabal"
+
+	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			, containers' \
+			"${S}/hslogger.cabal"
+		sed -i -e '1i{-# LANGUAGE PatternSignatures #-}' \
+			"${S}/src/System/Log/Logger.hs"
+	fi
 }
