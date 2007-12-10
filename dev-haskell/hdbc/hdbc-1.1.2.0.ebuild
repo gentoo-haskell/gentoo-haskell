@@ -15,10 +15,22 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="odbc postgres sqlite"
 
 DEPEND=">=dev-lang/ghc-6.4.1
-		>=dev-haskell/mtl-1.0"
+		>=dev-haskell/mtl-1.0
+		dev-haskell/time"
 
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${PV}* )
 		postgres? ( =dev-haskell/hdbc-postgresql-${PV}* )
 		sqlite? ( =dev-haskell/hdbc-sqlite-${PV}* )"
 
 S="${WORKDIR}/${PN}"
+
+src_unpack() {
+	unpack "${A}"
+
+	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			, old-time, containers' \
+			-e 's/GHC-Options: -O2 -Wall/GHC-Options: -O -fglasgow-exts/' \
+		"${S}/HDBC.cabal"
+	fi
+}
