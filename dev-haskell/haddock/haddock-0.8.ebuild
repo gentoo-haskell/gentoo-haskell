@@ -19,13 +19,32 @@ IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/cabal-1.1.4
-		dev-haskell/alex
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2 )"
 RDEPEND=""
 
 S="${WORKDIR}/${MY_PF}"
+
+src_unpack () {
+	unpack "${A}"
+
+	#FIXME: remove the followign two workarounds when haddock-0.9 is released
+
+	# Cabal 1.2 expects the pre-processed sources in a different location:
+	mkdir -p "${S}/dist/build/haddock/haddock-tmp/"
+	cp  "${S}/src/HaddockLex.hs" \
+		"${S}/src/HaddockParse.hs" \
+		"${S}/src/HsParser.hs" \
+		"${S}/dist/build/haddock/haddock-tmp/"
+
+	# Add in the extra split-base deps
+	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+		sed -i -e '/build-depends:/a \
+			,array, containers, directory, pretty, process' \
+			"${S}/haddock.cabal"
+	fi
+}
 
 src_compile () {
 	cabal_src_compile
