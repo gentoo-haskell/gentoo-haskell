@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib happy"
-inherit base haskell-cabal eutils
+inherit base haskell-cabal eutils versionator
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/haskell-src-exts/"
@@ -32,4 +32,11 @@ src_unpack() {
 		${S}/Language/Haskell/Hsx/Pretty.hs
 	sed -i 's/#ifdef __GLASGOW_HASKELL__/#if __GLASGOW_HASKELL__>=604/' \
 		${S}/Language/Haskell/Hsx/Syntax.hs
+
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			, array, pretty' \
+		"${S}/${PN}.cabal"
+	fi
+
 }

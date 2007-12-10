@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc/hdbc-0.99.0.ebuild,v 1.5 2006/03/11 20:41:25 dcoutts Exp $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit haskell-cabal versionator
 
 DESCRIPTION="Haskell Database Connectivity"
 HOMEPAGE="http://software.complete.org/hdbc"
@@ -27,7 +27,7 @@ S="${WORKDIR}/${PN}"
 src_unpack() {
 	unpack "${A}"
 
-	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+	if version_is_at_least "6.8" "$(ghc-version)"; then
 		sed -i -e '/Build-Depends:/a \
 			, old-time, containers' \
 			-e 's/GHC-Options: -O2 -Wall/GHC-Options: -O -fglasgow-exts/' \

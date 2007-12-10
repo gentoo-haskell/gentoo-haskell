@@ -24,7 +24,7 @@ src_unpack() {
 	sed -i -e "s/mtl/mtl, unix/" \
 		"${S}/hslogger.cabal"
 
-	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+	if version_is_at_least "6.8" "$(ghc-version)"; then
 		sed -i -e '/Build-Depends:/a \
 			, containers' \
 			"${S}/hslogger.cabal"

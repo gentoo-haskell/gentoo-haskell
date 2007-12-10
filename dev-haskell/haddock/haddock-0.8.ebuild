@@ -39,7 +39,7 @@ src_unpack () {
 		"${S}/dist/build/haddock/haddock-tmp/"
 
 	# Add in the extra split-base deps
-	if version_is_at_least "1.2.0" "$(cabal-version)"; then
+	if version_is_at_least "6.8" "$(ghc-version)"; then
 		sed -i -e '/build-depends:/a \
 			,array, containers, directory, pretty, process' \
 			"${S}/haddock.cabal"
