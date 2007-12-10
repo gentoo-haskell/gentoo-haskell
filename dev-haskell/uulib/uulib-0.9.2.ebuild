@@ -21,4 +21,5 @@ src_unpack() {
 
 	# GHC 6.6 is stricter in some class instance stuff
 	sed -i 's/Extensions:/Extensions: UndecidableInstances/' "${S}/uulib.cabal"
+	echo "ghc-options: -fglasgow-exts" >> "${S}/uulib.cabal"
 }
