@@ -1,0 +1,3 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (10 December 2007)
+# Mask ghc for testing
+>=dev-lang/ghc-6.8
