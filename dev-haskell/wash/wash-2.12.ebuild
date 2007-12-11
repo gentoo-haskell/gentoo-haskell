@@ -39,11 +39,18 @@ pkg_setup() {
 src_unpack() {
 	unpack "${A}"
 
-	rm "${S}/configure"
+	cabal-mksetup
 	sed -i -e "/Extensions/aGhc-Options: -O +RTS -M${CHECKREQS_MEMORY}m -RTS" \
 		"${S}/WASH.cabal"
 	echo "Ghc-Options: -O +RTS -M${CHECKREQS_MEMORY}m -RTS" \
 		>> "${S}/WASH.cabal"
+
+	# Add in the extra split-base deps
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			,containers' \
+		"${S}/WASH.cabal"
+	fi
 }
 
 src_install() {
