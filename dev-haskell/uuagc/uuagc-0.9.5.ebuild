@@ -16,3 +16,18 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/uulib-0.9.2"
+
+src_unpack() {
+	unpack "${A}"
+
+	sed -i -e '/Extensions:/a \
+		, MultiParamTypeClasses' \
+		"${S}/uuagc.cabal"
+
+	# Add in the extra split-base deps
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			,containers, directory, array, bytestring' \
+			"${S}/uuagc.cabal"
+	fi
+}
