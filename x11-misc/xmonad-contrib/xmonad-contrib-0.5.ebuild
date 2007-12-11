@@ -19,7 +19,7 @@ IUSE="xft"
 
 DEPEND="dev-haskell/mtl
 	~x11-wm/xmonad-${PV}
-	>=dev-haskell/x11-xft-0.2
+	xft? ( >=dev-haskell/x11-xft-0.2 )
 	>=dev-lang/ghc-6.6"
 RDEPEND="${DEPEND}"
 
