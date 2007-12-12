@@ -55,4 +55,3 @@ pkg_postinst () {
 	fi
 	ghc-package_pkg_postinst
 }
-

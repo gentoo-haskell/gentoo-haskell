@@ -22,4 +22,3 @@ DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/network-2.0"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
-

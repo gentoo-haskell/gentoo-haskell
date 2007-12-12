@@ -14,19 +14,19 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND="<dev-lang/ghc-6.6
-	>=x11-libs/wxGTK-2.6.2"
+	=x11-libs/wxGTK-2.6*"
 
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	doc? ( >=dev-haskell/haddock-0.6-r2 )"
 
 pkg_setup() {
-	if ! built_with_use x11-libs/wxGTK X; then
+	if ! built_with_use =x11-libs/wxGTK-2.6* X; then
 		eerror "wxhaskell needs wxGTK that has been built with X11 support."
 		eerror "Please re-emerge wxGTK with USE=\"X -odbc -unicode\""
 		die "wxhaskell requires wxGTK to be built with USE=\"X -odbc -unicode\""
 	fi
-	if built_with_use x11-libs/wxGTK odbc; then
+	if built_with_use =x11-libs/wxGTK-2.6* odbc; then
 		eerror "Sadly wxhaskell does not work with wxGTK that has been built"
 		eerror "with USE=\"odbc\"."
 		eerror "Please re-emerge wxGTK with USE=\"-odbc\""
@@ -93,10 +93,9 @@ src_install() {
 
 	# substitute for the ${wxhlibdir} in package files and register them
 	# for ghc-6.2 change the package to be exposed by default.
-	sed -i \
-		-e "s:\${wxhlibdir}:${D}/usr/$(get_libdir)/${P}:" \
-		-e "s:auto = False:auto = True:" \
-		${D}/usr/$(get_libdir)/${P}/*.pkg
+	sed -i -e "s:\${wxhlibdir}:${D}/usr/$(get_libdir)/${P}:" \
+		   -e "s:auto = False:auto = True:" \
+		   ${D}/usr/$(get_libdir)/${P}/*.pkg
 	ghc-setup-pkg ${D}/usr/$(get_libdir)/${P}/*.pkg
 	ghc-install-pkg
 }

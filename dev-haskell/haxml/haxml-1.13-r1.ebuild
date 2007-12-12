@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -49,4 +49,3 @@ src_install() {
 		dodoc docs/icfp99.dvi docs/icfp99.ps.gz
 	fi
 }
-

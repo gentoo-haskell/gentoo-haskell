@@ -43,4 +43,3 @@ src_install() {
 		dodoc docs/icfp99.dvi docs/icfp99.ps.gz
 	fi
 }
-

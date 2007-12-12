@@ -38,4 +38,3 @@ src_install() {
 	cabal_src_install
 	use doc && cd doc && dohtml -r happy/*
 }
-

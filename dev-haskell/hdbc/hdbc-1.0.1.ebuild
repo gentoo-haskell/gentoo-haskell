@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/ghc-6.4.1
 	>=dev-haskell/mtl-1.0"
 
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${PV}* )
-		postgres? ( =dev-haskell/hdbc-postgresql-${PV}* )
-		sqlite? ( =dev-haskell/hdbc-sqlite-${PV}* )"
+		 postgres? ( =dev-haskell/hdbc-postgresql-${PV}* )
+		 sqlite? ( =dev-haskell/hdbc-sqlite-${PV}* )"
 
 S="${WORKDIR}/${PN}"

@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.t
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6"
@@ -29,6 +29,6 @@ src_unpack() {
 src_install () {
 	cabal_src_install
 	if use doc; then
-		dohtml -r ${S}/doc/*
+		dohtml -r "${S}"/doc/*
 	fi
 }

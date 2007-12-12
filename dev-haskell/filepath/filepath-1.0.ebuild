@@ -11,8 +11,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 
-#if possible try testing with "~ppc" and "~sparc"
-KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
+KEYWORDS="amd64 hppa ~ia64 ~ppc sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4"
