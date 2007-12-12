@@ -272,22 +272,9 @@ src_install() {
 pkg_postinst() {
 	ghc-reregister
 
-	if use binary; then
-		elog "The envirenment has been set to use the binary distribution of"
-		elog "GHC. In order to activate it please run:"
-		elog "   env-update && source /etc/profile"
-		elog "Otherwise this setting will become active the next time you login"
-	fi
-
 	ewarn "IMPORTANT:"
-	ewarn "If you have upgraded from another version of ghc or"
-	ewarn "if you have switched between binary and source versions"
-	ewarn "of ghc, please run:"
-	if use binary; then
-		ewarn "      /usr/sbin/ghc-updater"
-	else
-		ewarn "      /usr/sbin/ghc-updater"
-	fi
+	ewarn "If you have upgraded from another version of ghc, please run:"
+	ewarn "      /usr/sbin/ghc-updater"
 	ewarn "to re-merge all ghc-based Haskell libraries."
 
 	bash-completion_pkg_postinst
