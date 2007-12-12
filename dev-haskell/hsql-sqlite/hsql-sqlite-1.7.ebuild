@@ -3,11 +3,14 @@
 # $Header: $
 
 CABAL_FEATURES="lib haddock"
-inherit base haskell-cabal
+inherit haskell-cabal
+
+MY_PN=hsql-sqlite3
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="SQLite3 driver HSQL"
 HOMEPAGE="http://htoolkit.sourceforge.net/"
-SRC_URI="mirror://gentoo/HSQL-${PV}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,13 +21,11 @@ DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hsql-${PV}
 	>=dev-db/sqlite-3.0"
 
-S="${WORKDIR}/HSQL/SQLite3"
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
-	base_src_unpack
+	unpack "${A}"
 
-	echo '> import Distribution.Simple' > "${S}/Setup.lhs"
-	echo '> main = defaultMain' >> "${S}/Setup.lhs"
-
-	echo 'extra-libraries: sqlite3' >> "${S}/SQLite3.cabal"
+	cabal-mksetup
+	echo 'extra-libraries: sqlite3' >> "${S}/hsql-sqlite3.cabal"
 }

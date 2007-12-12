@@ -3,11 +3,11 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hsql/hsql-1.7.ebuild,v 1.7 2006/03/11 21:31:06 dcoutts Exp $
 
 CABAL_FEATURES="lib haddock"
-inherit base eutils ghc-package haskell-cabal
+inherit eutils haskell-cabal versionator
 
 DESCRIPTION="SQL bindings for Haskell"
 HOMEPAGE="http://htoolkit.sourceforge.net/"
-SRC_URI="mirror://gentoo/HSQL-${PV}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -16,13 +16,20 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.1"
 
-S="${WORKDIR}/HSQL/HSQL"
-
 src_unpack() {
-	base_src_unpack
+	unpack "${A}"
 
 	cd ${S}
 	epatch "${FILESDIR}/${P}-sqltext-to-int.patch"
+
+	# Add in the extra split-base deps
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/build-depends:/a \
+			, old-time' \
+			-e '/extensions:/a \
+			, Rank2Types, DeriveDataTypeable' \
+		"${S}/hsql.cabal"
+	fi
 }
 
 pkg_postinst () {
