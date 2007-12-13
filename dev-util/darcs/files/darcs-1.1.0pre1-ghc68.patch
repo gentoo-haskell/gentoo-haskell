@@ -1,0 +1,38 @@
+diff -ur darcs-1.1.0pre1.orig/aclocal.m4 darcs-1.1.0pre1/aclocal.m4
+--- darcs-1.1.0pre1.orig/aclocal.m4	2007-12-13 23:20:50.000000000 +1000
++++ darcs-1.1.0pre1/aclocal.m4	2007-12-13 23:21:18.000000000 +1000
+@@ -447,6 +447,20 @@
+ openFd :: Int -> Maybe FDType -> FilePath -> IOMode -> Bool -> Bool -> IO Handle
+ openFd fd x y z a b = GHC.Handle.openFd fd x b y z a
+         ]]),
++AC_MSG_RESULT([okay])
++IMPORT_WORKAROUND([
++import qualified GHC.Handle ( fdToHandle' )
++import System.IO ( Handle, IOMode )
++import System.Posix.Internals ( FDType )
++import qualified GHC.IOBase ( FD )
++])
++CODE_WORKAROUND([[
++  {- 
++   Work around change in the GHC.Handle.fdToHandle' API.
++  -}
++openFd :: GHC.IOBase.FD -> Maybe FDType -> FilePath -> IOMode -> Bool -> Bool -> IO Handle
++openFd fd x y z a b = GHC.Handle.fdToHandle' fd x b y z a
++]]),
+        AC_MSG_RESULT([failed])
+        AC_MSG_ERROR([Couldnt figure out how to call GHC.Handle.openFd!])
+     )
+Only in darcs-1.1.0pre1/: aclocal.m4~
+diff -ur darcs-1.1.0pre1.orig/autoconf.mk.in darcs-1.1.0pre1/autoconf.mk.in
+--- darcs-1.1.0pre1.orig/autoconf.mk.in	2007-12-13 23:20:50.000000000 +1000
++++ darcs-1.1.0pre1/autoconf.mk.in	2007-12-13 23:21:07.000000000 +1000
+@@ -22,7 +22,7 @@
+ OPTCCFLAGS      := $(addprefix -optc,$(CFLAGS) $(CPPFLAGS))
+ LDFLAGS		:= @LDFLAGS@ @LIBS@
+ OPTLLDFLAGS     := $(addprefix -optl,$(LDFLAGS))
+-GHCFLAGS	:= -cpp @GHCFLAGS@
++GHCFLAGS	:= -package containers -cpp @GHCFLAGS@
+ HAVE_CURSES     := @HAVE_CURSES@
+ HAVE_LIBCURL    := @HAVE_LIBCURL@
+ HAVE_MAPI       := @HAVE_MAPI@
+Only in darcs-1.1.0pre1/: autoconf.mk.in~

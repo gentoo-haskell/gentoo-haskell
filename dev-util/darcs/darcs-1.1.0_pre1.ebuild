@@ -17,7 +17,6 @@ IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	>=dev-lang/ghc-6.2.2
-	<dev-lang/ghc-6.8.1
 	dev-haskell/quickcheck
 	dev-haskell/mtl
 	dev-haskell/html
@@ -42,6 +41,9 @@ pkg_setup() {
 
 src_unpack() {
 	base_src_unpack
+
+	cd "${S}"
+	epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
 
 	cd "${S}/tools"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
