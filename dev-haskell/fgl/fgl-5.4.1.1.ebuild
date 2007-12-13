@@ -3,8 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-CABAL_MIN_VERSION=1.2
-inherit haskell-cabal
+inherit haskell-cabal versionator
 
 DESCRIPTION="A functional graph library for Haskell."
 HOMEPAGE="http://haskell.org/ghc/"
@@ -17,3 +16,11 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	dev-haskell/mtl"
+
+src_unpack() {
+	unpack "${A}"
+
+	if ! version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e 's/, containers, array//' "${S}/fgl.cabal"
+	fi
+}
