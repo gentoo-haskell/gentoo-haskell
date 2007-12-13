@@ -35,9 +35,9 @@ src_unpack() {
 src_install() {
 	cabal_src_install
 
-	dodoc LICENSE README
+	dodoc README
 	if use doc; then
-		cd ${S}/doc
+		cd "${S}/doc"
 		dodoc thesis.pdf
 	fi
 }

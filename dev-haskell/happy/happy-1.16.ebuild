@@ -22,7 +22,7 @@ RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}/doc && eautoconf
+	cd "${S}/doc" && eautoconf
 }
 
 src_compile() {

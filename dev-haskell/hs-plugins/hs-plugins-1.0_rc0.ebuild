@@ -47,5 +47,5 @@ src_compile() {
 src_install() {
 	haskell-cabal_src_install
 
-	dodoc README LICENSE AUTHORS
+	dodoc README AUTHORS
 }

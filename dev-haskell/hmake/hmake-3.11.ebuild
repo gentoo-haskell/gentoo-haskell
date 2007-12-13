@@ -26,7 +26,7 @@ RDEPEND="dev-lang/ghc
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}/${P}-ghc66.patch"
 
 	# Fix the way hmake discovers the ghc version
@@ -57,6 +57,6 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "make install failed"
+	make DESTDIR="${D}" install || die "make install failed"
 	dohtml docs/hmake/*
 }

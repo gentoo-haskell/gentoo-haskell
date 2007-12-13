@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86"
 LICENSE="as-is"
 
-DEPEND="dev-lang/ghc
+DEPEND="<dev-lang/ghc-6.6
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2

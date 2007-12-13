@@ -29,7 +29,7 @@ S="${WORKDIR}/${MY_PF}"
 src_unpack () {
 	unpack "${A}"
 
-	#FIXME: remove the followign two workarounds when haddock-0.9 is released
+	#FIXME: remove the following two workarounds when haddock-0.9 is released
 
 	# Cabal 1.2 expects the pre-processed sources in a different location:
 	mkdir -p "${S}/dist/build/haddock/haddock-tmp/"
@@ -49,9 +49,9 @@ src_unpack () {
 src_compile () {
 	cabal_src_compile
 	if use doc; then
-		cd ${S}/doc
+		cd "${S}/doc"
 		autoconf
-		./configure --prefix=${D}/usr/ \
+		./configure --prefix="${D}/usr/" \
 			|| die 'error configuring documentation.'
 		make html || die 'error building documentation.'
 	fi
@@ -60,7 +60,7 @@ src_compile () {
 src_install () {
 	cabal_src_install
 	if use doc; then
-		dohtml -r ${S}/doc/haddock/*
+		dohtml -r "${S}/doc/haddock/"*
 	fi
-	dodoc CHANGES LICENSE README
+	dodoc CHANGES README
 }

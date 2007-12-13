@@ -76,7 +76,7 @@ src_install() {
 
 	dodoc README
 	if use doc; then
-		cp -r Examples ${D}/usr/share/doc/${PF}
+		cp -r Examples "${D}/usr/share/doc/${PF}"
 		cd doc
 		dohtml -r *
 	fi

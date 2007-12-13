@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.4.1"
 src_unpack() {
 	unpack "${A}"
 
-	cd ${S}
+	cd "${S}"
 	epatch "${FILESDIR}/${P}-sqltext-to-int.patch"
 
 	# Add in the extra split-base deps

@@ -21,7 +21,7 @@ S="${WORKDIR}/Frown-${PV}"
 src_unpack() {
 	unpack ${A}
 	# enabling optimisation is strongly recommended
-	echo "ghc-options: -O" >> ${S}/frown.cabal
+	echo "ghc-options: -O" >> "${S}/frown.cabal"
 }
 
 src_install() {

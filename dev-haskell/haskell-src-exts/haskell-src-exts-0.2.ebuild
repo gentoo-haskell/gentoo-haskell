@@ -28,10 +28,10 @@ src_unpack() {
 
 	# Make it work with ghc pre-6.4
 	sed -i 's/{-# OPTIONS_GHC /{-# OPTIONS /' \
-		${S}/Language/Haskell/Hsx/Syntax.hs \
-		${S}/Language/Haskell/Hsx/Pretty.hs
+		"${S}/Language/Haskell/Hsx/Syntax.hs" \
+		"${S}/Language/Haskell/Hsx/Pretty.hs"
 	sed -i 's/#ifdef __GLASGOW_HASKELL__/#if __GLASGOW_HASKELL__>=604/' \
-		${S}/Language/Haskell/Hsx/Syntax.hs
+		"${S}/Language/Haskell/Hsx/Syntax.hs"
 
 	if version_is_at_least "6.8" "$(ghc-version)"; then
 		sed -i -e '/Build-Depends:/a \

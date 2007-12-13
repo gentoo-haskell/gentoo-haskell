@@ -37,12 +37,12 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	# adapt to Gentoo path convention
-	sed -i 's:/doc/html:/share/doc/html:' ${S}/configure
+	sed -i 's:/doc/html:/share/doc/html:' "${S}/configure"
 	# fix superfluous dependencies on hslibs packages
 	sed -i -e 's:,lang::' -e 's:,"lang"::' \
-		-e 's:,concurrent::' -e 's:,"concurrent"::' ${S}/configure
+		-e 's:,concurrent::' -e 's:,"concurrent"::' "${S}/configure"
 	# fix Makefile to respect CXXFLAGS
-	sed -i 's:^\(WXC-CXXFLAGS.*=\):\1\$(CXXFLAGS) :' ${S}/makefile
+	sed -i 's:^\(WXC-CXXFLAGS.*=\):\1\$(CXXFLAGS) :' "${S}/makefile"
 }
 
 src_compile() {
@@ -63,7 +63,7 @@ src_compile() {
 		--prefix=/usr \
 		--with-opengl \
 		--libdir=/usr/$(get_libdir)/${P} \
-		--package-conf=${S}/$(ghc-localpkgconf) \
+		--package-conf="${S}/$(ghc-localpkgconf)" \
 		|| die "./configure failed"
 
 	emake -j1 || die "make failed"
@@ -81,21 +81,21 @@ src_install() {
 	emake -j1 install-files DESTDIR="${D}" || die "make install failed"
 
 	# the .so needs to be on the lib path
-	mkdir -p ${D}/usr/$(get_libdir)
-	for f in ${D}/usr/$(get_libdir)/${P}/libwxc-*.so; do
-		mv ${f} ${D}/usr/$(get_libdir)/
+	mkdir -p "${D}/usr/$(get_libdir)"
+	for f in "${D}/usr/$(get_libdir)/${P}/"libwxc-*.so; do
+		mv ${f} "${D}/usr/$(get_libdir)/"
 	done
 
 	if use doc; then
 		dohtml -A haddock -r out/doc/*
-		cp -r samples ${D}/usr/share/doc/${PF}
+		cp -r samples "${D}/usr/share/doc/${PF}"
 	fi
 
 	# substitute for the ${wxhlibdir} in package files and register them
 	# for ghc-6.2 change the package to be exposed by default.
 	sed -i -e "s:\${wxhlibdir}:${D}/usr/$(get_libdir)/${P}:" \
 		   -e "s:auto = False:auto = True:" \
-		   ${D}/usr/$(get_libdir)/${P}/*.pkg
-	ghc-setup-pkg ${D}/usr/$(get_libdir)/${P}/*.pkg
+		   "${D}/usr/$(get_libdir)/${P}/"*.pkg
+	ghc-setup-pkg "${D}/usr/$(get_libdir)/${P}/"*.pkg
 	ghc-install-pkg
 }

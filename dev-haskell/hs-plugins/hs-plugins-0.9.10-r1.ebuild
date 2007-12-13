@@ -21,17 +21,17 @@ DEPEND="<dev-lang/ghc-6.6
 src_unpack() {
 	unpack ${A}
 	# for package management
-	sed -i 's:\$(GHC_PKG) -u:\${GHC_PKGF} -u:' ${S}/Makefile
+	sed -i 's:\$(GHC_PKG) -u:\${GHC_PKGF} -u:' "${S}/Makefile"
 
 	cabalversion=$(ghc-bestcabalversion)
 
 	sed -i "s:-package Cabal:-package ${cabalversion}:" \
-		${S}/src/plugins/Makefile
+		"${S}/src/plugins/Makefile"
 
 	# Also specify an exact version of Cabal otherwise ghc-pkg defaults it to
 	# the minimum version which is just wrong. Should be fixed in ghc-6.4.1
 	sed -i "s/depends:\(.*\) Cabal/depends:\1 ${cabalversion}/" \
-		${S}/src/plugins/plugins.conf.in.cpp
+		"${S}/src/plugins/plugins.conf.in.cpp"
 }
 
 src_compile() {
@@ -50,6 +50,6 @@ src_install() {
 	dodoc AUTHORS README TODO VERSION
 
 	if use doc; then
-		dohtml ${WORKDIR}/${PN}/*
+		dohtml "${WORKDIR}/${PN}/"*
 	fi
 }
