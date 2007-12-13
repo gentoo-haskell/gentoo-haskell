@@ -22,7 +22,7 @@ src_unpack() {
 	unpack "${A}"
 	if ! $(ghc-cabal); then
 		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
-			${S}/Cabal.cabal
+			"${S}/Cabal.cabal"
 	fi
 }
 

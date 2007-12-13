@@ -29,8 +29,11 @@ src_unpack() {
 	base_src_unpack
 
 	# We're using the private copy of filepath:
-	sed -i -e "s|Build-Depends: filepath|GHC-Options: -i../${FP_P}|" \
+	sed -i -e 's/Build-Depends: filepath//' \
+		-e '/Other-Modules:/a \
+        System.FilePath System.FilePath.Posix System.FilePath.Windows' \
 		"${S}/Cabal.cabal"
+	echo "  Hs-Source-Dirs: ., ../${FP_P}" >> "${S}/Cabal.cabal"
 }
 
 src_compile() {
@@ -53,6 +56,6 @@ src_install() {
 		dohtml -r doc/pkg-spec-html
 		dodoc doc/pkg-spec.pdf
 	fi
-	dodoc changelog LICENSE README releaseNotes TODO
+	dodoc changelog README releaseNotes TODO
 }
 
