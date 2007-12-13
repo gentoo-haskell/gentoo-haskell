@@ -32,7 +32,5 @@ src_install() {
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}/${PN}.desktop"
 
-	#TODO: requires one of the regex packages
-	runhaskell util/GenerateManpage.hs
 	doman man/xmonad.1
 }
