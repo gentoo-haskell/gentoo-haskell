@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib bin profile haddock"
-inherit base haskell-cabal
+inherit base haskell-cabal versionator
 
 MY_PN=HaXml
 MY_P=${MY_PN}-${PV}
@@ -31,15 +31,19 @@ src_unpack() {
 	# Don't warn so much, and don't compile with -O2
 	sed -i 's/GHC-Options: -Wall -O2/GHC-Options: -O/' "${S}/HaXml.cabal"
 
-	# Compile the library with optimizations
-	sed -i 's/\(description\)/ghc-options: -O\n\1/' "${S}/HaXml.cabal"
+	# Add in the extra split-base deps
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/build-depends:/a \
+			, pretty, containers' \
+			"${S}/HaXml.cabal"
+	fi
 }
 
 src_install() {
 	cabal_src_install
 
 	if use doc; then
-		dohtml docs/*
+		dohtml -r docs/*
 		dodoc docs/icfp99.dvi docs/icfp99.ps.gz
 	fi
 }
