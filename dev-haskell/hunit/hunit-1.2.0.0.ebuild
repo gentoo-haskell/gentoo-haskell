@@ -3,7 +3,6 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-CABAL_MIN_VERSION=1.2
 inherit base haskell-cabal
 
 MY_PN="HUnit"
@@ -25,6 +24,6 @@ S="${WORKDIR}/${MY_P}"
 src_install () {
 	cabal_src_install
 	if use doc; then
-		dohtml -r ${S}/doc/*
+		dohtml -r "${S}/doc/"*
 	fi
 }

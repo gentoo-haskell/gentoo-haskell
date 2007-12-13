@@ -29,5 +29,5 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 src_install() {
 	cabal_src_install
 
-	dodoc README LICENSE
+	dodoc README
 }

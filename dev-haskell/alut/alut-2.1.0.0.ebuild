@@ -3,7 +3,6 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 MY_PN="ALUT"

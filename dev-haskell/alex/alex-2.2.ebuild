@@ -3,6 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/alex-2.0.1-r1.ebuild,v 1.12 2006/10/05 03:47:46 cparrott Exp $
 
 CABAL_FEATURES="bin"
+CABAL_MIN_VERSION="1.2.1"
 inherit autotools haskell-cabal
 
 DESCRIPTION="A lexical analyser generator for Haskell"
@@ -16,7 +17,6 @@ IUSE="doc"
 # java use flag disabled because of bug #107019
 
 DEPEND=">=dev-lang/ghc-6.2
-		>=dev-haskell/cabal-1.2.1
 	doc? (	~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2 )"

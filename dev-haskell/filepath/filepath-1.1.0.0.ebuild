@@ -3,7 +3,6 @@
 # $Header:  $
 
 CABAL_FEATURES="haddock lib profile"
-CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 DESCRIPTION="Library for manipulating FilePath's in a cross platform way."

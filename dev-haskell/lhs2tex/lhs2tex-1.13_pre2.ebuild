@@ -3,6 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
+CABAL_MIN_VERSION=1.2
 CABAL_CONFIGURE_FLAGS="--datasubdir=${P}"
 inherit eutils haskell-cabal
 
@@ -19,8 +20,7 @@ KEYWORDS="~x86 ~amd64"
 
 S="${WORKDIR}/${P/_pre/pre}"
 
-DEPEND=">=dev-haskell/cabal-1.2
-	>=dev-haskell/regex-compat-0.71
+DEPEND=">=dev-haskell/regex-compat-0.71
 	dev-haskell/mtl
 	dev-haskell/filepath
 	>=dev-tex/polytable-0.8.2
@@ -31,7 +31,7 @@ DEPEND=">=dev-haskell/cabal-1.2
 
 src_unpack() {
 	unpack ${A}
-	pushd ${S}
+	pushd "${S}"
 	use doc && rm doc/Guide2.dontbuild
 	popd
 }

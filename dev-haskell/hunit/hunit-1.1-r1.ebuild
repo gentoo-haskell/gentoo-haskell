@@ -29,6 +29,6 @@ src_unpack() {
 src_install () {
 	cabal_src_install
 	if use doc; then
-		dohtml -r ${S}/doc/*
+		dohtml -r "${S}/doc/"*
 	fi
 }
