@@ -1,3 +1,8 @@
-# Lennart Kolmodin <kolmodin@gentoo.org> (10 December 2007)
-# Mask ghc for testing
->=dev-lang/ghc-6.8
+# Duncan Coutts <dcoutts@gentoo.org> (14 Dec 2007)
+# the 0.9x regex packages are not actually the latest stable versions
+# they're experimental versions and they do not yet work with ghc-6.8
+# You're welcome to unmask if you want to use them but let's not confuse
+# everone else with thinking these are the 'best' versions of the packages.
+>=dev-haskell/regex-base-0.90
+>=dev-haskell/regex-posix-0.90
+>=dev-haskell/regex-compat-0.90
