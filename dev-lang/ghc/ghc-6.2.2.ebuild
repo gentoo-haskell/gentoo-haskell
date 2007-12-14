@@ -33,8 +33,6 @@ inherit base eutils flag-o-matic toolchain-funcs ghc-package
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-#TODO: as a quick hack, using ghc-6.6's docs
-# before adding to portage, upload appropriate versions to the mirrors 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )
 		 doc? 	( mirror://gentoo/${P}-libraries.tar.gz
 				  mirror://gentoo/${P}-users_guide.tar.gz )

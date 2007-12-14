@@ -194,7 +194,6 @@ src_unpack() {
 			"${S}/usr/$(get_libdir)/${P}/package.conf" \
 			|| die "Relocating ghc from /usr to /opt/ghc failed"
 
-
 		# fix docs
 		if use doc; then
 			# correct the documentation and .haddock files path

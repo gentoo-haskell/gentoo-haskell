@@ -50,7 +50,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ~ppc64 sparc x86"
 IUSE="binary doc ghcbootstrap"
 
 LOC="/opt/ghc" # location for installation of binary version
@@ -323,7 +323,7 @@ src_install() {
 			|| die "make ${insttarget} failed"
 
 		cd "${S}"
-		dodoc README ANNOUNCE LICENSE VERSION
+		dodoc README ANNOUNCE VERSION
 
 		dosbin "${FILESDIR}/ghc-updater"
 
