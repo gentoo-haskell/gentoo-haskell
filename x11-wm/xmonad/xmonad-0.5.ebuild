@@ -13,14 +13,20 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 
 DEPEND="dev-haskell/mtl
 	>=dev-haskell/x11-1.4
 	>=dev-lang/ghc-6.6"
 RDEPEND="${DEPEND}"
 
-RESTRICT="strip"
+src_unpack() {
+	unpack ${A}
+
+	# -Wall -Werror is really fragile.
+	# portage strips, packages should not do it themselves.
+	sed -i -e 's/-Wall -Werror -optl-Wl,-s//' "${S}/xmonad.cabal"
+}
 
 src_install() {
 	cabal_src_install
