@@ -12,10 +12,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
 		>=dev-haskell/x11-1.3.0
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/filepath-1.0"
+
+src_unpack() {
+	unpack ${A}
+
+	# Cannot use -fasm on arches without a native code gen!
+	# Don't need -Wall.
+	# Portage does striping, package must not do it themselves.
+	sed -i -e 's/-O2 -fasm -Wall -optl-Wl,-s//' "${S}/xmobar.cabal"
+}
