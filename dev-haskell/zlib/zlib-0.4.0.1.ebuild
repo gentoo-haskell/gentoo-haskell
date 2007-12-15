@@ -3,6 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib profile haddock"
+CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 DESCRIPTION="Compression and decompression in the gzip and zlib formats"
@@ -19,5 +20,4 @@ IUSE=""
 # 2) in zlib.cabal
 
 DEPEND=">=dev-lang/ghc-6.6
-		>=dev-haskell/bytestring-0.9
 		>=sys-libs/zlib-1.2"
