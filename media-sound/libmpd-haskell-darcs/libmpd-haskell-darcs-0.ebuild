@@ -7,7 +7,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal darcs
 
 DESCRIPTION="An MPD Client Library"
-HOMEPAGE="http://turing.enu.edu.au/~bsinclai/code/libmpd-haskell.html"
+HOMEPAGE="http://turing.une.edu.au/~bsinclai/code/libmpd-haskell.html"
 EDARCS_REPOSITORY="http://turing.une.edu.au/~bsinclai/code/libmpd-haskell"
 
 LICENSE="LGPL-2.1"
