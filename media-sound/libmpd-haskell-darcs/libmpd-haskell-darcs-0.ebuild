@@ -20,5 +20,6 @@ DEPEND=">=dev-haskell/mtl-1.0
 RDEPEND="${DEPEND}"
 
 src_install() {
+  cabal_src_install
   dodoc ChangeLog README TODO
 }
