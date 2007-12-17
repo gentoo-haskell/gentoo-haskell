@@ -61,10 +61,6 @@
 
 == New ebuilds ==
 
-* new dev-haskell/ ebuilds from hackage that we should get into portage:
-  - regex-*
-  - xmonad
-
 * get regex-{base,compat,posix} ~arch on all platforms
 
 * build binaries for ghc 6.6.1 for remaining platforms: alpha, ppc64
