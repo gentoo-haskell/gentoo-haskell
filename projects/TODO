@@ -9,8 +9,6 @@
 
 * remove old versions of cabal. Do we need anything other than 1.1.6.2?
 
-* add latest X11 to portage (assuming it doesn't require latest cabal)
-
 * ask for these to go stable:
 	alut-2.0.1		amd64           x86
 	arrows-0.2.1		amd64 ppc sparc x86
