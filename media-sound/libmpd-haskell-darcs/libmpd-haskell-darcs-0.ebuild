@@ -12,7 +12,7 @@ EDARCS_REPOSITORY="http://turing.une.edu.au/~bsinclai/code/libmpd-haskell"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-haskell/mtl-1.0
 		dev-haskell/network
@@ -20,6 +20,6 @@ DEPEND=">=dev-haskell/mtl-1.0
 RDEPEND="${DEPEND}"
 
 src_install() {
-  cabal_src_install
-  dodoc ChangeLog README TODO
+	cabal_src_install
+	dodoc ChangeLog README TODO
 }
