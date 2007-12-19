@@ -33,27 +33,6 @@
         time            1.1.2.0
         xhtml           3000.0.2.1
 
-* ask for these to go stable:
-	alut-2.0.1		amd64           x86
-	arrows-0.2.1		amd64 ppc sparc x86
-	cgi-3001.1.1		amd64 ppc sparc x86
-	fgl-5.4.1		amd64 ppc sparc x86
-	filepath-1.0		      ppc sparc
-	glut-2.1.1		amd64           x86
-	haskell-src-1.0.1	amd64 ppc sparc x86
-	html-1.0.1		amd64 ppc sparc x86
-	hunit-1.1.1		amd64 ppc sparc x86
-	mtl-1.0.1		amd64 ppc sparc x86
-	network-2.0.1		amd64 ppc sparc x86
-	openal-1.3.1		amd64           x86
-	opengl-2.2.1		amd64           x86
-	quickcheck-1.0.1	amd64 ppc sparc x86
-	regex-base-0.72		      ppc sparc
-	regex-compat-0.71	      ppc sparc
-	regex-posix-0.71	      ppc sparc
-	time-1.1.1		amd64 ppc sparc x86
-	xhtml-3000.0.2		amd64 ppc sparc x86
-
 * ask ppc arch team to get these marked ~ppc:
 	glut-2.1.1
 	openal-1.3.1
