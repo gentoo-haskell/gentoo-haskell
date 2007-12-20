@@ -20,6 +20,8 @@ DEPEND=">=net-misc/curl-7.10.2
 	dev-haskell/quickcheck
 	dev-haskell/mtl
 	dev-haskell/html
+	dev-haskell/parsec
+	dev-haskell/regex-compat
 	sys-apps/diffutils
 	doc?  ( virtual/tetex
 		>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
