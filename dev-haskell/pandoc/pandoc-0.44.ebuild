@@ -19,3 +19,11 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/mtl
 		dev-haskell/regex-compat
 		dev-haskell/network"
+
+src_unpack() {
+	unpack "${A}"
+
+	# the pandoc default is to build with -O0
+	# we like optimizations though
+	sed -i -e "s/-O0//" "${S}/pandoc.cabal"
+}
