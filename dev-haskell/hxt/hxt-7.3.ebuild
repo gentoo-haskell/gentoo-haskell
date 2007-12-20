@@ -11,7 +11,7 @@ SRC_URI="http://www.fh-wedel.de/~si/HXmlToolbox/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6

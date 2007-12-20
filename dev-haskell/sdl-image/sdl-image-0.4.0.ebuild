@@ -26,5 +26,7 @@ S="${WORKDIR}/${MY_P}"
 src_unpack() {
 	unpack "${A}"
 
+	# -Wall -Werror is really fragile
+	sed -i -e 's/-Wall -Werror//' "${S}/SDL-image.cabal"
 	echo "Include-Dirs: /usr/include/SDL" >> "${S}/SDL-image.cabal"
 }

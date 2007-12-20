@@ -33,6 +33,9 @@ src_unpack() {
 		-e '/Other-Modules:/a \
         System.FilePath System.FilePath.Posix System.FilePath.Windows' \
 		"${S}/Cabal.cabal"
+	# Note: do not replace spaces with tabs on the line above, it'll break
+	# things. You'll just have to put up with the repoman warning.
+
 	echo "  Hs-Source-Dirs: ., ../${FP_P}" >> "${S}/Cabal.cabal"
 }
 
@@ -58,4 +61,3 @@ src_install() {
 	fi
 	dodoc changelog README releaseNotes TODO
 }
-

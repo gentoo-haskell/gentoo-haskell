@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.t
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~amd64 ~sparc x86"
+KEYWORDS="amd64 ~sparc x86"
 
 # TODO: Install examples when the "examples" USE flag is set
 IUSE=""
@@ -26,8 +26,7 @@ DEPEND=">=dev-lang/ghc-6.6
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
 
-# Sadly Setup.hs in the ghc-6.6.1 extralibs was not tested with Cabal-1.1.6.x
 src_unpack() {
 	unpack "${A}"
-	sed -i -e "/type Hook/ s/UserHooks/Maybe UserHooks/" "${S}/Setup.hs"
+	cabal-mksetup
 }

@@ -23,7 +23,7 @@ RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}/doc && eautoconf
+	cd "${S}/doc" && eautoconf
 }
 
 src_compile() {
@@ -39,4 +39,3 @@ src_install() {
 	cabal_src_install
 	use doc && cd doc && dohtml -r happy/*
 }
-

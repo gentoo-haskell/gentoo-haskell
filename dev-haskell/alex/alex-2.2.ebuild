@@ -12,7 +12,7 @@ SRC_URI="http://www.haskell.org/alex/dist/${PV}/${P/_/}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 # java use flag disabled because of bug #107019
 

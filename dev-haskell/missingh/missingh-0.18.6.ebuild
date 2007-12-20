@@ -10,7 +10,7 @@ HOMEPAGE="http://software.complete.org/missingh"
 SRC_URI="http://software.complete.org/missingh/static/download_area/${PV}/missingh_${PV}.tar.gz"
 
 LICENSE="GPL-2" # mixed licence, all GPL compatible
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 SLOT="0"
 
@@ -23,7 +23,8 @@ DEPEND=">=dev-lang/ghc-6.4.2
 	>=dev-haskell/mtl-1.0
 	>=dev-haskell/hunit-1.1
 	>=dev-haskell/network-1.0
-	>=dev-haskell/quickcheck-1.0"
+	>=dev-haskell/quickcheck-1.0
+	dev-haskell/regex-compat"
 
 src_unpack() {
 	unpack "${A}"

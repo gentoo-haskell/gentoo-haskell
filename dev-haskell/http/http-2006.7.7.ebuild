@@ -18,10 +18,11 @@ SRC_URI="http://www.haskell.org/http/download/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
+		<dev-lang/ghc-6.8
 		>=dev-haskell/network-1.0"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
