@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib bin"
-inherit haskell-cabal
+inherit haskell-cabal versionator
 
 DESCRIPTION="Conversion between markup formats"
 HOMEPAGE="http://sophos.berkeley.edu/macfarlane/pandoc"
@@ -26,4 +26,12 @@ src_unpack() {
 	# the pandoc default is to build with -O0
 	# we like optimizations though
 	sed -i -e "s/-O0//" "${S}/pandoc.cabal"
+
+	# Add in the extra split-base deps
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		sed -i -e '/Build-Depends:/a \
+			, pretty, containers' \
+		"${S}/pandoc.cabal"
+	fi
+
 }
