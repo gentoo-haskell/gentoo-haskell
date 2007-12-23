@@ -45,7 +45,7 @@ src_unpack() {
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
 	sed -i 's:\($(addprefix -optc,$(CFLAGS))\):\1 $(addprefix -opta,$(CFLAGS)):' \
-		${S}/autoconf.mk.in
+		"${S}/autoconf.mk.in"
 
 	# On ia64 we need to tone down the level of inlining so we don't break some
 	# of the low level ghc/gcc interaction gubbins.
@@ -76,5 +76,5 @@ src_test() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die "installation failed"
+	make DESTDIR="${D}" install || die "installation failed"
 }
