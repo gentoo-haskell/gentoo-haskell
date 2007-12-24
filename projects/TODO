@@ -9,7 +9,7 @@
 
 * remove hs-plugins from portage
 
-* remove old versions of cabal. Do we need anything other than 1.1.6.2?
+* remove old versions of cabal. Do we need anything other than 1.1.6.2 and 1.2?
 
 * extralibs in ghc-6.8.2. test if the work with ghc 6.6.1 too, and add them
   to portage. as package.masked for those who only work with ghc 6.8.2.
@@ -119,4 +119,5 @@
 * eclectic/haskell-config (related to SLOTting ghc & libs)
 
 * tool to help sync between portage & darcs overlay
+	=> is this just hackport?
 
