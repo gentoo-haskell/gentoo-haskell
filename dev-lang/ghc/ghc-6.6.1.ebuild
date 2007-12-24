@@ -50,13 +50,11 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86"
 IUSE="binary doc ghcbootstrap"
 
 LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
-
-PROVIDE="virtual/ghc"
 
 RDEPEND="
 	!dev-lang/ghc-bin

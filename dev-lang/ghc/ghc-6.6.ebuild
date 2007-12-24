@@ -58,8 +58,6 @@ IUSE="binary doc ghcbootstrap"
 LOC="/opt/ghc" # location for installation of binary version
 S="${WORKDIR}/${MY_P}"
 
-PROVIDE="virtual/ghc"
-
 RDEPEND="
 	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
