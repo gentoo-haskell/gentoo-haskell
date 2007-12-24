@@ -80,11 +80,10 @@ done
 # load the gentoo-style info macros, but hack to get around
 # it thinking this is an rc script
 EBUILD="1"
-if [[ -e /lib/rcscripts/sh/functions.sh ]]; then
-       source /lib/rcscripts/sh/functions.sh
-else
-       source /sbin/functions.sh
-fi
+
+# /etc/init.d/functions.sh always points to the correct functions.sh no
+# matter which version of baselayout
+source /etc/init.d/functions.sh
 
 # misc helper functions
 eloginfo() {
