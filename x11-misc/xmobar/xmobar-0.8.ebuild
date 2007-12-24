@@ -28,3 +28,9 @@ src_unpack() {
 	# Portage does striping, package must not do it themselves.
 	sed -i -e 's/-O2 -fasm -Wall -optl-Wl,-s//' "${S}/xmobar.cabal"
 }
+
+src_install() {
+	cabal_src_install
+
+	dodoc xmobar.config-sample README
+}
