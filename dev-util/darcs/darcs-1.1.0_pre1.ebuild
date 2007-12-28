@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
-inherit base autotools eutils
+inherit base autotools eutils versionator haskell-cabal
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://darcs.net"
@@ -44,8 +44,11 @@ pkg_setup() {
 src_unpack() {
 	base_src_unpack
 
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
+	#Need to patch a couple of files for ghc-6.8* compatability
+	if version_is_at_least "6.8" "$(ghc-version)"; then
+		cd "${S}"
+		epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
+	fi
 
 	cd "${S}/tools"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
