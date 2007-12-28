@@ -45,8 +45,8 @@ src_unpack() {
 	base_src_unpack
 
 	#Need to patch a couple of files for ghc-6.8* compatability
+	cd "${S}"
 	if version_is_at_least "6.8" "$(ghc-version)"; then
-		cd "${S}"
 		epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
 	fi
 
