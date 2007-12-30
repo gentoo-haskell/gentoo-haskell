@@ -1,6 +1,6 @@
-diff -ur darcs-1.1.0pre1.orig/aclocal.m4 darcs-1.1.0pre1/aclocal.m4
---- darcs-1.1.0pre1.orig/aclocal.m4	2007-12-13 23:20:50.000000000 +1000
-+++ darcs-1.1.0pre1/aclocal.m4	2007-12-13 23:21:18.000000000 +1000
+diff -rN -u old-darcs-1.1.0pre1/aclocal.m4 new-darcs-1.1.0pre1/aclocal.m4
+--- old-darcs-1.1.0pre1/aclocal.m4	2007-12-30 18:13:00.000000000 +0100
++++ new-darcs-1.1.0pre1/aclocal.m4	2007-12-30 18:13:01.000000000 +0100
 @@ -447,6 +447,20 @@
  openFd :: Int -> Maybe FDType -> FilePath -> IOMode -> Bool -> Bool -> IO Handle
  openFd fd x y z a b = GHC.Handle.openFd fd x b y z a
@@ -13,7 +13,7 @@ diff -ur darcs-1.1.0pre1.orig/aclocal.m4 darcs-1.1.0pre1/aclocal.m4
 +import qualified GHC.IOBase ( FD )
 +])
 +CODE_WORKAROUND([[
-+  {- 
++  {-
 +   Work around change in the GHC.Handle.fdToHandle' API.
 +  -}
 +openFd :: GHC.IOBase.FD -> Maybe FDType -> FilePath -> IOMode -> Bool -> Bool -> IO Handle
@@ -22,17 +22,18 @@ diff -ur darcs-1.1.0pre1.orig/aclocal.m4 darcs-1.1.0pre1/aclocal.m4
         AC_MSG_RESULT([failed])
         AC_MSG_ERROR([Couldnt figure out how to call GHC.Handle.openFd!])
      )
-Only in darcs-1.1.0pre1/: aclocal.m4~
-diff -ur darcs-1.1.0pre1.orig/autoconf.mk.in darcs-1.1.0pre1/autoconf.mk.in
---- darcs-1.1.0pre1.orig/autoconf.mk.in	2007-12-13 23:20:50.000000000 +1000
-+++ darcs-1.1.0pre1/autoconf.mk.in	2007-12-13 23:21:07.000000000 +1000
-@@ -22,7 +22,7 @@
- OPTCCFLAGS      := $(addprefix -optc,$(CFLAGS) $(CPPFLAGS))
- LDFLAGS		:= @LDFLAGS@ @LIBS@
- OPTLLDFLAGS     := $(addprefix -optl,$(LDFLAGS))
--GHCFLAGS	:= -cpp @GHCFLAGS@
-+GHCFLAGS	:= -package containers -cpp @GHCFLAGS@
- HAVE_CURSES     := @HAVE_CURSES@
- HAVE_LIBCURL    := @HAVE_LIBCURL@
- HAVE_MAPI       := @HAVE_MAPI@
-Only in darcs-1.1.0pre1/: autoconf.mk.in~
+diff -rN -u old-darcs-1.1.0pre1/configure.ac new-darcs-1.1.0pre1/configure.ac
+--- old-darcs-1.1.0pre1/configure.ac	2007-12-30 18:13:00.000000000 +0100
++++ new-darcs-1.1.0pre1/configure.ac	2007-12-30 18:13:01.000000000 +0100
+@@ -135,6 +135,10 @@
+ GHC_CHECK_MODULE(Text.Html, html, text "foo",,
+                  AC_MSG_ERROR(Cannot find Text.Html; try installing package html?))
+ 
++dnl See if we need a package for containers...
++
++GHC_CHECK_MODULE(Data.Map, containers, empty)
++
+ dnl Deal with systems on which getCurrentDirectory uses '\\' rather than '/':
+ 
+ WORKAROUND_getCurrentDirectory
+
