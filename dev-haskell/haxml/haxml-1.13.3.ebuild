@@ -18,8 +18,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.2
-		>=dev-haskell/cabal-1.1.3-r1"
+DEPEND=">=dev-lang/ghc-6.2"
 
 S="${WORKDIR}/${MY_P}"
 
