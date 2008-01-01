@@ -18,7 +18,9 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6
 		>=dev-haskell/x11-1.3.0
 		>=dev-haskell/mtl-1.0
-		>=dev-haskell/filepath-1.0"
+		>=dev-haskell/filepath-1.0
+		dev-haskell/parsec
+		dev-haskell/stm"
 
 src_unpack() {
 	unpack ${A}
