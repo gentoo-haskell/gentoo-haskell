@@ -39,4 +39,6 @@ src_install() {
 	doins "${FILESDIR}/${PN}.desktop"
 
 	doman man/xmonad.1
+
+	dodoc CONFIG README man/xmonad.hs
 }
