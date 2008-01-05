@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
+DEPEND=">=dev-lang/ghc-6.6
+		>=dev-haskell/cabal-1.2
 		>=dev-haskell/gtk2hs-0.9.11"
 
 S="${WORKDIR}/${MY_P}"
