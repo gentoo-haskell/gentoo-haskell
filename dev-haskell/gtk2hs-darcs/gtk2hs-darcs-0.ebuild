@@ -19,6 +19,8 @@ EDARCS_LOCALREPO="gtk2hs"
 
 RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
+        dev-haskell/happy
+        dev-haskell/alex
 		>=x11-libs/gtk+-2
 		glade? ( >=gnome-base/libglade-2 )
 		gnome? ( >=gnome-base/libglade-2
