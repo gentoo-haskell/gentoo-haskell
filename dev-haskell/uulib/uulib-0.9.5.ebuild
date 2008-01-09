@@ -2,17 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES="haddock profile lib"
 inherit haskell-cabal
 
-DESCRIPTION="Attribute Grammar System of Universiteit Utrecht"
+DESCRIPTION="Haskell Utrecht Tools Library"
 HOMEPAGE="http://www.cs.uu.nl/wiki/HUT/WebHome"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
-		>=dev-haskell/uulib-0.9.5"
+DEPEND=">=dev-lang/ghc-6.4.2"
