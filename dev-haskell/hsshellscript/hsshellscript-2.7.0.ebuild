@@ -21,15 +21,10 @@ RDEPEND=""
 pkg_setup() {
 	HSLIB="/usr/$(get_libdir)/${P}/ghc-$(ghc-version)/"
 	if has_version '>=dev-lang/ghc-6.8'; then
-		if ! has_version '>=dev-haskell/parsec-2.1.0.0'; then
+		if (! has_version '>=dev-haskell/parsec-2.1.0.0' || ! built_with_use -o dev-haskell/parsec profile) ; then
 			echo
 			eerror "You need to install dev-haskell/parsec with the 'profile' USE flag."
 			die "hsshellscript needs the package dev-haskell/parsec."
-		fi
-		if ! built_with_use -o dev-haskell/parsec profile; then
-			echo
-			eerror "Install dev-haskell/parsec with the 'profile' USE flag enabled."
-			die "dev-haskell/parsec requires 'profile' flag for GHC 6.8 or greater."
 		fi
 	fi
 }
