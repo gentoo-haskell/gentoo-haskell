@@ -47,6 +47,8 @@ src_install() {
 }
 
 pkg_postinst() {
+	ghc-package_pkg_postinst
+
 	elog "A sample ${SAMPLE_CONFIG} configuration file can be found here:"
 	elog "    /usr/share/doc/${PF}/${SAMPLE_CONFIG}"
 	elog "The parameters in this file are the defaults used by xmonad."
