@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES=""
+CABAL_FEATURES="lib"
 inherit haskell-cabal
 
 DESCRIPTION="library for directory handling"
