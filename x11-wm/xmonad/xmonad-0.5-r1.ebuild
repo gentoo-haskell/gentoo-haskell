@@ -61,6 +61,6 @@ pkg_postinst() {
 	elog "other possible configurations go to:"
 	elog "    http://haskell.org/haskellwiki/Xmonad/Config_archive"
 	elog "Please note that many of these configurations will require the "
-	elog "xmonad-contrib package to be installed."
+	elog "x11-wm/xmonad-contrib package to be installed."
 }
 
