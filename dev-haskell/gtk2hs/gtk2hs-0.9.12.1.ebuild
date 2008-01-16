@@ -27,7 +27,8 @@ RDEPEND=">=dev-lang/ghc-6.4
 		firefox? ( >=www-client/mozilla-firefox-1.0.4 )
 		xulrunner? ( net-libs/xulrunner )"
 DEPEND="${RDEPEND}
-		doc? ( >=dev-haskell/haddock-0.8 )"
+		doc? ( >=dev-haskell/haddock-0.8 )
+		dev-util/pkgconfig"
 
 src_compile() {
 	econf \
