@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Monadic parser combinators"
-HOMEPAGE="http://haskell.org/ghc/"
+HOMEPAGE="http://www.cs.uu.nl/~daan/parsec.html"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
