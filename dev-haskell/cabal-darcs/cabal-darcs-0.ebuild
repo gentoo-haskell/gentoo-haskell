@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="bootstrap profile lib"
+CABAL_FEATURES="profile lib"
 inherit base haskell-cabal eutils darcs
 
 DESCRIPTION="A framework for packaging Haskell software"
