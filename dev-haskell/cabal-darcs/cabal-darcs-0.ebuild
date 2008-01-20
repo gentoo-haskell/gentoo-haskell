@@ -5,12 +5,11 @@
 CABAL_FEATURES="bootstrap profile lib"
 inherit base haskell-cabal eutils darcs
 
-DESCRIPTION="Haskell Common Architecture for Building Applications and Libraries"
+DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://haskell.org/cabal"
 EDARCS_REPOSITORY="http://darcs.haskell.org/cabal"
-EDARCS_GET_CMD="get --partial --verbose"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
