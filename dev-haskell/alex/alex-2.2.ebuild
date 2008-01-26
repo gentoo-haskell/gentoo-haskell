@@ -22,6 +22,8 @@ DEPEND=">=dev-lang/ghc-6.4
 RDEPEND=""
 
 src_unpack() {
+	unpack ${A}
+
 	if use doc; then
 		cd "${S}/doc/"
 		eautoreconf || die "eautoreconf for docs failed"
