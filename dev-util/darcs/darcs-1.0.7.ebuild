@@ -52,11 +52,12 @@ src_unpack() {
 	# On ia64 we need to tone down the level of inlining so we don't break some
 	# of the low level ghc/gcc interaction gubbins.
 	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
+
+	# Since we've patched the build system:
+	eautoreconf
 }
 
 src_compile() {
-	# Since we've patched the build system:
-	eautoreconf
 
 	econf $(use_with doc docs) \
 		|| die "configure failed"
