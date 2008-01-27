@@ -93,6 +93,6 @@ src_install() {
 		libdir0="${D}/usr/$(get_libdir)" \
 		|| die "make install failed"
 
-	cd ${S}/haddock
-	dodoc CHANGES LICENSE README TODO
+	cd "${S}/haddock"
+	dodoc CHANGES README TODO
 }
