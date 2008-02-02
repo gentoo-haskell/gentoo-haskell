@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.4
 
 src_compile() {
 	einfo "Bootstrapping Cabal..."
-	$(ghc-getghc) -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.lhs \
+	$(ghc-getghc) -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.hs \
 		-o setup || die "compiling Setup.lhs failed"
 	cabal-configure
 	cabal-build
