@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal eutils darcs
+inherit base bash-completion haskell-cabal eutils darcs
 
 DESCRIPTION="Command line interface to th Cabal/Hackage system"
 HOMEPAGE="http://haskell.org/cabal"
@@ -18,3 +18,15 @@ DEPEND=">=dev-lang/ghc-6.6
 		dev-haskell/cabal-darcs
 		dev-haskell/zlib
 		dev-haskell/http"
+
+src_install() {
+	haskell-cabal_src_install
+
+	dobashcompletion "${S}/bash-completion/cabal"
+}
+
+pkg_postinst() {
+	ghc-package_pkg_postinst
+
+	bash-completion_pkg_postinst
+}
