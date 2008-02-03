@@ -30,6 +30,15 @@ DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.8 )
 		dev-util/pkgconfig"
 
+src_unpack() {
+	unpack ${A}
+
+	sed -i -e '\|docs/reference/haddock.js|d' \
+		   -e '/$(foreach LETTER,/,+1 d' \
+		   -e '\|\tdocs/reference/gtk2hs.haddock| s/\\//' \
+		   "${S}/Makefile.in"
+}
+
 src_compile() {
 	econf \
 		--enable-packager-mode \
