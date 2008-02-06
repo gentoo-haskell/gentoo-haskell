@@ -1,0 +1,3 @@
+# Duncan Coutts <dcoutts@gentoo.org> (06 Feb 2008)
+# Haddock-2.0 is not ready for prime time yet, too many things break.
+>=dev-haskell/haddock-2.0
