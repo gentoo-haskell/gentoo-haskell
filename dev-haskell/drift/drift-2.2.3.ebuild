@@ -2,14 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ghc-package
+CABAL_FEATURES="bin"
+inherit haskell-cabal
 
 MY_PN="DrIFT"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Preprocessor for automatic derivation of Haskell class instances"
 HOMEPAGE="http://repetae.net/john/computer/haskell/DrIFT/"
-SRC_URI="http://repetae.net/john/computer/haskell/DrIFT/drop/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,12 +22,10 @@ RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
-src_compile() {
-	econf --with-hc="$(ghc-getghc)" || die "configure failed"
-	# Makefile has no parallelism
-	emake -j1 || die "emake failed"
-}
+src_unpack() {
+	unpack ${A}
 
-src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	# No need to use -O2 -Wall -optl-Wl,-s
+	sed -i -e '/ghc-options:/d' \
+		"${S}/${MY_PN}.cabal"
 }
