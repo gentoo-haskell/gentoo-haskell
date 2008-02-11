@@ -16,6 +16,9 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/drift-2.2.3
 		dev-haskell/binary
+		dev-haskell/fgl
+		dev-haskell/quickcheck
+		dev-haskell/mtl
 		dev-haskell/zlib"
 RDEPEND=""
 
