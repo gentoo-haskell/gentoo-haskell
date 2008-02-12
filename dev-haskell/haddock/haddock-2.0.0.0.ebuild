@@ -23,6 +23,16 @@ DEPEND="=dev-lang/ghc-6.8*
         app-text/docbook-xsl-stylesheets
         >=dev-libs/libxslt-1.1.2 )"
 
+src_unpack() {
+	unpack "${A}"
+
+	# -fasm does not work on all arches and is enabled by cabal when appropriate
+	# -O2 is not needed and just prolongs compile time
+	sed -e "s/-fasm//" \
+		-e "s/-O2//" \
+		-i "${S}/${PN}.cabal"
+}
+
 src_compile () {
 	cabal_src_compile
 	if use doc; then
