@@ -8,7 +8,7 @@ inherit eutils haskell-cabal
 MY_P="${PN}-ds-${PV}"
 
 DESCRIPTION="Haskell bindings for ncurses"
-HOMEPAGE="http://www.informatik.uni-freiburg.de/~wehr/haskell/"
+HOMEPAGE="http://www.informatik.uni-freiburg.de/~wehr/software/haskell/"
 SRC_URI="http://www.informatik.uni-freiburg.de/~wehr/download/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
