@@ -26,6 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-cpp-fix.patch"
+	sed -i -e 's+HSCurses/+dist/build/HSCurses/+g' hscurses.cabal
 }
 
 src_compile() {
