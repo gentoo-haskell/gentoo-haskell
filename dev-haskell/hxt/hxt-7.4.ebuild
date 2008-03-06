@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal versionator
+inherit haskell-cabal
 
 DESCRIPTION="A collection of tools for processing XML with Haskell"
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/"
