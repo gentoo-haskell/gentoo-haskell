@@ -14,13 +14,21 @@ EDARCS_REPOSITORY="http://turing.une.edu.au/~bsinclai/code/libmpd-haskell"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="test"
 
-DEPEND=">=dev-haskell/mtl-1.0
-		dev-haskell/network
-		>=dev-lang/ghc-6.4"
-RDEPEND="${DEPEND}"
+RDEPEND=">=dev-haskell/mtl-1.0
+	dev-haskell/network
+	>=dev-lang/ghc-6.4"
+DEPEND="${RDEPEND}
+	test? ( dev-haskell/quickcheck )"
 
 src_install() {
 	cabal_src_install
 	dodoc ChangeLog README TODO
+}
+
+src_test() {
+	if use test ; then
+		"${S}"/tests/run-tests || die "test suite failed"
+	fi
 }
