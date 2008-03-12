@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+CABAL_MIN_VERSION="1.2"
 CABAL_FEATURES="lib profile haddock"
 
 inherit haskell-cabal darcs
