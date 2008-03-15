@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_MIN_VERSION="1.2"
 CABAL_FEATURES="lib profile haddock"
 
 inherit haskell-cabal darcs
@@ -18,6 +17,7 @@ IUSE="test"
 
 RDEPEND=">=dev-haskell/mtl-1.0
 	dev-haskell/network
+	>=dev-haskell/cabal-1.2
 	>=dev-lang/ghc-6.4"
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/quickcheck )"
