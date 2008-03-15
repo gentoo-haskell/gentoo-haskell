@@ -19,6 +19,7 @@ DEPEND=">=dev-lang/ghc-6.4
 		dev-haskell/fgl
 		dev-haskell/quickcheck
 		dev-haskell/mtl
+		dev-haskell/regex-compat
 		dev-haskell/zlib"
 RDEPEND=""
 
