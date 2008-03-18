@@ -64,6 +64,7 @@ src_unpack() {
 	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 
 	# Since we've patched the build system:
+	cd "${S}"
 	eautoreconf
 }
 
