@@ -111,8 +111,6 @@ Next, lets see where your help is needed :)
 
 * build binaries for ghc 6.6.1 for remaining platforms: alpha, ppc64
 
-* all the new missingh packages: hslogger, ftphs, configfile, anydbm
-
 * hugs-2006.5
 
 * haskelldb: though the current release is very old, perhaps prod them
