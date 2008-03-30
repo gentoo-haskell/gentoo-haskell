@@ -109,7 +109,7 @@ Next, lets see where your help is needed :)
 
 * get regex-{base,compat,posix} ~arch on all platforms
 
-* build binaries for ghc 6.6.1 for remaining platforms: alpha, ppc64
+* build binaries for ghc 6.6.1 for remaining platforms: ppc64
 
 * hugs-2006.5
 
@@ -125,9 +125,9 @@ Next, lets see where your help is needed :)
     Using overloaded Prelude while overloading is not enabled
       Hint: Compile with --overloading, or use the simple Prelude
 
-* darcsweb
+* darcsweb-0.16
 
-* add yhc and jhc when they are ready
+* add yhc when it's ready
 
 == Harder ==
 
@@ -135,25 +135,26 @@ Next, lets see where your help is needed :)
 
 * get ghc bugs fixed upstream, send patches
 
-* help fix & improve cabal
-
-* make sure cabal-get integrates with gentoo/portage
+* help fix & improve cabal. improve cabal-install
+   http://hackage.haskell.org/trac/hackage/report/9
+   http://darcs.haskell.org/cabal
+   http://darcs.haskell.org/cabal-install
 
 * improve HackPort tool
+   http://haskell.org/~gentoo/hackport
 
 == Speculative ==
 
-* Since there is no ghc-bin ebuild, do we really need /opt/ghc anymore? Can we just install to /usr 
-  instead?
-  ==> Looks like it's working fine with the 6.8 releases... port these changes back to older releases? Though 
-      this may require re-stabilisation of the ebuilds in the official tree.
+* Since there is no ghc-bin ebuild, do we really need /opt/ghc anymore?
+  Can we just install to /usr instead?
+    ==> Looks like it's working fine with the 6.8 releases...  port these
+        changes back to older releases? Though this may require
+        re-stabilisation of the ebuilds in the official tree.
+    --> No need to port it to older ebuilds. Let's just install to /usr from
+        now on.
 
 * SLOT libs
 
 * SLOT ghc (probly not possible with current portage)
 
 * eclectic/haskell-config (related to SLOTting ghc & libs)
-
-* tool to help sync between portage & darcs overlay
-	=> is this just hackport?
-
