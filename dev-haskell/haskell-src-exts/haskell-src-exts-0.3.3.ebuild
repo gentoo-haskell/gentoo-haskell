@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
 HOMEPAGE="http://code.haskell.org/HSP/haskell-src-exts/"
-SRC_URI="http://hackage.haskell.org/packages/archive/haskell-src-exts/0.3.3/haskell-src-exts-0.3.3.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
