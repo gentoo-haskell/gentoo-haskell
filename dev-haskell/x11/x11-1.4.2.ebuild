@@ -3,7 +3,6 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-CABAL_MIN_VERSION=1.1.6
 inherit haskell-cabal
 
 MY_PN="X11"
@@ -19,6 +18,7 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
+		>=dev-haskell/cabal-1.1.6
 		x11-libs/libX11"
 
 S="${WORKDIR}/${MY_P}"
