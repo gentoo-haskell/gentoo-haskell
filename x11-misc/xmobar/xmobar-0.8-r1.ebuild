@@ -16,7 +16,7 @@ KEYWORDS="~amd64 -sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-		>=dev-haskell/x11-1.3.0
+		|| ( >=dev-haskell/x11-1.3.0 dev-haskell/x11-darcs )
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/filepath-1.0
 		dev-haskell/parsec
