@@ -28,10 +28,6 @@ src_unpack() {
 
 	# portage strips, packages should not do it themselves.
 	sed -i -e 's/-optl-Wl,-s//' "${S}/xmonad.cabal"
-
-	# xmonad 0.6 says it is 0.5, fix this
-	cd "${S}"
-	epatch "${FILESDIR}/xmonad-${PV}-version.patch"
 }
 
 src_install() {
