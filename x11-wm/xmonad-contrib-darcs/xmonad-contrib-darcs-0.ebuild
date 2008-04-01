@@ -14,9 +14,30 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+IUSE="xft unicode"
+
 DEPEND=">=dev-haskell/mtl-1.0
 	x11-wm/xmonad-darcs
-	>=dev-haskell/x11-xft-0.2
+	>=dev-lang/ghc-6.6
 	dev-haskell/x11-darcs
-	>=dev-lang/ghc-6.6"
+	utf8? ( dev-haskell/utf8-string )
+	xft?  ( dev-haskell/utf8-string
+			dev-haskell/x11-xft )"
 RDEPEND="${DEPEND}"
+
+src_compile() {
+	CABAL_CONFIGURE_FLAGS=""
+
+	if use xft; then
+		CABAL_CONFIGURE_FLAGS="--flags=use_xft"
+	else
+		CABAL_CONFIGURE_FLAGS="--flags=-use_xft"
+	fi
+
+	if use unicode; then
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_utf8"
+	else
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_utf8"
+	fi
+	cabal_src_compile
+}
