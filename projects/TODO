@@ -109,6 +109,9 @@ Next, lets see where your help is needed :)
 
 * get regex-{base,compat,posix} ~arch on all platforms
 
+* ebuild for takusen
+    http://darcs.haskell.org/takusen
+
 * build binaries for ghc 6.6.1 for remaining platforms: ppc64
 
 * hugs-2006.5
