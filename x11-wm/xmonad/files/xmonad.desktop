@@ -5,4 +5,4 @@ Comment=A lightweight window manager
 Exec=/etc/X11/Sessions/xmonad
 TryExec=xmonad
 Icon=
-Type=Xsession
+Type=Application
