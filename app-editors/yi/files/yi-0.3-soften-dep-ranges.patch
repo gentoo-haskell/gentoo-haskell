@@ -1,0 +1,22 @@
+diff -rN -u old-yi-0.3/yi.cabal new-yi-0.3/yi.cabal
+--- old-yi-0.3/yi.cabal	2008-04-13 15:37:41.000000000 +0200
++++ new-yi-0.3/yi.cabal	2008-04-13 15:37:41.000000000 +0200
+@@ -83,13 +83,12 @@
+         -- haddock >= 2.0, 
+         -- it seems harsh to require haddock 2.0 to even configure Yi;
+         -- and there is a message about haddock 2 in Setup.hs
+-        build-depends: bytestring ==0.9.0.1 
+-                               -- >= 0.9 && < 0.9.0.4        
++        build-depends: bytestring >=0.9.0.1
+         build-depends: fingertree
+ 
+-        build-depends: regex-base ==0.72.0.1
+-        build-depends: regex-compat ==0.71.0.1
+-        build-depends: regex-posix ==0.72.0.2
++        build-depends: regex-base >=0.72.0.1
++        build-depends: regex-compat >=0.71.0.1
++        build-depends: regex-posix >=0.72.0.2
+ 
+         ghc-options:   -Wall -optl-Wl,-s
+ -- ghc-options later on get appended to the original
+
