@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ IUSE="test"
 RDEPEND=">=dev-haskell/mtl-1.0
 	dev-haskell/network
 	>=dev-haskell/cabal-1.2
-	>=dev-lang/ghc-6.4"
+	>=dev-lang/ghc-6.6"
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/quickcheck )"
 
