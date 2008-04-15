@@ -1,0 +1,18 @@
+diff -rN -u old-darcs-2.0.0/configure.ac new-darcs-2.0.0/configure.ac
+--- old-darcs-2.0.0/configure.ac	2008-04-15 23:11:16.000000000 +0200
++++ new-darcs-2.0.0/configure.ac	2008-04-15 23:11:17.000000000 +0200
+@@ -378,9 +378,11 @@
+ AC_MSG_CHECKING([for gadt type witnesses])
+ AC_ARG_WITH(type-witnesses,
+             AS_HELP_STRING([--with-type-witnesses],
+-                           [use GADT type witnesses (EXPERIMENTAL!)]))
++                           [use GADT type witnesses (EXPERIMENTAL!)])
++            ,with_typew=yes
++            ,with_typew=no)
+ 
+-if test "$withval" = "yes"; then
++if test "$with_typew" = "yes"; then
+  GHCFLAGS="$GHCFLAGS -fglasgow-exts"
+  AC_DEFINE([GADT_WITNESSES])
+  AC_MSG_RESULT([yes])
+
