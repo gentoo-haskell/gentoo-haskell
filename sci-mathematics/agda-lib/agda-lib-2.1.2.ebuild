@@ -14,7 +14,7 @@ MY_P="${MY_PN}-${PV}"
 SRC_URI="http://www.cs.chalmers.se/~ulfn/darcs/Agda2/${MY_P}.tar.gz"
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
