@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES=""
+CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="An MPD client library."
