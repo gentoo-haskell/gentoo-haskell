@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib bin"
-inherit haskell-cabal
+inherit haskell-cabal eutils
 
 MY_PN="HaXml"
 MY_P="${MY_PN}-${PV}"
@@ -22,3 +22,10 @@ DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/polyparse-1.1"
 
 S="${WORKDIR}/${MY_P}"
+
+src_unpack() {
+	unpack "${A}"
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-intercalate.patch"
+}
