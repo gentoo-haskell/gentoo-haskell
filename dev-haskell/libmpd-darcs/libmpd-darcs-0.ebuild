@@ -19,8 +19,9 @@ RDEPEND=">=dev-haskell/mtl-1.0
 	dev-haskell/network
 	>=dev-haskell/cabal-1.2
 	>=dev-lang/ghc-6.6"
+# XXX: should have SLOT dep...
 DEPEND="${RDEPEND}
-	test? ( dev-haskell/quickcheck )"
+	test? ( =dev-haskell/quickcheck-1* )"
 
 src_install() {
 	cabal_src_install
