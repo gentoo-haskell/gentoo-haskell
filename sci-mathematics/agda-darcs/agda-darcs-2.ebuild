@@ -5,7 +5,7 @@
 CABAL_FEATURES="bin"
 inherit haskell-cabal darcs
 
-DESCRIPTION="A dependently typed programming languge"
+DESCRIPTION="A dependently typed programming language"
 HOMEPAGE="http://appserv.cs.chalmers.se/users/ulfn/wiki/agda.php"
 
 MY_PN="Agda"
