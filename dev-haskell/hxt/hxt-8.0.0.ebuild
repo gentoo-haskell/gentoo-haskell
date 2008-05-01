@@ -1,12 +1,12 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
-DESCRIPTION="A collection of tools for processing XML with Haskell."
-HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
+DESCRIPTION="A collection of tools for processing XML with Haskell"
+HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -17,7 +17,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		>=dev-haskell/parsec-2.1
-		<dev-haskell/parsec-3
 		>=dev-haskell/http-3001.0.4
 		>=dev-haskell/hunit-1.2
 		>=dev-haskell/network-2.1
