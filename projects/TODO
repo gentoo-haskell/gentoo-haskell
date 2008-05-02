@@ -53,6 +53,8 @@ Next, lets see where your help is needed :)
 
 * get regex-{base,compat,posix} ~arch on all platforms
 
+* ebuild for wxhaskell and wxc
+
 * ebuild for takusen
     http://darcs.haskell.org/takusen
 
