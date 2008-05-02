@@ -49,6 +49,33 @@ Next, lets see where your help is needed :)
 
 == High priority ==
 
+== New ebuilds ==
+
+* get regex-{base,compat,posix} ~arch on all platforms
+
+* ebuild for takusen
+    http://darcs.haskell.org/takusen
+
+* build binaries for ghc 6.6.1 for remaining platforms: ppc64
+
+* hugs-2006.5
+
+* haskelldb: though the current release is very old, perhaps prod them
+  for a new release. The dev version supports HDBC I believe.
+
+* helium-1.6 (may not work on 64-bit arches)
+    An ebuild is in the overlay but it needs some more love.
+    Only tested on x86.
+    'hint' works with simple library and with type classes.
+    The other executables only works with the simple library, type classes
+    fail with:
+    Using overloaded Prelude while overloading is not enabled
+      Hint: Compile with --overloading, or use the simple Prelude
+
+* darcsweb-0.16
+
+* add yhc when it's ready
+
 == Ebuild maintainance ==
 
 * remove hs-plugins from portage
@@ -104,33 +131,6 @@ Next, lets see where your help is needed :)
 * get ebuilds marked ~amd64: helium
 
 * in the ghc ebuilds: does the ghcprof subst work?
-
-== New ebuilds ==
-
-* get regex-{base,compat,posix} ~arch on all platforms
-
-* ebuild for takusen
-    http://darcs.haskell.org/takusen
-
-* build binaries for ghc 6.6.1 for remaining platforms: ppc64
-
-* hugs-2006.5
-
-* haskelldb: though the current release is very old, perhaps prod them
-  for a new release. The dev version supports HDBC I believe.
-
-* helium-1.6 (may not work on 64-bit arches)
-    An ebuild is in the overlay but it needs some more love.
-    Only tested on x86.
-    'hint' works with simple library and with type classes.
-    The other executables only works with the simple library, type classes
-    fail with:
-    Using overloaded Prelude while overloading is not enabled
-      Hint: Compile with --overloading, or use the simple Prelude
-
-* darcsweb-0.16
-
-* add yhc when it's ready
 
 == Harder ==
 
