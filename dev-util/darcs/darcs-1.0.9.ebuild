@@ -17,7 +17,7 @@ IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	>=dev-lang/ghc-6.2.2
-	dev-haskell/quickcheck
+	=dev-haskell/quickcheck-1*
 	dev-haskell/mtl
 	dev-haskell/html
 	sys-apps/diffutils
@@ -42,7 +42,13 @@ pkg_setup() {
 src_unpack() {
 	base_src_unpack
 
+	# For GHC 6.8* compatibility, make sure
+	#  * the new openFd/fdToHandle API is found
+	#  * to use the containers package, if it exists
+	# Works with all GHC versions
 	cd "${S}"
+	epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
+
 	epatch "${FILESDIR}/${P}-bashcomp.patch"
 
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
