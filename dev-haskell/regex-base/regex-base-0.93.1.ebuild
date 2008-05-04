@@ -1,9 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib"
-CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 DESCRIPTION="Interface API for regex-posix,pcre,parsec,tdfa,dfa"
@@ -16,5 +15,6 @@ KEYWORDS="~amd64 ~hppa ~ia64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
+		>=dev-haskell/cabal-1.2
 		dev-haskell/mtl
 		dev-haskell/bytestring"
