@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal versionator
+inherit haskell-cabal
 
 MY_PN=MissingH
 MY_P=${MY_PN}-${PV}
@@ -26,5 +26,13 @@ DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/mtl-1.0
 	>=dev-haskell/hunit-1.1
 	>=dev-haskell/network-1.0
-	>=dev-haskell/quickcheck-1.0
+	=dev-haskell/quickcheck-1*
 	dev-haskell/regex-compat"
+
+src_unpack() {
+	unpack ${A}
+
+	# MissingH doesn't support quickcheck 2
+	sed -e 's/QuickCheck/QuickCheck>=1\&\&<2/' \
+		-i "${S}/MissingH.cabal"
+}
