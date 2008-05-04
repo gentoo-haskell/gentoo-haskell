@@ -17,6 +17,7 @@ IUSE="test"
 
 RDEPEND=">=dev-haskell/mtl-1.0
 	dev-haskell/network
+	dev-haskell/utf8-string
 	>=dev-haskell/cabal-1.2
 	>=dev-lang/ghc-6.6"
 # XXX: should have SLOT dep...
