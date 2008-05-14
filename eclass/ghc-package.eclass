@@ -84,7 +84,7 @@ ghc-sanecabal() {
 }
 
 # checks if ghc and ghc-bin are installed in the same version
-# (if they're both installed); if this is not the case, we 
+# (if they're both installed); if this is not the case, we
 # unfortunately cannot trust portage's dependency resolution
 ghc-saneghc() {
 	local ghcversion
