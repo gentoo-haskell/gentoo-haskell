@@ -19,7 +19,7 @@ IUSE="doc"
 DEPEND=">=net-misc/curl-7.10.2
 	virtual/mta
 	<dev-lang/ghc-6.6
-	doc?  ( virtual/tetex
+	doc?  ( virtual/latex-base
 		dev-tex/latex2html )"
 #	wxwindows?  ( dev-haskell/wxhaskell )
 
