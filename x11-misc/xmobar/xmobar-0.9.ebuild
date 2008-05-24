@@ -21,10 +21,15 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/parsec
 		dev-haskell/filepath
-		dev-haskell/stm"
+		dev-haskell/stm
+		virtual/xft"
+
+src_compile() {
+	CABAL_CONFIGURE_FLAGS="--flags=with_xft --flags=with_utf8"
+	cabal_src_compile
+}
 
 src_install() {
-	CABAL_CONFIGURE_FLAGS="--flags=\"with_xft with_utf8\""
 	cabal_src_install
 
 	dodoc xmobar.config-sample README
