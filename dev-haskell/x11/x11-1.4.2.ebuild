@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal eutils
+inherit haskell-cabal eutils autotools
 
 MY_PN="X11"
 MY_P="${MY_PN}-${PV}"
@@ -29,6 +29,7 @@ src_unpack() {
 
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-with-xinerama.patch"
+	eautoreconf
 }
 
 src_compile() {
