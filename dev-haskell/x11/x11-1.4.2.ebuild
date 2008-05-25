@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE="xinerama"
 
 DEPEND=">=dev-lang/ghc-6.4.2
-		>=dev-haskell/cabal-1.1.6
+		>=dev-haskell/cabal-1.2.3.0
 		x11-libs/libX11
 		xinerama? ( x11-libs/libXinerama )"
 

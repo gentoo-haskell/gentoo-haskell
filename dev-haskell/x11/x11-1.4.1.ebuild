@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-CABAL_MIN_VERSION=1.1.6
+CABAL_MIN_VERSION=1.2.3.0
 inherit haskell-cabal eutils autotools
 
 MY_PN="X11"
