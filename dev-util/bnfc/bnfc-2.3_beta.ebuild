@@ -20,7 +20,7 @@ KEYWORDS="~x86 ~ppc"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.2
-	doc? ( virtual/tetex )"
+	doc? ( virtual/latex-base )"
 
 RDEPEND="virtual/libc"
 
@@ -39,6 +39,7 @@ src_install() {
 	dobin bnfc
 	if use doc ; then
 		cd doc
-		dodoc LBNF-report.pdf
+		insinto "/usr/share/doc/${P}"
+		doins LBNF-report.pdf
 	fi
 }
