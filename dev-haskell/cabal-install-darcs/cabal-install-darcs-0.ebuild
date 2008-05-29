@@ -5,7 +5,7 @@
 CABAL_FEATURES="bin"
 inherit base bash-completion haskell-cabal eutils darcs
 
-DESCRIPTION="Command line interface to th Cabal/Hackage system"
+DESCRIPTION="Command line interface to the Cabal/Hackage system"
 HOMEPAGE="http://haskell.org/cabal"
 EDARCS_REPOSITORY="http://darcs.haskell.org/cabal-install"
 
