@@ -22,6 +22,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parsec
 		dev-haskell/filepath
 		dev-haskell/stm
+		dev-haskell/utf8-string
+		dev-haskell/x11-xft
 		virtual/xft"
 
 src_compile() {
