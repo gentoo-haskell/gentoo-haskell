@@ -14,7 +14,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 
-IUSE="xft unicode"
+IUSE=""
 
 DEPEND="dev-haskell/mtl
 	~x11-wm/xmonad-${PV}
