@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="bin"
 
-inherit haskell-cabal darcs
+inherit base haskell-cabal darcs
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
@@ -25,6 +25,14 @@ DEPEND="!dev-haskell/leksah
 		>=dev-haskell/binary-0.4
 		>=dev-haskell/bytestring-0.9.0.1"
 RDEPEND="${DEPEND}"
+
+pkg_setup() {
+	if ! built_with_use dev-haskell/gtk2hs gnome; then
+		echo
+		eerror "${PN} requires that gtk2hs is built with the gnome USE flag."
+		die "gtk2hs must be built with the gnome USE flag"
+	fi
+}
 
 src_install() {
 	cabal_src_install
