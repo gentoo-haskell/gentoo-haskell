@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hmake/hmake-3.10.ebuild,v 1.7 2006/03/16 14:13:49 dcoutts Exp $
 
-inherit base eutils fixheadtails ghc-package
+inherit base eutils fixheadtails ghc-package flag-o-matic
 
 DESCRIPTION="A make tool for Haskell programs"
 HOMEPAGE="http://www.haskell.org/hmake/"
@@ -40,6 +40,8 @@ src_unpack() {
 	# the line above prevents current fixheadtails.eclass from doing nonsense;
 	# double space before -n is significant
 	ht_fix_all
+	# Make it compile with -Wl, -O1
+	filter-ldflags -*
 }
 
 src_compile() {

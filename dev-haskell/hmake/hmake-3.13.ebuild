@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-haskell/hmake/hmake-3.10.ebuild,v 1.7 2006/03/16 14:13:49 dcoutts Exp $
 
-inherit base eutils ghc-package
+inherit base eutils ghc-package flag-o-matic
 
 DESCRIPTION="A make tool for Haskell programs"
 HOMEPAGE="http://www.haskell.org/hmake/"
@@ -32,6 +32,8 @@ src_unpack() {
 		$1 -E -cpp -optP-dM ghcsym.hs -o ghcsym.out; \
 		grep __GLASGOW_HASKELL__ ghcsym.out | cut -d" " -f 3 > $2;' \
 		"${S}/script/confhc"
+	# Make it compile with LDFLAGS -Wl, -O1
+	filter-ldflags -*
 }
 
 src_compile() {
