@@ -13,11 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="dev-lang/ghc
+DEPEND="!>=dev-lang/ghc-6.8
 		sys-libs/readline
 		>=sys-apps/sandbox-1.2.12"
-RDEPEND="dev-lang/ghc
-		sys-libs/readline"
+RDEPEND="sys-libs/readline"
 
 # sandbox dependency due to bug #97441, #101433
 
