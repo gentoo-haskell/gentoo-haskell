@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="!>=dev-lang/ghc-6.8
+DEPEND="<dev-lang/ghc-6.8
 		sys-libs/readline
 		>=sys-apps/sandbox-1.2.12"
 RDEPEND="sys-libs/readline"
@@ -41,7 +41,7 @@ src_unpack() {
 	# double space before -n is significant
 	ht_fix_all
 	# Make it compile with -Wl, -O1
-	filter-ldflags -*
+	filter-ldflags -Wl,-O1
 }
 
 src_compile() {
