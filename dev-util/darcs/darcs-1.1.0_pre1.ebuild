@@ -51,8 +51,9 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-1.1.0pre1-ghc68.patch"
 
-	cd "${S}/tools"
+	pushd tools
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	popd
 
 	# If we're going to use the CFLAGS with GHC's -optc flag then we'd better
 	# use it with -opta too or it'll break with some CFLAGS, eg -mcpu on sparc
@@ -90,8 +91,8 @@ src_install() {
 		&& rmdir "${D}/etc" \
 		|| die "fixing location of darcs bash completion failed"
 	if use doc; then
-		dodoc "${S}/doc/manual/darcs.ps"
-		dohtml -r "${S}/doc/manual/"*
+		dodoc "${S}/doc/manual/darcs.ps" || die "installing darcs.ps failed"
+		dohtml -r "${S}/doc/manual/"* || die "installing darcs manual failed"
 	fi
 }
 

@@ -62,4 +62,3 @@ pkg_postinst() {
 	elog "Please note that many of these configurations will require the "
 	elog "x11-wm/xmonad-contrib package to be installed."
 }
-

@@ -24,6 +24,6 @@ S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
 
 # Sadly Setup.hs in the ghc-6.6.1 extralibs was not tested with Cabal-1.1.6.x
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	sed -i -e "/type Hook/ s/UserHooks/Maybe UserHooks/" "${S}/Setup.hs"
 }

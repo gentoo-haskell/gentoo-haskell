@@ -26,7 +26,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack $A
-
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-with-xinerama.patch"
 	eautoreconf

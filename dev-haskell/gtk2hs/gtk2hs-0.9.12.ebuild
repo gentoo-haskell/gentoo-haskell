@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 		doc? ( >=dev-haskell/haddock-0.8 )"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	# Fix for recent glib that changes the type of the gtype typedef:
 	sed -i -e 's/(CULong)/(CULong, CUInt)/' \
