@@ -18,6 +18,6 @@ hdbc_PV=$(get_version_component_range 1-3)
 
 DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hdbc-${hdbc_PV}
-	>=dev-db/libpq-8"
+	>=virtual/postgresql-base-8"
 
 S="${WORKDIR}/${PN}"

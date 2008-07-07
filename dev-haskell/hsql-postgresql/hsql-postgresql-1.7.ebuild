@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hsql-${PV}
-	>=dev-db/libpq-7"
+	>=virtual/postgresql-base-7"
 
 src_unpack() {
 	unpack "${A}"
