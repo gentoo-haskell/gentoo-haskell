@@ -27,7 +27,7 @@ RDEPEND=""
 S="${WORKDIR}/${MY_PF}"
 
 src_unpack () {
-	unpack "${A}"
+	unpack ${A}
 
 	#FIXME: remove the following two workarounds when haddock-0.9 is released
 
@@ -50,7 +50,7 @@ src_compile () {
 	cabal_src_compile
 	if use doc; then
 		cd "${S}/doc"
-		autoconf
+		eautoconf
 		./configure --prefix="${D}/usr/" \
 			|| die 'error configuring documentation.'
 		make html || die 'error building documentation.'

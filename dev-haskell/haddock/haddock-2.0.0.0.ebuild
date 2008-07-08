@@ -20,11 +20,11 @@ DEPEND="=dev-lang/ghc-6.8*
 	>=dev-haskell/cabal-1.2
 	dev-haskell/filepath
 	doc? (  ~app-text/docbook-xml-dtd-4.2
-        app-text/docbook-xsl-stylesheets
-        >=dev-libs/libxslt-1.1.2 )"
+		app-text/docbook-xsl-stylesheets
+		>=dev-libs/libxslt-1.1.2 )"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	# -fasm does not work on all arches and is enabled by cabal when appropriate
 	# -O2 is not needed and just prolongs compile time
