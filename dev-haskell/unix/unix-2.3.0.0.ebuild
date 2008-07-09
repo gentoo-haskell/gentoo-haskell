@@ -15,3 +15,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1"
+
+CABAL_CORE_LIB_GHC_PV="6.8.2"
