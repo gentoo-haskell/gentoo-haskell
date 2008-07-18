@@ -39,7 +39,8 @@ EXTRA_SRC_URI="${PV}"
 [[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
-	amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
+	amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )
+	x86?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-x86.tbz2 )"
 #	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 #	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
 #	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
@@ -131,11 +132,11 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
+	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc; then
 		#eerror "No binary .tbz2 package available yet for these arches:"
 		#eerror "  ppc, ppc64"
 		#
-		eerror "No binary .tbz2 package available yet for any arches but amd64."
+		eerror "No binary .tbz2 package available yet for any arches but x86/amd64."
 		#
 		eerror "Please try emerging with USE=ghcbootstrap and report build"
 		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
