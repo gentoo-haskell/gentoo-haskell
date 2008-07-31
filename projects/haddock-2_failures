@@ -1,0 +1,10 @@
+The following packages are known not to build with haddock-2*
+
+dev-haskell/binary
+dev-haskell/gtk2hs
+dev-haskell/bytestring
+dev-haskell/regex-base
+dev-haskell/regex-posix
+dev-haskell/pcre-light
+dev-haskell/unix-compat
+
