@@ -16,7 +16,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6
-		dev-haskell/cabal-darcs:1.4
+		=dev-haskell/cabal-darcs-1.4*
 		dev-haskell/zlib
 		dev-haskell/http"
 
