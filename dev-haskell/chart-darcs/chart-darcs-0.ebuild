@@ -22,4 +22,5 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6
 		>=dev-haskell/cabal-1.2
         dev-haskell/time
-		>=dev-haskell/gtk2hs-0.9.11"
+		>=dev-haskell/gtk2hs-0.9.11
+        doc? ( >=dev-haskell/haddock-2 )"
