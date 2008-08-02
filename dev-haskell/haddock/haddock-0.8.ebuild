@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal eutils versionator
+inherit haskell-cabal eutils versionator autotools
 
 MY_PF=$(replace_version_separator 3 '-' ${PF})
 
