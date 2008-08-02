@@ -17,5 +17,5 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/pcre-light
-		>=dev-haskell/hscolour-1.9
+		~dev-haskell/hscolour-1.9
 		dev-haskell/filepath"

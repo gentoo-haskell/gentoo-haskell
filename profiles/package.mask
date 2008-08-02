@@ -2,6 +2,3 @@
 # Haddock-2.0 is not ready for prime time yet, too many things break.
 >=dev-haskell/haddock-2.0
 
-# Ivan Miljenovic (02 Aug 2008)
-# Type signature error
-=dev-haskell/ghc-core-0.3
