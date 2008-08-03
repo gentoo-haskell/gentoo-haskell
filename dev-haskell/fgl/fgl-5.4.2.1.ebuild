@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	dev-haskell/mtl
-    doc? ( >=dev-haskell/haddock-2* ) "
+    doc? ( >=dev-haskell/haddock-2 ) "
 
 src_unpack() {
 	unpack "${A}"
