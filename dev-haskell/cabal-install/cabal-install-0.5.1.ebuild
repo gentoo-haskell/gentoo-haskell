@@ -11,7 +11,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
@@ -20,3 +20,16 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/network
 		dev-haskell/http
 		>=dev-haskell/zlib-0.4"
+
+src_install() {
+    haskell-cabal_src_install
+
+    dobashcompletion "${S}/bash-completion/cabal"
+}
+
+pkg_postinst() {
+    ghc-package_pkg_postinst
+
+    bash-completion_pkg_postinst
+}
+
