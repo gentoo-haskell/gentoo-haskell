@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="1"
+
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
@@ -15,10 +17,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
-		dev-haskell/quickcheck
+		>=dev-haskell/cabal-1.4
+		dev-haskell/quickcheck:0
 		dev-haskell/hunit
 		dev-haskell/storable-complex
         sci-libs/gsl
         virtual/blas
         virtual/lapack"
+
+src_compile() {
+    CABAL_CONFIGURE_FLAGS="--constraint=QuickCheck<2"
+
+    echo $CABAL_CONFIGURE_FLAGS
+
+    cabal_src_compile
+}
