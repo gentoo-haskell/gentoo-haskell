@@ -3,7 +3,7 @@
 # $Header: $
 
 CABAL_FEATURES="bin"
-EDARCS_REPOSITORY="http://www.haskell.org/~gentoo/hackport/"
+EDARCS_REPOSITORY="http://code.haskell.org/gentoo/hackport/"
 inherit darcs haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
