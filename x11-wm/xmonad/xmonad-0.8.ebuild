@@ -23,13 +23,6 @@ RDEPEND="${DEPEND}"
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
-src_unpack() {
-	unpack ${A}
-
-	# portage strips, packages should not do it themselves.
-	sed -i -e 's/-optl-Wl,-s//' "${S}/xmonad.cabal"
-}
-
 src_install() {
 	cabal_src_install
 
