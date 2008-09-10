@@ -17,7 +17,7 @@ IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
 	>=dev-lang/ghc-6.2.2
-	dev-haskell/quickcheck
+	=dev-haskell/quickcheck-1*
 	dev-haskell/mtl
 	dev-haskell/html
 	dev-haskell/http
@@ -79,8 +79,8 @@ src_install() {
 		&& rmdir "${D}/etc" \
 		|| die "fixing location of darcs bash completion failed"
 	if use doc; then
-		dodoc "${S}/doc/manual/darcs.ps"
-		dohtml -r "${S}/doc/manual/"*
+		dodoc "${S}/doc/manual/darcs.ps" || die "installing darcs.ps failed"
+		dohtml -r "${S}/doc/manual/"* || die "installing darcs manual failed"
 	fi
 }
 
