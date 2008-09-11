@@ -19,7 +19,7 @@ IUSE="doc"
 DEPEND=">=dev-lang/ghc-6.8.2
 	>=dev-haskell/cabal-1.2
 	dev-haskell/filepath
-    <=dev-haskell/ghc-paths-0.1.0.2
+    dev-haskell/ghc-paths
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2 )"
