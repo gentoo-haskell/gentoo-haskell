@@ -24,3 +24,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parsec
 		dev-haskell/quickcheck
 		dev-haskell/utf8-string"
+
+src_unpack() {
+	unpack ${A}
+
+	# building without -fvia-C makes GHC 6.8.3 break on my amd64
+	# sed -i -e 's/-fvia-C//' "${S}/protocol-buffers.cabal"
+}
