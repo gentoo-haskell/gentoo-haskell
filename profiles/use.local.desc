@@ -7,6 +7,9 @@
 
 # Keep it sorted.
 
+dev-haskell/pandoc:pdf - Enable the markdown2pdf script
+dev-haskell/pandoc:html - Enable the html2markdown script
+
 x11-wm/xmonad:extensions - Enable third party xmonad extensions
 x11-wm/xmonad:savedconfig - Add support to user defined configs
 x11-wm/xmonad-darcs:extensions - Enable third party xmonad extensions
