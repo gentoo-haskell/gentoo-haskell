@@ -24,13 +24,6 @@ DEPEND=">=dev-lang/ghc-6.4.2
 
 S="${WORKDIR}/${MY_P}"
 
-src_unpack() {
-	unpack $A
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-with-xinerama.patch"
-	eautoreconf
-}
-
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--configure-option=$(use_with xinerama)"
 	cabal_src_compile
