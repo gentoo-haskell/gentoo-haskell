@@ -1,0 +1,46 @@
+--- pandoc-1.0.0.1/Setup.hs.orig	2008-09-23 15:57:35.363102250 +1000
++++ pandoc-1.0.0.1/Setup.hs	2008-09-23 16:32:13.187351283 +1000
+@@ -12,16 +12,18 @@
+ 
+ main = defaultMainWithHooks $
+        simpleUserHooks { runTests  = runTestSuite
+-                       , postBuild = makeManPages }
++                       , postBuild = makeDocumentation }
+ 
+ -- | Run test suite.
+ runTestSuite _ _ _ _ = do
+   inDirectory "tests" $ runCommand "runhaskell -i.. RunTests.hs" >>= waitForProcess
+   return ()
+ 
+--- | Build man pages from markdown sources in man/man1/.
+-makeManPages _ _ _ _ = do
++-- | Build man pages from markdown sources in man/man1/ and converts README to
++--   README.html.
++makeDocumentation _ _ _ _ = do
+   mapM makeManPage ["pandoc.1", "hsmarkdown.1", "html2markdown.1", "markdown2pdf.1"]
++  makeHtmlReadme
+   return ()
+ 
+ -- | Build a man page from markdown source in man/man1.
+@@ -40,6 +42,21 @@
+             ExitSuccess -> putStrLn $ "Created " ++ manDir </> manpage
+             _           -> error $ "Error creating " ++ manDir </> manpage
+ 
++-- | Convert the README file form markdown source to html.
++makeHtmlReadme = do
++  let pandoc = "dist" </> "build" </> "pandoc" </> "pandoc"
++  let source = "README"
++  let page = source <.> "html"
++  modifiedDeps <- modifiedDependencies page [source]
++  if null modifiedDeps
++     then return ()
++     else do
++       ec <- runProcess pandoc ["-s", "-S", "-r", "markdown", "-w", "html", "-o", page, source]
++                   Nothing Nothing Nothing Nothing (Just stderr) >>= waitForProcess
++       case ec of
++            ExitSuccess -> putStrLn $ "Created " ++ page
++            _           -> error $ "Error creating " ++ page
++
+ -- | Returns a list of 'dependencies' that have been modified after 'file'.
+ modifiedDependencies :: FilePath -> [FilePath] -> IO [FilePath]
+ modifiedDependencies file dependencies = do
