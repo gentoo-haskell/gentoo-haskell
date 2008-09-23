@@ -7,8 +7,11 @@
 
 # Keep it sorted.
 
-dev-haskell/pandoc:pdf - Enable the markdown2pdf script
+dev-haskell/pandoc:citeproc - Enable citation support
+dev-haskell/pandoc:hightlight - Enable source-code syntax highlighting in html output
 dev-haskell/pandoc:html - Enable the html2markdown script
+dev-haskell/pandoc:pdf - Enable the markdown2pdf script
+
 
 x11-wm/xmonad:extensions - Enable third party xmonad extensions
 x11-wm/xmonad:savedconfig - Add support to user defined configs
