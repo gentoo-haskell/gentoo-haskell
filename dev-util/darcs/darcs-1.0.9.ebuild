@@ -12,7 +12,7 @@ SRC_URI="http://abridgegame.org/darcs/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
@@ -23,7 +23,6 @@ DEPEND=">=net-misc/curl-7.10.2
 	sys-apps/diffutils
 	doc?  ( virtual/latex-base
 		>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
-# does not build with >=ghc-6.6
 
 RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta
@@ -87,8 +86,8 @@ src_install() {
 		&& rmdir "${D}/etc" \
 		|| die "fixing location of darcs bash completion failed"
 	if use doc; then
-		dodoc "${S}/manual/darcs.ps"
-		dohtml -r "${S}/manual/"*
+		dodoc "${S}/manual/darcs.ps" || die "installing darcs.ps failed"
+		dohtml -r "${S}/manual/"* || die "installing darcs manual failed"
 	fi
 }
 
