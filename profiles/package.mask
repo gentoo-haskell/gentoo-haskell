@@ -2,3 +2,6 @@
 # Haddock-2.0 is not ready for prime time yet, too many things break.
 >=dev-haskell/haddock-2.0
 
+# Lennart Kolmodin <kolmodin@gentoo.org> (29 Sep 2008)
+# Masked for testing.
+>=dev-lang/ghc-6.10
