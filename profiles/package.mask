@@ -5,3 +5,7 @@
 # Lennart Kolmodin <kolmodin@gentoo.org> (29 Sep 2008)
 # Masked for testing.
 >=dev-lang/ghc-6.10
+
+# Lennart Kolmodin <kolmodin@gentoo.org> (29 Sep 2008)
+# Masked for testing.
+>=dev-util/darcs-2.1
