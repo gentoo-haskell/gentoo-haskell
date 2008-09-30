@@ -58,7 +58,7 @@ src_unpack() {
 src_compile() {
 	CABAL_CONFIGURE_FLAGS=""
 
-	if use highlighting; then
+	if use highlight; then
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=highlighting"
 	else
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-highlighting"
