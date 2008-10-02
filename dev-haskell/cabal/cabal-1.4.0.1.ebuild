@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.2"
+DEPEND=">=dev-lang/ghc-6.4"
 
 CABAL_CORE_LIB_GHC_PV=""
 
