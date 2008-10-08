@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="profile haddock lib"
-inherit haskell-cabal versionator
+CABAL_FEATURES="lib profile haddock"
+inherit haskell-cabal
 
 DESCRIPTION="Versatile logging framework"
 HOMEPAGE="http://software.complete.org/hslogger"
@@ -14,6 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/network
-		dev-haskell/mtl"
+DEPEND=">=dev-lang/ghc-6.6.1
+		>=dev-haskell/cabal-1.2
+		dev-haskell/mtl
+		dev-haskell/network"
