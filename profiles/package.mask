@@ -1,7 +1,7 @@
 # Lennart Kolmodin <kolmodin@gentoo.org> (29 Sep 2008)
 # Masked for testing.
 >=dev-lang/ghc-6.10
->=dev-haskell/cabal-1.5
+~dev-haskell/cabal-1.5.5
 
 # Duncan Coutts <dcoutts@gentoo.org> (06 Feb 2008)
 # Haddock-2.0 is not ready for prime time yet, too many things break.
