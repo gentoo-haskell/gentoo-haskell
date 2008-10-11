@@ -28,8 +28,7 @@ DEPEND=">=dev-lang/ghc-6.8
 		citeproc? ( dev-haskell/citeproc-hs )"
 
 RDEPEND="${DEPEND}
-		 pdf? ( virtual/latex-base
-				dev-tex/latex-unicode )
+		 pdf? ( virtual/latex-base )
 		 html? ( app-text/htmltidy )"
 
 pandoc_init() {
