@@ -37,6 +37,9 @@ src_unpack() {
 		   -e '/$(foreach LETTER,/,+1 d' \
 		   -e '\|\tdocs/reference/gtk2hs.haddock| s/\\//' \
 		   "${S}/Makefile.in"
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-librsvg-2.22.3.patch"
 }
 
 src_compile() {
