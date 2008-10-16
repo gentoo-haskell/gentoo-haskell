@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit haskell-cabal eutils
 
 DESCRIPTION="Generate high quality pseudorandom numbers purely using a Mersenne Twister"
 HOMEPAGE="http://code.haskell.org/~dons/code/mersenne-random-pure64/"
@@ -16,3 +16,14 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.0"
+
+src_unpack() {
+    unpack ${A}
+
+    if use x86; then
+        # int-e's patch to improve 32-bit performance.
+        # this might be applicable to other arches as well, not sure
+        epatch "${FILESDIR}/${P}-double-for-32bits.patch"
+    fi
+}
+
