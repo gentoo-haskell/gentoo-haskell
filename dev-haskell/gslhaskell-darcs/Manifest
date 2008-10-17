@@ -1,7 +1,0 @@
-EBUILD gslhaskell-darcs-0.ebuild 529 RMD160 85e328247086be74afb17109b9f186d4a1d7dd49 SHA1 54840b4f71eaea8d877edb9f9fec827a619658aa SHA256 7cad3ea50ad422d3d769e9a82c2022568522cf0d78fe309d4b625bb1f82b0cc4
-MD5 917db7b3a0e49a009ef2dca35460287b gslhaskell-darcs-0.ebuild 529
-RMD160 85e328247086be74afb17109b9f186d4a1d7dd49 gslhaskell-darcs-0.ebuild 529
-SHA256 7cad3ea50ad422d3d769e9a82c2022568522cf0d78fe309d4b625bb1f82b0cc4 gslhaskell-darcs-0.ebuild 529
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-gslhaskell-darcs-0 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-gslhaskell-darcs-0 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-gslhaskell-darcs-0 0
