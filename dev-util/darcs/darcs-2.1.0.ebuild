@@ -72,7 +72,7 @@ src_unpack() {
 
 src_compile() {
 	# use --enable-bytestring?
-	econf $(use_with doc docs) \
+	econf $(use_with doc manual) \
 		  --disable-haskeline \
 		  --disable-haskell-zlib \
 		|| die "configure failed"
