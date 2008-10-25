@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Web development framework."
 HOMEPAGE=""
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PN}/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
