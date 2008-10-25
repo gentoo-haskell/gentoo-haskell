@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="A simple static blog engine"
-HOMEPAGE="http://jinjing.blog.easymic.com/static/panda/readme"
+HOMEPAGE="http://www.haskell.org/haskellwiki/Panda"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cgi
 		dev-haskell/filepath
 		>=dev-haskell/gravatar-0.3
-		~dev-haskell/kibro-0.3
+		>=dev-haskell/kibro-0.4.1
 		dev-haskell/missingh
 		>=dev-haskell/mps-2008.10.15
 		dev-haskell/network
