@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.8
+DEPEND=">=dev-lang/ghc-6.4
 		sys-libs/readline
 		>=sys-apps/sandbox-1.2.12"
 RDEPEND="sys-libs/readline"
@@ -26,13 +26,6 @@ RDEPEND="sys-libs/readline"
 src_unpack() {
 	unpack ${A}
 
-	# Fix the way hmake discovers the ghc version
-	#sed -i -e '/echo __GLASGOW_HASKELL__/,+2 c \
-	#	touch ghcsym.hs; \
-	#	$1 -E -cpp -optP-dM ghcsym.hs -o ghcsym.out; \
-	#	grep __GLASGOW_HASKELL__ ghcsym.out | cut -d" " -f 3 > $2;' \
-	#	"${S}/script/confhc"
-	# Make it compile with LDFLAGS -Wl, -O1
 	filter-ldflags -Wl,-O1 -Wl,--as-needed
 }
 
