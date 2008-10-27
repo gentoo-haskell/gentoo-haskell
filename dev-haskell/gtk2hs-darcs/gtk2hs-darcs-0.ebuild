@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
 
-EDARCS_REPOSITORY="http://darcs.haskell.org/gtk2hs/"
+EDARCS_REPOSITORY="http://code.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
 EDARCS_LOCALREPO="gtk2hs"
 
