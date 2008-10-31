@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="lib happy"
+CABAL_FEATURES="lib profile happy"
 inherit base haskell-cabal eutils versionator
 
 DESCRIPTION="An extension to haskell-src that handles most common syntactic extensions to Haskell"
