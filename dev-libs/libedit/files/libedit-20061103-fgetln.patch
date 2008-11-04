@@ -1,0 +1,24 @@
+diff -ru orig/glibc-bsd-glue/fgetln.c my/glibc-bsd-glue/fgetln.c
+--- orig/glibc-bsd-glue/fgetln.c	2004-08-26 22:05:33.000000000 +0200
++++ my/glibc-bsd-glue/fgetln.c	2008-09-16 23:51:38.603922530 +0200
+@@ -1,13 +1,16 @@
+ #include "bsdcompat.h"
++#include <stdlib.h>
+ 
+ char *
+ fgetln (FILE *stream, size_t *len)
+ {
+ 	char *line=NULL;
++	ssize_t slen;
+ 
+-	getline (&line, len, stream);
++	*len = slen = getline (&line, len, stream);
++
++	if (slen < 0)
++		return NULL;
+ 
+-	(*len)--; /* get rid of the trailing \0, fgetln
+-	does not have it */
+ 	return line;
+ }
+Only in my/glibc-bsd-glue: fgetln.c~
