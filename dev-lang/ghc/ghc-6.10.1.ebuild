@@ -65,8 +65,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
 							app-text/docbook-xsl-stylesheets
-							>=dev-libs/libxslt-1.1.2
-							>=dev-haskell/haddock-0.8 ) )"
+							>=dev-libs/libxslt-1.1.2 ) )"
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
@@ -216,6 +215,7 @@ src_compile() {
 			echo HADDOCK_DOCS=YES >> mk/build.mk
 		else
 			echo XMLDocWays="" >> mk/build.mk
+			echo HADDOCK_DOCS=NO >> mk/build.mk
 		fi
 
 		# circumvent a very strange bug that seems related with ghc producing
