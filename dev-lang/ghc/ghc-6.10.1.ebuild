@@ -60,7 +60,7 @@ RDEPEND="
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	=sys-libs/readline-5*"
+	>=dev-libs/libedit-20061103-r3"
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
@@ -173,6 +173,11 @@ src_unpack() {
 				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
+
+		# Hack to prevent haddock being installed, remove when ./configure
+		# supports something better to not build docs or haddock.
+		sed -i -e 's/DO_NOT_INSTALL =/DO_NOT_INSTALL = haddock/' \
+			"${S}/utils/Makefile"
 	fi
 }
 
