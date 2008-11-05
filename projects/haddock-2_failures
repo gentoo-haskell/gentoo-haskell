@@ -1,12 +1,15 @@
 The following packages are known not to build with haddock-2*
 
-# == latest version works
 
-#dev-haskell/binary
-dev-haskell/gtk2hs -- apparently will be fixed in the next release
-#dev-haskell/bytestring
+dev-haskell/gtk2hs -- apparently will be fixed in the next major release
+x11-wm/xmonad-darcs -- parsing error on line 55 of XMonad/Layout.hs
+
+These now all work
+
+# dev-haskell/binary
+# dev-haskell/bytestring
 # dev-haskell/regex-base
-dev-haskell/regex-posix
-#dev-haskell/pcre-light
-dev-haskell/unix-compat
-dev-haskell/ghc-paths -- could be a cpp/cabal issue rather than haddock-2
+# dev-haskell/regex-posix
+# dev-haskell/pcre-light
+# dev-haskell/unix-compat
+# dev-haskell/ghc-paths
