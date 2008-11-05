@@ -1,6 +1,8 @@
-# Duncan Coutts <dcoutts@gentoo.org> (06 Feb 2008)
-# Haddock-2.0 is not ready for prime time yet, too many things break.
->=dev-haskell/haddock-2.0
+# Ivan Miljenovic <Ivan.Miljenovic@gmail.com> (06 Nov 2008)
+# Haddock-2.4 works with most packages, only mask 2.0 and 
+# 2.2 versions until we delete them.
+=dev-haskell/haddock-2.0.0.0
+~dev-haskell/haddock-2.2
 
 # Ivan Miljenovic <Ivan.Miljenovic@gmail.com> (05 Nov 2008)
 # Re-mask this, due to the eclasses requiring updating
