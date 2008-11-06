@@ -27,8 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.2
 		firefox? ( =www-client/mozilla-firefox-2* )
 		xulrunner? ( =net-libs/xulrunner-1.8* )"
 DEPEND="${RDEPEND}
-		doc? ( || ( =dev-haskell/haddock-0.8
-                    =dev-haskell/haddock-0.9 ) )"
+		doc? ( <dev-haskell/haddock-2 )"
 
 src_unpack() {
 	unpack ${A}
