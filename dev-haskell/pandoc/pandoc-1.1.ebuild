@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock"
-inherit haskell-cabal eutils
+inherit haskell-cabal
 
 DESCRIPTION="Conversion between markup formats"
 HOMEPAGE="http://johnmacfarlane.net/pandoc"
@@ -50,10 +50,6 @@ src_unpack() {
     # remove upper restriction on parsec
     sed -i -e 's/parsec >= 2.1 && < 3/parsec >= 2.1/' \
                 "${S}/pandoc.cabal"
-
-    # Patch Setup.hs to also build the html version of the README
-    epatch "${FILESDIR}/${PN}-1.0.0.1-buildReadme.patch"
-
 }
 
 src_compile() {
