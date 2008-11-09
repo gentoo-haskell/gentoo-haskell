@@ -17,4 +17,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2
-		dev-haskell/regex-base"
+		=dev-haskell/regex-base-0.7*"
