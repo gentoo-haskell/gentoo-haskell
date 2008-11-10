@@ -22,3 +22,11 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl"
 
 S="${WORKDIR}/${MY_P}"
+
+src_compile() {
+    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+
+    echo $CABAL_CONFIGURE_FLAGS
+
+    cabal_src_compile
+}
