@@ -4,3 +4,22 @@ The following is a list of packages that don't build with ghc-6.10.*
 gtk2hs (unknown)
 hxt (needs base-3, arrows)
 tar (Control.Exception... base-3?)
+hackport-darcs (needs updating to Cabal 1.6)
+happy (Cabal issue? says it can't find `buildVerbose' in Setup.lhs)
+xmobar{,-darcs} (changed syntax for GHC.Exception.Exception)
+mkcabal (Exception handling)
+darcs: no idea what the problem is, but this is the build output:
+    make -j3 all
+    rm -f Main.hi Main.o
+    [ghc] stringify
+    perl release/determine_release_state.pl 2.1.0
+    2.1.0 (release)
+    test -f src/Context.hs || echo unknown | ./stringify Context context > src/Context.hs
+    Rebuild dependencies ...
+    
+    on the commandline:
+        Warning: -optdep-f is deprecated: Use -dep-makefile instead
+    
+    <no location info>: 
+    Failing due to -Werror.
+
