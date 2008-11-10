@@ -17,4 +17,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/mtl
+        dev-haskell/readline
 		dev-haskell/pcre-light"
