@@ -24,9 +24,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-
-    echo $CABAL_CONFIGURE_FLAGS
-
-    cabal_src_compile
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	cabal_src_compile
 }
