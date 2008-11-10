@@ -26,9 +26,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
         virtual/lapack"
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS="--constraint=QuickCheck<2"
-
-    echo $CABAL_CONFIGURE_FLAGS
-
-    cabal_src_compile
+	CABAL_CONFIGURE_FLAGS="--constraint=QuickCheck<2"
+	cabal_src_compile
 }
