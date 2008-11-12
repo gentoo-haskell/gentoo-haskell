@@ -23,3 +23,8 @@ DEPEND="dev-lang/ghc
 		dev-haskell/tar
 		dev-haskell/zlib
 		dev-haskell/regex-compat"
+
+src_compile() {
+    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+    cabal_src_compile
+}
