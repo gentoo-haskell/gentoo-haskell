@@ -5,7 +5,6 @@ gtk2hs (unknown)
 hxt (needs base-3, arrows)
 tar (Control.Exception... base-3?)
 hackport-darcs (needs updating to Cabal 1.6)
-happy (Cabal issue? says it can't find `buildVerbose' in Setup.lhs)
 xmobar{,-darcs} (changed syntax for GHC.Exception.Exception)
 mkcabal (Exception handling)
 darcs: no idea what the problem is, but this is the build output:
@@ -23,3 +22,5 @@ darcs: no idea what the problem is, but this is the build output:
     <no location info>: 
     Failing due to -Werror.
 
+Fixed issues:
+happy # Overlay didn't contain latest version
