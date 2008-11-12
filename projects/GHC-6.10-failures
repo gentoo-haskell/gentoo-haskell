@@ -5,6 +5,7 @@ gtk2hs (unknown)
 hxt (needs base-3, arrows)
 tar (Control.Exception... base-3?)
 hackport-darcs (needs updating to Cabal 1.6)
+<xmonad-0.8 (Exception handling)
 xmobar{,-darcs} (changed syntax for GHC.Exception.Exception)
 mkcabal (Exception handling)
 darcs: no idea what the problem is, but this is the build output:
