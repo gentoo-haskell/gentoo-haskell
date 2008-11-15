@@ -23,6 +23,11 @@ RDEPEND="${DEPEND}"
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
+src_compile() {
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	cabal_src_compile
+}
+
 src_install() {
 	cabal_src_install
 
