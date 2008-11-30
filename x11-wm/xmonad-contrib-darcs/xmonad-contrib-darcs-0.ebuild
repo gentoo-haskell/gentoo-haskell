@@ -20,7 +20,7 @@ DEPEND=">=dev-haskell/mtl-1.0
 	x11-wm/xmonad-darcs
 	>=dev-lang/ghc-6.6
 	dev-haskell/x11-darcs
-	utf8? ( dev-haskell/utf8-string )
+	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )"
 RDEPEND="${DEPEND}"
