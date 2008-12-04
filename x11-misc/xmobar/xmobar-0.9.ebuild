@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="xft unicode"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
@@ -22,12 +22,26 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parsec
 		dev-haskell/filepath
 		dev-haskell/stm
-		dev-haskell/utf8-string
-		dev-haskell/x11-xft
-		virtual/xft"
+        utf8? ( dev-haskell/utf8-string )
+        xft?  ( dev-haskell/utf8-string
+                dev-haskell/x11-xft
+                virtual/xft )"
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4 --flags=with_xft --flags=with_utf8"
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+
+    if use xft; then
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_xft"
+    else
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_xft"
+    fi
+
+    if use unicode; then
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_utf8"
+    else
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_utf8"
+    fi
+
 	cabal_src_compile
 }
 
