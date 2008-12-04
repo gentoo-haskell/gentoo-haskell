@@ -27,7 +27,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		virtual/xft"
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS="--flags=with_xft --flags=with_utf8"
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4 --flags=with_xft --flags=with_utf8"
 	cabal_src_compile
 }
 
