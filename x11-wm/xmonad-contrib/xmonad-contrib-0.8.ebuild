@@ -27,12 +27,12 @@ DEPEND="dev-haskell/mtl
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 	if use xft; then
-		CABAL_CONFIGURE_FLAGS="--flags=use_xft"
+		CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=use_xft"
 	else
-		CABAL_CONFIGURE_FLAGS="--flags=-use_xft"
+		CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=-use_xft"
 	fi
 
 	if use unicode; then

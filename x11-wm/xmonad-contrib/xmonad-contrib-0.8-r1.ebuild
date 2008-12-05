@@ -24,6 +24,6 @@ DEPEND="dev-haskell/mtl
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS="--flags=-use_xft --flags=-with_utf8"
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4 --flags=-use_xft --flags=-with_utf8"
 	cabal_src_compile
 }
