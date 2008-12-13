@@ -58,6 +58,14 @@ src_unpack() {
 	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 }
 
+src_compile() {
+	# don't use the haskell zlib package
+	# with it, I keep getting this:
+	#	darcs failed:  Codec.Compression.Zlib: incorrect data check
+	CABAL_CONFIGURE_FLAGS="--flags=-external-zlib"
+	cabal_src_compile
+}
+
 src_install() {
 	cabal_src_install
 
