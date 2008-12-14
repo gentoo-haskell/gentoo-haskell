@@ -6,9 +6,7 @@ inherit base haskell-cabal eutils
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://darcs.net"
-MY_P0="${P/_rc/rc}"
-MY_P="${MY_P0/_pre/pre}"
-SRC_URI="http://darcs.net/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/darcs/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -35,8 +33,6 @@ DEPEND=">=net-misc/curl-7.10.2
 RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta
 	dev-libs/gmp"
-
-S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
