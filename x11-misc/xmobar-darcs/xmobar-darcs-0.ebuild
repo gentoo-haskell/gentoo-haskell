@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/filepath-1.0
 	dev-haskell/parsec
 	dev-haskell/stm
-	utf8? ( dev-haskell/utf8-string )
+	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )
 	!x11-misc/xmobar"
