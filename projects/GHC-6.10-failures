@@ -2,13 +2,13 @@ The following is a list of packages that don't build with ghc-6.10.*
 (note that this is _not_ packages that have unsatisfied dependencies)
 
 gtk2hs (unknown)
-hxt (needs base-3, arrows)
-hackport-darcs (needs updating to Cabal 1.6)
-<xmonad-0.8 (Exception handling)
-xmobar{,-darcs} (changed syntax for GHC.Exception.Exception)
 mkcabal (Exception handling)
 
 Fixed issues:
 happy # Overlay didn't contain latest version
 tar # now works
 darcs # latest rc works
+hxt # 8.2.0 works
+<xmonad-0.8 # Use base<4
+hackport-darcs # fixed
+xmobar{,-darcs} # fixed
