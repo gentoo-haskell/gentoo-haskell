@@ -53,7 +53,7 @@ src_unpack() {
 }
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS=""
+    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
     if use highlight; then
         CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=highlighting"
