@@ -22,4 +22,6 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/network
 		dev-haskell/parsec"
 
+CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+
 S="${WORKDIR}/${MY_P}"
