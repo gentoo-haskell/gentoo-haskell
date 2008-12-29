@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="lib profile haddock"
 
-inherit haskell-cabal
+inherit haskell-cabal eutils
 
 DESCRIPTION="Third party extentions for xmonad"
 HOMEPAGE="http://www.xmonad.org/"
@@ -22,6 +22,12 @@ DEPEND="dev-haskell/mtl
 	>=dev-haskell/x11-1.4.1
 	>=dev-haskell/cabal-1.2.1"
 RDEPEND="${DEPEND}"
+
+src_unpack() {
+	unpack $A
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-urgency-seconds.patch"
+}
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--constraint=base<4 --flags=-use_xft --flags=-with_utf8"
