@@ -17,7 +17,7 @@ IUSE=""
 DEPEND="dev-lang/ghc
 		dev-haskell/cabal
 		dev-haskell/filepath
-		dev-haskell/http
+		>=dev-haskell/http-4000
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/tar
