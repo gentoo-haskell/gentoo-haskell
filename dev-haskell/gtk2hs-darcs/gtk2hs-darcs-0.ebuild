@@ -39,6 +39,7 @@ src_compile() {
 	eautoreconf
 
 	econf \
+		--enable-gtk \
 		--enable-packager-mode \
 		$(version_is_at_least "4.2" "$(gcc-version)" && \
 			echo --disable-split-objs) \
