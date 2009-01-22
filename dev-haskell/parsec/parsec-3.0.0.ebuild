@@ -10,7 +10,7 @@ HOMEPAGE="http://www.cs.uu.nl/~daan/parsec.html"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="3"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 IUSE=""
 
