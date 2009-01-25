@@ -73,16 +73,26 @@ findManifests d@(Dir _ sub) = cwd ++ recurse
   cwd = [ (fn,d) | f@(File fn _ _) <- sub, "/Manifest" `isSuffixOf` fn ]
 
 verifyDir :: (Manifest, Repo) -> [String]
-verifyDir (manifest,(Dir dn repos)) = missingDigests
+verifyDir (manifest,(Dir dn repos)) =
+    concat [ missingDigests, invalidEbuildDigests ]
   where
     lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- repos, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
 
-    missingDigests =
+    missingDigests = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
-      | f@(File fn fs sha1) <- repos
+      | f@(File fn fs digest) <- repos
       , ".ebuild" `isSuffixOf` fn
       , isNothing (lookupMani fn)
+      ]
+
+    invalidEbuildDigests = -- look for incorrect filesize or manifest inconsistencies
+      [ "Invalid Manifest entry for file " ++ fn
+      | f@(File fn fs sha1) <- repos
+      , ".ebuild" `isSuffixOf` fn
+      , let m = lookupMani fn
+      , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return m
+      , fs /= size || digest /= show sha1
       ]
     -- XXX: add more checks
 
@@ -102,6 +112,13 @@ main = do
   manis <- forM dirs $ \(fp, repo) -> do
               mani <- readManifest fp
               return (mani, repo)
-  mapM_ putStrLn (concatMap verifyDir manis)
+  putStrLn "\nChecking digests..."
+  let digestErrors = concatMap verifyDir manis
+  case digestErrors of
+    [] -> putStrLn "No digest errors found"
+    _ -> do putStrLn "Naughty naughty!"
+            mapM_ putStrLn digestErrors
+            putStrLn $ show (length digestErrors) ++ " error(s) found."
+  putStrLn "lambdaman goes back to sleep...\n"
   -- XXX: get a list of files in the overlay with 'darcs show files' and
   -- check which are in manifests but not added to the overlay

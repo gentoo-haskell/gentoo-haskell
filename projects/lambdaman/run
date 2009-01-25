@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd projects/lambdaman
+cd projects/lambdaman
 ghc --make -o lambdaman -O Main.hs
-popd
+cd ../..
 projects/lambdaman/lambdaman
