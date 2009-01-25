@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pushd projects/lambdaman
+ghc --make -o lambdaman -O Main.hs
+popd
+projects/lambdaman/lambdaman
