@@ -140,5 +140,3 @@ main = do
             mapM_ putStrLn digestErrors
             putStrLn $ show (length digestErrors) ++ " error(s) found."
   putStrLn "lambdaman goes back to sleep...\n"
-  -- XXX: get a list of files in the overlay with 'darcs show files' and
-  -- check which are in manifests but not added to the overlay
