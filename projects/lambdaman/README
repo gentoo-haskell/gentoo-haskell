@@ -3,7 +3,7 @@ Lambdaman
 
 repoman equivalent but for the gentoo haskell overlay.
 
-Requires package sha for digests.
+Requires package SHA for digests.
 
 Add the following lines to your _darcs/prefs/defaults:
 

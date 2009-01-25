@@ -17,6 +17,7 @@ import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
 import System.FilePath ( (</>), takeFileName )
+import System.Process ( readProcess )
 
 type Manifest = [MDigest]
 data MDigest = MDigest {
@@ -48,6 +49,11 @@ parseManifestLine row = do
             _ -> fail "unknown type"
   return (MDigest kind fn (read fs) rmd sha1 sha256)
 
+readDarcs :: IO [FilePath]
+readDarcs = do
+  files <- readProcess "darcs" ["show", "files"] ""
+  return (lines files)
+
 fileSpy :: FilePath -> IO Repo
 fileSpy fn = do
   fs <- unsafeInterleaveIO $ withFile fn ReadMode hFileSize
@@ -72,12 +78,14 @@ findManifests d@(Dir _ sub) = cwd ++ recurse
   recurse = concat [ findManifests d' | d'@(Dir _ _) <- sub ]
   cwd = [ (fn,d) | f@(File fn _ _) <- sub, "/Manifest" `isSuffixOf` fn ]
 
-verifyDir :: (Manifest, Repo) -> [String]
-verifyDir (manifest,(Dir dn repos)) =
-    concat [ missingDigests, invalidEbuildDigests ]
+verifyManifests :: [FilePath] -> (Manifest, Repo) -> [String]
+verifyManifests awares (manifest,(Dir dn repos)) =
+    concat [ missingDigests, invalidEbuildDigests, unknownToDarcs ]
   where
     lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- repos, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
+    inDarcs    fn = not . null $ [ () | dfn <- awares, dfn == fn ]
+    -- XXX: do the same thing for files/* that for ebuilds
 
     missingDigests = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
@@ -94,7 +102,15 @@ verifyDir (manifest,(Dir dn repos)) =
       , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return m
       , fs /= size || digest /= show sha1
       ]
-    -- XXX: add more checks
+
+    unknownToDarcs = -- look for ebuilds in manifest unknown to darcs
+      [ "Ebuild in manifest but unknown to darcs: " ++ fullName
+      | m <- manifest
+      , let fn = mFileName m
+      , let fullName = dn </> fn
+      , ".ebuild" `isSuffixOf` fn
+      , not (inDarcs fullName)
+      ]
 
 ignore_darcs :: Repo -> Repo
 ignore_darcs (Dir fn sub) = Dir fn (catMaybes (map recursive sub))
@@ -106,8 +122,8 @@ ignore_darcs x = x
 
 main :: IO ()
 main = do
-  pwd <- getCurrentDirectory
-  repo <- dirSpy pwd
+  -- pwd <- getCurrentDirectory
+  repo <- dirSpy "."
   let dirs = findManifests (ignore_darcs repo)
   manis <- forM dirs $ \(fp, repo) -> do
               mani <- readManifest fp
@@ -115,9 +131,11 @@ main = do
   let manifestCount = length manis
       ebuildCount = length $ concatMap (\(_,(Dir _ subs)) -> [()|(File fn _ _)<-subs, ".ebuild" `isSuffixOf` fn]) manis 
   putStrLn $ "\nChecking " ++ show manifestCount ++ " manifests and " ++ show ebuildCount ++ " ebuild digests..."
-  let digestErrors = concatMap verifyDir manis
+  darcsAwares <- readDarcs
+  putStrLn $ "darcs knows about " ++ show (length darcsAwares) ++ " files"
+  let digestErrors = concatMap (verifyManifests darcsAwares) manis
   case digestErrors of
-    [] -> putStrLn "No digest errors found"
+    [] -> putStrLn "No manifest errors found"
     _ -> do putStrLn "Naughty naughty!"
             mapM_ putStrLn digestErrors
             putStrLn $ show (length digestErrors) ++ " error(s) found."
