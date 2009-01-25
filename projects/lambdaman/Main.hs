@@ -112,7 +112,9 @@ main = do
   manis <- forM dirs $ \(fp, repo) -> do
               mani <- readManifest fp
               return (mani, repo)
-  putStrLn "\nChecking digests..."
+  let manifestCount = length manis
+      ebuildCount = length $ concatMap (\(_,(Dir _ subs)) -> [()|(File fn _ _)<-subs, ".ebuild" `isSuffixOf` fn]) manis 
+  putStrLn $ "\nChecking " ++ show manifestCount ++ " manifests and " ++ show ebuildCount ++ " ebuild digests..."
   let digestErrors = concatMap verifyDir manis
   case digestErrors of
     [] -> putStrLn "No digest errors found"
