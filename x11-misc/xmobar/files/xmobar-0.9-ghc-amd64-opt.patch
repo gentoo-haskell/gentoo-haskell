@@ -1,0 +1,19 @@
+Tue Jan 27 02:47:23 CET 2009  wirtwolff@gmail.com
+  * Compile without optimization on x86_64 and ghc-6.10.1
+  Workaround for issue http://hackage.haskell.org/trac/ghc/ticket/2961
+  "Incorrect FFI code generated with -O" on x86_64, applies to xmobar also.
+diff -rN -u old-xmobar/xmobar.cabal new-xmobar/xmobar.cabal
+--- old-xmobar/xmobar.cabal	2009-01-27 21:02:03.000000000 +0100
++++ new-xmobar/xmobar.cabal	2009-01-27 21:02:03.000000000 +0100
+@@ -32,6 +32,10 @@
+     other-Modules:      Xmobar, Config, Parsers, Commands, XUtil, Runnable, Plugins
+     ghc-options:        -funbox-strict-fields -Wall
+     ghc-prof-options:   -prof -auto-all
++
++    if impl (ghc == 6.10.1) && arch (x86_64)
++            ghc-options:    -O0
++
+     if flag(small_base)
+        build-depends:   base >= 3, base < 4, containers, process, old-time, old-locale, bytestring, directory
+ 
+

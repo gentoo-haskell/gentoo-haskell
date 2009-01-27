@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit haskell-cabal eutils
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://code.haskell.org/~arossato/xmobar"
@@ -26,6 +26,13 @@ DEPEND=">=dev-lang/ghc-6.6.1
         xft?  ( dev-haskell/utf8-string
                 dev-haskell/x11-xft
                 virtual/xft )"
+
+src_unpack() {
+	unpack ${A}
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-ghc-amd64-opt.patch"
+}
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
