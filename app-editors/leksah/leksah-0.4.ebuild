@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit haskell-cabal flag-o-matic
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
@@ -25,6 +25,14 @@ DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/parsec-2.1.0.1
 		>=dev-haskell/regex-posix-0.72.0.3
 		>=dev-haskell/utf8-string-0.3.1.1"
+
+pkg_setup () {
+	ghc-package_pkg_setup
+	if ! ( built_with_use dev-haskell/gtk2hs gnome ); then
+		eerror "${P} requires dev-haskell/gtk2hs to have been built with USE flag gnome"
+		die "Please re-emerge gtk2hs with USE=\"gnome\""
+	fi
+}
 
 # >=gtksourceview2-2.4.0 is required to get the
 # sourceLanguageManagerGuessLanguage function
