@@ -20,3 +20,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/parsec-2.0
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/xhtml-3000.0.0"
+
+src_compile() {
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	cabal_src_compile
+}
