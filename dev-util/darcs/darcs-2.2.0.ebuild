@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib haddock"
-inherit haskell-cabal eutils
+inherit haskell-cabal eutils bash-completion
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://darcs.net"
@@ -61,10 +61,13 @@ src_compile() {
 	#	darcs failed:  Codec.Compression.Zlib: incorrect data check
 	CABAL_CONFIGURE_FLAGS="--flags=-external-zlib"
 	cabal_src_compile
+
+	dobashcompletion "${S}/tools/darcs_completion" "${PN}"
 }
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
+	bash-completion_pkg_postinst
 
 	ewarn "NOTE: in order for the darcs send command to work properly,"
 	ewarn "you must properly configure your mail transport agent to relay"
