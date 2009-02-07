@@ -18,6 +18,7 @@
 #
 # Currently supported features:
 #   haddock    --  for documentation generation
+#   hscolour   --  generation of colourised sources
 #   alex       --  lexer/scanner generator
 #   happy      --  parser generator
 #   c2hs       --  C interface generator
@@ -46,6 +47,7 @@ inherit ghc-package multilib
 for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
 		haddock)   CABAL_USE_HADDOCK=yes;;
+		hscolour)  CABAL_USE_HSCOLOUR=yes;;
 		alex)      CABAL_USE_ALEX=yes;;
 		happy)     CABAL_USE_HAPPY=yes;;
 		c2hs)      CABAL_USE_C2HS=yes;;
@@ -61,6 +63,11 @@ done
 if [[ -n "${CABAL_USE_HADDOCK}" ]]; then
 	IUSE="${IUSE} doc"
 	DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
+fi
+
+if [[ -n "${CABAL_USE_HSCOLOUR}" ]]; then
+	IUSE="${IUSE} hscolour"
+	DEPEND="${DEPEND} hscolour? ( dev-haskell/hscolour )"
 fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
@@ -159,8 +166,16 @@ cabal-mksetup() {
 		> $setupdir/Setup.hs
 }
 
+cabal-hscolour() {
+	./setup hscolour || die "setup hscolour failed"
+}
+
 cabal-haddock() {
-	./setup haddock || die "setup haddock failed"
+	if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+		./setup haddock --hyperlink-source || die "setup haddock failed"
+	else
+		./setup haddock || die "setup haddock failed"
+	fi
 }
 
 cabal-configure() {
@@ -296,6 +311,10 @@ cabal_src_compile() {
 		cabal-bootstrap
 		cabal-configure
 		cabal-build
+
+		if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+			cabal-hscolour
+		fi
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
 			cabal-haddock
