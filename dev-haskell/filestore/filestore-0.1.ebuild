@@ -27,5 +27,9 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/utf8-string
 		dev-haskell/xml"
 
-RDEPEND="${DEPEND}
-		|| ( dev-util/darcs dev-util/git )"
+pkg_postinst() {
+    ghc-package_pkg_postinst
+
+    elog "${PN} requires either dev-util/darcs or dev-util/git to work."
+    elog "Please install one of these DVCS packages to fully utilise ${PN}."
+}
