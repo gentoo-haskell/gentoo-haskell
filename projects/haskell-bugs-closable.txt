@@ -1,6 +1,3 @@
-Gtk2hs:
-	240704 dev-haskell/gtk2hs-0.9.12.1 - svgcairo/Graphics/Rendering/Cairo/SVG.chs:196:2: Couldn't match expected type `()' against inferred type `CInt' (patch attached)
-
 GHC LC_ALL && LANG related compilation fails:
 	202212
 	212305 last comment
