@@ -37,10 +37,8 @@ src_unpack() {
 		"${S}/tools/hierarchyGen/Hierarchy.chs.template"
 	
 	# Fix for recent return type changes in librsvg-2.22.3:
-	if has_version '>=gnome-base/librsvg-2.22.3'; then
-		cd "${S}"
-		epatch "${FILESDIR}/${PN}-librsvg-2.22.3.patch"
-	fi
+	cd "${S}"
+	epatch "${FILESDIR}/${PN}-librsvg-2.22.3.patch"
 
 	#Fix to work with new haddock-2.0.0.0:
 	if has_version '>=dev-haskell/haddock-2.0.0.0'; then
