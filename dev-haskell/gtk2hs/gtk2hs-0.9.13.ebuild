@@ -41,11 +41,12 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-librsvg-2.22.3.patch"
 
+	# patch file missing, where is it?
 	#Fix to work with new haddock-2.0.0.0:
-	if has_version '>=dev-haskell/haddock-2.0.0.0'; then
-		cd "${S}"
-		epatch "${FILESDIR}/${PN}-haddock-2.0.0.0.patch"
-	fi
+	#if has_version '>=dev-haskell/haddock-2.0.0.0'; then
+	#	cd "${S}"
+	#	epatch "${FILESDIR}/${PN}-haddock-2.0.0.0.patch"
+	#fi
 }
 
 src_compile() {
