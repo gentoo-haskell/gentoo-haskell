@@ -23,9 +23,10 @@ RDEPEND=">=dev-lang/ghc-6.4
 				>=gnome-base/gconf-2 )
 		svg?   ( >=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
-		seamonkey? ( =www-client/seamonkey-1* )
-		firefox? ( =www-client/mozilla-firefox-2* )
-		xulrunner? ( =net-libs/xulrunner-1.8* )"
+		xulrunner? ( =net-libs/xulrunner-1.8* )
+		!xulrunner? ( firefox? ( =www-client/mozilla-firefox-2* ) )
+		!xulrunner? ( !firefox? ( seamonkey? ( =www-client/seamonkey-1* ) ) )"
+
 DEPEND="${RDEPEND}
 		doc? ( <dev-haskell/haddock-2 )
 		dev-util/pkgconfig"
