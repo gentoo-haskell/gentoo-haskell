@@ -16,10 +16,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-#doc still doesn't works...
-#TODO: 	fix haddock.
-#		check if it to work with haddock-2
-IUSE="-doc glade gnome opengl svg firefox seamonkey profile xulrunner"
+IUSE="doc glade gnome opengl svg firefox seamonkey xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
@@ -35,7 +32,7 @@ RDEPEND=">=dev-lang/ghc-6.10
 		!xulrunner? ( !firefox? ( seamonkey? ( =www-client/seamonkey-1* ) ) )"
 
 DEPEND="${RDEPEND}
-		doc? ( <dev-haskell/haddock-2 )
+		doc? ( dev-haskell/haddock )
 		dev-util/pkgconfig"
 
 MY_P="${P/%_rc*}"
