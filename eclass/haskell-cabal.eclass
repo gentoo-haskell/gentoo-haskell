@@ -171,11 +171,12 @@ cabal-hscolour() {
 }
 
 cabal-haddock() {
-	if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-		./setup haddock --hyperlink-source || die "setup haddock failed"
-	else
-		./setup haddock || die "setup haddock failed"
-	fi
+	./setup haddock || die "setup haddock failed"
+}
+
+cabal-hscolour-haddock() {
+	# --hyperlink-source implies calling 'setup hscolour'
+	./setup haddock --hyperlink-source || die "setup haddock failed"
 }
 
 cabal-configure() {
@@ -312,15 +313,23 @@ cabal_src_compile() {
 		cabal-configure
 		cabal-build
 
-		if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-			cabal-hscolour
-		fi
-
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-			cabal-haddock
+			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+				# hscolour and haddock
+				cabal-hscolour-haddock
+			else
+				# just haddock
+				cabal-haddock
+			fi
+		else
+			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+				# just hscolour
+				cabal-hscolour
+			fi
 		fi
 	fi
 }
+
 haskell-cabal_src_compile() {
 	cabal_src_compile
 }
