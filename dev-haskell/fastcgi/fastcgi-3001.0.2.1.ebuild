@@ -18,3 +18,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/bytestring-0.9.0.1
 		>=dev-haskell/cabal-1.2.0
 		>=dev-haskell/cgi-3000.0.0"
+
+src_compile() {
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	cabal_src_compile
+}
