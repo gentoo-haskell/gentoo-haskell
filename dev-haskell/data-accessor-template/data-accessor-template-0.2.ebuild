@@ -16,5 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
-		~dev-haskell/data-accessor-0.2"
+		=dev-haskell/data-accessor-0.2*"
 
