@@ -16,5 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
-		=dev-haskell/transformers-0.0.1*"
+		>=dev-haskell/transformers-0.0.1"
 
