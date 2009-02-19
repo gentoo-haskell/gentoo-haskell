@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -17,7 +17,7 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4
 		=dev-haskell/cabal-1.6*
 		>=dev-haskell/filepath-1.0
-		>=dev-haskell/http-3000
+		>=dev-haskell/http-4000.0.2
 		dev-haskell/network
 		>=dev-haskell/zlib-0.4"
 
