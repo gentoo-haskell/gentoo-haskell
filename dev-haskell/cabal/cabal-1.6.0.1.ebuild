@@ -29,6 +29,7 @@ DEPEND=">=dev-lang/ghc-6.4"
 
 S="${WORKDIR}/${MY_P}"
 
+CABAL_CORE_LIB_GHC_PV="6.10.1"
 
 src_unpack() {
 	unpack ${A}
