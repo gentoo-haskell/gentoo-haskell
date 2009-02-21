@@ -24,36 +24,37 @@ DEPEND=">=dev-lang/ghc-6.8.2
                 >=dev-libs/libxslt-1.1.2 )"
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 
-    # -fasm does not work on all arches and is enabled by cabal when appropriate
-    # -O2 is not needed and just prolongs compile time
-    sed -e "s/-fasm//" \
-        -e "s/-O2//" \
-        -i "${S}/${PN}.cabal"
+	# -O2 is not needed and just prolongs compile time
+	# missing module in other-modules declaration
+	sed -e "s/-O2//" \
+		-e 's/other-modules:/other-modules:\n    Haddock.DocName/' \
+		-e 's/other-modules:/other-modules:\n    Haddock.GHC.Utils/' \
+	    -i "${S}/${PN}.cabal"
 
-    if use doc; then
-        cd "${S}/doc"
-        eautoreconf
-    fi
+	if use doc; then
+	  cd "${S}/doc"
+	  eautoreconf
+	fi
+
 }
 
 src_compile () {
-    cabal_src_compile
-    if use doc; then
-        cd "${S}/doc"
-        #eautoreconf
-        ./configure --prefix="${D}/usr/" \
-            || die 'error configuring documentation.'
-        emake html || die 'error building documentation.'
-    fi
+	cabal_src_compile
+	if use doc; then
+		cd "${S}/doc"
+		./configure --prefix="${D}/usr/" \
+			|| die 'error configuring documentation.'
+		emake html || die 'error building documentation.'
+	fi
 }
 
 src_install () {
-    cabal_src_install
-    if use doc; then
-        dohtml -r "${S}/doc/haddock/"*
-    fi
-    dodoc CHANGES README
+	cabal_src_install
+	if use doc; then
+		dohtml -r "${S}/doc/haddock/"*
+	fi
+	dodoc CHANGES README
 }
 
