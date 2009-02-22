@@ -19,7 +19,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
-		dev-haskell/quickcheck
+		dev-haskell/quickcheck:0
 		dev-haskell/mtl"
 
 S="${WORKDIR}/${MY_P}"
