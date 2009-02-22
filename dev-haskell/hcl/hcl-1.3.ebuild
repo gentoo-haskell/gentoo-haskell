@@ -23,3 +23,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl"
 
 S="${WORKDIR}/${MY_P}"
+
+src_compile() {
+        CABAL_CONFIGURE_FLAGS='--constraint=QuickCheck<2'
+        cabal_src_compile
+}
