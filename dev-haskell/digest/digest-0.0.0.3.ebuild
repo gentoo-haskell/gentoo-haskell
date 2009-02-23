@@ -16,4 +16,11 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.1
-        sys-libs/zlib"
+		sys-libs/zlib"
+
+src_unpack() {
+	unpack $A
+
+	# zutil.h isn't visible.  Probably better ways of doing this...
+	sed -i -e 's/includes:        zlib.h zutil.h zconf.h/includes:        zlib.h/' "${S}/${PN}.cabal"
+}
