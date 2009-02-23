@@ -58,7 +58,7 @@ RDEPEND="
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	=sys-libs/readline-5*"
+	>=sys-libs/readline-5"
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
