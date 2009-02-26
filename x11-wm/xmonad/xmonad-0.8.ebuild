@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~sparc ~x86"
 DEPEND="dev-haskell/mtl
 	>=dev-haskell/x11-1.4.1
 	>=dev-lang/ghc-6.6
-	>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.6"
 RDEPEND="${DEPEND}"
 
 SAMPLE_CONFIG="xmonad.hs"
