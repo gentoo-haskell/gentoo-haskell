@@ -46,7 +46,8 @@ READLINE_P="readline-${READLINE_PV}"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
 	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
-	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
+	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2
+			  http://haskell.org/~kolmodin/ghc-bundled-${READLINE_P}-amd64.tbz2 )
 	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
 	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
 	ppc?    ( http://haskell.org/~kolmodin/ghc-bin-${PV}-ppc.tbz2 )
@@ -56,7 +57,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 #KEYWORDS="alpha amd64 hppa ia64 ~ppc ~ppc64 sparc x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
@@ -179,7 +180,19 @@ src_unpack() {
 }
 
 src_compile() {
-	export LD_LIBRARY_PATH="${WORKDIR}/lib:${LD_LIBRARY_PATH}"
+	# find where the .so for readline-5 lives
+	# could either be /lib or /lib64
+	if [[ -e "${WORKDIR}/lib/libreadline.so" ]]; then
+		READLINE_PATH="/lib"
+	elif [[ -e "${WORKDIR}/lib64/libreadline.so" ]]; then
+		READLINE_PATH="/lib64"
+	else
+		eerror "Could not locate bundled libreadline.so"
+	fi
+
+	# make sure ghc will find readline
+	export LD_LIBRARY_PATH="${WORKDIR}/READLINE_PATH:${LD_LIBRARY_PATH}"
+
 	if ! use binary; then
 
 		# initialize build.mk
