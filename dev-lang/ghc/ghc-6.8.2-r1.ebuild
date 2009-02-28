@@ -182,16 +182,19 @@ src_unpack() {
 src_compile() {
 	# find where the .so for readline-5 lives
 	# could either be /lib or /lib64
-	if [[ -e "${WORKDIR}/lib/libreadline.so" ]]; then
-		READLINE_PATH="/lib"
-	elif [[ -e "${WORKDIR}/lib64/libreadline.so" ]]; then
-		READLINE_PATH="/lib64"
-	else
-		eerror "Could not locate bundled libreadline.so"
-	fi
+	for lib_path in lib{,64} ; do
+		if [[ -e "${WORKDIR}/${lib_path}/libreadline.so" ]]; then
+			# make sure ghc will find readline
+			export LD_LIBRARY_PATH="${WORKDIR}/${lib_path}:${LD_LIBRARY_PATH}"
+			export FOUND_READLINE=yes
+		fi
+	done
 
-	# make sure ghc will find readline
-	export LD_LIBRARY_PATH="${WORKDIR}/READLINE_PATH:${LD_LIBRARY_PATH}"
+	if [[ -z "${FOUND_READLINE}" ]]; then
+		die "Could not locate bundled libreadline.so"
+	else
+		einfo "Found readline: ${LD_LIBRARY_PATH}"
+	fi
 
 	if ! use binary; then
 
