@@ -94,7 +94,6 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
     lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- packageDir, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
     inDarcs    fn = not . null $ [ () | dfn <- awares, dfn == fn ]
-    -- XXX: do the same thing for files/* that for ebuilds
 
     missingDigests (Dir _ subs) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
@@ -118,8 +117,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
             AUX -> filesDir
             DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
             EBUILD -> return topRepo
-      , let fn = mFileName m
-      , let fullName = dn </> fn
+      , let fullName = dn </> mFileName m
       , not (inDarcs fullName)
       ]
 
