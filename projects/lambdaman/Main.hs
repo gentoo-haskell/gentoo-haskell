@@ -1,3 +1,4 @@
+{-# LANGUAGE ViewPatterns #-}
 {-
   Lambdaman, repomanish verification for gentoo-haskell
 
@@ -16,8 +17,10 @@ import qualified Data.ByteString.Char8 as C
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
-import System.FilePath ( (</>), takeFileName )
+import System.FilePath ( (</>), takeFileName, takeBaseName )
 import System.Process ( readProcess )
+
+import Debug.Trace
 
 type Manifest = [MDigest]
 data MDigest = MDigest {
@@ -76,39 +79,47 @@ findManifests :: Repo -> [(FilePath, Repo)]
 findManifests d@(Dir _ sub) = cwd ++ recurse
   where
   recurse = concat [ findManifests d' | d'@(Dir _ _) <- sub ]
-  cwd = [ (fn,d) | f@(File fn _ _) <- sub, "/Manifest" `isSuffixOf` fn ]
+  cwd = [ (fn,d) | f@(File fn _ _) <- sub, takeFileName fn == "Manifest" ]
 
 verifyManifests :: [FilePath] -> (Manifest, Repo) -> [String]
-verifyManifests awares (manifest,(Dir dn repos)) =
-    concat [ missingDigests, invalidEbuildDigests, unknownToDarcs ]
+verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
+    concat [ missingDigests topRepo
+           , maybe [] missingDigests filesDir
+           , invalidEbuildDigests topRepo
+           , maybe [] invalidEbuildDigests filesDir
+           , unknownToDarcs
+           ]
   where
-    lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- repos, takeFileName fn' == fn ]
+    filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") sub) <- packageDir ]
+    lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- packageDir, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
     inDarcs    fn = not . null $ [ () | dfn <- awares, dfn == fn ]
     -- XXX: do the same thing for files/* that for ebuilds
 
-    missingDigests = -- look for missing manifest entries
+    missingDigests (Dir _ subs) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
-      | f@(File fn fs digest) <- repos
-      , ".ebuild" `isSuffixOf` fn
+      | f@(File fn fs digest) <- subs
+      , takeBaseName fn /= "Manifest" -- manifests are never included in the manifest
       , isNothing (lookupMani fn)
       ]
 
-    invalidEbuildDigests = -- look for incorrect filesize or manifest inconsistencies
+    invalidEbuildDigests (Dir _ subs) = -- look for incorrect filesize or manifest inconsistencies
       [ "Invalid Manifest entry for file " ++ fn
-      | f@(File fn fs sha1) <- repos
-      , ".ebuild" `isSuffixOf` fn
-      , let m = lookupMani fn
-      , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return m
+      | f@(File fn fs sha1) <- subs
+      , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return (lookupMani fn)
       , fs /= size || digest /= show sha1
       ]
 
     unknownToDarcs = -- look for ebuilds in manifest unknown to darcs
       [ "Ebuild in manifest but unknown to darcs: " ++ fullName
       | m <- manifest
+      , Just (Dir dn _) <- return $ -- find the right subdir for the kind of file were examining
+          case mManifestKind m of
+            AUX -> filesDir
+            DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
+            EBUILD -> return topRepo
       , let fn = mFileName m
       , let fullName = dn </> fn
-      , ".ebuild" `isSuffixOf` fn
       , not (inDarcs fullName)
       ]
 
@@ -130,9 +141,9 @@ main = do
               return (mani, repo)
   let manifestCount = length manis
       ebuildCount = length $ concatMap (\(_,(Dir _ subs)) -> [()|(File fn _ _)<-subs, ".ebuild" `isSuffixOf` fn]) manis 
-  putStrLn $ "\nChecking " ++ show manifestCount ++ " manifests and " ++ show ebuildCount ++ " ebuild digests..."
+  -- putStrLn $ "\nChecking " ++ show manifestCount ++ " manifests and " ++ show ebuildCount ++ " ebuild digests..."
   darcsAwares <- readDarcs
-  putStrLn $ "darcs knows about " ++ show (length darcsAwares) ++ " files"
+  -- putStrLn $ "darcs knows about " ++ show (length darcsAwares) ++ " files"
   let digestErrors = concatMap (verifyManifests darcsAwares) manis
   case digestErrors of
     [] -> putStrLn "No manifest errors found"
