@@ -27,7 +27,7 @@ RDEPEND="virtual/libc"
 S="${WORKDIR}/${MY_PN}"
 
 src_compile() {
-	emake GHC="$(ghc-getghc) -O -fasm" || die "emake failed"
+	emake GHC="$(ghc-getghc) -O" || die "emake failed"
 	if use doc ; then
 		cd doc
 		pdflatex LBNF-report.tex
