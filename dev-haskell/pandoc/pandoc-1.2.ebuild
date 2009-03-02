@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="citeproc highlight html pdf"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/bytestring-0.9
