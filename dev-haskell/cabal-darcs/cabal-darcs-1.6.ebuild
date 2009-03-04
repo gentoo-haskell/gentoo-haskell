@@ -10,7 +10,7 @@ MY_PV="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://haskell.org/cabal"
-EDARCS_REPOSITORY="http://darcs.haskell.org/cabal"
+EDARCS_REPOSITORY="http://darcs.haskell.org/cabal-branches/cabal-${MY_PV}"
 
 LICENSE="BSD"
 SLOT="${MY_PV}"
