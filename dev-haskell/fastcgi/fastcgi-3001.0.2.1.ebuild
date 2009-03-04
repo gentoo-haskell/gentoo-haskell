@@ -17,6 +17,7 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/bytestring-0.9.0.1
 		>=dev-haskell/cabal-1.2.0
+		dev-libs/fcgi
 		>=dev-haskell/cgi-3000.0.0"
 
 src_compile() {
