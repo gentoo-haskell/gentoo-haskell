@@ -23,7 +23,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2.3
 		dev-haskell/convertible
-		>=dev-haskell/hdbc-2.1.0
 		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/quickcheck
