@@ -20,7 +20,7 @@ DEPEND="dev-lang/ghc
 		>=dev-haskell/http-4000
 		dev-haskell/mtl
 		dev-haskell/network
-		dev-haskell/tar
+		>=dev-haskell/tar-0.3.0.0
 		dev-haskell/zlib
 		dev-haskell/regex-compat"
 
