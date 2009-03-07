@@ -1,0 +1,15 @@
+--- Makefile.in	2009-03-06 20:12:49.000000000 -0430
++++ Makefile.in.new	2009-03-06 20:11:15.000000000 -0430
+@@ -317,9 +317,9 @@ install-dir: scripts cycc cymk newer man
+ 	$(INSTALL_PROGRAM) /tmp/cyi $(DESTDIR)$(bindir)/cyi-$(VERSION)
+ 	cd $(DESTDIR)$(bindir) && rm -f cyi && $(LN_S) cyi-$(VERSION) cyi
+ 	@rm -f /tmp/cyi
+-	$(INSTALL_PROGRAM) -s cycc $(DESTDIR)$(libdir)/curry-$(VERSION)
+-	$(INSTALL_PROGRAM) -s cymk $(DESTDIR)$(libdir)/curry-$(VERSION)
+-	$(INSTALL_PROGRAM) -s newer $(DESTDIR)$(libdir)/curry-$(VERSION)
++	$(INSTALL_PROGRAM) cycc $(DESTDIR)$(libdir)/curry-$(VERSION)
++	$(INSTALL_PROGRAM) cymk $(DESTDIR)$(libdir)/curry-$(VERSION)
++	$(INSTALL_PROGRAM) newer $(DESTDIR)$(libdir)/curry-$(VERSION)
+ 	$(INSTALL_DATA) cyc.1 $(DESTDIR)$(mandir)/man1/cyc-$(VERSION).1
+ 	echo '.so man1/cyc-$(VERSION).1' > $(DESTDIR)$(mandir)/man1/cyc.1
+ 	$(INSTALL_DATA) cymake.1 $(DESTDIR)$(mandir)/man1/cymake-$(VERSION).1
