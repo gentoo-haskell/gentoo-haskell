@@ -19,7 +19,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 		>=dev-haskell/cabal-1.2
-		>=dev-haskell/polyparse-1.1"
+		~dev-haskell/polyparse-1.1"
 
 S="${WORKDIR}/${MY_P}"
 

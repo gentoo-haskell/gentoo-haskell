@@ -20,6 +20,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2
-		dev-haskell/polyparse"
+		~dev-haskell/polyparse-1.1"
 
 S="${WORKDIR}/${MY_P}"
