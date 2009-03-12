@@ -9,7 +9,7 @@ inherit base eutils ghc-package multilib toolchain-funcs versionator
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
 
-SRC_URI="mirror://sourceforge/gtk2hs/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -39,16 +39,6 @@ MY_P="${P/%_rc*}"
 
 S="${WORKDIR}/${MY_P}"
 
-#src_unpack() {
-#	unpack ${A}
-
-	# is this still needed?
-	#sed -i -e '\|docs/reference/haddock.js|d' \
-	#	   -e '/$(foreach LETTER,/,+1 d' \
-	#	   -e '\|\tdocs/reference/gtk2hs.haddock| s/\\//' \
-	#	   "${S}/Makefile.in"
-#}
-
 src_compile() {
 	econf \
 		--enable-gtk \
@@ -68,8 +58,6 @@ src_compile() {
 		$(use_enable profile profiling) \
 		|| die "Configure failed"
 
-	# parallel build doesn't work, so specify -j1
-	#emake -j1 || die "Make failed"
 	emake || die "Make failed"
 }
 
@@ -80,16 +68,6 @@ src_install() {
 		htmldir="/usr/share/doc/${PF}/html" \
 		haddockifacedir="/usr/share/doc/${PF}" \
 		|| die "Make install failed"
-
-	# for some reason it creates the doc dir even if it is configured
-	# to not generate docs, so lets remove the empty dirs in that case
-	# (and lets be cautious and only remove them if they're empty)
-	#if ! use doc; then
-	#	rmdir "${D}/usr/share/doc/${PF}/html"
-	#	rmdir "${D}/usr/share/doc/${PF}"
-	#	rmdir "${D}/usr/share/doc"
-	#	rmdir "${D}/usr/share"
-	#fi
 
 	# arrange for the packages to be registered
 	ghc-setup-pkg \
