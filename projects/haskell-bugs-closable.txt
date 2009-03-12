@@ -14,6 +14,7 @@ ghc + ppc64 || ia64: 212307 -> Solution maybe on the last comment
 Removal Candidates:
 
 	131227 dev-haskell/hs-plugins-1.0_rc0 version bump (only works with ghc-6.4.2)
+	179992 can be closed with the removal of hs-plugins
 
 Dependencies:
 
@@ -23,9 +24,6 @@ Dependencies:
 	227519 dev-haskell/wash-2.12 fails to build (fix attached)
 	241926 dev-haskell/hslogger-1.0.6.0 version bump
 
-
 Others:
 	213932 dev-haskell/regex-base-0.72 doesn't pull in cabal first  (NEEDINFO Not Reproducible)
 	226549 dev-haskell/haddock: autoconf/autoreconf/automake/libtool called directly (stable uses eautoconf)
-
-

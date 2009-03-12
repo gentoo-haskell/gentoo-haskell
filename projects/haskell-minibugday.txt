@@ -1,0 +1,3 @@
+-. fix ghc-6.8.2 readline issue
+-. test properly extralibs with ghc-6.8.2
+-. properly sync keywords tree <-> overlay
