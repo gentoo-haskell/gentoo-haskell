@@ -1,10 +1,10 @@
 The following is a list of packages that don't build with ghc-6.10.* 
 (note that this is _not_ packages that have unsatisfied dependencies)
 
-gtk2hs (unknown)
 mkcabal (Exception handling)
 
 Fixed issues:
+gtk2hs # works on 0.10.0 (without profiling support)
 happy # Overlay didn't contain latest version
 tar # now works
 darcs # latest rc works
