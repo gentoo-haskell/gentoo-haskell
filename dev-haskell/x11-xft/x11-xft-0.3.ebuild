@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -9,7 +9,7 @@ MY_PN="X11-xft"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Bindings to the Xft, X Free Type interface library, and some Xrender parts"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/X11-xft"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
