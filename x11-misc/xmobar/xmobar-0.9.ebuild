@@ -24,8 +24,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/stm
         unicode? ( dev-haskell/utf8-string )
         xft?  ( dev-haskell/utf8-string
-                dev-haskell/x11-xft
-                virtual/xft )"
+                dev-haskell/x11-xft )"
 
 src_unpack() {
 	unpack ${A}
