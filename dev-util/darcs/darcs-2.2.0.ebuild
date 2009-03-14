@@ -61,9 +61,13 @@ src_compile() {
 	#	darcs failed:  Codec.Compression.Zlib: incorrect data check
 	CABAL_CONFIGURE_FLAGS="--flags=-external-zlib"
 	cabal_src_compile
+}
 
+src_install() {
+	cabal_src_install
 	dobashcompletion "${S}/tools/darcs_completion" "${PN}"
 }
+
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
