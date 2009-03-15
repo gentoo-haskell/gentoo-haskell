@@ -170,6 +170,9 @@ src_unpack() {
 		# use sys-libs/readline instead of dev-libs/editline
 		epatch "${FILESDIR}/${P}-readline.patch"
 
+		# fix bug in native code generation for amd64, see comment in patch
+		epatch "${FILESDIR}/${P}-amd64-native-bug.patch"
+
 		# Modify the ghc driver script to use GHC_CFLAGS
 		sed -i -e "s|\$\$TOPDIROPT|\$\$TOPDIROPT ${GHC_CFLAGS}|" \
 			"${S}/driver/ghc/Makefile"
