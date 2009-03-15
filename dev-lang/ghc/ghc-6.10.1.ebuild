@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-inherit base bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator
+inherit base autotools bash-completion eutils flag-o-matic toolchain-funcs ghc-package versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -38,7 +38,12 @@ IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
 EXTRA_SRC_URI="${PV}"
 [[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
+READLINE_PV="1.0.1.0"
+READLINE_P="readline-${READLINE_PV}"
+
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2
+					http://hackage.haskell.org/packages/archive/readline/${READLINE_PV}/${READLINE_P}.tar.gz
+				  )
 	x86?	( http://community.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )
 	amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 
@@ -60,7 +65,7 @@ RDEPEND="
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	>=dev-libs/libedit-20061103-r3"
+	>=sys-libs/readline-5"
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
@@ -158,6 +163,13 @@ src_unpack() {
 		mv "${WORKDIR}/usr" "${S}"
 	else
 
+		# move readline into the ghc libraries dir
+		mv "${WORKDIR}/readline-${READLINE_PV}" \
+		   "${S}/libraries/readline"
+
+		# use sys-libs/readline instead of dev-libs/editline
+		epatch "${FILESDIR}/${P}-readline.patch"
+
 		# Modify the ghc driver script to use GHC_CFLAGS
 		sed -i -e "s|\$\$TOPDIROPT|\$\$TOPDIROPT ${GHC_CFLAGS}|" \
 			"${S}/driver/ghc/Makefile"
@@ -177,6 +189,9 @@ src_unpack() {
 		# supports something better to not build docs or haddock.
 		sed -i -e 's/DO_NOT_INSTALL =/DO_NOT_INSTALL = haddock/' \
 			"${S}/utils/Makefile"
+
+		# as we have changed the build system with the readline patch
+		eautoreconf
 	fi
 }
 
