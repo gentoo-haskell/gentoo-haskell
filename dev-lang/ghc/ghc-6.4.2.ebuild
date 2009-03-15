@@ -351,11 +351,6 @@ src_install() {
 }
 
 pkg_postinst () {
-	#Paludis doesn't source the eclass in each phase, so the PATH
-	#needs to be reset
-	if ! use binary && ! use ghcbootstrap; then
-		export PATH="/usr/bin:$PATH"
-	fi
 
 	ebegin "Unregistering ghc's built-in cabal "
 	$(ghc-getghcpkg) unregister Cabal > /dev/null
