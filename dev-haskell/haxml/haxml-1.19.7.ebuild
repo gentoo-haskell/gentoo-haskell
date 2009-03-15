@@ -21,6 +21,13 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2
 		dev-haskell/filepath
-		~dev-haskell/polyparse-1.2"
+		>=dev-haskell/polyparse-1.2"
 
 S="${WORKDIR}/${MY_P}"
+
+src_unpack() {
+	unpack ${A}
+
+	sed -e 's/polyparse==1.2/polyparse>=1.2/' \
+	  -i "${S}/${MY_PN}.cabal"
+}
