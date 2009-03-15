@@ -1,3 +1,7 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (15 Mar 2009)
+# Mask ghc 6.10.2 rc1 (and later) for testing
+>=dev-lang/ghc-6.10.1.20090314
+
 # Ivan Miljenovic <Ivan.Miljenovic@gmail.com> (06 Nov 2008)
 # Haddock-2.4 works with most packages, only mask 2.0 and 
 # 2.2 versions until we delete them.
