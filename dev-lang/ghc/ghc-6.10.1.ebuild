@@ -57,7 +57,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="binary doc ghcbootstrap ghcquickbuild"
+IUSE="binary doc ghcbootstrap ghcquickbuild ghcmakebinary"
 
 RDEPEND="
 	!dev-lang/ghc-bin
@@ -250,6 +250,20 @@ src_compile() {
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
+		fi
+
+		# When making a binary to be used for bootstrapping we want as few
+		# dependencies as possible in the resulting binary. Depending on
+		# packages that might be upgraded will result in a broken bootstrapping
+		# binary, see bug #259867 comment #4.
+		# Here we disable building ghci, for two reasons:
+		#   1. Building ghci requires sys-libs/readline or dev-libs/libedit,
+		#      which will make the resulting binary fragile to upgrades in the
+		#      host environment.
+		#   2. We've patched ghc to use the GPL library sys-libs/readline.
+		#      The licence prohibits us from distributing binaries linked to it.
+		if use ghcmakebinary; then
+			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
