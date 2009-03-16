@@ -44,7 +44,7 @@ READLINE_P="readline-${READLINE_PV}"
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2
 					http://hackage.haskell.org/packages/archive/readline/${READLINE_PV}/${READLINE_P}.tar.gz
 				  )
-	x86?	( http://community.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )
+	x86?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-r1-x86.tbz2 )
 	amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 
 #	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
