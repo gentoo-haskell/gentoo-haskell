@@ -32,8 +32,11 @@ fi
 # tuning for pentium4 is probably a reasonable choice for p4s and athlons
 export CFLAGS="-O2 -pipe"
 
-# build with the documentation and enable bootstrapping
-export USE="-binary doc ghcbootstrap"
+# build with
+#   - documentation
+#   - bootstrapping
+#   - disable ghci (ghcmakebinary)
+export USE="-binary doc ghcbootstrap ghcmakebinary"
 
 echo "You may also need to set PORTDIR_OVERLAY=\"\""
 echo "and also ACCEPT_KEYWORDS=\"~\${arch}\""
