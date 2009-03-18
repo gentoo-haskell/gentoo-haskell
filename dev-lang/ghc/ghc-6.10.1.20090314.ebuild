@@ -38,8 +38,8 @@ IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
 EXTRA_SRC_URI="${PV}"
 [[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
-#x86?	( http://community.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
+    x86?	( http://community.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
 #amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 
 #	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
