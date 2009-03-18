@@ -173,9 +173,12 @@ src_unpack() {
 		# fix bug in native code generation for amd64, see comment in patch
 		epatch "${FILESDIR}/${P}-amd64-native-bug.patch"
 
-		# Modify the ghc driver script to use GHC_CFLAGS
-		sed -i -e "s|\$\$TOPDIROPT|\$\$TOPDIROPT ${GHC_CFLAGS}|" \
-			"${S}/driver/ghc/Makefile"
+		# make sure the libffi ghc bundles is built with noexecstack.
+		# newer versions of libff (since 3.0.6) already handles this in the
+		# assembly files with .section .note.GNU-stack,"",%progbits
+		# which will be included in GHC 6.12.1
+		sed -e 's/CC=/CPPFLAGS="-Wa,--noexecstack" CC=/' \
+		  -i "${S}/libffi/Makefile"
 
 		if ! use ghcbootstrap; then
 			# Relocate from /usr to ${WORKDIR}/usr
