@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="2"
+
 CABAL_FEATURES="bin"
 inherit haskell-cabal flag-o-matic
 
@@ -19,7 +21,7 @@ DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/bytestring-0.9.0.1
 		>=dev-haskell/cabal-1.6.0.1
 		>=dev-haskell/filepath-1.1.0.1
-		>=dev-haskell/gtk2hs-0.10
+		>=dev-haskell/gtk2hs-0.10[gnome]
 		>=x11-libs/gtksourceview-2.4.0
 		>=dev-haskell/mtl-1.1.0.2
 		>=dev-haskell/parsec-2.1.0.1
@@ -29,11 +31,4 @@ DEPEND=">=dev-lang/ghc-6.10
 # >=gtksourceview2-2.4.0 is required to get the
 # sourceLanguageManagerGuessLanguage function
 
-pkg_setup () {
-	ghc-package_pkg_setup
-	# build gtk2hs with USE=gnome to get sourceview
-	if ! ( built_with_use dev-haskell/gtk2hs gnome ); then
-		eerror "${P} requires dev-haskell/gtk2hs to have been built with USE flag gnome"
-		die "Please re-emerge gtk2hs with USE=\"gnome\""
-	fi
-}
+# build gtk2hs with USE=gnome to get sourceview
