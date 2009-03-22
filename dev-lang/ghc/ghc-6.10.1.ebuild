@@ -271,8 +271,7 @@ src_compile() {
 		#      The licence prohibits us from distributing binaries linked to it.
 		if use ghcmakebinary; then
 			sed -i compiler/Makefile \
-			    -e 's,CONFIGURE_FLAGS_STAGE2 += --flags=readline,CONFIGURE_FLAGS_STAGE2 += --flags=-readline,' \
-			|| die "unable to disable full fledged readline support"
+			    -e 's,CONFIGURE_FLAGS_STAGE2 += --flags=readline,CONFIGURE_FLAGS_STAGE2 += --flags=-readline,'
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
