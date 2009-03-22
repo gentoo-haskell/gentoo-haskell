@@ -263,9 +263,9 @@ src_compile() {
 		# dependencies as possible in the resulting binary. Depending on
 		# packages that might be upgraded will result in a broken bootstrapping
 		# binary, see bug #259867 comment #4.
-		# Here we disable building ghci, for two reasons:
-		#   1. Building ghci requires sys-libs/readline or dev-libs/libedit,
-		#      which will make the resulting binary fragile to upgrades in the
+		# Here we disable using readline in ghci, for two reasons:
+		#   1. Building ghci with sys-libs/readline or dev-libs/libedit
+		#      will make the resulting binary fragile to upgrades in the
 		#      host environment.
 		#   2. We've patched ghc to use the GPL library sys-libs/readline.
 		#      The licence prohibits us from distributing binaries linked to it.
