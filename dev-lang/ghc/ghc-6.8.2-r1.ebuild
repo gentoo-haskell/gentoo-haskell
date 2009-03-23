@@ -59,7 +59,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 #KEYWORDS="alpha amd64 hppa ia64 ~ppc ~ppc64 sparc x86"
-IUSE="binary doc ghcbootstrap ghcquickbuild"
+IUSE="doc ghcbootstrap ghcquickbuild"
 
 RDEPEND="
 	!dev-lang/ghc-bin
