@@ -17,3 +17,13 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		=dev-haskell/mtl-1.1*"
+
+src_unpack() {
+	unpack ${A}
+
+	# Remove restrictions on array and containers
+	sed -i -e 's/containers >= 0.1 && <0.2/containers >= 0.1/' \
+				 "${S}/${PN}.cabal"
+	sed -i -e 's/array >= 0.1 && <0.2/array >= 0.1/' \
+				 "${S}/${PN}.cabal"
+}
