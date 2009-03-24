@@ -17,7 +17,7 @@ IUSE="doc"
 DEPEND=">=dev-lang/ghc-6.2"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	if ! $(ghc-cabal); then
 		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
 			"${S}/Cabal.cabal"

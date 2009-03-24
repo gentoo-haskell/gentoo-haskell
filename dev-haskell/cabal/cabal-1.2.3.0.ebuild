@@ -18,7 +18,7 @@ SRC_URI="http://haskell.org/cabal/release/${P}/${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 hppa ia64 ppc ~ppc64 sparc x86"
 IUSE="doc"
 
 RESTRICT="test"

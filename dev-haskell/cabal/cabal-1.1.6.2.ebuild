@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.2"
 CABAL_CORE_LIB_GHC_PV="6.6.1"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	if ! $(ghc-cabal); then
 		sed -i 's/Build-Depends: base/Build-Depends: base, unix/' \
 			"${S}/Cabal.cabal"

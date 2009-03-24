@@ -11,7 +11,7 @@ KEYWORDS="~x86 ~ppc"
 
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.2
+DEPEND="<dev-lang/ghc-6.6
 	doc? ( virtual/latex-base )"
 
 RDEPEND="virtual/libc"

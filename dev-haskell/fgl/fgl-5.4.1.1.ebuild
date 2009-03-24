@@ -11,14 +11,14 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	dev-haskell/mtl"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	if ! version_is_at_least "6.8" "$(ghc-version)"; then
 		sed -i -e 's/, containers, array//' "${S}/fgl.cabal"
