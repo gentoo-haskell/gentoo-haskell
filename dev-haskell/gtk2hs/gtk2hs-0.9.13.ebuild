@@ -39,7 +39,7 @@ src_unpack() {
 	
 	# Fix for recent return type changes in librsvg-2.22.3:
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-librsvg-2.22.3.patch"
+	epatch "${FILESDIR}/${PN}-0.9.12.1-librsvg-2.22.3.patch"
 
 	# patch file missing, where is it?
 	#Fix to work with new haddock-2.0.0.0:
