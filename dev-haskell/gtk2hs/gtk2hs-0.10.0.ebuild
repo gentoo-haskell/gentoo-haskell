@@ -39,7 +39,7 @@ MY_P="${P/%_rc*}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_compile() {
+src_configure() {
 	econf \
 		--enable-gtk \
 		--enable-packager-mode \
@@ -57,8 +57,6 @@ src_compile() {
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
 		|| die "Configure failed"
-
-	emake || die "Make failed"
 }
 
 src_install() {
