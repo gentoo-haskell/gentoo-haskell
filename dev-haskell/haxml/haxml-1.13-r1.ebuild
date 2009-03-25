@@ -12,7 +12,7 @@ DESCRIPTION="Haskell utilities for parsing, filtering, transforming and generati
 HOMEPAGE="http://www.haskell.org/HaXml/"
 SRC_URI="http://www.haskell.org/HaXml/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
-SLOT="0"
+SLOT="$(get_version_component_range 1-2 ${PV})"
 
 KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 

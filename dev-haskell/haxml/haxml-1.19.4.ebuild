@@ -13,7 +13,7 @@ HOMEPAGE="http://www.cs.york.ac.uk/fp/HaXml/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
-SLOT="0"
+SLOT="$(get_version_component_range 1-2 ${PV})"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
