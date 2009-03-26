@@ -20,7 +20,8 @@ KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6
-	doc? ( virtual/latex-base )"
+	doc? ( virtual/latex-base )
+	dev-haskell/mtl"
 
 RDEPEND="virtual/libc"
 
