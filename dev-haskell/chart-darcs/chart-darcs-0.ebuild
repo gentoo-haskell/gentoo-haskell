@@ -20,9 +20,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
-		>=dev-haskell/cabal-1.2
-		dev-haskell/data-accessor
-		dev-haskell/data-accessor-template
+		>=dev-haskell/cabal-1.6
+		>=dev-haskell/data-accessor-0.2
+		>=dev-haskell/data-accessor-template-0.2.1.1
 		dev-haskell/mtl
 		dev-haskell/time
 		>=dev-haskell/gtk2hs-0.9.11
