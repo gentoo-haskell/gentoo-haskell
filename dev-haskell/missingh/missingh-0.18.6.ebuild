@@ -26,7 +26,7 @@ DEPEND=">=dev-lang/ghc-6.4.2
 	dev-haskell/regex-compat"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	cabal-mksetup
 	sed -i -e 's/GHC-Options: -O2/GHC-Options: -fglasgow-exts/' \

@@ -16,11 +16,12 @@ SLOT="0"
 KEYWORDS="~alpha amd64 ~ia64 ppc sparc x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6"
+DEPEND=">=dev-lang/ghc-6.6
+		dev-haskell/parsec"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${PN}"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	cabal-mksetup
 }

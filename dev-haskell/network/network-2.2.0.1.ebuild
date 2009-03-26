@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Networking-related facilities"
-HOMEPAGE=""
+HOMEPAGE="http://haskell.org/ghc/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
