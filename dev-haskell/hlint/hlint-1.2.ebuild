@@ -20,4 +20,5 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		=dev-haskell/haskell-src-exts-0.4.8*
 		dev-haskell/mtl
 		dev-haskell/syb
-		>=dev-haskell/uniplate-1.2.0.2"
+		>=dev-haskell/uniplate-1.2.0.2
+        >=dev-haskell/happy-1.17"
