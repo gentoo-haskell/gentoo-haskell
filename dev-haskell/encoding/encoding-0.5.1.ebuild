@@ -20,4 +20,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/extensible-exceptions
 		dev-haskell/mtl
-		dev-haskell/regex-compat"
+		dev-haskell/regex-compat
+		doc? ( >=dev-lang/ghc-6.10.1.20090314
+		       >=dev-haskell/haddock-2.4.2
+			 )"
