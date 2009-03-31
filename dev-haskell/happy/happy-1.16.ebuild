@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.4
+DEPEND="<dev-lang/ghc-6.10
 	|| ( =dev-haskell/cabal-1.1.6.1 =dev-haskell/cabal-1.1.6.2 )
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets )"

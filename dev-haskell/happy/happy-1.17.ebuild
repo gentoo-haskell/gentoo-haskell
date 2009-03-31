@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86"
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.4
+DEPEND="<dev-lang/ghc-6.10
 		dev-haskell/mtl
 	doc? (  ~app-text/docbook-xml-dtd-4.2
 		app-text/docbook-xsl-stylesheets )"
