@@ -68,7 +68,18 @@ diff -rN -u old-ghc-6.10.2/compiler/ghci/InteractiveUI.hs new-ghc-6.10.2/compile
  #endif
  
  --import SystemExts
-@@ -322,10 +322,6 @@
+@@ -96,6 +96,10 @@
+ 
+ import Data.IORef	( IORef, readIORef, writeIORef )
+ 
++#ifdef USE_EDITLINE
++import System.Posix.Internals ( setNonBlockingFD )
++#endif
++
+ -----------------------------------------------------------------------------
+ 
+ ghciWelcomeMsg :: String
+@@ -322,10 +326,6 @@
          when is_tty $ withReadline $ do
              Readline.initialize
  
@@ -79,7 +90,7 @@ diff -rN -u old-ghc-6.10.2/compiler/ghci/InteractiveUI.hs new-ghc-6.10.2/compile
              Readline.setAttemptedCompletionFunction (Just completeWord)
              --Readline.parseAndBind "set show-all-if-ambiguous 1"
  
-@@ -360,9 +356,6 @@
+@@ -360,9 +360,6 @@
  
  #ifdef USE_EDITLINE
     liftIO $ do
@@ -89,7 +100,7 @@ diff -rN -u old-ghc-6.10.2/compiler/ghci/InteractiveUI.hs new-ghc-6.10.2/compile
       Readline.resetTerminal Nothing
  #endif
  
-@@ -634,11 +627,9 @@
+@@ -634,11 +631,9 @@
                     return (Just str)
  
  withReadline :: IO a -> IO a
