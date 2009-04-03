@@ -41,19 +41,22 @@ EXTRA_SRC_URI="${PV}"
 READLINE_PV="1.0.1.0"
 READLINE_P="readline-${READLINE_PV}"
 
+arch_binaries=""
+
+arch_binaries="$arch_binaries x86?  ( http://haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries amd64?    ( http://haskell.org/~kolmodin/ghc-bin-${PV}-r2-amd64.tbz2 )"
+
+#arch_binaries="$arch_binaries alpha?   ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )"
+#arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries hppa?    ( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )"
+#arch_binaries="$arch_binaries ia64?    ( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )"
+#arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2
-					http://hackage.haskell.org/packages/archive/readline/${READLINE_PV}/${READLINE_P}.tar.gz
-				  )"
-#x86?	( http://community.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )
-#amd64?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
-
-#	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
-#	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-#	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
-#	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
-#	sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
-#	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+                    http://hackage.haskell.org/packages/archive/readline/${READLINE_PV}/${READLINE_P}.tar.gz
+                  )
+    !ghcbootstrap? ( $arch_binaries )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -138,8 +141,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	#elif use amd64 || use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
-	else
+	elif use amd64 || use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc; then
 		#eerror "No binary .tbz2 package available yet for these arches:"
 		#eerror "  ppc, ppc64"
 		#
