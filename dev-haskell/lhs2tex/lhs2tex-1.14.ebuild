@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="bin"
 CABAL_MIN_VERSION=1.2
-CABAL_CONFIGURE_FLAGS="--datasubdir=${P}"
+CABAL_CONFIGURE_FLAGS="--datasubdir=${P} --constraint=base<4"
 inherit eutils haskell-cabal
 
 SRC_URI="http://www.cs.uu.nl/~andres/lhs2tex/${P/_pre/pre}.tar.gz"
@@ -34,9 +34,4 @@ src_unpack() {
 	pushd "${S}"
 	use doc && rm doc/Guide2.dontbuild
 	popd
-}
-
-src_compile() {
-    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-    cabal_src_install
 }
