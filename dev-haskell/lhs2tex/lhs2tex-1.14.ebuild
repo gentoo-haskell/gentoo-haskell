@@ -36,3 +36,7 @@ src_unpack() {
 	popd
 }
 
+src_compile() {
+    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+    cabal_src_install
+}
