@@ -27,7 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.10
 				gnome-base/gconf )
 		svg?   ( gnome-base/librsvg )
 		opengl? ( x11-libs/gtkglext )
-		xulrunner? ( >=net-libs/xulrunner-1.8 )
+		xulrunner? ( =net-libs/xulrunner-1.8* )
 		!xulrunner? ( firefox? ( =www-client/mozilla-firefox-2* ) )
 		!xulrunner? ( !firefox? ( seamonkey? ( =www-client/seamonkey-1* ) ) )"
 
