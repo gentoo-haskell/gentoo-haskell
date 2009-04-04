@@ -14,7 +14,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		=dev-haskell/cabal-1.6*
+DEPEND="|| ( (
+                =dev-lang/ghc-6.10.1
+                =dev-haskell/cabal-1.6.0.1
+             )
+             (
+                =dev-lang/ghc-6.10.2
+                =dev-haskell/cabal-1.6.0.3
+             )
+           )
 		dev-haskell/ghc-paths
 		dev-haskell/haskell-src-meta"
