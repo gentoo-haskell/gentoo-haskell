@@ -16,7 +16,7 @@ that you can modify and send patches from. You could use layman to get a
 copy, but in this case I'd not recommend it. Assuming you have darcs
 emerged, run this to get your own copy of the repo:
 
-    darcs get --partial http://haskell.org/~gentoo/gentoo-haskell/
+    darcs get --partial http://code.haskell.org/gentoo/gentoo-haskell/
 
 You need to be able to create patches and possibly send them directly from
 darcs, consult the darcs manual at http://darcs.net
@@ -41,7 +41,7 @@ why we keep a close cooperation with them.
 To get the hackport tool, either install app-portage/hackport-darcs
 available from the haskell overlay, or get your copy of the repo using
 
-  darcs get --partial http://haskell.org/~gentoo/hackport/
+  darcs get --partial http://code.haskell.org/gentoo/hackport/
 
 Next, lets see where your help is needed :)
 
@@ -79,8 +79,6 @@ Next, lets see where your help is needed :)
 * add yhc when it's ready
 
 == Ebuild maintainance ==
-
-* remove hs-plugins from portage
 
 * remove old versions of cabal. Do we need anything other than 1.1.6.2 and 1.2?
 
@@ -146,7 +144,7 @@ Next, lets see where your help is needed :)
    http://darcs.haskell.org/cabal-install
 
 * improve HackPort tool
-   http://haskell.org/~gentoo/hackport
+   http://code.haskell.org/gentoo/hackport
 
 == Speculative ==
 
