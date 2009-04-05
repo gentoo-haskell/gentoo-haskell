@@ -1,4 +1,2 @@
-# Lennart Kolmodin <kolmodin@gentoo.org> (15 Mar 2009)
-# Mask ghc 6.10.2 rc1 (and later) for testing
->=dev-lang/ghc-6.10.1.20090314
+
 
