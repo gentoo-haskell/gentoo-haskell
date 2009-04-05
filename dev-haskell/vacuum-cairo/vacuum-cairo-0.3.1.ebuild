@@ -21,4 +21,5 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parallel
 		dev-haskell/strict-concurrency
 		dev-haskell/gtk2hs[svg]
-		>=dev-haskell/vacuum-0.0.5.1"
+		>=dev-haskell/vacuum-0.0.5.1
+		media-gfx/graphviz"
