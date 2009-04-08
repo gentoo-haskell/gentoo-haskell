@@ -13,7 +13,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 -sparc ~x86"
 
-IUSE="xft unicode"
+IUSE="xft unicode inotify"
 
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/cabal-1.2
@@ -25,6 +25,7 @@ DEPEND=">=dev-lang/ghc-6.6
 	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )
+    inotify? ( dev-haskell/hinotify )
 	!x11-misc/xmobar"
 RDEPEND="${DEPEND}"
 
@@ -51,6 +52,13 @@ src_compile() {
 	else
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_utf8"
 	fi
+
+    if use inotify; then
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
+    else
+        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
+    fi
+
 	cabal_src_compile
 }
 
