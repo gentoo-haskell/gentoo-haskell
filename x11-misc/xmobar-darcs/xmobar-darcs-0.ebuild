@@ -13,9 +13,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 -sparc ~x86"
 
-IUSE="xft unicode inotify"
+IUSE="xft unicode mail"
 
-DEPEND=">=dev-lang/ghc-6.6
+DEPEND=">=dev-lang/ghc-6.6.1
+	dev-haskell/bytestring
 	>=dev-haskell/cabal-1.2
 	|| ( >=dev-haskell/x11-1.3.0 dev-haskell/x11-darcs )
 	>=dev-haskell/mtl-1.0
@@ -25,7 +26,7 @@ DEPEND=">=dev-lang/ghc-6.6
 	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )
-    inotify? ( dev-haskell/hinotify )
+	mail? ( dev-haskell/hinotify )
 	!x11-misc/xmobar"
 RDEPEND="${DEPEND}"
 
@@ -39,7 +40,7 @@ src_unpack() {
 }
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 	if use xft; then
 		CABAL_CONFIGURE_FLAGS="--flags=with_xft"
@@ -53,11 +54,11 @@ src_compile() {
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_utf8"
 	fi
 
-    if use inotify; then
-        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
-    else
-        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
-    fi
+	if use mail; then
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
+	else
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
+	fi
 
 	cabal_src_compile
 }
