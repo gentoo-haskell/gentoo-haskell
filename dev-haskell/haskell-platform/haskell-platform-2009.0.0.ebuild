@@ -14,6 +14,7 @@ IUSE=""
 DEPEND="~dev-lang/ghc-6.10.2
 		~dev-haskell/cabal-1.6.0.3
 		~dev-haskell/cgi-3001.1.7.1
+		~dev-haskell/editline-0.2.1.0
 		~dev-haskell/fgl-5.4.2.2
 		~dev-haskell/glut-2.1.1.2
 		~dev-haskell/haskell-src-1.0.1.3
