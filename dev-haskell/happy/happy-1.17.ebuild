@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/happy/happy-1.15.ebuild,v 1.13 2006/08/26 20:41:12 wormo Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/happy/happy-1.17.ebuild,v 1.4 2008/10/04 01:16:11 fmccor Exp $
 
 CABAL_FEATURES="bin"
 CABAL_MIN_VERSION=1.2
@@ -23,6 +23,8 @@ RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
+	sed -e "s/BuildFlags(..)/BuildFlags(..), buildVerbose/" \
+		-i "${S}/Setup.lhs"
 	cd "${S}/doc" && eautoconf
 }
 
