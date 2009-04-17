@@ -45,21 +45,15 @@ READLINE_PV="5.2_p13"
 READLINE_P="readline-${READLINE_PV}"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
-	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2
 			  http://haskell.org/~kolmodin/ghc-bundled-${READLINE_P}-amd64.tbz2 )
-	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
-	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
-	ppc?    ( http://haskell.org/~kolmodin/ghc-bin-${PV}-ppc.tbz2 )
-	sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
 	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2
 			  http://haskell.org/~kolmodin/ghc-bundled-${READLINE_P}-x86.tbz2 )"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-#KEYWORDS="alpha amd64 hppa ia64 ~ppc ~ppc64 sparc x86"
-IUSE="doc ghcbootstrap ghcquickbuild"
+IUSE="doc ghcbootstrap"
 
 RDEPEND="
 	!dev-lang/ghc-bin
@@ -140,13 +134,14 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use ppc64; then
-		eerror "No binary .tbz2 package available yet for these arches:"
-		eerror "  ppc64"
-		eerror "Please try emerging with USE=ghcbootstrap and report build"
-		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
-		die "No binary available for this arch yet, USE=ghcbootstrap"
 	fi
+#	elif use ppc64; then
+#		eerror "No binary .tbz2 package available yet for these arches:"
+#		eerror "  ppc64"
+#		eerror "Please try emerging with USE=ghcbootstrap and report build"
+#		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
+#		die "No binary available for this arch yet, USE=ghcbootstrap"
+#	fi
 }
 
 src_unpack() {
@@ -209,20 +204,6 @@ src_compile() {
 		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-		# The settings that give you the fastest complete GHC build are these:
-		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H64m -Onot -fasm" >> mk/build.mk
-			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-			echo "GhcStage2HcOpts = -Onot -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    = -Onot -fasm" >> mk/build.mk
-			echo "GhcLibWays      =" >> mk/build.mk
-			echo "SplitObjs       = NO" >> mk/build.mk
-		fi
-		# However, note that the libraries are built without optimisation, so
-		# this build isn't very useful. The resulting compiler will be very
-		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
-		# timed at less than 8 minutes.
-
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
@@ -239,7 +220,7 @@ src_compile() {
 
 		# GHC build system knows to build unregisterised on alpha and hppa,
 		# but we have to tell it to build unregisterised on some arches
-		if use alpha || use hppa || use ppc64 || use sparc; then
+		if use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
