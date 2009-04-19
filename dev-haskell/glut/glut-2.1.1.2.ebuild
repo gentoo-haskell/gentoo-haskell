@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -14,12 +14,15 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
-		>=dev-haskell/opengl-2.2"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		>=dev-haskell/opengl-2.2
+		virtual/glu
+		virtual/glut"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
 
