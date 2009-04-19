@@ -19,9 +19,9 @@ DEPEND=">=dev-lang/ghc-6.8.2
 		>=dev-haskell/cabal-1.5
 		dev-haskell/filepath
 		dev-haskell/ghc-paths
-        doc? (  ~app-text/docbook-xml-dtd-4.2
-                app-text/docbook-xsl-stylesheets
-                >=dev-libs/libxslt-1.1.2 )"
+		doc? (  ~app-text/docbook-xml-dtd-4.2
+				app-text/docbook-xsl-stylesheets
+				>=dev-libs/libxslt-1.1.2 )"
 
 src_unpack() {
 	unpack ${A}
