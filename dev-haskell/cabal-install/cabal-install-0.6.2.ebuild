@@ -14,8 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4
-		=dev-haskell/cabal-1.6*
+RDEPEND=">=dev-lang/ghc-6.4
+		 =dev-haskell/cabal-1.6*"
+DEPEND="${RDEPEND}
 		>=dev-haskell/filepath-1.0
 		>=dev-haskell/http-4000.0.2
 		dev-haskell/network
