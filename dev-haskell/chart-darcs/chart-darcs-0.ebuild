@@ -26,4 +26,5 @@ DEPEND=">=dev-lang/ghc-6.6
 		dev-haskell/mtl
 		dev-haskell/time
 		>=dev-haskell/gtk2hs-0.9.11
+        >=dev-haskell/colour-2.2.1
 		doc? ( >=dev-haskell/haddock-2 )"
