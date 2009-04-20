@@ -15,4 +15,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2.0"
+		>=dev-haskell/cabal-1.2.0
+        dev-libs/libpcre"
