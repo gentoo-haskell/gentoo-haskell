@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="profile haddock lib"
+CABAL_FEATURES="profile haddock lib hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generic finger-tree structure"
