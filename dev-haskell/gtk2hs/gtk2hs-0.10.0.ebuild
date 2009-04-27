@@ -16,7 +16,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl svg firefox seamonkey xulrunner"
+IUSE="doc profile glade gnome opengl svg firefox seamonkey xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
