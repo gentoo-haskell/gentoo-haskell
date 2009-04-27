@@ -132,6 +132,7 @@ ignore_darcs x = x
 main :: IO ()
 main = do
   -- pwd <- getCurrentDirectory
+  putStrLn "lambdaman scours the neighborhood..."
   repo <- dirSpy "."
   let dirs = findManifests (ignore_darcs repo)
   manis <- forM dirs $ \(fp, repo) -> do
