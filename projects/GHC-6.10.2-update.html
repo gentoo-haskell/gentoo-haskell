@@ -315,6 +315,16 @@ packages;</p>
 <li><tt class="docutils literal"><span class="pre">dev-haskell/haddock</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">dev-haskell/parallel</span></tt></li>
 </ul>
+</div>
+<div class="section">
+<h1><a id="ghc-updater" name="ghc-updater">ghc-updater</a></h1>
+<p>The application <tt class="docutils literal"><span class="pre">ghc-updater</span></tt> will search for packages installed with your
+older ghc version, and try to upgrade them.</p>
+<p>First, update your haddock to 2.4.2. Then run <tt class="docutils literal"><span class="pre">ghc-updater</span></tt>. Any known
+problems for portage users?</p>
+</div>
+<div class="section">
+<h1><a id="potentially-broken-packages" name="potentially-broken-packages">Potentially broken packages</a></h1>
 <p>Due to the recent changes with the base packages, exception handling etc, we
 need to make extra sure that the packages in portage still works with GHC 6.10.
 We should look for, and test, the latest <tt class="docutils literal"><span class="pre">~arch</span></tt> version, as well as the

@@ -19,6 +19,19 @@ packages;
 * ``dev-haskell/haddock``
 * ``dev-haskell/parallel``
 
+
+ghc-updater
+===========
+
+The application ``ghc-updater`` will search for packages installed with your
+older ghc version, and try to upgrade them.
+
+First, update your haddock to 2.4.2. Then run ``ghc-updater``. Any known
+problems for portage users?
+
+Potentially broken packages
+===========================
+
 Due to the recent changes with the base packages, exception handling etc, we
 need to make extra sure that the packages in portage still works with GHC 6.10.
 We should look for, and test, the latest ``~arch`` version, as well as the
