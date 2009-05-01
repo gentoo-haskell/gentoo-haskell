@@ -6,7 +6,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal elisp-common
 
 DESCRIPTION="Source code suggestions"
-HOMEPAGE="http://www.cs.york.ac.uk/~ndm/hlint/"
+HOMEPAGE="http://community.haskell.org/~ndm/hlint/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -14,14 +14,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
-DEPEND="=dev-lang/ghc-6.10.1
+DEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/filepath
 		=dev-haskell/haskell-src-exts-0.4.8*
+		=dev-haskell/hscolour-1.10*
 		dev-haskell/mtl
 		dev-haskell/syb
 		>=dev-haskell/uniplate-1.2.0.2
-		>=dev-haskell/happy-1.17
 		emacs? ( virtual/emacs
 				 app-emacs/haskell-mode )"
 
