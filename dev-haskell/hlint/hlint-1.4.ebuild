@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/filepath
 		=dev-haskell/haskell-src-exts-0.4.8*
-		=dev-haskell/hscolour-1.10*
+		>=dev-haskell/hscolour-1.10
 		dev-haskell/mtl
 		dev-haskell/syb
 		>=dev-haskell/uniplate-1.2.0.2
@@ -26,6 +26,14 @@ DEPEND=">=dev-lang/ghc-6.10.1
 				 app-emacs/haskell-mode )"
 
 SITEFILE="60${PN}-gentoo.el"
+
+src_unpack() {
+	unpack ${A}
+
+	# Remove upper bound on hscolour
+	sed -i -e 's/hscolour == 1.10.\*/hscolour >= 1.10/' \
+				  "${S}/${PN}.cabal"
+}
 
 src_compile() {
 	cabal_src_compile
@@ -40,6 +48,8 @@ src_install() {
 		elisp-install ${PN} data/*.el data/*.elc || die "elisp-install failed."
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
+
+	dodoc hlint.htm
 }
 
 pkg_postinst() {
