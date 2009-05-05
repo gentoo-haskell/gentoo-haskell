@@ -15,10 +15,11 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.8.2
-		>=dev-haskell/cabal-1.5
+RDEPEND="~dev-lang/ghc-6.10.2
 		dev-haskell/filepath
-		dev-haskell/ghc-paths
+		dev-haskell/ghc-paths"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"
@@ -50,4 +51,3 @@ src_install () {
 	fi
 	dodoc CHANGES README
 }
-
