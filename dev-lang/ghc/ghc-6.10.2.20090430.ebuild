@@ -43,8 +43,8 @@ READLINE_P="readline-${READLINE_PV}"
 
 arch_binaries=""
 
-arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
-arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 
 #arch_binaries="$arch_binaries alpha?   ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
@@ -141,7 +141,8 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc; then
+	else
+	#elif use alpha || use amd64 || use hppa || use ia64 || use ppc || use ppc64 || use sparc || use x86; then
 		#eerror "No binary .tbz2 package available yet for these arches:"
 		#eerror "  ppc, ppc64"
 		#
