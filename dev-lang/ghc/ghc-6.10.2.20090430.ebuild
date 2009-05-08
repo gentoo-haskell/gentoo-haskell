@@ -38,9 +38,6 @@ IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
 EXTRA_SRC_URI="${PV}"
 [[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
 
-READLINE_PV="1.0.1.0"
-READLINE_P="readline-${READLINE_PV}"
-
 arch_binaries=""
 
 #arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
@@ -53,23 +50,20 @@ arch_binaries=""
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2
-                    http://hackage.haskell.org/packages/archive/readline/${READLINE_PV}/${READLINE_P}.tar.gz
-                  )
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
     !ghcbootstrap? ( $arch_binaries )"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="binary doc ghcbootstrap ghcquickbuild ghcmakebinary"
+IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 RDEPEND="
 	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-4.1
-	!binary? ( >=sys-libs/readline-5 )"
+	>=dev-libs/gmp-4.1"
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
@@ -166,16 +160,6 @@ src_unpack() {
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
 	else
-
-		# move readline into the ghc libraries dir
-		mv "${WORKDIR}/readline-${READLINE_PV}" \
-		   "${S}/libraries/readline"
-
-		# use sys-libs/readline instead of dev-libs/editline
-		epatch "${FILESDIR}/${P}-readline.patch"
-
-
-
 		if ! use ghcbootstrap; then
 			# Relocate from /usr to ${WORKDIR}/usr
 			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
@@ -249,21 +233,6 @@ src_compile() {
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
-		fi
-
-		# When making a binary to be used for bootstrapping we want as few
-		# dependencies as possible in the resulting binary. Depending on
-		# packages that might be upgraded will result in a broken bootstrapping
-		# binary, see bug #259867 comment #4.
-		# Here we disable using readline in ghci, for two reasons:
-		#   1. Building ghci with sys-libs/readline or dev-libs/libedit
-		#      will make the resulting binary fragile to upgrades in the
-		#      host environment.
-		#   2. We've patched ghc to use the GPL library sys-libs/readline.
-		#      The licence prohibits us from distributing binaries linked to it.
-		if use ghcmakebinary; then
-			sed -i compiler/Makefile \
-			    -e 's,CONFIGURE_FLAGS_STAGE2 += --flags=readline,CONFIGURE_FLAGS_STAGE2 += --flags=-readline,'
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
