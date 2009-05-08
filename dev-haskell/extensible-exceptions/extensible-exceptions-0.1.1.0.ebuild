@@ -14,5 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2"
+DEPEND=">=dev-lang/ghc-6.10"
+
+CABAL_CORE_LIB_GHC_PV="6.10.2.20090430"
