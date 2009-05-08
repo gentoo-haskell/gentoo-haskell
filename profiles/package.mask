@@ -1,2 +1,4 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (08 May 2009)
+# Mask for testing
 
-
+>=dev-lang/ghc-6.10.2.20090430
