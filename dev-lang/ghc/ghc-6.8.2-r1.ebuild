@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.8.2-r1.ebuild,v 1.1 2009/04/17 16:27:48 kolmodin Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -44,7 +44,7 @@ EXTRA_SRC_URI="${PV}"
 READLINE_PV="5.2_p13"
 READLINE_P="readline-${READLINE_PV}"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
+SRC_URI="http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2
 	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2
 			  http://haskell.org/~kolmodin/ghc-bundled-${READLINE_P}-amd64.tbz2 )
 	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2
@@ -130,47 +130,28 @@ pkg_setup() {
 		ewarn "You requested ghc bootstrapping, this is usually only used"
 		ewarn "by Gentoo developers to make binary .tbz2 packages for"
 		ewarn "use with the ghc ebuild's USE=\"binary\" feature."
-		use binary && \
-			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	fi
-#	elif use ppc64; then
-#		eerror "No binary .tbz2 package available yet for these arches:"
-#		eerror "  ppc64"
-#		eerror "Please try emerging with USE=ghcbootstrap and report build"
-#		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
-#		die "No binary available for this arch yet, USE=ghcbootstrap"
-#	fi
 }
 
 src_unpack() {
-	# Create the ${S} dir if we're using the binary version
-	use binary && mkdir "${S}"
-
 	base_src_unpack
 	ghc_setup_cflags
 
-	if use binary; then
+	# Modify the ghc driver script to use GHC_CFLAGS
+	sed -i -e "s|\$\$TOPDIROPT|\$\$TOPDIROPT ${GHC_CFLAGS}|" \
+		"${S}/driver/ghc/Makefile"
 
-		# Move unpacked files to the expected place
-		mv "${WORKDIR}/usr" "${S}"
-	else
-
-		# Modify the ghc driver script to use GHC_CFLAGS
-		sed -i -e "s|\$\$TOPDIROPT|\$\$TOPDIROPT ${GHC_CFLAGS}|" \
-			"${S}/driver/ghc/Makefile"
-
-		if ! use ghcbootstrap; then
-			# Relocate from /usr to ${WORKDIR}/usr
-			sed -i -e "s|/usr|${WORKDIR}/usr|g" \
-				"${WORKDIR}/usr/bin/ghc-${PV}" \
-				"${WORKDIR}/usr/bin/ghci-${PV}" \
-				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
-				"${WORKDIR}/usr/bin/hsc2hs" \
-				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
-				|| die "Relocating ghc from /usr to workdir failed"
-		fi
+	if ! use ghcbootstrap; then
+		# Relocate from /usr to ${WORKDIR}/usr
+		sed -i -e "s|/usr|${WORKDIR}/usr|g" \
+			"${WORKDIR}/usr/bin/ghc-${PV}" \
+			"${WORKDIR}/usr/bin/ghci-${PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
+			|| die "Relocating ghc from /usr to workdir failed"
 	fi
 }
 
@@ -191,95 +172,80 @@ src_compile() {
 		einfo "Found readline: ${LD_LIBRARY_PATH}"
 	fi
 
-	if ! use binary; then
+	# initialize build.mk
+	echo '# Gentoo changes' > mk/build.mk
 
-		# initialize build.mk
-		echo '# Gentoo changes' > mk/build.mk
+	# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
+	echo "docdir = /usr/share/doc/${P}" >> mk/build.mk
+	echo "htmldir = /usr/share/doc/${P}" >> mk/build.mk
 
-		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
-		echo "docdir = /usr/share/doc/${P}" >> mk/build.mk
-		echo "htmldir = /usr/share/doc/${P}" >> mk/build.mk
+	# We also need to use the GHC_CFLAGS flags when building ghc itself
+	echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
+	echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
-		# We also need to use the GHC_CFLAGS flags when building ghc itself
-		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
-		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
+	# We can't depend on haddock except when bootstrapping when we
+	# must build docs and include them into the binary .tbz2 package
+	if use ghcbootstrap && use doc; then
+		echo XMLDocWays="html" >> mk/build.mk
+		echo HADDOCK_DOCS=YES >> mk/build.mk
+	else
+		echo XMLDocWays="" >> mk/build.mk
+	fi
 
-		# We can't depend on haddock except when bootstrapping when we
-		# must build docs and include them into the binary .tbz2 package
-		if use ghcbootstrap && use doc; then
-			echo XMLDocWays="html" >> mk/build.mk
-			echo HADDOCK_DOCS=YES >> mk/build.mk
-		else
-			echo XMLDocWays="" >> mk/build.mk
-		fi
+	# circumvent a very strange bug that seems related with ghc producing
+	# too much output while being filtered through tee (e.g. due to
+	# portage logging) reported as bug #111183
+	echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		# circumvent a very strange bug that seems related with ghc producing
-		# too much output while being filtered through tee (e.g. due to
-		# portage logging) reported as bug #111183
-		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
+	# GHC build system knows to build unregisterised on alpha and hppa,
+	# but we have to tell it to build unregisterised on some arches
+	if use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
+		echo "GhcUnregisterised=YES" >> mk/build.mk
+		echo "GhcWithInterpreter=NO" >> mk/build.mk
+		echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
+		echo "SplitObjs=NO" >> mk/build.mk
+		echo "GhcRTSWays := debug" >> mk/build.mk
+		echo "GhcNotThreaded=YES" >> mk/build.mk
+	fi
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
-		# but we have to tell it to build unregisterised on some arches
-		if use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			echo "GhcWithInterpreter=NO" >> mk/build.mk
-			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
-			echo "SplitObjs=NO" >> mk/build.mk
-			echo "GhcRTSWays := debug" >> mk/build.mk
-			echo "GhcNotThreaded=YES" >> mk/build.mk
-		fi
+	# Get ghc from the unpacked binary .tbz2
+	# except when bootstrapping we just pick ghc up off the path
+	if ! use ghcbootstrap; then
+		export PATH="${WORKDIR}/usr/bin:${PATH}"
+	fi
 
-		# Get ghc from the unpacked binary .tbz2
-		# except when bootstrapping we just pick ghc up off the path
-		if ! use ghcbootstrap; then
-			export PATH="${WORKDIR}/usr/bin:${PATH}"
-		fi
+	econf || die "econf failed"
 
-		econf || die "econf failed"
-
-		emake all || die "make failed"
-
-	fi # ! use binary
+	emake all || die "make failed"
 }
 
 src_install() {
-	if use binary; then
-		mv "${S}/usr" "${D}"
+	local insttarget="install"
 
-		# Remove the docs if not requested
-		if ! use doc; then
-			rm -rf "${D}/usr/share/doc/${P}/*/" \
-				"${D}/usr/share/doc/${P}/*.html" \
-				|| die "could not remove docs (P vs PF revision mismatch?)"
+	# We only built docs if we were bootstrapping, otherwise
+	# we copy them out of the unpacked binary .tbz2
+	if use doc; then
+		if use ghcbootstrap; then
+			insttarget="${insttarget} install-docs"
+		else
+			mkdir -p "${D}/usr/share/doc"
+			mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc" \
+				|| die "failed to copy docs"
 		fi
-	else
-		local insttarget="install"
-
-		# We only built docs if we were bootstrapping, otherwise
-		# we copy them out of the unpacked binary .tbz2
-		if use doc; then
-			if use ghcbootstrap; then
-				insttarget="${insttarget} install-docs"
-			else
-				mkdir -p "${D}/usr/share/doc"
-				mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc" \
-					|| die "failed to copy docs"
-			fi
-		fi
-
-		emake -j1 ${insttarget} \
-			DESTDIR="${D}" \
-			|| die "make ${insttarget} failed"
-
-		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
-
-		dosbin "${FILESDIR}/ghc-updater"
-
-		dobashcompletion "${FILESDIR}/ghc-bash-completion"
-
-		cp -p "${D}/usr/$(get_libdir)/${P}/package.conf"{,.shipped} \
-			|| die "failed to copy package.conf"
 	fi
+
+	emake -j1 ${insttarget} \
+		DESTDIR="${D}" \
+		|| die "make ${insttarget} failed"
+
+	dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+
+	dosbin "${FILESDIR}/ghc-updater"
+
+	dobashcompletion "${FILESDIR}/ghc-bash-completion"
+
+	cp -p "${D}/usr/$(get_libdir)/${P}/package.conf"{,.shipped} \
+		|| die "failed to copy package.conf"
 }
 
 pkg_postinst() {
