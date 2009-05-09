@@ -12,7 +12,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
+IUSE="doc glade gnome opengl seamonkey profile xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
@@ -23,9 +23,9 @@ RDEPEND=">=dev-lang/ghc-6.2
 				>=gnome-base/gconf-2
 				>=gnome-base/librsvg-2.16 )
 		opengl? ( x11-libs/gtkglext )
-		seamonkey? ( =www-client/seamonkey-1* )
-		firefox? ( =www-client/mozilla-firefox-2* )
-		xulrunner? ( =net-libs/xulrunner-1.8* )"
+		xulrunner? ( =net-libs/xulrunner-1.8* )
+		seamonkey? ( =www-client/seamonkey-1* )"
+
 DEPEND="${RDEPEND}
 		doc? ( <dev-haskell/haddock-2.0 )"
         # Can't use haddock-2
@@ -41,8 +41,8 @@ src_compile() {
 		$(use_enable gnome sourceview) \
 		$(use_enable gnome svg) \
 		$(use_enable opengl opengl) \
+		--disable-firefox \
 		$(use_enable seamonkey seamonkey) \
-		$(use_enable firefox firefox) \
 		$(use_enable xulrunner xulrunner) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
@@ -90,7 +90,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
-		$(use seamonkey || use firefox || use xulrunner && echo \
+		$(use seamonkey || use xulrunner && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
 	ghc-install-pkg
 }
