@@ -14,7 +14,6 @@ FP_PN=filepath
 FP_PV=1.1.0.1
 FP_P=${FP_PN}-${FP_PV}
 
-
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
@@ -26,6 +25,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.4"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -53,10 +53,4 @@ src_compile() {
 		cabal-configure
 		cabal-build
 	fi
-}
-
-src_install() {
-	cabal_src_install
-
-	dodoc LICENSE
 }

@@ -3,7 +3,6 @@
 # $Header:  $
 
 CABAL_FEATURES="profile haddock lib"
-CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 
 DESCRIPTION="The posix regex backend for regex-base"
@@ -12,9 +11,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~sparc ~x86"
+KEYWORDS="alpha ~amd64 hppa ia64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
+		>=dev-haskell/cabal-1.2
 		>=dev-haskell/regex-base-0.93
 		dev-haskell/bytestring"

@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6"
 CABAL_CORE_LIB_GHC_PV="6.6.1"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	# Upgrade us from 0.71 to 0.72 which comes with ghc-6.6.1
 	cd "${S}"

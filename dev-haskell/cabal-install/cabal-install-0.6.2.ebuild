@@ -33,4 +33,3 @@ pkg_postinst() {
 
 	bash-completion_pkg_postinst
 }
-

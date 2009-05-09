@@ -14,10 +14,11 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.6.1"
+DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
