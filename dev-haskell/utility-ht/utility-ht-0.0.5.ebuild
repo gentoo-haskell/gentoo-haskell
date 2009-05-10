@@ -15,12 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.6
+        =dev-haskell/quickcheck-1.2*"
 
-src_compile() {
-    #Disable tests, so as not to have QC versioning issues.
-    CABAL_CONFIGURE_FLAGS="--flags=-buildTest"
-
-    cabal_src_compile
-}
 
