@@ -28,7 +28,8 @@ IUSE="doc"
 # package. ghc-paths would like to be compiled with USE=doc, which pulls in
 # haddock, which requires ghc-paths, which pulls in haddock...
 
-RDEPEND="~dev-lang/ghc-6.10.2"
+# builds with ghc-6.10.2/3, but not .1
+RDEPEND="|| ( =dev-lang/ghc-6.10.2* =dev-lang/ghc-6.10.3* )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		doc? (  ~app-text/docbook-xml-dtd-4.2
