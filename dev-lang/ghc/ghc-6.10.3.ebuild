@@ -289,6 +289,13 @@ src_install() {
 }
 
 pkg_postinst() {
+	# 'ghc-pkg check' fails in ghc 6.10.2, with the error message:
+	# There are problems in package rts-1.0:
+	#    include-dirs: PAPI_INCLUDE_DIR doesn't exist or isn't a directory
+	# Upstream suggests this solution to fix it:
+	export PATH="/usr/bin:${PATH}"
+	$(ghc-getghcpkg) describe rts | sed 's/PAPI_INCLUDE_DIR//' | $(ghc-getghcpkg) update -
+
 	ghc-reregister
 
 	ewarn "IMPORTANT:"
