@@ -9,7 +9,7 @@ HOMEPAGE="http://nix.cs.uu.nl"
 
 MY_PV="${PV/_/}"
 
-SRC_URI="http://nix.cs.uu.nl/dist/nix/nix-unstable-latest/${PN}-${MY_PV}.tar.bz2"
+SRC_URI=" http://hydra.nixos.org/build/17407/download/1/${PN}-${MY_PV}.tar.bz2"
 LICENSE="GPL-2.1"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -23,7 +23,7 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 src_compile() {
 	einfo $(ls)
 	econf || die "econf failed"
-	emake || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
