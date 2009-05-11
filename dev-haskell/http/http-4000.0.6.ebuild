@@ -10,18 +10,18 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library for client-side HTTP"
 HOMEPAGE="http://projects.haskell.org/http/"
-SRC_URI="${PN}://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/bytestring
-		>=dev-haskell/cabal-1.2
+RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/parsec"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
