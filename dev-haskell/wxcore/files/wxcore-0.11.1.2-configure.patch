@@ -1,0 +1,21 @@
+diff -rN -u old-wxcore-0.11.1.2/configure new-wxcore-0.11.1.2/configure
+--- old-wxcore-0.11.1.2/configure	2009-05-13 23:05:49.000000000 +0200
++++ new-wxcore-0.11.1.2/configure	2009-05-13 23:05:50.000000000 +0200
+@@ -336,6 +336,8 @@
+ 	  hc="$arg";;
+       -hcpkg=*|--hcpkg=*)
+ 	  hcpkg="$arg";;
++      --with-hc-pkg=*)
++          hcpkg="$arg";;
+       -hcflags=*|--hcflags=*)
+ 	  hcflags="$arg";;
+       -fvia-C|--fvia-C)
+@@ -786,6 +788,8 @@
+            docroot="$ghcroot/doc/libraries"
+          elif test -d "$ghcroot/share/doc/ghc/libraries"; then
+            docroot="$ghcroot/share/doc/ghc/libraries"
++         elif test -d "$ghcroot/share/doc/ghc-$hcversion/libraries"; then
++           docroot="$ghcroot/share/doc/ghc-$hcversion/libraries"
+          else
+            docroot="$ghcroot/share/ghc-$hcversion/doc/ghc/libraries"
+          fi
