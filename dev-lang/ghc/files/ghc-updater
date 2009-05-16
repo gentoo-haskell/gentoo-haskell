@@ -27,7 +27,7 @@ shopt -s nullglob
 PATH="/usr/bin:/opt/ghc/bin:${PATH}"
 
 NEW_GHC_VER=$(ghc --version | sed 's:^.*version ::')
-NEW_GHC_LIBDIR=$(ghc --print-libdir)
+NEW_GHC_LIBDIR=$(ghc --print-libdir | sed 's/\/\.$//')
 
 PKGS_EXCEPTIONS="dev-lang/ghc dev-lang/ghc-bin"
 PKGS_MANUAL=""
