@@ -299,7 +299,7 @@ haskell-cabal_pkg_setup() {
 		eerror "QA: Neither bin nor lib are in CABAL_FEATURES."
 	fi
 	if [[ -n "${CABAL_UNKNOWN}" ]]; then
-		ewarn "Unknown entry in CABAL_FEATURES: ${CABAL_UNKNONW}"
+		ewarn "Unknown entry in CABAL_FEATURES: ${CABAL_UNKNOWN}"
 	fi
 	if cabal-is-dummy-lib; then
 		einfo "${P} is included in ghc-${CABAL_CORE_LIB_GHC_PV}, nothing to install."
