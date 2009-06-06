@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.10.1
+DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.2.3
 		>=dev-haskell/network-2.1.0.0
 		>=dev-haskell/time-1.1.1"
 
