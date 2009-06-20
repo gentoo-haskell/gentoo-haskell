@@ -20,7 +20,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/curl-1.3
 		=dev-haskell/filepath-1*
 		>=dev-haskell/hunit-1.2
-		=dev-haskell/network-2.1*
+		>=dev-haskell/network-2.1
 		=dev-haskell/parallel-1*
 		=dev-haskell/parsec-2*
 		>=dev-haskell/tagsoup-0.6"
