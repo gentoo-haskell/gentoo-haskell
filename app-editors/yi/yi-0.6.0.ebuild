@@ -40,4 +40,5 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		=dev-haskell/unix-compat-0.1*
 		>=dev-haskell/utf8-string-0.3.1
 		>=dev-haskell/vty-3.1.8
-		>=dev-haskell/alex-2.0.1"
+		>=dev-haskell/alex-2.0.1
+        =dev-haskell/ghc-paths-0.1*"
