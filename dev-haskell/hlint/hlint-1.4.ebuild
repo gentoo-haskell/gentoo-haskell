@@ -25,6 +25,9 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		emacs? ( virtual/emacs
 				 app-emacs/haskell-mode )"
 
+RDEPEND="emacs? ( virtual/emacs
+				  app-emacs/haskell-mode )"
+
 SITEFILE="60${PN}-gentoo.el"
 
 src_unpack() {
