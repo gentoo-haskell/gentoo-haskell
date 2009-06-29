@@ -20,3 +20,15 @@ DEPEND="=dev-lang/ghc-6.10*"
 RDEPEND="|| ( >=sys-apps/portage-2.1.6
               sys-apps/pkgcore
               sys-apps/paludis )"
+
+src_compile() {
+    CABAL_CONFIGURE_FLAGS="--bindir=/usr/sbin"
+
+    cabal_src_compile
+}
+
+src_install() {
+    cabal_src_install
+
+    dodoc TODO
+}
