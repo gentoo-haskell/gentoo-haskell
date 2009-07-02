@@ -292,7 +292,7 @@ haskell-cabal_pkg_setup() {
 	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
-		eerror "run ghc-updater or re-emerge dev-haskell/cabal."
+		eerror "run ghc-updater or haskell-updater or re-build dev-haskell/cabal."
 		die "cabal is not correctly installed"
 	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
