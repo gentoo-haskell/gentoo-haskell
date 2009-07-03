@@ -22,13 +22,13 @@ RDEPEND="|| ( >=sys-apps/portage-2.1.6
               sys-apps/paludis )"
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS="--bindir=/usr/sbin"
+	CABAL_CONFIGURE_FLAGS="--bindir=/usr/sbin"
 
-    cabal_src_compile
+	cabal_src_compile
 }
 
 src_install() {
-    cabal_src_install
+	cabal_src_install
 
-    dodoc TODO
+	dodoc TODO
 }
