@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-hdbc_PV=$(get_version_component_range 1-3)
+hdbc_PV=$(get_version_component_range 1-2)
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
