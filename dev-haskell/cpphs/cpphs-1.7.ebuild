@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
         dev-haskell/cabal"
 
 src_install() {
-    cabal_src_install
-    dohtml docs/index.html
-    doman docs/cpphs.1
+	cabal_src_install
+	dohtml docs/index.html
+	doman docs/cpphs.1
 }
