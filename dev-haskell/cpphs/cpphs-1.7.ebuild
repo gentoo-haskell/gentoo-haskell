@@ -16,6 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
         dev-haskell/cabal"
+RDEPEND=""
 
 src_install() {
 	cabal_src_install
