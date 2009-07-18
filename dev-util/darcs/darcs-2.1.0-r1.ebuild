@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
 
-inherit base autotools eutils
+inherit base autotools eutils ghc-package
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://darcs.net"
@@ -55,6 +55,14 @@ src_unpack() {
 	# On ia64 we need to tone down the level of inlining so we don't break some
 	# of the low level ghc/gcc interaction gubbins.
 	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
+
+	# the newer ghc - the more probability to get an error with -Werror
+	# (it is known to miscompile by ghc-6.10.3)
+	sed -i 's/-Werror//' "${S}/GNUmakefile"
+
+	#emulate: CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	base3_version="$($(ghc-getghcpkg) list --simple-output base-3\*)"
+	sed -i "s,^\\(GHCFLAGS.*\\) -package base,\\1 -package $base3_version," "${S}/configure.ac"
 
 	cd "${S}"
 	# Since we've patched the build system:
