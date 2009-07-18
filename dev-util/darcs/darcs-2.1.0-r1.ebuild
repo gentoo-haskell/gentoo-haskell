@@ -61,7 +61,7 @@ src_unpack() {
 	sed -i 's/-Werror//' "${S}/GNUmakefile"
 
 	#emulate: CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-	base3_version="$($(ghc-getghcpkg) list --simple-output base-3\*)"
+	base3_version="$($(ghc-getghcpkg) list --simple-output | tr " " "\n" | grep ^base-3)"
 	sed -i "s,^\\(GHCFLAGS.*\\) -package base,\\1 -package $base3_version," "${S}/configure.ac"
 
 	cd "${S}"
