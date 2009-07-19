@@ -292,7 +292,7 @@ cabal-is-dummy-lib() {
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
 	ghc-package_pkg_setup
-	if [[ -z "${CABAL_BOOTSTRAP}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
+	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
 		eerror "run ghc-updater or haskell-updater or re-build dev-haskell/cabal."
