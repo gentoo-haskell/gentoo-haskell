@@ -27,6 +27,8 @@
 #   bootstrap  --  only used for the cabal package itself
 #   bin        --  the package installs binaries
 #   lib        --  the package installs libraries
+#   nocabaldep --  only used for packages that _must_ use the version of
+#                   cabal bundled with GHC (e.g. haskell-updater).
 #
 # Dependencies on other cabal packages have to be specified
 # correctly.
@@ -46,16 +48,17 @@ inherit ghc-package multilib
 
 for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
-		haddock)   CABAL_USE_HADDOCK=yes;;
-		hscolour)  CABAL_USE_HSCOLOUR=yes;;
-		alex)      CABAL_USE_ALEX=yes;;
-		happy)     CABAL_USE_HAPPY=yes;;
-		c2hs)      CABAL_USE_C2HS=yes;;
-		cpphs)     CABAL_USE_CPPHS=yes;;
-		profile)   CABAL_USE_PROFILE=yes;;
-		bootstrap) CABAL_BOOTSTRAP=yes;;
-		bin)       CABAL_HAS_BINARIES=yes;;
-		lib)       CABAL_HAS_LIBRARIES=yes;;
+		haddock)    CABAL_USE_HADDOCK=yes;;
+		hscolour)   CABAL_USE_HSCOLOUR=yes;;
+		alex)       CABAL_USE_ALEX=yes;;
+		happy)      CABAL_USE_HAPPY=yes;;
+		c2hs)       CABAL_USE_C2HS=yes;;
+		cpphs)      CABAL_USE_CPPHS=yes;;
+		profile)    CABAL_USE_PROFILE=yes;;
+		bootstrap)  CABAL_BOOTSTRAP=yes;;
+		bin)        CABAL_HAS_BINARIES=yes;;
+		lib)        CABAL_HAS_LIBRARIES=yes;;
+		nocabaldep) CABAL_FROM_GHC=yes;;
 		*) CABAL_UNKNOWN="${CABAL_UNKNOWN} ${feature}";;
 	esac
 done
@@ -99,7 +102,7 @@ fi
 if [[ -z ${CABAL_MIN_VERSION} ]]; then
 	CABAL_MIN_VERSION=1.1.4
 fi
-if [[ -z "${CABAL_BOOTSTRAP}" ]]; then
+if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]]; then
 	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
 fi
 
