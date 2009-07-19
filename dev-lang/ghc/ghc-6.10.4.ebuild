@@ -40,8 +40,8 @@ EXTRA_SRC_URI="${PV}"
 
 arch_binaries=""
 
-arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
-arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 
 #arch_binaries="$arch_binaries alpha?   ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
@@ -50,8 +50,8 @@ arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
-	!ghcbootstrap? ( $arch_binaries )"
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
+#	!ghcbootstrap? ( $arch_binaries )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -72,7 +72,8 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND="app-admin/haskell-updater"
+PDEPEND="
+    !ghcbootstrap? ( =app-admin/haskell-updater-0.9* )"
 
 append-ghc-cflags() {
 	local flag compile assemble link
