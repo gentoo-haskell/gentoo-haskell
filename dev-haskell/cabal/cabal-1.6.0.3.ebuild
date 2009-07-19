@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-CABAL_CORE_LIB_GHC_PV="6.10.2 6.10.3"
+CABAL_CORE_LIB_GHC_PV="6.10.2 6.10.3 6.10.4"
 
 src_unpack() {
 	unpack ${A}
