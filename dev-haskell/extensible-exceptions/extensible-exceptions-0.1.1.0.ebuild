@@ -16,4 +16,4 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10"
 
-CABAL_CORE_LIB_GHC_PV="6.10.3"
+CABAL_CORE_LIB_GHC_PV="6.10.3 6.10.4"
