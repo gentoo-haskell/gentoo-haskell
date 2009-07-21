@@ -17,9 +17,12 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parsec"
 
+PATCHES=("
+		${FILESDIR}/${P}-*
+")
+
 src_unpack() {
 	base_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}/${P}-eat-configure-opts.patch"
 	eautoreconf
 }
