@@ -5,7 +5,7 @@
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="GraphViz wrapper for Haskell."
+DESCRIPTION="GraphViz bindings for Haskell."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/graphviz"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
