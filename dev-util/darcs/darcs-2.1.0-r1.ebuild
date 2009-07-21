@@ -61,8 +61,9 @@ src_unpack() {
 	sed -i 's/-Werror//' "${S}/GNUmakefile"
 
 	#emulate: CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-	base3_version="$($(ghc-getghcpkg) list --simple-output | tr " " "\n" | grep ^base-3)"
-	sed -i "s,^\\(GHCFLAGS.*\\) -package base,\\1 -package $base3_version," "${S}/configure.ac"
+	# ghc-6.4: base-1; ghc-6.6.1: base-2; ghc-6.8: base-3; ghc-6.10: base-3, base-4
+	base_version="$($(ghc-getghcpkg) list --simple-output | tr " " "\n" | egrep '^base-[1-3]')"
+	sed -i "s,^\\(GHCFLAGS.*\\) -package base,\\1 -package $base_version," "${S}/configure.ac"
 
 	cd "${S}"
 	# Since we've patched the build system:
