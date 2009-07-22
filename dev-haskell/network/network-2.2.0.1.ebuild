@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal autotools
 
 DESCRIPTION="Networking-related facilities"
 HOMEPAGE="http://haskell.org/ghc/"
@@ -17,3 +17,13 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/parsec"
+
+PATCHES=("
+		${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch
+")
+
+src_unpack() {
+        base_src_unpack
+        cd "${S}"
+        eautoreconf
+}
