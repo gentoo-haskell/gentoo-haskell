@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		 dev-haskell/parsec"
+		dev-haskell/parsec"
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
