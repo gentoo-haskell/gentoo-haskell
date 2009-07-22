@@ -23,7 +23,7 @@ PATCHES=("
 ")
 
 src_unpack() {
-        base_src_unpack
-        cd "${S}"
-        eautoreconf
+	base_src_unpack
+	cd "${S}"
+	eautoreconf
 }

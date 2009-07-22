@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal autotools
 
 DESCRIPTION="Networking-related facilities"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/network"
@@ -19,3 +19,13 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("
+		${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch
+")
+
+src_unpack() {
+	base_src_unpack
+	cd "${S}"
+	eautoreconf
+}
