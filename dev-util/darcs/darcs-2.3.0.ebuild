@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit haskell-cabal eutils bash-completion
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
