@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal eutils bash-completion
+inherit haskell-cabal eutils # bash-completion
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
@@ -54,7 +54,8 @@ src_unpack() {
     unpack ${A}
 
     cd "${S}/tools"
-    epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+    # bashcomp doesn't work at the moment
+    # epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
     # On ia64 we need to tone down the level of inlining so we don't break some
     # of the low level ghc/gcc interaction gubbins.
