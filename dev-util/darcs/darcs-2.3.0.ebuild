@@ -33,9 +33,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
                 >=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
 
 RDEPEND=">=net-misc/curl-7.19.1
-    virtual/mta
-    dev-libs/gmp"
-
+	virtual/mta
+	dev-libs/gmp
+	sys-libs/ncurses
+	sys-libs/zlib"
 
 pkg_setup() {
 	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
