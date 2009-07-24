@@ -42,55 +42,55 @@ RDEPEND="net-misc/curl
 
 
 pkg_setup() {
-    if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
-        eerror "Building darcs with USE=\"doc\" requires that"
-        eerror "dev-tex/latex2html is built with at least one of"
-        eerror "USE=\"png\" and USE=\"gif\"."
-        die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
-    fi
+	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
+		eerror "Building darcs with USE=\"doc\" requires that"
+		eerror "dev-tex/latex2html is built with at least one of"
+		eerror "USE=\"png\" and USE=\"gif\"."
+		die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
+	fi
 }
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 
-    cd "${S}/tools"
-    # bashcomp doesn't work at the moment
-    # epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	cd "${S}/tools"
+	# bashcomp doesn't work at the moment
+	# epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
-    # On ia64 we need to tone down the level of inlining so we don't break some
-    # of the low level ghc/gcc interaction gubbins.
-    use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
+	# On ia64 we need to tone down the level of inlining so we don't break some
+	# of the low level ghc/gcc interaction gubbins.
+	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 }
 
 src_compile() {
-    # don't use the haskell zlib package
-    # with it, I keep getting this:
-    #   darcs failed:  Codec.Compression.Zlib: incorrect data check
-    CABAL_CONFIGURE_FLAGS="--flags=-zlib"
-    
-    # Use curl for net stuff to avoid dep problems with HTTP
-    CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl --flags=-http"
+	# don't use the haskell zlib package
+	# with it, I keep getting this:
+	#   darcs failed:  Codec.Compression.Zlib: incorrect data check
+	CABAL_CONFIGURE_FLAGS="--flags=-zlib"
 
-    # No default specified, so set it just in case; external bytestring is OK
-    CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=bytestring"
+	# Use curl for net stuff to avoid dep problems with HTTP
+	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl --flags=-http"
 
-    # This will be mandatory soon anyway, so set it.
-    CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=utf8-string"
-    cabal_src_compile
+	# No default specified, so set it just in case; external bytestring is OK
+	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=bytestring"
+
+	# This will be mandatory soon anyway, so set it.
+	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=utf8-string"
+	cabal_src_compile
 }
 
 src_install() {
-    cabal_src_install
-    dobashcompletion "${S}/tools/darcs_completion" "${PN}"
+	cabal_src_install
+	dobashcompletion "${S}/tools/darcs_completion" "${PN}"
 }
 
 pkg_postinst() {
-    ghc-package_pkg_postinst
-    bash-completion_pkg_postinst
+	ghc-package_pkg_postinst
+	bash-completion_pkg_postinst
 
-    ewarn "NOTE: in order for the darcs send command to work properly,"
-    ewarn "you must properly configure your mail transport agent to relay"
-    ewarn "outgoing mail.  For example, if you are using ssmtp, please edit"
-    ewarn "/etc/ssmtp/ssmtp.conf with appropriate values for your site."
+	ewarn "NOTE: in order for the darcs send command to work properly,"
+	ewarn "you must properly configure your mail transport agent to relay"
+	ewarn "outgoing mail.  For example, if you are using ssmtp, please edit"
+	ewarn "/etc/ssmtp/ssmtp.conf with appropriate values for your site."
 }
 
