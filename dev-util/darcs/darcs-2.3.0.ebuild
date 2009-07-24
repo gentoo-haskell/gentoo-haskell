@@ -15,28 +15,24 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		<dev-haskell/bytestring-0.10
 		>=dev-haskell/cabal-1.6
+		=dev-haskell/bytestring-0.9*
 		=dev-haskell/filepath-1.1*
 		<dev-haskell/hashed-storage-0.4
-		>=dev-haskell/haskeline-0.6.1
 		<dev-haskell/haskeline-0.7
 		=dev-haskell/html-1.0*
-		>=dev-haskell/http-3000.0
-		<dev-haskell/http-4000.1
 		>=dev-haskell/mmap-0.2
-		>=dev-haskell/mtl-1.0
 		<dev-haskell/mtl-1.2
-		=dev-haskell/network-2.2*
-		>=dev-haskell/parsec-2.1
-		=dev-haskell/regex-compat-0.71*
+		dev-haskell/parsec
+		>=dev-haskell/zlib-0.5.1
+		|| ( =dev-haskell/regex-compat-0.7* =dev-haskell/regex-compat-0.9* )
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/utf8-string-0.3*
-		net-misc/curl
+		>=net-misc/curl-7.19.1
         doc?  ( virtual/latex-base
                 >=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
 
-RDEPEND="net-misc/curl
+RDEPEND=">=net-misc/curl-7.19.1
     virtual/mta
     dev-libs/gmp"
 
@@ -63,19 +59,28 @@ src_unpack() {
 }
 
 src_compile() {
+	# try to use haskell zlib for this ebuild. for version 2.2.1 there was no
+	# success. see commented code below.
+	CABAL_CONFIGURE_FLAGS="--flags=zlib"
 	# don't use the haskell zlib package
 	# with it, I keep getting this:
 	#   darcs failed:  Codec.Compression.Zlib: incorrect data check
-	CABAL_CONFIGURE_FLAGS="--flags=-zlib"
+	#CABAL_CONFIGURE_FLAGS="--flags=-zlib"
 
-	# Use curl for net stuff to avoid dep problems with HTTP
+	# Use curl for net stuff to avoid strict version dep on HTTP and network
 	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl --flags=-http"
+
+	# Enable curl pipelining
+	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl-pipelining"
 
 	# No default specified, so set it just in case; external bytestring is OK
 	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=bytestring"
 
 	# This will be mandatory soon anyway, so set it.
 	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=utf8-string"
+
+	# Enable color, terminfo, mmap
+	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=color --flags=terminfo --flags=mmap"
 	cabal_src_compile
 }
 
