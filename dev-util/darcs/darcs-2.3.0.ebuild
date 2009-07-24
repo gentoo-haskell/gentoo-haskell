@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal eutils # bash-completion
+inherit haskell-cabal eutils bash-completion
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
@@ -49,9 +49,8 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-	cd "${S}/tools"
-	# bashcomp doesn't work at the moment
-	# epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	cd "${S}/contrib"
+	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
 	# On ia64 we need to tone down the level of inlining so we don't break some
 	# of the low level ghc/gcc interaction gubbins.
@@ -86,7 +85,7 @@ src_compile() {
 
 src_install() {
 	cabal_src_install
-	dobashcompletion "${S}/tools/darcs_completion" "${PN}"
+	dobashcompletion "${S}/contrib/darcs_completion" "${PN}"
 }
 
 pkg_postinst() {
