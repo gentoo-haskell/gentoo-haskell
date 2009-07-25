@@ -34,11 +34,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 
 # darcs also has a library version; we thus need $DEPEND
 RDEPEND="${DEPEND}
-		>=net-misc/curl-7.19.1
-		virtual/mta
-		dev-libs/gmp
-		sys-libs/ncurses
-		sys-libs/zlib"
+		virtual/mta"
 
 pkg_setup() {
 	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
