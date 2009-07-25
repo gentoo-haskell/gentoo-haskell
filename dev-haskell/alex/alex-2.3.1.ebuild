@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/alex-2.3.1.ebuild,v 1.4 2009/05/21 00:09:33 tcunha Exp $
 
 CABAL_FEATURES="bin"
 inherit autotools haskell-cabal
@@ -11,7 +11,8 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ia64 ~ppc sparc x86"
+# has worked with ppc64 too, but no ghc availably at the moment
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1

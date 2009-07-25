@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/alex-2.0.1-r1.ebuild,v 1.12 2006/10/05 03:47:46 cparrott Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/alex-2.1.0.ebuild,v 1.11 2008/01/26 20:24:10 dcoutts Exp $
 
 CABAL_FEATURES="bin"
 inherit autotools haskell-cabal
