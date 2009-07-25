@@ -21,3 +21,5 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${P}-*")
