@@ -28,7 +28,8 @@ DEPEND=">=net-misc/curl-7.10.2
 	dev-haskell/network
 	dev-haskell/filepath
 	doc?  ( virtual/latex-base
-		>=dev-tex/latex2html-2002.2.1_pre20041025-r1 )"
+		>=dev-tex/latex2html-2002.2.1_pre20041025-r1
+		>=dev-haskell/haddock-2.4.1 )"
 
 RDEPEND=">=net-misc/curl-7.10.2
 	virtual/mta
