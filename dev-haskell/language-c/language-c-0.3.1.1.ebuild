@@ -14,9 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/bytestring-0.9.0
-		>=dev-haskell/cabal-1.2.3
+RDEPEND=">=dev-lang/ghc-6.6.1
+		dev-haskell/filepath"
+DEPEND="${RDEPEND}
 		dev-haskell/happy
 		dev-haskell/alex
-		dev-haskell/filepath"
+		>=dev-haskell/cabal-1.2.3"
