@@ -17,14 +17,27 @@ IUSE="doc"
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/filepath
-		>=dev-haskell/language-c-0.3.1.1"
+		>=dev-haskell/language-c-0.3.1.1
+		doc? (  ~app-text/docbook-xml-dtd-4.2
+				app-text/docbook-xsl-stylesheets
+				>=dev-libs/libxslt-1.1.2 )"
+RDEPEND="dev-libs/gmp"
+
+
+src_compile() {
+	cabal_src_compile
+
+	if use doc; then
+		emake -C doc
+	fi
+}
 
 src_install() {
 	cabal_src_install
 
+	doman "${S}/doc/man1/c2hs.1"
+
 	if use doc; then
-		doman "${S}/doc/man1/c2hs.1"
-		# docs seems to be broken
-		# dohtml "${S}/doc/users_guide/"*
+		dohtml "${S}/doc/users_guide/"*
 	fi
 }
