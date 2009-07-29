@@ -2,6 +2,7 @@ app-admin
 app-editors 
 app-portage 
 app-shells 
+app-text
 app-vim 
 dev-haskell 
 dev-lang 
