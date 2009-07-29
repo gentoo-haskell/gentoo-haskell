@@ -18,7 +18,8 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/xhtml
 		dev-haskell/mtl
 		dev-haskell/regex-compat
-		dev-haskell/network"
+		dev-haskell/network
+		!dev-haskell/pandoc"
 
 src_unpack() {
 	unpack "${A}"
