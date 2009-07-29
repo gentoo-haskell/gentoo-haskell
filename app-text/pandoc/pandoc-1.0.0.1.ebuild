@@ -25,8 +25,7 @@ DEPEND=">=dev-lang/ghc-6.8
 		>=dev-haskell/xhtml-3000.0
 		>=dev-haskell/zip-archive-0.1.1
 		highlight? ( >=dev-haskell/highlighting-kate-0.2.3 )
-		citeproc? ( dev-haskell/citeproc-hs )
-		!dev-haskell/pandoc"
+		citeproc? ( dev-haskell/citeproc-hs )"
 
 RDEPEND="${DEPEND}
 		 pdf? ( virtual/latex-base )

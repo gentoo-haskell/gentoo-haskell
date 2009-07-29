@@ -20,5 +20,4 @@ DEPEND=">=dev-lang/ghc-6.4.2
 		dev-haskell/mtl
 		dev-haskell/regex-compat
 		dev-haskell/network
-		dev-haskell/parsec
-		!dev-haskell/pandoc"
+		dev-haskell/parsec"
