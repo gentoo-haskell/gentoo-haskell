@@ -27,7 +27,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/http
 		dev-haskell/mtl
 		>=dev-haskell/network-2.1.0.0
-		>=dev-haskell/pandoc-1.1
+		>=app-text/pandoc-1.1
 		<dev-haskell/parsec-3
 		>=dev-haskell/recaptcha-0.1
 		>dev-haskell/sha-1

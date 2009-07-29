@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/bytestring-0.9
 		>=dev-haskell/cabal-1.2
 		dev-haskell/fgl
-		>=dev-haskell/pandoc-0.46
+		>=app-text/pandoc-0.46
 		dev-haskell/parallel
 		>=dev-haskell/parsec-2
 		dev-haskell/quickcheck

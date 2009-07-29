@@ -23,7 +23,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/missingh
 		>=dev-haskell/mps-2008.10.15
 		dev-haskell/network
-		>=dev-haskell/pandoc-0.46
+		>=app-text/pandoc-0.46
 		>=dev-haskell/parsec-2
 		>=dev-haskell/parsedate-3000.0.0
 		>=dev-haskell/rss-3000.0.1
