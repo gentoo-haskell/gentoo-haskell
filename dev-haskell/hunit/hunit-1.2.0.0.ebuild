@@ -21,6 +21,12 @@ DEPEND=">=dev-lang/ghc-6.4"
 
 S="${WORKDIR}/${MY_P}"
 
+src_unpack() {
+	base_src_unpack
+
+	sed -e 's/base/base<4/' -i "${S}/${MY_PN}.cabal"
+}
+
 src_install () {
 	cabal_src_install
 	if use doc; then
