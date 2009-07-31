@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,10 +9,11 @@ inherit haskell-cabal eutils
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+IUSE=""
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="amd64 ~hppa ~sparc ~x86"
 
 DEPEND="dev-haskell/mtl
 	>=dev-haskell/x11-1.4.1
