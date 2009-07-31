@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Rebuild Haskell dependencies in Gentoo"
 HOMEPAGE="http://haskell.org/haskellwiki/Gentoo#haskell-updater"
-SRC_URI="http://code.haskell.org/~ivanm/${P}.tar.gz"
+SRC_URI="http://code.haskell.org/~kolmodin/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
