@@ -19,7 +19,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		>=dev-haskell/x11-1.4.3
 		unicode? ( dev-haskell/utf8-string )
-		xft? ( dev-haskell/utf8-string
+		xft? ( >=dev-haskell/utf8-string-0.2
 			   >=dev-haskell/x11-xft-0.2 )
 		~x11-wm/xmonad-${PV}"
 
