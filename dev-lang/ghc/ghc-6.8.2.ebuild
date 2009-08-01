@@ -58,7 +58,7 @@ RDEPEND="
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-4.1
-	>=sys-libs/readline-5"
+	=sys-libs/readline-5*"
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
@@ -214,7 +214,7 @@ src_compile() {
 
 		# GHC build system knows to build unregisterised on alpha and hppa,
 		# but we have to tell it to build unregisterised on some arches
-		if use alpha || use hppa || use ppc64 || use sparc; then
+		if use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
