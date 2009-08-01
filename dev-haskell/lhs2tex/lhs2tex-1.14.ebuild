@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 CABAL_FEATURES="bin"
-CABAL_MIN_VERSION=1.2
+CABAL_MIN_VERSION=1.6
 CABAL_CONFIGURE_FLAGS="--datasubdir=${P} --constraint=base<4"
 inherit eutils haskell-cabal
 
