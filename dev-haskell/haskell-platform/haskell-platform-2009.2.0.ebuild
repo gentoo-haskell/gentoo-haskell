@@ -11,6 +11,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# for slot dependencies
+EAPI=1
+
 # use gnome style of meta packages;
 # minimum version, open range
 

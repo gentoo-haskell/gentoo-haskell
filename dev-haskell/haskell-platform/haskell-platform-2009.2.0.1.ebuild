@@ -11,6 +11,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# for slot dependencies
+EAPI=1
+
 # use gnome style of meta packages;
 # minimum version, open range
 
@@ -48,8 +51,8 @@ DEPEND="~dev-lang/ghc-6.10.3
 		>=dev-haskell/cabal-install-0.6.2
 		>=dev-haskell/haddock-2.4.2
 
-		=dev-haskell/regex-base-0.72.0.2
-		=dev-haskell/regex-compat-0.71.0.1
-		=dev-haskell/regex-posix-0.72.0.3"
+		~dev-haskell/regex-base-0.72.0.2
+		~dev-haskell/regex-compat-0.71.0.1
+		~dev-haskell/regex-posix-0.72.0.3"
 
 RDEPEND="${DEPEND}"
