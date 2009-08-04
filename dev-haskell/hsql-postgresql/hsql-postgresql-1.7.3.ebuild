@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal versionator
+inherit base haskell-cabal versionator
 
 DESCRIPTION="A Haskell Interface to PostgreSQL via the PQ library."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hsql-postgresql"
@@ -18,3 +18,5 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		>=dev-haskell/hsql-$(get_version_component_range 1-2 ${PV})
 		>virtual/postgresql-base-7"
+
+PATCHES=( "${FILESDIR}/${P}-ghc68.patch" )
