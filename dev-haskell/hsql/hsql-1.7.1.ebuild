@@ -16,3 +16,14 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6"
+
+pkg_postinst () {
+	ghc-package_pkg_postinst
+
+	elog "You will probably want to emerge one or more HSQL backend."
+	elog "These backends are available:"
+	elog "		hsql-postgresql"
+	elog "		hsql-mysql"
+	elog "		hsql-sqlite"
+	elog "		hsql-odbc"
+}
