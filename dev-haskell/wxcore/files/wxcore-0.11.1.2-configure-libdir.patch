@@ -1,0 +1,19 @@
+By setting the value to ${libdir} right away we don't have to do any sed
+magic later, as the makefile otherwise would have done. This is a good
+thing, as we don't use the makefile to do our registering. The value would
+have been set to $(LIBDIR) anyway, which is exactly the same as ${libdir}.
+
+diff -rN -u old-wxcore-0.11.1.2/configure new-wxcore-0.11.1.2/configure
+--- old-wxcore-0.11.1.2/configure	2009-08-07 16:24:16.000000000 +0200
++++ new-wxcore-0.11.1.2/configure	2009-08-07 16:24:16.000000000 +0200
+@@ -1076,8 +1076,8 @@
+ EOF
+ tr -d \\r < config/wxcore-partial.pkg > config/wxcore.pkg
+ cp -f config/wxcore.pkg config/wxcore-partial.pkg
+-echo "import-dirs:\${wxhlibdir}/imports" >> config/wxcore.pkg
+-echo "library-dirs:\${wxhlibdir}"	 >> config/wxcore.pkg
++echo "import-dirs:${libdir}/imports" >> config/wxcore.pkg
++echo "library-dirs:${libdir}"	 >> config/wxcore.pkg
+ 
+ 
+ echo " config/wx.pkg"

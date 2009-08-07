@@ -1,3 +1,8 @@
+ * Enable alternative argument to set the ghc compiler. This is how cabal
+   passes down the flag to the ./configure script.
+ * Gentoo has the documentation in another path than the ones the
+   ./configure script searches in.
+
 diff -rN -u old-wxcore-0.11.1.2/configure new-wxcore-0.11.1.2/configure
 --- old-wxcore-0.11.1.2/configure	2009-05-13 23:05:49.000000000 +0200
 +++ new-wxcore-0.11.1.2/configure	2009-05-13 23:05:50.000000000 +0200
