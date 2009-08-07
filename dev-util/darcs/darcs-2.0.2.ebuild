@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-1.0.5.ebuild,v 1.3 2006/01/11 05:36:18 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/darcs/darcs-2.0.2.ebuild,v 1.7 2008/10/18 18:05:50 nixnut Exp $
 
-inherit base autotools eutils
+inherit base autotools eutils ghc-package
 
 DESCRIPTION="David's Advanced Revision Control System is yet another replacement for CVS"
 HOMEPAGE="http://darcs.net"
@@ -12,7 +12,7 @@ SRC_URI="http://darcs.net/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ppc sparc x86"
 IUSE="doc"
 
 DEPEND=">=net-misc/curl-7.10.2
@@ -20,7 +20,6 @@ DEPEND=">=net-misc/curl-7.10.2
 	=dev-haskell/quickcheck-1*
 	dev-haskell/mtl
 	dev-haskell/html
-	dev-haskell/http
 	dev-haskell/parsec
 	dev-haskell/regex-compat
 	sys-apps/diffutils
@@ -45,6 +44,7 @@ pkg_setup() {
 src_unpack() {
 	base_src_unpack
 
+	epatch "${FILESDIR}/${PN}-2.0.2-add-dummy-base-dependency.diff"
 	cd "${S}/tools"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
@@ -52,7 +52,16 @@ src_unpack() {
 	# of the low level ghc/gcc interaction gubbins.
 	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
 
+	sed -i 's/-Werror//' "${S}/GNUmakefile"
+
+	#emulate: CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	# ghc-6.4: base-1; ghc-6.6.1: base-2; ghc-6.8: base-3; ghc-6.10: base-3, base-4
+	base_version="$($(ghc-getghcpkg) list --simple-output | tr " " "\n" | egrep '^base-[1-3]')"
+	sed -i "s@, base ,@, $base_version ,@" "${S}/aclocal.m4"
+	sed -i "s@-package base @-package $base_version @" "${S}/autoconf.mk.in"
+
 	cd "${S}"
+	sed -i 's/-Werror//' "${S}/aclocal.m4"
 	# Since we've patched the build system:
 	eautoreconf
 }
