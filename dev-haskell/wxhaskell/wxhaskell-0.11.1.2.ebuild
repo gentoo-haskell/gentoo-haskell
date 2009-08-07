@@ -22,4 +22,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/stm
 		>=dev-haskell/wxcore-0.10.4"
 
-S="${WORKDIR}/${MY_PN}"
+S="${WORKDIR}/${MY_P}"
