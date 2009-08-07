@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal eutils
+inherit base haskell-cabal eutils
 
 DESCRIPTION="wxHaskell core"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -19,21 +19,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/parsec
 		dev-haskell/stm
-		dev-haskell/time"
+		dev-haskell/time
+		>=x11-libs/wxGTK-2.6"
 
-src_unpack() {
-	unpack ${A}
-
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-configure.patch"
-}
-
-# explicitly specify to use cabal in src_compile and src_install or the
-# makefiles will override by default
-src_compile() {
-	haskell-cabal_src_compile || die "compile phase failed"
-}
-
-src_install() {
-	haskell-cabal_src_install || die "installation phase failed"
-}
+PATCHES=( "${FILESDIR}/${P}-configure.patch" )
