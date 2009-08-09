@@ -1,4 +1,4 @@
- * Enable alternative argument to set the ghc compiler. This is how cabal
+ * Enable alternative argument to set the ghc-pkg. This is how cabal
    passes down the flag to the ./configure script.
  * Gentoo has the documentation in another path than the ones the
    ./configure script searches in.
