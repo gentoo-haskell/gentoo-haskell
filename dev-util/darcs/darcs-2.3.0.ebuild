@@ -51,9 +51,14 @@ src_unpack() {
 	cd "${S}/contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
-	# On ia64 we need to tone down the level of inlining so we don't break some
-	# of the low level ghc/gcc interaction gubbins.
-	use ia64 && sed -i 's/-funfolding-use-threshold20//' "${S}/GNUmakefile"
+	# We don't have threaded ghc builds at least for those platforms,
+	# so it won't just work.
+	# Beware: http://www.haskell.org/ghc/docs/latest/html/users_guide/options-phases.html#options-linker
+	# contains: 'The ability to make a foreign call that does not block all other Haskell threads.'
+	# It might have interactivity impact.
+	if use alpha || use hppa || use ppc64 ; then
+		sed -i 's/-threaded//g' "${S}/darcs.cabal" || die "Unable to sed -threaded out."
+	fi
 }
 
 src_compile() {
