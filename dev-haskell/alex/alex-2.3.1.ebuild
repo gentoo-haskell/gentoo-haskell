@@ -11,8 +11,8 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ~ppc sparc x86"
-# has worked with ppc64 too, but no ghc availably at the moment
+KEYWORDS="amd64 ~ia64 ~ppc ~ppc64 sparc x86"
+
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
