@@ -31,7 +31,7 @@ IUSE="doc"
 # haddock, which requires ghc-paths, which pulls in haddock...
 # bundling ghc-paths forces us to depend on >=cabal-1.6 rather than >=cabal-1.2
 
-RDEPEND=">=dev-lang/ghc-6.8.2"
+RDEPEND=">=dev-lang/ghc-6.8.2" # supports up to early ghc 6.10.x versions
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		doc? (  ~app-text/docbook-xml-dtd-4.2
