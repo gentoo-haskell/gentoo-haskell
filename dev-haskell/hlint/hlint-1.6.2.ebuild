@@ -32,29 +32,27 @@ RDEPEND="emacs? ( virtual/emacs
 SITEFILE="60${PN}-gentoo.el"
 
 src_compile() {
-    cabal_src_compile
+	cabal_src_compile
 
-    use emacs && elisp-compile data/hs-lint.el
+	use emacs && elisp-compile data/hs-lint.el
 }
 
 src_install() {
-    cabal_src_install
+	cabal_src_install
 
-    if use emacs; then
-        elisp-install ${PN} data/*.el data/*.elc || die "elisp-install failed."
-        elisp-site-file-install "${FILESDIR}/${SITEFILE}"
-    fi
+	if use emacs; then
+		elisp-install ${PN} data/*.el data/*.elc || die "elisp-install failed."
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+	fi
 
-    dodoc hlint.htm
+	dodoc hlint.htm
 }
 
 pkg_postinst() {
-    ghc-package_pkt_postinst
-    use emacs && elisp-site-regen
+	ghc-package_pkt_postinst
+	use emacs && elisp-site-regen
 }
 
 pkg_postrm() {
-    use emacs && elisp-site-regen
+	use emacs && elisp-site-regen
 }
-
-
