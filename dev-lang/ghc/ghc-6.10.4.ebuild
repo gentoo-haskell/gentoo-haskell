@@ -65,7 +65,9 @@ RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-4.1"
+	>=dev-libs/gmp-4.1
+	!<dev-haskell/haddock-2.4.2"
+# earlier versions than 2.4.2 of haddock only works with older ghc releases
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
