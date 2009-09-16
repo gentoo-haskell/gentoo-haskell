@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/haskell-updater/haskell-updater-0.9.1.0.ebuild,v 1.2 2009/09/16 06:56:21 kolmodin Exp $
 
 CABAL_FEATURES="bin nocabaldep"
 inherit haskell-cabal
@@ -18,8 +18,8 @@ DEPEND="=dev-lang/ghc-6.10*"
 
 # Need a lower version for portage to get --keep-going
 RDEPEND="|| ( >=sys-apps/portage-2.1.6
-              sys-apps/pkgcore
-              sys-apps/paludis )"
+			  sys-apps/pkgcore
+			  sys-apps/paludis )"
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--bindir=/usr/sbin"
