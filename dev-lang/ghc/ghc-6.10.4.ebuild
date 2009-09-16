@@ -76,8 +76,7 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND="
-    !ghcbootstrap? ( =app-admin/haskell-updater-0.9* )"
+PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-0.9* )"
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -189,10 +188,10 @@ src_unpack() {
 
 		# Highly useful when you need to pass your HC opts to bootstrap libs
 		# Currently it is needed for ppc64 to build with broken compiler
-		epatch ${FILESDIR}/ghc-6.10.4-propagate-hc-options-to-all-libraries.patch
+		epatch "${FILESDIR}/ghc-6.10.4-propagate-hc-options-to-all-libraries.patch"
 
 		# see ghc_setup_cflags()
-		use ppc64 && epatch ${FILESDIR}/ghc-6.10.4-ppc64-always-minimal-toc.patch
+		use ppc64 && epatch "${FILESDIR}/ghc-6.10.4-ppc64-always-minimal-toc.patch"
 
 		# as we have changed the build system with the readline patch
 		eautoreconf
