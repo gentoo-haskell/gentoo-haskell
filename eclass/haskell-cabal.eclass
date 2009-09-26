@@ -119,6 +119,16 @@ cabal-version() {
 			# We're bootstrapping cabal, so the cabal version is the version
 			# of this package itself.
 			_CABAL_VERSION_CACHE="${PV}"
+		elif [[ "${CABAL_FROM_GHC}" ]]; then
+			# We can't assume there's a version of Cabal installed by ebuild as
+			# this might be a first time install of GHC (for packages that
+			# use the shipped Cabal like haskell-updater).
+
+			# GHC should have come with its own Cabal...
+			_CABAL_VERSION_CACHE="$(ghc-pkg field Cabal version)"
+
+			# Strip out the "version: " prefix
+			_CABAL_VERSION_CACHE="${_CABAL_VERSION_CACHE#"version: "}"
 		else
 			# We ask portage, not ghc, so that we only pick up
 			# portage-installed cabal versions.
