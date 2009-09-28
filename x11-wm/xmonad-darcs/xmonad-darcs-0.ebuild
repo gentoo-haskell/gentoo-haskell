@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="bin lib profile haddock"
+CABAL_FEATURES="bin lib profile haddock hscolour"
 
 DESCRIPTION="A lightweight X11 window manager"
 HOMEPAGE="http://www.xmonad.org/"

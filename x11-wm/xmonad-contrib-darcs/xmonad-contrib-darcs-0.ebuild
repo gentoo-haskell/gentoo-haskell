@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-CABAL_FEATURES="lib profile haddock"
+CABAL_FEATURES="lib profile haddock hscolour"
 
 inherit haskell-cabal darcs
 
