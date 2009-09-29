@@ -24,7 +24,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/fgl-5.4.2.2
 		dev-haskell/filepath
 		=dev-haskell/graphviz-2999.6*
-		dev-haskell/pandoc
+		app-text/pandoc
 		dev-haskell/time"
 
 S="${WORKDIR}/${MY_P}"
