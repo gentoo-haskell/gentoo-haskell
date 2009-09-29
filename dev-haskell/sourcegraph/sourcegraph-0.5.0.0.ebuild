@@ -12,7 +12,7 @@ DESCRIPTION="Use graph-theory to analyse your code"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SourceGraph"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
