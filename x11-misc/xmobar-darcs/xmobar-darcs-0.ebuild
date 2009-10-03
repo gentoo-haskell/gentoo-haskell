@@ -23,6 +23,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 	>=dev-haskell/filepath-1.0
 	dev-haskell/parsec
 	dev-haskell/stm
+	dev-haskell/action-permutations
 	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )
@@ -30,18 +31,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 	!x11-misc/xmobar"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	darcs_src_unpack
-
-	# Cannot use -fasm on arches without a native code gen!
-	# Don't need -Wall.
-	# Portage does striping, package must not do it themselves.
-	sed -i -e 's/-O2 -fasm -Wall -optl-Wl,-s//' "${S}/xmobar.cabal"
-}
-
 src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-
 	if use xft; then
 		CABAL_CONFIGURE_FLAGS="--flags=with_xft"
 	else
