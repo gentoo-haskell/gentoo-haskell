@@ -22,7 +22,6 @@ DEPEND="|| ( =dev-lang/ghc-6.8*
 				dev-haskell/syb
 			) )
 		>=dev-haskell/cabal-1.2
-		dev-haskell/syb
         x11-libs/libX11
         xinerama? ( x11-libs/libXinerama )"
 
