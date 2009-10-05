@@ -16,6 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
+		dev-haskell/bytestring
 		>=dev-haskell/extensible-exceptions-0.1.1.0
 		=dev-haskell/filepath-1.1*
 		=dev-haskell/mtl-1.1*
