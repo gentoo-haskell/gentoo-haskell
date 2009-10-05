@@ -1,3 +1,1 @@
-# Ivan Miljenovic <Ivan.Miljenovic@gmail.com> (2 July 2009)
-# Mask version for testing of haskell-updater dependency.
->=dev-lang/ghc-6.10.3-r1
+
