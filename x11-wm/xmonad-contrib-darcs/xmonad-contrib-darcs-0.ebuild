@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 
 inherit haskell-cabal darcs
 
-DESCRIPTION="Third party extentions for xmonad"
+DESCRIPTION="Third party extensions for xmonad"
 HOMEPAGE="http://www.xmonad.org/"
 EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
 
