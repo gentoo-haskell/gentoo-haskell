@@ -17,7 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="xinerama"
 
-DEPEND=">=dev-lang/ghc-6.6.1
+DEPEND="|| ( =dev-lang/ghc-6.8*
+			( >=dev-lang/ghc-6.10.1
+				dev-haskell/syb
+			) )
 		>=dev-haskell/cabal-1.2
 		dev-haskell/syb
         x11-libs/libX11
