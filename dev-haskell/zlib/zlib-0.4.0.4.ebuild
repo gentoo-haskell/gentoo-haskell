@@ -20,4 +20,5 @@ IUSE=""
 # 2) in zlib.cabal
 
 DEPEND=">=dev-lang/ghc-6.6
+		dev-haskell/bytestring
 		>=sys-libs/zlib-1.2"
