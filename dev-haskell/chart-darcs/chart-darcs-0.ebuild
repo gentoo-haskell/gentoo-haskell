@@ -11,7 +11,7 @@ MY_P="${MY_PN}-${PV}"
 REPO_PN="chart"
 
 DESCRIPTION="A library for generating 2D Charts and Plots"
-HOMEPAGE="http://www.dockerz.net/software/chart.html"
+HOMEPAGE="http://dockerz.net/twd/HaskellCharts"
 EDARCS_REPOSITORY="http://www.dockerz.net/repos/${REPO_PN}"
 
 LICENSE="BSD"
