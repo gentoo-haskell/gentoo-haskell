@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/extensible-exceptions
 		dev-haskell/fgl
 		dev-haskell/filepath
-		=dev-haskell/graphalyze-0.7*
+		=dev-haskell/graphalyze-0.8*
 		=dev-haskell/graphviz-2999.6*
 		=dev-haskell/haskell-src-exts-1.1*
 		dev-haskell/multiset"
