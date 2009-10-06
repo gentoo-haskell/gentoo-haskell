@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/binary
 		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2.3
-		dev-haskell/happstack-util
+		www-servers/happstack-util
 		=dev-haskell/haxml-1.13*
 		dev-haskell/hunit
 		dev-haskell/mtl
