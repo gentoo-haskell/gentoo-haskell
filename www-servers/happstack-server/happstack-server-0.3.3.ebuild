@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
+CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Web related tools and services."
@@ -16,23 +16,20 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/bytestring
-		>=dev-haskell/cabal-1.2.3
+		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
-		dev-haskell/happstack-data
-		dev-haskell/happstack-ixset
-		dev-haskell/happstack-state
-		dev-haskell/happstack-util
+		>=www-servers/happstack-data-0.3.2
+		>=www-servers/happstack-util-0.3.2
 		=dev-haskell/haxml-1.13*
 		>=dev-haskell/hslogger-1.0.2
 		dev-haskell/html
 		dev-haskell/hunit
+		dev-haskell/maybet
 		dev-haskell/mtl
 		dev-haskell/network
 		<dev-haskell/parsec-3
 		dev-haskell/syb
-		dev-haskell/xhtml"
-
-src_compile() {
-	CABAL_CONFIGURE_FLAGS='--flags=-tests'
-	cabal_src_compile
-}
+		dev-haskell/time
+		>=dev-haskell/utf8-string-0.3.4
+		dev-haskell/xhtml
+		dev-haskell/zlib"
