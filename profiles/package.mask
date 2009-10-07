@@ -1,1 +1,3 @@
-
+# Darcs needs <4, masked until it's actually useful
+# Ivan Miljenovic, 7 October 2009
+>=dev-haskell/hashed-storage-0.4.0
