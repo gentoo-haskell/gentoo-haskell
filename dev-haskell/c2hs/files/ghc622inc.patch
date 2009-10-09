@@ -1,9 +1,0 @@
---- c2hs-0.14.5.orig/c2hs.cabal	2006-02-18 18:12:23.000000000 +0000
-+++ c2hs-0.14.5/c2hs.cabal	2006-02-18 13:32:47.000000000 +0000
-@@ -76,5 +76,5 @@
- 		C2HSConfig
- 		Version
- Extensions:	ForeignFunctionInterface
--Ghc-Options:	-O
-+Ghc-Options:	-O -Ic2hs/toplevel
- C-Sources:	c2hs/toplevel/c2hs_config.c
