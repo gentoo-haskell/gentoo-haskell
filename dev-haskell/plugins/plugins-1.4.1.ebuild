@@ -21,11 +21,6 @@ DEPEND=">=dev-lang/ghc-6.10
 src_unpack() {
 	unpack ${A}
 
-	# cabal-1.6.0.2 will complain about Linker.h, which cannot be included on
-	# it's own. as we already check the dependencies in DEPEND, we can simply
-	# ignore the header file in the cabal file.
-	sed -e "s/Linker.h//" -i "${S}/${PN}.cabal"
-
 	# haddock parse error
 	sed -e "s/| strip/strip/" -i "${S}/src/System/Plugins/Env.hs"
 }
