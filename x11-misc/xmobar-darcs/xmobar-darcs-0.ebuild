@@ -16,7 +16,6 @@ KEYWORDS="~amd64 -sparc ~x86"
 IUSE="xft unicode mail"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-	dev-haskell/bytestring
 	>=dev-haskell/cabal-1.2
 	|| ( >=dev-haskell/x11-1.3.0 dev-haskell/x11-darcs )
 	>=dev-haskell/mtl-1.0

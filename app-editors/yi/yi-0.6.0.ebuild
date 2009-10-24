@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/binary-0.5*
-		=dev-haskell/bytestring-0.9.1*
 		=dev-haskell/cabal-1.6*
 		=dev-haskell/data-accessor-0.2*
 		=dev-haskell/data-accessor-monads-fd-0.2*

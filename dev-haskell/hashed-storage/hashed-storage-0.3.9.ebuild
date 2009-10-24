@@ -15,7 +15,6 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
 		dev-haskell/filepath

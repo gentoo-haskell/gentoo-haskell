@@ -15,7 +15,6 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/bytestring
 		=dev-haskell/regex-base-0.7*"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"

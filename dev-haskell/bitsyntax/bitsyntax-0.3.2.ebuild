@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/bytestring
 		dev-haskell/quickcheck"
 
 S="${WORKDIR}/${MY_P}"

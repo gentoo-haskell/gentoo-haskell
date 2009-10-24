@@ -6,3 +6,14 @@
 # Mask until needed.
 # Ivan Miljenovic, 18 October 2009
 >=dev-haskell/mmap-0.5.2
+
+# Bytestring is a GHC core lib; as such, upgrading it could result in diamond dependency problems.
+# Also, there's no easy way to reliably reliable all installed packages that require it.
+# As such, all bytestring deps have been removed from all packages; this mask is here
+# to let users know why, and in case something goes wrong...
+# This will also make it easier to sync the tree with the overlay, as the tree doesn't have
+# a bytestring package.
+# If you have an upgraded version of bytestring installed, haskell-updater can help
+# with rebuilding packages.
+# Ivan Miljenovic, 24 October 2009
+dev-haskell/bytestring

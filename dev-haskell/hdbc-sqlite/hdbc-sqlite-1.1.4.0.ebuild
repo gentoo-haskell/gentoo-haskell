@@ -21,7 +21,6 @@ hdbc_PV=$(get_version_component_range 1-3)
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		dev-haskell/bytestring
 		dev-haskell/mtl
 		=dev-haskell/hdbc-${hdbc_PV}*
 		>=dev-db/sqlite-3.2"

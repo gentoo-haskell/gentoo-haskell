@@ -16,5 +16,4 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
 		>=dev-haskell/regex-base-0.93
-		dev-haskell/bytestring
 		dev-libs/libpcre"

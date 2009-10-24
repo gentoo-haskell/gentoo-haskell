@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/binary
-		>=dev-haskell/bytestring-0.9.0
 		>=dev-haskell/cabal-1.2
 		>=dev-haskell/digest-0.0.0.1
 		dev-haskell/filepath

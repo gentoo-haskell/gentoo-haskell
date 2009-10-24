@@ -16,6 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/binary
-		dev-haskell/bytestring
 		dev-haskell/cabal
 		dev-haskell/parsec"

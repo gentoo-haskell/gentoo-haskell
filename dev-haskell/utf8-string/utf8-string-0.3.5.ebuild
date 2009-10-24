@@ -15,5 +15,4 @@ KEYWORDS="~amd64 ~ppc64 ~sparc ~x86" #untested on sparc
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
-        >=dev-haskell/bytestring-0.9"
+		>=dev-haskell/cabal-1.2"

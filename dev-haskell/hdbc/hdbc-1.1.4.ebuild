@@ -19,7 +19,6 @@ IUSE="odbc postgres sqlite"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		dev-haskell/bytestring
 		dev-haskell/mtl"
 
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${PV}* )

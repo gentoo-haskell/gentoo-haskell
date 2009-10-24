@@ -17,7 +17,6 @@ IUSE=""
 # Use 6.10.1 to avoid worrying about sy as a dep
 DEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/binary
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.6
 		>=www-servers/happstack-util-0.3.2
 		=dev-haskell/haxml-1.13*

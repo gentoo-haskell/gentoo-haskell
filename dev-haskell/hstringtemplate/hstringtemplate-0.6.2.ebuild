@@ -19,7 +19,6 @@ IUSE=""
 
 # Have 6.10 to avoid problems with syb dep
 DEPEND=">=dev-lang/ghc-6.10.1
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.6
 		dev-haskell/filepath
 		dev-haskell/mtl

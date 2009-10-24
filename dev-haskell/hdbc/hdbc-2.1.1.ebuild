@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="odbc postgres sqlite"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2.3
 		>=dev-haskell/convertible-1.0.1
 		dev-haskell/hunit

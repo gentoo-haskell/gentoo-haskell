@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="citeproc highlight html pdf"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/bytestring-0.9
 		>=dev-haskell/cabal-1.2
 		>=dev-haskell/filepath-1.1
 		>=dev-haskell/mtl-1.1

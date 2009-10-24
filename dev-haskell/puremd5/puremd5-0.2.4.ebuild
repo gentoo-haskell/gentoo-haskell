@@ -19,7 +19,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/binary-0.4.0
-		>=dev-haskell/bytestring-0.9
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"

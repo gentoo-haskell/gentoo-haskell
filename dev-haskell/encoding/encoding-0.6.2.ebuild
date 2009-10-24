@@ -17,7 +17,6 @@ IUSE=""
 # dcoutts reports that it needs haxml, despite not being listed in the .cabal file.
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/binary
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.2
 		dev-haskell/extensible-exceptions
 		dev-haskell/mtl

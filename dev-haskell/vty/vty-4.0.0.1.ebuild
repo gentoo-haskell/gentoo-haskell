@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
-		dev-haskell/bytestring
 		dev-haskell/mtl
 		dev-haskell/parallel
 		dev-haskell/parsec

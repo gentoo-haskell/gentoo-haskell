@@ -15,6 +15,5 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		<dev-haskell/bytestring-1.0
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/network-2.2.1.1"

@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/binary-0.3
-		dev-haskell/bytestring
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
 		dev-haskell/network"

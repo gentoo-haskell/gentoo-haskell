@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		<dev-haskell/bytestring-1.0
 		>=dev-haskell/cabal-1.2
 		|| ( dev-haskell/chart dev-haskell/chart-darcs )
 		dev-haskell/data-accessor
