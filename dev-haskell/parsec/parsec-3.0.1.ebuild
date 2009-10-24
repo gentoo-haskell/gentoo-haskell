@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Monadic parser combinators"
@@ -15,6 +15,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
+		dev-haskell/bytestring
+		>=dev-haskell/cabal-1.2.3
 		dev-haskell/mtl
-		dev-haskell/bytestring"
+		dev-haskell/syb"
