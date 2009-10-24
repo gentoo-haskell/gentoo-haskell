@@ -25,7 +25,6 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/parsec"
 
 #DEPEND=">=dev-lang/ghc-6.6.1
-#		dev-haskell/bytestring
 #		>=dev-haskell/cabal-1.2.0
 #		dev-haskell/mtl
 #		dev-haskell/parsec
