@@ -35,14 +35,14 @@ src_install() {
 
 	doman man/xmonad.1
 
-	dodoc CONFIG README "${SAMPLE_CONFIG_LOC}/${SAMPLE_CONFIG}"
+	dodoc CONFIG README
 }
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
 
 	elog "A sample ${SAMPLE_CONFIG} configuration file can be found here:"
-	elog "    /usr/share/doc/${PF}/${SAMPLE_CONFIG}"
+	elog "    /usr/share/${PF}/ghc-$(ghc-version)/${SAMPLE_CONFIG_LOC}/${SAMPLE_CONFIG}"
 	elog "The parameters in this file are the defaults used by xmonad."
 	elog "To customize xmonad, copy this file to:"
 	elog "    ~/.xmonad/${SAMPLE_CONFIG}"
