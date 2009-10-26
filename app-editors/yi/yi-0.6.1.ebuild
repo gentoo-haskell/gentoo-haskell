@@ -31,7 +31,6 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/monads-fd
 		>=dev-haskell/pointedlist-0.3.1
 		>=dev-haskell/puremd5-0.2.3
-		>=dev-haskell/quickcheck-2
 		=dev-haskell/regex-base-0.93*
 		=dev-haskell/regex-tdfa-1.1*
 		=dev-haskell/rosezipper-0.1*
