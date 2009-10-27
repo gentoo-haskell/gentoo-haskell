@@ -125,7 +125,7 @@ cabal-version() {
 			# use the shipped Cabal like haskell-updater).
 
 			# GHC should have come with its own Cabal...
-			_CABAL_VERSION_CACHE="$(ghc-pkg field Cabal version)"
+			_CABAL_VERSION_CACHE="$(ghc-pkg field Cabal version | tail -n 1)"
 
 			# Strip out the "version: " prefix
 			_CABAL_VERSION_CACHE="${_CABAL_VERSION_CACHE#"version: "}"
