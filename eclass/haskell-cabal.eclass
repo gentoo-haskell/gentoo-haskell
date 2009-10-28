@@ -27,8 +27,9 @@
 #   bootstrap  --  only used for the cabal package itself
 #   bin        --  the package installs binaries
 #   lib        --  the package installs libraries
-#   nocabaldep --  only used for packages that _must_ use the version of
-#                   cabal bundled with GHC (e.g. haskell-updater).
+#   nocabaldep --  don't add dependency on cabal.
+#					only used for packages that _must_ not pull the dependency
+#					on cabal, but still use this eclass (e.g. haskell-updater).
 #
 # Dependencies on other cabal packages have to be specified
 # correctly.
