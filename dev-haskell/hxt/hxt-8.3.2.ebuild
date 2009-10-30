@@ -16,23 +16,21 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/curl-1.3
+		<dev-haskell/curl-2
 		=dev-haskell/filepath-1*
 		>=dev-haskell/hunit-1.2
 		>=dev-haskell/network-2.1
 		=dev-haskell/parallel-1*
-		=dev-haskell/parsec-2*
+		>=dev-haskell/parsec-2.1
 		>=dev-haskell/tagsoup-0.6"
 
 src_install() {
-    cabal_src_install
+	cabal_src_install
 
-    dodoc README
-    if use doc; then
-        cd "${S}/doc"
-        dodoc thesis.pdf
-        dodoc cookbook/doc/thesis.pdf
-    fi
+	dodoc README
+	if use doc; then
+		cd "${S}/doc"
+		dodoc thesis.pdf
+		dodoc cookbook/doc/thesis.pdf
+	fi
 }
-
-
