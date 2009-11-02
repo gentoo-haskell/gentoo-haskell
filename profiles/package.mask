@@ -1,3 +1,7 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (02 Nov 2009)
+# Mask RCs for testing.
+>=dev-lang/ghc-6.12
+
 # Darcs needs <4, masked until it's actually useful
 # Ivan Miljenovic, 7 October 2009
 >=dev-haskell/hashed-storage-0.4.0
