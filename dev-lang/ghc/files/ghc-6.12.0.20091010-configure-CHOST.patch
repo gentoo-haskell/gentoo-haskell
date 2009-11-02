@@ -1,0 +1,26 @@
+--- old-ghc-6.12.0.20091010/configure.ac	2009-11-02 23:20:43.441007755 +0100
++++ new-ghc-6.12.0.20091010/configure.ac	2009-11-02 23:20:43.445008683 +0100
+@@ -219,6 +219,7 @@
+         exit 1
+     fi
+ fi
++build=`echo "$build" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
+ 
+ if test "$host" = ""
+ then
+@@ -231,6 +232,7 @@
+         exit 1
+     fi
+ fi
++host=`echo "$host" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
+ 
+ if test "$target" = ""
+ then
+@@ -243,6 +245,7 @@
+         exit 1
+     fi
+ fi
++target=`echo "$target" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
+ 
+ exeext=''
+ soext='.so'

@@ -192,6 +192,8 @@ src_unpack() {
 		# see ghc_setup_cflags()
 		#use ppc64 && epatch "${FILESDIR}/ghc-6.10.4-ppc64-always-minimal-toc.patch"
 
+		epatch "${FILESDIR}/ghc-${PV}-configure-CHOST.patch"
+
 		# as we have changed the build system with the readline patch
 		eautoreconf
 	fi
