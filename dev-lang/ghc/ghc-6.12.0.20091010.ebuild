@@ -262,7 +262,7 @@ src_compile() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		EXTRA_ECONF='--build="" --target=""' econf || die "econf failed"
+		econf || die "econf failed"
 
 		emake all || die "make failed"
 
