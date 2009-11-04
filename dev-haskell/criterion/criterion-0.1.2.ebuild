@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		|| ( dev-haskell/chart dev-haskell/chart-darcs )
+		dev-haskell/chart
 		dev-haskell/data-accessor
 		dev-haskell/filepath
 		dev-haskell/parallel
