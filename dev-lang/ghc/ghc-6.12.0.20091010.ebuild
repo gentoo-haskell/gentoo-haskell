@@ -304,8 +304,8 @@ src_install() {
 
 		dobashcompletion "${FILESDIR}/ghc-bash-completion"
 
-		cp -p "${D}/usr/$(get_libdir)/${P}/package.conf"{,.shipped} \
-			|| die "failed to copy package.conf"
+		cp -rp "${D}/usr/$(get_libdir)/${P}/package.conf.d"{,.shipped} \
+			|| die "failed to copy package.conf.d"
 	fi
 }
 
@@ -332,9 +332,10 @@ pkg_prerm() {
 	# Overwrite the (potentially) modified package.conf with a copy of the
 	# original one, so that it will be removed during uninstall.
 
-	PKG="${ROOT}/usr/$(get_libdir)/${P}/package.conf"
+	PKGDIR="${ROOT}/usr/$(get_libdir)/${P}/package.conf.d"
+	rm -rf "${PKGDIR}"
 
-	cp -p "${PKG}"{.shipped,}
+	mv "${PKGDIR}"{.shipped,}
 
-	[[ -f ${PKG}.old ]] && rm "${PKG}.old"
+	#[[ -f ${PKG}.old ]] && rm "${PKG}.old"
 }
