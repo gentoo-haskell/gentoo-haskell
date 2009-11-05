@@ -1,6 +1,9 @@
 # Lennart Kolmodin <kolmodin@gentoo.org> (02 Nov 2009)
 # Mask RCs for testing.
+# We're still working on supporting this, so expect that some things
+# might not yet work.
 >=dev-lang/ghc-6.12
+>=dev-haskell/cabal-1.8.0
 
 # Darcs needs <4, masked until it's actually useful
 # Ivan Miljenovic, 7 October 2009
