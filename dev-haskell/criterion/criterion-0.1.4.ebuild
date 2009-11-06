@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/parsec
 		>=dev-haskell/statistics-0.3.5
 		dev-haskell/time
-		dev-haskell/uvector
+		>=dev-haskell/uvector-0.1.0.5
 		>=dev-haskell/uvector-algorithms-0.2
 		chart? ( >=dev-haskell/chart-0.12
 				 dev-haskell/data-accessor )"
