@@ -144,9 +144,8 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	else
-	#elif use alpha || use hppa || use ia64 || use ppc ; then
-		#eerror "No binary .tbz2 package available yet for these arches:"
+	elif use alpha || use hppa || use ia64 || use ppc || use amd64; then
+		eerror "No binary .tbz2 package available yet for your arch."
 		#eerror "  ppc, ppc64"
 		#
 		eerror "No binary .tbz2 package available yet."
