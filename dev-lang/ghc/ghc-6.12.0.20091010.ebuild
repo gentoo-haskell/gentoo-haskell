@@ -144,11 +144,10 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ia64 || use ppc || use amd64; then
+	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use amd64; then
 		eerror "No binary .tbz2 package available yet for your arch."
-		#eerror "  ppc, ppc64"
 		#
-		eerror "No binary .tbz2 package available yet."
+		#eerror "No binary .tbz2 package available yet."
 		#
 		eerror "Please try emerging with USE=ghcbootstrap and report build"
 		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
