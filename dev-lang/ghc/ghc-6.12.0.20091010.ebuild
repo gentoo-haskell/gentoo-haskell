@@ -287,9 +287,7 @@ src_install() {
 		# We only built docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
 		if use doc; then
-			if use ghcbootstrap; then
-				insttarget="${insttarget} install-docs"
-			else
+			if ! use ghcbootstrap; then
 				mkdir -p "${D}/usr/share/doc"
 				mv "${WORKDIR}/usr/share/doc/${P}" "${D}/usr/share/doc" \
 					|| die "failed to copy docs"
