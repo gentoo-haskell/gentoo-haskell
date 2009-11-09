@@ -52,8 +52,8 @@ arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
-SRC_URI="!binary? ( http://darcs.haskell.org/~ghc/dist/6.12.1rc1/${P}-src.tar.bz2 )"
-
+SRC_URI="!binary? ( http://darcs.haskell.org/~ghc/dist/6.12.1rc1/${P}-src.tar.bz2 )
+	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
