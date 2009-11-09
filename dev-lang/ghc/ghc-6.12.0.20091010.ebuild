@@ -175,7 +175,7 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 				"${WORKDIR}/usr/bin/hsc2hs" \
-				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf" \
+				${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/* \
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
