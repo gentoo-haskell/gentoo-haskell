@@ -14,7 +14,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome pango vty"
+IUSE="gnome gtk vty"
 
 DEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/binary-0.5*
@@ -41,8 +41,16 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/unix-compat-0.1*
 		>=dev-haskell/utf8-string-0.3.1
 		<dev-haskell/alex-3
-		pango? ( dev-haskell/gtk2hs[gnome?] )
+		gtk? ( dev-haskell/gtk2hs[gnome?] )
 		vty? ( <dev-haskell/vty-4 )"
+
+pkg_setup() {
+	cabal_pkg_setup
+
+	if ! (use gtk || use vty); then
+		ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
+	fi
+}
 
 src_unpack() {
 	unpack ${A}
@@ -55,7 +63,7 @@ src_unpack() {
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--flags=-testing"
 
-	if use pango; then
+	if use gtk; then
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=pango"
 		if use gnome; then
 			CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=gnome"
