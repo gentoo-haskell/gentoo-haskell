@@ -5,7 +5,7 @@
 >=dev-lang/ghc-6.12
 >=dev-haskell/cabal-1.8.0
 >=dev-haskell/haddock-2.5.0.20091112
->=dev-haskell/cabal-install-0.7.4.20091112
+>=dev-haskell/cabal-install-0.7.4.20091113
 
 # Darcs needs <4, masked until it's actually useful
 # Ivan Miljenovic, 7 October 2009
