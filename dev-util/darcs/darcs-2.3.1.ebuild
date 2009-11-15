@@ -58,6 +58,11 @@ src_unpack() {
 	if use alpha || use hppa || use ppc64 ; then
 		sed -i 's/-threaded//g' "${S}/darcs.cabal" || die "Unable to sed -threaded out."
 	fi
+
+	# ghc-6.12 future proof
+	sed -i 's@unix >= 1.0 \&\& < 2.4@unix >= 1.0 \&\& < 2.5@g' "${S}/darcs.cabal" || die "Unable to amend 'unix' deps"
+	sed -i 's@containers >= 0.1 \&\& < 0.3@containers >= 0.1 \&\& < 0.4@g' "${S}/darcs.cabal" || die "Unable to amend 'containers' deps"
+	sed -i 's@array      >= 0.1 \&\& < 0.3@array      >= 0.1 \&\& < 0.4@g' "${S}/darcs.cabal" || die "Unable to amend 'array' deps"
 }
 
 src_compile() {
