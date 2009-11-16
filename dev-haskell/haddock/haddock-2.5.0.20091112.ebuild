@@ -40,6 +40,16 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 
+	# copy of slightly modified version of GHC.Paths
+	mkdir "${S}/src/GHC"
+	cp "${FILESDIR}/ghc-paths-1.0.5.0-GHC-Paths.hs" "${S}/src/GHC/Paths.hs"
+
+	# a few things we need to replace, and example values
+	# GHC_PATHS_LIBDIR /usr/lib64/ghc-6.12.0.20091010
+	# GHC_PATHS_DOCDIR /usr/share/doc/ghc-6.12.0.20091010/html
+	# GHC_PATHS_GHC /usr/bin/ghc
+	# GHC_PATHS_GHC_PKG /usr/bin/ghc-pkg
+
 	# remove dependency on ghc-paths, we include it right into haddock instead
 	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
