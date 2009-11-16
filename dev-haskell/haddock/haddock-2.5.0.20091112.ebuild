@@ -37,7 +37,7 @@ src_unpack() {
 
 	# remove dependency on ghc-paths, we include it right into haddock instead
 	sed -e "s|build-depends: ghc-paths|build-depends:|" \
-		-i "${S}/${PN}.cabal" || die "failed to strip ghc-paths dep"
+		-i "${S}/${PN}.cabal"
 
 	# copy of slightly modified version of GHC.Paths
 	mkdir "${S}/src/GHC"
@@ -51,16 +51,16 @@ src_unpack() {
 
 	# hardcode stuff above:
 	sed -e "s|GHC_PATHS_LIBDIR|"$(ghc-libdir)"|" \
-		-i "${S}/src/GHC/Paths.hs" || die "failed to sed GHC_PATHS_LIBDIR"
+		-i "${S}/src/GHC/Paths.hs"
 
 	sed -e "s|GHC_PATHS_DOCDIR|/usr/share/doc/ghc-$(ghc-version)/html|" \
-		-i "${S}/src/GHC/Paths.hs" || die "failed to sed GHC_PATHS_DOCDIR"
+		-i "${S}/src/GHC/Paths.hs"
 
 	sed -e "s|GHC_PATHS_GHC_PKG|"$(ghc-getghcpkg)"|" \
-		-i "${S}/src/GHC/Paths.hs" || die "failed to sed GHC_PATHS_GHC_PKG"
+		-i "${S}/src/GHC/Paths.hs"
 
 	sed -e "s|GHC_PATHS_GHC|"$(ghc-getghc)"|" \
-		-i "${S}/src/GHC/Paths.hs" || die "failed to sed GHC_PATHS_GHC"
+		-i "${S}/src/GHC/Paths.hs"
 
 	if use doc; then
 	  cd "${S}/doc"
