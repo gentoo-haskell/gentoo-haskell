@@ -17,8 +17,9 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/hunit
+		dev-haskell/parallel
 		dev-haskell/quickcheck
 		dev-haskell/storable-complex
-		sci-libs/gsl
+        sci-libs/gsl
         virtual/blas
-		virtual/lapack"
+        virtual/lapack"
