@@ -47,20 +47,15 @@ src_unpack() {
 	# GHC_PATHS_LIBDIR /usr/lib64/ghc-6.12.0.20091010
 	# GHC_PATHS_DOCDIR /usr/share/doc/ghc-6.12.0.20091010/html
 	# GHC_PATHS_GHC_PKG /usr/bin/ghc-pkg
-	# GHC_PATHS_GHC /usr/bin/ghc (be careful: GHC_PATHS_GHC ir a substring of GHC_PATHS_GHC_PKG)
+	# GHC_PATHS_GHC /usr/bin/ghc (be careful: GHC_PATHS_GHC is a substring of GHC_PATHS_GHC_PKG)
 
 	# hardcode stuff above:
-	sed -e "s|GHC_PATHS_LIBDIR|"$(ghc-libdir)"|" \
-		-i "${S}/src/GHC/Paths.hs"
-
-	sed -e "s|GHC_PATHS_DOCDIR|/usr/share/doc/ghc-$(ghc-version)/html|" \
-		-i "${S}/src/GHC/Paths.hs"
-
-	sed -e "s|GHC_PATHS_GHC_PKG|"$(ghc-getghcpkg)"|" \
-		-i "${S}/src/GHC/Paths.hs"
-
-	sed -e "s|GHC_PATHS_GHC|"$(ghc-getghc)"|" \
-		-i "${S}/src/GHC/Paths.hs"
+	sed \
+	    -e "s|GHC_PATHS_LIBDIR|$(ghc-libdir)|" \
+	    -e "s|GHC_PATHS_DOCDIR|/usr/share/doc/ghc-$(ghc-version)/html|" \
+	    -e "s|GHC_PATHS_GHC_PKG|$(ghc-getghcpkg)|" \
+	    -e "s|GHC_PATHS_GHC|$(ghc-getghc)|" \
+	  -i "${S}/src/GHC/Paths.hs"
 
 	if use doc; then
 	  cd "${S}/doc"
