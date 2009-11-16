@@ -40,16 +40,9 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 
-	# use ghc-paths directly, not as a library
-	sed -e "s|build-depends: ghc-paths|hs-source-dirs: ../${GHCPATHS_P}|" \
-		-e "s|Simple|Custom|" \
+	# remove dependency on ghc-paths, we include it right into haddock instead
+	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
-
-	# ghc-paths has a custom Setup.hs, haddock has the default Setup.lhs.
-	# we use a somewhat modified ghc-paths Setup.hs that works better for our
-	# purposes.
-	rm "${S}/Setup.lhs"
-	cp "${FILESDIR}/${PN}-2.4.2-Setup.hs" "${S}/Setup.hs"
 
 	if use doc; then
 	  cd "${S}/doc"
