@@ -51,10 +51,10 @@ src_unpack() {
 
 	# hardcode stuff above:
 	sed \
-	    -e "s|GHC_PATHS_LIBDIR|$(ghc-libdir)|" \
-	    -e "s|GHC_PATHS_DOCDIR|/usr/share/doc/ghc-$(ghc-version)/html|" \
-	    -e "s|GHC_PATHS_GHC_PKG|$(ghc-getghcpkg)|" \
-	    -e "s|GHC_PATHS_GHC|$(ghc-getghc)|" \
+	    -e "s|GHC_PATHS_LIBDIR|\"$(ghc-libdir)\"|" \
+	    -e "s|GHC_PATHS_DOCDIR|\"/usr/share/doc/ghc-$(ghc-version)/html\"|" \
+	    -e "s|GHC_PATHS_GHC_PKG|\"$(ghc-getghcpkg)\"|" \
+	    -e "s|GHC_PATHS_GHC|\"$(ghc-getghc)\"|" \
 	  -i "${S}/src/GHC/Paths.hs"
 
 	if use doc; then
