@@ -217,7 +217,7 @@ src_compile() {
 			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
 			echo "GhcStage2HcOpts = -Onot -fasm" >> mk/build.mk
 			echo "GhcLibHcOpts    = -Onot -fasm" >> mk/build.mk
-			echo "GhcLibWays      =" >> mk/build.mk
+			echo "GhcLibWays      = v" >> mk/build.mk
 			echo "SplitObjs       = NO" >> mk/build.mk
 		fi
 		# However, note that the libraries are built without optimisation, so
