@@ -129,10 +129,6 @@ ghc_setup_cflags() {
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
 	use ppc64 && append-ghc-cflags compile -mminimal-toc
-
-	# We also add -Wa,--noexecstack to get ghc to generate .o files with
-	# non-exectable stack. This it a hack until ghc does it itself properly.
-	append-ghc-cflags assemble		"-Wa,--noexecstack"
 }
 
 pkg_setup() {
@@ -178,11 +174,6 @@ src_unpack() {
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
-		# Hack to prevent haddock being installed, remove when ./configure
-		# supports something better to not build docs or haddock.
-		sed -i -e 's/DO_NOT_INSTALL =/DO_NOT_INSTALL = haddock/' \
-			"${S}/utils/Makefile"
-
 		# Highly useful when you need to pass your HC opts to bootstrap libs
 		# Currently it is needed for ppc64 to build with broken compiler
 		#epatch "${FILESDIR}/ghc-6.10.4-propagate-hc-options-to-all-libraries.patch"
@@ -213,10 +204,10 @@ src_compile() {
 
 		# The settings that give you the fastest complete GHC build are these:
 		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H64m -Onot -fasm" >> mk/build.mk
+			echo "SRC_HC_OPTS     = -H64m -O0 -fasm" >> mk/build.mk
 			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-			echo "GhcStage2HcOpts = -Onot -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    = -Onot -fasm" >> mk/build.mk
+			echo "GhcStage2HcOpts = -O0 -fasm" >> mk/build.mk
+			echo "GhcLibHcOpts    = -O0 -fasm" >> mk/build.mk
 			echo "GhcLibWays      = v" >> mk/build.mk
 			echo "SplitObjs       = NO" >> mk/build.mk
 		fi
@@ -234,6 +225,9 @@ src_compile() {
 			echo XMLDocWays="" >> mk/build.mk
 			echo HADDOCK_DOCS=NO >> mk/build.mk
 		fi
+
+		sed -e "s|utils/haddock_dist_INSTALL_SHELL_WRAPPER = YES|utils/haddock_dist_INSTALL_SHELL_WRAPPER = NO|" \
+		    -i utils/haddock/ghc.mk
 
 		# circumvent a very strange bug that seems related with ghc producing
 		# too much output while being filtered through tee (e.g. due to
@@ -306,13 +300,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	# 'ghc-pkg check' fails in ghc 6.10.2, with the error message:
-	# There are problems in package rts-1.0:
-	#    include-dirs: PAPI_INCLUDE_DIR doesn't exist or isn't a directory
-	# Upstream suggests this solution to fix it:
-	#export PATH="/usr/bin:${PATH}"
-	#$(ghc-getghcpkg) describe rts | sed 's/PAPI_INCLUDE_DIR//' | $(ghc-getghcpkg) update -
-
 	ghc-reregister
 
 	ewarn "IMPORTANT:"
