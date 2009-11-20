@@ -17,3 +17,11 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/cabal
 		dev-haskell/stream"
+
+src_unpack() {
+	unpack ${A}
+
+	# ghc-6.12 future proof
+	sed 's@base >= 4.0 \&\& < 4.2@base >= 4.0 \&\& < 4.3@g' \
+	    -i "${S}/${PN}.cabal"
+}
