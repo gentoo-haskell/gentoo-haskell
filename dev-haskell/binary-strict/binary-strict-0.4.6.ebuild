@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binary deserialisation using strict ByteStrings"
 HOMEPAGE="http://code.haskell.org/binary-low-level"
@@ -16,3 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/binary-strict-0.4.6-ghc6.12-fix.patch")
