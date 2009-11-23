@@ -176,6 +176,9 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/hsc2hs" \
 				${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/* \
 				|| die "Relocating ghc from /usr to workdir failed"
+
+			# regenerate the binary package cache
+			"${WORKDIR}/usr/bin/ghc-pkg" recache
 		fi
 
 		# see ghc_setup_cflags()
