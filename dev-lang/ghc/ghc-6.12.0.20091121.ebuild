@@ -77,6 +77,10 @@ DEPEND="${RDEPEND}
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-0.9* )"
 
+# use undocumented feature STRIP_MASK to fix this issue:
+# http://hackage.haskell.org/trac/ghc/ticket/3580
+STRIP_MASK="*/HSffi.o"
+
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
