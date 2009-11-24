@@ -17,7 +17,7 @@ FP_P=${FP_PN}-${FP_PV}
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
 #SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
-SRC_URI="http://code.haskell.org/~slyfox/darcs-snapshots/${MY_P}.tar.gz
+SRC_URI="http://code.haskell.org/~slyfox/darcs-snapshots/${MY_P}-trofi.tar.gz
 	http://hackage.haskell.org/packages/archive/${FP_PN}/${FP_PV}/${FP_P}.tar.gz"
 
 LICENSE="BSD"
@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-CABAL_CORE_LIB_GHC_PV="6.12.0.20091010 6.12.0.20091121"
+CABAL_CORE_LIB_GHC_PV="6.12.0.20091121"
 
 src_unpack() {
 	unpack ${A}
