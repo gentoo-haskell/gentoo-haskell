@@ -17,10 +17,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="xinerama"
 
-DEPEND=">=dev-lang/ghc-6.8
+RDEPEND=">=dev-lang/ghc-6.8
+		x11-libs/libX11
+		xinerama? ( x11-libs/libXinerama )"
+
+DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2
-        x11-libs/libX11
-        xinerama? ( x11-libs/libXinerama )"
+		virtual/libiconv"
+
+# libiconv is needed for the trick below to make it compile with ghc-6.12
 
 S="${WORKDIR}/${MY_P}"
 
