@@ -24,8 +24,19 @@ DEPEND=">=dev-lang/ghc-6.8
 
 S="${WORKDIR}/${MY_P}"
 
+src_unpack() {
+	unpack "$A"
+	cd "${S}"
+
+	# solves http://www.haskell.org/pipermail/glasgow-haskell-users/2009-November/018050.html
+	# (non-ASCII non-UTF-8  source breaks hsc2hs)
+	# we just mangle evil hyphen
+	cd Graphics/X11/Xlib
+	mv Extras.hsc Extras.hsc.ISO-8859-1
+	iconv -f ISO-8859-1 -t ASCII -c Extras.hsc.ISO-8859-1 > Extras.hsc || die "unable to recode Extras.hsc to UTF-8"
+}
+
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--configure-option=$(use_with xinerama)"
 	cabal_src_compile
 }
-
