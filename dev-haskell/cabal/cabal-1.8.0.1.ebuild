@@ -17,7 +17,7 @@ FP_P=${FP_PN}-${FP_PV}
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
 #SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
-SRC_URI="http://code.haskell.org/~slyfox/darcs-snapshots/${MY_P}-trofi.tar.gz
+SRC_URI="http://code.haskell.org/~slyfox/darcs-snapshots/${MY_P}-slyfox.tar.gz
 	http://hackage.haskell.org/packages/archive/${FP_PN}/${FP_PV}/${FP_P}.tar.gz"
 
 LICENSE="BSD"
