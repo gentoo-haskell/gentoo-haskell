@@ -47,8 +47,14 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-	cd "${S}/contrib"
+	cd "${S}"
+	pushd "contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	popd
+
+	# "rec" is a keyword enabled by extensions in ghc-6.12, and -fglasgow-exts is enabled
+	# this patch just renames the variable
+	epatch "${FILESDIR}/${P}-ghc-6.12-rec-keyword.patch"
 
 	# We don't have threaded ghc builds at least for those platforms,
 	# so it won't just work.
