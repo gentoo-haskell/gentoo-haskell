@@ -17,10 +17,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/cabal
-		>=dev-haskell/utf8-string-0.1
-        || ( >=dev-haskell/x11-1.2.1 dev-haskell/x11-darcs )
-        x11-libs/libXft"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		 >=dev-haskell/utf8-string-0.1
+		 || ( >=dev-haskell/x11-1.2.1 dev-haskell/x11-darcs )
+		 x11-libs/libXft"
+
+DEPEND="${RDEPEND}
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
