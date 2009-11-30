@@ -16,9 +16,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/extensible-exceptions-0.1.1.0
+		<dev-haskell/extensible-exceptions-0.2
 		=dev-haskell/filepath-1.1*
 		=dev-haskell/mtl-1.1*
 		>=dev-haskell/terminfo-0.3.1.1
-		>=dev-haskell/utf8-string-0.3.1.1"
-
+		<dev-haskell/utf8-string-0.4"
