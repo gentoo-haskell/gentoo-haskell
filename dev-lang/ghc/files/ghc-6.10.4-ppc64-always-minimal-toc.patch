@@ -1,9 +1,0 @@
-diff --git a/ghc/ghc.wrapper b/ghc/ghc.wrapper
-index 71eae84..b02421d 100644
---- a/ghc/ghc.wrapper
-+++ b/ghc/ghc.wrapper
-@@ -1,3 +1,3 @@
- #!/bin/sh
- 
--exec $executablename -B$datadir -dynload wrapped ${1+"$@"}
-+exec $executablename -B$datadir -optc-mminimal-toc -dynload wrapped ${1+"$@"}

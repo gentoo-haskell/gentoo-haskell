@@ -1,7 +1,0 @@
-diff --git a/ghc/ghc.wrapper b/ghc/ghc.wrapper
-index 71eae84..b02421d 100644
---- a/ghc/ghc.wrapper
-+++ b/ghc/ghc.wrapper
-@@ -1,1 +1,1 @@
--exec "$executablename" -B"$topdir" ${1+"$@"}
-+exec "$executablename" -B"$topdir" -optc-mminimal-toc ${1+"$@"}
