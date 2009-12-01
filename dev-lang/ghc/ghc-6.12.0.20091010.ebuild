@@ -174,13 +174,6 @@ src_unpack() {
 				|| die "Relocating ghc from /usr to workdir failed"
 		fi
 
-		# Highly useful when you need to pass your HC opts to bootstrap libs
-		# Currently it is needed for ppc64 to build with broken compiler
-		#epatch "${FILESDIR}/ghc-6.10.4-propagate-hc-options-to-all-libraries.patch"
-
-		# see ghc_setup_cflags()
-		#use ppc64 && epatch "${FILESDIR}/ghc-6.10.4-ppc64-always-minimal-toc.patch"
-
 		epatch "${FILESDIR}/ghc-${PV}-configure-CHOST.patch"
 
 		# as we have changed the build system with the readline patch

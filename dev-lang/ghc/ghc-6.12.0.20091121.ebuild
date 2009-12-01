@@ -181,8 +181,8 @@ src_unpack() {
 			"${WORKDIR}/usr/bin/ghc-pkg" recache
 		fi
 
-		# see ghc_setup_cflags()
-		use ppc64 && epatch "${FILESDIR}/ghc-6.12.0.20091121-ppc64-always-minimal-toc.patch"
+		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
+			"${S}/ghc/ghc.wrapper"
 
 		epatch "${FILESDIR}/ghc-${PV}-configure-CHOST.patch"
 
