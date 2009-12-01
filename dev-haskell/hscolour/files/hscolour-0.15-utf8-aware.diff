@@ -1,0 +1,121 @@
+Tue Dec  1 19:30:23 EET 2009  Sergei Trofimovich <slyfox@inbox.ru>
+  * add UTF8 I/O when built against ghc6.12+
+  
+  This patch fixes following usecase:
+  NONASCII-utf8-rich-project: LANG=C cabal hscolour
+  (realworld example!)
+  
+  By default ghc presumes locale I/O and breaks horribly.
+  This patch switches to explicit UTF8 when deals with files.
+Mon Nov 30 13:47:23 EET 2009  Sergei Trofimovich <slyfox@inbox.ru>
+  * Print newline when output usage banner.
+Mon Nov 30 12:35:39 EET 2009  Sergei Trofimovich <slyfox@inbox.ru>
+  * Use Cabal instead of hardcoding version info (stolen from highlighting-kate)
+diff -rN -u old-hscolour/hscolour.cabal new-hscolour/hscolour.cabal
+--- old-hscolour/hscolour.cabal	2009-12-01 19:41:01.145689639 +0200
++++ new-hscolour/hscolour.cabal	2009-12-01 19:41:01.155689306 +0200
+@@ -6,6 +6,7 @@
+ Homepage: http://www.cs.york.ac.uk/fp/darcs/hscolour/
+ License: GPL
+ License-file: LICENCE-GPL
++Cabal-Version:  >= 1.6
+ Build-depends: haskell98, base < 10
+ Extensions: 
+ Synopsis: Colourise Haskell code.
+@@ -35,6 +36,9 @@
+   Language.Haskell.HsColour.Options
+   Language.Haskell.HsColour.Output
+   Language.Haskell.HsColour.TTY
++Other-Modules:
++  Paths_hscolour
++  Util
+ data-files: hscolour.css
+ --ghc-options: -O -W
+ Build-Type: Simple
+diff -rN -u old-hscolour/HsColour.hs new-hscolour/HsColour.hs
+--- old-hscolour/HsColour.hs	2009-12-01 19:41:01.145689639 +0200
++++ new-hscolour/HsColour.hs	2009-12-01 19:41:01.148689183 +0200
+@@ -6,11 +6,17 @@
+ import Language.Haskell.HsColour.Options
+ import System
+ import IO
++import System.IO (withFile)
+ import Monad (when)
+ import List  (intersperse, isSuffixOf)
+ import Debug.Trace
+ 
+-version = "1.15"
++import Util (set_utf8_io_enc)
++
++import Data.Version (showVersion)
++import qualified Paths_hscolour (version)
++
++version = showVersion Paths_hscolour.version
+ 
+ optionTable :: [(String,Option)]
+ optionTable = [ ("help",    Help)
+@@ -68,27 +74,43 @@
+   ioWrapper (HSColour.hscolour output pref anchors partial title)
+ 
+   where
++    --
++    -- Implement follow such I/O codepage rules:
++    -- FILE I(unput) / O(utput) is in UTF8
++    -- TTY  I(unput) / O(utput) is in locale
++    --   (may have problems with HsColour IFILE >OFILE, as it differs from HsColour IFILE -oOFILE)
++    -- TTY stderr is alwais in locale (always used for user interaction)
++    --
++    -- Some common use cases:
++    -- File I / FILE O (HsColour -css -anchor -oOFILE IFILE) : are both always done in UTF8 mode (cabal hscolour mode)
++    -- File I / TTY  O (HsColour IFILE) : file is read in UTF-8 written in locale
++    -- TTY  I / TTY  O (HsColour) : stdin/stdout are both in locale
++
++    -- fully mimic Prelude analogues
++    writeUTF8File f txt = withFile f WriteMode (\hdl -> set_utf8_io_enc hdl >> hPutStr hdl txt)
++    readUTF8File name = openFile name ReadMode >>= set_utf8_io_enc >>= hGetContents
++
+     writeResult outF s = do if null outF then putStr s
+-                                         else writeFile (last outF) s
++                                         else writeUTF8File (last outF) s
+                             exitSuccess
+     fileInteract out inFs u = do h <- case out of
+                                           []     -> return stdout
+-                                          [outF] -> openFile outF WriteMode
++                                          [outF] -> openFile outF WriteMode >>= set_utf8_io_enc
+                                  mapM_ (\ (f,lit)->
+-                                           readFile f >>= hPutStr h . u lit)
++                                           readUTF8File f >>= hPutStr h . u lit)
+                                        inFs
+                                  hClose h
+     ttyInteract []     lit u = do hSetBuffering stdout NoBuffering
+                                   Prelude.interact (u lit)
+     ttyInteract [outF] lit u = do c <- hGetContents stdin
+-                                  writeFile outF (u lit c)
++                                  writeUTF8File outF (u lit c)
+     exitSuccess = exitWith ExitSuccess
+     errorOut s = hPutStrLn stderr s >> hFlush stderr >> exitFailure
+     usage prog = "Usage: "++prog
+                  ++" options [file.hs]\n    where\n      options = [ "
+                  ++ (indent 15 . unwords . width 58 58 . intersperse "|"
+                      . ("-oOUTPUT":)
+-                     . map (('-':) . fst)) optionTable ++ " ]"
++                     . map (('-':) . fst)) optionTable ++ " ]\n"
+     useDefault d f list | null list = d
+                         | otherwise = f (head list)
+     useDefaults d f list | null list = d
+diff -rN -u old-hscolour/Util.hs new-hscolour/Util.hs
+--- old-hscolour/Util.hs	1970-01-01 03:00:00.000000000 +0300
++++ new-hscolour/Util.hs	2009-12-01 19:41:01.153688353 +0200
+@@ -0,0 +1,12 @@
++{-# LANGUAGE CPP #-}
++
++module Util where
++
++import System.IO
++
++set_utf8_io_enc :: Handle -> IO Handle
++set_utf8_io_enc h =
++#if MIN_VERSION_base(4,2,0)
++    hSetEncoding h utf8 >>
++#endif
++    return h

@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Colourise Haskell code."
 HOMEPAGE="http://www.cs.york.ac.uk/fp/darcs/hscolour/"
@@ -15,7 +15,9 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/cabal"
+		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/hscolour-0.15-utf8-aware.diff")
 
 src_install() {
     cabal_src_install
@@ -24,5 +26,3 @@ src_install() {
         dodoc README
     fi
 }
-
-
