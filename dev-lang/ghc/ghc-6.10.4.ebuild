@@ -190,6 +190,12 @@ src_unpack() {
 		sed -i -e "s|wrapped|wrapped ${GHC_CFLAGS}|" \
 	                "${S}/ghc/ghc.wrapper"
 
+
+		cd "${S}"
+
+		# patch aclocal.m4 and configure.ac to work with >=autoconf-2.64
+		epatch "${FILESDIR}/${P}-autoconf.patch"
+
 		# as we have changed the build system with the readline patch
 		eautoreconf
 	fi
