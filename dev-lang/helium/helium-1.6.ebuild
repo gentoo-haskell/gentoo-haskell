@@ -1,12 +1,13 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.6.ebuild,v 1.2 2007/10/31 13:22:01 dcoutts Exp $
 
 inherit eutils
 
 DESCRIPTION="Helium (for learning Haskell)"
 HOMEPAGE="http://www.cs.uu.nl/helium"
-SRC_URI="http://www.cs.uu.nl/helium/distr/${P}-src.tar.gz"
+SRC_URI="http://www.cs.uu.nl/helium/distr/${P}-src.tar.gz
+	mirror://gentoo/${P}-ghc.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,7 +22,7 @@ RDEPEND="dev-libs/gmp
 
 src_unpack() {
 	unpack ${A}
-	epatch "${FILESDIR}/${P}-ghc.patch"
+	epatch "${P}-ghc.patch"
 }
 
 src_compile() {

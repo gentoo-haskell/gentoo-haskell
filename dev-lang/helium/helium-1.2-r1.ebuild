@@ -1,13 +1,13 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.2-r1.ebuild,v 1.6 2006/09/19 23:41:57 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.2-r1.ebuild,v 1.10 2009/04/17 20:07:20 caster Exp $
 
-inherit eutils java-pkg
+inherit eutils java-pkg-2
 
 DESCRIPTION="Helium (for learning Haskell)"
 HOMEPAGE="http://www.cs.uu.nl/helium"
 SRC_URI="http://www.cs.uu.nl/helium/distr/${P}-src.tar.gz
-	http://www.cs.uu.nl/helium/distr/Hint.jar"
+	 http://www.cs.uu.nl/helium/distr/Hint.jar"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -15,8 +15,9 @@ KEYWORDS="x86 -sparc ~ppc"
 IUSE="readline"
 
 DEPEND="<dev-lang/ghc-6.4
+	!>=dev-lang/ghc-6.4
 	readline? ( sys-libs/readline )"
-RDEPEND="virtual/jdk
+RDEPEND=">=virtual/jre-1.4
 	dev-libs/gmp
 	readline? ( sys-libs/readline )"
 
@@ -29,6 +30,8 @@ src_unpack() {
 	if use readline; then
 		epatch ${FILESDIR}/${P}-readline.patch
 	fi
+
+	cp "${DISTDIR}/Hint.jar" "${WORKDIR}"
 }
 
 src_compile() {
@@ -56,7 +59,7 @@ src_install() {
 		demodir=${D}/usr/lib/helium/demo \
 		install || die "make failed"
 	# install hint
-	java-pkg_dojar ${DISTDIR}/Hint.jar
+	java-pkg_dojar "${WORKDIR}/Hint.jar"
 	# create wrappers
 	dobin ${FILESDIR}/helium-wrapper
 	dosym /usr/bin/helium-wrapper /usr/bin/helium
@@ -68,4 +71,3 @@ src_install() {
 	dosym /usr/bin/helium-wrapper /usr/bin/texthint-tc
 	dosym /usr/bin/helium-wrapper /usr/bin/hint-tc
 }
-
