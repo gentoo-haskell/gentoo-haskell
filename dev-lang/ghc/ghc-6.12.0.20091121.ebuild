@@ -315,13 +315,28 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
+	# Be very careful here... Call order when upgrading is (according to PMS):
+	# * src_install for new package
+	# * pkg_preinst for new package
+	# * pkg_postinst for new package
+	# * pkg_prerm for the package being replaced
+	# * pkg_postrm for the package being replaced
+	# so you'll actually be touching the new packages files, not the one you
+	# uninstall, due to that or installation directory ${P} will be the same for
+	# both packages.
+
+	# Call order for reinstalling is (according to PMS):
+	# * src_install
+	# * pkg_preinst
+	# * pkg_prerm for the package being replaced
+	# * pkg_postrm for the package being replaced
+	# * pkg_postinst
+
 	# Overwrite the (potentially) modified package.conf with a copy of the
 	# original one, so that it will be removed during uninstall.
 
 	PKGDIR="${ROOT}/usr/$(get_libdir)/${P}/package.conf.d"
 	rm -rf "${PKGDIR}"
 
-	mv "${PKGDIR}"{.shipped,}
-
-	#[[ -f ${PKG}.old ]] && rm "${PKG}.old"
+	cp -pr "${PKGDIR}"{.shipped,}
 }
