@@ -1,0 +1,43 @@
+Fri Dec  4 23:40:12 EET 2009  Sergei Trofimovich <slyfox@inbox.ru>
+  * configure.ac: fix libm checks (Trac #3730)
+  
+  libbfd pulled libm as dependency and broke LIBM= detection.
+  
+  Patch moves libm in library tests as early as possible.
+  Thanks to asuffield for suggesting such a simple fix.
+  Thanks to Roie Kerstein and Renato Gallo for finding
+  and tracking down the issue.
+
+http://bugs.gentoo.org/show_bug.cgi?id=293208
+http://hackage.haskell.org/trac/ghc/ticket/3730
+diff -rN -u old-ghc/configure.ac new-ghc/configure.ac
+--- old-ghc/configure.ac	2009-12-04 23:51:06.135605014 +0200
++++ new-ghc/configure.ac	2009-12-04 23:51:06.344604339 +0200
+@@ -713,18 +713,22 @@
+   AC_DEFINE([HAVE_MINGWEX], [1], [Define to 1 if you have the mingwex library.])
+ fi
+ 
+-dnl ** check whether this machine has BFD and liberty installed (used for debugging)
+-dnl    the order of these tests matters: bfd needs liberty
+-AC_CHECK_LIB(iberty, xmalloc)
+-AC_CHECK_LIB(bfd,    bfd_init)
+-
+ dnl ** check for math library
++dnl    Keep that check as early as possible.
++dnl    as we need to know whether we need libm
++dnl    for math functions or not
++dnl    (see http://hackage.haskell.org/trac/ghc/ticket/3730)
+ AC_CHECK_FUNC(atan,[fp_libm_not_needed=yes;LIBM=],[fp_libm_not_needed=dunno])
+ if test x"$fp_libm_not_needed" = xdunno; then
+    AC_CHECK_LIB([m], [atan], [LIBS="-lm $LIBS"; LIBM="-lm"],[LIBM=])
+ fi
+ AC_SUBST([LIBM])
+ 
++dnl ** check whether this machine has BFD and liberty installed (used for debugging)
++dnl    the order of these tests matters: bfd needs liberty
++AC_CHECK_LIB(iberty, xmalloc)
++AC_CHECK_LIB(bfd,    bfd_init)
++
+ dnl ################################################################
+ dnl Check for libraries
+ dnl ################################################################

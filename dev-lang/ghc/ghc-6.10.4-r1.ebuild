@@ -194,6 +194,11 @@ src_unpack() {
 		# patch aclocal.m4 and configure.ac to work with >=autoconf-2.64
 		epatch "${FILESDIR}/${P}-autoconf.patch"
 
+		# fix configure.ac to detect libm need
+		#    http://bugs.gentoo.org/show_bug.cgi?id=293208
+		#    http://hackage.haskell.org/trac/ghc/ticket/3730
+		epatch "${FILESDIR}/ghc-6.10.4-libm-detection.patch"
+
 		# as we have changed the build system with the readline patch
 		eautoreconf
 	fi
