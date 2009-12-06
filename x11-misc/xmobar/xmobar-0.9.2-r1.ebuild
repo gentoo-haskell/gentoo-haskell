@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}"
 PATCHES=("${FILESDIR}/${P}-*")
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	CABAL_CONFIGURE_FLAGS=""
 
 	if use xft; then
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_xft"
