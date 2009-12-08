@@ -26,3 +26,7 @@ DEPEND="${REPEND}
 	>=dev-lang/ghc-6.4.1
 	dev-haskell/fgl"
 
+src_compile() {
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	cabal_src_compile
+}
