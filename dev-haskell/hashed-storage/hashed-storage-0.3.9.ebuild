@@ -36,12 +36,9 @@ src_compile() {
 }
 
 src_test() {
-	cp "${S}/testdata.zip" "${T}/"
 	# breaking the abstraction a bit, we're not supposed to know about ./setup
 	# and how it works...
-	./setup copy --destdir="${T}/"
-	cd "${T}"
-	usr/bin/hashed-storage-test || die "tests failed"
+	./setup test || die "tests failed"
 }
 
 src_install() {
