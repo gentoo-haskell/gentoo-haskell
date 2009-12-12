@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="citeproc highlight html pdf"
+IUSE="citeproc highlight html pdf test"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
@@ -68,6 +68,10 @@ src_compile() {
 	fi
 
 	cabal_src_compile
+}
+
+src_test() {
+	./setup test || die "tests failed"
 }
 
 src_install() {
