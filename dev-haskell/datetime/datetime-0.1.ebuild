@@ -27,6 +27,4 @@ src_unpack() {
 	unpack ${A}
 	sed -e "s/\(QuickCheck >= 1.2\)/\\1 \\&\\& <2/" \
 	  -i "${S}/${PN}.cabal"
-
-	cat ${S}/${PN}.cabal
 }
