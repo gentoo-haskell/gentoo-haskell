@@ -14,23 +14,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
+RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/datetime
 		dev-haskell/diff
 		dev-haskell/filepath
-		=dev-haskell/parsec-2*
+		dev-haskell/parsec
 		dev-haskell/regex-posix
 		dev-haskell/split
 		dev-haskell/time
 		dev-haskell/utf8-string
 		dev-haskell/xml"
+DEPEND=">=dev-haskell/cabal-1.2
+		${RDEPEND}"
 
 pkg_postinst() {
-    ghc-package_pkg_postinst
+	ghc-package_pkg_postinst
 
-    elog "${PN} requires either dev-util/darcs or dev-util/git to work."
-    elog "Please install one of these DVCS packages to fully utilise ${PN}."
-    elog "(These aren't in RDEPEND in case you are just using filestore to program.)"
+	elog "${PN} requires either dev-util/darcs or dev-util/git to work."
+	elog "Please install one of these DVCS packages to fully utilise ${PN}."
+	elog "(These aren't in RDEPEND in case you are just using filestore to program.)"
 }
-
