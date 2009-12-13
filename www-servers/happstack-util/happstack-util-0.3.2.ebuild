@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Web framework"
 HOMEPAGE="http://happstack.com"
@@ -28,3 +28,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/strict-concurrency
 		dev-haskell/time
 		dev-haskell/unix-compat"
+
+src_unpack() {
+	base_src_unpack
+	sed -i -e "s/Happstack.Util.Testing,//" "${S}/${PN}.cabal"
+}
