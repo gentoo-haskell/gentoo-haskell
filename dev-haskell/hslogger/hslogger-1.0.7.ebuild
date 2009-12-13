@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bin lib profile haddock"
+CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Versatile logging framework"
@@ -14,8 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
+RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/time"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
