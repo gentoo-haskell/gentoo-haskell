@@ -25,33 +25,33 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
-DEPEND=">=dev-lang/ghc-6.4"
+DEPEND="~dev-lang/ghc-6.12.1"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
 CABAL_CORE_LIB_GHC_PV="6.12.1"
 
-src_unpack() {
-	unpack ${A}
-
-	# We're using the private copy of filepath:
-	sed -i -e 's/Build-Depends: filepath >= 1 && < 1.2//' \
-		-e '/Other-Modules:/a \
-        System.FilePath System.FilePath.Posix System.FilePath.Windows' \
-		"${S}/Cabal.cabal"
-	# Note: do not replace spaces with tabs on the line above, it'll break
-	# things. You'll just have to put up with the repoman warning.
-
-	echo "  Hs-Source-Dirs: ., ../${FP_P}" >> "${S}/Cabal.cabal"
-}
-
-src_compile() {
-	if ! cabal-is-dummy-lib; then
-		einfo "Bootstrapping Cabal..."
-		$(ghc-getghc) -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.hs \
-			-o setup || die "compiling Setup.hs failed"
-		cabal-configure
-		cabal-build
-	fi
-}
+#src_unpack() {
+#	unpack ${A}
+#
+#	# We're using the private copy of filepath:
+#	sed -i -e 's/Build-Depends: filepath >= 1 && < 1.2//' \
+#		-e '/Other-Modules:/a \
+#        System.FilePath System.FilePath.Posix System.FilePath.Windows' \
+#		"${S}/Cabal.cabal"
+#	# Note: do not replace spaces with tabs on the line above, it'll break
+#	# things. You'll just have to put up with the repoman warning.
+#
+#	echo "  Hs-Source-Dirs: ., ../${FP_P}" >> "${S}/Cabal.cabal"
+#}
+#
+#src_compile() {
+#	if ! cabal-is-dummy-lib; then
+#		einfo "Bootstrapping Cabal..."
+#		$(ghc-getghc) -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.hs \
+#			-o setup || die "compiling Setup.hs failed"
+#		cabal-configure
+#		cabal-build
+#	fi
+#}
