@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 MY_PN="HUnit"
@@ -25,9 +25,15 @@ RDEPEND=">=dev-lang/ghc-6.6.1"
 S="${WORKDIR}/${MY_P}"
 
 src_install () {
-    cabal_src_install
-    if use doc; then
-        dohtml -r "${S}/doc/"*
-    fi
+	cabal_src_install
+	if use doc; then
+		dohtml -r "${S}/doc/"*
+	fi
 }
 
+src_install() {
+	cabal_src_install
+
+	# remove hunit self-tests, we don't want to install them
+	rm -rf "${D}/usr/bin"
+}
