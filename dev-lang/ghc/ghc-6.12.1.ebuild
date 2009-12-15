@@ -191,6 +191,14 @@ src_unpack() {
 		#    http://hackage.haskell.org/trac/ghc/ticket/3730
 		epatch "${FILESDIR}/ghc-6.10.4-libm-detection.patch"
 
+		# old-time-1.1.4 on hackage lacked this piece while
+		# darcs repo had it
+		# fixes:
+		#    QA Notice: command not found:
+		#    configure: line 3817: FP_DECL_ALTZONE: command not found
+		cp libraries/time/aclocal.m4 libraries/old-time/aclocal.m4 \
+			|| die "unable to copy 'time/aclocal.m4' to 'old-time/aclocal.m4'"
+
 		# as we have changed the build system with the readline patch
 		eautoreconf
 	fi
