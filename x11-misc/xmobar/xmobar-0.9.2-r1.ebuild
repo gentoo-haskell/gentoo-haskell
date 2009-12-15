@@ -15,7 +15,6 @@ KEYWORDS="~amd64 -sparc ~x86"
 IUSE="xft unicode mail"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
 		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/parsec
@@ -24,7 +23,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
 
 PATCHES=("${FILESDIR}/${P}-*")
 
