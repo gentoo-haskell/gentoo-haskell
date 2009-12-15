@@ -196,7 +196,8 @@ src_unpack() {
 		# fixes:
 		#    QA Notice: command not found:
 		#    configure: line 3817: FP_DECL_ALTZONE: command not found
-		cp libraries/time/aclocal.m4 libraries/old-time/aclocal.m4 \
+		cp "${S}/libraries/time/aclocal.m4" \
+		   "${S}/libraries/old-time/aclocal.m4" \
 			|| die "unable to copy 'time/aclocal.m4' to 'old-time/aclocal.m4'"
 
 		# as we have changed the build system with the readline patch
