@@ -17,7 +17,7 @@ IUSE="volume eval mpd"
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.1
 		dev-haskell/mtl
-		|| ( >=dev-haskell/x11-1.4.3 dev-haskell/x11-darcs )
+		>=dev-haskell/x11-1.4.3
 		|| ( =x11-wm/xmonad-0.9* x11-wm/xmonad-darcs )
 		|| ( =x11-wm/xmonad-contrib-0.9* x11-wm/xmonad-contrib-darcs )
 		volume? ( dev-haskell/parsec dev-haskell/split media-sound/alsa-utils )
