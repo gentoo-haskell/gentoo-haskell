@@ -3,11 +3,8 @@
 # We're still working on supporting this, so expect that some things
 # might not yet work.
 >=dev-lang/ghc-6.12
->=dev-haskell/cabal-1.8.0
 >=dev-haskell/haddock-2.5.0.20091112
 >=dev-haskell/cabal-install-0.7.4.20091113
->=dev-haskell/extensible-exceptions-0.1.1.1
->=app-admin/haskell-updater-0.9.8.9.20091116
 
 # Darcs needs <4, masked until it's actually useful
 # Ivan Miljenovic, 7 October 2009
