@@ -25,5 +25,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/hspread-0.3
 		dev-haskell/hunit
 		dev-haskell/mtl
-		dev-haskell/stm
-		dev-haskell/syb"
+		dev-haskell/stm"

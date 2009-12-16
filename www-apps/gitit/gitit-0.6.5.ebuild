@@ -36,7 +36,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		<dev-haskell/parsec-3
 		>=dev-haskell/recaptcha-0.1
 		>dev-haskell/sha-1
-		dev-haskell/syb
 		dev-haskell/texmath
 		dev-haskell/url
 		dev-haskell/utf8-string

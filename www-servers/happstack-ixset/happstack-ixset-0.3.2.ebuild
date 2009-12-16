@@ -20,5 +20,4 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		>=www-servers/happstack-util-0.3.2
 		dev-haskell/hunit
 		dev-haskell/mtl
-		dev-haskell/syb
 		dev-haskell/syb-with-class"

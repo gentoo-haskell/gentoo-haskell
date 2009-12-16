@@ -21,7 +21,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		=dev-haskell/haskell-src-exts-1.3*
 		>=dev-haskell/hscolour-1.15
 		dev-haskell/mtl
-		dev-haskell/syb
 		>=dev-haskell/uniplate-1.2.0.2
         emacs? ( virtual/emacs
                  app-emacs/haskell-mode )"

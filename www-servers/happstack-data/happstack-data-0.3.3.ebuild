@@ -22,5 +22,4 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/haxml-1.13*
 		dev-haskell/hunit
 		dev-haskell/mtl
-		dev-haskell/syb
 		>=dev-haskell/syb-with-class-0.5"

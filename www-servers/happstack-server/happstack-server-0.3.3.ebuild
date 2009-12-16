@@ -27,7 +27,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/network
 		<dev-haskell/parsec-3
-		dev-haskell/syb
 		dev-haskell/time
 		>=dev-haskell/utf8-string-0.3.4
 		dev-haskell/xhtml
