@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,17 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-lang/ghc
-		dev-haskell/cabal
+DEPEND=">=dev-lang/ghc-6.6.1
+		>=dev-haskell/cabal-1.8
 		dev-haskell/filepath
-		>=dev-haskell/http-4000
+		>=dev-haskell/http-4000.0.3
 		dev-haskell/mtl
 		dev-haskell/network
-		>=dev-haskell/tar-0.3.0.0
-		dev-haskell/zlib
-		dev-haskell/regex-compat"
-
-src_compile() {
-    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-    cabal_src_compile
-}
+		dev-haskell/parsec
+		dev-haskell/regex-compat
+		dev-haskell/tar
+		dev-haskell/zlib"
