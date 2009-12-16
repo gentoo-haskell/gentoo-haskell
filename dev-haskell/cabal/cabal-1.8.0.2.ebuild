@@ -8,42 +8,24 @@ inherit haskell-cabal eutils
 MY_PN="Cabal"
 MY_P="${MY_PN}-${PV}"
 
-# Resolve cyclic dep between filepath and Cabal by using a private copy of
-# filepath when building Cabal.
-FP_PN=filepath
-FP_PV=1.1.0.3
-FP_P=${FP_PN}-${FP_PV}
-
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
-	http://hackage.haskell.org/packages/archive/${FP_PN}/${FP_PV}/${FP_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
-DEPEND="~dev-lang/ghc-6.12.1"
+# Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
+# filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
+# lowest possible ghc version
+DEPEND=">=dev-lang/ghc-6.6.1"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
 CABAL_CORE_LIB_GHC_PV="6.12.1"
-
-src_unpack() {
-	unpack ${A}
-
-	# We're using the private copy of filepath:
-	sed -i -e 's/Build-Depends: filepath >= 1 && < 1.2//' \
-		-e '/Other-Modules:/a \
-        System.FilePath System.FilePath.Posix System.FilePath.Windows' \
-		"${S}/Cabal.cabal"
-	# Note: do not replace spaces with tabs on the line above, it'll break
-	# things. You'll just have to put up with the repoman warning.
-
-	echo "  Hs-Source-Dirs: ., ../${FP_P}" >> "${S}/Cabal.cabal"
-}
 
 src_compile() {
 	if ! cabal-is-dummy-lib; then
