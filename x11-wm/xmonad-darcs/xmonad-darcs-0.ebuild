@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-haskell/mtl-1.0
-	dev-haskell/x11-darcs
+	>=dev-haskell/x11-1.5.0.0
 	>=dev-lang/ghc-6.6
 	!x11-wm/xmonad"
 RDEPEND="${DEPEND}"
