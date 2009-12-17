@@ -17,13 +17,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# There are various flags available for hstringtemplate; if anyone wants them, ask.
+
 DEPEND=">=dev-lang/ghc-6.8
 		>=dev-haskell/cabal-1.6
 		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/parallel
 		<dev-haskell/parsec-3
-		dev-haskell/syb-with-class
 		dev-haskell/text
 		dev-haskell/time
 		dev-haskell/utf8-string"
