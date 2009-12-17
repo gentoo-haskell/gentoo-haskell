@@ -6,6 +6,3 @@ Packages that require gtk2hs:
 	* dev-haskell/chart
 	* dev-haskell/criterion (with USE=chart)
 
-Unknown failure:
-	* dev-haskell/x11-darcs (presumably x11 as well)
-		-> this means xmonad* won't work
