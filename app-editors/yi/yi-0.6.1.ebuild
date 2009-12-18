@@ -16,9 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gnome gtk vty"
 
-DEPEND=">=dev-lang/ghc-6.10.1
+# Cheating here: yi needs cabal 1.6, but will only work with 6.10 anyway, so don't specify a dep.
+#		=dev-haskell/cabal-1.6*
+DEPEND="=dev-lang/ghc-6.10*
 		=dev-haskell/binary-0.5*
-		=dev-haskell/cabal-1.6*
 		=dev-haskell/data-accessor-0.2*
 		=dev-haskell/data-accessor-monads-fd-0.2*
 		=dev-haskell/data-accessor-template-0.2*
