@@ -20,7 +20,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/regex-compat
-		dev-haskell/utf8-string"
+		dev-haskell/utf8-string
 		>=dev-tex/polytable-0.8.2
 		doc? ( dev-lang/hugs98 virtual/latex-base )"
 
@@ -33,7 +33,3 @@ src_unpack() {
 	use doc && rm doc/Guide2.dontbuild
 	popd
 }
-
-
-
-
