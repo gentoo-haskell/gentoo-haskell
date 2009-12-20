@@ -7,8 +7,7 @@ inherit haskell-cabal bash-completion
 
 DESCRIPTION="The command-line interface for Cabal and Hackage."
 HOMEPAGE="http://www.haskell.org/cabal/"
-#SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
-SRC_URI="http://code.haskell.org/~slyfox/darcs-snapshots/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -16,7 +15,7 @@ KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.4
-		 >=dev-haskell/cabal-1.7.5"
+		 >=dev-haskell/cabal-1.8"
 DEPEND="${RDEPEND}
 		>=dev-haskell/filepath-1.0
 		>=dev-haskell/http-4000.0.2
