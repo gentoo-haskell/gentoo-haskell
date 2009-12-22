@@ -24,8 +24,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/filepath
 		>=dev-haskell/filestore-0.3.2
 		dev-haskell/ghc-paths
-		>=www-servers/happstack-server-0.3.3
-		>=www-servers/happstack-util-0.3.2
+		>=dev-haskell/happstack-server-0.3.3
+		>=dev-haskell/happstack-util-0.3.2
 		dev-haskell/highlighting-kate
 		<dev-haskell/hslogger-1.1
 		dev-haskell/hstringtemplate
