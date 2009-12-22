@@ -27,8 +27,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS="--configure-option=$(use_with xinerama)"
-    cabal_src_compile
+	CABAL_CONFIGURE_FLAGS="--configure-option=$(use_with xinerama)"
+	cabal_src_compile
 }
-
-
