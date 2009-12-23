@@ -19,7 +19,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 	>=dev-haskell/cabal-1.2
 	>=dev-haskell/x11-1.3.0
 	>=dev-haskell/mtl-1.0
-	>=dev-haskell/filepath-1.0
 	dev-haskell/parsec
 	dev-haskell/stm
 	dev-haskell/action-permutations

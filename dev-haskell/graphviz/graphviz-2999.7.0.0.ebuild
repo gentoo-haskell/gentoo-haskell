@@ -19,7 +19,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		=dev-haskell/colour-2.3*
 		dev-haskell/extensible-exceptions
 		dev-haskell/fgl
-		dev-haskell/filepath
 		>=dev-haskell/polyparse-1.1"
 
 RDEPEND="${DEPEND}

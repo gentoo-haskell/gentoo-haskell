@@ -21,7 +21,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/configfile-1
 		dev-haskell/datetime
 		>=dev-haskell/feed-0.3.6
-		dev-haskell/filepath
 		>=dev-haskell/filestore-0.3.2
 		dev-haskell/ghc-paths
 		>=dev-haskell/happstack-server-0.3.3

@@ -18,7 +18,6 @@ IUSE="doc"
 DEPEND="!dev-haskell/leksah
 		>=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.1.6.2
-		>=dev-haskell/filepath-1.0
 		>=dev-haskell/parsec-2.0
 		>=dev-haskell/mtl-1.0.1
 		>=dev-haskell/gtk2hs-0.9.12

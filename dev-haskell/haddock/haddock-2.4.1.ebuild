@@ -20,12 +20,6 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
-# haddock-2.4.1 also deps on the upgradeable package dev-haskell/filepath.
-# however, it's included in >=ghc-6.8.2, so we use the core package without
-# stating the dependency in DEPEND.
-# ghc-6.8.2 has filepath-1.1.0.0
-# ghc-6.10.4 has filepath-1.1.0.2
-
 # we bundle the dep on ghc-paths to reduce the dependencies on this critical
 # package. ghc-paths would like to be compiled with USE=doc, which pulls in
 # haddock, which requires ghc-paths, which pulls in haddock...

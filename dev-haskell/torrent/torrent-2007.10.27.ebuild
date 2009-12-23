@@ -16,6 +16,5 @@ IUSE=""
 
 DEPEND="=dev-lang/ghc-6.6*
 		dev-haskell/bencode
-		dev-haskell/filepath
 		dev-haskell/network
 		dev-haskell/binary"

@@ -17,7 +17,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		dev-haskell/configfile
-		dev-haskell/filepath
 		<dev-haskell/haxml-1.19
 		<dev-haskell/hdbc-2
 		<dev-haskell/hdbc-sqlite3-2

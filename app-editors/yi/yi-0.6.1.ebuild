@@ -26,7 +26,6 @@ DEPEND="=dev-lang/ghc-6.10*
 		=dev-haskell/derive-0.1*
 		=dev-haskell/diff-0.1*
 		>=dev-haskell/dlist-0.4.1
-		=dev-haskell/filepath-1.1*
 		<dev-haskell/fingertree-0.1
 		=dev-haskell/ghc-paths-0.1*
 		dev-haskell/monads-fd

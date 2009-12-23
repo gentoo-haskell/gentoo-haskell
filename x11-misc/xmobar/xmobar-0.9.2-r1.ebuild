@@ -15,7 +15,6 @@ KEYWORDS="~amd64 -sparc ~x86"
 IUSE="xft unicode mail"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/parsec
 		dev-haskell/stm

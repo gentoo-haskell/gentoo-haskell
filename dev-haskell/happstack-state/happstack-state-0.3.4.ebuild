@@ -18,7 +18,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
-		dev-haskell/filepath
 		>=dev-haskell/happstack-data-0.3.2
 		>=dev-haskell/happstack-util-0.3.2
 		>=dev-haskell/hslogger-1.0.2

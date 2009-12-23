@@ -18,7 +18,6 @@ IUSE=""
 RDEPEND="<dev-lang/ghc-6.11
 		=dev-haskell/cabal-1.6*"
 DEPEND="${RDEPEND}
-		>=dev-haskell/filepath-1.0
 		>=dev-haskell/http-4000.0.2
 		dev-haskell/network
 		>=dev-haskell/zlib-0.4"

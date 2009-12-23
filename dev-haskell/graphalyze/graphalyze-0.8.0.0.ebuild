@@ -22,7 +22,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
 		>=dev-haskell/fgl-5.4.2.2
-		dev-haskell/filepath
 		=dev-haskell/graphviz-2999.6*
 		app-text/pandoc
 		dev-haskell/time"

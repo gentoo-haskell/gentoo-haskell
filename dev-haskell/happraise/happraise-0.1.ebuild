@@ -15,5 +15,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/cabal
-		dev-haskell/filepath"
+		dev-haskell/cabal"

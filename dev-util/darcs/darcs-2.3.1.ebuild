@@ -16,7 +16,6 @@ IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		=dev-haskell/filepath-1.1*
 		<dev-haskell/hashed-storage-0.4
 		<dev-haskell/haskeline-0.7
 		=dev-haskell/html-1.0*

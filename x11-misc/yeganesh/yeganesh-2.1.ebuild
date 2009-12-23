@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		>=dev-haskell/filepath-1.1
 		>=dev-haskell/strict-0.3
         >=dev-haskell/time-1.1
         x11-misc/dmenu"

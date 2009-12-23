@@ -15,5 +15,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/mtl
-		dev-haskell/filepath"
+		dev-haskell/mtl"

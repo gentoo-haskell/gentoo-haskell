@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/filepath"
+RDEPEND=">=dev-lang/ghc-6.6.1"
 DEPEND="${RDEPEND}
 		dev-haskell/happy
 		dev-haskell/alex

@@ -22,7 +22,6 @@ S="${WORKDIR}/${P/_pre/pre}"
 
 DEPEND=">=dev-haskell/regex-compat-0.71
 	dev-haskell/mtl
-	dev-haskell/filepath
 	>=dev-tex/polytable-0.8.2
 	doc? ( dev-lang/hugs98 virtual/latex-base )"
 

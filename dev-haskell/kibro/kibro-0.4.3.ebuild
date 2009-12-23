@@ -20,7 +20,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/configfile
 		dev-haskell/data-default
 		dev-haskell/fastcgi
-		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/regex-compat
 		dev-haskell/regexpr

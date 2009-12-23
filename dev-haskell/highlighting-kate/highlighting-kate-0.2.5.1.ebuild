@@ -18,8 +18,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		<dev-haskell/parsec-3
 		dev-haskell/pcre-light
-		dev-haskell/xhtml
-		executable? ( dev-haskell/filepath )"
+		dev-haskell/xhtml"
 
 if use executable; then
     CABAL_CONFIGURE_FLAGS="--flags=executable"

@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.6
-		dev-haskell/filepath
 		dev-haskell/mtl"
 
 src_install() {

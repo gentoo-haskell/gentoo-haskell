@@ -21,7 +21,6 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.8
 		>=dev-haskell/cabal-1.6
-		dev-haskell/filepath
 		dev-haskell/mtl
 		dev-haskell/parallel
 		<dev-haskell/parsec-3

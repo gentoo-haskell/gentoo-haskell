@@ -17,7 +17,6 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/datetime
 		dev-haskell/diff
-		dev-haskell/filepath
 		dev-haskell/parsec
 		dev-haskell/regex-posix
 		dev-haskell/split

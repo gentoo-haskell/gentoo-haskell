@@ -14,5 +14,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
-		dev-haskell/filepath"
+DEPEND=">=dev-lang/ghc-6.4.2"

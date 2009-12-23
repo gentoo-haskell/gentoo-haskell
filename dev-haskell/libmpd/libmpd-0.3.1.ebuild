@@ -17,5 +17,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		>=dev-haskell/network-2.0.1
-		>=dev-haskell/mtl-1.0.1
-		>=dev-haskell/filepath-1.0"
+		>=dev-haskell/mtl-1.0.1"

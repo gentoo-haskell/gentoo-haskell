@@ -17,7 +17,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/colorize-haskell
-		dev-haskell/filepath
 		dev-haskell/pcre-light"
 
 src_compile() {

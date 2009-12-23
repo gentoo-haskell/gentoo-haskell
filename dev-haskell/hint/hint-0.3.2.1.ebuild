@@ -17,7 +17,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.2.3
 		dev-haskell/extensible-exceptions
-		dev-haskell/filepath
 		=dev-haskell/ghc-mtl-1.0*
 		dev-haskell/ghc-paths
 		dev-haskell/haskell-src

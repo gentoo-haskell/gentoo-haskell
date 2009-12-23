@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/filepath
 		dev-haskell/hslogger
 		dev-haskell/hunit
 		dev-haskell/mtl

@@ -17,7 +17,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
-		dev-haskell/filepath
 		>=dev-haskell/hslogger-1.0.2
 		dev-haskell/hunit
 		dev-haskell/mtl

@@ -17,7 +17,6 @@ IUSE="test"
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
-		dev-haskell/filepath
 		=dev-haskell/mmap-0.4*
 		dev-haskell/mtl
 		dev-haskell/zlib
