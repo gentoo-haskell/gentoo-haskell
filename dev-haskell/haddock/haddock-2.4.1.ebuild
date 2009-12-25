@@ -1,19 +1,14 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/haddock-2.4.1.ebuild,v 1.1 2009/07/23 20:15:07 kolmodin Exp $
+# $Header:  $
 
 CABAL_FEATURES="bin lib"
 # don't enable profiling as the 'ghc' package is not built with profiling
 inherit haskell-cabal autotools
 
-GHCPATHS_PN="ghc-paths"
-GHCPATHS_PV="0.1.0.5"
-GHCPATHS_P="${GHCPATHS_PN}-${GHCPATHS_PV}"
-
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz
-	http://hackage.haskell.org/packages/archive/${GHCPATHS_PN}/${GHCPATHS_PV}/${GHCPATHS_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -35,28 +30,33 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 
-	# use ghc-paths directly, not as a library
-	sed -e "s|build-depends: ghc-paths|hs-source-dirs: ../${GHCPATHS_P}|" \
-		-e "s|Simple|Custom|" \
+	# remove dependency on ghc-paths, we include it right into haddock instead
+	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
 
-	# ghc-paths has a custom Setup.hs, haddock has the default Setup.lhs.
-	# we use a somewhat modified ghc-paths Setup.hs that works better for our
-	# purposes.
-	rm "${S}/Setup.lhs"
-	cp "${FILESDIR}/${PN}-2.4.2-Setup.hs" "${S}/Setup.hs"
+	# copy of slightly modified version of GHC.Paths
+	mkdir "${S}/src/GHC"
+	cp "${FILESDIR}/ghc-paths-1.0.5.0-GHC-Paths.hs" "${S}/src/GHC/Paths.hs"
 
-	# -O2 is not needed and just prolongs compile time
-	# missing module in other-modules declaration
-	sed -e "s/-O2//" \
-		-e 's/other-modules:/other-modules:\n    Haddock.DocName/' \
-		-e 's/other-modules:/other-modules:\n    Haddock.GHC.Utils/' \
-	    -i "${S}/${PN}.cabal"
+	# a few things we need to replace, and example values
+	# GHC_PATHS_LIBDIR /usr/lib64/ghc-6.12.0.20091010
+	# GHC_PATHS_DOCDIR /usr/share/doc/ghc-6.12.0.20091010/html
+	# GHC_PATHS_GHC_PKG /usr/bin/ghc-pkg
+	# GHC_PATHS_GHC /usr/bin/ghc (be careful: GHC_PATHS_GHC is a substring of GHC_PATHS_GHC_PKG)
+
+	# hardcode stuff above:
+	sed \
+	    -e "s|GHC_PATHS_LIBDIR|\"$(ghc-libdir)\"|" \
+	    -e "s|GHC_PATHS_DOCDIR|\"/usr/share/doc/ghc-$(ghc-version)/html\"|" \
+	    -e "s|GHC_PATHS_GHC_PKG|\"$(ghc-getghcpkg)\"|" \
+	    -e "s|GHC_PATHS_GHC|\"$(ghc-getghc)\"|" \
+	  -i "${S}/src/GHC/Paths.hs"
 
 	if use doc; then
 	  cd "${S}/doc"
 	  eautoreconf
 	fi
+
 
 }
 
@@ -77,4 +77,3 @@ src_install () {
 	fi
 	dodoc CHANGES README
 }
-
