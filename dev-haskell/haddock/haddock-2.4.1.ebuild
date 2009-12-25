@@ -18,11 +18,10 @@ IUSE="doc"
 # we bundle the dep on ghc-paths to reduce the dependencies on this critical
 # package. ghc-paths would like to be compiled with USE=doc, which pulls in
 # haddock, which requires ghc-paths, which pulls in haddock...
-# bundling ghc-paths forces us to depend on >=cabal-1.6 rather than >=cabal-1.2
 
 RDEPEND=">=dev-lang/ghc-6.8.2" # supports up to early ghc 6.10.x versions
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.2
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"

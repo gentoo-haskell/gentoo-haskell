@@ -22,7 +22,7 @@ IUSE="doc"
 # builds with ghc-6.10.2/3, but not .1
 RDEPEND=">=dev-lang/ghc-6.10.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.2
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"
