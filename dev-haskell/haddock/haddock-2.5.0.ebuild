@@ -6,14 +6,9 @@ CABAL_FEATURES="bin lib"
 # don't enable profiling as the 'ghc' package is not built with profiling
 inherit haskell-cabal autotools
 
-GHCPATHS_PN="ghc-paths"
-GHCPATHS_PV="0.1.0.5"
-GHCPATHS_P="${GHCPATHS_PN}-${GHCPATHS_PV}"
-
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz
-	http://hackage.haskell.org/packages/archive/${GHCPATHS_PN}/${GHCPATHS_PV}/${GHCPATHS_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -35,21 +30,33 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 
-	# use ghc-paths directly, not as a library
-	sed -e "s|build-depends: ghc-paths|hs-source-dirs: ../${GHCPATHS_P}|" \
-		-e "s|Simple|Custom|" \
+	# remove dependency on ghc-paths, we include it right into haddock instead
+	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
 
-	# ghc-paths has a custom Setup.hs, haddock has the default Setup.lhs.
-	# we use a somewhat modified ghc-paths Setup.hs that works better for our
-	# purposes.
-	rm "${S}/Setup.lhs"
-	cp "${FILESDIR}/${PN}-2.4.2-Setup.hs" "${S}/Setup.hs"
+	# copy of slightly modified version of GHC.Paths
+	mkdir "${S}/src/GHC"
+	cp "${FILESDIR}/ghc-paths-1.0.5.0-GHC-Paths.hs" "${S}/src/GHC/Paths.hs"
+
+	# a few things we need to replace, and example values
+	# GHC_PATHS_LIBDIR /usr/lib64/ghc-6.12.0.20091010
+	# GHC_PATHS_DOCDIR /usr/share/doc/ghc-6.12.0.20091010/html
+	# GHC_PATHS_GHC_PKG /usr/bin/ghc-pkg
+	# GHC_PATHS_GHC /usr/bin/ghc (be careful: GHC_PATHS_GHC is a substring of GHC_PATHS_GHC_PKG)
+
+	# hardcode stuff above:
+	sed \
+	    -e "s|GHC_PATHS_LIBDIR|\"$(ghc-libdir)\"|" \
+	    -e "s|GHC_PATHS_DOCDIR|\"/usr/share/doc/ghc-$(ghc-version)/html\"|" \
+	    -e "s|GHC_PATHS_GHC_PKG|\"$(ghc-getghcpkg)\"|" \
+	    -e "s|GHC_PATHS_GHC|\"$(ghc-getghc)\"|" \
+	  -i "${S}/src/GHC/Paths.hs"
 
 	if use doc; then
 	  cd "${S}/doc"
 	  eautoreconf
 	fi
+
 
 }
 
