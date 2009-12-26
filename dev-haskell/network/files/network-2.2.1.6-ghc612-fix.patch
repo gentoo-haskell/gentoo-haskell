@@ -1,0 +1,14 @@
+Sat Dec 26 18:24:06 CET 2009  Lennart Kolmodin <kolmodin@gentoo.org>
+  * Fix building with GHC >= 6.11 on non-Windows
+diff -rN -u old-network/Network/Socket.hsc new-network/Network/Socket.hsc
+--- old-network/Network/Socket.hsc	2009-12-26 18:32:47.115758804 +0100
++++ new-network/Network/Socket.hsc	2009-12-26 18:32:47.119756938 +0100
+@@ -301,7 +301,7 @@
+ 
+ INSTANCE_TYPEABLE0(Socket,socketTc,"Socket")
+ 
+-#if __GLASGOW_HASKELL__ >= 611
++#if __GLASGOW_HASKELL__ >= 611 && defined(mingw32_HOST_OS)
+ socket2FD  (MkSocket fd _ _ _ _) = 
+   -- HACK, 1 means True 
+   FD{fdFD = fd,fdIsSocket_ = 1} 
