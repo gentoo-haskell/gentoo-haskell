@@ -22,6 +22,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=("
 		${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch
+		${FILESDIR}/network-2.2.1.6-ghc612-fix.patch
 ")
 
 src_unpack() {
