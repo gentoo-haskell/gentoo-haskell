@@ -17,6 +17,7 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		dev-haskell/erf
+		dev-haskell/mwc-random
 		dev-haskell/time
 		>=dev-haskell/uvector-0.1.0.4
 		>=dev-haskell/uvector-algorithms-0.2"
