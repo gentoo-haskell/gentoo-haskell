@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.6.1
+		 >=dev-haskell/cpphs-1.3"
+DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2
-		>=dev-haskell/cpphs-1.3
 		>=dev-haskell/happy-1.17"
