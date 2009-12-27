@@ -24,14 +24,14 @@ RDEPEND="${DEPEND}"
 
 
 src_compile() {
-    CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
-    if use inotify; then
-        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
-    else
-        CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
-    fi
+	if use inotify; then
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
+	else
+		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
+	fi
 
-    cabal_src_compile
+	cabal_src_compile
 }
 
