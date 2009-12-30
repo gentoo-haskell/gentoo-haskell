@@ -14,13 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-HASKELLDEPS="dev-haskell/hunit
-		dev-haskell/quickcheck
-		dev-haskell/storable-complex
-        sci-libs/gsl
-        virtual/blas
-        virtual/lapack"
 RDEPEND=">=dev-lang/ghc-6.6.1
-		${HASKELLDEPS}"
+		 dev-haskell/hunit
+		 dev-haskell/quickcheck
+		 dev-haskell/storable-complex
+		 sci-libs/gsl
+		 virtual/blas
+		 virtual/lapack"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
