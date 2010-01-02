@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer"
-HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/haskell-src-exts/"
+HOMEPAGE="http://code.haskell.org/haskell-src-exts"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
