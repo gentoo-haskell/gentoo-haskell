@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		<dev-haskell/parsec-3
 		>=dev-haskell/utf8-string-0.3
 		>=dev-haskell/xhtml-3000.0
-		>=dev-haskell/zip-archive-0.1.1
+		>=dev-haskell/zip-archive-0.1.1.4
 		highlight? ( >=dev-haskell/highlighting-kate-0.2.3 )
 		citeproc? ( dev-haskell/citeproc-hs )"
 
