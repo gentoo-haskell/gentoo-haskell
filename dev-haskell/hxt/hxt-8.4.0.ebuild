@@ -20,7 +20,7 @@ RDEPEND=">=dev-lang/ghc-6.12
 		>=dev-haskell/hunit-1.2
 		>=dev-haskell/network-2.1
 		>=dev-haskell/parsec-2.1
-		>=dev-haskell/tagsoup-0.6"
+		~dev-haskell/tagsoup-0.6"
 
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
