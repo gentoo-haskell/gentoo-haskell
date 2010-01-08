@@ -21,7 +21,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/network-2.1
 		=dev-haskell/parallel-1*
 		>=dev-haskell/parsec-2.1
-		>=dev-haskell/tagsoup-0.6"
+		~dev-haskell/tagsoup-0.6"
 
 src_install() {
 	cabal_src_install
