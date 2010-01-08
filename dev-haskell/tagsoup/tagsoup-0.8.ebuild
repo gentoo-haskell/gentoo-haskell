@@ -14,11 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~dev-haskell/deepseq-1.1.0.0
-		dev-haskell/http
-		dev-haskell/mtl
-		dev-haskell/network
-		dev-haskell/time"
+RDEPEND="dev-haskell/mtl
+		dev-haskell/network"
 DEPEND=">=dev-haskell/cabal-1.6
 		>=dev-lang/ghc-6.10.1
 		${RDEPEND}"
