@@ -1,0 +1,14 @@
+Wed Jan  6 18:23:22 EET 2010  Dave Love <fx@gnu.org>
+  * Resolve issue1720:  Fix cabal haddock problem.
+diff -rN -u old-darcs.net/src/Darcs/Repository/Prefs.lhs new-darcs.net/src/Darcs/Repository/Prefs.lhs
+--- old-darcs.net/src/Darcs/Repository/Prefs.lhs	2010-01-08 19:03:28.409233548 +0200
++++ new-darcs.net/src/Darcs/Repository/Prefs.lhs	2010-01-08 19:03:28.557232571 +0200
+@@ -124,7 +124,7 @@
+ as \verb!manual/index.html!) matches any of
+ the boring regular expressions is considered boring.  The boring file is
+ used to filter the files provided to darcs add, to allow you to use a
+-simple \verb-darcs add newdir newdir/*-
++simple \verb-darcs add newdir newdir/-\verb-*- % cabal haddock barfs on adjacent / *
+ without accidentally adding a bunch of
+ object files.  It is also used when the \verb!--look-for-adds! flag is
+ given to whatsnew or record.

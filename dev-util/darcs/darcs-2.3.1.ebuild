@@ -55,6 +55,10 @@ src_unpack() {
 	# this patch just renames the variable
 	epatch "${FILESDIR}/${P}-ghc-6.12-rec-keyword.patch"
 
+	# different cabal versions call preprocessors in various sequences (unlit, cpp)
+	# and some of those sequences are broken (some info is at http://bugs.darcs.net/issue1720)
+	epatch "${FILESDIR}/${P}-haddock-cabal-1.8-break.patch"
+
 	# We don't have threaded ghc builds at least for those platforms,
 	# so it won't just work.
 	# Beware: http://www.haskell.org/ghc/docs/latest/html/users_guide/options-phases.html#options-linker
