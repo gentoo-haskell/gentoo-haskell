@@ -58,6 +58,20 @@ src_unpack() {
 	# different cabal versions call preprocessors in various sequences (unlit, cpp)
 	# and some of those sequences are broken (some info is at http://bugs.darcs.net/issue1720)
 	epatch "${FILESDIR}/${P}-haddock-cabal-1.8-break.patch"
+	# This one workarounds a bug (or feature?) in one more preprocessor - Cabal's unlit.
+	# ghc's unlit just eats non-Bird comments while Cabal's one converts them to ordinary
+	# comments, so:
+	# * foo
+	# > module ...
+	# code will translate to:
+	#   module ...
+	# with ghc's unlit (which is OK for haddock)
+	# and to:
+	#   -- * foo
+	#   module ...
+	# with cabal's unlit, which is invalid haddock markup.
+	# adding leading space seems to do the trick for now.
+	sed -i -e 's/^\*/ \*/g' "${S}/src/UTF8.lhs"
 
 	# We don't have threaded ghc builds at least for those platforms,
 	# so it won't just work.
