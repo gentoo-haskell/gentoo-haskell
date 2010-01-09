@@ -8,7 +8,7 @@ inherit haskell-cabal
 MY_PN="SourceGraph"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Use graph-theory to analyse your code"
+DESCRIPTION="Static code analysis using graph-theoretic techniques."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SourceGraph"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
@@ -17,16 +17,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		=dev-haskell/cabal-1.6*
+DEPEND=">=dev-lang/ghc-6.8.1
+		=dev-haskell/cabal-1.8*
 		dev-haskell/extensible-exceptions
 		dev-haskell/fgl
-		=dev-haskell/graphalyze-0.8*
-		=dev-haskell/graphviz-2999.6*
-		=dev-haskell/haskell-src-exts-1.1*
+		=dev-haskell/graphalyze-0.9*
+		=dev-haskell/graphviz-2999.8*
+		=dev-haskell/haskell-src-exts-1.5*
+		dev-haskell/mtl
 		dev-haskell/multiset"
 
-RDEPEND="${DEPEND}
-         media-gfx/graphviz"
+RDEPEND="media-gfx/graphviz"
 
 S="${WORKDIR}/${MY_P}"
