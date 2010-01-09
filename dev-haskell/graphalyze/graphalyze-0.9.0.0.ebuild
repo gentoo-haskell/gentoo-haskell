@@ -26,7 +26,8 @@ COMMON=">=dev-lang/ghc-6.8.1
 		dev-haskell/time"
 DEPEND="${COMMON}
 		>=dev-haskell/cabal-1.6"
+# Use graphviz >= 2.24 to automatically get png support
 RDEPEND="${COMMON}
-		media-gfx/graphviz"
+		>=media-gfx/graphviz-2.24.0"
 
 S="${WORKDIR}/${MY_P}"

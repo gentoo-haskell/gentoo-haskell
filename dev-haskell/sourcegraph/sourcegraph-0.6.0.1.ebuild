@@ -27,6 +27,7 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/mtl
 		dev-haskell/multiset"
 
-RDEPEND="media-gfx/graphviz"
+# Specify >= 2.24 to get png support
+RDEPEND=">=media-gfx/graphviz-2.24.0"
 
 S="${WORKDIR}/${MY_P}"
