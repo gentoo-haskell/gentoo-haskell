@@ -17,13 +17,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
+COMMON=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/bktrees-0.2
-		>=dev-haskell/cabal-1.6
 		dev-haskell/extensible-exceptions
 		>=dev-haskell/fgl-5.4.2.2
-		=dev-haskell/graphviz-2999.6*
-		app-text/pandoc
+		=dev-haskell/graphviz-2999.8*
+		=dev-haskell/pandoc-1.4*
 		dev-haskell/time"
+DEPEND="${COMMON}
+		>=dev-haskell/cabal-1.6"
+RDEPEND="${COMMON}
+		media-gfx/graphviz"
 
 S="${WORKDIR}/${MY_P}"
