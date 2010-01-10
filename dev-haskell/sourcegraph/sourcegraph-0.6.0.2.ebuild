@@ -23,7 +23,7 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/fgl
 		=dev-haskell/graphalyze-0.9*
 		=dev-haskell/graphviz-2999.8*
-		=dev-haskell/haskell-src-exts-1.5*
+		=dev-haskell/haskell-src-exts-1.6*
 		dev-haskell/mtl
 		dev-haskell/multiset"
 
