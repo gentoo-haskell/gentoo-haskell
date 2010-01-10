@@ -22,7 +22,7 @@ COMMON=">=dev-lang/ghc-6.8.1
 		dev-haskell/extensible-exceptions
 		>=dev-haskell/fgl-5.4.2.2
 		=dev-haskell/graphviz-2999.8*
-		=dev-haskell/pandoc-1.4*
+		=app-text/pandoc-1.4*
 		dev-haskell/time"
 DEPEND="${COMMON}
 		>=dev-haskell/cabal-1.6"
