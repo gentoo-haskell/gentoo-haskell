@@ -17,10 +17,10 @@ IUSE="emacs"
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/cpphs-1.9
-		=dev-haskell/haskell-src-exts-1.5*
+		=dev-haskell/haskell-src-exts-1.6*
 		>=dev-haskell/hscolour-1.15
 		dev-haskell/mtl
-		>=dev-haskell/uniplate-1.2.0.2
+		=dev-haskell/uniplate-1.4*
         emacs? ( virtual/emacs
                  app-emacs/haskell-mode )"
 
