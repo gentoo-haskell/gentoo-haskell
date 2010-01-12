@@ -211,6 +211,16 @@ cabal-configure() {
 		cabalconf="${cabalconf} --disable-library-for-ghci"
 	fi
 
+	if version_is_at_least "1.4" "$(cabal-version)"; then
+		# disable executable stripping for the executables, as portage will
+		# strip by itself, and pre-stripping gives a QA warning.
+		# cabal versions previous to 1.4 does not strip executables, and does
+		# not accept the flag.
+		# this fixes numerous bugs, amongst them;
+		# bug #251881, bug #251882, bug #251884, bug #251886, bug #299494
+		cabalconf="${cabalconf} --disable-executable-stripping"
+	fi
+
 	if version_is_at_least "1.2.0" "$(cabal-version)"; then
 		cabalconf="${cabalconf} --docdir=/usr/share/doc/${PF}"
 		# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
