@@ -184,6 +184,8 @@ src_unpack() {
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
 
+		cd "${S}" # otherwise epatch will break
+
 		epatch "${FILESDIR}/ghc-${PV}-configure-CHOST.patch"
 
 		# fix configure.ac to detect libm need
