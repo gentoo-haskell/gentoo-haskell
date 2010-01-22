@@ -1,7 +1,0 @@
-EBUILD yhc-darcs-0.ebuild 621 RMD160 8191a3de15e8d37a93fb20ef7d38d84cf31c48c7 SHA1 e8ac2d0b0ace648b29cac713eb7fa827f63bda9c SHA256 2a022d7da223c8a799096236db1d5a3555bed0c398088af5519ae354d8fbdc5e
-MD5 3bfd0b9946121621caa81ae90cd446c8 yhc-darcs-0.ebuild 621
-RMD160 8191a3de15e8d37a93fb20ef7d38d84cf31c48c7 yhc-darcs-0.ebuild 621
-SHA256 2a022d7da223c8a799096236db1d5a3555bed0c398088af5519ae354d8fbdc5e yhc-darcs-0.ebuild 621
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-yhc-darcs-0 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-yhc-darcs-0 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-yhc-darcs-0 0
