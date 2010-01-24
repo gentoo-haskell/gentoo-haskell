@@ -1,23 +1,24 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 MY_PN="HList"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Heterogeneous lists"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/HList"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE=""	#Fixme: "OtherLicense", please fill in manually
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/cabal"
+RDEPEND=">=dev-lang/ghc-6.6.1"
+DEPEND=">=dev-haskell/cabal-1.4
+		${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
