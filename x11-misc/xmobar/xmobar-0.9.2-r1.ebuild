@@ -25,7 +25,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/${P}-*")
+PATCHES=("${FILESDIR}/xmobar-0.9.2-cpu-high-load.patch")
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS=""
