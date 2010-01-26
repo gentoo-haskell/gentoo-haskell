@@ -22,4 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${P}-*")
+PATCHES=("${FILESDIR}/quickcheck-1.1.0.0-ghc-6.10-build-fix.patch")
+
+CABAL_CONFIGURE_FLAGS="--constraint=base<4"
+
