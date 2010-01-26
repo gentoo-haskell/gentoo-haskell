@@ -117,6 +117,10 @@ src_compile() {
 src_install() {
 	cabal_src_install
 	dobashcompletion "${S}/contrib/darcs_completion" "${PN}"
+
+	# fixup perms in such an an awkward way
+	mv "${D}/usr/share/man/man1/darcs.1" "${S}/darcs.1" || die "darcs.1 not found"
+	doman "${S}/darcs.1" || die "failed to register darcs.1 as a manpage"
 }
 
 pkg_postinst() {
