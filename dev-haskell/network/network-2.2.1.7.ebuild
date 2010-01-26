@@ -20,9 +20,7 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("
-		${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch
-")
+PATCHES=("${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch")
 
 src_unpack() {
 	base_src_unpack
