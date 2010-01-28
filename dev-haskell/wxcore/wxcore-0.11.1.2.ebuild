@@ -21,7 +21,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/time
 		>=x11-libs/wxGTK-2.6"
 
-PATCHES=( "${FILESDIR}/${P}-*.patch" )
+PATCHES=( "${FILESDIR}/${P}-configure-libdir.patch"
+		  "${FILESDIR}/${P}-configure.patch"
+		  "${FILESDIR}/${P}-destdir.patch"
+	    )
 
 src_compile() {
 	# does both configure and compile phase
