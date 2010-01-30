@@ -5,8 +5,8 @@
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Linear algebra and numerical computations"
-HOMEPAGE="http://www.hmatrix.googlepages.com"
+DESCRIPTION="Linear algebra and numerical computation"
+HOMEPAGE="http://code.haskell.org/hmatrix"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
