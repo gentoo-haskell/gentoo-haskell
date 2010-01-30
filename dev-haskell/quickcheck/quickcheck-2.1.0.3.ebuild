@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 MY_PN="QuickCheck"
@@ -19,11 +19,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		dev-haskell/mtl"
+		dev-haskell/mtl
+		dev-haskell/extensible-exceptions"
 
 S="${WORKDIR}/${MY_P}"
-
-src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-	cabal_src_compile
-}
