@@ -17,4 +17,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		<dev-haskell/data-accessor-0.4
-		>=dev-haskell/utility-ht-0.0.1"
+		<dev-haskell/utility-ht-0.1"
