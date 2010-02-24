@@ -21,7 +21,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 	>=dev-haskell/mtl-1.0
 	dev-haskell/parsec
 	dev-haskell/stm
-	dev-haskell/action-permutations
 	unicode? ( dev-haskell/utf8-string )
 	xft?  ( dev-haskell/utf8-string
 			dev-haskell/x11-xft )
