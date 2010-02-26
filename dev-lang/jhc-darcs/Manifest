@@ -1,7 +1,0 @@
-EBUILD jhc-darcs-0.ebuild 2061 RMD160 b363077f93babf1bde4f94078a3deee2b6ee5c8b SHA1 1515678443852cdac224e599550cef50129d8cba SHA256 bcc7bbea6d3ff1c7a6ef066eae1f1ab43f2b08e6b12e041c14968cadbc15ec0c
-MD5 baab217b6628b7f313ad5543070f5a98 jhc-darcs-0.ebuild 2061
-RMD160 b363077f93babf1bde4f94078a3deee2b6ee5c8b jhc-darcs-0.ebuild 2061
-SHA256 bcc7bbea6d3ff1c7a6ef066eae1f1ab43f2b08e6b12e041c14968cadbc15ec0c jhc-darcs-0.ebuild 2061
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-jhc-darcs-0 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-jhc-darcs-0 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-jhc-darcs-0 0
