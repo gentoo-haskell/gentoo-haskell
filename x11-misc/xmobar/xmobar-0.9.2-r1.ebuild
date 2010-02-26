@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xmobar/xmobar-0.9.2-r1.ebuild,v 1.3 2010/01/27 19:13:26 kolmodin Exp $
 
 CABAL_FEATURES="bin"
 inherit base haskell-cabal
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 -sparc ~x86"
 IUSE="xft unicode mail"
 
-DEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/parsec
 		dev-haskell/stm
@@ -25,10 +25,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/xmobar-0.9.2-cpu-high-load.patch")
+PATCHES=("${FILESDIR}/${P}-cpu-high-load.patch")
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
+	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 	if use xft; then
 		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_xft"
