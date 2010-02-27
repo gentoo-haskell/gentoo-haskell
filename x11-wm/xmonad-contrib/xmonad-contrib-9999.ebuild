@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,21 +7,23 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal darcs
 
 DESCRIPTION="Third party extensions for xmonad"
-HOMEPAGE="http://www.xmonad.org/"
+HOMEPAGE="http://xmonad.org/"
 EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 IUSE="xft"
 
-DEPEND="dev-haskell/mtl
-	x11-wm/xmonad-darcs
-	>=dev-lang/ghc-6.6
-	>=dev-haskell/x11-1.5.0.0
-	xft?  ( dev-haskell/x11-xft )"
-RDEPEND="${DEPEND}"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		dev-haskell/mtl
+		>=dev-haskell/x11-1.5
+		dev-haskell/utf8-string
+		xft? ( >=dev-haskell/x11-xft-0.2 )
+		~x11-wm/xmonad-${PV}"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2.1"
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--flags=-testing"
