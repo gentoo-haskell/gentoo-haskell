@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,11 +12,10 @@ EDARCS_REPOSITORY="http://code.haskell.org/leksah"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="doc"
 
-DEPEND="!dev-haskell/leksah
-		>=dev-lang/ghc-6.8.1
+DEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.1.6.2
 		>=dev-haskell/parsec-2.0
 		>=dev-haskell/mtl-1.0.1
