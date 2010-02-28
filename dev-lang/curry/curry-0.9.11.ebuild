@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit flag-o-matic
 
-DESCRIPTION="Münster Curry Compiler"
+DESCRIPTION="Munster Curry Compiler"
 HOMEPAGE="http://danae.uni-muenster.de/~lux/curry/"
 SRC_URI="http://danae.uni-muenster.de/~lux/${PN}/download/${P}/${P}.tar.gz"
 
