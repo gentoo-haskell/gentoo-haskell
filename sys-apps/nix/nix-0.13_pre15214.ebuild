@@ -13,6 +13,7 @@ SRC_URI=" http://hydra.nixos.org/build/17407/download/1/${PN}-${MY_PV}.tar.bz2"
 LICENSE="GPL-2.1"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
+IUSE=""
 
 # Haven't checked dependencies, but actually, there shouldn't
 # be any except gcc ...

@@ -19,6 +19,7 @@ HOMEPAGE="http://www.iai.uni-bonn.de/~loeh/exi"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
+IUSE=""
 
 RDEPEND=">=sys-apps/portage-2.1_pre4"
 

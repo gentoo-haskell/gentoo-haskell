@@ -1,7 +1,1 @@
-EBUILD testlang-help-3.7.ebuild 81 RMD160 c3e8a97d44d793f32e1a41d91f7a58d6f276be8d SHA1 2e63c9fec08cdb8f43b9666b401b6504f718fc67 SHA256 dc8badea4eaba1c051ef8081f3890f56d19d4971b27c1eae10ba87f38663a275
-MD5 3a5110ca6fc8b49ad973ca8ebab4269a testlang-help-3.7.ebuild 81
-RMD160 c3e8a97d44d793f32e1a41d91f7a58d6f276be8d testlang-help-3.7.ebuild 81
-SHA256 dc8badea4eaba1c051ef8081f3890f56d19d4971b27c1eae10ba87f38663a275 testlang-help-3.7.ebuild 81
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-testlang-help-3.7 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-testlang-help-3.7 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-testlang-help-3.7 0
+EBUILD testlang-help-3.7.ebuild 88 RMD160 292c8c85f8e6189822494e52a84036efedfd7e62 SHA1 c106c1a1eaacf180072a5c8ded939935ac83cf78 SHA256 3f2f4c11cc459baf0e1abc160d308a340f4ec3937fb7fc5347c7577d9591d80c

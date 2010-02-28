@@ -13,6 +13,7 @@ HOMEPAGE="http://www.cs.pdx.edu/~sheard/Omega/"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 LICENSE="as-is" # TODO: fix license, this is something different
+IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.3"
 DEPEND="$RDEPEND

@@ -11,6 +11,7 @@ MY_PV="3.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 LICENSE="as-is" # TODO: fix license, this is something different
+IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	app-arch/unzip"
