@@ -12,7 +12,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/leksah"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.8.1

@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmobar"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="-sparc"
+KEYWORDS="~amd64 -sparc ~x86"
 
 IUSE="xft unicode mail"
 

@@ -12,7 +12,7 @@ EDARCS_REPOSITORY="http://turing.une.edu.au/~bsinclai/code/libmpd-haskell"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND=">=dev-haskell/mtl-1.0

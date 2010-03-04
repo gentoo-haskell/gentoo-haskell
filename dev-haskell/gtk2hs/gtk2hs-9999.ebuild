@@ -9,7 +9,7 @@ HOMEPAGE="http://haskell.org/gtk2hs/"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS=""
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="doc glade gnome opengl firefox seamonkey profile xulrunner"
 

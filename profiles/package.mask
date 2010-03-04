@@ -29,3 +29,14 @@
 # Users should manually re-build all packages that depend on it.
 # Ivan Miljenovic, 23 December, 2009
 dev-haskell/filepath
+
+# Masking some 'live' ebuilds (havind stable versions) to prevent users
+# accidentally install them.
+# Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
+=app-editors/leksah-9999
+=x11-misc/xmobar-9999
+=dev-haskell/gtk2hs-9999
+=dev-haskell/libmpd-9999
+=dev-lang/jhc-9999
+=x11-wm/xmonad-9999
+=x11-wm/xmonad-contrib-9999

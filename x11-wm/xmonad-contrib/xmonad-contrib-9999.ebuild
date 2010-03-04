@@ -12,7 +12,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 IUSE="xft"
 
