@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/binary-0.4.4
-		>=dev-haskell/cabal-1.6.0.1
+		=dev-haskell/cabal-1.6*
 		>=dev-haskell/gtk2hs-0.10[gnome]
 		>=x11-libs/gtksourceview-2.4.0
 		>=dev-haskell/mtl-1.1.0.2
