@@ -18,8 +18,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.1
 		dev-haskell/mtl
 		>=dev-haskell/x11-1.4.3
-		|| ( =x11-wm/xmonad-0.9* x11-wm/xmonad-darcs )
-		|| ( =x11-wm/xmonad-contrib-0.9* x11-wm/xmonad-contrib-darcs )
+		>=x11-wm/xmonad-0.9
+		>=x11-wm/xmonad-contrib-0.9
 		volume? ( dev-haskell/parsec dev-haskell/split media-sound/alsa-utils )
 		eval? ( dev-haskell/network dev-haskell/hint )
 		mpd? ( dev-haskell/libmpd )"
