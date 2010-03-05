@@ -1,0 +1,31 @@
+From 7ec736ed8c9bb0a7890ff08202c9e1c832aad12b Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@inbox.ru>
+Date: Fri, 5 Mar 2010 22:13:55 +0200
+Subject: [PATCH] gtg: fixup default search path for data (.glade file)
+
+Fixes such failure:
+> $ gtg
+> (gtg:5052): libglade-WARNING **: could not find glade file '/usr/share/gt-tools-0.1.2/ghc-6.12.1/main.glade'
+> gtg: user error (Pattern match failure in do expression at Gtg/gtg.hs:17:4-11)
+
+Signed-off-by: Sergei Trofimovich <slyfox@inbox.ru>
+---
+ Gtg/gtg.hs |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Gtg/gtg.hs b/Gtg/gtg.hs
+index 4f171bf..ee73856 100644
+--- a/Gtg/gtg.hs
++++ b/Gtg/gtg.hs
+@@ -14,7 +14,7 @@ main :: IO()
+ main = do
+     initGUI
+     data_dir  <- getDataDir
+-    Just xml  <- xmlNew $ data_dir ++ "/main.glade"
++    Just xml  <- xmlNew $ data_dir ++ "/Gtg/main.glade"
+ 
+     -- Casts
+     window          <- xmlGetWidget xml castToWindow    "gtg_main"
+-- 
+1.6.4.4
+
