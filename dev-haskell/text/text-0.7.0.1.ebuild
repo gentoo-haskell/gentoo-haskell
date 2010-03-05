@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-         dev-haskell/extensible-exceptions"
+	dev-haskell/extensible-exceptions
+	dev-haskell/deepseq"
 DEPEND=">=dev-haskell/cabal-1.2
         ${RDEPEND}"
