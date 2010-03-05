@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -16,9 +16,9 @@ IUSE="emacs"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/cpphs-1.9
-		=dev-haskell/haskell-src-exts-1.6*
-		>=dev-haskell/hscolour-1.15
+		=dev-haskell/cpphs-1.11*
+		=dev-haskell/haskell-src-exts-1.8*
+		=dev-haskell/hscolour-1.16*
 		dev-haskell/mtl
 		=dev-haskell/uniplate-1.5*
         emacs? ( virtual/emacs
