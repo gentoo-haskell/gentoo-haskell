@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=2
 
 inherit base eutils ghc-package multilib toolchain-funcs versionator autotools darcs
 
@@ -21,24 +23,26 @@ RDEPEND=">=dev-lang/ghc-6.2
 		dev-haskell/mtl
         dev-haskell/happy
         dev-haskell/alex
-		>=x11-libs/gtk+-2
-		glade? ( >=gnome-base/libglade-2 )
-		gnome? ( >=gnome-base/libglade-2
-				<x11-libs/gtksourceview-2.0
-				>=gnome-base/gconf-2 )
-		svg?   ( >=gnome-base/librsvg-2.16 )
+		x11-libs/gtk+:2
+		glade? ( gnome-base/libglade )
+		gnome? ( gnome-base/libglade
+				>=x11-libs/gtksourceview-2.2
+				gnome-base/gconf )
+		svg?   ( gnome-base/librsvg )
 		opengl? ( x11-libs/gtkglext )
 		xulrunner? ( =net-libs/xulrunner-1.8* )
-		!xulrunner? ( firefox? ( =www-client/mozilla-firefox-2* ) )
-		!xulrunner? ( !firefox? ( seamonkey? ( =www-client/seamonkey-1* ) ) )"
+		seamonkey? ( =www-client/seamonkey-1* )"
 
 DEPEND="${RDEPEND}
-		doc? ( >=dev-haskell/haddock-0.8 )"
+		doc? ( dev-haskell/haddock )
+		dev-util/pkgconfig"
 
-src_compile() {
-	# needed because we're using the darcs version
+src_prepare() {
+	cd "${S}"
 	eautoreconf
+}
 
+src_configure() {
 	econf \
 		--enable-gtk \
 		--enable-packager-mode \
@@ -47,18 +51,19 @@ src_compile() {
 		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
-		$(use_enable gnome sourceview) \
+		$(use_enable gnome gtksourceview2) \
 		$(use_enable svg svg) \
 		$(use_enable opengl opengl) \
+		--disable-firefox \
 		$(use_enable seamonkey seamonkey) \
-		$(use_enable firefox firefox) \
 		$(use_enable xulrunner xulrunner) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
 		|| die "Configure failed"
+}
 
-	# parallel build doesn't work, so specify -j1
-	emake -j1 || die "Make failed"
+src_compile() {
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
@@ -69,38 +74,23 @@ src_install() {
 		haddockifacedir="/usr/share/doc/${PF}" \
 		|| die "Make install failed"
 
-	# for some reason it creates the doc dir even if it is configured
-	# to not generate docs, so lets remove the empty dirs in that case
-	# (and lets be cautious and only remove them if they're empty)
-	if ! use doc; then
-		rmdir "${D}/usr/share/doc/${PF}/html"
-		rmdir "${D}/usr/share/doc/${PF}"
-		rmdir "${D}/usr/share/doc"
-		rmdir "${D}/usr/share"
-	fi
-
 	# arrange for the packages to be registered
-	if ghc-cabal; then
-		pkgext=package.conf
-	else
-		pkgext=pkg
-	fi
 	ghc-setup-pkg \
-		"${D}/usr/$(get_libdir)/gtk2hs/glib.${pkgext}" \
+		"${D}/usr/$(get_libdir)/gtk2hs/glib.package.conf" \
 		$(has_version '>=x11-libs/gtk+-2.8' && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/cairo.${pkgext}") \
-		"${D}/usr/$(get_libdir)/gtk2hs/gtk.${pkgext}" \
-		"${D}/usr/$(get_libdir)/gtk2hs/soegtk.${pkgext}" \
+			"${D}/usr/$(get_libdir)/gtk2hs/cairo.package.conf") \
+		"${D}/usr/$(get_libdir)/gtk2hs/gtk.package.conf" \
+		"${D}/usr/$(get_libdir)/gtk2hs/soegtk.package.conf" \
 		$(use glade || use gnome && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/glade.${pkgext}") \
+			"${D}/usr/$(get_libdir)/gtk2hs/glade.package.conf") \
 		$(use gnome && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/gconf.${pkgext}" \
-			"${D}/usr/$(get_libdir)/gtk2hs/sourceview.${pkgext}" ) \
+			"${D}/usr/$(get_libdir)/gtk2hs/gconf.package.conf" \
+			"${D}/usr/$(get_libdir)/gtk2hs/gtksourceview2.package.conf" ) \
 		$(use svg && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.${pkgext}") \
+			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.package.conf") \
 		$(use opengl && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.${pkgext}") \
-		$(use seamonkey || use firefox || use xulrunner && echo \
-			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.${pkgext}")
+			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.package.conf") \
+		$(use seamonkey || use xulrunner && echo \
+			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.package.conf")
 	ghc-install-pkg
 }
