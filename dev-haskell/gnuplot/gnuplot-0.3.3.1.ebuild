@@ -23,14 +23,5 @@ DEPEND=">=dev-lang/ghc-6.6.1
 RDEPEND="${DEPEND}
 		sci-visualization/gnuplot"
 
-src_unpack() {
-    unpack ${A}
-
-    # Remove restrictions on array and containers
-    sed -i -e 's/containers >= 0.1 && <0.3/containers >= 0.1/' \
-                 "${S}/${PN}.cabal"
-    sed -i -e 's/array >= 0.1 && <0.3/array >= 0.1/' \
-                 "${S}/${PN}.cabal"
-}
 
 
