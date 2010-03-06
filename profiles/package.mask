@@ -15,14 +15,10 @@
 >=dev-haskell/syb-with-class-0.6.1
 >=dev-haskell/hxt-8.4.0
 
-# Darcs needs <4, masked until it's actually useful
-# Ivan Miljenovic, 7 October 2009
->=dev-haskell/hashed-storage-0.4.0
-
 # No version of hashed-storage and darcs work with this;
 # Mask until needed.
 # Ivan Miljenovic, 18 October 2009
->=dev-haskell/mmap-0.5.2
+>=dev-haskell/mmap-0.5
 
 # The great filepath removal!
 # Core package, shouldn't upgrade it, blah, blah, blah.
