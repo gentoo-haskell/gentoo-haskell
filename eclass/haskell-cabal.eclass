@@ -46,6 +46,13 @@
 
 inherit ghc-package multilib
 
+HASKELL_CABAL_EXPF="pkg_setup src_compile src_install"
+case "${EAPI:-0}" in
+       2|3|4) HASKELL_CABAL_EXPF+=" src_configure" ;;
+       *) ;;
+esac
+
+EXPORT_FUNCTIONS ${HASKELL_CABAL_EXPF}
 
 for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
@@ -336,11 +343,19 @@ haskell-cabal_pkg_setup() {
 	fi
 }
 
+haskell-cabal_src_configure() {
+	pushd "${S}" > /dev/null
+
+	cabal-bootstrap
+	cabal-configure
+
+	popd > /dev/null
+}
+
 # exported function: cabal-style bootstrap configure and compile
 cabal_src_compile() {
 	if ! cabal-is-dummy-lib; then
-		cabal-bootstrap
-		cabal-configure
+		has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure
 		cabal-build
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
@@ -361,7 +376,11 @@ cabal_src_compile() {
 }
 
 haskell-cabal_src_compile() {
+	pushd "${S}" > /dev/null
+
 	cabal_src_compile
+
+	popd > /dev/null
 }
 
 # exported function: cabal-style copy and register
@@ -382,7 +401,9 @@ cabal_src_install() {
 	fi
 }
 haskell-cabal_src_install() {
-	cabal_src_install
-}
+	pushd "${S}" > /dev/null
 
-EXPORT_FUNCTIONS pkg_setup src_compile src_install
+	cabal_src_install
+
+	popd > /dev/null
+}
