@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Hashed file storage support code."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hashed-storage"
@@ -23,3 +23,5 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/zlib"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
+
+PATCHES=("${FILESDIR}/ppc64-hashed-storage-fix.patch")
