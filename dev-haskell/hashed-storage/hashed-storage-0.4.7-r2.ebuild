@@ -37,9 +37,3 @@ PATCHES=("${FILESDIR}/ppc64-hashed-storage-fix.patch")
 if use test; then
 	CABAL_CONFIGURE_FLAGS="--flags=test"
 fi
-
-src_test() {
-	cd "${S}"
-	# not the best way of calling this thing, but...
-	./setup test || die "selftest failed :["
-}
