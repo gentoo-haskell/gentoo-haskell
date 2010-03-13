@@ -46,7 +46,8 @@
 
 inherit ghc-package multilib
 
-HASKELL_CABAL_EXPF="pkg_setup src_compile src_install"
+HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install"
+
 case "${EAPI:-0}" in
 	2|3|4) HASKELL_CABAL_EXPF+=" src_configure" ;;
 	*) ;;
@@ -379,6 +380,15 @@ haskell-cabal_src_compile() {
 	pushd "${S}" > /dev/null
 
 	cabal_src_compile
+
+	popd > /dev/null
+}
+
+haskell-cabal_src_test() {
+	pushd "${S}" > /dev/null
+
+	einfo ">>> Test phase [check]: ${CATEGORY}/${PF}"
+	./setup test || die "selftest failed"
 
 	popd > /dev/null
 }
