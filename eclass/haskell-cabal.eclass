@@ -48,8 +48,8 @@ inherit ghc-package multilib
 
 HASKELL_CABAL_EXPF="pkg_setup src_compile src_install"
 case "${EAPI:-0}" in
-       2|3|4) HASKELL_CABAL_EXPF+=" src_configure" ;;
-       *) ;;
+	2|3|4) HASKELL_CABAL_EXPF+=" src_configure" ;;
+	*) ;;
 esac
 
 EXPORT_FUNCTIONS ${HASKELL_CABAL_EXPF}
