@@ -417,3 +417,31 @@ haskell-cabal_src_install() {
 
 	popd > /dev/null
 }
+
+# ebuild.sh:use_enable() taken as base
+#
+# Usage examples:
+#
+#     CABAL_CONFIGURE_FLAGS=$(cabal_flag gui)
+#  leads to "--flags=gui" or "--flags=-gui" (useflag 'gui')
+#
+#     CABAL_CONFIGURE_FLAGS=$(cabal_flag gtk gui)
+#  also leads to "--flags=gui" or " --flags=-gui" (useflag 'gtk')
+#
+cabal_flag() {
+	if [[ -z "$1" ]]; then
+		echo "!!! cabal_flag() called without a parameter." >&2
+		echo "!!! cabal_flag() <USEFLAG> [<cabal_flagname>]" >&2
+		return 1
+	fi
+
+	local UWORD=${2:-$1}
+
+	if use "$1"; then
+		echo "--flags=${UWORD}"
+	else
+		echo "--flags=-${UWORD}"
+	fi
+
+	return 0
+}
