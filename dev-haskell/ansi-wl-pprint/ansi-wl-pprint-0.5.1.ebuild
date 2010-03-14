@@ -14,6 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/ansi-terminal-0.4.0
-		>=dev-haskell/cabal-1.2"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		 >=dev-haskell/ansi-terminal-0.4.0"
+DEPEND=">=dev-haskell/cabal-1.2
+		${RDEPEND}"
