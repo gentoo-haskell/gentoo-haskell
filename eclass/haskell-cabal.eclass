@@ -348,15 +348,20 @@ haskell-cabal_src_configure() {
 	pushd "${S}" > /dev/null
 
 	cabal-bootstrap
-	cabal-configure
+	cabal-configure "$@"
 
 	popd > /dev/null
+}
+
+# exported function: nice alias
+cabal_src_configure() {
+	haskell-cabal_src_configure "$@"
 }
 
 # exported function: cabal-style bootstrap configure and compile
 cabal_src_compile() {
 	if ! cabal-is-dummy-lib; then
-		has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure
+		has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure "$@"
 		cabal-build
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
@@ -379,7 +384,7 @@ cabal_src_compile() {
 haskell-cabal_src_compile() {
 	pushd "${S}" > /dev/null
 
-	cabal_src_compile
+	cabal_src_compile "$@"
 
 	popd > /dev/null
 }
