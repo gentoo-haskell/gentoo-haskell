@@ -17,9 +17,9 @@ EAPI=1
 # use gnome style of meta packages;
 # minimum version, open range
 
-# for the packages parsec and quickcheck we depend on SLOT="0" to not get too
-# recent versions (quickcheck-2 and parsec-3 which behaves significantly
-# different)
+# for the packages parsec and quickcheck we depend on SLOT="0" and SLOT="1" to
+# not get too recent versions (quickcheck-2 and parsec-3 which behaves
+# significantly different)
 
 # for the regex-packages we don't want the 0.9x series, and there is currently
 # no way in portage to specify a from-to range interval. thus, we depend on the
@@ -41,7 +41,7 @@ DEPEND="~dev-lang/ghc-6.10.4
 		>=dev-haskell/opengl-2.2.1.1
 		>=dev-haskell/parallel-1.1.0.1
 		>=dev-haskell/parsec-2.1.0.1:0
-		>=dev-haskell/quickcheck-1.2.0.0:0
+		>=dev-haskell/quickcheck-1.2.0.0:1
 		>=dev-haskell/stm-2.1.1.2
 		>=dev-haskell/time-1.1.2.4
 		>=dev-haskell/xhtml-3000.2.0.1
