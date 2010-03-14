@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="citeproc highlight html pdf test"
 
-DEPEND=">=dev-lang/ghc-6.6.1
+DEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.2
 		>=dev-haskell/mtl-1.1
 		>=dev-haskell/network-2
