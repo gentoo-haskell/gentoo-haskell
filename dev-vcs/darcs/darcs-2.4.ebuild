@@ -54,9 +54,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-
+src_prepare() {
 	cd "${S}"
 	pushd "contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
@@ -72,19 +70,16 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
-
+src_configure() {
 	# Use curl for net stuff to avoid strict version dep on HTTP and network
-	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl --flags=-http"
 
-	# Enable curl pipelining
-	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=curl-pipelining"
-
-	# Enable color, terminfo, mmap
-	CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=color --flags=terminfo --flags=mmap"
-
-	cabal_src_compile
+	cabal_src_configure \
+		--flags=curl \
+		--flags=-http \
+		--flags=curl-pipelining \
+		--flags=color \
+		--flags=terminfo \
+		--flags=mmap
 }
 
 src_install() {
