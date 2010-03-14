@@ -1,6 +1,6 @@
 #!/bin/bash
 
 cd projects/lambdaman
-ghc --make -o lambdaman -O Main.hs
+ghc --make -o lambdaman -O -package SHA Main.hs
 cd ../..
 projects/lambdaman/lambdaman
