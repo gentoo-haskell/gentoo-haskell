@@ -13,7 +13,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="dev-util/darcs
+RDEPEND="dev-vcs/darcs
 	dev-lang/python"
 
 src_install() {
