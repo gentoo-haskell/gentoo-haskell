@@ -387,8 +387,8 @@ haskell-cabal_src_compile() {
 haskell-cabal_src_test() {
 	pushd "${S}" > /dev/null
 
-	einfo ">>> Test phase [check]: ${CATEGORY}/${PF}"
-	./setup test || die "selftest failed"
+	einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
+	./setup test || die "cabal test failed"
 
 	popd > /dev/null
 }
@@ -410,6 +410,7 @@ cabal_src_install() {
 		fi
 	fi
 }
+
 haskell-cabal_src_install() {
 	pushd "${S}" > /dev/null
 
