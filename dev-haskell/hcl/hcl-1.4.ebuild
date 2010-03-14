@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="2"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
@@ -20,6 +21,6 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		dev-haskell/mtl
-		<dev-haskell/quickcheck-2"
+		dev-haskell/quickcheck:1"
 
 S="${WORKDIR}/${MY_P}"

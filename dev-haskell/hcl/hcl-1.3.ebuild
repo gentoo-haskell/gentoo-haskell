@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI=2
 CABAL_FEATURES="bin lib profile haddock"
 inherit haskell-cabal
 
@@ -19,12 +20,12 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
-		dev-haskell/quickcheck:0
+		dev-haskell/quickcheck:1
 		dev-haskell/mtl"
 
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-        CABAL_CONFIGURE_FLAGS='--constraint=QuickCheck<2'
-        cabal_src_compile
+	CABAL_CONFIGURE_FLAGS='--constraint=QuickCheck<2'
+	cabal_src_compile
 }
