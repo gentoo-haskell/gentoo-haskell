@@ -5,11 +5,11 @@
 EAPI="2"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal darcs
+inherit haskell-cabal
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
-EDARCS_REPOSITORY="http://code.haskell.org/leksah/leksah"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
