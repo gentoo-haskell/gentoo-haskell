@@ -29,7 +29,7 @@ DEPEND=">=dev-haskell/cabal-1.2
 pkg_postinst() {
 	ghc-package_pkg_postinst
 
-	elog "${PN} requires either dev-util/darcs or dev-util/git to work."
+	elog "${PN} requires either dev-vcs/darcs or dev-vcs/git to work."
 	elog "Please install one of these DVCS packages to fully utilise ${PN}."
 	elog "(These aren't in RDEPEND in case you are just using filestore to program.)"
 }
