@@ -11,6 +11,7 @@
 # might not yet work.
 >=dev-lang/ghc-6.12
 >=dev-haskell/haddock-2.5.0.20091112
+>=dev-haskell/haddock-leksah-2.6.0
 >=app-admin/haskell-updater-1.0.0.0
 >=dev-haskell/syb-with-class-0.6.1
 >=dev-haskell/hxt-8.4.0
