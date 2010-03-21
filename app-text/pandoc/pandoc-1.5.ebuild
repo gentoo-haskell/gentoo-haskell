@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -12,30 +12,31 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="citeproc highlight html pdf test"
+IUSE="citeproc highlight pdf test"
 
-DEPEND=">=dev-lang/ghc-6.10.1
-		>=dev-haskell/cabal-1.2
+COMMONDEPS=">=dev-lang/ghc-6.8
+		dev-haskell/extensible-exceptions
+		>=dev-haskell/http-4000.0.5
 		>=dev-haskell/mtl-1.1
 		>=dev-haskell/network-2
 		>=dev-haskell/parsec-2.1
-		<dev-haskell/parsec-3
 		>=dev-haskell/utf8-string-0.3
 		>=dev-haskell/xhtml-3000.0
 		>=dev-haskell/zip-archive-0.1.1.4
+		>=dev-haskell/xml-1.3.5
+		dev-haskell/texmath
 		highlight? ( >=dev-haskell/highlighting-kate-0.2.3 )
 		citeproc? ( dev-haskell/citeproc-hs )"
 
+DEPEND=">=dev-haskell/cabal-1.2
+		${COMMONDEPS}"
 
-RDEPEND="${DEPEND}
-		 pdf? ( virtual/latex-base )
-		 html? ( app-text/htmltidy )"
+RDEPEND="${COMMONDEPS}
+		pdf? ( virtual/latex-base )"
 
 pandoc_init() {
 	pandoc="${PN}"
 	pdfscript="markdown2pdf"
-	htmlscript="html2markdown"
-	markdownscript="hsmarkdown"
 }
 
 installMan() {
@@ -78,22 +79,12 @@ src_install() {
 	cabal_src_install
 
 	# pandoc itself is installed by cabal
-	dobin "${markdownscript}"
 	use pdf && dobin "${pdfscript}"
-	use html && dobin "${htmlscript}"
 
 	installMan "${pandoc}"
-	installMan "${markdownscript}"
 	use pdf && installMan "${pdfscript}"
-	use html && installMan "${htmlscript}"
 
 	# COPYING is installed by the Cabal eclass
 	dodoc README  README.html COPYRIGHT changelog
 }
 
-pkg_postinst() {
-	ghc-package_pkg_postinst
-
-	elog "The script \"${markdownscript}\" is a drop-in replacement for"
-	elog "the official markdown program"
-}
