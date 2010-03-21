@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Hashed file storage support code."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hashed-storage"
@@ -31,8 +31,6 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 		)"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
-
-PATCHES=("${FILESDIR}/ppc64-hashed-storage-fix.patch")
 
 if use test; then
 	CABAL_CONFIGURE_FLAGS="--flags=test"
