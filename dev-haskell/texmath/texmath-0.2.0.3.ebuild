@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10
+RDEPEND=">=dev-lang/ghc-6.8
 		dev-haskell/cgi
 		dev-haskell/json
 		=dev-haskell/parsec-2*
