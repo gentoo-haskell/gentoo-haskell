@@ -18,7 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		virtual/opengl"
+		virtual/opengl
+		virtual/glu"
 DEPEND="dev-haskell/cabal
 		${RDEPEND}"
 
