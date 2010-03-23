@@ -5,7 +5,7 @@
      fi
  fi
 +build=`echo "$build" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
-+build=`echo "$build" | sed -e 's/i686/i386/'`
++build=`echo "$build" | sed -e 's/i[3-6]86/i386/'`
  
  if test "$host" = ""
  then
@@ -14,7 +14,7 @@
      fi
  fi
 +host=`echo "$host" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
-+host=`echo "$host" | sed -e 's/i686/i386/'`
++host=`echo "$host" | sed -e 's/i[3-6]86/i386/'`
  
  if test "$target" = ""
  then
@@ -23,7 +23,7 @@
      fi
  fi
 +target=`echo "$target" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
-+target=`echo "$target" | sed -e 's/i686/i386/'`
++target=`echo "$target" | sed -e 's/i[3-6]86/i386/'`
  
  exeext=''
  soext='.so'
