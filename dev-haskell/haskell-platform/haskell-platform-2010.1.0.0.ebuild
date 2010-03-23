@@ -2,17 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
-
 DESCRIPTION="The Haskell Platform"
-HOMEPAGE="http://haskell.org/platform"
-SRC_URI=""	#Fixme: please fill in manually
+HOMEPAGE="http://haskell.org/haskellwiki/Haskell_Platform"
+SRC_URI=""
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+EAPI=1
 
 DEPEND="~dev-lang/ghc-6.12.1
 		~dev-haskell/cabal-1.8.0.2
