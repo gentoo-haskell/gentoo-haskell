@@ -38,7 +38,8 @@ MY_P="${P/%_rc*}"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12.patch"
+	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12-packages.patch"
+	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12-c2hs.patch"
 	cd "${S}"
 	eautoreconf
 }

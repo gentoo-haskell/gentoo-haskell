@@ -1,3 +1,8 @@
+Taken (and slightly modified) from gtk2hs upstream as:
+Thu Dec 10 19:29:42 EET 2009  Duncan Coutts <duncan@haskell.org>
+  * Handle installed package ids for ghc-6.12
+Fri Feb 12 10:23:26 EET 2010  Axel.Simon@in.tum.de
+  * Avoid using rec because of -XDoRec notation
 diff --git a/acinclude.m4 b/acinclude.m4
 index a109713..d2d576d 100644
 --- a/acinclude.m4
@@ -371,95 +376,3 @@ index 3867d53..9b32287 100644
 -depends: base-@PKG_BASE_VERSION@ mtl-@PKG_MTL_VERSION@ glib-@PACKAGE_VERSION@ cairo-@PACKAGE_VERSION@
 +depends: @PKG_BASE_ID@ @PKG_MTL_ID@ glib-@PACKAGE_VERSION@ cairo-@PACKAGE_VERSION@
  ld-options: @SVGCAIRO_LIBEXTRA_CQ@
-diff --git a/tools/c2hs/base/state/CIO.hs b/tools/c2hs/base/state/CIO.hs
-index e4497cc..ce37f22 100644
---- a/tools/c2hs/base/state/CIO.hs
-+++ b/tools/c2hs/base/state/CIO.hs
-@@ -1,3 +1,5 @@
-+{-# LANGUAGE CPP #-}
-+{-# OPTIONS_GHC -cpp #-}
- --  Compiler Toolkit: Compiler I/O 
- --
- --  Author : Manuel M T Chakravarty
-@@ -73,6 +75,9 @@ where
- import IO
- import Directory
- import System
-+#if __GLASGOW_HASKELL__ >= 612
-+import System.IO (hSetEncoding, latin1)
-+#endif
- 
- import FileOps	 (fileFindIn, mktemp)
- import StateBase (PreCST, liftIO)
-@@ -82,7 +87,12 @@ import StateBase (PreCST, liftIO)
- -- -------------
- 
- openFileCIO     :: FilePath -> IOMode -> PreCST e s Handle
--openFileCIO p m  = liftIO (openFile p m)
-+openFileCIO p m  = liftIO $ do
-+  hnd <- openFile p m
-+#if __GLASGOW_HASKELL__ >= 612
-+  hSetEncoding hnd latin1
-+#endif
-+  return hnd
- 
- hCloseCIO   :: Handle -> PreCST e s ()
- hCloseCIO h  = liftIO (hClose h)
-@@ -103,10 +113,15 @@ hPutStrLnCIO     :: Handle -> String -> PreCST e s ()
- hPutStrLnCIO h s  = liftIO (hPutStrLn h s)
- 
- writeFileCIO		    :: FilePath -> String -> PreCST e s ()
--writeFileCIO fname contents  = liftIO (writeFile fname contents)
-+writeFileCIO fname contents  = do
-+  hnd <- openFileCIO fname WriteMode
-+  hPutStrCIO hnd contents
-+  hCloseCIO hnd
- 
- readFileCIO       :: FilePath -> PreCST e s String
--readFileCIO fname  = liftIO (readFile fname)
-+readFileCIO fname  = do
-+  hnd <- openFileCIO fname ReadMode
-+  liftIO (hGetContents hnd)
- 
- printCIO   :: Show a => a -> PreCST e s ()
- printCIO a  = liftIO (print a)
-diff --git a/tools/c2hs/gen/CInfo.hs b/tools/c2hs/gen/CInfo.hs
-index 36c8c50..e11401c 100644
---- a/tools/c2hs/gen/CInfo.hs
-+++ b/tools/c2hs/gen/CInfo.hs
-@@ -120,7 +120,7 @@ size CULongPT        = Storable.sizeOf (undefined :: CULong)
- size CULLongPT       = Storable.sizeOf (undefined :: CLLong)
- size CFloatPT        = Storable.sizeOf (undefined :: CFloat)
- size CDoublePT       = Storable.sizeOf (undefined :: CDouble)
--size CLDoublePT      = Storable.sizeOf (undefined :: CLDouble)
-+--size CLDoublePT      = Storable.sizeOf (undefined :: CLDouble)
- size (CSFieldPT bs)  = -bs
- size (CUFieldPT bs)  = -bs
- 
-@@ -145,7 +145,7 @@ alignment CULongPT        = Storable.alignment (undefined :: CULong)
- alignment CULLongPT       = Storable.alignment (undefined :: CULLong)
- alignment CFloatPT        = Storable.alignment (undefined :: CFloat)
- alignment CDoublePT       = Storable.alignment (undefined :: CDouble)
--alignment CLDoublePT      = Storable.alignment (undefined :: CLDouble)
-+--alignment CLDoublePT      = Storable.alignment (undefined :: CLDouble)
- alignment (CSFieldPT bs)  = fieldAlignment bs
- alignment (CUFieldPT bs)  = fieldAlignment bs
- 
-diff --git a/tools/c2hs/gen/GenBind.hs b/tools/c2hs/gen/GenBind.hs
-index fb37e43..11c63b7 100644
---- a/tools/c2hs/gen/GenBind.hs
-+++ b/tools/c2hs/gen/GenBind.hs
-@@ -725,10 +725,12 @@ callImport hook isPure isUns ideLexeme hsLexeme cdecl pos =
- --
- foreignImport :: String -> String -> String -> Bool -> ExtType -> String
- foreignImport header ident hsIdent isUnsafe ty  =
--  "foreign import ccall " ++ safety ++ " \"" ++ header ++ " " ++ ident ++ 
-+  "foreign import ccall " ++ safety ++ " \"" ++ entity ++
-   "\"\n  " ++ hsIdent ++ " :: " ++ showExtType ty ++ "\n"
-   where
-     safety = if isUnsafe then "unsafe" else "safe"
-+    entity | null header = ident
-+           | otherwise   = header ++ " " ++ ident
- 
- -- produce a Haskell function definition for a fun hook
- --
