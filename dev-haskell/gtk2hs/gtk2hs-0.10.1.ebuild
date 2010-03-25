@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit base eutils ghc-package multilib toolchain-funcs versionator
+inherit base eutils autotools ghc-package multilib toolchain-funcs versionator
 
 DESCRIPTION="A GUI Library for Haskell based on Gtk+"
 HOMEPAGE="http://haskell.org/gtk2hs/"
