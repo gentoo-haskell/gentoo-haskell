@@ -16,3 +16,10 @@ KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6"
+
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+	# -Werror is evil
+	find -name \*.hs -exec sed -i '{}' -e 's/-Werror//' \;
+}
