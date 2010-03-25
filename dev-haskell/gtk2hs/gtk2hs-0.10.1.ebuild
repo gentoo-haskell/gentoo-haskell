@@ -16,7 +16,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc profile glade gnome opengl svg seamonkey xulrunner"
+IUSE="doc profile glade gnome opengl svg xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.6
 		dev-haskell/mtl
@@ -27,8 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.6
 				gnome-base/gconf )
 		svg?   ( gnome-base/librsvg )
 		opengl? ( x11-libs/gtkglext )
-		xulrunner? ( =net-libs/xulrunner-1.8* )
-		seamonkey? ( =www-client/seamonkey-1* )"
+		xulrunner? ( =net-libs/xulrunner-1.8* )"
 
 DEPEND="${RDEPEND}
 		doc? ( dev-haskell/haddock )
@@ -37,6 +36,12 @@ DEPEND="${RDEPEND}
 MY_P="${P/%_rc*}"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12.patch"
+	cd "${S}"
+	eautoreconf
+}
 
 src_configure() {
 	econf \
@@ -51,7 +56,6 @@ src_configure() {
 		$(use_enable svg svg) \
 		$(use_enable opengl opengl) \
 		--disable-firefox \
-		$(use_enable seamonkey seamonkey) \
 		$(use_enable xulrunner xulrunner) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
@@ -86,7 +90,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.package.conf") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.package.conf") \
-		$(use seamonkey || use xulrunner && echo \
+		$(use xulrunner && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.package.conf")
 	ghc-install-pkg
 }
