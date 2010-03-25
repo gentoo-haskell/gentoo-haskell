@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc profile glade gnome opengl svg xulrunner"
 
 RDEPEND=">=dev-lang/ghc-6.6
-		dev-haskell/mtl
+		dev-haskell/mtl[doc?]
 		x11-libs/gtk+:2
 		glade? ( gnome-base/libglade )
 		gnome? ( gnome-base/libglade
