@@ -1,13 +1,12 @@
-Fri Mar 26 13:01:50 EET 2010  Sergei Trofimovich <slyfox@community.haskell.org>
+Fri Mar 26 15:26:25 EET 2010  Sergei Trofimovich <slyfox@community.haskell.org>
   * Makefile.am: added missing '_stub.o' files
   
   Failing to do so leads to nonworking gtk2hs packages:
   $ ghci -package gio
   ghc: HSgio.o: unknown symbol `SystemziGIOziFile_d30J'
-  final link ... linking extra libraries/objects failed
 diff -rN -u old-gtk2hs/configure.ac new-gtk2hs/configure.ac
---- old-gtk2hs/configure.ac	2010-03-26 13:08:37.191637121 +0200
-+++ new-gtk2hs/configure.ac	2010-03-26 13:08:41.507641479 +0200
+--- old-gtk2hs/configure.ac	2010-03-26 15:30:57.041527760 +0200
++++ new-gtk2hs/configure.ac	2010-03-26 15:30:58.714528600 +0200
 @@ -478,6 +478,7 @@
  HAVE_GTK_VERSION_2_8=`$PKG_CONFIG gtk+-2.0 --atleast-version=2.8 && echo yes || echo no`
  HAVE_GTK_VERSION_2_10=`$PKG_CONFIG gtk+-2.0 --atleast-version=2.10 && echo yes || echo no`
@@ -16,7 +15,7 @@ diff -rN -u old-gtk2hs/configure.ac new-gtk2hs/configure.ac
  
  AM_CONDITIONAL(HAVE_GTK_VERSION_2_2, test "$HAVE_GTK_VERSION_2_2" = "yes")
  AM_CONDITIONAL(HAVE_GTK_VERSION_2_4, test "$HAVE_GTK_VERSION_2_4" = "yes")
-@@ -485,13 +486,14 @@
+@@ -485,6 +486,7 @@
  AM_CONDITIONAL(HAVE_GTK_VERSION_2_8, test "$HAVE_GTK_VERSION_2_8" = "yes")
  AM_CONDITIONAL(HAVE_GTK_VERSION_2_10, test "$HAVE_GTK_VERSION_2_10" = "yes")
  AM_CONDITIONAL(HAVE_GTK_VERSION_2_12, test "$HAVE_GTK_VERSION_2_12" = "yes")
@@ -24,17 +23,17 @@ diff -rN -u old-gtk2hs/configure.ac new-gtk2hs/configure.ac
  
  CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_2" = "yes" && echo gtk-2.2`"
  CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_4" = "yes" && echo gtk-2.4`"
- CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_6" = "yes" && echo gtk-2.6`"
+@@ -492,6 +494,7 @@
  CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_8" = "yes" && echo gtk-2.8`"
  CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_10" = "yes" && echo gtk-2.10`"
--CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_12" = "yes" && echo gtk-2.12`"
+ CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_12" = "yes" && echo gtk-2.12`"
 +CREATE_TYPES="$CREATE_TYPES `test "$HAVE_GTK_VERSION_2_14" = "yes" && echo gtk-2.14`"
  
  dnl Also allow us to conditionally compile binding to the new Gtk+ APIs.
  GTKHS_PACKAGE_ADD_CHECK_VERSION(gtk+-2.0, GTK, Gtk+)
 diff -rN -u old-gtk2hs/Makefile.am new-gtk2hs/Makefile.am
---- old-gtk2hs/Makefile.am	2010-03-26 13:08:37.164640521 +0200
-+++ new-gtk2hs/Makefile.am	2010-03-26 13:08:41.493639639 +0200
+--- old-gtk2hs/Makefile.am	2010-03-26 15:30:56.983528600 +0200
++++ new-gtk2hs/Makefile.am	2010-03-26 15:30:58.695528560 +0200
 @@ -454,7 +454,8 @@
  	$(libHSgio_a_GENERATEDSOURCES:.chs=.hs)
  
