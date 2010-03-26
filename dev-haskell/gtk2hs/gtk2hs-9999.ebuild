@@ -13,7 +13,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl svg firefox seamonkey profile xulrunner"
+IUSE="doc glade gnome opengl svg firefox profile xulrunner"
 
 EDARCS_REPOSITORY="http://code.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
@@ -30,8 +30,7 @@ RDEPEND=">=dev-lang/ghc-6.2
 				gnome-base/gconf )
 		svg?   ( gnome-base/librsvg )
 		opengl? ( x11-libs/gtkglext )
-		xulrunner? ( =net-libs/xulrunner-1.8* )
-		seamonkey? ( =www-client/seamonkey-1* )"
+		xulrunner? ( =net-libs/xulrunner-1.8* )"
 
 DEPEND="${RDEPEND}
 		doc? ( dev-haskell/haddock )
@@ -55,7 +54,6 @@ src_configure() {
 		$(use_enable svg svg) \
 		$(use_enable opengl opengl) \
 		--disable-firefox \
-		$(use_enable seamonkey seamonkey) \
 		$(use_enable xulrunner xulrunner) \
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
@@ -90,7 +88,7 @@ src_install() {
 			"${D}/usr/$(get_libdir)/gtk2hs/svgcairo.package.conf") \
 		$(use opengl && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/gtkglext.package.conf") \
-		$(use seamonkey || use xulrunner && echo \
+		$(use xulrunner && echo \
 			"${D}/usr/$(get_libdir)/gtk2hs/mozembed.package.conf")
 	ghc-install-pkg
 }
