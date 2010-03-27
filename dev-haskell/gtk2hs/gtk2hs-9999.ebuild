@@ -13,7 +13,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE="doc glade gnome opengl svg firefox profile xulrunner"
+IUSE="doc glade gnome opengl svg profile xulrunner"
 
 EDARCS_REPOSITORY="http://code.haskell.org/gtk2hs/"
 EDARCS_GET_CMD="get --partial --verbose"
