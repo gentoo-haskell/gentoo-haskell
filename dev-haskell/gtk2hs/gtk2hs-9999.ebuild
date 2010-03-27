@@ -37,7 +37,6 @@ DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}/gtk2hs-darcs-stub-fix.patch"
 	cd "${S}"
 	eautoreconf
 }
