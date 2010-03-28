@@ -23,6 +23,7 @@ RDEPEND=">=dev-lang/ghc-6.12"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		dev-haskell/alex
+		dev-haskell/happy
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"
