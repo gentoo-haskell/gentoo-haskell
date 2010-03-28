@@ -25,20 +25,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
 			    dev-haskell/test-framework-quickcheck2
 			    dev-haskell/zip-archive )"
 
-src_compile() {
-	if use test; then
-		# enable building tests
-		CABAL_CONFIGURE_FLAGS="--flags=test"
-	fi
-
-	cabal_src_compile
-}
-
-src_test() {
-	# breaking the abstraction a bit, we're not supposed to know about ./setup
-	# and how it works...
-	./setup test || die "tests failed"
-}
+if use test; then
+	# enable building tests
+	CABAL_CONFIGURE_FLAGS="--flags=test"
+fi
 
 src_install() {
 	cabal_src_install
