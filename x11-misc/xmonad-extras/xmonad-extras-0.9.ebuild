@@ -22,7 +22,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=x11-wm/xmonad-contrib-0.9
 		volume? ( dev-haskell/parsec dev-haskell/split media-sound/alsa-utils )
 		eval? ( dev-haskell/network dev-haskell/hint )
-		mpd? ( =dev-haskell/libmpd-0.3.* )"
+		mpd? ( =dev-haskell/libmpd-0.3* )"
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--flags=-testing"
