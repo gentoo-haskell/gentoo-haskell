@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
 
 PATCHES=("${FILESDIR}/${P}-cpu-high-load.patch")
 
