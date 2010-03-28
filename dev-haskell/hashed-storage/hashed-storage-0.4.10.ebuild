@@ -19,16 +19,14 @@ RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/dataenc
 		=dev-haskell/mmap-0.4*
 		dev-haskell/mtl
-		dev-haskell/zlib
+		dev-haskell/zlib"
+DEPEND=">=dev-haskell/cabal-1.6
 		test? (
 			dev-haskell/test-framework
 			dev-haskell/test-framework-hunit
 			dev-haskell/test-framework-quickcheck2
-			>=dev-haskell/quickcheck-2
-			dev-haskell/hunit
 			dev-haskell/zip-archive
-		)"
-DEPEND=">=dev-haskell/cabal-1.6
+		)
 		${RDEPEND}"
 
 if use test; then
