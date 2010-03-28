@@ -14,10 +14,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="test"
 
-RDEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/binary
 		dev-haskell/dataenc
-		dev-haskell/extensible-exceptions
 		=dev-haskell/mmap-0.4*
 		dev-haskell/mtl
 		dev-haskell/zlib
@@ -35,3 +34,10 @@ DEPEND=">=dev-haskell/cabal-1.6
 if use test; then
 	CABAL_CONFIGURE_FLAGS="--flags=test"
 fi
+
+src_install() {
+	cabal_src_install
+
+	rm "${D}/usr/bin/hashed-storage-test" 2> /dev/null
+	rmdir "${D}/usr/bin" 2> /dev/null # only if empty
+}
