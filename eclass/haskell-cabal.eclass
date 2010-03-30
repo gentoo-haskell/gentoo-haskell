@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/haskell-cabal.eclass,v 1.14 2007/12/13 04:44:39 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/haskell-cabal.eclass,v 1.20 2010/03/30 22:18:37 kolmodin Exp $
 #
 # Original authors: Andres Loeh <kosmikus@gentoo.org>
 #                   Duncan Coutts <dcoutts@gentoo.org>
@@ -392,8 +392,12 @@ haskell-cabal_src_compile() {
 haskell-cabal_src_test() {
 	pushd "${S}" > /dev/null
 
-	einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
-	./setup test || die "cabal test failed"
+	if cabal-is-dummy-lib; then
+		einfo ">>> No tests for dummy library: ${CATEGORY}/${PF}"
+	else
+		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
+		./setup test || die "cabal test failed"
+	fi
 
 	popd > /dev/null
 }
