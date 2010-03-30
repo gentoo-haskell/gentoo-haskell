@@ -35,6 +35,7 @@ dev-haskell/filepath
 =x11-misc/xmobar-9999
 =dev-haskell/gtk2hs-9999
 =dev-haskell/libmpd-9999
+=dev-haskell/hdbus-9999
 =dev-lang/jhc-9999
 =x11-wm/xmonad-9999
 =x11-wm/xmonad-contrib-9999
