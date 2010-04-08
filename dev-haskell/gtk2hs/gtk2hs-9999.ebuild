@@ -47,7 +47,7 @@ src_configure() {
 		--enable-packager-mode \
 		$(version_is_at_least "4.2" "$(gcc-version)" && \
 			echo --disable-split-objs) \
-		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo) \
+		$(has_version '>=x11-libs/gtk+-2.8' && echo --enable-cairo --enable-gio) \
 		$(use glade || use gnome && echo --enable-libglade) \
 		$(use_enable gnome gconf) \
 		$(use_enable gnome gtksourceview2) \
