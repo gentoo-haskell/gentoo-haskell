@@ -14,6 +14,10 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
+# upstream does not implement 'cabal test' yet
+# addresses https://bugs.gentoo.org/show_bug.cgi?id=314587
+RESTRICT="test"
+
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6"
 
