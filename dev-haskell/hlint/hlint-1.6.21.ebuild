@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal elisp-common
 
 DESCRIPTION="Source code suggestions"
@@ -47,7 +47,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	ghc-package_pkt_postinst
+	ghc-package_pkg_postinst
 	use emacs && elisp-site-regen
 }
 
