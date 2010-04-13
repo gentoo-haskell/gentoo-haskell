@@ -67,22 +67,32 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 	popd
 
+	# temporary solution until http://bugs.darcs.net/issue1814 releases
 	cp "${FILESDIR}/darcs-2.4.1-forgotten-contrib-darcs-errors.hlint" \
 	   "${S}/contrib/darcs-errors.hlint"
-
-	# We don't have threaded ghc builds at least for those platforms,
-	# so it won't just work.
-	# Beware: http://www.haskell.org/ghc/docs/latest/html/users_guide/options-phases.html#options-linker
-	# contains: 'The ability to make a foreign call that does not block all other Haskell threads.'
-	# It might have interactivity impact.
-	if use alpha || use hppa || use ppc64 ; then
-		sed -i 's/-threaded//g' "${S}/darcs.cabal" || die "Unable to sed -threaded out."
-	fi
 }
 
 src_configure() {
-	# Use curl for net stuff to avoid strict version dep on HTTP and network
+	# checking whether ghc supports -threaded flag
+	# Beware: http://www.haskell.org/ghc/docs/latest/html/users_guide/options-phases.html#options-linker
+	# contains: 'The ability to make a foreign call that does not block all other Haskell threads.'
+	# It might have interactivity impact.
 
+	threaded_flag=""
+	test_dir="${S}/threaded_flag_test_dir"
+	test_file="${test_dir}/Main.hs"
+	mkdir "${test_dir}"
+	echo 'main = print "Compile me"' > "${test_file}"
+	if ghc -threaded "${test_file}" -o "${test_file}.obj" 1>/dev/null 2>/dev/null; then
+		threaded_flag="--flags=threaded"
+		einfo "$P will be built with threads support"
+	else
+		threaded_flag="--flags=-threaded"
+		einfo "$P will be built without threads support"
+	fi
+	rm -r "${test_dir}"
+
+	# Use curl for net stuff to avoid strict version dep on HTTP and network
 	cabal_src_configure \
 		--flags=curl \
 		--flags=-http \
@@ -90,6 +100,7 @@ src_configure() {
 		--flags=color \
 		--flags=terminfo \
 		--flags=mmap \
+		$threaded_flag \
 		$(cabal_flag test)
 }
 
