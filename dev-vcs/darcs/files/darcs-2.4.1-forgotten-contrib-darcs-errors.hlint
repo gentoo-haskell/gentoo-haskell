@@ -1,0 +1,45 @@
+-- Only report errors, since we use this as part of the testsuite. It needs to
+-- be easy to see what tripped up the testcase.
+
+ignore "Eta reduce" = ""
+ignore "Use camelCase" = ""
+ignore "Use const" = ""
+ignore "Use on" = ""
+ignore "Use foldr" = ""
+ignore "Use String" = ""
+ignore "Use string literal" = ""
+ignore "Use guards" = ""
+ignore "Use :" = ""
+ignore "Redundant brackets" = ""
+ignore "Redundant do" = ""
+ignore "Redundant return" = ""
+ignore "Redundant $" = ""
+ignore "Redundant lambda" = ""
+
+ignore "Use fewer imports" = ""
+ignore "Use better pragmas" = ""
+ignore "Use let" = ""
+ignore "Operator rotate" = ""
+ignore "Use foldl" = ""
+ignore "Unused LANGUAGE pragma" = ""
+
+-- The problem with Prelude readFile is that it's based on hGetContents, which
+-- is lazy by definition. This also means that unless you force consumption of
+-- the produced list, it will keep an fd open for the file, possibly
+-- indefinitely.  This is called a fd leak. Other than being annoying and if done
+-- often, leading to fd exhaustion and failure to open any new files (which is
+-- usually fatal), it also prevents the file to be unlinked (deleted) on win32.
+
+-- On the other hand, *strict* bytestring version of readFile will read the whole
+-- file into a contiguous buffer, *close the fd* and return. This is perfectly
+-- safe with regards to fd leaks. Btw., this is *not* the case with lazy
+-- bytestring variant of readFile, so that one is unsafe as well.
+
+error "Avoid Prelude.readFile" = Prelude.readFile ==> Data.ByteString.readFile
+error "Avoid hGetContents" = System.IO.hGetContents ==> Data.ByteString.hGetContents
+error "Avoid BL.hGetContents" = Data.ByteString.Lazy.hGetContents
+                              ==> Data.ByteString.hGetContents
+error "Avoid BL.hGetContents" = Data.ByteString.Lazy.Char8.hGetContents
+                              ==> Data.ByteString.hGetContents
+error "Avoid BL.readFile" = Data.ByteString.Lazy.Char8.readFile ==> Data.ByteString.readFile
+error "Avoid BL.readFile" = Data.ByteString.Lazy.readFile ==> Data.ByteString.readFile

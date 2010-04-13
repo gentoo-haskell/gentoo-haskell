@@ -13,7 +13,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="doc"
+IUSE="doc test"
 
 # Dependency notes:
 # 1) Use a cunning trick for hashed-storage, haskeline, regex-compat
@@ -23,7 +23,7 @@ IUSE="doc"
 # 4) Use the same bounds for mmap as hashed-storage.
 
 COMMONDEPS=">=dev-lang/ghc-6.6.1
-		=dev-haskell/hashed-storage-0.4*
+		=dev-haskell/hashed-storage-0.4.11*
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
 		=dev-haskell/mmap-0.4*
@@ -39,7 +39,14 @@ COMMONDEPS=">=dev-lang/ghc-6.6.1
 DEPEND="${COMMONDEPS}
 		>=dev-haskell/cabal-1.6
 		doc?  ( virtual/latex-base
-				dev-tex/latex2html )"
+				dev-tex/latex2html )
+		test? ( dev-haskell/quickcheck:2
+				dev-haskell/hunit
+				dev-haskell/test-framework
+				dev-haskell/test-framework-hunit
+				dev-haskell/test-framework-quickcheck2
+				dev-haskell/hlint )
+		"
 
 # darcs also has a library version; we thus need $DEPEND
 RDEPEND="${COMMONDEPS}
@@ -60,6 +67,9 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 	popd
 
+	cp "${FILESDIR}/darcs-2.4.1-forgotten-contrib-darcs-errors.hlint" \
+	   "${S}/contrib/darcs-errors.hlint"
+
 	# We don't have threaded ghc builds at least for those platforms,
 	# so it won't just work.
 	# Beware: http://www.haskell.org/ghc/docs/latest/html/users_guide/options-phases.html#options-linker
@@ -79,12 +89,15 @@ src_configure() {
 		--flags=curl-pipelining \
 		--flags=color \
 		--flags=terminfo \
-		--flags=mmap
+		--flags=mmap \
+		$(cabal_flag test)
 }
 
 src_install() {
 	cabal_src_install
 	dobashcompletion "${S}/contrib/darcs_completion" "${PN}"
+
+	rm "${D}/usr/bin/unit" 2> /dev/null
 
 	# fixup perms in such an an awkward way
 	mv "${D}/usr/share/man/man1/darcs.1" "${S}/darcs.1" || die "darcs.1 not found"
