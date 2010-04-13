@@ -22,7 +22,7 @@ IUSE="doc test"
 # 3) Prefer curl over HTTP since darcs uses an old version of HTTP.
 # 4) Use the same bounds for mmap as hashed-storage.
 
-COMMONDEPS=">=dev-lang/ghc-6.6.1
+COMMONDEPS=">=dev-lang/ghc-6.8
 		~dev-haskell/hashed-storage-0.4.11
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
