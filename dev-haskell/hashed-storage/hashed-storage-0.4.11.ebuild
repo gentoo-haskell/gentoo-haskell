@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI=2
+
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
@@ -29,9 +31,9 @@ DEPEND=">=dev-haskell/cabal-1.6
 		)
 		${RDEPEND}"
 
-if use test; then
-	CABAL_CONFIGURE_FLAGS="--flags=test"
-fi
+src_configure() {
+        cabal_src_configure $(cabal_flag test)
+}
 
 src_install() {
 	cabal_src_install
