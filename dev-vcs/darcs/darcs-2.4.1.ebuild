@@ -76,18 +76,13 @@ src_configure() {
 	# It might have interactivity impact.
 
 	threaded_flag=""
-	test_dir="${S}/threaded_flag_test_dir"
-	test_file="${test_dir}/Main.hs"
-	mkdir "${test_dir}"
-	echo 'main = print "Compile me"' > "${test_file}"
-	if ghc -threaded "${test_file}" -o "${test_file}.obj" 1>/dev/null 2>/dev/null; then
+	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
 		threaded_flag="--flags=threaded"
 		einfo "$P will be built with threads support"
 	else
 		threaded_flag="--flags=-threaded"
 		einfo "$P will be built without threads support"
 	fi
-	rm -r "${test_dir}"
 
 	# Use curl for net stuff to avoid strict version dep on HTTP and network
 	cabal_src_configure \
