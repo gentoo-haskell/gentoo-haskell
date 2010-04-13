@@ -23,7 +23,7 @@ IUSE="doc test"
 # 4) Use the same bounds for mmap as hashed-storage.
 
 COMMONDEPS=">=dev-lang/ghc-6.6.1
-		=dev-haskell/hashed-storage-0.4.11*
+		~dev-haskell/hashed-storage-0.4.11
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
 		=dev-haskell/mmap-0.4*
@@ -40,9 +40,7 @@ DEPEND="${COMMONDEPS}
 		>=dev-haskell/cabal-1.6
 		doc?  ( virtual/latex-base
 				dev-tex/latex2html )
-		test? ( dev-haskell/quickcheck:2
-				dev-haskell/hunit
-				dev-haskell/test-framework
+		test? ( dev-haskell/test-framework
 				dev-haskell/test-framework-hunit
 				dev-haskell/test-framework-quickcheck2
 				dev-haskell/hlint )
@@ -62,7 +60,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	cd "${S}"
 	pushd "contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 	popd
@@ -104,6 +101,15 @@ src_configure() {
 		$(cabal_flag test)
 }
 
+src_test() {
+	# run cabal test from haskell-cabal
+	haskell-cabal_src_test || die "cabal test failed"
+
+	# run the unit tests (not part of cabal test for some reason...)
+	# breaks the cabal abstraction a bit...
+	"${S}/dist/build/unit/unit" || die "unit tests failed"
+}
+
 src_install() {
 	cabal_src_install
 	dobashcompletion "${S}/contrib/darcs_completion" "${PN}"
@@ -113,6 +119,9 @@ src_install() {
 	# fixup perms in such an an awkward way
 	mv "${D}/usr/share/man/man1/darcs.1" "${S}/darcs.1" || die "darcs.1 not found"
 	doman "${S}/darcs.1" || die "failed to register darcs.1 as a manpage"
+
+	# if tests were enabled, make sure the unit test driver is deleted
+	rm -rf "${D}/usr/bin/unit"
 }
 
 pkg_postinst() {
