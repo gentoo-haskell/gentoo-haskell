@@ -13,6 +13,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="test"
 
 RDEPEND=">=dev-lang/ghc-6.6.1
 		 >=dev-haskell/cpphs-1.3"
