@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -11,10 +11,12 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.4
-		=dev-haskell/extensible-exceptions-0.1.1*
-        sys-libs/ncurses"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		>=dev-haskell/extensible-exceptions-0.1.1.0
+		sys-libs/ncurses"
+
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.4"
