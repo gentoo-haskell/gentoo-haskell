@@ -16,9 +16,18 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
 		<dev-haskell/monoid-transformer-0.1
-		=dev-haskell/time-1.1*
+		>=dev-haskell/time-1.1
 		<dev-haskell/utility-ht-0.1
 		sci-visualization/gnuplot"
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_unpack() {
+    unpack ${A}
+
+    # Remove restrictions on time
+    sed -i -e 's/time >= 1.1 && < 1.2/time >= 1.1/' \
+                 "${S}/${PN}.cabal"
+}
+
