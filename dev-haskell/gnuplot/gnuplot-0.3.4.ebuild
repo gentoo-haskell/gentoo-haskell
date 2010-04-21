@@ -14,14 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
+RDEPEND=">=dev-lang/ghc-6.6.1
 		<dev-haskell/monoid-transformer-0.1
 		=dev-haskell/time-1.1*
-		<dev-haskell/utility-ht-0.1"
-
-RDEPEND="${DEPEND}
+		<dev-haskell/utility-ht-0.1
 		sci-visualization/gnuplot"
 
-
-
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
