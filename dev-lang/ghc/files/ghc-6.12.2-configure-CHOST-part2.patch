@@ -1,0 +1,42 @@
+From b1b23479f676259230cc31e40cc94b60df90487e Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@inbox.ru>
+Date: Thu, 22 Apr 2010 22:44:56 +0300
+Subject: [PATCH] aclocal.m4: mangle 'pc' to 'unknown', mangle i[3-6]86 to i386
+
+Signed-off-by: Sergei Trofimovich <slyfox@community.haskell.org>
+---
+ aclocal.m4 |   11 +++++++++--
+ 1 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/aclocal.m4 b/aclocal.m4
+index 031145d..f401860 100644
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -1279,7 +1279,7 @@ case "$1" in
+   hppa*)
+     $2="hppa"
+     ;;
+-  i386)
++[  i[3-6]86) ] #m4 bracket escape
+     $2="i386"
+     ;;
+   ia64)
+@@ -1332,7 +1332,14 @@ case "$1" in
+ # --------------------------------
+ # converts vendor from gnu to ghc naming, and assigns the result to $target_var
+ AC_DEFUN([GHC_CONVERT_VENDOR],[
+-$2="$1"
++case "$1" in
++  pc)
++    $2="unknown"
++    ;;
++  *)
++    $2="$1"
++    ;;
++  esac
+ ])
+ 
+ # GHC_CONVERT_OS(os, target_var)
+-- 
+1.6.4.4
+
