@@ -136,6 +136,11 @@ ghc_setup_cflags() {
 }
 
 pkg_setup() {
+    eerror "${P} is currently unbuildable on Gentoo due to build system changes."
+    eerror "Specifically, the build process now explicitly sets a path to gcc at"
+    eerror "configure time, which causes breakage down the track."
+    die "${P} is unbuildable: this package is masked for a good reason!"
+
 	if use ghcbootstrap; then
 		ewarn "You requested ghc bootstrapping, this is usually only used"
 		ewarn "by Gentoo developers to make binary .tbz2 packages for"
