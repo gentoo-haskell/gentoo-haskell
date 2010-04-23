@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2
+		>=dev-haskell/cabal-1.6
 		>=dev-haskell/language-c-0.3.1.1
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
