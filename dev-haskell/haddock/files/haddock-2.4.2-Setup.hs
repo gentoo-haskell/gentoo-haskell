@@ -1,6 +1,8 @@
 {-
 Setup.hs: based on code from ghc-paths of Simon Marlow
 Fixed to not use the .buildinfo, and use -Dfoo flags for both libraries and executables
+
+Modified 2010-03-30 to work with both cabal-1.6 and cabal-1.8. See bug #302489.
 -}
 import Distribution.Simple
 import Distribution.Simple.Setup
@@ -20,12 +22,18 @@ main = defaultMainWithHooks simpleUserHooks {
                       confHook    = myCustomConfHook
                      }
   where
+{- With cabal-1.6, myCustomConfHook has this type
     myCustomConfHook :: (Either GenericPackageDescription PackageDescription, HookedBuildInfo)
                      -> ConfigFlags
                      -> IO LocalBuildInfo
-    myCustomConfHook egpdpdhbi flags = do
+   With cabal-1.8, myCustomConfHook has this type
+    myCustomConfHook :: (GenericPackageDescription, HookedBuildInfo)
+
+So, better to not specify the type at all as we're not required to...
+-}
+    myCustomConfHook gpd flags = do
       -- get the default LBI
-      lbi <- confHook simpleUserHooks egpdpdhbi flags
+      lbi <- confHook simpleUserHooks gpd flags
       let programs = withPrograms lbi
 
       libdir_ <- rawSystemProgramStdoutConf (fromFlag (configVerbosity flags))
