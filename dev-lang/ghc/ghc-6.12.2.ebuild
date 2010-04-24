@@ -182,8 +182,15 @@ src_unpack() {
 
 			# With GHC 6.12.2, the /usr/bin/ghc wrapper script now has the path to gcc;
 			# however this no longer works thanks to the relocation above.  As such,
-			# we create a gcc symlink for it to use.
-			ln -s "$(type -P gcc)" "${WORKDIR}/$(type -P gcc)"
+			# we un-sed the gcc line.
+			# Relocate from /usr to ${WORKDIR}/usr
+			sed -i -e "s|${WORKDIR}$(type -P gcc)|$(type -P gcc)|g" \
+				"${WORKDIR}/usr/bin/ghc-${PV}" \
+				"${WORKDIR}/usr/bin/ghci-${PV}" \
+				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+				"${WORKDIR}/usr/bin/hsc2hs" \
+				${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/* \
+				|| die "Un-relocating gcc from /usr to workdir failed"
 
 		fi
 
