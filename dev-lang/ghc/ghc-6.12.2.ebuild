@@ -136,11 +136,6 @@ ghc_setup_cflags() {
 }
 
 pkg_setup() {
-    eerror "${P} is currently unbuildable on Gentoo due to build system changes."
-    eerror "Specifically, the build process now explicitly sets a path to gcc at"
-    eerror "configure time, which causes breakage down the track."
-    die "${P} is unbuildable: this package is masked for a good reason!"
-
 	if use ghcbootstrap; then
 		ewarn "You requested ghc bootstrapping, this is usually only used"
 		ewarn "by Gentoo developers to make binary .tbz2 packages for"
@@ -184,6 +179,12 @@ src_unpack() {
 
 			# regenerate the binary package cache
 			"${WORKDIR}/usr/bin/ghc-pkg" recache
+
+			# With GHC 6.12.2, the /usr/bin/ghc wrapper script now has the path to gcc;
+			# however this no longer works thanks to the relocation above.  As such,
+			# we create a gcc symlink for it to use.
+			ln -s "$(type -P gcc)" "${WORKDIR}/$(type -P gcc)"
+
 		fi
 
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
