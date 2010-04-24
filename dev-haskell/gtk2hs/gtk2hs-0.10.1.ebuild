@@ -41,6 +41,12 @@ src_prepare() {
 	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12-packages.patch"
 	epatch "${FILESDIR}/gtk2hs-0.10.1-ghc-6.12-c2hs.patch"
 	cd "${S}"
+
+	# In GHC 6.12.2, qualified imports is now an error
+	sed -i -e "s/Map.findWithDefault, empty/findWithDefault, empty/" \
+		tools/c2hs/base/syms/Attributes.hs \
+		|| die "Can't remove qualified import"
+
 	eautoreconf
 }
 
