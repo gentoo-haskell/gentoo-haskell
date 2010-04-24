@@ -41,7 +41,7 @@ EXTRA_SRC_URI="${PV}"
 arch_binaries=""
 
 arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
+arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://haskell.org/~duncan/ghc/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 
@@ -144,7 +144,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use amd64 || use sparc || use ppc64 || use alpha || use hppa || use ia64 || use ppc ; then
+	elif use sparc || use ppc64 || use alpha || use hppa || use ia64 || use ppc ; then
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
