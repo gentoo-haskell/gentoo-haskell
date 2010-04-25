@@ -14,11 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-HASKELLDEPS="dev-haskell/attoparsec
-		<dev-haskell/iteratee-0.4
-		dev-haskell/monads-fd
-		dev-haskell/transformers"
 RDEPEND=">=dev-lang/ghc-6.6.1
-		${HASKELLDEPS}"
+		dev-haskell/attoparsec
+		<dev-haskell/iteratee-0.4
+		<dev-haskell/monads-fd-0.1.0.0
+		<dev-haskell/transformers-0.2.0.0"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
