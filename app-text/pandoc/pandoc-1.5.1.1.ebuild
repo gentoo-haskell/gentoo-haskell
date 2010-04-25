@@ -29,7 +29,8 @@ COMMONDEPS=">=dev-lang/ghc-6.8
 		citeproc? ( dev-haskell/citeproc-hs )"
 
 DEPEND=">=dev-haskell/cabal-1.2
-		${COMMONDEPS}"
+		${COMMONDEPS}
+		test? ( dev-haskell/diff )"
 
 RDEPEND="${COMMONDEPS}
 		pdf? ( virtual/latex-base )"
@@ -53,25 +54,9 @@ src_unpack() {
 }
 
 src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
-
-	if use highlight; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=highlighting"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-highlighting"
-	fi
-
-	if use citeproc; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=citeproc"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-citeproc"
-	fi
-
-	cabal_src_compile
-}
-
-src_test() {
-	./setup test || die "tests failed"
+	cabal_src_compile \
+		$(cabal_flag highlight highlighting) \
+		$(cabal_flag citeproc)
 }
 
 src_install() {
@@ -87,4 +72,3 @@ src_install() {
 	# COPYING is installed by the Cabal eclass
 	dodoc README  README.html COPYRIGHT changelog
 }
-
