@@ -14,23 +14,29 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
-DEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND="emacs? ( virtual/emacs
+		 app-emacs/haskell-mode )"
+DEPEND="${RDEPEND}
+	>=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/cpphs-1.11*
 		=dev-haskell/haskell-src-exts-1.8*
 		=dev-haskell/hscolour-1.16*
 		dev-haskell/mtl
-		=dev-haskell/uniplate-1.5*
-        emacs? ( virtual/emacs
-                 app-emacs/haskell-mode )"
-
-RDEPEND="emacs? ( virtual/emacs
-                  app-emacs/haskell-mode )"
+		=dev-haskell/uniplate-1.5*"
 
 SITEFILE="60${PN}-gentoo.el"
 
 src_compile() {
-	cabal_src_compile
+	threaded_flag=""
+	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
+		threaded_flag="--flags=threaded"
+		einfo "$P will be built with threads support"
+	else
+		threaded_flag="--flags=-threaded"
+		einfo "$P will be built without threads support"
+	fi
+	cabal_src_compile $threaded_flag
 
 	use emacs && elisp-compile data/hs-lint.el
 }
