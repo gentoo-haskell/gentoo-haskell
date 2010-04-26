@@ -18,12 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="gtk"
 
-RDEPEND="x11-libs/gtk+:2"
+RDEPEND="gtk? ( x11-libs/gtk+:2 )"
 DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.12.1
 		>=dev-haskell/cabal-1.8
+		dev-haskell/haskeline
 		dev-haskell/http
 		dev-haskell/json
+		dev-haskell/mtl
 		dev-haskell/url
 		>=dev-haskell/utf8-string-0.3.6
 		gtk? ( dev-haskell/gtk2hs[glade] )"
