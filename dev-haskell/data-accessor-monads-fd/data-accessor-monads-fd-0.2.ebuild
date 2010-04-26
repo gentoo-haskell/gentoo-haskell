@@ -18,4 +18,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		=dev-haskell/data-accessor-0.2*
 		=dev-haskell/monads-fd-0.0*
-		dev-haskell/transformers"
+		<dev-haskell/transformers-0.2.0.0"
