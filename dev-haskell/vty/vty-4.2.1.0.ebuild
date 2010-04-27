@@ -16,9 +16,8 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
-		dev-haskell/parallel
-		dev-haskell/parsec
 		=dev-haskell/parallel-1*
+		dev-haskell/parsec
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/vector-space-0.5*"
