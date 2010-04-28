@@ -16,6 +16,10 @@
 >=dev-haskell/syb-with-class-0.6.1
 >=dev-haskell/hxt-8.4.0
 
+# Sergei Trofimovich (28 Apr 2009)
+# uses readTVarIO, which was introduced in ghc-6.12.1
+>=dev-haskell/stm-2.1.2.0
+
 # No version of hashed-storage and darcs work with this;
 # Mask until needed.
 # Ivan Miljenovic, 18 October 2009
