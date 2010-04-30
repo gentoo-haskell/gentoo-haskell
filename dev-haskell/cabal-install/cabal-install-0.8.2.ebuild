@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/http-4000.0.2
 		dev-haskell/network
 		>=dev-haskell/zlib-0.4
-		>=dev-haskell/time-1.1"
+		=dev-haskell/time-1.1*"
 
 src_install() {
 	haskell-cabal_src_install
