@@ -1,3 +1,7 @@
+# Ivan Miljenovic, 30 April 2010
+# r.e. bug 317547
+>=dev-haskell/time-1.2
+
 # Ivan Miljenovic, 30 Jan 2010
 # This is an extra mask for hxt-8.5.0 to make sure we don't accidentally
 # release it "into the wild" as it XPath and XSLT have been split off into
