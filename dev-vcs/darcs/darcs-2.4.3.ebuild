@@ -23,7 +23,7 @@ IUSE="doc test"
 # 4) Use the same bounds for mmap as hashed-storage.
 
 COMMONDEPS=">=dev-lang/ghc-6.8
-		>=dev-haskell/hashed-storage-0.4.11
+		>=dev-haskell/hashed-storage-0.4.13
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
 		=dev-haskell/mmap-0.4*
@@ -64,12 +64,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 	popd
 
-	# temporary solution until http://bugs.darcs.net/issue1814 releases
-	cp "${FILESDIR}/darcs-2.4.1-forgotten-contrib-darcs-errors.hlint" \
-	   "${S}/contrib/darcs-errors.hlint"
-
 	# Loosen dependency on hashed-storage
-	sed -i -e "s/hashed-storage == 0.4.11/hashed-storage == 0.4.*/" \
+	sed -i -e "s/hashed-storage == 0.4.13/hashed-storage == 0.4.*/" \
 		"${S}/${PN}.cabal" \
 		|| die "Could not loosen deps on hashed-storage"
 }
