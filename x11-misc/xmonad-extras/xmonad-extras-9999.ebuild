@@ -3,11 +3,11 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit haskell-cabal darcs
 
 DESCRIPTION="Third party extensions for xmonad with wacky dependencies"
 HOMEPAGE="http://projects.haskell.org/xmonad-extras"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+EDARCS_REPOSITORY="http://code.haskell.org/xmonad-extras/"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,11 +18,11 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.1
 		dev-haskell/mtl
 		>=dev-haskell/x11-1.4.3
-		=x11-wm/xmonad-0.9*
-		=x11-wm/xmonad-contrib-0.9*
+		=x11-wm/xmonad-9999
+		=x11-wm/xmonad-contrib-9999
 		volume? ( dev-haskell/parsec dev-haskell/split media-sound/alsa-utils )
 		eval? ( dev-haskell/network dev-haskell/hint )
-		mpd? ( =dev-haskell/libmpd-0.3* )"
+		mpd? ( =dev-haskell/libmpd-0.4* )"
 
 src_compile() {
 	CABAL_CONFIGURE_FLAGS="--flags=-testing"
