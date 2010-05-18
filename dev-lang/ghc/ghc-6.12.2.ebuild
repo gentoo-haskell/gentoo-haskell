@@ -179,23 +179,30 @@ src_unpack() {
 
 			# regenerate the binary package cache
 			"${WORKDIR}/usr/bin/ghc-pkg" recache
-
-			# With GHC 6.12.2, the /usr/bin/ghc wrapper script now has the path to gcc;
-			# however this no longer works thanks to the relocation above.  As such,
-			# we un-sed the gcc line.
-			# Relocate from /usr to ${WORKDIR}/usr
-			sed -i -e "s|${WORKDIR}$(type -P gcc)|$(type -P gcc)|g" \
-				"${WORKDIR}/usr/bin/ghc-${PV}" \
-				"${WORKDIR}/usr/bin/ghci-${PV}" \
-				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
-				"${WORKDIR}/usr/bin/hsc2hs" \
-				${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/* \
-				|| die "Un-relocating gcc from /usr to workdir failed"
-
 		fi
 
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
+
+		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
+		# compiled with, by saving the path to it. The purpose is to make sure
+		# that GHC will use the very same gcc version when it compiles haskell
+		# sources, as the extra-gcc-opts files contains extra gcc options which
+		# match only this GCC version.
+		# However, this is not required in Gentoo, as only modern GCCs are used
+		# (>4).
+		# Instead, this causes trouble when for example ccache is used during
+		# compilation, but we don't want the wrappers to point to ccache.
+		# Due to the above, we simply remove GCC from the wrappers, which forces
+		# GHC to use GCC from the users path, like previous GHC versions did.
+
+		# Remove path to gcc
+		sed -i -e '/pgmgcc/d' \
+			"${S}/rules/shell-wrapper.mk"
+
+		# Remove usage of the path to gcc
+		sed -i -e 's/-pgmc "$pgmgcc"//' \
+		    "${S}/ghc/ghc.wrapper"
 
 		cd "${S}" # otherwise epatch will break
 
