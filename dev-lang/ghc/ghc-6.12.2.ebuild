@@ -202,6 +202,11 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.1-configure-CHOST.patch"
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 
+		# ticket 4038: backported fix from ghc HEAD
+		# Fixes when we call out to C, back to haskell, out to C and back to
+		# haskell again.... which for example happens in gtk2hs.
+		epatch "${FILESDIR}/${P}-ticket4038-nested-callbacks.patch"
+
 		# as we have changed the build system with the readline patch
 		eautoreconf
 	fi
