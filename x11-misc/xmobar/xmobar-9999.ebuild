@@ -6,49 +6,36 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal darcs
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
-HOMEPAGE="http://gorgias.mine.nu/xmobar/"
+HOMEPAGE="http://code.haskell.org/~arossato/xmobar"
 EDARCS_REPOSITORY="http://code.haskell.org/xmobar"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 -sparc ~x86"
+IUSE="xft unicode mail wifi mpd"
 
-IUSE="xft unicode mail"
-
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/x11-1.3.0
+DEPEND=">=dev-lang/ghc-6.8.1
+		>=dev-haskell/cabal-1.6
 		dev-haskell/mtl
 		dev-haskell/parsec
 		dev-haskell/stm
+		dev-haskell/time
+		>=dev-haskell/x11-1.3.0
 		unicode? ( dev-haskell/utf8-string )
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
-		mail? ( dev-haskell/hinotify )"
-RDEPEND="${DEPEND}
-		>=dev-haskell/cabal-1.6"
+		mail? ( dev-haskell/hinotify )
+		wifi? ( net-wireless/wireless-tools )
+		mpd? ( >dev-haskell/libmpd-0.4 )"
+RDEPEND="mpd? ( media-sound/mpd )"
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS=""
-
-	if use xft; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_xft"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_xft"
-	fi
-
-	if use unicode; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_utf8"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_utf8"
-	fi
-
-	if use mail; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
-	fi
-
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure \
+		$(cabal_flag xft with_xft) \
+		$(cabal_flag unicode with_utf8) \
+		$(cabal_flag mail with_inotify) \
+		$(cabal_flag wifi with_iwlib) \
+		$(cabal_flag mpd with_mpd)
 }
 
 src_install() {
@@ -56,3 +43,4 @@ src_install() {
 
 	dodoc xmobar.config-sample README
 }
+
