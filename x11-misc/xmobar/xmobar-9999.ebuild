@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="2"
 CABAL_FEATURES="bin"
 inherit haskell-cabal darcs
 
