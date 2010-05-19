@@ -13,8 +13,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmobar"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 -sparc ~x86"
-IUSE="xft unicode mail mpd"
-# wifi USE flag disabled due to compilation error with current stable wireless-tools.
+IUSE="xft unicode mail mpd wifi"
 
 DEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.6
