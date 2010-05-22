@@ -16,8 +16,8 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/attoparsec
-		~dev-haskell/iteratee-0.3.4
-		<dev-haskell/monads-fd-0.1.0.0
-		<dev-haskell/transformers-0.2.0.0"
+		dev-haskell/iteratee
+		dev-haskell/monads-fd
+		dev-haskell/transformers"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
