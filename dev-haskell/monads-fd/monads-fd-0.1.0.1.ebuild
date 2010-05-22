@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+HASKELLDEPS=">=dev-haskell/transformers-0.2"
 RDEPEND=">=dev-lang/ghc-6.8.1
-		>=dev-haskell/transformers-0.2"
+		${HASKELLDEPS}"
 DEPEND="dev-haskell/cabal
 		${RDEPEND}"
