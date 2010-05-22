@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="wrapper for expat, the fast XML parser"
+DESCRIPTION="XML parser/formatter based on expat"
 HOMEPAGE="http://haskell.org/haskellwiki/Hexpat/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -14,11 +14,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.4
-		=dev-haskell/extensible-exceptions-0.1*
-		>=dev-haskell/mtl-1.1.0.0
+EXTRALIBS="dev-libs/expat"
+HASKELLDEPS=">=dev-haskell/list-0.4
 		dev-haskell/parallel
 		>=dev-haskell/text-0.5
-		>=dev-haskell/utf8-string-0.3.3
-		dev-libs/expat"
+		dev-haskell/transformers
+		>=dev-haskell/utf8-string-0.3.3"
+RDEPEND=">=dev-lang/ghc-6.10
+		${HASKELLDEPS}
+		${EXTRALIBS}"
+DEPEND=">=dev-haskell/cabal-1.6
+		${RDEPEND}"
