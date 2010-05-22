@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/attoparsec
 		~dev-haskell/iteratee-0.3.4
 		<dev-haskell/monads-fd-0.1.0.0
