@@ -18,7 +18,6 @@ HASKELLDEPS=">=dev-haskell/attoparsec-0.8.0.2
 		=dev-haskell/attoparsec-iteratee-0.1*
 		dev-haskell/bytestring-nums
 		>=dev-haskell/bytestring-show-0.3.2
-		<dev-haskell/bytestring-show-0.4
 		=dev-haskell/cereal-0.2*
 		dev-haskell/directory-tree
 		=dev-haskell/dlist-0.5*
@@ -27,7 +26,7 @@ HASKELLDEPS=">=dev-haskell/attoparsec-0.8.0.2
 		=dev-haskell/network-2.2.1*
 		>=dev-haskell/network-bytestring-0.1.2
 		>=dev-haskell/sendfile-0.6.1
-		~dev-haskell/snap-core-0.1.1
+		=dev-haskell/snap-core-0.2*
 		dev-haskell/time
 		dev-haskell/transformers
 		=dev-haskell/vector-0.6*"
