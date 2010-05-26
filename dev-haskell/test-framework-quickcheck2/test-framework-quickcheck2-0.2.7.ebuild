@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -14,9 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/extensible-exceptions-0.1.1
+HASKELLDEPS=">=dev-haskell/extensible-exceptions-0.1.1
 		>=dev-haskell/quickcheck-2.1.0.3
 		>=dev-haskell/test-framework-0.2.0"
+RDEPEND=">=dev-lang/ghc-6.8.1
+		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.2.3
 		${RDEPEND}"
