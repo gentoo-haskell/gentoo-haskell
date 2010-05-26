@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal eutils
+inherit haskell-cabal
 
 DESCRIPTION="Parsing and extracting information from (possibly malformed) HTML/XML documents"
 HOMEPAGE="http://community.haskell.org/~ndm/tagsoup/"
@@ -14,18 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/mtl
+RDEPEND=">=dev-lang/ghc-6.8.1
+		dev-haskell/mtl
 		dev-haskell/network"
 DEPEND=">=dev-haskell/cabal-1.6
-		>=dev-lang/ghc-6.10.1
 		${RDEPEND}"
-
-CABAL_CONFIGURE_FLAGS="--flags=-testprog"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	# Disable bringing in unneeded deps used just for testing purposes.
-	epatch "${FILESDIR}/${PN}-0.8-fix_test_deps.patch"
-}
