@@ -1,0 +1,22 @@
+Patch from debian, by Marco Túlio Gontijo e Silva <marcot@debian.org>.
+
+Description: Use withUTF8FileContents
+ In systems that are not configured to use UTF-8 locales, the build was
+ failing.  This patch makes the build goes right on these hosts.
+Forwarded:
+ http://sourceforge.net/mailarchive/message.php?msg_name=1274896509-sup-6274%40zezinho
+Author: Marco Túlio Gontijo e Silva <marcot@debian.org>
+Last-Update: 2010-05-26
+Index: gtk-0.11.0/Gtk2HsSetup.hs
+===================================================================
+--- gtk-0.11.0.orig/Gtk2HsSetup.hs	2010-05-26 14:49:49.000000000 -0300
++++ gtk-0.11.0/Gtk2HsSetup.hs	2010-05-26 14:51:13.000000000 -0300
+@@ -455,7 +455,7 @@
+ -- existance of a .chs module may not depend on some CPP condition.  
+ extractDeps :: ModDep -> IO ModDep
+ extractDeps md@ModDep { mdLocation = Nothing } = return md
+-extractDeps md@ModDep { mdLocation = Just f } = withFileContents f $ \con -> do
++extractDeps md@ModDep { mdLocation = Just f } = withUTF8FileContents f $ \con -> do
+   let findImports acc (('{':'#':xs):xxs) = case (dropWhile ((==) ' ') xs) of
+         ('i':'m':'p':'o':'r':'t':' ':ys) ->
+           case simpleParse (takeWhile ((/=) '#') ys) of
