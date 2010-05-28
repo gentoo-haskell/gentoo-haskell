@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Library and tool for parsing .eventlog files from GHC"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/ghc-events"
@@ -18,3 +18,5 @@ DEPEND=">=dev-lang/ghc-6.10
 		=dev-haskell/binary-0.5*
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/mtl-1.1*"
+
+PATCHES=( "${FILESDIR}/ghc-events-0.2-fix-haddock.patch" )
