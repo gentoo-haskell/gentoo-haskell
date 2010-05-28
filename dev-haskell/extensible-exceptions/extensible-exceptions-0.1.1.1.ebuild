@@ -17,4 +17,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6"
 
-CABAL_CORE_LIB_GHC_PV="6.12.1 6.12.2"
+CABAL_CORE_LIB_GHC_PV="6.12.1 6.12.2 6.12.2.20100521 6.12.3"
