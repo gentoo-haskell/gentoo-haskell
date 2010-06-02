@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Web framework"
 HOMEPAGE="http://happstack.com"
@@ -14,21 +14,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.6
-		dev-haskell/extensible-exceptions
-		>=dev-haskell/hslogger-1.0.2
-		dev-haskell/hunit
+HASKELLDEPS=">=dev-haskell/hslogger-1.0.2
 		dev-haskell/mtl
 		>=dev-haskell/network-2.2
-		<dev-haskell/parsec-3
-		<dev-haskell/quickcheck-2
-		<dev-haskell/smtpclient-1.1
+		dev-haskell/parsec
+		>=dev-haskell/smtpclient-1.0.2
 		dev-haskell/strict-concurrency
 		dev-haskell/time
 		dev-haskell/unix-compat"
-
-src_unpack() {
-	base_src_unpack
-	sed -i -e "s/Happstack.Util.Testing,//" "${S}/${PN}.cabal"
-}
+RDEPEND=">=dev-lang/ghc-6.10
+		${HASKELLDEPS}"
+DEPEND=">=dev-haskell/cabal-1.6
+		${RDEPEND}"
