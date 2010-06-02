@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -14,10 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.10.1
-		>=dev-haskell/cabal-1.6
-		>=dev-haskell/happstack-data-0.3.2
-		>=dev-haskell/happstack-util-0.3.2
-		dev-haskell/hunit
-		dev-haskell/mtl
-		dev-haskell/syb-with-class"
+RDEPEND=" || (
+			  ( =dev-lang/ghc-6.12* >=dev-haskell/syb-with-class-0.6.1 )
+			  ( =dev-lang/ghc-6.10*  <dev-haskell/syb-with-class-0.6.1 )
+		    )
+		=dev-haskell/happstack-data-0.5*
+		=dev-haskell/happstack-util-0.5*
+		dev-haskell/mtl"
+DEPEND=">=dev-haskell/cabal-1.6
+		${RDEPEND}"
