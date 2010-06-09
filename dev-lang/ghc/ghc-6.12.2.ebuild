@@ -165,7 +165,6 @@ src_unpack() {
 	if ! use ghcbootstrap; then
 		# Modify the wrapper script from the binary tarball to use GHC_CFLAGS.
 		# See bug #313635.
-		einfo "Adding flags to GHC wrapper: ${GHC_CFLAGS}"
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
 			"${WORKDIR}/usr/bin/ghc-${PV}"
 	fi
