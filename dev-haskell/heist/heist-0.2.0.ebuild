@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-HASKELLDEPS="dev-haskell/directory-tree
+HASKELLDEPS=">=dev-haskell/attoparsec-0.8.0.2
+		dev-haskell/directory-tree
 		=dev-haskell/hexpat-0.16*
 		>=dev-haskell/monadcatchio-transformers-0.2.1
 		dev-haskell/monads-fd
