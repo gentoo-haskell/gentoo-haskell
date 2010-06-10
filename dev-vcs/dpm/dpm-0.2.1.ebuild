@@ -33,8 +33,20 @@ DEPEND=">=dev-lang/ghc-6.8
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	sed -i -e 's/ record/ record -A none/' \
+	  "${S}/src/DPM/Core/TestDarcs.hs"
+}
+
+src_configure() {
 	cabal_src_configure \
 	  $(cabal_flag test)
+}
+
+src_test() {
+	ls ${S}/dist
+	ls ${S}/dist/build
+	ls ${S}/dist/build/dpm-tests
+	"${S}/dist/build/dpm-tests/dpm-tests" || die "dpm-tests failed"
 }
 
 src_install() {
