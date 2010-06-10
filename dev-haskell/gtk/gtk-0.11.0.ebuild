@@ -19,7 +19,7 @@ IUSE=""
 HASKELLDEPS="=dev-haskell/cairo-0.11*
 		=dev-haskell/gio-0.11*
 		=dev-haskell/glib-0.11*
-		dev-haskell/mtl[doc?]
+		dev-haskell/mtl
 		=dev-haskell/pango-0.11*"
 RDEPEND=">=dev-lang/ghc-6.10
 		>=dev-libs/glib-2.20
