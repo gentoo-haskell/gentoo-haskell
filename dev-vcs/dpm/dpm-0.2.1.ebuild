@@ -43,9 +43,6 @@ src_configure() {
 }
 
 src_test() {
-	ls ${S}/dist
-	ls ${S}/dist/build
-	ls ${S}/dist/build/dpm-tests
 	"${S}/dist/build/dpm-tests/dpm-tests" || die "dpm-tests failed"
 }
 
