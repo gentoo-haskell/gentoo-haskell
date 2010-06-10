@@ -104,7 +104,6 @@ ghc_setup_cflags() {
 	# We also use these CFLAGS for building the C parts of ghc, ie the rts.
 	strip-flags
 	strip-unsupported-flags
-	filter-flags -fPIC
 
 	GHC_CFLAGS=""
 	for flag in ${CFLAGS}; do
