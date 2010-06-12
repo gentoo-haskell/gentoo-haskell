@@ -15,15 +15,15 @@ KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="emacs"
 
 RDEPEND="emacs? ( virtual/emacs
-		 app-emacs/haskell-mode )"
-DEPEND="${RDEPEND}
-	>=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.6
+		 app-emacs/haskell-mode )
+		>=dev-lang/ghc-6.10
 		=dev-haskell/cpphs-1.11*
-		=dev-haskell/haskell-src-exts-1.8*
+		=dev-haskell/haskell-src-exts-1.9*
 		=dev-haskell/hscolour-1.16*
 		dev-haskell/mtl
 		=dev-haskell/uniplate-1.5*"
+DEPEND=">=dev-haskell/cabal-1.6
+		${RDEPEND}"
 
 SITEFILE="60${PN}-gentoo.el"
 
