@@ -33,15 +33,10 @@ inherit base autotools bash-completion eutils flag-o-matic toolchain-funcs ghc-p
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-# discover if this is a snapshot release
-IS_SNAPSHOT="$(get_version_component_range 4)" # non-empty if snapshot
-EXTRA_SRC_URI="${PV}"
-[[ "${IS_SNAPSHOT}" ]] && EXTRA_SRC_URI="stable/dist"
-
 arch_binaries=""
 
 #arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-r1-x86.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-r1-amd64.tbz2 )"
+arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://haskell.org/~duncan/ghc/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-r1-ppc64.tbz2 )"
 
@@ -52,7 +47,8 @@ arch_binaries=""
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86?     ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://haskell.org/ghc/dist/stable/dist/${P}-src.tar.bz2 )
+	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 #KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
