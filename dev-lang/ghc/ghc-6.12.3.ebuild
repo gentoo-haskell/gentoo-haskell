@@ -47,7 +47,7 @@ arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86?     ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
-SRC_URI="!binary? ( http://haskell.org/ghc/dist/stable/dist/${P}-src.tar.bz2 )
+SRC_URI="!binary? ( http://darcs.haskell.org/download/dist/${PV}/${P}-src.tar.bz2 )
 	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
