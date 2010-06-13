@@ -322,19 +322,48 @@ src_install() {
 
 		dobashcompletion "${FILESDIR}/ghc-bash-completion"
 
-		cp -rp "${D}/usr/$(get_libdir)/${P}/package.conf.d"{,.shipped} \
-			|| die "failed to copy package.conf.d"
+	fi
+
+
+	# path to the package.cache
+	PKGCACHE="${D}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+
+	# copy the package.conf, including timestamp, save it so we later can put it
+	# back before uninstalling, or when upgrading.
+	cp -p "${PKGCACHE}"{,.shipped} \
+		|| die "failed to copy package.conf.d/package.cache"
+}
+
+pkg_preinst() {
+	# have we got an earlier version of ghc installed?
+	if has_version "<${CATEGORY}/${PF}"; then
+		haskell_updater_warn="1"
 	fi
 }
 
 pkg_postinst() {
 	ghc-reregister
 
-	ewarn "IMPORTANT:"
-	ewarn "If you have upgraded from another version of ghc,"
-	ewarn "once app-admin/haskell-updater has installed please run:"
-	ewarn "      /usr/sbin/haskell-updater --upgrade"
-	ewarn "to re-build all ghc-based Haskell libraries."
+	# path to the package.cache
+	PKGCACHE="${ROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+
+	# give the cache a new timestamp, it must be as recent as
+	# the package.conf.d directory.
+	touch ${PKGCACHE}
+
+	if [[ "${haskell_updater_warn}" == "1" ]]; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
+		ewarn "You have just upgraded from an older version of GHC."
+		ewarn "You may have to run"
+		ewarn "      'haskell-updater --upgrade'"
+		ewarn "to rebuild all ghc-based Haskell libraries."
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
+		ebeep 12
+	fi
 
 	bash-completion_pkg_postinst
 }
@@ -357,11 +386,11 @@ pkg_prerm() {
 	# * pkg_postrm for the package being replaced
 	# * pkg_postinst
 
-	# Overwrite the (potentially) modified package.conf with a copy of the
+	# Overwrite the modified package.cache with a copy of the
 	# original one, so that it will be removed during uninstall.
 
-	PKGDIR="${ROOT}/usr/$(get_libdir)/${P}/package.conf.d"
-	rm -rf "${PKGDIR}"
+	PKGCACHE="${ROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	rm -rf "${PKGCACHE}"
 
-	cp -pr "${PKGDIR}"{.shipped,}
+	cp -p "${PKGCACHE}"{.shipped,}
 }
