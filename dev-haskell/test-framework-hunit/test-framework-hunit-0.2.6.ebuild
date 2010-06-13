@@ -14,10 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-HASKELLDEPS=">=dev-haskell/extensible-exceptions-0.1.1
-		>=dev-haskell/hunit-1.2
+HASKELLDEPS=">=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.2.0"
-RDEPEND=">=dev-lang/ghc-6.8.1
+RDEPEND=">=dev-lang/ghc-6.10
 		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.2.3
 		${RDEPEND}"
