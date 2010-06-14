@@ -38,11 +38,11 @@ DEPEND=">=dev-haskell/cabal-1.2.3
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
-        unpack "$A"
-        cd "${S}"
+	unpack "$A"
+	cd "${S}"
 
-        # (non-ASCII non-UTF-8 source breaks hscolour)
-        cd src/System/Time
-        mv ParseDate.hs ParseDate.hs.ISO-8859-1
-        iconv -f ISO-8859-1 -t UTF-8 -c ParseDate.hs.ISO-8859-1 > ParseDate.hs || die "unable to recode ParseDate.hs to UTF-8"
+	# (non-ASCII non-UTF-8 source breaks hscolour)
+	cd src/System/Time
+	mv ParseDate.hs ParseDate.hs.ISO-8859-1
+	iconv -f ISO-8859-1 -t UTF-8 -c ParseDate.hs.ISO-8859-1 > ParseDate.hs || die "unable to recode ParseDate.hs to UTF-8"
 }
