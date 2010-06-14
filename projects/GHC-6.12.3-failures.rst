@@ -9,8 +9,14 @@ From the portage tree
 dev-haskell/arrows
 ------------------
 
+There is an older stable version, but it doesn't work with ghc 6.12.3.
+Newer versions require Stream, which needs QuickCheck-2, which needs
+extensible-exceptions which we haven't got in portage yet.
+
 dev-haskell/hmake
 ------------------
+
+Old and broken.
 
 dev-haskell/hsql
 ------------------
