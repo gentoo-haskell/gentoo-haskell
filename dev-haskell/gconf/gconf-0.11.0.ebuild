@@ -19,6 +19,7 @@ HASKELLDEPS="=dev-haskell/glib-0.11*
 		dev-haskell/mtl"
 RDEPEND=">=dev-lang/ghc-6.10
 		>=dev-libs/glib-2.20
+		gnome-base/gconf
 		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}
