@@ -10,18 +10,17 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI=""
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="-*"
-#KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 # Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
-DEPEND="=dev-lang/ghc-6.12.3*"
+DEPEND=">=dev-lang/ghc-6.6.1"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
