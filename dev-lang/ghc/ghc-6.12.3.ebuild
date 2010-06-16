@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
@@ -175,7 +175,7 @@ src_unpack() {
 				"${WORKDIR}/usr/bin/ghci-${PV}" \
 				"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 				"${WORKDIR}/usr/bin/hsc2hs" \
-				${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/* \
+				"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"* \
 				|| die "Relocating ghc from /usr to workdir failed"
 
 			# regenerate the binary package cache
@@ -323,7 +323,6 @@ src_install() {
 
 	fi
 
-
 	# path to the package.cache
 	PKGCACHE="${D}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
 
@@ -348,7 +347,7 @@ pkg_postinst() {
 
 	# give the cache a new timestamp, it must be as recent as
 	# the package.conf.d directory.
-	touch ${PKGCACHE}
+	touch "${PKGCACHE}"
 
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn
