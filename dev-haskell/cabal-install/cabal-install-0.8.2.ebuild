@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal bash-completion
+inherit haskell-cabal bash-completion eutils
 
 DESCRIPTION="The command-line interface for Cabal and Hackage."
 HOMEPAGE="http://www.haskell.org/cabal/"
@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
-IUSE=""
+IUSE="noprefs"
 
 RDEPEND=">=dev-lang/ghc-6.4
 		 >=dev-haskell/cabal-1.8"
@@ -22,6 +22,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/zlib-0.4
 		=dev-haskell/time-1.1*"
 
+src_unpack() {
+	unpack $A
+	cd "${S}"
+	if use noprefs; then
+		epatch "${FILESDIR}/cabal-install-0.8-nopref.patch"
+	fi
+}
 src_install() {
 	haskell-cabal_src_install
 
