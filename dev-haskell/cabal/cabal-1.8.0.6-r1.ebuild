@@ -21,7 +21,8 @@ IUSE="doc"
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
 DEPEND=">=dev-lang/ghc-6.6.1"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+		dev-util/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
 
