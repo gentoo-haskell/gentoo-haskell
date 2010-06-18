@@ -14,6 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.6.1"
+RDEPEND=">=dev-lang/ghc-6.8.1"
 DEPEND="dev-haskell/cabal
 		${RDEPEND}"
