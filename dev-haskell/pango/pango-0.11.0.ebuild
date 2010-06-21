@@ -14,12 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-BUILDTOOLS="dev-haskell/gtk2hs-buildtools"
-HASKELLDEPS="=dev-haskell/cairo-0.11*
-		=dev-haskell/glib-0.11*"
 RDEPEND=">=dev-lang/ghc-6.10
-	    >=x11-libs/pango-1.26
-		${HASKELLDEPS}"
-DEPEND=">=dev-haskell/cabal-1.6
-		${RDEPEND}
-		${BUILDTOOLS}"
+		=dev-haskell/cairo-0.11*
+		=dev-haskell/glib-0.11*
+		>=x11-libs/pango-1.0"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6
+		dev-haskell/gtk2hs-buildtools"
+
