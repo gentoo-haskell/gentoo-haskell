@@ -16,11 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-BUILDTOOLS="dev-haskell/gtk2hs-buildtools"
-HASKELLDEPS="dev-haskell/mtl"
 RDEPEND=">=dev-lang/ghc-6.10
-		x11-libs/cairo[svg]
-		${HASKELLDEPS}"
-DEPEND=">=dev-haskell/cabal-1.6.0
-		${RDEPEND}
-		${BUILDTOOLS}"
+		dev-haskell/mtl
+		x11-libs/cairo[svg]"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6.0
+		dev-haskell/gtk2hs-buildtools"
+
