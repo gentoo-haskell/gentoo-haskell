@@ -295,9 +295,13 @@ ghc-elem() {
 ghc-listpkg() {
 	local ghcpkgcall
 	local i
+	local extra_flags
+	if version_is_at_least '6.12.3' "$(ghc-version)"; then
+		extra_flags="${extra_flags} -v0"
+	fi
 	for i in $*; do
 		if ghc-cabal; then
-			echo $($(ghc-getghcpkg) list -f "${i}") \
+			echo $($(ghc-getghcpkg) list ${extra_flags} -f "${i}") \
 				| sed \
 					-e "s|^.*${i}:\([^:]*\).*$|\1|" \
 					-e "s|/.*$||" \
