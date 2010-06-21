@@ -14,13 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-BUILDTOOLS="dev-haskell/gtk2hs-buildtools"
-HASKELLDEPS="=dev-haskell/glib-0.11*
-		dev-haskell/mtl"
 RDEPEND=">=dev-lang/ghc-6.10
-		>=dev-libs/glib-2.20
-		gnome-base/gconf
-		${HASKELLDEPS}"
-DEPEND=">=dev-haskell/cabal-1.6
-		${RDEPEND}
-		${BUILDTOOLS}"
+		=dev-haskell/glib-0.11*
+		dev-haskell/mtl
+		>=gnome-base/gconf-2.0.0"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6
+		dev-haskell/gtk2hs-buildtools"
+
