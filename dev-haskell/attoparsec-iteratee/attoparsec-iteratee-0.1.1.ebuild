@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -15,9 +15,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
-		dev-haskell/attoparsec
-		dev-haskell/iteratee
+		=dev-haskell/attoparsec-0.8*
+		>=dev-haskell/iteratee-0.3.1
 		dev-haskell/monads-fd
 		dev-haskell/transformers"
-DEPEND=">=dev-haskell/cabal-1.6
-		${RDEPEND}"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6"
+
