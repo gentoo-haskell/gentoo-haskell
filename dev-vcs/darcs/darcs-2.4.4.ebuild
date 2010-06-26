@@ -42,8 +42,7 @@ DEPEND="${COMMONDEPS}
 				dev-tex/latex2html )
 		test? ( dev-haskell/test-framework
 				dev-haskell/test-framework-hunit
-				dev-haskell/test-framework-quickcheck2
-				dev-haskell/hlint )
+				dev-haskell/test-framework-quickcheck2 )
 		"
 
 # darcs also has a library version; we thus need $DEPEND
@@ -68,6 +67,9 @@ src_prepare() {
 	sed -i -e "s/hashed-storage == 0.4.13/hashed-storage == 0.4.*/" \
 		"${S}/${PN}.cabal" \
 		|| die "Could not loosen deps on hashed-storage"
+
+	# hlint tests tend to break on every newly released hlint
+	rm "${S}/tests/haskell_policy.sh"
 }
 
 src_configure() {
