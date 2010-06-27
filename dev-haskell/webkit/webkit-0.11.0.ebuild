@@ -19,7 +19,7 @@ RDEPEND="=dev-haskell/cairo-0.11*
 		=dev-haskell/gtk-0.11*
 		dev-haskell/mtl
 		=dev-haskell/pango-0.11*
-		>=dev-lang/ghc-6.8.1
+		>=dev-lang/ghc-6.10
 		>=net-libs/webkit-gtk-1.1.15"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0
