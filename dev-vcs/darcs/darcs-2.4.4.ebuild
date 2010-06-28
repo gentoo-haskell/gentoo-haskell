@@ -63,6 +63,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 	popd
 
+	epatch "${FILESDIR}/${P}-issue1770-curl_multi_perform-no-running-handles.patch"
+
 	# Loosen dependency on hashed-storage
 	sed -i -e "s/hashed-storage == 0.4.13/hashed-storage == 0.4.*/" \
 		"${S}/${PN}.cabal" \
