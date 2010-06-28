@@ -11,7 +11,7 @@ SRC_URI=""
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/ghc"
