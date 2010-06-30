@@ -19,7 +19,7 @@ IUSE=""
 
 # testpack dependency is a workaround for cabal-1.8 bug, which pulls
 # depends even for 'Buildable: false' target
-RDEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/hslogger
 		dev-haskell/hunit
 		dev-haskell/mtl
