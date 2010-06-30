@@ -25,9 +25,7 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/parsec
-		<dev-haskell/quickcheck-2.0
-		dev-haskell/regex-compat
-		dev-haskell/testpack"
+		dev-haskell/regex-compat"
 
 DEPEND=">=dev-haskell/cabal-1.2.3
 		virtual/libiconv
