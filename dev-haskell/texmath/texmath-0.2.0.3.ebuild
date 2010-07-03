@@ -17,7 +17,17 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8
 		dev-haskell/cgi
 		dev-haskell/json
-		=dev-haskell/parsec-2*
+		>=dev-haskell/parsec-2
 		dev-haskell/xml"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
+
+src_unpack() {
+    unpack ${A}
+
+    # remove upper restriction on parsec
+    sed -i -e 's/parsec >= 2 && < 3/parsec >= 2/' \
+                "${S}/${PN}.cabal"
+}
+
+
