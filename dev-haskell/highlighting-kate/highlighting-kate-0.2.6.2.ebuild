@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		<dev-haskell/parsec-3
+		<dev-haskell/parsec-4
 		dev-haskell/regex-pcre-builtin
 		dev-haskell/xhtml"
 DEPEND="${RDEPEND}
@@ -25,3 +25,12 @@ DEPEND="${RDEPEND}
 if use executable; then
     CABAL_CONFIGURE_FLAGS="--flags=executable"
 fi
+
+src_unpack() {
+    unpack ${A}
+
+    # loosen upper restriction on parsec
+    sed -i -e 's/parsec < 3/parsec < 4/' \
+                "${S}/${PN}.cabal"
+}
+
