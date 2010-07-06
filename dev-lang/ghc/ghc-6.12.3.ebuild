@@ -264,17 +264,25 @@ src_compile() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
-		# but we have to tell it to build unregisterised on some arches
-		# ppc64: EvilMangler currently does not understand some TOCs
+
+		# some arches do not support ELF parsing for ghci module loading
+		# PPC64: never worked (should be easy to implement)
+		# alpha: never worked
 		if use alpha || use hppa || use ppc64; then
-			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
+		fi
+
+		# we have to tell it to build unregisterised on some arches
+		# ppc64: EvilMangler currently does not understand some TOCs
+		# ia64: EvilMangler bitrot
+		if use alpha || use hppa || use ia64 || use ppc64; then
+			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
 		fi
+
 		# Have "ld -r --relax" problem with split-objs on sparc:
 		if use sparc; then
 			echo "SplitObjs=NO" >> mk/build.mk
