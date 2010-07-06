@@ -210,10 +210,10 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.1-configure-CHOST.patch"
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 
-		# ld dislikes, when fed '-Wl,' prefixed options
+		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
 
-		# as we have changed the build system with the readline patch
+		# as we have changed the build system
 		eautoreconf
 	fi
 }

@@ -206,10 +206,10 @@ src_unpack() {
 		#    http://hackage.haskell.org/trac/ghc/ticket/3730
 		epatch "${FILESDIR}/ghc-6.10.4-libm-detection.patch"
 
-		# ld dislikes, when fed '-Wl,' prefixed options
+		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.10.4-ia64-fixed-relax.patch"
 
-		# as we have changed the build system with the readline patch
+		# as we have changed the build system
 		eautoreconf
 	fi
 }
