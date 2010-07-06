@@ -46,6 +46,6 @@ echo "  USE=\"${USE}\" CFLAGS=\"${CFLAGS}\" emerge --buildpkgonly =ghc-$1"
 
 emerge --buildpkgonly =ghc-$1 || exit
 
-echo "created /usr/portage/packages/dev-lang/ghc-$1.tbz2"
+echo "created $(portageq envvar PKGDIR)/dev-lang/ghc-$1.tbz2"
 echo "to make the ghc-bin file just move it:"
-echo "mv /usr/portage/packages/dev-lang/ghc-$1.tbz2 /usr/portage/distfiles/ghc-bin-$1.tbz2"
+echo "mv $(portageq envvar PKGDIR)/dev-lang/ghc-$1.tbz2 $(portageq envvar DISTDIR)/ghc-bin-$1-$(portageq envvar ARCH).tbz2"
