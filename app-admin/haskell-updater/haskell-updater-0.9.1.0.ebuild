@@ -11,7 +11,7 @@ SRC_URI="http://code.haskell.org/~kolmodin/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~sparc ~x86" # Add keywords as those archs have a binpkg
+KEYWORDS="~alpha ~amd64 ~ppc64 ~sparc ~x86" # Add keywords as those archs have a binpkg
 IUSE=""
 
 DEPEND="=dev-lang/ghc-6.10*"
