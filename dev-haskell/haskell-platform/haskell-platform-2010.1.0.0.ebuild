@@ -38,7 +38,7 @@ DEPEND="~dev-lang/ghc-6.12.1
 		~dev-haskell/cabal-install-0.8.0
 		~dev-haskell/alex-2.3.2
 		~dev-haskell/happy-1.18.4
-		~dev-haskell/haddock-2.6.0"
+		~dev-haskell/haddock-2.6.1"
 
 RDEPEND="${DEPEND}"
 
