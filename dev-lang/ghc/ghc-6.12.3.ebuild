@@ -35,6 +35,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 
 arch_binaries=""
 
+arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 arch_binaries="$arch_binaries x86?   ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 arch_binaries="$arch_binaries amd64? ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://haskell.org/~duncan/ghc/ghc-bin-${PV}-sparc.tbz2 )"
@@ -138,7 +139,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use sparc || use alpha || use hppa || use ia64 || use ppc ; then
+	elif use sparc || use hppa || use ia64 || use ppc ; then
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
@@ -213,6 +214,8 @@ src_unpack() {
 		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
 
+		# fixes build failure of adjustor code
+		epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
 		# as we have changed the build system
 		eautoreconf
 	fi

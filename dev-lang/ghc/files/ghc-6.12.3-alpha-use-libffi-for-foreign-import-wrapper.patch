@@ -1,0 +1,68 @@
+diff --git a/compiler/typecheck/TcForeign.lhs b/compiler/typecheck/TcForeign.lhs
+index 073ca25..75e42ef 100644
+--- a/compiler/typecheck/TcForeign.lhs
++++ b/compiler/typecheck/TcForeign.lhs
+@@ -30,10 +30,6 @@ import TcEnv
+ import ForeignCall
+ import ErrUtils
+ import Id
+-#if alpha_TARGET_ARCH
+-import Type
+-import SMRep
+-#endif
+ import Name
+ import TcType
+ import DynFlags
+@@ -113,7 +109,6 @@ tcCheckFIType sig_ty arg_tys res_ty idecl@(CImport cconv safety _ CWrapper) = do
+         [arg1_ty] -> do checkForeignArgs isFFIExternalTy arg1_tys
+                         checkForeignRes nonIOok  isFFIExportResultTy res1_ty
+                         checkForeignRes mustBeIO isFFIDynResultTy    res_ty
+-                        checkFEDArgs arg1_tys
+                   where
+                      (arg1_tys, res1_ty) = tcSplitFunTys arg1_ty
+         _ -> addErrTc (illegalForeignTyErr empty sig_ty)
+@@ -175,31 +170,6 @@ checkMissingAmpersand dflags arg_tys res_ty
+   = return ()
+ \end{code}
+ 
+-On an Alpha, with foreign export dynamic, due to a giant hack when
+-building adjustor thunks, we only allow 4 integer arguments with
+-foreign export dynamic (i.e., 32 bytes of arguments after padding each
+-argument to a quadword, excluding floating-point arguments).
+-
+-The check is needed for both via-C and native-code routes
+-
+-\begin{code}
+-#include "nativeGen/NCG.h"
+-
+-checkFEDArgs :: [Type] -> TcM ()
+-#if alpha_TARGET_ARCH
+-checkFEDArgs arg_tys
+-  = check (integral_args <= 32) err
+-  where
+-    integral_args = sum [ (widthInBytes . argMachRep . primRepToCgRep) prim_rep
+-			| prim_rep <- map typePrimRep arg_tys,
+-			  primRepHint prim_rep /= FloatHint ]
+-    err = ptext (sLit "On Alpha, I can only handle 32 bytes of non-floating-point arguments to foreign export dynamic")
+-#else
+-checkFEDArgs _ = return ()
+-#endif
+-\end{code}
+-
+-
+ %************************************************************************
+ %*									*
+ \subsection{Exports}
+diff --git a/mk/config.mk.in b/mk/config.mk.in
+index 7399de0..a9e875c 100644
+--- a/mk/config.mk.in
++++ b/mk/config.mk.in
+@@ -176,7 +176,7 @@ endif
+ # Whether to use libffi for adjustors (foreign import "wrapper") or
+ # not.  If we have built-in support (rts/Adjustor.c) then we use that,
+ # otherwise we fall back on libffi, which is slightly slower.
+-ArchHasAdjustorSupport=$(strip $(if $(findstring $(HostArch_CPP),i386 x86_64 alpha powerpc ia64,),YES,NO))
++ArchHasAdjustorSupport=$(strip $(if $(findstring $(HostArch_CPP),i386 x86_64 powerpc ia64,),YES,NO))
+ ifeq "$(ArchHasAdjustorSupport)" "YES"
+ UseLibFFIForAdjustors=NO
+ else
