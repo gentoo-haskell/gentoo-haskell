@@ -209,6 +209,9 @@ src_unpack() {
 		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.10.4-ia64-fixed-relax.patch"
 
+		# prevent from wiping upper address bits used in cache lookup
+		epatch "${FILESDIR}/ghc-6.10.4-ia64-storage-manager-fix.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi

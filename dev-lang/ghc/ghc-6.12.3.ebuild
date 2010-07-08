@@ -214,6 +214,9 @@ src_unpack() {
 		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
 
+		# prevent from wiping upper address bits used in cache lookup
+		epatch "${FILESDIR}/ghc-6.12.3-ia64-storage-manager-fix.patch"
+
 		# fixes build failure of adjustor code
 		epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
 		# as we have changed the build system
