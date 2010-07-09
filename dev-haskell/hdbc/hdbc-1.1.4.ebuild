@@ -26,5 +26,3 @@ PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${PV}* )
 		sqlite? ( =dev-haskell/hdbc-sqlite-${PV}* )"
 
 S="${WORKDIR}/${MY_P}"
-
-CABAL_CONFIGURE_FLAGS="--constraint=base<4"
