@@ -14,6 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal

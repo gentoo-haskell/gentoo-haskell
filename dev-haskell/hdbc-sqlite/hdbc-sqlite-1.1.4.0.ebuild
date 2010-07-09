@@ -16,6 +16,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
+CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 hdbc_PV=$(get_version_component_range 1-3)
 

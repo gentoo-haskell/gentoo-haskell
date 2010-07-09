@@ -11,6 +11,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Haskell Database Connectivity"
 HOMEPAGE="http://software.complete.org/hdbc"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+CABAL_CONFIGURE_FLAGS="--constraint=base<4"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
