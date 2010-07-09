@@ -214,6 +214,10 @@ src_unpack() {
 
 		# fixes build failure of adjustor code
 		epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
+
+		# native adjustor (NA) code is broken: interactive darcs-2.4 coredumps on NA
+		epatch "${FILESDIR}/ghc-6.12.3-ia64-use-libffi-for-foreign-import-wrapper.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi
