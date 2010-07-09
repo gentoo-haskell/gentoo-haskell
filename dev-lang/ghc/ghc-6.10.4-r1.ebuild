@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
@@ -48,19 +48,14 @@ arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64
 arch_binaries="$arch_binaries ppc?   ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-alpha.tbz2 )"
 
-#arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
-#arch_binaries="$arch_binaries hppa?    ( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )"
-#arch_binaries="$arch_binaries ia64?    ( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )"
-#arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
-
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
 	!ghcbootstrap? ( $arch_binaries )"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="binary doc ghcbootstrap ghcquickbuild"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="binary doc ghcbootstrap"
+IUSE+=" ghcquickbuild"
 
 RDEPEND="
 	!dev-lang/ghc-bin
@@ -196,7 +191,6 @@ src_unpack() {
 		sed -i -e "s|wrapped|wrapped ${GHC_CFLAGS}|" \
 	                "${S}/ghc/ghc.wrapper"
 
-
 		cd "${S}"
 
 		# patch aclocal.m4 and configure.ac to work with >=autoconf-2.64
@@ -265,7 +259,7 @@ src_compile() {
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked
-		if use alpha || use hppa || use ppc64; then
+		if use alpha || use ppc64; then
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
