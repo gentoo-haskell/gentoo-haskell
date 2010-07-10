@@ -269,7 +269,6 @@ src_compile() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked

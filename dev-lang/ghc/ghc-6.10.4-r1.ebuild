@@ -40,13 +40,13 @@ EXTRA_SRC_URI="${PV}"
 
 arch_binaries=""
 
+arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-alpha.tbz2 )"
 arch_binaries="$arch_binaries x86?   ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-x86.tbz2 )"
 arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PVR}-amd64.tbz2 )"
 arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64.tbz2 )"
 arch_binaries="$arch_binaries sparc? ( http://haskell.org/~duncan/ghc/ghc-bin-${PV}-sparc.tbz2 )"
 arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 arch_binaries="$arch_binaries ppc?   ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
-arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~ivanm/ghc-bin-${PV}-alpha.tbz2 )"
 
 SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz2 )
 	!ghcbootstrap? ( $arch_binaries )"
@@ -254,7 +254,6 @@ src_compile() {
 		# too much output while being filtered through tee (e.g. due to
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
-
 
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
