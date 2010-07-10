@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/ghc/dist/${GHC_PV}/ghc-${GHC_PV}-src-extralibs.t
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 # TODO: Install examples when the "examples" USE flag is set
 IUSE=""

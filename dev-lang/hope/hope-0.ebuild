@@ -7,7 +7,7 @@ SRC_URI="http://www.soi.city.ac.uk/~ross/Hope/${PN}.tar.gz"
 HOMEPAGE="http://www.soi.city.ac.uk/~ross/Hope"
 
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 IUSE="doc"
 

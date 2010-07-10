@@ -11,7 +11,7 @@ SRC_URI="http://software.complete.org/ldap-haskell/static/download_area/${PV}/ld
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4.2

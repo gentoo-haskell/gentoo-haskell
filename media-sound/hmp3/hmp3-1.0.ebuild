@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 
 #if possible try testing with "~ppc" and "~sparc"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4

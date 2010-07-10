@@ -44,14 +44,13 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz
 	x86?	( http://haskell.org/~kolmodin/ghc-bin-${PV}-x86.tbz2 )"
 #	alpha? ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 #	amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-#	hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
 #	ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
 #	sparc?	( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )
 #	x86?	( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 RDEPEND="
@@ -133,9 +132,9 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
+	elif use alpha || use ia64 || use ppc64 || use sparc; then
 		eerror "No binary .tbz2 package available yet for these arches:"
-		eerror "  alpha, hppa, ia64, ppc64, sparc"
+		eerror "  alpha, ia64, ppc64, sparc"
 
 		eerror "Please try emerging with USE=ghcbootstrap and report build"
 		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
@@ -215,9 +214,9 @@ src_compile() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
+		# GHC build system knows to build unregisterised on alpha,
 		# but we have to tell it to build unregisterised on some arches
-		if use alpha || use hppa || use ppc64 || use sparc; then
+		if use alpha || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk

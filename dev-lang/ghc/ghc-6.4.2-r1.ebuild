@@ -46,7 +46,6 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 	!ghcbootstrap? (
 		 alpha?	( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )
 		 amd64?	( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )
-		 hppa?	( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )
 		 ia64?	( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )
 		 ppc?	( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )
 		 ppc64?	( mirror://gentoo/ghc-bin-${PV}-r1-ppc64.tbz2 )
@@ -58,7 +57,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap test X opengl openal"
 
 LOC="/opt/ghc" # location for installation of binary version

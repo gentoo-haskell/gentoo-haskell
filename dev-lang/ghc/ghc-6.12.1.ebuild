@@ -48,7 +48,6 @@ arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64
 
 #arch_binaries="$arch_binaries alpha?   ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
-#arch_binaries="$arch_binaries hppa?    ( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )"
 #arch_binaries="$arch_binaries ia64?    ( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )"
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
@@ -57,7 +56,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz
 	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 RDEPEND="
@@ -145,7 +144,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use alpha || use hppa || use ia64; then
+	elif use alpha || use ia64; then
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
@@ -254,10 +253,10 @@ src_compile() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
+		# GHC build system knows to build unregisterised on alpha,
 		# but we have to tell it to build unregisterised on some arches
 		# ppc64: EvilMangler currently does not understand some TOCs
-		if use alpha || use hppa || use ppc64; then
+		if use alpha || use ppc64; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk

@@ -7,7 +7,7 @@ HOMEPAGE="http://www.cs.chalmers.se/~markus/BNFC/"
 SRC_URI="http://www.cs.chalmers.se/~markus/BNFC/${PN}_${PV}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~ppc ~x86"
 
 IUSE="doc"
 

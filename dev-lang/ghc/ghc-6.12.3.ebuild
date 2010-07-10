@@ -134,7 +134,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use sparc || use hppa || use ppc ; then
+	elif use sparc || use ppc ; then
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
@@ -279,7 +279,7 @@ src_compile() {
 		# we have to tell it to build unregisterised on some arches
 		# ppc64: EvilMangler currently does not understand some TOCs
 		# ia64: EvilMangler bitrot
-		if use alpha || use hppa || use ia64 || use ppc64; then
+		if use alpha || use ia64 || use ppc64; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk

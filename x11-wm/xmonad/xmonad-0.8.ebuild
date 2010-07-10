@@ -13,7 +13,7 @@ IUSE=""
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ~sparc ~x86"
+KEYWORDS="amd64 ~sparc ~x86"
 
 DEPEND="dev-haskell/mtl
 	>=dev-haskell/x11-1.4.1

@@ -15,7 +15,7 @@ HOMEPAGE="http://www.cs.chalmers.se/~markus/BNFC/"
 SRC_URI="http://www.cs.chalmers.se/Cs/Research/Language-technology/BNFC/download/${MY_PN}-${MY_PV}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE="doc"
 

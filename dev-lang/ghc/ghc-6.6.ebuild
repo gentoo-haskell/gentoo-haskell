@@ -52,7 +52,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${MY_P}-src.tar
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
-#KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+#KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap"
 
 LOC="/opt/ghc" # location for installation of binary version
@@ -239,7 +239,7 @@ src_compile() {
 		# reported as bug #111183
 		echo "SRC_HC_OPTS+=-fno-warn-deprecations" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
+		# GHC build system knows to build unregisterised on alpha,
 		# but we have to tell it to build unregisterised on some other arches
 		if use ia64 || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk

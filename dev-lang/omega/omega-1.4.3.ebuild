@@ -11,7 +11,7 @@ SRC_URI="http://web.cecs.pdx.edu/~sheard/${MY_PN}/${MY_P}.zip"
 HOMEPAGE="http://www.cs.pdx.edu/~sheard/Omega/"
 
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 LICENSE="as-is" # TODO: fix license, this is something different
 IUSE=""
 

@@ -9,7 +9,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="fast"
 
 DEPEND=">=dev-lang/ghc-6.6

@@ -45,7 +45,6 @@ arch_binaries="$arch_binaries amd64? ( http://haskell.org/~kolmodin/ghc-bin-${PV
 
 #arch_binaries="$arch_binaries alpha?   ( mirror://gentoo/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries amd64?   ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
-#arch_binaries="$arch_binaries hppa?    ( mirror://gentoo/ghc-bin-${PV}-hppa.tbz2 )"
 #arch_binaries="$arch_binaries ia64?    ( mirror://gentoo/ghc-bin-${PV}-ia64.tbz2 )"
 #arch_binaries="$arch_binaries sparc?   ( mirror://gentoo/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries x86? ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
@@ -55,7 +54,7 @@ SRC_URI="!binary? ( http://haskell.org/ghc/dist/${EXTRA_SRC_URI}/${P}-src.tar.bz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="binary doc ghcbootstrap ghcquickbuild"
 
 RDEPEND="
@@ -136,7 +135,7 @@ pkg_setup() {
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	#else
-	elif use alpha || use hppa || use ia64 || use ppc || use ppc64 || use sparc; then
+	elif use alpha || use ia64 || use ppc || use ppc64 || use sparc; then
 		#eerror "No binary .tbz2 package available yet for these arches:"
 		#eerror "  ppc, ppc64"
 		#
@@ -224,9 +223,9 @@ src_compile() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		# GHC build system knows to build unregisterised on alpha and hppa,
+		# GHC build system knows to build unregisterised on alpha,
 		# but we have to tell it to build unregisterised on some arches
-		if use alpha || use hppa || use ppc64 || use sparc; then
+		if use alpha || use ppc64 || use sparc; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk

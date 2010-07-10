@@ -11,7 +11,7 @@ SRC_URI="http://www.cs.uu.nl/helium/distr/${P}-src.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 -sparc ~ppc"
+KEYWORDS="~ppc -sparc x86"
 IUSE="readline"
 
 DEPEND="<dev-lang/ghc-6.4

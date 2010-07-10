@@ -10,7 +10,7 @@ SRC_URI="http://www.volker-wysk.de/hsshellscript/dist/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~ppc ~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4

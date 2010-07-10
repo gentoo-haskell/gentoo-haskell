@@ -10,7 +10,7 @@ SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="=dev-lang/ghc-6.4*"

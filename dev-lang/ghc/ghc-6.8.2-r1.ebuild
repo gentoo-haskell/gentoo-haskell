@@ -197,9 +197,9 @@ src_compile() {
 	# portage logging) reported as bug #111183
 	echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-	# GHC build system knows to build unregisterised on alpha and hppa,
+	# GHC build system knows to build unregisterised on alpha,
 	# but we have to tell it to build unregisterised on some arches
-	if use alpha || use hppa || use ia64 || use ppc64 || use sparc; then
+	if use alpha || use ia64 || use ppc64 || use sparc; then
 		echo "GhcUnregisterised=YES" >> mk/build.mk
 		echo "GhcWithInterpreter=NO" >> mk/build.mk
 		echo "GhcWithNativeCodeGen=NO" >> mk/build.mk

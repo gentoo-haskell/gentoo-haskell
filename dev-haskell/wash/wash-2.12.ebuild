@@ -14,7 +14,7 @@ SRC_URI="http://www.informatik.uni-freiburg.de/~thiemann/haskell/WASH/${MY_P}.tg
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~sparc"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
