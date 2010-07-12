@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -25,6 +25,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		=dev-haskell/hdbc-${hdbc_PV}*
 		dev-haskell/parsec
-		>=dev-db/libpq-8"
+		>=dev-db/postgresql-base-8"
 
 S="${WORKDIR}/${MY_P}"

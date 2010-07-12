@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -29,8 +29,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/testpack
 		dev-haskell/time
 		dev-haskell/utf8-string
-        =dev-haskell/hdbc-${hdbc_PV}*
-        >=dev-db/libpq-8"
-
+		=dev-haskell/hdbc-${hdbc_PV}*
+		>=dev-db/postgresql-base-8"
 
 S="${WORKDIR}/${MY_P}"
