@@ -20,10 +20,10 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.8.1
 		=dev-haskell/cabal-1.8*
 		dev-haskell/extensible-exceptions
-		dev-haskell/fgl
-		=dev-haskell/graphalyze-0.9*
-		=dev-haskell/graphviz-2999.8*
-		=dev-haskell/haskell-src-exts-1.6*
+		=dev-haskell/fgl-5.4.2.3
+		=dev-haskell/graphalyze-0.10*
+		=dev-haskell/graphviz-2999.10*
+		=dev-haskell/haskell-src-exts-1.9*
 		dev-haskell/mtl
 		dev-haskell/multiset"
 
