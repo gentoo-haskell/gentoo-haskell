@@ -16,6 +16,7 @@ IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.3
+		dev-haskell/mtl
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets )"
 RDEPEND=""
