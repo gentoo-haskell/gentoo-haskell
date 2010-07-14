@@ -1,0 +1,58 @@
+gcc on FreeBSD/Gentoo/x86 has 'i686-gentoo-freebsd7.2' triplet, but ghc likes 'i386-unknown-freebsd'
+Mangle -gentoo- to -unknown-, mangle '-freebsd7.2' (and other numerics) to '-freebsd'
+Thanks to naota for the report and testing.
+diff --git a/aclocal.m4 b/aclocal.m4
+index f401860..7f93ebf 100644
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -1333,7 +1333,7 @@ case "$1" in
+ # converts vendor from gnu to ghc naming, and assigns the result to $target_var
+ AC_DEFUN([GHC_CONVERT_VENDOR],[
+ case "$1" in
+-  pc)
++  pc|gentoo)
+     $2="unknown"
+     ;;
+   *)
+@@ -1354,6 +1354,10 @@ case "$1" in
+   freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
+     $2="$1"
+     ;;
++  # for things like freebsd7.2
++  freebsd*)
++    $2="freebsd"
++    ;;
+   *)
+     echo "Unknown OS $1"
+     exit 1
+diff --git a/configure.ac b/configure.ac
+index 0360fa5..0a1ce25 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -225,7 +225,7 @@ then
+                 echo "Bootstrapping GHC is a cross compiler. This probably isn't going to work"
+         fi
+ fi
+-build=`echo "$build" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
++build=`echo "$build" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [build=`echo "$build" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
+ 
+ # We have to run these unconditionally, but we may discard their
+@@ -260,7 +260,7 @@ else
+     GHC_CONVERT_VENDOR([$build_vendor], [BuildVendor])
+     GHC_CONVERT_OS([$build_os], [BuildOS])
+ fi
+-host=`echo "$host" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
++host=`echo "$host" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [host=`echo "$host" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
+ 
+ if test "$host_alias" = ""
+@@ -282,7 +282,7 @@ else
+     GHC_CONVERT_VENDOR([$host_vendor], [HostVendor])
+     GHC_CONVERT_OS([$host_os], [HostOS])
+ fi
+-target=`echo "$target" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/'`
++target=`echo "$target" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [target=`echo "$target" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
+ 
+ if test "$target_alias" = ""

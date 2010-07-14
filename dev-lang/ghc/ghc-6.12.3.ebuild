@@ -207,6 +207,7 @@ src_unpack() {
 
 		epatch "${FILESDIR}/ghc-6.12.1-configure-CHOST.patch"
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
+		epatch "${FILESDIR}/ghc-6.12.3-configure-CHOST-freebsd.patch"
 
 		# -r and --relax are incompatible
 		epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
