@@ -35,25 +35,27 @@ local libdir_name=$1
 if has_version '>=dev-libs/gmp-5.0.1'; then
 	local libgmpso3=$ROOT/usr/$libdir_name/libgmp.so.3
 	local libgmpso10=$ROOT/usr/$libdir_name/libgmp.so.10
-	if use binary; then
-		if [[ ! -e "$libgmpso3" ]]; then
+
+	# bother user only if things won't work for him
+	if [[ ! -e "$libgmpso3" ]]; then
+		if use binary; then
 			eerror "You have requested precompiled binary installation, which is"
 			eerror "built against 'libgmp.so.3'. You can create compatibility symlink"
 			eerror "if you have '$libgmpso10' and wish use installed binary:"
 			eerror " # ln -s libgmp.so.10 '$libgmpso3'"
 			die "libgmp.so.3 not found"
-		fi
-	else
-		if [[ -e "$libgmpso10" ]]; then
-			local fake_solib_dir=${S}/fake_solibs
-			mkdir "$fake_solib_dir" || die "failed to make fake lib dir"
-			elog "Enabling libgmp hack:"
-			elog "| Making symlink: '$fake_solib_dir/libgmp.so.3' -> '$libgmpso10'"
-			ln -s "$libgmpso10" "$fake_solib_dir/libgmp.so.3" || die "failed to make fake symlink"
-			export LD_LIBRARY_PATH=$fake_solib_dir${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH
-			elog "| setting new LD_LIBRARY_PATH='$LD_LIBRARY_PATH'"
 		else
-			eerror "'$libgmpso3' and '$libgmpso10' are not found. Please, report the breakage."
+			if [[ -e "$libgmpso10" ]]; then
+				local fake_solib_dir=${S}/fake_solibs
+				mkdir "$fake_solib_dir" || die "failed to make fake lib dir"
+				elog "Enabling libgmp hack:"
+				elog "| Making symlink: '$fake_solib_dir/libgmp.so.3' -> '$libgmpso10'"
+				ln -s "$libgmpso10" "$fake_solib_dir/libgmp.so.3" || die "failed to make fake symlink"
+				export LD_LIBRARY_PATH=$fake_solib_dir${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH
+				elog "| setting new LD_LIBRARY_PATH='$LD_LIBRARY_PATH'"
+			else
+				eerror "'$libgmpso3' and '$libgmpso10' are not found. Please, report the breakage."
+			fi
 		fi
 	fi
 fi
