@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
@@ -12,9 +12,6 @@
 # from source.  If the latter, then the relevant ghc-bin for the
 # arch in question will be used in the working directory to compile
 # ghc from source.
-#
-# This solution has the advantage of allowing us to retain the one
-# ebuild for both packages, and thus phase out virtual/ghc.
 
 # Note to users of hardened gcc-3.x:
 #
@@ -199,7 +196,7 @@ src_unpack() {
 		#	use test && mv "${WORKDIR}/testsuite" "${S}/"
 
 		# Don't strip binaries on install. See QA warnings in bug #140369.
-		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' ${S}/mk/config.mk.in
+		sed -i -e 's/SRC_INSTALL_BIN_OPTS	+= -s//' "${S}/mk/config.mk.in"
 
 		# Temporary patches that needs testing before being pushed upstream:
 		cd "${S}"
@@ -293,7 +290,7 @@ src_install() {
 			|| die "make install failed"
 
 		cd "${S}"
-		dodoc README ANNOUNCE LICENSE VERSION
+		dodoc README ANNOUNCE VERSION
 
 		dosbin ${FILESDIR}/ghc-updater
 
@@ -312,7 +309,6 @@ src_install() {
 }
 
 pkg_postinst() {
-
 	ebegin "Hiding ghc's built-in cabal "
 	$(ghc-getghcpkg) hide Cabal > /dev/null
 	eend $?
