@@ -195,6 +195,10 @@ src_unpack() {
 
 		cd "${S}"
 
+		# disable cabal built binary stripping (solves bug #299492)
+		# as installPackage strips them by default
+		epatch "${FILESDIR}/ghc-6.10.4-disable-strip.patch"
+
 		# patch aclocal.m4 and configure.ac to work with >=autoconf-2.64
 		epatch "${FILESDIR}/${P}-autoconf.patch"
 
