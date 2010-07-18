@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI=1
+
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
@@ -16,7 +18,7 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
-		=dev-haskell/parallel-1*
+		dev-haskell/parallel:1
 		dev-haskell/parsec
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/utf8-string-0.3*

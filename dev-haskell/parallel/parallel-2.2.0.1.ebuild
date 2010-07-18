@@ -10,7 +10,7 @@ HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/parallel"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="2"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 

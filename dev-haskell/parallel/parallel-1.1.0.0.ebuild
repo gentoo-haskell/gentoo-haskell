@@ -10,7 +10,7 @@ HOMEPAGE=""
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="1"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
