@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 HASKELLDEPS="dev-haskell/criterion
-		dev-haskell/filepath
 		dev-haskell/haskeline
 		dev-haskell/txt-sushi"
 RDEPEND=">=dev-lang/ghc-6.6.1
