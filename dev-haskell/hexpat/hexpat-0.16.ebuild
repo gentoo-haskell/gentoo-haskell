@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="2"
+
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
@@ -25,3 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.10
 		${EXTRALIBS}"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
+
+src_prepare() {
+	sed -e 's/parallel/parallel<3/' -i "${S}/${PN}.cabal"
+}
