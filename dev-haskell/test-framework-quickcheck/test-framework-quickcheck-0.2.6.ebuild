@@ -17,10 +17,14 @@ KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
 HASKELLDEPS=">=dev-haskell/extensible-exceptions-0.1.1
-		>=dev-haskell/parallel-1
+		<dev-haskell/parallel-3
 		<dev-haskell/quickcheck-2:1
 		>=dev-haskell/test-framework-0.2.0"
 RDEPEND=">=dev-lang/ghc-6.8.1
 		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.2.3
 		${RDEPEND}"
+
+src_prepare() {
+	sed -e 's/parallel >= 1/parallel >=1 \&\& <3/' -i "${S}/${PN}.cabal"
+}
