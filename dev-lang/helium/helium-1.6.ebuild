@@ -23,6 +23,18 @@ RDEPEND="dev-libs/gmp
 src_unpack() {
 	unpack ${A}
 	epatch "${P}-ghc.patch"
+
+	# "recent" ghcs have 'containers' out of base. bug #247044
+	if has_version '>=dev-lang/ghc-6.8'; then
+		# split base only
+		sed -e 's/^GHCFLAGS =.*$/& -package containers/' \
+		    -i "${S}/helium/src/Makefile.in"
+	fi
+
+	# file has non-ASCII syms and it's pulled to ghc for dependency generaton
+	# ghc w/UTF-8 dislikes it: 
+	sed -e 's/\xCA//g' \
+	    -i "${S}/helium/src/Makefile.in"
 }
 
 src_compile() {
