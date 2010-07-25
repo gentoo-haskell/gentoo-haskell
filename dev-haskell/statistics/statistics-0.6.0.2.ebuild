@@ -16,10 +16,10 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/erf
-		>=dev-haskell/mwc-random-0.5.0.0
-		dev-haskell/primitive
+		>=dev-haskell/mwc-random-0.7.0.0
+		>=dev-haskell/primitive-0.3
 		dev-haskell/time
-		>=dev-haskell/vector-0.5
-		>=dev-haskell/vector-algorithms-0.3"
+		>=dev-haskell/vector-0.6.0.2
+		>=dev-haskell/vector-algorithms-0.3.2"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
