@@ -6,7 +6,7 @@ CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Highligt Haskell source"
-HOMEPAGE="http://github.com/yav/hscolor"
+HOMEPAGE="http://github.com/yav/colorize-haskell"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
