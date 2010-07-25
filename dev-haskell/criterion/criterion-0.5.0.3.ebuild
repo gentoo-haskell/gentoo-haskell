@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Robust, reliable performance measurement and analysis"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/criterion"
@@ -17,23 +17,17 @@ IUSE="chart"
 RDEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/deepseq-1.1.0.0
 		dev-haskell/mtl
-		>=dev-haskell/mwc-random-0.5.0.0
+		>=dev-haskell/mwc-random-0.7.0.0
 		dev-haskell/parallel
 		>=dev-haskell/parsec-3.1.0
-		>=dev-haskell/statistics-0.5.1.0
+		>=dev-haskell/statistics-0.6.0.0
 		dev-haskell/time
-		>=dev-haskell/vector-0.5
-		>=dev-haskell/vector-algorithms-0.3
+		>=dev-haskell/vector-0.6.0.2
+		>=dev-haskell/vector-algorithms-0.3.2
 		chart? ( =dev-haskell/chart-0.13*
 				 dev-haskell/data-accessor )"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
-
-src_unpack() {
-	base_src_unpack
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-0.5.0.0-wide-character.patch"
-}
 
 src_compile() {
 	if use chart; then
