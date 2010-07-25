@@ -14,19 +14,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="citeproc highlight pdf test"
 
-COMMONDEPS=">=dev-lang/ghc-6.8
+COMMONDEPS=">=dev-lang/ghc-6.8.1
 		dev-haskell/extensible-exceptions
 		>=dev-haskell/http-4000.0.5
 		>=dev-haskell/mtl-1.1
 		>=dev-haskell/network-2
 		>=dev-haskell/parsec-2.1
+		>=dev-haskell/texmath-0.3
 		>=dev-haskell/utf8-string-0.3
 		>=dev-haskell/xhtml-3000.0
+		<dev-haskell/xml-1.4
 		>=dev-haskell/zip-archive-0.1.1.4
-		>=dev-haskell/xml-1.3.5
-		dev-haskell/texmath
-		highlight? ( >=dev-haskell/highlighting-kate-0.2.3 )
-		citeproc? ( dev-haskell/citeproc-hs )"
+		highlight? ( >=dev-haskell/highlighting-kate-0.2.7.1 )
+		citeproc? ( >=dev-haskell/citeproc-hs-0.2 )"
 
 DEPEND=">=dev-haskell/cabal-1.2
 		${COMMONDEPS}
@@ -43,14 +43,6 @@ pandoc_init() {
 installMan() {
 	local prog=$1
 	doman "${S}/man/man1/${prog}.1"
-}
-
-src_unpack() {
-	unpack ${A}
-
-	# remove upper restriction on parsec
-	sed -i -e 's/parsec >= 2.1 && < 3/parsec >= 2.1/' \
-				"${S}/${PN}.cabal"
 }
 
 src_compile() {
@@ -72,3 +64,4 @@ src_install() {
 	# COPYING is installed by the Cabal eclass
 	dodoc README  README.html COPYRIGHT changelog
 }
+
