@@ -12,22 +12,18 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="executable"
 
-RDEPEND=">=dev-lang/ghc-6.8
-		dev-haskell/cgi
-		dev-haskell/json
+RDEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/parsec-2
-		dev-haskell/xml"
+		dev-haskell/xml
+		executable? ( dev-haskell/cgi
+					  dev-haskell/json
+					  dev-haskell/utf8-string )"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
 
-src_unpack() {
-    unpack ${A}
-
-    # remove upper restriction on parsec
-    sed -i -e 's/parsec >= 2 && < 3/parsec >= 2/' \
-                "${S}/${PN}.cabal"
-}
-
+if use executable; then
+    CABAL_CONFIGURE_FLAGS="--flags=cgi"
+fi
 
