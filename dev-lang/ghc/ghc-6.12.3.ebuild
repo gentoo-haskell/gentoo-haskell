@@ -41,6 +41,7 @@ arch_binaries="$arch_binaries amd64? ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 
 arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://haskell.org/~duncan/ghc/ghc-bin-${PV}-sparc.tbz2 )"
 arch_binaries="$arch_binaries ppc64? ( mirror://gentoo/ghc-bin-${PV}-ppc64.tbz2 )"
+arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
 
 # various ports:
 arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
