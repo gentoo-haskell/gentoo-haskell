@@ -24,6 +24,6 @@ DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
 
 if use executable; then
-    CABAL_CONFIGURE_FLAGS="--flags=cgi"
+	CABAL_CONFIGURE_FLAGS="--flags=cgi"
 fi
 
