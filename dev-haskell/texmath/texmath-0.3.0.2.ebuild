@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
+RESTRICT="test"
+
 RDEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/parsec-2
 		dev-haskell/xml
