@@ -14,22 +14,21 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-HASKELLDEPS=">=dev-haskell/cautious-file-0.1.5
+RDEPEND=">=dev-haskell/cautious-file-0.1.5
 		dev-haskell/cgi
-		>=dev-haskell/configfile-1
+		<dev-haskell/configfile-1.1
 		<dev-haskell/datetime-0.3
 		<dev-haskell/feed-0.4
 		>=dev-haskell/filestore-0.3.4
-		dev-haskell/ghc-paths
-		<dev-haskell/happstack-server-0.6
-		<dev-haskell/happstack-util-0.6
-		>=dev-haskell/highlighting-kate-0.2.6
+		=dev-haskell/happstack-server-0.5*
+		=dev-haskell/happstack-util-0.5*
+		>=dev-haskell/highlighting-kate-0.2.7.1
 		<dev-haskell/hslogger-1.1
 		=dev-haskell/hstringtemplate-0.6*
 		=dev-haskell/http-4000.0*
 		dev-haskell/mtl
 		>=dev-haskell/network-2.1.0.0
-		>=app-text/pandoc-1.5.1
+		>=app-text/pandoc-1.6
 		dev-haskell/parsec
 		>=dev-haskell/recaptcha-0.1
 		dev-haskell/safe
@@ -38,8 +37,7 @@ HASKELLDEPS=">=dev-haskell/cautious-file-0.1.5
 		=dev-haskell/utf8-string-0.3*
 		dev-haskell/xhtml
 		>=dev-haskell/xml-1.3.5
-		=dev-haskell/zlib-0.5*"
-RDEPEND=">=dev-lang/ghc-6.10
-		${HASKELLDEPS}"
-DEPEND=">=dev-haskell/cabal-1.2
-		${RDEPEND}"
+		=dev-haskell/zlib-0.5*
+		>=dev-lang/ghc-6.10"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2"
