@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Memory mapped files for POSIX and Windows"
-HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/mmap"
+HOMEPAGE="http://hackage.haskell.org/package/mmap"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="test"
 
-DEPEND=">=dev-lang/ghc-6.6.1
+DEPEND=">=dev-lang/ghc-6.8
 		>=dev-haskell/cabal-1.2
 		test? ( dev-haskell/hunit )"
 
