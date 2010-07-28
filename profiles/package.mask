@@ -1,3 +1,8 @@
+# Ivan Miljenovic, 28 July 2010
+# Masked until we can bump it, as it uses a very old version of dev-haskell/derive which
+# we've removed as it used the deprecated packedstring library
+=app-editors/yi-0.6.1
+
 # Lennart Kolmodin <kolmodin@gentoo.org> (27 July 2010)
 # Mask until we have darcs 2.5 in the overlay
 >=dev-haskell/hashed-storage-0.5
