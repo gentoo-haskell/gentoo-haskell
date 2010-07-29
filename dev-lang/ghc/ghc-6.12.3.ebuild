@@ -228,6 +228,9 @@ src_unpack() {
 		# same with NA on ppc
 		epatch "${FILESDIR}/ghc-6.12.3-ppc-use-libffi-for-foreign-import-wrapper.patch"
 
+		# ticket 2615, linker scripts
+		epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi
