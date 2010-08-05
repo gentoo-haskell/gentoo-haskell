@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.1
+RDEPEND=">=dev-lang/ghc-6.12.1
 		net-misc/wget"
 DEPEND="${RDEPEND}
 		>=dev-haskell/binary-0.5.0.0
