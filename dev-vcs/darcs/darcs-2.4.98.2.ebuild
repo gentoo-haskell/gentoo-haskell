@@ -34,8 +34,10 @@ RDEPEND="~dev-haskell/hashed-storage-0.5.2
 		>=dev-haskell/text-0.3
 		<dev-haskell/zlib-0.6.0.0
 		>=dev-lang/ghc-6.10.1
-		net-misc/curl"
+		net-misc/curl
+		virtual/mta"
 
+# darcs also has a library version; we thus need $DEPEND
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		doc?  ( virtual/latex-base
@@ -46,10 +48,6 @@ DEPEND="${RDEPEND}
 		"
 
 S="${WORKDIR}/${MY_P}"
-
-# darcs also has a library version; we thus need $DEPEND
-RDEPEND="${COMMONDEPS}
-		virtual/mta"
 
 pkg_setup() {
 	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
