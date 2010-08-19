@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/binary
 		dev-haskell/nano-md5
 		dev-haskell/network
 		dev-haskell/parsec
-		>=dev-lang/ghc-6.8.1"
+		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.4"
 
