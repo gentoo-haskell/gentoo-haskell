@@ -15,18 +15,23 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+gio"
 
 RDEPEND=">=dev-lang/ghc-6.10
-		=dev-haskell/cairo-0.11*
-		=dev-haskell/gio-0.11*
-		=dev-haskell/glib-0.11*
+		>=dev-haskell/cairo-0.11.1
+		>=dev-haskell/glib-0.11.1
 		dev-haskell/mtl
-		=dev-haskell/pango-0.11*
+		>=dev-haskell/pango-0.11.1
 		dev-libs/glib:2
-		x11-libs/gtk+:2"
+		x11-libs/gtk+:2
+		gio? ( >=dev-haskell/gio-0.11.1 )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0
 		dev-haskell/gtk2hs-buildtools"
 
-PATCHES=( "${FILESDIR}/gtk-0.11.0-utf8.patch" )
+src_configure() {
+	# Upstream has this enabled, so we might as well force it enabled to be sure.
+	cabal_src_configure \
+		--flags=deprecated \
+		$(cabal_flag gio have_gio)
+}
