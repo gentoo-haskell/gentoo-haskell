@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
 		 >=dev-libs/glib-2.20
-		 =dev-haskell/glib-0.11*
+		 >=dev-haskell/glib-0.11.1
 		 dev-haskell/mtl"
 DEPEND=">=dev-haskell/cabal-1.6
 		dev-haskell/gtk2hs-buildtools
