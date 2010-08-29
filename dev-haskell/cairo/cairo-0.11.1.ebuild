@@ -14,12 +14,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+svg"
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
-		x11-libs/cairo[svg]"
+		x11-libs/cairo[svg?]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0
 		dev-haskell/gtk2hs-buildtools"
 
+src_configure() {
+	# x11-libs/cairo seems to build pdf and ps by default
+	cabal_src_configure \
+		--flags=cairo_pdf \
+		--flags=cairo_ps \
+		$(cabal_flag svg cairo_svg)
+}
