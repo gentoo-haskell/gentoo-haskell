@@ -15,10 +15,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10
-		=dev-haskell/cairo-0.11*
-		=dev-haskell/glib-0.11*
-		>=x11-libs/pango-1.0"
+		>=dev-haskell/cairo-0.11.1
+		>=dev-haskell/glib-0.11.1
+		>=x11-libs/pango-1.0
+		>=x11-libs/cairo-1.2.0"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		dev-haskell/gtk2hs-buildtools"
 
+CABAL_CONFIGURE_FLAGS="--flags=new-exception"
