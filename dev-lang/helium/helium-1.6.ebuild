@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.6.ebuild,v 1.2 2007/10/31 13:22:01 dcoutts Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/helium/helium-1.6.ebuild,v 1.4 2010/07/24 22:11:55 mr_bones_ Exp $
 
 inherit autotools eutils
 
@@ -25,13 +25,14 @@ RDEPEND="dev-libs/gmp
 src_unpack() {
 	unpack ${A}
 	epatch "${P}-ghc.patch"
+	epatch "${FILESDIR}/helium-1.6-respect-cflags-ldflags-nostrip.patch"
 
 	# split base only
 	sed -e 's/^GHCFLAGS =.*$/& -package containers/' \
 	    -i "${S}/helium/src/Makefile.in"
 
 	# file has non-ASCII syms and it's pulled to ghc for dependency generaton
-	# ghc w/UTF-8 dislikes it: 
+	# ghc w/UTF-8 dislikes it:
 	sed -e 's/\xCA//g' \
 	    -i "${S}/helium/src/Makefile.in"
 
@@ -67,7 +68,7 @@ src_unpack() {
 	    -i "${S}/$bad_file"
 	done
 
-	# cabal is their friend (oneOf bwcame polymorphic and breaks the test)
+	# cabal is their friend (oneOf became polymorphic and breaks the test)
 	sed -e 's/Text.ParserCombinators.Parsec/&.Pos/g' \
 	    -e 's/oneOf/newPos/g' \
 	    -i "${S}/helium/configure.in"
