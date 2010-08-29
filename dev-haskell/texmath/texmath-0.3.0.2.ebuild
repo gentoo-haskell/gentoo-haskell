@@ -16,7 +16,7 @@ IUSE="executable"
 
 RESTRICT="test"
 
-RDEPEND=">=dev-lang/ghc-6.8.1
+RDEPEND=">=dev-lang/ghc-6.10.1
 		>=dev-haskell/parsec-2
 		dev-haskell/xml
 		executable? ( dev-haskell/cgi
