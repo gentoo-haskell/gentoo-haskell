@@ -14,9 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-BUILDTOOLS="dev-haskell/gtk2hs-buildtools"
 RDEPEND=">=dev-lang/ghc-6.10
 		 >=dev-libs/glib-2.0"
 DEPEND=">=dev-haskell/cabal-1.6.0
-		${RDEPEND}
-		${BUILDTOOLS}"
+		dev-haskell/gtk2hs-buildtools
+		${RDEPEND}"
