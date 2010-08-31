@@ -1,0 +1,15 @@
+diff -rN -u old-libmpd-0.4.1//libmpd.cabal libmpd-0.4.1/libmpd.cabal
+--- old-libmpd-0.4.1//libmpd.cabal	2010-08-31 19:21:41.749897001 +1000
++++ libmpd-0.4.1/libmpd.cabal	2010-08-31 19:22:45.884897000 +1000
+@@ -62,8 +62,9 @@
+ Executable test
+     Hs-Source-Dirs:     . tests
+     Main-Is:            tests/Main.hs
+-    Build-Depends:      base ==4.*, network, mtl, filepath, utf8-string,
+-                        QuickCheck ==2.1.*
++    if flag(test)
++        Build-Depends:      base ==4.*, network, mtl, filepath, utf8-string,
++                            QuickCheck ==2.1.*
+     ghc-options:        -Wall -Werror -fno-warn-warnings-deprecations
+                         -fno-warn-type-defaults
+ 
