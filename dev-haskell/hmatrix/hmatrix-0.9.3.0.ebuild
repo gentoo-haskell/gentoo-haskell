@@ -15,13 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="mkl vector"
 
-HASKELLDEPS="dev-haskell/hunit
-		dev-haskell/quickcheck
+RDEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/storable-complex
 		mkl? ( sci-libs/mkl )
 		vector? ( dev-haskell/vector )"
-RDEPEND=">=dev-lang/ghc-6.10.1
-		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
 
@@ -30,5 +27,4 @@ src_configure() {
 		--flags=-tests \
 		$(cabal_flag mkl) \
 		$(cabal_flag vector)
-
 }
