@@ -27,8 +27,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )
-		wifi? ( net-wireless/wireless-tools )
 		mpd? ( >dev-haskell/libmpd-0.4 )"
+# 		wifi? ( net-wireless/wireless-tools )
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_configure() {
@@ -36,8 +36,9 @@ src_configure() {
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag unicode with_utf8) \
 		$(cabal_flag mail with_inotify) \
-		$(cabal_flag wifi with_iwlib) \
 		$(cabal_flag mpd with_mpd)
+
+#		$(cabal_flag wifi with_iwlib) \
 }
 
 src_install() {
