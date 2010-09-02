@@ -348,7 +348,13 @@ haskell-cabal_src_configure() {
 	pushd "${S}" > /dev/null
 
 	cabal-bootstrap
-	cabal-configure "$@"
+
+	# currently cabal does not respect CFLAGS and LDFLAGS (bug #333217)
+	ghc_flags=""
+	# LDFLAGS are usually easy. It's hard to break something.
+	for flag in $LDFLAGS; do ghc_flags="${ghc_flags} --ghc-option=-optl$flag"; done
+
+	cabal-configure $ghc_flags "$@"
 
 	popd > /dev/null
 }
