@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal eutils
+inherit haskell-cabal
 
 DESCRIPTION="An MPD client library."
 HOMEPAGE="http://github.com/joachifm/libmpd-haskell"
@@ -21,8 +21,3 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
-src_unpack() {
-	unpack $A
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-testing-dependencies.patch"
-}
