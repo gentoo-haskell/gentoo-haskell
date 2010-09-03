@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2"
+		=dev-haskell/quickcheck-2.1*"
 DEPEND=">=dev-haskell/cabal-1.2
 	    ${RDEPEND}"
 
