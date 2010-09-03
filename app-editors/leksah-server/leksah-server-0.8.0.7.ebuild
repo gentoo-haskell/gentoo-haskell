@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/binary-0.5.0.0
 		>=dev-haskell/binary-shared-0.8
 		>=dev-haskell/cabal-1.6.0.1
 		>=dev-haskell/deepseq-1.1
-		>=dev-haskell/haddock-2.7.2
+		=dev-haskell/haddock-2.7*
 		>=dev-haskell/hslogger-1.0.7
 		=dev-haskell/ltk-0.8*
 		>=dev-haskell/mtl-1.1.0.2
