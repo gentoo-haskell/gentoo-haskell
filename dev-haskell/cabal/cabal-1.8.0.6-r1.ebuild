@@ -14,7 +14,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc"
 
 # Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
@@ -23,6 +23,8 @@ IUSE="doc"
 DEPEND=">=dev-lang/ghc-6.6.1"
 RDEPEND="${DEPEND}
 		dev-util/pkgconfig"
+# cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
+# repoman's RDEPEND.suspect QA does not apply here
 
 S="${WORKDIR}/${MY_P}"
 
