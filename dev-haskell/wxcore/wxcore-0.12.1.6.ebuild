@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/parsec
 		dev-haskell/time
 		>=dev-haskell/wxdirect-0.12.1.3
 		>=dev-lang/ghc-6.10
-		x11-libs/wxGTK:2.8"
+		x11-libs/wxGTK:2.8[X]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
