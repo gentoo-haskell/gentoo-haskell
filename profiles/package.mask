@@ -1,3 +1,11 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (05 Sep 2010)
+# Mask QuickCheck-2.3. It brings Arbitrary instances for
+# Word,Word8,Word16,Word32,Word64 which breaks many packages. New API
+# changes also include reworked drivers/state handling, and thus also breaks
+# packages.
+# Packages need to be adapted to this new API before we can unmask.
+>=dev-haskell/quickcheck-2.3
+
 # Lennart Kolmodin <kolmodin@gentoo.org> (12 Aug 2010)
 # Mask darcs-beta
 >=dev-vcs/darcs-2.4.98
