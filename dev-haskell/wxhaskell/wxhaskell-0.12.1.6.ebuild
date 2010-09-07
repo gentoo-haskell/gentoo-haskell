@@ -8,7 +8,7 @@ inherit haskell-cabal
 MY_PN=wx
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="wxHaskell"
+DESCRIPTION="wxHaskell is a portable and native GUI library for Haskell"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
