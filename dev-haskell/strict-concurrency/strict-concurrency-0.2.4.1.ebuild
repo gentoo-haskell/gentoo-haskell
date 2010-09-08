@@ -9,19 +9,12 @@ DESCRIPTION="Strict concurrency abstractions"
 HOMEPAGE="http://code.haskell.org/~dons/code/strict-concurrency"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		 <dev-haskell/parallel-3"
+		 >=dev-haskell/parallel-3"
 DEPEND="dev-haskell/cabal
 		${RDEPEND}"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-strict-concurrency.cabal.patch"
-}
