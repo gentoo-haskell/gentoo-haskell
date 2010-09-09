@@ -41,7 +41,7 @@ if has_version '>=dev-libs/gmp-5.0.1'; then
 		if use binary; then
 			eerror "You have requested precompiled binary installation, which is"
 			eerror "built against 'libgmp.so.3'. You can create compatibility symlink"
-			eerror "if you have '$libgmpso10' and wish use installed binary:"
+			eerror "if you have '$libgmpso10' and wish to use installed binary:"
 			eerror " # ln -s libgmp.so.10 '$libgmpso3'"
 			die "libgmp.so.3 not found"
 		else
