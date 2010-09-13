@@ -138,7 +138,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif use sparc || use ppc ; then
+	elif false; then
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
@@ -227,6 +227,9 @@ src_unpack() {
 
 		# same with NA on ppc
 		epatch "${FILESDIR}/ghc-6.12.3-ppc-use-libffi-for-foreign-import-wrapper.patch"
+
+		# substitute outdated macros
+		epatch "${FILESDIR}/ghc-6.12.3-autoconf-2.66-4252.patch"
 
 		# ticket 2615, linker scripts
 		epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
