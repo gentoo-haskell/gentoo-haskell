@@ -7,7 +7,7 @@
 EAPI="2"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -40,4 +40,11 @@ src_prepare() {
 		rm "src/Haddock/$f."*
 		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
 	done
+}
+
+src_install() {
+	cabal_src_install
+	# haddock uses GHC-api to process TH source.
+	# TH requires GHCi which needs mmap('rwx') (bug #299709)
+	pax-mark -m "${D}/usr/bin/${PN}"
 }
