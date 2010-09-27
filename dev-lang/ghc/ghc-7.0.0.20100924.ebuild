@@ -226,30 +226,6 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 		epatch "${FILESDIR}/ghc-6.12.3-configure-CHOST-freebsd.patch"
 
-	    # none of the patches below will apply any more. most of them have
-		# probably been accepted upstream.
-
-		# -r and --relax are incompatible
-		#epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
-
-		# prevent from wiping upper address bits used in cache lookup
-		#epatch "${FILESDIR}/ghc-6.12.3-ia64-storage-manager-fix.patch"
-
-		# fixes build failure of adjustor code
-		#epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
-
-		# native adjustor (NA) code is broken: interactive darcs-2.4 coredumps on NA
-		#epatch "${FILESDIR}/ghc-6.12.3-ia64-use-libffi-for-foreign-import-wrapper.patch"
-
-		# same with NA on ppc
-		#epatch "${FILESDIR}/ghc-6.12.3-ppc-use-libffi-for-foreign-import-wrapper.patch"
-
-		# substitute outdated macros
-		#epatch "${FILESDIR}/ghc-6.12.3-autoconf-2.66-4252.patch"
-
-		# ticket 2615, linker scripts
-		#epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
-
 		# as we have changed the build system
 		eautoreconf
 	fi
