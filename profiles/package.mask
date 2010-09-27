@@ -1,3 +1,8 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (27 Sep 2010)
+# Mask GHC 7 for testing.
+# Unmasking this means many things will probably break in your system.
+>=dev-lang/ghc-7
+
 # Lennart Kolmodin <kolmodin@gentoo.org> (05 Sep 2010)
 # Mask QuickCheck-2.3. It brings Arbitrary instances for
 # Word,Word8,Word16,Word32,Word64 which breaks many packages. New API
