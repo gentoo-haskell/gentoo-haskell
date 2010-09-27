@@ -33,25 +33,26 @@ inherit base autotools bash-completion eutils flag-o-matic multilib toolchain-fu
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
+# we don't have any binaries yet
 arch_binaries=""
 
-arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
-arch_binaries="$arch_binaries x86?   ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
-arch_binaries="$arch_binaries amd64? ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
-arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-arch_binaries="$arch_binaries ppc64? ( mirror://gentoo/ghc-bin-${PV}-ppc64.tbz2 )"
-arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
+#arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
+#arch_binaries="$arch_binaries x86?   ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
+#arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
+#arch_binaries="$arch_binaries ppc64? ( mirror://gentoo/ghc-bin-${PV}-ppc64.tbz2 )"
+#arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
 
 # various ports:
-arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
+#arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
 
-SRC_URI="!binary? ( http://darcs.haskell.org/download/dist/${PV}/${P}-src.tar.bz2 )
-	!ghcbootstrap? ( $arch_binaries )"
+SRC_URI="!binary? ( http://new-www.haskell.org/ghc/dist/7.0.1-rc1/${P}-src.tar.bz2 )"
+#	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="binary doc ghcbootstrap"
+IUSE="doc ghcbootstrap" # removed binary
 IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
@@ -59,9 +60,13 @@ RDEPEND="
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-4.1
+	>=dev-libs/gmp-5
 	!<dev-haskell/haddock-2.4.2"
 # earlier versions than 2.4.2 of haddock only works with older ghc releases
+
+# force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
+# that we want the binaries to use the latest versioun available, and not to be
+# built against gmp-4
 
 DEPEND="${RDEPEND}
 	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
@@ -70,7 +75,7 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
+#PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
 
 # use undocumented feature STRIP_MASK to fix this issue:
 # http://hackage.haskell.org/trac/ghc/ticket/3580
@@ -138,7 +143,7 @@ pkg_setup() {
 			die "USE=\"ghcbootstrap binary\" is not a valid combination."
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
-	elif false; then
+	else
 		eerror "No binary .tbz2 package available yet for your arch."
 		#
 		#eerror "No binary .tbz2 package available yet."
@@ -154,7 +159,9 @@ src_unpack() {
 	use binary && mkdir "${S}"
 
 	base_src_unpack
-	source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
+
+	# ghc7: we don't need gmp hack any more, depend on >=gmp-5
+	#source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
 
 	ghc_setup_cflags
 
@@ -204,13 +211,14 @@ src_unpack() {
 		# Due to the above, we simply remove GCC from the wrappers, which forces
 		# GHC to use GCC from the users path, like previous GHC versions did.
 
+		# comment out fiddling with gcc
 		# Remove path to gcc
-		sed -i -e '/pgmgcc/d' \
-			"${S}/rules/shell-wrapper.mk"
+		#sed -i -e '/pgmgcc/d' \
+		#	"${S}/rules/shell-wrapper.mk"
 
 		# Remove usage of the path to gcc
-		sed -i -e 's/-pgmc "$pgmgcc"//' \
-		    "${S}/ghc/ghc.wrapper"
+		#sed -i -e 's/-pgmc "$pgmgcc"//' \
+		#    "${S}/ghc/ghc.wrapper"
 
 		cd "${S}" # otherwise epatch will break
 
@@ -218,26 +226,29 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 		epatch "${FILESDIR}/ghc-6.12.3-configure-CHOST-freebsd.patch"
 
+	    # none of the patches below will apply any more. most of them have
+		# probably been accepted upstream.
+
 		# -r and --relax are incompatible
-		epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-ia64-fixed-relax.patch"
 
 		# prevent from wiping upper address bits used in cache lookup
-		epatch "${FILESDIR}/ghc-6.12.3-ia64-storage-manager-fix.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-ia64-storage-manager-fix.patch"
 
 		# fixes build failure of adjustor code
-		epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-alpha-use-libffi-for-foreign-import-wrapper.patch"
 
 		# native adjustor (NA) code is broken: interactive darcs-2.4 coredumps on NA
-		epatch "${FILESDIR}/ghc-6.12.3-ia64-use-libffi-for-foreign-import-wrapper.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-ia64-use-libffi-for-foreign-import-wrapper.patch"
 
 		# same with NA on ppc
-		epatch "${FILESDIR}/ghc-6.12.3-ppc-use-libffi-for-foreign-import-wrapper.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-ppc-use-libffi-for-foreign-import-wrapper.patch"
 
 		# substitute outdated macros
-		epatch "${FILESDIR}/ghc-6.12.3-autoconf-2.66-4252.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-autoconf-2.66-4252.patch"
 
 		# ticket 2615, linker scripts
-		epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
+		#epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
 
 		# as we have changed the build system
 		eautoreconf
