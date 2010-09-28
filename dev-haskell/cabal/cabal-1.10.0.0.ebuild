@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+CABAL_FEATURES="bootstrap lib"
+inherit haskell-cabal eutils
+
 MY_PN="Cabal"
 MY_P="${MY_PN}-${PV}"
 
@@ -23,3 +26,10 @@ RDEPEND="${DEPEND}
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
 # repoman's RDEPEND.suspect QA does not apply here
 
+S="${WORKDIR}/${MY_P}"
+
+CABAL_CORE_LIB_GHC_PV="7.0.0.20100924"
+
+src_unpack() {
+	mkdir "${S}"
+}
