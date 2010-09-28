@@ -226,6 +226,11 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 		epatch "${FILESDIR}/ghc-6.12.3-configure-CHOST-freebsd.patch"
 
+		# forced as-needed dislikes wrong library order
+		epatch "${FILESDIR}/ghc-7.0-hp2ps-asneeded.patch"
+		# don't install broken symlink (we will disable wrapper installation later)
+		epatch "${FILESDIR}/ghc-7.0-haddock-nolink.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi

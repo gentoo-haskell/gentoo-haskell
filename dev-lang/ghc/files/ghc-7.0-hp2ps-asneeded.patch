@@ -1,0 +1,40 @@
+hp2ps: specify libraries at the end of file
+
+"/usr/bin/gcc" -o utils/hp2ps/dist/build/tmp/hp2ps  -fno-stack-protector -O2 -pipe -Wa,--noexecstack -Iincl
+udes -lm            utils/hp2ps/dist/build/AreaBelow.o utils/hp2ps/dist/build/Curves.o utils/hp2ps/dist/bui
+ld/Error.o utils/hp2ps/dist/build/Main.o utils/hp2ps/dist/build/Reorder.o utils/hp2ps/dist/build/TopTwenty.
+o utils/hp2ps/dist/build/AuxFile.o utils/hp2ps/dist/build/Deviation.o utils/hp2ps/dist/build/HpFile.o utils
+/hp2ps/dist/build/Marks.o utils/hp2ps/dist/build/Scale.o utils/hp2ps/dist/build/TraceElement.o utils/hp2ps/
+dist/build/Axes.o utils/hp2ps/dist/build/Dimensions.o utils/hp2ps/dist/build/Key.o utils/hp2ps/dist/build/P
+sFile.o utils/hp2ps/dist/build/Shade.o utils/hp2ps/dist/build/Utilities.o   
+utils/hp2ps/dist/build/Deviation.o: In function `Deviation':
+Deviation.c:(.text+0x3f7): undefined reference to `sqrt'
+collect2: ld returned 1 exit status
+
+The solution is to link external libraries and LDFLAGS as late as possible
+diff --git a/utils/hp2ps/ghc.mk b/utils/hp2ps/ghc.mk
+index 86ae728..a6a79a2 100644
+--- a/utils/hp2ps/ghc.mk
++++ b/utils/hp2ps/ghc.mk
+@@ -19,7 +19,7 @@ utils/hp2ps_dist_PROG    = hp2ps$(exeext)
+ utils/hp2ps_dist_INSTALL = YES
+ 
+ utils/hp2ps_CC_OPTS += -Iincludes
+-utils/hp2ps_CC_OPTS += -lm
++utils/hp2ps_LD_OPTS += -lm
+ 
+ $(eval $(call build-prog,utils/hp2ps,dist,0))
+ 
+diff --git a/rules/build-prog.mk b/rules/build-prog.mk
+index 76e2cb6..4ec7c1f 100644
+--- a/rules/build-prog.mk
++++ b/rules/build-prog.mk
+@@ -132,7 +132,7 @@
+ 	"$$($1_$2_HC)" -o $$@ $$($1_$2_v_ALL_HC_OPTS) $$(LD_OPTS) $$($1_$2_v_HS_OBJS) $$($1_$2_v_C_OBJS) $$($1_$2_v_S_OBJS) $$($1_$2_OTHER_OBJS)
+ else
+ $1/$2/build/tmp/$$($1_$2_PROG) : $$($1_$2_v_HS_OBJS) $$($1_$2_v_C_OBJS) $$($1_$2_v_S_OBJS) $$($1_$2_OTHER_OBJS) | $$$$(dir $$$$@)/.
+-	"$$(CC)" -o $$@ $$($1_$2_v_ALL_CC_OPTS) $$(LD_OPTS) $$($1_$2_v_HS_OBJS) $$($1_$2_v_C_OBJS) $$($1_$2_v_S_OBJS) $$($1_$2_OTHER_OBJS) $$($1_$2_v_EXTRA_CC_OPTS)
++	"$$(CC)" -o $$@ $$($1_$2_v_ALL_CC_OPTS) $$($1_$2_v_HS_OBJS) $$($1_$2_v_C_OBJS) $$($1_$2_v_S_OBJS) $$($1_$2_OTHER_OBJS) $$($1_$2_v_EXTRA_CC_OPTS) $$($1_LD_OPTS) $$(LDFLAGS)
+ endif
+ 
+ # Note [lib-depends] if this program is built with stage1 or greater, we
