@@ -199,27 +199,6 @@ src_unpack() {
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
 
-		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
-		# compiled with, by saving the path to it. The purpose is to make sure
-		# that GHC will use the very same gcc version when it compiles haskell
-		# sources, as the extra-gcc-opts files contains extra gcc options which
-		# match only this GCC version.
-		# However, this is not required in Gentoo, as only modern GCCs are used
-		# (>4).
-		# Instead, this causes trouble when for example ccache is used during
-		# compilation, but we don't want the wrappers to point to ccache.
-		# Due to the above, we simply remove GCC from the wrappers, which forces
-		# GHC to use GCC from the users path, like previous GHC versions did.
-
-		# comment out fiddling with gcc
-		# Remove path to gcc
-		#sed -i -e '/pgmgcc/d' \
-		#	"${S}/rules/shell-wrapper.mk"
-
-		# Remove usage of the path to gcc
-		#sed -i -e 's/-pgmc "$pgmgcc"//' \
-		#    "${S}/ghc/ghc.wrapper"
-
 		cd "${S}" # otherwise epatch will break
 
 		epatch "${FILESDIR}/ghc-6.12.1-configure-CHOST.patch"
@@ -311,7 +290,20 @@ src_compile() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		econf || die "econf failed"
+		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
+		# compiled with, by saving the path to it. The purpose is to make sure
+		# that GHC will use the very same gcc version when it compiles haskell
+		# sources, as the extra-gcc-opts files contains extra gcc options which
+		# match only this GCC version.
+		# However, this is not required in Gentoo, as only modern GCCs are used
+		# (>4).
+		# Instead, this causes trouble when for example ccache is used during
+		# compilation, but we don't want the wrappers to point to ccache.
+		# Due to the above, we simply set GCC to be "gcc". When compiling ghc it
+		# might point to ccache, once installed it will point to the users
+		# regular gcc.
+
+		econf --with-gcc=gcc || die "econf failed"
 
 		# LC_ALL needs to workaround ghc's ParseCmm failure on some (es) locales
 		# bug #202212 / http://hackage.haskell.org/trac/ghc/ticket/4207
