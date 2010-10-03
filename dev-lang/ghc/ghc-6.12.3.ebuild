@@ -239,6 +239,10 @@ src_unpack() {
 		# ticket 2615, linker scripts
 		epatch "${FILESDIR}/ghc-6.12.3-ticket-2615-linker-script.patch"
 
+		# export typechecker internals even if ghci is disabled
+		# http://hackage.haskell.org/trac/ghc/ticket/3558
+		epatch "${FILESDIR}/ghc-6.12.3-ghciless-haddock-3558.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi
