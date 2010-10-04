@@ -211,8 +211,6 @@ src_unpack() {
 
 		# forced as-needed dislikes wrong library order
 		epatch "${FILESDIR}/ghc-7.0-hp2ps-asneeded.patch"
-		# don't install broken symlink (we will disable wrapper installation later)
-		epatch "${FILESDIR}/ghc-7.0-haddock-nolink.patch"
 
 		# as we have changed the build system
 		eautoreconf
@@ -256,9 +254,6 @@ src_compile() {
 			echo XMLDocWays="" >> mk/build.mk
 			echo HADDOCK_DOCS=NO >> mk/build.mk
 		fi
-
-		sed -e "s|utils/haddock_dist_INSTALL_SHELL_WRAPPER = YES|utils/haddock_dist_INSTALL_SHELL_WRAPPER = NO|" \
-		    -i utils/haddock/ghc.mk
 
 		# circumvent a very strange bug that seems related with ghc producing
 		# too much output while being filtered through tee (e.g. due to
@@ -342,6 +337,9 @@ src_install() {
 		emake -j1 ${insttarget} \
 			DESTDIR="${D}" \
 			|| die "make ${insttarget} failed"
+
+		# remove wrapper and linker
+		rm -f "${D}"/usr/bin/haddock*
 
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
