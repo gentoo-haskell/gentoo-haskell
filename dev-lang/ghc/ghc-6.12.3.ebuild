@@ -127,6 +127,10 @@ ghc_setup_cflags() {
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
 	use ppc64 && append-ghc-cflags compile -mminimal-toc
+	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
+	# currently ghc fails to build haddock
+	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
+	use ia64 && append-ghc-cflags compile -G0
 }
 
 pkg_setup() {
