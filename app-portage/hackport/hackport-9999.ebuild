@@ -21,6 +21,6 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/network
 		dev-haskell/parsec
 		dev-haskell/regex-compat
-		>=dev-haskell/xml-1.3.5
+		>dev-haskell/xml-1.3.5
 		dev-haskell/tar
 		dev-haskell/zlib"
