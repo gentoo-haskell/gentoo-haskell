@@ -19,7 +19,7 @@ IUSE="odbc postgres sqlite"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.3
-		>=dev-haskell/convertible-1.0.1
+		>=dev-haskell/convertible-1.0.9.1
 		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/quickcheck
@@ -30,7 +30,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 
 DEPENDV="$(get_version_component_range 1-2)"
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
-        postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
-        sqlite? ( =dev-haskell/hdbc-sqlite-${DEPENDV}* )"
+		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
+		sqlite? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
 S="${WORKDIR}/${MY_P}"

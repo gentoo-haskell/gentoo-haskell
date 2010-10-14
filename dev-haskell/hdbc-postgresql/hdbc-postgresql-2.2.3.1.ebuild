@@ -20,7 +20,7 @@ IUSE=""
 hdbc_PV=$(get_version_component_range 1-2)
 
 DEPEND=">=dev-lang/ghc-6.6.1
-		>=dev-haskell/cabal-1.2.3
+		>=dev-haskell/cabal-1.8
 		dev-haskell/convertible
 		dev-haskell/hunit
 		dev-haskell/mtl
