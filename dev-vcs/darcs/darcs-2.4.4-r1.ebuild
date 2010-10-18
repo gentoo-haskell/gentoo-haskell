@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc test"
 
 # Dependency notes:
@@ -38,6 +38,7 @@ COMMONDEPS=">=dev-lang/ghc-6.8
 
 DEPEND="${COMMONDEPS}
 		>=dev-haskell/cabal-1.6
+		dev-util/pkgconfig
 		doc?  ( virtual/latex-base
 				dev-tex/latex2html )
 		test? ( dev-haskell/test-framework
