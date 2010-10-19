@@ -19,8 +19,8 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/opengl-2.2
-		virtual/glu
-		virtual/glut"
+		virtual/opengl
+		media-libs/freeglut"
 DEPEND=">=dev-haskell/cabal-1.2
 		${RDEPEND}"
 

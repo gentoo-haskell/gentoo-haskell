@@ -20,8 +20,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
 	>=dev-haskell/opengl-2.2.1
-	virtual/glu
-	virtual/glut"
+	virtual/opengl
+	media-libs/freeglut"
 
 S="${WORKDIR}/${MY_P}"
 

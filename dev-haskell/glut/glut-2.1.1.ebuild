@@ -21,8 +21,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6
 	>=dev-haskell/opengl-2.2.1
-	virtual/glu
-	virtual/glut"
+	virtual/opengl
+	media-libs/freeglut"
 
 S="${WORKDIR}/ghc-${GHC_PV}/libraries/${MY_PN}"
 
