@@ -48,12 +48,6 @@
 # Ivan Miljenovic, 18 October 2009
 >=dev-haskell/mmap-0.5
 
-# The great filepath removal!
-# Core package, shouldn't upgrade it, blah, blah, blah.
-# Users should manually re-build all packages that depend on it.
-# Ivan Miljenovic, 23 December, 2009
-dev-haskell/filepath
-
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
 # Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
