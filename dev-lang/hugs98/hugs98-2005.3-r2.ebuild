@@ -38,7 +38,7 @@ SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV}/${MY_P}.tar.gz
 HOMEPAGE="http://www.haskell.org/hugs/"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 LICENSE="as-is"
 
 RDEPEND="
