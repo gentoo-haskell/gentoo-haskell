@@ -10,7 +10,8 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI=""
+#SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="http://code.haskell.org/~slyfox/snapshots/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -20,7 +21,6 @@ IUSE="doc"
 # Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
-DEPEND="=dev-lang/ghc-7*"
 RDEPEND="${DEPEND}
 		dev-util/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
@@ -30,6 +30,12 @@ S="${WORKDIR}/${MY_P}"
 
 CABAL_CORE_LIB_GHC_PV="7.0.0.20100924"
 
-src_unpack() {
-	mkdir "${S}"
+src_compile() {
+	if ! cabal-is-dummy-lib; then
+		einfo "Bootstrapping Cabal..."
+		$(ghc-getghc) -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.hs \
+			-o setup || die "compiling Setup.hs failed"
+		cabal-configure
+		cabal-build
+	fi
 }
