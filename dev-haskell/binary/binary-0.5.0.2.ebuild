@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binary serialisation for Haskell values using lazy ByteStrings"
 HOMEPAGE="http://code.haskell.org/binary/"
@@ -16,3 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/binary-0.5.0.2-ghc-7.patch")
