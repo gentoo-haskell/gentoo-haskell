@@ -76,6 +76,9 @@ DEPEND="${RDEPEND}
 # >=ghc-5.04.3 on their $PATH already
 
 #PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
+PDEPEND="
+	${PDEPEND}
+	dev-haskell/syb"
 
 # use undocumented feature STRIP_MASK to fix this issue:
 # http://hackage.haskell.org/trac/ghc/ticket/3580
