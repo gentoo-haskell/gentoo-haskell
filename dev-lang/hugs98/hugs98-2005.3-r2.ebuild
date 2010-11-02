@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/hugs98/hugs98-2005.3-r2.ebuild,v 1.2 2006/02/16 11:52:55 dcoutts Exp $
 
@@ -43,7 +43,7 @@ LICENSE="as-is"
 
 RDEPEND="
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
-	opengl? ( virtual/opengl virtual/glu virtual/glut )
+	opengl? ( virtual/opengl media-libs/freeglut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
 	opengl? ( app-admin/eselect-opengl )
