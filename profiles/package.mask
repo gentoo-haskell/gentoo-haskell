@@ -48,6 +48,11 @@
 # Ivan Miljenovic, 18 October 2009
 >=dev-haskell/mmap-0.5
 
+# Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2010)
+# Some packages will certainly break. We need to find them
+# and fix upstream.
+>=dev-haskell/mtl-2.0.0.0
+
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
 # Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
