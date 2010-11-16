@@ -65,6 +65,7 @@ src_prepare() {
 	popd
 
 	epatch "${FILESDIR}/${P}-issue1770-curl_multi_perform-no-running-handles.patch"
+	epatch "${FILESDIR}/${P}-tests-emailformat.patch"
 
 	# Loosen dependency on hashed-storage
 	sed -i -e "s/hashed-storage == 0.4.13/hashed-storage == 0.4.*/" \

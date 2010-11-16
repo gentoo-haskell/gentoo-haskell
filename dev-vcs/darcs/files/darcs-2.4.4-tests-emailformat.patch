@@ -1,0 +1,39 @@
+Tue Nov 16 23:36:37 EET 2010  Sergei Trofimovich <slyfox@community.haskell.org>
+  * tests/emailformat.sh: use ghc --make instead of ghci
+  
+  linux-alpha and linux-ia64 don't have ghci support.
+  No need to fail there.
+diff -rN -u old-darcs.net/tests/emailformat.sh new-darcs.net/tests/emailformat.sh
+--- old-darcs.net/tests/emailformat.sh	2010-11-16 23:40:10.207480789 +0200
++++ new-darcs.net/tests/emailformat.sh	2010-11-16 23:40:10.706480789 +0200
+@@ -6,8 +6,10 @@
+ switch_to_latin9_locale
+ rm -rf temp1
+ rm -rf temp2
++rm -rf temp3
+ mkdir temp1
+ mkdir temp2
++mkdir temp3
+ cd temp1
+ 
+ seventysevenaddy="<aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbb.cccccccccc.abrasoft.com>"
+@@ -34,10 +36,17 @@
+ grep $seventysevenaddy mail_as_file
+ 
+ # Check that there are no non-ASCII characters in the mail
+-ghc -e 'getContents >>= return . not . any (> Data.Char.chr 127)' < mail_as_file | grep '^True$'
++cd ../temp3
++cat > is_ascii.hs <<EOF
++import Data.Char (chr)
+ 
++main = getContents >>= print . not . any (> Data.Char.chr 127)
++EOF
++
++ghc --make is_ascii.hs -o is_ascii
++./is_ascii < ../temp1/mail_as_file | grep '^True$'
+ 
+ cd ..
+ rm -rf temp1
+ rm -rf temp2
+-
++rm -rf temp3
