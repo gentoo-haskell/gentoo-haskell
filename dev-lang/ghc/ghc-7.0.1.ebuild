@@ -47,7 +47,7 @@ arch_binaries=""
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
 
-SRC_URI="!binary? ( http://new-www.haskell.org/ghc/dist/7.0.1-rc2/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://new-www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 #	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
