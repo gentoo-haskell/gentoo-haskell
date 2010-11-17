@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bootstrap lib"
+CABAL_FEATURES="bootstrap lib profile"
 inherit haskell-cabal eutils
 
 MY_PN="Cabal"
@@ -10,8 +10,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-#SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
-SRC_URI="http://code.haskell.org/~slyfox/snapshots/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,6 +20,7 @@ IUSE="doc"
 # Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
+DEPEND=">=dev-lang/ghc-6.6.1"
 RDEPEND="${DEPEND}
 		dev-util/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-#CABAL_CORE_LIB_GHC_PV="7.0.0.20100924"
+CABAL_CORE_LIB_GHC_PV="7.0.1"
 
 src_compile() {
 	if ! cabal-is-dummy-lib; then
