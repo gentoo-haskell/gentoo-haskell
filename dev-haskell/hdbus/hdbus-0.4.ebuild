@@ -18,9 +18,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-	>=sys-apps/dbus-0.60"
+	sys-apps/dbus"
 DEPEND=">=dev-haskell/cabal-1.6
-	>=sys-apps/sed-4
+	sys-apps/sed
 	${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"

@@ -14,7 +14,7 @@ KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
-		>=sys-apps/dbus-0.60"
+	sys-apps/dbus"
 
 EDARCS_REPOSITORY="http://neugierig.org/software/darcs/hdbus"
 EDARCS_GET_CMD="get --partial"
