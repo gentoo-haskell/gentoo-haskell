@@ -50,9 +50,10 @@
 >=dev-haskell/mmap-0.5
 
 # Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2010)
-# Some packages will certainly break. We need to find them
+# Some packages will certainly break with mtl-2. We need to find them
 # and fix upstream.
 >=dev-haskell/mtl-2.0.0.0
+dev-haskell/mongodb
 
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
