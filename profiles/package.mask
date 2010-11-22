@@ -30,13 +30,6 @@
 # r.e. bug 317547
 >=dev-haskell/time-1.2
 
-# Lennart Kolmodin <kolmodin@gentoo.org> (02 Nov 2009)
-# Mask RCs for testing.
-# We're still working on supporting this, so expect that some things
-# might not yet work.
->=dev-haskell/haddock-leksah-2.6.0
->=dev-haskell/hxt-8.4.0
-
 # No version of hashed-storage and darcs work with this;
 # Mask until needed.
 # Ivan Miljenovic, 18 October 2009
