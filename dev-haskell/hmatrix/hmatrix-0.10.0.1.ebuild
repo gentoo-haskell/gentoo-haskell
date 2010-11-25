@@ -19,7 +19,7 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/storable-complex
 		mkl? ( sci-libs/mkl )
 		vector? ( >=dev-haskell/vector-0.7 )"
-DEPEND=">=dev-haskell/cabal-1.2
+DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
 src_configure() {
