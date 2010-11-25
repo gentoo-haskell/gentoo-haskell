@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
-inherit gnome2 git eutils
+EAPI=2
+inherit gnome2 git
 
 DESCRIPTION="Gnome applet for displaying XMonad log"
 HOMEPAGE="http://uhsure.com/xmonad-log-applet.html"
@@ -21,10 +21,6 @@ RDEPEND="sys-apps/dbus
 	dev-haskell/hdbus
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
-
-src_prepare() {
-	epatch "${FILESDIR}/Makefile.in.patch"
-}
 
 src_install() {
 	emake DESTDIR="${D}"  install || die "Install failed"
