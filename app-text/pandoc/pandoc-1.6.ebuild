@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="citeproc highlight pdf test"
 
-COMMONDEPS=">=dev-lang/ghc-6.8.1
-		dev-haskell/extensible-exceptions
+COMMONDEPS=">=dev-lang/ghc-6.10
 		>=dev-haskell/http-4000.0.5
 		>=dev-haskell/mtl-1.1
 		>=dev-haskell/network-2
