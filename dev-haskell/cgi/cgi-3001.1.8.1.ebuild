@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/extensible-exceptions
+RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/monadcatchio-mtl
 		>=dev-haskell/mtl-1.0
 		>=dev-haskell/network-2.0
