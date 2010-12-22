@@ -1,0 +1,18 @@
+Wed Dec 22 17:41:40 CET 2010  Lennart Kolmodin <kolmodin@gentoo.org>
+  * Fix crash bug for ghc-7 when using -XHaskell98
+  The code uses monomorphic pattern bindings, but did not say so.
+  This patch adds MonoPatBinds to the affected source code file.
+  If using -XHaskell98 (that is, building with cabal instead of cabal-install)
+  the build would fail with a ghc crash.
+  For reference see: http://hackage.haskell.org/trac/ghc/ticket/4498
+diff -rN -u old-vty/src/Data/Terminfo/Eval.hs new-vty/src/Data/Terminfo/Eval.hs
+--- old-vty/src/Data/Terminfo/Eval.hs	2010-12-22 17:48:47.312172556 +0100
++++ new-vty/src/Data/Terminfo/Eval.hs	2010-12-22 17:48:47.317173542 +0100
+@@ -5,6 +5,7 @@
+ {-# LANGUAGE FlexibleContexts #-}
+ {-# LANGUAGE NoMonomorphismRestriction #-}
+ {-# LANGUAGE NamedFieldPuns #-}
++{-# LANGUAGE MonoPatBinds #-}
+ {-# OPTIONS_GHC -funbox-strict-fields #-}
+ {- Evaluates the paramaterized terminfo string capability with the given parameters.
+  -
