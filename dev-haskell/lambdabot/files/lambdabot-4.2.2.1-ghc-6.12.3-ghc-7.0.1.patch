@@ -1,0 +1,123 @@
+--- lambdabot-4.2.2.1-orig/lambdabot.cabal	2009-01-18 16:01:17.000000000 +1100
++++ lambdabot-4.2.2.1/lambdabot.cabal	2010-12-22 22:27:16.409126098 +1100
+@@ -52,11 +52,13 @@
+ 
+ -- Lambdabot main
+ Executable          lambdabot
+-    Build-depends:       containers, directory, pretty, parsec, old-time, random, array, network,
++    Build-depends:       base >= 4 && < 5,
++                         containers, directory, pretty, parsec, old-time, random, array, network,
+                          regex-compat, readline, binary>0.2, haskell-src,
+                          -- TODO: update Plugin.Eval for 0.4 and up
+-                         haskell-src-exts>=0.3.6 && < 0.4,
++                         haskell-src-exts>=0.3.6 && < 2.0,
+                          oeis, lambdabot-utils, show>=0.3, utf8-string, template-haskell,
++                         unix, base, mtl, bytestring, syb,
+                          -- runtime dependencies
+                          brainfuck, unlambda, template-haskell
+     Main-is:             Main.hs
+--- lambdabot-4.2.2.1-orig/Lambdabot.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Lambdabot.hs	2010-12-10 13:03:54.287148735 +1100
+@@ -69,7 +69,7 @@
+ 
+ import Control.Concurrent (myThreadId, newEmptyMVar, newMVar, readMVar, putMVar,
+                            takeMVar, threadDelay, MVar, ThreadId)
+-import Control.Exception
++import Control.OldException
+ import Control.Monad.Error (MonadError (..))
+ import Control.Monad.Reader
+ import Control.Monad.State
+--- lambdabot-4.2.2.1-orig/Plugin/Base.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Base.hs	2010-12-10 13:03:54.287148735 +1100
+@@ -12,7 +12,7 @@
+ 
+ import Control.Monad.State  (MonadState(..), when, gets)
+ 
+-import Control.Exception    (Exception(NoMethodError))
++import Control.OldException    (Exception(NoMethodError))
+ 
+ import qualified Data.ByteString.Char8 as P
+ import qualified Text.Regex as R
+--- lambdabot-4.2.2.1-orig/Plugin/Compose.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Compose.hs	2010-12-10 13:03:54.288171064 +1100
+@@ -11,7 +11,7 @@
+ 
+ import Control.Monad.State
+ import Control.Arrow (first)
+-import Control.Exception   (Exception(NoMethodError))
++import Control.OldException   (Exception(NoMethodError))
+ 
+ $(plugin "Compose")
+ 
+--- lambdabot-4.2.2.1-orig/Plugin/Dict/DictLookup.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Dict/DictLookup.hs	2010-12-10 13:03:54.289173344 +1100
+@@ -19,7 +19,7 @@
+ 
+ import Data.List
+ import System.IO
+-import Control.Exception (handle)
++import Control.OldException (handle)
+ import Network
+ 
+ data QueryConfig    = QC { host :: String, port :: Int }
+--- lambdabot-4.2.2.1-orig/Plugin/Eval.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Eval.hs	2010-12-11 19:30:02.562811364 +1100
+@@ -9,14 +9,14 @@
+ import File (findFile)
+ import Plugin
+ import Lambdabot.Parser
+-import Language.Haskell.Exts.Parser
+-import Language.Haskell.Exts.Syntax hiding (Module)
++import Language.Haskell.Parser
++import Language.Haskell.Syntax hiding (Module)
+ import qualified Text.Regex as R
+ import System.Directory
+ import System.Exit
+ import Codec.Binary.UTF8.String (decodeString)
+ import qualified Data.ByteString.Char8 as P
+-import Control.Exception (try)
++import Control.OldException (try)
+ 
+ $(plugin "Plugs")
+ 
+@@ -92,6 +92,7 @@
+     -- careful with timeouts here. need a wrapper.
+     (o',e',c) <- popen "ghc" ["-O","-v0","-c"
+                              ,"-Werror"
++                             ,"-hide-package monads-fd"
+ --                             ,"-odir", "State/"
+ --                             ,"-hidir","State/"
+                              ,".L.hs"] Nothing
+--- lambdabot-4.2.2.1-orig/Plugin/Help.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Help.hs	2010-12-10 13:03:54.290165817 +1100
+@@ -3,7 +3,7 @@
+ module Plugin.Help (theModule) where
+ 
+ import Plugin
+-import Control.Exception    (Exception(..), evaluate)
++import Control.OldException    (Exception(..), evaluate)
+ 
+ $(plugin "Help")
+ 
+--- lambdabot-4.2.2.1-orig/Plugin/IRC.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/IRC.hs	2010-12-10 13:03:54.290165817 +1100
+@@ -5,7 +5,7 @@
+ 
+ import Control.Concurrent( forkIO, newQSem, waitQSem, threadDelay, signalQSem,
+                            newEmptyMVar, putMVar, takeMVar, MVar )
+-import Control.Exception
++import Control.OldException
+ import IRCBase
+ import LMain( received )
+ import Message
+--- lambdabot-4.2.2.1-orig/Plugin/Quote/Fortune.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Quote/Fortune.hs	2010-12-10 13:03:54.290165817 +1100
+@@ -10,7 +10,7 @@
+ import Data.List
+ import Control.Monad
+ import System.Directory
+-import qualified Control.Exception as C (catch)
++import qualified Control.OldException as C (catch)
+ 
+ #ifndef mingw32_HOST_OS
+ --

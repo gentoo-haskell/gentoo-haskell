@@ -1,0 +1,19 @@
+--- lambdabot-4.2.2.1-orig/Plugin/Pl/Transform.hs	2009-01-18 16:01:14.000000000 +1100
++++ lambdabot-4.2.2.1/Plugin/Pl/Transform.hs	2010-12-22 22:27:00.834018805 +1100
+@@ -10,6 +10,7 @@
+ 
+ import Data.Graph (stronglyConnComp, flattenSCC, flattenSCCs)
+ import Control.Monad.State
++import Control.Monad.Identity
+ 
+ {-
+ nub :: Ord a => [a] -> [a]
+@@ -81,7 +82,7 @@
+ 
+   -- act like a reader monad
+   inEnv :: State s a -> State s a
+-  inEnv (State f) = State $ \s -> (fst $ f s, s)
++  inEnv (StateT f) = state (\s -> (fst $ runIdentity $ f s, s))
+ 
+   alphaPat (PVar v) = do
+     fm <- get
