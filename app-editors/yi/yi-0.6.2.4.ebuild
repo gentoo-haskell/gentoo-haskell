@@ -24,7 +24,7 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		<dev-haskell/data-accessor-0.3
 		=dev-haskell/data-accessor-monads-fd-0.2*
 		<dev-haskell/data-accessor-template-0.2.2
-		=dev-haskell/derive-2.3*
+		=dev-haskell/derive-2.4*
 		=dev-haskell/diff-0.1*
 		>=dev-haskell/dlist-0.4.1
 		>=dev-haskell/dyre-0.7
@@ -50,14 +50,20 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.6"
 
+src_unpack() {
+	unpack $A
+	sed -e 's@build-depends: derive >=2.3 && <2.4@build-depends: derive >=2.3 \&\& <2.5@' \
+		-i "${S}/${PN}.cabal"
+}
+
 src_configure() {
-    cabal_src_configure \
+	cabal_src_configure \
 		--flags=-testing \
 		$(cabal_flag gtk pango) \
 		$(cabal_flag gnome) \
 		$(cabal_flag vty)
 
-    if ! (use gtk || use vty); then
-        ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
-    fi
+	if ! (use gtk || use vty); then
+		ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
+	fi
 }
