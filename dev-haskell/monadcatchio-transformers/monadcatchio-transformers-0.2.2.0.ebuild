@@ -21,6 +21,7 @@ HASKELLDEPS="=dev-haskell/transformers-0.2*"
 RDEPEND=">=dev-lang/ghc-6.10
 		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.6
+		=dev-haskell/extensible-exceptions-0.1*
 		${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
