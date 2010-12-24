@@ -28,7 +28,7 @@ COMMONDEPS=">=dev-lang/ghc-6.8
 		=dev-haskell/html-1.0*
 		=dev-haskell/mmap-0.4*
 		<dev-haskell/mtl-1.2
-		=dev-haskell/network-2.2*
+		>=dev-haskell/network-2.2
 		>=dev-haskell/parsec-2.0
 		<dev-haskell/regex-compat-0.94
 		=dev-haskell/terminfo-0.3*
