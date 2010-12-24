@@ -77,6 +77,10 @@ src_prepare() {
 		"${S}/${PN}.cabal" \
 		|| die "Could not loosen deps on parsec"
 
+	# and on network
+	sed -i -e 's/network == 2\.2\.\*/network >= 2.2/' \
+		"${S}/${PN}.cabal"
+
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
 }
