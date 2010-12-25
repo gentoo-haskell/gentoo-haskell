@@ -39,7 +39,6 @@
 # Some packages will certainly break with mtl-2. We need to find them
 # and fix upstream.
 >=dev-haskell/mtl-2.0.0.0
-dev-haskell/mongodb
 
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
