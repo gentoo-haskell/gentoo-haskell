@@ -14,8 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-PATCHES=( "${FILESDIR}/${P}-ghc-7.patch" )
-
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
 		net-misc/curl"
