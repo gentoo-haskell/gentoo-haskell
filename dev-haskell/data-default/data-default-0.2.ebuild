@@ -6,7 +6,7 @@ CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="A class for types with a default value"
-HOMEPAGE=""
+HOMEPAGE="http://hackage.haskell.org/package/data-default"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
