@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		<dev-haskell/cabal-1.11
-		>=dev-haskell/http-4000.0.9
+		<dev-haskell/http-4000.2
 		<dev-haskell/mtl-2.1
 		<dev-haskell/network-2.4
 		=dev-haskell/tar-0.3*
@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cd "${S}"
 	cabal-mksetup
-	epatch "${FILESDIR}/${P}-cabal-file.patch"
+	epatch "${FILESDIR}/${PN}-0.7.2.1-cabal-file.patch"
 }
