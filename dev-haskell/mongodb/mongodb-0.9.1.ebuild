@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/binary
-		dev-haskell/bson
+		>=dev-haskell/bson-0.1.2
 		>=dev-haskell/mtl-2
 		dev-haskell/nano-md5
 		dev-haskell/network
