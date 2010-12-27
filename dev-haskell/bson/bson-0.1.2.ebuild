@@ -25,4 +25,4 @@ RDEPEND="dev-haskell/binary
 		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		dev-haskell/cabal"
+		>=dev-haskell/cabal-0"
