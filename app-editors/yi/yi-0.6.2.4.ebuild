@@ -19,7 +19,7 @@ IUSE="gnome gtk vty"
 # so just specify upper bound
 RDEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/binary-0.5*
-		<dev-haskell/cabal-1.9
+		<dev-haskell/cabal-1.11
 		<dev-haskell/cautious-file-0.2
 		<dev-haskell/data-accessor-0.3
 		=dev-haskell/data-accessor-monads-fd-0.2*
@@ -43,16 +43,20 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/unix-compat-0.1*
 		>=dev-haskell/utf8-string-0.3.1
 		vty? ( =dev-haskell/vty-4* )
-		gtk? ( =dev-haskell/glib-0.11*
-			   =dev-haskell/gtk-0.11*
-			   gnome? ( =dev-haskell/gconf-0.11* ) )"
+		gtk? ( =dev-haskell/glib-0.12*
+			   =dev-haskell/gtk-0.12*
+			   gnome? ( =dev-haskell/gconf-0.12* ) )"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.6"
 
 src_unpack() {
 	unpack $A
-	sed -e 's@build-depends: derive >=2.3 && <2.4@build-depends: derive >=2.3 \&\& <2.5@' \
+	sed -e 's@build-depends: Cabal >= 1.6 && < 1.9@build-depends: Cabal >= 1.6 \&\& < 1.11@' \
+		-e 's@build-depends: derive >=2.3 && <2.4@build-depends: derive >=2.3 \&\& <2.5@' \
+		-e 's@build-depends: gtk==0.11.*@build-depends: gtk==0.12.*@' \
+		-e 's@build-depends: glib==0.11.*@build-depends: glib==0.12.*@' \
+		-e 's@build-depends: gconf==0.11.*@build-depends: gconf==0.12.*@' \
 		-i "${S}/${PN}.cabal"
 }
 
