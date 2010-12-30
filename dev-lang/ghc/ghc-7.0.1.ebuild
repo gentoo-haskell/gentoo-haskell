@@ -47,7 +47,7 @@ arch_binaries=""
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
 
-SRC_URI="!binary? ( http://new-www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 #	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
@@ -92,9 +92,9 @@ append-ghc-cflags() {
 			assemble)	assemble="yes";;
 			link)		link="yes";;
 			*)
-				[[ ${compile}  ]] && GHC_CFLAGS="${GHC_CFLAGS} -optc${flag}"
-				[[ ${assemble} ]] && GHC_CFLAGS="${GHC_CFLAGS} -opta${flag}"
-				[[ ${link}     ]] && GHC_CFLAGS="${GHC_CFLAGS} -optl${flag}";;
+				[[ ${compile}  ]] && GHC_CFLAGS="${GHC_CFLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
+				[[ ${assemble} ]] && GHC_CFLAGS="${GHC_CFLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
+				[[ ${link}     ]] && GHC_CFLAGS="${GHC_CFLAGS} -optl${flag}" CFLAGS="${CFLAGS} ${flag}";;
 		esac
 	done
 }
@@ -227,10 +227,6 @@ src_compile() {
 		echo "docdir = /usr/share/doc/${P}" >> mk/build.mk
 		echo "htmldir = /usr/share/doc/${P}" >> mk/build.mk
 
-		# We also need to use the GHC_CFLAGS flags when building ghc itself
-		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
-		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
-
 		# The settings that give you the fastest complete GHC build are these:
 		if use ghcquickbuild; then
 			echo "SRC_HC_OPTS     = -H64m -O0 -fasm" >> mk/build.mk
@@ -244,6 +240,10 @@ src_compile() {
 		# this build isn't very useful. The resulting compiler will be very
 		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
 		# timed at less than 8 minutes.
+
+		# We also need to use the GHC_CFLAGS flags when building ghc itself
+		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
+		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
