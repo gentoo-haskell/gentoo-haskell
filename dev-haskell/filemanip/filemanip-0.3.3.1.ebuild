@@ -19,7 +19,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
+		dev-haskell/extensible-exceptions
 		dev-haskell/mtl"
 
 S="${WORKDIR}/${MY_P}"
-CABAL_CONFIGURE_FLAGS="--constraint=base<4"
