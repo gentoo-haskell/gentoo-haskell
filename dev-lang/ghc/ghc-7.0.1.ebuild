@@ -92,9 +92,9 @@ append-ghc-cflags() {
 			assemble)	assemble="yes";;
 			link)		link="yes";;
 			*)
-				[[ ${compile}  ]] && GHC_CFLAGS="${GHC_CFLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${assemble} ]] && GHC_CFLAGS="${GHC_CFLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${link}     ]] && GHC_CFLAGS="${GHC_CFLAGS} -optl${flag}" CFLAGS="${CFLAGS} ${flag}";;
+				[[ ${compile}  ]] && GHC_FLAGS="${GHC_FLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
+				[[ ${assemble} ]] && GHC_FLAGS="${GHC_FLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
+				[[ ${link}     ]] && GHC_FLAGS="${GHC_FLAGS} -optl${flag}" FILTERED_LDFLAGS="${FILTERED_LDFLAGS} ${flag}";;
 		esac
 	done
 }
@@ -108,7 +108,7 @@ ghc_setup_cflags() {
 	strip-flags
 	strip-unsupported-flags
 
-	GHC_CFLAGS=""
+	GHC_FLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
 
@@ -124,6 +124,16 @@ ghc_setup_cflags() {
 			-g*) ;;
 
 			# Ignore all other flags, including all -f* flags
+		esac
+	done
+
+	FILTERED_LDFLAGS=""
+	for flag in ${LDFLAGS}; do
+		case ${flag} in
+			# Pass the canary. we don't quite respect LDFLAGS, but we have an excuse!
+			"-Wl,--hash-style="*) append-ghc-cflags link ${flag};;
+
+			# Ignore all other flags
 		esac
 	done
 
@@ -173,9 +183,9 @@ src_unpack() {
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap; then
-		# Modify the wrapper script from the binary tarball to use GHC_CFLAGS.
+		# Modify the wrapper script from the binary tarball to use GHC_FLAGS.
 		# See bug #313635.
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
+		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
 			"${WORKDIR}/usr/bin/ghc-${PV}"
 
 		# allow hardened users use vanilla biary to bootstrap ghc
@@ -203,7 +213,7 @@ src_unpack() {
 			"${WORKDIR}/usr/bin/ghc-pkg" recache
 		fi
 
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
+		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
 
 		cd "${S}" # otherwise epatch will break
@@ -241,9 +251,10 @@ src_compile() {
 		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
 		# timed at less than 8 minutes.
 
-		# We also need to use the GHC_CFLAGS flags when building ghc itself
-		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
+		# We also need to use the GHC_FLAGS flags when building ghc itself
+		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
+		echo "SRC_LD_OPTS+=${FILTERED_LDFLAGS}" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
