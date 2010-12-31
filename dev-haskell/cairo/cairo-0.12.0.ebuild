@@ -6,7 +6,8 @@
 
 EAPI="2"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+#nocabaldep is for the fancy cabal-detection feature at build-time
+CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the Cairo library."
@@ -22,7 +23,6 @@ RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
 		x11-libs/cairo[svg?]"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6.0
 		dev-haskell/gtk2hs-buildtools"
 
 src_configure() {
