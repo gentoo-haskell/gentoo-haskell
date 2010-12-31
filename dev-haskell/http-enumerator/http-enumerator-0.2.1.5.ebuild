@@ -22,8 +22,7 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		<dev-haskell/mtl-2.1
-		=dev-haskell/network-2.2*
-		=dev-haskell/network-bytestring-0.1.3*
+		=dev-haskell/network-2.3*
 		=dev-haskell/tls-0.3*
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/utf8-string-0.4
@@ -31,3 +30,10 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		>=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_configure() {
+	# turn off network-bytestring.
+	# this will force network-2.3* which is exactly what we want
+	cabal_src_configure \
+	  -f-network-bytestring
+}
