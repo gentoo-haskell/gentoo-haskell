@@ -17,6 +17,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/transformers-0.2*
-		>=dev-lang/ghc-6.8.1"
+		>=dev-lang/ghc-6.10"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+CABAL_CONFIGURE_FLAGS="--flags=-testprog"
+
+src_install() {
+	cabal_src_install
+
+	dodoc "${PN}.htm"
+}
