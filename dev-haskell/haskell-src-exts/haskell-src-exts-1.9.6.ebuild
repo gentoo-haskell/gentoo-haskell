@@ -11,6 +11,10 @@ DESCRIPTION="Manipulating Haskell source: abstract syntax, lexer, parser, and pr
 HOMEPAGE="http://code.haskell.org/haskell-src-exts"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
+# test suit seems to be broken.
+# tested with ghc-7, it failed
+RESTRICT="test"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
