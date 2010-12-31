@@ -14,7 +14,7 @@ DESCRIPTION="Random-number generation monad."
 HOMEPAGE="http://hackage.haskell.org/package/monadrandom"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE=""  #Fixme: "OtherLicense", please fill in manually
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
