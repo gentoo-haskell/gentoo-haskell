@@ -18,8 +18,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/haskell-src-exts-1.9*
 		=dev-haskell/transformers-0.2*
-		>=dev-haskell/uniplate-1.5
-		<dev-haskell/uniplate-1.7
+		=dev-haskell/uniplate-1.6
 		>=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
