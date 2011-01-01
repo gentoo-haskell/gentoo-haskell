@@ -1,3 +1,10 @@
+# Ivan Miljenovic  (1 Jan 2011)
+# New HXT is even more split up and thus breaks even more packages
+=dev-haskell/hxt-9*
+=dev-haskell/hxt-charproperties-9*
+=dev-haskell/hxt-regex-xmlschema-9*
+=dev-haskell/hxt-unicode-9*
+
 # Lennart Kolmodin <kolmodin@gentoo.org> (27 Sep 2010)
 # Mask GHC 7 for testing.
 # Unmasking this means many things will probably break in your system.
@@ -21,7 +28,7 @@
 # Mask until we have darcs 2.5 in the overlay
 >=dev-haskell/hashed-storage-0.5
 
-# Ivan MIljenovic, 9 May 2010
+# Ivan Miljenovic, 9 May 2010
 # extensible-exceptions is a boot library for 6.10+; as such, masking
 # the latest version as it isn't available in any GHC release yet.
 =dev-haskell/extensible-exceptions-0.1.1.2
