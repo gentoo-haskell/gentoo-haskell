@@ -35,7 +35,7 @@ src_unpack() {
     unpack ${A}
 
     # Remove restrictions on array and containers
-    sed -i -e 's/parsec == 2.1.*,/parsec >= 2.1.*,/' \
+    sed -i -e 's/parsec == 2.1.*,/parsec >= 2.1,/' \
                  "${S}/${PN}.cabal"
 }
 
