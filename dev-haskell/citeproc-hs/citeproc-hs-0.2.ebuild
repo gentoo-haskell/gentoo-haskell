@@ -16,5 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/hxt-8.1
+		=dev-haskell/hxt-8*
 		dev-haskell/mtl"
