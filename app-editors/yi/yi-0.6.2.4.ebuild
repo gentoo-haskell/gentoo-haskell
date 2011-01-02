@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -38,9 +38,9 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		=dev-haskell/regex-tdfa-1.1*
 		=dev-haskell/rosezipper-0.1*
 		=dev-haskell/split-0.1*
-		=dev-haskell/time-1.1*
+		dev-haskell/time
 		dev-haskell/uniplate
-		=dev-haskell/unix-compat-0.1*
+		<dev-haskell/unix-compat-0.3
 		>=dev-haskell/utf8-string-0.3.1
 		vty? ( =dev-haskell/vty-4* )
 		gtk? ( =dev-haskell/glib-0.12*
@@ -50,10 +50,18 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.6"
 
+CABAL_CONFIGURE_FLAGS="$(cabal_flag gnome)
+					   $(cabal_flag gtk)
+					   $(cabal_flag vty)"
+
 src_unpack() {
 	unpack $A
 	sed -e 's@build-depends: Cabal >= 1.6 && < 1.9@build-depends: Cabal >= 1.6 \&\& < 1.11@' \
 		-e 's@build-depends: derive >=2.3 && <2.4@build-depends: derive >=2.3 \&\& <2.5@' \
+		-e 's@build-depends: filepath>=1.1 && <1.2@build-depends: filepath>=1.1 \&\& <1.3@' \
+		-e 's@build-depends: template-haskell >= 2.4 && < 2.5@build-depends: template-haskell >= 2.4 \&\& < 2.6@' \
+		-e 's@build-depends: time == 1.1.*@build-depends: time >= 1.1 \&\& < 1.3@' \
+		-e 's@build-depends: unix-compat >=0.1 && <0.2@build-depends: unix-compat >=0.1 \&\& <0.3@' \
 		-e 's@build-depends: gtk==0.11.*@build-depends: gtk==0.12.*@' \
 		-e 's@build-depends: glib==0.11.*@build-depends: glib==0.12.*@' \
 		-e 's@build-depends: gconf==0.11.*@build-depends: gconf==0.12.*@' \
