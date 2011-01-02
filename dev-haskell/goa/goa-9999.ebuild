@@ -1,11 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:	$
 
+EAPI="2"
 CABAL_FEATURES="bin lib profile"
 inherit git haskell-cabal
 
-DESCRIPTION="GHCi on Acid"
+DESCRIPTION="GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features."
 HOMEPAGE="http://haskell.org/haskellwiki/GHC/GHCi#GHCi_on_Acid"
 EGIT_REPO_URI="git://github.com/chrisdone/goa.git"
 
@@ -26,6 +27,7 @@ src_unpack() {
 }
 
 pkg_postinst() {
+	ghc-package_pkg_postinst
 	DOT_GHCI=$(equery files dev-haskell/goa | grep dot-ghci)
 	elog "To configure a trippin' ghci, add $DOT_GHCI to your ~/.ghci"
 }
