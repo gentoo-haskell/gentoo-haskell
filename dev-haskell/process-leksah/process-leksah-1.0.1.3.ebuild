@@ -19,3 +19,11 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_unpack() {
+	unpack $A
+	sed -e 's@directory >= 1.0 && < 1.1@directory >= 1.0 \&\& < 1.2@' \
+		-e 's@filepath  >= 1.1 && < 1.2@filepath  >= 1.1 \&\& < 1.3@' \
+		-i "${S}/${PN}.cabal"
+}
+
