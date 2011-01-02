@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ MY_PN="qtHaskell"
 MY_P="${MY_PN}-${PV}"
 S="${WORKDIR}/${MY_P}/qws"
 
-DESCRIPTION="qtHaskell C bindings"
+DESCRIPTION="qtHaskell C bindings. qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia."
 HOMEPAGE="http://qthaskell.berlios.de/"
 SRC_URI="http://download.berlios.de/qthaskell/${MY_P}.1.tar.bz2"
 
