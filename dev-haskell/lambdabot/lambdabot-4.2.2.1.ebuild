@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:	$
 
@@ -71,5 +71,6 @@ src_unpack() {
 }
 
 pkg_postinst() {
-		elog "It may be necessary to: mkdir -p ~/.lambdabot/State && cp /usr/share/lambdabot-*/ghc-*/State/* ~/.lambdabot/State"
+	ghc-package_pkg_postinst
+	elog "It may be necessary to: mkdir -p ~/.lambdabot/State && cp /usr/share/lambdabot-*/ghc-*/State/* ~/.lambdabot/State"
 }
