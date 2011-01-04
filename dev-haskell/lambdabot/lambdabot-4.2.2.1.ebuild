@@ -15,18 +15,26 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="eval"
 
+RDEPEND="eval? ( dev-haskell/mueval )"
 DEPEND="${RDEPEND}
+		dev-haskell/arrows
 		>dev-haskell/binary-0.2
 		dev-lang/brainfuck
 		>=dev-haskell/cabal-1.2
+		dev-haskell/data-memocombinators
 		dev-haskell/haskell-src
 		<dev-haskell/haskell-src-exts-2.0
+		<dev-haskell/iospec-0.3
 		dev-haskell/lambdabot-utils
+		dev-haskell/logict
+		dev-haskell/monadrandom
 		dev-haskell/mtl
 		dev-haskell/network
+		dev-haskell/numbers
 		dev-haskell/oeis
+		dev-haskell/parallel
 		dev-haskell/parsec
 		dev-haskell/readline
 		dev-haskell/regex-compat
@@ -34,40 +42,19 @@ DEPEND="${RDEPEND}
 		dev-haskell/syb
 		dev-haskell/unlambda
 		dev-haskell/utf8-string
+		dev-haskell/vector-space
 		>=dev-lang/ghc-6.8.1"
 
+CABAL_CONFIGURE_FLAGS="$(cabal_flag eval)"
+
 src_unpack() {
-		unpack ${A}
-		cd "${S}"
-		# Compile with ghc 6.12.3 or ghc 7.0.1
-		epatch "${FILESDIR}/${P}-ghc-6.12.3-ghc-7.0.1.patch"
-		if has_version ">=dev-haskell/mtl-2.0.0.0"; then
-				epatch "${FILESDIR}/${P}-mtl-2.patch"
-		fi
-		mkdir "${S}/State.new"
-		cd "${S}/State.new"
-		wget http://code.haskell.org/lambdabot/State/Pristine.hs \
-			 http://code.haskell.org/lambdabot/State/djinn \
-			 http://code.haskell.org/lambdabot/State/fact \
-			 http://code.haskell.org/lambdabot/State/fresh \
-			 http://code.haskell.org/lambdabot/State/haddock \
-			 http://code.haskell.org/lambdabot/State/imports.h \
-			 http://code.haskell.org/lambdabot/State/karma \
-			 http://code.haskell.org/lambdabot/State/poll \
-			 http://code.haskell.org/lambdabot/State/quote \
-			 http://code.haskell.org/lambdabot/State/seen \
-			 http://code.haskell.org/lambdabot/State/source \
-			 http://code.haskell.org/lambdabot/State/state \
-			 http://code.haskell.org/lambdabot/State/system \
-			 http://code.haskell.org/lambdabot/State/tell \
-			 http://code.haskell.org/lambdabot/State/todo \
-			 http://code.haskell.org/lambdabot/State/url \
-			 http://code.haskell.org/lambdabot/State/vixen \
-			 http://code.haskell.org/lambdabot/State/where
-		cp -up "${FILESDIR}/L.hs" .
-		cp -up * "${S}/State"
-		cd "${S}"
-		rm -rf ${S}/State.new
+	unpack ${A}
+	cd "${S}"
+	# Compile with ghc 6.12.3 or ghc 7.0.1
+	epatch "${FILESDIR}/${P}-ghc-6.12.3-ghc-7.0.1.patch"
+	if has_version ">=dev-haskell/mtl-2.0.0.0"; then
+		epatch "${FILESDIR}/${P}-mtl-2.patch"
+	fi
 }
 
 pkg_postinst() {
