@@ -18,13 +18,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/cabal
-		dev-haskell/extensible-exceptions
 		>=dev-haskell/hint-0.3.1
 		<dev-haskell/mtl-2.1
 		dev-haskell/parallel
 		>=dev-haskell/show-0.3
 		dev-haskell/utf8-string
-		>=dev-lang/ghc-6.8.1"
+		>=dev-lang/ghc-6.10"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
