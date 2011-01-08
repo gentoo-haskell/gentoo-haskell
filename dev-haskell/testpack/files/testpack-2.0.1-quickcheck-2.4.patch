@@ -1,0 +1,54 @@
+--- testpack-2.0.1-orig/src/Test/QuickCheck/Instances.hs	2010-08-12 05:28:05.000000000 +1000
++++ testpack-2.0.1/src/Test/QuickCheck/Instances.hs	2011-01-07 16:57:44.375560340 +1100
+@@ -36,13 +36,6 @@
+ instance (CoArbitrary k, CoArbitrary v, Eq k, Ord k) => CoArbitrary (Map.Map k v) where
+     coarbitrary = coarbitrary . Map.keys
+ 
+-instance Arbitrary Word8 where
+-    arbitrary = sized $ \n -> choose (0, min (fromIntegral n) maxBound)
+-
+-instance CoArbitrary Word8 where
+-    coarbitrary n = variant (if n >= 0 then 2 * x else 2 * x + 1)
+-                where x = abs . fromIntegral $ n
+-
+ instance Random Word8 where
+     randomR (a, b) g = (\(x, y) -> (fromInteger x, y)) $
+                        randomR (toInteger a, toInteger b) g
+--- testpack-2.0.1-orig/src/Test/HUnit/Tools.hs	2010-08-12 05:28:05.000000000 +1000
++++ testpack-2.0.1/src/Test/HUnit/Tools.hs	2011-01-07 17:00:44.015812536 +1100
+@@ -61,7 +61,7 @@
+     HU.TestLabel lbl $ HU.TestCase $
+       do result <- localquickCheckWithResult config property
+          case result of
+-           Success _ -> return ()
++           Success _ _ _ -> return ()
+            _ -> HU.assertFailure (show result)
+ 
+ -- Modified from HUnit
+@@ -159,7 +159,7 @@
+ -- | Tests a property, using test arguments, produces a test result, and prints the results to 'stdout'.
+ localquickCheckWithResult :: Testable prop => Args -> prop -> IO Result
+ localquickCheckWithResult args p =
+-  do tm  <- newTerminal
++  do tm  <- newStdioTerminal
+      rnd <- case replay args of
+               Nothing      -> newStdGen
+               Just (rnd,_) -> return rnd
+@@ -176,7 +176,6 @@
+                  , collected         = []
+                  , expectedFailure   = False
+                  , randomSeed        = rnd
+-                 , isShrinking       = False
+                  , numSuccessShrinks = 0
+                  , numTryShrinks     = 0
+                  } (unGen (property p))
+@@ -207,8 +206,7 @@
+     runATest st f =
+       do
+         let size = computeSize st (numSuccessTests st) (numDiscardedTests st)
+-        MkRose mres ts <- protectRose (unProp (f rnd1 size))
+-        res <- mres
++        MkRose res ts <- protectRose (reduceRose (unProp (f rnd1 size)))
+         callbackPostTest st res
+      
+         case ok res of
