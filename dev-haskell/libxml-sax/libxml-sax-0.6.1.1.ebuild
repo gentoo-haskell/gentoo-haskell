@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/text-0.7
-		<dev-haskell/text-0.12
+RDEPEND="<dev-haskell/text-0.12
 		=dev-haskell/xml-types-0.1*
 		>=dev-lang/ghc-6.10.1
 		dev-libs/libxml2"
