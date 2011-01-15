@@ -17,16 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.4
-		<dev-haskell/binary-0.6
-		>=dev-haskell/data-binary-ieee754-0.3
-		<dev-haskell/data-binary-ieee754-0.5
+RDEPEND="=dev-haskell/binary-0.5*
+		=dev-haskell/data-binary-ieee754-0.4*
 		=dev-haskell/libxml-sax-0.6*
-		>=dev-haskell/network-2.2
-		<dev-haskell/network-2.4
-		>=dev-haskell/parsec-2.0
+		=dev-haskell/network-2.3*
 		<dev-haskell/parsec-3.2
-		>=dev-haskell/text-0.8
 		<dev-haskell/text-0.11
 		=dev-haskell/xml-types-0.1*
 		>=dev-lang/ghc-6.10.1"
