@@ -17,8 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12.0
-		<dev-haskell/glib-0.13.0
+RDEPEND="=dev-haskell/glib-0.12*
 		>=dev-lang/ghc-6.10.1
 		media-libs/taglib"
 DEPEND="${RDEPEND}
