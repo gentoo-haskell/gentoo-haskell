@@ -19,7 +19,6 @@ IUSE=""
 
 RDEPEND="dev-haskell/curl
 		dev-haskell/feed
-		>=dev-haskell/tagsoup-0.8
 		<dev-haskell/tagsoup-0.11
 		dev-haskell/xml
 		>=dev-lang/ghc-6.8.2"
