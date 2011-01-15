@@ -19,6 +19,10 @@
 # Packages need to be adapted to this new API before we can unmask.
 >=dev-haskell/quickcheck-2.3
 
+# Sergei Trofimovich <slyfox@gentoo.org> (15 Jan 2011)
+# requires masked quickcheck-2.4.0.1
+>=dev-haskell/crypto-4.2.3
+
 # Lennart Kolmodin <kolmodin@gentoo.org> (12 Aug 2010)
 # Mask darcs-beta
 >=dev-vcs/darcs-2.4.98
