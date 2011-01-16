@@ -14,7 +14,8 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="test"
+#IUSE="test"
+IUSE=""
 
 RESTRICT="test" # the test suit isn't included in this release! :(
 
@@ -24,10 +25,10 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit )"
 
 src_compile() {
-	if use test; then
+	#if use test; then
 		# enable building tests
-		CABAL_CONFIGURE_FLAGS="--flags=mmaptest"
-	fi
+		#CABAL_CONFIGURE_FLAGS="--flags=mmaptest"
+	#fi
 
 	cabal_src_compile
 }
