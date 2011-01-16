@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.8.1
-		>=dev-haskell/extensible-exceptions-0.1.1.0
+RDEPEND=">=dev-lang/ghc-6.10.3
 		sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
