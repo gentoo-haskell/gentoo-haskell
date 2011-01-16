@@ -20,11 +20,10 @@ IUSE="test"
 
 RDEPEND="dev-haskell/binary
 		dev-haskell/dataenc
-		dev-haskell/extensible-exceptions
 		=dev-haskell/mmap-0.5*
 		dev-haskell/mtl
 		dev-haskell/zlib
-		>=dev-lang/ghc-6.8.1"
+		>=dev-lang/ghc-6.12"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
