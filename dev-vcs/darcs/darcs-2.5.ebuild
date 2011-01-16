@@ -21,11 +21,10 @@ IUSE="doc test"
 RDEPEND="=dev-haskell/hashed-storage-0.5*
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
-		<dev-haskell/http-4000.1
 		=dev-haskell/mmap-0.5*
 		<dev-haskell/mtl-1.2
-		=dev-haskell/network-2.2*
-		<dev-haskell/parsec-3.1
+		>=dev-haskell/network-2.2
+		<dev-haskell/parsec-3.2
 		<dev-haskell/regex-compat-0.94
 		=dev-haskell/tar-0.3*
 		=dev-haskell/terminfo-0.3*
@@ -58,9 +57,13 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
 	# Loosen dependency on parsec
-	#sed -i -e "s/parsec       >= 2.0 && < 3.1/parsec       >= 2.0/" \
-	#	"${S}/${PN}.cabal" \
-	#	|| die "Could not loosen deps on parsec"
+	sed -i -e "s/parsec       >= 2.0 && < 3.1/parsec       >= 2.0/" \
+		"${S}/${PN}.cabal" \
+		|| die "Could not loosen deps on parsec"
+
+	# and on network
+	sed -i -e 's/network == 2\.2\.\*/network >= 2.2/' \
+		"${S}/${PN}.cabal"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
