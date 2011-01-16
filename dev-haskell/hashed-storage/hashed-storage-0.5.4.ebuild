@@ -15,7 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="test"
 
 RDEPEND="dev-haskell/binary
@@ -24,8 +24,14 @@ RDEPEND="dev-haskell/binary
 		dev-haskell/mtl
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.12"
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+DEPEND=">=dev-haskell/cabal-1.6
+		test? (
+			dev-haskell/test-framework
+			dev-haskell/test-framework-hunit
+			dev-haskell/test-framework-quickcheck2
+			dev-haskell/zip-archive
+		)
+		${RDEPEND}"
 
 src_prepare() {
 	CABAL_CONFIGURE_FLAGS="$(cabal_flag test)"
