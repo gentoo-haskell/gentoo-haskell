@@ -21,7 +21,7 @@ RDEPEND="=dev-haskell/binary-0.5*
 		=dev-haskell/binary-shared-0.8*
 		<dev-haskell/cabal-1.11
 		=dev-haskell/deepseq-1.1*
-		<dev-haskell/haddock-2.9
+		<dev-haskell/haddock-2.10
 		<dev-haskell/hslogger-1.2
 		=dev-haskell/ltk-0.8*
 		<dev-haskell/mtl-2.1
