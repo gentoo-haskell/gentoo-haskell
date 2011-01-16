@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/glib-0.12*
 		=dev-haskell/gtk-0.12*
-		<dev-haskell/haddock-2.9
+		<dev-haskell/haddock-2.10
 		<dev-haskell/mtl-2.1
 		>=dev-haskell/parsec-2.1.0.1:0
 		>=dev-lang/ghc-6.8.1"

@@ -18,7 +18,7 @@ diff -rN -u old-ltk/ltk.cabal new-ltk/ltk.cabal
                 pretty >=1.0.1.0 && <1.1,
                 -- Make sure we get the Cabal compaitble with ghc and haddock
 -               haddock <2.8, ghc <6.13
-+               haddock <2.9, ghc <7.1
++               haddock <2.10, ghc <7.1
  stability:
  homepage: http://www.leksah.org
  package-url: http://code.haskell.org/ltk
