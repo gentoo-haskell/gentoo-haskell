@@ -11,26 +11,6 @@
 >=dev-lang/ghc-7
 >=dev-haskell/haddock-2.8
 
-# Lennart Kolmodin <kolmodin@gentoo.org> (05 Sep 2010)
-# Mask QuickCheck-2.3. It brings Arbitrary instances for
-# Word,Word8,Word16,Word32,Word64 which breaks many packages. New API
-# changes also include reworked drivers/state handling, and thus also breaks
-# packages.
-# Packages need to be adapted to this new API before we can unmask.
->=dev-haskell/quickcheck-2.3
-
-# Sergei Trofimovich <slyfox@gentoo.org> (15 Jan 2011)
-# requires masked quickcheck-2.4.0.1
->=dev-haskell/crypto-4.2.3
-
-# Lennart Kolmodin <kolmodin@gentoo.org> (12 Aug 2010)
-# Mask darcs-beta
->=dev-vcs/darcs-2.4.98
-
-# Lennart Kolmodin <kolmodin@gentoo.org> (27 July 2010)
-# Mask until we have darcs 2.5 in the overlay
->=dev-haskell/hashed-storage-0.5
-
 # Ivan Miljenovic, 9 May 2010
 # extensible-exceptions is a boot library for 6.10+; as such, masking
 # the latest version as it isn't available in any GHC release yet.
@@ -39,11 +19,6 @@
 # Ivan Miljenovic, 30 April 2010
 # r.e. bug 317547
 >=dev-haskell/time-1.2
-
-# No version of hashed-storage and darcs work with this;
-# Mask until needed.
-# Ivan Miljenovic, 18 October 2009
->=dev-haskell/mmap-0.5
 
 # Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2010)
 # Some packages will certainly break with mtl-2. We need to find them
