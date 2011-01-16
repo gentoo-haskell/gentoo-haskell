@@ -30,6 +30,7 @@ fi
 # that would make the binary require a specific cpu model.
 
 # tuning for pentium4 is probably a reasonable choice for p4s and athlons
+# sparc: CFLAGS="-mcpu=v9" to target 10+ year old hardware
 export CFLAGS="-O2 -pipe"
 
 # build with
