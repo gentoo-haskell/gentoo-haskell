@@ -40,6 +40,10 @@ src_prepare() {
 		rm "src/Haddock/$f."*
 		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
 	done
+
+	# does not work with cabal-1.10, so use ghc-6.12 shipped one
+	sed -i -e 's/Cabal >= 1.5,/Cabal >= 1.5 \&\& < 1.9,/g' \
+	    "${S}/${PN}.cabal"
 }
 
 src_install() {
