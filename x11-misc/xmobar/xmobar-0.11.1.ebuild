@@ -27,7 +27,7 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )
-		mpd? ( >dev-haskell/libmpd-0.4 )"
+		mpd? ( =dev-haskell/libmpd-0.4* )"
 # 		wifi? ( net-wireless/wireless-tools )
 RDEPEND="mpd? ( media-sound/mpd )"
 
