@@ -27,7 +27,7 @@ DEPEND=">=dev-lang/ghc-6.8.1
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )
 		wifi? ( net-wireless/wireless-tools )
-		mpd? ( >dev-haskell/libmpd-0.4 )"
+		mpd? ( =dev-haskell/libmpd-0.4* )"
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_configure() {
