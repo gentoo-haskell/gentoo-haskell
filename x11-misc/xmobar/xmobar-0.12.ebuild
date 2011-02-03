@@ -1,19 +1,20 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header:  $
 
 EAPI="2"
 CABAL_FEATURES="bin"
-inherit git haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
-HOMEPAGE="http://projects.haskell.org/xmobar/"
-EGIT_REPO_URI="git://github.com/jaor/xmobar.git"
+HOMEPAGE="http://code.haskell.org/~arossato/xmobar"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 -sparc ~x86"
-IUSE="xft unicode mail mpd wifi"
+KEYWORDS="~amd64 ~x86"
+IUSE="xft unicode mail mpd"
+# wifi USE flag disabled due to compilation error with current stable wireless-tools.
 
 DEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.6
@@ -26,8 +27,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )
-		wifi? ( net-wireless/wireless-tools )
 		mpd? ( >=dev-haskell/libmpd-0.5 )"
+# 		wifi? ( net-wireless/wireless-tools )
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_configure() {
@@ -35,8 +36,9 @@ src_configure() {
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag unicode with_utf8) \
 		$(cabal_flag mail with_inotify) \
-		$(cabal_flag wifi with_iwlib) \
 		$(cabal_flag mpd with_mpd)
+
+#		$(cabal_flag wifi with_iwlib) \
 }
 
 src_install() {

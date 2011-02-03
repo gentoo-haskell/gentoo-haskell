@@ -46,4 +46,3 @@ src_install() {
 
 	dodoc xmobar.config-sample README
 }
-
