@@ -274,7 +274,8 @@ src_compile() {
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked
-		if use alpha || use ppc64; then
+		# arm: unimplemented or never worked
+		if use alpha || use ppc64 || use arm; then
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
@@ -287,6 +288,12 @@ src_compile() {
 			echo "SplitObjs=NO" >> mk/build.mk
 			echo "GhcRTSWays := debug" >> mk/build.mk
 			echo "GhcNotThreaded=YES" >> mk/build.mk
+		fi
+
+		# arm: no EvilMangler support, no NCG support
+		if use arm; then
+			echo "GhcUnregisterised=YES" >> mk/build.mk
+			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 		fi
 
 		# Have "ld -r --relax" problem with split-objs on sparc:
