@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="media-libs/libsdl
 		media-libs/sdl-image
 		media-libs/sdl-mixer
-		virtual/glut
+		media-libs/freeglut
 		virtual/opengl"
 
 DEPEND="${RDEPEND}
