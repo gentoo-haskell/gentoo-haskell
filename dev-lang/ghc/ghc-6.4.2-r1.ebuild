@@ -72,7 +72,7 @@ RDEPEND="
 	=sys-libs/readline-5*
 	X? ( || ( x11-libs/libX11 virtual/x11 ) )
 	opengl? ( virtual/opengl
-			  virtual/glu virtual/glut
+			  virtual/glu media-libs/freeglut
 			  openal? ( media-libs/openal media-libs/freealut ) )"
 
 DEPEND="${RDEPEND}"

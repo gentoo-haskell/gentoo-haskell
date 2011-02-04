@@ -52,7 +52,7 @@ RDEPEND="
 	>=dev-libs/gmp-4.1
 	=sys-libs/readline-5*
 	opengl? ( virtual/opengl
-			  virtual/glu virtual/glut )"
+			  virtual/glu media-libs/freeglut )"
 
 DEPEND="${RDEPEND}"
 # In the ghcbootstrap case we rely on the developer having
