@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="2"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal elisp-common
@@ -11,19 +13,17 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
-RDEPEND="emacs? ( virtual/emacs
-		 app-emacs/haskell-mode )
-		>=dev-lang/ghc-6.8.1
-		=dev-haskell/cpphs-1.11*
-		=dev-haskell/haskell-src-exts-1.9*
+RDEPEND="=dev-haskell/cpphs-1.11*
+		>=dev-haskell/haskell-src-exts-1.9.6
 		=dev-haskell/hscolour-1.17*
-		dev-haskell/mtl
-		=dev-haskell/uniplate-1.5*"
-DEPEND=">=dev-haskell/cabal-1.6
-		${RDEPEND}"
+		=dev-haskell/transformers-0.2*
+		<dev-haskell/uniplate-1.7
+		>=dev-lang/ghc-6.10.1"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6"
 
 SITEFILE="60${PN}-gentoo.el"
 
