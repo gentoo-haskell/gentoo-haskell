@@ -15,7 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE="odbc postgres sqlite"
+IUSE="odbc postgres sqlite3"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.3
@@ -31,6 +31,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 DEPENDV="$(get_version_component_range 1-2)"
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
-		sqlite? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
+		sqlite3? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
 S="${WORKDIR}/${MY_P}"
