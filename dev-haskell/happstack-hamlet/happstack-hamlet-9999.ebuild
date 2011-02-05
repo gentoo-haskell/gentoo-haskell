@@ -12,6 +12,8 @@ HOMEPAGE="http://www.happstack.com/"
 EDARCS_REPOSITORY="http://patch-tag.com/r/mae/happstack"
 EDARCS_GET_CMD="get --partial"
 
+S="${WORKDIR}/${P}/${PN}"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -23,10 +25,3 @@ RDEPEND="=dev-haskell/hamlet-0.6*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	pushd "${WORKDIR}"
-	mv ${P} happstack-parent
-	ln -s happstack-parent/${PN} ${P}
-	popd
-}
