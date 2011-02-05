@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 CABAL_FEATURES="bin"
-EDARCS_REPOSITORY="http://code.haskell.org/gentoo/hackport/"
-inherit darcs haskell-cabal
+EGIT_REPO_URI="git://github.com/gentoo-haskell/hackport.git"
+inherit git haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="http://code.haskell.org/gentoo/hackport/"
