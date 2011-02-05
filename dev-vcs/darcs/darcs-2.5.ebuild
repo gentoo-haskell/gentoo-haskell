@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/hashed-storage-0.5*
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
 		=dev-haskell/mmap-0.5*
-		<dev-haskell/mtl-1.2
+		<dev-haskell/mtl-2.1
 		>=dev-haskell/network-2.2
 		<dev-haskell/parsec-3.2
 		<dev-haskell/regex-compat-0.94
@@ -53,6 +53,19 @@ pkg_setup() {
 }
 
 src_prepare() {
+	cd "${S}"
+	if has_version ">=dev-lang/ghc-7.0.1"; then
+		epatch "${FILESDIR}/${P}-ghc-7.patch" || die "Could not apply ${P}-ghc-7.patch"
+		sed -e 's@containers >= 0.1 && < 0.4@containers >= 0.1 \&\& < 0.5@g' \
+			-e 's@directory  == 1.0.\*@directory  == 1.1.\*@g' \
+			-e 's@filepath     == 1.1.\*@filepath     == 1.2.\*@g' \
+			-e 's@mtl          >= 1.0 && < 1.2@mtl          >= 1.0 \&\& < 2.1@g' \
+			-i "${S}/${PN}.cabal" || die "Could not patch ${S}/${PN}.cabal to loosen dependencies for ghc 7"
+	fi
+	if has_version ">=dev-haskell/mtl-2"; then
+		epatch "${FILESDIR}/${P}-mtl-2.patch" || die "Could not apply ${P}-mtl-2.patch"
+	fi
+
 	cd "${S}/contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
 
