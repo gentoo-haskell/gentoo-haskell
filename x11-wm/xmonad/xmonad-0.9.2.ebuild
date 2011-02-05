@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal eutils
+inherit haskell-cabal
 
 DESCRIPTION="A tiling window manager"
 HOMEPAGE="http://xmonad.org"
@@ -22,17 +22,6 @@ DEPEND="${RDEPEND}
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	# please, please, please! port it to extensible-exceptions!
-	# so we would not depend on ghc version
-	if has_version '>=dev-lang/ghc-6.10'; then
-		epatch "${FILESDIR}/xmonad-0.9.1-move-to-oldexception.patch"
-	fi
-}
 
 src_install() {
 	cabal_src_install
