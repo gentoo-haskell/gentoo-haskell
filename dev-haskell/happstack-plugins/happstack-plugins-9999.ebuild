@@ -5,7 +5,7 @@
 EAPI="2"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit darcs haskell-cabal
 
 DESCRIPTION="The haskell application server stack + reload"
 HOMEPAGE="http://happstack.com"
