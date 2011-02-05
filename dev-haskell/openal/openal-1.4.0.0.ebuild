@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="2"
 
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
@@ -20,7 +22,8 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/objectname
 		dev-haskell/statevar
-		dev-haskell/tensor"
+		dev-haskell/tensor
+		media-libs/openal"
 DEPEND="dev-haskell/cabal
 		${RDEPEND}"
 
