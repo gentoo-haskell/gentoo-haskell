@@ -17,8 +17,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/network-2.4
-		=dev-haskell/parsec-2*
+		<dev-haskell/parsec-4
 		=dev-haskell/utf8-string-0.3*
 		>=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	# Loosen dependency on parsec
+	sed -i -e "s@parsec >= 2 && <3@parsec >= 2 \&\& <4@" \
+		"${S}/${PN}.cabal" \
+		|| die "Could not loosen deps on parsec"
+}
