@@ -1,0 +1,36 @@
+Good news!
+
+We've got **ghc-6.12.3** stable on **x86**, **amd64** and **sparc** arches!
+([more to come](https://bugs.gentoo.org/show_bug.cgi?id=338652))
+
+What does it mean for end user?
+
+You'll get latest **haskell** compiler and will be able to taste
+it's new features! We also got rid of hacky **ghc-updater** and
+switched to [haskell-updater](/2009/07/22/announcing-haskell-updater/).
+
+Unfortunately, some haskell packages in main tree might stop building
+on new compiler. Please report them as problematic to [gentoo bugzilla](http://bugs.gentoo.org)
+or drop a line in #gentoo-haskell on freenode **IRC** network.
+
+I've decided to look back and estimate timeframe it took us to deliver
+**ghc** for you:
+
+- 12 Oct 2009 - GHC-6.12 RC1 [appears in public](http://www.mail-archive.com/glasgow-haskell-users@haskell.org/msg17306.html)
+-  2 Nov 2009 - GHC-6.12 RC1 hits [gentoo-haskell overlay](http://code.haskell.org/gentoo/gentoo-haskell/)
+- 12 Jun 2010 - GHC-6.12.3 [is released](http://www.mail-archive.com/glasgow-haskell-users@haskell.org/msg18378.html)
+- 26 Sep 2010 - GHC-6.12.3 goes stable on **amd64**
+
+So, it took us almost 4 months.
+
+The major problems were:
+
+- Resurrect **GHC** on exotic architectures (we have 10 patches on top of vanilla ghc!).
+  Unfortunately, **hppa** support was lost.
+- Fix packages breaking with **6.10/6.12** branch of **ghc** (tons of them)
+
+Brave souls can try to install **ghc-7-rc2** (aka 7.0.0.20101028) from overlay (currently masked).
+It has no **base-3** (deprecated in **ghc-6.10**), so you'll have great chance to become a
+contributor to various haskell projects!
+
+Enjoy!
