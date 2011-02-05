@@ -247,6 +247,10 @@ src_unpack() {
 		# http://hackage.haskell.org/trac/ghc/ticket/3558
 		epatch "${FILESDIR}/ghc-6.12.3-ghciless-haddock-3558.patch"
 
+		# This patch unbreaks ghci on GRSEC kernels hardened with
+		# TPE (Trusted Path Execution) protection.
+		epatch "${FILESDIR}/ghc-6.12.3-libffi-incorrect-detection-of-selinux.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi
