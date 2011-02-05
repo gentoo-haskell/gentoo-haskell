@@ -222,6 +222,10 @@ src_unpack() {
 		epatch "${FILESDIR}/ghc-6.12.2-configure-CHOST-part2.patch"
 		epatch "${FILESDIR}/ghc-6.12.3-configure-CHOST-freebsd.patch"
 
+		# This patch unbreaks ghci on GRSEC kernels hardened with
+		# TPE (Trusted Path Execution) protection.
+		epatch "${FILESDIR}/ghc-7.0.1-libffi-incorrect-detection-of-selinux.patch"
+
 		# as we have changed the build system
 		eautoreconf
 	fi
