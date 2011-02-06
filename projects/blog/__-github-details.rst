@@ -10,8 +10,15 @@ Overlay repository
 ------------------
 
 The overlay repository is the heart of the `Gentoo Linux Haskell Project`_.
+The most common packages are available in the portage tree, and thus
+available to all Gentoo Linux users without any additional configuration on
+their part.
 
-Main repo, ~4000 commits from many users. There was two tools to consider:
+For all other packages we use the overlay. It can be packages that change
+rapidly, are tricky to build, etc.
+
+It's our main repo, ~4000 commits from many users. There was two tools to
+consider: 
 
 - `darcs-fastconvert`_ written in haskell
 - `darcs-to-git`_ written in ruby
@@ -23,7 +30,7 @@ darcs-to-git
 
 ::
 
-  mkdir overlay.git && cd overlay.d2g
+  mkdir overlay.git && cd overlay.git
   darcs-to-git ../overlay
   git commit --allow-empty -m "phony" # hack, described later
   darcs-to-git ../overlay
@@ -45,7 +52,7 @@ darcs-fastconvert
 
 ::
 
-  mkdir overlay.git && cd overlay.dfc
+  mkdir overlay.git && cd overlay.git
   (cd ../overlay ; darcs-fastconvert export) | git fast-import
 
 It was very fast! Took less, than 7 minutes to convert everything (~60 times
@@ -109,8 +116,7 @@ The repo was already at a nice state and the conversion was straight forward:
 
 ::
 
-  mkdir keyword-stat.git
-  cd keyword-stat.git
+  mkdir keyword-stat.git && cd keyword-stat.git
   git init
   ( cd ../keyword-stat ; darcs-fastconvert export ) | git fast-import
 
