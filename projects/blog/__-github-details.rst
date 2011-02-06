@@ -9,10 +9,59 @@ You may browse the new repos at our new `home <https://github.com/gentoo-haskell
 Overlay repository
 ------------------
 
-The overlay repository is the heart of the `Gentoo Linux Haskell Project`_. 
+The overlay repository is the heart of the `Gentoo Linux Haskell Project`_.
 
-Main repo, commits from many users.
-``darcs-fastconvert`` XXX made patch upstream
+Main repo, ~4000 commits from many users. There was two tools to consider:
+
+- `darcs-fastconvert`_ written in haskell
+- `darcs-to-git`_ written in ruby
+
+We've decided to try both.
+
+darcs-to-git
+''''''''''''
+
+::
+
+  mkdir overlay.git && cd overlay.d2g
+  darcs-to-git ../overlay
+  git commit --allow-empty -m "phony" # hack, described later
+  darcs-to-git ../overlay
+
+The hack with --allow-empty is used to workaround an error:
+
+::
+
+  Running: ["git", "log", "-n1", "--no-color"]
+  fatal: bad default revision 'HEAD'
+
+git does not track directory creation commits (when no files are affected).
+It's our first commit. To be reported upstream.
+
+``darcs-to-git`` took 7.5 hours(!) to convert our repo.
+
+darcs-fastconvert
+'''''''''''''''''
+
+::
+
+  mkdir overlay.git && cd overlay.dfc
+  (cd ../overlay ; darcs-fastconvert export) | git fast-import
+
+It was very fast! Took less, than 7 minutes to convert everything (~60 times
+faster than ``darcs-to-git``!)
+
+some notes
+''''''''''
+
+- ``darcs-fastconvert`` does not try to make prettier email-only usernames:
+
+  username 'john@doe' becomes 'john@doe <unknown>'. Patch to convert such names
+  to 'john <john@doe>' sent upstream (left copy `here <http://dev.gentoo.org/~slyfox/darcs-fastconvert-email-only-author.patch>`_).
+
+- ``darcs-fastconvert`` does not filter out empty commits (directory-adding in darcs), so in order
+  to get the same amount of commits as for ``darcs-to-git`` you will need to run
+  ``git filter-branch --prune-empty -f``
 
 hackport
 --------
@@ -26,7 +75,7 @@ At some point we decided that it deserved its own repository, as it really
 was a standalone project. The development was forked from the overlay
 repository, and continued without being mixed with the overlay commits.
 However, the result was a repository with an messy history: hackport and
-overlay stuff was mixed. Moving to git gave us a new chanse to clean it up.
+overlay stuff was mixed. Moving to git gave us a new chance to clean it up.
 
 When using git you have the option of changeing the history of your
 repository. Of course this is a powerful tool, but it should be used
@@ -63,11 +112,13 @@ The repo was already at a nice state and the conversion was straight forward:
   mkdir keyword-stat.git
   cd keyword-stat.git
   git init
-  ( cd ../keyword-stat ; darcs-fastconvert export ) || git fast-import
+  ( cd ../keyword-stat ; darcs-fastconvert export ) | git fast-import
 
 .. _Gentoo Linux Haskell Project: http://www.gentoo.org/proj/en/prog_lang/haskell/index.xml
 .. _darcs: http://darcs.net/
 .. _github: http://gentoohaskell.wordpress.com/2011/02/03/gentoo-haskell-overlay-moved-to-github/
+.. _darcs-fastconvert: http://hackage.haskell.org/package/darcs-fastconvert
+.. _darcs-to-git: https://github.com/purcell/darcs-to-git
 .. _filter-branch: http://www.kernel.org/pub/software/scm/git/docs/git-filter-branch.html
 .. _hackport: https://github.com/gentoo-haskell/hackport
 .. _keywording: http://devmanual.gentoo.org/keywording/index.html
