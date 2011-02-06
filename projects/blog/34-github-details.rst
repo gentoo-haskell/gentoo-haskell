@@ -20,8 +20,8 @@ rapidly, are tricky to build, etc.
 It's our main repo, ~4000 commits from many users. There was two tools to
 consider: 
 
-- `darcs-fastconvert`_ written in haskell
-- `darcs-to-git`_ written in ruby
+- darcs-fastconvert_ written in haskell
+- darcs-to-git_ written in ruby
 
 We've decided to try both.
 
