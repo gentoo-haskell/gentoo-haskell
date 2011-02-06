@@ -19,28 +19,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/citeproc-hs-0.3.1
-		<dev-haskell/citeproc-hs-0.4
-		>=dev-haskell/dlist-0.4
-		<dev-haskell/dlist-0.6
-		>=dev-haskell/http-4000.0.5
-		<dev-haskell/http-4000.2
+		=dev-haskell/dlist-0.5*
+		=dev-haskell/http-4000.1*
 		=dev-haskell/json-0.4*
-		>=dev-haskell/mtl-1.1
 		<dev-haskell/mtl-2.1
-		>=dev-haskell/network-2
-		<dev-haskell/network-2.4
+		=dev-haskell/network-2.3*
 		=dev-haskell/pandoc-types-1.8*
 		>=dev-haskell/parsec-2.1
-		<dev-haskell/parsec-3.2
 		=dev-haskell/tagsoup-0.12*
 		=dev-haskell/texmath-0.5*
 		=dev-haskell/utf8-string-0.3*
-		>=dev-haskell/xhtml-3000.0
-		<dev-haskell/xhtml-3000.3
+		=dev-haskell/xhtml-3000.2*
 		>=dev-haskell/xml-1.3.5
-		<dev-haskell/xml-1.4
 		>=dev-haskell/zip-archive-0.1.1.7
-		<dev-haskell/zip-archive-0.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
