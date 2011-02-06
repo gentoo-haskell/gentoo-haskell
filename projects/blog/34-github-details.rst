@@ -96,7 +96,8 @@ separated it was easy to tell git wich files were interesting:
 
 ::
 
-  git filter-branch --tree-filter 'rm -rf ignore-this-file and-this-directory' HEAD
+  git filter-branch --tree-filter \
+        'rm -rf ignore-this-file and-this-directory' HEAD
   git filter-branch --prune-empty -f
 
 We repeated until we've cleared the history from the overlay commits. The
@@ -118,7 +119,8 @@ The repo was already at a nice state and the conversion was straight forward:
 
   mkdir keyword-stat.git && cd keyword-stat.git
   git init
-  ( cd ../keyword-stat ; darcs-fastconvert export ) | git fast-import
+  ( cd ../keyword-stat ; darcs-fastconvert export ) \
+      | git fast-import
 
 .. _Gentoo Linux Haskell Project: http://www.gentoo.org/proj/en/prog_lang/haskell/index.xml
 .. _darcs: http://darcs.net/
