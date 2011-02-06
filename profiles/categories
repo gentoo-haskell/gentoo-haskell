@@ -9,12 +9,14 @@ dev-lang
 dev-libs 
 dev-tex 
 dev-util 
+dev-vcs 
+games-action 
+games-puzzle 
+gnome-extra 
 media-sound 
-net-irc 
 sci-mathematics 
 sys-apps 
 www-apps 
 www-misc 
-www-servers
 x11-misc 
 x11-wm
