@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="sys-apps/dbus"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/cairo
