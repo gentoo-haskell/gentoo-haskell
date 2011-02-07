@@ -7,7 +7,7 @@
 EAPI="2"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Draw pretty sequence diagrams of D-Bus traffic"
 HOMEPAGE="http://hackage.haskell.org/package/bustle"
@@ -17,6 +17,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+PATCHES=("${FILESDIR}/0001-bustle-dbus-monitor-fix-linking-order-libs-go-after-.patch")
 
 RDEPEND="sys-apps/dbus"
 DEPEND="${RDEPEND}
