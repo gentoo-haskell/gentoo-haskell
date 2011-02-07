@@ -2,10 +2,12 @@
 {-
   Lambdaman, repomanish verification for gentoo-haskell
 
-  Lennart Kolmodin 2009 <kolmodin@gentoo.org>
+  BSD3
+  
+  Lennart Kolmodin 2009-2011 <kolmodin@gentoo.org>
 -}
 
-module Main where
+module Main ( main ) where
 
 import Control.Monad ( forM, forM_, guard )
 import Data.List ( isSuffixOf )
@@ -17,7 +19,7 @@ import qualified Data.ByteString.Char8 as C
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
-import System.FilePath ( (</>), takeFileName, takeBaseName )
+import System.FilePath ( (</>), takeFileName, takeBaseName, makeRelative )
 import System.Process ( readProcess )
 
 import Debug.Trace
@@ -52,9 +54,9 @@ parseManifestLine row = do
             _ -> fail "unknown type"
   return (MDigest kind fn (read fs) rmd sha1 sha256)
 
-readDarcs :: IO [FilePath]
-readDarcs = do
-  files <- readProcess "darcs" ["show", "files"] ""
+readGit :: IO [FilePath]
+readGit = do
+  files <- readProcess "git" ["ls-files"] ""
   return (lines files)
 
 fileSpy :: FilePath -> IO Repo
@@ -87,13 +89,13 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
            , maybe [] missingDigests filesDir
            , invalidEbuildDigests topRepo
            , maybe [] invalidEbuildDigests filesDir
-           , unknownToDarcs
+           , unknownToGit
            ]
   where
     filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") sub) <- packageDir ]
     lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- packageDir, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
-    inDarcs    fn = not . null $ [ () | dfn <- awares, dfn == fn ]
+    inGit      fn = not . null $ [ () | dfn <- awares, dfn == fn ]
 
     missingDigests (Dir _ subs) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
@@ -109,41 +111,38 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       , fs /= size || digest /= show sha1
       ]
 
-    unknownToDarcs = -- look for ebuilds in manifest unknown to darcs
-      [ "Ebuild in manifest but unknown to darcs: " ++ fullName
+    unknownToGit = -- look for ebuilds in manifest unknown to git
+      [ "Ebuild in manifest but unknown to git: " ++ fullName
       | m <- manifest
       , Just (Dir dn _) <- return $ -- find the right subdir for the kind of file were examining
           case mManifestKind m of
             AUX -> filesDir
             DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
             EBUILD -> return topRepo
-      , let fullName = dn </> mFileName m
-      , not (inDarcs fullName)
+      , let fullName = makeRelative "." (dn </> mFileName m)
+      , not (inGit fullName)
       ]
 
-ignore_darcs :: Repo -> Repo
-ignore_darcs (Dir fn sub) = Dir fn (catMaybes (map recursive sub))
+ignore_git :: Repo -> Repo
+ignore_git (Dir fn sub) = Dir fn (catMaybes (map recursive sub))
   where
-  recursive (Dir fn sub') | "_darcs" `isSuffixOf` fn = Nothing
-                          | otherwise = Just $ Dir fn (map ignore_darcs sub')
+  recursive (Dir fn sub') | fn == ".git" = Nothing
+                          | otherwise = Just $ Dir fn (map ignore_git sub')
   recursive x = Just x
-ignore_darcs x = x
+ignore_git x = x
 
 main :: IO ()
 main = do
   -- pwd <- getCurrentDirectory
   putStrLn "lambdaman scours the neighborhood..."
   repo <- dirSpy "."
-  let dirs = findManifests (ignore_darcs repo)
+  let dirs = findManifests (ignore_git repo)
   manis <- forM dirs $ \(fp, repo) -> do
               mani <- readManifest fp
               return (mani, repo)
-  let manifestCount = length manis
-      ebuildCount = length $ concatMap (\(_,(Dir _ subs)) -> [()|(File fn _ _)<-subs, ".ebuild" `isSuffixOf` fn]) manis 
-  -- putStrLn $ "\nChecking " ++ show manifestCount ++ " manifests and " ++ show ebuildCount ++ " ebuild digests..."
-  darcsAwares <- readDarcs
-  -- putStrLn $ "darcs knows about " ++ show (length darcsAwares) ++ " files"
-  let digestErrors = concatMap (verifyManifests darcsAwares) manis
+  gitAwares <- readGit
+  putStrLn $ "git knows about " ++ show (length gitAwares) ++ " files"
+  let digestErrors = concatMap (verifyManifests gitAwares) manis
   case digestErrors of
     [] -> putStrLn "No manifest errors found"
     _ -> do putStrLn "Naughty naughty!"
