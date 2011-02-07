@@ -18,22 +18,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-builder-0.2.1
-		<dev-haskell/blaze-builder-0.3
+RDEPEND="=dev-haskell/blaze-builder-0.2*
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/data-default-0.2*
 		>=dev-haskell/email-validate-0.2.6
-		<dev-haskell/email-validate-0.3
 		=dev-haskell/hamlet-0.7*
-		>=dev-haskell/network-2.2
 		<dev-haskell/network-2.4
 		=dev-haskell/persistent-0.4*
-		>=dev-haskell/time-1.1.4
 		<dev-haskell/time-1.3
-		>=dev-haskell/transformers-0.2.2
-		<dev-haskell/transformers-0.3
-		>=dev-haskell/xss-sanitize-0.2.4
-		<dev-haskell/xss-sanitize-0.3
+		=dev-haskell/transformers-0.2*
+		=dev-haskell/xss-sanitize-0.2*
 		=dev-haskell/yesod-core-0.7*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

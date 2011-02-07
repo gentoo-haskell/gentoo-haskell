@@ -20,18 +20,14 @@ IUSE=""
 
 RDEPEND="=dev-haskell/authenticate-0.8*
 		=dev-haskell/blaze-html-0.4*
-		>=dev-haskell/control-monad-attempt-0.3.0
-		<dev-haskell/control-monad-attempt-0.4
-		>=dev-haskell/data-object-0.3.1.3
-		<dev-haskell/data-object-0.4
+		=dev-haskell/control-monad-attempt-0.3*
+		=dev-haskell/data-object-0.3*
 		=dev-haskell/hamlet-0.7*
 		=dev-haskell/json-types-0.1*
 		=dev-haskell/mime-mail-0.1*
 		=dev-haskell/persistent-0.4*
-		>=dev-haskell/puremd5-1.1
 		<dev-haskell/puremd5-2.2
-		>=dev-haskell/sha-1.4.1.3
-		<dev-haskell/sha-1.5
+		=dev-haskell/sha-1.4*
 		=dev-haskell/text-0.11*
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.3*
