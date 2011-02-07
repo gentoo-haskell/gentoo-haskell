@@ -1,3 +1,18 @@
+# Lennart Kolmodin <kolmodin@gentoo.org> (08 Feb 2011)
+# Mask happstack-*-9999
+=dev-haskell/happstack-9999
+=dev-haskell/happstack-data-9999
+=dev-haskell/happstack-hamlet-9999
+=dev-haskell/happstack-heist-9999
+=dev-haskell/happstack-hsp-9999
+=dev-haskell/happstack-hstringtemplate-9999
+=dev-haskell/happstack-ixset-9999
+=dev-haskell/happstack-plugins-9999
+=dev-haskell/happstack-server-9999
+=dev-haskell/happstack-state-9999
+=dev-haskell/happstack-util-9999
+=dev-haskell/happstack-wai-9999
+
 # Ivan Miljenovic  (1 Jan 2011)
 # New HXT is even more split up and thus breaks even more packages
 =dev-haskell/hxt-9*
