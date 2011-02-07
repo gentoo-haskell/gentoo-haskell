@@ -21,11 +21,12 @@ IUSE=""
 RDEPEND="<dev-haskell/data-object-0.4
 		=dev-haskell/data-object-json-0.3*
 		<dev-haskell/failure-0.2
-		=dev-haskell/http-enumerator-0.2*
+		=dev-haskell/http-enumerator-0.3*
 		<dev-haskell/network-2.4
 		<dev-haskell/tagsoup-0.13
 		<dev-haskell/transformers-0.3
 		=dev-haskell/utf8-string-0.3*
+		=dev-haskell/wai-0.3*
 		<dev-haskell/xml-1.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
