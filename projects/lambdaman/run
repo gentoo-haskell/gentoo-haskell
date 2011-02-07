@@ -1,6 +1,19 @@
 #!/bin/bash
 
 cd projects/lambdaman
-ghc --make -o lambdaman -O -package SHA Main.hs
+ghc --make -o lambdaman -O -no-user-package-conf -package SHA Main.hs
+err=$?
 cd ../..
-projects/lambdaman/lambdaman
+if [[ -f projects/lambdaman/lambdaman ]] ; then
+  if [[ "$err" -ne "0" ]] ; then
+    echo
+    echo "compiling new lambdaman failed, using old executable"
+    echo
+  fi
+
+  projects/lambdaman/lambdaman
+
+else
+  echo
+  echo Please fix above errors and try again.
+fi
