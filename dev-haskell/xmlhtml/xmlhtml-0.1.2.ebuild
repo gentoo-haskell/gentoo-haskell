@@ -19,16 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/blaze-builder-0.2*
-		>=dev-haskell/blaze-html-0.3.2.1
+		>=dev-haskell/blaze-html-0.3.2
 		>=dev-haskell/parsec-3.0
 		=dev-haskell/text-0.11*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare () {
-	# Allow it to build with blaze-html 0.4, which was available before
-	# xmlhtml-0.1.1 was released.
-	sed -e 's@blaze-html == 0.3.\*@blaze-html >= 0.3 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-html dependency"
-}
