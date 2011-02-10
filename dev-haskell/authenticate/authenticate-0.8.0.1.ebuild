@@ -27,7 +27,7 @@ RDEPEND="<dev-haskell/data-object-0.4
 		<dev-haskell/transformers-0.3
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/wai-0.3*
-		<dev-haskell/xml-1.4
+		>=dev-haskell/xml-1.3.7
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
