@@ -33,7 +33,7 @@ RDEPEND="=dev-haskell/blaze-builder-0.2*
 		=dev-haskell/wai-0.3*
 		=dev-haskell/wai-extra-0.3*
 		=dev-haskell/web-routes-0.23*
-		>=dev-haskell/web-routes-quasi-0.6.3
+		>=dev-haskell/web-routes-quasi-0.6.3.1
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
