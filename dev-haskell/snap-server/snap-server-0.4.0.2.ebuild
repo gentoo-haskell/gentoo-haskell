@@ -31,7 +31,7 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		=dev-haskell/murmur-hash-0.1*
 		=dev-haskell/network-2.3*
 		=dev-haskell/psqueue-1.1*
-		=dev-haskell/snap-core-0.4*
+		>=dev-haskell/snap-core-0.4.0.2
 		dev-haskell/time
 		dev-haskell/transformers
 		=dev-haskell/unix-compat-0.2*
