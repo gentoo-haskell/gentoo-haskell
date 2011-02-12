@@ -23,6 +23,6 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-0"
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
