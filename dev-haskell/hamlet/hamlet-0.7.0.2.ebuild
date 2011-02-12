@@ -18,8 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-html-0.4*
+RDEPEND="=dev-haskell/blaze-builder-0.2*
+		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/failure-0.1*
+		=dev-haskell/json-enumerator-0.0*
+		=dev-haskell/json-types-0.1*
 		<dev-haskell/parsec-4
 		=dev-haskell/quickcheck-2*
 		<dev-haskell/text-0.12
