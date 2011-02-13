@@ -26,8 +26,13 @@ RDEPEND="=dev-haskell/glib-0.12*
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
-src_unpack() {
-	unpack $A
+src_prepare() {
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-ghc-7.0.1.patch"
+	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
+		# with ghc 6.12 leksah-server does not work with cabal-1.10, so use ghc-6.12 shipped one
+		# since leksah-server uses cabal, haddock, and ltk, ltk must use ghc 6.12 cabal for ghc < 7.
+		sed -e 's@build-depends: Cabal >=1.6.0 && <1.11@build-depends: Cabal >=1.6.0 \&\& <1.9@g' \
+			-i "${S}/${PN}.cabal"
+	fi
 }
