@@ -1,5 +1,5 @@
 --- leksah-server-0.8.0.8-orig/leksah-server.cabal	2010-09-12 00:52:22.000000000 +1000
-+++ leksah-server-0.8.0.8/leksah-server.cabal	2011-01-16 22:12:46.314264482 +1100
++++ leksah-server-0.8.0.8/leksah-server.cabal	2011-02-13 23:13:43.113764197 +1100
 @@ -27,15 +27,15 @@
      Description: Use libcurl instead of running wget
  
@@ -23,7 +23,14 @@
      else
         build-depends: haddock-leksah == 2.5.0
      if os(windows)
-@@ -69,14 +69,14 @@
+@@ -63,20 +63,20 @@
+         IDE.Metainfo.SourceCollectorH
+         IDE.Metainfo.SourceDB Paths_leksah_server
+     if (impl(ghc >= 6.12))
+-       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -O2
++       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -O2 -rtsopts
+     else
+        ghc-options: -Wall -ferror-spans -O2
      ghc-prof-options: -auto-all -prof
  
  executable leksah-server
@@ -42,6 +49,24 @@
 +       build-depends: haddock >= 2.7.2 && <2.10
      else
         build-depends: haddock-leksah == 2.5.0
+ 
+@@ -103,7 +103,7 @@
+         IDE.Metainfo.SourceCollectorH IDE.Metainfo.SourceDB IDE.Utils.Tool
+         IDE.HeaderParser IDE.Metainfo.PackageCollector
+     if (impl(ghc >= 6.12))
+-       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -threaded -O2
++       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -threaded -O2 -rtsopts
+     else
+        ghc-options: -Wall -ferror-spans -threaded -O2
+     ghc-prof-options: -auto-all -prof
+@@ -116,7 +116,7 @@
+     ghc-prof-options: -auto-all -prof
+     ghc-shared-options: -auto-all -prof
+     if (impl(ghc >= 6.12))
+-       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -threaded -O2
++       ghc-options: -Wall -fno-warn-unused-do-bind -ferror-spans -threaded -O2 -rtsopts
+     else
+        ghc-options: -Wall -ferror-spans -threaded -O2
  
 --- leksah-server-0.8.0.8-orig/src/IDE/Metainfo/PackageCollector.hs	2010-09-12 00:52:22.000000000 +1000
 +++ leksah-server-0.8.0.8/src/IDE/Metainfo/PackageCollector.hs	2010-12-30 14:08:17.292689793 +1100
