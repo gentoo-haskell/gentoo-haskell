@@ -1,0 +1,66 @@
+--- yi-0.6.2.4-orig/src/Parser/Incremental.hs	2010-07-15 14:42:53.000000000 +1000
++++ yi-0.6.2.4/src/Parser/Incremental.hs	2011-02-13 17:08:11.780703717 +1100
+@@ -1,5 +1,6 @@
+ -- Copyright (c) JP Bernardy 2008
+-{-# OPTIONS -Wall -fglasgow-exts #-}
++{-# OPTIONS -Wall #-}
++{-# LANGUAGE GADTs, RankNTypes, ScopedTypeVariables, TypeOperators #-}
+ 
+ -- TODO:
+ -- better interface
+@@ -256,7 +257,7 @@
+ -- Move the zipper to right, and simplify if something is pushed in
+ -- the left part.
+ 
+-evalL :: Zip s output -> Zip s output
++evalL :: forall s output. Zip s output -> Zip s output
+ evalL (Zip errs0 l0 r0) = help errs0 l0 r0
+   where
+       help :: [String] -> RPolish mid output -> Steps s mid -> Zip s output
+@@ -271,6 +272,7 @@
+               GT -> help errs l q
+               EQ -> reZip errs l rhs -- don't know where to go: don't speculate on evaluating either branch.
+           _ -> reZip errs l rhs
++      reZip :: [String] -> RPolish mid output -> Steps s mid -> Zip s output
+       reZip errs l r = l `seq` Zip errs l r
+ 
+ evalL' :: Zip s output -> Zip s output
+--- yi-0.6.2.4-orig/src/Yi/IncrementalParse.hs	2010-07-15 14:42:53.000000000 +1000
++++ yi-0.6.2.4/src/Yi/IncrementalParse.hs	2011-02-13 17:10:15.577703548 +1100
+@@ -1,5 +1,5 @@
+ -- Copyright (c) JP Bernardy 2008
+-{-# OPTIONS -fglasgow-exts #-}
++{-# LANGUAGE DoRec, ScopedTypeVariables #-}
+ module Yi.IncrementalParse (recoverWith, symbol, eof, lookNext, testNext,
+                             State, P, Parser(..), AlexState (..), scanner) where
+ import Parser.Incremental hiding (run)
+--- yi-0.6.2.4-orig/src/Yi/Modes.hs	2010-07-15 14:42:53.000000000 +1000
++++ yi-0.6.2.4/src/Yi/Modes.hs	2011-02-13 17:11:50.471641564 +1100
+@@ -204,7 +204,7 @@
+ applyModeHooks :: [(AnyMode -> Bool, BufferM ())] -> [AnyMode] -> [AnyMode]
+ applyModeHooks hs ms = flip map ms $ \am -> case filter (($am) . fst) hs of
+     [] -> am
+-    ls -> flip onMode am $ \m -> m { modeOnLoad = foldr (>>) (modeOnLoad m) (map snd ls) }
++    ls -> onMode (\m -> m { modeOnLoad = foldr (>>) (modeOnLoad m) (map snd ls) }) am
+ 
+ -- | Check whether a mode of the same name is already in modeTable and returns the
+ -- original mode, if it isn't the case.
+--- yi-0.6.2.4-orig/src/Yi/UI/Pango.hs	2010-07-15 14:42:53.000000000 +1000
++++ yi-0.6.2.4/src/Yi/UI/Pango.hs	2011-02-13 17:15:15.650764969 +1100
+@@ -1,5 +1,5 @@
+-{-# LANGUAGE CPP, BangPatterns, ExistentialQuantification, RecursiveDo,
+-    ParallelListComp #-}
++{-# LANGUAGE CPP, BangPatterns, ExistentialQuantification, DoRec,
++     ParallelListComp #-}
+ 
+ -- Copyright (c) 2007, 2008 Jean-Philippe Bernardy
+ 
+@@ -461,7 +461,7 @@
+ 
+ -- | Make a new window.
+ newWindow :: Editor -> UI -> Window -> FBuffer -> IO WinInfo
+-newWindow e ui w b = mdo
++newWindow e ui w b = do
+     f <- readIORef (uiFont ui)
+ 
+     ml <- labelNew Nothing
