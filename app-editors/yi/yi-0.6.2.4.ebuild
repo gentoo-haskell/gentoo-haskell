@@ -10,6 +10,13 @@ DESCRIPTION="The Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
+# The home page is missing information, so I note some here:
+# There are now multiple repos after the code.haskell.org outage, not sure which is the master.
+# The Mercurial repo on Google code has the bug database:
+# http://code.google.com/p/yi-editor/
+# The github repo has recent activity:
+# https://github.com/yi-editor/yi
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -54,18 +61,13 @@ CABAL_CONFIGURE_FLAGS="$(cabal_flag gnome)
 					   $(cabal_flag gtk)
 					   $(cabal_flag vty)"
 
-src_unpack() {
-	unpack $A
-	sed -e 's@build-depends: Cabal >= 1.6 && < 1.9@build-depends: Cabal >= 1.6 \&\& < 1.11@' \
-		-e 's@build-depends: derive >=2.3 && <2.4@build-depends: derive >=2.3 \&\& <2.5@' \
-		-e 's@build-depends: filepath>=1.1 && <1.2@build-depends: filepath>=1.1 \&\& <1.3@' \
-		-e 's@build-depends: template-haskell >= 2.4 && < 2.5@build-depends: template-haskell >= 2.4 \&\& < 2.6@' \
-		-e 's@build-depends: time == 1.1.*@build-depends: time >= 1.1 \&\& < 1.3@' \
-		-e 's@build-depends: unix-compat >=0.1 && <0.2@build-depends: unix-compat >=0.1 \&\& <0.3@' \
-		-e 's@build-depends: gtk==0.11.*@build-depends: gtk==0.12.*@' \
-		-e 's@build-depends: glib==0.11.*@build-depends: glib==0.12.*@' \
-		-e 's@build-depends: gconf==0.11.*@build-depends: gconf==0.12.*@' \
-		-i "${S}/${PN}.cabal"
+src_prepare() {
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-bump-deps.patch" || die "Could not apply ${P}-bump-deps.patch"
+	if has_version ">=dev-lang/ghc-7.0.1"; then
+		# Adapted from upstream patch: http://code.google.com/p/yi-editor/issues/detail?id=324
+		epatch "${FILESDIR}/${P}-ghc-7.patch" || die "Could not apply ${P}-ghc-7.patch"
+	fi
 }
 
 src_configure() {
