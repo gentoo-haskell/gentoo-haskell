@@ -78,7 +78,8 @@ DEPEND="${RDEPEND}
 #PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
 PDEPEND="
 	${PDEPEND}
-	dev-haskell/syb"
+	dev-haskell/syb
+	sys-devel/llvm"
 
 # use undocumented feature STRIP_MASK to fix this issue:
 # http://hackage.haskell.org/trac/ghc/ticket/3580
