@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
@@ -52,7 +52,8 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="doc ghcbootstrap" # removed binary
+IUSE="doc ghcbootstrap llvm"
+IUSE+=" binary" # don't forgen about me later!
 IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
@@ -79,7 +80,7 @@ DEPEND="${RDEPEND}
 PDEPEND="
 	${PDEPEND}
 	dev-haskell/syb
-	sys-devel/llvm"
+	llvm? ( sys-devel/llvm )"
 
 # use undocumented feature STRIP_MASK to fix this issue:
 # http://hackage.haskell.org/trac/ghc/ticket/3580
@@ -304,6 +305,10 @@ src_compile() {
 		# Have "ld -r --relax" problem with split-objs on sparc:
 		if use sparc; then
 			echo "SplitObjs=NO" >> mk/build.mk
+		fi
+
+		if ! use llvm; then
+			echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 		fi
 
 		# Get ghc from the unpacked binary .tbz2
