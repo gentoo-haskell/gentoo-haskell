@@ -16,10 +16,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="production"
 
 RDEPEND="=dev-haskell/attoparsec-text-0.8*
-		=dev-haskell/hamlet-0.7*
+		>=dev-haskell/hamlet-0.7.1
 		<dev-haskell/hjsmin-0.1
 		=dev-haskell/mime-mail-0.1*
 		=dev-haskell/monad-peel-0.1*
@@ -28,8 +28,8 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.3*
-		=dev-haskell/wai-extra-0.3*
-		=dev-haskell/wai-handler-devel-0.2*
+		=dev-haskell/wai-extra-0.3.2
+		!production? ( =dev-haskell/wai-handler-devel-0.2* )
 		=dev-haskell/warp-0.3*
 		=dev-haskell/yesod-auth-0.3*
 		=dev-haskell/yesod-core-0.7*
@@ -41,7 +41,4 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's@flag ghc7@flag ghc7\n  Default:       False@' \
-		-i "${S}/${PN}.cabal"
-}
+CABAL_CONFIGURE_FLAGS="$(cabal_flag yi)"
