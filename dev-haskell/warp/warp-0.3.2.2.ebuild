@@ -22,7 +22,6 @@ RDEPEND="<dev-haskell/blaze-builder-0.3
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		>=dev-haskell/enumerator-0.4.5
 		=dev-haskell/network-2.3*
-		>=dev-haskell/network-enumerator-0.1.1
 		>=dev-haskell/sendfile-0.7.2
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.3*
