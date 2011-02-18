@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="postgres sqlite3"
+IUSE=""
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/enumerator-0.4*
@@ -30,6 +30,3 @@ RDEPEND="=dev-haskell/blaze-html-0.4*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PDEPEND="postgres? ( >=dev-haskell/hdbc-postgresql-${PV} )
-		sqlite3? ( >=dev-haskell/hdbc-sqlite-${PV} )"
