@@ -6,11 +6,10 @@ repoman equivalent but for the gentoo haskell overlay.
 Checks for:
   * Missing ebuilds in the Manifests
   * Inconsistencies between the manifest checksum and ebuilds
-  * Ebuilds that darcs does not know about but the Manifest do
+  * Ebuilds that git does not know about but the Manifest do
 
 Requires package SHA for digests.
 
-Add the following lines to your _darcs/prefs/defaults:
+Add the following line to your .git/hooks/pre-commit:
 
-  record prehook projects/lambdaman/run
-  record run-prehook
+  projects/lambdaman/run
