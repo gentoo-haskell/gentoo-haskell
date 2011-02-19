@@ -1,29 +1,35 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.9 2005/04/08 01:13:39 araujo Exp $
 #
-# Author: Andres Loeh <kosmikus@gentoo.org>
-# Maintained by: Haskell herd <haskell@gentoo.org>
+# @ECLASS: ghc-package.eclass
+# @MAINTAINER:
+# "Gentoo's Haskell Language team" <haskell@gentoo.org>
 #
-# This eclass helps with the Glasgow Haskell Compiler's package
-# configuration utility.
+# Original Author: Andres Loeh <kosmikus@gentoo.org>
+#
+# @BLURB: This eclass helps with the Glasgow Haskell Compiler's package configuration utility.
+# @DESCRIPTION:
+# Helper eclass to handle ghc installation/upgrade/deinstallation process.
 
 inherit versionator
 
-# promote /opt/ghc/bin to a better position in the search path
-PATH="/usr/bin:/opt/ghc/bin:${PATH}"
-
-# for later configuration using environment variables/
+# @FUNCTION: ghc-getghc
+# @DESCRIPTION:
 # returns the name of the ghc executable
 ghc-getghc() {
 	type -P ghc
 }
 
-# returns the name of the ghc-pkg executable
+# @FUNCTION: ghc-getghcpkg
+# @DESCRIPTION:
+# Internal function determines returns the name of the ghc-pkg executable
 ghc-getghcpkg() {
 	type -P ghc-pkg
 }
 
+# @FUNCTION: ghc-getghcpkgbin
+# @DESCRIPTION:
 # returns the name of the ghc-pkg binary (ghc-pkg
 # itself usually is a shell script, and we have to
 # bypass the script under certain circumstances);
@@ -44,6 +50,8 @@ ghc-getghcpkgbin() {
 	fi
 }
 
+# @FUNCTION: ghc-version
+# @DESCRIPTION:
 # returns the version of ghc
 _GHC_VERSION_CACHE=""
 ghc-version() {
@@ -53,6 +61,8 @@ ghc-version() {
 	echo "${_GHC_VERSION_CACHE}"
 }
 
+# @FUNCTION: ghc-cabal
+# @DESCRIPTION:
 # this function can be used to determine if ghc itself
 # uses the Cabal package format; it has nothing to do
 # with the Cabal libraries ... ghc uses the Cabal package
@@ -61,6 +71,8 @@ ghc-cabal() {
 	version_is_at_least "6.4" "$(ghc-version)"
 }
 
+# @FUNCTION: ghc-bestcabalversion
+# @DESCRIPTION:
 # return the best version of the Cabal library that is available
 ghc-bestcabalversion() {
 	local cabalversion
@@ -75,6 +87,8 @@ ghc-bestcabalversion() {
 	fi
 }
 
+# @FUNCTION: ghc-sanecabal
+# @DESCRIPTION:
 # check if a standalone Cabal version is available for the
 # currently used ghc; takes minimal version of Cabal as
 # an optional argument
@@ -88,6 +102,8 @@ ghc-sanecabal() {
 	return 1
 }
 
+# @FUNCTION: ghc-saneghc
+# @DESCRIPTION:
 # checks if ghc and ghc-bin are installed in the same version
 # (if they're both installed); if this is not the case, we
 # unfortunately cannot trust portage's dependency resolution
@@ -107,6 +123,8 @@ ghc-saneghc() {
 	return
 }
 
+# @FUNCTION: ghc-extractportageversion
+# @DESCRIPTION:
 # extract the version of a portage-installed package
 ghc-extractportageversion() {
 	local pkg
@@ -118,6 +136,8 @@ ghc-extractportageversion() {
 	echo "${version}"
 }
 
+# @FUNCTION: ghc-libdir
+# @DESCRIPTION:
 # returns the library directory
 _GHC_LIBDIR_CACHE=""
 ghc-libdir() {
@@ -127,17 +147,23 @@ ghc-libdir() {
 	echo "${_GHC_LIBDIR_CACHE}"
 }
 
+# @FUNCTION: ghc-confdir
+# @DESCRIPTION:
 # returns the (Gentoo) library configuration directory
 ghc-confdir() {
 	echo "$(ghc-libdir)/gentoo"
 }
 
+# @FUNCTION: ghc-localpkgconf
+# @DESCRIPTION:
 # returns the name of the local (package-specific)
 # package configuration file
 ghc-localpkgconf() {
 	echo "${PF}.conf"
 }
 
+# @FUNCTION: ghc-makeghcilib
+# @DESCRIPTION:
 # make a ghci foo.o file from a libfoo.a file
 ghc-makeghcilib() {
 	local outfile
@@ -145,6 +171,8 @@ ghc-makeghcilib() {
 	ld --relocatable --discard-all --output="${outfile}" --whole-archive "$1"
 }
 
+# @FUNCTION: ghc-makeghcilib
+# @DESCRIPTION:
 # tests if a ghc package exists
 ghc-package-exists() {
 	local describe_flag
@@ -157,6 +185,8 @@ ghc-package-exists() {
 	$(ghc-getghcpkg) "${describe_flag}" "$1" > /dev/null 2>&1
 }
 
+# @FUNCTION: ghc-setup-pkg
+# @DESCRIPTION:
 # creates a local (package-specific) package
 # configuration file; the arguments should be
 # uninstalled package description files, each
@@ -179,6 +209,8 @@ ghc-setup-pkg() {
 	done
 }
 
+# @FUNCTION: ghc-fixlibpath
+# @DESCRIPTION:
 # fixes the library and import directories path
 # of the package configuration file
 ghc-fixlibpath() {
@@ -188,6 +220,8 @@ ghc-fixlibpath() {
 	fi
 }
 
+# @FUNCTION: ghc-install-pkg
+# @DESCRIPTION:
 # moves the local (package-specific) package configuration
 # file to its final destination
 ghc-install-pkg() {
@@ -196,6 +230,8 @@ ghc-install-pkg() {
 		> "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
 }
 
+# @FUNCTION: ghc-register-pkg
+# @DESCRIPTION:
 # registers all packages in the local (package-specific)
 # package configuration file
 ghc-register-pkg() {
@@ -220,6 +256,8 @@ ghc-register-pkg() {
 	fi
 }
 
+# @FUNCTION: ghc-reregister
+# @DESCRIPTION:
 # re-adds all available .conf files to the global
 # package conf file, to be used on a ghc reinstallation
 ghc-reregister() {
@@ -234,6 +272,8 @@ ghc-reregister() {
 	fi
 }
 
+# @FUNCTION: ghc-unregister-pkg
+# @DESCRIPTION:
 # unregisters a package configuration file
 # protected are all packages that are still contained in
 # another package configuration file
@@ -272,6 +312,8 @@ ghc-unregister-pkg() {
 	fi
 }
 
+# @FUNCTION: ghc-reverse
+# @DESCRIPTION:
 # help-function: reverse a list
 ghc-reverse() {
 	local result
@@ -282,6 +324,8 @@ ghc-reverse() {
 	echo "${result}"
 }
 
+# @FUNCTION: ghc-elem
+# @DESCRIPTION:
 # help-function: element-check
 ghc-elem() {
 	local i
@@ -291,6 +335,8 @@ ghc-elem() {
 	return 1
 }
 
+# @FUNCTION: ghc-listpkg
+# @DESCRIPTION:
 # show the packages in a package configuration file
 ghc-listpkg() {
 	local ghcpkgcall
@@ -314,6 +360,8 @@ ghc-listpkg() {
 	done
 }
 
+# @FUNCTION: ghc-package_pkg_setup
+# @DESCRIPTION:
 # exported function: check if we have a consistent ghc installation
 ghc-package_pkg_setup() {
 	if ! ghc-saneghc; then
@@ -328,12 +376,16 @@ ghc-package_pkg_setup() {
 	fi
 }
 
+# @FUNCTION: ghc-package_pkg_postinst
+# @DESCRIPTION:
 # exported function: registers the package-specific package
 # configuration file
 ghc-package_pkg_postinst() {
 	ghc-register-pkg "$(ghc-localpkgconf)"
 }
 
+# @FUNCTION: ghc-package_pkg_prerm
+# @DESCRIPTION:
 # exported function: unregisters the package-specific package
 # configuration file; a package contained therein is unregistered
 # only if it the same package is not also contained in another
