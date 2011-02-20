@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/eclass/haskell-cabal.eclass,v 1.20 2010/03/30 22:18:37 kolmodin Exp $
 #
@@ -28,8 +28,8 @@
 #   bin        --  the package installs binaries
 #   lib        --  the package installs libraries
 #   nocabaldep --  don't add dependency on cabal.
-#					only used for packages that _must_ not pull the dependency
-#					on cabal, but still use this eclass (e.g. haskell-updater).
+#                  only used for packages that _must_ not pull the dependency
+#                  on cabal, but still use this eclass (e.g. haskell-updater).
 #
 # Dependencies on other cabal packages have to be specified
 # correctly.
@@ -84,22 +84,18 @@ fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/alex"
-	cabalconf="${cabalconf} --with-alex=/usr/bin/alex"
 fi
 
 if [[ -n "${CABAL_USE_HAPPY}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/happy"
-	cabalconf="${cabalconf} --with-happy=/usr/bin/happy"
 fi
 
 if [[ -n "${CABAL_USE_C2HS}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/c2hs"
-	cabalconf="${cabalconf} --with-c2hs=/usr/bin/c2hs"
 fi
 
 if [[ -n "${CABAL_USE_CPPHS}" ]]; then
 	DEPEND="${DEPEND} dev-haskell/cpphs"
-	cabalconf="${cabalconf} --with-cpphs=/usr/bin/cpphs"
 fi
 
 if [[ -n "${CABAL_USE_PROFILE}" ]]; then
@@ -208,12 +204,29 @@ cabal-hscolour-haddock() {
 }
 
 cabal-configure() {
+	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
+
 	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-		cabalconf="${cabalconf} --with-haddock=/usr/bin/haddock"
+		cabalconf="${cabalconf} --with-haddock=${EPREFIX}/usr/bin/haddock"
 	fi
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
 		cabalconf="${cabalconf} --enable-library-profiling"
 	fi
+	if [[ -n "${CABAL_USE_ALEX}" ]]; then
+		cabalconf="${cabalconf} --with-alex=${EPREFIX}/usr/bin/alex"
+	fi
+
+	if [[ -n "${CABAL_USE_HAPPY}" ]]; then
+		cabalconf="${cabalconf} --with-happy=${EPREFIX}/usr/bin/happy"
+	fi
+
+	if [[ -n "${CABAL_USE_C2HS}" ]]; then
+		cabalconf="${cabalconf} --with-c2hs=${EPREFIX}/usr/bin/c2hs"
+	fi
+	if [[ -n "${CABAL_USE_CPPHS}" ]]; then
+		cabalconf="${cabalconf} --with-cpphs=${EPREFIX}/usr/bin/cpphs"
+	fi
+
 	# Building GHCi libs on ppc64 causes "TOC overflow".
 	if use ppc64; then
 		cabalconf="${cabalconf} --disable-library-for-ghci"
@@ -230,7 +243,7 @@ cabal-configure() {
 	fi
 
 	if version_is_at_least "1.2.0" "$(cabal-version)"; then
-		cabalconf="${cabalconf} --docdir=/usr/share/doc/${PF}"
+		cabalconf="${cabalconf} --docdir=${EPREFIX}/usr/share/doc/${PF}"
 		# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
 		# it's better if the configure chatter is in the build logs:
 		cabalconf="${cabalconf} --verbose"
@@ -242,13 +255,13 @@ cabal-configure() {
 	# Because we can only set the datadir, not the docdir.
 
 	./setup configure \
-		--ghc --prefix=/usr \
+		--ghc --prefix="${EPREFIX}"/usr \
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
-		--prefix=/usr \
-		--libdir=/usr/$(get_libdir) \
+		--prefix="${EPREFIX}"/usr \
+		--libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--libsubdir=${P}/ghc-$(ghc-version) \
-		--datadir=/usr/share/ \
+		--datadir="${EPREFIX}"/usr/share/ \
 		--datasubdir=${P}/ghc-$(ghc-version) \
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
@@ -262,19 +275,21 @@ cabal-build() {
 }
 
 cabal-copy() {
+	has "${EAPI:-0}" 0 1 2 && ! use prefix && ED=${D}
+
 	./setup copy \
 		--destdir="${D}" \
 		|| die "setup copy failed"
 
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
-	rmdir "${D}/usr/bin" 2> /dev/null
+	rmdir "${ED}/usr/bin" 2> /dev/null
 
 	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
 	# no workaround.
 	# set the +x permission on executables
-	if [[ -d "${D}/usr/bin" ]] ; then
-		chmod +x "${D}/usr/bin/"*
+	if [[ -d "${ED}/usr/bin" ]] ; then
+		chmod +x "${ED}/usr/bin/"*
 	fi
 	# TODO: do we still need this?
 }
@@ -410,9 +425,13 @@ haskell-cabal_src_test() {
 
 # exported function: cabal-style copy and register
 cabal_src_install() {
+	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
+
 	if cabal-is-dummy-lib; then
 		# create a dummy local package conf file for the sake of ghc-updater
-		dodir "$(ghc-confdir)"
+		local ghc_confdir_with_prefix="$(ghc-confdir)"
+		# remove EPREFIX
+		dodir ${ghc_confdir_with_prefix#${EPREFIX}}
 		echo '[]' > "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
 	else
 		cabal-copy
