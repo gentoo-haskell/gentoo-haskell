@@ -1,0 +1,27 @@
+diff -Naur Agda-2.2.6/Agda.cabal Agda-2.2.6.new/Agda.cabal
+--- Agda-2.2.6/Agda.cabal	2009-12-23 10:39:57.000000000 -0500
++++ Agda-2.2.6.new/Agda.cabal	2010-02-12 10:52:07.000000000 -0500
+@@ -40,7 +40,6 @@
+                     doc/release-notes/*.txt
+ data-dir:           src/data
+ data-files:         Agda.css
+-                    emacs-mode/*.el
+ 
+ source-repository head
+   type:     darcs
+@@ -274,15 +273,3 @@
+                    -fwarn-warnings-deprecations -fwarn-deprecated-flags
+                    -fwarn-dodgy-foreign-imports
+                    -fwarn-wrong-do-bind -fwarn-dodgy-exports
+-
+-executable agda-mode
+-  hs-source-dirs:  src/agda-mode
+-  main-is:         Main.hs
+-  other-modules:   Paths_Agda
+-  if flag(use-locale)
+-    build-depends: base == 4.2.*
+-  else
+-    build-depends: base == 4.1.*,
+-                   utf8-string == 0.3.*
+-  build-depends:   filepath >= 1.1 && < 2,
+-                   process >= 1.0.1.0 && < 2
