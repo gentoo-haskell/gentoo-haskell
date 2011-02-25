@@ -42,6 +42,7 @@ src_prepare() {
 src_configure() {
 	econf || die "econf failed"
 	darcs init # workaround missing history (ChageLog generation)
+	darcs tag --author="portage's jhc ebuild" phony-useless-tag
 }
 
 src_compile() {
