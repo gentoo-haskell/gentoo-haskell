@@ -78,10 +78,10 @@ dirSpy dir = do
   return (Dir dir content)
 
 findManifests :: Repo -> [(FilePath, Repo)]
-findManifests d@(Dir _ sub) = cwd ++ recurse
+findManifests d@(Dir _ files) = cwd ++ recurse
   where
-  recurse = concat [ findManifests d' | d'@(Dir _ _) <- sub ]
-  cwd = [ (fn,d) | f@(File fn _ _) <- sub, takeFileName fn == "Manifest" ]
+  recurse = concat [ findManifests d' | d'@(Dir _ _) <- files ]
+  cwd = [ (fn,d) | f@(File fn _ _) <- files, takeFileName fn == "Manifest" ]
 
 verifyManifests :: [FilePath] -> (Manifest, Repo) -> [String]
 verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
@@ -92,23 +92,23 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
            , unknownToGit
            ]
   where
-    filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") sub) <- packageDir ]
+    filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") _) <- packageDir ]
     lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- packageDir, takeFileName fn' == fn ]
     lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
     inGit      fn = not . null $ [ () | dfn <- awares, dfn == fn ]
 
-    missingDigests (Dir _ subs) = -- look for missing manifest entries
+    missingDigests (Dir _ files) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
-      | f@(File fn fs digest) <- subs
+      | f@(File fn fs digest) <- files
       , takeBaseName fn /= "Manifest" -- manifests are never included in the manifest
       , isNothing (lookupMani fn)
       , not ("/ChangeLog" `isSuffixOf` fn)   -- ChangeLog is not part of the manifest
       , not ("/metadata.xml" `isSuffixOf` fn) -- neither is metadata.xml
       ]
 
-    invalidEbuildDigests (Dir _ subs) = -- look for incorrect filesize or manifest inconsistencies
+    invalidEbuildDigests (Dir _ files) = -- look for incorrect filesize or manifest inconsistencies
       [ "Invalid Manifest entry for file " ++ fn
-      | f@(File fn fs sha1) <- subs
+      | f@(File fn fs sha1) <- files
       , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return (lookupMani fn)
       , fs /= size || digest /= show sha1
       ]
@@ -126,10 +126,10 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       ]
 
 ignore_git :: Repo -> Repo
-ignore_git (Dir fn sub) = Dir fn (catMaybes (map recursive sub))
+ignore_git (Dir fn files) = Dir fn (catMaybes (map recursive files))
   where
-  recursive (Dir fn sub') | fn == ".git" = Nothing
-                          | otherwise = Just $ Dir fn (map ignore_git sub')
+  recursive (Dir fn files') | fn == ".git" = Nothing
+                          | otherwise = Just $ Dir fn (map ignore_git files')
   recursive x = Just x
 ignore_git x = x
 
