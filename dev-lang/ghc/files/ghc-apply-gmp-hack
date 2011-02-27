@@ -33,8 +33,9 @@
 local libdir_name=$1
 # let's see if we are in affected system
 if has_version '>=dev-libs/gmp-5.0.1'; then
-	local libgmpso3=$ROOT/usr/$libdir_name/libgmp.so.3
-	local libgmpso10=$ROOT/usr/$libdir_name/libgmp.so.10
+	has "${EAPI:-0}" 0 1 2 && ! use prefix && EROOT="${ROOT}"
+	local libgmpso3=${EROOT}/usr/$libdir_name/libgmp.so.3
+	local libgmpso10=${EROOT}/usr/$libdir_name/libgmp.so.10
 
 	# bother user only if things won't work for him
 	if [[ ! -e "$libgmpso3" ]]; then
