@@ -468,7 +468,6 @@ pkg_postinst() {
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
-		ebeep 12
 	fi
 
 	bash-completion_pkg_postinst
