@@ -90,12 +90,13 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
            , invalidEbuildDigests topRepo
            , maybe [] invalidEbuildDigests filesDir
            , unknownToGit
+           , unknownToFS
            ]
   where
     filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") _) <- packageDir ]
-    lookupFile fn = listToMaybe [ f | f@(File fn' _ _) <- packageDir, takeFileName fn' == fn ]
-    lookupMani fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
-    inGit      fn = not . null $ [ () | dfn <- awares, dfn == fn ]
+    lookupFile dir fn = listToMaybe [ f | f@(File fn' _ _) <- dir, takeFileName fn' == fn ]
+    lookupMani     fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
+    inGit          fn = not . null $ [ () | dfn <- awares, dfn == fn ]
 
     missingDigests (Dir _ files) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
@@ -111,6 +112,18 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       | f@(File fn fs sha1) <- files
       , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return (lookupMani fn)
       , fs /= size || digest /= show sha1
+      ]
+
+    unknownToFS = -- look for ebuilds/files in manifest unknown to the file system
+      [ "File in manifest but missing in the file system: " ++ fullName
+      | m <- manifest
+      , Just (Dir dn files) <- return $ -- find the right subdir for the kind of file were examining
+          case mManifestKind m of
+            AUX -> filesDir
+            DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
+            EBUILD -> return topRepo
+      , let fullName = makeRelative "." (dn </> mFileName m)
+      , isNothing (lookupFile files (mFileName m))
       ]
 
     unknownToGit = -- look for ebuilds in manifest unknown to git
