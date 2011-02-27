@@ -102,6 +102,8 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       | f@(File fn fs digest) <- subs
       , takeBaseName fn /= "Manifest" -- manifests are never included in the manifest
       , isNothing (lookupMani fn)
+      , not ("/ChangeLog" `isSuffixOf` fn)   -- ChangeLog is not part of the manifest
+      , not ("/metadata.xml" `isSuffixOf` fn) -- neither is metadata.xml
       ]
 
     invalidEbuildDigests (Dir _ subs) = -- look for incorrect filesize or manifest inconsistencies
