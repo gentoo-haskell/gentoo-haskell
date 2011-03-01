@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="bin nocabaldep"
 inherit haskell-cabal
@@ -16,17 +16,22 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd" # Add keywords as those archs have a binpkg
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.10.1"
+DEPEND=">=dev-lang/ghc-6.12.1"
 
 # Need a lower version for portage to get --keep-going
 RDEPEND="|| ( >=sys-apps/portage-2.1.6
 			  sys-apps/pkgcore
 			  sys-apps/paludis )"
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS="--bindir=/usr/sbin"
+src_prepare() {
+	if use prefix; then
+		sed -i -e "s,/var/db/pkg,${EPREFIX}&,g" \
+		    "${S}/Distribution/Gentoo/Packages.hs" || die
+	fi
+}
 
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure --bindir="${EPREFIX}/usr/sbin"
 }
 
 src_install() {
