@@ -232,6 +232,10 @@ src_unpack() {
 	use binary && mkdir "${S}"
 
 	base_src_unpack
+}
+
+src_prepare() {
+	source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
 
 	# ghc7: we don't need gmp hack any more, depend on >=gmp-5
 	#source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
@@ -283,7 +287,7 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
+src_configure() {
 	if ! use binary; then
 
 		# initialize build.mk
@@ -381,11 +385,14 @@ src_compile() {
 		# regular gcc.
 
 		econf --with-gcc=gcc || die "econf failed"
+	fi # ! use binary
+}
 
+src_compile() {
+	if ! use binary; then
 		# LC_ALL needs to workaround ghc's ParseCmm failure on some (es) locales
 		# bug #202212 / http://hackage.haskell.org/trac/ghc/ticket/4207
 		LC_ALL=C emake all || die "make failed"
-
 	fi # ! use binary
 }
 
