@@ -78,7 +78,7 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-#PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
+PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
 	${PDEPEND}
 	dev-haskell/syb

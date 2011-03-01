@@ -72,7 +72,7 @@ DEPEND="${RDEPEND}
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
-PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.1* )"
+PDEPEND="!ghcbootstrap? ( || ( =app-admin/haskell-updater-1.2* =app-admin/haskell-updater-1.1* ) )"
 
 # use undocumented feature STRIP_MASK to fix this issue:
 # http://hackage.haskell.org/trac/ghc/ticket/3580
