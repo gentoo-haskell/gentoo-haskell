@@ -360,18 +360,20 @@ haskell-cabal_pkg_setup() {
 }
 
 haskell-cabal_src_configure() {
-	pushd "${S}" > /dev/null
+	if ! cabal-is-dummy-lib; then
+		pushd "${S}" > /dev/null
 
-	cabal-bootstrap
+		cabal-bootstrap
 
-	ghc_flags=""
-	# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
-	# so translate LDFLAGS to ghc parameters (without filtering)
-	for flag in $LDFLAGS; do ghc_flags="${ghc_flags} --ghc-option=-optl$flag"; done
+		ghc_flags=""
+		# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
+		# so translate LDFLAGS to ghc parameters (without filtering)
+		for flag in $LDFLAGS; do ghc_flags="${ghc_flags} --ghc-option=-optl$flag"; done
 
-	cabal-configure $ghc_flags "$@"
+		cabal-configure $ghc_flags "$@"
 
-	popd > /dev/null
+		popd > /dev/null
+	fi
 }
 
 # exported function: nice alias
