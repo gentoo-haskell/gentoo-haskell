@@ -28,6 +28,24 @@ RDEPEND="dev-haskell/ghc-paths
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
+# although haddock depends on alex and happy to build from scratch, we don't
+# want this ebuild to depend on those packages.
+# we use haddock to build the documentation enabled by USE="doc".
+# alex and happy only build executables, which does not require haddock.
+# however, happy depends on mtl which can be build with USE="doc", which would
+# create a circular dependency.
+# haddock upstream solved this by bundling preprocessed files.
+# unfortunately cabal has recently changed which directory it uses for these
+# intermediate files and thus the solution does not work anymore.
+# to fix this we move those preprocessed files back to the source tree.
+
+src_prepare() {
+	for f in Lex Parse; do
+		rm "src/Haddock/$f."*
+		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
+	done
+}
+
 src_install() {
 	cabal_src_install
 	# haddock uses GHC-api to process TH source.
