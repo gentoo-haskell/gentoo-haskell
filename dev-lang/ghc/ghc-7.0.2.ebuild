@@ -84,9 +84,14 @@ PDEPEND="
 	dev-haskell/syb
 	llvm? ( sys-devel/llvm )"
 
-# use undocumented feature STRIP_MASK to fix this issue:
+# The Issue:
+# files are not quite sane ELFs, so ghc's ELF loader
+# can't load stripped result. TODO: fix ghc :]
+#
 # http://hackage.haskell.org/trac/ghc/ticket/3580
-STRIP_MASK="*/HSffi.o"
+# https://github.com/gentoo-haskell/gentoo-haskell/issues#issue/12
+# use undocumented feature STRIP_MASK to fix this issue:
+STRIP_MASK="*.o *.a"
 
 append-ghc-cflags() {
 	local flag compile assemble link
