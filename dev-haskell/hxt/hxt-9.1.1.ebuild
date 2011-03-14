@@ -13,7 +13,7 @@ DESCRIPTION="A collection of tools for processing XML with Haskell."
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE=""	#Fixme: "OtherLicense", please fill in manually
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
