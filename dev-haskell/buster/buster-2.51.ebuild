@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
@@ -21,3 +23,10 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3.0.0
 		dev-haskell/time"
+
+src_prepare() {
+	sed -e 's@base <=4.1.0.0@base <=4.4.0.0@' \
+		-i "${S}/${PN}.cabal"
+	sed -e 's@import qualified Control.Exception as Ex@import qualified Control.OldException as Ex@' \
+		-i "${S}/App/Behaviours/FileOps.hs"
+}
