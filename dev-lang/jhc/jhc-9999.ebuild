@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-EDARCS_REPOSITORY="http://repetae.net/john/repos/jhc"
+EDARCS_REPOSITORY="http://repetae.net/repos/jhc"
 EDARCS_GET_CMD="get --partial"
 
 DEPEND=">=dev-lang/ghc-6.10
