@@ -2,8 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="3"
+
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A tiling window manager"
 HOMEPAGE="http://xmonad.org"
@@ -22,6 +24,8 @@ DEPEND="${RDEPEND}
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
+
+PATCHES=("${FILESDIR}/xmonad-0.9.2-unbreak-haddock.patch")
 
 src_install() {
 	cabal_src_install
