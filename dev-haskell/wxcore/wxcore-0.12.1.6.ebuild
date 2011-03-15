@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 WX_GTK_VER="2.8"
 
@@ -26,4 +26,11 @@ RDEPEND="dev-haskell/parsec
 		x11-libs/wxGTK:2.8[X]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-db.patch"
+	sed -e 's@containers >= 0.2 && < 0.4@containers >= 0.2 \&\& < 0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen base lib dependencies"
+}
 
