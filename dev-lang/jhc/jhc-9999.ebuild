@@ -47,7 +47,9 @@ src_configure() {
 
 src_compile() {
 	emake jhc || die "'emake jhc' failed"
-	emake libs || die "'emake libs' failed"
+	# jhc's makefile does not bother with library depends
+	# so we don't as well. Thus: -j1
+	emake -j1 libs || die "'emake libs' failed"
 }
 
 src_install() {
