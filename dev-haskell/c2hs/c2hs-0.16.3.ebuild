@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="3"
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal
@@ -21,7 +23,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"
 RDEPEND="dev-libs/gmp"
-
 
 src_compile() {
 	cabal_src_compile
