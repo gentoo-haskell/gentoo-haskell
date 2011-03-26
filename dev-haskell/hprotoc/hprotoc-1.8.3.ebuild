@@ -25,10 +25,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/haskell-src-exts-1.7.0
 		dev-haskell/mtl
-		>=dev-haskell/parsec-2.1.0.1:0
-		~dev-haskell/protocol-buffers-1.8.2
-		~dev-haskell/protocol-buffers-descriptor-1.8.2
+		<dev-haskell/parsec-3
+		~dev-haskell/protocol-buffers-1.8.3
+		~dev-haskell/protocol-buffers-descriptor-1.8.3
 		dev-haskell/quickcheck
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
-
