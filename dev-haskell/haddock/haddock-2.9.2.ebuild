@@ -45,6 +45,25 @@ src_prepare() {
 	done
 }
 
+src_configure() {
+	# create a fake haddock executable. it'll set the right version to cabal
+	# configure, but will eventually get overwritten in src_compile by
+	# the real executable.
+	local exe="${S}/dist/build/haddock/haddock"
+	mkdir -p $(basename exe)
+	echo -e "#!/bin/sh\necho Haddock version ${PV}" > $exe
+	chmod +x $exe
+	
+	haskell-cabal_src_configure --with-haddock=$exe
+}
+
+src_compile() {
+	# when building the (recursive..) haddock docs, change the datadir to the
+	# current directory, as we're using haddock inplace even if it's built to be
+	# installed into the system first.
+	haddock_datadir="${S}" haskell-cabal_src_compile
+}
+
 src_install() {
 	cabal_src_install
 	# haddock uses GHC-api to process TH source.
