@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock"
+# haddock-2.9.2 has xhtml as a dep, so disable haddock feature
+CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="An XHTML combinator library"
