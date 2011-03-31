@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 		=dev-vcs/darcs-2.5*
 		dev-haskell/datetime
 		>=dev-haskell/hashed-storage-0.5.3
-		<dev-haskell/hashed-storage-0.6
 		dev-haskell/mtl
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
