@@ -50,11 +50,11 @@ src_configure() {
 	# configure, but will eventually get overwritten in src_compile by
 	# the real executable.
 	local exe="${S}/dist/build/haddock/haddock"
-	mkdir -p $(basename exe)
-	echo -e "#!/bin/sh\necho Haddock version ${PV}" > $exe
-	chmod +x $exe
+	mkdir -p $(basename "${exe}")
+	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
+	chmod +x "${exe}"
 	
-	haskell-cabal_src_configure --with-haddock=$exe
+	haskell-cabal_src_configure --with-haddock="${exe}"
 }
 
 src_compile() {
