@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="The Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
@@ -59,16 +59,15 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.10"
 
-CABAL_CONFIGURE_FLAGS="$(cabal_flag gnome)
-					   $(cabal_flag gtk)
-					   $(cabal_flag vty)"
-
 src_prepare() {
 	# The haddock documentation fails to build with cabal 1.10 style cabal files.
 	# http://hackage.haskell.org/trac/hackage/ticket/656
 	# Workaround is to revert the cabal file back to using the old style.
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-old-style-cabal.patch"
+	# Ugh! Upstream forgot it.
+	cp "${FILESDIR}/yi-0.6.3.0-src-library-Yi-UI-Pango-Gnome.hs" \
+	    "${S}/src/library/Yi/UI/Pango/Gnome.hs"
 }
 
 src_configure() {
@@ -78,7 +77,5 @@ src_configure() {
 		$(cabal_flag gnome) \
 		$(cabal_flag vty)
 
-	if ! (use gtk || use vty); then
-		ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
-	fi
+	use gtk || use vty || ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
 }
