@@ -44,5 +44,5 @@ src_configure() {
 src_install() {
 	cabal_src_install
 
-	dodoc xmobar.config-sample README
+	dodoc samples/xmobar.config README
 }
