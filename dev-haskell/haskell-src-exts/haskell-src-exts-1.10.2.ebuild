@@ -19,7 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cpphs-1.3
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.12"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2
 		dev-haskell/happy"
+
+src_prepare() {
+	# test suite is broken, expects the package to be already installed.
+	# this new Setup.hs will use the package inplice for tests
+	cp "${FILESDIR}/${P}-Setup.hs" "${S}/Setup.hs"
+
+	# remove broken tests. they will fail if you expect them to pass, and pass
+	# if you expect them to fail...
+	rm "${S}/Test/examples/Unicode"{.hs,Syntax.hs}
+}
