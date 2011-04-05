@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI="3"
 
-inherit darcs autotools
+inherit base darcs autotools
 
 DESCRIPTION="jhc is a haskell compiler"
 HOMEPAGE="http://repetae.net/john/computer/jhc/"
@@ -29,6 +29,8 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/zlib"
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
+
+PATCHES=("${FILESDIR}/jhc-9999-ghc-7-build.patch")
 
 src_prepare() {
 	eautoreconf
