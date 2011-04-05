@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal elisp-common
