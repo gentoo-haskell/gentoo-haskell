@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="production"
 
-RDEPEND=">=dev-haskell/hamlet-0.7.1
-		<dev-haskell/hjsmin-0.1
+RDEPEND=">=dev-haskell/hamlet-0.7.3
+		>=dev-haskell/hjsmin-0.0.13
 		=dev-haskell/mime-mail-0.1*
 		=dev-haskell/monad-peel-0.1*
 		<dev-haskell/parsec-4
@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/hamlet-0.7.1
 		=dev-haskell/wai-0.3*
 		<dev-haskell/wai-extra-0.4
 		!production? ( =dev-haskell/wai-handler-devel-0.2* )
-		>=dev-haskell/warp-0.3.2.1
+		=dev-haskell/warp-0.3*
 		=dev-haskell/yesod-auth-0.3*
 		>=dev-haskell/yesod-core-0.7.0.2
 		=dev-haskell/yesod-form-0.0*
