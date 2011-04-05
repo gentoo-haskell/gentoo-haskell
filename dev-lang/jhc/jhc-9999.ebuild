@@ -33,6 +33,7 @@ RDEPEND=""
 PATCHES=("${FILESDIR}/jhc-9999-ghc-7-build.patch")
 
 src_prepare() {
+	base_src_prepare
 	eautoreconf
 
 	# (UTF-8 source breaks DrIFT. workaround DrIFT bug)
