@@ -37,10 +37,10 @@ RDEPEND="~dev-haskell/cgi-3001.1.7.4
 		~dev-haskell/transformers-0.2.2.0
 		~dev-haskell/xhtml-3000.2.0.1
 		~dev-haskell/zlib-0.5.3.1
-		>=dev-lang/ghc-6.12.3
+		>=dev-lang/ghc-7.0.3
 
 		~dev-haskell/alex-2.3.5
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.10.1.0
 		~dev-haskell/happy-1.18.6
 		>=dev-haskell/cabal-install-0.10.2
 		>=dev-haskell/hscolour-1.17
