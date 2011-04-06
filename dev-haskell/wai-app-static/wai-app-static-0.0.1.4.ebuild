@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
 		<dev-haskell/file-embed-0.1
+		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		<dev-haskell/transformers-0.3
 		=dev-haskell/unix-compat-0.2*
