@@ -1,5 +1,5 @@
---- mueval-0.8-orig/mueval.cabal	2010-04-10 04:21:30.000000000 +1000
-+++ mueval-0.8/mueval.cabal	2011-01-04 21:50:40.648753396 +1100
+--- mueval-0.8.1-orig/mueval.cabal	2011-01-12 07:24:11.000000000 +1100
++++ mueval-0.8.1/mueval.cabal	2011-01-20 18:21:51.296387437 +1100
 @@ -31,7 +31,7 @@
  library
          exposed-modules:     Mueval.Parallel, Mueval.Context, Mueval.Interpreter,
@@ -9,8 +9,8 @@
                               hint>=0.3.1, show>=0.3, utf8-string, Cabal, extensible-exceptions
          ghc-options:         -Wall -static -O2
  
---- mueval-0.8-orig/Mueval/Interpreter.hs	2010-04-10 04:21:30.000000000 +1000
-+++ mueval-0.8/Mueval/Interpreter.hs	2011-01-04 22:34:56.208447809 +1100
+--- mueval-0.8.1-orig/Mueval/Interpreter.hs	2011-01-12 07:24:11.000000000 +1100
++++ mueval-0.8.1/Mueval/Interpreter.hs	2011-01-20 18:21:51.297360019 +1100
 @@ -2,7 +2,7 @@
  -- TODO: suggest the convenience functions be put into Hint proper?
  module Mueval.Interpreter where
@@ -20,7 +20,7 @@
  import Control.Monad.Trans (MonadIO)
  import Control.Monad.Writer (Any(..),runWriterT,tell)
  import Data.Char (isDigit)
-@@ -118,7 +118,7 @@
+@@ -120,7 +120,7 @@
  exceptionMsg = "*Exception: "
  
  -- | Renders the input String including its exceptions using @exceptionMsg@
