@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header:  $
 
 EAPI="2"
 CABAL_FEATURES="bin"
@@ -26,8 +26,9 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
 		mail? ( dev-haskell/hinotify )
-		wifi? ( net-wireless/wireless-tools )
-		mpd? ( >=dev-haskell/libmpd-0.5 )"
+		mpd? ( >=dev-haskell/libmpd-0.5 )
+		alsa? ( >=dev-haskell/alsa-mixer-0.1 )
+		wifi? ( net-wireless/wireless-tools )"
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_configure() {
@@ -35,12 +36,13 @@ src_configure() {
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag unicode with_utf8) \
 		$(cabal_flag mail with_inotify) \
-		$(cabal_flag wifi with_iwlib) \
-		$(cabal_flag mpd with_mpd)
+		$(cabal_flag mpd with_mpd) \
+		$(cabal_flag alsa with_alsa) \
+		$(cabal_flag wifi with_iwlib)
 }
 
 src_install() {
 	cabal_src_install
 
-	dodoc xmobar.config-sample README
+	dodoc samples/xmobar.config README
 }
