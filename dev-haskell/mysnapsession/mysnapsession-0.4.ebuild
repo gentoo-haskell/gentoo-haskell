@@ -9,8 +9,8 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="WAI application for static serving"
-HOMEPAGE="http://docs.yesodweb.com/"
+DESCRIPTION="Sessions and continuations for Snap web apps"
+HOMEPAGE="http://hackage.haskell.org/package/mysnapsession"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-html-0.4*
-		<dev-haskell/file-embed-0.1
+RDEPEND="=dev-haskell/cereal-0.3*
+		=dev-haskell/clientsession-0.4*
+		=dev-haskell/mtl-2.0*
+		=dev-haskell/regex-posix-0.94*
+		=dev-haskell/snap-0.4*
+		=dev-haskell/snap-core-0.4*
 		<dev-haskell/time-1.3
-		<dev-haskell/transformers-0.3
-		=dev-haskell/unix-compat-0.2*
-		=dev-haskell/wai-0.3*
-		=dev-haskell/web-routes-0.23*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
