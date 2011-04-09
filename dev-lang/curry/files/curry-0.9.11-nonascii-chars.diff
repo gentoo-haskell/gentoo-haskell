@@ -1,0 +1,26 @@
+diff --git a/curry/Parser.curry b/curry/Parser.curry
+index 5b2e5a5..c0cd67b 100644
+--- a/curry/Parser.curry
++++ b/curry/Parser.curry
+@@ -4,7 +4,7 @@
+ -- See ../LICENSE for the full license.
+ 
+ -- Functional logic parsing combinators based on
+--- Rafael Caballero, Francisco J. López-Fraguas. A Functional-Logic
++-- Rafael Caballero, Francisco J. Lopez-Fraguas. A Functional-Logic
+ -- Perspective on Parsing. In: Proc. FLOPS'99, Springer LNCS 1722,
+ -- pp. 85-99.
+ 
+diff --git a/curry/Trace.curry b/curry/Trace.curry
+index a4a5be4..aa9fb8d 100644
+--- a/curry/Trace.curry
++++ b/curry/Trace.curry
+@@ -2,7 +2,7 @@
+ -- See ../LICENSE for the full license.
+ 
+ -- Re-export trace function for compatibility with earlier release
+--- of the Münster Curry compiler and Hugs
++-- of the Munster Curry compiler and Hugs
+ 
+ module Trace(trace) where
+ import Unsafe(trace)

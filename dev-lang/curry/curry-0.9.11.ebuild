@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
-inherit flag-o-matic
+inherit base flag-o-matic
 
 DESCRIPTION="Munster Curry Compiler"
 HOMEPAGE="http://danae.uni-muenster.de/~lux/curry/"
@@ -19,9 +19,9 @@ DEPEND=">=dev-lang/ghc-6.6"
 RDEPEND="dev-libs/gmp
 	sys-devel/gcc"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-nostrip.patch"
-}
+PATCHES=("${FILESDIR}/${P}-nostrip.patch"
+	"${FILESDIR}/${P}-nonascii-chars.diff")
+
 src_configure() {
 	filter-flags "-O3 -finline-function"
 	# The option -finline-function [which is included in -O3] breaks MCC.
