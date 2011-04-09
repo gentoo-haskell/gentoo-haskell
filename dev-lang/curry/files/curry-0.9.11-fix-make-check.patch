@@ -1,0 +1,28 @@
+'make check' and other didn't report proper error as
+'.DEFAULT:' did override it, which failed 'test' phase.
+diff --git a/Makefile.in b/Makefile.in
+index e881726..dfc7d24 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -276,21 +276,6 @@ TeXShop: tex
+ 		  -e '  latexinteractive (every document whose path is p)' \
+ 		  -e 'end tell'
+ 
+-# link all source files into the current directory
+-# NB if $(srcdir) is a relative path we have to modify the paths for target
+-#    files which are located in subdirectories
+-.DEFAULT:
+-	@test ! -r $@ -a -f $(srcdir)/$@ && \
+-	(test -d $(@D) || mkdir $(@D)) && \
+-	if expr $(srcdir) : '/.*' >/dev/null; then \
+-		(case "$(MFLAGS)" in -*s*) ;; *) set -x;; esac; \
+-		 ln -s $(srcdir)/$@ $@); \
+-	else \
+-		srcdir=`echo $@ | sed -e 's:[^/]*$$::' -e 's:[^/]*/:../:g'` && \
+-		(case "$(MFLAGS)" in -*s*) ;; *) set -x;; esac; \
+-		 ln -s $${srcdir}$(srcdir)/$@ $@); \
+-	fi
+-
+ # install the binaries
+ begin_config = ^\# DO NOT DELETE: Beginning of in-place configuration$$
+ end_config   = ^\# DO NOT DELETE: End of in-place configuration$$

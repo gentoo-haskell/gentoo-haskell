@@ -1,4 +1,4 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,8 @@ RDEPEND="dev-libs/gmp
 	sys-devel/gcc"
 
 PATCHES=("${FILESDIR}/${P}-nostrip.patch"
-	"${FILESDIR}/${P}-nonascii-chars.diff")
+	"${FILESDIR}/${P}-nonascii-chars.patch"
+	"${FILESDIR}/${P}-fix-make-check.patch")
 
 src_configure() {
 	filter-flags "-O3 -finline-function"
@@ -30,6 +31,6 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR=${D} install || die "emake install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README doc/*.pdf
 }
