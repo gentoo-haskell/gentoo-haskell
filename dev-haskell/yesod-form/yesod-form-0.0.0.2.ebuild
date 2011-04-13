@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-builder-0.2*
+RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/data-default-0.2*
 		>=dev-haskell/email-validate-0.2.6
@@ -33,3 +33,8 @@ RDEPEND="=dev-haskell/blaze-builder-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@blaze-builder             >= 0.2.1    && < 0.3@blaze-builder             >= 0.2.1    \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
+}
