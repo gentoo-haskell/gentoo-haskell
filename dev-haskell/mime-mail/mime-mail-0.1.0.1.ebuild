@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-builder-0.2*
+RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-haskell/dataenc-0.13
 		<dev-haskell/text-0.12
 		>=dev-lang/ghc-6.10.1"
@@ -25,5 +25,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@dataenc             >= 0.13.0.4   && < 0.14@dataenc             >= 0.13.0.4   \&\& < 0.15@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dataenc depenency"
+		-i "${S}/${PN}.cabal" || die "Could not loosen dataenc dependency"
+	sed -e 's@blaze-builder       >= 0.2.1      && < 0.3@blaze-builder       >= 0.2.1      \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency"
 }
