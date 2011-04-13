@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit darcs haskell-cabal
@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/hamlet-0.6*
+RDEPEND="<dev-haskell/hamlet-0.8
 		=dev-haskell/happstack-server-9999
 		dev-haskell/text
 		>=dev-lang/ghc-6.8.2"
