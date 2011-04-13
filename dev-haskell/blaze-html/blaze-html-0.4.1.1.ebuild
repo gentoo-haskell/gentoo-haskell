@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-builder-0.2*
+RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-haskell/text-0.10
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
