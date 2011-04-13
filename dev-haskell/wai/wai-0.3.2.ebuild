@@ -18,9 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-builder-0.2*
+RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/network-2.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@blaze-builder          >= 0.2      && < 0.3@blaze-builder          >= 0.2      \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
+}
