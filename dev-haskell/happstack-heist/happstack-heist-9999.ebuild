@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit darcs haskell-cabal
@@ -19,10 +19,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-9999
+RDEPEND="<dev-haskell/blaze-builder-0.4
+		=dev-haskell/happstack-server-9999
 		=dev-haskell/heist-0.5*
-		=dev-haskell/hexpat-0.19*
 		=dev-haskell/mtl-2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@blaze-builder >= 0.2 && <0.3@blaze-builder >= 0.2 \&\& <0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
+}
