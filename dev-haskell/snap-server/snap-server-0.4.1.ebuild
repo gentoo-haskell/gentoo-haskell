@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/attoparsec-0.8*
 		=dev-haskell/attoparsec-enumerator-0.2*
 		=dev-haskell/binary-0.5*
-		=dev-haskell/blaze-builder-0.2*
+		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		dev-haskell/bytestring-nums
 		dev-haskell/directory-tree
@@ -41,3 +41,8 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@blaze-builder >= 0.2.1.4 && <0.3@blaze-builder >= 0.2.1.4 \&\& <0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
+}
