@@ -23,6 +23,7 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/fgl
 		dev-haskell/happy
 		dev-haskell/mtl
+		app-text/pandoc
 		dev-haskell/readline
 		dev-haskell/regex-compat
 		dev-haskell/utf8-string
@@ -30,7 +31,9 @@ DEPEND=">=dev-lang/ghc-6.10
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
-PATCHES=("${FILESDIR}/jhc-9999-ghc-7-build.patch")
+PATCHES=("${FILESDIR}/jhc-9999-ghc-7-build.patch"
+		"${FILESDIR}/jhc-9999-fix-make-install.patch"
+		"${FILESDIR}/jhc-9999-mingw.patch")
 
 src_prepare() {
 	base_src_prepare
