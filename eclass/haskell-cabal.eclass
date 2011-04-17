@@ -46,6 +46,20 @@
 
 inherit ghc-package multilib
 
+# @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
+# @DESCRIPTION:
+# User-specified additional parameters passed to 'setup configure'.
+# example: /etc/make.conf: CABAL_EXTRA_CONFIGURE_FLAGS=--enable-shared
+: ${CABAL_EXTRA_CONFIGURE_FLAGS:=}
+
+# @ECLASS-VARIABLE: GHC_BOOTSTRAP_FLAGS
+# @DESCRIPTION:
+# User-specified additional parameters for ghc when building
+# _only_ 'setup' binary bootstrap.
+# example: /etc/make.conf: GHC_BOOTSTRAP_FLAGS=-dynamic to make
+# linking 'setup' faster.
+: ${GHC_BOOTSTRAP_FLAGS:=}
+
 HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install"
 
 case "${EAPI:-0}" in
@@ -171,8 +185,10 @@ cabal-bootstrap() {
 		cabalpackage=Cabal
 	fi
 	einfo "Using cabal-$(cabal-version)."
-	$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" -o setup \
-		|| die "compiling ${setupmodule} failed"
+	$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" \
+		${GHC_BOOTSTRAP_FLAGS} \
+		"$@" \
+		-o setup || die "compiling ${setupmodule} failed"
 }
 
 cabal-mksetup() {
@@ -265,6 +281,7 @@ cabal-configure() {
 		--datasubdir=${P}/ghc-$(ghc-version) \
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
+		${CABAL_EXTRA_CONFIGURE_FLAGS} \
 		"$@" || die "setup configure failed"
 }
 
