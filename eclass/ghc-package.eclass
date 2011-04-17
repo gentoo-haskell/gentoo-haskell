@@ -282,7 +282,6 @@ ghc-unregister-pkg() {
 	local localpkgconf
 	local i
 	local pkg
-	local protected
 	local unregister_flag
 	localpkgconf="$(ghc-confdir)/$1"
 
@@ -292,23 +291,15 @@ ghc-unregister-pkg() {
 		unregister_flag="--remove-package"
 	fi
 
-	for i in $(ghc-confdir)/*.conf; do
-		[[ "${i}" != "${localpkgconf}" ]] && protected="${protected} $(ghc-listpkg ${i})"
-	done
-	# protected now contains the packages that cannot be unregistered yet
-
 	if [[ -f "${localpkgconf}" ]]; then
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
-			if $(ghc-elem "${pkg}" "${protected}"); then
-				einfo "Package ${pkg} is protected."
-			elif ! ghc-package-exists "${pkg}"; then
-				:
-				# einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
-			else
-				ebegin "Unregistering ${pkg} "
-				$(ghc-getghcpkg) "${unregister_flag}" "${pkg}" --force > /dev/null
-				eend $?
-			fi
+		  if ! ghc-package-exists "${pkg}"; then
+			einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
+		  else
+			ebegin "Unregistering ${pkg} "
+			$(ghc-getghcpkg) "${unregister_flag}" "${pkg}" --force > /dev/null
+			eend $?
+		  fi
 		done
 	fi
 }
