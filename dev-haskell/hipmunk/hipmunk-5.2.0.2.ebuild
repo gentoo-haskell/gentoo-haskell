@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 MY_PN="Hipmunk"
 MY_P="${MY_PN}-${PV}"
@@ -32,4 +32,5 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	sed -e 's/containers >= 0.1 && < 0.4/containers >= 0.1 \&\& < 0.5/' \
 	    -i "${S}/${MY_PN}.cabal" || die
+	epatch "${FILESDIR}/Hipmunk-5.2.0.2-fix-haddock.patch"
 }
