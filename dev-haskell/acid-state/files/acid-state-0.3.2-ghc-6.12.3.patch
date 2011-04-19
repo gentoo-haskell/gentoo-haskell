@@ -1,0 +1,12 @@
+--- acid-state-0.3.2-orig/src/Data/Acid/Local.hs	2011-04-17 22:20:18.000000000 +1000
++++ acid-state-0.3.2/src/Data/Acid/Local.hs	2011-04-19 22:23:19.445020927 +1000
+@@ -68,7 +68,8 @@
+ 
+ eventsToMethods :: [Event st] -> [MethodContainer st]
+ eventsToMethods = map worker
+-    where worker (UpdateEvent fn) = Method (unUpdate . fn)
++    where worker :: Event st -> MethodContainer st
++          worker (UpdateEvent fn) = Method (unUpdate . fn)
+           worker (QueryEvent fn)  = Method (\ev -> do st <- State.get
+                                                       return (runReader (unQuery $ fn ev) st)
+                                            )
