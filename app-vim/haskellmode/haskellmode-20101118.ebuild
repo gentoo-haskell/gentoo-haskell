@@ -23,7 +23,6 @@ RDEPEND=">=dev-lang/ghc-6.6[doc]
 VIM_PLUGIN_HELPFILES="haskellmode"
 VIM_PLUGIN_MESSAGES="filetype"
 
-
 pkg_postinst() {
 	vim-plugin_pkg_postinst
 	elog "You must set 'g:haddock_browser' to the path of your preferred browser, and"
