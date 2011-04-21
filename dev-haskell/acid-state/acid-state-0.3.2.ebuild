@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Add ACID guarantees to any serializable Haskell data structure."
 HOMEPAGE="http://acid-state.seize.it/"
@@ -25,7 +25,4 @@ RDEPEND="dev-haskell/binary
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-ghc-6.12.3.patch"
-}
+PATCHES=("${FILESDIR}/${P}-ghc-6.12.3.patch")
