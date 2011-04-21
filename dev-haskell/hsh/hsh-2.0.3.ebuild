@@ -27,5 +27,4 @@ RDEPEND="dev-haskell/hslogger
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
-
 S="${WORKDIR}/${MY_P}"
