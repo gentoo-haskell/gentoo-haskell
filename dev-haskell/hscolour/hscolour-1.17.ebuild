@@ -18,9 +18,9 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6"
 
 src_install() {
-    cabal_src_install
-    if use doc; then
-        dohtml index.html hscolour.css
-        dodoc README
-    fi
+	cabal_src_install
+	if use doc; then
+		dohtml index.html hscolour.css
+		dodoc README
+	fi
 }
