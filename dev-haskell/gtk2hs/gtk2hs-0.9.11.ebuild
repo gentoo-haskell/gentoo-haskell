@@ -28,7 +28,7 @@ RDEPEND=">=dev-lang/ghc-6.2
 
 DEPEND="${RDEPEND}
 		doc? ( <dev-haskell/haddock-2.0 )"
-        # Can't use haddock-2
+		# Can't use haddock-2
 
 src_compile() {
 	econf \
