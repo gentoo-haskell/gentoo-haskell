@@ -25,7 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cd "${S}"
 	epatch "${FILESDIR}/${PN}-0.2-fix-haddock.patch"
 	sed -e 's@mtl        == 1.1.\*@mtl        >= 1.1 \&\& < 2.1@' \
 		-e 's@containers >= 0.2 && < 0.4@containers >= 0.2 \&\& < 0.5@' \
