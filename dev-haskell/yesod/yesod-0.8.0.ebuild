@@ -16,26 +16,31 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="production"
+IUSE=""
 
-RDEPEND=">=dev-haskell/hamlet-0.7.3
-		>=dev-haskell/hjsmin-0.0.13
-		=dev-haskell/mime-mail-0.1*
-		=dev-haskell/monad-peel-0.1*
+RDEPEND="=dev-haskell/attoparsec-text-0.8*
+		<dev-haskell/blaze-builder-0.4
+		<dev-haskell/cabal-1.11
+		=dev-haskell/direct-plugins-1.1*
+		=dev-haskell/hamlet-0.8*
+		<dev-haskell/hjsmin-0.1
+		=dev-haskell/http-types-0.6*
+		=dev-haskell/mime-mail-0.3*
+		=dev-haskell/monad-control-0.2*
 		<dev-haskell/parsec-4
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/wai-0.3*
-		<dev-haskell/wai-extra-0.4
-		!production? ( =dev-haskell/wai-handler-devel-0.2* )
-		=dev-haskell/warp-0.3*
-		=dev-haskell/yesod-auth-0.3*
-		>=dev-haskell/yesod-core-0.7.0.2
-		=dev-haskell/yesod-form-0.0*
-		=dev-haskell/yesod-json-0.0*
-		=dev-haskell/yesod-persistent-0.0*
-		=dev-haskell/yesod-static-0.0*
+		=dev-haskell/unix-compat-0.2*
+		=dev-haskell/wai-0.4*
+		=dev-haskell/wai-extra-0.4*
+		=dev-haskell/warp-0.4*
+		=dev-haskell/yesod-auth-0.4*
+		=dev-haskell/yesod-core-0.8*
+		=dev-haskell/yesod-form-0.1*
+		=dev-haskell/yesod-json-0.1*
+		=dev-haskell/yesod-persistent-0.1*
+		=dev-haskell/yesod-static-0.1*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
