@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
@@ -15,7 +17,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
-        dev-haskell/cabal"
+		dev-haskell/cabal"
 RDEPEND=""
 
 src_install() {
