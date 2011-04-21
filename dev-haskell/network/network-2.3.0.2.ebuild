@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit base haskell-cabal autotools
@@ -22,7 +22,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cd "${S}"
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
 }
