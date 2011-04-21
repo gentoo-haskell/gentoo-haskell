@@ -17,4 +17,3 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.4"
 
 S=${WORKDIR}/NewBinary
-
