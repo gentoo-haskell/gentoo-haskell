@@ -53,7 +53,7 @@ src_configure() {
 	mkdir -p $(basename "${exe}")
 	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
 	chmod +x "${exe}"
-	
+
 	haskell-cabal_src_configure --with-haddock="${exe}"
 }
 
