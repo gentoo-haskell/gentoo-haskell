@@ -36,7 +36,7 @@ src_unpack() {
 	# Fix for recent glib that changes the type of the gtype typedef:
 	sed -i -e 's/(CULong)/(CULong, CUInt)/' \
 		"${S}/tools/hierarchyGen/Hierarchy.chs.template"
-	
+
 	# Fix for recent return type changes in librsvg-2.22.3:
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-0.9.12.1-librsvg-2.22.3.patch"
@@ -66,7 +66,6 @@ src_compile() {
 		$(use_enable doc docs) \
 		$(use_enable profile profiling) \
 		|| die "Configure failed"
-
 
 	# parallel build doesn't work, so specify -j1
 	emake -j1 || die "Make failed"
