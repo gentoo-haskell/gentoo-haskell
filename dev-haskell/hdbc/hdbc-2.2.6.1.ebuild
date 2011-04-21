@@ -27,7 +27,6 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/time-1.1.2.4
 		dev-haskell/utf8-string"
 
-
 DEPENDV="$(get_version_component_range 1-2)"
 PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
