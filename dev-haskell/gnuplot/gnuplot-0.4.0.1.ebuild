@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
@@ -23,11 +25,8 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-src_unpack() {
-    unpack ${A}
-
-    # Remove restrictions on time
-    sed -i -e 's/time >= 1.1 && < 1.2/time >= 1.1/' \
-                 "${S}/${PN}.cabal"
+src_prepare() {
+	# Remove restrictions on time
+	sed -i -e 's/time >= 1.1 && < 1.2/time >= 1.1/' \
+				"${S}/${PN}.cabal"
 }
-
