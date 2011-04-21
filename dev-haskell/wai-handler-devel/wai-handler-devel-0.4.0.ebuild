@@ -22,12 +22,13 @@ RDEPEND=">=dev-haskell/attoparsec-text-0.8.2
 		<dev-haskell/cmdargs-0.7
 		>=dev-haskell/enumerator-0.4.6
 		>=dev-haskell/hint-0.3.2.3
+		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
 		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/wai-0.3*
-		=dev-haskell/wai-extra-0.3*
-		=dev-haskell/warp-0.3*
+		=dev-haskell/wai-0.4*
+		=dev-haskell/wai-extra-0.4*
+		=dev-haskell/warp-0.4*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
