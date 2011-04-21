@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Form handling support for Yesod Web Framework"
-HOMEPAGE="http://docs.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,19 +22,15 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/data-default-0.2*
 		>=dev-haskell/email-validate-0.2.6
-		=dev-haskell/hamlet-0.7*
+		=dev-haskell/hamlet-0.8*
 		<dev-haskell/network-2.4
-		=dev-haskell/persistent-0.4*
+		=dev-haskell/persistent-0.5*
+		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/xss-sanitize-0.2*
-		=dev-haskell/yesod-core-0.7*
-		=dev-haskell/yesod-persistent-0.0.0*
+		=dev-haskell/yesod-core-0.8*
+		=dev-haskell/yesod-persistent-0.1*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder             >= 0.2.1    && < 0.3@blaze-builder             >= 0.2.1    \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}
