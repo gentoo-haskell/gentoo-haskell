@@ -63,4 +63,3 @@ src_install() {
 	# COPYING is installed by the Cabal eclass
 	dodoc README  README.html COPYRIGHT changelog
 }
-
