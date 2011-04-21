@@ -1,15 +1,17 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="profile haddock lib"
+EAPI="3"
+
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 MY_PN="Shellac-readline"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Readline backend module for Shellac"
-HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/Shellac-readline"
+HOMEPAGE="http://hackage.haskell.org/package/shellac-readline"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -17,7 +19,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.4.2
-		>=dev-haskell/shellac-0.9"
+RDEPEND=">=dev-haskell/shellac-0.9
+		>=dev-lang/ghc-6.8.2"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-0"
 
 S="${WORKDIR}/${MY_P}"
