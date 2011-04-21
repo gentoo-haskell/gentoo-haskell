@@ -20,4 +20,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/mtl
 		dev-haskell/parsec
 		>=dev-lang/ghc-6.8.1"
-
