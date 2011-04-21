@@ -20,13 +20,12 @@ IUSE="postgres sqlite3"
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/enumerator-0.4*
-		=dev-haskell/monad-peel-0.1*
+		=dev-haskell/monad-control-0.2*
 		<dev-haskell/parsec-4
-		=dev-haskell/pool-0.0*
+		=dev-haskell/pool-0.1*
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/web-routes-quasi-0.6*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
