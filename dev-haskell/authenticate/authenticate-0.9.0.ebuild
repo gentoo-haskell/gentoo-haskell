@@ -18,20 +18,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/base64-bytestring-0.1*
-		=dev-haskell/data-object-0.3*
-		=dev-haskell/data-object-json-0.3*
+RDEPEND="=dev-haskell/aeson-0.3*
+		=dev-haskell/attoparsec-0.8*
+		=dev-haskell/base64-bytestring-0.1*
+		<dev-haskell/blaze-builder-0.4
+		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/enumerator-0.4*
 		<dev-haskell/failure-0.2
-		=dev-haskell/http-enumerator-0.3*
+		=dev-haskell/http-enumerator-0.6*
+		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
 		=dev-haskell/rsa-1.0*
 		=dev-haskell/sha-1.4*
 		<dev-haskell/tagsoup-0.13
+		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		<dev-haskell/transformers-0.3
 		=dev-haskell/utf8-string-0.3*
-		=dev-haskell/wai-0.3*
-		=dev-haskell/wai-extra-0.3*
 		>=dev-haskell/xml-1.3.7
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
