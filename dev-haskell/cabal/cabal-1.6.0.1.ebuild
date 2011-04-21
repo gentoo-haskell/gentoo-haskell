@@ -36,7 +36,7 @@ src_unpack() {
 	# We're using the private copy of filepath:
 	sed -i -e 's/Build-Depends: filepath >= 1 && < 1.2//' \
 		-e '/Other-Modules:/a \
-        System.FilePath System.FilePath.Posix System.FilePath.Windows' \
+		System.FilePath System.FilePath.Posix System.FilePath.Windows' \
 		"${S}/Cabal.cabal"
 	# Note: do not replace spaces with tabs on the line above, it'll break
 	# things. You'll just have to put up with the repoman warning.

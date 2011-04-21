@@ -49,4 +49,3 @@ src_install() {
 	fi
 	dodoc changelog copyright README releaseNotes TODO
 }
-
