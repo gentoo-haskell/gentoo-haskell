@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Generic programming library with a sum of products view"
 HOMEPAGE="http://www.cs.uu.nl/wiki/GenericProgramming/InstantGenerics"
@@ -22,7 +22,4 @@ RDEPEND=">=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
-src_prepare() {
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-haddock.patch" || die "Could not patch ${PN}.cabal for haddock"
-}
+PATCHES=("${FILESDIR}/${P}-haddock.patch")
