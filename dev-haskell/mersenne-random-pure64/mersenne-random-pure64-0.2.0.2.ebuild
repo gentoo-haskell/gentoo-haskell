@@ -18,12 +18,11 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2.0"
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 
-    if use x86; then
-        # int-e's patch to improve 32-bit performance.
-        # this might be applicable to other arches as well, not sure
-        epatch "${FILESDIR}/${P}-double-for-32bits.patch"
-    fi
+	if use x86; then
+		# int-e's patch to improve 32-bit performance.
+		# this might be applicable to other arches as well, not sure
+		epatch "${FILESDIR}/${P}-double-for-32bits.patch"
+	fi
 }
-
