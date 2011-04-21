@@ -20,18 +20,15 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
+		=dev-haskell/case-insensitive-0.2*
 		=dev-haskell/enumerator-0.4*
+		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
+		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/wai-0.3*
-		>=dev-haskell/web-routes-0.23
+		=dev-haskell/wai-0.4*
 		=dev-haskell/zlib-bindings-0.0*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder >= 0.2.1.3 && < 0.3@blaze-builder >= 0.2.1.3 \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}
