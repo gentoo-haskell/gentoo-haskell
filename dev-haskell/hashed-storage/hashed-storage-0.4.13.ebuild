@@ -32,7 +32,7 @@ DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
 src_configure() {
-        cabal_src_configure $(cabal_flag test)
+	cabal_src_configure $(cabal_flag test)
 }
 
 src_install() {
