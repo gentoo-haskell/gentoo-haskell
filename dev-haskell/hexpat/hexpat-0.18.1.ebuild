@@ -25,4 +25,3 @@ RDEPEND=">=dev-haskell/list-0.4
 		dev-libs/expat"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
