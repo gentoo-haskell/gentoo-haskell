@@ -21,4 +21,3 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
-
