@@ -25,7 +25,6 @@ EAPI=1
 # no way in portage to specify a from-to range interval. thus, we depend on the
 # exact version.
 
-
 DEPEND="~dev-lang/ghc-6.10.4
 		>=dev-haskell/cabal-1.6.0.3
 		>=dev-haskell/cgi-3001.1.7.1

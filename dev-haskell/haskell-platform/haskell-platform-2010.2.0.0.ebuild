@@ -42,4 +42,3 @@ RDEPEND="~dev-lang/ghc-6.12.3
 		~dev-haskell/haddock-2.7.2"
 
 DEPEND="${RDEPEND}"
-
