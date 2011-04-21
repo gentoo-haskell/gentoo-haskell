@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
-HOMEPAGE="http://docs.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -20,25 +20,21 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
+		=dev-haskell/case-insensitive-0.2*
 		<dev-haskell/cereal-0.4
-		=dev-haskell/clientsession-0.4*
-		=dev-haskell/cookie-0.0*
+		=dev-haskell/clientsession-0.6*
+		=dev-haskell/cookie-0.2*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
-		=dev-haskell/hamlet-0.7*
-		=dev-haskell/monad-peel-0.1*
+		=dev-haskell/hamlet-0.8*
+		=dev-haskell/http-types-0.6*
+		=dev-haskell/monad-control-0.2*
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/wai-0.3*
-		=dev-haskell/wai-extra-0.3*
-		=dev-haskell/web-routes-0.23*
-		>=dev-haskell/web-routes-quasi-0.6.3.1
+		=dev-haskell/wai-0.4*
+		=dev-haskell/wai-extra-0.4*
+		=dev-haskell/web-routes-quasi-0.7*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder             >= 0.2.1    && < 0.3@blaze-builder             >= 0.2.1    \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}
