@@ -23,7 +23,9 @@ RDEPEND=">=dev-haskell/parsec-2
 		dev-haskell/xml
 		>=dev-lang/ghc-6.8.2
 		cgi? ( dev-haskell/json
-			dev-haskell/cgi )
+			dev-haskell/cgi
+			dev-haskell/utf8-string
+		)
 	"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
