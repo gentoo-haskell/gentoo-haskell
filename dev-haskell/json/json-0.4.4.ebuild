@@ -16,10 +16,22 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+generic +parsec +pretty"
 
 RDEPEND="dev-haskell/mtl
 		dev-haskell/parsec
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.10.4
+		generic? ( dev-haskell/syb )
+		parsec? ( dev-haskell/parsec )
+		pretty? ( dev-haskell/pretty )
+	"
+
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.0"
+
+src_configure() {
+	cabal_src_configure \
+		$(cabal_flag generic) \
+		$(cabal_flag parsec) \
+		$(cabal_flag pretty)
+}
