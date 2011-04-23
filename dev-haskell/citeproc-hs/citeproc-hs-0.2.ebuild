@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -14,7 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
+RDEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/hxt-8*
 		dev-haskell/mtl"
+
+DEPEND="${RDEPEND}"
