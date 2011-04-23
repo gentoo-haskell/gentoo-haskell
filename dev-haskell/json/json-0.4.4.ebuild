@@ -19,11 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+generic +parsec +pretty"
 
 RDEPEND="dev-haskell/mtl
-		dev-haskell/parsec
 		>=dev-lang/ghc-6.10.4
 		generic? ( dev-haskell/syb )
 		parsec? ( dev-haskell/parsec )
-		pretty? ( dev-haskell/pretty )
 	"
 
 DEPEND="${RDEPEND}
