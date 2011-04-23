@@ -16,10 +16,28 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="cgi test"
 
 RDEPEND=">=dev-haskell/parsec-2
+		dev-haskell/syb
 		dev-haskell/xml
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.8.2
+		cgi? ( dev-haskell/json
+			dev-haskell/cgi )
+	"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_configure() {
+	cabal_src_configure \
+		$(cabal_flag cgi) \
+		$(cabal_flag test)
+}
+
+src_install() {
+	cabal_src_install
+
+	# remove test and it's data
+	rm -f  "${ED}/usr/bin/texmath" 2> /dev/null
+	rm -rf "${ED}/usr/share/${P}"/ghc-*/tests 2> /dev/null
+}
