@@ -1,0 +1,37 @@
+Tue Nov 30 06:30:14 PST 2010  pho@cielonegro.org
+  * FIX #1845 (unconditional relative branch out of range)
+  
+  Don't use mmap on powerpc-apple-darwin as mmap doesn't support
+  reallocating but we need to allocate jump islands just after each
+  object images. Otherwise relative branches to jump islands can fail
+  due to 24-bits displacement overflow.
+diff -rN -u old-ghc/rts/Linker.c new-ghc/rts/Linker.c
+--- old-ghc/rts/Linker.c	2011-04-19 01:37:03.000000000 -0700
++++ new-ghc/rts/Linker.c	2011-04-19 01:37:04.000000000 -0700
+@@ -69,7 +69,15 @@
+ #include <sys/wait.h>
+ #endif
+ 
+-#if defined(linux_HOST_OS) || defined(freebsd_HOST_OS) || defined(dragonfly_HOST_OS) || defined(netbsd_HOST_OS) || defined(openbsd_HOST_OS) || defined(darwin_HOST_OS)
++#if defined(linux_HOST_OS    ) || defined(freebsd_HOST_OS) || \
++    defined(dragonfly_HOST_OS) || defined(netbsd_HOST_OS ) || \
++    defined(openbsd_HOST_OS  ) || \
++    ( defined(darwin_HOST_OS ) && !defined(powerpc_HOST_ARCH) )
++/* Don't use mmap on powerpc-apple-darwin as mmap doesn't support
++ * reallocating but we need to allocate jump islands just after each
++ * object images. Otherwise relative branches to jump islands can fail
++ * due to 24-bits displacement overflow.
++ */
+ #define USE_MMAP
+ #include <fcntl.h>
+ #include <sys/mman.h>
+@@ -1841,6 +1849,9 @@
+    int fd;
+ #else
+    FILE *f;
++#  if defined(darwin_HOST_OS)
++   int misalignment;
++#  endif
+ #endif
+    IF_DEBUG(linker, debugBelch("loadObj %s\n", path));
+ 

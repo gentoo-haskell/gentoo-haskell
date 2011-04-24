@@ -1,6 +1,4 @@
-# this script is expected to be sourced by ghc ebuilds built against libgmp.so.3 library
-#
-# > source "${FILESDIR}/ghc-apply-gmp-hack"
+# This script is expected to be sourced by ghc ebuilds built against libgmp.so.3 library
 #
 # What it does and why it works:
 #  > GMP 5.0 is upwardly source and binary compatible with 4.x, and 3.x versions,
@@ -24,7 +22,7 @@
 #
 # Blames should be directed to Sergei Trofimovich <slyfox@gentoo.org>
 
-# should be used:
+# should be used as:
 # > inherit multilib
 # > ...
 # > # somewhere in src_unpack() { # as early as possible, right after unpacking source/binary

@@ -1,0 +1,43 @@
+Strip versioning components from *HOST for Darwin and Solaris
+
+--- aclocal.m4
++++ aclocal.m4
+@@ -1358,6 +1358,12 @@
+   freebsd*)
+     $2="freebsd"
+     ;;
++  darwin*)
++    $2="darwin"
++	;;
++  solaris2.*)
++    $2="solaris2"
++	;;
+   *)
+     echo "Unknown OS $1"
+     exit 1
+--- configure.ac
++++ configure.ac
+@@ -227,6 +227,7 @@
+ fi
+ build=`echo "$build" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [build=`echo "$build" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
++build=`echo "$build" | sed -e 's/-darwin.*$/-darwin/' -e 's/-solaris2.*$/-solaris/'`
+ 
+ # We have to run these unconditionally, but we may discard their
+ # results in the following code
+@@ -262,6 +263,7 @@
+ fi
+ host=`echo "$host" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [host=`echo "$host" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
++host=`echo "$host" | sed -e 's/-darwin.*$/-darwin/' -e 's/-solaris2.*$/-solaris/'`
+ 
+ if test "$host_alias" = ""
+ then
+@@ -284,6 +286,7 @@
+ fi
+ target=`echo "$target" | sed -e 's/linux-gnu/linux/' -e 's/-pc-/-unknown-/' -e 's/-gentoo-/-unknown-/' -e 's/freebsd.*$/freebsd/'`
+ [target=`echo "$target" | sed -e 's/i[4-6]86/i386/'`] # escaping square bracket
++target=`echo "$target" | sed -e 's/-darwin.*$/-darwin/' -e 's/-solaris2.*$/-solaris/'`
+ 
+ if test "$target_alias" = ""
+ then

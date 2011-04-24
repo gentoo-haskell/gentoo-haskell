@@ -1,0 +1,34 @@
+http://hackage.haskell.org/trac/ghc/attachment/ticket/3260/mach-o-relocation-limit.patch
+
+Sat May  8 23:24:11 JST 2010  pho@cielonegro.org
+  * Work around for Mach-O relocation limit
+  
+  Mach-O has a limitation on the length of relocation addresses. No
+  segments can be larger than 2^24 - 1 bytes (approx 16 MiB; See
+  /usr/include/mach-o/reloc.h). Static GHCi libraries are merged large
+  objects so they tend to exceed this limit.
+
+--- rules/build-package-way.mk
++++ rules/build-package-way.mk
+@@ -83,8 +83,21 @@
+ ifneq "$4" "0"
+ BINDIST_LIBS += $$($1_$2_GHCI_LIB)
+ endif
++
++ifeq "$$(darwin_HOST_OS)" "1"
++# Mach-O has a limitation on the length of relocation addresses. No
++# segments can be larger than 2^24 - 1 bytes (approx 16 MiB; See
++# /usr/include/mach-o/reloc.h). Static GHCi libraries are merged large
++# objects so they tend to exceed this limit.
++$$($1_$2_GHCI_LIB) : $$($1_$2_$3_HS_OBJS) $$($1_$2_$3_CMM_OBJS) $$($1_$2_$3_C_OBJS) $$($1_$2_$3_S_OBJS) $$($1_$2_EXTRA_OBJS)
++	"$$(LD)" -r -o $$@ $$(EXTRA_LD_OPTS) $$($1_$2_$3_HS_OBJS) $$($1_$2_$3_CMM_OBJS) $$($1_$2_$3_C_OBJS) $$($1_$2_$3_S_OBJS) `$$($1_$2_$3_MKSTUBOBJS)` $$($1_$2_EXTRA_OBJS) \
++		|| ( echo "Warning: creating dummy $$@" && \
++			 touch empty.c && \
++		     "$(CC)" $(SRC_CC_OPTS) $(CONF_CC_OPTS) -c empty.c -o $$@ )
++else
+ $$($1_$2_GHCI_LIB) : $$($1_$2_$3_HS_OBJS) $$($1_$2_$3_CMM_OBJS) $$($1_$2_$3_C_OBJS) $$($1_$2_$3_S_OBJS) $$($1_$2_EXTRA_OBJS)
+ 	"$$(LD)" -r -o $$@ $$(EXTRA_LD_OPTS) $$($1_$2_$3_HS_OBJS) $$($1_$2_$3_CMM_OBJS) $$($1_$2_$3_C_OBJS) $$($1_$2_$3_S_OBJS) `$$($1_$2_$3_MKSTUBOBJS)` $$($1_$2_EXTRA_OBJS)
++endif
+ 
+ $(call all-target,$1_$2,$$($1_$2_GHCI_LIB))
+ endif
