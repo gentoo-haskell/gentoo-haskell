@@ -22,5 +22,5 @@ RDEPEND="=dev-haskell/alsa-core-0.5*
 		>=dev-lang/ghc-6.10.1
 		media-libs/alsa-lib"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
-		dev-haskell/c2hs"
+		dev-haskell/c2hs
+		>=dev-haskell/cabal-1.6"
