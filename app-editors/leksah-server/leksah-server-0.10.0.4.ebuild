@@ -27,9 +27,9 @@ RDEPEND="=dev-haskell/binary-0.5*
 		=dev-haskell/ltk-0.10*
 		<dev-haskell/mtl-2.1
 		<dev-haskell/network-3.0
-		<dev-haskell/parsec-2.2
+		<dev-haskell/parsec-3.2
 		>=dev-haskell/process-leksah-1.0.1.3
-		dev-haskell/time
+		<dev-haskell/time-1.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
