@@ -18,8 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/binary
+RDEPEND=">=dev-haskell/cereal-0.3.2.0
 		dev-haskell/mtl
+		>=dev-haskell/safecopy-0.5
 		dev-haskell/stm
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
