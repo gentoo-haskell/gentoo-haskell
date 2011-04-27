@@ -24,9 +24,3 @@ RDEPEND="dev-haskell/hunit
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-src_prepare() {
-	if has_version ">=dev-haskell/quickcheck-2.4.0.0"; then
-		epatch "${FILESDIR}/${P}-quickcheck-2.4.patch"
-	fi
-}
