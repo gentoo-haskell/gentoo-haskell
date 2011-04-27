@@ -24,8 +24,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		dev-haskell/regex-compat
 		>=dev-lang/ghc-6.10.1"
-
-src_prepare() {
-	sed -e 's@base >= 2 && < 4@base >= 2 \&\& < 5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen base dependency"
-}
