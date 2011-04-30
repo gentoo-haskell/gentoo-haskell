@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.8.5.3
 		>=dev-haskell/blaze-builder-0.2.1.4
+		dev-haskell/blaze-textual
 		dev-haskell/deepseq
 		dev-haskell/hashable
 		dev-haskell/mtl
@@ -27,6 +28,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3
 		dev-haskell/time
 		>=dev-haskell/unordered-containers-0.1.2.0
 		>=dev-haskell/vector-0.7
-		>=dev-lang/ghc-6.12.1"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"

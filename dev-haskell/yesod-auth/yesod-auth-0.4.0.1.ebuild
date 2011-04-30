@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Form handling support for Yesod Web Framework"
+DESCRIPTION="Authentication for Yesod."
 HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,19 +18,25 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/blaze-builder-0.4
+RDEPEND="=dev-haskell/aeson-0.3*
+		=dev-haskell/authenticate-0.9*
 		=dev-haskell/blaze-html-0.4*
-		=dev-haskell/data-default-0.2*
-		>=dev-haskell/email-validate-0.2.6
+		=dev-haskell/control-monad-attempt-0.3*
 		=dev-haskell/hamlet-0.8*
-		<dev-haskell/network-2.4
+		=dev-haskell/http-enumerator-0.6*
+		=dev-haskell/mime-mail-0.3*
 		=dev-haskell/persistent-0.5*
-		<dev-haskell/text-1.0
-		<dev-haskell/time-1.3
+		=dev-haskell/persistent-template-0.5*
+		<dev-haskell/puremd5-2.2
+		=dev-haskell/sha-1.4*
+		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/xss-sanitize-0.2*
+		=dev-haskell/wai-0.4*
+		=dev-haskell/web-routes-quasi-0.7*
 		=dev-haskell/yesod-core-0.8*
+		=dev-haskell/yesod-form-0.1*
+		=dev-haskell/yesod-json-0.1*
 		=dev-haskell/yesod-persistent-0.1*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.6.0"
