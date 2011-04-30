@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Conversion of LaTeX math formulas to MathML."
 HOMEPAGE="http://github.com/jgm/texmath"
@@ -29,6 +29,8 @@ RDEPEND=">=dev-haskell/parsec-2
 	"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/0001-texmath-fix-test-failure-on-UTF-8-incompatible-local.patch")
 
 src_configure() {
 	cabal_src_configure \
