@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Authentication for Yesod."
-HOMEPAGE="http://docs.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -32,6 +32,7 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.4*
+		=dev-haskell/web-routes-quasi-0.7*
 		=dev-haskell/yesod-core-0.8*
 		=dev-haskell/yesod-form-0.1*
 		=dev-haskell/yesod-json-0.1*
