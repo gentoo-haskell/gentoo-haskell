@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Robust, reliable performance measurement and analysis"
 HOMEPAGE="http://bitbucket.org/bos/criterion"
@@ -31,12 +31,8 @@ RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_compile() {
-	if use chart; then
-		CABAL_CONFIGURE_FLAGS="--flags=chart"
-	else
-		CABAL_CONFIGURE_FLAGS="--flags=-chart"
-	fi
+PATCHES=("${FILESDIR}/criterion-0.5.0.8-ghc-6.12.3-build-fix.patch")
 
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure $(cabal_flag chart)
 }
