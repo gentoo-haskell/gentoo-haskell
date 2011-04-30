@@ -21,13 +21,14 @@ IUSE=""
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/data-default-0.2*
-		>=dev-haskell/email-validate-0.2.6
+		=dev-haskell/email-validate-0.2*
 		=dev-haskell/hamlet-0.8*
 		<dev-haskell/network-2.4
 		=dev-haskell/persistent-0.5*
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
+		=dev-haskell/web-routes-quasi-0.7*
 		=dev-haskell/xss-sanitize-0.2*
 		=dev-haskell/yesod-core-0.8*
 		=dev-haskell/yesod-persistent-0.1*
