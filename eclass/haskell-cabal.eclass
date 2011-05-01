@@ -139,21 +139,9 @@ cabal-version() {
 			# of this package itself.
 			_CABAL_VERSION_CACHE="${PV}"
 		elif [[ "${CABAL_FROM_GHC}" ]]; then
-			# We can't assume there's a version of Cabal installed by ebuild as
-			# this might be a first time install of GHC (for packages that
-			# use the shipped Cabal like haskell-updater).
-
-			# The user is likely to only have one version of Cabal, provided
-			# by GHC. Note that dev-haskell/cabal can be a dummy package, only
-			# using the version provided by GHC. If the user has another version
-			# of Cabal too (more recent than the one GHC provides through
-			# dev-haskell/cabal, or possibly older if he used an old
-			# Cabal package) the most recent is used (expected to be the last
-			# one in the ghc-pkg output).
-			_CABAL_VERSION_CACHE="$(ghc-pkg field Cabal version | tail -n 1)"
-
-			# Strip out the "version: " prefix
-			_CABAL_VERSION_CACHE="${_CABAL_VERSION_CACHE#"version: "}"
+			local cabal_package=$(echo "$(ghc-libdir)"/Cabal-*)
+			# /path/to/ghc/Cabal-${VER} -> ${VER}
+			_CABAL_VERSION_CACHE="${cabal_package/*Cabal-/}"
 		else
 			# We ask portage, not ghc, so that we only pick up
 			# portage-installed cabal versions.
