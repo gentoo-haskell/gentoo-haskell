@@ -49,8 +49,8 @@ installMan() {
 	doman "${S}/man/man1/${prog}.1"
 }
 
-src_compile() {
-	cabal_src_compile \
+src_configure() {
+	cabal_src_configure \
 		$(cabal_flag highlight highlighting) \
 		$(cabal_flag test tests)
 }
