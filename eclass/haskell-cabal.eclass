@@ -388,6 +388,17 @@ cabal_src_configure() {
 
 # exported function: cabal-style bootstrap configure and compile
 cabal_src_compile() {
+	# it's a common mistake when one bumps ebuild to EAPI="2" (and upper)
+	# and forgets to separate src_compile() to src_configure()/src_compile().
+	# Such error leads to default src_configure and we lose all passed flags.
+	if ! has "${EAPI:-0}" 0 1; then
+		local passed_flag
+		for passed_flag in "$@"; do
+			[[ ${passed_flag} == --flags=* ]] && \
+				eqawarn "Cabal option '${passed_flag}' has effect only in src_configure()"
+		done
+	fi
+
 	if ! cabal-is-dummy-lib; then
 		has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure "$@"
 		cabal-build
