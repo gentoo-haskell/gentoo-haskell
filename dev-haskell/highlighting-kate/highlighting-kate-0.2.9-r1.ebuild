@@ -25,7 +25,6 @@ RDEPEND="dev-haskell/parsec
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-src_compile() {
-	cabal_src_compile \
-	  $(cabal_flag executable)
+src_configure() {
+	cabal_src_configure $(cabal_flag executable)
 }
