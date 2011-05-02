@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 
 SITEFILE="60${PN}-gentoo.el"
 
-src_compile() {
+src_configure() {
 	threaded_flag=""
 	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
 		threaded_flag="--flags=threaded"
@@ -36,7 +36,11 @@ src_compile() {
 		threaded_flag="--flags=-threaded"
 		einfo "$P will be built without threads support"
 	fi
-	cabal_src_compile $threaded_flag
+	cabal_src_configure $threaded_flag
+}
+
+src_compile() {
+	cabal_src_compile
 
 	use emacs && elisp-compile data/hs-lint.el
 }
