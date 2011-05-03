@@ -123,6 +123,14 @@ ghc-saneghc() {
 	return
 }
 
+# @FUNCTION: ghc-supports-shared-libraries
+# @DESCRIPTION:
+# checks if ghc is built with support for building
+# shared libraries (aka '-dynamic' option)
+ghc-supports-shared-libraries() {
+	$(ghc-getghc) --info | grep "RTS ways" | grep -q "dyn"
+}
+
 # @FUNCTION: ghc-extractportageversion
 # @DESCRIPTION:
 # extract the version of a portage-installed package

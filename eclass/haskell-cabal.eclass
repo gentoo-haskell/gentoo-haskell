@@ -173,10 +173,20 @@ cabal-bootstrap() {
 		cabalpackage=Cabal
 	fi
 	einfo "Using cabal-$(cabal-version)."
-	$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" \
-		${GHC_BOOTSTRAP_FLAGS} \
-		"$@" \
-		-o setup || die "compiling ${setupmodule} failed"
+
+	make_setup() {
+		$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" \
+			${GHC_BOOTSTRAP_FLAGS} \
+			"$@" \
+			-o setup
+	}
+	if $(ghc-supports-shared-libraries); then
+		# some custom build systems might use external libraries,
+		# for which we don't have shared libs, so keep static fallback
+		make_setup -dynamic "$@" || make_setup "$@" || die "compiling ${setupmodule} failed"
+	else
+		make_setup "$@" || die "compiling ${setupmodule} failed"
+	fi
 }
 
 cabal-mksetup() {
@@ -257,6 +267,12 @@ cabal-configure() {
 	# into			/usr/share/${P}/ghc-x.y/doc/
 	# rather than	/usr/share/doc/${PF}/
 	# Because we can only set the datadir, not the docdir.
+
+	# We build shared version of our Cabal where ghc ships it's shared
+	# version of it. We will link ./setup as dynamic binary againt Cabal later.
+	[[ ${CATEGORY}/${PN} == "dev-haskell/cabal" ]] && \
+		$(ghc-supports-shared-libraries) && \
+			cabalconf="${cabalconf} --enable-shared"
 
 	./setup configure \
 		--ghc --prefix="${EPREFIX}"/usr \
