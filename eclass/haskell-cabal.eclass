@@ -246,6 +246,11 @@ cabal-configure() {
 		cabalconf="${cabalconf} --disable-library-for-ghci"
 	fi
 
+	# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
+	# so translate LDFLAGS to ghc parameters (without filtering)
+	local flag
+	for flag in $LDFLAGS; do cabalconf="${cabalconf} --ghc-option=-optl$flag"; done
+
 	if version_is_at_least "1.4" "$(cabal-version)"; then
 		# disable executable stripping for the executables, as portage will
 		# strip by itself, and pre-stripping gives a QA warning.
@@ -385,11 +390,6 @@ haskell-cabal_src_configure() {
 		pushd "${S}" > /dev/null
 
 		cabal-bootstrap
-
-		ghc_flags=""
-		# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
-		# so translate LDFLAGS to ghc parameters (without filtering)
-		for flag in $LDFLAGS; do ghc_flags="${ghc_flags} --ghc-option=-optl$flag"; done
 
 		cabal-configure $ghc_flags "$@"
 
