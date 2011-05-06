@@ -30,11 +30,6 @@
 # r.e. bug 317547
 >=dev-haskell/time-1.2
 
-# Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2010)
-# Some packages will certainly break with mtl-2. We need to find them
-# and fix upstream.
->=dev-haskell/mtl-2.0.0.0
-
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
 # Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
