@@ -40,6 +40,7 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-emacs.patch
+	epatch "${FILESDIR}"/${P}-fix-build-failure.patch
 	cabal-mksetup
 }
 
