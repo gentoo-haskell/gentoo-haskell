@@ -26,5 +26,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
-	cp "${FILESDIR}/Setup.hs" "${S}"
+	cabal-mksetup
 }
