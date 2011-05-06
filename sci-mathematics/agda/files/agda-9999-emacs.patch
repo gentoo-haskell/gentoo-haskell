@@ -1,6 +1,14 @@
 --- agda-9999-orig/Agda.cabal	2011-05-05 00:13:25.000000000 +1000
-+++ agda-9999/Agda.cabal	2011-05-05 19:02:47.552031535 +1000
-@@ -298,16 +298,3 @@
++++ agda-9999/Agda.cabal	2011-05-06 22:24:08.748351401 +1000
+@@ -40,7 +40,6 @@
+                     doc/release-notes/*.txt
+ data-dir:           src/data
+ data-files:         Agda.css
+-                    emacs-mode/*.el
+                     EpicInclude/AgdaPrelude.e
+                     EpicInclude/stdagda.c
+                     EpicInclude/stdagda.h
+@@ -298,16 +297,3 @@
      ghc-options:    -fwarn-dodgy-exports
                      -fwarn-wrong-do-bind
    ghc-prof-options: -auto-all
