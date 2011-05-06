@@ -13,13 +13,6 @@
 =dev-haskell/happstack-util-9999
 =dev-haskell/happstack-wai-9999
 
-# Ivan Miljenovic  (1 Jan 2011)
-# New HXT is even more split up and thus breaks even more packages
-=dev-haskell/hxt-9*
-=dev-haskell/hxt-charproperties-9*
-=dev-haskell/hxt-regex-xmlschema-9*
-=dev-haskell/hxt-unicode-9*
-
 # Lennart Kolmodin <kolmodin@gentoo.org> (27 Sep 2010)
 # Mask GHC 7 for testing.
 # Unmasking this means many things will probably break in your system.
