@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd projects/lambdaman
-ghc --make -o lambdaman -O -no-user-package-conf -package SHA Main.hs
+ghc --make -o lambdaman -O -no-user-package-conf -package SHA -Wall Main.hs
 err=$?
 cd ../..
 if [[ -f projects/lambdaman/lambdaman ]] ; then

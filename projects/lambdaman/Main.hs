@@ -9,20 +9,20 @@
 
 module Main ( main ) where
 
-import Control.Monad ( forM, forM_, guard )
-import Data.List ( isSuffixOf )
-import System.Directory ( getCurrentDirectory, getDirectoryContents, doesFileExist )
-import System.Environment ( getEnvironment )
-import Data.Maybe ( catMaybes, listToMaybe, isNothing, isJust )
-import qualified Data.Digest.Pure.SHA as D ( Digest, showDigest, sha1, sha256 )
-import qualified Data.ByteString.Char8 as C
+import Control.Monad ( forM, filterM )
+import Data.List ( isSuffixOf, (\\) )
+import System.Directory ( getDirectoryContents, doesFileExist )
+import System.Posix.Files (getFileStatus, isDirectory)
+
+import Data.Maybe ( catMaybes, listToMaybe, isNothing )
+import qualified Data.Digest.Pure.SHA as D ( Digest, sha1 )
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
 import System.FilePath ( (</>), takeFileName, takeBaseName, makeRelative )
 import System.Process ( readProcess )
 
-import Debug.Trace
+-- import Debug.Trace
 
 type Manifest = [MDigest]
 data MDigest = MDigest {
@@ -81,7 +81,7 @@ findManifests :: Repo -> [(FilePath, Repo)]
 findManifests d@(Dir _ files) = cwd ++ recurse
   where
   recurse = concat [ findManifests d' | d'@(Dir _ _) <- files ]
-  cwd = [ (fn,d) | f@(File fn _ _) <- files, takeFileName fn == "Manifest" ]
+  cwd = [ (fn,d) | File fn _ _ <- files, takeFileName fn == "Manifest" ]
 
 verifyManifests :: [FilePath] -> (Manifest, Repo) -> [String]
 verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
@@ -100,7 +100,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
 
     missingDigests (Dir _ files) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
-      | f@(File fn fs digest) <- files
+      | File fn _fs _digest <- files
       , takeBaseName fn /= "Manifest" -- manifests are never included in the manifest
       , isNothing (lookupMani fn)
       , not ("/ChangeLog" `isSuffixOf` fn)   -- ChangeLog is not part of the manifest
@@ -109,7 +109,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
 
     invalidEbuildDigests (Dir _ files) = -- look for incorrect filesize or manifest inconsistencies
       [ "Invalid Manifest entry for file " ++ fn
-      | f@(File fn fs sha1) <- files
+      | File fn fs sha1 <- files
       , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return (lookupMani fn)
       , fs /= size || digest /= show sha1
       ]
@@ -138,6 +138,26 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       , not (inGit fullName)
       ]
 
+-- returns (added cats, removed cats)
+cats_status :: FilePath -> IO ([FilePath], [FilePath])
+cats_status cats_file =
+    do -- check for 'categories' consistency
+       let banlist = [ "."
+                     , ".."
+                     , ".git"
+                     , ".hackport"
+                     , "eclass"
+                     , "profiles"
+                     , "projects"
+                     ]
+
+       known_cats <- readFile cats_file >>= return . lines
+       found_cats <- do entries <- getDirectoryContents "."
+                        dirs    <- filterM ((isDirectory `fmap`) . getFileStatus) entries
+                        return $ filter (`notElem` banlist) dirs
+
+       return (known_cats \\ found_cats, found_cats \\ known_cats)
+
 ignore_git :: Repo -> Repo
 ignore_git (Dir fn files) = Dir fn (catMaybes (map recursive files))
   where
@@ -163,4 +183,10 @@ main = do
     _ -> do putStrLn "Naughty naughty!"
             mapM_ putStrLn digestErrors
             putStrLn $ show (length digestErrors) ++ " error(s) found."
+
+  (gone_cats, new_cats) <- cats_status ("profiles" </> "categories")
+
+  mapM_ (putStrLn . ("GONE CATEGORY: " ++)) gone_cats
+  mapM_ (putStrLn . ("NEW  CATEGORY: " ++)) new_cats
+
   putStrLn "lambdaman goes back to sleep...\n"
