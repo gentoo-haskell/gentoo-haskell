@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
-	unpack "$A"
+	unpack $A
 	cd "${S}"
 
 	# solves http://www.haskell.org/pipermail/glasgow-haskell-users/2009-November/018050.html
