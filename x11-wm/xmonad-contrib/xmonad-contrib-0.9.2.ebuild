@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
+
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal eutils
@@ -11,7 +13,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE="xft"
 
 RDEPEND=">=dev-lang/ghc-6.6.1
@@ -23,14 +25,6 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS="--flags=-testing"
-
-	if use xft; then
-		CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=use_xft"
-	else
-		CABAL_CONFIGURE_FLAGS="${CABAL_CONFIGURE_FLAGS} --flags=-use_xft"
-	fi
-
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure --flags=-testing $(cabal_flag xft use_xft)
 }
