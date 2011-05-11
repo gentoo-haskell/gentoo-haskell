@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="HipmunkPlayground"
 MY_P="${MY_PN}-${PV}"
@@ -30,7 +30,5 @@ DEPEND="${RDEPEND}
 		=dev-haskell/statevar-1.0*
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.8.2"
-
-PATCHES=("${FILESDIR}/hipmunkplayground-5.2.0.3-ghc-7.patch")
 
 S="${WORKDIR}/${MY_P}"
