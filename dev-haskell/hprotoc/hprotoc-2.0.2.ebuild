@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Parse Google Protocol Buffer specifications"
-HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/protocol-buffers"
+HOMEPAGE="http://hackage.haskell.org/package/hprotoc"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -26,8 +26,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/haskell-src-exts-1.7.0
 		dev-haskell/mtl
 		<dev-haskell/parsec-3
-		~dev-haskell/protocol-buffers-1.8.3
-		~dev-haskell/protocol-buffers-descriptor-1.8.3
-		dev-haskell/quickcheck
+		~dev-haskell/protocol-buffers-2.0.2
+		~dev-haskell/protocol-buffers-descriptor-2.0.2
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
