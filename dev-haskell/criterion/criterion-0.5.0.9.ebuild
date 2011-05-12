@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Robust, reliable performance measurement and analysis"
 HOMEPAGE="http://bitbucket.org/bos/criterion"
@@ -19,7 +19,6 @@ IUSE="chart"
 RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 		dev-haskell/mtl
 		>=dev-haskell/mwc-random-0.8.0.3
-		dev-haskell/parallel
 		>=dev-haskell/parsec-3.1.0
 		>=dev-haskell/statistics-0.8.0.5
 		dev-haskell/time
@@ -30,8 +29,6 @@ RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 				 dev-haskell/data-accessor )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/criterion-0.5.0.8-ghc-6.12.3-build-fix.patch")
 
 src_configure() {
 	cabal_src_configure $(cabal_flag chart)
