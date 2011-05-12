@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/listlike-4
 		=dev-haskell/monadcatchio-transformers-0.2*
+		<dev-haskell/parallel-4
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
