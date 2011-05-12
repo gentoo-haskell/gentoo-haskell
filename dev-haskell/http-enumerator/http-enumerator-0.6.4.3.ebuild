@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="HTTP client package with enumerator interface and HTTPS support."
 HOMEPAGE="http://github.com/snoyberg/http-enumerator"
@@ -23,15 +23,15 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		=dev-haskell/case-insensitive-0.2*
-		=dev-haskell/certificate-0.7*
+		<dev-haskell/certificate-0.10
 		=dev-haskell/cprng-aes-0.2*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/monad-control-0.2*
 		=dev-haskell/network-2.3*
-		<dev-haskell/tls-0.7
-		<dev-haskell/tls-extra-0.3
+		=dev-haskell/tls-0.6*
+		=dev-haskell/tls-extra-0.2*
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/zlib-enum-0.2*
@@ -39,4 +39,7 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${P}-tls.patch")
+src_prepare() {
+	sed -e 's@certificate           >= 0.7     && < 0.9@certificate           >= 0.7     \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependency on certificate"
+}
