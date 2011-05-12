@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Fast combinator parsing for bytestrings"
-HOMEPAGE="http://bitbucket.org/bos/attoparsec"
+HOMEPAGE="https://bitbucket.org/bos/attoparsec"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
