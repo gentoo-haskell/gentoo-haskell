@@ -19,10 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/binary
-		dev-haskell/haskell-src
 		dev-haskell/mtl
-		dev-haskell/parsec
-		dev-haskell/quickcheck
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
