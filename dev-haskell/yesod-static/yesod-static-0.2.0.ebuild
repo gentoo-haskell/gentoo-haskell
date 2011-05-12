@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Static file serving subsite for Yesod Web Framework."
@@ -23,8 +23,16 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/puremd5-2.1*
 		<dev-haskell/text-1.0
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/wai-app-static-0.1*
+		=dev-haskell/wai-app-static-0.2*
 		=dev-haskell/yesod-core-0.8*
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@containers                >= 0.4@containers                >= 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen containers dependency to allow it to build with ghc 6.12.x"
+	# Haddock 2.9.2 fails on this markup, not sure why as it looks ok
+	sed -e 's@-- \^@--@g' -i "${S}/Yesod/Helpers/Static.hs"
+}
+
