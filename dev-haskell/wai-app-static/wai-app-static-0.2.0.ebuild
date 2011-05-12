@@ -29,4 +29,4 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/wai-0.4*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
