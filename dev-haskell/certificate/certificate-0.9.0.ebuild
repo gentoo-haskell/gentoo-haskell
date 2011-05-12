@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Certificates and Key Reader/Writer"
 HOMEPAGE="http://github.com/vincenthz/hs-certificate"
@@ -21,9 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/asn1-data-0.5*
 		dev-haskell/base64-bytestring
 		dev-haskell/mtl
-		>=dev-haskell/text-0.11
+		dev-haskell/time
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-asn1-data.patch")
