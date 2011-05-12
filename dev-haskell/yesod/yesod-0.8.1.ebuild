@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		<dev-haskell/blaze-builder-0.4
 		<dev-haskell/cabal-1.11
-		=dev-haskell/direct-plugins-1.1*
 		=dev-haskell/hamlet-0.8*
 		<dev-haskell/hjsmin-0.1
 		=dev-haskell/http-types-0.6*
@@ -35,12 +34,18 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/wai-extra-0.4*
 		=dev-haskell/warp-0.4*
-		=dev-haskell/yesod-auth-0.4*
+		=dev-haskell/yesod-auth-0.5*
 		=dev-haskell/yesod-core-0.8*
 		=dev-haskell/yesod-form-0.1*
 		=dev-haskell/yesod-json-0.1*
 		=dev-haskell/yesod-persistent-0.1*
-		=dev-haskell/yesod-static-0.1*
+		=dev-haskell/yesod-static-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@yesod-auth                >= 0.4      && < 0.5@yesod-auth                >= 0.5      \&\& < 0.6@' \
+		-e 's@yesod-static              >= 0.1      && < 0.2@yesod-static              >= 0.2      \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not bump dependency on yesod-auth"
+}
