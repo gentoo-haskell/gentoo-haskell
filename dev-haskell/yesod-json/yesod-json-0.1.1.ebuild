@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/aeson-0.3*
+		=dev-haskell/hamlet-0.8*
 		<dev-haskell/text-0.12
 		dev-haskell/vector
 		=dev-haskell/yesod-core-0.8*
