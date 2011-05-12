@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/digestive-functors-0.0.2*
+RDEPEND="=dev-haskell/digestive-functors-0.1.0*
 		=dev-haskell/happstack-server-6.0*
 		dev-haskell/text
 		>=dev-haskell/utf8-string-0.3
