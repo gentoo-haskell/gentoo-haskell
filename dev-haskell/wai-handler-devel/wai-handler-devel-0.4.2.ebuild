@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-text-0.8.2
-		<dev-haskell/cmdargs-0.7
+		<dev-haskell/cmdargs-0.8
 		>=dev-haskell/enumerator-0.4.6
 		>=dev-haskell/hint-0.3.2.3
 		=dev-haskell/http-types-0.6*
