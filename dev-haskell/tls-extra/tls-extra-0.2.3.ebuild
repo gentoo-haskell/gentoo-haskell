@@ -18,13 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/certificate-0.7*
+RDEPEND="=dev-haskell/certificate-0.9*
 		>=dev-haskell/crypto-api-0.5
 		>=dev-haskell/cryptocipher-0.2.5
 		>=dev-haskell/cryptohash-0.6
 		dev-haskell/mtl
 		>=dev-haskell/network-2.3
 		<dev-haskell/text-1.0
+		dev-haskell/time
 		=dev-haskell/tls-0.6*
 		dev-haskell/vector
 		>=dev-lang/ghc-6.8.2"
