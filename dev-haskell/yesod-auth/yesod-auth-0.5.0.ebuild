@@ -28,7 +28,7 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/persistent-0.5*
 		=dev-haskell/persistent-template-0.5*
 		<dev-haskell/puremd5-2.2
-		=dev-haskell/sha-1.4*
+		=dev-haskell/sha-1.5*
 		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.4*
@@ -40,3 +40,8 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0"
+
+src_prepare() {
+	sed -e 's@SHA                     >= 1.4.1.3   && < 1.5@SHA                     >= 1.5   \&\& < 1.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not bump dependency on sha"
+}
