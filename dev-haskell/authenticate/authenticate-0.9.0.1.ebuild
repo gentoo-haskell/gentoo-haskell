@@ -29,7 +29,7 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
 		=dev-haskell/rsa-1.0*
-		=dev-haskell/sha-1.4*
+		<dev-haskell/sha-1.6
 		<dev-haskell/tagsoup-0.13
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
