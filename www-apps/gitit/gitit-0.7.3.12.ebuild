@@ -7,7 +7,7 @@
 EAPI="2"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Wiki using happstack, git or darcs, and pandoc."
 HOMEPAGE="http://github.com/jgm/gitit/tree/master"
@@ -36,7 +36,7 @@ RDEPEND="dev-haskell/cgi
 		dev-haskell/parsec
 		>=dev-haskell/recaptcha-0.1
 		dev-haskell/safe
-		=dev-haskell/sha-1.4*
+		<dev-haskell/sha-1.6
 		<dev-haskell/time-1.3
 		=dev-haskell/url-2.1*
 		=dev-haskell/utf8-string-0.3*
@@ -47,3 +47,5 @@ RDEPEND="dev-haskell/cgi
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/gitit-0.7.3.12-sha1-up-to-1.6.patch")
