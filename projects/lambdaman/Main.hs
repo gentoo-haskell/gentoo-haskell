@@ -15,7 +15,7 @@ import System.Directory ( getDirectoryContents, doesFileExist )
 import System.Posix.Files (getFileStatus, isDirectory)
 
 import Data.Maybe ( catMaybes, listToMaybe, isNothing )
-import qualified Data.Digest.Pure.SHA as D ( Digest, sha1 )
+import qualified Data.Digest.Pure.SHA as D ( sha1, showDigest )
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
@@ -38,7 +38,7 @@ data ManifestKind = DIST | AUX | EBUILD deriving (Eq, Show)
 
 data Repo 
       = Dir FilePath [Repo]
-      | File FilePath Int D.Digest
+      | File FilePath Int String
       deriving (Eq, Show)
 
 readManifest :: FilePath -> IO Manifest
@@ -63,7 +63,7 @@ fileSpy :: FilePath -> IO Repo
 fileSpy fn = do
   fs <- unsafeInterleaveIO $ withFile fn ReadMode hFileSize
   fc <- unsafeInterleaveIO $ L.readFile fn
-  return (File fn (fromInteger fs) (D.sha1 fc))
+  return (File fn (fromInteger fs) (D.showDigest (D.sha1 fc)))
 
 dirSpy :: FilePath -> IO Repo
 dirSpy dir = do
@@ -111,7 +111,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       [ "Invalid Manifest entry for file " ++ fn
       | File fn fs sha1 <- files
       , Just (MDigest { mFileSize = size, mSha1 = digest }) <- return (lookupMani fn)
-      , fs /= size || digest /= show sha1
+      , fs /= size || digest /= sha1
       ]
 
     unknownToFS = -- look for ebuilds/files in manifest unknown to the file system
