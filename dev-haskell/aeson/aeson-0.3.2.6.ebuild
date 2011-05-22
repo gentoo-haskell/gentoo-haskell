@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Fast JSON parsing and generation"
+DESCRIPTION="Fast JSON parsing and encoding"
 HOMEPAGE="http://github.com/mailrank/aeson"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.8.5.3
+RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-haskell/blaze-builder-0.2.1.4
 		dev-haskell/blaze-textual
 		dev-haskell/deepseq
-		dev-haskell/hashable
+		>=dev-haskell/hashable-1.1.2.0
 		dev-haskell/mtl
 		>=dev-haskell/text-0.11.0.2
 		dev-haskell/time
