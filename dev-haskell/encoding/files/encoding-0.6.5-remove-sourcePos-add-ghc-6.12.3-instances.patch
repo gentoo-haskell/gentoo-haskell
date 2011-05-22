@@ -1,0 +1,67 @@
+--- encoding-0.6.5-orig/Data/Encoding/ByteSource.hs	2011-04-25 23:09:25.000000000 +1000
++++ encoding-0.6.5/Data/Encoding/ByteSource.hs	2011-05-22 20:22:22.083617322 +1000
+@@ -124,6 +124,38 @@
+     return = Right
+     (Left err) >>= g = Left err
+     (Right x) >>= g = g x
++
++instance Throws DecodingException (State BS.ByteString) where
++    throwException = throw
++
++instance ByteSource (State BS.ByteString) where
++    sourceEmpty = gets BS.null
++    fetchWord8 = State (\str -> case BS.uncons str of
++                                  Nothing -> throw UnexpectedEnd
++                                  Just (c,cs) -> (c,cs))
++    fetchAhead act = do
++      str <- get
++      res <- act
++      put str
++      return res
++
++instance Throws DecodingException (State [Char]) where
++    throwException = throw
++
++instance ByteSource (State [Char]) where
++    sourceEmpty = gets null
++    fetchWord8 = do
++      chs <- get
++      case chs of
++        [] -> throw UnexpectedEnd
++        c:cs -> do
++          put cs
++          return (fromIntegral $ ord c)
++    fetchAhead act = do
++      chs <- get
++      res <- act
++      put chs
++      return res
+ #endif
+ 
+ instance ByteSource (StateT [Char] (Either DecodingException)) where
+@@ -178,10 +210,6 @@
+       res <- act
+       liftIO $ hSetPosn pos
+       return res
+-    sourcePos = do
+-      h <- ask
+-      p <- liftIO $ hTell h
+-      return $ Just p
+ 
+ {-
+ instance Throws DecodingException (State st) => Throws DecodingException (State (Integer,st)) where
+--- encoding-0.6.5-orig/Data/Encoding/ByteSink.hs	2011-04-25 23:09:25.000000000 +1000
++++ encoding-0.6.5/Data/Encoding/ByteSink.hs	2011-05-22 20:22:55.767365330 +1000
+@@ -107,6 +107,12 @@
+     return x = Right x
+     Left err >>= g = Left err
+     Right x >>= g = g x
++    
++instance Throws EncodingException (State (Seq Char)) where
++    throwException = throw
++
++instance ByteSink (State (Seq Char)) where
++    pushWord8 x = modify (|> (chr $ fromIntegral x))
+ #endif
+ 
+ instance (Monad m,Throws EncodingException m) => ByteSink (StateT (Seq Char) m) where
