@@ -6,18 +6,18 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Convert strings into hexadecimal and back."
 HOMEPAGE="http://hackage.haskell.org/package/hex"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD3"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-0"
