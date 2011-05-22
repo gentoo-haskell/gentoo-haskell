@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/cabal-1.10*
 		=dev-haskell/case-insensitive-0.2*
-		=dev-haskell/cmdargs-0.6*
+		<dev-haskell/cmdargs-0.8
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/haskell-src-exts-1.11
 		=dev-haskell/http-types-0.6*
@@ -37,3 +37,8 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare () {
+	sed -e 's@cmdargs == 0.6.\*@cmdargs >= 0.6 \&\& < 0.8@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen cmdargs dependency"
+}
