@@ -1,5 +1,4 @@
-Tue Jan 11 09:59:07 EET 2011  Ivan.Miljenovic@gmail.com
-  * Update to polyparse-1.5
+  * Update to polyparse-1.6
   Now has a working discard implementation, but bracket still needs to
   be re-defined.
 diff -rN -u old-graphviz/Data/GraphViz/Parsing.hs new-graphviz/Data/GraphViz/Parsing.hs
@@ -49,7 +48,7 @@ diff -rN -u old-graphviz/graphviz.cabal new-graphviz/graphviz.cabal
                             fgl == 5.4.*,
                             filepath,
 -                           polyparse == 1.4.*,
-+                           polyparse == 1.5.*,
++                           polyparse == 1.6.*,
                             pretty,
                             bytestring == 0.9.*,
                             colour == 2.3.*,

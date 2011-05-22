@@ -20,7 +20,7 @@ COMMONDEPS=">=dev-lang/ghc-6.6.1
 		=dev-haskell/colour-2.3*
 		dev-haskell/extensible-exceptions
 		=dev-haskell/fgl-5.4*
-		=dev-haskell/polyparse-1.5*
+		=dev-haskell/polyparse-1.6*
 		=dev-haskell/transformers-0.2*"
 
 DEPEND="${COMMONDEPS}
@@ -29,4 +29,4 @@ DEPEND="${COMMONDEPS}
 RDEPEND="${COMMONDEPS}
 		media-gfx/graphviz"
 
-PATCHES=("${FILESDIR}/graphviz-graphviz-2999.11.0.0-polyparse-1.5.patch")
+PATCHES=("${FILESDIR}/graphviz-graphviz-2999.11.0.0-polyparse-1.6.patch")
