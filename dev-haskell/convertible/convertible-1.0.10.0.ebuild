@@ -16,11 +16,34 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="dev-haskell/mtl
 		>=dev-haskell/text-0.7
 		<=dev-haskell/time-1.2.0.3
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.8.2
+		test? ( dev-haskell/hunit
+			dev-haskell/quickcheck:2
+			dev-haskell/testpack
+		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_configure() {
+	cabal_src_configure $(cabal_flag test buildtests)
+}
+
+src_test() {
+	# default tests
+	haskell-cabal_src_test || die "cabal test failed"
+
+	# built custom tests
+	"${S}/dist/build/runtests/runtests" || die "unit tests failed"
+}
+
+src_install() {
+	cabal_src_install
+
+	# if tests were enabled, make sure the unit test driver is deleted
+	rm -f "${ED}/usr/bin/runtests"
+}
