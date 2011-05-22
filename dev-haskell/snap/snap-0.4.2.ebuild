@@ -19,27 +19,23 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.8*
-		>=dev-haskell/blaze-builder-0.2.1.4
+		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
 		=dev-haskell/cereal-0.3*
 		dev-haskell/directory-tree
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/heist-0.5*
-		>=dev-haskell/hint-0.3.3.1
-		>=dev-haskell/monadcatchio-transformers-0.2.1
+		=dev-haskell/hint-0.3*
+		=dev-haskell/monadcatchio-transformers-0.2*
 		>=dev-haskell/mtl-2
-		>=dev-haskell/snap-core-0.4.2
-		>=dev-haskell/snap-server-0.4.2
+		=dev-haskell/snap-core-0.4*
+		=dev-haskell/snap-server-0.4*
 		=dev-haskell/text-0.11*
+		>=dev-haskell/time-1.0
 		<dev-haskell/time-1.3
 		dev-haskell/unix-compat
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder >= 0.2.1.4 && <0.3@blaze-builder >= 0.2.1.4 \&\& <0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}

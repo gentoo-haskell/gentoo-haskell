@@ -26,12 +26,13 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		dev-haskell/bytestring-nums
 		dev-haskell/directory-tree
 		>=dev-haskell/enumerator-0.4.7
+		<dev-haskell/enumerator-0.5
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/murmur-hash-0.1*
 		=dev-haskell/network-2.3*
 		=dev-haskell/psqueue-1.1*
-		>=dev-haskell/snap-core-0.4.2
+		<dev-haskell/snap-core-0.5
 		dev-haskell/time
 		dev-haskell/transformers
 		=dev-haskell/unix-compat-0.2*
@@ -44,10 +45,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
-	if use libev; then
-		CABAL_CONFIGURE_FLAGS="--flags=libev"
-	fi
-
-	cabal_src_configure
+	cabal_src_configure $(cabal_flag libev)
 }
-

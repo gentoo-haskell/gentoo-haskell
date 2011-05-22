@@ -26,6 +26,7 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		=dev-haskell/deepseq-1.1*
 		=dev-haskell/dlist-0.5*
 		>=dev-haskell/enumerator-0.4.7
+		<dev-haskell/enumerator-0.5
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/text-0.11*
@@ -33,12 +34,8 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/unix-compat-0.2*
 		>=dev-haskell/vector-0.6
+		<dev-haskell/vector-0.8
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder >= 0.2.1.4 && <0.3@blaze-builder >= 0.2.1.4 \&\& <0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}
