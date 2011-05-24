@@ -1,23 +1,12 @@
-# Lennart Kolmodin <kolmodin@gentoo.org> (08 Feb 2011)
-# Mask happstack-*-9999
-=dev-haskell/happstack-9999
-=dev-haskell/happstack-data-9999
-=dev-haskell/happstack-hamlet-9999
-=dev-haskell/happstack-heist-9999
-=dev-haskell/happstack-hsp-9999
-=dev-haskell/happstack-hstringtemplate-9999
-=dev-haskell/happstack-ixset-9999
-=dev-haskell/happstack-plugins-9999
-=dev-haskell/happstack-server-9999
-=dev-haskell/happstack-state-9999
-=dev-haskell/happstack-util-9999
-=dev-haskell/happstack-wai-9999
-
 # Lennart Kolmodin <kolmodin@gentoo.org> (27 Sep 2010)
 # Mask GHC 7 for testing.
 # Unmasking this means many things will probably break in your system.
 >=dev-lang/ghc-7
 >=dev-haskell/haddock-2.8
+
+# Sergei Trofimovich <slyfox@gentoo.org> (24 May 2011)
+# Needs (masked) ghc-7.
+dev-haskell/repa
 
 # Ivan Miljenovic, 30 April 2010
 # r.e. bug 317547
@@ -41,3 +30,18 @@
 =x11-wm/xmonad-contrib-9999
 =x11-misc/xmonad-extras-9999
 =www-apps/blogliterately-9999
+
+# Lennart Kolmodin <kolmodin@gentoo.org> (08 Feb 2011)
+# Mask happstack-*-9999
+=dev-haskell/happstack-9999
+=dev-haskell/happstack-data-9999
+=dev-haskell/happstack-hamlet-9999
+=dev-haskell/happstack-heist-9999
+=dev-haskell/happstack-hsp-9999
+=dev-haskell/happstack-hstringtemplate-9999
+=dev-haskell/happstack-ixset-9999
+=dev-haskell/happstack-plugins-9999
+=dev-haskell/happstack-server-9999
+=dev-haskell/happstack-state-9999
+=dev-haskell/happstack-util-9999
+=dev-haskell/happstack-wai-9999
