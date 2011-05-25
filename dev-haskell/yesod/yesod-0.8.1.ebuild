@@ -34,9 +34,9 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/wai-extra-0.4*
 		=dev-haskell/warp-0.4*
-		=dev-haskell/yesod-auth-0.5*
+		=dev-haskell/yesod-auth-0.6*
 		=dev-haskell/yesod-core-0.8*
-		=dev-haskell/yesod-form-0.1*
+		=dev-haskell/yesod-form-0.2*
 		=dev-haskell/yesod-json-0.1*
 		=dev-haskell/yesod-persistent-0.1*
 		=dev-haskell/yesod-static-0.2*
@@ -45,7 +45,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@yesod-auth                >= 0.4      && < 0.5@yesod-auth                >= 0.5      \&\& < 0.6@' \
+	sed -e 's@yesod-auth                >= 0.4      && < 0.5@yesod-auth                >= 0.6      \&\& < 0.7@' \
+		-e 's@yesod-form                >= 0.1      && < 0.2@yesod-form                >= 0.2      \&\& < 0.3@' \
 		-e 's@yesod-static              >= 0.1      && < 0.2@yesod-static              >= 0.2      \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not bump dependency on yesod-auth"
+}
+
+pkg_postinst() {
+	elog "The scaffolding generated from yesod init is not quite correct for the new dependencies."
+	elog "For a start it is necessary to replace Yesod.Helpers.Auth with Yesod.Auth, then read the"
+	elog "Yesod API documentation for more required changes".
 }
