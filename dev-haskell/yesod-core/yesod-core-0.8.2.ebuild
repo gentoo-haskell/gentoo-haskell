@@ -29,6 +29,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/hamlet-0.8*
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/monad-control-0.2*
+		<dev-haskell/parsec-3.2
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
