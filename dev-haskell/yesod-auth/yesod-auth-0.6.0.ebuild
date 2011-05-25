@@ -34,7 +34,7 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/web-routes-quasi-0.7*
 		=dev-haskell/yesod-core-0.8*
-		=dev-haskell/yesod-form-0.1*
+		=dev-haskell/yesod-form-0.2*
 		=dev-haskell/yesod-json-0.1*
 		=dev-haskell/yesod-persistent-0.1*
 		>=dev-lang/ghc-6.10.1"
