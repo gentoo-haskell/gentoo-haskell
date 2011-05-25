@@ -28,6 +28,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
+		=dev-haskell/wai-0.4*
 		=dev-haskell/web-routes-quasi-0.7*
 		=dev-haskell/xss-sanitize-0.2*
 		=dev-haskell/yesod-core-0.8*
@@ -35,3 +36,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@-- \^@-- @g' -i "${S}/Yesod/Form/Types.hs"
+}
