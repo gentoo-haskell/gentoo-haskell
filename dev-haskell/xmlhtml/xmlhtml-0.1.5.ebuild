@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		<dev-haskell/blaze-html-0.5
 		<dev-haskell/parsec-3.2
+		>=dev-haskell/parsec-3.0
 		=dev-haskell/text-0.11*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
