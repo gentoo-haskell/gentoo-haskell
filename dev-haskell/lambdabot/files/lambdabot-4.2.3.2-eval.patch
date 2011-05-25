@@ -1,12 +1,12 @@
 --- lambdabot-4.2.3.2-orig/Plugin/Eval.hs	2011-01-20 13:09:10.000000000 +1100
-+++ lambdabot-4.2.3.2/Plugin/Eval.hs	2011-03-15 00:38:23.804429121 +1100
++++ lambdabot-4.2.3.2/Plugin/Eval.hs	2011-05-24 21:53:15.145816710 +1000
 @@ -50,8 +50,7 @@
  plugs :: String -> IO String
  plugs src = do
              load <- findFile "L.hs"
 -            let args = ["-E", "-XBangPatterns", "-XNoMonomorphismRestriction", "-XViewPatterns", "--no-imports", "-l", load, "--expression=" ++ src, "+RTS", "-N2", "-RTS"]
 -            print args
-+            let args = ["-XForeignFunctionInterface", "-XUnliftedFFITypes", "-XImplicitParams", "-XScopedTypeVariables", "-XUnboxedTuples", "-XTypeSynonymInstances", "-XStandaloneDeriving", "-XDeriveDataTypeable", "-XDeriveFunctor", "-XDeriveFoldable", "-XDeriveTraversable", "-XFlexibleContexts", "-XFlexibleInstances", "-XConstrainedClassMethods", "-XMultiParamTypeClasses", "-XFunctionalDependencies", "-XMagicHash", "-XPolymorphicComponents", "-XExistentialQuantification", "-XUnicodeSyntax", "-XPostfixOperators", "-XPatternGuards", "-XLiberalTypeSynonyms", "-XRankNTypes", "-XTypeOperators", "-XDoRec", "-XParallelListComp", "-XEmptyDataDecls", "-XKindSignatures", "-XGeneralizedNewtypeDeriving", "-XBangPatterns", "-XNoMonomorphismRestriction", "-XViewPatterns", "--noimports", "-l", load, "--expression=" ++ src, "+RTS", "-N2", "-RTS"]            
++            let args = ["-XForeignFunctionInterface", "-XUnliftedFFITypes", "-XImplicitParams", "-XScopedTypeVariables", "-XUnboxedTuples", "-XTypeSynonymInstances", "-XStandaloneDeriving", "-XDeriveDataTypeable", "-XDeriveFunctor", "-XDeriveFoldable", "-XDeriveTraversable", "-XFlexibleContexts", "-XFlexibleInstances", "-XConstrainedClassMethods", "-XMultiParamTypeClasses", "-XFunctionalDependencies", "-XMagicHash", "-XPolymorphicComponents", "-XExistentialQuantification", "-XUnicodeSyntax", "-XPostfixOperators", "-XPatternGuards", "-XLiberalTypeSynonyms", "-XRankNTypes", "-XTypeOperators", "-XDoRec", "-XParallelListComp", "-XEmptyDataDecls", "-XKindSignatures", "-XGeneralizedNewtypeDeriving", "-XBangPatterns", "-XNoMonomorphismRestriction", "-XViewPatterns", "--no-imports", "-l", load, "--expression=" ++ src, "+RTS", "-N2", "-RTS"]            
              (out,err,_) <- popen binary args Nothing
              case (out,err) of
                  ([],[]) -> return "Terminated\n"
@@ -74,3 +74,14 @@
  import Control.Parallel
  import Control.Parallel.Strategies
  import Data.Array
+--- lambdabot-4.2.3.2-orig/Plugin/Check.hs	2011-01-20 13:09:10.000000000 +1100
++++ lambdabot-4.2.3.2/Plugin/Check.hs	2011-05-25 13:09:02.676449119 +1000
+@@ -30,7 +30,7 @@
+         Left  e -> return e
+         Right _ -> do
+             l <- findFile "L.hs"
+-            (out,err,_) <- popen binary ["--loadfile=", l, "-XExtendedDefaultRules", "-e", "myquickcheck $ " ++ src] Nothing
++            (out,err,_) <- popen binary ["--no-imports", "-l", l, "-XExtendedDefaultRules", "-e", "myquickcheck $ " ++ src] Nothing
+             case (out,err) of
+                 ([],[]) -> return "Terminated\n"
+                 _       -> do
