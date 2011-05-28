@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
 RDEPEND="=dev-haskell/cpphs-1.11*
-		>=dev-haskell/haskell-src-exts-1.9.6
+		=dev-haskell/haskell-src-exts-1.11*
 		=dev-haskell/hscolour-1.17*
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/uniplate-1.7

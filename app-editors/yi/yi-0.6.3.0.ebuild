@@ -32,7 +32,7 @@ RDEPEND=">=dev-lang/ghc-6.12.1
 		<dev-haskell/data-accessor-0.3
 		=dev-haskell/data-accessor-monads-fd-0.2*
 		<dev-haskell/data-accessor-template-0.2.2
-		=dev-haskell/derive-2.4*
+		>dev-haskell/derive-2.4
 		=dev-haskell/diff-0.1*
 		>=dev-haskell/dlist-0.4.1
 		>=dev-haskell/dyre-0.7
@@ -67,7 +67,9 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-old-style-cabal.patch"
 	# Ugh! Upstream forgot it.
 	cp "${FILESDIR}/yi-0.6.3.0-src-library-Yi-UI-Pango-Gnome.hs" \
-	    "${S}/src/library/Yi/UI/Pango/Gnome.hs"
+		"${S}/src/library/Yi/UI/Pango/Gnome.hs"
+	sed -e 's@derive >=2.3 && <2.5@derive >=2.3 \&\& <2.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen derive dependency"
 }
 
 src_configure() {
