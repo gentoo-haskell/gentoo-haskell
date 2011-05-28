@@ -32,4 +32,3 @@ DEPEND="${RDEPEND}
 
 PDEPEND="postgres? ( >=dev-haskell/hdbc-postgresql-${PV} )
 		sqlite3? ( >=dev-haskell/hdbc-sqlite-${PV} )"
-
