@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Generates ctags for Haskell, incorporating import lists and qualified imports"
 HOMEPAGE="http://github.com/luqui/hothasktags"
@@ -22,5 +22,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/cpphs-1.11*
-		>=dev-haskell/haskell-src-exts-1.8
+		=dev-haskell/haskell-src-exts-1.11
 		>=dev-lang/ghc-6.10.1"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.0-0001-updated-up-to-latest-haskell-src-exts-1.11.patch")
