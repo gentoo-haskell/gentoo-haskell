@@ -16,10 +16,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="=dev-haskell/deepseq-1.1*
 		<dev-haskell/hashable-1.2
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+			>=dev-haskell/test-framework-0.3.3
+			>=dev-haskell/test-framework-quickcheck2-0.2.9
+			>=dev-haskell/quickcheck-2.4.0.1
+		)"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
