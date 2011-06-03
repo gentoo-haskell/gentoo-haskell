@@ -23,7 +23,7 @@ RDEPEND="=dev-haskell/hashed-storage-0.5*
 		<dev-haskell/mtl-2.1
 		>=dev-haskell/network-2.2
 		<dev-haskell/parsec-3.2
-		<dev-haskell/regex-compat-0.94
+		<dev-haskell/regex-compat-0.96
 		=dev-haskell/tar-0.3*
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/text-0.11*
@@ -53,6 +53,9 @@ pkg_setup() {
 src_prepare() {
 	cd "${S}/contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	cd ..
+
+	epatch "${FILESDIR}/${PN}-2.5.2-relax-regex-libs-deps.patch"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
