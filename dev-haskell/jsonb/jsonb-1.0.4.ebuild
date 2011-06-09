@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.8*
+RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-haskell/bytestring-nums-0.3.1
 		>=dev-haskell/bytestring-trie-0.1.4
 		>=dev-haskell/utf8-string-0.3
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@attoparsec >= 0.8 && < 0.9@attoparsec >= 0.8 \&\& < 0.10@' \
+		-i "${S}/JSONb.cabal" || die "Could not loosen attoparsec dependency"
+}
