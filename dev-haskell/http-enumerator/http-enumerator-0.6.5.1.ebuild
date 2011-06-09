@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.8*
+RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/attoparsec-enumerator-0.2*
 		=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
@@ -39,3 +39,8 @@ RDEPEND="=dev-haskell/attoparsec-0.8*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@attoparsec            >= 0.8.0.2 && < 0.9@attoparsec            >= 0.8.0.2 \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen attoparsec dependency"
+}
