@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
-HOMEPAGE="http://docs.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@yesod-auth                >= 0.4      && < 0.5@yesod-auth                >= 0.6      \&\& < 0.7@' \
+	sed -e 's@yesod-auth                >= 0.4      && < 0.6@yesod-auth                >= 0.6      \&\& < 0.7@' \
 		-e 's@yesod-form                >= 0.1      && < 0.2@yesod-form                >= 0.2      \&\& < 0.3@' \
 		-e 's@yesod-static              >= 0.1      && < 0.2@yesod-static              >= 0.2      \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not bump dependency on yesod-auth"
