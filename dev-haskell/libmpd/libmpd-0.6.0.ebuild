@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An MPD client library."
 HOMEPAGE="http://github.com/joachifm/libmpd-haskell"
@@ -22,6 +22,10 @@ RDEPEND="=dev-haskell/mtl-2.0*
 		<dev-haskell/network-2.4
 		<dev-haskell/time-2.0
 		<dev-haskell/utf8-string-0.4
-		>=dev-lang/ghc-7.0.1"
+		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+# I don't know why author was so eager in undating containers dep.
+# I've rolled it back. So, if something will break - I am guilty.
+PATCHES=("${FILESDIR}/libmpd-0.6.0-ghc-6.patch")
