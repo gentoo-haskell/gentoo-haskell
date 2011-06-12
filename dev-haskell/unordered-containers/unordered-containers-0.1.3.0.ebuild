@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Efficient hashing-based container types"
 HOMEPAGE="http://hackage.haskell.org/package/unordered-containers"
@@ -28,6 +28,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
 			>=dev-haskell/quickcheck-2.4.0.1
 		)"
+
+PATCHES=("${FILESDIR}/unordered-containers-0.1.3.0-drop-depends-range.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
