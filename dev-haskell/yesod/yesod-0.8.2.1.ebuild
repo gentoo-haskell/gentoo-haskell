@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
-HOMEPAGE="http://docs.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
