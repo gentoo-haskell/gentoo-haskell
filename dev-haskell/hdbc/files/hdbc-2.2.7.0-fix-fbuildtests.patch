@@ -1,0 +1,37 @@
+From c68a1aac64081c14739361c87fd7d8342c5382ee Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sun, 22 May 2011 12:36:02 +0300
+Subject: [PATCH] .cabal: fix depends for 'cabal configure -fbuildtests'
+
+$ cabal configure -fbuildtests
+$ cabal build
+
+Database/HDBC/SqlValue.hs:25:17:
+    Could not find module `Data.Text.Lazy':
+      It is a member of the hidden package `text-0.11.0.6'.
+      Perhaps you need to add `text' to the build-depends in your .cabal file.
+      Use -v to see a list of the files searched for.
+
+Added missing depend for test.
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ HDBC.cabal |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/HDBC.cabal b/HDBC.cabal
+index fb7d996..5de5f3e 100644
+--- a/HDBC.cabal
++++ b/HDBC.cabal
+@@ -68,7 +68,7 @@ Executable runtests
+           Build-Depends: time<1.1.3
+       else
+         Build-Depends: base<3
+-      Build-Depends: mtl, convertible >= 1.0.9.1, utf8-string
++      Build-Depends: mtl, convertible >= 1.0.9.1, utf8-string, text
+ 
+       -- Hack for cabal-install weirdness.  cabal-install forces base 3,
+       -- though it works fine for Setup.lhs manually.  Fix.
+-- 
+1.7.3.4
+
