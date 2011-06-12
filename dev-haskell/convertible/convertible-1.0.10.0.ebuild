@@ -22,12 +22,14 @@ RDEPEND="dev-haskell/mtl
 		>=dev-haskell/text-0.7
 		<=dev-haskell/time-1.2.0.3
 		>=dev-lang/ghc-6.8.2
+	"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2
 		test? ( dev-haskell/hunit
 			dev-haskell/quickcheck:2
 			dev-haskell/testpack
-		)"
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		)
+	"
 
 src_configure() {
 	cabal_src_configure $(cabal_flag test buildtests)
