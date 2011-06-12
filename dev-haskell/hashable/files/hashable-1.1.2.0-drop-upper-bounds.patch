@@ -1,0 +1,15 @@
+diff --git a/hashable.cabal b/hashable.cabal
+index 245f72a..026ac30 100644
+--- a/hashable.cabal
++++ b/hashable.cabal
+@@ -41,8 +41,8 @@ Test-suite tests
+   Main-is:           Properties.hs
+   Build-depends:     base >= 4.0 && < 5,
+                      hashable,
+-                     test-framework >= 0.3.3 && < 0.4,
+-                     test-framework-quickcheck2 >= 0.2.9 && < 0.3,
++                     test-framework >= 0.3.3,
++                     test-framework-quickcheck2 >= 0.2.9,
+                      QuickCheck >= 2.4.0.1,
+                      random == 1.0.*,
+                      text >= 0.11.0.5
