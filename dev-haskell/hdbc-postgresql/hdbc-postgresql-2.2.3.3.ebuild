@@ -34,7 +34,7 @@ RDEPEND=">=dev-lang/ghc-6.8.2
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/convertible
-			ev-haskell/hunit
+			dev-haskell/hunit
 			dev-haskell/quickcheck
 			dev-haskell/testpack
 		)
