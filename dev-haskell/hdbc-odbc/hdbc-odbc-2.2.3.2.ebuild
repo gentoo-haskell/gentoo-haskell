@@ -19,20 +19,43 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
+RESTRICT="test" # requires configured ODBC
 
 hdbc_PV=$(get_version_component_range 1-2)
 
-DEPEND=">=dev-lang/ghc-6.10
-		>=dev-haskell/cabal-1.2.3
-		dev-haskell/convertible
-		dev-haskell/hunit
-		dev-haskell/mtl
-		dev-haskell/quickcheck
-		dev-haskell/testpack
-		dev-haskell/time
-		dev-haskell/utf8-string
+RDEPEND=">=dev-lang/ghc-6.10
 		=dev-haskell/hdbc-${hdbc_PV}*
-		>=dev-db/unixODBC-2.2"
+		dev-haskell/mtl
+		dev-haskell/utf8-string
+		>=dev-db/unixODBC-2.2
+	"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.2.3
+		test? ( dev-haskell/convertible
+			dev-haskell/hunit
+			dev-haskell/quickcheck
+			dev-haskell/testpack
+			dev-haskell/time
+		)
+	"
 
 S="${WORKDIR}/${MY_P}"
+src_configure() {
+	cabal_src_configure $(cabal_flag test buildtests)
+}
+
+src_test() {
+	# default tests
+	haskell-cabal_src_test || die "cabal test failed"
+
+	# built custom tests
+	"${S}/dist/build/runtests/runtests" || die "unit tests failed"
+}
+
+src_install() {
+	cabal_src_install
+
+	# if tests were enabled, make sure the unit test driver is deleted
+	rm -f "${ED}/usr/bin/runtests"
+}
