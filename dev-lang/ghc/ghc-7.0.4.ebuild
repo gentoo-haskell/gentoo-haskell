@@ -84,15 +84,6 @@ PDEPEND="
 	dev-haskell/syb
 	llvm? ( sys-devel/llvm )"
 
-# The Issue:
-# files are not quite sane ELFs, so ghc's ELF loader
-# can't load stripped result. TODO: fix ghc :]
-#
-# http://hackage.haskell.org/trac/ghc/ticket/3580
-# https://github.com/gentoo-haskell/gentoo-haskell/issues#issue/12
-# use undocumented feature STRIP_MASK to fix this issue:
-STRIP_MASK="*.o *.a"
-
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
@@ -236,14 +227,18 @@ src_unpack() {
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
-	base_src_unpack
+	# the Solaris and Darwin binaries from ghc (maeder) need to be
+	# unpacked separately, so prevent them from being unpacked
+	local ONLYA=${A}
+	case ${CHOST} in
+		*-darwin* | *-solaris*)  ONLYA=${P}-src.tar.bz2  ;;
+	esac
+	unpack ${ONLYA}
 }
 
 src_prepare() {
-	source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
-
-	# ghc7: we don't need gmp hack any more, depend on >=gmp-5
-	#source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
+	[[ ${CHOST} != *-darwin* ]] && \
+		source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
 
 	ghc_setup_cflags
 
@@ -253,7 +248,7 @@ src_prepare() {
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
 			"${WORKDIR}/usr/bin/ghc-${PV}"
 
-		# allow hardened users use vanilla biary to bootstrap ghc
+		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
 		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${P}/ghc"
@@ -268,7 +263,65 @@ src_prepare() {
 		mv "${WORKDIR}/usr" "${S}"
 	else
 		if ! use ghcbootstrap; then
-			relocate_ghc "${WORKDIR}"
+			case ${CHOST} in
+				*-darwin* | *-solaris*)
+				# UPDATE ME for ghc-7
+				mkdir "${WORKDIR}"/ghc-bin-installer || die
+				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
+				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
+				use x86-solaris && unpack ghc-6.10.4-i386-unknown-solaris2.tar.bz2
+				use ppc-macos && unpack ghc-6.10.1-powerpc-apple-darwin.tar.bz2
+				use x86-macos && unpack ghc-6.10.1-i386-apple-darwin.tar.bz2
+				popd > /dev/null
+
+				pushd "${WORKDIR}"/ghc-bin-installer/ghc-6.10.? > /dev/null || die
+				# fix the binaries so they run, on Solaris we need an
+				# LD_LIBRARY_PATH which has our prefix libdirs, on
+				# Darwin we need to replace the frameworks with our libs
+				# from the prefix fix before installation, because some
+				# of the tools are actually used during configure/make
+				if [[ ${CHOST} == *-solaris* ]] ; then
+					export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
+				elif [[ ${CHOST} == *-darwin* ]] ; then
+					# http://hackage.haskell.org/trac/ghc/ticket/2942
+					pushd utils/haddock/dist-install/build > /dev/null
+					ln -s Haddock haddock >& /dev/null # fails on IN-sensitive
+					popd > /dev/null
+
+					local readline_framework=GNUreadline.framework/GNUreadline
+					local gmp_framework=/opt/local/lib/libgmp.3.dylib
+					local ncurses_file=/opt/local/lib/libncurses.5.dylib
+					for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
+						install_name_tool -change \
+							${readline_framework} \
+							"${EPREFIX}"/lib/libreadline.dylib \
+							${binary} || die
+						install_name_tool -change \
+							${gmp_framework} \
+							"${EPREFIX}"/usr/lib/libgmp.dylib \
+							${binary} || die
+						install_name_tool -change \
+							${ncurses_file} \
+							"${EPREFIX}"/usr/lib/libncurses.dylib \
+							${binary} || die
+					done
+					# we don't do frameworks!
+					sed -i \
+						-e 's/\(frameworks = \)\["GMP"\]/\1[]/g' \
+						-e 's/\(extraLibraries = \)\["m"\]/\1["m","gmp"]/g' \
+						rts/package.conf.in || die
+				fi
+
+				# it is autoconf, but we really don't want to give it too
+				# much arguments, in fact we do the make in-place anyway
+				./configure --prefix="${WORKDIR}"/usr || die
+				make install || die
+				popd > /dev/null
+				;;
+				*)
+				relocate_ghc "${WORKDIR}"
+				;;
+			esac
 		fi
 
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
@@ -277,9 +330,15 @@ src_prepare() {
 		cd "${S}" # otherwise epatch will break
 
 		epatch "${FILESDIR}/ghc-7.0.2-CHOST.patch"
+		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-		# Make configure find docbook-xsl-stylesheets from Prefix
-		sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' configure.ac || die
+		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
+		epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
+
+		if use prefix; then
+			# Make configure find docbook-xsl-stylesheets from Prefix
+			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' configure.ac || die
+		fi
 
 		# as we have changed the build system
 		eautoreconf
@@ -312,7 +371,7 @@ src_configure() {
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
-		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
+		echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
 		echo "SRC_LD_OPTS+=${FILTERED_LDFLAGS}" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
@@ -397,7 +456,6 @@ src_compile() {
 
 src_install() {
 	if use binary; then
-		mkdir -p "${ED}"
 		mv "${S}/usr" "${ED}"
 
 		# Remove the docs if not requested
