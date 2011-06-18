@@ -18,7 +18,7 @@ IUSE="emacs"
 
 RDEPEND="=dev-haskell/cpphs-1.11*
 		=dev-haskell/haskell-src-exts-1.11*
-		=dev-haskell/hscolour-1.17*
+		<dev-haskell/hscolour-1.20
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/uniplate-1.7
 		>=dev-lang/ghc-6.10.1"
