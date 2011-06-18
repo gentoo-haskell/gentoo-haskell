@@ -32,7 +32,6 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/snap-core-0.4*
 		=dev-haskell/snap-server-0.4*
 		=dev-haskell/text-0.11*
-		>=dev-haskell/time-1.0
 		<dev-haskell/time-1.3
 		dev-haskell/unix-compat
 		dev-haskell/zlib
