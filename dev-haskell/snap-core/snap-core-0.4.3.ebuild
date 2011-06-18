@@ -25,15 +25,13 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		dev-haskell/bytestring-nums
 		=dev-haskell/deepseq-1.1*
 		=dev-haskell/dlist-0.5*
-		>=dev-haskell/enumerator-0.4.7
-		<dev-haskell/enumerator-0.5
+		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/text-0.11*
 		dev-haskell/time
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/unix-compat-0.2*
-		>=dev-haskell/vector-0.6
 		<dev-haskell/vector-0.8
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.1"
