@@ -25,8 +25,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		dev-haskell/bytestring-nums
 		dev-haskell/directory-tree
-		>=dev-haskell/enumerator-0.4.7
-		<dev-haskell/enumerator-0.5
+		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/murmur-hash-0.1*
