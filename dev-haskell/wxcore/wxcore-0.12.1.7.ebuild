@@ -7,7 +7,7 @@ EAPI="3"
 WX_GTK_VER="2.8"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal wxwidgets
+inherit base haskell-cabal wxwidgets
 
 DESCRIPTION="wxHaskell core"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -22,15 +22,10 @@ RDEPEND="dev-haskell/parsec
 		dev-haskell/stm
 		dev-haskell/time
 		>=dev-haskell/wxdirect-0.12.1.3
-		>=dev-lang/ghc-6.10
+		>=dev-lang/ghc-6.10.1
 		x11-libs/wxGTK:2.8[X]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-src_prepare() {
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-db.patch"
-	sed -e 's@containers >= 0.2 && < 0.4@containers >= 0.2 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen base lib dependencies"
-}
+PATCHES=("${FILESDIR}/${P}-db.patch")
 
