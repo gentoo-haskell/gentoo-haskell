@@ -9,7 +9,10 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A blazingly fast HTML combinator library."
+DESCRIPTION="A blazingly fast HTML combinator library for the Haskell
+programming language. The Text.Blaze module is a good
+starting point, as well as this tutorial:
+<http://jaspervdj.be/blaze/tutorial.html>."
 HOMEPAGE="http://jaspervdj.be/blaze"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
