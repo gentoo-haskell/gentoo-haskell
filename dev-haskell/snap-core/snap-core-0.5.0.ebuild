@@ -23,6 +23,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/bytestring-mmap-0.2*
 		dev-haskell/bytestring-nums
+		=dev-haskell/case-insensitive-0.2*
 		=dev-haskell/deepseq-1.1*
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
