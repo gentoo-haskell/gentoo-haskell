@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.2
-		>=dev-haskell/crypto-api-0.1
+		>=dev-haskell/crypto-api-0.5
 		>=dev-haskell/tagged-0.1
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
