@@ -33,14 +33,10 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		<dev-haskell/tagsoup-0.13
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
+		=dev-haskell/tls-0.7*
 		<dev-haskell/transformers-0.3
 		=dev-haskell/utf8-string-0.3*
 		>=dev-haskell/xml-1.3.7
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-src_prepare() {
-	sed -e 's@attoparsec >= 0.8.5 && < 0.9@attoparsec >= 0.8.5 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen attoparsec dependency"
-}
