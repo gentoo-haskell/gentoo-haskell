@@ -24,6 +24,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		dev-haskell/bytestring-nums
+		=dev-haskell/case-insensitive-0.2*
 		dev-haskell/directory-tree
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monadcatchio-transformers-0.2*
@@ -31,11 +32,11 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/murmur-hash-0.1*
 		=dev-haskell/network-2.3*
 		=dev-haskell/psqueue-1.1*
-		<dev-haskell/snap-core-0.5
+		=dev-haskell/snap-core-0.5*
+		=dev-haskell/text-0.11*
 		dev-haskell/time
 		dev-haskell/transformers
 		=dev-haskell/unix-compat-0.2*
-		dev-haskell/utf8-string
 		=dev-haskell/vector-0.7*
 		=dev-haskell/vector-algorithms-0.4*
 		>=dev-lang/ghc-6.10.1
