@@ -19,7 +19,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE="odbc postgres sqlite3 test"
+IUSE="mysql odbc postgres sqlite3 test"
 
 RDEPEND=">=dev-haskell/convertible-1.0.10.0
 		dev-haskell/mtl
@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 	"
 
 DEPENDV="$(get_version_component_range 1-2)"
-PDEPEND="odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
+PDEPEND="mysql? ( dev-haskell/hdbc-mysql )
+		odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
 		sqlite3? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
