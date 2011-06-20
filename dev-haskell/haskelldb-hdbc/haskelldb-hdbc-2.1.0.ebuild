@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="odbc postgres sqlite3"
+IUSE="mysql odbc postgres sqlite3"
 
 RDEPEND=">=dev-haskell/convertible-1.0.1
 		=dev-haskell/haskelldb-2*
@@ -26,7 +26,8 @@ RDEPEND=">=dev-haskell/convertible-1.0.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PDEPEND="odbc? ( =dev-haskell/haskelldb-hdbc-odbc-2* )
+PDEPEND="mysql? ( dev-haskell/haskelldb-hdbc-mysql )
+		odbc? ( =dev-haskell/haskelldb-hdbc-odbc-2* )
 		postgres? ( =dev-haskell/haskelldb-hdbc-postgresql-2* )
 		sqlite3? ( =dev-haskell/haskelldb-hdbc-sqlite3-2* )"
 
