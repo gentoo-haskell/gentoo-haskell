@@ -44,11 +44,6 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's@attoparsec >= 0.8.1 && < 0.9@attoparsec >= 0.8.1 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen attoparsec dependency"
-}
-
 src_configure() {
 	cabal_src_configure $(cabal_flag libev)
 }
