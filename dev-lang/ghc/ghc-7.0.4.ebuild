@@ -331,6 +331,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}/ghc-7.0.2-CHOST.patch"
 		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
+		epatch "${FILESDIR}/ghc-7.0.4-CHOST-softfloat.patch"
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
