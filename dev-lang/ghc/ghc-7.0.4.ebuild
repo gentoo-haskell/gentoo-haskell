@@ -40,7 +40,7 @@ arch_binaries=""
 
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries x86?   ( mirror://gentoo/ghc-bin-${PV}-x86.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( mirror://gentoo/ghc-bin-${PV}-amd64.tbz2 )"
+arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( mirror://gentoo/ghc-bin-${PV}-ppc64.tbz2 )"
@@ -49,8 +49,19 @@ arch_binaries=""
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
 
+# 0 - yet
+yet_binary() {
+	case "${ARCH}" in
+		amd64)
+			return 0
+			;;
+		*)
+			return 1
+	esac
+}
+
 SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
-#	!ghcbootstrap? ( $arch_binaries )"
+[[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
@@ -213,13 +224,11 @@ pkg_setup() {
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	else
-		eerror "No binary .tbz2 package available yet for your arch."
-		#
-		#eerror "No binary .tbz2 package available yet."
-		#
-		eerror "Please try emerging with USE=ghcbootstrap and report build"
-		eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
-		die "No binary available for this arch yet, USE=ghcbootstrap"
+		if ! yet_binary; then
+			eerror "Please try emerging with USE=ghcbootstrap and report build"
+			eerror "sucess or failure to the haskell team (haskell@gentoo.org)"
+			die "No binary available for '${ARCH}' arch yet, USE=ghcbootstrap"
+		fi
 	fi
 }
 
