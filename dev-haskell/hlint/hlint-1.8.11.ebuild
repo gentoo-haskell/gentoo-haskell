@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
-RDEPEND="=dev-haskell/cpphs-1.11*
+RDEPEND=">=dev-haskell/cpphs-1.11
 		=dev-haskell/haskell-src-exts-1.11*
 		<dev-haskell/hscolour-1.20
 		=dev-haskell/transformers-0.2*
@@ -26,6 +26,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 SITEFILE="60${PN}-gentoo.el"
+
+src_prepare() {
+	sed -e 's@cpphs == 1.11.\*@cpphs >= 1.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen cpphs dependency"
+}
 
 src_configure() {
 	threaded_flag=""
