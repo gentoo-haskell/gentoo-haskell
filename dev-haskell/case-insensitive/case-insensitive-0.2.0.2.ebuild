@@ -19,6 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/text-0.12
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
