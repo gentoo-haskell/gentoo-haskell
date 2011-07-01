@@ -9,8 +9,8 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Generate content for Yesod using the json-types package."
-HOMEPAGE="http://docs.yesodweb.com/"
+DESCRIPTION="Generate content for Yesod using the aeson package."
+HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/aeson-0.3*
+		=dev-haskell/blaze-textual-0.2*
 		=dev-haskell/hamlet-0.8*
 		<dev-haskell/text-0.12
 		dev-haskell/vector
@@ -26,3 +27,8 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@blaze-textual             >= 0.1      && < 0.2@blaze-textual             >= 0.1      \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-textual dependency"
+}
