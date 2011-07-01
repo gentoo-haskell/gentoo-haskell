@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="HTTP client package with enumerator interface and HTTPS support."
 HOMEPAGE="http://github.com/snoyberg/http-enumerator"
@@ -40,3 +40,5 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.6.5.5-ghc-6.12.3.patch")
