@@ -20,9 +20,14 @@ IUSE=""
 
 RDEPEND="=dev-haskell/happstack-data-6.0*
 		=dev-haskell/happstack-ixset-6.0*
-		=dev-haskell/happstack-server-6.0*
+		=dev-haskell/happstack-server-6.1*
 		=dev-haskell/happstack-state-6.0*
 		=dev-haskell/happstack-util-6.0*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@happstack-server >= 6.0 && < 6.1@happstack-server >= 6.0 \&\& < 6.2@'  \
+		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
+}
