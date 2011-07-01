@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		dev-haskell/mtl
 		>=dev-haskell/text-0.11.0.2
 		dev-haskell/time
-		>=dev-haskell/unordered-containers-0.1.2.0
+		>=dev-haskell/unordered-containers-0.1.3.0
 		>=dev-haskell/vector-0.7
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
