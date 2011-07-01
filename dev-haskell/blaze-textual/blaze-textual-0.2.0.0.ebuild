@@ -19,9 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4
+		>=dev-haskell/double-conversion-0.2.0.0
 		>=dev-haskell/text-0.11.0.2
 		dev-haskell/time
 		dev-haskell/vector
-		>=dev-lang/ghc-6.12.1"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
