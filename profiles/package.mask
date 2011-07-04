@@ -1,17 +1,3 @@
-# Lennart Kolmodin <kolmodin@gentoo.org> (27 Sep 2010)
-# Mask GHC 7 for testing.
-# Unmasking this means many things will probably break in your system.
->=dev-lang/ghc-7
->=dev-haskell/haddock-2.8
-
-# Sergei Trofimovich <slyfox@gentoo.org> (24 May 2011)
-# Needs (masked) ghc-7.
-dev-haskell/repa
-
-# Ivan Miljenovic, 30 April 2010
-# r.e. bug 317547
->=dev-haskell/time-1.2
-
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
 # Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
