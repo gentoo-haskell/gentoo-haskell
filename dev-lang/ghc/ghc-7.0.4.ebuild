@@ -100,9 +100,10 @@ RDEPEND="
 # built against gmp-4
 
 DEPEND="${RDEPEND}
-	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
-							app-text/docbook-xsl-stylesheets
-							>=dev-libs/libxslt-1.1.2 ) )"
+	ghcbootstrap? (	doc? (	app-text/docbook-xml-dtd:4.2
+				app-text/docbook-xml-dtd:4.5
+				app-text/docbook-xsl-stylesheets
+				>=dev-libs/libxslt-1.1.2 ) )"
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
@@ -404,11 +405,15 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
-			echo XMLDocWays="html" >> mk/build.mk
-			echo HADDOCK_DOCS=YES >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
-			echo XMLDocWays="" >> mk/build.mk
-			echo HADDOCK_DOCS=NO >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
+			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 
 		# circumvent a very strange bug that seems related with ghc producing
