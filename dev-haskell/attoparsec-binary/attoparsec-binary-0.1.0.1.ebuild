@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.8.5
-		>=dev-haskell/bytestring-0.9.10
 		>=dev-lang/ghc-7.0.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
