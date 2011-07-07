@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit base haskell-cabal
 
@@ -22,11 +22,4 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
-PATCHES=("${FILESDIR}/${PN}-0.5.0-mtl-2.patch")
-
-src_prepare() {
-	# Loosen dependency on network
-	sed -i -e "s/network >= 2.1 && < 2.3,/network >= 2.1,/" \
-		"${S}/${PN}.cabal" \
-		|| die "Could not loosen deps on network"
-}
+PATCHES=("${FILESDIR}/${PN}-0.5.0-ghc-7.patch")
