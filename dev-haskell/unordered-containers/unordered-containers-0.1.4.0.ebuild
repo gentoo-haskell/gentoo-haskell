@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4.0.1
 		)"
 
-PATCHES=("${FILESDIR}/unordered-containers-0.1.3.0-drop-depends-range.patch")
+PATCHES=("${FILESDIR}/unordered-containers-0.1.4.0-drop-depends-range.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
