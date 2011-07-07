@@ -4,7 +4,7 @@
 
 EAPI="2"
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An MPD client library."
 HOMEPAGE="http://github.com/joachifm/libmpd-haskell"
@@ -16,11 +16,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		=dev-haskell/mtl-1.1*
+		<dev-haskell/mtl-2.1
 		>=dev-haskell/network-2.1
 		<dev-haskell/utf8-string-0.4"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
+
+PATCHES=("${FILESDIR}/${PN}-0.5.0-mtl-2.patch")
 
 src_prepare() {
 	# Loosen dependency on network
