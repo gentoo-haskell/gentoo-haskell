@@ -31,5 +31,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
-	cabal_src_configure $(cabal_flag chart)
+	cabal_src_configure $(cabal_flag chart) $(cabal_flag chart gtk)
 }
