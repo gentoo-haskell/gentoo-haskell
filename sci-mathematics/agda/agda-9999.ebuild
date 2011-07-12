@@ -22,6 +22,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4.4
+		=dev-haskell/hashable-1.1*
+		=dev-haskell/hashtables-1.0*
 		=dev-haskell/haskeline-0.6*
 		>=dev-haskell/haskell-src-exts-1.9.6
 		=dev-haskell/mtl-2.0*
