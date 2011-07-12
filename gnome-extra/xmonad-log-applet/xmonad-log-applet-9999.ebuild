@@ -23,9 +23,13 @@ RDEPEND="sys-apps/dbus
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
 
+src_configure() {
+	econf --sysconfdir=/etc
+}
+
 src_install() {
 	dodir /etc/gconf/schemas || dir "dodir failed"
-	emake DESTDIR="${D}" sysconfdir=etc install || die "Install failed"
+	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc "${FILESDIR}"/xmonad.hs || die
 }
 
