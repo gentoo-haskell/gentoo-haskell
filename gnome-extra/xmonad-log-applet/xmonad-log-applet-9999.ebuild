@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,11 +24,14 @@ RDEPEND="sys-apps/dbus
 DEPEND="${RDEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}"  install || die "Install failed"
+	dodir /etc/gconf/schemas || dir "dodir failed"
+	emake DESTDIR="${D}" sysconfdir=etc install || die "Install failed"
 	dodoc "${FILESDIR}"/xmonad.hs || die
 }
 
 pkg_postinst() {
 	elog "Remember to update your xmonad.hs accordingly"
 	elog "a sample xmonad.hs is provided in /usr/share/doc/${PF}"
+	elog "You can set the width of the applet via the"
+	elog "/apps/xmonad-log-applet/width-chars gconf key"
 }
