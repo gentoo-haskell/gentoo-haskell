@@ -39,7 +39,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 arch_binaries=""
 
 # sorted!
-#arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
+arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
 arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
@@ -54,6 +54,9 @@ arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc
 # 0 - yet
 yet_binary() {
 	case "${ARCH}" in
+		alpha)
+			return 0
+			;;
 		arm)
 			ewarn "ARM binary is built on armv5tel-eabi toolchain. Use with caution."
 			return 0
@@ -77,7 +80,8 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+# ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc ghcbootstrap llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" ghcquickbuild" # overlay only
@@ -96,9 +100,10 @@ RDEPEND="
 # built against gmp-4
 
 DEPEND="${RDEPEND}
-	ghcbootstrap? (	doc? (	~app-text/docbook-xml-dtd-4.2
-							app-text/docbook-xsl-stylesheets
-							>=dev-libs/libxslt-1.1.2 ) )"
+	ghcbootstrap? (	doc? (	app-text/docbook-xml-dtd:4.2
+				app-text/docbook-xml-dtd:4.5
+				app-text/docbook-xsl-stylesheets
+				>=dev-libs/libxslt-1.1.2 ) )"
 # In the ghcbootstrap case we rely on the developer having
 # >=ghc-5.04.3 on their $PATH already
 
@@ -400,11 +405,15 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
-			echo XMLDocWays="html" >> mk/build.mk
-			echo HADDOCK_DOCS=YES >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
-			echo XMLDocWays="" >> mk/build.mk
-			echo HADDOCK_DOCS=NO >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
+			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 
 		# circumvent a very strange bug that seems related with ghc producing
@@ -471,9 +480,9 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		# LC_ALL needs to workaround ghc's ParseCmm failure on some (es) locales
-		# bug #202212 / http://hackage.haskell.org/trac/ghc/ticket/4207
-		LC_ALL=C emake all || die "make failed"
+		# unfortunately ghc-7.0 still fails under parallel load:
+		# bug #326347 (and i think bug #373947)
+		emake -j1 all || die "make failed"
 	fi # ! use binary
 }
 

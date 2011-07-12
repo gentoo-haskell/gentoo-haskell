@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Support for using Heist templates in Happstack"
 HOMEPAGE="http://www.happstack.com/"
@@ -19,14 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
-		=dev-haskell/happstack-server-6.0*
+		<dev-haskell/happstack-server-6.2
 		=dev-haskell/heist-0.5*
 		=dev-haskell/mtl-2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${P}-happstack-6.1.patch")
+
 src_prepare() {
+	base_src_prepare
 	sed -e 's@blaze-builder >= 0.2 && <0.3@blaze-builder >= 0.2 \&\& <0.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
 }

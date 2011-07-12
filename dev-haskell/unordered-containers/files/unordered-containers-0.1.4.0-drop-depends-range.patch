@@ -1,8 +1,6 @@
-diff --git a/unordered-containers.cabal b/unordered-containers.cabal
-index f3c5588..2bfab1a 100644
---- a/unordered-containers.cabal
-+++ b/unordered-containers.cabal
-@@ -62,8 +62,8 @@ test-suite map-properties
+--- unordered-containers-0.1.4.0-orig/unordered-containers.cabal	2011-06-24 07:42:14.000000000 +1000
++++ unordered-containers-0.1.4.0/unordered-containers.cabal	2011-07-07 19:50:45.974541707 +1000
+@@ -62,8 +62,8 @@
      base,
      hashable >= 1.0.1.1 && < 1.2,
      QuickCheck >= 2.4.0.1,
@@ -13,7 +11,7 @@ index f3c5588..2bfab1a 100644
      unordered-containers
  
    ghc-options: -Wall
-@@ -79,8 +79,8 @@ test-suite set-properties
+@@ -79,8 +79,8 @@
      containers,
      hashable >= 1.0.1.1 && < 1.2,
      QuickCheck >= 2.4.0.1,
