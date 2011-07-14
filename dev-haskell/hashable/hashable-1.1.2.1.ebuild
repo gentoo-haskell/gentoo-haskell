@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4.0.1
 		)"
 
-PATCHES=("${FILESDIR}/hashable-1.1.2.0-drop-upper-bounds.patch")
-
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
