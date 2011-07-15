@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
