@@ -24,7 +24,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		dev-haskell/bytestring-nums
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		dev-haskell/directory-tree
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monadcatchio-transformers-0.2*
@@ -43,6 +43,11 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		libev? ( >=dev-haskell/hlibev-0.2.8 )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@case-insensitive >= 0.2 && < 0.3@case-insensitive >= 0.2 \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(cabal_flag libev)
