@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/monad-control-0.2*
-		<dev-haskell/stm-2.3
 		<dev-haskell/transformers-0.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
