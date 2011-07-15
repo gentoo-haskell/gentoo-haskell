@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/cabal-1.10*
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		=dev-haskell/cmdargs-0.7*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/haskell-src-exts-1.12
@@ -37,3 +37,8 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@case-insensitive == 0.2\.\*@case-insensitive == 0.3\.\*@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
