@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/attoparsec-0.9*
 		=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/failure-0.2
 		=dev-haskell/http-enumerator-0.6*
