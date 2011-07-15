@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/cereal-0.4
+		dev-haskell/entropy
 		>=dev-haskell/largeword-1.0.0
 		<dev-haskell/tagged-0.3
 		>=dev-lang/ghc-6.10.1"
