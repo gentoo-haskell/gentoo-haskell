@@ -20,10 +20,10 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		<dev-haskell/cereal-0.4
 		=dev-haskell/clientsession-0.6*
-		=dev-haskell/cookie-0.2*
+		=dev-haskell/cookie-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/hamlet-0.8*
