@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="HTTP client package with enumerator interface and HTTPS support."
 HOMEPAGE="http://github.com/snoyberg/http-enumerator"
@@ -24,7 +24,7 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 		=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
-		=dev-haskell/case-insensitive-0.2*
+		=dev-haskell/case-insensitive-0.3*
 		<dev-haskell/certificate-0.10
 		=dev-haskell/cprng-aes-0.2*
 		=dev-haskell/enumerator-0.4*
@@ -41,4 +41,8 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.6.5.5-ghc-6.12.3.patch")
+src_prepare() {
+	sed -e 's@case-insensitive      >= 0.2     && < 0.3@case-insensitive      >= 0.2     \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	epatch "${FILESDIR}/${PN}-0.6.5.5-ghc-6.12.3.patch"
+}
