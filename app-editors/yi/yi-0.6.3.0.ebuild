@@ -68,6 +68,15 @@ src_prepare() {
 	# Ugh! Upstream forgot it.
 	cp "${FILESDIR}/yi-0.6.3.0-src-library-Yi-UI-Pango-Gnome.hs" \
 		"${S}/src/library/Yi/UI/Pango/Gnome.hs"
+	# Upstream forgot the images required for the gtk pango frontend.
+	# The yi github repo yi/src/library/Yi/UI/Pango.hs calls it yi+lambda-fat-32.png
+	# The yi-0.6.3.0/src/library/Yi/UI/Pango.hs calls it yi+lambda-fat.32.png
+	cp "${FILESDIR}/yi+lambda-fat-16.png" "${S}/art/yi+lambda-fat-16.png"
+	cp "${FILESDIR}/yi+lambda-fat-32.png" "${S}/art/yi+lambda-fat-32.png"
+	cp "${FILESDIR}/yi+lambda-fat-64.png" "${S}/art/yi+lambda-fat-64.png"
+	cp "${FILESDIR}/yi+lambda-fat-128.png" "${S}/art/yi+lambda-fat-128.png"
+	sed -e 's@ico <- loadIcon "yi+lambda-fat.32.png"@ico <- loadIcon "yi+lambda-fat-32.png"@' \
+		-i "${S}/src/library/Yi/UI/Pango.hs"
 	sed -e 's@derive >=2.3 && <2.5@derive >=2.3 \&\& <2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen derive dependency"
 }
