@@ -24,6 +24,7 @@ RDEPEND="=dev-haskell/deepseq-1.1*
 		<dev-haskell/parsec-4
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/utf8-string-0.3*
+		>=dev-haskell/vector-0.7
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
