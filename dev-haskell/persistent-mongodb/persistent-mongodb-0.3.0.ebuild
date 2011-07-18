@@ -21,11 +21,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Note: dev-haskell/mongodb-1.0 API is incompatible with earlier releases, lots of changes
+# such as deleting the Network.Abstract module.
+
 RDEPEND=">=dev-haskell/bson-0.1.2
 		>=dev-haskell/cereal-0.3.0.0
 		=dev-haskell/compact-string-fix-0.3*
 		=dev-haskell/enumerator-0.4*
-		=dev-haskell/mongodb-0.9*
+		<dev-haskell/mongodb-1.0
 		dev-haskell/neither
 		>=dev-haskell/network-2.2.1.7
 		>=dev-haskell/persistent-0.5.0
