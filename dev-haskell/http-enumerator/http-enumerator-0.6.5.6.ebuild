@@ -40,9 +40,3 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@case-insensitive      >= 0.2     && < 0.3@case-insensitive      >= 0.2     \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	epatch "${FILESDIR}/${PN}-0.6.5.5-ghc-6.12.3.patch"
-}
