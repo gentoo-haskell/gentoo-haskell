@@ -480,9 +480,7 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		# unfortunately ghc-7.0 still fails under parallel load:
-		# bug #326347 (and i think bug #373947)
-		emake -j1 all || die "make failed"
+		emake all || die "make failed"
 	fi # ! use binary
 }
 
