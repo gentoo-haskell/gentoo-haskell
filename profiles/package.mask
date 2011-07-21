@@ -1,6 +1,7 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (21 Jul 2010)
 # The experimental branch.
 >=dev-lang/ghc-7.2
+>=dev-haskell/cabal-1.11
 
 # Masking some 'live' ebuilds (havind stable versions) to prevent users
 # accidentally install them.
