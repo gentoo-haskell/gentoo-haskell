@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Syntax highlighting binary and library using kate syntax files"
+DESCRIPTION="Syntax highlighting"
 HOMEPAGE="http://github.com/jgm/highlighting-kate"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
