@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="X11-xft"
 MY_P="${MY_PN}-${PV}"
@@ -26,3 +26,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-0.3-ghc72.patch")
