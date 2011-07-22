@@ -35,8 +35,8 @@ DEPEND=">=dev-haskell/cabal-1.6
 
 PATCHES=("${FILESDIR}/${PN}-0.5.7-ghc-7.2.patch")
 
-src_prepare() {
-	CABAL_CONFIGURE_FLAGS="$(cabal_flag test)"
+src_configure() {
+	cabal_src_configure $(cabal_flag test)
 }
 
 src_install() {
