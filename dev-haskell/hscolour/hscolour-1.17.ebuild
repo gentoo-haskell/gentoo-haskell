@@ -17,10 +17,11 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${PN}-1.17-no-haskell98.patch")
+
 src_install() {
 	cabal_src_install
 	if use doc; then
-		dohtml index.html hscolour.css
-		dodoc README
+		dohtml hscolour.css
 	fi
 }
