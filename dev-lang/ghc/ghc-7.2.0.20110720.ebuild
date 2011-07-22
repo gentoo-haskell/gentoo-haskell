@@ -111,6 +111,7 @@ DEPEND="${RDEPEND}
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
 	${PDEPEND}
+	dev-haskell/random
 	dev-haskell/syb
 	llvm? ( sys-devel/llvm )"
 
