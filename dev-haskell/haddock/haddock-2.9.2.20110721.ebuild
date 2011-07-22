@@ -9,12 +9,14 @@
 
 EAPI="2"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+#CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile hscolour"
 inherit haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="http://code.haskell.org/~slyfox/snapshots/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -23,9 +25,11 @@ IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths
 		=dev-haskell/xhtml-3000.2*
-		>=dev-lang/ghc-7"
+		>=dev-lang/ghc-7.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+RESTRICT="test" # avoid depends on QC
 
 # although haddock depends on alex and happy to build from scratch, we don't
 # want this ebuild to depend on those packages.
@@ -45,24 +49,26 @@ src_prepare() {
 	done
 }
 
-src_configure() {
-	# create a fake haddock executable. it'll set the right version to cabal
-	# configure, but will eventually get overwritten in src_compile by
-	# the real executable.
-	local exe="${S}/dist/build/haddock/haddock"
-	mkdir -p $(dirname "${exe}")
-	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
-	chmod +x "${exe}"
-
-	haskell-cabal_src_configure --with-haddock="${exe}"
-}
-
-src_compile() {
-	# when building the (recursive..) haddock docs, change the datadir to the
-	# current directory, as we're using haddock inplace even if it's built to be
-	# installed into the system first.
-	haddock_datadir="${S}" haskell-cabal_src_compile
-}
+# haddock is disabled as Cabal seems to be buggy about building docks with itself.
+# however, other packages seem to work
+#src_configure() {
+#	# create a fake haddock executable. it'll set the right version to cabal
+#	# configure, but will eventually get overwritten in src_compile by
+#	# the real executable.
+#	local exe="${S}/dist/build/haddock/haddock"
+#	mkdir -p $(dirname "${exe}")
+#	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
+#	chmod +x "${exe}"
+#
+#	haskell-cabal_src_configure --with-haddock="${exe}"
+#}
+#
+#src_compile() {
+#	# when building the (recursive..) haddock docs, change the datadir to the
+#	# current directory, as we're using haddock inplace even if it's built to be
+#	# installed into the system first.
+#	haddock_datadir="${S}" haskell-cabal_src_compile
+#}
 
 src_install() {
 	cabal_src_install
