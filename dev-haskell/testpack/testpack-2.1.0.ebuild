@@ -24,3 +24,5 @@ RDEPEND="dev-haskell/hunit
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-2.1.0-no-haskell98.patch")
