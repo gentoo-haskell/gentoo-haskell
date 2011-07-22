@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Data encoding library"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Library/Data_encoding"
@@ -21,3 +21,5 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.14-ghc-7.2.patch")
