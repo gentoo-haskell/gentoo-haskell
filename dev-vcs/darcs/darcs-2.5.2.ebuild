@@ -56,6 +56,7 @@ src_prepare() {
 	cd ..
 
 	epatch "${FILESDIR}/${PN}-2.5.2-relax-regex-libs-deps.patch"
+	epatch "${FILESDIR}/${PN}-2.5.2-ghc-7.2.patch"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
