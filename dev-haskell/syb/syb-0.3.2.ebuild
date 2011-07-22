@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Scrap Your Boilerplate"
 HOMEPAGE="http://www.cs.uu.nl/wiki/GenericProgramming/SYB"
@@ -21,3 +21,7 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.3.2-ghc-7.2.patch")
+
+RESTRICT="test" # FIXME: casespace damaged in upstream
