@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Test Utililty Pack for HUnit and QuickCheck"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack"
