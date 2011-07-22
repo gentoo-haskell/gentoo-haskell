@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Typeclasses and instances for converting between types"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/convertible"
@@ -20,7 +20,7 @@ IUSE="test"
 
 RDEPEND="dev-haskell/mtl
 		>=dev-haskell/text-0.7
-		<=dev-haskell/time-1.2.0.3
+		=dev-haskell/time-1.2*
 		>=dev-lang/ghc-6.8.2
 	"
 DEPEND="${RDEPEND}
@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/testpack
 		)
 	"
+
+PATCHES=("${FILESDIR}/${PN}-1.0.10.0-time-1.2.patch")
 
 src_configure() {
 	cabal_src_configure $(cabal_flag test buildtests)
