@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Conversion between markup formats"
 HOMEPAGE="http://johnmacfarlane.net/pandoc"
@@ -38,6 +38,8 @@ RDEPEND=">=dev-haskell/citeproc-hs-0.3.1
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-1.8.1.2-tests-ghc-7.2.patch")
 
 pandoc_init() {
 	pandoc="${PN}"
