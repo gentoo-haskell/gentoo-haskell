@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Fast rendering of common datatypes"
 HOMEPAGE="http://github.com/mailrank/blaze-textual"
@@ -26,3 +26,5 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.0.0-ghc-7.2.patch")
