@@ -19,8 +19,10 @@ IUSE=""
 RDEPEND="dev-haskell/binary
 		dev-haskell/mtl
 		dev-haskell/network
+		dev-haskell/puremd5
 		dev-haskell/stm
 		dev-haskell/time
+		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
