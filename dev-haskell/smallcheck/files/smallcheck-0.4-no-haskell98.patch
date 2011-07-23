@@ -1,0 +1,32 @@
+diff --git a/Test/SmallCheck.hs b/Test/SmallCheck.hs
+index a2e7787..5009862 100644
+--- a/Test/SmallCheck.hs
++++ b/Test/SmallCheck.hs
+@@ -21,10 +21,10 @@ module Test.SmallCheck (
+   depth, inc, dec
+   ) where
+ 
+-import List (intersperse)
+-import Monad (when)
+-import IO (stdout, hFlush)
+-import Foreign (unsafePerformIO)  -- used only for Testable (IO a)
++import Data.List (intersperse)
++import Control.Monad (when)
++import System.IO (stdout, hFlush)
++import System.IO.Unsafe (unsafePerformIO)  -- used only for Testable (IO a)
+ 
+ ------------------ <Series of depth-bounded values> -----------------
+ 
+diff --git a/smallcheck.cabal b/smallcheck.cabal
+index f89ac0f..c94c759 100644
+--- a/smallcheck.cabal
++++ b/smallcheck.cabal
+@@ -13,7 +13,7 @@ Description:   SmallCheck is similar to QuickCheck (Claessen and Hughes 2000-) b
+                tests properties for all the finitely many values up to some depth,
+                progressively increasing the depth used.
+ 
+-Build-Depends: base, haskell98
++Build-Depends: base
+ Build-Type:    Simple
+ 
+ Extra-source-files: examples/numeric/NumProps.hs, examples/logical/LogicProps.hs,
