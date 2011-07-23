@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/citeproc-hs-0.3.1
 		>=dev-haskell/xml-1.3.5
 		>=dev-haskell/zip-archive-0.1.1.7
 		>=dev-lang/ghc-6.10.1
-		highlight? ( =dev-haskell/highlighting-kate-0.2.9* )
+		highlight? ( <dev-haskell/highlighting-kate-0.3 )
 		pdf? ( virtual/latex-base )"
 
 DEPEND="${RDEPEND}
