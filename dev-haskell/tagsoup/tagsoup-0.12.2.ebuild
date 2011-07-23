@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Parsing and extracting information from (possibly malformed) HTML/XML documents"
 HOMEPAGE="http://community.haskell.org/~ndm/tagsoup/"
@@ -22,3 +22,5 @@ RDEPEND="dev-haskell/text
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.12.2-ghc-7.2.patch")
