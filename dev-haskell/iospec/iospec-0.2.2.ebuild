@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="IOSpec"
 MY_P="${MY_PN}-${PV}"
@@ -27,5 +27,7 @@ RDEPEND="dev-haskell/mtl
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.2-ghc-7.2.patch")
 
 S="${WORKDIR}/${MY_P}"
