@@ -1,0 +1,13 @@
+diff --git a/double-conversion.cabal b/double-conversion.cabal
+index 34b76dd..57d7905 100644
+--- a/double-conversion.cabal
++++ b/double-conversion.cabal
+@@ -95,7 +95,7 @@ library
+   cpp-options: -DINTEGER_GMP
+ 
+   if impl(ghc >= 6.11)
+-    build-depends: integer-gmp >= 0.2 && < 0.3
++    build-depends: integer-gmp >= 0.2 && < 0.4
+ 
+   if impl(ghc >= 6.9) && impl(ghc < 6.11)
+     build-depends: integer >= 0.1 && < 0.2

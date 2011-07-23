@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Fast conversion between double precision floating point and text"
 HOMEPAGE="https://github.com/mailrank/double-conversion"
@@ -23,3 +23,5 @@ RDEPEND=">=dev-haskell/text-0.11.0.8
 		sys-devel/gcc"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.0.0-ghc-7.2.patch")
