@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/primitive
 		dev-haskell/time
-		>=dev-haskell/vector-0.5
+		>=dev-haskell/vector-0.6.0.2
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
