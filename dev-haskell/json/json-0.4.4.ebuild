@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Support for serialising Haskell to and from JSON"
 HOMEPAGE="http://hackage.haskell.org/package/json"
@@ -26,6 +26,8 @@ RDEPEND="dev-haskell/mtl
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.0"
+
+PATCHES=("${FILESDIR}/${PN}-0.4.4-ghc-7.2.patch")
 
 src_configure() {
 	cabal_src_configure \
