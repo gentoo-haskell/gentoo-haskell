@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		dev-haskell/cabal
+		>=dev-haskell/cabal-1.6
 		dev-haskell/parsec
 		dev-haskell/regex-compat
 		>=dev-lang/ghc-6.10.1"
