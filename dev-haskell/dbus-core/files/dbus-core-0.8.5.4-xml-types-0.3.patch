@@ -1,0 +1,60 @@
+--- dbus-core-0.8.5.4-orig/hs/DBus/Introspection.hs	2011-02-06 11:14:13.000000000 +1100
++++ dbus-core-0.8.5.4/hs/DBus/Introspection.hs	2011-07-24 22:02:10.875965546 +1000
+@@ -32,14 +32,14 @@
+ 
+ import Data.Text.Lazy (Text)
+ import qualified Data.Text.Lazy as TL
+-
++import qualified Data.Text.Encoding as TE
+ 
+ import qualified Data.XML.Types as X
+ import qualified Text.XML.LibXML.SAX as SAX
+ import Control.Monad.ST (runST)
+ import qualified Data.STRef as ST
+ 
+-import Control.Monad ((>=>))
++import Control.Monad ((>=>), fmap)
+ import Data.Maybe (fromMaybe, listToMaybe)
+ 
+ import qualified DBus.Types as T
+@@ -86,10 +86,10 @@
+ 		ST.writeSTRef stackRef (parent:stack'')
+ 		return True
+ 	
+-	p <- SAX.newParserST onError Nothing
++	p <- SAX.newParserST Nothing
+ 	SAX.setCallback p SAX.parsedBeginElement onBegin
+ 	SAX.setCallback p SAX.parsedEndElement onEnd
+-	SAX.parseLazyText p text
++	SAX.parseBytes p $ TE.encodeUtf8 $ TL.toStrict text
+ 	SAX.parseComplete p
+ 	stack <- ST.readSTRef stackRef
+ 	return $ case stack of
+@@ -166,11 +166,8 @@
+ 	return $ Property name sig access
+ 
+ getattrM :: Text -> X.Element -> Maybe Text
+-getattrM name = fmap attrText . listToMaybe . attrs where
+-	attrText = textContent . X.attributeContent
+-	attrs = X.elementAttributes >=> X.isNamed (toName name)
+-	textContent cs = TL.concat [t | X.ContentText t <- cs]
+-
++getattrM name el = fmap TL.fromStrict (X.attributeText (toName name) el)
++  
+ getattr :: Text -> X.Element -> Text
+ getattr = (fromMaybe "" .) . getattrM
+ 
+@@ -181,11 +178,11 @@
+ children :: Monad m => (X.Element -> m b) -> (X.Element -> [X.Element]) -> X.Element -> m [b]
+ children f p = mapM f . concatMap p . X.elementChildren
+ 
+-named :: X.Named a => Text -> a -> [a]
++named :: Text -> X.Element -> [X.Element]
+ named = X.isNamed . toName
+ 
+ toName :: Text -> X.Name
+-toName t = X.Name t Nothing Nothing
++toName t = X.Name (TL.toStrict t) Nothing Nothing
+ 
+ newtype XmlWriter a = XmlWriter { runXmlWriter :: Maybe (a, Text) }
+ 
