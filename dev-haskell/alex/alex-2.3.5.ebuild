@@ -26,9 +26,8 @@ DEPEND="${RDEPEND}
 		app-text/docbook-xsl-stylesheets
 		>=dev-libs/libxslt-1.1.2 )"
 
-RESTRICT="test" # make bug? FIXME
-
 src_prepare() {
+	epatch "${FILESDIR}/${PN}-2.3.5-missing-test.patch"
 	epatch "${FILESDIR}/${PN}-2.3.5-ghc-7.2.patch"
 
 	for f in Scan Parser; do
