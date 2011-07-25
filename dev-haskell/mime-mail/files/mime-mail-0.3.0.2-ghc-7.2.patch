@@ -1,0 +1,13 @@
+diff --git a/mime-mail.cabal b/mime-mail.cabal
+index 1111a3b..275ce69 100644
+--- a/mime-mail.cabal
++++ b/mime-mail.cabal
+@@ -18,7 +18,7 @@ Library
+   Exposed-modules: Network.Mail.Mime
+   Build-depends:   base                >= 4          && < 5
+                  , dataenc             >= 0.14       && < 0.15
+-                 , process             >= 1.0        && < 1.1
++                 , process             >= 1.0        && < 1.2
+                  , random              >= 1.0        && < 1.1
+                  , blaze-builder       >= 0.2.1      && < 0.4
+                  , bytestring          >= 0.9.1      && < 0.10
