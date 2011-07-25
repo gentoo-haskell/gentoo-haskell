@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Parser for JavaScript"
 HOMEPAGE="http://github.com/alanz/language-javascript"
@@ -25,3 +25,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.6
 		dev-haskell/happy"
+
+PATCHES=("${FILESDIR}/${PN}-0.4.4-ghc-7.2.patch")
