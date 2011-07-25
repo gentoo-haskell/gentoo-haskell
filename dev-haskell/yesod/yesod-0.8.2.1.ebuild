@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		<dev-haskell/blaze-builder-0.4
-		<dev-haskell/cabal-1.11
 		=dev-haskell/hamlet-0.8*
 		<dev-haskell/hjsmin-0.1
 		=dev-haskell/http-types-0.6*
@@ -49,6 +48,8 @@ src_prepare() {
 		-e 's@yesod-form                >= 0.1      && < 0.2@yesod-form                >= 0.2      \&\& < 0.3@' \
 		-e 's@yesod-static              >= 0.1      && < 0.2@yesod-static              >= 0.2      \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not bump dependency on yesod-auth"
+
+	epatch "${FILESDIR}/${PN}-0.8.2.1-ghc-7.2.patch"
 }
 
 pkg_postinst() {
