@@ -1,0 +1,13 @@
+diff --git a/hamlet.cabal b/hamlet.cabal
+index e30fc77..042f525 100644
+--- a/hamlet.cabal
++++ b/hamlet.cabal
+@@ -43,7 +43,7 @@ library
+                    , text             >= 0.7     && < 0.12
+                    , containers       >= 0.2     && < 0.5
+                    , blaze-builder    >= 0.2     && < 0.4
+-                   , process          >= 1.0     && < 1.1
++                   , process          >= 1.0     && < 1.2
+     exposed-modules: Text.Hamlet
+                      Text.Hamlet.NonPoly
+                      Text.Hamlet.RT

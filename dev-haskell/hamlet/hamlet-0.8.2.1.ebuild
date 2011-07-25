@@ -36,7 +36,9 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-PATCHES=("${FILESDIR}/hamlet-0.8.2.1-remove-testsuite.patch")
+PATCHES=("${FILESDIR}/hamlet-0.8.2.1-remove-testsuite.patch"
+	"${FILESDIR}/hamlet-0.8.2.1-ghc-7.2.patch"
+	)
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
