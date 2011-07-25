@@ -1,0 +1,11 @@
+diff --git a/split.cabal b/split.cabal
+index a2d7577..33d1293 100644
+--- a/split.cabal
++++ b/split.cabal
+@@ -20,5 +20,5 @@ flag testing
+ 
+ library
+   ghc-options:       -Wall
+-  Build-Depends:     base <4.4
++  Build-Depends:     base <4.5
+   Exposed-Modules:   Data.List.Split, Data.List.Split.Internals
