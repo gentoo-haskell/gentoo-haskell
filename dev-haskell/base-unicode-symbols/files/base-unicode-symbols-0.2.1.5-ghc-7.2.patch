@@ -1,0 +1,13 @@
+diff --git a/base-unicode-symbols.cabal b/base-unicode-symbols.cabal
+index 48d72ec..46b8383 100644
+--- a/base-unicode-symbols.cabal
++++ b/base-unicode-symbols.cabal
+@@ -42,7 +42,7 @@ library
+   if flag(old-base)
+     build-depends: base >= 3.0 && < 3.0.3.1
+   else
+-    build-depends: base >= 3.0.3.1 && < 4.4
++    build-depends: base >= 3.0.3.1 && < 4.5
+     exposed-modules: Control.Category.Unicode
+   exposed-modules: Control.Applicative.Unicode
+                  , Control.Arrow.Unicode
