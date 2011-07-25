@@ -1,0 +1,12 @@
+diff --git a/ranges.cabal b/ranges.cabal
+index 21012ac..14ce6d1 100755
+--- a/ranges.cabal
++++ b/ranges.cabal
+@@ -12,6 +12,6 @@ License-file: LICENSE
+ Category: data
+ 
+ Library
+- Build-Depends: base>=2 && <4.4, containers>=0.2
++ Build-Depends: base>=2 && <4.5, containers>=0.2
+  Exposed-modules: Data.Ranges
+  ghc-options: -O2 -Wall
