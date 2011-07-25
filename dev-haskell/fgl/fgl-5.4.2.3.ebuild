@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Martin Erwig's Functional Graph Library"
 HOMEPAGE="http://web.engr.oregonstate.edu/~erwig/fgl/haskell"
@@ -22,3 +22,5 @@ RDEPEND="dev-haskell/mtl
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/${PN}-5.4.2.3-ghc-7.2.patch")

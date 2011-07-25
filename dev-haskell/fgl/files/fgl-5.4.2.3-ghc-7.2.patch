@@ -1,0 +1,10 @@
+diff --git a/Data/Graph/Inductive/PatriciaTree.hs b/Data/Graph/Inductive/PatriciaTree.hs
+index 2e68d86..c465259 100644
+--- a/Data/Graph/Inductive/PatriciaTree.hs
++++ b/Data/Graph/Inductive/PatriciaTree.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
++{-# LANGUAGE BangPatterns #-}
+ 
+ -- |An efficient implementation of 'Data.Graph.Inductive.Graph.Graph'
+ -- using big-endian patricia tree (i.e. "Data.IntMap").
