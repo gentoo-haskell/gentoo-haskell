@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Symmetrical Block, Stream and PubKey Ciphers"
 HOMEPAGE="http://github.com/vincenthz/hs-cryptocipher"
@@ -26,3 +26,5 @@ RDEPEND="dev-haskell/cereal
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.13-ghc-7.2.patch")
