@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Case insensitive string comparison"
 HOMEPAGE="http://hackage.haskell.org/package/case-insensitive"
@@ -23,3 +23,5 @@ RDEPEND="<dev-haskell/hashable-1.2
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.3-ghc-7.2.patch")
