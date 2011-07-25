@@ -1,0 +1,13 @@
+diff --git a/email-validate.cabal b/email-validate.cabal
+index 4da348c..6809249 100755
+--- a/email-validate.cabal
++++ b/email-validate.cabal
+@@ -13,7 +13,7 @@ stability:      experimental
+ cabal-version:  >= 1.6
+ 
+ library
+-    build-depends: base >= 2 && < 4.4, parsec >= 3.0 || == 2.1.*, ranges >= 0.2.2
++    build-depends: base >= 2 && < 4.5, parsec >= 3.0 || == 2.1.*, ranges >= 0.2.2
+     ghc-options: -O2
+ 
+     extensions: CPP
