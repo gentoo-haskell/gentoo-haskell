@@ -22,4 +22,4 @@ RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.2.1.5-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-0.2.2-ghc-7.2.patch")
