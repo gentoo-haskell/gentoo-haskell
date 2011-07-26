@@ -6,7 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+# PDEPEND of ghc, so restrict depgraph
+CABAL_FEATURES="lib profile nocabaldep"
 inherit base haskell-cabal
 
 DESCRIPTION="Scrap Your Boilerplate"
@@ -19,8 +20,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.1"
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+DEPEND="${RDEPEND}"
 
 PATCHES=("${FILESDIR}/${PN}-0.3.2-ghc-7.2.patch")
 

@@ -6,7 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+# PDEPEND of ghc, so restrict depgraph
+CABAL_FEATURES="lib profile nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="random number library"
@@ -20,7 +21,6 @@ IUSE=""
 
 RDEPEND="dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+DEPEND="${RDEPEND}"
 
 CABAL_CORE_LIB_GHC_PV="7.0.1 7.0.2 7.0.3 7.0.4"
