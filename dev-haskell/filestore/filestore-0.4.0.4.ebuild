@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Interface for versioning file stores."
 HOMEPAGE="http://johnmacfarlane.net/repos/filestore"
@@ -27,6 +27,8 @@ RDEPEND="<dev-haskell/diff-0.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-0.4.0.4-ghc-7.2.patch")
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
