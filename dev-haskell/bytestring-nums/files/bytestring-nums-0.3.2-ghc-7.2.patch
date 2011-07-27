@@ -1,95 +1,30 @@
 --- bytestring-nums-0.3.2-orig/Data/ByteString/Nums/Careless/Hex.hs	2010-06-01 10:13:08.000000000 +1000
-+++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Hex.hs	2011-07-26 20:47:46.378341450 +1000
++++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Hex.hs	2011-07-27 19:11:37.315526433 +1000
 @@ -2,6 +2,7 @@
  
  {-# LANGUAGE MultiParamTypeClasses
             , TypeSynonymInstances
-+           , CPP
++           , FlexibleInstances
    #-}
  
- 
-@@ -52,8 +53,10 @@
-   hex                        =  strict_hex
- instance Hexable ByteString Double where
-   hex                        =  strict_hex
-+#if !MIN_VERSION_base(4,4,0)
- instance Hexable ByteString Rational where
-   hex                        =  strict_hex
-+#endif
- instance Hexable ByteString Integer where
-   hex                        =  strict_hex
- 
-@@ -81,8 +84,10 @@
-   hex                        =  lazy_hex
- instance Hexable Lazy.ByteString Double where
-   hex                        =  lazy_hex
-+#if !MIN_VERSION_base(4,4,0)
- instance Hexable Lazy.ByteString Rational where
-   hex                        =  lazy_hex
-+#endif
- instance Hexable Lazy.ByteString Integer where
-   hex                        =  lazy_hex
  
 --- bytestring-nums-0.3.2-orig/Data/ByteString/Nums/Careless/Int.hs	2010-06-01 10:13:08.000000000 +1000
-+++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Int.hs	2011-07-26 20:52:17.937193074 +1000
++++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Int.hs	2011-07-27 19:12:02.681308150 +1000
 @@ -2,6 +2,7 @@
  
  {-# LANGUAGE MultiParamTypeClasses
             , TypeSynonymInstances
-+           , CPP
++           , FlexibleInstances
    #-}
  
- 
-@@ -52,8 +53,10 @@
-   int                        =  strict_signed
- instance Intable ByteString Double where
-   int                        =  strict_signed
-+#if !MIN_VERSION_base(4,4,0)
- instance Intable ByteString Rational where
-   int                        =  strict_signed
-+#endif
- instance Intable ByteString Integer where
-   int                        =  strict_signed
- 
-@@ -81,8 +84,10 @@
-   int                        =  lazy_signed
- instance Intable Lazy.ByteString Double where
-   int                        =  lazy_signed
-+#if !MIN_VERSION_base(4,4,0)
- instance Intable Lazy.ByteString Rational where
-   int                        =  lazy_signed
-+#endif
- instance Intable Lazy.ByteString Integer where
-   int                        =  lazy_signed
  
 --- bytestring-nums-0.3.2-orig/Data/ByteString/Nums/Careless/Float.hs	2010-06-01 10:13:08.000000000 +1000
-+++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Float.hs	2011-07-26 20:55:11.136568187 +1000
++++ bytestring-nums-0.3.2/Data/ByteString/Nums/Careless/Float.hs	2011-07-27 19:13:19.459674616 +1000
 @@ -2,6 +2,7 @@
  
  {-# LANGUAGE MultiParamTypeClasses
             , TypeSynonymInstances
-+           , CPP
++           , FlexibleInstances
    #-}
- 
- 
-@@ -33,16 +34,19 @@
-   float                      =  strict_float
- instance Floatable ByteString Double where
-   float                      =  strict_float
-+#if !MIN_VERSION_base(4,4,0)
- instance Floatable ByteString Rational where
-   float                      =  strict_float
-+#endif
- 
- instance Floatable Lazy.ByteString Float where
-   float                      =  lazy_float
- instance Floatable Lazy.ByteString Double where
-   float                      =  lazy_float
-+#if !MIN_VERSION_base(4,4,0)
- instance Floatable Lazy.ByteString Rational where
-   float                      =  lazy_float
--
-+#endif
- 
  
  
