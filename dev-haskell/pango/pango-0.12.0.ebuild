@@ -8,7 +8,7 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the Pango text rendering engine."
 HOMEPAGE="http://www.haskell.org/gtk2hs/"
@@ -27,3 +27,5 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		x11-libs/pango"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+PATCHES=("${FILESDIR}/${PN}-0.12.0-ghc-7.2.patch")
