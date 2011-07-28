@@ -1,0 +1,36 @@
+diff --git a/System/Gnome/GConf/GConfClient.chs b/System/Gnome/GConf/GConfClient.chs
+index 4f8a06c..7c323b7 100644
+--- a/System/Gnome/GConf/GConfClient.chs
++++ b/System/Gnome/GConf/GConfClient.chs
+@@ -104,7 +104,7 @@ import System.Glib.GObject  (wrapNewGObject)
+ {# enum GConfError {underscoreToCase} #}
+ 
+ gconfErrorDomain :: GErrorDomain
+-gconfErrorDomain = unsafePerformIO {#call unsafe gconf_error_quark#}
++gconfErrorDomain = System.IO.Unsafe.unsafePerformIO {#call unsafe gconf_error_quark#}
+ 
+ instance GErrorClass GConfError where
+   gerrorDomain _ = gconfErrorDomain
+diff --git a/System/Gnome/GConf/GConfValue.chs b/System/Gnome/GConf/GConfValue.chs
+index eb23cd9..8f08b22 100644
+--- a/System/Gnome/GConf/GConfValue.chs
++++ b/System/Gnome/GConf/GConfValue.chs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE CPP, TypeSynonymInstances, OverlappingInstances, ScopedTypeVariables #-}
++{-# LANGUAGE FlexibleInstances #-}
+ -- String & [a] overlap
+ -- -*-haskell-*-
+ -- GIMP Toolkit (GTK) GConf API
+diff --git a/gconf.cabal b/gconf.cabal
+index 748618e..9277816 100644
+--- a/gconf.cabal
++++ b/gconf.cabal
+@@ -37,7 +37,7 @@ Source-Repository head
+   location:     http://code.haskell.org/gconf/
+ 
+ Library
+-        build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl,
++        build-depends:  base >= 4 && < 5, array, containers, mtl,
+                         glib >= 0.12 && < 0.13
+ 						
+         build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
