@@ -1,0 +1,13 @@
+diff --git a/gio.cabal b/gio.cabal
+index 3c9818a..3ec5732 100644
+--- a/gio.cabal
++++ b/gio.cabal
+@@ -40,7 +40,7 @@ Source-Repository head
+   subdir:       gio
+ 
+ Library
+-        build-depends:  base >= 4 && < 5, array, containers, haskell98, mtl, bytestring,
++        build-depends:  base >= 4 && < 5, array, containers, mtl, bytestring,
+                         glib >= 0.12.0 && < 0.13
+         build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+ 
