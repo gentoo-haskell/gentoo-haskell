@@ -26,4 +26,12 @@ RDEPEND="dev-haskell/binary
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/${P}-remove-sourcePos-add-ghc-6.12.3-instances.patch")
+PATCHES=("${FILESDIR}/${P}-remove-sourcePos-add-ghc-6.12.3-instances.patch" "${FILESDIR}/${P}-ghc-7.2.patch")
+
+src_prepare() {
+	base_src_prepare
+	cd "${S}"
+	if has_version ">=dev-haskell/haxml-1.22.0"; then
+		epatch "${FILESDIR}/${P}-haxml-1.22.patch"
+	fi
+}
