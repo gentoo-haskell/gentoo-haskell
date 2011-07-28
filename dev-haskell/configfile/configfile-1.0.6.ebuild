@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="ConfigFile"
 MY_P="${MY_PN}-${PV}"
@@ -28,4 +28,4 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FIELSDIR}/${PN}-1.0.6-no-haskell98.patch")
+PATCHES=("${FILESDIR}/${PN}-1.0.6-no-haskell98.patch")
