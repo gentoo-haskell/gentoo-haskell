@@ -1,0 +1,13 @@
+diff --git a/ConfigFile.cabal b/ConfigFile.cabal
+index 0831177..551dfe3 100644
+--- a/ConfigFile.cabal
++++ b/ConfigFile.cabal
+@@ -43,7 +43,7 @@ Library
+    UndecidableInstances, TypeSynonymInstances, FlexibleContexts,
+    FlexibleInstances
+   Build-Depends: parsec, base < 5,
+-                haskell98, mtl, MissingH>=1.0.0, containers
++                mtl, MissingH>=1.0.0, containers
+   GHC-Options: -O2 -Wall
+ 
+ Executable runtests

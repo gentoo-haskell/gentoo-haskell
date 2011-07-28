@@ -27,3 +27,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FIELSDIR}/${PN}-1.0.6-no-haskell98.patch")
