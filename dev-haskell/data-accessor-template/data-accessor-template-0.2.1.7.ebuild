@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Utilities for accessing and manipulating fields of records"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Record_access"
@@ -23,3 +23,5 @@ RDEPEND="<dev-haskell/data-accessor-0.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.1.7-ghc-7.2.patch")

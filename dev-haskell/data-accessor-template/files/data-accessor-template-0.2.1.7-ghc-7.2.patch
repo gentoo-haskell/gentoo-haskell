@@ -1,0 +1,13 @@
+diff --git a/data-accessor-template.cabal b/data-accessor-template.cabal
+index 63fdc6f..fd6b17e 100644
+--- a/data-accessor-template.cabal
++++ b/data-accessor-template.cabal
+@@ -32,7 +32,7 @@ Library
+   If impl(ghc)
+     If impl(ghc >= 6.12)
+       Hs-Source-Dirs: src-5
+-      Build-Depends:  template-haskell >=2.4 && <2.6
++      Build-Depends:  template-haskell >=2.4 && <2.7
+     Else
+       Hs-Source-Dirs: src-3
+       Build-Depends:  template-haskell >=2.2 && <2.4
