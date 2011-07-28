@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI=2
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit eutils haskell-cabal
@@ -42,6 +42,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}/MissingH-1.1.0.3-fix-buildtests.patch"
+	epatch "${FILESDIR}/${PN}-1.1.0.3-no-haskell98.patch"
 
 	# (non-ASCII non-UTF-8 source breaks hscolour)
 	cd src/System/Time
