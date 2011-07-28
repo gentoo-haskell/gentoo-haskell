@@ -1,0 +1,39 @@
+diff --git a/System/Glib/FFI.hs b/System/Glib/FFI.hs
+index 85f2b53..f6faf92 100644
+--- a/System/Glib/FFI.hs
++++ b/System/Glib/FFI.hs
+@@ -68,7 +68,7 @@ newForeignPtr = flip Foreign.newForeignPtr
+ #endif
+ 
+ nullForeignPtr :: ForeignPtr a
+-nullForeignPtr = unsafePerformIO $ newForeignPtr_ nullPtr
++nullForeignPtr = System.IO.Unsafe.unsafePerformIO $ newForeignPtr_ nullPtr
+ 
+ -- This is useful when it comes to marshaling lists of GObjects
+ --
+diff --git a/System/Glib/Types.chs b/System/Glib/Types.chs
+index 6c032cb..4b745f2 100644
+--- a/System/Glib/Types.chs
++++ b/System/Glib/Types.chs
+@@ -52,8 +52,6 @@ class GObjectClass o where
+   toGObject         :: o -> GObject
+   -- | Unchecked downcast.
+   unsafeCastGObject :: GObject -> o
+-  {-# INLINE toGObject #-}
+-  {-# INLINE unsafeCastGObject #-}
+ 
+ instance GObjectClass GObject where
+   toGObject = id
+diff --git a/glib.cabal b/glib.cabal
+index 78364fa..4ff8c0a 100644
+--- a/glib.cabal
++++ b/glib.cabal
+@@ -33,7 +33,7 @@ Flag closure_signals
+ 
+ Library
+         build-depends:  base >= 4 && < 5,
+-                        containers, haskell98
++                        containers
+         build-tools:    gtk2hsC2hs
+         cpp-options:     -DHAVE_NEW_CONTROL_EXCEPTION
+         if flag(closure_signals)
