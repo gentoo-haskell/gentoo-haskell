@@ -1,0 +1,292 @@
+--- haxr-3000.8.2-orig/Network/XmlRpc/DTD_XMLRPC.hs	2011-05-28 02:02:20.000000000 +1000
++++ haxr-3000.8.2/Network/XmlRpc/DTD_XMLRPC.hs	2011-07-28 22:37:07.544716013 +1000
+@@ -2,6 +2,7 @@
+ 
+ import Text.XML.HaXml.XmlContent
+ import Text.XML.HaXml.OneOfN
++import Text.XML.HaXml.Types (QName(..))
+ 
+ 
+ {-Type decls-}
+@@ -48,7 +49,7 @@
+     toHType x = Defined "i4" [] []
+ instance XmlContent I4 where
+     toContents (I4 a) =
+-        [CElem (Elem "i4" [] (toText a)) ()]
++        [CElem (Elem (N "i4") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["i4"]
+         ; interior e $ return (I4) `apply` (text `onFail` return "")
+@@ -58,7 +59,7 @@
+     toHType x = Defined "int" [] []
+ instance XmlContent AInt where
+     toContents (AInt a) =
+-        [CElem (Elem "int" [] (toText a)) ()]
++        [CElem (Elem (N "int") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["int"]
+         ; interior e $ return (AInt) `apply` (text `onFail` return "")
+@@ -68,7 +69,7 @@
+     toHType x = Defined "boolean" [] []
+ instance XmlContent Boolean where
+     toContents (Boolean a) =
+-        [CElem (Elem "boolean" [] (toText a)) ()]
++        [CElem (Elem (N "boolean") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["boolean"]
+         ; interior e $ return (Boolean) `apply` (text `onFail` return "")
+@@ -78,7 +79,7 @@
+     toHType x = Defined "string" [] []
+ instance XmlContent AString where
+     toContents (AString a) =
+-        [CElem (Elem "string" [] (toText a)) ()]
++        [CElem (Elem (N "string") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["string"]
+         ; interior e $ return (AString) `apply` (text `onFail` return "")
+@@ -88,7 +89,7 @@
+     toHType x = Defined "double" [] []
+ instance XmlContent ADouble where
+     toContents (ADouble a) =
+-        [CElem (Elem "double" [] (toText a)) ()]
++        [CElem (Elem (N "double") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["double"]
+         ; interior e $ return (ADouble) `apply` (text `onFail` return "")
+@@ -98,7 +99,7 @@
+     toHType x = Defined "dateTime.iso8601" [] []
+ instance XmlContent DateTime_iso8601 where
+     toContents (DateTime_iso8601 a) =
+-        [CElem (Elem "dateTime.iso8601" [] (toText a)) ()]
++        [CElem (Elem (N "dateTime.iso8601") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["dateTime.iso8601"]
+         ; interior e $ return (DateTime_iso8601)
+@@ -109,7 +110,7 @@
+     toHType x = Defined "base64" [] []
+ instance XmlContent Base64 where
+     toContents (Base64 a) =
+-        [CElem (Elem "base64" [] (toText a)) ()]
++        [CElem (Elem (N "base64") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["base64"]
+         ; interior e $ return (Base64) `apply` (text `onFail` return "")
+@@ -119,7 +120,7 @@
+     toHType x = Defined "data" [] []
+ instance XmlContent Data where
+     toContents (Data a) =
+-        [CElem (Elem "data" [] (concatMap toContents a)) ()]
++        [CElem (Elem (N "data") [] (concatMap toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["data"]
+         ; interior e $ return (Data) `apply` many parseContents
+@@ -129,7 +130,7 @@
+     toHType x = Defined "array" [] []
+ instance XmlContent Array where
+     toContents (Array a) =
+-        [CElem (Elem "array" [] (toContents a)) ()]
++        [CElem (Elem (N "array") [] (toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["array"]
+         ; interior e $ return (Array) `apply` parseContents
+@@ -139,7 +140,7 @@
+     toHType x = Defined "name" [] []
+ instance XmlContent Name where
+     toContents (Name a) =
+-        [CElem (Elem "name" [] (toText a)) ()]
++        [CElem (Elem (N "name") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["name"]
+         ; interior e $ return (Name) `apply` (text `onFail` return "")
+@@ -149,7 +150,7 @@
+     toHType x = Defined "member" [] []
+ instance XmlContent Member where
+     toContents (Member a b) =
+-        [CElem (Elem "member" [] (toContents a ++ toContents b)) ()]
++        [CElem (Elem (N "member") [] (toContents a ++ toContents b)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["member"]
+         ; interior e $ return (Member) `apply` parseContents
+@@ -160,7 +161,7 @@
+     toHType x = Defined "struct" [] []
+ instance XmlContent Struct where
+     toContents (Struct a) =
+-        [CElem (Elem "struct" [] (concatMap toContents a)) ()]
++        [CElem (Elem (N "struct") [] (concatMap toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["struct"]
+         ; interior e $ return (Struct) `apply` many parseContents
+@@ -170,7 +171,7 @@
+     toHType x = Defined "value" [] []
+ instance XmlContent Value where
+     toContents (Value a) =
+-        [CElem (Elem "value" [] (concatMap toContents a)) ()]
++        [CElem (Elem (N "value") [] (concatMap toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["value"]
+         ; interior e $ return (Value) `apply` many parseContents
+@@ -206,7 +207,7 @@
+     toHType x = Defined "param" [] []
+ instance XmlContent Param where
+     toContents (Param a) =
+-        [CElem (Elem "param" [] (toContents a)) ()]
++        [CElem (Elem (N "param") [] (toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["param"]
+         ; interior e $ return (Param) `apply` parseContents
+@@ -216,7 +217,7 @@
+     toHType x = Defined "params" [] []
+ instance XmlContent Params where
+     toContents (Params a) =
+-        [CElem (Elem "params" [] (concatMap toContents a)) ()]
++        [CElem (Elem (N "params") [] (concatMap toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["params"]
+         ; interior e $ return (Params) `apply` many parseContents
+@@ -226,7 +227,7 @@
+     toHType x = Defined "methodName" [] []
+ instance XmlContent MethodName where
+     toContents (MethodName a) =
+-        [CElem (Elem "methodName" [] (toText a)) ()]
++        [CElem (Elem (N "methodName") [] (toText a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["methodName"]
+         ; interior e $ return (MethodName)
+@@ -237,7 +238,7 @@
+     toHType x = Defined "methodCall" [] []
+ instance XmlContent MethodCall where
+     toContents (MethodCall a b) =
+-        [CElem (Elem "methodCall" [] (toContents a ++
++        [CElem (Elem (N "methodCall") [] (toContents a ++
+                                       maybe [] toContents b)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["methodCall"]
+@@ -249,7 +250,7 @@
+     toHType x = Defined "fault" [] []
+ instance XmlContent Fault where
+     toContents (Fault a) =
+-        [CElem (Elem "fault" [] (toContents a)) ()]
++        [CElem (Elem (N "fault") [] (toContents a)) ()]
+     parseContents = do
+         { e@(Elem _ [] _) <- element ["fault"]
+         ; interior e $ return (Fault) `apply` parseContents
+@@ -259,9 +260,9 @@
+     toHType x = Defined "methodResponse" [] []
+ instance XmlContent MethodResponse where
+     toContents (MethodResponseParams a) =
+-        [CElem (Elem "methodResponse" [] (toContents a) ) ()]
++        [CElem (Elem (N "methodResponse") [] (toContents a) ) ()]
+     toContents (MethodResponseFault a) =
+-        [CElem (Elem "methodResponse" [] (toContents a) ) ()]
++        [CElem (Elem (N "methodResponse") [] (toContents a) ) ()]
+     parseContents = do 
+         { e@(Elem _ [] _) <- element ["methodResponse"]
+         ; interior e $ oneOf
+--- haxr-3000.8.2-orig/Network/XmlRpc/Pretty.hs	2011-05-28 02:02:20.000000000 +1000
++++ haxr-3000.8.2/Network/XmlRpc/Pretty.hs	2011-07-28 23:13:46.217573121 +1000
+@@ -103,9 +103,15 @@
+ parens :: MBuilder -> MBuilder
+ parens p = "(" <> p <> ")"
+ 
++qtext :: QName -> MBuilder
++qtext q = text n
++  where n = case q of
++          (N n')    -> n'
++          (QN _ n') -> n'
++    
+ text :: String -> MBuilder
+ text = MBuilder . Just . fromString
+-
++    
+ ----
+ -- Now for the XML pretty-printing interface.
+ -- (Basically copied direct from Text.XML.HaXml.Pretty).
+@@ -162,29 +168,40 @@
+ sddecl sd   | sd            = "standalone='yes'"
+             | otherwise     = "standalone='no'"
+ 
+-doctypedeclB (DTD n eid ds)  = if P.null ds then hd <> ">"
++doctypedeclB (DTD q eid ds)  = if P.null ds then hd <> ">"
+                                else hd <+> " [" $$ vcatMap markupdecl ds $$ "]>"
+   where hd = "<!DOCTYPE" <+> text n <+> maybe externalid eid
+-
++        n = case q of
++            (N n')    -> n'
++            (QN _ n') -> n'
+ markupdecl (Element e)      = elementdecl e
+ markupdecl (AttList a)      = attlistdecl a
+ markupdecl (Entity e)       = entitydecl e
+ markupdecl (Notation n)     = notationdecl n
+ markupdecl (MarkupMisc m)   = misc m
+ 
+-elementB (Elem n as []) = "<" <> (text n <+> fsep (map attribute as)) <> "/>"
+-elementB (Elem n as cs) 
++elementB (Elem q as []) = "<" <> (text n <+> fsep (map attribute as)) <> "/>"
++  where n = case q of 
++            (N n')    -> n'
++            (QN _ n') -> n'
++elementB (Elem q as cs) 
+   | isText (P.head cs)  = "<" <> (text n <+> fsep (map attribute as)) <> ">" <>
+                           hcatMap contentB cs <> "</" <> text n <> ">"
+   | otherwise           = "<" <> (text n <+> fsep (map attribute as)) <> ">" <>
+                           hcatMap contentB cs <> "</" <> text n <> ">"
++  where n = case q of
++            (N n')    -> n'
++            (QN _ n') -> n'
+ 
+ isText :: Content t -> Bool
+ isText (CString _ _ _) = True
+ isText (CRef _ _)      = True
+ isText _               = False
+ 
+-attribute (n,v) = text n <> "=" <> attvalue v
++attribute (q,v) = text n <> "=" <> attvalue v
++  where n = case q of 
++            (N n')    -> n'
++            (QN _ n') -> n'
+ 
+ contentB (CElem e _)         = elementB e
+ contentB (CString False s _) = chardata s
+@@ -193,8 +210,11 @@
+ contentB (CMisc m _)         = misc m
+ 
+ elementdecl :: ElementDecl -> MBuilder
+-elementdecl (ElementDecl n cs) = "<!ELEMENT" <+> text n <+>
++elementdecl (ElementDecl q cs) = "<!ELEMENT" <+> text n <+>
+                                  contentspec cs <> ">"
++  where n = case q of 
++            (N n')    -> n'
++            (QN _ n') -> n'
+ 
+ contentspec :: ContentSpec -> MBuilder
+ contentspec EMPTY           = "EMPTY"
+@@ -202,7 +222,10 @@
+ contentspec (Mixed m)       = mixed m
+ contentspec (ContentSpec c) = cpB c
+ 
+-cpB (TagName n m) = text n <> modifier m
++cpB (TagName q m) = text n <> modifier m
++  where n = case q of 
++            (N n')    -> n'
++            (QN _ n') -> n'
+ cpB (Choice cs m) = parens (intercalate "|" (map cpB cs)) <> modifier m
+ cpB (Seq cs m)    = parens (intercalate "," (map cpB cs)) <> modifier m
+ 
+@@ -214,14 +237,14 @@
+ 
+ mixed :: Mixed -> MBuilder
+ mixed  PCDATA         = "(#PCDATA)"
+-mixed (PCDATAplus ns) = "(#PCDATA |" <+> intercalate "|" (map text ns) <> ")*"
++mixed (PCDATAplus ns) = "(#PCDATA |" <+> intercalate "|" (map qtext ns) <> ")*"
+ 
+ attlistdecl :: AttListDecl -> MBuilder
+-attlistdecl (AttListDecl n ds) = "<!ATTLIST" <+> text n <+> 
++attlistdecl (AttListDecl n ds) = "<!ATTLIST" <+> qtext n <+> 
+                                  fsep (map attdef ds) <> ">"
+ 
+ attdef :: AttDef -> MBuilder
+-attdef (AttDef n t d)          = text n <+> atttype t <+> defaultdecl d
++attdef (AttDef n t d)          = qtext n <+> atttype t <+> defaultdecl d
+ 
+ atttype :: AttType -> MBuilder
+ atttype  StringType            = "CDATA"
