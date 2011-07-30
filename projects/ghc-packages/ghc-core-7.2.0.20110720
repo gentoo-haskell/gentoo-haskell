@@ -5,5 +5,5 @@
 # don't allow them to be upgraded.
 dev-haskell/cabal-1.12.0
 dev-haskell/hpc-0.5.1.0
-dev-haskell/extensible-exceptions-0.1.1.2
+dev-haskell/extensible-exceptions-0.1.1.3
 dev-haskell/time-1.2.0.5
