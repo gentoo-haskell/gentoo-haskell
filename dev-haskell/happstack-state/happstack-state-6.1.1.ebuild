@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Event-based distributed state."
 HOMEPAGE="http://happstack.com"
@@ -27,5 +27,3 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-ghc-6.12.3.patch")
