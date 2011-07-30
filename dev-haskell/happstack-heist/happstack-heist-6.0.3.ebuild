@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
-		=dev-haskell/happstack-server-6.1*
+		=dev-haskell/happstack-server-6.2*
 		=dev-haskell/heist-0.5*
 		=dev-haskell/mtl-2*
 		>=dev-lang/ghc-6.8.2"
