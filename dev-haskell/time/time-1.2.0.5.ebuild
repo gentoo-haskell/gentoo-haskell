@@ -22,7 +22,7 @@ RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-CABAL_CORE_LIB_GHC_PV="7.2.0.20110720"
+CABAL_CORE_LIB_GHC_PV="7.2.0.20110728"
 
 # FIXME: fails in my timezone
 RESTRICT="test"

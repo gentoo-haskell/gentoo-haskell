@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 # versions don't match
-#CABAL_CORE_LIB_GHC_PV="7.2.0.20110720"
+#CABAL_CORE_LIB_GHC_PV="7.2.0.20110728"
 
 src_configure() {
 	if ! cabal-is-dummy-lib; then

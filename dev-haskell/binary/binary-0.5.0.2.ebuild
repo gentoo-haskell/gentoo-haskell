@@ -19,4 +19,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 
 PATCHES=("${FILESDIR}/binary-0.5.0.2-ghc-7.patch")
 
-CABAL_CORE_LIB_GHC_PV="7.2.0.20110720" # seems to be ghc bug. should be ghc-binary
+CABAL_CORE_LIB_GHC_PV="7.2.0.20110728"
