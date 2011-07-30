@@ -19,9 +19,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/digestive-functors-0.1.0*
-		=dev-haskell/happstack-server-6.1*
+		=dev-haskell/happstack-server-6.2*
 		dev-haskell/text
 		>=dev-haskell/utf8-string-0.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
+}
