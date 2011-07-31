@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/cgi
 		<dev-haskell/feed-0.4
 		<dev-haskell/filestore-0.5
 		dev-haskell/ghc-paths
-		<dev-haskell/happstack-server-6.2
+		<dev-haskell/happstack-server-6.3
 		<dev-haskell/happstack-util-6.2
 		>=dev-haskell/highlighting-kate-0.2.7.1
 		<dev-haskell/hslogger-1.2
@@ -48,3 +48,8 @@ RDEPEND="dev-haskell/cgi
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
+}
