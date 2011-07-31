@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://code.haskell.org/~arossato/xmobar"
@@ -31,6 +31,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		alsa? ( >=dev-haskell/alsa-mixer-0.1 )"
 # 		wifi? ( net-wireless/wireless-tools )
 RDEPEND="mpd? ( media-sound/mpd )"
+
+PATCHES=("${FILESDIR}/${PN}-9999-fix-build-failure-against-ghc-7.2.patch")
 
 src_configure() {
 	cabal_src_configure \
