@@ -21,7 +21,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		dev-haskell/openal
 		dev-haskell/statevar
-	    media-libs/freealut"
+		media-libs/freealut"
 
 S="${WORKDIR}/${MY_P}"
 
