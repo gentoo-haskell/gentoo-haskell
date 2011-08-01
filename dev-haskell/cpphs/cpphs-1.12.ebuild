@@ -13,15 +13,9 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/cabal"
 RDEPEND=""
-
-src_install() {
-	cabal_src_install
-	dohtml docs/index.html
-	doman docs/cpphs.1
-}
