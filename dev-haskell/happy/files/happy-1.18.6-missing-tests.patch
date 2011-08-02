@@ -1,0 +1,164 @@
+Tue Aug  2 12:17:31 EEST 2011  Sergei Trofimovich <slyfox@community.haskell.org>
+  * cabal: add missing tests to distribution tarball
+diff -rN -u old-happy/happy.cabal new-happy/happy.cabal
+--- old-happy/happy.cabal	2011-08-02 12:24:49.783565818 +0300
++++ new-happy/happy.cabal	2011-08-02 12:24:49.858564882 +0300
+@@ -100,6 +100,8 @@
+ 	templates/GLR_Base.hs
+ 	templates/GenericTemplate.hs
+ 	templates/GLR_Lib.hs
++	tests/AttrGrammar001.y
++	tests/AttrGrammar002.y
+ 	tests/error001.y
+ 	tests/error001.stdout
+ 	tests/error001.stderr
+Tue Aug  2 12:27:33 EEST 2011  Sergei Trofimovich <slyfox@community.haskell.org>
+  * tests: fix linkage against haskell98 and array packages
+diff -rN -u old-happy/tests/Makefile new-happy/tests/Makefile
+--- old-happy/tests/Makefile	2011-08-02 12:28:42.855652016 +0300
++++ new-happy/tests/Makefile	2011-08-02 12:28:43.009650091 +0300
+@@ -1,5 +1,5 @@
+ HAPPY=../dist/build/happy/happy
+-HC=ghc
++HC=ghc -package haskell98 -package array
+ 
+ TESTS = Test.ly TestMulti.ly TestPrecedence.ly bug001.ly \
+ 	monad001.y monad002.ly precedence001.ly precedence002.y \
+diff --git a/tests/AttrGrammar001.y b/tests/AttrGrammar001.y
+new file mode 100644
+index 0000000..4454dd6
+--- /dev/null
++++ b/tests/AttrGrammar001.y
+@@ -0,0 +1,68 @@
++{
++import Control.Monad (unless)
++}
++
++%tokentype { Char }
++
++%token a { 'a' }
++%token b { 'b' }
++%token c { 'c' }
++
++%attributetype { Attrs a }
++%attribute value { a }
++%attribute len   { Int }
++
++%name parse abcstring
++
++%monad { Maybe }
++
++%%
++
++abcstring 
++   : alist blist clist
++        { $$ = $1 ++ $2 ++ $3
++        ; $2.len = $1.len
++        ; $3.len = $1.len
++        }
++
++alist 
++   : a alist 
++        { $$ = $1 : $>
++        ; $$.len = $>.len + 1
++        }
++   |    { $$ = []; $$.len = 0 }
++
++blist 
++   : b blist
++        { $$ = $1 : $>
++        ; $>.len = $$.len - 1
++        }
++   |    { $$ = []
++        ; where failUnless ($$.len == 0) "blist wrong length" 
++        }
++
++clist
++   : c clist
++        { $$ = $1 : $>
++        ; $>.len = $$.len - 1
++        }
++   |    { $$ = []
++        ; where failUnless ($$.len == 0) "clist wrong length" 
++        }
++
++{
++happyError = error "parse error"
++failUnless b msg = unless b (fail msg)
++
++main = case parse "" of { Just _ -> 
++       case parse "abc" of { Just _ ->
++       case parse "aaaabbbbcccc" of { Just _ ->
++       case parse "abbcc" of { Nothing ->
++       case parse "aabcc" of { Nothing ->
++       case parse "aabbc" of { Nothing ->
++       putStrLn "Test works";
++       _ -> quit } ; _ -> quit }; _ -> quit };
++       _ -> quit } ; _ -> quit }; _ -> quit }
++
++quit = putStrLn "Test failed"
++}
+diff --git a/tests/AttrGrammar002.y b/tests/AttrGrammar002.y
+new file mode 100644
+index 0000000..6041951
+--- /dev/null
++++ b/tests/AttrGrammar002.y
+@@ -0,0 +1,58 @@
++
++%tokentype { Char }
++
++%token minus { '-' }
++%token plus  { '+' }
++%token one   { '1' }
++%token zero  { '0' }
++
++%attributetype { Attrs }
++%attribute value { Integer }
++%attribute pos   { Int }
++
++%name parse start
++
++%monad { Maybe }
++
++%%
++
++start 
++   : num { $$ = $1 }
++
++num 
++   : bits        { $$ = $1       ; $1.pos = 0 }
++   | plus bits   { $$ = $2       ; $2.pos = 0 }
++   | minus bits  { $$ = negate $2; $2.pos = 0 }
++
++bits
++   : bit         { $$ = $1
++                 ; $1.pos = $$.pos 
++                 }
++
++   | bits bit    { $$ = $1 + $2
++                 ; $1.pos = $$.pos + 1
++                 ; $2.pos = $$.pos
++                 }
++
++bit
++   : zero        { $$ = 0 }
++   | one         { $$ = 2^($$.pos) }
++
++
++{
++happyError msg = fail $ "parse error: "++msg
++
++main = case parse ""      of { Nothing ->
++       case parse "abc"   of { Nothing ->
++       case parse "0"     of { Just 0  ->
++       case parse "1"     of { Just 1  ->
++       case parse "101"   of { Just 5  ->
++       case parse "111"   of { Just 7  ->
++       case parse "10001" of { Just 17 ->
++       putStrLn "Test worked";
++       _ -> quit }; _ -> quit }; _ -> quit };
++       _ -> quit }; _ -> quit }; _ -> quit };
++       _ -> quit }
++
++quit = putStrLn "Test Failed"
++}
