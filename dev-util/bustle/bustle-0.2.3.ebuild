@@ -15,7 +15,7 @@ SRC_URI="http://willthompson.co.uk/${PN}/releases/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2" # bustle-dbus-monitor.c is GPL-2, rest is LGPL-2
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 PATCHES=("${FILESDIR}/0001-bustle-dbus-monitor-fix-linking-order-libs-go-after-.patch")
