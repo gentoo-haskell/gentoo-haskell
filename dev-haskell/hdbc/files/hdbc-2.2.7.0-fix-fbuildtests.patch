@@ -35,3 +35,16 @@ index fb7d996..5de5f3e 100644
 -- 
 1.7.3.4
 
+diff --git a/HDBC.cabal b/HDBC.cabal
+index d1d7fd1..84dc4f1 100644
+--- a/HDBC.cabal
++++ b/HDBC.cabal
+@@ -60,7 +60,7 @@ Executable runtests
+       Build-Depends: HUnit, QuickCheck (>= 2.0), testpack (>= 2.0)
+ 
+       if flag(splitBase)
+-        Build-Depends: base>=3 && <5, old-time, time>=1.1.2.4 && <=1.1.4, bytestring, containers, old-locale
++        Build-Depends: base>=3 && <5, old-time, time>=1.1.2.4 && <=1.2.0.5, bytestring, containers, old-locale
+         if flag(time_gte_113)
+           Build-Depends: time>=1.1.3
+           CPP-OPTIONS: -DTIME_GT_113
