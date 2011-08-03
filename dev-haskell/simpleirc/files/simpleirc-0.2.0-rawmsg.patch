@@ -1,0 +1,29 @@
+diff --git a/Network/SimpleIRC/Core.hs b/Network/SimpleIRC/Core.hs
+index 1cd6d5d..ec72a8a 100644
+--- a/Network/SimpleIRC/Core.hs
++++ b/Network/SimpleIRC/Core.hs
+@@ -251,9 +251,12 @@ listenLoop s = do
+       
+       putMVar s newServ -- Put the MVar back.
+       
++      let parsed = (parse line)
+       -- Call the events
+-      callEvents s (parse line)
++      callEvents s parsed
+ 
++      -- Call the RawMsg Events.
++      events s (RawMsg undefined) parsed
+       
+ 
+       listenLoop s
+@@ -370,8 +373,8 @@ callEvents mServ msg
+   | B.all isNumber (mCode msg) =
+     events mServ (Numeric undefined) msg
+   
+-  | otherwise                =
+-    events mServ (RawMsg undefined) msg
++  | otherwise                = return ()
++    
+ 
+ (Privmsg _) `eqEvent` (Privmsg _) = True
+ (Numeric _) `eqEvent` (Numeric _) = True

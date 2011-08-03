@@ -1,0 +1,651 @@
+diff -Nur simpleirc-0.2.0/example/example.hs simpleirc-0.3.0/example/example.hs
+--- simpleirc-0.2.0/example/example.hs	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/example/example.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,26 @@
++{-# LANGUAGE OverloadedStrings #-}
++import Network.SimpleIRC
++import Data.Maybe
++import qualified Data.ByteString.Char8 as B
++
++onMessage :: EventFunc
++onMessage s m
++  | msg == "|hai" = do
++    sendMsg s chan "hai thar!"
++  | B.isPrefixOf "|say" msg = do
++    sendMsg s chan (B.drop 1 $ B.dropWhile (/= ' ') msg)
++  | otherwise = putStrLn $ show m
++  where chan = fromJust $ mChan m
++        msg = mMsg m
++        
++events = [(Privmsg onMessage)]
++
++ninthbit = defaultConfig
++  { cAddr     = "irc.freenode.net" -- Address
++  , cNick     = "SimpleIRCBot" -- Nickname
++  , cChannels = ["#()"] -- Channels to join on connect
++  , cEvents   = events -- Events to bind
++  }
++
++main = do
++  connect ninthbit False True
+diff -Nur simpleirc-0.2.0/.gitignore simpleirc-0.3.0/.gitignore
+--- simpleirc-0.2.0/.gitignore	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/.gitignore	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,5 @@
++*.hi
++*.o
++haddock/
++dist/
++
+diff -Nur simpleirc-0.2.0/Network/SimpleIRC/Core.hs simpleirc-0.3.0/Network/SimpleIRC/Core.hs
+--- simpleirc-0.2.0/Network/SimpleIRC/Core.hs	2010-09-18 13:57:58.000000000 +0300
++++ simpleirc-0.3.0/Network/SimpleIRC/Core.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -20,6 +20,7 @@
+     -- * Functions
+   , connect
+   , disconnect
++  , reconnect
+   , sendRaw
+   , sendMsg
+   , sendCmd
+@@ -28,13 +29,11 @@
+   , remEvent
+   , defaultConfig
+   
+-   -- * Utils
+-  , getDest
+-  
+    -- * Accessors
+   , getChannels
+   , getNickname
+   , getAddress
++  , getPort
+   , getUsername
+   , getRealname
+   ) where
+@@ -42,6 +41,7 @@
+ import Network
+ import System.IO
+ import Data.Maybe
++import Data.List (delete)
+ import Data.Char (isNumber)
+ import Control.Monad
+ import Control.Concurrent
+@@ -50,12 +50,13 @@
+ import Network.SimpleIRC.Messages
+ import Data.Unique
+ import System.IO.Error
++import System.Timeout
+ import Data.Time
+ import System.Locale
+ import qualified Data.ByteString.Char8 as B
+ import qualified Data.Map as Map
+ 
+-internalEvents     = [joinChans, pong, onJoin]
++internalEvents     = [joinChans, pong, trackChanges]
+ internalNormEvents = [Privmsg ctcpHandler]
+ 
+ type MIrc = MVar IrcServer
+@@ -64,12 +65,14 @@
+   { cAddr     :: String   -- ^ Server address to connect to
+   , cPort     :: Int      -- ^ Server port to connect to
+   , cNick     :: String   -- ^ Nickname
++  , cPass     :: Maybe String -- ^ Optional server password
+   , cUsername :: String   -- ^ Username
+   , cRealname :: String   -- ^ Realname
+   , cChannels :: [String]   -- ^ List of channels to join on connect
+   , cEvents   :: [IrcEvent] -- ^ Events to bind
+   , cCTCPVersion :: String  -- ^ What to send on CTCP VERSION
+   , cCTCPTime    :: IO String  -- ^ What to send on CTCP TIME
++  , cPingTimeoutInterval :: Int -- The time between server messages that causes ping timeout
+   }
+ 
+ data SIrcCommand =
+@@ -81,6 +84,7 @@
+   { sAddr         :: B.ByteString
+   , sPort         :: Int
+   , sNickname     :: B.ByteString
++  , sPassword     :: Maybe B.ByteString
+   , sUsername     :: B.ByteString
+   , sRealname     :: B.ByteString
+   , sChannels     :: [B.ByteString]
+@@ -93,6 +97,7 @@
+   -- Other info
+   , sCTCPVersion  :: String
+   , sCTCPTime     :: IO String
++  , sPingTimeoutInterval :: Int
+   }
+ 
+ -- When adding events here, remember add them in callEvents and in eventFunc
+@@ -112,7 +117,7 @@
+   | Nick EventFunc    -- ^ NICK
+   | Notice EventFunc  -- ^ NOTICE
+   | RawMsg EventFunc  -- ^ This event gets called on every message received
+-  | Disconnect (IrcServer -> IO ()) -- ^ This event gets called whenever the
++  | Disconnect (MIrc -> IO ()) -- ^ This event gets called whenever the
+                                     --   connection with the server is dropped
+   
+ instance Show IrcEvent where
+@@ -174,6 +179,38 @@
+   write s $ "QUIT :" `B.append` quitMsg
+   return ()
+ 
++-- |Reconnects to the server.
++reconnect :: MIrc -> IO (Either IOError MIrc)
++reconnect mServer = try $ do
++  server <- readMVar mServer
++  
++  h <- connectTo (B.unpack $ sAddr server) (PortNumber $ fromIntegral $ sPort server)
++  hSetBuffering h NoBuffering
++  modifyMVar_ mServer (\s -> return $ s {sSock = Just h})
++
++  -- Initialize connection with the server
++  withMVar mServer greetServer
++
++  -- Restart the listen loop.
++  listenId <- forkIO (listenLoop mServer)
++  cmdId <- forkIO (execCmdsLoop mServer)
++  modifyMVar_ mServer (\s -> return $ s {sListenThread = Just listenId,
++                        sCmdThread = Just cmdId})
++  return mServer
++
++{-
++-- |Reconnects to the server.
++reconnect :: MIrc -> IO (Either IOError MIrc)
++reconnect server = do
++  s <- readMVar server
++  
++  let conf = IrcConfig (B.unpack $ sAddr s) (sPort s) 
++                       (B.unpack $ sNickname s) (B.unpack $ sUsername s) 
++                       (B.unpack $ sRealname s) (map (B.unpack) (sChannels s)) 
++                       (elems $ sEvents s) (sCTCPVersion s) (sCTCPTime s)
++  connect conf True (sDebug s)
++-}
++
+ genUnique :: IrcEvent -> IO (Unique, IrcEvent)
+ genUnique e = do
+   u <- newUnique
+@@ -189,19 +226,23 @@
+   uniqueEvents <- genUniqueMap $ internalNormEvents ++ cEvents config
+ 
+   return $ IrcServer (B.pack $ cAddr config) (cPort config)
+-              (B.pack $ cNick config) (B.pack $ cUsername config) 
++              (B.pack $ cNick config) (B.pack `fmap` cPass config) (B.pack $ cUsername config) 
+               (B.pack $ cRealname config) (map B.pack $ cChannels config) 
+               uniqueEvents (Just h) Nothing Nothing cmdChan debug
+-              (cCTCPVersion config) (cCTCPTime config)
++              (cCTCPVersion config) (cCTCPTime config) (cPingTimeoutInterval config)
+ 
+ greetServer :: IrcServer -> IO IrcServer
+ greetServer server = do
++  case mpass of
++    Nothing -> return ()
++    Just pass -> write server $ "PASS " `B.append` pass
+   write server $ "NICK " `B.append` nick
+   write server $ "USER " `B.append` user `B.append` " " `B.append`
+       user `B.append` " " `B.append` addr `B.append` " :" `B.append` real
+   
+   return server
+   where nick = sNickname server
++        mpass = sPassword server
+         user = sUsername server
+         real = sRealname server
+         addr = sAddr server
+@@ -228,14 +269,15 @@
+   server <- readMVar s
+ 
+   let h = fromJust $ sSock server
+-  eof <- hIsEOF h
++  eof <- timeout (sPingTimeoutInterval server) $ hIsEOF h
+   
+   -- If EOF then we are disconnected
+-  if eof 
++  if (eof /= Just False)
+     then do
+       let comp   = (\a -> a `eqEvent` (Disconnect undefined))
+           events = Map.filter comp (sEvents server)
+-          eventCall = (\obj -> (eventFuncD $ snd obj) server)
++          eventCall = (\obj -> (eventFuncD $ snd obj) s)
++      modifyMVar_ s (\serv -> return $ serv {sSock = Nothing})
+       debugWrite server $ B.pack $ show $ length $ Map.toList events
+       mapM_ eventCall (Map.toList events)
+     else do
+@@ -251,9 +293,12 @@
+       
+       putMVar s newServ -- Put the MVar back.
+       
++      let parsed = (parse line)
+       -- Call the events
+-      callEvents s (parse line)
++      callEvents s parsed
+ 
++      -- Call the RawMsg Events.
++      events s (RawMsg undefined) parsed
+       
+ 
+       listenLoop s
+@@ -280,15 +325,32 @@
+         pingMsg = mMsg msg
+         code    = mCode msg
+ 
+--- TODO: Nick and Channels tracking. KICK, PART and NICK.
+-onJoin :: IrcServer -> IrcMessage -> IO IrcServer
+-onJoin server msg
++trackChanges :: IrcServer -> IrcMessage -> IO IrcServer
++trackChanges server msg
+   | code == "JOIN" = do
+     let nick = fromJust $ mNick msg
+         chan  = mMsg msg
+     if nick == sNickname server
+       then return server { sChannels = chan:(sChannels server) }
+       else return server
++  | code == "NICK" = do
++    let nick    = fromJust $ mNick msg
++        newNick = mMsg msg
++    if nick == sNickname server
++      then return server { sNickname = newNick }
++      else return server 
++  | code == "KICK" = do 
++    let nick = (fromJust $ mOther msg) !! 0
++        chan = fromJust $ mChan msg
++    if nick == sNickname server
++      then return server { sChannels = delete chan (sChannels server) }
++      else return server
++  | code == "PART" = do 
++    let nick = fromJust $ mNick msg
++        chan = mMsg msg
++    if nick == sNickname server
++      then return server { sChannels = delete chan (sChannels server) }
++      else return server
+   | otherwise = return server
+   
+   where code = mCode msg
+@@ -299,28 +361,26 @@
+   | msg == "\x01VERSION\x01" = do
+     server <- readMVar mServ
+     
+-    chan <- getDest mServ iMsg
+     sendCmd mServ
+-      (MNotice chan ("\x01VERSION " `B.append`
++      (MNotice origin ("\x01VERSION " `B.append`
+         B.pack (sCTCPVersion server) `B.append` "\x01"))
++
+   | msg == "\x01TIME\x01" = do
+     server <- readMVar mServ
+     
+     time <- sCTCPTime server
+-    chan <- getDest mServ iMsg
+     sendCmd mServ
+-      (MNotice chan ("\x01TIME " `B.append`
++      (MNotice origin ("\x01TIME " `B.append`
+         (B.pack time) `B.append` "\x01"))
+   | "\x01PING " `B.isPrefixOf` msg = do
+     server <- readMVar mServ
+     
+-    chan <- getDest mServ iMsg
+     sendCmd mServ
+-      (MNotice chan msg)
++      (MNotice origin msg)
+ 
+   | otherwise = return ()
+-  where msg = mMsg iMsg
+-
++  where msg    = mMsg iMsg
++        origin = fromJust $ mOrigin iMsg
+ -- Event code
+ events :: MIrc -> IrcEvent -> IrcMessage -> IO ()
+ events mServ event msg = do
+@@ -370,8 +430,8 @@
+   | B.all isNumber (mCode msg) =
+     events mServ (Numeric undefined) msg
+   
+-  | otherwise                =
+-    events mServ (RawMsg undefined) msg
++  | otherwise                = return ()
++    
+ 
+ (Privmsg _) `eqEvent` (Privmsg _) = True
+ (Numeric _) `eqEvent` (Numeric _) = True
+@@ -466,32 +526,18 @@
+ 
+ defaultConfig = IrcConfig
+   { cPort     = 6667
++  , cPass     = Nothing
+   , cUsername = "simpleirc"
+   , cRealname = "SimpleIRC Bot"
+   , cChannels = []
+   , cEvents   = []
+   , cCTCPVersion = "SimpleIRC v0.2"
+   , cCTCPTime    = fmap (formatTime defaultTimeLocale "%c") getZonedTime
++  , cPingTimeoutInterval = 350 * 10^6
+   }
+   
+--- Utils
+-
+--- |Gets the destination, i.e if the IrcMessage was sent
+---  directly to you returns the senders nick otherwise the channel.
+-getDest :: MIrc -> IrcMessage -> IO B.ByteString
+-getDest mIrc m = do
+-  s <- readMVar mIrc
+-  
+-  if sNickname s == chan
+-    then return (fromJust $ mNick m)
+-    else return chan
+-  
+-  where chan = fromJust $ mChan m
+-  
+ -- MIrc Accessors
+ -- |Returns a list of channels currently joined.
+--- 
+--- Currently this is not updated on KICK or PART.
+ getChannels :: MIrc -> IO [B.ByteString]
+ getChannels mIrc = do
+   s <- readMVar mIrc
+@@ -499,8 +545,6 @@
+   return $ sChannels s
+ 
+ -- |Returns the current nickname.
+--- 
+--- Currently this is not updated on NICK.
+ getNickname :: MIrc -> IO B.ByteString
+ getNickname mIrc = do
+   s <- readMVar mIrc
+@@ -514,6 +558,13 @@
+   
+   return $ sAddr s  
+ 
++-- |Returns the address
++getPort :: MIrc -> IO Int
++getPort mIrc = do
++  s <- readMVar mIrc
++  
++  return $ sPort s
++
+ -- |Returns the User name
+ getUsername :: MIrc -> IO B.ByteString
+ getUsername mIrc = do
+diff -Nur simpleirc-0.2.0/Network/SimpleIRC/Messages.hs simpleirc-0.3.0/Network/SimpleIRC/Messages.hs
+--- simpleirc-0.2.0/Network/SimpleIRC/Messages.hs	2010-09-18 13:57:58.000000000 +0300
++++ simpleirc-0.3.0/Network/SimpleIRC/Messages.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -20,6 +20,7 @@
+ import Data.Maybe
+ import qualified Data.ByteString.Char8 as B
+ import Control.Arrow
++import Control.Applicative
+ import Data.Typeable
+ 
+ -- PING :asimov.freenode.net
+@@ -55,6 +56,7 @@
+   , mCode   :: B.ByteString
+   , mMsg    :: B.ByteString
+   , mChan   :: Maybe B.ByteString
++  , mOrigin :: Maybe B.ByteString   -- ^ Origin of the message, this is mNick if a message was sent directly to the bot, otherwise if it got sent to the channel it's mChan.
+   , mOther  :: Maybe [B.ByteString]
+   , mRaw    :: B.ByteString
+   } deriving (Show, Typeable)
+@@ -63,13 +65,14 @@
+ parse :: B.ByteString -> IrcMessage
+ parse txt = 
+   case length split of 
+-    2 -> parse2 split txt
+-    3 -> parse3 split txt
+-    4 -> parse4 split txt 
+-    5 -> parse5 split txt
+-    _ -> parseOther split txt
++    2 -> parse2 split noCarriage
++    3 -> parse3 split noCarriage
++    4 -> parse4 split noCarriage 
++    5 -> parse5 split noCarriage
++    _ -> parseOther split noCarriage
+   
+-  where split = smartSplit (takeCarriageRet txt)
++  where noCarriage = takeCarriageRet txt
++        split      = smartSplit noCarriage
+ 
+ -- Nick, Host, Server
+ parseFirst :: B.ByteString -> (Maybe B.ByteString, Maybe B.ByteString, Maybe B.ByteString, Maybe B.ByteString)
+@@ -82,31 +85,40 @@
+                else (Just nick, Nothing, Just user_host, Nothing)
+     else (Nothing, Nothing, Nothing, Just $ dropColon first) 
+ 
++getOrigin :: Maybe B.ByteString -> B.ByteString -> B.ByteString
++getOrigin (Just nick) chan =
++  if "#" `B.isPrefixOf` chan || "&" `B.isPrefixOf` chan || "+" `B.isPrefixOf` chan
++      || "!" `B.isPrefixOf` chan
++    then chan
++    else nick
++getOrigin Nothing chan = chan
++
+ parse2 :: [B.ByteString] -> B.ByteString -> IrcMessage
+ parse2 (code:msg:_) =
+   IrcMessage Nothing Nothing Nothing Nothing code
+-    (dropColon msg) Nothing Nothing
++    (dropColon msg) Nothing Nothing Nothing
+     
+ parse3 :: [B.ByteString] -> B.ByteString -> IrcMessage
+ parse3 (first:code:msg:_) =
+   let (nick, user, host, server) = parseFirst first
+-  in IrcMessage nick user host server code (dropColon msg) Nothing Nothing
++  in IrcMessage nick user host server code (dropColon msg) Nothing Nothing Nothing
+   
+ parse4 :: [B.ByteString] -> B.ByteString -> IrcMessage
+ parse4 (first:code:chan:msg:_) = 
+   let (nick, user, host, server) = parseFirst first
+   in IrcMessage nick user host server code
+-       (dropColon msg) (Just chan) Nothing
++       (dropColon msg) (Just chan) (Just $ getOrigin nick chan) Nothing
+ 
+ parse5 :: [B.ByteString] -> B.ByteString -> IrcMessage
+-parse5 (server:code:nick:chan:msg:_) =
+-  IrcMessage (Just nick) Nothing Nothing (Just server) code
+-    (dropColon msg) (Just chan) Nothing
++parse5 (first:code:chan:other:msg:_) =
++  let (nick, user, host, server) = parseFirst first
++  in IrcMessage nick user host server code
++    (dropColon msg) (Just chan) (Just $ getOrigin nick chan) (Just [other])
+ 
+ parseOther :: [B.ByteString] -> B.ByteString -> IrcMessage
+ parseOther (server:code:nick:chan:other) =
+   IrcMessage (Just nick) Nothing Nothing (Just server) code
+-    (B.unwords other) (Just chan) (Just other)
++    (B.unwords other) (Just chan) (Just $ getOrigin (Just nick) chan) (Just other)
+ 
+ smartSplit :: B.ByteString -> [B.ByteString]
+ smartSplit txt = 
+diff -Nur simpleirc-0.2.0/readme.markdown simpleirc-0.3.0/readme.markdown
+--- simpleirc-0.2.0/readme.markdown	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/readme.markdown	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,51 @@
++# SimpleIRC
++SimpleIRC is a simple IRC Library for haskell.
++
++## Installation
++To install SimpleIRC as a library you need cabal.
++
++You can then use `cabal install` to install.
++
++## Example
++For an example on how to use the library see example/example.hs and tests/testbot.hs
++
++I'm also creating an IRC Bot which uses this library. 
++[Take a look at it](http://github.com/dom96/ElysiaBot "Take a look at it") for more practical usage of the lib.
++
++### Usage
++The first step is to create an IrcConfig datatype. You have to specify the address of the server,
++the server port, nickname, username, realname, list of channels to join when connected, 
++and a list of events which will be called when certain commands are received from the server.
++
++You can specify 0 events, if for some unlikely reason you want your bot to not respond to anything.
++But in the more likely event when you do want to specify functions, you can do that simply by creating a function with the type of _EventFunc_
++
++    onMessage :: EventFunc
++
++EventFunc has the type of `(IrcServer -> IrcMessage -> IO ())`.
++For Haskell beginners that's a function which takes two arguments; an IrcServer and an IrcMessage, and which returns a IO ()
++
++    onMessage server msg
++      | m == "|hello" = do
++        sendMsg s chan "hello!"
++      | otherwise = return ()
++      where chan = fromJust $ mChan m
++            m    = mMsg msg
++
++This function will send "hello" to a channel whenever someone says "|hello".
++
++Then you can pass `[(Privmsg onMessage)]` to IrcConfig.
++
++Take a look at Network/SimpleIRC/Types.hs to see other events.
++
++There is one(as of now) event which doesn't take a EventFunc function.
++You should be able to figure out what type of function it does take by looking at Network/SimpleIRC/Types.hs
++
++After you create a IrcConfig you can then call `connect`. Connect takes two arguments; the IrcConfig and a boolean.
++The boolean specifies whether to run the listenLoop in a new thread.
++
++If you have any questions you can ask them @ irc://irc.freenode.net/#()
++
++## License
++SimpleIRC is licensed under the BSD3 license. Read the license file for more information.
++
+diff -Nur simpleirc-0.2.0/tests/channelNickTracking.hs simpleirc-0.3.0/tests/channelNickTracking.hs
+--- simpleirc-0.2.0/tests/channelNickTracking.hs	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/tests/channelNickTracking.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,32 @@
++{-# LANGUAGE OverloadedStrings #-}
++import Network.SimpleIRC
++import Data.Maybe
++import Control.Concurrent.Chan
++import qualified Data.ByteString.Char8 as B
++
++onMessage :: EventFunc
++onMessage s m
++  | msg == "|hai" = do
++    sendMsg s chan "hai thar!"
++  | B.isPrefixOf "|say" msg = do
++    sendMsg s chan (B.drop 1 $ B.dropWhile (/= ' ') msg)
++  | msg == "|nick" = do 
++    sendCmd s (MNick "SimpleIRCBot1")
++  | msg == "|nick?" = do
++    nick <- getNickname s
++    sendMsg s chan nick
++  | msg == "|chans?" = do 
++    chans <- getChannels s
++    sendMsg s chan (B.pack $ show chans)
++  | msg == "|part" = do 
++    sendCmd s (MPart chan "BAI")
++  | otherwise = return ()
++  where chan = fromJust $ mChan m
++        msg = mMsg m
++        
++events = [(Privmsg onMessage)]
++
++freenode = defaultConfig { cAddr = "irc.freenode.net", cNick = "SimpleIRCBot", cChannels = ["#()", "#HSBotTest"], cEvents = events}
++
++main = do
++  connect freenode False True
+diff -Nur simpleirc-0.2.0/tests/disconnecttest.hs simpleirc-0.3.0/tests/disconnecttest.hs
+--- simpleirc-0.2.0/tests/disconnecttest.hs	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/tests/disconnecttest.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,26 @@
++{-# LANGUAGE OverloadedStrings #-}
++import Network.SimpleIRC
++import Data.Maybe
++import Control.Concurrent.Chan
++import Control.Concurrent (threadDelay)
++import qualified Data.ByteString.Char8 as B
++
++onDisconnect :: MIrc -> IO ()
++onDisconnect mIrc = do
++  addr <- getAddress mIrc
++  putStrLn $ "Disconnected from " ++ (B.unpack addr)
++  m <- reconnect mIrc
++  either (\err -> putStrLn $ "Unable to reconnect: " ++ show err)
++         (\_   -> putStrLn "Successfully reconnected!")
++         m
++
++events = [(Disconnect onDisconnect)]
++
++freenode = defaultConfig { cAddr = "irc.ninthbit.net", cNick = "SimpleIRCBot", cChannels = ["#bots"], cEvents = events}
++
++main = do
++  connect freenode True True
++  waitForever
++  where waitForever = do 
++          threadDelay 50000
++          waitForever
+diff -Nur simpleirc-0.2.0/tests/eventChangeTest.hs simpleirc-0.3.0/tests/eventChangeTest.hs
+--- simpleirc-0.2.0/tests/eventChangeTest.hs	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/tests/eventChangeTest.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,38 @@
++{-# LANGUAGE OverloadedStrings #-}
++import Network.SimpleIRC
++import Data.Maybe
++import Control.Concurrent.Chan
++import qualified Data.ByteString.Char8 as B
++
++onMessage1 :: EventFunc
++onMessage1 s m
++  | msg == "|change" = do
++    changeEvents s [(Privmsg onMessage1)]
++  | msg == "|set" = do
++    changeEvents s events
++  | otherwise = return ()
++  where msg = mMsg m
++
++onMessage :: EventFunc
++onMessage s m
++  | msg == "|hai" = do
++    sendMsg s chan "hai thar!"
++  | B.isPrefixOf "|say" msg = do
++    sendMsg s chan (B.drop 1 $ B.dropWhile (/= ' ') msg)
++  | otherwise = return ()
++  where chan = fromJust $ mChan m
++        msg = mMsg m
++        
++events = [(Privmsg onMessage), (Privmsg onMessage1)]
++
++freenode = IrcConfig 
++  "irc.freenode.net" -- Address
++  6667 -- Port
++  "SimpleIRCBot" -- Nickname
++  "simpleirc"  -- Username
++  "simple irc" -- Realname
++  ["#()"] -- Channels to join on connect
++  events -- Events to bind
++
++main = do
++  connect freenode False
+diff -Nur simpleirc-0.2.0/tests/testbot.hs simpleirc-0.3.0/tests/testbot.hs
+--- simpleirc-0.2.0/tests/testbot.hs	1970-01-01 02:00:00.000000000 +0200
++++ simpleirc-0.3.0/tests/testbot.hs	2011-07-08 18:55:32.000000000 +0300
+@@ -0,0 +1,30 @@
++{-# LANGUAGE OverloadedStrings #-}
++import Network.SimpleIRC
++import Data.Maybe
++import qualified Data.ByteString.Char8 as B
++
++privmsgTest :: EventFunc
++privmsgTest s msg = do
++  putStrLn $ show $ privmsg
++  putStrLn $ show $ privmsg == "|test"
++  if privmsg == "|test" || privmsg == "$kill"
++    then sendMsg s origin ("DIE!")
++    else return ()
++  where privmsg = mMsg msg
++        origin  = fromJust $ mOrigin msg
++
++quitMsg :: EventFunc
++quitMsg s msg
++  | mMsg msg == "|quit" = do
++    disconnect s "Bai!"
++  | otherwise = return ()
++
++events = [(Privmsg privmsgTest)
++         ,(Privmsg quitMsg)
++         ]
++
++freenode = defaultConfig { cAddr = "irc.freenode.net", cNick = "SimpleIRCBot", cChannels = ["#()"], cEvents = events}
++
++main = do
++  --connect freenode True True
++  connect freenode False True
