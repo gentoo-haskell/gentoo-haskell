@@ -35,20 +35,16 @@ RDEPEND="=dev-haskell/hashed-storage-0.5*
 # darcs also has a library version; we thus need $DEPEND
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		doc?  ( virtual/latex-base
-				dev-tex/latex2html )
+		doc? ( virtual/latex-base
+			|| (	dev-tex/latex2html[png]
+				dev-tex/latex2html[gif]
+			)
+		)
 		test? ( dev-haskell/test-framework
 				dev-haskell/test-framework-hunit
-				dev-haskell/test-framework-quickcheck2 )
+				dev-haskell/test-framework-quickcheck2
+		)
 		"
-pkg_setup() {
-	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
-		eerror "Building darcs with USE=\"doc\" requires that"
-		eerror "dev-tex/latex2html is built with at least one of"
-		eerror "USE=\"png\" and USE=\"gif\"."
-		die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
-	fi
-}
 
 src_prepare() {
 	cd "${S}/contrib"
