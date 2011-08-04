@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Reading, writing and manipulating ".tar" archive files."
+DESCRIPTION="Reading, writing and manipulating .tar archive files."
 HOMEPAGE="http://hackage.haskell.org/package/tar"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
