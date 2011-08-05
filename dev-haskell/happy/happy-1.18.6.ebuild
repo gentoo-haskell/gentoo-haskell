@@ -39,13 +39,17 @@ src_prepare() {
 src_configure() {
 	cabal_src_configure
 
-	use doc && cd doc && econf || die "econf failed in /doc"
+	if use doc; then
+		cd doc && econf || die "econf failed in /doc"
+	fi
 }
 
 src_compile() {
 	cabal_src_compile
 
-	use doc && cd doc && emake -j1 || die "emake failed in /doc"
+	if use doc; then
+		cd doc && emake -j1 || die "emake failed in /doc"
+	fi
 }
 
 src_test() {
