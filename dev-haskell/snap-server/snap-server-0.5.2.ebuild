@@ -46,6 +46,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@case-insensitive >= 0.2 && < 0.3@case-insensitive >= 0.2 \&\& < 0.4@' \
+		-e 's@hlibev >= 0.2.8 && < 0.3@hlibev >= 0.2.8 \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
