@@ -1,11 +1,11 @@
---- HaXml-1.22.2-orig/HaXml.cabal	2011-07-25 19:17:45.000000000 +1000
-+++ HaXml-1.22.2/HaXml.cabal	2011-07-27 21:24:19.452988705 +1000
+--- HaXml-1.22.3-orig/HaXml.cabal	2011-08-04 20:26:06.000000000 +1000
++++ HaXml-1.22.3/HaXml.cabal	2011-08-06 14:13:07.743712705 +1000
 @@ -78,49 +78,49 @@
    cpp-options: -DMYVERSION="\"1.22\""
    nhc98-options: -K10M
  
 -Executable Canonicalise
-+Executable Canonicalise-1.22.2
++Executable Canonicalise-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -13,7 +13,7 @@
    Main-Is: Canonicalise.hs
  
 -Executable CanonicaliseLazy
-+Executable CanonicaliseLazy-1.22.2
++Executable CanonicaliseLazy-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -21,7 +21,7 @@
    Main-Is: CanonicaliseLazy.hs
  
 -Executable Xtract
-+Executable Xtract-1.22.2
++Executable Xtract-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -29,7 +29,7 @@
    Main-Is: Xtract.hs
  
 -Executable Validate
-+Executable Validate-1.22.2
++Executable Validate-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -37,7 +37,7 @@
    Main-Is: Validate.hs
  
 -Executable MkOneOf
-+Executable MkOneOf-1.22.2
++Executable MkOneOf-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -45,7 +45,7 @@
    Main-Is: MkOneOf.hs
  
 -Executable DtdToHaskell
-+Executable DtdToHaskell-1.22.2
++Executable DtdToHaskell-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
@@ -53,7 +53,7 @@
    Main-Is: DtdToHaskell.hs
  
 -Executable XsdToHaskell
-+Executable XsdToHaskell-1.22.2
++Executable XsdToHaskell-1.22.3
    GHC-Options: -Wall
    Extensions:  CPP
    Hs-Source-Dirs: src/tools, src
