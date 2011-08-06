@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		dev-haskell/dataenc
-		>dev-haskell/haxml-1.20
+		=dev-haskell/haxml-1.22*
 		>=dev-haskell/http-4000
 		dev-haskell/mtl
 		<dev-haskell/network-3
@@ -29,12 +29,3 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cd "${S}"
-	sed -e 's@HaXml == 1.20.\*@HaXml >= 1.20 \&\& < 1.23@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen HaXml dependency in ${S}/${PN}.cabal"
-	if has_version ">=dev-haskell/haxml-1.22.0"; then
-		epatch "${FILESDIR}/${P}-haxml-1.22.patch"
-	fi
-}
