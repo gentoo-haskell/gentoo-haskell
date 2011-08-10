@@ -28,8 +28,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare () {
-	sed -e 's@syb >= 0.1.0.2 && < 0.3@syb >= 0.1.0.2 \&\& < 0.4@g' \
-		-i "${S}/ChasingBottoms.cabal" || die "Could not loosen dependencies in ${S}/ChasingBottoms.cabal"
-}
