@@ -43,9 +43,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.6.1-ghc-7.2.patch"
+	epatch "${FILESDIR}/${PN}-0.6.1.1-ghc-7.2.patch"
 
 	sed -e 's@SHA                     >= 1.4.1.3   && < 1.5@SHA                     >= 1.5       \&\& < 1.6@' \
 		-e 's@pwstore-fast            >= 2.1       && < 2.2@pwstore-fast            >= 2.1       \&\& < 2.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not bump dependency on sha and pwstore-fast"
+		-e 's@aeson                   >= 0.3.2.2   && < 0.3.2.10@aeson                   >= 0.3.2.2   \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not bump dependencies on sha, pwstore-fast and aeson"
 }
