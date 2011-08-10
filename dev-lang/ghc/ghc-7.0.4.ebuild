@@ -362,6 +362,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
+		epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix

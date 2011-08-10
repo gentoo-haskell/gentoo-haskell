@@ -363,6 +363,8 @@ src_prepare() {
 		# failed to apply. FIXME
 		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 
+		epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' utils/haddock/doc/configure.ac || die
