@@ -30,5 +30,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@blaze-textual             >= 0.1      && < 0.2@blaze-textual             >= 0.1      \&\& < 0.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-textual dependency"
+		-e 's@aeson                     >= 0.3.1.1  && < 0.3.2.10@aeson                     >= 0.3.1.1  \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-textual and aeson dependencies"
 }
