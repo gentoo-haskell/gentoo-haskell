@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Unicode alternatives for common functions and operators"
 HOMEPAGE="http://haskell.org/haskellwiki/Unicode-symbols"
@@ -21,5 +21,3 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-0.2.2-ghc-7.2.patch")
