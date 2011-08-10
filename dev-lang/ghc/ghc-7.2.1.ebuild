@@ -364,6 +364,7 @@ src_prepare() {
 		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch
+		epatch "${FILESDIR}"/${PN}-7.2.1-fix-exotic-unreg-builds.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
