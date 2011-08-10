@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Fast base64 encoding and deconding for ByteStrings"
-HOMEPAGE="http://bitbucket.org/bos/base64-bytestring"
+HOMEPAGE="https://github.com/bos/base64-bytestring"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
