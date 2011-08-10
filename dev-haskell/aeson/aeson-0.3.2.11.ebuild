@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-haskell/blaze-builder-0.2.1.4
-		dev-haskell/blaze-textual
+		>=dev-haskell/blaze-textual-0.2.0.2
 		dev-haskell/deepseq
 		>=dev-haskell/hashable-1.1.2.0
 		dev-haskell/mtl
