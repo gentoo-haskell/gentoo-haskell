@@ -21,15 +21,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/hsemail-1.8
+RDEPEND="=dev-haskell/hsemail-1*
 		dev-haskell/network
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	sed -e 's@hsemail >= 1.6 && < 1.7@hsemail >= 1.6 \&\& < 1.8@' \
-		-i "${S}/SMTPClient.cabal" || die "Could not loosen hsemail dependency in ${S}/SMTPClient.cabal"
-}
