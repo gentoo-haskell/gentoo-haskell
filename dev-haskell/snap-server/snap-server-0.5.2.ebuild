@@ -38,7 +38,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		dev-haskell/transformers
 		=dev-haskell/unix-compat-0.2*
 		=dev-haskell/vector-0.7*
-		=dev-haskell/vector-algorithms-0.4*
+		=dev-haskell/vector-algorithms-0.5*
 		>=dev-lang/ghc-6.10.1
 		libev? ( >=dev-haskell/hlibev-0.2.8 )"
 DEPEND="${RDEPEND}
@@ -47,6 +47,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -e 's@case-insensitive >= 0.2 && < 0.3@case-insensitive >= 0.2 \&\& < 0.4@' \
 		-e 's@hlibev >= 0.2.8 && < 0.3@hlibev >= 0.2.8 \&\& < 0.5@' \
+		-e 's@vector-algorithms >= 0.4 && <0.5@vector-algorithms >= 0.4 \&\& <0.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
