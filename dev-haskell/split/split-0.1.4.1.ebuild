@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Combinator library for splitting lists."
 HOMEPAGE="http://code.haskell.org/~byorgey/code/split"
@@ -20,6 +20,4 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-0.1.4-ghc-7.2.patch")
+		>=dev-haskell/cabal-1.6"
