@@ -16,7 +16,7 @@ DESCRIPTION="ODBC driver for HDBC"
 HOMEPAGE="http://software.complete.org/hdbc-odbc"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE="LGPL-2.1"
+LICENSE="BSD"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
@@ -24,9 +24,10 @@ RESTRICT="test" # requires configured ODBC
 
 hdbc_PV=$(get_version_component_range 1-2)
 
-RDEPEND=">=dev-lang/ghc-6.10
+RDEPEND=">=dev-lang/ghc-6.12.3
 		=dev-haskell/hdbc-${hdbc_PV}*
 		dev-haskell/mtl
+		>=dev-haskell/time-1.1.4
 		dev-haskell/utf8-string
 		>=dev-db/unixODBC-2.2
 	"
@@ -41,6 +42,15 @@ DEPEND="${RDEPEND}
 	"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cd "${S}"
+	if has_version "<dev-lang/ghc-7.0.1"; then
+		# Backport to ghc 6.12.3.
+		epatch "${FILESDIR}/${P}-ghc-6.12.patch" || die "Could not apply ${P}-ghc-6.12.patch"
+	fi
+}
+
 src_configure() {
 	cabal_src_configure $(cabal_flag test buildtests)
 }
