@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="QuickCheck"
 MY_P="${MY_PN}-${PV}"
@@ -29,3 +29,5 @@ DEPEND=">=dev-lang/ghc-6.10
 # and unfortunately have to drop the other arches until we get proper ghc support :(
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-2.1.1.1-ghc-7.patch")
