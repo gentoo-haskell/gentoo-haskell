@@ -13,7 +13,7 @@ DESCRIPTION="Versatile logging framework"
 HOMEPAGE="http://software.complete.org/hslogger"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="LGPL-2.1"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
