@@ -17,8 +17,8 @@ HOMEPAGE="http://www.cse.chalmers.se/~koen"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
-KEYWORDS="~amd64 ~x86"
+SLOT="2"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl
