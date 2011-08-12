@@ -6,11 +6,11 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Lift control operations, like exception catching, through monad transformers"
-HOMEPAGE="http://hackage.haskell.org/package/monad-control"
+HOMEPAGE="https://github.com/basvandijk/monad-control/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,7 +22,7 @@ RDEPEND="<dev-haskell/base-unicode-symbols-0.3
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.9.2
 		test? (
 			>=dev-haskell/cabal-1.10
 			<dev-haskell/test-framework-0.5
@@ -30,7 +30,11 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-PATCHES=("${FILESDIR}/${PN}-0.2.0.1-ghc-7.2-and-tests.patch")
+src_prepare() {
+	# Upstream left the test.hs file out of the hackage tarball, retrieved from
+	# https://github.com/basvandijk/monad-control/raw/master/test.hs
+	cp "${FILESDIR}/test.hs" "${S}"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests) $(cabal_flag test)
