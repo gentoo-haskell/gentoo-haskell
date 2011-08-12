@@ -13,7 +13,7 @@ MY_PN="MonadCatchIO-mtl"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Monad-transformer version of the Control.Exception module"
-HOMEPAGE="http://code.haskell.org/~jcpetruzza/MonadCatchIO-mtl"
+HOMEPAGE="http://darcsden.com/jcpetruzza/MonadCatchIO-mtl"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
