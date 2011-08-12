@@ -13,10 +13,10 @@ MY_PN="HDBC"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Haskell Database Connectivity"
-HOMEPAGE="http://software.complete.org/hdbc"
+HOMEPAGE="https://github.com/jgoerzen/hdbc/wiki"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE="LGPL-2.1"
+LICENSE="BSD"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
 IUSE="mysql odbc postgres sqlite3 test"
@@ -42,7 +42,7 @@ PDEPEND="mysql? ( dev-haskell/hdbc-mysql )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
 		sqlite3? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
-PATCHES=("${FILESDIR}/${PN}-2.2.7.0-ghc7.2.patch" "${FILESDIR}/${PN}-2.2.7.0-fix-fbuildtests.patch")
+PATCHES=("${FILESDIR}/${PN}-2.3.1.0-fix-fbuildtests.patch")
 
 S="${WORKDIR}/${MY_P}"
 
