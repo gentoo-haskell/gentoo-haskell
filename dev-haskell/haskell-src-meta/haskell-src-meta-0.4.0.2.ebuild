@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Parse source to template-haskell abstract syntax."
 HOMEPAGE="http://hackage.haskell.org/package/haskell-src-meta"
@@ -24,5 +24,3 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.6
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
