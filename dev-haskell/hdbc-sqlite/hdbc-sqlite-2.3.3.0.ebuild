@@ -38,6 +38,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	cp "${FILESDIR}/TestTime.hs" "${S}/testsrc"
+}
+
 src_configure() {
 	cabal_src_configure $(cabal_flag test buildtests)
 }
