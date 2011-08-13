@@ -1,5 +1,5 @@
---- agda-9999-orig/Agda.cabal	2011-05-05 00:13:25.000000000 +1000
-+++ agda-9999/Agda.cabal	2011-05-06 22:24:08.748351401 +1000
+--- agda-9999-orig/Agda.cabal	2011-08-13 11:19:38.225030568 +1000
++++ agda-9999/Agda.cabal	2011-08-13 11:40:36.096588141 +1000
 @@ -40,7 +40,6 @@
                      doc/release-notes/*.txt
  data-dir:           src/data
@@ -8,9 +8,9 @@
                      EpicInclude/AgdaPrelude.e
                      EpicInclude/stdagda.c
                      EpicInclude/stdagda.h
-@@ -298,16 +297,3 @@
-     ghc-options:    -fwarn-dodgy-exports
-                     -fwarn-wrong-do-bind
+@@ -321,16 +320,3 @@
+   if impl(ghc >= 7.2)
+     ghc-options:    -fwarn-identities
    ghc-prof-options: -auto-all
 -
 -executable agda-mode
@@ -18,10 +18,10 @@
 -  main-is:          Main.hs
 -  other-modules:    Paths_Agda
 -  if flag(use-locale)
--    build-depends:  base >= 4.2 && < 4.4
+-    build-depends:  base >= 4.2 && < 4.5
 -  else
 -    build-depends:  base == 4.1.*,
 -                    utf8-string == 0.3.*
 -  build-depends:    filepath >= 1.1 && < 1.3,
--                    process >= 1.0.1.0 && < 1.1,
+-                    process >= 1.0.1.0 && < 1.2,
 -                    directory >= 1.0 && < 1.2
