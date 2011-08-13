@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Test Utililty Pack for HUnit and QuickCheck"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/testpack"
@@ -24,5 +24,3 @@ RDEPEND="dev-haskell/hunit
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-2.1.0-no-haskell98.patch")
