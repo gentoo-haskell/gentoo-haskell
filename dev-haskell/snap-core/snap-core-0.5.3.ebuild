@@ -30,7 +30,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/text-0.11*
-		dev-haskell/time
+		<dev-haskell/time-1.4
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/unix-compat-0.2*
 		<dev-haskell/vector-0.8
@@ -38,8 +38,3 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@case-insensitive >= 0.2 && < 0.3@case-insensitive >= 0.2 \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
