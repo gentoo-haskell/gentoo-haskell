@@ -1,0 +1,24 @@
+--- Crypto-4.2.3-orig/Codec/Encryption/AES.hs	2010-12-28 12:14:30.000000000 +1100
++++ Crypto-4.2.3/Codec/Encryption/AES.hs	2011-08-13 10:18:30.564711646 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Codec.Encryption.AES
+--- Crypto-4.2.3-orig/WordListTest.hs	2010-12-28 12:14:30.000000000 +1100
++++ Crypto-4.2.3/WordListTest.hs	2011-08-13 10:17:15.182729291 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ScopedTypeVariables, PatternSignatures,
++{-# LANGUAGE ScopedTypeVariables,
+              FlexibleInstances, UndecidableInstances,
+              TypeSynonymInstances #-}
+ 
+--- Crypto-4.2.3-orig/QuickTest.hs	2010-12-28 12:14:30.000000000 +1100
++++ Crypto-4.2.3/QuickTest.hs	2011-08-13 10:27:29.501445862 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
+ 
+ module Main where
+ 

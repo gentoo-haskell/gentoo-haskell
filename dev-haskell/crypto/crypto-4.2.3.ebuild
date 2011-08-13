@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="Crypto"
 MY_P="${MY_PN}-${PV}"
@@ -21,9 +21,11 @@ RDEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.4.0.1"
 DEPEND=">=dev-haskell/cabal-1.2
-	    ${RDEPEND}"
+		${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
 
 src_test() {
 	TESTS="SymmetricTest SHA1Test RSATest QuickTest HMACTest WordListTest"
