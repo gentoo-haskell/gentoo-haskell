@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="First class accessor labels implemented as lenses."
+DESCRIPTION="First class accessor labels."
 HOMEPAGE="http://hackage.haskell.org/package/fclabels"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<=dev-haskell/mtl-2.1
+RDEPEND="<dev-haskell/mtl-2.2
+		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
