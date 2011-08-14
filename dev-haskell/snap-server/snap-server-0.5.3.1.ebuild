@@ -39,7 +39,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/unix-compat-0.2*
 		=dev-haskell/vector-0.7*
 		=dev-haskell/vector-algorithms-0.5*
-		>=dev-lang/ghc-6.10.1
+		>=dev-lang/ghc-7.0.1
 		libev? ( >=dev-haskell/hlibev-0.2.8 )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
