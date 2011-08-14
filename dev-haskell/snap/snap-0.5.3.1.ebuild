@@ -35,6 +35,6 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/time-1.4
 		dev-haskell/unix-compat
 		dev-haskell/zlib
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
