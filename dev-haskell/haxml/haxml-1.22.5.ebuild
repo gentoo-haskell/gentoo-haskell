@@ -28,5 +28,4 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${P}-avoid-slot-conflict.patch"
-	"${FILESDIR}/${P}-haddock.patch")
+PATCHES=("${FILESDIR}/${P}-avoid-slot-conflict.patch")

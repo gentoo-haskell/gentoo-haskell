@@ -1,5 +1,5 @@
---- HaXml-1.22.4-orig/HaXml.cabal	2011-08-12 00:59:31.000000000 +1000
-+++ HaXml-1.22.4/HaXml.cabal	2011-08-12 12:16:28.912743976 +1000
+--- HaXml-1.22.5-orig/HaXml.cabal	2011-08-13 22:46:39.000000000 +1000
++++ HaXml-1.22.5/HaXml.cabal	2011-08-14 10:05:17.796998165 +1000
 @@ -78,49 +78,49 @@
    cpp-options: -DMAJOR=1 -DMINOR=22
    nhc98-options: -K10M
