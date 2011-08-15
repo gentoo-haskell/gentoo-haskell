@@ -25,8 +25,3 @@ RDEPEND="=dev-haskell/digestive-functors-0.1.0*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
-}
