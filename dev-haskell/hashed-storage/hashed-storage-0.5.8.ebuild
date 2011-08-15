@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Hashed file storage support code."
 HOMEPAGE="http://hackage.haskell.org/package/hashed-storage"
@@ -32,8 +32,6 @@ DEPEND=">=dev-haskell/cabal-1.6
 			dev-haskell/zip-archive
 		)
 		${RDEPEND}"
-
-PATCHES=("${FILESDIR}/${PN}-0.5.7-ghc-7.2.patch")
 
 src_configure() {
 	cabal_src_configure $(cabal_flag test)
