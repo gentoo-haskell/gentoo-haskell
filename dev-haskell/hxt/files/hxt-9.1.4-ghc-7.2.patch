@@ -1,5 +1,5 @@
---- hxt-9.1.3-orig/hxt.cabal	2011-08-15 23:58:09.000000000 +1000
-+++ hxt-9.1.3/hxt.cabal	2011-08-16 12:03:19.288604756 +1000
+--- hxt-9.1.4-orig/hxt.cabal	2011-08-16 21:02:36.000000000 +1000
++++ hxt-9.1.4/hxt.cabal	2011-08-16 22:50:06.698989683 +1000
 @@ -166,7 +166,6 @@
   extensions: MultiParamTypeClasses DeriveDataTypeable FunctionalDependencies FlexibleInstances
  
