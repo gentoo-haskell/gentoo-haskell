@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A regular expression library for W3C XML Schema regular expressions"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Regular_expressions_for_XML_Schema"
@@ -23,3 +23,5 @@ RDEPEND="=dev-haskell/hxt-charproperties-9*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
