@@ -18,9 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="highlight pdf test"
 
-RDEPEND=">=dev-haskell/citeproc-hs-0.3.1
+RDEPEND="=dev-haskell/base64-bytestring-0.1*
+		>=dev-haskell/citeproc-hs-0.3.1
 		=dev-haskell/dlist-0.5*
-		=dev-haskell/http-4000.1*
+		<dev-haskell/http-4000.2
 		=dev-haskell/json-0.4*
 		<dev-haskell/mtl-2.1
 		=dev-haskell/network-2.3*
@@ -39,7 +40,7 @@ RDEPEND=">=dev-haskell/citeproc-hs-0.3.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-1.8.1.2-tests-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-1.8.2.1-tests-ghc-7.2.patch")
 
 pandoc_init() {
 	pandoc="${PN}"
