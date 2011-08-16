@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="NCurses bindings for Haskell"
 HOMEPAGE="https://github.com/skogsbaer/hscurses"
@@ -25,5 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
+	epatch "${FILESDIR}/${PN}"-1.4.0.0-ghc-7.2.patch
 	fperms u+x configure
 }
