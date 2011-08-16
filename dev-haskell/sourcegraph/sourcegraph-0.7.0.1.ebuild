@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="3"
+
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
@@ -20,10 +22,10 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.8
 		dev-haskell/extensible-exceptions
-		=dev-haskell/fgl-5.4.2.3
-		=dev-haskell/graphalyze-0.11*
-		=dev-haskell/graphviz-2999.11*
-		=dev-haskell/haskell-src-exts-1.9*
+		=dev-haskell/fgl-5.4*
+		=dev-haskell/graphalyze-0.12*
+		=dev-haskell/graphviz-2999.12*
+		<dev-haskell/haskell-src-exts-1.12.0
 		dev-haskell/mtl
 		dev-haskell/multiset"
 
@@ -31,3 +33,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 RDEPEND=">=media-gfx/graphviz-2.24.0"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@Cabal >= 1.8 && < 1.11@Cabal >= 1.8 \&\& < 1.13@' \
+		-i "${S}/SourceGraph.cabal" || die "Could not loosen dependencies"
+}
