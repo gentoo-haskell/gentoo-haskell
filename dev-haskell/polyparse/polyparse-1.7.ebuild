@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A variety of alternative parser combinator libraries."
 HOMEPAGE="http://code.haskell.org/~malcolm/polyparse/"
@@ -22,5 +22,3 @@ RDEPEND="dev-haskell/text
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-1.6-no-haskell98.patch")
