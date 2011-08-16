@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
-		=dev-haskell/data-default-0.2*
+		=dev-haskell/data-default-0.3*
 		=dev-haskell/email-validate-0.2*
 		=dev-haskell/hamlet-0.8*
 		<dev-haskell/network-2.4
@@ -36,3 +36,8 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@data-default              >= 0.2      && < 0.3@data-default              >= 0.2      \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
