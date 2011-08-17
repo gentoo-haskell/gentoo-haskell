@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Fast, high quality pseudo random number generation"
-HOMEPAGE="https://bitbucket.org/bos/mwc-random"
+HOMEPAGE="https://github.com/bos/mwc-random"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
