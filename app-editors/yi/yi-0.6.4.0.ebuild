@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="gnome gtk vty"
 
 RDEPEND="=dev-haskell/binary-0.5*
-		=dev-haskell/cabal-1.10*
+		<dev-haskell/cabal-1.13
 		=dev-haskell/cautious-file-1.0*
 		=dev-haskell/concrete-typerep-0.1*
 		<dev-haskell/data-accessor-0.3
@@ -59,7 +59,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cd "${S}"
 	sed -e 's@derive >=2.4 && <2.5@derive >=2.4 \&\& <2.6@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen derive dependency"
+		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		if use gtk; then
 			die "yi removed support for 6.12.3, backport does not work with gtk use flag"

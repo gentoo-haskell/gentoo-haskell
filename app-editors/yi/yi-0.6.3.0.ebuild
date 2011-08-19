@@ -27,7 +27,7 @@ IUSE="gnome gtk vty"
 
 RDEPEND=">=dev-lang/ghc-6.12.1
 		=dev-haskell/binary-0.5*
-		=dev-haskell/cabal-1.10*
+		<dev-haskell/cabal-1.13
 		<dev-haskell/cautious-file-0.2
 		<dev-haskell/data-accessor-0.3
 		=dev-haskell/data-accessor-monads-fd-0.2*
@@ -78,7 +78,8 @@ src_prepare() {
 	sed -e 's@ico <- loadIcon "yi+lambda-fat.32.png"@ico <- loadIcon "yi+lambda-fat-32.png"@' \
 		-i "${S}/src/library/Yi/UI/Pango.hs"
 	sed -e 's@derive >=2.3 && <2.5@derive >=2.3 \&\& <2.6@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen derive dependency"
+		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
