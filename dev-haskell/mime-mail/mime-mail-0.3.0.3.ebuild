@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Compose MIME email messages."
 HOMEPAGE="http://github.com/snoyberg/mime-mail"
@@ -24,5 +24,3 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-0.3.0.2-ghc-7.2.patch")
