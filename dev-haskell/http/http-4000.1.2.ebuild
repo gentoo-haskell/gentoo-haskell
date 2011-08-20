@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="HTTP"
 MY_P="${MY_PN}-${PV}"
@@ -29,5 +29,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${PN}-4000.1.1-ghc-7.2.patch")
