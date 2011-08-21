@@ -7,7 +7,7 @@ CABAL_FEATURES="bin"
 inherit base haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
-HOMEPAGE="http://code.haskell.org/~arossato/xmobar"
+HOMEPAGE="http://projects.haskell.org/xmobar/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
