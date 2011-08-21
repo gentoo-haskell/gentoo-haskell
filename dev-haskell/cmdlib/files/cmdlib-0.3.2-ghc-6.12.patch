@@ -1,0 +1,33 @@
+--- cmdlib-0.3.2-orig/System/Console/CmdLib/Command.hs	2011-08-21 19:41:38.000000000 +1000
++++ cmdlib-0.3.2/System/Console/CmdLib/Command.hs	2011-08-21 20:39:20.911278611 +1000
+@@ -1,6 +1,6 @@
+ {-# LANGUAGE ScopedTypeVariables, GADTs, MultiParamTypeClasses, FunctionalDependencies,
+              FlexibleInstances, UndecidableInstances, OverlappingInstances, DeriveDataTypeable,
+-             FlexibleContexts, TupleSections, Rank2Types #-}
++             FlexibleContexts, TupleSections, Rank2Types, CPP #-}
+ module System.Console.CmdLib.Command where
+ 
+ import System.Console.CmdLib.Attribute
+@@ -11,7 +11,7 @@
+ import Data.List( sort, intercalate, isPrefixOf )
+ import Data.Char( toLower )
+ import Data.Maybe( fromJust, isNothing )
+-import Control.Monad( when, forM_, void )
++import Control.Monad( when, forM_ )
+ import Control.Exception ( evaluate, catch, SomeException )
+ import System.IO( hPutStrLn, stderr )
+ import System.Exit
+@@ -225,6 +225,13 @@
+ commandGroup :: (Commands a) => String -> a -> [CommandWrap]
+ commandGroup s l = [CommandGroup s (toCommands l)]
+ 
++#if !MIN_VERSION_base(4,3,0)
++instance Monad (Either e) where
++        return = Right
++        Left  l >>= _ = Left l
++        Right r >>= k = k r    
++#endif
++
+ -- TODO: disambiguation, hidden commands (aliases)
+ findCommand :: String -> [CommandWrap] -> [CommandWrap]
+ findCommand key list = case accum list of Left x -> [x]
