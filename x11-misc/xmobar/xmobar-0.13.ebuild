@@ -32,7 +32,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 # 		wifi? ( net-wireless/wireless-tools )
 RDEPEND="mpd? ( media-sound/mpd )"
 
-PATCHES=("${FILESDIR}/${PN}-9999-fix-build-failure-against-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-9999-fix-build-failure-against-ghc-7.2.patch"
+	"${FILESDIR}/${PN}"-0.13-libmpd-0.6.patch)
 
 src_configure() {
 	cabal_src_configure \
