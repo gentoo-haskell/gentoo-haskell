@@ -81,18 +81,20 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 LICENSE="BSD"
 SLOT="0"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
-KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
 	!dev-lang/ghc-bin
-	>=sys-devel/gcc-2.95.3
-	>=sys-devel/binutils-2.17
+	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
+	kernel_linux? ( >=sys-devel/binutils-2.17 )
+	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-5
-	!<dev-haskell/haddock-2.4.2"
+	!<dev-haskell/haddock-2.4.2
+	sys-libs/ncurses[unicode]"
 # earlier versions than 2.4.2 of haddock only works with older ghc releases
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
