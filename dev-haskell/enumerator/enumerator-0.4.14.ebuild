@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Reliable, high-performance processing with left-fold enumerators"
-HOMEPAGE="http://john-millikin.com/software/enumerator/"
+HOMEPAGE="https://john-millikin.com/software/enumerator/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
