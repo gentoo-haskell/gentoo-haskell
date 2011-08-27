@@ -22,6 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/mtl-2.0*
+		=dev-haskell/type-equality-0.1*
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
