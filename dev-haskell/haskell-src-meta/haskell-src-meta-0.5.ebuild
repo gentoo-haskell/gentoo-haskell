@@ -18,9 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/haskell-src-exts-1.6
-		<dev-haskell/haskell-src-exts-1.12
+RDEPEND="<dev-haskell/haskell-src-exts-1.12
 		=dev-haskell/th-lift-0.5*
-		>=dev-lang/ghc-6.10.4"
+		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
