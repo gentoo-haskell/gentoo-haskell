@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/mtl-2.0*
-		>=dev-haskell/replib-0.4.0
+		=dev-haskell/replib-0.5*
 		>=dev-haskell/transformers-0.2.2.0
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
