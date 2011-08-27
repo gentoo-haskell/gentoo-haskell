@@ -1,0 +1,10 @@
+--- fclabels-1.0.2-orig/src/Data/Label/Derive.hs	2011-08-25 02:46:09.000000000 +1000
++++ fclabels-1.0.2/src/Data/Label/Derive.hs	2011-08-27 18:06:05.991395478 +1000
+@@ -2,6 +2,7 @@
+ {-# LANGUAGE
+     TemplateHaskell
+   , OverloadedStrings
++  , FlexibleContexts
+   , FlexibleInstances
+   , TypeOperators
+   #-}

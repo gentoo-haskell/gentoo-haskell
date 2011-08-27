@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="First class accessor labels."
 HOMEPAGE="http://hackage.haskell.org/package/fclabels"
@@ -23,3 +23,5 @@ RDEPEND="<dev-haskell/mtl-2.2
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
