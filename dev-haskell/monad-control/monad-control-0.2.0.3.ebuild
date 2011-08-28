@@ -30,12 +30,6 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-src_prepare() {
-	# Upstream left the test.hs file out of the hackage tarball, retrieved from
-	# https://github.com/basvandijk/monad-control/raw/master/test.hs
-	cp "${FILESDIR}/test.hs" "${S}"
-}
-
 src_configure() {
 	cabal_src_configure $(use_enable test tests) $(cabal_flag test)
 }
