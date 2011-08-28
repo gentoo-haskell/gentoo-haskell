@@ -8,6 +8,6 @@ index 1bcb8f2..93f8310 100644
                       , directory          >= 1.0          && < 1.2
 -                     , Cabal              >= 1.8          && < 1.11
 +                     , Cabal              >= 1.8          && < 1.13
-                      , unix-compat        >= 0.2          && < 0.3
+                      , unix-compat        >= 0.2          && < 0.4
                       , containers         >= 0.2          && < 0.5
                       , attoparsec-text    >= 0.8.5        && < 0.9
