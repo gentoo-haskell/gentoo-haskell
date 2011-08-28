@@ -49,7 +49,7 @@ RDEPEND=">=dev-lang/ghc-6.12.1
 		=dev-haskell/split-0.1*
 		<dev-haskell/time-1.3
 		dev-haskell/uniplate
-		<dev-haskell/unix-compat-0.3
+		<dev-haskell/unix-compat-0.4
 		>=dev-haskell/utf8-string-0.3.1
 		vty? ( =dev-haskell/vty-4* )
 		gtk? ( =dev-haskell/glib-0.12*
@@ -79,6 +79,7 @@ src_prepare() {
 		-i "${S}/src/library/Yi/UI/Pango.hs"
 	sed -e 's@derive >=2.3 && <2.5@derive >=2.3 \&\& <2.6@' \
 		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
+		-e 's@unix-compat >=0.1 && <0.3@unix-compat >=0.1 \&\& <0.4@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 

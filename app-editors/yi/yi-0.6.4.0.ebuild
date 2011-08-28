@@ -43,7 +43,7 @@ RDEPEND="=dev-haskell/binary-0.5*
 		=dev-haskell/split-0.1*
 		<dev-haskell/time-1.3
 		dev-haskell/uniplate
-		<dev-haskell/unix-compat-0.3
+		<dev-haskell/unix-compat-0.4
 		=dev-haskell/unordered-containers-0.1*
 		>=dev-haskell/utf8-string-0.3.1
 		<dev-haskell/vty-5
@@ -59,6 +59,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cd "${S}"
 	sed -e 's@derive >=2.4 && <2.5@derive >=2.4 \&\& <2.6@' \
+		-e 's@unix-compat >=0.1 && <0.3@unix-compat >=0.1 \&\& <0.4@g' \
 		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1"; then
