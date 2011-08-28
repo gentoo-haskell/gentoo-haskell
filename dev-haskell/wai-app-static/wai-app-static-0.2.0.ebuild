@@ -25,8 +25,13 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.3
 		<dev-haskell/transformers-0.3
-		=dev-haskell/unix-compat-0.2*
+		<dev-haskell/unix-compat-0.4
 		=dev-haskell/wai-0.4*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@unix-compat               >= 0.2      && < 0.3@unix-compat               >= 0.2      \&\& < 0.4@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
