@@ -18,8 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/primitive-0.3*
+RDEPEND=">=dev-haskell/primitive-0.3
 		>=dev-haskell/vector-0.6
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+src_prepare() {
+	sed -e 's@vector >= 0.6 && < 0.8@vector >= 0.6 \&\& < 0.9@' \
+		-e 's@primitive >=0.3 && <0.4@primitive >=0.3 \&\& <0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
