@@ -33,7 +33,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/time-1.4
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
-		<dev-haskell/vector-0.8
+		>=dev-haskell/vector-0.7
 		dev-haskell/zlib
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
@@ -41,5 +41,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@unix-compat == 0.2.\*@unix-compat >= 0.2 \&\& < 0.4@' \
+		-e 's@vector >= 0.6 && <0.8@vector >= 0.6 \&\& <0.9@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
