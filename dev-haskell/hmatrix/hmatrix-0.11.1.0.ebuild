@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Linear algebra and numerical computation"
 HOMEPAGE="http://perception.inf.um.es/hmatrix"
@@ -29,6 +29,8 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
+
+PATCHES=("${FILESDIR}/${P}-vector-0.8.patch")
 
 # tests don't do what you expect and should be fixed,
 # but I intentionally left them here --slyfox
