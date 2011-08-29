@@ -6,7 +6,7 @@
 
 EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A library for demand-driven testing of Haskell programs"
 HOMEPAGE="http://www.cs.york.ac.uk/~mfn/lazysmallcheck/"
@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.8.1"
+RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
-
-PATCHES=("${FILESDIR}/${PN}-0.5-no-haskell98.patch")
