@@ -1,0 +1,10 @@
+--- yesod-core-0.9.1-orig/Yesod/Widget.hs	2011-08-29 23:21:19.000000000 +1000
++++ yesod-core-0.9.1/Yesod/Widget.hs	2011-08-30 10:31:02.861231570 +1000
+@@ -4,6 +4,7 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE UndecidableInstances #-}
+ -- | Widgets combine HTML with JS and CSS dependencies with a unique identifier
+ -- generator, allowing you to create truly modular HTML components.
+ module Yesod.Widget
