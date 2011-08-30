@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Thread-safe resource pools."
-HOMEPAGE="http://github.com/snoyberg/pool"
+HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
