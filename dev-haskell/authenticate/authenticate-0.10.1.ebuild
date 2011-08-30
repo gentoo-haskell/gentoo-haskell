@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Authentication methods for Haskell web applications."
 HOMEPAGE="http://github.com/snoyberg/authenticate/tree/master"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-0.3*
+RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/attoparsec-0.9*
 		=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
@@ -38,6 +38,4 @@ RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/xml-enumerator-0.3*
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+		>=dev-haskell/cabal-1.6"
