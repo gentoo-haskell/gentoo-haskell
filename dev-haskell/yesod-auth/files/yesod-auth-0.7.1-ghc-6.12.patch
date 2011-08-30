@@ -1,0 +1,20 @@
+--- yesod-auth-0.7.1-orig/Yesod/Auth/Kerberos.hs	2011-08-29 23:21:19.000000000 +1000
++++ yesod-auth-0.7.1/Yesod/Auth/Kerberos.hs	2011-08-30 10:38:08.657591747 +1000
+@@ -53,7 +53,7 @@
+ -- | A configurable version of 'authKerberos'
+ genericAuthKerberos :: YesodAuth m => KerberosConfig -> AuthPlugin m
+ genericAuthKerberos config = AuthPlugin "kerberos" dispatch $ \tm -> addHamlet
+-    [hamlet|
++    [$hamlet|
+     <div id="header">
+         <h1>Login
+ 
+@@ -97,7 +97,7 @@
+         <*> iopt textField "password"
+ 
+     let errorMessage (message :: Text) = do
+-        setMessage [shamlet|Error: #{message}|]
++        setMessage [$shamlet|Error: #{message}|]
+         toMaster <- getRouteToMaster
+         redirect RedirectTemporary $ toMaster LoginR
+ 
