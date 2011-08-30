@@ -19,10 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/failure-0.1*
-		=dev-haskell/persistent-0.5*
-		=dev-haskell/persistent-template-0.5*
+		=dev-haskell/persistent-0.6*
+		=dev-haskell/persistent-template-0.6*
 		=dev-haskell/transformers-0.2*
-		=dev-haskell/yesod-core-0.8*
+		=dev-haskell/yesod-core-0.9*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
