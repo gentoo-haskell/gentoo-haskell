@@ -21,16 +21,10 @@ IUSE=""
 RDEPEND="=dev-haskell/hdbc-2*
 		=dev-haskell/hdbc-postgresql-2*
 		=dev-haskell/monad-control-0.2*
-		=dev-haskell/persistent-0.5*
+		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@HDBC                  >= 2.2.6    && < 2.3@HDBC                  >= 2.2.6    \&\& < 2.4@' \
-		-e 's@HDBC-postgresql       >= 2.2.3.1  && < 2.3@HDBC-postgresql       >= 2.2.3.1  \&\& < 2.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
