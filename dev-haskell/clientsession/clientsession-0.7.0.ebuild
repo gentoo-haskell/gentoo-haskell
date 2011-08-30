@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Store session data in a cookie."
@@ -18,6 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.12.1"
+RDEPEND="=dev-haskell/base64-bytestring-0.1*
+		=dev-haskell/crypto-api-0.6*
+		=dev-haskell/cryptocipher-0.2*
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
