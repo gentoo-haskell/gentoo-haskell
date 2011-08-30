@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Type-safe, non-relational, multi-backend persistence."
-HOMEPAGE="http://www.yesodweb.com/"
+HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -19,9 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/monad-control-0.2*
-		=dev-haskell/persistent-0.5*
+		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-1.0
-		=dev-haskell/web-routes-quasi-0.7*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
