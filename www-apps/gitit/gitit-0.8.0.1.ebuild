@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Wiki using happstack, git or darcs, and pandoc."
 HOMEPAGE="http://github.com/jgm/gitit/tree/master"
@@ -43,13 +43,11 @@ RDEPEND="dev-haskell/cgi
 		=dev-haskell/utf8-string-0.3*
 		dev-haskell/xhtml
 		>=dev-haskell/xml-1.3.5
-		=dev-haskell/xss-sanitize-0.2*
+		<dev-haskell/xss-sanitize-0.4
 		=dev-haskell/zlib-0.5*
+		=dev-haskell/text-0.11*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
-}
+PATCHES=("${FILESDIR}/${P}-xss-sanitize-0.3.patch")
