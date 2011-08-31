@@ -26,6 +26,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@base                 == 4.4.\*@base                 >= 4.3 \&\& < 5@' \
-		-e 's@vector               >= 0.7 && < 0.8@vector               >= 0.7 \&\& < 0.9@' \
+		-e 's@vector               >= 0.7 && < 0.8@vector               >= 0.7 \&\& < 0.10@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
