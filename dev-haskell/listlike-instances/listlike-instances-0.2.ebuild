@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/listlike-3.0*
+RDEPEND="=dev-haskell/listlike-3*
 		=dev-haskell/text-0.11*
 		>=dev-haskell/vector-0.5
 		>=dev-lang/ghc-6.8.2"
