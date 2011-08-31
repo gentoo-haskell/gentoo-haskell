@@ -19,8 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
+		=dev-haskell/cereal-0.3*
 		=dev-haskell/crypto-api-0.6*
 		=dev-haskell/cryptocipher-0.2*
+		=dev-haskell/cryptohash-0.7*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
