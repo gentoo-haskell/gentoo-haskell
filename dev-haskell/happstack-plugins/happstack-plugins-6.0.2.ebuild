@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="The haskell application server stack + reload"
 HOMEPAGE="http://happstack.com"
@@ -26,7 +26,10 @@ RDEPEND="=dev-haskell/happstack-server-6.2*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${P}-hinotify.patch")
+
 src_prepare() {
+	base_src_prepare
 	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
 }

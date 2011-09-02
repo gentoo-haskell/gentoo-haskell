@@ -1,0 +1,11 @@
+--- happstack-plugins-6.0.2-orig/Happstack/Plugins/Plugins.hs	2011-07-21 02:51:07.000000000 +1000
++++ happstack-plugins-6.0.2/Happstack/Plugins/Plugins.hs	2011-09-02 22:22:10.514132823 +1000
+@@ -116,7 +116,7 @@
+                   Nothing -> return ()
+                   (Just (oldWds, _, _, symbols)) ->
+                       do mapM_ unloadAll (unloadList symbols)
+-                         mapM_ (removeWatch inotify) oldWds
++                         mapM_ removeWatch oldWds
+                          res <- mapM (load' objFilePath) (Map.assocs symbols)
+                          imports <- map (\bn -> addExtension bn ".hs") <$> getImports (dropExtension objFilePath)
+                          wds <- observeFiles p fp imports
