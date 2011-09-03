@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cereal-0.3*
@@ -25,4 +25,17 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cryptohash-0.7*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( =dev-haskell/hspec-0.6*
+			dev-haskell/hunit
+			dev-haskell/quickcheck:2
+		)
+		"
+
+src_prepare() {
+	cp -r "${FILESDIR}/${P}/"* "${S}"/
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
