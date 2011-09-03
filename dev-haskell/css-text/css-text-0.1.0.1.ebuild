@@ -16,10 +16,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="<dev-haskell/attoparsec-text-0.9
 		=dev-haskell/text-0.11*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hunit
+			=dev-haskell/hspec-0.6*
+			dev-haskell/quickcheck
+		)
+		"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
