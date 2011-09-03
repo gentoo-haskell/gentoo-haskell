@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="postgres sqlite3"
+RESTRICT="test" # needs manual tweaking to test stuff
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/enumerator-0.4*
