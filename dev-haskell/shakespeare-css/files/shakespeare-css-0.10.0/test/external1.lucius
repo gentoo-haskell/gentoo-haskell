@@ -1,0 +1,13 @@
+foo {
+    background: #{colorBlack};
+    bar: baz;
+    color: #{colorRed};
+}
+bin {
+    background-image: url(@{Home});
+    bar: bar;
+    color: #{(((Color 127) 100) 5)};
+    f#{var}x: someval;
+    unicode-test: שלום;
+    urlp: url(@?{urlp});
+}

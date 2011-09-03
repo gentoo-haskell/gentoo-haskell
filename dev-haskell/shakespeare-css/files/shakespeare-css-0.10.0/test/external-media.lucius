@@ -1,0 +1,7 @@
+@media only screen{
+    foo {
+        bar {
+            baz: bin;
+        }
+    }
+}
