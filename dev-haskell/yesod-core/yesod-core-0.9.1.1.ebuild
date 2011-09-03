@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
@@ -43,6 +43,19 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/web-routes-quasi-0.7*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hunit
+			=dev-haskell/hspec-0.6*
+			dev-haskell/quickcheck:2
+		)
+		"
 
 PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
+
+src_prepare() {
+	cp -r "${FILESDIR}/${P}/"* "${S}"/
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
