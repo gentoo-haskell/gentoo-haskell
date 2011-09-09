@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit darcs haskell-cabal
+inherit base darcs haskell-cabal
 
 DESCRIPTION="Runtime Haskell interpreter (GHC API wrapper)"
 HOMEPAGE="http://projects.haskell.org/hint"
@@ -28,3 +28,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 EDARCS_REPOSITORY="http://code.haskell.org/hint/devel"
+
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
