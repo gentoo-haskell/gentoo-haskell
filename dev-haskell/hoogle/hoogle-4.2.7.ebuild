@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
 		<dev-haskell/cabal-1.13
 		=dev-haskell/case-insensitive-0.3*
-		=dev-haskell/cmdargs-0.7*
+		=dev-haskell/cmdargs-0.8*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/haskell-src-exts-1.12
 		=dev-haskell/http-types-0.6*
