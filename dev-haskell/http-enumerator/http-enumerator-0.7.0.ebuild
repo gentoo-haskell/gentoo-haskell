@@ -27,6 +27,7 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 		=dev-haskell/case-insensitive-0.3*
 		<dev-haskell/certificate-0.10
 		=dev-haskell/cprng-aes-0.2*
+		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/http-types-0.6*
