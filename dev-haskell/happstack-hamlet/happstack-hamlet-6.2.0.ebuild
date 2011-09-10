@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/hamlet-0.9*
+RDEPEND="=dev-haskell/hamlet-0.10*
 		=dev-haskell/happstack-server-6.2*
 		dev-haskell/text
 		>=dev-lang/ghc-6.8.2"
