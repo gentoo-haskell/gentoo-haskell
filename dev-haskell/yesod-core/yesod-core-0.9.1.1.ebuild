@@ -53,6 +53,7 @@ DEPEND="${RDEPEND}
 PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
 
 src_prepare() {
+	base_src_prepare
 	cp -r "${FILESDIR}/${P}/"* "${S}"/
 }
 
