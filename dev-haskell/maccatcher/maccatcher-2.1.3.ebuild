@@ -24,4 +24,4 @@ RDEPEND="dev-haskell/binary
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-2.1.2-no-haskell98.patch")
+PATCHES=("${FILESDIR}/${P}-no-haskell98.patch")
