@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/heist-0.5*
-		=dev-haskell/hint-0.3*
+		>=dev-haskell/hint-0.3
 		=dev-haskell/monadcatchio-transformers-0.2*
 		>=dev-haskell/mtl-2
 		=dev-haskell/snap-core-0.5*
