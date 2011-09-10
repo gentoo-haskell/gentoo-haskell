@@ -25,7 +25,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/case-insensitive-0.3*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/failure-0.2
-		=dev-haskell/http-enumerator-0.6*
+		=dev-haskell/http-enumerator-0.7*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
 		=dev-haskell/rsa-1.0*
@@ -35,7 +35,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		<dev-haskell/time-1.4
 		=dev-haskell/tls-0.7*
 		<dev-haskell/transformers-0.3
-		=dev-haskell/xml-enumerator-0.3*
+		=dev-haskell/xml-enumerator-0.4*
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
