@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A pie chart generator for the hledger accounting tool."
+DESCRIPTION="A pie chart image generator for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -22,9 +22,11 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/chart-0.11
-		<dev-haskell/chart-0.15
+		=dev-haskell/cmdargs-0.8*
 		dev-haskell/colour
-		~dev-haskell/hledger-0.14
-		~dev-haskell/hledger-lib-0.14
+		~dev-haskell/hledger-0.15.2
+		~dev-haskell/hledger-lib-0.15.2
+		dev-haskell/hunit
 		>=dev-haskell/safe-0.2
+		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
