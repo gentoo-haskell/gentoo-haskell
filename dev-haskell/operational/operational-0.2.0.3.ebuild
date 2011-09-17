@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Implement monads by specifying operational semantics."
-HOMEPAGE="http://projects.haskell.org/operational/"
+HOMEPAGE="http://haskell.org/haskellwiki/Operational"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
