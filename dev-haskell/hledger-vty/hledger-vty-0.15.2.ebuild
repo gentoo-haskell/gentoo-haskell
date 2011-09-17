@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A curses-style interface for the hledger accounting tool."
+DESCRIPTION="A curses-style console interface for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -21,9 +21,11 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
-		~dev-haskell/hledger-0.14
-		~dev-haskell/hledger-lib-0.14
+		=dev-haskell/cmdargs-0.8*
+		~dev-haskell/hledger-0.15.2
+		~dev-haskell/hledger-lib-0.15.2
+		dev-haskell/hunit
 		>=dev-haskell/safe-0.2
+		dev-haskell/time
 		>=dev-haskell/vty-4.6.0.1
-		<dev-haskell/vty-4.7
 		>=dev-lang/ghc-6.8.2"
