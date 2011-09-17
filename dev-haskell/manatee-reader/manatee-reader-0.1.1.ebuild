@@ -36,5 +36,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@dbus-client >= 0.3 && < 0.4@dbus-client >= 0.3 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dbus-client dependency"
+		-e 's@webkit >= 0.12.0 && < 0.12.2@webkit >= 0.12.0 \&\& < 0.13@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
