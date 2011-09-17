@@ -23,7 +23,6 @@ RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monad-control-0.2*
 		dev-haskell/mtl
-		<dev-haskell/parsec-4
 		=dev-haskell/path-pieces-0.0*
 		=dev-haskell/pool-0.1*
 		<dev-haskell/text-0.12
