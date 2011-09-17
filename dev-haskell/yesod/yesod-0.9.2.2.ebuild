@@ -28,6 +28,7 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		<dev-haskell/parsec-4
 		=dev-haskell/shakespeare-css-0.10*
 		=dev-haskell/shakespeare-js-0.10*
+		=dev-haskell/shakespeare-text-0.10*
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.3
 		=dev-haskell/transformers-0.2*
