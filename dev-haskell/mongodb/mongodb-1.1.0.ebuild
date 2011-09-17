@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="mongoDB"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="MongoDB driver"
+DESCRIPTION="Driver (client) for MongoDB, a free, scalable, fast, document DBMS"
 HOMEPAGE="http://github.com/TonyGen/mongoDB-haskell"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
@@ -24,11 +24,13 @@ IUSE=""
 RDEPEND="dev-haskell/binary
 		dev-haskell/bson
 		dev-haskell/cryptohash
+		=dev-haskell/monad-control-0.2*
 		>=dev-haskell/mtl-2
 		dev-haskell/network
 		dev-haskell/parsec
+		dev-haskell/random-shuffle
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-0"
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
