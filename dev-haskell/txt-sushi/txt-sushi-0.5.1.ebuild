@@ -6,7 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+# FIXME: haddock is broken for some reason
+CABAL_FEATURES="bin lib profile hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="The SQL link in your *NIX chain"
