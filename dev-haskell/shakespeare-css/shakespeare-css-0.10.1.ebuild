@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${P}/"* "${S}"/
+	cp -r "${FILESDIR}/${PN}-0.10.0/"* "${S}"/ || die
 }
 
 src_configure() {
