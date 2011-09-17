@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/deepseq-1.1*
 		<dev-haskell/mtl-2.1
-		<dev-haskell/parallel-3.2
+		>=dev-haskell/parallel-2.2 <dev-haskell/parallel-3.2
 		<dev-haskell/parsec-4
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/utf8-string-0.3*
