@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Reusable types and utilities for the hledger accounting tool and financial apps in general."
+DESCRIPTION="Core data types, parsers and utilities for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/hunit
+RDEPEND="=dev-haskell/cmdargs-0.8*
+		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/parsec
 		>=dev-haskell/regexpr-0.5.1
