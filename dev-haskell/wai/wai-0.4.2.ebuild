@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Web Application Interface."
-HOMEPAGE="http://github.com/snoyberg/wai"
+HOMEPAGE="https://github.com/yesodweb/wai"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
