@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
@@ -35,6 +35,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	cp -r "${FILESDIR}/${PN}-0.3.3/"* "${S}"/ || die
+
 	sed -e 's@unix-compat               >= 0.2      && < 0.3@unix-compat               >= 0.2      \&\& < 0.4@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
 }
