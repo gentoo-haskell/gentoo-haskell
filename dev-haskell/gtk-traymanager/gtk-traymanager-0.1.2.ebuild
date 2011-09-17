@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="A wrapper around the eggtraymanager library for Linux system trays"
 HOMEPAGE="http://github.com/travitch/gtk-traymanager"
@@ -25,3 +25,11 @@ RDEPEND="=dev-haskell/glib-0.12*
 		x11-libs/gtk+"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	if has_version "<dev-lang/ghc-7.0.1"; then
+		sed -e 's@default-language: Haskell2010@default-language: Haskell98@' \
+			-i "${S}/${PN}.cabal" || die "Could not change default-language to Haskell98"
+	fi
+}
+
