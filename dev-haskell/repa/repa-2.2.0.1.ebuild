@@ -19,13 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/quickcheck-2.3
-		>=dev-haskell/vector-0.7
-		>=dev-lang/ghc-7.0.1"
+		=dev-haskell/vector-0.9*
+		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
 	sed -e 's@base                 == 4.4.\*@base                 >= 4.3 \&\& < 5@' \
-		-e 's@vector               >= 0.7 && < 0.8@vector               >= 0.7 \&\& < 0.10@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	# ghc 7.0.4 does not define forkOn, use forkOnIO like repa version 2.1.1.6 used to use
+	sed -e 's@forkOn@forkOnIO@g' \
+		-i "${S}/Data/Array/Repa/Internals/Gang.hs"
 }
