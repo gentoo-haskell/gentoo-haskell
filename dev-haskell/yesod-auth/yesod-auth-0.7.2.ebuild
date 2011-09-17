@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Authentication for Yesod."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -41,11 +41,3 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0"
-
-src_prepare() {
-	cd "${S}"
-	if has_version "<dev-lang/ghc-7.0.1"; then
-		# The ghc 6.12 template haskell splice syntax is different to ghc 7
-		epatch "${FILESDIR}/${P}-ghc-6.12.patch"
-	fi
-}
