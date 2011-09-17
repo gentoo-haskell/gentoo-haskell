@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A graphical thread profiler."
+DESCRIPTION="A graphical tool for profiling parallel Haskell programs."
 HOMEPAGE="http://hackage.haskell.org/package/threadscope"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -23,8 +23,9 @@ DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
 		dev-haskell/cairo
-		>=dev-haskell/ghc-events-0.2
-		dev-haskell/glade
-		dev-haskell/gtk
+		=dev-haskell/ghc-events-0.3*
+		dev-haskell/glib
+		>=dev-haskell/gtk-0.12
 		dev-haskell/mtl
+		dev-haskell/pango
 		>=dev-lang/ghc-6.10.1"
