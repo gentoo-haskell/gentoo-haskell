@@ -29,7 +29,8 @@ RDEPEND=">=dev-haskell/binary-0.4
 		<dev-haskell/parsec-3.2
 		>=dev-haskell/text-0.11.1.5
 		<dev-haskell/text-0.12
-		=dev-haskell/vector-0.7*
+		>=dev-haskell/vector-0.7
+		<dev-haskell/vector-0.10
 		=dev-haskell/xml-types-0.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
