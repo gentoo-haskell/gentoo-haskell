@@ -22,11 +22,4 @@ RDEPEND="=dev-haskell/binary-0.5*
 		dev-haskell/mtl
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.2-fix-haddock.patch"
-	sed -e 's@mtl        == 1.1.\*@mtl        >= 1.1 \&\& < 2.1@' \
-		-e 's@containers >= 0.2 && < 0.4@containers >= 0.2 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+		>=dev-haskell/cabal-1.8"
