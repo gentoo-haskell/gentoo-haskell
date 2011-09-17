@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A robust command-line accounting tool with a simple human-editable data format, similar to ledger."
+DESCRIPTION="The main command-line interface for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,9 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/csv
+RDEPEND="=dev-haskell/cmdargs-0.8*
+		dev-haskell/csv
 		=dev-haskell/haskeline-0.6*
-		~dev-haskell/hledger-lib-0.14
+		~dev-haskell/hledger-lib-0.15.2
 		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/parsec
@@ -32,4 +33,4 @@ RDEPEND="dev-haskell/csv
 		<dev-haskell/utf8-string-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
