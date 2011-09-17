@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -47,13 +47,11 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 			=dev-haskell/hspec-0.6*
 			dev-haskell/quickcheck:2
+			dev-haskell/wai-test
 		)
 		"
 
-PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
-
 src_prepare() {
-	base_src_prepare
 	cp -r "${FILESDIR}/${P}/"* "${S}"/
 }
 
