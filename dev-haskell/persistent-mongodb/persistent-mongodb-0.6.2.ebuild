@@ -13,7 +13,7 @@ MY_PN="persistent-mongoDB"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Backend for the persistent library using mongoDB."
-HOMEPAGE="http://docs.yesodweb.com/persistent/"
+HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -21,17 +21,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-# Note: dev-haskell/mongodb-1.0 API is incompatible with earlier releases, lots of changes
-# such as deleting the Network.Abstract module.
-
-RDEPEND=">=dev-haskell/bson-0.1.2
+RDEPEND=">=dev-haskell/bson-0.1.6
 		>=dev-haskell/cereal-0.3.0.0
 		=dev-haskell/compact-string-fix-0.3*
 		=dev-haskell/enumerator-0.4*
-		<dev-haskell/mongodb-1.0
+		=dev-haskell/monad-control-0.2*
+		=dev-haskell/mongodb-1.1*
 		dev-haskell/neither
 		>=dev-haskell/network-2.2.1.7
-		>=dev-haskell/persistent-0.5.0
+		=dev-haskell/path-pieces-0.0*
+		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.12.1"
