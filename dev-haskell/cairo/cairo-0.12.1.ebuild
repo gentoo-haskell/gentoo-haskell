@@ -8,10 +8,10 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Binding to the Cairo library."
-HOMEPAGE="http://www.haskell.org/gtk2hs/"
+HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -32,5 +32,3 @@ src_configure() {
 		--flags=cairo_ps \
 		$(cabal_flag svg cairo_svg)
 }
-
-PATCHES=("${FILESDIR}/${PN}-0.12.0-ghc-7.2.patch")
