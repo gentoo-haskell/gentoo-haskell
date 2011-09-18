@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="=dev-haskell/deepseq-1.1*
+RDEPEND=">=dev-haskell/deepseq-1.1
 		<dev-haskell/hashable-1.2
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
