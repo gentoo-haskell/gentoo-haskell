@@ -367,6 +367,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch
 		epatch "${FILESDIR}"/${PN}-7.2.1-fix-exotic-unreg-builds.patch
+		epatch "${FILESDIR}"/${PN}-7.2.1-macos-prefix-respect-gcc.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
