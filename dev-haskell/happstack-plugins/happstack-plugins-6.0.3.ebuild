@@ -19,17 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/happstack-server-6.2*
-		dev-haskell/hinotify
+		>=dev-haskell/hinotify-0.3.2
 		dev-haskell/mtl
 		>=dev-haskell/plugins-1.5.1.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-hinotify.patch")
-
-src_prepare() {
-	base_src_prepare
-	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
-}
