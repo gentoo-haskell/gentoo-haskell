@@ -1,5 +1,5 @@
---- agda-9999-orig/Agda.cabal	2011-08-13 11:19:38.225030568 +1000
-+++ agda-9999/Agda.cabal	2011-08-13 11:40:36.096588141 +1000
+--- agda-9999-orig/Agda.cabal	2011-09-18 18:59:32.000000000 +1000
++++ agda-9999/Agda.cabal	2011-10-01 22:33:04.381943543 +1000
 @@ -40,7 +40,6 @@
                      doc/release-notes/*.txt
  data-dir:           src/data
@@ -8,11 +8,10 @@
                      EpicInclude/AgdaPrelude.e
                      EpicInclude/stdagda.c
                      EpicInclude/stdagda.h
-@@ -321,16 +320,3 @@
-   if impl(ghc >= 7.2)
-     ghc-options:    -fwarn-identities
-   ghc-prof-options: -auto-all
--
+@@ -335,15 +334,3 @@
+ 
+   if flag(debug)
+     ghc-options:    -ddump-simpl-stats
 -executable agda-mode
 -  hs-source-dirs:   src/agda-mode
 -  main-is:          Main.hs
