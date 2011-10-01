@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Store session data in a cookie."
+DESCRIPTION="Securely store session data in a client-side cookie."
 HOMEPAGE="http://github.com/snoyberg/clientsession/tree/master"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cereal-0.3*
 		=dev-haskell/crypto-api-0.6*
 		=dev-haskell/cryptocipher-0.2*
-		=dev-haskell/cryptohash-0.7*
+		dev-haskell/skein
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
