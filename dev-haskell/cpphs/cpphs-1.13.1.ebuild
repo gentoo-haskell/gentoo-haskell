@@ -16,6 +16,6 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.10.1
-		dev-haskell/cabal"
-RDEPEND=""
+RDEPEND=">=dev-lang/ghc-6.10.1"
+DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.6"
