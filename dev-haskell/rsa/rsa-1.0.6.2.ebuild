@@ -26,6 +26,6 @@ RDEPEND="dev-haskell/binary
 		dev-haskell/sha
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
