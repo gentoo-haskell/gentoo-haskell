@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Vector & affine spaces, linear maps, and derivatives (requires ghc 6.9 or better)"
+DESCRIPTION="Vector & affine spaces, linear maps, and derivatives"
 HOMEPAGE="http://haskell.org/haskellwiki/vector-space"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/boolean-0.0.1
 		>=dev-haskell/memotrie-0.4.2
+		>=dev-haskell/numinstances-1.0
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
