@@ -15,4 +15,5 @@ KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
+		<dev-lang/ghc-7.0.1
 		>=dev-haskell/cabal-1.2"
