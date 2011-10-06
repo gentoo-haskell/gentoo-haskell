@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/failure-0.1*
-		=dev-haskell/monad-peel-0.1*
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
