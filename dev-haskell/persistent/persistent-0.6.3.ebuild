@@ -11,7 +11,7 @@ DESCRIPTION="Type-safe, non-relational, multi-backend persistence."
 HOMEPAGE="http://docs.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 SRC_URI="$SRC_URI test? ( http://hackage.haskell.org/packages/archive/${PN}-template/${PV}/${PN}-template-${PV}.tar.gz )"
-SRC_URI="$SRC_URI test? ( http://hackage.haskell.org/packages/archive/${PN}-sqlite/0.6.1/${PN}-sqlite-0.6.1.tar.gz )"
+SRC_URI="$SRC_URI test? ( http://hackage.haskell.org/packages/archive/${PN}-sqlite/0.6.2/${PN}-sqlite-0.6.2.tar.gz )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="postgres sqlite3 test"
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
+		=dev-haskell/data-object-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monad-control-0.2*
 		dev-haskell/mtl
@@ -44,11 +45,11 @@ src_unpack() {
 
 	if use test; then
 		pushd ${S}
-		unpack "${PN}-sqlite-0.6.1.tar.gz"
-		mv "${PN}-sqlite-0.6.1" "${PN}-sqlite"
+		unpack "${PN}-sqlite-0.6.2.tar.gz"
+		mv "${PN}-sqlite-0.6.2" "${PN}-sqlite"
 		unpack "${PN}-template-${PV}.tar.gz"
 		mv "${PN}-template-${PV}" "${PN}-template"
-		# TODO: With next package bump above 0.6.2, remove the next 3 lines and remove files/main.hs,
+		# TODO: With next package bump above 0.6.3, remove the next 3 lines and remove files/main.hs,
 		# upstream will include the file now, see:
 		# https://github.com/yesodweb/yesod/issues/135#issuecomment-2268151
 		mkdir test
