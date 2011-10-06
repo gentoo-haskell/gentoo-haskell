@@ -24,10 +24,11 @@ IUSE=""
 RDEPEND=">=dev-haskell/bson-0.1.6
 		>=dev-haskell/cereal-0.3.0.0
 		=dev-haskell/compact-string-fix-0.3*
+		=dev-haskell/data-object-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monad-control-0.2*
 		=dev-haskell/mongodb-1.1*
-		dev-haskell/neither
+		=dev-haskell/neither-0.3*
 		>=dev-haskell/network-2.2.1.7
 		=dev-haskell/path-pieces-0.0*
 		=dev-haskell/persistent-0.6*
