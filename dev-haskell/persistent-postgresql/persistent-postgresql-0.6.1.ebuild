@@ -18,9 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/hdbc-2*
+RDEPEND="=dev-haskell/data-object-0.3*
+		=dev-haskell/hdbc-2*
 		=dev-haskell/hdbc-postgresql-2*
 		=dev-haskell/monad-control-0.2*
+		=dev-haskell/neither-0.3*
 		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
