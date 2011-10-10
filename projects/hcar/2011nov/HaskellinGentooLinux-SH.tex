@@ -1,0 +1,50 @@
+% HaskellinGentooLinux-SH.tex
+\begin{hcarentry}[updated]{Haskell in Gentoo Linux}
+\label{gentoo}
+\report{Sergei Trofimovich}%09/11
+\makeheader
+
+Gentoo Linux currently officially supports GHC 7.0.4 and GHC 6.12.3
+on x86, amd64, sparc, alpha and some arms.
+
+The full list of packages available through the official repository
+can be viewed at
+\url{http://packages.gentoo.org/category/dev-haskell?full\_cat}.
+
+The GHC architecture/version matrix is available at
+\url{http://packages.gentoo.org/package/dev-lang/ghc}.
+
+Please report problems in the normal Gentoo bug tracker
+at \url{bugs.gentoo.org}.
+
+There is also an overlay which contains almost 700 extra unofficial
+and testing packages. Thanks to the Haskell developers using Cabal and
+Hackage~\cref{hackagedb}, we have been able to write a tool called
+``hackport'' (initiated by Henning G\"unther) to generate Gentoo
+packages with minimal user intervention. Notable packages in the
+overlay include the latest version of the Haskell Platform \cref{haskell-platform} as well as
+the latest 7.2.1 release of GHC, as well as popular Haskell packages
+such as pandoc~\cref{pandoc}, gitit~\cref{gitit}, yesod~\cref{yesod} and others.
+
+The team made considerable effort to port a lot of popular packages to ghc-7.2.
+There is a lot of patches sitting in overlay and waiting for upstream inclusion though.
+
+More information about the Gentoo Haskell Overlay can be found at
+\url{http://haskell.org/haskellwiki/Gentoo}. It is available via the Gentoo
+overlay manager ``layman''.  If you choose to use the overlay, then
+any problems should be reported on IRC (\verb+#gentoo-haskell+ on
+freenode), where we coordinate development, or via email
+\email{haskell@@gentoo.org} (as we have more people with the ability to
+fix the overlay packages that are contactable in the IRC channel than
+via the bug tracker).
+
+As always we are more than happy for (and in fact encourage) Gentoo
+users to get involved and help us maintain our tools and packages,
+even if it is as simple as reporting packages that do not always work
+or need updating: with such a wide range of GHC and package versions
+to co-ordinate, it is hard to keep up!  Please contact us on IRC or
+email if you are interested!
+
+For concrete tasks see our perpetual TODO list:
+\url{https://github.com/gentoo-haskell/gentoo-haskell/blob/master/projects/doc/TODO.rst}
+\end{hcarentry}
