@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-html-0.6
 		=dev-haskell/digestive-functors-0.1*
+		=dev-haskell/text-0.11*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
