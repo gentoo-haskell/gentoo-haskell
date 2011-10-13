@@ -28,7 +28,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 			   test? ( >=dev-haskell/cabal-1.10
-					   dev-haskell/hspec
+					   >=dev-haskell/hspec-0.8
 					   dev-haskell/hunit
 					   dev-haskell/json-types
 					   >=dev-haskell/quickcheck-2
@@ -38,12 +38,8 @@ DEPEND="${RDEPEND}
 			   "
 
 src_prepare() {
-	mkdir "${S}/test"
-	cp "${FILESDIR}/main.hs" "${S}/test"
-	cp "${FILESDIR}/external.hamlet" "${S}/test"
-	cp "${FILESDIR}/nonpolyhamlet.hamlet" "${S}/test"
-	cp "${FILESDIR}/nonpolyihamlet.hamlet" "${S}/test"
-	cp "${FILESDIR}/nonpolyhtml.hamlet" "${S}/test"
+	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
