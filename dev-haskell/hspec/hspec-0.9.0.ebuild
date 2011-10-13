@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Behavior Driven Development for Haskell"
 HOMEPAGE="https://github.com/trystan/hspec"
@@ -26,3 +26,5 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
