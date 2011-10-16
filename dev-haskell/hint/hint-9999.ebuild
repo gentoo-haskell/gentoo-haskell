@@ -27,6 +27,4 @@ RDEPEND="=dev-haskell/ghc-mtl-9999
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
-EDARCS_REPOSITORY="http://code.haskell.org/hint/devel"
-
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+EDARCS_REPOSITORY="http://darcsden.com/jcpetruzza/hint"
