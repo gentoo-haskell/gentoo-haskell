@@ -27,7 +27,10 @@ COMMONDEPS=">=dev-lang/ghc-6.10.1
 		dev-haskell/wl-pprint-text"
 
 DEPEND="${COMMONDEPS}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.6
+		test? ( >=dev-haskell/quickcheck-2.3:2
+		)
+		"
 
 RDEPEND="${COMMONDEPS}
 		media-gfx/graphviz"
