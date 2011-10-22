@@ -26,14 +26,15 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( =dev-haskell/hspec-0.6*
+		test? ( =dev-haskell/hspec-0.9*
 			dev-haskell/hunit
 			dev-haskell/quickcheck:2
 		)
 		"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${P}/"* "${S}"/
+	sed -e 's@hspec               == 0.6.\*@hspec               == 0.9.\*@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
