@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="a library for command line parsing & online help"
 HOMEPAGE="http://hackage.haskell.org/package/cmdlib"
@@ -23,3 +23,5 @@ RDEPEND="dev-haskell/mtl
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
