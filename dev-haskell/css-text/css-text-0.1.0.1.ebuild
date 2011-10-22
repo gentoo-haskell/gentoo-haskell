@@ -24,10 +24,15 @@ RDEPEND="<dev-haskell/attoparsec-text-0.9
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
-			=dev-haskell/hspec-0.6*
+			=dev-haskell/hspec-0.9*
 			dev-haskell/quickcheck
 		)
 		"
+
+src_prepare() {
+	sed -e 's@hspec                     >= 0.6.1    && < 0.7@hspec                     >= 0.6.1    \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
