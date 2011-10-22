@@ -38,7 +38,16 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		pdf? ( virtual/latex-base )"
 
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.6
+		test? ( dev-haskell/ansi-terminal
+			dev-haskell/diff
+			dev-haskell/hunit
+			dev-haskell/quickcheck:2
+			dev-haskell/test-framework-hunit
+			dev-haskell/test-framework-quickcheck2
+			dev-haskell/test-framework
+		)
+		"
 
 PATCHES=("${FILESDIR}/${PN}-1.8.2.1-tests-ghc-7.2.patch")
 
