@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		=dev-haskell/cabal-1.10*
+		<dev-haskell/cabal-1.13
 		>=dev-haskell/http-4000.0.9
 		dev-haskell/mtl
 		=dev-haskell/network-2.3*
