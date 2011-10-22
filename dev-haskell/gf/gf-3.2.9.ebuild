@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/haskeline
+RDEPEND="dev-haskell/fst
+		dev-haskell/haskeline
 		dev-haskell/mtl
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
