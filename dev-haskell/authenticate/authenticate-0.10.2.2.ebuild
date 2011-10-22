@@ -33,7 +33,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		<dev-haskell/tagsoup-0.13
 		<dev-haskell/text-1.0
 		<dev-haskell/time-1.4
-		=dev-haskell/tls-0.7*
+		=dev-haskell/tls-0.8*
 		<dev-haskell/transformers-0.3
 		=dev-haskell/xml-enumerator-0.4*
 		>=dev-lang/ghc-6.10.4"
