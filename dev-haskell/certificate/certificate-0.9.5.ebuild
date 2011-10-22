@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/asn1-data-0.5*
+RDEPEND="=dev-haskell/asn1-data-0.6*
 		dev-haskell/base64-bytestring
 		dev-haskell/mtl
 		dev-haskell/time
