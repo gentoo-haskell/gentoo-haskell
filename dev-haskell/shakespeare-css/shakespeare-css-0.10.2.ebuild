@@ -25,12 +25,13 @@ RDEPEND="<dev-haskell/parsec-4
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
-			=dev-haskell/hspec-0.6*
+			>=dev-haskell/hspec-0.8
 		)
 		"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${PN}-0.10.0/"* "${S}"/ || die
+	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
