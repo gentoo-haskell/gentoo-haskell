@@ -1,0 +1,22 @@
+--- gitit-0.8.1-orig/Network/Gitit/Plugins.hs	2011-09-04 07:46:18.000000000 +1000
++++ gitit-0.8.1/Network/Gitit/Plugins.hs	2011-10-23 16:35:20.482861079 +1100
+@@ -58,7 +58,11 @@
+       m <- findModule (mkModuleName modName) Nothing
+       setContext []
+ #if MIN_VERSION_ghc(7,0,0)
++#if MIN_VERSION_ghc(7,2,0)
++        [(simpleImportDecl . moduleName) m, (simpleImportDecl . moduleName) i, (simpleImportDecl . moduleName) pr]
++#else    
+         [(m, Nothing), (i, Nothing), (pr, Nothing)]
++#endif
+ #else
+         [m, i, pr]
+ #endif
+--- gitit-0.8.1-orig/Network/Gitit/Types.hs	2011-09-04 07:46:18.000000000 +1000
++++ gitit-0.8.1/Network/Gitit/Types.hs	2011-10-23 16:25:18.887748312 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
+ {-
+ Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>,
+ Anton van Straaten <anton@appsolutions.com>
