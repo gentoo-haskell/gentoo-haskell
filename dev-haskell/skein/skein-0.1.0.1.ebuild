@@ -17,10 +17,23 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="test" # fails to compile: tests/runtests.hs:143:41: Not in scope: type constructor or class `ItSpec'
 
 RDEPEND="=dev-haskell/cereal-0.3*
 		=dev-haskell/crypto-api-0.6*
 		=dev-haskell/tagged-0.2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/hspec-0.8
+				dev-haskell/transformers
+		)"
+
+src_prepare() {
+	sed -e 's@hspec        == 0.6.\*@hspec        == 0.9.\*@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
