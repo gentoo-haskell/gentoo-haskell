@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT="test" # fails to compile: tests/runtests.hs:143:41: Not in scope: type constructor or class `ItSpec'
 
 RDEPEND="=dev-haskell/cereal-0.3*
-		=dev-haskell/crypto-api-0.6*
+		=dev-haskell/crypto-api-0.8*
 		=dev-haskell/tagged-0.2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
@@ -30,7 +30,10 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
+	# Copy the missing test, upstream never run it anyway, it fails to compile
+	cp "${FILESDIR}/runtests.hs" "${S}/tests"
 	sed -e 's@hspec        == 0.6.\*@hspec        == 0.9.\*@' \
+		-e 's@crypto-api   >= 0.6 && < 0.7@crypto-api   >= 0.6 \&\& < 0.9@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
