@@ -6,7 +6,7 @@
 
 EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="Stream"
 MY_P="${MY_PN}-${PV}"
@@ -25,7 +25,5 @@ RDEPEND=">=dev-haskell/lazysmallcheck-0.3
 		>=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
-
-PATCHES=("${FILESDIR}/${PN}-0.4.2-ghc-7.2.patch")
 
 S="${WORKDIR}/${MY_P}"
