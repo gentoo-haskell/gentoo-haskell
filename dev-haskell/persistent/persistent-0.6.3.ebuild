@@ -16,7 +16,8 @@ SRC_URI="$SRC_URI test? ( http://hackage.haskell.org/packages/archive/${PN}-sqli
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="postgres sqlite3 test"
+IUSE="postgres sqlite3"
+RESTRICT="test" # In the bump from 0.6.2 to 0.6.3, upstream removed the tests from the cabal file
 
 RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/data-object-0.3*
@@ -33,7 +34,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/file-location
 			dev-haskell/hunit
-			=dev-haskell/hspec-0.6*
+			=dev-haskell/hspec-0.9*
 			dev-haskell/quickcheck:2
 		)"
 
