@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Obtain the host MAC address on *NIX and Windows."
 HOMEPAGE="http://hackage.haskell.org/package/maccatcher"
@@ -23,5 +23,3 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-no-haskell98.patch")
