@@ -41,9 +41,6 @@ DEPEND=">=dev-haskell/cabal-1.2.3
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/MissingH-1.1.0.3-fix-buildtests.patch"
-	epatch "${FILESDIR}/${PN}-1.1.0.3-no-haskell98.patch"
-
 	# (non-ASCII non-UTF-8 source breaks hscolour)
 	cd src/System/Time
 	mv ParseDate.hs ParseDate.hs.ISO-8859-1
