@@ -7,11 +7,17 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
+
+# The tests in various yesod packages depend on wai-test-0.1.2 which has not
+# been released on hackage.  Patch wai-test-0.1.1 to include some changes from
+# the github repo git://github.com/yesodweb/wai.git
+MY_PV="0.1.1"
+MY_P="wai-test-${MY_PV}"
 
 DESCRIPTION="Unit test framework (built on HUnit) for WAI applications."
 HOMEPAGE="http://www.yesodweb.com/book/wai"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -30,3 +36,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/wai-test-0.1.1-yesod-tests-require-unreleased-upstream-additions.patch")
