@@ -32,10 +32,15 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
-		test? ( dev-haskell/wai-test )"
+		test? ( >=dev-haskell/hspec-0.8
+				dev-haskell/hunit
+				dev-haskell/wai-test
+				dev-haskell/zlib
+		)"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${P}/"* "${S}"/
+	sed -e 's@hspec >= 0.8 && < 0.9@hspec >= 0.8 \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
