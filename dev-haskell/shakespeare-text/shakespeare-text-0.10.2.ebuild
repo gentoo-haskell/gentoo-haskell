@@ -22,10 +22,15 @@ RDEPEND=">=dev-haskell/shakespeare-0.10
 		<dev-haskell/text-0.12
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hunit
+			>=dev-haskell/hspec-0.8
+		)
+		"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${PN}-0.10.1/"* "${S}"/ || die
+	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
