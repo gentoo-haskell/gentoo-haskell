@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-haskell/attoparsec-enumerator-0.2.0.3
 		<dev-haskell/blaze-builder-0.4
+		=dev-haskell/blaze-builder-enumerator-0.2*
 		=dev-haskell/bytestring-mmap-0.2*
 		dev-haskell/bytestring-nums
 		=dev-haskell/case-insensitive-0.3*
@@ -34,7 +35,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
 		<dev-haskell/vector-0.10
-		dev-haskell/zlib
+		=dev-haskell/zlib-enum-0.2*
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
