@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/cmdargs-0.8*
 		dev-haskell/csv
 		=dev-haskell/haskeline-0.6*
-		~dev-haskell/hledger-lib-0.15.2
+		~dev-haskell/hledger-lib-0.16.1
 		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/parsec
