@@ -31,13 +31,19 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/yesod-core-0.9*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/hspec-0.8
+				dev-haskell/hunit
+				dev-haskell/wai-test
+				dev-haskell/zlib
+		)"
 
 src_prepare() {
 	cp -r "${FILESDIR}/${PN}-0.3.0.1/"* "${S}"/ || die
 
 	sed -e 's@containers                >= 0.4@containers                >= 0.3@' \
 		-e 's@unix-compat               >= 0.2      && < 0.3@unix-compat               >= 0.2      \&\& < 0.4@' \
+		-e 's@hspec >= 0.8   && < 0.9@hspec >= 0.8   \&\& < 0.10@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
