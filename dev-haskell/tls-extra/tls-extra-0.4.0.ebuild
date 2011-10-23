@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/certificate-0.9*
 		>=dev-haskell/network-2.3
 		<dev-haskell/text-1.0
 		dev-haskell/time
-		=dev-haskell/tls-0.7*
+		=dev-haskell/tls-0.8*
 		dev-haskell/vector
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
