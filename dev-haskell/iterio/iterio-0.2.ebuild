@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.9*
-		=dev-haskell/hsopenssl-0.9*
+		>=dev-haskell/hsopenssl-0.9
 		=dev-haskell/listlike-3*
 		<dev-haskell/mtl-3
 		=dev-haskell/network-2.3*
