@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/asn1-data-0.5*
+RDEPEND="=dev-haskell/asn1-data-0.6*
 		=dev-haskell/attoparsec-0.9*
 		=dev-haskell/attoparsec-enumerator-0.2*
 		=dev-haskell/base64-bytestring-0.1*
@@ -33,8 +33,8 @@ RDEPEND="=dev-haskell/asn1-data-0.5*
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/monad-control-0.2*
 		=dev-haskell/network-2.3*
-		=dev-haskell/tls-0.7*
-		=dev-haskell/tls-extra-0.3*
+		=dev-haskell/tls-0.8*
+		=dev-haskell/tls-extra-0.4*
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/zlib-enum-0.2*
