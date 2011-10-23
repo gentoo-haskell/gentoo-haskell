@@ -30,7 +30,11 @@ RDEPEND="=dev-haskell/attoparsec-text-0.8*
 		=dev-haskell/xml-types-0.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hunit
+			>=dev-haskell/hspec-0.8
+		)
+		"
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
