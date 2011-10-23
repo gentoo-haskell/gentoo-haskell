@@ -22,8 +22,8 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/cmdargs-0.8*
-		~dev-haskell/hledger-0.15.2
-		~dev-haskell/hledger-lib-0.15.2
+		~dev-haskell/hledger-0.16.1
+		~dev-haskell/hledger-lib-0.16.1
 		dev-haskell/hunit
 		>=dev-haskell/safe-0.2
 		dev-haskell/time
