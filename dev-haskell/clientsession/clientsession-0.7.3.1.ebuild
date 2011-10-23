@@ -20,7 +20,7 @@ IUSE="test"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cereal-0.3*
-		=dev-haskell/crypto-api-0.6*
+		=dev-haskell/crypto-api-0.8*
 		=dev-haskell/cryptocipher-0.2*
 		dev-haskell/skein
 		>=dev-lang/ghc-6.10.1"
@@ -34,6 +34,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hspec               == 0.6.\*@hspec               == 0.9.\*@' \
+		-e 's@crypto-api          >= 0.6.4      && < 0.7@crypto-api          >= 0.6.4      \&\& < 0.9@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
