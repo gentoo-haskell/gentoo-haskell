@@ -18,12 +18,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="<dev-haskell/blaze-builder-0.4
+RDEPEND="=dev-haskell/aeson-native-0.3*
+		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/case-insensitive-0.3*
 		<dev-haskell/cereal-0.4
 		=dev-haskell/clientsession-0.7*
 		=dev-haskell/cookie-0.3*
+		=dev-haskell/data-object-0.3*
+		=dev-haskell/data-object-yaml-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/hamlet-0.10*
@@ -38,6 +41,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.4
 		=dev-haskell/transformers-0.2*
+		=dev-haskell/vector-0.9*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/wai-extra-0.4*
 		=dev-haskell/web-routes-quasi-0.7*
@@ -45,14 +49,15 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
-			=dev-haskell/hspec-0.6*
+			>=dev-haskell/hspec-0.8
 			dev-haskell/quickcheck:2
-			dev-haskell/wai-test
+			>=dev-haskell/wai-test-0.1.2_pre20111022
 		)
 		"
 
 src_prepare() {
-	cp -r "${FILESDIR}/${P}/"* "${S}"/
+	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
