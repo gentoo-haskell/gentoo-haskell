@@ -25,3 +25,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/time-1.1
 		>=dev-haskell/xdg-basedir-0.2
 		>=dev-lang/ghc-6.10.1"
+
+src_prepare() {
+	sed -e 's@unix >= 2.5@unix >= 2.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
