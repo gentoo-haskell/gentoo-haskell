@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/glut-2.2*
+RDEPEND="=dev-haskell/bmp-1.1*
+		=dev-haskell/glut-2.2*
 		=dev-haskell/opengl-2.4*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
