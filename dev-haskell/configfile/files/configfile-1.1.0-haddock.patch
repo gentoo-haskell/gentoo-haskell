@@ -1,0 +1,28 @@
+--- ConfigFile-1.1.0-orig/src/Data/ConfigFile/Monadic.hs	2011-10-22 02:15:46.000000000 +1100
++++ ConfigFile-1.1.0/src/Data/ConfigFile/Monadic.hs	2011-10-24 21:57:32.479685334 +1100
+@@ -10,6 +10,12 @@
+   set, setshow, remove_option, add_section, remove_section
+ ) where
+ 
++import Control.Monad.Error
++import System.IO(Handle)
++import Data.ConfigFile as Reexporting (SectionSpec, OptionSpec, ConfigParser(..),
++                                  CPErrorData, CPError, emptyCP, Get_C(..), sections, merge, to_string)
++import qualified Data.ConfigFile as C
++
+ {- $overview
+ This module reexports a slightly different version of the standard API which makes it more convenient for chaining monadically.  Everywhere a 'ConfigParser' was the first argument in a function in the standard API, it is now the last.  This lets you rewrite 
+ 
+@@ -31,12 +37,6 @@
+ 
+ -}
+ 
+-import Control.Monad.Error
+-import System.IO(Handle)
+-import Data.ConfigFile as Reexporting (SectionSpec, OptionSpec, ConfigParser(..),
+-                                  CPErrorData, CPError, emptyCP, Get_C(..), sections, merge, to_string)
+-import qualified Data.ConfigFile as C
+-
+ simpleAccess ::  MonadError CPError m =>
+                  SectionSpec -> OptionSpec -> ConfigParser -> m String
+ simpleAccess s o cp = C.simpleAccess cp s o

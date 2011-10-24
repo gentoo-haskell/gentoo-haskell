@@ -28,4 +28,4 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${PN}-1.0.6-no-haskell98.patch")
+PATCHES=("${FILESDIR}/${PN}-1.1.0-haddock.patch")
