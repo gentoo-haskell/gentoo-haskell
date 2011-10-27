@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="Hipmunk"
 MY_P="${MY_PN}-${PV}"
@@ -28,5 +28,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${MY_P}-fix-haddock.patch")
