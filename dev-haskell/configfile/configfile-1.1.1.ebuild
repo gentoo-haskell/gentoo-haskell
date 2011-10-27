@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="ConfigFile"
 MY_P="${MY_PN}-${PV}"
@@ -27,5 +27,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${PN}-1.1.0-haddock.patch")
