@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/digestive-functors-0.1.0*
+RDEPEND="=dev-haskell/digestive-functors-0.2*
 		>=dev-haskell/snap-core-0.3
 		>=dev-haskell/utf8-string-0.3
 		>=dev-lang/ghc-6.10.1"
