@@ -26,7 +26,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
-		<dev-haskell/case-insensitive-0.4
+		<dev-haskell/case-insensitive-0.5
 		<dev-haskell/cookie-0.4
 		<dev-haskell/enumerator-0.5
 		=dev-haskell/http-types-0.6*
@@ -40,3 +40,9 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=("${FILESDIR}/wai-test-0.1.1-yesod-tests-require-unreleased-upstream-additions.patch")
+
+src_prepare() {
+	base_src_prepare
+	sed -e 's@case-insensitive          >= 0.2      && < 0.4@case-insensitive          >= 0.2      \&\& < 0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
