@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND="=dev-haskell/aeson-native-0.3*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
-		=dev-haskell/case-insensitive-0.3*
+		=dev-haskell/case-insensitive-0.4*
 		<dev-haskell/cereal-0.4
 		=dev-haskell/clientsession-0.7*
 		=dev-haskell/cookie-0.3*
@@ -57,6 +57,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
+		-e 's@case-insensitive          >= 0.2      && < 0.4@case-insensitive          >= 0.2      \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
