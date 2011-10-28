@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/attoparsec-0.9*
 		=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-builder-0.4
-		=dev-haskell/case-insensitive-0.3*
+		=dev-haskell/case-insensitive-0.4*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/failure-0.2
 		=dev-haskell/http-enumerator-0.7*
@@ -39,3 +39,8 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@case-insensitive >= 0.2 && < 0.4@case-insensitive >= 0.2 \&\& < 0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
