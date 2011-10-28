@@ -24,18 +24,18 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		dev-haskell/bytestring-nums
-		=dev-haskell/case-insensitive-0.3*
-		dev-haskell/directory-tree
+		=dev-haskell/case-insensitive-0.4*
+		=dev-haskell/directory-tree-0.10*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
 		=dev-haskell/murmur-hash-0.1*
 		=dev-haskell/network-2.3*
 		=dev-haskell/psqueue-1.1*
-		=dev-haskell/snap-core-0.5*
+		=dev-haskell/snap-core-0.6*
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.4
-		dev-haskell/transformers
+		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
 		>=dev-haskell/vector-0.7
 		=dev-haskell/vector-algorithms-0.5*
@@ -46,6 +46,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hlibev >= 0.2.8 && < 0.3@hlibev >= 0.2.8 \&\& < 0.5@' \
+		-e 's@case-insensitive          >= 0.3      && < 0.4@case-insensitive          >= 0.3      \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
