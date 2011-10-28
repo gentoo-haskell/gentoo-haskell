@@ -22,19 +22,35 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
 		=dev-haskell/cereal-0.3*
+		=dev-haskell/clientsession-0.7*
+		=dev-haskell/configurator-0.1*
+		=dev-haskell/crypto-4.2*
 		=dev-haskell/directory-tree-0.10*
+		=dev-haskell/data-lens-2.0*
+		=dev-haskell/data-lens-template-2.1*
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
-		=dev-haskell/heist-0.5*
+		=dev-haskell/hashable-1.1*
+		=dev-haskell/heist-0.6*
 		>=dev-haskell/hint-0.3
+		=dev-haskell/logict-0.5*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		>=dev-haskell/mtl-2
-		=dev-haskell/snap-core-0.5*
-		=dev-haskell/snap-server-0.5*
+		<dev-haskell/mwc-random-0.11
+		=dev-haskell/pwstore-fast-2.2*
+		=dev-haskell/safe-0.3*
+		=dev-haskell/snap-core-0.6*
+		=dev-haskell/snap-server-0.6*
 		=dev-haskell/text-0.11*
-		<dev-haskell/time-1.4
+		<dev-haskell/time-1.5
+		=dev-haskell/transformers-0.2*
+		=dev-haskell/unordered-containers-0.1*
 		dev-haskell/unix-compat
+		=dev-haskell/utf8-string-0.3*
+		<dev-haskell/vector-0.10
+		<dev-haskell/vector-algorithms-0.6
+		=dev-haskell/xmlhtml-0.1*
 		dev-haskell/zlib
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
