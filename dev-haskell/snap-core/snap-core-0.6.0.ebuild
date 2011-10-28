@@ -20,22 +20,33 @@ IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-haskell/attoparsec-enumerator-0.2.0.3
+		<=dev-haskell/base16-bytestring-0.2
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		=dev-haskell/bytestring-mmap-0.2*
 		dev-haskell/bytestring-nums
-		=dev-haskell/case-insensitive-0.3*
+		=dev-haskell/case-insensitive-0.4*
 		<dev-haskell/deepseq-1.3
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
+		<dev-haskell/hunit-2
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
+		=dev-haskell/mwc-random-0.10*
+		<=dev-haskell/regex-posix-0.96
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.4
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
+		=dev-haskell/unordered-containers-0.1*
 		<dev-haskell/vector-0.10
 		=dev-haskell/zlib-enum-0.2*
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@case-insensitive >= 0.3 && < 0.4@case-insensitive >= 0.3 \&\& < 0.5@' \
+		-e 's@regex-posix <= 0.94.4@regex-posix <= 0.96@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
