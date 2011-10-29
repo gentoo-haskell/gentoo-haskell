@@ -13,7 +13,7 @@ MY_PN="OpenGLRaw"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A raw binding for the OpenGL graphics system"
-HOMEPAGE="http://www.haskell.org/HOpenGL/"
+HOMEPAGE="http://www.haskell.org/haskellwiki/Opengl"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -24,6 +24,6 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2
 		virtual/opengl"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
