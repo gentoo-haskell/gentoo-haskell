@@ -31,3 +31,10 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	# deepseq 1.2 is a ghc 7.4 core lib, loosening the deepseq dependency is for ghc 7.4:
+	# http://stackoverflow.com/questions/7485748/why-does-aeson-native-installation-fail
+	sed -e 's@deepseq < 1.2@deepseq < 1.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
