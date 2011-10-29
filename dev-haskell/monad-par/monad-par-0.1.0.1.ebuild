@@ -18,8 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/deepseq-1.1*
+RDEPEND="<=dev-haskell/deepseq-1.3
 		>=dev-haskell/hunit-1.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	sed -e 's@deepseq >= 1.1 && < 1.2@deepseq >= 1.1 \&\& < 1.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
