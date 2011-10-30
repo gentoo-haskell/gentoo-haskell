@@ -19,5 +19,10 @@ KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2"
+# those two to make ghc-7.2.1 happy.
+# uniplate's depends are insane.
+RDEPEND="${RDEPEND}
+	dev-haskell/hashable
+	dev-haskell/unordered-containers"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
