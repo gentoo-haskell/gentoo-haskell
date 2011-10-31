@@ -21,6 +21,7 @@ IUSE="test"
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		=dev-haskell/case-insensitive-0.4*
+		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
@@ -29,6 +30,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/zlib-bindings-0.0*
+		=dev-haskell/zlib-enum-0.2*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
