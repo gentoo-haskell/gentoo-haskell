@@ -1,0 +1,16 @@
+--- cmdlib-0.3.4-orig/System/Console/CmdLib/Command.hs	2011-10-07 07:19:48.000000000 +1100
++++ cmdlib-0.3.4/System/Console/CmdLib/Command.hs	2011-10-22 22:51:14.694330811 +1100
+@@ -225,6 +225,13 @@
+ commandGroup :: (Commands a) => String -> a -> [CommandWrap]
+ commandGroup s l = [CommandGroup s (toCommands l)]
+ 
++#if !MIN_VERSION_base(4,3,0)
++instance Monad (Either e) where
++        return = Right
++        Left  l >>= _ = Left l
++        Right r >>= k = k r    
++#endif
++
+ -- TODO: disambiguation, hidden commands (aliases)
+ findCommand :: String -> [CommandWrap] -> [CommandWrap]
+ findCommand key list = case accum list of Left x -> [x]

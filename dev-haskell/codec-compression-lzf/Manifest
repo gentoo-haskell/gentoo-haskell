@@ -1,8 +1,2 @@
 DIST Codec-Compression-LZF-0.2.tar.gz 15577 RMD160 723b722eeefde31e7cf0d382cd058f26bdd1bb0d SHA1 ed5cdc87673dfcc2375ed542c33aef176682e78b SHA256 56f345f997646634ff047836eb52470cd3bcc9334423395903468b61948a424a
 EBUILD codec-compression-lzf-0.2.ebuild 540 RMD160 671d869ca62b6decd6e85d276c6a4a3451ffb09c SHA1 fea9aeca0d6cfa950fdfbecb06caeb60711dc773 SHA256 8a125d6d2655a85712254c9477f2a708a5913e7387ce1c1e4a271f30166c4b3b
-MD5 556291e555b65d22fcd939f9edf94272 codec-compression-lzf-0.2.ebuild 540
-RMD160 671d869ca62b6decd6e85d276c6a4a3451ffb09c codec-compression-lzf-0.2.ebuild 540
-SHA256 8a125d6d2655a85712254c9477f2a708a5913e7387ce1c1e4a271f30166c4b3b codec-compression-lzf-0.2.ebuild 540
-MD5 85c0215db7e839c08ff256915a3fc7f4 files/digest-codec-compression-lzf-0.2 274
-RMD160 80ebe510af148d5be4f0e7beacb390b1614be9e0 files/digest-codec-compression-lzf-0.2 274
-SHA256 e50f2e87e1ee5fb34d1b216edd85a39c4a61b025e3b4655cce1e937cd5186579 files/digest-codec-compression-lzf-0.2 274

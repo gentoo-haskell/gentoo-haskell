@@ -1,0 +1,55 @@
+--- manatee-ircclient-0.1.1-orig/Manatee/Extension/IrcClient/DBus.hs	2011-05-14 14:24:05.000000000 +1000
++++ manatee-ircclient-0.1.1/Manatee/Extension/IrcClient/DBus.hs	2011-07-25 20:26:38.151190626 +1000
+@@ -21,6 +21,7 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
+ module Manatee.Extension.IrcClient.DBus where
+ 
++import Control.Monad.Trans (liftIO)
+ import DBus.Client hiding (Signal)
+ import DBus.MatchRule
+ import DBus.Message (Signal, signalBody)
+@@ -126,8 +127,8 @@
+ -- | Build daemon match rule.
+ mkIrcDaemonMatchRule :: Client -> (IrcDaemonMember, IrcDaemonSignalArgs -> IO ()) -> IO ()
+ mkIrcDaemonMatchRule client (member, fun) = 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickIrcDaemonSignalArgs member signal >?>= fun
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickIrcDaemonSignalArgs member signal >?>= (liftIO . fun))
+         where matchRule = mkMatchRule
+                           (Just Signal) 
+                           empty 
+@@ -142,18 +143,18 @@
+ mkIrcDaemonMatchRules client = mapM_ (mkIrcDaemonMatchRule client)
+ 
+ -- | Pick IrcDaemonSignalArgs.
+-pickIrcDaemonSignalArgs :: IrcDaemonMember -> Signal -> IO (Maybe IrcDaemonSignalArgs)          
++pickIrcDaemonSignalArgs :: IrcDaemonMember -> Signal -> DBus (Maybe IrcDaemonSignalArgs)          
+ pickIrcDaemonSignalArgs member signal = 
+-    Exc.catch
++    liftIO $ Exc.catch
+         (return $ unpackIrcDaemonSignalArgs member $ signalBody signal)
+         (\ (_ :: Exc.SomeException) -> 
+              printDBusMessageError "pickIrcDaemonSignalArgs" (show member)
+              >> return Nothing)
+ 
+ -- | Pick IrcClientSignalArgs.
+-pickIrcClientSignalArgs :: IrcClientMember -> Signal -> IO (Maybe IrcClientSignalArgs)          
++pickIrcClientSignalArgs :: IrcClientMember -> Signal -> DBus (Maybe IrcClientSignalArgs)          
+ pickIrcClientSignalArgs member signal = 
+-    Exc.catch
++    liftIO $ Exc.catch
+         (return $ unpackIrcClientSignalArgs member $ signalBody signal)
+         (\ (_ :: Exc.SomeException) ->
+              printDBusMessageError "pickIrcClientSignalArgs" (show member)
+@@ -187,8 +188,8 @@
+                           (mkRenderClientName processId)
+                           []
+     -- Use postGUIAsync wrap DBus action to protect gtk+ main thread. 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickIrcClientSignalArgs member signal >?>= (postGUIAsync . fun)
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickIrcClientSignalArgs member signal >?>= (liftIO . postGUIAsync . fun))
+ 
+ -- | Build irc client match rule for catch signal.
+ mkIrcClientMatchRules :: Client -> [(IrcClientMember, IrcClientSignalArgs -> IO ())] -> IO ()

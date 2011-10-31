@@ -57,7 +57,7 @@ SRC_URI="!binary? ( http://darcs.haskell.org/download/dist/${PV}/${P}-src.tar.bz
 	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="binary doc ghcbootstrap"
 IUSE+=" ghcquickbuild" # overlay only
 
@@ -425,11 +425,15 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
-			echo XMLDocWays="html" >> mk/build.mk
-			echo HADDOCK_DOCS=YES >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
-			echo XMLDocWays="" >> mk/build.mk
-			echo HADDOCK_DOCS=NO >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
+			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 
 		sed -e "s|utils/haddock_dist_INSTALL_SHELL_WRAPPER = YES|utils/haddock_dist_INSTALL_SHELL_WRAPPER = NO|" \

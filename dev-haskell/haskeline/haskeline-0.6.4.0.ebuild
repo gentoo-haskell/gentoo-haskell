@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A command-line interface for user input, written in Haskell."
 HOMEPAGE="http://trac.haskell.org/haskeline"
@@ -15,7 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
 IUSE=""
 
 RDEPEND="<dev-haskell/mtl-2.1
@@ -24,3 +24,5 @@ RDEPEND="<dev-haskell/mtl-2.1
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.6.4.0-ghc-7.2.patch")

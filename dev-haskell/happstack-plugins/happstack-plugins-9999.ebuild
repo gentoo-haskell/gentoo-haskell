@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit darcs haskell-cabal
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/happstack-server-9999
-		dev-haskell/hinotify
+		>=dev-haskell/hinotify-0.3.2
 		dev-haskell/mtl
 		>=dev-haskell/plugins-1.5.1.4
 		>=dev-lang/ghc-6.8.2"

@@ -1,0 +1,10 @@
+diff --git a/Crypto/Cipher/AES.hs b/Crypto/Cipher/AES.hs
+index 759cc64..63efc9d 100644
+--- a/Crypto/Cipher/AES.hs
++++ b/Crypto/Cipher/AES.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE MagicHash #-}
++{-# LANGUAGE BangPatterns #-}
+ -- |
+ -- Module      : Crypto.Cipher.AES
+ -- License     : BSD-style

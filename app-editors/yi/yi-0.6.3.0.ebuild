@@ -27,12 +27,12 @@ IUSE="gnome gtk vty"
 
 RDEPEND=">=dev-lang/ghc-6.12.1
 		=dev-haskell/binary-0.5*
-		=dev-haskell/cabal-1.10*
+		<dev-haskell/cabal-1.13
 		<dev-haskell/cautious-file-0.2
 		<dev-haskell/data-accessor-0.3
 		=dev-haskell/data-accessor-monads-fd-0.2*
 		<dev-haskell/data-accessor-template-0.2.2
-		=dev-haskell/derive-2.4*
+		>dev-haskell/derive-2.4
 		=dev-haskell/diff-0.1*
 		>=dev-haskell/dlist-0.4.1
 		>=dev-haskell/dyre-0.7
@@ -49,7 +49,7 @@ RDEPEND=">=dev-lang/ghc-6.12.1
 		=dev-haskell/split-0.1*
 		<dev-haskell/time-1.3
 		dev-haskell/uniplate
-		<dev-haskell/unix-compat-0.3
+		<dev-haskell/unix-compat-0.4
 		>=dev-haskell/utf8-string-0.3.1
 		vty? ( =dev-haskell/vty-4* )
 		gtk? ( =dev-haskell/glib-0.12*
@@ -67,7 +67,20 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-old-style-cabal.patch"
 	# Ugh! Upstream forgot it.
 	cp "${FILESDIR}/yi-0.6.3.0-src-library-Yi-UI-Pango-Gnome.hs" \
-	    "${S}/src/library/Yi/UI/Pango/Gnome.hs"
+		"${S}/src/library/Yi/UI/Pango/Gnome.hs"
+	# Upstream forgot the images required for the gtk pango frontend.
+	# The yi github repo yi/src/library/Yi/UI/Pango.hs calls it yi+lambda-fat-32.png
+	# The yi-0.6.3.0/src/library/Yi/UI/Pango.hs calls it yi+lambda-fat.32.png
+	cp "${FILESDIR}/yi+lambda-fat-16.png" "${S}/art/yi+lambda-fat-16.png"
+	cp "${FILESDIR}/yi+lambda-fat-32.png" "${S}/art/yi+lambda-fat-32.png"
+	cp "${FILESDIR}/yi+lambda-fat-64.png" "${S}/art/yi+lambda-fat-64.png"
+	cp "${FILESDIR}/yi+lambda-fat-128.png" "${S}/art/yi+lambda-fat-128.png"
+	sed -e 's@ico <- loadIcon "yi+lambda-fat.32.png"@ico <- loadIcon "yi+lambda-fat-32.png"@' \
+		-i "${S}/src/library/Yi/UI/Pango.hs"
+	sed -e 's@derive >=2.3 && <2.5@derive >=2.3 \&\& <2.6@' \
+		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
+		-e 's@unix-compat >=0.1 && <0.3@unix-compat >=0.1 \&\& <0.4@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {

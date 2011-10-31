@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Differences lists"
+DESCRIPTION="Differences lists: a list-like type supporting O(1) append."
 HOMEPAGE="http://code.haskell.org/~dons/code/dlist/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

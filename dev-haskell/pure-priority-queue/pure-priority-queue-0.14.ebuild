@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A pure priority queue."
 HOMEPAGE="http://hackage.haskell.org/package/pure-priority-queue"
@@ -18,3 +18,5 @@ IUSE=""
 
 RDEPEND=""
 DEPEND=">=dev-haskell/cabal-1.2"
+
+PATCHES=("$FILESDIR/${PN}-ghc-7.patch")

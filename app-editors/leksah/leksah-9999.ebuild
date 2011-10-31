@@ -48,6 +48,7 @@ src_prepare() {
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 leksah does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.11@build-depends: Cabal >=1.6.0.1 \&\& <1.9@' \
+			-e 's@deepseq >=1.1 && <1.2@deepseq >=1.1 \&\& <1.3@' \
 			-i "${S}/${PN}.cabal"
 	fi
 }

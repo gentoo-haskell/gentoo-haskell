@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Almost but not quite entirely unlike FRP"
 HOMEPAGE="http://vis.renci.org/jeff/buster"
@@ -24,9 +24,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/parsec-3.0.0
 		dev-haskell/time"
 
-src_prepare() {
-	sed -e 's@base <=4.1.0.0@base <=4.4.0.0@' \
-		-i "${S}/${PN}.cabal"
-	sed -e 's@import qualified Control.Exception as Ex@import qualified Control.OldException as Ex@' \
-		-i "${S}/App/Behaviours/FileOps.hs"
-}
+PATCHES=("${FILESDIR}/${P}-ghc-7.patch")

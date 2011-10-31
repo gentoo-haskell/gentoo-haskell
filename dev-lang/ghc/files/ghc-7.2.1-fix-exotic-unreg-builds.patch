@@ -1,0 +1,27 @@
+commit f0191c559d683b5bac12243c0db3b780b684799e
+Author: Simon Marlow <marlowsd@gmail.com>
+Date:   Wed Aug 10 10:02:55 2011 +0100
+
+    default to using @note for saving the linker opts (someone mentioned
+    that it wasn't working on Alpha, because we had explicitly listed the
+    arches rather than having a sensible fallback).
+
+diff --git a/compiler/main/DriverPipeline.hs b/compiler/main/DriverPipeline.hs
+index ee002b2..43e096e 100644
+--- a/compiler/main/DriverPipeline.hs
++++ b/compiler/main/DriverPipeline.hs
+@@ -1465,13 +1465,8 @@ mkExtraObjToLinkIntoBinary dflags dep_packages = do
+ 
+             elfSectionNote :: String
+             elfSectionNote = case platformArch (targetPlatform dflags) of
+-                               ArchX86    -> "@note"
+-                               ArchX86_64 -> "@note"
+-                               ArchPPC    -> "@note"
+-                               ArchPPC_64 -> "@note"
+-                               ArchSPARC  -> "@note"
+                                ArchARM    -> "%note"
+-                               ArchUnknown -> panic "elfSectionNote ArchUnknown"
++                               _          -> "@note"
+ 
+ -- The "link info" is a string representing the parameters of the
+ -- link.  We save this information in the binary, and the next time we

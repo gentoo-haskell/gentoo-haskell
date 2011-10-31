@@ -1,0 +1,82 @@
+--- manatee-0.2.2-orig/Manatee/Daemon.hs	2011-05-14 14:25:23.000000000 +1000
++++ manatee-0.2.2/Manatee/Daemon.hs	2011-07-25 02:08:39.803261684 +1000
+@@ -451,23 +451,23 @@
+ -- | Return buffer history.
+ callGetBufferHistory :: Environment -> Member
+ callGetBufferHistory env = 
+-  Method "" "s" $ \ call -> do
+-    history <- readTVarIO $ envBufferHistory env
++  MemberMethod $ Method "" "s" $ \ call -> do
++    history <- liftIO (readTVarIO $ envBufferHistory env)
+     replyReturn call [toVariant history]
+ 
+ -- | Return render window allocation. 
+ callGetWindowAllocation :: Environment -> Member
+ callGetWindowAllocation env = 
+-  Method "s" "s" $ \ call -> do
++  MemberMethod $ Method "s" "s" $ \ call -> do
+     -- Read input args.
+-    let Just input = fromVariant (head $ methodCallBody call)
++    let Just input = fromVariant (head $ methodCtxBody call)
+         pagePlugId = read input :: PagePlugId
+ 
+-    tabbar <- envGet env
++    tabbar <- liftIO $ envGet env
+     case tabbarGetTab pagePlugId tabbar of
+       -- Return render window's coordinate.
+       Just tab -> do
+-        allocation <- widgetGetAllocation (uiFrameBox $ tabUIFrame tab)
++        allocation <- liftIO (widgetGetAllocation (uiFrameBox $ tabUIFrame tab))
+         replyReturn call [toVariant allocation]
+       -- Or return default value.
+       Nothing -> replyReturn call []
+@@ -475,16 +475,16 @@
+ -- | Get global keymap.
+ callGetGlobalKeymap :: Environment -> [(Text, Text)] -> Member
+ callGetGlobalKeymap env extensionKeymap = 
+-  Method "s" "s" $ \ call -> do
++  MemberMethod $ Method "s" "s" $ \ call -> do
+     -- Read input args.
+-    let Just input = fromVariant (head $ methodCallBody call)
++    let Just input = fromVariant (head $ methodCtxBody call)
+         pagePlugId = read input :: PagePlugId
+ 
+-    tabbar <- envGet env
++    tabbar <- liftIO $ envGet env
+     case tabbarGetTab pagePlugId tabbar of
+       -- Return render window's coordinate.
+       Just tab -> do
+-        allocation <- widgetGetAllocation (uiFrameBox $ tabUIFrame tab)
++        allocation <- liftIO $ widgetGetAllocation (uiFrameBox $ tabUIFrame tab)
+         replyReturn call [toVariant (allocation, M.toList globalKeymap ++ extensionKeymap)]
+       -- Or return default value.
+       Nothing -> replyReturn call []
+@@ -492,8 +492,8 @@
+ -- | Return buffer list.
+ callGetBufferList :: Environment -> Member
+ callGetBufferList env = 
+-  Method "" "s" $ \ call -> do
+-     (BufferList bufferList) <- readTVarIO $ envBufferList env
++  MemberMethod $ Method "" "s" $ \ call -> do
++     (BufferList bufferList) <- liftIO $ readTVarIO $ envBufferList env
+      let list = concatMap (\ (modeName, bufferSeq) -> 
+                                map (\ Buffer {bufferPageId   = pageId
+                                              ,bufferPath     = path
+@@ -501,7 +501,7 @@
+                                     BufferInfo modeName path name pageId) $ F.toList bufferSeq) 
+                 $ M.toList bufferList
+      -- Don't return current buffer.
+-     currentPageId <- tabGetCurrentPageId env
++     currentPageId <- liftIO $ tabGetCurrentPageId env
+      let bufferInfos = 
+              case currentPageId of
+                Just pId -> filter (\ x -> bufferInfoId x /= pId) list 
+@@ -509,7 +509,7 @@
+      replyReturn call [toVariant bufferInfos]
+ 
+ -- | Reply interactive error.
+-replyLocalInteractiveError :: MethodCall -> Text -> IO ()
++replyLocalInteractiveError :: MethodCtx -> Text -> DBus ()
+ replyLocalInteractiveError call err = 
+     replyError call (mkErrorName_ daemonInteractiveErrorName) [toVariant err]
+ 

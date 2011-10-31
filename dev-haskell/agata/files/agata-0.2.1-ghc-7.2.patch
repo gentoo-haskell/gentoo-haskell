@@ -1,0 +1,85 @@
+--- Agata-0.2.1-orig/Agata.cabal	2010-06-24 21:46:23.000000000 +1000
++++ Agata-0.2.1/Agata.cabal	2011-08-05 00:40:32.677982703 +1000
+@@ -16,10 +16,10 @@
+ Library
+   Build-Depends: 
+     mtl, base>=4&&<5, 
+-    template-haskell<2.5, 
+-    QuickCheck>=2.1&&<2.2, 
++    template-haskell<2.7,
++    QuickCheck>=2.1&&<2.5, 
+     containers, 
+-    tagged==0.0
++    tagged>=0.1&&<0.3
+   Exposed-modules:
+     Test.Agata,
+     Test.AgataTH,
+--- Agata-0.2.1-orig/Test/Agata/Common.hs	2010-06-24 21:46:23.000000000 +1000
++++ Agata-0.2.1/Test/Agata/Common.hs	2011-08-04 23:25:56.711334219 +1000
+@@ -11,36 +11,36 @@
+ 
+ type Dimension a = Tagged a Int
+ 
+-instance Num b => Num (Tagged a b) where
+-  (+) = liftM2 (+)
+-  (*) = liftM2 (*)
+-  (-) = liftM2 (-)
+-  negate = liftM negate
+-  abs = liftM abs
+-  signum = liftM signum
+-  fromInteger = return . fromInteger
+-
+-instance Real b => Real (Tagged a b) where
+-  toRational = toRational . unTagged
+-
+-instance Integral b => Integral (Tagged a b) where
+-  quot = liftM2 quot
+-  rem = liftM2 rem
+-  div = liftM2 div
+-  mod = liftM2 mod
+-  quotRem a b = unTagged $ liftM2 quotRem a b >>= \(x,y) -> return (return x,return y)
+-  divMod a b = unTagged $ liftM2 divMod a b >>= \(x,y) -> return (return x,return y)
+-  toInteger = toInteger . unTagged
+-
+-instance Enum b => Enum (Tagged a b) where
+-  succ = liftM succ
+-  pred = liftM pred
+-  toEnum = return . toEnum
+-  fromEnum = fromEnum . unTagged
+-  enumFrom = map return . unTagged . liftM enumFrom
+-  enumFromThen a = map return . unTagged . liftM2 enumFromThen a
+-  enumFromTo a = map return . unTagged . liftM2 enumFromTo a
+-  enumFromThenTo a b = map return . unTagged . liftM3 enumFromThenTo a b
++-- instance Num b => Num (Tagged a b) where
++--   (+) = liftM2 (+)
++--   (*) = liftM2 (*)
++--   (-) = liftM2 (-)
++--   negate = liftM negate
++--   abs = liftM abs
++--   signum = liftM signum
++--   fromInteger = return . fromInteger
++
++-- instance Real b => Real (Tagged a b) where
++--   toRational = toRational . unTagged
++
++-- instance Integral b => Integral (Tagged a b) where
++--   quot = liftM2 quot
++--   rem = liftM2 rem
++--   div = liftM2 div
++--   mod = liftM2 mod
++--   quotRem a b = unTagged $ liftM2 quotRem a b >>= \(x,y) -> return (return x,return y)
++--   divMod a b = unTagged $ liftM2 divMod a b >>= \(x,y) -> return (return x,return y)
++--   toInteger = toInteger . unTagged
++
++-- instance Enum b => Enum (Tagged a b) where
++--   succ = liftM succ
++--   pred = liftM pred
++--   toEnum = return . toEnum
++--   fromEnum = fromEnum . unTagged
++--   enumFrom = map return . unTagged . liftM enumFrom
++--   enumFromThen a = map return . unTagged . liftM2 enumFromThen a
++--   enumFromTo a = map return . unTagged . liftM2 enumFromTo a
++--   enumFromThenTo a b = map return . unTagged . liftM3 enumFromThenTo a b
+ 
+ taggedWith :: Tagged b a -> b -> Tagged b a
+ taggedWith = const

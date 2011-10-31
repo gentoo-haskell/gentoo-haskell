@@ -1,7 +1,1 @@
 EBUILD libtu-darcs-3.ebuild 451 RMD160 9d44969b5b0892750de17d8af229a867f70705f3 SHA1 baceec65d293fc61d7eb18f86071a9bb3f7d00a6 SHA256 57d1235e52a062b2d093e83b82f43d6628bebfeabf38e4c26ec3df953c3f9952
-MD5 53e3dcbf8e234c9c009acfed2417ec8f libtu-darcs-3.ebuild 451
-RMD160 9d44969b5b0892750de17d8af229a867f70705f3 libtu-darcs-3.ebuild 451
-SHA256 57d1235e52a062b2d093e83b82f43d6628bebfeabf38e4c26ec3df953c3f9952 libtu-darcs-3.ebuild 451
-MD5 d41d8cd98f00b204e9800998ecf8427e files/digest-libtu-darcs-3 0
-RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 files/digest-libtu-darcs-3 0
-SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 files/digest-libtu-darcs-3 0

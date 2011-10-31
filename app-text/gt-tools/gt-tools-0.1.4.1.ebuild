@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI=2
+EAPI="3"
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal
@@ -13,7 +13,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="gtk"
 
 RDEPEND="gtk? ( x11-libs/gtk+:2 )"
@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/mtl
 		dev-haskell/url
 		>=dev-haskell/utf8-string-0.3.6
-		gtk? ( dev-haskell/gtk2hs[glade] )"
+		gtk? ( dev-haskell/glade )"
 
 src_configure() {
 	cabal_src_configure $(cabal_flag gtk gui)

@@ -5,10 +5,10 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit git haskell-cabal
+inherit git-2 haskell-cabal
 
-DESCRIPTION="Fault-tolerant distributed computing framework"
-HOMEPAGE="https://github.com/jepst/CloudHaskell"
+DESCRIPTION="Cloud Haskell. Fault-tolerant distributed computing framework"
+HOMEPAGE="http://hackage.haskell.org/package/remote"
 EGIT_REPO_URI="git://github.com/jepst/CloudHaskell.git"
 
 LICENSE="BSD"
@@ -19,12 +19,10 @@ IUSE=""
 RDEPEND="dev-haskell/binary
 		dev-haskell/mtl
 		dev-haskell/network
+		dev-haskell/puremd5
 		dev-haskell/stm
 		dev-haskell/time
+		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
-
-src_prepare() {
-	cabal-mksetup
-}
+		>=dev-haskell/cabal-1.8"

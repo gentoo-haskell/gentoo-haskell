@@ -342,11 +342,15 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		if use ghcbootstrap && use doc; then
-			echo XMLDocWays="html" >> mk/build.mk
-			echo HADDOCK_DOCS=YES >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
-			echo XMLDocWays="" >> mk/build.mk
-			echo HADDOCK_DOCS=NO >> mk/build.mk
+			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
+			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
+			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 
 		sed -e "s|utils/haddock_dist_INSTALL_SHELL_WRAPPER = YES|utils/haddock_dist_INSTALL_SHELL_WRAPPER = NO|" \

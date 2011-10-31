@@ -19,7 +19,7 @@ import qualified Data.Digest.Pure.SHA as D ( sha1, showDigest )
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
-import System.FilePath ( (</>), takeFileName, takeBaseName, makeRelative )
+import System.FilePath ( (</>), takeFileName, takeBaseName, makeRelative, normalise, splitPath, joinPath )
 import System.Process ( readProcess )
 
 -- import Debug.Trace
@@ -40,6 +40,10 @@ data Repo
       = Dir FilePath [Repo]
       | File FilePath Int String
       deriving (Eq, Show)
+
+flatten :: Repo -> [Repo]
+flatten f@(File _ _ _) = [f]
+flatten d@(Dir _ entries) = d : concatMap flatten entries
 
 readManifest :: FilePath -> IO Manifest
 readManifest m = return . catMaybes . map parseManifestLine . lines =<< readFile m
@@ -63,7 +67,7 @@ fileSpy :: FilePath -> IO Repo
 fileSpy fn = do
   fs <- unsafeInterleaveIO $ withFile fn ReadMode hFileSize
   fc <- unsafeInterleaveIO $ L.readFile fn
-  return (File fn (fromInteger fs) (D.showDigest (D.sha1 fc)))
+  return (File (normalise fn) (fromInteger fs) (D.showDigest (D.sha1 fc)))
 
 dirSpy :: FilePath -> IO Repo
 dirSpy dir = do
@@ -94,9 +98,12 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
            ]
   where
     filesDir = listToMaybe [ d | d@(Dir (takeBaseName -> "files") _) <- packageDir ]
-    lookupFile dir fn = listToMaybe [ f | f@(File fn' _ _) <- dir, takeFileName fn' == fn ]
+    lookupFile dir fn = listToMaybe [ f | f@(File fn' _ _) <- concatMap flatten dir, drop_cat_pkg fn' == fn || drop_cat_pkg_files fn' == fn ]
     lookupMani     fn = listToMaybe [ m | m <- manifest, mFileName m == takeFileName fn ]
     inGit          fn = not . null $ [ () | dfn <- awares, dfn == fn ]
+
+    drop_cat_pkg       = joinPath . drop 2 .splitPath
+    drop_cat_pkg_files = joinPath . drop 3 .splitPath
 
     missingDigests (Dir _ files) = -- look for missing manifest entries
       [ "Manifest entry missing for file " ++ fn
@@ -159,10 +166,11 @@ cats_status cats_file =
        return (known_cats \\ found_cats, found_cats \\ known_cats)
 
 ignore_git :: Repo -> Repo
-ignore_git (Dir fn files) = Dir fn (catMaybes (map recursive files))
+ignore_git (Dir fn' files) = Dir fn (catMaybes (map recursive files))
   where
+  fn = normalise fn'
   recursive (Dir fn files') | fn == ".git" = Nothing
-                          | otherwise = Just $ Dir fn (map ignore_git files')
+                            | otherwise = Just $ Dir fn (map ignore_git files')
   recursive x = Just x
 ignore_git x = x
 

@@ -1,0 +1,11 @@
+--- wxcore-0.12.1.7-orig/src/cpp/db.cpp	2011-06-16 03:41:14.000000000 +1000
++++ wxcore-0.12.1.7/src/cpp/db.cpp	2011-06-18 15:39:54.604744555 +1000
+@@ -1171,7 +1171,7 @@
+   {
+     SWORD  colNameLen  = 0;
+     SWORD  typeNameLen = 0;
+-    UDWORD colSize     = 0;
++    SQLULEN colSize    = 0;
+ 
+     /* get the column information */
+     retcode = SQLDescribeCol(hstmt, column+1,

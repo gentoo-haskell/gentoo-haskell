@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/binary-0.5*
 		=dev-haskell/binary-shared-0.8*
 		<dev-haskell/cabal-1.11
-		=dev-haskell/deepseq-1.1*
+		<dev-haskell/deepseq-1.3
 		>=dev-haskell/haddock-2.7.2
 		<dev-haskell/hslogger-1.2
 		=dev-haskell/ltk-9999
@@ -38,6 +38,7 @@ src_prepare() {
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.11@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
+			-e 's@deepseq >=1.1 && <1.2@deepseq >=1.1 \&\& <1.3@' \
 			-i "${S}/${PN}.cabal"
 	fi
 }

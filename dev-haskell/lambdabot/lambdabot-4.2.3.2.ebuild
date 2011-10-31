@@ -61,6 +61,8 @@ src_prepare() {
 			-i "${S}/State/Pristine.hs" \
 			|| die "Could patch State/L.hs and State/Pristine.hs for show upgrade"
 	fi
+	epatch "${FILESDIR}/${P}-binutils-2.21.patch"
+	epatch "${FILESDIR}/${P}-ghc-7.2.patch"
 }
 
 pkg_postinst() {

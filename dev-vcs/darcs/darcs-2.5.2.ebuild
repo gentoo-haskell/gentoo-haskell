@@ -23,7 +23,7 @@ RDEPEND="=dev-haskell/hashed-storage-0.5*
 		<dev-haskell/mtl-2.1
 		>=dev-haskell/network-2.2
 		<dev-haskell/parsec-3.2
-		<dev-haskell/regex-compat-0.94
+		<dev-haskell/regex-compat-0.96
 		=dev-haskell/tar-0.3*
 		=dev-haskell/terminfo-0.3*
 		=dev-haskell/text-0.11*
@@ -35,24 +35,25 @@ RDEPEND="=dev-haskell/hashed-storage-0.5*
 # darcs also has a library version; we thus need $DEPEND
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		doc?  ( virtual/latex-base
-				dev-tex/latex2html )
+		doc? ( virtual/latex-base
+			|| (	dev-tex/latex2html[png]
+				dev-tex/latex2html[gif]
+			)
+		)
 		test? ( dev-haskell/test-framework
 				dev-haskell/test-framework-hunit
-				dev-haskell/test-framework-quickcheck2 )
+				dev-haskell/test-framework-quickcheck2
+		)
 		"
-pkg_setup() {
-	if use doc && ! built_with_use -o dev-tex/latex2html png gif; then
-		eerror "Building darcs with USE=\"doc\" requires that"
-		eerror "dev-tex/latex2html is built with at least one of"
-		eerror "USE=\"png\" and USE=\"gif\"."
-		die "USE=doc requires dev-tex/latex2html with USE=\"png\" or USE=\"gif\""
-	fi
-}
 
 src_prepare() {
 	cd "${S}/contrib"
 	epatch "${FILESDIR}/${PN}-1.0.9-bashcomp.patch"
+	cd ..
+
+	epatch "${FILESDIR}/${PN}-2.5.2-relax-regex-libs-deps.patch"
+	epatch "${FILESDIR}/${PN}-2.5.2-ghc-7.2.patch"
+	epatch "${FILESDIR}/${PN}-2.5.2-tests-ghc-7.2.patch"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"

@@ -1,0 +1,14 @@
+diff --git a/aclocal.m4 b/aclocal.m4
+index b10eeec..13988fe 100644
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -1487,6 +1487,9 @@ AC_DEFUN([GHC_CONVERT_VENDOR],[
+   pc|gentoo) # like i686-pc-linux-gnu and i686-gentoo-freebsd8
+     $2="unknown"
+     ;;
++  softfloat) # like armv5tel-softfloat-linux-gnueabi
++    $2="unknown"
++    ;;
+   *)
+     #pass thru by default
+     $2="$1"

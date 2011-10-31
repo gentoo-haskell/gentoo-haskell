@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Interface for versioning file stores."
 HOMEPAGE="http://johnmacfarlane.net/repos/filestore"
@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="<dev-haskell/diff-0.2
 		<dev-haskell/parsec-3.2
@@ -26,7 +26,15 @@ RDEPEND="<dev-haskell/diff-0.2
 		=dev-haskell/xml-1.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.2
+		test? ( dev-haskell/hunit
+			dev-vcs/git
+			dev-vcs/mercurial
+			dev-vcs/darcs
+		)
+	"
+
+PATCHES=("${FILESDIR}/${PN}-0.4.0.4-ghc-7.2.patch")
 
 pkg_postinst() {
 	ghc-package_pkg_postinst

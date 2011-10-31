@@ -1,0 +1,33 @@
+--- haskell-mpi-1.1.0-orig/haskell-mpi.cabal	2011-08-15 01:20:10.000000000 +1000
++++ haskell-mpi-1.1.0/haskell-mpi.cabal	2011-08-16 20:18:45.774324886 +1000
+@@ -114,7 +114,6 @@
+       src
+    build-depends:
+       base > 3 && <= 5,
+-      haskell98,
+       bytestring,
+       cereal,
+       extensible-exceptions,
+--- haskell-mpi-1.1.0-orig/src/C2HS.hs	2011-08-15 01:20:10.000000000 +1000
++++ haskell-mpi-1.1.0/src/C2HS.hs	2011-08-16 20:18:35.497074125 +1000
+@@ -40,7 +40,7 @@
+   module Foreign,
+ 
+   -- * Re-export the C language component of the FFI
+-  module CForeign,
++  module Foreign.C,
+ 
+   -- * Composite marshalling functions
+   withCStringLenIntConv, peekCStringLenIntConv, withIntConv, withFloatConv,
+@@ -61,9 +61,9 @@
+        hiding       (Word)
+ 		    -- Should also hide the Foreign.Marshal.Pool exports in
+ 		    -- compilers that export them
+-import CForeign
++import Foreign.C
+ 
+-import Monad        (liftM)
++import Control.Monad (liftM)
+ 
+ 
+ -- Composite marshalling functions

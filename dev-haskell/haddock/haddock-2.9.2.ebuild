@@ -50,7 +50,7 @@ src_configure() {
 	# configure, but will eventually get overwritten in src_compile by
 	# the real executable.
 	local exe="${S}/dist/build/haddock/haddock"
-	mkdir -p $(basename "${exe}")
+	mkdir -p $(dirname "${exe}")
 	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
 	chmod +x "${exe}"
 
