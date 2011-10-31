@@ -22,6 +22,4 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}"
 
-PATCHES=("${FILESDIR}/${PN}-0.3.2-ghc-7.2.patch")
-
 RESTRICT="test" # FIXME: casespace damaged in upstream
