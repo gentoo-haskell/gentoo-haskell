@@ -29,7 +29,7 @@ RDEPEND="dev-haskell/cgi
 		<dev-haskell/hslogger-1.2
 		=dev-haskell/hstringtemplate-0.6*
 		<dev-haskell/http-4000.2
-		=dev-haskell/json-0.4*
+		>=dev-haskell/json-0.4
 		dev-haskell/mtl
 		<dev-haskell/network-2.4
 		>=app-text/pandoc-1.8
@@ -51,3 +51,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+
+src_prepare() {
+	base_src_prepare
+	sed -e 's@json >= 0.4 && < 0.5@json >= 0.4 \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
