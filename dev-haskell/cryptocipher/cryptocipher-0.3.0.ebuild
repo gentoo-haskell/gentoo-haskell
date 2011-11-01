@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/cereal
 		>=dev-haskell/crypto-api-0.5
+		dev-haskell/crypto-pubkey-types
 		dev-haskell/primitive
 		dev-haskell/tagged
 		>=dev-haskell/vector-0.7
