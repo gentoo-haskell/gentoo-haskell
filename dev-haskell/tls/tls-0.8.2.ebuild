@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.3
-		=dev-haskell/certificate-0.9*
+		=dev-haskell/certificate-1.0*
 		>=dev-haskell/crypto-api-0.5
-		>=dev-haskell/cryptocipher-0.2.5
+		>=dev-haskell/cryptocipher-0.3
 		>=dev-haskell/cryptohash-0.6
 		dev-haskell/mtl
 		>=dev-lang/ghc-6.8.2"
