@@ -25,7 +25,7 @@ RDEPEND="=dev-haskell/asn1-data-0.6*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
 		=dev-haskell/case-insensitive-0.4*
-		<dev-haskell/certificate-0.10
+		=dev-haskell/certificate-1.0*
 		=dev-haskell/cprng-aes-0.2*
 		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
@@ -44,5 +44,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@case-insensitive      >= 0.2     && < 0.4@case-insensitive      >= 0.2     \&\& < 0.5@' \
+		-e 's@certificate           >= 0.7     && < 0.10@certificate           >= 0.7     \&\& < 1.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
