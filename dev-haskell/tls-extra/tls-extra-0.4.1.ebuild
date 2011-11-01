@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/certificate-0.9*
+RDEPEND="=dev-haskell/certificate-1.0*
 		>=dev-haskell/crypto-api-0.5
-		>=dev-haskell/cryptocipher-0.2.5
+		>=dev-haskell/cryptocipher-0.3
 		>=dev-haskell/cryptohash-0.6
 		dev-haskell/mtl
 		>=dev-haskell/network-2.3
