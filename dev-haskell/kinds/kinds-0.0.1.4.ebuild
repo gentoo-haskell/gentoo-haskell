@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Emulation of subkinds and subkind polymorphism"
-HOMEPAGE="http://community.haskell.org/~jeltsch/kinds/"
+HOMEPAGE="http://darcs.wolfgang.jeltsch.info/haskell/kinds"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -20,9 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2.3"
+		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@base >= 3.0 && < 4.1@base >= 3.0 \&\& < 5.0@' \
+	sed -e 's@base >= 3.0 && < 4.4@base >= 3.0 \&\& < 5.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen base dependency"
 }
