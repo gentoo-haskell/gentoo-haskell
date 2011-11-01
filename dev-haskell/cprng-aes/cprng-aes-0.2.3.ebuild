@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/cereal-0.4.0
 		>=dev-haskell/crypto-api-0.5
-		=dev-haskell/cryptocipher-0.2*
+		<dev-haskell/cryptocipher-0.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
