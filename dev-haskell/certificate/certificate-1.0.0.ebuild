@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/asn1-data-0.6*
 		dev-haskell/base64-bytestring
+		dev-haskell/crypto-pubkey-types
 		dev-haskell/mtl
 		dev-haskell/time
 		>=dev-lang/ghc-6.10.1"
