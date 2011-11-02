@@ -44,6 +44,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@case-insensitive      >= 0.2     && < 0.4@case-insensitive      >= 0.2     \&\& < 0.5@' \
-		-e 's@certificate           >= 0.7     && < 0.10@certificate           >= 0.7     \&\& < 1.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
