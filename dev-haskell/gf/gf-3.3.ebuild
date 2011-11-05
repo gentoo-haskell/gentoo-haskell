@@ -16,15 +16,28 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2 BSD3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="server"
+RESTRICT="test"
 
 RDEPEND="dev-haskell/fst
 		dev-haskell/haskeline
 		dev-haskell/mtl
+		server? ( dev-haskell/cgi
+			dev-haskell/httpd-shed
+			dev-haskell/json
+			dev-haskell/network
+			dev-haskell/silently
+			dev-haskell/utf8-string
+		)
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.8
 		dev-haskell/happy"
 
-PATCHES=("${FILESDIR}/gf-3.2-ghc-7.patch")
+src_configure() {
+	cabal_src_configure $(cabal_flag server)
+}
+
+PATCHES=("${FILESDIR}/gf-3.2-ghc-7.patch"
+		"${FILESDIR}/gf-3.3-ghc-7.2.patch")
