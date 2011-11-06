@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A Lua language interpreter embedding in Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/hslua"
@@ -18,6 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-6.10.1
+		=dev-lang/lua-5*"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.3.4-use-system-lua-instead-of-bundled-lua.patch")
+
+src_prepare() {
+	base_src_prepare
+	rm -f src/*
+}
