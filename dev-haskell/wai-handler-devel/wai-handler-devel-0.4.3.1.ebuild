@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-text-0.8.2
-		<dev-haskell/cmdargs-0.9
+		<dev-haskell/cmdargs-0.10
 		>=dev-haskell/enumerator-0.4.6
 		>=dev-haskell/hint-0.3.2.3
 		=dev-haskell/http-types-0.6*
@@ -32,3 +32,8 @@ RDEPEND=">=dev-haskell/attoparsec-text-0.8.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@cmdargs >= 0.4 && < 0.9@cmdargs >= 0.4 \&\& < 0.10@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
