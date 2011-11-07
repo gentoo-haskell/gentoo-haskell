@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/cmdargs-0.8*
+RDEPEND="=dev-haskell/cmdargs-0.9*
 		dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/parsec
@@ -31,3 +31,8 @@ RDEPEND="=dev-haskell/cmdargs-0.8*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@cmdargs >= 0.8   && < 0.9@cmdargs >= 0.8   \&\& < 0.10@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
