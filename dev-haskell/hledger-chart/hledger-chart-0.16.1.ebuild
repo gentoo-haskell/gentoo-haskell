@@ -22,7 +22,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/chart-0.11
-		=dev-haskell/cmdargs-0.8*
+		=dev-haskell/cmdargs-0.9*
 		dev-haskell/colour
 		~dev-haskell/hledger-0.16.1
 		~dev-haskell/hledger-lib-0.16.1
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/safe-0.2
 		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
+
+src_prepare() {
+	sed -e 's@cmdargs >= 0.8   && < 0.9@cmdargs >= 0.8   \&\& < 0.10@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
