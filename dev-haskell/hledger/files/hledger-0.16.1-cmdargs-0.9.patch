@@ -1,0 +1,31 @@
+--- hledger-0.16.1-orig/hledger.cabal	2011-10-05 10:55:23.000000000 +1100
++++ hledger-0.16.1/hledger.cabal	2011-11-07 13:09:46.120040830 +1100
+@@ -60,7 +60,7 @@
+                   hledger-lib == 0.16.1
+                  ,base >= 3 && < 5
+                  ,containers
+-                 ,cmdargs >= 0.8   && < 0.9
++                 ,cmdargs >= 0.8   && < 0.10
+                  ,csv
+                  ,directory
+                  ,filepath
+@@ -110,7 +110,7 @@
+                   hledger-lib == 0.16.1
+                  ,base >= 3 && < 5
+                  ,containers
+-                 ,cmdargs >= 0.8   && < 0.9
++                 ,cmdargs >= 0.8   && < 0.10
+                  ,csv
+                  ,directory
+                  ,filepath
+--- hledger-0.16.1-orig/Hledger/Cli/Options.hs	2011-10-05 10:55:23.000000000 +1100
++++ hledger-0.16.1/Hledger/Cli/Options.hs	2011-11-07 13:03:30.570600974 +1100
+@@ -445,7 +445,7 @@
+             alias' = case alias of ('=':rest) -> rest
+                                    _ -> orig
+ 
+-showModeHelp = showText defaultWrap . helpText HelpFormatDefault
++showModeHelp = showText defaultWrap . helpText [""] HelpFormatDefault
+ 
+ tests_Hledger_Cli_Options = TestList
+  [
