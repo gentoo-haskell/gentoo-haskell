@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
 		<dev-haskell/cabal-1.13
 		=dev-haskell/case-insensitive-0.4*
-		=dev-haskell/cmdargs-0.8*
+		=dev-haskell/cmdargs-0.9*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/haskell-src-exts-1.12
 		=dev-haskell/http-types-0.6*
@@ -40,5 +40,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@case-insensitive >= 0.2 && < 0.4@case-insensitive >= 0.2 \&\& < 0.5@' \
+		-e 's@cmdargs >= 0.7 && < 0.9@cmdargs >= 0.7 \&\& < 0.10@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
