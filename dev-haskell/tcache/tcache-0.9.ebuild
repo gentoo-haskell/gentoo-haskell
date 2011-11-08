@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="TCache"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Data caching and Persistent STM transactions"
+DESCRIPTION="A Transactional cache with user-defined persistence"
 HOMEPAGE="http://hackage.haskell.org/package/tcache"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
@@ -22,6 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/stm-2
+		dev-haskell/text
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
