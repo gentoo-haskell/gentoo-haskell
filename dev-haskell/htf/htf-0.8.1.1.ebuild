@@ -34,5 +34,4 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${PN}"-0.8.1.0-qc-2.4.patch
-		"${FILESDIR}/${PN}"-0.8.1.0-process-1.2.patch)
+PATCHES=("${FILESDIR}/${PN}"-0.8.1.0-qc-2.4.patch)
