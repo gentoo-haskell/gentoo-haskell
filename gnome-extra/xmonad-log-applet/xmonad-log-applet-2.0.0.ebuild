@@ -4,19 +4,18 @@
 
 EAPI=4
 
-inherit autotools gnome2 git-2
-
-EGIT_REPO_URI="git://github.com/alexkay/xmonad-log-applet.git"
-EGIT_BOOTSTRAP="gnome2_src_prepare"
+inherit autotools gnome2 
 
 DESCRIPTION="Gnome and XFCE applet for displaying XMonad log"
 HOMEPAGE="https://github.com/alexkay/xmonad-log-applet"
-SRC_URI=""
+SRC_URI="https://github.com/downloads/alexkay/xmonad-log-applet/xmonad-log-applet-2.0.0.tar.gz"
 LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+gnome2 gnome3 xfce4"
+
+RESTRICT="mirror"
 
 RDEPEND="sys-apps/dbus
 	gnome2? ( gnome-base/gnome-panel )
@@ -50,12 +49,11 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install 
-	dodoc AUTHORS.md README.md xmonad.hs
+	dodoc AUTHORS.md README.md
+	dodoc "${FILESDIR}"/xmonad.hs
 }
 
 pkg_postinst() {
 	elog "Remember to update your xmonad.hs accordingly"
 	elog "a sample xmonad.hs is provided in /usr/share/doc/${PF}"
-	elog "You can set the width of the applet via the"
-	elog "/apps/xmonad-log-applet/width-chars gconf key"
 }
