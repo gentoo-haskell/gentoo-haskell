@@ -30,4 +30,4 @@ RDEPEND="<dev-haskell/binary-1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-9.1.4-ghc-7.2.patch")
