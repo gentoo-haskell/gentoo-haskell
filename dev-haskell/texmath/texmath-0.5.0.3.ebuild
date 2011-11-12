@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/parsec-2
 		)
 	"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
 
 src_configure() {
 	cabal_src_configure \
