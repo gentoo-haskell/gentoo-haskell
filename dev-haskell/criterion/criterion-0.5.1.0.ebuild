@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/aeson
 		dev-haskell/mtl
 		>=dev-haskell/mwc-random-0.8.0.3
 		>=dev-haskell/parsec-3.1.0
-		>=dev-haskell/statistics-0.8.0.6
+		=dev-haskell/statistics-0.9*
 		dev-haskell/time
 		>=dev-haskell/vector-0.7.0.0
 		>=dev-haskell/vector-algorithms-0.4
