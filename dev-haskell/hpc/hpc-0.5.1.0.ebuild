@@ -20,4 +20,4 @@ RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-CABAL_CORE_LIB_GHC_PV="7.2.1"
+CABAL_CORE_LIB_GHC_PV="7.2.1 7.2.2"
