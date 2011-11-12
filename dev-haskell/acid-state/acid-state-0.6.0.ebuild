@@ -20,8 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.3.2.0
 		dev-haskell/mtl
-		>=dev-haskell/safecopy-0.5
+		dev-haskell/network
+		>=dev-haskell/safecopy-0.6
 		dev-haskell/stm
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
