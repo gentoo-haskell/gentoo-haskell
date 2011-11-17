@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="collection of crypto hashes, fast, pure and practical"

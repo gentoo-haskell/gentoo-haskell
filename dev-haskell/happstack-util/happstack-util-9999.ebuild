@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit darcs haskell-cabal
 
 DESCRIPTION="Web framework"

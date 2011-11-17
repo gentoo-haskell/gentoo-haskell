@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Snap: A Haskell Web Framework: project starter executable and glue code library"

@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="ASN1 data reader and writer in RAW, BER, DER and CER forms"

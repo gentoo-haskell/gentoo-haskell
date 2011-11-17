@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit git haskell-cabal
 
 DESCRIPTION="A fast syntax highlighting library built with alex."

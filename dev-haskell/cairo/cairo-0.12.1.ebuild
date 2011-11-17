@@ -7,7 +7,7 @@
 EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
-CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
+CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the Cairo library."

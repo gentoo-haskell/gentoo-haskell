@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit eutils haskell-cabal
 
 DESCRIPTION="A wrapper around the eggtraymanager library for Linux system trays"

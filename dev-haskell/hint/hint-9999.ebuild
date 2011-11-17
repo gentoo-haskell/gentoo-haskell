@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base darcs haskell-cabal
 
 DESCRIPTION="Runtime Haskell interpreter (GHC API wrapper)"

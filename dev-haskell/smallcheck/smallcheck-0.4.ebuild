@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
 DESCRIPTION="Another lightweight testing library in Haskell."

@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit eutils haskell-cabal
 
 MY_PN="MissingH"
