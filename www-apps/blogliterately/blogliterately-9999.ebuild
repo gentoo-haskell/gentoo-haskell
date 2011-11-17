@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.5
-		dev-haskell/haxml:1.20
+		dev-haskell/haxml:1.22
 		>=dev-haskell/haxr-3000.2.1
 		>=dev-haskell/hscolour-1.15
 		>=app-text/pandoc-1.2
