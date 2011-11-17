@@ -19,6 +19,7 @@
 # Currently supported features:
 #   haddock    --  for documentation generation
 #   hscolour   --  generation of colourised sources
+#   hoogle     --  generation of documentation search index
 #   alex       --  lexer/scanner generator
 #   happy      --  parser generator
 #   c2hs       --  C interface generator
@@ -73,6 +74,7 @@ for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
 		haddock)    CABAL_USE_HADDOCK=yes;;
 		hscolour)   CABAL_USE_HSCOLOUR=yes;;
+		hoogle)     CABAL_USE_HOOGLE=yes;;
 		alex)       CABAL_USE_ALEX=yes;;
 		happy)      CABAL_USE_HAPPY=yes;;
 		c2hs)       CABAL_USE_C2HS=yes;;
@@ -94,6 +96,11 @@ fi
 if [[ -n "${CABAL_USE_HSCOLOUR}" ]]; then
 	IUSE="${IUSE} hscolour"
 	DEPEND="${DEPEND} hscolour? ( dev-haskell/hscolour )"
+fi
+
+if [[ -n "${CABAL_USE_HOOGLE}" ]]; then
+	IUSE="${IUSE} hoogle"
+	DEPEND="${DEPEND} hoogle? ( dev-haskell/hoogle )"
 fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
@@ -204,6 +211,18 @@ cabal-mksetup() {
 		> $setupdir/Setup.hs
 }
 
+cabal-hoogle-convert() {
+	cabalfile=$(ls --format=single-column *.cabal | head -n1)
+	if [[ -f "${S}/${cabalfile}" ]]; then
+		cabalpkgname=${cabalfile:0:$(expr index ${cabalfile} ".")-1}
+		hoogletxt="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.txt"
+		hooglehoo="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.hoo"
+		if [[ -f ${hoogletxt} ]]; then
+			hoogle convert ${hoogletxt} ${hooglehoo}
+		fi
+	fi
+}
+
 cabal-hscolour() {
 	./setup hscolour || die "setup hscolour failed"
 }
@@ -212,9 +231,30 @@ cabal-haddock() {
 	./setup haddock || die "setup haddock failed"
 }
 
+cabal-hoogle() {
+	ewarn "hoogle USE flag requires doc USE flag, building with haddock and hoogle"
+	cabal-hoogle-haddock
+}
+
 cabal-hscolour-haddock() {
 	# --hyperlink-source implies calling 'setup hscolour'
 	./setup haddock --hyperlink-source || die "setup haddock failed"
+}
+
+cabal-hoogle-haddock() {
+	./setup haddock --hoogle || die "setup haddock failed"
+	cabal-hoogle-convert
+}
+
+cabal-hoogle-hscolour-haddock() {
+	# --hyperlink-source implies calling 'setup hscolour'
+	./setup haddock --hyperlink-source --hoogle || die "setup haddock failed"
+	cabal-hoogle-convert
+}
+
+cabal-hoogle-hscolour() {
+	ewarn "hoogle USE flag requires doc USE flag, building with haddock, hoogle and hscolour"
+	cabal-hoogle-hscolour-haddock
 }
 
 cabal-configure() {
@@ -421,16 +461,36 @@ cabal_src_compile() {
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
 			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				# hscolour and haddock
-				cabal-hscolour-haddock
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle, hscolour and haddock
+					cabal-hoogle-hscolour-haddock
+				else
+					# haddock and hscolour
+					cabal-hscolour-haddock
+				fi
 			else
-				# just haddock
-				cabal-haddock
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle and haddock
+					cabal-hoogle-haddock
+				else
+					# just haddock
+					cabal-haddock
+				fi
 			fi
 		else
 			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				# just hscolour
-				cabal-hscolour
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle and hscolour
+					cabal-hoogle-hscolour
+				else
+					# just hscolour
+					cabal-hscolour
+				fi
+			else
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# just hoogle
+					cabal-hoogle
+				fi
 			fi
 		fi
 	fi
