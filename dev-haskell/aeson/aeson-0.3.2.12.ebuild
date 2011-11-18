@@ -42,8 +42,14 @@ src_prepare() {
 	sed -e 's@template-haskell >= 2.5@template-haskell >= 2.4@' \
 		-e 's@deepseq < 1.2@deepseq < 1.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	sed -e 's@ghc := ghc@ghc := ghc -hide-package aeson-native@' \
-		-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
+	if has_version 'dev-haskell/aeson-native'; then
+		sed -e 's@ghc := ghc@ghc := ghc -hide-package aeson-native@' \
+			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
+	fi
+	if has_version 'dev-haskell/htf'; then
+		sed -e 's@ghc := ghc@ghc := ghc -hide-package HTF@' \
+			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
+	fi
 }
 
 src_test() {
