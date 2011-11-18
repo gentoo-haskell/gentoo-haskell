@@ -21,7 +21,7 @@ RDEPEND="=dev-haskell/glib-0.12*
 		=dev-haskell/gtk-0.12*
 		=dev-haskell/pango-0.12*
 		>=dev-lang/ghc-6.10.1
-		>=x11-libs/vte-0.20.5"
+		>=x11-libs/vte-0.20.5:0"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/gtk2hs-buildtools"
