@@ -22,6 +22,6 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		=dev-haskell/gtk-0.12*
 		=dev-haskell/pango-0.12*
 		>=dev-lang/ghc-6.10.1
-		>=net-libs/webkit-gtk-1.1.15"
+		>=net-libs/webkit-gtk-1.1.15:2"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
