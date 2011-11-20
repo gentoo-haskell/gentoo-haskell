@@ -7,10 +7,10 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
-DESCRIPTION="Fast base16 (hex) encoding and deconding for ByteStrings"
-HOMEPAGE="http://github.com/mailrank/base16-bytestring"
+DESCRIPTION="Fast base16 (hex) encoding and decoding for ByteStrings"
+HOMEPAGE="http://github.com/bos/base16-bytestring"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -21,3 +21,6 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+# bos already fixed it upstream, so rm this patch when bumping it
+PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
