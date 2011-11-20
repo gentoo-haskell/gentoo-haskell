@@ -6,14 +6,15 @@ inherit darcs
 
 DESCRIPTION="Reformats \"darcs annotate\" output to look more like \"cvs annotate\"."
 HOMEPAGE="http://darcs.net/DarcsWiki/DarcsReannotate"
-LICENSE="BSD" #unknown license..
+LICENSE="as-is"
 SLOT="0"
 
-KEYWORDS="~x86"
+KEYWORDS=""
 
 IUSE=""
 
-DEPEND="dev-lang/python"
+DEPEND=""
+RDEPEND="dev-lang/python"
 
 EDARCS_REPOSITORY="http://cakoose.com/darcs/darcs-reannotate/"
 EDARCS_GET_CMD="get --partial"
