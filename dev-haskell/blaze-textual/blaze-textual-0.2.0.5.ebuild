@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Fast rendering of common datatypes"
-HOMEPAGE="http://github.com/mailrank/blaze-textual"
+HOMEPAGE="http://github.com/bos/blaze-textual"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
