@@ -5,11 +5,11 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile"
-inherit haskell-cabal git
+inherit haskell-cabal git-2
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
-EGIT_REPO_URI="git://github.com/jutaro/leksah.git"
+EGIT_REPO_URI="git://github.com/leksah/leksah.git"
 
 LICENSE="GPL-2"
 SLOT="0"
