@@ -57,7 +57,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 src_prepare() {
-	cd "${S}"
 	sed -e 's@derive >=2.4 && <2.5@derive >=2.4 \&\& <2.6@' \
 		-e 's@unix-compat >=0.1 && <0.3@unix-compat >=0.1 \&\& <0.4@g' \
 		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
