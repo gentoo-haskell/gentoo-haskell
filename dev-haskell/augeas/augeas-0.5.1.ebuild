@@ -18,14 +18,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="test? ( dev-haskell/hunit )
-		>=dev-lang/ghc-6.10.1
+RDEPEND="	>=dev-lang/ghc-6.10.1
 		app-admin/augeas"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.2
+		test? ( dev-haskell/hunit )
+	"
 
 src_prepare() {
-	if ! (use test); then
+	if ! use test; then
 		# disable building of the test suit
 		sed -e 's/^executable.*/\0\n        buildable: False/' \
 			-i "${S}/${PN}.cabal"
