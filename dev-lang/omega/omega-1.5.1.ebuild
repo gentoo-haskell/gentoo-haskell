@@ -30,7 +30,7 @@ src_compile() {
 	emake all || die "make failed"
 }
 
-src_install () {
+src_install() {
 	dobin ${EXE} || die "${EXE} executable not found"
 	dodoc OmegaManual.ps
 	insinto /usr/share/${P}
