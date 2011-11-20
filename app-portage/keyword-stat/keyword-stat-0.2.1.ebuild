@@ -6,7 +6,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Gentoo ebuild tool: list packages keywords"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/gentoo-haskell/keyword-stat"
 SRC_URI="http://code.haskell.org/~kolmodin/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -17,3 +17,4 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
 		dev-haskell/pcre-light"
+RDEPEND=""
