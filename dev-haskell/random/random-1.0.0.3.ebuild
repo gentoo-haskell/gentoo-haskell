@@ -23,4 +23,4 @@ RDEPEND="dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}"
 
-CABAL_CORE_LIB_GHC_PV="7.0.1 7.0.2 7.0.3 7.0.4 7.2.1 7.2.2"
+CABAL_CORE_LIB_GHC_PV="7.0.1 7.0.2 7.0.3 7.0.4"
