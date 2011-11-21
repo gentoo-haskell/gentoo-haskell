@@ -18,15 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.2*
+RDEPEND="=dev-haskell/happstack-server-6.3*
 		dev-haskell/hslogger
 		<dev-haskell/hstringtemplate-0.7
 		<dev-haskell/mtl-2.1
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@happstack-server >= 6.0 && < 6.2@happstack-server >= 6.0 \&\& < 6.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen happstack-server dependency"
-}
