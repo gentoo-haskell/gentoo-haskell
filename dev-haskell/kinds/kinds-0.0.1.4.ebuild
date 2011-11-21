@@ -25,4 +25,15 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -e 's@base >= 3.0 && < 4.4@base >= 3.0 \&\& < 5.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen base dependency"
+	if has_version "<dev-haskell/haddock-2.9.2"; then
+		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
+		# The haddock --hoogle option does not like unicode characters, which causes
+		# haddock 2.7.2 to fail like:
+		# haddock: internal Haddock or GHC error: dist/doc/html/enumerator/enumerator.txt: commitAndReleaseBuffer: invalid argument (Invalid or incomplete multibyte or wide character)
+		sed -e "s@&#x2019;@'@g" \
+			-e 's@&#xA0;@ @g' \
+			-i "${S}/${PN}.cabal" \
+			-i "${S}/src/Data/Kind.hs"
+	fi
 }
+
