@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/happstack-data-6.0*
 		<dev-haskell/happstack-ixset-6.2
-		=dev-haskell/happstack-server-6.2*
+		=dev-haskell/happstack-server-6.3*
 		=dev-haskell/happstack-state-6.1*
 		=dev-haskell/happstack-util-6.0*
 		>=dev-lang/ghc-6.10.1"
