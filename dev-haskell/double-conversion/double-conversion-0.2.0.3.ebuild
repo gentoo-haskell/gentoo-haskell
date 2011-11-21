@@ -10,16 +10,24 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Fast conversion between double precision floating point and text"
-HOMEPAGE="https://github.com/mailrank/double-conversion"
+HOMEPAGE="https://github.com/bos/double-conversion"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/text-0.11.0.8
 		>=dev-lang/ghc-6.10.1
 		sys-devel/gcc"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/quickcheck-2.4.0.1
+			<dev-haskell/test-framework-0.5
+			<dev-haskell/test-framework-quickcheck2-0.3
+		)"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
