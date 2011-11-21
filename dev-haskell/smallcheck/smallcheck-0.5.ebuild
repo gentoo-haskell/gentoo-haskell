@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Another lightweight testing library in Haskell."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/smallcheck"
@@ -18,5 +18,3 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal"
-
-PATCHES=("${FILESDIR}/${PN}-0.4-no-haskell98.patch")
