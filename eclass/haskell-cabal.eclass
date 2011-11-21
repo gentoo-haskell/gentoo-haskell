@@ -238,18 +238,17 @@ cabal-hoogle() {
 
 cabal-hscolour-haddock() {
 	# --hyperlink-source implies calling 'setup hscolour'
-	./setup haddock --hyperlink-source || die "setup haddock failed"
+	./setup haddock --hyperlink-source || die "setup haddock --hyperlink-source failed"
 }
 
 cabal-hoogle-haddock() {
-	./setup haddock --hoogle || die "setup haddock failed"
+	./setup haddock --hoogle || die "setup haddock --hoogle failed"
 	cabal-hoogle-convert
 }
 
 cabal-hoogle-hscolour-haddock() {
-	# --hyperlink-source implies calling 'setup hscolour'
-	./setup haddock --hyperlink-source --hoogle || die "setup haddock failed"
-	cabal-hoogle-convert
+	cabal-hscolour-haddock
+	cabal-hoogle-haddock
 }
 
 cabal-hoogle-hscolour() {
