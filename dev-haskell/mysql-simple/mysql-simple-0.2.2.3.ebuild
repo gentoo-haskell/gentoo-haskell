@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="A mid-level MySQL client library."
-HOMEPAGE="https://github.com/mailrank/mysql-simple"
+HOMEPAGE="https://github.com/bos/mysql-simple"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
