@@ -6,7 +6,7 @@ EAPI=4
 
 # nocabaldep - uses uuagc-cabal
 CABAL_FEATURES="bin nocabaldep"
-inherit eutils git-2 haskell-cabal
+inherit git-2 haskell-cabal
 
 MY_PN="HNC"
 MY_P="${MY_PN}-${PV}"
@@ -35,12 +35,10 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}"-9999-0001-SPL.cabal-remove-haskell98-package-from-Haskell2010-.patch
-	epatch "${FILESDIR}/${PN}"-9999-no-haskell98.patch
 	find "${S}" -name '*.ag' | while read bad_file; do
 		mv -v "${bad_file}" "${bad_file}.orig" || die
 		# uuagc does not handle NON-ASCII encodings
-		iconv -c -f cp1251 -t ASCII < "${bad_file}.orig" >"${bad_file}" || die
+		iconv -c -f UTF-8 -t ASCII < "${bad_file}.orig" >"${bad_file}" || die
 	done
 }
 
