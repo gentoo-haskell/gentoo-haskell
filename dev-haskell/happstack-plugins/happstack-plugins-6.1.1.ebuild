@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.2*
+RDEPEND="=dev-haskell/happstack-server-6.3*
 		>=dev-haskell/hinotify-0.3.2
 		dev-haskell/mtl
 		>=dev-haskell/plugins-1.5.1.4
