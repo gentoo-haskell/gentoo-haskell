@@ -15,13 +15,13 @@ SRC_URI=""
 LICENSE="BSD"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="+gnome2 gnome3 xfce4"
 
 RDEPEND="sys-apps/dbus
 	gnome2? ( gnome-base/gnome-panel )
 	gnome3? ( >=gnome-base/gnome-panel-3.0.2 )
-	xfce4? ( xfce4-base/xfce4-panel )
+	xfce4? ( xfce-base/xfce4-panel )
 	dev-libs/glib:2
 	dev-haskell/hdbus
 	x11-libs/gtk+:2"
@@ -34,7 +34,7 @@ src_prepare() {
 src_configure() {
 	local myconf
 	myconf=""
-	
+
 	if use gnome2; then
 		myconf="${myconf} --with-panel=gnome2"
 	fi
@@ -49,7 +49,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install 
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS.md README.md xmonad.hs
 }
 

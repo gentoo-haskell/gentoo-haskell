@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit autotools gnome2 
+inherit autotools gnome2
 
 DESCRIPTION="Gnome and XFCE applet for displaying XMonad log"
 HOMEPAGE="https://github.com/alexkay/xmonad-log-applet"
@@ -20,7 +20,7 @@ RESTRICT="mirror"
 RDEPEND="sys-apps/dbus
 	gnome2? ( gnome-base/gnome-panel )
 	gnome3? ( >=gnome-base/gnome-panel-3.0.2 )
-	xfce4? ( xfce4-base/xfce4-panel )
+	xfce4? ( xfce-base/xfce4-panel )
 	dev-libs/glib:2
 	dev-haskell/hdbus
 	x11-libs/gtk+:2"
@@ -33,7 +33,7 @@ src_prepare() {
 src_configure() {
 	local myconf
 	myconf=""
-	
+
 	if use gnome2; then
 		myconf="${myconf} --with-panel=gnome2"
 	fi
@@ -48,7 +48,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install 
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS.md README.md
 	dodoc "${FILESDIR}"/xmonad.hs
 }
