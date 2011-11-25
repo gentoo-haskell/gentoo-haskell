@@ -1,0 +1,16 @@
+Fixes following breakage:
+
+    $ ghci -package hoogle
+    Loading package hoogle-4.2.7 ... linking ... ghc: /usr/lib64/hoogle-4.2.7/ghc-7.2.2/HShoogle-4.2.7.o: unknown symbol `hooglezm4zi2zi7_Pathszuhoogle_version1_closure'
+diff --git a/hoogle.cabal b/hoogle.cabal
+index 2e3e824..889b0ce 100644
+--- a/hoogle.cabal
++++ b/hoogle.cabal
+@@ -100,6 +100,7 @@ library
+         Hoogle.Store.ReadBuffer
+         Hoogle.Store.Type
+         Hoogle.Store.WriteBuffer
++        Paths_hoogle
+ 
+ executable hoogle
+     main-is:            Main.hs
