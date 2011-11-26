@@ -20,7 +20,6 @@ IUSE="test"
 
 RDEPEND=">=dev-lang/ghc-7.2.2"
 DEPEND="${RDEPEND}
-		dev-haskell/safe
 		>=dev-haskell/cabal-1.9.2
 		test? (
 			>=dev-haskell/cabal-1.10
