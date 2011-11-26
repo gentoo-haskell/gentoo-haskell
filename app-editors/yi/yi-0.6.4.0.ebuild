@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="The Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
@@ -56,11 +56,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.10"
 
+PATCHES=("${FILESDIR}/${PN}-0.6.4.0-ghc-7.2.patch")
+
 src_prepare() {
-	sed -e 's@derive >=2.4 && <2.5@derive >=2.4 \&\& <2.6@' \
-		-e 's@unix-compat >=0.1 && <0.3@unix-compat >=0.1 \&\& <0.4@g' \
-		-e 's@Cabal >= 1.10 && < 1.11@Cabal >= 1.10 \&\& < 1.13@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		if use gtk; then
 			die "yi removed support for 6.12.3, backport does not work with gtk use flag"
