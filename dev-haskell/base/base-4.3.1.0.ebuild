@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-lang/ghc-7.2.2"
+RDEPEND=">=dev-lang/ghc-7.0.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.9.2
 		test? (
