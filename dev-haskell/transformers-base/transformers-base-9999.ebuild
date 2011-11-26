@@ -21,7 +21,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="<dev-haskell/base-unicode-symbols-0.3
-		dev-haskell/base
+		=dev-haskell/base-4.3.1.0
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.9.2
