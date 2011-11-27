@@ -24,3 +24,8 @@ RDEPEND="=dev-haskell/glib-0.12*
 		x11-libs/gtk+"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@haskell98@base@' \
+		-i "${S}/${PN}.cabal" || die "Could not change haskell98 to base for ghc 7.2.2"
+}
