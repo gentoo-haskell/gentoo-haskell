@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Backend for the groundhog library using sqlite3."
 HOMEPAGE="http://hackage.haskell.org/package/groundhog-sqlite"
@@ -28,3 +28,5 @@ RDEPEND="=dev-haskell/enumerator-0.4*
 		>=dev-db/sqlite-3.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+PATCHES=("${FILESDIR}/${PN}-0.0.1.1-ghc-7.2.patch")
