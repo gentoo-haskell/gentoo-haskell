@@ -32,4 +32,3 @@ src_prepare() {
 			-i "${S}/${PN}.cabal" || die "Could not change default-language to Haskell98"
 	fi
 }
-
