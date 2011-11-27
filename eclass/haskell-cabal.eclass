@@ -182,10 +182,12 @@ cabal-bootstrap() {
 	einfo "Using cabal-$(cabal-version)."
 
 	make_setup() {
-		$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" \
+		set -- -package "${cabalpackage}" --make "${setupmodule}" \
 			${GHC_BOOTSTRAP_FLAGS} \
 			"$@" \
 			-o setup
+		echo $(ghc-getghc) "$@"
+		$(ghc-getghc) "$@"
 	}
 	if $(ghc-supports-shared-libraries); then
 		# some custom build systems might use external libraries,
@@ -218,17 +220,23 @@ cabal-hoogle-convert() {
 		hoogletxt="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.txt"
 		hooglehoo="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.hoo"
 		if [[ -f ${hoogletxt} ]]; then
-			hoogle convert ${hoogletxt} ${hooglehoo}
+			set -- convert ${hoogletxt} ${hooglehoo} "$@"
+			echo hoogle "$@"
+			hoogle "$@"
 		fi
 	fi
 }
 
 cabal-hscolour() {
-	./setup hscolour || die "setup hscolour failed"
+	set -- hscolour "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup hscolour failed"
 }
 
 cabal-haddock() {
-	./setup haddock || die "setup haddock failed"
+	set -- haddock "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup haddock failed"
 }
 
 cabal-hoogle() {
@@ -238,11 +246,15 @@ cabal-hoogle() {
 
 cabal-hscolour-haddock() {
 	# --hyperlink-source implies calling 'setup hscolour'
-	./setup haddock --hyperlink-source || die "setup haddock --hyperlink-source failed"
+	set -- haddock --hyperlink-source
+	echo ./setup "$@"
+	./setup "$@" --hyperlink-source || die "setup haddock --hyperlink-source failed"
 }
 
 cabal-hoogle-haddock() {
-	./setup haddock --hoogle || die "setup haddock --hoogle failed"
+	set -- haddock --hoogle
+	echo ./setup "$@"
+	./setup "$@" || die "setup haddock --hoogle failed"
 	cabal-hoogle-convert
 }
 
@@ -318,7 +330,7 @@ cabal-configure() {
 		$(ghc-supports-shared-libraries) && \
 			cabalconf="${cabalconf} --enable-shared"
 
-	./setup configure \
+	set -- configure \
 		--ghc --prefix="${EPREFIX}"/usr \
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
@@ -330,11 +342,15 @@ cabal-configure() {
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
 		${CABAL_EXTRA_CONFIGURE_FLAGS} \
-		"$@" || die "setup configure failed"
+		"$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup configure failed"
 }
 
 cabal-build() {
 	unset LANG LC_ALL LC_MESSAGES
+	set --  build "$@"
+	echo ./setup "$@"
 	./setup build \
 		|| die "setup build failed"
 }
@@ -342,9 +358,9 @@ cabal-build() {
 cabal-copy() {
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && ED=${D}
 
-	./setup copy \
-		--destdir="${D}" \
-		|| die "setup copy failed"
+	set -- copy --destdir="${D}" "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup copy failed"
 
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
@@ -510,7 +526,9 @@ haskell-cabal_src_test() {
 		einfo ">>> No tests for dummy library: ${CATEGORY}/${PF}"
 	else
 		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
-		./setup test || die "cabal test failed"
+		set -- test "$@"
+		echo ./setup "$@"
+		./setup "$@" || die "cabal test failed"
 	fi
 
 	popd > /dev/null
