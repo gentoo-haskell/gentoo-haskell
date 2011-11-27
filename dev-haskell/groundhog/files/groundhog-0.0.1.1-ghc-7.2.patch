@@ -1,0 +1,11 @@
+--- groundhog-0.0.1.1-orig/groundhog.cabal	2011-06-17 17:55:41.000000000 +1000
++++ groundhog-0.0.1.1/groundhog.cabal	2011-11-26 19:19:48.407968088 +1100
+@@ -28,4 +28,6 @@
+                      Database.Groundhog.Generic.Sql
+                      Database.Groundhog.TH
+     ghc-options:     -Wall
+-    default-language: Haskell2010
+\ No newline at end of file
++    default-language: Haskell2010
++    if impl(ghc >= 7.2)
++       extensions: NondecreasingIndentation
