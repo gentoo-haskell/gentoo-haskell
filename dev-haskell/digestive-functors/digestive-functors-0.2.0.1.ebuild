@@ -18,8 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2.0.0.0
+RDEPEND="dev-haskell/mtl
 		>=dev-haskell/text-0.10
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@mtl        >= 2.0.0.0 && < 3@mtl        >= 1.1.0.0 \&\& < 3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
