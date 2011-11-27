@@ -1,8 +1,6 @@
-diff --git a/Agda.cabal b/Agda.cabal
-index 9d476f5..715090f 100644
---- a/Agda.cabal
-+++ b/Agda.cabal
-@@ -40,7 +40,6 @@ extra-source-files: src/full/Agda/undefined.h
+--- agda-9999-orig/Agda.cabal	2011-11-26 00:25:45.382153242 +1100
++++ agda-9999/Agda.cabal	2011-11-26 17:43:50.076056097 +1100
+@@ -40,7 +40,6 @@
                      doc/release-notes/*.txt
  data-dir:           src/data
  data-files:         Agda.css
@@ -10,10 +8,10 @@ index 9d476f5..715090f 100644
                      EpicInclude/AgdaPrelude.e
                      EpicInclude/stdagda.c
                      EpicInclude/stdagda.h
-@@ -332,16 +331,3 @@ library
- 
-   if flag(debug)
-     ghc-options:    -ddump-simpl-stats
+@@ -323,16 +322,3 @@
+   if impl(ghc >= 7.2)
+     ghc-options:    -fwarn-identities
+   ghc-prof-options: -auto-all
 -
 -executable agda-mode
 -  hs-source-dirs:   src/agda-mode
