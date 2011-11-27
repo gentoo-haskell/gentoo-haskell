@@ -25,3 +25,8 @@ RDEPEND=">=dev-lang/ghc-6.8.2
 		sci-visualization/gnuplot"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@process >= 1.0 && < 1.1@process >= 1.0 \&\& < 1.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
