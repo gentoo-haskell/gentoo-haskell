@@ -24,8 +24,3 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@case-insensitive >=0.2 && <0.4@case-insensitive >=0.2 \&\& <0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
