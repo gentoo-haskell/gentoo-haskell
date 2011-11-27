@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="manage files with git, without checking their contents into git"
 HOMEPAGE="http://git-annex.branchable.com/"
@@ -34,3 +34,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/time
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
+
+PATCHES=("${FILESDIR}/${PN}-3.20111122-ghc-7.2.patch")
