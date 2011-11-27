@@ -7,13 +7,13 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="HsOpenSSL"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="(Incomplete) OpenSSL binding for Haskell"
-HOMEPAGE="http://cielonegro.org/HsOpenSSL.html"
+HOMEPAGE="https://github.com/phonohawk/HsOpenSSL"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="public-domain"
@@ -29,3 +29,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${MY_PN}-0.10.1.2-ghc-6.12.patch")
