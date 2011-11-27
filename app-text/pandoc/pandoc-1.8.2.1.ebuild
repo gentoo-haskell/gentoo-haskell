@@ -34,7 +34,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		>=dev-haskell/xml-1.3.5
 		>=dev-haskell/zip-archive-0.1.1.7
 		>=dev-lang/ghc-6.10.1
-		highlight? ( <dev-haskell/highlighting-kate-0.3 )
+		highlight? ( <dev-haskell/highlighting-kate-0.4 )
 		pdf? ( virtual/latex-base )"
 
 DEPEND="${RDEPEND}
@@ -63,7 +63,8 @@ installMan() {
 
 src_prepare() {
 	base_src_prepare
-	sed -e 's@json >= 0.4 && < 0.5@json >= 0.4 \&\& < 0.6@' \
+	sed -e 's@json >= 0.4 && < 0.5@json >= 0.4 \&\& < 0.6@g' \
+		-e 's@highlighting-kate >= 0.2.9 && < 0.3@highlighting-kate >= 0.2.9 \&\& < 0.4@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
