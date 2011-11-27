@@ -36,4 +36,3 @@ src_compile () {
 		cabal_src_compile
 	fi
 }
-
