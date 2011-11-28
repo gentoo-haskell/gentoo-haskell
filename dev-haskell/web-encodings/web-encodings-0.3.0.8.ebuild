@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/failure-0.2
 		=dev-haskell/text-0.11*
-		<dev-haskell/time-1.4
+		>=dev-haskell/time-1.1.2.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
