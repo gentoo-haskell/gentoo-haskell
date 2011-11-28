@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Syntax highlighting"
 HOMEPAGE="http://github.com/jgm/highlighting-kate"
@@ -24,9 +24,6 @@ RDEPEND="dev-haskell/parsec
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-0.3-fix-clojure.patch"
-	"${FILESDIR}/${PN}-0.3-clojure-missing-files.patch")
 
 src_configure() {
 	cabal_src_configure $(cabal_flag executable)
