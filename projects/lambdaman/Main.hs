@@ -34,9 +34,14 @@ data MDigest = MDigest {
     mSha256 :: String
   } deriving (Eq, Show)
 
-data ManifestKind = DIST | AUX | EBUILD deriving (Eq, Show)
+data ManifestKind
+       = DIST
+       | AUX
+       | EBUILD
+       | MISC
+       deriving (Eq, Show)
 
-data Repo 
+data Repo
       = Dir FilePath [Repo]
       | File FilePath Int String
       deriving (Eq, Show)
@@ -52,9 +57,10 @@ parseManifestLine :: String -> Maybe MDigest
 parseManifestLine row = do
   [kindStr, fn, fs, "RMD160", rmd, "SHA1", sha1, "SHA256", sha256] <- return (words row)
   kind <- case kindStr of
-            "AUX" -> return AUX
-            "DIST" -> return DIST
+            "AUX"    -> return AUX
+            "DIST"   -> return DIST
             "EBUILD" -> return EBUILD
+            "MISC"   -> return MISC
             _ -> fail "unknown type"
   return (MDigest kind fn (read fs) rmd sha1 sha256)
 
@@ -110,8 +116,6 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
       | File fn _fs _digest <- files
       , takeBaseName fn /= "Manifest" -- manifests are never included in the manifest
       , isNothing (lookupMani fn)
-      , not ("/ChangeLog" `isSuffixOf` fn)   -- ChangeLog is not part of the manifest
-      , not ("/metadata.xml" `isSuffixOf` fn) -- neither is metadata.xml
       ]
 
     invalidEbuildDigests (Dir _ files) = -- look for incorrect filesize or manifest inconsistencies
@@ -129,6 +133,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
             AUX -> filesDir
             DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
             EBUILD -> return topRepo
+            MISC -> return topRepo
       , let fullName = makeRelative "." (dn </> mFileName m)
       , isNothing (lookupFile files (mFileName m))
       ]
@@ -141,6 +146,7 @@ verifyManifests awares (manifest, topRepo@(Dir _ packageDir)) =
             AUX -> filesDir
             DIST -> Nothing -- we don't check distfiles, our SHA is too slow for big files
             EBUILD -> return topRepo
+            MISC -> return topRepo
       , let fullName = makeRelative "." (dn </> mFileName m)
       , not (inGit fullName)
       ]
