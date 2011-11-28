@@ -27,11 +27,6 @@ DEPEND="${RDEPEND}
 
 SITEFILE="60${PN}-gentoo.el"
 
-src_prepare() {
-	sed -e 's@cpphs == 1.11.\*@cpphs >= 1.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen cpphs dependency"
-}
-
 src_configure() {
 	threaded_flag=""
 	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
