@@ -37,10 +37,3 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}"-4.2.7-add-missing-Paths_hoogle.patch
-	sed -e 's@case-insensitive >= 0.2 && < 0.4@case-insensitive >= 0.2 \&\& < 0.5@' \
-		-e 's@cmdargs >= 0.7 && < 0.9@cmdargs >= 0.7 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
