@@ -10,7 +10,7 @@
 module Main ( main ) where
 
 import Control.Monad ( forM, filterM )
-import Data.List ( isSuffixOf, (\\) )
+import Data.List ( (\\) )
 import System.Directory ( getDirectoryContents, doesFileExist )
 import System.Posix.Files (getFileStatus, isDirectory)
 
