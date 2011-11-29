@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="A fast, light-weight web server for WAI applications."
-HOMEPAGE="http://github.com/snoyberg/warp"
+HOMEPAGE="http://github.com/yesodweb/wai"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -20,20 +20,14 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
-		=dev-haskell/case-insensitive-0.4*
+		>=dev-haskell/case-insensitive-0.2
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/network-2.3*
 		=dev-haskell/simple-sendfile-0.1*
 		=dev-haskell/transformers-0.2*
-		<dev-haskell/unix-compat-0.4
+		>=dev-haskell/unix-compat-0.2
 		=dev-haskell/wai-0.4*
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@unix-compat                   >= 0.2      && < 0.3@unix-compat                   >= 0.2      \&\& < 0.4@' \
-		-e 's@case-insensitive              >= 0.2      && < 0.4@case-insensitive              >= 0.2      \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
