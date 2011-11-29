@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An xhtml templating system"
 HOMEPAGE="http://snapframework.com/"
@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
-		=dev-haskell/attoparsec-text-0.8*
+RDEPEND="=dev-haskell/attoparsec-0.10*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/directory-tree
 		=dev-haskell/monadcatchio-transformers-0.2*
@@ -31,3 +30,5 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/heist-0.6.0.1-attoparsec-0.10.patch")
