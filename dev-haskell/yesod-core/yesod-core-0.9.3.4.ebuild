@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="=dev-haskell/aeson-native-0.3*
+RDEPEND="=dev-haskell/aeson-0.3*
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-html-0.4*
-		=dev-haskell/case-insensitive-0.4*
-		<dev-haskell/cereal-0.4
+		>=dev-haskell/case-insensitive-0.2
+		=dev-haskell/cereal-0.3*
 		=dev-haskell/clientsession-0.7*
 		=dev-haskell/cookie-0.3*
 		=dev-haskell/data-object-0.3*
@@ -39,7 +39,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/shakespeare-js-0.10*
 		=dev-haskell/strict-concurrency-0.2.4*
 		<dev-haskell/text-0.12
-		<dev-haskell/time-1.4
+		>=dev-haskell/time-1.1.4
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/vector-0.9*
 		=dev-haskell/wai-0.4*
@@ -56,9 +56,17 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
-		-e 's@case-insensitive          >= 0.2      && < 0.4@case-insensitive          >= 0.2      \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	mkdir -p "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/en.msg" "${S}/test"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest.hs" "${S}/test"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/CleanPath.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/ErrorHandling.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/Exceptions.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/InternalRequest.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/Links.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/Media.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/NoOverloadedStrings.hs" "${S}/test/YesodCoreTest"
+	cp "${FILESDIR}/yesod-core-0.9.3.4/test/YesodCoreTest/Widget.hs" "${S}/test/YesodCoreTest"
 }
 
 src_configure() {
