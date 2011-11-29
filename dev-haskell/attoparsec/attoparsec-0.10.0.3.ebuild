@@ -10,15 +10,20 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Fast combinator parsing for bytestrings"
-HOMEPAGE="https://bitbucket.org/bos/attoparsec"
+HOMEPAGE="https://github.com/bos/attoparsec"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="dev-haskell/deepseq
+		>=dev-haskell/text-0.11.1.5
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
