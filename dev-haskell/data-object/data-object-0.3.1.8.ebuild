@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/failure-0.1*
-		<dev-haskell/text-0.12
-		<dev-haskell/time-1.3
+		>=dev-haskell/text-0.5
+		>=dev-haskell/time-1.1.4
 		>=dev-lang/ghc-6.8.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
