@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-native-0.3*
+RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/authenticate-0.10*
 		=dev-haskell/blaze-html-0.4*
 		=dev-haskell/control-monad-attempt-0.3*
 		=dev-haskell/hamlet-0.10*
 		=dev-haskell/http-enumerator-0.7*
-		=dev-haskell/mime-mail-0.3*
+		<dev-haskell/mime-mail-0.5
 		=dev-haskell/persistent-0.6*
 		=dev-haskell/persistent-template-0.6*
 		<dev-haskell/puremd5-2.2
@@ -32,12 +32,13 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/sha-1.5*
 		=dev-haskell/shakespeare-css-0.10*
 		<dev-haskell/text-0.12
-		=dev-haskell/transformers-0.2*
+		>=dev-haskell/transformers-0.2.2
+		<dev-haskell/transformers-0.3
 		=dev-haskell/wai-0.4*
 		=dev-haskell/yesod-core-0.9*
 		=dev-haskell/yesod-form-0.3*
 		=dev-haskell/yesod-json-0.2*
 		=dev-haskell/yesod-persistent-0.2*
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0"
