@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-native-0.3*
+RDEPEND="=dev-haskell/aeson-0.3*
 		=dev-haskell/shakespeare-js-0.10*
 		<dev-haskell/text-0.12
-		dev-haskell/vector
+		>=dev-haskell/vector-0.9
 		=dev-haskell/yesod-core-0.9*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
