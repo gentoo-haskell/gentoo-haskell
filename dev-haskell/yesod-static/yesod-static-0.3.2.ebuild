@@ -20,12 +20,13 @@ IUSE="test"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cereal-0.3*
+		=dev-haskell/enumerator-0.4*
 		<dev-haskell/file-embed-0.5
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/puremd5-2.1*
-		<dev-haskell/text-1.0
+		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
-		<dev-haskell/unix-compat-0.4
+		>=dev-haskell/unix-compat-0.2
 		=dev-haskell/wai-0.4*
 		=dev-haskell/wai-app-static-0.3*
 		=dev-haskell/yesod-core-0.9*
@@ -40,11 +41,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cp -r "${FILESDIR}/${PN}-0.3.0.1/"* "${S}"/ || die
-
-	sed -e 's@containers                >= 0.4@containers                >= 0.3@' \
-		-e 's@unix-compat               >= 0.2      && < 0.3@unix-compat               >= 0.2      \&\& < 0.4@' \
-		-e 's@hspec >= 0.8   && < 0.9@hspec >= 0.8   \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
