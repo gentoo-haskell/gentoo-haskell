@@ -25,6 +25,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		>=dev-haskell/cryptocipher-0.2.5
 		>=dev-haskell/entropy-0.2.1
 		dev-haskell/skein
+		>=dev-haskell/tagged-0.1
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
