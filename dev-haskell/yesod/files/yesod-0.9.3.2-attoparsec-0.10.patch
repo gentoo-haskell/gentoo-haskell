@@ -1,0 +1,31 @@
+--- yesod-0.9.3.2-orig/yesod.cabal	2011-11-29 00:03:38.000000000 +1100
++++ yesod-0.9.3.2/yesod.cabal	2011-11-30 00:29:00.538702638 +1100
+@@ -104,7 +104,7 @@
+                      , Cabal              >= 1.8          && < 1.13
+                      , unix-compat        >= 0.2          && < 0.4
+                      , containers         >= 0.2          && < 0.5
+-                     , attoparsec-text    >= 0.8.5        && < 0.8.5.2
++                     , attoparsec         >= 0.10         && < 0.11
+                      , http-types         >= 0.6.1        && < 0.7
+                      , blaze-builder      >= 0.2.1.4      && < 0.4
+                      , filepath           >= 1.1          && < 1.3
+--- yesod-0.9.3.2-orig/Build.hs	2011-11-29 00:03:38.000000000 +1100
++++ yesod-0.9.3.2/Build.hs	2011-11-30 00:28:15.121613100 +1100
+@@ -10,7 +10,7 @@
+ -- FIXME there's a bug when getFileStatus applies to a file
+ -- temporary deleted (e.g., Vim saving a file)
+ 
+-import           Control.Applicative ((<|>))
++import           Control.Applicative ((<|>), many)
+ import           Control.Exception (SomeException, try)
+ import           Control.Monad (when, filterM, forM, forM_)
+ 
+@@ -120,7 +120,7 @@
+ determineHamletDeps :: FilePath -> IO [FilePath]
+ determineHamletDeps x = do
+     y <- TIO.readFile x -- FIXME catch IO exceptions
+-    let z = A.parse (A.many $ (parser <|> (A.anyChar >> return Nothing))) y
++    let z = A.parse (many $ (parser <|> (A.anyChar >> return Nothing))) y
+     case z of
+         A.Fail{} -> return []
+         A.Done _ r -> mapM go r >>= filterM doesFileExist . concat
