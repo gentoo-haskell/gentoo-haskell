@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A configuration management library for programs and daemons"
-HOMEPAGE="http://github.com/mailrank/configurator"
+HOMEPAGE="http://github.com/bos/configurator"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-text-0.8.5.1
+RDEPEND=">=dev-haskell/attoparsec-0.10.0.2
 		dev-haskell/hashable
 		dev-haskell/text
 		dev-haskell/unix-compat
