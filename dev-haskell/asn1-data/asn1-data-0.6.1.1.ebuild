@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
-		=dev-haskell/attoparsec-enumerator-0.2*
+RDEPEND="<dev-haskell/attoparsec-0.11
+		<dev-haskell/attoparsec-enumerator-0.4
 		=dev-haskell/enumerator-0.4*
 		dev-haskell/mtl
 		>=dev-haskell/text-0.11
