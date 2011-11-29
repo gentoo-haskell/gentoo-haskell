@@ -9,8 +9,8 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Convert an Attoparsec parser into an iteratee"
-HOMEPAGE="http://john-millikin.com/software/attoparsec-enumerator/"
+DESCRIPTION="Pass input from an enumerator to an Attoparsec parser."
+HOMEPAGE="https://john-millikin.com/software/attoparsec-enumerator/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
+RDEPEND="=dev-haskell/attoparsec-0.10*
 		=dev-haskell/enumerator-0.4*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
