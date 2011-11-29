@@ -39,7 +39,7 @@ RDEPEND="=dev-haskell/binary-0.5*
 		>=dev-haskell/quickcheck-2.1.0.2
 		=dev-haskell/regex-base-0.93*
 		=dev-haskell/regex-tdfa-1.1*
-		=dev-haskell/rosezipper-0.1*
+		<dev-haskell/rosezipper-0.3
 		=dev-haskell/split-0.1*
 		<dev-haskell/time-1.3
 		dev-haskell/uniplate
