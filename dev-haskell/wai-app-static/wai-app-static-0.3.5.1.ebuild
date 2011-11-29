@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="WAI application for static serving"
 HOMEPAGE="http://www.yesodweb.com/book/wai"
@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		dev-haskell/http-date
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/text-1.0
-		<dev-haskell/time-1.4
+		>=dev-haskell/time-1.1.4
 		<dev-haskell/transformers-0.3
 		<dev-haskell/unix-compat-0.4
 		=dev-haskell/wai-0.4*
@@ -37,14 +37,6 @@ DEPEND="${RDEPEND}
 				dev-haskell/hunit
 				dev-haskell/wai-test
 		)"
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}-test.patch"
-
-	sed -e 's@unix-compat               >= 0.2      && < 0.3@unix-compat               >= 0.2      \&\& < 0.4@g' \
-		-e 's@hspec >= 0.8 && < 0.9@hspec >= 0.8 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
