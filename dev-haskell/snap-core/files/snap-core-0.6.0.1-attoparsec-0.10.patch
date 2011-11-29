@@ -1,0 +1,277 @@
+--- snap-core-0.6.0.1-orig/snap-core.cabal	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/snap-core.cabal	2011-11-29 22:37:07.270497192 +1100
+@@ -128,6 +128,7 @@
+   other-modules:
+     Snap.Internal.Instances,
+     Snap.Internal.Iteratee.BoyerMooreHorspool,
++    Snap.Internal.Parsing.FastSet,
+     Snap.Internal.Routing,
+     Snap.Internal.Types,
+     Snap.Internal.Test.RequestBuilder,
+@@ -135,7 +136,7 @@
+ 
+ 
+   build-depends:
+-    attoparsec >= 0.8.0.2 && < 0.10,
++    attoparsec >= 0.8.0.2 && < 0.11,
+     attoparsec-enumerator >= 0.2.0.3,
+     base >= 4 && < 5,
+     base16-bytestring <= 0.2,
+@@ -143,7 +144,7 @@
+     blaze-builder-enumerator >= 0.2 && <0.3,
+     bytestring,
+     bytestring-nums,
+-    case-insensitive >= 0.3 && < 0.4,
++    case-insensitive >= 0.3 && < 0.5,
+     containers,
+     deepseq >= 1.1 && <1.3,
+     directory,
+@@ -156,7 +157,7 @@
+     mwc-random >= 0.10 && <0.11,
+     old-locale,
+     old-time,
+-    regex-posix <= 0.94.4,
++    regex-posix < 0.96,
+     text >= 0.11 && <0.12,
+     time >= 1.0 && < 1.4,
+     transformers == 0.2.*,
+--- snap-core-0.6.0.1-orig/test/snap-core-testsuite.cabal	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/test/snap-core-testsuite.cabal	2011-11-29 11:14:13.644583418 +1100
+@@ -23,7 +23,7 @@
+ 
+   build-depends:
+     QuickCheck >= 2.3.0.2,
+-    attoparsec >= 0.8.1 && < 0.10,
++    attoparsec >= 0.8.1 && < 0.11,
+     attoparsec-enumerator >= 0.2.0.3,
+     base >= 4 && < 5,
+     base16-bytestring == 0.1.*,
+@@ -31,7 +31,7 @@
+     blaze-builder-enumerator >= 0.2 && <0.3,
+     bytestring,
+     bytestring-nums,
+-    case-insensitive >= 0.3 && < 0.4,
++    case-insensitive >= 0.3 && < 0.5,
+     cereal == 0.3.*,
+     containers,
+     deepseq >= 1.1 && <1.3,
+--- snap-core-0.6.0.1-orig/src/Snap/Internal/Parsing.hs	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/src/Snap/Internal/Parsing.hs	2011-11-29 23:06:21.387902653 +1100
+@@ -7,10 +7,9 @@
+ import           Control.Applicative
+ import           Control.Arrow (first, second)
+ import           Control.Monad
+-import           Data.Attoparsec.Char8 hiding (Done, many)
++import           Data.Attoparsec.Char8
+ import qualified Data.Attoparsec.Char8 as Atto
+-import           Data.Attoparsec.FastSet (FastSet)
+-import qualified Data.Attoparsec.FastSet as FS
++import qualified Data.Attoparsec.Types as AttoT
+ import           Data.Bits
+ import           Data.ByteString.Char8 (ByteString)
+ import qualified Data.ByteString.Char8 as S
+@@ -34,15 +33,16 @@
+ 
+ ------------------------------------------------------------------------------
+ import           Snap.Internal.Http.Types
+-
++import           Snap.Internal.Parsing.FastSet (FastSet)
++import qualified Snap.Internal.Parsing.FastSet as FS
+ 
+ ------------------------------------------------------------------------------
+ fullyParse :: ByteString -> Parser a -> Either String a
+ fullyParse s p =
+     case r' of
+-      (Fail _ _ e)    -> Left e
+-      (Partial _)     -> Left "parse failed"
+-      (Atto.Done _ x) -> Right x
++      (AttoT.Fail _ _ e)    -> Left e
++      (AttoT.Partial _)     -> Left "parse failed"
++      (AttoT.Done _ x) -> Right x
+   where
+     r  = parse p s
+     r' = feed r ""
+@@ -257,7 +257,7 @@
+   where
+     r = parse p s
+ 
+-    toResult (Atto.Done _ c) = Just c
++    toResult (AttoT.Done _ c) = Just c
+     toResult _               = Nothing
+ 
+ 
+@@ -352,7 +352,7 @@
+ 
+ ------------------------------------------------------------------------------
+ finish :: Atto.Result a -> Atto.Result a
+-finish (Atto.Partial f) = flip feed "" $ f ""
++finish (AttoT.Partial f) = flip feed "" $ f ""
+ finish x                = x
+ 
+ 
+--- snap-core-0.6.0.1-orig/src/Snap/Util/GZip.hs	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/src/Snap/Util/GZip.hs	2011-11-29 23:07:36.704812338 +1100
+@@ -11,11 +11,11 @@
+ 
+ import           Blaze.ByteString.Builder
+ import qualified Codec.Zlib.Enum as Z
+-import           Control.Applicative hiding (many)
++import           Control.Applicative
+ import           Control.Exception
+ import           Control.Monad
+ import           Control.Monad.Trans
+-import           Data.Attoparsec.Char8 hiding (Done)
++import           Data.Attoparsec.Char8
+ import           Data.ByteString.Char8 (ByteString)
+ import qualified Data.ByteString.Char8 as S
+ import qualified Data.Char as Char
+--- snap-core-0.6.0.1-orig/src/Snap/Util/FileUploads.hs	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/src/Snap/Util/FileUploads.hs	2011-11-29 23:06:59.449867638 +1100
+@@ -72,7 +72,7 @@
+ import           Control.Monad.CatchIO
+ import           Control.Monad.Trans
+ import qualified Data.Attoparsec.Char8 as Atto
+-import           Data.Attoparsec.Char8 hiding (many, Result(..))
++import           Data.Attoparsec.Char8 hiding (Result(..))
+ import           Data.Attoparsec.Enumerator
+ import qualified Data.ByteString.Char8 as S
+ import           Data.ByteString.Char8 (ByteString)
+--- snap-core-0.6.0.1-orig/src/Snap/Util/FileServe.hs	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/src/Snap/Util/FileServe.hs	2011-11-29 23:06:45.427512109 +1100
+@@ -32,7 +32,7 @@
+ import           Control.Monad
+ import           Control.Monad.CatchIO
+ import           Control.Monad.Trans
+-import           Data.Attoparsec.Char8 hiding (Done)
++import           Data.Attoparsec.Char8
+ import qualified Data.ByteString.Char8 as S
+ import           Data.ByteString.Char8 (ByteString)
+ import           Data.ByteString.Internal (c2w)
+--- snap-core-0.6.0.1-orig/CONTRIBUTORS	2011-10-29 06:00:16.000000000 +1100
++++ snap-core-0.6.0.1/CONTRIBUTORS	2011-11-29 11:12:12.921615722 +1100
+@@ -8,3 +8,4 @@
+ Jonas Kramer <jkramer@nex.scrapping.cc>
+ Jurriën Stutterheim <j.stutterheim@me.com>
+ Jasper Van der Jeugt <m@jaspervdj.be>
++Bryan O'Sullivan <bos@serpentine.com>
+--- /dev/null	2011-11-29 09:28:57.931238303 +1100
++++ snap-core-0.6.0.1/src/Snap/Internal/Parsing/FastSet.hs	2011-11-29 11:02:28.052029891 +1100
+@@ -0,0 +1,118 @@
++{-# LANGUAGE BangPatterns, MagicHash #-}
++
++-----------------------------------------------------------------------------
++-- |
++-- Module      :  Snap.Internal.Parsing.FastSet
++-- Copyright   :  Bryan O'Sullivan 2008
++-- License     :  BSD3
++-- 
++-- Maintainer  :  bos@serpentine.com
++-- Stability   :  experimental
++-- Portability :  unknown
++--
++-- Fast set membership tests for 'Word8' and 8-bit 'Char' values.  The
++-- set representation is unboxed for efficiency.  For small sets, we
++-- test for membership using a binary search.  For larger sets, we use
++-- a lookup table.
++--
++-- Note: this module copied here from the attoparsec source because it was made
++-- private in version 0.10.
++-- 
++-----------------------------------------------------------------------------
++module Snap.Internal.Parsing.FastSet
++    (
++    -- * Data type
++      FastSet
++    -- * Construction
++    , fromList
++    , set
++    -- * Lookup
++    , memberChar
++    , memberWord8
++    -- * Debugging
++    , fromSet
++    -- * Handy interface
++    , charClass
++    ) where
++
++import Data.Bits ((.&.), (.|.))
++import Foreign.Storable (peekByteOff, pokeByteOff)
++import GHC.Base (Int(I#), iShiftRA#, narrow8Word#, shiftL#)
++import GHC.Word (Word8(W8#))
++import qualified Data.ByteString as B
++import qualified Data.ByteString.Char8 as B8
++import qualified Data.ByteString.Internal as I
++import qualified Data.ByteString.Unsafe as U
++
++data FastSet = Sorted { fromSet :: !B.ByteString }
++             | Table  { fromSet :: !B.ByteString }
++    deriving (Eq, Ord)
++
++instance Show FastSet where
++    show (Sorted s) = "FastSet Sorted " ++ show (B8.unpack s)
++    show (Table _) = "FastSet Table"
++
++-- | The lower bound on the size of a lookup table.  We choose this to
++-- balance table density against performance.
++tableCutoff :: Int
++tableCutoff = 8
++
++-- | Create a set.
++set :: B.ByteString -> FastSet
++set s | B.length s < tableCutoff = Sorted . B.sort $ s
++      | otherwise                = Table . mkTable $ s
++
++fromList :: [Word8] -> FastSet
++fromList = set . B.pack
++
++data I = I {-# UNPACK #-} !Int {-# UNPACK #-} !Word8
++
++shiftR :: Int -> Int -> Int
++shiftR (I# x#) (I# i#) = I# (x# `iShiftRA#` i#)
++
++shiftL :: Word8 -> Int -> Word8
++shiftL (W8# x#) (I# i#) = W8# (narrow8Word# (x# `shiftL#` i#))
++
++index :: Int -> I
++index i = I (i `shiftR` 3) (1 `shiftL` (i .&. 7))
++{-# INLINE index #-}
++
++-- | Check the set for membership.
++memberWord8 :: Word8 -> FastSet -> Bool
++memberWord8 w (Table t)  =
++    let I byte bit = index (fromIntegral w)
++    in  U.unsafeIndex t byte .&. bit /= 0
++memberWord8 w (Sorted s) = search 0 (B.length s - 1)
++    where search lo hi
++              | hi < lo = False
++              | otherwise =
++                  let mid = (lo + hi) `div` 2
++                  in case compare w (U.unsafeIndex s mid) of
++                       GT -> search (mid + 1) hi
++                       LT -> search lo (mid - 1)
++                       _ -> True
++
++-- | Check the set for membership.  Only works with 8-bit characters:
++-- characters above code point 255 will give wrong answers.
++memberChar :: Char -> FastSet -> Bool
++memberChar c = memberWord8 (I.c2w c)
++{-# INLINE memberChar #-}
++
++mkTable :: B.ByteString -> B.ByteString
++mkTable s = I.unsafeCreate 32 $ \t -> do
++            _ <- I.memset t 0 32
++            U.unsafeUseAsCStringLen s $ \(p, l) ->
++              let loop n | n == l = return ()
++                         | otherwise = do
++                    c <- peekByteOff p n :: IO Word8
++                    let I byte bit = index (fromIntegral c)
++                    prev <- peekByteOff t byte :: IO Word8
++                    pokeByteOff t byte (prev .|. bit)
++                    loop (n + 1)
++              in loop 0
++
++charClass :: String -> FastSet
++charClass = set . B8.pack . go
++    where go (a:'-':b:xs) = [a..b] ++ go xs
++          go (x:xs) = x : go xs
++          go _ = ""
