@@ -18,8 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/attoparsec-0.10
+RDEPEND="<dev-haskell/attoparsec-0.11
 		<dev-haskell/text-0.12
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@attoparsec >= 0.7     && < 0.10@attoparsec >= 0.7     \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
