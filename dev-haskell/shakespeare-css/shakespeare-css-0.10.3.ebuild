@@ -29,11 +29,6 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-src_prepare() {
-	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
-
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
