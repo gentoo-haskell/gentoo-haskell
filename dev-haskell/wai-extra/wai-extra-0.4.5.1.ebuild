@@ -20,13 +20,13 @@ IUSE="test"
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
-		=dev-haskell/case-insensitive-0.4*
+		>=dev-haskell/case-insensitive-0.2
 		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
-		<dev-haskell/text-1.0
-		<dev-haskell/time-1.3
+		<dev-haskell/text-0.12
+		>=dev-haskell/time-1.1.4
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/zlib-bindings-0.0*
@@ -41,9 +41,9 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
-	sed -e 's@hspec >= 0.8 && < 0.9@hspec >= 0.8 \&\& < 0.10@' \
-		-e 's@case-insensitive >= 0.2 && < 0.4@case-insensitive >= 0.2 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	mkdir -p "${S}/test/requests"
+	cp "${FILESDIR}/wai-extra-0.4.5.1/test/WaiExtraTest.hs" "${S}/test"
+	cp "${FILESDIR}/wai-extra-0.4.5.1/test/requests/dalvik-request" "${S}/test/requests"
 }
 
 src_configure() {
