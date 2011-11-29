@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		<dev-haskell/text-1.0
-		<dev-haskell/time-1.3
+		>=dev-haskell/time-1.1.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
