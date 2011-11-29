@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/shakespeare-0.10
+RDEPEND="=dev-haskell/shakespeare-0.10*
 		<dev-haskell/text-0.12
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
@@ -27,11 +27,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/hspec-0.8
 		)
 		"
-
-src_prepare() {
-	sed -e 's@hspec            >= 0.8     && < 0.9@hspec            >= 0.8     \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
