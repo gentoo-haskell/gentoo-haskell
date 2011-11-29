@@ -22,8 +22,8 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
-		<dev-haskell/text-1.0
+		<dev-haskell/text-0.12
 		=dev-haskell/transformers-0.2*
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
