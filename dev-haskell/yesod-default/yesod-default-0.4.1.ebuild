@@ -19,11 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cmdargs-0.8
-		<dev-haskell/cmdargs-0.10
 		=dev-haskell/shakespeare-css-0.10*
 		=dev-haskell/shakespeare-js-0.10*
 		>=dev-haskell/text-0.9
-		<dev-haskell/text-1.0
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/wai-0.4*
 		>=dev-haskell/wai-extra-0.4.4
@@ -33,10 +31,3 @@ RDEPEND=">=dev-haskell/cmdargs-0.8
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-
-	sed -e 's@cmdargs           >= 0.8 && < 0.9@cmdargs           >= 0.8 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen"
-
-}
