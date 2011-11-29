@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
+RDEPEND="<dev-haskell/attoparsec-0.11
 		>=dev-haskell/iteratee-0.7
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.10.1"
