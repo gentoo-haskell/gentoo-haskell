@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.10*
+RDEPEND=">=dev-haskell/attoparsec-0.10
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/hamlet-0.10*
 		<dev-haskell/hjsmin-0.1
@@ -43,5 +43,3 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-PATCHES=("${FILESDIR}/${PN}-0.9.3.2-attoparsec-0.10.patch")
