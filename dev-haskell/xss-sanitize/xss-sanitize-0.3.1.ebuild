@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="sanitize untrusted HTML to prevent XSS attacks"
@@ -16,11 +16,22 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
-RDEPEND=">=dev-haskell/network-2
-		>=dev-haskell/tagsoup-0.11
+RDEPEND=">=dev-haskell/attoparsec-0.10.0.3
+		=dev-haskell/css-text-0.1*
+		>=dev-haskell/network-2
+		>=dev-haskell/tagsoup-0.12.2
+		>=dev-haskell/text-0.11
 		>=dev-haskell/utf8-string-0.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hspec
+			>=dev-haskell/hunit-1.2
+		)
+		"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
