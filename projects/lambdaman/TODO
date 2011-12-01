@@ -1,4 +1,1 @@
-
- * In CABAL_CONFIGURE_FLAGS, --constraint=base<4 requires >=cabal-1.6.
-    - Parse DEPENDS and src_compile and figure out if the deps are ok
-
+* write some TODO entries
