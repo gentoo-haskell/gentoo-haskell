@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="fetchdb"
 
 RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
@@ -37,3 +37,10 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_install() {
+	haskell-cabal_src_install
+
+	# requires internet access
+	use fetchdb && hoogle_datadir="${ED}"/usr/share/"${P}/ghc-$(ghc-version)" "${ED}"/usr/bin/hoogle data
+}
