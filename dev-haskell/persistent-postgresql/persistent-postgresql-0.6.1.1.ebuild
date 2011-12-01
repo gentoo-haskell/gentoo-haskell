@@ -25,7 +25,7 @@ RDEPEND="=dev-haskell/data-object-0.3*
 		=dev-haskell/neither-0.3*
 		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-0.12
-		<dev-haskell/time-1.3
+		>=dev-haskell/time-1.1.4
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
