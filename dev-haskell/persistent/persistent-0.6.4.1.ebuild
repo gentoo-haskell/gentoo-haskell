@@ -24,7 +24,7 @@ RDEPEND="=dev-haskell/blaze-html-0.4*
 		=dev-haskell/path-pieces-0.0*
 		=dev-haskell/pool-0.1*
 		<dev-haskell/text-0.12
-		<dev-haskell/time-1.3
+		>=dev-haskell/time-1.1.4
 		=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
