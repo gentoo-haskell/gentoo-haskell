@@ -24,7 +24,7 @@ RESTRICT="test" # https://github.com/mailrank/aeson/issues/27
 RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-haskell/blaze-builder-0.2.1.4
 		>=dev-haskell/blaze-textual-0.2.0.2
-		<dev-haskell/deepseq-1.3
+		dev-haskell/deepseq
 		>=dev-haskell/hashable-1.1.2.0
 		dev-haskell/mtl
 		>=dev-haskell/text-0.11.0.2
@@ -37,11 +37,6 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4.0.1 )"
 
 src_prepare() {
-	# deepseq 1.2 is a ghc 7.4 core lib, loosening the deepseq dependency is for ghc 7.4:
-	# http://stackoverflow.com/questions/7485748/why-does-aeson-native-installation-fail
-	sed -e 's@template-haskell >= 2.5@template-haskell >= 2.4@' \
-		-e 's@deepseq < 1.2@deepseq < 1.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version 'dev-haskell/aeson-native'; then
 		sed -e 's@ghc := ghc@ghc := ghc -hide-package aeson-native@' \
 			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
