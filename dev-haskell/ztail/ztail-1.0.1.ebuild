@@ -25,14 +25,6 @@ DEPEND=">=dev-lang/ghc-6.10.1
 RDEPEND="${DEPEND}"
 
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-
-	if use inotify; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
-	fi
-
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure $(cabal_flag inotify)
 }
