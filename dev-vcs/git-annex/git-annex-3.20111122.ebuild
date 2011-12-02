@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=""
+RDEPEND=">=dev-vcs/git-1.7.7" # TODO: add more deps?
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		dev-haskell/dataenc
