@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Import/export git fast-import streams to/from darcs."
 HOMEPAGE="http://hackage.haskell.org/package/darcs-fastconvert"
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		=dev-haskell/attoparsec-0.9*
+		=dev-haskell/attoparsec-0.10*
 		>=dev-haskell/cabal-1.6
 		=dev-haskell/cmdlib-0.3*
 		=dev-vcs/darcs-2.5*
@@ -30,7 +30,4 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
 
-src_prepare() {
-	sed -e 's@attoparsec >= 0.8 && < 0.9@attoparsec >= 0.8 \&\& < 0.10@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen attoparsec dependency"
-}
+PATCHES=("${FILESDIR}/${P}-attoparsec-0.10-support.patch")
