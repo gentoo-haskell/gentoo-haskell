@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/json
 		dev-haskell/missingh
 		dev-haskell/monad-control
-		dev-haskell/mtl
+		>=dev-haskell/mtl-2
 		dev-haskell/network
 		dev-haskell/pcre-light
 		dev-haskell/sha
