@@ -82,7 +82,8 @@ src_prepare() {
 		"${S}/${PN}.cabal"
 
 	# hlint tests tend to break on every newly released hlint
-	rm "${S}/tests/haskell_policy.sh"
+	rm "${S}/tests/haskell_policy.sh" || die
+	rm "${S}/tests/external.sh" || die # relies on example.com layout bug #392647
 }
 
 src_configure() {
