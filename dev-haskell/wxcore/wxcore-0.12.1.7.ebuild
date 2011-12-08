@@ -6,7 +6,7 @@ EAPI="3"
 
 WX_GTK_VER="2.8"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal wxwidgets
 
 DESCRIPTION="wxHaskell core"

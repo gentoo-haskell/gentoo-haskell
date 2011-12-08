@@ -9,7 +9,7 @@ EAPI="3"
 # haddock is disabled as it chokes in .hsc file:
 #     Database/HDBC/ODBC/Statement.hsc:462:3:
 #        parse error on input `Word16'
-CABAL_FEATURES="bin lib profile hscolour"
+CABAL_FEATURES="bin lib profile hscolour hoogle"
 inherit haskell-cabal
 
 MY_PN="HDBC-odbc"

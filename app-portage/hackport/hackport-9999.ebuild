@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="bin"
 EGIT_REPO_URI="git://github.com/gentoo-haskell/hackport.git"
-inherit git haskell-cabal
+inherit git-2 haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="http://code.haskell.org/gentoo/hackport/"

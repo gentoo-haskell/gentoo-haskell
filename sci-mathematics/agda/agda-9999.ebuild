@@ -42,6 +42,8 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
+	sed -e 's@epic >= 0.1.13 && < 0.2@epic >= 0.1.13 \&\& < 0.10@' \
+		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
 	epatch "${FILESDIR}"/${P}-emacs.patch
 	cabal-mksetup
 }

@@ -2,35 +2,55 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-inherit gnome2 git
+EAPI=4
 
-DESCRIPTION="Gnome applet for displaying XMonad log"
-HOMEPAGE="http://uhsure.com/xmonad-log-applet.html"
-SRC_URI=""
-LICENSE="BSD"
-EGIT_REPO_URI="http://git.uhsure.com/xmonad-log-applet.git"
+inherit autotools gnome2 git-2
+
+EGIT_REPO_URI="git://github.com/alexkay/xmonad-log-applet.git"
 EGIT_BOOTSTRAP="gnome2_src_prepare"
 
+DESCRIPTION="Gnome and XFCE applet for displaying XMonad log"
+HOMEPAGE="https://github.com/alexkay/xmonad-log-applet"
+SRC_URI=""
+LICENSE="BSD"
+
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
+KEYWORDS=""
+IUSE="+gnome2 gnome3 xfce4"
 
 RDEPEND="sys-apps/dbus
-	gnome-base/gnome-panel
+	gnome2? ( gnome-base/gnome-panel )
+	gnome3? ( >=gnome-base/gnome-panel-3.0.2 )
+	xfce4? ( xfce-base/xfce4-panel )
 	dev-libs/glib:2
 	dev-haskell/hdbus
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
 
+src_prepare() {
+	eautoreconf
+}
+
 src_configure() {
-	econf --sysconfdir=/etc
+	local myconf
+	myconf=""
+
+	if use gnome2; then
+		myconf="${myconf} --with-panel=gnome2"
+	fi
+	if use gnome3; then
+		myconf="${myconf} --with-panel=gnome3"
+	fi
+	if use xfce4; then
+		myconf="${myconf} --with-panel=xfce4"
+	fi
+
+	econf --sysconfdir=/etc ${myconf}
 }
 
 src_install() {
-	dodir /etc/gconf/schemas || dir "dodir failed"
-	emake DESTDIR="${D}" install || die "Install failed"
-	dodoc "${FILESDIR}"/xmonad.hs || die
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS.md README.md xmonad.hs
 }
 
 pkg_postinst() {

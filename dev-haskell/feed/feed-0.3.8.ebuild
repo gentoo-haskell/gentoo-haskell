@@ -6,7 +6,7 @@
 
 EAPI="2"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds."

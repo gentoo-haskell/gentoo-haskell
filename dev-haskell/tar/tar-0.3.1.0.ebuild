@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Reading, writing and manipulating .tar archive files."
@@ -15,7 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~x86-macos"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.1"

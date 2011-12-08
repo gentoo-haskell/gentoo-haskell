@@ -6,8 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
+inherit base haskell-cabal
 
 DESCRIPTION="The main command-line interface for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/cmdargs-0.8*
+RDEPEND="=dev-haskell/cmdargs-0.9*
 		dev-haskell/csv
 		=dev-haskell/haskeline-0.6*
 		~dev-haskell/hledger-lib-0.16.1
@@ -34,3 +34,5 @@ RDEPEND="=dev-haskell/cmdargs-0.8*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-0.16.1-cmdargs-0.9.patch")

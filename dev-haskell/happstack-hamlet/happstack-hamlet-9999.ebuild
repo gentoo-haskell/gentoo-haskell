@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit darcs haskell-cabal
 
 DESCRIPTION="Support for Hamlet HTML templates in Happstack"

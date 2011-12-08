@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 MY_PN="MemoTrie"
@@ -26,3 +26,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	if has_version "<dev-haskell/haddock-2.9.2"; then
+		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
+		# The haddock --hoogle option does not like unicode characters, which causes
+		# haddock 2.7.2 to fail like:
+		# haddock: internal Haddock or GHC error: dist/doc/html/enumerator/enumerator.txt: commitAndReleaseBuffer: invalid argument (Invalid or incomplete multibyte or wide character)
+		sed -e 's@&#169;@(c)@g' \
+			-i "${S}/${MY_PN}.cabal"
+	fi
+}

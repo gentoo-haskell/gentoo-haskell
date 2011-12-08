@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 CABAL_MIN_VERSION=1.2
 inherit haskell-cabal
 

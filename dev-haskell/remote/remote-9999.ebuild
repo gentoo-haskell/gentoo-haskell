@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit git-2 haskell-cabal
 
 DESCRIPTION="Cloud Haskell. Fault-tolerant distributed computing framework"

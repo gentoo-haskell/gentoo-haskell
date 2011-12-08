@@ -7,11 +7,11 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal git
+inherit haskell-cabal git-2
 
 DESCRIPTION="Metadata collection for leksah"
 HOMEPAGE="http://leksah.org"
-EGIT_REPO_URI="git://github.com/jutaro/leksah-server.git"
+EGIT_REPO_URI="git://github.com/leksah/leksah-server.git"
 
 LICENSE="GPL-2"
 SLOT="0"

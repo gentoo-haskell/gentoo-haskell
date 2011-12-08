@@ -6,7 +6,7 @@
 
 EAPI="2"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Dynamic reconfiguration in Haskell"

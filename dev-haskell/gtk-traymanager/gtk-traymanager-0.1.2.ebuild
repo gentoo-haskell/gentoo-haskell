@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit eutils haskell-cabal
 
 DESCRIPTION="A wrapper around the eggtraymanager library for Linux system trays"
@@ -32,4 +32,3 @@ src_prepare() {
 			-i "${S}/${PN}.cabal" || die "Could not change default-language to Haskell98"
 	fi
 }
-

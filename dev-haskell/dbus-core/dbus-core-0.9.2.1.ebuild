@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Low-level D-Bus protocol implementation"
@@ -35,3 +35,20 @@ RDEPEND=">=dev-haskell/binary-0.4
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	if has_version "<dev-haskell/haddock-2.9.2"; then
+		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
+		# The haddock --hoogle option does not like unicode characters, which causes
+		# haddock 2.7.2 to fail like:
+		# haddock: internal Haddock or GHC error: dist/doc/html/enumerator/enumerator.txt: commitAndReleaseBuffer: invalid argument (Invalid or incomplete multibyte or wide character)
+		sed -e 's@&#8208;@-@g' \
+			-e "s@&#8217;@'@g" \
+			-i "${S}/hs/DBus/Connection.hs" \
+			-i "${S}/hs/DBus/Client/Internal.hs" \
+			-i "${S}/hs/DBus/Client/Simple.hs" \
+			-i "${S}/hs/DBus/Message/Internal.hs" \
+			-i "${S}/hs/DBus/Types/Internal.hs" \
+			-i "${S}/hs/DBus/Wire/Internal.hs"
+	fi
+}

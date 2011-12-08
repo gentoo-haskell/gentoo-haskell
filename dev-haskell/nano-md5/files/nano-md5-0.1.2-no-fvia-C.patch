@@ -1,0 +1,12 @@
+diff --git a/nano-md5.cabal b/nano-md5.cabal
+index 7ec904a..f8bfe7a 100644
+--- a/nano-md5.cabal
++++ b/nano-md5.cabal
+@@ -20,7 +20,6 @@ library
+   exposed-modules:     Data.Digest.OpenSSL.MD5
+   ghc-options:         -Wall 
+                        -O2
+-                       -fvia-C
+   extensions:          ForeignFunctionInterface,
+                        CPP
+   includes:            openssl/md5.h

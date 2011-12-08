@@ -6,8 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
+inherit base haskell-cabal
 
 DESCRIPTION="Snap: A Haskell Web Framework: project starter executable and glue code library"
 HOMEPAGE="http://snapframework.com/"
@@ -18,12 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
+RDEPEND="=dev-haskell/aeson-native-0.3*
+		=dev-haskell/attoparsec-0.10*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
 		=dev-haskell/cereal-0.3*
 		=dev-haskell/clientsession-0.7*
-		=dev-haskell/configurator-0.1*
+		=dev-haskell/configurator-0.2*
 		=dev-haskell/crypto-4.2*
 		=dev-haskell/directory-tree-0.10*
 		=dev-haskell/data-lens-2.0*
@@ -41,6 +42,7 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		=dev-haskell/safe-0.3*
 		=dev-haskell/snap-core-0.6*
 		=dev-haskell/snap-server-0.6*
+		=dev-haskell/stm-2.2*
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.5
 		=dev-haskell/transformers-0.2*
@@ -54,3 +56,6 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-0.6.0.2-attoparsec-0.10.patch")
+

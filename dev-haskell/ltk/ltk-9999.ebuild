@@ -6,12 +6,12 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal git
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
+inherit haskell-cabal git-2
 
 DESCRIPTION="Leksah tool kit"
 HOMEPAGE="http://www.leksah.org"
-EGIT_REPO_URI="git://github.com/jutaro/ltk.git"
+EGIT_REPO_URI="git://github.com/leksah/ltk.git"
 
 LICENSE="GPL-2"
 SLOT="0"

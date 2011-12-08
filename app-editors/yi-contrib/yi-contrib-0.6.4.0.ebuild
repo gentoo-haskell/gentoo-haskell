@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cd "${S}"
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		epatch "${FILESDIR}/${P}-backport-to-ghc-6.12.3.patch"
 	fi

@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
 # The tests in various yesod packages depend on wai-test-0.1.2 which has not

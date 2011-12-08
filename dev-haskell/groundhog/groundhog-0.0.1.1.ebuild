@@ -6,8 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
+inherit base haskell-cabal
 
 DESCRIPTION="Type-safe ADT-database mapping library."
 HOMEPAGE="http://hackage.haskell.org/package/groundhog"
@@ -27,3 +27,5 @@ RDEPEND="=dev-haskell/enumerator-0.4*
 		>=dev-lang/ghc-7.0.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+PATCHES=("${FILESDIR}/${PN}-0.0.1.1-ghc-7.2.patch")

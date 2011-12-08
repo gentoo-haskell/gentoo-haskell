@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Multi-file, colored, filtered log tailer."
 HOMEPAGE="http://hackage.haskell.org/package/ztail"
@@ -21,18 +21,12 @@ DEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/hinotify
 		dev-haskell/regex-compat
 		dev-haskell/time
-		inotify? ( dev-haskell/hinotify )"
+		inotify? ( >=dev-haskell/hinotify-0.3.2 )
+	"
 RDEPEND="${DEPEND}"
 
+PATCHES=("${FILESDIR}/${PN}"-1.0.1-hinotify-0.3.2.patch)
 
-src_compile() {
-	CABAL_CONFIGURE_FLAGS="--constraint=base<4"
-
-	if use inotify; then
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=with_inotify"
-	else
-		CABAL_CONFIGURE_FLAGS="$CABAL_CONFIGURE_FLAGS --flags=-with_inotify"
-	fi
-
-	cabal_src_compile
+src_configure() {
+	cabal_src_configure $(cabal_flag inotify)
 }

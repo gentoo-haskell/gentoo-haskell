@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1"
 
 src_prepare() {
-	cd "${S}"
 	if has_version ">=dev-haskell/haxml-1.22.0"; then
 		epatch "${FILESDIR}/${P}-haxml-1.22.patch"
 	fi

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Extensible exceptions"
@@ -18,4 +18,4 @@ RDEPEND=">=dev-lang/ghc-6.8.1"
 DEPEND=">=dev-haskell/cabal-1.2.3
 		${RDEPEND}"
 
-CABAL_CORE_LIB_GHC_PV="7.2.1"
+CABAL_CORE_LIB_GHC_PV="7.2.1 7.2.2"

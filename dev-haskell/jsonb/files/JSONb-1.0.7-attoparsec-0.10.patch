@@ -1,0 +1,23 @@
+--- JSONb-1.0.7-orig/Text/JSONb/Decode.hs	2011-10-23 15:50:59.000000000 +1100
++++ JSONb-1.0.7/Text/JSONb/Decode.hs	2011-11-29 23:57:16.123281506 +1100
+@@ -26,6 +26,7 @@
+                                takeWhile, skipMany, satisfy, signed,
+                                decimal, Result(..)                       )
+ import qualified Data.Attoparsec.Char8 as Attoparsec
++import qualified Data.Attoparsec.Types as AttoparsecT
+ import Data.ByteString.Nums.Careless
+ 
+ import Text.JSONb.Simple
+@@ -45,9 +46,9 @@
+  -}
+ break                       ::  ByteString -> (Either String JSON, ByteString)
+ break bytes                  =  case Attoparsec.parse json bytes of
+-  Done remainder result     ->  (Right result, remainder)
+-  Fail _ _ s                ->  (Left s, bytes)
+-  Partial _                 ->  (Left "Partial", bytes)
++  AttoparsecT.Done remainder result     ->  (Right result, remainder)
++  AttoparsecT.Fail _ _ s                ->  (Left s, bytes)
++  AttoparsecT.Partial _                 ->  (Left "Partial", bytes)
+ 
+ 
+ {-| Tries to parse any JSON literal.

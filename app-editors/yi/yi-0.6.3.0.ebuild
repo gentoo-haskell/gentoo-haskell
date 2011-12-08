@@ -63,7 +63,6 @@ src_prepare() {
 	# The haddock documentation fails to build with cabal 1.10 style cabal files.
 	# http://hackage.haskell.org/trac/hackage/ticket/656
 	# Workaround is to revert the cabal file back to using the old style.
-	cd "${S}"
 	epatch "${FILESDIR}/${P}-old-style-cabal.patch"
 	# Ugh! Upstream forgot it.
 	cp "${FILESDIR}/yi-0.6.3.0-src-library-Yi-UI-Pango-Gnome.hs" \

@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Linear algebra and numerical computation"
@@ -21,14 +21,16 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		binary? ( dev-haskell/binary )
 		mkl? ( sci-libs/mkl )
 		vector? ( >=dev-haskell/vector-0.8 )
-		test? ( dev-haskell/hunit
-			dev-haskell/quickcheck )
 		sci-libs/gsl
 		virtual/blas
-		virtual/lapack"
+		virtual/lapack
+	"
 
 DEPEND=">=dev-haskell/cabal-1.6
-		${RDEPEND}"
+	${RDEPEND}
+	test? ( dev-haskell/hunit
+		dev-haskell/quickcheck )
+	"
 
 # tests don't do what you expect and should be fixed,
 # but I intentionally left them here --slyfox

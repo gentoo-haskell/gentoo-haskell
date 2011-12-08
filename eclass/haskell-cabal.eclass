@@ -19,6 +19,7 @@
 # Currently supported features:
 #   haddock    --  for documentation generation
 #   hscolour   --  generation of colourised sources
+#   hoogle     --  generation of documentation search index
 #   alex       --  lexer/scanner generator
 #   happy      --  parser generator
 #   c2hs       --  C interface generator
@@ -73,6 +74,7 @@ for feature in ${CABAL_FEATURES}; do
 	case ${feature} in
 		haddock)    CABAL_USE_HADDOCK=yes;;
 		hscolour)   CABAL_USE_HSCOLOUR=yes;;
+		hoogle)     CABAL_USE_HOOGLE=yes;;
 		alex)       CABAL_USE_ALEX=yes;;
 		happy)      CABAL_USE_HAPPY=yes;;
 		c2hs)       CABAL_USE_C2HS=yes;;
@@ -94,6 +96,11 @@ fi
 if [[ -n "${CABAL_USE_HSCOLOUR}" ]]; then
 	IUSE="${IUSE} hscolour"
 	DEPEND="${DEPEND} hscolour? ( dev-haskell/hscolour )"
+fi
+
+if [[ -n "${CABAL_USE_HOOGLE}" ]]; then
+	IUSE="${IUSE} hoogle"
+	DEPEND="${DEPEND} hoogle? ( dev-haskell/hoogle )"
 fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
@@ -175,10 +182,12 @@ cabal-bootstrap() {
 	einfo "Using cabal-$(cabal-version)."
 
 	make_setup() {
-		$(ghc-getghc) -package "${cabalpackage}" --make "${setupmodule}" \
+		set -- -package "${cabalpackage}" --make "${setupmodule}" \
 			${GHC_BOOTSTRAP_FLAGS} \
 			"$@" \
 			-o setup
+		echo $(ghc-getghc) "$@"
+		$(ghc-getghc) "$@"
 	}
 	if $(ghc-supports-shared-libraries); then
 		# some custom build systems might use external libraries,
@@ -204,17 +213,59 @@ cabal-mksetup() {
 		> $setupdir/Setup.hs
 }
 
+cabal-hoogle-convert() {
+	cabalfile=$(ls --format=single-column *.cabal | head -n1)
+	if [[ -f "${S}/${cabalfile}" ]]; then
+		cabalpkgname=${cabalfile:0:$(expr index ${cabalfile} ".")-1}
+		hoogletxt="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.txt"
+		hooglehoo="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.hoo"
+		if [[ -f ${hoogletxt} ]]; then
+			set -- convert ${hoogletxt} ${hooglehoo} "$@"
+			echo hoogle "$@"
+			hoogle "$@"
+		fi
+	fi
+}
+
 cabal-hscolour() {
-	./setup hscolour || die "setup hscolour failed"
+	set -- hscolour "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup hscolour failed"
 }
 
 cabal-haddock() {
-	./setup haddock || die "setup haddock failed"
+	set -- haddock "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup haddock failed"
+}
+
+cabal-hoogle() {
+	ewarn "hoogle USE flag requires doc USE flag, building with haddock and hoogle"
+	cabal-hoogle-haddock
 }
 
 cabal-hscolour-haddock() {
 	# --hyperlink-source implies calling 'setup hscolour'
-	./setup haddock --hyperlink-source || die "setup haddock failed"
+	set -- haddock --hyperlink-source
+	echo ./setup "$@"
+	./setup "$@" --hyperlink-source || die "setup haddock --hyperlink-source failed"
+}
+
+cabal-hoogle-haddock() {
+	set -- haddock --hoogle
+	echo ./setup "$@"
+	./setup "$@" || die "setup haddock --hoogle failed"
+	cabal-hoogle-convert
+}
+
+cabal-hoogle-hscolour-haddock() {
+	cabal-hscolour-haddock
+	cabal-hoogle-haddock
+}
+
+cabal-hoogle-hscolour() {
+	ewarn "hoogle USE flag requires doc USE flag, building with haddock, hoogle and hscolour"
+	cabal-hoogle-hscolour-haddock
 }
 
 cabal-configure() {
@@ -279,7 +330,7 @@ cabal-configure() {
 		$(ghc-supports-shared-libraries) && \
 			cabalconf="${cabalconf} --enable-shared"
 
-	./setup configure \
+	set -- configure \
 		--ghc --prefix="${EPREFIX}"/usr \
 		--with-compiler="$(ghc-getghc)" \
 		--with-hc-pkg="$(ghc-getghcpkg)" \
@@ -291,11 +342,15 @@ cabal-configure() {
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
 		${CABAL_EXTRA_CONFIGURE_FLAGS} \
-		"$@" || die "setup configure failed"
+		"$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup configure failed"
 }
 
 cabal-build() {
 	unset LANG LC_ALL LC_MESSAGES
+	set --  build "$@"
+	echo ./setup "$@"
 	./setup build \
 		|| die "setup build failed"
 }
@@ -303,9 +358,9 @@ cabal-build() {
 cabal-copy() {
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && ED=${D}
 
-	./setup copy \
-		--destdir="${D}" \
-		|| die "setup copy failed"
+	set -- copy --destdir="${D}" "$@"
+	echo ./setup "$@"
+	./setup "$@" || die "setup copy failed"
 
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
@@ -421,16 +476,36 @@ cabal_src_compile() {
 
 		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
 			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				# hscolour and haddock
-				cabal-hscolour-haddock
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle, hscolour and haddock
+					cabal-hoogle-hscolour-haddock
+				else
+					# haddock and hscolour
+					cabal-hscolour-haddock
+				fi
 			else
-				# just haddock
-				cabal-haddock
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle and haddock
+					cabal-hoogle-haddock
+				else
+					# just haddock
+					cabal-haddock
+				fi
 			fi
 		else
 			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				# just hscolour
-				cabal-hscolour
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# hoogle and hscolour
+					cabal-hoogle-hscolour
+				else
+					# just hscolour
+					cabal-hscolour
+				fi
+			else
+				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+					# just hoogle
+					cabal-hoogle
+				fi
 			fi
 		fi
 	fi
@@ -451,7 +526,9 @@ haskell-cabal_src_test() {
 		einfo ">>> No tests for dummy library: ${CATEGORY}/${PF}"
 	else
 		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
-		./setup test || die "cabal test failed"
+		set -- test "$@"
+		echo ./setup "$@"
+		./setup "$@" || die "cabal test failed"
 	fi
 
 	popd > /dev/null

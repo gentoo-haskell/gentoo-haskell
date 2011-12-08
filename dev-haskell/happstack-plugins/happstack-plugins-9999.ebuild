@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit darcs haskell-cabal
 
 DESCRIPTION="The haskell application server stack + reload"

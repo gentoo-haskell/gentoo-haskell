@@ -6,7 +6,7 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Binary serialisation for Haskell values using lazy ByteStrings"
@@ -24,4 +24,4 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}/binary-0.5.0.2-ghc-7.patch")
 
-CABAL_CORE_LIB_GHC_PV="7.2.1"
+CABAL_CORE_LIB_GHC_PV="7.2.1 7.2.2"

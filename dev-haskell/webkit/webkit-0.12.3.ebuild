@@ -5,7 +5,7 @@
 EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
-CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
+CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the Webkit library."
@@ -22,6 +22,6 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		=dev-haskell/gtk-0.12*
 		=dev-haskell/pango-0.12*
 		>=dev-lang/ghc-6.10.1
-		>=net-libs/webkit-gtk-1.1.15"
+		>=net-libs/webkit-gtk-1.1.15:2"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"

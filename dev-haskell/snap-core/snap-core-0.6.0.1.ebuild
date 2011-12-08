@@ -6,8 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
+inherit base haskell-cabal
 
 DESCRIPTION="Snap: A Haskell Web Framework (Core)"
 HOMEPAGE="http://snapframework.com/"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.9*
+RDEPEND="=dev-haskell/attoparsec-0.10*
 		>=dev-haskell/attoparsec-enumerator-0.2.0.3
 		<=dev-haskell/base16-bytestring-0.2
 		<dev-haskell/blaze-builder-0.4
@@ -45,8 +45,4 @@ RDEPEND="=dev-haskell/attoparsec-0.9*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's@case-insensitive >= 0.3 && < 0.4@case-insensitive >= 0.3 \&\& < 0.5@' \
-		-e 's@regex-posix <= 0.94.4@regex-posix <= 0.96@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+PATCHES=("${FILESDIR}/${PN}-0.6.0.1-attoparsec-0.10.patch")

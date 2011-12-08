@@ -5,7 +5,7 @@
 EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
-CABAL_FEATURES="lib profile haddock hscolour nocabaldep"
+CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the VTE library."
@@ -21,7 +21,7 @@ RDEPEND="=dev-haskell/glib-0.12*
 		=dev-haskell/gtk-0.12*
 		=dev-haskell/pango-0.12*
 		>=dev-lang/ghc-6.10.1
-		>=x11-libs/vte-0.20.5"
+		>=x11-libs/vte-0.20.5:0"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/gtk2hs-buildtools"

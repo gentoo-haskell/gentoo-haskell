@@ -6,8 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
+inherit base haskell-cabal
 
 MY_PN="AttoJson"
 MY_P="${MY_PN}-${PV}"
@@ -30,3 +30,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${MY_PN}-0.5.10-attoparsec-0.10.patch")

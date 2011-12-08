@@ -6,7 +6,6 @@ app-text
 app-vim
 dev-haskell
 dev-lang
-dev-libs
 dev-tex
 dev-util
 dev-vcs
