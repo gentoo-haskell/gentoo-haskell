@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-native-0.4*
+RDEPEND="=dev-haskell/aeson-0.4*
 		=dev-haskell/attoparsec-0.10*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
