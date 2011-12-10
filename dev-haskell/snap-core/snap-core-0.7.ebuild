@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.10*
-		>=dev-haskell/attoparsec-enumerator-0.2.0.3
+		=dev-haskell/attoparsec-enumerator-0.3*
 		<=dev-haskell/base16-bytestring-0.2
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-enumerator-0.2*
@@ -35,7 +35,7 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		=dev-haskell/mwc-random-0.10*
 		<=dev-haskell/regex-posix-0.96
 		=dev-haskell/text-0.11*
-		<dev-haskell/time-1.4
+		<dev-haskell/time-1.5
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
 		=dev-haskell/unordered-containers-0.1*
@@ -45,4 +45,4 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.6.0.1-attoparsec-0.10.patch")
+#PATCHES=("${FILESDIR}/${PN}-0.6.0.1-attoparsec-0.10.patch")
