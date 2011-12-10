@@ -32,9 +32,9 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		=dev-haskell/murmur-hash-0.1*
 		=dev-haskell/network-2.3*
 		=dev-haskell/psqueue-1.1*
-		=dev-haskell/snap-core-0.6*
+		=dev-haskell/snap-core-0.7*
 		=dev-haskell/text-0.11*
-		<dev-haskell/time-1.4
+		<dev-haskell/time-1.5
 		=dev-haskell/transformers-0.2*
 		<dev-haskell/unix-compat-0.4
 		>=dev-haskell/vector-0.7
@@ -44,7 +44,7 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}//snap-server-0.6.0.1-attoparsec-0.10.patch")
+#PATCHES=("${FILESDIR}//snap-server-0.6.0.1-attoparsec-0.10.patch")
 
 src_prepare() {
 	base_src_prepare

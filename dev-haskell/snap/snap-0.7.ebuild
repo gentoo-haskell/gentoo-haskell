@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-native-0.3*
+RDEPEND="=dev-haskell/aeson-0.4*
 		=dev-haskell/attoparsec-0.10*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
@@ -32,7 +32,7 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/hashable-1.1*
-		=dev-haskell/heist-0.6*
+		=dev-haskell/heist-0.7*
 		>=dev-haskell/hint-0.3
 		=dev-haskell/logict-0.5*
 		=dev-haskell/monadcatchio-transformers-0.2*
@@ -40,9 +40,11 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 		<dev-haskell/mwc-random-0.11
 		=dev-haskell/pwstore-fast-2.2*
 		=dev-haskell/safe-0.3*
-		=dev-haskell/snap-core-0.6*
-		=dev-haskell/snap-server-0.6*
+		=dev-haskell/skein-0.1*
+		=dev-haskell/snap-core-0.7*
+		=dev-haskell/snap-server-0.7*
 		=dev-haskell/stm-2.2*
+		=dev-haskell/syb-0.3*
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.5
 		=dev-haskell/transformers-0.2*
@@ -57,5 +59,5 @@ RDEPEND="=dev-haskell/aeson-native-0.3*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${PN}-0.6.0.2-attoparsec-0.10.patch")
+#PATCHES=("${FILESDIR}/${PN}-0.6.0.2-attoparsec-0.10.patch")
 
