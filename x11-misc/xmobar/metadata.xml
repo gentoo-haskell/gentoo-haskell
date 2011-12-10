@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Xmobar is a minimalistic text based status bar.
+		
+		Inspired by the Ion3 status bar, it supports similar
+		features, like dynamic color management, output templates,
+		and extensibility through plugins.
+	</longdescription>
+</pkgmetadata>
