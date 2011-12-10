@@ -16,10 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-#IUSE="test"
-IUSE=""
-
-RESTRICT="test" # https://github.com/mailrank/aeson/issues/27
+IUSE="test"
 
 RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-haskell/blaze-builder-0.2.1.4
@@ -35,20 +32,13 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.6.1
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/quickcheck-2.4.0.1 )"
+		test? ( >=dev-haskell/cabal-1.10
+			>=dev-haskell/quickcheck-2.4.0.1
+			dev-haskell/test-framework
+			dev-haskell/test-framework-quickcheck2
+		)
+		"
 
-src_prepare() {
-	if has_version 'dev-haskell/aeson-native'; then
-		sed -e 's@ghc := ghc@ghc := ghc -hide-package aeson-native@' \
-			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
-	fi
-	if has_version 'dev-haskell/htf'; then
-		sed -e 's@ghc := ghc@ghc := ghc -hide-package HTF@' \
-			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
-	fi
-}
-
-src_test() {
-	emake -C "${S}/tests/" || die "emake for tests failed"
-	"${S}/tests/qc" || die "tests failed"
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
 }
