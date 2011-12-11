@@ -1,14 +1,5 @@
 --- groundhog-sqlite-0.0.1.1-orig/groundhog-sqlite.cabal	2011-06-17 17:55:50.000000000 +1000
-+++ groundhog-sqlite-0.0.1.1/groundhog-sqlite.cabal	2011-12-03 14:32:07.797684922 +1100
-@@ -20,7 +20,7 @@
-                    , bytestring              >= 0.9.1     && < 0.10
-                    , transformers            >= 0.2.1     && < 0.3
-                    , groundhog               >= 0.0.1     && < 0.1
--                   , monad-control           >= 0.2       && < 0.3
-+                   , monad-control           >= 0.2       && < 0.4
-                    , containers              >= 0.2       && < 0.5
-                    , enumerator              >= 0.4.9     && < 0.5
-                    , utf8-string             >= 0.3.4     && < 0.4
++++ groundhog-sqlite-0.0.1.1/groundhog-sqlite.cabal	2011-12-12 01:12:29.439316521 +1100
 @@ -32,4 +32,6 @@
          extra-libraries: sqlite3
      else
