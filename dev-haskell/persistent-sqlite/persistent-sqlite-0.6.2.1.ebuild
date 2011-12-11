@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/data-object-0.3*
-		=dev-haskell/monad-control-0.2*
+		<dev-haskell/monad-control-0.4
 		=dev-haskell/neither-0.3*
 		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-0.12
