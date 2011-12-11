@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="lifted IO operations from the base library"
 HOMEPAGE="https://github.com/basvandijk/lifted-base"
@@ -28,6 +28,8 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-0.5
 			<dev-haskell/test-framework-hunit-0.3
 		)"
+
+PATCHES=("${FILESDIR}/${PN}-0.1.0.1-ghc-6.12.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
