@@ -31,7 +31,7 @@ RDEPEND="=dev-haskell/asn1-data-0.6*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/http-types-0.6*
-		=dev-haskell/monad-control-0.2*
+		<dev-haskell/monad-control-0.4
 		=dev-haskell/network-2.3*
 		=dev-haskell/tls-0.8*
 		=dev-haskell/tls-extra-0.4*
