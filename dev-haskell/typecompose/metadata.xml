@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		TypeCompose provides some classes &amp; instances for forms of type
+		composition, as well as some modules who haven&#39;t yet found a home.
+		
+		Please see the project wiki page: &lt;http://haskell.org/haskellwiki/TypeCompose&gt;
+		
+		&amp;#169; 2007-2010 by Conal Elliott; BSD3 license.
+	</longdescription>
+</pkgmetadata>
