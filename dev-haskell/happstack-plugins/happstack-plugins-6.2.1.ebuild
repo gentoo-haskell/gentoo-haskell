@@ -18,10 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.3*
-		>=dev-haskell/hinotify-0.3.2
+RDEPEND="=dev-haskell/happstack-server-6*
 		dev-haskell/mtl
-		>=dev-haskell/plugins-1.5.1.4
+		dev-haskell/plugins-auto
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
