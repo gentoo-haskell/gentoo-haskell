@@ -1,5 +1,14 @@
 --- groundhog-0.0.1.1-orig/groundhog.cabal	2011-06-17 17:55:41.000000000 +1000
-+++ groundhog-0.0.1.1/groundhog.cabal	2011-11-26 19:19:48.407968088 +1100
++++ groundhog-0.0.1.1/groundhog.cabal	2011-12-03 14:32:30.763232502 +1100
+@@ -20,7 +20,7 @@
+                    , text                     >= 0.8       && < 0.12
+                    , containers               >= 0.2       && < 0.5
+                    , enumerator               >= 0.4.9     && < 0.5
+-                   , monad-control            >= 0.2       && < 0.3
++                   , monad-control            >= 0.2       && < 0.4
+                    , pool                     >= 0.1       && < 0.2
+     exposed-modules: Database.Groundhog
+                      Database.Groundhog.Core
 @@ -28,4 +28,6 @@
                       Database.Groundhog.Generic.Sql
                       Database.Groundhog.TH
