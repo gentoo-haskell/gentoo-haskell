@@ -16,9 +16,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-lang/ghc-6.8.2
 		>=net-libs/zeromq-2.1.0"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6.0"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+			dev-haskell/hunit
+			>=dev-haskell/test-framework-0.4
+			>=dev-haskell/test-framework-hunit-0.2
+		)
+		"
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
