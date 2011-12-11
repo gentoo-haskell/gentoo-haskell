@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/enumerator-0.4*
 		=dev-haskell/groundhog-0.0*
-		=dev-haskell/monad-control-0.2*
+		<dev-haskell/monad-control-0.4
 		=dev-haskell/pool-0.1*
 		=dev-haskell/transformers-0.2*
 		=dev-haskell/utf8-string-0.3*
