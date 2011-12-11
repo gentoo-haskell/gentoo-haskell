@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.3*
+RDEPEND="=dev-haskell/happstack-server-6.4*
 		=dev-haskell/harp-0.4*
 		<dev-haskell/hsp-0.7
 		<dev-haskell/hsx-0.10
