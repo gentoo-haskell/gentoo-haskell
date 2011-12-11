@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10
 		=dev-haskell/hamlet-0.10*
 		<dev-haskell/hjsmin-0.1
 		=dev-haskell/http-types-0.6*
-		=dev-haskell/monad-control-0.2*
+		<dev-haskell/monad-control-0.4
 		<dev-haskell/parsec-4
 		=dev-haskell/shakespeare-css-0.10*
 		=dev-haskell/shakespeare-js-0.10*
