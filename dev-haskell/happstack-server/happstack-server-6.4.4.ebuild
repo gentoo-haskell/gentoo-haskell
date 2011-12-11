@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/blaze-html-0.5
+RDEPEND="=dev-haskell/base64-bytestring-0.1*
+		<dev-haskell/blaze-html-0.5
 		=dev-haskell/happstack-data-6.0*
-		=dev-haskell/happstack-util-6.0*
 		>=dev-haskell/hslogger-1.0.2
 		dev-haskell/html
 		dev-haskell/maybet
