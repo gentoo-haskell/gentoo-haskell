@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/enumerator-0.4*
-		<dev-haskell/monad-control-0.4
+		<dev-haskell/monad-control-0.3
 		=dev-haskell/pool-0.1*
 		<dev-haskell/text-0.12
 		<dev-haskell/time-1.3
