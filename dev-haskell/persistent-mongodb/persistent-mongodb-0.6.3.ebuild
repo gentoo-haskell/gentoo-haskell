@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/bson-0.1.6
 		=dev-haskell/compact-string-fix-0.3*
 		=dev-haskell/data-object-0.3*
 		=dev-haskell/enumerator-0.4*
-		=dev-haskell/monad-control-0.2*
+		<dev-haskell/monad-control-0.4
 		=dev-haskell/mongodb-1.1*
 		=dev-haskell/neither-0.3*
 		>=dev-haskell/network-2.2.1.7
@@ -39,3 +39,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@monad-control      >= 0.2     && < 0.3@monad-control      >= 0.2     \&\& < 0.4@' \
+		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
+}
