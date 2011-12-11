@@ -18,9 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/monad-control-0.2*
+RDEPEND="<dev-haskell/monad-control-0.4
 		=dev-haskell/persistent-0.6*
 		<dev-haskell/text-1.0
+		>=dev-haskell/transformers-0.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
