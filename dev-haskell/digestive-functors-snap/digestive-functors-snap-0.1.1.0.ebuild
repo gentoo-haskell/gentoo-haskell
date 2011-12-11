@@ -19,8 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/digestive-functors-0.2*
-		>=dev-haskell/snap-core-0.3
+		<dev-haskell/snap-core-0.8
 		>=dev-haskell/utf8-string-0.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@snap-core          >= 0.5 && < 0.7@snap-core          >= 0.5 \&\& < 0.8@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
