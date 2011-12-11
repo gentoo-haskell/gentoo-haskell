@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/bytestring-trie-0.3
-		=dev-haskell/convertible-text-0.3*
+		<dev-haskell/convertible-text-0.5
 		=dev-haskell/data-object-0.3*
 		=dev-haskell/failure-0.1*
 		=dev-haskell/jsonb-1.0*
