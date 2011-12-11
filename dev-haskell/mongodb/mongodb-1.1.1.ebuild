@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="mongoDB"
 MY_P="${MY_PN}-${PV}"
@@ -24,13 +24,17 @@ IUSE=""
 RDEPEND="dev-haskell/binary
 		dev-haskell/bson
 		dev-haskell/cryptohash
-		=dev-haskell/monad-control-0.2*
+		=dev-haskell/lifted-base-0.1*
+		=dev-haskell/monad-control-0.3*
 		>=dev-haskell/mtl-2
 		dev-haskell/network
 		dev-haskell/parsec
 		dev-haskell/random-shuffle
+		=dev-haskell/transformers-base-0.4*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${P}-monad-control-0.3.patch")

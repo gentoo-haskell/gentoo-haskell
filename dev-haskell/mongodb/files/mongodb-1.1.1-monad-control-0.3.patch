@@ -1,0 +1,246 @@
+--- mongoDB-1.1.1-orig/Control/Monad/MVar.hs	2011-11-11 03:19:32.000000000 +1100
++++ mongoDB-1.1.1/Control/Monad/MVar.hs	2011-12-11 19:57:17.535670852 +1100
+@@ -1,19 +1,18 @@
+ {- | Lift MVar operations so you can do them within monads stacked on top of IO. Analogous to MonadIO -}
+ 
+-{-# LANGUAGE TupleSections #-}
++{-# LANGUAGE FlexibleContexts, TupleSections #-}
+ 
+ module Control.Monad.MVar (
+ 	MVar,
+ 	module Control.Monad.MVar,
+ 	liftIO,
+-	MonadControlIO
+ ) where
+ 
+ import Control.Concurrent.MVar (MVar)
+ import qualified Control.Concurrent.MVar as IO
+ import Control.Monad.Error (MonadIO (liftIO))
+-import Control.Monad.IO.Control (MonadControlIO, controlIO)
+-import Control.Exception.Control (mask, onException)
++import Control.Monad.Trans.Control (MonadBaseControl, liftBaseWith)
++import Control.Exception.Lifted (mask, onException)
+ 
+ newEmptyMVar :: (MonadIO m) => m (MVar a)
+ newEmptyMVar = liftIO IO.newEmptyMVar
+@@ -42,7 +41,7 @@
+ isEmptyMVar :: (MonadIO m) => MVar a -> m Bool
+ isEmptyMVar = liftIO . IO.isEmptyMVar
+ 
+-modifyMVar :: MonadControlIO m => MVar a -> (a -> m (a, b)) -> m b
++modifyMVar :: (MonadIO m, MonadBaseControl IO m) => MVar a -> (a -> m (a, b)) -> m b
+ modifyMVar m io =
+   mask $ \restore -> do
+     a      <- takeMVar m
+@@ -50,16 +49,16 @@
+     putMVar m a'
+     return b
+ 
+-addMVarFinalizer :: MonadControlIO m => MVar a -> m () -> m ()
+-addMVarFinalizer mvar f = controlIO $ \run ->
+-    return $ liftIO $ IO.addMVarFinalizer mvar (run f >> return ())
++addMVarFinalizer :: (MonadIO m, MonadBaseControl IO m) => MVar a -> m () -> m ()
++addMVarFinalizer mv f = liftBaseWith $ \run ->
++  IO.addMVarFinalizer mv (run f >> return ())
+ 
+-modifyMVar_ :: (MonadControlIO m) => MVar a -> (a -> m a) -> m ()
++modifyMVar_ :: (MonadIO m, MonadBaseControl IO m) => MVar a -> (a -> m a) -> m ()
+ modifyMVar_ var act = modifyMVar var $ \a -> do
+ 	a' <- act a
+ 	return (a', ())
+ 
+-withMVar :: (MonadControlIO m) => MVar a -> (a -> m b) -> m b
++withMVar :: (MonadIO m, MonadBaseControl IO m) => MVar a -> (a -> m b) -> m b
+ withMVar var act = modifyMVar var $ \a -> do
+ 	b <- act a
+ 	return (a, b)
+--- mongoDB-1.1.1-orig/Database/MongoDB/Admin.hs	2011-11-11 03:19:32.000000000 +1100
++++ mongoDB-1.1.1/Database/MongoDB/Admin.hs	2011-12-11 19:58:36.171319191 +1100
+@@ -1,6 +1,6 @@
+ -- | Database administrative functions
+ 
+-{-# LANGUAGE OverloadedStrings, RecordWildCards #-}
++{-# LANGUAGE FlexibleContexts, OverloadedStrings, RecordWildCards #-}
+ 
+ module Database.MongoDB.Admin (
+ 	-- * Admin
+@@ -39,7 +39,7 @@
+ import System.IO.Unsafe (unsafePerformIO)
+ import Control.Concurrent (forkIO, threadDelay)
+ import Database.MongoDB.Internal.Util (MonadIO', (<.>), true1)
+-import Control.Monad.MVar (MonadControlIO)
++import Control.Monad.Trans.Control (MonadBaseControl)
+ 
+ -- * Admin
+ 
+@@ -122,7 +122,7 @@
+ 	resetIndexCache
+ 	runCommand ["deleteIndexes" =: coll, "index" =: idxName]
+ 
+-getIndexes :: (MonadControlIO m, Functor m) => Collection -> Action m [Document]
++getIndexes :: (MonadIO m, MonadBaseControl IO m, Functor m) => Collection -> Action m [Document]
+ -- ^ Get all indexes on this collection
+ getIndexes coll = do
+ 	db <- thisDatabase
+@@ -175,7 +175,7 @@
+ 
+ -- ** User
+ 
+-allUsers :: (MonadControlIO m, Functor m) => Action m [Document]
++allUsers :: (MonadIO m, MonadBaseControl IO m, Functor m) => Action m [Document]
+ -- ^ Fetch all users of this database
+ allUsers = map (exclude ["_id"]) <$> (rest =<< find
+ 	(select [] "system.users") {sort = ["user" =: (1 :: Int)], project = ["user" =: (1 :: Int), "readOnly" =: (1 :: Int)]})
+@@ -242,7 +242,7 @@
+ totalIndexSize :: (MonadIO' m) => Collection -> Action m Int
+ totalIndexSize c = at "totalIndexSize" <$> collectionStats c
+ 
+-totalSize :: (MonadControlIO m, MonadIO' m) => Collection -> Action m Int
++totalSize :: (MonadIO m, MonadBaseControl IO m, MonadIO' m) => Collection -> Action m Int
+ totalSize coll = do
+ 	x <- storageSize coll
+ 	xs <- mapM isize =<< getIndexes coll
+--- mongoDB-1.1.1-orig/Database/MongoDB/Query.hs	2011-11-11 03:19:32.000000000 +1100
++++ mongoDB-1.1.1/Database/MongoDB/Query.hs	2011-12-11 19:59:14.548125851 +1100
+@@ -50,6 +50,8 @@
+ import Control.Monad.State (StateT)
+ import Control.Monad.Writer (WriterT, Monoid)
+ import Control.Monad.RWS (RWST)
++import Control.Monad.Base (MonadBase(liftBase))
++import Control.Monad.Trans.Control (ComposeSt, MonadBaseControl(..), MonadTransControl(..), StM, StT, defaultLiftBaseWith, defaultRestoreM)
+ import Control.Applicative (Applicative, (<$>))
+ import Data.Maybe (listToMaybe, catMaybes)
+ import Data.Int (Int32)
+@@ -57,11 +59,29 @@
+ 
+ -- * Monad
+ 
+-newtype Action m a = Action (ErrorT Failure (ReaderT Context m) a)
+-	deriving (Functor, Applicative, Monad, MonadIO, MonadControlIO, MonadError Failure)
++newtype Action m a = Action {unAction :: ErrorT Failure (ReaderT Context m) a}
++	deriving (Functor, Applicative, Monad, MonadIO, MonadError Failure)
+ -- ^ A monad on top of m (which must be a MonadIO) that may access the database and may fail with a DB 'Failure'
+ 
+-instance MonadTrans Action where lift = Action . lift . lift
++instance MonadBase b m => MonadBase b (Action m) where
++     liftBase = Action . liftBase
++
++instance (MonadIO m, MonadBaseControl b m) => MonadBaseControl b (Action m) where
++     newtype StM (Action m) a = StMT {unStMT :: ComposeSt Action m a}
++     liftBaseWith = defaultLiftBaseWith StMT
++     restoreM     = defaultRestoreM   unStMT
++
++instance MonadTrans Action where
++     lift = Action . lift . lift
++
++instance MonadTransControl Action where
++    newtype StT Action a = StActionT {unStAction :: StT (ReaderT Context) (StT (ErrorT Failure) a)}
++
++    liftWith f = Action $ liftWith $ \runError ->
++                            liftWith $ \runReader ->
++                              f (liftM StActionT . runReader . runError . unAction)
++
++    restoreT = Action . restoreT . restoreT . liftM unStAction
+ 
+ access :: (MonadIO m) => Pipe -> AccessMode -> Database -> Action m a -> m (Either Failure a)
+ -- ^ Run action against database on server at other end of pipe. Use access mode for any reads and writes. Return Left on connection failure or read/write failure.
+@@ -139,11 +159,11 @@
+ 	return (liftIOE ConnectionFailure promise)
+ 
+ -- | If you stack a monad on top of 'Action' then make it an instance of this class and use 'liftDB' to execute a DB Action within it. Instances already exist for the basic mtl transformers.
+-class (Monad m, MonadControlIO (BaseMonad m), Applicative (BaseMonad m), Functor (BaseMonad m)) => MonadDB m where
++class (Monad m, MonadBaseControl IO (BaseMonad m), Applicative (BaseMonad m), Functor (BaseMonad m)) => MonadDB m where
+ 	type BaseMonad m :: * -> *
+ 	liftDB :: Action (BaseMonad m) a -> m a
+ 
+-instance (MonadControlIO m, Applicative m, Functor m) => MonadDB (Action m) where
++instance (MonadBaseControl IO m, Applicative m, Functor m) => MonadDB (Action m) where
+ 	type BaseMonad (Action m) = m
+ 	liftDB = id
+ 
+@@ -192,7 +212,7 @@
+ type Collection = UString
+ -- ^ Collection name (not prefixed with database)
+ 
+-allCollections :: (MonadControlIO m, Functor m) => Action m [Collection]
++allCollections :: (MonadIO m, MonadBaseControl IO m, Functor m) => Action m [Collection]
+ -- ^ List all collections in this database
+ allCollections = do
+ 	db <- thisDatabase
+@@ -369,7 +389,7 @@
+ -- ^ Selects documents in collection that match selector. It uses no query options, projects all fields, does not skip any documents, does not limit result size, uses default batch size, does not sort, does not hint, and does not snapshot.
+ query sel col = Query [] (Select sel col) [] 0 0 [] False 0 []
+ 
+-find :: (MonadControlIO m) => Query -> Action m Cursor
++find :: (MonadIO m, MonadBaseControl IO m) => Query -> Action m Cursor
+ -- ^ Fetch documents satisfying query
+ find q@Query{selection, batchSize} = do
+ 	db <- thisDatabase
+@@ -464,7 +484,7 @@
+ data Cursor = Cursor FullCollection BatchSize (MVar DelayedBatch)
+ -- ^ Iterator over results of a query. Use 'next' to iterate or 'rest' to get all results. A cursor is closed when it is explicitly closed, all results have been read from it, garbage collected, or not used for over 10 minutes (unless 'NoCursorTimeout' option was specified in 'Query'). Reading from a closed cursor raises a 'CursorNotFoundFailure'. Note, a cursor is not closed when the pipe is closed, so you can open another pipe to the same server and continue using the cursor.
+ 
+-newCursor :: (MonadControlIO m) => Database -> Collection -> BatchSize -> DelayedBatch -> Action m Cursor
++newCursor :: (MonadIO m, MonadBaseControl IO m) => Database -> Collection -> BatchSize -> DelayedBatch -> Action m Cursor
+ -- ^ Create new cursor. If you don't read all results then close it. Cursor will be closed automatically when all results are read from it or when eventually garbage collected.
+ newCursor db col batchSize dBatch = do
+ 	var <- newMVar dBatch
+@@ -472,7 +492,7 @@
+ 	addMVarFinalizer var (closeCursor cursor)
+ 	return cursor
+ 
+-nextBatch :: (MonadControlIO m) => Cursor -> Action m [Document]
++nextBatch :: (MonadIO m, MonadBaseControl IO m) => Cursor -> Action m [Document]
+ -- ^ Return next batch of documents in query result, which will be empty if finished.
+ nextBatch (Cursor fcol batchSize var) = modifyMVar var $ \dBatch -> do
+ 	-- Pre-fetch next batch promise from server and return current batch.
+@@ -483,7 +503,7 @@
+ 	nextBatch' limit cid = request [] (GetMore fcol batchSize' cid, remLimit)
+ 		where (batchSize', remLimit) = batchSizeRemainingLimit batchSize limit
+ 
+-next :: (MonadControlIO m) => Cursor -> Action m (Maybe Document)
++next :: (MonadIO m, MonadBaseControl IO m) => Cursor -> Action m (Maybe Document)
+ -- ^ Return next document in query result, or Nothing if finished.
+ next (Cursor fcol batchSize var) = modifyMVar var nextState where
+ 	-- Pre-fetch next batch promise from server when last one in current batch is returned.
+@@ -502,15 +522,15 @@
+ 	nextBatch' limit cid = request [] (GetMore fcol batchSize' cid, remLimit)
+ 		where (batchSize', remLimit) = batchSizeRemainingLimit batchSize limit
+ 
+-nextN :: (MonadControlIO m, Functor m) => Int -> Cursor -> Action m [Document]
++nextN :: (MonadIO m, MonadBaseControl IO m, Functor m) => Int -> Cursor -> Action m [Document]
+ -- ^ Return next N documents or less if end is reached
+ nextN n c = catMaybes <$> replicateM n (next c)
+ 
+-rest :: (MonadControlIO m, Functor m) => Cursor -> Action m [Document]
++rest :: (MonadIO m, MonadBaseControl IO m, Functor m) => Cursor -> Action m [Document]
+ -- ^ Return remaining documents in query result
+ rest c = loop (next c)
+ 
+-closeCursor :: (MonadControlIO m) => Cursor -> Action m ()
++closeCursor :: (MonadIO m, MonadBaseControl IO m) => Cursor -> Action m ()
+ closeCursor (Cursor _ _ var) = modifyMVar var $ \dBatch -> do
+ 	Batch _ cid _ <- fulfill dBatch
+ 	unless (cid == 0) $ send [KillCursors [cid]]
+@@ -618,7 +638,7 @@
+ -- ^ MapReduce on collection with given map and reduce functions. Remaining attributes are set to their defaults, which are stated in their comments.
+ mapReduce col map' red = MapReduce col map' red [] [] 0 Inline Nothing [] False
+ 
+-runMR :: (MonadControlIO m, Applicative m) => MapReduce -> Action m Cursor
++runMR :: (MonadIO m, MonadBaseControl IO m, Applicative m) => MapReduce -> Action m Cursor
+ -- ^ Run MapReduce and return cursor of results. Error if map/reduce fails (because of bad Javascript)
+ runMR mr = do
+ 	res <- runMR' mr
+--- mongoDB-1.1.1-orig/mongoDB.cabal	2011-11-11 03:19:32.000000000 +1100
++++ mongoDB-1.1.1/mongoDB.cabal	2011-12-11 19:59:53.395943784 +1100
+@@ -18,7 +18,9 @@
+     parsec -any,
+     random -any,
+     random-shuffle -any,
+-    monad-control >= 0.2 && < 0.3
++    monad-control >= 0.3.0.1 && < 0.4,
++    lifted-base >= 0.1.0.1 && < 0.2,
++    transformers-base >= 0.4 && < 0.5
+ stability: alpha
+ homepage: http://github.com/TonyGen/mongoDB-haskell
+ package-url:
