@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/convertible-text-0.4
-		=dev-haskell/data-object-0.3*
+RDEPEND="<dev-haskell/convertible-text-0.5
+		<dev-haskell/data-object-0.5
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
 		<dev-haskell/text-0.12
