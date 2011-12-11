@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Thread-safe resource pools."
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
@@ -18,8 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/monad-control-0.4
+RDEPEND="=dev-haskell/lifted-base-0.1*
+		=dev-haskell/monad-control-0.3*
 		<dev-haskell/transformers-0.3
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+# ghc 6.12.3 requires lifted-base to compile with monad-control 0.3
+PATCHES=("${FILESDIR}/${PN}-0.1.2-monad-control-0.3.patch")
