@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Automates the recording and graphing of criterion benchmarks"
 HOMEPAGE="http://chplib.wordpress.com/2010/02/04/progression-supporting-optimisation-in-haskell/"
@@ -18,9 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/criterion-0.5*
+RDEPEND="<dev-haskell/criterion-0.7
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/txt-sushi-0.5*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/${PN}"-0.5-ghc7.2.patch)
