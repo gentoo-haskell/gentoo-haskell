@@ -23,13 +23,15 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/happstack-data-6.0*
 		>=dev-haskell/hslogger-1.0.2
 		dev-haskell/html
-		dev-haskell/maybet
+		=dev-haskell/monad-control-0.3*
 		<dev-haskell/mtl-2.1
 		=dev-haskell/network-2.3*
 		<dev-haskell/parsec-4
 		<dev-haskell/sendfile-0.8
 		<dev-haskell/text-0.12
 		dev-haskell/time
+		<dev-haskell/transformers-0.3
+		=dev-haskell/transformers-base-0.4*
 		<dev-haskell/utf8-string-0.4
 		dev-haskell/xhtml
 		dev-haskell/zlib
