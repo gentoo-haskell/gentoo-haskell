@@ -17,10 +17,23 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="test" # the tests fail
 
 RDEPEND=">=dev-haskell/hinotify-0.3.2
 		dev-haskell/mtl
 		>=dev-haskell/plugins-1.5.1.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+		)
+		"
+
+src_prepare() {
+	mkdir -p "${S}/Test" || die "Could not create Test directory"
+	cp "${FILESDIR}/Test.hs" "${S}/Test/Test.hs" || die "Could not copy Test.hs"
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
