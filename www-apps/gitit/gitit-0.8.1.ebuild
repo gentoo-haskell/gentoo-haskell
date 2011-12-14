@@ -50,11 +50,5 @@ RDEPEND="dev-haskell/cgi
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
-
-src_prepare() {
-	base_src_prepare
-	sed -e 's@json >= 0.4 && < 0.5@json >= 0.4 \&\& < 0.6@' \
-		-e 's@happstack-server >= 6.0 && < 6.3@happstack-server >= 6.0 \&\& < 6.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch"
+	"${FILESDIR}/${P}-happstack-server-6.4.patch")

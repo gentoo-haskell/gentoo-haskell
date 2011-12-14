@@ -13,7 +13,7 @@
          [m, i, pr]
  #endif
 --- gitit-0.8.1-orig/Network/Gitit/Types.hs	2011-09-04 07:46:18.000000000 +1000
-+++ gitit-0.8.1/Network/Gitit/Types.hs	2011-10-23 16:25:18.887748312 +1100
++++ gitit-0.8.1/Network/Gitit/Types.hs	2011-12-14 22:32:26.371704862 +1100
 @@ -1,4 +1,4 @@
 -{-# LANGUAGE TypeSynonymInstances #-}
 +{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
