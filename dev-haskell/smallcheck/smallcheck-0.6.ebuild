@@ -7,7 +7,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Another lightweight testing library in Haskell."
+DESCRIPTION="A property-based testing library"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/smallcheck"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
