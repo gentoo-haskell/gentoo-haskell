@@ -19,8 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
-		>=dev-haskell/dataenc-0.13.0.4
 		<dev-haskell/text-0.12
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
