@@ -22,7 +22,21 @@ RDEPEND="dev-haskell/deepseq
 		>=dev-haskell/text-0.11.1.5
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+			>=dev-haskell/quickcheck-2.4.0.1
+			dev-haskell/test-framework
+			dev-haskell/test-framework-quickcheck2
+		)
+		"
+
+src_prepare() {
+	mkdir -p "${S}/tests/QC/" || die "Could not create tests/QC directory"
+	cp "${FILESDIR}/ByteString.hs" "${S}/tests/QC/ByteString.hs" \
+		|| die "Could not copy missing ByteString.hs"
+	cp "${FILESDIR}/Text.hs" "${S}/tests/QC/Text.hs" \
+		|| die "Could not copy missing Text.hs"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
