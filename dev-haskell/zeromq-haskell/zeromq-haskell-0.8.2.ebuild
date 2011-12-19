@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="bindings to zeromq"
+DESCRIPTION="Bindings to ZeroMQ 2.1.x"
 HOMEPAGE="http://github.com/twittner/zeromq-haskell/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -24,8 +24,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
 			dev-haskell/hunit
+			>=dev-haskell/quickcheck-2.4
 			>=dev-haskell/test-framework-0.4
 			>=dev-haskell/test-framework-hunit-0.2
+			>=dev-haskell/test-framework-quickcheck2-0.2
 		)
 		"
 
