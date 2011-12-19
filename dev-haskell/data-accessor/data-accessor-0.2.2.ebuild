@@ -22,3 +22,8 @@ RDEPEND="=dev-haskell/transformers-0.2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@array >=0.1 && <0.4@array >=0.1 \&\& <0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
