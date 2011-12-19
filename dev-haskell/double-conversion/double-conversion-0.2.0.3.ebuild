@@ -28,6 +28,11 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
+src_prepare() {
+	sed -e 's@integer-gmp >= 0.2 && < 0.4@integer-gmp >= 0.2 \&\& < 0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
