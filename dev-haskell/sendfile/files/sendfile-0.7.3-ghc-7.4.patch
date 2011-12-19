@@ -1,0 +1,11 @@
+--- sendfile-0.7.3-orig/src/Network/Socket/SendFile/Linux.hsc	2011-03-02 04:59:03.000000000 +1100
++++ sendfile-0.7.3/src/Network/Socket/SendFile/Linux.hsc	2011-12-20 01:05:47.621410874 +1100
+@@ -66,7 +66,7 @@
+                 else throwErrno "Network.Socket.SendFile.Linux.sendfileI"
+       else return (False, fromIntegral sbytes)
+ 
+-safeMinus :: (Ord a, Num a) => a -> a -> a
++safeMinus :: (Ord a, Num a, Show a) => a -> a -> a
+ safeMinus x y
+     | y > x = error $ "y > x " ++ show (y,x)
+     | otherwise = x - y
