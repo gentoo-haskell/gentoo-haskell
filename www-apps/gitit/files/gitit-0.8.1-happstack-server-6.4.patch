@@ -1,5 +1,14 @@
 --- gitit-0.8.1-orig/gitit.cabal	2011-09-04 07:46:18.000000000 +1000
-+++ gitit-0.8.1-happstack-server-6.4/gitit.cabal	2011-12-14 22:38:49.005714043 +1100
++++ gitit-0.8.1-happstack-server-6.4/gitit.cabal	2011-12-19 20:22:36.359508864 +1100
+@@ -136,7 +136,7 @@
+                      network >= 2.1.0.0 && < 2.4,
+                      utf8-string >= 0.3 && < 0.4,
+                      SHA > 1 && < 1.6,
+-                     HTTP >= 4000.0 && < 4000.2,
++                     HTTP >= 4000.0 && < 4000.3,
+                      HStringTemplate >= 0.6 && < 0.7,
+                      old-locale >= 1,
+                      time >= 1.1 && < 1.3,
 @@ -144,14 +144,14 @@
                       filestore >= 0.4.0.2 && < 0.5,
                       zlib >= 0.5 && < 0.6,

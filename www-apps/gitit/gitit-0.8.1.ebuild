@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/cgi
 		>=dev-haskell/highlighting-kate-0.2.7.1
 		<dev-haskell/hslogger-1.2
 		=dev-haskell/hstringtemplate-0.6*
-		<dev-haskell/http-4000.2
+		<dev-haskell/http-4000.3
 		>=dev-haskell/json-0.4
 		dev-haskell/mtl
 		<dev-haskell/network-2.4
