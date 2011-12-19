@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library offers an alternative parallel programming
+		API to that provided by the @parallel@ package.
+		The &#39;Par&#39; monad allows the simple description of
+		parallel computations, and can be used to add
+		parallelism to pure Haskell code.  The basic API
+		is straightforward: the monad supports forking
+		and simple communication in terms of &#39;IVar&#39;s.
+		The library comes with an efficient work-stealing
+		implementation, but the internals are also
+		exposed so that you can build your own scheduler
+		if necessary.
+		Examples of use can be found in the examples/ directory
+		of the source package.
+	</longdescription>
+</pkgmetadata>
