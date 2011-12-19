@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="Decimal"
 MY_P="${MY_PN}-${PV}"
@@ -25,11 +25,9 @@ RDEPEND="dev-haskell/hunit
 		>dev-haskell/quickcheck-2.4
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-0"
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	sed -e 's@base==4@base>=4 \&\& <=5@' \
-		-i "${S}/Decimal.cabal" || die "Could not loosen base dependency"
-}
+PATCHES=("${FILESDIR}/${P}-ghc-7.patch"
+	"${FILESDIR}/${P}-ghc-7.4.patch")

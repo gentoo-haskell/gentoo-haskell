@@ -1,0 +1,11 @@
+--- Decimal-0.2.0-orig/src/Data/Decimal.hs	2011-03-19 04:57:56.000000000 +1100
++++ Decimal-0.2.0/src/Data/Decimal.hs	2011-12-19 19:00:26.239738407 +1100
+@@ -120,7 +120,7 @@
+       (Decimal _ n2) = roundTo e d2
+ 
+ 
+-instance (Integral i) => Show (DecimalRaw i) where
++instance (Integral i, Show i) => Show (DecimalRaw i) where
+    showsPrec _ (Decimal e n)
+        | e == 0     = (concat [signStr, strN] ++)
+        | otherwise  = (concat [signStr, intPart, ".", fracPart] ++)
