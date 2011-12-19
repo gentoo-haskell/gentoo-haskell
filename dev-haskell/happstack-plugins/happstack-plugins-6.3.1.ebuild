@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="=dev-haskell/happstack-server-6*
 		dev-haskell/mtl
-		dev-haskell/plugins-auto
+		=dev-haskell/plugins-auto-0.0*
+		=dev-haskell/th-lift-0.5*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
