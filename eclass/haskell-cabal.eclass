@@ -100,7 +100,6 @@ fi
 
 if [[ -n "${CABAL_USE_HOOGLE}" ]]; then
 	IUSE="${IUSE} hoogle"
-	DEPEND="${DEPEND} hoogle? ( dev-haskell/hoogle )"
 fi
 
 if [[ -n "${CABAL_USE_ALEX}" ]]; then
@@ -213,20 +212,6 @@ cabal-mksetup() {
 		> $setupdir/Setup.hs
 }
 
-cabal-hoogle-convert() {
-	cabalfile=$(ls --format=single-column *.cabal | head -n1)
-	if [[ -f "${S}/${cabalfile}" ]]; then
-		cabalpkgname=${cabalfile:0:$(expr index ${cabalfile} ".")-1}
-		hoogletxt="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.txt"
-		hooglehoo="${S}/dist/doc/html/${cabalpkgname}/${cabalpkgname}.hoo"
-		if [[ -f ${hoogletxt} ]]; then
-			set -- convert ${hoogletxt} ${hooglehoo} "$@"
-			echo hoogle "$@"
-			hoogle "$@"
-		fi
-	fi
-}
-
 cabal-hscolour() {
 	set -- hscolour "$@"
 	echo ./setup "$@"
@@ -255,7 +240,6 @@ cabal-hoogle-haddock() {
 	set -- haddock --hoogle
 	echo ./setup "$@"
 	./setup "$@" || die "setup haddock --hoogle failed"
-	cabal-hoogle-convert
 }
 
 cabal-hoogle-hscolour-haddock() {
