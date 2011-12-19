@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
+	epatch "${FILESDIR}/network-2.3.0.8-ghc-7.4.patch"
 }
 
 src_configure() {
