@@ -1,0 +1,31 @@
+--- HTTP-4000.2.1-orig/HTTP.cabal	2011-12-01 18:49:01.000000000 +1100
++++ HTTP-4000.2.1/HTTP.cabal	2011-12-19 21:24:05.452416849 +1100
+@@ -76,8 +76,8 @@
+                  Network.HTTP.MD5Aux,
+                  Network.HTTP.Utils
+                  Paths_HTTP
+-  GHC-options: -fwarn-missing-signatures -Wall
+-  Build-depends: base >= 2 && < 4.5, network, parsec
++  GHC-options: -fwarn-missing-signatures -Wall -fno-warn-unused-do-bind
++  Build-depends: base >= 2 && < 4.6, network, parsec
+   Extensions: FlexibleInstances
+   if flag(old-base)
+     Build-depends: base < 3
+@@ -95,7 +95,7 @@
+ Test-Suite test
+   type: exitcode-stdio-1.0
+ 
+-  build-tools: ghc >= 6.10 && < 7.4
++  build-tools: ghc >= 6.10 && < 7.6
+ 
+   hs-source-dirs: test
+   main-is: httpTests.hs
+@@ -103,7 +103,7 @@
+   build-depends:     HTTP,
+                      HUnit,
+                      httpd-shed,
+-                     base >= 2 && < 4.5,
++                     base >= 2 && < 4.6,
+                      network,
+                      split >= 0.1 && < 0.2,
+                      test-framework,
