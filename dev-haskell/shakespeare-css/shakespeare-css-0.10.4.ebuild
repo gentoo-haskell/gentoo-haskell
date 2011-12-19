@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Stick your haskell variables into css at compile time."
 HOMEPAGE="http://www.yesodweb.com/book/templates"
@@ -28,6 +28,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/hspec-0.8
 		)
 		"
+
+PATCHES=("${FILESDIR}/${PN}-0.10.4-ghc-6.12.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)

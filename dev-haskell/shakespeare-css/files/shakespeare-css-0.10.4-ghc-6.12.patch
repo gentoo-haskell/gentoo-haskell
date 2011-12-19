@@ -1,0 +1,33 @@
+--- shakespeare-css-0.10.4-orig/Text/Css.hs	2011-12-05 22:31:02.000000000 +1100
++++ shakespeare-css-0.10.4/Text/Css.hs	2011-12-19 21:36:36.638470396 +1100
+@@ -15,7 +15,11 @@
+ import Text.ParserCombinators.Parsec (Parser, parse)
+ import Text.Shakespeare.Base hiding (Scope)
+ import Language.Haskell.TH
++#if MIN_VERSION_base(4,3,0)
+ import Control.Applicative ((<$>), (<*>))
++#else
++import Control.Applicative ((<$>), (<*>), Applicative(..), pure)
++#endif
+ 
+ class ToCss a where
+     toCss :: a -> Builder
+@@ -72,6 +76,18 @@
+     b' <- b
+     return $ a' ++ ContentRaw " " : b'
+ 
++#if !MIN_VERSION_base(4,3,0)
++instance Monad (Either e) where
++    return = Right
++    Left  l >>= _ = Left l
++    Right r >>= k = k r    
++
++instance Applicative (Either e) where
++    pure          = Right
++    Left  e <*> _ = Left e
++    Right f <*> r = fmap f r
++#endif
++
+ blockRuntime :: [(Deref, CDData url)]
+              -> (url -> [(Text, Text)] -> Text)
+              -> Block
