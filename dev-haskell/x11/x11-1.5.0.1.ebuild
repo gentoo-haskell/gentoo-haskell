@@ -13,7 +13,7 @@ MY_PN="X11"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A binding to the X11 graphics library"
-HOMEPAGE="http://code.haskell.org/X11"
+HOMEPAGE="https://github.com/haskell-pkg-janitors/X11"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
