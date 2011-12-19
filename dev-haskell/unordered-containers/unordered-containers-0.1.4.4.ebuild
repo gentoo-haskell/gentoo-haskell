@@ -29,6 +29,12 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4.0.1
 		)"
 
+src_prepare() {
+	sed -e 's@base >= 4 && < 4.5@base >= 4 \&\& < 4.6@' \
+		-e 's@deepseq >= 1.1 && < 1.3@deepseq >= 1.1 \&\& < 1.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
