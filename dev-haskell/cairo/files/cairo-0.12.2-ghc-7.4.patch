@@ -1,0 +1,11 @@
+--- cairo-0.12.2-orig/Graphics/Rendering/Cairo/Types.chs	2011-11-14 09:15:41.000000000 +1100
++++ cairo-0.12.2/Graphics/Rendering/Cairo/Types.chs	2011-12-19 21:52:19.457753213 +1100
+@@ -361,7 +361,7 @@
+ cFromBool  = fromBool
+ 
+ {-# INLINE cToBool #-}
+-cToBool :: Num a => a -> Bool
++cToBool :: (Eq a, Num a, Show a) => a -> Bool
+ cToBool  = toBool
+ 
+ {-# INLINE cToEnum #-}
