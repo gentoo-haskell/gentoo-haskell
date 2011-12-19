@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A collection of tools for processing XML with Haskell."
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
@@ -30,4 +30,4 @@ RDEPEND=">=dev-haskell/binary-0.5 <dev-haskell/binary-1
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-9.1.4-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-9.1.5-ghc-7.2.patch")
