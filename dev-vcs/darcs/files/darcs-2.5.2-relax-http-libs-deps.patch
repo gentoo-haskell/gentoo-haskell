@@ -1,0 +1,38 @@
+--- darcs-2.5.2-orig/darcs.cabal	2011-12-19 20:43:28.551322710 +1100
++++ darcs-2.5.2/darcs.cabal	2011-12-19 20:44:08.644140399 +1100
+@@ -195,7 +195,7 @@
+       build-depends: unix >= 1.0 && < 2.6
+     if flag(http)
+         build-depends:    network >= 2.2 && < 2.4,
+-                          HTTP    >= 3000.0 && < 4000.2
++                          HTTP    >= 3000.0 && < 4000.3
+ 
+ 
+ -- ----------------------------------------------------------------------
+@@ -420,7 +420,7 @@
+ 
+     if flag(http)
+         build-depends:    network >= 2.2 && < 2.4,
+-                          HTTP    >= 3000.0 && < 4000.2
++                          HTTP    >= 3000.0 && < 4000.3
+         cpp-options:      -DHAVE_HTTP
+         x-have-http:
+ 
+@@ -554,7 +554,7 @@
+ 
+   if flag(http)
+       build-depends:    network >= 2.2 && < 2.4,
+-                        HTTP    >= 3000.0 && < 4000.2
++                        HTTP    >= 3000.0 && < 4000.3
+       cpp-options:      -DHAVE_HTTP
+       x-have-http:
+ 
+@@ -705,7 +705,7 @@
+ 
+     if flag(http)
+         build-depends:    network >= 2.2 && < 2.4,
+-                          HTTP    >= 3000.0 && < 4000.2
++                          HTTP    >= 3000.0 && < 4000.3
+ 
+     if flag(color)
+       x-use-color:

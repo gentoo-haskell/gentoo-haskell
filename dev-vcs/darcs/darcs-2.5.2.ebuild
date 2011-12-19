@@ -18,7 +18,7 @@ IUSE="doc test"
 RDEPEND="=dev-haskell/hashed-storage-0.5*
 		=dev-haskell/haskeline-0.6*
 		=dev-haskell/html-1.0*
-		<dev-haskell/http-4000.2
+		<dev-haskell/http-4000.3
 		=dev-haskell/mmap-0.5*
 		<dev-haskell/mtl-2.1
 		>=dev-haskell/network-2.2
@@ -54,6 +54,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.5.2-relax-regex-libs-deps.patch"
 	epatch "${FILESDIR}/${PN}-2.5.2-ghc-7.2.patch"
 	epatch "${FILESDIR}/${PN}-2.5.2-tests-ghc-7.2.patch"
+	epatch "${FILESDIR}/${PN}-2.5.2-relax-http-libs-deps.patch"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
