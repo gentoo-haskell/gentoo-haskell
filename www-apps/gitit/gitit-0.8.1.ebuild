@@ -38,7 +38,7 @@ RDEPEND="dev-haskell/cgi
 		>=dev-haskell/recaptcha-0.1
 		dev-haskell/safe
 		<dev-haskell/sha-1.6
-		<dev-haskell/time-1.3
+		>=dev-haskell/time-1.1
 		=dev-haskell/url-2.1*
 		=dev-haskell/utf8-string-0.3*
 		dev-haskell/xhtml
@@ -51,4 +51,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch"
-	"${FILESDIR}/${P}-happstack-server-6.4.patch")
+	"${FILESDIR}/${P}-relax-deps.patch")
