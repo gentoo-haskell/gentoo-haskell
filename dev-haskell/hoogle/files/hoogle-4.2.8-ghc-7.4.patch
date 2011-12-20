@@ -1,0 +1,11 @@
+--- hoogle-4.2.8-orig/hoogle.cabal	2011-11-27 23:21:03.000000000 +1100
++++ hoogle-4.2.8/hoogle.cabal	2011-12-20 23:08:58.262571859 +1100
+@@ -117,7 +117,7 @@
+         case-insensitive >= 0.2 && < 0.5,
+         wai == 0.4.*,
+         warp == 0.4.*,
+-        Cabal >= 1.8 && < 1.13
++        Cabal >= 1.8 && < 1.15
+ 
+     other-modules:
+         CmdLine.All

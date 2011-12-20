@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit eutils haskell-cabal
+inherit base eutils haskell-cabal
 
 DESCRIPTION="Haskell API Search"
 HOMEPAGE="http://www.haskell.org/hoogle/"
@@ -20,7 +20,7 @@ IUSE="fetchdb"
 
 RDEPEND="dev-haskell/binary
 		<dev-haskell/blaze-builder-0.4
-		<dev-haskell/cabal-1.13
+		<dev-haskell/cabal-1.15
 		=dev-haskell/case-insensitive-0.4*
 		=dev-haskell/cmdargs-0.9*
 		=dev-haskell/enumerator-0.4*
@@ -37,6 +37,8 @@ RDEPEND="dev-haskell/binary
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-4.2.8-ghc-7.4.patch")
 
 src_install() {
 	haskell-cabal_src_install
