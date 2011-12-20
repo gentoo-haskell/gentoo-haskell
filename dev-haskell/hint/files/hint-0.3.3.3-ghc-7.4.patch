@@ -1,5 +1,5 @@
 --- hint-0.3.3.3-orig/src/Hint/Compat.hs	2011-11-05 06:22:05.000000000 +1100
-+++ hint-0.3.3.3/src/Hint/Compat.hs	2011-12-20 20:42:28.370921729 +1100
++++ hint-0.3.3.3/src/Hint/Compat.hs	2011-12-20 22:25:10.329885132 +1100
 @@ -8,6 +8,10 @@
  import Control.Monad.Trans (liftIO)
  #endif
@@ -29,7 +29,7 @@
  -- Keep setContext/getContext unmodified for use where the results of getContext
  -- are simply restored by setContext, in which case we don't really care about the
  -- particular type of b.
-@@ -41,7 +45,40 @@
+@@ -41,7 +45,25 @@
  
  -- getContext :: GHC.GhcMonad m => m ([GHC.Module], [b])
  getContext = GHC.getContext
@@ -41,21 +41,6 @@
 +      ds' = map GHC.IIDecl ds
 +      is = ms' ++ ds'
 +  in GHC.setContext is
-+
-+-- setContext :: GHC.GhcMonad m => [GHC.Module] -> [GHC.ImportDecl GHC.RdrName] -> m ()
-+-- setContext ms ds = do
-+--   let ms' = map GHC.IIModule ms
-+--   let ds' = map GHC.IIDecl ds
-+--   let is = ms' ++ ds'
-+--   GHC.setContext is
-+
-+-- setContext :: GHC.GhcMonad m => [GHC.Module] -> [GHC.ImportDecl GHC.RdrName] -> m ()
-+-- setContext ms ds = do
-+--   ms' <- fmap GHC.IIModule ms
-+--   ds' <- fmap GHC.IIDecl ds
-+--   is <- mplus ms' ds'
-+--   GHC.setContext is
-+--   return ()
 +
 +getContext :: GHC.GhcMonad m => m ([GHC.Module], [GHC.ImportDecl GHC.RdrName])
 +getContext = GHC.getContext >>= foldM f ([], [])
@@ -71,11 +56,9 @@
  #endif
  
  mkPState = GHC.mkPState
-@@ -69,13 +106,34 @@
- getContextNames = fmap (\(as,bs) -> (map name as, map name bs)) getContext
+@@ -70,10 +92,10 @@
      where name = GHC.moduleNameString . GHC.moduleName
  #else
-+-- #if __GLASGOW_HASKELL__ < 704
  setContextModules :: GHC.GhcMonad m => [GHC.Module] -> [GHC.Module] -> m ()
 -setContextModules as = GHC.setContext as . map (GHC.simpleImportDecl . GHC.moduleName)
 +setContextModules as = setContext as . map (GHC.simpleImportDecl . GHC.moduleName)
@@ -85,30 +68,8 @@
 +getContextNames = fmap (\(as,bs) -> (map name as, map decl bs)) getContext
      where name = GHC.moduleNameString . GHC.moduleName
            decl = GHC.moduleNameString . GHC.unLoc . GHC.ideclName
-+-- #else
-+-- setContextModules :: GHC.GhcMonad m => [GHC.Module] -> [GHC.Module] -> m ()
-+-- setContextModules as bs = GHC.setContext (ms ++ is)
-+--   where
-+--     ms = map GHC.IIModule as
-+--     is = map (GHC.IIDecl . GHC.simpleImportDecl . GHC.moduleName) bs
-+    
-+-- getContextNames :: GHC.GhcMonad m => m ([String], [String])
-+-- getContextNames = getContext >>= foldM f ([], [])
-+--   where
-+--     f :: (GHC.GhcMonad m) =>
-+--          ([String], [String]) ->
-+--          GHC.InteractiveImport ->
-+--          m ([String], [String])
-+--     f (ns, ds) i = case i of
-+--       (GHC.IIDecl d) -> return (ns, (decl:ds))
-+--         where decl = (GHC.moduleNameString . GHC.unLoc . GHC.ideclName) d
-+--       (GHC.IIModule n) -> return ((name:ns), ds)
-+--         where name = (GHC.moduleNameString . GHC.moduleName) n
-+-- #endif
  #endif
- 
- #if __GLASGOW_HASKELL__ < 702
-@@ -117,9 +175,14 @@
+@@ -117,9 +139,14 @@
  exprType = fmap Just . GHC.exprType
  
  -- add a bogus Maybe, in order to use it with mayFail
