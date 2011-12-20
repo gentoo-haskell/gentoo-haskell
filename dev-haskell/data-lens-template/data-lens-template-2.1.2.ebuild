@@ -22,3 +22,8 @@ RDEPEND="=dev-haskell/data-lens-2.0*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@template-haskell >= 2.4 && < 2.7@template-haskell >= 2.4 \&\& < 2.8@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
