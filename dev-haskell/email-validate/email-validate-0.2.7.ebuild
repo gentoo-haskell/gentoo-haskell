@@ -23,3 +23,8 @@ RDEPEND=">=dev-haskell/ranges-0.2.2
 		<dev-haskell/parsec-4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@base >= 2 && < 4.5@base >= 2 \&\& < 4.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
