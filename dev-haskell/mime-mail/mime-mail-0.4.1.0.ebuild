@@ -25,6 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@filepath            >= 1.2        && < 1.3@filepath            >= 1.1        \&\& < 1.3@' \
+	sed -e 's@filepath            >= 1.2        && < 1.3@filepath            >= 1.1        \&\& < 1.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
