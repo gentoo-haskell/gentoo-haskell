@@ -25,6 +25,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@attoparsec >= 0.7     && < 0.10@attoparsec >= 0.7     \&\& < 0.11@' \
+	sed -e 's@array      >= 0.1     && < 0.4@array      >= 0.1     \&\& < 0.5@' \
+		-e 's@attoparsec >= 0.7     && < 0.10@attoparsec >= 0.7     \&\& < 0.11@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
