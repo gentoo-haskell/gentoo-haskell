@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Runtime Haskell interpreter (GHC API wrapper)"
 HOMEPAGE="http://darcsden.com/jcpetruzza/hint"
@@ -27,3 +27,5 @@ RDEPEND="=dev-haskell/ghc-mtl-1.0*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+PATCHES=("${FILESDIR}/${PN}-0.3.3.3-ghc-7.4.patch")

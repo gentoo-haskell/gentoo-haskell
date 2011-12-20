@@ -1,0 +1,180 @@
+--- hint-0.3.3.3-orig/src/Hint/Compat.hs	2011-11-05 06:22:05.000000000 +1100
++++ hint-0.3.3.3/src/Hint/Compat.hs	2011-12-20 20:42:28.370921729 +1100
+@@ -8,6 +8,10 @@
+ import Control.Monad.Trans (liftIO)
+ #endif
+ 
++#if __GLASGOW_HASKELL__ >= 704
++import Control.Monad (foldM, liftM)
++#endif
++
+ import qualified Hint.GHC as GHC
+ 
+ -- Kinds became a synonym for Type in GHC 6.8. We define this wrapper
+@@ -18,7 +22,7 @@
+ -- supportedLanguages :: [String]
+ supportedExtensions = map f GHC.xFlags
+     where
+-#if __GLASGOW_HASKELL__ < 702
++#if (__GLASGOW_HASKELL__ < 702) || (__GLASGOW_HASKELL__ >= 704)
+       f (e,_,_) = e
+ #else
+       f (e,_,_,_) = e
+@@ -31,7 +35,7 @@
+ getContext :: GHC.GhcMonad m => m ([GHC.Module], [GHC.Module])
+ getContext = fmap (\(as,bs) -> (as,map fst bs)) GHC.getContext
+ #else
+-
++#if __GLASGOW_HASKELL__ < 704
+ -- Keep setContext/getContext unmodified for use where the results of getContext
+ -- are simply restored by setContext, in which case we don't really care about the
+ -- particular type of b.
+@@ -41,7 +45,40 @@
+ 
+ -- getContext :: GHC.GhcMonad m => m ([GHC.Module], [b])
+ getContext = GHC.getContext
+-
++#else
++setContext :: GHC.GhcMonad m => [GHC.Module] -> [GHC.ImportDecl GHC.RdrName] -> m ()
++setContext ms ds =
++  let ms' = map GHC.IIModule ms
++      ds' = map GHC.IIDecl ds
++      is = ms' ++ ds'
++  in GHC.setContext is
++
++-- setContext :: GHC.GhcMonad m => [GHC.Module] -> [GHC.ImportDecl GHC.RdrName] -> m ()
++-- setContext ms ds = do
++--   let ms' = map GHC.IIModule ms
++--   let ds' = map GHC.IIDecl ds
++--   let is = ms' ++ ds'
++--   GHC.setContext is
++
++-- setContext :: GHC.GhcMonad m => [GHC.Module] -> [GHC.ImportDecl GHC.RdrName] -> m ()
++-- setContext ms ds = do
++--   ms' <- fmap GHC.IIModule ms
++--   ds' <- fmap GHC.IIDecl ds
++--   is <- mplus ms' ds'
++--   GHC.setContext is
++--   return ()
++
++getContext :: GHC.GhcMonad m => m ([GHC.Module], [GHC.ImportDecl GHC.RdrName])
++getContext = GHC.getContext >>= foldM f ([], [])
++  where
++    f :: (GHC.GhcMonad m) =>
++         ([GHC.Module], [GHC.ImportDecl GHC.RdrName]) ->
++         GHC.InteractiveImport ->
++         m ([GHC.Module], [GHC.ImportDecl GHC.RdrName])
++    f (ns, ds) i = case i of
++      (GHC.IIDecl d) -> return (ns, (d:ds))
++      (GHC.IIModule n) -> return ((n:ns), ds)
++#endif
+ #endif
+ 
+ mkPState = GHC.mkPState
+@@ -69,13 +106,34 @@
+ getContextNames = fmap (\(as,bs) -> (map name as, map name bs)) getContext
+     where name = GHC.moduleNameString . GHC.moduleName
+ #else
++-- #if __GLASGOW_HASKELL__ < 704
+ setContextModules :: GHC.GhcMonad m => [GHC.Module] -> [GHC.Module] -> m ()
+-setContextModules as = GHC.setContext as . map (GHC.simpleImportDecl . GHC.moduleName)
++setContextModules as = setContext as . map (GHC.simpleImportDecl . GHC.moduleName)
+ 
+ getContextNames :: GHC.GhcMonad m => m([String], [String])
+-getContextNames = fmap (\(as,bs) -> (map name as, map decl bs)) GHC.getContext
++getContextNames = fmap (\(as,bs) -> (map name as, map decl bs)) getContext
+     where name = GHC.moduleNameString . GHC.moduleName
+           decl = GHC.moduleNameString . GHC.unLoc . GHC.ideclName
++-- #else
++-- setContextModules :: GHC.GhcMonad m => [GHC.Module] -> [GHC.Module] -> m ()
++-- setContextModules as bs = GHC.setContext (ms ++ is)
++--   where
++--     ms = map GHC.IIModule as
++--     is = map (GHC.IIDecl . GHC.simpleImportDecl . GHC.moduleName) bs
++    
++-- getContextNames :: GHC.GhcMonad m => m ([String], [String])
++-- getContextNames = getContext >>= foldM f ([], [])
++--   where
++--     f :: (GHC.GhcMonad m) =>
++--          ([String], [String]) ->
++--          GHC.InteractiveImport ->
++--          m ([String], [String])
++--     f (ns, ds) i = case i of
++--       (GHC.IIDecl d) -> return (ns, (decl:ds))
++--         where decl = (GHC.moduleNameString . GHC.unLoc . GHC.ideclName) d
++--       (GHC.IIModule n) -> return ((name:ns), ds)
++--         where name = (GHC.moduleNameString . GHC.moduleName) n
++-- #endif
+ #endif
+ 
+ #if __GLASGOW_HASKELL__ < 702
+@@ -117,9 +175,14 @@
+ exprType = fmap Just . GHC.exprType
+ 
+ -- add a bogus Maybe, in order to use it with mayFail
++#if __GLASGOW_HASKELL__ < 704
+ typeKind :: GHC.GhcMonad m => String -> m (Maybe GHC.Kind)
+ typeKind = fmap Just . GHC.typeKind
+ #else
++typeKind :: GHC.GhcMonad m => String -> m (Maybe GHC.Kind)
++typeKind = fmap Just . (liftM snd) . (GHC.typeKind True)
++#endif
++#else
+ -- add a bogus session parameter, in order to use it with runGhc2
+ parseDynamicFlags :: GHC.Session
+                   -> GHC.DynFlags
+--- hint-0.3.3.3-orig/src/Hint/Reflection.hs	2011-11-05 06:22:05.000000000 +1100
++++ hint-0.3.3.3/src/Hint/Reflection.hs	2011-12-20 18:55:24.595552128 +1100
+@@ -40,6 +40,7 @@
+        --
+        return (asModElemList $ catMaybes exports)
+ 
++#if __GLASGOW_HASKELL__ < 704
+ asModElemList :: [GHC.TyThing] -> [ModuleElem]
+ asModElemList xs = concat [cs',
+                            ts',
+@@ -62,6 +63,30 @@
+ asModElem (GHC.AClass c)    = Class (getUnqualName c)
+                                     (map getUnqualName $ GHC.classMethods c)
+ asModElem _ = error "asModElem: can't happen!"
++#else
++asModElemList :: [GHC.TyThing] -> [ModuleElem]
++asModElemList xs = concat [cs',
++                           ts',
++                           ds \\ (concatMap (map Fun . children) ts'),
++                           fs \\ (concatMap (map Fun . children) cs')]
++    where (cs,ts,ds,fs) = ([asModElem c | c@(GHC.ATyCon c')   <- xs, GHC.isClassTyCon c'],
++                           [asModElem t | t@(GHC.ATyCon c')   <- xs, (not . GHC.isClassTyCon) c'],
++                           [asModElem d | d@GHC.ADataCon{} <- xs],
++                           [asModElem f | f@GHC.AnId{}     <- xs])
++          cs' = [Class n $ filter (alsoIn fs) ms  | Class n ms  <- cs]
++          ts' = [Data  t $ filter (alsoIn ds) dcs | Data  t dcs <- ts]
++          alsoIn es = (`elem` (map name es))
++
++
++asModElem :: GHC.TyThing -> ModuleElem
++asModElem (GHC.AnId f)      = Fun $ getUnqualName f
++asModElem (GHC.ADataCon dc) = Fun $ getUnqualName dc
++asModElem (GHC.ATyCon tc)   = 
++  if GHC.isClassTyCon tc
++  then Class (getUnqualName tc) (map getUnqualName $ (GHC.classMethods . fromJust . GHC.tyConClass_maybe) tc)
++  else Data  (getUnqualName tc) (map getUnqualName $ GHC.tyConDataCons tc)
++asModElem _ = error "asModElem: can't happen!"
++#endif
+ 
+ getUnqualName :: GHC.NamedThing a => a -> String
+ getUnqualName = GHC.showSDocUnqual . GHC.pprParenSymName
+--- hint-0.3.3.3-orig/src/Hint/InterpreterT.hs	2011-11-05 06:22:05.000000000 +1100
++++ hint-0.3.3.3/src/Hint/InterpreterT.hs	2011-12-20 21:00:12.847496952 +1100
+@@ -119,7 +119,11 @@
+ 
+ #if __GLASGOW_HASKELL__ >= 700
+ #if __GLASGOW_HASKELL__ >= 702
++#if __GLASGOW_HASKELL__ >= 704
++       let extMap      = map (\(a,b,_) -> (a,b)) GHC.xFlags
++#else
+        let extMap      = map (\(a,_,b,_) -> (a,b)) GHC.xFlags
++#endif
+ #else
+        let extMap      = map (\(a,b,_) -> (a,b)) GHC.xFlags
+ #endif
