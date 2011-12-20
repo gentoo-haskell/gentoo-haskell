@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		=dev-haskell/bytestring-mmap-0.2*
 		dev-haskell/bytestring-nums
 		=dev-haskell/case-insensitive-0.4*
-		<dev-haskell/deepseq-1.3
+		<dev-haskell/deepseq-1.4
 		=dev-haskell/dlist-0.5*
 		=dev-haskell/enumerator-0.4*
 		<dev-haskell/hunit-2
@@ -45,4 +45,4 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-#PATCHES=("${FILESDIR}/${PN}-0.6.0.1-attoparsec-0.10.patch")
+PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
