@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A fast, iteratee-based, epoll-enabled web server for the Snap Framework"
 HOMEPAGE="http://snapframework.com/"
@@ -43,6 +43,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		libev? ( >=dev-haskell/hlibev-0.2.8 )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
 
 src_prepare() {
 	base_src_prepare
