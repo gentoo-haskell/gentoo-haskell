@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="'Show' instances for Lambdabot"
 HOMEPAGE="http://hackage.haskell.org/package/show"
@@ -20,8 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/quickcheck-2.4
 		>=dev-haskell/smallcheck-0.4
+		dev-haskell/syb
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-0.4.1.1-ghc-7.2.patch")
+		>=dev-haskell/cabal-1.6"
