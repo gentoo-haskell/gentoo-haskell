@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Efficient algorithms for vector arrays"
 HOMEPAGE="http://code.haskell.org/~dolio/"
@@ -23,3 +23,5 @@ RDEPEND=">=dev-haskell/primitive-0.3
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+PATCHES=("${FILESDIR}/${PN}-0.5.3-ghc-7.4.patch")
