@@ -24,3 +24,8 @@ RDEPEND="=dev-haskell/attempt-0.3*
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	sed -e 's@old-time >= 1.0.0.2 && < 1.1@old-time >= 1.0.0.2 \&\& < 1.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
