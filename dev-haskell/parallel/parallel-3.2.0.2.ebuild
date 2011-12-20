@@ -18,7 +18,7 @@ SLOT="3"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/deepseq-1.3
+RDEPEND="<dev-haskell/deepseq-1.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
