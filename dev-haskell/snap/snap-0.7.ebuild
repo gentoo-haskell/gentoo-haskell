@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Snap: A Haskell Web Framework: project starter executable and glue code library"
 HOMEPAGE="http://snapframework.com/"
@@ -59,3 +59,4 @@ RDEPEND="=dev-haskell/aeson-0.4*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
+PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
