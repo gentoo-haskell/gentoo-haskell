@@ -27,4 +27,5 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch"
+	"${FILESDIR}/${P}-ghc-7.4.patch")
