@@ -1,0 +1,12 @@
+--- ghc-mod-1.0.4-orig/ghc-mod.cabal	2011-12-02 15:10:05.000000000 +1100
++++ ghc-mod-1.0.4/ghc-mod.cabal	2011-12-21 15:38:43.992751914 +1100
+@@ -18,9 +18,6 @@
+ Category:               Development
+ Cabal-Version:          >= 1.6
+ Build-Type:             Simple
+-Data-Dir:               elisp
+-Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
+-                        ghc-flymake.el ghc-command.el ghc-info.el
+ Executable ghc-mod
+   Main-Is:              GHCMod.hs
+   Other-Modules:        List Browse Cabal CabalDev Check Info Lang Lint Types ErrMsg
