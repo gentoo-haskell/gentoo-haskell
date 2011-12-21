@@ -28,11 +28,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hlint-1.7.1
 		dev-haskell/regex-posix
 		dev-haskell/transformers
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.1"
 
 SITEFILE=50${PN}-gentoo.el
 
-PATCHES=("${FILESDIR}/${PN}-1.0.4-gentoo.patch")
+PATCHES=("${FILESDIR}/${PN}-1.0.4-gentoo.patch"
+	"${FILESDIR}/${PN}-1.0.4-ghc-7.4.patch")
 
 src_compile() {
 	haskell-cabal_src_compile
