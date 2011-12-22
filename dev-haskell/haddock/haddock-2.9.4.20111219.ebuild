@@ -9,7 +9,10 @@ EAPI="3"
 
 #CABAL_FEATURES="bin lib profile haddock hscolour"
 CABAL_FEATURES="bin lib profile hscolour"
-inherit haskell-cabal pax-utils
+inherit haskell-cabal pax-utils versionator
+
+MY_PV=$(get_version_component_range '1-3')
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -26,6 +29,8 @@ RDEPEND="dev-haskell/ghc-paths
 		>=dev-lang/ghc-7.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 RESTRICT="test" # avoid depends on QC
 
