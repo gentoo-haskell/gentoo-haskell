@@ -1,0 +1,11 @@
+--- blaze-textual-0.2.0.6-orig/tests/QC.hs	2011-12-21 16:27:28.000000000 +1100
++++ blaze-textual-0.2.0.6/tests/QC.hs	2011-12-23 01:51:06.298411473 +1100
+@@ -9,7 +9,7 @@
+ import qualified Data.ByteString.Char8 as B
+ 
+ -- Integral values should be rendered exactly as Haskell does.
+-t_integral :: Integral a => a -> a -> Bool
++t_integral :: (Integral a, Show a) => a -> a -> Bool
+ t_integral _ i = toByteString (integral i) == B.pack (show i)
+ 
+ -- This package doesn't render floating point numbers exactly as

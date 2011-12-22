@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
-PATCHES=("${FILESDIR}/${PN}-0.2.0.5-ghc-7.4.patch")
+PATCHES=("${FILESDIR}/${PN}-0.2.0.6-ghc-7.4.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
