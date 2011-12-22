@@ -29,9 +29,6 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
-	sed -e 's@deepseq                    >= 1.1 && < 1.2@deepseq                    >= 1.1 \&\& < 1.4@' \
-		-e 's@integer-gmp >= 0.2 && < 0.4@integer-gmp >= 0.2 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	epatch "${FILESDIR}/${PN}-0.11.1.6-disable-tests-that-fail-in-non-latin1-locales.patch"
 }
 
