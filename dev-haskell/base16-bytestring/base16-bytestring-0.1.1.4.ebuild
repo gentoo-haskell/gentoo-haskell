@@ -21,6 +21,3 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-# bos already fixed it upstream, so rm this patch when bumping it
-PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
