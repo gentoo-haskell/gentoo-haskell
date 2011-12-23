@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A fast, iteratee-based, epoll-enabled web server for the Snap Framework"
 HOMEPAGE="http://snapframework.com/"
@@ -44,14 +44,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
-
 src_prepare() {
-	base_src_prepare
 	sed -e 's@hlibev >= 0.2.8 && < 0.3@hlibev >= 0.2.8 \&\& < 0.5@' \
-		-e 's@attoparsec                >= 0.8.1    && < 0.10@attoparsec                >= 0.8.1    \&\& < 0.11@' \
-		-e 's@attoparsec-enumerator     >= 0.2.0.1  && < 0.3@attoparsec-enumerator     >= 0.2.0.1  \&\& < 0.4@' \
-		-e 's@case-insensitive          >= 0.3      && < 0.4@case-insensitive          >= 0.3      \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
