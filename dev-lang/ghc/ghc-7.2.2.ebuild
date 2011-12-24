@@ -46,7 +46,7 @@ arch_binaries=""
 #arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( mirror://gentoo/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -67,9 +67,7 @@ yet_binary() {
 		##sparc)
 		#	return 0
 		#	;;
-		#x86)
-		#	return 0
-		#	;;
+		x86) return 0 ;;
 		*)
 			return 1
 			;;
@@ -267,9 +265,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	[[ ${CHOST} != *-darwin* ]] && \
-		source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
-
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap; then
