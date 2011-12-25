@@ -24,7 +24,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 				>=dev-libs/libxslt-1.1.2 )"
 RDEPEND="dev-libs/gmp"
 
-PATCHES=("${FIELSDIR}/${PN}"-0.16.3-language-c-0.4.patch)
+PATCHES=("${FILESDIR}/${PN}"-0.16.3-language-c-0.4.patch)
 
 src_compile() {
 	cabal_src_compile
