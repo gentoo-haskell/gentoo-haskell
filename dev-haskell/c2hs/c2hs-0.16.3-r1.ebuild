@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="C->Haskell FFI tool that gives some cross-language type safety"
 HOMEPAGE="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/"
@@ -18,11 +18,13 @@ IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/language-c-0.3.1.1
+		>=dev-haskell/language-c-0.3.1.1 <dev-haskell/language-c-0.5
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 )"
 RDEPEND="dev-libs/gmp"
+
+PATCHES=("${FIELSDIR}/${PN}"-0.16.3-language-c-0.4.patch)
 
 src_compile() {
 	cabal_src_compile
