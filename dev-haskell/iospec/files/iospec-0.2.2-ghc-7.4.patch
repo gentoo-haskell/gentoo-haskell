@@ -7,7 +7,8 @@ index c923b55..0e05fd2 100644
  Category:       	Testing
  Build-Type:		Simple
 -Build-Depends:  	base >= 2 && < 4.4, mtl, QuickCheck >= 2 && < 3, Stream
-+Build-Depends:  	base >= 2 && < 4.5, mtl, QuickCheck >= 2 && < 3, Stream
- Extensions:		MultiParamTypeClasses, OverlappingInstances
+-Extensions:		MultiParamTypeClasses, OverlappingInstances
++Build-Depends:  	base >= 2 && < 4.6, mtl, QuickCheck >= 2 && < 3, Stream
++Extensions:		MultiParamTypeClasses, OverlappingInstances, TypeOperators
  Ghc-options:		-Wall
  Hs-source-dirs:		src

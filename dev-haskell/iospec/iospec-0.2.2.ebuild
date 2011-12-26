@@ -28,6 +28,6 @@ RDEPEND="dev-haskell/mtl
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
-PATCHES=("${FILESDIR}/${PN}-0.2.2-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-0.2.2-ghc-7.4.patch")
 
 S="${WORKDIR}/${MY_P}"
