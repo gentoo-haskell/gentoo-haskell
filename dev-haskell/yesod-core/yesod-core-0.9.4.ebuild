@@ -29,6 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.3
 		=dev-haskell/data-object-yaml-0.3*
 		=dev-haskell/enumerator-0.4*
 		=dev-haskell/failure-0.1*
+		>=dev-haskell/fast-logger-0.0.1
 		=dev-haskell/hamlet-0.10*
 		=dev-haskell/http-types-0.6*
 		>=dev-haskell/monad-control-0.2 <dev-haskell/monad-control-0.4
@@ -36,8 +37,8 @@ RDEPEND=">=dev-haskell/aeson-0.3
 		=dev-haskell/path-pieces-0.0*
 		=dev-haskell/shakespeare-0.10*
 		=dev-haskell/shakespeare-css-0.10*
+		=dev-haskell/shakespeare-i18n-0.0*
 		=dev-haskell/shakespeare-js-0.10*
-		=dev-haskell/strict-concurrency-0.2.4*
 		<dev-haskell/text-0.12
 		>=dev-haskell/time-1.1.4
 		=dev-haskell/transformers-0.2*
@@ -45,6 +46,7 @@ RDEPEND=">=dev-haskell/aeson-0.3
 		=dev-haskell/vector-0.9*
 		=dev-haskell/wai-0.4*
 		=dev-haskell/wai-extra-0.4*
+		>=dev-haskell/wai-logger-0.0.1
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
