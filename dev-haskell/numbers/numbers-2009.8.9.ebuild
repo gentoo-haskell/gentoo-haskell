@@ -3,7 +3,7 @@
 # $Header:  $
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Various number types"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/numbers"
@@ -16,3 +16,5 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}"/${PN}-2009.8.9-ghc-7.4.patch)
