@@ -19,6 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cmdargs-0.8
+		=dev-haskell/data-object-0.3*
+		=dev-haskell/data-object-yaml-0.3*
 		=dev-haskell/shakespeare-css-0.10*
 		=dev-haskell/shakespeare-js-0.10*
 		>=dev-haskell/text-0.9
