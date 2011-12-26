@@ -26,7 +26,7 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		virtual/lapack
 	"
 
-DEPEND=">=dev-haskell/cabal-1.6
+DEPEND=">=dev-haskell/cabal-1.8
 	${RDEPEND}
 	test? ( dev-haskell/hunit
 		dev-haskell/quickcheck )
