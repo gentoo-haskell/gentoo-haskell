@@ -1,5 +1,5 @@
---- shakespeare-css-0.10.4-orig/Text/Css.hs	2011-12-05 22:31:02.000000000 +1100
-+++ shakespeare-css-0.10.4/Text/Css.hs	2011-12-19 21:36:36.638470396 +1100
+--- shakespeare-css-0.10.5-orig/Text/Css.hs	2011-12-26 21:59:19.000000000 +1100
++++ shakespeare-css-0.10.5/Text/Css.hs	2011-12-27 00:12:23.951095602 +1100
 @@ -15,7 +15,11 @@
  import Text.ParserCombinators.Parsec (Parser, parse)
  import Text.Shakespeare.Base hiding (Scope)
@@ -9,10 +9,10 @@
 +#else
 +import Control.Applicative ((<$>), (<*>), Applicative(..), pure)
 +#endif
+ import Control.Arrow ((***))
  
  class ToCss a where
-     toCss :: a -> Builder
-@@ -72,6 +76,18 @@
+@@ -94,6 +98,18 @@
      b' <- b
      return $ a' ++ ContentRaw " " : b'
  

@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-PATCHES=("${FILESDIR}/${PN}-0.10.4-ghc-6.12.patch")
+PATCHES=("${FILESDIR}/${PN}-0.10.5-ghc-6.12.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
