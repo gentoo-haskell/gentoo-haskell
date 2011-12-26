@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.3
+		dev-haskell/blaze-builder
 		=dev-haskell/shakespeare-js-0.10*
 		<dev-haskell/text-0.12
 		dev-haskell/unordered-containers
