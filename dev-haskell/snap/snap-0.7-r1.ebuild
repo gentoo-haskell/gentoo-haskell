@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/aeson-0.4*
+RDEPEND=">=dev-haskell/aeson-0.4
 		=dev-haskell/attoparsec-0.10*
 		<dev-haskell/blaze-builder-0.4
 		dev-haskell/bytestring-nums
@@ -60,3 +60,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
+
+src_prepare() {
+	base_src_prepare
+	sed -e 's@aeson                     >= 0.4      && < 0.5@aeson                     >= 0.4      \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
