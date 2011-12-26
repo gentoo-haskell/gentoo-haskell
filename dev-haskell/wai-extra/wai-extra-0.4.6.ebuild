@@ -23,6 +23,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-haskell/case-insensitive-0.2
 		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
+		>=dev-haskell/fast-logger-0.0.1
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/network-2.4
 		<dev-haskell/text-0.12
