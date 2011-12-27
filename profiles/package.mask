@@ -4,6 +4,8 @@
 >=dev-haskell/cabal-1.11
 >=dev-haskell/haddock-2.9.2.20110721
 >=dev-haskell/time-1.2.0.5
+# needs cabal-1.13.3+
+>=cabal-install-0.13.3.ebuild
 # Mark Wright <gienah@gentoo.org> (19 Dec 2011)
 # Masking more stuff that is only used by ghc 7.4 snapshot
 >=dev-haskell/binary-0.5.0.3_pre20111218
