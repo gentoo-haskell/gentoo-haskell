@@ -30,4 +30,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=("${FILESDIR}/${P}-attoparsec-0.10-support.patch")
+PATCHES=("${FILESDIR}/${P}-attoparsec-0.10.patch"
+	 "${FILESDIR}/${P}-ghc-7.4.patch")
