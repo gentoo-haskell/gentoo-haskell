@@ -19,9 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.3
+		=dev-haskell/attoparsec-enumerator-0.3*
 		dev-haskell/blaze-builder
 		=dev-haskell/shakespeare-js-0.10*
 		<dev-haskell/text-0.12
+		=dev-haskell/transformers-0.2*
 		dev-haskell/unordered-containers
 		>=dev-haskell/vector-0.9
 		=dev-haskell/yesod-core-0.9*
