@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A fast logging system"
 HOMEPAGE="http://hackage.haskell.org/package/fast-logger"
@@ -22,3 +22,5 @@ RDEPEND="dev-haskell/blaze-builder
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.0.1-ghc-6.12.patch")

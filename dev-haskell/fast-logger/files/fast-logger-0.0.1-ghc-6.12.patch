@@ -1,0 +1,23 @@
+--- fast-logger-0.0.1-orig/System/Log/FastLogger.hs	2011-12-22 18:31:08.000000000 +1100
++++ fast-logger-0.0.1/System/Log/FastLogger.hs	2011-12-31 15:52:02.666043631 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DoAndIfThenElse, NoImplicitPrelude, RecordWildCards #-}
++{-# LANGUAGE NoImplicitPrelude, RecordWildCards #-}
+ 
+ -- | Fast logging system to copy log data directly to Handle buffer.
+ 
+@@ -59,11 +59,12 @@
+       , bufR = w
+       , bufSize = size
+       } <- readIORef haByteBuffer
+-    if size - w > len then do
++    if size - w > len 
++      then do
+         withRawBuffer old_raw $ \ptr ->
+             go (ptr `plusPtr` w)  bss
+         writeIORef haByteBuffer old_buf{ bufR = w + len }
+-    else do
++      else do
+         old_buf' <- Buffered.flushWriteBuffer haDevice old_buf
+         writeIORef haByteBuffer old_buf'
+         bufsWrite h_ bss
