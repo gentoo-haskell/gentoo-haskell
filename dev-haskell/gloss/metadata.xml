@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Gloss hides the pain of drawing simple vector graphics behind a nice data type and
+		a few display functions. Gloss uses OpenGL under the hood, but you won&#39;t need to
+		worry about any of that. Get something cool on the screen in under 10 minutes.
+	</longdescription>
+</pkgmetadata>

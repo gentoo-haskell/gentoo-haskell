@@ -18,14 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/bmp-1.1
+RDEPEND="=dev-haskell/bmp-1.2*
 		=dev-haskell/glut-2.2*
 		=dev-haskell/opengl-2.4*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@bmp        == 1.1.\*@bmp        >= 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
