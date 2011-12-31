@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="OpenGL"
 MY_P="${MY_PN}-${PV}"
@@ -31,3 +31,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${MY_PN}-2.4.0.2-ghc-7.4.patch")
