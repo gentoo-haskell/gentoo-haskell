@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.6.4.3-ghc-7.4-rc1-workaround.patch
 	sed -e 's@mtl                      >= 2.0     && < 2.1@mtl                      >= 1.0     \&\& < 2.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
