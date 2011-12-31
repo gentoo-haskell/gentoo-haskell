@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A library and an executable that provide an easy API for a Haskell IDE"
 HOMEPAGE="https://github.com/JPMoresmau/BuildWrapper"
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="test"
 
-RDEPEND="dev-haskell/aeson-native
+RDEPEND="dev-haskell/aeson
 		dev-haskell/cabal
 		dev-haskell/cmdargs
 		dev-haskell/cpphs
@@ -29,6 +29,8 @@ RDEPEND="dev-haskell/aeson-native
 		dev-haskell/mtl
 		dev-haskell/regex-tdfa
 		dev-haskell/text
+		dev-haskell/unordered-containers
+		dev-haskell/utf8-string
 		dev-haskell/vector
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
@@ -37,6 +39,8 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-0.5
 			<dev-haskell/test-framework-hunit-0.3
 		)"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.2-tests.patch")
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
