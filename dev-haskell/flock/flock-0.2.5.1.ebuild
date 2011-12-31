@@ -23,3 +23,7 @@ RDEPEND=">=dev-lang/ghc-6.8.2
 		sys-apps/util-linux"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+# Workaround this error when compiling with ghc 6.12.3:
+# FLock.hsc:8:21: error: missing binary operator before token "("
+CABAL_EXTRA_CONFIGURE_FLAGS="--hsc2hs-options=--include=${S}/dist/build/autogen/cabal_macros.h"
