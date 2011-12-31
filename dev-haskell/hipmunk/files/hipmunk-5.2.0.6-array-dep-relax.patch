@@ -1,0 +1,12 @@
+diff -rN -u old-hipmunk/Hipmunk.cabal new-hipmunk/Hipmunk.cabal
+--- old-hipmunk/Hipmunk.cabal	2011-12-31 17:42:39.687794479 +0300
++++ new-hipmunk/Hipmunk.cabal	2011-12-31 17:42:39.695794479 +0300
+@@ -193,7 +193,7 @@
+
+   if flag(small_base)
+     Build-Depends: base >= 3 && < 5,
+-                   array >= 0.1 && < 0.4,
++                   array >= 0.1 && < 0.5,
+                    containers >= 0.1 && < 0.5,
+                    transformers >= 0.2 && < 0.3,
+                    StateVar >= 1.0 && < 1.1

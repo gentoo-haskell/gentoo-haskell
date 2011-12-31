@@ -38,5 +38,7 @@ src_prepare() {
 		sed -e 's@&#246;@o@g' \
 			-i "${S}/${MY_PN}.cabal"
 	fi
+
+	epatch "${FILESDIR}/${P}-array-dep-relax.patch"
 }
 
