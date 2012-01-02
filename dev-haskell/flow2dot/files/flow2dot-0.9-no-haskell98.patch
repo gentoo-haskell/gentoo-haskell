@@ -1,0 +1,22 @@
+--- flow2dot-0.9-orig/flow2dot.cabal	2011-11-08 08:14:11.000000000 +1100
++++ flow2dot-0.9/flow2dot.cabal	2012-01-01 11:36:11.095321507 +1100
+@@ -22,7 +22,7 @@
+   Extensions: CPP
+   Exposed-Modules: Text.FlowDiagram
+   Other-Modules:   Text.Dot
+-  Build-Depends:   base >=3 && <=5, mtl >= 1.0, containers, haskell98, QuickCheck, parsec, utf8-string
++  Build-Depends:   base >=3 && <=5, mtl >= 1.0, containers, QuickCheck, parsec, utf8-string
+   if impl(ghc >= 7.0)
+     cpp-options: -DNATIVEUTF8
+ 
+--- flow2dot-0.9-orig/flow2dot.hs	2011-11-08 08:14:11.000000000 +1100
++++ flow2dot-0.9/flow2dot.hs	2012-01-01 11:36:58.365472341 +1100
+@@ -17,7 +17,7 @@
+ import System.IO.UTF8 (putStrLn)
+ import Prelude hiding (putStrLn)
+ #endif
+-import System (getArgs)
++import System.Environment (getArgs)
+ 
+ main :: IO ()
+ main = do
