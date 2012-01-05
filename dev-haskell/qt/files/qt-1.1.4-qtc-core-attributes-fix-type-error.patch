@@ -1,0 +1,11 @@
+--- Qtc/Core/Attributes.hs	2010-09-02 19:02:32.000000000 +0300
++++ Qtc/Core/Attributes.hs.new	2012-01-05 23:51:17.666012489 +0200
+@@ -580,7 +580,7 @@
+ 
+ instance (Qstt a (QDialogSc b)) => QsaSlotReject (a) where
+   slotReject' = (Qslot "reject()", \_ -> ())
+-  reject' = slotReject'
++  reject' = (Qslot "reject()", \_ -> ())
+ 
+ class QsaSignalRejected_nt_f w x f where
+   signalRejected', rejected' :: x -> SltConf w f
