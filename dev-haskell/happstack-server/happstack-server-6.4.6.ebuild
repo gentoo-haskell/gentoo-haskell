@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -24,7 +24,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		>=dev-haskell/hslogger-1.0.2
 		dev-haskell/html
 		=dev-haskell/monad-control-0.3*
-		<dev-haskell/mtl-2.1
+		>=dev-haskell/mtl-2
 		=dev-haskell/network-2.3*
 		<dev-haskell/parsec-4
 		<dev-haskell/sendfile-0.8
