@@ -19,7 +19,7 @@ IUSE="chart"
 RDEPEND=">=dev-haskell/aeson-0.3.2.12
 		>=dev-haskell/deepseq-1.1.0.0
 		>=dev-haskell/hastache-0.1.5
-		dev-haskell/mtl
+		>=dev-haskell/mtl-2
 		>=dev-haskell/mwc-random-0.8.0.3
 		>=dev-haskell/parsec-3.1.0
 		>=dev-haskell/statistics-0.10.0.0
