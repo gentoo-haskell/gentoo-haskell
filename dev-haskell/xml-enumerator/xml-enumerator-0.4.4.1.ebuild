@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Pure-Haskell utilities for dealing with XML with the enumerator package."
+DESCRIPTION="Pure-Haskell utilities for dealing with XML with the enumerator package. (deprecated)"
 HOMEPAGE="http://github.com/snoyberg/xml"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
