@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A command-line interface for user input, written in Haskell."
 HOMEPAGE="http://trac.haskell.org/haskeline"
@@ -24,5 +24,3 @@ RDEPEND="<dev-haskell/mtl-2.1
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-0.6.4.5-ghc-7.4.patch")
