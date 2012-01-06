@@ -4,7 +4,7 @@
 
 EAPI="2"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="qtHaskell"
 MY_P="${MY_PN}-${PV}"
@@ -24,6 +24,14 @@ RDEPEND="dev-haskell/qthaskellc
 		dev-haskell/opengl"
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
+
+PATCHES=( "${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
+          "${FILESDIR}/${PN}-1.1.4-qtc-classes-base-monad-to-control-monad.patch"
+          "${FILESDIR}/${PN}-1.1.4-qtc-core-attributes-fix-type-error.patch" )
+
+src_prepare() {
+    base_src_prepare
+}
 
 src_install() {
 	cabal_src_install
