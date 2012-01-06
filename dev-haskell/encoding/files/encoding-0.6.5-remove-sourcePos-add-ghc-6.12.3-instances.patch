@@ -1,6 +1,13 @@
 --- encoding-0.6.5-orig/Data/Encoding/ByteSource.hs	2011-04-25 23:09:25.000000000 +1000
-+++ encoding-0.6.5/Data/Encoding/ByteSource.hs	2011-05-22 20:22:22.083617322 +1000
-@@ -124,6 +124,38 @@
++++ encoding-0.6.5/Data/Encoding/ByteSource.hs	2012-01-06 20:57:38.613551836 +1100
+@@ -118,12 +118,43 @@
+       put chs
+       return res
+ 
+-#if MIN_VERSION_base(4,3,0)
+-#else
++#if !MIN_VERSION_mtl(2,0,0)
+ instance Monad (Either DecodingException) where
      return = Right
      (Left err) >>= g = Left err
      (Right x) >>= g = g x
@@ -39,7 +46,7 @@
  #endif
  
  instance ByteSource (StateT [Char] (Either DecodingException)) where
-@@ -178,10 +210,6 @@
+@@ -178,10 +209,6 @@
        res <- act
        liftIO $ hSetPosn pos
        return res
@@ -51,8 +58,15 @@
  {-
  instance Throws DecodingException (State st) => Throws DecodingException (State (Integer,st)) where
 --- encoding-0.6.5-orig/Data/Encoding/ByteSink.hs	2011-04-25 23:09:25.000000000 +1000
-+++ encoding-0.6.5/Data/Encoding/ByteSink.hs	2011-05-22 20:22:55.767365330 +1000
-@@ -107,6 +107,12 @@
++++ encoding-0.6.5/Data/Encoding/ByteSink.hs	2012-01-06 20:58:18.173467015 +1100
+@@ -101,12 +101,17 @@
+     pushWord64be w = PutME $ Right (putWord64be w,())
+     pushWord64le w = PutME $ Right (putWord64le w,())
+ 
+-#if MIN_VERSION_base(4,3,0)
+-#else
++#if !MIN_VERSION_mtl(2,0,0)
+ instance Monad (Either EncodingException) where
      return x = Right x
      Left err >>= g = Left err
      Right x >>= g = g x
