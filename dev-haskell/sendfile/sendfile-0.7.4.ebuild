@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A portable sendfile library"
 HOMEPAGE="http://patch-tag.com/r/mae/sendfile"
@@ -22,5 +22,3 @@ RDEPEND="=dev-haskell/network-2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-0.7.3-ghc-7.4.patch")
