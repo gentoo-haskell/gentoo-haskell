@@ -1,0 +1,56 @@
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Draw.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Draw.hs	2012-01-07 12:27:16.989969031 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Draw
+ 	Copyright   :  (c) Daan Leijen 2003
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Menu.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Menu.hs	2012-01-07 12:27:24.685214663 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Menu
+ 	Copyright   :  (c) Daan Leijen 2003
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Dialogs.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Dialogs.hs	2012-01-07 12:27:35.223550816 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Dialogs
+ 	Copyright   :  (c) Daan Leijen 2003
+--- wx-0.13.2-orig/src/Graphics/UI/WX/TopLevelWindow.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/TopLevelWindow.hs	2012-01-07 12:27:43.650819288 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  TopLevelWindow
+ 	Copyright   :  (c) Jeremy O'Donoghue, 2007
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Window.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Window.hs	2012-01-07 12:27:51.900081472 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Window
+ 	Copyright   :  (c) Daan Leijen 2003
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Media.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Media.hs	2012-01-07 12:28:11.824715436 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Media
+ 	Copyright   :  (c) Daan Leijen 2003
+--- wx-0.13.2-orig/src/Graphics/UI/WX/Timer.hs	2012-01-06 03:58:15.000000000 +1100
++++ wx-0.13.2/src/Graphics/UI/WX/Timer.hs	2012-01-07 12:30:39.386361622 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances #-}
++{-# LANGUAGE FlexibleInstances, TypeSynonymInstances #-}
+ --------------------------------------------------------------------------------
+ {-|	Module      :  Timer
+ 	Copyright   :  (c) Daan Leijen 2003
