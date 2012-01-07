@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="dev-haskell/mtl
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/x11-1.5*
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.10.1
+		x11-terms/xterm"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
