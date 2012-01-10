@@ -25,15 +25,15 @@ RDEPEND="=dev-haskell/cereal-0.3*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/hspec-0.8
+		test? (  >=dev-haskell/cabal-1.10
+				=dev-haskell/hspec-0.9*
 				dev-haskell/transformers
 		)"
 
 src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
 	cp "${FILESDIR}/runtests.hs" "${S}/tests"
-	sed -e 's@hspec        == 0.6.\*@hspec        == 0.9.\*@' \
-		-e 's@crypto-api   >= 0.6 && < 0.7@crypto-api   >= 0.6 \&\& < 0.9@' \
+	sed -e 's@crypto-api   >= 0.6 && < 0.7@crypto-api   >= 0.6 \&\& < 0.9@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
