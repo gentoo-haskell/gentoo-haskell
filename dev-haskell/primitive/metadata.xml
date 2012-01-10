@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		
+		This package provides wrappers for primitive array operations from
+		GHC.Prim.
+		
+		Changes in version 0.4.0.1
+		
+		* Critical bug fix in @fillByteArray@
+		
+		Changes in version 0.4
+		
+		* Support for GHC 7.2 array copying primitives
+		
+		* New in &quot;Data.Primitive.ByteArray&quot;: @copyByteArray@,
+		@copyMutableByteArray@, @moveByteArray@, @fillByteArray@
+		
+		* Deprecated in &quot;Data.Primitive.ByteArray&quot;: @memcpyByteArray@,
+		@memcpyByteArray&#39;@, @memmoveByteArray@, @memsetByteArray@
+		
+		* New in &quot;Data.Primitive.Array&quot;: @copyArray@, @copyMutableByteArray@
+		
+		* New in &quot;Data.Primitive.Addr&quot;: @copyAddr@, @moveAddr@
+		
+		* Deprecated in &quot;Data.Primitive.Addr&quot;: @memcpyAddr@
+		
+	</longdescription>
+</pkgmetadata>
