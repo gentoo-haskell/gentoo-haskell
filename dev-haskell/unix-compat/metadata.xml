@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides portable implementations of parts
+		of the unix package. This package re-exports the unix
+		package when available. When it isn&#39;t available,
+		portable implementations are used.
+	</longdescription>
+</pkgmetadata>
