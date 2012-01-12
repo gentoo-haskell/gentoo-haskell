@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="An efficient packed Unicode text type."
 HOMEPAGE="https://github.com/bos/text"
@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
+		>=dev-haskell/cabal-1.10
 		test? ( >=dev-haskell/quickcheck-2.4.0.1
 			<dev-haskell/test-framework-0.5
 			<dev-haskell/test-framework-hunit-0.3
