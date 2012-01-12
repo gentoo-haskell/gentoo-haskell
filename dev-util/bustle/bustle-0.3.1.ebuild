@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit haskell-cabal toolchain-funcs
 
 DESCRIPTION="Draw pretty sequence diagrams of D-Bus traffic"
 HOMEPAGE="http://hackage.haskell.org/package/bustle"
@@ -43,7 +43,12 @@ src_compile() {
 	cabal_src_compile || die "could not build haskell parts"
 
 	# compile C part
-	emake || die "building C part failed"
+	emake \
+		"CC=$(tc-getCC)" \
+		"CFLAGS=${CFLAGS}" \
+		"CPPFLAGS=${CPPFLAGS}" \
+		"LDFLAGS=${LDFLAGS}" \
+	    || die "building C part failed"
 }
 
 src_install() {
