@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A model for human colour/color perception"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Colour"
@@ -19,7 +19,10 @@ IUSE=""
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2"
 
+PATCHES=("${FILESDIR}/${PN}-2.3.2-ghc-7.4.patch")
+
 src_prepare() {
+	base_src_prepare
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
 		# The haddock --hoogle option does not like unicode characters, which causes

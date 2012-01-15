@@ -1,0 +1,11 @@
+--- colour-2.3.2-orig/Data/Colour.hs	2011-12-22 13:14:01.000000000 +1100
++++ colour-2.3.2/Data/Colour.hs	2012-01-15 18:30:14.876612802 +1100
+@@ -157,7 +157,7 @@
+ linearConstructorQualifiedName = "Data.Colour.SRGB.Linear.rgb"
+ linearConstructorName = "rgb"
+ 
+-instance (Fractional a, Show a) => Show (AlphaColour a) where
++instance (Eq a, Fractional a, Show a) => Show (AlphaColour a) where
+   showsPrec d ac | a == 0 = showString "transparent"
+                  | otherwise = showParen (d > infix_prec) showStr
+    where
