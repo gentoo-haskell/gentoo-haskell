@@ -1,5 +1,5 @@
---- haskell-mpi-1.1.0-orig/haskell-mpi.cabal	2011-08-15 01:20:10.000000000 +1000
-+++ haskell-mpi-1.1.0/haskell-mpi.cabal	2011-08-16 20:18:45.774324886 +1000
+--- haskell-mpi-1.2.0-orig/haskell-mpi.cabal	2012-01-13 07:47:41.000000000 +1100
++++ haskell-mpi-1.2.0/haskell-mpi.cabal	2012-01-15 19:26:10.259292470 +1100
 @@ -114,7 +114,6 @@
        src
     build-depends:
@@ -8,8 +8,8 @@
        bytestring,
        cereal,
        extensible-exceptions,
---- haskell-mpi-1.1.0-orig/src/C2HS.hs	2011-08-15 01:20:10.000000000 +1000
-+++ haskell-mpi-1.1.0/src/C2HS.hs	2011-08-16 20:18:35.497074125 +1000
+--- haskell-mpi-1.2.0-orig/src/C2HS.hs	2012-01-13 07:47:41.000000000 +1100
++++ haskell-mpi-1.2.0/src/C2HS.hs	2012-01-15 19:26:10.260292494 +1100
 @@ -40,7 +40,7 @@
    module Foreign,
  
@@ -31,3 +31,12 @@
  
  
  -- Composite marshalling functions
+@@ -208,7 +208,7 @@
+ 
+ -- |Obtain Haskell 'Bool' from C value.
+ --
+-cToBool :: Num a => a -> Bool
++cToBool :: (Eq a, Num a) => a -> Bool
+ cToBool  = toBool
+ 
+ -- |Convert a C enumeration to Haskell.
