@@ -14,7 +14,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="chart"
+IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.3.2.12
 		>=dev-haskell/deepseq-1.1.0.0
@@ -26,12 +26,6 @@ RDEPEND=">=dev-haskell/aeson-0.3.2.12
 		dev-haskell/time
 		>=dev-haskell/vector-0.7.1
 		>=dev-haskell/vector-algorithms-0.4
-		>=dev-lang/ghc-6.10.1
-		chart? ( <dev-haskell/chart-0.15
-				 dev-haskell/data-accessor )"
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_configure() {
-	cabal_src_configure $(cabal_flag chart) $(cabal_flag chart gtk)
-}
