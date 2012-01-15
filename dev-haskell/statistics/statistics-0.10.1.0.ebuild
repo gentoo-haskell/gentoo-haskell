@@ -17,14 +17,15 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-# tests fail, maybe they might work in some locales
-# CDF limit at +tests: <stdout>: commitBuffer: invalid argument (Invalid or incomplete multibyte or wide character)
+# CDF limit at, Quantile is CDF inverse and invIncompleteGamma tests fail.
+# tests require a utf-8 locale.
 RESTRICT="test"
 
 RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 		dev-haskell/erf
+		>=dev-haskell/math-functions-0.1.1
 		>=dev-haskell/monad-par-0.1.0.1
-		>=dev-haskell/mwc-random-0.8.0.5
+		>=dev-haskell/mwc-random-0.11.0.0
 		>=dev-haskell/primitive-0.3
 		>=dev-haskell/vector-0.7.0.0
 		>=dev-haskell/vector-algorithms-0.4
@@ -43,8 +44,9 @@ src_prepare() {
 	# ghc 6.12.3 Haskell Platform 2010.02.0.0 wants deepseq >= 1.1.0.0
 	sed -e 's@deepseq >= 1.1.0.2@deepseq >= 1.1.0.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	# upstream forgot to include the tests in the tarball
-	cp -pR "${FILESDIR}/Tests" tests/Tests
+	# upstream forgot to include some of the test source files in the tarball
+	cp -pR "${FILESDIR}/${PN}-0.10.1.0/tests" ${S} \
+		|| die "Could not copy missing tests source files"
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
 		# The haddock --hoogle option does not like unicode characters, which causes
