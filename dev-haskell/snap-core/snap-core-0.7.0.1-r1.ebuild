@@ -32,7 +32,7 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		<dev-haskell/hunit-2
 		=dev-haskell/monadcatchio-transformers-0.2*
 		=dev-haskell/mtl-2.0*
-		=dev-haskell/mwc-random-0.10*
+		<dev-haskell/mwc-random-0.12
 		<=dev-haskell/regex-posix-0.96
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.5
@@ -44,3 +44,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@mwc-random >= 0.10 && <0.11@mwc-random >= 0.10 \&\& <0.12@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
