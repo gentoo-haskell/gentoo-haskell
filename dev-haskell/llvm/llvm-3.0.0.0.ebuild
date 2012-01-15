@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/mtl
+RDEPEND="=dev-haskell/llvm-base-3.0*
+		dev-haskell/mtl
 		dev-haskell/type-level
 		>=dev-lang/ghc-6.10.1
 		>=sys-devel/llvm-2.9-r2"
