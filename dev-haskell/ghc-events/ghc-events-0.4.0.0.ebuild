@@ -20,6 +20,13 @@ IUSE=""
 
 RDEPEND="=dev-haskell/binary-0.5*
 		dev-haskell/mtl
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	mkdir -p dist/build \
+		|| die "Could not create dist/build directory"
+	cp -p GHC/RTS/EventLogFormat.h dist/build/ \
+		|| die "Could not copy header file to dist/build for haddock"
+}
