@@ -25,7 +25,6 @@ RDEPEND=">=dev-haskell/cairo-0.9.11
 		>=dev-haskell/colour-2.2.1
 		=dev-haskell/data-accessor-0.2*
 		<dev-haskell/data-accessor-template-0.3
-		>=dev-haskell/gtk-0.9.11
 		dev-haskell/mtl
 		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
