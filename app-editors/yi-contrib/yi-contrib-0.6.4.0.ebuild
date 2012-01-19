@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Add-ons to Yi, the Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
@@ -25,7 +25,10 @@ RDEPEND="=dev-haskell/data-accessor-0.2*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${PN}-0.6.4.0-ghc-7.4.patch")
+
 src_prepare() {
+	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		epatch "${FILESDIR}/${P}-backport-to-ghc-6.12.3.patch"
 	fi
