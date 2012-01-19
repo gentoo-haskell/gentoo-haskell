@@ -1,0 +1,1357 @@
+diff --git a/tests/01.omml b/tests/01.omml
+index 9e333d9..760c407 100644
+diff --git a/tests/01.xhtml b/tests/01.xhtml
+index bc74ae0..a42305b 100644
+--- a/tests/01.xhtml
++++ b/tests/01.xhtml
+@@ -10,16 +10,16 @@
+         <mo>=</mo>
+         <mfrac>
+           <mrow>
+-            <mo>&#8722;</mo>
++            <mo>−</mo>
+             <mi>b</mi>
+-            <mo>&#177;</mo>
++            <mo>±</mo>
+             <msqrt>
+               <mrow>
+                 <msup>
+                   <mi>b</mi>
+                   <mn>2</mn>
+                 </msup>
+-                <mo>&#8722;</mo>
++                <mo>−</mo>
+                 <mn>4</mn>
+                 <mi>a</mi>
+                 <mi>c</mi>
+diff --git a/tests/02.xhtml b/tests/02.xhtml
+index b56eef3..e0e649b 100644
+--- a/tests/02.xhtml
++++ b/tests/02.xhtml
+@@ -15,16 +15,16 @@
+               <mrow>
+                 <mo stretchy="true">(</mo>
+                 <mn>3</mn>
+-                <mo>&#8722;</mo>
++                <mo>−</mo>
+                 <mi>x</mi>
+                 <mo stretchy="true">)</mo>
+               </mrow>
+-              <mo>&#215;</mo>
++              <mo>×</mo>
+               <mn>2</mn>
+             </mrow>
+             <mrow>
+               <mn>3</mn>
+-              <mo>&#8722;</mo>
++              <mo>−</mo>
+               <mi>x</mi>
+             </mrow>
+           </mfrac>
+diff --git a/tests/04.xhtml b/tests/04.xhtml
+index 3595a3a..588ef8c 100644
+--- a/tests/04.xhtml
++++ b/tests/04.xhtml
+@@ -15,13 +15,13 @@
+           <mi>S</mi>
+           <mtext mathvariant="normal">old</mtext>
+         </msub>
+-        <mo>&#8722;</mo>
++        <mo>−</mo>
+         <mfrac>
+           <msup>
+             <mrow>
+               <mo stretchy="true">(</mo>
+               <mn>5</mn>
+-              <mo>&#8722;</mo>
++              <mo>−</mo>
+               <mi>T</mi>
+               <mo stretchy="true">)</mo>
+             </mrow>
+diff --git a/tests/05.xhtml b/tests/05.xhtml
+index e125755..8654135 100644
+--- a/tests/05.xhtml
++++ b/tests/05.xhtml
+@@ -7,7 +7,7 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msubsup>
+-          <mo>&#8747;</mo>
++          <mo>∫</mo>
+           <mi>a</mi>
+           <mi>x</mi>
+         </msubsup>
+@@ -15,7 +15,7 @@
+         <mspace width="-0.167em" />
+         <mspace width="-0.167em" />
+         <msubsup>
+-          <mo>&#8747;</mo>
++          <mo>∫</mo>
+           <mi>a</mi>
+           <mi>s</mi>
+         </msubsup>
+@@ -31,7 +31,7 @@
+         <mi>s</mi>
+         <mo>=</mo>
+         <msubsup>
+-          <mo>&#8747;</mo>
++          <mo>∫</mo>
+           <mi>a</mi>
+           <mi>x</mi>
+         </msubsup>
+@@ -41,7 +41,7 @@
+         <mo stretchy="false">)</mo>
+         <mo stretchy="false">(</mo>
+         <mi>x</mi>
+-        <mo>&#8722;</mo>
++        <mo>−</mo>
+         <mi>y</mi>
+         <mo stretchy="false">)</mo>
+         <mspace width="0.167em" />
+diff --git a/tests/06.xhtml b/tests/06.xhtml
+index 6a4820e..a38eaf2 100644
+--- a/tests/06.xhtml
++++ b/tests/06.xhtml
+@@ -7,22 +7,22 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <munderover>
+-          <mo>&#8721;</mo>
++          <mo>∑</mo>
+           <mrow>
+             <mi>m</mi>
+             <mo>=</mo>
+             <mn>1</mn>
+           </mrow>
+-          <mo>&#8734;</mo>
++          <mo>∞</mo>
+         </munderover>
+         <munderover>
+-          <mo>&#8721;</mo>
++          <mo>∑</mo>
+           <mrow>
+             <mi>n</mi>
+             <mo>=</mo>
+             <mn>1</mn>
+           </mrow>
+-          <mo>&#8734;</mo>
++          <mo>∞</mo>
+         </munderover>
+         <mfrac>
+           <mrow>
+diff --git a/tests/07.xhtml b/tests/07.xhtml
+index d42c4d2..af4c956 100644
+--- a/tests/07.xhtml
++++ b/tests/07.xhtml
+@@ -7,14 +7,14 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <mi>u</mi>
+-        <mo>&#698;</mo>
++        <mo>ʺ</mo>
+         <mo>+</mo>
+         <mi>p</mi>
+         <mo stretchy="false">(</mo>
+         <mi>x</mi>
+         <mo stretchy="false">)</mo>
+         <mi>u</mi>
+-        <mo>&#697;</mo>
++        <mo>ʹ</mo>
+         <mo>+</mo>
+         <mi>q</mi>
+         <mo stretchy="false">(</mo>
+diff --git a/tests/08.xhtml b/tests/08.xhtml
+index 8412cea..baf11b2 100644
+--- a/tests/08.xhtml
++++ b/tests/08.xhtml
+@@ -6,33 +6,33 @@
+   <body>
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mover>
+           <mi>z</mi>
+-          <mo accent="true">&#8254;</mo>
++          <mo accent="true">‾</mo>
+         </mover>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mo>=</mo>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mi>z</mi>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mo>,</mo>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mo stretchy="false">(</mo>
+         <mover>
+           <mi>z</mi>
+-          <mo accent="true">&#8254;</mo>
++          <mo accent="true">‾</mo>
+         </mover>
+         <msup>
+           <mo stretchy="false">)</mo>
+           <mi>n</mi>
+         </msup>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mo>=</mo>
+-        <mo stretchy="false">&#8739;</mo>
++        <mo stretchy="false">∣</mo>
+         <mi>z</mi>
+         <msup>
+-          <mo stretchy="false">&#8739;</mo>
++          <mo stretchy="false">∣</mo>
+           <mi>n</mi>
+         </msup>
+         <mo>,</mo>
+diff --git a/tests/09.xhtml b/tests/09.xhtml
+index 0f0a8aa..034a767 100644
+--- a/tests/09.xhtml
++++ b/tests/09.xhtml
+@@ -10,7 +10,7 @@
+           <mi>lim</mi>
+           <mrow>
+             <mi>z</mi>
+-            <mo>&#8594;</mo>
++            <mo>→</mo>
+             <msub>
+               <mi>z</mi>
+               <mn>0</mn>
+diff --git a/tests/10.xhtml b/tests/10.xhtml
+index 84746c1..f226728 100644
+--- a/tests/10.xhtml
++++ b/tests/10.xhtml
+@@ -7,11 +7,11 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msub>
+-          <mi>&#966;</mi>
++          <mi>φ</mi>
+           <mi>n</mi>
+         </msub>
+         <mo stretchy="false">(</mo>
+-        <mi>&#954;</mi>
++        <mi>κ</mi>
+         <mo stretchy="false">)</mo>
+         <mo>=</mo>
+         <mfrac>
+@@ -19,37 +19,37 @@
+           <mrow>
+             <mn>4</mn>
+             <msup>
+-              <mi>&#960;</mi>
++              <mi>π</mi>
+               <mn>2</mn>
+             </msup>
+             <msup>
+-              <mi>&#954;</mi>
++              <mi>κ</mi>
+               <mn>2</mn>
+             </msup>
+           </mrow>
+         </mfrac>
+         <msubsup>
+-          <mo>&#8747;</mo>
++          <mo>∫</mo>
+           <mn>0</mn>
+-          <mo>&#8734;</mo>
++          <mo>∞</mo>
+         </msubsup>
+         <mfrac>
+           <mrow>
+             <mi>sin</mi>
+             <mo stretchy="false">(</mo>
+-            <mi>&#954;</mi>
++            <mi>κ</mi>
+             <mi>R</mi>
+             <mo stretchy="false">)</mo>
+           </mrow>
+           <mrow>
+-            <mi>&#954;</mi>
++            <mi>κ</mi>
+             <mi>R</mi>
+           </mrow>
+         </mfrac>
+         <mfrac>
+-          <mo>&#8706;</mo>
++          <mo>∂</mo>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <mi>R</mi>
+           </mrow>
+         </mfrac>
+@@ -61,7 +61,7 @@
+           </msup>
+           <mfrac>
+             <mrow>
+-              <mo>&#8706;</mo>
++              <mo>∂</mo>
+               <msub>
+                 <mi>D</mi>
+                 <mi>n</mi>
+@@ -71,7 +71,7 @@
+               <mo stretchy="false">)</mo>
+             </mrow>
+             <mrow>
+-              <mo>&#8706;</mo>
++              <mo>∂</mo>
+               <mi>R</mi>
+             </mrow>
+           </mfrac>
+diff --git a/tests/11.xhtml b/tests/11.xhtml
+index 5f44079..a048a5e 100644
+--- a/tests/11.xhtml
++++ b/tests/11.xhtml
+@@ -7,11 +7,11 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msub>
+-          <mi>&#966;</mi>
++          <mi>φ</mi>
+           <mi>n</mi>
+         </msub>
+         <mo stretchy="false">(</mo>
+-        <mi>&#954;</mi>
++        <mi>κ</mi>
+         <mo stretchy="false">)</mo>
+         <mo>=</mo>
+         <mn>0</mn>
+@@ -23,9 +23,9 @@
+           <mn>2</mn>
+         </msubsup>
+         <msup>
+-          <mi>&#954;</mi>
++          <mi>κ</mi>
+           <mrow>
+-            <mo>&#8722;</mo>
++            <mo>−</mo>
+             <mn>11</mn>
+             <mo>/</mo>
+             <mn>3</mn>
+@@ -40,9 +40,9 @@
+             <mn>0</mn>
+           </msub>
+         </mfrac>
+-        <mo>&#8810;</mo>
+-        <mi>&#954;</mi>
+-        <mo>&#8810;</mo>
++        <mo>≪</mo>
++        <mi>κ</mi>
++        <mo>≪</mo>
+         <mfrac>
+           <mn>1</mn>
+           <msub>
+diff --git a/tests/12.xhtml b/tests/12.xhtml
+index 3982572..10b1300 100644
+--- a/tests/12.xhtml
++++ b/tests/12.xhtml
+@@ -19,9 +19,9 @@
+                 <mn>1</mn>
+               </mtd>
+               <mtd>
+-                <mo>&#8722;</mo>
++                <mo>−</mo>
+                 <mn>1</mn>
+-                <mo>&#8804;</mo>
++                <mo>≤</mo>
+                 <mi>x</mi>
+                 <mo>&lt;</mo>
+                 <mn>0</mn>
+@@ -43,7 +43,7 @@
+             <mtr>
+               <mtd>
+                 <mn>1</mn>
+-                <mo>&#8722;</mo>
++                <mo>−</mo>
+                 <msup>
+                   <mi>x</mi>
+                   <mn>2</mn>
+diff --git a/tests/13.xhtml b/tests/13.xhtml
+index 8d7b4d6..078a42d 100644
+--- a/tests/13.xhtml
++++ b/tests/13.xhtml
+@@ -20,7 +20,7 @@
+           <mn>1</mn>
+         </msub>
+         <mo>,</mo>
+-        <mo>&#8230;</mo>
++        <mo>…</mo>
+         <mo>,</mo>
+         <msub>
+           <mi>a</mi>
+@@ -32,7 +32,7 @@
+           <mn>1</mn>
+         </msub>
+         <mo>,</mo>
+-        <mo>&#8230;</mo>
++        <mo>…</mo>
+         <mo>,</mo>
+         <msub>
+           <mi>c</mi>
+@@ -43,13 +43,13 @@
+         <mo stretchy="false">)</mo>
+         <mo>=</mo>
+         <munderover>
+-          <mo>&#8721;</mo>
++          <mo>∑</mo>
+           <mrow>
+             <mi>n</mi>
+             <mo>=</mo>
+             <mn>0</mn>
+           </mrow>
+-          <mo>&#8734;</mo>
++          <mo>∞</mo>
+         </munderover>
+         <mfrac>
+           <mrow>
+@@ -62,7 +62,7 @@
+               <mo stretchy="false">)</mo>
+               <mi>n</mi>
+             </msub>
+-            <mo>&#8943;</mo>
++            <mo>⋯</mo>
+             <mo stretchy="false">(</mo>
+             <msub>
+               <mi>a</mi>
+@@ -83,7 +83,7 @@
+               <mo stretchy="false">)</mo>
+               <mi>n</mi>
+             </msub>
+-            <mo>&#8943;</mo>
++            <mo>⋯</mo>
+             <mo stretchy="false">(</mo>
+             <msub>
+               <mi>c</mi>
+diff --git a/tests/16.xhtml b/tests/16.xhtml
+index 99be230..cae20ac 100644
+--- a/tests/16.xhtml
++++ b/tests/16.xhtml
+@@ -7,7 +7,7 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <mn>3</mn>
+-        <mo>&#215;</mo>
++        <mo>×</mo>
+         <mn>4</mn>
+       </mrow>
+     </math>
+diff --git a/tests/18.xhtml b/tests/18.xhtml
+index 040888c..417e9bb 100644
+--- a/tests/18.xhtml
++++ b/tests/18.xhtml
+@@ -9,7 +9,7 @@
+         <mn>1</mn>
+         <mo>.</mo>
+         <mn>3</mn>
+-        <mo>&#215;</mo>
++        <mo>×</mo>
+         <mo>.</mo>
+         <mn>2</mn>
+       </mrow>
+diff --git a/tests/19.xhtml b/tests/19.xhtml
+index 54f989b..7097499 100644
+--- a/tests/19.xhtml
++++ b/tests/19.xhtml
+@@ -14,14 +14,14 @@
+                 <mstyle displaystyle="true">
+                   <mfrac>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>x</mi>
+                         <mn>1</mn>
+                       </msub>
+                     </mrow>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>y</mi>
+                         <mn>1</mn>
+@@ -34,14 +34,14 @@
+                 <mstyle displaystyle="true">
+                   <mfrac>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>x</mi>
+                         <mn>2</mn>
+                       </msub>
+                     </mrow>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>y</mi>
+                         <mn>1</mn>
+@@ -61,14 +61,14 @@
+                 <mstyle displaystyle="true">
+                   <mfrac>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>x</mi>
+                         <mn>1</mn>
+                       </msub>
+                     </mrow>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>y</mi>
+                         <mn>2</mn>
+@@ -81,14 +81,14 @@
+                 <mstyle displaystyle="true">
+                   <mfrac>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>x</mi>
+                         <mn>2</mn>
+                       </msub>
+                     </mrow>
+                     <mrow>
+-                      <mo>&#8706;</mo>
++                      <mo>∂</mo>
+                       <msub>
+                         <mi>y</mi>
+                         <mn>2</mn>
+@@ -146,7 +146,7 @@
+           <mo stretchy="true">}</mo>
+         </mrow>
+         <mrow>
+-          <mo stretchy="true">&#8739;</mo>
++          <mo stretchy="true">∣</mo>
+           <mtable>
+             <mtr>
+               <mtd>
+@@ -165,10 +165,10 @@
+               </mtd>
+             </mtr>
+           </mtable>
+-          <mo stretchy="true">&#8739;</mo>
++          <mo stretchy="true">∣</mo>
+         </mrow>
+         <mrow>
+-          <mo stretchy="true">&#8741;</mo>
++          <mo stretchy="true">∥</mo>
+           <mtable>
+             <mtr>
+               <mtd>
+@@ -187,7 +187,7 @@
+               </mtd>
+             </mtr>
+           </mtable>
+-          <mo stretchy="true">&#8741;</mo>
++          <mo stretchy="true">∥</mo>
+         </mrow>
+       </mrow>
+     </math>
+diff --git a/tests/axiom_of_power_set.xhtml b/tests/axiom_of_power_set.xhtml
+index 2db251a..1414c8e 100644
+--- a/tests/axiom_of_power_set.xhtml
++++ b/tests/axiom_of_power_set.xhtml
+@@ -6,30 +6,30 @@
+   <body>
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+-        <mo>&#8704;</mo>
++        <mo>∀</mo>
+         <mi>A</mi>
+         <mspace width="0.167em" />
+-        <mo>&#8707;</mo>
++        <mo>∃</mo>
+         <mi>P</mi>
+         <mspace width="0.167em" />
+-        <mo>&#8704;</mo>
++        <mo>∀</mo>
+         <mi>B</mi>
+         <mspace width="0.167em" />
+         <mo stretchy="false">[</mo>
+         <mi>B</mi>
+-        <mo>&#8712;</mo>
++        <mo>∈</mo>
+         <mi>P</mi>
+-        <mo>&#8660;</mo>
+-        <mo>&#8704;</mo>
++        <mo>⇔</mo>
++        <mo>∀</mo>
+         <mi>C</mi>
+         <mspace width="0.167em" />
+         <mo stretchy="false">(</mo>
+         <mi>C</mi>
+-        <mo>&#8712;</mo>
++        <mo>∈</mo>
+         <mi>B</mi>
+-        <mo>&#8658;</mo>
++        <mo>⇒</mo>
+         <mi>C</mi>
+-        <mo>&#8712;</mo>
++        <mo>∈</mo>
+         <mi>A</mi>
+         <mo stretchy="false">)</mo>
+         <mo stretchy="false">]</mo>
+diff --git a/tests/binomial_coefficient.xhtml b/tests/binomial_coefficient.xhtml
+index 5ab703f..6e6f3f6 100644
+--- a/tests/binomial_coefficient.xhtml
++++ b/tests/binomial_coefficient.xhtml
+@@ -46,7 +46,7 @@
+             <mspace width="0.167em" />
+             <mo stretchy="false">(</mo>
+             <mi>n</mi>
+-            <mo>&#8722;</mo>
++            <mo>−</mo>
+             <mi>k</mi>
+             <mo stretchy="false">)</mo>
+             <mo>!</mo>
+diff --git a/tests/complex_number.xhtml b/tests/complex_number.xhtml
+index a3514ff..1dbbd3d 100644
+--- a/tests/complex_number.xhtml
++++ b/tests/complex_number.xhtml
+@@ -14,7 +14,7 @@
+               <munder>
+                 <munder>
+                   <mi>a</mi>
+-                  <mo accent="true">&#65080;</mo>
++                  <mo accent="true">︸</mo>
+                 </munder>
+                 <mtext mathvariant="normal">real</mtext>
+               </munder>
+@@ -25,12 +25,12 @@
+                     <mi>b</mi>
+                     <mtext mathvariant="normal">i</mtext>
+                   </mrow>
+-                  <mo accent="true">&#65080;</mo>
++                  <mo accent="true">︸</mo>
+                 </munder>
+                 <mtext mathvariant="normal">imaginary</mtext>
+               </munder>
+             </mrow>
+-            <mo accent="true">&#65079;</mo>
++            <mo accent="true">︷</mo>
+           </mover>
+           <mtext mathvariant="normal">complex number</mtext>
+         </mover>
+diff --git a/tests/deMorgans_law.xhtml b/tests/deMorgans_law.xhtml
+index 9f3f8dc..5f92ca6 100644
+--- a/tests/deMorgans_law.xhtml
++++ b/tests/deMorgans_law.xhtml
+@@ -6,26 +6,26 @@
+   <body>
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+-        <mo>&#172;</mo>
++        <mo>¬</mo>
+         <mo stretchy="false">(</mo>
+         <mi>p</mi>
+-        <mo>&#8743;</mo>
++        <mo>∧</mo>
+         <mi>q</mi>
+         <mo stretchy="false">)</mo>
+-        <mo>&#8660;</mo>
++        <mo>⇔</mo>
+         <mo stretchy="false">(</mo>
+-        <mo>&#172;</mo>
++        <mo>¬</mo>
+         <mi>p</mi>
+         <mo stretchy="false">)</mo>
+-        <mo>&#8744;</mo>
++        <mo>∨</mo>
+         <mo stretchy="false">(</mo>
+-        <mo>&#172;</mo>
++        <mo>¬</mo>
+         <mi>q</mi>
+         <mo stretchy="false">)</mo>
+         <mover>
+           <mrow>
+             <munderover>
+-              <mo>&#8899;</mo>
++              <mo>⋃</mo>
+               <mrow>
+                 <mi>i</mi>
+                 <mo>=</mo>
+@@ -38,11 +38,11 @@
+               <mi>i</mi>
+             </msub>
+           </mrow>
+-          <mo accent="true">&#175;</mo>
++          <mo accent="true">¯</mo>
+         </mover>
+         <mo>=</mo>
+         <munderover>
+-          <mo>&#8898;</mo>
++          <mo>⋂</mo>
+           <mrow>
+             <mi>i</mi>
+             <mo>=</mo>
+@@ -55,7 +55,7 @@
+             <mi>A</mi>
+             <mi>i</mi>
+           </msub>
+-          <mo accent="true">&#175;</mo>
++          <mo accent="true">¯</mo>
+         </mover>
+       </mrow>
+     </math>
+diff --git a/tests/differentiable_manifold.xhtml b/tests/differentiable_manifold.xhtml
+index 0f5f64f..7311155 100644
+--- a/tests/differentiable_manifold.xhtml
++++ b/tests/differentiable_manifold.xhtml
+@@ -7,21 +7,21 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msub>
+-          <mi>&#947;</mi>
++          <mi>γ</mi>
+           <mn>1</mn>
+         </msub>
+-        <mo>&#8801;</mo>
++        <mo>≡</mo>
+         <msub>
+-          <mi>&#947;</mi>
++          <mi>γ</mi>
+           <mn>2</mn>
+         </msub>
+-        <mo>&#8660;</mo>
++        <mo>⇔</mo>
+         <mo stretchy="true">{</mo>
+         <mtable>
+           <mtr>
+             <mtd columnalign="left">
+               <msub>
+-                <mi>&#947;</mi>
++                <mi>γ</mi>
+                 <mn>1</mn>
+               </msub>
+               <mo stretchy="false">(</mo>
+@@ -29,7 +29,7 @@
+               <mo stretchy="false">)</mo>
+               <mo>=</mo>
+               <msub>
+-                <mi>&#947;</mi>
++                <mi>γ</mi>
+                 <mn>2</mn>
+               </msub>
+               <mo stretchy="false">(</mo>
+@@ -56,16 +56,16 @@
+                       <mi>t</mi>
+                     </mrow>
+                   </mfrac>
+-                  <mi>&#966;</mi>
+-                  <mo>&#8728;</mo>
++                  <mi>φ</mi>
++                  <mo>∘</mo>
+                   <msub>
+-                    <mi>&#947;</mi>
++                    <mi>γ</mi>
+                     <mn>1</mn>
+                   </msub>
+                   <mo stretchy="false">(</mo>
+                   <mi>t</mi>
+                   <mo stretchy="false">)</mo>
+-                  <mo stretchy="true">&#8739;</mo>
++                  <mo stretchy="true">∣</mo>
+                 </mrow>
+                 <mrow>
+                   <mi>t</mi>
+@@ -84,16 +84,16 @@
+                       <mi>t</mi>
+                     </mrow>
+                   </mfrac>
+-                  <mi>&#966;</mi>
+-                  <mo>&#8728;</mo>
++                  <mi>φ</mi>
++                  <mo>∘</mo>
+                   <msub>
+-                    <mi>&#947;</mi>
++                    <mi>γ</mi>
+                     <mn>2</mn>
+                   </msub>
+                   <mo stretchy="false">(</mo>
+                   <mi>t</mi>
+                   <mo stretchy="false">)</mo>
+-                  <mo stretchy="true">&#8739;</mo>
++                  <mo stretchy="true">∣</mo>
+                 </mrow>
+                 <mrow>
+                   <mi>t</mi>
+diff --git a/tests/divergence.xhtml b/tests/divergence.xhtml
+index b50945a..c825e15 100644
+--- a/tests/divergence.xhtml
++++ b/tests/divergence.xhtml
+@@ -6,51 +6,51 @@
+   <body>
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+-        <mo>&#8711;</mo>
+-        <mo>&#8901;</mo>
++        <mo>∇</mo>
++        <mo>⋅</mo>
+         <mover>
+           <mi>v</mi>
+-          <mo accent="true">&#8407;</mo>
++          <mo accent="true">⃗</mo>
+         </mover>
+         <mo>=</mo>
+         <mfrac>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <msub>
+               <mi>v</mi>
+               <mi>x</mi>
+             </msub>
+           </mrow>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <mi>x</mi>
+           </mrow>
+         </mfrac>
+         <mo>+</mo>
+         <mfrac>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <msub>
+               <mi>v</mi>
+               <mi>y</mi>
+             </msub>
+           </mrow>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <mi>y</mi>
+           </mrow>
+         </mfrac>
+         <mo>+</mo>
+         <mfrac>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <msub>
+               <mi>v</mi>
+               <mi>z</mi>
+             </msub>
+           </mrow>
+           <mrow>
+-            <mo>&#8706;</mo>
++            <mo>∂</mo>
+             <mi>z</mi>
+           </mrow>
+         </mfrac>
+diff --git a/tests/ensuremath.xhtml b/tests/ensuremath.xhtml
+index ed3c8fd..48584ac 100644
+--- a/tests/ensuremath.xhtml
++++ b/tests/ensuremath.xhtml
+@@ -7,7 +7,7 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msup>
+-          <mi>&#960;</mi>
++          <mi>π</mi>
+           <mn>2</mn>
+         </msup>
+       </mrow>
+diff --git a/tests/moore_determinant.xhtml b/tests/moore_determinant.xhtml
+index 7f6545d..1597cb1 100644
+--- a/tests/moore_determinant.xhtml
++++ b/tests/moore_determinant.xhtml
+@@ -14,29 +14,29 @@
+             <mtr>
+               <mtd>
+                 <msub>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>1</mn>
+                 </msub>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>1</mn>
+                   <mi>q</mi>
+                 </msubsup>
+               </mtd>
+               <mtd>
+-                <mo>&#8943;</mo>
++                <mo>⋯</mo>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>1</mn>
+                   <msup>
+                     <mi>q</mi>
+                     <mrow>
+                       <mi>n</mi>
+-                      <mo>&#8722;</mo>
++                      <mo>−</mo>
+                       <mn>1</mn>
+                     </mrow>
+                   </msup>
+@@ -46,29 +46,29 @@
+             <mtr>
+               <mtd>
+                 <msub>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>2</mn>
+                 </msub>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>2</mn>
+                   <mi>q</mi>
+                 </msubsup>
+               </mtd>
+               <mtd>
+-                <mo>&#8943;</mo>
++                <mo>⋯</mo>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mn>2</mn>
+                   <msup>
+                     <mi>q</mi>
+                     <mrow>
+                       <mi>n</mi>
+-                      <mo>&#8722;</mo>
++                      <mo>−</mo>
+                       <mn>1</mn>
+                     </mrow>
+                   </msup>
+@@ -77,44 +77,44 @@
+             </mtr>
+             <mtr>
+               <mtd>
+-                <mo>&#8942;</mo>
++                <mo>⋮</mo>
+               </mtd>
+               <mtd>
+-                <mo>&#8942;</mo>
++                <mo>⋮</mo>
+               </mtd>
+               <mtd>
+-                <mo>&#8945;</mo>
++                <mo>⋱</mo>
+               </mtd>
+               <mtd>
+-                <mo>&#8942;</mo>
++                <mo>⋮</mo>
+               </mtd>
+             </mtr>
+             <mtr>
+               <mtd>
+                 <msub>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mi>m</mi>
+                 </msub>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mi>m</mi>
+                   <mi>q</mi>
+                 </msubsup>
+               </mtd>
+               <mtd>
+-                <mo>&#8943;</mo>
++                <mo>⋯</mo>
+               </mtd>
+               <mtd>
+                 <msubsup>
+-                  <mi>&#945;</mi>
++                  <mi>α</mi>
+                   <mi>m</mi>
+                   <msup>
+                     <mi>q</mi>
+                     <mrow>
+                       <mi>n</mi>
+-                      <mo>&#8722;</mo>
++                      <mo>−</mo>
+                       <mn>1</mn>
+                     </mrow>
+                   </msup>
+diff --git a/tests/quadratic_formula.xhtml b/tests/quadratic_formula.xhtml
+index bc74ae0..a42305b 100644
+--- a/tests/quadratic_formula.xhtml
++++ b/tests/quadratic_formula.xhtml
+@@ -10,16 +10,16 @@
+         <mo>=</mo>
+         <mfrac>
+           <mrow>
+-            <mo>&#8722;</mo>
++            <mo>−</mo>
+             <mi>b</mi>
+-            <mo>&#177;</mo>
++            <mo>±</mo>
+             <msqrt>
+               <mrow>
+                 <msup>
+                   <mi>b</mi>
+                   <mn>2</mn>
+                 </msup>
+-                <mo>&#8722;</mo>
++                <mo>−</mo>
+                 <mn>4</mn>
+                 <mi>a</mi>
+                 <mi>c</mi>
+diff --git a/tests/schwinger_dyson.xhtml b/tests/schwinger_dyson.xhtml
+index 0880dcd..a29ec94 100644
+--- a/tests/schwinger_dyson.xhtml
++++ b/tests/schwinger_dyson.xhtml
+@@ -7,63 +7,63 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <mrow>
+-          <mo stretchy="true">&#10216;</mo>
+-          <mi>&#968;</mi>
++          <mo stretchy="true">⟨</mo>
++          <mi>ψ</mi>
+           <mrow>
+-            <mo stretchy="true">&#8739;</mo>
+-            <mo>&#119983;</mo>
++            <mo stretchy="true">∣</mo>
++            <mo>𝒯</mo>
+             <mrow>
+               <mo stretchy="true">{</mo>
+               <mfrac>
+-                <mi>&#948;</mi>
++                <mi>δ</mi>
+                 <mrow>
+-                  <mi>&#948;</mi>
+-                  <mi>&#966;</mi>
++                  <mi>δ</mi>
++                  <mi>φ</mi>
+                 </mrow>
+               </mfrac>
+               <mi>F</mi>
+               <mo stretchy="false">[</mo>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+               <mo stretchy="false">]</mo>
+               <mo stretchy="true">}</mo>
+             </mrow>
+-            <mo stretchy="true">&#8739;</mo>
++            <mo stretchy="true">∣</mo>
+           </mrow>
+-          <mi>&#968;</mi>
+-          <mo stretchy="true">&#10217;</mo>
++          <mi>ψ</mi>
++          <mo stretchy="true">⟩</mo>
+         </mrow>
+         <mo>=</mo>
+-        <mo>&#8722;</mo>
++        <mo>−</mo>
+         <mtext mathvariant="normal">i</mtext>
+         <mrow>
+-          <mo stretchy="true">&#10216;</mo>
+-          <mi>&#968;</mi>
++          <mo stretchy="true">⟨</mo>
++          <mi>ψ</mi>
+           <mrow>
+-            <mo stretchy="true">&#8739;</mo>
+-            <mo>&#119983;</mo>
++            <mo stretchy="true">∣</mo>
++            <mo>𝒯</mo>
+             <mrow>
+               <mo stretchy="true">{</mo>
+               <mi>F</mi>
+               <mo stretchy="false">[</mo>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+               <mo stretchy="false">]</mo>
+               <mfrac>
+-                <mi>&#948;</mi>
++                <mi>δ</mi>
+                 <mrow>
+-                  <mi>&#948;</mi>
+-                  <mi>&#966;</mi>
++                  <mi>δ</mi>
++                  <mi>φ</mi>
+                 </mrow>
+               </mfrac>
+               <mi>S</mi>
+               <mo stretchy="false">[</mo>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+               <mo stretchy="false">]</mo>
+               <mo stretchy="true">}</mo>
+             </mrow>
+-            <mo stretchy="true">&#8739;</mo>
++            <mo stretchy="true">∣</mo>
+           </mrow>
+-          <mi>&#968;</mi>
+-          <mo stretchy="true">&#10217;</mo>
++          <mi>ψ</mi>
++          <mo stretchy="true">⟩</mo>
+         </mrow>
+       </mrow>
+     </math>
+diff --git a/tests/sophomores_dream.xhtml b/tests/sophomores_dream.xhtml
+index 91716b4..3a748f6 100644
+--- a/tests/sophomores_dream.xhtml
++++ b/tests/sophomores_dream.xhtml
+@@ -7,7 +7,7 @@
+     <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+       <mrow>
+         <msubsup>
+-          <mo>&#8747;</mo>
++          <mo>∫</mo>
+           <mn>0</mn>
+           <mn>1</mn>
+         </msubsup>
+@@ -20,17 +20,17 @@
+         <mi>x</mi>
+         <mo>=</mo>
+         <munderover>
+-          <mo>&#8721;</mo>
++          <mo>∑</mo>
+           <mrow>
+             <mi>n</mi>
+             <mo>=</mo>
+             <mn>1</mn>
+           </mrow>
+-          <mo>&#8734;</mo>
++          <mo>∞</mo>
+         </munderover>
+         <mrow>
+           <mo stretchy="false">(</mo>
+-          <mo>&#8722;</mo>
++          <mo>−</mo>
+           <mn>1</mn>
+           <msup>
+             <mo stretchy="false">)</mo>
+@@ -44,7 +44,7 @@
+           <msup>
+             <mi>n</mi>
+             <mrow>
+-              <mo>&#8722;</mo>
++              <mo>−</mo>
+               <mi>n</mi>
+             </mrow>
+           </msup>
+diff --git a/tests/sphere_volume.xhtml b/tests/sphere_volume.xhtml
+index 0cfce4a..0803d05 100644
+--- a/tests/sphere_volume.xhtml
++++ b/tests/sphere_volume.xhtml
+@@ -10,24 +10,24 @@
+         <mo>=</mo>
+         <mo stretchy="false">{</mo>
+         <mn>0</mn>
+-        <mo>&#8804;</mo>
+-        <mi>&#966;</mi>
+-        <mo>&#8804;</mo>
++        <mo>≤</mo>
++        <mi>φ</mi>
++        <mo>≤</mo>
+         <mn>2</mn>
+-        <mi>&#960;</mi>
++        <mi>π</mi>
+         <mo>,</mo>
+         <mo> </mo>
+         <mn>0</mn>
+-        <mo>&#8804;</mo>
+-        <mi>&#952;</mi>
+-        <mo>&#8804;</mo>
+-        <mi>&#960;</mi>
++        <mo>≤</mo>
++        <mi>θ</mi>
++        <mo>≤</mo>
++        <mi>π</mi>
+         <mo>,</mo>
+         <mo> </mo>
+         <mn>0</mn>
+-        <mo>&#8804;</mo>
+-        <mi>&#961;</mi>
+-        <mo>&#8804;</mo>
++        <mo>≤</mo>
++        <mi>ρ</mi>
++        <mo>≤</mo>
+         <mi>R</mi>
+         <mo stretchy="false">}</mo>
+         <mtable>
+@@ -38,25 +38,25 @@
+             <mtd columnalign="left">
+               <mo>=</mo>
+               <munder>
+-                <mo>&#8749;</mo>
++                <mo>∭</mo>
+                 <mi>S</mi>
+               </munder>
+               <mspace width="-0.167em" />
+               <msup>
+-                <mi>&#961;</mi>
++                <mi>ρ</mi>
+                 <mn>2</mn>
+               </msup>
+               <mi>sin</mi>
+-              <mi>&#952;</mi>
++              <mi>θ</mi>
+               <mspace width="0.167em" />
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#961;</mi>
++              <mi>ρ</mi>
+               <mspace width="0.167em" />
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#952;</mi>
++              <mi>θ</mi>
+               <mspace width="0.167em" />
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+             </mtd>
+           </mtr>
+           <mtr>
+@@ -64,66 +64,66 @@
+             <mtd columnalign="left">
+               <mo>=</mo>
+               <msubsup>
+-                <mo>&#8747;</mo>
++                <mo>∫</mo>
+                 <mn>0</mn>
+                 <mrow>
+                   <mn>2</mn>
+-                  <mi>&#960;</mi>
++                  <mi>π</mi>
+                 </mrow>
+               </msubsup>
+               <mspace width="-0.167em" />
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+               <mspace width="0.167em" />
+               <msubsup>
+-                <mo>&#8747;</mo>
++                <mo>∫</mo>
+                 <mn>0</mn>
+-                <mi>&#960;</mi>
++                <mi>π</mi>
+               </msubsup>
+               <mspace width="-0.167em" />
+               <mi>sin</mi>
+-              <mi>&#952;</mi>
++              <mi>θ</mi>
+               <mspace width="0.167em" />
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#952;</mi>
++              <mi>θ</mi>
+               <mspace width="0.167em" />
+               <msubsup>
+-                <mo>&#8747;</mo>
++                <mo>∫</mo>
+                 <mn>0</mn>
+                 <mi>R</mi>
+               </msubsup>
+               <mspace width="-0.167em" />
+               <msup>
+-                <mi>&#961;</mi>
++                <mi>ρ</mi>
+                 <mn>2</mn>
+               </msup>
+               <mtext mathvariant="normal">d</mtext>
+-              <mi>&#961;</mi>
++              <mi>ρ</mi>
+             </mtd>
+           </mtr>
+           <mtr>
+             <mtd columnalign="right" />
+             <mtd columnalign="left">
+               <mo>=</mo>
+-              <mi>&#966;</mi>
++              <mi>φ</mi>
+               <msubsup>
+-                <mo minsize="1.6" maxsize="1.6" stretchy="true">&#8739;</mo>
++                <mo minsize="1.6" maxsize="1.6" stretchy="true">∣</mo>
+                 <mn>0</mn>
+                 <mrow>
+                   <mn>2</mn>
+-                  <mi>&#960;</mi>
++                  <mi>π</mi>
+                 </mrow>
+               </msubsup>
+               <mo> </mo>
+               <mo stretchy="false">(</mo>
+-              <mo>&#8722;</mo>
++              <mo>−</mo>
+               <mi>cos</mi>
+-              <mi>&#952;</mi>
++              <mi>θ</mi>
+               <mo stretchy="false">)</mo>
+               <msubsup>
+-                <mo minsize="1.6" maxsize="1.6" stretchy="true">&#8739;</mo>
++                <mo minsize="1.6" maxsize="1.6" stretchy="true">∣</mo>
+                 <mn>0</mn>
+-                <mi>&#960;</mi>
++                <mi>π</mi>
+               </msubsup>
+               <mo> </mo>
+               <mstyle displaystyle="false">
+@@ -133,11 +133,11 @@
+                 </mfrac>
+               </mstyle>
+               <msup>
+-                <mi>&#961;</mi>
++                <mi>ρ</mi>
+                 <mn>3</mn>
+               </msup>
+               <msubsup>
+-                <mo minsize="1.6" maxsize="1.6" stretchy="true">&#8739;</mo>
++                <mo minsize="1.6" maxsize="1.6" stretchy="true">∣</mo>
+                 <mn>0</mn>
+                 <mi>R</mi>
+               </msubsup>
+@@ -148,10 +148,10 @@
+             <mtd columnalign="left">
+               <mo>=</mo>
+               <mn>2</mn>
+-              <mi>&#960;</mi>
+-              <mo>&#215;</mo>
++              <mi>π</mi>
++              <mo>×</mo>
+               <mn>2</mn>
+-              <mo>&#215;</mo>
++              <mo>×</mo>
+               <mstyle displaystyle="false">
+                 <mfrac>
+                   <mn>1</mn>
+@@ -174,7 +174,7 @@
+                   <mn>3</mn>
+                 </mfrac>
+               </mstyle>
+-              <mi>&#960;</mi>
++              <mi>π</mi>
+               <msup>
+                 <mi>R</mi>
+                 <mn>3</mn>
+diff --git a/tests/unicode.xhtml b/tests/unicode.xhtml
+index 92afbe8..70cd169 100644
+--- a/tests/unicode.xhtml
++++ b/tests/unicode.xhtml
+@@ -9,7 +9,7 @@
+         <mi>f</mi>
+         <mo>:</mo>
+         <mi>X</mi>
+-        <mo>&#8594;</mo>
++        <mo>→</mo>
+         <mi>Y</mi>
+       </mrow>
+     </math>

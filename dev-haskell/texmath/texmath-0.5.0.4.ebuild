@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Conversion of LaTeX math formulas to MathML."
 HOMEPAGE="http://github.com/jgm/texmath"
@@ -29,6 +29,15 @@ RDEPEND=">=dev-haskell/parsec-2
 	"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	# Note the patch is from upstream, so when texmath is bumped > 0.5.0.4
+	# need to remove this patch, and presumably upstream will set a
+	# dependency on >=dev-haskell/xml-1.3.12
+	if has_version ">=dev-haskell/xml-1.3.12"; then
+		epatch "${FILESDIR}/texmath-0.5.0.4-tests-xml-1.3.12.patch"
+	fi
+}
 
 src_configure() {
 	cabal_src_configure \
