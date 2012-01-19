@@ -23,8 +23,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@base >= 3.0 && < 4.4@base >= 3.0 \&\& < 5.0@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen base dependency"
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
 		# The haddock --hoogle option does not like unicode characters, which causes
