@@ -1,0 +1,14 @@
+--- glib-0.12.2-orig/System/Glib/hsgclosure.c	2011-11-14 09:15:41.000000000 +1100
++++ glib-0.12.2/System/Glib/hsgclosure.c	2012-01-20 00:00:01.254659266 +1100
+@@ -107,7 +107,11 @@
+     WHEN_DEBUG(g_debug("gtk2hs_closure_marshal(%p): about to rts_evalIO", hc->callback));
+     
+     /* perform the call */
++#if __GLASGOW_HASKELL__>=704
++    rts_evalIO(&cap, rts_apply(CAP (HaskellObj)runIO_closure, call),&ret);
++#else
+     cap=rts_evalIO(CAP rts_apply(CAP (HaskellObj)runIO_closure, call),&ret);
++#endif
+     
+     WHEN_DEBUG(g_debug("gtk2hs_closure_marshal(%p): about to rts_checkSchedStatus", hc->callback));
+     

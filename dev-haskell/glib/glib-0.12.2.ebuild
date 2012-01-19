@@ -8,7 +8,7 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the GLIB library for Gtk2Hs."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -23,3 +23,5 @@ RDEPEND=">=dev-lang/ghc-6.10.1
 		dev-libs/glib"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+PATCHES=("${FILESDIR}/${PN}-0.12.2-ghc-7.4.patch")
