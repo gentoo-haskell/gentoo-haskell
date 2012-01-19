@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.5
 		dev-haskell/attoparsec
-		=dev-haskell/conduit-0.0*
+		dev-haskell/conduit
 		dev-haskell/text
 		<dev-haskell/transformers-0.3
 		dev-haskell/unordered-containers
