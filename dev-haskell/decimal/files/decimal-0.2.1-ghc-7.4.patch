@@ -1,5 +1,5 @@
---- Decimal-0.2.0-orig/src/Data/Decimal.hs	2011-03-19 04:57:56.000000000 +1100
-+++ Decimal-0.2.0/src/Data/Decimal.hs	2011-12-19 19:00:26.239738407 +1100
+--- Decimal-0.2.1-orig/src/Data/Decimal.hs	2012-01-16 03:10:28.000000000 +1100
++++ Decimal-0.2.1/src/Data/Decimal.hs	2012-01-19 22:00:06.174164699 +1100
 @@ -120,7 +120,7 @@
        (Decimal _ n2) = roundTo e d2
  

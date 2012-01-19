@@ -19,15 +19,26 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="dev-haskell/hunit
 		>dev-haskell/quickcheck-2.4
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
-		dev-haskell/cabal"
+		dev-haskell/cabal
+		test? ( >=dev-haskell/cabal-1.10
+			dev-haskell/hunit
+			dev-haskell/test-framework
+			dev-haskell/test-framework-hunit
+			dev-haskell/test-framework-quickcheck2
+		)
+		"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.patch"
-	"${FILESDIR}/${P}-ghc-7.4.patch")
+PATCHES=("${FILESDIR}/${PN}-0.2.1-ghc-6.12.patch"
+	"${FILESDIR}/${PN}-0.2.1-ghc-7.4.patch")
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
