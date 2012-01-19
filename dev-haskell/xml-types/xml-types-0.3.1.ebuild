@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Basic types for representing XML"
-HOMEPAGE="http://hackage.haskell.org/package/xml-types"
+HOMEPAGE="https://john-millikin.com/software/haskell-xml/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
