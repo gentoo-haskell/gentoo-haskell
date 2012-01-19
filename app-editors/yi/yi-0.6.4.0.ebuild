@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="gnome gtk vty"
 
 RDEPEND="=dev-haskell/binary-0.5*
-		<dev-haskell/cabal-1.13
+		<dev-haskell/cabal-1.15
 		=dev-haskell/cautious-file-1.0*
 		=dev-haskell/concrete-typerep-0.1*
 		<dev-haskell/data-accessor-0.3
@@ -41,7 +41,7 @@ RDEPEND="=dev-haskell/binary-0.5*
 		=dev-haskell/regex-tdfa-1.1*
 		<dev-haskell/rosezipper-0.3
 		=dev-haskell/split-0.1*
-		<dev-haskell/time-1.3
+		<dev-haskell/time-1.5
 		dev-haskell/uniplate
 		<dev-haskell/unix-compat-0.4
 		=dev-haskell/unordered-containers-0.1*
@@ -56,7 +56,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.10"
 
-PATCHES=("${FILESDIR}/${PN}-0.6.4.0-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-0.6.4.0-ghc-7.4.patch")
 
 src_prepare() {
 	base_src_prepare
@@ -65,6 +65,9 @@ src_prepare() {
 			die "yi removed support for 6.12.3, backport does not work with gtk use flag"
 		fi
 		epatch "${FILESDIR}/${P}-backport-to-ghc-6.12.3.patch"
+	fi
+	if has_version ">=dev-haskell/alex-3.0.1"; then
+		epatch "${FILESDIR}/${P}-alex-3.patch"
 	fi
 }
 
