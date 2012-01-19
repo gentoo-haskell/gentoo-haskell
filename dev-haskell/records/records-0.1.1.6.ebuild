@@ -25,8 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@base           >= 3.0   && < 4.4@base           >= 3.0   \&\& < 5.0@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen base dependency"
 	sed -e 's@&#xA0;@ @g' \
 		-i "${S}/src/Data/Record.hs"
 }
