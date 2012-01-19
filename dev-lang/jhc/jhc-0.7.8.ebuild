@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-
-inherit base
+EAPI=4
 
 DESCRIPTION="jhc is a haskell compiler"
 HOMEPAGE="http://repetae.net/john/computer/jhc/"
@@ -26,18 +24,3 @@ DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/utf8-string
 		dev-haskell/zlib"
 RDEPEND=""
-
-PATCHES=("${FILESDIR}/jhc-0.7.5-left-out-jhc-inst.num.patch")
-
-src_configure() {
-	econf || die "econf failed"
-}
-
-src_compile() {
-	emake jhc || die "'emake jhc' failed"
-	emake libs || die "'emake libs' failed"
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed."
-}

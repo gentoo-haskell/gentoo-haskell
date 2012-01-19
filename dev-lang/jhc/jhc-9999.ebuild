@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=4
 
 inherit base darcs autotools
 
@@ -31,9 +31,7 @@ DEPEND=">=dev-lang/ghc-6.10
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
-PATCHES=("${FILESDIR}/jhc-9999-ghc-7-build.patch"
-		"${FILESDIR}/jhc-9999-fix-make-install.patch"
-		"${FILESDIR}/jhc-9999-mingw.patch")
+PATCHES=("${FILESDIR}/jhc-9999-mingw.patch")
 
 src_prepare() {
 	base_src_prepare
@@ -46,18 +44,14 @@ src_prepare() {
 }
 
 src_configure() {
-	econf || die "econf failed"
+	econf
 	darcs init # workaround missing history (ChageLog generation)
 	darcs tag --author="portage's jhc ebuild" phony-useless-tag
 }
 
 src_compile() {
-	emake jhc || die "'emake jhc' failed"
+	emake jhc
 	# jhc's makefile does not bother with library depends
 	# so we don't as well. Thus: -j1
-	emake -j1 libs || die "'emake libs' failed"
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed."
+	emake -j1 libs
 }
