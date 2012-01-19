@@ -27,6 +27,6 @@ RESTRICT="test"
 
 src_prepare() {
 	sed -e 's@directory == 1.1.\*@directory >= 1.0 \&\& < 1.2@' \
-		-e 's@filepath == 1.2.\*@filepath >= 1.1 \&\& < 1.3@' \
+		-e 's@filepath == 1.2.\*@filepath >= 1.1 \&\& < 1.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies for ghc 6.12.3"
 }
