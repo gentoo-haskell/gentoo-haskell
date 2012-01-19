@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A pull-based approach to streaming data."
+DESCRIPTION="Streaming data processing library."
 HOMEPAGE="http://github.com/snoyberg/conduit"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
