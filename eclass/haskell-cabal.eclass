@@ -1,15 +1,15 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/haskell-cabal.eclass,v 1.20 2010/03/30 22:18:37 kolmodin Exp $
-#
-# Original authors: Andres Loeh <kosmikus@gentoo.org>
-#                   Duncan Coutts <dcoutts@gentoo.org>
-# Maintained by: Haskell herd <haskell@gentoo.org>
-#
-# This eclass is for packages that make use of the
-# Haskell Common Architecture for Building Applications
-# and Libraries (cabal).
-#
+# $Header: /var/cvsroot/gentoo-x86/eclass/haskell-cabal.eclass,v 1.25 2011/08/22 04:46:32 vapier Exp $
+
+# @ECLASS: haskell-cabal.eclass
+# @MAINTAINER:
+# Haskell herd <haskell@gentoo.org>
+# @AUTHOR:
+# Original author: Andres Loeh <kosmikus@gentoo.org>
+# Original author: Duncan Coutts <dcoutts@gentoo.org>
+# @BLURB: for packages that make use of the Haskell Common Architecture for Building Applications and Libraries (cabal)
+# @DESCRIPTION:
 # Basic instructions:
 #
 # Before inheriting the eclass, set CABAL_FEATURES to
@@ -335,7 +335,7 @@ cabal-build() {
 	unset LANG LC_ALL LC_MESSAGES
 	set --  build "$@"
 	echo ./setup "$@"
-	./setup build \
+	./setup "$@" \
 		|| die "setup build failed"
 }
 
