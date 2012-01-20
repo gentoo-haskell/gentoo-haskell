@@ -26,6 +26,8 @@
 =dev-haskell/hdbus-9999
 =dev-haskell/ltk-9999
 =dev-lang/jhc-9999
+=sci-mathematics/agda-9999
+=sci-mathematics/agda-executable-9999
 =x11-wm/xmonad-9999
 =x11-wm/xmonad-contrib-9999
 =x11-misc/xmonad-extras-9999
