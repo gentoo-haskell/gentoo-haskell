@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit flag-o-matic haskell-cabal
 
 DESCRIPTION="OpenGL Logic Game"
 HOMEPAGE="http://hackage.haskell.org/package/bloxorz"
@@ -25,4 +25,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/opengl-2.3
 		>=dev-lang/ghc-6.8.2"
 
-# not properly installed as a game..
+src_configure() {
+	# WORKAROUND:
+	# fails to start (opengl expects libGLU to linked into app)
+
+	append-ldflags $(no-as-needed)
+	cabal_src_configure
+}
