@@ -44,5 +44,9 @@ src_install() {
 	haskell-cabal_src_install
 
 	# requires internet access
-	use fetchdb && hoogle_datadir="${ED}"/usr/share/"${P}/ghc-$(ghc-version)" "${ED}"/usr/bin/hoogle data
+	if use fetchdb; then
+		hoogle_datadir="${ED}"/usr/share/"${P}/ghc-$(ghc-version)"
+		hoogle_datadir=$hoogle_datadir "${ED}"/usr/bin/hoogle data
+		rm -rf "$hoogle_datadir"/databases/download # takes A LOT of space
+	fi
 }
