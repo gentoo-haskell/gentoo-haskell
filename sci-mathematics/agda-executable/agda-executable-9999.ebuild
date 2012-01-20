@@ -32,4 +32,3 @@ S="${WORKDIR}/${P}/src/main"
 src_prepare() {
 	cabal-mksetup
 }
-
