@@ -37,7 +37,7 @@ RDEPEND="dev-haskell/cairo
 		dev-haskell/xdg-basedir
 		x11-wm/xmonad
 		x11-wm/xmonad-contrib
-		>=dev-lang/ghc-6.8.2
+		>=dev-lang/ghc-7
 		x11-libs/gtk+"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
