@@ -23,6 +23,8 @@ RDEPEND=">=dev-lang/ghc-6.8.2"
 # uniplate's depends are insane.
 RDEPEND="${RDEPEND}
 	dev-haskell/hashable
-	dev-haskell/unordered-containers"
+	dev-haskell/syb
+	dev-haskell/unordered-containers
+	"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
