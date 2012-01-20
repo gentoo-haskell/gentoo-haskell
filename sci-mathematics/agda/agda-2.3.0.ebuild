@@ -19,10 +19,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="epic js"
+IUSE="epic"
 
 RDEPEND="<dev-haskell/binary-0.6
-		epic? ( dev-haskell/epic )
+		epic? ( dev-lang/epic )
 		=dev-haskell/hashable-1.1*
 		=dev-haskell/hashtables-1.0*
 		>=dev-haskell/haskeline-0.6.3.2
@@ -37,7 +37,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/happy"
 
-
 SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
@@ -50,7 +49,6 @@ src_prepare() {
 
 src_configure() {
 	cabal_src_configure $(cabal_flag epic)
-	cabal_src_configure $(cabal_flag js)
 }
 
 src_install() {

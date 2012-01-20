@@ -19,10 +19,10 @@ EDARCS_LOCALREPO="Agda2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="epic js"
+IUSE="epic"
 
 RDEPEND=">=dev-haskell/binary-0.4.4
-		epic? ( dev-haskell/epic )
+		epic? ( dev-lang/epic )
 		=dev-haskell/hashable-1.1*
 		=dev-haskell/hashtables-1.0*
 		=dev-haskell/haskeline-0.6*
@@ -50,7 +50,6 @@ src_prepare() {
 
 src_configure() {
 	cabal_src_configure $(cabal_flag epic)
-	cabal_src_configure $(cabal_flag js)
 }
 
 src_install() {
