@@ -22,7 +22,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/epic-0.9.2
+		>=dev-lang/epic-0.9.2
 		dev-haskell/haskeline
 		dev-haskell/mtl
 		dev-haskell/parsec
