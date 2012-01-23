@@ -19,7 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/happstack-server-6.0
-		>=dev-haskell/web-routes-0.24.1
+		=dev-haskell/text-0.11*
+		>=dev-haskell/web-routes-0.26.1
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
