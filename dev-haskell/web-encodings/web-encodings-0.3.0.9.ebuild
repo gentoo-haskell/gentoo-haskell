@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Encapsulate multiple web encoding in a single package."
+DESCRIPTION="Encapsulate multiple web encoding in a single package. (deprecated)"
 HOMEPAGE="http://github.com/snoyberg/web-encodings/tree/master"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
