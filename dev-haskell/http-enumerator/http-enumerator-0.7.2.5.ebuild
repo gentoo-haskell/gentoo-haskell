@@ -29,7 +29,7 @@ RDEPEND="=dev-haskell/asn1-data-0.6*
 		=dev-haskell/cprng-aes-0.2*
 		=dev-haskell/data-default-0.3*
 		=dev-haskell/enumerator-0.4*
-		=dev-haskell/failure-0.1*
+		<dev-haskell/failure-0.3
 		=dev-haskell/http-types-0.6*
 		<dev-haskell/monad-control-0.4
 		=dev-haskell/network-2.3*
