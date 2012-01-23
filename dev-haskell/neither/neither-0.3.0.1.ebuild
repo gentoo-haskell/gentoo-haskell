@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Provide versions of Either with good monad and applicative instances."
+DESCRIPTION="Provide versions of Either with good monad and applicative instances. (deprecated)"
 HOMEPAGE="http://github.com/snoyberg/neither"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
