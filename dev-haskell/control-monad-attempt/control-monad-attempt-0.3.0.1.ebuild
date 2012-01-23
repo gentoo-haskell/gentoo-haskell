@@ -7,7 +7,7 @@
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Monad transformer for attempt."
+DESCRIPTION="Monad transformer for attempt. (deprecated)"
 HOMEPAGE="http://github.com/snoyberg/control-monad-attempt"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
