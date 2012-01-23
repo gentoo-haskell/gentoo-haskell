@@ -31,13 +31,13 @@ RDEPEND="dev-haskell/fst
 		)
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		dev-haskell/alex
+		<dev-haskell/alex-3
 		>=dev-haskell/cabal-1.8
 		dev-haskell/happy"
+
+PATCHES=("${FILESDIR}/${PN}-3.2-ghc-7.patch"
+		"${FILESDIR}/${PN}-3.3-ghc-7.2.patch")
 
 src_configure() {
 	cabal_src_configure $(cabal_flag server)
 }
-
-PATCHES=("${FILESDIR}/gf-3.2-ghc-7.patch"
-		"${FILESDIR}/gf-3.3-ghc-7.2.patch")
