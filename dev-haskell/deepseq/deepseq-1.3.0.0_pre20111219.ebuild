@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal versionator
 
-MY_P="${MY_PN}-${PV}"
+MY_P="${P/_pre*/}"
 
 DESCRIPTION="Deep evaluation of data structures"
 HOMEPAGE="http://hackage.haskell.org/package/deepseq"
@@ -26,6 +26,6 @@ RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+S="${WORKDIR}/${MY_P}"
 
 CABAL_CORE_LIB_GHC_PV="7.4.0.20111219 7.4.0"
