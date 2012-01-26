@@ -31,4 +31,5 @@ RDEPEND="=dev-haskell/convertible-1*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${P}-happstack-6.1.patch")
+PATCHES=("${FILESDIR}/${P}-happstack-6.1.patch"
+	"${FILESDIR}/${P}-ghc-7.4.patch")
