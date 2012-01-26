@@ -1,0 +1,37 @@
+From 2d36cdb51ca3347b17c015f0f731ef488eda6347 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Thu, 26 Jan 2012 13:17:26 +0300
+Subject: [PATCH] Fix build failure against ghc-7.4
+
+Graphics/UI/SDL/Video.hsc:134:11:
+    Could not deduce (Eq a) arising from the literal `0'
+    from the context (Num a)
+      bound by the type signature for toToggle :: Num a => a -> Toggle
+      at Graphics/UI/SDL/Video.hsc:(134,1)-(137,65)
+    Possible fix:
+      add (Eq a) to the context of
+        the type signature for toToggle :: Num a => a -> Toggle
+    In the pattern: 0
+    In an equation for `toToggle': toToggle (0) = Disable
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ Graphics/UI/SDL/Video.hsc |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Graphics/UI/SDL/Video.hsc b/Graphics/UI/SDL/Video.hsc
+index d48ed05..5986353 100644
+--- a/Graphics/UI/SDL/Video.hsc
++++ b/Graphics/UI/SDL/Video.hsc
+@@ -130,7 +130,7 @@ instance Enum Palette Int where
+ data Toggle = Disable | Enable | Query
+     deriving (Eq, Ord, Show)
+ 
+-toToggle :: (Num a) => a -> Toggle
++toToggle :: (Num a, Eq a) => a -> Toggle
+ toToggle (#{const SDL_DISABLE}) = Disable
+ toToggle (#{const SDL_ENABLE}) = Enable
+ toToggle (#{const SDL_QUERY}) = Query
+-- 
+1.7.3.4
+
