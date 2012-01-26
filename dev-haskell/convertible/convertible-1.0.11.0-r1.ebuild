@@ -20,7 +20,7 @@ IUSE="test"
 
 RDEPEND="dev-haskell/mtl
 		>=dev-haskell/text-0.7
-		<=dev-haskell/time-1.3
+		<dev-haskell/time-1.5
 		>=dev-lang/ghc-6.8.2
 	"
 DEPEND="${RDEPEND}
