@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND="<dev-haskell/diff-0.2
 		<dev-haskell/parsec-3.2
 		=dev-haskell/split-0.1*
-		<dev-haskell/time-1.3
+		<dev-haskell/time-1.5
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/xml-1.3*
 		>=dev-lang/ghc-6.10.1"
@@ -35,7 +35,8 @@ DEPEND="${RDEPEND}
 	"
 
 PATCHES=("${FILESDIR}/${PN}-0.4.0.4-ghc-7.2.patch"
-	"${FILESDIR}/${PN}-0.4.0.4-ghc-7.4.patch")
+	"${FILESDIR}/${PN}-0.4.0.4-ghc-7.4.patch"
+	"${FILESDIR}/${PN}-0.4.0.4-ghc-7.4-time.patch")
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
