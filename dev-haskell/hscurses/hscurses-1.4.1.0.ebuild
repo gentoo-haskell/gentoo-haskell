@@ -25,5 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.4.1.0-ghc-7.4.patch
 	fperms u+x configure
 }
