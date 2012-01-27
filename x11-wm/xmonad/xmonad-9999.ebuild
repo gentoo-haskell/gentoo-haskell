@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 CABAL_FEATURES="bin lib profile haddock hscolour"
 
 inherit haskell-cabal darcs
@@ -13,13 +15,14 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+default-term"
 
 RDEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/mtl
 		>=dev-haskell/x11-1.5"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+PDEPEND="default-term? ( x11-terms/xterm )"
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
