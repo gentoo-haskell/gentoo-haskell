@@ -58,7 +58,6 @@ IUSE="binary doc ghcbootstrap"
 IUSE+=" ghcquickbuild"
 
 RDEPEND="
-	!dev-lang/ghc-bin
 	>=sys-devel/gcc-2.95.3
 	>=sys-devel/binutils-2.17
 	>=dev-lang/perl-5.6.1

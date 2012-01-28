@@ -88,7 +88,6 @@ IUSE+=" binary" # don't forget about me later!
 IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
-	!dev-lang/ghc-bin
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
 	kernel_linux? ( >=sys-devel/binutils-2.17 )
 	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
@@ -368,9 +367,7 @@ src_prepare() {
 		# failed to apply. FIXME
 		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 
-		# epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch - upstreamed in ghc >= 7.3
-		# epatch "${FILESDIR}"/${PN}-7.2.1-fix-exotic-unreg-builds.patch - upstreamed in ghc >= 7.3
-		epatch "${FILESDIR}"/${PN}-7.2.1-macos-prefix-respect-gcc.patch
+		epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
 		epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		if use prefix; then

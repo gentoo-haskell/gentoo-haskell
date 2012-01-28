@@ -62,7 +62,6 @@ IUSE="binary doc ghcbootstrap"
 IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
-	!dev-lang/ghc-bin
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
 	kernel_linux? ( >=sys-devel/binutils-2.17 )
 	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
