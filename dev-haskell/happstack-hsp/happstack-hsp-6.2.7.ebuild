@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.4*
+RDEPEND="=dev-haskell/happstack-server-6.5*
 		=dev-haskell/harp-0.4*
 		<dev-haskell/hsp-0.7
 		<dev-haskell/hsx-0.10
 		<dev-haskell/mtl-2.1
 		<dev-haskell/text-0.12
-		dev-haskell/utf8-string
-		>=dev-lang/ghc-6.10.1"
+		=dev-haskell/utf8-string-0.3*
+		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
