@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.4*
+RDEPEND="=dev-haskell/happstack-server-6.5*
 		dev-haskell/hslogger
 		<dev-haskell/hstringtemplate-0.7
 		<dev-haskell/mtl-2.1
