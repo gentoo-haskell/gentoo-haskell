@@ -1,5 +1,5 @@
 --- gitit-0.8.1-orig/gitit.cabal	2011-09-04 07:46:18.000000000 +1000
-+++ gitit-0.8.1-happstack-server-6.4/gitit.cabal	2011-12-20 11:48:42.203081606 +1100
++++ gitit-0.8.1-happstack-server-6.5/gitit.cabal	2012-01-24 23:15:26.515320168 +1100
 @@ -136,22 +136,22 @@
                       network >= 2.1.0.0 && < 2.4,
                       utf8-string >= 0.3 && < 0.4,
@@ -15,7 +15,7 @@
                       zlib >= 0.5 && < 0.6,
                       url >= 2.1 && < 2.2,
 -                     happstack-server >= 6.0 && < 6.3,
-+                     happstack-server >= 6.0 && < 6.5,
++                     happstack-server >= 6.0 && < 6.6,
                       happstack-util >= 6.0 && < 6.2,
                       xml >= 1.3.5,
                       hslogger >= 1 && < 1.2,
@@ -28,7 +28,7 @@
      build-depends:   base >= 4, syb
    if impl(ghc >= 7.0.3)
 --- gitit-0.8.1-orig/Network/Gitit/Types.hs	2011-09-04 07:46:18.000000000 +1000
-+++ gitit-0.8.1-happstack-server-6.4/Network/Gitit/Types.hs	2011-12-14 22:33:56.761423406 +1100
++++ gitit-0.8.1-happstack-server-6.5/Network/Gitit/Types.hs	2011-12-14 22:33:56.761423406 +1100
 @@ -307,7 +307,7 @@
           pa <- look' "patterns"       `mplus` return ""
           gt <- look' "gotopage"       `mplus` return ""
@@ -38,3 +38,14 @@
           fm <- liftM Just (look' "from") `mplus` return Nothing
           to <- liftM Just (look' "to")   `mplus` return Nothing
           et <- liftM (Just . filter (/='\r')) (look' "editedText")
+--- gitit-0.8.1-orig/gitit.hs	2011-09-04 07:46:18.000000000 +1000
++++ gitit-0.8.1-happstack-server-6.5/gitit.hs	2012-01-31 00:47:29.670637430 +1100
+@@ -87,7 +87,7 @@
+   listen sock 10
+ 
+   -- start the server
+-  simpleHTTPWithSocket sock serverConf $ msum [ wiki conf'
++  simpleHTTPWithSocket sock Nothing serverConf $ msum [ wiki conf'
+                                , dir "_reloadTemplates" reloadTemplates
+                                ]
+ 

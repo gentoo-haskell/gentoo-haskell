@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/cgi
 		<dev-haskell/feed-0.4
 		<dev-haskell/filestore-0.5
 		dev-haskell/ghc-paths
-		<dev-haskell/happstack-server-6.5
+		<dev-haskell/happstack-server-6.6
 		<dev-haskell/happstack-util-6.2
 		>=dev-haskell/highlighting-kate-0.2.7.1
 		<dev-haskell/hslogger-1.2
