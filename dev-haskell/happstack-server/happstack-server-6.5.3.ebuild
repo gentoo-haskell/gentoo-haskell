@@ -16,12 +16,12 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="ssl"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/blaze-html-0.5
-		=dev-haskell/happstack-data-6.0*
 		>=dev-haskell/hslogger-1.0.2
+		=dev-haskell/hsopenssl-0.10*
 		dev-haskell/html
 		=dev-haskell/monad-control-0.3*
 		>=dev-haskell/mtl-2
@@ -35,6 +35,22 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		<dev-haskell/utf8-string-0.4
 		dev-haskell/xhtml
 		dev-haskell/zlib
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.10.1
+		ssl? ( dev-libs/crypto++
+			dev-libs/openssl
+		)"
+
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+CABAL_EXTRA_CONFIGURE_FLAGS="--extra-lib-dirs="${EPREFIX}"/usr/$(get_libdir) \
+		--extra-include-dirs="${EPREFIX}"/usr/include/crypto++"
+
+src_prepare() {
+	sed -e 's@cryptopp@crypto++@g' \
+		-i "${S}/${PN}.cabal" || die "Could not correct crypto++ library name"
+}
+
+src_configure() {
+	cabal_src_configure $(cabal_flag ssl https)
+}
