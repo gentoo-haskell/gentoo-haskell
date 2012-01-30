@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/hamlet-0.10*
-		=dev-haskell/happstack-server-6.4*
+		=dev-haskell/happstack-server-6.5*
 		dev-haskell/text
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
