@@ -19,14 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
-		=dev-haskell/happstack-server-6.3*
+		=dev-haskell/happstack-server-6.5*
 		<dev-haskell/heist-0.8
 		=dev-haskell/mtl-2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@heist >= 0.5 && < 0.7@heist >= 0.5 \&\& < 0.8@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
