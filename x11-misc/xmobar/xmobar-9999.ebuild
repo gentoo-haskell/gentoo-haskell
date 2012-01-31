@@ -4,7 +4,7 @@
 
 EAPI="3"
 CABAL_FEATURES="bin"
-inherit git-2 haskell-cabal
+inherit eutils git-2 haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://projects.haskell.org/xmobar/"
@@ -30,6 +30,10 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		alsa? ( >=dev-haskell/alsa-mixer-0.1 )
 		wifi? ( net-wireless/wireless-tools )"
 RDEPEND="mpd? ( media-sound/mpd )"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.15-Fix-CPU-load-in-threadWaitRead.patch
+}
 
 src_configure() {
 	cabal_src_configure \

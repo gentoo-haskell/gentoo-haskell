@@ -1,0 +1,71 @@
+From b722607332529b8efd01a10e601550525c895c21 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Fri, 27 Jan 2012 08:41:30 +0300
+Subject: [PATCH] Fix 100% CPU load in a threadWaitRead loop
+
+This reverts commit 0964f3327bfe6c2443736353493e420f2fa1bb67:
+
+> Author: Martin Perner <martin@perner.cc>
+> Date:   Sat Jan 14 19:42:55 2012 +0100
+>
+>     Remove dependency for ghc's threaded runtime
+
+We need -threaded because of yet unfixed ghc bug:
+    http://hackage.haskell.org/trac/ghc/ticket/4934
+
+Otherwise xmobar eats 100% CPU on ghc-7.4-rc1:
+
+$ strace -p `pidof xmobar`
+
+> select(6, [0 5], [], NULL, {0, 0})      = 0 (Timeout)
+> select(6, [0 5], [], NULL, {0, 0})      = 0 (Timeout)
+> select(6, [0 5], [], NULL, {0, 0})      = 0 (Timeout)
+> select(6, [0 5], [], NULL, {0, 0})      = 0 (Timeout)
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ src/Xmobar.hs |    4 ++--
+ xmobar.cabal  |    5 ++++-
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/src/Xmobar.hs b/src/Xmobar.hs
+index dc671fe..b310f0f 100644
+--- a/src/Xmobar.hs
++++ b/src/Xmobar.hs
+@@ -83,7 +83,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
+     tv <- atomically $ newTVar []
+     sig <- setupSignalHandler
+     _ <- forkIO (checker tv [] vs sig `catch` \(SomeException _) -> putStrLn "Thread checker failed" >> return ())
+-    _ <- forkIO (eventer sig `catch` \(SomeException _) -> putStrLn "Thread eventer failed" >> return ())
++    _ <- forkOS (eventer sig `catch` \(SomeException _) -> putStrLn "Thread eventer failed" >> return ())
+     eventLoop tv xcfg sig
+   where
+     -- Reacts on events from X
+@@ -101,7 +101,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
+         xrrEventBase <- peek ptrEventBase
+ 
+         forever $ do
+-          nextEvent' dpy e
++          nextEvent dpy e
+           ev <- getEvent e
+           case ev of
+             ConfigureEvent {} -> putMVar signal Reposition
+diff --git a/xmobar.cabal b/xmobar.cabal
+index dba9f91..608cc09 100644
+--- a/xmobar.cabal
++++ b/xmobar.cabal
+@@ -86,7 +86,10 @@ executable xmobar
+     ghc-prof-options:   -prof -auto-all
+ 
+     if true
+-       ghc-options: -funbox-strict-fields -Wall
++       -- -threaded is a workaround around 100% CPU busy loop
++       -- in ghc's threadWait: http://hackage.haskell.org/trac/ghc/ticket/4934
++       -- all known ghc versions behave badly
++       ghc-options: -funbox-strict-fields -Wall -threaded
+        extra-libraries: Xrandr
+ 
+     -- Use --disable-optimization configure flag
+-- 
+1.7.3.4
+
