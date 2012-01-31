@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		citeproc-hs is a library for rendering
+		bibliographic reference citations into a variety
+		of styles using a macro language called Citation
+		Style Language (CSL). More details on CSL can be
+		found here:
+		&lt;http://citationstyles.org/&gt;.
+		
+		For the API documentation please see &quot;Text.CSL&quot;.
+	</longdescription>
+</pkgmetadata>

@@ -20,7 +20,7 @@ IUSE="+bibutils +network"
 
 RDEPEND="dev-haskell/json[generic]
 		dev-haskell/mtl
-		=dev-haskell/pandoc-types-1.8*
+		>=dev-haskell/pandoc-types-1.8
 		dev-haskell/parsec
 		dev-haskell/time
 		dev-haskell/utf8-string
