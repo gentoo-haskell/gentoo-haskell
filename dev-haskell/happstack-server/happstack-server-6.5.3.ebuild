@@ -36,7 +36,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		dev-haskell/xhtml
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.1
-		ssl? ( dev-libs/crypto++
+		ssl? ( >=dev-libs/crypto++-5.6.1-r3
 			dev-libs/openssl
 		)"
 
