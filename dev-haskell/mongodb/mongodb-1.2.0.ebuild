@@ -36,5 +36,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${P}-monad-control-0.3.patch")
