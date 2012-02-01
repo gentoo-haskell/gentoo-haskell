@@ -1,0 +1,13 @@
+diff --git a/Text/Jasmine/Pretty.hs b/Text/Jasmine/Pretty.hs
+index c73d11c..474b313 100644
+--- a/Text/Jasmine/Pretty.hs
++++ b/Text/Jasmine/Pretty.hs
+@@ -5,7 +5,7 @@ module Text.Jasmine.Pretty
+ 
+ import Data.Char
+ import Data.List
+-import Data.Monoid
++import Data.Monoid (Monoid(..)) -- hide (<>)
+ -- import Text.Jasmine.Parse
+ import Language.JavaScript.Parser
+ import qualified Blaze.ByteString.Builder as BB

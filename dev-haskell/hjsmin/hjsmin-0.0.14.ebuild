@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Haskell implementation of a javascript minifier"
 HOMEPAGE="http://github.com/alanz/hjsmin"
@@ -24,3 +24,5 @@ RDEPEND="<dev-haskell/blaze-builder-1
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${PN}-0.0.14-ghc-7.4.patch)
