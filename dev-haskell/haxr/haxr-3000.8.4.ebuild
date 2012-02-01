@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="XML-RPC client and server library."
 HOMEPAGE="http://www.haskell.org/haskellwiki/HaXR"
@@ -29,3 +29,5 @@ RDEPEND="<dev-haskell/blaze-builder-0.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${PN}-3000.8.4-ghc-7.4-rc2.patch)
