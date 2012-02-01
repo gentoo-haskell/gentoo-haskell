@@ -1,0 +1,30 @@
+commit 5d34474162caf59bd8d045f5a38e574609557c89
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Wed Feb 1 08:51:34 2012 +0300
+
+    Fix clash of Monoid.<> (ghc-7.4-rc2)
+    
+    [11 of 11] Compiling Data.Semigroupoid.Static ( Data/Semigroupoid/Static.hs, dist/build/Data/Semigroupoid/Static.o )
+    
+    Data/Semigroupoid/Static.hs:45:59:
+        Ambiguous occurrence `<>'
+        It could refer to either `Data.Monoid.<>',
+                                 imported from `Data.Monoid' at Data/Semigroupoid/Static.hs:14:1-18
+                              or `Data.Semigroup.<>',
+                                 imported from `Data.Semigroup' at Data/Semigroupoid/Static.hs:15:1-21
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/Data/Semigroupoid/Static.hs b/Data/Semigroupoid/Static.hs
+index 320caf6..e49f94c 100644
+--- a/Data/Semigroupoid/Static.hs
++++ b/Data/Semigroupoid/Static.hs
+@@ -11,7 +11,7 @@ import Control.Monad.Instances
+ import Control.Monad (ap)
+ import Data.Functor.Apply
+ import Data.Functor.Plus
+-import Data.Monoid
++import Data.Monoid ()
+ import Data.Semigroup
+ import Data.Semigroupoid
+ import Prelude hiding ((.), id)

@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Haskell 98 semigroupoids: Category sans id"
 HOMEPAGE="http://github.com/ekmett/semigroupoids"
@@ -25,3 +25,5 @@ RDEPEND="=dev-haskell/comonad-1.1*
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${PN}-1.2.6-ghc-7.4.patch)
