@@ -49,7 +49,8 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-PATCHES=("${FILESDIR}/${PN}-1.8.2.1-tests-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${PN}-1.8.2.1-tests-ghc-7.2.patch"
+	"${FILESDIR}"/${PN}-1.8.2.1-ghc-7.4.patch)
 
 pandoc_init() {
 	pandoc="${PN}"
@@ -68,6 +69,7 @@ src_prepare() {
 		-e 's@highlighting-kate >= 0.2.9 && < 0.3@highlighting-kate >= 0.2.9 \&\& < 0.4@g' \
 		-e 's@old-time >= 1 && < 1.1@old-time >= 1 \&\& < 1.2@' \
 		-e 's@HTTP >= 4000.0.5 && < 4000.2@HTTP >= 4000.0.5 \&\& < 4000.3@g' \
+		-e 's@template-haskell >= 2.4 && < 2.7@template-haskell >= 2.4 \&\& < 2.8@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 

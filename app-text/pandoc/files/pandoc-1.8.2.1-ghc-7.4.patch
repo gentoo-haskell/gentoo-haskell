@@ -1,0 +1,13 @@
+diff --git a/src/Text/Pandoc/Pretty.hs b/src/Text/Pandoc/Pretty.hs
+index 54d65af..7904fa3 100644
+--- a/src/Text/Pandoc/Pretty.hs
++++ b/src/Text/Pandoc/Pretty.hs
+@@ -70,7 +70,7 @@ module Text.Pandoc.Pretty (
+ where
+ import Data.DList (DList, fromList, toList, cons, singleton)
+ import Data.List (intercalate)
+-import Data.Monoid
++import Data.Monoid (mappend, mconcat, mempty, Monoid) -- hide <>
+ import Data.String
+ import Control.Monad.State
+ import Data.Char (isSpace)
