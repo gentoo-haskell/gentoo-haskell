@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+plugins"
 
 RDEPEND="dev-haskell/cgi
 		<dev-haskell/configfile-1.2
@@ -52,3 +52,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch"
 	"${FILESDIR}/${P}-relax-deps.patch")
+
+src_configure() {
+	cabal_src_configure $(cabal_flag plugins)
+}
