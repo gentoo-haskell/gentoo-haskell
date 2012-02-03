@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:	$
+# $Header: $
 
 EAPI="3"
 CABAL_FEATURES="bin lib profile"
@@ -22,6 +22,7 @@ DEPEND="$RDEPEND
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-9999-ghc-7.2.patch"
+	epatch "${FILESDIR}/${PN}-9999-ghc-7.4.patch"
 	sed -e 's@setLambdabotHome "/home/dons/lambdabot"@setLambdabotHome "/usr/bin"@' -i "${S}/dot-ghci"
 	sed -e 's@import qualified Control.Exception as C@import qualified Control.OldException as C@' -i "${S}/GOA.hs"
 }
