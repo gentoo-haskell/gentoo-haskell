@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-# haddock-2.9.4 on hackage does not work with ghc-7.4.
-# this ebuild uses a tarball of what's distributed with ghc-7.4.
+# haddock-2.9.4 on hackage does not work with ghc-7.4.1
+# this ebuild uses a tarball of what's distributed with ghc-7.4.1
 
 EAPI="3"
 
