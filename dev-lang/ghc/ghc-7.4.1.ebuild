@@ -77,7 +77,7 @@ yet_binary() {
 }
 
 #SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
-SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.4.1-rc2/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
