@@ -1,0 +1,11 @@
+--- unamb-0.2.4-orig/src/Data/Unamb.hs	2010-09-23 05:33:31.000000000 +1000
++++ unamb-0.2.4/src/Data/Unamb.hs	2012-02-03 23:58:17.685649779 +1100
+@@ -363,7 +363,7 @@
+ {-# INLINE pmax #-}
+ 
+ -- | Parallel multiplication with 0 short-circuit, and 1 identity
+-pmult :: Num a => a -> a -> a
++pmult :: (Eq a, Num a) => a -> a -> a
+ pmult = parAnnihilatorIdentity (*) 0 1
+ {-# INLINE pmult #-}
+ 
