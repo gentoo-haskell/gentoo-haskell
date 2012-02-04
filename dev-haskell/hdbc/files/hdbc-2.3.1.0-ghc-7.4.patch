@@ -1,0 +1,11 @@
+--- HDBC-2.3.1.0-orig/Database/HDBC/SqlValue.hs	2011-08-10 06:34:26.000000000 +1000
++++ HDBC-2.3.1.0/Database/HDBC/SqlValue.hs	2012-02-05 00:06:49.902701480 +1100
+@@ -503,7 +503,7 @@
+     safeConvert (SqlTimeDiff x) = numToBool x
+     safeConvert y@(SqlNull) = quickError y
+ 
+-numToBool :: Num a => a -> ConvertResult Bool
++numToBool :: (Eq a, Num a) => a -> ConvertResult Bool
+ numToBool x = Right (x /= 0)
+ 
+ instance Convertible Char SqlValue where

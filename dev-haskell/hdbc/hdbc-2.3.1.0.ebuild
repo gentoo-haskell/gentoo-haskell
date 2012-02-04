@@ -42,7 +42,9 @@ PDEPEND="mysql? ( dev-haskell/hdbc-mysql )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
 		sqlite3? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
-PATCHES=("${FILESDIR}/${PN}-2.3.1.0-fix-fbuildtests.patch")
+PATCHES=("${FILESDIR}/${PN}-2.3.1.0-fix-fbuildtests.patch"
+	"${FILESDIR}/${PN}-2.3.1.0-relax-time-dep.patch"
+	"${FILESDIR}/${PN}-2.3.1.0-ghc-7.4.patch")
 
 S="${WORKDIR}/${MY_P}"
 
