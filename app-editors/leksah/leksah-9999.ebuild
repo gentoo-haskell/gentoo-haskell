@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile"
-inherit haskell-cabal git-2
+inherit base haskell-cabal git-2
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
@@ -22,8 +22,8 @@ RDEPEND=">=dev-lang/ghc-6.12.1
 DEPEND="${RDEPEND}
 		=dev-haskell/binary-0.5*
 		=dev-haskell/binary-shared-0.8*
-		<dev-haskell/cabal-1.11
-		=dev-haskell/deepseq-1.1*
+		<dev-haskell/cabal-1.15
+		<dev-haskell/deepseq-1.4
 		=dev-haskell/glib-0.12*
 		=dev-haskell/gtk-0.12*
 		=dev-haskell/gtksourceview2-0.12*
@@ -42,9 +42,12 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.8"
 
+PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
+
 CABAL_CONFIGURE_FLAGS="$(cabal_flag yi)"
 
 src_prepare() {
+	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 leksah does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.11@build-depends: Cabal >=1.6.0.1 \&\& <1.9@' \
