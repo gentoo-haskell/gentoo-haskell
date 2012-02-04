@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="Securely store session data in a client-side cookie."
-HOMEPAGE="http://github.com/snoyberg/clientsession/tree/master"
+HOMEPAGE="http://github.com/yesodweb/clientsession/tree/master"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		=dev-haskell/cereal-0.3*
 		>=dev-haskell/cprng-aes-0.2
-		=dev-haskell/crypto-api-0.8*
+		<dev-haskell/crypto-api-0.10
 		>=dev-haskell/cryptocipher-0.2.5
 		>=dev-haskell/entropy-0.2.1
 		dev-haskell/skein
