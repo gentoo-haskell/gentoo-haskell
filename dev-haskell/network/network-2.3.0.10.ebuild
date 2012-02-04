@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal autotools
@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
-	epatch "${FILESDIR}/network-2.3.0.8-ghc-7.4.patch"
 }
 
 src_configure() {
