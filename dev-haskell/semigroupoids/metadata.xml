@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Provides a wide array of semigroupoids and operations for working with semigroupds.
+		
+		A Semigroupoid is a Category without the requirement of identity arrows for every object in the category.
+		
+		When working with comonads you often have the @\&lt;*\&gt;@ portion of an @Applicative@, but
+		not the @pure@. This was captured in Uustalu and Vene&#39;s \&quot;Essence of Dataflow Programming\&quot;
+		in the form of the @ComonadZip@ class in the days before @Applicative@. Apply provides a weaker invariant, but for the comonads used for data flow programming (found in the streams package), this invariant is preserved. Applicative function composition forms a semigroupoid.
+		
+		Similarly many structures are nearly a comonad, but not quite, for instance lists provide a reasonable &#39;extend&#39; operation in the form of &#39;tails&#39;, but do not always contain a value.
+		
+		
+		Ideally the following relationships would hold:
+		
+		&gt; Traversable &lt;---- Foldable &lt;--- Functor ------&gt; Alt ---------&gt; Plus           Semigroupoid
+		&gt;      |               |            |                              |                  |
+		&gt;      v               v            v                              v                  v
+		&gt; Traversable1 &lt;--- Foldable1     Apply --------&gt; Applicative -&gt; Alternative      Category
+		&gt;                                   |               |              |                  |
+		&gt;                                   v               v              v                  v
+		&gt;                                 Bind ---------&gt; Monad -------&gt; MonadPlus          Arrow
+		&gt;
+		
+		Apply, Bind, and Extract give rise the Static, Kleisli and Cokleisli semigroupoids respectively.
+		
+		This lets us remove many of the restrictions from various monad transformers
+		as in many cases the binding operation or @\&lt;*\&gt;@ operation does not require them.
+		
+		Finally, to work with these weaker structures it is beneficial to have containers
+		that can provide stronger guarantees about their contents, so versions of &#39;Traversable&#39;
+		and &#39;Foldable&#39; that can be folded with just a &#39;Semigroup&#39; are added.
+	</longdescription>
+</pkgmetadata>
