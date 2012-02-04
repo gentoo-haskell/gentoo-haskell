@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/hledger-lib-0.14
+		>=dev-haskell/hledger-lib-0.17
 		dev-haskell/mtl
 		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
