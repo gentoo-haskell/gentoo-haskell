@@ -1,0 +1,13 @@
+--- testpack-2.1.1-orig/src/Test/QuickCheck/Instances.hs	2011-08-12 23:29:30.000000000 +1000
++++ testpack-2.1.1/src/Test/QuickCheck/Instances.hs	2012-02-05 00:00:09.168635252 +1100
+@@ -47,8 +47,9 @@
+                 where x = abs . fromIntegral $ n
+ #endif
+ 
++#if !MIN_VERSION_random(1,0,1)
+ instance Random Word8 where
+     randomR (a, b) g = (\(x, y) -> (fromInteger x, y)) $
+                        randomR (toInteger a, toInteger b) g
+     random g = randomR (minBound, maxBound) g
+-
++#endif
