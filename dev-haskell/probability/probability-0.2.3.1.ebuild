@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Probabilistic Functional Programming"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Probabilistic_Functional_Programming"
@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/transformers-0.0.1
 		<dev-haskell/transformers-0.3
+		>=dev-haskell/utility-ht-0.0.6
+		<dev-haskell/utility-ht-0.1
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("$FILESDIR/${PN}-sortElem.diff")
