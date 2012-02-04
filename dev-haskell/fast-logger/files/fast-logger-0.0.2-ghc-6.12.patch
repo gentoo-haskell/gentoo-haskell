@@ -1,12 +1,12 @@
---- fast-logger-0.0.1-orig/System/Log/FastLogger.hs	2011-12-22 18:31:08.000000000 +1100
-+++ fast-logger-0.0.1/System/Log/FastLogger.hs	2011-12-31 15:52:02.666043631 +1100
+--- fast-logger-0.0.2-orig/System/Log/FastLogger.hs	2012-02-01 20:28:32.000000000 +1100
++++ fast-logger-0.0.2/System/Log/FastLogger.hs	2012-02-04 23:22:11.677025906 +1100
 @@ -1,4 +1,4 @@
 -{-# LANGUAGE DoAndIfThenElse, NoImplicitPrelude, RecordWildCards #-}
 +{-# LANGUAGE NoImplicitPrelude, RecordWildCards #-}
  
  -- | Fast logging system to copy log data directly to Handle buffer.
  
-@@ -59,11 +59,12 @@
+@@ -64,16 +64,19 @@
        , bufR = w
        , bufSize = size
        } <- readIORef haByteBuffer
@@ -20,4 +20,13 @@
 +      else do
          old_buf' <- Buffered.flushWriteBuffer haDevice old_buf
          writeIORef haByteBuffer old_buf'
-         bufsWrite h_ bss
+-        if size > len then
++        if size > len
++          then do
+             bufsWrite h_ bss
+-        else allocaBytes size $ \ptr -> do
++          else do
++            allocaBytes size $ \ptr -> do
+             go ptr bss
+             let Just fd = cast haDevice :: Maybe FD
+             RawIO.writeNonBlocking fd ptr size
