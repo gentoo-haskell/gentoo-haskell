@@ -1,12 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
+
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Parse literals efficiently from bytestrings"
-HOMEPAGE="http://code.haskell.org/~dons/code/bytestring-lexing"
+DESCRIPTION="Parse and produce literals efficiently from strict or lazy bytestrings."
+HOMEPAGE="http://code.haskell.org/~wren/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -15,6 +17,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1"
-DEPEND=">=dev-haskell/cabal-1.2
+DEPEND=">=dev-haskell/cabal-1.6
 		dev-haskell/alex
 		${RDEPEND}"
