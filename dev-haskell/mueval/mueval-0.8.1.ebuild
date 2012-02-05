@@ -27,6 +27,11 @@ RDEPEND="dev-haskell/cabal
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+# default mueval timeout. in 0.7-second units
+# Handy to change as lambdabot does not
+# allow this bit to confgure
+: ${MUEVAL_TIMEOUT:=5}
+
 src_prepare() {
 	# Compile with ghc 6.12.3 or ghc 7.0.1
 	epatch "${FILESDIR}/${P}-ghc-6.12.3-ghc-7.0.1.patch"
@@ -34,6 +39,10 @@ src_prepare() {
 		sed -e 's@ghc-options:   -Wall -static -threaded -O2@ghc-options:   -Wall -static -threaded -O2 -rtsopts@g' \
 			-i "${S}/${PN}.cabal" || die "Could not add -rtsopts to ${S}/${PN}.cabal"
 	fi
+
+	einfo "Using default mueval timeout: ${MUEVAL_TIMEOUT} * 0.7s"
+	sed -e "s@timeLimit = 5@timeLimit = ${MUEVAL_TIMEOUT}@" \
+		-i "${S}"/Mueval/ArgsParse.hs || die
 }
 
 src_install() {
