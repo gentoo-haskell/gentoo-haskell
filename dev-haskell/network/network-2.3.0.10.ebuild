@@ -31,5 +31,5 @@ src_prepare() {
 }
 
 src_configure() {
-	cabal_src_configure $(use_enable test tests)
+	cabal_src_configure $(use test && use_enable test tests) #395351
 }
