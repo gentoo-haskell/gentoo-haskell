@@ -18,9 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
-RDEPEND="dev-haskell/parsec
+RDEPEND=">=dev-haskell/blaze-html-0.4.2
+		<dev-haskell/blaze-html-0.5
+		dev-haskell/mtl
+		dev-haskell/parsec
 		dev-haskell/regex-pcre-builtin
-		dev-haskell/xhtml
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
