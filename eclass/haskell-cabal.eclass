@@ -53,6 +53,12 @@ inherit ghc-package multilib
 # example: /etc/make.conf: CABAL_EXTRA_CONFIGURE_FLAGS=--enable-shared
 : ${CABAL_EXTRA_CONFIGURE_FLAGS:=}
 
+# @ECLASS-VARIABLE: CABAL_EXTRA_BUILD_FLAGS
+# @DESCRIPTION:
+# User-specified additional parameters passed to 'setup build'.
+# example: /etc/make.conf: CABAL_EXTRA_BUILD_FLAGS=-v
+: ${CABAL_EXTRA_BUILD_FLAGS:=}
+
 # @ECLASS-VARIABLE: GHC_BOOTSTRAP_FLAGS
 # @DESCRIPTION:
 # User-specified additional parameters for ghc when building
@@ -185,7 +191,7 @@ cabal-bootstrap() {
 			${GHC_BOOTSTRAP_FLAGS} \
 			"$@" \
 			-o setup
-		echo $(ghc-getghc) "$@"
+		echo $(ghc-getghc) ${HCFLAGS} "$@"
 		$(ghc-getghc) "$@"
 	}
 	if $(ghc-supports-shared-libraries); then
@@ -276,6 +282,12 @@ cabal-configure() {
 		cabalconf="${cabalconf} --with-cpphs=${EPREFIX}/usr/bin/cpphs"
 	fi
 
+	local option
+	for option in ${HCFLAGS}
+	do
+		cabalconf+=" --ghc-option=$option"
+	done
+
 	# Building GHCi libs on ppc64 causes "TOC overflow".
 	if use ppc64; then
 		cabalconf="${cabalconf} --disable-library-for-ghci"
@@ -333,7 +345,7 @@ cabal-configure() {
 
 cabal-build() {
 	unset LANG LC_ALL LC_MESSAGES
-	set --  build "$@"
+	set --  build ${CABAL_EXTRA_BUILD_FLAGS} "$@"
 	echo ./setup "$@"
 	./setup "$@" \
 		|| die "setup build failed"
@@ -430,7 +442,7 @@ haskell-cabal_src_configure() {
 
 		cabal-bootstrap
 
-		cabal-configure $ghc_flags "$@"
+		cabal-configure "$@"
 
 		popd > /dev/null
 	fi
