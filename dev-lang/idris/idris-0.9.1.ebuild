@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Dependently Typed Functional Programming Language"
+DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
