@@ -15,7 +15,4 @@
 		plain text, Emacs Org-Mode, EPUB, and S5 and Slidy HTML
 		slide shows.
 	</longdescription>
-	<use>
-		<flag name="highlight">Add support for syntax highlighting with <pkg>dev-haskell/highlighting-kate</pkg></flag>
-	</use>
 </pkgmetadata>
