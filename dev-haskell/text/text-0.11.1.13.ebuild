@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="An efficient packed Unicode text type."
 HOMEPAGE="https://github.com/bos/text"
@@ -23,15 +23,17 @@ RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10
 		test? ( >=dev-haskell/quickcheck-2.4.0.1
-			<dev-haskell/test-framework-0.5
+			<dev-haskell/test-framework-0.6
 			<dev-haskell/test-framework-hunit-0.3
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.11.1.6-disable-tests-that-fail-in-non-latin1-locales.patch"
+	sed -e 's@test-framework             >= 0.4 && < 0.5@test-framework             >= 0.4 \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
 }
 
 src_configure() {
+	# the tests need a utf-8 locale
 	cabal_src_configure $(use_enable test tests)
 }
