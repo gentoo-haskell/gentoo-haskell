@@ -72,3 +72,69 @@
    if !flag(dochack)
      build-depends: yi
  
+--- yi-0.6.4.0-orig/src/library/Yi/Syntax/Paren.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Syntax/Paren.hs	2012-02-07 22:06:31.430468060 +1100
+@@ -12,7 +12,7 @@
+ import Yi.Syntax
+ import Yi.Prelude 
+ import Prelude ()
+-import Data.Monoid
++import Data.Monoid (Endo(..), appEndo, mappend)
+ import Data.DeriveTH
+ import Data.Maybe
+ import Data.List (filter, takeWhile)
+--- yi-0.6.4.0-orig/src/library/Yi/Syntax/Strokes/Haskell.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Syntax/Strokes/Haskell.hs	2012-02-07 22:03:56.617497281 +1100
+@@ -10,7 +10,7 @@
+ import Yi.Syntax
+ import Yi.Prelude
+ import Prelude ()
+-import Data.Monoid
++import Data.Monoid (Endo(..), appEndo, mappend)
+ import Yi.Syntax.Haskell
+ import Yi.Syntax.Tree (subtrees)
+ 
+--- yi-0.6.4.0-orig/src/library/Yi/Syntax/Latex.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Syntax/Latex.hs	2012-02-07 22:01:15.535394445 +1100
+@@ -11,7 +11,7 @@
+ import Yi.Syntax
+ import Yi.Prelude 
+ import Prelude ()
+-import Data.Monoid
++import Data.Monoid (Endo(..), mappend, mempty)
+ import Data.List (zip)
+ 
+ 
+--- yi-0.6.4.0-orig/src/library/Yi/Syntax/OnlineTree.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Syntax/OnlineTree.hs	2012-02-07 21:58:19.132021403 +1100
+@@ -7,7 +7,7 @@
+ import Control.Applicative
+ import Data.Traversable
+ import Data.Foldable
+-import Data.Monoid
++import Data.Monoid (mempty)
+ 
+ #ifdef TESTING
+ import Test.QuickCheck 
+--- yi-0.6.4.0-orig/src/library/Yi/Prelude.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Prelude.hs	2012-02-07 21:56:47.490279681 +1100
+@@ -99,7 +99,7 @@
+ import Control.Applicative hiding((<$))
+ import Data.Traversable 
+ import Data.Typeable
+-import Data.Monoid
++import Data.Monoid (Monoid, mappend)
+ import qualified Data.Set as Set
+ import qualified Data.Map as Map
+ import qualified Control.Monad.State.Class as CMSC
+--- yi-0.6.4.0-orig/src/library/Yi/Syntax/Tree.hs	2011-07-21 17:50:13.000000000 +1000
++++ yi-0.6.4.0/src/library/Yi/Syntax/Tree.hs	2012-02-07 22:20:42.214973350 +1100
+@@ -22,7 +22,7 @@
+ import Control.Arrow (first)
+ import Data.List (dropWhile, takeWhile, reverse, filter, zip, take, drop, length, splitAt)
+ import Data.Maybe
+-import Data.Monoid
++import Data.Monoid (First(..), Last(..), getFirst, getLast, mempty)
+ #ifdef TESTING
+ import Test.QuickCheck
+ #endif
