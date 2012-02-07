@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
@@ -14,13 +14,13 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="binary mkl test vector"
+IUSE="+dd mkl unsafe finit debugfpu debugnan test"
 
 RDEPEND=">=dev-lang/ghc-6.10.1
 		dev-haskell/storable-complex
-		binary? ( dev-haskell/binary )
+		dev-haskell/binary
 		mkl? ( sci-libs/mkl )
-		vector? ( >=dev-haskell/vector-0.8 )
+		>=dev-haskell/vector-0.8
 		sci-libs/gsl
 		virtual/blas
 		virtual/lapack
@@ -36,8 +36,11 @@ DEPEND=">=dev-haskell/cabal-1.8
 # but I intentionally left them here --slyfox
 src_configure() {
 	cabal_src_configure \
-		$(cabal_flag binary) \
+		$(cabal_flag dd) \
 		$(cabal_flag mkl) \
-		$(cabal_flag test tests) \
-		$(cabal_flag vector)
+		$(cabal_flag unsafe) \
+		$(cabal_flag finit) \
+		$(cabal_flag debugfpu) \
+		$(cabal_flag debugnan) \
+		$(cabal_flag test tests)
 }
