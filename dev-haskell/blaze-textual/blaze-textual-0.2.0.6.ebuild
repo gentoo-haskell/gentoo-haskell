@@ -28,11 +28,17 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
 			>=dev-haskell/quickcheck-2.4.0.1
-			<dev-haskell/test-framework-0.5
+			<dev-haskell/test-framework-0.6
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
 PATCHES=("${FILESDIR}/${PN}-0.2.0.6-ghc-7.4.patch")
+
+src_prepare() {
+	base_src_prepare
+	sed -e 's@test-framework >= 0.3.3 && < 0.5@test-framework >= 0.3.3 \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
