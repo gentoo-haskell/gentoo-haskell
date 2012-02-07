@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/blaze-builder
+		dev-haskell/ieee754
 		dev-haskell/mtl
 		dev-haskell/text
 		dev-haskell/utf8-string
