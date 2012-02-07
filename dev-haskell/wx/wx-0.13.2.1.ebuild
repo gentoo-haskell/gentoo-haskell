@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="wxHaskell"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -21,5 +21,3 @@ RDEPEND="dev-haskell/stm
 		>=dev-lang/ghc-6.10"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-0.13.2-ghc-7.2.patch")
