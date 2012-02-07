@@ -1,5 +1,5 @@
---- happy-1.18.8-orig/happy.cabal	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/happy.cabal	2011-12-01 12:30:54.352465826 +1100
+--- happy-1.18.9-orig/happy.cabal	2012-02-06 20:49:56.000000000 +1100
++++ happy-1.18.9/happy.cabal	2012-02-07 20:50:33.859004968 +1100
 @@ -100,10 +100,13 @@
  	templates/GLR_Base.hs
  	templates/GenericTemplate.hs
@@ -14,8 +14,8 @@
  	tests/Makefile
  	tests/TestMulti.ly
  	tests/Partial.ly
---- happy-1.18.8-orig/tests/Makefile	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/Makefile	2011-12-01 14:33:08.456648386 +1100
+--- happy-1.18.9-orig/tests/Makefile	2012-02-06 20:49:55.000000000 +1100
++++ happy-1.18.9/tests/Makefile	2012-02-07 20:50:33.859004968 +1100
 @@ -1,5 +1,5 @@
  HAPPY=../dist/build/happy/happy
 -HC=ghc
@@ -23,87 +23,8 @@
  
  TESTS = Test.ly TestMulti.ly TestPrecedence.ly bug001.ly \
  	monad001.y monad002.ly precedence001.ly precedence002.y \
---- happy-1.18.8-orig/tests/Partial.ly	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/Partial.ly	2011-12-01 12:52:00.720963536 +1100
-@@ -4,7 +4,7 @@
- and the type of the tokens the parser reads.
- 
- > {
--> import Char
-+> import Data.Char
- > }
- 
- > %name calc Exp
---- happy-1.18.8-orig/tests/TestMulti.ly	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/TestMulti.ly	2011-12-01 12:52:00.631960738 +1100
-@@ -4,7 +4,7 @@
- and the type of the tokens the parser reads.
- 
- > {
--> import Char
-+> import Data.Char
- > }
- 
- > %name calcExp  Exp
---- happy-1.18.8-orig/tests/TestPrecedence.ly	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/TestPrecedence.ly	2011-12-01 12:52:00.592959512 +1100
-@@ -4,7 +4,7 @@
- and the type of the tokens the parser reads.
- 
- > {
--> import Char
-+> import Data.Char
- > }
- 
- > %name calc
---- happy-1.18.8-orig/tests/monad001.y	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/monad001.y	2011-12-01 12:52:00.509956904 +1100
-@@ -3,8 +3,8 @@
- {
- module Main where
- 
--import IO
--import Char
-+import System.IO
-+import Data.Char
- }
- 
- %name calc
---- happy-1.18.8-orig/tests/monad002.ly	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/monad002.ly	2011-12-01 12:52:00.444954898 +1100
-@@ -5,7 +5,7 @@
- > {-# OPTIONS_GHC -fglasgow-exts #-}
- > -- -fglasgow-exts required because P is a type synonym, and Happy uses it
- > -- unsaturated.
--> import Char
-+> import Data.Char
- > }
- 
- > %name calc
---- happy-1.18.8-orig/tests/precedence001.ly	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/precedence001.ly	2011-12-01 12:51:58.390890292 +1100
-@@ -2,7 +2,7 @@
- 
- > {
- > module Main where
--> import IO
-+> import System.IO
- > import Control.Exception as Exception
- > }
- > 
---- happy-1.18.8-orig/tests/precedence002.y	2011-11-23 20:57:45.000000000 +1100
-+++ happy-1.18.8/tests/precedence002.y	2011-12-01 12:51:58.148882915 +1100
-@@ -2,7 +2,7 @@
- 
- {
- module Main where
--import IO
-+import System.IO
- import Control.Exception as Exception
- }
- 
---- /dev/null	2011-12-01 11:21:25.890640263 +1100
-+++ happy-1.18.8/tests/AttrGrammar001.y	2011-12-01 12:25:51.085873912 +1100
+--- /dev/null	2012-02-07 10:04:42.144206507 +1100
++++ happy-1.18.9/tests/AttrGrammar001.y	2012-02-07 20:50:47.013316418 +1100
 @@ -0,0 +1,68 @@
 +{
 +import Control.Monad (unless)
@@ -173,8 +94,8 @@
 +
 +quit = putStrLn "Test failed"
 +}
---- /dev/null	2011-12-01 11:21:25.890640263 +1100
-+++ happy-1.18.8/tests/AttrGrammar002.y	2011-12-01 12:25:51.086873987 +1100
+--- /dev/null	2012-02-07 10:04:42.144206507 +1100
++++ happy-1.18.9/tests/AttrGrammar002.y	2012-02-07 20:50:47.013316418 +1100
 @@ -0,0 +1,58 @@
 +
 +%tokentype { Char }
@@ -234,8 +155,8 @@
 +
 +quit = putStrLn "Test Failed"
 +}
---- /dev/null	2011-12-01 11:21:25.890640263 +1100
-+++ happy-1.18.8/tests/ParGF.y	2011-08-13 12:54:42.513837256 +1000
+--- /dev/null	2012-02-07 10:04:42.144206507 +1100
++++ happy-1.18.9/tests/ParGF.y	2012-02-07 20:50:47.014316443 +1100
 @@ -0,0 +1,40 @@
 +{-
 +
@@ -277,8 +198,8 @@
 +main = print $ pGrammar ["a"]
 +
 +}
---- /dev/null	2011-12-01 11:21:25.890640263 +1100
-+++ happy-1.18.8/tests/monaderror.y	2011-12-01 12:17:50.527846027 +1100
+--- /dev/null	2012-02-07 10:04:42.144206507 +1100
++++ happy-1.18.9/tests/monaderror.y	2012-02-07 20:50:47.015316467 +1100
 @@ -0,0 +1,57 @@
 +{
 +module Main where
