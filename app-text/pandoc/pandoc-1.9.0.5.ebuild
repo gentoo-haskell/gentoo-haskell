@@ -40,7 +40,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*
 		pdf? ( virtual/latex-base )"
 
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
+		>=dev-haskell/cabal-1.10
 		test? ( dev-haskell/ansi-terminal
 			dev-haskell/diff
 			dev-haskell/hunit
