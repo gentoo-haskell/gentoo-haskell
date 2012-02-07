@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 WX_GTK_VER="2.8"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal wxwidgets
+inherit haskell-cabal wxwidgets
 
 DESCRIPTION="wxHaskell core"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -26,5 +26,3 @@ RDEPEND="dev-haskell/parsec
 		x11-libs/wxGTK:2.8[X,gstreamer,opengl?]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}/${PN}-0.13.2-ghc-7.4.patch")
