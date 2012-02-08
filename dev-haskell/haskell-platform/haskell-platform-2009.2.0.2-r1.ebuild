@@ -1,6 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haskell-platform/haskell-platform-2009.2.0.2-r1.ebuild,v 1.1 2011/12/11 20:20:31 slyfox Exp $
+
+# for slot dependencies
+EAPI=1
 
 DESCRIPTION="The Haskell Platform"
 HOMEPAGE="http://haskell.org/haskellwiki/Haskell_Platform"
@@ -11,19 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-# for slot dependencies
-EAPI=1
-
 # use gnome style of meta packages;
 # minimum version, open range
 
-# for the packages parsec and quickcheck we depend on SLOT="0" and SLOT="1" to
-# not get too recent versions (quickcheck-2 and parsec-3 which behaves
-# significantly different)
-
-# for the regex-packages we don't want the 0.9x series, and there is currently
-# no way in portage to specify a from-to range interval. thus, we depend on the
-# exact version.
+# for the packages parsec (SLOT=0) and quickcheck (SLOT=1) we depend on
+# different SLOTs to not get too recent versions (quickcheck-2 and parsec-3
+# which behaves significantly different)
 
 DEPEND="~dev-lang/ghc-6.10.4
 		>=dev-haskell/cabal-1.6.0.3
@@ -51,8 +47,9 @@ DEPEND="~dev-lang/ghc-6.10.4
 		>=dev-haskell/cabal-install-0.6.2
 		>=dev-haskell/haddock-2.4.2
 
-		~dev-haskell/regex-base-0.72.0.2
-		~dev-haskell/regex-compat-0.71.0.1
-		~dev-haskell/regex-posix-0.72.0.3"
+		=dev-haskell/regex-base-0.72*
+		=dev-haskell/regex-compat-0.71*
+		=dev-haskell/regex-posix-0.72*
+		"
 
 RDEPEND="${DEPEND}"
