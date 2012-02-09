@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="Takusen"
 MY_P="${MY_PN}-${PV}"
@@ -38,3 +38,5 @@ CABAL_CONFIGURE_FLAGS="$(cabal_flag sqlite)
 					   $(cabal_flag postgres)
 					   $(cabal_flag oracle)
 					   $(cabal_flag odbc)"
+
+PATCHES=("${FILESDIR}/${MY_PN}-0.8.7-ghc-7.4.patch")
