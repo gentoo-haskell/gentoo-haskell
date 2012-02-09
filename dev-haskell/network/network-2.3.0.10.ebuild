@@ -21,13 +21,15 @@ RDEPEND="dev-haskell/parsec
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( <dev-haskell/hunit-1.3
-			<dev-haskell/test-framework-0.5
+			<dev-haskell/test-framework-0.6
 			<dev-haskell/test-framework-hunit-0.3
 		)"
 
 src_prepare() {
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
+	sed -e 's@test-framework < 0.5@test-framework < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
