@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 # CDF limit at, Quantile is CDF inverse and invIncompleteGamma tests fail.
 # tests require a utf-8 locale.
 RESTRICT="test"
@@ -45,7 +45,7 @@ src_prepare() {
 	sed -e 's@deepseq >= 1.1.0.2@deepseq >= 1.1.0.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	# upstream forgot to include some of the test source files in the tarball
-	cp -pR "${FILESDIR}/${PN}-0.10.1.0/tests" ${S} \
+	cp -pR "${FILESDIR}/${PN}-0.10.1.0/tests" "${S}" \
 		|| die "Could not copy missing tests source files"
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
