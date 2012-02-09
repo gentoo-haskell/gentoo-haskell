@@ -28,6 +28,11 @@ DEPEND="${RDEPEND}
 		)
 		"
 
+src_prepare() {
+	cp -p "${FILESDIR}/${P}/test/Quoter.hs" "${S}/test" \
+		|| die "Could not copy missing Quoter.hs test file"
+}
+
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
