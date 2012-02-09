@@ -6,7 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Focus is on third-party authentication methods, such as OpenID,
-		rpxnow and Facebook.
+		Focus is on third-party authentication methods, such as OpenID and BrowserID.
 	</longdescription>
 </pkgmetadata>
