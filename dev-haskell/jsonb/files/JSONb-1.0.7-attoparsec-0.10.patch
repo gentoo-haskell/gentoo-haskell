@@ -1,8 +1,31 @@
+--- JSONb-1.0.7-orig/JSONb.cabal	2011-10-23 15:50:59.000000000 +1100
++++ JSONb-1.0.7/JSONb.cabal	2012-02-09 15:47:16.335271501 +1100
+@@ -36,7 +36,7 @@
+                               , containers
+                               , utf8-string >= 0.3
+                               , bytestring >= 0.9
+-                              , attoparsec >= 0.8
++                              , attoparsec >= 0.10
+                               , bytestring-nums >= 0.3.1
+                               , bytestring-trie >= 0.1.4
+   exposed-modules             : Text.JSONb
+@@ -63,7 +63,7 @@
+                               , containers
+                               , utf8-string >= 0.3
+                               , bytestring >= 0.9
+-                              , attoparsec >= 0.8
++                              , attoparsec >= 0.10
+                               , bytestring-nums >= 0.3.1
+                               , bytestring-trie >= 0.1.4
+   extensions                  : FlexibleInstances
 --- JSONb-1.0.7-orig/Text/JSONb/Decode.hs	2011-10-23 15:50:59.000000000 +1100
-+++ JSONb-1.0.7/Text/JSONb/Decode.hs	2011-11-29 23:57:16.123281506 +1100
-@@ -26,6 +26,7 @@
++++ JSONb-1.0.7/Text/JSONb/Decode.hs	2012-02-09 18:24:05.623669275 +1100
+@@ -24,8 +24,9 @@
+ import Data.Attoparsec (eitherResult)
+ import Data.Attoparsec.Char8 ( choice, char, Parser, option, takeWhile1,
                                 takeWhile, skipMany, satisfy, signed,
-                                decimal, Result(..)                       )
+-                               decimal, Result(..)                       )
++                               decimal                                   )
  import qualified Data.Attoparsec.Char8 as Attoparsec
 +import qualified Data.Attoparsec.Types as AttoparsecT
  import Data.ByteString.Nums.Careless
