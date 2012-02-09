@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.1
 		<dev-haskell/comonad-1.2
-		=dev-haskell/comonad-transformers-2.0*
+		>=dev-haskell/comonad-transformers-2.0.3
+		<dev-haskell/comonad-transformers-2.1
 		>=dev-haskell/mtl-2.0.1.0
 		<=dev-haskell/mtl-2.1
 		=dev-haskell/semigroups-0.8*
