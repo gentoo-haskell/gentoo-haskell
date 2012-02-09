@@ -2,7 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ghc-package
+EAPI=4
+
+inherit base ghc-package
 
 MY_PN="DrIFT"
 MY_P="${MY_PN}-${PV}"
@@ -22,12 +24,13 @@ RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
-src_compile() {
-	econf --with-hc="$(ghc-getghc)" || die "configure failed"
-	# Makefile has no parallelism
-	emake -j1 || die "emake failed"
+PATCHES=("${FILESDIR}"/${PN}-2.2.3-ghc-7.4.patch)
+
+src_configure() {
+	econf --with-hc="$(ghc-getghc)" --with-hcflags="${HCFLAGS} -package haskell98 -hide-package base"
 }
 
-src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+src_compile() {
+	# Makefile has no parallelism
+	emake -j1
 }
