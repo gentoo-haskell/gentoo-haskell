@@ -1,0 +1,88 @@
+Wed Feb  8 02:36:52 EST 2012  Neil Mitchell
+  * Upgrade to WAI/Warp 1.1
+Wed Feb  8 02:34:37 EST 2012  Neil Mitchell
+  * Update the copyright year to 2012
+Wed Feb  8 02:33:52 EST 2012  Neil Mitchell
+  * #525, don't rely on a redirect from haskell.org to www.haskell.org, as curl on the Mac can't cope with the redirection
+Wed Feb  8 02:33:23 EST 2012  Neil Mitchell
+  * Allow Cabal 1.15
+diff -rN -u old-hoogle/hoogle.cabal new-hoogle/hoogle.cabal
+--- old-hoogle/hoogle.cabal	2012-02-09 22:05:19.070966065 +1100
++++ new-hoogle/hoogle.cabal	2012-02-09 22:05:19.072966127 +1100
+@@ -111,13 +111,13 @@
+         time, old-time, old-locale,
+         cmdargs >= 0.7 && < 0.10,
+         tagsoup >= 0.11 && < 0.13,
+-        enumerator == 0.4.*,
+         blaze-builder >= 0.2 && < 0.4,
+         http-types == 0.6.*,
+         case-insensitive >= 0.2 && < 0.5,
+-        wai == 0.4.*,
+-        warp == 0.4.*,
+-        Cabal >= 1.8 && < 1.13
++        conduit == 0.2.*,
++        wai == 1.1.*,
++        warp == 1.1.*,
++        Cabal >= 1.8 && < 1.15
+ 
+     other-modules:
+         CmdLine.All
+diff -rN -u old-hoogle/src/CmdLine/Type.hs new-hoogle/src/CmdLine/Type.hs
+--- old-hoogle/src/CmdLine/Type.hs	2012-02-09 22:05:19.069966034 +1100
++++ new-hoogle/src/CmdLine/Type.hs	2012-02-09 22:05:19.087966600 +1100
+@@ -46,7 +46,7 @@
+ 
+ cmdLineMode = cmdArgsMode $ modes [search_ &= auto,data_,server,combine,convert,test,dump,rank,log_]
+     &= verbosity &= program "hoogle"
+-    &= summary ("Hoogle v" ++ showVersion version ++ ", (C) Neil Mitchell 2004-2011\nhttp://haskell.org/hoogle")
++    &= summary ("Hoogle v" ++ showVersion version ++ ", (C) Neil Mitchell 2004-2012\nhttp://haskell.org/hoogle")
+ 
+ search_ = Search
+     {web = def &= typ "MODE" &= opt "web" &= help "Operate as a web tool"
+diff -rN -u old-hoogle/src/General/Web.hs new-hoogle/src/General/Web.hs
+--- old-hoogle/src/General/Web.hs	2012-02-09 22:05:19.068966003 +1100
++++ new-hoogle/src/General/Web.hs	2012-02-09 22:05:19.089966663 +1100
+@@ -17,10 +17,11 @@
+ import Network.Wai
+ import Network.HTTP.Types
+ import Data.CaseInsensitive(original)
+-import Blaze.ByteString.Builder(toLazyByteString)
+-import Data.Enumerator.List(consume)
+ import qualified Data.ByteString.Lazy.Char8 as LBS
+ 
++import Blaze.ByteString.Builder(toLazyByteString)
++import Data.Conduit.List(consume)
++import Data.Conduit(($$),Flush,runResourceT,Flush(Chunk))
+ 
+ type Args = [(String, String)]
+ 
+@@ -32,9 +33,11 @@
+ responseNotFound x = responseLBS status404 [] $ fromString $ "File not found: " ++ x
+ 
+ responseFlatten :: Response -> IO (Status, ResponseHeaders, LBString)
+-responseFlatten r = responseEnumerator r $ \s hs -> do
+-       builders <- consume
+-       return (s, hs, toLazyByteString $ mconcat builders)
++responseFlatten r = do
++    let (s,hs,rest) = responseSource r
++    chunks <- runResourceT $ rest $$ consume
++    let res = toLazyByteString $ mconcat [x | Chunk x <- chunks]
++    return (s,hs,res)
+ 
+ 
+ responseEvaluate :: Response -> IO ()
+diff -rN -u old-hoogle/src/Recipe/Download.hs new-hoogle/src/Recipe/Download.hs
+--- old-hoogle/src/Recipe/Download.hs	2012-02-09 22:05:19.069966034 +1100
++++ new-hoogle/src/Recipe/Download.hs	2012-02-09 22:05:19.094966821 +1100
+@@ -10,9 +10,9 @@
+ download :: CmdLine -> IO ()
+ download opt = do
+     createDirectoryIfMissing True "download"
+-    wget opt keywords "http://haskell.org/haskellwiki/Keywords"
++    wget opt keywords "http://www.haskell.org/haskellwiki/Keywords"
+     wget opt platform "http://code.galois.com/darcs/haskell-platform/haskell-platform.cabal"
+-    wget opt "download/base.txt" "http://haskell.org/hoogle/base.txt"
++    wget opt "download/base.txt" "http://www.haskell.org/hoogle/base.txt"
+     wget opt "download/ghc.txt" "http://www.haskell.org/ghc/docs/latest/html/libraries/ghc/ghc.txt"
+     downloadTarball opt cabals "http://hackage.haskell.org/packages/archive/00-index.tar.gz"
+     downloadTarball opt inputs "http://hackage.haskell.org/packages/archive/00-hoogle.tar.gz"
