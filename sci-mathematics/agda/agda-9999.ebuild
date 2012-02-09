@@ -45,6 +45,8 @@ src_prepare() {
 	sed -e 's@epic >= 0.1.13 && < 0.2@epic >= 0.1.13 \&\& < 0.10@' \
 		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
 	epatch "${FILESDIR}"/${P}-emacs.patch
+	sed -e 's@-Werror@@g' \
+		-i "${S}/${MY_PN}.cabal" || die
 	cabal-mksetup
 }
 
