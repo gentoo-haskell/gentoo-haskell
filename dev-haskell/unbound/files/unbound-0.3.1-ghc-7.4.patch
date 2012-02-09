@@ -1,0 +1,11 @@
+--- unbound-0.3.1-orig/Unbound/LocallyNameless/Alpha.hs	2011-08-26 03:14:15.000000000 +1000
++++ unbound-0.3.1/Unbound/LocallyNameless/Alpha.hs	2012-02-09 15:18:08.333574709 +1100
+@@ -24,7 +24,7 @@
+ import Data.List (intersect)
+ import Data.Maybe (isJust)
+ 
+-import Data.Monoid
++import Data.Monoid (Monoid(..))
+ 
+ ------------------------------------------------------------
+ -- Overview
