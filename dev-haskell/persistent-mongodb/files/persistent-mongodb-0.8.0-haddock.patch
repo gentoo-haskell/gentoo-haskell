@@ -1,0 +1,11 @@
+--- persistent-mongoDB-0.8.0-orig/Database/Persist/MongoDB.hs	2012-02-08 19:03:52.000000000 +1100
++++ persistent-mongoDB-0.8.0/Database/Persist/MongoDB.hs	2012-02-09 23:25:32.090121277 +1100
+@@ -365,7 +365,7 @@
+                      -- Perhaps there is a less hacky way of creating a query that always returns false?
+                      [u"$not" DB.=: [u"$exists" DB.=: u"_id"]]
+       FilterOr fs  -> multiFilter "$or" fs
+-      -- $and is usually unecessary but makes query construction easier in special cases
++      -- dollar and is usually unecessary but makes query construction easier in special cases
+       FilterAnd [] -> []
+       FilterAnd fs -> multiFilter "$and" fs
+   where
