@@ -8,8 +8,8 @@ import YesodCoreTest.Links
 import YesodCoreTest.NoOverloadedStrings
 import YesodCoreTest.InternalRequest
 import YesodCoreTest.ErrorHandling
--- YesodCoreTest.Cache is not in upstream repo
--- import YesodCoreTest.Cache
+import YesodCoreTest.Cache
+import qualified YesodCoreTest.Redirect as Redirect
 
 import Test.Hspec
 
@@ -23,5 +23,6 @@ specs =
     , noOverloadedTest
     , internalRequestTest
     , errorHandlingTest
---  , cacheTest
+    , cacheTest
+    , Redirect.specs
     ]
