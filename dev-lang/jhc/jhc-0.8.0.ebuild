@@ -18,9 +18,19 @@ DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/drift-2.1.1
 		dev-haskell/fgl
 		dev-haskell/happy
+		dev-haskell/hssyck
 		dev-haskell/mtl
 		dev-haskell/readline
 		dev-haskell/regex-compat
 		dev-haskell/utf8-string
 		dev-haskell/zlib"
 RDEPEND=""
+
+src_prepare() {
+	default
+	cp -r "${FILESDIR}"/${P}/* "${S}"/ || die
+}
+
+src_configure() {
+	econf --with-hcflags="${HCFLAGS}"
+}

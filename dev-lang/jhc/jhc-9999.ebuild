@@ -22,6 +22,7 @@ DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/drift-2.1.1
 		dev-haskell/fgl
 		dev-haskell/happy
+		dev-haskell/hssyck
 		dev-haskell/mtl
 		app-text/pandoc
 		dev-haskell/readline
@@ -44,7 +45,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf
+	econf --with-hcflags="${HCFLAGS}"
 	darcs init # workaround missing history (ChageLog generation)
 	darcs tag --author="portage's jhc ebuild" phony-useless-tag
 }
