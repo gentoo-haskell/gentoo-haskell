@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Certificates and Key reader/writer
+		
+		At the moment only X509 certificate and unencrypted private key are supported,
+		but will include PGP certificate and pkcs8 private keys
+	</longdescription>
+</pkgmetadata>
