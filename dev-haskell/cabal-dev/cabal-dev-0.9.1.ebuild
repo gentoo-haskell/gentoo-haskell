@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin"
 inherit eutils haskell-cabal
@@ -34,5 +34,4 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal-mksetup
 	epatch "${FILESDIR}/${PN}-0.8-cabal-file.patch"
-	epatch "${FILESDIR}/${PN}-0.9-http.patch"
 }
