@@ -7,7 +7,7 @@ EAPI="4"
 CABAL_FEATURES="lib profile"
 inherit git-2 haskell-cabal
 
-T_PV=0.8.0
+T_PV=0.8.1
 S_PV=0.8.0
 
 DESCRIPTION="Tests for Persistent"
