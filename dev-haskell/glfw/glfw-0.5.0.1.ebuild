@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/opengl-2.1
 		>=dev-lang/ghc-6.8.2
-		x11-libs/libGL
+		virtual/opengl
 		x11-libs/libX11"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
