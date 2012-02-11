@@ -1,0 +1,15 @@
+Sat Feb 11 21:27:14 FET 2012  Sergei Trofimovich <slyfox@community.haskell.org>
+  * Allow OpenGL-2.5.
+diff -rN -u old-hipmunkplayground/HipmunkPlayground.cabal new-hipmunkplayground/HipmunkPlayground.cabal
+--- old-hipmunkplayground/HipmunkPlayground.cabal	2012-02-11 21:28:40.919845798 +0300
++++ new-hipmunkplayground/HipmunkPlayground.cabal	2012-02-11 21:28:40.920845785 +0300
+@@ -53,7 +53,7 @@
+   else
+     Build-Depends: base >= 2 && < 3
+   Build-Depends: Hipmunk >= 5.2 && < 5.3, transformers >= 0.2 && < 0.3,
+-                 OpenGL >= 2.4 && < 2.5, StateVar >= 1.0 && < 1.1,
++                 OpenGL >= 2.4 && < 2.6, StateVar >= 1.0 && < 1.1,
+                  GLFW >= 0.4 && < 0.6
+   GHC-Options:   -Wall
+   Main-is: Playground.hs
+\ В конце файла нет новой строки
