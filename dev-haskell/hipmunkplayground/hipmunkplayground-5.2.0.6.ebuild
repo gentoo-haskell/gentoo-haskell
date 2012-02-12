@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="HipmunkPlayground"
 MY_P="${MY_PN}-${PV}"
@@ -32,5 +32,3 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.8.2"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}"/${PN}-5.2.0.5-OpenGL-2.5.patch)
