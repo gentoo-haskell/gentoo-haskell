@@ -23,7 +23,9 @@ RDEPEND=">=dev-lang/ghc-6.10
 DEPEND="${RDEPEND}
 		doc? ( app-text/pandoc )
 		>=dev-haskell/cabal-1.2"
-PDEPEND="default-term? ( x11-terms/xterm )"
+PDEPEND="default-term? ( x11-terms/xterm )
+	x11-apps/xmessage
+"
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
