@@ -21,6 +21,11 @@ IUSE=""
 RDEPEND="=dev-haskell/bmp-1.2*
 		=dev-haskell/glut-2.3*
 		=dev-haskell/opengl-2.5*
-		>=dev-lang/ghc-6.12.3"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@base       == 4.5.\*@base       >= 4.3 \&\& < 4.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
