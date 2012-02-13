@@ -28,6 +28,8 @@ RDEPEND=">=dev-haskell/cabal-1.6
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+
 src_install() {
 	cabal_src_install
 	# haddock uses GHC-api to process TH source.

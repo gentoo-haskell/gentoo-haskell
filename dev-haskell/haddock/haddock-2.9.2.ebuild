@@ -27,6 +27,8 @@ RDEPEND="dev-haskell/ghc-paths
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
+CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+
 # although haddock depends on alex and happy to build from scratch, we don't
 # want this ebuild to depend on those packages.
 # we use haddock to build the documentation enabled by USE="doc".

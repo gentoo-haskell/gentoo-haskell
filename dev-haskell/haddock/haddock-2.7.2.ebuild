@@ -24,6 +24,8 @@ RDEPEND=">=dev-haskell/cabal-1.6
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+
 # although haddock depends on alex and happy to build from scratch, we don't
 # want this ebuild to depend on those packages.
 # we use haddock to build the documentation enabled by USE="doc".
@@ -43,7 +45,7 @@ src_prepare() {
 
 	# does not work with cabal-1.10, so use ghc-6.12 shipped one
 	sed -i -e 's/Cabal >= 1.5,/Cabal >= 1.5 \&\& < 1.9,/g' \
-	    "${S}/${PN}.cabal"
+		"${S}/${PN}.cabal"
 }
 
 src_install() {
