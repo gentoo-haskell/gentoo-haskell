@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 CABAL_FEATURES="bin"
 EGIT_REPO_URI="git://github.com/gentoo-haskell/hackport.git"
 inherit git-2 haskell-cabal
@@ -26,3 +28,7 @@ DEPEND="${RDEPEND}
 		>dev-haskell/xml-1.3.5
 		dev-haskell/tar
 		dev-haskell/zlib"
+
+src_prepare() {
+	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
+}
