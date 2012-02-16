@@ -1,5 +1,0 @@
-name: TestGHCPkgUpgrade
-version: 0.1
-license: GPL
-build-depends: base
-exposed-modules: Dummy
