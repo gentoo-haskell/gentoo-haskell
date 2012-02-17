@@ -13,7 +13,7 @@ MY_PN="RefSerialize"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Write to and read from Strings maintaining internal memory references"
-HOMEPAGE="http://hackage.haskell.org/package/refserialize"
+HOMEPAGE="http://hackage.haskell.org/package/RefSerialize"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
