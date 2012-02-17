@@ -13,7 +13,7 @@ MY_PN="OneTuple"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Singleton Tuple"
-HOMEPAGE="http://hackage.haskell.org/package/onetuple"
+HOMEPAGE="http://hackage.haskell.org/package/OneTuple"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
