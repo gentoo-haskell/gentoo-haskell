@@ -11,7 +11,7 @@ MY_PN="Boolean"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Generalized booleans"
-HOMEPAGE="http://hackage.haskell.org/package/boolean"
+HOMEPAGE="http://hackage.haskell.org/package/Boolean"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
