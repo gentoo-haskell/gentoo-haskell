@@ -13,7 +13,7 @@ MY_PN="Decimal"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Decimal numbers with variable precision"
-HOMEPAGE="http://hackage.haskell.org/package/decimal"
+HOMEPAGE="http://hackage.haskell.org/package/Decimal"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
