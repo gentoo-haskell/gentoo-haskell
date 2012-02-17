@@ -12,7 +12,7 @@ MY_PN="GoogleSuggest"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Interface to Google Suggest API"
-HOMEPAGE="http://hackage.haskell.org/package/googlesuggest"
+HOMEPAGE="http://hackage.haskell.org/package/GoogleSuggest"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
