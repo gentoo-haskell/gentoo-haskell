@@ -13,7 +13,7 @@ MY_PN="HTF"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="The Haskell Test Framework"
-HOMEPAGE="http://hackage.haskell.org/package/htf"
+HOMEPAGE="http://hackage.haskell.org/package/HTF"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
