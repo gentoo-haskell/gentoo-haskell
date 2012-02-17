@@ -13,7 +13,7 @@ MY_PN="HJScript"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="HJScript is a Haskell EDSL for writing JavaScript programs."
-HOMEPAGE="http://hackage.haskell.org/package/hjscript"
+HOMEPAGE="http://hackage.haskell.org/package/HJScript"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
