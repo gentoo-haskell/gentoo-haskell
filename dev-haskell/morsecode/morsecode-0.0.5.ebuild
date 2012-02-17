@@ -12,7 +12,7 @@ MY_PN="MorseCode"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Morse code"
-HOMEPAGE="http://hackage.haskell.org/package/morsecode"
+HOMEPAGE="http://hackage.haskell.org/package/MorseCode"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
