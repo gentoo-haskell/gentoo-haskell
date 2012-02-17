@@ -12,7 +12,7 @@ MY_PN="GoogleTranslate"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Interface to Google Translate API"
-HOMEPAGE="http://hackage.haskell.org/package/googletranslate"
+HOMEPAGE="http://hackage.haskell.org/package/GoogleTranslate"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
