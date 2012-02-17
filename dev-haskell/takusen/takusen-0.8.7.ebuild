@@ -11,7 +11,7 @@ MY_PN="Takusen"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC."
-HOMEPAGE="http://hackage.haskell.org/package/takusen"
+HOMEPAGE="http://hackage.haskell.org/package/Takusen"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
