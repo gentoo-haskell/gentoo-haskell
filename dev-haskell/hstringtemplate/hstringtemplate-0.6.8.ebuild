@@ -13,7 +13,7 @@ MY_PN="HStringTemplate"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="StringTemplate implementation in Haskell."
-HOMEPAGE="http://hackage.haskell.org/package/hstringtemplate"
+HOMEPAGE="http://hackage.haskell.org/package/HStringTemplate"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
