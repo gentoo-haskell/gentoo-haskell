@@ -8,7 +8,7 @@ EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 EGIT_REPO_URI="git://github.com/bos/pronk.git"
-inherit base git-2 haskell-cabal
+inherit git-2 haskell-cabal
 
 DESCRIPTION="A library and command line app for HTTP load testing"
 HOMEPAGE="https://github.com/bos/pronk"
@@ -42,5 +42,3 @@ RDEPEND="dev-haskell/aeson
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-PATCHES=("${FILESDIR}"/${PN}-0.1.0-fix-build.patch)
