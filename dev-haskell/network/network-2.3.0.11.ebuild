@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
-	sed -e 's@test-framework < 0.5@test-framework < 0.6@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
