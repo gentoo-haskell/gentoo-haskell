@@ -1,0 +1,15 @@
+--- hsp-0.6.1-orig/src/HSP/XMLGenerator.hs	2011-01-26 18:02:23.000000000 +1100
++++ hsp-0.6.1/src/HSP/XMLGenerator.hs	2012-02-19 00:52:41.690024275 +1100
+@@ -31,9 +31,9 @@
+ 
+ -- | We can use literal XML syntax to generate values of type XML in the HSP monad.
+ instance Monad m => HSX.XMLGen (HSPT' m) where
+- type HSX.XML (HSPT' m) = XML
+- newtype HSX.Attribute (HSPT' m) = HSPAttr Attribute 
+- newtype HSX.Child     (HSPT' m) = HSPChild XML
++ type XML (HSPT' m) = XML
++ newtype Attribute (HSPT' m) = HSPAttr Attribute 
++ newtype Child     (HSPT' m) = HSPChild XML
+  xmlToChild = HSPChild
+  pcdataToChild = HSX.xmlToChild . pcdata
+  genElement = element
