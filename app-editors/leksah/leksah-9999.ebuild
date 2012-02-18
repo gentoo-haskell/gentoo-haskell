@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin lib profile"
 inherit base haskell-cabal git-2
@@ -42,12 +42,9 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
-
 CABAL_CONFIGURE_FLAGS="$(cabal_flag yi)"
 
 src_prepare() {
-	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 leksah does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.11@build-depends: Cabal >=1.6.0.1 \&\& <1.9@' \
