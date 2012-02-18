@@ -15,4 +15,8 @@
 		with a utility for generating new parsers from Kate
 		XML syntax descriptions.
 	</longdescription>
+<use>
+  <flag name='executable'>Build the Highlight executable.</flag>
+  <flag name='pcre-light'>Use the pcre-light library instead of regex-pcre-builtin.</flag>
+</use>
 </pkgmetadata>
