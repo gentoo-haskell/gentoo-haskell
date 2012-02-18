@@ -28,9 +28,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare () {
-	sed -e 's@array == 0.3.*@array >= 0.3 \&\& < 0.5@' \
-		-e 's@base >= 4.0 && < 4.5@base >= 4.0 \&\& < 4.6@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
-}
