@@ -85,7 +85,6 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap llvm"
 IUSE+=" binary" # don't forget about me later!
-IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
@@ -402,20 +401,6 @@ src_configure() {
 		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
 		echo "docdir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 		echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
-
-		# The settings that give you the fastest complete GHC build are these:
-		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H64m -O0 -fasm" >> mk/build.mk
-			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-			echo "GhcStage2HcOpts = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibWays      = v" >> mk/build.mk
-			echo "SplitObjs       = NO" >> mk/build.mk
-		fi
-		# However, note that the libraries are built without optimisation, so
-		# this build isn't very useful. The resulting compiler will be very
-		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
-		# timed at less than 8 minutes.
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
