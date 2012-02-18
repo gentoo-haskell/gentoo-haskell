@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -23,8 +23,8 @@ RDEPEND="=dev-haskell/text-0.11*
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
-			>=dev-haskell/test-framework-0.3.3
-			>=dev-haskell/test-framework-quickcheck2-0.2.9
+			>=dev-haskell/test-framework-0.3.3 <dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.3
 			>=dev-haskell/quickcheck-2.4.0.1
 		)"
 
