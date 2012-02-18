@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="JSONb"
 MY_P="${MY_PN}-${PV}"
@@ -30,6 +30,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${MY_PN}-1.0.7-attoparsec-0.10.patch"
-	"${FILESDIR}/${MY_PN}-1.0.7-ghc-7.4.patch")
