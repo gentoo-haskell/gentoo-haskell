@@ -14,7 +14,7 @@ Perpetual TODO
 
   - ``git grep PATCHES``
   - ``git grep epatch``
-  - ``git grep git grep -E '\<sed\>'``
+  - ``git grep -E '\<sed\>'``
 
 - [moderate] Some packages have their testuites, but ebuilds don't utilize it or
   have tests blocked. Blocked tests are easy to find with ``git grep RESTRICT``.
