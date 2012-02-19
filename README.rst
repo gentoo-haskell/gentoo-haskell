@@ -1,6 +1,18 @@
 Gentoo Haskell project
 **********************
 
+Quickest start
+==============
+
+Haskell overlay consists of unstable software, so you
+you likely need to keyword everything in it::
+
+    layman -a haskell
+    echo '*/*::gentoo-haskell ~your-arch' >> /etc/portage/package.accept_keywords
+
+Getting involved
+================
+
 Oh, hi! So you've got a couple of moments to kill and you're looking for
 something to do? You've come to the right place.
 
