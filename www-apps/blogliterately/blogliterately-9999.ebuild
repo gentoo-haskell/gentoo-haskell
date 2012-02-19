@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/haxml:1.22
 		>=dev-haskell/haxr-3000.2.1 <dev-haskell/haxr-3000.9
 		>=dev-haskell/hscolour-1.15 <dev-haskell/hscolour-1.20
-		=dev-haskell/pandoc-1.9*
+		=app-text/pandoc-1.9*
 		>=dev-haskell/parsec-2.1.0.0 <dev-haskell/parsec-3.2
 		=dev-haskell/utf8-string-0.3*
 		=dev-haskell/xhtml-3000.2*
