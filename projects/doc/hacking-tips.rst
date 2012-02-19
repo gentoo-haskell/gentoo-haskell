@@ -31,8 +31,8 @@ source tree or just use ``CABAL_EXTRA_BUILD_FLAGS``::
 
     CABAL_EXTRA_BUILD_FLAGS=-v HCFLAGS=-O0 emerge -1 faulty-package
 
-Gitify your ebulds in prepare phase
-===================================
+Gitify your ebuilds in prepare phase
+====================================
 
 When you plan to patch some random ebuild it is
 handly to keep unpacked source tree under some SCM.
