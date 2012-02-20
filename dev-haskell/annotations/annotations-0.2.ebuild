@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="Annotations"
 MY_P="${MY_PN}-${PV}"
@@ -27,7 +27,5 @@ RDEPEND=">=dev-haskell/mtl-1.1 <dev-haskell/mtl-2.1
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-PATCHES=("${FILESDIR}"/${PN}-0.1.3-multirec-0.7.patch)
 
 S="${WORKDIR}/${MY_P}"
