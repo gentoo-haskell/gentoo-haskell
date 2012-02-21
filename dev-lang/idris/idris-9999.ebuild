@@ -8,7 +8,6 @@ EAPI="4"
 
 if [[ ${PV} = 9999* ]]; then
 	GIT_ECLASS="git-2"
-	EXPERIMENTAL="true"
 fi
 
 CABAL_FEATURES="bin"
