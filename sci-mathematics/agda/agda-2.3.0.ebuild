@@ -19,7 +19,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="epic"
+IUSE="epic +stdlib"
 
 RDEPEND="<dev-haskell/binary-0.6
 		epic? ( dev-lang/epic )
@@ -32,6 +32,7 @@ RDEPEND="<dev-haskell/binary-0.6
 		=dev-haskell/xhtml-3000.2*
 		<dev-haskell/zlib-0.6
 		>=dev-lang/ghc-6.10.4"
+PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.8
