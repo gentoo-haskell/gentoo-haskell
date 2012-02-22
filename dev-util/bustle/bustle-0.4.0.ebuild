@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -7,16 +7,16 @@
 EAPI=4
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal toolchain-funcs
+inherit base haskell-cabal toolchain-funcs
 
 DESCRIPTION="Draw pretty sequence diagrams of D-Bus traffic"
 HOMEPAGE="http://hackage.haskell.org/package/bustle"
-SRC_URI="http://willthompson.co.uk/${PN}/releases/${PV}/${P}.tar.gz"
+SRC_URI="http://willthompson.co.uk/${PN}/releases/${PV}/${P}.tar.gz http://dev.gentoo.org/~slyfox/bustle-0.4.0-tests.tar.gz"
 
 LICENSE="LGPL-2 GPL-2" # bustle-dbus-monitor.c is GPL-2, rest is LGPL-2
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="net-libs/libpcap
 		sys-apps/dbus
@@ -36,7 +36,21 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		dev-haskell/pcap
 		dev-haskell/text
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.10.1
+		test? (
+			dev-haskell/gtk
+			dev-haskell/hunit
+			dev-haskell/quickcheck
+			dev-haskell/test-framework
+			dev-haskell/test-framework-hunit
+		)
+"
+
+PATCHES=("${FILESDIR}"/${P}-ghc-7.4.patch)
+
+src_configure() {
+	cabal_src_configure $(use test && use_enable test tests) #395351
+}
 
 src_compile() {
 	# compile haskell part
