@@ -11,5 +11,6 @@
 </longdescription>
 <use>
   <flag name='epic'>Add support for the epic compiler.</flag>
+  <flag name='stdlib'>Install the standard library.</flag>
 </use>
 </pkgmetadata>
