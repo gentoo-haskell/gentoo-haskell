@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="http://www.cse.chalmers.se/~nad/software/lib-{PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://www.cse.chalmers.se/~nad/software/lib-${PV}.tar.gz -> ${P}.tar.gz"
 
 inherit elisp-common
 
