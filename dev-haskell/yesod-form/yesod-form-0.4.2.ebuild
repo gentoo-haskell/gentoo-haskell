@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4
 		=dev-haskell/wai-1.1*
 		>=dev-haskell/xss-sanitize-0.3.0.1
 		<dev-haskell/xss-sanitize-0.4
-		>=dev-haskell/yesod-core-0.10.1
+		>=dev-haskell/yesod-core-0.10.2
 		<dev-haskell/yesod-core-0.11
 		>=dev-haskell/yesod-persistent-0.3.1
 		<dev-haskell/yesod-persistent-0.4
