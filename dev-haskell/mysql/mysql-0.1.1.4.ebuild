@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A low-level MySQL client library."
 HOMEPAGE="https://github.com/bos/mysql"
@@ -22,5 +22,3 @@ RDEPEND=">=dev-lang/ghc-6.8.2
 		dev-db/mysql"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
