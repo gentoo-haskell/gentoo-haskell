@@ -23,12 +23,12 @@ SITEFILE="50${PN}-gentoo.el"
 S="${WORKDIR}/lib-${PV}"
 
 src_compile() {
-	agda +RTS -K1G -RTS -i ${S} -i ${S}/src ${S}/Everything.agda
-	agda --html -i ${S} -i ${S}/src ${S}/README.agda
+	agda +RTS -K1G -RTS -i "${S}" -i "${S}"/src "${S}"/Everything.agda || die
+	agda --html -i "${S}" -i "${S}"/src "${S}"/README.agda || die
 }
 
 src_test() {
-	agda -i ${S} -i ${S}/src README.agda
+	agda -i "${S}" -i "${S}"/src README.agda || die
 }
 
 src_install() {
