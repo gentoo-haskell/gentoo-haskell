@@ -22,6 +22,7 @@ RESTRICT="test"
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4
 		<dev-haskell/blaze-builder-0.4
 		=dev-haskell/blaze-builder-conduit-0.2*
+		>=dev-haskell/bytestring-lexing-0.4
 		>=dev-haskell/case-insensitive-0.2
 		>=dev-haskell/conduit-0.2
 		=dev-haskell/http-types-0.6*
