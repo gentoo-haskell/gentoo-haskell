@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Generic programming for families of recursive datatypes"
 HOMEPAGE="http://www.cs.uu.nl/wiki/GenericProgramming/Multirec"
@@ -21,3 +21,5 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${PN}-0.7.1-haddock.patch)
