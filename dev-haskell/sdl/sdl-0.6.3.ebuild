@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="SDL"
 MY_P="${MY_PN}-${PV}"
@@ -25,5 +25,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}"/${PN}-0.6.2-ghc-7.4.patch)
