@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 inherit haskell-cabal elisp-common
