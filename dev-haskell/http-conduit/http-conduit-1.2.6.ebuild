@@ -37,7 +37,9 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1
 		=dev-haskell/http-types-0.6*
 		=dev-haskell/lifted-base-0.1*
 		=dev-haskell/monad-control-0.3*
+		dev-haskell/mtl
 		=dev-haskell/network-2.3*
+		dev-haskell/network-conduit
 		dev-haskell/regex-compat
 		=dev-haskell/socks-0.4*
 		dev-haskell/text
