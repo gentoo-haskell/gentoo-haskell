@@ -68,9 +68,6 @@ src_prepare() {
 		|| die "Could not copy missing Redirect.hs file"
 	cp -p "${FILESDIR}/${P}/test/YesodCoreTest/YesodTest.hs" "${S}/test/YesodCoreTest/" \
 		|| die "Could not copy missing YesodTest.hs file"
-	pushd "${S}/test" || die "Could not cd to test"
-	ln -s ../test.hs test.hs || die "Could not create symlink to tests.hs"
-	popd
 }
 
 src_configure() {
