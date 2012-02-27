@@ -41,11 +41,6 @@ RDEPEND=">=dev-haskell/aeson-0.5
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-src_prepare() {
-	cp -pR "${FILESDIR}/${P}/test" "${S}/test" \
-		|| die "Could not copy missing test files"
-}
-
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
 }
