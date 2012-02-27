@@ -13,7 +13,7 @@ MY_PN="IOSpec"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A pure specification of the IO monad."
-HOMEPAGE="http://hackage.haskell.org/package/iospec"
+HOMEPAGE="http://hackage.haskell.org/package/IOSpec"
 SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
