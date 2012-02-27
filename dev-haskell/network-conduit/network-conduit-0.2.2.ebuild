@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Stream socket data using conduits."
 HOMEPAGE="http://github.com/snoyberg/conduit"
@@ -26,6 +26,8 @@ RDEPEND="=dev-haskell/conduit-0.2*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}"/${PN}-0.2.2-test.patch)
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
