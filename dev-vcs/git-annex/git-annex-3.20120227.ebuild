@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # don't seem to like our git environment much and uses installed git-annex?
+
 RDEPEND=">=dev-vcs/git-1.7.7" # TODO: add more deps?
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
@@ -42,3 +44,11 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-7.4"
 
 PATCHES=("${FILESDIR}"/${PN}-3.20120227-text-dep.patch)
+
+src_test() {
+	export GIT_CONFIG=${T}/temp-git-config
+	git config user.email "git@src_test"
+	git config user.name "Mr. ${P} The Test"
+
+	emake test
+}
