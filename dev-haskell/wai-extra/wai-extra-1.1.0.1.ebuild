@@ -18,23 +18,24 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4
-		<dev-haskell/blaze-builder-0.4
-		>=dev-haskell/blaze-builder-conduit-0.2
-		>=dev-haskell/case-insensitive-0.2
-		>=dev-haskell/conduit-0.2
-		=dev-haskell/data-default-0.3*
-		>=dev-haskell/fast-logger-0.0.2
-		=dev-haskell/http-types-0.6*
-		>=dev-haskell/network-2.2.1.5
-		<dev-haskell/network-2.4
-		>=dev-haskell/text-0.7
-		<dev-haskell/text-0.12
-		>=dev-haskell/time-1.1.4
-		>=dev-haskell/transformers-0.2.2
-		<dev-haskell/transformers-0.3
-		=dev-haskell/wai-1.1*
-		>=dev-haskell/zlib-conduit-0.2
+RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
+		<dev-haskell/blaze-builder-0.4[profile?]
+		>=dev-haskell/blaze-builder-conduit-0.2[profile?]
+		>=dev-haskell/case-insensitive-0.2[profile?]
+		>=dev-haskell/conduit-0.2[profile?]
+		=dev-haskell/data-default-0.3*[profile?]
+		>=dev-haskell/fast-logger-0.0.2[profile?]
+		=dev-haskell/http-types-0.6*[profile?]
+		>=dev-haskell/network-2.2.1.5[profile?]
+		<dev-haskell/network-2.4[profile?]
+		>=dev-haskell/text-0.7[profile?]
+		<dev-haskell/text-0.12[profile?]
+		>=dev-haskell/time-1.1.4[profile?]
+		>=dev-haskell/transformers-0.2.2[profile?]
+		<dev-haskell/transformers-0.3[profile?]
+		=dev-haskell/wai-1.1*[profile?]
+		>=dev-haskell/zlib-conduit-0.2[profile?]
+		dev-haskell/ansi-terminal[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
