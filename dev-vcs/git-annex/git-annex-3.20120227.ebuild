@@ -39,6 +39,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/time
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.4"
 
 PATCHES=("${FILESDIR}"/${PN}-3.20120227-text-dep.patch)
