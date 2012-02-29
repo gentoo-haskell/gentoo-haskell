@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND=">=dev-haskell/deepseq-1.1.0.0
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/quickcheck-2.4.0.1
 			<dev-haskell/test-framework-0.6
 			<dev-haskell/test-framework-hunit-0.3
@@ -35,5 +35,5 @@ src_prepare() {
 
 src_configure() {
 	# the tests need a utf-8 locale
-	cabal_src_configure $(use_enable test tests)
+	cabal_src_configure $(use test && use_enable test tests) #395351
 }
