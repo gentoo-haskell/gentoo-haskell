@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="manage files with git, without checking their contents into git"
 HOMEPAGE="http://git-annex.branchable.com/"
@@ -42,8 +42,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-7.4"
-
-PATCHES=("${FILESDIR}"/${PN}-3.20120227-text-dep.patch)
 
 src_test() {
 	export GIT_CONFIG=${T}/temp-git-config
