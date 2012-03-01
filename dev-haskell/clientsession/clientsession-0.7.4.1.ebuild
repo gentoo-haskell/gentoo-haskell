@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Securely store session data in a client-side cookie."
 HOMEPAGE="http://github.com/yesodweb/clientsession/tree/master"
@@ -35,11 +35,7 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-src_prepare() {
-	sed -e 's@hspec               == 0.6.\*@hspec               == 0.9.\*@' \
-		-e 's@cryptocipher        >= 0.2.5      && < 0.3@cryptocipher        >= 0.2.5      \&\& < 0.4@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+PATCHES=("${FILESDIR}"/${PN}-0.7.4.1-base64-bytestring.patch)
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
