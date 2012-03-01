@@ -34,9 +34,7 @@ DEPEND="${RDEPEND}
 		)
 	"
 
-PATCHES=("${FILESDIR}/${PN}-0.4.0.4-ghc-7.2.patch"
-	"${FILESDIR}/${PN}-0.4.0.4-ghc-7.4.patch"
-	"${FILESDIR}/${PN}-0.4.0.4-ghc-7.4-time.patch")
+PATCHES=("${FILESDIR}"/${PN}-0.4.1-ghc-7.4-tests.patch)
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
