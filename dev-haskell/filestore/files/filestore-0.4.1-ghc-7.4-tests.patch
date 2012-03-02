@@ -7,5 +7,5 @@ index b6b47ab..bf9f196 100644
  Run test suite.
  
 -> runTestSuite _ _ _ _ = runCommand "runghc -idist/build/autogen Tests.lhs" >>= waitForProcess >>= exitWith
-+> runTestSuite _ _ _ _ = runCommand "runghc -XFlexibleInstances -idist/build/autogen Tests.lhs" >>= waitForProcess >>= exitWith
++> runTestSuite _ _ _ _ = runCommand "filestore_datadir=. runghc -XFlexibleInstances -idist/build/autogen Tests.lhs" >>= waitForProcess >>= exitWith
  
