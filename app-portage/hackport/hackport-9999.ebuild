@@ -14,7 +14,7 @@ HOMEPAGE="http://code.haskell.org/gentoo/hackport/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -27,8 +27,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/regex-compat
 		>dev-haskell/xml-1.3.5
 		dev-haskell/tar
-		dev-haskell/zlib"
+		dev-haskell/zlib
+		test? ( dev-haskell/hunit )
+	"
 
 src_prepare() {
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
 }
