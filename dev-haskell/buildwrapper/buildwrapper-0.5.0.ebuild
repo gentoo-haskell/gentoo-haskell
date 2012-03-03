@@ -20,7 +20,6 @@ IUSE="test"
 
 RDEPEND=">=dev-haskell/aeson-0.4[profile?]
 		dev-haskell/attoparsec[profile?]
-		dev-haskell/buildwrapper[profile?]
 		dev-haskell/cabal[profile?]
 		dev-haskell/cmdargs[profile?]
 		dev-haskell/cpphs[profile?]
