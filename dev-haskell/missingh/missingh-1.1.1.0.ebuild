@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="amd64 ~sparc x86"
 IUSE="test"
 
 # testpack dependency is a workaround for cabal-1.8 bug, which pulls
