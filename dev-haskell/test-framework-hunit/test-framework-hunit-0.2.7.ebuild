@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-HASKELLDEPS=">=dev-haskell/hunit-1.2
-		>=dev-haskell/test-framework-0.2.0"
+HASKELLDEPS=">=dev-haskell/hunit-1.2[profile?]
+		>=dev-haskell/test-framework-0.2.0[profile?]"
 RDEPEND=">=dev-lang/ghc-6.10
 		${HASKELLDEPS}"
 DEPEND=">=dev-haskell/cabal-1.2.3
