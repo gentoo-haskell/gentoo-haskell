@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/darcs/darcs-2.5.2.ebuild,v 1.4 2012/03/04 14:17:07 gienah Exp $
 
-EAPI="4"
+EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal bash-completion-r1
 
@@ -12,22 +12,22 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc test"
 
-RDEPEND="=dev-haskell/hashed-storage-0.5*
-		=dev-haskell/haskeline-0.6*
-		=dev-haskell/html-1.0*
-		<dev-haskell/http-4000.3
-		=dev-haskell/mmap-0.5*
-		<dev-haskell/mtl-2.1
-		>=dev-haskell/network-2.2
-		<dev-haskell/parsec-3.2
-		<dev-haskell/regex-compat-0.96
-		=dev-haskell/tar-0.3*
-		=dev-haskell/terminfo-0.3*
-		=dev-haskell/text-0.11*
-		<dev-haskell/zlib-0.6.0.0
+RDEPEND="=dev-haskell/hashed-storage-0.5*[profile?]
+		=dev-haskell/haskeline-0.6*[profile?]
+		=dev-haskell/html-1.0*[profile?]
+		<dev-haskell/http-4000.2[profile?]
+		=dev-haskell/mmap-0.5*[profile?]
+		<dev-haskell/mtl-2.1[profile?]
+		>=dev-haskell/network-2.2[profile?]
+		<dev-haskell/parsec-3.2[profile?]
+		<dev-haskell/regex-compat-0.96[profile?]
+		=dev-haskell/tar-0.3*[profile?]
+		=dev-haskell/terminfo-0.3*[profile?]
+		=dev-haskell/text-0.11*[profile?]
+		<dev-haskell/zlib-0.6.0.0[profile?]
 		>=dev-lang/ghc-6.10.1
 		net-misc/curl
 		virtual/mta"
@@ -40,9 +40,9 @@ DEPEND="${RDEPEND}
 				dev-tex/latex2html[gif]
 			)
 		)
-		test? ( dev-haskell/test-framework
-				dev-haskell/test-framework-hunit
-				dev-haskell/test-framework-quickcheck2
+		test? ( dev-haskell/test-framework[profile?]
+				dev-haskell/test-framework-hunit[profile?]
+				dev-haskell/test-framework-quickcheck2[profile?]
 		)
 		"
 
@@ -54,8 +54,6 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.5.2-relax-regex-libs-deps.patch"
 	epatch "${FILESDIR}/${PN}-2.5.2-ghc-7.2.patch"
 	epatch "${FILESDIR}/${PN}-2.5.2-tests-ghc-7.2.patch"
-	epatch "${FILESDIR}/${PN}-2.5.2-relax-http-libs-deps.patch"
-	epatch "${FILESDIR}/${PN}-2.5.2-ghc-7.4.patch"
 
 	# hlint tests tend to break on every newly released hlint
 	rm "${S}/tests/haskell_policy.sh"
@@ -103,7 +101,7 @@ src_test() {
 
 src_install() {
 	cabal_src_install
-	dobashcompletion "${S}/contrib/darcs_completion" "${PN}"
+	newbashcomp "${S}/contrib/darcs_completion" "${PN}"
 
 	rm "${ED}/usr/bin/unit" 2> /dev/null
 
@@ -117,7 +115,6 @@ src_install() {
 
 pkg_postinst() {
 	ghc-package_pkg_postinst
-	bash-completion_pkg_postinst
 
 	ewarn "NOTE: in order for the darcs send command to work properly,"
 	ewarn "you must properly configure your mail transport agent to relay"
