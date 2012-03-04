@@ -525,7 +525,7 @@ src_install() {
 
 		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
-		dobashcompletion "${FILESDIR}/ghc-bash-completion"
+		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
 	fi
 
@@ -567,8 +567,6 @@ pkg_postinst() {
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
 	fi
-
-	bash-completion_pkg_postinst
 }
 
 pkg_prerm() {
