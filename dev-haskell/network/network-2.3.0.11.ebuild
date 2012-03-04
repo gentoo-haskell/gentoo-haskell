@@ -16,13 +16,13 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="test"
 
-RDEPEND="dev-haskell/parsec
+RDEPEND="dev-haskell/parsec[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( <dev-haskell/hunit-1.3
-			<dev-haskell/test-framework-0.6
-			<dev-haskell/test-framework-hunit-0.3
+		test? ( <dev-haskell/hunit-1.3[profile?]
+			<dev-haskell/test-framework-0.6[profile?]
+			<dev-haskell/test-framework-hunit-0.3[profile?]
 		)"
 
 src_prepare() {
