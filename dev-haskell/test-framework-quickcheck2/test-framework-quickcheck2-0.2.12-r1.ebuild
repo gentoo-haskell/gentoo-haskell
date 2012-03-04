@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="=dev-haskell/quickcheck-2.4*
-		<dev-haskell/test-framework-0.6.0
+RDEPEND="=dev-haskell/quickcheck-2.4*[profile?]
+		<dev-haskell/test-framework-0.6.0[profile?]
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
