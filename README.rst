@@ -7,6 +7,12 @@ Quickest start
 Haskell overlay consists of unstable software, so you
 you likely need to keyword everything in it::
 
+    # install layman, if you don't have it yet:
+    emerge layman
+    layman -f
+    echo source /var/lib/layman/make.conf >> /etc/make.conf
+    #
+    # and the overlay configuration itself:
     layman -a haskell
     echo '*/*::gentoo-haskell ~your-arch' >> /etc/portage/package.accept_keywords
 
