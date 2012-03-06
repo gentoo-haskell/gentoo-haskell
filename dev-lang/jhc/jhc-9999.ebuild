@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit base darcs autotools
+inherit darcs autotools
 
 DESCRIPTION="jhc is a haskell compiler"
 HOMEPAGE="http://repetae.net/john/computer/jhc/"
@@ -32,10 +32,7 @@ DEPEND=">=dev-lang/ghc-6.10
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
-PATCHES=("${FILESDIR}/jhc-9999-mingw.patch")
-
 src_prepare() {
-	base_src_prepare
 	eautoreconf
 
 	# (UTF-8 source breaks DrIFT. workaround DrIFT bug)
