@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="lib profile haddock"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="X11-xft"
 MY_P="${MY_PN}-${PV}"
@@ -20,8 +20,8 @@ KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		 >=dev-haskell/utf8-string-0.1
-		 >=dev-haskell/x11-1.2.1
+		 >=dev-haskell/utf8-string-0.1[profile?]
+		 >=dev-haskell/x11-1.2.1[profile?]
 		 x11-libs/libXft"
 
 DEPEND="${RDEPEND}
