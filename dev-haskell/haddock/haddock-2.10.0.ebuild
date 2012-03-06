@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal pax-utils
@@ -13,7 +13,9 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+# ia64 lost as we don't have ghc-7 there yet
+# ppc64 needs to be rekeyworded due to xhtml not being keyworded
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
@@ -26,24 +28,8 @@ RESTRICT="test" # avoid depends on QC
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
-# although haddock depends on alex and happy to build from scratch, we don't
-# want this ebuild to depend on those packages.
-# we use haddock to build the documentation enabled by USE="doc".
-# alex and happy only build executables, which does not require haddock.
-# however, happy depends on mtl which can be build with USE="doc", which would
-# create a circular dependency.
-# haddock upstream solved this by bundling preprocessed files.
-# unfortunately cabal has recently changed which directory it uses for these
-# intermediate files and thus the solution does not work anymore.
-# to fix this we move those preprocessed files back to the source tree.
-
-# src_prepare() {
-# 	for f in Lex Parse; do
-# 		rm "src/Haddock/$f."*
-# 		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
-# 	done
-# }
-
+# haddock is disabled as Cabal seems to be buggy about building docs with itself.
+# however, other packages seem to work
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal
 	# configure, but will eventually get overwritten in src_compile by
