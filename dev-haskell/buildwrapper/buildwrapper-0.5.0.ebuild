@@ -6,7 +6,8 @@
 
 EAPI=4
 
-CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
+# disabled haddock, hoogle, hscolour but pushed fix upstream
+CABAL_FEATURES="bin lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="A library and an executable that provide an easy API for a Haskell IDE"
