@@ -17,7 +17,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="BSD"
 SLOT="2"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE=""
+IUSE="+template_haskell"
 
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 # and unfortunately have to drop the other arches until we get proper ghc su$
 
 S="${WORKDIR}/${MY_P}"
+
+src_configure() {
+	# GHCi-less platforms do not support Template Haskell
+	cabal_src_configure $(cabal_flag template_haskell templateHaskell)
+}
