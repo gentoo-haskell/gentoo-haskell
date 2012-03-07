@@ -20,7 +20,7 @@ IUSE="doc"
 # Cabal.cabal only depends on base>=1&&<5 and filepath>=1&&<1.2
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
-DEPEND=">=dev-lang/ghc-6.6.1"
+DEPEND=">=dev-lang/ghc-6.6.1 <dev-lang/ghc-7"
 RDEPEND="${DEPEND}
 		dev-util/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
