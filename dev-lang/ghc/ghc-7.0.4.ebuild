@@ -43,7 +43,7 @@ arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha
 arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
 arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-#arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
+arch_binaries="$arch_binaries ppc? ( mirror://gentoo/ghc-bin-${PV}-ppc.tbz2 )"
 arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
 arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
@@ -73,6 +73,9 @@ yet_binary() {
 		x86)
 			return 0
 			;;
+		ppc)
+			return 0
+			;;
 		*)
 			return 1
 			;;
@@ -87,7 +90,6 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap llvm"
 IUSE+=" binary" # don't forget about me later!
-IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
@@ -193,7 +195,7 @@ relocate_path() {
 	for file in "$@"
 	do
 		sed -i -e "s|$from|$to|g" \
-		    "$file" || die "path relocation failed for '$file'"
+			"$file" || die "path relocation failed for '$file'"
 	done
 }
 
@@ -367,6 +369,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 		epatch "${FILESDIR}"/${PN}-7.0.4-nxstack.patch
+		epatch "${FILESDIR}/ghc-7.0.4-fix-ppc-linker.patch"
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -387,20 +390,6 @@ src_configure() {
 		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
 		echo "docdir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 		echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
-
-		# The settings that give you the fastest complete GHC build are these:
-		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H64m -O0 -fasm" >> mk/build.mk
-			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-			echo "GhcStage2HcOpts = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibWays      = v" >> mk/build.mk
-			echo "SplitObjs       = NO" >> mk/build.mk
-		fi
-		# However, note that the libraries are built without optimisation, so
-		# this build isn't very useful. The resulting compiler will be very
-		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
-		# timed at less than 8 minutes.
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
