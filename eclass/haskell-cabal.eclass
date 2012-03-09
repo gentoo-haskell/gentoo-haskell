@@ -96,7 +96,9 @@ done
 
 if [[ -n "${CABAL_USE_HADDOCK}" ]]; then
 	IUSE="${IUSE} doc"
-	DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
+	# don't require depend on itself to build docs.
+	# ebuild bootstraps docs from just built binary
+	[[ ${CATEGORY}/${PN} = "dev-haskell/haddock" ]] || DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
 fi
 
 if [[ -n "${CABAL_USE_HSCOLOUR}" ]]; then
