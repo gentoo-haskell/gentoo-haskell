@@ -19,9 +19,9 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/cairo-0.12*
-		=dev-haskell/glib-0.12*
-		dev-haskell/mtl
+RDEPEND="=dev-haskell/cairo-0.12*[profile?]
+		=dev-haskell/glib-0.12*[profile?]
+		dev-haskell/mtl[profile?]
 		>=dev-lang/ghc-6.10.1
 		x11-libs/cairo
 		x11-libs/pango"
