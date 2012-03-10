@@ -24,8 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/network-2.1.0.0[profile?]
 		>=dev-haskell/time-1.1.1[profile?]
 		>=dev-lang/ghc-6.10.1
-		unknown-c-lib/crypto
-		unknown-c-lib/ssl"
+		dev-libs/openssl"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
