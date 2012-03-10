@@ -14,12 +14,12 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS=""
 IUSE="+default-term"
 
-RDEPEND=">=dev-lang/ghc-6.10
-		dev-haskell/mtl
-		>=dev-haskell/x11-1.5"
+RDEPEND="dev-haskell/mtl[profile?]
+		=dev-haskell/x11-1.5*[profile?]
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		doc? ( app-text/pandoc )
 		>=dev-haskell/cabal-1.2"

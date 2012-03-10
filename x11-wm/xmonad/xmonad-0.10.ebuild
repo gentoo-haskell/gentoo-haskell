@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE="+default-term"
 
-RDEPEND="dev-haskell/mtl
-		=dev-haskell/utf8-string-0.3*
-		=dev-haskell/x11-1.5*
+RDEPEND="dev-haskell/mtl[profile?]
+		=dev-haskell/utf8-string-0.3*[profile?]
+		=dev-haskell/x11-1.5*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
