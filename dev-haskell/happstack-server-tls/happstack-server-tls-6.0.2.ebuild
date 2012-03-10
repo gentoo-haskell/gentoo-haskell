@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.6*
-		=dev-haskell/hslogger-1.1*
-		=dev-haskell/hsopenssl-0.10*
-		=dev-haskell/network-2.3*
-		=dev-haskell/sendfile-0.7*
-		=dev-haskell/time-1.4*
+RDEPEND="=dev-haskell/happstack-server-6.6*[profile?]
+		=dev-haskell/hslogger-1.1*[profile?]
+		=dev-haskell/hsopenssl-0.10*[profile?]
+		=dev-haskell/network-2.3*[profile?]
+		=dev-haskell/sendfile-0.7*[profile?]
+		>=dev-haskell/time-1.2[profile?] <dev-haskell/time-1.5[profile?]
 		>=dev-lang/ghc-6.10.1
 		>=dev-libs/crypto++-5.6.1-r3
 		dev-libs/openssl"
