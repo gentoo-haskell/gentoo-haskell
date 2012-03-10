@@ -16,17 +16,17 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+gio"
 
-RDEPEND="=dev-haskell/cairo-0.12*
-		=dev-haskell/glib-0.12*
-		dev-haskell/mtl
-		=dev-haskell/pango-0.12*
+RDEPEND="=dev-haskell/cairo-0.12*[profile?]
+		=dev-haskell/glib-0.12*[profile?]
+		dev-haskell/mtl[profile?]
+		=dev-haskell/pango-0.12*[profile?]
 		>=dev-lang/ghc-6.10.1
 		dev-libs/glib:2
 		x11-libs/gtk+:2
-		gio? ( =dev-haskell/gio-0.12* )"
+		gio? ( =dev-haskell/gio-0.12*[profile?] )"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
 
