@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit base haskell-cabal
 
 DESCRIPTION="Draw pretty sequence diagrams of D-Bus traffic"
-HOMEPAGE="http://hackage.haskell.org/package/bustle"
+HOMEPAGE="http://willthompson.co.uk/bustle/"
 SRC_URI="http://willthompson.co.uk/${PN}/releases/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2" # bustle-dbus-monitor.c is GPL-2, rest is LGPL-2
