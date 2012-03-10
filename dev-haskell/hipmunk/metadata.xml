@@ -12,40 +12,5 @@
 		all of its functions. It is completely self-contained.
 		Please see &lt;http://hackage.haskell.org/package/HipmunkPlayground&gt;
 		for a demonstration of this library.
-		
-		New in version 5.2.0.5:
-		
-		* Always compile @wrapper.c@ and fix Haddock errors
-		while handling Unicode.  Thanks, Joachim Breitner.
-		
-		New in version 5.2.0.4:
-		
-		* New system-chipmunk flag.  When activated, the package will
-		use the system-wide installed Chipmunk library.  Thanks,
-		Joachim Breitner.
-		
-		New in version 5.2.0.3:
-		
-		* Update to Chipmunk 5.3.5 and bump dependencies to
-		match GHC 7.2.1. (Thanks, S&amp;#246;nke Hahn!)
-		
-		* Now S&amp;#246;nke Hahn is also a Hipmunk maintainer.  Awesome!
-		
-		New in version 5.2.0.2:
-		
-		* Update to Chipmunk 5.3.4.  Note, however, that not all
-		functionality available in Chipmunk 5.3.4 is here yet.  But
-		the bug fixes and performance improvements are.
-		
-		* Fix linking bug present since Hipmunk 5.1.0.  Thanks, S&amp;#246;nke Hahn.
-		
-		* Correctly destroy the space in the presence of callbacks.
-		
-		* Workaround difficult-to-reproduce bug in Chipmunk where the
-		number of contact points in an arbiter would get garbage.
-		When that happens (and the garbage does look like garbage) we
-		give an empty list of contact points.
-		
-		Licensed under the MIT license (like Chipmunk itself).
 	</longdescription>
 </pkgmetadata>
