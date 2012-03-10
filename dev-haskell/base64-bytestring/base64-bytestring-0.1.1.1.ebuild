@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/cabal-1.10
+		test? (
 			dev-haskell/hunit
 			>=dev-haskell/quickcheck-2.4.0.1
 			dev-haskell/test-framework
@@ -36,5 +36,5 @@ src_prepare() {
 }
 
 src_configure() {
-	cabal_src_configure $(use_enable test tests)
+	cabal_src_configure $(use test && use_enable test tests) #395351
 }
