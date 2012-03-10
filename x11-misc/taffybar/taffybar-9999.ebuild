@@ -38,8 +38,8 @@ RDEPEND="dev-haskell/cairo[profile?]
 		x11-wm/xmonad[profile?]
 		x11-wm/xmonad-contrib[profile?]
 		>=dev-lang/ghc-7
-		x11-libs/gtk+
-		"
+		x11-libs/gtk+"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
-RDEPEND+="sys-apps/dbus"
+RDEPEND+=" sys-apps/dbus
+		sys-power/upower"
