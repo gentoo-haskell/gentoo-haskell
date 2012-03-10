@@ -19,25 +19,26 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/cairo
-		>=dev-haskell/dbus-core-0.9.1
-		<dev-haskell/dbus-core-1.0
-		>=dev-haskell/dyre-0.8.6
-		>=dev-haskell/gtk-0.12.1
-		>=dev-haskell/gtk-traymanager-0.1.2
-		<dev-haskell/gtk-traymanager-0.2
-		dev-haskell/hstringtemplate
-		dev-haskell/http
-		>=dev-haskell/mtl-2
-		dev-haskell/network
-		>=dev-haskell/parsec-3.1
-		dev-haskell/text
-		dev-haskell/time
-		dev-haskell/utf8-string
-		dev-haskell/web-encodings
-		dev-haskell/xdg-basedir
+		>=dev-haskell/dbus-core-0.9.1[profile?]
+		<dev-haskell/dbus-core-1.0[profile?]
+		>=dev-haskell/dyre-0.8.6[profile?]
+		>=dev-haskell/gtk-0.12.1[profile?]
+		>=dev-haskell/gtk-traymanager-0.1.2[profile?]
+		<dev-haskell/gtk-traymanager-0.2[profile?]
+		dev-haskell/hstringtemplate[profile?]
+		dev-haskell/http[profile?]
+		>=dev-haskell/mtl-2[profile?]
+		dev-haskell/network[profile?]
+		>=dev-haskell/parsec-3.1[profile?]
+		dev-haskell/text[profile?]
+		dev-haskell/time[profile?]
+		dev-haskell/utf8-string[profile?]
+		dev-haskell/web-encodings[profile?]
+		dev-haskell/xdg-basedir[profile?]
 		>=dev-lang/ghc-6.8.2
 		x11-libs/gtk+
-		x11-wm/xmonad
-		x11-wm/xmonad-contrib"
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10"
+		x11-wm/xmonad[profile?]
+		x11-wm/xmonad-contrib[profile?]
+		"
+DEPEND=">=dev-haskell/cabal-1.10"
+RDEPEND+="sys-apps/dbus"

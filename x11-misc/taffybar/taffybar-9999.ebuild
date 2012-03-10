@@ -20,24 +20,26 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="dev-haskell/cairo
-		>=dev-haskell/dbus-core-0.9.1
-		<dev-haskell/dbus-core-1.0
-		>=dev-haskell/dyre-0.8.6
-		dev-haskell/gtk
-		dev-haskell/gtk-traymanager
-		dev-haskell/hstringtemplate
-		dev-haskell/http
-		>=dev-haskell/mtl-2
-		dev-haskell/network
-		>=dev-haskell/parsec-3.1
-		dev-haskell/text
-		dev-haskell/time
-		dev-haskell/web-encodings
-		dev-haskell/xdg-basedir
-		x11-wm/xmonad
-		x11-wm/xmonad-contrib
+RDEPEND="dev-haskell/cairo[profile?]
+		>=dev-haskell/dbus-core-0.9.1[profile?]
+		<dev-haskell/dbus-core-1.0[profile?]
+		>=dev-haskell/dyre-0.8.6[profile?]
+		dev-haskell/gtk[profile?]
+		dev-haskell/gtk-traymanager[profile?]
+		dev-haskell/hstringtemplate[profile?]
+		dev-haskell/http[profile?]
+		>=dev-haskell/mtl-2[profile?]
+		dev-haskell/network[profile?]
+		>=dev-haskell/parsec-3.1[profile?]
+		dev-haskell/text[profile?]
+		dev-haskell/time[profile?]
+		dev-haskell/web-encodings[profile?]
+		dev-haskell/xdg-basedir[profile?]
+		x11-wm/xmonad[profile?]
+		x11-wm/xmonad-contrib[profile?]
 		>=dev-lang/ghc-7
-		x11-libs/gtk+"
+		x11-libs/gtk+
+		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+RDEPEND+="sys-apps/dbus"
