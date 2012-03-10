@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cgi test"
 
-RDEPEND=">=dev-haskell/parsec-2
-		dev-haskell/syb
-		>=dev-haskell/xml-1.3.12
+RDEPEND=">=dev-haskell/parsec-2[profile?]
+		dev-haskell/syb[profile?]
+		>=dev-haskell/xml-1.3.12[profile?]
 		>=dev-lang/ghc-6.8.2
-		cgi? ( dev-haskell/json
-			dev-haskell/cgi
-			dev-haskell/utf8-string
+		cgi? ( dev-haskell/json[profile?]
+			dev-haskell/cgi[profile?]
+			dev-haskell/utf8-string[profile?]
 		)
 	"
 DEPEND="${RDEPEND}
