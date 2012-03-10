@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.3[profile?] <dev-haskell/attoparsec-1[profile?]
 		>=dev-haskell/css-text-0.1.1[profile?] <dev-haskell/css-text-0.2[profile?]
