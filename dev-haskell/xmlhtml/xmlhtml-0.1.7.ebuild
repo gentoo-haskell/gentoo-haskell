@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2[profile?] <dev-haskell/blaze-builder-0.
 		>=dev-haskell/blaze-html-0.3.2[profile?] <dev-haskell/blaze-html-0.5[profile?]
 		>=dev-haskell/parsec-3.1.2[profile?] <dev-haskell/parsec-3.2[profile?]
 		=dev-haskell/text-0.11*[profile?]
-		>=dev-haskell/unordered-containers-0.1.4[profile?] <dev-haskell/unordered-containers-0.2[profile?]
+		>=dev-haskell/unordered-containers-0.1.4[profile?] <dev-haskell/unordered-containers-0.3[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
