@@ -20,6 +20,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.1
-		dev-libs/glib[profile?]"
+		dev-libs/glib:2"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
