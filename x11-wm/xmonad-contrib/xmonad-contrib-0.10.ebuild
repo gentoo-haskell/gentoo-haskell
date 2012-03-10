@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="xft"
 
-RDEPEND="<dev-haskell/mtl-3
-		dev-haskell/utf8-string
-		=dev-haskell/x11-1.5*
-		xft? ( >=dev-haskell/x11-xft-0.2 )
-		~x11-wm/xmonad-${PV}
+RDEPEND="<dev-haskell/mtl-3[profile?]
+		dev-haskell/utf8-string[profile?]
+		=dev-haskell/x11-1.5*[profile?]
+		xft? ( >=dev-haskell/x11-xft-0.2[profile?] )
+		~x11-wm/xmonad-${PV}[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
