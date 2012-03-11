@@ -269,9 +269,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	[[ ${CHOST} != *-darwin* ]] && \
-		source "${FILESDIR}/ghc-apply-gmp-hack" "$(get_libdir)"
-
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap; then
