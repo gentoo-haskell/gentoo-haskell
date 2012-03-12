@@ -1,0 +1,14 @@
+Get rid of UTF-8 from comments to convince haddock.
+diff --git a/src/System/Taffybar/Weather.hs b/src/System/Taffybar/Weather.hs
+index 0ccc922..8f150e2 100644
+--- a/src/System/Taffybar/Weather.hs
++++ b/src/System/Taffybar/Weather.hs
+@@ -52,7 +52,7 @@
+ --
+ -- As an example, a template like
+ --
+--- > "$tempF$ °F"
++-- > "$tempF$ F"
+ --
+ -- would yield a widget displaying the temperature in Farenheit with a
+ -- small label after it.

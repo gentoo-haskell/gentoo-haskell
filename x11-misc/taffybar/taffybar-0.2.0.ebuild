@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A desktop bar similar to xmobar, but with more GUI"
 HOMEPAGE="http://github.com/travitch/taffybar"
@@ -42,3 +42,5 @@ RDEPEND="dev-haskell/cairo
 DEPEND=">=dev-haskell/cabal-1.10"
 RDEPEND+=" sys-apps/dbus
 		sys-power/upower"
+
+PATCHES=("${FILESDIR}"/${P}-haddock-2.10.0.patch)
