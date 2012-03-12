@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Conversion between markup formats"
 HOMEPAGE="http://johnmacfarlane.net/pandoc"
@@ -48,6 +48,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework
 		)
 		"
+
+PATCHES=("${FILESDIR}"/${P}-haddock-2.10.0.patch)
 
 src_configure() {
 	cabal_src_configure \
