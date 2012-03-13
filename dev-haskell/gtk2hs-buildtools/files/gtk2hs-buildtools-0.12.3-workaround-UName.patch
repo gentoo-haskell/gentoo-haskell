@@ -1,0 +1,19 @@
+diff --git a/c2hs/toplevel/Main.hs b/c2hs/toplevel/Main.hs
+index 47ddd0a..f921c8d 100644
+--- a/c2hs/toplevel/Main.hs
++++ b/c2hs/toplevel/Main.hs
+@@ -363,9 +363,11 @@ execute opts args | Help `elem` opts = help
+ 
+     preCompFile <- getSwitch preCompSB
+ 
+-    unless (preCompFile==Nothing) $
+-      preCompileHeader headerFile (fromJust preCompFile)
+-        `fatalsHandledBy` ioErrorHandler
++    -- broken when .chs contains C preproc code:
++    -- http://www.mail-archive.com/gtk2hs-devel@lists.sourceforge.net/msg01160.html
++    -- unless (preCompFile==Nothing) $
++    --   preCompileHeader headerFile (fromJust preCompFile)
++    --    `fatalsHandledBy` ioErrorHandler
+ 
+     let bndFileWithoutSuffix  = stripSuffix bndFile
+     unless (null bndFile) $ do

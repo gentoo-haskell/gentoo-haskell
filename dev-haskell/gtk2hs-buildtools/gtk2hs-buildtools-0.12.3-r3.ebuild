@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Tools to build the Gtk2Hs suite of User Interface libraries."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -24,3 +24,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/happy
 		>=dev-lang/ghc-6.10.1"
+
+PATCHES=("${FILESDIR}"/${P}-workaround-UName.patch)
