@@ -6,7 +6,7 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the Webkit library."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
