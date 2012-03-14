@@ -6,7 +6,7 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the libsvg-cairo library."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -25,3 +25,5 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		>=x11-libs/cairo-1.6.0"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+PATCHES=("${FILESDIR}"/${P}-fixincl.patch)
