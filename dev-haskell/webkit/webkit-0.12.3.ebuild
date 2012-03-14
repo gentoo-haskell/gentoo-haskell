@@ -25,3 +25,5 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		>=net-libs/webkit-gtk-1.1.15:2"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+PATCHES=("${FILESDIR}"/${P}-fixincl.patch)
