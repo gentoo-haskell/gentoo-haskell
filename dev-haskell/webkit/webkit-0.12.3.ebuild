@@ -26,4 +26,5 @@ RDEPEND="=dev-haskell/cairo-0.12*
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
 
-PATCHES=("${FILESDIR}"/${P}-fixincl.patch)
+PATCHES=("${FILESDIR}"/${P}-fixincl.patch
+	"${FILESDIR}"/${P}-haddock-2.10.0.patch)
