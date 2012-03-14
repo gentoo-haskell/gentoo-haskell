@@ -6,7 +6,7 @@ EAPI="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hscolour hoogle nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the GStreamer open source multimedia framework."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -24,3 +24,5 @@ RDEPEND="=dev-haskell/glib-0.12*
 		>=media-libs/gstreamer-0.10"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+PATCHES=("${FILESDIR}"/${P}-ghc-7.4.patch)
