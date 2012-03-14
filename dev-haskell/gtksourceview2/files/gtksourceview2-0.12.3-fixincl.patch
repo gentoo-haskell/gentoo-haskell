@@ -1,0 +1,18 @@
+fix the following build failure:
+
+Building gtksourceview2-0.12.3...
+Preprocessing library gtksourceview2-0.12.3...
+dist/build/Graphics/UI/Gtk/SourceView/Enums.h:1:28: fatal error: gtksourceview2.h: No such file or directory
+compilation terminated.
+gtk2hsC2hs: Error during preprocessing custom header file
+diff --git a/gtksourceview2.cabal b/gtksourceview2.cabal
+index 7d29f60..2b3aea3 100644
+--- a/gtksourceview2.cabal
++++ b/gtksourceview2.cabal
+@@ -78,5 +78,6 @@ Library
+         x-Signals-Modname: Graphics.UI.Gtk.SourceView.Signals
+         x-Signals-Types: marshal.list
+ 		
++        Include-dirs: .
+         x-c2hs-Header:  gtksourceview2.h
+         pkgconfig-depends: gtksourceview-2.0 >= 2.0.2
