@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Gentoo ebuild tool: list packages keywords"
 HOMEPAGE="https://github.com/gentoo-haskell/keyword-stat"
-SRC_URI="http://code.haskell.org/~kolmodin/${P}.tar.gz"
+SRC_URI="http://code.haskell.org/~slyfox/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
