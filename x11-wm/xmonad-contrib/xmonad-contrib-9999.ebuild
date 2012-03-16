@@ -21,7 +21,7 @@ IUSE="xft"
 RDEPEND="<dev-haskell/mtl-3[profile?]
 		dev-haskell/random[profile?]
 		dev-haskell/utf8-string[profile?]
-		=dev-haskell/x11-1.5*[profile?]
+		>=dev-haskell/x11-1.6[profile?]
 		xft? ( >=dev-haskell/x11-xft-0.2[profile?] )
 		~x11-wm/xmonad-${PV}[profile?]
 		>=dev-lang/ghc-6.10.1"
