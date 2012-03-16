@@ -18,7 +18,7 @@ KEYWORDS=""
 IUSE="+default-term"
 
 RDEPEND="dev-haskell/mtl[profile?]
-		=dev-haskell/x11-1.5*[profile?]
+		>=dev-haskell/x11-1.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		doc? ( app-text/pandoc )
@@ -29,6 +29,11 @@ PDEPEND="default-term? ( x11-terms/xterm )
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
+
+src_prepare() {
+	sed -e 's@X11>=1.5.0.0 && < 1.6@X11>=1.5.0.0 \&\& < 1.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_compile() {
 	cabal_src_compile
