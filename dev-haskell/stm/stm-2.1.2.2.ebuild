@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -16,3 +16,4 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.12.1
 		>=dev-haskell/cabal-1.2"
+RDEPEND="${DEPEND}"
