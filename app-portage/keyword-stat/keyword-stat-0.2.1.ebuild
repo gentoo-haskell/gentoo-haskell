@@ -2,8 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="3"
+
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Gentoo ebuild tool: list packages keywords"
 HOMEPAGE="https://github.com/gentoo-haskell/keyword-stat"
@@ -19,4 +21,4 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/pcre-light"
 RDEPEND=""
 
-PATCHES=("keyword-stat-ghc-7.4.patch")
+PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
