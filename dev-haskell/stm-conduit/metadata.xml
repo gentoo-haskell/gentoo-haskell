@@ -6,7 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Provides two simple conduit wrappers around STM
-		channels - a source and a sink.
+		stm constructs for conduit library
 	</longdescription>
 </pkgmetadata>
