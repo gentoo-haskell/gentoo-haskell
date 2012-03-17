@@ -5,5 +5,7 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
-<!-- <longdescription>Long description of the package</longdescription> -->
+	<longdescription>
+		Display keywording for ebuilds
+	</longdescription>
 </pkgmetadata>
