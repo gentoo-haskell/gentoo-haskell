@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Display keywording for ebuilds"
 HOMEPAGE="http://hackage.haskell.org/package/keyword-stat"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="http://code.haskell.org/~slyfox/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
