@@ -7,7 +7,7 @@
 # haddock-2.8.{0,1} on hackage does not work with ghc-7.
 # this ebuild uses a tarball of what's distributed with ghc-7.
 
-EAPI="2"
+EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal pax-utils
@@ -18,6 +18,8 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
+# ia64 lost as we don't have ghc-7 there yet
+# ppc64 needs to be rekeyworded due to xhtml not being keyworded
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
@@ -25,7 +27,7 @@ RDEPEND="dev-haskell/ghc-paths
 		=dev-haskell/xhtml-3000.2*
 		>=dev-lang/ghc-7"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10"
+		>=dev-haskell/cabal-1.10 <dev-haskell/cabal-1.14"
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
@@ -41,6 +43,7 @@ CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 # to fix this we move those preprocessed files back to the source tree.
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-cabal-1.10.patch
 	for f in Lex Parse; do
 		rm "src/Haddock/$f."*
 		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/

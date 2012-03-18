@@ -4,7 +4,7 @@
 
 CABAL_FEATURES="bin lib"
 # don't enable profiling as the 'ghc' package is not built with profiling
-inherit haskell-cabal autotools
+inherit eutils haskell-cabal autotools pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -32,6 +32,9 @@ src_unpack() {
 	# remove dependency on ghc-paths, we include it right into haddock instead
 	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
+
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-cabal-1.8.patch
 
 	# copy of slightly modified version of GHC.Paths
 	mkdir "${S}/src/GHC"
@@ -69,6 +72,10 @@ src_compile () {
 
 src_install () {
 	cabal_src_install
+	# haddock uses GHC-api to process TH source.
+	# TH requires GHCi which needs mmap('rwx') (bug #299709)
+	pax-mark -m "${D}/usr/bin/${PN}"
+
 	if use doc; then
 		dohtml -r "${S}/doc/haddock/"*
 	fi
