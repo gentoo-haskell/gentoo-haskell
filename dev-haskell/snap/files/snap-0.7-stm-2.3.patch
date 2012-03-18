@@ -1,0 +1,13 @@
+diff --git a/snap.cabal b/snap.cabal
+index dd425ad..a098ed0 100644
+--- a/snap.cabal
++++ b/snap.cabal
+@@ -125,7 +125,7 @@ Library
+     skein                     >= 0.1.0.3  && < 0.2,
+     snap-core                 >= 0.7      && < 0.8,
+     snap-server               >= 0.7      && < 0.8,
+-    stm                       >= 2.2      && < 2.3,
++    stm                       >= 2.2      && < 2.4,
+     syb                       >= 0.1      && < 0.4,
+     template-haskell          >= 2.2      && < 2.8,
+     text                      >= 0.11     && < 0.12,

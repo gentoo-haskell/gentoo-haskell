@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/aeson-0.4
 		=dev-haskell/skein-0.1*
 		=dev-haskell/snap-core-0.7*
 		=dev-haskell/snap-server-0.7*
-		=dev-haskell/stm-2.2*
+		>=dev-haskell/stm-2.2 <dev-haskell/stm-2.4
 		=dev-haskell/syb-0.3*
 		=dev-haskell/text-0.11*
 		<dev-haskell/time-1.5
@@ -59,7 +59,8 @@ RDEPEND=">=dev-haskell/aeson-0.4
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch")
+PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch"
+	${FILESDIR}/${PN}-0.7-stm-2.3.patch)
 
 src_prepare() {
 	base_src_prepare
