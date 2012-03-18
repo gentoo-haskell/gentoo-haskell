@@ -1,0 +1,21 @@
+commit 1d26a8027b792fcd76075d9e8f5afbaec1f0cd5f
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Sun Mar 18 21:39:07 2012 +0300
+
+    cabal: allow stm-2.3.*
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/pointed.cabal b/pointed.cabal
+index 34e4df8..50dc4f3 100644
+--- a/pointed.cabal
++++ b/pointed.cabal
+@@ -26,7 +26,7 @@ library
+     comonad              >= 1.1.1.1 && < 1.2,
+     semigroups           >= 0.8     && < 0.9,
+     semigroupoids        >= 1.2.6.1 && < 1.3,
+-    stm                  >= 2.1.2.1 && < 2.3,
++    stm                  >= 2.1.2.1 && < 2.4,
+     comonad-transformers >= 2.0.3   && < 2.1
+ 
+   exposed-modules:
