@@ -6,7 +6,9 @@
 
 EAPI=4
 
-CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
+# haddock and hscolour features removed due they need
+# >=dev-haskell/cabal-1.12 whick is masked
+CABAL_FEATURES="bin lib profile "
 inherit haskell-cabal
 
 DESCRIPTION="Utilities related to freedesktop Trash standard."
