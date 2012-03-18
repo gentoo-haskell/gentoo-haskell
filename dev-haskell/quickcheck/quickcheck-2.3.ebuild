@@ -19,7 +19,8 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10
 		>=dev-haskell/cabal-1.2
-		dev-haskell/mtl"
+		dev-haskell/mtl
+		dev-haskell/random"
 
 # would work with ghc 6.8 (6.6 too?) too if we added this dep
 # dev-haskell/extensible-exceptions. however, we'd prefer not to add more core

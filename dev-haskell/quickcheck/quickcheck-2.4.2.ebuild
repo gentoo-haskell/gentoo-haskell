@@ -19,7 +19,8 @@ SLOT="2"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="+template_haskell"
 
-RDEPEND=">=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-6.10.1
+	dev-haskell/random"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
