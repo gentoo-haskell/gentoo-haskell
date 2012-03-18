@@ -1,1 +1,2 @@
 move dev-haskell/epic dev-lang/epic
+slotmove dev-haskell/parsec 3 0
