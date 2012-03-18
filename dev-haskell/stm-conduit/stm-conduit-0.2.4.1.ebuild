@@ -14,7 +14,6 @@ conduits concurrently."
 HOMEPAGE="https://github.com/wowus/stm-conduit"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-RESTRICT="test"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -26,14 +25,13 @@ RDEPEND="=dev-haskell/conduit-0.2*[profile?]
 		=dev-haskell/transformers-0.2*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
-#		test? ( dev-haskell/hunit
-#				dev-haskell/test-framework
-#				dev-haskell/test-framework-hunit
-#				dev-haskell/test-framework-quickcheck2
-#				)
-#		"
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/hunit
+			dev-haskell/test-framework
+			dev-haskell/test-framework-hunit
+			dev-haskell/test-framework-quickcheck2
+			)"
 
-#src_configure() {
-#	cabal_src_configure $(use_enable test tests)
-#}
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
+}
