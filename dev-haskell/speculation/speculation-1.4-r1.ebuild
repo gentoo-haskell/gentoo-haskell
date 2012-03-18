@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A framework for safe, programmable, speculative parallelism"
 HOMEPAGE="http://github.com/ekmett/speculation"
@@ -19,11 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="test"
 
-RDEPEND=">=dev-haskell/stm-2.1
-		<dev-haskell/stm-2.3
-		=dev-haskell/tag-bits-0.1*
-		>=dev-haskell/transformers-0.2.2.0
-		<dev-haskell/transformers-0.3
+RDEPEND=">=dev-haskell/stm-2.1[profile?] <dev-haskell/stm-2.4[profile?]
+		=dev-haskell/tag-bits-0.1*[profile?]
+		>=dev-haskell/transformers-0.2.2.0[profile?] <dev-haskell/transformers-0.3[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${P}-stm-2.3.patch)
