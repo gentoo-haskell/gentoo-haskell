@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="elibc_glibc"
+IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2
 		!prefix? ( sys-libs/glibc )"
