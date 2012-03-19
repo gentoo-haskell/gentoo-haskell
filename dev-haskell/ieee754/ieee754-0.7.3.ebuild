@@ -16,9 +16,9 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="elibc_glibc"
 
 RDEPEND=">=dev-lang/ghc-6.8.2
-		!elibc_glibc? ( sys-libs/glibc )"
+		!prefix? ( sys-libs/glibc )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.0"
