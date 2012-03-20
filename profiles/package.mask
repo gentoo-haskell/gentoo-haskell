@@ -18,7 +18,6 @@
 # accidentally install them.
 # Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
 # Add xmonad-extras, Ivan Miljenovic, 15 May 2010
-=app-portage/hackport-9999
 =app-text/gt-tools-9999
 =dev-haskell/libmpd-9999
 =dev-haskell/hdbus-9999
