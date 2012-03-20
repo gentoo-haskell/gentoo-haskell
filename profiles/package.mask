@@ -26,8 +26,6 @@
 =dev-haskell/ltk-9999
 =sci-mathematics/agda-9999
 =sci-mathematics/agda-executable-9999
-=x11-wm/xmonad-9999
-=x11-wm/xmonad-contrib-9999
 =www-apps/blogliterately-9999
 =dev-haskell/ghc-mtl-9999
 =dev-haskell/hint-9999
