@@ -18,7 +18,7 @@ EDARCS_LOCALREPO="Agda2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="epic"
 
 RDEPEND=">=dev-haskell/binary-0.4.4
