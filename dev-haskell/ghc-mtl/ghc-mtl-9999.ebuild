@@ -10,7 +10,7 @@ HOMEPAGE="http://neugierig.org/software/hdbus/"
 LICENSE="BSD"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.10
