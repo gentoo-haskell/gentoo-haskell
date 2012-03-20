@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/jaor/xmobar.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 -sparc ~x86"
+KEYWORDS=""
 IUSE="xft unicode mail mpd alsa wifi"
 
 DEPEND=">=dev-lang/ghc-6.8.1
