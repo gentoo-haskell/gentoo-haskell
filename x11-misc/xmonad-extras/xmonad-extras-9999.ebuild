@@ -11,7 +11,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad-extras/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="volume eval mpd"
 
 DEPEND=">=dev-lang/ghc-6.6.1
