@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://github.com/leksah/ltk.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6.0[profile?]
