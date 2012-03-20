@@ -13,18 +13,3 @@
 >=dev-haskell/extensible-exceptions-0.1.1.4_pre20111218
 >=dev-haskell/hpc-0.5.1.1_pre20111218
 >=dev-vcs/git-annex-3.20120227
-
-# Lennart Kolmodin <kolmodin@gentoo.org> (08 Feb 2011)
-# Mask happstack-*-9999
-=dev-haskell/happstack-9999
-=dev-haskell/happstack-data-9999
-=dev-haskell/happstack-hamlet-9999
-=dev-haskell/happstack-heist-9999
-=dev-haskell/happstack-hsp-9999
-=dev-haskell/happstack-hstringtemplate-9999
-=dev-haskell/happstack-ixset-9999
-=dev-haskell/happstack-plugins-9999
-=dev-haskell/happstack-server-9999
-=dev-haskell/happstack-state-9999
-=dev-haskell/happstack-util-9999
-=dev-haskell/happstack-wai-9999

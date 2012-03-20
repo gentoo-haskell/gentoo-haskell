@@ -16,7 +16,7 @@ S="${WORKDIR}/${P}/${PN}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="<dev-haskell/blaze-html-0.5
