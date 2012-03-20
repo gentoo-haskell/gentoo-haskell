@@ -11,7 +11,7 @@ HOMEPAGE="http://repetae.net/john/computer/jhc/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 EDARCS_REPOSITORY="http://repetae.net/repos/jhc"
