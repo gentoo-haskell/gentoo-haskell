@@ -10,7 +10,7 @@ HOMEPAGE="http://neugierig.org/software/hdbus/"
 LICENSE="BSD"
 SLOT="${PV}"
 
-KEYWORDS="~x86"	#if possible try testing with "~amd64", "~ppc" and "~sparc"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.4
