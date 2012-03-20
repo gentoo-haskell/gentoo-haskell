@@ -14,12 +14,6 @@
 >=dev-haskell/hpc-0.5.1.1_pre20111218
 >=dev-vcs/git-annex-3.20120227
 
-# Masking some 'live' ebuilds (havind stable versions) to prevent users
-# accidentally install them.
-# Sergei Trofimovich <slyfox@community.haskell.org> (4 Mar 2010)
-# Add xmonad-extras, Ivan Miljenovic, 15 May 2010
-=dev-haskell/hint-9999
-
 # Lennart Kolmodin <kolmodin@gentoo.org> (08 Feb 2011)
 # Mask happstack-*-9999
 =dev-haskell/happstack-9999

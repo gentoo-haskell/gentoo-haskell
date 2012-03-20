@@ -14,7 +14,7 @@ HOMEPAGE="http://projects.haskell.org/hint"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="=dev-haskell/ghc-mtl-9999
