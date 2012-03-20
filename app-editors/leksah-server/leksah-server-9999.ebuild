@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/leksah/leksah-server.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="test"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.3[profile?]
