@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal bash-completion eutils
+inherit haskell-cabal bash-completion-r1 eutils
 
 DESCRIPTION="The command-line interface for Cabal and Hackage."
 HOMEPAGE="http://www.haskell.org/cabal/"
@@ -36,11 +36,5 @@ src_prepare() {
 src_install() {
 	haskell-cabal_src_install
 
-	dobashcompletion "${S}/bash-completion/cabal"
-}
-
-pkg_postinst() {
-	ghc-package_pkg_postinst
-
-	bash-completion_pkg_postinst
+	newbashcomp "${S}/bash-completion/cabal" ${PN}
 }
