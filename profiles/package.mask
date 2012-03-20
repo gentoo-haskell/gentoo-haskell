@@ -1,9 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (21 Jul 2010)
-# The experimental branch. time is masked as haskell98 and random use them (ghc core)
+# The experimental branch.
 >=dev-lang/ghc-7.2
 >=dev-haskell/cabal-1.11
 >=dev-haskell/haddock-2.9.2.20110721
->=dev-haskell/time-1.2.0.5
 # needs cabal-1.13.3+
 >=dev-haskell/cabal-install-0.13.3
 # Mark Wright <gienah@gentoo.org> (19 Dec 2011)
