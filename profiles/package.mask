@@ -9,5 +9,4 @@
 # Mark Wright <gienah@gentoo.org> (19 Dec 2011)
 # Masking more stuff that is only used by ghc 7.4 snapshot
 >=dev-haskell/binary-0.5.0.3_pre20111218
->=dev-haskell/deepseq-1.3.0.0_pre20111218
 >=dev-vcs/git-annex-3.20120227
