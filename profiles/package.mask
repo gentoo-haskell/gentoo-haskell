@@ -1,10 +1,7 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (21 Jul 2010)
 # The experimental branch.
 >=dev-lang/ghc-7.2
->=dev-haskell/cabal-1.11
 >=dev-haskell/haddock-2.9.2.20110721
-# needs cabal-1.13.3+
->=dev-haskell/cabal-install-0.13.3
 # Mark Wright <gienah@gentoo.org> (19 Dec 2011)
 # Masking more stuff that is only used by ghc 7.4 snapshot
 >=dev-vcs/git-annex-3.20120227
