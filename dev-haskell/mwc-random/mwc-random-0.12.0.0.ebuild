@@ -18,7 +18,7 @@ RESTRICT="test"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="-test"
+IUSE="test"
 
 RDEPEND="dev-haskell/primitive[profile?]
 		dev-haskell/time[profile?]
