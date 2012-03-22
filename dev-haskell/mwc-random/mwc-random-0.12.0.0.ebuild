@@ -7,13 +7,11 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Fast, high quality pseudo random number generation"
 HOMEPAGE="https://github.com/bos/mwc-random"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
-
-RESTRICT="test"
 
 LICENSE="BSD"
 SLOT="0"
@@ -35,13 +33,8 @@ DEPEND="${RDEPEND}
 				)"
 
 src_prepare() {
-	if use test ; then
-		cp -r  "${FILESDIR}/${P}/test/" "${S}/" || die "can't copy tests"
-		sed -e '/test-suite tests.*$/{N; s@.*@test-suite tests@;}' \
-			-i "${PN}.cabal" || die "can't add tests"
-		sed -e 's/Uniform//' \
-			-i "${PN}.cabal" || die "can't fix cabal file"
-	fi
+	cp -r "${FILESDIR}/${P}/test/" "${S}/" || die "can't copy tests"
+	epatch "${FILESDIR}"/${P}-fix-tests.patch
 }
 
 src_configure() {
