@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.4
 		=dev-haskell/logict-0.5*
 		=dev-haskell/monadcatchio-transformers-0.2*
 		>=dev-haskell/mtl-2
-		<dev-haskell/mwc-random-0.12
+		<dev-haskell/mwc-random-0.13
 		=dev-haskell/pwstore-fast-2.2*
 		=dev-haskell/safe-0.3*
 		=dev-haskell/skein-0.1*
@@ -65,6 +65,6 @@ PATCHES=("${FILESDIR}/${PN}-0.7-ghc-7.4.patch"
 src_prepare() {
 	base_src_prepare
 	sed -e 's@aeson                     >= 0.4      && < 0.5@aeson                     >= 0.4      \&\& < 0.7@' \
-		-e 's@mwc-random                >= 0.8      && < 0.11@mwc-random                >= 0.8      \&\& < 0.12@' \
+		-e 's@mwc-random                >= 0.8      && < 0.11@mwc-random                >= 0.8      \&\& < 0.13@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
