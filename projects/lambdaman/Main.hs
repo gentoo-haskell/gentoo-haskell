@@ -162,6 +162,7 @@ cats_status cats_file =
                      , "eclass"
                      , "profiles"
                      , "projects"
+                     , "metadata"
                      ]
 
        known_cats <- readFile cats_file >>= return . lines
