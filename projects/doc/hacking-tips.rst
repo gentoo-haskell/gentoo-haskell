@@ -4,6 +4,16 @@ Ebuild hacking tips
 This doc tries to cover nice tricks to
 make seasoned overlay hackers a bit easier.
 
+Basic repo sanity check
+=======================
+
+When hacking on ebuilds it's common to forget to add
+newly created files in repository, or rerun ``repoman manifest``
+after treewide change. We have ``lambdaman`` tool for it.
+
+See ``projects/lambdaman/REAMDE`` to plug it as
+pre-commit hook.
+
 Advanced eclass variables
 =========================
 
