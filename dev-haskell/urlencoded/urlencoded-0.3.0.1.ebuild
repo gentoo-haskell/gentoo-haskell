@@ -6,23 +6,22 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Wrapper to Lastfm API"
-HOMEPAGE="http://hackage.haskell.org/package/liblastfm"
+DESCRIPTION="Generate or process x-www-urlencoded data"
+HOMEPAGE="https://github.com/pheaver/urlencoded"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="MIT"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/curl[profile?]
-		dev-haskell/puremd5[profile?]
-		dev-haskell/urlencoded[profile?]
-		dev-haskell/utf8-string[profile?]
-		dev-haskell/xml[profile?]
-		>=dev-lang/ghc-6.8.2"
+RDEPEND=">=dev-haskell/mtl-1.1[profile?]
+		>=dev-haskell/network-2.2[profile?]
+		<dev-haskell/network-4[profile?]
+		=dev-haskell/split-0.1*[profile?]
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
