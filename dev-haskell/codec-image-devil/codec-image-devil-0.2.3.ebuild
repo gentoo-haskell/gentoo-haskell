@@ -22,8 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.1
-		unknown-c-lib/IL
-		unknown-c-lib/pthread"
+		media-libs/devil"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
