@@ -16,9 +16,9 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc"
 
-RESTRICT=test # don't seem to like our git environment much and uses installed git-annex?
+RESTRICT=test # don't seem to like our git environment much
 
 RDEPEND=">=dev-vcs/git-1.7.7" # TODO: add more deps?
 DEPEND="${RDEPEND}
@@ -42,7 +42,21 @@ DEPEND="${RDEPEND}
 		dev-haskell/time
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
-		>=dev-lang/ghc-7.4"
+		>=dev-lang/ghc-7.4
+		dev-lang/perl
+		doc? ( www-apps/ikiwiki net-misc/rsync )"
+# dev-lang/perl is to build the manpages
+# www-apps/ikiwiki and net-misc/rsync used to build the rest of the docs
+
+src_prepare() {
+	echo 'mans: $(mans)' >>"${S}"/Makefile
+}
+
+src_compile() {
+	haskell-cabal_src_compile
+	use doc && emake docs
+	emake mans
+}
 
 src_test() {
 	export GIT_CONFIG=${T}/temp-git-config
@@ -50,4 +64,11 @@ src_test() {
 	git config user.name "Mr. ${P} The Test"
 
 	emake test
+}
+
+src_install() {
+	#haskell-cabal_src_install
+	emake install DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
+	mv "${ED}"/usr/share/doc/{${PN},${PF}}
+	dodoc CHANGELOG README
 }
