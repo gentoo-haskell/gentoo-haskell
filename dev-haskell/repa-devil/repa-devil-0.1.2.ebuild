@@ -27,5 +27,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -i -e 's/>= 0.3 \&\& < 0.4/>= 0.4 \&\& < 0.5/' ${PN}.cabal
+	sed -i -e 's/>= 0.3 \&\& < 0.4/>= 0.3 \&\& < 0.5/' ${PN}.cabal
 }
