@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal pax-utils
+inherit eutils haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -29,6 +29,9 @@ RESTRICT="test" # avoid depends on QC
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
 src_prepare() {
+	# we would like to avoid happy and alex depends
+	epatch "${FILESDIR}"/${P}-drop-tools.patch
+
 	for f in Lex Parse; do
 		rm "src/Haddock/$f."*
 		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
