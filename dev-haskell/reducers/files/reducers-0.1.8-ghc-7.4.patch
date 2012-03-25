@@ -1,0 +1,27 @@
+[ 8 of 14] Compiling Data.Semigroup.Union ( Data/Semigroup/Union.hs, dist/build/Data/Semigroup/Union.o )
+
+Data/Semigroup/Union.hs:68:10:
+    Could not deduce (Hashable k)
+      arising from the superclasses of an instance declaration
+    from the context (Eq k)
+      bound by the instance declaration
+      at Data/Semigroup/Union.hs:68:10-40
+    Possible fix:
+      add (Hashable k) to the context of the instance declaration
+    In the instance declaration for `HasUnion0 (HashMap k a)'
+diff -ur reducers-0.1.8.orig/Data/Semigroup/Union.hs reducers-0.1.8/Data/Semigroup/Union.hs
+--- reducers-0.1.8.orig/Data/Semigroup/Union.hs 2012-02-07 14:49:20.000000000 +0300
++++ reducers-0.1.8/Data/Semigroup/Union.hs      2012-03-25 13:09:25.851122406 +0300
+@@ -62,10 +62,10 @@
+ instance HasUnion0 (IntMap a) where
+   empty = IntMap.empty
+ 
+-instance Eq k => HasUnion (HashMap k a) where
++instance (Eq k, Hashable k) => HasUnion (HashMap k a) where
+   union = HashMap.union
+ 
+-instance Eq k => HasUnion0 (HashMap k a) where
++instance (Eq k, Hashable k) => HasUnion0 (HashMap k a) where
+   empty = HashMap.empty
+ 
+ instance Ord k => HasUnion (Map k a) where
