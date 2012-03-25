@@ -43,13 +43,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-emacs.patch
-	epatch "${FILESDIR}"/${P}-ghc-7.4.patch
-	sed -e 's@epic >= 0.1.13 && < 0.2@epic >= 0.1.13 \&\& < 0.10@' \
-		-e 's@base >= 4.2 && < 4.5@base >= 4.2 \&\& < 4.6@' \
-		-e 's@array >= 0.1 && < 0.4@array >= 0.1 \&\& < 0.5@' \
-		-e 's@filepath >= 1.1 && < 1.3@filepath >= 1.1 \&\& < 1.4@' \
-		-e 's@old-time == 1.0.\*@old-time >= 1.0 \&\& < 1.2@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
 	cabal-mksetup
 }
 

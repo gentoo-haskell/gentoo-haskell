@@ -1,0 +1,27 @@
+--- Agda-2.3.0.1-orig/Agda.cabal	2012-03-12 21:09:34.000000000 +1100
++++ Agda-2.3.0.1/Agda.cabal	2012-03-26 00:07:55.476482395 +1100
+@@ -40,7 +40,6 @@
+                     doc/release-notes/*.txt
+ data-dir:           src/data
+ data-files:         Agda.css
+-                    emacs-mode/*.el
+                     EpicInclude/AgdaPrelude.e
+                     EpicInclude/stdagda.c
+                     EpicInclude/stdagda.h
+@@ -326,16 +325,3 @@
+   if impl(ghc >= 7.2)
+     ghc-options:    -fwarn-identities
+   ghc-prof-options: -auto-all
+-
+-executable agda-mode
+-  hs-source-dirs:   src/agda-mode
+-  main-is:          Main.hs
+-  other-modules:    Paths_Agda
+-  if flag(use-locale)
+-    build-depends:  base >= 4.2 && < 4.6
+-  else
+-    build-depends:  base == 4.1.*,
+-                    utf8-string == 0.3.*
+-  build-depends:    filepath >= 1.1 && < 1.4,
+-                    process >= 1.0.1.0 && < 1.2,
+-                    directory >= 1.0 && < 1.2
