@@ -6,7 +6,8 @@
 
 EAPI="3"
 
-CABAL_FEATURES="lib profile haddock hscolour hoogle"
+# disabled 'haddock hscolour hoogle' as haddock-2.10.0 fails on them
+CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="Unicode"
