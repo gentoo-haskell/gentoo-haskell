@@ -13,17 +13,20 @@ inherit elisp-common
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="profile"
 
-DEPEND="=sci-mathematics/agda-executable-2.3.0"
-RDEPEND="=sci-mathematics/agda-2.3.0"
+DEPEND="=sci-mathematics/agda-executable-2.3.0*"
+RDEPEND="=sci-mathematics/agda-2.3.0*[profile?]"
 
 SITEFILE="50${PN}-gentoo.el"
 
 S="${WORKDIR}/lib-${PV}"
 
 src_compile() {
-	agda +RTS -K1G -RTS -i "${S}" -i "${S}"/src "${S}"/Everything.agda || die
+	local prof
+	use profile && prof="--ghc-flag=-prof"
+	agda +RTS -K1G -RTS ${prof} \
+		-i "${S}" -i "${S}"/src "${S}"/Everything.agda || die
 	agda --html -i "${S}" -i "${S}"/src "${S}"/README.agda || die
 }
 
