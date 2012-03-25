@@ -22,6 +22,7 @@ RESTRICT="test"
 RDEPEND="dev-haskell/fst
 		dev-haskell/haskeline
 		dev-haskell/mtl
+		dev-haskell/random
 		server? ( dev-haskell/cgi
 			dev-haskell/httpd-shed
 			dev-haskell/json
