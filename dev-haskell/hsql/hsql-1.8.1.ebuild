@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Simple library for database access from Haskell."
 HOMEPAGE="http://hackage.haskell.org/package/hsql"
@@ -21,6 +21,8 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${P}-ghc-7.4.patch)
 
 pkg_postinst () {
 	ghc-package_pkg_postinst
