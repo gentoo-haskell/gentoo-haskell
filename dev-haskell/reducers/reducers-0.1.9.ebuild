@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Semigroups, specialized containers and a general map/reduce framework"
 HOMEPAGE="http://github.com/ekmett/reducers/"
@@ -32,10 +32,3 @@ RDEPEND=">=dev-haskell/comonad-1.1.1.1[profile?] <dev-haskell/comonad-1.2[profil
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-ghc-7.4.patch
-
-	sed -e 's/unordered-containers   >= 0.1.4    && < 0.2/unordered-containers   >= 0.1.4    \&\& < 0.3/' \
-	-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
-}
