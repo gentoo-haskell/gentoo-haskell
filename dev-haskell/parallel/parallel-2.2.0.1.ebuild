@@ -26,6 +26,6 @@ src_prepare() {
 	sed -i \
 	    -e 's@base    >= 4 && < 5@base    >= 3 \&\& < 5@g' \
 	    -e 's@containers >= 0.2 && < 0.4@containers >= 0.1 \&\& < 0.5@g' \
-	    -e 's@array      >= 0.2 && < 0.4@array      >= 0.1 \&\& < 0.4@g' \
+	    -e 's@array      >= 0.2 && < 0.4@array      >= 0.1 \&\& < 0.5@g' \
 	    "${S}/${PN}.cabal"
 }
