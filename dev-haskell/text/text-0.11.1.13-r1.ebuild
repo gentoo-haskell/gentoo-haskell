@@ -23,13 +23,13 @@ RDEPEND=">=dev-haskell/deepseq-1.1.0.0[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/quickcheck-2.4.0.1[profile?]
-			>=dev-haskell/test-framework-0.4[profile?] <dev-haskell/test-framework-0.6[profile?]
+			>=dev-haskell/test-framework-0.4[profile?] <dev-haskell/test-framework-0.7[profile?]
 			<dev-haskell/test-framework-hunit-0.3[profile?]
 			<dev-haskell/test-framework-quickcheck2-0.3[profile?]
 		)"
 
 src_prepare() {
-	sed -e 's@test-framework             >= 0.4 && < 0.5@test-framework             >= 0.4 \&\& < 0.6@' \
+	sed -e 's@test-framework             >= 0.4 && < 0.5@test-framework             >= 0.4 \&\& < 0.7@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
 }
 
