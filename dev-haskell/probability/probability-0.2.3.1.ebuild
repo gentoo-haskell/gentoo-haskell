@@ -6,7 +6,8 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+# disabled "haddock hoogle hscolour" as haddock-2.10.0 fails
+CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="Probabilistic Functional Programming"
