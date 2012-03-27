@@ -21,7 +21,8 @@ IUSE=""
 
 RDEPEND="<dev-haskell/blaze-builder-0.4
 		=dev-haskell/happstack-server-9999
-		=dev-haskell/heist-0.5*
+		>=dev-haskell/heist-0.5
+		<dev-haskell/heist-0.8
 		=dev-haskell/mtl-2*
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
