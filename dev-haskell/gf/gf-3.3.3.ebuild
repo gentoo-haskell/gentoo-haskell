@@ -36,7 +36,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/happy"
 
-PATCHES=("${FILESDIR}/${PN}-3.3.3-stderr-utf8.patch")
+PATCHES=("${FILESDIR}/${PN}-3.3.3-stderr-utf8.patch"
+	${FILESDIR}/${PN}-3.3.3-enc-api.patch
+	${FILESDIR}/${PN}-3.3.3-unamb-fold.patch
+	)
 
 src_configure() {
 	cabal_src_configure $(cabal_flag server)
