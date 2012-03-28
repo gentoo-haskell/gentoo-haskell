@@ -16,10 +16,25 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2[profile?] <dev-haskell/blaze-builder-0.4[profile?]
-		>=dev-haskell/text-0.10[profile?]
+		>=dev-haskell/text-0.10[profile?] <dev-haskell/text-0.12[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.8
+		test? (
+			=dev-haskell/hunit-1.2*
+			=dev-haskell/quickcheck-2.4*
+			>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.7
+			=dev-haskell/test-framework-hunit-0.2*
+			=dev-haskell/test-framework-quickcheck2-0.2*
+		)"
+
+src_prepare() {
+	cp -r "${FILESDIR}"/${P}/* "${S}"/ || die
+}
+
+src_configure() {
+	cabal_src_configure $(use test && use_enable test tests) #395351
+}
