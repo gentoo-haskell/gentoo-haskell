@@ -16,12 +16,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RESTRICT="test" # ghc's panic
+IUSE="test"
 
-RDEPEND=">=dev-haskell/doctest-0.4.0[profile?] <dev-haskell/doctest-0.6[profile?]
-		dev-haskell/haddock[profile?]
-		>=dev-haskell/test-framework-0.4[profile?]
+RDEPEND=">=dev-haskell/doctest-0.6.0.1[profile?] <dev-haskell/doctest-0.7[profile?]
+		>=dev-haskell/test-framework-0.6[profile?]
 		>=dev-haskell/test-framework-hunit-0.2[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
