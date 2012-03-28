@@ -16,20 +16,30 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
+RESTRICT=test # almost work. fail on Development/Shake/Report.hs
 
 RDEPEND="dev-haskell/binary[profile?]
 		>=dev-haskell/deepseq-1.1[profile?] <dev-haskell/deepseq-1.4[profile?]
 		>=dev-haskell/hashable-1.1.2.3[profile?] <dev-haskell/hashable-1.2[profile?]
 		dev-haskell/random[profile?]
 		dev-haskell/time[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
-		>=dev-haskell/unordered-containers-0.1.4.3[profile?] <dev-haskell/unordered-containers-0.3[profile?]
+		>=dev-haskell/transformers-0.2[profile?] <dev-haskell/transformers-0.4[profile?]
+		>=dev-haskell/unordered-containers-0.2.1[profile?] <dev-haskell/unordered-containers-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's/unordered-containers >= 0.1.4.3 && < 1.2/unordered-containers >= 0.1.4.3 \&\& < 0.3/' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
+src_configure() {
+	cabal_src_configure $(cabal_flag test testprog)
+}
+
+src_test() {
+	shake_datadir="." dist/build/shake/shake test || die
+}
+
+src_install() {
+	haskell-cabal_src_install
+
+	use test && rm "${ED}/usr/bin/shake"
 }
