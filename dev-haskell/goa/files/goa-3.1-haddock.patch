@@ -1,0 +1,20 @@
+diff --git a/GOA.hs b/GOA.hs
+index 3c2dfda..6162904 100644
+--- a/GOA.hs
++++ b/GOA.hs
+@@ -61,10 +61,11 @@ setLambdabotFlags = writeIORef lambdabotFlags
+ -- |
+ -- internal state, keep track of our in and out handles, and process id
+ --
+-data ST = ST !Handle -- ^ Handle to lambdabot stdin
+-             !Handle -- ^ Handle to lambdabot stdout
+-             !Handle -- ^ Handle to lambdabot stderr
+-             !ProcessHandle -- ^ lambdabot's pid
++data ST = ST { l_sin  :: !Handle -- ^ Handle to lambdabot stdin
++             , l_sout :: !Handle -- ^ Handle to lambdabot stdout
++             , l_serr :: !Handle -- ^ Handle to lambdabot stderr
++             , l_ph   :: !ProcessHandle -- ^ lambdabot's pid
++             }
+ 
+ -- |
+ -- Module-internal state. Hang on to lambdabot's handles
