@@ -31,10 +31,6 @@ DEPEND="${RDEPEND}
 			=dev-haskell/test-framework-quickcheck2-0.2*
 		)"
 
-src_prepare() {
-	cp -r "${FILESDIR}"/${P}/* "${S}"/ || die
-}
-
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
 }
