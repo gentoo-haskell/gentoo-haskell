@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Low level bindings to libzip."
 HOMEPAGE="http://bitbucket.org/jetxee/hs-libzip/"
@@ -23,3 +23,5 @@ RDEPEND="=dev-haskell/bindings-dsl-1.0*
 		dev-libs/libzip"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+PATCHES=("${FILESDIR}"/${P}-relax.patch)

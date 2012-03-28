@@ -1,0 +1,13 @@
+diff --git a/bindings-libzip.cabal b/bindings-libzip.cabal
+index 4d1a5de..c9bbc4a 100644
+--- a/bindings-libzip.cabal
++++ b/bindings-libzip.cabal
+@@ -37,7 +37,7 @@ Library
+     Includes: zip.h
+     Extra-Libraries: zip z
+   else
+-    PkgConfig-Depends: libzip == 0.10
++    PkgConfig-Depends: libzip >= 0.10
+ 
+   GHC-Options:
+         -Wall -fno-warn-unused-imports
