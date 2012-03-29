@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 PATCHES=("${FILESDIR}/${PN}-3.3.3-stderr-utf8.patch"
 	${FILESDIR}/${PN}-3.3.3-enc-api.patch
 	${FILESDIR}/${PN}-3.3.3-unamb-fold.patch
+	${FILESDIR}/${PN}-3.3.3-workaround-ghc-7.4-fail.patch
 	)
 
 src_configure() {
