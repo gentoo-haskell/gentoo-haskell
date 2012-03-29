@@ -6,6 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Provides necessary functions for producing a streaming interface. This is used for example by @zlib-conduit@ and @zlib-enum@.
+		Provides ability to traverse a folder structure efficiently, as well as convenience wrappers for reading from and writing to files.
 	</longdescription>
 </pkgmetadata>

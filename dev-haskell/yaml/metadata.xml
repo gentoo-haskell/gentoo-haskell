@@ -8,7 +8,7 @@
 	<longdescription>
 		Provides support for parsing and emitting Yaml documents.
 		
-		This package includes the full libyaml C library version 0.1.12 by Kirill
+		This package includes the full libyaml C library version 0.1.2 by Kirill
 		Simonov (&lt;http://pyyaml.org/wiki/LibYAML&gt;) in the package so you
 		don&#39;t need to worry about any non-Haskell dependencies.
 	</longdescription>
