@@ -37,4 +37,7 @@
 		
 		For usage information:  @gitit --help@
 	</longdescription>
+	<use>
+		<flag name="plugins">enables optional plugin runtime loader</flag>
+	</use>
 </pkgmetadata>
