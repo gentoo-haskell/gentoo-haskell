@@ -22,4 +22,7 @@
 		Additionally, there&#39;s the Haddock documentation in the different modules,
 		meant as a reference.
 	</longdescription>
+<use>
+  <flag name='server'>Include the preview server</flag>
+</use>
 </pkgmetadata>
