@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/digestive-functors-0.3*[profile?]
 		>=dev-haskell/happstack-server-6.0[profile?]
-		<dev-haskell/happstack-server-6.7[profile?]
+		<dev-haskell/happstack-server-7.1[profile?]
 		>=dev-haskell/text-0.11[profile?]
 		<dev-haskell/text-1.0[profile?]
 		>=dev-lang/ghc-6.10.1"
