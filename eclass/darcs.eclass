@@ -82,8 +82,8 @@ SRC_URI=""
 
 # --- end ebuild-configurable settings ---
 
-# add darcs to deps
-DEPEND="dev-vcs/darcs"
+DEPEND="dev-vcs/darcs
+	net-misc/rsync"
 
 # @FUNCTION: darcs_patchcount
 # @DESCRIPTION:
@@ -196,7 +196,7 @@ darcs_src_unpack() {
 	mkdir -p "${WORKDIR}/${P}"
 
 	eshopts_push -s dotglob	# get any dotfiles too.
-	rsync -rlpgo --exclude="_darcs/"  "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}"/* "${WORKDIR}/${P}"
+	rsync -rlpgo "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}"/* "${WORKDIR}/${P}"
 	eshopts_pop
 
 	einfo "Darcs repository contents are now in ${WORKDIR}/${P}"
