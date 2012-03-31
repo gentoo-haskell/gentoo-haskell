@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="The Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
@@ -64,6 +64,7 @@ src_prepare() {
 		fi
 		epatch "${FILESDIR}/${PN}-0.6.4.0-backport-to-ghc-6.12.3.patch"
 	fi
+	epatch "${FILESDIR}/${P}-fix-haddock-2.10.0.patch"
 }
 
 src_configure() {
