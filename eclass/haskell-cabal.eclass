@@ -31,19 +31,6 @@
 #   nocabaldep --  don't add dependency on cabal.
 #                  only used for packages that _must_ not pull the dependency
 #                  on cabal, but still use this eclass (e.g. haskell-updater).
-#
-# Dependencies on other cabal packages have to be specified
-# correctly.
-#
-# Cabal libraries should usually be SLOTted with "${PV}".
-#
-# Many Cabal packages require S to be manually set.
-#
-# Conforming Cabal packages don't require any function definitions
-# in the ebuild.
-#
-# Special flags to Cabal Configure can now be set by using
-# CABAL_CONFIGURE_FLAGS
 
 inherit ghc-package multilib
 
@@ -170,22 +157,15 @@ cabal-bootstrap() {
 	local cabalpackage
 	if [[ -f "${S}/Setup.lhs" ]]; then
 		setupmodule="${S}/Setup.lhs"
+	elif [[ -f "${S}/Setup.hs" ]]; then
+		setupmodule="${S}/Setup.hs"
 	else
-		if [[ -f "${S}/Setup.hs" ]]; then
-			setupmodule="${S}/Setup.hs"
-		else
-			die "No Setup.lhs or Setup.hs found"
-		fi
+		die "No Setup.lhs or Setup.hs found"
 	fi
 
 	# We build the setup program using the latest version of
 	# cabal that we have installed
-	if version_is_at_least "6.4" "$(ghc-version)"; then
-		cabalpackage=Cabal-$(cabal-version)
-	else
-		# older ghc's don't support package versioning
-		cabalpackage=Cabal
-	fi
+	cabalpackage=Cabal-$(cabal-version)
 	einfo "Using cabal-$(cabal-version)."
 
 	make_setup() {
@@ -217,7 +197,7 @@ cabal-mksetup() {
 	rm -f "${setupdir}"/Setup.{lhs,hs}
 
 	echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
-		> $setupdir/Setup.hs
+		> $setupdir/Setup.hs || die "failed to create default Setup.hs"
 }
 
 cabal-hscolour() {
@@ -300,27 +280,18 @@ cabal-configure() {
 	local flag
 	for flag in $LDFLAGS; do cabalconf="${cabalconf} --ghc-option=-optl$flag"; done
 
-	if version_is_at_least "1.4" "$(cabal-version)"; then
-		# disable executable stripping for the executables, as portage will
-		# strip by itself, and pre-stripping gives a QA warning.
-		# cabal versions previous to 1.4 does not strip executables, and does
-		# not accept the flag.
-		# this fixes numerous bugs, amongst them;
-		# bug #251881, bug #251882, bug #251884, bug #251886, bug #299494
-		cabalconf="${cabalconf} --disable-executable-stripping"
-	fi
+	# disable executable stripping for the executables, as portage will
+	# strip by itself, and pre-stripping gives a QA warning.
+	# cabal versions previous to 1.4 does not strip executables, and does
+	# not accept the flag.
+	# this fixes numerous bugs, amongst them;
+	# bug #251881, bug #251882, bug #251884, bug #251886, bug #299494
+	cabalconf="${cabalconf} --disable-executable-stripping"
 
-	if version_is_at_least "1.2.0" "$(cabal-version)"; then
-		cabalconf="${cabalconf} --docdir=${EPREFIX}/usr/share/doc/${PF}"
-		# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
-		# it's better if the configure chatter is in the build logs:
-		cabalconf="${cabalconf} --verbose"
-	fi
-	# Note: with Cabal-1.1.6.x we do not have enough control
-	# to put the docs into the right place. They're currently going
-	# into			/usr/share/${P}/ghc-x.y/doc/
-	# rather than	/usr/share/doc/${PF}/
-	# Because we can only set the datadir, not the docdir.
+	cabalconf="${cabalconf} --docdir=${EPREFIX}/usr/share/doc/${PF}"
+	# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
+	# it's better if the configure chatter is in the build logs:
+	cabalconf="${cabalconf} --verbose"
 
 	# We build shared version of our Cabal where ghc ships it's shared
 	# version of it. We will link ./setup as dynamic binary againt Cabal later.
@@ -363,42 +334,18 @@ cabal-copy() {
 	# cabal is a bit eager about creating dirs,
 	# so remove them if they are empty
 	rmdir "${ED}/usr/bin" 2> /dev/null
-
-	# GHC 6.4 has a bug in get/setPermission and Cabal 1.1.1 has
-	# no workaround.
-	# set the +x permission on executables
-	if [[ -d "${ED}/usr/bin" ]] ; then
-		chmod +x "${ED}/usr/bin/"*
-	fi
-	# TODO: do we still need this?
 }
 
 cabal-pkg() {
 	# This does not actually register since we're using true instead
-	# of ghc-pkg. So it just leaves the .installed-pkg-config and we can
+	# of ghc-pkg. So it just leaves the .conf file and we can
 	# register that ourselves (if it exists).
-	local result
-	local err
 
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
-		if version_is_at_least "1.2.0" "$(cabal-version)"; then
-			# Newer cabal can generate a package conf for us:
-			./setup register --gen-pkg-config="${T}/${P}.conf"
-			ghc-setup-pkg "${T}/${P}.conf"
-			ghc-install-pkg
-		else
-			# With older cabal we have to hack it by replacing its ghc-pkg
-			# with true and then just picking up the .installed-pkg-config
-			# file and registering that ourselves (if it exists).
-			sed -i "s|$(ghc-getghcpkg)|$(type -P true)|" .setup-config
-			./setup register || die "setup register failed"
-			if [[ -f .installed-pkg-config ]]; then
-				ghc-setup-pkg .installed-pkg-config
-				ghc-install-pkg
-			else
-				die "setup register has not generated a package configuration file"
-			fi
-		fi
+		# Newer cabal can generate a package conf for us:
+		./setup register --gen-pkg-config="${T}/${P}.conf"
+		ghc-setup-pkg "${T}/${P}.conf"
+		ghc-install-pkg
 	fi
 }
 
@@ -420,7 +367,6 @@ cabal-is-dummy-lib() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
-	ghc-package_pkg_setup
 	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
@@ -428,10 +374,10 @@ haskell-cabal_pkg_setup() {
 		die "cabal is not correctly installed"
 	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
-		eerror "QA: Neither bin nor lib are in CABAL_FEATURES."
+		eqawarn "QA Notice: Neither bin nor lib are in CABAL_FEATURES."
 	fi
 	if [[ -n "${CABAL_UNKNOWN}" ]]; then
-		ewarn "Unknown entry in CABAL_FEATURES: ${CABAL_UNKNOWN}"
+		eqawarn "QA Notice: Unknown entry in CABAL_FEATURES: ${CABAL_UNKNOWN}"
 	fi
 	if cabal-is-dummy-lib; then
 		einfo "${P} is included in ghc-${CABAL_CORE_LIB_GHC_PV}, nothing to install."
@@ -439,15 +385,15 @@ haskell-cabal_pkg_setup() {
 }
 
 haskell-cabal_src_configure() {
-	if ! cabal-is-dummy-lib; then
-		pushd "${S}" > /dev/null
+	cabal-is-dummy-lib && return
 
-		cabal-bootstrap
+	pushd "${S}" > /dev/null
 
-		cabal-configure "$@"
+	cabal-bootstrap
 
-		popd > /dev/null
-	fi
+	cabal-configure "$@"
+
+	popd > /dev/null
 }
 
 # exported function: nice alias
@@ -464,46 +410,46 @@ cabal_src_compile() {
 		local passed_flag
 		for passed_flag in "$@"; do
 			[[ ${passed_flag} == --flags=* ]] && \
-				eqawarn "Cabal option '${passed_flag}' has effect only in src_configure()"
+				eqawarn "QA Notice: Cabal option '${passed_flag}' has effect only in src_configure()"
 		done
 	fi
 
-	if ! cabal-is-dummy-lib; then
-		has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure "$@"
-		cabal-build
+	cabal-is-dummy-lib && return
 
-		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
-					# hoogle, hscolour and haddock
-					cabal-hoogle-hscolour-haddock
-				else
-					# haddock and hscolour
-					cabal-hscolour-haddock
-				fi
+	has src_configure ${HASKELL_CABAL_EXPF} || haskell-cabal_src_configure "$@"
+	cabal-build
+
+	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
+		if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+			if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+				# hoogle, hscolour and haddock
+				cabal-hoogle-hscolour-haddock
 			else
-				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
-					# hoogle and haddock
-					cabal-hoogle-haddock
-				else
-					# just haddock
-					cabal-haddock
-				fi
+				# haddock and hscolour
+				cabal-hscolour-haddock
 			fi
 		else
-			if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
-				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
-					# hoogle and hscolour
-					cabal-hoogle-hscolour
-				else
-					# just hscolour
-					cabal-hscolour
-				fi
+			if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+				# hoogle and haddock
+				cabal-hoogle-haddock
 			else
-				if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
-					# just hoogle
-					cabal-hoogle
-				fi
+				# just haddock
+				cabal-haddock
+			fi
+		fi
+	else
+		if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
+			if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+				# hoogle and hscolour
+				cabal-hoogle-hscolour
+			else
+				# just hscolour
+				cabal-hscolour
+			fi
+		else
+			if [[ -n "${CABAL_USE_HOOGLE}" ]] && use hoogle; then
+				# just hoogle
+				cabal-hoogle
 			fi
 		fi
 	fi
@@ -545,12 +491,6 @@ cabal_src_install() {
 	else
 		cabal-copy
 		cabal-pkg
-
-		if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-			if ! version_is_at_least "1.1.6" "$(cabal-version)"; then
-				dohtml -r dist/doc/html/*
-			fi
-		fi
 	fi
 }
 
