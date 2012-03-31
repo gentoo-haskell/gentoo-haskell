@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="The Haskell-Scriptable Editor"
 HOMEPAGE="http://haskell.org/haskellwiki/Yi"
@@ -58,12 +58,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 src_prepare() {
-	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		if use gtk; then
 			die "yi removed support for 6.12.3, backport does not work with gtk use flag"
 		fi
-		epatch "${FILESDIR}/${P}-backport-to-ghc-6.12.3.patch"
+		epatch "${FILESDIR}/${PN}-0.6.4.0-backport-to-ghc-6.12.3.patch"
 	fi
 }
 
