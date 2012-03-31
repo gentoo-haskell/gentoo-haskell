@@ -6,9 +6,7 @@
 
 EAPI=4
 
-# haddock and hscolour features removed due they need
-# >=dev-haskell/cabal-1.12 whick is masked
-CABAL_FEATURES="bin lib profile "
+CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Utilities related to freedesktop Trash standard."
@@ -26,7 +24,7 @@ RDEPEND="dev-haskell/diff[profile?]
 		dev-haskell/url[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
+		>=dev-haskell/cabal-1.12
 		sys-apps/help2man"
 
 src_compile() {
