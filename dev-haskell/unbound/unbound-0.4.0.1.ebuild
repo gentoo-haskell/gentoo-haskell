@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Generic support for programming with names and binders"
 HOMEPAGE="http://code.google.com/p/replib/"
@@ -18,11 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/mtl-2.0*
-		=dev-haskell/replib-0.5*
-		>=dev-haskell/transformers-0.2.2.0
+RDEPEND="=dev-haskell/mtl-2.0*[profile?]
+		=dev-haskell/replib-0.5*[profile?]
+		>=dev-haskell/transformers-0.2.2.0[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-0.3.1-ghc-7.4.patch")
