@@ -10,4 +10,7 @@
 		search many standard Haskell libraries by either function name,
 		or by approximate type signature.
 	</longdescription>
+<use>
+  <flag name='fetchdb'>fetch hoogle db by running: hoogle data</flag>
+</use>
 </pkgmetadata>
