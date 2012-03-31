@@ -213,8 +213,7 @@ cabal-haddock() {
 }
 
 cabal-hoogle() {
-	ewarn "hoogle USE flag requires doc USE flag, building with haddock and hoogle"
-	cabal-hoogle-haddock
+	ewarn "hoogle USE flag requires doc USE flag, building without hoogle"
 }
 
 cabal-hscolour-haddock() {
@@ -236,8 +235,8 @@ cabal-hoogle-hscolour-haddock() {
 }
 
 cabal-hoogle-hscolour() {
-	ewarn "hoogle USE flag requires doc USE flag, building with haddock, hoogle and hscolour"
-	cabal-hoogle-hscolour-haddock
+	ewarn "hoogle USE flag requires doc USE flag, building without hoogle"
+	cabal-hscolour
 }
 
 cabal-configure() {
