@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-server-6.6*[profile?]
+RDEPEND=">=dev-haskell/happstack-server-6.6.4[profile?]
+		<dev-haskell/happstack-server-7.1[profile?]
 		=dev-haskell/hslogger-1.1*[profile?]
 		=dev-haskell/hsopenssl-0.10*[profile?]
 		=dev-haskell/network-2.3*[profile?]
