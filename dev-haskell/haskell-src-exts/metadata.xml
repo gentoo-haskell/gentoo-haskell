@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Haskell-Source with Extensions (HSE, haskell-src-exts)
+		is an extension of the standard haskell-src package,
+		and handles most registered syntactic extensions to Haskell, including:
+		
+		* Multi-parameter type classes with functional dependencies
+		
+		* Indexed type families (including associated types)
+		
+		* Empty data declarations
+		
+		* GADTs
+		
+		* Implicit parameters
+		
+		* Template Haskell
+		
+		and a few more. All extensions implemented in GHC are supported.
+		Apart from these standard extensions,
+		it also handles regular patterns as per the HaRP extension
+		as well as HSX-style embedded XML syntax.
+	</longdescription>
+</pkgmetadata>

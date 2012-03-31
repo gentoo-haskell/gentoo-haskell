@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/cpphs-1.3
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2
+		>=dev-haskell/cabal-1.6
 		dev-haskell/happy"
 
 src_prepare() {
