@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/hamlet-0.10*[profile?]
 		>=dev-haskell/happstack-server-6.0[profile?]
-		<dev-haskell/happstack-server-6.7[profile?]
+		<dev-haskell/happstack-server-7.1[profile?]
 		dev-haskell/text[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
