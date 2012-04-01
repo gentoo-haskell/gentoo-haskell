@@ -43,6 +43,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-emacs.patch
+	epatch "${FILESDIR}"/${PN}-2.3.0.1-haskell-src-exts-1.13.patch
 	cabal-mksetup
 }
 
