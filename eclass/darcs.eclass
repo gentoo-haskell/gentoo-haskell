@@ -69,9 +69,9 @@ SRC_URI=""
 # @ECLASS-VARIABLE: EDARCS_OFFLINE
 # @DESCRIPTION:
 # Set this variable to a non-empty value to disable the automatic updating of
-# a darcs repository. this is intended to be set outside the darcs source
-# tree by users.
-: ${EDARCS_OFFLINE:=${ESCM_OFFLINE}}
+# a darcs repository. This is intended to be set outside the darcs source
+# tree by users. Defaults to EVCS_OFFLINE value.
+: ${EDARCS_OFFLINE:=${EVCS_OFFLINE}}
 
 # @ECLASS-VARIABLE: EDARCS_CLEAN
 # @DESCRIPTION:
