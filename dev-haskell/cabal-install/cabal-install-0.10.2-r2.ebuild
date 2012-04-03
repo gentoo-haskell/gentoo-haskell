@@ -23,6 +23,7 @@ RDEPEND=">=dev-haskell/cabal-1.10.1
 DEPEND="${RDEPEND}
 		>=dev-haskell/http-4000.0.2 <dev-haskell/http-4000.3
 		dev-haskell/network
+		>=dev-haskell/random-1 <dev-haskell/random-1.1
 		>=dev-haskell/time-1.1
 		=dev-haskell/zlib-0.5*"
 

@@ -25,6 +25,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/http-4000.0.2 <dev-haskell/http-4001
 		>=dev-haskell/mtl-1.1 <dev-haskell/mtl-3
 		>=dev-haskell/network-1 <dev-haskell/network-3
+		>=dev-haskell/random-1 <dev-haskell/random-1.1
 		>=dev-haskell/time-1.1 <dev-haskell/time-1.5
 		>=dev-haskell/zlib-0.4 <dev-haskell/zlib-0.6
 		>=dev-lang/ghc-6.10.1"
