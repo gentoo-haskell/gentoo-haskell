@@ -16,24 +16,31 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="server test"
+IUSE="server"
 
 RDEPEND="=app-text/pandoc-1.9*[profile?]
 		=dev-haskell/binary-0.5*[profile?]
-		>=dev-haskell/blaze-html-0.4[profile?] <dev-haskell/blaze-html-0.6[profile?]
-		>=dev-haskell/citeproc-hs-0.3.2[profile?] <dev-haskell/citeproc-hs-0.4[profile?]
+		>=dev-haskell/blaze-html-0.4[profile?]
+		<dev-haskell/blaze-html-0.6[profile?]
+		>=dev-haskell/citeproc-hs-0.3.2[profile?]
+		<dev-haskell/citeproc-hs-0.4[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
-		>=dev-haskell/hamlet-0.10.3[profile?] <dev-haskell/hamlet-0.11[profile?]
-		>=dev-haskell/mtl-1[profile?] <dev-haskell/mtl-2.1[profile?]
-		>=dev-haskell/parsec-3.0[profile?] <dev-haskell/parsec-3.2[profile?]
+		>=dev-haskell/hamlet-0.10.3[profile?]
+		<dev-haskell/hamlet-0.11[profile?]
+		>=dev-haskell/mtl-1[profile?]
+		<dev-haskell/mtl-2.1[profile?]
+		>=dev-haskell/parsec-3.0[profile?]
+		<dev-haskell/parsec-3.2[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
 		=dev-haskell/regex-tdfa-1.1*[profile?]
-		server? (
-			>=dev-haskell/snap-core-0.6[profile?] <dev-haskell/snap-core-0.9[profile?]
-			>=dev-haskell/snap-server-0.6[profile?] <dev-haskell/snap-server-0.9[profile?]
-		)
-		>=dev-haskell/tagsoup-0.12.6[profile?] <dev-haskell/tagsoup-0.13[profile?]
-		>=dev-haskell/time-1.1[profile?] <dev-haskell/time-1.5[profile?]
+		>=dev-haskell/snap-core-0.6[profile?]
+		<dev-haskell/snap-core-0.9[profile?]
+		>=dev-haskell/snap-server-0.6[profile?]
+		<dev-haskell/snap-server-0.9[profile?]
+		>=dev-haskell/tagsoup-0.12.6[profile?]
+		<dev-haskell/tagsoup-0.13[profile?]
+		>=dev-haskell/time-1.1[profile?]
+		<dev-haskell/time-1.5[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
