@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="examples"
 
 RDEPEND=">=dev-haskell/monoid-transformer-0.0.2[profile?]
 		<dev-haskell/monoid-transformer-0.1[profile?]
@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/monoid-transformer-0.0.2[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_install() {
+	cabal_src_install
+	use examples && dodoc src/Demo.hs
+}
