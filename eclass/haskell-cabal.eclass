@@ -369,7 +369,7 @@ haskell-cabal_pkg_setup() {
 	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
 		eerror "The package dev-haskell/cabal is not correctly installed for"
 		eerror "the currently active version of ghc ($(ghc-version)). Please"
-		eerror "run ghc-updater or haskell-updater or re-build dev-haskell/cabal."
+		eerror "run haskell-updater or re-build dev-haskell/cabal."
 		die "cabal is not correctly installed"
 	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
@@ -481,16 +481,18 @@ haskell-cabal_src_test() {
 cabal_src_install() {
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
 
-	if cabal-is-dummy-lib; then
-		# create a dummy local package conf file for the sake of ghc-updater
-		local ghc_confdir_with_prefix="$(ghc-confdir)"
-		# remove EPREFIX
-		dodir ${ghc_confdir_with_prefix#${EPREFIX}}
-		echo '[]' > "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
-	else
+	if ! cabal-is-dummy-lib; then
 		cabal-copy
 		cabal-pkg
 	fi
+
+	# create a dummy local package conf file for haskell-updater
+	# if it does not exist (dummy libraries and binaries w/o libraries)
+	local ghc_confdir_with_prefix="$(ghc-confdir)"
+	# remove EPREFIX
+	dodir ${ghc_confdir_with_prefix#${EPREFIX}}
+	local conf_file="${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
+	[[ -e $conf_file ]] || echo '[]' > "$conf_file" || die
 }
 
 haskell-cabal_src_install() {
