@@ -34,7 +34,9 @@ src_prepare() {
 }
 
 src_configure() {
-	cabal_src_configure --bindir="${EPREFIX}/usr/sbin"
+	cabal_src_configure \
+		--bindir="${EPREFIX}/usr/sbin" \
+		--constraint="Cabal == $(cabal-version)"
 }
 
 src_install() {
