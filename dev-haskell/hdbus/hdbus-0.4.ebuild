@@ -1,9 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+EAPI="4"
+
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
+inherit base haskell-cabal
 
 MY_PN="DBus"
 MY_P="${MY_PN}-${PV}"
@@ -25,13 +27,4 @@ DEPEND=">=dev-haskell/cabal-1.6
 
 S="${WORKDIR}/${MY_P}"
 
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	sed -i 's:defaultMain:defaultMainWithHooks autoconfUserHooks:' Setup.hs \
-		|| die 'Sed failed.'
-	sed -i 's:PatternSignatures:ScopedTypeVariables:' DBus/Message.hsc \
-		|| die 'Sed failed.'
-	sed -i 's:Control.Exception:Control.OldException:' DBus/Internal.hsc \
-		|| die 'Sed failed.'
-}
+PATCHES=("${FILESDIR}/${PN}-0.4-ghc-7.4.patch")
