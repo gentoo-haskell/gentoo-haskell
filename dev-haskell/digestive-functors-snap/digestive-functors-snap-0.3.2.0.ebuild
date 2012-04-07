@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/digestive-functors-0.3*[profile?]
+		=dev-haskell/mtl-2*[profile?]
 		>=dev-haskell/snap-core-0.7[profile?]
 		<dev-haskell/snap-core-0.9[profile?]
 		=dev-haskell/text-0.11*[profile?]
