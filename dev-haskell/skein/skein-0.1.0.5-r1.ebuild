@@ -19,20 +19,22 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="test" # fails to compile: tests/runtests.hs:143:41: Not in scope: type constructor or class `ItSpec'
 
-RDEPEND="=dev-haskell/cereal-0.3*
-		<dev-haskell/crypto-api-0.10
-		=dev-haskell/tagged-0.2*
+RDEPEND="=dev-haskell/cereal-0.3*[profile?]
+		<dev-haskell/crypto-api-0.11[profile?]
+		=dev-haskell/tagged-0.2*[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? (  >=dev-haskell/cabal-1.10
-				=dev-haskell/hspec-0.9*
-				dev-haskell/transformers
+				=dev-haskell/hspec-0.9*[profile?]
+				dev-haskell/transformers[profile?]
 		)"
 
 src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
 	cp "${FILESDIR}/runtests.hs" "${S}/tests"
+	sed -e 's@crypto-api   >= 0.6 && < 0.10@crypto-api   >= 0.6 \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
