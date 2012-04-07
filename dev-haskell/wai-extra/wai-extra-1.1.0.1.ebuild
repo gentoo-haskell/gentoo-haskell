@@ -38,7 +38,12 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		dev-haskell/ansi-terminal[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+			dev-haskell/wai-test[profile?]
+			=dev-haskell/hspec-0.9*[profile?]
+		)
+		"
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
