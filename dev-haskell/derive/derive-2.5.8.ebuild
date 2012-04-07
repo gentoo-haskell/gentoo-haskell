@@ -25,8 +25,3 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.9[profile?] <dev-haskell/haskell-src-e
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@haskell-src-exts >= 1.9 && < 1.13@haskell-src-exts >= 1.9 \&\& < 1.14@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
