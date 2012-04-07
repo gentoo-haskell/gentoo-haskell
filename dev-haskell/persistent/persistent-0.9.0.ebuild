@@ -40,7 +40,18 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		dev-haskell/vector[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/cabal-1.10
+			dev-haskell/hunit[profile?]
+			dev-haskell/hspec[profile?]
+		)
+		"
+
+src_prepare() {
+	# upstream forgot to include the tests
+	cp -pR "${FILESDIR}/${PN}-0.9.0/test" "${S}/test" \
+		|| die "Could not copy missing tests"
+}
 
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
