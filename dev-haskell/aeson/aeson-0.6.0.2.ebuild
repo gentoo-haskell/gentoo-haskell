@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.6.1[profile?]
 		>=dev-haskell/hashable-1.1.2.0[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/syb[profile?]
-		>=dev-haskell/text-0.11.0.2[profile?]
+		>=dev-haskell/text-0.11.1.0[profile?]
 		dev-haskell/time[profile?]
 		>=dev-haskell/unordered-containers-0.1.3.0[profile?]
 		>=dev-haskell/vector-0.7.1[profile?]
@@ -33,9 +33,9 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.6.1[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
-			>=dev-haskell/quickcheck-2.4.0.1
-			dev-haskell/test-framework
-			dev-haskell/test-framework-quickcheck2
+			>=dev-haskell/quickcheck-2.4.0.1[profile?]
+			dev-haskell/test-framework[profile?]
+			dev-haskell/test-framework-quickcheck2[profile?]
 		)
 		"
 
