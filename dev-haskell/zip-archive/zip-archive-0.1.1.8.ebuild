@@ -13,7 +13,7 @@ DESCRIPTION="Library for creating and modifying zip archives."
 HOMEPAGE="http://github.com/jgm/zip-archive"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
 IUSE=""
