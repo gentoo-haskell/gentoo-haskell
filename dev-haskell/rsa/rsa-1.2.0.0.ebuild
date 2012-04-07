@@ -22,8 +22,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/binary[profile?]
+		>=dev-haskell/crypto-api-0.10[profile?]
+		dev-haskell/monadcryptorandom[profile?]
 		dev-haskell/puremd5[profile?]
-		dev-haskell/random[profile?]
 		dev-haskell/sha[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
