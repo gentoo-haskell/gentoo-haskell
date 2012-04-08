@@ -29,6 +29,7 @@ PDH_tempfile=$(mktemp --tmpdir="/tmp" PDH.XXXXXX)
 PPT_tempfile=$(mktemp --tmpdir="/tmp" PPT.XXXXXX)
 FPH_tempfile=$(mktemp --tmpdir="/tmp" FPH.XXXXXX)
 FBH_tempfile=$(mktemp --tmpdir="/tmp" FBH.XXXXXX)
+FRH_tempfile=$(mktemp --tmpdir="/tmp" FRH.XXXXXX)
 
 # The filenames of the hoogle .hoo databases built by: hoogle data default ghc 
 fquery -C ff dev-haskell/hoogle | egrep "${ROOT}usr/share/hoogle.*/ghc.*/databases/[a-z]*.hoo" | sort >${PDH_tempfile}
@@ -46,42 +47,63 @@ done >${PPT_tempfile}
 
 cat ${PPT_tempfile} | sed -e 's@^.*/@@' -e 's@\.txt@.hoo@' | sort >${FPH_tempfile}
 
+hoogle_db_updates=
+
 # It is normal for hoogle convert to print zillions of error messages"
 for i in $(cat ${PPT_tempfile} | xargs)
 do
     pt="${i##/*/}"
     ph="${pt%.txt}.hoo"
+    pf="${pt%.txt}.hoogle-convert-failed"
     # If the .hoo file does not exist, as the package was newly installed,
     # or the timestamp of the package text hoogle .txt database is later than
     # the binary hoogle .hoo database, then convert the package text hoogle
     # database the binary hoogle .hoo database.
-    if [[ ! -f "${ph}" || "${i}" -nt "${ph}" ]]
+    if [[ ( ! -f "${ph}" && ( ! -f "${pf}" || "${i}" -nt "${pf}")) || ( ! -f "${pf}" && "${i}" -nt "${ph}") ]]
     then
+        rm -f "${pf}"
         echo "hoogle convert ${i} ${ph}"
         hoogle convert "${i}" "${ph}"
+        if (( "$?" == 0 )); then
+            hoogle_db_updates="t"
+        else
+            echo "WARNING: ${pt%.txt} skipped due to non-zero exit code from:"
+            echo "hoogle convert ${i} ${ph}"
+            echo "Doing: touch ${ROOT}var/lib/hoogle/databases/${pf} to skip future attempts at"
+            echo "converting ${pt%.txt} until ${i}"
+            echo "filestamp changes (say after re-emerging ${pt%.txt})"
+            touch "${pf}"
+        fi
     fi
 done
 
-# Remove the existing combined hoogle binary database, since we are about
-# to rebuilt it
-rm -f default.hoo
+# Obtain the list of hoogle binary databases, with default.hoo removed
+ls --format=single-column *.hoo | sed -e '/^default.hoo/d' >${FBH_tempfile}
 
-# Obtain the list of hoogle binary databases.
-ls --format=single-column *.hoo > ${FBH_tempfile}
+# Object the list of hoogle databse removals (from removing packages)
+comm -23 ${FBH_tempfile} ${FPH_tempfile} >${FRH_tempfile}
 
-# Remove .hoo files for packages that have been uninstalled
-rm -f $(comm -23 ${FBH_tempfile} ${FPH_tempfile} | xargs)
+# If default.hoo does not exist, or there were hoogle database updates,
+# or there were hoogle database removals
+if [[ ! -f default.hoo || -n "${hoogle_db_updates}" || -s "${FRH_tempfile}" ]]; then
+    # Remove .hoo files for any packages that have been uninstalled
+    rm -f $(cat ${FRH_tempfile} | xargs)
 
-# Calculate the list of hoogle binary databases again, as we may
-# have just removed some if packages were uninstalled.
-ls --format=single-column *.hoo > ${FBH_tempfile}
+    # Remove the existing combined hoogle binary database, since we are about
+    # to rebuilt it
+    rm -f default.hoo
 
-# Build the combined hoogle binary database in
-# ${ROOT}var/lib/hoogle/databases/default.hoo
-echo "hoogle combine --outfile=default.hoo `cat ${PDH_tempfile} ${FBH_tempfile} | xargs`"
-hoogle combine --outfile=default.hoo `cat ${PDH_tempfile} ${FBH_tempfile} | xargs`
+    # Calculate the list of hoogle binary databases again, as we may
+    # have just removed some if packages were uninstalled.
+    ls --format=single-column *.hoo >${FBH_tempfile}
+
+    # Build the combined hoogle binary database in
+    # ${ROOT}var/lib/hoogle/databases/default.hoo
+    echo "hoogle combine --outfile=default.hoo `cat ${PDH_tempfile} ${FBH_tempfile} | xargs`"
+    hoogle combine --outfile=default.hoo `cat ${PDH_tempfile} ${FBH_tempfile} | xargs`
+fi
 
 # Cleanup temporary files
-rm -f ${PDH_tempfile} ${PPT_tempfile} ${FPH_tempfile} ${FBH_tempfile}
+rm -f ${PDH_tempfile} ${PPT_tempfile} ${FPH_tempfile} ${FBH_tempfile} ${FRH_tempfile}
 
 popd
