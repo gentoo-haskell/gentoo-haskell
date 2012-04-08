@@ -7,14 +7,13 @@ EAPI="4"
 CABAL_FEATURES="lib profile"
 inherit git-2 haskell-cabal
 
-T_PV=0.8.1
-S_PV=0.8.0
+T_PV=0.9.0
+S_PV=0.9.0
 
 DESCRIPTION="Tests for Persistent"
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 EGIT_REPO_URI="git://github.com/yesodweb/persistent.git"
 EGIT_NOUNPACK="1"
-EGIT_COMMIT="5b6fbd2ba34c756e"
 SRC_URI="test? ( http://hackage.haskell.org/packages/archive/persistent-template/${T_PV}/persistent-template-${T_PV}.tar.gz )"
 SRC_URI="$SRC_URI test? ( http://hackage.haskell.org/packages/archive/persistent-sqlite/${S_PV}/persistent-sqlite-${S_PV}.tar.gz )"
 
@@ -48,7 +47,6 @@ RDEPEND="dev-haskell/aeson
 		dev-haskell/transformers-base
 		dev-haskell/vector
 		dev-haskell/unordered-containers
-		<dev-haskell/persistent-0.9
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
