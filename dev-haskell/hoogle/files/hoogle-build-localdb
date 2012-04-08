@@ -10,6 +10,14 @@
 # sed this in the ebuild that installs this script for gentoo prefix
 ROOT="/"
 
+if [[ ! -x "${ROOT}usr/bin/fquery" ]]; then
+    echo "ERROR: ${ROOT}usr/bin/fquery not found"
+    echo "Please run:"
+    echo "emerge -a app-portage/fquery"
+    echo "then try again"
+    exit
+fi
+
 if [ ! -d "${ROOT}var/lib/hoogle/databases" ]
 then
     mkdir -p "${ROOT}var/lib/hoogle/databases"
