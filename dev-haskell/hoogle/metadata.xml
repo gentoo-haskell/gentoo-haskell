@@ -12,5 +12,7 @@
 	</longdescription>
 <use>
   <flag name='fetchdb'>fetch hoogle db by running: hoogle data</flag>
+  <flag name='fetchdb-ghc'>fetch hoogle db by running: hoogle data ghc (implies fetchdb)</flag>
+  <flag name='localdb'>install gen_hoogle script for building hoogle dbs for installed pkgs</flag>
 </use>
 </pkgmetadata>
