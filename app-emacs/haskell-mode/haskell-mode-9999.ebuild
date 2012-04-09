@@ -13,8 +13,12 @@ EGIT_REPO_URI="https://github.com/haskell/haskell-mode"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+examples"
+
+RDEPEND="virtual/emacs
+		dev-haskell/hasktags"
+DEPEND="${RDEPEND}"
 
 DOCS="NEWS README.md"
 SITEFILE="50${PN}-gentoo.el"
