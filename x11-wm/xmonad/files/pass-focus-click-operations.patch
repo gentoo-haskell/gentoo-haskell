@@ -1,0 +1,20 @@
+--- XMonad/Operations.hs.old	2012-03-12 22:40:54.733630440 +0200
++++ XMonad/Operations.hs	2012-03-12 22:41:36.323133333 +0200
+@@ -283,11 +283,14 @@
+ 
+ -- | setButtonGrab. Tell whether or not to intercept clicks on a given window
+ setButtonGrab :: Bool -> Window -> X ()
+-setButtonGrab grab w = withDisplay $ \d -> io $
+-    if grab
++setButtonGrab grab w = do
++    pointerMode <- asks $ \c -> if clickJustFocuses (config c)
++                                    then grabModeAsync
++                                    else grabModeSync
++    withDisplay $ \d -> io $ if grab
+         then forM_ [button1, button2, button3] $ \b ->
+             grabButton d b anyModifier w False buttonPressMask
+-                       grabModeAsync grabModeSync none none
++                       pointerMode grabModeSync none none
+         else ungrabButton d anyButton anyModifier w
+ 
+ -- ---------------------------------------------------------------------
