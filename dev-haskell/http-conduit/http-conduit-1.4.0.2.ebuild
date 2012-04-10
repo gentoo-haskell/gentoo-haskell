@@ -64,6 +64,10 @@ DEPEND="${RDEPEND}
 			dev-haskell/wai
 			dev-haskell/warp )"
 
+src_prepare() {
+	use test && cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
+}
+
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
 }
