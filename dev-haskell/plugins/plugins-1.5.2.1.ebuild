@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Dynamic linking for Haskell and C objects"
-HOMEPAGE="http://code.haskell.org/~dons/code/hs-plugins"
+HOMEPAGE="http://patch-tag.com/r/stepcut/plugins"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
