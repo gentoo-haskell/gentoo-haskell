@@ -27,7 +27,6 @@ DEPEND=">=dev-lang/ghc-6.10
 RDEPEND=""
 
 src_prepare() {
-	default
 	cp -r "${FILESDIR}"/${P}/* "${S}"/ || die
 }
 
