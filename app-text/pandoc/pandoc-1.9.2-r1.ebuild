@@ -30,7 +30,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-haskell/json-0.4[profile?]
 		<dev-haskell/json-0.6[profile?]
 		>=dev-haskell/mtl-1.1[profile?]
-		<dev-haskell/mtl-2.1[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2[profile?]
 		<dev-haskell/network-2.4[profile?]
 		>=dev-haskell/pandoc-types-1.9.0.2[profile?]
@@ -65,6 +65,11 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework[profile?]
 		)
 		"
+
+src_prepare() {
+	sed -e 's@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure \
