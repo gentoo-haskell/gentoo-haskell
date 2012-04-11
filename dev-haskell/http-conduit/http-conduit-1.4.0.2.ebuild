@@ -17,7 +17,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-RESTRICT="test"
 
 RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/asn1-data-0.7[profile?]
@@ -65,7 +64,9 @@ DEPEND="${RDEPEND}
 			dev-haskell/warp )"
 
 src_prepare() {
-	use test && cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
+	if use test; then
+		cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
+	fi
 }
 
 src_configure() {
