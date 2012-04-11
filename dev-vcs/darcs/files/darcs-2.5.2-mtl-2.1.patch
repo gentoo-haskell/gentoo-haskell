@@ -1,0 +1,38 @@
+--- darcs-2.5.2-orig/darcs.cabal	2012-04-12 00:35:07.075608173 +1000
++++ darcs-2.5.2/darcs.cabal	2012-04-12 00:40:06.173429235 +1000
+@@ -171,7 +171,7 @@
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+                      regex-compat >= 0.71 && < 0.96,
+-                     mtl          >= 1.0 && < 2.1,
++                     mtl          >= 1.0 && < 2.2,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,
+                      filepath     >= 1.1.0.0 && < 1.5.0.0,
+@@ -376,7 +376,7 @@
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+                      regex-compat >= 0.71 && < 0.96,
+-                     mtl          >= 1.0 && < 2.1,
++                     mtl          >= 1.0 && < 2.2,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,
+                      filepath     >= 1.1.0.0 && < 1.5.0.0,
+@@ -524,7 +524,7 @@
+   build-depends:   base          < 5,
+                    extensible-exceptions >= 0.1 && < 0.2,
+                    regex-compat >= 0.71 && < 0.96,
+-                   mtl          >= 1.0 && < 2.1,
++                   mtl          >= 1.0 && < 2.2,
+                    parsec       >= 2.0 && < 3.2,
+                    html         == 1.0.*,
+                    filepath     >= 1.1.0.0 && < 1.5.0.0,
+@@ -620,7 +620,7 @@
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+                      regex-compat >= 0.71 && < 0.96,
+-                     mtl          >= 1.0 && < 2.1,
++                     mtl          >= 1.0 && < 2.2,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,
+                      filepath     >= 1.1.0.0 && < 1.5.0.0,
