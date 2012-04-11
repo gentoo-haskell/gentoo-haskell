@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/base-unicode-symbols-0.1.1[profile?] <dev-haskell/base-unicode-symbols-0.3[profile?]
+RDEPEND=">=dev-haskell/base-unicode-symbols-0.1.1[profile?]
+		<dev-haskell/base-unicode-symbols-0.3[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		=dev-haskell/transformers-base-0.4*[profile?]
 		>=dev-lang/ghc-6.8.2"
@@ -34,6 +35,7 @@ PATCHES=("${FILESDIR}/${PN}-0.1.0.1-test-ghc-6.12.patch")
 src_prepare() {
 	base_src_prepare
 	sed -e 's@test-framework       >= 0.2.4 && < 0.5@test-framework       >= 0.2.4 \&\& < 0.7@' \
+		-e 's@transformers         >= 0.2   && < 0.3@transformers         >= 0.2   \&\& < 0.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
