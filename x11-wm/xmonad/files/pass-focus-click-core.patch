@@ -1,0 +1,10 @@
+--- XMonad/Core.hs.old	2012-03-12 22:41:19.477764521 +0200
++++ XMonad/Core.hs	2012-03-12 22:41:36.319133958 +0200
+@@ -108,6 +108,7 @@
+     , logHook            :: !(X ())              -- ^ The action to perform when the windows set is changed
+     , startupHook        :: !(X ())              -- ^ The action to perform on startup
+     , focusFollowsMouse  :: !Bool                -- ^ Whether window entry events can change focus
++    , clickJustFocuses   :: !Bool                -- ^ False to make a click which changes focus to be additionally passed to the window
+     }
+ 
+ 

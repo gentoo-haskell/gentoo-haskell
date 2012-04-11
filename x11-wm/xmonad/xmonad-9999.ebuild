@@ -4,7 +4,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 
 inherit haskell-cabal darcs
 
@@ -15,7 +15,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="+default-term"
+IUSE="+default-term -pass-focus-click"
 
 RDEPEND="dev-haskell/mtl[profile?]
 		>=dev-haskell/x11-1.5[profile?]
@@ -33,6 +33,16 @@ SAMPLE_CONFIG_LOC="man"
 src_prepare() {
 	sed -e 's@X11>=1.5.0.0 && < 1.6@X11>=1.5.0.0 \&\& < 1.7@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+
+	if use pass-focus-click ; then
+		epatch "${FILESDIR}/pass-focus-click-config.patch"
+		epatch "${FILESDIR}/pass-focus-click-core.patch"
+		epatch "${FILESDIR}/pass-focus-click-mainhsc.patch"
+		epatch "${FILESDIR}/pass-focus-click-operations.patch"
+	fi
+
+	# allow user patches
+	epatch_user
 }
 
 src_compile() {
