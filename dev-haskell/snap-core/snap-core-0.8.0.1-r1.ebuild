@@ -37,15 +37,16 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-haskell/hunit-1.2[profile?]
 		<dev-haskell/hunit-2[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2.1[profile?]
-		<dev-haskell/monadcatchio-transformers-0.3[profile?]
-		=dev-haskell/mtl-2.0*[profile?]
+		<dev-haskell/monadcatchio-transformers-0.4[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/mwc-random-0.10[profile?]
 		<dev-haskell/mwc-random-0.13[profile?]
 		<=dev-haskell/regex-posix-0.95.2[profile?]
 		=dev-haskell/text-0.11*[profile?]
 		>=dev-haskell/time-1.0[profile?]
 		<dev-haskell/time-1.5[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-haskell/unix-compat-0.2[profile?]
 		<dev-haskell/unix-compat-0.4[profile?]
 		>=dev-haskell/unordered-containers-0.1.4.3[profile?]
@@ -57,3 +58,10 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@MonadCatchIO-transformers >= 0.2.1 && < 0.3@MonadCatchIO-transformers >= 0.2.1 \&\& < 0.4@' \
+		-e 's@mtl == 2.0.\*@mtl >= 2.0 \&\& < 2.2@' \
+		-e 's@transformers == 0.2.\*@transformers >= 0.2 \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
