@@ -21,7 +21,8 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
 IUSE="test"
 
-RDEPEND="=dev-haskell/mtl-2.0*[profile?]
+RDEPEND=">=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		dev-haskell/network[profile?]
 		dev-haskell/parsec[profile?]
 		>=dev-lang/ghc-6.8.2"
@@ -37,6 +38,11 @@ DEPEND="${RDEPEND}
 		"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@mtl >= 2.0 && < 2.1@mtl >= 2.0 \&\& < 2.2@' \
+		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
