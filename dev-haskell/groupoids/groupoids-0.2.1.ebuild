@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/semigroupoids-1.2.6.1[profile?]
-		<=dev-haskell/semigroupoids-1.3[profile?]
+		<=dev-haskell/semigroupoids-1.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
