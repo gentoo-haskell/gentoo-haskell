@@ -39,7 +39,7 @@ RDEPEND="=app-editors/leksah-server-9999[profile?]
 		<dev-haskell/hslogger-1.2[profile?]
 		=dev-haskell/ltk-9999[profile?]
 		>=dev-haskell/mtl-1.1.0.2[profile?]
-		<dev-haskell/mtl-2.1[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2.2[profile?]
 		<dev-haskell/network-3.0[profile?]
 		>=dev-haskell/parsec-2.1.0.1[profile?]
@@ -55,7 +55,7 @@ RDEPEND="=app-editors/leksah-server-9999[profile?]
 		>=dev-haskell/time-0.1[profile?]
 		<dev-haskell/time-1.5[profile?]
 		>=dev-haskell/transformers-0.2.2.0[profile?]
-		<dev-haskell/transformers-0.3[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-haskell/utf8-string-0.3.1.1[profile?]
 		<dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.10.1
@@ -64,9 +64,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	sed -e 's@mtl >=1.1.0.2 && <2.1@mtl >=1.1.0.2 \&\& <2.2@g' \
+		-e 's@transformers >=0.2.2.0 && <0.3@transformers >=0.2.2.0 \&\& <0.4@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
-		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9' \
+		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
 }
