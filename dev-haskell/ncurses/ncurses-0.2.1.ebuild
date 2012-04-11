@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Modernised bindings to GNU ncurses"
-HOMEPAGE="http://john-millikin.com/software/bindings/ncurses/"
+HOMEPAGE="https://john-millikin.com/software/haskell-ncurses/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -19,8 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/text-0.7[profile?]
-		<dev-haskell/text-0.12[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
 		>=dev-lang/ghc-6.10.1
 		sys-libs/ncurses"
 DEPEND="${RDEPEND}
