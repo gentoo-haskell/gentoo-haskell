@@ -19,8 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/enumerator-0.4*[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		=dev-haskell/zlib-bindings-0.1*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@transformers          == 0.2.*@transformers          >= 0.2 \&\& < 0.4@' \
+		-e 's@transformers               == 0.2.*@transformers               >= 0.2 \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
