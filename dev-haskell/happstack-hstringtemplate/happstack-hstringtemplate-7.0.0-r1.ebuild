@@ -22,7 +22,12 @@ RDEPEND=">=dev-haskell/happstack-server-6.0[profile?]
 		<dev-haskell/happstack-server-7.1[profile?]
 		dev-haskell/hslogger[profile?]
 		<dev-haskell/hstringtemplate-0.7[profile?]
-		<dev-haskell/mtl-2.1[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
