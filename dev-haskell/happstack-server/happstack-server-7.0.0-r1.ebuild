@@ -19,22 +19,34 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
-		>=dev-haskell/blaze-html-0.3[profile?] <dev-haskell/blaze-html-0.5[profile?]
+		>=dev-haskell/blaze-html-0.3[profile?]
+		<dev-haskell/blaze-html-0.5[profile?]
 		>=dev-haskell/hslogger-1.0.2[profile?]
 		dev-haskell/html[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
-		>=dev-haskell/mtl-2[profile?] <dev-haskell/mtl-2.1[profile?]
+		>=dev-haskell/mtl-2[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2.2.3[profile?]
 		<dev-haskell/parsec-4[profile?]
-		>=dev-haskell/sendfile-0.7.1[profile?] <dev-haskell/sendfile-0.8[profile?]
+		>=dev-haskell/sendfile-0.7.1[profile?]
+		<dev-haskell/sendfile-0.8[profile?]
+		dev-haskell/syb[profile?]
 		>=dev-haskell/text-0.10[profile?]
 		<dev-haskell/text-0.12[profile?]
 		dev-haskell/time[profile?]
-		>=dev-haskell/transformers-0.1.3[profile?] <dev-haskell/transformers-0.3[profile?]
+		>=dev-haskell/transformers-0.1.3[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		=dev-haskell/transformers-base-0.4*[profile?]
-		>=dev-haskell/utf8-string-0.3.4[profile?] <dev-haskell/utf8-string-0.4[profile?]
+		>=dev-haskell/utf8-string-0.3.4[profile?]
+		<dev-haskell/utf8-string-0.4[profile?]
 		dev-haskell/xhtml[profile?]
 		dev-haskell/zlib[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@mtl >= 2 && < 2.1@mtl >= 2 \&\& < 2.2@' \
+		-e 's@transformers >= 0.1.3 && < 0.3@transformers >= 0.1.3 \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
