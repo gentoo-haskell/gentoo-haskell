@@ -15,7 +15,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="+default-term -pass-focus-click"
+IUSE="+default-term pass-focus-click"
 
 RDEPEND="dev-haskell/mtl[profile?]
 		>=dev-haskell/x11-1.5[profile?]
@@ -35,10 +35,7 @@ src_prepare() {
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 
 	if use pass-focus-click ; then
-		epatch "${FILESDIR}/pass-focus-click-config.patch"
-		epatch "${FILESDIR}/pass-focus-click-core.patch"
-		epatch "${FILESDIR}/pass-focus-click-mainhsc.patch"
-		epatch "${FILESDIR}/pass-focus-click-operations.patch"
+		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
 	fi
 
 	# allow user patches

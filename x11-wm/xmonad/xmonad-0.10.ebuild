@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
-IUSE="+default-term -pass-focus-click"
+IUSE="+default-term pass-focus-click"
 
 RDEPEND="dev-haskell/mtl[profile?]
 		=dev-haskell/utf8-string-0.3*[profile?]
@@ -33,10 +33,7 @@ SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
 	if use pass-focus-click ; then
-		epatch "${FILESDIR}/pass-focus-click-config.patch"
-		epatch "${FILESDIR}/pass-focus-click-core.patch"
-		epatch "${FILESDIR}/pass-focus-click-mainhsc.patch"
-		epatch "${FILESDIR}/pass-focus-click-operations.patch"
+		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
 	fi
 
 	# allow user patches
