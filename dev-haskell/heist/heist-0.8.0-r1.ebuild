@@ -25,8 +25,9 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		=dev-haskell/blaze-html-0.4*[profile?]
 		dev-haskell/directory-tree[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2.1[profile?]
-		<dev-haskell/monadcatchio-transformers-0.3[profile?]
-		=dev-haskell/mtl-2.0*[profile?]
+		<dev-haskell/monadcatchio-transformers-0.4[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/text-0.10[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/time-1.1[profile?]
@@ -40,3 +41,9 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@MonadCatchIO-transformers >= 0.2.1 && < 0.3@MonadCatchIO-transformers >= 0.2.1 \&\& < 0.4@' \
+		-e 's@mtl                       >= 2.0   && < 2.1@mtl                       >= 2.0   \&\& < 2.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
