@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Behavior Driven Development for Haskell"
-HOMEPAGE="https://github.com/trystan/hspec"
+HOMEPAGE="http://hackage.haskell.org/package/hspec"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
