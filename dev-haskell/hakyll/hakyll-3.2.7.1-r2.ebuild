@@ -28,7 +28,7 @@ RDEPEND="=app-text/pandoc-1.9*[profile?]
 		>=dev-haskell/hamlet-0.10.3[profile?]
 		<dev-haskell/hamlet-1.1[profile?]
 		>=dev-haskell/mtl-1[profile?]
-		<dev-haskell/mtl-2.1[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/parsec-3.0[profile?]
 		<dev-haskell/parsec-3.2[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
@@ -47,5 +47,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's#hamlet      >= 0.10.3 \&\& < 0.11,#hamlet      >= 0.10.3 \&\& < 1.1,#' \
-		-i hakyll.cabal || die "hamlet fix failed"
+		-e 's#mtl         >= 1      && < 2.1,#mtl         >= 1      \&\& < 2.2,#' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
