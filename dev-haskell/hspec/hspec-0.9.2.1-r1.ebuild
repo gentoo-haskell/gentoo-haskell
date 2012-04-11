@@ -26,10 +26,15 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 		>=dev-haskell/silently-1.1.1[profile?]
 		<dev-haskell/silently-2[profile?]
 		>=dev-haskell/transformers-0.2.0[profile?]
-		<dev-haskell/transformers-0.3.0[profile?]
+		<dev-haskell/transformers-0.4.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@transformers >= 0.2.0 && < 0.3.0@transformers >= 0.2.0 \&\& < 0.4.0@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
