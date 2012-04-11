@@ -21,7 +21,8 @@ RESTRICT="test" # fails to compile: tests/runtests.hs:143:41: Not in scope: type
 
 RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 		<dev-haskell/crypto-api-0.11[profile?]
-		=dev-haskell/tagged-0.2*[profile?]
+		>=dev-haskell/tagged-0.2[profile?]
+		<dev-haskell/tagged-0.5[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
@@ -34,6 +35,7 @@ src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
 	cp "${FILESDIR}/runtests.hs" "${S}/tests"
 	sed -e 's@crypto-api   >= 0.6 && < 0.10@crypto-api   >= 0.6 \&\& < 0.11@' \
+		-e 's@tagged       >= 0.2 && < 0.3@tagged       >= 0.2 \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
