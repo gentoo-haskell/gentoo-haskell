@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/repa-3.0*[profile?]
+RDEPEND="=dev-haskell/repa-3.1*[profile?]
 		=dev-haskell/vector-0.9*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
