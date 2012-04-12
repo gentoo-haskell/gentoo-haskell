@@ -25,8 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@base                 == 4.5.\*@base                 >= 4.3 \&\& < 5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	# ghc 7.0.4 does not define forkOn, use forkOnIO like repa version 2.1.1.6 used to use
 	sed -e 's@forkOn@forkOnIO@g' \
 		-i "${S}/Data/Array/Repa/Eval/Gang.hs"
