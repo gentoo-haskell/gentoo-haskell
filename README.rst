@@ -69,4 +69,4 @@ overlay.
 .. _hackport: http://github.com/gentoo-haskell/hackport
 .. _projects listed on the hackage site:
     http://hackage.haskell.org/packages/archive/pkg-list.html
-.. _HOWTO contribute: projects/doc/HOWTO-contribute.rst
+.. _HOWTO contribute: http://github.com/gentoo-haskell/gentoo-haskell/blob/master/projects/doc/HOWTO-contribute.rst
