@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments"
+DESCRIPTION="Haskell 98 phantom types to avoid unsafely passing dummy arguments"
 HOMEPAGE="http://github.com/ekmett/tagged"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -20,4 +20,4 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.10"
