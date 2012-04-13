@@ -14,7 +14,8 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library for client-side HTTP"
 HOMEPAGE="https://github.com/haskell/HTTP"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
+		http://dev.gentoo.org/~gienah/2big4tree/dev-haskell/http/${MY_P}-test-suite.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -38,11 +39,6 @@ DEPEND="${RDEPEND}
 		"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	sed -e 's@mtl >= 2.0 && < 2.1@mtl >= 2.0 \&\& < 2.2@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
-}
 
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
