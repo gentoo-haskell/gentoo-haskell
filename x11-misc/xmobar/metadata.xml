@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name='mail'>Support the mail plugin. Pulls dependency dev-haskell/hinotify.</flag>
+		
+	</use>
 	<longdescription>
 		Xmobar is a minimalistic text based status bar.
 		
