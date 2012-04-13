@@ -21,16 +21,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="epic +stdlib"
 
-RDEPEND="<dev-haskell/binary-0.6[profile?]
+RDEPEND=">=dev-haskell/binary-0.4.4[profile?]
+		<dev-haskell/binary-0.6[profile?]
 		epic? ( dev-lang/epic[profile?] )
 		=dev-haskell/hashable-1.1*[profile?]
 		=dev-haskell/hashtables-1.0*[profile?]
 		>=dev-haskell/haskeline-0.6.3.2[profile?]
+		<dev-haskell/haskeline-0.7[profile?]
 		>=dev-haskell/haskell-src-exts-1.9.6[profile?]
+		<dev-haskell/haskell-src-exts-1.14[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
 		=dev-haskell/quickcheck-2.4*[profile?]
+		>=dev-haskell/syb-0.1[profile?]
+		<dev-haskell/syb-0.4[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
+		>=dev-haskell/zlib-0.4.0.1[profile?]
 		<dev-haskell/zlib-0.6[profile?]
 		>=dev-lang/ghc-6.10.4"
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
