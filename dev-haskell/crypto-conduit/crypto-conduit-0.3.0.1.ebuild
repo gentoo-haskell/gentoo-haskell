@@ -20,9 +20,15 @@ IUSE=""
 
 RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
-		=dev-haskell/crypto-api-0.9*[profile?]
+		>=dev-haskell/crypto-api-0.9[profile?]
+		<dev-haskell/crypto-api-0.11[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e "s@crypto-api >= 0.9 && < 0.10@crypto-api >= 0.9 \&\& < 0.11@"\
+		-i "crypto-conduit.cabal" || die "loosen deps failed"
+}
