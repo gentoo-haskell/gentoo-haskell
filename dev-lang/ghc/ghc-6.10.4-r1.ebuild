@@ -298,7 +298,7 @@ src_compile() {
 
 		# LC_ALL needs to workaround ghc's ParseCmm failure on some (es) locales
 		# bug #202212 / http://hackage.haskell.org/trac/ghc/ticket/4207
-		LC_ALL=C emake all || die "make failed"
+		LC_ALL=C emake -j1 all || die "make failed"
 
 	fi # ! use binary
 }

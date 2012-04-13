@@ -470,7 +470,8 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		emake all || die "make failed"
+		# ghc massively parallel make: #409631, #409873
+		emake -j1 all || die "make failed"
 	fi # ! use binary
 }
 
