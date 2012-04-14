@@ -163,6 +163,13 @@ cabal-bootstrap() {
 		die "No Setup.lhs or Setup.hs found"
 	fi
 
+	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
+		eerror "The package dev-haskell/cabal is not correctly installed for"
+		eerror "the currently active version of ghc ($(ghc-version)). Please"
+		eerror "run haskell-updater or re-build dev-haskell/cabal."
+		die "cabal is not correctly installed"
+	fi
+
 	# We build the setup program using the latest version of
 	# cabal that we have installed
 	cabalpackage=Cabal-$(cabal-version)
@@ -369,12 +376,6 @@ cabal-is-dummy-lib() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
-	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
-		eerror "The package dev-haskell/cabal is not correctly installed for"
-		eerror "the currently active version of ghc ($(ghc-version)). Please"
-		eerror "run haskell-updater or re-build dev-haskell/cabal."
-		die "cabal is not correctly installed"
-	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
 		eqawarn "QA Notice: Neither bin nor lib are in CABAL_FEATURES."
 	fi
