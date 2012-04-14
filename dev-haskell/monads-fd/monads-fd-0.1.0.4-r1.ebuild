@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Monad classes, using functional dependencies"
 HOMEPAGE="http://hackage.haskell.org/package/monads-fd"
@@ -18,7 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/transformers-0.2*
+RDEPEND=">=dev-haskell/transformers-0.2
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/monads-fd-0.1.0.4-mtl-2.1.patch")
