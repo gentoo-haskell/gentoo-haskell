@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hslogger-1.0.2
-		<dev-haskell/mtl-2.1
+		<=dev-haskell/mtl-2.1
 		=dev-haskell/network-2.3*
 		<dev-haskell/parsec-4
 		dev-haskell/time
@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/hslogger-1.0.2
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e "s@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@"\
+		-i "happstack-util.cabal"
+}
