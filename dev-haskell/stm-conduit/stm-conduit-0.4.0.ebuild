@@ -23,10 +23,16 @@ RDEPEND="=dev-haskell/conduit-0.4*[profile?]
 		=dev-haskell/resourcet-0.3*[profile?]
 		=dev-haskell/stm-2.3*[profile?]
 		=dev-haskell/stm-chans-1.3*[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e "s@transformers ==0.2.\*@transformers >=0.2 \&\& <0.4@"\
+		-i "stm-conduit.cabal" || die "can't loosen deps"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
