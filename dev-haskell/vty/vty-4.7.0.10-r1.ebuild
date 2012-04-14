@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/deepseq-1.4
-		<dev-haskell/mtl-2.1
+		<dev-haskell/mtl-2.2
 		>=dev-haskell/parallel-2.2 <dev-haskell/parallel-3.3
 		<dev-haskell/parsec-4
 		=dev-haskell/terminfo-0.3*
@@ -30,10 +30,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
 
 src_prepare() {
-	if has_version "<dev-haskell/mtl-1.1.1.0"; then
-		sed -e 's@mtl >= 1.1.1.0 && < 2.1@mtl >= 1.1.0.2 \&\& < 2.1@' \
-			-i "${S}/${PN}.cabal" || die "Could not loosen mtl dependency to allow mtl-1.1.0.2 for HP-2010-02"
-	fi
+	sed -e 's@mtl >= 1.1.1.0 && < 2.1@mtl >= 1.1.0.2 \&\& < 2.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen mtl dependency to allow mtl-1.1.0.2 for HP-2010-02"
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
 		# The haddock --hoogle option does not like unicode characters, which causes
