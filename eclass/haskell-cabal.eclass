@@ -177,9 +177,12 @@ cabal-bootstrap() {
 		$(ghc-getghc) "$@"
 	}
 	if $(ghc-supports-shared-libraries); then
-		# some custom build systems might use external libraries,
-		# for which we don't have shared libs, so keep static fallback
-		make_setup -dynamic "$@" || make_setup "$@" || die "compiling ${setupmodule} failed"
+		# # some custom build systems might use external libraries,
+		# # for which we don't have shared libs, so keep static fallback
+		# Disabled '-dynamic' as ghc does not embed RPATH to used extra-libraries:
+		# bug #411789, http://hackage.haskell.org/trac/ghc/ticket/5743#comment:3
+		# make_setup -dynamic "$@" ||
+		make_setup "$@" || die "compiling ${setupmodule} failed"
 	else
 		make_setup "$@" || die "compiling ${setupmodule} failed"
 	fi
