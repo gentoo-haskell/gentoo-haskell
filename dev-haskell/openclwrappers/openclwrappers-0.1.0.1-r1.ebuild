@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="OpenCLWrappers"
 MY_P="${MY_PN}-${PV}"
@@ -22,13 +22,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2
-		<dev-haskell/mtl-2.1
+		<dev-haskell/mtl-2.2
 		>=dev-lang/ghc-6.8.2
 		virtual/opencl"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/openclwrappers-0.1.0.1-mtl-2.1.patch")
 
 src_configure() {
 	cabal_src_configure --flags=link
