@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Use Accessor to access state in monads-fd State monad class"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Record_access"
@@ -20,7 +20,10 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/data-accessor-0.2
 		=dev-haskell/monads-fd-0.1*
-		=dev-haskell/transformers-0.2*
+		>=dev-haskell/transformers-0.2
+		<dev-haskell/transformers-0.4
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+PATCHES=("${FILESDIR}/data-accessor-monads-fd-0.2.0.3-mtl-2.1.patch")
