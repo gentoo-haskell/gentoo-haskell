@@ -23,4 +23,5 @@ RDEPEND="dev-haskell/cabal
 		>=dev-libs/boehm-gc-7.0[threads]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8.0.4"
+		>=dev-haskell/cabal-1.8.0.4
+		dev-haskell/happy"
