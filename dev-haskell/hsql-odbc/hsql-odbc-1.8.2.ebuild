@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell Interface to ODBC."
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hsql-1.8[profile?]
+RDEPEND=">=dev-haskell/hsql-1.8.2[profile?]
 		>=dev-lang/ghc-6.10.1
 		>=dev-db/unixODBC-2.2"
 DEPEND="${RDEPEND}
