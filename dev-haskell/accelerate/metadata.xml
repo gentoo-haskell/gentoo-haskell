@@ -33,4 +33,8 @@
 		
 		For documentation, see the homepage and &lt;https://github.com/mchakravarty/accelerate/wiki&gt;.
 	</longdescription>
+<use>
+  <flag name='cuda'>Enable the CUDA parallel backend for NVIDIA GPUs</flag>
+  <flag name='io'>Provide access to the block copy I/O functionality</flag>
+</use>
 </pkgmetadata>
