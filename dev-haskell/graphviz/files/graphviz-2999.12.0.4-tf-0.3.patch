@@ -1,0 +1,13 @@
+diff --git a/graphviz.cabal b/graphviz.cabal
+index 14d0f5b..7d5175a 100644
+--- a/graphviz.cabal
++++ b/graphviz.cabal
+@@ -64,7 +64,7 @@ Library {
+                            polyparse == 1.7.*,
+                            bytestring == 0.9.*,
+                            colour == 2.3.*,
+-                           transformers == 0.2.*,
++                           transformers >= 0.2 && <0.4,
+                            text,
+                            wl-pprint-text,
+                            dlist == 0.5.*
