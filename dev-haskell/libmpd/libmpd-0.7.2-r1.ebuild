@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An MPD client library."
 HOMEPAGE="http://github.com/joachifm/libmpd-haskell"
@@ -18,10 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/mtl-2.0*[profile?]
+RDEPEND=">=dev-haskell/mtl-2.0[profile?] <dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2.1[profile?] <dev-haskell/network-2.4[profile?]
 		>=dev-haskell/time-1.1[profile?] <dev-haskell/time-2.0[profile?]
 		>=dev-haskell/utf8-string-0.3.1[profile?] <dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${P}-mtl-2.1.patch")
