@@ -43,5 +43,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@data-lens            >= 2.0.3   && < 2.1@data-lens            >= 2.0.3   \&\& < 2.11@' \
+		-e 's@comonads-fd          >= 2.1.1   && < 2.2@comonads-fd          >= 2.1   \&\& < 2.2@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
