@@ -20,10 +20,10 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		<dev-haskell/cabal-1.15
 		>=dev-haskell/http-4000.0.9 <dev-haskell/http-4000.3
-		dev-haskell/mtl
+		<dev-haskell/mtl-2.2
 		=dev-haskell/network-2.3*
 		=dev-haskell/tar-0.3*
-		=dev-haskell/transformers-0.2*
+		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		=dev-haskell/zlib-0.5*
 		>=dev-lang/ghc-6.10.1
 		dev-haskell/cabal-install"
@@ -34,4 +34,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal-mksetup
 	epatch "${FILESDIR}/${PN}-0.8-cabal-file.patch"
+	epatch "${FILESDIR}"/${PN}-0.9.1-tf-0.3.patch
 }

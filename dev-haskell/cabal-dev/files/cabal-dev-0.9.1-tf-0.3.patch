@@ -1,0 +1,20 @@
+diff --git a/cabal-dev.cabal b/cabal-dev.cabal
+index 6777ee2..a1d335d 100644
+--- a/cabal-dev.cabal
++++ b/cabal-dev.cabal
+@@ -111,13 +111,13 @@ Executable cabal-dev
+       filepath >= 1.1 && < 1.4,
+       Cabal >= 1.10.0.0 && < 1.15,
+       HTTP >= 4000.0.9 && < 4000.3,
+-      mtl >= 1.1 && < 2.1,
++      mtl >= 1.1 && < 2.2,
+       network >= 2.2 && < 2.4,
+       pretty >= 1.0 && < 1.2,
+       process >= 1.0 && < 1.2,
+       tar >= 0.3 && < 0.4,
+       zlib >= 0.5 && < 0.6,
+-      transformers >= 0.2 && < 0.3,
++      transformers >= 0.2 && < 0.4,
+ 
+       -- Template haskell is special: the compiler will die if a
+       -- version other than the one that is shipped with the compiler
