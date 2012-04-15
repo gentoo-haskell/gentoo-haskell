@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="Hipmunk"
 MY_P="${MY_PN}-${PV}"
@@ -22,14 +22,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/statevar-1.0*[profile?]
-		=dev-haskell/transformers-0.2*[profile?]
+		>=dev-haskell/transformers-0.2[profile?] <dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)
+
 src_prepare() {
+	base_src_prepare
 	if has_version "<dev-haskell/haddock-2.9.2"; then
 		# Workaround http://hackage.haskell.org/trac/hackage/ticket/626
 		# The haddock --hoogle option does not like unicode characters, which causes
@@ -39,4 +42,3 @@ src_prepare() {
 			-i "${S}/${MY_PN}.cabal"
 	fi
 }
-
