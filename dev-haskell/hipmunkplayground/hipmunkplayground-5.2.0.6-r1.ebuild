@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="HipmunkPlayground"
 MY_P="${MY_PN}-${PV}"
@@ -32,3 +32,5 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.8.2"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)

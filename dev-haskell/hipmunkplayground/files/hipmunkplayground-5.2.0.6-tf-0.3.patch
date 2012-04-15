@@ -1,0 +1,14 @@
+Sun Apr 15 14:51:40 FET 2012  Sergei Trofimovich <slyfox@community.haskell.org>
+  * .cabal: allow transformers-0.3
+diff -rN -u old-hipmunkplayground/HipmunkPlayground.cabal new-hipmunkplayground/HipmunkPlayground.cabal
+--- old-hipmunkplayground/HipmunkPlayground.cabal	2012-04-15 14:52:19.224825479 +0300
++++ new-hipmunkplayground/HipmunkPlayground.cabal	2012-04-15 14:52:19.226825455 +0300
+@@ -56,7 +56,7 @@
+     Build-Depends: base >= 3 && < 5, containers >= 0.1 && < 0.5
+   else
+     Build-Depends: base >= 2 && < 3
+-  Build-Depends: Hipmunk >= 5.2 && < 5.3, transformers >= 0.2 && < 0.3,
++  Build-Depends: Hipmunk >= 5.2 && < 5.3, transformers >= 0.2 && < 0.4,
+                  OpenGL >= 2.4 && < 2.6, StateVar >= 1.0 && < 1.1,
+                  GLFW >= 0.4 && < 0.6
+   GHC-Options:   -Wall
