@@ -1,0 +1,13 @@
+diff --git a/reactive-banana.cabal b/reactive-banana.cabal
+index 519e462..8935b18 100644
+--- a/reactive-banana.cabal
++++ b/reactive-banana.cabal
+@@ -37,7 +37,7 @@ Library
+                         DeriveDataTypeable
+     build-depends:
+         base >= 4.2 && < 5, containers >= 0.3 && < 0.5,
+-        transformers == 0.2.*,
++        transformers >= 0.2 && < 0.4,
+         QuickCheck >= 1.2 && < 2.5,
+         vault == 0.1.*, unordered-containers == 0.2.*, hashable == 1.1.*,
+         fclabels == 1.1.*
