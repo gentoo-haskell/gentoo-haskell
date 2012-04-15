@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 		=dev-haskell/hipmunk-5.2*
 		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.6
 		=dev-haskell/statevar-1.0*
-		=dev-haskell/transformers-0.2*
+		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		>=dev-lang/ghc-6.8.2"
 
 S="${WORKDIR}/${MY_P}"
