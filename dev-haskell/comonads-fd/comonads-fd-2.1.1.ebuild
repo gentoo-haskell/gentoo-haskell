@@ -20,11 +20,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
 		<dev-haskell/comonad-1.2[profile?]
-		=dev-haskell/comonad-transformers-2.1*[profile?]
-		=dev-haskell/mtl-2.1*[profile?]
+		>=dev-haskell/comonad-transformers-2.1.1[profile?]
+		<dev-haskell/comonad-transformers-2.2[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/semigroups-0.8.2[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
-		=dev-haskell/transformers-0.3*[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
