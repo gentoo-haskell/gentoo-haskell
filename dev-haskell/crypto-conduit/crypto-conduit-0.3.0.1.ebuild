@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
@@ -31,4 +31,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -e "s@crypto-api >= 0.9 && < 0.10@crypto-api >= 0.9 \&\& < 0.11@"\
 		-i "crypto-conduit.cabal" || die "loosen deps failed"
+}
+
+src_configure() {
+	cabal_src_configure $(use_enable test tests)
 }
