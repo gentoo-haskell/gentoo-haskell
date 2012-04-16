@@ -4,10 +4,10 @@
 
 EAPI="4"
 
-WX_GTK_VER="2.8"
+WX_GTK_VER="2.9"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal wxwidgets
+inherit haskell-cabal
 
 DESCRIPTION="wxHaskell core"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -21,8 +21,8 @@ IUSE="opengl"
 RDEPEND="dev-haskell/parsec[profile?]
 		dev-haskell/stm[profile?]
 		dev-haskell/time[profile?]
-		>=dev-haskell/wxdirect-0.13.1.1[profile?]
-		>=dev-lang/ghc-6.10.1
-		x11-libs/wxGTK:${WX_GTK_VER}[X,gstreamer,opengl?]"
+		>=dev-haskell/wxc-0.90:${WX_GTK_VER}[opengl,profile?]
+		>=dev-haskell/wxdirect-0.90[profile?]
+		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
