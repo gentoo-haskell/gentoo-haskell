@@ -16,10 +16,19 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 PATCHES=("${FILESDIR}/${PN}-1.0.1-ghc-6.12.patch")
+
+src_compile() {
+	cabal_src_compile
+	ghc -o test -isrc --make Test.hs || die "test compile failed!"
+}
+
+src_test() {
+	./test || die "Tests failed!"
+}
