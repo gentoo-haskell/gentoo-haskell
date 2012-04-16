@@ -20,11 +20,12 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
 		<dev-haskell/comonad-1.2[profile?]
-		>=dev-haskell/profunctors-0.1.2[profile?]
+		>=dev-haskell/profunctors-0.1.2.1[profile?]
 		<dev-haskell/profunctors-0.2[profile?]
 		>=dev-haskell/semigroupoid-extras-0.2.7[profile?]
 		<dev-haskell/semigroupoid-extras-0.3[profile?]
-		=dev-haskell/semigroupoids-1.3*[profile?]
+		>=dev-haskell/semigroupoids-1.3.1[profile?]
+		<dev-haskell/semigroupoids-1.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
