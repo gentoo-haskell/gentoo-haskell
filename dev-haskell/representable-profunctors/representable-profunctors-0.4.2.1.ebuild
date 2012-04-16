@@ -20,11 +20,12 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
 		<dev-haskell/comonad-1.2[profile?]
-		>=dev-haskell/profunctor-extras-0.3.2[profile?]
+		>=dev-haskell/profunctor-extras-0.3.2.1[profile?]
 		<dev-haskell/profunctor-extras-0.4[profile?]
-		>=dev-haskell/profunctors-0.1.2[profile?]
+		>=dev-haskell/profunctors-0.1.2.1[profile?]
 		<dev-haskell/profunctors-0.2[profile?]
-		=dev-haskell/transformers-0.3*[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
