@@ -77,6 +77,7 @@ for feature in ${CABAL_FEATURES}; do
 		bin)        CABAL_HAS_BINARIES=yes;;
 		lib)        CABAL_HAS_LIBRARIES=yes;;
 		nocabaldep) CABAL_FROM_GHC=yes;;
+		test-suite) CABAL_TEST_SUITE=yes;;
 		*) CABAL_UNKNOWN="${CABAL_UNKNOWN} ${feature}";;
 	esac
 done
@@ -115,6 +116,10 @@ fi
 
 if [[ -n "${CABAL_USE_PROFILE}" ]]; then
 	IUSE="${IUSE} profile"
+fi
+
+if [[ -n "${CABAL_TEST_SUITE}" ]]; then
+	IUSE="${IUSE} test"
 fi
 
 # We always use a standalone version of Cabal, rather than the one that comes
@@ -271,6 +276,9 @@ cabal-configure() {
 	fi
 	if [[ -n "${CABAL_USE_CPPHS}" ]]; then
 		cabalconf="${cabalconf} --with-cpphs=${EPREFIX}/usr/bin/cpphs"
+	fi
+	if [[ -n "${CABAL_TEST_SUITE}" ]]; then
+		cabalconf="${cabalconf} $(use_enable test tests)"
 	fi
 
 	local option
