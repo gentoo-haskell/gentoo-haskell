@@ -15,7 +15,7 @@ EGIT_REPO_URI="git://github.com/supki/haskell-liblastfm.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/aeson[profile?]
