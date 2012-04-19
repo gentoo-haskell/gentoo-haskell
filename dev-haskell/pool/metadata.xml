@@ -6,6 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Useful for stuff like database connection pools.
+		This package is deprecated. Users are recommended to switch over to resource-pool and/or pool-conduit. Note: pool-conduit is built on top of resource-pool.
 	</longdescription>
 </pkgmetadata>
