@@ -470,8 +470,17 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
+		limit_jobs() {
+			if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
+				ewarn "You have requested parallel build which is known to break."
+				ewarn "Please report all breakages upstream."
+				return
+			fi
+			echo $@
+		}
 		# ghc massively parallel make: #409631, #409873
-		emake -j1 all || die "make failed"
+		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
+		emake $(limit_jobs -j1) all
 	fi # ! use binary
 }
 
