@@ -6,17 +6,17 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Type-safe, multi-backend data serialization."
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		<dev-haskell/aeson-0.7[profile?]
@@ -26,7 +26,6 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
-		=dev-haskell/mtl-2.0*[profile?]
 		=dev-haskell/path-pieces-0.1*[profile?]
 		=dev-haskell/pool-conduit-0.1*[profile?]
 		=dev-haskell/resourcet-0.3*[profile?]
@@ -41,18 +40,7 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/cabal-1.10
-			dev-haskell/hunit[profile?]
-			dev-haskell/hspec[profile?]
-		)
-		"
-
-src_prepare() {
-	# upstream forgot to include the tests
-	cp -pR "${FILESDIR}/${PN}-0.9.0/test" "${S}/test" \
-		|| die "Could not copy missing tests"
-}
-
-src_configure() {
-	cabal_src_configure $(use test && use_enable test tests) #395351
-}
+		test? ( dev-haskell/hspec
+			dev-haskell/hunit
+			dev-haskell/text
+		)"
