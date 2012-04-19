@@ -29,9 +29,9 @@
 #   bin        --  the package installs binaries
 #   lib        --  the package installs libraries
 #   nocabaldep --  don't add dependency on cabal.
-#   test-suite --  add support for cabal test-suites
 #                  only used for packages that _must_ not pull the dependency
 #                  on cabal, but still use this eclass (e.g. haskell-updater).
+#   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
 inherit ghc-package multilib
 
