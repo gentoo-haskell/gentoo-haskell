@@ -67,5 +67,5 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
-	use test && cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
+	cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
 }
