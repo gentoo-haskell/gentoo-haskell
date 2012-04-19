@@ -6,8 +6,7 @@
 
 EAPI=4
 
-# disabled haddock, hoogle, hscolour but pushed fix upstream
-CABAL_FEATURES="bin lib profile"
+CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A library and an executable that provide an easy API for a Haskell IDE"
@@ -30,6 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.4[profile?]
 		dev-haskell/haskell-src-exts[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/regex-tdfa[profile?]
+		dev-haskell/syb[profile?]
 		dev-haskell/text[profile?]
 		dev-haskell/transformers[profile?]
 		dev-haskell/unordered-containers[profile?]
@@ -38,11 +38,7 @@ RDEPEND=">=dev-haskell/aeson-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/hunit[profile?]
-			dev-haskell/test-framework[profile?]
-			dev-haskell/test-framework-hunit[profile?]
+		test? ( dev-haskell/hunit
+			dev-haskell/test-framework
+			dev-haskell/test-framework-hunit
 		)"
-
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
-}
