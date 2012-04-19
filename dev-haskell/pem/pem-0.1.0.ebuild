@@ -26,14 +26,8 @@ RDEPEND="dev-haskell/attoparsec[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/quickcheck-2.4.0.1
-				>=dev-haskell/test-framework-0.3.3
-				<dev-haskell/test-framework-0.7
-				>=dev-haskell/test-framework-quickcheck2-0.2.9
-				<dev-haskell/test-framework-quickcheck2-0.3
+			>=dev-haskell/test-framework-0.3.3
+			<dev-haskell/test-framework-0.7
+			>=dev-haskell/test-framework-quickcheck2-0.2.9
+			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
-
-src_prepare() {
-	sed -e "s@test-framework >= 0.3.3 && < 0.6@test-framework >= 0.3.3 \&\& <0.7@"\
-		-i "pem.cabal" || die "can't loosen deps"
-	cp -r "${FILESDIR}/${P}/Tests" "${S}" || die "can't copy tests"
-}
