@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Efficient routing for Yesod."
@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND="=dev-haskell/path-pieces-0.1*[profile?]
 		>=dev-haskell/text-0.5[profile?]
@@ -36,8 +36,4 @@ src_prepare() {
 	# upstream forgot to include the tests
 	cp -pR "${FILESDIR}/${PN}-1.0.0/test" "${S}/test" \
 		|| die "Could not copy missing tests"
-}
-
-src_configure() {
-	cabal_src_configure $(use test && use_enable test tests) #395351
 }
