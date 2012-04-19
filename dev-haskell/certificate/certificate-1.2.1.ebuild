@@ -20,9 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/asn1-data-0.6.1.3[profile?]
 		<dev-haskell/asn1-data-0.7[profile?]
-		dev-haskell/base64-bytestring[profile?]
 		dev-haskell/crypto-pubkey-types[profile?]
 		dev-haskell/mtl[profile?]
+		=dev-haskell/pem-0.1*[profile?]
 		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
