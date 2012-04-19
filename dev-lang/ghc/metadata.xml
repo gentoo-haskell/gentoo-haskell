@@ -8,6 +8,6 @@
 <use>
 <flag name='binary'>Install the binary version directly, rather than using it to build the source version.</flag>
 <flag name='ghcbootstrap'>Internal: Bootstrap GHC from an existing GHC installation.</flag>
-<flag name='llvm'>Enable llvm code geenrator for ghc (-fllvm)</flag>
+<flag name='llvm'>Enable llvm code generator for ghc (activated by -fllvm)</flag>
 </use>
 </pkgmetadata>
