@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="HTTP client package with conduit interface and HTTPS support."
@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/asn1-data-0.7[profile?]
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		=dev-haskell/blaze-builder-conduit-0.4*[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
-		=dev-haskell/certificate-1.1*[profile?]
+		=dev-haskell/certificate-1.2*[profile?]
 		>=dev-haskell/conduit-0.4.1[profile?]
 		<dev-haskell/conduit-0.5[profile?]
 		=dev-haskell/cookie-0.4*[profile?]
@@ -46,8 +46,9 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		=dev-haskell/socks-0.4*[profile?]
 		dev-haskell/text[profile?]
 		dev-haskell/time[profile?]
-		=dev-haskell/tls-0.9*[profile?]
-		>=dev-haskell/tls-extra-0.4.3[profile?]
+		>=dev-haskell/tls-0.9.3[profile?]
+		<dev-haskell/tls-0.10[profile?]
+		>=dev-haskell/tls-extra-0.4.5[profile?]
 		<dev-haskell/tls-extra-0.5[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
@@ -60,16 +61,11 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/hunit
-			dev-haskell/wai
-			dev-haskell/warp )"
+		test? (	dev-haskell/hspec
+			dev-haskell/hunit
+			dev-haskell/network-conduit
+		)"
 
 src_prepare() {
-	if use test; then
-		cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
-	fi
-}
-
-src_configure() {
-	cabal_src_configure $(use test && use_enable test tests) #395351
+	use test && cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
 }
