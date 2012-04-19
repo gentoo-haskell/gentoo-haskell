@@ -26,7 +26,10 @@ RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( =dev-haskell/hspec-0.9*
+			=dev-haskell/skein-0.1*
+		)"
 
 src_prepare() {
 	sed -e "s@crypto-api >= 0.9 && < 0.10@crypto-api >= 0.9 \&\& < 0.11@"\
