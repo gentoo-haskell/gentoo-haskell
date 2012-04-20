@@ -28,10 +28,4 @@ RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( =dev-haskell/hspec-0.9*
-			=dev-haskell/skein-0.1*
 		)"
-
-src_prepare() {
-	sed -e "s@crypto-api >= 0.9 && < 0.10@crypto-api >= 0.9 \&\& < 0.11@"\
-		-i "crypto-conduit.cabal" || die "loosen deps failed"
-}
