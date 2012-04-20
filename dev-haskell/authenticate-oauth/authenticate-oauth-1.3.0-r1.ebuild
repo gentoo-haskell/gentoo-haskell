@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		dev-haskell/blaze-builder[profile?]
 		=dev-haskell/blaze-builder-conduit-0.4*[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
-		=dev-haskell/data-default-0.3*[profile?]
+		=dev-haskell/data-default-0.4*[profile?]
 		=dev-haskell/http-conduit-1.4*[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -41,5 +41,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@RSA                           >= 1.0      && < 1.1@RSA                           >= 1.0      \&\& < 1.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	sed -e 's@data-default                  >= 0.3      && < 0.4@data-default >=0.3 \&\& <0.5@'\
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	sed -e 's@transformers                  >= 0.1      && < 0.3@transformers >=0.1 \&\& <0.4@'\
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
