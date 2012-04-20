@@ -129,3 +129,14 @@ RDEPEND="~dev-haskell/aeson-0.6.0.2[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e "s@crypto-api == 0.9@crypto-api >= 0.9 \&\& <0.11@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@transformers == 0.2.2.0@transformers >= 0.2.2 \&\& <0.3.1@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@mtl == 2.0.1.0@mtl >= 2.0.1.0 \&\& <2.2@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@tagged == 0.2.3@tagged >=0.2.3 \&\& <0.5@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+}
