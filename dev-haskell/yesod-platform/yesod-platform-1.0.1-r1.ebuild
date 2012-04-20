@@ -40,7 +40,7 @@ RDEPEND="~dev-haskell/aeson-0.6.0.2[profile?]
 		~dev-haskell/cookie-0.4.0[profile?]
 		~dev-haskell/cprng-aes-0.2.3[profile?]
 		=dev-haskell/crypto-api-0.10*[profile?]
-		~dev-haskell/crypto-conduit-0.3.1[profile?]
+		=dev-haskell/crypto-conduit-0.3*[profile?]
 		~dev-haskell/crypto-pubkey-types-0.1.1[profile?]
 		~dev-haskell/cryptocipher-0.3.0[profile?]
 		~dev-haskell/cryptohash-0.7.4[profile?]
@@ -132,6 +132,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e "s@crypto-api == 0.9@crypto-api >= 0.9 \&\& <0.11@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@crypto-conduit == 0.3.1@crypto-conduit >= 0.3 \&\& <0.4@"\
 		-i "${PN}.cabal" || die "can't loosen dep"
 	sed -e "s@transformers == 0.2.2.0@transformers >= 0.2.2 \&\& <0.3.1@"\
 		-i "${PN}.cabal" || die "can't loosen dep"
