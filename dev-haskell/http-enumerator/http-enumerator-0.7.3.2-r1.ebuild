@@ -29,7 +29,8 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		=dev-haskell/blaze-builder-enumerator-0.2*[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
-		=dev-haskell/certificate-1.1*[profile?]
+		>=dev-haskell/certificate-1.1[profile?]
+		<dev-haskell/certificate-1.3[profile?]
 		=dev-haskell/cprng-aes-0.2*[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
 		<dev-haskell/data-default-0.5[profile?]
@@ -52,3 +53,8 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@certificate           >= 1.1     && < 1.2@certificate >= 1.1 \&\& < 1.3@'\
+		-i "${S}/${PN}.cabal" || die "Could not loosed deps"
+}
