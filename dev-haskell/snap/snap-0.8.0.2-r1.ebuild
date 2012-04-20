@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="hint"
 
 RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		=dev-haskell/attoparsec-0.10*[profile?]
@@ -60,9 +60,12 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		>=dev-haskell/vector-algorithms-0.4[profile?]
 		<dev-haskell/vector-algorithms-0.6[profile?]
 		=dev-haskell/xmlhtml-0.1*[profile?]
+		hint? ( >=dev-haskell/hint-0.3.3.1[profile?]
+			<dev-haskell/hint-0.4[profile?] )
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+CABAL_CONFIGURE_FLAGS="$(cabal_flag hint)"
 
 src_prepare() {
 	sed -e 's@MonadCatchIO-transformers >= 0.2      && < 0.3@MonadCatchIO-transformers >= 0.2      \&\& < 0.4@' \
