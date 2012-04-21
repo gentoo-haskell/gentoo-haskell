@@ -94,8 +94,10 @@ RDEPEND="~dev-haskell/aeson-0.6.0.2[profile?]
 		~dev-haskell/tagged-0.4.2[profile?]
 		~dev-haskell/tagsoup-0.12.6[profile?]
 		~dev-haskell/text-0.11.2.0[profile?]
-		~dev-haskell/tls-0.9.3[profile?]
-		~dev-haskell/tls-extra-0.4.5[profile?]
+		>=dev-haskell/tls-0.9.3[profile?]
+		<dev-haskell/tls-0.9.6[profile?]
+		>=dev-haskell/tls-extra-0.4.5[profile?]
+		<dev-haskell/tls-extra-0.4.7[profile?]
 		=dev-haskell/transformers-0.3*[profile?]
 		~dev-haskell/transformers-base-0.4.1[profile?]
 		~dev-haskell/unix-compat-0.3.0.1[profile?]
@@ -140,5 +142,9 @@ src_prepare() {
 	sed -e "s@mtl == 2.0.1.0@mtl >= 2.0.1.0 \&\& <2.2@"\
 		-i "${PN}.cabal" || die "can't loosen dep"
 	sed -e "s@tagged == 0.2.3@tagged >=0.2.3 \&\& <0.5@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@tls == 0.9.3@tls >=0.9.3 \&\& <0.9.6@"\
+		-i "${PN}.cabal" || die "can't loosen dep"
+	sed -e "s@tls-extra == 0.4.5@tls-extra >=0.4.5 \&\& <0.4.7@"\
 		-i "${PN}.cabal" || die "can't loosen dep"
 }
