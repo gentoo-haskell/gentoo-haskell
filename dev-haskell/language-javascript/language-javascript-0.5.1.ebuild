@@ -35,3 +35,9 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework
 			dev-haskell/test-framework-hunit
 		)"
+
+src_prepare() {
+	# upstream forgot the tests
+	cp -pR "${FILESDIR}/${PN}-0.5.1/test" "${S}/test" \
+		|| die "Could not copy missing test source files"
+}
