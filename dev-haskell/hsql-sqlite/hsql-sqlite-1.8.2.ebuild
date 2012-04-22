@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hsql-1.8
+RDEPEND=">=dev-haskell/hsql-1.8.2
 		>=dev-lang/ghc-6.10.1
 		>=dev-db/sqlite-3.0"
 
