@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Indexed functors, monads and comonads that require extensions to Haskell98"
 HOMEPAGE="https://github.com/reinerp/indexed-extras"
@@ -20,8 +20,10 @@ IUSE=""
 
 RDEPEND="<dev-haskell/bifunctors-0.2[profile?]
 		<dev-haskell/indexed-0.2[profile?]
-		<dev-haskell/mtl-2.1[profile?]
-		<dev-haskell/pointed-2.1[profile?]
+		<dev-haskell/mtl-2.2[profile?]
+		<dev-haskell/pointed-2.2[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${P}-mtl-2.2.patch)
