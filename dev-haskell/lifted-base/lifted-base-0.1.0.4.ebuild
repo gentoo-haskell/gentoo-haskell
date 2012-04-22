@@ -35,7 +35,6 @@ PATCHES=("${FILESDIR}/${PN}-0.1.0.1-test-ghc-6.12.patch")
 src_prepare() {
 	base_src_prepare
 	sed -e 's@test-framework       >= 0.2.4 && < 0.5@test-framework       >= 0.2.4 \&\& < 0.7@' \
-		-e 's@transformers         >= 0.2   && < 0.3@transformers         >= 0.2   \&\& < 0.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
