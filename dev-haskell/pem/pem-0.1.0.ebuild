@@ -31,3 +31,11 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)"
+
+src_prepare() {
+	sed -e 's@test-framework >= 0.3.3 && < 0.6@test-framework >= 0.3.3 \&\& < 0.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	# upstream forgot the tests
+	cp -pR "${FILESDIR}/${PN}-0.1.0/Tests" "${S}/Tests" \
+		|| die "Could not copy missing test source files"
+}
