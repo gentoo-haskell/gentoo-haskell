@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/happstack-server-6[profile?]
 		<dev-haskell/happstack-server-7.1[profile?]
-		=dev-haskell/mtl-2.0*[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
 		=dev-haskell/plugins-auto-0.0*[profile?]
 		=dev-haskell/th-lift-0.5*[profile?]
 		>=dev-lang/ghc-6.12.3"
