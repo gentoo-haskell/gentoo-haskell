@@ -52,9 +52,3 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@MonadCatchIO-transformers >= 0.2.1    && < 0.3@MonadCatchIO-transformers >= 0.2.1    \&\& < 0.4@' \
-		-e 's@transformers              >= 0.2      && < 0.3@transformers              >= 0.2      \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
