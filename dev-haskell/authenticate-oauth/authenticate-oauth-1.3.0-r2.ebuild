@@ -34,7 +34,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		<dev-haskell/sha-1.6[profile?]
 		dev-haskell/time[profile?]
 		>=dev-haskell/transformers-0.1[profile?]
-		<dev-haskell/transformers-0.3[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
