@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
-CABAL_FEATURES="lib profile haddock hscolour hoogle"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit darcs haskell-cabal
 
 DESCRIPTION="Support for using Heist templates in Happstack"
@@ -19,16 +19,11 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="<dev-haskell/blaze-builder-0.4
-		=dev-haskell/happstack-server-9999
-		>=dev-haskell/heist-0.5
-		<dev-haskell/heist-0.8
-		=dev-haskell/mtl-2*
+RDEPEND="<dev-haskell/blaze-builder-0.4[profile?]
+		=dev-haskell/happstack-server-9999[profile?]
+		>=dev-haskell/heist-0.5[profile?]
+		<dev-haskell/heist-0.9[profile?]
+		=dev-haskell/mtl-2*[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@blaze-builder >= 0.2 && <0.3@blaze-builder >= 0.2 \&\& <0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen blaze-builder dependency in ${S}/${PN}.cabal"
-}
