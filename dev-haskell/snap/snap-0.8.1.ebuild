@@ -65,12 +65,5 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-CABAL_CONFIGURE_FLAGS="$(cabal_flag hint)"
 
-src_prepare() {
-	sed -e 's@MonadCatchIO-transformers >= 0.2      && < 0.3@MonadCatchIO-transformers >= 0.2      \&\& < 0.4@' \
-		-e 's@data-lens                 >= 2.0.1    && < 2.1@data-lens                 >= 2.0.1    \&\& < 2.11@' \
-		-e 's@mtl                       >  2.0      && < 2.1@mtl                       >  2.0      \&\& < 2.2@' \
-		-e 's@transformers              >= 0.2      && < 0.3@transformers              >= 0.2      \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+CABAL_CONFIGURE_FLAGS="$(cabal_flag hint)"
