@@ -13,7 +13,7 @@ DESCRIPTION="Backend for the persistent library using postgresql."
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		<dev-haskell/monad-control-0.4[profile?]
 		=dev-haskell/persistent-0.9*[profile?]
 		>=dev-haskell/postgresql-libpq-0.6.1[profile?]
-		<dev-haskell/postgresql-libpq-0.8[profile?]
+		<dev-haskell/postgresql-libpq-0.9[profile?]
 		>=dev-haskell/postgresql-simple-0.0.3[profile?]
 		<dev-haskell/postgresql-simple-0.1[profile?]
 		>=dev-haskell/text-0.7[profile?]
