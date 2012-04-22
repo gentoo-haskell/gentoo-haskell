@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="2"
+EAPI=4
 
-CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
+CABAL_FEATURES="bin lib profile hscolour haddock hoogle"
 inherit darcs haskell-cabal
 
 DESCRIPTION="The haskell application server stack + code generation"
@@ -19,11 +19,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="=dev-haskell/happstack-data-9999
-		=dev-haskell/happstack-ixset-9999
-		=dev-haskell/happstack-server-9999
-		=dev-haskell/happstack-state-9999
-		=dev-haskell/happstack-util-9999
-		>=dev-lang/ghc-6.10.1"
+RDEPEND="=dev-haskell/happstack-server-9999[profile?]
+		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
