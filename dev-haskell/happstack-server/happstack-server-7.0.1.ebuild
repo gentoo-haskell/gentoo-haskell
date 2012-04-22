@@ -44,9 +44,3 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@mtl >= 2 && < 2.1@mtl >= 2 \&\& < 2.2@' \
-		-e 's@transformers >= 0.1.3 && < 0.3@transformers >= 0.1.3 \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
