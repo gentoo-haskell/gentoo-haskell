@@ -1,0 +1,86 @@
+Picked from: http://anonscm.debian.org/darcs/pkg-haskell/experimental/ghc/patches/system-libffi
+https://bugs.gentoo.org/411925
+
+This patch could be replaced by a configure call if
+http://hackage.haskell.org/trac/ghc/ticket/5743 were fixed.
+
+Index: ghc-7.4.0.20111219/rts/package.conf.in
+===================================================================
+--- ghc-7.4.0.20111219.orig/rts/package.conf.in	2011-12-21 23:21:03.000000000 +0100
++++ ghc-7.4.0.20111219/rts/package.conf.in	2011-12-21 23:21:04.000000000 +0100
+@@ -24,8 +24,9 @@
+ hs-libraries:   "HSrts"
+ 
+ extra-libraries:
++				"ffi"
+ #ifdef HAVE_LIBM
+-                		"m"		/* for ldexp() */
++			      , "m"		/* for ldexp() */
+ #endif
+ #ifdef HAVE_LIBRT
+ 			      , "rt"
+Index: ghc-7.4.0.20111219/ghc.mk
+===================================================================
+--- ghc-7.4.0.20111219.orig/ghc.mk	2011-12-21 23:21:03.000000000 +0100
++++ ghc-7.4.0.20111219/ghc.mk	2011-12-21 23:21:04.000000000 +0100
+@@ -579,7 +579,6 @@
+    driver/ghci \
+    driver/ghc \
+    driver/haddock \
+-   libffi \
+    includes \
+    rts
+ 
+Index: ghc-7.4.0.20111219/rts/ghc.mk
+===================================================================
+--- ghc-7.4.0.20111219.orig/rts/ghc.mk	2011-12-21 19:56:29.000000000 +0100
++++ ghc-7.4.0.20111219/rts/ghc.mk	2011-12-21 23:23:52.000000000 +0100
+@@ -86,8 +86,7 @@
+ ALL_RTS_DEF_LIBNAMES 	= base ghc-prim
+ ALL_RTS_DEF_LIBS	= \
+ 	rts/dist/build/win32/libHSbase.dll.a \
+-	rts/dist/build/win32/libHSghc-prim.dll.a \
+-	libffi/build/inst/lib/libffi.dll.a
++	rts/dist/build/win32/libHSghc-prim.dll.a 
+ 
+ # -- import libs for the regular Haskell libraries
+ define make-importlib-def # args $1 = lib name
+@@ -172,12 +171,12 @@
+ # Making a shared library for the RTS.
+ ifneq "$$(findstring dyn, $1)" ""
+ ifeq "$$(HOSTPLATFORM)" "i386-unknown-mingw32"
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) rts/libs.depend rts/dist/build/libffi-5.dll
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) rts/libs.depend
+ 	"$$(RM)" $$(RM_OPTS) $$@
+ 	"$$(rts_dist_HC)" -package-name rts -shared -dynamic -dynload deploy \
+ 	  -no-auto-link-packages -Lrts/dist/build -lffi-5 `cat rts/libs.depend` $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) -o $$@
+ else
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) rts/libs.depend rts/dist/build/libffi$$(soext)
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) rts/libs.depend
+ 	"$$(RM)" $$(RM_OPTS) $$@
+ 	"$$(rts_dist_HC)" -package-name rts -shared -dynamic -dynload deploy \
+ 	  -no-auto-link-packages -Lrts/dist/build -lffi `cat rts/libs.depend` $$(rts_$1_OBJS) \
+@@ -188,9 +187,9 @@
+ endif
+ endif
+ else
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) $$(rts_ffi_objs_stamp)
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS)
+ 	"$$(RM)" $$(RM_OPTS) $$@
+-	echo $$(rts_ffi_objs) $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) | "$$(XARGS)" $$(XARGS_OPTS) "$$(AR_STAGE1)" \
++	echo $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) | "$$(XARGS)" $$(XARGS_OPTS) "$$(AR_STAGE1)" \
+ 		$$(AR_OPTS_STAGE1) $$(EXTRA_AR_ARGS_STAGE1) $$@
+ endif
+ 
+@@ -504,10 +503,8 @@
+ # installing
+ 
+ INSTALL_LIBS += $(ALL_RTS_LIBS)
+-INSTALL_LIBS += $(wildcard rts/dist/build/libffi$(soext)*)
+-INSTALL_LIBS += $(wildcard rts/dist/build/libffi-5.dll)
+ 
+-install: install_libffi_headers
++install:
+ 
+ .PHONY: install_libffi_headers
+ install_libffi_headers :
