@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A static website compiler library"
 HOMEPAGE="http://jaspervdj.be/hakyll"
@@ -20,8 +20,9 @@ IUSE=""
 
 RDEPEND="=app-text/pandoc-1.9*[profile?]
 		=dev-haskell/binary-0.5*[profile?]
-		>=dev-haskell/blaze-html-0.4[profile?]
+		>=dev-haskell/blaze-html-0.5[profile?]
 		<dev-haskell/blaze-html-0.6[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		>=dev-haskell/citeproc-hs-0.3.2[profile?]
 		<dev-haskell/citeproc-hs-0.4[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
@@ -45,8 +46,4 @@ RDEPEND="=app-text/pandoc-1.9*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-src_prepare() {
-	sed -e 's#hamlet      >= 0.10.3 \&\& < 0.11,#hamlet      >= 0.10.3 \&\& < 1.1,#' \
-		-e 's#mtl         >= 1      && < 2.1,#mtl         >= 1      \&\& < 2.2,#' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+PATCHES=("${FILESDIR}/${PN}-3.2.7.2-blaze-html-0.5.patch")
