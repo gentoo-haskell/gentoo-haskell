@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="integration testing for WAI/Yesod Applications"
@@ -19,7 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
-		=dev-haskell/blaze-html-0.4*[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		>=dev-haskell/hspec-0.9[profile?]
@@ -44,3 +46,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cp -pR "${FILESDIR}/${PN}-0.2.0.1/test" test \
+		|| die "Could not copy missing tests"
+}
