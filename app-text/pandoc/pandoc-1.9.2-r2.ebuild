@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Conversion between markup formats"
 HOMEPAGE="http://johnmacfarlane.net/pandoc"
@@ -19,8 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
-		>=dev-haskell/blaze-html-0.4.3.0[profile?]
-		<dev-haskell/blaze-html-0.5[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/citeproc-hs-0.3.4[profile?]
 		<dev-haskell/citeproc-hs-0.4[profile?]
 		>=dev-haskell/highlighting-kate-0.5.0.2[profile?]
@@ -66,9 +67,12 @@ DEPEND="${RDEPEND}
 		)
 		"
 
+PATCHES=("${FILESDIR}/${PN}-1.9.2-blaze-html-0.5.patch")
+
 src_prepare() {
 	sed -e 's@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	base_src_prepare
 }
 
 src_configure() {

@@ -1,0 +1,120 @@
+--- pandoc-1.9.2-orig/pandoc.cabal	2012-04-23 19:23:13.845785137 +1000
++++ pandoc-1.9.2/pandoc.cabal	2012-04-23 19:33:18.095372497 +1000
+@@ -185,6 +185,9 @@
+ Flag tests
+   Description:   Build test-pandoc.
+   Default:       False
++Flag blaze_html_0_5
++  Description:   Use blaze-html 0.5 and blaze-markup 0.5
++  Default:       False
+ 
+ Library
+   -- Note: the following is duplicated in all stanzas.
+@@ -192,7 +195,6 @@
+   -- BEGIN DUPLICATED SECTION
+   Build-Depends: containers >= 0.1 && < 0.5,
+                  parsec >= 3.1 && < 3.2,
+-                 blaze-html >= 0.4.3.0 && < 0.5,
+                  mtl >= 1.1 && < 2.2,
+                  network >= 2 && < 2.4,
+                  filepath >= 1.1 && < 1.4,
+@@ -216,6 +218,13 @@
+                  zlib >= 0.5 && < 0.6,
+                  highlighting-kate >= 0.5.0.2 && < 0.6,
+                  temporary >= 1.1 && < 1.2
++  if flag(blaze_html_0_5)
++    build-depends:
++                 blaze-html >= 0.5 && < 0.6,
++                 blaze-markup >= 0.5.1 && < 0.6
++  else
++    build-depends:
++                 blaze-html >= 0.4.3.0 && < 0.5
+   if impl(ghc >= 6.10)
+     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
+   else
+@@ -290,7 +299,6 @@
+   -- BEGIN DUPLICATED SECTION
+   Build-Depends: containers >= 0.1 && < 0.5,
+                  parsec >= 3.1 && < 3.2,
+-                 blaze-html >= 0.4.3.0 && < 0.5,
+                  mtl >= 1.1 && < 2.2,
+                  network >= 2 && < 2.4,
+                  filepath >= 1.1 && < 1.4,
+@@ -314,6 +322,13 @@
+                  zlib >= 0.5 && < 0.6,
+                  highlighting-kate >= 0.5.0.2 && < 0.6,
+                  temporary >= 1.1 && < 1.2
++  if flag(blaze_html_0_5)
++    build-depends:
++                 blaze-html >= 0.5 && < 0.6,
++                 blaze-markup >= 0.5.1 && < 0.6
++  else
++    build-depends:
++                 blaze-html >= 0.4.3.0 && < 0.5
+   if impl(ghc >= 6.10)
+     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
+   else
+@@ -348,7 +363,6 @@
+   -- BEGIN DUPLICATED SECTION
+   Build-Depends: containers >= 0.1 && < 0.5,
+                  parsec >= 3.1 && < 3.2,
+-                 blaze-html >= 0.4.3.0 && < 0.5,
+                  mtl >= 1.1 && < 2.2,
+                  network >= 2 && < 2.4,
+                  filepath >= 1.1 && < 1.4,
+@@ -372,6 +386,13 @@
+                  zlib >= 0.5 && < 0.6,
+                  highlighting-kate >= 0.5.0.2 && < 0.6,
+                  temporary >= 1.1 && < 1.2
++  if flag(blaze_html_0_5)
++    build-depends:
++                 blaze-html >= 0.5 && < 0.6,
++                 blaze-markup >= 0.5.1 && < 0.6
++  else
++    build-depends:
++                 blaze-html >= 0.4.3.0 && < 0.5
+   if impl(ghc >= 6.10)
+     Build-depends: base >= 4 && < 5, syb >= 0.1 && < 0.4
+   else
+--- pandoc-1.9.2-orig/src/Text/Pandoc/Writers/HTML.hs	2012-04-06 06:13:56.000000000 +1000
++++ pandoc-1.9.2/src/Text/Pandoc/Writers/HTML.hs	2012-04-23 19:41:24.393097093 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE OverloadedStrings #-}
++{-# LANGUAGE OverloadedStrings, CPP #-}
+ {-# OPTIONS_GHC -fno-warn-deprecations #-}
+ {-
+ Copyright (C) 2006-2010 John MacFarlane <jgm@berkeley.edu>
+@@ -46,7 +46,12 @@
+ import Data.String ( fromString )
+ import Data.Maybe ( catMaybes )
+ import Control.Monad.State
++#if MIN_VERSION_blaze_html(0,5,0)
++import Text.Blaze.Html hiding(contents)
++import Text.Blaze.Internal(preEscapedString)
++#else
+ import Text.Blaze
++#endif
+ import qualified Text.Blaze.Html5 as H5
+ import qualified Text.Blaze.XHtml1.Transitional as H
+ import qualified Text.Blaze.XHtml1.Transitional.Attributes as A
+--- pandoc-1.9.2-orig/src/Text/Pandoc/Templates.hs	2012-04-06 06:13:56.000000000 +1000
++++ pandoc-1.9.2/src/Text/Pandoc/Templates.hs	2012-04-23 19:38:49.149076074 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
++{-# LANGUAGE TypeSynonymInstances, FlexibleInstances, CPP #-}
+ {-
+ Copyright (C) 2009-2010 John MacFarlane <jgm@berkeley.edu>
+ 
+@@ -72,7 +72,12 @@
+ import Control.Monad (liftM, when, forM)
+ import System.FilePath
+ import Data.List (intercalate, intersperse)
++#if MIN_VERSION_blaze_html(0,5,0)
++import Text.Blaze.Html (Html)
++import Text.Blaze.Internal (preEscapedString)
++#else
+ import Text.Blaze (preEscapedString, Html)
++#endif
+ import Data.ByteString.Lazy.UTF8 (ByteString, fromString)
+ import Text.Pandoc.Shared (readDataFile)
+ import qualified Control.Exception.Extensible as E (try, IOException)
