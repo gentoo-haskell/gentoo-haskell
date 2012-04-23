@@ -24,7 +24,7 @@ RDEPEND="=dev-haskell/cairo-0.12*
 		>=dev-lang/ghc-6.10.1
 		x11-libs/gtk+
 		dev-libs/glib
-		app-text/poppler
+		app-text/poppler[cairo]
 		>=x11-libs/cairo-1.2.0
 		x11-libs/pango"
 DEPEND="${RDEPEND}
