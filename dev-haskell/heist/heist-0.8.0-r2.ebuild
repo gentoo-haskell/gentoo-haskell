@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An (x)html templating system"
 HOMEPAGE="http://snapframework.com/"
@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-haskell/blaze-builder-0.2[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
-		=dev-haskell/blaze-html-0.4*[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
 		dev-haskell/directory-tree[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2.1[profile?]
 		<dev-haskell/monadcatchio-transformers-0.4[profile?]
@@ -37,13 +37,17 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		<dev-haskell/unordered-containers-0.3[profile?]
 		=dev-haskell/vector-0.9*[profile?]
 		>=dev-haskell/xmlhtml-0.1.6[profile?]
-		<dev-haskell/xmlhtml-0.2[profile?]
+		<dev-haskell/xmlhtml-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${PN}-0.8.0-blaze-html-0.5.patch")
+
 src_prepare() {
 	sed -e 's@MonadCatchIO-transformers >= 0.2.1 && < 0.3@MonadCatchIO-transformers >= 0.2.1 \&\& < 0.4@' \
 		-e 's@mtl                       >= 2.0   && < 2.1@mtl                       >= 2.0   \&\& < 2.2@' \
+		-e 's@xmlhtml                   >= 0.1.6 && < 0.2@xmlhtml                   >= 0.1.6 \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	base_src_prepare
 }
