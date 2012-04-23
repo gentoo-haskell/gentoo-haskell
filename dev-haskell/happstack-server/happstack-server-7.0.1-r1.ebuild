@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Web related tools and services."
 HOMEPAGE="http://happstack.com"
@@ -19,8 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
-		>=dev-haskell/blaze-html-0.3[profile?]
-		<dev-haskell/blaze-html-0.5[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/hslogger-1.0.2[profile?]
 		dev-haskell/html[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -44,3 +45,5 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-7.0.1-blaze-html-0.5.patch")
