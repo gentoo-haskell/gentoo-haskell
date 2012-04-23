@@ -18,7 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/blaze-html-0.4*[profile?]
+RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		=dev-haskell/hamlet-1.0*[profile?]
 		>=dev-haskell/text-0.9[profile?]
 		<dev-haskell/text-0.12[profile?]
