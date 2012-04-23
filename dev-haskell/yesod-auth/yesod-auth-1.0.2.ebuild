@@ -19,9 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.5[profile?]
-		=dev-haskell/authenticate-1.2*[profile?]
-		>=dev-haskell/blaze-html-0.4.1.3[profile?]
-		<dev-haskell/blaze-html-0.5[profile?]
+		>=dev-haskell/authenticate-1.2.1[profile?]
+		<dev-haskell/authenticate-1.3[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		=dev-haskell/hamlet-1.0*[profile?]
 		>=dev-haskell/http-conduit-1.4.1.1[profile?]
 		<dev-haskell/http-conduit-1.5[profile?]
