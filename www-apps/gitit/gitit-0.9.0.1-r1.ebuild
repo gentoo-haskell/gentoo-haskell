@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Wiki using happstack, git or darcs, and pandoc."
 HOMEPAGE="http://gitit.net"
@@ -21,7 +21,9 @@ IUSE="+plugins"
 RDEPEND=">=app-text/pandoc-1.9.0.5[profile?]
 		<app-text/pandoc-1.10[profile?]
 		=dev-haskell/base64-bytestring-0.1*[profile?]
-		=dev-haskell/blaze-html-0.4*[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		dev-haskell/cgi[profile?]
 		>=dev-haskell/configfile-1[profile?]
 		<dev-haskell/configfile-1.2[profile?]
@@ -65,6 +67,16 @@ RDEPEND=">=app-text/pandoc-1.9.0.5[profile?]
 		plugins? ( dev-haskell/ghc-paths )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.9.0.1-blaze-html-0.5.patch")
+
+src_prepare() {
+	sed -e 's@MonadCatchIO-transformers >= 0.2.1 && < 0.3@MonadCatchIO-transformers >= 0.2.1 \&\& < 0.4@' \
+		-e 's@mtl                       >= 2.0   && < 2.1@mtl                       >= 2.0   \&\& < 2.2@' \
+		-e 's@xmlhtml                   >= 0.1.6 && < 0.2@xmlhtml                   >= 0.1.6 \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	base_src_prepare
+}
 
 src_configure() {
 	cabal_src_configure $(cabal_flag plugins)
