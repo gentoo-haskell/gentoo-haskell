@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Syntax highlighting"
 HOMEPAGE="http://github.com/jgm/highlighting-kate"
@@ -18,7 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable pcre-light"
 
-RDEPEND=">=dev-haskell/blaze-html-0.4.2[profile?] <dev-haskell/blaze-html-0.5[profile?]
+RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/parsec[profile?]
 		pcre-light? ( dev-haskell/pcre-light[profile?] )
@@ -26,6 +28,8 @@ RDEPEND=">=dev-haskell/blaze-html-0.4.2[profile?] <dev-haskell/blaze-html-0.5[pr
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-0.5.0.5-blaze-html-0.5.patch")
 
 src_configure() {
 	cabal_src_configure \
