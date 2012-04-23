@@ -59,7 +59,8 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		<dev-haskell/vector-0.10[profile?]
 		>=dev-haskell/vector-algorithms-0.4[profile?]
 		<dev-haskell/vector-algorithms-0.6[profile?]
-		=dev-haskell/xmlhtml-0.1*[profile?]
+		>=dev-haskell/xmlhtml-0.1[profile?]
+		<dev-haskell/xmlhtml-0.3[profile?]
 		hint? ( >=dev-haskell/hint-0.3.3.1[profile?]
 			<dev-haskell/hint-0.4[profile?] )
 		>=dev-lang/ghc-6.12.1"
@@ -67,3 +68,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 CABAL_CONFIGURE_FLAGS="$(cabal_flag hint)"
+
+src_prepare() {
+	sed -e 's@xmlhtml                   >= 0.1      && < 0.2@xmlhtml                   >= 0.1      \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
