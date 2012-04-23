@@ -20,8 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
-		>=dev-haskell/blaze-html-0.4.1.3[profile?]
-		<dev-haskell/blaze-html-0.5[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
+		>=dev-haskell/blaze-markup-0.5.1[profile?]
+		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
 		<dev-haskell/data-default-0.5[profile?]
 		>=dev-haskell/email-validate-0.2.6[profile?]
