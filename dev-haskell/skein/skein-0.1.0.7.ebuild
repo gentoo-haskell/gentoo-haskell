@@ -34,9 +34,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
 	cp "${FILESDIR}/runtests.hs" "${S}/tests"
-	sed -e 's@crypto-api   >= 0.6 && < 0.10@crypto-api   >= 0.6 \&\& < 0.11@' \
-		-e 's@tagged       >= 0.2 && < 0.3@tagged       >= 0.2 \&\& < 0.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
