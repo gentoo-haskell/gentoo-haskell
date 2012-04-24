@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Generalized bananas, lenses and barbed wire"
 HOMEPAGE="http://github.com/ekmett/recursion-schemes/"
@@ -20,11 +20,12 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1[profile?]
 		<dev-haskell/comonad-1.2[profile?]
-		>=dev-haskell/comonad-transformers-2.0[profile?] <dev-haskell/comonad-transformers-2.2[profile?]
-		>=dev-haskell/free-2.0[profile?] <dev-haskell/free-2.2[profile?]
-		>=dev-haskell/transformers-0.2[profile?] <dev-haskell/transformers-0.4[profile?]
+		>=dev-haskell/comonad-transformers-2.0[profile?]
+		<dev-haskell/comonad-transformers-2.2[profile?]
+		>=dev-haskell/free-2.0[profile?]
+		<dev-haskell/free-2.2[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)
