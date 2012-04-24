@@ -6,25 +6,26 @@
 
 EAPI=4
 
-CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+inherit haskell-cabal
 
-DESCRIPTION="Graphviz bindings for Haskell."
+DESCRIPTION="Bindings to Graphviz for graph visualisation."
 HOMEPAGE="http://projects.haskell.org/graphviz/"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 COMMONDEPS="=dev-haskell/colour-2.3*[profile?]
 		=dev-haskell/dlist-0.5*[profile?]
-		dev-haskell/extensible-exceptions[profile?]
 		=dev-haskell/fgl-5.4*[profile?]
-		=dev-haskell/polyparse-1.7*[profile?]
+		>=dev-haskell/polyparse-1.7[profile?]
+		<dev-haskell/polyparse-1.9[profile?]
 		dev-haskell/text[profile?]
-		>=dev-haskell/transformers-0.2[profile?] <dev-haskell/transformers-0.4[profile?]
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		dev-haskell/wl-pprint-text[profile?]
 		>=dev-lang/ghc-6.10.1"
 
@@ -36,8 +37,7 @@ DEPEND="${COMMONDEPS}
 RDEPEND="${COMMONDEPS}
 		media-gfx/graphviz"
 
-PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)
-
-src_configure() {
-	cabal_src_configure $(cabal_flag test)
+src_prepare() {
+	sed -e 's@transformers == 0.2.\*@transformers >= 0.2 \&\& <0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
