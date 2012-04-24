@@ -1,29 +1,21 @@
-Picked from: http://anonscm.debian.org/darcs/pkg-haskell/experimental/ghc/patches/system-libffi
+Make ghc use the libffi installed on the system instead of the bundled one.
+
+This patch is based on the one used by Debian and Fedora, but was
+augmented by additional lines to identify the libffi include directory
+using pkg-config, as libffi on Gentoo installs into a subdirectory of
+the system include directory.
+
+2012-04-24 Martin von Gagern
+
+References:
 https://bugs.gentoo.org/411925
+http://hackage.haskell.org/trac/ghc/ticket/5743
 
-This patch could be replaced by a configure call if
-http://hackage.haskell.org/trac/ghc/ticket/5743 were fixed.
-
-Index: ghc-7.4.0.20111219/rts/package.conf.in
+Index: ghc-7.4.1/ghc.mk
 ===================================================================
---- ghc-7.4.0.20111219.orig/rts/package.conf.in	2011-12-21 23:21:03.000000000 +0100
-+++ ghc-7.4.0.20111219/rts/package.conf.in	2011-12-21 23:21:04.000000000 +0100
-@@ -24,8 +24,9 @@
- hs-libraries:   "HSrts"
- 
- extra-libraries:
-+				"ffi"
- #ifdef HAVE_LIBM
--                		"m"		/* for ldexp() */
-+			      , "m"		/* for ldexp() */
- #endif
- #ifdef HAVE_LIBRT
- 			      , "rt"
-Index: ghc-7.4.0.20111219/ghc.mk
-===================================================================
---- ghc-7.4.0.20111219.orig/ghc.mk	2011-12-21 23:21:03.000000000 +0100
-+++ ghc-7.4.0.20111219/ghc.mk	2011-12-21 23:21:04.000000000 +0100
-@@ -579,7 +579,6 @@
+--- ghc-7.4.1.orig/ghc.mk
++++ ghc-7.4.1/ghc.mk
+@@ -579,7 +579,6 @@ BUILD_DIRS += \
     driver/ghci \
     driver/ghc \
     driver/haddock \
@@ -31,10 +23,10 @@ Index: ghc-7.4.0.20111219/ghc.mk
     includes \
     rts
  
-Index: ghc-7.4.0.20111219/rts/ghc.mk
+Index: ghc-7.4.1/rts/ghc.mk
 ===================================================================
---- ghc-7.4.0.20111219.orig/rts/ghc.mk	2011-12-21 19:56:29.000000000 +0100
-+++ ghc-7.4.0.20111219/rts/ghc.mk	2011-12-21 23:23:52.000000000 +0100
+--- ghc-7.4.1.orig/rts/ghc.mk
++++ ghc-7.4.1/rts/ghc.mk
 @@ -86,8 +86,7 @@
  ALL_RTS_DEF_LIBNAMES 	= base ghc-prim
  ALL_RTS_DEF_LIBS	= \
@@ -72,7 +64,20 @@ Index: ghc-7.4.0.20111219/rts/ghc.mk
  		$$(AR_OPTS_STAGE1) $$(EXTRA_AR_ARGS_STAGE1) $$@
  endif
  
-@@ -504,10 +503,8 @@
+@@ -403,6 +402,12 @@
+ rts/dist/build/sm/Evac_thr_CC_OPTS += -DPARALLEL_GC -Irts/sm
+ rts/dist/build/sm/Scav_thr_CC_OPTS += -DPARALLEL_GC -Irts/sm
+ 
++# Use system libffi
++libffi_include_flags:=$(shell pkg-config --cflags-only-I libffi)
++rts/Adjustor_CC_OPTS += $(libffi_include_flags)
++rts/Interpreter_CC_OPTS += $(libffi_include_flags)
++rts/sm/Storage_CC_OPTS += $(libffi_include_flags)
++
+ #-----------------------------------------------------------------------------
+ # Add PAPI library if needed
+ 
+@@ -504,10 +509,8 @@
  # installing
  
  INSTALL_LIBS += $(ALL_RTS_LIBS)
@@ -84,3 +89,31 @@ Index: ghc-7.4.0.20111219/rts/ghc.mk
  
  .PHONY: install_libffi_headers
  install_libffi_headers :
+Index: ghc-7.4.1/rts/package.conf.in
+===================================================================
+--- ghc-7.4.1.orig/rts/package.conf.in
++++ ghc-7.4.1/rts/package.conf.in
+@@ -24,8 +24,9 @@
+ hs-libraries:   "HSrts"
+ 
+ extra-libraries:
++				"ffi"
+ #ifdef HAVE_LIBM
+-                		"m"		/* for ldexp() */
++			      , "m"		/* for ldexp() */
+ #endif
+ #ifdef HAVE_LIBRT
+ 			      , "rt"
+Index: ghc-7.4.1/compiler/ghc.mk
+===================================================================
+--- ghc-7.4.1.orig/compiler/ghc.mk
++++ ghc-7.4.1/compiler/ghc.mk
+@@ -260,6 +260,8 @@
+ 
+ compiler_CPP_OPTS += -I$(GHC_INCLUDE_DIR)
+ compiler_CPP_OPTS += ${GhcCppOpts}
++libffi_include_flags := $(shell pkg-config --cflags-only-I libffi)
++compiler/ghci/LibFFI_HSC2HS_OPTS += $(addprefix --cflag=,$(libffi_include_flags))
+ 
+ $(PRIMOPS_TXT) compiler/parser/Parser.y: %: %.pp compiler/stage1/$(PLATFORM_H)
+ 	$(CPP) $(RAWCPP_FLAGS) -P $(compiler_CPP_OPTS) -x c $< | grep -v '^#pragma GCC' > $@
