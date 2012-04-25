@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1[profile?]
 		<dev-haskell/base64-bytestring-0.2[profile?]
 		=dev-haskell/cereal-0.3*[profile?]
 		>=dev-haskell/cprng-aes-0.2[profile?]
-		>=dev-haskell/crypto-api-0.6.4[profile?]
+		>=dev-haskell/crypto-api-0.8[profile?]
 		<dev-haskell/crypto-api-0.11[profile?]
 		>=dev-haskell/cryptocipher-0.2.5[profile?]
 		>=dev-haskell/entropy-0.2.1[profile?]
@@ -31,11 +31,17 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( =dev-haskell/hspec-0.9*
-			dev-haskell/hunit
-			dev-haskell/quickcheck:2
+		test? ( >=dev-haskell/hspec-0.6[profile?]
+			<dev-haskell/hspec-1.1[profile?]
+			dev-haskell/hunit[profile?]
+			dev-haskell/quickcheck:2[profile?]
 		)
 		"
+
+src_prepare() {
+	sed -e 's@hspec               >= 0.6        && < 0.10@hspec               >= 0.6        \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
