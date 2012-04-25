@@ -40,8 +40,13 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/hspec-0.8
-			<dev-haskell/hspec-0.10
-			dev-haskell/hunit
-			dev-haskell/wai-test
+		test? ( >=dev-haskell/hspec-0.8[profile?]
+			<dev-haskell/hspec-1.1[profile?]
+			dev-haskell/hunit[profile?]
+			dev-haskell/wai-test[profile?]
 		)"
+
+src_prepare() {
+	sed -e 's@hspec >= 0.8 && < 0.10@hspec >= 0.8 \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
