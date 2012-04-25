@@ -26,8 +26,3 @@ RDEPEND=">=dev-haskell/parsec-2.1.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-src_prepare() {
-	sed -e 's@time       >= 1.0   && < 1.3@time       >= 1.0   \&\& < 1.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
