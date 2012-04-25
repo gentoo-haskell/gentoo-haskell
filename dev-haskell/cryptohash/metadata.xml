@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,
+		with performance close to the fastest implementations available in others languages.
+		
+		The implementations are made in C with a haskell FFI wrapper that hide the C implementation.
+	</longdescription>
+</pkgmetadata>
