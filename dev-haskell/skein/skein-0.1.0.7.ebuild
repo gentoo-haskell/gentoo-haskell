@@ -27,9 +27,14 @@ RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? (  >=dev-haskell/cabal-1.10
-				=dev-haskell/hspec-0.9*[profile?]
+				<=dev-haskell/hspec-1.1[profile?]
 				dev-haskell/transformers[profile?]
 		)"
+
+src_prepare() {
+	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
