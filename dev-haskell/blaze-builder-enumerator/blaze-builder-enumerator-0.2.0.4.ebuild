@@ -21,13 +21,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		>=dev-haskell/enumerator-0.4.3.1[profile?]
-		>=dev-haskell/transformers-0.2
-		<dev-haskell/transformers-0.4
+		>=dev-haskell/transformers-0.2[profile?]
+		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@transformers  >= 0.2     && < 0.3@transformers  >= 0.2     \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
