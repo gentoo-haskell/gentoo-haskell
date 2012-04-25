@@ -28,9 +28,14 @@ RDEPEND=">=dev-haskell/parsec-2[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/hunit
-			<dev-haskell/hspec-0.10
+		test? ( dev-haskell/hunit[profile?]
+			<dev-haskell/hspec-1.1[profile?]
 		)"
+
+src_prepare() {
+	sed -e 's@hspec            >= 0.8     && < 0.10@hspec            >= 0.8     \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 #src_prepare() {
 #	cp -pR "${FILESDIR}/${P}/test" "${S}/" \
