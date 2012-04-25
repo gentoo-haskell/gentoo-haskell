@@ -27,5 +27,12 @@ RDEPEND="=dev-haskell/cereal-0.3*[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( =dev-haskell/hspec-0.9*
+		test? (
+			>=dev-haskell/hspec-0.9
+			<dev-haskell/hspec-1.1
 		)"
+
+src_prepare() {
+	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
