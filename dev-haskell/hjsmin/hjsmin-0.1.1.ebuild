@@ -31,5 +31,5 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 			=dev-haskell/quickcheck-2*
 			dev-haskell/test-framework
-			dev-haskell/test-framework-hunit 
+			dev-haskell/test-framework-hunit
 		)"
