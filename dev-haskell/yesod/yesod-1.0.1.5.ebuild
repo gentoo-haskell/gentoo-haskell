@@ -22,8 +22,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
-		>=dev-haskell/blaze-markup-0.5.1[profile?]
-		<dev-haskell/blaze-markup-0.6[profile?]
 		dev-haskell/cabal[profile?]
 		>=dev-haskell/fast-logger-0.0.2[profile?]
 		<dev-haskell/fast-logger-0.1[profile?]
@@ -51,6 +49,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		=dev-haskell/yesod-form-1.0*[profile?]
 		=dev-haskell/yesod-json-1.0*[profile?]
 		=dev-haskell/yesod-persistent-1.0*[profile?]
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
