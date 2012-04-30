@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		dev-haskell/attoparsec
-		=dev-haskell/blaze-html-0.4*
+		=dev-haskell/blaze-html-0.5*
 		>=dev-haskell/cabal-1.5
 		dev-haskell/haxml:1.22
 		>=dev-haskell/haxr-3000.2.1 <dev-haskell/haxr-3000.9
