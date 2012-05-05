@@ -15,15 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-# tests fail to build with hspec 1.0:
-# Yesod/Test.hs:93:56:
-#     Expecting one more argument to `Core.Spec'
-#     In the type `[Core.Spec]'
-#     In the definition of data constructor `SpecsData'
-#     In the data type declaration for `SpecsData'
-# Same error on hackage:
-# http://hackage.haskell.org/packages/archive/yesod-test/0.2.0.2/logs/failure/ghc-7.4
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
@@ -32,8 +24,7 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
-		>=dev-haskell/hspec-0.9[profile?]
-		<dev-haskell/hspec-1.1[profile?]
+		=dev-haskell/hspec-1.0*[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/hunit-1.2*[profile?]
 		>=dev-haskell/hxt-9.1.6[profile?]
@@ -51,13 +42,11 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		=dev-haskell/xml-types-0.3*[profile?]
 		>=dev-haskell/xml2html-0.1.2[profile?]
 		<dev-haskell/xml2html-0.2[profile?]
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
-	sed -e 's@hspec >= 0.9 && < 0.10@hspec >= 0.9 \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	# cp -pR "${FILESDIR}/${PN}-0.2.0.1/test" test \
-	# 	|| die "Could not copy missing tests"
+	cp -pR "${FILESDIR}/${PN}-0.2.0.5/test" test \
+		|| die "Could not copy missing tests"
 }
