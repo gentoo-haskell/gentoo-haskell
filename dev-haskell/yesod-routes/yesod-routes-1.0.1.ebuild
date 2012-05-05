@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Efficient routing for Yesod."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -28,11 +28,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
 			dev-haskell/hunit[profile?]
-			=dev-haskell/hspec-0.9*[profile?]
+			>=dev-haskell/hspec-0.6[profile?]
+			<dev-haskell/hspec-1.1[profile?]
 		)
 		"
 
+PATCHES=("${FILESDIR}/${PN}-1.0.1-hspec-1.0.patch")
+
 src_prepare() {
+	base_src_prepare
 	# upstream forgot to include the tests
 	cp -pR "${FILESDIR}/${PN}-1.0.0/test" "${S}/test" \
 		|| die "Could not copy missing tests"
