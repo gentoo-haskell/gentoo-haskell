@@ -30,8 +30,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.9.2
 		dev-haskell/happy
-		test? ( dev-haskell/hunit
-			=dev-haskell/quickcheck-2*
-			dev-haskell/test-framework
-			dev-haskell/test-framework-hunit
+		test? ( dev-haskell/hunit[profile?]
+			=dev-haskell/quickcheck-2*[profile?]
+			dev-haskell/test-framework[profile?]
+			dev-haskell/test-framework-hunit[profile?]
 		)"
