@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 # yesod-core 1.0.1.1 tests fail to compile with hspec 1.0'
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
