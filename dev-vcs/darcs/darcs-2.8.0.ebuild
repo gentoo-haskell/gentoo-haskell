@@ -65,6 +65,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.8.0-mtl-2.1.patch"
+
+	rm "${S}/tests/add_permissions.sh" || die "Could not rm add_permissions.sh"
+	rm "${S}/tests/send-output-v1.sh" || die "Could not rm send-output-v1.sh"
+	rm "${S}/tests/send-output-v2.sh" || die "Could not rm send-output-v2.sh"
+	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
 }
 
 src_configure() {
@@ -96,24 +101,15 @@ src_configure() {
 src_test() {
 	# run cabal test from haskell-cabal
 	haskell-cabal_src_test || die "cabal test failed"
-
-	# run the unit tests (not part of cabal test for some reason...)
-	# breaks the cabal abstraction a bit...
-	"${S}/dist/build/unit/unit" || die "unit tests failed"
 }
 
 src_install() {
 	cabal_src_install
 	newbashcomp "${S}/contrib/darcs_completion" "${PN}"
 
-	rm "${ED}/usr/bin/unit" 2> /dev/null
-
 	# fixup perms in such an an awkward way
 	mv "${ED}/usr/share/man/man1/darcs.1" "${S}/darcs.1" || die "darcs.1 not found"
 	doman "${S}/darcs.1" || die "failed to register darcs.1 as a manpage"
-
-	# if tests were enabled, make sure the unit test driver is deleted
-	rm -rf "${ED}/usr/bin/unit"
 }
 
 pkg_postinst() {
