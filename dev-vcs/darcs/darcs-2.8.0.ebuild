@@ -53,7 +53,11 @@ DEPEND="${RDEPEND}
 				dev-tex/latex2html[gif]
 			)
 		)
-		test? ( dev-haskell/test-framework[profile?]
+		test? ( >=dev-haskell/cmdlib-0.2.1[profile?]
+				<dev-haskell/cmdlib-0.4[profile?]
+				>=dev-haskell/shellish-0.1.3[profile?]
+				<dev-haskell/shellish-0.2[profile?]
+				dev-haskell/test-framework[profile?]
 				dev-haskell/test-framework-hunit[profile?]
 				dev-haskell/test-framework-quickcheck2[profile?]
 		)
