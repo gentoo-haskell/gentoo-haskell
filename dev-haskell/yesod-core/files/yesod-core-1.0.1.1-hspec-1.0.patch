@@ -1,0 +1,292 @@
+--- yesod-core-1.0.1.1-orig/yesod-core.cabal	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/yesod-core.cabal	2012-05-05 11:15:47.402115763 +1000
+@@ -134,7 +134,7 @@
+         build-depends:   base                      >= 4        && < 4.3
+         main-is:         test.hs
+     cpp-options:   -DTEST
+-    build-depends: hspec >= 0.8 && < 0.10
++    build-depends: hspec >= 1.0 && < 1.1
+                   ,wai-test
+                   ,wai
+                   ,yesod-core
+--- yesod-core-1.0.1.1-orig/test/test.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/test.hs	2012-05-05 13:51:13.917820069 +1000
+@@ -2,4 +2,4 @@
+ import qualified YesodCoreTest
+ 
+ main :: IO ()
+-main = hspecX $ descriptions $ YesodCoreTest.specs
++main = hspecX $ YesodCoreTest.specs
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest.hs	2012-04-23 18:13:51.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest.hs	2012-05-05 13:50:43.725028386 +1000
+@@ -1,5 +1,6 @@
+ module YesodCoreTest (specs) where 
+ 
++import qualified Test.Hspec.Core as Core
+ import YesodCoreTest.CleanPath
+ import YesodCoreTest.Exceptions
+ import YesodCoreTest.Widget
+@@ -15,7 +16,7 @@
+ 
+ import Test.Hspec
+ 
+-specs :: [Specs]
++specs :: [Spec Core.AnyExample]
+ specs = 
+     [ cleanPathTest
+     , exceptionsTest
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/CleanPath.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/CleanPath.hs	2012-05-05 13:49:14.544689503 +1000
+@@ -4,6 +4,7 @@
+ module YesodCoreTest.CleanPath (cleanPathTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit()
+ 
+ import Yesod.Core hiding (Request)
+@@ -62,7 +63,7 @@
+ getBarR = return $ RepPlain "bar"
+ getPlainR = return $ RepPlain "plain"
+ 
+-cleanPathTest :: [Spec]
++cleanPathTest :: Spec Core.AnyExample
+ cleanPathTest =
+   describe "Test.CleanPath"
+     [ it "remove trailing slash" removeTrailingSlash
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Exceptions.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Exceptions.hs	2012-05-05 13:48:59.402292303 +1000
+@@ -4,6 +4,7 @@
+ module YesodCoreTest.Exceptions (exceptionsTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ 
+ import Yesod.Core hiding (Request)
+@@ -30,7 +31,7 @@
+     setHeader "foo" "bar"
+     redirectWith status301 RootR
+ 
+-exceptionsTest :: [Spec]
++exceptionsTest :: Spec Core.AnyExample
+ exceptionsTest = describe "Test.Exceptions"
+     [ it "500" case500
+     , it "redirect keeps headers" caseRedirect
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Widget.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Widget.hs	2012-05-05 13:48:41.144813353 +1000
+@@ -4,6 +4,7 @@
+ module YesodCoreTest.Widget (widgetTest) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ 
+ import Yesod.Core hiding (Request)
+@@ -77,7 +78,7 @@
+   where
+     someHtml = [shamlet|somehtml|]
+ 
+-widgetTest :: [Spec]
++widgetTest :: Spec Core.AnyExample
+ widgetTest = describe "Test.Widget"
+     [ it "addJuliusBody" case_addJuliusBody
+     , it "whamlet" case_whamlet
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Media.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Media.hs	2012-05-05 13:48:19.049233675 +1000
+@@ -5,6 +5,7 @@
+ module YesodCoreTest.Media (mediaTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ import Yesod.Core hiding (Request)
+ import Network.Wai
+@@ -49,7 +50,7 @@
+     assertStatus 200 res
+     flip assertBody res "<!DOCTYPE html>\n<html><head><title></title><link rel=\"stylesheet\" href=\"all.css\"><link rel=\"stylesheet\" media=\"screen\" href=\"screen.css\"></head><body></body></html>"
+ 
+-mediaTest :: [Spec]
++mediaTest :: Spec Core.AnyExample
+ mediaTest = describe "Test.Media"
+     [ it "media" caseMedia
+     , it "media link" caseMediaLink
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Links.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Links.hs	2012-05-05 13:48:02.138790000 +1000
+@@ -4,6 +4,7 @@
+ module YesodCoreTest.Links (linksTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ 
+ import Yesod.Core hiding (Request)
+@@ -20,7 +21,7 @@
+ getRootR :: Handler RepHtml
+ getRootR = defaultLayout $ toWidget [hamlet|<a href=@{RootR}>|]
+ 
+-linksTest :: [Spec]
++linksTest :: Spec Core.AnyExample
+ linksTest = describe "Test.Links"
+     [ it "linkToHome" case_linkToHome
+     ]
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/NoOverloadedStrings.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/NoOverloadedStrings.hs	2012-05-05 13:47:28.378904167 +1000
+@@ -3,6 +3,7 @@
+ module YesodCoreTest.NoOverloadedStrings (noOverloadedTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ 
+ import Yesod.Core hiding (Request)
+@@ -44,7 +45,7 @@
+     res <- request defaultRequest
+     assertBody mempty res
+ 
+-noOverloadedTest :: [Spec]
++noOverloadedTest :: Spec Core.AnyExample
+ noOverloadedTest = describe "Test.NoOverloadedStrings"
+     [ it "sanity" case_sanity
+     ]
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/InternalRequest.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/InternalRequest.hs	2012-05-05 13:46:59.562147948 +1000
+@@ -9,8 +9,9 @@
+ import Yesod.Internal.TestApi (randomString, parseWaiRequest')
+ import Yesod.Request (Request (..))
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ 
+-randomStringSpecs :: [Spec]
++randomStringSpecs :: Spec Core.AnyExample
+ randomStringSpecs = describe "Yesod.Internal.Request.randomString"
+   [ it "looks reasonably random" looksRandom
+   , it "does not repeat itself" $ noRepeat 10 100
+@@ -30,7 +31,7 @@
+ g = error "test/YesodCoreTest/InternalRequest.g"
+ 
+ 
+-tokenSpecs :: [Spec]
++tokenSpecs :: Spec Core.AnyExample
+ tokenSpecs = describe "Yesod.Internal.Request.parseWaiRequest (reqToken)"
+   [ it "is Nothing if sessions are disabled" noDisabledToken
+   , it "ignores pre-existing token if sessions are disabled" ignoreDisabledToken
+@@ -55,7 +56,7 @@
+   r = parseWaiRequest' defaultRequest [("_TOKEN", "old")] True g
+ 
+ 
+-langSpecs :: [Spec]
++langSpecs :: Spec Core.AnyExample
+ langSpecs = describe "Yesod.Internal.Request.parseWaiRequest (reqLangs)"
+   [ it "respects Accept-Language" respectAcceptLangs
+   , it "respects sessions" respectSessionLang
+@@ -93,8 +94,9 @@
+         } [("_LANG", "en-SESSION")] False g
+ 
+ 
+-internalRequestTest :: [Spec]
+-internalRequestTest = descriptions [ randomStringSpecs
+-                                   , tokenSpecs
+-                                   , langSpecs
+-                                   ]
++internalRequestTest :: Spec Core.AnyExample
++internalRequestTest = describe "Test.InternalRequestTest" 
++    [ randomStringSpecs
++    , tokenSpecs
++    , langSpecs
++    ]
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/ErrorHandling.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/ErrorHandling.hs	2012-05-05 13:42:11.739651734 +1000
+@@ -5,6 +5,7 @@
+     ) where
+ import Yesod.Core
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit()
+ import Network.Wai
+ import Network.Wai.Test
+@@ -52,7 +53,7 @@
+    _ <- error $ show x
+    getHomeR
+ 
+-errorHandlingTest :: [Spec]
++errorHandlingTest :: Spec Core.AnyExample
+ errorHandlingTest = describe "Test.ErrorHandling"
+     [ it "says not found" caseNotFound
+     , it "says 'There was an error' before runRequestBody" caseBefore
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Cache.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Cache.hs	2012-05-05 13:41:49.749083905 +1000
+@@ -4,6 +4,7 @@
+ module YesodCoreTest.Cache (cacheTest, Widget) where
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit()
+ 
+ import Network.Wai
+@@ -35,7 +36,7 @@
+     Nothing <- cacheLookup key
+     return ()
+ 
+-cacheTest :: [Spec]
++cacheTest :: Spec Core.AnyExample
+ cacheTest =
+   describe "Test.Cache"
+     [ it "works" works
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/WaiSubsite.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/WaiSubsite.hs	2012-05-05 13:41:04.991928257 +1000
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE QuasiQuotes, TemplateHaskell, TypeFamilies, MultiParamTypeClasses, OverloadedStrings #-}
+ module YesodCoreTest.WaiSubsite (specs, Widget) where
+ 
++import qualified Test.Hspec.Core as Core
+ import YesodCoreTest.YesodTest
+ import Yesod.Core
+ import qualified Network.HTTP.Types as H
+@@ -25,7 +26,7 @@
+ getRootR :: Handler ()
+ getRootR = return ()
+ 
+-specs :: [Spec]
++specs :: Spec Core.AnyExample
+ specs = describe "WaiSubsite" [
+     it "root" $ app $ do
+       res <- request defaultRequest { pathInfo = [] }
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/Redirect.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/Redirect.hs	2012-05-05 13:40:37.010205752 +1000
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE QuasiQuotes, TemplateHaskell, TypeFamilies, MultiParamTypeClasses, OverloadedStrings #-}
+ module YesodCoreTest.Redirect (specs, Widget) where
+ 
++import qualified Test.Hspec.Core as Core
+ import YesodCoreTest.YesodTest
+ import Yesod.Handler (redirectWith)
+ import qualified Network.HTTP.Types as H
+@@ -26,7 +27,7 @@
+ getR307 = redirectWith H.status307 RootR
+ getRRegular = redirect RootR
+ 
+-specs :: [Spec]
++specs :: Spec Core.AnyExample
+ specs = describe "Redirect" [
+     it "301 redirect" $ app $ do
+       res <- request defaultRequest { pathInfo = ["r301"] }
+--- yesod-core-1.0.1.1-orig/test/YesodCoreTest/JsLoader.hs	2012-04-23 18:13:52.000000000 +1000
++++ yesod-core-1.0.1.1/test/YesodCoreTest/JsLoader.hs	2012-05-05 13:36:20.087571965 +1000
+@@ -7,6 +7,7 @@
+ import YesodCoreTest.JsLoaderSites.Bottom (B(..))
+ 
+ import Test.Hspec
++import qualified Test.Hspec.Core as Core
+ import Test.Hspec.HUnit ()
+ 
+ import Yesod.Core hiding (Request)
+@@ -22,7 +23,7 @@
+ getHeadR :: Handler RepHtml
+ getHeadR = defaultLayout $ addScriptRemote "load.js"
+ 
+-specs :: [Spec]
++specs :: Spec Core.AnyExample
+ specs = describe "Test.JsLoader" [
+     it "link from head" $ runner H $ do
+       res <- request defaultRequest
