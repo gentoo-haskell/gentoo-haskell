@@ -20,7 +20,7 @@ IUSE="+default-term pass-focus-click"
 
 RDEPEND="dev-haskell/mtl[profile?]
 		=dev-haskell/utf8-string-0.3*[profile?]
-		=dev-haskell/x11-1.5*[profile?]
+		>=dev-haskell/x11-1.5[profile?] <dev-haskell/x11-1.7[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
@@ -35,6 +35,7 @@ src_prepare() {
 	if use pass-focus-click ; then
 		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
 	fi
+	epatch "${FILESDIR}"/${P}-x11-1.6.patch
 
 	# allow user patches
 	epatch_user
