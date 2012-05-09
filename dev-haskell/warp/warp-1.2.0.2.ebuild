@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A fast, light-weight web server for WAI applications."
@@ -17,7 +17,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-RESTRICT="test"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
@@ -36,8 +35,5 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		=dev-haskell/wai-1.2*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
-
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
-}
+		>=dev-haskell/cabal-1.8
+		test? ( dev-haskell/conduit dev-haskell/hspec dev-haskell/http-types dev-haskell/hunit dev-haskell/network dev-haskell/transformers dev-haskell/wai )"
