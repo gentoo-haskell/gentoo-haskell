@@ -30,6 +30,7 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		>=dev-haskell/network-2.2.1.5[profile?]
 		<dev-haskell/network-2.4[profile?]
+		=dev-haskell/resourcet-0.3*[profile?]
 		>=dev-haskell/text-0.7[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/time-1.1.4[profile?]
@@ -40,13 +41,4 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/hspec-0.8[profile?]
-			<dev-haskell/hspec-1.1[profile?]
-			dev-haskell/hunit[profile?]
-			dev-haskell/wai-test[profile?]
-		)"
-
-src_prepare() {
-	sed -e 's@hspec >= 0.8 && < 0.10@hspec >= 0.8 \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+		test? ( >=dev-haskell/blaze-builder-0.2.1.4 <dev-haskell/blaze-builder-0.4 dev-haskell/conduit dev-haskell/data-default >=dev-haskell/hspec-0.8 <dev-haskell/hspec-1.2 dev-haskell/http-types dev-haskell/hunit dev-haskell/text dev-haskell/transformers dev-haskell/wai dev-haskell/wai-test dev-haskell/zlib dev-haskell/zlib-bindings )"
