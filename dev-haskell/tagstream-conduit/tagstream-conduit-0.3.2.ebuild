@@ -24,4 +24,9 @@ RDEPEND="dev-haskell/attoparsec[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+		>=dev-haskell/cabal-1.8
+		test? ( >=dev-haskell/conduit-0.0.2
+			dev-haskell/hspec
+			dev-haskell/hunit
+			dev-haskell/quickcheck
+		)"
