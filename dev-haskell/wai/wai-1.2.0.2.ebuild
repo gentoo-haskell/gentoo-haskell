@@ -13,7 +13,7 @@ DESCRIPTION="Web Application Interface."
 HOMEPAGE="https://github.com/yesodweb/wai"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -28,7 +28,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/transformers-0.2.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
-		=dev-haskell/vault-0.1*[profile?]
+		>=dev-haskell/vault-0.1[profile?]
+		<dev-haskell/vault-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
