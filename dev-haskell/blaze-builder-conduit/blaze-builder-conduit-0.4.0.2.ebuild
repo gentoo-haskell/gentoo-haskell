@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Convert streams of builders to streams of bytestrings."
@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
@@ -26,11 +26,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/hspec-0.9.1
+		test? ( dev-haskell/hspec
 			dev-haskell/hunit
-			dev-haskell/quickcheck )"
-
-src_configure() {
-	cabal_src_configure $(use test && use_enable test tests) #395351
-}
+			dev-haskell/quickcheck
+		)
+		>=dev-haskell/cabal-1.8"
