@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="WAI application for static serving"
@@ -16,14 +16,12 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
-		=dev-haskell/blaze-html-0.5*[profile?]
-		>=dev-haskell/blaze-markup-0.5.1[profile?]
-		<dev-haskell/blaze-markup-0.6[profile?]
+		=dev-haskell/blaze-html-0.4*[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
 		>=dev-haskell/file-embed-0.0.3.1[profile?]
 		<dev-haskell/file-embed-0.1[profile?]
@@ -39,18 +37,4 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/cabal-1.10
-			dev-haskell/hunit[profile?]
-			dev-haskell/wai-test[profile?]
-			<=dev-haskell/hspec-1.1[profile?]
-		)
-		"
-
-src_prepare() {
-	sed -e 's@hspec >= 0.8 && < 0.10@hspec >= 0.8 \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
-
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
-}
+		test? ( >=dev-haskell/hspec-0.8 <dev-haskell/hspec-1.2 dev-haskell/http-date dev-haskell/http-types dev-haskell/hunit dev-haskell/network dev-haskell/text >=dev-haskell/time-1.1.4 dev-haskell/transformers >=dev-haskell/unix-compat-0.2 dev-haskell/wai dev-haskell/wai-test )"
