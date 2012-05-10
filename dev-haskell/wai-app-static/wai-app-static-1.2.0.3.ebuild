@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
-		=dev-haskell/blaze-html-0.4*[profile?]
+		=dev-haskell/blaze-html-0.5*[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
 		>=dev-haskell/file-embed-0.0.3.1[profile?]
 		<dev-haskell/file-embed-0.1[profile?]
@@ -36,5 +36,10 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		=dev-haskell/wai-1.2*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/hspec-0.8 <dev-haskell/hspec-1.2 dev-haskell/http-date dev-haskell/http-types dev-haskell/hunit dev-haskell/network dev-haskell/text >=dev-haskell/time-1.1.4 dev-haskell/transformers >=dev-haskell/unix-compat-0.2 dev-haskell/wai dev-haskell/wai-test )"
+		test? ( >=dev-haskell/hspec-0.8
+			<dev-haskell/hspec-1.2
+			dev-haskell/hunit
+			dev-haskell/network
+			dev-haskell/wai-test
+		)
+		>=dev-haskell/cabal-1.8"
