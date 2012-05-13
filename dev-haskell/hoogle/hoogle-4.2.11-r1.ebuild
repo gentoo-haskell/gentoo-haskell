@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-haskell/blaze-builder-0.2[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		>=dev-haskell/cabal-1.8[profile?]
-		<dev-haskell/cabal-1.15[profile?]
+		<dev-haskell/cabal-1.16[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
 		<dev-haskell/case-insensitive-0.5[profile?]
 		>=dev-haskell/cmdargs-0.7[profile?]
@@ -56,6 +56,8 @@ src_prepare() {
 		sed -e "s@\(return $ x ++ \)\(\[d </> \"databases\"\]\)@\1[\"${ROOT}var/lib/hoogle/databases/\"\] ++ \2@" \
 			-i "${S}/src/CmdLine/All.hs" || die "Could not add localdb support to hoogle"
 	fi
+	sed -e 's@Cabal >= 1.8 && < 1.15@Cabal >= 1.8 \&\& < 1.16@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_install() {
