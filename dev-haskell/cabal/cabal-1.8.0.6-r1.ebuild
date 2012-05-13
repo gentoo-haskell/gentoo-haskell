@@ -22,7 +22,7 @@ IUSE="doc"
 # lowest possible ghc version
 DEPEND=">=dev-lang/ghc-6.6.1 <dev-lang/ghc-7"
 RDEPEND="${DEPEND}
-		dev-util/pkgconfig"
+		virtual/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
 # repoman's RDEPEND.suspect QA does not apply here
 
