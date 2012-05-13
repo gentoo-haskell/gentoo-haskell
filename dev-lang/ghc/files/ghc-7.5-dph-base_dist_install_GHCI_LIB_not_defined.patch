@@ -1,0 +1,11 @@
+--- ghc-7.5.20120504-orig/libraries/dph/ghc.mk	2012-05-06 16:45:34.981277235 +1000
++++ ghc-7.5.20120504/libraries/dph/ghc.mk	2012-05-06 16:47:14.518026334 +1000
+@@ -113,7 +113,7 @@
+ 	$$(libraries/dph/dph-lifted-base_dist-install_GHCI_LIB)
+ 
+ ifeq "$$(libraries/dph/dph-base_dist-install_GHCI_LIB)" ""
+-$$(error dph_th_deps($1): libraries/dph/dph-base_dist-install_GHCI_LIB not defined!)
++$$(warning dph_th_deps($1): libraries/dph/dph-base_dist-install_GHCI_LIB not defined!)
+ endif
+ 
+ endef
