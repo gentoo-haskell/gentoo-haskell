@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/semigroups-0.8.2[profile?]
+RDEPEND=">=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
