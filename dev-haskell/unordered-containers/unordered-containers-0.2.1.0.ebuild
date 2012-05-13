@@ -32,7 +32,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@test-framework >= 0.3.3 && < 0.6@test-framework >= 0.3.3 \&\& < 0.7@' \
-	    -e 's@test-framework >= 0.3.3 && < 0.6@test-framework >= 0.3.3 \&\& < 0.7@' \
+		-e 's@test-framework >= 0.3.3 && < 0.6@test-framework >= 0.3.3 \&\& < 0.7@' \
+		-e 's@containers >= 0.4.1 && < 0.5@containers >= 0.4.1 \&\& < 0.6@g' \
+		-e 's@containers >= 0.4.2 && < 0.5@containers >= 0.4.2 \&\& < 0.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
 }
 
