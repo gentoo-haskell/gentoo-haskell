@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
-CABAL_FEATURES="lib profile haddock hscolour hoogle"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit git-2 haskell-cabal
 
 DESCRIPTION="Cloud Haskell. Fault-tolerant distributed computing framework"
@@ -16,13 +16,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/binary
-		dev-haskell/mtl
-		dev-haskell/network
-		dev-haskell/puremd5
-		dev-haskell/stm
-		dev-haskell/time
-		dev-haskell/utf8-string
+RDEPEND="dev-haskell/binary[profile?]
+		dev-haskell/mtl[profile?]
+		dev-haskell/network[profile?]
+		dev-haskell/puremd5[profile?]
+		dev-haskell/stm[profile?]
+		dev-haskell/syb[profile?]
+		dev-haskell/time[profile?]
+		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
