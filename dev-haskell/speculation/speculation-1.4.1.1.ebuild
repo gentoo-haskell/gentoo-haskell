@@ -17,7 +17,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-RESTRICT="test"
 
 RDEPEND=">=dev-haskell/stm-2.1[profile?]
 		<dev-haskell/stm-2.4[profile?]
