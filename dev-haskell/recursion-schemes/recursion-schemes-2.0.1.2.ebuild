@@ -18,11 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-1.1.1[profile?]
+RDEPEND=">=dev-haskell/comonad-1.1.1.5[profile?]
 		<dev-haskell/comonad-1.2[profile?]
-		>=dev-haskell/comonad-transformers-2.0[profile?]
+		>=dev-haskell/comonad-transformers-2.1.1.1[profile?]
 		<dev-haskell/comonad-transformers-2.2[profile?]
-		>=dev-haskell/free-2.0[profile?]
+		>=dev-haskell/free-2.1.1[profile?]
 		<dev-haskell/free-2.2[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
