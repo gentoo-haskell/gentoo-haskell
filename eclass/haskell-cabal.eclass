@@ -377,7 +377,7 @@ cabal-pkg() {
 # You can also put a space separated list, eg CABAL_CORE_LIB_GHC_PV="6.6 6.6.1".
 cabal-is-dummy-lib() {
 	for version in ${CABAL_CORE_LIB_GHC_PV[*]}; do
-		[[ "$(ghc-version)" == "$version" ]] && return 0
+		[[ "$(ghc-version)" == ${version} ]] && return 0
 	done
 	return 1
 }
