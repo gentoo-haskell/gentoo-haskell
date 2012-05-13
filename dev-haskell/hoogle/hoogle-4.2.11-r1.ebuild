@@ -51,13 +51,14 @@ RDEPEND="dev-haskell/binary[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+PATCHES=("${FILESDIR}/${PN}-4.2.11-ghc-7.5.patch")
+
 src_prepare() {
+	base_src_prepare
 	if use localdb; then
 		sed -e "s@\(return $ x ++ \)\(\[d </> \"databases\"\]\)@\1[\"${ROOT}var/lib/hoogle/databases/\"\] ++ \2@" \
 			-i "${S}/src/CmdLine/All.hs" || die "Could not add localdb support to hoogle"
 	fi
-	sed -e 's@Cabal >= 1.8 && < 1.15@Cabal >= 1.8 \&\& < 1.16@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_install() {
