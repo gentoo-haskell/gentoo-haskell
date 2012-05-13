@@ -1,0 +1,46 @@
+--- largeword-1.0.1-orig/Data/LargeWord.hs	2011-08-30 04:39:44.000000000 +1000
++++ largeword-1.0.1/Data/LargeWord.hs	2012-05-13 16:22:54.230303824 +1000
+@@ -100,7 +100,7 @@
+ {-# INLINE hiHalf #-}
+ hiHalf (LargeKey a b) = b
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) =>
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) =>
+    LargeWord (LargeKey a b) where
+       largeWordToInteger (LargeKey lo hi) =
+          largeWordToInteger lo + (2^(bitSize lo)) * largeWordToInteger hi
+@@ -134,17 +134,17 @@
+          where conv = integerToLargeWord . largeWordToInteger
+       largeBitSize ~(LargeKey lo hi) = largeBitSize lo + largeBitSize hi
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) => Show (LargeKey a b) where
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => Show (LargeKey a b) where
+    showsPrec p = showInt . largeWordToInteger
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) => 
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => 
+    Num (LargeKey a b) where
+       (+) = largeWordPlus
+       fromInteger = integerToLargeWord 
+ 
+ -- Larger keys are instances of Bits provided their constituents are keys.
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) => 
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => 
+    Bits (LargeKey a b) where
+       (.&.) = largeWordAnd
+       (.|.) = largeWordOr
+@@ -168,11 +168,11 @@
+ boflk :: (LargeKey a b) -> b
+ boflk = undefined
+ 
+-instance (Ord a, Bits a, LargeWord a, Ord b, Bits b, LargeWord b) =>
++instance (Ord a, Bits a, LargeWord a, Num a, Ord b, Bits b, LargeWord b, Num b) =>
+    Integral (LargeKey a b) where
+       toInteger = largeWordToInteger
+ 
+-instance (Ord a, Bits a, LargeWord a, Ord b, Bits b, LargeWord b) =>
++instance (Ord a, Bits a, LargeWord a, Num a, Ord b, Bits b, LargeWord b, Num b) =>
+    Real (LargeKey a b)
+ 
+ instance Enum (LargeKey a b)
