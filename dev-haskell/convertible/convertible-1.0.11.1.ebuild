@@ -30,8 +30,6 @@ DEPEND="${RDEPEND}
 		)
 	"
 
-PATCHES=("${FILESDIR}"/${PN}-1.0.11.0-ghc-7.4.patch)
-
 src_configure() {
 	cabal_src_configure $(cabal_flag test buildtests)
 }
