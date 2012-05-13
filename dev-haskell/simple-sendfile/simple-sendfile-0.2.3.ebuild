@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Cross platform library for the sendfile system call"
 HOMEPAGE="http://hackage.haskell.org/package/simple-sendfile"
@@ -22,3 +22,5 @@ RDEPEND="dev-haskell/network[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.2.3-ghc-7.5.patch")
