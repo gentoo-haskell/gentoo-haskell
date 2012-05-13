@@ -18,18 +18,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
+RDEPEND=">=dev-haskell/comonad-1.1.1.5[profile?]
 		<dev-haskell/comonad-1.2[profile?]
 		>=dev-haskell/fingertree-0.0.1[profile?]
 		<dev-haskell/fingertree-0.1[profile?]
 		>=dev-haskell/hashable-1.1.2.1[profile?]
 		<dev-haskell/hashable-1.2[profile?]
-		>=dev-haskell/keys-2.1.3[profile?]
+		>=dev-haskell/keys-2.1.3.1[profile?]
 		<dev-haskell/keys-2.2[profile?]
-		=dev-haskell/parallel-3.2*[profile?]
-		=dev-haskell/pointed-2.1*[profile?]
-		=dev-haskell/semigroupoids-1.3*[profile?]
-		>=dev-haskell/semigroups-0.8.2[profile?]
+		>=dev-haskell/pointed-2.1.0.1[profile?]
+		<dev-haskell/pointed-2.2[profile?]
+		>=dev-haskell/semigroupoids-1.3.1.2[profile?]
+		<dev-haskell/semigroupoids-1.4[profile?]
+		>=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
 		>=dev-haskell/text-0.11.1.5[profile?]
 		<dev-haskell/text-0.12[profile?]
@@ -40,3 +41,8 @@ RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@bytestring             >= 0.9.1    && < 0.10@bytestring             >= 0.9.1    \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
