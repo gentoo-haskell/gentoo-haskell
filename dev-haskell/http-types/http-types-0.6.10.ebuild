@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 			dev-haskell/hspec
 		)"
 
+src_prepare() {
+	sed -e 's@bytestring >=0.9.1.5 && <0.10@bytestring >=0.9.1.5 \&\& <0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
 }
