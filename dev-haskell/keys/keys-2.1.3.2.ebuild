@@ -18,11 +18,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/comonad-transformers-2.1*[profile?]
-		=dev-haskell/comonads-fd-2.1*[profile?]
-		=dev-haskell/free-2.1*[profile?]
-		=dev-haskell/semigroupoids-1.3*[profile?]
-		>=dev-haskell/semigroups-0.8.2[profile?]
+RDEPEND=">=dev-haskell/comonad-transformers-2.1.1.1[profile?]
+		<dev-haskell/comonad-transformers-2.2[profile?]
+		>=dev-haskell/comonads-fd-2.1.1.1[profile?]
+		<dev-haskell/comonads-fd-2.2[profile?]
+		>=dev-haskell/free-2.1.1[profile?]
+		<dev-haskell/free-2.2[profile?]
+		>=dev-haskell/semigroupoids-1.3.1.2[profile?]
+		<dev-haskell/semigroupoids-1.4[profile?]
+		>=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
