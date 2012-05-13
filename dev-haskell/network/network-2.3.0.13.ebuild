@@ -29,6 +29,7 @@ src_prepare() {
 	epatch "${FILESDIR}/network-2.2.0.0-eat-configure-opts.patch"
 	eautoreconf
 	sed -e 's@test-framework < 0.6@test-framework < 0.7@' \
+		-e 's@bytestring < 0.10@bytestring < 1.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
