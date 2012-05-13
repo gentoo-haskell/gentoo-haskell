@@ -604,35 +604,66 @@ src_install() {
 		if [[ ! -L "${ED}/usr/bin/ghc-pkg" ]]; then
 			dosym "/usr/bin/${GHC_TPF}-ghc-pkg-${GHC_PV}" /usr/bin/ghc-pkg
 		fi
-		if [[ ! -L "${ED}/usr/bin/hsc2hs" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-hsc2hs" /usr/bin/hsc2hs
-		fi
 		if [[ ! -f "${ED}/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" ]]; then
 			cat <<- EOF > "${S}/${GHC_TPF}-ghci-${GHC_PV}"
-			#!/bin/sh
-			exec "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" --interactive \${1+"\$@"}
-		EOF
+				#!/bin/sh
+				exec "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" --interactive \${1+"\$@"}
+			EOF
 			doexe "${S}/${GHC_TPF}-ghci-${GHC_PV}"
 		fi
 		if [[ ! -L "${ED}/usr/bin/ghci" ]]; then
 			dosym "/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" /usr/bin/ghci
 		fi
+		if [[ ! -f "${ED}/usr/bin/hsc2hs" ]]; then
+			cat <<- EOF > "${S}/hsc2hs"
+				#!/bin/sh
+				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
+				exeprog="hsc2hs"
+				executablename="\$exedir/\$exeprog"
+				datadir="/usr/share"
+				bindir="/usr/bin"
+				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
+				HSC2HS_EXTRA="--cflag=-fno-stack-protector --lflag=-Wl,--hash-size=31 --lflag=-Wl,--reduce-memory-overheads"
+				#!/bin/sh
+
+				tflag="--template=\$topdir/template-hsc.h"
+				Iflag="-I\$topdir/include/"
+				for arg do
+					case "\$arg" in
+				# On OS X, we need to specify -m32 or -m64 in order to get gcc to
+				# build binaries for the right target. We do that by putting it in
+				# HSC2HS_EXTRA. When cabal runs hsc2hs, it passes a flag saying which
+				# gcc to use, so if we set HSC2HS_EXTRA= then we don't get binaries
+				# for the right platform. So for now we just don't set HSC2HS_EXTRA=
+				# but we probably want to revisit how this works in the future.
+				#        -c*)          HSC2HS_EXTRA=;;
+				#        --cc=*)       HSC2HS_EXTRA=;;
+						-t*)          tflag=;;
+						--template=*) tflag=;;
+						--)           break;;
+					esac
+				done
+
+				exec "\$executablename" \${tflag:+"\$tflag"} \$HSC2HS_EXTRA \${1+"\$@"} "\$Iflag"
+			EOF
+			doexe "${S}/hsc2hs"
+		fi
 		if [[ ! -f "${ED}/usr/bin/runghc" ]]; then
 			cat <<- EOF > "${S}/runghc"
-			#!/bin/sh
-			exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-			exeprog="runghc"
-			executablename="\$exedir/\$exeprog"
-			datadir="/usr/share"
-			bindir="/usr/bin"
-			topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-			#!/bin/sh
+				#!/bin/sh
+				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
+				exeprog="runghc"
+				executablename="\$exedir/\$exeprog"
+				datadir="/usr/share"
+				bindir="/usr/bin"
+				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
+				#!/bin/sh
 
-			exec "\$executablename" -f "\$bindir/ghc" \${1+"\$@"}
-		EOF
+				exec "\$executablename" -f "\$bindir/ghc" \${1+"\$@"}
+			EOF
 			doexe "${S}/runghc"
 		fi
-		if [[ ! -L "${ED}/usr/bin/runhashell" ]]; then
+		if [[ ! -L "${ED}/usr/bin/runhaskell" ]]; then
 			dosym /usr/bin/runghc /usr/bin/runhaskell
 		fi
 		if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/runghc" ]]; then
