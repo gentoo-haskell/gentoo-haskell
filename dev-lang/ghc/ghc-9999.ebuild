@@ -568,7 +568,6 @@ pkg_postinst() {
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
-		ewarn "      'USE=-doc emerge -a dev-haskell/extensible-exceptions'"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
 	fi
