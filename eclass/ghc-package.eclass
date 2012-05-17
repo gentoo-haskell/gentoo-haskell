@@ -39,7 +39,11 @@ ghc-getghcpkgbin() {
 	# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
 	# the wrapper script with the static flags
 	echo '[]' > "${T}/empty.conf"
-	echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
+	if version_is_at_least "7.5.20120516" "$(ghc-version)"; then
+		echo "$(ghc-libdir)/ghc-pkg" "--global-package-db=${T}/empty.conf"
+	else
+		echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
+	fi
 }
 
 # @FUNCTION: ghc-version
