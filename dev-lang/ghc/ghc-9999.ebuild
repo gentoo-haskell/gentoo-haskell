@@ -496,6 +496,40 @@ src_install() {
 		doexe "${S}/utils/runghc/dist/build/runghc/runghc"
 	fi
 
+	# The 7.5.20120511 build system does not install these shared libraries.
+	# /usr/lib64/ghc-7.5.20120511/ghc-7.5.20120511/libHSghc-7.5.20120511-ghc7.5.20120511.so
+	# has some of these libraries in its NEEDED list. We need to install these libraries
+	# to avoid revdep-rebuild wanting to rebuild dev-lang/ghc.
+	find "${S}/libraries" -name lib*.so* -print >"${S}/sl.txt"
+	for i in $(cat sl.txt | xargs)
+	do
+		lib_name=$(basename ${i})
+		lib_dir=$(dirname ${i})
+		lib_sub_dir_prefix=$(echo ${i} \
+			| sed -e "s@${S}/libraries/\(.*\)/dist-install/build/lib.*@\1@")
+		lib_sub_dir_prefix_orig="${lib_sub_dir_prefix}"
+		if [[ "${lib_sub_dir_prefix}" = "Cabal/Cabal" ]]; then
+			lib_sub_dir_prefix="Cabal"
+		fi
+		if [ -d ${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
+			dist_install_dir="${S}/libraries/${lib_sub_dir_prefix_orig}/dist-install"
+			lib_version=$(head -1 "${dist_install_dir}/setup-config" \
+				| sed -e 's@Saved package config for \([-a-zA-Z0-9]*\)-\([.0-9]*\) written by.*@\2@')
+			dodir /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
+			exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
+			pushd ${lib_dir} || die "Could not cd to ${lib_dir}"
+			doexe ${lib_name}
+			popd
+		fi
+	done
+
+	# path to the package.conf.d
+	PKGCONFD="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
+	# copy the package.conf.d, including timestamp, save it so we can help
+	# users that have a broken package.conf.d
+	cp -pR "${PKGCONFD}"{,.shipped} \
+		|| die "failed to copy package.conf.d"
+
 	# path to the package.cache
 	PKGCACHE="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d/package.cache"
 
@@ -525,9 +559,16 @@ pkg_postinst() {
 	ewarn
 	ewarn "\e[1;31m************************************************************************\e[0m"
 	ewarn
+	ewarn "For portage place lines like these in /etc/portage/package/keywords"
+	ewarn "=dev-haskell/time-1.4"
+	ewarn "=dev-haskell/cabal-1.15.0* **"
+	ewarn "=dev-haskell/haddock-2.10.0* **"
+	ewarn "=dev-lang/ghc-9999 **"
+	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
+		ewarn "      'USE=-doc emerge -a dev-haskell/extensible-exceptions'"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
 	fi
