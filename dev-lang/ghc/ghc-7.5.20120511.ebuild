@@ -737,7 +737,7 @@ pkg_postinst() {
 	ewarn
 	ewarn "\e[1;31m************************************************************************\e[0m"
 	ewarn
-	ewarn "For portage place lines like these in /etc/portage/package/keywords"
+	ewarn "For portage place lines like these in /etc/portage/package.keywords"
 	ewarn "=dev-haskell/time-1.4"
 	ewarn "=dev-haskell/cabal-1.15.0* **"
 	ewarn "=dev-haskell/haddock-2.10.0_p$(get_version_component_range 3) **"
