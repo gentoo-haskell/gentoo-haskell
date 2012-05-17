@@ -10,7 +10,7 @@
      other-modules:
          CmdLine.All
 --- hoogle-4.2.11-orig/src/Web/Server.hs	2012-04-06 04:03:44.000000000 +1000
-+++ hoogle-4.2.11/src/Web/Server.hs	2012-05-14 01:16:30.148821120 +1000
++++ hoogle-4.2.11/src/Web/Server.hs	2012-05-17 10:17:13.271813644 +1000
 @@ -1,4 +1,4 @@
 -{-# LANGUAGE RecordWildCards, ScopedTypeVariables, PatternGuards #-}
 +{-# LANGUAGE RecordWildCards, ScopedTypeVariables, PatternGuards, CPP #-}
@@ -21,17 +21,22 @@
  import Control.Exception
  import System.Time
  import Data.Time.Clock
-+#if MIN_VERSION_directory(1,1,0)
++#if (__GLASGOW_HASKELL__>=705)
 +import Data.Time.Clock.POSIX
 +#endif
  
  import Network.Wai
  import Network.Wai.Handler.Warp
-@@ -56,8 +59,13 @@
+@@ -56,8 +59,18 @@
                  if dynamic then  buffer template get else return get
  
          modTime ext = unsafeInterleaveIO $ do
-+#if MIN_VERSION_directory(1,1,0)
++-- In ghc-7.5.20120511 there is an API change in directory 1.1.0.1 with
++-- no version version number bump.
++-- directory 1.1.0.2 ghc 7.4.1          getModificationTime returns ClockTime
++-- directory 1.1.0.1 ghc 7.5.1.20120511 getModificationTime returns UTCTime
++-- Hence test is on ghc version to see which API it is here.
++#if (__GLASGOW_HASKELL__>=705)
 +            a <- getModificationTime $ resources </> "hoogle" <.> ext
 +            return $ show $ utcTimeToPOSIXSeconds a
 +#else
