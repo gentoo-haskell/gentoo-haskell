@@ -23,16 +23,15 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
-		=dev-haskell/conduit-0.4*[profile?]
-		=dev-haskell/hspec-1.0*[profile?]
+		=dev-haskell/hspec-1.1*[profile?]
+		>=dev-haskell/html-conduit-0.0.1[profile?]
+		<dev-haskell/html-conduit-0.1[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/hunit-1.2*[profile?]
 		>=dev-haskell/hxt-9.1.6[profile?]
 		>=dev-haskell/network-2.2[profile?]
 		<dev-haskell/network-2.4[profile?]
 		=dev-haskell/persistent-0.9*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
-		=dev-haskell/tagstream-conduit-0.3*[profile?]
 		dev-haskell/text[profile?]
 		>=dev-haskell/transformers-0.2.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
@@ -40,13 +39,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		=dev-haskell/wai-test-1.2*[profile?]
 		=dev-haskell/xml-conduit-0.7*[profile?]
 		=dev-haskell/xml-types-0.3*[profile?]
-		>=dev-haskell/xml2html-0.1.2[profile?]
+		>=dev-haskell/xml2html-0.1.2.3[profile?]
 		<dev-haskell/xml2html-0.2[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	cp -pR "${FILESDIR}/${PN}-0.2.0.5/test" test \
-		|| die "Could not copy missing tests"
-}
