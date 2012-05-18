@@ -32,14 +32,14 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-0.6[profile?]
-			<dev-haskell/hspec-1.1[profile?]
+			<dev-haskell/hspec-1.2[profile?]
 			dev-haskell/hunit[profile?]
 			dev-haskell/quickcheck:2[profile?]
 		)
 		"
 
 src_prepare() {
-	sed -e 's@hspec               >= 0.6        && < 0.10@hspec               >= 0.6        \&\& < 1.1@' \
+	sed -e 's@hspec               >= 0.6        && < 0.10@hspec               >= 0.6        \&\& < 1.2@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
