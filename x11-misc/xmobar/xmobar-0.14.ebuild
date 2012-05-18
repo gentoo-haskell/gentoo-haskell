@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/mtl
-		dev-haskell/parsec
+		>=dev-haskell/parsec-3
 		dev-haskell/stm
 		dev-haskell/time
 		>=dev-haskell/x11-1.3.0
