@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="High performance, regular, shape polymorphic parallel arrays."
 HOMEPAGE="http://repa.ouroborus.net"
@@ -25,9 +25,4 @@ RDEPEND=">=dev-haskell/quickcheck-2.3[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	# ghc 7.0.4 does not define forkOn, use forkOnIO like repa version
-	# 2.1.1.6 used to use
-	sed -e 's@forkOn@forkOnIO@g' \
-		-i "${S}/Data/Array/Repa/Eval/Gang.hs"
-}
+PATCHES=("${FILESDIR}/${PN}-3.1.4.2-ghc-7.0-7.5.patch")
