@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/cereal[profile?]
 		=dev-haskell/cpu-0.1*[profile?]
 		>=dev-haskell/crypto-api-0.5[profile?]
-		dev-haskell/crypto-pubkey-types[profile?]
+		=dev-haskell/crypto-pubkey-types-0.1*[profile?]
 		dev-haskell/primitive[profile?]
 		dev-haskell/tagged[profile?]
 		>=dev-haskell/vector-0.7[profile?]
