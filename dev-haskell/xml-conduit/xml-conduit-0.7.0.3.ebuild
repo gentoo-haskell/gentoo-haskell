@@ -41,3 +41,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/conduit dev-haskell/hspec dev-haskell/hunit dev-haskell/text dev-haskell/transformers >=dev-haskell/xml-types-0.3.1 )"
+
+src_prepare() {
+	sed -e 's@bytestring                >= 0.9      && < 0.10@bytestring                >= 0.9      \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
