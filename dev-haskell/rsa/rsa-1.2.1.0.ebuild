@@ -23,6 +23,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/binary[profile?]
 		>=dev-haskell/crypto-api-0.10[profile?]
+		dev-haskell/crypto-pubkey-types[profile?]
 		dev-haskell/monadcryptorandom[profile?]
 		dev-haskell/puremd5[profile?]
 		dev-haskell/sha[profile?]
