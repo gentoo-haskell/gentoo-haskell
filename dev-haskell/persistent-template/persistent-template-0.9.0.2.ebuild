@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Type-safe, non-relational, multi-backend persistence."
@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND="dev-haskell/aeson[profile?]
 		>=dev-haskell/monad-control-0.2[profile?]
@@ -28,8 +28,8 @@ RDEPEND="dev-haskell/aeson[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
+		test? ( dev-haskell/hspec[profile?]
+			dev-haskell/hunit[profile?]
+			dev-haskell/quickcheck[profile?]
+		)
 		>=dev-haskell/cabal-1.8"
-
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
-}
