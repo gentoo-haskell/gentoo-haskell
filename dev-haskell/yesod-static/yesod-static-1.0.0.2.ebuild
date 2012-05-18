@@ -6,7 +6,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Static file serving subsite for Yesod Web Framework."
@@ -38,4 +38,8 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1[profile?]
 		=dev-haskell/yesod-core-1.0*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
+		test? ( >=dev-haskell/hspec-1.0
+			<dev-haskell/hspec-1.2
+			dev-haskell/hunit
+		)
 		>=dev-haskell/cabal-1.8"
