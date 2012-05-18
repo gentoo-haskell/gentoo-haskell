@@ -31,6 +31,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	gzip -c LICENSE >LICENSE.gz || die "Could not compress LICENSE for tests"
+	sed -e 's@bytestring            >= 0.9.1.4 && < 0.10@bytestring            >= 0.9.1.4 \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
