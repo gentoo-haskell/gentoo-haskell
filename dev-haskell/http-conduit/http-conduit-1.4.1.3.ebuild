@@ -60,11 +60,13 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		=dev-haskell/zlib-conduit-0.4*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? (	dev-haskell/hspec
-			dev-haskell/hunit
-			dev-haskell/network-conduit
-		)"
+		test? ( dev-haskell/hspec[profile?]
+			dev-haskell/hunit[profile?]
+			dev-haskell/network-conduit[profile?]
+			dev-haskell/wai[profile?]
+			dev-haskell/warp[profile?]
+		)
+		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
 	cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
