@@ -6,17 +6,17 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Stick your haskell variables into javascript/coffeescript at compile time."
 HOMEPAGE="http://www.yesodweb.com/book/shakespearean-templates"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
 RDEPEND="=dev-haskell/shakespeare-1.0*[profile?]
 		>=dev-haskell/text-0.7[profile?]
@@ -24,16 +24,14 @@ RDEPEND="=dev-haskell/shakespeare-1.0*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/hunit
-			>=dev-haskell/hspec-0.8
+		test? ( dev-haskell/hunit[profile?]
+			>=dev-haskell/hspec-0.8[profile?]
+			<dev-haskell/hspec-1.2[profile?]
 		)
 		"
 
 src_prepare() {
 	cp -p "${FILESDIR}/${P}/test/Quoter.hs" "${S}/test" \
 		|| die "Could not copy missing Quoter.hs test file"
-}
 
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
 }
