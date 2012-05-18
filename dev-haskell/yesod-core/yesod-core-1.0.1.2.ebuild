@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
 HOMEPAGE="http://www.yesodweb.com/"
@@ -61,10 +61,8 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( =dev-haskell/hspec-1.0*[profile?]
+		test? ( =dev-haskell/hspec-1.1*[profile?]
 			dev-haskell/hunit[profile?]
 			=dev-haskell/quickcheck-2*[profile?]
 			dev-haskell/wai-test[profile?]
 		)"
-
-PATCHES=("${FILESDIR}/${PN}-1.0.1.1-hspec-1.0.patch")
