@@ -34,13 +34,10 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
-			   >=dev-haskell/hspec-0.8[profile?]
-			   <dev-haskell/hspec-1.1[profile?]
+			   =dev-haskell/hspec-1.1*[profile?]
 			   dev-haskell/hunit[profile?]
 			   dev-haskell/json-types[profile?]
 			   >=dev-haskell/quickcheck-2[profile?]
 			   dev-haskell/test-framework[profile?]
 			   dev-haskell/test-framework-hunit[profile?]
 		)"
-
-PATCHES=("${FILESDIR}/${PN}-1.0.1.2-hspec-1.0.patch")
