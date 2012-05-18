@@ -17,14 +17,18 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+# tests fail: test: main:Main test/main.hs:30:5 Oh no!
+# Test suite test: FAIL
+RESTRICT="test"
 
 RDEPEND=">=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		test? ( dev-haskell/lifted-base[profile?]
+		)
+		>=dev-haskell/cabal-1.8"
 
-src_prepare() {
-	sed -e 's@transformers     >= 0.2 && < 0.3@transformers     >= 0.2 \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+src_configure() {
+	cabal_src_configure $(use test && use_enable test tests) #395351
 }
