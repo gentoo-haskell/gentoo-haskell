@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 MY_PN="Crypto"
 MY_P="${MY_PN}-${PV}"
@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}/${PN}-4.2.4-ghc-7.4.patch")
 
 src_test() {
 	TESTS="SymmetricTest SHA1Test RSATest QuickTest HMACTest WordListTest"
