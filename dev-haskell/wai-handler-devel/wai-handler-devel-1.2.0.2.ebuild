@@ -7,13 +7,13 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="WAI server that automatically reloads code after modification."
 HOMEPAGE="http://github.com/yesodweb/wai"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -35,5 +35,3 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/wai-handler-devel-1.2.0-wai-extra-patch")
