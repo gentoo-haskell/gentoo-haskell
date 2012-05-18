@@ -26,12 +26,13 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/cabal-1.10
 			=dev-haskell/file-location-0.4*[profile?]
 			>=dev-haskell/quickcheck-2.4.0.1[profile?]
-			=dev-haskell/hspec-0.9*[profile?]
+			>=dev-haskell/hspec-0.9[profile?]
+			<dev-haskell/hspec-1.2[profile?]
 		)
 		"
 
 src_prepare() {
-	sed -e 's@hspec >= 0.8 && < 0.9@hspec >= 0.8 \&\& < 0.10@' \
+	sed -e 's@hspec >= 0.8 && < 0.9@hspec >= 0.8 \&\& < 1.2@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	# upstream forgot to include the tests
 	cp -pR "${FILESDIR}/${PN}-0.1.1/test" "${S}/test" \
