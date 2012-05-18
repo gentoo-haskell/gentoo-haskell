@@ -17,9 +17,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# there is no test files (deleted by upstream)
-# will add on request
-RESTRICT="test"
 
 RDEPEND=">=dev-haskell/parsec-2[profile?]
 		<dev-haskell/parsec-4[profile?]
@@ -29,20 +26,17 @@ RDEPEND=">=dev-haskell/parsec-2[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit[profile?]
-			<dev-haskell/hspec-1.1[profile?]
+			<dev-haskell/hspec-1.3[profile?]
 		)"
 
 src_prepare() {
-	sed -e 's@hspec            >= 0.8     && < 0.10@hspec            >= 0.8     \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	cp -pR "${FILESDIR}/${P}/test" "${S}/" \
+		|| die "Could not copy missing test files"
+	cp -p "${FILESDIR}/${P}/test.hs" "${S}/" \
+		|| die "Could not copy missing test.hs"
 }
 
-#src_prepare() {
-#	cp -pR "${FILESDIR}/${P}/test" "${S}/" \
-#		|| die "Could not copy missing test files"
-#}
-
-#src_configure() {
-#	cabal_src_configure $(use_enable test tests) \
-#						$(cabal_flag test test_export)
-#}
+src_configure() {
+	cabal_src_configure $(use_enable test tests) \
+						$(cabal_flag test test_export)
+}
