@@ -21,7 +21,6 @@ IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
-		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		>=dev-haskell/hslogger-1.0.2[profile?]
 		dev-haskell/html[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -32,6 +31,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-haskell/sendfile-0.7.1[profile?]
 		<dev-haskell/sendfile-0.8[profile?]
 		dev-haskell/syb[profile?]
+		>=dev-haskell/system-filepath-0.3.1[profile?]
 		>=dev-haskell/text-0.10[profile?]
 		<dev-haskell/text-0.12[profile?]
 		dev-haskell/time[profile?]
@@ -45,5 +45,3 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-PATCHES=("${FILESDIR}/${PN}-7.0.1-blaze-html-0.5.patch")
