@@ -18,20 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/abstract-par-0.3*[profile?]
-		=dev-haskell/cereal-0.3*[profile?]
-		=dev-haskell/deepseq-1.3*[profile?]
+RDEPEND=">=dev-haskell/abstract-par-0.3[profile?]
+		>=dev-haskell/cereal-0.3[profile?]
+		>=dev-haskell/deepseq-1.3[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
-		<dev-haskell/mtl-2.2[profile?]
-		=dev-haskell/random-1.0*[profile?]
+		>=dev-haskell/random-1.0[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
-		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@mtl == 2.0.\*@mtl >= 2.0 \&\& < 2.2@' \
-		-e 's@transformers == 0.2.\*@transformers >= 0.2 \&\& < 0.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
