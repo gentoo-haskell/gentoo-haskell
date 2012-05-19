@@ -23,7 +23,7 @@ RDEPEND="=dev-haskell/fclabels-1.1*[profile?]
 		>=dev-haskell/quickcheck-1.2[profile?] <dev-haskell/quickcheck-2.5[profile?]
 		>=dev-haskell/transformers-0.2[profile?] <dev-haskell/transformers-0.4[profile?]
 		=dev-haskell/unordered-containers-0.2*[profile?]
-		=dev-haskell/vault-0.1*[profile?]
+		>=dev-haskell/vault-0.1[profile?] <dev-haskell/vault-0.3[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
