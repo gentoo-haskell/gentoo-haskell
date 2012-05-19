@@ -143,3 +143,8 @@ RDEPEND=">=dev-haskell/aeson-0.6.0.2[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@ == @ >= @g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
