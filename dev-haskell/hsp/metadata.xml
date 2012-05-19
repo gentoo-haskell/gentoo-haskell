@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Haskell Server Pages (HSP) is an extension of vanilla Haskell, targetted at the task of
+		writing dynamic server-side web pages. Features include:
+		
+		* Embedded XML syntax
+		
+		* A (low-to-mid-level) programming model for writing dynamic web pages
+		
+		* A cgi-handler utility (as a separate package, hsp-cgi)
+		
+		For details on usage, please see the website, and the author&#39;s thesis.
+	</longdescription>
+</pkgmetadata>
