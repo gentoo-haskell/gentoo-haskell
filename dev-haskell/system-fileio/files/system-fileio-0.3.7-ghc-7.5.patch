@@ -1,0 +1,24 @@
+--- system-fileio-0.3.7-orig/system-fileio.cabal	2012-03-06 03:54:54.000000000 +1100
++++ system-fileio-0.3.7/system-fileio.cabal	2012-05-19 18:05:50.852520624 +1000
+@@ -50,7 +50,7 @@
+ 
+   build-depends:
+       base >= 4.0 && < 5.0
+-    , bytestring >= 0.9 && < 0.10
++    , bytestring >= 0.9 && < 0.11
+     , system-filepath >= 0.3.1 && < 0.5
+     , text >= 0.7.1 && < 0.12
+     , time >= 1.0 && < 1.5
+--- system-fileio-0.3.7-orig/lib/Filesystem.hs	2012-03-06 03:54:54.000000000 +1100
++++ system-fileio-0.3.7/lib/Filesystem.hs	2012-05-19 18:06:33.567416428 +1000
+@@ -129,6 +129,10 @@
+ import qualified System.Posix.Internals
+ #endif
+ 
++#if (__GLASGOW_HASKELL__>=705)
++import Foreign.C.Types(CInt(..))
++#endif
++
+ -- | Check if a file exists at the given path.
+ --
+ -- Any non&#8208;directory object, including devices and pipes, are

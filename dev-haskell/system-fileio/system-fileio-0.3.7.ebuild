@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Consistent filesystem interaction across GHC versions"
 HOMEPAGE="https://john-millikin.com/software/haskell-filesystem/"
@@ -27,3 +27,5 @@ RDEPEND=">=dev-haskell/system-filepath-0.3.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-0.3.7-ghc-7.5.patch")
