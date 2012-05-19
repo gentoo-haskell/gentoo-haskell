@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Library for creating and modifying zip archives."
 HOMEPAGE="http://github.com/jgm/zip-archive"
@@ -26,3 +26,5 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-0.1.1.8-ghc-7.5.patch")
