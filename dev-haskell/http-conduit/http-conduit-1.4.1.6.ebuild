@@ -35,6 +35,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		=dev-haskell/cprng-aes-0.2*[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
 		<dev-haskell/data-default-0.5[profile?]
+		dev-haskell/deepseq[profile?]
 		>=dev-haskell/failure-0.1[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
@@ -64,7 +65,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit[profile?]
 			dev-haskell/network-conduit[profile?]
 			dev-haskell/wai[profile?]
-			dev-haskell/warp[profile?]
+			>=dev-haskell/warp-1.2.1[profile?]
 		)
 		>=dev-haskell/cabal-1.8"
 
