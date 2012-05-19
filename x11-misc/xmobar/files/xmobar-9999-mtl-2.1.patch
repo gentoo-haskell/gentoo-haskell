@@ -1,0 +1,13 @@
+diff --git a/xmobar.cabal b/xmobar.cabal
+index 45ffcee..1994d49 100644
+--- a/xmobar.cabal
++++ b/xmobar.cabal
+@@ -108,7 +108,7 @@ executable xmobar
+       time,
+       filepath,
+       X11 == 1.6.*,
+-      mtl == 2.0.*,
++      mtl >= 2.0 && < 2.2,
+       parsec == 3.1.*,
+       stm == 2.3.*
+ 

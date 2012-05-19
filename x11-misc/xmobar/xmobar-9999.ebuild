@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="3"
+EAPI=4
 CABAL_FEATURES="bin"
 inherit eutils git-2 haskell-cabal
 
@@ -17,11 +17,11 @@ IUSE="xft unicode mail mpd alsa wifi"
 
 DEPEND=">=dev-lang/ghc-6.8.1
 		>=dev-haskell/cabal-1.6
-		dev-haskell/mtl
+		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
 		>=dev-haskell/parsec-3
-		dev-haskell/stm
+		=dev-haskell/stm-2.3*
 		dev-haskell/time
-		>=dev-haskell/x11-1.3.0
+		=dev-haskell/x11-1.6*
 		unicode? ( dev-haskell/utf8-string )
 		xft?  ( dev-haskell/utf8-string
 				dev-haskell/x11-xft )
@@ -32,7 +32,8 @@ DEPEND=">=dev-lang/ghc-6.8.1
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.15-Fix-CPU-load-in-threadWaitRead.patch
+	epatch "${FILESDIR}"/${P}-Fix-CPU-load-in-threadWaitRead.patch
+	epatch "${FILESDIR}"/${P}-mtl-2.1.patch
 }
 
 src_configure() {

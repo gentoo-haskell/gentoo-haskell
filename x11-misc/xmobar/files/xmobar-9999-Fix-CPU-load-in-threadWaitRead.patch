@@ -29,27 +29,28 @@ Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
  2 files changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/src/Xmobar.hs b/src/Xmobar.hs
-index dc671fe..b310f0f 100644
+index 2358a20..8358fb8 100644
 --- a/src/Xmobar.hs
 +++ b/src/Xmobar.hs
-@@ -83,7 +83,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
-     tv <- atomically $ newTVar []
+@@ -84,7 +84,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
      sig <- setupSignalHandler
-     _ <- forkIO (checker tv [] vs sig `catch` \(SomeException _) -> putStrLn "Thread checker failed" >> return ())
--    _ <- forkIO (eventer sig `catch` \(SomeException _) -> putStrLn "Thread eventer failed" >> return ())
-+    _ <- forkOS (eventer sig `catch` \(SomeException _) -> putStrLn "Thread eventer failed" >> return ())
+     _ <- forkIO (checker tv [] vs sig `catch`
+                    \(SomeException _) -> void (putStrLn "Thread checker failed"))
+-    _ <- forkIO (eventer sig `catch`
++    _ <- forkOS (eventer sig `catch`
+                    \(SomeException _) -> void (putStrLn "Thread eventer failed"))
      eventLoop tv xcfg sig
    where
-     -- Reacts on events from X
-@@ -101,7 +101,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
-         xrrEventBase <- peek ptrEventBase
- 
+@@ -97,7 +97,7 @@ startLoop xcfg@(XConf _ _ w _ _) vs = do
+         selectInput       dpy w (exposureMask .|. structureNotifyMask)
+
          forever $ do
 -          nextEvent' dpy e
 +          nextEvent dpy e
            ev <- getEvent e
            case ev of
              ConfigureEvent {} -> putMVar signal Reposition
+
 diff --git a/xmobar.cabal b/xmobar.cabal
 index dba9f91..608cc09 100644
 --- a/xmobar.cabal
