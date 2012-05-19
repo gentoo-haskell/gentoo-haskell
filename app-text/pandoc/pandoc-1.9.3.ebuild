@@ -67,13 +67,7 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-PATCHES=("${FILESDIR}/${PN}-1.9.2-blaze-html-0.5.patch")
-
-src_prepare() {
-	sed -e 's@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	base_src_prepare
-}
+PATCHES=("${FILESDIR}/${PN}-1.9.3-ghc-7.5.patch")
 
 src_configure() {
 	cabal_src_configure \
