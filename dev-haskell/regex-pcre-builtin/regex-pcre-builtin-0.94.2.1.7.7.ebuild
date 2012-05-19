@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Replaces/Enhances Text.Regex"
 HOMEPAGE="http://sourceforge.net/projects/lazy-regex"
@@ -22,3 +22,5 @@ RDEPEND=">=dev-haskell/regex-base-0.93[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+PATCHES=("${FILESDIR}/${PN}-0.94.2.1.7.7-ghc-7.5.patch")
