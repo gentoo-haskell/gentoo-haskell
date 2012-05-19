@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="helper tool for building wxHaskell"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -26,3 +26,5 @@ RDEPEND=">=dev-haskell/parsec-2.1.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-0.90.0.1-ghc-7.5.patch")
