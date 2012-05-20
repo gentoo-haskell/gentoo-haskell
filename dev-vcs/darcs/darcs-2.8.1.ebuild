@@ -64,8 +64,6 @@ DEPEND="${RDEPEND}
 		"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.8.0-mtl-2.1.patch"
-
 	rm "${S}/tests/add_permissions.sh" || die "Could not rm add_permissions.sh"
 	rm "${S}/tests/send-output-v1.sh" || die "Could not rm send-output-v1.sh"
 	rm "${S}/tests/send-output-v2.sh" || die "Could not rm send-output-v2.sh"
