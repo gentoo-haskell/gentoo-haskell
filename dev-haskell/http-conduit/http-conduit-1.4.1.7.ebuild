@@ -18,6 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Note: dev-haskell/conduit-1.4.1.6 fails to build with mtl-1.1.1.1
+# Thanks to martiert for reporting, set >=dev-haskell/mtl-2.0
+
 RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/asn1-data-0.7[profile?]
 		>=dev-haskell/attoparsec-0.8.0.2[profile?]
@@ -40,7 +43,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
-		dev-haskell/mtl[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
 		=dev-haskell/network-2.3*[profile?]
 		dev-haskell/regex-compat[profile?]
 		=dev-haskell/resourcet-0.3*[profile?]
