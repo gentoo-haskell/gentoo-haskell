@@ -25,4 +25,4 @@ DEPEND="${RDEPEND}
 		dev-haskell/happy
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=("${FILESDIR}"/${P}-workaround-UName.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.12.3-workaround-UName.patch)
