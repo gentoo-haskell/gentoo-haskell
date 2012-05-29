@@ -20,8 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
 		=dev-haskell/blaze-markup-0.5*[profile?]
-		>=dev-haskell/digestive-functors-0.3.0.1[profile?]
-		<dev-haskell/digestive-functors-0.4[profile?]
+		=dev-haskell/digestive-functors-0.4*[profile?]
 		=dev-haskell/text-0.11*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
