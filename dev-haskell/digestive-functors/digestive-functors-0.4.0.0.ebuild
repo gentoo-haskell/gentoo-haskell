@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# upstream forgot the tests
-	cp -pR "${FILESDIR}/${PN}-0.3.0.0/tests/Text" "${S}/tests/Text" \
+	cp -pR "${FILESDIR}/${PN}-0.4.0.0/tests/Text" "${S}/tests/Text" \
 		|| die "Could not copy missing test source files"
 }
 

@@ -4,7 +4,7 @@ module Text.Digestive.Form.Encoding.Tests
     ) where
 
 import Control.Applicative ((<$>), (<*>))
-import Control.Monad.Identity (Identity)
+import Control.Monad.Identity (Identity (..))
 
 import Data.Text (Text)
 import Test.Framework (Test, testGroup)
@@ -17,13 +17,13 @@ import Text.Digestive.Form.Encoding
 tests :: Test
 tests = testGroup "Text.Digestive.Field.Tests"
     [ testCase "formEncType url-encoded" $
-        UrlEncoded @=? formEncType' ((,) <$> text Nothing <*> bool True)
+        UrlEncoded @=? formEncType' ((,) <$> text Nothing <*> bool Nothing)
     , testCase "formEncType multipart" $
         MultiPart @=? formEncType' ((,) <$> text Nothing <*> file)
     , testCase "formEncType multipart" $
-        MultiPart @=? formEncType' ((,) <$> file <*> bool True)
+        MultiPart @=? formEncType' ((,) <$> file <*> bool Nothing)
     ]
 
   where
     formEncType' :: Form Text Identity a -> FormEncType
-    formEncType' = formEncType
+    formEncType' = runIdentity . formEncType
