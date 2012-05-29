@@ -4,37 +4,34 @@
 
 EAPI=4
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES="bin test-suite"
 EGIT_REPO_URI="git://github.com/gentoo-haskell/hackport.git"
 inherit git-2 haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
-HOMEPAGE="http://code.haskell.org/gentoo/hackport/"
+HOMEPAGE="https://github.com/gentoo-haskell/hackport"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="test"
+IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		>=dev-lang/ghc-6.12
+		test? ( dev-haskell/extensible-exceptions
+			dev-haskell/hunit
+		)
 		>=dev-haskell/cabal-1.10
 		>=dev-haskell/http-4000.0.3
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/parsec
 		dev-haskell/regex-compat
-		>dev-haskell/xml-1.3.5
 		dev-haskell/tar
+		>dev-haskell/xml-1.3.5
 		dev-haskell/zlib
-		test? ( dev-haskell/hunit )
-	"
+		>=dev-lang/ghc-6.10.1"
 
 src_prepare() {
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
-}
-
-src_configure() {
-	cabal_src_configure $(use_enable test tests)
 }
