@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal eutils darcs
@@ -20,6 +20,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
+RESTRICT="test"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -27,8 +28,27 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		>=dev-lang/ghc-6.8.2"
 
-S="${WORKDIR}/${P}/src/main"
+# There is a Makefile in this directory, which does not work (or at least
+# it does not work without building other stuff), and no .cabal
+# file in this directory.
+# S="${WORKDIR}/${P}/src/main"
 
 src_prepare() {
 	cabal-mksetup
+	sed -e '/^library/,/ghc-prof-options: -auto-all/d' \
+		-e '/^executable agda-mode/,$d' \
+		-i "${S}/${MY_PN}.cabal" \
+		|| die "Could not remove library and agda-mode from ${MY_PN}.cabal"
+}
+
+src_compile() {
+	# The modified Agda.cabal file fails, compile it manually:
+	pushd src/main || die "Could not cd to src/main"
+	ghc -rtsopts --make Main.hs -O -auto-all -o agda
+	popd
+}
+
+src_install() {
+	dobin "${WORKDIR}/${P}/src/main/agda"
+	dodoc LICENSE
 }
