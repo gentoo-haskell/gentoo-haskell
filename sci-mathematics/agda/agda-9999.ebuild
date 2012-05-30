@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
-CABAL_FEATURES="lib"
+CABAL_FEATURES="lib profile"
 inherit haskell-cabal eutils elisp-common darcs
 
 MY_PN="Agda"
@@ -19,20 +19,30 @@ EDARCS_LOCALREPO="Agda2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="epic"
+IUSE="epic +stdlib"
 
-RDEPEND=">=dev-haskell/binary-0.4.4
-		epic? ( dev-lang/epic )
-		=dev-haskell/hashable-1.1*
-		=dev-haskell/hashtables-1.0*
-		=dev-haskell/haskeline-0.6*
-		>=dev-haskell/haskell-src-exts-1.9.6
-		=dev-haskell/mtl-2.0*
-		=dev-haskell/quickcheck-2.4*
-		<dev-haskell/syb-0.4
-		=dev-haskell/xhtml-3000.2*
-		<dev-haskell/zlib-1
-		>=dev-lang/ghc-6.10.4"
+RDEPEND=">=dev-haskell/binary-0.4.4[profile?]
+		<dev-haskell/binary-0.6[profile?]
+		epic? ( dev-lang/epic[profile?] )
+		=dev-haskell/geniplate-0.6*[profile?]
+		=dev-haskell/hashable-1.1*[profile?]
+		=dev-haskell/hashtables-1.0*[profile?]
+		>=dev-haskell/haskeline-0.6.3.2[profile?]
+		<dev-haskell/haskeline-0.7[profile?]
+		>=dev-haskell/haskell-src-exts-1.9.6[profile?]
+		<dev-haskell/haskell-src-exts-1.14[profile?]
+		>=dev-haskell/mtl-2.0[profile?]
+		<dev-haskell/mtl-2.2[profile?]
+		=dev-haskell/quickcheck-2.4*[profile?]
+		>=dev-haskell/syb-0.1[profile?]
+		<dev-haskell/syb-0.4[profile?]
+		=dev-haskell/xhtml-3000.2*[profile?]
+		>=dev-haskell/zlib-0.4.0.1[profile?]
+		<dev-haskell/zlib-0.6[profile?]
+		>=dev-lang/ghc-6.10.4
+		virtual/emacs
+		app-emacs/haskell-mode"
+PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.8
@@ -42,11 +52,10 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-	sed -e 's@epic >= 0.1.13 && < 0.2@epic >= 0.1.13 \&\& < 0.10@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
-	epatch "${FILESDIR}"/${P}-emacs.patch
-	sed -e 's@-Werror@@g' \
-		-i "${S}/${MY_PN}.cabal" || die
+	sed -e '/.*emacs-mode.*$/d' \
+		-e '/^executable agda/,$d' \
+		-i "${S}/${MY_PN}.cabal" \
+		|| die "Could not remove agda and agda-mode from ${MY_PN}.cabal"
 	cabal-mksetup
 }
 
