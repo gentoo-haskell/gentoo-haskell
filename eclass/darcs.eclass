@@ -44,7 +44,7 @@ SRC_URI=""
 # @ECLASS-VARIABLE: EDARCS_GET_CMD
 # @DESCRIPTION:
 # First fetch darcs command.
-: ${EDARCS_GET_CMD:=get --partial}
+: ${EDARCS_GET_CMD:=get --lazy}
 
 # @ECLASS-VARIABLE: EDARCS_UPDATE_CMD
 # @DESCRIPTION:
