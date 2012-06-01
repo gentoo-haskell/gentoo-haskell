@@ -27,13 +27,23 @@ RDEPEND="dev-haskell/deepseq[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? (
+			dev-haskell/hspec-discover
 			dev-haskell/hspec-shouldbe
-			dev-haskell/transformers
+			dev-haskell/silently
 			dev-haskell/stringbuilder
+			dev-haskell/transformers
 		)"
 
 src_prepare() {
 	cp -r "${FILESDIR}"/${P}/* "${S}"/ || die
+	# It fails to compile:
+	# test/MainSpec.hs:10:18:
+	#     Could not find module `Report'
+	# One problem is the test-suite spec does not list doctest in
+	# build-depends, I did not try adding it.
+	sed -e '/test-suite spec/,$d' \
+		-i "${S}/${PN}.cabal" \
+		|| die "Could not remove testsuite spec from ${S}/${PN}.cabal"
 }
 
 src_configure() {

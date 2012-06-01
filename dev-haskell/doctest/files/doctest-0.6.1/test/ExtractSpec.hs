@@ -4,17 +4,13 @@ import           Test.Hspec.ShouldBe
 import           Test.HUnit
 
 import           Extract
+import           Location
 import           System.FilePath
 
-shouldBeM :: (Show a, Eq a) => IO a -> a -> Assertion
-action `shouldBeM` expected = do
-  actual <- action
-  actual `shouldBe` expected
-
-
-shouldGive :: (String, String) -> [Module] -> Assertion
-(d, m) `shouldGive` expected =
-  extract ["-i" ++ dir] [dir </> m] `shouldBeM` expected
+shouldGive :: (String, String) -> [Module String] -> Assertion
+(d, m) `shouldGive` expected = do
+  r <- map (fmap unLoc) `fmap` extract ["-i" ++ dir] [dir </> m]
+  r `shouldBe` expected
   where dir = "test/extract" </> d
 
 main :: IO ()
@@ -69,3 +65,6 @@ spec = do
 
     it "works with rewrite rules" $ do
       ("regression", "RewriteRules.hs") `shouldGive` [Module "RewriteRules" [" doc for foo"]]
+
+    it "strips CR from dos line endings" $ do
+      ("dos-line-endings", "Foo.hs") `shouldGive` [Module "Foo" ["\n foo\n bar\n baz"]]
