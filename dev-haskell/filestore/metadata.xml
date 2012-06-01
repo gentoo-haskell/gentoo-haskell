@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The filestore library provides an abstract interface for a versioning
+		file store, and modules that instantiate this interface.  Currently
+		Git, Darcs, and Mercurial modules are provided, and other VCSs
+		or databases could be added.
+	</longdescription>
+</pkgmetadata>
