@@ -6,6 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Bindings for GNU SASL
+		Bindings for GNU libgsasl
 	</longdescription>
 </pkgmetadata>
