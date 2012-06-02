@@ -23,10 +23,16 @@ IUSE=""
 
 RDEPEND="dev-haskell/network[profile?]
 		dev-haskell/time[profile?]
-		~dev-haskell/vty-4.7.0.12[profile?]
-		~dev-haskell/vty-ui-1.5[profile?]
+		<dev-haskell/vty-4.8[profile?]
+		<dev-haskell/vty-ui-1.6[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@vty == 4.7.0.12@vty < 4.8@' \
+		-e 's@vty-ui == 1.5@vty-ui < 1.6@' \
+		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
+}
