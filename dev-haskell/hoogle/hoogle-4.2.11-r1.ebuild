@@ -73,7 +73,7 @@ src_install() {
 			cp "${FILESDIR}/hoogle-build-localdb" "${S}" || die "Could not copy hoogle-build-localdb"
 			sed -e "s@ROOT=\"/\"@ROOT=\"${ROOT}\"@" \
 				-i "${S}/hoogle-build-localdb" || die "Could not set ROOT in hoogle-build-localdb"
-			exeinto /usr/bin
+			exeinto /usr/sbin
 			doexe hoogle-build-localdb || die "Could not install hoogle-build-localdb"
 		fi
 	fi
