@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
+
+EAPI=4
 
 CABAL_FEATURES="lib profile haddock"
 inherit haskell-cabal
@@ -14,11 +16,13 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
-DEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/cabal
-		<dev-haskell/quickcheck-2"
+RDEPEND=">=dev-lang/ghc-6.6.1
+		dev-haskell/quickcheck:1"
+
+DEPEND="${RDEPEND}
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
