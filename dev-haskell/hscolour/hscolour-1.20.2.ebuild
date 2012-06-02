@@ -13,7 +13,9 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+# Fails to build docs for dev-haskell/monad-control-0.3.1.3:
+# HsColour: Char.intToDigit: not a digit 541
+KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.8.2"
