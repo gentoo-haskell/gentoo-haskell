@@ -78,3 +78,16 @@ src_install() {
 		fi
 	fi
 }
+
+pkg_postinst() {
+	ghc-package_pkg_postinst
+	if use localdb; then
+		elog "Please run: ${ROOT}usr/sbin/hoogle-build-localdb"
+		elog "after emerging haskell libraries to update the local hoogle database"
+		elog "to index the installed haskell libraries. Note it is normal for"
+		elog "hoogle-build-localdb to output zillions of useless error messages, it"
+		elog "should build indices for most of the installed packages (it creates"
+		elog "files in the directory: ${ROOT}var/lib/hoogle/databases"
+		elog "called pkg-name.hoogle-convert-failed if hoogle convert for pkg-name fails)"
+	fi
+}
