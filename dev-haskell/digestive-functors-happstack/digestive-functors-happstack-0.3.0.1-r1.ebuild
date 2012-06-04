@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Happstack backend for the digestive-functors library"
 HOMEPAGE="http://github.com/jaspervdj/digestive-functors"
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/digestive-functors-0.3*[profile?]
+RDEPEND=">=dev-haskell/digestive-functors-0.3[profile?] <dev-haskell/digestive-functors-0.5[profile?]
 		>=dev-haskell/happstack-server-6.0[profile?]
 		<dev-haskell/happstack-server-7.1[profile?]
 		>=dev-haskell/text-0.11[profile?]
@@ -26,3 +26,5 @@ RDEPEND="=dev-haskell/digestive-functors-0.3*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}"/${P}-df04.patch)
