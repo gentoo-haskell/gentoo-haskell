@@ -32,12 +32,13 @@ DEPEND=">=dev-lang/ghc-6.8.1
 RDEPEND="mpd? ( media-sound/mpd )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-Fix-CPU-load-in-threadWaitRead.patch
 	epatch "${FILESDIR}"/${P}-mtl-2.1.patch
 }
 
 src_configure() {
+	# with_threaded is to workaround http://hackage.haskell.org/trac/ghc/ticket/4934
 	cabal_src_configure \
+		--flags=with_threaded \
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag unicode with_utf8) \
 		$(cabal_flag mail with_inotify) \
@@ -49,5 +50,5 @@ src_configure() {
 src_install() {
 	cabal_src_install
 
-	dodoc samples/xmobar.config README
+	dodoc samples/xmobar.config readme.md news.md
 }
