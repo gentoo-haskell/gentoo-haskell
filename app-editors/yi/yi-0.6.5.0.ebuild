@@ -53,7 +53,10 @@ RDEPEND="=dev-haskell/binary-0.5*
 		gtk? ( =dev-haskell/glib-0.12*
 			   =dev-haskell/gtk-0.12*
 			   gnome? ( =dev-haskell/gconf-0.12* ) )"
+# we ask >=dev-haskell/mtl-2 as
+# uses instances provided by it data-accessor-mtl
 DEPEND="${RDEPEND}
+		>=dev-haskell/mtl-2
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.10"
 
