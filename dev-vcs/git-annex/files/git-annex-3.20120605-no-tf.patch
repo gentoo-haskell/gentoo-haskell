@@ -1,0 +1,19 @@
+refreshing wiki..
+ghc -O2 -Wall -ignore-package monads-fd -outputdir tmp -IUtility -DWITH_S3 --make git-annex Utility/libdiskfree.o
+done
+
+Common.hs:6:8:
+    Ambiguous module name `Control.Monad.State.Strict':
+      it was found in multiple packages: monads-tf-0.1.0.0 mtl-2.1.1
+make: *** [git-annex] Error 1
+diff --git a/Makefile b/Makefile
+index 430d211..5c5151d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ PREFIX=/usr
+-IGNORE=-ignore-package monads-fd
++IGNORE=-ignore-package monads-fd -ignore-package monads-tf
+ BASEFLAGS=-Wall $(IGNORE) -outputdir tmp -IUtility -DWITH_S3
+ GHCFLAGS=-O2 $(BASEFLAGS)
+ 
