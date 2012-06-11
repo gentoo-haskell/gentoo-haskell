@@ -54,29 +54,27 @@ arch_binaries=""
 # 0 - yet
 yet_binary() {
 	case "${ARCH}" in
-		alpha) return 0 ;;
+		#alpha) return 0 ;;
 		#arm)
 		#	ewarn "ARM binary is built on armv5tel-eabi toolchain. Use with caution."
 		#	return 0
 		#;;
-		amd64) return 0 ;;
-		ppc) return 0 ;;
-		ppc64) return 0 ;;
-		sparc) return 0 ;;
-		x86) return 0 ;;
+		#amd64) return 0 ;;
+		#ppc) return 0 ;;
+		#ppc64) return 0 ;;
+		#sparc) return 0 ;;
+		#x86) return 0 ;;
 		*) return 1 ;;
 	esac
 }
 
-# snapshot copied from http://www.haskell.org/ghc/dist/current/dist/
-# SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/current/dist/${P}-src.tar.bz2 )"
-SRC_URI="!binary? ( http://dev.gentoo.org/~gienah/snapshots/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
+# restore keywords once we get x86 and amd64 binaries
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-KEYWORDS=""
 IUSE="doc ghcbootstrap llvm"
 IUSE+=" binary" # don't forget about me later!
 
@@ -364,24 +362,19 @@ src_prepare() {
 
 		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-		# epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
+		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		# failed to apply. FIXME
 		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 
-		# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
-		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
+		epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
+		epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		# one mode external depend with unstable ABI be careful to stash it
-		epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
-
-		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-		epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
-			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
-				-i utils/haddock/doc/configure.ac || die
+			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' utils/haddock/doc/configure.ac || die
 		fi
 
 		# as we have changed the build system
@@ -391,20 +384,6 @@ src_prepare() {
 
 src_configure() {
 	if ! use binary; then
-		# ghc now supports cross-compiling.  It appears that only the stage1
-		# compiler is built (if you are lucky) when cross-compiling with
-		# ghc-7.5.20120510.
-		if [[ -n ${CTARGET} ]]; then
-			if [[ ${CTARGET} != $(uname -m)"-pc-linux-gnu" ]]; then
-				cross_compiling="1"
-			fi
-		else
-			# We need to specify the --target option to avoid the ghc build
-			# system thinking its building a cross compiler (and then only building
-			# the stage1 compiler, no interpreter). man ebuild(5) notes how the
-			# setting CTARGET specifies the --target=${CTARGET} to econf.
-			CTARGET=$(uname -m)"-pc-linux-gnu"
-		fi
 
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
@@ -420,19 +399,11 @@ src_configure() {
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
-		# app-text/dblatex is not in portage, can not build PDF or PS
 		if use ghcbootstrap && use doc; then
 			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if [[ "{cross_compiling}" == "1" ]]; then
-				# TODO this is a workaround for this build error with the live ebuild with haddock:
-				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
-				# needed by `utils/haddock/dist/build/Main.o'.  Stop.
-				echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-			else
-				echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-			fi
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
 			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
@@ -445,21 +416,11 @@ src_configure() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		echo "SRC_HC_OPTS+=-O -H64m" >> mk/build.mk
-		echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-		echo "GhcStage2HcOpts = -O2 -fasm" >> mk/build.mk
-		echo "GhcHcOpts       = -Rghc-timing" >> mk/build.mk
-		echo "GhcLibHcOpts    = -O2" >> mk/build.mk
-		echo "GhcLibWays     += p" >> mk/build.mk
-		echo 'ifeq "$(PlatformSupportsSharedLibs)" "YES"' >> mk/build.mk
-		echo "GhcLibWays += dyn" >> mk/build.mk
-		echo "endif" >> mk/build.mk
-
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked
-		# arm: http://hackage.haskell.org/trac/ghc/changeset/27302c9094909e04eb73f200d52d5e9370c34a8a
-		if use alpha || use ppc64; then
+		# arm: unimplemented or never worked
+		if use alpha || use ppc64 || use arm; then
 			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
@@ -495,9 +456,6 @@ src_configure() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		# This is only for head builds
-		perl boot || die "perl boot failed"
-
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
 		# compiled with, by saving the path to it. The purpose is to make sure
 		# that GHC will use the very same gcc version when it compiles haskell
@@ -511,21 +469,12 @@ src_configure() {
 		# might point to ccache, once installed it will point to the users
 		# regular gcc.
 
-		econf --with-gcc=gcc --enable-bootstrap-with-devel-snapshot \
-			|| die "econf failed"
-		GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
-		GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+		econf --with-gcc=gcc || die "econf failed"
 	fi # ! use binary
 }
 
 src_compile() {
 	if ! use binary; then
-		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		mkdir -p "${S}"/inplace/bin || die "Could not mkdir -p ${S}/inplace/bin"
-		ghc -package ghc -o "${S}"/inplace/bin/mkUserGuidePart --make \
-			"${S}"/utils/mkUserGuidePart/Main.hs \
-			|| die "Could not build inplace/bin/mkUserGuidePart"
-
 		limit_jobs() {
 			if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
 				ewarn "You have requested parallel build which is known to break."
@@ -537,21 +486,6 @@ src_compile() {
 		# ghc massively parallel make: #409631, #409873
 		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
 		emake $(limit_jobs -j1) all
-
-		if [[ "{cross_compiling}" == "1" ]]; then
-			# runghc does not work for a stage1 compiler, we can build it anyway
-			# so it will print the error message: not built for interactive use
-			pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
-			if [ ! -f Setup.hs ]; then
-				echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
-					> Setup.hs || die "failed to create default Setup.hs"
-			fi
-			ghc -o setup --make Setup.hs || die "setup build failed"
-			./setup configure || die "runghc configure failed"
-			sed -e "s@VERSION@\"${GHC_PV}\"@" -i runghc.hs
-			./setup build || die "runghc build failed"
-			popd
-		fi
 	fi # ! use binary
 }
 
@@ -591,122 +525,11 @@ src_install() {
 		# so mark resulting binary
 		pax-mark -m "${ED}/usr/$(get_libdir)/${P}/ghc"
 
-		if [[ ! -f "${S}/VERSION" ]]; then
-			echo "${GHC_PV}" > "${S}/VERSION" \
-				|| die "Could not create file ${S}/VERSION"
-		fi
 		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
-		exeinto /usr/bin
-		if [[ ! -L "${ED}/usr/bin/ghc" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" /usr/bin/ghc
-		fi
-		if [[ ! -L "${ED}/usr/bin/ghc-pkg" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghc-pkg-${GHC_PV}" /usr/bin/ghc-pkg
-		fi
-		if [[ ! -f "${ED}/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" ]]; then
-			cat <<- EOF > "${S}/${GHC_TPF}-ghci-${GHC_PV}"
-				#!/bin/sh
-				exec "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" --interactive \${1+"\$@"}
-			EOF
-			doexe "${S}/${GHC_TPF}-ghci-${GHC_PV}"
-		fi
-		if [[ ! -L "${ED}/usr/bin/ghci" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" /usr/bin/ghci
-		fi
-		if [[ ! -f "${ED}/usr/bin/hsc2hs" ]]; then
-			cat <<- EOF > "${S}/hsc2hs"
-				#!/bin/sh
-				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				exeprog="hsc2hs"
-				executablename="\$exedir/\$exeprog"
-				datadir="/usr/share"
-				bindir="/usr/bin"
-				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				HSC2HS_EXTRA="--cflag=-fno-stack-protector --lflag=-Wl,--hash-size=31 --lflag=-Wl,--reduce-memory-overheads"
-				#!/bin/sh
-
-				tflag="--template=\$topdir/template-hsc.h"
-				Iflag="-I\$topdir/include/"
-				for arg do
-					case "\$arg" in
-				# On OS X, we need to specify -m32 or -m64 in order to get gcc to
-				# build binaries for the right target. We do that by putting it in
-				# HSC2HS_EXTRA. When cabal runs hsc2hs, it passes a flag saying which
-				# gcc to use, so if we set HSC2HS_EXTRA= then we don't get binaries
-				# for the right platform. So for now we just don't set HSC2HS_EXTRA=
-				# but we probably want to revisit how this works in the future.
-				#        -c*)          HSC2HS_EXTRA=;;
-				#        --cc=*)       HSC2HS_EXTRA=;;
-						-t*)          tflag=;;
-						--template=*) tflag=;;
-						--)           break;;
-					esac
-				done
-
-				exec "\$executablename" \${tflag:+"\$tflag"} \$HSC2HS_EXTRA \${1+"\$@"} "\$Iflag"
-			EOF
-			doexe "${S}/hsc2hs"
-		fi
-		if [[ ! -f "${ED}/usr/bin/runghc" ]]; then
-			cat <<- EOF > "${S}/runghc"
-				#!/bin/sh
-				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				exeprog="runghc"
-				executablename="\$exedir/\$exeprog"
-				datadir="/usr/share"
-				bindir="/usr/bin"
-				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				#!/bin/sh
-
-				exec "\$executablename" -f "\$bindir/ghc" \${1+"\$@"}
-			EOF
-			doexe "${S}/runghc"
-		fi
-		if [[ ! -L "${ED}/usr/bin/runhaskell" ]]; then
-			dosym /usr/bin/runghc /usr/bin/runhaskell
-		fi
-		if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/runghc" ]]; then
-			exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
-			doexe "${S}/utils/runghc/dist/build/runghc/runghc"
-		fi
-
-		# The 7.5.20120511 build system does not install these shared libraries.
-		# /usr/lib64/ghc-7.5.20120511/ghc-7.5.20120511/libHSghc-7.5.20120511-ghc7.5.20120511.so
-		# has some of these libraries in its NEEDED list. We need to install these libraries
-		# to avoid revdep-rebuild wanting to rebuild dev-lang/ghc.
-		find "${S}/libraries" -name lib*.so* -print >"${S}/sl.txt"
-		for i in $(cat sl.txt | xargs)
-		do
-			lib_name=$(basename ${i})
-			lib_dir=$(dirname ${i})
-			lib_sub_dir_prefix=$(echo ${i} \
-				| sed -e "s@${S}/libraries/\(.*\)/dist-install/build/lib.*@\1@")
-			lib_sub_dir_prefix_orig="${lib_sub_dir_prefix}"
-			if [[ "${lib_sub_dir_prefix}" = "Cabal/Cabal" ]]; then
-				lib_sub_dir_prefix="Cabal"
-			fi
-			if [ -d ${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
-				dist_install_dir="${S}/libraries/${lib_sub_dir_prefix_orig}/dist-install"
-				lib_version=$(head -1 "${dist_install_dir}/setup-config" \
-					| sed -e 's@Saved package config for \([-a-zA-Z0-9]*\)-\([.0-9]*\) written by.*@\2@')
-				dodir /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
-				exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
-				pushd ${lib_dir} || die "Could not cd to ${lib_dir}"
-				doexe ${lib_name}
-				popd
-			fi
-		done
 	fi
-
-	# path to the package.conf.d
-	PKGCONFD="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
-	# copy the package.conf.d, including timestamp, save it so we can help
-	# users that have a broken package.conf.d
-	cp -pR "${PKGCONFD}"{,.shipped} \
-		|| die "failed to copy package.conf.d"
 
 	# path to the package.cache
 	PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
@@ -734,31 +557,18 @@ pkg_postinst() {
 	# the package.conf.d directory.
 	touch "${PKGCACHE}"
 
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
-	ewarn "For portage place lines like these in /etc/portage/package.keywords"
-	ewarn "=dev-haskell/time-1.4"
-	ewarn "=dev-haskell/cabal-1.15.0* **"
-	ewarn "=dev-haskell/haddock-2.10.0_p$(get_version_component_range 3) **"
-	ewarn "=dev-lang/ghc-7.5* **"
-	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
-	fi
-	if [[ "{cross_compiling}" == "1" ]]; then
 		ewarn
-		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
-		ewarn "not work for a cross compiler."
-		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
-		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 	fi
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
 }
 
 pkg_prerm() {
