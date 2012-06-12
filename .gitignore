@@ -4,3 +4,4 @@
 projects/lambdaman/*.hi
 projects/lambdaman/*.o
 projects/lambdaman/lambdaman
+metadata/cache/
