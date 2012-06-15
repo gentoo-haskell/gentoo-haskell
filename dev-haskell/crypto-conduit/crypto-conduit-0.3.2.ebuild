@@ -29,10 +29,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? (
 			>=dev-haskell/hspec-0.9
-			<dev-haskell/hspec-1.1
+			<dev-haskell/hspec-1.2
 		)"
 
 src_prepare() {
-	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.1@' \
+	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.2@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
