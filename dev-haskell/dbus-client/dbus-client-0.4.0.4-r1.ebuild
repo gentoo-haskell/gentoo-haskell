@@ -26,4 +26,5 @@ RDEPEND="=dev-haskell/dbus-core-0.8*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)
+PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch
+	"${FILESDIR}"/${P}-notype.patch)
