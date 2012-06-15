@@ -193,12 +193,14 @@ main = do
   gitAwares <- readGit
   putStrLn $ "git knows about " ++ show (length gitAwares) ++ " files"
   let digestErrors = concatMap (verifyManifests gitAwares) manis
+{-
+  -- disabled as we use tiny manifests now
   case digestErrors of
     [] -> putStrLn "No manifest errors found"
     _ -> do putStrLn "Naughty naughty!"
             mapM_ putStrLn digestErrors
             putStrLn $ show (length digestErrors) ++ " error(s) found."
-
+-}
   (gone_cats, new_cats) <- cats_status ("profiles" </> "categories")
 
   mapM_ (putStrLn . ("GONE CATEGORY: " ++)) gone_cats
