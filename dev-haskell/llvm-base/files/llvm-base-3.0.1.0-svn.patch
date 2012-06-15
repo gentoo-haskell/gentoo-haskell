@@ -1,0 +1,14 @@
+diff --git a/configure.ac b/configure.ac
+index 026eb7c..4dffc4c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -125,7 +125,8 @@ if test "$ac_cv_lib_LLVMCore_LLVMModuleCreateWithName" = "no"; then
+     [AC_MSG_ERROR(could not find LLVM C bindings)])
+ fi
+ 
+-llvm_num_version="`echo $llvm_version | tr . 0`"
++# treat svn versions, like 3.2svn as digits (302)
++llvm_num_version="`echo $llvm_version | tr . 0 | sed 's/svn//'`"
+ AC_DEFINE_UNQUOTED([HS_LLVM_VERSION], [$llvm_num_version],
+   [Define to the version of LLVM, e.g. 209 for 2.9.])
+ 

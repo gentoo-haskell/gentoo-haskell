@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit autotools eutils haskell-cabal
 
 DESCRIPTION="FFI bindings to the LLVM compiler toolkit."
 HOMEPAGE="https://github.com/bos/llvm"
@@ -22,3 +22,8 @@ RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		sys-devel/llvm"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-svn.patch
+	eautoreconf
+}
