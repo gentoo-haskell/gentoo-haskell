@@ -1,0 +1,23 @@
+diff --git a/dbus-core.cabal b/dbus-core.cabal
+index f46622e..26fa5bc 100644
+--- a/dbus-core.cabal
++++ b/dbus-core.cabal
+@@ -41,7 +41,7 @@ library
+     , data-binary-ieee754 >= 0.3 && < 0.5
+     , text >= 0.8 && < 0.12
+     , containers >= 0.1 && < 0.5
+-    , unix >= 2.2 && < 2.5
++    , unix >= 2.2 && < 2.6
+     , network >= 2.2 && < 2.4
+     , libxml-sax >= 0.6 && < 0.8
+     , xml-types >= 0.1 && < 0.4
+diff --git a/hs/DBus/Types/Internal.cpphs b/hs/DBus/Types/Internal.cpphs
+index 3a0c404..4b16be3 100644
+--- a/hs/DBus/Types/Internal.cpphs
++++ b/hs/DBus/Types/Internal.cpphs
+@@ -1,4 +1,4 @@
+-
++{-# LANGUAGE FlexibleInstances #-}
+ 
+ -- Copyright (C) 2009-2010 John Millikin <jmillikin@gmail.com>
+ -- 

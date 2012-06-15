@@ -34,4 +34,5 @@ src_prepare() {
 		-e 's@libxml-sax >= 0.6 && < 0.7@libxml-sax >= 0.6 \&\& < 0.8@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen libxml-sax and xml-types dependencies"
 	epatch "${FILESDIR}/${P}-xml-types-0.3.patch"
+	epatch "${FILESDIR}/${P}-ghc-7.4.patch"
 }
