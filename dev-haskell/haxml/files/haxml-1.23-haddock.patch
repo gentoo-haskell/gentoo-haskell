@@ -1,0 +1,37 @@
+--- HaXml-1.23-orig/src/Text/XML/HaXml/Schema/HaskellTypeModel.hs	2012-06-15 21:27:49.000000000 +1000
++++ HaXml-1.23/src/Text/XML/HaXml/Schema/HaskellTypeModel.hs	2012-06-16 16:46:26.358651992 +1000
+@@ -77,8 +77,8 @@
+                  -- rests with the input doc, not with the caller of the parser.
+                | ElementsAttrsAbstract {-typename-}XName
+                                        {-subtypes-}[(XName,Maybe XName)]
+-                                 -- ^ [(type name, module where declared later)]
+                                        Comment
++                                 -- ^ [(type name, module where declared later)]
+ 
+                  -- becomes function
+                  --    elementE :: Parser T
+--- HaXml-1.23-orig/src/Text/XML/HaXml/Schema/PrettyHaskell.hs	2012-06-15 21:27:50.000000000 +1000
++++ HaXml-1.23/src/Text/XML/HaXml/Schema/PrettyHaskell.hs	2012-06-16 16:49:56.952051977 +1000
+@@ -403,9 +403,6 @@
+     $$ text "data" <+> ppUnqConId nx t
+         $$ nest 8 (ppvList "=" "|" "" ppAbstrCons insts
+                   $$ text "deriving (Eq,Show)")
+---  $$ text "-- instance SchemaType" <+> ppUnqConId nx t
+---      <+> text "(declared in Instance module)"
+--- *** Declare instance here
+     $$ text "instance SchemaType" <+> ppUnqConId nx t <+> text "where"
+         $$ nest 4 (text "parseSchemaType s = do" 
+                   $$ nest 4 (vcat (intersperse (text "`onFail`")
+@@ -417,12 +414,6 @@
+   where
+     ppAbstrCons (name,Nothing)  = con name <+> ppConId nx name
+     ppAbstrCons (name,Just mod) = con name <+> ppConId nx name
+--- *** Declare FwdDecl type here (proxy for type declared in later module)
+---  ppAbstrCons (name,Just mod) = text "forall q . (FwdDecl" <+>
+---                                fwd name <+> text "q," <+>
+---                                text "SchemaType q) =>" <+>
+---                                con name <+>
+---                                text "("<>fwd name<>text"->q)" <+> fwd name
+     ppParse (name,Nothing) = text "(fmap" <+> con name <+>
+                              text "$ parseSchemaType s)"
+     ppParse (name,Just _)  = ppParse (name,Nothing)

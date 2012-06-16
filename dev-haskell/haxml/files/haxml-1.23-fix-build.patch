@@ -1,0 +1,85 @@
+--- HaXml-1.23-orig/HaXml.cabal	2012-06-15 21:27:50.000000000 +1000
++++ HaXml-1.23/HaXml.cabal	2012-06-16 17:18:02.471555934 +1000
+@@ -11,7 +11,7 @@
+ 	Haskell utilities for parsing, filtering, transforming and
+ 	generating XML documents.
+ build-type:     Simple
+-cabal-version:  >=1.2
++cabal-version:  >=1.8
+ extra-source-files:    LICENCE-GPL, LICENCE-LGPL
+ 
+ flag splitBase
+@@ -84,6 +84,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: Canonicalise.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable CanonicaliseLazy
+   GHC-Options: -Wall
+@@ -91,6 +92,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: CanonicaliseLazy.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable Xtract
+   GHC-Options: -Wall
+@@ -98,6 +100,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: Xtract.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable Validate
+   GHC-Options: -Wall
+@@ -105,6 +108,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: Validate.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable MkOneOf
+   GHC-Options: -Wall
+@@ -112,6 +116,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: MkOneOf.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable DtdToHaskell
+   GHC-Options: -Wall
+@@ -119,6 +124,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: DtdToHaskell.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable XsdToHaskell
+   GHC-Options: -Wall
+@@ -126,6 +132,7 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: XsdToHaskell.hs
++  build-depends: base, bytestring, containers, filepath, polyparse >= 1.5, pretty
+ 
+ Executable FpMLToHaskell
+   GHC-Options: -Wall
+@@ -133,5 +140,5 @@
+   Hs-Source-Dirs: src/tools, src
+   cpp-options: -DMAJOR=1 -DMINOR=23
+   Main-Is: FpMLToHaskell.hs
+-  build-depends: directory
++  build-depends: base, bytestring, containers, directory, filepath, HaXml == 1.23.*, polyparse >= 1.5, pretty
+ 
+--- HaXml-1.23-orig/src/tools/FpMLToHaskell.hs	2012-06-15 21:27:50.000000000 +1000
++++ HaXml-1.23/src/tools/FpMLToHaskell.hs	2012-06-16 16:22:22.423493642 +1000
+@@ -33,7 +33,7 @@
+ import Text.XML.HaXml.Schema.Environment    as Env
+ import Text.XML.HaXml.Schema.TypeConversion as XsdToH
+ import Text.XML.HaXml.Schema.PrettyHaskell
+-import qualified Text.XML.HaXml.Schema.PrettyHsBoot     as HsBoot
++import qualified Text.XML.HaXml.Schema.PrettyHaskell    as HsBoot
+ import qualified Text.XML.HaXml.Schema.HaskellTypeModel as Haskell
+ import Text.ParserCombinators.Poly
+ import Text.PrettyPrint.HughesPJ (render,vcat)
