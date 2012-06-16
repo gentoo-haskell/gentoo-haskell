@@ -1,0 +1,19 @@
+--- acid-state-0.6.4-orig/src-unix/FileIO.hs	2012-06-07 01:44:41.000000000 +1000
++++ acid-state-0.6.4/src-unix/FileIO.hs	2012-06-16 16:31:33.017287952 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE CPP, ForeignFunctionInterface #-}
+ module FileIO(FHandle,open,write,flush,close) where
+ import System.Posix(Fd(Fd),
+                     openFd,
+@@ -12,6 +12,10 @@
+ import Foreign(Ptr)
+ import Foreign.C(CInt)
+ 
++#if (__GLASGOW_HASKELL__>=705)
++import Foreign.C.Types(CInt(..))
++#endif"
++
+ data FHandle = FHandle Fd
+ 
+ -- should handle opening flags correctly
