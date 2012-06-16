@@ -46,3 +46,14 @@
  
          args t = do
              css <- modTime "css"; js <- modTime "js"
+--- hoogle-4.2.11-orig/src/CmdLine/Load.hs	2012-04-06 04:03:44.000000000 +1000
++++ hoogle-4.2.11/src/CmdLine/Load.hs	2012-06-16 22:12:35.671226832 +1000
+@@ -4,7 +4,7 @@
+ import Hoogle
+ import General.Base
+ import General.Util
+-import General.System
++import General.System (doesDirectoryExist, doesFileExist, getDirectoryContents)
+ 
+ 
+ -- | Given a list of search directories, and a query, load the databases you
