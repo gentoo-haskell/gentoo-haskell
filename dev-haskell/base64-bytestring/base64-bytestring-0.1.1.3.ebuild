@@ -28,13 +28,6 @@ DEPEND="${RDEPEND}
 		)
 		"
 
-src_prepare() {
-	cp "${FILESDIR}/Tests.hs" tests \
-		|| die "Could not copy missing Tests.hs"
-	sed -e "s@bytestring == 0.9.*@bytestring < 0.11@"\
-		-i "${PN}.cabal"
-}
-
 src_configure() {
 	cabal_src_configure $(use test && use_enable test tests) #395351
 }
