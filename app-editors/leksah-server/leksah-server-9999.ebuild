@@ -39,21 +39,21 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3[profile?]
 		<dev-haskell/parsec-3.2[profile?]
 		>=dev-haskell/process-leksah-1.0.1.3[profile?]
 		<dev-haskell/process-leksah-1.1[profile?]
+		>=dev-haskell/strict-0.3.2[profile?]
+		<dev-haskell/strict-0.4[profile?]
 		>=dev-haskell/time-1.1[profile?]
 		<dev-haskell/time-1.5[profile?]
 		>=dev-haskell/transformers-0.2.2.0[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10.2
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cabal-1.10
 			>=dev-haskell/hunit-1.2
 		)
 		"
 
 src_prepare() {
-	sed -e 's@transformers >=0.2.2.0 && <0.3@transformers >=0.2.2.0 \&\& <0.4@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
