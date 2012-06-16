@@ -64,14 +64,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
-	sed -e 's@mtl >=1.1.0.2 && <2.1@mtl >=1.1.0.2 \&\& <2.2@g' \
-		-e 's@transformers >=0.2.2.0 && <0.3@transformers >=0.2.2.0 \&\& <0.4@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
+	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
+	sed -e 's@-- ^@--@g' \
+		-i "${S}/src/IDE/SymbolNavigation.hs" \
+		|| die "Could not remove haddock markup"
 }
 
 src_configure() {
