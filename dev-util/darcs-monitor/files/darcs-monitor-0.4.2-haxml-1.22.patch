@@ -1,11 +1,11 @@
 --- darcs-monitor-0.4.2-orig/darcs-monitor.cabal	2011-06-14 00:20:58.000000000 +1000
-+++ darcs-monitor-0.4.2/darcs-monitor.cabal	2011-08-14 11:48:15.519837537 +1000
++++ darcs-monitor-0.4.2/darcs-monitor.cabal	2012-06-16 18:43:19.565179119 +1000
 @@ -28,7 +28,7 @@
    description: Choose the new smaller, split-up base package.
  
  Executable darcs-monitor
 -  Build-Depends: mtl, HaXml == 1.20.*
-+  Build-Depends: mtl, HaXml == 1.22.*
++  Build-Depends: mtl, HaXml >= 1.22 && < 1.24
    if flag(splitBase)
      Build-Depends: base >=3 && < 5, containers, directory, process
    else
