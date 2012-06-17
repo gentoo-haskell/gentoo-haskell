@@ -451,6 +451,15 @@ src_configure() {
 			echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 		fi
 
+		# allows overriding build flavours for libraries:
+		# v   - vanilla (static libs)
+		# p   - profiled
+		# dyn - shared libraries
+		# example: GHC_LIBRARY_WAYS="v dyn"
+		if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+			echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+		fi
+
 		# Get ghc from the unpacked binary .tbz2
 		# except when bootstrapping we just pick ghc up off the path
 		if ! use ghcbootstrap; then
