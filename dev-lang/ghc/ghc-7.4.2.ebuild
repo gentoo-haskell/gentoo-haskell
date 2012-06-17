@@ -75,7 +75,7 @@ SLOT="0"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 # restore keywords once we get x86 and amd64 binaries
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-IUSE="doc ghcbootstrap llvm"
+IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
 
 RDEPEND="
@@ -370,7 +370,8 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		# one mode external depend with unstable ABI be careful to stash it
-		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
+		# avoid external libffi runtime when we build binaries
+		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -475,17 +476,7 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		limit_jobs() {
-			if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
-				ewarn "You have requested parallel build which is known to break."
-				ewarn "Please report all breakages upstream."
-				return
-			fi
-			echo $@
-		}
-		# ghc massively parallel make: #409631, #409873
-		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
-		emake $(limit_jobs -j1) all
+		emake all || die "make failed"
 	fi # ! use binary
 }
 
