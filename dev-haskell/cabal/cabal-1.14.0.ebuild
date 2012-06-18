@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}"
 
-CABAL_CORE_LIB_GHC_PV="7.4.0.20111219 7.4.0.20120126 7.4.1"
+CABAL_CORE_LIB_GHC_PV="7.4.0.20111219 7.4.0.20120126 7.4.1 7.4.2"
 
 src_configure() {
 	if ! cabal-is-dummy-lib; then
