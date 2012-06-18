@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
-inherit qt4-r2
+EAPI=4
+inherit multilib qt4-r2
 
 MY_PN="qtHaskell"
 MY_P="${MY_PN}-${PV}"
@@ -27,6 +27,15 @@ DEPEND="virtual/opengl
 		x11-libs/qt-gui:4
 		x11-libs/qt-opengl:4
 		x11-libs/qt-script:4"
+
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	local p
+	while read p; do
+		sed -i "${p}" -e 's,/usr/local/lib,/usr/'$(get_libdir)',g' || die
+	done < <(find "${S}" -name '*.pro')
+}
 
 src_configure() {
 	eqmake4 "${S}"/qtc.pro
