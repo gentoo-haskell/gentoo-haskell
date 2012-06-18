@@ -1,0 +1,33 @@
+--- snap-server-0.9.0-orig/snap-server.cabal	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/snap-server.cabal	2012-06-19 00:36:14.389611411 +1000
+@@ -93,7 +93,7 @@
+     binary                    >= 0.5      && < 0.6,
+     blaze-builder             >= 0.2.1.4  && < 0.4,
+     blaze-builder-enumerator  >= 0.2.0    && < 0.3,
+-    bytestring                >= 0.9.1    && < 0.10,
++    bytestring                >= 0.9.1    && < 0.11,
+     bytestring-nums,
+     case-insensitive          >= 0.3      && < 0.5,
+     containers                >= 0.3      && < 0.6,
+--- snap-server-0.9.0-orig/src/System/SendFile/Linux.hsc	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/System/SendFile/Linux.hsc	2012-06-19 00:41:01.945804836 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE CPP, ForeignFunctionInterface #-}
+ -- | Linux system-dependent code for 'sendfile'.
+ module System.SendFile.Linux (sendFile) where
+ 
+@@ -8,7 +8,13 @@
+ import Foreign.Marshal (alloca)
+ import Foreign.Ptr (Ptr, nullPtr)
+ import Foreign.Storable (poke)
++
++#if (__GLASGOW_HASKELL__>=705)
++import Foreign.C.Types(CInt(..), CSize(..))
++import System.Posix.Types (Fd(..), COff, CSsize(..))
++#else
+ import System.Posix.Types (Fd, COff, CSsize)
++#endif
+ 
+ sendFile :: IO () -> Fd -> Fd -> Int64 -> Int64 -> IO Int64
+ sendFile onBlock out_fd in_fd off count
