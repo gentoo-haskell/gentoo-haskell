@@ -32,11 +32,9 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
-	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.1@' \
+	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.2@' \
+		-e 's@bytestring   >= 0.9 && < 0.10@bytestring   >= 0.9 \&\& < 0.11@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
-
-src_prepare() {
 	# Copy the missing test, upstream never run it anyway, it fails to compile
 	cp "${FILESDIR}/runtests.hs" "${S}/tests"
 }
