@@ -40,6 +40,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hspec               >= 0.6        && < 0.10@hspec               >= 0.6        \&\& < 1.2@' \
+		-e 's@bytestring          >= 0.9        && < 0.10@bytestring          >= 0.9        \&\& < 0.11@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
