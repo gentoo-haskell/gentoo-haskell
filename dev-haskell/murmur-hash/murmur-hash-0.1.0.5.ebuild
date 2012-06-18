@@ -21,3 +21,8 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@bytestring    == 0.9.\*@bytestring    >= 0.9 \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
