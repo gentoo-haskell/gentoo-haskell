@@ -10,7 +10,7 @@
 +    QuickCheck>=2.1&&<2.5, 
      containers, 
 -    tagged==0.0
-+    tagged>=0.1&&<0.3
++    tagged>=0.1&&<0.5
    Exposed-modules:
      Test.Agata,
      Test.AgataTH,
