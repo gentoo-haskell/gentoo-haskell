@@ -1,24 +1,34 @@
-{-# LANGUAGE OverloadedStrings, ScopedTypeVariables #-}
+-------------------------------------------------------------------------------
+{-# LANGUAGE OverloadedStrings   #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 module Text.Digestive.View.Tests
     ( tests
     ) where
 
-import Control.Monad.Identity (runIdentity)
-import Control.Exception (SomeException, handle)
 
-import Data.Text (Text)
-import Test.Framework (Test, testGroup)
-import Test.Framework.Providers.HUnit (testCase)
-import Test.HUnit (Assertion, assert, assertFailure, (@=?))
+--------------------------------------------------------------------------------
+import           Control.Exception              (SomeException, handle)
+import           Control.Monad.Identity         (runIdentity)
+import           Data.Text                      (Text)
+import           Test.Framework                 (Test, testGroup)
+import           Test.Framework.Providers.HUnit (testCase)
+import           Test.HUnit                     ((@=?))
+import qualified Test.HUnit                     as H
 
-import Text.Digestive.Tests.Fixtures
-import Text.Digestive.Types
-import Text.Digestive.View
 
-assertError :: Show a => a -> Assertion
-assertError x = handle (\(_ :: SomeException) -> assert True) $
-    x `seq` assertFailure $ "Should throw an error but gave: " ++ show x
+--------------------------------------------------------------------------------
+import           Text.Digestive.Tests.Fixtures
+import           Text.Digestive.Types
+import           Text.Digestive.View
 
+
+--------------------------------------------------------------------------------
+assertError :: Show a => a -> H.Assertion
+assertError x = handle (\(_ :: SomeException) -> H.assert True) $
+    x `seq` H.assertFailure $ "Should throw an error but gave: " ++ show x
+
+
+--------------------------------------------------------------------------------
 tests :: Test
 tests = testGroup "Text.Digestive.View.Tests"
     [ testCase "Simple postForm" $ (@=?)
@@ -55,8 +65,8 @@ tests = testGroup "Text.Digestive.View.Tests"
             [("f.name", "dog")]
 
     , testCase "Simple fieldInputChoice" $ (@=?)
-        2 $
-        snd $ fieldInputChoice "type" $ fst $ runTrainerM $
+        "Leaf" $
+        snd $ selection $ fieldInputChoice "type" $ fst $ runTrainerM $
             postForm "f" pokemonForm $ testEnv [("f.type",  "type.2")]
 
     , testCase "Nested postForm" $ (@=?)
@@ -74,16 +84,16 @@ tests = testGroup "Text.Digestive.View.Tests"
             postForm "f" catchForm $ testEnv [("f.pokemon.level", "hah.")]
 
     , testCase "subView input" $ (@=?)
-        2 $
-        snd $ fieldInputChoice "type" $ subView "pokemon" $ fst $
+        "Leaf" $
+        snd $ selection $ fieldInputChoice "type" $ subView "pokemon" $ fst $
             runTrainerM $ postForm "f" catchForm $ testEnv
                 [ ("f.pokemon.level", "hah.")
                 , ("f.pokemon.type",  "type.2")
                 ]
 
-    -- , testCase "subViews length" $ (@=?)
-    --     4 $
-    --     length $ subViews $ runTrainerM $ getForm "f" pokemonForm
+    , testCase "subViews length" $ (@=?)
+        4 $
+        length $ subViews $ runTrainerM $ getForm "f" pokemonForm
 
     , testCase "Abusing Choice as Text" $ assertError $
         fieldInputText "type" $ runTrainerM $ getForm "f" pokemonForm
@@ -93,8 +103,29 @@ tests = testGroup "Text.Digestive.View.Tests"
 
     , testCase "Abusing Text as Bool" $ assertError $
         fieldInputBool "name" $ runTrainerM $ getForm "f" pokemonForm
+
+    , testCase "monadic choiceWith" $ (@=?)
+        (Just (Order (Product "cm_gs" "Comet Grease Shark") 2)) $
+        snd $ runDatabase $ postForm "f" orderForm $ testEnv
+            -- We actually need f.product.cm_gs for the choice input, but this
+            -- must work as well!
+            [ ("f.product",  "cm_gs")
+            , ("f.quantity", "2")
+            ]
+
+    , testCase "monadic view query" $ (@=?)
+        "Earthwing Belly Racer" $
+        snd $ selection $ fieldInputChoice "product" $ runDatabase $
+                getForm "f" orderForm
     ]
 
+
+--------------------------------------------------------------------------------
 testEnv :: Monad m => [(Text, Text)] -> Env m
 testEnv input key = return $ map (TextInput . snd) $
     filter ((== fromPath key) . fst) input
+
+
+--------------------------------------------------------------------------------
+selection :: [(Text, v, Bool)] -> (Text, v)
+selection fic = head [(t, v) | (t, v, s) <- fic, s]

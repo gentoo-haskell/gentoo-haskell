@@ -1,15 +1,22 @@
+--------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 module Text.Digestive.Field.Tests
     ( tests
     ) where
 
-import Test.Framework (Test, testGroup)
-import Test.Framework.Providers.HUnit (testCase)
-import Test.HUnit ((@=?))
 
-import Text.Digestive.Field
-import Text.Digestive.Types
+--------------------------------------------------------------------------------
+import           Test.Framework                 (Test, testGroup)
+import           Test.Framework.Providers.HUnit (testCase)
+import           Test.HUnit                     ((@=?))
 
+
+--------------------------------------------------------------------------------
+import           Text.Digestive.Field
+import           Text.Digestive.Types
+
+
+--------------------------------------------------------------------------------
 tests :: Test
 tests = testGroup "Text.Digestive.Field.Tests"
     [ testCase "evalField singleton" $
