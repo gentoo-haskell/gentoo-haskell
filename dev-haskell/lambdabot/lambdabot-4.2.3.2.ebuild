@@ -50,7 +50,6 @@ DEPEND="${RDEPEND}
 CABAL_CONFIGURE_FLAGS="$(cabal_flag eval)"
 
 src_prepare() {
-	cd "${S}"
 	epatch "${FILESDIR}/${P}-eval.patch"
 	if has_version "<dev-haskell/mtl-2.0.0.0"; then
 		epatch "${FILESDIR}/${P}-mtl-1.patch"
