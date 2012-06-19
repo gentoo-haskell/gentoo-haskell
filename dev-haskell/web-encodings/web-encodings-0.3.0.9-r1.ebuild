@@ -29,4 +29,3 @@ src_prepare() {
 	sed -e 's@failure >= 0.0.0 && < 0.2@failure >= 0.0.0 \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
-
