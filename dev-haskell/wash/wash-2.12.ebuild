@@ -37,7 +37,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	cabal-mksetup
 	sed -i -e "/Extensions/aGhc-Options: -O +RTS -M${CHECKREQS_MEMORY}m -RTS" \
