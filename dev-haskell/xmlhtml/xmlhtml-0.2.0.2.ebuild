@@ -36,4 +36,3 @@ src_prepare() {
 		-e 's@containers           >= 0.3   && < 0.5@containers           >= 0.3   \&\& < 0.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
-
