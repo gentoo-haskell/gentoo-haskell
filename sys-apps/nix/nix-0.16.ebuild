@@ -11,7 +11,7 @@ HOMEPAGE="http://nixos.org/nix"
 MY_PV="${PV/_/}"
 
 SRC_URI="http://hydra.nixos.org/build/565033/download/4/${PN}-${MY_PV}.tar.bz2"
-LICENSE="GPL-2.1"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
