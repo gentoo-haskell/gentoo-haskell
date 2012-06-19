@@ -1,8 +1,12 @@
 Perpetual TODO
 ==============
 
-- [easy to hard] Add packages requested by people to the overlay.
+- [easy-to-hard] Add packages requested by people to the overlay.
   `HackPort <https://github.com/gentoo-haskell/hackport>`_ is a nice tool to do it fast.
+
+- [easy-to-moderate] Keep up-to-date upstream versions in overlay,
+  fix depends broken by package updates and upstream fixes.
+  HackPort can help in tracking: ``hackport status --from-hackage``.
 
 - Improve `HackPort <https://github.com/gentoo-haskell/hackport>`_ tool.
 
