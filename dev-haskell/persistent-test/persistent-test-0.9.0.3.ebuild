@@ -68,7 +68,7 @@ src_unpack() {
 	git-2_src_unpack
 
 	if use test; then
-		pushd ${S}
+		pushd "${S}"
 		unpack "persistent-sqlite-${S_PV}.tar.gz"
 		mv "persistent-sqlite-${S_PV}" "persistent-sqlite"
 		unpack "persistent-template-${T_PV}.tar.gz"
