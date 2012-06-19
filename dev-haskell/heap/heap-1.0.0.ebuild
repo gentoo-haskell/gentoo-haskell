@@ -24,7 +24,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 src_prepare() {
-	cd "${S}"
 	if has_version ">=dev-haskell/quickcheck-2.4"; then
 		epatch "${FILESDIR}/${P}-quickcheck-2.4.patch"
 	fi
