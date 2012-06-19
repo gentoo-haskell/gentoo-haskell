@@ -25,16 +25,12 @@ RDEPEND="dev-haskell/qthaskellc
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
-PATCHES=( "${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
-          "${FILESDIR}/${PN}-1.1.4-qtc-classes-base-monad-to-control-monad.patch"
-          "${FILESDIR}/${PN}-1.1.4-qtc-core-attributes-fix-type-error.patch" )
-
-src_prepare() {
-    base_src_prepare
-}
+PATCHES=("${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
+	"${FILESDIR}/${PN}-1.1.4-qtc-classes-base-monad-to-control-monad.patch"
+	"${FILESDIR}/${PN}-1.1.4-qtc-core-attributes-fix-type-error.patch" )
 
 src_install() {
 	cabal_src_install
-	dodoc INSTALL LICENSE README || die
+	dodoc INSTALL README || die
 	dohtml doc/apiGuide/* doc/primer/* doc/userGuide/* || die
 }
