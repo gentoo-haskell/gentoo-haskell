@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# upstream forgot to include some of the test source files in the tarball
-	cp -pR "${FILESDIR}/${P}/tests" ${S} \
+	cp -pR "${FILESDIR}/${P}/tests" "${S}" \
 		|| die "Could not copy missing tests source files"
 }
 
