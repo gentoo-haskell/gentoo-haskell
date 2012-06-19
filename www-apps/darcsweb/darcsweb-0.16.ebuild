@@ -23,11 +23,11 @@ src_install() {
 
 	chmod +x darcsweb.cgi
 
-	cp style.css ${D}${MY_HTDOCSDIR}
-	cp darcsweb.cgi ${D}${MY_HTDOCSDIR}
-	cp minidarcs.png ${D}${MY_HTDOCSDIR}
-	cp darcs.png ${D}${MY_HTDOCSDIR}
-	cp config.py.sample ${D}${MY_HTDOCSDIR}
+	cp style.css "${D}${MY_HTDOCSDIR}"
+	cp darcsweb.cgi "${D}${MY_HTDOCSDIR}"
+	cp minidarcs.png "${D}${MY_HTDOCSDIR}"
+	cp darcs.png "${D}${MY_HTDOCSDIR}"
+	cp config.py.sample "${D}${MY_HTDOCSDIR}"
 	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 	webapp_src_install
 }
