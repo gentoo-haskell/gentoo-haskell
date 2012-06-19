@@ -50,5 +50,4 @@ src_compile() {
 
 src_install() {
 	dobin "${WORKDIR}/${P}/src/main/agda"
-	dodoc LICENSE
 }

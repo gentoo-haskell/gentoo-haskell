@@ -511,7 +511,7 @@ src_install() {
 		if [[ "${lib_sub_dir_prefix}" = "Cabal/Cabal" ]]; then
 			lib_sub_dir_prefix="Cabal"
 		fi
-		if [ -d ${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
+		if [ -d "${ED}"/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
 			dist_install_dir="${S}/libraries/${lib_sub_dir_prefix_orig}/dist-install"
 			lib_version=$(head -1 "${dist_install_dir}/setup-config" \
 				| sed -e 's@Saved package config for \([-a-zA-Z0-9]*\)-\([.0-9]*\) written by.*@\2@')
