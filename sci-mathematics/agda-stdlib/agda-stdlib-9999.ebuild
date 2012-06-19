@@ -32,7 +32,7 @@ src_prepare() {
 
 src_compile() {
 	haskell-cabal_src_compile
-	${S}/dist/build/GenerateEverything/GenerateEverything \
+	"${S}"/dist/build/GenerateEverything/GenerateEverything \
 		|| die "GenerateEverything failed"
 	local prof
 	use profile && prof="--ghc-flag=-prof"
