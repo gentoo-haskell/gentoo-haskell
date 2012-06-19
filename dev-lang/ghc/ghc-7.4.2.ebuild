@@ -532,7 +532,10 @@ src_install() {
 	fi
 
 	# path to the package.cache
-	PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	local package_confdir="${ED}/usr/$(get_libdir)/${P}/package.conf.d"
+	PKGCACHE="${package_confdir}"/package.cache
+
+	cp -pR "${package_confdir}"{,.initial} || die "failed to backup intial package.conf.d"
 
 	# copy the package.conf, including timestamp, save it so we later can put it
 	# back before uninstalling, or when upgrading.
