@@ -34,4 +34,3 @@ src_prepare() {
 			-i "${S}/src/Data/Kind.hs"
 	fi
 }
-
