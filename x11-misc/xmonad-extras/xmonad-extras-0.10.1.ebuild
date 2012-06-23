@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -29,6 +29,7 @@ RDEPEND="dev-haskell/mtl
 		mpd? ( >=dev-haskell/libmpd-0.6 <dev-haskell/libmpd-0.8 )
 		volume? ( <dev-haskell/parsec-4 =dev-haskell/split-0.1* media-sound/alsa-utils )
 		"
+#		perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 )
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
 
@@ -37,5 +38,7 @@ src_configure() {
 		--flags=-testing \
 		$(cabal_flag volume with_parsec) $(cabal_flag volume with_split) \
 		$(cabal_flag eval with_hint) \
-		$(cabal_flag mpd with_mpd)
+		$(cabal_flag mpd with_mpd) \
+#		$(cabal_flag perwindow with_template_haskell) \
+#		$(cabal_flag perwindow with_hlist)
 }
