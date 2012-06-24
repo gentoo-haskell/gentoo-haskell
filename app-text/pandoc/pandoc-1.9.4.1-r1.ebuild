@@ -17,6 +17,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+RESTRICT="test" # missing files in tarball
 
 RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
@@ -64,7 +65,9 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework[profile?]
 		)"
 
-PATCHES=("${FILESDIR}/${PN}-1.9.4.1-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-1.9.4.1-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-1.9.4.1-file-enc.patch"
+	)
 
 src_configure() {
 	cabal_src_configure \
