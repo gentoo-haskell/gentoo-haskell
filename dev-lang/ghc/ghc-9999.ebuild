@@ -524,14 +524,12 @@ src_install() {
 	done
 
 	# path to the package.conf.d
-	PKGCONFD="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
-	# copy the package.conf.d, including timestamp, save it so we can help
-	# users that have a broken package.conf.d
-	cp -pR "${PKGCONFD}"{,.shipped} \
-		|| die "failed to copy package.conf.d"
-
+	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
 	# path to the package.cache
 	PKGCACHE="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d/package.cache"
+	# copy the package.conf.d, including timestamp, save it so we can help
+	# users that have a broken package.conf.d
+	cp -pR "${package_confdir}"{,.initial} || die "failed to backup intial package.conf.d"
 
 	# copy the package.conf, including timestamp, save it so we later can put it
 	# back before uninstalling, or when upgrading.
