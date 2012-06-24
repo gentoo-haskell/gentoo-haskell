@@ -563,11 +563,11 @@ pkg_postinst() {
 	ghc-reregister
 
 	# path to the package.cache
-	if [ -f "${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
+	if [ -f "${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
 	then
-		PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+		PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
 	else
-		PKGCACHE="${ED}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
+		PKGCACHE="${EROOT}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
 	fi
 
 	# give the cache a new timestamp, it must be as recent as
@@ -609,11 +609,11 @@ pkg_prerm() {
 	# Overwrite the modified package.cache with a copy of the
 	# original one, so that it will be removed during uninstall.
 
-	if [ -f "${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
+	if [ -f "${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
 	then
-		PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+		PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
 	else
-		PKGCACHE="${ED}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
+		PKGCACHE="${EROOT}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
 	fi
 
 
