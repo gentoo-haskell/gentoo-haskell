@@ -19,9 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1[profile?]
-		<=dev-haskell/mtl-2.1.1[profile?]
+		<=dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/time-1.1[profile?]
 		<=dev-haskell/time-1.4.0.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	sed -e 's@mtl >= 1.1 && <= 2.1.1@mtl >= 1.1 \&\& <= 2.2@' \
+		-e 's@process >= 1.0 && <= 1.1.0.1@process >= 1.0 \&\& <= 1.2@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
