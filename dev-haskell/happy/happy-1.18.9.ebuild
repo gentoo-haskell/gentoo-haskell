@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal autotools
+inherit base eutils haskell-cabal autotools
 
 DESCRIPTION="Happy is a parser generator for Haskell"
 HOMEPAGE="http://www.haskell.org/happy/"
@@ -31,6 +31,14 @@ PATCHES=("${FILESDIR}/${PN}-1.18.6-man.patch"
 
 src_prepare() {
 	base_src_prepare
+
+	# ghc 7.5 removed System.IO.try and Control.OldException.
+	# Conditional patch is required, as it is to the file Setup.lhs, so can not
+	# use LANGUAGE: CPP, and ghc 6.10.4 and 6.12.3 do not have
+	# System.IO.Error.tryIOError.
+	if has_version ">=dev-lang/ghc-7.5"; then
+		epatch "${FILESDIR}/${PN}-1.18.9-ghc-7.5.patch"
+	fi
 
 	use doc && cd doc && eautoconf
 }

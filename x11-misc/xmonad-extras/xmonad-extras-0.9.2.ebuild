@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -27,6 +27,7 @@ DEPEND=">=dev-lang/ghc-6.6.1
 		volume? ( dev-haskell/parsec dev-haskell/split media-sound/alsa-utils )
 		eval? ( dev-haskell/network dev-haskell/hint )
 		mpd? ( =dev-haskell/libmpd-0.5* )"
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	CABAL_CONFIGURE_FLAGS="--flags=-testing"

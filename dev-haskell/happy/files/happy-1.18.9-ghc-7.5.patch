@@ -1,0 +1,20 @@
+--- happy-1.18.9-orig/Setup.lhs	2012-02-06 20:49:56.000000000 +1100
++++ happy-1.18.9/Setup.lhs	2012-06-25 08:55:56.283147498 +1000
+@@ -10,7 +10,7 @@
+ import Distribution.Simple.Program
+ 
+ import System.FilePath ((</>))
+-import System.IO.Error ( try )
++import System.IO.Error ( tryIOError )
+ import System.Directory (removeFile)
+ 
+ main :: IO ()
+@@ -50,7 +50,7 @@
+              [ cpp_template "GLR_Base.hs"       dst opts | (dst,opts) <- glr_base_templates ] ++
+              [ cpp_template "GLR_Lib.hs"        dst opts | (dst,opts) <- glr_templates ])
+ 
+-myPostClean _ _ _ _ = mapM_ (try . removeFile) all_template_files
++myPostClean _ _ _ _ = mapM_ (tryIOError . removeFile) all_template_files
+ 
+ myInstall pkg_descr lbi hooks flags =
+   instHook defaultUserHooks pkg_descr' lbi hooks flags

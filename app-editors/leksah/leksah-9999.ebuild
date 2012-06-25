@@ -59,7 +59,9 @@ RDEPEND="=app-editors/leksah-server-9999[profile?]
 		>=dev-haskell/utf8-string-0.3.1.1[profile?]
 		<dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.10.1
-		yi? ( >=app-editors/yi-0.6.2.4 )"
+		yi? ( >=app-editors/yi-0.6.2.4 )
+		dev-haskell/cabal-install"
+# dev-haskell/cabal is used at runtime to build edited package
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 

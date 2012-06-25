@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock"
 inherit base haskell-cabal
@@ -19,6 +19,8 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.6.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+PATCHES=("${FILESDIR}/${PN}-1.19-ghc-7.5.patch")
 
 src_install() {
 	cabal_src_install
