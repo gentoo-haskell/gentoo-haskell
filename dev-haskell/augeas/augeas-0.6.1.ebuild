@@ -19,11 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND=">=dev-lang/ghc-6.10.1
+		dev-haskell/hunit[profile?]
 		app-admin/augeas"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2
-		test? ( dev-haskell/hunit[profile?] )
-	"
+		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
 	if ! use test; then
