@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 # tests fail: test: main:Main test/main.hs:30:5 Oh no!
 # Test suite test: FAIL
 RESTRICT="test"
