@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 # the tests require the postgresql server to be running and to accept its connection
 # the tests assume a root postgresql user is configured, then it would be necessary
 # to modify the test/Main.hs source file to set the password in the line:
