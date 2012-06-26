@@ -33,6 +33,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-drop-tools.patch
 	# http://www.mail-archive.com/cvs-ghc@haskell.org/msg37186.html
 	epatch "${FILESDIR}"/${P}-dont-crash-on-unicode-strings-in-doc-comments.patch
+	# http://trac.haskell.org/haddock/ticket/202 fixed by upstream in ghc-7.4
+	# branch only (fix is not in master branch on 20120626)
+	epatch "${FILESDIR}/${P}-ticket-202.patch"
 
 	for f in Lex Parse; do
 		rm "src/Haddock/$f."*
