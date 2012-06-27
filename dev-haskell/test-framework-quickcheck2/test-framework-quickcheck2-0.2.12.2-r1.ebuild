@@ -18,8 +18,14 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="=dev-haskell/quickcheck-2.4*[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.4[profile?]
+		<dev-haskell/quickcheck-2.6[profile?]
 		>=dev-haskell/test-framework-0.6[profile?]
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+src_prepare() {
+	sed -e 's@QuickCheck >= 2.4 && < 2.5@QuickCheck >= 2.4 \&\& < 2.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
