@@ -48,6 +48,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare () {
-	sed -e 's#data-default          >= 0.3      && < 0.5#data-default >=0.3 \&\& < 0.5#'\
+	sed -e 's#data-default          >= 0.3      && < 0.5#data-default >=0.3 \&\& < 0.6#'\
 		-i "${PN}.cabal"
 }
