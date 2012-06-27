@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
-		<dev-haskell/data-default-0.5[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		>=dev-haskell/email-validate-0.2.6[profile?]
 		<dev-haskell/email-validate-0.3[profile?]
 		=dev-haskell/hamlet-1.0*[profile?]
@@ -46,3 +46,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare () {
+	sed -e 's#data-default          >= 0.3      && < 0.5#data-default >=0.3 \&\& < 0.5#'\
+		-i "${PN}.cabal"
+}
