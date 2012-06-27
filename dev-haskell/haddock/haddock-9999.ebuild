@@ -29,7 +29,11 @@ RESTRICT="test" # avoid depends on QC
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.5.patch")
+# The bug report http://trac.haskell.org/haddock/ticket/202 still occurs
+# with haddock built from git 20120526 building docs for quickcheck-2.5.
+# Try patching in a tweaked code fragment from the haddock ghc-7.4 branch.
+PATCHES=("${FILESDIR}/${P}-ghc-7.5.patch"
+	"${FILESDIR}/${P}-ticket-202.patch")
 
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal

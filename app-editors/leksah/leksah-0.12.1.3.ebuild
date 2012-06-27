@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 REQUIRED_USE="dyre? ( yi )"
 IUSE="dyre yi"
 
-RDEPEND=">=app-editors/leksah-server-0.12.1.0[profile?]
+RDEPEND=">=app-editors/leksah-server-0.12.1.2[profile?]
 		<app-editors/leksah-server-0.13[profile?]
 		>=dev-haskell/binary-0.5.0.0[profile?]
 		<dev-haskell/binary-0.6[profile?]
