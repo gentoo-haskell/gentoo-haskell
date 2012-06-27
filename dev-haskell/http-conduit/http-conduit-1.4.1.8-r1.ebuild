@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		=dev-haskell/cookie-0.4*[profile?]
 		=dev-haskell/cprng-aes-0.2*[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
-		<dev-haskell/data-default-0.5[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		dev-haskell/deepseq[profile?]
 		>=dev-haskell/failure-0.1[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
@@ -70,5 +70,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	sed -e 's#data-default          >= 0.3     && < 0.5#data-default >=0.3 \&\& < 0.6#'\
+		-i "${PN}.cabal"
 	cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
 }
