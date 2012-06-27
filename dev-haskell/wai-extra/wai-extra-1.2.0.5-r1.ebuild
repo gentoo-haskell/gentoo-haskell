@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		>=dev-haskell/case-insensitive-0.2[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
-		<dev-haskell/data-default-0.5[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		>=dev-haskell/fast-logger-0.0.2[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		>=dev-haskell/network-2.2.1.5[profile?]
@@ -49,3 +49,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/zlib-bindings
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare () {
+	sed -e  's#data-default              >= 0.3      && < 0.5#data-default >= 0.3  \&\& < 0.6#' \
+		-i ${PN}.cabal
+}

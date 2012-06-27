@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		=dev-haskell/blaze-builder-conduit-0.4*[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		>=dev-haskell/data-default-0.2[profile?]
-		<dev-haskell/data-default-0.5[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		>=dev-haskell/failure-0.1[profile?]
 		<dev-haskell/failure-0.3[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -44,5 +44,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@bytestring                >= 0.9      && < 0.10@bytestring                >= 0.9      \&\& < 0.11@' \
+		-e 's@data-default              >= 0.2      && < 0.5@data-default >=0.2 \&\& <0.6@'\
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
