@@ -1,0 +1,11 @@
+--- text-0.11.2.2-orig/text.cabal	2012-06-16 09:52:25.000000000 +1000
++++ text-0.11.2.2/text.cabal	2012-06-27 16:42:10.160452668 +1000
+@@ -174,7 +174,7 @@
+     directory                  >= 1.0 && < 1.2,
+     ghc-prim,
+     random                     >= 1.0 && < 1.1,
+-    QuickCheck                 >= 2.4 && < 2.5,
++    QuickCheck                 >= 2.4 && < 2.6,
+     HUnit                      >= 1.2 && < 1.3,
+     test-framework             >= 0.4 && < 0.7,
+     test-framework-quickcheck2 >= 0.2 && < 0.3,

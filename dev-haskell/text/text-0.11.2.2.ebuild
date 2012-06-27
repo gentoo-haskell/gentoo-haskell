@@ -7,7 +7,7 @@
 EAPI="4"
 
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An efficient packed Unicode text type."
 HOMEPAGE="https://github.com/bos/text"
@@ -27,6 +27,9 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-hunit-0.3[profile?]
 			<dev-haskell/test-framework-quickcheck2-0.3[profile?]
 		)"
+
+PATCHES=("${FILESDIR}/${PN}-0.11.2.2-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-0.11.2.2-quickcheck-2.5.patch")
 
 src_configure() {
 	# the tests need a utf-8 locale
