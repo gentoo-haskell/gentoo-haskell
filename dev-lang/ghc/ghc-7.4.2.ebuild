@@ -504,12 +504,12 @@ src_install() {
 
 		# We only built docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
-		if use doc; then
-			if ! use ghcbootstrap; then
-				mkdir -p "${ED}/usr/share/doc"
-				mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
-					|| die "failed to copy docs"
-			fi
+		if use doc && ! use ghcbootstrap; then
+			mkdir -p "${ED}/usr/share/doc"
+			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
+				|| die "failed to copy docs"
+		else
+			dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 		fi
 
 		emake -j1 ${insttarget} \
@@ -523,8 +523,6 @@ src_install() {
 		# linking on it's own (bug #299709)
 		# so mark resulting binary
 		pax-mark -m "${ED}/usr/$(get_libdir)/${P}/ghc"
-
-		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
