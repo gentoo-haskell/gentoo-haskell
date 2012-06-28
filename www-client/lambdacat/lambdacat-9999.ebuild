@@ -16,15 +16,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/cmdargs-0.6[profile?]
-		>=dev-haskell/dyre-0.8.5[profile?]
-		<dev-haskell/dyre-0.9[profile?]
-		=dev-haskell/glade-0.12*[profile?]
-		=dev-haskell/gtk-0.12*[profile?]
-		=dev-haskell/mtl-2*[profile?]
-		>=dev-haskell/network-2.2[profile?]
-		>=dev-haskell/webkit-0.12.1[profile?]
-		<dev-haskell/webkit-0.13[profile?]
+RDEPEND=">=dev-haskell/cmdargs-0.6
+		>=dev-haskell/dyre-0.8.5
+		>=dev-haskell/glade-0.12
+		>=dev-haskell/gtk-0.12
+		>=dev-haskell/mtl-2
+		>=dev-haskell/network-2.2
+		>=dev-haskell/webkit-0.12.1
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.10"
