@@ -24,7 +24,7 @@ RDEPEND="x11-libs/libXrandr
 	"
 
 DEPEND="${RDEPEND}
-		>=dev-lang/ghc-6.8.1
+		>=dev-lang/ghc-7.0.1
 		>=dev-haskell/cabal-1.6
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3
