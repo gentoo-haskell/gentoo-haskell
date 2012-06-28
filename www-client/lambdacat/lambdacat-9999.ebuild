@@ -25,6 +25,6 @@ RDEPEND="dev-haskell/cmdargs[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/network[profile?]
 		dev-haskell/webkit[profile?]
-		>=dev-lang/ghc-6.8.2"
+		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
