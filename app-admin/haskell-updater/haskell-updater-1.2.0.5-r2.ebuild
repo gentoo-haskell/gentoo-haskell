@@ -5,7 +5,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin nocabaldep"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Rebuild Haskell dependencies in Gentoo"
 HOMEPAGE="http://haskell.org/haskellwiki/Gentoo#haskell-updater"
@@ -31,6 +31,7 @@ src_prepare() {
 		sed -i -e 's,"/","'"${EPREFIX}"'/",g' \
 			"${S}/Distribution/Gentoo/GHC.hs" || die
 	fi
+	epatch "${FILESDIR}/${PN}-1.2.0.5-ghc-7.5.patch"
 	sed -e 's@Cabal >= 1.8 && < 1.15@Cabal >= 1.8 \&\& < 1.16@' \
 		-e 's@containers < 0.5@containers < 0.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
