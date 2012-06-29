@@ -1,0 +1,20 @@
+commit 223df467c9679f66b37b46357ba868e4f6a03722
+Author: Mark Wright <gienah@gentoo.org>
+Date:   Fri Jun 29 09:53:20 2012 +1000
+
+    Compatibility with ghc head
+
+diff --git a/charset.cabal b/charset.cabal
+index 93c7ebe..3523d3a 100644
+--- a/charset.cabal
++++ b/charset.cabal
+@@ -30,7 +30,7 @@ library
+   build-depends:
+     base                 >= 4       && < 5,
+     array                >= 0.2     && < 0.5,
+-    bytestring           == 0.9.*,
++    bytestring           >= 0.9     && < 0.11,
+     containers           >= 0.2     && < 0.6,
+     semigroups           >= 0.8.3.1 && < 0.9,
+     unordered-containers >= 0.1.4.6 && < 0.3
+
