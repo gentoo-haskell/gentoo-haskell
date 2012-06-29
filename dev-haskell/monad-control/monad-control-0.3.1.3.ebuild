@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/base-unicode-symbols-0.1.1[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@base                 >= 3     && < 4.6@base                 >= 3     \&\& < 4.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
+}
