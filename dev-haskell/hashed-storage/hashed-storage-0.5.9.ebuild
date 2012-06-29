@@ -26,6 +26,7 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-lang/ghc-6.12"
 DEPEND=">=dev-haskell/cabal-1.6
 		test? (
+			>=dev-haskell/quickcheck-2.3
 			dev-haskell/test-framework[profile?]
 			dev-haskell/test-framework-hunit[profile?]
 			dev-haskell/test-framework-quickcheck2[profile?]
