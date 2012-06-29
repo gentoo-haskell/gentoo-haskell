@@ -35,4 +35,5 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.9.2"
 
-PATCHES=("${FILESDIR}/${PN}-0.1.1-test-ghc-6.12.patch")
+PATCHES=("${FILESDIR}/${PN}-0.1.1-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-0.1.1-test-ghc-6.12.patch")

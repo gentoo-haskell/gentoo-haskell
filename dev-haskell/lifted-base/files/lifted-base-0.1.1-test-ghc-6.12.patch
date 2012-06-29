@@ -1,12 +1,6 @@
---- lifted-base-0.1.1-orig/test/test.hs	2012-04-28 23:47:19.000000000 +1000
-+++ lifted-base-0.1.1/test/test.hs	2012-05-04 11:21:19.840997008 +1000
-@@ -1,4 +1,4 @@
--{-# LANGUAGE DeriveDataTypeable, FlexibleContexts #-}
-+{-# LANGUAGE DeriveDataTypeable, FlexibleContexts, CPP #-}
- 
- -- from base:
- import Prelude hiding (catch)
-@@ -38,7 +38,9 @@
+--- lifted-base-0.1.1-orig/test/test.hs	2012-06-29 01:56:15.155311373 +1000
++++ lifted-base-0.1.1/test/test.hs	2012-06-29 01:55:02.172606627 +1000
+@@ -40,7 +40,9 @@
  main :: IO ()
  main = defaultMain
      [ testSuite "IdentityT" runIdentityT
