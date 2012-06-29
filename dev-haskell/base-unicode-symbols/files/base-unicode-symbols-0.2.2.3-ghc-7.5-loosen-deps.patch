@@ -1,0 +1,11 @@
+--- base-unicode-symbols-0.2.2.3-orig/base-unicode-symbols.cabal	2011-12-17 22:21:02.000000000 +1100
++++ base-unicode-symbols-0.2.2.3/base-unicode-symbols.cabal	2012-06-27 20:16:20.816488261 +1000
+@@ -45,7 +45,7 @@
+   if flag(old-base)
+     build-depends: base >= 3.0 && < 3.0.3.1
+   else
+-    build-depends: base >= 3.0.3.1 && < 4.6
++    build-depends: base >= 3.0.3.1 && < 4.7
+     exposed-modules: Control.Category.Unicode
+   exposed-modules: Control.Applicative.Unicode
+                  , Control.Arrow.Unicode

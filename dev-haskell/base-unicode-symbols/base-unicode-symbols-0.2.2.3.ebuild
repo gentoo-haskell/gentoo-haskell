@@ -24,5 +24,6 @@ src_prepare() {
 	if has_version ">=dev-lang/ghc-7.5.20120511"; then
 		# change the unicode -> to ascii ->
 		epatch "${FILESDIR}/${PN}-0.2.2.3-ghc-7.5.patch"
+		epatch "${FILESDIR}/${PN}-0.2.2.3-ghc-7.5-loosen-deps.patch"
 	fi
 }
