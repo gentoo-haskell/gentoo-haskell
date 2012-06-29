@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Cloud Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/remote"
@@ -29,3 +29,5 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-0.1.1-ghc-7.5.patch")
