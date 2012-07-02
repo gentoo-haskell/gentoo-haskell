@@ -6,6 +6,8 @@ EAPI=4
 
 CABAL_FEATURES="bin test-suite"
 EGIT_REPO_URI="git://github.com/gentoo-haskell/hackport.git"
+EGIT_HAS_SUBMODULES="true"
+
 inherit git-2 haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
