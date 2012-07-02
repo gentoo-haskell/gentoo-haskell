@@ -6,7 +6,7 @@ EAPI=4
 
 # nocabaldep - uses uuagc-cabal
 CABAL_FEATURES="bin nocabaldep"
-inherit git-2 haskell-cabal
+inherit eutils git-2 haskell-cabal
 
 MY_PN="HNC"
 MY_P="${MY_PN}-${PV}"
@@ -19,8 +19,6 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-
-RESTRICT="test" # broken for now
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -40,6 +38,10 @@ src_prepare() {
 		# uuagc does not handle NON-ASCII encodings
 		iconv -c -f UTF-8 -t ASCII < "${bad_file}.orig" >"${bad_file}" || die
 	done
+
+	epatch "${FILESDIR}"/0001-SPL-Parser2.hs-fix-foldl-symbol-clash-base-4.4.patch
+	epatch "${FILESDIR}"/0002-require-hoopl-with-runWithFuel.patch
+	epatch "${FILESDIR}"/0003-workaround-uuagc-s-inability-to-handle-setup-configu.patch
 }
 
 src_configure() {
