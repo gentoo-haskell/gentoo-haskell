@@ -29,7 +29,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		=dev-haskell/cmdargs-0.9*
 		=dev-haskell/haskell-src-exts-1.13*
+		>=dev-haskell/mtl-2.0
+		<dev-haskell/mtl-2.2
 		=dev-haskell/strict-0.3*
 		=dev-haskell/syb-0.3*
-		=dev-haskell/yaml-0.7*
+		>=dev-haskell/yaml-0.7
+		<dev-haskell/yaml-0.9
 		>=dev-lang/ghc-7.0.1"
