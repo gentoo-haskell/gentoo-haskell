@@ -26,17 +26,3 @@ index c31cfa0..03c972d 100644
  -- | Data type for redential.
  data Credential = Credential { unCredential :: [(BS.ByteString, BS.ByteString)] }
                    deriving (Show, Eq, Ord, Read, Data, Typeable)
-diff --git a/authenticate-oauth.cabal b/authenticate-oauth.cabal
-index 8343ed5..7f15fe5 100644
---- a/authenticate-oauth.cabal
-+++ b/authenticate-oauth.cabal
-@@ -18,7 +18,8 @@ library
-                    , http-conduit                  >= 1.4      && < 1.5
-                    , transformers                  >= 0.1      && < 0.4
-                    , bytestring                    >= 0.9
--                   , RSA                           >= 1.0      && < 1.1
-+                   , crypto-pubkey-types           >= 0.1      && < 0.2
-+                   , RSA                           >= 1.2      && < 1.3
-                    , time
-                    , data-default                  >= 0.3      && < 0.5
-                    , base64-bytestring             >= 0.1      && < 0.2

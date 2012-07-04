@@ -23,7 +23,8 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		=dev-haskell/blaze-builder-conduit-0.4*[profile?]
 		=dev-haskell/conduit-0.4*[profile?]
 		=dev-haskell/crypto-pubkey-types-0.1*[profile?]
-		=dev-haskell/data-default-0.4*[profile?]
+		>=dev-haskell/data-default-0.4[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		=dev-haskell/http-conduit-1.4*[profile?]
 		=dev-haskell/http-types-0.6*[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -37,4 +38,9 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}"/${P}-rsa-1.2.patch)
+src_prepare() {
+	sed -e 's#data-default                  >= 0.3      && < 0.5#data-default#'\
+		-e 's#RSA                           >= 1.0      && < 1.1#RSA\n                   ,crypto-pubkey-types#'\
+		-i "${PN}.cabal" || die "sed failed"
+	epatch "${FILESDIR}/${P}"-rsa-1.2.patch
+}
