@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		<dev-haskell/certificate-1.3[profile?]
 		=dev-haskell/cprng-aes-0.2*[profile?]
 		>=dev-haskell/data-default-0.3[profile?]
-		<dev-haskell/data-default-0.5[profile?]
+		<dev-haskell/data-default-0.6[profile?]
 		>=dev-haskell/enumerator-0.4.9[profile?]
 		<dev-haskell/enumerator-0.5[profile?]
 		>=dev-haskell/failure-0.1[profile?]
@@ -56,5 +56,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@certificate           >= 1.1     && < 1.2@certificate >= 1.1 \&\& < 1.3@'\
+		-e 's@data-default          >= 0.3     && < 0.5@data-default@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosed deps"
 }
