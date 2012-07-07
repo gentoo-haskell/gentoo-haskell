@@ -19,10 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/stm-2.1[profile?]
-		<dev-haskell/stm-2.4[profile?]
+		<dev-haskell/stm-2.5[profile?]
 		=dev-haskell/tag-bits-0.1*[profile?]
 		>=dev-haskell/transformers-0.2.2.0[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@stm          >= 2.1 && < 2.4@stm          >= 2.1 \&\& < 2.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
