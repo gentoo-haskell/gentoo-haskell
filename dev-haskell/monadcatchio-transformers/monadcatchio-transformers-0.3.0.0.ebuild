@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="MonadCatchIO-transformers"
 MY_P="${MY_PN}-${PV}"
@@ -28,3 +28,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-0.3.0.0-ghc-7.5.patch")
