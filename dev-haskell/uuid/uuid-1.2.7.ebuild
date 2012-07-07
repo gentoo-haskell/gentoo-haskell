@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="dev-haskell/binary[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
 		dev-haskell/maccatcher[profile?]
-		dev-haskell/random[profile?]
+		>=dev-haskell/random-1.0.1[profile?]
+		<dev-haskell/random-1.1[profile?]
 		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
