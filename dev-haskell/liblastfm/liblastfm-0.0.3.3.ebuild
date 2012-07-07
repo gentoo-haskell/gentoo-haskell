@@ -25,6 +25,6 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		=dev-haskell/urlencoded-0.3*[profile?]
 		=dev-haskell/utf8-string-0.3*[profile?]
 		~dev-haskell/xml-1.3.12[profile?]
-		>=dev-lang/ghc-6.12.3"
+		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
