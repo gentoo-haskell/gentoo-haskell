@@ -31,3 +31,69 @@
  
  sendFile :: IO () -> Fd -> Fd -> Int64 -> Int64 -> IO Int64
  sendFile onBlock out_fd in_fd off count
+--- snap-server-0.9.0-orig/src/Snap/Http/Server.hs	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/Snap/Http/Server.hs	2012-07-08 00:49:04.594842718 +1000
+@@ -26,7 +26,9 @@
+ import qualified Data.ByteString as BS
+ import           Data.List
+ import           Data.Maybe
++#if !MIN_VERSION_base(4,6,0)
+ import           Prelude hiding (catch)
++#endif
+ import           Snap.Http.Server.Config
+ import qualified Snap.Internal.Http.Server as Int
+ import           Snap.Internal.Http.Server.Config (emptyStartupInfo,
+--- snap-server-0.9.0-orig/src/Snap/Internal/Http/Server.hs	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/Snap/Internal/Http/Server.hs	2012-07-08 00:48:18.553929535 +1000
+@@ -41,7 +41,9 @@
+ import           Data.Version
+ import           GHC.Conc
+ import           Network.Socket (withSocketsDo, Socket)
++#if !MIN_VERSION_base(4,6,0)
+ import           Prelude hiding (catch)
++#endif
+ import           System.PosixCompat.Files hiding (setFileSize)
+ import           System.Posix.Types (FileOffset)
+ import           System.Locale
+--- snap-server-0.9.0-orig/src/Snap/Internal/Http/Server/Config.hs	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/Snap/Internal/Http/Server/Config.hs	2012-07-08 00:48:48.603525532 +1000
+@@ -28,7 +28,9 @@
+ import qualified Data.Text.Encoding as T
+ import           Data.Typeable
+ import           Network(Socket)
++#if !MIN_VERSION_base(4,6,0)
+ import           Prelude hiding (catch)
++#endif
+ import           Snap.Core
+ import           Snap.Iteratee ((>==>), enumBuilder)
+ import           Snap.Internal.Debug (debug)
+--- snap-server-0.9.0-orig/src/Snap/Internal/Http/Server/SimpleBackend.hs	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/Snap/Internal/Http/Server/SimpleBackend.hs	2012-07-08 01:02:53.989881908 +1000
+@@ -26,7 +26,9 @@
+ import           Foreign.C
+ import           GHC.Conc (labelThread, forkOnIO)
+ import           Network.Socket
++#if !MIN_VERSION_base(4,6,0)
+ import           Prelude hiding (catch)
++#endif
+ ------------------------------------------------------------------------------
+ import           Snap.Internal.Debug
+ import           Snap.Internal.Http.Server.Date
+--- snap-server-0.9.0-orig/src/System/FastLogger.hs	2012-06-18 08:29:03.000000000 +1000
++++ snap-server-0.9.0/src/System/FastLogger.hs	2012-07-08 00:47:38.216129549 +1000
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE BangPatterns #-}
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE ScopedTypeVariables #-}
+ 
+@@ -27,7 +28,9 @@
+ import           Data.Monoid
+ import qualified Data.Text as T
+ import qualified Data.Text.Encoding as T
++#if !MIN_VERSION_base(4,6,0)
+ import           Prelude hiding (catch)
++#endif
+ import           System.IO
+ 
+ import           Snap.Internal.Http.Server.Date
