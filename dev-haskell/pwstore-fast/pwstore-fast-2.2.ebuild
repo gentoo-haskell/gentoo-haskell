@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Secure password storage."
 HOMEPAGE="https://github.com/PeterScott/pwstore"
@@ -24,3 +24,5 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+PATCHES=("${FILESDIR}/${PN}-2.2-ghc-7.5.patch")
