@@ -18,16 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-1.1.1.5[profile?]
-		<dev-haskell/comonad-1.2[profile?]
-		>=dev-haskell/comonad-transformers-2.1.2[profile?]
-		<dev-haskell/comonad-transformers-2.2[profile?]
-		>=dev-haskell/comonads-fd-2.1.2[profile?]
-		<dev-haskell/comonads-fd-2.2[profile?]
+RDEPEND="=dev-haskell/comonad-3.0*[profile?]
+		=dev-haskell/comonad-transformers-3.0*[profile?]
+		=dev-haskell/comonads-fd-3.0*[profile?]
 		>=dev-haskell/distributive-0.2.2[profile?]
 		<dev-haskell/distributive-0.3[profile?]
-		>=dev-haskell/semigroupoids-1.3.1.2[profile?]
-		<dev-haskell/semigroupoids-1.4[profile?]
+		=dev-haskell/semigroupoids-3.0*[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-7.0.1"
