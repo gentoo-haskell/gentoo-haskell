@@ -24,8 +24,7 @@ RDEPEND=">=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/terminfo-0.4[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
-		>=dev-haskell/wl-pprint-extras-1.6.3.1[profile?]
-		<dev-haskell/wl-pprint-extras-1.7[profile?]
+		=dev-haskell/wl-pprint-extras-3.0*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
