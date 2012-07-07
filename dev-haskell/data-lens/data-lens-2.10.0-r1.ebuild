@@ -19,11 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
-		<dev-haskell/comonad-1.2[profile?]
+		<dev-haskell/comonad-3.1[profile?]
 		>=dev-haskell/comonad-transformers-2.0[profile?]
-		<dev-haskell/comonad-transformers-2.2[profile?]
+		<dev-haskell/comonad-transformers-3.1[profile?]
 		>=dev-haskell/semigroupoids-1.2.4[profile?]
-		<dev-haskell/semigroupoids-1.4[profile?]
+		<dev-haskell/semigroupoids-3.1[profile?]
 		>=dev-haskell/transformers-0.2.0[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.12.1"
@@ -32,5 +32,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@containers           >= 0.3     && < 0.5@containers           >= 0.3     \&\& < 0.6@' \
+		-e 's@comonad              >= 1.1.1.3 && < 1.2@comonad              >= 1.1.1.3 \&\& < 3.1@' \
+		-e 's@comonad-transformers >= 2.0     && < 2.2@comonad-transformers >= 2.0     \&\& < 3.1@' \
+		-e 's@semigroupoids        >= 1.2.4   && < 1.4@semigroupoids        >= 1.2.4   \&\& < 3.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
