@@ -35,6 +35,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cp -r "${FILESDIR}/${P}/test/" "${S}/" || die "can't copy tests"
 	epatch "${FILESDIR}"/${P}-fix-tests.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.5.patch
 }
 
 src_configure() {

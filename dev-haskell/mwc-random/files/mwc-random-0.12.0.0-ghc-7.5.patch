@@ -1,0 +1,12 @@
+--- mwc-random-0.12.0.0-orig/System/Random/MWC.hs	2012-03-07 17:10:58.000000000 +1100
++++ mwc-random-0.12.0.0/System/Random/MWC.hs	2012-07-07 21:24:21.667363547 +1000
+@@ -110,7 +110,9 @@
+ import Data.Word               (Word, Word8, Word16, Word32, Word64)
+ import Foreign.Marshal.Alloc   (allocaBytes)
+ import Foreign.Marshal.Array   (peekArray)
++#if !MIN_VERSION_base(4,6,0)
+ import Prelude hiding (catch)
++#endif
+ import qualified Data.Vector.Generic         as G
+ import qualified Data.Vector.Unboxed         as I
+ import qualified Data.Vector.Unboxed.Mutable as M
