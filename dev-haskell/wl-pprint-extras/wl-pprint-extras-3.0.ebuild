@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/semigroupoids-1.3.1.2[profile?]
-		<dev-haskell/semigroupoids-1.4[profile?]
+RDEPEND="=dev-haskell/semigroupoids-3.0*[profile?]
 		>=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
 		>=dev-haskell/utf8-string-0.3.6[profile?]
