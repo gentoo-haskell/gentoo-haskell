@@ -92,15 +92,15 @@ RDEPEND="
 # that we want the binaries to use the latest versioun available, and not to be
 # built against gmp-4
 
+# similar for glibc. we have bootstrapped binaries against glibc-2.14
 DEPEND="${RDEPEND}
 	ghcbootstrap? (		>=dev-haskell/alex-2.3
 						>=dev-haskell/happy-1.18
 				doc? (	app-text/docbook-xml-dtd:4.2
 				app-text/docbook-xml-dtd:4.5
 				app-text/docbook-xsl-stylesheets
-				>=dev-libs/libxslt-1.1.2 ) )"
-# In the ghcbootstrap case we rely on the developer having
-# >=ghc-5.04.3 on their $PATH already
+				>=dev-libs/libxslt-1.1.2 ) )
+	!ghcbootstrap? ( kernel_linux? ( >=sys-libs/glibc-2.14 ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
