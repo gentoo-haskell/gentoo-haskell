@@ -32,6 +32,12 @@ DEPEND="${RDEPEND}
 			<dev-haskell/deepseq-1.4
 			=dev-haskell/hunit-1.2*
 			dev-haskell/mersenne-random-pure64
-			=dev-haskell/quickcheck-2.4*
+			>=dev-haskell/quickcheck-2.4
+			<dev-haskell/quickcheck-2.6
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@QuickCheck >=2.4 && < 2.5@QuickCheck >=2.4 \&\& < 2.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
