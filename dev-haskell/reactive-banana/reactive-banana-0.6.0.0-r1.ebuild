@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/fclabels-1.1*[profile?]
 		=dev-haskell/hashable-1.1*[profile?]
 		>=dev-haskell/quickcheck-1.2[profile?]
-		<dev-haskell/quickcheck-2.5[profile?]
+		<dev-haskell/quickcheck-2.6[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-haskell/unordered-containers-0.2.1.0[profile?]
@@ -30,3 +30,8 @@ RDEPEND="=dev-haskell/fclabels-1.1*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@QuickCheck >= 1.2 && < 2.5@QuickCheck >= 1.2 \&\& < 2.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
