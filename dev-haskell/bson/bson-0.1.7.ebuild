@@ -30,12 +30,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/cabal
 		test? ( dev-haskell/file-location[profile?]
 				>=dev-haskell/hspec-0.8[profile?]
-				<dev-haskell/hspec-1.2[profile?]
+				<dev-haskell/hspec-1.3[profile?]
 				dev-haskell/hunit[profile?]
-				=dev-haskell/quickcheck-2.4*:2[profile?]
+				>=dev-haskell/quickcheck-2.4:2[profile?]
+				<dev-haskell/quickcheck-2.6:2[profile?]
 		)"
 
 src_prepare() {
-	sed -e 's@hspec >= 0.6.1 && < 0.7@hspec >= 0.6.1 \&\& < 1.2@' \
+	sed -e 's@hspec >= 0.6.1 && < 0.7@hspec >= 0.6.1 \&\& < 1.3@' \
+		-e 's@QuickCheck == 2.4.\*@QuickCheck >= 2.4 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
