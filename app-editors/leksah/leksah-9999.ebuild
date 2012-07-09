@@ -45,7 +45,7 @@ RDEPEND="=app-editors/leksah-server-9999[profile?]
 		>=dev-haskell/parsec-2.1.0.1[profile?]
 		<dev-haskell/parsec-3.2[profile?]
 		>=dev-haskell/quickcheck-2.4.2[profile?]
-		<dev-haskell/quickcheck-2.5[profile?]
+		<dev-haskell/quickcheck-2.6[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
 		=dev-haskell/regex-tdfa-1.1*[profile?]
 		>=dev-haskell/strict-0.3.2[profile?]
@@ -66,6 +66,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	sed -e 's@QuickCheck >=2.4.2 && <2.5@QuickCheck >=2.4.2 \&\& <2.6@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
