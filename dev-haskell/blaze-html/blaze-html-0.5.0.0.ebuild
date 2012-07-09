@@ -27,8 +27,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? (
 			=dev-haskell/hunit-1.2*
-			=dev-haskell/quickcheck-2.4*
-			>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.7
+			>=dev-haskell/quickcheck-2.4
+			<dev-haskell/quickcheck-2.6
+			>=dev-haskell/test-framework-0.4
+			<dev-haskell/test-framework-0.7
 			=dev-haskell/test-framework-hunit-0.2*
 			=dev-haskell/test-framework-quickcheck2-0.2*
 		)"
@@ -36,6 +38,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -e 's@bytestring    >= 0.9   && < 0.10@bytestring    >= 0.9   \&\& < 0.11@g' \
 		-e 's@containers                 >= 0.3 && < 0.5@containers                 >= 0.3 \&\& < 0.6@' \
+		-e 's@QuickCheck                 >= 2.4 && < 2.5@QuickCheck                 >= 2.4 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
