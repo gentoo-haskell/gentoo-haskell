@@ -7,7 +7,7 @@ index 5062f1c..c6c26c8 100644
  Library
    Build-Depends:    HUnit == 1.2.*,
 -                    QuickCheck >= 2.3 && < 2.4,
-+                    QuickCheck >= 2.3 && < 2.5,
++                    QuickCheck >= 2.3 && < 2.6,
                      base == 4.*,
                      random == 1.0.*,
                      containers >= 0.3 && < 0.5,

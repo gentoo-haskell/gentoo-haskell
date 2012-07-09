@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/cpphs-1.12[profile?]
 		>=dev-haskell/haskell-src-exts-1.11[profile?] <dev-haskell/haskell-src-exts-1.14[profile?]
 		=dev-haskell/hunit-1.2*[profile?]
 		>=dev-haskell/mtl-1.1[profile?] <dev-haskell/mtl-2.2[profile?]
-		>=dev-haskell/quickcheck-2.3[profile?] <dev-haskell/quickcheck-2.5[profile?]
+		>=dev-haskell/quickcheck-2.3[profile?] <dev-haskell/quickcheck-2.6[profile?]
 		=dev-haskell/random-1.0*[profile?]
 		>=dev-haskell/regex-compat-0.92[profile?] <dev-haskell/regex-compat-0.96[profile?]
 		>=dev-lang/ghc-6.12.1"
