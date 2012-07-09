@@ -26,12 +26,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit[profile?]
 			>=dev-haskell/hspec-0.8[profile?]
-			<dev-haskell/hspec-1.2[profile?]
+			<dev-haskell/hspec-1.3[profile?]
 		)
 		"
 
 src_prepare() {
+	sed -e 's@hspec            >= 0.8     && < 1.2@hspec            >= 0.8     \&\& < 1.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	cp -p "${FILESDIR}/${P}/test/Quoter.hs" "${S}/test" \
 		|| die "Could not copy missing Quoter.hs test file"
-
 }
