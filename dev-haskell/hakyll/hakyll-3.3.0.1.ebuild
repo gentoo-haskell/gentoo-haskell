@@ -47,7 +47,8 @@ RDEPEND=">=app-text/pandoc-1.9.3[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/hunit-1.2*
-			=dev-haskell/quickcheck-2.4*
+			>=dev-haskell/quickcheck-2.4
+			<dev-haskell/quickcheck-2.6
 			>=dev-haskell/test-framework-0.4
 			<dev-haskell/test-framework-0.7
 			=dev-haskell/test-framework-hunit-0.2*
@@ -59,5 +60,6 @@ src_prepare() {
 	sed -e 's@containers   >= 0.3    && < 0.5@containers   >= 0.3    \&\& < 0.6@' \
 		-e 's@snap-core   >= 0.6 && < 0.9@snap-core   >= 0.6 \&\& < 0.10@' \
 		-e 's@snap-server >= 0.6 && < 0.9@snap-server >= 0.6 \&\& < 0.10@' \
+		-e 's@QuickCheck                 >= 2.4 && < 2.5@QuickCheck                 >= 2.4 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
