@@ -1,0 +1,16 @@
+--- pqc-0.5.1-orig/Test/QuickCheck/Parallel.hs	2012-06-05 06:31:00.000000000 +1000
++++ pqc-0.5.1/Test/QuickCheck/Parallel.hs	2012-07-09 20:10:22.885034822 +1000
+@@ -193,7 +193,12 @@
+   do tm <- newNullTerminal
+      test MkState{ terminal          = tm
+                  , maxSuccessTests   = maxSuccess a
+-                 , maxDiscardedTests = maxDiscard a
++                 , maxDiscardedTests =
++#if MIN_VERSION_QuickCheck(2,5,0)
++                                       maxDiscardRatio a * maxSuccess a
++#else
++                                       maxDiscard args
++#endif
+                  , computeSize       = case replay a of
+                                          Nothing    -> computeSize'
+                                          Just (_,s) -> \_ _ -> s
