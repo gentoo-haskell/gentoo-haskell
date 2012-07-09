@@ -1,4 +1,0 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (25 Jun 2012)
-# Needs a bit of upstream work to extend
-# dependency ranges.
->=dev-haskell/quickcheck-2.5
