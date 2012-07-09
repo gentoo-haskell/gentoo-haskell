@@ -31,7 +31,7 @@ COMMONDEPS="=dev-haskell/colour-2.3*[profile?]
 
 DEPEND="${COMMONDEPS}
 		test? ( >=dev-haskell/quickcheck-2.3
-			<dev-haskell/quickcheck-2.5
+			<dev-haskell/quickcheck-2.6
 		)
 		>=dev-haskell/cabal-1.14"
 
@@ -40,5 +40,6 @@ RDEPEND="${COMMONDEPS}
 
 src_prepare() {
 	sed -e 's@bytestring == 0.9.\*@bytestring >= 0.9 \&\& <0.11@' \
+		-e 's@QuickCheck >= 2.3 && < 2.5@QuickCheck >= 2.3 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
