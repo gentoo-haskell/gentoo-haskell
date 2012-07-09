@@ -1,0 +1,11 @@
+--- Agda-2.3.0.1-orig/Agda.cabal	2012-04-12 01:24:54.004394444 +1000
++++ Agda-2.3.0.1/Agda.cabal	2012-07-08 12:59:51.280014442 +1000
+@@ -76,7 +76,7 @@
+   if flag(epic)
+     build-depends:  epic >= 0.1.13 && < 0.10
+   build-depends:    mtl >= 2.0 && < 2.2,
+-                    QuickCheck >= 2.3 && < 2.5,
++                    QuickCheck >= 2.3 && < 2.6,
+                     haskell-src-exts >= 1.9.6 && < 1.14,
+                     containers >= 0.1 && < 0.5,
+                     pretty >= 1.0 && < 1.2,

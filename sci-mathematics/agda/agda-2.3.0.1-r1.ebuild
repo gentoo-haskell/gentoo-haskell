@@ -30,7 +30,8 @@ RDEPEND=">=dev-haskell/binary-0.4.4[profile?]
 		<dev-haskell/haskell-src-exts-1.14[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
-		=dev-haskell/quickcheck-2.4*[profile?]
+		>=dev-haskell/quickcheck-2.4[profile?]
+		<dev-haskell/quickcheck-2.6[profile?]
 		>=dev-haskell/syb-0.1[profile?]
 		<dev-haskell/syb-0.4[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
@@ -52,6 +53,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-emacs.patch
 	epatch "${FILESDIR}"/${PN}-2.3.0.1-haskell-src-exts-1.13.patch
 	epatch "${FILESDIR}"/${PN}-2.3.0.1-mtl-2.1.patch
+	epatch "${FILESDIR}"/${PN}-2.3.0.1-quickcheck-2.5.patch
 	cabal-mksetup
 }
 
