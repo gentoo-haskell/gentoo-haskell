@@ -22,12 +22,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl[profile?]
-		>=dev-haskell/quickcheck-2.1[profile?] <dev-haskell/quickcheck-2.5[profile?]
-		>=dev-haskell/tagged-0.1[profile?] <dev-haskell/tagged-0.5[profile?]
+		>=dev-haskell/quickcheck-2.1[profile?]
+		<dev-haskell/quickcheck-2.6[profile?]
+		>=dev-haskell/tagged-0.1[profile?]
+		<dev-haskell/tagged-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
+PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch"
+	"${FILESDIR}/${P}-ghc-7.5.patch")

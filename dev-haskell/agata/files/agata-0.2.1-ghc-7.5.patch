@@ -1,0 +1,20 @@
+--- Agata-0.2.1-orig/Test/AgataTH.hs	2010-06-24 21:46:23.000000000 +1000
++++ Agata-0.2.1/Test/AgataTH.hs	2012-07-08 13:38:10.529236037 +1000
+@@ -13,9 +13,16 @@
+ -- }-
+ -- module Test.AgataTH where
+ 
+-import Language.Haskell.TH.Syntax hiding (lift)
++import Language.Haskell.TH.Syntax hiding (
++#if (__GLASGOW_HASKELL__>=705)
++                                          Inline,
++#endif
++                                          lift)
+ import qualified Language.Haskell.TH.Syntax as TH (lift)
+ import Language.Haskell.TH
++#if (__GLASGOW_HASKELL__>=705)
++                           hiding (Inline)
++#endif
+ import Control.Monad
+ 
+ import Test.Agata

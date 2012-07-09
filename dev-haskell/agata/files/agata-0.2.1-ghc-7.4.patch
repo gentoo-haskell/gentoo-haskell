@@ -1,15 +1,16 @@
 --- Agata-0.2.1-orig/Agata.cabal	2010-06-24 21:46:23.000000000 +1000
-+++ Agata-0.2.1/Agata.cabal	2012-02-09 15:07:21.599767160 +1100
++++ Agata-0.2.1/Agata.cabal	2012-07-08 12:31:48.985405481 +1000
 @@ -16,10 +16,10 @@
  Library
    Build-Depends: 
      mtl, base>=4&&<5, 
 -    template-haskell<2.5, 
 -    QuickCheck>=2.1&&<2.2, 
-+    template-haskell<2.8,
-+    QuickCheck>=2.1&&<2.5, 
-     containers, 
+-    containers, 
 -    tagged==0.0
++    template-haskell<2.8,
++    QuickCheck>=2.1&&<2.6,
++    containers,
 +    tagged>=0.1&&<0.5
    Exposed-modules:
      Test.Agata,
