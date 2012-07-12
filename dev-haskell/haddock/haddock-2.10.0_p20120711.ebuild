@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit eutils haskell-cabal pax-utils versionator
+inherit base eutils haskell-cabal pax-utils versionator
 
 MY_PV=$(get_version_component_range '1-3')
 
@@ -31,7 +31,14 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
+# The bug report http://trac.haskell.org/haddock/ticket/202 still occurs
+# with haddock built from git 20120526 building docs for quickcheck-2.5.
+# Try patching in a tweaked code fragment from the haddock ghc-7.4 branch.
+PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-2.10.0_p20120711-ticket-202.patch")
+
 src_prepare() {
+	base_src_prepare
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 
