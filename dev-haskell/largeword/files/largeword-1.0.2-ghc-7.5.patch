@@ -1,0 +1,51 @@
+--- largeword-1.0.2-orig/Data/LargeWord.hs	2012-07-08 01:15:16.000000000 +1000
++++ largeword-1.0.2/Data/LargeWord.hs	2012-07-14 09:43:28.506972757 +1000
+@@ -105,7 +105,7 @@
+ {-# INLINE hiHalf #-}
+ hiHalf (LargeKey a b) = b
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) =>
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) =>
+    LargeWord (LargeKey a b) where
+       largeWordToInteger (LargeKey lo hi) =
+          largeWordToInteger lo + (2^(bitSize lo)) * largeWordToInteger hi
+@@ -146,10 +146,10 @@
+                convba = integerToLargeWord . largeWordToInteger
+       largeBitSize ~(LargeKey lo hi) = largeBitSize lo + largeBitSize hi
+ 
+-instance (Ord a, Bits a, LargeWord a, Bits b, LargeWord b) => Show (LargeKey a b) where
++instance (Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => Show (LargeKey a b) where
+    showsPrec p = showInt . largeWordToInteger
+ 
+-instance (Ord b, Ord a, Bits a, LargeWord a, Bits b, LargeWord b) => 
++instance (Ord b, Ord a, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => 
+    Num (LargeKey a b) where
+       (+) = largeWordPlus
+       (-) = largeWordMinus
+@@ -166,7 +166,7 @@
+ 
+ -- Larger keys are instances of Bits provided their constituents are keys.
+ 
+-instance (Ord a, Ord b, Bits a, LargeWord a, Bits b, LargeWord b) => 
++instance (Ord a, Ord b, Bits a, LargeWord a, Num a, Bits b, LargeWord b, Num b) => 
+    Bits (LargeKey a b) where
+       (.&.) = largeWordAnd
+       (.|.) = largeWordOr
+@@ -192,7 +192,7 @@
+ boflk :: (LargeKey a b) -> b
+ boflk = undefined
+ 
+-instance (Bounded a, Bounded b, Enum b, Enum a, Ord a, Bits a, LargeWord a, Ord b, Bits b, LargeWord b) =>
++instance (Bounded a, Bounded b, Enum b, Enum a, Num a, Ord a, Bits a, LargeWord a, Ord b, Bits b, LargeWord b, Num b) =>
+    Integral (LargeKey a b) where
+       toInteger = largeWordToInteger
+       quotRem a b =
+@@ -211,7 +211,7 @@
+                v2 = ((v - b) `shiftL` 1) .|. newBit
+       divMod = quotRem
+ 
+-instance (Ord a, Bits a, Bounded a, Bounded b, Enum a, Enum b, LargeWord a, Ord b, Bits b, LargeWord b) => Real (LargeKey a b) where
++instance (Ord a, Bits a, Bounded a, Bounded b, Enum a, Num a, Enum b, LargeWord a, Ord b, Bits b, LargeWord b, Num b) => Real (LargeKey a b) where
+       toRational w = toRational (fromIntegral w :: Integer)
+ 
+ 
