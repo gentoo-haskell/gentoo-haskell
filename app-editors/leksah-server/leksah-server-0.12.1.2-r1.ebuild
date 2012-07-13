@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3[profile?]
 		>=dev-haskell/haddock-2.7.2[profile?]
 		<dev-haskell/haddock-2.11[profile?]
 		>=dev-haskell/hslogger-1.0.7[profile?]
-		<dev-haskell/hslogger-1.2[profile?]
+		<dev-haskell/hslogger-1.3[profile?]
 		>=dev-haskell/ltk-0.12.1.0[profile?]
 		<dev-haskell/ltk-0.13[profile?]
 		>=dev-haskell/network-2.2[profile?]
@@ -62,6 +62,8 @@ src_prepare() {
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.15@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
+	sed -e 's@hslogger >= 1.0.7 && <1.2@hslogger >= 1.0.7 \&\& <1.3@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
