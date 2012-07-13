@@ -95,6 +95,11 @@ tests = testGroup "Text.Digestive.View.Tests"
         4 $
         length $ subViews $ runTrainerM $ getForm "f" pokemonForm
 
+    , testCase "subViews after subView length" $ (@=?)
+        4 $
+        length $ subViews $ subView "pokemon" $
+            runTrainerM $ getForm "f" catchForm
+
     , testCase "Abusing Choice as Text" $ assertError $
         fieldInputText "type" $ runTrainerM $ getForm "f" pokemonForm
 
