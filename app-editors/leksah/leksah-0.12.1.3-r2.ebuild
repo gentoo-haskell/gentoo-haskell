@@ -39,7 +39,7 @@ RDEPEND=">=app-editors/leksah-server-0.12.1.2[profile?]
 		>=dev-haskell/gtksourceview2-0.10.0[profile?]
 		<dev-haskell/gtksourceview2-0.13[profile?]
 		>=dev-haskell/hslogger-1.0.7[profile?]
-		<dev-haskell/hslogger-1.2[profile?]
+		<dev-haskell/hslogger-1.3[profile?]
 		>=dev-haskell/ltk-0.12.1.0[profile?]
 		<dev-haskell/ltk-0.13[profile?]
 		>=dev-haskell/mtl-1.1.0.2[profile?]
@@ -71,6 +71,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@QuickCheck >=2.4.2 && <2.5@QuickCheck >=2.4.2 \&\& <2.6@g' \
+		-e 's@hslogger >= 1.0.7 && <1.2@hslogger >= 1.0.7 \&\& <1.3@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
