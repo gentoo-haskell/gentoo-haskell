@@ -45,4 +45,4 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-7.0.2-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-7.0.3-ghc-7.5.patch")
