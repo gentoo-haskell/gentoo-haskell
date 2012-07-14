@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
 RDEPEND=">=dev-haskell/cpphs-1.11[profile?]
-		<dev-haskell/cpphs-1.14[profile?]
+		<dev-haskell/cpphs-1.15[profile?]
 		>=dev-haskell/haskell-src-exts-1.11[profile?]
 		<dev-haskell/haskell-src-exts-1.14[profile?]
 		>=dev-haskell/hscolour-1.17[profile?]
