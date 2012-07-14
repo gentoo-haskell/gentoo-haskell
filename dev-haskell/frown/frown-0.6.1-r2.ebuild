@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="4"
+
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
@@ -20,8 +22,12 @@ S="${WORKDIR}/Frown-${PV}"
 
 src_unpack() {
 	unpack ${A}
+}
+
+src_prepare() {
 	# enabling optimisation is strongly recommended
 	echo "ghc-options: -O" >> "${S}/frown.cabal"
+	epatch "${FILESDIR}/${P}-ghc74.patch" || die "patch failed"
 }
 
 src_install() {
