@@ -1,0 +1,8 @@
+--- accelerate-cuda-0.12.1.0-orig/Setup.hs	2012-06-09 14:57:07.000000000 +1000
++++ accelerate-cuda-0.12.1.0/Setup.hs	2012-07-14 12:21:53.548567468 +1000
+@@ -1,4 +1,4 @@
+ #! /usr/bin/env runhaskell
+ 
+ import Distribution.Simple
+-main = defaultMain
++main = defaultMainWithHooks autoconfUserHooks
