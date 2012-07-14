@@ -37,7 +37,4 @@ src_prepare() {
 	# upstream forgot the tests
 	cp -pR "${FILESDIR}/${PN}-0.5.0.1/tests/Text" "${S}/tests/Text" \
 		|| die "Could not copy missing test source files"
-	sed -e 's@-- | A list of identifier@-- A list of identifier@' \
-		-i "${S}/src/Text/Digestive/Field.hs" \
-		|| die "Could not workaround haddock parse error"
 }
