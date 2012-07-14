@@ -1,0 +1,51 @@
+--- gtk2hs-buildtools-0.12.3.1-orig/c2hs/base/general/FileOps.hs	2012-05-28 08:17:27.000000000 +1000
++++ gtk2hs-buildtools-0.12.3.1/c2hs/base/general/FileOps.hs	2012-07-14 14:17:58.121511985 +1000
+@@ -36,6 +36,7 @@
+ import System.Directory (doesFileExist)
+ import System.IO	 (Handle, IOMode(..), openFile)
+ import Control.Monad	 (liftM)
++import qualified Control.Exception
+ import System.Random    (newStdGen, randomRs)
+ 
+ import FNameOps  (dirname, stripDirname, addPath)
+@@ -89,7 +90,9 @@
+ 			     in do
+ 			       h <- openFile fname ReadWriteMode
+ 			       return (h, fname)
+-			     `catch` \_ -> createLoop (attempts - 1) rs'
++			     `Control.Exception.catch` ((\_ -> createLoop (attempts - 1) rs') ::
++                                                           Control.Exception.SomeException ->
++                                                           IO (Handle, FilePath))
+     --
+     sixChars :: [Int] -> ([Int], String)
+     sixChars is = 
+--- gtk2hs-buildtools-0.12.3.1-orig/c2hs/base/state/StateTrans.hs	2012-05-28 08:17:27.000000000 +1000
++++ gtk2hs-buildtools-0.12.3.1/c2hs/base/state/StateTrans.hs	2012-07-14 14:14:12.365626559 +1000
+@@ -80,6 +80,7 @@
+ where
+ 
+ import Control.Monad      (liftM)
++import qualified Control.Exception
+ import System.IO  (fixIO)
+ import Data.IORef (IORef, newIORef, readIORef, writeIORef)
+ 
+@@ -337,7 +338,7 @@
+ 				  ioError err
+ 	      Right a          -> return state
+ 	    )
+-	    `catch` (\err -> let
++	    `Control.Exception.catch` (\err -> let
+ 			       STB handler' = handler err
+ 			     in
+ 			     handler' bs gs)
+--- gtk2hs-buildtools-0.12.3.1-orig/c2hs/toplevel/C2HSConfig.hs	2012-05-28 08:17:27.000000000 +1000
++++ gtk2hs-buildtools-0.12.3.1/c2hs/toplevel/C2HSConfig.hs	2012-07-14 14:12:10.172439583 +1000
+@@ -46,7 +46,7 @@
+ 
+ import Foreign (Ptr, FunPtr)
+ import Foreign  (Storable(sizeOf, alignment), toBool)
+-import Foreign.C (CInt)
++import Foreign.C (CInt(..))
+ import System.Info (os)
+ 
+ -- program settings

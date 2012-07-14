@@ -26,4 +26,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/random
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=("${FILESDIR}"/${PN}-0.12.3-workaround-UName.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.12.3-workaround-UName.patch
+	"${FILESDIR}"/${PN}-0.12.3.1-ghc-7.5.patch)
