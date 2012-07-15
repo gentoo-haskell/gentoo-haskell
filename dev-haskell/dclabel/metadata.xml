@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The /DC Label/ (DCLabel) library provides dynamic information
+		flow control label format in the form of conjunctions of
+		disjunctions of principals. Most code should import module
+		&quot;DCLabel.Safe&quot;; trusted code should import &quot;DCLabel.TCB&quot;.
+		The core functionality of the library is documented in
+		&quot;DCLabel.Core&quot;, while the small EDSL used to create labels is
+		documents in &quot;DCLabel.NanoEDSL&quot;. DCLabel was implemented by David
+		Mazieres (&lt;http://www.scs.stanford.edu/~dm/&gt;), Deian Stefan
+		(&lt;http://www.scs.stanford.edu/~deian/&gt;), and Alejandro Russo
+		(&lt;http://www.cse.chalmers.se/~russo/&gt;).
+	</longdescription>
+</pkgmetadata>
