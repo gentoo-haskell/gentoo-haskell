@@ -4,11 +4,11 @@
 
 EAPI=4
 CABAL_FEATURES="bin"
-inherit eutils git-2 haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://projects.haskell.org/xmobar/"
-EGIT_REPO_URI="git://github.com/jaor/xmobar.git"
+SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
