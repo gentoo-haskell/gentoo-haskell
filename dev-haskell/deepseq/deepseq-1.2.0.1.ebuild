@@ -23,3 +23,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 CABAL_CORE_LIB_GHC_PV="7.5.*"
+
+src_prepare() {
+	sed -e 's@array      >= 0.1 && < 0.4@array      >= 0.1 \&\& < 0.5@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
