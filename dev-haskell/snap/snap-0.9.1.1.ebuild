@@ -41,8 +41,10 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		>=dev-haskell/mwc-random-0.8[profile?]
 		<dev-haskell/mwc-random-0.13[profile?]
 		=dev-haskell/pwstore-fast-2.2*[profile?]
-		=dev-haskell/snap-core-0.9*[profile?]
-		=dev-haskell/snap-server-0.9*[profile?]
+		>=dev-haskell/snap-core-0.9.0[profile?]
+		<dev-haskell/snap-core-0.10[profile?]
+		>=dev-haskell/snap-server-0.9.0[profile?]
+		<dev-haskell/snap-server-0.10[profile?]
 		>=dev-haskell/stm-2.2[profile?]
 		<dev-haskell/stm-2.5[profile?]
 		>=dev-haskell/syb-0.1[profile?]
@@ -65,4 +67,4 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${PN}-0.9.0.1-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-0.9.1.1-ghc-7.5.patch")

@@ -8,7 +8,4 @@
 	<longdescription>
 		Snap Framework project starter executable and glue code library
 	</longdescription>
-	<use>
-		<flag name='hint'>Support dynamic project reloading via hint</flag>
-	</use>
 </pkgmetadata>
