@@ -171,18 +171,18 @@ src_unpack() {
 
 	pushd ${EGIT_DIR} || die "Could not cd to ${EGIT_DIR}"
 	if [[ -f ghc-tarballs/LICENSE ]]; then
-		einfo "./sync-all --testsuite pull"
-		./sync-all --testsuite pull
+		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite pull"
+		./sync-all --branch=${EGIT_BRANCH} --testsuite pull
 		if [[ "$?" != "0" ]]; then
-			ewarn "sync-all --testsuite pull failed, trying get"
-			einfo "./sync-all --testsuite get"
-			./sync-all --testsuite get \
-				|| die "sync-all --testsuite get failed"
+			ewarn "sync-all --branch=${EGIT_BRANCH} --testsuite pull failed, trying get"
+			einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite get"
+			./sync-all --branch=${EGIT_BRANCH} --testsuite get \
+				|| die "sync-all --branch=${EGIT_BRANCH} --testsuite get failed"
 		fi
 	else
-		einfo "./sync-all --testsuite get"
-		./sync-all --testsuite get \
-			|| die "sync-all --testsuite get failed"
+		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite get"
+		./sync-all --branch=${EGIT_BRANCH} --testsuite get \
+			|| die "sync-all --branch=${EGIT_BRANCH} --testsuite get failed"
 	fi
 	popd
 
