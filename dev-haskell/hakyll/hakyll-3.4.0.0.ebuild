@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="server"
 
 RDEPEND=">=app-text/pandoc-1.9.3[profile?]
 		<app-text/pandoc-1.10[profile?]
@@ -27,17 +27,19 @@ RDEPEND=">=app-text/pandoc-1.9.3[profile?]
 		>=dev-haskell/citeproc-hs-0.3.2[profile?]
 		<dev-haskell/citeproc-hs-0.4[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.2[profile?]
 		>=dev-haskell/mtl-1[profile?]
 		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/parsec-3.0[profile?]
 		<dev-haskell/parsec-3.2[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
 		=dev-haskell/regex-tdfa-1.1*[profile?]
-		>=dev-haskell/snap-core-0.6[profile?]
-		<dev-haskell/snap-core-0.10[profile?]
-		>=dev-haskell/snap-server-0.6[profile?]
-		<dev-haskell/snap-server-0.10[profile?]
+		server? ( >=dev-haskell/snap-core-0.6[profile?]
+			<dev-haskell/snap-core-0.10[profile?]
+			>=dev-haskell/snap-server-0.6[profile?]
+			<dev-haskell/snap-server-0.10[profile?]
+		)
 		>=dev-haskell/tagsoup-0.12.6[profile?]
 		<dev-haskell/tagsoup-0.13[profile?]
 		>=dev-haskell/text-0.11[profile?]
@@ -58,8 +60,13 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@containers   >= 0.3    && < 0.5@containers   >= 0.3    \&\& < 0.6@' \
+		-e 's@hamlet       >= 1.0    && < 1.1@hamlet       >= 1.0    \&\& < 1.2@g' \
 		-e 's@snap-core   >= 0.6 && < 0.9@snap-core   >= 0.6 \&\& < 0.10@' \
 		-e 's@snap-server >= 0.6 && < 0.9@snap-server >= 0.6 \&\& < 0.10@' \
 		-e 's@QuickCheck                 >= 2.4 && < 2.5@QuickCheck                 >= 2.4 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
+
+src_configure() {
+	cabal_src_configure $(cabal_flag server previewServer)
 }
