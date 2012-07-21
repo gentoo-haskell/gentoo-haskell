@@ -25,7 +25,12 @@ RDEPEND=">=dev-haskell/parsec-2[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/hspec-1.1*
+		test? ( >=dev-haskell/hspec-0.8
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@hspec            >= 1.1     && < 1.2@hspec            >= 1.1     \&\& < 1.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
