@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="xft unicode mail mpd mpris alsa timezone wifi"
 
 RDEPEND="x11-libs/libXrandr
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
 		>=dev-haskell/parsec-3
-		=dev-haskell/stm-2.3*
+		>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
 		dev-haskell/time
 		=dev-haskell/x11-1.6*
 		xft?  ( =dev-haskell/utf8-string-0.3*
