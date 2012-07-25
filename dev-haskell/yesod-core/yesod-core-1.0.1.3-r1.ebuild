@@ -32,7 +32,8 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		=dev-haskell/cookie-0.4*[profile?]
 		=dev-haskell/failure-0.2*[profile?]
 		>=dev-haskell/fast-logger-0.0.2[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.3[profile?]
 		>=dev-haskell/http-types-0.6.5[profile?]
 		<dev-haskell/http-types-0.7[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
@@ -70,5 +71,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hspec >= 1.1 && < 1.2@hspec >= 1.1 \&\& < 1.3@' \
+		-e 's@hamlet                >= 1.0      && < 1.1@hamlet@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
