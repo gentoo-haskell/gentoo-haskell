@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.2[profile?]
 		>=dev-haskell/text-0.9[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/time-1.1.4[profile?]
@@ -30,3 +31,8 @@ RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@hamlet               >= 1.0      && < 1.1@hamlet@' \
+		-i "${S}/${PN}.cabal"
+}
