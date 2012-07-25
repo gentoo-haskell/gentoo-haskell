@@ -37,3 +37,8 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+  sed -e 's@hamlet                >= 1.0      && < 1.1@hamlet@' \
+		-i "${S}/${PN}.cabal"
+}
