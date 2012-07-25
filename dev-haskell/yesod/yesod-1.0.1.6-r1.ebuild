@@ -27,7 +27,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		dev-haskell/cabal[profile?]
 		>=dev-haskell/fast-logger-0.0.2[profile?]
 		<dev-haskell/fast-logger-0.1[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.3[profile?]
 		>=dev-haskell/http-types-0.6.1[profile?]
 		<dev-haskell/http-types-0.7[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
@@ -54,3 +55,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@hamlet                    >= 1.0      && < 1.1@hamlet@' \
+		-i "${S}/${PN}.cabal" || die "sed failed"
+}
