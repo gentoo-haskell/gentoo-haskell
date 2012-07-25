@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="=app-text/pandoc-1.9*[profile?]
 		>=dev-haskell/blaze-html-0.5.0[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.3[profile?]
 		=dev-haskell/persistent-0.9*[profile?]
 		=dev-haskell/text-0.11*[profile?]
 		>=dev-haskell/xss-sanitize-0.3.1[profile?]
@@ -30,3 +31,8 @@ RDEPEND="=app-text/pandoc-1.9*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@hamlet          >= 1.0   && < 1.1@hamlet@' \
+		-i "${S}/${PN}.cabal"
+}
