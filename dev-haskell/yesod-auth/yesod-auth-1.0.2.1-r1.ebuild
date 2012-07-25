@@ -24,7 +24,8 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
-		=dev-haskell/hamlet-1.0*[profile?]
+		>=dev-haskell/hamlet-1.0[profile?]
+		<dev-haskell/hamlet-1.3[profile?]
 		>=dev-haskell/http-conduit-1.4.1.1[profile?]
 		<dev-haskell/http-conduit-1.5[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
@@ -54,3 +55,8 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6.0"
+
+src_prepare() {
+	sed -e 's@hamlet                  >= 1.0       && < 1.1@hamlet@' \
+		-i "${S}/${PN}.cabal" || die "sed failed"
+}
