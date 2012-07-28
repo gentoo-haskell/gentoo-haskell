@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-PATCHES=("${FILESDIR}/0001-bustle-dbus-monitor-fix-linking-order-libs-go-after-.patch")
+PATCHES=("${FILESDIR}/0001-bustle-dbus-monitor-fix-linking-order-libs-go-after-.patch"
+	"${FILESDIR}"/${P}-ghc-7.4.patch)
 
 RDEPEND="sys-apps/dbus
 		x11-libs/cairo
