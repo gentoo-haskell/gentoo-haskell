@@ -10,8 +10,8 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal git-2
 
 DESCRIPTION="lambdacat"
-HOMEPAGE="http://github.com/Nensha/lambdacat"
-EGIT_REPO_URI="git://github.com/Nensha/lambdacat.git"
+HOMEPAGE="http://github.com/nCdy/lambdacat"
+EGIT_REPO_URI="git://github.com/nCdy/lambdacat.git"
 
 LICENSE="BSD"
 SLOT="0"
