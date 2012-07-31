@@ -33,8 +33,8 @@ S="${WORKDIR}/${MY_PN}"
 CABAL_CORE_LIB_GHC_PV="7.5.*"
 
 # because we need Cabal subdir ( I'm not sure how to make it in better way :3 )
-src_prepare() { 
-	cp -rf "${S}/Cabal" "${WORKDIR}" || die 
+src_prepare() {
+	cp -rf "${S}/Cabal" "${WORKDIR}" || die
 }
 
 src_configure() {
