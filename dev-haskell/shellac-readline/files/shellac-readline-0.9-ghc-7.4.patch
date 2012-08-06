@@ -1,0 +1,17 @@
+Fix build breakage against ghc-7.4:
+
+src/System/Console/Shell/Backend/Readline.hs:1:1:
+    Ambiguous module name `Prelude':
+      it was found in multiple packages: base haskell98-2.0.0.1
+diff --git a/Shellac-readline.cabal b/Shellac-readline.cabal
+index 11016e8..1e3d438 100644
+--- a/Shellac-readline.cabal
++++ b/Shellac-readline.cabal
+@@ -16,7 +16,6 @@ Hs-Source-Dirs:
+    src
+ Build-Depends:
+    base >= 1.0,
+-   haskell98 >= 1.0,
+    readline >= 1.0,
+    Shellac >= 0.9
+ Exposed-modules:
