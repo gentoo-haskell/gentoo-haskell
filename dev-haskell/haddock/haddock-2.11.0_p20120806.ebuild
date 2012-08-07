@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit eutils haskell-cabal pax-utils versionator
+inherit base eutils haskell-cabal pax-utils versionator
 
 MY_PV=$(get_version_component_range '1-3')
 
@@ -15,13 +15,13 @@ SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-# This is only for ghc head 7.5 and live ebuilds
+# This is only for ghc head 7.7 and live ebuilds
 KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.5"
+		>=dev-lang/ghc-7.7"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
@@ -31,7 +31,10 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
+PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch")
+
 src_prepare() {
+	base_src_prepare
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 

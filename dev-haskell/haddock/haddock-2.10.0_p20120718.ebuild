@@ -42,9 +42,9 @@ src_prepare() {
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 
-	# Its a snapshot of the haddock included with ghc-7.5.20120511, which does
-	# not require alex or happy.  The copy of the Lex and Parse files is
-	# already done in the tarball.
+	# Its a snapshot of the haddock included with ghc head snapshot, which
+	# does not require alex or happy.  The copy of the Lex and Parse files
+	# is already done in the tarball.
 }
 
 src_configure() {
