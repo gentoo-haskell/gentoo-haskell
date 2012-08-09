@@ -18,10 +18,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/mtl
-		<dev-haskell/network-2.4
-		<dev-haskell/parsec-4
-		=dev-haskell/utf8-string-0.3*
+RDEPEND="dev-haskell/mtl[profile?]
+		<dev-haskell/network-2.4[profile?]
+		<dev-haskell/parsec-4[profile?]
+		>=dev-haskell/http-types-0.6[profile?]
+		<dev-haskell/http-types-0.8[profile?]
+		=dev-haskell/utf8-string-0.3*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@http-types == 0\.6\.\*@http-types@' \
+		-i "${S}/${PN}.cabal"
+}
