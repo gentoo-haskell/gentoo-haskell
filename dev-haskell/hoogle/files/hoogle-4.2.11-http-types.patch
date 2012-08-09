@@ -1,0 +1,25 @@
+Fixes http-type
+
+--- src/General/Web.hs
++++ src/General/Web.hs
+@@ -29,7 +29,7 @@ type Args = [(String, String)]
+ ---------------------------------------------------------------------
+ -- WAI STUFF
+ 
+-responseOK = responseLBS statusOK
++responseOK = responseLBS ok200 
+ responseNotFound x = responseLBS status404 [] $ fromString $ "File not found: " ++ x
+ 
+ responseFlatten :: Response -> IO (Status, ResponseHeaders, LBString)
+
+--- src/Web/Server.hs
++++ src/Web/Server.hs
+@@ -122,7 +122,7 @@ serveFile cache file = do
+     b <- doesFileExist file
+     return $ if not b
+         then responseNotFound file
+-        else ResponseFile statusOK hdr file Nothing
++        else ResponseFile ok200 hdr file Nothing
+     where hdr = [headerContentType $ fromString $ contentExt $ takeExtension file] ++
+                 [headerCacheControl $ fromString "max-age=604800" {- 1 week -} | cache]
+ 
