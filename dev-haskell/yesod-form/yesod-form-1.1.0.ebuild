@@ -51,3 +51,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare () {
+	epatch "${FILESDIR}/${P}-haddock.patch"
+}
