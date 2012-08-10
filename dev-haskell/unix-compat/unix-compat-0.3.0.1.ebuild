@@ -21,3 +21,8 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@unix >= 2.4 && < 2.6@unix >= 2.4 \&\& < 2.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependicies"
+}
