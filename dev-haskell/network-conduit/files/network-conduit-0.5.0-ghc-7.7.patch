@@ -1,0 +1,10 @@
+--- network-conduit-0.5.0-orig/Data/Conduit/Network.hs	2012-06-29 14:23:05.000000000 +1000
++++ network-conduit-0.5.0/Data/Conduit/Network.hs	2012-08-10 21:35:34.894401726 +1000
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE FlexibleContexts #-}
++{-# LANGUAGE Rank2Types #-}
+ module Data.Conduit.Network
+     ( -- * Basic utilities
+       sourceSocket
