@@ -67,3 +67,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/warp-1.2.1
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
+}
