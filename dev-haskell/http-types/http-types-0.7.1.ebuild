@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/quickcheck
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@bytestring >=0.9.1.5 && <0.10@bytestring >=0.9.1.5 \&\& <0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
