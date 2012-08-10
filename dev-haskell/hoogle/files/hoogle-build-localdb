@@ -49,6 +49,20 @@ cat ${PPT_tempfile} | sed -e 's@^.*/@@' -e 's@\.txt@.hoo@' | sort >${FPH_tempfil
 
 hoogle_db_updates=
 
+# undefined is method declared in Prelude, so this search for hoogle undefined
+# should normally succeed and return 0.  The reason for this test is that
+# when hoogle is upgraded, this search is likely to fail with an error like:
+# % hoogle undefined
+# hoogle: Wrong hoogle database version: found 4.2.11.0, expected 4.2.12.0
+# % echo $?
+# 1
+# %
+# If it fails then we remember the non-zero exit status in ${hu}, which we
+# then check and rebuild the hoogle binary databases for all the installed
+# haskell libraries (other than the databases provided by dev-haskell/hoogle).
+hoogle undefined >/dev/null 2>&1
+hu=$?
+
 # It is normal for hoogle convert to print zillions of error messages"
 for i in $(cat ${PPT_tempfile} | xargs)
 do
@@ -57,9 +71,9 @@ do
     pf="${pt%.txt}.hoogle-convert-failed"
     # If the .hoo file does not exist, as the package was newly installed,
     # or the timestamp of the package text hoogle .txt database is later than
-    # the binary hoogle .hoo database, then convert the package text hoogle
-    # database the binary hoogle .hoo database.
-    if [[ ( ! -f "${ph}" && ( ! -f "${pf}" || "${i}" -nt "${pf}")) || ( ! -f "${pf}" && "${i}" -nt "${ph}") ]]
+    # the binary hoogle .hoo database, or hoogle undefined failed, then convert
+    # the package text hoogle database the binary hoogle .hoo database.
+    if [[ ( ! -f "${ph}" && ( ! -f "${pf}" || "${i}" -nt "${pf}")) || ( ! -f "${pf}" && "${i}" -nt "${ph}") || ( ${hu} -ne 0 ) ]]
     then
         rm -f "${pf}"
         echo "hoogle convert ${i} ${ph}"
@@ -80,7 +94,7 @@ done
 # Obtain the list of hoogle binary databases, with default.hoo removed
 ls --format=single-column *.hoo | sed -e '/^default.hoo/d' >${FBH_tempfile}
 
-# Object the list of hoogle databse removals (from removing packages)
+# Obtain the list of hoogle database removals (from removing packages)
 comm -23 ${FBH_tempfile} ${FPH_tempfile} >${FRH_tempfile}
 
 # If default.hoo does not exist, or there were hoogle database updates,
