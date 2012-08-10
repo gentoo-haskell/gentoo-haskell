@@ -22,3 +22,9 @@ RDEPEND="<dev-haskell/binary-0.6[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+src_prepare() {
+	sed -e 's@containers < 0.5@containers < 0.6@' \
+		-e 's@integer-gmp >= 0.2 && < 0.5@integer-gmp >= 0.2 \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
