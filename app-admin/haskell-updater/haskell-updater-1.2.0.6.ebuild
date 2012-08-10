@@ -32,7 +32,7 @@ src_prepare() {
 			"${S}/Distribution/Gentoo/GHC.hs" || die
 	fi
 	epatch "${FILESDIR}/${PN}-1.2.0.5-ghc-7.5.patch"
-	sed -e 's@Cabal >= 1.8 && < 1.15@Cabal >= 1.8 \&\& < 1.16@' \
+	sed -e 's@Cabal >= 1.8 && < 1.15@Cabal >= 1.8 \&\& < 1.18@' \
 		-e 's@containers < 0.5@containers < 0.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
