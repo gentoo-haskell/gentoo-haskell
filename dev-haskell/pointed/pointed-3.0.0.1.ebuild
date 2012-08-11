@@ -35,6 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@data-default         >= 0.4     && < 0.5@data-default         >= 0.4     \&\& < 0.6@' \
-		-e 's@stm                  >= 2.1.2.1 && < 2.4@stm                  >= 2.1.2.1 \&\& < 2.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
