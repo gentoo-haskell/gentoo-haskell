@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="=dev-haskell/binary-0.5*[profile?]
 		=dev-haskell/data-accessor-0.2*[profile?]
-		=dev-haskell/distributed-process-0.2*[profile?]
+		>=dev-haskell/distributed-process-0.2[profile?]
+		<dev-haskell/distributed-process-0.4[profile?]
 		=dev-haskell/network-2.3*[profile?]
 		=dev-haskell/network-multicast-0.0*[profile?]
 		=dev-haskell/network-transport-0.2*[profile?]
@@ -30,3 +31,8 @@ RDEPEND="=dev-haskell/binary-0.5*[profile?]
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@distributed-process >= 0.2 && < 0.3@distributed-process >= 0.2 \&\& < 0.4@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
