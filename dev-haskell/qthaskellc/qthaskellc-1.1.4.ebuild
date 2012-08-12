@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,8 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DOCSDIR="${S}/../"
-DOCS="INSTALL LICENSE README"
+DOCS="${WORKDIR}/${MY_P}/INSTALL ${WORKDIR}/${MY_P}/LICENSE ${WORKDIR}/${MY_P}/README"
 
 DEPEND="virtual/opengl
 		x11-libs/qt-core:4
