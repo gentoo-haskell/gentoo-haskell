@@ -19,6 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/text
+		=dev-haskell/deepseq-1.3*
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@deepseq == 1.1.\*@deepseq@' \
+		-i "${S}/${PN}.cabal"
+}
+src_configure () {
+	cabal_src_configure --flag=testprog
+}
