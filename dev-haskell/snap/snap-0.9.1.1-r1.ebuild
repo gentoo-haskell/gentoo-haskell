@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		=dev-haskell/attoparsec-0.10*[profile?]
 		=dev-haskell/cereal-0.3*[profile?]
 		>=dev-haskell/clientsession-0.7.3.6[profile?]
-		<dev-haskell/clientsession-0.8[profile?]
+		<dev-haskell/clientsession-0.9[profile?]
 		>=dev-haskell/configurator-0.1[profile?]
 		<dev-haskell/configurator-0.3[profile?]
 		>=dev-haskell/data-lens-2.0.1[profile?]
@@ -67,4 +67,5 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${PN}-0.9.1.1-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-0.9.1.1-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-0.9.1.1-clientsession-0.8.patch")
