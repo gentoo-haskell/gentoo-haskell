@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Parsing and extracting information from (possibly malformed) HTML/XML documents"
 HOMEPAGE="http://community.haskell.org/~ndm/tagsoup/"
@@ -24,11 +24,8 @@ RDEPEND="dev-haskell/text[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	sed -e 's@deepseq == 1.1.\*@deepseq@' \
-		-e 's@QuickCheck == 2.4.\*@QuickCheck >= 2.4 \&\& < 2.6@' \
-		-i "${S}/${PN}.cabal"
-}
+PATCHES=("${FILESDIR}/${PN}-0.12.6-ghc-7.7.patch")
+
 src_configure () {
 	cabal_src_configure --flag=testprog
 }
