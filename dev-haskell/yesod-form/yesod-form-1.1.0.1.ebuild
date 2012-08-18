@@ -53,5 +53,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare () {
-	epatch "${FILESDIR}/${P}-haddock.patch"
+	epatch "${FILESDIR}/${PN}-1.1.0-haddock.patch"
 }
