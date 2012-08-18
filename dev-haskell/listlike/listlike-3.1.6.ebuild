@@ -26,8 +26,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	sed -e 's@bytestring >= 0.9.1 && < 0.10@bytestring >= 0.9.1 \&\& < 0.11@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
-}
