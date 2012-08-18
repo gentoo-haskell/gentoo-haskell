@@ -1,0 +1,30 @@
+This patch fixes cabal-dev to use tar-0.4 API
+--- /src/Distribution/Dev/AddSource.hs
++++ /src/Distribution/Dev/AddSource.hs
+@@ -102,7 +102,7 @@ addSources flgs fns = do
+         res <- readExistingIndex sandbox
+         case res of
+           Left err -> return $
+-                 CommandError $ "Error reading existing index: " ++ err
++                 CommandError $ "Error reading existing index: " ++ (show err)
+           Right existingIndex ->
+               do let newIndex = mergeIndices existingIndex newEntries
+                  -- Now we have the new index ready and have
+@@ -152,7 +152,7 @@ toIndexEntry pkgId c = right toEnt $ T.toTarPath False (indexName pkgId)
+ -- |Read an existing index tarball from the local repository, if one
+ -- exists. If the file does not exist, behave as if the index has no
+ -- entries.
+-readExistingIndex :: Sandbox a -> IO (Either String [T.Entry])
++readExistingIndex :: Sandbox a -> IO (Either T.FormatError [T.Entry])
+ readExistingIndex sandbox =
+     readIndexFile `catch` \e ->
+         if isDoesNotExistError e
+@@ -344,7 +344,7 @@ forcedBS :: L.ByteString -> IO L.ByteString
+ forcedBS bs = forceBS bs >> return bs
+ 
+ -- |Extract a cabal file from a package tarball
+-extractCabalFile :: T.Entries -> Maybe (PackageIdentifier, L.ByteString, PackageDescription)
++extractCabalFile :: T.Entries T.FormatError -> Maybe (PackageIdentifier, L.ByteString, PackageDescription)
+ extractCabalFile = T.foldEntries step Nothing (const Nothing)
+     where
+       step ent Nothing = (,,) <$> entPackageId ent <*> entBytes ent <*> (parseDesc $ entBytes ent)

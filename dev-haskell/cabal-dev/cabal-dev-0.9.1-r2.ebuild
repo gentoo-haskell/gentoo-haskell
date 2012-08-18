@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/http-4000.0.9 <dev-haskell/http-4000.3
 		<dev-haskell/mtl-2.2
 		=dev-haskell/network-2.3*
-		=dev-haskell/tar-0.3*
+		=dev-haskell/tar-0.4*
 		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		=dev-haskell/zlib-0.5*
 		>=dev-lang/ghc-6.10.1
@@ -34,5 +34,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal-mksetup
 	epatch "${FILESDIR}/${PN}-0.8-cabal-file.patch"
-	epatch "${FILESDIR}"/${PN}-0.9.1-tf-0.3.patch
+	epatch "${FILESDIR}/${PN}-0.9.1-tf-0.3.patch"
+	epatch "${FILESDIR}/${PN}-0.9.1-tar-0.4.patch"
+	sed -e 's@tar >= 0.3 && < 0.4@tar@' \
+		-i "${S}/${PN}.cabal"
 }
