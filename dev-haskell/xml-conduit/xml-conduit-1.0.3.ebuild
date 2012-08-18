@@ -44,3 +44,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@bytestring                >= 0.9      && < 0.10@bytestring                >= 0.9      \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
