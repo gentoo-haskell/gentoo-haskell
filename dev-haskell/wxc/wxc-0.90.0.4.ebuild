@@ -9,7 +9,7 @@ EAPI=4
 WX_GTK_VER="2.9"
 
 CABAL_FEATURES="lib profile"
-inherit haskell-cabal multilib versionator wxwidgets
+inherit base haskell-cabal multilib versionator wxwidgets
 
 DESCRIPTION="wxHaskell C++ wrapper"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
@@ -26,7 +26,10 @@ RDEPEND=">=dev-haskell/wxdirect-0.90[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
+PATCHES=("${FILESDIR}/${PN}-0.90.0.4-wxGTK-2.9.4.1.patch")
+
 src_prepare() {
+	base_src_prepare
 	sed -e "s@\"wx-config\"@\"${WX_CONFIG}\"@g" \
 		-i "${S}/Setup.hs" || die "Could not specify wx-config in Setup.hs"
 }
