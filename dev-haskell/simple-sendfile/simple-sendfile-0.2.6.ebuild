@@ -22,9 +22,8 @@ RDEPEND="dev-haskell/network[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/conduit
-			dev-haskell/hspec
-			dev-haskell/hspec-discover
-			dev-haskell/hspec-shouldbe
+			>=dev-haskell/hspec-1.3
+			dev-haskell/hspec-expectations
 			dev-haskell/hunit
 			dev-haskell/network-conduit
 		)
