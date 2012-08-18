@@ -16,6 +16,10 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
+# tests fail to build:
+# <command line>: cannot satisfy -package-id text-0.11.2.3-inplace:
+#    text-0.11.2.3-inplace is shadowed by package text-0.11.2.3-db61832d0c4660614c4ceff234ed4abb
+# http://hackage.haskell.org/trac/hackage/ticket/807
 IUSE="test"
 
 RDEPEND=">=dev-haskell/deepseq-1.1.0.0[profile?]
