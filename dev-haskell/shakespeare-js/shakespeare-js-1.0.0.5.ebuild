@@ -25,14 +25,12 @@ RDEPEND=">=dev-haskell/shakespeare-1.0.0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-0.8
-			<dev-haskell/hspec-1.3
+			<dev-haskell/hspec-1.4
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
-	sed -e 's@hspec            >= 0.8     && < 1.2@hspec@' \
+	sed -e 's@hspec            >= 0.8     && < 1.3@hspec            >= 0.8     \&\& < 1.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	cp -p "${FILESDIR}/${P}/test/Quoter.hs" "${S}/test" \
-		|| die "Could not copy missing Quoter.hs test file"
 }
