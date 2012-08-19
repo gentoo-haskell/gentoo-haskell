@@ -27,5 +27,6 @@ DEPEND="${RDEPEND}
 PATCHES=("${FILESDIR}/${PN}-0.12.6-ghc-7.7.patch")
 
 src_configure () {
-	cabal_src_configure --flag=testprog
+	cabal_src_configure --flag=testprog \
+						--flag=download
 }
