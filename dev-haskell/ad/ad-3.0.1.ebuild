@@ -20,7 +20,13 @@ IUSE=""
 
 RDEPEND="=dev-haskell/comonad-3.0*[profile?]
 		=dev-haskell/data-reify-0.6*[profile?]
-		=dev-haskell/free-3.0*[profile?]
+		>=dev-haskell/free-3.0[profile?]
+		<dev-haskell/free-3.1[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@free             == 3.0.\*@free@' \
+		-i "${S}/${PN}.cabal"
+}
