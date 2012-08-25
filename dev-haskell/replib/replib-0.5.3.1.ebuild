@@ -27,6 +27,6 @@ RDEPEND=">=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/type-equality-0.2[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.10"
 
 S="${WORKDIR}/${MY_P}"
