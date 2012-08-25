@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
+		<dev-haskell/base64-bytestring-1.1[profile?]
 		dev-haskell/blaze-builder[profile?]
 		>=dev-haskell/blaze-builder-conduit-0.4[profile?]
 		<dev-haskell/blaze-builder-conduit-0.6[profile?]
@@ -45,5 +46,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@http-conduit                  >= 1.4      && < 1.6@http-conduit                  >= 1.4      \&\& < 1.7@' \
+		-e 's@base64-bytestring             >= 0.1      && < 0.2@base64-bytestring             >= 0.1      \&\& < 1.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
