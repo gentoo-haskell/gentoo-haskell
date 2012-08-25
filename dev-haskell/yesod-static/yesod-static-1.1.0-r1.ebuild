@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1[profile?]
-		<dev-haskell/base64-bytestring-0.2[profile?]
+		<dev-haskell/base64-bytestring-1.1[profile?]
 		=dev-haskell/cereal-0.3*[profile?]
 		=dev-haskell/conduit-0.5*[profile?]
 		=dev-haskell/crypto-conduit-0.4*[profile?]
@@ -43,3 +43,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@base64-bytestring     >= 0.1.0.1  && < 0.2@base64-bytestring     >= 0.1.0.1  \&\& < 1.1@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
