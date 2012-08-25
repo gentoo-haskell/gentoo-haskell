@@ -27,12 +27,6 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
-			dev-haskell/hunit
 			dev-haskell/quickcheck
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@bytestring >=0.9.1.5 && <0.10@bytestring >=0.9.1.5 \&\& <0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
