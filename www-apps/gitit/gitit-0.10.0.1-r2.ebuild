@@ -20,7 +20,8 @@ IUSE="+plugins"
 
 RDEPEND=">=app-text/pandoc-1.9.0.5[profile?]
 		<app-text/pandoc-1.10[profile?]
-		=dev-haskell/base64-bytestring-0.1*[profile?]
+		>=dev-haskell/base64-bytestring-0.1[profile?]
+		<dev-haskell/base64-bytestring-1.1[profile?]
 		>=dev-haskell/blaze-html-0.4[profile?]
 		<dev-haskell/blaze-html-0.6[profile?]
 		dev-haskell/cgi[profile?]
@@ -68,6 +69,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@hslogger >= 1 && < 1.2@hslogger >= 1 \&\& < 1.3@' \
+		-e 's@base64-bytestring >= 0.1 && < 0.2@base64-bytestring >= 0.1 \&\& < 1.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
