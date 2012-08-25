@@ -1,0 +1,20 @@
+--- temporary-1.1.2.3-orig/temporary.cabal	2011-12-22 03:12:32.000000000 +1100
++++ temporary-1.1.2.3/temporary.cabal	2012-08-25 21:05:33.176706995 +1000
+@@ -25,4 +25,4 @@
+     build-depends:   base >= 3 && < 6, filepath >= 1.1 && < 1.4, directory >= 1.0 && < 1.2
+     
+     if !os(windows)
+-        build-depends: unix >= 2.3 && < 2.6
++        build-depends: unix >= 2.3 && < 2.7
+--- temporary-1.1.2.3-orig/Distribution/Compat/TempFile.hs	2011-12-22 03:12:32.000000000 +1100
++++ temporary-1.1.2.3/Distribution/Compat/TempFile.hs	2012-08-25 21:10:45.327405443 +1000
+@@ -27,7 +27,8 @@
+ import Data.Bits              ((.|.))
+ import System.Posix.Internals (c_open, c_close, o_CREAT, o_EXCL, o_RDWR,
+                                o_BINARY, o_NONBLOCK, o_NOCTTY)
+-import System.IO.Error        (try, isAlreadyExistsError)
++import System.IO.Error        (isAlreadyExistsError)
++import Control.Exception      (try)
+ #if __GLASGOW_HASKELL__ >= 611
+ import System.Posix.Internals (withFilePath)
+ #else
