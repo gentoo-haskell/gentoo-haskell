@@ -29,9 +29,3 @@ DEPEND="${RDEPEND}
 			=dev-haskell/random-1.0*
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	cp -pR "${FILESDIR}/${PN}-0.2.0.2/tests" \
-		"${S}" \
-		|| die "Could not copy missing test files"
-}
