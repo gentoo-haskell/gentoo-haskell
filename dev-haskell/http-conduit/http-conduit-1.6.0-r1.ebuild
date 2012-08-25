@@ -23,7 +23,8 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		>=dev-haskell/attoparsec-0.8.0.2[profile?]
 		<dev-haskell/attoparsec-0.11[profile?]
 		=dev-haskell/attoparsec-conduit-0.5*[profile?]
-		=dev-haskell/base64-bytestring-0.1*[profile?]
+		>=dev-haskell/base64-bytestring-0.1[profile?]
+		<dev-haskell/base64-bytestring-1.1[profile?]
 		>=dev-haskell/blaze-builder-0.2.1[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		=dev-haskell/blaze-builder-conduit-0.5*[profile?]
@@ -72,5 +73,7 @@ PATCHES=("${FILESDIR}/${PN}-1.6.0-ghc-7.7.patch")
 
 src_prepare() {
 	base_src_prepare
+	sed -e 's@base64-bytestring     >= 0.1     && < 0.2@base64-bytestring     >= 0.1     \&\& < 1.1@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	cp -r "${FILESDIR}/${P}/test" "${S}" || die "can't add tests"
 }
