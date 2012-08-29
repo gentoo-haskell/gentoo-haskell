@@ -26,7 +26,8 @@ COMMONDEPS="=dev-haskell/colour-2.3*[profile?]
 		dev-haskell/text[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
-		dev-haskell/wl-pprint-text[profile?]
+		>=dev-haskell/wl-pprint-text-1.0.0.0[profile?]
+		<dev-haskell/wl-pprint-text-1.2.0.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 
 DEPEND="${COMMONDEPS}
@@ -40,6 +41,6 @@ RDEPEND="${COMMONDEPS}
 
 src_prepare() {
 	sed -e 's@bytestring == 0.9.\*@bytestring >= 0.9 \&\& <0.11@' \
-		-e 's@QuickCheck >= 2.3 && < 2.5@QuickCheck >= 2.3 \&\& < 2.6@' \
+		-e 's@QuickCheck >= 2.3 && < 2.5@QuickCheck >= 2.3 \&\& < 2.6, directory@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
