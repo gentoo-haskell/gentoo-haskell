@@ -45,6 +45,7 @@ RDEPEND="dev-haskell/binary[profile?]
 		<dev-haskell/wai-1.4[profile?]
 		>=dev-haskell/warp-1.1[profile?]
 		<dev-haskell/warp-1.4[profile?]
+		localdb? ( app-portage/fquery )
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
