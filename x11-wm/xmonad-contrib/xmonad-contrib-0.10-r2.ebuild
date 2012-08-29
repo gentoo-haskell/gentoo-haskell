@@ -11,19 +11,19 @@ inherit base haskell-cabal
 
 DESCRIPTION="Third party extensions for xmonad"
 HOMEPAGE="http://xmonad.org/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
-IUSE="xft"
+IUSE="xft icccwm-focus"
 
 RDEPEND="<dev-haskell/mtl-3[profile?]
 		dev-haskell/random[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-haskell/x11-1.5[profile?] <dev-haskell/x11-1.7[profile?]
 		xft? ( >=dev-haskell/x11-xft-0.2[profile?] )
-		~x11-wm/xmonad-${PV}[profile?]
+		~x11-wm/xmonad-${PV}[profile?,icccwm-focus=]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
@@ -31,5 +31,6 @@ DEPEND="${RDEPEND}
 PATCHES=("${FILESDIR}"/${P}-x11-1.6.patch)
 
 src_configure() {
+	use icccwm-focus && sed -i -e '/XMonad.Hooks.ICCCMFocus/d' ${PN}.cabal
 	cabal_src_configure --flags=-testing $(cabal_flag xft use_xft)
 }
