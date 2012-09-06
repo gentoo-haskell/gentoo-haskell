@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The Scripting.Lua module is a wrapper of Lua language interpreter
+		as described in www.lua.org.
+		
+		The package is standalone: full Lua interpreter version 5.1.4
+		is distributed in this package as well.
+	</longdescription>
+</pkgmetadata>
