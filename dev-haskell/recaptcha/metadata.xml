@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		reCAPTCHA (http://recaptcha.net/) is a service that provides
+		captchas for preventing automated spam in web applications.
+		recaptcha-hs provides functions for using reCAPTCHA in Haskell
+		web applications.
+	</longdescription>
+</pkgmetadata>
