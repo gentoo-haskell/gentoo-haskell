@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		With this package you can create a type safe interface to flag sets.
+		It is intended for interfacing to C libraries via FFI,
+		where Word8, Word16, or Word32 types are commonly used to store bit vectors.
+		E.g. the type @EnumSet Word16 Ordering@
+		represents a flag set stored in a Word16
+		that supports the flags @LT@, @EQ@, @GT@.
+		
+		This package is similar to the @bitset@ package and
+		the @Data.Edison.Coll.EnumSet@ module in the @edison@ package,
+		however our implementation allows you to choose the embedding type
+		and thus the maximum size of the set.
+	</longdescription>
+</pkgmetadata>

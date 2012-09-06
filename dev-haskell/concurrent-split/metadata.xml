@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		MVars and Channels with distinguished input and output side.
+		When threads communicate via an MVar or a Chan
+		there are often clearly defined roles,
+		which thread is the sender and which one is receiver.
+		We provide wrappers around the standard concurrency communication channels
+		that make the distinction clear and type safe.
+		
+		For example, if a function has a parameter of type @TChan.In@
+		then it is sure that it will only write to that channel.
+		Additionally if the compiler warns about an unused @TChan.Out@
+		that was created by @TChan.new@
+		then you know that the receiver part of your communication is missing.
+		
+		See also package @stm-split@ for transactional communication.
+		This package follows the same idea as @chan-split@ but is strictly Haskell 98.
+	</longdescription>
+</pkgmetadata>

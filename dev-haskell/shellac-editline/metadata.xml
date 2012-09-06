@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides a Shellac backend based on the editline
+		library.  editline provides a subset of the functionality
+		provided by the GNU readline library.  However, it is licenced
+		with a BSD-style license and is therefore suitable for some situations
+		where GNU readline is not.  This backend features all the line
+		editing capabilities provided by editline.
+	</longdescription>
+</pkgmetadata>
