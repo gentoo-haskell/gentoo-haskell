@@ -9,8 +9,8 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A library for writing CGI programs"
-HOMEPAGE="http://andersk.mit.edu/haskell/cgi/"
+DESCRIPTION="MVars and Channels with distinguished input and output side"
+HOMEPAGE="http://hackage.haskell.org/package/concurrent-split"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,11 +18,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/monadcatchio-mtl[profile?]
-		>=dev-haskell/mtl-1.0[profile?]
-		>=dev-haskell/network-2.0[profile?]
-		>=dev-haskell/parsec-2.0[profile?]
-		>=dev-haskell/xhtml-3000.0.0[profile?]
-		>=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"

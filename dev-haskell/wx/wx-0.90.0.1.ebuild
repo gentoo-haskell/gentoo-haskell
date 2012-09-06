@@ -9,20 +9,17 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A library for writing CGI programs"
-HOMEPAGE="http://andersk.mit.edu/haskell/cgi/"
+DESCRIPTION="wxHaskell"
+HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
 SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE=""	#Fixme: "OtherLicense", please fill in manually
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/monadcatchio-mtl[profile?]
-		>=dev-haskell/mtl-1.0[profile?]
-		>=dev-haskell/network-2.0[profile?]
-		>=dev-haskell/parsec-2.0[profile?]
-		>=dev-haskell/xhtml-3000.0.0[profile?]
-		>=dev-lang/ghc-6.10.1"
+RDEPEND="dev-haskell/stm[profile?]
+		>=dev-haskell/wxcore-0.90[profile?]
+		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
