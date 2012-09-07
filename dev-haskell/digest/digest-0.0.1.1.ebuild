@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now."
 HOMEPAGE="http://hackage.haskell.org/package/digest"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

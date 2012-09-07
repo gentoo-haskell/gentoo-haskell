@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bindings for the libXML2 SAX interface"
 HOMEPAGE="http://john-millikin.com/software/bindings/libxml-sax/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -12,7 +12,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The SQL link in your *NIX chain"
 HOMEPAGE="http://keithsheppard.name/txt-sushi"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Pointful refactoring tool"
 HOMEPAGE="http://github.com/23Skidoo/pointful"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A pure priority queue."
 HOMEPAGE="http://hackage.haskell.org/package/pure-priority-queue"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

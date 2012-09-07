@@ -7,7 +7,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Actors with multi-headed receive clauses"
 HOMEPAGE="http://sulzmann.blogspot.com/2008/10/actors-with-multi-headed-receive.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

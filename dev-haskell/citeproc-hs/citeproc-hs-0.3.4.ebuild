@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Citation Style Language implementation in Haskell"
 HOMEPAGE="http://gorgias.mine.nu/repos/citeproc-hs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

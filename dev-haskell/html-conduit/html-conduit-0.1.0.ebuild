@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parse HTML documents using xml-conduit datatypes."
 HOMEPAGE="https://github.com/snoyberg/xml"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

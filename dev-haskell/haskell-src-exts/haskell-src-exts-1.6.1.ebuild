@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer"
 HOMEPAGE="http://code.haskell.org/haskell-src-exts"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

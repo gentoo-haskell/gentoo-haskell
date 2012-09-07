@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Special functions and Chebyshev polynomials"
 HOMEPAGE="https://github.com/bos/math-functions"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

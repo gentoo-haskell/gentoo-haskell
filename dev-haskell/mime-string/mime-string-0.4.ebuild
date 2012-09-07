@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="MIME implementation for String's."
 HOMEPAGE="http://hackage.haskell.org/package/mime-string"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"

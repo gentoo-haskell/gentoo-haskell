@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="split two-column PDFs, so there is one column per page"
 HOMEPAGE="http://dmwit.com/pdfsplit"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

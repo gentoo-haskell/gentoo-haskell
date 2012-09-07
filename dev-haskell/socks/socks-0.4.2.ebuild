@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Socks proxy (version 5) implementation."
 HOMEPAGE="http://github.com/vincenthz/hs-socks"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

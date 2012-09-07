@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Basic types for representing JSON"
 HOMEPAGE="http://hackage.haskell.org/package/json-types"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

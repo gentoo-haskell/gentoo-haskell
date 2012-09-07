@@ -9,7 +9,7 @@ inherit haskell-cabal eutils
 
 DESCRIPTION="Generate high quality pseudorandom numbers purely using a Mersenne Twister"
 HOMEPAGE="http://code.haskell.org/~dons/code/mersenne-random-pure64/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

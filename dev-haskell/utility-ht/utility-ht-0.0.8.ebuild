@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Various small helper functions for Lists, Maybes, Tuples, Functions"
 HOMEPAGE="http://hackage.haskell.org/package/utility-ht"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

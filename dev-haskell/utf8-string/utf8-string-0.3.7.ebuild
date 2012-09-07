@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Support for reading and writing UTF8 Strings"
 HOMEPAGE="http://github.com/glguy/utf8-string/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

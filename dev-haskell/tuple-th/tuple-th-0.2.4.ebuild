@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generate (non-recursive) utility functions for tuples of statically known size"
 HOMEPAGE="http://hackage.haskell.org/package/tuple-th"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Combinators and extra features for Par monads"
 HOMEPAGE="https://github.com/simonmar/monad-par"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

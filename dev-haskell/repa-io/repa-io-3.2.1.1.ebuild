@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Read and write Repa arrays in various formats."
 HOMEPAGE="http://repa.ouroborus.net"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

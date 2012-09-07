@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binary and Hashable instances for TypeRep"
 HOMEPAGE="http://hackage.haskell.org/package/concrete-typerep"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

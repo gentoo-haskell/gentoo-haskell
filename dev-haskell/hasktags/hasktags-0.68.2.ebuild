@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Produces ctags "tags" and etags "TAGS" files for Haskell programs"
 HOMEPAGE="http://hackage.haskell.org/package/hasktags"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

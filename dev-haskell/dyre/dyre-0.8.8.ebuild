@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Dynamic reconfiguration in Haskell"
 HOMEPAGE="http://github.com/willdonnelly/dyre"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

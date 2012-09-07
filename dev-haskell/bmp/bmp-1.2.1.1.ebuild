@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Read and write uncompressed BMP image files."
 HOMEPAGE="http://code.ouroborus.net/bmp"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

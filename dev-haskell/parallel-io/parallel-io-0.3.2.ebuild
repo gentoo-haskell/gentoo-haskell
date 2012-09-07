@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Combinators for executing IO actions in parallel on a thread pool."
 HOMEPAGE="http://batterseapower.github.com/parallel-io"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

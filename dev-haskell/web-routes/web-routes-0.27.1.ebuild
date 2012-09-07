@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library for maintaining correctness and composability of URLs within an application."
 HOMEPAGE="http://hackage.haskell.org/package/web-routes"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

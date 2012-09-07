@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Use Template Haskell to embed file contents directly."
 HOMEPAGE="https://github.com/snoyberg/file-embed"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

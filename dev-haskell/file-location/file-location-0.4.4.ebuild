@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="common functions that show file location information"
 HOMEPAGE="https://github.com/gregwebs/FileLocation.hs"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

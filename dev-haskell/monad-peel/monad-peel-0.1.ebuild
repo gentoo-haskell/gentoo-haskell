@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Lift control operations like exception catching through monad transformers"
 HOMEPAGE="http://andersk.mit.edu/haskell/monad-peel/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

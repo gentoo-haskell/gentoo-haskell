@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Emulation of type-level functions"
 HOMEPAGE="http://darcs.wolfgang.jeltsch.info/haskell/type-functions"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

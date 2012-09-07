@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Low-level binding to the libyaml C library."
 HOMEPAGE="http://github.com/snoyberg/yaml/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

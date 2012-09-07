@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Convert streams of builders to streams of bytestrings."
 HOMEPAGE="http://github.com/snoyberg/conduit"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

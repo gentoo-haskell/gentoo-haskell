@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parser for JavaScript"
 HOMEPAGE="http://github.com/alanz/language-javascript"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

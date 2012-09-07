@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A fully compliant Haskell 98 lexer."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/haskell-lexer"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

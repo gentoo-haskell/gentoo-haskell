@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Helper functions and data types for producing News feeds."
 HOMEPAGE="http://www.yesodweb.com/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

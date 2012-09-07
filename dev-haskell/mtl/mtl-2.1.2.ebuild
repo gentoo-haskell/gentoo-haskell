@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Monad classes, using functional dependencies"
 HOMEPAGE="http://github.com/ekmett/mtl"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

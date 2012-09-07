@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="For creating, comparing, parsing and printing Universally Unique Identifiers"
 HOMEPAGE="http://projects.haskell.org/uuid/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

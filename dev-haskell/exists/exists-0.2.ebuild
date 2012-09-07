@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Existential datatypes holding evidence of constraints"
 HOMEPAGE="http://github.com/glehel/exists"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

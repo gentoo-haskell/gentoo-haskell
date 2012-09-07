@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="library for computation automorphism group and canonical labelling of a graph"
 HOMEPAGE="http://hackage.haskell.org/package/hgal"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

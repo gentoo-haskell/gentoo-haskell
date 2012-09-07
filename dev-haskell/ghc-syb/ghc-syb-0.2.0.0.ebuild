@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Data and Typeable instances for the GHC API."
 HOMEPAGE="http://github.com/nominolo/ghc-syb"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

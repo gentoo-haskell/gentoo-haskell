@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A regular expression library for W3C XML Schema regular expressions"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Regular_expressions_for_XML_Schema"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

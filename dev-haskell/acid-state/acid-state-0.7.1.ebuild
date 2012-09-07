@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Add ACID guarantees to any serializable Haskell data structure."
 HOMEPAGE="http://acid-state.seize.it/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

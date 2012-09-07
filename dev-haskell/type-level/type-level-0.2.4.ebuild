@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type-level programming library"
 HOMEPAGE="http://code.haskell.org/type-level"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

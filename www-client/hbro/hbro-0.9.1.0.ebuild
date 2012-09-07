@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Minimal KISS compliant browser"
 HOMEPAGE="http://projects.haskell.org/hbro/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="WTFPL-2"
 SLOT="0"

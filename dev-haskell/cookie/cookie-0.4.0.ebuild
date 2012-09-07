@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="HTTP cookie parsing and rendering"
 HOMEPAGE="http://github.com/snoyberg/cookie"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

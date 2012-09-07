@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An interactive terminal user interface library for Vty"
 HOMEPAGE="http://jtdaugherty.github.com/vty-ui/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

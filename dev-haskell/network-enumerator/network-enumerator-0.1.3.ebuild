@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Enumerators for network sockets"
 HOMEPAGE="https://john-millikin.com/software/network-enumerator/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

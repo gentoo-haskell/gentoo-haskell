@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Help writing simple, concise and fast generic operations."
 HOMEPAGE="http://community.haskell.org/~ndm/uniplate/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

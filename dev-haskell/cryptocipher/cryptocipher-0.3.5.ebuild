@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Symmetrical Block, Stream and PubKey Ciphers"
 HOMEPAGE="http://github.com/vincenthz/hs-cryptocipher"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

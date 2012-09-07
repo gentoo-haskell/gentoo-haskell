@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Kan extensions, the Yoneda lemma, and (co)density (co)monads"
 HOMEPAGE="http://github.com/ekmett/kan-extensions/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A simple terminal access library"
 HOMEPAGE="https://github.com/coreyoconnor/vty"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

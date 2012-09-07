@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Data and time parsing for CalendarTime"
 HOMEPAGE="http://www.cs.chalmers.se/~bringert/darcs/parsedate/doc/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

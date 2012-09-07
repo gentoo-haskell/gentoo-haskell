@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A library for generating RSS 2.0 feeds."
 HOMEPAGE="https://github.com/basvandijk/rss"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bindings to the ICU library"
 HOMEPAGE="https://bitbucket.org/bos/text-icu"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

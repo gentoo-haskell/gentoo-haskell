@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Use Accessor to access state in monads-fd State monad class"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Record_access"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

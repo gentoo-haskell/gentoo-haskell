@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An adapter to convert attoparsec Parsers into blazing-fast Iteratees"
 HOMEPAGE="http://github.com/gregorycollins"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

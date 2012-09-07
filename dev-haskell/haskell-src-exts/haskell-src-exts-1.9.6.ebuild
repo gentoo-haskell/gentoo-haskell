@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer"
 HOMEPAGE="http://code.haskell.org/haskell-src-exts"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 # test suit seems to be broken.
 # tested with ghc-7, it failed

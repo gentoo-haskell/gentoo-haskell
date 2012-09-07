@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Tool for refactoring expressions into pointfree form"
 HOMEPAGE="http://hackage.haskell.org/package/pointfree"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

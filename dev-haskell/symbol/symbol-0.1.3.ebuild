@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A 'Symbol' type for fast symbol comparison."
 HOMEPAGE="http://www.eecs.harvard.edu/~mainland/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

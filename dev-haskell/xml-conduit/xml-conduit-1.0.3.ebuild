@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Pure-Haskell utilities for dealing with XML with the conduit package."
 HOMEPAGE="http://github.com/snoyberg/xml"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

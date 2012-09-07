@@ -12,7 +12,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Unicode"
 HOMEPAGE="http://hackage.haskell.org/package/utf8-light"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

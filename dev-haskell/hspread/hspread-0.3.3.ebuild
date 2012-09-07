@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A client library for the spread toolkit"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hspread"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

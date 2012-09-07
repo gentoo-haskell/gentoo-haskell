@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parse XML catalog files"
 HOMEPAGE="http://github.com/snoyberg/xml"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

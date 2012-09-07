@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Utilities for dealing with IEEE floating point numbers"
 HOMEPAGE="http://github.com/patperry/hs-ieee754"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

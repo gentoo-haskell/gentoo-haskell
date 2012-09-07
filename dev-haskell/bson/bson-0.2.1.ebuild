@@ -12,7 +12,7 @@ inherit base haskell-cabal
 DESCRIPTION="BSON documents are JSON-like objects with a standard binary
 encoding."
 HOMEPAGE="http://github.com/selectel/bson-haskell"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

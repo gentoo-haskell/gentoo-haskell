@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library to handle the details of writing daemons for UNIX"
 HOMEPAGE="http://github.com/madhadron/hdaemonize"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generate Haskell code from a type"
 HOMEPAGE="http://www.augustsson.net/Darcs/Djinn/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple IRC Library"
 HOMEPAGE="http://github.com/dom96/SimpleIRC"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

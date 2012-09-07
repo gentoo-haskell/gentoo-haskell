@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binary processing extensions to Attoparsec."
 HOMEPAGE="http://hackage.haskell.org/package/attoparsec-binary"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

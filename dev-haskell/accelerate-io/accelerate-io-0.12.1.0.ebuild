@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Read and write Accelerate arrays in various formats"
 HOMEPAGE="http://www.cse.unsw.edu.au/~chak/project/accelerate/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

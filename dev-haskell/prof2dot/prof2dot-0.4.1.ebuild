@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Convert GHC profiles into GraphViz's dot format"
 HOMEPAGE="http://antiope.com/downloads.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

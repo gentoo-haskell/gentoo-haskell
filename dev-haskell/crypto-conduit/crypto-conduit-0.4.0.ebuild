@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Conduit interface for cryptographic operations (from crypto-api)."
 HOMEPAGE="https://github.com/meteficha/crypto-conduit"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

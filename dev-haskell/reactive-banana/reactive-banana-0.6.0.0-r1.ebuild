@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Practical library for functional reactive programming (FRP)."
 HOMEPAGE="http://haskell.org/haskellwiki/Reactive-banana"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Mutable hash tables in the ST monad"
 HOMEPAGE="http://github.com/gregorycollins/hashtables"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

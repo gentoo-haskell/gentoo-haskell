@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A fast, light-weight web server for WAI applications."
 HOMEPAGE="http://github.com/yesodweb/wai"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

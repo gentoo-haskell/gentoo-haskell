@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A meta-package documenting various packages inspired by category theory"
 HOMEPAGE="http://comonad.com/reader/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

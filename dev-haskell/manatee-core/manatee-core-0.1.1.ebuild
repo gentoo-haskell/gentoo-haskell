@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The core of Manatee."
 HOMEPAGE="http://hackage.haskell.org/package/manatee-core"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

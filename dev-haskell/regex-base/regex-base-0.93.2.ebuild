@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Interface API for regex-posix,pcre,parsec,tdfa,dfa"
 HOMEPAGE="http://sourceforge.net/projects/lazy-regex"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

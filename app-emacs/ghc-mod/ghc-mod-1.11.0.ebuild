@@ -11,7 +11,7 @@ inherit base elisp-common haskell-cabal
 
 DESCRIPTION="Happy Haskell programming on Emacs"
 HOMEPAGE="http://www.mew.org/~kazu/proj/ghc-mod/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

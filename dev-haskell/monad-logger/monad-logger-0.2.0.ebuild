@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A class of monads which can log messages."
 HOMEPAGE="https://github.com/kazu-yamamoto/logger"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

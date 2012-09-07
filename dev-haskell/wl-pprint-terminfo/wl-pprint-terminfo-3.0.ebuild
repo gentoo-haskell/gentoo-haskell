@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A color pretty printer with terminfo support"
 HOMEPAGE="http://github.com/ekmett/wl-pprint-terminfo/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

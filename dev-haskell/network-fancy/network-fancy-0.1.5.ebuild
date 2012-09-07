@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Networking support with a cleaner API"
 HOMEPAGE="http://github.com/taruti/network-fancy"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

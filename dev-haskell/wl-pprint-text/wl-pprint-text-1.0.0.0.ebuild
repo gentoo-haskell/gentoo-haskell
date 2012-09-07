@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Wadler/Leijen Pretty Printer for Text values"
 HOMEPAGE="http://hackage.haskell.org/package/wl-pprint-text"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

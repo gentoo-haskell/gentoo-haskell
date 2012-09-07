@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Case insensitive string comparison"
 HOMEPAGE="https://github.com/basvandijk/case-insensitive"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

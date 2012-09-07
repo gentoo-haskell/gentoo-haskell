@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Unicode en-/decoding functions for utf8, iso-latin-* and other encodings"
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Analysis and generation of C code"
 HOMEPAGE="http://www.sivity.net/projects/language.c/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

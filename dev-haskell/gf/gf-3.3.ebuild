@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Grammatical Framework"
 HOMEPAGE="http://www.grammaticalframework.org"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2 BSD"
 SLOT="0"

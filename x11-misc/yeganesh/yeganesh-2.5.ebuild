@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="small dmenu wrapper"
 HOMEPAGE="http://dmwit.com/yeganesh"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Monadic parser combinators"
 HOMEPAGE="http://www.cs.uu.nl/~daan/parsec.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Support for serialising Haskell to and from JSON"
 HOMEPAGE="http://hackage.haskell.org/package/json"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

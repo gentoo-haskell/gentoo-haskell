@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Efficient, purely functional generation of prime numbers"
 HOMEPAGE="http://github.com/sebfisch/primes"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

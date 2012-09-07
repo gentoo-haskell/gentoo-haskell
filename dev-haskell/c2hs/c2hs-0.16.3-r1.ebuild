@@ -9,7 +9,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="C->Haskell FFI tool that gives some cross-language type safety"
 HOMEPAGE="http://www.cse.unsw.edu.au/~chak/haskell/c2hs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

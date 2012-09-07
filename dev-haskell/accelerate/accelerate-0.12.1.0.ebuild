@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An embedded language for accelerated array processing"
 HOMEPAGE="https://github.com/AccelerateHS/accelerate/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

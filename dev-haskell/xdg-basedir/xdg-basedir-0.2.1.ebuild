@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A basic implementation of the XDG Base Directory specification."
 HOMEPAGE="http://github.com/willdonnelly/xdg-basedir"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

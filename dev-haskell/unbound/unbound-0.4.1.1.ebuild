@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generic support for programming with names and binders"
 HOMEPAGE="http://code.google.com/p/replib/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

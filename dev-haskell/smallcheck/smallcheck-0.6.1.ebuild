@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A property-based testing library"
 HOMEPAGE="https://github.com/feuerbach/smallcheck"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

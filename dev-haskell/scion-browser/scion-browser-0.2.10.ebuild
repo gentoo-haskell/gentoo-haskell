@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Command-line interface for browsing and searching packages documentation"
 HOMEPAGE="http://github.com/JPMoresmau/scion-class-browser"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

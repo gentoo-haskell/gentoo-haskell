@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Provides access to the dynamic pointer tagging bits used by GHC."
 HOMEPAGE="http://github.com/ekmett/tag-bits"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

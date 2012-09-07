@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Default config and main functions for your yesod application"
 HOMEPAGE="http://www.yesodweb.com/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

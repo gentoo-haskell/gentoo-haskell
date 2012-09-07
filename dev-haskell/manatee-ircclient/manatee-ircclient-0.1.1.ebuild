@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="IRC client extension for Manatee."
 HOMEPAGE="http://hackage.haskell.org/package/manatee-ircclient"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

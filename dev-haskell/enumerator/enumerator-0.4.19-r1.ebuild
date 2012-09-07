@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Reliable, high-performance processing with left-fold enumerators"
 HOMEPAGE="https://john-millikin.com/software/enumerator/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

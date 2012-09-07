@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Obtain the host MAC address on *NIX and Windows."
 HOMEPAGE="http://hackage.haskell.org/package/maccatcher"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell implementation of Mustache templates"
 HOMEPAGE="http://github.com/lymar/hastache"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

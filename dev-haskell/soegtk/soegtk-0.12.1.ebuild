@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="GUI functions as used in the book \"The Haskell School of Expression\"."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="NCurses bindings for Haskell"
 HOMEPAGE="https://github.com/skogsbaer/hscurses"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

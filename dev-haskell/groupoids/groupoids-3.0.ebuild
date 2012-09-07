@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell 98 Groupoids"
 HOMEPAGE="http://github.com/ekmett/groupoids/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

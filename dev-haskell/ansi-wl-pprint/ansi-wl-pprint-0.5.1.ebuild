@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The Wadler/Leijen Pretty Printer for colored ANSI terminal output"
 HOMEPAGE="http://github.com/batterseapower/ansi-wl-pprint"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

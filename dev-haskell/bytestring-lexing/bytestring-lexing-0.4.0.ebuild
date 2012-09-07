@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parse and produce literals efficiently from strict or lazy bytestrings."
 HOMEPAGE="http://code.haskell.org/~wren/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Static file serving subsite for Yesod Web Framework."
 HOMEPAGE="http://www.yesodweb.com/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit autotools eutils haskell-cabal
 
 DESCRIPTION="FFI bindings to the LLVM compiler toolkit."
 HOMEPAGE="https://github.com/bos/llvm"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

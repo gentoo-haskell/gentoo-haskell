@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell 98 logically uninhabited data type"
 HOMEPAGE="http://github.com/ekmett/void"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

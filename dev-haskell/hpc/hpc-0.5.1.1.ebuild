@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Code Coverage Library for Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/hpc"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

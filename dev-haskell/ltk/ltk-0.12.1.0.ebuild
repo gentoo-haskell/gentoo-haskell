@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Leksah tool kit"
 HOMEPAGE="http://www.leksah.org"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

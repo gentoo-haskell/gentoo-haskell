@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="Enumeratees for the incremental conversion of builders to
 bytestrings."
 HOMEPAGE="https://github.com/meiersi/blaze-builder-enumerator"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

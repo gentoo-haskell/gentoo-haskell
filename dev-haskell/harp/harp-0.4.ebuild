@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="HaRP allows pattern-matching with regular expressions"
 HOMEPAGE="http://www.cs.chalmers.se/~d00nibro/harp/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Efficient hashing-based container types"
 HOMEPAGE="http://hackage.haskell.org/package/unordered-containers"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

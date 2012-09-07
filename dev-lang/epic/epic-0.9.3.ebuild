@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Compiler for a simple functional language"
 HOMEPAGE="http://www.dcs.st-and.ac.uk/~eb/epic.php"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

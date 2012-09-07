@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Modernised bindings to GNU ncurses"
 HOMEPAGE="https://john-millikin.com/software/haskell-ncurses/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

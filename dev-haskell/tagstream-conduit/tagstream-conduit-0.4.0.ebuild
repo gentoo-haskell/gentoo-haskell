@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="streamlined html tag parser"
 HOMEPAGE="http://github.com/yihuang/tagstream-conduit"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

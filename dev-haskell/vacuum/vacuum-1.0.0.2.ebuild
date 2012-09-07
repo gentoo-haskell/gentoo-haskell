@@ -9,7 +9,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Extract graph representations of ghc heap values."
 HOMEPAGE="http://moonpatio.com/vacuum/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

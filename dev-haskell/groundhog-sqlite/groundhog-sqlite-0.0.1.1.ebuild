@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Backend for the groundhog library using sqlite3."
 HOMEPAGE="http://hackage.haskell.org/package/groundhog-sqlite"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

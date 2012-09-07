@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Compositional, type-safe, polymorphic static values and closures"
 HOMEPAGE="http://www.github.com/haskell-distributed/distributed-process"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

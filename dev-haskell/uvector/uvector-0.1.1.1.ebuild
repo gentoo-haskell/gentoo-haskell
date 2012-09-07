@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast unboxed arrays with a flexible interface"
 HOMEPAGE="http://code.haskell.org/~dons/code/uvector"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

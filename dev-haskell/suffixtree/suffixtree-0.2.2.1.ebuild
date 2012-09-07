@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Efficient, lazy suffix tree implementation"
 HOMEPAGE="http://www.serpentine.com/software/suffixtree/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

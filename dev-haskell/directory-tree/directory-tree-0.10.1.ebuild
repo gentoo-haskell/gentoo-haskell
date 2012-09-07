@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A simple directory-like tree datatype, with useful IO functions"
 HOMEPAGE="http://coder.bsimmons.name/blog/2009/05/directory-tree-module-released/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

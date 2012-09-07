@@ -9,7 +9,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Fast Internet Relay Chat (IRC) library"
 HOMEPAGE="http://hackage.haskell.org/package/fastirc"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

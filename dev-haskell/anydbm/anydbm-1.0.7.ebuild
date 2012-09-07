@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Interface for DBM-like database systems"
 HOMEPAGE="http://software.complete.org/anydbm"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

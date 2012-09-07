@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bindings to ZeroMQ 2.1.x"
 HOMEPAGE="http://github.com/twittner/zeromq-haskell/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

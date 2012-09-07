@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Third party extensions for xmonad with wacky dependencies"
 HOMEPAGE="http://projects.haskell.org/xmonad-extras"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

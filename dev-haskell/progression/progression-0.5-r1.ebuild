@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Automates the recording and graphing of criterion benchmarks"
 HOMEPAGE="http://chplib.wordpress.com/2010/02/04/progression-supporting-optimisation-in-haskell/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

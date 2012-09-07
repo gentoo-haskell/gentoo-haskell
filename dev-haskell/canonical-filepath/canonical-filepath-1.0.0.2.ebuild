@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Abstract data type for canonical file paths."
 HOMEPAGE="http://github.com/nominolo/canonical-filepath"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

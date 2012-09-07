@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bindings for libbfd, a library of the GNU binutils"
 HOMEPAGE="http://projects.haskell.org/bindings-bfd/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Syntax highlighting"
 HOMEPAGE="http://github.com/jgm/highlighting-kate"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -13,7 +13,7 @@ MY_P="${P/_pre*/}"
 
 DESCRIPTION="Deep evaluation of data structures"
 HOMEPAGE="http://hackage.haskell.org/package/deepseq"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

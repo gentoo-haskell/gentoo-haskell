@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Concrete functor and monad transformers"
 HOMEPAGE="http://hackage.haskell.org/package/transformers"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

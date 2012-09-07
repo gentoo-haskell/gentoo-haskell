@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="Slightly prettier printing for well-behaved Show
 instances."
 HOMEPAGE="http://hackage.haskell.org/package/groom"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

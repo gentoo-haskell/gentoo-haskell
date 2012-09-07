@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Expressive file and directory manipulation for Haskell."
 HOMEPAGE="http://bitbucket.org/bos/filemanip"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Console and GUI interface for Google Translate service"
 HOMEPAGE="http://github.com/styx/gtc"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

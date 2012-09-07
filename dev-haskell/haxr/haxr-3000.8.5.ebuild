@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="XML-RPC client and server library."
 HOMEPAGE="http://www.haskell.org/haskellwiki/HaXR"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

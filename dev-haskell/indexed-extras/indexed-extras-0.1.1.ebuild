@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Indexed functors, monads and comonads that require extensions to Haskell98"
 HOMEPAGE="https://github.com/reinerp/indexed-extras"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

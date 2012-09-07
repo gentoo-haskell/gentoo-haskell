@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A liberalised re-implementation of cpp, the C pre-processor."
 HOMEPAGE="http://haskell.org/cpphs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"

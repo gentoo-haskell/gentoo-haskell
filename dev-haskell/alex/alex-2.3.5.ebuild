@@ -11,7 +11,7 @@ inherit autotools eutils haskell-cabal
 
 DESCRIPTION="Alex is a tool for generating lexical analysers in Haskell"
 HOMEPAGE="http://www.haskell.org/alex/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

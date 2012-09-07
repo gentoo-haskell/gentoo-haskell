@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A very simple package providing a cross-platform means of determining the hostname"
 HOMEPAGE="http://hackage.haskell.org/package/hostname"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

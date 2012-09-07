@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A framework for generating singleton types"
 HOMEPAGE="http://www.cis.upenn.edu/~eir/packages/singletons"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

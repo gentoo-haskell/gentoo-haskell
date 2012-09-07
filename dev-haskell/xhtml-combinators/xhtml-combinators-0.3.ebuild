@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast and easy to use XHTML combinators."
 HOMEPAGE="http://www.dcs.shef.ac.uk/~aca08aa/xhtmlc.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

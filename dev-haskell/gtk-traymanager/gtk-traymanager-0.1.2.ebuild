@@ -11,7 +11,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="A wrapper around the eggtraymanager library for Linux system trays"
 HOMEPAGE="http://github.com/travitch/gtk-traymanager"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

@@ -16,7 +16,7 @@ inherit haskell-cabal eutils ${GIT_ECLASS}
 DESCRIPTION="Dependently Typed Functional Programming Language"
 HOMEPAGE="http://www.idris-lang.org/"
 if [[ $PV != 9999* ]]; then
-	SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+	SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 fi
 EGIT_REPO_URI="git://github.com/edwinb/Idris-dev.git"
 

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Basic types for representing XML"
 HOMEPAGE="https://john-millikin.com/software/haskell-xml/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

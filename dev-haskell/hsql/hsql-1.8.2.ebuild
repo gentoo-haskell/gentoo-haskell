@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Database access from Haskell."
 HOMEPAGE="http://hackage.haskell.org/package/hsql"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

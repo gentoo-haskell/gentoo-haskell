@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Base64 implementation for String's."
 HOMEPAGE="http://urchin.earth.li/~ian/cabal/base64-string/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

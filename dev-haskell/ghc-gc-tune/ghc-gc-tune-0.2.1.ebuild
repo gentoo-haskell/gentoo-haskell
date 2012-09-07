@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Graph performance of Haskell programs with different GC flags"
 HOMEPAGE="http://code.haskell.org/~dons/code/ghc-gc-tune"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

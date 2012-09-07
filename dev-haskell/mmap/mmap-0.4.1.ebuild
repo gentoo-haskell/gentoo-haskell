@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Memory mapped files for POSIX and Windows"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/mmap"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

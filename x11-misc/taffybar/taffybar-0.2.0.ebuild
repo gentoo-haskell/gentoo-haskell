@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="A desktop bar similar to xmobar, but with more GUI"
 HOMEPAGE="http://github.com/travitch/taffybar"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

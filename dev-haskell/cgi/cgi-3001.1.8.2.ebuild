@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A library for writing CGI programs"
 HOMEPAGE="http://andersk.mit.edu/haskell/cgi/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

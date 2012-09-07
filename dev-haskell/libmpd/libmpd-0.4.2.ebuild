@@ -8,7 +8,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An MPD client library."
 HOMEPAGE="http://github.com/joachifm/libmpd-haskell"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

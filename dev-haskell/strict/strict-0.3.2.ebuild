@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Strict data types and String IO."
 HOMEPAGE="http://www.cse.unsw.edu.au/~rl/code/strict.html"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

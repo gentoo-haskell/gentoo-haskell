@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A small, efficient and portable regex library for Perl 5 compatible regular expressions"
 HOMEPAGE="http://code.haskell.org/~dons/code/pcre-light"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Prevent or capture writing to stdout and other handles."
 HOMEPAGE="https://github.com/trystan/silently"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

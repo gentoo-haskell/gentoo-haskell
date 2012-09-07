@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Portable temporary file and directory support for Windows and Unix, based on code from Cabal"
 HOMEPAGE="http://www.github.com/batterseapower/temporary"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

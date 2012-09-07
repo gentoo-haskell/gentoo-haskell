@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="wxHaskell core"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="wxWinLL-3.1"
 SLOT="0"

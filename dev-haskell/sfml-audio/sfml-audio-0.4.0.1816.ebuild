@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="minimal bindings to the audio module of sfml"
 HOMEPAGE="http://patch-tag.com/r/shahn/sfml-audio"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

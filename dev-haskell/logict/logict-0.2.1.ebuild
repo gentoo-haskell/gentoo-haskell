@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A backtracking logic-programming monad."
 HOMEPAGE="http://code.haskell.org/~dolio/logict"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

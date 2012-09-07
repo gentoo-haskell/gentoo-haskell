@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A library for working with URLs."
 HOMEPAGE="http://www.haskell.org/haskellwiki/Url"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

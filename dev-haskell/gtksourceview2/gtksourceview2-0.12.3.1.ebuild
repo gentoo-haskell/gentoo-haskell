@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binding to the GtkSourceView library."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

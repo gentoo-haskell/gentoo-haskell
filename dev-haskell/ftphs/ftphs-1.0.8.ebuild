@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="FTP Client and Server Library"
 HOMEPAGE="http://software.complete.org/ftphs"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

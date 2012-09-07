@@ -13,7 +13,7 @@ MTL_P="${MTL_PN}-${MTL_PV}"
 
 DESCRIPTION="Happy is a parser generator for Haskell"
 HOMEPAGE="http://www.haskell.org/happy/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz
 		 http://hackage.haskell.org/packages/archive/${MTL_PN}/${MTL_PV}/${MTL_P}.tar.gz"
 
 LICENSE="BSD"

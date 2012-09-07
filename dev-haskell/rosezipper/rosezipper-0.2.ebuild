@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generic zipper implementation for Data.Tree"
 HOMEPAGE="http://hackage.haskell.org/package/rosezipper"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

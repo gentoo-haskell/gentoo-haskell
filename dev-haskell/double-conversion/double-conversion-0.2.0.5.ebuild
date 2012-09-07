@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast conversion between double precision floating point and text"
 HOMEPAGE="https://github.com/bos/double-conversion"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

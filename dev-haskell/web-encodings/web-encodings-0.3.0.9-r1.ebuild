@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Encapsulate multiple web encoding in a single package. (deprecated)"
 HOMEPAGE="http://github.com/snoyberg/web-encodings/tree/master"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

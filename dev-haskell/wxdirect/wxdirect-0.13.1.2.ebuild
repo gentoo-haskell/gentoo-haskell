@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="helper tool for building wxHaskell"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

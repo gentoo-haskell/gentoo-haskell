@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A model for human colour/color perception"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Colour"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

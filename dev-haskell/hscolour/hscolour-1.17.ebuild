@@ -7,7 +7,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Colourise Haskell code."
 HOMEPAGE="http://www.cs.york.ac.uk/fp/darcs/hscolour/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

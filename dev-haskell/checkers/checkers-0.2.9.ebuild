@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Check properties on standard classes and data structures."
 HOMEPAGE="http://haskell.org/haskellwiki/checkers"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parser/Serialiser for IEEE-754 floating-point values"
 HOMEPAGE="http://john-millikin.com/software/data-binary-ieee754/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -12,7 +12,7 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="wxHaskell is a portable and native GUI library for Haskell"
 HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="wxWinLL-3.1"
 SLOT="0"

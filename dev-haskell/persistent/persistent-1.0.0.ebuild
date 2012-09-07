@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type-safe, multi-backend data serialization."
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

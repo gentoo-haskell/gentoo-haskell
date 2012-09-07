@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="Implementation of difficult monads made easy
 with operational semantics."
 HOMEPAGE="http://haskell.org/haskellwiki/Operational"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

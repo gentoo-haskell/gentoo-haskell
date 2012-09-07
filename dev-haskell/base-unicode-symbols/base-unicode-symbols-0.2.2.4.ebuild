@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Unicode alternatives for common functions and operators"
 HOMEPAGE="http://haskell.org/haskellwiki/Unicode-symbols"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

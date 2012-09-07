@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A key-value store in the IO monad."
 HOMEPAGE="http://github.com/willdonnelly/io-storage"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

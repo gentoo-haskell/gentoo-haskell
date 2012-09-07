@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Import/export git fast-import streams to/from darcs."
 HOMEPAGE="http://hackage.haskell.org/package/darcs-fastconvert"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

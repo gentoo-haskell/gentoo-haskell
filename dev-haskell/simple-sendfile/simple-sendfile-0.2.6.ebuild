@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Cross platform library for the sendfile system call"
 HOMEPAGE="http://hackage.haskell.org/package/simple-sendfile"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

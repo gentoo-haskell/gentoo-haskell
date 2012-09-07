@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parse process information for Linux"
 HOMEPAGE="http://hackage.haskell.org/package/proc"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

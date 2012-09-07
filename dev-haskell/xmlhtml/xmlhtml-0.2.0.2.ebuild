@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="XML parser and renderer with HTML 5 quirks mode"
 HOMEPAGE="http://hackage.haskell.org/package/xmlhtml"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

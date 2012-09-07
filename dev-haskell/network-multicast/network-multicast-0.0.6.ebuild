@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple multicast library"
 HOMEPAGE="http://hackage.haskell.org/package/network-multicast"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

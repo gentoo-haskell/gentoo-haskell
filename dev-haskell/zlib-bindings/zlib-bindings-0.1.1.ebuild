@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Low-level bindings to the zlib package."
 HOMEPAGE="http://github.com/snoyberg/zlib-bindings"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

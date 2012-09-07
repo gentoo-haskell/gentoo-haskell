@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Various functions on tuples"
 HOMEPAGE="http://hackage.haskell.org/package/tuple"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

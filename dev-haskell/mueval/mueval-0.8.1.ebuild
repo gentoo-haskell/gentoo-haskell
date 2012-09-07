@@ -11,7 +11,7 @@ inherit haskell-cabal pax-utils
 
 DESCRIPTION="Safely evaluate Haskell expressions"
 HOMEPAGE="http://code.haskell.org/mubot/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

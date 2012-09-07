@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="High-resolution clock and timer functions:
 realtime, monotonic, cputime, etc."
 HOMEPAGE="http://corsis.sourceforge.net/index.php/Haskell/Clock"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

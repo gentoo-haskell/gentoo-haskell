@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Efficient, ByteString bindings to OpenSSL."
 HOMEPAGE="http://code.haskell.org/~dons/code/nano-md5"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

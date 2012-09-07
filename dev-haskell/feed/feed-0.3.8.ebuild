@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds."
 HOMEPAGE="http://hackage.haskell.org/package/feed"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

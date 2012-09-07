@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Find longest common sublist of two lists"
 HOMEPAGE="http://urchin.earth.li/~ian/cabal/lcs/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"

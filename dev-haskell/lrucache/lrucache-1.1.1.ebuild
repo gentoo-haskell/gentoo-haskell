@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="a simple, pure LRU cache"
 HOMEPAGE="http://github.com/chowells79/lrucache"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

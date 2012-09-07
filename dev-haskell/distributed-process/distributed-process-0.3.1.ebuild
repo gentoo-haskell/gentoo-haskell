@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Cloud Haskell: Erlang-style concurrency in Haskell"
 HOMEPAGE="http://github.com/haskell-distributed/distributed-process"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

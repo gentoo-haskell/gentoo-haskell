@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library and tool for parsing .eventlog files from GHC"
 HOMEPAGE="http://hackage.haskell.org/package/ghc-events"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

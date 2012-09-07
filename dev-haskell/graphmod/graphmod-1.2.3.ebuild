@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Present the module dependencies of a program as a .dot graph."
 HOMEPAGE="http://github.com/yav/graphmod"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

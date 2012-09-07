@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Same as compact-string except with a small fix so it builds on ghc-6.12"
 HOMEPAGE="http://twan.home.fmf.nl/compact-string/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

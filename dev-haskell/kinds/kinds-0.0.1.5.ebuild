@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Emulation of subkinds and subkind polymorphism"
 HOMEPAGE="http://darcs.wolfgang.jeltsch.info/haskell/kinds"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

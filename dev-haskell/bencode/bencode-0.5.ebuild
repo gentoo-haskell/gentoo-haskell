@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parser and printer for bencoded data."
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/bencode"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binary deserialisation using strict ByteStrings"
 HOMEPAGE="http://code.haskell.org/binary-low-level"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

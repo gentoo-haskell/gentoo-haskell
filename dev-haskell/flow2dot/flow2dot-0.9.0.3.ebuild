@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library and binary to generate sequence/flow diagrams from plain text source"
 HOMEPAGE="http://adept.linux.kiev.ua:8080/repos/flow2dot"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

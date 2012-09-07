@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="simple 1-to-N interprocess communication"
 HOMEPAGE="http://hackage.haskell.org/package/miniplex"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

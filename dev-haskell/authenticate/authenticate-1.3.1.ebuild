@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Authentication methods for Haskell web applications."
 HOMEPAGE="http://github.com/yesodweb/authenticate"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

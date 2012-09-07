@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple ANSI terminal support, with Windows compatibility"
 HOMEPAGE="http://batterseapower.github.com/ansi-terminal"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

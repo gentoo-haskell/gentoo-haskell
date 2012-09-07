@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Enumerator interface for zlib compression"
 HOMEPAGE="http://github.com/maltem/zlib-enum"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

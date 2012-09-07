@@ -11,7 +11,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Efficient algorithms for vector arrays"
 HOMEPAGE="http://code.haskell.org/~dolio/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

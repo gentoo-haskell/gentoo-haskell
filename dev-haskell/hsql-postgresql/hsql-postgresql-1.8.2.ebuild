@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell Interface to PostgreSQL via the PQ library."
 HOMEPAGE="http://hackage.haskell.org/package/hsql-postgresql"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

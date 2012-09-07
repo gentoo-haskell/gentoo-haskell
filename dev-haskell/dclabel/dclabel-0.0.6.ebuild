@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The Disjunction Category Label Format"
 HOMEPAGE="http://hackage.haskell.org/package/dclabel"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

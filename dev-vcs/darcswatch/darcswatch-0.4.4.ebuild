@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Track application of Darcs patches"
 HOMEPAGE="http://darcswatch.nomeata.de/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

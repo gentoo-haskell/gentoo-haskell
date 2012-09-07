@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="timer functionality to clock IO commands"
 HOMEPAGE="http://patch-tag.com/r/shahn/clocked/home"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

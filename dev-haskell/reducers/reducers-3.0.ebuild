@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Semigroups, specialized containers and a general map/reduce framework"
 HOMEPAGE="http://github.com/ekmett/reducers/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

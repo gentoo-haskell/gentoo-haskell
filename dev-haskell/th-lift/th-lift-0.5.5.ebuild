@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Derive Template Haskell's Lift class for datatypes."
 HOMEPAGE="http://hackage.haskell.org/package/th-lift"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"

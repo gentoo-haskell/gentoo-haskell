@@ -10,7 +10,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="attempt to convert Strafunski's StrategyLib to a heirarchical library"
 HOMEPAGE="http://naesten.dyndns.org:8080/repos/StrategyLib"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE=""	#Note: packages without a license cannot be included in portage
 SLOT="0"

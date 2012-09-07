@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Validating an email address string against RFC 5322"
 HOMEPAGE="http://porg.es/blog/email-address-validation-simpler-faster-more-correct"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

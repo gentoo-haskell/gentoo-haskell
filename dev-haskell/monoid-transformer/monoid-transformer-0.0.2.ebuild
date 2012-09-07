@@ -7,7 +7,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Monoid counterparts to some ubiquitous monad transformers"
 HOMEPAGE="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/monoid-transformer"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

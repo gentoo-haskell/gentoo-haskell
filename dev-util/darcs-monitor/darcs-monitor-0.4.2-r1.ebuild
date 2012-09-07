@@ -9,7 +9,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Darcs repository monitor (sends email)"
 HOMEPAGE="http://wiki.darcs.net/RelatedSoftware/DarcsMonitor"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

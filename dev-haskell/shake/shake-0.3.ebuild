@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Build system library, like Make, but more accurate dependencies."
 HOMEPAGE="http://community.haskell.org/~ndm/shake/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

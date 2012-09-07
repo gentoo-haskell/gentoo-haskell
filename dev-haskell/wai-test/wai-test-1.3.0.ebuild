@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Unit test framework (built on HUnit) for WAI applications."
 HOMEPAGE="http://www.yesodweb.com/book/wai"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
