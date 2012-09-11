@@ -19,10 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND=">=dev-haskell/cabal-1.10
-		<dev-haskell/cabal-1.15
+		<dev-haskell/cabal-1.17
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.9"
+
+src_prepare() {
+	sed -e 's#Cabal >= 1.10 && < 1.15#Cabal#'\
+		-i "${S}/${PN}.cabal"
+}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
