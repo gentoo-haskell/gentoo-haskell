@@ -444,16 +444,6 @@ src_configure() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		echo "SRC_HC_OPTS+=-O -H64m" >> mk/build.mk
-		echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-		echo "GhcStage2HcOpts = -O2 -fasm" >> mk/build.mk
-		echo "GhcHcOpts       = -Rghc-timing" >> mk/build.mk
-		echo "GhcLibHcOpts    = -O2" >> mk/build.mk
-		echo "GhcLibWays     += p" >> mk/build.mk
-		echo 'ifeq "$(PlatformSupportsSharedLibs)" "YES"' >> mk/build.mk
-		echo "GhcLibWays += dyn" >> mk/build.mk
-		echo "endif" >> mk/build.mk
-
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked
