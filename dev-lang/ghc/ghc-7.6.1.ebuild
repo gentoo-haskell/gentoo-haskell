@@ -41,12 +41,12 @@ arch_binaries=""
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64-stable-glibc.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86-stable-glibc.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -54,30 +54,28 @@ arch_binaries=""
 # 0 - yet
 yet_binary() {
 	case "${ARCH}" in
-		alpha) return 0 ;;
+		#alpha) return 0 ;;
 		#arm)
 		#	ewarn "ARM binary is built on armv5tel-eabi toolchain. Use with caution."
 		#	return 0
 		#;;
-		amd64) return 0 ;;
-		ppc) return 0 ;;
-		ppc64) return 0 ;;
-		sparc) return 0 ;;
-		x86) return 0 ;;
+		#amd64) return 0 ;;
+		#ppc) return 0 ;;
+		#ppc64) return 0 ;;
+		#sparc) return 0 ;;
+		#x86) return 0 ;;
 		*) return 1 ;;
 	esac
 }
 
-# snapshot copied from http://www.haskell.org/ghc/dist/current/dist/
-# SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/current/dist/${P}-src.tar.bz2 )"
-SRC_URI="!binary? ( http://dev.gentoo.org/~gienah/snapshots/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
-IUSE="doc ghcbootstrap llvm"
+IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
 
 RDEPEND="
@@ -95,15 +93,15 @@ RDEPEND="
 # that we want the binaries to use the latest versioun available, and not to be
 # built against gmp-4
 
+# similar for glibc. we have bootstrapped binaries against glibc-2.14
 DEPEND="${RDEPEND}
 	ghcbootstrap? (		>=dev-haskell/alex-2.3
 						>=dev-haskell/happy-1.18
 				doc? (	app-text/docbook-xml-dtd:4.2
 				app-text/docbook-xml-dtd:4.5
 				app-text/docbook-xsl-stylesheets
-				>=dev-libs/libxslt-1.1.2 ) )"
-# In the ghcbootstrap case we rely on the developer having
-# >=ghc-5.04.3 on their $PATH already
+				>=dev-libs/libxslt-1.1.2 ) )
+	!ghcbootstrap? ( kernel_linux? ( >=sys-libs/glibc-2.14 ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
@@ -372,11 +370,12 @@ src_prepare() {
 		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		# one mode external depend with unstable ABI be careful to stash it
-		epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
+		# avoid external libffi runtime when we build binaries
+		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-		epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+		# epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -489,14 +488,20 @@ src_configure() {
 			echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 		fi
 
+		# allows overriding build flavours for libraries:
+		# v   - vanilla (static libs)
+		# p   - profiled
+		# dyn - shared libraries
+		# example: GHC_LIBRARY_WAYS="v dyn"
+		if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+			echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+		fi
+
 		# Get ghc from the unpacked binary .tbz2
 		# except when bootstrapping we just pick ghc up off the path
 		if ! use ghcbootstrap; then
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
-
-		# This is only for head builds
-		perl boot || die "perl boot failed"
 
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
 		# compiled with, by saving the path to it. The purpose is to make sure
@@ -571,12 +576,12 @@ src_install() {
 
 		# We only built docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
-		if use doc; then
-			if ! use ghcbootstrap; then
-				mkdir -p "${ED}/usr/share/doc"
-				mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
-					|| die "failed to copy docs"
-			fi
+		if use doc && ! use ghcbootstrap; then
+			mkdir -p "${ED}/usr/share/doc"
+			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
+				|| die "failed to copy docs"
+		else
+			dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 		fi
 
 		emake -j1 ${insttarget} \
@@ -595,8 +600,6 @@ src_install() {
 			echo "${GHC_PV}" > "${S}/VERSION" \
 				|| die "Could not create file ${S}/VERSION"
 		fi
-		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
-
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
 		exeinto /usr/bin
@@ -701,10 +704,9 @@ src_install() {
 		done
 	fi
 
-	# path to the package.conf.d
-	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
 	# path to the package.cache
-	PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
+	PKGCACHE="${package_confdir}"/package.cache
 	# copy the package.conf.d, including timestamp, save it so we can help
 	# users that have a broken package.conf.d
 	cp -pR "${package_confdir}"{,.initial} || die "failed to backup intial package.conf.d"
@@ -735,12 +737,6 @@ pkg_postinst() {
 	ewarn
 	ewarn "\e[1;31m************************************************************************\e[0m"
 	ewarn
-	ewarn "For portage place lines like these in /etc/portage/package.keywords"
-	ewarn "=dev-haskell/time-1.4"
-	ewarn "=dev-haskell/cabal-1.15.0* **"
-	ewarn "=dev-haskell/haddock-2.10.0_p$(get_version_component_range 3) **"
-	ewarn "=dev-lang/ghc-7.5* **"
-	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
