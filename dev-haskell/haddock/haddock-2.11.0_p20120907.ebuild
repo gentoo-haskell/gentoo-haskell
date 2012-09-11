@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit eutils haskell-cabal pax-utils versionator
+inherit base eutils haskell-cabal pax-utils versionator
 
 MY_PV=$(get_version_component_range '1-3')
 
@@ -17,13 +17,12 @@ LICENSE="BSD"
 SLOT="0"
 # ia64 lost as we don't have ghc-7 there yet
 # ppc64 needs to be rekeyworded due to xhtml not being keyworded
-KEYWORDS=""
-#KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.6"
+		>=dev-lang/ghc-7.6.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
@@ -33,17 +32,19 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
+PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch")
+
 src_prepare() {
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 
-	for f in Lex Parse; do
-		rm "src/Haddock/$f."*
-		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
-	done
+	# Its a snapshot of the haddock included with ghc head snapshot, which
+	# does not require alex or happy.  The copy of the Lex and Parse files
+	# is already done in the tarball.
 }
 
 src_configure() {
+	base_src_prepare
 	# create a fake haddock executable. it'll set the right version to cabal
 	# configure, but will eventually get overwritten in src_compile by
 	# the real executable.
