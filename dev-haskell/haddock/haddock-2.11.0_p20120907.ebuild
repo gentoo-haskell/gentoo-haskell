@@ -15,13 +15,15 @@ SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-# This is only for ghc head 7.5 and live ebuilds
+# ia64 lost as we don't have ghc-7 there yet
+# ppc64 needs to be rekeyworded due to xhtml not being keyworded
 KEYWORDS=""
+#KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.5"
+		>=dev-lang/ghc-7.6"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
@@ -35,9 +37,10 @@ src_prepare() {
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 
-	# Its a snapshot of the haddock included with ghc head snapshot, which
-	# does not require alex or happy.  The copy of the Lex and Parse files
-	# is already done in the tarball.
+	for f in Lex Parse; do
+		rm "src/Haddock/$f."*
+		mv "dist/build/haddock/haddock-tmp/Haddock/$f.hs" src/Haddock/
+	done
 }
 
 src_configure() {
