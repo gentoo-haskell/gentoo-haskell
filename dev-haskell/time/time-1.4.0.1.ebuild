@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/deepseq-1.1[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-CABAL_CORE_LIB_GHC_PV="7.7*"
+CABAL_CORE_LIB_GHC_PV="7.6.* 7.7.*"
 
 # FIXME: fails in my timezone, hates ghc-7.4. needs to be ported to cabal test suite
 RESTRICT="test"
