@@ -11,17 +11,17 @@ MY_P="${P/_pre*/}"
 
 DESCRIPTION="Deep evaluation of data structures"
 HOMEPAGE="http://hackage.haskell.org/package/deepseq"
-SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-7.6.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
 
-CABAL_CORE_LIB_GHC_PV="7.7.*"
+CABAL_CORE_LIB_GHC_PV="7.6.* 7.7.*"
