@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base eutils haskell-cabal pax-utils versionator
+inherit eutils haskell-cabal pax-utils versionator
 
 MY_PV=$(get_version_component_range '1-3')
 
@@ -32,9 +32,8 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
-PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch")
-
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-2.10.0_p20120711-ghc-7.5.patch
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
 
@@ -44,7 +43,6 @@ src_prepare() {
 }
 
 src_configure() {
-	base_src_prepare
 	# create a fake haddock executable. it'll set the right version to cabal
 	# configure, but will eventually get overwritten in src_compile by
 	# the real executable.
