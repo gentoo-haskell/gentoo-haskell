@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/comonad-transformers-3.0*[profile?]
 		=dev-haskell/comonads-fd-3.0*[profile?]
 		>=dev-haskell/free-3.0[profile?]
-		<dev-haskell/free-3.2[profile?]
+		<dev-haskell/free-3.3[profile?]
 		=dev-haskell/semigroupoids-3.0*[profile?]
 		>=dev-haskell/semigroups-0.8.3.1[profile?]
 		<dev-haskell/semigroups-0.9[profile?]
@@ -30,8 +30,3 @@ RDEPEND="=dev-haskell/comonad-transformers-3.0*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@free                 >= 3.0     && < 3.1@free                 >= 3.0     \&\& < 3.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
