@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/comonad-3.0*[profile?]
 		>=dev-haskell/distributive-0.2.2[profile?]
 		<dev-haskell/distributive-0.3[profile?]
 		>=dev-haskell/free-3.0[profile?]
-		<dev-haskell/free-3.2[profile?]
+		<dev-haskell/free-3.3[profile?]
 		=dev-haskell/keys-3.0*[profile?]
 		>=dev-haskell/mtl-2.0.1.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
@@ -38,8 +38,3 @@ RDEPEND="=dev-haskell/comonad-3.0*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@free                 >= 3.0     && < 3.1@free                 >= 3.0     \&\& < 3.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
