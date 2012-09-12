@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/adjunctions-3.0*[profile?]
+RDEPEND=">=dev-haskell/adjunctions-3.0.0.1[profile?]
+		<dev-haskell/adjunctions-3.1[profile?]
 		=dev-haskell/comonad-3.0*[profile?]
 		=dev-haskell/comonad-transformers-3.0*[profile?]
 		=dev-haskell/comonads-fd-3.0*[profile?]
@@ -27,11 +28,12 @@ RDEPEND="=dev-haskell/adjunctions-3.0*[profile?]
 		>=dev-haskell/distributive-0.2.2[profile?]
 		<dev-haskell/distributive-0.3[profile?]
 		>=dev-haskell/free-3.0[profile?]
-		<dev-haskell/free-3.2[profile?]
+		<dev-haskell/free-3.3[profile?]
 		=dev-haskell/keys-3.0*[profile?]
 		>=dev-haskell/mtl-2.0.1[profile?]
 		<dev-haskell/mtl-2.2[profile?]
-		=dev-haskell/representable-functors-3.0*[profile?]
+		>=dev-haskell/representable-functors-3.0.0.1[profile?]
+		<dev-haskell/representable-functors-3.1[profile?]
 		=dev-haskell/semigroupoids-3.0*[profile?]
 		>=dev-haskell/speculation-1.4.1[profile?]
 		<dev-haskell/speculation-1.5[profile?]
@@ -40,8 +42,3 @@ RDEPEND="=dev-haskell/adjunctions-3.0*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@free                   == 3.0.\*@free                   >= 3.0 \&\& < 3.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
