@@ -18,21 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-1.1.1.5[profile?]
-		<dev-haskell/comonad-3.1[profile?]
-		>=dev-haskell/comonad-transformers-2.1.1.1[profile?]
-		<dev-haskell/comonad-transformers-3.1[profile?]
-		>=dev-haskell/free-2.2[profile?]
-		<dev-haskell/free-3.2[profile?]
+RDEPEND="=dev-haskell/comonad-3.0*[profile?]
+		=dev-haskell/comonad-transformers-3.0*[profile?]
+		=dev-haskell/free-3.2*[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@comonad              >= 1.1.1.5 && < 1.2@comonad              >= 1.1.1.5 \&\& < 3.1@' \
-		-e 's@comonad-transformers >= 2.1.1.1 && < 2.2@comonad-transformers >= 2.1.1.1 \&\& < 3.1@' \
-		-e 's@free                 >= 2.2     && < 2.3@free                 >= 2.2     \&\& < 3.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
