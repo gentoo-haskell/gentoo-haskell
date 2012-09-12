@@ -19,13 +19,12 @@ SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc"
 
 RESTRICT="test" # avoid circular deps
 
-DEPEND=">=dev-lang/ghc-7.6.1"
+DEPEND=">=dev-lang/ghc-6.10.1"
 RDEPEND="${DEPEND}
 		virtual/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
