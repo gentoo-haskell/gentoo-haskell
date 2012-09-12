@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/deepseq[profile?]
-		dev-haskell/doctest[profile?]
 		=dev-haskell/ghc-paths-0.1*[profile?]
 		dev-haskell/syb[profile?]
 		dev-haskell/transformers[profile?]
@@ -32,10 +31,3 @@ DEPEND="${RDEPEND}
 			dev-haskell/stringbuilder
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	# test-suite spec passes. Remove test-suite doctests as its incomplete.
-	sed -e '/test-suite doctests/,$d' \
-		-i "${S}/${PN}.cabal" \
-		|| die "Could not remove incomplete test-suite doctests"
-}
