@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit eutils haskell-cabal
+inherit base eutils haskell-cabal
 
 MY_PN="MissingH"
 MY_P="${MY_PN}-${PV}"
@@ -22,25 +22,28 @@ IUSE="test"
 # testpack dependency is a workaround for cabal-1.8 bug, which pulls
 # depends even for 'Buildable: false' target
 RDEPEND=">=dev-lang/ghc-6.10
-		dev-haskell/hslogger
-		dev-haskell/hunit
-		dev-haskell/mtl
-		dev-haskell/network
-		dev-haskell/parsec
-		dev-haskell/regex-compat"
+		dev-haskell/hslogger[profile?]
+		dev-haskell/hunit[profile?]
+		dev-haskell/mtl[profile?]
+		dev-haskell/network[profile?]
+		dev-haskell/parsec[profile?]
+		dev-haskell/regex-compat"[profile?]
 
 DEPEND=">=dev-haskell/cabal-1.2.3
 		virtual/libiconv
 		${RDEPEND}
-		test? ( dev-haskell/testpack
-			dev-haskell/quickcheck:1
-			dev-haskell/hunit )"
+		test? ( dev-haskell/testpack[profile?]
+			dev-haskell/quickcheck:1[profile?]
+			dev-haskell/hunit[profile?] )"
 
 # libiconv is needed for the trick below to make it compile with ghc-6.12
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=("${FILESDIR}/${PN}-1.1.1.0-ghc-7.6.patch")
+
 src_prepare() {
+	base_src_prepare
 	# (non-ASCII non-UTF-8 source breaks hscolour)
 	cd src/System/Time
 	mv ParseDate.hs ParseDate.hs.ISO-8859-1
