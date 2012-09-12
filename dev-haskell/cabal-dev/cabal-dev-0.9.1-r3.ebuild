@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		<dev-haskell/cabal-1.15
+		<dev-haskell/cabal-1.17
 		>=dev-haskell/http-4000.0.9 <dev-haskell/http-4000.3
 		<dev-haskell/mtl-2.2
 		=dev-haskell/network-2.3*
@@ -36,6 +36,10 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.8-cabal-file.patch"
 	epatch "${FILESDIR}/${PN}-0.9.1-tf-0.3.patch"
 	epatch "${FILESDIR}/${PN}-0.9.1-tar-0.4.patch"
+	epatch "${FILESDIR}/${PN}-0.9.1-ghc76.patch"
 	sed -e 's@tar >= 0.3 && < 0.4@tar@' \
+		-e 's@Cabal >= 1.10.0.0 && < 1.15@Cabal@' \
+		-e 's@Cabal >=1.2 && < 1.15@Cabal@' \
+		-e 's@bytestring >= 0.9 && < 0.10@bytestring@' \
 		-i "${S}/${PN}.cabal"
 }
