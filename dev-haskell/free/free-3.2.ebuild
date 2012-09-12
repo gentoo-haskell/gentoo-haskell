@@ -33,4 +33,4 @@ RDEPEND="=dev-haskell/bifunctors-3.0*[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.10"
