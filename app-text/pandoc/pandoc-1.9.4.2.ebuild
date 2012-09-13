@@ -58,6 +58,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 src_prepare() {
+	epatch "${FILESDIR}/${P}-ghc76.patch"
 	sed -e 's@base64-bytestring >= 0.1 && < 0.2@base64-bytestring >= 0.1 \&\& < 1.1@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
