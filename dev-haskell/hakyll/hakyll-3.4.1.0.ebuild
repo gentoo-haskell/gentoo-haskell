@@ -57,3 +57,10 @@ DEPEND="${RDEPEND}
 			=dev-haskell/test-framework-quickcheck2-0.2*
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-ghc76.patch"
+	sed -e 's@bytestring   >= 0.9    && < 0.10@bytestring@'\
+		-e 's@directory    >= 1.0    && < 1.2@directory@'\
+		-i "${S}/${PN}.cabal"
+}
