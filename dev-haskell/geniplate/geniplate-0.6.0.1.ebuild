@@ -22,3 +22,8 @@ RDEPEND="dev-haskell/mtl[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	sed -e 's@template-haskell < 2.8@template-haskell < 2.9@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
