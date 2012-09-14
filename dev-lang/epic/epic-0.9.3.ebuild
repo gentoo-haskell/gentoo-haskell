@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Compiler for a simple functional language"
 HOMEPAGE="http://www.dcs.st-and.ac.uk/~eb/epic.php"
@@ -25,3 +25,5 @@ RDEPEND="dev-haskell/cabal
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8.0.4
 		dev-haskell/happy"
+
+PATCHES=("${FILESDIR}/${PN}-0.9.3-ghc-7.6.patch")
