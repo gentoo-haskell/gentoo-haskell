@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.32 2011/11/24 00:04:13 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.34 2012/09/14 02:51:23 gienah Exp $
 
 # @ECLASS: ghc-package.eclass
 # @MAINTAINER:
