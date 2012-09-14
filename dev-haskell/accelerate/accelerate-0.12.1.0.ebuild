@@ -24,5 +24,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@containers      >= 0.3 && < 0.5@containers      >= 0.3 \&\& < 0.6@' \
+		-e 's@ghc-prim        == 0.2.\*@ghc-prim        >= 0.2 \&\& < 0.4@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
