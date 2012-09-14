@@ -26,7 +26,7 @@ index 8e43091..eee4347 100644
 +#if MIN_VERSION_directory(1,2,0)
 +getModificationTimeEpoch f = getModificationTime f >>= return . round . utcTimeToPOSIXSeconds
 +#else
-+getModificationTimeEpoch f = getModificationTime f >>= (TOD a _) -> return $! fromIntegral a
++getModificationTimeEpoch f = getModificationTime f >>= \(TOD a _) -> return $! fromIntegral a
 +#endif
 +
 +
