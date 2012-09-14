@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4[profile?]
 		=dev-haskell/hashable-1.1*[profile?]
 		=dev-haskell/hashtables-1.0*[profile?]
 		>=dev-haskell/haskeline-0.6.3.2[profile?]
-		<dev-haskell/haskeline-0.7[profile?]
+		<dev-haskell/haskeline-0.8[profile?]
 		>=dev-haskell/haskell-src-exts-1.9.6[profile?]
 		<dev-haskell/haskell-src-exts-1.14[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
@@ -54,8 +54,6 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-	sed -e 's@QuickCheck >= 2.3 && < 2.5@QuickCheck >= 2.3 \&\& < 2.6@' \
-		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
