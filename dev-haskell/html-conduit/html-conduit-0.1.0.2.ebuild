@@ -20,16 +20,18 @@ IUSE=""
 
 RDEPEND="=dev-haskell/conduit-0.5*[profile?]
 		=dev-haskell/filesystem-conduit-0.5*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		=dev-haskell/system-filepath-0.4*[profile?]
-		=dev-haskell/tagstream-conduit-0.4*[profile?]
+		>=dev-haskell/tagstream-conduit-0.4[profile?]
+		<dev-haskell/tagstream-conduit-0.6[profile?]
 		dev-haskell/text[profile?]
 		dev-haskell/transformers[profile?]
 		=dev-haskell/xml-conduit-1.0*[profile?]
 		=dev-haskell/xml-types-0.3*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hspec
+		test? ( =dev-haskell/hspec-1.3*
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
