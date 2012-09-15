@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/asn1-data-0.6.1.3[profile?]
-		<dev-haskell/asn1-data-0.7[profile?]
+RDEPEND=">=dev-haskell/asn1-data-0.7.1[profile?]
 		=dev-haskell/crypto-pubkey-types-0.1*[profile?]
 		dev-haskell/mtl[profile?]
 		=dev-haskell/pem-0.1*[profile?]
