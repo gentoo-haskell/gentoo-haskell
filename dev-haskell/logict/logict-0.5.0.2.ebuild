@@ -23,9 +23,4 @@ RDEPEND="<dev-haskell/mtl-2.2
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
-PATCHES=("${FILESDIR}/${P}-ghc-6.12.patch")
-
-src_prepare() {
-	sed -e 's@mtl>=1.0.1 && <2.1@mtl>=1.0.1 \&\& <2.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
+PATCHES=("${FILESDIR}/${PN}-0.5.0-ghc-6.12.patch")
