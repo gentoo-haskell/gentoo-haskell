@@ -33,14 +33,20 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		=dev-haskell/path-pieces-0.1*[profile?]
 		=dev-haskell/persistent-1.0*[profile?]
 		=dev-haskell/pool-conduit-0.1*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		>=dev-haskell/text-0.8[profile?]
-		<dev-haskell/text-1[profile?]
 		dev-haskell/time[profile?]
 		>=dev-haskell/transformers-0.2.1[profile?]
-		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	# workaround haddock 2.10.0 error:
+	# parse error on input `-- $and is usually unecessary but makes query construction easier in special cases'
+	sed -e 's@-- $and@-- dollar and@' \
+		-i "${S}/Database/Persist/MongoDB.hs" || die "Could not sed comment to workaround haddock error"
+}
