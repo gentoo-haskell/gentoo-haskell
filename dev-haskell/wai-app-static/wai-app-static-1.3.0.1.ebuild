@@ -19,14 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
-		<dev-haskell/base64-bytestring-1.1[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-haskell/blaze-markup-0.5.1[profile?]
 		<dev-haskell/blaze-markup-0.6[profile?]
 		>=dev-haskell/cereal-0.3.5[profile?]
-		<dev-haskell/cereal-0.4[profile?]
 		=dev-haskell/crypto-conduit-0.4*[profile?]
 		=dev-haskell/cryptohash-0.7*[profile?]
 		>=dev-haskell/file-embed-0.0.3.1[profile?]
@@ -37,7 +35,6 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		=dev-haskell/system-fileio-0.3*[profile?]
 		=dev-haskell/system-filepath-0.4*[profile?]
 		>=dev-haskell/text-0.7[profile?]
-		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/time-1.1.4[profile?]
 		>=dev-haskell/transformers-0.2.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
@@ -46,15 +43,8 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-0.8
-			<dev-haskell/hspec-1.4
 			dev-haskell/hunit
 			dev-haskell/network
 			dev-haskell/wai-test
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@hspec                     >= 0.8      && < 1.2@hspec                     >= 0.8      \&\& < 1.4@' \
-		-e 's@base64-bytestring         >= 0.1      && < 0.2@base64-bytestring         >= 0.1      \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
