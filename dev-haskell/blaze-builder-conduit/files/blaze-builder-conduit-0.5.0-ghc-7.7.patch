@@ -1,9 +1,0 @@
---- blaze-builder-conduit-0.5.0-orig/Data/Conduit/Blaze.hs	2012-06-29 14:23:05.000000000 +1000
-+++ blaze-builder-conduit-0.5.0/Data/Conduit/Blaze.hs	2012-08-10 21:25:00.156040396 +1000
-@@ -1,5 +1,6 @@
- {-# LANGUAGE FlexibleContexts #-}
- {-# LANGUAGE BangPatterns #-}
-+{-# LANGUAGE Rank2Types #-}
- -- | Convert a stream of blaze-builder @Builder@s into a stream of @ByteString@s.
- --
- -- Adapted from blaze-builder-enumerator, written by myself and Simon Meier.
