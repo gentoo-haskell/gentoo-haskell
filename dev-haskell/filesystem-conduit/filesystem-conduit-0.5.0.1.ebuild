@@ -29,8 +29,7 @@ RDEPEND="=dev-haskell/conduit-0.5*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/blaze-builder
-			dev-haskell/hspec
-			dev-haskell/hunit
+			=dev-haskell/hspec-1.3*
 			dev-haskell/quickcheck
 		)
 		>=dev-haskell/cabal-1.8"
