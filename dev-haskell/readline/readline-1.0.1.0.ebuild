@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="An interface to the GNU readline library"
 HOMEPAGE="http://hackage.haskell.org/package/readline"
@@ -24,3 +24,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 CABAL_CORE_LIB_GHC_PV="6.8.1 6.8.2 6.8.3 6.10.1 6.10.2"
+
+PATCHES=("${FILESDIR}/${PN}-1.0.1.0-ghc-7.6.patch")
