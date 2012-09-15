@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/zlib-0.5.2.0[profile?]
-		<dev-haskell/zlib-0.6[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hspec
@@ -30,6 +29,4 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	gzip -c LICENSE >LICENSE.gz || die "Could not compress LICENSE for tests"
-	sed -e 's@bytestring            >= 0.9.1.4 && < 0.10@bytestring            >= 0.9.1.4 \&\& < 0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
