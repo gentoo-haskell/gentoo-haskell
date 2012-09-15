@@ -4,14 +4,14 @@
 
 EAPI="4"
 
-CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit haskell-cabal
+CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
+inherit base haskell-cabal
 
 MY_PN="LDAP"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Haskell binding for C LDAP API"
-HOMEPAGE="http://software.complete.org/ldap-haskell"
+HOMEPAGE="https://github.com/ezyang/ldap-haskell"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-0.6.8-ghc-7.6.patch")
 
 src_prepare() {
 	# remove -O2
