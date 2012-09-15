@@ -31,7 +31,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-ghc76.patch"
 	cp -pR "${FILESDIR}/${PN}-1.0.1/test" "${S}/" \
 		|| die "Could not copy missing test files"
 	sed -e 's@hspec            >= 0.8     && < 1.3@hspec            >= 0.8     \&\& < 1.4@' \
