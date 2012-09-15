@@ -1,9 +1,0 @@
---- attoparsec-conduit-0.5.0-orig/Data/Conduit/Attoparsec.hs	2012-06-29 14:23:05.000000000 +1000
-+++ attoparsec-conduit-0.5.0/Data/Conduit/Attoparsec.hs	2012-08-18 14:35:33.673543323 +1000
-@@ -1,5 +1,6 @@
- {-# LANGUAGE DeriveDataTypeable #-}
- {-# LANGUAGE FlexibleContexts #-}
-+{-# LANGUAGE Rank2Types #-}
- 
- -- |
- -- Copyright: 2011 Michael Snoyman, 2010 John Millikin
