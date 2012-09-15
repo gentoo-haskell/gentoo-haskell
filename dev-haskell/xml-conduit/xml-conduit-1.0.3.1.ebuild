@@ -30,7 +30,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10[profile?]
 		>=dev-haskell/failure-0.1[profile?]
 		<dev-haskell/failure-0.3[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		=dev-haskell/system-filepath-0.4*[profile?]
 		>=dev-haskell/text-0.7[profile?]
 		<dev-haskell/text-0.12[profile?]
@@ -44,8 +45,3 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@bytestring                >= 0.9      && < 0.10@bytestring                >= 0.9      \&\& < 0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
