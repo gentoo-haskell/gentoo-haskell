@@ -29,6 +29,7 @@ S="${WORKDIR}/${MY_P}"
 PATCHES=("${FILESDIR}/${PN}-0.6.8-ghc-7.6.patch")
 
 src_prepare() {
+	base_src_prepare
 	# remove -O2
 	sed -i -e "s/GHC-Options: -O2//" "${S}/LDAP.cabal"
 }
