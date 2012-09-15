@@ -15,13 +15,14 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/lifted-base-0.1*[profile?]
 		>=dev-haskell/monad-control-0.3.1[profile?]
 		<dev-haskell/monad-control-0.4[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		>=dev-haskell/text-0.11[profile?]
 		>=dev-haskell/transformers-0.2.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
