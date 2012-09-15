@@ -1,5 +1,5 @@
 --- HTF-0.8.2.1-orig/HTF.cabal	2012-08-18 18:40:23.000000000 +1000
-+++ HTF-0.8.2.1/HTF.cabal	2012-08-18 19:56:20.735022562 +1000
++++ HTF-0.8.2.1/HTF.cabal	2012-09-15 23:12:48.449582861 +1000
 @@ -39,7 +39,7 @@
  Executable htfpp
    Main-Is:          HTFPP.hs
@@ -9,11 +9,13 @@
                      base == 4.*
    Other-Modules:
      Test.Framework.Preprocessor
-@@ -53,13 +53,13 @@
+@@ -52,14 +52,14 @@
+                     random == 1.0.*,
                      containers >= 0.3 && < 0.6,
                      process >= 1.0 && < 1.2,
-                     directory >= 1.0 && < 1.2,
+-                    directory >= 1.0 && < 1.2,
 -                    mtl >= 1.1 && < 2.1,
++                    directory >= 1.0 && < 1.3,
 +                    mtl >= 1.1 && < 2.2,
                      pretty >= 1.0 && < 1.2,
                      Diff >= 0.1.3 && < 0.2,
