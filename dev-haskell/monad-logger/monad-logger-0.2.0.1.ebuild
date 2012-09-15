@@ -18,8 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/fast-logger-0.2*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+RDEPEND=">=dev-haskell/fast-logger-0.2[profile?]
+		<dev-haskell/fast-logger-0.4[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		dev-haskell/text[profile?]
 		dev-haskell/transformers[profile?]
 		>=dev-lang/ghc-6.10.1"
