@@ -35,7 +35,8 @@ inherit base autotools bash-completion-r1 eutils flag-o-matic git-2 multilib too
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-EGIT_REPO_URI="http://darcs.haskell.org/ghc.git/"
+#EGIT_REPO_URI="http://darcs.haskell.org/ghc.git/"
+EGIT_REPO_URI="https://github.com/ghc/ghc.git"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
@@ -371,17 +372,19 @@ src_compile() {
 		"${S}"/utils/mkUserGuidePart/Main.hs \
 		|| die "Could not build inplace/bin/mkUserGuidePart"
 
-	limit_jobs() {
-		if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
-			ewarn "You have requested parallel build which is known to break."
-			ewarn "Please report all breakages upstream."
-			return
-		fi
-		echo $@
-	}
+	#limit_jobs() {
+	#	if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
+	#		ewarn "You have requested parallel build which is known to break."
+	#		ewarn "Please report all breakages upstream."
+	#		return
+	#	fi
+	#	echo $@
+	#}
 	# ghc massively parallel make: #409631, #409873
 	#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
-	emake $(limit_jobs -j1) all
+	#emake $(limit_jobs -j1) all
+	# ^ above seems to be fixed.
+	emake all
 
 	if [[ "{cross_compiling}" == "1" ]]; then
 		# runghc does not work for a stage1 compiler, we can build it anyway
