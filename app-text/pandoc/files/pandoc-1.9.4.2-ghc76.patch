@@ -128,13 +128,13 @@ diff --git a/src/Text/Pandoc/Writers/EPUB.hs b/src/Text/Pandoc/Writers/EPUB.hs
 index b423f13..d81bc14 100644
 --- a/src/Text/Pandoc/Writers/EPUB.hs
 +++ b/src/Text/Pandoc/Writers/EPUB.hs
-@@ -48,7 +48,6 @@ import Text.Pandoc.Writers.Markdown ( writePlain )
+@@ -48,7 +48,9 @@ import Text.Pandoc.Writers.Markdown ( writePlain )
  import Data.Char ( toLower )
  import Network.URI ( unEscapeString )
  import Text.Pandoc.MIME (getMimeType)
-#if ! MIN_VERSION_base(4,6,0)
--import Prelude hiding (catch)
-#endif
++#if ! MIN_VERSION_base(4,6,0)
+ import Prelude hiding (catch)
++#endif
  import Control.Exception (catch, SomeException)
  
  -- | Produce an EPUB file from a Pandoc document.
