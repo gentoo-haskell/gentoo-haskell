@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 
 CABAL_FEATURES="bin"
 inherit base haskell-cabal
@@ -24,7 +24,8 @@ DEPEND=">=dev-lang/ghc-6.6.1
 				>=dev-libs/libxslt-1.1.2 )"
 RDEPEND="dev-libs/gmp"
 
-PATCHES=("${FILESDIR}/${PN}"-0.16.3-language-c-0.4.patch)
+PATCHES=("${FILESDIR}/${PN}"-0.16.3-language-c-0.4.patch
+	"${FILESDIR}/${PN}"-0.16.3-ghc-7.6.patch)
 
 src_compile() {
 	cabal_src_compile
