@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
-	sed -e 's@mtl >= 1.1 && <= 2.1.1@mtl >= 1.1 \&\& <= 2.2@' \
-		-e 's@process >= 1.0 && <= 1.1.0.1@process >= 1.0 \&\& <= 1.2@' \
+	sed -e 's@mtl >= 1.1 && <= 2.1.1@mtl >= 1.1 \&\& < 2.3@' \
+		-e 's@process >= 1.0 && <= 1.1.0.1@process >= 1.0 \&\& < 1.3@' \
+		-e 's@old-locale >= 1.0.0.0 && <= 1.0.0.4@old-locale >= 1.0 \&\& < 1.1@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
