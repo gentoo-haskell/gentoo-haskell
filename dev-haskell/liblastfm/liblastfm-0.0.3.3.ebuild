@@ -28,3 +28,9 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@bytestring == 0\.9\.\*@bytestring@'\
+		-e 's@template-haskell >= 2\.5 && < 2\.8@template-haskell@'\
+		-i "${S}/${PN}.cabal"
+}
