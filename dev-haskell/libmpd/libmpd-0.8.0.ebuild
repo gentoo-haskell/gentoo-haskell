@@ -35,3 +35,9 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.1
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	sed -e 's@bytestring == 0.9.\*@bytestring@' \
+		-e 's@containers >= 0.3 && < 0.5@containers' \
+		-i "${S}/${PN}.cabal"
+}
