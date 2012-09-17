@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+default-term pass-focus-click"
 
-RDEPEND="dev-haskell/mtl[profile?]
+RDEPEND="dev-haskell/extensible-exceptions[profile?]
+		dev-haskell/mtl[profile?]
 		>=dev-haskell/x11-1.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

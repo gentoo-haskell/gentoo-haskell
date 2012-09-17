@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE="+default-term pass-focus-click icccwm-focus"
 
-RDEPEND="dev-haskell/mtl[profile?]
+RDEPEND="dev-haskell/extensible-exceptions[profile?]
+		dev-haskell/mtl[profile?]
 		=dev-haskell/utf8-string-0.3*[profile?]
 		>=dev-haskell/x11-1.5[profile?] <dev-haskell/x11-1.7[profile?]
 		>=dev-lang/ghc-6.10.1"
