@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/conduit-0.5*[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
-		=dev-haskell/network-2.3*[profile?]
+		>=dev-haskell/network-2.3[profile?]
 		>=dev-haskell/transformers-0.2.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
