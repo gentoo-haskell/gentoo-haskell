@@ -30,7 +30,6 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		<dev-haskell/fast-logger-0.4[profile?]
 		=dev-haskell/http-types-0.7*[profile?]
 		>=dev-haskell/network-2.2.1.5[profile?]
-		<dev-haskell/network-2.4[profile?]
 		>=dev-haskell/resourcet-0.3[profile?]
 		<dev-haskell/resourcet-0.5[profile?]
 		=dev-haskell/stringsearch-0.3*[profile?]
@@ -46,7 +45,7 @@ RDEPEND="dev-haskell/ansi-terminal[profile?]
 		=dev-haskell/zlib-conduit-0.5*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hspec
+		test? ( =dev-haskell/hspec-1.3*
 			dev-haskell/hunit
 			>=dev-haskell/wai-test-1.3
 			dev-haskell/zlib
