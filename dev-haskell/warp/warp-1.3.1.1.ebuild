@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		=dev-haskell/conduit-0.5*[profile?]
 		=dev-haskell/http-types-0.7*[profile?]
 		=dev-haskell/lifted-base-0.1*[profile?]
-		=dev-haskell/network-2.3*[profile?]
+		>=dev-haskell/network-2.3[profile?]
 		=dev-haskell/network-conduit-0.5*[profile?]
 		>=dev-haskell/simple-sendfile-0.2.4[profile?]
 		<dev-haskell/simple-sendfile-0.3[profile?]
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		=dev-haskell/wai-1.3*[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hspec
+		test? ( =dev-haskell/hspec-1.3*
 			dev-haskell/hunit
 			dev-haskell/quickcheck
 		)
