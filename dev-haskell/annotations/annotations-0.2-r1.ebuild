@@ -35,5 +35,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	sed -e 's@mtl >= 1.1 && < 2.1@mtl >= 1.1 \&\& < 2.2@' \
+		-e 's@base >= 4.1 && < 4.6@base >= 4.1 \&\& < 5.0@' \
 		-i "${S}/${MY_PN}.cabal" || die "Could not loosen dependencies"
 }
