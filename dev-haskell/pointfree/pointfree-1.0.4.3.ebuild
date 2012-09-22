@@ -26,3 +26,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/parsec-2
 		<dev-haskell/parsec-3.2
 		>=dev-lang/ghc-6.12.1"
+
+src_prepare() {
+	sed -e 's@base >= 3 && < 4.6@base >= 3 \&\& < 5.0@' \
+		-e 's@containers >= 0.3 && < 0.5@containers >= 0.3 \&\& < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
