@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/attoparsec[profile?]
 		dev-haskell/text[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hspec
+		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			dev-haskell/quickcheck
 		)
