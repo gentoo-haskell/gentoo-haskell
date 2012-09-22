@@ -42,8 +42,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		=dev-haskell/wai-1.3*[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/hspec-0.8
-			dev-haskell/hunit
+		test? ( =dev-haskell/hspec-1.3*
 			dev-haskell/network
 			dev-haskell/wai-test
 		)
