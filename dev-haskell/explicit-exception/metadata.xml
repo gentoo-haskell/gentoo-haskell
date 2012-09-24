@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Synchronous and Asynchronous exceptions which are explicit in the type signature.
+		The first ones are very similar to &#39;Either&#39; and &#39;Control.Monad.Error.ErrorT&#39;.
+		The second ones are used for &#39;System.IO.readFile&#39; and &#39;System.IO.hGetContents&#39;.
+		This package is a proposal for improved exception handling in Haskell.
+		It strictly separates between handling of
+		exceptional situations (file not found, invalid user input,
+		see &lt;http://www.haskell.org/haskellwiki/Exception&gt;) and
+		(programming) errors (division by zero, index out of range,
+		see &lt;http://www.haskell.org/haskellwiki/Error&gt;).
+		Handling of the first one is called \&quot;exception handling\&quot;,
+		whereas handling of errors is better known as \&quot;debugging\&quot;.
+		
+		For applications see the packages @midi@, @spreadsheet@, @http-monad@.
+		
+		Although I&#39;m not happy with the identifier style of the Monad Transformer Library
+		(partially intended for unqualified use)
+		I have tried to adopt it for this library,
+		in order to let Haskell programmers get accustomed easily to it.
+		
+		To do:
+		Because many people requested it,
+		we will provide a @bracket@ function that frees a resource
+		both when an exception and an error occurs,
+		that is, it combines exception handling and debugging.
+		However note that freeing resources in case of an error is dangerous
+		and may cause further damage.
+	</longdescription>
+</pkgmetadata>
