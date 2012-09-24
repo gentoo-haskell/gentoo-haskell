@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT=test # dev-haskell/hspec-meta is a broken depend
 
 RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 		dev-haskell/hspec-expectations[profile?]
@@ -30,8 +31,9 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 		>=dev-haskell/transformers-0.2.0[profile?]
 		<dev-haskell/transformers-0.4.0[profile?]
 		>=dev-lang/ghc-6.10.1"
+#DEPEND="${RDEPEND}
+#		test? ( >=dev-haskell/doctest-0.7
+#			dev-haskell/hspec-meta
+#		)
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/doctest-0.7
-			dev-haskell/hspec-meta
-		)
 		>=dev-haskell/cabal-1.8"
