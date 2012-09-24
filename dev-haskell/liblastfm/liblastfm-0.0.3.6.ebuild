@@ -27,19 +27,6 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		~dev-haskell/xml-1.3.12[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/hunit-1.2
+		test? ( =dev-haskell/hunit-1.2.4*
 		)
 		>=dev-haskell/cabal-1.9.2"
-
-src_prepare() {
-	sed -e 's@HUnit == 1.2.4.\*@HUnit >= 1.2@g' \
-		-e 's@bytestring == 0.9.\*@bytestring >= 0.9 \&\& < 0.11@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-	# test compilation fails
-	# examples/json-no-auth.hs:19:18:
-	#     Could not find module `JSON.User'
-	sed -e '/test-suite json-no-authentication/,$d' \
-		-i "${S}/${PN}.cabal" || die "Could not remove broken tests"
-}
-
-
