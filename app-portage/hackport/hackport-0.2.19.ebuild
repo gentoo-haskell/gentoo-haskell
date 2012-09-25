@@ -25,6 +25,7 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.10
 		>=dev-haskell/http-4000.0.3
+		dev-haskell/missingh
 		dev-haskell/mtl
 		dev-haskell/network
 		dev-haskell/parsec
