@@ -25,9 +25,3 @@ RDEPEND="=dev-haskell/binary-0.5*[profile?]
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@bytestring           == 0.9.\*@bytestring           >= 0.9 \&\& < 0.11@' \
-		-e 's@old-time             == 1.1.\*@old-time             >= 1.0 \&\& < 1.2@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
