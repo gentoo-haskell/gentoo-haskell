@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/repa-3.2.0.0[profile?]
 		<dev-haskell/repa-4.0[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
-		>=dev-lang/ghc-6.12.3
+		>=dev-lang/ghc-6.10.1
 		media-libs/devil"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
