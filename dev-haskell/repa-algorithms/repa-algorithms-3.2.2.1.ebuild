@@ -20,6 +20,6 @@ IUSE=""
 
 RDEPEND="=dev-haskell/repa-3.2*[profile?]
 		=dev-haskell/vector-0.9*[profile?]
-		>=dev-lang/ghc-6.10.1"
+		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
