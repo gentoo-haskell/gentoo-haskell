@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE=""
 
-RDEPEND=">=dev-haskell/regex-base-0.93
-		>=dev-haskell/regex-posix-0.95.1
+RDEPEND=">=dev-haskell/regex-base-0.93[profile?]
+		>=dev-haskell/regex-posix-0.95.1[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
