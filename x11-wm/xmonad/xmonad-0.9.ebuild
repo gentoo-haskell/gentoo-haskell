@@ -18,7 +18,8 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/mtl
 		>=dev-haskell/x11-1.4.6.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.2
+		<dev-haskell/cabal-1.14"
 
 SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
