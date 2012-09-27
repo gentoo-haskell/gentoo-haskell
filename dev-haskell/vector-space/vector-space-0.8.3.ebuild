@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/boolean-0.0.1[profile?]
+RDEPEND=">=dev-haskell/boolean-0.1.0[profile?]
 		>=dev-haskell/memotrie-0.5[profile?]
 		>=dev-haskell/numinstances-1.0[profile?]
 		>=dev-lang/ghc-6.8.2"
