@@ -24,18 +24,9 @@ RDEPEND=">=dev-haskell/parsec-2[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/hspec-0.8
-			<dev-haskell/hspec-1.4
-			dev-haskell/hunit
+		test? ( >=dev-haskell/hspec-1.3
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	cp -pR "${FILESDIR}/${PN}-1.0.1/test" "${S}/" \
-		|| die "Could not copy missing test files"
-	sed -e 's@hspec            >= 0.8     && < 1.3@hspec            >= 0.8     \&\& < 1.4@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests) \
