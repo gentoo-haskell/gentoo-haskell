@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/darcs.eclass,v 1.13 2011/12/27 17:55:12 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/darcs.eclass,v 1.16 2012/06/08 03:39:50 vapier Exp $
 
 # @ECLASS: darcs.eclass
 # @MAINTAINER:
@@ -8,16 +8,15 @@
 # Sergei Trofimovich <slyfox@gentoo.org>
 # @AUTHOR:
 # Original Author: Jeffrey Yasskin <jyasskin@mail.utexas.edu>
+#               <rphillips@gentoo.org> (tla eclass author)
+# Andres Loeh   <kosmikus@gentoo.org> (darcs.eclass author)
+# Alexander Vershilov <alexander.vershilov@gmail.com> (various contributions)
 # @BLURB: This eclass provides functions for fetch and unpack darcs repositories
 # @DESCRIPTION:
 # This eclass provides the generic darcs fetching functions.
 #
 # Define the EDARCS_REPOSITORY variable at least.
 # The ${S} variable is set to ${WORKDIR}/${P}.
-# @THANKS TO:
-#               <rphillips@gentoo.org> (tla eclass author)
-# Andres Loeh   <kosmikus@gentoo.org> (darcs.eclass author)
-# Alexander Vershilov <alexander.vershilov@gmail.com> (various contributions)
 
 # TODO:
 
