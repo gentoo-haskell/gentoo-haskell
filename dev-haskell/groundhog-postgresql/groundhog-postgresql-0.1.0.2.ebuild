@@ -33,8 +33,3 @@ RDEPEND=">=dev-haskell/groundhog-0.1.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed	-e 's@bytestring              >= 0.9.1     && < 0.10@bytestring              >= 0.9.1     \&\& < 0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
