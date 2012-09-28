@@ -24,16 +24,11 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3.0.0[profile?]
 		<dev-haskell/groundhog-0.2.0[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		=dev-haskell/pool-conduit-0.1*[profile?]
+		>=dev-haskell/text-0.8[profile?]
+		<dev-haskell/text-0.12[profile?]
 		>=dev-haskell/transformers-0.2.1[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		dev-haskell/unordered-containers[profile?]
-		>=dev-haskell/utf8-string-0.3.4[profile?]
-		<dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed	-e 's@bytestring              >= 0.9.1     && < 0.10@bytestring              >= 0.9.1     \&\& < 0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
