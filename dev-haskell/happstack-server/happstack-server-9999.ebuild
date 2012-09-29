@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
+RDEPEND="=dev-haskell/base64-bytestring-1.0*[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-haskell/hslogger-1.0.2[profile?]
 		dev-haskell/html[profile?]
@@ -34,6 +34,7 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		>=dev-haskell/system-filepath-0.3.1[profile?]
 		>=dev-haskell/text-0.10[profile?]
 		<dev-haskell/text-0.12[profile?]
+		>=dev-haskell/threads-0.5[profile?]
 		dev-haskell/time[profile?]
 		>=dev-haskell/transformers-0.1.3[profile?]
 		<dev-haskell/transformers-0.4[profile?]
@@ -44,4 +45,8 @@ RDEPEND="=dev-haskell/base64-bytestring-0.1*[profile?]
 		dev-haskell/zlib[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		test? ( dev-haskell/hunit
+		)
+		>=dev-haskell/cabal-1.8"
+
+PATCHES=("${FILESDIR}/${PN}-7.0.3-ghc-7.5.patch")

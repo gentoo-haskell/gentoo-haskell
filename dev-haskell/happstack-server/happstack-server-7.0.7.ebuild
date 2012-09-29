@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
-		<dev-haskell/base64-bytestring-1.1[profile?]
+RDEPEND="=dev-haskell/base64-bytestring-1.0*[profile?]
 		=dev-haskell/blaze-html-0.5*[profile?]
 		>=dev-haskell/hslogger-1.0.2[profile?]
 		dev-haskell/html[profile?]
@@ -34,6 +33,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		>=dev-haskell/system-filepath-0.3.1[profile?]
 		>=dev-haskell/text-0.10[profile?]
 		<dev-haskell/text-0.12[profile?]
+		>=dev-haskell/threads-0.5[profile?]
 		dev-haskell/time[profile?]
 		>=dev-haskell/transformers-0.1.3[profile?]
 		<dev-haskell/transformers-0.4[profile?]
@@ -52,8 +52,6 @@ PATCHES=("${FILESDIR}/${PN}-7.0.3-ghc-7.5.patch")
 
 src_prepare() {
 	base_src_prepare
-	sed -i 's@base64-bytestring == 0.1.\*@base64-bytestring >= 0.1 \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 	# upstream forgot the tests
 	cp -pR "${FILESDIR}/${PN}-7.0.4/tests/Happstack" "${S}/tests/Happstack" \
 		|| die "Could not copy missing test source files"
