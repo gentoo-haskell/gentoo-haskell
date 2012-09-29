@@ -24,7 +24,7 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 		>=dev-haskell/hunit-1[profile?]
 		<=dev-haskell/hunit-2[profile?]
 		>=dev-haskell/quickcheck-2.4.0.1[profile?]
-		<=dev-haskell/quickcheck-2.5[profile?]
+		<=dev-haskell/quickcheck-2.6[profile?]
 		>=dev-haskell/silently-1.1.1[profile?]
 		<dev-haskell/silently-2[profile?]
 		<dev-haskell/time-1.5[profile?]
@@ -37,3 +37,8 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 #		)
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@QuickCheck >= 2.4.0.1 && <= 2.5@QuickCheck >= 2.4.0.1 \&\& <= 2.6@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
