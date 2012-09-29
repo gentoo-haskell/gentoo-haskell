@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The @threadDelay@ and @timeout@ functions from the @base@ library
+		use the bounded @Int@ type for specifying the delay or timeout
+		period. This packages provides alternatives which use the
+		unbounded @Integer@ type.
+	</longdescription>
+</pkgmetadata>
