@@ -33,7 +33,8 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		<dev-haskell/http-types-0.8[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		dev-haskell/random[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		=dev-haskell/rsa-1.2*[profile?]
 		>=dev-haskell/sha-1.4[profile?]
 		<dev-haskell/sha-1.6[profile?]
@@ -43,9 +44,3 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@http-conduit                  >= 1.4      && < 1.6@http-conduit                  >= 1.4      \&\& < 1.7@' \
-		-e 's@base64-bytestring             >= 0.1      && < 0.2@base64-bytestring             >= 0.1      \&\& < 1.1@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
