@@ -19,7 +19,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
-
+RESTRICT="test"
 
 RDEPEND=">=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/mtl-2.0[profile?]
 		dev-haskell/parsec[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/case-insensitive-0.4*
+		disabled-test? ( =dev-haskell/case-insensitive-0.4*
 			=dev-haskell/conduit-0.4*
 			=dev-haskell/deepseq-1.3*
 			=dev-haskell/http-types-0.6*
