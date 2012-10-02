@@ -21,6 +21,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/quickcheck-2.3[profile?]
 		<dev-haskell/quickcheck-2.6[profile?]
 		=dev-haskell/vector-0.9*[profile?]
-		>=dev-lang/ghc-6.12.3"
+		>=dev-lang/ghc-7.6.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
