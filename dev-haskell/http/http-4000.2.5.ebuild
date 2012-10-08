@@ -20,6 +20,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT=test # needs depends missing in our overlay
 
 RDEPEND=">=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
