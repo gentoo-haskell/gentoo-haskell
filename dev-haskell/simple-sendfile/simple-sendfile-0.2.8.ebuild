@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# sys-apps/miscfiles is for inputFile
+
 RDEPEND="dev-haskell/network[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
@@ -25,5 +27,14 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			dev-haskell/network-conduit
+			sys-apps/miscfiles
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_test() {
+	pushd ${S}/test
+	./setup.sh || die
+	popd
+
+	haskell-cabal_src_test
+}
