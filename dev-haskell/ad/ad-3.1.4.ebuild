@@ -22,19 +22,14 @@ RDEPEND="=dev-haskell/comonad-3.0*[profile?]
 		=dev-haskell/data-reify-0.6*[profile?]
 		>=dev-haskell/free-3.0[profile?]
 		<=dev-haskell/free-3.3[profile?]
+		dev-haskell/mtl[profile?]
 		>=dev-haskell/reflection-1.1.6[profile?]
 		<dev-haskell/reflection-1.2[profile?]
 		>=dev-haskell/tagged-0.4.2.1[profile?]
 		<dev-haskell/tagged-0.5[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/doctest-0.8
-			<dev-haskell/doctest-0.10
+		test? ( >=dev-haskell/doctest-0.9.0.1
+			<=dev-haskell/doctest-0.10
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@doctest >= 0.8 && <= 0.9@doctest >= 0.8 \&\& < 0.10@' \
-		-e 's@directory >= 1.0 && < 1.2@directory >= 1.0 \&\& < 1.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
