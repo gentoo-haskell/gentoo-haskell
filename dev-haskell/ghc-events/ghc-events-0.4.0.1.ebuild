@@ -27,8 +27,4 @@ src_prepare() {
 		|| die "Could not create dist/build directory"
 	cp -p GHC/RTS/EventLogFormat.h dist/build/ \
 		|| die "Could not copy header file to dist/build for haddock"
-	sed -e 's@mtl        >= 1.1 && < 2.1@mtl        >= 1.1 \&\& < 2.2@' \
-		-e 's@containers >= 0.2 && < 0.5@containers >= 0.2 \&\& < 0.6@' \
-		-e 's@bytestring == 0.9.\*@bytestring >= 0.9 \&\& < 0.11@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
