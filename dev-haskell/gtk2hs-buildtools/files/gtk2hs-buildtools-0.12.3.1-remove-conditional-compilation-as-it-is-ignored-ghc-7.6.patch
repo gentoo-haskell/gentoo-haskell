@@ -1,0 +1,14 @@
+--- gtk2hs-buildtools-0.12.3.1-orig/hierarchyGen/Hierarchy.chs.template	2012-05-28 08:17:27.000000000 +1000
++++ gtk2hs-buildtools-0.12.3.1/hierarchyGen/Hierarchy.chs.template	2012-10-11 12:28:58.851901084 +1100
+@@ -38,11 +38,7 @@
+   ) where
+ 
+ import Foreign.ForeignPtr (ForeignPtr, castForeignPtr, unsafeForeignPtrToPtr)
+-#if __GLASGOW_HASKELL__>=704
+ import Foreign.C.Types    (CULong(..), CUInt(..))
+-#else
+-import Foreign.C.Types    (CULong, CUInt)
+-#endif
+ import System.Glib.GType	(GType, typeInstanceIsA)
+ @MODULE_IMPORTS@
+ {# context lib="@CONTEXT_LIB@" prefix="@CONTEXT_PREFIX@" #}

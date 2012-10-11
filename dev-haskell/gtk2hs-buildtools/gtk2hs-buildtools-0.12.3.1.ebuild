@@ -27,4 +27,13 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1"
 
 PATCHES=("${FILESDIR}"/${PN}-0.12.3-workaround-UName.patch
-	"${FILESDIR}"/${PN}-0.12.3.1-ghc-7.5.patch)
+	"${FILESDIR}"/${PN}-0.12.3.1-ghc-7.5.patch
+)
+
+src_prepare() {
+	base_src_prepare
+	# c2hs ignores #if __GLASGOW_HASKELL__ >= 704
+	if has_version ">=dev-lang/ghc-7.6.1"; then
+		epatch "${FILESDIR}"/${PN}-0.12.3.1-remove-conditional-compilation-as-it-is-ignored-ghc-7.6.patch
+	fi
+}
