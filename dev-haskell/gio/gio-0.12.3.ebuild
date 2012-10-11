@@ -25,3 +25,11 @@ RDEPEND="=dev-haskell/glib-0.12*[profile?]
 		dev-libs/glib:2"
 DEPEND="${RDEPEND}
 		dev-haskell/gtk2hs-buildtools"
+
+src_prepare() {
+	# c2hs ignores #if __GLASGOW_HASKELL__ >= 706
+	# I do not know which earlier ghc versions the patch submitted upstream works with
+	if has_version ">=dev-lang/ghc-7.6.1"; then
+		epatch "${FILESDIR}/${PN}-0.12.3-ghc-7.6.patch"
+	fi
+}
