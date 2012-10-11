@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Parallel batch driver for QuickCheck"
-HOMEPAGE="http://darcsden.com/shelarcy/pqc"
+HOMEPAGE="http://hub.darcs.net/shelarcy/pqc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
