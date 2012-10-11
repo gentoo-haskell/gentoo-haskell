@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="TCP instantation of Network.Transport"
+DESCRIPTION="TCP instantiation of Network.Transport"
 HOMEPAGE="http://github.com/haskell-distributed/distributed-process"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -19,13 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/data-accessor-0.2*[profile?]
-		=dev-haskell/network-2.3*[profile?]
-		=dev-haskell/network-transport-0.2*[profile?]
+		>=dev-haskell/network-2.3[profile?]
+		<dev-haskell/network-2.5[profile?]
+		=dev-haskell/network-transport-0.3*[profile?]
 		>=dev-lang/ghc-7.0.1"
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/ansi-terminal-0.5*
-			>=dev-haskell/mtl-2.0
-			<dev-haskell/mtl-2.2
-			=dev-haskell/random-1.0*
+		test? ( =dev-haskell/network-transport-tests-0.1*
 		)
 		>=dev-haskell/cabal-1.8"
