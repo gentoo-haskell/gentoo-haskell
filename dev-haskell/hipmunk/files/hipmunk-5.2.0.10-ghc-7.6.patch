@@ -1,0 +1,22 @@
+--- Hipmunk-5.2.0.10-orig/Hipmunk.cabal	2012-07-18 19:56:36.000000000 +1000
++++ Hipmunk-5.2.0.10/Hipmunk.cabal	2012-10-11 21:45:48.878703834 +1100
+@@ -199,7 +199,7 @@
+   if flag(small_base)
+     Build-Depends: base >= 3 && < 5,
+                    array >= 0.1 && < 0.5,
+-                   containers >= 0.1 && < 0.5,
++                   containers >= 0.1 && < 0.6,
+                    transformers >= 0.2 && < 0.4,
+                    StateVar >= 1.0 && < 1.1
+   else
+--- Hipmunk-5.2.0.10-orig/Physics/Hipmunk/Space.hsc	2012-07-18 19:56:36.000000000 +1000
++++ Hipmunk-5.2.0.10/Physics/Hipmunk/Space.hsc	2012-10-11 21:50:20.973869968 +1100
+@@ -59,7 +59,7 @@
+ import qualified Data.Map as M
+ import Control.Exception (bracket)
+ import Control.Monad (when)
+-import Data.IORef
++import Data.IORef hiding (modifyIORef')
+ import Data.StateVar
+ import Foreign hiding (new)
+ import Foreign.C.Types (CInt(..))
