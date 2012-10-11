@@ -38,7 +38,8 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 		>=dev-haskell/failure-0.1[profile?]
 		>=dev-haskell/http-types-0.6[profile?]
 		<dev-haskell/http-types-0.8[profile?]
-		=dev-haskell/lifted-base-0.1*[profile?]
+		>=dev-haskell/lifted-base-0.1[profile?]
+		<dev-haskell/lifted-base-0.3[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		dev-haskell/mtl[profile?]
 		>=dev-haskell/network-2.3[profile?]
@@ -62,7 +63,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1[profile?]
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
-			dev-haskell/network-conduit
+			>=dev-haskell/network-conduit-0.6
 			dev-haskell/wai
 			>=dev-haskell/warp-1.2.1
 		)
