@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/lifted-base-0.1*[profile?]
+RDEPEND=">=dev-haskell/lifted-base-0.1[profile?]
 		>=dev-haskell/monad-control-0.3.1[profile?]
 		<dev-haskell/monad-control-0.4[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
