@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/groundhog-0.1.0[profile?]
-		<dev-haskell/groundhog-0.2.0[profile?]
+RDEPEND=">=dev-haskell/groundhog-0.2.0[profile?]
+		<dev-haskell/groundhog-0.3.0[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		=dev-haskell/pool-conduit-0.1*[profile?]
 		>=dev-haskell/postgresql-libpq-0.6.1[profile?]
