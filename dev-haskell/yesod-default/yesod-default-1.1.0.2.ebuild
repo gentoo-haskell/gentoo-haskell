@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/data-default[profile?]
 		=dev-haskell/hamlet-1.1*[profile?]
-		=dev-haskell/network-conduit-0.5*[profile?]
+		>=dev-haskell/network-conduit-0.5[profile?]
+		<dev-haskell/network-conduit-0.7[profile?]
 		=dev-haskell/shakespeare-css-1.0*[profile?]
 		=dev-haskell/shakespeare-js-1.0*[profile?]
 		>=dev-haskell/text-0.9[profile?]
