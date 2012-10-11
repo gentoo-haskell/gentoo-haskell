@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3.0.0[profile?]
 		<dev-haskell/blaze-builder-0.4[profile?]
-		>=dev-haskell/groundhog-0.1.0[profile?]
-		<dev-haskell/groundhog-0.2.0[profile?]
+		>=dev-haskell/groundhog-0.2.0[profile?]
+		<dev-haskell/groundhog-0.3.0[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		=dev-haskell/pool-conduit-0.1*[profile?]
 		>=dev-haskell/text-0.8[profile?]
