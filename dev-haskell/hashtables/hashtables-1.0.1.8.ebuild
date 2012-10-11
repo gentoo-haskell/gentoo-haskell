@@ -20,9 +20,10 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.1[profile?]
 		<dev-haskell/hashable-2[profile?]
-		dev-haskell/primitive[profile?]
+		>=dev-haskell/primitive-0.4[profile?]
+		<dev-haskell/primitive-0.6[profile?]
 		>=dev-haskell/vector-0.7[profile?]
-		<dev-haskell/vector-0.10[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
