@@ -37,8 +37,3 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5[profile?]
 #		)
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@QuickCheck >= 2.4.0.1 && <= 2.5@QuickCheck >= 2.4.0.1 \&\& <= 2.6@g' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
