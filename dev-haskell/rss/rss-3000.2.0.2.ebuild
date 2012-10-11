@@ -21,14 +21,9 @@ IUSE=""
 RDEPEND=">=dev-haskell/haxml-1.19.2[profile?]
 		<dev-haskell/haxml-1.24[profile?]
 		>=dev-haskell/network-2.0[profile?]
-		<dev-haskell/network-2.4[profile?]
+		<dev-haskell/network-2.5[profile?]
 		>=dev-haskell/time-1.1.2[profile?]
 		<dev-haskell/time-1.5[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@HaXml      >= 1.19.2 && < 1.23@HaXml      >= 1.19.2 \&\& < 1.24@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
