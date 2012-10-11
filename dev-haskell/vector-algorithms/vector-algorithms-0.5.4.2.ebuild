@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/primitive-0.3[profile?]
-		<dev-haskell/primitive-0.5[profile?]
+		<dev-haskell/primitive-0.6[profile?]
 		>=dev-haskell/vector-0.6[profile?]
-		<dev-haskell/vector-0.10[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
