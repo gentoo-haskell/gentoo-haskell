@@ -31,3 +31,9 @@ DEPEND="${RDEPEND}
 		dev-haskell/pango
 		>=dev-haskell/time-1.1
 		>=dev-lang/ghc-6.10.1"
+
+src_prepare() {
+	sed -e 's@containers >= 0.2 && < 0.5@containers >= 0.2 \&\& < 0.6@' \
+		-e 's@unix >= 2.3 && < 2.6@unix >= 2.3 \&\& < 2.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
