@@ -34,6 +34,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		dev-haskell/gtk2hs-buildtools"
 
+src_prepare() {
+	# c2hs ignores #if __GLASGOW_HASKELL__ >= 706
+	# I do not know which earlier ghc versions the patch submitted upstream works with
+	if has_version ">=dev-lang/ghc-7.6.1"; then
+		epatch "${FILESDIR}/${PN}-0.12.3.1-ghc-7.6.patch"
+	fi
+}
+
 src_configure() {
 	# Upstream has this enabled, so we might as well force it enabled to be sure.
 	cabal_src_configure \
