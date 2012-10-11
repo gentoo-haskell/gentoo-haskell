@@ -20,7 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/conduit-0.5*[profile?]
-		=dev-haskell/resourcet-0.3*[profile?]
+		>=dev-haskell/resourcet-0.3[profile?]
+		<dev-haskell/resourcet-0.5[profile?]
 		=dev-haskell/stm-2.4*[profile?]
 		=dev-haskell/stm-chans-1.3*[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
