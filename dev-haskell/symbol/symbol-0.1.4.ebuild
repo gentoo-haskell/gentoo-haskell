@@ -25,8 +25,3 @@ RDEPEND=">=dev-haskell/deepseq-1.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@containers >= 0.2 && < 0.5@containers >= 0.2 \&\& < 0.6@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
