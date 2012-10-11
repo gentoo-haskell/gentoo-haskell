@@ -21,10 +21,3 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.1.2.3-ghc-7.7.patch"
-	sed -e 's@directory >= 1.0 && < 1.2@directory@' \
-		-e 's@unix >= 2.3 && < 2.6@unix@' \
-		-i "${S}/${PN}.cabal"
-}
