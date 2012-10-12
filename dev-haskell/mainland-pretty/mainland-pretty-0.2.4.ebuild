@@ -18,14 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/srcloc-0.2*[profile?]
+RDEPEND=">=dev-haskell/srcloc-0.2[profile?]
+		<dev-haskell/srcloc-0.4[profile?]
 		>dev-haskell/text-0.11[profile?]
 		<dev-haskell/text-0.12[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@containers >= 0.2 && < 0.5@containers >= 0.2 \&\& < 0.6@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
