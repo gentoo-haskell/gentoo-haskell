@@ -38,7 +38,14 @@ src_compile() {
 	use profile && prof="--ghc-flag=-prof"
 	agda +RTS -K1G -RTS ${prof} \
 		-i "${S}" -i "${S}"/src "${S}"/Everything.agda || die
-	agda --html -i "${S}" -i "${S}"/src "${S}"/README.agda || die
+	# Although my agda-9999 build has
+	# /var/tmp/portage/sci-mathematics/agda-9999/work/agda-9999/dist/build/autogen/Paths_Agda.hs
+	# containing:
+	# datadir    = "/usr/share/agda-9999/ghc-7.6.1"
+	# it fails without the --css option like:
+	# /usr/share/agda-9999/ghc-7.4.1/Agda.css: copyFile: does not exist
+	local cssdir=$(egrep 'datadir *=' "${S}/dist/build/autogen/Paths_lib.hs" | sed -e 's@datadir    = \(.*\)@\1@')
+	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" "${S}"/README.agda || die
 }
 
 src_test() {
