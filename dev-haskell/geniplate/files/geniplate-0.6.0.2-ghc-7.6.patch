@@ -1,0 +1,27 @@
+--- geniplate-0.6.0.2-orig/Data/Generics/Geniplate.hs	2012-10-06 21:06:29.000000000 +1000
++++ geniplate-0.6.0.2/Data/Generics/Geniplate.hs	2012-10-12 12:30:44.966103776 +1100
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE TemplateHaskell, MultiParamTypeClasses, FlexibleInstances, PatternGuards #-}
++{-# LANGUAGE TemplateHaskell, MultiParamTypeClasses, FlexibleInstances,
++    TypeSynonymInstances, PatternGuards, CPP #-}
+ module Data.Generics.Geniplate(
+     genUniverseBi, genUniverseBiT,
+     genTransformBi, genTransformBiT,
+@@ -134,9 +135,17 @@
+     qReport b = lift . qReport b
+     qRecover = error "Data.Generics.Geniplate: qRecover not implemented"
+     qReify = lift . qReify
++#if MIN_VERSION_template_haskell(2,7,0)
++    qReifyInstances n = lift . qReifyInstances n
++#elif MIN_VERSION_template_haskell(2,5,0)
+     qClassInstances n = lift . qClassInstances n
++#endif
+     qLocation = lift qLocation
+     qRunIO = lift . qRunIO
++#if MIN_VERSION_template_haskell(2,7,0)
++    qLookupName ns = lift . qLookupName ns
++    qAddDependentFile = lift . qAddDependentFile
++#endif
+ 
+ uniBiQ :: [TypeQ] -> Type -> Type -> Q ([Dec], Exp)
+ uniBiQ stops from ato = do
