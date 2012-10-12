@@ -1,6 +1,6 @@
 --- language-c-quote-0.4.1-orig/language-c-quote.cabal	2012-08-16 18:33:41.000000000 +1000
-+++ language-c-quote-0.4.1/language-c-quote.cabal	2012-09-14 20:27:15.202649013 +1000
-@@ -24,12 +24,12 @@
++++ language-c-quote-0.4.1/language-c-quote.cabal	2012-10-12 10:42:19.764682606 +1100
+@@ -24,15 +24,15 @@
    build-depends:
      array >=0.2 && <0.5,
      base >=4 && <5,
@@ -15,7 +15,11 @@
 +    haskell-src-meta >= 0.4 && < 0.7,
      mainland-pretty ==0.2.*,
      mtl >=2.0 && <3,
-     srcloc == 0.2.*,
+-    srcloc == 0.2.*,
++    srcloc >= 0.2 && < 0.4,
+     syb >=0.3 && <0.4,
+     symbol >=0.1 && <0.2
+ 
 @@ -40,9 +40,9 @@
      build-depends:
        template-haskell >=2.5 && <2.6
@@ -28,3 +32,12 @@
  
    if impl(ghc < 7.4)
      build-tools:
+@@ -81,7 +81,7 @@
+     HUnit >=1.2 && <1.3,
+     base >=4 && <5,
+     language-c-quote ==0.4.*,
+-    srcloc == 0.2.*,
++    srcloc >= 0.2 && <0.4,
+     symbol >=0.1 && <0.2
+ 
+ source-repository head
