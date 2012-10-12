@@ -108,6 +108,21 @@ PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
 
+# to make make a crosscompiler use crossdev and symlink ghc tree into
+# cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
+#
+# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
+export CTARGET=${CTARGET:-${CHOST}}
+if [[ ${CTARGET} = ${CHOST} ]] ; then
+	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
+		export CTARGET=${CATEGORY/cross-}
+	fi
+fi
+
+is_crosscompile() {
+	[[ ${CHOST} != ${CTARGET} ]]
+}
+
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
@@ -392,21 +407,6 @@ src_configure() {
 	GHC_PV=${PV} # overrided in live ebuilds
 
 	if ! use binary; then
-		# ghc now supports cross-compiling.  It appears that only the stage1
-		# compiler is built (if you are lucky) when cross-compiling with
-		# ghc-7.5.20120510.
-		if [[ -n ${CTARGET} ]]; then
-			if [[ ${CTARGET} != $(uname -m)"-pc-linux-gnu" ]]; then
-				cross_compiling="1"
-			fi
-		else
-			# We need to specify the --target option to avoid the ghc build
-			# system thinking its building a cross compiler (and then only building
-			# the stage1 compiler, no interpreter). man ebuild(5) notes how the
-			# setting CTARGET specifies the --target=${CTARGET} to econf.
-			CTARGET=$(uname -m)"-pc-linux-gnu"
-		fi
-
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
 
@@ -508,7 +508,11 @@ src_configure() {
 		# might point to ccache, once installed it will point to the users
 		# regular gcc.
 
-		econf --with-gcc=gcc --enable-bootstrap-with-devel-snapshot \
+		local econf_args=()
+
+		is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
+
+		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot \
 			|| die "econf failed"
 
 		[[ ${PV} == *9999* ]] && GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
@@ -538,7 +542,7 @@ src_compile() {
 		# ^ above seems to be fixed.
 		emake all
 
-		if [[ "{cross_compiling}" == "1" ]]; then
+		if is_crosscompile; then
 			# runghc does not work for a stage1 compiler, we can build it anyway
 			# so it will print the error message: not built for interactive use
 			pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
@@ -729,25 +733,30 @@ pkg_postinst() {
 	# the package.conf.d directory.
 	touch "${PKGCACHE}"
 
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 	fi
-	if [[ "{cross_compiling}" == "1" ]]; then
+	if is_crosscompile; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
 		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
 		ewarn "not work for a cross compiler."
 		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
 		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 	fi
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
 }
 
 pkg_prerm() {
