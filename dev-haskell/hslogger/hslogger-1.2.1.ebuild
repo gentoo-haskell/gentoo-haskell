@@ -15,11 +15,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl[profile?]
-		<dev-haskell/network-2.4[profile?]
+		<dev-haskell/network-2.5[profile?]
 		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
