@@ -389,6 +389,8 @@ src_prepare() {
 }
 
 src_configure() {
+	GHC_PV=${PV} # overrided in live ebuilds
+
 	if ! use binary; then
 		# ghc now supports cross-compiling.  It appears that only the stage1
 		# compiler is built (if you are lucky) when cross-compiling with
@@ -508,7 +510,8 @@ src_configure() {
 
 		econf --with-gcc=gcc --enable-bootstrap-with-devel-snapshot \
 			|| die "econf failed"
-		GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+
+		[[ ${PV} == *9999* ]] && GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 		GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	fi # ! use binary
 }
