@@ -4,7 +4,7 @@
 
 EAPI=4
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Various number types"
@@ -19,9 +19,3 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	# the test source files are missing
-	sed -e '/test-suite testsuite/,$d' \
-		-i "${S}/${PN}.cabal" || die "Could not remove tests"
-}
