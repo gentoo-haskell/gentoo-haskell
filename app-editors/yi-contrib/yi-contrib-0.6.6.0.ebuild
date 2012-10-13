@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="~app-editors/yi-0.6.6.0[profile?]
 		>=dev-haskell/data-accessor-0.2.1.4[profile?]
 		<dev-haskell/data-accessor-0.3[profile?]
-		=dev-haskell/split-0.1*[profile?]
+		>=dev-haskell/split-0.1[profile?]
+		<dev-haskell/split-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
@@ -31,5 +32,6 @@ src_prepare() {
 		epatch "${FILESDIR}/${PN}-0.6.4.0-backport-to-ghc-6.12.3.patch"
 	fi
 	sed -e 's@directory < 1.2@directory < 1.3@' \
+		-e 's@split ==0.1.\*@split >=0.1 \&\& < 0.3@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
