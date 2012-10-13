@@ -227,7 +227,7 @@ src_prepare() {
 	if [[ "${EGIT_BRANCH}" == "ghc-7.4" || ( -n ${GHC_USE_7_4_2_SYSTEM_LIBFFI_PATCH} ) ]]; then
 		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 	else
-		epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
+		epatch "${FILESDIR}"/${PN}-7.7.20121013-system-libffi.patch
 	fi
 
 	# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure

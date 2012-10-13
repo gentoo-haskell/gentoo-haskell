@@ -1,0 +1,88 @@
+--- ghc-7.7.20121013-orig/ghc.mk	2012-10-14 01:15:46.133229664 +1100
++++ ghc-7.7.20121013/ghc.mk	2012-10-14 01:33:16.534885332 +1100
+@@ -606,7 +606,6 @@
+    $(MAYBE_GHCI) \
+    driver/ghc \
+    driver/haddock \
+-   libffi \
+    includes \
+    rts
+ 
+--- ghc-7.7.20121013-orig/rts/ghc.mk	2012-10-14 01:15:46.189231228 +1100
++++ ghc-7.7.20121013/rts/ghc.mk	2012-10-14 01:37:50.795376162 +1100
+@@ -177,12 +177,12 @@
+ # Making a shared library for the RTS.
+ ifneq "$$(findstring dyn, $1)" ""
+ ifeq "$$(HostOS_CPP)" "mingw32" 
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) rts/libs.depend rts/dist/build/$$(LIBFFI_DLL)
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) rts/libs.depend
+ 	"$$(RM)" $$(RM_OPTS) $$@
+ 	"$$(rts_dist_HC)" -package-name rts -shared -dynamic -dynload deploy \
+ 	  -no-auto-link-packages -Lrts/dist/build -l$(LIBFFI_WINDOWS_LIB) `cat rts/libs.depend` $$(rts_$1_OBJS) $$(ALL_RTS_DEF_LIBS) -o $$@
+ else
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) rts/libs.depend rts/dist/build/libffi$$(soext)
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) rts/libs.depend
+ 	"$$(RM)" $$(RM_OPTS) $$@
+ 	"$$(rts_dist_HC)" -package-name rts -shared -dynamic -dynload deploy \
+ 	  -no-auto-link-packages -Lrts/dist/build -lffi `cat rts/libs.depend` $$(rts_$1_OBJS) \
+@@ -193,9 +193,9 @@
+ endif
+ endif
+ else
+-$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) $$(rts_ffi_objs_stamp)
++$$(rts_$1_LIB) : $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS)
+ 	"$$(RM)" $$(RM_OPTS) $$@
+-	echo $$(rts_ffi_objs) $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) | "$$(XARGS)" $$(XARGS_OPTS) "$$(AR_STAGE1)" \
++	echo $$(rts_$1_OBJS) $$(rts_$1_DTRACE_OBJS) | "$$(XARGS)" $$(XARGS_OPTS) "$$(AR_STAGE1)" \
+ 		$$(AR_OPTS_STAGE1) $$(EXTRA_AR_ARGS_STAGE1) $$@
+ endif
+ 
+@@ -408,6 +408,12 @@
+ rts/dist/build/sm/Evac_thr_CC_OPTS += -DPARALLEL_GC -Irts/sm
+ rts/dist/build/sm/Scav_thr_CC_OPTS += -DPARALLEL_GC -Irts/sm
+ 
++# Use system libffi
++libffi_include_flags:=$(shell pkg-config --cflags-only-I libffi)
++rts/Adjustor_CC_OPTS += $(libffi_include_flags)
++rts/Interpreter_CC_OPTS += $(libffi_include_flags)
++rts/sm/Storage_CC_OPTS += $(libffi_include_flags)
++
+ #-----------------------------------------------------------------------------
+ # Add PAPI library if needed
+ 
+@@ -509,10 +515,8 @@
+ # installing
+ 
+ RTS_INSTALL_LIBS += $(ALL_RTS_LIBS)
+-RTS_INSTALL_LIBS += $(wildcard rts/dist/build/libffi$(soext)*)
+-RTS_INSTALL_LIBS += $(wildcard rts/dist/build/$(LIBFFI_DLL))
+ 
+-install: install_libffi_headers
++install:
+ 
+ .PHONY: install_libffi_headers
+ install_libffi_headers :
+--- ghc-7.7.20121013-orig/rts/package.conf.in	2012-10-14 01:15:46.189231228 +1100
++++ ghc-7.7.20121013/rts/package.conf.in	2012-10-14 01:33:16.536885391 +1100
+@@ -24,8 +24,9 @@
+ hs-libraries:   "HSrts"
+ 
+ extra-libraries:
++				"ffi"
+ #ifdef HAVE_LIBM
+-                		"m"		/* for ldexp() */
++			      , "m"		/* for ldexp() */
+ #endif
+ #ifdef HAVE_LIBRT
+ 			      , "rt"
+--- ghc-7.7.20121013-orig/compiler/ghc.mk	2012-10-14 01:15:45.936224182 +1100
++++ ghc-7.7.20121013/compiler/ghc.mk	2012-10-14 01:33:16.537885418 +1100
+@@ -238,6 +238,8 @@
+ 
+ compiler_CPP_OPTS += $(addprefix -I,$(GHC_INCLUDE_DIRS))
+ compiler_CPP_OPTS += ${GhcCppOpts}
++libffi_include_flags := $(shell pkg-config --cflags-only-I libffi)
++compiler/ghci/LibFFI_HSC2HS_OPTS += $(addprefix --cflag=,$(libffi_include_flags))
+ 
+ define preprocessCompilerFiles
+ # $0 = stage
