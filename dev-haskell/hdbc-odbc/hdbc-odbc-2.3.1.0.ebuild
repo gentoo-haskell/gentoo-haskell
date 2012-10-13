@@ -47,6 +47,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	epatch "${FILESDIR}/${MY_PN}-2.3.1.0-ghc-7.6.patch"
 	if has_version "<dev-lang/ghc-7.0.1"; then
 		# Backport to ghc 6.12.3.
 		epatch "${FILESDIR}/${P}-ghc-6.12.patch" || die "Could not apply ${P}-ghc-6.12.patch"
