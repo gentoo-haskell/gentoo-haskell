@@ -1,0 +1,33 @@
+--- cautious-file-1.0.1-orig/cautious-file.cabal	2012-03-22 07:05:54.000000000 +1100
++++ cautious-file-1.0.1/cautious-file.cabal	2012-10-13 17:56:57.831025785 +1100
+@@ -25,7 +25,7 @@
+ 
+ Library
+   hs-source-dirs:       src
+-  build-Depends:	base >= 4, base < 5, directory == 1.1.*, filepath >= 1.2, filepath < 1.4, bytestring == 0.9.*
++  build-Depends:	base >= 4, base < 5, directory >= 1.0, directory < 1.3, filepath >= 1.1, filepath < 1.4, bytestring >= 0.9 && < 0.11
+   if flag(posix) && !os(Windows)
+     cpp-options: -D_POSIX
+     build-Depends: unix
+--- cautious-file-1.0.1-orig/src/System/Posix/Fsync.hsc	2012-03-22 07:05:54.000000000 +1100
++++ cautious-file-1.0.1/src/System/Posix/Fsync.hsc	2012-10-13 17:59:43.589612645 +1100
+@@ -2,7 +2,7 @@
+ module System.Posix.Fsync (fsync) where
+ 
+ import Foreign.C.Error (throwErrnoIfMinus1_)
+-import Foreign.C.Types (CInt)
++import Foreign.C.Types (CInt(..))
+ import System.Posix.Types (Fd(..))
+ 
+ #include <unistd.h>
+--- cautious-file-1.0.1-orig/src/System/Posix/ByteLevel.hsc	2012-03-22 07:05:54.000000000 +1100
++++ cautious-file-1.0.1/src/System/Posix/ByteLevel.hsc	2012-10-13 17:59:35.643393019 +1100
+@@ -9,7 +9,7 @@
+ import Data.Function (fix)
+ import Foreign.C.Error (throwErrnoIfMinus1Retry)
+ import Foreign.C.String (CString, CStringLen)
+-import Foreign.C.Types (CInt, CSize)
++import Foreign.C.Types (CInt(..), CSize(..))
+ import System.Posix.Types (ByteCount, Fd(..))
+ 
+ #include <unistd.h>
