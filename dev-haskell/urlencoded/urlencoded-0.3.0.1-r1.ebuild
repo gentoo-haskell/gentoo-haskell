@@ -21,7 +21,13 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-1.1[profile?]
 		>=dev-haskell/network-2.2[profile?]
 		<dev-haskell/network-4[profile?]
-		=dev-haskell/split-0.1*[profile?]
+		>=dev-haskell/split-0.1[profile?]
+		<dev-haskell/split-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@split == 0.1.\*@split >=0.1 \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
