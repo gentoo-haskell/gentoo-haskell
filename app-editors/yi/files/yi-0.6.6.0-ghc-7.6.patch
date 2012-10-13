@@ -1,5 +1,5 @@
 --- yi-0.6.6.0-orig/yi.cabal	2012-07-21 16:15:35.000000000 +1000
-+++ yi-0.6.6.0/yi.cabal	2012-10-13 18:03:08.694303468 +1100
++++ yi-0.6.6.0/yi.cabal	2012-10-13 19:15:43.741454954 +1100
 @@ -205,12 +205,12 @@
      Parser.Incremental
  
@@ -15,11 +15,13 @@
      cautious-file >= 1.0.1,
      concrete-typerep == 0.1.*,
      derive >=2.4 && <2.7,
-@@ -232,7 +232,7 @@
+@@ -231,8 +231,8 @@
+     regex-base ==0.93.*,
      regex-tdfa == 1.1.*,
      rosezipper >= 0.1 && < 0.3,
-     split == 0.1.*,
+-    split == 0.1.*,
 -    template-haskell >= 2.4 && < 2.8,
++    split >= 0.1 && < 0.3,
 +    template-haskell >= 2.4 && < 2.9,
      time >= 1.1 && < 1.5,
      utf8-string >= 0.3.1,
