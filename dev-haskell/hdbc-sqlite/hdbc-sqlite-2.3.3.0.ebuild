@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	epatch "${FILESDIR}/${MY_PN}-2.3.3.0-ghc-7.6.patch"
 	cp "${FILESDIR}/TestTime.hs" "${S}/testsrc"
 }
 
