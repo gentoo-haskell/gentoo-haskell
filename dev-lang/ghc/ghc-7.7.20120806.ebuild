@@ -77,7 +77,7 @@ SLOT="0"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
-IUSE="doc ghcbootstrap llvm"
+IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
 
 RDEPEND="
@@ -109,6 +109,21 @@ PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
+
+# to make make a crosscompiler use crossdev and symlink ghc tree into
+# cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
+#
+# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
+export CTARGET=${CTARGET:-${CHOST}}
+if [[ ${CTARGET} = ${CHOST} ]] ; then
+	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
+		export CTARGET=${CATEGORY/cross-}
+	fi
+fi
+
+is_crosscompile() {
+	[[ ${CHOST} != ${CTARGET} ]]
+}
 
 append-ghc-cflags() {
 	local flag compile assemble link
@@ -372,7 +387,8 @@ src_prepare() {
 		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		# one mode external depend with unstable ABI be careful to stash it
-		epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
+		# avoid external libffi runtime when we build binaries
+		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
@@ -390,22 +406,9 @@ src_prepare() {
 }
 
 src_configure() {
-	if ! use binary; then
-		# ghc now supports cross-compiling.  It appears that only the stage1
-		# compiler is built (if you are lucky) when cross-compiling with
-		# ghc-7.5.20120510.
-		if [[ -n ${CTARGET} ]]; then
-			if [[ ${CTARGET} != $(uname -m)"-pc-linux-gnu" ]]; then
-				cross_compiling="1"
-			fi
-		else
-			# We need to specify the --target option to avoid the ghc build
-			# system thinking its building a cross compiler (and then only building
-			# the stage1 compiler, no interpreter). man ebuild(5) notes how the
-			# setting CTARGET specifies the --target=${CTARGET} to econf.
-			CTARGET=$(uname -m)"-pc-linux-gnu"
-		fi
+	GHC_PV=${PV} # overrided in live ebuilds
 
+	if ! use binary; then
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
 
@@ -445,16 +448,6 @@ src_configure() {
 		# portage logging) reported as bug #111183
 		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-		echo "SRC_HC_OPTS+=-O -H64m" >> mk/build.mk
-		echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-		echo "GhcStage2HcOpts = -O2 -fasm" >> mk/build.mk
-		echo "GhcHcOpts       = -Rghc-timing" >> mk/build.mk
-		echo "GhcLibHcOpts    = -O2" >> mk/build.mk
-		echo "GhcLibWays     += p" >> mk/build.mk
-		echo 'ifeq "$(PlatformSupportsSharedLibs)" "YES"' >> mk/build.mk
-		echo "GhcLibWays += dyn" >> mk/build.mk
-		echo "endif" >> mk/build.mk
-
 		# some arches do not support ELF parsing for ghci module loading
 		# PPC64: never worked (should be easy to implement)
 		# alpha: never worked
@@ -489,6 +482,15 @@ src_configure() {
 			echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 		fi
 
+		# allows overriding build flavours for libraries:
+		# v   - vanilla (static libs)
+		# p   - profiled
+		# dyn - shared libraries
+		# example: GHC_LIBRARY_WAYS="v dyn"
+		if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+			echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+		fi
+
 		# Get ghc from the unpacked binary .tbz2
 		# except when bootstrapping we just pick ghc up off the path
 		if ! use ghcbootstrap; then
@@ -511,9 +513,14 @@ src_configure() {
 		# might point to ccache, once installed it will point to the users
 		# regular gcc.
 
-		econf --with-gcc=gcc --enable-bootstrap-with-devel-snapshot \
+		local econf_args=()
+
+		is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
+
+		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot \
 			|| die "econf failed"
-		GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+
+		[[ ${PV} == *9999* ]] && GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 		GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	fi # ! use binary
 }
@@ -540,7 +547,7 @@ src_compile() {
 		# ^ above seems to be fixed.
 		emake all
 
-		if [[ "{cross_compiling}" == "1" ]]; then
+		if is_crosscompile; then
 			# runghc does not work for a stage1 compiler, we can build it anyway
 			# so it will print the error message: not built for interactive use
 			pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
@@ -573,12 +580,12 @@ src_install() {
 
 		# We only built docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
-		if use doc; then
-			if ! use ghcbootstrap; then
-				mkdir -p "${ED}/usr/share/doc"
-				mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
-					|| die "failed to copy docs"
-			fi
+		if use doc && ! use ghcbootstrap; then
+			mkdir -p "${ED}/usr/share/doc"
+			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
+				|| die "failed to copy docs"
+		else
+			dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 		fi
 
 		emake -j1 ${insttarget} \
@@ -597,8 +604,6 @@ src_install() {
 			echo "${GHC_PV}" > "${S}/VERSION" \
 				|| die "Could not create file ${S}/VERSION"
 		fi
-		dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
-
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
 		exeinto /usr/bin
@@ -703,10 +708,9 @@ src_install() {
 		done
 	fi
 
-	# path to the package.conf.d
-	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
 	# path to the package.cache
-	PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
+	PKGCACHE="${package_confdir}"/package.cache
 	# copy the package.conf.d, including timestamp, save it so we can help
 	# users that have a broken package.conf.d
 	cp -pR "${package_confdir}"{,.initial} || die "failed to backup intial package.conf.d"
@@ -734,9 +738,6 @@ pkg_postinst() {
 	# the package.conf.d directory.
 	touch "${PKGCACHE}"
 
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
 	ewarn "For portage place lines like these in /etc/portage/package.keywords"
 	ewarn "=dev-haskell/time-1.4.0.1*"
 	ewarn "=dev-haskell/cabal-1.17.0* **"
@@ -745,21 +746,29 @@ pkg_postinst() {
 	ewarn "=dev-lang/ghc-7.7* **"
 	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 	fi
-	if [[ "{cross_compiling}" == "1" ]]; then
+	if is_crosscompile; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
 		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
 		ewarn "not work for a cross compiler."
 		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
 		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 	fi
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
 }
 
 pkg_prerm() {
