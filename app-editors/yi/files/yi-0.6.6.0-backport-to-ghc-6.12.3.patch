@@ -1,6 +1,6 @@
---- yi-0.6.4.0-orig/yi.cabal	2011-07-21 17:50:13.000000000 +1000
-+++ yi-0.6.4.0/yi.cabal	2011-07-22 01:14:35.611421925 +1000
-@@ -72,7 +72,7 @@
+--- yi-0.6.6.0-orig/yi.cabal	2012-10-13 18:03:08.694303468 +1100
++++ yi-0.6.6.0/yi.cabal	2012-10-13 18:45:00.446156795 +1100
+@@ -80,7 +80,7 @@
  
  library
    hs-source-dirs: src/library
@@ -9,7 +9,7 @@
  
    if flag(hacking)
      buildable: False
-@@ -336,7 +336,7 @@
+@@ -360,7 +360,7 @@
    buildable: False
  
    hs-source-dirs: src/parsertest
@@ -18,7 +18,7 @@
  
    if !flag(hacking) || flag(dochack)
      buildable: False
-@@ -354,7 +354,7 @@
+@@ -378,7 +378,7 @@
  
  executable yi
    hs-source-dirs: src/executable
@@ -27,9 +27,9 @@
  
    if flag(dochack)
      buildable: False
---- yi-0.6.4.0-orig/src/library/Yi/UI/Pango.hs	2011-07-21 17:50:13.000000000 +1000
-+++ yi-0.6.4.0/src/library/Yi/UI/Pango.hs	2011-07-22 00:05:44.170599389 +1000
-@@ -477,9 +477,9 @@
+--- yi-0.6.6.0-orig/src/library/Yi/UI/Pango.hs	2012-10-13 18:08:47.021706305 +1100
++++ yi-0.6.6.0/src/library/Yi/UI/Pango.hs	2012-10-13 18:45:00.447156819 +1100
+@@ -478,9 +478,9 @@
                                  Gtk.lineWidth = if wideCursor then 2 else 1 })
    -- tell the renderer
    if im 
@@ -41,9 +41,9 @@
      PangoRectangle (succ -> chx) chy chw chh <- layoutIndexToPos layout (rel cur)
      drawRectangle drawWindow gc False (round chx) (round chy) (if chw > 0 then round chw else 8) (round chh)
  
---- yi-0.6.4.0-orig/src/library/Yi/Buffer/HighLevel.hs	2011-07-21 17:50:13.000000000 +1000
-+++ yi-0.6.4.0/src/library/Yi/Buffer/HighLevel.hs	2011-07-22 00:04:59.554447079 +1000
-@@ -625,8 +625,8 @@
+--- yi-0.6.6.0-orig/src/library/Yi/Buffer/HighLevel.hs	2012-07-21 16:15:17.000000000 +1000
++++ yi-0.6.6.0/src/library/Yi/Buffer/HighLevel.hs	2012-10-13 18:45:00.447156819 +1100
+@@ -627,8 +627,8 @@
  revertB s now = do
      r <- regionOfB Document
      if R.length s <= smallBufferSize -- for large buffers, we must avoid building strings, because we'll end up using huge amounts of memory
@@ -54,8 +54,8 @@
      markSavedB now
  
  smallBufferSize :: Int
---- yi-0.6.4.0-orig/src/library/Yi/UI/Pango/Layouts.hs	2011-07-21 17:50:13.000000000 +1000
-+++ yi-0.6.4.0/src/library/Yi/UI/Pango/Layouts.hs	2011-07-22 00:50:00.253018429 +1000
+--- yi-0.6.6.0-orig/src/library/Yi/UI/Pango/Layouts.hs	2012-07-21 16:15:17.000000000 +1000
++++ yi-0.6.6.0/src/library/Yi/UI/Pango/Layouts.hs	2012-10-13 18:45:00.448156844 +1100
 @@ -28,7 +28,7 @@
   ) where
  

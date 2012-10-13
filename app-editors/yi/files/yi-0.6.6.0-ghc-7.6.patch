@@ -1,0 +1,54 @@
+--- yi-0.6.6.0-orig/yi.cabal	2012-07-21 16:15:35.000000000 +1000
++++ yi-0.6.6.0/yi.cabal	2012-10-13 18:03:08.694303468 +1100
+@@ -205,12 +205,12 @@
+     Parser.Incremental
+ 
+   build-depends:
+-    Cabal >= 1.10 && < 1.15,
++    Cabal >= 1.10 && < 1.17,
+     Diff >=0.1 && <0.2,
+     array, containers,  directory, process, old-locale,
+     base >= 4 && < 5,
+     binary == 0.5.*,
+-    bytestring >= 0.9.1 && < 0.9.3,
++    bytestring >= 0.9.1 && < 0.11,
+     cautious-file >= 1.0.1,
+     concrete-typerep == 0.1.*,
+     derive >=2.4 && <2.7,
+@@ -232,7 +232,7 @@
+     regex-tdfa == 1.1.*,
+     rosezipper >= 0.1 && < 0.3,
+     split == 0.1.*,
+-    template-haskell >= 2.4 && < 2.8,
++    template-haskell >= 2.4 && < 2.9,
+     time >= 1.1 && < 1.5,
+     utf8-string >= 0.3.1,
+     uniplate,
+--- yi-0.6.6.0-orig/src/library/Yi/UI/Pango.hs	2012-07-21 16:15:17.000000000 +1000
++++ yi-0.6.6.0/src/library/Yi/UI/Pango.hs	2012-10-13 18:08:47.021706305 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE CPP, ExistentialQuantification, DoRec, TupleSections, NamedFieldPuns, ViewPatterns #-}
++{-# LANGUAGE CPP, ExistentialQuantification, DoRec, TupleSections, NamedFieldPuns, ViewPatterns, ScopedTypeVariables #-}
+ {-# OPTIONS_GHC -funbox-strict-fields #-}
+ 
+ -- Copyright (c) 2007, 2008 Jean-Philippe Bernardy
+@@ -7,8 +7,9 @@
+ -- pango for direct text rendering.
+ module Yi.UI.Pango (start) where
+ 
+-import Prelude (catch, filter)
++import Prelude (filter)
+ 
++import Control.Exception (catch, IOException)
+ import Control.Concurrent
+ import Data.Prototype
+ import Data.IORef
+@@ -276,7 +277,7 @@
+   update (modeline w) labelText ml
+   writeIORef (fullTitle t) bufferName
+   writeIORef (abbrevTitle t) (tabAbbrevTitle bufferName)
+-  drawW <- catch (fmap Just $ widgetGetDrawWindow $ textview w) (const (return Nothing))
++  drawW <- catch (fmap Just $ widgetGetDrawWindow $ textview w) (\(_::IOException) -> return Nothing)
+   imContextSetClientWindow im drawW
+   imContextFocusIn im
+ 
