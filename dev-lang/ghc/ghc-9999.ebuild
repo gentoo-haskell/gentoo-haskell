@@ -496,7 +496,7 @@ src_install() {
 	fi
 	if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/runghc" ]]; then
 		exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
-		doexe "${S}/utils/runghc/dist/build/runghc/runghc"
+		doexe "${S}/inplace/lib/bin/runghc"
 	fi
 
 	# The 7.5.20120511 build system does not install these shared libraries.
