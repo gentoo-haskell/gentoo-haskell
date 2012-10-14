@@ -77,6 +77,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
+IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
@@ -101,7 +102,7 @@ DEPEND="${RDEPEND}
 				app-text/docbook-xml-dtd:4.5
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 ) )
-	!ghcbootstrap? ( kernel_linux? ( >=sys-libs/glibc-2.15 ) )"
+	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.15 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="

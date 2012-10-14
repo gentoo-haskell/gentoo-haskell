@@ -76,6 +76,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
+IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
@@ -100,7 +101,7 @@ DEPEND="${RDEPEND}
 				app-text/docbook-xml-dtd:4.5
 				app-text/docbook-xsl-stylesheets
 				>=dev-libs/libxslt-1.1.2 ) )
-	!ghcbootstrap? ( kernel_linux? ( >=sys-libs/glibc-2.14 ) )"
+	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.14 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
