@@ -30,6 +30,17 @@
 
 EAPI="4"
 
+# to make make a crosscompiler use crossdev and symlink ghc tree into
+# cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
+#
+# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
+export CTARGET=${CTARGET:-${CHOST}}
+if [[ ${CTARGET} = ${CHOST} ]] ; then
+	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
+		export CTARGET=${CATEGORY/cross-}
+	fi
+fi
+
 inherit base autotools bash-completion-r1 eutils flag-o-matic multilib toolchain-funcs ghc-package versionator pax-utils
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -109,17 +120,6 @@ PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
-
-# to make make a crosscompiler use crossdev and symlink ghc tree into
-# cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
-#
-# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
-export CTARGET=${CTARGET:-${CHOST}}
-if [[ ${CTARGET} = ${CHOST} ]] ; then
-	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
-		export CTARGET=${CATEGORY/cross-}
-	fi
-fi
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -695,7 +695,7 @@ src_install() {
 			if [[ "${lib_sub_dir_prefix}" = "Cabal/Cabal" ]]; then
 				lib_sub_dir_prefix="Cabal"
 			fi
-			if [ -d ${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
+			if [ -d "${ED}"/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
 				dist_install_dir="${S}/libraries/${lib_sub_dir_prefix_orig}/dist-install"
 				lib_version=$(head -1 "${dist_install_dir}/setup-config" \
 					| sed -e 's@Saved package config for \([-a-zA-Z0-9]*\)-\([.0-9]*\) written by.*@\2@')
