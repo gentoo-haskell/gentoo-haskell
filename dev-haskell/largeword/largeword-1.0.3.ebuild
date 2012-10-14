@@ -22,10 +22,15 @@ RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hunit-1.2.2.3
 			>=dev-haskell/quickcheck-2.4.0.1
-			~dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-0.6
 			>=dev-haskell/test-framework-hunit-0.2.6
 			<dev-haskell/test-framework-hunit-0.3
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
 			<dev-haskell/test-framework-quickcheck2-0.3
 		)
 		>=dev-haskell/cabal-1.9.2"
+
+src_prepare() {
+	sed -e 's@test-framework == 0.6@test-framework >= 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
