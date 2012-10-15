@@ -47,7 +47,8 @@ RDEPEND=">=app-text/pandoc-1.9.3[profile?]
 		<dev-haskell/text-1.12[profile?]
 		>=dev-haskell/time-1.1[profile?]
 		<dev-haskell/time-1.5[profile?]
-		>=dev-lang/ghc-6.12.1"
+		>=dev-lang/ghc-6.12.1
+		<=dev-lang/ghc-7.4.2"
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/hunit-1.2*
 			=dev-haskell/quickcheck-2.4*
