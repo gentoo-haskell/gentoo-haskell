@@ -27,5 +27,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@failure >= 0.0.0 && < 0.2@failure >= 0.0.0 \&\& < 0.3@' \
+		-e 's@bytestring >= 0.9.1.4 && < 0.10@bytestring@' \
+		-e 's@directory >= 1 && < 1.2@directory@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
