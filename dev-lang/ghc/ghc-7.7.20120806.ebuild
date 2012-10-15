@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-EAPI="4"
+EAPI="5"
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
@@ -84,7 +84,7 @@ yet_binary() {
 SRC_URI="!binary? ( http://dev.gentoo.org/~gienah/snapshots/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""

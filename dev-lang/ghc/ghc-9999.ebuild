@@ -28,7 +28,7 @@
 # re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
 # gcc-3.x and 4.x with no problems.
 
-EAPI="4"
+EAPI="5"
 
 inherit base autotools bash-completion-r1 eutils flag-o-matic git-2 multilib toolchain-funcs ghc-package versionator pax-utils
 
@@ -38,7 +38,7 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 #EGIT_REPO_URI="http://darcs.haskell.org/ghc.git/"
 EGIT_REPO_URI="https://github.com/ghc/ghc.git"
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="doc +ghcbootstrap llvm"
 REQUIRED_USE="ghcbootstrap"
