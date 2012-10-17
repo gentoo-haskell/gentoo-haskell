@@ -22,3 +22,8 @@ RDEPEND=">=dev-lang/ghc-6.8.2
 		>=app-arch/bzip2-1.0"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@bytestring == 0\.9\.\*@bytestring@'\
+		-i "${S}/${PN}.cabal"
+}
