@@ -51,4 +51,8 @@ src_prepare() {
 			-i "${S}/hs/DBus/Types/Internal.hs" \
 			-i "${S}/hs/DBus/Wire/Internal.hs"
 	fi
+	sed -e 's@bytestring >= 0.9 && < 0.10@bytestring@' \
+		-e 's@containers >= 0.1 && < 0.5@containers@' \
+		-e 's@unix >= 2.2 && < 2.6@unix@' \
+		-i "${S}/${PN}.cabal"
 }
