@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	sed -e 's@directory    <  1.2@directory@'\
+		-i "${S}/${MY_PN}.cabal"
+}
