@@ -30,5 +30,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's@http-types == 0\.6\.\*@http-types@' \
+		-e 's@bytestring >= 0.9 && < 0.10@bytestring@' \
 		-i "${S}/${PN}.cabal"
 }
