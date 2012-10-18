@@ -47,8 +47,10 @@ RDEPEND="mpd? ( media-sound/mpd )"
 
 src_configure() {
 	# with_threaded is to workaround http://hackage.haskell.org/trac/ghc/ticket/4934
+	# but it's broken in current master:
+	#    https://github.com/jaor/xmobar/issues/77
 	cabal_src_configure \
-		--flags=with_threaded \
+		--flags=-with_threaded \
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag unicode with_utf8) \
 		$(cabal_flag mail with_inotify) \
