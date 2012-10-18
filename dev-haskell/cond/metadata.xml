@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides:
+		
+		* Implementations of various overloaded conditional operations
+		
+		* Lifted monadic variants of those operations and common boolean operators
+		
+		* A typeclass for boolean algebras.
+		
+		Feel free to send ideas and suggestions for new conditional operators to the
+		maintainer.
+		
+		Monadic looping constructs are not included as part of this package, since the
+		monad-loops package has a fairly complete collection of them already.
+	</longdescription>
+</pkgmetadata>
