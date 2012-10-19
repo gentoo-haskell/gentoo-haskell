@@ -72,7 +72,7 @@ src_prepare() {
 		-e 's@tar ==0\.3\.\*@tar@' \
 		-e 's@tar        == 0\.3\.\*@tar@' \
 		-i "${S}/${PN}.cabal"
-	epatch "${FILESDIR}/${P}-tar-0.4.patch"
+#	epatch "${FILESDIR}/${P}-tar-0.4.patch"
 }
 
 src_configure() {
