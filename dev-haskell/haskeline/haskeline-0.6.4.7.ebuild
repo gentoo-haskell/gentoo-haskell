@@ -26,4 +26,5 @@ RDEPEND=">=dev-haskell/mtl-1.1[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.6.4.7-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-0.6.4.7-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-0.6.4.7-ghc-7.6.patch")
