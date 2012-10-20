@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1[profile?]
 		>=dev-haskell/mtl-1.1[profile?]
 		<dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2[profile?]
-		<dev-haskell/network-2.4[profile?]
+		<dev-haskell/network-2.5[profile?]
 		>=dev-haskell/pandoc-types-1.9.0.2[profile?]
 		<dev-haskell/pandoc-types-1.10[profile?]
 		=dev-haskell/parsec-3.1*[profile?]
@@ -62,6 +62,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}/${P}-ghc76.patch"
 	sed -e 's@base64-bytestring >= 0.1 && < 0.2@base64-bytestring >= 0.1 \&\& < 1.1@g' \
+		-e 's@network >= 2 && < 2.4@network >= 2 \&\& < 2.5@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
