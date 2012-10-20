@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hscolour nocabaldep"
 inherit eutils haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
@@ -52,7 +52,12 @@ src_configure() {
 	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
 	chmod +x "${exe}"
 
-	haskell-cabal_src_configure --with-haddock="${exe}"
+	# we use 'nocabaldep' to use ghc's bundled Cabal
+	# as external one is likely to break our haddock
+	# (known to work on 1.16.0 and breaks on 1.16.0.1!)
+	haskell-cabal_src_configure \
+		--with-haddock="${exe}" \
+		--constraint="Cabal == $(cabal-version)"
 }
 
 src_compile() {
