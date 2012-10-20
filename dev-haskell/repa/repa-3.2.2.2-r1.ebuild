@@ -20,7 +20,13 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/quickcheck-2.3[profile?]
 		<dev-haskell/quickcheck-2.6[profile?]
-		=dev-haskell/vector-0.9*[profile?]
+		>=dev-haskell/vector-0.9[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-lang/ghc-7.6.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@vector               == 0.9.\*@vector               >= 0.9  \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
