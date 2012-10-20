@@ -39,6 +39,11 @@ DEPEND="${RDEPEND}
 		)
 	"
 
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag test tests)
+}
+
 pkg_postinst() {
 	ghc-package_pkg_postinst
 
