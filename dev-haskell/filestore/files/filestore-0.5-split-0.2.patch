@@ -1,0 +1,13 @@
+diff --git a/filestore.cabal b/filestore.cabal
+index c288089..b02d58d 100644
+--- a/filestore.cabal
++++ b/filestore.cabal
+@@ -42,7 +42,7 @@ Library
+                          process >= 1.0 && < 1.2,
+                          time >= 1.1 && < 1.5,
+                          xml >= 1.3 && < 1.4,
+-                         split >= 0.1 && < 0.2,
++                         split >= 0.1 && < 0.3,
+                          Diff >= 0.1.2 && < 0.2,
+                          old-locale >= 1.0 && < 1.1
+ 
