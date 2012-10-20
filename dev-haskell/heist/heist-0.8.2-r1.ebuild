@@ -37,11 +37,12 @@ RDEPEND="=dev-haskell/aeson-0.6*[profile?]
 		dev-haskell/transformers[profile?]
 		>=dev-haskell/unordered-containers-0.1.4[profile?]
 		<dev-haskell/unordered-containers-0.3[profile?]
-		=dev-haskell/vector-0.9*[profile?]
+		>=dev-haskell/vector-0.9[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-haskell/xmlhtml-0.1.6[profile?]
 		<dev-haskell/xmlhtml-0.3[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.8.1.1-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-0.8.2-ghc-7.6.patch")
