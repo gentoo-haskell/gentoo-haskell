@@ -1,12 +1,13 @@
 --- snap-loader-dynamic-0.9.0.1-orig/snap-loader-dynamic.cabal	2012-10-01 14:36:59.000000000 +1000
-+++ snap-loader-dynamic-0.9.0.1/snap-loader-dynamic.cabal	2012-10-11 19:39:08.764136239 +1100
++++ snap-loader-dynamic-0.9.0.1/snap-loader-dynamic.cabal	2012-10-20 21:09:56.107416081 +1100
 @@ -32,16 +32,16 @@
      hint              >= 0.3.3.1 && < 0.4,
      old-time          >= 1.0     && < 1.2,
      base              >= 4       && < 5,
 -    directory         >= 1.0     && < 1.2,
+-    directory-tree    >= 0.10    && < 0.11,
 +    directory         >= 1.0     && < 1.3,
-     directory-tree    >= 0.10    && < 0.11,
++    directory-tree    >= 0.10    && < 0.12,
      mtl               >  2.0     && < 2.2,
      snap-core         >= 0.9     && < 0.10,
      time              >= 1.1     && < 1.5,

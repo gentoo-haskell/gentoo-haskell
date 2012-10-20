@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/directory-tree-0.10*[profile?]
+RDEPEND=">=dev-haskell/directory-tree-0.10[profile?]
+		<dev-haskell/directory-tree-0.12[profile?]
 		>=dev-haskell/hint-0.3.3.1[profile?]
 		<dev-haskell/hint-0.4[profile?]
 		>dev-haskell/mtl-2.0[profile?]
