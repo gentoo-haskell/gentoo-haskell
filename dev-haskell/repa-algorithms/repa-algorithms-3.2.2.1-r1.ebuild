@@ -19,7 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/repa-3.2*[profile?]
-		=dev-haskell/vector-0.9*[profile?]
+		>=dev-haskell/vector-0.9[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@vector               == 0.9.\*@vector               >= 0.9  \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
