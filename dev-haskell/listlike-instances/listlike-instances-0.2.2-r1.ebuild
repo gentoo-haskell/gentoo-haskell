@@ -22,7 +22,12 @@ RDEPEND=">=dev-haskell/listlike-2.0[profile?]
 		<dev-haskell/listlike-4.0[profile?]
 		=dev-haskell/text-0.11*[profile?]
 		>=dev-haskell/vector-0.5[profile?]
-		<dev-haskell/vector-0.10[profile?]
+		<dev-haskell/vector-0.11[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@vector           >= 0.5  && < 0.10@vector           >= 0.5  \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
