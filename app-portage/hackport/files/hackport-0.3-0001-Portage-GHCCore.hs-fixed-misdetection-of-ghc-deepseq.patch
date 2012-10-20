@@ -1,0 +1,87 @@
+From 0fb9f5026e70577ddbd53a12302c54bef68a0360 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sat, 20 Oct 2012 19:12:39 +0300
+Subject: [PATCH] Portage/GHCCore.hs: fixed misdetection of ghc/deepseq
+ ghc/time
+
+Added funky output as well:
+> $ dist/build/hackport/hackport merge happstack-server
+> rejecting dep: ghc-6.10.4 as ["directory >=1.2"] were not found.
+> rejecting dep: ghc-6.12.1 as ["directory >=1.2"] were not found.
+> rejecting dep: ghc-6.12.2 as ["directory >=1.2"] were not found.
+> rejecting dep: ghc-6.12.3 as ["directory >=1.2"] were not found.
+> rejecting dep: ghc-7.0.1 as ["directory >=1.2"] were not found.
+> rejecting dep: ghc-7.4.2 as ["directory >=1.2"] were not found.
+> accepting dep: ghc-7.6.1
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ Portage/GHCCore.hs | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+diff --git a/Portage/GHCCore.hs b/Portage/GHCCore.hs
+index 31ced2c..41db456 100644
+--- a/Portage/GHCCore.hs
++++ b/Portage/GHCCore.hs
+@@ -20,6 +20,9 @@ import Distribution.Text
+ 
+ import Data.Maybe
+ import Data.List ( nub )
++import Data.Version
++
++import Debug.Trace
+ 
+ defaultGHC :: (CompilerId, [PackageName])
+ defaultGHC = let (g,pix) = ghc6123 in (g, packageNamesFromPackageIndex pix)
+@@ -71,8 +74,20 @@ packageBuildableWithGHCVersion
+   :: GenericPackageDescription
+   -> (CompilerId, PackageIndex)
+   -> Either [Dependency] (PackageDescription, FlagAssignment)
+-packageBuildableWithGHCVersion pkg (compiler, pkgIndex) =
++packageBuildableWithGHCVersion pkg (compiler, pkgIndex) = trace_failure $
+   finalizePackageDescription [] (dependencySatisfiable pkgIndex) platform compiler [] pkg
++    where trace_failure v = case v of
++              (Left deps) -> trace (unwords ["rejecting dep:" , show_compiler compiler
++                                            , "as", show_deps deps
++                                            , "were not found."
++                                            ]
++                                   ) v
++              _           -> trace (unwords ["accepting dep:" , show_compiler compiler
++                                            ]
++                                   ) v
++          show_deps = show . map display
++          show_compiler (CompilerId GHC v) = "ghc-" ++ showVersion v
++          show_compiler c = show c
+ 
+ -- | Given a 'GenericPackageDescription' it returns the miminum GHC version
+ -- to build a package, and a list of core packages to that GHC version.
+@@ -129,7 +144,7 @@ ghc761_pkgs =
+   , p "bytestring" [0,10,0,8]
+ --  , p "Cabal" [1,16,0]  package is upgradeable
+   , p "containers" [0,5,0,0]
+-  , p "deepseq" [1,3,0,1]
++--  , p "deepseq" [1,3,0,1] -- package is upgradeable
+   , p "directory" [1,2,0,0]
+   , p "filepath" [1,3,0,1]
+   , p "ghc-prim" [0,3,0,0]
+@@ -143,7 +158,7 @@ ghc761_pkgs =
+   , p "pretty" [1,1,1,0]
+   , p "process" [1,1,0,2]
+   , p "template-haskell" [2,8,0,0] -- used by libghc
+-  , p "time" [1,4,0,1] -- used by haskell98
++-- , p "time" [1,4,0,1] -- upgradeable, but used by haskell98
+   , p "unix" [2,6,0,0]
+   ]
+ 
+@@ -169,7 +184,7 @@ ghc742_pkgs =
+   , p "pretty" [1,1,1,0]
+   , p "process" [1,1,0,1]
+   , p "template-haskell" [2,7,0,0] -- used by libghc
+-  , p "time" [1,4] -- used by haskell98
++-- , p "time" [1,4] -- upgradeable, but used by haskell98
+   , p "unix" [2,5,1,1]
+   ]
+ 
+-- 
+1.7.12.4
+
