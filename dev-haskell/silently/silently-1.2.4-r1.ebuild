@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.4:="
+RDEPEND="dev-haskell/deepseq:=[profile?]
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/deepseq
-			dev-haskell/nanospec
+		test? ( dev-haskell/nanospec
 		)
 		>=dev-haskell/cabal-1.8"
