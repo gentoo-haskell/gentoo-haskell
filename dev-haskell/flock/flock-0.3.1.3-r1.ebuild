@@ -18,10 +18,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/lifted-base-0.1*[profile?]
+RDEPEND=">=dev-haskell/lifted-base-0.1[profile?]
+		<dev-haskell/lifted-base-0.3[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed	-e 's@lifted-base >= 0.1 && < 0.2@lifted-base >= 0.1 \&\& < 0.3@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
