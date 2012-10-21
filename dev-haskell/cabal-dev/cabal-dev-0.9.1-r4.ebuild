@@ -21,7 +21,8 @@ DEPEND="${RDEPEND}
 		<dev-haskell/cabal-1.17
 		>=dev-haskell/http-4000.0.9 <dev-haskell/http-4000.3
 		<dev-haskell/mtl-2.2
-		=dev-haskell/network-2.3*
+		>=dev-haskell/network-2.3
+		<dev-haskell/network-2.5
 		=dev-haskell/tar-0.4*
 		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		=dev-haskell/zlib-0.5*
@@ -41,5 +42,6 @@ src_prepare() {
 		-e 's@Cabal >= 1.10.0.0 && < 1.15@Cabal@' \
 		-e 's@Cabal >=1.2 && < 1.15@Cabal@' \
 		-e 's@bytestring >= 0.9 && < 0.10@bytestring@' \
+		-e 's@network >= 2.2 && < 2.4@network >= 2.2 \&\& < 2.5@' \
 		-i "${S}/${PN}.cabal"
 }
