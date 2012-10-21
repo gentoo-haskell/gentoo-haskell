@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-haskell/http-4000.0.5:=[profile?]
 		<dev-haskell/http-4000.3:=[profile?]
 		>=dev-haskell/json-0.4:=[profile?]
-		<dev-haskell/json-0.6:=[profile?]
+		<dev-haskell/json-0.8:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/network-2:=[profile?]
@@ -62,6 +62,7 @@ src_prepare() {
 	sed -e 's@base64-bytestring >= 0.1 && < 0.2@base64-bytestring >= 0.1 \&\& < 1.1@g' \
 		-e 's@network >= 2 && < 2.4@network >= 2 \&\& < 2.5@g' \
 		-e 's@template-haskell >= 2.4 && < 2.8@template-haskell >= 2.4 \&\& < 2.9@g' \
+		-e 's@json >= 0.4 && < 0.6@json >= 0.4 \&\& < 0.8@g' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
