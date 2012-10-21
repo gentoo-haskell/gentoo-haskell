@@ -27,3 +27,9 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	# encoding build fails with binary 0.6 as lookAhead was removed
+	sed -e 's@binary@binary < 0.6@' \
+		-i "${S}/${PN}.cabal" || die "Could not tighten binary dependency"
+}
