@@ -140,6 +140,16 @@ append-ghc-cflags() {
 }
 
 ghc_setup_cflags() {
+	if is_crosscompile; then
+		export CFLAGS=${GHC_CFLAGS-"-O2 -pipe"}
+		export LDFLAGS=${GHC_LDFLAGS-"-Wl,-O1"}
+		einfo "Crosscompiling mode:"
+		einfo "   CHOST:   ${CHOST}"
+		einfo "   CTARGET: ${CTARGET}"
+		einfo "   CFLAGS:  ${CFLAGS}"
+		einfo "   LDFLAGS: ${LDFLAGS}"
+		return
+	fi
 	# We need to be very careful with the CFLAGS we ask ghc to pass through to
 	# gcc. There are plenty of flags which will make gcc produce output that
 	# breaks ghc in various ways. The main ones we want to pass through are
