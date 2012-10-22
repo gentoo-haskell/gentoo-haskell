@@ -16,11 +16,10 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/diff-0.1.2:=[profile?]
 		<dev-haskell/diff-0.2:=[profile?]
-		dev-haskell/filestore:=[profile?]
 		=dev-haskell/hunit-1.2*:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parsec-2:=[profile?]
