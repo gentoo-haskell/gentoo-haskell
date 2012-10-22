@@ -34,3 +34,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	haskell-cabal_src_configure --disable-tests # they fail to build
+}
