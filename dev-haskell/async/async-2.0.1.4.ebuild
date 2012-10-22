@@ -27,9 +27,3 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed	-e 's@base >= 4.3 && < 4.7@base >= 4.3 \&\& < 5.0@' \
-		-e 's@base >= 4.3 && < 4.6@base >= 4.3 \&\& < 5.0@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
