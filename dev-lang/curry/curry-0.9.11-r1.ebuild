@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI="4"
 
 inherit base flag-o-matic
 
@@ -23,19 +23,13 @@ PATCHES=("${FILESDIR}/${P}-nostrip.patch"
 	"${FILESDIR}/${P}-nonascii-chars.patch"
 	"${FILESDIR}/${P}-fix-make-check.patch"
 	"${FILESDIR}/${P}-fix-modern-ghc-configure.patch"
-	"${FILESDIR}/${P}-fix-modern-ghc-replicateM.patch")
+	"${FILESDIR}/${P}-ghc-7.6.patch")
 
 src_configure() {
 	filter-flags "-O3 -finline-function"
 	# The option -finline-function [which is included in -O3] breaks MCC.
 
 	econf --enable-trampoline || die "econf failed"
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	sed -i -f ${FILESDIR}/${P}-fix-modern-ghc-imports.sed *.hs *.lhs */*.lhs
 }
 
 src_install() {

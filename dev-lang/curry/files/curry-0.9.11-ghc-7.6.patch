@@ -1,0 +1,870 @@
+--- curry-0.9.11-orig/unix/PathUtils.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/unix/PathUtils.lhs	2012-10-23 21:24:50.940179140 +1100
+@@ -19,7 +19,7 @@
+ > module PathUtils(pathSep,curDirPath, isRelative,isAbsolute,
+ >                  dirname,basename, rootname,extension, catPath,
+ >                  listSep, pathList, lookupFile) where
+-> import Directory
++> import System.Directory
+ 
+ \end{verbatim}
+ With Unix style path semantics, components of a path name are
+--- curry-0.9.11-orig/windows/PathUtils.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/windows/PathUtils.lhs	2012-10-23 21:24:50.941179166 +1100
+@@ -13,7 +13,7 @@
+ > module PathUtils(pathSep,curDirPath, isRelative,isAbsolute,
+ >                  dirname,basename, rootname,extension, catPath,
+ >                  listSep, pathList, lookupFile) where
+-> import Directory
++> import System.Directory
+ 
+ \end{verbatim}
+ We assume that on Windows systems components of a path name are
+--- curry-0.9.11-orig/GetOpt.hs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/GetOpt.hs	2012-10-23 21:24:50.793175198 +1100
+@@ -19,7 +19,7 @@
+ 
+ module GetOpt (ArgOrder(..), OptDescr(..), ArgDescr(..), usageInfo, getOpt) where
+ 
+-import List(isPrefixOf)
++import Data.List(isPrefixOf)
+ 
+ data ArgOrder a                        -- what to do with options following non-options:
+    = RequireOrder                      --    no option processing after first non-option
+--- curry-0.9.11-orig/cycc.hs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/cycc.hs	2012-10-23 21:24:50.794175225 +1100
+@@ -1,3 +1,4 @@
++{-# LANGUAGE ScopedTypeVariables #-}
+ -- $Id: cycc.hs 1963 2006-08-28 11:57:32Z wlux $
+ --
+ -- Copyright (c) 1999-2006, Wolfgang Lux
+@@ -9,10 +10,13 @@
+ import Combined
+ import Error
+ import GetOpt
+-import IO
+-import List
+-import Maybe
+-import System
++import System.IO
++import Data.List
++import Data.Maybe
++import System.Environment
++import System.Exit
++import Prelude hiding (catch)
++import Control.Exception
+ 
+ main :: IO ()
+ main =
+@@ -20,7 +24,7 @@
+     prog <- getProgName
+     args <- getArgs
+     importPath <- catch (getEnv "CURRY_IMPORT_PATH" >>= return . pathList)
+-                        (const (return []))
++                        (\(_::IOException) ->  (return []))
+     cyc prog args importPath
+ 
+ cyc :: String -> [String] -> [FilePath] -> IO ()
+--- curry-0.9.11-orig/cymk.hs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/cymk.hs	2012-10-23 21:24:50.794175225 +1100
+@@ -1,3 +1,4 @@
++{-# LANGUAGE ScopedTypeVariables #-}
+ -- $Id: cymk.hs 2226 2007-06-01 15:58:58Z wlux $
+ --
+ -- Copyright (c) 2002-2007, Wolfgang Lux
+@@ -5,11 +6,14 @@
+ 
+ import CurryDeps
+ import GetOpt
+-import Maybe
+-import Monad
+-import IO
++import Data.Maybe
++import Control.Monad
++import System.IO
+ import PathUtils
+-import System
++import System.Environment
++import System.Exit
++import Prelude hiding (catch)
++import Control.Exception
+ 
+ data Options =
+   Options{
+@@ -76,7 +80,7 @@
+     prog <- getProgName
+     args <- getArgs
+     importPath <- catch (getEnv "CURRY_IMPORT_PATH" >>= return . pathList)
+-                        (const (return []))
++                        (\(_::IOException) -> (return []))
+     cymk prog args importPath
+ 
+ cymk :: String -> [String] -> [FilePath] -> IO ()
+--- curry-0.9.11-orig/Base.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Base.lhs	2012-10-23 21:24:50.798175334 +1100
+@@ -19,9 +19,9 @@
+ > import Env
+ > import TopEnv
+ > import NestEnv
+-> import List
+-> import Maybe
+-> import Monad
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import Set
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/CCode.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CCode.lhs	2012-10-23 21:24:50.799175360 +1100
+@@ -15,8 +15,8 @@
+ \begin{verbatim}
+ 
+ > module CCode where
+-> import List
+-> import Maybe
++> import Data.List
++> import Data.Maybe
+ > infixl 9 `CElem`,`CField`
+ > infixr 8 `CCast`
+ > infixl 7 `CMul`,`CDiv`,`CMod`
+--- curry-0.9.11-orig/CGen.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CGen.lhs	2012-10-23 21:24:50.809175628 +1100
+@@ -13,10 +13,10 @@
+ > import CCode
+ > import CPS
+ > import CElim
+-> import Char
+-> import List
++> import Data.Char
++> import Data.List
+ > import Map
+-> import Maybe
++> import Data.Maybe
+ > import Set
+ > import Utils
+ 
+--- curry-0.9.11-orig/CPS.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CPS.lhs	2012-10-23 21:24:50.810175655 +1100
+@@ -12,7 +12,7 @@
+ >            CaseBlock(..), CPSTag(..), CPSStmt(..),
+ >            cpsFunction, cpsApply, cpsInst, cpsEnv, contVars) where
+ > import Cam
+-> import List
++> import Data.List
+ > import Set
+ > import SCC
+ 
+--- curry-0.9.11-orig/CPretty.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CPretty.lhs	2012-10-23 21:24:50.812175710 +1100
+@@ -18,7 +18,7 @@
+ 
+ > import CCode
+ > import Pretty
+-> import List
++> import Data.List
+ 
+ > ppCFile :: CFile -> Doc
+ > ppCFile = vsep . map ppTopDecl
+--- curry-0.9.11-orig/Cam.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/Cam.lhs	2012-10-23 21:24:50.814175762 +1100
+@@ -10,7 +10,7 @@
+ \begin{verbatim}
+ 
+ > module Cam where
+-> import Char
++> import Data.Char
+ 
+ \end{verbatim}
+ An abstract machine code module consists of a list of import, data,
+--- curry-0.9.11-orig/CamPP.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/CamPP.lhs	2012-10-23 21:24:50.814175762 +1100
+@@ -9,7 +9,7 @@
+ 
+ > module CamPP where
+ > import Cam
+-> import Char
++> import Data.Char
+ > import Pretty
+ 
+ > default(Int)
+--- curry-0.9.11-orig/CamParser.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/CamParser.lhs	2012-10-23 21:24:50.817175844 +1100
+@@ -17,8 +17,8 @@
+ > import LexComb
+ > import LLParseComb
+ > import Map
+-> import Char
+-> import Maybe
++> import Data.Char
++> import Data.Maybe
+ > import Error
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/CaseCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/CaseCheck.lhs	2012-10-23 21:24:50.818175871 +1100
+@@ -35,8 +35,8 @@
+ 
+ > module CaseCheck(caseCheck,caseCheckGoal) where
+ > import Base
+-> import Char
+-> import List
++> import Data.Char
++> import Data.List
+ > import Options
+ 
+ > data Case =
+--- curry-0.9.11-orig/Combined.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/Combined.lhs	2012-10-23 21:24:50.820175923 +1100
+@@ -19,8 +19,8 @@
+ 
+ > module Combined where
+ > import Error
+-> import Monad
+-> import IO
++> import Control.Monad
++> import System.IO
+ > import IOExts
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/CurryDeps.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CurryDeps.lhs	2012-10-23 21:24:50.822175976 +1100
+@@ -18,11 +18,11 @@
+ > import CurryParser(parseHeader)
+ > import SCC
+ > import Env
+-> import List
+-> import Maybe
+-> import Monad
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import Error
+-> import IO
++> import System.IO
+ > import PathUtils
+ 
+ > data Source = Source FilePath [ModuleIdent]
+--- curry-0.9.11-orig/CurryLexer.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/CurryLexer.lhs	2012-10-23 21:24:50.826176084 +1100
+@@ -14,8 +14,8 @@
+ > import LexComb
+ > import Position
+ > import Map
+-> import Char
+-> import List
++> import Data.Char
++> import Data.List
+ 
+ \end{verbatim}
+ \paragraph{Tokens} Note that the equality and ordering instances of
+--- curry-0.9.11-orig/CurryPP.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/CurryPP.lhs	2012-10-23 21:24:50.828176137 +1100
+@@ -14,7 +14,7 @@
+ > module CurryPP(module CurryPP, Doc) where
+ > import Ident
+ > import CurrySyntax
+-> import Char
++> import Data.Char
+ > import Pretty
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/DTransform.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/DTransform.lhs	2012-10-23 21:24:50.840176459 +1100
+@@ -21,8 +21,8 @@
+ 
+ > module DTransform(dTransform, dAddMain) where
+ > import Ident
+-> import Maybe
+-> import List
++> import Data.Maybe
++> import Data.List
+ > import IL
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/Desugar.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Desugar.lhs	2012-10-23 21:24:50.844176567 +1100
+@@ -51,8 +51,8 @@
+ > module Desugar(desugar,goalModule) where
+ > import Base
+ > import Combined
+-> import List
+-> import Monad
++> import Data.List
++> import Control.Monad
+ > import TopEnv
+ > import Typing
+ > import Utils
+--- curry-0.9.11-orig/Error.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/Error.lhs	2012-10-23 21:24:50.845176594 +1100
+@@ -13,8 +13,8 @@
+ \begin{verbatim}
+ 
+ > module Error where
+-> import List
+-> import Monad
++> import Data.List
++> import Control.Monad
+ 
+ > infixl 1 &&&, &&>
+ 
+--- curry-0.9.11-orig/ExportSyntaxCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/ExportSyntaxCheck.lhs	2012-10-23 21:24:50.846176621 +1100
+@@ -16,9 +16,9 @@
+ > module ExportSyntaxCheck(checkExports) where
+ > import Base
+ > import Error
+-> import List
++> import Data.List
+ > import Map
+-> import Maybe
++> import Data.Maybe
+ > import Set
+ > import TopEnv
+ 
+--- curry-0.9.11-orig/ILCompile.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/ILCompile.lhs	2012-10-23 21:24:50.852176780 +1100
+@@ -15,10 +15,10 @@
+ > import IL
+ > import qualified Cam
+ > import Env
+-> import List
++> import Data.List
+ > import Map
+-> import Maybe
+-> import Monad
++> import Data.Maybe
++> import Control.Monad
+ > import SCC
+ > import Combined
+ > import Utils
+--- curry-0.9.11-orig/ILLift.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/ILLift.lhs	2012-10-23 21:24:50.853176808 +1100
+@@ -15,8 +15,8 @@
+ > import IL
+ > import Ident
+ > import Combined
+-> import List
+-> import Monad
++> import Data.List
++> import Control.Monad
+ > import Utils
+ 
+ > type LiftState a = St [QualIdent] a
+--- curry-0.9.11-orig/ILTrans.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/ILTrans.lhs	2012-10-23 21:24:50.856176889 +1100
+@@ -21,8 +21,8 @@
+ > import Base
+ > import qualified IL
+ > import Env
+-> import Maybe
+-> import List
++> import Data.Maybe
++> import Data.List
+ > import Set
+ > import TypeTrans
+ > import Utils
+--- curry-0.9.11-orig/Ident.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/Ident.lhs	2012-10-23 21:24:50.858176943 +1100
+@@ -41,8 +41,8 @@
+ >              qSuccessId,qPtrId,qFunPtrId,qStablePtrId,
+ >              qTrueId,qFalseId,qNilId,qConsId,
+ >              qTupleId,isQTupleId,qTupleArity,isQSelectorId) where
+-> import Char
+-> import List
++> import Data.Char
++> import Data.List
+ 
+ > data Ident = Ident String Int deriving (Eq,Ord)
+ > data QualIdent = UnqualIdent Ident | QualIdent ModuleIdent Ident
+--- curry-0.9.11-orig/ImportSyntaxCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/ImportSyntaxCheck.lhs	2012-10-23 21:24:50.859176969 +1100
+@@ -15,8 +15,8 @@
+ > import Base
+ > import Error
+ > import Env
+-> import List
+-> import Maybe
++> import Data.List
++> import Data.Maybe
+ 
+ > checkImports :: Interface -> Maybe ImportSpec -> Error (Maybe ImportSpec)
+ > checkImports (Interface m _ ds) =
+--- curry-0.9.11-orig/Imports.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Imports.lhs	2012-10-23 21:24:50.861177022 +1100
+@@ -12,7 +12,7 @@
+ 
+ > module Imports(importInterface,importInterfaceIntf,importUnifyData) where
+ > import Base
+-> import Maybe
++> import Data.Maybe
+ > import Map
+ > import Set
+ > import TopEnv
+--- curry-0.9.11-orig/IntfCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/IntfCheck.lhs	2012-10-23 21:24:50.862177050 +1100
+@@ -48,8 +48,8 @@
+ > module IntfCheck(intfCheck) where
+ > import Base
+ > import Error
+-> import Maybe
+-> import Monad
++> import Data.Maybe
++> import Control.Monad
+ > import TopEnv
+ > import TypeTrans
+ 
+--- curry-0.9.11-orig/IntfEquiv.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/IntfEquiv.lhs	2012-10-23 21:24:50.863177077 +1100
+@@ -21,7 +21,7 @@
+ 
+ > module IntfEquiv(fixInterface, intfEquiv) where
+ > import Base
+-> import List
++> import Data.List
+ > import Set
+ 
+ > infix 4 =~=, `eqvList`, `eqvSet`
+--- curry-0.9.11-orig/IntfSyntaxCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/IntfSyntaxCheck.lhs	2012-10-23 21:24:50.864177103 +1100
+@@ -19,9 +19,9 @@
+ > module IntfSyntaxCheck(intfSyntaxCheck) where
+ > import Base
+ > import Error
+-> import List
+-> import Maybe
+-> import Monad
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import TopEnv
+ 
+ > intfSyntaxCheck :: [IDecl] -> Error [IDecl]
+--- curry-0.9.11-orig/KindCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/KindCheck.lhs	2012-10-23 21:24:50.865177129 +1100
+@@ -18,7 +18,7 @@
+ > import Base
+ > import CurryPP
+ > import Error
+-> import Monad
++> import Control.Monad
+ > import Pretty
+ > import SCC
+ > import TopEnv
+--- curry-0.9.11-orig/LLParseComb.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/LLParseComb.lhs	2012-10-23 21:24:50.867177184 +1100
+@@ -30,8 +30,8 @@
+ > import Position
+ > import Set
+ > import Map
+-> import Maybe
+-> import Monad
++> import Data.Maybe
++> import Control.Monad
+ > import Error
+ > import LexComb
+ 
+--- curry-0.9.11-orig/LexComb.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/LexComb.lhs	2012-10-23 21:24:50.868177211 +1100
+@@ -20,7 +20,7 @@
+ > import Prelude hiding(lex)
+ > import Position
+ > import Error
+-> import Char
++> import Data.Char
+ > import Numeric
+ 
+ > infixl 1 `thenL`, `thenL_`
+--- curry-0.9.11-orig/Lift.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Lift.lhs	2012-10-23 21:24:50.870177263 +1100
+@@ -24,8 +24,8 @@
+ > import Env
+ > import TopEnv
+ > import Combined
+-> import List
+-> import Monad
++> import Data.List
++> import Control.Monad
+ > import SCC
+ > import Set
+ > import Subst
+--- curry-0.9.11-orig/MachInterp.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/MachInterp.lhs	2012-10-23 21:24:50.880177531 +1100
+@@ -24,11 +24,11 @@
+ > import MachSpace
+ > import MachThreads
+ > import MachResult
+-> import Char
++> import Data.Char
+ > import Env
+-> import Monad
++> import Control.Monad
+ > import Combined
+-> import IO
++> import System.IO
+ 
+ \end{verbatim}
+ \subsubsection{Creating Nodes}
+--- curry-0.9.11-orig/MachLoader.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/MachLoader.lhs	2012-10-23 21:24:50.882177586 +1100
+@@ -20,10 +20,10 @@
+ > import Cam
+ > import MachTypes
+ > import MachInterp
+-> import Char
+-> import List
++> import Data.Char
++> import Data.List
+ > import Env
+-> import Monad
++> import Control.Monad
+ > import Combined
+ > import Utils
+ 
+--- curry-0.9.11-orig/MachResult.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/MachResult.lhs	2012-10-23 21:24:50.884177639 +1100
+@@ -19,9 +19,9 @@
+ > module MachResult where
+ > import MachTypes
+ > import MachNode
+-> import List
++> import Data.List
+ > import Set
+-> import Monad
++> import Control.Monad
+ > import Error
+ > import Combined
+ 
+--- curry-0.9.11-orig/MachThreads.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/MachThreads.lhs	2012-10-23 21:24:50.886177692 +1100
+@@ -20,7 +20,7 @@
+ >     saveContinuation, restoreContinuation, resumeContinuation) where
+ > import MachTypes
+ > import Env
+-> import Maybe
++> import Data.Maybe
+ > import Combined
+ 
+ > newThread :: Monad m => State -> m State
+--- curry-0.9.11-orig/Map.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/Map.lhs	2012-10-23 21:24:50.890177799 +1100
+@@ -11,7 +11,7 @@
+ 
+ > module Map(FM, nullFM, zeroFM, unitFM, addToFM, deleteFromFM,
+ >            lookupFM, fromListFM, toListFM) where
+-> import List
++> import Data.List
+ 
+ \end{verbatim}
+ A 2-3 tree is either empty or a node with either two or three children
+--- curry-0.9.11-orig/Modules.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Modules.lhs	2012-10-23 21:24:50.894177907 +1100
+@@ -9,6 +9,7 @@
+ This module controls the compilation of modules.
+ \begin{verbatim}
+ 
++> {-# LANGUAGE ScopedTypeVariables #-}
+ > module Modules(compileModule,compileGoal,typeGoal) where
+ > import Base
+ > import Unlit(unlit)
+@@ -51,15 +52,17 @@
+ > import TopEnv
+ > import Combined
+ > import Error
+-> import IO
+-> import List
+-> import Maybe
+-> import Monad
++> import System.IO
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import PathUtils
+ > import Pretty
+ > import TypeTrans
+ > import Typing
+ > import Utils
++> import Prelude hiding (catch)
++> import Control.Exception
+ 
+ \end{verbatim}
+ The function \texttt{compileModule} is the main entry point of this
+@@ -498,7 +501,7 @@
+ > updateInterface :: FilePath -> Interface -> IO ()
+ > updateInterface sfn i =
+ >   do
+->     eq <- catch (matchInterface ifn i) (const (return False))
++>     eq <- catch (matchInterface ifn i) (\(_::IOException) -> (return False))
+ >     unless eq (writeInterface ifn i)
+ >   where ifn = interfaceName sfn
+ 
+--- curry-0.9.11-orig/OverlapCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/OverlapCheck.lhs	2012-10-23 21:24:50.897177988 +1100
+@@ -13,7 +13,7 @@
+ 
+ > module OverlapCheck(overlapCheck, overlapCheckGoal) where
+ > import Base
+-> import List
++> import Data.List
+ > import Options
+ 
+ > overlapCheck :: [Warn] -> Module -> [String]
+--- curry-0.9.11-orig/PrecCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/PrecCheck.lhs	2012-10-23 21:24:50.899178041 +1100
+@@ -16,7 +16,7 @@
+ > module PrecCheck(precCheck,precCheckGoal) where
+ > import Base
+ > import Error
+-> import Maybe
++> import Data.Maybe
+ > import TopEnv
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/Pretty.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/Pretty.lhs	2012-10-23 21:24:50.904178175 +1100
+@@ -180,7 +180,7 @@
+ 
+ -- Don't import Util( assertPanic ) because it makes a loop in the module structure
+ 
+-import Ratio
++import Data.Ratio
+ infixl 6 <> 
+ infixl 6 <+>
+ infixl 5 $$, $+$
+--- curry-0.9.11-orig/Renaming.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Renaming.lhs	2012-10-23 21:24:50.907178256 +1100
+@@ -26,8 +26,8 @@
+ > import Base
+ > import Combined
+ > import Env
+-> import Maybe
+-> import Monad
++> import Data.Maybe
++> import Control.Monad
+ > import Utils
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/Set.lhs	2007-06-15 22:16:36.000000000 +1000
++++ curry-0.9.11/Set.lhs	2012-10-23 21:24:50.908178283 +1100
+@@ -11,9 +11,9 @@
+ \begin{verbatim}
+ 
+ > module Set where
+-> import List
++> import Data.List
+ > import Map
+-> import Maybe
++> import Data.Maybe
+ 
+ > infixl 8 `addToSet`, `deleteFromSet`
+ > infixl 7 `unionSet`, `intersectionSet`
+--- curry-0.9.11-orig/Simplify.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Simplify.lhs	2012-10-23 21:24:50.913178417 +1100
+@@ -26,7 +26,7 @@
+ > import Base
+ > import Combined
+ > import Env
+-> import Monad
++> import Control.Monad
+ > import SCC
+ > import TopEnv
+ > import TypeSubst
+--- curry-0.9.11-orig/SyntaxCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/SyntaxCheck.lhs	2012-10-23 21:24:50.917178524 +1100
+@@ -18,12 +18,12 @@
+ 
+ > module SyntaxCheck(syntaxCheck,syntaxCheckGoal) where
+ > import Base
+-> import Char
++> import Data.Char
+ > import CurryPP
+ > import Error
+-> import List
+-> import Maybe
+-> import Monad
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import NestEnv
+ > import Pretty
+ > import Utils
+--- curry-0.9.11-orig/TopEnv.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/TopEnv.lhs	2012-10-23 21:24:50.918178551 +1100
+@@ -44,7 +44,7 @@
+ >               allImports, moduleImports, localBindings) where
+ > import Env
+ > import Ident
+-> import Maybe
++> import Data.Maybe
+ > import Utils
+ 
+ > data TopEnv a = TopEnv (Maybe [a]) (Env QualIdent [(Source,a)])
+--- curry-0.9.11-orig/TypeCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/TypeCheck.lhs	2012-10-23 21:24:50.925178738 +1100
+@@ -30,8 +30,8 @@
+ > import TypeTrans
+ > import Combined
+ > import Error
+-> import List
+-> import Monad
++> import Data.List
++> import Control.Monad
+ > import SCC
+ > import Set
+ > import Utils
+@@ -910,9 +910,6 @@
+ >   where tvs = [tv | tv <- nub (typeVars ty), tv `notElemSet` gvs]
+ >         tvs' = map TypeVariable [0..]
+ 
+-> replicateM :: Monad m => Int -> m a -> m [a]
+-> replicateM n = sequence . replicate n
+-
+ \end{verbatim}
+ \paragraph{Auxiliary Functions}
+ \begin{verbatim}
+--- curry-0.9.11-orig/TypeSubst.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/TypeSubst.lhs	2012-10-23 21:24:50.926178765 +1100
+@@ -12,8 +12,8 @@
+ > module TypeSubst(module TypeSubst, idSubst,bindSubst,compose) where
+ > import Base
+ > import TopEnv
+-> import Maybe
+-> import List
++> import Data.Maybe
++> import Data.List
+ > import Subst
+ 
+ > type TypeSubst = Subst Int Type
+--- curry-0.9.11-orig/TypeSyntaxCheck.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/TypeSyntaxCheck.lhs	2012-10-23 21:24:50.928178819 +1100
+@@ -18,7 +18,7 @@
+ > import Base
+ > import CurryPP
+ > import Error
+-> import List
++> import Data.List
+ > import Pretty
+ > import TopEnv
+ 
+--- curry-0.9.11-orig/TypeTrans.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/TypeTrans.lhs	2012-10-23 21:24:50.929178846 +1100
+@@ -15,7 +15,7 @@
+ >                  ppType, ppTypeScheme) where
+ > import Base
+ > import CurryPP
+-> import List
++> import Data.List
+ > import Map
+ > import Pretty
+ > import TopEnv
+--- curry-0.9.11-orig/Types.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Types.lhs	2012-10-23 21:24:50.930178872 +1100
+@@ -12,7 +12,7 @@
+ 
+ > module Types where
+ > import Ident
+-> import List
++> import Data.List
+ 
+ \end{verbatim}
+ A type is either a type variable, an application of a type constructor
+--- curry-0.9.11-orig/Typing.lhs	2007-06-15 22:16:34.000000000 +1000
++++ curry-0.9.11/Typing.lhs	2012-10-23 21:24:50.932178924 +1100
+@@ -12,7 +12,7 @@
+ > import Base
+ > import TypeSubst
+ > import Combined
+-> import Monad
++> import Control.Monad
+ > import TopEnv
+ > import Utils
+ 
+--- curry-0.9.11-orig/Unlit.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/Unlit.lhs	2012-10-23 21:24:50.932178924 +1100
+@@ -21,7 +21,7 @@
+ \begin{verbatim}
+ 
+ > module Unlit(unlit) where
+-> import Char
++> import Data.Char
+ > import Position
+ 
+ \end{verbatim}
+--- curry-0.9.11-orig/cam2c.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/cam2c.lhs	2012-10-23 21:24:50.935179006 +1100
+@@ -17,13 +17,14 @@
+ > import CPretty
+ > import Pretty                -- required to import Show Doc instance with hbc
+ > import Error
+-> import IO
+-> import List
+-> import Maybe
+-> import Monad
++> import System.IO
++> import Data.List
++> import Data.Maybe
++> import Control.Monad
+ > import GetOpt
+ > import PathUtils
+-> import System
++> import System.Environment
++> import System.Exit
+ 
+ > main :: IO ()
+ > main =
+--- curry-0.9.11-orig/mach.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/mach.lhs	2012-10-23 21:24:50.937179060 +1100
+@@ -18,13 +18,14 @@
+ > import CamParser
+ > import MachInterp
+ > import MachLoader
+-> import Char
++> import Data.Char
+ > import GetOpt
+-> import Monad
++> import Control.Monad
+ > import Error
+ > import Combined
+-> import IO
+-> import System
++> import System.IO
++> import System.Environment
++> import System.Exit
+ 
+ > data Option =
+ >     Help
+--- curry-0.9.11-orig/newer.lhs	2007-06-15 22:16:35.000000000 +1000
++++ curry-0.9.11/newer.lhs	2012-10-23 21:24:50.938179087 +1100
+@@ -24,10 +24,14 @@
+ code 2.
+ \begin{verbatim}
+ 
+-> import IO
+-> import Directory
+-> import System
+-> import Time
++> {-# LANGUAGE ScopedTypeVariables #-}
++> import System.IO
++> import System.Directory
++> import System.Environment
++> import System.Exit
++> import System.Time
++> import Prelude hiding(catch)
++> import Control.Exception
+ 
+ > main =
+ >   do
+@@ -44,11 +48,11 @@
+ > newer prog [] = badUsage prog
+ > newer prog (file:deps) =
+ >   catch (do t <- getModificationTime file; allM (isNewer t) deps)
+->         (const (return False))
++>         (\(_::IOException) -> (return False))
+ 
+ > isNewer t file =
+ >   catch (do t' <-  getModificationTime file; return (t > t'))
+->         (\ioe -> do print ioe; exitWith (ExitFailure 2))
++>         (\(ioe::IOException) -> do print ioe; exitWith (ExitFailure 2))
+ 
+ > allM :: Monad m => (a -> m Bool) -> [a] -> m Bool
+ > allM f xs = andM (map f xs)
