@@ -16,6 +16,3 @@ index 83c625c..29e6b04 100644
  module Plugin.Pl.Common (
          Fixity(..), Expr(..), Pattern(..), Decl(..), TopLevel(..),
          bt, sizeExpr, mapTopLevel, getExpr,
-diff --git a/dist/build/lambdabot/lambdabot-tmp/Plugin/Pl/Common.hi b/dist/build/lambdabot/lambdabot-tmp/Plugin/Pl/Common.hi
-index 2bef562..48fbd52 100644
-Binary files a/dist/build/lambdabot/lambdabot-tmp/Plugin/Pl/Common.hi and b/dist/build/lambdabot/lambdabot-tmp/Plugin/Pl/Common.hi differ
