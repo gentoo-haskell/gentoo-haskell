@@ -1,8 +1,0 @@
---- distributed-process-simplelocalnet-0.2.0.6-orig/src/Control/Distributed/Process/Backend/SimpleLocalnet/Internal/Multicast.hs	2012-10-04 00:20:25.000000000 +1000
-+++ distributed-process-simplelocalnet-0.2.0.6/src/Control/Distributed/Process/Backend/SimpleLocalnet/Internal/Multicast.hs	2012-10-11 14:29:32.801605289 +1100
-@@ -1,4 +1,5 @@
- -- | Multicast utilities
-+{-# LANGUAGE CPP #-}
- {-# OPTIONS_GHC -fno-warn-orphans #-}
- module Control.Distributed.Process.Backend.SimpleLocalnet.Internal.Multicast (initMulticast) where
- 
