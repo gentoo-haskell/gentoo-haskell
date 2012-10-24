@@ -1,0 +1,47 @@
+diff --git a/Lambdabot/Signals.hs b/Lambdabot/Signals.hs
+index 22ceafb..7c9eb89 100644
+--- a/Lambdabot/Signals.hs
++++ b/Lambdabot/Signals.hs
+@@ -30,7 +30,7 @@ import Lambdabot.Util
+ import Data.Typeable
+ 
+ import Control.Concurrent (myThreadId, newEmptyMVar, putMVar, MVar, ThreadId)
+-import Control.OldException (throwDynTo)
++import qualified Control.Exception.Extensible as E
+ import Control.Monad.Error
+ 
+ import System.IO.Unsafe
+@@ -38,7 +38,9 @@ import System.Posix.Signals
+ 
+ -- A new type for the SignalException, must be Typeable so we can make a
+ -- dynamic exception out of it.
+-newtype SignalException = SignalException Signal deriving Typeable
++newtype SignalException = SignalException Signal deriving (Typeable, Show)
++
++instance E.Exception SignalException where
+ 
+ --
+ -- A bit of sugar for installing a new handler
+@@ -99,7 +101,7 @@ ircSignalHandler threadid s
+   = CatchOnce $ do
+         putMVar catchLock ()
+         releaseSignals
+-        throwDynTo threadid $ SignalException s
++        E.throwTo threadid $ SignalException s
+ 
+ --
+ -- | Release all signal handlers
+diff --git a/lambdabot-utils.cabal b/lambdabot-utils.cabal
+index d7be197..b2c8442 100644
+--- a/lambdabot-utils.cabal
++++ b/lambdabot-utils.cabal
+@@ -26,7 +26,8 @@ Homepage:            http://haskell.org/haskellwiki/Lambdabot
+ build-type:          Simple
+ 
+ Build-depends:   base >= 4 && < 5, haskell-src, containers, zlib, bytestring, mtl, syb,
+-                 regex-compat, regex-posix, process, network, old-time, binary, unix, random, tagsoup>0.6, utf8-string
++                 regex-compat, regex-posix, process, network, old-time, binary, unix, random, tagsoup>=0.6, utf8-string,
++                 extensible-exceptions
+ Exposed-modules: Lambdabot.FixPrecedence, Lambdabot.Serial,
+                  Lambdabot.Error, Lambdabot.Url, Lambdabot.Process,
+                  Lambdabot.Regex, Lambdabot.MiniHTTP, Lambdabot.AltTime,
