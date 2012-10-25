@@ -745,6 +745,8 @@ pkg_postinst() {
 	ewarn "For portage place lines like these in /etc/portage/package.keywords"
 	ewarn "=dev-haskell/time-1.4.0.1*"
 	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
+	ewarn "=dev-haskell/cabal-2.17.0_p$(get_version_component_range 3) **"
+	ewarn "=dev-haskell/haddock-2.11.0_p$(get_version_component_range 3) **"
 	ewarn "=dev-lang/ghc-7.7* **"
 	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
