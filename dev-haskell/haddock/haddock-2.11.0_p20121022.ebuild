@@ -15,14 +15,13 @@ SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-# ia64 lost as we don't have ghc-7 there yet
-# ppc64 needs to be rekeyworded due to xhtml not being keyworded
+# This is only for ghc head 7.7 and live ebuilds
 KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
 		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.6.1"
+		>=dev-lang/ghc-7.7"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
@@ -36,6 +35,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.10.0_p20120711-ghc-7.5.patch
 	# we would like to avoid happy and alex depends
 	epatch "${FILESDIR}"/${PN}-2.10.0-drop-tools.patch
+	epatch "${FILESDIR}"/${PN}-2.11.0_p20121022-needs-deepseq.patch
 
 	# Its a snapshot of the haddock included with ghc head snapshot, which
 	# does not require alex or happy.  The copy of the Lex and Parse files
