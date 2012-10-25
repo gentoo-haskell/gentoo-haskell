@@ -679,6 +679,10 @@ src_install() {
 			exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
 			doexe "${S}/inplace/lib/bin/runghc"
 		fi
+		if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/ghc-pkg" ]]; then
+			exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
+			dosym "/usr/$(get_libdir)/ghc-${GHC_PV}/bin/ghc-pkg" "/usr/$(get_libdir)/ghc-${GHC_PV}/ghc-pkg"
+		fi
 
 		# The 7.5.20120511 build system does not install these shared libraries.
 		# /usr/lib64/ghc-7.5.20120511/ghc-7.5.20120511/libHSghc-7.5.20120511-ghc7.5.20120511.so
@@ -740,9 +744,7 @@ pkg_postinst() {
 
 	ewarn "For portage place lines like these in /etc/portage/package.keywords"
 	ewarn "=dev-haskell/time-1.4.0.1*"
-	ewarn "=dev-haskell/cabal-1.17.0* **"
 	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-	ewarn "=dev-haskell/haddock-2.11.0_p$(get_version_component_range 3) **"
 	ewarn "=dev-lang/ghc-7.7* **"
 	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
