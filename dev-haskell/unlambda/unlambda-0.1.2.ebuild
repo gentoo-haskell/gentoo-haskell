@@ -23,4 +23,5 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.1.2-ghc-7.6.patch")
+PATCHES=("${FILESDIR}/${PN}-0.1.2-ghc-7.6.patch"
+	"${FILESDIR}/${PN}-0.1.2-fix-utf8.patch")
