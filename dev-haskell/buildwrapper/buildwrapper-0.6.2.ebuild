@@ -16,8 +16,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test" # hang for me
 IUSE=""
+RESTRICT="test" # needs network and initialized ~/.cabal/
 
 RDEPEND=">=dev-haskell/aeson-0.4:=[profile?]
 		dev-haskell/attoparsec:=[profile?]
@@ -39,5 +39,6 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 			dev-haskell/test-framework
 			dev-haskell/test-framework-hunit
+			dev-haskell/cabal-install
 		)
 		>=dev-haskell/cabal-1.8"
