@@ -15,12 +15,13 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-#needs ghc-7.6.1
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-1:=[profile?]
+		>=dev-haskell/deepseq-1.1:=[profile?]
+		<dev-haskell/deepseq-2:=[profile?]
 		>=dev-haskell/hunit-1.2:=[profile?]
 		<dev-haskell/hunit-2:=[profile?]
 		>=dev-haskell/hxt-charproperties-9.1:=[profile?]
@@ -33,6 +34,6 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/network-3:=[profile?]
 		>=dev-haskell/parsec-2.1:=[profile?]
 		<dev-haskell/parsec-4:=[profile?]
-		>=dev-lang/ghc-7.6.1:="
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
