@@ -34,3 +34,19 @@ index 8f150e2..0384e16 100644
                                               , weatherFormatter = DefaultWeatherFormatter
                                               }
  
+diff --git a/taffybar.cabal b/taffybar.cabal
+index f634be5..439ca61 100644
+--- a/taffybar.cabal
++++ b/taffybar.cabal
+@@ -22,9 +22,9 @@ description:
+   .
+     * More robust strut handling for multiple monitors of different sizes (contributed by Morgan Gibson)
+   .
+-    * New widgets from José A. Romero (network monitor, fs monitor, another CPU monitor)
++    * New widgets from Jose A. Romero (network monitor, fs monitor, another CPU monitor)
+   .
+-    * Allow the bar widget to grow vertically (also contributed by José A. Romero)
++    * Allow the bar widget to grow vertically (also contributed by Jose A. Romero)
+   .
+   Changes in v0.2.0:
+   .
