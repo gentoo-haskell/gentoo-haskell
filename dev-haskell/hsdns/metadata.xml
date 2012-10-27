@@ -12,4 +12,19 @@
 		work nicely. There is also support for retrieving generic
 		RR types, CNAMEs, and for NSEC zone walking. The library
 		can be expected to work with fine ADNS 1.4 or later. It
-		might also work with version ADNS 1.3, but that hasn
+		might also work with version ADNS 1.3, but that hasn’t
+		been tested.
+		
+		The example program adns-reverse-lookup.hs demonstrates
+		how the resolver is used. Given a list of host names on
+		the command line, it performs an A/PTR double-lookup and
+		checks whether the records are consistent. The
+		output is printed in the order in which the DNS responses
+		arrive:
+		
+		&gt; $ ./adns-reverse-lookup cryp.to localhost www.example.com
+		&gt; OK: localhost &lt;-&gt; 127.0.0.1
+		&gt; FAIL: cryp.to -&gt; 217.19.183.102 -&gt; [&quot;zuse.cryp.to&quot;]
+		&gt; OK: www.example.com &lt;-&gt; 192.0.32.10
+	</longdescription>
+</pkgmetadata>
