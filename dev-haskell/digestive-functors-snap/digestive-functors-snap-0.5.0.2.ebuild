@@ -26,8 +26,3 @@ RDEPEND="=dev-haskell/digestive-functors-0.5*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	sed -e 's@directory          >= 1.0  && < 1.2@directory          >= 1.0  \&\& < 1.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
