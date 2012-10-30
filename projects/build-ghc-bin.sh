@@ -37,7 +37,7 @@ export CFLAGS="-O2 -pipe"
 #   - documentation
 #   - bootstrapping
 #   - disable ghci (ghcmakebinary)
-export USE="-binary doc ghcbootstrap ghcmakebinary"
+export USE="-binary doc ghcbootstrap ghcmakebinary llvm"
 
 echo "You may also need to set PORTDIR_OVERLAY=\"\""
 echo "and also ACCEPT_KEYWORDS=\"~\${arch}\""
