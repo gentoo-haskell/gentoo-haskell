@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
 		>=dev-haskell/text-0.11.1.5:=[profile?]
 		<dev-haskell/text-0.12:=[profile?]
 		>=dev-haskell/vector-0.7:=[profile?]
-		<dev-haskell/vector-0.10:=[profile?]
+		<dev-haskell/vector-0.11:=[profile?]
 		=dev-haskell/xml-types-0.3*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
@@ -55,5 +55,6 @@ src_prepare() {
 		-e 's@containers >= 0.1 && < 0.5@containers@' \
 		-e 's@unix >= 2.2 && < 2.6@unix@' \
 		-e 's@network >= 2.2 && < 2.4@network >= 2.2 \&\& < 2.5@' \
+		-e 's@vector >= 0.7 && < 0.10@vector@' \
 		-i "${S}/${PN}.cabal"
 }
