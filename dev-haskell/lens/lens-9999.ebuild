@@ -30,7 +30,7 @@ RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		=dev-haskell/transformers-0.3*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
-		>=dev-lang/ghc-7.6.1:="
+		>=dev-lang/ghc-7.4.2:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.1
 			<=dev-haskell/doctest-0.10
