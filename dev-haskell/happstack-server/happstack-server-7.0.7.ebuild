@@ -15,8 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#needs ghc-7.6
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
@@ -44,7 +43,7 @@ RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
 		<dev-haskell/utf8-string-0.4:=[profile?]
 		dev-haskell/xhtml:=[profile?]
 		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-7.6.1:="
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 		)
