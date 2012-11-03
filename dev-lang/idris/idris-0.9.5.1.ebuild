@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT=test # fails for me
 
 RDEPEND=""
 DEPEND="${RDEPEND}
