@@ -530,6 +530,13 @@ src_install() {
 		fi
 	done
 
+	# 7.7.20121102 dyn links ghc and forgets to install the ghc shared lib
+	pushd "${S}/compiler/stage2/build" || die "Could not cd to ${S}/compiler/stage2/build"
+	dodir /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
+	exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
+	doexe "libHSghc-${GHC_PV}-ghc${GHC_PV}.so"
+	popd
+
 	# path to the package.conf.d
 	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
 	# path to the package.cache
