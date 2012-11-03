@@ -234,6 +234,8 @@ src_prepare() {
 	# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
 	epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
 
+	epatch "${FILESDIR}"/${PN}-7.7.20121101-corelibs-rpath.patch
+
 	if use prefix; then
 		# Make configure find docbook-xsl-stylesheets from Prefix
 		sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
@@ -403,6 +405,8 @@ src_compile() {
 }
 
 src_install() {
+	export LD_LIBRARY_PATH="$(find . -type f -name lib*.so -print |sed -e "s@\./\(.*\)/lib.*@${PWD}/\1@g"|xargs| sed -e 's@ @:@g')"
+
 	local insttarget="install"
 
 	emake -j1 ${insttarget} \
