@@ -1,0 +1,12 @@
+--- resourcet-0.4.0.2-orig/Control/Monad/Trans/Resource.hs	2012-10-11 14:56:55.000000000 +1100
++++ resourcet-0.4.0.2/Control/Monad/Trans/Resource.hs	2012-11-03 11:00:26.326124370 +1100
+@@ -9,6 +9,9 @@
+ #if __GLASGOW_HASKELL__ >= 704
+ {-# LANGUAGE ConstraintKinds #-}
+ #endif
++#if __GLASGOW_HASKELL__ >= 707
++{-# LANGUAGE ImpredicativeTypes #-}
++#endif
+ -- | Allocate resources which are guaranteed to be released.
+ --
+ -- For more information, see <http://www.yesodweb.com/book/conduits>.
