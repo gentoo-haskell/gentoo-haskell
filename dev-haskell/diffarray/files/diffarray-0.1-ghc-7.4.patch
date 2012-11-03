@@ -1,0 +1,29 @@
+diff --git a/Data/Array/Diff.hs b/Data/Array/Diff.hs
+index c08ef3c..b46af0f 100644
+--- a/Data/Array/Diff.hs
++++ b/Data/Array/Diff.hs
+@@ -73,7 +73,7 @@ module Data.Array.Diff (
+ ------------------------------------------------------------------------
+ -- Imports.
+ 
+-import Data.Array.Base
++import Data.Array.Base as DAB
+ import Data.Array.IArray
+ import Data.Array.IO
+ 
+@@ -412,7 +412,7 @@ unsafeFreezeDiffArray a = do
+     return (DiffArray var)
+ 
+ {-# RULES
+-"unsafeFreeze/DiffArray" unsafeFreeze = unsafeFreezeDiffArray
++"unsafeFreeze/DiffArray" DAB.unsafeFreeze = unsafeFreezeDiffArray
+     #-}
+ 
+ thawDiffArray :: (MArray a e IO, Ix ix)
+@@ -452,5 +452,5 @@ unsafeThawDiffArray a = do
+             return a''
+ 
+ {-# RULES
+-"unsafeThaw/DiffArray" unsafeThaw = unsafeThawDiffArray
++"unsafeThaw/DiffArray" DAB.unsafeThaw = unsafeThawDiffArray
+     #-}
