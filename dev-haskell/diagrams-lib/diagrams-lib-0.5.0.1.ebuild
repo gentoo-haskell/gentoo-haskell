@@ -33,3 +33,11 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	sed -e 's@base >= 4.2 && < 4.6@base >= 4.2 \&\& < 4.7@' \
+	    -i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+
+	sed -e 's@containers >= 0.3 && < 0.5@containers >= 0.3 \&\& < 0.6@' \
+	    -i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
