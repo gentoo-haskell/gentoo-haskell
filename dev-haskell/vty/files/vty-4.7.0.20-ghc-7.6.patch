@@ -1,5 +1,5 @@
---- vty-4.7.0.18-orig/vty.cabal	2012-10-21 13:36:47.000000000 +1100
-+++ vty-4.7.0.18/vty.cabal	2012-10-21 15:12:28.744615896 +1100
+--- vty-4.7.0.20-orig/vty.cabal	2012-11-02 19:11:12.000000000 +1100
++++ vty-4.7.0.20/vty.cabal	2012-11-03 13:42:37.124312596 +1100
 @@ -91,8 +91,8 @@
    type:                detailed-0.9
    hs-source-dirs:      src test
@@ -143,19 +143,8 @@
                         random == 1.0.*,
                         base >= 4 && < 5,
                         bytestring,
---- vty-4.7.0.18-orig/src/Data/Terminfo/Eval.hs	2012-10-21 13:36:47.000000000 +1100
-+++ vty-4.7.0.18/src/Data/Terminfo/Eval.hs	2012-10-21 15:16:54.886812483 +1100
-@@ -166,7 +166,7 @@
-     let ( !start_ptr, _ ) = cap_bytes cap
-         !src_ptr = start_ptr `plusPtr` offset
-         !out_ptr' = out_ptr `plusPtr` next_offset
--    liftIO $! memcpy out_ptr src_ptr byte_count
-+    liftIO $! memcpy out_ptr src_ptr ((toEnum . fromEnum) byte_count)
-     return $! out_ptr'
- serialize_cap_op out_ptr DecOut = do
-     p <- pop
---- vty-4.7.0.18-orig/test/VerifyDisplayAttributes.hs	2012-10-21 13:36:47.000000000 +1100
-+++ vty-4.7.0.18/test/VerifyDisplayAttributes.hs	2012-10-21 15:21:34.721459636 +1100
+--- vty-4.7.0.20-orig/test/VerifyDisplayAttributes.hs	2012-11-02 19:11:11.000000000 +1100
++++ vty-4.7.0.20/test/VerifyDisplayAttributes.hs	2012-11-03 13:42:37.125312622 +1100
 @@ -1,6 +1,5 @@
  module VerifyDisplayAttributes where
  
@@ -163,8 +152,8 @@
  import Verify.Graphics.Vty.Attributes
  
  import Verify
---- vty-4.7.0.18-orig/test/VerifyPictureToSpan.hs	2012-10-21 13:36:47.000000000 +1100
-+++ vty-4.7.0.18/test/VerifyPictureToSpan.hs	2012-10-21 15:21:23.172151773 +1100
+--- vty-4.7.0.20-orig/test/VerifyPictureToSpan.hs	2012-11-02 19:11:11.000000000 +1100
++++ vty-4.7.0.20/test/VerifyPictureToSpan.hs	2012-11-03 13:42:37.126312649 +1100
 @@ -2,7 +2,6 @@
  
  import Graphics.Vty.Picture
