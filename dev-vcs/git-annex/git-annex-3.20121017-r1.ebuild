@@ -82,6 +82,16 @@ src_prepare() {
 	echo 'mans: $(mans)' >>"${S}"/Makefile
 }
 
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag assistant Assistant) \
+		$(cabal_flag dbus Dbus) \
+		$(cabal_flag inotify Inotify) \
+		$(cabal_flag pairing Pairing) \
+		$(cabal_flag s3 S3) \
+		$(cabal_flag webapp Webapp)
+}
+
 src_compile() {
 	haskell-cabal_src_compile
 	use doc && emake docs
