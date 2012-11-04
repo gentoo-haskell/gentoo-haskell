@@ -17,6 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT=test # upstream forgot tests
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1[profile?]
 		>=dev-haskell/cereal-0.3[profile?]
