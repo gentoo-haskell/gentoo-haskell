@@ -528,9 +528,7 @@ src_configure() {
 src_compile() {
 	if ! use binary; then
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		if [ ! -d "${S}"/inplace/bin ]; then
-			mkdir -p "${S}"/inplace/bin || die "Could not mkdir -p ${S}/inplace/bin"
-		fi
+		mkdir -p "${S}"/inplace/bin || die "Could not mkdir -p ${S}/inplace/bin"
 		ghc -package ghc -o "${S}"/inplace/bin/mkUserGuidePart --make \
 			"${S}"/utils/mkUserGuidePart/Main.hs \
 			|| die "Could not build inplace/bin/mkUserGuidePart"
