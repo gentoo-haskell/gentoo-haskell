@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -21,8 +21,8 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/cairo:=[profile?]
-		>=dev-haskell/dbus-core-0.9.1:=[profile?]
-		<dev-haskell/dbus-core-1.0:=[profile?]
+		>=dev-haskell/dbus-0.10.1:=[profile?]
+		<dev-haskell/dbus-1.0:=[profile?]
 		>=dev-haskell/dyre-0.8.6:=[profile?]
 		>=dev-haskell/gtk-0.12.1:=[profile?]
 		>=dev-haskell/gtk-traymanager-0.1.2:=[profile?]
@@ -35,7 +35,6 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 		dev-haskell/text:=[profile?]
 		dev-haskell/time:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
-		dev-haskell/web-encodings:=[profile?]
 		dev-haskell/xdg-basedir:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		x11-libs/gtk+:2
