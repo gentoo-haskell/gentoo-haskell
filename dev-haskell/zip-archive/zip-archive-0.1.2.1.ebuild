@@ -29,3 +29,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	sed -e "s@binary < 0.6@binary@" \
+		-i "${S}/${PN}.cabal"
+}
