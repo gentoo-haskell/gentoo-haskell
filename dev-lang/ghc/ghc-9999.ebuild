@@ -405,7 +405,7 @@ src_compile() {
 }
 
 src_install() {
-	export LD_LIBRARY_PATH="$(find . -type f -name lib*.so -print |sed -e "s@\./\(.*\)/lib.*@${PWD}/\1@g"|xargs| sed -e 's@ @:@g')"
+	export LD_LIBRARY_PATH="$(find . -type f -name 'lib*.so' -print |sed -e "s@\./\(.*\)/lib.*@${PWD}/\1@g" |xargs | sed -e 's@ @:@g')"
 
 	local insttarget="install"
 
@@ -503,12 +503,22 @@ src_install() {
 		doexe "${S}/inplace/lib/bin/runghc"
 	fi
 
+	# 7.7.20121102 now installs these in /usr/lib64/ghc-7.7.20121102/bin so
+	# we need to create symlinks to them in /usr/lib64/ghc-7.7.20121102.
+	# Note that the installation directory is important due to the use of
+	# $ORIGIN in the rpath to find the shared libraries.
+	for i in "ghc" "ghc-pkg" "haddock" "hsc2hs"; do
+		if [[ ! -L "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/${i}" ]]; then
+			dosym "/usr/$(get_libdir)/ghc-${GHC_PV}/bin/${i}" \
+				"/usr/$(get_libdir)/ghc-${GHC_PV}/${i}"
+		fi
+	done
+
 	# The 7.5.20120511 build system does not install these shared libraries.
 	# /usr/lib64/ghc-7.5.20120511/ghc-7.5.20120511/libHSghc-7.5.20120511-ghc7.5.20120511.so
 	# has some of these libraries in its NEEDED list. We need to install these libraries
 	# to avoid revdep-rebuild wanting to rebuild dev-lang/ghc.
-	find "${S}/libraries" -name lib*.so* -print >"${S}/sl.txt"
-	for i in $(cat sl.txt | xargs)
+	while IFS= read -r -d $'\0' i
 	do
 		lib_name=$(basename ${i})
 		lib_dir=$(dirname ${i})
@@ -526,15 +536,28 @@ src_install() {
 			exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
 			pushd ${lib_dir} || die "Could not cd to ${lib_dir}"
 			doexe ${lib_name}
+			while IFS= read -r -d $'\0' j; do
+				local d=$(dirname /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}${j#${PWD}})
+				dodir ${d}
+				insinto ${d}
+				doins ${j}
+			done < <(find ${PWD} -type f \( -name '*.dyn_hi' -o -name '*.p_hi' \) -print0)
 			popd
 		fi
-	done
+	done < <(find "${S}/libraries" -type f -name 'lib*.so*' -print0)
 
-	# 7.7.20121102 dyn links ghc and forgets to install the ghc shared lib
+	# 7.7.20121102 dyn links ghc and forgets to install the ghc shared lib, and the
+	# dynamically linked and profiling files.
 	pushd "${S}/compiler/stage2/build" || die "Could not cd to ${S}/compiler/stage2/build"
 	dodir /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
 	exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
 	doexe "libHSghc-${GHC_PV}-ghc${GHC_PV}.so"
+	while IFS= read -r -d $'\0' j; do
+		local d=$(dirname /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}${j#${PWD}})
+		dodir ${d}
+		insinto ${d}
+		doins ${j}
+	done < <(find ${PWD} -type f \( -name '*.dyn_hi' -o -name '*.p_hi' \) -print0)
 	popd
 
 	# path to the package.conf.d
