@@ -1,0 +1,12 @@
+diff --git a/monads-fd.cabal b/monads-fd.cabal
+index 010c894..c3f6a86 100644
+--- a/monads-fd.cabal
++++ b/monads-fd.cabal
+@@ -36,6 +36,6 @@ Library
+     Control.Monad.Writer.Class
+     Control.Monad.Writer.Lazy
+     Control.Monad.Writer.Strict
+-  build-depends: base < 6, transformers == 0.2.*, mtl == 2.*
++  build-depends: base < 6, transformers >= 0.2 && < 0.4, mtl == 2.*
+   extensions:
+     PackageImports
