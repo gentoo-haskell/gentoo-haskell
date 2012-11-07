@@ -44,9 +44,9 @@ RDEPEND=">=dev-haskell/async-2.0.1.3:=[profile?]
 		)
 		>=dev-lang/ghc-7.4.2:=
 
-		>=dev-haskell/alex-3.0.1
+		>=dev-haskell/alex-3.0.2
 		>=dev-haskell/cabal-1.14.0
-		>=dev-haskell/happy-1.18.9
+		>=dev-haskell/happy-1.18.10
 		>=dev-haskell/cabal-install-0.14.0
 		>=dev-haskell/hscolour-1.19
 		>=dev-haskell/haddock-2.10.0"
