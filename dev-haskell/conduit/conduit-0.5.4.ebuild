@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
 		>=dev-haskell/monad-control-0.3.1:=[profile?]
 		<dev-haskell/monad-control-0.4:=[profile?]
-		>=dev-haskell/resourcet-0.3:=[profile?]
+		>=dev-haskell/resourcet-0.4.2:=[profile?]
 		<dev-haskell/resourcet-0.5:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
