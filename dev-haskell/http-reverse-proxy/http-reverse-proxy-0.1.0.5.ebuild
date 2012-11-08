@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+# tests fail: connect: does not exist (Connection refused)
+RESTRICT="test"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 		>=dev-haskell/case-insensitive-0.4:=[profile?]
