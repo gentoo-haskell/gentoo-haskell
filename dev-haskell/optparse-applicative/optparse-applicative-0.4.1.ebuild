@@ -28,3 +28,8 @@ DEPEND="${RDEPEND}
 			=dev-haskell/test-framework-th-prime-0.0*
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cp -pR "${FILESDIR}/${PN}"-0.4.1/tests/* "${S}"/tests \
+		|| die "Could not copy missing test files"
+}
