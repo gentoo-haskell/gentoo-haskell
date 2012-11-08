@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~dev-haskell/hinotify-0.3.2:=[profile?]
+RDEPEND=">=dev-haskell/hinotify-0.3.2:=[profile?]
 		>=dev-haskell/system-fileio-0.3.8:=[profile?]
 		<dev-haskell/system-fileio-0.4:=[profile?]
 		>=dev-haskell/system-filepath-0.4.6:=[profile?]
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/uniqueid-0.1.1
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	sed -e 's@hinotify == 0.3.2@hinotify >= 0.3.2@g' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	cp -p "${FILESDIR}/${PN}"-0.0.2/test/* "${S}/test" \
+		|| die "Could not copy missing tests"
+}
