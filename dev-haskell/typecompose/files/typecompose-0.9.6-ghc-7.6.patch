@@ -1,0 +1,356 @@
+THanks to shachaf for the build failure explanation:
+
+shachaf: Yep. Operators are no longer variables in 7.6.
+shachaf: http://www.haskell.org/pipermail/glasgow-haskell-users/2012-January/021611.html
+shachaf: You can do that as long as t is lowercase like a normal variable.
+shachaf: Unfortunately it won't be infix.
+shachaf: (You can still use `t`, though)
+diff --git a/src/Control/Compose.hs b/src/Control/Compose.hs
+index 0f5834d..05d286f 100644
+--- a/src/Control/Compose.hs
++++ b/src/Control/Compose.hs
+@@ -113,29 +113,29 @@ type Binop a = a -> a -> a
+ 
+ -- | Add pre-processing
+ -- argument :: (a' -> a) -> ((a -> b) -> (a' -> b))
+-argument :: Category (-->) => (a' --> a) -> ((a --> b) -> (a' --> b))
++argument :: Category top => (a' `top` a) -> ((a `top` b) -> (a' `top` b))
+ argument = flip (.)
+ 
+ -- | Add post-processing
+-result :: Category (-->) => (b --> b') -> ((a --> b) -> (a --> b'))
++result :: Category top => (b `top` b') -> ((a `top` b) -> (a `top` b'))
+ result = (.)
+ 
+ infixr 1 ~>, ~>*
+ infixl 1 <~, *<~
+ 
+ -- | Add pre- and post processing
+-(~>) :: Category (-->) =>
+-        (a' --> a) -> (b --> b') -> ((a --> b) -> (a' --> b'))
++(~>) :: Category top =>
++        (a' `top` a) -> (b `top` b') -> ((a `top` b) -> (a' `top` b'))
+ -- (f ~> h) g = h . g . f
+ f ~> h = result h . argument f
+ 
+-(<~) :: Category (-->) =>
+-        (b --> b') -> (a' --> a) -> ((a --> b) -> (a' --> b'))
++(<~) :: Category top =>
++        (b `top` b') -> (a' `top` a) -> ((a `top` b) -> (a' `top` b'))
+ (<~) = flip (~>)
+ 
+ -- If I add argument back to DeepArrow, we can get a different generalization:
+ -- 
+--- (~>) :: DeepArrow (-->) => (a' --> a) -> (b --> b') -> ((a -> b) --> (a' -> b'))
++-- (~>) :: DeepArrow top => (a' `top` a) -> (b `top` b') -> ((a -> b) `top` (a' -> b'))
+ 
+ -- | Like '(~>)' but specialized to functors and functions.
+ (~>*) :: (Functor p, Functor q) => 
+@@ -378,12 +378,12 @@ joinMM = O . liftM join . join . liftM distribM . unO . liftM unO
+ -- Derivation:
+ -- 
+ --       (m :. n) ((m :. n) a)
+---   --> m (n (m (n a)))      -- liftM unO
+---   --> m (n ((m :. n) a))   -- unO
+---   --> m (m (n (n a)))      -- liftM distribM
+---   --> m (n (n a))          -- join
+---   --> m (n a)              -- liftM join
+---   --> (m :. n) a           -- O
++--   `top` m (n (m (n a)))      -- liftM unO
++--   `top` m (n ((m :. n) a))   -- unO
++--   `top` m (m (n (n a)))      -- liftM distribM
++--   `top` m (n (n a))          -- join
++--   `top` m (n a)              -- liftM join
++--   `top` (m :. n) a           -- O
+ 
+ -}
+ 
+@@ -404,16 +404,16 @@ joinComposeT = O . joinMMT . unO . fmap unO
+ 
+ -- | Composition of type constructors: unary with binary.  Called
+ -- "StaticArrow" in [1].
+-newtype OO f (~>) a b = OO { unOO :: f (a ~> b) }
++newtype OO f top a b = OO { unOO :: f (a `top` b) }
+ 
+ 
+ #if __GLASGOW_HASKELL__ >= 609
+-instance (Applicative f, Category (~>)) => Category (OO f (~>)) where
++instance (Applicative f, Category top) => Category (OO f top) where
+   id          = OO (pure id)
+   OO g . OO h = OO (liftA2 (.) g h)
+ #endif
+ 
+-instance (Applicative f, Arrow (~>)) => Arrow (OO f (~>)) where
++instance (Applicative f, Arrow top) => Arrow (OO f top) where
+ #if __GLASGOW_HASKELL__ < 609
+   OO g >>> OO h = OO (liftA2 (>>>) g h)
+ #endif
+@@ -447,15 +447,15 @@ instance (Applicative f, Arrow (~>)) => Arrow (OO f (~>)) where
+ 
+ -- | 
+ 
+-newtype ArrowAp (~>) f a b = ArrowAp {unArrowAp :: f a ~> f b}
++newtype ArrowAp top f a b = ArrowAp {unArrowAp :: f a `top` f b}
+ 
+-instance (Arrow (~>), Applicative f) => Arrow (ArrowAp (~>) f) where
++instance (Arrow top, Applicative f) => Arrow (ArrowAp top f) where
+   arr                     = ArrowAp . arr . liftA
+   ArrowAp g >>> ArrowAp h = ArrowAp (g >>> h)
+   first (ArrowAp a)       =
+     ArrowAp (arr splitA >>> first a >>> arr mergeA)
+ 
+-instance (ArrowLoop (~>), Applicative f) => ArrowLoop (ArrowAp (~>) f) where
++instance (ArrowLoop top, Applicative f) => ArrowLoop (ArrowAp top f) where
+   -- loop :: UI (b,d) (c,d) -> UI b c
+   loop (ArrowAp k) =
+     ArrowAp (loop (arr mergeA >>> k >>> arr splitA))
+@@ -545,31 +545,31 @@ instance Monoid_f [] where { mempty_f = mempty ; mappend_f = mappend }
+ ----------------------------------------------------------}
+ 
+ -- | Flip type arguments
+-newtype Flip (~>) b a = Flip { unFlip :: a ~> b }
++newtype Flip top b a = Flip { unFlip :: a `top` b }
+ 
+ -- | @newtype@ bijection
+-biFlip :: (a ~> b) :<->: Flip (~>) b a
++biFlip :: (a `top` b) :<->: Flip top b a
+ biFlip = Bi Flip unFlip
+ 
+ -- Apply unary function inside of a 'Flip' representation.
+-inFlip :: ((a~>b) -> (a' ~~> b')) -> (Flip (~>) b a -> Flip (~~>) b' a')
++inFlip :: ((a `top1` b) -> (a' `top2` b')) -> (Flip top1 b a -> Flip top2 b' a')
+ inFlip = unFlip ~> Flip
+ 
+ -- Apply binary function inside of a 'Flip' representation.
+-inFlip2 :: ((a~>b) -> (a' ~~> b') -> (a'' ~~~> b''))
+-        -> (Flip (~>) b a -> Flip (~~>) b' a' -> Flip (~~~>) b'' a'')
++inFlip2 :: ((a `top1` b) -> (a' `top2` b') -> (a'' `top3` b''))
++        -> (Flip top1 b a -> Flip top2 b' a' -> Flip top3 b'' a'')
+ inFlip2 f (Flip ar) = inFlip (f ar)
+ 
+ -- Apply ternary function inside of a 'Flip' representation.
+-inFlip3 :: ((a~>b) -> (a' ~~> b') -> (a'' ~~~> b'') -> (a''' ~~~~> b'''))
+-        -> (Flip (~>) b a -> Flip (~~>) b' a' -> Flip (~~~>) b'' a'' -> Flip (~~~~>) b''' a''')
++inFlip3 :: ((a `top1` b) -> (a' `top2` b') -> (a'' `top3` b'') -> (a''' `top4` b'''))
++        -> (Flip top1 b a -> Flip top2 b' a' -> Flip top3 b'' a'' -> Flip top4 b''' a''')
+ inFlip3 f (Flip ar) = inFlip2 (f ar)
+ 
+-instance Arrow (~>) => ContraFunctor (Flip (~>) b) where
++instance Arrow top => ContraFunctor (Flip top b) where
+   contraFmap h (Flip f) = Flip (arr h >>> f)
+ 
+ -- Useful for (~>) = (->).  Maybe others.
+-instance (Applicative ((~>) a), Monoid o) => Monoid (Flip (~>) o a) where
++instance (Applicative (top a), Monoid o) => Monoid (Flip top o a) where
+   mempty  = Flip (pure mempty)
+   mappend = inFlip2 (liftA2 mappend)
+ 
+@@ -813,11 +813,11 @@ instance (Arrow f, Arrow f') => Arrow (f ::*:: f') where
+ 
+ -- | Arrow-like type between type constructors (doesn't enforce @Arrow
+ -- (~>)@ here).
+-newtype Arrw (~>) f g a = Arrw { unArrw :: f a ~> g a } -- deriving Monoid
++newtype Arrw top f g a = Arrw { unArrw :: f a `top` g a } -- deriving Monoid
+ 
+ -- For ghc-6.6, use the "deriving" above, but for 6.8 use the "deriving" below.
+ 
+-deriving instance Monoid (f a ~> g a) => Monoid (Arrw (~>) f g a)
++deriving instance Monoid (f a `top` g a) => Monoid (Arrw top f g a)
+ 
+ -- Replace with generalized bijection?
+ 
+@@ -828,27 +828,27 @@ deriving instance Monoid (f a ~> g a) => Monoid (Arrw (~>) f g a)
+ -- fromArrw toF fromG (Arrw h') = toF >>> h' >>> fromG
+ 
+ -- | Apply unary function inside of @Arrw@ representation.
+-inArrw :: ((f a ~> g a) -> (f' a' ~> g' a'))
+-       -> ((Arrw (~>) f g) a -> (Arrw (~>) f' g') a')
++inArrw :: ((f a `top` g a) -> (f' a' `top` g' a'))
++       -> ((Arrw top f g) a -> (Arrw top f' g') a')
+ inArrw = unArrw ~> Arrw
+ 
+ -- | Apply binary function inside of @Arrw (~>) f g@ representation.
+-inArrw2 :: ((f a ~> g a) -> (f' a' ~> g' a') -> (f'' a'' ~> g'' a''))
+-        -> (Arrw (~>) f g a -> Arrw (~>) f' g' a' -> Arrw (~>) f'' g'' a'')
++inArrw2 :: ((f a `top` g a) -> (f' a' `top` g' a') -> (f'' a'' `top` g'' a''))
++        -> (Arrw top f g a -> Arrw top f' g' a' -> Arrw top f'' g'' a'')
+ inArrw2 h (Arrw p) = inArrw (h p)
+ 
+ -- | Apply ternary function inside of @Arrw (~>) f g@ representation.
+-inArrw3 :: ((f a ~> g a) -> (f' a' ~> g' a') -> (f'' a'' ~> g'' a'') -> (f''' a''' ~> g''' a'''))
+-        -> ((Arrw (~>) f g) a -> (Arrw (~>) f' g') a' -> (Arrw (~>) f'' g'') a'' -> (Arrw (~>) f''' g''') a''')
++inArrw3 :: ((f a `top` g a) -> (f' a' `top` g' a') -> (f'' a'' `top` g'' a'') -> (f''' a''' `top` g''' a'''))
++        -> ((Arrw top f g) a -> (Arrw top f' g') a' -> (Arrw top f'' g'') a'' -> (Arrw top f''' g''') a''')
+ inArrw3 h (Arrw p) = inArrw2 (h p)
+ 
+ -- Functor & ContraFunctor instances.  Beware use of 'arr', which is not
+ -- available for some of my favorite arrows.
+ 
+-instance (Arrow (~>), ContraFunctor f, Functor g) => Functor (Arrw (~>) f g) where
++instance (Arrow top, ContraFunctor f, Functor g) => Functor (Arrw top f g) where
+   fmap h = inArrw $ \ fga -> arr (contraFmap h) >>> fga >>> arr (fmap h)
+ 
+-instance (Arrow (~>), Functor f, ContraFunctor g) => ContraFunctor (Arrw (~>) f g) where
++instance (Arrow top, Functor f, ContraFunctor g) => ContraFunctor (Arrw top f g) where
+   contraFmap h = inArrw $ \ fga -> arr (fmap h) >>> fga >>> arr (contraFmap h)
+ 
+ -- Restated,
+diff --git a/src/Data/Bijection.hs b/src/Data/Bijection.hs
+index ab4ca69..521c0a4 100644
+--- a/src/Data/Bijection.hs
++++ b/src/Data/Bijection.hs
+@@ -33,7 +33,7 @@ infix 8 :<->:
+ infixr 2 --->
+ 
+ -- | A type of bijective arrows
+-data Bijection (~>) a b = Bi { biTo :: a ~> b, biFrom :: b ~> a }
++data Bijection top a b = Bi { biTo :: a `top` b, biFrom :: b `top` a }
+ 
+ -- | Bijective functions
+ type a :<->: b = Bijection (->) a b
+@@ -41,20 +41,20 @@ type a :<->: b = Bijection (->) a b
+ -- | Bijective identity arrow.  Warning: uses 'arr' on @(~>)@.  If you
+ -- have no 'arr', but you have a @DeepArrow@, you can instead use @Bi idA
+ -- idA@.
+-idb :: Arrow (~>) => Bijection (~>) a a
++idb :: Arrow top => Bijection top a a
+ idb = Bi idA idA where idA = arr id
+ 
+ -- | Inverse bijection
+-inverse :: Bijection (~>) a b -> Bijection (~>) b a
++inverse :: Bijection top a b -> Bijection top b a
+ inverse (Bi ab ba) = Bi ba ab
+ 
+ #if __GLASGOW_HASKELL__ >= 609
+-instance Category (~>) => Category (Bijection (~>)) where
++instance Category top => Category (Bijection top) where
+   id = Bi id id
+   Bi bc cb . Bi ab ba = Bi (bc . ab) (ba . cb)
+ #endif
+ 
+-instance Arrow (~>) => Arrow (Bijection (~>)) where
++instance Arrow top => Arrow (Bijection top) where
+ #if __GLASGOW_HASKELL__ < 609
+   Bi ab ba >>> Bi bc cb = Bi (ab >>> bc) (cb >>> ba)
+ #endif
+@@ -75,15 +75,15 @@ bimap :: Functor f => (a :<->: b) -> (f a :<->: f b)
+ bimap (Bi ab ba) = Bi (fmap ab) (fmap ba)
+ 
+ -- | Bijections on arrows.
+-(--->) :: Arrow (~>) => Bijection (~>) a b -> Bijection (~>) c d
+-       -> (a ~> c) :<->: (b ~> d)
++(--->) :: Arrow top => Bijection top a b -> Bijection top c d
++       -> (a `top`  c) :<->: (b `top`  d)
+ Bi ab ba ---> Bi cd dc = Bi (\ ac -> ba>>>ac>>>cd) (\ bd -> ab>>>bd>>>dc)
+ 
+--- TODO: Rewrite (--->) via (~>).  Currently would cause a module cycle
++-- TODO: Rewrite (--->) via top.  Currently would cause a module cycle
+ -- 
+--- Bi ab ba ---> Bi cd dc = Bi (ac ~> cd) (ab ~> dc)
++-- Bi ab ba ---> Bi cd dc = Bi (ac `top`  cd) (ab `top`  dc)
+ 
+ 
+ -- | Apply a function in an alternative (monomorphic) representation.
+-inBi :: Arrow (~>) => Bijection (~>) a b -> (a ~> a) -> (b ~> b)
++inBi :: Arrow top => Bijection top a b -> (a `top`  a) -> (b `top`  b)
+ inBi (Bi to from) aa = from >>> aa >>> to
+diff --git a/src/Data/Lambda.hs b/src/Data/Lambda.hs
+index 661c599..1d217b0 100644
+--- a/src/Data/Lambda.hs
++++ b/src/Data/Lambda.hs
+@@ -93,13 +93,13 @@ instance (Lambda src snk, Lambda dom' ran')
+ 
+ -- | 'lambda' with 'Arrw'.  /Warning/: definition uses 'arr', so only
+ -- use if your arrow has a working 'arr'.
+-arLambda :: (Arrow (~>), Unlambda f f', Lambda g g')
+-      => LambdaTy (Arrw (~>) f g) (Arrw (~>) f' g')
++arLambda :: (Arrow top, Unlambda f f', Lambda g g')
++      => LambdaTy (Arrw top f g) (Arrw top f' g')
+ arLambda = inArrw2 $ \ fga fgb ->
+   arr unlambda >>> fga***fgb >>> arr (uncurry lambda)
+ 
+-instance (Arrow (~>), Unlambda f f', Lambda g g')
+-    => Lambda (Arrw (~>) f g) (Arrw (~>) f' g')
++instance (Arrow top, Unlambda f f', Lambda g g')
++    => Lambda (Arrw top f g) (Arrw top f' g')
+   where lambda = arLambda
+ 
+ 
+diff --git a/src/Data/Pair.hs b/src/Data/Pair.hs
+index b7663f2..1c100a3 100644
+--- a/src/Data/Pair.hs
++++ b/src/Data/Pair.hs
+@@ -95,8 +95,8 @@ instance Pair Id where Id a `pair` Id b = Id (a,b)
+ -- Standard instance, e.g., (~>) = (->)
+ -- This one requires UndecidableInstances.  Alternatively, specialize to
+ -- (->) and other arrows as desired.
+-instance (Arrow (~>), Monoid_f (Flip (~>) o)) =>
+-  Pair (Flip (~>) o) where pair = copair
++instance (Arrow top, Monoid_f (Flip top o)) =>
++  Pair (Flip top o) where pair = copair
+ 
+ -- | Handy for 'Pair' instances
+ apPair :: (Applicative h, Pair f) => PairTy (h :. f)
+@@ -108,12 +108,12 @@ ppPair = inO2 $ \ gfa gfb -> uncurry pair <$> (gfa `pair` gfb)
+ 
+ -- | Pairing of 'Arrw' values.  /Warning/: definition uses 'arr', so only
+ -- use if your arrow has a working 'arr'.
+-arPair :: (Arrow (~>), Unpair f, Pair g) => PairTy (Arrw (~>) f g)
++arPair :: (Arrow top, Unpair f, Pair g) => PairTy (Arrw top f g)
+ arPair = inArrw2 $ \ fga fgb ->
+   arr unpair >>> fga***fgb >>> arr (uncurry pair)
+ 
+ -- Standard instance
+-instance (Arrow (~>), Unpair f, Pair g) => Pair (Arrw (~>) f g)
++instance (Arrow top, Unpair f, Pair g) => Pair (Arrw top f g)
+   where pair = arPair
+ 
+ instance (Pair f, Pair g) => Pair (f :*: g) where
+@@ -175,7 +175,7 @@ instance Copair (Const e) where
+   cosnds = inConst id
+ 
+ -- Standard instance for contravariant functors
+-instance Arrow (~>) => Copair (Flip (~>) o) where
++instance Arrow top => Copair (Flip top o) where
+   { cofsts = contraFmap fst ; cosnds = contraFmap snd }
+ 
+ instance (Functor h, Copair f) => Copair (h :. f) where
+diff --git a/src/Data/Zip.hs b/src/Data/Zip.hs
+index ad77b6c..64fc34d 100644
+--- a/src/Data/Zip.hs
++++ b/src/Data/Zip.hs
+@@ -126,8 +126,8 @@ instance Zip Id where Id a `zip` Id b = Id (a,b)
+ -- Standard instance, e.g., (~>) = (->)
+ -- This one requires UndecidableInstances.  Alternatively, specialize to
+ -- (->) and other arrows as desired.
+-instance (Arrow (~>), Monoid_f (Flip (~>) o)) =>
+-  Zip (Flip (~>) o) where zip = cozip
++instance (Arrow top, Monoid_f (Flip top o)) =>
++  Zip (Flip top o) where zip = cozip
+ 
+ -- | Handy for 'Zip' instances
+ apZip :: (Applicative h, Zip f) => ZipTy (h :. f)
+@@ -139,12 +139,12 @@ ppZip = inO2 $ \ gfa gfb -> uncurry zip <$> (gfa `zip` gfb)
+ 
+ -- | Ziping of 'Arrw' values.  /Warning/: definition uses 'arr', so only
+ -- use if your arrow has a working 'arr'.
+-arZip :: (Arrow (~>), Unzip f, Zip g) => ZipTy (Arrw (~>) f g)
++arZip :: (Arrow top, Unzip f, Zip g) => ZipTy (Arrw top f g)
+ arZip = inArrw2 $ \ fga fgb ->
+   arr unzip >>> fga***fgb >>> arr (uncurry zip)
+ 
+ -- Standard instance
+-instance (Arrow (~>), Unzip f, Zip g) => Zip (Arrw (~>) f g)
++instance (Arrow top, Unzip f, Zip g) => Zip (Arrw top f g)
+   where zip = arZip
+ 
+ instance (Zip f, Zip g) => Zip (f :*: g) where
+@@ -206,7 +206,7 @@ instance Cozip (Const e) where
+   cosnds = inConst id
+ 
+ -- Standard instance for contravariant functors
+-instance Arrow (~>) => Cozip (Flip (~>) o) where
++instance Arrow top => Cozip (Flip top o) where
+   { cofsts = contraFmap fst ; cosnds = contraFmap snd }
+ 
+ instance (Functor h, Cozip f) => Cozip (h :. f) where
