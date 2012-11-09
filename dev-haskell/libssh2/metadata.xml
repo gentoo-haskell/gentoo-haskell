@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides FFI bindings for SSH2 client library named libssh2.
+		
+		As of version 0.2 all blocking is handled in Haskell code
+		rather than in C code. This means that all calls are now
+		interruptable using Haskell asynchronous exceptions; for
+		instance, it is now possible to use &quot;System.Timeout&quot; in
+		combination with &quot;libssh2&quot;.
+		
+		/Note on usage on Windows/: On Windows you MUST compile
+		your executable with @-threaded@ or &#39;libssh2&#39; will NOT
+		work. We have tested &#39;libssh2&#39; on Windows using
+		&lt;http://mingw.org/&gt;, with &lt;http://www.openssl.org/&gt; and
+		&lt;http://libssh2.org/&gt; compiled from source (be sure to pass
+		the &#39;shared&#39; option to the configure script for &#39;openssl&#39;
+		to enable the shared libraries).
+	</longdescription>
+</pkgmetadata>
