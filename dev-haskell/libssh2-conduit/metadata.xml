@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides Conduit interface (see conduit package) for
+		libssh2 FFI bindings (see libssh2 package). This allows one to
+		receive data from SSH channels lazily, without need to read
+		all channel output to the memory.
+	</longdescription>
+</pkgmetadata>
