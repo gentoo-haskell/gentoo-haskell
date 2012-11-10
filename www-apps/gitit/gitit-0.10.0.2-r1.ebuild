@@ -52,7 +52,7 @@ RDEPEND=">=app-text/pandoc-1.9.0.5:=[profile?]
 		>=dev-haskell/recaptcha-0.1:=[profile?]
 		dev-haskell/safe:=[profile?]
 		>dev-haskell/sha-1:=[profile?]
-		<dev-haskell/sha-1.6:=[profile?]
+		<dev-haskell/sha-1.7:=[profile?]
 		dev-haskell/syb:=[profile?]
 		=dev-haskell/tagsoup-0.12*:=[profile?]
 		dev-haskell/text:=[profile?]
@@ -67,6 +67,12 @@ RDEPEND=">=app-text/pandoc-1.9.0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	SHA > 1 && < 1.6
+	sed -e 's@SHA > 1 && < 1.6@SHA > 1 \&\& < 1.7@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+}
 
 src_configure() {
 	cabal_src_configure $(cabal_flag plugins)
