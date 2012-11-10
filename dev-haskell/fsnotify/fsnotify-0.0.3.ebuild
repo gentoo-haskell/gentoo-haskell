@@ -19,7 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hinotify-0.3.2:=[profile?]
+RDEPEND=">=dev-haskell/hinotify-0.3.5:=[profile?]
+		<dev-haskell/hinotify-0.4:=[profile?]
 		>=dev-haskell/system-fileio-0.3.8:=[profile?]
 		<dev-haskell/system-fileio-0.4:=[profile?]
 		>=dev-haskell/system-filepath-0.4.6:=[profile?]
