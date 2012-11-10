@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="doc test"
 RESTRICT=test # don't seem to like our git environment much
 
 RDEPEND=">=dev-vcs/git-1.7.7" # TODO: add more deps?
