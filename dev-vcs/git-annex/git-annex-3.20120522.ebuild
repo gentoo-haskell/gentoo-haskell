@@ -46,7 +46,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/time
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
-		>=dev-lang/ghc-6.12.3
+		>=dev-lang/ghc-7.4
 		dev-lang/perl
 		doc? ( www-apps/ikiwiki net-misc/rsync )"
 # dev-lang/perl is to build the manpages

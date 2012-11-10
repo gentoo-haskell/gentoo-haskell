@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/time
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
-		>=dev-lang/ghc-6.12.3
+		>=dev-lang/ghc-7.4
 		dev-lang/perl
 		assistant? ( >=dev-haskell/stm-2.3 )
 		dbus? ( dev-haskell/dbus )
