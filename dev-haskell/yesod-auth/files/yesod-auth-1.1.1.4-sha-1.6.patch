@@ -1,0 +1,19 @@
+commit 1661727597d2a804dbea653eab985806137a5420
+Author: Raphael Javaux <raphaeljavaux@gmail.com>
+Date:   Sat Nov 10 15:13:36 2012 +0100
+
+    Change version requirement for SHA to the last version.
+
+diff --git a/yesod-auth/yesod-auth.cabal b/yesod-auth/yesod-auth.cabal
+index 22b7ee7..e45b3a8 100644
+--- a/yesod-auth/yesod-auth.cabal
++++ b/yesod-auth/yesod-auth.cabal
+@@ -33,7 +33,7 @@ library
+                    , transformers            >= 0.2.2     && < 0.4
+                    , persistent              >= 1.0       && < 1.1
+                    , persistent-template     >= 1.0       && < 1.1
+-                   , SHA                     >= 1.4.1.3   && < 1.6
++                   , SHA                     >= 1.4.1.3   && < 1.7
+                    , http-conduit            >= 1.5       && < 1.9
+                    , aeson                   >= 0.5
+                    , pwstore-fast            >= 2.2       && < 3
