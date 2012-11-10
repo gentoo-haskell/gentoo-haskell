@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/derive:=[profile?]
-		=dev-haskell/fclabels-1.0*:=[profile?]
+		>=dev-haskell/fclabels-1.0:=[profile?]
+		<dev-haskell/fclabels-1.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
