@@ -30,6 +30,17 @@
 
 EAPI="5"
 
+# to make make a crosscompiler use crossdev and symlink ghc tree into
+# cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
+#
+# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
+export CTARGET=${CTARGET:-${CHOST}}
+if [[ ${CTARGET} = ${CHOST} ]] ; then
+	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
+		export CTARGET=${CATEGORY/cross-}
+	fi
+fi
+
 inherit base autotools bash-completion-r1 eutils flag-o-matic git-2 multilib toolchain-funcs ghc-package versionator pax-utils
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -70,6 +81,10 @@ PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
 
+is_crosscompile() {
+	[[ ${CHOST} != ${CTARGET} ]]
+}
+
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
@@ -86,6 +101,16 @@ append-ghc-cflags() {
 }
 
 ghc_setup_cflags() {
+	if is_crosscompile; then
+		export CFLAGS=${GHC_CFLAGS-"-O2 -pipe"}
+		export LDFLAGS=${GHC_LDFLAGS-"-Wl,-O1"}
+		einfo "Crosscompiling mode:"
+		einfo "   CHOST:   ${CHOST}"
+		einfo "   CTARGET: ${CTARGET}"
+		einfo "   CFLAGS:  ${CFLAGS}"
+		einfo "   LDFLAGS: ${LDFLAGS}"
+		return
+	fi
 	# We need to be very careful with the CFLAGS we ask ghc to pass through to
 	# gcc. There are plenty of flags which will make gcc produce output that
 	# breaks ghc in various ways. The main ones we want to pass through are
@@ -245,21 +270,6 @@ src_prepare() {
 }
 
 src_configure() {
-	# ghc now supports cross-compiling.  It appears that only the stage1
-	# compiler is built (if you are lucky) when cross-compiling with
-	# ghc-7.5.20120510.
-	if [[ -n ${CTARGET} ]]; then
-		if [[ ${CTARGET} != $(uname -m)"-pc-linux-gnu" ]]; then
-			cross_compiling="1"
-		fi
-	else
-		# We need to specify the --target option to avoid the ghc build
-		# system thinking its building a cross compiler (and then only building
-		# the stage1 compiler, no interpreter). man ebuild(5) notes how the
-		# setting CTARGET specifies the --target=${CTARGET} to econf.
-		CTARGET=$(uname -m)"-pc-linux-gnu"
-	fi
-
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
@@ -279,7 +289,7 @@ src_configure() {
 		echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 		echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 		echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-		if [[ "{cross_compiling}" == "1" ]]; then
+		if is_crosscompile; then
 			# TODO this is a workaround for this build error with the live ebuild with haddock:
 			# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
 			# needed by `utils/haddock/dist/build/Main.o'.  Stop.
@@ -386,7 +396,7 @@ src_compile() {
 	# ^ above seems to be fixed.
 	emake all
 
-	if [[ "{cross_compiling}" == "1" ]]; then
+	if is_crosscompile; then
 		# runghc does not work for a stage1 compiler, we can build it anyway
 		# so it will print the error message: not built for interactive use
 		pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
@@ -607,7 +617,7 @@ pkg_postinst() {
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
 	fi
-	if [[ "{cross_compiling}" == "1" ]]; then
+	if is_crosscompile; then
 		ewarn
 		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
 		ewarn "not work for a cross compiler."

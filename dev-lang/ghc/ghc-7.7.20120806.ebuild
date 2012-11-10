@@ -141,6 +141,16 @@ append-ghc-cflags() {
 }
 
 ghc_setup_cflags() {
+	if is_crosscompile; then
+		export CFLAGS=${GHC_CFLAGS-"-O2 -pipe"}
+		export LDFLAGS=${GHC_LDFLAGS-"-Wl,-O1"}
+		einfo "Crosscompiling mode:"
+		einfo "   CHOST:   ${CHOST}"
+		einfo "   CTARGET: ${CTARGET}"
+		einfo "   CFLAGS:  ${CFLAGS}"
+		einfo "   LDFLAGS: ${LDFLAGS}"
+		return
+	fi
 	# We need to be very careful with the CFLAGS we ask ghc to pass through to
 	# gcc. There are plenty of flags which will make gcc produce output that
 	# breaks ghc in various ways. The main ones we want to pass through are
@@ -428,7 +438,7 @@ src_configure() {
 			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if [[ "{cross_compiling}" == "1" ]]; then
+			if is_crosscompile; then
 				# TODO this is a workaround for this build error with the live ebuild with haddock:
 				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
 				# needed by `utils/haddock/dist/build/Main.o'.  Stop.

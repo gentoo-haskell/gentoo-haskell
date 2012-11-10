@@ -437,7 +437,7 @@ src_configure() {
 			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if [[ "{cross_compiling}" == "1" ]]; then
+			if is_crosscompile; then
 				# TODO this is a workaround for this build error with the live ebuild with haddock:
 				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
 				# needed by `utils/haddock/dist/build/Main.o'.  Stop.
