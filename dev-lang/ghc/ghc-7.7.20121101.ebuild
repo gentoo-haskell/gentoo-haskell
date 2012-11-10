@@ -539,12 +539,6 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		mkdir -p "${S}"/inplace/bin || die "Could not mkdir -p ${S}/inplace/bin"
-		ghc -package ghc -o "${S}"/inplace/bin/mkUserGuidePart --make \
-			"${S}"/utils/mkUserGuidePart/Main.hs \
-			|| die "Could not build inplace/bin/mkUserGuidePart"
-
 		#limit_jobs() {
 		#	if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
 		#		ewarn "You have requested parallel build which is known to break."
@@ -618,110 +612,6 @@ src_install() {
 		fi
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
-		exeinto /usr/bin
-		if [[ ! -L "${ED}/usr/bin/ghc" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" /usr/bin/ghc
-		fi
-		if [[ ! -L "${ED}/usr/bin/ghc-pkg" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghc-pkg-${GHC_PV}" /usr/bin/ghc-pkg
-		fi
-		if [[ ! -f "${ED}/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" ]]; then
-			cat <<- EOF > "${S}/${GHC_TPF}-ghci-${GHC_PV}"
-				#!/bin/sh
-				exec "/usr/bin/${GHC_TPF}-ghc-${GHC_PV}" --interactive \${1+"\$@"}
-			EOF
-			doexe "${S}/${GHC_TPF}-ghci-${GHC_PV}"
-		fi
-		if [[ ! -L "${ED}/usr/bin/ghci" ]]; then
-			dosym "/usr/bin/${GHC_TPF}-ghci-${GHC_PV}" /usr/bin/ghci
-		fi
-		if [[ ! -f "${ED}/usr/bin/hsc2hs" ]]; then
-			cat <<- EOF > "${S}/hsc2hs"
-				#!/bin/sh
-				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				exeprog="hsc2hs"
-				executablename="\$exedir/\$exeprog"
-				datadir="/usr/share"
-				bindir="/usr/bin"
-				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				HSC2HS_EXTRA="--cflag=-fno-stack-protector --lflag=-Wl,--hash-size=31 --lflag=-Wl,--reduce-memory-overheads"
-				#!/bin/sh
-
-				tflag="--template=\$topdir/template-hsc.h"
-				Iflag="-I\$topdir/include/"
-				for arg do
-					case "\$arg" in
-				# On OS X, we need to specify -m32 or -m64 in order to get gcc to
-				# build binaries for the right target. We do that by putting it in
-				# HSC2HS_EXTRA. When cabal runs hsc2hs, it passes a flag saying which
-				# gcc to use, so if we set HSC2HS_EXTRA= then we don't get binaries
-				# for the right platform. So for now we just don't set HSC2HS_EXTRA=
-				# but we probably want to revisit how this works in the future.
-				#        -c*)          HSC2HS_EXTRA=;;
-				#        --cc=*)       HSC2HS_EXTRA=;;
-						-t*)          tflag=;;
-						--template=*) tflag=;;
-						--)           break;;
-					esac
-				done
-
-				exec "\$executablename" \${tflag:+"\$tflag"} \$HSC2HS_EXTRA \${1+"\$@"} "\$Iflag"
-			EOF
-			doexe "${S}/hsc2hs"
-		fi
-		if [[ ! -f "${ED}/usr/bin/runghc" ]]; then
-			cat <<- EOF > "${S}/runghc"
-				#!/bin/sh
-				exedir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				exeprog="runghc"
-				executablename="\$exedir/\$exeprog"
-				datadir="/usr/share"
-				bindir="/usr/bin"
-				topdir="/usr/$(get_libdir)/ghc-${GHC_PV}"
-				#!/bin/sh
-
-				exec "\$executablename" -f "\$bindir/ghc" \${1+"\$@"}
-			EOF
-			doexe "${S}/runghc"
-		fi
-		if [[ ! -L "${ED}/usr/bin/runhaskell" ]]; then
-			dosym /usr/bin/runghc /usr/bin/runhaskell
-		fi
-		if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/runghc" ]]; then
-			exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
-			doexe "${S}/inplace/lib/bin/runghc"
-		fi
-		if [[ ! -f "${ED}/usr/$(get_libdir)/ghc-${GHC_PV}/ghc-pkg" ]]; then
-			exeinto "/usr/$(get_libdir)/ghc-${GHC_PV}"
-			dosym "/usr/$(get_libdir)/ghc-${GHC_PV}/bin/ghc-pkg" "/usr/$(get_libdir)/ghc-${GHC_PV}/ghc-pkg"
-		fi
-
-		# The 7.5.20120511 build system does not install these shared libraries.
-		# /usr/lib64/ghc-7.5.20120511/ghc-7.5.20120511/libHSghc-7.5.20120511-ghc7.5.20120511.so
-		# has some of these libraries in its NEEDED list. We need to install these libraries
-		# to avoid revdep-rebuild wanting to rebuild dev-lang/ghc.
-		find "${S}/libraries" -name lib*.so* -print >"${S}/sl.txt"
-		for i in $(cat sl.txt | xargs)
-		do
-			lib_name=$(basename ${i})
-			lib_dir=$(dirname ${i})
-			lib_sub_dir_prefix=$(echo ${i} \
-				| sed -e "s@${S}/libraries/\(.*\)/dist-install/build/lib.*@\1@")
-			lib_sub_dir_prefix_orig="${lib_sub_dir_prefix}"
-			if [[ "${lib_sub_dir_prefix}" = "Cabal/Cabal" ]]; then
-				lib_sub_dir_prefix="Cabal"
-			fi
-			if [ -d "${ED}"/usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}* ]; then
-				dist_install_dir="${S}/libraries/${lib_sub_dir_prefix_orig}/dist-install"
-				lib_version=$(head -1 "${dist_install_dir}/setup-config" \
-					| sed -e 's@Saved package config for \([-a-zA-Z0-9]*\)-\([.0-9]*\) written by.*@\2@')
-				dodir /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
-				exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/${lib_sub_dir_prefix}-${lib_version}
-				pushd ${lib_dir} || die "Could not cd to ${lib_dir}"
-				doexe ${lib_name}
-				popd
-			fi
-		done
 	fi
 
 	# path to the package.cache
