@@ -15,18 +15,20 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86" #needs ghc-7.6
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/quickcheck-2.3:=[profile?]
 		<dev-haskell/quickcheck-2.6:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
-		>=dev-lang/ghc-7.6.1:="
+		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
 	sed -e 's@vector               == 0.9.\*@vector               >= 0.9  \&\& < 0.11@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	sed -e 's@QuickCheck           >= 2.3 && < 2.5@QuickCheck           >= 2.3 \&\& < 2.6@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
