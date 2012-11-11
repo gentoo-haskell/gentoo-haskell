@@ -31,6 +31,10 @@ src_prepare() {
 		sed -i -e 's,"/","'"${EPREFIX}"'/",g' \
 			"${S}/Distribution/Gentoo/GHC.hs" || die
 	fi
+
+	# for ghc snapshots (usually come with unstable Cabal API)
+	sed -e 's@Cabal >= 1.8 && < 1.17@Cabal >= 1.8 \&\& < 1.18@' \
+		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
 }
 
 src_configure() {
