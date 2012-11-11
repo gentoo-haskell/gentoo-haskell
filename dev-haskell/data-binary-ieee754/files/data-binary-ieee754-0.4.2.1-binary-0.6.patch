@@ -1,0 +1,57 @@
+diff --git a/data-binary-ieee754.cabal b/data-binary-ieee754.cabal
+index 5def21e..cd3b07a 100644
+--- a/data-binary-ieee754.cabal
++++ b/data-binary-ieee754.cabal
+@@ -7,7 +7,7 @@ license-file: License.txt
+ author: John Millikin
+ maintainer: jmillikin@gmail.com
+ build-type: Simple
+-cabal-version: >=1.6
++cabal-version: >=1.10
+ category: Data
+ stability: experimental
+ bug-reports: mailto:jmillikin@gmail.com
+@@ -18,9 +18,6 @@ source-repository head
+   type: bazaar
+   location: http://john-millikin.com/software/data-binary-ieee754/
+ 
+-flag test
+-  default: False
+-
+ library
+   if true
+     ghc-options: -Wall
+@@ -30,19 +27,21 @@ library
+ 
+   build-depends:
+       base >= 3.0 && < 5
+-    , binary >= 0.4 && < 0.6
++    , binary >= 0.4 && < 0.7
+ 
+   exposed-modules:
+     Data.Binary.IEEE754
++  default-language:  Haskell98
+ 
+-executable data-binary-ieee754_tests
+-  main-is: Tests.hs
+-
+-  if flag(test)
+-    build-depends:
+-        QuickCheck >= 2.2 && < 2.4
+-      , test-framework >= 0.2 && < 0.4
+-      , test-framework-quickcheck2 >= 0.2 && < 0.3
+-      , bytestring >= 0.9 && < 0.10
+-  else
+-    buildable: False
++Test-Suite data-binary-ieee754-test
++  type:           exitcode-stdio-1.0
++  main-is:        Tests.hs
++  build-depends:
++      data-binary-ieee754
++    , base >= 3.0 && < 5
++    , binary >= 0.4 && < 0.7
++    , QuickCheck >= 2.2 && < 2.6
++    , test-framework >= 0.2 && < 0.7
++    , test-framework-quickcheck2 >= 0.2 && < 0.3
++    , bytestring >= 0.9 && < 0.11
++  default-language:  Haskell98
