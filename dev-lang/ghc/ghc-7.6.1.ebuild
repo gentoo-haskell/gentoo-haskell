@@ -399,6 +399,8 @@ src_prepare() {
 		# avoid external libffi runtime when we build binaries
 		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
+		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-7339-fix-unaligned-unreg.patch
+
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
 		# epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch

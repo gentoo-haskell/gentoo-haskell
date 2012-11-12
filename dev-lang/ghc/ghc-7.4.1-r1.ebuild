@@ -371,6 +371,8 @@ src_prepare() {
 		# one mode external depend with unstable ABI be careful to stash it
 		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 
+		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-733-fix-unaligned-unreg.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' utils/haddock/doc/configure.ac || die
