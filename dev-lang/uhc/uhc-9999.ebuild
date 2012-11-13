@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 autotools
+inherit eutils git-2 autotools
 
 DESCRIPTION="an Utrecht University haskell compiler"
 HOMEPAGE="http://www.cs.uu.nl/wiki/UHC/"
@@ -26,5 +26,6 @@ MAKEOPTS="${MAKEOPTS} -j1" # uhc itself fails to build base in parallel
 
 src_prepare() {
 	mv EHC/* ./ || die
+	epatch "${FILESDIR}"/${P}-DESTDIR-aware.patch
 	export HOME=${T} # needs for inplace install
 }
