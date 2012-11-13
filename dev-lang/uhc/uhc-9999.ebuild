@@ -17,8 +17,12 @@ IUSE=""
 EGIT_REPO_URI="git://github.com/UU-ComputerScience/uhc.git"
 
 DEPEND=">=dev-lang/ghc-6.10
+	dev-haskell/uuagc
 	dev-haskell/uulib"
 RDEPEND=""
+
+RESTRICT=test # needs /usr/bin/uhc
+MAKEOPTS="${MAKEOPTS} -j1" # uhc itself fails to build base in parallel
 
 src_prepare() {
 	mv EHC/* ./ || die
