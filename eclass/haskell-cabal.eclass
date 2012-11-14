@@ -192,9 +192,19 @@ cabal-bootstrap() {
 	if $(ghc-supports-shared-libraries); then
 		# # some custom build systems might use external libraries,
 		# # for which we don't have shared libs, so keep static fallback
-		# Disabled '-dynamic' as ghc does not embed RPATH to used extra-libraries:
 		# bug #411789, http://hackage.haskell.org/trac/ghc/ticket/5743#comment:3
-		# make_setup -dynamic "$@" ||
+		# http://hackage.haskell.org/trac/ghc/ticket/7062
+		# http://hackage.haskell.org/trac/ghc/ticket/3072
+		# ghc does not set RPATH for extralibs, thus we do it ourselves by hands
+		elog "Prepending $(ghc-libdir) to LD_LIBRARY_PATH"
+		if [[ ${CHOST} != *-darwin* ]]; then
+			LD_LIBRARY_PATH="$(ghc-libdir)${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"
+			export LD_LIBRARY_PATH
+		else
+			DYLD_LIBRARY_PATH="$(ghc-libdir)${DYLD_LIBRARY_PATH:+:}${DYLD_LIBRARY_PATH}"
+			export DYLD_LIBRARY_PATH
+		fi
+		{ make_setup -dynamic "$@" && ./setup --help >/dev/null; } ||
 		make_setup "$@" || die "compiling ${setupmodule} failed"
 	else
 		make_setup "$@" || die "compiling ${setupmodule} failed"
