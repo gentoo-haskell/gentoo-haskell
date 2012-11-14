@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit darcs autotools
+inherit eutils darcs autotools
 
 DESCRIPTION="jhc is a haskell compiler"
 HOMEPAGE="http://repetae.net/john/computer/jhc/"
@@ -33,18 +33,19 @@ DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-aa.patch
 	eautoreconf
 
 	# (UTF-8 source breaks DrIFT. workaround DrIFT bug)
 	cd "${S}/src/E/"
 	mv TypeCheck.hs TypeCheck.hs.UTF-8
 	iconv -f UTF-8 -t ASCII -c TypeCheck.hs.UTF-8 > TypeCheck.hs || die "unable to recode TypeCheck.hs to ASCII"
+
+	
 }
 
 src_configure() {
 	econf --with-hcflags="${HCFLAGS}"
-	darcs init # workaround missing history (ChageLog generation)
-	darcs tag --author="portage's jhc ebuild" phony-useless-tag
 }
 
 src_compile() {

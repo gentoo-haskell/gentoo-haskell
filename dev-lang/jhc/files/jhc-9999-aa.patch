@@ -1,0 +1,41 @@
+aligned_alloc clashes with glibc
+diff --git a/rts/rts/gc_jgc.c b/rts/rts/gc_jgc.c
+index 37d5453..be98d00 100644
+--- a/rts/rts/gc_jgc.c
++++ b/rts/rts/gc_jgc.c
+@@ -18,7 +18,7 @@ static bool s_set_used_bit(void *val) A_UNUSED;
+ static void clear_used_bits(struct s_arena *arena) A_UNUSED;
+ static void s_cleanup_blocks(struct s_arena *arena);
+ static struct s_block *get_free_block(gc_t gc, struct s_arena *arena);
+-static void *aligned_alloc(unsigned size);
++static void *jgc_aligned_alloc(unsigned size);
+ 
+ typedef struct {
+         sptr_t ptrs[0];
+@@ -231,7 +231,7 @@ heap_t A_STD
+ 
+ static heap_t A_STD
+ s_monoblock(struct s_arena *arena, unsigned size, unsigned nptrs, unsigned flags) {
+-        struct s_block *b = aligned_alloc(size * sizeof(uintptr_t));
++        struct s_block *b = jgc_aligned_alloc(size * sizeof(uintptr_t));
+         b->flags = flags | SLAB_MONOLITH;
+         b->color = (sizeof(struct s_block) + BITARRAY_SIZE_IN_BYTES(1) +
+                     sizeof(uintptr_t) - 1) / sizeof(uintptr_t);
+@@ -292,7 +292,7 @@ bitset_find_free(unsigned *next_free,int n,bitarray_t ba[static n]) {
+ }
+ 
+ static void *
+-aligned_alloc(unsigned size) {
++jgc_aligned_alloc(unsigned size) {
+         void *base;
+ #if defined(__WIN32__)
+         base = _aligned_malloc(MEGABLOCK_SIZE, BLOCK_SIZE);
+@@ -318,7 +318,7 @@ struct s_megablock *
+ s_new_megablock(struct s_arena *arena)
+ {
+         struct s_megablock *mb = malloc(sizeof(*mb));
+-        mb->base = aligned_alloc(MEGABLOCK_SIZE);
++        mb->base = jgc_aligned_alloc(MEGABLOCK_SIZE);
+         VALGRIND_MAKE_MEM_NOACCESS(mb->base,MEGABLOCK_SIZE);
+         mb->next_free = 0;
+         return mb;
