@@ -179,23 +179,16 @@ pkg_setup() {
 		die "Could not find a ghc to bootstrap with."
 }
 
-src_unpack() {
-	EGIT_NONBARE="true"
-	EGIT_BRANCH="master"
-	if [[ -n ${GHC_BRANCH} ]]; then
-		EGIT_BRANCH="${GHC_BRANCH}"
-	fi
-
+# as git-2_cleanup is too eager to cleanup
+# variables where it stores repository in DISTDIR
+# we override git-2_gc and do
+git-2_gc() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	git-2_init_variables
-	git-2_prepare_storedir
-	git-2_migrate_repository
-	git-2_fetch "$@"
-	git-2_gc
-	git-2_submodules
+	local args
 
-	pushd ${EGIT_DIR} || die "Could not cd to ${EGIT_DIR}"
+	pushd "${EGIT_DIR}" > /dev/null || die
+
 	if [[ -f ghc-tarballs/LICENSE ]]; then
 		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite pull"
 		./sync-all --branch=${EGIT_BRANCH} --testsuite pull
@@ -210,25 +203,19 @@ src_unpack() {
 		./sync-all --branch=${EGIT_BRANCH} --testsuite get \
 			|| die "sync-all --branch=${EGIT_BRANCH} --testsuite get failed"
 	fi
-	popd
 
-	git-2_move_source
-	git-2_branch
-	git-2_bootstrap
-	git-2_cleanup
-	echo ">>> Unpacked to ${EGIT_SOURCEDIR}"
+	popd > /dev/null
+}
 
-	# Users can specify some SRC_URI and we should
-	# unpack the files too.
-	if [[ ! ${EGIT_NOUNPACK} ]]; then
-		if has ${EAPI:-0} 0 1; then
-			[[ ${A} ]] && unpack ${A}
-		else
-			default_src_unpack
-		fi
+
+src_unpack() {
+	EGIT_NONBARE="true"
+	EGIT_BRANCH="master"
+	if [[ -n ${GHC_BRANCH} ]]; then
+		EGIT_BRANCH="${GHC_BRANCH}"
 	fi
 
-	cd "${S}"
+	git-2_src_unpack
 }
 
 src_prepare() {
