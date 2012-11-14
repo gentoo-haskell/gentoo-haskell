@@ -371,7 +371,7 @@ src_prepare() {
 		# one mode external depend with unstable ABI be careful to stash it
 		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 
-		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-733-fix-unaligned-unreg.patch
+		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-7339-fix-unaligned-unreg.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
