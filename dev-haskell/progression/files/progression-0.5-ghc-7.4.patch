@@ -13,8 +13,9 @@ index d0e1ebf..5d51c75 100644
                       containers,
 -                     process >= 1.0 && < 1.1,
 -                     filepath >= 1.1 && < 1.3,
+-                     haskeline >= 0.6 && < 0.7
 +                     process >= 1.0 && < 1.2,
 +                     filepath >= 1.1 && < 1.4,
-                      haskeline >= 0.6 && < 0.7
++                     haskeline >= 0.6 && < 0.8
  
  build-type:          Simple
