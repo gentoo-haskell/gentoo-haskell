@@ -39,7 +39,11 @@ ghc-getghcpkgbin() {
 	# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
 	# the wrapper script with the static flags
 	echo '[]' > "${T}/empty.conf"
-	if version_is_at_least "7.5.20120516" "$(ghc-version)"; then
+	if version_is_at_least "7.7.20121101" "$(ghc-version)"; then
+		# was moved to bin/ subtree by:
+		# http://www.haskell.org/pipermail/cvs-ghc/2012-September/076546.html
+		echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${T}/empty.conf"
+	elif version_is_at_least "7.5.20120516" "$(ghc-version)"; then
 		echo "$(ghc-libdir)/ghc-pkg" "--global-package-db=${T}/empty.conf"
 	else
 		echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
