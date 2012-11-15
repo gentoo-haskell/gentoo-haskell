@@ -296,16 +296,6 @@ src_configure() {
 	# portage logging) reported as bug #111183
 	echo "SRC_HC_OPTS+=-w" >> mk/build.mk
 
-	echo "SRC_HC_OPTS+=-O -H64m" >> mk/build.mk
-	echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-	echo "GhcStage2HcOpts = -O2 -fasm" >> mk/build.mk
-	echo "GhcHcOpts       = -Rghc-timing" >> mk/build.mk
-	echo "GhcLibHcOpts    = -O2" >> mk/build.mk
-	echo "GhcLibWays     += p" >> mk/build.mk
-	echo 'ifeq "$(PlatformSupportsSharedLibs)" "YES"' >> mk/build.mk
-	echo "GhcLibWays += dyn" >> mk/build.mk
-	echo "endif" >> mk/build.mk
-
 	# some arches do not support ELF parsing for ghci module loading
 	# PPC64: never worked (should be easy to implement)
 	# alpha: never worked
@@ -338,6 +328,15 @@ src_configure() {
 
 	if ! use llvm; then
 		echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
+	fi
+
+	# allows overriding build flavours for libraries:
+	# v   - vanilla (static libs)
+	# p   - profiled
+	# dyn - shared libraries
+	# example: GHC_LIBRARY_WAYS="v dyn"
+	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
 	fi
 
 	# This is only for head builds
