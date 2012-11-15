@@ -26,6 +26,5 @@ MAKEOPTS="${MAKEOPTS} -j1" # uhc itself fails to build base in parallel
 
 src_prepare() {
 	mv EHC/* ./ || die
-	epatch "${FILESDIR}"/${P}-DESTDIR-aware.patch
 	export HOME=${T} # needs for inplace install
 }
