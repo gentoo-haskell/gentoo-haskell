@@ -327,6 +327,13 @@ cabal-configure() {
 		$(ghc-supports-shared-libraries) && \
 			cabalconf="${cabalconf} --enable-shared"
 
+	if $(ghc-supports-shared-libraries); then
+		# maybe a bit lower
+		if version_is_at_least "7.7.20121114" "$(ghc-version)"; then
+			cabalconf="${cabalconf} --enable-shared"
+		fi
+	fi
+
 	set -- configure \
 		--ghc --prefix="${EPREFIX}"/usr \
 		--with-compiler="$(ghc-getghc)" \
