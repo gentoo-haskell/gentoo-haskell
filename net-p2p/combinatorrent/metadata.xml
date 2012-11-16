@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Combinatorrent provides a BitTorrent client, based on STM
+		for concurrency. This is an early preview release which is capable of
+		downloading files from various torrent trackers, but have not yet
+		demonstrated to be correct in all aspects.
+		It is expected that the package currently contains numerous and even
+		grave bugs. Patches to fix any problem are welcome!
+	</longdescription>
+</pkgmetadata>
