@@ -393,8 +393,6 @@ src_compile() {
 }
 
 src_install() {
-	export LD_LIBRARY_PATH="$(find . -type f -name 'lib*.so' -print |sed -e "s@\./\(.*\)/lib.*@${PWD}/\1@g" |xargs | sed -e 's@ @:@g')"
-
 	local insttarget="install"
 
 	emake -j1 ${insttarget} \
@@ -416,20 +414,6 @@ src_install() {
 	dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
 	dobashcomp "${FILESDIR}/ghc-bash-completion"
-
-	# 7.7.20121102 dyn links ghc and forgets to install the ghc shared lib, and the
-	# dynamically linked and profiling files.
-	pushd "${S}/compiler/stage2/build" || die "Could not cd to ${S}/compiler/stage2/build"
-	dodir /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
-	exeinto /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}
-	doexe "libHSghc-${GHC_PV}-ghc${GHC_PV}.so"
-	while IFS= read -r -d $'\0' j; do
-		local d=$(dirname /usr/$(get_libdir)/ghc-${GHC_PV}/ghc-${GHC_PV}${j#${PWD}})
-		dodir ${d}
-		insinto ${d}
-		doins ${j}
-	done < <(find ${PWD} -type f \( -name '*.dyn_hi' -o -name '*.p_hi' \) -print0)
-	popd
 
 	# path to the package.conf.d
 	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
