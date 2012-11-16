@@ -65,16 +65,16 @@ arch_binaries=""
 # 0 - yet
 yet_binary() {
 	case "${ARCH}" in
-		alpha) return 0 ;;
+		#alpha) return 0 ;;
 		#arm)
 		#	ewarn "ARM binary is built on armv5tel-eabi toolchain. Use with caution."
 		#	return 0
 		#;;
-		amd64) return 0 ;;
-		ppc) return 0 ;;
-		ppc64) return 0 ;;
-		sparc) return 0 ;;
-		x86) return 0 ;;
+		#amd64) return 0 ;;
+		#ppc) return 0 ;;
+		#ppc64) return 0 ;;
+		#sparc) return 0 ;;
+		#x86) return 0 ;;
 		*) return 1 ;;
 	esac
 }
