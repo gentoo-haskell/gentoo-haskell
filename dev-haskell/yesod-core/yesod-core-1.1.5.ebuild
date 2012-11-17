@@ -48,7 +48,8 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		=dev-haskell/shakespeare-1.0*:=[profile?]
 		=dev-haskell/shakespeare-css-1.0*:=[profile?]
 		=dev-haskell/shakespeare-i18n-1.0*:=[profile?]
-		=dev-haskell/shakespeare-js-1.0*:=[profile?]
+		>=dev-haskell/shakespeare-js-1.0.2:=[profile?]
+		<dev-haskell/shakespeare-js-1.2:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		<dev-haskell/text-0.12:=[profile?]
 		>=dev-haskell/time-1.1.4:=[profile?]
@@ -62,7 +63,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		=dev-haskell/yesod-routes-1.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/hspec-1.3*
+		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			=dev-haskell/quickcheck-2*
 			dev-haskell/wai-test
