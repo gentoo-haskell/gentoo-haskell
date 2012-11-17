@@ -33,8 +33,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	cp -p "${FILESDIR}/${MY_PN}"-1.2/ReadArgsSpec.hs "${S}" \
-		|| die "Could not copy missing tests"
-}
