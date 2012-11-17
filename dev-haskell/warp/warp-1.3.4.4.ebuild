@@ -38,4 +38,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		=dev-haskell/wai-1.3*:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
+		test? ( >=dev-haskell/hspec-1.3
+			dev-haskell/hunit
+			dev-haskell/quickcheck
+		)
 		>=dev-haskell/cabal-1.8"
