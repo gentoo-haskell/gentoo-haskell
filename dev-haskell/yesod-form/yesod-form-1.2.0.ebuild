@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
+RDEPEND="dev-haskell/aeson:=[profile?]
+		=dev-haskell/attoparsec-0.10*:=[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
 		=dev-haskell/blaze-html-0.5*:=[profile?]
@@ -33,7 +34,8 @@ RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
 		>=dev-haskell/network-2.2:=[profile?]
 		=dev-haskell/persistent-1.0*:=[profile?]
 		=dev-haskell/shakespeare-css-1.0*:=[profile?]
-		=dev-haskell/shakespeare-js-1.0*:=[profile?]
+		>=dev-haskell/shakespeare-js-1.0.2:=[profile?]
+		<dev-haskell/shakespeare-js-1.2:=[profile?]
 		>=dev-haskell/text-0.9:=[profile?]
 		<dev-haskell/text-1.0:=[profile?]
 		>=dev-haskell/time-1.1.4:=[profile?]
@@ -49,7 +51,3 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hspec
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare () {
-	epatch "${FILESDIR}/${PN}-1.1.3-haddock.patch"
-}
