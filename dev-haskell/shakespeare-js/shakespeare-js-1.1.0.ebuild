@@ -18,10 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/shakespeare-1.0.2:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
+		>=dev-haskell/shakespeare-1.0.2:=[profile?]
 		<dev-haskell/shakespeare-1.1:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
