@@ -36,6 +36,6 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
 		=dev-haskell/yesod-core-1.1*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/hspec-1.3*
+		test? ( >=dev-haskell/hspec-1.3
 		)
 		>=dev-haskell/cabal-1.8"
