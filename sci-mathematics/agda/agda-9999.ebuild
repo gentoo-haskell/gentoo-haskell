@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="lib profile"
 inherit haskell-cabal eutils elisp-common darcs
@@ -21,27 +21,30 @@ SLOT="0"
 KEYWORDS=""
 IUSE="epic +stdlib"
 
-RDEPEND=">=dev-haskell/binary-0.4.4[profile?]
-		<dev-haskell/binary-0.6[profile?]
-		epic? ( dev-lang/epic[profile?] )
-		=dev-haskell/geniplate-0.6*[profile?]
-		=dev-haskell/hashable-1.1*[profile?]
-		=dev-haskell/hashtables-1.0*[profile?]
-		>=dev-haskell/haskeline-0.6.3.2[profile?]
-		<dev-haskell/haskeline-0.8[profile?]
-		>=dev-haskell/haskell-src-exts-1.9.6[profile?]
-		<dev-haskell/haskell-src-exts-1.14[profile?]
-		>=dev-haskell/mtl-2.0[profile?]
-		<dev-haskell/mtl-2.2[profile?]
-		>=dev-haskell/quickcheck-2.4[profile?]
-		<dev-haskell/quickcheck-2.6[profile?]
-		>=dev-haskell/syb-0.1[profile?]
-		<dev-haskell/syb-0.4[profile?]
-		=dev-haskell/unordered-containers-0.2*[profile?]
-		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-haskell/zlib-0.4.0.1[profile?]
-		<dev-haskell/zlib-0.6[profile?]
-		>=dev-lang/ghc-6.10.4
+RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
+		<dev-haskell/binary-0.6:=[profile?]
+		=dev-haskell/deepseq-1.3*:=[profile?]
+		epic? ( dev-lang/epic:=[profile?] )
+		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
+		<dev-haskell/geniplate-0.7:=[profile?]
+		>=dev-haskell/hashable-1.1.2.3:=[profile?]
+		<dev-haskell/hashable-1.2:=[profile?]
+		=dev-haskell/hashtables-1.0*:=[profile?]
+		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
+		<dev-haskell/haskeline-0.8:=[profile?]
+		>=dev-haskell/haskell-src-exts-1.9.6:=[profile?]
+		<dev-haskell/haskell-src-exts-1.14:=[profile?]
+		>=dev-haskell/mtl-2.0:=[profile?]
+		<dev-haskell/mtl-2.2:=[profile?]
+		<dev-haskell/parallel-3.3:=[profile?]
+		>=dev-haskell/quickcheck-2.3:=[profile?]
+		<dev-haskell/quickcheck-2.6:=[profile?]
+		=dev-haskell/text-0.11*:=[profile?]
+		=dev-haskell/unordered-containers-0.2*:=[profile?]
+		=dev-haskell/xhtml-3000.2*:=[profile?]
+		>=dev-haskell/zlib-0.4.0.1:=[profile?]
+		<dev-haskell/zlib-0.6:=[profile?]
+		>=dev-lang/ghc-6.12.1:=
 		virtual/emacs
 		app-emacs/haskell-mode"
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
@@ -59,6 +62,13 @@ src_prepare() {
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda and agda-mode from ${MY_PN}.cabal"
 	cabal-mksetup
+	if use epic && use stdlib; then
+		ewarn "Note that the agda-stdlib README:"
+		ewarn "http://www.cse.chalmers.se/~nad/listings/lib/README.html"
+		ewarn 'says: "Currently the library does not support the Epic or JavaScript compiler'
+		ewarn 'backends." Hence you may wish to remove the epic use flag if you wish to use'
+		ewarn "the Agda standard library."
+	fi
 }
 
 src_configure() {

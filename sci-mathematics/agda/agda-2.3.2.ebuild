@@ -23,23 +23,28 @@ IUSE="epic +stdlib"
 
 RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		<dev-haskell/binary-0.6:=[profile?]
+		=dev-haskell/deepseq-1.3*:=[profile?]
 		epic? ( dev-lang/epic:=[profile?] )
-		=dev-haskell/hashable-1.1*:=[profile?]
+		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
+		<dev-haskell/geniplate-0.7:=[profile?]
+		>=dev-haskell/hashable-1.1.2.3:=[profile?]
+		<dev-haskell/hashable-1.2:=[profile?]
 		=dev-haskell/hashtables-1.0*:=[profile?]
 		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
-		<dev-haskell/haskeline-0.7:=[profile?]
+		<dev-haskell/haskeline-0.8:=[profile?]
 		>=dev-haskell/haskell-src-exts-1.9.6:=[profile?]
 		<dev-haskell/haskell-src-exts-1.14:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
+		<dev-haskell/parallel-3.3:=[profile?]
 		>=dev-haskell/quickcheck-2.3:=[profile?]
 		<dev-haskell/quickcheck-2.6:=[profile?]
-		>=dev-haskell/syb-0.1:=[profile?]
-		<dev-haskell/syb-0.4:=[profile?]
+		=dev-haskell/text-0.11*:=[profile?]
+		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		=dev-haskell/xhtml-3000.2*:=[profile?]
 		>=dev-haskell/zlib-0.4.0.1:=[profile?]
 		<dev-haskell/zlib-0.6:=[profile?]
-		>=dev-lang/ghc-6.10.4:=
+		>=dev-lang/ghc-6.12.1:=
 		virtual/emacs
 		app-emacs/haskell-mode"
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
@@ -52,10 +57,10 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-emacs.patch
-	epatch "${FILESDIR}"/${PN}-2.3.0.1-haskell-src-exts-1.13.patch
-	epatch "${FILESDIR}"/${PN}-2.3.0.1-mtl-2.1.patch
-	epatch "${FILESDIR}"/${PN}-2.3.0.1-quickcheck-2.5.patch
+	sed -e '/.*emacs-mode.*$/d' \
+		-e '/^executable agda/,$d' \
+		-i "${S}/${MY_PN}.cabal" \
+		|| die "Could not remove agda and agda-mode from ${MY_PN}.cabal"
 	cabal-mksetup
 	if use epic && use stdlib; then
 		ewarn "Note that the agda-stdlib README:"
