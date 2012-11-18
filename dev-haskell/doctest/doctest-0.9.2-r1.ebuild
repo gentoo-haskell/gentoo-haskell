@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # unstream didn't ship a ton of needed tests
+
 RDEPEND="dev-haskell/deepseq:=[profile?]
 		=dev-haskell/ghc-paths-0.1*:=[profile?]
 		dev-haskell/syb:=[profile?]
