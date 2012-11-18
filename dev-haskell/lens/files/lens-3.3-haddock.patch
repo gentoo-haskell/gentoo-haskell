@@ -1,0 +1,13 @@
+diff --git a/src/Control/Lens/IndexedTraversal.hs b/src/Control/Lens/IndexedTraversal.hs
+index 25435e9..d4504ef 100644
+--- a/src/Control/Lens/IndexedTraversal.hs
++++ b/src/Control/Lens/IndexedTraversal.hs
+@@ -217,7 +217,7 @@ value p = index $ \ f kv@(k,v) -> if p k then (,) k <$> f k v else pure kv
+ --
+ -- @'ignored' :: 'IndexedTraversal' 'Void' s s a b
+ --
+--- @'ignored' ≡ 'const' 'pure'@
++-- @'ignored' = 'const' 'pure'@
+ ignored :: forall s a b k f. (Indexed Void k, Applicative f) => Overloaded k f s s a b
+ ignored = index $ \ (_ :: Void -> a -> f b) s -> pure s :: f s
+ {-# INLINE ignored #-}
