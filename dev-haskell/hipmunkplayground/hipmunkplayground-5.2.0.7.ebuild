@@ -26,9 +26,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/glfw-0.4 <dev-haskell/glfw-0.6
 		=dev-haskell/hipmunk-5.2*
-		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.6
+		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.7
 		=dev-haskell/statevar-1.0*
 		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		>=dev-lang/ghc-6.8.2"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'OpenGL >= 2.4 && < 2.6' 'OpenGL >= 2.4 && < 2.7'
+}
