@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/extensible-exceptions-0.1*:=[profile?]
 		>=dev-haskell/hashed-storage-0.5.6:=[profile?]
 		<dev-haskell/hashed-storage-0.6:=[profile?]
 		>=dev-haskell/haskeline-0.6.3:=[profile?]
-		<dev-haskell/haskeline-0.7:=[profile?]
+		<dev-haskell/haskeline-0.8:=[profile?]
 		=dev-haskell/html-1.0*:=[profile?]
 		=dev-haskell/mmap-0.5*:=[profile?]
 		>=dev-haskell/mtl-1.0:=[profile?]
@@ -63,11 +63,13 @@ src_prepare() {
 	rm "${S}/tests/send-output-v1.sh" || die "Could not rm send-output-v1.sh"
 	rm "${S}/tests/send-output-v2.sh" || die "Could not rm send-output-v2.sh"
 	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
-	sed -e 's@tar          == 0\.3\.\*@tar@' \
-		-e 's@tar ==0\.3\.\*@tar@' \
-		-e 's@tar        == 0\.3\.\*@tar@' \
-		-i "${S}/${PN}.cabal"
+	cabal_chdeps \
+		'tar          == 0.3.*' 'tar >= 0.3 && < 0.5' \
+		'tar        == 0.3.*'   'tar >= 0.3 && < 0.5' \
+		'haskeline    >= 0.6.3 && < 0.7' 'haskeline    >= 0.6.3 && < 0.8'
+
 	epatch "${FILESDIR}/${PN}-2.8.1-tar-0.4.patch"
+	epatch "${FILESDIR}"/${P}-hack-for-haskeline-0.7-breaks-non-utf8.patch
 }
 
 src_configure() {
