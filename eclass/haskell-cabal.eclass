@@ -630,6 +630,8 @@ cabal_chdeps() {
 		[[ -n ${from_pat} ]] || break
 		[[ -n ${to_str} ]] || die "'${from_str}' does not have 'to' part"
 
+		einfo "CHDEP: '${from_pat}' -> '${to_str}'"
+
 		# escape pattern-like symbols
 		from_pat=${from_pat//\*/\\*}
 		from_pat=${from_pat//\[/\\[}
@@ -642,7 +644,7 @@ cabal_chdeps() {
 			diff -u "${T}/${cf}".{pre,post}
 		fi
 
-		[[ "${orig_c}" == "${new_c}" ]] && die "no trigger for '${from_ss}'"
+		[[ "${orig_c}" == "${new_c}" ]] && die "no trigger for '${from_pat}'"
 		orig_c=${new_c}
 		shift
 		shift
