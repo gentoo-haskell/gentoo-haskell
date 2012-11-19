@@ -26,10 +26,15 @@ RDEPEND="virtual/opengl
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/glut-2.2 <dev-haskell/glut-2.4
-		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.6
+		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.7
 		>=dev-lang/ghc-7.0.1"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'OpenGL    >= 2.4 && < 2.6' 'OpenGL    >= 2.4 && < 2.7'
+}
 
 src_configure() {
 	# WORKAROUND:
