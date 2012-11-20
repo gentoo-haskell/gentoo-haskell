@@ -1,0 +1,230 @@
+[2 of 4] Compiling Data.DFA.DOT     ( Data/DFA/DOT.hs, dist/build/Data/DFA/DOT.o )
+
+Data/DFA/DOT.hs:40:1:
+    Unacceptable argument type in foreign declaration: DFA
+    When checking declaration:
+      foreign import ccall safe "static dfa.h DFA_writeDotToFile" writeDotToFile'
+        :: DFA
+           -> FunPtr (Label -> Ptr CChar -> IO ()) -> CString -> IO CInt
+diff --git a/Data/DFA.hs b/Data/DFA.hs
+index eb53ce7..e9f6b4f 100644
+--- a/Data/DFA.hs
++++ b/Data/DFA.hs
+@@ -42,7 +42,7 @@ import Foreign.C
+ -------------------------------------------------------------------
+ 
+ -- | The type of DFAs is abstract: it is a pointer to a C @struct@.
+-newtype DFA = DFA (Ptr DFA)
++data DFA = DFA (Ptr DFA)
+ 
+ -- | Labels are represented using C @unsigned int@s.
+ type Label = CUInt
+@@ -52,16 +52,16 @@ type State = CUInt
+ -- | Create a new @DFA@.
+ initialize :: Bool -- ^ Debugging?
+            -> State -- ^ Initial state
+-           -> IO DFA
++           -> IO (Ptr DFA)
+ initialize debug initial = dfa_init (fromBool debug) initial
+ 
+ -- | Add a transition from the given @State@ on the given @Label@ to
+ -- the given @State@ to @DFA@.
+-addTransition :: DFA -> (State, Label, State) -> IO ()
++addTransition :: Ptr DFA -> (State, Label, State) -> IO ()
+ addTransition dfa (t, l, h) = addTransition' dfa t l h
+ 
+ -- | Is the debugging flag set?
+-debugging :: DFA -> IO Bool
++debugging :: Ptr DFA -> IO Bool
+ debugging = fmap toBool . debugging'
+ 
+ -- | Load a @DFA@ from a file in a standard format. (See the accompanying examples and @dfa.c@ for details.)
+@@ -70,13 +70,13 @@ loadFromFile fname = fmap DFA $ throwErrnoPathIfNull "Data.DFA.loadFromFile" fna
+     withCString fname loadFromFile'
+ 
+ -- | Dump a @DFA@ to a file in a standard format. (See the accompanying examples and @dfa.c@ for details.)
+-dumpToFile :: DFA -> FilePath -> IO ()
++dumpToFile :: Ptr DFA -> FilePath -> IO ()
+ dumpToFile dfa fname = throwErrnoPathIfMinus1_ "Data.DFA.dumpToFile" fname $
+     withCString fname (dumpToFile' dfa)
+ 
+ -- | Reduce the @DFA@ using Antti Valmari's algorithm. The result
+ -- should be the same as for the standard algorithm due to Hopcroft.
+-minimize :: DFA
++minimize :: Ptr DFA
+          -> Bool -- ^ Preserve states that cannot reach final states.
+          -> IO ()
+ minimize dfa = minimize' dfa . fromBool
+@@ -86,7 +86,7 @@ minimize dfa = minimize' dfa . fromBool
+ -- Traversal combinators.
+ 
+ -- | Is the state @s@ final?
+-isFinal :: DFA -> State -> IO Bool
++isFinal :: Ptr DFA -> State -> IO Bool
+ isFinal dfa = fmap toBool . isFinal' dfa
+ 
+ -- | Traverse the transitions of @DFA@ by invoking the given function
+@@ -94,7 +94,7 @@ isFinal dfa = fmap toBool . isFinal' dfa
+ --
+ -- DFAs aren't functorial (they're monomorphic), so we cannot use
+ -- @Traversable@.
+-foldTransitions :: DFA -> ((State, Label, State, Bool) -> b -> IO b) -> b -> IO b
++foldTransitions :: Ptr DFA -> ((State, Label, State, Bool) -> b -> IO b) -> b -> IO b
+ foldTransitions dfa f b0 =
+   do trans <- numTransitions dfa
+      foldM g b0 [ 0 .. trans - 1 ]
+@@ -109,55 +109,55 @@ foldTransitions dfa f b0 =
+ -------------------------------------------------------------------
+ 
+ -- | Create a new @DFA@.
+-foreign import ccall unsafe "dfa.h DFA_init" dfa_init :: Int -> State -> IO DFA
++foreign import ccall unsafe "dfa.h DFA_init" dfa_init :: Int -> State -> IO (Ptr DFA)
+ 
+ -- | Get the initial state.
+ foreign import ccall unsafe "dfa.h DFA_getInitialState"
+-        getInitialState :: DFA -> IO State
++        getInitialState :: Ptr DFA -> IO State
+ 
+--- foreign import ccall unsafe "dfa.h DFA_setInitialState" setInitialState :: DFA -> State -> IO ()
++-- foreign import ccall unsafe "dfa.h DFA_setInitialState" setInitialState :: Ptr DFA -> State -> IO ()
+ 
+ -- | Garbage collect a @DFA@.
+-foreign import ccall unsafe "dfa.h DFA_free" finished :: DFA -> IO ()
++foreign import ccall unsafe "dfa.h DFA_free" finished :: Ptr DFA -> IO ()
+ 
+ -- | Returns the number of states that are actually present in @DFA@.
+-foreign import ccall unsafe "dfa.h DFA_numStates"  numStates :: DFA -> IO CUInt
++foreign import ccall unsafe "dfa.h DFA_numStates"  numStates :: Ptr DFA -> IO CUInt
+ 
+ -- | Returns the number of symbols that are actually present in @DFA@.
+-foreign import ccall unsafe "dfa.h DFA_numSymbols" numSymbols :: DFA -> IO CUInt
++foreign import ccall unsafe "dfa.h DFA_numSymbols" numSymbols :: Ptr DFA -> IO CUInt
+ 
+ -- | Returns the number of transitions that are actually present in @DFA@.
+-foreign import ccall unsafe "dfa.h DFA_numTransitions" numTransitions :: DFA -> IO CUInt
++foreign import ccall unsafe "dfa.h DFA_numTransitions" numTransitions :: Ptr DFA -> IO CUInt
+ 
+ foreign import ccall unsafe "dfa.h DFA_transition_start"
+-        transition_start :: DFA -> CUInt -> IO State
++        transition_start :: Ptr DFA -> CUInt -> IO State
+ foreign import ccall unsafe "dfa.h DFA_transition_label"
+-        transition_label :: DFA -> CUInt -> IO Label
++        transition_label :: Ptr DFA -> CUInt -> IO Label
+ foreign import ccall unsafe "dfa.h DFA_transition_end"
+-        transition_end :: DFA -> CUInt -> IO State
++        transition_end :: Ptr DFA -> CUInt -> IO State
+ 
+ foreign import ccall unsafe "dfa.h DFA_isFinal"
+-        isFinal' :: DFA -> State -> IO CInt {- FIXME Bool -}
++        isFinal' :: Ptr DFA -> State -> IO CInt {- FIXME Bool -}
+ 
+ foreign import ccall unsafe "dfa.h DFA_addTransition"
+-         addTransition' :: DFA -> State -> Label -> State -> IO ()
++         addTransition' :: Ptr DFA -> State -> Label -> State -> IO ()
+ 
+ -- | Set the final bit associated with @State@.
+ --
+ -- The minimization algorithm will distinguish states with different
+ -- bits (that are otherwise bisimilar).
+ foreign import ccall unsafe "dfa.h DFA_setFinal"
+-         setFinal :: DFA -> State -> IO ()
++         setFinal :: Ptr DFA -> State -> IO ()
+ 
+ foreign import ccall unsafe "dfa.h DFA_minimize"
+-         minimize' :: DFA -> CInt {- FIXME Bool -} -> IO ()
++         minimize' :: Ptr DFA -> CInt {- FIXME Bool -} -> IO ()
+ 
+ -- | Is the debugging flag set?
+ foreign import ccall unsafe "dfa.h DFA_debugging"
+-         debugging' :: DFA -> IO CInt -- FIXME actually CBool
++         debugging' :: Ptr DFA -> IO CInt -- FIXME actually CBool
+ 
+ foreign import ccall unsafe "dfa.h DFA_dumpToFile"
+-         dumpToFile' :: DFA -> CString -> IO CInt
++         dumpToFile' :: Ptr DFA -> CString -> IO CInt
+ 
+ foreign import ccall unsafe "dfa.h DFA_loadFromFile"
+          loadFromFile' :: CString -> IO (Ptr DFA)
+diff --git a/Data/DFA/DOT.hs b/Data/DFA/DOT.hs
+index c46841a..4d8b4ea 100644
+--- a/Data/DFA/DOT.hs
++++ b/Data/DFA/DOT.hs
+@@ -16,14 +16,13 @@ import Prelude hiding ( lex, read )
+ import Foreign
+ import Foreign.C
+ 
+-import Data.DFA ( DFA, Label )
+--- import qualified Data.DFA as DFA
++import Data.DFA
+ 
+ -------------------------------------------------------------------
+ 
+ -- | Write @DFA@ to a file with the given @FilePath@ in graphviz DOT
+ -- format, using the given labelling function.
+-writeToFile :: DFA -> FilePath -> (Label -> String) -> IO ()
++writeToFile :: Ptr DFA -> FilePath -> (Label -> String) -> IO ()
+ writeToFile dfa fname labelFn =
+   do labelFunPtr <- mkLabelFunPtr labelFn'
+      throwErrnoPathIfMinus1_ "DOT.writeToFile" fname $
+@@ -38,4 +37,4 @@ foreign import ccall "wrapper"
+ 
+ -- Note this can call back into Haskell land.
+ foreign import ccall safe "dfa.h DFA_writeDotToFile"
+-         writeDotToFile' :: DFA -> FunPtr (Label -> Ptr CChar -> IO ()) -> CString -> IO CInt
++         writeDotToFile' :: Ptr DFA -> FunPtr (Label -> Ptr CChar -> IO ()) -> CString -> IO CInt
+diff --git a/Data/DFA/KISS2.hs b/Data/DFA/KISS2.hs
+index 986f590..80d2492 100644
+--- a/Data/DFA/KISS2.hs
++++ b/Data/DFA/KISS2.hs
+@@ -15,6 +15,7 @@ import Prelude hiding ( lex, read )
+ import Control.Monad ( when )
+ import Data.List ( foldl' )
+ import Foreign.C
++import Foreign
+ 
+ -- import Data.Map ( Map )
+ import qualified Data.Map as Map
+@@ -35,7 +36,7 @@ q0 = 0
+ --
+ -- A very sloppy and incomplete parser. Assumes there is a single
+ -- output.
+-read :: Bool -> String -> IO DFA
++read :: Bool -> String -> IO (Ptr DFA)
+ read debug ls =
+   do let s = foldl' lex_states (Map.empty, initial_state) (lines ls)
+      dfa <- DFA.initialize debug q0
+@@ -101,10 +102,10 @@ read debug ls =
+     lex_trans2 _dfa _sm l = error $ "readKISS2: failed to lex: '" ++ unwords l ++ "'"
+ 
+ -- | Write @DFA@ to a file with the given @FilePath@ in Berkeley KISS2 format.
+-writeToFile :: DFA -> FilePath -> IO ()
++writeToFile :: Ptr DFA -> FilePath -> IO ()
+ writeToFile dfa fname =
+   throwErrnoPathIfMinus1_ "KISS2.writetoFile" fname $
+     withCString fname (writeKISS2ToFile' dfa)
+ 
+ foreign import ccall unsafe "dfa.h DFA_writeKISS2ToFile"
+-         writeKISS2ToFile' :: DFA -> CString -> IO CInt
++         writeKISS2ToFile' :: Ptr DFA -> CString -> IO CInt
+diff --git a/Data/DFA/STAMINA.hs b/Data/DFA/STAMINA.hs
+index 3d39c25..f5c0f57 100644
+--- a/Data/DFA/STAMINA.hs
++++ b/Data/DFA/STAMINA.hs
+@@ -18,6 +18,8 @@ module Data.DFA.STAMINA
+ import Prelude
+ import Control.Monad ( unless, when )
+ 
++import Foreign
++
+ import System.Process ( readProcess )
+ import System.Directory ( removeFile )
+ import System.IO ( openTempFile )
+@@ -34,7 +36,7 @@ import qualified Data.DFA.KISS2 as KISS2
+ --
+ -- FIXME This creates a new DFA (it really shouldn't). It inherits the
+ -- debugging setting from the argument @DFA@.
+-minimize :: FilePath -> DFA -> IO DFA
++minimize :: FilePath -> Ptr DFA -> IO (Ptr DFA)
+ minimize stamina dfa =
+   do debugging <- DFA.debugging dfa
+      (tmpfile, _) <- openTempFile "/tmp" "hDFA_stamina.kiss2"
