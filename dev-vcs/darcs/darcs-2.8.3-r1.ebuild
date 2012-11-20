@@ -70,6 +70,17 @@ src_prepare() {
 
 	epatch "${FILESDIR}/${PN}-2.8.1-tar-0.4.patch"
 	epatch "${FILESDIR}"/${P}-hack-for-haskeline-0.7-breaks-non-utf8.patch
+
+	# ghc-7.6
+	cabal_chdeps \
+		'base >= 4.5 && < 4.6' 'base >= 4.5 && < 4.7' \
+		'bytestring >= 0.9.0 && < 0.10' 'bytestring >= 0.9.0 && < 0.11' \
+		'containers >= 0.1 && < 0.5' 'containers >= 0.1 && < 0.6' \
+		'directory  >= 1.0.0.0 && < 1.2.0.0' 'directory  >= 1.0.0.0 && < 1.3.0.0' \
+		'unix >= 1.0 && < 2.6' 'unix >= 1.0 && < 2.7' \
+		'ghc >= 6.10 && < 7.6' 'ghc >= 6.10 && < 7.8'
+	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
+
 }
 
 src_configure() {
