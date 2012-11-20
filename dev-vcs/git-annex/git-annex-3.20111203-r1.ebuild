@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/hs3
 		dev-haskell/hslogger
 		dev-haskell/http
-		dev-haskell/json
+		dev-haskell/json[generic]
 		dev-haskell/missingh
 		dev-haskell/monad-control
 		>=dev-haskell/mtl-2

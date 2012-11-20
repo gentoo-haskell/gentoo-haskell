@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/hslogger
 		dev-haskell/http
 		dev-haskell/ifelse
-		dev-haskell/json
+		dev-haskell/json[generic]
 		dev-haskell/lifted-base
 		dev-haskell/missingh
 		dev-haskell/monad-control
