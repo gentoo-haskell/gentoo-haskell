@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6.0[profile?]
-		<dev-haskell/cabal-1.15[profile?]
+		<dev-haskell/cabal-1.19[profile?]
 		>=dev-haskell/glib-0.10.0[profile?]
 		<dev-haskell/glib-0.13[profile?]
 		>=dev-haskell/gtk-0.10.0[profile?]
