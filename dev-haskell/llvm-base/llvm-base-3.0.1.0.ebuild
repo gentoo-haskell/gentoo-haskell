@@ -26,4 +26,9 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-svn.patch
 	eautoreconf
+	grep -q "void print" /usr/include/llvm/Support/SourceMgr.h
+	if [[ $? == 0 ]]; then
+		sed -e 's/error.Print/error.print/' \
+			-i "${S}/cbits/extra.cpp" || die "Could not change Print to print"
+	fi
 }
