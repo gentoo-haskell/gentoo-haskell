@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="epic +stdlib"
 
 RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
-		<dev-haskell/binary-0.6:=[profile?]
+		<dev-haskell/binary-0.7:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
 		epic? ( dev-lang/epic:=[profile?] )
 		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
@@ -57,6 +57,9 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.7'
+
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
