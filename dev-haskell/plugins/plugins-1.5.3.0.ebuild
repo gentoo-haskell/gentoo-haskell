@@ -25,6 +25,3 @@ RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.5.2.3-ghc-7.6.patch"
-}
