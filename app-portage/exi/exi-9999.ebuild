@@ -6,6 +6,8 @@
 # IF YOU EXPERIENCE PROBLEMS. PLEASE DO NOT WRITE TO GENTOO-MAILING LISTS
 # AND DON'T FILE ANY BUGS IN BUGZILLA ABOUT THIS BUILD.
 
+EAPI=5
+
 EDARCS_REPOSITORY="http://kosmikus.org/repos/exi/"
 EDARCS_GET_CMD="get --partial"
 
@@ -21,8 +23,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=sys-apps/portage-2.1_pre4"
+RDEPEND=">=sys-apps/portage-2.1_pre4
+	>=dev-lang/ghc-6.4.1:=
+	dev-haskell/fgl:="
 
-DEPEND="${REPEND}
-	>=dev-lang/ghc-6.4.1
-	dev-haskell/fgl"
+DEPEND="${REPEND}"
+
+src_prepare() {
+	CABAL_FILE=portage.cabal cabal_chdeps \
+		'base,' 'base, containers, directory, process,'
+}
