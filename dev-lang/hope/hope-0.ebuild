@@ -13,7 +13,12 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 IUSE="doc"
 
-DEPEND="doc? ( virtual/latex-base dev-tex/latex2html )"
+# dev-texlive/texlive-latexextra contains a4wide.sty
+DEPEND="doc? ( virtual/latex-base
+		dev-tex/latex2html
+		dev-texlive/texlive-latexextra
+	)
+	"
 RDEPEND=""
 
 S="${WORKDIR}/${PN}"
@@ -34,6 +39,8 @@ src_prepare() {
 
 src_install() {
 	dodir /usr/bin
+	# otherwise it will create 'usr/share/man' file
+	mkdir -p "${D}/usr/share/man" || die
 	einstall \
 		hopelib="${D}/usr/share/hope/lib" \
 		docdir="${D}/usr/share/doc/${PF}" \
