@@ -26,6 +26,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
+RESTRICT=test # missing events
+
 src_prepare() {
 	mkdir -p dist/build \
 		|| die "Could not create dist/build directory"
