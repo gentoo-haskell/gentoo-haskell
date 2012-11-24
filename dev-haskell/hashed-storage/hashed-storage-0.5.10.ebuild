@@ -42,5 +42,5 @@ src_configure() {
 src_install() {
 	haskell-cabal_src_install
 
-	use test && rm "${D}/usr/bin/hashed-storage-test"
+	use test && rm "${ED}/usr/bin/hashed-storage-test"
 }
