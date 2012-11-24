@@ -84,8 +84,7 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 LICENSE="BSD"
 SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
-#KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap ghcmakebinary llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
@@ -400,10 +399,6 @@ src_prepare() {
 		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-7339-fix-unaligned-unreg.patch
-
-		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-		# epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
