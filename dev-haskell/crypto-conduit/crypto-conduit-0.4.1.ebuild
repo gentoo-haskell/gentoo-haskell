@@ -28,13 +28,7 @@ RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/cryptocipher-0.3*
 			=dev-haskell/cryptohash-0.7*
-			>=dev-haskell/hspec-0.9
-			<dev-haskell/hspec-1.5
+			>=dev-haskell/hspec-1.3
 			=dev-haskell/skein-0.1*
 		)
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	sed -e 's@hspec        == 0.9.\*@hspec        >= 0.9 \&\& < 1.5@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-}
