@@ -34,7 +34,6 @@ RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
-		=dev-haskell/void-0.5*:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.1
@@ -48,4 +47,4 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}"/${P}-haddock.patch)
+PATCHES=("${FILESDIR}"/${PN}-3.5.1-haddock.patch)
