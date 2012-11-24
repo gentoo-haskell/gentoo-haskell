@@ -21,11 +21,9 @@ IUSE=""
 # Test suite test: FAIL
 RESTRICT="test"
 
-RDEPEND=">=dev-haskell/transformers-0.2:=[profile?]
+RDEPEND="dev-haskell/lifted-base:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-haskell/lifted-base-0.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/lifted-base
-		)
 		>=dev-haskell/cabal-1.8"
