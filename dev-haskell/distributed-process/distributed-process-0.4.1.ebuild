@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/binary-0.5*:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
+		<dev-haskell/binary-0.7:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		=dev-haskell/distributed-static-0.2*:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
@@ -33,12 +34,15 @@ RDEPEND="=dev-haskell/binary-0.5*:=[profile?]
 		<dev-haskell/time-1.5:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-lang/ghc-7.4.2:="
+		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/ansi-terminal-0.5*
+			=dev-haskell/hunit-1.2*
 			>=dev-haskell/network-2.3
 			<dev-haskell/network-2.5
 			=dev-haskell/network-transport-tcp-0.3*
+			=dev-haskell/test-framework-0.6*
+			=dev-haskell/test-framework-hunit-0.2*
 		)
 		>=dev-haskell/cabal-1.8"
 
