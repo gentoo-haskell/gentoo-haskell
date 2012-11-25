@@ -15,7 +15,7 @@ LICENSE="BSD"
 SLOT="0"
 # ia64 lost as we don't have ghc-7 there yet
 # ppc64 needs to be rekeyworded due to xhtml not being keyworded
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths[profile?]
