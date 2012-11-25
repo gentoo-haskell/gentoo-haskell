@@ -33,7 +33,7 @@
 #                  on cabal, but still use this eclass (e.g. haskell-updater).
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
-inherit ghc-package multilib
+inherit eutils ghc-package multilib
 
 # @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @DESCRIPTION:
@@ -145,11 +145,6 @@ if [[ -z ${CABAL_MIN_VERSION} ]]; then
 fi
 if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]]; then
 	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
-fi
-
-# Libraries require GHC to be installed.
-if [[ -n "${CABAL_HAS_LIBRARIES}" ]]; then
-	RDEPEND="${RDEPEND} dev-lang/ghc${eapi_subslot_constraint}"
 fi
 
 # returns the version of cabal currently in use
