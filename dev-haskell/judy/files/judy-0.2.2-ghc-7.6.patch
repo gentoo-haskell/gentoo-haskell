@@ -8,11 +8,14 @@ diff --git a/Data/Judy.hsc b/Data/Judy.hsc
 index 394a8e3..692405c 100644
 --- a/Data/Judy.hsc
 +++ b/Data/Judy.hsc
-@@ -107,6 +107,7 @@ import Foreign.ForeignPtr
+@@ -107,6 +107,10 @@ import Foreign.ForeignPtr
  
  import GHC.Ptr
  import GHC.Base
++#if MIN_VERSION_base(4,6,0)
 +import GHC.Char
++#else
  import GHC.Prim
++#endif
  import GHC.Word
  
