@@ -25,7 +25,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		dev-haskell/zlib:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hunit
+		test? ( app-arch/zip
+			dev-haskell/hunit
 			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.10"
