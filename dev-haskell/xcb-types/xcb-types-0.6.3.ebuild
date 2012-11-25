@@ -24,9 +24,3 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cabal_chdeps \
-		'pretty == 1.0.*' 'pretty >= 1.0 && < 1.2' \
-		'mtl == 2.0.*' 'mtl >= 2.0 && < 2.2'
-}
