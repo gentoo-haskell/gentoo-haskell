@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hscolour nocabaldep"
 inherit eutils haskell-cabal pax-utils
@@ -12,15 +12,15 @@ HOMEPAGE="http://www.haskell.org/haddock/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 # ia64 lost as we don't have ghc-7 there yet
 # ppc64 needs to be rekeyworded due to xhtml not being keyworded
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="dev-haskell/ghc-paths[profile?]
-		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.6.1"
+RDEPEND="dev-haskell/ghc-paths:=[profile?]
+		=dev-haskell/xhtml-3000.2*:=[profile?]
+		>=dev-lang/ghc-7.6.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
