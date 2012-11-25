@@ -79,8 +79,7 @@ src_prepare() {
 		'directory  >= 1.0.0.0 && < 1.2.0.0' 'directory  >= 1.0.0.0 && < 1.3.0.0' \
 		'unix >= 1.0 && < 2.6' 'unix >= 1.0 && < 2.7' \
 		'ghc >= 6.10 && < 7.6' 'ghc >= 6.10 && < 7.8'
-	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
-
+	epatch "${FILESDIR}"/${P}-ghc-7.6.patch.bz2
 }
 
 src_configure() {
