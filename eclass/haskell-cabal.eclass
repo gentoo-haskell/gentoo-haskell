@@ -412,6 +412,9 @@ cabal-is-dummy-lib() {
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
+	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
+		[[ ${RDEPEND} == *dev-lang/ghc* ]] || eqawarn "QA Notice: A library does not have runtime dependency on dev-lang/ghc."
+	fi
 	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
 		eqawarn "QA Notice: Neither bin nor lib are in CABAL_FEATURES."
 	fi
