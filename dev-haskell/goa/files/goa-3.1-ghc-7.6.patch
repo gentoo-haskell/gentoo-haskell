@@ -1,0 +1,17 @@
+diff --git a/goa.cabal b/goa.cabal
+index 371f0dd..6e4cacf 100755
+--- a/goa.cabal
++++ b/goa.cabal
+@@ -7,9 +7,9 @@ Maintainer:          Chris Done <chrisdone@gmail.com>
+ Synopsis:            GHCi on Acid
+ Description:         Offers an interface to be able to call Lambdabot commands within GHCi. Now works with recent lambdabots.
+ Build-Depends:       base > 4 && <5,
+-                     directory >= 1.0 && < 1.2,
+-                     process >= 1.0 && < 1.2,
+-                     filepath >= 1.1 && < 1.4
++                     directory >= 1.0,
++                     process >= 1.0,
++                     filepath >= 1.1
+ 
+ Build-Type:          Simple
+ Category:            System
