@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?]
 		<dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-		>=dev-haskell/quickcheck-2.4:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		>=dev-haskell/quickcheck-2.4:2=[profile?]
+		<dev-haskell/quickcheck-2.6:2=[profile?]
 		>=dev-haskell/random-1:=[profile?]
 		>=dev-haskell/test-framework-0.6:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
