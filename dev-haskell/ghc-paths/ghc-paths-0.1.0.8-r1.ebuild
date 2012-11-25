@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="3"
+EAPI=5
 
 # haddock feature is explicitely disabled, as this library can be used as haddock depend
 CABAL_FEATURES="lib profile"
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.8.2"
+RDEPEND=">=dev-lang/ghc-6.8.2:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
@@ -33,15 +33,15 @@ src_prepare() {
 	# GHC_PATHS_GHC_PKG /usr/bin/ghc-pkg
 	# GHC_PATHS_GHC /usr/bin/ghc (be careful: GHC_PATHS_GHC is a substring of GHC_PATHS_GHC_PKG)
 
-	cat >"${S}/GHC/Paths.hs" <<EOF
-module GHC.Paths ( ghc, ghc_pkg, libdir, docdir ) where
+	cat >"${S}/GHC/Paths.hs" <<-EOF
+	module GHC.Paths ( ghc, ghc_pkg, libdir, docdir ) where
 
-libdir, docdir, ghc, ghc_pkg :: FilePath
+	libdir, docdir, ghc, ghc_pkg :: FilePath
 
-libdir  = "$(ghc-libdir)"
-docdir  = "/usr/share/doc/ghc-$(ghc-version)/html"
+	libdir  = "$(ghc-libdir)"
+	docdir  = "/usr/share/doc/ghc-$(ghc-version)/html"
 
-ghc     = "$(ghc-getghc)"
-ghc_pkg = "$(ghc-getghcpkg)"
-EOF
+	ghc     = "$(ghc-getghc)"
+	ghc_pkg = "$(ghc-getghcpkg)"
+	EOF
 }
