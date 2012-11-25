@@ -1,0 +1,18 @@
+[1 of 1] Compiling Data.Judy        ( dist/build/Data/Judy.hs, dist/build/Data/Judy.o )
+
+Data/Judy.hsc:765:25:
+    Not in scope: `chr'
+    Perhaps you meant `chr#' (imported from GHC.Prim)
+
+diff --git a/Data/Judy.hsc b/Data/Judy.hsc
+index 394a8e3..692405c 100644
+--- a/Data/Judy.hsc
++++ b/Data/Judy.hsc
+@@ -107,6 +107,7 @@ import Foreign.ForeignPtr
+ 
+ import GHC.Ptr
+ import GHC.Base
++import GHC.Char
+ import GHC.Prim
+ import GHC.Word
+ 
