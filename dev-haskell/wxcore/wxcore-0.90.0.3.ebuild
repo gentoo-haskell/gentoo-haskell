@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
 WX_GTK_VER="2.9"
 
-CABAL_FEATURES="lib profile haddock hscolour hoogle"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="wxHaskell core"
@@ -14,16 +14,16 @@ HOMEPAGE="http://haskell.org/haskellwiki/WxHaskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="wxWinLL-3.1"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="opengl"
 
-RDEPEND="dev-haskell/parsec[profile?]
-		dev-haskell/stm[profile?]
-		dev-haskell/time[profile?]
-		>=dev-haskell/wxc-0.90:${WX_GTK_VER}[opengl,profile?]
-		>=dev-haskell/wxdirect-0.90[profile?]
-		>=dev-lang/ghc-6.10.1"
+RDEPEND="dev-haskell/parsec:=[profile?]
+		dev-haskell/stm:=[profile?]
+		dev-haskell/time:=[profile?]
+		>=dev-haskell/wxc-0.90.0.4:${WX_GTK_VER}=[opengl,profile?]
+		>=dev-haskell/wxdirect-0.90:=[profile?]
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
