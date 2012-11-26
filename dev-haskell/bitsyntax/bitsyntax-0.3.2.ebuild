@@ -28,4 +28,5 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}"/${P}-qc-2.4.patch)
+PATCHES=("${FILESDIR}"/${P}-qc-2.4.patch
+	"${FILESDIR}"/${P}-ghc-7.6.patch)
