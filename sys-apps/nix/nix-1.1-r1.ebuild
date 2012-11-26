@@ -20,3 +20,13 @@ DEPEND=""
 RDEPEND=""
 
 S="${WORKDIR}/${PN}-${MY_PV}"
+
+src_install() {
+	default
+	rm "${ED}"/etc/profile.d/nix.sh || die
+}
+
+pkg_postinstall() {
+	ewarn "${EROOT}etc/profile.d/nix.sh was removed."
+	ewarn "Please fix the ebuild by adding nix user/group handling."
+}
