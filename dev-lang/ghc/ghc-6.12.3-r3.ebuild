@@ -57,7 +57,7 @@ SRC_URI="!binary? ( http://darcs.haskell.org/download/dist/${PV}/${P}-src.tar.bz
 	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="binary doc ghcbootstrap"
 IUSE+=" ghcquickbuild" # overlay only
 
@@ -378,6 +378,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${P}-darwin8.patch
 		epatch "${FILESDIR}"/${P}-mach-o-relocation-limit.patch
 		epatch "${FILESDIR}"/${P}-powerpc-darwin-no-mmap.patch
+		epatch "${FILESDIR}"/${PN}-7.0.4-nonthreaded-getNumberOfProcessors.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
