@@ -24,7 +24,10 @@ RDEPEND=""
 RESTRICT=test # needs /usr/bin/uhc
 MAKEOPTS="${MAKEOPTS} -j1" # uhc itself fails to build base in parallel
 
+
+EGIT_SOURCEDIR=${S}
+S=${S}/EHC
+
 src_prepare() {
-	mv EHC/* ./ || die
 	export HOME=${T} # needs for inplace install
 }
