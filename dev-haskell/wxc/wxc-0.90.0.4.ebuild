@@ -20,7 +20,7 @@ SLOT="${WX_GTK_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="opengl"
 
-RDEPEND=">=dev-haskell/wxdirect-0.90:=[profile?]
+RDEPEND=">=dev-haskell/wxdirect-0.90:${WX_GTK_VER}=[profile?]
 		x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer,opengl?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
