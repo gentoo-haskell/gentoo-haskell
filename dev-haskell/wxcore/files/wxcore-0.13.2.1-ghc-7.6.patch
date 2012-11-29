@@ -1,0 +1,53 @@
+--- wxcore-0.13.2.1-orig/wxcore.cabal	2012-02-07 18:27:09.000000000 +1100
++++ wxcore-0.13.2.1/wxcore.cabal	2012-11-29 17:21:49.458155692 +1100
+@@ -209,7 +209,7 @@
+     build-depends:
+       array >= 0.2 && < 0.5,
+       base >= 4 && < 5,
+-      containers >= 0.2 && < 0.5
++      containers >= 0.2 && < 0.6
+   else
+     build-depends:
+       array >= 0.1 && < 0.3,
+--- wxcore-0.13.2.1-orig/src/haskell/Graphics/UI/WXCore/Events.hs	2012-02-07 18:27:09.000000000 +1100
++++ wxcore-0.13.2.1/src/haskell/Graphics/UI/WXCore/Events.hs	2012-11-29 17:21:49.458155692 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE CPP, ForeignFunctionInterface #-}
+ -----------------------------------------------------------------------------------------
+ {-|	Module      :  Events
+ 	Copyright   :  (c) Daan Leijen 2003
+@@ -240,6 +240,9 @@
+ import Foreign.Marshal.Alloc
+ import Foreign.Marshal.Array
+ import Foreign.Marshal.Utils
++#if (__GLASGOW_HASKELL__>=705)
++import Foreign.C.Types(CInt(..))
++#endif
+ 
+ import Data.Char ( chr ) -- used in stc
+ import Data.Maybe ( fromMaybe, fromJust )
+--- wxcore-0.13.2.1-orig/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2012-02-07 18:27:09.000000000 +1100
++++ wxcore-0.13.2.1/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2012-11-29 17:42:22.477244493 +1100
+@@ -142,7 +142,12 @@
+ 
+ import Data.Int
+ import Data.Word
++#ifdef MIN_VERSION_base(4,5,0)
++import Debug.Trace (traceIO)
++#else
+ import Debug.Trace (putTraceMsg)
++#define traceIO putTraceMsg
++#endif
+ 
+ import Graphics.UI.WXCore.WxcObject
+ import Graphics.UI.WXCore.WxcClassTypes
+@@ -853,7 +858,7 @@
+ withCharResult io
+   = do x <- io
+        if (x < 0)
+-          then do putTraceMsg ("Recieved negative unicode: " ++ (show x))
++          then do traceIO ("Recieved negative unicode: " ++ (show x))
+                   return '\n'
+           else return (fromCWchar x)
+ 
