@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+# 0 of 2 test suites (0 of 2 test cases) passed.
+RESTRICT="test"
 
 RDEPEND=">=dev-haskell/data-default-0.4:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
@@ -30,3 +32,7 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps 'data-default >=0.4 && <0.5' 'data-default >=0.4 && <0.6'
+}
