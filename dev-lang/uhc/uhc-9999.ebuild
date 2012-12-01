@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,13 +17,19 @@ IUSE=""
 EGIT_REPO_URI="git://github.com/UU-ComputerScience/uhc.git"
 
 DEPEND=">=dev-lang/ghc-6.10
+	dev-haskell/binary
+	dev-haskell/fgl
+	dev-haskell/hashable
+	dev-haskell/network
+	dev-haskell/shuffle
+	dev-haskell/syb
 	dev-haskell/uuagc
+	dev-haskell/uhc-util
 	dev-haskell/uulib"
 RDEPEND=""
 
 RESTRICT=test # needs /usr/bin/uhc
-MAKEOPTS="${MAKEOPTS} -j1" # uhc itself fails to build base in parallel
-
+MAKEOPTS+=" -j1" # uhc itself fails to build base in parallel
 
 EGIT_SOURCEDIR=${S}
 S=${S}/EHC
