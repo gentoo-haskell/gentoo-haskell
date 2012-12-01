@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		An editor shows a textual description of music (like Haskore),
+		an interpreter computes and emits a stream of MIDI events,
+		and (that&#39;s the main point) the user can change the program on the fly.
+		Additionally the state of the interpreter is shown
+		in the form of the current reduced term
+		for educational and debugging purposes.
+		
+		1. example usage *****
+		
+		The live-sequencer does not make music itself,
+		its entire task is to control other software or hardware synthesizers.
+		That is, in order to hear something you need a working MIDI synthesizer
+		such as the sampling based software synthesizer TiMidity.
+		You may run TiMidity and the live-sequencer this way:
+		
+		&gt; timidity -iA &amp;
+		&gt; live-sequencer-gui --connect-to TiMidity Simplesong &amp;
+		
+		This should give you an ongoing stream of notes.
+		Then change one of the numbers
+		that appear in the lines like
+		@qn = 300@
+		and press CTRL-R for \&quot;reloading\&quot; that module into the interpreter.
+		This should immediately have an effect,
+		namely increasing the tempo of the melody.
+		You may also alter a note name like @c 4@ to @cis 4@, then reload,
+		then undo the modification and reload, again, after a while.
+		This is the main idea of changing the song while it is playing.
+		The way the changes are applied warrants
+		that the change takes effect when the time comes.
+		Music is not interrupted and
+		does not need to be restarted for reacting to changes.
+		
+		The overall task performed by the sequencer
+		is to lazily evaluate a term called @main@
+		that is a list of events.
+		The value of @main@ is a stream of midi events
+		(@On/Off pitch velocity@, @PgmChange@, @Controller@)
+		or (@Wait milliseconds@).
+		You may wrap a MIDI event in a @Channel@ constructor
+		in order to assign the event to the particular MIDI channel.
+		If you omit this constructor then the event is put to channel 0.
+		
+		In each step, the head of the @main@ stream gets reduced
+		to head normal form (with @:@ at the top),
+		and the first arg of the @:@ gets fully expanded
+		and it must be a MIDI event.
+		
+		2. input language *****
+		
+		The used language is syntactically almost a subset of Haskell with
+		only strict pattern matching and
+		pattern matching only at the definition level (no case),
+		no local bindings (no lambda, let, where),
+		no types (no type inference, type signatures and type declarations are skipped),
+		and with diet syntax (i.e. drastically reduced syntactic sugar,
+		like no layout rule, no do syntax, no list comprehension, no operator sections).
+		
+		Semantics is similar to lazy evaluation,
+		but we have no sharing.
+		The design goal is that code can be changed
+		while the program is running.
+		This implies that evaluation of one expression
+		may give different results at different times
+		(e.g., during a live performance,
+		one changes some chords of a musical theme).
+		In turn, this implies that we do not store
+		and share results of evaluations,
+		hence, we don&#39;t have local bindings.
+		
+		You may import and use
+		the special functions &#39;Controls.checkBox&#39;, &#39;Controls.slider&#39;
+		from the &quot;Controls&quot; module.
+		For every call to these functions a widget is added to the control window
+		and the state of the widget is the result of the function call.
+		Technically every change of these widgets
+		internally adds or updates a rule in the &quot;Controls&quot; module.
+		The effect is very similar to updating a value definition in a module
+		and then reloading that module to the interpreter,
+		but using the widgets is more intuitive.
+		
+		3. Offline rendering *****
+		
+		In the library interface of this package
+		we provide the basic Live-Sequencer modules
+		in order to allow offline rendering of music
+		that you programmed within the Live-Sequencer.
+		You may generate a standard MIDI file
+		using functions from the &quot;Render&quot; module.
+		To this end load your song module into GHCi and call
+		
+		&gt;YourModule&gt; Render.writeStream &quot;yoursong.mid&quot; yourSong
+		
+		4. HTTP access *****
+		
+		You may open a browser and view all modules under
+		&lt;http://localhost:8080/&gt;.
+		If the user of the GUI inserts comments like this one:
+		
+		&gt;----------------
+		
+		, then it is possible to modify the content below this mark via HTTP.
+		This way multiple people can participate in the composition process.
+		The recommended situation is a room
+		with a data projector and a loudspeaker,
+		where the conductor explains the functions to the auditory
+		and the participants can watch the screen and listen to the music.
+		
+		You may choose any other port using the command line option @--http-port@.
+		If you want to use a system port like the standard HTTP port 80,
+		we recommend to configure a firewall to redirect the external port 80
+		to the internal user port.
+		We discourage from starting the live-sequencer as root user.
+		You may disable the HTTP server altogether
+		by compiling with @cabal install -f-httpServer@.
+		
+		5. Execution modes *****
+		
+		There are three modes of execution
+		that you can choose from the @Execution@ menu:
+		
+		* Real-time:
+		This is the mode for musical live performances.
+		The interpreter waits according to the @Wait@ elements in the main list.
+		
+		* Slow motion:
+		This mode is for demonstration and debugging.
+		You can alter the speed using @CTRL-\&lt;@ and @CTRL-\&gt;@.
+		
+		* Single step:
+		This mode is for demonstration, debugging and as a pause mode,
+		when the interpreter reaches the end of the main list.
+		You can trigger evaluation of the next element using @CTRL-N@.
+		Unfortunately it is currently not possible to undo a step.
+		
+		6. Editing *****
+		
+		You can change a module name by altering the module identifier
+		between the @module@ and @where@ keywords
+		and then triggering module reload.
+		The same way you can load new modules
+		by adding import lines and reloading the module.
+		Alternatively, you may create new modules or close old ones
+		using functions from the @File@ menu.
+		
+		For composition it is useful to play parts of the music.
+		You can do this by simply placing the cursor within an identifier
+		or by marking an expression
+		and then call @Play term@ from the @Execution@ menu.
+		This will make the marked expression the current term
+		and start playing.
+		
+		Once the music is playing you can change it
+		by altering the module and reload it.
+		However you may find out
+		that you cannot do a certain modification this way.
+		In this case you can mark an expression
+		that denotes a stream transformation function
+		and call the @Apply term@ menu item.
+		This will apply the marked function to the current term.
+		Useful functions are:
+		
+		* @merge newTrack@ for adding a new track simultaneously.
+		However, mind the latency!
+		
+		* @flip append newTrack@ for appending some events to the current music.
+		
+		* @dropTime time@ for skipping a part of the music.
+		However this may skip some @Off@ events and this yields hanging tones.
+		Additionally you may exceed the number of maximally allowed reductions.
+		
+		* @skipTime time@ for skipping a part of the music.
+		This one only removes or shortens @Wait@ constructors.
+		Thus all events are played but you risk exceeding the limit
+		for playing many events at once.
+		
+		* @compressTime acceleration time@ for accelerating the music for a certain time.
+		This should circumvent the problems of @dropTime@ and @skipTime@.
+		
+		7. Limits *****
+		
+		Without some safety belts it would be very easy
+		to consume all memory or all processing power
+		by accident or by people who contribute malicious code via HTTP.
+		Thus we have added some limits.
+		These have reasonable default values
+		but you can adjust them to your needs via command line options at startup.
+		These are the limits you can set:
+		
+		* maximum number of reduction steps per list element:
+		With this limit you can prevent infinite loops.
+		
+		* term size:
+		With this limit you can prevent memory leaks.
+		
+		* term depth:
+		With this limit you can prevent unbalanced expression trees.
+		Unbalanced trees do not consume more memory than balanced ones,
+		but they consume considerably more graphical space on pretty-printing.
+		
+		* maximum number of events per time period:
+		If your song is too fast or does not contain any @Wait@ elements at all,
+		your machine will run out of processing power.
+		Thus you can restrict the number of events
+		generated in a certain period of time.
+		It is controlled by two options:
+		@--event-period@ sets the time period in milliseconds
+		whereas @--max-events-per-period@
+		sets the maximum number of events within this time period.
+		In principle you can consider this a ratio
+		but you cannot simply cancel it.
+		E.g. both @--event-period=100 --max-events-per-period=15@
+		and @--event-period=1000 --max-events-per-period=150@
+		describe the same ratio,
+		the difference is how liberal is the sequencer
+		with respect to exceeding the ratio for a short time.
+		Read the first setting as:
+		\&quot;For 15 adjacent events,
+		the duration between the first and the last one must be at least 100ms.\&quot;
+		That is, if you emit 20 events simultaneously every second,
+		then the first setting will forbid this,
+		and the second setting will allow it.
+		Thus we recommend to first set @--max-events-per-period@
+		to the number of events that you want to emit simultaneously
+		and then set @--event-period@ large enough
+		to match the power of your machine.
+		
+		8. ALSA
+		
+		Using the @--new-out-port@ option
+		you may add more ALSA MIDI ports.
+		Every port extends the range of MIDI channels by 16 new logical channels.
+		That is @Channel 40 ev@ sends an event
+		to MIDI channel 8 at the second newly added ALSA port
+		(because 40 = 2*16+8).
+		Every @--connect-to@ option refers to the latest added port.
+		Example:
+		
+		&gt; live-sequencer --connect-to Synth0 --new-out-port out1 --connect-to Synth1 --new-out-port out2 --connect-to Synth2
+		
+		You do not need to connect to any synthesizer at startup.
+		You may connect or disconnect the live-sequencer
+		to any synthesizer once it is running
+		using @aconnect@ (command line) or
+		@kaconnect@, @alsa-patch-bay@, @patchage@ (graphical interfaces).
+	</longdescription>
+</pkgmetadata>

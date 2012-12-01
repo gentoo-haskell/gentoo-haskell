@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		These lists manage events that are associated with times.
+		Times may be given as difference between successive events
+		or as absolute time values.
+		Pauses before the first and after the last event are supported.
+		The underlying data structures are lists of elements of alternating types,
+		that is [b,a,b,...,a,b] or [a,b,a,...,a,b].
+		The data structures can be used to represent
+		MIDI files, OpenSoundControl message streams, music performances etc.
+	</longdescription>
+</pkgmetadata>

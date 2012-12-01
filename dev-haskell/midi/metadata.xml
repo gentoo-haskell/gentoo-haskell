@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		MIDI is the Musical Instrument Digital Interface.
+		The package contains definition of realtime and file MIDI messages,
+		reading and writing MIDI files,
+		and some definitions from the General MIDI standard.
+		It contains no sending and receiving of MIDI messages.
+		For this purpose see the @alsa-seq@, @jack@, @PortMidi@, @hmidi@ packages.
+		For music composition with MIDI output, see @haskore@.
+		Alternative packages are @HCodecs@, @zmidi-core@.
+	</longdescription>
+</pkgmetadata>
