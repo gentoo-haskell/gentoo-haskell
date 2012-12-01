@@ -1,0 +1,22 @@
+[1 of 1] Compiling Network.FastCGI  ( dist/build/Network/FastCGI.hs, dist/build/Network/FastCGI.o )
+
+Network/FastCGI.hsc:69:1:
+    Unacceptable result type in foreign declaration: IO CInt
+    When checking declaration:
+      foreign import ccall unsafe "static fcgiapp.h FCGX_IsCGI" fcgx_isCGI
+        :: IO CInt
+
+diff --git a/Network/FastCGI.hsc b/Network/FastCGI.hsc
+index 19aa2c0..e5b69a0 100644
+--- a/Network/FastCGI.hsc
++++ b/Network/FastCGI.hsc
+@@ -33,8 +33,7 @@ import Control.Monad    ( liftM )
+ import Data.Word (Word8)
+ import Foreign          ( Ptr, castPtr, nullPtr, peekArray0 
+                         , alloca, mallocBytes, free, throwIfNeg_)
+-import Foreign.C        ( CInt, CString, CStringLen
+-                        , peekCString )
++import Foreign.C
+ import Foreign.Storable ( Storable (..) )
+ import System.IO.Unsafe (unsafeInterleaveIO,unsafePerformIO)
+ 
