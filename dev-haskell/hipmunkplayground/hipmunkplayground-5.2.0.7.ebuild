@@ -35,5 +35,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'OpenGL >= 2.4 && < 2.6' 'OpenGL >= 2.4 && < 2.7'
+		'OpenGL >= 2.4 && < 2.6' 'OpenGL >= 2.4 && < 2.7' \
+		'containers >= 0.1 && < 0.5' 'containers >= 0.1 && < 0.6'
 }
