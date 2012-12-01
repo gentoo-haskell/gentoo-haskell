@@ -1,0 +1,46 @@
+bytestring-0.10 changed fixity of infix ops:
+
+Text/JSONb/Encode.hs:28:33:
+    Precedence parsing error
+        cannot mix `cons' [infixr 5] and `snoc' [infixl 5] in the same infix expression
+
+Text/JSONb/Encode.hs:29:33:
+    Precedence parsing error
+        cannot mix `cons' [infixr 5] and `snoc' [infixl 5] in the same infix expression
+
+Text/JSONb/Encode.hs:57:33:
+    Precedence parsing error
+        cannot mix `cons' [infixr 5] and `snoc' [infixl 5] in the same infix expression
+diff --git a/Text/JSONb/Encode.hs b/Text/JSONb/Encode.hs
+index 8e8dbb8..ec6fb7d 100644
+--- a/Text/JSONb/Encode.hs
++++ b/Text/JSONb/Encode.hs
+@@ -25,8 +25,8 @@ import Text.JSON.Escape
+  -}
+ encode                      ::  Style -> JSON -> ByteString
+ encode style@Compact json    =  case json of
+-  Object trie               ->  '{' `cons` pairs trie `snoc` '}'
+-  Array elems               ->  '[' `cons` elements elems `snoc` ']'
++  Object trie               ->  ('{' `cons` pairs trie) `snoc` '}'
++  Array elems               ->  ('[' `cons` elements elems) `snoc` ']'
+   String s                  ->  stringify s
+   Number r
+     | denominator r == 1    ->  (pack . show . numerator) r
+@@ -39,7 +39,7 @@ encode style@Compact json    =  case json of
+   elements                   =  comcat . fmap (encode style)
+   pairs                      =  comcat . toListBy pair
+    where
+-    pair k v                 =  stringify k `snoc` ':' `append` encode style v
++    pair k v                 =  (stringify k `snoc` ':') `append` encode style v
+ 
+ 
+ {-| Style of serialization. Compact is the only one that is implemented at
+@@ -54,7 +54,7 @@ deriving instance Eq Style
+     marks.
+  -}
+ stringify                   ::  ByteString -> ByteString
+-stringify s                  =  '"' `cons` escape s `snoc` '"'
++stringify s                  =  ('"' `cons` escape s) `snoc` '"'
+ 
+ 
+ 
