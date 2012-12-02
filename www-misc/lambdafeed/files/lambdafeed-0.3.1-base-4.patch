@@ -1,0 +1,23 @@
+diff --git a/LambdaFeed.hs b/LambdaFeed.hs
+index 8652337..4ae3bd2 100644
+--- a/LambdaFeed.hs
++++ b/LambdaFeed.hs
+@@ -116,6 +116,8 @@ where
+ import Control.Monad (
+   liftM, mplus)
+ 
++import qualified Control.Exception as E (catch)
++
+ import Data.Char (
+   isDigit, toLower)
+ import Data.List (
+@@ -723,5 +725,8 @@ main =
+      >>= formatFeed   config 
+      >>= writeFeed    config 
+      >>= printSummary config)
+-      `catch` \e -> abortWithIO [show e]
++      `catchE` \e -> abortWithIO [show e]
+     exitSuccess
++
++catchE :: IO a -> (IOError -> IO a) -> IO a
++catchE = E.catch
