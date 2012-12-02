@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-CABAL_FEATURES="bin lib profile haddock"
+# disabled haddock as there is USE="doc hscolour" case with circular depends
+CABAL_FEATURES="bin lib profile"
 inherit base haskell-cabal
 
 DESCRIPTION="Colourise Haskell code."
