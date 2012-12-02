@@ -44,3 +44,9 @@ RDEPEND="dev-haskell/aeson[profile?]
 		>=dev-lang/ghc-6.12.3"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	# ghc-7.6 eats all ticks
+	cabal_chdeps \
+		'ghc-options:' 'ghc-options: -fsimpl-tick-factor=15000 '
+}
