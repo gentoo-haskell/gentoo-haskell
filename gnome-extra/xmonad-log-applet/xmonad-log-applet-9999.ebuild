@@ -23,7 +23,7 @@ RDEPEND="sys-apps/dbus
 	gnome3? ( >=gnome-base/gnome-panel-3.0.2 )
 	xfce4? ( xfce-base/xfce4-panel )
 	dev-libs/glib:2
-	dev-haskell/hdbus
+	dev-haskell/dbus
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}"
 
