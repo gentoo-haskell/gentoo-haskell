@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Tiny helper for pretty-printing values in ghci console
+		
+		Usage example:
+		
+		&gt;Prelude&gt; let e = replicate 5 [1..14] -- value we want to print
+		&gt;Prelude&gt; :m + IPPrint
+		&gt;Prelude IPPrint&gt; pprint e
+		&gt;   [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+		&gt;    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+		&gt;    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+		&gt;    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+		&gt;    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]]
+		
+		Terminal width support added by Jean-Marie Gaillourdet.
+	</longdescription>
+</pkgmetadata>
