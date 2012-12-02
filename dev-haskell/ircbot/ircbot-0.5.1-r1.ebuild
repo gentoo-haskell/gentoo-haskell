@@ -35,5 +35,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'network    == 2.3.*' 'network    >= 2.3 && <2.5' \
-		'stm        >= 2.2 && < 2.4' 'stm        >= 2.2 && < 2.5'
+		'stm        >= 2.2 && < 2.4' 'stm        >= 2.2 && < 2.5' \
+		'directory   < 1.2' 'directory   < 1.3' \
+		'unix       >= 2.4 && < 2.6' 'unix       >= 2.4 && < 2.7'
 }
