@@ -1,0 +1,56 @@
+diff --git a/src/HSP/Exception.hs b/src/HSP/Exception.hs
+index 18e6157..0ad558d 100644
+--- a/src/HSP/Exception.hs
++++ b/src/HSP/Exception.hs
+@@ -18,18 +18,15 @@ module HSP.Exception (
+ 	) where
+ 
+ import Data.Typeable
+-#ifdef BASE4
+-import Control.OldException (throwDyn)
+-#else
+-import Control.Exception (throwDyn)
+-#endif
++import qualified Control.Exception as E
+ data Exception
+ 	=  ParameterLookupFailed String	-- ^ User tried to do an irrefutable parameter lookup
+ 					-- that failed.
+ 	-- | ... I'm sure there should be more exceptions, we'll add them when we get to them.
+  deriving (Eq, Show, Typeable)
+ 
++instance E.Exception Exception
++
+ -- Internal funcion that throws a dynamic exception particular to HSP.
+ throwHSP :: Exception -> a
+-throwHSP = throwDyn
+-
++throwHSP = E.throw
+diff --git a/src/HSP/Monad.hs b/src/HSP/Monad.hs
+index 7efce1f..6350e8d 100644
+--- a/src/HSP/Monad.hs
++++ b/src/HSP/Monad.hs
+@@ -31,12 +31,8 @@ import Control.Monad.Trans (MonadIO(..), lift)
+ import Prelude hiding (catch)
+ 
+ -- Exceptions
+-#ifdef BASE4
+-import Control.OldException (catchDyn)
+-#else
+-import Control.Exception (catchDyn)
+-#endif
+-import HSP.Exception
++import qualified Control.Exception as E
++import qualified HSP.Exception as HE
+ 
+ import HSP.Env
+ 
+@@ -114,7 +110,7 @@ getIncNumber = getEnv >>= doIO . incNumber . getNG
+ -- Exception handling
+ 
+ -- | Catch a user-caused exception.
+-catch :: HSP a -> (Exception -> HSP a) -> HSP a
++catch :: HSP a -> (HE.Exception -> HSP a) -> HSP a
+ catch (XMLGenT (RWST f)) handler = XMLGenT $ RWST $ \e s ->
+-        f e s `catchDyn` (\ex -> (let (XMLGenT (RWST g)) = handler ex
++        f e s `E.catch` (\ex -> (let (XMLGenT (RWST g)) = handler ex
+                                  in g e s))
