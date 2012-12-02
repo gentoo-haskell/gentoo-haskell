@@ -32,4 +32,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=(${FILESDIR}/${P}-haxml-1.22.patch)
+PATCHES=("${FILESDIR}"/${P}-haxml-1.22.patch
+	"${FILESDIR}"/${P}-base-4.patch)
