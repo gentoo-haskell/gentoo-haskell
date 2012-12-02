@@ -35,8 +35,6 @@ RDEPEND="dev-haskell/binary:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}"/${P}-test-deps.patch)
-
 src_configure() {
 	cabal_src_configure $(cabal_flag test testprog)
 }
