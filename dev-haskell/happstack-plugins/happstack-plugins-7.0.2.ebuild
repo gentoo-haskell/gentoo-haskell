@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/happstack-server-6:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'template-haskell >= 2.6 && <2.8' 'template-haskell >= 2.6 && <2.9'
+}
