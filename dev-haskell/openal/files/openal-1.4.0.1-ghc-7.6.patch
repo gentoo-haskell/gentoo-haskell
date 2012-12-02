@@ -1,0 +1,145 @@
+Export guts of ALCdevice, Buffer, ALCcontext and frineds
+
+Fixes failure or kind:
+
+Sound/OpenAL/ALC/Capture.hs:64:1:
+    Unacceptable result type in foreign declaration: IO ALCdevice
+    When checking declaration:
+      foreign import ccall unsafe "dynamic" invokeCaptureOpenDevice
+        :: Invoker (Ptr ALCchar
+                    -> ALCuint -> ALCenum -> ALCsizei -> IO ALCdevice)
+
+diff --git a/Sound/OpenAL/AL/Buffer.hs b/Sound/OpenAL/AL/Buffer.hs
+index ec08b76..26650c1 100644
+--- a/Sound/OpenAL/AL/Buffer.hs
++++ b/Sound/OpenAL/AL/Buffer.hs
+@@ -71,7 +71,7 @@ module Sound.OpenAL.AL.Buffer (
+ import Data.StateVar
+ import Foreign.Marshal.Alloc ( alloca )
+ import Foreign.Ptr ( Ptr, nullPtr )
+-import Sound.OpenAL.AL.BufferInternal ( Buffer )
++import Sound.OpenAL.AL.BufferInternal
+ import Sound.OpenAL.AL.BasicTypes ( ALint, ALsizei, ALenum )
+ import Sound.OpenAL.AL.Format ( Format(..), marshalFormat )
+ import Sound.OpenAL.AL.PeekPoke ( peek1 )
+diff --git a/Sound/OpenAL/AL/BufferInternal.hs b/Sound/OpenAL/AL/BufferInternal.hs
+index b086226..e763ce7 100644
+--- a/Sound/OpenAL/AL/BufferInternal.hs
++++ b/Sound/OpenAL/AL/BufferInternal.hs
+@@ -14,7 +14,7 @@
+ --------------------------------------------------------------------------------
+ 
+ module Sound.OpenAL.AL.BufferInternal (
+-   Buffer, marshalBuffer, unmarshalBuffer
++   Buffer(..), marshalBuffer, unmarshalBuffer
+ ) where
+ 
+ import Data.ObjectName
+@@ -22,7 +22,7 @@ import Foreign.Marshal.Array ( withArrayLen, peekArray, allocaArray )
+ import Foreign.Ptr ( Ptr, castPtr )
+ import Foreign.Storable ( Storable(..) )
+ import Sound.OpenAL.AL.ALboolean ( unmarshalALboolean )
+-import Sound.OpenAL.AL.BasicTypes ( ALboolean, ALuint, ALsizei )
++import Sound.OpenAL.AL.BasicTypes
+ import Sound.OpenAL.AL.PeekPoke ( peek1, poke1 )
+ 
+ --------------------------------------------------------------------------------
+diff --git a/Sound/OpenAL/ALC/Capture.hs b/Sound/OpenAL/ALC/Capture.hs
+index 2f6d1be..f6dfe5b 100644
+--- a/Sound/OpenAL/ALC/Capture.hs
++++ b/Sound/OpenAL/ALC/Capture.hs
+@@ -34,7 +34,7 @@ import Sound.OpenAL.ALC.QueryUtils ( IntQuery(..), getInteger )
+ import Sound.OpenAL.ALC.QueryUtils (
+    StringQuery(..), getString, getStringRaw, alcIsExtensionPresent )
+ import Sound.OpenAL.ALC.String ( withALCString, peekALCStrings )
+-import Sound.OpenAL.Config ( ALCdevice, marshalDevice, unmarshalDevice )
++import Sound.OpenAL.Config
+ 
+ --------------------------------------------------------------------------------
+ 
+diff --git a/Sound/OpenAL/ALC/Context.hs b/Sound/OpenAL/ALC/Context.hs
+index eb379e0..5387ca0 100644
+--- a/Sound/OpenAL/ALC/Context.hs
++++ b/Sound/OpenAL/ALC/Context.hs
+@@ -34,10 +34,7 @@ import Sound.OpenAL.ALC.BasicTypes ( ALCint )
+ import Sound.OpenAL.ALC.ALCboolean ( marshalALCboolean, unmarshalALCboolean )
+ import Sound.OpenAL.ALC.Device ( Device )
+ import Sound.OpenAL.ALC.QueryUtils ( IntQuery(..), getInteger, getIntegerv )
+-import Sound.OpenAL.Config (
+-   ALCdevice, marshalDevice, unmarshalDevice,
+-   ALCcontext, Context, nullContext, marshalContext, unmarshalContext,
+-   alcProcessContext, alcDestroyContext, alcMakeContextCurrent )
++import Sound.OpenAL.Config
+ import Sound.OpenAL.Constants (
+    alc_FREQUENCY, alc_REFRESH, alc_SYNC, alc_MONO_SOURCES, alc_STEREO_SOURCES )
+ 
+diff --git a/Sound/OpenAL/ALC/Device.hs b/Sound/OpenAL/ALC/Device.hs
+index 7bbd11d..82950e4 100644
+--- a/Sound/OpenAL/ALC/Device.hs
++++ b/Sound/OpenAL/ALC/Device.hs
+@@ -33,8 +33,7 @@ import Sound.OpenAL.ALC.BasicTypes ( ALCchar )
+ import Sound.OpenAL.ALC.QueryUtils (
+    StringQuery(..), getString, getStringRaw, alcIsExtensionPresent )
+ import Sound.OpenAL.ALC.String ( withALCString, peekALCString, peekALCStrings )
+-import Sound.OpenAL.Config (
+-   Device, ALCdevice, unmarshalDevice, closeDevice )
++import Sound.OpenAL.Config
+ 
+ --------------------------------------------------------------------------------
+ 
+diff --git a/Sound/OpenAL/ALC/Errors.hs b/Sound/OpenAL/ALC/Errors.hs
+index 0c708b3..9ffbeb8 100644
+--- a/Sound/OpenAL/ALC/Errors.hs
++++ b/Sound/OpenAL/ALC/Errors.hs
+@@ -24,7 +24,7 @@ import Sound.OpenAL.ALC.QueryUtils ( StringQuery(..), getString )
+ import Sound.OpenAL.Constants (
+    alc_NO_ERROR, alc_INVALID_DEVICE, alc_INVALID_CONTEXT, alc_INVALID_ENUM,
+    alc_INVALID_VALUE, alc_OUT_OF_MEMORY, alc_INVALID_OPERATION )
+-import Sound.OpenAL.Config ( ALCdevice, marshalDevice )
++import Sound.OpenAL.Config
+ 
+ --------------------------------------------------------------------------------
+ 
+diff --git a/Sound/OpenAL/ALC/Extensions.hs b/Sound/OpenAL/ALC/Extensions.hs
+index 0ca3e7e..d483a58 100644
+--- a/Sound/OpenAL/ALC/Extensions.hs
++++ b/Sound/OpenAL/ALC/Extensions.hs
+@@ -26,7 +26,7 @@ import Sound.OpenAL.ALC.Device ( Device )
+ import Sound.OpenAL.ALC.QueryUtils (
+    StringQuery(..), getString, IntQuery(..), getInteger, alcIsExtensionPresent )
+ import Sound.OpenAL.ALC.String ( withALCString )
+-import Sound.OpenAL.Config ( ALCdevice, nullDevice, marshalDevice )
++import Sound.OpenAL.Config
+ 
+ --------------------------------------------------------------------------------
+ 
+diff --git a/Sound/OpenAL/ALC/QueryUtils.hs b/Sound/OpenAL/ALC/QueryUtils.hs
+index c1f84a3..ebf825a 100644
+--- a/Sound/OpenAL/ALC/QueryUtils.hs
++++ b/Sound/OpenAL/ALC/QueryUtils.hs
+@@ -25,7 +25,7 @@ import Sound.OpenAL.ALC.ALCboolean ( unmarshalALCboolean )
+ import Sound.OpenAL.ALC.BasicTypes (
+    ALCboolean, ALCchar, ALCint, ALCenum, ALCsizei )
+ import Sound.OpenAL.ALC.String ( withALCString, peekALCString )
+-import Sound.OpenAL.Config ( Device, ALCdevice, nullDevice, marshalDevice )
++import Sound.OpenAL.Config
+ import Sound.OpenAL.Constants (
+    alc_DEFAULT_DEVICE_SPECIFIER, alc_DEVICE_SPECIFIER, alc_EXTENSIONS,
+    alc_CAPTURE_DEFAULT_DEVICE_SPECIFIER, alc_CAPTURE_DEVICE_SPECIFIER,
+diff --git a/Sound/OpenAL/Config.hs b/Sound/OpenAL/Config.hs
+index 1d69e33..0b82e2f 100644
+--- a/Sound/OpenAL/Config.hs
++++ b/Sound/OpenAL/Config.hs
+@@ -24,10 +24,10 @@ module Sound.OpenAL.Config (
+    ALCsizei, ALCenum, ALCfloat, ALCdouble,
+ 
+    -- Device stuff
+-   ALCdevice, Device, nullDevice, marshalDevice, unmarshalDevice, closeDevice,
++   ALCdevice(..), Device, nullDevice, marshalDevice, unmarshalDevice, closeDevice,
+ 
+    -- Context stuff
+-   ALCcontext, Context, nullContext, marshalContext, unmarshalContext,
++   ALCcontext(..), Context, nullContext, marshalContext, unmarshalContext,
+    alcProcessContext, alcMakeContextCurrent, alcDestroyContext
+ ) where
+ 
