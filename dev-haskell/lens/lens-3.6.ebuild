@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests hang sometimes
+
 RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/comonad-transformers-3.0*:=[profile?]
 		=dev-haskell/comonads-fd-3.0*:=[profile?]
