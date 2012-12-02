@@ -1,0 +1,24 @@
+diff --git a/Bio/GFF3/FeatureHierSequences.hs b/Bio/GFF3/FeatureHierSequences.hs
+index 7e69dac..748eb3b 100644
+--- a/Bio/GFF3/FeatureHierSequences.hs
++++ b/Bio/GFF3/FeatureHierSequences.hs
+@@ -9,6 +9,7 @@ module Bio.GFF3.FeatureHierSequences ( FeatureHierSequences, features, sequences
+                                      )
+     where 
+ 
++import qualified Control.Exception as E
+ import Control.Monad.Error
+ import Control.Monad.Reader
+ import qualified Data.ByteString.Lazy.Char8 as LBS
+@@ -72,7 +73,10 @@ featureSequence fhs f = do sequ <- seqData fhs $ F.seqLoc f
+                            return $ Seq seqname sequ Nothing
+ 
+ catchIOErrors :: IO a -> ErrorT String IO a
+-catchIOErrors m = ErrorT { runErrorT = liftM Right m `catch` (return . Left . show) }
++catchIOErrors m = ErrorT { runErrorT = liftM Right m `catchE` (return . Left . show) }
++
++catchE :: IO a -> (IOError -> IO a) -> IO a
++catchE = E.catch
+ 
+ runGFF :: FilePath -> (ErrorT String (Reader FeatureHierSequences) a) -> ErrorT String IO a
+ runGFF gffname m = do gff <- catchIOErrors $ LBS.readFile gffname

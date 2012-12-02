@@ -34,7 +34,8 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}"/${P}-binary-0.5.patch
 	"${FILESDIR}"/${P}-random-1.0.1.patch
-	"${FILESDIR}"/${P}-ghc-7.4.patch)
+	"${FILESDIR}"/${P}-ghc-7.4.patch
+	"${FILESDIR}"/${P}-ghc-7.6.patch)
 
 src_configure() {
 	cabal_src_configure $(cabal_flag test)
