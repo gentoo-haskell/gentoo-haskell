@@ -1,0 +1,105 @@
+diff --git a/HSH/Command.hs b/HSH/Command.hs
+index c63b8bc..bb4f6c3 100644
+--- a/HSH/Command.hs
++++ b/HSH/Command.hs
+@@ -35,15 +35,14 @@ module HSH.Command (Environment,
+ 
+ -- import System.IO.HVIO
+ -- import System.IO.Utils
+-import Prelude hiding (catch)
+ import System.IO
++import System.IO.Error (isUserError, ioeGetErrorString)
+ import System.Exit
+ import System.Log.Logger
+-import System.IO.Error hiding (catch)
+ import Data.Maybe.Utils
+ import Data.Maybe
+ import Data.List.Utils(uniq)
+-import Control.Exception(evaluate, SomeException, catch)
++import qualified Control.Exception as E (try, evaluate, SomeException, catch)
+ import Text.Regex.Posix
+ import Control.Monad(when)
+ import Data.String.Utils(rstrip)
+@@ -412,17 +411,17 @@ instance RunResult (IO [String]) where
+                  return (lines r)
+ 
+ instance RunResult (IO String) where
+-    run cmd = genericStringlikeResult chanAsString (\c -> evaluate (length c))
++    run cmd = genericStringlikeResult chanAsString (\c -> E.evaluate (length c))
+               cmd
+ 
+ instance RunResult (IO BSL.ByteString) where
+     run cmd = genericStringlikeResult chanAsBSL
+-              (\c -> evaluate (BSL.length c))
++              (\c -> E.evaluate (BSL.length c))
+               cmd
+ 
+ instance RunResult (IO BS.ByteString) where
+     run cmd = genericStringlikeResult chanAsBS
+-              (\c -> evaluate (BS.length c))
++              (\c -> E.evaluate (BS.length c))
+               cmd
+ 
+ instance RunResult (IO (String, IO (String, ExitCode))) where
+@@ -456,7 +455,7 @@ genericStringlikeResult :: ShellCommand b =>
+ genericStringlikeResult chanfunc evalfunc cmd =
+         do (c, r) <- intermediateStringlikeResult chanfunc cmd
+            evalfunc c
+-           --evaluate (length c)
++           --E.evaluate (length c)
+            -- d "runS 6"
+            -- d "runS 7"
+            r >>= checkResults
+@@ -494,7 +493,7 @@ checkResults (cmd, ps) =
+ {- | Handle an exception derived from a program exiting abnormally -}
+ tryEC :: IO a -> IO (Either ExitCode a)
+ tryEC action =
+-    do r <- try action
++    do r <- E.try action
+        case r of
+          Left ioe ->
+           if isUserError ioe then
+@@ -560,10 +559,10 @@ runInHandler :: String           -- ^ Description of this function
+             -> (IO Channel)     -- ^ The action to run in the thread
+             -> IO (Channel, [InvokeResult])
+ runInHandler descrip func =
+-    catch (realfunc) (exchandler)
++    E.catch (realfunc) (exchandler)
+     where realfunc = do r <- func
+                         return (r, [(descrip, return ExitSuccess)])
+-          exchandler :: SomeException -> IO (Channel, [InvokeResult])
++          exchandler :: E.SomeException -> IO (Channel, [InvokeResult])
+           exchandler e = do em $ "runInHandler/" ++ descrip ++ ": " ++ show e
+                             return (ChanString "", [(descrip, return (ExitFailure 1))])
+ 
+diff --git a/HSH/ShellEquivs.hs b/HSH/ShellEquivs.hs
+index 21fa8a8..943656d 100644
+--- a/HSH/ShellEquivs.hs
++++ b/HSH/ShellEquivs.hs
+@@ -84,7 +84,7 @@ import Text.Regex (matchRegex, mkRegex)
+ import Text.Printf (printf)
+ import Control.Monad (foldM)
+ import System.Directory hiding (createDirectory)
+-import Control.Exception(evaluate)
++import qualified Control.Exception as E (catch, evaluate)
+ -- import System.FilePath (splitPath)
+ 
+ #ifdef __HSH_POSIX__
+@@ -250,7 +250,7 @@ cut pos = cutR [pos]
+ discard :: Channel -> IO Channel
+ discard inh =
+     do c <- chanAsBSL inh
+-       evaluate (BSL.length c)
++       E.evaluate (BSL.length c)
+        return (ChanString "")
+ 
+ {- | Split a list by a given character and select ranges of the resultant lists.
+@@ -314,7 +314,7 @@ The tilde with no username equates to the current user.
+ Non-tilde expansion is done by the MissingH module System.Path.Glob. -}
+ glob :: FilePath -> IO [FilePath]
+ glob inp@('~':remainder) =
+-    catch expanduser (\_ -> Glob.glob rest)
++    (E.catch :: IO a -> (IOError -> IO a) -> IO a) expanduser (\_ -> Glob.glob rest)
+     where (username, rest) = span (/= '/') remainder
+ #ifdef __HSH_POSIX__
+           expanduser =
