@@ -1,0 +1,26 @@
+diff --git a/darcs-monitor.hs b/darcs-monitor.hs
+index f5411ba..f24dc61 100644
+--- a/darcs-monitor.hs
++++ b/darcs-monitor.hs
+@@ -21,6 +21,7 @@
+ module Main where
+ 
+ import Control.Arrow
++import qualified Control.Exception as E
+ import Control.Monad
+ import Control.Monad.Trans
+ import Data.Char
+@@ -182,9 +183,10 @@ type SeenPatches = Map String (Set String)
+ 
+ readSeenPatches :: MonadIO m => String -> m SeenPatches
+ readSeenPatches repo =
+-  liftIO $ catch (do fc <- readFile (repo ++ seenPatchesFileName)
+-                     return (read fc)
+-                 ) $ \_ -> return Map.empty
++  liftIO $ (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++               (do fc <- readFile (repo ++ seenPatchesFileName)
++                   return (read fc)
++               ) $ \_ -> return Map.empty
+ 
+ 
+ processRepo :: (MonadConfig m, MonadIO m) => Bool -> Command m -> FilePath -> m ()

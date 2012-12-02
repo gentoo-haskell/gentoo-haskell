@@ -28,4 +28,5 @@ src_prepare() {
 	if has_version ">=dev-haskell/haxml-1.22.0"; then
 		epatch "${FILESDIR}/${P}-haxml-1.22.patch"
 	fi
+	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
 }
