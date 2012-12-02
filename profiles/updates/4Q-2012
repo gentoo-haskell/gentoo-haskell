@@ -5,3 +5,4 @@ slotmove =dev-haskell/wxhaskell-0.90* 0 2.9
 slotmove =dev-haskell/wxdirect-0.13* 0 2.8
 slotmove =dev-haskell/wxdirect-0.90* 0 2.9
 slotmove =dev-haskell/wxc-0.90* 0 2.9
+slotmove =dev-haskell/takusen-0.8* 2 0
