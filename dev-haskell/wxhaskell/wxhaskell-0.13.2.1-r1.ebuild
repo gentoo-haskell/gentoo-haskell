@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'wxcore >= 0.13.1' 'wxcore >= 0.13.1 && < 0.90' \
+		'wxcore >= 0.12.1.6' 'wxcore >= 0.12.1.6 && < 0.90'
+}
