@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="xft unicode mail mpd mpris alsa timezone wifi dbus"
-REQUIRED_USE="mpris ( dbus )"
+REQUIRED_USE="mpris? ( dbus )"
 
 RDEPEND="x11-libs/libXrandr
 	wifi? ( net-wireless/wireless-tools )
