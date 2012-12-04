@@ -16,6 +16,20 @@ you likely need to keyword everything in it::
     layman -a haskell
     echo '*/*::gentoo-haskell ~your-arch' >> /etc/portage/package.accept_keywords
 
+And here is the trick to speed up metadata resolution a bit.
+If you happen to use ``eix-sync`` for rsyncs you might
+like the following ``/etc/eix-sync.conf``::
+
+    *
+    @egencache --jobs="$(($(nproc) + 1))" --repo=gentoo-haskell --update
+
+It basically means:
+
+- sync overlays in layman list before the main tree sync
+
+- generate metadata for gentoo-haskell repo after main
+  tree sync is done using N+1 cores
+
 Getting involved
 ================
 
