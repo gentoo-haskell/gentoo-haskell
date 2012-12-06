@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		>=dev-haskell/cabal-1.2
-		=dev-haskell/quickcheck-1.2*
+		=dev-haskell/quickcheck-1.2*"
 
 	   # it should be
 	   # quickcheck >= 1.2 && <2

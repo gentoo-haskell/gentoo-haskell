@@ -18,6 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE=""
 
-		>=dev-lang/ghc-6.8.2:="
+RDEPEND=">=dev-lang/ghc-6.8.2:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
