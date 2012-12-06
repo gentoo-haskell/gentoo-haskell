@@ -1,8 +1,0 @@
-Packages that require =Cabal-1.6 (uninstall before using h-u!)
-	* app-editors/yi
-	* dev-haskell/sourcegraph
-
-Packages that require gtk2hs:
-	* dev-haskell/chart
-	* dev-haskell/criterion (with USE=chart)
-
