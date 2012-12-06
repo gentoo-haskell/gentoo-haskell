@@ -33,8 +33,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5[profile?]
 		<dev-haskell/network-3[profile?]
 		>=dev-haskell/stringsearch-0.3[profile?]
 		<dev-haskell/stringsearch-2[profile?]
-		>=dev-haskell/time-1.1.4[profile?]
-		<dev-haskell/time-2[profile?]
 		>=dev-lang/ghc-6.12.3
 		sys-libs/zlib"
 DEPEND="${RDEPEND}

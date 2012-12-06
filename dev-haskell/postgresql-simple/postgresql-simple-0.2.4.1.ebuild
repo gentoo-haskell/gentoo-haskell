@@ -28,7 +28,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3[profile?]
 		dev-haskell/blaze-textual[profile?]
 		>=dev-haskell/postgresql-libpq-0.6.2[profile?]
 		>=dev-haskell/text-0.11.1[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/transformers[profile?]
 		dev-haskell/vector[profile?]
 		>=dev-lang/ghc-6.8.2"

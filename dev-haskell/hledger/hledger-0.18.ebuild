@@ -31,7 +31,6 @@ RDEPEND="dev-haskell/cabal-file-th[profile?]
 		=dev-haskell/shakespeare-text-1.0*[profile?]
 		=dev-haskell/split-0.1*[profile?]
 		=dev-haskell/text-0.11*[profile?]
-		dev-haskell/time[profile?]
 		>=dev-haskell/utf8-string-0.3.5[profile?]
 		<dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"

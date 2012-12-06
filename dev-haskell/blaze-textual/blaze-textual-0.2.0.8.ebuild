@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4[profile?]
 		>=dev-haskell/text-0.11.0.2[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/vector[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

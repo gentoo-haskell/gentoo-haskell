@@ -33,7 +33,6 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 		dev-haskell/network:=[profile?]
 		>=dev-haskell/parsec-3.1:=[profile?]
 		dev-haskell/text:=[profile?]
-		dev-haskell/time:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
 		dev-haskell/xdg-basedir:=[profile?]
 		>=dev-lang/ghc-6.10.4:=

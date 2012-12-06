@@ -27,7 +27,6 @@ RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
 		=dev-haskell/mtl-2*:=[profile?]
 		=dev-haskell/network-2*:=[profile?]
 		=dev-haskell/resource-pool-0.2*:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
 		>=dev-lang/ghc-6.10.4:="

@@ -26,7 +26,6 @@ RDEPEND="dev-haskell/base64-bytestring[profile?]
 		>=dev-haskell/http-4000[profile?]
 		dev-haskell/mtl[profile?]
 		<dev-haskell/network-3[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}

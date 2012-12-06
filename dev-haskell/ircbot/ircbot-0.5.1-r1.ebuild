@@ -27,7 +27,6 @@ RDEPEND="=dev-haskell/irc-0.5*:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
 		>=dev-haskell/stm-2.2:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
-		=dev-haskell/time-1.4*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

@@ -29,5 +29,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/gtk-0.12
 		dev-haskell/mtl
 		dev-haskell/pango
-		>=dev-haskell/time-1.1
 		>=dev-lang/ghc-6.10.4"

@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/numtype-1.1
-		<dev-haskell/time-1.5
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"

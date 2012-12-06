@@ -36,8 +36,6 @@ RDEPEND="=dev-haskell/attoparsec-0.10*[profile?]
 		>=dev-haskell/snap-core-0.9.2[profile?]
 		<dev-haskell/snap-core-0.10[profile?]
 		=dev-haskell/text-0.11*[profile?]
-		>=dev-haskell/time-1.0[profile?]
-		<dev-haskell/time-1.5[profile?]
 		>=dev-haskell/unix-compat-0.2[profile?]
 		<dev-haskell/unix-compat-0.5[profile?]
 		>=dev-lang/ghc-6.12.1"

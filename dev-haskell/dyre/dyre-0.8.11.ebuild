@@ -22,7 +22,6 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/executable-path:=[profile?]
 		dev-haskell/ghc-paths:=[profile?]
 		dev-haskell/io-storage:=[profile?]
-		dev-haskell/time:=[profile?]
 		dev-haskell/xdg-basedir:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}

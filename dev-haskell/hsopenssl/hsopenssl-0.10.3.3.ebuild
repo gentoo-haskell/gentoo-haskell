@@ -22,7 +22,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/network-2.1.0.0[profile?]
-		>=dev-haskell/time-1.1.1[profile?]
 		>=dev-lang/ghc-6.10.1
 		dev-libs/openssl"
 DEPEND="${RDEPEND}

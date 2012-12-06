@@ -36,7 +36,6 @@ RDEPEND=">=dev-haskell/aeson-0.5[profile?]
 		>=dev-haskell/resourcet-0.3[profile?]
 		<dev-haskell/resourcet-0.5[profile?]
 		>=dev-haskell/text-0.8[profile?]
-		dev-haskell/time[profile?]
 		>=dev-haskell/transformers-0.2.1[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

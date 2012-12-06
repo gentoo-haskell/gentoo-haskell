@@ -23,8 +23,6 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-haskell/network-2.1:=[profile?]
 		<dev-haskell/network-2.5:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
-		<dev-haskell/time-2.0:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1:=[profile?]
 		<dev-haskell/utf8-string-0.4:=[profile?]
 		>=dev-lang/ghc-6.12.1:="

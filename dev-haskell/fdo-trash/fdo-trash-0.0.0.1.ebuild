@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND="dev-haskell/diff:=[profile?]
 		dev-haskell/parsec:=[profile?]
-		dev-haskell/time:=[profile?]
 		dev-haskell/url:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}

@@ -26,7 +26,6 @@ RDEPEND=">=dev-haskell/hinotify-0.3.5:=[profile?]
 		>=dev-haskell/system-filepath-0.4.6:=[profile?]
 		<=dev-haskell/system-filepath-0.5:=[profile?]
 		>=dev-haskell/text-0.11.0:=[profile?]
-		>=dev-haskell/time-1.4:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/glob-0.7.1

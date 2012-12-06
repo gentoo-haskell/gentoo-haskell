@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.3.5.1:=[profile?]
 		>=dev-haskell/sha-1.5.0.0:=[profile?]
-		>=dev-haskell/time-1.2.0.5:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		>=dev-haskell/xattr-0.6.1:=[profile?]
 		>=dev-haskell/zlib-0.5.3.1:=[profile?]

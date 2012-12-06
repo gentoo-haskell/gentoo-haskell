@@ -39,7 +39,6 @@ RDEPEND="dev-haskell/binary
 		dev-haskell/split
 		>=dev-haskell/stm-2.1.2.0
 		>=dev-haskell/text-0.7.1.0
-		>=dev-haskell/time-1.1.4
 		>=dev-haskell/utf8-string-0.3.4
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}

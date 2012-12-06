@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND="dev-haskell/hashable[profile?]
 		>=dev-haskell/monad-control-0.2.0.1[profile?]
 		dev-haskell/stm[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/transformers[profile?]
 		>=dev-haskell/transformers-base-0.4[profile?]
 		>=dev-haskell/vector-0.7[profile?]

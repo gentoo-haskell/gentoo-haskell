@@ -26,7 +26,6 @@ RDEPEND="~dev-haskell/ansi-terminal-0.5.5:=[profile?]
 		dev-haskell/setenv:=[profile?]
 		>=dev-haskell/silently-1.1.1:=[profile?]
 		<dev-haskell/silently-2:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		>=dev-haskell/transformers-0.2.2.0:=[profile?]
 		<dev-haskell/transformers-0.4.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="

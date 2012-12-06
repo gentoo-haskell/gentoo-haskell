@@ -24,7 +24,6 @@ RDEPEND="dev-haskell/json:=[generic,profile?]
 		<dev-haskell/pandoc-types-1.11:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/syb:=[profile?]
-		dev-haskell/time:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
 		!hexpat? ( dev-haskell/xml:=[profile?] )
 		hexpat? ( >=dev-haskell/hexpat-0.20.2:=[profile?] )

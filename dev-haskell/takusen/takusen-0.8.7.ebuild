@@ -22,7 +22,6 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

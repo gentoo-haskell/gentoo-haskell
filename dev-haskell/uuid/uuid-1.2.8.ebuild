@@ -25,8 +25,6 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
 		<dev-haskell/maccatcher-2.2:=[profile?]
 		>=dev-haskell/random-1.0.1:=[profile?]
 		<dev-haskell/random-1.1:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/criterion-0.4

@@ -25,8 +25,6 @@ RDEPEND=">=dev-haskell/directory-tree-0.10[profile?]
 		>dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/mtl-2.2[profile?]
 		=dev-haskell/snap-core-0.9*[profile?]
-		>=dev-haskell/time-1.1[profile?]
-		<dev-haskell/time-1.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"

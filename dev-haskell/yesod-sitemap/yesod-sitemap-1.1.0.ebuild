@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/text[profile?]
-		>=dev-haskell/time-1.1.4[profile?]
 		=dev-haskell/xml-conduit-1.0*[profile?]
 		=dev-haskell/yesod-core-1.1*[profile?]
 		>=dev-lang/ghc-6.10.1"

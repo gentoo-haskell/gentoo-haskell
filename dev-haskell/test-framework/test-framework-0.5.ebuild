@@ -22,7 +22,6 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.4.0[profile?]
 		>=dev-haskell/ansi-wl-pprint-0.5.1[profile?]
 		>=dev-haskell/hostname-1.0[profile?]
 		>=dev-haskell/regex-posix-0.72[profile?]
-		>=dev-haskell/time-1.1.2[profile?]
 		>=dev-haskell/xml-1.3.5[profile?]
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}

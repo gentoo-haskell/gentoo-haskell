@@ -23,7 +23,6 @@ RDEPEND=">=dev-haskell/asn1-data-0.7.1:=[profile?]
 		dev-haskell/cryptohash:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		=dev-haskell/pem-0.1*:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

@@ -26,8 +26,6 @@ RDEPEND=">=dev-haskell/diff-0.1.2:=[profile?]
 		<dev-haskell/parsec-3.2:=[profile?]
 		>=dev-haskell/split-0.1:=[profile?]
 		<dev-haskell/split-0.3:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		=dev-haskell/utf8-string-0.3*:=[profile?]
 		=dev-haskell/xml-1.3*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="

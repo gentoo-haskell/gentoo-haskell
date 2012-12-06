@@ -24,7 +24,6 @@ RDEPEND="=dev-haskell/blaze-html-0.5*[profile?]
 		=dev-haskell/hamlet-1.1*[profile?]
 		>=dev-haskell/text-0.9[profile?]
 		<dev-haskell/text-0.12[profile?]
-		>=dev-haskell/time-1.1.4[profile?]
 		=dev-haskell/xml-conduit-1.0*[profile?]
 		=dev-haskell/yesod-core-1.1*[profile?]
 		>=dev-lang/ghc-6.10.1"

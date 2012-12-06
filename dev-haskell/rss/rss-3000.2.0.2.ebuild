@@ -22,8 +22,6 @@ RDEPEND=">=dev-haskell/haxml-1.19.2[profile?]
 		<dev-haskell/haxml-1.24[profile?]
 		>=dev-haskell/network-2.0[profile?]
 		<dev-haskell/network-2.5[profile?]
-		>=dev-haskell/time-1.1.2[profile?]
-		<dev-haskell/time-1.5[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

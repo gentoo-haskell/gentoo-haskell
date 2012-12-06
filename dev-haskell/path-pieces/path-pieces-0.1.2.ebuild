@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/text-0.5[profile?]
 		<dev-haskell/text-0.12[profile?]
-		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/file-location-0.4*

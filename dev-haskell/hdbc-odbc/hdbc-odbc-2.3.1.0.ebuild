@@ -29,7 +29,6 @@ hdbc_PV=$(get_version_component_range 1-2)
 
 RDEPEND="=dev-haskell/hdbc-${hdbc_PV}*[profile?]
 		dev-haskell/mtl[profile?]
-		>=dev-haskell/time-1.2.0.3[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.12.3
 		>=dev-db/unixODBC-2.2
@@ -40,7 +39,6 @@ DEPEND="${RDEPEND}
 			dev-haskell/hunit
 			dev-haskell/quickcheck
 			dev-haskell/testpack
-			dev-haskell/time
 		)
 	"
 

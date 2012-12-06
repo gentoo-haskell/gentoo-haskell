@@ -30,7 +30,6 @@ RDEPEND="dev-haskell/hslogger:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/random:=[profile?]
 		dev-haskell/regex-compat:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND=">=dev-haskell/cabal-1.2.3
 		virtual/libiconv

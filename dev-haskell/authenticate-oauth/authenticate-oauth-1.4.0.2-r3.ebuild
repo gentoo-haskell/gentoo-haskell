@@ -38,7 +38,6 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		=dev-haskell/rsa-1.2*:=[profile?]
 		>=dev-haskell/sha-1.4:=[profile?]
 		<dev-haskell/sha-1.7:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-haskell/transformers-0.1:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="

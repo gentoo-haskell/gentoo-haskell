@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.0[profile?] <dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/network-2.1[profile?] <dev-haskell/network-2.4[profile?]
-		>=dev-haskell/time-1.1[profile?] <dev-haskell/time-2.0[profile?]
 		>=dev-haskell/utf8-string-0.3.1[profile?] <dev-haskell/utf8-string-0.4[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}

@@ -44,8 +44,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3[profile?]
 		<dev-haskell/process-leksah-1.1[profile?]
 		>=dev-haskell/strict-0.3.2[profile?]
 		<dev-haskell/strict-0.4[profile?]
-		>=dev-haskell/time-1.1[profile?]
-		<dev-haskell/time-1.5[profile?]
 		>=dev-haskell/transformers-0.2.2.0[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		>=dev-lang/ghc-6.10.1"

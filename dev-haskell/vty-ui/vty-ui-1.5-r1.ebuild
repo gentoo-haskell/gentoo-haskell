@@ -24,7 +24,6 @@ RDEPEND=">=dev-haskell/mtl-2.0[profile?]
 		<dev-haskell/quickcheck-2.6[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
 		>=dev-haskell/stm-2.1[profile?] <dev-haskell/stm-2.5[profile?]
-		>=dev-haskell/time-1.1[profile?] <dev-haskell/time-1.5[profile?]
 		>=dev-haskell/vty-4.6[profile?] <dev-haskell/vty-4.8[profile?]
 		>=dev-lang/ghc-6.12.1"
 DEPEND="${RDEPEND}

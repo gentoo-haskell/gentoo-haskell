@@ -29,7 +29,6 @@ RDEPEND=">dev-db/postgresql-base-8
 		=dev-haskell/hdbc-${hdbc_PV}*[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/parsec[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.8.2
 		>=dev-db/postgresql-base-8"

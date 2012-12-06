@@ -27,8 +27,6 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-haskell/stm-2.1:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		>=dev-haskell/vty-4.7.0.18:=[profile?]
 		>=dev-lang/ghc-6.12.1:="

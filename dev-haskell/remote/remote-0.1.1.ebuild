@@ -24,7 +24,6 @@ RDEPEND="dev-haskell/binary[profile?]
 		dev-haskell/puremd5[profile?]
 		dev-haskell/stm[profile?]
 		dev-haskell/syb[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

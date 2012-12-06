@@ -29,7 +29,6 @@ RDEPEND="dev-haskell/bzlib:=[profile?]
 		=dev-haskell/quickcheck-2*:=[profile?]
 		dev-haskell/random:=[profile?]
 		dev-haskell/regex-compat:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
 		>=dev-haskell/unixutils-1.51:=[profile?]
 		dev-haskell/zlib:=[profile?]
 		>=dev-lang/ghc-6.10.4:="

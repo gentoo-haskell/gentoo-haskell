@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/double-conversion-0.2.0.0[profile?]
 		>=dev-haskell/text-0.11.0.8[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/transformers[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

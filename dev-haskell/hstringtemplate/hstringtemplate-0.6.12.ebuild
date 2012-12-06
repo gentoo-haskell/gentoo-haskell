@@ -28,7 +28,6 @@ RDEPEND="dev-haskell/blaze-builder:=[profile?]
 		dev-haskell/syb:=[profile?]
 		dev-haskell/syb-with-class:=[profile?]
 		dev-haskell/text:=[profile?]
-		dev-haskell/time:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}

@@ -38,7 +38,6 @@ DEPEND="~dev-lang/ghc-6.10.4
 		>=dev-haskell/parsec-2.1.0.1:0
 		>=dev-haskell/quickcheck-1.2.0.0:1
 		>=dev-haskell/stm-2.1.1.2
-		>=dev-haskell/time-1.1.2.4
 		>=dev-haskell/xhtml-3000.2.0.1
 		>=dev-haskell/zlib-0.5.0.0
 

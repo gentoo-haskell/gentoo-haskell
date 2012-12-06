@@ -46,7 +46,6 @@ your shiny new ghc (and it's libs) in ``profiles/package.mask`` like that:
     >=dev-lang/ghc-7.2
     >=dev-haskell/cabal-1.11
     >=dev-haskell/haddock-2.9.2.20110721
-    >=dev-haskell/time-1.2.0.5
 
 At least test it if it's able to to rebuild your whole environment with ``haskell-updater --upgrade``.
 If things are fine you can unmask it.

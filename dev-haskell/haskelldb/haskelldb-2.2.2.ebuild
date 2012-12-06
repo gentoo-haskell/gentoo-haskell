@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
-		>=dev-haskell/time-1.0:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

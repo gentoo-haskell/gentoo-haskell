@@ -30,8 +30,6 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/stm-2.3:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
 		=dev-haskell/syb-0.3*:=[profile?]
-		>=dev-haskell/time-1.2:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-7.4.1:="

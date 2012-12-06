@@ -24,8 +24,6 @@ IUSE="mysql odbc postgres sqlite3 test"
 RDEPEND=">=dev-haskell/convertible-1.0.10.0[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/text[profile?]
-		>=dev-haskell/time-1.1.3[profile?]
-		<=dev-haskell/time-1.5[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}

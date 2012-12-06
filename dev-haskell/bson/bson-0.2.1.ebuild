@@ -25,7 +25,6 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-haskell/mtl-2[profile?]
 		dev-haskell/network[profile?]
 		=dev-haskell/text-0.11*[profile?]
-		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2[profile?]

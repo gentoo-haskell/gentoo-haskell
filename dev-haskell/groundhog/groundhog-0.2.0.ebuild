@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND="=dev-haskell/monad-control-0.3*[profile?]
 		>=dev-haskell/text-0.8[profile?]
 		<dev-haskell/text-0.12[profile?]
-		>=dev-haskell/time-1.1.4[profile?]
 		>=dev-haskell/transformers-0.2.1[profile?]
 		<dev-haskell/transformers-0.4[profile?]
 		dev-haskell/transformers-base[profile?]

@@ -29,7 +29,6 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		=dev-haskell/postgresql-simple-0.2*:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		<dev-haskell/text-0.12:=[profile?]
-		>=dev-haskell/time-1.1:=[profile?]
 		>=dev-haskell/transformers-0.2.1:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="

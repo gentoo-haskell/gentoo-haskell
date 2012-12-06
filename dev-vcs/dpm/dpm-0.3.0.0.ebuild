@@ -30,7 +30,6 @@ RDEPEND="dev-haskell/convertible:=[profile?]
 		dev-haskell/regex-posix:=[profile?]
 		dev-haskell/split:=[profile?]
 		dev-haskell/syb:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
 		=dev-vcs/darcs-2.5*:=[profile?]"
 DEPEND="${RDEPEND}

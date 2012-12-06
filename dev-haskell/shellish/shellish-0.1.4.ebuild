@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND="dev-haskell/mtl[profile?]
 		dev-haskell/strict[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/unix-compat[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}

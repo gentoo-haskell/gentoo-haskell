@@ -20,7 +20,6 @@ IUSE="opengl"
 
 RDEPEND="dev-haskell/parsec:=[profile?]
 		dev-haskell/stm:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-haskell/wxc-0.90.0.4:${WX_GTK_VER}=[opengl,profile?]
 		>=dev-haskell/wxdirect-0.90:${WX_GTK_VER}=[profile?]
 		>=dev-lang/ghc-6.10.4:="

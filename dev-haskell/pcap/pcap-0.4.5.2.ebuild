@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/network[profile?]
-		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.8.2
 		net-libs/libpcap"
 DEPEND="${RDEPEND}

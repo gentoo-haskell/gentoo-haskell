@@ -23,8 +23,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/parsec-2.1.0:=[profile?]
 		<dev-haskell/parsec-4:=[profile?]
 		dev-haskell/strict:=[profile?]
-		>=dev-haskell/time-1.0:=[profile?]
-		<dev-haskell/time-1.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"

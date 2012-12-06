@@ -22,6 +22,5 @@ RDEPEND="x11-misc/dmenu"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/strict-0.3
-		>=dev-haskell/time-1.1
 		>=dev-haskell/xdg-basedir-0.2
 		>=dev-lang/ghc-6.12.1"

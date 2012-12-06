@@ -31,7 +31,6 @@ COMMON=">=app-text/pandoc-1.8[profile?]
 		<dev-haskell/graphviz-2999.15[profile?]
 		dev-haskell/random[profile?]
 		dev-haskell/text[profile?]
-		dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

@@ -23,7 +23,6 @@ IUSE=""
 
 RDEPEND="=dev-haskell/bindings-libzip-0.10*:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit

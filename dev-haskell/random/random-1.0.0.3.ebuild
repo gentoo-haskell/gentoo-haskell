@@ -17,7 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/time[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}"
 

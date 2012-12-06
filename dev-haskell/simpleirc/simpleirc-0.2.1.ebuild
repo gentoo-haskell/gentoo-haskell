@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/network-2.2.1.5:=[profile?]
-		>=dev-haskell/time-1.1.4:=[profile?]
 		>=dev-lang/ghc-6.12.3:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

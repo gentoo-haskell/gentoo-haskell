@@ -22,7 +22,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hdbc-2.1.0[profile?]
-		dev-haskell/time[profile?]
 		dev-haskell/utf8-string[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}

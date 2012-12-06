@@ -643,7 +643,6 @@ pkg_postinst() {
 	touch "${PKGCACHE}"
 
 	ewarn "For portage place lines like these in /etc/portage/package.keywords"
-	ewarn "=dev-haskell/time-1.4.0.1*"
 	ewarn "=dev-haskell/cabal-1.17.0* **"
 	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
 	ewarn "=dev-haskell/haddock-2.11.0_p$(get_version_component_range 3) **"

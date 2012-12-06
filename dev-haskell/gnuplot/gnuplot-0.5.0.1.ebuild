@@ -20,8 +20,6 @@ IUSE="examples"
 
 RDEPEND=">=dev-haskell/monoid-transformer-0.0.2[profile?]
 		<dev-haskell/monoid-transformer-0.1[profile?]
-		>=dev-haskell/time-1.1[profile?]
-		<dev-haskell/time-1.5[profile?]
 		>=dev-haskell/utility-ht-0.0.1[profile?]
 		<dev-haskell/utility-ht-0.1[profile?]
 		>=dev-lang/ghc-6.8.2"
