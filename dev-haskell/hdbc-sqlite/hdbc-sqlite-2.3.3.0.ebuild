@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/convertible
 			dev-haskell/hunit
 			dev-haskell/testpack
-			dev-haskell/time
 		)
 	"
 

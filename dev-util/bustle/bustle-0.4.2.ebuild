@@ -40,7 +40,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		dev-haskell/pcap
 		dev-haskell/text
-		dev-haskell/time
 		>=dev-lang/ghc-6.10.4"
 
 src_compile() {

@@ -29,7 +29,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3
 		dev-haskell/stm
-		dev-haskell/time
 		>=dev-haskell/x11-1.3.0
 		unicode? ( dev-haskell/utf8-string )
 		xft?  ( dev-haskell/utf8-string

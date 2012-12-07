@@ -26,7 +26,6 @@ RDEPEND="dev-haskell/bits-atomic:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 			dev-haskell/quickcheck
-			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.8"
 

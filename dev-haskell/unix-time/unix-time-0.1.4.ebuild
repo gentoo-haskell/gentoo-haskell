@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.3
 			dev-haskell/hspec
 			dev-haskell/quickcheck
-			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.10"
 

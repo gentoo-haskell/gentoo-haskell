@@ -35,7 +35,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/sdl
 		dev-haskell/sdl-image
 		dev-haskell/sdl-mixer
-		dev-haskell/time
 		>=dev-lang/ghc-6.10.1"
 
 S="${WORKDIR}/${MY_P}"

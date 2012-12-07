@@ -43,7 +43,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.1
 		dev-haskell/sha
 		dev-haskell/text
-		dev-haskell/time
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-7.4

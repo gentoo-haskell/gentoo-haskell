@@ -22,7 +22,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		dev-haskell/regex-compat
-		dev-haskell/time
 		>=dev-lang/ghc-6.10.4
 		inotify? ( =dev-haskell/hinotify-0.3* )
 		"

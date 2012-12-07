@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 		~dev-haskell/hledger-lib-0.16.1
 		dev-haskell/hunit
 		>=dev-haskell/safe-0.2
-		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
 
 src_prepare() {

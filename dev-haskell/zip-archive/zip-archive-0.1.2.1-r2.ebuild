@@ -27,7 +27,6 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( app-arch/zip
 			dev-haskell/hunit
-			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.10"
 

@@ -29,7 +29,6 @@ RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
 		<dev-haskell/data-accessor-template-0.3:=[profile?]
 		>=dev-haskell/gtk-0.9.11:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		dev-haskell/time:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

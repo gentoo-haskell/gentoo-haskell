@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/io-choice
 		dev-haskell/regex-posix
 		dev-haskell/syb
-		dev-haskell/time
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.10.4"
 

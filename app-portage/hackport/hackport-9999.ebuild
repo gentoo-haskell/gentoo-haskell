@@ -34,7 +34,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		dev-haskell/regex-compat
 		dev-haskell/tar
-		dev-haskell/time
 		>dev-haskell/xml-1.3.5
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.4"

@@ -25,7 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
 		>=dev-haskell/parsec-3
 		>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
-		dev-haskell/time
 		=dev-haskell/x11-1.6*
 		xft?  ( =dev-haskell/utf8-string-0.3*
 			=dev-haskell/x11-xft-0.3*

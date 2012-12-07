@@ -45,7 +45,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2
 		dev-haskell/text
-		dev-haskell/time
 		>=dev-lang/ghc-6.12.1"
 
 S="${WORKDIR}/${MY_P}"

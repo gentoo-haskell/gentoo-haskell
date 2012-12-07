@@ -38,7 +38,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/safe-0.2
 		dev-haskell/shakespeare-text
 		=dev-haskell/text-0.11*
-		dev-haskell/time
 		>=dev-haskell/transformers-0.2
 		<dev-haskell/transformers-0.4
 		dev-haskell/wai

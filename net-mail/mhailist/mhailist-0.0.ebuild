@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
 		dev-haskell/mtl
-		dev-haskell/time
 		>=dev-lang/ghc-6.10.1"
 
 PATCHES=("${FILESDIR}/${PN}"-0.0-ghc-7.2.patch)

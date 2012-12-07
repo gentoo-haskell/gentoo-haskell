@@ -22,7 +22,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0
 		dev-haskell/feed
-		dev-haskell/time
 		dev-haskell/xml
 		>=dev-lang/ghc-6.10.1"
 

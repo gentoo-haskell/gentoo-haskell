@@ -21,7 +21,6 @@ DEPEND=">=dev-lang/ghc-6.8.1
 		dev-haskell/mtl
 		dev-haskell/parsec
 		dev-haskell/stm
-		dev-haskell/time
 		>=dev-haskell/x11-1.3.0
 		unicode? ( dev-haskell/utf8-string )
 		xft?  ( dev-haskell/utf8-string

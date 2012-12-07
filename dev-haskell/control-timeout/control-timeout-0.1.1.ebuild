@@ -16,5 +16,4 @@ IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.6.1
 		dev-haskell/cabal
-		dev-haskell/time
 		dev-haskell/stm"

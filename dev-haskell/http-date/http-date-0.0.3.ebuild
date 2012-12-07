@@ -23,6 +23,5 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.8
 			dev-haskell/hspec
-			dev-haskell/time
 		)
 		>=dev-haskell/cabal-1.8"

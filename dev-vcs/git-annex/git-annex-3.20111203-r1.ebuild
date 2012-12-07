@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/network
 		dev-haskell/pcre-light
 		dev-haskell/sha
-		dev-haskell/time
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-6.10.1
 		dev-lang/perl

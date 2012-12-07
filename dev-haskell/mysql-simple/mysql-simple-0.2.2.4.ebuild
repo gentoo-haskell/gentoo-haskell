@@ -25,7 +25,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3
 		>=dev-haskell/mysql-0.1.1.1
 		dev-haskell/pcre-light
 		>=dev-haskell/text-0.11.0.2
-		dev-haskell/time
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
