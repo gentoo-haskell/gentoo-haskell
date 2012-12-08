@@ -1,0 +1,27 @@
+diff --git a/natural-numbers.cabal b/natural-numbers.cabal
+index a8a4511..8ff14b6 100644
+--- a/natural-numbers.cabal
++++ b/natural-numbers.cabal
+@@ -4,8 +4,8 @@ Cabal-Version: >= 1.6
+ Build-Type:    Simple
+ License:       BSD3
+ License-File:  LICENSE
+-Copyright:     © 2010 Brandenburgische Technische Universität Cottbus;
+-               © 2012 Wolfgang Jeltsch
++Copyright:     (c) 2010 Brandenburgische Technische Universitat Cottbus;
++               (c) 2012 Wolfgang Jeltsch
+ Author:        Wolfgang Jeltsch
+ Maintainer:    wolfgang@cs.ioc.ee
+ Stability:     provisional
+@@ -14,9 +14,9 @@ Package-URL:   http://hackage.haskell.org/packages/archive/natural-numbers/0.1.2
+ Synopsis:      Natural numbers
+ Description:   This package provides a type of all natural numbers, that is, non-negative integers.
+                .
+-               In contrast to the @naturals@ package, it does not use an “indeterminate value” to
++               In contrast to the @naturals@ package, it does not use an "indeterminate value" to
+                represent underflows, but raises errors on underflows. We think this is more
+-               reasonable, as this “indeterminate value” is not really a natural.
++               reasonable, as this "indeterminate value" is not really a natural.
+ Category:      Data, Math
+ Tested-With:   GHC == 7.4.1
+ 
