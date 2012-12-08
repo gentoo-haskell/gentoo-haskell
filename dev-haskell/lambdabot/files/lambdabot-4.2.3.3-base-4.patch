@@ -1,0 +1,400 @@
+diff --git a/Lambdabot.hs b/Lambdabot.hs
+index a4b9bf3..d325ae8 100644
+--- a/Lambdabot.hs
++++ b/Lambdabot.hs
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE CPP, ExistentialQuantification, FlexibleContexts,
+   FunctionalDependencies, GeneralizedNewtypeDeriving, MultiParamTypeClasses,
+   PatternGuards, RankNTypes, TypeOperators #-}
++{-# LANGUAGE GADTs #-}
+ -- | The guts of lambdabot.
+ --
+ -- The LB/Lambdabot monad
+@@ -31,6 +32,7 @@ module Lambdabot (
+         ircLoad, ircUnload,
+ 
+         checkPrivs, checkIgnore, mkCN, handleIrc, catchIrc, runIrc,
++        isNME
+   ) where
+ 
+ import File (findFile)
+@@ -69,7 +71,8 @@ import Data.ByteString (ByteString)
+ 
+ import Control.Concurrent (myThreadId, newEmptyMVar, newMVar, readMVar, putMVar,
+                            takeMVar, threadDelay, MVar, ThreadId)
+-import Control.OldException
++import qualified Control.Exception as E
++import qualified System.IO.Error as E
+ import Control.Monad.Error (MonadError (..))
+ import Control.Monad.Reader
+ import Control.Monad.State
+@@ -83,6 +86,12 @@ exitImmediately :: ExitCode -> IO a
+ exitImmediately = exitWith
+ #endif
+ 
++catchE :: IO a -> (E.IOError -> IO a) -> IO a
++catchE = E.catch
++
++catchS :: IO a -> (SignalException -> IO a) -> IO a
++catchS = E.catch
++
+ ------------------------------------------------------------------------
+ --
+ -- Lambdabot state
+@@ -163,7 +172,7 @@ remServer tag = do
+     case M.lookup tag svrs of
+         Just _ -> do let svrs' = M.delete tag svrs
+                      main <- asks ircMainThread
+-                     when (M.null svrs') $ io $ throwTo main (ErrorCall "all servers detached")
++                     when (M.null svrs') $ io $ E.throwTo main (E.ErrorCall "all servers detached")
+                      put (s { ircServerMap = svrs' })
+         Nothing -> fail $ "attempted to delete nonexistent servers named " ++ tag
+ 
+@@ -213,14 +222,20 @@ instance MonadState IRCRWState LB where
+ -- And now a MonadError instance to map IRCErrors to MonadError in LB,
+ -- so throwError and catchError "just work"
+ instance MonadError IRCError LB where
+-  throwError (IRCRaised e)    = io $ throwIO e
+-  throwError (SignalCaught e) = io $ evaluate (throwDyn $ SignalException e)
++  throwError (IRCRaised e)    = io $ E.throwIO e
++  throwError (SignalCaught e) = io $ E.evaluate (E.throw $ SignalException e)
+   m `catchError` h = lbIO $ \conv -> (conv m
+-              `catchDyn` \(SignalException e) -> conv $ h $ SignalCaught e)
+-              `catch` \e -> conv $ h $ IRCRaised e
++              `catchS` \(SignalException e) -> conv $ h $ SignalCaught e)
++              `E.catch` \(E.SomeException e) -> conv $ h $ IRCRaised (E.SomeException e)
++
++isNME :: E.Exception e => e -> Bool
++isNME = isJust . (E.fromException :: E.SomeException -> Maybe E.NoMethodError) . E.toException
+ 
+ -- A type for handling both Haskell exceptions and external signals
+-data IRCError = IRCRaised Exception | SignalCaught Signal
++-- like Control.Exception.SomeException does
++data IRCError where
++    IRCRaised    :: forall e . E.Exception e => e -> IRCError
++    SignalCaught :: Signal -> IRCError
+ 
+ instance Show IRCError where
+     show (IRCRaised    e) = show e
+@@ -262,9 +277,10 @@ data Mode = Online | Offline deriving Eq
+ runIrc :: [String] -> LB a -> S.DynLoad -> [String] -> IO ()
+ runIrc evcmds initialise ld plugins = withSocketsDo $ do
+     rost <- initRoState
+-    r <- try $ evalLB (do withDebug "Initialising plugins" initialise
+-                          withIrcSignalCatch mainLoop)
+-                       rost (initState ld plugins evcmds)
++    r <- (E.try :: IO a -> IO (Either E.SomeException a))
++               $ evalLB (do withDebug "Initialising plugins" initialise
++                            withIrcSignalCatch mainLoop)
++                         rost (initState ld plugins evcmds)
+ 
+     -- clean up and go home
+     case r of
+@@ -494,12 +510,12 @@ writeGlobalState mod name = case moduleSerialize mod of
+ readGlobalState :: Module m s => m -> String -> IO (Maybe s)
+ readGlobalState mod name
+     | Just ser <- moduleSerialize mod  = do
+-        state <- Just `fmap` P.readFile (toFilename name) `catch` \_ -> return Nothing
+-        catch (evaluate $ maybe Nothing (Just $!) (deserialize ser =<< state)) -- Monad Maybe)
+-              (\e -> do hPutStrLn stderr $ "Error parsing state file for: "
+-                                        ++ name ++ ": " ++ show e
+-                        hPutStrLn stderr $ "Try removing: "++ show (toFilename name)
+-                        return Nothing) -- proceed regardless
++        state <- Just `fmap` P.readFile (toFilename name) `catchE` \_ -> return Nothing
++        catchE (E.evaluate $ maybe Nothing (Just $!) (deserialize ser =<< state)) -- Monad Maybe)
++               (\e -> do hPutStrLn stderr $ "Error parsing state file for: "
++                                         ++ name ++ ": " ++ show e
++                         hPutStrLn stderr $ "Try removing: "++ show (toFilename name)
++                         return Nothing) -- proceed regardless
+     | otherwise = return Nothing
+ 
+ -- | helper
+diff --git a/Plugin/Activity.hs b/Plugin/Activity.hs
+index 5f6f6e6..d49f12e 100644
+--- a/Plugin/Activity.hs
++++ b/Plugin/Activity.hs
+@@ -7,7 +8,7 @@ import qualified Message as Msg
+ 
+ import Control.Arrow ((&&&))
+ import Data.Maybe (fromMaybe)
+-import Control.OldException (evaluate)
++import qualified Control.Exception as E (evaluate)
+ 
+ import System.Time
+ 
+@@ -34,7 +35,7 @@ instance Module ActivityModule ActivityState where
+                        | otherwise = Msg.readNick msg "private"
+ 
+ activityFilter :: Msg.Nick -> [String] -> ModuleLB ActivityState
+-activityFilter target lns = do io $ evaluate $ foldr seq () $ map (foldr seq ()) $ lns
++activityFilter target lns = do io $ E.evaluate $ foldr seq () $ map (foldr seq ()) $ lns
+                                withMS $ \ st wr -> do
+                                  now <- io getClockTime
+                                  wr (map (const (now,target)) lns ++ st)
+diff --git a/Plugin/Base.hs b/Plugin/Base.hs
+index 8bd8f86..e8b4e1f 100644
+--- a/Plugin/Base.hs
++++ b/Plugin/Base.hs
+@@ -12,7 +12,7 @@ import qualified Data.Map as M   (insert, delete)
+ 
+ import Control.Monad.State  (MonadState(..), when, gets)
+ 
+-import Control.OldException (Exception(NoMethodError))
++import qualified Control.Exception as E (NoMethodError(..), SomeException(..))
+ 
+ import qualified Data.ByteString.Char8 as P
+ import qualified Text.Regex as R
+@@ -238,10 +238,10 @@ doPRIVMSG' myname msg target
+                             (do mstrs <- catchError
+                                  (Right `fmap` fprocess_ m fcmd frest)
+                                  (\ex -> case (ex :: IRCError) of -- dispatch
+-                                   (IRCRaised (NoMethodError _)) -> catchError
++                                   (IRCRaised e) | isNME e -> catchError
+                                         (Left `fmap` process m msg towhere cmd' rest)
+                                         (\ey -> case (ey :: IRCError) of -- dispatch
+-                                            (IRCRaised (NoMethodError _)) ->
++                                            (IRCRaised e) | isNME e ->
+                                                 Left `fmap` process_ m cmd' rest
+                                             _ -> throwError ey)
+                                    _ -> throwError ex)
+diff --git a/Plugin/Compose.hs b/Plugin/Compose.hs
+index 997d97d..a89aaad 100644
+--- a/Plugin/Compose.hs
++++ b/Plugin/Compose.hs
+@@ -11,7 +11,7 @@ import Message
+ 
+ import Control.Monad.State
+ import Control.Arrow (first)
+-import Control.OldException (Exception(NoMethodError))
++import qualified Control.Exception as E (NoMethodError(..))
+ 
+ $(plugin "Compose")
+ 
+@@ -57,7 +57,7 @@ lookupP (a,b) cmd = withModule ircCommands cmd
+         bindModule1 $ \str -> catchError
+                     (process m a b cmd str)
+                     (\ex -> case (ex :: IRCError) of
+-                                (IRCRaised (NoMethodError _)) -> process_ m cmd str
++                                (IRCRaised e) | isNME e -> process_ m cmd str
+                                 _ -> throwError ex))
+ 
+ 
+diff --git a/Plugin/Dict/DictLookup.hs b/Plugin/Dict/DictLookup.hs
+index a0d14c9..fedc505 100644
+--- a/Plugin/Dict/DictLookup.hs
++++ b/Plugin/Dict/DictLookup.hs
+@@ -19,7 +19,8 @@ module Plugin.Dict.DictLookup ( simpleDictLookup, QueryConfig(..), LookupResult)
+ 
+ import Data.List
+ import System.IO
+-import Control.OldException (handle)
++import qualified Control.Exception as E (handle)
++import qualified System.IO.Error as E (IOError)
+ import Network
+ 
+ data QueryConfig    = QC { host :: String, port :: Int }
+@@ -30,7 +31,7 @@ type LookupResult   = Either String String -- Left <error> | Right <result>
+ 
+ simpleDictLookup :: QueryConfig -> DictName -> String -> IO LookupResult
+ simpleDictLookup config dictnm query =
+-    handle (\e -> (return $ Left (show e))) $ do
++    (E.handle :: (E.IOError -> IO a) -> IO a -> IO a) (\e -> (return $ Left (show e))) $ do
+         conn <- openDictConnection config
+         result <- queryDict conn dictnm query
+         closeDictConnection conn
+diff --git a/Plugin/Help.hs b/Plugin/Help.hs
+index 181afd2..ddfe5e2 100644
+--- a/Plugin/Help.hs
++++ b/Plugin/Help.hs
+@@ -3,7 +3,7 @@
+ module Plugin.Help (theModule) where
+ 
+ import Plugin
+-import Control.OldException (Exception(..), evaluate)
++import qualified Control.Exception as E (Exception(..), evaluate)
+ 
+ $(plugin "Help")
+ 
+@@ -31,9 +31,9 @@ doHelp cmd rest =
+ 
+         -- so it's a valid command, try to find its help
+         (\md -> do
+-            s <- catchError (liftIO $ evaluate $ moduleHelp md arg) $ \e ->
++            s <- catchError (liftIO $ E.evaluate $ moduleHelp md arg) $ \e ->
+                 case e of
+-                    IRCRaised (NoMethodError _) -> return "This command is unknown."
++                    IRCRaised e | isNME e       -> return "This command is unknown."
+                     _                           -> throwError e
+             return [s])
+ 
+diff --git a/Plugin/IRC.hs b/Plugin/IRC.hs
+index d711086..e2d3eaa 100644
+--- a/Plugin/IRC.hs
++++ b/Plugin/IRC.hs
+@@ -5,7 +5,7 @@ module Plugin.IRC (theModule) where
+ 
+ import Control.Concurrent( forkIO, newQSem, waitQSem, threadDelay, signalQSem,
+                            newEmptyMVar, putMVar, takeMVar, MVar )
+-import Control.OldException
++import qualified Control.Exception as E
+ import IRCBase
+ import LMain( received )
+ import Message
+@@ -130,7 +130,8 @@ readerLoop tag nickn sock = do
+ 
+ sendMsg :: String -> Handle -> MVar () -> IrcMessage -> IO ()
+ sendMsg tag sock mv msg =
+-    catchJust ioErrors (do takeMVar mv
+-                           P.hPut sock $ P.pack $ encodeMessage msg "\r\n")
++    (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++                  (do takeMVar mv
++                      P.hPut sock $ P.pack $ encodeMessage msg "\r\n")
+                   (\err -> do hPutStrLn stderr $ "irc[" ++ tag ++ "] error: " ++ show err
+                               hClose sock)
+diff --git a/Plugin/OfflineRC.hs b/Plugin/OfflineRC.hs
+index 4549298..502af8a 100644
+--- a/Plugin/OfflineRC.hs
++++ b/Plugin/OfflineRC.hs
+@@ -14,7 +14,7 @@ import Control.Monad.State( get, gets, put )
+ import Control.Concurrent( forkIO )
+ import Control.Concurrent.MVar( readMVar )
+ import Lambdabot.Error( finallyError )
+-import Control.OldException ( evaluate )
++import qualified Control.Exception as E ( evaluate )
+ 
+ import Config
+ 
+@@ -56,7 +56,7 @@ instance Module OfflineRCModule Integer where
+                                 lift $ liftLB forkIO act
+                                 return []
+     process_ _ "rc" fn     = do txt <- io $ readFile fn
+-                                io $ evaluate $ foldr seq () txt
++                                io $ E.evaluate $ foldr seq () txt
+                                 act <- bindModule0 $ finallyError (mapM_ feed $ lines txt) unlockRC
+                                 lockRC
+                                 lift $ liftLB forkIO act
+diff --git a/Plugin/Quote/Fortune.hs b/Plugin/Quote/Fortune.hs
+index f3f2756..c163000 100644
+--- a/Plugin/Quote/Fortune.hs
++++ b/Plugin/Quote/Fortune.hs
+@@ -10,7 +10,8 @@ import qualified Lambdabot.Util hiding (stdGetRandItem)
+ import Data.List
+ import Control.Monad
+ import System.Directory
+-import qualified Control.OldException as C (catch)
++import qualified Control.Exception as E (catch)
++import qualified System.IO.Error as E (IOError)
+ 
+ #ifndef mingw32_HOST_OS
+ --
+@@ -23,7 +24,8 @@ import System.Posix (isRegularFile, getFileStatus)
+ --   configured 'fortunePath' directory.
+ filelist :: IO [String]
+ filelist = do
+-    filelist'<- C.catch (getDirectoryContents $ fortunePath config)
++    filelist'<- (E.catch :: IO a -> (E.IOError -> IO a) -> IO a)
++                        (getDirectoryContents $ fortunePath config)
+                         (\_ -> return [])
+     let files = filter (not . isSuffixOf ".dat") filelist'
+     join (return (filterM isFile (map (fortunePath config ++) files)))
+@@ -35,7 +37,8 @@ fileRandom = filelist >>= stdGetRandItem
+ -- | Parse a file of fortunes into a list of the fortunes in the file.
+ fortunesParse :: FilePath -> IO [String]
+ fortunesParse filename = do
+-    rawfs <- C.catch (readFile filename)
++    rawfs <- (E.catch :: IO a -> (E.IOError -> IO a) -> IO a)
++                     (readFile filename)
+                      (\_ -> return "Couldn't find fortune file")
+     return $ split "%\n" rawfs
+ 
+diff --git a/Plugin/Vixen.hs b/Plugin/Vixen.hs
+index 47a212f..f72d97d 100644
+--- a/Plugin/Vixen.hs
++++ b/Plugin/Vixen.hs
+@@ -16,7 +16,7 @@ import Control.Arrow ((***))
+ import System.Directory
+ import qualified Data.ByteString.Char8 as P
+ 
+-import File (findFile)
++import qualified File as F (findFile)
+ import Plugin
+ 
+ $(plugin "Vixen")
+@@ -46,9 +46,9 @@ instance Module VixenModule (Bool, String -> IO String) where
+     -- suck in our (read only) regex state from disk
+     -- compile it, and stick it in the plugin state
+     moduleInit _     = do
+-      b <- io $ doesFileExist =<< findFile "vixen"
++      b <- io $ doesFileExist =<< F.findFile "vixen"
+       when b $ do
+-          s <- io $ do st <- decodeFile =<< findFile "vixen"
++          s <- io $ do st <- decodeFile =<< F.findFile "vixen"
+                        let compiled = map (regex *** id) st
+                        return (vixen (mkResponses compiled))
+           modifyMS $ \(v,_) -> (v, s)
+diff --git a/Plugin/Eval.hs b/Plugin/Eval.hs
+index 3462423..e9043cb 100644
+--- a/Plugin/Eval.hs
++++ b/Plugin/Eval.hs
+@@ -6,7 +6,7 @@
+ -- | A Haskell evaluator for the pure part, using plugs
+ module Plugin.Eval where
+ 
+-import File (findFile)
++import qualified File as F (findFile)
+ import Plugin
+ import Lambdabot.Parser
+ import Language.Haskell.Exts.Parser
+@@ -16,7 +16,7 @@ import System.Directory
+ import System.Exit
+ import Codec.Binary.UTF8.String (decodeString)
+ import qualified Data.ByteString.Char8 as P
+-import Control.OldException (try)
++import qualified Control.Exception as E (try)
+ 
+ $(plugin "Plugs")
+ 
+@@ -27,8 +27,8 @@ instance Module PlugsModule () where
+     moduleHelp _ _             = "run <expr>. You have Haskell, 3 seconds and no IO. Go nuts!"
+     process _ _ to "run" s     = ios80 to (plugs s)
+     process _ _ to "let" s     = ios80 to (define s)
+-    process _ _ _ "undefine" _ = do l <- io $ findFile "L.hs"
+-                                    p <- io $ findFile "Pristine.hs"
++    process _ _ _ "undefine" _ = do l <- io $ F.findFile "L.hs"
++                                    p <- io $ F.findFile "Pristine.hs"
+                                     io $ copyFile p l
+ --                                    x <- io $ comp Nothing
+ --                                    return [x]
+@@ -83,7 +82,7 @@ define src = case parseModule (decodeString src ++ "\n") of -- extra \n so comme
+ -- It parses. then add it to a temporary L.hs and typecheck
+ comp :: Maybe String -> IO String
+ comp src = do
+-    l <- findFile "L.hs"
++    l <- F.findFile "L.hs"
+     -- Note we copy to .L.hs, not L.hs. This hides the temporary files as dot-files
+     copyFile l ".L.hs"
+     case src of
+@@ -98,8 +97,8 @@ comp src = do
+ --                             ,"-hidir","State/"
+                              ,".L.hs"] Nothing
+     -- cleanup, in case of error the files are not generated
+-    try $ removeFile ".L.hi"
+-    try $ removeFile ".L.o"
++    (E.try :: IO a -> IO (Either IOError a)) $ removeFile ".L.hi"
++    (E.try :: IO a -> IO (Either IOError a)) $ removeFile ".L.o"
+ 
+     case (munge o', munge e') of
+         ([],[]) | c /= ExitSuccess -> return "Error."
+diff --git a/Plugin/Eval.hs b/Plugin/Eval.hs
+index 07ec7e9..e9043cb 100644
+--- a/Plugin/Eval.hs
++++ b/Plugin/Eval.hs
+@@ -49,7 +49,7 @@ dropPrefix = dropWhile (' ' ==) . drop 2
+ 
+ plugs :: String -> IO String
+ plugs src = do
+-            load <- findFile "L.hs"
++            load <- F.findFile "L.hs"
+             let args = ["-XForeignFunctionInterface", "-XUnliftedFFITypes", "-XImplicitParams", "-XScopedTypeVariables", "-XUnboxedTuples", "-XTypeSynonymInstances", "-XStandaloneDeriving", "-XDeriveDataTypeable", "-XDeriveFunctor", "-XDeriveFoldable", "-XDeriveTraversable", "-XFlexibleContexts", "-XFlexibleInstances", "-XConstrainedClassMethods", "-XMultiParamTypeClasses", "-XFunctionalDependencies", "-XMagicHash", "-XPolymorphicComponents", "-XExistentialQuantification", "-XUnicodeSyntax", "-XPostfixOperators", "-XPatternGuards", "-XLiberalTypeSynonyms", "-XRankNTypes", "-XTypeOperators", "-XDoRec", "-XParallelListComp", "-XEmptyDataDecls", "-XKindSignatures", "-XGeneralizedNewtypeDeriving", "-XBangPatterns", "-XNoMonomorphismRestriction", "-XViewPatterns", "--no-imports", "-l", load, "--expression=" ++ src, "+RTS", "-N2", "-RTS"]            
+             (out,err,_) <- popen binary args Nothing
+             case (out,err) of

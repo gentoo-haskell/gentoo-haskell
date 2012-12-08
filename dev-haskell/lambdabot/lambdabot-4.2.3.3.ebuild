@@ -61,6 +61,7 @@ src_prepare() {
 	fi
 	epatch "${FILESDIR}/${P}-binutils-2.21.patch"
 	epatch "${FILESDIR}/${P}-ghc-7.2.patch"
+	epatch "${FILESDIR}/${P}-base-4.patch"
 }
 
 src_configure() {
