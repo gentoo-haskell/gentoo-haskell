@@ -37,3 +37,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/transformers
 		)
 		>=dev-haskell/cabal-1.8"
+
+RESTRICT=test # fails under load:
+# Running "EarlyDisconnect": TestTCP: user error (Pattern match failure in do expression at tests/TestTCP.hs:108:7-21)
+# Trace:
+# 0       Left bind: resource busy (Address already in use)
