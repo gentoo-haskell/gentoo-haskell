@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Fast, memory-efficient, low-level socket functions
+		that use &#39;Data.ByteString&#39;s instead of &#39;String&#39;s.
+	</longdescription>
+</pkgmetadata>
