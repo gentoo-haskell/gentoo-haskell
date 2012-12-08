@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,19 +14,37 @@ SRC_URI="http://hydra.nixos.org/build/2860022/download/4/${PN}-${MY_PV}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="etc_profile"
 
-DEPEND=""
-RDEPEND=""
+COMMON_DEPENDS="
+	app-arch/bzip2
+	dev-db/sqlite
+	dev-libs/openssl
+	dev-lang/perl
+	sys-libs/zlib
+"
+DEPEND="${COMMON_DEPENDS}
+	virtual/perl-ExtUtils-ParseXS
+"
+RDEPEND="${COMMON_DEPENDS}
+	dev-perl/DBD-SQLite
+	dev-perl/DBI
+	net-misc/curl
+"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_install() {
+	# TODO: emacs highlighter
 	default
-	rm "${ED}"/etc/profile.d/nix.sh || die
+	if ! use etc_profile; then
+		rm "${ED}"/etc/profile.d/nix.sh || die
+	fi
 }
 
 pkg_postinstall() {
-	ewarn "${EROOT}etc/profile.d/nix.sh was removed."
-	ewarn "Please fix the ebuild by adding nix user/group handling."
+	if ! use etc_profile; then
+		ewarn "${EROOT}etc/profile.d/nix.sh was removed (due to USE=-etc_profile)."
+		ewarn "Please fix the ebuild by adding nix user/group handling."
+	fi
 }
