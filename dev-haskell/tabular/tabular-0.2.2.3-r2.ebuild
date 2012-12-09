@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/csv-0.1*:=[profile?]
 		>=dev-haskell/html-1.0:=[profile?]
 		<dev-haskell/html-2.0:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
-		<dev-haskell/mtl-2.1:=[profile?]
+		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
