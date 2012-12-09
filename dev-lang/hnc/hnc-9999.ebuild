@@ -4,8 +4,7 @@
 
 EAPI=4
 
-# nocabaldep - uses uuagc-cabal
-CABAL_FEATURES="bin nocabaldep"
+CABAL_FEATURES="bin"
 inherit eutils git-2 haskell-cabal
 
 MY_PN="HNC"
