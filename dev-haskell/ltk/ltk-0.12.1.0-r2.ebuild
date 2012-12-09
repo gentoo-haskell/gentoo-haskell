@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
-		<dev-haskell/cabal-1.17:=[profile?]
+		<dev-haskell/cabal-1.18:=[profile?]
 		>=dev-haskell/glib-0.10.0:=[profile?]
 		<dev-haskell/glib-0.13:=[profile?]
 		>=dev-haskell/gtk-0.10.0:=[profile?]
@@ -41,7 +41,7 @@ src_prepare() {
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 leksah-server does not work with cabal-1.10, so use ghc-6.12 shipped one
 		# since leksah-server uses cabal, haddock, and ltk, ltk must use ghc 6.12 cabal for ghc < 7.
-		sed -e 's@build-depends: Cabal >=1.6.0 && <1.17@build-depends: Cabal >=1.6.0 \&\& <1.9@g' \
+		sed -e 's@build-depends: Cabal >=1.6.0 && <1.18@build-depends: Cabal >=1.6.0 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
 }
