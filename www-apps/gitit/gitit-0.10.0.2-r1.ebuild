@@ -62,14 +62,17 @@ RDEPEND=">=app-text/pandoc-1.9.0.5:=[profile?]
 		>=dev-haskell/xml-1.3.5:=[profile?]
 		=dev-haskell/xss-sanitize-0.3*:=[profile?]
 		=dev-haskell/zlib-0.5*:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-7.6.1:="
+# can be restored with time-compat
+#		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	SHA > 1 && < 1.6
-	sed -e 's@SHA > 1 && < 1.6@SHA > 1 \&\& < 1.7@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	epatch "${FILESDIR}"/${P}-directory-1.2.patch
+
+	cabal_chdeps \
+		'SHA > 1 && < 1.6' 'SHA > 1 && < 1.7'
 }
 
 src_configure() {
