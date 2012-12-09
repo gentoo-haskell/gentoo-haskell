@@ -1,0 +1,51 @@
+--- gtk2hs-buildtools-0.12.4-orig/gtk2hs-buildtools.cabal	2012-11-12 10:26:45.000000000 +1100
++++ gtk2hs-buildtools-0.12.4/gtk2hs-buildtools.cabal	2012-12-09 14:03:02.311776181 +1100
+@@ -55,6 +55,8 @@
+         build-depends:  base >= 4 && < 5,
+                         process, directory, array, containers, pretty,
+                         filepath, random
++        if (impl(ghc >= 7.6))
++          build-depends: hashtables
+         build-tools:    alex, happy
+         other-modules:  BaseVersion
+                         Config
+--- gtk2hs-buildtools-0.12.4-orig/c2hs/base/general/Binary.hs	2012-11-12 10:26:43.000000000 +1100
++++ gtk2hs-buildtools-0.12.4/c2hs/base/general/Binary.hs	2012-12-09 13:43:37.136585903 +1100
+@@ -61,8 +61,14 @@
+ import Map (Map)
+ import qualified Map as Map
+ # if __GLASGOW_HASKELL__>=602
++# if __GLASGOW_HASKELL__>=706
++import Data.HashTable.IO as HashTable hiding (mapM_)
++import Prelude
++import Data.List (foldl')
++#else
+ import Data.HashTable as HashTable
+ # endif
++# endif
+ import Data.Array.IO
+ import Data.Array
+ import Data.Bits
+@@ -94,6 +100,10 @@
+ 
+ type BinArray = IOUArray Int Word8
+ 
++# if __GLASGOW_HASKELL__>=706
++type HashTable k v = HashTable.BasicHashTable k v
++#endif
++
+ ---------------------------------------------------------------
+ --		BinHandle
+ ---------------------------------------------------------------
+@@ -714,7 +724,11 @@
+ newWriteState = do
+   j_r <- newIORef 0
+ #if __GLASGOW_HASKELL__>=602
++# if __GLASGOW_HASKELL__>=706
++  out_r <- HashTable.new
++#else
+   out_r <- HashTable.new (==) HashTable.hashString
++#endif
+ #else
+   out_r <- newIORef Map.empty
+ #endif
