@@ -19,7 +19,8 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.8.3"
+# previous ghc support can be restored with time-compat
+RDEPEND=">=dev-lang/ghc-7.6.1"
 DEPEND="$RDEPEND
 		app-arch/unzip"
 
@@ -27,7 +28,7 @@ S="${WORKDIR}/distr/"
 EXE="${PN}-lang"
 
 src_compile() {
-	emake all || die "make failed"
+	emake GHC_FLAGS_COMMON="${HCFLAGS}" all || die "make failed"
 }
 
 src_install() {
@@ -42,4 +43,5 @@ pkg_postinst() {
 	elog "the executable has been renamed from ${PN} to ${EXE}."
 }
 
-PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch")
+PATCHES=("${FILESDIR}/${P}-ghc-7.2.patch"
+	"${FILESDIR}/${P}-ghc-7.6.patch")
