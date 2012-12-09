@@ -1,5 +1,5 @@
 --- leksah-server-0.12.1.2-orig/leksah-server.cabal	2012-06-20 06:52:41.000000000 +1000
-+++ leksah-server-0.12.1.2/leksah-server.cabal	2012-12-09 01:57:21.920329745 +1100
++++ leksah-server-0.12.1.2/leksah-server.cabal	2012-12-09 12:42:17.413729691 +1100
 @@ -32,22 +32,25 @@
  
  library
@@ -8,7 +8,7 @@
 -               binary-shared >=0.8 && <0.9, bytestring >=0.9.0.1 && <0.10,
 -               containers >=0.2.0.0 && <0.5,
 -               directory >=1.0.0.2 && <1.2, filepath >=1.1.0.1 && <1.4, ghc >=6.10.1 && <7.5,
-+    build-depends: Cabal >=1.6.0.1 && <1.17, base >= 4.0.0.0 && <4.7, binary >=0.5.0.0 && <0.7,
++    build-depends: Cabal >=1.6.0.1 && <1.18, base >= 4.0.0.0 && <5, binary >=0.5.0.0 && <0.7,
 +               binary-shared >=0.8 && <0.9, bytestring >=0.9.0.1 && <0.11,
 +               containers >=0.2.0.0 && <0.6,
 +               directory >=1.0.0.2 && <1.3, filepath >=1.1.0.1 && <1.4, ghc >=6.10.1 && <7.8,
@@ -53,7 +53,7 @@
 -               binary-shared >=0.8 && <0.9, bytestring >=0.9.0.1 && <0.10,
 -               containers >=0.2.0.0 && <0.5,
 -               directory >=1.0.0.2 && <1.2, filepath >=1.1.0.1 && <1.6, ghc >=6.10.1 && <7.5,
-+    build-depends: Cabal >=1.6.0.1 && <1.17, base >= 4.0.0.0 && <4.7, binary >=0.5.0.0 && <0.7,
++    build-depends: Cabal >=1.6.0.1 && <1.18, base >= 4.0.0.0 && <5, binary >=0.5.0.0 && <0.7,
 +               binary-shared >=0.8 && <0.9, bytestring >=0.9.0.1 && <0.11,
 +               containers >=0.2.0.0 && <0.6,
 +               directory >=1.0.0.2 && <1.3, filepath >=1.1.0.1 && <1.6, ghc >=6.10.1 && <7.8,
@@ -92,7 +92,7 @@
  --    ghc-shared-options: -auto-all -prof
 -    build-depends:  base >= 4.0.0.0 && <4.6, hslogger >= 1.0.7 && <1.2, deepseq >=1.1 && <1.4,
 -               bytestring >=0.9.0.1 && <0.10, enumerator >= 0.4.14 && <0.5,
-+    build-depends:  base >= 4.0.0.0 && <4.7, hslogger >= 1.0.7 && <1.3, deepseq >=1.1 && <1.4,
++    build-depends:  base >= 4.0.0.0 && <5, hslogger >= 1.0.7 && <1.3, deepseq >=1.1 && <1.4,
 +               bytestring >=0.9.0.1 && <0.11, enumerator >= 0.4.14 && <0.5,
                 attoparsec-enumerator >=0.3 && <0.4, attoparsec >=0.10.0.3 && <0.11,
                 transformers >=0.2.2.0 && <0.4
@@ -102,7 +102,7 @@
      hs-source-dirs: tests
      main-is:    TestTool.hs
 -    build-depends: base >= 4.0.0.0 && <4.6,  hslogger >= 1.0.7 && <1.3,
-+    build-depends: base >= 4.0.0.0 && <4.7,  hslogger >= 1.0.7 && <1.3,
++    build-depends: base >= 4.0.0.0 && <5,  hslogger >= 1.0.7 && <1.3,
                 leksah-server,
                 HUnit >=1.2 && <1.3, transformers >=0.2.2.0 && <0.4, enumerator >=0.4.14 && <0.5
  
@@ -422,7 +422,7 @@
                                          return ())
  
 --- leksah-server-0.12.1.2-orig/src/IDE/Metainfo/SourceCollectorH.hs	2012-06-20 06:52:40.000000000 +1000
-+++ leksah-server-0.12.1.2/src/IDE/Metainfo/SourceCollectorH.hs	2012-12-09 00:50:54.759919089 +1100
++++ leksah-server-0.12.1.2/src/IDE/Metainfo/SourceCollectorH.hs	2012-12-09 16:25:14.113234670 +1100
 @@ -35,7 +35,11 @@
  import Documentation.Haddock
  #endif
@@ -892,7 +892,7 @@
  finishedDoc' :: LHsDecl alpha -> NDoc -> [(LHsDecl alpha, (Maybe ((HsDoc Name))))]
                      -> [(LHsDecl alpha, (Maybe ((HsDoc Name))))]
 --- leksah-server-0.12.1.2-orig/src/IDE/Metainfo/WorkspaceCollector.hs	2012-06-20 06:52:40.000000000 +1000
-+++ leksah-server-0.12.1.2/src/IDE/Metainfo/WorkspaceCollector.hs	2012-12-09 00:50:54.760919114 +1100
++++ leksah-server-0.12.1.2/src/IDE/Metainfo/WorkspaceCollector.hs	2012-12-09 15:28:47.695089225 +1100
 @@ -35,7 +35,12 @@
  #if !MIN_VERSION_ghc(7,2,0)
  import HscTypes hiding (liftIO)
@@ -933,7 +933,16 @@
  #if MIN_VERSION_ghc(6,12,1)
  type NDoc  = HsDocString
  type MyLDocDecl = LDocDecl
-@@ -101,6 +107,16 @@
+@@ -89,6 +95,8 @@
+ myDocEmpty=HsDocString(mkFastString "")
+ myDocAppend (HsDocString l) (HsDocString r) = HsDocString (appendFS l r)
+ isEmptyDoc (HsDocString fs) = nullFS fs
++#if MIN_VERSION_ghc(7,7,0)
++#endif
+ #else
+ type NDoc       = HsDoc RdrName
+ type MyLDocDecl = LDocDecl RdrName
+@@ -101,6 +109,16 @@
  #endif
  type NSig  = Located (Sig RdrName)
  
@@ -950,7 +959,7 @@
  -- | Test
  collectWorkspace :: PackageIdentifier ->  [(String,FilePath)] -> Bool -> Bool -> FilePath -> IO()
  collectWorkspace packId moduleList forceRebuild writeAscii dir = do
-@@ -146,25 +162,25 @@
+@@ -146,25 +164,25 @@
  
  collectModule' :: FilePath -> FilePath -> Bool -> PackageIdentifier -> [String] -> ModuleName -> IO()
  collectModule' sourcePath destPath writeAscii packId opts moduleName' = gcatch (
@@ -981,7 +990,7 @@
                  Left errMsg -> do
                      errorM "leksah-server" $ "Failed to parse " ++ sourcePath ++ " " ++ show errMsg
                      let moduleDescr =  ModuleDescr {
-@@ -181,8 +197,8 @@
+@@ -181,8 +199,8 @@
                          ,   dscMbComment'   =   Just (BS.pack $ show errMsg)
                          ,   dscTypeHint'    =   ErrorDescr
                          ,   dscExported'    =   False}]}
@@ -992,7 +1001,7 @@
      ) (\ (e :: SomeException) -> errorM "leksah-server" ("Can't extract module " ++ destPath ++ " " ++ show e))
  
  
-@@ -195,22 +211,22 @@
+@@ -195,22 +213,22 @@
  -----------------------------------------------------------------------------------
  -- Format conversion
  
@@ -1022,7 +1031,7 @@
      where
          fixDescr ::  [IE RdrName] -> Descr -> Descr
          fixDescr _ d@(Reexported _) = d
-@@ -223,18 +239,18 @@
+@@ -223,18 +241,18 @@
                                                  Nothing                -> nothingExported rd
                                                  Just (IEThingAll _)    -> allExported rd
                                                  Just (IEThingAbs _)    -> someExported rd []
@@ -1046,7 +1055,7 @@
                                  _                                     -> False)
                                      list
          allExported rd                                 = rd
-@@ -265,14 +281,14 @@
+@@ -265,14 +283,14 @@
          maySetExportedSD list sd = sd{sdExported = elem (sdName sd) list}
  
  
@@ -1064,7 +1073,7 @@
  
  -- | Sort by source location
  sortByLoc :: [Located a] -> [Located a]
-@@ -343,15 +359,15 @@
+@@ -343,15 +361,15 @@
  sigNameNoLoc' = maybe [] (:[]) . sigNameNoLoc
  #endif
  
@@ -1083,7 +1092,7 @@
  
      attachSignature :: Map RdrName  [(NSig,Maybe NDoc)] -> (NDecl, (Maybe NDoc))
          -> (NDecl, (Maybe NDoc), [(NSig,Maybe NDoc)])
-@@ -366,24 +382,72 @@
+@@ -366,24 +384,72 @@
      declName _                                      = Nothing
  
  
@@ -1162,7 +1171,7 @@
      ,   dscMbModu'      =   Just pm
      ,   dscMbLocation'  =   srcSpanToLocation loc
      ,   dscMbComment'   =   toComment mbComment []
-@@ -393,7 +457,7 @@
+@@ -393,7 +459,7 @@
      transformToDescr ((L loc (TyClD typ@(TyData DataType _ tcdLName' _ _ _ lConDecl tcdDerivs'))), mbComment,_sigList) =
          [Real $ RealDescr {
          dscName'        =   name
@@ -1171,7 +1180,7 @@
      ,   dscMbModu'      =   Just pm
      ,   dscMbLocation'  =   srcSpanToLocation loc
      ,   dscMbComment'   =   toComment mbComment []
-@@ -401,16 +465,16 @@
+@@ -401,16 +467,16 @@
      ,   dscExported'    =   True}]
              ++ derivings tcdDerivs'
          where
@@ -1193,7 +1202,7 @@
      ,   dscMbModu'      =   Just pm
      ,   dscMbLocation'  =   srcSpanToLocation loc
      ,   dscMbComment'   =   toComment mbComment []
-@@ -418,39 +482,44 @@
+@@ -418,39 +484,44 @@
      ,   dscExported'    =   True}]
              ++ derivings tcdDerivs'
          where
@@ -1247,7 +1256,7 @@
                                  [] -> ("",[])
                                  hd:tl -> (hd,tl)
  
-@@ -458,7 +527,12 @@
+@@ -458,7 +529,12 @@
  
  
  uncommentData :: TyClDecl a -> TyClDecl a
@@ -1260,7 +1269,7 @@
  uncommentData other                            = other
  
  uncommentDecl :: LConDecl a -> LConDecl a
-@@ -489,8 +563,8 @@
+@@ -489,8 +565,8 @@
                                          Just d -> dscMbTypeStr d}
          addType _ d                     = d
  
@@ -1271,7 +1280,7 @@
          Real $ RealDescr {
          dscName'        =   className
      ,   dscMbTypeStr'   =   Just (BS.pack ("instance " ++ (className ++ " " ++ name)))
-@@ -500,61 +574,61 @@
+@@ -500,61 +576,61 @@
      ,   dscTypeHint'    =   InstanceDescr (words name)
      ,   dscExported'    =   True}
          where
@@ -1356,7 +1365,7 @@
  
  srcSpanToLocation :: SrcSpan -> Maybe Location
  #if MIN_VERSION_ghc(7,2,0)
-@@ -638,16 +712,16 @@
+@@ -638,16 +714,16 @@
              M.Succeeded val ->    return (Just val)
              _               ->    return Nothing
  
@@ -1378,7 +1387,7 @@
                  liftIO $ debugM "leksah-server" ("interface file for " ++ show mn ++ " descrs: " ++
                                      show (length (mdIdDescriptions mod')))
 --- leksah-server-0.12.1.2-orig/src/IDE/Core/CTypes.hs	2012-06-20 06:52:40.000000000 +1000
-+++ leksah-server-0.12.1.2/src/IDE/Core/CTypes.hs	2012-12-09 01:19:23.322629613 +1100
++++ leksah-server-0.12.1.2/src/IDE/Core/CTypes.hs	2012-12-09 14:33:30.881664497 +1100
 @@ -90,7 +90,7 @@
  --
  
@@ -1388,7 +1397,15 @@
  configDirName = ".leksah-" ++ leksahVersion
  
  metadataVersion :: Integer
-@@ -542,7 +542,9 @@
+@@ -536,13 +536,17 @@
+                     `seq`    rnf (sdComment pd)
+                     `seq`    rnf (sdExported pd)
+ 
++#if !MIN_VERSION_Cabal(1,17,0)
+ instance NFData PackageIdentifier where
+     rnf pd =  rnf (pkgName pd)
+                     `seq`    rnf (pkgVersion pd)
++#endif
  
  instance NFData DescrType where  rnf a = seq a ()
  
@@ -1398,6 +1415,32 @@
  
  #if !MIN_VERSION_deepseq(1,3,0)
  instance NFData Version where  rnf v = seq v ()
+@@ -555,8 +559,10 @@
+ instance NFData ModuleName where
+     rnf =  rnf . components
+ 
++#if !MIN_VERSION_Cabal(1,17,0)
+ instance NFData PackageName where
+     rnf (PackageName s) =  rnf s
++#endif
+ 
+ 
+ 
+--- leksah-server-0.12.1.2-orig/src/IDE/Core/Serializable.hs	2012-06-20 06:52:40.000000000 +1000
++++ leksah-server-0.12.1.2/src/IDE/Core/Serializable.hs	2012-12-09 14:40:51.695234953 +1100
+@@ -35,9 +35,11 @@
+ 
+ import IDE.Core.CTypes
+ 
++#if !MIN_VERSION_Cabal(1,17,0)
+ deriving instance Typeable PackageIdentifier
+-deriving instance Typeable ModuleName
+ deriving instance Typeable PackageName
++#endif
++deriving instance Typeable ModuleName
+ -----------------------------------------------------------
+ 
+ instance BinaryShared PackModule where
 --- leksah-server-0.12.1.2-orig/src/IDE/HeaderParser.hs	2012-06-20 06:52:40.000000000 +1000
 +++ leksah-server-0.12.1.2/src/IDE/HeaderParser.hs	2012-12-09 01:19:23.315629421 +1100
 @@ -21,17 +21,31 @@
@@ -1650,7 +1693,7 @@
  figureOutHaddockOpts :: IO [String]
  figureOutHaddockOpts = do
 --- leksah-server-0.12.1.2-orig/src/IDE/Utils/GHCUtils.hs	2012-06-20 06:52:40.000000000 +1000
-+++ leksah-server-0.12.1.2/src/IDE/Utils/GHCUtils.hs	2012-12-09 01:19:23.321629586 +1100
++++ leksah-server-0.12.1.2/src/IDE/Utils/GHCUtils.hs	2012-12-09 15:28:33.137718427 +1100
 @@ -37,7 +37,11 @@
  import Lexer (mkPState,ParseResult(..),getMessages,unP)
  import Outputable (ppr)
@@ -1664,7 +1707,38 @@
  import Control.Monad (unless)
  #else
  import ErrUtils (dumpIfSet_dyn,printErrorsAndWarnings,mkPlainErrMsg,showPass,ErrMsg(..))
-@@ -101,7 +105,9 @@
+@@ -53,10 +57,18 @@
+ import HscTypes (Ghc(..))
+ #endif
+ import IDE.Utils.FileUtils (getSysLibDir)
++#if MIN_VERSION_ghc(7,7,0)
++import DynFlags (DumpFlag(..), gopt_set)
++#else
+ import DynFlags (dopt_set)
++#endif
+ import System.Log.Logger(debugM)
+ import Control.Monad.IO.Class (MonadIO(..), MonadIO)
+ 
++#if MIN_VERSION_ghc(7,7,0)
++type DynFlag = GeneralFlag
++#endif
++
+ -- this should not be repeated here, why is it necessary?
+ instance MonadIO Ghc where
+   liftIO ioA = Ghc $ \_ -> ioA
+@@ -68,7 +80,11 @@
+ --    (restFlags, _) <-   parseStaticFlags (map noLoc flags')
+     runGhc (Just libDir) $ do
+         dynflags  <- getSessionDynFlags
++#if MIN_VERSION_ghc(7,7,0)
++        let dynflags' = foldl (\ flags'' flag' -> gopt_set flags'' flag') dynflags udynFlags
++#else
+         let dynflags' = foldl (\ flags'' flag' -> dopt_set flags'' flag') dynflags udynFlags
++#endif
+         let dynflags'' = dynflags' {
+             hscTarget = HscNothing,
+             ghcMode   = CompManager,
+@@ -101,7 +117,9 @@
  getInstalledPackageInfos :: Ghc [PackageConfig]
  getInstalledPackageInfos = do
      dflags1         <-  getSessionDynFlags
@@ -1674,7 +1748,7 @@
      pkgInfos        <-  case pkgDatabase dflags1 of
                              Nothing -> return []
  #if MIN_VERSION_Cabal(1,8,0)
-@@ -158,14 +164,22 @@
+@@ -158,14 +176,22 @@
        case unP P.parseModule (mkPState buf' loc dflags) of {
  #endif
  
@@ -1698,7 +1772,7 @@
  #else
        let {ms = getMessages pst};
        printErrorsAndWarnings dflags ms;
-@@ -181,7 +195,7 @@
+@@ -181,7 +207,7 @@
  	-- ToDo: free the string buffer later.
        }}
  
@@ -1707,7 +1781,7 @@
  myParseHeader fp _str opts = inGhcIO (opts++["-cpp"]) [] $ \ _dynFlags -> do
      session   <- getSession
  #if MIN_VERSION_ghc(7,2,0)
-@@ -193,7 +207,7 @@
+@@ -193,7 +219,7 @@
          stringBuffer  <-  hGetStringBuffer fp'
          parseResult   <-  myParseModuleHeader dynFlags' fp (Just stringBuffer)
          case parseResult of
@@ -1716,7 +1790,7 @@
              Left errMsg         -> do
                  let str =  "Failed to parse " ++ show errMsg
                  return (Left str)
-@@ -204,9 +218,9 @@
+@@ -204,9 +230,9 @@
  myParseModuleHeader :: DynFlags -> FilePath -> Maybe StringBuffer
                -> IO (Either ErrMsg (Located (HsModule RdrName)))
  myParseModuleHeader dflags src_filename maybe_src_buf
@@ -1729,7 +1803,7 @@
  
  	-- sometimes we already have the buffer in memory, perhaps
  	-- because we needed to parse the imports out of it, or get the
-@@ -227,14 +241,22 @@
+@@ -227,14 +253,22 @@
        case unP P.parseHeader (mkPState buf' loc dflags) of {
  #endif
  

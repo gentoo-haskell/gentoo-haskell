@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?]
 		<dev-haskell/binary-0.7:=[profile?]
 		=dev-haskell/binary-shared-0.8*:=[profile?]
 		>=dev-haskell/cabal-1.6.0.1:=[profile?]
-		<dev-haskell/cabal-1.17:=[profile?]
+		<dev-haskell/cabal-1.18:=[profile?]
 		>=dev-haskell/deepseq-1.1:=[profile?]
 		<dev-haskell/deepseq-1.4:=[profile?]
 		>=dev-haskell/enumerator-0.4.14:=[profile?]
@@ -58,7 +58,7 @@ src_prepare() {
 	base_src_prepare
 	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
 		# with ghc 6.12 does not work with cabal-1.10, so use ghc-6.12 shipped one
-		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.17@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
+		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.18@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
 	if [ $(ghc-pkg list Cabal | grep -c Cabal) -gt 1 ]; then
