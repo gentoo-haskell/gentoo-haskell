@@ -41,6 +41,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/0001-SPL-Parser2.hs-fix-foldl-symbol-clash-base-4.4.patch
 	epatch "${FILESDIR}"/0002-require-hoopl-with-runWithFuel.patch
 	epatch "${FILESDIR}"/0003-workaround-uuagc-s-inability-to-handle-setup-configu.patch
+
+	CABAL_FILE=SPL.cabal cabal_chdeps \
+		'hoopl >= 3.8.7.4' 'hoopl >= 3.8.7.4 && < 3.9'
 }
 
 src_configure() {
