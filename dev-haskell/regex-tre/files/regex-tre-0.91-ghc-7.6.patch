@@ -1,0 +1,47 @@
+diff --git a/Text/Regex/TRE/ByteString.hs b/Text/Regex/TRE/ByteString.hs
+index c3c4f09..6563c69 100644
+--- a/Text/Regex/TRE/ByteString.hs
++++ b/Text/Regex/TRE/ByteString.hs
+@@ -36,7 +36,7 @@ import Text.Regex.TRE.Wrap -- all
+ import Data.Array(Array,listArray)
+ import Data.ByteString(ByteString)
+ import qualified Data.ByteString as B(empty,take,drop)
+-import qualified Data.ByteString.Base as B(unsafeUseAsCStringLen)
++import qualified Data.ByteString.Unsafe as B(unsafeUseAsCStringLen)
+ import System.IO.Unsafe(unsafePerformIO)
+ import Foreign.C.String(CStringLen)
+ import Text.Regex.Base.RegexLike(RegexContext(..),RegexMaker(..),RegexLike(..),MatchOffset,MatchLength)
+diff --git a/Text/Regex/TRE/ByteString/Lazy.hs b/Text/Regex/TRE/ByteString/Lazy.hs
+index 3eefdf4..a7e8b14 100644
+--- a/Text/Regex/TRE/ByteString/Lazy.hs
++++ b/Text/Regex/TRE/ByteString/Lazy.hs
+@@ -36,7 +36,7 @@ import Text.Regex.TRE.Wrap -- all
+ import Data.Array(Array)
+ import qualified Data.ByteString.Lazy as L(ByteString,toChunks,fromChunks)
+ import qualified Data.ByteString as B(ByteString,concat)
+-import qualified Data.ByteString.Base as B(unsafeUseAsCStringLen)
++import qualified Data.ByteString.Unsafe as B(unsafeUseAsCStringLen)
+ import System.IO.Unsafe(unsafePerformIO)
+ import Foreign.C.String(CStringLen)
+ import Text.Regex.Base.RegexLike(RegexContext(..),RegexMaker(..),RegexLike(..),MatchOffset,MatchLength)
+diff --git a/Text/Regex/TRE/Wrap.hsc b/Text/Regex/TRE/Wrap.hsc
+index 2d2ef71..256a720 100644
+--- a/Text/Regex/TRE/Wrap.hsc
++++ b/Text/Regex/TRE/Wrap.hsc
+@@ -61,14 +61,14 @@ import Data.Int
+ import Data.Array(listArray)
+ import Data.Bits(Bits((.|.))) -- ((.&.),(.|.),complement))
+ import Foreign
+-import Foreign.C(CInt,CChar,CSize)
++import Foreign.C
+ import Foreign.C.String(CString,CStringLen,peekCString)
+ import Text.Regex.Base.RegexLike(RegexOptions(..),RegexMaker(..),RegexContext(..),MatchArray)
+ #else
+ import Data.Array(Array)
+ import Data.Bits(Bits)
+ import Foreign(ForeignPtr)
+-import Foreign.C(CInt)
++import Foreign.C
+ import Foreign.C.String(CString,CStringLen)
+ import Text.Regex.Base.RegexLike(RegexOptions(..),RegexMaker(..),RegexContext(..),MatchArray)
+ #endif
