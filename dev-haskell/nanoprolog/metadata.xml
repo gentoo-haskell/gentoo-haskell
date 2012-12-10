@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package was developed to demonstrate the ideas behind
+		the Prolog language. It contains a very small interpreter
+		(@Language.Prolog.Nanoprolog@) which can be run on its
+		own. It reads a file with definitions, and then prompts
+		for a goal. All possibe solutions are printed, preceded by
+		a tree showing which rules were applied in which order.
+		
+		The file @royals.pro@ contains a description of part of the Dutch royal family, whereas the file
+		@tc.pro@ shows unification at work in a very small type inferencer.
+	</longdescription>
+</pkgmetadata>
