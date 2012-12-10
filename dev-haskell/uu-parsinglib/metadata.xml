@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		New version of the Utrecht University parser combinator library, which  provides online, error correction,
+		annotation free, applicative style parser combinators. In addition to this we do  provide a monadic and idomatic interface.
+		Parsers do analyse themselves to avoid commonly made errors. A recent addition was the combinator @`&lt;||&gt;`@ and
+		associates, which generalise merging and permuting parsers.
+		
+		This version is based on the module &quot;Data.Listlike&quot;, and as a result a great variety of input structures (@Strings@, @ByteStrings@, etc.)
+		can be handled.
+		
+		The modules &quot;Text.ParserCombinators.UU.Demo.Examples&quot;, &quot;Text.ParserCombinators.UU.Idioms&quot; and &quot;Text.ParserCombinators.UU.Demo.MergeAndpermute&quot;
+		contain a ready-made  @show_examples@  function,
+		which can be called (e.g. from @ghci@) to see e.g. the error correction at work. It contains extensive haddock documentation, so why not just take a look                           to see the correction process at work, and to get a feeling for how the various combinators can be used?
+		
+		The file &quot;Text.ParserCombinators.UU.CHANGELOG&quot; contains a log of the most recent changes and additions.
+		
+		The file &quot;Text.ParserCombinators.UU.README&quot; contains some references to background information.
+		
+		We maintain a low frequency mailing for discussing the package. You can subscribe at:  &lt;https://mail.cs.uu.nl/mailman/listinfo/parsing&gt;
+	</longdescription>
+</pkgmetadata>
