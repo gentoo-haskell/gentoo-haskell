@@ -32,7 +32,7 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/hunit-1.2*
 			>=dev-haskell/test-framework-0.4
-			<dev-haskell/test-framework-0.8
+			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
 			<dev-haskell/test-framework-hunit-0.4
 		)
