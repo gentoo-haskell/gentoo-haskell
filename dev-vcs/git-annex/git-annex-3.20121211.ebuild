@@ -67,6 +67,7 @@ DEPEND="${RDEPEND}
 				dev-haskell/warp
 				dev-haskell/yesod
 				>=dev-haskell/yesod-default-1.1.0
+				dev-haskell/yesod-form
 				dev-haskell/yesod-static
 			)
 			pairing? (
@@ -77,6 +78,7 @@ DEPEND="${RDEPEND}
 		webdav? (
 			>=dev-haskell/dav-0.2
 			dev-haskell/http-conduit
+			dev-haskell/http-types
 			dev-haskell/xml-conduit
 		)
 		xmpp? (
