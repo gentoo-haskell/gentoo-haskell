@@ -131,6 +131,8 @@ src_test() {
 
 src_install() {
 	haskell-cabal_src_install
+	dosym git-annex /usr/bin/git-annex-shell # standard make install does more, than needed
+
 	emake install-mans DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
 	use doc && emake install-docs DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
 	mv "${ED}"/usr/share/doc/{${PN},${PF}}
