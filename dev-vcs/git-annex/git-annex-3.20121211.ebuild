@@ -99,8 +99,10 @@ src_prepare() {
 	#epatch "${FILESDIR}"/${P}-no-tf.patch
 	echo 'mans: $(mans)' >>"${S}"/Makefile
 
+	# there is no kqueue on linux, but should be on freebsd and solaris(?)
 	cabal_chdeps \
-		'testpack' 'testpack, SafeSemaphore'
+		'testpack' 'testpack, SafeSemaphore' \
+		'! os(windows) && ! os(solaris)' '! os(windows) && ! os(linux)'
 }
 
 src_configure() {
