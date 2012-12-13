@@ -38,6 +38,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.9.1-tf-0.3.patch"
 	epatch "${FILESDIR}/${PN}-0.9.1-tar-0.4.patch"
 	epatch "${FILESDIR}/${PN}-0.9.1-ghc76.patch"
+	epatch "${FILESDIR}/${PN}-0.9.1-cabal-comp.patch"
 	sed -e 's@tar >= 0.3 && < 0.4@tar@' \
 		-e 's@Cabal >= 1.10.0.0 && < 1.15@Cabal@' \
 		-e 's@Cabal >=1.2 && < 1.15@Cabal@' \

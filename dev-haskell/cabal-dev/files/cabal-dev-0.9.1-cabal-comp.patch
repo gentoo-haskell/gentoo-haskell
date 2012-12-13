@@ -1,0 +1,23 @@
+This patch used for fake-ghc-cabal-dev to return
+version of the read ghc, that is need for cabal.
+
+diff --git a/src/FakeGhc.hs b/src/FakeGhc.hs
+index 70c1ec7..c763142 100644
+--- a/src/FakeGhc.hs
++++ b/src/FakeGhc.hs
+@@ -8,9 +8,14 @@ was lifted from Leksah.
+ module Main ( main ) where
+ 
+ import System.Environment ( getArgs )
++import System.Process ( readProcess )
+ import Distribution.Dev.GhcArgs ( formatGHCArgs )
+ 
+ -- |Take the command line arguments and format them in an
+ -- easily-parsed way.
+ main :: IO ()
+-main = putStr . formatGHCArgs =<< getArgs
++main = do
++  args <- getArgs
++  if (any (=="--numeric-version") args)
++      then putStr =<< readProcess "ghc" ["--numeric-version"] []
++      else putStr . formatGHCArgs $ args
