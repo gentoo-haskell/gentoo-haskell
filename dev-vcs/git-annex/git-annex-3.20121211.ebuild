@@ -102,7 +102,7 @@ src_prepare() {
 	# there is no kqueue on linux, but should be on freebsd and solaris(?)
 	cabal_chdeps \
 		'testpack' 'testpack, SafeSemaphore' \
-		'! os(windows) && ! os(solaris)' '! os(windows) && ! os(linux)'
+		'if (! os(windows) && ! os(solaris))' 'if (! os(windows) && ! os(linux))'
 }
 
 src_configure() {
