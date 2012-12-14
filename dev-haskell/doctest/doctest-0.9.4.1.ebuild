@@ -19,15 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/deepseq:=[profile?]
-		=dev-haskell/ghc-paths-0.1*:=[profile?]
-		dev-haskell/syb:=[profile?]
+		>=dev-haskell/ghc-paths-0.1.0.9:=[profile?]
+		=dev-haskell/syb-0.3*:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		test? ( >=dev-haskell/hspec-1.3
-			=dev-haskell/hunit-1.2*
+		test? ( >=dev-haskell/base-compat-0.2.1
+			>=dev-haskell/hspec-1.3
+			dev-haskell/hunit
 			>=dev-haskell/quickcheck-2.5
-			dev-haskell/silently
-			>=dev-haskell/stringbuilder-0.2
+			dev-haskell/setenv
+			>=dev-haskell/silently-1.2.4
+			>=dev-haskell/stringbuilder-0.4
 		)
 		>=dev-haskell/cabal-1.8"
