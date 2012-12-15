@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides a modular backend for rendering diagrams
+		created with the diagrams EDSL using SVG.  It uses
+		@blaze-svg@ to be a fast, pure-Haskell backend.
+		
+		More documentation: Github README : &lt;https://github.com/diagrams/diagrams-svg/blob/master/README.md&gt;
+	</longdescription>
+</pkgmetadata>
