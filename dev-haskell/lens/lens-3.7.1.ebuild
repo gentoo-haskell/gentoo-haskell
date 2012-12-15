@@ -57,3 +57,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 PATCHES=("${FILESDIR}"/${PN}-3.7.1-haddock.patch)
+
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'template-haskell >= 2.4 && < 2.9' 'template-haskell >= 2.4 && < 2.10'
+}
