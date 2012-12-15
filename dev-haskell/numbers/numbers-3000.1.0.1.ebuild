@@ -21,7 +21,15 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/quickcheck-2*
-			=dev-haskell/test-framework-0.6*
-			=dev-haskell/test-framework-quickcheck2-0.2*
+			>=dev-haskell/test-framework-0.6
+			<dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			<dev-haskell/test-framework-quickcheck2-0.4
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'test-framework              == 0.6.*' 'test-framework >= 0.6 && < 0.9' \
+		'test-framework-quickcheck2  == 0.2.*' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
+}
