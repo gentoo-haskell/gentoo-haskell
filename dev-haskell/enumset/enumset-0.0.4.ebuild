@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Sets of enumeration values represented by machine words"
 HOMEPAGE="http://hackage.haskell.org/package/enumset"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

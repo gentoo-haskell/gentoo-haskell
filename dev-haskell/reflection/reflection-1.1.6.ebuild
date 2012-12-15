@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Reifies arbitrary terms into types that can be reflected back into terms"
 HOMEPAGE="http://github.com/ekmett/reflection"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

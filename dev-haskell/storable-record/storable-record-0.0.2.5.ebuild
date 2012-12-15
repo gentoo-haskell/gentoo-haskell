@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Elegant definition of Storable instances for records"
 HOMEPAGE="http://code.haskell.org/~thielema/storable-record/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

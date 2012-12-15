@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Event lists with relative or absolute time stamps"
 HOMEPAGE="http://code.haskell.org/~thielema/event-list/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

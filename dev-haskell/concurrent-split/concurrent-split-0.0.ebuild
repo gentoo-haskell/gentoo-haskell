@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="MVars and Channels with distinguished input and output side"
 HOMEPAGE="http://hackage.haskell.org/package/concurrent-split"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
