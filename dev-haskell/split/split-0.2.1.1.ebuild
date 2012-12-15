@@ -23,3 +23,8 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'base <4.7' 'base <5.0'
+}
