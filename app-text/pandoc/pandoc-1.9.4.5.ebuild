@@ -60,14 +60,24 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4
 			<dev-haskell/quickcheck-2.6
 			>=dev-haskell/test-framework-0.3
-			<dev-haskell/test-framework-0.7
-			=dev-haskell/test-framework-hunit-0.2*
+			<dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-hunit-0.2
+			<dev-haskell/test-framework-hunit-0.4
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
-			<dev-haskell/test-framework-quickcheck2-0.3
+			<dev-haskell/test-framework-quickcheck2-0.4
 		)
 		>=dev-haskell/cabal-1.10"
 
 PATCHES=("${FILESDIR}"/${P}-disable-writes-other-man.patch)
+
+src_prepare() {
+	base_src_prepare
+
+	cabal_chdeps \
+		'test-framework >= 0.3 && < 0.7' 'test-framework >= 0.3 && < 0.9' \
+		'test-framework-hunit >= 0.2 && < 0.3' 'test-framework-hunit >= 0.2 && < 0.4' \
+		'test-framework-quickcheck2 >= 0.2.9 && < 0.3' 'test-framework-quickcheck2 >= 0.2.9 && < 0.4'
+}
 
 src_install() {
 	cabal_src_install
