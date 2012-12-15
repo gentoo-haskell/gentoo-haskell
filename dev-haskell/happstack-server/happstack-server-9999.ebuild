@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
-inherit base darcs haskell-cabal
+inherit darcs haskell-cabal
 
 DESCRIPTION="Web related tools and services."
 HOMEPAGE="http://happstack.com"
@@ -15,37 +15,43 @@ EDARCS_GET_CMD="get --partial"
 S="${WORKDIR}/${P}/${PN}"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="=dev-haskell/base64-bytestring-1.0*[profile?]
-		=dev-haskell/blaze-html-0.5*[profile?]
-		>=dev-haskell/hslogger-1.0.2[profile?]
-		dev-haskell/html[profile?]
-		=dev-haskell/monad-control-0.3*[profile?]
-		>=dev-haskell/mtl-2[profile?]
-		<dev-haskell/mtl-2.2[profile?]
-		>=dev-haskell/network-2.2.3[profile?]
-		<dev-haskell/parsec-4[profile?]
-		>=dev-haskell/sendfile-0.7.1[profile?]
-		<dev-haskell/sendfile-0.8[profile?]
-		dev-haskell/syb[profile?]
-		>=dev-haskell/system-filepath-0.3.1[profile?]
-		>=dev-haskell/text-0.10[profile?]
-		<dev-haskell/text-0.12[profile?]
-		>=dev-haskell/threads-0.5[profile?]
-		>=dev-haskell/transformers-0.1.3[profile?]
-		<dev-haskell/transformers-0.4[profile?]
-		=dev-haskell/transformers-base-0.4*[profile?]
-		>=dev-haskell/utf8-string-0.3.4[profile?]
-		<dev-haskell/utf8-string-0.4[profile?]
-		dev-haskell/xhtml[profile?]
-		dev-haskell/zlib[profile?]
-		>=dev-lang/ghc-6.10.1"
+RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
+		=dev-haskell/blaze-html-0.5*:=[profile?]
+		dev-haskell/extensible-exceptions:=[profile?]
+		>=dev-haskell/hslogger-1.0.2:=[profile?]
+		dev-haskell/html:=[profile?]
+		=dev-haskell/monad-control-0.3*:=[profile?]
+		>=dev-haskell/mtl-2:=[profile?]
+		<dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/network-2.2.3:=[profile?]
+		<dev-haskell/parsec-4:=[profile?]
+		>=dev-haskell/sendfile-0.7.1:=[profile?]
+		<dev-haskell/sendfile-0.8:=[profile?]
+		dev-haskell/syb:=[profile?]
+		>=dev-haskell/system-filepath-0.3.1:=[profile?]
+		>=dev-haskell/text-0.10:=[profile?]
+		<dev-haskell/text-0.12:=[profile?]
+		>=dev-haskell/threads-0.5:=[profile?]
+		dev-haskell/time-compat:=[profile?]
+		>=dev-haskell/transformers-0.1.3:=[profile?]
+		<dev-haskell/transformers-0.4:=[profile?]
+		=dev-haskell/transformers-base-0.4*:=[profile?]
+		>=dev-haskell/utf8-string-0.3.4:=[profile?]
+		<dev-haskell/utf8-string-0.4:=[profile?]
+		dev-haskell/xhtml:=[profile?]
+		dev-haskell/zlib:=[profile?]
+		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 		)
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}/${PN}-7.0.3-ghc-7.5.patch")
+src_prepare() {
+	# upstream forgot the tests
+	cp -pR "${FILESDIR}/${PN}-7.0.4/tests/Happstack" "${S}/tests/Happstack" \
+		|| die "Could not copy missing test source files"
+}
