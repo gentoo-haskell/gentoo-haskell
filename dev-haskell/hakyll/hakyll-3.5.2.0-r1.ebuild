@@ -27,7 +27,8 @@ RDEPEND=">=app-text/pandoc-1.9.3:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
 		>=dev-haskell/citeproc-hs-0.3.2:=[profile?]
 		<dev-haskell/citeproc-hs-0.4:=[profile?]
-		=dev-haskell/cryptohash-0.7*:=[profile?]
+		>=dev-haskell/cryptohash-0.7:=[profile?]
+		<dev-haskell/cryptohash-0.9:=[profile?]
 		>=dev-haskell/hamlet-1.0:=[profile?]
 		<dev-haskell/hamlet-1.2:=[profile?]
 		>=dev-haskell/lrucache-1.1.1:=[profile?]
@@ -57,6 +58,11 @@ DEPEND="${RDEPEND}
 			=dev-haskell/test-framework-quickcheck2-0.2*
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'cryptohash   >= 0.7    && < 0.8' 'cryptohash   >= 0.7    && < 0.9'
+}
 
 src_configure() {
 	cabal_src_configure \
