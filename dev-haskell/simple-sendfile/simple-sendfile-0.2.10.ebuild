@@ -28,11 +28,3 @@ DEPEND="${RDEPEND}
 			sys-apps/miscfiles
 		)
 		>=dev-haskell/cabal-1.10"
-
-src_test() {
-	pushd ${S}/test
-	./setup.sh || die
-	popd
-
-	haskell-cabal_src_test
-}
