@@ -21,7 +21,12 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 		>=dev-haskell/network-2.2:=[profile?]
 		<dev-haskell/network-4:=[profile?]
-		=dev-haskell/split-0.2*:=[profile?]
+		>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'split == 0.2.*' 'split >= 0.2 && < 0.4'
+}
