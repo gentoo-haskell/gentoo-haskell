@@ -30,9 +30,18 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2[profile?]
 			<dev-haskell/quickcheck-2.6:2[profile?]
 			>=dev-haskell/test-framework-0.4
-			<dev-haskell/test-framework-0.7
-			=dev-haskell/test-framework-quickcheck2-0.2*
+			<dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			<dev-haskell/test-framework-quickcheck2-0.4
 		)
 		>=dev-haskell/cabal-1.8"
 
 PATCHES=("${FILESDIR}/${PN}-0.2.1-fix-tests.patch")
+
+src_prepare() {
+	base_src_prepare
+
+	cabal_chdeps \
+		'test-framework             >= 0.4 && < 0.7' 'test-framework             >= 0.4 && < 0.9' \
+		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
+}
