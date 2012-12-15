@@ -56,7 +56,8 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}"/${PN}-3.7.1-haddock.patch)
+PATCHES=("${FILESDIR}"/${PN}-3.7.1-haddock.patch
+	"${FILESDIR}"/${P}-doctest.patch)
 
 src_prepare() {
 	base_src_prepare

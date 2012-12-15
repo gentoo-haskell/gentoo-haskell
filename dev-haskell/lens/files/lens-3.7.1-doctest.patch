@@ -1,0 +1,31 @@
+diff --git a/tests/doctests.hs b/tests/doctests.hs
+index b6ef3b4..dd4e06c 100644
+--- a/tests/doctests.hs
++++ b/tests/doctests.hs
+@@ -13,6 +13,26 @@ main = getSources >>= \sources -> doctest $
+   : "-idist/build/autogen"
+   : "-optP-include"
+   : "-optPdist/build/autogen/cabal_macros.h"
++  : "-hide-all-packages" -- avoid mtl/monads-tf ambiguity
++      : "-package=base"
++      : "-package=transformers"
++      : "-package=array"
++      : "-package=vector"
++      : "-package=unordered-containers"
++      : "-package=containers"
++      : "-package=text"
++      : "-package=bytestring"
++      : "-package=mtl"
++      : "-package=hashable"
++      : "-package=comonads-fd"
++      : "-package=comonad"
++      : "-package=template-haskell"
++      : "-package=comonad-transformers"
++      : "-package=parallel"
++      : "-package=split"
++      : "-package=filepath"
++      : "-package=simple-reflect"
++      : "-package=semigroups"
+   : sources
+ 
+ getSources :: IO [FilePath]
