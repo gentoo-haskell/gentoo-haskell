@@ -71,6 +71,7 @@ src_prepare() {
 
 	epatch "${FILESDIR}/${PN}-2.8.1-tar-0.4.patch"
 	epatch "${FILESDIR}"/${P}-hack-for-haskeline-0.7-breaks-non-utf8.patch
+	epatch "${FILESDIR}"/${P}-tf-0.8.patch
 
 	# ghc-7.6
 	cabal_chdeps \

@@ -1,0 +1,26 @@
+Fix build failure against dev-haskell/test-framework-0.8
+
+[147 of 147] Compiling Main             ( src/test.hs, dist/build/darcs-test/darcs-test-tmp/Main.o )
+
+src/test.hs:100:30:
+    No instance for (Typeable ShellTest) arising from a use of `Test'
+    Possible fix: add an instance declaration for (Typeable ShellTest)
+    In the expression: Test (file ++ " (" ++ show fmt ++ ")")
+    In the expression:
+      Test (file ++ " (" ++ show fmt ++ ")") $ ShellTest fmt file tdir dp
+    In an equation for `shellTest':
+        shellTest dp fmt tdir file
+          = Test (file ++ " (" ++ show fmt ++ ")")
+            $ ShellTest fmt file tdir dp
+diff --git a/src/test.hs b/src/test.hs
+index 39adcc1..9687074 100644
+--- a/src/test.hs
++++ b/src/test.hs
+@@ -49,6 +49,7 @@ data ShellTest = ShellTest { format :: Format
+                            , testdir  :: Maybe FilePath -- ^ only if you want to set it explicitly
+                            , _darcspath :: FilePath
+                            }
++    deriving Typeable
+ 
+ runtest' :: ShellTest -> FilePath -> ShIO Result
+ runtest' (ShellTest fmt _ _ dp) srcdir =
