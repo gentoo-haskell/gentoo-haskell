@@ -26,3 +26,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/silently
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps 'base < 4.7' 'base < 5.0'
+}
