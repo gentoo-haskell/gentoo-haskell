@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Various extra monoid-related definitions and utilities,
+		such as monoid actions, monoid coproducts, \&quot;deletable\&quot;
+		monoids, \&quot;split\&quot; monoids, and \&quot;cut\&quot; monoids.
+	</longdescription>
+</pkgmetadata>
