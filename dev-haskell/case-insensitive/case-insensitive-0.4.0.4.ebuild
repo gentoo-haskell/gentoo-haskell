@@ -25,3 +25,8 @@ RDEPEND=">=dev-haskell/hashable-1.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'base       >= 3   && < 4.7' 'base       >= 3   && < 5.0'
+}
