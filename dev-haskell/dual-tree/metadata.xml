@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Rose (n-ary) trees with both upwards- (/i.e./
+		cached) and downwards-traveling (/i.e./
+		accumulating) monoidal annotations.  This is used
+		as the core data structure underlying the
+		@diagrams@ framework
+		(&lt;http://projects.haskell.org/diagrams&gt;), but
+		potentially has other applications as well.
+		
+		Abstractly, a DUALTree is a rose (n-ary) tree
+		with data (of type @l@) at leaves, data (of type
+		@a@) at internal nodes, and two types of monoidal
+		annotations, one (of type @u@) travelling \&quot;up\&quot;
+		the tree and one (of type @d@) traveling
+		\&quot;down\&quot;.
+		
+		See &quot;Data.Tree.DUAL&quot; for full documentation.
+		&quot;Data.Tree.DUAL&quot; provides a public API which
+		should suffice for most purposes.
+		&quot;Data.Tree.DUAL.Internal&quot; exports more of the
+		internal implementation---use it at your own
+		risk.
+	</longdescription>
+</pkgmetadata>
