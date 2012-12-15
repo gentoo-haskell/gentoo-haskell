@@ -41,13 +41,17 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-inherit base autotools bash-completion-r1 eutils flag-o-matic git-2 multilib toolchain-funcs ghc-package versionator pax-utils
+[[ ${PV} = *9999* ]] && GIT_ECLASS="git-2" || GIT_ECLASS=""
+
+inherit base autotools bash-completion-r1 eutils flag-o-matic ${GIT_ECLASS} multilib toolchain-funcs ghc-package versionator pax-utils
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
-#EGIT_REPO_URI="http://darcs.haskell.org/ghc.git/"
 EGIT_REPO_URI="https://github.com/ghc/ghc.git"
+if [[ ${PV} != *9999* ]]; then
+	SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}-src.tar.bz2"
+fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
@@ -189,6 +193,8 @@ git-2_gc() {
 
 	pushd "${EGIT_DIR}" > /dev/null || die
 
+	git config diff.ignoreSubmodules dirty \
+		|| die 'git config --global diff.ignoreSubmodules dirty failed'
 	if [[ -f ghc-tarballs/LICENSE ]]; then
 		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite pull"
 		./sync-all --branch=${EGIT_BRANCH} --testsuite pull
@@ -207,15 +213,18 @@ git-2_gc() {
 	popd > /dev/null
 }
 
-
 src_unpack() {
-	EGIT_NONBARE="true"
-	EGIT_BRANCH="master"
-	if [[ -n ${GHC_BRANCH} ]]; then
-		EGIT_BRANCH="${GHC_BRANCH}"
-	fi
+	if [[ ${PV} == *9999* ]]; then
+		EGIT_NONBARE="true"
+		EGIT_BRANCH="master"
+		if [[ -n ${GHC_BRANCH} ]]; then
+			EGIT_BRANCH="${GHC_BRANCH}"
+		fi
 
-	git-2_src_unpack
+		git-2_src_unpack
+	else
+		base_src_unpack
+	fi
 }
 
 src_prepare() {
@@ -228,23 +237,21 @@ src_prepare() {
 
 	epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-	# epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
-	# failed to apply. FIXME
-	#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
-
-	# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
-	# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
-
 	# one mode external depend with unstable ABI be careful to stash it
 	if [[ "${EGIT_BRANCH}" == "ghc-7.4" || ( -n ${GHC_USE_7_4_2_SYSTEM_LIBFFI_PATCH} ) ]]; then
 		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 	else
-		epatch "${FILESDIR}"/${PN}-7.7.20121013-system-libffi.patch
+		epatch "${FILESDIR}"/${PN}-7.7.20121213-system-libffi.patch
 	fi
 
 	# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 	# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
 	epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+
+	sed -e 's@LIBFFI_CFLAGS="-I $withval"@LIBFFI_CFLAGS="-I$withval"@' \
+		-i "${S}/configure.ac" \
+		-i "${S}/configure" \
+		|| die "Could not remove space after -I from LIBFFI_CFLAGS in configure.ac and configure"
 
 	if use prefix; then
 		# Make configure find docbook-xsl-stylesheets from Prefix
@@ -355,7 +362,10 @@ src_configure() {
 	# might point to ccache, once installed it will point to the users
 	# regular gcc.
 
-	econf --with-gcc=gcc --enable-bootstrap-with-devel-snapshot \
+	econf --with-gcc=gcc \
+		--with-system-libffi \
+		--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@') \
+		--enable-bootstrap-with-devel-snapshot \
 		|| die "econf failed"
 	GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
