@@ -1,0 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (16 Dec 2012)
+# Masked as needs masked version of wxGTK:2.9:
+# > Ryan Hill <dirtyepic@gentoo.org> (22 Jan 2011)
+# > Mask development versions due to unstable API
+# > as requested by leio
+dev-haskell/wxc:2.9
+dev-haskell/wxcore:2.9
+dev-haskell/wxhaskell:2.9
