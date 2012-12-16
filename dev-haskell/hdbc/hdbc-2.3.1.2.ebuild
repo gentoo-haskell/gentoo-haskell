@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/hdbc/hdbc"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="mysql odbc postgres sqlite3 test"
 
