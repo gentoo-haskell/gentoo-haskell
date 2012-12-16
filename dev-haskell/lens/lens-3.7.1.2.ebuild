@@ -39,27 +39,17 @@ RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.1
-			<=dev-haskell/doctest-0.10
-			=dev-haskell/hunit-1.2*
+			>=dev-haskell/hunit-1.2
 			>=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
 			>=dev-haskell/simple-reflect-0.3.1
-			<dev-haskell/simple-reflect-0.4
 			>=dev-haskell/test-framework-0.6
-			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
-			<dev-haskell/test-framework-hunit-0.4
 			>=dev-haskell/test-framework-quickcheck2-0.2
-			<dev-haskell/test-framework-quickcheck2-0.4
 			>=dev-haskell/test-framework-th-0.2
-			<dev-haskell/test-framework-th-0.4
 		)
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=("${FILESDIR}"/${PN}-3.7.1-haddock.patch
-	"${FILESDIR}"/${P}-doctest.patch
-	"${FILESDIR}"/${P}-disable-tests.patch
-	)
+PATCHES=("${FILESDIR}"/${PN}-3.7.1-haddock.patch)
 
 src_prepare() {
 	base_src_prepare

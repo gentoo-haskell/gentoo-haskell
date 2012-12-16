@@ -20,25 +20,30 @@ IUSE=""
 RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/comonad-transformers-3.0*:=[profile?]
 		=dev-haskell/comonads-fd-3.0*:=[profile?]
-		=dev-haskell/hashable-1.1*:=[profile?]
-		>=dev-haskell/mtl-2.1.1:=[profile?]
+		dev-haskell/generic-deriving:=[profile?]
+		>=dev-haskell/hashable-1.1.2.3:=[profile?]
+		<dev-haskell/hashable-1.3:=[profile?]
+		>=dev-haskell/mtl-2.0.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/parallel-3.1.0.1:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
 		>=dev-haskell/semigroups-0.8.4:=[profile?]
 		<dev-haskell/semigroups-0.9:=[profile?]
+		=dev-haskell/split-0.2*:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		=dev-haskell/transformers-0.3*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+		>=dev-haskell/vector-0.9:=[profile?]
+		<dev-haskell/vector-0.11:=[profile?]
+		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.1
-			<=dev-haskell/doctest-0.10
-			=dev-haskell/hunit-1.2*
+			>=dev-haskell/hunit-1.2
 			>=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
-			=dev-haskell/test-framework-0.6*
-			=dev-haskell/test-framework-hunit-0.2*
-			=dev-haskell/test-framework-th-0.2*
+			>=dev-haskell/simple-reflect-0.3.1
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-hunit-0.2
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			>=dev-haskell/test-framework-th-0.2
 		)
 		>=dev-haskell/cabal-1.8"
