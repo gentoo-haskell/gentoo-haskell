@@ -14,7 +14,8 @@ you likely need to keyword everything in it::
     #
     # and the overlay configuration itself:
     layman -a haskell
-    echo '*/*::gentoo-haskell ~your-arch' >> /etc/portage/package.accept_keywords
+    # and unmask unstable versions for your arch:
+    echo "*/*::gentoo-haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
 
 And here is the trick to speed up metadata resolution a bit.
 If you happen to use ``eix-sync`` for rsyncs you might
