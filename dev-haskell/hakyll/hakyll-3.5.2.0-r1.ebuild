@@ -14,7 +14,7 @@ HOMEPAGE="http://jaspervdj.be/hakyll"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~x86 ~amd64"
 IUSE="+unixFilter +previewServer"
 
