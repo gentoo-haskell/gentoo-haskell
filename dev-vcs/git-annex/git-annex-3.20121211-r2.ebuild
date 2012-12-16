@@ -109,10 +109,13 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag assistant Assistant) \
 		$(cabal_flag dbus Dbus) \
+		$(cabal_flag dns DNS) \
 		$(cabal_flag inotify Inotify) \
 		$(cabal_flag pairing Pairing) \
 		$(cabal_flag s3 S3) \
-		$(cabal_flag webapp Webapp)
+		$(cabal_flag webapp Webapp) \
+		$(cabal_flag webdav WebDAV) \
+		$(cabal_flag xmpp XMPP)
 }
 
 src_compile() {
