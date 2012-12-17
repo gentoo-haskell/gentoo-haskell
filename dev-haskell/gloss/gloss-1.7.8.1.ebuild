@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/bmp-1.2*:=[profile?]
+RDEPEND=">=dev-haskell/bmp-1.2.3.2:=[profile?]
+		<dev-haskell/bmp-1.2.4:=[profile?]
 		=dev-haskell/glut-2.3*:=[profile?]
 		=dev-haskell/opengl-2.6*:=[profile?]
 		>=dev-lang/ghc-7.6.1:="
