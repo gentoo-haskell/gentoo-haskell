@@ -49,16 +49,3 @@ index 39a8d5c..a5a4759 100644
                  (\e -> do putMVar m a; throw e)
      putMVar m a'
      return b
-diff --git a/strict-concurrency.cabal b/strict-concurrency.cabal
-index 2f7570c..a4676a7 100644
---- a/strict-concurrency.cabal
-+++ b/strict-concurrency.cabal
-@@ -15,7 +15,7 @@ Author:         Don Stewart <dons@galois.com>
- Maintainer:     Don Stewart <dons@galois.com>
- Copyright:      (c) 2007-10 Don Stewart
- Homepage:       http://code.haskell.org/~dons/code/strict-concurrency
--build-depends:  base >= 4 && < 5, deepseq >= 1
-+build-depends:  base >= 4 && < 5, deepseq >= 1, exception-transformers
- ghc-options:    -Wall -fglasgow-exts
- extensions:     CPP, BangPatterns
- build-type:     Simple
