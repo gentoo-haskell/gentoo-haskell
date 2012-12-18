@@ -1,8 +1,0 @@
---- encoding-0.6.5-orig/Data/Static.hs	2011-04-25 23:09:25.000000000 +1000
-+++ encoding-0.6.5/Data/Static.hs	2011-07-28 22:23:56.295666643 +1000
-@@ -1,4 +1,4 @@
--{-# LANGUAGE MagicHash,FlexibleInstances #-}
-+{-# LANGUAGE BangPatterns,MagicHash,FlexibleInstances #-}
- module Data.Static where
- 
- import GHC.Exts
