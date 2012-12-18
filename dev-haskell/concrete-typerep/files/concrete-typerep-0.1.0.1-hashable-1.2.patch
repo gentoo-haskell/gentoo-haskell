@@ -1,0 +1,14 @@
+--- concrete-typerep-0.1.0.1-orig/Data/ConcreteTypeRep.hs	2011-11-24 11:53:58.000000000 +1100
++++ concrete-typerep-0.1.0.1/Data/ConcreteTypeRep.hs	2012-12-18 19:10:16.214814731 +1100
+@@ -61,7 +61,11 @@
+ -- | This instance is guaranteed to be consistent for a single run of the program, but not for multiple runs.
+ instance Hashable ConcreteTypeRep where
+ #ifdef NEW_TYPEREP
++#if MIN_VERSION_hashable(1,2,0)
++  hashWithSalt salt (CTR (TypeRep (Fingerprint w1 w2) _ _)) = (hashWithSalt salt) (w1, w2)
++#else
+   hash (CTR (TypeRep (Fingerprint w1 w2) _ _)) = hash (w1, w2)
++#endif
+ #else
+   hash = unsafePerformIO . typeRepKey . toTypeRep
+ #endif
