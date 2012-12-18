@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
 		<dev-haskell/geniplate-0.7:=[profile?]
 		>=dev-haskell/hashable-1.1.2.3:=[profile?]
-		<dev-haskell/hashable-1.2:=[profile?]
+		<dev-haskell/hashable-1.3:=[profile?]
 		=dev-haskell/hashtables-1.0*:=[profile?]
 		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
 		<dev-haskell/haskeline-0.8:=[profile?]
@@ -60,8 +60,9 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.7'
-
+		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.7' \
+		'hashable >= 1.1.2.3 && < 1.2' 'hashable >= 1.1.2.3 && < 1.3'
+	epatch "${FILESDIR}/${PN}-2.3.2-hashable-1.2.patch"
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
