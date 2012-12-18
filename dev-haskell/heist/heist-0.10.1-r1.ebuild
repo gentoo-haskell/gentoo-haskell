@@ -28,7 +28,8 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		<dev-haskell/directory-tree-0.12:=[profile?]
 		=dev-haskell/dlist-0.5*:=[profile?]
 		=dev-haskell/errors-1.3*:=[profile?]
-		=dev-haskell/hashable-1.1*:=[profile?]
+		>=dev-haskell/hashable-1.1:=[profile?]
+		<dev-haskell/hashable-1.3:=[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2.1:=[profile?]
 		<dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
@@ -49,5 +50,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'process                    >= 1.1     && < 1.2' 'process                    >= 1.1     && < 1.3'
+		'process                    >= 1.1     && < 1.2' 'process                    >= 1.1     && < 1.3' \
+		'hashable                   >= 1.1     && < 1.2' 'hashable                   >= 1.1     && < 1.3'
 }
