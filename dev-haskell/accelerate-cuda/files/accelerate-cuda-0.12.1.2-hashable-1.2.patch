@@ -1,0 +1,38 @@
+--- accelerate-cuda-0.12.1.2-orig/Data/Array/Accelerate/CUDA/AST.hs	2012-09-17 11:14:15.000000000 +1000
++++ accelerate-cuda-0.12.1.2/Data/Array/Accelerate/CUDA/AST.hs	2012-12-18 18:45:06.574045825 +1100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE GADTs, FlexibleInstances, TypeSynonymInstances #-}
++{-# LANGUAGE CPP, GADTs, FlexibleInstances, TypeSynonymInstances #-}
+ -- |
+ -- Module      : Data.Array.Accelerate.CUDA.AST
+ -- Copyright   : [2008..2010] Manuel M T Chakravarty, Gabriele Keller, Sean Lee
+@@ -69,9 +69,11 @@
+   ArrayVar ix1 == ArrayVar ix2 = idxToInt ix1 == idxToInt ix2
+ 
+ instance Hashable (ArrayVar aenv) where
++#if MIN_VERSION_hashable(1,2,0)
++  hashWithSalt salt (ArrayVar ix) = (hashWithSalt salt) (idxToInt ix)
++#else
+   hash (ArrayVar ix) = hash (idxToInt ix)
+-
+-
++#endif
+ -- Interleave compilation & execution state annotations into an open array
+ -- computation AST
+ --
+--- accelerate-cuda-0.12.1.2-orig/Data/Array/Accelerate/CUDA/Array/Table.hs	2012-09-17 11:14:15.000000000 +1000
++++ accelerate-cuda-0.12.1.2/Data/Array/Accelerate/CUDA/Array/Table.hs	2012-12-18 18:47:36.852878055 +1100
+@@ -85,8 +85,12 @@
+     = maybe False (== a2) (gcast a1)
+ 
+ instance Hashable HostArray where
++#if MIN_VERSION_hashable(1,2,0)
++  hashWithSalt _ (HostArray cid sn) = hashWithSalt cid sn
++#else
+   hash (HostArray cid sn) = hashWithSalt cid sn
+-
++#endif
++                            
+ instance Show HostArray where
+   show (HostArray _ sn) = "Array #" ++ show (hashStableName sn)
+ 
