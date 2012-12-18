@@ -26,8 +26,9 @@ RDEPEND=">=dev-haskell/mtl-1.1.0.0:=[profile?]
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/hunit-1.2*
 			>=dev-haskell/test-framework-0.4
-			<dev-haskell/test-framework-0.7
-			=dev-haskell/test-framework-hunit-0.2*
+			<dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-hunit-0.2
+			<dev-haskell/test-framework-hunit-0.4
 		)
 		>=dev-haskell/cabal-1.8"
 
@@ -35,4 +36,7 @@ src_prepare() {
 	# upstream forgot the tests
 	cp -pR "${FILESDIR}/${PN}-0.5.0.1/tests/Text" "${S}/tests/Text" \
 		|| die "Could not copy missing test source files"
+	cabal_chdeps \
+		'test-framework       >= 0.4 && < 0.7' 'test-framework       >= 0.4 && < 0.9' \
+		'test-framework-hunit >= 0.2 && < 0.3' 'test-framework-hunit >= 0.2 && < 0.4'
 }
