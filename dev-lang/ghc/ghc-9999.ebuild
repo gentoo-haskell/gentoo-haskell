@@ -252,7 +252,6 @@ src_prepare() {
 
 	sed -e 's@LIBFFI_CFLAGS="-I $withval"@LIBFFI_CFLAGS="-I$withval"@' \
 		-i "${S}/configure.ac" \
-		-i "${S}/configure" \
 		|| die "Could not remove space after -I from LIBFFI_CFLAGS in configure.ac and configure"
 
 	if use prefix; then
@@ -364,11 +363,15 @@ src_configure() {
 	# might point to ccache, once installed it will point to the users
 	# regular gcc.
 
-	econf --with-gcc=gcc \
-		--with-system-libffi \
-		--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@') \
-		--enable-bootstrap-with-devel-snapshot \
-		|| die "econf failed"
+	local econf_args=()
+	is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
+	if use ghcmakebinary; then
+		econf_args+=--with-system-libffi
+		econf_args+=--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@')
+	fi
+
+	econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
+
 	GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 }
