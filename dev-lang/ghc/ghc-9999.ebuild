@@ -237,11 +237,13 @@ src_prepare() {
 
 	epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-	# one mode external depend with unstable ABI be careful to stash it
-	if [[ "${EGIT_BRANCH}" == "ghc-7.4" || ( -n ${GHC_USE_7_4_2_SYSTEM_LIBFFI_PATCH} ) ]]; then
-		epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
-	else
-		epatch "${FILESDIR}"/${PN}-7.7.20121213-system-libffi.patch
+	if ! use ghcmakebinary; then
+		# one more external depend with unstable ABI be careful to stash it
+		if [[ "${EGIT_BRANCH}" == "ghc-7.4" || ( -n ${GHC_USE_7_4_2_SYSTEM_LIBFFI_PATCH} ) ]]; then
+			epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
+		else
+			epatch "${FILESDIR}"/${PN}-7.7.20121213-system-libffi.patch
+		fi
 	fi
 
 	# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
