@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE=""
+IUSE="doc"
 
 RDEPEND=">=dev-lang/ghc-6.6.1"
 DEPEND="${RDEPEND}
