@@ -39,8 +39,8 @@ DEPEND="${RDEPEND}
 	"
 
 src_prepare() {
-	if "has_version >=dev-haskell/diff-0.2"; then
-		epatch "${FILESDIR}/${PN}-0.5.0.1"
+	if has_version ">=dev-haskell/diff-0.2"; then
+		epatch "${FILESDIR}/${PN}-0.5.0.1-Diff-0.2.patch"
 	fi
 }
 
