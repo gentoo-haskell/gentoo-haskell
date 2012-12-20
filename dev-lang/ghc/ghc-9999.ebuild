@@ -55,7 +55,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc +ghcbootstrap llvm"
+IUSE="doc +ghcbootstrap ghcmakebinary llvm"
 REQUIRED_USE="ghcbootstrap"
 
 RDEPEND="
