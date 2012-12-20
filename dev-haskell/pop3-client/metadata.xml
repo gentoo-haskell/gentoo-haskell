@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		pop3-client provides a Haskell library to implement a POP3 client.
+		
+		* Simple and safe API: connection is guaranteed to be closed, no need to know the POP3 protocol to use the API
+		
+		* Standards compliant
+		
+		* No dependencies (besides base, mtl and network libraries)
+	</longdescription>
+</pkgmetadata>
