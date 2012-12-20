@@ -1,0 +1,20 @@
+Fix dead loop parsing in constructs like:
+
+    Text.ParserCombinators.Parsec.parse Text.ParserCombinators.Parsec.Rfc2822.obs_day "" "Thu"
+
+where the loop is calling parsers 'day -> obs_day -> day' indefinitely.
+diff --git a/Text/ParserCombinators/Parsec/Rfc2822.hs b/Text/ParserCombinators/Parsec/Rfc2822.hs
+index 0d9ca4e..cd5e42c 100644
+--- a/Text/ParserCombinators/Parsec/Rfc2822.hs
++++ b/Text/ParserCombinators/Parsec/Rfc2822.hs
+@@ -1027,7 +1027,9 @@ obs_month       = between cfws cfws month_name <?> "month name"
+ -- |Parse a 'day' but allow for the obsolete folding syntax.
+ 
+ obs_day         :: CharParser a Int
+-obs_day         = unfold day <?> "day"
++obs_day         = unfold (try (do optional fws
++                                  r <- manyNtoM 1 2 digit; return (read r :: Int)))
++                  <?> "day"
+ 
+ -- |Parse a 'hour' but allow for the obsolete folding syntax.
+ 
