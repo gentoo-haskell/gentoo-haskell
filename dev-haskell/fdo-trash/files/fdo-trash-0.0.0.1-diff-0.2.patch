@@ -1,0 +1,28 @@
+--- fdo-trash-0.0.0.1-orig/Freedesktop/Trash.hs	2012-11-26 10:36:33.000000000 +1100
++++ fdo-trash-0.0.0.1/Freedesktop/Trash.hs	2012-12-20 12:08:35.448691039 +1100
+@@ -26,7 +26,7 @@
+ import Data.Time(getCurrentTimeZone,parseTime,localTimeToUTC,UTCTime,formatTime,utcToLocalTime,FormatTime)
+ import Data.Either(partitionEithers)
+ import Control.Monad(when)
+-import Data.Algorithm.Diff(getDiff,DI(..))
++import Data.Algorithm.Diff(getDiff,Diff(..))
+ import Data.List(sort)
+ import System.Posix.Files(fileSize,getSymbolicLinkStatus,isRegularFile,isDirectory,rename,removeLink,fileExist)
+ #if MIN_VERSION_base(4,6,0)
+@@ -101,13 +101,13 @@
+          diff   = getDiff iFiles dFiles
+     files <- fmap catMaybes $ mapM (genTrashFile iPath fPath timeZone) (diffBth diff)
+     return (files, (diffFst diff, map dropExtension $ diffSnd diff))
+-    where diffFst ((F,l):xs) = l : diffFst xs
++    where diffFst ((First l):xs) = l : diffFst xs
+           diffFst []         = []
+           diffFst (_:xs)     = diffFst xs
+-          diffSnd ((S,l):xs) = dropExtension l : diffSnd xs
++          diffSnd ((Second l):xs) = dropExtension l : diffSnd xs
+           diffSnd []         = []
+           diffSnd (_:xs)     = diffSnd xs
+-          diffBth ((B,l):xs) = dropExtension l : diffBth xs
++          diffBth ((Both l _):xs) = dropExtension l : diffBth xs
+           diffBth []         = []
+           diffBth (_:xs)     = diffBth xs
+ 
