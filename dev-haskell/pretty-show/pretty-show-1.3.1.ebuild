@@ -21,4 +21,4 @@ IUSE=""
 RDEPEND="=dev-haskell/haskell-lexer-1*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.8"
