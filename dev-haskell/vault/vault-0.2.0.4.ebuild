@@ -25,3 +25,8 @@ RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=useghc
+}
