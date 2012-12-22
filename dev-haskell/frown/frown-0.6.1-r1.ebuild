@@ -12,7 +12,7 @@ HOMEPAGE="http://www.informatik.uni-bonn.de/~ralf/frown/"
 SRC_URI="http://www.informatik.uni-bonn.de/~ralf/frown/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.2.2"
@@ -23,7 +23,7 @@ S="${WORKDIR}/Frown-${PV}"
 src_prepare() {
 	# enabling optimisation is strongly recommended
 	echo "ghc-options: -O" >> "${S}/frown.cabal"
-	epatch "${FILESDIR}/${P}-ghc74.patch" || die "patch failed"
+	epatch "${FILESDIR}/${P}-ghc74.patch"
 }
 
 src_install() {
