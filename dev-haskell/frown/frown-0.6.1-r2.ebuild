@@ -20,10 +20,6 @@ RDEPEND=""
 
 S="${WORKDIR}/Frown-${PV}"
 
-src_unpack() {
-	unpack ${A}
-}
-
 src_prepare() {
 	# enabling optimisation is strongly recommended
 	echo "ghc-options: -O" >> "${S}/frown.cabal"
