@@ -69,7 +69,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/alex-3
 		>=dev-haskell/cabal-1.10"
 
-
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.6.6.0-ghc-7.6.patch"
 	if has_version "<dev-lang/ghc-7.0.1"; then
