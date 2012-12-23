@@ -8,4 +8,7 @@
 	<longdescription>
 		GF, Grammatical Framework, is a programming language for multilingual grammar applications
 	</longdescription>
+	<use>
+		<flag name="server">server-mode (HTTP GCI)</flag>
+	</use>
 </pkgmetadata>
