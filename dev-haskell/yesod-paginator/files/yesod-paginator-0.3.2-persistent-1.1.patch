@@ -1,0 +1,45 @@
+diff --git a/Yesod/Paginator.hs b/Yesod/Paginator.hs
+index 6082944..f566a4c 100644
+--- a/Yesod/Paginator.hs
++++ b/Yesod/Paginator.hs
+@@ -58,7 +58,6 @@ module Yesod.Paginator
+ 
+ import Yesod
+ import Yesod.Paginator.Widget
+-import Control.Monad.Trans.Class (MonadTrans)
+ 
+ paginate :: Int -> [a] -> GHandler s m ([a], GWidget s m ())
+ paginate = paginateWith defaultWidget
+@@ -73,24 +72,26 @@ paginateWith widget per items = do
+     return (xs, widget p per tot)
+ 
+ selectPaginated :: ( PersistEntity val
+-                   , PersistQuery (PersistEntityBackend val) (GHandler s m)
+-                   , MonadTrans (PersistEntityBackend val)
++                   , PersistQuery m1
++                   , PersistEntityBackend val ~ PersistMonadBackend m1
++                   , MonadLift (GHandler s m) m1
+                    )
+                 => Int
+                 -> [Filter val]
+                 -> [SelectOpt val]
+-                -> PersistEntityBackend val (GHandler s m) ([Entity val], GWidget s m ())
++                -> m1 ([Entity val], GWidget s m ())
+ selectPaginated = selectPaginatedWith defaultWidget
+ 
+ selectPaginatedWith :: ( PersistEntity val
+-                       , PersistQuery (PersistEntityBackend val) (GHandler s m)
+-                       , MonadTrans (PersistEntityBackend val)
++                       , PersistQuery m1
++                       , PersistEntityBackend val ~ PersistMonadBackend m1
++                       , MonadLift (GHandler s m) m1
+                        )
+                     => PageWidget s m
+                     -> Int
+                     -> [Filter val]
+                     -> [SelectOpt val]
+-                    -> PersistEntityBackend val (GHandler s m) ([Entity val], GWidget s m ())
++                    -> m1 ([Entity val], GWidget s m ())
+ selectPaginatedWith widget per filters selectOpts = do
+     p   <- lift getCurrentPage
+     tot <- count filters
