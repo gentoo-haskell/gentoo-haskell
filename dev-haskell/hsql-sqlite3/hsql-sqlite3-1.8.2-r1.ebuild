@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hsql-1.8.2:=[profile?]
-		>=dev-lang/ghc-6.10.4:=
-		unknown-c-lib/sqlite3"
+RDEPEND=">=dev-db/sqlite-3.0
+		>=dev-haskell/hsql-1.8.2:=[profile?]
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
