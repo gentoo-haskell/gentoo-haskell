@@ -22,7 +22,7 @@ RDEPEND="=app-text/pandoc-1.9*:=[profile?]
 		=dev-haskell/blaze-html-0.5*:=[profile?]
 		=dev-haskell/hamlet-1.1*:=[profile?]
 		>=dev-haskell/persistent-0.9:=[profile?]
-		<dev-haskell/persistent-1.1:=[profile?]
+		<dev-haskell/persistent-1.2:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/xss-sanitize-0.3.1:=[profile?]
 		<dev-haskell/xss-sanitize-0.4:=[profile?]
@@ -32,3 +32,8 @@ RDEPEND="=app-text/pandoc-1.9*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'persistent      >= 0.9   && < 1.1' 'persistent      >= 0.9   && < 1.2'
+}
