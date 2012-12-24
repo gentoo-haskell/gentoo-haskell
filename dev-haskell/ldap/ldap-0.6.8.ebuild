@@ -36,5 +36,5 @@ src_prepare() {
 
 src_install() {
 	cabal_src_install
-	dodoc COPYING COPYRIGHT
+	dodoc COPYRIGHT
 }
