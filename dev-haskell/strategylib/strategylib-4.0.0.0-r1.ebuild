@@ -16,7 +16,7 @@ DESCRIPTION="attempt to convert Strafunski's StrategyLib to a heirarchical libra
 HOMEPAGE="http://naesten.dyndns.org:8080/repos/StrategyLib"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE=""	#Note: packages without a license cannot be included in portage
+LICENSE="freedist" # well, the link license points to is 404
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
