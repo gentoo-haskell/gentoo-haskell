@@ -17,7 +17,7 @@ DBMS"
 HOMEPAGE="http://github.com/selectel/mongodb-haskell"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE=""	#Fixme: "OtherLicense", please fill in manually
+LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
