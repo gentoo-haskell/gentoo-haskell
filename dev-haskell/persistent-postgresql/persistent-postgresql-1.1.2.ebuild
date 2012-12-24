@@ -19,10 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5.3:=[profile?]
+		<dev-haskell/conduit-0.6:=[profile?]
 		>=dev-haskell/monad-control-0.2:=[profile?]
 		<dev-haskell/monad-control-0.4:=[profile?]
-		=dev-haskell/persistent-1.1*:=[profile?]
+		>=dev-haskell/persistent-1.1.2:=[profile?]
+		<dev-haskell/persistent-1.2:=[profile?]
 		>=dev-haskell/postgresql-libpq-0.6.1:=[profile?]
 		<dev-haskell/postgresql-libpq-0.9:=[profile?]
 		=dev-haskell/postgresql-simple-0.2*:=[profile?]
