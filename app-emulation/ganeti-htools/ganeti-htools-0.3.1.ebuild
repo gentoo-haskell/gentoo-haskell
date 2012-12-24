@@ -32,6 +32,7 @@ src_prepare() {
 	# Workaround to skip pandoc
 	sed -i -e "s:) man:):" Makefile
 	epatch "${FILESDIR}"/${PN}-0.2.8-use-QC-1.patch #316629
+	epatch "${FILESDIR}"/${PN}-0.3.1-base-4.patch #424299
 }
 
 src_compile() {
