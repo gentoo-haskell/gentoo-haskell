@@ -19,10 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5.3:=[profile?]
+		<dev-haskell/conduit-0.6:=[profile?]
 		>=dev-haskell/monad-control-0.2:=[profile?]
 		<dev-haskell/monad-control-0.4:=[profile?]
-		=dev-haskell/persistent-1.1*:=[profile?]
+		>=dev-haskell/persistent-1.1.2:=[profile?]
+		<dev-haskell/persistent-1.2:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		<dev-haskell/text-1:=[profile?]
 		>=dev-haskell/transformers-0.2.1:=[profile?]
@@ -30,3 +32,8 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-systemlib
+}
