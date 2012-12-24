@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # unstable tests: https://github.com/tanakh/aeson-lens/issues/10
+
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 		>=dev-haskell/lens-3.7:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
