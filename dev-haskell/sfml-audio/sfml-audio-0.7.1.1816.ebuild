@@ -13,7 +13,7 @@ DESCRIPTION="minimal bindings to the audio module of sfml"
 HOMEPAGE="http://patch-tag.com/r/shahn/sfml-audio"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="ZLIB"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
