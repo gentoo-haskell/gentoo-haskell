@@ -41,3 +41,8 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-nooverlap
+}
