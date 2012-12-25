@@ -50,14 +50,6 @@ src_compile() {
 }
 
 src_test() {
-	if has_version "dev-haskell/monads-fd"; then
-		sed -e 's@HC=ghc@HC=ghc -hide-package monads-fd@' \
-			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
-	fi
-	if has_version "dev-haskell/monads-tf"; then
-		sed -e 's@HC=ghc@HC=ghc -hide-package monads-tf@' \
-			-i "${S}/tests/Makefile" || die "Could not patch tests Makefile"
-	fi
 	emake -C "${S}/tests/" || die "emake for tests failed"
 }
 
