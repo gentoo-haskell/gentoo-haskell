@@ -23,3 +23,10 @@ RDEPEND=">dev-haskell/extensible-exceptions-0.1.0.1:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-tests \
+		--flag=-fuzz \
+		--flag=-benchmark
+}
