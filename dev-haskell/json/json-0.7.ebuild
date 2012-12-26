@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.0"
 
 src_configure() {
+	[[ $(ghc-version) == "6.12.3" ]] && HCFLAGS+=" -O0" #427838
+
 	cabal_src_configure \
 		$(cabal_flag generic) \
 		$(cabal_flag parsec) \
