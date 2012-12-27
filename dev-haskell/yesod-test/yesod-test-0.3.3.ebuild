@@ -19,10 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
+		dev-haskell/blaze-builder:=[profile?]
 		=dev-haskell/blaze-html-0.5*:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
+		dev-haskell/cookie:=[profile?]
 		>=dev-haskell/hspec-1.4:=[profile?]
 		=dev-haskell/html-conduit-0.1*:=[profile?]
 		=dev-haskell/http-types-0.7*:=[profile?]
