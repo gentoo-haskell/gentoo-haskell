@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Given a module name and a name, it will find and display
+		the documentation of that name.
+		
+		/EXAMPLE USAGE/
+		
+		&gt; $ haskell-docs Data.List.Split split
+		&gt; Split a list according to the given splitting strategy. This is
+		&gt;  how to &quot;run&quot; a Splitter that has been built using the other
+		&gt;  combinators.
+		
+		/INSTALLATION/
+		
+		You should ensure that you have
+		
+		&gt; documentation: True
+		
+		in your .cabal/config so that the necessary
+		.haddock files are generated.
+		
+		Haddock is very sensitive to the GHC version, and
+		so too will this program be, to GHC, and to Haddock. I suggest
+		installing like this:
+		
+		&gt; cabal install haskell-docs --constraint haddock==2.10.0
+		
+		But replace the 2.10.0 with the version that haddock --version gives you.
+		
+		I could perhaps instead have a flag for each GHC
+		release back a few versions.
+		
+		/USING WITH GHCI/
+		
+		&gt; &gt; :def doc \input -&gt; return (&quot;:!haskell-docs &quot; ++ input)
+		&gt; &gt; :doc System.IO getContents base
+		&gt; The getContents operation returns all user input as a single string,
+		&gt;  which is read lazily as it is needed
+		&gt;  (same as hGetContents stdin).
+		
+		Add the above :def to your user .ghci to have it on start-up.
+		
+		/CONTRIBUTION AND ISSUES/
+		
+		Issues/ideas/contributions please make a Github issue: &lt;http://github.com/chrisdone/haskell-docs/issues&gt;
+		
+	</longdescription>
+</pkgmetadata>
