@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 		)
 	"
 
-RESTRICT=test # does not compile against diff-0.2
+RESTRICT=test
 
 src_prepare() {
 	if has_version ">=dev-haskell/diff-0.2"; then
@@ -48,7 +48,7 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		-f-tests
+		$(cabal_flag test tests)
 }
 
 pkg_postinst() {
