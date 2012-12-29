@@ -23,6 +23,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@base <4.6@base <4.7@' \
+	sed -e 's@base <4.6@base <5.0@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen depdencies"
 }
