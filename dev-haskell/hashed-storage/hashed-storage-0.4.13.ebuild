@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
 EAPI=2
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock"
 inherit haskell-cabal
 
 DESCRIPTION="Hashed file storage support code."
