@@ -1,9 +1,9 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN=OpenGL
 MY_P="${MY_PN}-${PV}"
@@ -23,3 +23,5 @@ DEPEND=">=dev-lang/ghc-6.4
 	media-libs/freeglut"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${P}-ghc-7.4.patch")
