@@ -36,10 +36,12 @@ src_prepare() {
 	if use pass-focus-click ; then
 		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
 	fi
-	if use iccwm-focus ; then
+	if use icccwm-focus ; then
 		epatch "${FILESDIR}/${P}-icccwm-focus.patch"
 	fi
-	epatch "${FILESDIR}"/${P}-x11-1.6.patch
+
+	cabal_chdeps \
+		'X11>=1.5.0.0 && < 1.6' 'X11>=1.5.0.0 && < 1.7'
 
 	# allow user patches
 	epatch_user
