@@ -209,13 +209,22 @@ relocate_ghc() {
 	cp "${WORKDIR}/usr/bin/ghc-pkg-${PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
 
 	# Relocate from /usr to ${EPREFIX}/usr
-	relocate_path "/usr" "${to}/usr" \
+	if [ -d "${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"];
+	then
+		relocate_path "/usr" "${to}/usr" \
 		"${WORKDIR}/usr/bin/ghc-${PV}" \
 		"${WORKDIR}/usr/bin/ghci-${PV}" \
 		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
 		"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
-
+	else
+		relocate_path "/usr" "${to}/usr" \
+		"${WORKDIR}/usr/bin/ghc-${PV}" \
+		"${WORKDIR}/usr/bin/ghci-${PV}" \
+		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+		"${WORKDIR}/usr/bin/hsc2hs" \
+		"${WORKDIR}/usr/$(get_libdir)64/${P}/package.conf.d/"*
+	fi
 	# this one we will use to regenerate cache
 	# so it shoult point to current tree location
 	relocate_path "/usr" "${WORKDIR}/usr" "$gp_back"
@@ -533,8 +542,12 @@ src_install() {
 	fi
 
 	# path to the package.cache
-	PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
-
+	if [ -f "${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
+	then
+		PKGCACHE="${ED}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	else
+		PKGCACHE="${ED}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
+	fi
 	# copy the package.conf, including timestamp, save it so we later can put it
 	# back before uninstalling, or when upgrading.
 	cp -p "${PKGCACHE}"{,.shipped} \
@@ -552,7 +565,12 @@ pkg_postinst() {
 	ghc-reregister
 
 	# path to the package.cache
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	if [ -f "${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
+	then
+		PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	else
+		PKGCACHE="${EROOT}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
+	fi
 
 	# give the cache a new timestamp, it must be as recent as
 	# the package.conf.d directory.
@@ -593,7 +611,14 @@ pkg_prerm() {
 	# Overwrite the modified package.cache with a copy of the
 	# original one, so that it will be removed during uninstall.
 
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	if [ -f "${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"];
+	then
+		PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	else
+		PKGCACHE="${EROOT}/usr/$(get_libdir)64/${P}/package.conf.d/package.cache"
+	fi
+
+
 	rm -rf "${PKGCACHE}"
 
 	cp -p "${PKGCACHE}"{.shipped,}
