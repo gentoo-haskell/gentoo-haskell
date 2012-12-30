@@ -73,6 +73,10 @@ src_prepare() {
 
 	cabal_chdeps \
 		'SHA > 1 && < 1.6' 'SHA > 1 && < 1.7'
+
+	if has_version ">=dev-haskell/diff-0.2"; then
+		epatch "${FILESDIR}/${PN}-0.10.0.2-filestore-diff-0.2.patch"
+	fi
 }
 
 src_configure() {
