@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/data-reify-0.6*:=[profile?]
 		>=dev-haskell/free-3.0:=[profile?]
-		<=dev-haskell/free-3.3:=[profile?]
+		<=dev-haskell/free-3.4:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/reflection-1.1.6:=[profile?]
 		<dev-haskell/reflection-1.2:=[profile?]
