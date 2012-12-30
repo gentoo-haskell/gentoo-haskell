@@ -17,7 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 IUSE=""
 
-RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
+RDEPEND="=dev-haskell/bifunctors-3.0*:=[profile?]
+		=dev-haskell/comonad-3.0*:=[profile?]
 		=dev-haskell/comonad-transformers-3.0*:=[profile?]
 		=dev-haskell/comonads-fd-3.0*:=[profile?]
 		dev-haskell/generic-deriving:=[profile?]
@@ -27,14 +28,19 @@ RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/parallel-3.1.0.1:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
+		>=dev-haskell/profunctors-3.1.1:=[profile?]
+		<dev-haskell/profunctors-3.2:=[profile?]
+		=dev-haskell/representable-profunctors-3.1*:=[profile?]
 		>=dev-haskell/semigroups-0.8.4:=[profile?]
 		<dev-haskell/semigroups-0.9:=[profile?]
 		=dev-haskell/split-0.2*:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		=dev-haskell/transformers-0.3*:=[profile?]
+		=dev-haskell/transformers-compat-0.1*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
+
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/doctest-0.9.1
