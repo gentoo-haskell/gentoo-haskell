@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=cryptoapi
+}
