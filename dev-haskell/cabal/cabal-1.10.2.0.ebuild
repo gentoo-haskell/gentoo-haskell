@@ -22,10 +22,7 @@ KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-lin
 IUSE="doc"
 
 DEPEND=">=dev-lang/ghc-6.10.1 <dev-lang/ghc-7.2"
-RDEPEND="${DEPEND}
-		virtual/pkgconfig"
-# cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
-# repoman's RDEPEND.suspect QA does not apply here
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 

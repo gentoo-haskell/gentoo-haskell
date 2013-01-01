@@ -21,10 +21,7 @@ IUSE="doc"
 # filepath has been a ghc core library since ghc 6.6.1, so let's use that as the
 # lowest possible ghc version
 DEPEND=">=dev-lang/ghc-6.6.1 <dev-lang/ghc-7"
-RDEPEND="${DEPEND}
-		virtual/pkgconfig"
-# cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
-# repoman's RDEPEND.suspect QA does not apply here
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 

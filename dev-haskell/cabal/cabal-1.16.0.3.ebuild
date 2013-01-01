@@ -34,11 +34,6 @@ DEPEND="${RDEPEND}
 
 RESTRICT="test" # Fails own tests
 
-RDEPEND="${RDEPEND}
-		virtual/pkgconfig"
-# cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
-# repoman's RDEPEND.suspect QA does not apply here
-
 S="${WORKDIR}/${MY_PN}-${MY_PV}"
 
 src_configure() {
