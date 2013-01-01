@@ -44,10 +44,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	# workaround haddock 2.10.0 error:
-	# parse error on input `-- $and is usually unecessary but makes query construction easier in special cases'
-	sed -e 's@-- $and@-- dollar and@' \
-		-i "${S}/Database/Persist/MongoDB.hs" || die "Could not sed comment to workaround haddock error"
-}
