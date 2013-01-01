@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -44,7 +44,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cd "${S}"
 	sed -e 's@dbus-client >= 0.3 && < 0.4@dbus-client >= 0.3 \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dbus-client dependency"
 	epatch "${FILESDIR}/${P}-dbus-client-0.4.patch"
