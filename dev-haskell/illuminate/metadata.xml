@@ -12,4 +12,7 @@
 		ANSI. It is smaller, less memory-hungry, and
 		much faster than highlighting-kate.
 	</longdescription>
+	<use>
+		<flag name="executable">build standalone 'illuminate' program</flag>
+	</use>
 </pkgmetadata>
