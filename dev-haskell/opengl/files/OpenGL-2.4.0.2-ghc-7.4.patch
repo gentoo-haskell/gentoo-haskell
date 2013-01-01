@@ -1,9 +1,0 @@
---- OpenGL-2.4.0.2-orig/Graphics/Rendering/OpenGL/GL/GLboolean.hs	2011-10-28 23:43:42.000000000 +1100
-+++ OpenGL-2.4.0.2/Graphics/Rendering/OpenGL/GL/GLboolean.hs	2011-12-31 15:35:07.707795904 +1100
-@@ -26,5 +26,5 @@
-    False -> gl_FALSE
-    True -> gl_TRUE
- 
--unmarshalGLboolean :: Num a => a -> Bool
-+unmarshalGLboolean :: (Eq a, Num a) => a -> Bool
- unmarshalGLboolean = (/= fromIntegral gl_FALSE)
