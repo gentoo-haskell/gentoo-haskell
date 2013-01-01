@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -40,8 +40,6 @@ src_prepare() {
 	cd "${S}/src/E/"
 	mv TypeCheck.hs TypeCheck.hs.UTF-8
 	iconv -f UTF-8 -t ASCII -c TypeCheck.hs.UTF-8 > TypeCheck.hs || die "unable to recode TypeCheck.hs to ASCII"
-
-	
 }
 
 src_configure() {
