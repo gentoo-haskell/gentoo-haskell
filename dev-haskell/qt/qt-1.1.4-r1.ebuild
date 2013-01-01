@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
-EAPI="2"
+EAPI=5
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
@@ -12,7 +12,7 @@ S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia."
 HOMEPAGE="http://qthaskell.berlios.de/"
-SRC_URI="http://download.berlios.de/qthaskell/${MY_P}.1.tar.bz2"
+SRC_URI="mirror://berlios/qthaskell/${MY_P}.1.tar.bz2"
 
 # The license is uncertain, the web site says its currently GPL, while as the LICENSE file looks like BSD.
 LICENSE="GPL-2"
@@ -21,7 +21,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/qthaskellc
-		dev-haskell/opengl"
+		dev-haskell/opengl:=[profile?]
+		>=dev-lang/ghc-6.10.4:="
 DEPEND=">=dev-haskell/cabal-1.6
 		${RDEPEND}"
 
