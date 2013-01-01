@@ -25,7 +25,7 @@ RDEPEND=">=dev-lang/ghc-6.6.1
 		=x11-wm/xmonad-contrib-9999
 		volume? ( <dev-haskell/parsec-4 dev-haskell/split media-sound/alsa-utils )
 		eval? ( =dev-haskell/hint-0.3* )
-		mpd? ( >=dev-haskell/libmpd-0.6 <dev-haskell/libmpd-0.8 )
+		mpd? ( =dev-haskell/libmpd-0.8* )
 		"
 #		perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 )
 DEPEND="${RDEPEND}
