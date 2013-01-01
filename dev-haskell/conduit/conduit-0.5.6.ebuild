@@ -17,8 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-# doctests: Ouch! Hit an error thunk in GHC's AST while extracting documentation.
-RESTRICT=test
 
 RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
 		>=dev-haskell/monad-control-0.3.1:=[profile?]
