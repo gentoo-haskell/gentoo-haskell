@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 			=dev-haskell/x11-xft-0.3*
 		)
 		mail? ( =dev-haskell/hinotify-0.3* )
-		mpd? ( =dev-haskell/libmpd-0.7* )
+		mpd? ( =dev-haskell/libmpd-0.8* )
 		alsa? ( =dev-haskell/alsa-mixer-0.1*
 			=dev-haskell/alsa-core-0.5*
 		)
