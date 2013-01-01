@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/diff-0.1.2:=[profile?]
-		<dev-haskell/diff-0.2:=[profile?]
+RDEPEND="=dev-haskell/diff-0.2*:=[profile?]
 		=dev-haskell/hunit-1.2*:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parsec-2:=[profile?]
@@ -37,6 +36,8 @@ DEPEND="${RDEPEND}
 			dev-vcs/darcs
 		)
 	"
+
+RESTRICT=test
 
 src_configure() {
 	haskell-cabal_src_configure \
