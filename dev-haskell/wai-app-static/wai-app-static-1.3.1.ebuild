@@ -42,3 +42,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/wai-test
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-print
+}
