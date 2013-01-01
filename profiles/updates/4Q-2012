@@ -8,3 +8,4 @@ slotmove =dev-haskell/wxc-0.90* 0 2.9
 slotmove =dev-haskell/takusen-0.8* 2 0
 move dev-haskell/hdbus dev-haskell/dbus
 move dev-haskell/hsql-sqlite dev-haskell/hsql-sqlite3
+move dev-haskell/wash dev-haskell/washngo
