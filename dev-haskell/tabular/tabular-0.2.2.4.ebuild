@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Two-dimensional data tables with rendering functions"
-HOMEPAGE="http://patch-tag.com/r/kowey/tabular"
+HOMEPAGE="http://hub.darcs.net/kowey/tabular"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -25,9 +25,4 @@ RDEPEND="=dev-haskell/csv-0.1*:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		dev-haskell/cabal"
-
-src_prepare() {
-	cabal_chdeps \
-		'mtl >= 1 && < 2.1' 'mtl >= 1 && < 2.2'
-}
+		>=dev-haskell/cabal-1.8"
