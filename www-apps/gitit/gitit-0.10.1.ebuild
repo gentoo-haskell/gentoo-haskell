@@ -29,7 +29,7 @@ RDEPEND=">=app-text/pandoc-1.9.0.5:=[profile?]
 		<dev-haskell/configfile-1.2:=[profile?]
 		>=dev-haskell/feed-0.3.6:=[profile?]
 		<dev-haskell/feed-0.4:=[profile?]
-		=dev-haskell/filestore-0.5*:=[profile?]
+		=dev-haskell/filestore-0.6*:=[profile?]
 		dev-haskell/ghc-paths:=[profile?]
 		>=dev-haskell/happstack-server-7.0:=[profile?]
 		<dev-haskell/happstack-server-7.2:=[profile?]
@@ -69,14 +69,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-directory-1.2.patch
-
 	cabal_chdeps \
 		'SHA > 1 && < 1.6' 'SHA > 1 && < 1.7'
-
-	if has_version ">=dev-haskell/diff-0.2"; then
-		epatch "${FILESDIR}/${PN}-0.10.0.2-filestore-diff-0.2.patch"
-	fi
 }
 
 src_configure() {
