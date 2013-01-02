@@ -98,11 +98,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	#epatch "${FILESDIR}"/${P}-no-tf.patch
 	echo 'mans: $(mans)' >>"${S}"/Makefile
-
-	# there is no kqueue on linux, but should be on freebsd and solaris(?)
-	cabal_chdeps \
-		'testpack' 'testpack, SafeSemaphore' \
-		'if (! os(windows) && ! os(solaris))' 'if (! os(windows) && ! os(linux))'
 }
 
 src_configure() {
