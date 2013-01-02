@@ -25,8 +25,3 @@ RDEPEND=">=dev-haskell/srcloc-0.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cabal_chdeps \
-		'srcloc     >= 0.2  && < 0.4' 'srcloc     >= 0.2  && < 0.5'
-}
