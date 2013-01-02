@@ -41,5 +41,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'srcloc                 >= 0.2 && < 0.4' 'srcloc                 >= 0.2 && < 0.5'
+		'srcloc                 >= 0.2 && < 0.4' 'srcloc                 >= 0.2 && < 0.5' \
+		'srcloc               >= 0.2 && < 0.4' 'srcloc               >= 0.2 && < 0.5'
 }
