@@ -24,5 +24,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=bytestring-in-base
+		--flag=-bytestring-in-base
 }
