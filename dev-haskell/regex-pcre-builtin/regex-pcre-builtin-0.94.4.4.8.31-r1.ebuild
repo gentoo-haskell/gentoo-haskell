@@ -23,6 +23,15 @@ RDEPEND=">=dev-haskell/regex-base-0.93:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
+src_prepare() {
+	# effectively rollback to previous release.
+	# fixes the following failure:
+	#    Loading package regex-pcre-builtin-0.94.4.4.8.31 ... linking ...
+	#    ghc: /usr/lib64/regex-pcre-builtin-0.94.4.4.8.31/ghc-7.6.1/HSregex-pcre-builtin-0.94.4.4.8.31.o: unknown symbol `utf8_table4'
+	cabal_chdeps \
+		' -DSUPPORT_UCP -DSUPPORT_UTF' ' '
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=splitbase \
