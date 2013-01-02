@@ -25,8 +25,8 @@ RDEPEND="=dev-haskell/hint-0.3*:=[profile?]
 		dev-haskell/regex-posix:=[profile?]
 		>=dev-haskell/x11-1.4.3:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
-		=x11-wm/xmonad-0.10*:=[profile?]
-		=x11-wm/xmonad-contrib-0.10*:=[profile?]
+		>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.12:=[profile?]
+		>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.12:=[profile?]
 		eval? ( dev-haskell/hint:=[profile?]
 			dev-haskell/network:=[profile?]
 		)
@@ -39,6 +39,12 @@ RDEPEND="=dev-haskell/hint-0.3*:=[profile?]
 		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
+
+src_prepare() {
+	cabal_chdeps \
+		'xmonad>=0.10 && <0.11' 'xmonad>=0.10 && <0.12' \
+		'xmonad-contrib>=0.10 && <0.11' 'xmonad-contrib>=0.10 && <0.13'
+}
 
 src_configure() {
 	cabal_src_configure \
