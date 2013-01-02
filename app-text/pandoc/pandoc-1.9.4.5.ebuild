@@ -55,7 +55,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-lang/ghc-7.4.2:="
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/ansi-terminal-0.5*
-			=dev-haskell/diff-0.1*
+			=dev-haskell/diff-0.2*
 			=dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
 			<dev-haskell/quickcheck-2.6
@@ -68,7 +68,8 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.10"
 
-PATCHES=("${FILESDIR}"/${P}-disable-writes-other-man.patch)
+PATCHES=("${FILESDIR}"/${P}-disable-writes-other-man.patch
+	"${FILESDIR}"/${P}-diff-0.2.patch)
 
 src_prepare() {
 	base_src_prepare
