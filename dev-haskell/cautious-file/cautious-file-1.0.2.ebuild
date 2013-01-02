@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
@@ -14,19 +14,13 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.12.1"
+RDEPEND=">=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-1.0.1-ghc-6.12-7.6.patch")
-
-src_compile() {
-	cabal_src_compile
-	ghc -o test -isrc --make Test.hs || die "test compile failed!"
-}
-
 src_test() {
+	ghc -D_POSIX -o test -isrc --make Test.hs || die "test compile failed!"
 	./test || die "Tests failed!"
 }
