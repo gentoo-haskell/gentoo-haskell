@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
-		=dev-haskell/profunctor-extras-3.0*:=[profile?]
+		>=dev-haskell/profunctor-extras-3.0:=[profile?] <dev-haskell/profunctor-extras-3.3:=[profile?]
 		=dev-haskell/profunctors-3.1*:=[profile?]
 		>=dev-haskell/tagged-0.4.4:=[profile?]
 		<dev-haskell/tagged-0.5:=[profile?]
@@ -28,3 +28,8 @@ RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'profunctor-extras == 3.0.*' 'profunctor-extras >= 3.0 && <3.3'
+}
