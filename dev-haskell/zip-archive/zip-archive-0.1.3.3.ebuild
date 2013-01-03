@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.6:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/digest-0.0.0.1:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1:=[profile?]
