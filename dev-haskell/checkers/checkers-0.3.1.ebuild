@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Check properties on standard classes and data structures."
-HOMEPAGE="http://haskell.org/haskellwiki/checkers"
+HOMEPAGE="http://hackage.haskell.org/package/checkers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,4 +22,4 @@ RDEPEND=">=dev-haskell/quickcheck-2.3:=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
