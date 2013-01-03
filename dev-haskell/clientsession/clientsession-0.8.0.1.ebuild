@@ -34,3 +34,15 @@ DEPEND="${RDEPEND}
 			dev-haskell/transformers
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	# crypto-random-api 0.2 made an API incompatible change to genRandomBytes,
+	# the order of the 2 parameters are swapped.  clientsession 0.8.0.1 does
+	# not have a direct dependency on crypto-random-api though.  This API
+	# incompatible change was also made in cprng-aes-0.3.2 with no minor or
+	# major API bump.  For all I know there could be a cprng-aes-0.3.? bump
+	# to try to patch over this error.
+	if has_version ">=dev-haskell/crypto-random-api-0.2"; then
+		epatch "${FILESDIR}/${PN}-0.8.0.1-crypto-random-api-0.2.patch"
+	fi
+}
