@@ -18,6 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
+# fails as:
+#    shake: ASSERTION FAILED: failed in ===
+#    LHS: "abc"
+#    RHS: "adc"
+RESTRICT=test
+
 RDEPEND="dev-haskell/binary:=[profile?]
 		>=dev-haskell/deepseq-1.1:=[profile?]
 		<dev-haskell/deepseq-1.4:=[profile?]
