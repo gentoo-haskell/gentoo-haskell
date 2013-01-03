@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle"
 
@@ -17,13 +17,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+default-term pass-focus-click"
 
-RDEPEND="dev-haskell/extensible-exceptions[profile?]
-		dev-haskell/mtl[profile?]
-		>=dev-haskell/x11-1.5[profile?]
-		>=dev-lang/ghc-6.10.1"
+RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
+		dev-haskell/mtl:=[profile?]
+		>=dev-haskell/x11-1.5:=[profile?] <dev-haskell/x11-1.7:=[profile?]
+		>=dev-lang/ghc-6.10.1:="
 DEPEND="${RDEPEND}
 		doc? ( app-text/pandoc )
-		>=dev-haskell/cabal-1.2"
+		>=dev-haskell/cabal-1.6"
 PDEPEND="default-term? ( x11-terms/xterm )
 	x11-apps/xmessage
 "
@@ -32,12 +32,12 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
-	sed -e 's@X11>=1.5.0.0 && < 1.6@X11>=1.5.0.0 \&\& < 1.7@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
-
 	if use pass-focus-click ; then
 		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
 	fi
+
+	cabal_chdeps \
+		'X11>=1.5.0.0 && < 1.6' 'X11>=1.5.0.0 && < 1.7'
 
 	# allow user patches
 	epatch_user
