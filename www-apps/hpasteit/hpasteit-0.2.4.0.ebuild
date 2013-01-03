@@ -27,4 +27,5 @@ DEPEND="${RDEPEND}
 		=dev-haskell/network-2.4*
 		=dev-haskell/optparse-applicative-0.5*
 		=dev-haskell/safe-0.3*
+		=dev-haskell/utf8-string-0.3*
 		>=dev-lang/ghc-7.6.1"
