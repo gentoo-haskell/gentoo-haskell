@@ -24,5 +24,7 @@ DEPEND="${RDEPEND}
 		=dev-haskell/http-conduit-1.8*
 		=dev-haskell/http-types-0.7*
 		=dev-haskell/lifted-base-0.2*
+		=dev-haskell/network-2.4*
 		=dev-haskell/optparse-applicative-0.5*
+		=dev-haskell/safe-0.3*
 		>=dev-lang/ghc-7.6.1"
