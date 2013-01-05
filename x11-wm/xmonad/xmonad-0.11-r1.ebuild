@@ -25,7 +25,6 @@ RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		<dev-haskell/x11-1.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		doc? ( app-text/pandoc )
 		>=dev-haskell/cabal-1.6"
 PDEPEND="default-term? ( x11-terms/xterm )
 	x11-apps/xmessage
@@ -39,17 +38,6 @@ src_prepare() {
 	epatch_user
 }
 
-src_compile() {
-	cabal_src_compile
-	if use doc; then
-		pushd util || die "Could not cd to util"
-		ghc -o GenerateManpage --make GenerateManpage.hs \
-			|| die "Could not build GenerateManpage"
-		popd
-		./util/GenerateManpage || die "Could not generate manpage"
-	fi
-}
-
 src_install() {
 	cabal_src_install
 
@@ -60,10 +48,8 @@ src_install() {
 	insinto /usr/share/xsessions
 	doins "${FILESDIR}/${PN}.desktop"
 
-	if use doc; then
-		doman man/xmonad.1
-		dohtml man/xmonad.1.html
-	fi
+	doman man/xmonad.1
+	dohtml man/xmonad.1.html
 
 	dodoc CONFIG README
 }
