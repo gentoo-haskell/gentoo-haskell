@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.4.2:=[profile?]
 		!pcre-light? ( dev-haskell/regex-pcre-builtin:=[profile?] )
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+		>=dev-haskell/cabal-1.10"
 
 src_configure() {
 	cabal_src_configure \
