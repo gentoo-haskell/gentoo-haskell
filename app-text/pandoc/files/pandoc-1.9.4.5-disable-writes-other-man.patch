@@ -1,7 +1,7 @@
 Fails on ghc-7.6 only as:
 
---- tables.man
-+++ ../dist/build/pandoc/pandoc --data-dir .. tables.native -r native -w man --columns=78
+ --- tables.man
+ +++ ../dist/build/pandoc/pandoc --data-dir .. tables.native -r native -w man --columns=78
 - 141 cw(10.50n) lw(9.63n) rw(11.38n) lw(23.63n).
 + 141 cw(10.50n) lw(9.62n) rw(11.38n) lw(23.62n).
 - 177 cw(10.50n) lw(9.63n) rw(11.38n) lw(23.63n).
