@@ -78,6 +78,10 @@ src_prepare() {
 		'test-framework >= 0.3 && < 0.7' 'test-framework >= 0.3 && < 0.9' \
 		'test-framework-hunit >= 0.2 && < 0.3' 'test-framework-hunit >= 0.2 && < 0.4' \
 		'test-framework-quickcheck2 >= 0.2.9 && < 0.3' 'test-framework-quickcheck2 >= 0.2.9 && < 0.4'
+
+	ghc-supports-threaded-runtime ||
+		cabal_chdeps \
+			'-threaded' ' '
 }
 
 src_install() {
