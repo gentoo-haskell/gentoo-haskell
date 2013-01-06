@@ -94,6 +94,14 @@ ghc-supports-shared-libraries() {
 	$(ghc-getghc) --info | grep "RTS ways" | grep -q "dyn"
 }
 
+# @FUNCTION: ghc-supports-threaded-runtime
+# @DESCRIPTION:
+# checks if ghc is built with support for threaded
+# runtime (aka '-threaded' option)
+ghc-supports-threaded-runtime() {
+	$(ghc-getghc) --info | grep "RTS ways" | grep -q "thr"
+}
+
 # @FUNCTION: ghc-extractportageversion
 # @DESCRIPTION:
 # extract the version of a portage-installed package
