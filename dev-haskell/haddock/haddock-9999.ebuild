@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ inherit base eutils git-2 haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-EGIT_REPO_URI="http://darcs.haskell.org/haddock.git"
+EGIT_REPO_URI="http://darcs.haskell.org/haddock.git https://github.com/ghc/haddock.git"
 
 LICENSE="BSD"
 SLOT="0"
@@ -29,7 +29,8 @@ RESTRICT="test" # avoid depends on QC
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
-PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch")
+PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch"
+	"${FILESDIR}/${PN}-2.11.0_p20121022-needs-deepseq.patch")
 
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal
