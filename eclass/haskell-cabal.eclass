@@ -68,15 +68,6 @@ case "${EAPI:-0}" in
 	*) ;;
 esac
 
-case "${EAPI:-0}" in
-	0|1|2|3|4)
-		eapi_subslot_constraint="" # has no SUBSLOT support
-		;;
-	*)
-		eapi_subslot_constraint=":="
-		;;
-esac
-
 EXPORT_FUNCTIONS ${HASKELL_CABAL_EXPF}
 
 for feature in ${CABAL_FEATURES}; do
@@ -102,7 +93,7 @@ if [[ -n "${CABAL_USE_HADDOCK}" ]]; then
 	IUSE="${IUSE} doc"
 	# don't require depend on itself to build docs.
 	# ebuild bootstraps docs from just built binary
-	[[ ${CATEGORY}/${PN} = "dev-haskell/haddock" ]] || DEPEND="${DEPEND} doc? ( dev-haskell/haddock${eapi_subslot_constraint} )"
+	[[ ${CATEGORY}/${PN} = "dev-haskell/haddock" ]] || DEPEND="${DEPEND} doc? ( dev-haskell/haddock )"
 fi
 
 if [[ -n "${CABAL_USE_HSCOLOUR}" ]]; then
