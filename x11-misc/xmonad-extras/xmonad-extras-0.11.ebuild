@@ -40,12 +40,6 @@ RDEPEND="=dev-haskell/hint-0.3*:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
 
-src_prepare() {
-	cabal_chdeps \
-		'xmonad>=0.10 && <0.11' 'xmonad>=0.10 && <0.12' \
-		'xmonad-contrib>=0.10 && <0.11' 'xmonad-contrib>=0.10 && <0.13'
-}
-
 src_configure() {
 	cabal_src_configure \
 		--flags=-testing \
