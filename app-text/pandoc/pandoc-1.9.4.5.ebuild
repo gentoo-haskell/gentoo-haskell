@@ -69,7 +69,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 PATCHES=("${FILESDIR}"/${P}-disable-writes-other-man.patch
-	"${FILESDIR}"/${P}-diff-0.2.patch)
+	"${FILESDIR}"/${P}-diff-0.2.patch
+	"${FILESDIR}"/${P}-highlighting-kate-0.5.3.4-tests.patch)
 
 src_prepare() {
 	base_src_prepare
