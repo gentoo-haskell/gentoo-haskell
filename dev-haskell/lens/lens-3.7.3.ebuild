@@ -18,21 +18,23 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/comonad-3.0*:=[profile?]
-		=dev-haskell/comonad-transformers-3.0*:=[profile?]
-		=dev-haskell/comonads-fd-3.0*:=[profile?]
+RDEPEND=">=dev-haskell/comonad-3:=[profile?]
+		>=dev-haskell/comonad-transformers-3:=[profile?]
+		>=dev-haskell/comonads-fd-3:=[profile?]
 		dev-haskell/generic-deriving:=[profile?]
 		>=dev-haskell/hashable-1.1.2.3:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
 		>=dev-haskell/mtl-2.0.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/nats-0.1:=[profile?]
 		>=dev-haskell/parallel-3.1.0.1:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
 		>=dev-haskell/semigroups-0.8.4:=[profile?]
-		<dev-haskell/semigroups-0.9:=[profile?]
 		=dev-haskell/split-0.2*:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
-		=dev-haskell/transformers-0.3*:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?]
+		<dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/transformers-compat-0.1:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
@@ -55,4 +57,17 @@ src_prepare() {
 	base_src_prepare
 	cabal_chdeps \
 		'template-haskell >= 2.4 && < 2.9' 'template-haskell >= 2.4 && < 2.10'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=trustworthy \
+		--flag=-safe \
+		--flag=test-properties \
+		--flag=test-hunit \
+		--flag=-dump-splices \
+		--flag=-old-inline-pragmas \
+		--flag=inlining \
+		--flag=template-haskell \
+		--flag=-benchmark-uniplate
 }
