@@ -42,7 +42,6 @@ RDEPEND="dev-haskell/adjunctions[profile?]
 		dev-haskell/recursion-schemes[profile?]
 		dev-haskell/reducers[profile?]
 		dev-haskell/representable-functors[profile?]
-		dev-haskell/representable-profunctors[profile?]
 		dev-haskell/semigroupoid-extras[profile?]
 		dev-haskell/semigroupoids[profile?]
 		dev-haskell/semigroups[profile?]
@@ -50,3 +49,8 @@ RDEPEND="dev-haskell/adjunctions[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	cabal_chdeps \
+		'representable-profunctors' 'profunctor-extras'
+}
