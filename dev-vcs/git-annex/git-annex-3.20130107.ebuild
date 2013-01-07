@@ -67,7 +67,7 @@ DEPEND="${RDEPEND}
 				dev-haskell/warp
 				dev-haskell/yesod
 				>=dev-haskell/yesod-default-1.1.0
-				dev-haskell/yesod-form
+				>=dev-haskell/yesod-form-1.2
 				dev-haskell/yesod-static
 			)
 			pairing? (
