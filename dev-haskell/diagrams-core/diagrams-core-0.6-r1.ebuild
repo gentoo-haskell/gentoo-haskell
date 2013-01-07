@@ -24,10 +24,15 @@ RDEPEND="=dev-haskell/dual-tree-0.1*:=[profile?]
 		=dev-haskell/monoid-extras-0.2*:=[profile?]
 		=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/semigroups-0.3.4:=[profile?]
-		<dev-haskell/semigroups-0.9:=[profile?]
+		<dev-haskell/semigroups-0.10:=[profile?]
 		>=dev-haskell/vector-space-0.8.4:=[profile?]
 		<dev-haskell/vector-space-0.9:=[profile?]
 		=dev-haskell/vector-space-points-0.1*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.3.4 && < 0.9' 'semigroups >= 0.3.4 && < 0.10'
+}
