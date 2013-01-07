@@ -18,7 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/semigroups-0.8*:=[profile?]
+RDEPEND=">=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.10:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.8 && < 0.9' 'semigroups >= 0.8 && < 0.10'
+}
