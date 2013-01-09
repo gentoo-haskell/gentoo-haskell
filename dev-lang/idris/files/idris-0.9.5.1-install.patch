@@ -1,0 +1,20 @@
+--- idris-0.9.5.1-orig/src/Pkg/Package.hs	2012-10-31 22:40:12.000000000 +1100
++++ idris-0.9.5.1/src/Pkg/Package.hs	2013-01-09 14:39:41.067622063 +1100
+@@ -4,6 +4,7 @@
+ import System.Directory
+ import System.Exit
+ import System.IO
++import System.Environment (lookupEnv)
+ 
+ import Util.System
+ 
+@@ -106,7 +107,8 @@
+ 
+ installIBC :: String -> Name -> IO ()
+ installIBC p m = do let f = toIBCFile m
+-                    d <- getDataDir
++                    target <- lookupEnv "TARGET"
++                    d <- maybe getDataDir return target
+                     let destdir = d ++ "/" ++ p ++ "/" ++ getDest m
+                     putStrLn $ "Installing " ++ f ++ " to " ++ destdir
+                     system $ "mkdir -p " ++ destdir 

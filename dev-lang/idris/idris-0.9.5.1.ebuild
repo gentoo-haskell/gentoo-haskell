@@ -29,4 +29,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.10.4"
 
-PATCHES=("${FILESDIR}"/${P}-locale.patch)
+# install patch is backported from: https://github.com/edwinb/Idris-dev/pull/104
+PATCHES=("${FILESDIR}"/${P}-locale.patch
+	"${FILESDIR}"/${P}-install.patch)
