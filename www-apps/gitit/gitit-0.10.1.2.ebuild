@@ -66,11 +66,6 @@ RDEPEND=">=app-text/pandoc-1.9.0.5:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	cabal_chdeps \
-		'SHA > 1 && < 1.6' 'SHA > 1 && < 1.7'
-}
-
 src_configure() {
 	cabal_src_configure $(cabal_flag plugins)
 }
