@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,13 +16,13 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="wxWinLL-3.1"
 SLOT="${WX_GTK_VER}/${PV}"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="opengl"
+IUSE=""
 
 RDEPEND="dev-haskell/parsec:=[profile?]
 		dev-haskell/stm:=[profile?]
-		>=dev-haskell/wxc-0.90.0.4:${WX_GTK_VER}=[opengl,profile?]
+		>=dev-haskell/wxc-0.90.0.4:${WX_GTK_VER}=[profile?]
 		>=dev-haskell/wxdirect-0.90:${WX_GTK_VER}=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
@@ -33,4 +33,9 @@ src_prepare() {
 	sed -e "s@wxdirect@wxdirect-${WX_GTK_VER}@g" \
 		-i "${S}/Setup.hs" \
 		|| die "Could not change Setup.hs for wxdirect slot ${WX_GTK_VER}"
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=splitbase
 }

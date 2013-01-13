@@ -1,23 +1,12 @@
---- wxcore-0.13.2.1-orig/wxcore.cabal	2012-02-07 18:27:09.000000000 +1100
-+++ wxcore-0.13.2.1/wxcore.cabal	2012-11-29 17:21:49.458155692 +1100
-@@ -209,7 +209,7 @@
-     build-depends:
-       array >= 0.2 && < 0.5,
-       base >= 4 && < 5,
--      containers >= 0.2 && < 0.5
-+      containers >= 0.2 && < 0.6
-   else
-     build-depends:
-       array >= 0.1 && < 0.3,
---- wxcore-0.13.2.1-orig/src/haskell/Graphics/UI/WXCore/Events.hs	2012-02-07 18:27:09.000000000 +1100
-+++ wxcore-0.13.2.1/src/haskell/Graphics/UI/WXCore/Events.hs	2012-11-29 17:21:49.458155692 +1100
+--- wxcore-0.13.2.3-orig/src/haskell/Graphics/UI/WXCore/Events.hs	2012-09-30 19:56:52.000000000 +1000
++++ wxcore-0.13.2.3/src/haskell/Graphics/UI/WXCore/Events.hs	2013-01-13 10:08:50.415293002 +1100
 @@ -1,4 +1,4 @@
 -{-# LANGUAGE ForeignFunctionInterface #-}
 +{-# LANGUAGE CPP, ForeignFunctionInterface #-}
  -----------------------------------------------------------------------------------------
  {-|	Module      :  Events
  	Copyright   :  (c) Daan Leijen 2003
-@@ -240,6 +240,9 @@
+@@ -241,6 +241,9 @@
  import Foreign.Marshal.Alloc
  import Foreign.Marshal.Array
  import Foreign.Marshal.Utils
@@ -27,8 +16,8 @@
  
  import Data.Char ( chr ) -- used in stc
  import Data.Maybe ( fromMaybe, fromJust )
---- wxcore-0.13.2.1-orig/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2012-02-07 18:27:09.000000000 +1100
-+++ wxcore-0.13.2.1/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2012-11-29 17:42:22.477244493 +1100
+--- wxcore-0.13.2.3-orig/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2012-09-30 19:56:52.000000000 +1000
++++ wxcore-0.13.2.3/src/haskell/Graphics/UI/WXCore/WxcTypes.hs	2013-01-13 10:08:50.420293137 +1100
 @@ -142,7 +142,12 @@
  
  import Data.Int
