@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Simple library for using the system&#39;s monotonic clock.  This library is
+		geared toward programs that need to run for long periods of time.  It does
+		not (necessarily) provide high-resolution timing.
+		
+		* On Windows, this uses @GetTickCount64@, but falls back to
+		@GetTickCount@ if it is not available.  @GetTickCount64@ was
+		introduced in Windows Vista and Windows Server 2008.
+		Support for @QueryPerformanceCounter@ is also available, but is not
+		used by default, as it is less accurate in the long run than
+		@GetTickCount@.
+		
+		* On Linux, this uses @clock_gettime@ with @CLOCK_MONOTONIC@.
+		
+		Release history:
+		
+		[0.2] Update driver API (@SystemClock@) to prevent cumulative precision loss.
+		
+		[0.1] Initial release.
+	</longdescription>
+</pkgmetadata>
