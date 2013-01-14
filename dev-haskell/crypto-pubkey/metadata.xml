@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Public Key cryptography
+		
+		Supports RSA PKCS15, RSA OAEP, RSA PSS, DSA, ElGamal signature.
+		
+		Also have primitive support for Diffie Hellman, and ElGamal encryption
+	</longdescription>
+</pkgmetadata>
