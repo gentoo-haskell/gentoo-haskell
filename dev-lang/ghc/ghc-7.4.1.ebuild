@@ -170,7 +170,7 @@ ghc_setup_cflags() {
 	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags compile -G0
+	use ia64 && append-ghc-cflags compile -G0 -Os
 
 	# Unfortunately driver/split/ghc-split.lprl is dumb
 	# enough to preserve stack marking for each split object
