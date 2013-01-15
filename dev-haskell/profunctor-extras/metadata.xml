@@ -6,6 +6,7 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
-		Profunctor extras
+		This package provides a number of utilities and constructions that arise
+		when working with profunctors that require minor extensions to Haskell 98.
 	</longdescription>
 </pkgmetadata>
