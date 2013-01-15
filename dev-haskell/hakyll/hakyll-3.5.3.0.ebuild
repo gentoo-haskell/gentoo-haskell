@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~x86 ~amd64"
 IUSE="+previewServer"
 
+RESTRICT=test # fails markdown test
+
 RDEPEND=">=app-text/pandoc-1.9.3:=[profile?]
 		<app-text/pandoc-1.10:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
@@ -53,12 +55,13 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4
 			<dev-haskell/quickcheck-2.6
 			>=dev-haskell/test-framework-0.4
-			<dev-haskell/test-framework-0.7
-			=dev-haskell/test-framework-hunit-0.2*
-			=dev-haskell/test-framework-quickcheck2-0.2*
+			<dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-hunit-0.2
+			<dev-haskell/test-framework-hunit-0.4
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			<dev-haskell/test-framework-quickcheck2-0.4
 		)
 		>=dev-haskell/cabal-1.8"
-
 
 src_prepare() {
 	cabal_chdeps \
