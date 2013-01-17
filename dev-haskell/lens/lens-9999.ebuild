@@ -29,9 +29,14 @@ RDEPEND="=dev-haskell/bifunctors-3.0*:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/parallel-3.1.0.1:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
+<<<<<<< HEAD
 		>=dev-haskell/profunctors-3.1.2:=[profile?]
 		<dev-haskell/profunctors-3.2:=[profile?]
 		>=dev-haskell/profunctor-extras-3.2:=[profile?]
+=======
+		>=dev-haskell/profunctors-3.2:=[profile?]
+		>=dev-haskell/profunctor-extras-3.3:=[profile?]
+>>>>>>> 9beace83fe703dbd2782dba11c671031e1eaf0b2
 		>=dev-haskell/semigroups-0.8.4:=[profile?]
 		<dev-haskell/semigroups-0.9:=[profile?]
 		=dev-haskell/split-0.2*:=[profile?]
