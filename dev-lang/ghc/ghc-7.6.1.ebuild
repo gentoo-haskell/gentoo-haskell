@@ -168,9 +168,9 @@ ghc_setup_cflags() {
 			# Arch and ABI flags are what we're really after
 			-m*) append-ghc-cflags compile assemble ${flag};;
 
-			# Debugging flags don't help either. You can't debug Haskell code
-			# at the C source level and the mangler discards the debug info.
-			-g*) ;;
+			# Sometimes it's handy to see backtrace of RTS
+			# to get an idea what happens there
+			-g*) append-ghc-cflags compile ${flag};;
 
 			# Ignore all other flags, including all -f* flags
 		esac
