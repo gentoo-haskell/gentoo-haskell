@@ -398,7 +398,10 @@ src_compile() {
 	#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
 	#emake $(limit_jobs -j1) all
 	# ^ above seems to be fixed.
-	emake all
+	(
+		unset ABI # bundled gmp uses ABI on it's own
+		emake all
+	) || die
 
 	if is_crosscompile; then
 		# runghc does not work for a stage1 compiler, we can build it anyway
