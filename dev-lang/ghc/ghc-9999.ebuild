@@ -374,7 +374,7 @@ src_configure() {
 
 	local econf_args=()
 	is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
-	if use ghcmakebinary; then
+	if ! use ghcmakebinary; then
 		econf_args+=--with-system-libffi
 		econf_args+=--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@')
 	fi
