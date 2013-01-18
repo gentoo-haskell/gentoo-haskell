@@ -10,5 +10,6 @@
 		<flag name='ghcbootstrap'>Internal: Bootstrap GHC from an existing GHC installation.</flag>
 		<flag name='ghcmakebinary'>Internal: Build binary friendly for redistribution.</flag>
 		<flag name='llvm'>Enable llvm code generator for ghc (activated by -fllvm)</flag>
+		<flag name='dph'>Internal: Build ghc with Data Parallel Haskell</flag>
 	</use>
 </pkgmetadata>

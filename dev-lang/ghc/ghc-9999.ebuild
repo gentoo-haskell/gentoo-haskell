@@ -55,7 +55,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary llvm"
+IUSE="dph doc +ghcbootstrap ghcmakebinary llvm"
 REQUIRED_USE="ghcbootstrap"
 
 RDEPEND="
@@ -189,25 +189,28 @@ pkg_setup() {
 git-2_gc() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	local args
+	local args="--branch=${EGIT_BRANCH}"
+	if ! use dph; then
+		args+=" --no-dph"
+	fi
 
 	pushd "${EGIT_DIR}" > /dev/null || die
 
 	git config diff.ignoreSubmodules dirty \
 		|| die 'git config --global diff.ignoreSubmodules dirty failed'
 	if [[ -f ghc-tarballs/LICENSE ]]; then
-		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite pull"
-		./sync-all --branch=${EGIT_BRANCH} --testsuite pull
+		einfo "./sync-all ${args} --testsuite pull"
+		./sync-all --testsuite pull
 		if [[ "$?" != "0" ]]; then
-			ewarn "sync-all --branch=${EGIT_BRANCH} --testsuite pull failed, trying get"
-			einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite get"
-			./sync-all --branch=${EGIT_BRANCH} --testsuite get \
-				|| die "sync-all --branch=${EGIT_BRANCH} --testsuite get failed"
+			ewarn "sync-all ${args} --testsuite pull failed, trying get"
+			einfo "./sync-all ${args} --testsuite get"
+			./sync-all ${args} --testsuite get \
+				|| die "sync-all ${args} --testsuite get failed"
 		fi
 	else
-		einfo "./sync-all --branch=${EGIT_BRANCH} --testsuite get"
-		./sync-all --branch=${EGIT_BRANCH} --testsuite get \
-			|| die "sync-all --branch=${EGIT_BRANCH} --testsuite get failed"
+		einfo "./sync-all ${args} --testsuite get"
+		./sync-all ${args} --testsuite get \
+			|| die "sync-all ${args} --testsuite get failed"
 	fi
 
 	popd > /dev/null
@@ -246,9 +249,15 @@ src_prepare() {
 		fi
 	fi
 
-	# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-	# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-	epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+	if use dph; then
+		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
+		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
+		epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+	else
+		if [ -d ${S}/libraries/dph ]; then
+			rm -rf ${S}/libraries/dph || die "Could not rm -rf ${S}/libraries/dph"
+		fi
+	fi
 
 	sed -e 's@LIBFFI_CFLAGS="-I $withval"@LIBFFI_CFLAGS="-I$withval"@' \
 		-i "${S}/configure.ac" \
