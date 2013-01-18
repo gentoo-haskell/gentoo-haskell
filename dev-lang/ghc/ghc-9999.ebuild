@@ -343,16 +343,14 @@ src_configure() {
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
-	if ! use llvm; then
-		echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
-	fi
-
 	# might need additional fiddling with --host parameter:
 	#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
 	if is_crosscompile; then
 		if [[ ${CHOST} != ${CTARGET} ]]; then
 			echo "Stage1Only=YES" >> mk/build.mk
 		fi
+		# in registerised mode ghc is too keen to use llvm
+		echo "GhcUnregisterised=YES" >> mk/build.mk
 	fi
 
 	# allows overriding build flavours for libraries:
