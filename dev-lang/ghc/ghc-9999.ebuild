@@ -347,6 +347,14 @@ src_configure() {
 		echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 	fi
 
+	# might need additional fiddling with --host parameter:
+	#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
+	if is_crosscompile; then
+		if [[ ${CHOST} != ${CTARGET} ]]; then
+			echo "Stage1Only=YES" >> mk/build.mk
+		fi
+	fi
+
 	# allows overriding build flavours for libraries:
 	# v   - vanilla (static libs)
 	# p   - profiled
