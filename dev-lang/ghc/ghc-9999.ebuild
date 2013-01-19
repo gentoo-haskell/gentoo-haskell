@@ -485,10 +485,14 @@ pkg_postinst() {
 	ewarn "For the master branch (ghc 7.7) place lines like these in"
 	ewarn "/etc/portage/package.keywords"
 	ewarn "=dev-haskell/cabal-1.17.0* **"
-	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-	ewarn "=dev-haskell/haddock-2.11.0* **"
-	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-	ewarn "=dev-lang/ghc-9999 **"
+	if [[ "${PV}" == "7.7.20121213" ]]; then
+		ewarn "=dev-haskell/deepseq-1.3.0.1* **"
+		ewarn "=dev-haskell/haddock-2.11.0* **"
+	else
+		ewarn "=dev-haskell/deepseq-1.3.0.2* **"
+		ewarn "=dev-haskell/haddock-9999* **"
+	fi
+	ewarn "=dev-lang/ghc-${PV}* **"
 	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn "You have just upgraded from an older version of GHC."
