@@ -351,6 +351,8 @@ src_configure() {
 		fi
 		# in registerised mode ghc is too keen to use llvm
 		echo "GhcUnregisterised=YES" >> mk/build.mk
+		# otherwise stage1 tries to run nonexistent ghc-split.lprl
+		echo "SplitObjs=NO" >> mk/build.mk
 	fi
 
 	# allows overriding build flavours for libraries:
