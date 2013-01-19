@@ -33,11 +33,13 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		dev-haskell/deepseq:=[profile?]
 		>=dev-haskell/failure-0.1:=[profile?]
-		>=dev-haskell/http-types-0.6:=[profile?]
+		>=dev-haskell/http-types-0.7:=[profile?]
 		>=dev-haskell/lifted-base-0.1:=[profile?]
+		>=dev-haskell/mime-types-0.1:=[profile?]
 		>=dev-haskell/monad-control-0.3:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/network-2.3:=[profile?]
+		dev-haskell/random:=[profile?]
 		dev-haskell/regex-compat:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
 		<dev-haskell/resourcet-0.5:=[profile?]
@@ -50,7 +52,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/utf8-string-0.3.4:=[profile?]
 		>=dev-haskell/void-0.5.5:=[profile?]
 		=dev-haskell/zlib-conduit-0.5*:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
