@@ -379,10 +379,10 @@ src_configure() {
 	# regular gcc.
 
 	local econf_args=()
-	is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
+	is_crosscompile || econf_args+=(--with-gcc=${CHOST}-gcc)
 	if ! use ghcmakebinary; then
-		econf_args+=--with-system-libffi
-		econf_args+=--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@')
+		econf_args+=(--with-system-libffi)
+		econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
 	fi
 
 	econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
