@@ -34,7 +34,8 @@ src_prepare() {
 
 	# for ghc snapshots (usually come with unstable Cabal API)
 	cabal_chdeps \
-		'Cabal >= 1.8 && < 1.17' 'Cabal >= 1.8 && < 1.18'
+		'Cabal >= 1.8 && < 1.17' 'Cabal >= 1.8 && < 1.18' \
+		'process    < 1.2' 'process    < 1.3'
 }
 
 src_configure() {
