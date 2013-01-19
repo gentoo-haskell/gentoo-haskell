@@ -43,7 +43,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${MY_PN}-2.3.1.0-ghc-7.6.patch"
+	epatch "${FILESDIR}/${PN}-2.3.1.0-ghc-7.6.patch"
 }
 
 src_configure() {
