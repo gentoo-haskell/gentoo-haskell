@@ -465,7 +465,11 @@ src_configure() {
 		# we have to tell it to build unregisterised on some arches
 		# ppc64: EvilMangler currently does not understand some TOCs
 		# ia64: EvilMangler bitrot
-		if use alpha || use ia64 || use ppc64; then
+		# set GHC_IS_UNREG if you like to build slow unregisterised
+		# host compiler. Handy if you plan to user resulting
+		# host compiler as a booting compiler for crosscompiler
+		# which can work only in unregisterised mode.
+		if use alpha || use ia64 || use ppc64 || [[ -n ${GHC_IS_UNREG} ]]; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
