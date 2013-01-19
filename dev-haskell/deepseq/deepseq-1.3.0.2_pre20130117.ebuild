@@ -11,7 +11,7 @@ MY_P="${P/_pre*/}"
 
 DESCRIPTION="Deep evaluation of data structures"
 HOMEPAGE="http://hackage.haskell.org/package/deepseq"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -24,4 +24,4 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-CABAL_CORE_LIB_GHC_PV="7.6.* 7.7.20121101 7.7.20121213"
+CABAL_CORE_LIB_GHC_PV="7.7.2013*"
