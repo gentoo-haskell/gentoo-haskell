@@ -274,6 +274,7 @@ src_prepare() {
 }
 
 src_configure() {
+	local econf_args=()
 	# initialize build.mk
 	echo '# Gentoo changes' > mk/build.mk
 
@@ -351,6 +352,8 @@ src_configure() {
 		fi
 		# in registerised mode ghc is too keen to use llvm
 		echo "GhcUnregisterised=YES" >> mk/build.mk
+		# above is not enough to give up on llvm (x86_64 host, ia64 target)
+		econf_args+=(--enable-unregisterised)
 		# otherwise stage1 tries to run nonexistent ghc-split.lprl
 		echo "SplitObjs=NO" >> mk/build.mk
 	fi
@@ -380,7 +383,6 @@ src_configure() {
 	# might point to ccache, once installed it will point to the users
 	# regular gcc.
 
-	local econf_args=()
 	is_crosscompile || econf_args+=(--with-gcc=${CHOST}-gcc)
 	if ! use ghcmakebinary; then
 		econf_args+=(--with-system-libffi)
