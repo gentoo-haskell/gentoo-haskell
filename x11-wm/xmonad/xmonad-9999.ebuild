@@ -17,7 +17,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="+default-term pass-focus-click"
+IUSE="+default-term"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -36,10 +36,6 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
-	if use pass-focus-click ; then
-		epatch "${FILESDIR}/${PN}-0.10-pass-focus-click.patch"
-	fi
-
 	# allow user patches
 	epatch_user
 }
