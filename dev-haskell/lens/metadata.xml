@@ -75,4 +75,7 @@
 		common haskell types, a wide array of combinators for working them, and more
 		exotic functionality, (/e.g./ getters, setters, indexed folds, isomorphisms).
 	</longdescription>
+<use>
+  <flag name='doctest'>Build and run the doctests test-suite.</flag>
+</use>
 </pkgmetadata>

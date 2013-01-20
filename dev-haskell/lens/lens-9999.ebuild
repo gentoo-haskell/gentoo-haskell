@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/ekmett/lens/"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE=""
+IUSE="doctest"
 
 RDEPEND=">=dev-haskell/bifunctors-3:=[profile?]
 		>=dev-haskell/comonad-3:=[profile?]
@@ -47,15 +47,17 @@ RDEPEND=">=dev-haskell/bifunctors-3:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/deepseq
-			>=dev-haskell/doctest-0.9.1
 			>=dev-haskell/hunit-1.2
 			dev-haskell/nats
 			>=dev-haskell/quickcheck-2.4
-			>=dev-haskell/simple-reflect-0.3.1
 			>=dev-haskell/test-framework-0.6
 			>=dev-haskell/test-framework-hunit-0.2
 			>=dev-haskell/test-framework-quickcheck2-0.2
 			>=dev-haskell/test-framework-th-0.2
+		)
+		doctest? (
+			>=dev-haskell/doctest-0.9.1
+			>=dev-haskell/simple-reflect-0.3.1
 		)
 		>=dev-haskell/cabal-1.8"
 
@@ -64,6 +66,7 @@ src_configure() {
 		--flag=-lib-werror \
 		--flag=trustworthy \
 		--flag=-safe \
+		--flag=$(usex doctest "test-doctests" "-test-doctests") \
 		--flag=test-properties \
 		--flag=test-hunit \
 		--flag=-dump-splices \
