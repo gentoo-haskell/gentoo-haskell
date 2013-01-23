@@ -412,21 +412,6 @@ src_compile() {
 		unset ABI # bundled gmp uses ABI on it's own
 		emake all
 	) || die
-
-	if is_crosscompile; then
-		# runghc does not work for a stage1 compiler, we can build it anyway
-		# so it will print the error message: not built for interactive use
-		pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
-		if [ ! -f Setup.hs ]; then
-			echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
-				> Setup.hs || die "failed to create default Setup.hs"
-		fi
-		ghc -o setup --make Setup.hs || die "setup build failed"
-		./setup configure || die "runghc configure failed"
-		sed -e "s@VERSION@\"${GHC_PV}\"@" -i runghc.hs
-		./setup build || die "runghc build failed"
-		popd
-	fi
 }
 
 src_install() {
