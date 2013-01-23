@@ -39,12 +39,16 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/network-2.3
 			<dev-haskell/network-2.5
 			=dev-haskell/network-transport-tcp-0.3*
-			=dev-haskell/test-framework-0.6*
-			=dev-haskell/test-framework-hunit-0.2*
+			>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
+			>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		)
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	cabal_chdeps \
+		'test-framework >= 0.6 && < 0.7' 'test-framework >= 0.6 && < 0.9' \
+		'test-framework-hunit >= 0.2 && < 0.3' 'test-framework-hunit >= 0.2 && < 0.4'
+
 	sed -e 's@\(by\tHans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could patch ${PN}.cabal to workaround haddock error"
