@@ -1,0 +1,207 @@
+commit 8f2ce345e71012583326dc45b9c7524b31421c6a
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Thu Jan 24 22:14:00 2013 -0800
+
+    Changes for pandoc 1.10.
+
+diff --git a/Network/Gitit/Config.hs b/Network/Gitit/Config.hs
+index 9d0a82d..ca5a890 100644
+--- a/Network/Gitit/Config.hs
++++ b/Network/Gitit/Config.hs
+@@ -110,7 +110,7 @@ extractConfig cp = do
+       let (pt, lhs) = parsePageType cfDefaultPageType
+       let markupHelpFile = show pt ++ if lhs then "+LHS" else ""
+       markupHelpPath <- liftIO $ getDataFileName $ "data" </> "markupHelp" </> markupHelpFile
+-      markupHelpText <- liftM (writeHtmlString defaultWriterOptions . readMarkdown defaultParserState) $
++      markupHelpText <- liftM (writeHtmlString def . readMarkdown def) $
+                             liftIO $ readFileUTF8 markupHelpPath
+ 
+       mimeMap' <- liftIO $ readMimeTypesFile cfMimeTypesFile
+diff --git a/Network/Gitit/ContentTransformer.hs b/Network/Gitit/ContentTransformer.hs
+index a436620..9bf656a 100644
+--- a/Network/Gitit/ContentTransformer.hs
++++ b/Network/Gitit/ContentTransformer.hs
+@@ -88,7 +88,6 @@ import System.FilePath
+ import Text.HTML.SanitizeXSS (sanitizeBalance)
+ import Text.Highlighting.Kate
+ import Text.Pandoc hiding (MathML, WebTeX, MathJax)
+-import Text.Pandoc.Shared (ObfuscationMethod(..))
+ import Text.XHtml hiding ( (</>), dir, method, password, rev )
+ #if MIN_VERSION_blaze_html(0,5,0)
+ import Text.Blaze.Html.Renderer.String as Blaze ( renderHtml )
+@@ -96,10 +95,12 @@ import Text.Blaze.Html.Renderer.String as Blaze ( renderHtml )
+ import Text.Blaze.Renderer.String as Blaze ( renderHtml )
+ #endif
+ import qualified Data.Text as T
++import qualified Data.Set as Set
+ import qualified Data.ByteString as S (concat)
+ import qualified Data.ByteString.Lazy as L (toChunks, fromChunks)
+ import qualified Data.FileStore as FS
+ import qualified Text.Pandoc as Pandoc
++
+ --
+ -- ContentTransformer runners
+ --
+@@ -346,7 +347,7 @@ pandocToHtml pandocContents = do
+   cfg <- lift getConfig
+   return $ primHtml $ T.unpack .
+            (if xssSanitize cfg then sanitizeBalance else id) . T.pack $
+-           writeHtmlString defaultWriterOptions{
++           writeHtmlString def{
+                         writerStandalone = True
+                       , writerTemplate = "$if(toc)$<div id=\"TOC\">\n$toc$\n</div>\n$endif$\n$body$"
+                       , writerHTMLMathMethod =
+@@ -357,7 +358,11 @@ pandocToHtml pandocContents = do
+                                  _      -> JsMath (Just $ base' ++
+                                                       "/js/jsMath/easy/load.js")
+                       , writerTableOfContents = toc
+-                      , writerLiterateHaskell = bird
++                      , writerExtensions = if bird
++                                              then Set.insert
++                                                   Ext_literate_haskell
++                                                   $ writerExtensions def
++                                              else writerExtensions def
+                       -- note: javascript obfuscation gives problems on preview
+                       , writerEmailObfuscation = ReferenceObfuscation
+                       } pandocContents
+@@ -500,8 +505,11 @@ updateLayout f = do
+ 
+ readerFor :: PageType -> Bool -> String -> Pandoc
+ readerFor pt lhs =
+-  let defPS = defaultParserState{ stateSmart = True
+-                                , stateLiterateHaskell = lhs }
++  let defPS = def{ readerSmart = True
++                 , readerExtensions = if lhs
++                                         then Set.insert Ext_literate_haskell
++                                              $ readerExtensions def
++                                         else readerExtensions def }
+   in case pt of
+        RST      -> readRST defPS
+        Markdown -> readMarkdown defPS
+diff --git a/Network/Gitit/Export.hs b/Network/Gitit/Export.hs
+index ac8d40a..9122095 100644
+--- a/Network/Gitit/Export.hs
++++ b/Network/Gitit/Export.hs
+@@ -23,7 +23,7 @@ module Network.Gitit.Export ( exportFormats ) where
+ import Text.Pandoc hiding (HTMLMathMethod(..))
+ import qualified Text.Pandoc as Pandoc
+ import Text.Pandoc.SelfContained as SelfContained
+-import Text.Pandoc.Shared (escapeStringUsing, readDataFile)
++import Text.Pandoc.Shared (escapeStringUsing, readDataFileUTF8)
+ import Network.Gitit.Server
+ import Network.Gitit.Framework (pathForPage, getWikiBase)
+ import Network.Gitit.Util (withTempDir, readFileUTF8)
+@@ -45,11 +45,12 @@ import System.Directory (getCurrentDirectory, setCurrentDirectory, removeFile)
+ import System.Process (runProcess, waitForProcess)
+ import Codec.Binary.UTF8.String (encodeString)
+ import Text.HTML.SanitizeXSS
++import Text.Pandoc.Writers.RTF (writeRTFWithEmbeddedImages)
+ import qualified Data.Text as T
+ import Data.List (isPrefixOf)
+ 
+ defaultRespOptions :: WriterOptions
+-defaultRespOptions = defaultWriterOptions { writerStandalone = True }
++defaultRespOptions = def { writerStandalone = True }
+ 
+ respond :: String
+         -> String
+@@ -74,13 +75,10 @@ respondX templ mimetype ext fn opts page doc = do
+   doc' <- if ext `elem` ["odt","pdf","epub","docx","rtf"]
+              then fixURLs page doc
+              else return doc
+-  doc'' <- if ext == "rtf"
+-              then liftIO $ bottomUpM rtfEmbedImage doc'
+-              else return doc'
+   respond mimetype ext (fn opts{writerTemplate = template
+                                ,writerSourceDirectory = repositoryPath cfg
+                                ,writerUserDataDir = pandocUserData cfg})
+-          page doc''
++          page doc'
+ 
+ respondS :: String -> String -> String -> (WriterOptions -> Pandoc -> String)
+           -> WriterOptions -> String -> Pandoc -> Handler
+@@ -114,7 +112,7 @@ respondSlides templ slideVariant page doc = do
+                $ T.pack body'
+     variables' <- if mathMethod cfg == MathML
+                      then do
+-                        s <- liftIO $ readDataFile (pandocUserData cfg) $
++                        s <- liftIO $ readDataFileUTF8 (pandocUserData cfg) $
+                                   "data"</>"MathMLinHTML.js"
+                         return [("mathml-script", s)]
+                      else return []
+@@ -124,7 +122,7 @@ respondSlides templ slideVariant page doc = do
+                      Left e   -> liftIO $ throwIO e
+     dzcore <- if templ == "dzslides"
+                   then do
+-                    dztempl <- liftIO $ readDataFile (pandocUserData cfg)
++                    dztempl <- liftIO $ readDataFileUTF8 (pandocUserData cfg)
+                            $ "dzslides" </> "template.html"
+                     return $ unlines
+                         $ dropWhile (not . isPrefixOf "<!-- {{{{ dzslides core")
+@@ -152,8 +150,8 @@ respondConTeXt = respondS "context" "application/x-context" "tex"
+ 
+ 
+ respondRTF :: String -> Pandoc -> Handler
+-respondRTF = respondS "rtf" "application/rtf" "rtf"
+-  writeRTF defaultRespOptions
++respondRTF = respondX "rtf" "application/rtf" "rtf"
++  (\o d -> fromString `fmap` writeRTFWithEmbeddedImages o d) defaultRespOptions
+ 
+ respondRST :: String -> Pandoc -> Handler
+ respondRST = respondS "rst" "text/plain; charset=utf-8" ""
+@@ -197,16 +195,16 @@ respondMediaWiki = respondS "mediawiki" "text/plain; charset=utf-8" ""
+ 
+ respondODT :: String -> Pandoc -> Handler
+ respondODT = respondX "opendocument" "application/vnd.oasis.opendocument.text"
+-              "odt" (writeODT Nothing) defaultRespOptions
++              "odt" writeODT defaultRespOptions
+ 
+ respondEPUB :: String -> Pandoc -> Handler
+-respondEPUB = respondX "html" "application/epub+zip" "epub" (writeEPUB Nothing [])
++respondEPUB = respondX "html" "application/epub+zip" "epub" writeEPUB
+                defaultRespOptions
+ 
+ respondDocx :: String -> Pandoc -> Handler
+ respondDocx = respondX "native"
+   "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+-  "docx" (writeDocx Nothing) defaultRespOptions
++  "docx" writeDocx defaultRespOptions
+ 
+ --- | Run shell command and return error status.  Assumes
+ -- UTF-8 locale. Note that this does not actually go through \/bin\/sh!
+diff --git a/Network/Gitit/Initialize.hs b/Network/Gitit/Initialize.hs
+index 7050690..d91f1d7 100644
+--- a/Network/Gitit/Initialize.hs
++++ b/Network/Gitit/Initialize.hs
+@@ -27,6 +27,7 @@ where
+ import System.FilePath ((</>), (<.>))
+ import Data.FileStore
+ import qualified Data.Map as M
++import qualified Data.Set as Set
+ import Network.Gitit.Util (readFileUTF8)
+ import Network.Gitit.Types
+ import Network.Gitit.State
+@@ -118,13 +119,16 @@ createDefaultPages conf = do
+     let fs = filestoreFromConfig conf
+         pt = defaultPageType conf
+         toPandoc = readMarkdown
+-                   defaultParserState{ stateSmart = True }
+-        defOpts = defaultWriterOptions{
+-                          writerStandalone = False
+-                        , writerHTMLMathMethod = JsMath
+-                                 (Just "/js/jsMath/easy/load.js")
+-                        , writerLiterateHaskell = showLHSBirdTracks conf
+-                        }
++                   def{ readerSmart = True }
++        defOpts = def{ writerStandalone = False
++                     , writerHTMLMathMethod = JsMath
++                              (Just "/js/jsMath/easy/load.js")
++                     , writerExtensions = if showLHSBirdTracks conf
++                                             then Set.insert
++                                                  Ext_literate_haskell
++                                                  $ writerExtensions def
++                                             else writerExtensions def
++                     }
+         -- note: we convert this (markdown) to the default page format
+         converter = case defaultPageType conf of
+                        Markdown -> id
