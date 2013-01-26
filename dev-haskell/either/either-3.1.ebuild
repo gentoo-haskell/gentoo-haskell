@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell 98 either monad transformer"
+DESCRIPTION="An either monad transformer"
 HOMEPAGE="http://github.com/ekmett/either/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,8 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/semigroupoids-3:=[profile?]
+RDEPEND="=dev-haskell/monadrandom-0.1*:=[profile?]
+		>=dev-haskell/mtl-2.0:=[profile?]
+		<dev-haskell/mtl-2.2:=[profile?]
+		=dev-haskell/semigroupoids-3*:=[profile?]
 		>=dev-haskell/semigroups-0.8.3.1:=[profile?]
+		<dev-haskell/semigroups-1:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
