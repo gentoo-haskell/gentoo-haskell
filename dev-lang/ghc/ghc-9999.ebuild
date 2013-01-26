@@ -269,6 +269,11 @@ src_prepare() {
 			-i utils/haddock/doc/configure.ac || die
 	fi
 
+	# cross-only, but should be safe (might need some tweaks in build depends)
+	cd "${S}/libraries/integer-gmp"
+	epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
+	cd "${S}"
+
 	# as we have changed the build system
 	eautoreconf
 }
