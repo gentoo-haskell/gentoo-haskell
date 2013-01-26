@@ -23,7 +23,6 @@
 		meant as a reference.
 	</longdescription>
 <use>
-  <flag name='unixFilter'>Include the unixFilter compiler</flag>
   <flag name='previewServer'>Include the preview server</flag>
 </use>
 </pkgmetadata>
