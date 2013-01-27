@@ -273,6 +273,7 @@ src_prepare() {
 	cd "${S}/libraries/integer-gmp"
 	epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
 	cd "${S}"
+	epatch "${FILESDIR}"/${P}-w64-vendor.patch
 
 	# as we have changed the build system
 	eautoreconf
