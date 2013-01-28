@@ -276,6 +276,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-w64-vendor.patch
 	cd "${S}/utils/hsc2hs"
 	epatch "${FILESDIR}"/${P}-hsc2hs-cross.patch
+	cd "${S}/libraries/base"
+	epatch "${FILESDIR}"/${P}-base-cross.patch
 	cd "${S}"
 
 	# as we have changed the build system
