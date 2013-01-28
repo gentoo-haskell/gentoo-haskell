@@ -274,6 +274,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-w64-vendor.patch
+	cd "${S}/utils/hsc2hs"
+	epatch "${FILESDIR}"/${P}-hsc2hs-cross.patch
+	cd "${S}"
 
 	# as we have changed the build system
 	eautoreconf
