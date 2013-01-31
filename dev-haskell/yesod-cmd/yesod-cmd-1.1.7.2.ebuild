@@ -86,7 +86,7 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-	for e in yesod yesod-ar-wrapper yesod-ghc-wrapper ; do
+	for e in yesod yesod-ar-wrapper yesod-ghc-wrapper yesod-ld-wrapper; do
 		dobin "${S}"/dist/build/${e}/${e}
 	done;
 }
