@@ -31,6 +31,9 @@
 #   nocabaldep --  don't add dependency on cabal.
 #                  only used for packages that _must_ not pull the dependency
 #                  on cabal, but still use this eclass (e.g. haskell-updater).
+#	ghcdeps	   --  constraint dependency on package to ghc onces
+#				   only used for packages that use libghc internally and _must_
+#				   not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
 inherit eutils ghc-package multilib
@@ -84,6 +87,7 @@ for feature in ${CABAL_FEATURES}; do
 		bin)        CABAL_HAS_BINARIES=yes;;
 		lib)        CABAL_HAS_LIBRARIES=yes;;
 		nocabaldep) CABAL_FROM_GHC=yes;;
+		ghcdeps)    CABAL_GHC_CONSTRAINT=yes;;
 		test-suite) CABAL_TEST_SUITE=yes;;
 		*) CABAL_UNKNOWN="${CABAL_UNKNOWN} ${feature}";;
 	esac
@@ -291,6 +295,10 @@ cabal-configure() {
 	fi
 	if [[ -n "${CABAL_TEST_SUITE}" ]]; then
 		cabalconf="${cabalconf} $(use_enable test tests)"
+	fi
+
+	if [[ -n "${CABAL_GHC_CONSTRAINT}" ]]; then
+		cabalconf=${cabalconf} $(cabal-constraint "ghc")
 	fi
 
 	local option
@@ -650,4 +658,14 @@ cabal_chdeps() {
 
 	echo "${new_c}" > "$cf" ||
 		die "failed to update"
+}
+
+# @FUNCTION: cabal-constraint
+# @DESCRIPTION:
+# Allowes to set contraint to the libraries that are
+# used by specified package
+cabal-constraint() {
+	while read p v ; do
+		echo "--constraint \"$p == $v\""
+	done < $(ghc-pkgdeps ${1})
 }

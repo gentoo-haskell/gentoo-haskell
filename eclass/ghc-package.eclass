@@ -295,6 +295,18 @@ ghc-listpkg() {
 	done
 }
 
+# @FUNCTION: ghc-pkgdeps
+# @DESCRIPTION:
+# exported function: loads a package dependency in a form
+# cabal_package version
+ghc-pkgdeps() {
+  echo $($(ghc-getghcpkg) describe "${1}") \
+	  | sed \
+		  -e '/depends/,/^.*:/ !d' \
+	      -e 's/\(.*\)-\(.*\)-\(.*\)/\1 \2/' \
+		  -e 's/^.*://g'
+}
+
 # @FUNCTION: ghc-package_pkg_postinst
 # @DESCRIPTION:
 # exported function: registers the package-specific package
