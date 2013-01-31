@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -79,3 +79,10 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	# This is a big hack we just removing all executables
+	# that depend on ghc itself this allowes us to have
+	# stand-alone yesod-cmd
+	sed  '/executable /,$ d' -i "${S}"/${PN}.cabal
+}
