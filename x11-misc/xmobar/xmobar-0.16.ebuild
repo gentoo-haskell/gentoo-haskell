@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -31,19 +31,19 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/stm-2.3
 		<dev-haskell/stm-2.5
 		=dev-haskell/x11-1.6*
-		xft? ( =dev-haskell/utf8-string-0.3*
-			=dev-haskell/x11-xft-0.3*
-		)
-		mail? ( =dev-haskell/hinotify-0.3* )
-		mpd? ( =dev-haskell/alsa-mixer-0.1*
+		alsa? ( =dev-haskell/alsa-mixer-0.1*
 			=dev-haskell/alsa-core-0.5*
-			=dev-haskell/libmpd-0.8*
 		)
+		dbus? ( >=dev-haskell/dbus-0.10 )
+		mail? ( =dev-haskell/hinotify-0.3* )
+		mpd? ( =dev-haskell/libmpd-0.8* )
+		mpris? ( >=dev-haskell/dbus-0.10 )
 		timezone? ( =dev-haskell/timezone-olson-0.1*
 			=dev-haskell/timezone-series-0.1*
 		)
-		mpris? ( >=dev-haskell/dbus-0.10 )
-		dbus? ( >=dev-haskell/dbus-0.10 )
+		xft? ( =dev-haskell/utf8-string-0.3*
+			=dev-haskell/x11-xft-0.3*
+		)
 		"
 RDEPEND+="mpd? ( media-sound/mpd )"
 
