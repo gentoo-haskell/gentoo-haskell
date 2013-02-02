@@ -52,7 +52,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/utf8-string-0.3.4:=[profile?]
 		>=dev-haskell/void-0.5.5:=[profile?]
 		=dev-haskell/zlib-conduit-0.5*:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
