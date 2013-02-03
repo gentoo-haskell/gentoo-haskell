@@ -18,10 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-3.0:=[profile?]
+RDEPEND="=dev-haskell/comonad-3*:=[profile?]
 		>=dev-haskell/contravariant-0.2.0.1:=[profile?]
-		<dev-haskell/contravariant-0.3:=[profile?]
+		<dev-haskell/contravariant-1:=[profile?]
 		>=dev-haskell/semigroups-0.8.3.1:=[profile?]
+		<dev-haskell/semigroups-1:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
