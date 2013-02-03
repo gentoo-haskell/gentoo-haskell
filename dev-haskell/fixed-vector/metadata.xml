@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Generic vectors with fixed length. Package is structured as follows:
+		
+		[@Data.Vector.Fixed@]
+		Generic API. It&#39;s suitable for both ADT-based vector like @Complex@
+		and array-based ones.
+		
+		[@Data.Vector.Fixed.Mutable@]
+		Type classes for array-based implementation.
+		
+		[@Data.Vector.Fixed.Unboxed@]
+		Unboxed vectors.
+		
+		[@Data.Vector.Fixed.Boxed@]
+		Boxed vector which can hold elements of any type.
+		
+		[@Data.Vector.Fixed.Storable@]
+		Unboxed vectors of @Storable@  types.
+		
+		[@Data.Vector.Fixed.Primitive@]
+		Unboxed vectors based on pritimive package.
+		
+		Changes in 0.1.1
+		
+		* @foldM@ and @tailWith@ added. Type synonyms for numbers up to 6 are
+		added. @Fun@ is reexported from @Data.Vector.Fixed@.
+	</longdescription>
+</pkgmetadata>
