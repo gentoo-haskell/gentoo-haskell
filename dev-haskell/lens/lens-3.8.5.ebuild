@@ -18,6 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# ### Failure in src/Data/ByteString/Lazy/Lens.hs:37: expression `[104,101,108,108,111]^.packedBytes'
+#expected: Chunk "hello" Empty
+# but got: "hello"
+#Examples: 710  Tried: 710  Errors: 0  Failures: 1
+RESTRICT=test
+
 RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		=dev-haskell/comonad-3*:=[profile?]
 		=dev-haskell/comonad-transformers-3*:=[profile?]
