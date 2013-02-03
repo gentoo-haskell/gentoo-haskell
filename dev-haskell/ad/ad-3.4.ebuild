@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-3:=[profile?]
 		=dev-haskell/data-reify-0.6*:=[profile?]
+		=dev-haskell/erf-2.0*:=[profile?]
 		>=dev-haskell/free-3:=[profile?]
 		>=dev-haskell/mtl-2:=[profile?]
 		>=dev-haskell/reflection-1.1.6:=[profile?]
@@ -30,3 +31,8 @@ DEPEND="${RDEPEND}
 			<=dev-haskell/doctest-0.10
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-lib-werror
+}
