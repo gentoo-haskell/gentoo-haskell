@@ -57,9 +57,10 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-haskell/zip-archive-0.1.1.7:=[profile?]
 		<dev-haskell/zip-archive-0.2:=[profile?]
 		=dev-haskell/zlib-0.5*:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/ansi-terminal-0.5*
+		test? ( >=dev-haskell/ansi-terminal-0.5
+			<dev-haskell/ansi-terminal-0.7
 			=dev-haskell/diff-0.2*
 			=dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
