@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_configure() {
-	cabal_src_configure $(use_enable test tests) \
-						$(cabal_flag test test_export)
+	cabal_src_configure \
+		$(use_enable test tests) \
+		$(cabal_flag test test_export)
 }
