@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.6.ebuild,v 1.6 2007/07/06 00:46:24 dcoutts Exp $
 
@@ -54,7 +54,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="binary doc ghcbootstrap"
-IUSE+=" ghcquickbuild" # overlay only
 
 RDEPEND="
 	>=sys-devel/gcc-2.95.3
@@ -323,20 +322,6 @@ src_configure() {
 		# We also need to use the GHC_CFLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${GHC_CFLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS} -Wa,--noexecstack" >> mk/build.mk
-
-		# The settings that give you the fastest complete GHC build are these:
-		if use ghcquickbuild; then
-			echo "SRC_HC_OPTS     = -H64m -O0 -fasm" >> mk/build.mk
-			echo "GhcStage1HcOpts = -O -fasm" >> mk/build.mk
-			echo "GhcStage2HcOpts = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibHcOpts    = -O0 -fasm" >> mk/build.mk
-			echo "GhcLibWays      = v" >> mk/build.mk
-			echo "SplitObjs       = NO" >> mk/build.mk
-		fi
-		# However, note that the libraries are built without optimisation, so
-		# this build isn't very useful. The resulting compiler will be very
-		# slow. On a 4-core x86 machine using MAKEOPTS="-j10", this build was
-		# timed at less than 8 minutes.
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
