@@ -12,4 +12,7 @@
 		It operates as a command line tool, embedded in an editor,
 		embedded in GHCi, via internet relay chat and on the web.
 	</longdescription>
+	<use>
+		<flag name='eval'>use <pkg>dev-haskell/mueval</pkg> to evaluate pure Haskell expressions at runtime</flag>
+	</use>
 </pkgmetadata>
