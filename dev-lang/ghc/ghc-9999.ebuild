@@ -238,7 +238,7 @@ src_prepare() {
 
 	cd "${S}" # otherwise epatch will break
 
-	epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
+	epatch "${FILESDIR}/${P}-CHOST-prefix.patch"
 
 	if ! use ghcmakebinary; then
 		# one more external depend with unstable ABI be careful to stash it
