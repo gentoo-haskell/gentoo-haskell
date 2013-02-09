@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-7.6.2.ebuild,v 1.1 2013/02/09 18:33:57 slyfox Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -298,7 +298,7 @@ src_unpack() {
 src_prepare() {
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
+	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
 		# Modify the wrapper script from the binary tarball to use GHC_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
@@ -325,12 +325,12 @@ src_prepare() {
 				mkdir "${WORKDIR}"/ghc-bin-installer || die
 				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
 				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
-				use x86-solaris && unpack ghc-6.10.4-i386-unknown-solaris2.tar.bz2
-				use ppc-macos && unpack ghc-6.10.1-powerpc-apple-darwin.tar.bz2
-				use x86-macos && unpack ghc-6.10.1-i386-apple-darwin.tar.bz2
+				use x86-solaris && unpack ghc-7.0.3-i386-unknown-solaris2.tar.bz2
+				use x86-macos && unpack ghc-7.4.1-i386-apple-darwin.tar.bz2
+				use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
 				popd > /dev/null
 
-				pushd "${WORKDIR}"/ghc-bin-installer/ghc-6.10.? > /dev/null || die
+				pushd "${WORKDIR}"/ghc-bin-installer/ghc-[67].?*.? > /dev/null || die
 				# fix the binaries so they run, on Solaris we need an
 				# LD_LIBRARY_PATH which has our prefix libdirs, on
 				# Darwin we need to replace the frameworks with our libs
@@ -339,13 +339,8 @@ src_prepare() {
 				if [[ ${CHOST} == *-solaris* ]] ; then
 					export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
 				elif [[ ${CHOST} == *-darwin* ]] ; then
-					# http://hackage.haskell.org/trac/ghc/ticket/2942
-					pushd utils/haddock/dist-install/build > /dev/null
-					ln -s Haddock haddock >& /dev/null # fails on IN-sensitive
-					popd > /dev/null
-
 					local readline_framework=GNUreadline.framework/GNUreadline
-					local gmp_framework=/opt/local/lib/libgmp.3.dylib
+					local gmp_framework=/opt/local/lib/libgmp.10.dylib
 					local ncurses_file=/opt/local/lib/libncurses.5.dylib
 					for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
 						install_name_tool -change \
