@@ -47,7 +47,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-lang/ghc-7.4.1
 
-		assistant? ( >=dev-haskell/stm-2.3 )
+		assistant? (
+			dev-haskell/async
+			>=dev-haskell/stm-2.3
+		)
 		dbus? ( >=dev-haskell/dbus-0.10.3 )
 		inotify? ( dev-haskell/hinotify )
 		s3? ( dev-haskell/hs3 )
