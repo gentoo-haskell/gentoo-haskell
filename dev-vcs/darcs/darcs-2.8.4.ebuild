@@ -50,6 +50,7 @@ DEPEND="${RDEPEND}
 		)
 		test? ( >=dev-haskell/cmdlib-0.2.1[profile?]
 				<dev-haskell/cmdlib-0.4[profile?]
+				=dev-haskell/findbin-0.0*[profile?]
 				>=dev-haskell/quickcheck-2.3
 				>=dev-haskell/shellish-0.1.3[profile?]
 				<dev-haskell/shellish-0.2[profile?]
@@ -64,24 +65,6 @@ src_prepare() {
 	rm "${S}/tests/send-output-v1.sh" || die "Could not rm send-output-v1.sh"
 	rm "${S}/tests/send-output-v2.sh" || die "Could not rm send-output-v2.sh"
 	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
-	cabal_chdeps \
-		'tar          == 0.3.*' 'tar >= 0.3 && < 0.5' \
-		'tar        == 0.3.*'   'tar >= 0.3 && < 0.5' \
-		'haskeline    >= 0.6.3 && < 0.7' 'haskeline    >= 0.6.3 && < 0.8'
-
-	epatch "${FILESDIR}/${PN}-2.8.1-tar-0.4.patch"
-	epatch "${FILESDIR}"/${P}-hack-for-haskeline-0.7-breaks-non-utf8.patch
-	epatch "${FILESDIR}"/${P}-tf-0.8.patch
-
-	# ghc-7.6
-	cabal_chdeps \
-		'base >= 4.5 && < 4.6' 'base >= 4.5 && < 4.7' \
-		'bytestring >= 0.9.0 && < 0.10' 'bytestring >= 0.9.0 && < 0.11' \
-		'containers >= 0.1 && < 0.5' 'containers >= 0.1 && < 0.6' \
-		'directory  >= 1.0.0.0 && < 1.2.0.0' 'directory  >= 1.0.0.0 && < 1.3.0.0' \
-		'unix >= 1.0 && < 2.6' 'unix >= 1.0 && < 2.7' \
-		'ghc >= 6.10 && < 7.6' 'ghc >= 6.10 && < 7.8'
-	epatch "${FILESDIR}"/${P}-ghc-7.6.patch.bz2
 }
 
 src_configure() {
