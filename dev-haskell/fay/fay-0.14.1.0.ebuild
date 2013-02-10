@@ -20,11 +20,9 @@ IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 		dev-haskell/attoparsec:=[profile?]
-		>=dev-haskell/blaze-html-0.5:=[profile?]
-		dev-haskell/blaze-markup:=[profile?]
+		dev-haskell/cabal:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		dev-haskell/ghc-paths:=[profile?]
-		dev-haskell/groom:=[profile?]
 		dev-haskell/haskeline:=[profile?]
 		dev-haskell/haskell-src-exts:=[profile?]
 		dev-haskell/hunit:=[profile?]
@@ -32,7 +30,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/optparse-applicative-0.5:=[profile?]
 		dev-haskell/pretty-show:=[profile?]
-		dev-haskell/random:=[profile?]
 		dev-haskell/safe:=[profile?]
 		dev-haskell/split:=[profile?]
 		dev-haskell/syb:=[profile?]
@@ -43,11 +40,11 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 		dev-haskell/unordered-containers:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
 		dev-haskell/vector:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-devel
+		--flag=devel
 }
