@@ -1,0 +1,17 @@
+diff --git a/lib/Prelude/Maybe.idr b/lib/Prelude/Maybe.idr
+index 0249969..0b77032 100644
+--- a/lib/Prelude/Maybe.idr
++++ b/lib/Prelude/Maybe.idr
+@@ -50,7 +50,7 @@ maybe_bind (Just x) k = k x
+ -- | Lift a semigroup into 'Maybe' forming a 'Monoid' according to
+ -- <http://en.wikipedia.org/wiki/Monoid>: \"Any semigroup S may be
+ -- turned into a monoid simply by adjoining an element e not in S
+--- and defining i+i = i and i+s = s = s+i for all s ∈ S.\"
++-- and defining i+i = i and i+s = s = s+i for all s in S.\"
+ 
+ instance (Semigroup a) => Semigroup (Maybe a) where
+   Nothing <+> m = m
+diff --git a/rts/libidris_rts.a b/rts/libidris_rts.a
+deleted file mode 100644
+index 911a51c..0000000
+Binary files a/rts/libidris_rts.a and /dev/null differ
