@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -430,8 +430,7 @@ src_install() {
 
 	emake -j1 ${insttarget} \
 		DESTDIR="${D}" \
-		|| die "make ${insttarget} failed"
-
+		|| die "make ${insttarget} failed"#nowarn
 	# remove wrapper and linker
 	rm -f "${ED}"/usr/bin/haddock*
 
