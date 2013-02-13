@@ -30,7 +30,6 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?]
 		>=dev-haskell/shakespeare-1.0.1:=[profile?]
 		<dev-haskell/shakespeare-1.1:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/hspec-1.3
