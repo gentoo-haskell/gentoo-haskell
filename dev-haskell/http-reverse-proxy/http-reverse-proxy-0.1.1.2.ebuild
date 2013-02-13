@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 		>=dev-haskell/case-insensitive-0.4:=[profile?]
-		>=dev-haskell/classy-prelude-conduit-0.3:=[profile?]
+		>=dev-haskell/classy-prelude-0.3:=[profile?]
 		>=dev-haskell/conduit-0.5:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		>=dev-haskell/http-conduit-1.6:=[profile?]
