@@ -380,6 +380,11 @@ src_prepare() {
 			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' utils/haddock/doc/configure.ac || die
 		fi
 
+		cd "${S}"/libraries/terminfo
+		# bug #454216
+		epatch "${FILESDIR}"/terminfo-0.3.2.5-tinfo.patch
+
+		cd "${S}"
 		# as we have changed the build system
 		eautoreconf
 	fi
