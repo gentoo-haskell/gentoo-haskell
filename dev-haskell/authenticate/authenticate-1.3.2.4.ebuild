@@ -21,9 +21,9 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		dev-haskell/attoparsec:=[profile?]
 		dev-haskell/blaze-builder:=[profile?]
-		=dev-haskell/blaze-builder-conduit-0.5*:=[profile?]
+		>=dev-haskell/blaze-builder-conduit-0.5:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
 		>=dev-haskell/http-conduit-1.5:=[profile?]
 		<dev-haskell/http-conduit-1.9:=[profile?]
 		>=dev-haskell/http-types-0.6:=[profile?]
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		dev-haskell/text:=[profile?]
 		>=dev-haskell/transformers-0.1:=[profile?]
 		dev-haskell/unordered-containers:=[profile?]
-		=dev-haskell/xml-conduit-1.0*:=[profile?]
+		>=dev-haskell/xml-conduit-1.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
