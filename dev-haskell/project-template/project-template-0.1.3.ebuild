@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 		dev-haskell/base64-conduit:=[profile?]
-		>=dev-haskell/classy-prelude-conduit-0.4:=[profile?]
+		>=dev-haskell/classy-prelude-0.4:=[profile?]
 		>=dev-haskell/conduit-0.5.4:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-haskell/resourcet-0.4.3:=[profile?]
