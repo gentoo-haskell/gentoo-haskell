@@ -272,8 +272,6 @@ src_prepare() {
 	# cross-only, but should be safe (might need some tweaks in build depends)
 	cd "${S}/libraries/integer-gmp"
 	epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-w64-vendor.patch
 	cd "${S}/utils/hsc2hs"
 	epatch "${FILESDIR}"/${P}-hsc2hs-cross.patch
 	cd "${S}/libraries/base"
