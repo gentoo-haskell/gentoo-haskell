@@ -1,0 +1,35 @@
+Patch based on report by George Diamantopoulos:
+
+https://groups.google.com/forum/#!topic/ganeti/xnj-WctN7HY/discussion
+diff --git a/src/System/Log/Handler/Syslog.hs b/src/System/Log/Handler/Syslog.hs
+index 52cbdc3..166120a 100644
+--- a/src/System/Log/Handler/Syslog.hs
++++ b/src/System/Log/Handler/Syslog.hs
+@@ -172,7 +172,8 @@ openlog_local :: String                 -- ^ Path to FIFO
+               -> IO SyslogHandler
+ openlog_local fifopath ident options fac pri =
+     do
+-    s <- socket AF_UNIX Datagram 0
++    s <- socket AF_UNIX Stream 0
++    connect s (SockAddrUnix fifopath)
+     openlog_generic s (SockAddrUnix fifopath) ident options fac pri
+ #endif
+ 
+@@ -191,7 +192,7 @@ openlog_remote fam hostname port ident options fac pri =
+     s <- socket fam Datagram 0
+     let addr = SockAddrInet port (head (hostAddresses he))
+     openlog_generic s addr ident options fac pri
+-    
++
+ {- | The most powerful initialization mechanism.  Takes an open datagram
+ socket. -}
+ openlog_generic :: Socket               -- ^ A datagram socket
+@@ -239,7 +240,7 @@ instance LogHandler SyslogHandler where
+             sendstr :: String -> IO String
+             sendstr [] = return []
+             sendstr omsg = do
+-                           sent <- sendTo (logsocket sh) omsg (address sh)
++                           sent <- send (logsocket sh) omsg
+                            sendstr (genericDrop sent omsg)
+         in do
+           if (elem PERROR (options sh))
