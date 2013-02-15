@@ -440,7 +440,7 @@ src_install() {
 		echo "${GHC_PV}" > "${S}/VERSION" \
 			|| die "Could not create file ${S}/VERSION"
 	fi
-	dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+	dodoc "${S}/README.md" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 
 	dobashcomp "${FILESDIR}/ghc-bash-completion"
 
