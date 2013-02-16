@@ -29,9 +29,6 @@ RESTRICT="test" # avoid depends on QC
 
 CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
 
-PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch"
-	"${FILESDIR}/${PN}-2.11.0_p20121022-needs-deepseq.patch")
-
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal
 	# configure, but will eventually get overwritten in src_compile by
