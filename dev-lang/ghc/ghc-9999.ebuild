@@ -55,7 +55,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="dph doc +ghcbootstrap ghcmakebinary llvm"
+IUSE="dph doc +ghcbootstrap ghcmakebinary llvm +shared"
 REQUIRED_USE="ghcbootstrap"
 
 RDEPEND="
@@ -372,6 +372,13 @@ src_configure() {
 	# example: GHC_LIBRARY_WAYS="v dyn"
 	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
 		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+	fi
+
+	# Experimental code. Not enabled by default in GHC yet.
+	if use shared; then
+		echo "DYNAMIC_BY_DEFAULT=YES" >> mk/build.mk
+	else
+		echo "DYNAMIC_BY_DEFAULT=NO" >> mk/build.mk
 	fi
 
 	# This is only for head builds
