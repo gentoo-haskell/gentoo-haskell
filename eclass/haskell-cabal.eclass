@@ -338,7 +338,7 @@ cabal-configure() {
 
 	if $(ghc-supports-shared-libraries); then
 		# maybe a bit lower
-		if version_is_at_least "7.7.20121114" "$(ghc-version)"; then
+		if $(ghc-supports-dynamic-by-default); then
 			cabalconf="${cabalconf} --enable-shared"
 		fi
 	fi
