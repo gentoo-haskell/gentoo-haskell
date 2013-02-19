@@ -29,8 +29,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/dataenc
 		dev-haskell/edit-distance
 		dev-haskell/extensible-exceptions
+		dev-haskell/glob
 		dev-haskell/hslogger
-		dev-haskell/http
 		dev-haskell/ifelse
 		dev-haskell/json[generic]
 		dev-haskell/lifted-base
@@ -38,13 +38,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/monad-control
 		>=dev-haskell/mtl-2.1.1
 		>=dev-haskell/network-2.0
-		dev-haskell/pcre-light
 		>=dev-haskell/quickcheck-2.1
 		dev-haskell/safesemaphore
 		dev-haskell/sha
 		dev-haskell/text
 		dev-haskell/transformers-base
 		dev-haskell/utf8-string
+		dev-haskell/uuid
 		>=dev-lang/ghc-7.4.1
 
 		assistant? (
