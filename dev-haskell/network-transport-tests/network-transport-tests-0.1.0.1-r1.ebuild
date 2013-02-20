@@ -18,10 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/ansi-terminal-0.5*:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 		=dev-haskell/mtl-2.1*:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
 		>=dev-lang/ghc-7.4.2:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5'
+}
