@@ -16,11 +16,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="system-libyaml"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		dev-haskell/attoparsec:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
 		<dev-haskell/resourcet-0.5:=[profile?]
 		dev-haskell/text:=[profile?]
@@ -28,14 +29,18 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		dev-haskell/unordered-containers:=[profile?]
 		dev-haskell/vector:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.10.4:=
+		system-libyaml? ( dev-libs/libyaml
+		)"
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 		)
-		>=dev-haskell/cabal-1.8"
+		system-libyaml? ( virtual/pkgconfig
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-system-libyaml
+		$(cabal_flag system-libyaml system-libyaml)
 }
