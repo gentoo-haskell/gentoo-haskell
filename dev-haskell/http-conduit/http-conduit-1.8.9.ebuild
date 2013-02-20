@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="network-bytestring"
 
 RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/attoparsec-0.8.0.2:=[profile?]
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
 		>=dev-haskell/certificate-1.3:=[profile?]
 		>=dev-haskell/conduit-0.5.5:=[profile?]
-		<dev-haskell/conduit-0.6:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		>=dev-haskell/cookie-0.4:=[profile?]
 		>=dev-haskell/cprng-aes-0.2:=[profile?]
 		dev-haskell/data-default:=[profile?]
@@ -51,18 +51,23 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/transformers-base-0.4:=[profile?]
 		>=dev-haskell/utf8-string-0.3.4:=[profile?]
 		>=dev-haskell/void-0.5.5:=[profile?]
-		=dev-haskell/zlib-conduit-0.5*:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-haskell/zlib-conduit-0.5:=[profile?]
+		<dev-haskell/zlib-conduit-1.1:=[profile?]
+		>=dev-lang/ghc-6.12.1:=
+		network-bytestring? ( >=dev-haskell/network-2.2.1:=[profile?]
+			<dev-haskell/network-2.2.3:=[profile?]
+			=dev-haskell/network-bytestring-0.1.3*:=[profile?]
+		)"
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			>=dev-haskell/network-conduit-0.6
 			dev-haskell/wai
 			>=dev-haskell/warp-1.3.6
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-network-bytestring
+		$(cabal_flag network-bytestring network-bytestring)
 }
