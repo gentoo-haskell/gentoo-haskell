@@ -20,9 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
-		=dev-haskell/blaze-html-0.5*:=[profile?]
+		>=dev-haskell/blaze-html-0.5:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
-		<dev-haskell/blaze-markup-0.6:=[profile?]
 		>=dev-haskell/failure-0.1:=[profile?]
 		<dev-haskell/failure-0.3:=[profile?]
 		>=dev-haskell/parsec-2:=[profile?]
