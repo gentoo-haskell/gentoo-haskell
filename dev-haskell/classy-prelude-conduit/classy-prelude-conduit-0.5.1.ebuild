@@ -18,14 +18,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/classy-prelude-0.5*:=[profile?]
+RDEPEND=">=dev-haskell/classy-prelude-0.5.1:=[profile?]
+		<dev-haskell/classy-prelude-0.6:=[profile?]
 		>=dev-haskell/conduit-0.5.4.1:=[profile?]
-		<dev-haskell/conduit-0.6:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		dev-haskell/monad-control:=[profile?]
 		dev-haskell/resourcet:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		dev-haskell/void:=[profile?]
-		=dev-haskell/xml-conduit-1.0*:=[profile?]
+		>=dev-haskell/xml-conduit-1.0:=[profile?]
+		<dev-haskell/xml-conduit-1.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/hspec
