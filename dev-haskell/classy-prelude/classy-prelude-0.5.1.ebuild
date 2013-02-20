@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/basic-prelude-0.3.2:=[profile?]
 		<dev-haskell/basic-prelude-0.4:=[profile?]
 		dev-haskell/hashable:=[profile?]
-		dev-haskell/lifted-base:=[profile?]
+		>=dev-haskell/lifted-base-0.2:=[profile?]
 		=dev-haskell/system-filepath-0.4*:=[profile?]
 		dev-haskell/text:=[profile?]
 		dev-haskell/transformers:=[profile?]
