@@ -59,8 +59,8 @@ src_configure() {
 		$(cabal_flag mpd with_mpd) \
 		$(cabal_flag alsa with_alsa) \
 		$(cabal_flag timezone with_datezone) \
-		$(cabal_flag wifi with_iwlib)
-		$(cabal_flag dbus with_wbus)
+		$(cabal_flag wifi with_iwlib) \
+		$(cabal_flag dbus with_wbus) \
 		$(cabal_flag mpris with_mpris)
 }
 
