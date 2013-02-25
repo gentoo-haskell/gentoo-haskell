@@ -16,22 +16,22 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="big-endian force-endianness reference"
 
 RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
 		>=dev-haskell/crypto-api-0.6:=[profile?]
-		<dev-haskell/crypto-api-0.11:=[profile?]
+		<dev-haskell/crypto-api-0.12:=[profile?]
 		>=dev-haskell/tagged-0.2:=[profile?]
 		<dev-haskell/tagged-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-big-endian \
-		--flag=-force-endianness \
-		--flag=-reference
+		$(cabal_flag reference reference) \
+		$(cabal_flag force-endianness force-endianness) \
+		$(cabal_flag big-endian big-endian)
 }
