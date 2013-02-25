@@ -18,18 +18,23 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-3:=[profile?]
-		>=dev-haskell/comonad-transformers-3:=[profile?]
+RDEPEND="=dev-haskell/comonad-3*:=[profile?]
+		=dev-haskell/comonad-transformers-3*:=[profile?]
 		>=dev-haskell/contravariant-0.2.0.1:=[profile?]
+		<dev-haskell/contravariant-1:=[profile?]
 		>=dev-haskell/distributive-0.2.2:=[profile?]
-		>=dev-haskell/keys-3:=[profile?]
+		<dev-haskell/distributive-1:=[profile?]
+		=dev-haskell/free-3*:=[profile?]
+		=dev-haskell/keys-3*:=[profile?]
 		>=dev-haskell/mtl-2.0.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/representable-functors-3.0.0.1:=[profile?]
-		>=dev-haskell/semigroupoids-3:=[profile?]
+		<dev-haskell/representable-functors-4:=[profile?]
+		=dev-haskell/semigroupoids-3*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-haskell/void-0.5.5.1:=[profile?]
+		<dev-haskell/void-1:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
