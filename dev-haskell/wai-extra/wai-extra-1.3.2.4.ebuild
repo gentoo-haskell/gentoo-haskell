@@ -21,9 +21,11 @@ IUSE=""
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
-		=dev-haskell/blaze-builder-conduit-0.5*:=[profile?]
+		>=dev-haskell/blaze-builder-conduit-0.5:=[profile?]
+		<dev-haskell/blaze-builder-conduit-1.1:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		=dev-haskell/date-cache-0.3*:=[profile?]
 		>=dev-haskell/fast-logger-0.2:=[profile?]
@@ -38,16 +40,18 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		=dev-haskell/void-0.5*:=[profile?]
-		=dev-haskell/wai-1.3*:=[profile?]
+		>=dev-haskell/wai-1.3:=[profile?]
+		<dev-haskell/wai-1.5:=[profile?]
 		>=dev-haskell/wai-logger-0.2:=[profile?]
 		<dev-haskell/wai-logger-0.4:=[profile?]
-		=dev-haskell/zlib-conduit-0.5*:=[profile?]
+		>=dev-haskell/zlib-conduit-0.5:=[profile?]
+		<dev-haskell/zlib-conduit-1.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			>=dev-haskell/wai-test-1.3
 			dev-haskell/zlib
 			dev-haskell/zlib-bindings
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
