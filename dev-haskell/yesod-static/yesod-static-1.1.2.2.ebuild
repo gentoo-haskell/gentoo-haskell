@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
 		>=dev-haskell/cereal-0.3:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
-		=dev-haskell/crypto-conduit-0.4*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		>=dev-haskell/crypto-conduit-0.4:=[profile?]
 		>=dev-haskell/cryptohash-0.6.1:=[profile?]
 		>=dev-haskell/file-embed-0.0.4.1:=[profile?]
 		<dev-haskell/file-embed-0.5:=[profile?]
@@ -31,11 +31,12 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
 		>=dev-haskell/text-0.9:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		>=dev-haskell/unix-compat-0.2:=[profile?]
-		=dev-haskell/wai-1.3*:=[profile?]
+		>=dev-haskell/wai-1.3:=[profile?]
+		<dev-haskell/wai-1.5:=[profile?]
 		=dev-haskell/wai-app-static-1.3*:=[profile?]
 		=dev-haskell/yesod-core-1.1*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
