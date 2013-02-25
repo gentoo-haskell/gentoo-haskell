@@ -26,18 +26,15 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		<dev-haskell/comonad-3.1:=[profile?]
 		>=dev-haskell/configurator-0.1:=[profile?]
 		<dev-haskell/configurator-0.3:=[profile?]
-		>=dev-haskell/directory-tree-0.10:=[profile?]
-		<dev-haskell/directory-tree-0.12:=[profile?]
+		=dev-haskell/directory-tree-0.11*:=[profile?]
 		=dev-haskell/dlist-0.5*:=[profile?]
-		>=dev-haskell/either-3.1:=[profile?]
-		>=dev-haskell/errors-1.3:=[profile?]
-		>=dev-haskell/hashable-1.1:=[profile?]
-		<dev-haskell/hashable-1.3:=[profile?]
+		=dev-haskell/errors-1.4*:=[profile?]
+		=dev-haskell/hashable-1.2*:=[profile?]
 		=dev-haskell/heist-0.11*:=[profile?]
-		>=dev-haskell/lens-3.7.0.1:=[profile?]
-		<dev-haskell/lens-3.9:=[profile?]
+		>=dev-haskell/lens-3.7.6:=[profile?]
+		<dev-haskell/lens-3.8:=[profile?]
 		>=dev-haskell/logict-0.4.2:=[profile?]
-		<dev-haskell/logict-0.6:=[profile?]
+		<dev-haskell/logict-0.7:=[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2:=[profile?]
 		<dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 		>dev-haskell/mtl-2.0:=[profile?]
@@ -48,10 +45,8 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		<dev-haskell/pwstore-fast-2.4:=[profile?]
 		>=dev-haskell/regex-posix-0.95:=[profile?]
 		<dev-haskell/regex-posix-1:=[profile?]
-		>=dev-haskell/snap-core-0.9:=[profile?]
-		<dev-haskell/snap-core-0.11:=[profile?]
-		>=dev-haskell/snap-server-0.9:=[profile?]
-		<dev-haskell/snap-server-0.11:=[profile?]
+		=dev-haskell/snap-core-0.9*:=[profile?]
+		=dev-haskell/snap-server-0.9*:=[profile?]
 		>=dev-haskell/stm-2.2:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
@@ -70,10 +65,3 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	cabal_chdeps \
-		'template-haskell    >= 2.2     && < 2.9' 'template-haskell    >= 2.2     && < 2.10' \
-		'either                    >= 3.1      && < 3.2' 'either                    >= 3.1' \
-		'errors                    >= 1.3      && < 1.4' 'errors                    >= 1.3'
-}
