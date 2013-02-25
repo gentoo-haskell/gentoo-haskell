@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="nooverlap"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		dev-haskell/attoparsec:=[profile?]
@@ -38,11 +38,11 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		dev-haskell/vector:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-nooverlap
+		$(cabal_flag nooverlap nooverlap)
 }
