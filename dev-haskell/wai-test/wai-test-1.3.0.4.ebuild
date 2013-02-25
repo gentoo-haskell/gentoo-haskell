@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Unit test framework (built on HUnit) for WAI applications."
-HOMEPAGE="http://www.yesodweb.com/book/wai"
+HOMEPAGE="http://www.yesodweb.com/book/web-application-interface"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -20,9 +20,11 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
-		=dev-haskell/blaze-builder-conduit-0.5*:=[profile?]
+		>=dev-haskell/blaze-builder-conduit-0.5:=[profile?]
+		<dev-haskell/blaze-builder-conduit-1.1:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		>=dev-haskell/cookie-0.2:=[profile?]
 		<dev-haskell/cookie-0.5:=[profile?]
 		>=dev-haskell/http-types-0.7:=[profile?]
@@ -31,7 +33,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		<dev-haskell/text-0.12:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		=dev-haskell/wai-1.3*:=[profile?]
+		>=dev-haskell/wai-1.3:=[profile?]
+		<dev-haskell/wai-1.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
