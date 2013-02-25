@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="openssl portable"
 
 RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
 		=dev-haskell/attoparsec-enumerator-0.3*:=[profile?]
@@ -34,16 +34,18 @@ RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
 		>=dev-haskell/network-2.3:=[profile?]
 		<dev-haskell/network-2.5:=[profile?]
 		>=dev-haskell/snap-core-0.9.3:=[profile?]
-		<dev-haskell/snap-core-0.11:=[profile?]
+		<dev-haskell/snap-core-0.10:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/unix-compat-0.2:=[profile?]
 		<dev-haskell/unix-compat-0.5:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-6.12.1:=
+		openssl? ( =dev-haskell/hsopenssl-0.10*:=[profile?]
+		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-openssl \
-		--flag=-portable
+		$(cabal_flag portable portable) \
+		$(cabal_flag openssl openssl)
 }
