@@ -21,8 +21,9 @@ IUSE=""
 RDEPEND=">=dev-haskell/parsec-3.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
 			dev-haskell/test-framework
 			dev-haskell/test-framework-hunit
-		)
-		>=dev-haskell/cabal-1.8"
+			dev-haskell/test-framework-quickcheck2
+		)"
