@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/ansi-terminal-0.5*
+		test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 			=dev-haskell/hunit-1.2*
 			>=dev-haskell/network-2.3
 			<dev-haskell/network-2.5
@@ -47,6 +47,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	cabal_chdeps \
+		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5 && < 0.7'
+
 	sed -e 's@\(by Hans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could patch ${PN}.cabal to workaround haddock error"
