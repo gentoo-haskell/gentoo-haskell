@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		=dev-haskell/zlib-0.5*:=[profile?]
 		>=dev-lang/ghc-7.4.2:="
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/ansi-terminal-0.5*
+		test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 			=dev-haskell/diff-0.2*
 			=dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
@@ -78,7 +78,8 @@ src_prepare() {
 	cabal_chdeps \
 		'test-framework >= 0.3 && < 0.7' 'test-framework >= 0.3 && < 0.9' \
 		'test-framework-hunit >= 0.2 && < 0.3' 'test-framework-hunit >= 0.2 && < 0.4' \
-		'test-framework-quickcheck2 >= 0.2.9 && < 0.3' 'test-framework-quickcheck2 >= 0.2.9 && < 0.4'
+		'test-framework-quickcheck2 >= 0.2.9 && < 0.3' 'test-framework-quickcheck2 >= 0.2.9 && < 0.4' \
+		'ansi-terminal == 0.5.*' 'ansi-terminal >= 0.5 && < 0.7'
 
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
