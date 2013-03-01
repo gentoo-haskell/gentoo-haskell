@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/data-binary-ieee754-0.3:=[profile?]
 		<dev-haskell/data-binary-ieee754-0.5:=[profile?]
 		=dev-haskell/libxml-sax-0.7*:=[profile?]
@@ -56,6 +56,6 @@ src_prepare() {
 		-e 's@unix >= 2.2 && < 2.6@unix@' \
 		-e 's@network >= 2.2 && < 2.4@network >= 2.2 \&\& < 2.5@' \
 		-e 's@vector >= 0.7 && < 0.10@vector@' \
-		-e 's@binary >= 0.4 && < 0.6@binary >= 0.4 \&\& < 0.7@' \
+		-e 's@binary >= 0.4 && < 0.6@binary >= 0.4 \&\& < 0.8@' \
 		-i "${S}/${PN}.cabal"
 }
