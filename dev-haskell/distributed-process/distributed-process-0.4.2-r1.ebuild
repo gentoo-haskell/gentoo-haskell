@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		=dev-haskell/distributed-static-0.2*:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
@@ -48,7 +48,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5 && < 0.7'
+		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5 && < 0.7' \
+		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.9'
 
 	sed -e 's@\(by Hans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
