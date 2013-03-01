@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		>=dev-haskell/distributed-process-0.4.2:=[profile?]
 		<dev-haskell/distributed-process-0.5:=[profile?]
@@ -33,6 +33,11 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
