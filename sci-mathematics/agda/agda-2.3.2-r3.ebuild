@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="epic +stdlib"
 
 RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
 		epic? ( dev-lang/epic:=[profile?] )
 		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
@@ -58,7 +58,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.7' \
+		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
 		'hashable >= 1.1.2.3 && < 1.2' 'hashable >= 1.1.2.3 && < 1.3'
 	epatch "${FILESDIR}/${PN}-2.3.2-hashable-1.2.patch"
 	sed -e '/.*emacs-mode.*$/d' \
