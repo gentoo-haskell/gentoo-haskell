@@ -16,13 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-# ### Failure in src/Data/ByteString/Lazy/Lens.hs:37: expression `[104,101,108,108,111]^.packedBytes'
-#expected: Chunk "hello" Empty
-# but got: "hello"
-#Examples: 710  Tried: 710  Errors: 0  Failures: 1
-RESTRICT=test
+IUSE="benchmark-uniplate dump-splices inlining lib-werror old-inline-pragmas safe test-doctests test-hunit test-properties trustworthy"
 
 RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		=dev-haskell/comonad-3*:=[profile?]
@@ -60,9 +54,12 @@ RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
+		>=dev-haskell/void-0.5:=[profile?]
+		<dev-haskell/void-1:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/deepseq
+		>=dev-haskell/cabal-1.8
+		test-doctests? ( test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
 			>=dev-haskell/doctest-0.9.1
 			>=dev-haskell/hunit-1.2
 			dev-haskell/nats
@@ -73,18 +70,70 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2
 			>=dev-haskell/test-framework-th-0.2
 		)
-		>=dev-haskell/cabal-1.8"
+		)
+			!test-properties? ( test? ( dev-haskell/deepseq
+			>=dev-haskell/doctest-0.9.1
+			>=dev-haskell/hunit-1.2
+			dev-haskell/nats
+			>=dev-haskell/simple-reflect-0.3.1
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-hunit-0.2
+			>=dev-haskell/test-framework-th-0.2
+		)
+		)
+		)
+			!test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
+			>=dev-haskell/doctest-0.9.1
+			dev-haskell/nats
+			>=dev-haskell/quickcheck-2.4
+			>=dev-haskell/simple-reflect-0.3.1
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			>=dev-haskell/test-framework-th-0.2
+		)
+		)
+			!test-properties? ( test? ( dev-haskell/deepseq
+			>=dev-haskell/doctest-0.9.1
+			dev-haskell/nats
+			>=dev-haskell/simple-reflect-0.3.1
+		)
+		)
+		)
+		)
+		!test-doctests? ( test-hunit? ( test-properties? ( test? ( >=dev-haskell/hunit-1.2
+			>=dev-haskell/quickcheck-2.4
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-hunit-0.2
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			>=dev-haskell/test-framework-th-0.2
+		)
+		)
+			!test-properties? ( test? ( >=dev-haskell/hunit-1.2
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-hunit-0.2
+			>=dev-haskell/test-framework-th-0.2
+		)
+		)
+		)
+			!test-hunit? ( test-properties? ( test? ( >=dev-haskell/quickcheck-2.4
+			>=dev-haskell/test-framework-0.6
+			>=dev-haskell/test-framework-quickcheck2-0.2
+			>=dev-haskell/test-framework-th-0.2
+		)
+		)
+		)
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-lib-werror \
-		--flag=trustworthy \
-		--flag=-safe \
-		--flag=test-properties \
-		--flag=test-hunit \
-		--flag=test-doctests \
-		--flag=-dump-splices \
-		--flag=-old-inline-pragmas \
-		--flag=inlining \
-		--flag=-benchmark-uniplate
+		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
+		$(cabal_flag inlining inlining) \
+		$(cabal_flag old-inline-pragmas old-inline-pragmas) \
+		$(cabal_flag dump-splices dump-splices) \
+		$(cabal_flag test-doctests test-doctests) \
+		$(cabal_flag test-hunit test-hunit) \
+		$(cabal_flag test-properties test-properties) \
+		$(cabal_flag safe safe) \
+		$(cabal_flag trustworthy trustworthy) \
+		$(cabal_flag lib-werror lib-werror)
 }
