@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4.1:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/extensible-exceptions-0.1.0:=[profile?]
 		<dev-haskell/extensible-exceptions-0.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -28,5 +28,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.4.1 && < 0.6' 'binary >= 0.4.1 && < 0.7'
+		'binary >= 0.4.1 && < 0.6' 'binary >= 0.4.1 && < 0.8'
 }
