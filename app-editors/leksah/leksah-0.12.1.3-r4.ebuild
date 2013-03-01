@@ -23,7 +23,7 @@ IUSE="dyre yi"
 RDEPEND=">=app-editors/leksah-server-0.12.1.2:=[profile?]
 		<app-editors/leksah-server-0.13:=[profile?]
 		>=dev-haskell/binary-0.5.0.0:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/binary-shared-0.8*:=[profile?]
 		>=dev-haskell/cabal-1.6.0.1:=[profile?]
 		<dev-haskell/cabal-1.18:=[profile?]
@@ -79,6 +79,8 @@ src_prepare() {
 	sed -e 's@-- ^@--@g' \
 		-i "${S}/src/IDE/SymbolNavigation.hs" \
 		|| die "Could not remove haddock markup"
+	cabal_chdeps \
+		'binary >=0.5.0.0 && <0.7' 'binary >=0.5.0.0 && <0.8'
 }
 
 src_configure() {

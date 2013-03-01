@@ -22,7 +22,7 @@ IUSE="dyre yi"
 
 RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		>=dev-haskell/binary-0.5.0.0:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/binary-shared-0.8*:=[profile?]
 		>=dev-haskell/cabal-1.6.0.1:=[profile?]
 		<dev-haskell/cabal-1.17:=[profile?]
@@ -71,7 +71,7 @@ src_prepare() {
 			-i "${S}/${PN}.cabal"
 	fi
 	cabal_chdeps \
-		'binary >=0.5.0.0 && <0.6' 'binary >=0.5.0.0 && <0.7'
+		'binary >=0.5.0.0 && <0.6' 'binary >=0.5.0.0 && <0.8'
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
 	sed -e 's@-- ^@--@g' \
