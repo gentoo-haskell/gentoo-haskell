@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
 		<dev-haskell/cryptohash-0.9:=[profile?]
 		>=dev-haskell/maccatcher-1.0:=[profile?]
@@ -38,3 +38,8 @@ DEPEND="${RDEPEND}
 			<dev-haskell/quickcheck-2.6
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.4 && < 0.7' 'binary >= 0.4 && < 0.8'
+}
