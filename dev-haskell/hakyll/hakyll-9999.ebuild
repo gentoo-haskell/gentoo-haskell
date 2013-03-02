@@ -31,7 +31,8 @@ RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
 		<dev-haskell/cryptohash-0.9:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
-		=dev-haskell/http-conduit-1.8*:=[profile?]
+		>=dev-haskell/http-conduit-1.8:=[profile?]
+		<dev-haskell/http-conduit-2.0:=[profile?]
 		>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 		>=dev-haskell/lrucache-1.1.1:=[profile?]
 		<dev-haskell/lrucache-1.2:=[profile?]
@@ -66,7 +67,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8'
+		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8' \
+		'http-conduit >= 1.8    && < 1.9' 'http-conduit >= 1.8    && < 2.0'
 }
 
 src_configure() {
