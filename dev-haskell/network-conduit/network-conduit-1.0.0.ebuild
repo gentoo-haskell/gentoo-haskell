@@ -16,19 +16,24 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="network-bytestring"
 
-RDEPEND="=dev-haskell/conduit-0.5*:=[profile?]
+RDEPEND="=dev-haskell/conduit-1.0*:=[profile?]
 		>=dev-haskell/lifted-base-0.1:=[profile?]
 		=dev-haskell/monad-control-0.3*:=[profile?]
-		>=dev-haskell/network-2.3:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.10.4:=
+		network-bytestring? ( <dev-haskell/network-2.2.3:=[profile?]
+			>=dev-haskell/network-2.2.1:=[profile?]
+			=dev-haskell/network-bytestring-0.1.3*:=[profile?]
+		)
+		!network-bytestring? ( >=dev-haskell/network-2.3:=[profile?]
+		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-network-bytestring
+		$(cabal_flag network-bytestring network-bytestring)
 }
