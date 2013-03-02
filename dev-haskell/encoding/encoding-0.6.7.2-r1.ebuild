@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/binary-0.6:=[profile?]
+RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/extensible-exceptions:=[profile?]
 		>=dev-haskell/haxml-1.22:=[profile?]
 		<dev-haskell/haxml-1.24:=[profile?]
@@ -27,6 +27,11 @@ RDEPEND="<dev-haskell/binary-0.6:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'binary < 0.6' 'binary'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
