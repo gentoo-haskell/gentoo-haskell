@@ -23,7 +23,7 @@ RESTRICT=test # fails markdown test
 RDEPEND=">=app-text/pandoc-1.9.3:=[profile?]
 		<app-text/pandoc-1.10:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/blaze-html-0.5*:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
@@ -67,7 +67,8 @@ src_prepare() {
 	cabal_chdeps \
 		'test-framework             >= 0.4 && < 0.7' 'test-framework             >= 0.4 && < 0.9' \
 		'test-framework-hunit       >= 0.2 && < 0.3' 'test-framework-hunit       >= 0.2 && < 0.4' \
-		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
+		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4' \
+		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8'
 }
 
 src_configure() {

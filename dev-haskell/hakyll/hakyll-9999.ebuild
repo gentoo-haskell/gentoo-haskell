@@ -21,7 +21,7 @@ IUSE="+previewServer"
 
 RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/blaze-html-0.5*:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
@@ -32,8 +32,7 @@ RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		<dev-haskell/cryptohash-0.9:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
 		=dev-haskell/http-conduit-1.8*:=[profile?]
-		>=dev-haskell/http-types-0.7:=[profile?]
-		<dev-haskell/http-types-0.9:=[profile?]
+		>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 		>=dev-haskell/lrucache-1.1.1:=[profile?]
 		<dev-haskell/lrucache-1.2:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
@@ -64,6 +63,11 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-quickcheck2-0.4
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8'
+}
 
 src_configure() {
 	cabal_src_configure \
