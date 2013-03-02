@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
 		>=dev-haskell/transformers-0.3:=[profile?]
 		>=dev-haskell/xml-conduit-1.0:=[profile?]
-		<=dev-haskell/xml-conduit-1.1:=[profile?]
+		<=dev-haskell/xml-conduit-1.2:=[profile?]
 		>=dev-haskell/xml-hamlet-0.4:=[profile?]
 		<=dev-haskell/xml-hamlet-0.5:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
@@ -40,3 +40,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+	  'xml-conduit >= 1.0          && <= 1.1' 'xml-conduit >= 1.0 && <= 1.2'
+	epatch "${FILESDIR}"/${P}-conduit.patch
+}
