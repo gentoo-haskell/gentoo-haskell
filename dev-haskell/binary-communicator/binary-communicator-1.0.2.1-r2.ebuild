@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.7:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -27,5 +27,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.5 && < 0.6' 'binary >= 0.5 && < 0.7'
+		'binary >= 0.5 && < 0.6' 'binary >= 0.5 && < 0.8'
 }
