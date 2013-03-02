@@ -19,21 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
-		>=dev-haskell/crypto-api-0.9:=[profile?]
-		<dev-haskell/crypto-api-0.11:=[profile?]
+		=dev-haskell/conduit-1.0*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.10.4:=
+		<dev-haskell/crypto-api-0.12:=[profile?]
+		>=dev-haskell/crypto-api-0.9:=[profile?]
+		"
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/cryptocipher-0.3
 			>=dev-haskell/cryptohash-0.7
 			>=dev-haskell/hspec-1.3
 			>=dev-haskell/skein-0.1
-		)
-		>=dev-haskell/cabal-1.8"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		--flag=-old-crypto-api
-}
+		)"
