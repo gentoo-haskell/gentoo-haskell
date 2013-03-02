@@ -22,7 +22,13 @@ RDEPEND=">=dev-haskell/criterion-0.4:=[profile?]
 		<dev-haskell/criterion-0.7:=[profile?]
 		>=dev-haskell/haskeline-0.6:=[profile?]
 		<dev-haskell/haskeline-0.8:=[profile?]
-		=dev-haskell/txt-sushi-0.5*:=[profile?]
+		>=dev-haskell/txt-sushi-0.5:=[profile?]
+		<dev-haskell/txt-sushi-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
+
+src_prepare() {
+	cabal_chdeps \
+		'txt-sushi >= 0.5 && < 0.6' 'txt-sushi >= 0.5 && < 0.7'
+}
