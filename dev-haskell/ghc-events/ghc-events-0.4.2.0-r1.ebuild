@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-		<dev-haskell/binary-0.7:=[profile?]
+		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-3.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 RESTRICT=test # missing events
 
 src_prepare() {
+	cabal_chdeps \
+		'binary     >= 0.5 && < 0.7' 'binary     >= 0.5 && < 0.8'
 	mkdir -p dist/build \
 		|| die "Could not create dist/build directory"
 	cp -p GHC/RTS/EventLogFormat.h dist/build/ \
