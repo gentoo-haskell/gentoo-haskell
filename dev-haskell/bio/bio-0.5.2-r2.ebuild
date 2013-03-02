@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.7:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/parallel:=[profile?]
 		dev-haskell/parsec:=[profile?]
