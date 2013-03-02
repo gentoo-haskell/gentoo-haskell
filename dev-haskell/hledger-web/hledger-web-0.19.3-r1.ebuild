@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,7 +30,8 @@ RDEPEND="=dev-haskell/blaze-html-0.5*:=[profile?]
 		=dev-haskell/hjsmin-0.1*:=[profile?]
 		~dev-haskell/hledger-0.19.3:=[profile?]
 		~dev-haskell/hledger-lib-0.19.3:=[profile?]
-		=dev-haskell/http-conduit-1.8*:=[profile?]
+		>=dev-haskell/http-conduit-1.8:=[profile?]
+		<dev-haskell/http-conduit-2.0:=[profile?]
 		dev-haskell/hunit:=[profile?]
 		=dev-haskell/io-storage-0.3*:=[profile?]
 		=dev-haskell/monad-control-0.3*:=[profile?]
@@ -65,5 +66,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'shakespeare-js                >= 1.0        && < 1.1' 'shakespeare-js                >= 1.0        && < 1.2' \
-		'yesod-form                    >= 1.1        && < 1.2' 'yesod-form                    >= 1.1        && < 1.3'
+		'yesod-form                    >= 1.1        && < 1.2' 'yesod-form >= 1.1 && < 1.3' \
+		'http-conduit                  >= 1.8        && < 1.9' 'http-conduit >= 1.8 && < 2.0'
 }
