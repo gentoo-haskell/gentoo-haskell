@@ -19,8 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="network-bytestring"
 
 RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
-		>=dev-haskell/attoparsec-0.8.0.2:=[profile?]
-		>=dev-haskell/attoparsec-conduit-0.5:=[profile?]
 		>=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-haskell/blaze-builder-0.2.1:=[profile?]
 		>=dev-haskell/blaze-builder-conduit-0.5:=[profile?]
@@ -38,7 +36,8 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/mime-types-0.1:=[profile?]
 		>=dev-haskell/monad-control-0.3:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		>=dev-haskell/network-2.3:=[profile?]
+		>=dev-haskell/publicsuffixlist-0.0.3:=[profile?]
+		<dev-haskell/publicsuffixlist-1.0:=[profile?]
 		dev-haskell/random:=[profile?]
 		dev-haskell/regex-compat:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
@@ -54,9 +53,11 @@ RDEPEND=">=dev-haskell/asn1-data-0.5.1:=[profile?]
 		>=dev-haskell/zlib-conduit-0.5:=[profile?]
 		<dev-haskell/zlib-conduit-1.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
-		network-bytestring? ( >=dev-haskell/network-2.2.1:=[profile?]
-			<dev-haskell/network-2.2.3:=[profile?]
+		network-bytestring? ( <dev-haskell/network-2.2.3:=[profile?]
+			>=dev-haskell/network-2.2.1:=[profile?]
 			=dev-haskell/network-bytestring-0.1.3*:=[profile?]
+		)
+		!network-bytestring? ( >=dev-haskell/network-2.3:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
