@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		>=dev-haskell/binary-0.4 <dev-haskell/binary-0.6
+		>=dev-haskell/binary-0.4 <dev-haskell/binary-0.8
 		>=dev-haskell/bio-0.4.9
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/cmdargs-0.5
