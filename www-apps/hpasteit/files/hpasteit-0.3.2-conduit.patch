@@ -1,0 +1,34 @@
+diff --git a/HPasteIt.hs b/HPasteIt.hs
+index 5b13664..bde6200 100644
+--- a/HPasteIt.hs
++++ b/HPasteIt.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE OverloadedStrings #-}
++{-# LANGUAGE OverloadedStrings, CPP #-}
+ module Main (main) where
+ 
+ import ProgOpts (ProgOpts(..), parseOpts)
+@@ -93,7 +93,11 @@ realMain PasteOpts
+ 
+     case res of
+         -- An exception is thrown if the server issues a redirect.
++#if MIN_VERSION_http_conduit(1,9,0)
++        Left (StatusCodeException (Status 302 _) hdrs _)
++#else
+         Left (StatusCodeException (Status 302 _) hdrs)
++#endif
+           | Just loc <- lookup "Location" hdrs -> do
+ 
+             putStrLn ("http://hpaste.org" ++ BS.unpack loc)
+@@ -120,7 +124,11 @@ realMain ViewOpts
+         httpLbs (rq { redirectCount = 0, responseTimeout = Just 60000000 }) man
+ 
+     case res of
++#if MIN_VERSION_http_conduit(1,9,0)
++        Left (StatusCodeException (Status 302 _) hdrs _)
++#else
+         Left (StatusCodeException (Status 302 _) hdrs)
++#endif
+           | Just "/" <- lookup "Location" hdrs -> do
+ 
+             hPutStrLn stderr $
