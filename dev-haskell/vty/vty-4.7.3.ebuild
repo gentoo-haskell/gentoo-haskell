@@ -34,10 +34,10 @@ RDEPEND=">=dev-haskell/deepseq-1.1:=[profile?]
 		>=dev-haskell/vector-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.14.0
 		test? ( >=dev-haskell/quickcheck-2.4
 			=dev-haskell/random-1.0*
-		)
-		>=dev-haskell/cabal-1.14.0"
+		)"
 
 src_prepare() {
 	cabal_chdeps \
