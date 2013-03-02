@@ -22,16 +22,16 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
 		dev-haskell/blaze-builder:=[profile?]
 		>=dev-haskell/blaze-builder-conduit-0.4:=[profile?]
-		<dev-haskell/blaze-builder-conduit-0.6:=[profile?]
+		<dev-haskell/blaze-builder-conduit-1.1:=[profile?]
 		>=dev-haskell/conduit-0.4:=[profile?]
-		<dev-haskell/conduit-0.6:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		>=dev-haskell/crypto-pubkey-types-0.1:=[profile?]
 		<dev-haskell/crypto-pubkey-types-0.3:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		>=dev-haskell/http-conduit-1.4:=[profile?]
-		<dev-haskell/http-conduit-1.9:=[profile?]
+		<dev-haskell/http-conduit-2.0:=[profile?]
 		>=dev-haskell/http-types-0.6:=[profile?]
-		<dev-haskell/http-types-0.8:=[profile?]
+		<dev-haskell/http-types-0.9:=[profile?]
 		=dev-haskell/monad-control-0.3*:=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
@@ -44,3 +44,12 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+
+	cabal_chdeps \
+		  'http-conduit                  >= 1.4      && < 1.9' 'http-conduit >= 1.4 && < 2.0'\
+          'http-types                    >= 0.6      && < 0.8' 'http-types >= 0.6 && < 0.9' \
+          'conduit                       >= 0.4      && < 0.6' 'conduit >= 0.4 && < 1.1 ' \
+		  'blaze-builder-conduit         >= 0.4      && < 0.6' 'blaze-builder-conduit'
+}
