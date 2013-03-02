@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="explicitbackend glfw glut"
+IUSE="explicitbackend glfw +glut"
 
 RDEPEND="=dev-haskell/bmp-1.2*:=[profile?]
 		=dev-haskell/glut-2.3*:=[profile?]
