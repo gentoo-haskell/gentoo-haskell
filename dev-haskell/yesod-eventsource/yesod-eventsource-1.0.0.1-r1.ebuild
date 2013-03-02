@@ -19,11 +19,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
-		=dev-haskell/conduit-0.5*:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		<dev-haskell/conduit-1.1:=[profile?]
 		dev-haskell/transformers:=[profile?]
-		=dev-haskell/wai-1.3*:=[profile?]
+		>=dev-haskell/wai-1.3:=[profile?]
+		<dev-haskell/wai-1.5:=[profile]
 		=dev-haskell/wai-eventsource-1.3*:=[profile?]
 		=dev-haskell/yesod-core-1.1*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'conduit               >= 0.5      && < 0.6' 'conduit >=0.5 && < 1.1' \
+		'wai                   >= 1.3      && < 1.4' 'wai >= 1.3 && < 1.5'
+}
