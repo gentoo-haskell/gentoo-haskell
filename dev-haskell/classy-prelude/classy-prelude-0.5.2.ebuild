@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/basic-prelude-0.3.2:=[profile?]
+RDEPEND=">=dev-haskell/basic-prelude-0.3.3:=[profile?]
 		<dev-haskell/basic-prelude-0.4:=[profile?]
 		dev-haskell/hashable:=[profile?]
 		>=dev-haskell/lifted-base-0.2:=[profile?]
@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/basic-prelude-0.3.2:=[profile?]
 		dev-haskell/vector:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/quickcheck
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
