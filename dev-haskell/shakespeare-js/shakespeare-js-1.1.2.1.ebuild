@@ -16,22 +16,22 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test_coffee test_export test_roy"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
-		>=dev-haskell/shakespeare-1.0.2:=[profile?]
+		>=dev-haskell/shakespeare-1.0.3:=[profile?]
 		<dev-haskell/shakespeare-1.1:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-test_roy \
-		--flag=-test_coffee \
-		--flag=-test_export
+		$(cabal_flag test_export test_export) \
+		$(cabal_flag test_coffee test_coffee) \
+		$(cabal_flag test_roy test_roy)
 }
