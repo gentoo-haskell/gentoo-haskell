@@ -23,7 +23,7 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		>=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
 		>=dev-haskell/blaze-html-0.4:=[profile?]
-		<dev-haskell/blaze-html-0.6:=[profile?]
+		<dev-haskell/blaze-html-0.7:=[profile?]
 		dev-haskell/cgi:=[profile?]
 		>=dev-haskell/configfile-1:=[profile?]
 		<dev-haskell/configfile-1.2:=[profile?]
@@ -67,6 +67,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
+	cabal_chdeps \
+	  'blaze-html >= 0.4 && < 0.6' 'blaze-html >= 0.4 && < 0.7'
 	haskell-cabal_src_configure \
 		$(cabal_flag plugins plugins)
 }
