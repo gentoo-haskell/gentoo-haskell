@@ -68,7 +68,8 @@ src_prepare() {
 		'test-framework             >= 0.4 && < 0.7' 'test-framework             >= 0.4 && < 0.9' \
 		'test-framework-hunit       >= 0.2 && < 0.3' 'test-framework-hunit       >= 0.2 && < 0.4' \
 		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4' \
-		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8'
+		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8' \
+		'blaze-html   >= 0.5    && < 0.6' 'blaze-html   >= 0.5    && < 0.7'
 }
 
 src_configure() {

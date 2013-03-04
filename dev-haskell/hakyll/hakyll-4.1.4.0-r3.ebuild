@@ -21,7 +21,8 @@ IUSE="+previewServer"
 RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
-		=dev-haskell/blaze-html-0.5*:=[profile?]
+		>=dev-haskell/blaze-html-0.6:=[profile?]
+		<dev-haskell/blaze-html-0.7:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
 		>=dev-haskell/citeproc-hs-0.3.2:=[profile?]
@@ -68,7 +69,8 @@ src_prepare() {
 	cabal_chdeps \
 		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8' \
 		'http-conduit >= 1.8    && < 1.9' 'http-conduit >= 1.8    && < 2.0' \
-		'http-types   >= 0.7    && < 0.8' 'http-types   >= 0.7    && < 0.9'
+		'http-types   >= 0.7    && < 0.8' 'http-types   >= 0.7    && < 0.9' \
+		'blaze-html   >= 0.5    && < 0.6' 'blaze-html   >= 0.5    && < 0.7'
 }
 
 src_configure() {
