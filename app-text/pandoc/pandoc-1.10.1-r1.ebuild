@@ -22,7 +22,8 @@ RESTRICT="test"
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
-		=dev-haskell/blaze-html-0.5*:=[profile?]
+		>=dev-haskell/blaze-html-0.5:=[profile?]
+		<dev-haskell/blaze-html-0.7:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
 		>=dev-haskell/citeproc-hs-0.3.6:=[profile?]
@@ -78,6 +79,8 @@ src_prepare() {
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
 			'-threaded' ' '
+	cabal_chdeps \
+		'blaze-html >= 0.5 && < 0.6' 'blaze-html >=0.5 && <0.7'
 }
 
 src_configure() {
