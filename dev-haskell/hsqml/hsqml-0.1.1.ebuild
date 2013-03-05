@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/network-2.3:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-7.4.1:=
-		x11-libs/qt-declarative"
+		dev-qt/qtdeclarative"
 DEPEND="${RDEPEND}
 		dev-haskell/c2hs
 		>=dev-haskell/cabal-1.10
