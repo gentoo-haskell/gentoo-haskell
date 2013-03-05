@@ -22,10 +22,10 @@ IUSE="debug"
 DOCS="${WORKDIR}/${MY_P}/INSTALL ${WORKDIR}/${MY_P}/LICENSE ${WORKDIR}/${MY_P}/README"
 
 DEPEND="virtual/opengl
-		x11-libs/qt-core:4
-		x11-libs/qt-gui:4
-		x11-libs/qt-opengl:4
-		x11-libs/qt-script:4"
+		dev-qt/qtcore:4
+		dev-qt/qtgui:4
+		dev-qt/qtopengl:4
+		dev-qt/qtscript:4"
 
 RDEPEND="${DEPEND}"
 
