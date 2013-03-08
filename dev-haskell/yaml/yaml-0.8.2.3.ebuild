@@ -34,6 +34,8 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
+		system-libyaml? ( virtual/pkgconfig
+		)
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 		)"
