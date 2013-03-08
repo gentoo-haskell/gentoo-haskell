@@ -66,13 +66,6 @@ DEPEND="${RDEPEND}
 		)
 		>=dev-haskell/cabal-1.8"
 
-src_prepare() {
-	cabal_chdeps \
-		'binary       >= 0.5    && < 0.7' 'binary       >= 0.5    && < 0.8' \
-		'http-conduit >= 1.8    && < 1.9' 'http-conduit >= 1.8    && < 2.0' \
-		'blaze-html   >= 0.5    && < 0.6' 'blaze-html   >= 0.5    && < 0.7'
-}
-
 src_configure() {
 	cabal_src_configure \
 		$(cabal_flag previewServer previewServer)
