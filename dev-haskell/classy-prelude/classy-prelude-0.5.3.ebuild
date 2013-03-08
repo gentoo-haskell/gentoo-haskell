@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/basic-prelude-0.3.3:=[profile?]
+RDEPEND=">=dev-haskell/basic-prelude-0.3.4:=[profile?]
 		<dev-haskell/basic-prelude-0.4:=[profile?]
 		dev-haskell/hashable:=[profile?]
 		>=dev-haskell/lifted-base-0.2:=[profile?]
