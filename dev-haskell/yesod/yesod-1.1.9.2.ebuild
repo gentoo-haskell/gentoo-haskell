@@ -80,10 +80,3 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	# This is a big hack we just removing all executables
-	# that depend on ghc itself this allowes us to have
-	# stand-alone yesod-cmd
-	sed  '/executable /,$ d' -i "${S}"/${PN}.cabal
-}
