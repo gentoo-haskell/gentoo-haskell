@@ -25,15 +25,17 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		=dev-haskell/strict-0.3*:=[profile?]
-		=dev-haskell/syb-0.3*:=[profile?]
+		dev-haskell/stylish-haskell:=[profile?]
+		>=dev-haskell/syb-0.3:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/yaml-0.7:=[profile?]
 		<dev-haskell/yaml-0.9:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( =dev-haskell/hunit-1.2*
 			>=dev-haskell/test-framework-0.4
 			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
 			<dev-haskell/test-framework-hunit-0.4
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
