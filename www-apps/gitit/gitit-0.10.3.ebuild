@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
 RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
-		<app-text/pandoc-1.11:=[profile?]
+		<app-text/pandoc-1.12:=[profile?]
 		>=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
 		>=dev-haskell/blaze-html-0.4:=[profile?]
@@ -36,7 +36,8 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		<dev-haskell/highlighting-kate-0.6:=[profile?]
 		>=dev-haskell/hslogger-1:=[profile?]
 		<dev-haskell/hslogger-1.3:=[profile?]
-		=dev-haskell/hstringtemplate-0.6*:=[profile?]
+		>=dev-haskell/hstringtemplate-0.6:=[profile?]
+		<dev-haskell/hstringtemplate-0.8:=[profile?]
 		>=dev-haskell/http-4000.0:=[profile?]
 		<dev-haskell/http-4000.3:=[profile?]
 		>=dev-haskell/json-0.4:=[profile?]
@@ -67,8 +68,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
-	cabal_chdeps \
-	  'blaze-html >= 0.4 && < 0.6' 'blaze-html >= 0.4 && < 0.7'
 	haskell-cabal_src_configure \
 		$(cabal_flag plugins plugins)
 }
