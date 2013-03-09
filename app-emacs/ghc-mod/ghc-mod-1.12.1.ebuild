@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/ghc-syb-utils
 		>=dev-haskell/hlint-1.7.1
 		dev-haskell/io-choice
-		dev-haskell/regex-posix
 		dev-haskell/syb
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.12.1
