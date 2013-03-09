@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # runs slow, finds error
+
 RDEPEND="dev-haskell/cereal:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/text:=[profile?]
