@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/classy-prelude-0.5.2:=[profile?]
+RDEPEND=">=dev-haskell/classy-prelude-0.5.3:=[profile?]
 		<dev-haskell/classy-prelude-0.6:=[profile?]
 		>=dev-haskell/conduit-0.5.4.1:=[profile?]
 		<dev-haskell/conduit-1.1:=[profile?]
