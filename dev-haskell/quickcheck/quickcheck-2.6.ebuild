@@ -19,7 +19,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="+base3 +base4 +templatehaskell"
+IUSE="+template_haskell"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/random:=[profile?]
@@ -31,7 +31,5 @@ S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag base3 base3) \
-		$(cabal_flag base4 base4) \
-		$(cabal_flag templatehaskell templatehaskell)
+		$(cabal_flag template_haskell templatehaskell)
 }
