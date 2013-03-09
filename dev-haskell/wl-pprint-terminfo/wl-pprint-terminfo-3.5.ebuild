@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+cursed"
 
 RDEPEND=">=dev-haskell/nats-0.1:=[profile?]
 		>=dev-haskell/semigroups-0.9:=[profile?]
@@ -31,5 +31,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=cursed
+		$(cabal_flag cursed cursed)
 }
