@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="CSS preprocessor as embedded Haskell."
-HOMEPAGE="http://sebastiaanvisser.github.com/clay"
+HOMEPAGE="http://fvisser.nl/clay"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
