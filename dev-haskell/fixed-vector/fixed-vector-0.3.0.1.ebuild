@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Generic vectors with fixed length"
+DESCRIPTION="Generic vectors with statically known size."
 HOMEPAGE="http://hackage.haskell.org/package/fixed-vector"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/primitive:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( =dev-haskell/doctest-0.9*
 			=dev-haskell/filemanip-0.3.6*
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
