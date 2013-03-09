@@ -21,8 +21,6 @@ DEPEND="$RDEPEND
 		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-3.1-ghc-7.2.patch"
-	epatch "${FILESDIR}/${PN}-3.1-ghc-7.4.patch"
 	epatch "${FILESDIR}/${PN}-3.1-haddock.patch"
 	sed -e 's@setLambdabotHome "/home/dons/lambdabot"@setLambdabotHome "/usr/bin"@' -i "${S}/dot-ghci"
 	sed -e 's@import qualified Control.Exception as C@import qualified Control.OldException as C@' -i "${S}/GOA.hs"
