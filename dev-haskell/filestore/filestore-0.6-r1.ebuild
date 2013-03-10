@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="=dev-haskell/diff-0.2*:=[profile?]
+RDEPEND=">=dev-haskell/diff-0.2:=[profile?]
+		<dev-haskell/diff-0.4:=[profile?]
 		=dev-haskell/hunit-1.2*:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parsec-2:=[profile?]
@@ -38,6 +39,11 @@ DEPEND="${RDEPEND}
 	"
 
 RESTRICT=test
+
+src_prepare() {
+	cabal_chdeps \
+		'Diff >= 0.2 && < 0.3' 'Diff >= 0.2 && < 0.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
