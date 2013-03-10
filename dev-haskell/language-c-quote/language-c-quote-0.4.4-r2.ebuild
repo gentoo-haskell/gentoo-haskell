@@ -27,7 +27,8 @@ RDEPEND="=dev-haskell/exception-mtl-0.3*:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
 		>=dev-haskell/srcloc-0.2:=[profile?]
 		<dev-haskell/srcloc-0.5:=[profile?]
-		=dev-haskell/syb-0.3*:=[profile?]
+		>=dev-haskell/syb-0.3:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		=dev-haskell/symbol-0.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
@@ -42,5 +43,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'srcloc                 >= 0.2 && < 0.4' 'srcloc                 >= 0.2 && < 0.5' \
-		'srcloc               >= 0.2 && < 0.4' 'srcloc               >= 0.2 && < 0.5'
+		'srcloc               >= 0.2 && < 0.4' 'srcloc               >= 0.2 && < 0.5' \
+		'syb                    >= 0.3 && < 0.4' 'syb                    >= 0.3 && < 0.5'
 }
