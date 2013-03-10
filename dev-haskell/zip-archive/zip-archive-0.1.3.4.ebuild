@@ -22,7 +22,6 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/digest-0.0.0.1:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1:=[profile?]
-		dev-haskell/zip-archive:=[profile?]
 		dev-haskell/zlib:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
