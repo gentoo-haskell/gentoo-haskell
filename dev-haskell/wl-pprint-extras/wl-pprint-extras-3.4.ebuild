@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/nats-0.1:=[profile?]
 		>=dev-haskell/semigroupoids-3:=[profile?]
 		>=dev-haskell/semigroups-0.9:=[profile?]
+		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/utf8-string-0.3.6:=[profile?]
 		<dev-haskell/utf8-string-0.4:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
