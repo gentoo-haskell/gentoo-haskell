@@ -29,7 +29,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		=dev-haskell/rank1dynamic-0.1*:=[profile?]
 		>=dev-haskell/stm-2.3:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
-		=dev-haskell/syb-0.3*:=[profile?]
+		>=dev-haskell/syb-0.3:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
@@ -49,7 +50,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5 && < 0.7' \
-		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.9'
+		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.9' \
+		'syb >= 0.3 && < 0.4' 'syb >= 0.3 && < 0.5'
 
 	sed -e 's@\(by Hans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
