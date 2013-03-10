@@ -33,7 +33,6 @@ DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-aa.patch
 	eautoreconf
 
 	# (UTF-8 source breaks DrIFT. workaround DrIFT bug)
