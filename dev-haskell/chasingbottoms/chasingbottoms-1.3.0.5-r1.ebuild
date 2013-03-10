@@ -27,12 +27,19 @@ RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/quickcheck-2.6:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
 		>=dev-haskell/syb-0.1.0.2:=[profile?]
-		<dev-haskell/syb-0.4:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${PN}-1.3.0.5-ghc-7.6.patch"
-	"${FILESDIR}/${PN}-1.3.0.5-ghc-7.7.patch")
+PATCHES=("${FILESDIR}/${PN}-1.3.0.5-ghc-7.6.patch")
+
+src_prepare() {
+	base_src_prepare
+
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'base >= 4.0 && < 4.7' 'base >= 4.0 && < 5.0' \
+		'syb >= 0.1.0.2 && < 0.4' 'syb >= 0.1.0.2 && < 0.5'
+}
