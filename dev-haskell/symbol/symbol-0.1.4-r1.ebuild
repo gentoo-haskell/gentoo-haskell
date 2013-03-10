@@ -21,7 +21,12 @@ IUSE=""
 RDEPEND=">=dev-haskell/deepseq-1.0[profile?]
 		<dev-haskell/deepseq-2.0[profile?]
 		>=dev-haskell/syb-0.1[profile?]
-		<dev-haskell/syb-0.4[profile?]
+		<dev-haskell/syb-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'syb        >= 0.1 && < 0.4' 'syb        >= 0.1 && < 0.5'
+}
