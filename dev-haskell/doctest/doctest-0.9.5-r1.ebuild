@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/deepseq:=[profile?]
 		>=dev-haskell/ghc-paths-0.1.0.9:=[profile?]
-		=dev-haskell/syb-0.3*:=[profile?]
+		>=dev-haskell/syb-0.3:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
@@ -33,3 +34,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/stringbuilder-0.4
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'syb           >= 0.3 && < 0.4' 'syb           >= 0.3 && < 0.5'
+}
