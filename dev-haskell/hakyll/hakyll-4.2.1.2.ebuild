@@ -15,13 +15,14 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~x86 ~amd64"
-IUSE="+previewserver"
+KEYWORDS="~amd64 ~x86"
+IUSE="+checkexternal +previewserver"
 
-RDEPEND="=app-text/pandoc-1.10*:=[profile?]
+RDEPEND=">=app-text/pandoc-1.10:=[profile?]
+		<app-text/pandoc-1.12:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
-		>=dev-haskell/blaze-html-0.6:=[profile?]
+		>=dev-haskell/blaze-html-0.5:=[profile?]
 		<dev-haskell/blaze-html-0.7:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		<dev-haskell/blaze-markup-0.6:=[profile?]
@@ -31,10 +32,6 @@ RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
 		<dev-haskell/cryptohash-0.9:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
-		>=dev-haskell/http-conduit-1.8:=[profile?]
-		<dev-haskell/http-conduit-1.10:=[profile?]
-		>=dev-haskell/http-types-0.7:=[profile?]
-		<dev-haskell/http-types-0.9:=[profile?]
 		>=dev-haskell/lrucache-1.1.1:=[profile?]
 		<dev-haskell/lrucache-1.2:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
@@ -49,6 +46,11 @@ RDEPEND="=app-text/pandoc-1.10*:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
 		<dev-haskell/text-1.12:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
+		checkexternal? ( <dev-haskell/http-conduit-1.10:=[profile?]
+			>=dev-haskell/http-conduit-1.8:=[profile?]
+			<dev-haskell/http-types-0.9:=[profile?]
+			>=dev-haskell/http-types-0.7:=[profile?]
+		)
 		previewserver? ( <dev-haskell/snap-core-0.10:=[profile?]
 			>=dev-haskell/snap-core-0.6:=[profile?]
 			<dev-haskell/snap-server-0.10:=[profile?]
@@ -68,6 +70,7 @@ DEPEND="${RDEPEND}
 		)"
 
 src_configure() {
-	cabal_src_configure \
+	haskell-cabal_src_configure \
+		$(cabal_flag checkexternal checkexternal) \
 		$(cabal_flag previewserver previewserver)
 }
