@@ -46,7 +46,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-haskell/random-1:=[profile?]
 		<dev-haskell/random-1.1:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
-		<dev-haskell/syb-0.4:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/tagsoup-0.12.5:=[profile?]
 		<dev-haskell/tagsoup-0.13:=[profile?]
 		=dev-haskell/temporary-1.1*:=[profile?]
@@ -80,7 +80,8 @@ src_prepare() {
 		cabal_chdeps \
 			'-threaded' ' '
 	cabal_chdeps \
-		'blaze-html >= 0.5 && < 0.6' 'blaze-html >=0.5 && <0.7'
+		'blaze-html >= 0.5 && < 0.6' 'blaze-html >=0.5 && <0.7' \
+		'syb >= 0.1 && < 0.4' 'syb >= 0.1 && < 0.5'
 }
 
 src_configure() {
