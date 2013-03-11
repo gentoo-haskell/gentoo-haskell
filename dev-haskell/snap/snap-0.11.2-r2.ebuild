@@ -50,7 +50,7 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		>=dev-haskell/stm-2.2:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
-		<dev-haskell/syb-0.4:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
@@ -65,3 +65,8 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'syb                       >= 0.1      && < 0.4' 'syb >=0.1 && < 0.5'
+}
