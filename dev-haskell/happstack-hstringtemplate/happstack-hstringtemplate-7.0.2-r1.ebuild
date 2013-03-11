@@ -22,9 +22,14 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
 		<dev-haskell/happstack-server-7.2:=[profile?]
 		dev-haskell/hslogger:=[profile?]
 		>=dev-haskell/hstringtemplate-0.4.3:=[profile?]
-		<dev-haskell/hstringtemplate-0.7:=[profile?]
+		<dev-haskell/hstringtemplate-0.8:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'HStringTemplate >= 0.4.3 && < 0.7' 'HStringTemplate >= 0.4.3 && <0.7'
+}
