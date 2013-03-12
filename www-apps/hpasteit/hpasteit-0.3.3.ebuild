@@ -21,20 +21,11 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		>=dev-haskell/http-conduit-1.9
-		<dev-haskell/http-conduit-2.0
-		>=dev-haskell/http-types-0.7
-		<dev-haskell/http-types-0.9
+		=dev-haskell/http-conduit-1.9*
+		=dev-haskell/http-types-0.8*
 		=dev-haskell/lifted-base-0.2*
 		=dev-haskell/network-2.4*
 		=dev-haskell/optparse-applicative-0.5*
 		=dev-haskell/safe-0.3*
 		=dev-haskell/utf8-string-0.3*
 		>=dev-lang/ghc-7.6.1"
-
-src_prepare() {
-	cabal_chdeps \
-		'http-conduit         ==1.8.*' 'http-conduit >=1.8 && < 2.0' \
-		'http-types           ==0.7.*' 'http-types >=0.7 && <0.9'
-	epatch "${FILESDIR}"/${P}-conduit.patch
-}
