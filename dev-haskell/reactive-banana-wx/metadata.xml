@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides some GUI examples for the @reactive-banana@ library,
+		using wxHaskell.
+		
+		Note: You need to install the (platform independent)
+		@cabal-macosx@ library before you can configure/build and install this library.
+		
+		Note: This library contains examples, but they are not built by default.
+		To build and install the example, use the @buildExamples@ flag like this
+		
+		@cabal install reactive-banana-wx -fbuildExamples@
+		
+		Stability forecast: The wrapper functions are rather provisional.
+	</longdescription>
+</pkgmetadata>
