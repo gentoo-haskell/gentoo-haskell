@@ -37,6 +37,11 @@ RDEPEND=">=dev-haskell/cabal-macosx-0.1:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
+src_prepare() {
+	cabal_chdeps \
+		'containers >= 0.3 && < 0.5' 'containers >= 0.3 && < 0.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag buildexamples buildexamples)
