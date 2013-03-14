@@ -20,10 +20,15 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?]
 		<dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-		>=dev-haskell/quickcheck-2.4:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		>=dev-haskell/quickcheck-2.4:2=[profile?]
+		<dev-haskell/quickcheck-2.7:2=[profile?]
 		>=dev-haskell/random-1:=[profile?]
 		>=dev-haskell/test-framework-0.7.1:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7'
+}
