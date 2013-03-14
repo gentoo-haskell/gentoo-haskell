@@ -66,7 +66,7 @@ DEPEND="${RDEPEND}
 			<dev-haskell/diff-0.4
 			=dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
+			<dev-haskell/quickcheck-2.7
 			>=dev-haskell/test-framework-0.3
 			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
@@ -79,6 +79,8 @@ src_prepare() {
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
 			'-threaded' ' '
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7'
 }
 
 src_configure() {
@@ -95,4 +97,3 @@ src_install() {
 	# COPYING is installed by the Cabal eclass
 	dodoc README COPYRIGHT changelog
 }
-
