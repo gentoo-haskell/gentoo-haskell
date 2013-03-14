@@ -26,11 +26,5 @@ RDEPEND="dev-haskell/hunit:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/${PN}-2.1.2-quickcheck-2.5.patch")
-
-src_prepare() {
-	base_src_prepare
-
-	cabal_chdeps \
-		'QuickCheck >= 2.1.0.3 && < 2.5' 'QuickCheck >= 2.1.0.3'
-}
+PATCHES=("${FILESDIR}/${PN}-2.1.2-quickcheck-2.5.patch"
+	"${FILESDIR}/${PN}-2.1.2.1-quickcheck-2.6.patch")
