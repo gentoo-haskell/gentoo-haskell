@@ -18,9 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.3:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.3:2=[profile?]
+		<dev-haskell/quickcheck-2.7:2=[profile?]
 		=dev-haskell/vector-0.10*:=[profile?]
 		>=dev-lang/ghc-7.6.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck           >= 2.3 && < 2.6' 'QuickCheck           >= 2.3 && < 2.7'
+}
