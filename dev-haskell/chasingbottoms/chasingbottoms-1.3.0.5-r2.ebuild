@@ -23,8 +23,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/quickcheck-2.1:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		>=dev-haskell/quickcheck-2.1:2=[profile?]
+		<dev-haskell/quickcheck-2.7:2=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
 		>=dev-haskell/syb-0.1.0.2:=[profile?]
 		<dev-haskell/syb-0.5:=[profile?]
@@ -41,5 +41,6 @@ src_prepare() {
 
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'base >= 4.0 && < 4.7' 'base >= 4.0 && < 5.0' \
-		'syb >= 0.1.0.2 && < 0.4' 'syb >= 0.1.0.2 && < 0.5'
+		'syb >= 0.1.0.2 && < 0.4' 'syb >= 0.1.0.2 && < 0.5' \
+		'QuickCheck >= 2.1 && < 2.6' 'QuickCheck >= 2.1 && < 2.7'
 }
