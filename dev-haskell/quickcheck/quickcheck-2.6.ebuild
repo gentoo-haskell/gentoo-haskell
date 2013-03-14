@@ -17,7 +17,7 @@ HOMEPAGE="http://code.haskell.org/QuickCheck"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="+template_haskell"
 
