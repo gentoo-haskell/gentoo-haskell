@@ -38,8 +38,8 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
-		>=dev-haskell/quickcheck-2.3:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		>=dev-haskell/quickcheck-2.3:2=[profile?]
+		<dev-haskell/quickcheck-2.7:2=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		=dev-haskell/unordered-containers-0.2*:=[profile?]
 		=dev-haskell/xhtml-3000.2*:=[profile?]
@@ -61,7 +61,8 @@ src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
 		'hashable >= 1.1.2.3 && < 1.2' 'hashable >= 1.1.2.3 && < 1.3' \
-		'hashtables == 1.0.*' 'hashtables >= 1.0 && < 1.2'
+		'hashtables == 1.0.*' 'hashtables >= 1.0 && < 1.2' \
+		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.7'
 	epatch "${FILESDIR}/${PN}-2.3.2-hashable-1.2.patch"
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
