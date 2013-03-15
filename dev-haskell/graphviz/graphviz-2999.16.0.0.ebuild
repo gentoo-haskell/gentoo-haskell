@@ -32,6 +32,11 @@ RDEPEND="=dev-haskell/colour-2.3*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14
-		test? ( >=dev-haskell/quickcheck-2.3
-			<dev-haskell/quickcheck-2.6
+		test? ( >=dev-haskell/quickcheck-2.3:2
+			<dev-haskell/quickcheck-2.7:2
 		)"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.7'
+}
