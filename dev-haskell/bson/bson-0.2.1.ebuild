@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/binary[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2[profile?]
-			<dev-haskell/quickcheck-2.6:2[profile?]
+			<dev-haskell/quickcheck-2.7:2[profile?]
 			>=dev-haskell/test-framework-0.4
 			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-quickcheck2-0.2
