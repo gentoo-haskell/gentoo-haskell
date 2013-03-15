@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/quickcheck-2.4:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		>=dev-haskell/quickcheck-2.4:2=[profile?]
+		<dev-haskell/quickcheck-2.7:2=[profile?]
 		>=dev-haskell/random-1.0:=[profile?]
 		=dev-haskell/regex-base-0.93*:=[profile?]
 		>=dev-haskell/stm-2.1:=[profile?]
@@ -32,3 +32,8 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7'
+}
