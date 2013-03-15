@@ -35,11 +35,12 @@ DEPEND="${RDEPEND}
 			=dev-haskell/hunit-1.2*
 			dev-haskell/mersenne-random-pure64
 			>=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
+			<dev-haskell/quickcheck-2.7
 		)
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.4 && < 0.7' 'binary >= 0.4 && < 0.8'
+		'binary >= 0.4 && < 0.7' 'binary >= 0.4 && < 0.8' \
+		'QuickCheck >=2.4 && < 2.6' 'QuickCheck >=2.4 && < 2.7'
 }
