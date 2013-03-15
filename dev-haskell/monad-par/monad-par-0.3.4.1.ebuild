@@ -35,5 +35,3 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-quickcheck2
 			dev-haskell/test-framework-th
 		)"
-
-RESTRICT=test # ERROR: Bad temporal pattern: ["A","D","B","C","115.33334324436743","E"]
