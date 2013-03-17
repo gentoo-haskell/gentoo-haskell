@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.0[profile?] <dev-haskell/mtl-2.2[profile?]
 		>=dev-haskell/quickcheck-2.4[profile?]
-		<dev-haskell/quickcheck-2.6[profile?]
+		<dev-haskell/quickcheck-2.7[profile?]
 		=dev-haskell/regex-base-0.93*[profile?]
 		>=dev-haskell/stm-2.1[profile?] <dev-haskell/stm-2.5[profile?]
 		>=dev-haskell/vector-0.9[profile?]
@@ -30,11 +30,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	sed -e 's@containers >= 0.2 && < 0.5@containers >= 0.2 \&\& < 0.6@' \
-		-e 's@mtl >= 2.0 && < 2.1@mtl >= 2.0 \&\& < 2.2@g' \
-		-e 's@stm >= 2.1 && < 2.3@stm >= 2.1 \&\& < 2.5@g' \
-		-e 's@QuickCheck >= 2.4 && < 2.5@QuickCheck >= 2.4 \&\& < 2.6@' \
-		-e 's@unix >= 2.4 && < 2.6@unix >= 2.4 \&\& < 2.7@' \
-		-e 's@directory >= 1.0 && < 1.2@directory >= 1.0 \&\& < 1.3@' \
-		-i "${S}/${PN}.cabal" || die "Could not loosen dependencies"
+	cabal_chdeps \
+		'containers >= 0.2 && < 0.5' 'containers >= 0.2 && < 0.6' \
+		'mtl >= 2.0 && < 2.1' 'mtl >= 2.0 && < 2.2' \
+		'stm >= 2.1 && < 2.3' 'stm >= 2.1 && < 2.5' \
+		'QuickCheck >= 2.4 && < 2.5' 'QuickCheck >= 2.4 && < 2.7' \
+		'unix >= 2.4 && < 2.6' 'unix >= 2.4 && < 2.7' \
+		'directory >= 1.0 && < 1.2' 'directory >= 1.0 && < 1.3'
 }
