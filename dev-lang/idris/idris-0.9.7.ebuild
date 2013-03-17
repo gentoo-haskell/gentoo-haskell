@@ -29,4 +29,4 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.10.4"
 
-PATCHES=("${FILESDIR}"/${PN}-0.9.6-locale.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.9.7-locale.patch)
