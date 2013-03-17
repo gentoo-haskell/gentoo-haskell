@@ -27,6 +27,11 @@ RDEPEND="=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4.2
-			<dev-haskell/quickcheck-2.6
+			<dev-haskell/quickcheck-2.7
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.4.2 && < 2.6' 'QuickCheck >= 2.4.2 && < 2.7'
+}
