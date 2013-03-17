@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
