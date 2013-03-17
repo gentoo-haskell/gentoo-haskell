@@ -31,5 +31,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'HStringTemplate >= 0.4.3 && < 0.7' 'HStringTemplate >= 0.4.3 && <0.7'
+		'HStringTemplate >= 0.4.3 && < 0.7' 'HStringTemplate >= 0.4.3 && <0.8'
 }
