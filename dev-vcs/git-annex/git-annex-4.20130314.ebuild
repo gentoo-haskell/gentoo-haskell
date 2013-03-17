@@ -32,11 +32,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/lifted-base
 		dev-haskell/missingh
 		dev-haskell/monad-control
-		>=dev-haskell/mtl-2.1.1
+		>=dev-haskell/mtl-2
 		>=dev-haskell/network-2.0
 		>=dev-haskell/quickcheck-2.1
 		dev-haskell/random
-		dev-haskell/regex-compat
+		dev-haskell/regex-tdfa
 		dev-haskell/safesemaphore
 		dev-haskell/sha
 		dev-haskell/text
