@@ -50,7 +50,7 @@ RDEPEND=">=app-editors/leksah-server-0.12.1.2:=[profile?]
 		>=dev-haskell/parsec-2.1.0.1:=[profile?]
 		<dev-haskell/parsec-3.2:=[profile?]
 		>=dev-haskell/quickcheck-2.4.2:=[profile?]
-		<dev-haskell/quickcheck-2.6:=[profile?]
+		<dev-haskell/quickcheck-2.7:=[profile?]
 		=dev-haskell/regex-base-0.93*:=[profile?]
 		=dev-haskell/regex-tdfa-1.1*:=[profile?]
 		>=dev-haskell/strict-0.3.2:=[profile?]
@@ -80,7 +80,8 @@ src_prepare() {
 		-i "${S}/src/IDE/SymbolNavigation.hs" \
 		|| die "Could not remove haddock markup"
 	cabal_chdeps \
-		'binary >=0.5.0.0 && <0.7' 'binary >=0.5.0.0 && <0.8'
+		'binary >=0.5.0.0 && <0.7' 'binary >=0.5.0.0 && <0.8' \
+		'QuickCheck >=2.4.2 && <2.6' 'QuickCheck >=2.4.2 && <2.7'
 }
 
 src_configure() {
