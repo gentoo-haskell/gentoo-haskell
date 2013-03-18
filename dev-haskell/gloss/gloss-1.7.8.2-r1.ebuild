@@ -19,14 +19,20 @@ KEYWORDS="~amd64 ~x86"
 IUSE="explicitbackend glfw +glut"
 
 RDEPEND="=dev-haskell/bmp-1.2*:=[profile?]
-		=dev-haskell/glut-2.3*:=[profile?]
-		=dev-haskell/opengl-2.6*:=[profile?]
+		>=dev-haskell/glut-2.3:=[profile?] <dev-haskell/glut-2.5:=[profile?]
+		>=dev-haskell/opengl-2.6:=[profile?] <dev-haskell/opengl-2.9:=[profile?]
 		>=dev-lang/ghc-7.6.1:=
 		glfw? ( <dev-haskell/glfw-b-0.2:=[profile?]
 			>=dev-haskell/glfw-b-0.1.0.1:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'OpenGL     == 2.6.*' 'OpenGL     >= 2.6 && < 2.9' \
+		'GLUT       == 2.3.*' 'GLUT       >= 2.3 && < 2.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
