@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="nohandles"
 
 RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
+		dev-haskell/mmorph:=[profile?]
 		>=dev-haskell/monad-control-0.3.1:=[profile?]
 		<dev-haskell/monad-control-0.4:=[profile?]
 		>=dev-haskell/resourcet-0.4.3:=[profile?]
