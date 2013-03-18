@@ -28,8 +28,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 		<dev-haskell/transformers-0.4.0:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/doctest-0.9.4.1
 			dev-haskell/ghc-paths
 			dev-haskell/hspec-meta
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
