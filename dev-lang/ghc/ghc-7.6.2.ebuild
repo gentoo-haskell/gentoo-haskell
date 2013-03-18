@@ -85,7 +85,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-IUSE="doc ghcbootstrap ghcmakebinary llvm"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
 
@@ -500,6 +500,12 @@ src_configure() {
 		# except when bootstrapping we just pick ghc up off the path
 		if ! use ghcbootstrap; then
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
+		fi
+
+		if use gmp; then
+			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
+		else
+			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 		fi
 
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was

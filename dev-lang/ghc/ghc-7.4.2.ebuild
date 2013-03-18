@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -74,7 +74,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
-IUSE="doc ghcbootstrap ghcmakebinary llvm"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
 
@@ -471,6 +471,12 @@ src_configure() {
 		# except when bootstrapping we just pick ghc up off the path
 		if ! use ghcbootstrap; then
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
+		fi
+
+		if use gmp; then
+			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
+		else
+			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 		fi
 
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was

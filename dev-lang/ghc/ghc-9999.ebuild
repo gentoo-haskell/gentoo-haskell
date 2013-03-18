@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -55,7 +55,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="dph doc +ghcbootstrap ghcmakebinary llvm +shared"
+IUSE="dph doc +ghcbootstrap ghcmakebinary +gmp llvm +shared"
 REQUIRED_USE="ghcbootstrap"
 
 RDEPEND="
@@ -379,6 +379,12 @@ src_configure() {
 		echo "DYNAMIC_BY_DEFAULT=YES" >> mk/build.mk
 	else
 		echo "DYNAMIC_BY_DEFAULT=NO" >> mk/build.mk
+	fi
+
+	if use gmp; then
+		echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
+	else
+		echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 	fi
 
 	# This is only for head builds
