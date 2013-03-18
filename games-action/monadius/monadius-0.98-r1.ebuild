@@ -25,15 +25,17 @@ RDEPEND="virtual/opengl
 	media-libs/freeglut"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
-		>=dev-haskell/glut-2.2 <dev-haskell/glut-2.4
-		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.7
+		>=dev-haskell/glut-2.2 <dev-haskell/glut-2.5
+		>=dev-haskell/opengl-2.4 <dev-haskell/opengl-2.9
 		>=dev-lang/ghc-7.0.1"
 
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'directory >= 1.1 && < 1.2' 'directory >= 1.1 && < 1.3'
+		'directory >= 1.1 && < 1.2' 'directory >= 1.1 && < 1.3' \
+		'GLUT      >= 2.2 && < 2.4' 'GLUT      >= 2.2 && < 2.5' \
+		'OpenGL    >= 2.4 && < 2.7' 'OpenGL    >= 2.4 && < 2.9'
 }
 
 src_configure() {
