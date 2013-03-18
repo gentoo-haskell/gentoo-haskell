@@ -79,8 +79,6 @@ src_prepare() {
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
 			'-threaded' ' '
-	cabal_chdeps \
-		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7'
 }
 
 src_configure() {
