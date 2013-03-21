@@ -60,6 +60,7 @@ yet_binary() {
 		#	return 0
 		#;;
 		amd64) return 0 ;;
+		ia64) return 0 ;;
 		ppc) return 0 ;;
 		ppc64) return 0 ;;
 		sparc) return 0 ;;
