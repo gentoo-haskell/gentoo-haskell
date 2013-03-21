@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A /bit set/ maintains a record of members from a type that can be mapped
+		into (non-negative) @Int@s.  Supports insertion, deletion, size, and
+		membership testing, and is completely pure (functional).
+	</longdescription>
+</pkgmetadata>
