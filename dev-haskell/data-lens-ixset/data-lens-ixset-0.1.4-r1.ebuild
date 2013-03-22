@@ -35,7 +35,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'data-lens == 2.0.*' 'data-lens >= 2.0 && < 2.11' \
-		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && <2.6'
+		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4'
 }
 
 src_configure() {
