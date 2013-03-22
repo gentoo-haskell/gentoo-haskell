@@ -394,6 +394,7 @@ src_prepare() {
 		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-7339-fix-unaligned-unreg.patch
+		epatch "${FILESDIR}"/${PN}-7.6.2-integer-simple-div-mod.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
