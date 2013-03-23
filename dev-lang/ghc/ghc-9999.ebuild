@@ -377,8 +377,10 @@ src_configure() {
 	# Experimental code. Not enabled by default in GHC yet.
 	if use shared; then
 		echo "DYNAMIC_BY_DEFAULT=YES" >> mk/build.mk
+		echo "DYNAMIC_GHC_PROGRAMS=YES" >> mk/build.mk
 	else
 		echo "DYNAMIC_BY_DEFAULT=NO" >> mk/build.mk
+		echo "DYNAMIC_GHC_PROGRAMS=NO" >> mk/build.mk
 	fi
 
 	if use gmp; then
