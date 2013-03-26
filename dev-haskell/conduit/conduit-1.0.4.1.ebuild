@@ -30,7 +30,6 @@ RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
 		>=dev-haskell/transformers-base-0.4.1:=[profile?]
 		<dev-haskell/transformers-base-0.5:=[profile?]
 		>=dev-haskell/void-0.5.5:=[profile?]
-		<dev-haskell/void-0.6:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
