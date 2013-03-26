@@ -289,11 +289,6 @@ src_configure() {
 	echo "docdir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 	echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 
-	# We also need to use the GHC_FLAGS flags when building ghc itself
-	echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
-	echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
-	echo "SRC_LD_OPTS+=${FILTERED_LDFLAGS}" >> mk/build.mk
-
 	# We can't depend on haddock except when bootstrapping when we
 	# must build docs and include them into the binary .tbz2 package
 	# app-text/dblatex is not in portage, can not build PDF or PS
@@ -388,6 +383,11 @@ src_configure() {
 	else
 		echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 	fi
+
+	# We also need to use the GHC_FLAGS flags when building ghc itself
+	echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
+	echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
+	echo "SRC_LD_OPTS+=${FILTERED_LDFLAGS}" >> mk/build.mk
 
 	# This is only for head builds
 	perl boot || die "perl boot failed"
