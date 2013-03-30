@@ -29,6 +29,7 @@ RDEPEND="=dev-haskell/colour-2.3*:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-haskell/wl-pprint-text-1.1.0.0:=[profile?]
 		<dev-haskell/wl-pprint-text-1.2.0.0:=[profile?]
+		media-gfx/graphviz
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14
