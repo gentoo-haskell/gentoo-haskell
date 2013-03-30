@@ -20,11 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.10
 		test? ( >=dev-haskell/quickcheck-2.4
-		)
-		>=dev-haskell/cabal-1.10"
-
-src_prepare() {
-	cabal_chdeps \
-		'base <4.7' 'base <5.0'
-}
+		)"
