@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=app-text/pandoc-1.10*:=[profile?]
+RDEPEND=">=app-text/pandoc-1.10:=[profile?] <app-text/pandoc-1.12:=[profile?]
 		>=dev-haskell/bktrees-0.2:=[profile?]
 		<dev-haskell/bktrees-0.4:=[profile?]
 		>=dev-haskell/fgl-5.4.2.3:=[profile?]
@@ -37,3 +37,8 @@ RDEPEND+="
 		media-gfx/graphviz"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'pandoc == 1.10.*' 'pandoc >= 1.10 && <1.12'
+}
