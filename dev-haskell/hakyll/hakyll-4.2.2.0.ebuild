@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="+checkexternal +previewserver"
 
 RDEPEND=">=app-text/pandoc-1.10:=[profile?]
@@ -31,6 +31,8 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		=dev-haskell/cmdargs-0.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
 		<dev-haskell/cryptohash-0.9:=[profile?]
+		>=dev-haskell/data-default-0.4:=[profile?]
+		<dev-haskell/data-default-0.6:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
 		>=dev-haskell/lrucache-1.1.1:=[profile?]
 		<dev-haskell/lrucache-1.2:=[profile?]
@@ -71,6 +73,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag checkexternal checkexternal) \
-		$(cabal_flag previewserver previewserver)
+		$(cabal_flag previewserver previewserver) \
+		$(cabal_flag checkexternal checkexternal)
 }
