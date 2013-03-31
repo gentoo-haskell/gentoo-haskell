@@ -16,15 +16,15 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="slow"
 
 RDEPEND=">=dev-haskell/tagged-0.4.4:=[profile?]
-		<dev-haskell/tagged-0.5:=[profile?]
+		<dev-haskell/tagged-1:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-slow
+		$(cabal_flag slow slow)
 }
