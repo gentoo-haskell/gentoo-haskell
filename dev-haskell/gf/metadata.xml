@@ -11,4 +11,10 @@
 	<use>
 		<flag name="server">server-mode (HTTP GCI)</flag>
 	</use>
+	<use>
+		<flag name="interrupt">Enable Ctrl+Break in the shell</flag>
+	</use>
+	<use>
+		<flag name="new-comp">Make -new-comp the default</flag>
+	</use>
 </pkgmetadata>

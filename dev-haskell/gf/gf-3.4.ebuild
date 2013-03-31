@@ -23,6 +23,7 @@ RDEPEND="dev-haskell/fst:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parallel-3:=[profile?]
 		dev-haskell/random:=[profile?]
+		dev-haskell/time-compat:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
 		server? ( dev-haskell/cgi:=[profile?]
 			dev-haskell/httpd-shed:=[profile?]
