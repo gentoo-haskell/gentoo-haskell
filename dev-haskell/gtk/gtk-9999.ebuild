@@ -46,8 +46,13 @@ src_prepare() {
 	sed -e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
+		-e "s@Version:        0.12.4@Version:        0.13.0@" \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
+	cabal_chdeps \
+		'glib  >= 0.12.0 && < 0.13' 'glib  >= 0.13.0' \
+		'pango >= 0.12.0 && < 0.13' 'pango >= 0.13.0' \
+		'cairo >= 0.12.0 && < 0.13' 'cairo >= 0.13.0'
 }
 
 src_configure() {
