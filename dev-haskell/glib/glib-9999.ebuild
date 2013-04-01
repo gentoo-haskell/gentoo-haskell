@@ -36,6 +36,7 @@ src_prepare() {
 		-i "${S}/Gtk2HsSetup.hs" \
 		|| die "Could not change Gtk2HsSetup.hs for GTK+ slot ${GTK_MAJ_VER}"
 	sed -e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
+		-e "s@Version:        0.12.4@Version:        0.13.0@" \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 }
