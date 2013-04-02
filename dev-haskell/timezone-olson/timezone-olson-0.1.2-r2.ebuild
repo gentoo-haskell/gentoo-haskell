@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,6 +22,8 @@ RDEPEND=">=dev-haskell/binary-0.4.1:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/extensible-exceptions-0.1.0:=[profile?]
 		<dev-haskell/extensible-exceptions-0.2:=[profile?]
+		>=dev-haskell/timezone-series-0.1.0:=[profile?]
+		<dev-haskell/timezone-series-0.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
