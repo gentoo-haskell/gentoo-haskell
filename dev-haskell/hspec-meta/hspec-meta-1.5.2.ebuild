@@ -19,11 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
-		=dev-haskell/hspec-expectations-0.3.0*:=[profile?]
+		dev-haskell/deepseq:=[profile?]
+		=dev-haskell/hspec-expectations-0.3.2*:=[profile?]
 		>=dev-haskell/hunit-1.2.5:=[profile?]
-		>=dev-haskell/quickcheck-2.4.0.1:=[profile?]
+		>=dev-haskell/quickcheck-2.5.1:=[profile?]
+		dev-haskell/quickcheck-io:=[profile?]
+		=dev-haskell/random-1.0*:=[profile?]
 		dev-haskell/setenv:=[profile?]
-		>=dev-haskell/silently-1.1.1:=[profile?]
 		>=dev-haskell/transformers-0.2.2.0:=[profile?]
 		<dev-haskell/transformers-0.4.0:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
