@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:=
