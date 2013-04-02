@@ -9,4 +9,7 @@
 		The zip-archive library provides functions for creating, modifying,
 		and extracting files from zip archives.
 	</longdescription>
+	<use>
+                <flag name="executable">Build the Zip executable.</flag>
+	</use>
 </pkgmetadata>
