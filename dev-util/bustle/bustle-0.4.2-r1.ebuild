@@ -31,16 +31,27 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)
 		>=dev-haskell/cabal-1.8
-		dev-haskell/cairo
+		dev-haskell/cairo:2
 		>=dev-haskell/dbus-0.10
-		dev-haskell/glib
-		>=dev-haskell/gtk-0.12.3
+		dev-haskell/glib:2
+		>=dev-haskell/gtk-0.12.3:2
 		dev-haskell/mtl
-		dev-haskell/pango
+		dev-haskell/pango:2
 		dev-haskell/parsec
 		dev-haskell/pcap
 		dev-haskell/text
 		>=dev-lang/ghc-6.10.4"
+
+src_prepare() {
+	sed -e 's@, cairo@, cairo >= 0.12 \&\& < 0.13@g' \
+		-e 's@, glib@, glib >= 0.12 \&\& < 0.13@g' \
+		-e 's@, gtk >= 0.12.3$@, gtk >= 0.12.3 \&\& < 0.13@' \
+		-e 's@, gtk > 0.12$@, gtk >= 0.12 \&\& < 0.13@' \
+		-e 's@, gtk$@, gtk >= 0.12 \&\& < 0.13@' \
+		-e 's@, pango@, pango >= 0.12 \&\& < 0.13@g' \
+		-i "${S}/${PN}.cabal" \
+		|| die "Could not change deps for gtk+2 in ${S}/${PN}.cabal"
+}
 
 src_compile() {
 	# compile haskell part
