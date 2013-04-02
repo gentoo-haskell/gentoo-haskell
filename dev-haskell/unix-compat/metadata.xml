@@ -11,4 +11,7 @@
 		package when available. When it isn&#39;t available,
 		portable implementations are used.
 	</longdescription>
+<use>
+  <flag name='old-time'>build against old-time package</flag>
+</use>
 </pkgmetadata>
