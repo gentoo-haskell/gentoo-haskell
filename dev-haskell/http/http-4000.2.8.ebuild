@@ -19,16 +19,14 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
-IUSE="mtl1 network23 warn-as-error"
+# hackport-args: --always-disabled='mtl1 network23 old-base warn-as-error'
+IUSE=""
 
 RDEPEND="<dev-haskell/network-2.5:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
-		mtl1? ( =dev-haskell/mtl-1.1*:=[profile?]
-		)
-		!mtl1? ( <dev-haskell/mtl-2.2:=[profile?]
-			>=dev-haskell/mtl-2.0:=[profile?]
-		)"
+		>=dev-haskell/mtl-2.0:=[profile?]
+		<dev-haskell/mtl-2.2:=[profile?]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 RESTRICT=test # missing modules: Could not find module `Httpd'
@@ -55,8 +53,9 @@ S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag mtl1 mtl1) \
-		$(cabal_flag warn-as-error warn-as-error) \
-		$(cabal_flag network23 network23) \
+		--flag=-network23 \
+		--flag=-warn-as-error \
+		--flag=-mtl1 \
+		--flag=-old-base \
 		--disable-tests
 }
