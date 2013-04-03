@@ -24,8 +24,9 @@ IUSE=""
 RDEPEND="dev-haskell/objectname:=[profile?]
 		dev-haskell/statevar:=[profile?]
 		dev-haskell/tensor:=[profile?]
+		media-libs/openal
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-0"
+		dev-haskell/cabal"
 
 S="${WORKDIR}/${MY_P}"
