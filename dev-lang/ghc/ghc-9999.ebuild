@@ -245,7 +245,9 @@ src_prepare() {
 		if [[ "${EGIT_BRANCH}" == "ghc-7.4" || ( -n ${GHC_USE_7_4_2_SYSTEM_LIBFFI_PATCH} ) ]]; then
 			epatch "${FILESDIR}"/${PN}-7.4.2-system-libffi.patch
 		else
-			epatch "${FILESDIR}"/${PN}-7.7.20121213-system-libffi.patch
+			if [[ ${PV} == *7.7.20121213 ]]; then
+				epatch "${FILESDIR}"/${PN}-7.7.20121213-system-libffi.patch
+			fi
 		fi
 	fi
 
