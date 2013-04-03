@@ -18,7 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86 ~amd64-linux ~ppc64 ~ppc-macos ~x86-linux"
 IUSE=""
 
-RDEPEND="dev-haskell/dlist:=[profile?]
+RDEPEND="dev-haskell/data-default-class:=[profile?]
+		dev-haskell/data-default-instances-base:=[profile?]
+		dev-haskell/data-default-instances-containers:=[profile?]
+		dev-haskell/data-default-instances-dlist:=[profile?]
+		dev-haskell/data-default-instances-old-locale:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
