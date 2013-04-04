@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="portable testprog"
 
 RDEPEND="dev-haskell/binary:=[profile?]
 		>=dev-haskell/deepseq-1.1:=[profile?]
@@ -26,26 +26,27 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-lang/ghc-6.12.1:=
-		>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]"
+		>=dev-lang/ghc-7.4.1:=
+		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
+			<dev-haskell/unordered-containers-0.2:=[profile?]
+		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
+			<dev-haskell/unordered-containers-0.3:=[profile?]
+		) )
+		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
+			<dev-haskell/unordered-containers-0.2:=[profile?]
+		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
+			<dev-haskell/unordered-containers-0.3:=[profile?]
+		) )
+		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
+			<dev-haskell/unordered-containers-0.2:=[profile?]
+		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
+			<dev-haskell/unordered-containers-0.3:=[profile?]
+		) )"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-# shake-test: ASSERTION FAILED: File contents are wrong: output/cache/trace.txt
-# WANT: 11
-#GOT: 1
-RESTRICT=test
-
 src_configure() {
-	cabal_src_configure $(cabal_flag test testprog)
-}
-
-src_test() {
-	shake_datadir="." dist/build/shake-test/shake-test test || die
-}
-
-src_install() {
-	haskell-cabal_src_install
-
-	use test && rm "${ED}/usr/bin/shake-test"
+	haskell-cabal_src_configure \
+		$(cabal_flag testprog testprog) \
+		$(cabal_flag portable portable)
 }
