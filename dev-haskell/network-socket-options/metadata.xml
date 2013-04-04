@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The network package provides getSocketOption and setSocketOption functions.
+		These work fine for socket options represented using the @int@ type
+		(namely, all boolean options, and a few quantity options).  However, it
+		doesn&#39;t work for, say, @SO_LINGER@, @SO_RCVTIMEO@, and @SO_SNDTIMEO@, as
+		these use different, platform-specific representations.
+		
+		This package implements the getters and setters as separate functions.  At
+		the moment, it only provides socket options that are available for both
+		Unix and Windows.
+		
+		This package also provides a workaround needed to time out network
+		operations in Windows without leaking resources.
+	</longdescription>
+</pkgmetadata>
