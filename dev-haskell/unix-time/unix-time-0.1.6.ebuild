@@ -18,15 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test
-#1) UnixTime.formatUnixTime behaves like the model FAILED
-#*** Failed! Falsifiable (after 5 tests): 
-#UnixTime {utSeconds = 787622060, utMicroSeconds = 710658}
-
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10
 		test? ( >=dev-haskell/doctest-0.9.3
-			dev-haskell/hspec
+			>=dev-haskell/hspec-1.5
 			dev-haskell/quickcheck
 		)"
