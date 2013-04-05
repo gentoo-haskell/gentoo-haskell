@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test_coffee test_export test_roy"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
-		>=dev-haskell/shakespeare-1.0.3:=[profile?]
+		>=dev-haskell/shakespeare-1.0.4:=[profile?]
 		<dev-haskell/shakespeare-1.1:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag test_export test_export) \
 		$(cabal_flag test_coffee test_coffee) \
+		$(cabal_flag test_export test_export) \
 		$(cabal_flag test_roy test_roy)
 }
