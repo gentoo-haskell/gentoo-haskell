@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
 		>=dev-haskell/cereal-0.3:=[profile?]
@@ -24,18 +24,18 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
 		>=dev-haskell/cprng-aes-0.2:=[profile?]
 		>=dev-haskell/crypto-api-0.8:=[profile?]
 		>=dev-haskell/entropy-0.2.1:=[profile?]
-		=dev-haskell/skein-0.1*:=[profile?]
+		=dev-haskell/skein-1.0*:=[profile?]
 		>=dev-haskell/tagged-0.1:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			>=dev-haskell/quickcheck-2
 			dev-haskell/transformers
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-test
+		$(cabal_flag test test)
 }
