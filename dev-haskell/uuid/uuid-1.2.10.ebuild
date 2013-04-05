@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
-		<dev-haskell/cryptohash-0.9:=[profile?]
+		<dev-haskell/cryptohash-0.10:=[profile?]
 		>=dev-haskell/maccatcher-1.0:=[profile?]
 		<dev-haskell/maccatcher-2.2:=[profile?]
 		>=dev-haskell/random-1.0.1:=[profile?]
