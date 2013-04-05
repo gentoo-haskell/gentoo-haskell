@@ -30,15 +30,10 @@ RDEPEND="dev-haskell/conduit:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
-			<dev-haskell/hspec-1.5
+			<dev-haskell/hspec-1.6
 			dev-haskell/hunit
 			dev-haskell/monad-control
 			=dev-haskell/persistent-sqlite-1.1*
 			=dev-haskell/persistent-template-1.1*
 			dev-haskell/quickcheck
 		)"
-
-src_prepare () {
-	epatch "${FILESDIR}"/"${P}"-haddock.patch
-}
-
