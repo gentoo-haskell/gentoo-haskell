@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 		>=dev-haskell/case-insensitive-0.2:=[profile?]
 		=dev-haskell/cereal-0.3*:=[profile?]
-		=dev-haskell/clientsession-0.8*:=[profile?]
+		>=dev-haskell/clientsession-0.8:=[profile?]
 		>=dev-haskell/conduit-0.5:=[profile?]
 		=dev-haskell/cookie-0.4*:=[profile?]
 		=dev-haskell/failure-0.2*:=[profile?]
@@ -62,14 +62,14 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 		=dev-haskell/yesod-routes-1.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
 			dev-haskell/hunit
 			=dev-haskell/quickcheck-2*
-			dev-haskell/wai-test
-		)
-		>=dev-haskell/cabal-1.8"
+			dev-haskell/wai-test:=[profile?]
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-test
+		$(cabal_flag test test)
 }
