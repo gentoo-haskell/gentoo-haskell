@@ -26,7 +26,8 @@ RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		<dev-haskell/contravariant-1:=[profile?]
 		>=dev-haskell/distributive-0.3:=[profile?]
 		<dev-haskell/distributive-1:=[profile?]
-		=dev-haskell/generic-deriving-1.4*:=[profile?]
+		>=dev-haskell/generic-deriving-1.4:=[profile?]
+		<dev-haskell/generic-deriving-1.6:=[profile?]
 		>=dev-haskell/hashable-1.1.2.3:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
 		=dev-haskell/monadcatchio-transformers-0.3*:=[profile?]
@@ -125,6 +126,9 @@ DEPEND="${RDEPEND}
 		)"
 
 src_configure() {
+	cabal_chdeps \
+	  'generic-deriving          == 1.4.*' 'generic-deriving >= 1.4 && < 1.6'
+
 	haskell-cabal_src_configure \
 		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
 		$(cabal_flag inlining inlining) \
