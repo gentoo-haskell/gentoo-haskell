@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/quickcheck-2
 			>=dev-haskell/test-framework-0.3.3
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
