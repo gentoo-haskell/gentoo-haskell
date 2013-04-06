@@ -73,6 +73,9 @@ DEPEND="${RDEPEND}
 		)"
 
 src_configure() {
+	cabal_chdeps \
+		'cryptohash   >= 0.7    && < 0.9' 'cryptohash >= 0.7 && < 0.10'
+
 	haskell-cabal_src_configure \
 		$(cabal_flag previewserver previewserver) \
 		$(cabal_flag checkexternal checkexternal)

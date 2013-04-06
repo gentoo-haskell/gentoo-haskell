@@ -30,7 +30,7 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		<dev-haskell/citeproc-hs-0.4:=[profile?]
 		=dev-haskell/cmdargs-0.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
-		<dev-haskell/cryptohash-0.9:=[profile?]
+		<dev-haskell/cryptohash-0.10:=[profile?]
 		>=dev-haskell/data-default-0.4:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
@@ -72,6 +72,9 @@ DEPEND="${RDEPEND}
 		)"
 
 src_configure() {
+	cabal_chdeps \
+		'cryptohash   >= 0.7    && < 0.9' 'cryptohash >= 0.7 && < 0.10'
+
 	haskell-cabal_src_configure \
 		$(cabal_flag previewserver previewserver) \
 		$(cabal_flag checkexternal checkexternal)
