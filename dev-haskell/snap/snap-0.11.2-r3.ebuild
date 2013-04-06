@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		=dev-haskell/attoparsec-0.10*:=[profile?]
 		=dev-haskell/cereal-0.3*:=[profile?]
-		=dev-haskell/clientsession-0.8*:=[profile?]
+		>=dev-haskell/clientsession-0.8:=[profile?]
+		<dev-haskell/clientsession-0.10:=[profile?]
 		>=dev-haskell/comonad-1.1:=[profile?]
 		<dev-haskell/comonad-3.1:=[profile?]
 		>=dev-haskell/configurator-0.1:=[profile?]
@@ -68,5 +69,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'syb                       >= 0.1      && < 0.4' 'syb >=0.1 && < 0.5'
+		'syb                       >= 0.1      && < 0.4' 'syb >=0.1 && < 0.5' \
+		'clientsession             >= 0.8      && < 0.9' 'clientsession >= 0.8 && < 0.10'
+
 }
