@@ -27,10 +27,15 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
+			<dev-haskell/quickcheck-2.7
 			dev-haskell/test-framework
 			dev-haskell/test-framework-quickcheck2
 		)
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7'
+}
