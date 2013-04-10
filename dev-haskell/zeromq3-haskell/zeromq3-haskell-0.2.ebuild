@@ -26,3 +26,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-0.4
 			>=dev-haskell/test-framework-quickcheck2-0.2
 		)"
+
+# https://github.com/twittner/zeromq-haskell/issues/26
+RESTRICT=test
+CABAL_EXTRA_CONFIGURE_FLAGS+=--disable-tests
