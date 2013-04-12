@@ -28,10 +28,10 @@ RDEPEND=">=dev-haskell/hinotify-0.3.5:=[profile?]
 		>=dev-haskell/text-0.11.0:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/glob-0.7.1
 			>=dev-haskell/hspec-1.3.0
 			>=dev-haskell/quickcheck-2.4.2
 			>=dev-haskell/random-1.0.1.1
 			>=dev-haskell/uniqueid-0.1.1
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
