@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
+		dev-haskell/base64-bytestring:=[profile?]
 		>=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
 		>=dev-haskell/blaze-builder-conduit-0.5:=[profile?]
@@ -44,6 +45,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 		<dev-haskell/wai-1.5:=[profile?]
 		>=dev-haskell/wai-logger-0.2:=[profile?]
 		<dev-haskell/wai-logger-0.4:=[profile?]
+		dev-haskell/word8:=[profile?]
 		>=dev-haskell/zlib-conduit-0.5:=[profile?]
 		<dev-haskell/zlib-conduit-1.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
