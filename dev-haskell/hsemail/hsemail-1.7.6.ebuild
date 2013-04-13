@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit base haskell-cabal
 
 DESCRIPTION="Internet Message Parsers"
-HOMEPAGE="http://gitorious.org/hsemail"
+HOMEPAGE="http://github.com/peti/hsemail"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,9 +22,9 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/doctest
 			dev-haskell/hspec
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
-PATCHES=("${FILESDIR}"/${P}-test-only-mtl.patch)
+PATCHES=("${FILESDIR}"/${PN}-1.7.5-test-only-mtl.patch)
