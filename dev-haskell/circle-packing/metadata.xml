@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Given a number of circles with their radii, this packags
+		tries to arrange them tightly, without overlap and forming a
+		large circle.
+		
+		Finding the optimal solution is NP hard, so only
+		heuristics are feasible. This particular
+		implementation is neither very good nor very fast,
+		compared to the state of the art in research. Nevertheless
+		it is simple to use and gives visually acceptable results.
+		
+		Contributions of better algorithms are welcome.
+	</longdescription>
+</pkgmetadata>
