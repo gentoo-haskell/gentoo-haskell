@@ -18,20 +18,28 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/colour-2.3.1:=[profile?]
+RDEPEND="=dev-haskell/arithmoi-0.4*:=[profile?]
+		=dev-haskell/circle-packing-0.1*:=[profile?]
+		>=dev-haskell/colour-2.3.1:=[profile?]
 		<dev-haskell/colour-2.4:=[profile?]
 		>=dev-haskell/data-default-0.3:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
+		=dev-haskell/diagrams-core-0.6*:=[profile?]
 		=dev-haskell/diagrams-lib-0.6*:=[profile?]
 		=dev-haskell/force-layout-0.2*:=[profile?]
 		>=dev-haskell/lens-3.8:=[profile?]
 		<dev-haskell/lens-4:=[profile?]
+		>=dev-haskell/monadrandom-0.1.8:=[profile?]
+		<dev-haskell/monadrandom-0.2:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/split-0.2.1:=[profile?]
+		<dev-haskell/split-0.3:=[profile?]
 		>=dev-haskell/vector-space-0.7:=[profile?]
 		<dev-haskell/vector-space-0.9:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.10
 		test? ( =dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
 			<dev-haskell/quickcheck-2.7
@@ -41,10 +49,4 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-hunit-0.4
 			>=dev-haskell/test-framework-quickcheck2-0.2
 			<dev-haskell/test-framework-quickcheck2-0.4
-		)
-		>=dev-haskell/cabal-1.10"
-
-src_prepare() {
-	cabal_chdeps \
-		'QuickCheck                 >= 2.4 && < 2.6' 'QuickCheck                 >= 2.4 && < 2.7'
-}
+		)"
