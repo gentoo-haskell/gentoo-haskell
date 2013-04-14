@@ -74,7 +74,7 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 LICENSE="BSD"
 SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
@@ -86,7 +86,7 @@ RDEPEND="
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-5
 	virtual/libffi
-	!<dev-haskell/haddock-2.4.2
+	!<dev-haskell/haddock-2.10.0
 	sys-libs/ncurses[unicode]"
 # earlier versions than 2.4.2 of haddock only works with older ghc releases
 
@@ -176,7 +176,7 @@ ghc_setup_cflags() {
 	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags compile -G0 -Os
+	use ia64 && append-ghc-cflags compile -G0
 
 	# Unfortunately driver/split/ghc-split.lprl is dumb
 	# enough to preserve stack marking for each split object
@@ -277,7 +277,7 @@ src_unpack() {
 src_prepare() {
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
+	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
 		# Modify the wrapper script from the binary tarball to use GHC_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
@@ -300,16 +300,15 @@ src_prepare() {
 		if ! use ghcbootstrap; then
 			case ${CHOST} in
 				*-darwin* | *-solaris*)
-				# UPDATE ME for ghc-7
 				mkdir "${WORKDIR}"/ghc-bin-installer || die
 				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
 				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
-				use x86-solaris && unpack ghc-6.10.4-i386-unknown-solaris2.tar.bz2
-				use ppc-macos && unpack ghc-6.10.1-powerpc-apple-darwin.tar.bz2
-				use x86-macos && unpack ghc-6.10.1-i386-apple-darwin.tar.bz2
+				use x86-solaris && unpack ghc-7.0.3-i386-unknown-solaris2.tar.bz2
+				use x86-macos && unpack ghc-7.4.1-i386-apple-darwin.tar.bz2
+				use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
 				popd > /dev/null
 
-				pushd "${WORKDIR}"/ghc-bin-installer/ghc-6.10.? > /dev/null || die
+				pushd "${WORKDIR}"/ghc-bin-installer/ghc-[67].?*.? > /dev/null || die
 				# fix the binaries so they run, on Solaris we need an
 				# LD_LIBRARY_PATH which has our prefix libdirs, on
 				# Darwin we need to replace the frameworks with our libs
@@ -318,13 +317,8 @@ src_prepare() {
 				if [[ ${CHOST} == *-solaris* ]] ; then
 					export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
 				elif [[ ${CHOST} == *-darwin* ]] ; then
-					# http://hackage.haskell.org/trac/ghc/ticket/2942
-					pushd utils/haddock/dist-install/build > /dev/null
-					ln -s Haddock haddock >& /dev/null # fails on IN-sensitive
-					popd > /dev/null
-
 					local readline_framework=GNUreadline.framework/GNUreadline
-					local gmp_framework=/opt/local/lib/libgmp.3.dylib
+					local gmp_framework=/opt/local/lib/libgmp.10.dylib
 					local ncurses_file=/opt/local/lib/libncurses.5.dylib
 					for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
 						install_name_tool -change \
@@ -364,13 +358,14 @@ src_prepare() {
 
 		cd "${S}" # otherwise epatch will break
 
-		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
+		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		# failed to apply. FIXME
 		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
 
 		epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
+		epatch "${FILESDIR}"/${PN}-7.4.1-darwin-CHOST.patch
 		epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
 		we_want_libffi_workaround() {
@@ -511,7 +506,17 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		emake all || die "make failed"
+		limit_jobs() {
+			if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
+				ewarn "You have requested parallel build which is known to break."
+				ewarn "Please report all breakages upstream."
+				return
+			fi
+			echo $@
+		}
+		# ghc massively parallel make: #409631, #409873
+		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
+		emake $(limit_jobs -j1) all
 	fi # ! use binary
 }
 
