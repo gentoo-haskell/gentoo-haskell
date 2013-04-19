@@ -18,3 +18,4 @@ slotmove =dev-haskell/soegtk-0.12* 0 2
 slotmove =dev-haskell/svgcairo-0.12* 0 2
 slotmove =dev-haskell/vte-0.12* 0 2
 slotmove =dev-haskell/webkit-0.12* 0 2
+slotmove =dev-haskell/chart-0.16* 0 2
