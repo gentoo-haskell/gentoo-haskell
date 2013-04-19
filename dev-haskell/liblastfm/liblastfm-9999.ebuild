@@ -11,7 +11,7 @@ inherit git-2 haskell-cabal
 
 DESCRIPTION="Wrapper to Lastfm API"
 HOMEPAGE="http://hackage.haskell.org/package/liblastfm"
-EGIT_REPO_URI="git://github.com/supki/haskell-liblastfm.git"
+EGIT_REPO_URI="git://github.com/supki/liblastfm.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,6 +20,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/aeson[profile?]
 		dev-haskell/curl[profile?]
+		>=dev-haskell/http-conduit-1.9[profile?]
+		dev-haskell/http-types[profile?]
 		dev-haskell/mtl[profile?]
 		dev-haskell/puremd5[profile?]
 		dev-haskell/urlencoded[profile?]
