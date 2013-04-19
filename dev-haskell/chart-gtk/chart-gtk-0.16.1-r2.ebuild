@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.9.11:${GTK_MAJ_VER}=[profile?]
-		~dev-haskell/chart-0.16:=[profile?]
+		~dev-haskell/chart-0.16:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/colour-2.2.1:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		>=dev-haskell/data-accessor-template-0.2.1.1:=[profile?]
