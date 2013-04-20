@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="First class accessor labels."
-HOMEPAGE="http://hackage.haskell.org/package/fclabels"
+HOMEPAGE="https://github.com/sebastiaanvisser/fclabels"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
