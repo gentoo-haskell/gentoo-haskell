@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
 		>=dev-haskell/crypto-api-0.6:=[profile?]
 		<dev-haskell/crypto-api-0.12:=[profile?]
 		>=dev-haskell/tagged-0.2:=[profile?]
-		<dev-haskell/tagged-0.5:=[profile?]
+		<dev-haskell/tagged-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag reference reference) \
+		$(cabal_flag big-endian big-endian) \
 		$(cabal_flag force-endianness force-endianness) \
-		$(cabal_flag big-endian big-endian)
+		$(cabal_flag reference reference)
 }
