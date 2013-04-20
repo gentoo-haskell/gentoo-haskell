@@ -22,8 +22,3 @@ RDEPEND=">=dev-haskell/nats-0.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		--flag=-base2
-}
