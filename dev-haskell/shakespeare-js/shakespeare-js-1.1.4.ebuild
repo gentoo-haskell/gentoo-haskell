@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test_coffee test_export test_roy"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
-		>=dev-haskell/shakespeare-1.0.4:=[profile?]
+		>=dev-haskell/shakespeare-1.0.5:=[profile?]
 		<dev-haskell/shakespeare-1.1:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
