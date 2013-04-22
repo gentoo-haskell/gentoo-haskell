@@ -20,8 +20,10 @@ IUSE="test_export"
 
 RDEPEND=">=dev-haskell/parsec-2:=[profile?]
 		<dev-haskell/parsec-4:=[profile?]
+		>=dev-haskell/system-fileio-0.3:=[profile?]
+		>=dev-haskell/system-filepath-0.4:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/hspec-1.3
