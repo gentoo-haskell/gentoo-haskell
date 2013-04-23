@@ -33,7 +33,7 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		=dev-haskell/hashable-1.2*:=[profile?]
 		=dev-haskell/heist-0.11*:=[profile?]
 		>=dev-haskell/lens-3.7.6:=[profile?]
-		<dev-haskell/lens-3.9:=[profile?]
+		<dev-haskell/lens-3.8:=[profile?]
 		>=dev-haskell/logict-0.4.2:=[profile?]
 		<dev-haskell/logict-0.7:=[profile?]
 		>=dev-haskell/monadcatchio-transformers-0.2:=[profile?]
@@ -52,6 +52,7 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		<dev-haskell/stm-2.5:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
 		<dev-haskell/syb-0.5:=[profile?]
+		<dev-haskell/tagged-0.5:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
@@ -66,10 +67,3 @@ RDEPEND="=dev-haskell/aeson-0.6*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
-
-src_prepare() {
-	cabal_chdeps \
-		'syb                       >= 0.1      && < 0.4' 'syb >=0.1 && < 0.5' \
-		'clientsession             >= 0.8      && < 0.9' 'clientsession >= 0.8 && < 0.10'
-
-}
