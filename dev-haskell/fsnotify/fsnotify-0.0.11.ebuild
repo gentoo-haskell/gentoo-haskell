@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Cross platform library for file creation, modification,
-and deletion notification."
+DESCRIPTION="Cross platform library for file change notification."
 HOMEPAGE="http://hackage.haskell.org/package/fsnotify"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -26,7 +25,7 @@ RDEPEND=">=dev-haskell/hinotify-0.3.5:=[profile?]
 		>=dev-haskell/system-filepath-0.4.6:=[profile?]
 		<=dev-haskell/system-filepath-0.5:=[profile?]
 		>=dev-haskell/text-0.11.0:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/glob-0.7.1
