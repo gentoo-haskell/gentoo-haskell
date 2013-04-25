@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/edit-distance
 		dev-haskell/extensible-exceptions
 		dev-haskell/hslogger
+		dev-haskell/http
 		dev-haskell/ifelse
 		dev-haskell/json
 		dev-haskell/lifted-base
