@@ -30,6 +30,9 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
 		)"
 
+RESTRICT=test # https://github.com/tibbe/hashable/issues/61
+CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-tests"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag fixed-salt fixed-salt) \
