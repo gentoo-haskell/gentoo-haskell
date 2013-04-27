@@ -20,7 +20,7 @@ IUSE="big-endian force-endianness reference"
 
 RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
 		>=dev-haskell/crypto-api-0.6:=[profile?]
-		<dev-haskell/crypto-api-0.12:=[profile?]
+		<dev-haskell/crypto-api-0.13:=[profile?]
 		>=dev-haskell/tagged-0.2:=[profile?]
 		<dev-haskell/tagged-0.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
