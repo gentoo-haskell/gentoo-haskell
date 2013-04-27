@@ -1,0 +1,23 @@
+# Routing for Mighttpd 2
+
+# Domain lists
+[localhost]
+
+# Entries are looked up in the specified order
+# All paths must end with "/"
+
+# A path to CGI scripts should be specified with "=>"
+# /~alice/cgi-bin/ => /home/alice/public_html/cgi-bin/
+
+# A path to static files should be specified with "->"
+# /~alice/         -> /home/alice/public_html/
+# /cgi-bin/        => /export/cgi-bin/
+
+# Reverse proxy rules should be specified with ">>"
+# /path >> host:port/path2
+# Either "host" or ":port" can be committed, but not both.
+# /app/cal/        >> example.net/calendar/
+# Yesod app in the same server
+# /app/wiki/       >> 127.0.0.1:3000/
+
+/                -> /var/www/localhost/htdocs
