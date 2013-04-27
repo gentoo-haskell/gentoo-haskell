@@ -20,7 +20,7 @@ IUSE="prim-supports-any"
 
 RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/transformers:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+		>=dev-lang/ghc-7.6.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
