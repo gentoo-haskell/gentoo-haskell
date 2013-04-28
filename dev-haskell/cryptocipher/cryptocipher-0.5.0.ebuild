@@ -16,28 +16,30 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="benchmark"
 
 RDEPEND="dev-haskell/cereal:=[profile?]
 		dev-haskell/cipher-aes:=[profile?]
 		dev-haskell/cipher-rc4:=[profile?]
 		=dev-haskell/cpu-0.1*:=[profile?]
 		>=dev-haskell/crypto-api-0.5:=[profile?]
-		=dev-haskell/crypto-pubkey-types-0.2*:=[profile?]
 		dev-haskell/primitive:=[profile?]
-		dev-haskell/tagged:=[profile?]
 		>=dev-haskell/vector-0.7:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.10.4:=
+		benchmark? ( dev-haskell/criterion:=[profile?]
+			dev-haskell/cryptocipher:=[profile?]
+			dev-haskell/mtl:=[profile?]
+		)"
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/cryptohash
 			dev-haskell/entropy
 			>=dev-haskell/quickcheck-2
 			>=dev-haskell/test-framework-0.3.3
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-benchmark
+		$(cabal_flag benchmark benchmark)
 }
