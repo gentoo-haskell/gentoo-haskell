@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 ghcpath() {
     local p
