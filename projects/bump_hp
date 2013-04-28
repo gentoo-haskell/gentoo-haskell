@@ -1,0 +1,86 @@
+#!/bin/bash
+
+die() {
+    echo "ERROR: $@"
+    exit 1
+}
+
+run() {
+    echo "$@"
+    "$@" || die "$?"
+}
+
+usage() {
+    echo "A tool to bump/commit haskell packages easily."
+    echo "Needs to be ran in a bumped directory"
+    echo ""
+    echo "Usage: $0 <pv | --auto> [rm-files...]"
+    echo ""
+    echo "Usage examples:"
+    echo " \$ cd \${gentoo_haskell}/dev-haskell/tls"
+    echo " \$ $0 --auto *.ebuild"
+    echo "    or"
+    echo " \$ USE=-profile HCFLAGS=-O0 $0 --auto *.ebuild"
+    echo "    or even"
+    echo " \$ FEATURES=\"-strict -stricter -test\" USE=-profile HCFLAGS=-O0 $0 --auto *.ebuild"
+    die "no args"
+}
+
+find_prog() {
+    local var_name=$1
+    local prog_name=${!1}
+
+    echo -n "Resolving ${var_name} as ... "
+    type -P "${prog_name}" || die "failed to find '${var_name}=${prog_name}'."
+}
+
+# defaults, can be ovverided as:
+#    ebuild_prog=~/bin/e $0 <args>
+: ${cabal_prog:=cabal}
+: ${hackport_prog:=hackport}
+: ${ebuild_prog:=ebuild}
+: ${repoman_prog:=repoman}
+
+get_latest() {
+    local pn=$1
+    local r=
+    while read p; do
+        # pkg ver
+        set -- ${p}
+        [[ ${1,,} == ${pn} ]] && r=${2}
+    done < <($cabal_prog list "${pn}" --simple-output)
+    [[ -n ${r} ]] || die "failed to find latest version for '${pn}'"
+    echo "${r}"
+}
+
+pn=$(basename $(pwd))
+c=$(basename $(dirname $(pwd)))
+
+pv=$1; shift
+[[ -z ${pv} ]] && usage
+
+find_prog cabal_prog
+find_prog hackport_prog
+find_prog ebuild_prog
+find_prog repoman_prog
+
+[[ ${pv} == --auto ]] && pv=$(get_latest "${pn}")
+
+run $hackport_prog merge "$pn"
+current_e=${pn}-${pv}.ebuild
+
+FEATURES="strict stricter test ${FEATURES}" \
+run $ebuild_prog "${current_e}" clean install
+
+for rmpv in "$@"; do
+    [[ ${rmpv} = ${current_e} ]] || run rm "${rmpv}"
+done
+
+c=$(basename "$(dirname "$(pwd)")")
+
+run $repoman_prog manifest
+run git add .
+run git commit -s -m "${c}/${pn}: bump up to ${pv}" .
+run git show -C -M -D
+run $repoman_prog full
+run $ebuild_prog "${current_e}" clean
