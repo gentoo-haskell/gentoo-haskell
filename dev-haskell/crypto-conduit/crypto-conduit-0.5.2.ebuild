@@ -16,7 +16,6 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-# hackport ignore flag: old-crypto-api
 IUSE=""
 
 RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
@@ -24,7 +23,7 @@ RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
-		<dev-haskell/crypto-api-0.12:=[profile?]
+		<dev-haskell/crypto-api-0.13:=[profile?]
 		>=dev-haskell/crypto-api-0.9:=[profile?]
 		"
 DEPEND="${RDEPEND}
