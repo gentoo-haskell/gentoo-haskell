@@ -38,8 +38,3 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.4
 			<dev-haskell/quickcheck-2.7
 		)"
-
-src_prepare() {
-	cabal_chdeps \
-		'QuickCheck >=2.4 && < 2.6' 'QuickCheck >=2.4 && < 2.7'
-}
