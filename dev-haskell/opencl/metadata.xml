@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Haskell FFI binding to OpenCL library. It includes high-level wrappers to
+		help development. Based on the OpenCLRaw package.
+		
+		Most of the functions can throw a &#39;CLError&#39; exception. Using the module
+		&#39;Control.Exception&#39; helps to work with this package&#39;s exceptions.
+	</longdescription>
+</pkgmetadata>
