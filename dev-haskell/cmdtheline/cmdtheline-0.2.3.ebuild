@@ -31,8 +31,3 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-hunit-0.2
 			<dev-haskell/test-framework-hunit-0.4
 		)"
-
-src_prepare() {
-	cp "${FILESDIR}/${PN}"-0.2.1.1/test/*.hs \
-		"${S}/test" || die "Could not copy misising test files"
-}
