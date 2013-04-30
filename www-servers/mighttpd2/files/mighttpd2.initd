@@ -1,0 +1,49 @@
+#!/sbin/runscript
+
+extra_started_commands="upgrade reload"
+
+description="Mighttpd2 (called mighty) is a simple but practical HTTP server written in Haskell."
+description_upgrade="Upgrade the mighttpd2 binary without losing connections."
+description_reload="Reload the mighttpd2 configuration without losing connections."
+
+mighttpd2_config=${mighttpd2_config:-/etc/mighttpd2/mighttpd2.conf}
+mighttpd2_route=${mighttpd2_route:-/etc/mighttpd2/mighttpd2.route}
+
+command="/usr/bin/mighty"
+ctlcommand="/usr/bin/mightyctl"
+command_args="${mighttpd2_config} ${mighttpd2_route}"
+user=${user:-mighttpd2}
+group=${group:-mighttpd2}
+
+depend() {
+	need net
+	use dns logger netmount
+}
+
+start() {
+	ebegin "Starting mighttpd2"
+	${command} ${command_args} || return 1
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping mighttpd2"
+	${ctlcommand} stop || return 1
+	eend $?
+}
+
+reload() {
+	ebegin "Refreshing mighttpd2 configuration"
+	${ctlcommand} reload
+	eend $? "Failed to reload mighttpd2"
+}
+
+upgrade() {
+	ebegin "Upgrading mighttpd2"
+	einfo "Enter the retiring mode"
+	${ctlcommand} retire
+	sleep 3
+	${command} ${command_args}
+	einfo "Upgrade completed"
+	eend $? "Upgrade failed"
+}

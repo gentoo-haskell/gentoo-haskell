@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		High performance web server to handle static
+		files and CGI on WAI/warp.
+		Reverse proxy functionality is also provided
+		to connect web applications behind.
+	</longdescription>
+</pkgmetadata>
