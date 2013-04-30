@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/monadcatchio-transformers:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
-		net-libs/zeromq"
+		>=net-libs/zeromq-3.2.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/ansi-terminal-0.6
