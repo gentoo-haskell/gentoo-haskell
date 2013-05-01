@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.5
 			>=dev-haskell/random-1.0.1.0
 			dev-haskell/test-framework
-			dev-haskell/test-framework-quickcheck2
+			>=dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
 src_configure() {
