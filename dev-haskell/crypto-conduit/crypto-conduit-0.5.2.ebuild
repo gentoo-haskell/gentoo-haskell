@@ -33,3 +33,9 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/hspec-1.3
 			>=dev-haskell/skein-0.1
 		)"
+
+# fails to build
+#    Not in scope: `CM.incIV'
+#    Perhaps you meant `C.incIV' (imported from Crypto.Classes)
+RESTRICT=test
+CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-tests"
