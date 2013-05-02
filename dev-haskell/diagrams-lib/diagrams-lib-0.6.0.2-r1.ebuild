@@ -28,7 +28,7 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		<dev-haskell/monoid-extras-0.3:=[profile?]
 		=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/numinstances-1.0:=[profile?]
-		<dev-haskell/numinstances-1.3:=[profile?]
+		<dev-haskell/numinstances-1.4:=[profile?]
 		>=dev-haskell/semigroups-0.3.4:=[profile?]
 		<dev-haskell/semigroups-0.10:=[profile?]
 		>=dev-haskell/vector-space-0.7.7:=[profile?]
@@ -36,3 +36,8 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'NumInstances >= 1.0 && < 1.3' 'NumInstances >= 1.0 && < 1.4'
+}
