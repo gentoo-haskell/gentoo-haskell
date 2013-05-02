@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="prim-supports-any"
 
-RDEPEND="dev-haskell/binary:=[profile?]
-		dev-haskell/transformers:=[profile?]
+RDEPEND="dev-haskell/binary:=
+		dev-haskell/transformers:=
 		>=dev-lang/ghc-7.6.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
