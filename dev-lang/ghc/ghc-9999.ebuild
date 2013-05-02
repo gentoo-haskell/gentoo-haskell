@@ -271,12 +271,16 @@ src_prepare() {
 			-i utils/haddock/doc/configure.ac || die
 	fi
 
-	# cross-only, but should be safe (might need some tweaks in build depends)
-	cd "${S}/libraries/integer-gmp"
-	epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
-	cd "${S}/utils/hsc2hs"
-	epatch "${FILESDIR}"/${P}-hsc2hs-cross.patch
-	cd "${S}"
+	# TODO: remove this: if is_crosscompile.  This is a temporary workaround as
+	# these cross patches no longer apply (upstream made lots of changes).
+	if is_crosscompile; then
+		# cross-only, but should be safe (might need some tweaks in build depends)
+		cd "${S}/libraries/integer-gmp"
+		epatch "${FILESDIR}"/${P}-integer-gmp-cross.patch
+		cd "${S}/utils/hsc2hs"
+		epatch "${FILESDIR}"/${P}-hsc2hs-cross.patch
+		cd "${S}"
+	fi
 
 	# as we have changed the build system
 	eautoreconf
