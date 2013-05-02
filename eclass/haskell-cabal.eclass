@@ -270,6 +270,24 @@ cabal-hoogle-hscolour() {
 	cabal-hscolour
 }
 
+cabal-show-brokens() {
+	# pretty-printer
+	$(ghc-getghcpkg) check 2>&1 | egrep -v '^Warning: haddock-(html|interfaces): '
+
+	set -- $($(ghc-getghcpkg) check --simple-output)
+	[[ "${!@}" == 0 ]] && return 0
+
+	eerror "Detected broken packages: ${@}"
+
+	die "//==-- Please, run 'haskell-updater' to fix broken packages --==//"
+}
+
+cabal-show-brokens-and-die() {
+	cabal-show-brokens
+
+	die "$@"
+}
+
 cabal-configure() {
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
 
@@ -357,7 +375,7 @@ cabal-configure() {
 		${CABAL_EXTRA_CONFIGURE_FLAGS} \
 		"$@"
 	echo ./setup "$@"
-	./setup "$@" || die "setup configure failed"
+	./setup "$@" || cabal-show-brokens-and-die "setup configure failed"
 }
 
 cabal-build() {
