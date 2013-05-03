@@ -272,10 +272,12 @@ cabal-hoogle-hscolour() {
 
 cabal-show-brokens() {
 	# pretty-printer
-	$(ghc-getghcpkg) check 2>&1 | egrep -v '^Warning: haddock-(html|interfaces): '
+	$(ghc-getghcpkg) check 2>&1 \
+		| egrep -v '^Warning: haddock-(html|interfaces): ' \
+		| egrep -v '^Warning: include-dirs: '
 
 	set -- $($(ghc-getghcpkg) check --simple-output)
-	[[ "${!@}" == 0 ]] && return 0
+	[[ "${#@}" == 0 ]] && return 0
 
 	eerror "Detected broken packages: ${@}"
 
