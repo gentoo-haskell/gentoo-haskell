@@ -58,6 +58,8 @@ c=$(basename $(dirname $(pwd)))
 
 pv=$1; shift
 [[ -z ${pv} ]] && usage
+[[ ${pv} == "--help" ]] && usage
+[[ ${pv} == "-h" ]] && usage
 
 find_prog cabal_prog
 find_prog hackport_prog
