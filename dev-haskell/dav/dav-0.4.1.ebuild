@@ -22,13 +22,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
-		>=dev-haskell/cmdargs-0.9:=[profile?]
 		>=dev-haskell/http-conduit-1.9.0:=[profile?]
 		>=dev-haskell/http-types-0.7:=[profile?]
 		>=dev-haskell/lens-3.0:=[profile?]
 		>=dev-haskell/lifted-base-0.1:=[profile?]
 		>=dev-haskell/mtl-2.1:=[profile?]
 		>=dev-haskell/network-2.3:=[profile?]
+		dev-haskell/optparse-applicative:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
 		>=dev-haskell/transformers-0.3:=[profile?]
 		>=dev-haskell/xml-conduit-1.0:=[profile?]
