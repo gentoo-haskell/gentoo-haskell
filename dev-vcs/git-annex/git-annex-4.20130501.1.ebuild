@@ -110,7 +110,6 @@ src_configure() {
 src_compile() {
 	haskell-cabal_src_compile
 	use doc && emake docs
-	emake mans
 }
 
 src_test() {
