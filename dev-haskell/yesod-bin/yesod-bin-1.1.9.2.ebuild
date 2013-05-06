@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-MY_PN=${PN/-cmd/}
+MY_PN=${PN/-bin/}
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Creation of type-safe, RESTful web applications."
