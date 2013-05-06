@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="android +assistant +dbus +dns +inotify +pairing +production +s3 +testsuite +webapp +webdav +xmpp"
+IUSE="android +assistant +dbus +dns doc +inotify +pairing +production +s3 +testsuite +webapp +webdav +xmpp"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
