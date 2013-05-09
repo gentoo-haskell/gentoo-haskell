@@ -1,0 +1,74 @@
+--- groundhog-postgresql-0.3.0.1-orig/Database/Groundhog/Postgresql.hs	2013-04-25 05:13:18.000000000 +1000
++++ groundhog-postgresql-0.3.0.1/Database/Groundhog/Postgresql.hs	2013-05-09 19:31:29.944129432 +1000
+@@ -33,7 +33,7 @@
+ import Control.Monad.Trans.Class (lift)
+ import Control.Monad.Trans.Control (MonadBaseControl)
+ import Control.Monad.Trans.Reader (ask)
+-import Data.ByteString.Char8 (ByteString, pack, unpack, copy)
++import Data.ByteString.Char8 (pack, unpack, copy)
+ import Data.Char (toUpper)
+ import Data.Either (partitionEithers)
+ import Data.Function (on)
+@@ -660,14 +660,13 @@
+           case PG.oid2builtin oid of
+             -- TODO: this is a temporary hack until postgresql-simple supports arrays and has more builtin types. Restore fail clause then.
+             Nothing -> return $ getGetter PG.Unknown $
+-                       PG.Field ret col $ PG.builtin2typname PG.Unknown
++                       PG.Field ret col oid
+              {- fail $ "Postgresql.withStmt': could not " ++
+                               "recognize " ++ show oid ++ " of column " ++
+                               show (let LibPQ.Col i = col in i) ++
+                               " (counting from zero)" -}
+             Just bt -> return $ getGetter bt $
+-                       PG.Field ret col $
+-                       PG.builtin2typname bt
++                       PG.Field ret col oid
+         -- Ready to go!
+         rowRef   <- newIORef (LibPQ.Row 0)
+         rowCount <- LibPQ.ntuples ret
+@@ -681,10 +680,12 @@
+         mbs <-  {-# SCC "getvalue'" #-} LibPQ.getvalue' ret row col
+         case mbs of
+           Nothing -> return PersistNull
+-          Just bs -> bs `seq` case getter mbs of
+-            Errors (exc:_) -> throw exc
+-            Errors [] -> error "Got an Errors, but no exceptions"
+-            Ok v  -> return v
++          Just bs -> do
++            ok <- PGFF.runConversion (getter mbs) conn
++            bs `seq` case ok of
++              Errors (exc:_) -> throw exc
++              Errors [] -> error "Got an Errors, but no exceptions"
++              Ok v  -> return v
+ 
+ -- | Avoid orphan instances.
+ newtype P = P PersistValue
+@@ -702,7 +703,7 @@
+   toField (P PersistNull)               = PGTF.toField PG.Null
+   toField (P (PersistCustom _ _))       = error "toField: unexpected PersistCustom"
+ 
+-type Getter a = PG.Field -> Maybe ByteString -> Ok a
++type Getter a = PGFF.FieldParser a
+ 
+ convertPV :: PGFF.FromField a => (a -> b) -> Getter b
+ convertPV f = (fmap f .) . PGFF.fromField
+@@ -732,7 +733,7 @@
+ getGetter PG.Bit                   = convertPV PersistInt64
+ getGetter PG.VarBit                = convertPV PersistInt64
+ getGetter PG.Numeric               = convertPV (PersistDouble . fromRational)
+-getGetter PG.Void                  = \_ _ -> Ok PersistNull
++getGetter PG.Void                  = \_ _ -> return PersistNull
+ getGetter _ = \f dat -> fmap (PersistByteString . unBinary) $ case dat of
+   Nothing -> PGFF.returnError PGFF.UnexpectedNull f ""
+   Just str -> return $ PG.Binary $ copy $ str
+--- groundhog-postgresql-0.3.0.1-orig/groundhog-postgresql.cabal	2013-04-25 05:13:18.000000000 +1000
++++ groundhog-postgresql-0.3.0.1/groundhog-postgresql.cabal	2013-05-09 19:34:00.269123302 +1000
+@@ -13,7 +13,7 @@
+ 
+ library
+     build-depends:   base                    >= 4         && < 5
+-                   , postgresql-simple       >= 0.2       && < 0.3
++                   , postgresql-simple       >= 0.3       && < 0.4
+                    , postgresql-libpq        >= 0.6.1     && < 0.9
+                    , bytestring              >= 0.9
+                    , blaze-builder           >= 0.3.0.0   && < 0.4
