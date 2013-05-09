@@ -59,8 +59,6 @@ src_prepare() {
 		sed -e 's@build-depends: Cabal >=1.6.0.1 && <1.17@build-depends: Cabal >=1.6.0.1 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
-	cabal_chdeps \
-		'binary >=0.5.0.0 && <0.6' 'binary >=0.5.0.0 && <0.8'
 }
 
 src_configure() {
