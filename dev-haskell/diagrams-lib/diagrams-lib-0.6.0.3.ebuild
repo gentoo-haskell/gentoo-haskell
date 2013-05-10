@@ -36,8 +36,3 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cabal_chdeps \
-		'NumInstances >= 1.0 && < 1.3' 'NumInstances >= 1.0 && < 1.4'
-}
