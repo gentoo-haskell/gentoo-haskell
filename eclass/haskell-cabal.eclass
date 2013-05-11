@@ -41,20 +41,20 @@ inherit eutils ghc-package multilib
 # @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup configure'.
-# example: /etc/make.conf: CABAL_EXTRA_CONFIGURE_FLAGS=--enable-shared
+# example: /etc/portage/make.conf: CABAL_EXTRA_CONFIGURE_FLAGS=--enable-shared
 : ${CABAL_EXTRA_CONFIGURE_FLAGS:=}
 
 # @ECLASS-VARIABLE: CABAL_EXTRA_BUILD_FLAGS
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup build'.
-# example: /etc/make.conf: CABAL_EXTRA_BUILD_FLAGS=-v
+# example: /etc/portage/make.conf: CABAL_EXTRA_BUILD_FLAGS=-v
 : ${CABAL_EXTRA_BUILD_FLAGS:=}
 
 # @ECLASS-VARIABLE: GHC_BOOTSTRAP_FLAGS
 # @DESCRIPTION:
 # User-specified additional parameters for ghc when building
 # _only_ 'setup' binary bootstrap.
-# example: /etc/make.conf: GHC_BOOTSTRAP_FLAGS=-dynamic to make
+# example: /etc/portage/make.conf: GHC_BOOTSTRAP_FLAGS=-dynamic to make
 # linking 'setup' faster.
 : ${GHC_BOOTSTRAP_FLAGS:=}
 

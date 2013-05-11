@@ -111,7 +111,7 @@ ghc-supports-smp() {
 
 # @FUNCTION: ghc-supports-dynamic-by-default
 # @DESCRIPTION:
-# checks if ghc is built with support for multiple cores runtime
+# checks if ghc links against shared haskell libraries by default
 ghc-supports-dynamic-by-default() {
 	$(ghc-getghc) --info | grep "Dynamic by default" | grep -q "YES"
 }
