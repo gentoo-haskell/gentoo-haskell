@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,7 +24,8 @@ IUSE="doc"
 
 RESTRICT="test" # avoid circular deps
 
-DEPEND=">=dev-lang/ghc-6.10.1"
+DEPEND=">=dev-lang/ghc-6.10.1
+		<dev-lang/ghc-7.6.0"
 RDEPEND="${DEPEND}
 		virtual/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
