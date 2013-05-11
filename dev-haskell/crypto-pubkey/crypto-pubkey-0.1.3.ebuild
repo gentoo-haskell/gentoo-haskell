@@ -19,18 +19,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/crypto-numbers:=[profile?]
-		=dev-haskell/crypto-pubkey-types-0.2*:=[profile?]
+		=dev-haskell/crypto-pubkey-types-0.3*:=[profile?]
 		=dev-haskell/crypto-random-api-0.2*:=[profile?]
 		>=dev-haskell/cryptohash-0.8:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
 			>=dev-haskell/quickcheck-2
 			>=dev-haskell/test-framework-0.3.3
 			dev-haskell/test-framework-hunit
 			>=dev-haskell/test-framework-quickcheck2-0.2.9
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
