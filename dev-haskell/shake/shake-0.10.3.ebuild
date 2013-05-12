@@ -26,27 +26,15 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/unordered-containers-0.2.1:=[profile?]
+		<dev-haskell/unordered-containers-0.3:=[profile?]
 		>=dev-lang/ghc-7.4.1:=
-		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
-			<dev-haskell/unordered-containers-0.2:=[profile?]
-		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
-			<dev-haskell/unordered-containers-0.3:=[profile?]
-		) )
-		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
-			<dev-haskell/unordered-containers-0.2:=[profile?]
-		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
-			<dev-haskell/unordered-containers-0.3:=[profile?]
-		) )
-		|| ( ( >=dev-haskell/unordered-containers-0.1.4.3:=[profile?]
-			<dev-haskell/unordered-containers-0.2:=[profile?]
-		) ( >=dev-haskell/unordered-containers-0.2.1:=[profile?]
-			<dev-haskell/unordered-containers-0.3:=[profile?]
-		) )"
+		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag testprog testprog) \
-		$(cabal_flag portable portable)
+		$(cabal_flag portable portable) \
+		$(cabal_flag testprog testprog)
 }
