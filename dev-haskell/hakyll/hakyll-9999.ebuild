@@ -17,7 +17,7 @@ EGIT_REPO_URI="git://github.com/jaspervdj/hakyll.git"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="+previewServer"
+IUSE="+previewServer checkexternal"
 
 RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		<app-text/pandoc-1.12:=[profile?]
