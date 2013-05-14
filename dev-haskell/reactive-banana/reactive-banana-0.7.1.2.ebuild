@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+useextensions"
 
 RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
@@ -27,16 +27,16 @@ RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 		=dev-haskell/vault-0.2*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.9.2
 		test? ( >=dev-haskell/hunit-1.2
 			<dev-haskell/hunit-2
 			>=dev-haskell/test-framework-0.6
 			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
 			<dev-haskell/test-framework-hunit-0.4
-		)
-		>=dev-haskell/cabal-1.9.2"
+		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=useextensions
+		$(cabal_flag useextensions useextensions)
 }
