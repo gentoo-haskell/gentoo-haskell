@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/criterion-0.4
-			<dev-haskell/criterion-0.7
+			<dev-haskell/criterion-0.9
 			>=dev-haskell/deepseq-1.1
 			<dev-haskell/deepseq-1.4
 			=dev-haskell/hunit-1.2*
