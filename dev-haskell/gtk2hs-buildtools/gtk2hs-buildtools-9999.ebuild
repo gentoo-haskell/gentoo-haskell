@@ -9,7 +9,7 @@ EAPI=5
 GTK_MAJ_VER="3"
 
 CABAL_FEATURES="bin"
-inherit base darcs haskell-cabal
+inherit darcs haskell-cabal
 
 DESCRIPTION="Tools to build the Gtk2Hs suite of User Interface libraries."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -31,10 +31,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/random
 		>=dev-lang/ghc-6.10.4"
 
-PATCHES=("${FILESDIR}/${PN}-0.12.4-hashtables.patch")
-
 src_prepare() {
-	base_src_prepare
 	sed -e "s@Executable gtk2hsTypeGen@Executable gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@Executable gtk2hsHookGenerator@Executable gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-e "s@Executable gtk2hsC2hs@Executable gtk2hsC2hs${GTK_MAJ_VER}@" \
