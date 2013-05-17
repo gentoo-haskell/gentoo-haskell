@@ -20,9 +20,9 @@ IUSE=""
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 		dev-haskell/monad-logger:=[profile?]
-		>=dev-haskell/persistent-1.1.5:=[profile?]
-		<dev-haskell/persistent-1.2:=[profile?]
+		=dev-haskell/persistent-1.2*:=[profile?]
 		dev-haskell/resourcet:=[profile?]
+		>=dev-haskell/tagged-0.2:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		>=dev-haskell/unordered-containers-0.2:=[profile?]
@@ -33,7 +33,11 @@ DEPEND="${RDEPEND}
 			<dev-haskell/hspec-1.6
 			dev-haskell/hunit
 			dev-haskell/monad-control
-			=dev-haskell/persistent-sqlite-1.1*
-			=dev-haskell/persistent-template-1.1*
+			=dev-haskell/persistent-sqlite-1.2*
+			=dev-haskell/persistent-template-1.2*
 			dev-haskell/quickcheck
 		)"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.0.6-haddock.patch
+}
