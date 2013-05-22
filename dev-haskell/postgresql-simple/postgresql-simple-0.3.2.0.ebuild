@@ -12,6 +12,8 @@ inherit haskell-cabal
 DESCRIPTION="Mid-Level PostgreSQL client library"
 HOMEPAGE="http://hackage.haskell.org/package/postgresql-simple"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+# require running postgres
+RESTRICT="test"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
