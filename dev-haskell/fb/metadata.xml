@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package exports bindings to Facebook&#39;s APIs (see
+		&lt;http://developers.facebook.com/&gt;).  Does not have any external
+		dependencies and tries to use as little resources (such as
+		memory, sockets and CPU) as possible by using packages such as
+		@aeson@, @attoparsec@, @bytestring@, @conduit@, @http-conduit@,
+		@text@ and others.
+		
+		While we would like to have a complete binding to Facebook&#39;s
+		API, this package is being developed on demand.  If you need
+		something that has not been implemented yet, please send a pull
+		request or file an issue on GitHub
+		(&lt;https://github.com/meteficha/fb/issues&gt;).
+	</longdescription>
+</pkgmetadata>
