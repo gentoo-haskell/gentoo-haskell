@@ -25,7 +25,7 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
 		=dev-haskell/diagrams-core-0.6*:=[profile?]
 		>=dev-haskell/monoid-extras-0.2.2:=[profile?]
-		<dev-haskell/monoid-extras-0.3:=[profile?]
+		<dev-haskell/monoid-extras-0.4:=[profile?]
 		=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/numinstances-1.0:=[profile?]
 		<dev-haskell/numinstances-1.4:=[profile?]
@@ -36,3 +36,10 @@ RDEPEND="=dev-haskell/active-0.1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-monoid-extras.patch
+	cabal_chdeps \
+		"monoid-extras >= 0.2.2 && < 0.3" "monoid-extras >= 0.2.2 && < 0.4"
+
+}
