@@ -24,7 +24,8 @@ RDEPEND=">=dev-haskell/blaze-svg-0.3.3:=[profile?]
 		dev-haskell/colour:=[profile?]
 		=dev-haskell/diagrams-core-0.6*:=[profile?]
 		=dev-haskell/diagrams-lib-0.6*:=[profile?]
-		=dev-haskell/monoid-extras-0.2*:=[profile?]
+		>=dev-haskell/monoid-extras-0.2:=[profile?]
+		<dev-haskell/monoid-extras-0.4:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/split-0.1.2:=[profile?]
@@ -34,3 +35,9 @@ RDEPEND=">=dev-haskell/blaze-svg-0.3.3:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		"monoid-extras >= 0.2   && < 0.3" "monoid-extras >= 0.2   && < 0.4"
+
+}
