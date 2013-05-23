@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="volume eval mpd"
+IUSE="volume eval mpd perwindow"
 
 RDEPEND="=dev-haskell/hint-0.3*:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -39,6 +39,9 @@ RDEPEND="=dev-haskell/hint-0.3*:=[profile?]
 		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-alt-config.patch
+}
 
 src_configure() {
 	cabal_src_configure \
@@ -46,6 +49,6 @@ src_configure() {
 		$(cabal_flag volume with_parsec) $(cabal_flag volume with_split) \
 		$(cabal_flag eval with_hint) \
 		$(cabal_flag mpd with_mpd) \
-#		$(cabal_flag perwindow with_template_haskell) \
-#		$(cabal_flag perwindow with_hlist)
+		$(cabal_flag perwindow with_template_haskell) \
+		$(cabal_flag perwindow with_hlist)
 }

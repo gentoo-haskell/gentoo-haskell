@@ -6,7 +6,7 @@
   <email>haskell@gentoo.org</email>
 </maintainer>
 <use>
-<!--  <flag name="perwindow">Enable PerWindowLayout plugin support</flag>   -->
+  <flag name="perwindow">Enable PerWindowLayout plugin support</flag>
   <flag name="volume">Enable Volume plugin</flag>
   <flag name="mpd">Enable mpd plugin</flag>
   <flag name="eval">Enable eval plugin</flag>
