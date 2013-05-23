@@ -21,7 +21,8 @@ IUSE=""
 RDEPEND="=dev-haskell/dual-tree-0.1*:=[profile?]
 		>=dev-haskell/memotrie-0.4.7:=[profile?]
 		<dev-haskell/memotrie-0.7:=[profile?]
-		=dev-haskell/monoid-extras-0.2*:=[profile?]
+		>=dev-haskell/monoid-extras-0.2:=[profile?]
+		<dev-haskell/monoid-extras-0.4:=[profile?]
 		=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/semigroups-0.3.4:=[profile?]
 		<dev-haskell/semigroups-0.10:=[profile?]
@@ -31,3 +32,9 @@ RDEPEND="=dev-haskell/dual-tree-0.1*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-${PV}-monoid-extras.patch
+	cabal_chdeps \
+	  "monoid-extras >= 0.2 && < 0.3" "monoid-extras >= 0.2 && < 0.4"
+}

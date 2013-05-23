@@ -1,0 +1,29 @@
+diff --git a/src/Diagrams/Core/Trace.hs b/src/Diagrams/Core/Trace.hs
+index 821322a..04a9b4b 100644
+--- a/src/Diagrams/Core/Trace.hs
++++ b/src/Diagrams/Core/Trace.hs
+@@ -45,7 +45,7 @@ import           Data.Semigroup
+ import qualified Data.Set as S
+ 
+ import           Data.AffineSpace
+-import           Data.Monoid.PosInf
++import           Data.Monoid.Inf
+ import           Data.VectorSpace
+ 
+ import           Diagrams.Core.HasOrigin
+@@ -153,7 +153,7 @@ instance (Traced b) => Traced (S.Set b) where
+ traceV :: Traced a => Point (V a) -> V a -> a -> Maybe (V a)
+ traceV p v a = case appTrace (getTrace a) p v of
+                  Finite s -> Just (s *^ v)
+-                 PosInfty -> Nothing
++                 Infinity -> Nothing
+ 
+ -- | Given a base point and direction, compute the closest point on
+ --   the boundary of the given object, or @Nothing@ if there is no
+@@ -169,4 +169,4 @@ maxTraceV p = traceV p . negateV
+ -- | Like 'traceP', but computes the *furthest* point on the boundary
+ --   instead of the closest.
+ maxTraceP :: Traced a => Point (V a) -> V a -> a -> Maybe (Point (V a))
+-maxTraceP p v a = (p .+^) <$> maxTraceV p v a
+\ No newline at end of file
++maxTraceP p v a = (p .+^) <$> maxTraceV p v a
