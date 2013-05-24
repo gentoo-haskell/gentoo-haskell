@@ -10,11 +10,23 @@ run() {
     "$@" || die "$?"
 }
 
+verbose=
+vprint() {
+    [[ -n ${verbose} ]] || return 0
+
+    echo "$@"
+}
+
 usage() {
     echo "A tool to bump/commit haskell packages easily."
     echo "Needs to be ran in a bumped directory"
     echo ""
-    echo "Usage: $0 <pv | --auto> [rm-files...]"
+    echo "Usage: $0 [ --help ] [ --continue ] <pv | --auto> [rm-files...]"
+    echo ""
+    echo "    --continue     does not run 'hackport' if target ebuild is"
+    echo "                   already created, but commits it's state."
+    echo "                   Handy, when you've modified ebuild and lazy"
+    echo "                   to type commit message."
     echo ""
     echo "Usage examples:"
     echo " \$ cd \${gentoo_haskell}/dev-haskell/tls"
@@ -55,21 +67,42 @@ get_latest() {
 
 pn=$(basename $(pwd))
 c=$(basename $(dirname $(pwd)))
+ebuild_needs_regeneration=yes
+autoversion=
 
-pv=$1; shift
-[[ -z ${pv} ]] && usage
-[[ ${pv} == "--help" ]] && usage
-[[ ${pv} == "-h" ]] && usage
+# options parser
+while :; do
+    case "$1" in
+        -v | --verbose  ) verbose=1; shift ;;
+        -h | --help     ) usage ;;
+        -c | --continue ) ebuild_needs_regeneration=no; shift ;;
+        -a | --auto     ) autoversion=yes; shift ;;
+        --              ) shift; break ;;
+        *               ) break ;;
+    esac
+done
 
 find_prog cabal_prog
 find_prog hackport_prog
 find_prog ebuild_prog
 find_prog repoman_prog
 
-[[ ${pv} == --auto ]] && pv=$(get_latest "${pn}")
+if [[ ${autoversion} = yes ]]
+  then
+    pv=$(get_latest "${pn}")
+  else
+    pv=$1; shift
+fi
 
-run $hackport_prog merge "$pn"
+[[ -z ${pv} ]] && usage
+
 current_e=${pn}-${pv}.ebuild
+if [[ ( ${ebuild_needs_regeneration} = yes ) || ( ! -f ${current_e} ) ]]
+  then
+    run $hackport_prog merge "$pn"
+  else
+    echo "Skip '${current_e}' regeneration. Using existing version."
+fi
 
 FEATURES="strict stricter test ${FEATURES}" \
 run $ebuild_prog "${current_e}" clean install
