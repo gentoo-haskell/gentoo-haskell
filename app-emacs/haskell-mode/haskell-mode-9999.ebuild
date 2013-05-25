@@ -38,10 +38,10 @@ src_install() {
 	if use examples; then
 		pushd examples || die
 		elisp-install ${PN}/examples *.el *.elc || die
-		popd
 		dodir /usr/share/${PN}/examples
 		insinto /usr/share/${PN}/examples
 		doins *.hs
+		popd
 	fi
 }
 
