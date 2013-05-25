@@ -19,9 +19,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/haxml-1.19.2[profile?]
-		<dev-haskell/haxml-1.24[profile?]
+		<dev-haskell/haxml-1.25[profile?]
 		>=dev-haskell/network-2.0[profile?]
 		<dev-haskell/network-2.5[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'HaXml      >= 1.19.2 && < 1.24' 'HaXml      >= 1.19.2 && < 1.25'
+}
