@@ -34,4 +34,8 @@
 		&lt;http://hackage.haskell.org/package/text-icu&gt;
 		
 	</longdescription>
+        <use>
+          <flag name='developer'>operate in developer mode</flag>
+          <flag name='integer-simple'>Use the simple integer library instead of GMP</flag>
+        </use>
 </pkgmetadata>
