@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,7 +30,8 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
 		<dev-haskell/hsx-0.11:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
-		=dev-haskell/syb-0.3*:=[profile?]
+		>=dev-haskell/syb-0.3:=[profile?]
+		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/text-0.10:=[profile?]
 		<dev-haskell/text-0.12:=[profile?]
 		=dev-haskell/utf8-string-0.3*:=[profile?]
