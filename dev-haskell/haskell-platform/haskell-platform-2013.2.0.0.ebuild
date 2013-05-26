@@ -53,7 +53,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.4:=[profile?]
 		>=dev-haskell/cabal-1.16.0.3
 		>=dev-haskell/happy-1.18.10
 		>=dev-haskell/hscolour-1.19
-		>=dev-haskell/haddock-2.13.1"
+		>=dev-haskell/haddock-2.13.2"
 DEPEND="${RDEPEND}"
 
 pkg_postinst() {
