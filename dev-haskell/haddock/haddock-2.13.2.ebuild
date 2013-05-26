@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 # ia64 lost as we don't have ghc-7 there yet
 # ppc64 needs to be rekeyworded due to xhtml not being keyworded
 # x86-fbsd is lost due xhtml
-KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 -ia64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths:=[profile?]
