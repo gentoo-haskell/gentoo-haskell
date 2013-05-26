@@ -34,6 +34,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.13.1-drop-tools.patch
 	# Fix: Ticket #213 Haddock fails when advanced typesystem features are used
 	# epatch "${FILESDIR}"/${PN}-2.13.1-renameType.patch
+	if use doc && [ ! -e "${S}/html" ]; then
+		ln -s "${S}/resources/html" "${S}/html" || die "Could not create symbolic link ${S}/html"
+	fi
 }
 
 src_configure() {
