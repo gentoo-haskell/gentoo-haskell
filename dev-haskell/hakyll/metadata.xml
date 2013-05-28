@@ -23,6 +23,7 @@
 		meant as a reference.
 	</longdescription>
 <use>
-  <flag name='previewServer'>Include the preview server</flag>
+  <flag name='previewserver'>Include the preview server</flag>
+  <flag name='checkexternal'>Include external link checking</flag>
 </use>
 </pkgmetadata>
