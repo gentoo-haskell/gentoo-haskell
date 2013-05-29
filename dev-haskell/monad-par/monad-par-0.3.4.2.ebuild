@@ -32,6 +32,6 @@ DEPEND="${RDEPEND}
 			dev-haskell/quickcheck
 			dev-haskell/test-framework
 			dev-haskell/test-framework-hunit
-			dev-haskell/test-framework-quickcheck2
+			>=dev-haskell/test-framework-quickcheck2-0.3
 			dev-haskell/test-framework-th
 		)"
