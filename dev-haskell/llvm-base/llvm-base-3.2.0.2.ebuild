@@ -22,9 +22,7 @@ RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
-		sys-devel/llvm
-		"
+		>=dev-haskell/cabal-1.6"
 
 src_configure() {
 	haskell-cabal_src_configure \
