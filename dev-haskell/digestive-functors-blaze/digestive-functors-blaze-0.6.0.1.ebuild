@@ -18,15 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
+RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?]
+		<dev-haskell/blaze-html-0.7:=[profile?]
 		=dev-haskell/blaze-markup-0.5*:=[profile?]
 		=dev-haskell/digestive-functors-0.6*:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cabal_chdeps \
-		'blaze-html         >= 0.5  && < 0.6' 'blaze-html         >= 0.5  && < 0.7'
-}
