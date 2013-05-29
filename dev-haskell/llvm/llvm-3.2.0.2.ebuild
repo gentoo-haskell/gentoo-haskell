@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="developer"
 
-RDEPEND=">=dev-haskell/llvm-base-3.2.0.0:=[profile?]
+RDEPEND=">=dev-haskell/llvm-base-3.2.0.2:=[profile?]
 		<dev-haskell/llvm-base-4:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/type-level:=[profile?]
