@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 		java? (
 			>=dev-haskell/language-java-0.2.2
 		)
-		dev-lang/libffi
+		dev-libs/libffi
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3
 		dev-haskell/split
