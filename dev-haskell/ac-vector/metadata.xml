@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This Haskell library implements several small vectors types
+		with @Double@ fields, with seperate types for each size of
+		vector, and a type class for handling vectors generally.
+		(Note that although this package is listed in the \&quot;graphics\&quot;
+		category, the package itself has no graphics facilities. It
+		just contains data structures that are useful for graphics
+		work.)
+		
+		Changes:
+		
+		* Fixed a stupid bug in @union@. Until now, the function could
+		sometimes return gibberish answers. Hopefully this is now fixed.
+	</longdescription>
+</pkgmetadata>
