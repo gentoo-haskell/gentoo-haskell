@@ -11,5 +11,7 @@
 	</longdescription>
 <use>
   <flag name='vty'>Build with Vty frontend.</flag>
+  <flag name='vte'>Build with Vte frontend.</flag>
+  <flag name="testing"> bake-in the self-checks</flag>
 </use>
 </pkgmetadata>
