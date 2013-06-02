@@ -13,4 +13,7 @@
 		
 		Haskeline runs both on POSIX-compatible systems and on Windows.
 	</longdescription>
+	<use>
+		<flag name="terminfo">Use the terminfo package for POSIX consoles.</flag>
+	</use>
 </pkgmetadata>
