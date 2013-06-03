@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Adds various type-system tricks to AC-Vector.
+		(Requires several language extensions, including
+		type families.)
+		Added missing @Vector Point@ constraint to @HasSpace@
+		class. Consequently removed @HasSpace Range@ instance.
+		Added @unions@ method to @BoundingBox@ class. Added
+		@axis_range@ function.
+	</longdescription>
+</pkgmetadata>
