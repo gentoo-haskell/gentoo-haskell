@@ -16,16 +16,14 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="java noeffects"
+IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/haskeline-0.7
-		java? (
-			>=dev-haskell/language-java-0.2.2
-		)
+		>=dev-haskell/language-java-0.2.2
 		dev-libs/libffi
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3
@@ -33,9 +31,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/text
 		dev-haskell/transformers
 		>=dev-lang/ghc-6.10.4"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag java java) \
-		$(cabal_flag noeffects noeffects)
-}
