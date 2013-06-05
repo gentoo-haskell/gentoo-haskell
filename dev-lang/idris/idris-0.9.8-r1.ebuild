@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/haskeline-0.7
 		>=dev-haskell/language-java-0.2.2
-		dev-libs/libffi
+		dev-haskell/libffi
 		dev-haskell/mtl
 		>=dev-haskell/parsec-3
 		dev-haskell/split
