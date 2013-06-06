@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Visualize live data structures in GHCi. Evaluation is not
+		forced and you can interact with the visualized data
+		structures. This allows seeing Haskell&#39;s lazy evaluation
+		and sharing in action.
+		
+		See &lt;http://felsin9.de/nnis/ghc-vis/#basic-usage&gt; for the
+		basic usage of ghc-vis or watch a short video demonstrating
+		how it can be used with GHCi&#39;s debugger:
+		&lt;http://felsin9.de/nnis/ghc-vis/#combined-debugger&gt;
+	</longdescription>
+</pkgmetadata>
