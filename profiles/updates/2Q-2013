@@ -21,3 +21,4 @@ slotmove =dev-haskell/webkit-0.12* 0 2
 slotmove =dev-haskell/chart-0.16* 0 2
 slotmove =dev-haskell/chart-0.17 0 2
 slotmove =dev-haskell/chart-gtk-0.17 0 2
+move gnome-extra/xmonad-log-applet x11-misc/xmonad-log-applet
