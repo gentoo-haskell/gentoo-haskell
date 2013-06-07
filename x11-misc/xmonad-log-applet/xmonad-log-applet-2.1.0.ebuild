@@ -1,21 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
 
-inherit autotools gnome2 git-2
-
-EGIT_REPO_URI="git://github.com/alexkay/xmonad-log-applet.git"
-EGIT_BOOTSTRAP="gnome2_src_prepare"
+inherit autotools gnome2
 
 DESCRIPTION="Gnome and XFCE applet for displaying XMonad log"
 HOMEPAGE="https://github.com/alexkay/xmonad-log-applet"
-SRC_URI=""
+SRC_URI="https://github.com/alexkay/${PN}/archive/${PV}.zip -> ${P}.zip"
 LICENSE="BSD"
 
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 # TODO Add support for USE="mate" once the mate desktop environment is available in portage
 # Support for mate desktop environment came with xmonad-log-applet 2.1.0
 IUSE="+gnome2 gnome3 xfce4"
@@ -59,12 +56,11 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dodoc AUTHORS.md README.md xmonad.hs
+	dodoc AUTHORS.md README.md
+	dodoc "${FILESDIR}"/xmonad.hs
 }
 
 pkg_postinst() {
 	elog "Remember to update your xmonad.hs accordingly"
 	elog "a sample xmonad.hs is provided in /usr/share/doc/${PF}"
-	elog "You can set the width of the applet via the"
-	elog "/apps/xmonad-log-applet/width-chars gconf key"
 }
