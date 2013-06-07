@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 #hackport: ignore-use all_extansions
 #hackport: rename-use with_alsa alsa
-#hackport: rename-use with_timezone timezone
+#hackport: rename-use with_datezone timezone
 #hackport: rename-use with_threaded threaded
 #hackport: rename-use with_dbus dbus
 IUSE="alsa timezone threaded dbus inotify wifi mpd mpris mail xft"
@@ -58,7 +58,7 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flags=with_utf8 \
 		$(cabal_flag alsa with_alsa) \
-		$(cabal_flag datezone with_datezone) \
+		$(cabal_flag timezone with_datezone) \
 		$(cabal_flag dbus with_dbus) \
 		$(cabal_flag inotify with_inotify) \
 		$(cabal_flag wifi with_iwlib) \
