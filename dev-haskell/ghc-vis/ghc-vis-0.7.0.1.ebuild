@@ -42,7 +42,7 @@ src_configure() {
 }
 
 pkg_postinst() {
-	default
+	ghc-package_pkg_postinst
 
 	elog "To use ghc-vis you have to load its ghci file in GHCi. To do this"
 	elog "automatically when GHCi is started run:"
