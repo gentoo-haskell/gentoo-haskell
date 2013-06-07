@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -12,7 +12,7 @@ inherit git-2 haskell-cabal
 MY_PN="LambdaWars"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A project of the London Haskell User Group to create a RoboWars like bot fighting game and learn some Haskell."
+DESCRIPTION="RoboWars for London Haskell User Group."
 HOMEPAGE="https://github.com/andreyLevushkin/LambdaWars"
 EGIT_REPO_URI="git://github.com/andreyLevushkin/LambdaWars.git"
 
@@ -39,8 +39,16 @@ DEPEND="${RDEPEND}
 		dev-haskell/monadrandom
 		dev-haskell/mtl
 		dev-haskell/random
-		~dev-haskell/snap-core-0.9.2.2
-		~dev-haskell/snap-server-0.9.2.4
+		>=dev-haskell/snap-core-0.9.2.2
+		<dev-haskell/snap-core-0.9.4
+		>=dev-haskell/snap-server-0.9.2.4
+		<dev-haskell/snap-server-0.9.4
 		>=dev-lang/ghc-7.4.1"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+    	'snap-core ==0.9.2.2' 'snap-core >=0.9.2.2 && < 0.9.4' \
+		'snap-server ==0.9.2.4' 'snap-server >=0.9.2.4 && < 0.9.4'
+}
