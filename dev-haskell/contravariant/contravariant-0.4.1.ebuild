@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell 98 contravariant functors"
+DESCRIPTION="Contravariant functors"
 HOMEPAGE="http://github.com/ekmett/contravariant/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
