@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/criterion-0.4:=[profile?]
-		<dev-haskell/criterion-0.7:=[profile?]
+		<dev-haskell/criterion-0.9:=[profile?]
 		>=dev-haskell/haskeline-0.6:=[profile?]
 		<dev-haskell/haskeline-0.8:=[profile?]
 		>=dev-haskell/txt-sushi-0.5:=[profile?]
@@ -30,5 +30,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'txt-sushi >= 0.5 && < 0.6' 'txt-sushi >= 0.5 && < 0.7'
+		'txt-sushi >= 0.5 && < 0.6' 'txt-sushi >= 0.5 && < 0.7' \
+		'criterion >= 0.4 && < 0.7' 'criterion >= 0.4 && < 0.9'
 }
