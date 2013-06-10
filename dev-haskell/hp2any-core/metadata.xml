@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This is the core library of the hp2any suite. It makes heap profiles
+		available during runtime through a simple interface, optionally
+		managing all the data in the background. It can also process
+		archived profiler output and present it in a structured form.
+	</longdescription>
+</pkgmetadata>
