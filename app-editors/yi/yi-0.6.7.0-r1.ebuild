@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/dlist-0.4.1:=[profile?]
 		>=dev-haskell/dyre-0.8.11:=[profile?]
 		>=dev-haskell/fingertree-0:=[profile?]
-		<dev-haskell/fingertree-0.1:=[profile?]
+		<dev-haskell/fingertree-0.2:=[profile?]
 		>=dev-haskell/hashable-1.1:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
 		>dev-haskell/hint-0.3.1:=[profile?]
@@ -73,7 +73,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-vte.patch
 	cabal_chdeps \
-		    'Diff >=0.1 && <0.3' 'Diff >=0.1 && <0.4'
+		'Diff >=0.1 && <0.3' 'Diff >=0.1 && <0.4' \
+		'fingertree >= 0 && <0.1' 'fingertree >= 0 && <0.2'
 }
 
 src_configure() {
