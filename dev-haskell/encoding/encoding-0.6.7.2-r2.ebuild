@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/extensible-exceptions:=[profile?]
 		>=dev-haskell/haxml-1.22:=[profile?]
-		<dev-haskell/haxml-1.24:=[profile?]
+		<dev-haskell/haxml-1.25:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/regex-compat:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -30,7 +30,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary < 0.6' 'binary'
+		'binary < 0.6' 'binary' \
+		'HaXml >= 1.22 && < 1.24' 'HaXml >= 1.22 && < 1.25'
 }
 
 src_configure() {
