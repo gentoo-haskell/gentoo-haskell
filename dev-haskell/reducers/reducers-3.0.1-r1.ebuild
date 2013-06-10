@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-3.0:=[profile?]
 		>=dev-haskell/fingertree-0.0.1:=[profile?]
-		<dev-haskell/fingertree-0.1:=[profile?]
+		<dev-haskell/fingertree-0.2:=[profile?]
 		>=dev-haskell/hashable-1.1.2.1:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
 		>=dev-haskell/keys-3.0:=[profile?]
@@ -36,3 +36,8 @@ RDEPEND=">=dev-haskell/comonad-3.0:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'fingertree             >= 0.0.1    && < 0.1' 'fingertree             >= 0.0.1    && < 0.2'
+}
