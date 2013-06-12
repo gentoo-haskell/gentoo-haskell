@@ -1,0 +1,36 @@
+This patch fixes template creation and add a compatibility with
+heist-0.12
+
+Author: Alexander V Vershilov <qnikst@gentoo.org>
+
+
+diff --git a/Happstack/Server/Heist.hs b/Happstack/Server/Heist.hs
+index 9a0508b..b72c007 100644
+--- a/Happstack/Server/Heist.hs
++++ b/Happstack/Server/Heist.hs
+@@ -67,6 +67,7 @@
+ --
+ --  <http://happstack.com/docs/crashcourse/>
+ --
++{-# LANGUAGE CPP #-}
+ module Happstack.Server.Heist
+     ( initHeistCompiled
+    , heistServe
+@@ -94,11 +95,17 @@ initHeistCompiled :: (MonadIO m, Monad n) =>
+                   -> m (Either [String] (HeistState n))
+ initHeistCompiled splices attrSplices templateDir =
+     liftIO $ runEitherT $
++#if ! MIN_VERSION_heist(0,12,0)
+            do templateRepo <- loadTemplates templateDir
++#endif
+               initHeist $ mempty { hcLoadTimeSplices  = defaultLoadTimeSplices
+                                  , hcCompiledSplices  = splices
+                                  , hcAttributeSplices = attrSplices
++#if MIN_VERSION_heist(0,12,0)
++                                 , hcTemplateLocations = [loadTemplates templateDir]
++#else
+                                  , hcTemplates        = templateRepo
++#endif
+                                  }
+ 
+ heistServe :: (Happstack m) =>
