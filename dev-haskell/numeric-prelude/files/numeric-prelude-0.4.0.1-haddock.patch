@@ -1,0 +1,15 @@
+diff --git a/src/Number/Physical/Unit.hs b/src/Number/Physical/Unit.hs
+index 7d70b3e..6aa97c1 100644
+--- a/src/Number/Physical/Unit.hs
++++ b/src/Number/Physical/Unit.hs
+@@ -30,8 +30,8 @@ import NumericPrelude.Numeric
+ 
+    Example: Let the quantity of length (meter, m) be the zeroth dimension
+    and let the quantity of time (second, s) be the first dimension,
+-   then the composed unit "m_s²" corresponds to the Map
+-   [(0,1),(1,-2)]
++   then the composed unit @m/s^2@ corresponds to the Map
++   @[(0,1),(1,-2)]@.
+ 
+    In future I want to have more abstraction here,
+    e.g. a type class from the Edison project
