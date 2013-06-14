@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This is an implementation of finite fields.
+		Currently only prime fields are supported.
+		
+		Changes in 0.6.0
+		
+		* add allValues to FiniteField class
+		
+		Changes in 0.5.0
+		
+		* introduce FiniteField class
+	</longdescription>
+</pkgmetadata>
