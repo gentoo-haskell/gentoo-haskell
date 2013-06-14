@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This is type level numbers implemented using type families. Natural
+		numbers use binary encoding. With default context stack numbers up
+		to 2^18-1 coudl be represented. Signed integer numbers use balanced ternary
+		encoding.
+		
+		Package is structured as folows:
+		
+		* [@TypeLevel.Number.Classes@] contain generic type families such as Add
+		
+		* [@TypeLevel.Number.Nat@] natural numbers implemented using binary encoding
+		
+		* [@TypeLevel.Number.Int@] signed integers implemented using balanced
+		ternary encoding
+		
+		* [@TypeLevel.Boolean@] type level booleans
+		
+		So far comparison of numbers, subtraction and multiplication of
+		numbers are supported.
+		
+		Changes in 0.1.1.0
+		
+		* @withNat@, @withInt@, @SomeNat and @SomeInt@ added.
+		
+		Changes in 0.1.0.3
+		
+		* Fix build for GHC 7.4
+		
+		Changes in 0.1.0.2:
+		
+		* Fix URL in cabal file
+		
+		Changes in 0.1.0.1:
+		
+		* Workaround for GHC bug #4364 (Build failure on GHC 7.0)
+	</longdescription>
+</pkgmetadata>
