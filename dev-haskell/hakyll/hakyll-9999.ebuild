@@ -31,7 +31,7 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		<dev-haskell/citeproc-hs-0.4:=[profile?]
 		=dev-haskell/cmdargs-0.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
-		<dev-haskell/cryptohash-0.9:=[profile?]
+		<dev-haskell/cryptohash-0.10:=[profile?]
 		>=dev-haskell/data-default-0.4:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
@@ -39,6 +39,7 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		<dev-haskell/lrucache-1.2:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
+		=dev-haskell/network-2.4*:=[profile?]
 		>=dev-haskell/parsec-3.0:=[profile?]
 		<dev-haskell/parsec-3.2:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
@@ -54,16 +55,20 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 			<dev-haskell/http-types-0.9:=[profile?]
 			>=dev-haskell/http-types-0.7:=[profile?]
 		)
-		previewserver? ( <dev-haskell/snap-core-0.10:=[profile?]
+		previewserver? ( <dev-haskell/fsnotify-0.1:=[profile?]
+			>=dev-haskell/fsnotify-0.0.6:=[profile?]
+			<dev-haskell/snap-core-0.10:=[profile?]
 			>=dev-haskell/snap-core-0.6:=[profile?]
 			<dev-haskell/snap-server-0.10:=[profile?]
 			>=dev-haskell/snap-server-0.6:=[profile?]
+			<=dev-haskell/system-filepath-0.5:=[profile?]
+			>=dev-haskell/system-filepath-0.4.6:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( =dev-haskell/hunit-1.2*
 			>=dev-haskell/quickcheck-2.4
-			<dev-haskell/quickcheck-2.6
+			<dev-haskell/quickcheck-2.7
 			>=dev-haskell/test-framework-0.4
 			<dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2
@@ -72,10 +77,13 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-quickcheck2-0.4
 		)"
 
-src_configure() {
+src_prepare() {
 	cabal_chdeps \
-		'cryptohash   >= 0.7    && < 0.9' 'cryptohash >= 0.7 && < 0.10'
+	      'QuickCheck                 >= 2.4 && < 2.6' \
+		  'QuickCheck >= 2.4 && < 2.7'
+}
 
+src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag previewserver previewserver) \
 		$(cabal_flag checkexternal checkexternal)
