@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit darcs haskell-cabal
@@ -15,15 +15,20 @@ EDARCS_GET_CMD="get --partial"
 S="${WORKDIR}/${P}/${PN}"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="<dev-haskell/blaze-builder-0.4[profile?]
-		=dev-haskell/happstack-server-9999[profile?]
-		>=dev-haskell/heist-0.5[profile?]
-		<dev-haskell/heist-0.9[profile?]
-		=dev-haskell/mtl-2*[profile?]
-		>=dev-lang/ghc-6.8.2"
+RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?]
+		<dev-haskell/blaze-builder-0.4:=[profile?]
+		=dev-haskell/either-3.4*:=[profile?]
+		>=dev-haskell/happstack-server-7.0:=[profile?]
+		<dev-haskell/happstack-server-7.2:=[profile?]
+		>=dev-haskell/heist-0.11:=[profile?]
+		<dev-haskell/heist-0.13:=[profile?]
+		=dev-haskell/mtl-2*:=[profile?]
+		>=dev-haskell/text-0.10:=[profile?]
+		<dev-haskell/text-0.12:=[profile?]
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
