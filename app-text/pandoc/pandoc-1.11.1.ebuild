@@ -77,6 +77,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-no-man-tests.patch
+	epatch "${FILESDIR}"/${P}-test.patch
 
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
