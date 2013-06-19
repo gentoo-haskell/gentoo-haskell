@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+#hackport: restrict test
+RESTRICT="test" # require running postgres
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.3:=[profile?]
 		dev-haskell/blaze-builder:=[profile?]
