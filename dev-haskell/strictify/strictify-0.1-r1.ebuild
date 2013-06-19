@@ -22,8 +22,3 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2
 		>=dev-lang/ghc-6.10.4"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		--flag=small-base
-}
