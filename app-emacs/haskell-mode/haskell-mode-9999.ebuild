@@ -23,6 +23,12 @@ DEPEND="${RDEPEND}"
 DOCS="NEWS README.md"
 SITEFILE="50${PN}-gentoo.el"
 
+src_prepare() {
+	# remove '@$(RM) $*.elc' from 'make check'
+	sed -e 's/\$(RM) \$\*\.elc/echo gento REFUSED to &/' \
+		-i Makefile || die
+}
+
 src_compile() {
 	elisp-make-autoload-file haskell-site-file.el || die
 	elisp-compile *.el || die
