@@ -16,7 +16,9 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+network_2_2_3 +template_haskell"
+#hackport: ignore-flag network_2_2_3 ; flag for old network compatibility
+#hackport: ignore-flag template_haskell: non GHC compiler
+IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
 		>=dev-haskell/blaze-html-0.5:=[profile?]
@@ -27,6 +29,7 @@ RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
 		=dev-haskell/monad-control-0.3*:=[profile?]
 		>=dev-haskell/mtl-2:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/network-2.2.3:=[profile?]
 		<dev-haskell/parsec-4:=[profile?]
 		>=dev-haskell/sendfile-0.7.1:=[profile?]
 		<dev-haskell/sendfile-0.8:=[profile?]
@@ -44,18 +47,8 @@ RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
 		dev-haskell/xhtml:=[profile?]
 		dev-haskell/zlib:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
-		network_2_2_3? ( >=dev-haskell/network-2.2.3:=[profile?]
-		)
-		!network_2_2_3? ( <dev-haskell/network-2.2.3:=[profile?]
-			dev-haskell/network-bytestring:=[profile?]
-		)"
+		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
 		)"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag network_2_2_3 network_2_2_3) \
-		$(cabal_flag template_haskell template_haskell)
-}

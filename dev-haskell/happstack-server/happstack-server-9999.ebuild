@@ -20,7 +20,8 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
-		=dev-haskell/blaze-html-0.5*:=[profile?]
+		>=dev-haskell/blaze-html-0.5:=[profile?]
+		<dev-haskell/blaze-html-0.7:=[profile?]
 		dev-haskell/extensible-exceptions:=[profile?]
 		>=dev-haskell/hslogger-1.0.2:=[profile?]
 		dev-haskell/html:=[profile?]
@@ -44,11 +45,12 @@ RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
 		<dev-haskell/utf8-string-0.4:=[profile?]
 		dev-haskell/xhtml:=[profile?]
 		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-6.12.1:=
+		"
 DEPEND="${RDEPEND}
+		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
-		)
-		>=dev-haskell/cabal-1.8"
+		)"
 
 src_prepare() {
 	# upstream forgot the tests
