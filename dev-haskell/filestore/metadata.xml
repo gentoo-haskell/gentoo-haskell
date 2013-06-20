@@ -11,4 +11,9 @@
 		Git, Darcs, and Mercurial modules are provided, and other VCSs
 		or databases could be added.
 	</longdescription>
+	<use>
+		<flag name="maxcount">Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance
+		of 'latest'.  You should disable this flag if you plan to use gitit with an
+		older version of Darcs, or 'latest' will raise an error.</flag>
+	</use>
 </pkgmetadata>
