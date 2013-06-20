@@ -8,4 +8,7 @@
 	<longdescription>
 		A Haskell 98 logically uninhabited data type. Used to indicate that a given term should not exist.
 	</longdescription>
+	<use>
+		<flag name="safe">dissable effective but unsafe coersions</flag>
+	</use>
 </pkgmetadata>
