@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="oldtypeable"
 
 RDEPEND=">=dev-haskell/semigroups-0.8.3.1:=[profile?]
 		>=dev-haskell/unordered-containers-0.1.4.6:=[profile?]
@@ -27,5 +27,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-oldtypeable
+		$(cabal_flag oldtypeable oldtypeable)
 }
