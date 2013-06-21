@@ -41,9 +41,3 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
-
-src_prepare() {
-	cabal_chdeps \
-		'crypto-pubkey-types           >= 0.1      && < 0.4' \
-		'crypto-pubkey-types           >= 0.1      && < 0.5'
-}
