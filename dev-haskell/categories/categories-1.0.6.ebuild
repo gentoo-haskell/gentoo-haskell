@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="optimize"
 
 RDEPEND=">=dev-haskell/void-0.5.4.2:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -25,5 +25,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-optimize
+		$(cabal_flag optimize optimize)
 }

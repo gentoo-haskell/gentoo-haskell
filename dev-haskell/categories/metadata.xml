@@ -8,4 +8,7 @@
 	<longdescription>
 		categories from category-extras
 	</longdescription>
+	<use>
+		<flag name="optimization">enable optimizations</flag>
+	</use>
 </pkgmetadata>
