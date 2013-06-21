@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-3:=[profile?]
-		>=dev-haskell/profunctors-3.1.2:=[profile?]
+		>=dev-haskell/profunctors-3.2:=[profile?]
 		>=dev-haskell/semigroupoid-extras-3:=[profile?]
 		>=dev-haskell/semigroupoids-3:=[profile?]
 		>=dev-haskell/tagged-0.4.4:=[profile?]
