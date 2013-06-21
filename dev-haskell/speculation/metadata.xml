@@ -57,4 +57,7 @@
 		
 		&#39;specSTM&#39; provides a similar time table for STM actions, but also rolls back side-effects. The one unfortunate operational distinction is that it is forced to compute &#39;a&#39; in the background thread and therefore degrades slightly less gracefully under load, although we mitigate this effect by only enqueuing if the number of sparks for the current capability is lower than the total number of capabilities, to try to avoid wasting time when all computational resources are in use.
 	</longdescription>
+	<use>
+		<flag name="optimize">Enable optimizations</flag>
+	</use>
 </pkgmetadata>
