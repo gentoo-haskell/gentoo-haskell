@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/comonad-3*:=[profile?]
+RDEPEND="<dev-haskell/comonad-4:=[profile?]
 		>=dev-haskell/contravariant-0.2.0.1:=[profile?]
 		<dev-haskell/contravariant-1:=[profile?]
 		>=dev-haskell/semigroups-0.8.3.1:=[profile?]
