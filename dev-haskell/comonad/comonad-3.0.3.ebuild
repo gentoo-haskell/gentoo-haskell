@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+test-doctests"
+IUSE=""
 
 RDEPEND=">=dev-haskell/semigroups-0.8.3:=[profile?]
 		<dev-haskell/semigroups-1:=[profile?]
@@ -25,11 +25,10 @@ RDEPEND=">=dev-haskell/semigroups-0.8.3:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10
-		test-doctests? ( test? ( >=dev-haskell/doctest-0.9.1
-		)
+		test? ( >=dev-haskell/doctest-0.9.1
 		)"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag test-doctests test-doctests)
+		$(cabal_flag test test-doctests)
 }
