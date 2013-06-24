@@ -36,3 +36,5 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)
 		>=dev-haskell/cabal-1.10"
+
+RESTRICT=test # designed to fail :]

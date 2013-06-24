@@ -34,4 +34,4 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)"
 
-RESTRICT=test # some files are missing
+RESTRICT=test # designed to fail :]
