@@ -116,6 +116,13 @@ ghc-supports-dynamic-by-default() {
 	$(ghc-getghc) --info | grep "Dynamic by default" | grep -q "YES"
 }
 
+# @FUNCTION: ghc-supports-interpreter
+# @DESCRIPTION:
+# checks if ghc has interpreter mode (aka GHCi)
+# It usually means that ghc supports for template haskell.
+ghc-supports-interpreter() {
+	$(ghc-getghc) --info | grep "Have interpreter" | grep -q "YES"
+}
 
 # @FUNCTION: ghc-extractportageversion
 # @DESCRIPTION:
