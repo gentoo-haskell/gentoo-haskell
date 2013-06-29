@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Purely functional interface for statistics based on hmatrix and hmatrix-gsl-stats
+		
+		The vector type is Data.Vector.Storable from the &#39;vector&#39; package and compatible with the &#39;statistics&#39; package.
+		&lt;http://hackage.haskell.org/package/statistics&gt;
+		
+		Feature requests, suggestions, and bug fixes welcome.
+	</longdescription>
+</pkgmetadata>
