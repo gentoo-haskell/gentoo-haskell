@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		
+		Minimalist library to read and write MIDI files, with
+		dependencies only on ByteString and Data.Binary.
+		
+		Changelog:
+		
+		v0.5.0 to v0.6.0:
+		
+		* Extended the parser and changed the syntax tree to interpret
+		MIDI Running Status.
+		
+		* Added a module @ZMidi.Core.Canonical@ to translate MidiFiles
+		to a canonical form where any shorthand NoteOff introduced by
+		Running Status is expanded to regular NoteOn and NoteOff
+		events (with Running Status set, MidiFiles can signal NoteOff
+		events as another NoteOn with 0 channel velocity).
+		
+		* Added a hack to the pretty printer to stop printing ASCII
+		chars greater than 164 causing an error when printing to
+		stdout.
+		
+		v0.4.0 to v0.5.0:
+		
+		* Changed order of @MidiVoiceEvent@ constructors so the Ord
+		instance follows the order of the /tag/ in the MIDI binary
+		representation.
+		
+		* Changed @MidiSysCommonEvent@ to have different constructors
+		for unidentified F4 anf F5 events.
+		
+		* Changed @MidiSysRealTimeEvent@ to have different constructors
+		for unidentified F9 and FD events.
+		
+		* Added more Haddock docs.
+		
+		* Various internal code changes.
+		
+		v0.3.0 to v0.4.0:
+		
+		* Added new constructors to @MidiMetaEvent@ for MidiPort and
+		MetaOther. MetaOther recognizes otherwise unrecognized events
+		improving the robustness of the parser. Similarly a new
+		/other/ constructor has been added to @MidiScaleType@ to
+		avoid parse errors.
+		
+		v0.2.1 to v0.3.0:
+		
+		* Revised naming of the MIDI data types. All data types now have
+		the prefix Midi (previously only MidiFile followed this scheme).
+		The rationale for this is client software, that might want a
+		higher-level representation, is then free to use the more
+		generic names Track, Message, etc.
+		
+		* @DeltaTime@ made a newtype wrapper rather than a type synonym.
+		
+		* Renamed the pretty print functions @track@ to @printMidiTrack@
+		and @header@ to @printMidiHeader@.
+		
+		* Moved internal dataypes (SplitByte, Varlen) into a private
+		module.
+		
+		v0.2.0 to v0.2.1:
+		
+		* Added Show class constraints to various type signatures to
+		accommodate changes to Num superclass hierarchy in GHC 7.4.
+		Thanks to Remy Moueza for the patches.
+		
+		v0.1.0 to v0.2.0:
+		
+		* Added a top-level /shim/ module to import all the exposed
+		modules. Added a version number module
+		
+		
+	</longdescription>
+</pkgmetadata>
