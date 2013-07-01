@@ -1,0 +1,20 @@
+diff --git a/src/Language/Haskell/BuildWrapper/GHC.hs b/src/Language/Haskell/BuildWrapper/GHC.hs
+index 62a2387..2626538 100644
+--- a/src/Language/Haskell/BuildWrapper/GHC.hs
++++ b/src/Language/Haskell/BuildWrapper/GHC.hs
+@@ -403,7 +403,7 @@ getGhcNameDefsInScopeLongRunning fp base_dir modul options=do
+                         l<- GMU.liftIO getLine 
+                         case l of
+                                 "q"->return ()
+-                                -- | eval an expression
++                                -- eval an expression
+                                 'e':' ':expr->do
+                                         s<-handleSourceError (return . show)
+                                                (do
+@@ -1365,4 +1365,4 @@ ghcCleanImports f base_dir modul options doFormat  =  do
+                         formatInfo=foldr getFormatInfo (0,0,0,0,0) fivs
+                         in map (formatImport formatInfo) fivs
+                         
+-                       
+\ No newline at end of file
++                       
