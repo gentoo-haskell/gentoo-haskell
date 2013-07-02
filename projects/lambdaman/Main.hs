@@ -16,6 +16,8 @@ import System.Posix.Files (getFileStatus, isDirectory)
 
 import Data.Maybe ( catMaybes, listToMaybe, isNothing )
 import qualified Data.Digest.Pure.SHA as D ( sha1, showDigest )
+import qualified Data.ByteString as S
+import qualified Data.ByteString.Char8 as S8
 import qualified Data.ByteString.Lazy as L
 import System.IO
 import System.IO.Unsafe
@@ -51,7 +53,7 @@ flatten f@(File _ _ _) = [f]
 flatten d@(Dir _ entries) = d : concatMap flatten entries
 
 readManifest :: FilePath -> IO Manifest
-readManifest m = return . catMaybes . map parseManifestLine . lines =<< readFile m
+readManifest m = return . catMaybes . map parseManifestLine . lines =<< S8.unpack `fmap` S8.readFile m
 
 parseManifestLine :: String -> Maybe MDigest
 parseManifestLine row = do
@@ -72,7 +74,7 @@ readGit = do
 fileSpy :: FilePath -> IO Repo
 fileSpy fn = do
   fs <- unsafeInterleaveIO $ withFile fn ReadMode hFileSize
-  fc <- unsafeInterleaveIO $ L.readFile fn
+  fc <- unsafeInterleaveIO $ {- read whole file -} L.fromStrict `fmap` S.readFile fn
   return (File (normalise fn) (fromInteger fs) (D.showDigest (D.sha1 fc)))
 
 dirSpy :: FilePath -> IO Repo
