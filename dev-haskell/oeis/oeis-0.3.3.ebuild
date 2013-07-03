@@ -18,12 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/http-4000*:=[profile?]
-		=dev-haskell/network-2*:=[profile?]
+RDEPEND="=dev-haskell/http-4000.2*:=[profile?]
+		=dev-haskell/network-2.4*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10
-		test? ( =dev-haskell/hunit-1*
-			=dev-haskell/test-framework-0*
-			=dev-haskell/test-framework-hunit-0*
+		test? ( =dev-haskell/hunit-1.2*
+			=dev-haskell/test-framework-0.8*
+			=dev-haskell/test-framework-hunit-0.3*
 		)"
