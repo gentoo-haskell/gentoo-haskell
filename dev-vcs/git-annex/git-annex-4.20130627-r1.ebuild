@@ -109,3 +109,28 @@ src_configure() {
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
 }
+
+src_compile() {
+	haskell-cabal_src_compile
+	use doc && emake docs
+}
+
+src_test() {
+	if use webapp; then
+		export GIT_CONFIG=${T}/temp-git-config
+		git config user.email "git@src_test"
+		git config user.name "Mr. ${P} The Test"
+
+		emake test
+	fi
+}
+
+src_install() {
+	haskell-cabal_src_install
+	dosym git-annex /usr/bin/git-annex-shell # standard make install does more, than needed
+
+	emake install-mans DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
+	use doc && emake install-docs DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
+	mv "${ED}"/usr/share/doc/{${PN},${PF}}
+	dodoc CHANGELOG README
+}
