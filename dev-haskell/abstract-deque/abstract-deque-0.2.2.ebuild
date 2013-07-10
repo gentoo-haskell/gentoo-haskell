@@ -20,12 +20,11 @@ IUSE="usecas"
 
 RDEPEND="dev-haskell/hunit:=[profile?]
 		dev-haskell/random:=[profile?]
+		>=dev-haskell/test-framework-0.6:=[profile?]
+		>=dev-haskell/test-framework-hunit-0.2.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? ( >=dev-haskell/test-framework-0.6
-			>=dev-haskell/test-framework-hunit-0.2.7
-		)"
+		>=dev-haskell/cabal-1.8"
 
 src_configure() {
 	haskell-cabal_src_configure \
