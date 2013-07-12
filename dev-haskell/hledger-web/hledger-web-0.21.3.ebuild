@@ -13,6 +13,7 @@ DESCRIPTION="A web interface for the hledger accounting tool."
 HOMEPAGE="http://hledger.org"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
+RESTRICT="test"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
@@ -23,8 +24,8 @@ RDEPEND="dev-haskell/clientsession:=[profile?]
 		dev-haskell/data-default:=[profile?]
 		dev-haskell/hamlet:=[profile?]
 		dev-haskell/hjsmin:=[profile?]
-		~dev-haskell/hledger-0.21:=[profile?]
-		~dev-haskell/hledger-lib-0.21:=[profile?]
+		~dev-haskell/hledger-0.21.3:=[profile?]
+		~dev-haskell/hledger-lib-0.21.3:=[profile?]
 		dev-haskell/http-conduit:=[profile?]
 		dev-haskell/hunit:=[profile?]
 		dev-haskell/json:=[profile?]
@@ -56,6 +57,10 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hspec
 			=dev-haskell/yesod-test-1.2*
 		)"
+src_prepare() {
+	cabal_chdeps \
+	  ', yesod-platform       >= 1.2.0.1 && < 1.3' ' '
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
