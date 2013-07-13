@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/cereal-0.3.2.0:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/network:=[profile?]
 		>=dev-haskell/safecopy-0.6:=[profile?]
-		dev-haskell/stm:=[profile?]
-		>=dev-lang/ghc-7.0.1:="
+		>=dev-haskell/stm-2.4:=[profile?]
+		>=dev-lang/ghc-7.6.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
