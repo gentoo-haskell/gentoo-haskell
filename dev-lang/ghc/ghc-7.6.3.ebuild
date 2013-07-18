@@ -233,9 +233,32 @@ relocate_path() {
 relocate_ghc() {
 	local to=$1
 
+	# libdir for prebuilt binary and for current system may mismatch
+	# It does for prefix installation for example: bug #476998
+	local bin_ghc_prefix=${WORKDIR}/usr
+	local bin_libpath=$(echo "${bin_ghc_prefix}"/lib*)
+	local bin_libdir=${bin_libpath#${bin_ghc_prefix}/}
+
 	# backup original script to use it later after relocation
 	local gp_back="${T}/ghc-pkg-${PV}-orig"
 	cp "${WORKDIR}/usr/bin/ghc-pkg-${PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+
+	if [[ ${bin_libdir} != $(get_libdir) ]]; then
+		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
+		# moving the dir itself is not strictly needed
+		# but then USE=binary would result in installing
+		# in '${bin_libdir}'
+		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
+
+		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
+			"${WORKDIR}/usr/bin/ghc-${PV}" \
+			"${WORKDIR}/usr/bin/ghci-${PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${PV}" \
+			"$gp_back" \
+			"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
+	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
@@ -243,10 +266,11 @@ relocate_ghc() {
 		"${WORKDIR}/usr/bin/ghci-${PV}" \
 		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
+		"${WORKDIR}/usr/bin/runghc-${PV}" \
 		"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
-	# so it shoult point to current tree location
+	# so it should point to current tree location
 	relocate_path "/usr" "${WORKDIR}/usr" "$gp_back"
 
 	if use prefix; then
@@ -257,8 +281,9 @@ relocate_ghc() {
 			"${WORKDIR}/usr/bin/ghc-${PV}" \
 			"${WORKDIR}/usr/bin/ghci-${PV}" \
 			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
-			"$gp_back" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${PV}" \
+			"$gp_back" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
 	fi
 
