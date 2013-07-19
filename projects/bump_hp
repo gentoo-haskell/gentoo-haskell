@@ -114,7 +114,7 @@ done
 c=$(basename "$(dirname "$(pwd)")")
 
 run $repoman_prog manifest
-run git add .
+run git add --all .
 run git commit -s -m "${c}/${pn}: bump up to ${pv}" .
 run git show -C -M -D
 run $repoman_prog full
