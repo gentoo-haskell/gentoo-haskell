@@ -7,4 +7,4 @@ index 3862bd3..943da13 100644
  
  main :: IO ()
 -main = doctest ["Data/Conduit.hs"]
-+main = doctest ["Data/Conduit.hs", "-hide-package monads-tf", "-hide-package monads-fd"]
++main = doctest $ ["Data/Conduit.hs", "-hide-all-packages"] ++ (map ("-package "++) ["base","resourcet","lifted-base","transformers-base","monad-control","containers","transformers","mtl","bytestring","text","void","mmorph","directory"])
