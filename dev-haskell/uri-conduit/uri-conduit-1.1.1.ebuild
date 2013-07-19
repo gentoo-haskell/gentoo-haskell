@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/conduit-1.0*:=[profile?]
+		>=dev-haskell/deepseq-1.1.0.0:=[profile?]
 		>=dev-haskell/failure-0.1:=[profile?]
 		<dev-haskell/failure-0.3:=[profile?]
 		=dev-haskell/monad-control-0.3*:=[profile?]
