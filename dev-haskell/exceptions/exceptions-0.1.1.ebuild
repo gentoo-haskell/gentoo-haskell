@@ -13,7 +13,7 @@ DESCRIPTION="Extensible optionally-pure exceptions"
 HOMEPAGE="http://github.com/ekmett/exceptions/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE=""	#Fixme: "OtherLicense", please fill in manually
+LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -25,7 +25,15 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		test? ( =dev-haskell/quickcheck-2.5*
+		test? ( >=dev-haskell/quickcheck-2.5
+				<=dev-haskell/quickcheck-2.7
 			=dev-haskell/test-framework-0.8*
 			=dev-haskell/test-framework-quickcheck2-0.3*
 		)"
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck                 >= 2.5      && < 2.6' 'QuickCheck                 >= 2.5      && < 2.7'
+	cp -pR "${FILESDIR}/${P}"/tests/* "${S}"/tests \
+		|| die "Could not copy missing tests"
+}
