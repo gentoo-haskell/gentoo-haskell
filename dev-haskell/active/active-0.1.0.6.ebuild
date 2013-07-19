@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/semigroupoids-1.2:=[profile?]
-		<dev-haskell/semigroupoids-3.1:=[profile?]
+		<dev-haskell/semigroupoids-3.2:=[profile?]
 		>=dev-haskell/semigroups-0.1:=[profile?]
 		<dev-haskell/semigroups-0.10:=[profile?]
 		=dev-haskell/vector-space-0.8*:=[profile?]
