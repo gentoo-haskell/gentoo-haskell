@@ -18,8 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/basic-prelude-0.3.4:=[profile?]
+RDEPEND=">=dev-haskell/async-2.0:=[profile?]
+		>=dev-haskell/basic-prelude-0.3.4:=[profile?]
 		<dev-haskell/basic-prelude-0.4:=[profile?]
+		dev-haskell/deepseq:=[profile?]
 		dev-haskell/hashable:=[profile?]
 		>=dev-haskell/lifted-base-0.2:=[profile?]
 		dev-haskell/monad-control:=[profile?]
