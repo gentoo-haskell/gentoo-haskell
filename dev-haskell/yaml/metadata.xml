@@ -12,4 +12,7 @@
 		Simonov (&lt;http://pyyaml.org/wiki/LibYAML&gt;) in the package so you
 		don&#39;t need to worry about any non-Haskell dependencies.
 	</longdescription>
+	<flag>
+		<use name="system-libyaml">Use system libyaml instread on generic one</use>
+	</flag>
 </pkgmetadata>
