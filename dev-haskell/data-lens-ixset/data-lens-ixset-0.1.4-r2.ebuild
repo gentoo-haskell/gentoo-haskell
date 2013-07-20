@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,24 +6,25 @@
 
 EAPI=5
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+inherit haskell-cabal
 
 DESCRIPTION="A Lens for IxSet"
 HOMEPAGE="https://github.com/dag/data-lens-ixset"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 
-RDEPEND=">=dev-haskell/data-lens-2.0:=[profile?] <dev-haskell/data-lens-2.11:=[profile?]
+RDEPEND=">=dev-haskell/data-lens-2.0:=[profile?]
+		<dev-haskell/data-lens-2.11:=[profile?]
 		=dev-haskell/ixset-1.0*:=[profile?]
-		>=dev-lang/ghc-6.10.1:="
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.9.2
-		test? ( >=dev-haskell/cabal-1.10
+		>=dev-haskell/cabal-1.10
+		test? (
 			>=dev-haskell/quickcheck-2.4.0.1[profile?]
 		)
 		"
@@ -36,8 +37,4 @@ src_prepare() {
 	cabal_chdeps \
 		'data-lens == 2.0.*' 'data-lens >= 2.0 && < 2.11' \
 		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4'
-}
-
-src_configure() {
-	cabal_src_configure $(use test && use_enable test tests) #395351
 }
