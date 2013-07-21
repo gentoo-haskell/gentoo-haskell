@@ -46,6 +46,12 @@ DEPEND="${RDEPEND}
 
 CABAL_CORE_LIB_GHC_PV="7.5.* 7.7.*"
 
+src_prepare() {
+	if [[ -n ${LIVE_EBUILD} ]]; then
+		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.17.0' "version: ${PV}"
+	fi
+}
+
 src_configure() {
 	cabal-is-dummy-lib && return
 
