@@ -2,13 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 VIM_PLUGIN_VIM_VERSION="7.0"
 
 inherit vim-plugin
 
 DESCRIPTION="vim plugin: Indent settings and filetype detection for Haskell sources"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=1968"
-SRC_URI="http://www.vim.org/scripts/download_script.php?src_id=7407"
+SRC_URI="http://www.vim.org/scripts/download_script.php?src_id=7407 -> ${P}.vim"
 
 LICENSE="public-domain"
 SLOT=0
@@ -32,13 +34,14 @@ Example vimrc:
 VIM_PLUGIN_MESSAGES="filetype"
 
 src_unpack() {
-	mkdir "${S}"
-	cd "${S}"
+	# empty src_unpack
+	mkdir "${S}" || die
+}
 
-	mkdir indent
-	# wget doesn't map the URI to filename correctly.
-	cp "${DISTDIR}/download_script.php?src_id=7407" indent/haskell.vim
+src_prepare() {
+	mkdir indent || die
+	cp "${DISTDIR}/${P}.vim" indent/haskell.vim || die
 
-	mkdir ftdetect
-	echo "au BufNewFile,BufRead *.hs set filetype=haskell" > ftdetect/haskell.vim
+	mkdir ftdetect  || die
+	echo "au BufNewFile,BufRead *.hs set filetype=haskell" > ftdetect/haskell.vim || die
 }
