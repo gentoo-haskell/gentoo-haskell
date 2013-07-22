@@ -34,3 +34,5 @@ DEPEND="${RDEPEND}
 			dev-haskell/quickcheck
 		)
 		>=dev-haskell/cabal-1.8"
+
+RESTRICT=test # Text.ProjectTemplate: create/unpack: - is idempotent FAILED [1]
