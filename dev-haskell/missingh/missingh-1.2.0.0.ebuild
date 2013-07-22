@@ -18,7 +18,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="amd64 ~sparc x86"
+KEYWORDS="amd64 ~sparc x86 ~amd64-linux"
 IUSE="test"
 
 # testpack dependency is a workaround for cabal-1.8 bug, which pulls
