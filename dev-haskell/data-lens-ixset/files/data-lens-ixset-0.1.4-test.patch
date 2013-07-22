@@ -8,13 +8,6 @@ diff --git a/data-lens-ixset.cabal b/data-lens-ixset.cabal
 index d2df7e8..7646282 100644
 --- a/data-lens-ixset.cabal
 +++ b/data-lens-ixset.cabal
-@@ -1,5 +1,5 @@
- Name          : data-lens-ixset
--Version       : 0.1.4
-+Version       : 0.1.5
- Synopsis      : A Lens for IxSet
- Description   : Integrates Data.IxSet with Data.Lens.
- Homepage      : https://github.com/dag/data-lens-ixset
 @@ -26,4 +26,7 @@ Test-Suite test-data-lens-ixset
    Type          : exitcode-stdio-1.0
    GHC-Options   : -Wall

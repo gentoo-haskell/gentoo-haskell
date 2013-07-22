@@ -7,7 +7,7 @@
 EAPI=5
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A Lens for IxSet"
 HOMEPAGE="https://github.com/dag/data-lens-ixset"
