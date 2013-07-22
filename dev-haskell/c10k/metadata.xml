@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Network server library to handle
+		over 10,000 connections. Since GHC 6.12 or
+		earlier uses select(), it cannot handle
+		connections over 1,024. This library uses
+		the prefork technique to get over the barrier.
+		Programs complied by GHC 6.10 or earlier
+		with the -threaded option kill the IO thread
+		when forkProcess is used. So, don&#39;t specify
+		the -threaded option to use this library.
+	</longdescription>
+</pkgmetadata>
