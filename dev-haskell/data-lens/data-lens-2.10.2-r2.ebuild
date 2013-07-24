@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-1.1.1.3[profile?]
-		<dev-haskell/comonad-3.1[profile?]
+		<dev-haskell/comonad-3.2[profile?]
 		>=dev-haskell/comonad-transformers-2.0[profile?]
 		<dev-haskell/comonad-transformers-3.1[profile?]
 		>=dev-haskell/semigroupoids-1.2.4[profile?]
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'semigroupoids        >= 1.2.4   && < 3.1' 'semigroupoids        >= 1.2.4   && < 3.2'
+		'semigroupoids        >= 1.2.4   && < 3.1' 'semigroupoids        >= 1.2.4   && < 3.2' \
+		'comonad              >= 1.1.1.3 && < 3.1' 'comonad              >= 1.1.1.3 && < 3.2'
 }
