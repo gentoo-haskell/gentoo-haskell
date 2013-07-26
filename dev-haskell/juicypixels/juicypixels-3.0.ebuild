@@ -43,4 +43,3 @@ src_prepare() {
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
 	  'binary              >= 0.6.4.0 && < 0.7' 'binary >= 0.6.4 && <0.8'
 }
-

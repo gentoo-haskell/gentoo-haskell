@@ -87,4 +87,3 @@ src_prepare() {
 	# stand-alone yesod-cmd
 	sed  '/executable /,$ d' -i "${S}"/${PN}.cabal
 }
-

@@ -22,7 +22,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 IUSE="doc"
 
-
 if [[ -n ${LIVE_EBUILD} ]]; then
 	# Cabal's subdir
 	EGIT_SOURCEDIR=${S}

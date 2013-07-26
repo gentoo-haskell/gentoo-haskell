@@ -24,7 +24,7 @@ RDEPEND="sys-apps/dbus
 	gnome2? ( <gnome-base/gnome-panel-3.0
 		x11-libs/gtk+:2
 	)
-	gnome3? ( >=gnome-base/gnome-panel-3.0.2 
+	gnome3? ( >=gnome-base/gnome-panel-3.0.2
 		x11-libs/gtk+:3
 	)
 	xfce4? ( xfce-base/xfce4-panel )
