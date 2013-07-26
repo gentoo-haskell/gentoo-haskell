@@ -20,7 +20,6 @@ IUSE="executable pcre-light"
 
 RDEPEND=">=dev-haskell/blaze-html-0.4.2:=[profile?]
 		<dev-haskell/blaze-html-0.7:=[profile?]
-		dev-haskell/highlighting-kate:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
