@@ -35,7 +35,7 @@ DEPEND=">=dev-haskell/cabal-1.2.3
 		virtual/libiconv
 		${RDEPEND}
 		test? ( dev-haskell/testpack[profile?]
-			dev-haskell/quickcheck:1[profile?]
+			dev-haskell/quickcheck[profile?]
 			dev-haskell/hunit[profile?] )"
 
 # libiconv is needed for the trick below to make it compile with ghc-6.12
@@ -43,6 +43,8 @@ DEPEND=">=dev-haskell/cabal-1.2.3
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'QuickCheck >= 1.0 && <2.0' 'QuickCheck'
 	# (non-ASCII non-UTF-8 source breaks hscolour)
 	cd src/System/Time
 	mv ParseDate.hs ParseDate.hs.ISO-8859-1
