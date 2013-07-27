@@ -16,7 +16,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64 ~x86"
-IUSE="testing +use_xft"
+# hackport-args: --always-disabled='testing'
+IUSE="+xft"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
@@ -27,13 +28,13 @@ RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		<dev-haskell/x11-1.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		=x11-wm/xmonad-0.11*:=[profile?]
-		use_xft? ( >=dev-haskell/x11-xft-0.2:=[profile?]
+		xft? ( >=dev-haskell/x11-xft-0.2:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag testing testing) \
-		$(cabal_flag use_xft use_xft)
+		--flags=-testing \
+		$(cabal_flag xft use_xft)
 }
