@@ -16,16 +16,18 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="chaselev"
 
 RDEPEND=">=dev-haskell/abstract-deque-0.1.4:=[profile?]
 		dev-haskell/abstract-par:=[profile?]
 		>=dev-haskell/deepseq-1.1:=[profile?]
-		=dev-haskell/monad-par-extras-0.3*:=[profile?]
+		>=dev-haskell/monad-par-extras-0.3:=[profile?]
 		>=dev-haskell/mtl-2.0.1.0:=[profile?]
 		>=dev-haskell/mwc-random-0.11:=[profile?]
 		>=dev-haskell/parallel-3.1:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-6.12.1:=
+		chaselev? ( dev-haskell/chaselev-deque:=[profile?]
+		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/hunit
@@ -35,3 +37,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.3
 			dev-haskell/test-framework-th
 		)"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag chaselev chaselev)
+}
