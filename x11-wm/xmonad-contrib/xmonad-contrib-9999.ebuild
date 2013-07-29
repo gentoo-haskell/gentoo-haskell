@@ -16,7 +16,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="xft"
+IUSE="xft testing"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
@@ -32,5 +32,5 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag testing testing) \
-		$(cabal_flag use_xft use_xft)
+		$(cabal_flag xft use_xft)
 }
