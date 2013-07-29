@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="emacs"
+IUSE="+threaded emacs"
 
 RDEPEND=">=dev-haskell/cpphs-1.11:=[profile?]
 		<dev-haskell/cpphs-1.17:=[profile?]
