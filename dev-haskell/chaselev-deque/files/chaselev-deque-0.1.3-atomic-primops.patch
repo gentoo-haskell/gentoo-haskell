@@ -1,0 +1,18 @@
+diff --git a/Data/Concurrent/Deque/ChaseLev.hs b/Data/Concurrent/Deque/ChaseLev.hs
+index 4beaf14..9e39215 100644
+--- a/Data/Concurrent/Deque/ChaseLev.hs
++++ b/Data/Concurrent/Deque/ChaseLev.hs
+@@ -210,8 +210,13 @@ newQ :: IO (ChaseLevDeque elt)
+ newQ = do
+   -- Arbitrary Knob: We start as size 32 and double from there:
+   v  <- MV.new 32 
++#if MIN_VERSION_atomic_primops(0,4,0)
++  r1 <- newCounter 0
++  r2 <- newCounter 0
++#else
+   r1 <- newCounter
+   r2 <- newCounter
++#endif
+   r3 <- newIORef v
+   return$ CLD r1 r2 r3
+ 
