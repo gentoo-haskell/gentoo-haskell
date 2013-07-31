@@ -20,8 +20,6 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hunit
-		)
 		>=dev-haskell/cabal-1.10
 		=dev-haskell/deepseq-1.3*
 		dev-haskell/extensible-exceptions
@@ -34,9 +32,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/tar
 		>dev-haskell/xml-1.3.5
 		dev-haskell/zlib
-		>=dev-lang/ghc-6.12.1"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		--flag=split-base
-}
+		>=dev-lang/ghc-6.12.1
+		test? ( dev-haskell/hunit
+		)"
