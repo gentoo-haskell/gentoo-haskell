@@ -1,7 +1,0 @@
-diff --git a/lib/Prelude/Maybe.idr b/lib/Prelude/Maybe.idr
-index 0249969..0b77032 100644
---- a/lib/Prelude/Maybe.idr
-+++ b/lib/Prelude/Maybe.idr
-@@ -53,1 +53,1 @@ maybe_bind (Just x) k = k x
---- and defining i+i = i and i+s = s = s+i for all s ∈ S."
-+-- and defining i+i = i and i+s = s = s+i for all s in S."
