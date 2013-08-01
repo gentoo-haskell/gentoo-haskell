@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )"
 
 src_prepare() {
-	HCFLAGS+=-XBangPatterns #fixes build failure on BE platforms; bug 466778
+	HCFLAGS+=" -XBangPatterns" #fixes build failure on BE platforms; bug 466778
 
 	cabal_chdeps \
 		'build-depends: process' 'build-depends: process, base'
