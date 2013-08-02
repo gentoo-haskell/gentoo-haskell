@@ -615,19 +615,12 @@ src_compile() {
 	fi # ! use binary
 }
 
-ghc-needs-c_nonshared-for-interpreter-libs() {
-	local sample_test=${T}/c_nonshared-test.c
-	echo "int main() {} " > "${sample_test}" || die
-	$(tc-getCC) -o "${sample_test}".result "${sample_test}" \
-		-L"${ROOT}"/usr/$(get_libdir) -lc_nonshared
-}
-
 add-c_nonshared-to-ghci-libs() {
 	local ghci_lib
 	local nonshared_dir=${T}/libc_nonshared_objects
 
 	is_crosscompile && return
-	ghc-needs-c_nonshared-for-interpreter-libs || return
+	use elibc_glibc || return
 
 	get-nonshared-objects() {
 		# ns - 'nonshared'
@@ -639,15 +632,18 @@ add-c_nonshared-to-ghci-libs() {
 		# extract
 		mkdir "${nonshared_dir}" || die
 		pushd "${nonshared_dir}" >/dev/null || die
-		$(tc-getAR) x "${ROOT}"/usr/$(get_libdir)/libc_nonshared.a
+		$(tc-getAR) x "${ROOT}"/usr/$(get_libdir)/libc.a
 		popd >/dev/null || die
 
+		# they are mostly contents of /usr/$(get_libdir)/libc_nonstahed.a
+		# but 'c_nonstahed' contains PIC variants of symbols.
+		# ghci uses non-PIC ones
 		for ns_sym in \
 			stat    fstat   lstat mknod \
 			stat64  fstat64 lstat64 \
 			fstatat fstatat64 mknodat
 		do
-			ns_srco=${nonshared_dir}/${ns_sym}.oS
+			ns_srco=${nonshared_dir}/${ns_sym}.o
 			ns_dsto=${nonshared_dir}/${ns_sym}_weakened.o
 			[[ -f ${ns_srco} ]] || continue
 			# here we do The Magic:
