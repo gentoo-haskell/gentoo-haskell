@@ -12,7 +12,7 @@ inherit haskell-cabal git-2
 
 DESCRIPTION="Metadata collection for leksah"
 HOMEPAGE="http://leksah.org"
-EGIT_REPO_URI="git://github.com/leksah/leksah-server.git"
+EGIT_REPO_URI="https://github.com/leksah/leksah-server.git"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
