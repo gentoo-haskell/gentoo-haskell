@@ -13,7 +13,7 @@ inherit git-2 haskell-cabal
 
 DESCRIPTION="GUI library for source code management systems"
 HOMEPAGE="https://github.com/forste/haskellVCSGUI"
-EGIT_REPO_URI="git://github.com/forste/haskellVCSGUI.git"
+EGIT_REPO_URI="https://github.com/forste/haskellVCSGUI.git"
 EGIT_SOURCEDIR="${WORKDIR}/${P}"
 
 LICENSE="GPL-2"
@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'gtk >=0.12.0 && <0.13' 'gtk >=0.13.0'
+		'gtk >=0.12.0 && <0.13' 'gtk3 >=0.12.4.1'
 }
