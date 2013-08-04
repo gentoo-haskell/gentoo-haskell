@@ -14,7 +14,7 @@ inherit haskell-cabal git-2
 
 DESCRIPTION="Leksah tool kit"
 HOMEPAGE="http://www.leksah.org"
-EGIT_REPO_URI="git://github.com/leksah/ltk.git"
+EGIT_REPO_URI="https://github.com/leksah/ltk.git"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
@@ -43,11 +43,11 @@ src_prepare() {
 			-i "${S}/${PN}.cabal"
 	fi
 	cabal_chdeps \
-		'glib >=0.10.0 && <0.13' 'glib >=0.13.0' \
-		'gtk >=0.10.0 && <0.13' 'gtk >=0.13.0'
+		'glib >=0.10.0 && <0.13' 'glib >=0.13.0'
 }
 
 src_configure() {
 	cabal_src_configure \
-		--constraint="Cabal == $(cabal-version)"
+		--constraint="Cabal == $(cabal-version)" \
+		--flag=gtk3
 }
