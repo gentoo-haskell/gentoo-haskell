@@ -12,7 +12,7 @@ inherit haskell-cabal git-2
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
-EGIT_REPO_URI="git://github.com/leksah/leksah.git"
+EGIT_REPO_URI="https://github.com/leksah/leksah.git"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
@@ -41,7 +41,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 			>=dev-haskell/gio-0.13.0:3=[profile?]
 			>=dev-haskell/glib-0.13.0:3=[profile?]
 			>=dev-haskell/gtk-0.13.0:3=[profile?]
-			>=dev-haskell/gtksourceview2-0.13.0:3=[profile?]
+			>=dev-haskell/gtksourceview-0.13.0:3=[profile?]
 		)
 		!gtk3? (
 			>=dev-haskell/gio-0.12.2:2=[profile?]
@@ -50,8 +50,8 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 			<dev-haskell/glib-0.13:2=[profile?]
 			>=dev-haskell/gtk-0.10:2=[profile?]
 			<dev-haskell/gtk-0.13:2=[profile?]
-			>=dev-haskell/gtksourceview2-0.10.0:2=[profile?]
-			<dev-haskell/gtksourceview2-0.13:2=[profile?]
+			>=dev-haskell/gtksourceview-0.10.0:2=[profile?]
+			<dev-haskell/gtksourceview-0.13:2=[profile?]
 		)
 		>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 		<dev-haskell/haskell-src-exts-1.14:=[profile?]
@@ -81,6 +81,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1.1:=[profile?]
 		<dev-haskell/utf8-string-0.4:=[profile?]
+		dev-haskell/vado:=[profile?]
 		dev-haskell/vcsgui:=[profile?]
 		>=dev-haskell/vcswrapper-0.0.1:=[profile?]
 		<dev-haskell/vcswrapper-0.1:=[profile?]
@@ -122,10 +123,7 @@ src_prepare() {
 	if use gtk3; then
 		cabal_chdeps \
 			'glib >=0.10 && <0.13' 'glib >=0.13' \
-			'gtk >=0.10 && <0.13' 'gtk >=0.13' \
-			'gtksourceview2 >=0.10.0 && <0.13' 'gtksourceview2 >=0.13.0' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.13.0' \
-			'QuickCheck >=2.4.2 && <2.6' 'QuickCheck >=2.4.2 && <2.7'
+			'gio >=0.12.2 && <0.13' 'gio >=0.13.0'
 	fi
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
