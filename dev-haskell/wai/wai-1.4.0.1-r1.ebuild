@@ -27,7 +27,13 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?]
 		>=dev-haskell/text-0.7:=[profile?]
 		>=dev-haskell/transformers-0.2.2:=[profile?]
 		>=dev-haskell/vault-0.1:=[profile?]
-		<dev-haskell/vault-0.3:=[profile?]
+		<dev-haskell/vault-0.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+	  'vault                     >= 0.1      && < 0.3' \
+	  'vault  >= 0.1 && < 0.4'
+}
