@@ -36,4 +36,5 @@ src_prepare() {
 	cabal_chdeps \
 	  'vault                     >= 0.1      && < 0.3' \
 	  'vault  >= 0.1 && < 0.4'
+	epatch "${FILESDIR}"/${P}-support-vault-3.0.patch
 }
