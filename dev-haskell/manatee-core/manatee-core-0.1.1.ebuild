@@ -31,7 +31,7 @@ RDEPEND="dev-haskell/binary
 		>=dev-haskell/glib-0.12.0
 		>=dev-haskell/gtk-0.12.0
 		>=dev-haskell/gtk-serialized-event-0.12.0
-		>=dev-haskell/gtksourceview2-0.12.0
+		>=dev-haskell/gtksourceview-0.12.0:2
 		dev-haskell/haskell-src-exts
 		>=dev-haskell/mtl-1.1.0.2
 		>=dev-haskell/network-2.2.1.5

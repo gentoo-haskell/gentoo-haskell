@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/binary
 		>=dev-haskell/googletranslate-0.0.3
 		dev-haskell/groom
 		>=dev-haskell/gtk-0.12.0
-		>=dev-haskell/gtksourceview2-0.12.0
+		>=dev-haskell/gtksourceview-0.12.0:2
 		>=dev-haskell/manatee-core-0.1.1
 		>=dev-haskell/morsecode-0.0.4
 		dev-haskell/mtl
