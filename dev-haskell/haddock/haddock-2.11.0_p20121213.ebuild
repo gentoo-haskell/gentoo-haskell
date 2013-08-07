@@ -29,7 +29,7 @@ RESTRICT="test" # avoid depends on QC
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
-CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.10.0_p20120711-ghc-7.5.patch

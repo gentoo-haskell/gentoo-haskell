@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 
 RESTRICT="test" # avoid depends on QC
 
-CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 src_prepare() {
 	# we would like to avoid happy and alex depends

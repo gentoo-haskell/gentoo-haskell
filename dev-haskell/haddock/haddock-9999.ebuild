@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 
 RESTRICT="test" # avoid depends on QC
 
-CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch"
 	"${FILESDIR}/${PN}-2.11.0_p20121022-needs-deepseq.patch")

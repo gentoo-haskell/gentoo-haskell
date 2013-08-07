@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/ghc-paths:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
-CABAL_EXTRA_BUILD_FLAGS="--ghc-options=-rtsopts"
+CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 src_prepare() {
 	# we would like to avoid happy and alex depends
