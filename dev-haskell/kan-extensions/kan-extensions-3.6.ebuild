@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads"
+DESCRIPTION="Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads"
 HOMEPAGE="http://github.com/ekmett/kan-extensions/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
