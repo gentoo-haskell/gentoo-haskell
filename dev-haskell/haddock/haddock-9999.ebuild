@@ -5,7 +5,7 @@
 EAPI="4"
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
-inherit base eutils git-2 haskell-cabal pax-utils
+inherit eutils git-2 haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -28,9 +28,6 @@ DEPEND="${RDEPEND}
 RESTRICT="test" # avoid depends on QC
 
 CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
-
-PATCHES=("${FILESDIR}/${PN}-2.10.0_p20120711-ghc-7.5.patch"
-	"${FILESDIR}/${PN}-2.11.0_p20121022-needs-deepseq.patch")
 
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal
