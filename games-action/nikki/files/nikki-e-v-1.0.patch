@@ -1,0 +1,92 @@
+Fri Aug  9 23:30:55 FET 2013  Sergei Trofimovich <slyfox@community.haskell.org>
+  * nikki-email-validate-1.0
+diff -rN -u old-nikki/src/nikki.cabal new-nikki/src/nikki.cabal
+--- old-nikki/src/nikki.cabal	2013-08-09 23:31:40.497127286 +0300
++++ new-nikki/src/nikki.cabal	2013-08-09 23:31:40.876127305 +0300
+@@ -122,12 +122,12 @@
+         , clocked == 0.4.1.*
+         , cmdargs >= 0.6.6
+         , containers
+-        , crypto-pubkey-types == 0.1.*
++        , crypto-pubkey-types >= 0.1 && < 0.5
+         , data-accessor >= 0.2.1.7
+         , data-accessor-mtl >= 0.2.0.2
+         , deepseq == 1.3.*
+         , directory
+-        , email-validate == 0.3.*
++        , email-validate == 1.0.*
+         , filepath
+         , FindBin >= 0.0.5
+         , hashable == 1.1.* || == 1.2.*
+diff -rN -u old-nikki/src/StoryMode/Client.hs new-nikki/src/StoryMode/Client.hs
+--- old-nikki/src/StoryMode/Client.hs	2013-08-09 23:31:40.498127286 +0300
++++ new-nikki/src/StoryMode/Client.hs	2013-08-09 23:31:40.863127304 +0300
+@@ -22,8 +22,9 @@
+ import Data.Text (pack, unpack)
+ import Data.Maybe
+ import qualified Data.ByteString.Lazy as BSL
++import qualified Data.ByteString.Char8 as BSC
+ 
+-import Text.Email.Validate
++import Text.Email.Validate as EV
+ 
+ import Control.Applicative
+ import Control.DeepSeq
+@@ -65,12 +66,14 @@
+             1 -> StoryModeVersion <$> get <*> get
+ 
+ instance Binary EmailAddress where
+-    put (EmailAddress a b) =
+-        putWord8 0 *> put a *> put b
++    put ea =
++        putWord8 0 *> put (localPart ea) *> put (domainPart ea)
+     get = do
+         c <- getWord8
+         case c of
+-            0 -> EmailAddress <$> get <*> get
++            0 -> do lp <- get
++                    dp <- get
++                    return $ fromJust $ EV.emailAddress (BSC.concat [lp, BSC.singleton '@', dp])
+ 
+ instance NFData ClientToServer where
+     rnf (StoryModeDownload a b) =
+@@ -79,8 +82,8 @@
+         rnf a `seq` rnf b
+ 
+ instance NFData EmailAddress where
+-    rnf (EmailAddress a b) =
+-        rnf a `seq` rnf b
++    rnf ea =
++        rnf (localPart ea) `seq` rnf (domainPart ea)
+ 
+ instance Protocol ClientToServer where
+     protocolVersion _ = Version [0, 2] []
+@@ -144,7 +147,7 @@
+     parseJSON _ = mzero
+ 
+ instance FromJSON EmailAddress where
+-    parseJSON (String t) = case validate (unpack t) of
++    parseJSON (String t) = case validate (BSC.pack $ unpack t) of
+         Left _ -> mzero
+         Right x -> return x
+ 
+diff -rN -u old-nikki/src/StoryMode/Purchasing.hs new-nikki/src/StoryMode/Purchasing.hs
+--- old-nikki/src/StoryMode/Purchasing.hs	2013-08-09 23:31:40.497127286 +0300
++++ new-nikki/src/StoryMode/Purchasing.hs	2013-08-09 23:31:40.864127304 +0300
+@@ -5,6 +5,7 @@
+ 
+ import Data.Version
+ import qualified Data.ByteString.Lazy as BSL
++import qualified Data.ByteString.Char8 as BSC
+ import Data.Typeable
+ import Data.Bifunctor
+ import Data.Aeson
+@@ -74,7 +75,7 @@
+     this = loginAsking app storyModeMenu parent
+ 
+     parseEmail :: String -> Either [Prose] EmailAddress
+-    parseEmail s = first (const [p "invalid email-address"]) $ validate s
++    parseEmail s = first (const [p "invalid email-address"]) $ validate (BSC.pack s)
+ 
+ loginAndInstall :: Application -> AppState -> LoginData -> AppState
+ loginAndInstall app storyModeMenu loginData =
