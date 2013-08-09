@@ -189,7 +189,8 @@ pkg_setup() {
 git-2_gc() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	local args="--branch=${EGIT_BRANCH}"
+	local bargs="--branch=${EGIT_BRANCH}"
+	local args=""
 	if ! use dph; then
 		args+=" --no-dph"
 	fi
@@ -200,17 +201,17 @@ git-2_gc() {
 		|| die 'git config --global diff.ignoreSubmodules dirty failed'
 	if [[ -f ghc-tarballs/LICENSE ]]; then
 		einfo "./sync-all ${args} --testsuite pull"
-		./sync-all --testsuite pull
+		./sync-all ${args} --testsuite pull
 		if [[ "$?" != "0" ]]; then
 			ewarn "sync-all ${args} --testsuite pull failed, trying get"
-			einfo "./sync-all ${args} --testsuite get"
-			./sync-all ${args} --testsuite get \
-				|| die "sync-all ${args} --testsuite get failed"
+			einfo "./sync-all ${args} --testsuite get ${bargs}"
+			./sync-all ${args} --testsuite get ${bargs} \
+				|| die "sync-all ${args} --testsuite get ${bargs} failed"
 		fi
 	else
-		einfo "./sync-all ${args} --testsuite get"
-		./sync-all ${args} --testsuite get \
-			|| die "sync-all ${args} --testsuite get failed"
+		einfo "./sync-all ${args} --testsuite get ${bargs}"
+		./sync-all ${args} --testsuite get ${bargs} \
+			|| die "sync-all ${args} --testsuite get ${bargs} failed"
 	fi
 
 	popd > /dev/null
