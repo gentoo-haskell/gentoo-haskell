@@ -1,0 +1,25 @@
+--- test-framework-0.8-orig/Test/Framework/Runners/Console.hs	2012-12-07 03:59:37.000000000 +1100
++++ test-framework-0.8/Test/Framework/Runners/Console.hs	2013-08-10 15:01:32.302988000 +1000
+@@ -1,3 +1,5 @@
++{-# LANGUAGE CPP #-}
++
+ module Test.Framework.Runners.Console (
+         defaultMain, defaultMainWithArgs, defaultMainWithOpts,
+         optionsDescription, interpretArgs, interpretArgsOrExit
+@@ -22,7 +24,7 @@
+ 
+ import Data.Monoid
+ 
+-
++#if !MIN_VERSION_base(4,7,0)
+ instance Functor OptDescr where
+     fmap f (Option a b arg_descr c) = Option a b (fmap f arg_descr) c
+ 
+@@ -30,6 +32,7 @@
+     fmap f (NoArg a) = NoArg (f a)
+     fmap f (ReqArg g s) = ReqArg (f . g) s
+     fmap f (OptArg g s) = OptArg (f . g) s
++#endif
+ 
+ -- | @Nothing@ signifies that usage information should be displayed.
+ -- @Just@ simply gives us the contribution to overall options by the command line option.
