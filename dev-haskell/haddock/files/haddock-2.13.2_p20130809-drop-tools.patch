@@ -1,0 +1,22 @@
+--- haddock-2.13.2-orig/haddock.cabal	2013-08-09 09:18:23.000000000 +1000
++++ haddock-2.13.2/haddock.cabal	2013-08-10 13:29:46.349271000 +1000
+@@ -66,8 +66,6 @@
+     ghc-options:          -funbox-strict-fields -Wall -fwarn-tabs
+   else
+     ghc-options:          -funbox-strict-fields -Wall -fwarn-tabs -O2
+-  if !flag(in-ghc-tree)
+-    build-tools: alex >= 3, happy >= 1.18
+   build-depends:
+     base >= 4.3 && < 4.8
+   if flag(in-ghc-tree)
+@@ -118,10 +116,6 @@
+ 
+ library
+   default-language:     Haskell2010
+-  -- In a GHC tree - in particular, in a source tarball - we don't
+-  -- require alex or happy
+-  if !flag(in-ghc-tree)
+-    build-tools: alex >= 3, happy >= 1.18
+   build-depends:
+     base >= 4.3 && < 4.8,
+     filepath,
