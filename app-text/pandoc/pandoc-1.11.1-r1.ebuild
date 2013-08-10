@@ -46,7 +46,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
 		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/tagsoup-0.12.5:=[profile?]
-		<dev-haskell/tagsoup-0.13:=[profile?]
+		<dev-haskell/tagsoup-0.14:=[profile?]
 		=dev-haskell/temporary-1.1*:=[profile?]
 		>=dev-haskell/texmath-0.6.1.5:=[profile?]
 		<dev-haskell/texmath-0.7:=[profile?]
@@ -78,6 +78,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-no-man-tests.patch
 	epatch "${FILESDIR}"/${P}-test.patch
+	epatch "${FILESDIR}"/${P}-tagsoup-0.13.patch
 
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
