@@ -24,3 +24,11 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 			dev-haskell/mtl
 		)"
+
+src_prepare() {
+	if has_version ">=dev-lang/ghc-7.7"; then
+		sed -e '/test-suite unit-tests/,$d' \
+			-i "${S}/${PN}.cabal" \
+			|| die "Could not remove test suite for ghc 7.7"
+	fi
+}
