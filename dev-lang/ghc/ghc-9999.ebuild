@@ -464,7 +464,11 @@ src_install() {
 		echo "${GHC_PV}" > "${S}/VERSION" \
 			|| die "Could not create file ${S}/VERSION"
 	fi
-	dodoc "${S}/README.md" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+	if [[ "${PV}" == "7.7.20130809" ]]; then
+		dodoc "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+	else
+		dodoc "${S}/README.md" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+	fi
 
 	dobashcomp "${FILESDIR}/ghc-bash-completion"
 
@@ -507,10 +511,14 @@ pkg_postinst() {
 	ewarn "=dev-haskell/cabal-1.17.0* **"
 	if [[ "${PV}" == "7.7.20121213" ]]; then
 		ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-		ewarn "=dev-haskell/haddock-2.11.0* **"
+		ewarn "=dev-haskell/haddock-2.11.0_p2012* **"
 	else
 		ewarn "=dev-haskell/deepseq-1.3.0.2* **"
-		ewarn "=dev-haskell/haddock-9999* **"
+		if [[ "${PV}" =~ "7.7.2013*" ]]; then
+			ewarn "=dev-haskell/haddock-2.13.2_p2013* **"
+		else
+			ewarn "=dev-haskell/haddock-9999* **"
+		fi
 	fi
 	ewarn "=dev-lang/ghc-${PV}* **"
 	ewarn ""
