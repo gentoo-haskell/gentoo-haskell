@@ -27,12 +27,11 @@ RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		>=dev-haskell/distributive-0.3:=[profile?]
 		<dev-haskell/distributive-1:=[profile?]
 		>=dev-haskell/exceptions-0.1.1:=[profile?]
-		<dev-haskell/exceptions-0.2:=[profile?]
+		<dev-haskell/exceptions-0.3:=[profile?]
 		>=dev-haskell/generic-deriving-1.4:=[profile?]
-		<dev-haskell/generic-deriving-1.6:=[profile?]
+		<dev-haskell/generic-deriving-1.7:=[profile?]
 		>=dev-haskell/hashable-1.1.2.3:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
-		=dev-haskell/monadcatchio-transformers-0.3*:=[profile?]
 		>=dev-haskell/mtl-2.0.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/parallel-3.1.0.1:=[profile?]
@@ -60,6 +59,8 @@ RDEPEND="=dev-haskell/bifunctors-3*:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
 		>=dev-haskell/void-0.5:=[profile?]
 		<dev-haskell/void-1:=[profile?]
+		>=dev-haskell/zlib-0.5.4:=[profile?]
+		<dev-haskell/zlib-0.6:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
@@ -127,6 +128,12 @@ DEPEND="${RDEPEND}
 		)
 		)
 		)"
+
+src_prepare() {
+	cabal_chdeps \
+		'exceptions                >= 0.1.1    && < 0.2' 'exceptions                >= 0.1.1    && < 0.3' \
+		'generic-deriving          >= 1.4      && < 1.6' 'generic-deriving          >= 1.4      && < 1.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
