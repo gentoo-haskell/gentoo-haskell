@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5[profile?]
 		>=dev-haskell/hsopenssl-0.10.1[profile?]
 		<dev-haskell/hsopenssl-2[profile?]
 		>=dev-haskell/listlike-1.0[profile?]
-		<dev-haskell/listlike-4[profile?]
+		<dev-haskell/listlike-5[profile?]
 		>=dev-haskell/mtl-1.1.0.2[profile?]
 		<dev-haskell/mtl-3[profile?]
 		>=dev-haskell/network-2.3[profile?]
@@ -39,3 +39,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'ListLike >= 1.0 && < 4' 'ListLike >= 1.0 && < 5'
+	sed -e '/#if defined(__GLASGOW_HASKELL__) && (__GLASGOW_HASKELL__ >= 702)/,/#endif/d' \
+		-i "${S}/Data/IterIO/Parse.hs" \
+		|| die "Could not remove safe haskell, which is required as ListLike imports vector which is unsafe"
+}
