@@ -20,9 +20,14 @@ IUSE=""
 
 RDEPEND="=dev-haskell/digestive-functors-0.6*:=[profile?]
 		>=dev-haskell/happstack-server-6.0:=[profile?]
-		<dev-haskell/happstack-server-7.2:=[profile?]
+		<dev-haskell/happstack-server-7.4:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
 		<dev-haskell/text-1.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'happstack-server   >= 6.0  && < 7.2' 'happstack-server   >= 6.0  && < 7.4'
+}
