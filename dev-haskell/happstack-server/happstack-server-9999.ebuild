@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -52,8 +52,8 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/hunit
 		)"
 
-src_prepare() {
-	# upstream forgot the tests
-	cp -pR "${FILESDIR}/${PN}-7.0.4/tests/Happstack" "${S}/tests/Happstack" \
-		|| die "Could not copy missing test source files"
+src_configure() {
+	haskell-cabal_src_configure \
+		--flags=network_2_2_3 \
+		--flags=template_haskell
 }
