@@ -1,0 +1,14 @@
+--- hoogle-4.2.16-orig/src/General/Base.hs	2013-02-22 03:24:55.000000000 +1100
++++ hoogle-4.2.16/src/General/Base.hs	2013-08-11 12:39:21.063763000 +1000
+@@ -60,9 +60,10 @@
+ fromLeft (Left x) = x
+ fromRight (Right x) = x
+ 
++#if !MIN_VERSION_base(4,7,0)
+ isLeft Left{} = True; isLeft _ = False
+ isRight Right{} = True; isRight _ = False
+-
++#endif
+ 
+ concatMapM f = liftM concat . mapM f
+ 

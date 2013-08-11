@@ -42,7 +42,8 @@ RDEPEND="dev-haskell/binary:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-4.2.14-ghc-7.7.patch")
+PATCHES=("${FILESDIR}/${PN}-4.2.14-ghc-7.7.patch"
+	"${FILESDIR}/${PN}-4.2.16-ghc-7.7.patch")
 
 src_prepare() {
 	base_src_prepare
