@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/listlike-3.0[profile?]
-		<dev-haskell/listlike-4[profile?]
+		<dev-haskell/listlike-5[profile?]
 		=dev-haskell/monad-control-0.3*[profile?]
 		>dev-haskell/monadcatchio-transformers-0.2[profile?]
 		<dev-haskell/monadcatchio-transformers-0.4[profile?]
@@ -31,3 +31,8 @@ RDEPEND=">=dev-haskell/listlike-3.0[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'ListLike                  >= 3.0     && < 4' 'ListLike                  >= 3.0     && < 5'
+}
