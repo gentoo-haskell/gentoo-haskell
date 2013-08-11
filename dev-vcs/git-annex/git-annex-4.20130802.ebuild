@@ -51,6 +51,7 @@ DEPEND="${RDEPEND}
 		assistant? ( dev-haskell/async
 			>=dev-haskell/stm-2.3
 			inotify? ( dev-haskell/hinotify )
+			sys-process/lsof
 		)
 		dbus? ( >=dev-haskell/dbus-0.10.3
 		)
