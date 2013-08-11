@@ -22,12 +22,10 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
-		<dev-haskell/happstack-server-7.2:=[profile?]
 		=dev-haskell/harp-0.4*:=[profile?]
-		>=dev-haskell/hsp-0.7.1:=[profile?]
-		<dev-haskell/hsp-0.8:=[profile?]
-		>=dev-haskell/hsx-0.10.2:=[profile?]
-		<dev-haskell/hsx-0.11:=[profile?]
+		>=dev-haskell/hsp-0.9.2:=[profile?]
+		<dev-haskell/hsp-0.10:=[profile?]
+		dev-haskell/hsx2hs:=[profile?]
 		>=dev-haskell/mtl-1.1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/syb-0.3:=[profile?]
