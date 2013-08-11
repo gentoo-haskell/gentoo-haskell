@@ -17,6 +17,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="android +assistant +dbus +dns doc feed +inotify +pairing +production +s3 +tdfa +testsuite +webapp +webdav +xmpp"
+REQUIRED_USE="assistant? ( inotify ) webapp? ( assistant )"
 RESTRICT=test # don't seem to like our git environment much
 
 RDEPEND=""
