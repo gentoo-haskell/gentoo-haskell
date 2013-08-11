@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,6 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
-		<dev-haskell/happstack-server-7.2:=[profile?]
 		dev-haskell/hslogger:=[profile?]
 		>=dev-haskell/hstringtemplate-0.4.3:=[profile?]
 		<dev-haskell/hstringtemplate-0.8:=[profile?]
