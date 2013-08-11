@@ -28,6 +28,14 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
+src_prepare() {
+	if has_version ">=dev-lang/ghc-7.7"; then
+		sed -e '/test-suite read-write-file/,/ghc-options: -Wall/d' \
+			-i "${S}/${PN}.cabal" \
+			|| die "Could not remove test suite for ghc 7.7"
+	fi
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag development development)
