@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="+stream-hack"
+IUSE=""
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 		<dev-haskell/network-2.5:=[profile?]
@@ -25,6 +25,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
-	use stream-hack && epatch "${FILESDIR}"/${P}-use-STREAM.patch
+	epatch "${FILESDIR}"/${P}-dev-log-rdetect.patch
 	epatch_user
 }
