@@ -19,4 +19,16 @@
 		etc that are associated with annexed files but that benefit from full
 		revision control.
 	</longdescription>
+	<use>
+		<flag name="s3">Enable S3 support</flag>
+		<flag name="webdav">Enable webdav support</flag>
+		<flag name="dns">Enable the haskell DNS library for DNS lookup</flag>
+		<flag name="assistant">Enable git-annex assistant and watch command</flag>
+		<flag name="android">Building for Android</flag>
+		<flag name="production">Enable production build (slower build; faster binary)</flag>
+		<flag name="testsuite">Embed the test suite into git-annex</flag>
+		<flag name="pairing"> Enable pairing</flag>
+		<flag name="webapp">Enable git-annex webapp</flag>
+		<flag name="tdfa">Use regex-tdfa for wildcards</flag>
+	</use>
 </pkgmetadata>
