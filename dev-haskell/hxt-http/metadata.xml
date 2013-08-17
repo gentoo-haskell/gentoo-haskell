@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Interface to native Haskell HTTP package HTTP.
+		This package can be used as alternative for the hxt-curl package
+		for accessing documents via HTTP.
+		
+		Changes to 9.1.3: New warnings from ghc-7.4 removed
+	</longdescription>
+</pkgmetadata>
