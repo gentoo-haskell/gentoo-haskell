@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/ghc-parmake-0.1*:=[profile?]
-		=dev-haskell/temporary-1*:=[profile?]
+RDEPEND="=dev-haskell/temporary-1*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
