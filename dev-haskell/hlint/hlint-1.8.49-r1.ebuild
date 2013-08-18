@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+threaded emacs"
 
 RDEPEND=">=dev-haskell/cpphs-1.11:=[profile?]
-		<dev-haskell/cpphs-1.17:=[profile?]
+		<dev-haskell/cpphs-1.18:=[profile?]
 		>=dev-haskell/haskell-src-exts-1.11:=[profile?]
 		<dev-haskell/haskell-src-exts-1.14:=[profile?]
 		>=dev-haskell/hscolour-1.17:=[profile?]
@@ -33,6 +33,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 SITEFILE="60${PN}-gentoo.el"
+
+src_prepare() {
+	cabal_chdeps \
+		'cpphs >= 1.11 && < 1.17' 'cpphs >= 1.11 && < 1.18'
+}
+
 src_configure() {
 	threaded_flag=""
 	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
