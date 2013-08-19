@@ -65,14 +65,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${P}/src"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-e-v-1.0.patch
-}
-
 src_configure() {
 	# FIXME: cmake hack!
 	cmake cpp || die
-	emake || die
+	emake
 
 	haskell-cabal_src_configure \
 		$(cabal_flag devel devel) \
