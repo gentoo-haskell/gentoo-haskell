@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="chaselev"
+REQUIRED_USE="chaselev? ( !profile )"
 
 RDEPEND=">=dev-haskell/abstract-deque-0.1.4:=[profile?]
 		dev-haskell/abstract-par:=[profile?]
@@ -26,7 +27,7 @@ RDEPEND=">=dev-haskell/abstract-deque-0.1.4:=[profile?]
 		>=dev-haskell/mwc-random-0.11:=[profile?]
 		>=dev-haskell/parallel-3.1:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
-		chaselev? ( dev-haskell/chaselev-deque:=[profile?]
+		chaselev? ( dev-haskell/chaselev-deque:=
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8

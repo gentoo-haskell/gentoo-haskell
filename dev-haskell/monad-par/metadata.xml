@@ -20,4 +20,7 @@
 		Examples of use can be found in the examples/ directory
 		of the source package.
 	</longdescription>
+	<use>
+		<flag name="chaselev">Use Chase-Lev Deques for higher-perf work-stealing.</flag>
+	</use>
 </pkgmetadata>
