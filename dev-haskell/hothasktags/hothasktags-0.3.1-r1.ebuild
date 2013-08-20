@@ -22,7 +22,12 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/cpphs-1.11
-		<dev-haskell/cpphs-1.17
+		<dev-haskell/cpphs-1.18
 		>=dev-haskell/haskell-src-exts-1.11
 		<dev-haskell/haskell-src-exts-1.14
 		>=dev-lang/ghc-6.10.4"
+
+src_prepare() {
+	cabal_chdeps \
+		'cpphs >= 1.11 && < 1.17' 'cpphs >= 1.11 && < 1.18'
+}
