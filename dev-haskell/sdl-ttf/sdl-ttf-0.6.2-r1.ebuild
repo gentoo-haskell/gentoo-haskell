@@ -22,7 +22,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/sdl:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+		>=dev-lang/ghc-6.10.4:=
+		media-libs/sdl-ttf"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
