@@ -21,14 +21,16 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
+		=dev-haskell/dns-0.3*
 		=dev-haskell/hunit-1.2*
 		=dev-haskell/missingh-1.2*
+		=dev-haskell/parallel-io-0.3*
 		=dev-haskell/quickcheck-2.6*
 		=dev-haskell/split-0.2*
 		=dev-haskell/test-framework-0.8*
 		=dev-haskell/test-framework-hunit-0.3*
 		=dev-haskell/test-framework-quickcheck2-0.3*
-		>=dev-lang/ghc-6.10.4"
+		>=dev-lang/ghc-7.6.1"
 
 src_install() {
 	cabal_src_install
