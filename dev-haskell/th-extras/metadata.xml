@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A grab bag of functions for use with Template Haskell.
+		
+		This is basically the place I put all my ugly CPP hacks to support
+		the ever-changing interface of the template haskell system by
+		providing high-level operations and making sure they work on as many
+		versions of Template Haskell as I can.
+	</longdescription>
+</pkgmetadata>
