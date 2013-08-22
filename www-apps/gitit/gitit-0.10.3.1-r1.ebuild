@@ -53,7 +53,8 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		>dev-haskell/sha-1:=[profile?]
 		<dev-haskell/sha-1.7:=[profile?]
 		dev-haskell/syb:=[profile?]
-		=dev-haskell/tagsoup-0.12*:=[profile?]
+		>=dev-haskell/tagsoup-0.12:=[profile?]
+		<dev-haskell/tagsoup-0.14:=[profile?]
 		dev-haskell/text:=[profile?]
 		=dev-haskell/url-2.1*:=[profile?]
 		=dev-haskell/utf8-string-0.3*:=[profile?]
@@ -66,6 +67,12 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'tagsoup >= 0.12 && < 0.13' 'tagsoup >= 0.12 && < 0.14'
+	epatch ${FILESDIR}/${P}-tagsoup-0.13.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
