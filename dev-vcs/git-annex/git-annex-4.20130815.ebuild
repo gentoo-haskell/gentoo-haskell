@@ -12,6 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="manage files with git, without checking their contents into git"
 HOMEPAGE="http://git-annex.branchable.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+RESTRICT="test"
 
 LICENSE="GPL-3"
 SLOT="0"
