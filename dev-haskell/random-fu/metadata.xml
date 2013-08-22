@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Random number generation based on modeling random
+		variables in two complementary ways: first, by the
+		parameters of standard mathematical distributions and,
+		second, by an abstract type (&#39;RVar&#39;) which can be
+		composed and manipulated monadically and sampled in
+		either monadic or \&quot;pure\&quot; styles.
+		
+		The primary purpose of this library is to support
+		defining and sampling a wide variety of high quality
+		random variables.  Quality is prioritized over speed,
+		but performance is an important goal too.
+		
+		In my testing, I have found it capable of speed
+		comparable to other Haskell libraries, but still
+		a fair bit slower than straight C implementations of
+		the same algorithms.
+		
+		Changes in 0.2.4.0: Added a Lift instance that resolves
+		a common overlapping-instance issue in user code.
+		
+		Changes in 0.2.3.1: Should now build on GHC 7.6
+		
+		Changes in 0.2.3.0: Added stretched exponential distribution,
+		contributed by Ben Gamari.
+		
+		Changes in 0.2.2.0: Bug fixes in Data.Random.Distribution.Categorical.
+		
+		Changes in 0.2.1.1: Changed some one-field data types
+		to newtypes, updated types for GHC 7.4&#39;s removal of Eq
+		and Show from the context of Num, and added RVarT versions
+		of random variables in Data.Random.List
+	</longdescription>
+</pkgmetadata>
