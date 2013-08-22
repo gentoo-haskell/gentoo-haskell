@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A collection of type-classes generalizing the
+		read\/write\/modify operations for stateful variables
+		provided by things like IORef, TVar, &amp;c.
+		Note that The interface has changed a bit from the
+		0.2.* version.  \&quot;*Ref\&quot; functions are now called
+		\&quot;*Reference\&quot; and new \&quot;*Ref\&quot; function exist with
+		simpler signatures.
+		The new &#39;Ref&#39; existential type provides a convenient
+		monad-indexed reference type, and the HasRef class
+		indicates monads for which there is a default
+		reference type for every referent.
+	</longdescription>
+</pkgmetadata>
