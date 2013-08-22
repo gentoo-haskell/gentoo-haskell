@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Random number generation based on modeling random
+		variables by an abstract type (&#39;RVar&#39;) which can be
+		composed and manipulated monadically and sampled in
+		either monadic or \&quot;pure\&quot; styles.
+		
+		The primary purpose of this library is to support
+		defining and sampling a wide variety of high quality
+		random variables.  Quality is prioritized over speed,
+		but performance is an important goal too.
+		
+		In my testing, I have found it capable of speed
+		comparable to other Haskell libraries, but still
+		a fair bit slower than straight C implementations of
+		the same algorithms.
+		
+		Changes in 0.2.0.1:  Version bump for transformers
+		dependency.
+	</longdescription>
+</pkgmetadata>
