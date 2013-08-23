@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/parsec-3
 		dev-haskell/process-conduit
 		dev-haskell/transformers
-		dev-haskell/unix-time
+		>=dev-haskell/unix-time-0.2
 		dev-haskell/unordered-containers
 		>=dev-haskell/wai-1.3
 		dev-haskell/wai-app-file-cgi
@@ -53,4 +53,21 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag rev-proxy rev-proxy) \
 		$(cabal_flag tls tls)
+}
+
+src_install() {
+	haskell-cabal_src_install
+
+	mkdir -p "${ED}"/etc/mighttpd2
+	cp "${FILESDIR}"/mighttpd2.conf "${ED}"/etc/mighttpd2/mighttpd2.conf || die
+	cp "${FILESDIR}"/mighttpd2.route "${ED}"/etc/mighttpd2/mighttpd2.route || die
+
+	newinitd "${FILESDIR}"/mighttpd2.initd mighttpd2
+}
+
+pkg_setup() {
+	ebegin "Creating mighttpd2 user and group"
+	enewgroup ${PN}
+	enewuser ${PN} -1 -1 -1 ${PN}
+	eend $?
 }
