@@ -28,8 +28,3 @@ DEPEND="${RDEPEND}
 			dev-haskell/tasty-hunit
 			dev-haskell/tasty-smallcheck
 		)"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag base4 base4)
-}
