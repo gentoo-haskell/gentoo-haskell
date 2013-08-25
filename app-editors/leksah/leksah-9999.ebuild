@@ -54,7 +54,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 			<dev-haskell/gtksourceview-0.13:2=[profile?]
 		)
 		>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
-		<dev-haskell/haskell-src-exts-1.14:=[profile?]
+		<dev-haskell/haskell-src-exts-1.15:=[profile?]
 		>=dev-haskell/hlint-1.8.39:=[profile?]
 		<dev-haskell/hlint-1.9:=[profile?]
 		>=dev-haskell/hslogger-1.0.7:=[profile?]
@@ -68,7 +68,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		<dev-haskell/network-3.0:=[profile?]
 		>=dev-haskell/parsec-2.1.0.1:=[profile?]
 		<dev-haskell/parsec-3.2:=[profile?]
-		=dev-haskell/pretty-show-1.5*:=[profile?]
+		>dev-haskell/pretty-show-1.5:=[profile?]
 		>=dev-haskell/quickcheck-2.4.2:=[profile?]
 		<dev-haskell/quickcheck-2.7:=[profile?]
 		=dev-haskell/regex-base-0.93*:=[profile?]
@@ -125,6 +125,9 @@ src_prepare() {
 			'glib >=0.10 && <0.13' 'glib >=0.13' \
 			'gio >=0.12.2 && <0.13' 'gio >=0.13.0'
 	fi
+	cabal_chdeps \
+		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5' \
+		'haskell-src-exts >=1.13.5 && <1.14' 'haskell-src-exts >=1.13.5 && <1.15'
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
 	sed -e 's@-- ^@--@g' \
