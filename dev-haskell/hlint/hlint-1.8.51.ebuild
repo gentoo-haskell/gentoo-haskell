@@ -52,7 +52,7 @@ src_install() {
 
 	if use emacs; then
 		elisp-install ${pn} data/*.el data/*.elc || die "elisp-install failed."
-		elisp-site-file-install "${filesdir}/${sitefile}"
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
 
 	dodoc hlint.htm
