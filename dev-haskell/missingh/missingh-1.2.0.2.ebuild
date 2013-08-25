@@ -22,17 +22,18 @@ KEYWORDS="~amd64 ~sparc ~x86 ~amd64-linux"
 IUSE=""
 
 RDEPEND="dev-haskell/hslogger:=[profile?]
-		dev-haskell/hunit:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		dev-haskell/network:=[profile?]
-		dev-haskell/parsec:=[profile?]
-		dev-haskell/random:=[profile?]
-		dev-haskell/regex-compat:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+	dev-haskell/hunit:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/network:=[profile?]
+	dev-haskell/parsec:=[profile?]
+	dev-haskell/random:=[profile?]
+	dev-haskell/regex-compat:=[profile?]
+	>=dev-lang/ghc-6.12.1:=
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/quickcheck
-			dev-haskell/testpack
-		)"
+	>=dev-haskell/cabal-1.8.0.2
+	test? ( dev-haskell/quickcheck
+		dev-haskell/testpack )
+"
 
 S="${WORKDIR}/${MY_P}"
