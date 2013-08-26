@@ -51,7 +51,7 @@ src_install() {
 	cabal_src_install
 
 	if use emacs; then
-		elisp-install ${pn} data/*.el data/*.elc || die "elisp-install failed."
+		elisp-install ${PN} data/*.el data/*.elc || die "elisp-install failed."
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
 
