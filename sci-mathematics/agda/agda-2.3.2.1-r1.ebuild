@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
 		<dev-haskell/haskeline-0.8:=[profile?]
 		>=dev-haskell/haskell-src-exts-1.9.6:=[profile?]
-		<dev-haskell/haskell-src-exts-1.14:=[profile?]
+		<dev-haskell/haskell-src-exts-1.15:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
@@ -60,9 +60,11 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	epatch "${FILESDIR}/${PN}-2.3.2.1-haskell-src-exts-1.14.patch"
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
-		'hashtables == 1.0.*' 'hashtables >= 1.0 && < 1.2'
+		'hashtables == 1.0.*' 'hashtables >= 1.0 && < 1.2' \
+		'haskell-src-exts >= 1.9.6 && < 1.14' 'haskell-src-exts >= 1.9.6 && < 1.15'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
