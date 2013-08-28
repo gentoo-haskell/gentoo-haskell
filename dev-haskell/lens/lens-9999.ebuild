@@ -129,12 +129,6 @@ DEPEND="${RDEPEND}
 		)
 		)"
 
-src_prepare() {
-	cabal_chdeps \
-		'exceptions                >= 0.1.1    && < 0.2' 'exceptions                >= 0.1.1    && < 0.3' \
-		'generic-deriving          >= 1.4      && < 1.6' 'generic-deriving          >= 1.4      && < 1.7'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
