@@ -23,7 +23,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		>=dev-haskell/haskell-src-exts-1.11
-		<dev-haskell/haskell-src-exts-1.14
+		<dev-haskell/haskell-src-exts-1.15
 		<dev-haskell/transformers-0.4
 		>=dev-lang/ghc-6.12.1
 		test? ( >=dev-haskell/hunit-1.1
@@ -35,5 +35,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		    'QuickCheck >= 2.1 && < 2.6' \
-	    	'QuickCheck >= 2.1 && < 2.7'
+	    	'QuickCheck >= 2.1 && < 2.7' \
+			'haskell-src-exts >= 1.11 && < 1.14' \
+			'haskell-src-exts >= 1.11 && < 1.15' \
+
 }
