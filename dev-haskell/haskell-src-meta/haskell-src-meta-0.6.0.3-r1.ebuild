@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.8:=[profile?]
-		<dev-haskell/haskell-src-exts-1.14:=[profile?]
+		<dev-haskell/haskell-src-exts-1.15:=[profile?]
 		>=dev-haskell/syb-0.1:=[profile?]
 		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/th-orphans-0.5:=[profile?]
@@ -29,3 +29,9 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.8:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'haskell-src-exts >= 1.8 && < 1.14' \
+		'haskell-src-exts >= 1.8 && < 1.15'
+}
