@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ext.patch
 	cabal_chdeps \
 		'haskell-src-exts >= 1.8 && < 1.14' \
 		'haskell-src-exts >= 1.8 && < 1.15'
