@@ -22,7 +22,8 @@ RESTRICT="test" #due lack of test files
 
 RDEPEND=">=dev-haskell/certificate-1.3.5:=[profile?]
 		<dev-haskell/certificate-1.4.0:=[profile?]
-		=dev-haskell/cipher-aes-0.1*:=[profile?]
+		>=dev-haskell/cipher-aes-0.1:=[profile?]
+		<dev-haskell/cipher-aes-0.3:=[profile?]
 		dev-haskell/cipher-rc4:=[profile?]
 		>=dev-haskell/crypto-pubkey-0.1.4:=[profile?]
 		dev-haskell/crypto-random-api:=[profile?]
@@ -43,6 +44,11 @@ RDEPEND=">=dev-haskell/certificate-1.3.5:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+	  'cipher-aes >= 0.1 && < 0.2' 'cipher-aes >= 0.1 && < 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
