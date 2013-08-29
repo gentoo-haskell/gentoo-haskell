@@ -13,7 +13,7 @@ if [[ ${PV} == *9999* ]]; then
 fi
 
 MY_PN=Cabal
-MY_PV=${PV/_rc/-rc} # _rc2 -> -rc2
+MY_PV=1.18.0
 MY_P=${MY_PN}-${MY_PV}
 
 DESCRIPTION="A framework for packaging Haskell software"
@@ -33,7 +33,7 @@ else
 	SRC_URI="http://johantibell.com/files/${MY_PN}-${MY_PV}.tar.gz"
 	# unkeyworded for testing
 	#KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
-	S="${WORKDIR}/${MY_PN}-${PV/_rc*/}"
+	S="${WORKDIR}/${MY_PN}-${MY_PV}"
 fi
 
 RDEPEND=">=dev-lang/ghc-6:="
@@ -51,6 +51,8 @@ src_prepare() {
 	if [[ -n ${LIVE_EBUILD} ]]; then
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.17.0' "version: ${PV}"
 	fi
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'version: 1.18.0' 'version: 1.17.100'
 }
 
 src_configure() {
