@@ -30,7 +30,7 @@ if [[ -n ${LIVE_EBUILD} ]]; then
 	S="${S}"/${MY_PN}
 else
 	#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-	SRC_URI="http://johantibell.com/files/${MY_PN}-${MY_PV}.tar.gz"
+	SRC_URI="http://johantibell.com/files/${MY_PN}-${MY_PV}-rc2.tar.gz"
 	# unkeyworded for testing
 	#KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 	S="${WORKDIR}/${MY_PN}-${MY_PV}"
