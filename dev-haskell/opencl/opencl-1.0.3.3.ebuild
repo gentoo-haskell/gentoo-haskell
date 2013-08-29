@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -25,9 +25,14 @@ RDEPEND=">=dev-haskell/mtl-2:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		>=virtual/opencl-0-r2"
 DEPEND="${RDEPEND}
-		test? ( =dev-haskell/quickcheck-2.4*
+		test? ( >=dev-haskell/quickcheck-2.4
 		)
 		dev-haskell/c2hs
 		>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'QuickCheck==2.4.*' 'QuickCheck>=2.4'
+}
