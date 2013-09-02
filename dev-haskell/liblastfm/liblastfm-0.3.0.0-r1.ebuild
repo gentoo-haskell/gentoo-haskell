@@ -33,5 +33,4 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	=dev-haskell/cabal-1.16*
 "
