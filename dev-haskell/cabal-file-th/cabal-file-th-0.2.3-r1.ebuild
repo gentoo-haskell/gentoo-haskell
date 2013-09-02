@@ -19,7 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.10[profile?]
-		<dev-haskell/cabal-1.17[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.9"
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal >= 1.10 && < 1.17' 'Cabal >= 1.10'
+}
