@@ -19,10 +19,12 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE="buildtests"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-		<dev-haskell/network-2.5:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+	<dev-haskell/network-2.5:=[profile?]
+	>=dev-lang/ghc-6.12.1:=
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.8.0.2
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
