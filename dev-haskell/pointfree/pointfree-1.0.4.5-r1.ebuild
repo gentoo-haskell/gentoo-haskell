@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-haskell-src-exts.patch
 	cabal_chdeps \
 		    'QuickCheck >= 2.1 && < 2.6' \
 	    	'QuickCheck >= 2.1 && < 2.7' \

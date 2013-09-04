@@ -1,0 +1,36 @@
+diff --git a/Plugin/Pl/Parser.hs b/Plugin/Pl/Parser.hs
+index 900470d..1b229dd 100644
+--- a/Plugin/Pl/Parser.hs
++++ b/Plugin/Pl/Parser.hs
+@@ -3,6 +3,7 @@
+ --
+ -- Doesn't handle string literals?
+ --
++{-# LANGUAGE CPP #-}
+ module Plugin.Pl.Parser (parsePF) where
+ 
+ import Plugin.Pl.Common
+@@ -54,7 +55,11 @@ hseToExpr expr = case expr of
+   HSE.Case{} -> todo expr
+   HSE.Do{} -> todo expr
+   HSE.MDo{} -> todo expr
++#ifdef MIN_VERSION_haskell_src_exts(1,14,0)
++  HSE.Tuple _ es -> apps (Var Inf (replicate (length es - 1) ','))  es
++#else
+   HSE.Tuple es -> apps (Var Inf (replicate (length es - 1) ','))  es
++#endif
+   HSE.TupleSection{} -> todo expr
+   HSE.List xs -> list (map hseToExpr xs)
+   HSE.Paren e -> hseToExpr e
+@@ -83,7 +88,11 @@ hseToPattern :: HSE.Pat -> Pattern
+ hseToPattern pat = case pat of
+   HSE.PVar n -> PVar (snd (nameString n))
+   HSE.PInfixApp l (HSE.Special HSE.Cons) r -> PCons (hseToPattern l) (hseToPattern r)
++#ifdef MIN_VERSION_haskell_src_exts(1,14,0)
++  HSE.PTuple _ [p,q] -> PTuple (hseToPattern p) (hseToPattern q)
++#else
+   HSE.PTuple [p,q] -> PTuple (hseToPattern p) (hseToPattern q)
++#endif
+   HSE.PParen p -> hseToPattern p
+   HSE.PWildCard -> PVar "_"
+   _ -> todo pat
