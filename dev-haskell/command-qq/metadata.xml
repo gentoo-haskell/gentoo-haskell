@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Features:
+		
+		* Quasiquotation syntax for external commands:
+		
+		&gt; [sh| echo hello world! |]
+		
+		* Easy way to define custom quasiquoters (see @examples/CustomQQ.hs@)
+		
+		&gt; ghci = QQ.quoter $ QQ.callCommand &quot;ghc&quot; [&quot;-ignore-dot-ghci&quot;, &quot;-e&quot;]
+		
+		* Can embed Haskell variables in scripts
+		
+		&gt; class Embed a where
+		&gt;   embed :: a -&gt; String
+		&gt;
+		&gt; instance Embed String
+		&gt;   embed = id
+		&gt;
+		&gt; main :: IO ()
+		&gt; main = let excl = replicate 3 &#39;!&#39; in -- I&#39;d love to show an example but haddock markup fails here
+		
+		* Can embed quasiquoters in DSLs (see @examples/CommandT.hs@)
+		
+		&gt; class Eval r where
+		&gt;   eval :: String -&gt; [String] -&gt; r
+		&gt;
+		&gt; instance Eval (IO ExitCode) where
+		&gt;   eval command args = System.Process.rawSystem command args
+		
+	</longdescription>
+</pkgmetadata>
