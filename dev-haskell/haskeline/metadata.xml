@@ -15,5 +15,6 @@
 	</longdescription>
 	<use>
 		<flag name="terminfo">Use the terminfo package for POSIX consoles.</flag>
+		<flag name="libiconv">Explicitly link against the libiconv library.</flag>
 	</use>
 </pkgmetadata>
