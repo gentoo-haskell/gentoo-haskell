@@ -22,8 +22,7 @@ IUSE="gtk testing vte +vty"
 # scion temporary dropped
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-		>=dev-haskell/cabal-1.10:=[profile?]
-		<dev-haskell/cabal-1.18:=[profile?]
+		>=dev-haskell/cabal-1.10:=[profile?] <dev-haskell/cabal-1.20:=[profile?]
 		>=dev-haskell/cautious-file-1.0.1:=[profile?]
 		=dev-haskell/concrete-typerep-0.1*:=[profile?]
 		>=dev-haskell/data-accessor-0.2.1.4:=[profile?]
@@ -83,7 +82,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-vte.patch
 	cabal_chdeps \
 		'Diff >=0.1 && <0.3' 'Diff >=0.1 && <0.4' \
-		'fingertree >= 0 && <0.1' 'fingertree >= 0 && <0.2'
+		'fingertree >= 0 && <0.1' 'fingertree >= 0 && <0.2' \
+		'Cabal >= 1.10 && < 1.18' 'Cabal >= 1.10 && < 1.20'
 }
 
 src_configure() {
