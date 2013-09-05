@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Tools for working with derived 'Show' instances and generic
+DESCRIPTION="Tools for working with derived `Show` instances and generic
 inspection of values."
 HOMEPAGE="http://wiki.github.com/yav/pretty-show"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
@@ -19,9 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=
-	>=dev-haskell/haskell-lexer-1:=[profile?] <dev-haskell/haskell-lexer-2:=[profile?]
-	>=dev-haskell/pretty-show-1.4.1:=[profile?]
+RDEPEND=">=dev-haskell/haskell-lexer-1:=[profile?] <dev-haskell/haskell-lexer-2:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
