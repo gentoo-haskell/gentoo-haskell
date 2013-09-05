@@ -16,4 +16,8 @@
 		how it can be used with GHCi&#39;s debugger:
 		&lt;http://felsin9.de/nnis/ghc-vis/#combined-debugger&gt;
 	</longdescription>
+	<use>
+		<flag name="graph">Enable graph view using Graphviz</flag>
+		<flag name="full">Full ghc-vis window: decorations, buttons, legend</flag>
+	</use>
 </pkgmetadata>
