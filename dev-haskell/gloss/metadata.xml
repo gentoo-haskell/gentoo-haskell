@@ -10,4 +10,10 @@
 		a few display functions. Gloss uses OpenGL under the hood, but you won&#39;t need to
 		worry about any of that. Get something cool on the screen in under 10 minutes.
 	</longdescription>
+	<use>
+		<flag name='glut'>Enable the GLUT backend.</flag>
+                <flag name='glfw'>Enable the GLFW backend.</flag>
+                <flag name='explicitbackend'>Expose versions of 'display' and friends that allow
+                you to choose what window manager backend to use.</flag>
+	</use>
 </pkgmetadata>
