@@ -33,7 +33,7 @@ IUSE="+noprefs"
 RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.17.0
-		<dev-haskell/cabal-1.18
+		<dev-haskell/cabal-1.19
 		>=dev-haskell/http-4000.0.8
 		<dev-haskell/http-4001
 		>=dev-haskell/mtl-2.0
