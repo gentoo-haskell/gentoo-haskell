@@ -60,7 +60,7 @@ src_configure() {
 	# /opt/cuda/bin/nvcc which does not understand lots
 	# of g++ flags.
 	strip-flags
-	filter-flags -march* -ggdb -pipe -Wl* -fvar* -gdwarf*
+	filter-flags -march* -ggdb -pipe -Wl* -fvar* -gdwarf* -Wa*
 	haskell-cabal_src_configure \
 		$(cabal_flag bounds-checks bounds-checks) \
 		$(cabal_flag debug debug) \
