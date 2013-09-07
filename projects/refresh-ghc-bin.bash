@@ -64,7 +64,7 @@ while [[ ${#@} -gt 0 ]]; do
 done
 
 [[ -z ${target_arch} ]] && target_arch=$(portageq envvar ARCH)
-[[ -z ${stage3_url} ]] && die stage3_url=http://distfiles.gentoo.org/releases/${target_arch}/autobuilds/latest-stage3-${target_arch}.txt
+[[ -z ${stage3_url} ]] && stage3_url=http://distfiles.gentoo.org/releases/${target_arch}/autobuilds/latest-stage3-${target_arch}.txt
 
 i "target ARCH:     ${target_arch}"
 i "stage3 URL:      ${stage3_url}"
