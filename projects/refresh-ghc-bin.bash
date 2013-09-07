@@ -101,7 +101,7 @@ run mkdir "${chroot_temp}"
 
         cat >refresh-ghc.bash <<-EOF
 	echo "Installing stable binary ghc"
-	USE=binary                                     emerge --verbose --oneshot dev-lang/ghc || exit 1
+	USE="binary ${USE}"                            emerge --verbose --oneshot dev-lang/ghc || exit 1
 	echo "Building pkg '${needed_atom}'"
 	mkdir -p /etc/portage/package.accept_keywords
 	echo "${needed_atom} ~${target_arch} **" > /etc/portage/package.accept_keywords/ghc
