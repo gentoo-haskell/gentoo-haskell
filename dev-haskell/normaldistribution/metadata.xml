@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This purpose of this library is to have a simple API and no
+		dependencies beyond Haskell 98 in order to let you produce
+		normally distributed random values with a minimum of fuss. This
+		library does /not/ attempt to be blazingly fast nor to pass
+		stringent tests of randomness. It attempts to be very easy to
+		install and use while being \&quot;good enough\&quot; for many applications
+		(simulations, games, etc.). The API builds upon and is largely
+		analogous to that of the Haskell 98 @Random@ module (more
+		recently @System.Random@).
+		
+		Pure:
+		
+		&gt; (sample,g) = normal  myRandomGen  -- using a Random.RandomGen
+		&gt; samples    = normals myRandomGen  -- infinite list
+		&gt; samples2   = mkNormals 10831452   -- infinite list using a seed
+		
+		In the IO monad:
+		
+		&gt; sample    &lt;- normalIO
+		&gt; samples   &lt;- normalsIO  -- infinite list
+		
+		With custom mean and standard deviation:
+		
+		&gt; (sample,g) = normal&#39;    (mean,sigma) myRandomGen
+		&gt; samples    = normals&#39;   (mean,sigma) myRandomGen
+		&gt; samples2   = mkNormals&#39; (mean,sigma) 10831452
+		
+		&gt; sample    &lt;- normalIO&#39;  (mean,sigma)
+		&gt; samples   &lt;- normalsIO&#39; (mean,sigma)
+		
+		Internally the library uses the Box-Muller method to generate
+		normally distributed values from uniformly distributed random values.
+		If more than one sample is needed taking samples off an infinite
+		list (created by e.g. &#39;normals&#39;) will be roughly twice as efficient
+		as repeatedly generating individual samples with e.g. &#39;normal&#39;.
+	</longdescription>
+</pkgmetadata>
