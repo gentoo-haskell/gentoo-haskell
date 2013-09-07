@@ -1,0 +1,89 @@
+diff --git a/src/HSX/Transform.hs b/src/HSX/Transform.hs
+index 6ce5de6..b57b201 100644
+--- a/src/HSX/Transform.hs
++++ b/src/HSX/Transform.hs
+@@ -12,7 +12,7 @@
+ -- patterns into semantically equivalent normal abstract Haskell code. In
+ -- other words, we transform away regular patterns.
+ -----------------------------------------------------------------------------
+-
++{-# LANGUAGE CPP #-}
+ module HSX.Transform (
+       transform       -- :: HsModule -> HsModule
+     , transformExp
+@@ -348,7 +348,11 @@ transformExpM e = case e of
+     App e1 e2         -> transform2exp e1 e2 App
+     NegApp e          -> fmap NegApp $ transformExpM e
+     If e1 e2 e3       -> transform3exp e1 e2 e3 If
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++    Tuple x es        -> fmap (Tuple x) $ mapM transformExpM es
++#else
+     Tuple es          -> fmap Tuple $ mapM transformExpM es
++#endif
+     List es           -> fmap List $ mapM transformExpM es
+     Paren e           -> fmap Paren $ transformExpM e
+     LeftSection e op  -> do e' <- transformExpM e
+@@ -692,7 +696,11 @@ renameRP p = case p of
+                                 (\p1 p2 -> PInfixApp p1 n p2)
+                                 renameRP
+     PApp n ps         -> renameNpat ps (PApp n) renameRP
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++    PTuple x ps       -> renameNpat ps (PTuple x) renameRP
++#else
+     PTuple ps         -> renameNpat ps PTuple renameRP
++#endif
+     PList ps          -> renameNpat ps PList renameRP
+     PParen p          -> rename1pat p PParen renameRP
+     PRec n pfs        -> renameNpat pfs (PRec n) renameRPf
+@@ -756,7 +764,11 @@ renameIrrP p = case p of
+                                 (\p1 p2 -> PInfixApp p1 n p2)
+                                 renameIrrP
+     PApp n ps         -> renameNpat ps (PApp n) renameIrrP
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++    PTuple x ps       -> renameNpat ps (PTuple x) renameIrrP
++#else
+     PTuple ps         -> renameNpat ps PTuple renameIrrP
++#endif
+     PList ps          -> renameNpat ps PList renameIrrP
+     PParen p          -> rename1pat p PParen renameIrrP
+     PRec n pfs        -> renameNpat pfs (PRec n) renameIrrPf
+@@ -984,7 +996,11 @@ trPattern s p = case p of
+     PNeg q             -> tr1pat q PNeg (trPattern s)
+     PInfixApp p1 op p2 -> tr2pat p1 p2 (\p1 p2 -> PInfixApp p1 op p2) (trPattern s)
+     PApp n ps          -> trNpat ps (PApp n) (trPattern s)
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++    PTuple x ps        -> trNpat ps (PTuple x) (trPattern s)
++#else
+     PTuple ps          -> trNpat ps PTuple (trPattern s)
++#endif
+     PList ps           -> trNpat ps PList (trPattern s)
+     PParen p           -> tr1pat p PParen (trPattern s)
+     PRec n pfs         -> trNpat pfs (PRec n) (trPatternField s)
+@@ -1481,7 +1497,11 @@ trRPat s linear rp = case rp of
+             PInfixApp p1 _ p2  -> gatherPVars p1 ++
+                                          gatherPVars p2
+             PApp _ ps          -> concatMap gatherPVars ps
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++            PTuple _ ps        -> concatMap gatherPVars ps
++#else
+             PTuple ps          -> concatMap gatherPVars ps
++#endif            
+             PList ps           -> concatMap gatherPVars ps
+             PParen p           -> gatherPVars p
+             PRec _ pfs         -> concatMap help pfs
+diff --git a/src/Trhsx.hs b/src/Trhsx.hs
+index f37abc7..c5af18a 100644
+--- a/src/Trhsx.hs
++++ b/src/Trhsx.hs
+@@ -64,7 +64,11 @@ process fp fc = prettyPrintWithMode (defaultMode {linePragmas=True}) $
+                  transform $ checkParse $ parse fp fc
+ 
+ parse :: String -> String -> ParseResult Module
++#if MIN_VERSION_haskell_src_exts(1,14,0)
++parse fn fc = parseModuleWithMode (ParseMode fn Haskell2010 (map EnableExtension allExtensions) False True (Just baseFixities)) fcuc
++#else
+ parse fn fc = parseModuleWithMode (ParseMode fn allExtensions False True (Just baseFixities)) fcuc
++#endif
+   where fcuc= unlines $ filter (not . isPrefixOf "#") $ lines fc
+ 
+ usageString :: String
