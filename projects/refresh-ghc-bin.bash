@@ -108,6 +108,7 @@ run mkdir "${chroot_temp}"
 	mkdir -p /etc/portage/package.use
 	echo "${needed_atom} -binary doc ghcbootstrap ghcmakebinary llvm ${USE}" > /etc/portage/package.use/ghc
 	FEATURES="${FEATURES} -test -strict -stricter" emerge --verbose --onlydeps   "${needed_atom}"
+	                                               emerge --verbose --buildpkg=y "${needed_atom}"
 	EOF
 
         cat >store-results.bash <<-EOF
