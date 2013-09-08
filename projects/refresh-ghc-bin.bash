@@ -57,6 +57,17 @@ default_autobuild_machine() {
     esac
 }
 
+autobuild_dir() {
+    local arch=$1
+    local abd=${arch}
+
+    case "${arch}" in
+        ppc64) abd="ppc" ;;
+    esac
+
+    echo "http://distfiles.gentoo.org/releases/${abd}/autobuilds"
+}
+
 while [[ ${#@} -gt 0 ]]; do
     case "$1" in
         --autobuild-machine=*)
@@ -84,7 +95,7 @@ done
 
 [[ -z ${target_arch} ]] && target_arch=$(portageq envvar ARCH)
 [[ -z ${autobuild_machine} ]] && autobuild_machine=$(default_autobuild_machine "${target_arch}")
-[[ -z ${stage3_url} ]] && stage3_url=http://distfiles.gentoo.org/releases/${target_arch}/autobuilds/latest-stage3-${autobuild_machine}.txt
+[[ -z ${stage3_url} ]] && stage3_url=$(autobuild_dir "${target_arch}")/latest-stage3-${autobuild_machine}.txt
 
 i "target ARCH:     ${target_arch}"
 i "stage3 URL:      ${stage3_url}"
