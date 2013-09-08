@@ -13,11 +13,11 @@ DESCRIPTION="Extensible optionally-pure exceptions"
 HOMEPAGE="http://github.com/ekmett/exceptions/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE=""	#Fixme: "OtherLicense", please fill in manually
+LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-RESTRICT="test"
+RESTRICT="test" # due to missing files
 
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
