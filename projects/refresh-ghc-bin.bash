@@ -43,6 +43,7 @@ stage3_url=
 # you might like to use '--chroot-profile=hardened/linux/amd64'
 chroot_profile=1
 needed_atom="dev-lang/ghc"
+dry_run=
 
 while [[ ${#@} -gt 0 ]]; do
     case "$1" in
@@ -54,6 +55,9 @@ while [[ ${#@} -gt 0 ]]; do
             ;;
         --chroot-profile=*)
             chroot_profile=${1#--chroot-profile=}
+            ;;
+        --dry-run)
+            dry_run=yes
             ;;
         *)
             die "unknown option: $1"
@@ -69,6 +73,8 @@ done
 i "target ARCH:     ${target_arch}"
 i "stage3 URL:      ${stage3_url}"
 i "chroot profile:  ${chroot_profile}"
+
+[[ -z ${dry_run} ]] || exit 0
 
 relative_stage3_bz2=$(wget "${stage3_url}" -O - | fgrep .tar.bz2)
 full_stage3_bz2=$(dirname "${stage3_url}")/${relative_stage3_bz2}
