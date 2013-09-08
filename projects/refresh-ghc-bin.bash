@@ -44,9 +44,24 @@ stage3_url=
 chroot_profile=1
 needed_atom="dev-lang/ghc"
 dry_run=
+autobuild_machine=
+
+default_autobuild_machine() {
+    local arch=$1
+
+    case "${arch}" in
+        ppc64) echo "ppc64-64ul" ;;
+        sparc) echo "sparc64"    ;;
+        x86)   echo "i686"       ;;
+        *)     echo "${arch}"    ;;
+    esac
+}
 
 while [[ ${#@} -gt 0 ]]; do
     case "$1" in
+        --autobuild-machine=*)
+            autobuild_machine=${1#--autobuild-machine=}
+            ;;
         --target-arch=*)
             target_arch=${1#--target-arch=}
             ;;
@@ -68,7 +83,8 @@ while [[ ${#@} -gt 0 ]]; do
 done
 
 [[ -z ${target_arch} ]] && target_arch=$(portageq envvar ARCH)
-[[ -z ${stage3_url} ]] && stage3_url=http://distfiles.gentoo.org/releases/${target_arch}/autobuilds/latest-stage3-${target_arch}.txt
+[[ -z ${autobuild_machine} ]] && autobuild_machine=$(default_autobuild_machine "${target_arch}")
+[[ -z ${stage3_url} ]] && stage3_url=http://distfiles.gentoo.org/releases/${target_arch}/autobuilds/latest-stage3-${autobuild_machine}.txt
 
 i "target ARCH:     ${target_arch}"
 i "stage3 URL:      ${stage3_url}"
