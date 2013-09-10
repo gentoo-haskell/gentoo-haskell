@@ -19,8 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cpphs-0.2.1[profile?]
-		<dev-haskell/haskell-src-exts-1.14.0[profile?]
+		>=dev-haskell/haskell-src-exts-1.14.0[profile?]
 		dev-haskell/test-framework[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-haskell-src-exts.patch
+}
