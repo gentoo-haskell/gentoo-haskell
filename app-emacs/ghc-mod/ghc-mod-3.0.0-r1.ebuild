@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
 RDEPEND="emacs? ( virtual/emacs )
-		app-emacs/ghc-mod:=[profile?]
 		>=dev-haskell/cabal-1.10:=[profile?]
 		dev-haskell/convertible:=[profile?]
 		dev-haskell/ghc-paths:=[profile?]
