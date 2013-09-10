@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/accelerate-0.13*:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
-		<dev-haskell/cryptohash-0.10:=[profile?]
+		<dev-haskell/cryptohash-0.11:=[profile?]
 		>=dev-haskell/cuda-0.5.0.2:=[profile?]
 		<dev-haskell/cuda-0.6:=[profile?]
 		>=dev-haskell/fclabels-1.0:=[profile?]
@@ -50,7 +50,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary                  >= 0.5      && < 0.7' 'binary                  >= 0.5      && < 0.8'
+		'binary                  >= 0.5      && < 0.7' 'binary                  >= 0.5      && < 0.8' \
+		'cryptohash              >= 0.7      && < 0.10' 'cryptohash              >= 0.7      && < 0.11'
 }
 
 src_configure() {
