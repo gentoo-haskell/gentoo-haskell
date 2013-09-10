@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/network-2.3:=[profile?]
 		>=dev-haskell/tagged-0.4:=[profile?]
-		<dev-haskell/tagged-0.7:=[profile?]
+		<dev-haskell/tagged-1.0:=[profile?]
 		=dev-haskell/text-0.11*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
@@ -37,5 +37,5 @@ src_prepare() {
 		'network   == 2.3.*' 'network   >= 2.3' \
 		'containers   == 0.4.*' 'containers   >= 0.4' \
 		'directory == 1.1.*' 'directory >= 1.1' \
-		'tagged       == 0.4.*' 'tagged       >= 0.4 && < 0.7'
+		'tagged       == 0.4.*' 'tagged       >= 0.4 && < 1.0'
 }
