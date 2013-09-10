@@ -23,7 +23,7 @@ if [[ -n ${LIVE_EBUILD} ]]; then
 	S="${S}"/${PN}
 else
 	SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~ia64 ~ppc64 ~sparc ~x86"
+	KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 fi
 
 LICENSE="BSD"
