@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="nohandles"
+IUSE=""
 
 RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
 		dev-haskell/mmorph:=[profile?]
@@ -41,9 +41,4 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.7-doctest.patch
-}
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag nohandles nohandles)
 }
