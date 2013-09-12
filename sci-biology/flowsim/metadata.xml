@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Provides clonesim, a clone simulator that simulates shotgun
+		genomic clones, and flowsim, that takes the output from clonesim
+		(or any other Fasta-formatted file) and generates simulated
+		reads from them mimicing Roche&#39;s 454 pyrosequencing technology,
+		writing output in 454&#39;s native SFF format.  The flowgram
+		generation is based on empirical distributions derived from real
+		data (although analytic distributions are available too, if you
+		prefer).
+		
+		The Darcs repository is at &lt;http://malde.org/~ketil/biohaskell/flowsim&gt;.
+	</longdescription>
+</pkgmetadata>
