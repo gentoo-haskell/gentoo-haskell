@@ -12,17 +12,17 @@ inherit haskell-cabal
 DESCRIPTION="TLS/SSL protocol native implementation (Server and Client)"
 HOMEPAGE="http://github.com/vincenthz/hs-tls"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-RESTRICT="test"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+compat"
+RESTRICT="test"
 
 RDEPEND=">=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/certificate-1.3.0:=[profile?] <dev-haskell/certificate-1.4.0:=[profile?]
 	>=dev-haskell/crypto-pubkey-0.2:=[profile?]
-	>=dev-haskell/crypto-random-0.0:=[profile?] <dev-haskell/crypto-random-0.1:=[profile?]
+	>=dev-haskell/crypto-random-0.0.7:=[profile?] <dev-haskell/crypto-random-0.1:=[profile?]
 	>=dev-haskell/cryptohash-0.6:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]

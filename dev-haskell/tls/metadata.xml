@@ -19,4 +19,7 @@
 		&lt;http://hackage.haskell.org/package/tls-extra/&gt; package for default
 		ciphers, compressions and certificates functions.
 	</longdescription>
+	<use>
+		<flag name='compat'>Accept SSLv2 compatible handshake.</flag>
+	</use>
 </pkgmetadata>
