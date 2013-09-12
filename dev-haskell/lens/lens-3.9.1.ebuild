@@ -46,56 +46,31 @@ RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-4:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	test? ( test-doctests? ( test-hunit? ( test-properties? ( dev-haskell/deepseq
-									>=dev-haskell/doctest-0.9.1
-									>=dev-haskell/hunit-1.2
-									dev-haskell/nats
-									>=dev-haskell/quickcheck-2.4
-									>=dev-haskell/simple-reflect-0.3.1
-									>=dev-haskell/test-framework-0.6
-									>=dev-haskell/test-framework-hunit-0.2
-									>=dev-haskell/test-framework-quickcheck2-0.2
-									>=dev-haskell/test-framework-th-0.2 )
-						!test-properties? ( dev-haskell/deepseq
-									>=dev-haskell/doctest-0.9.1
-									>=dev-haskell/hunit-1.2
-									dev-haskell/nats
-									>=dev-haskell/simple-reflect-0.3.1
-									>=dev-haskell/test-framework-0.6
-									>=dev-haskell/test-framework-hunit-0.2
-									>=dev-haskell/test-framework-th-0.2 ) )
-					!test-hunit? ( test-properties? ( dev-haskell/deepseq
-									>=dev-haskell/doctest-0.9.1
-									dev-haskell/nats
-									>=dev-haskell/quickcheck-2.4
-									>=dev-haskell/simple-reflect-0.3.1
+	test? ( test-doctests? ( dev-haskell/deepseq
+					>=dev-haskell/doctest-0.9.1
+					dev-haskell/nats
+					>=dev-haskell/simple-reflect-0.3.1
+					test-hunit? ( >=dev-haskell/hunit-1.2
+						>=dev-haskell/test-framework-0.6
+						>=dev-haskell/test-framework-hunit-0.2
+						>=dev-haskell/test-framework-th-0.2
+						test-properties? ( >=dev-haskell/quickcheck-2.4
+									>=dev-haskell/test-framework-quickcheck2-0.2 ) )
+					!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
 									>=dev-haskell/test-framework-0.6
 									>=dev-haskell/test-framework-quickcheck2-0.2
-									>=dev-haskell/test-framework-th-0.2 )
-						!test-properties? ( dev-haskell/deepseq
-									>=dev-haskell/doctest-0.9.1
-									dev-haskell/nats
-									>=dev-haskell/simple-reflect-0.3.1 ) ) )
-		!test-doctests? ( test-hunit? ( test-properties? ( >=dev-haskell/hunit-1.2
-									>=dev-haskell/quickcheck-2.4
-									>=dev-haskell/test-framework-0.6
-									>=dev-haskell/test-framework-hunit-0.2
-									>=dev-haskell/test-framework-quickcheck2-0.2
-									>=dev-haskell/test-framework-th-0.2 )
-						!test-properties? ( >=dev-haskell/hunit-1.2
-									>=dev-haskell/test-framework-0.6
-									>=dev-haskell/test-framework-hunit-0.2
-									>=dev-haskell/test-framework-th-0.2 ) )
+									>=dev-haskell/test-framework-th-0.2 ) ) )
+		!test-doctests? ( test-hunit? ( >=dev-haskell/hunit-1.2
+						>=dev-haskell/test-framework-0.6
+						>=dev-haskell/test-framework-hunit-0.2
+						>=dev-haskell/test-framework-th-0.2
+						test-properties? ( >=dev-haskell/quickcheck-2.4
+									>=dev-haskell/test-framework-quickcheck2-0.2 ) )
 					!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
 									>=dev-haskell/test-framework-0.6
 									>=dev-haskell/test-framework-quickcheck2-0.2
 									>=dev-haskell/test-framework-th-0.2 ) ) ) )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'split                     >= 0.2      && < 0.2.2' 'split                     >= 0.2      && < 0.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
