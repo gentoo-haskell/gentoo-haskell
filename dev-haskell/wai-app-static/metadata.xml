@@ -8,4 +8,7 @@
 	<longdescription>
 		Also provides some helper functions and datatypes for use outside of WAI.
 	</longdescription>
+	<use>
+		<flag name='print'>print debug info.</flag>
+        </use>
 </pkgmetadata>
