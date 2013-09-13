@@ -8,4 +8,8 @@
 	<longdescription>
 		This is a Haskell library for writing CGI programs.
 	</longdescription>
+	<use>
+		<flag name='extensible-exceptions-in-base'>Required to be
+                enabled for >=dev-lang/ghc-7.</flag>
+        </use>
 </pkgmetadata>
