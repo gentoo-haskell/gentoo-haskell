@@ -8,4 +8,8 @@
 	<longdescription>
 		The premier WAI handler. For more information, see &lt;http://steve.vinoski.net/blog/2011/05/01/warp-a-haskell-web-server/&gt;.
 	</longdescription>
+	<use>
+		<flag name='allow-sendfilefd'>Allow use of sendfileFd (not
+                available on GNU/kFreeBSD).</flag>
+        </use>
 </pkgmetadata>
