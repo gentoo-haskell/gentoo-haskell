@@ -12,4 +12,7 @@
 		
 		Also have primitive support for Diffie Hellman, and ElGamal encryption
 	</longdescription>
+	<use>
+		<flag name='benchmark'>Build benchmarks.</flag>
+        </use>
 </pkgmetadata>
