@@ -13,4 +13,7 @@
 		
 		Users should start from the &quot;Text.HTML.TagSoup&quot; module.
 	</longdescription>
+	<use>
+		<flag name='download'>Build with Download module.</flag>
+        </use>
 </pkgmetadata>
