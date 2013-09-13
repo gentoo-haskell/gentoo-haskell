@@ -13,4 +13,7 @@
 		packages that use this: shakespeare-js, shakespeare-css, shakespeare-interpolated, hamlet, and xml-hamlet
 		Please see the documentation at &lt;http://docs.yesodweb.com/book/hamlet/&gt; for more details.
 	</longdescription>
+	<use>
+		<flag name='test_export'>Test export.</flag>
+        </use>
 </pkgmetadata>
