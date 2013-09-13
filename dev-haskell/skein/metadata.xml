@@ -23,4 +23,14 @@
 		(Skein-MAC).  For examples of how to use this package, see
 		&quot;Crypto.Skein&quot; module documentation.
 	</longdescription>
+	<use>
+		<flag name='big-endian'>When manually selecting the
+                endianness, use big-endian (default is little-endian).</flag>
+		<flag name='force-endianness'>Use a manually selected endian
+                when compiling (see flag 'big-endian').</flag>
+		<flag name='reference'>Use the reference implementation
+                instead of the optimized one.</flag>
+        </use>
+
+
 </pkgmetadata>
