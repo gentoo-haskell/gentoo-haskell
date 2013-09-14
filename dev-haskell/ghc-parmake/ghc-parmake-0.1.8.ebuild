@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing files
+RESTRICT=test # tmp: createDirectory: does not exist (No such file or directory)
 
 RDEPEND=">=dev-haskell/temporary-1:=[profile?] <dev-haskell/temporary-2:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
