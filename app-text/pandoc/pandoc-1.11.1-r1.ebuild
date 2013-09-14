@@ -79,7 +79,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-no-man-tests.patch
 	epatch "${FILESDIR}"/${P}-test.patch
 	epatch "${FILESDIR}"/${P}-tagsoup-0.13.patch
-
+	if has_version ">=dev-haskell/highlighting-kate-0.5.5"; then
+		epatch "${FILESDIR}"/${P}-highlighting-kate-0.5.5-tests.patch
+	fi
 	ghc-supports-threaded-runtime ||
 		cabal_chdeps \
 			'-threaded' ' '
