@@ -22,21 +22,21 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/hunit
-		)
-		>=dev-haskell/cabal-1.10
-		=dev-haskell/deepseq-1.3*
-		dev-haskell/extensible-exceptions
-		>=dev-haskell/http-4000.0.3
-		dev-haskell/missingh
-		dev-haskell/mtl
-		dev-haskell/network
-		dev-haskell/parsec
-		dev-haskell/regex-compat
-		dev-haskell/tar
-		>dev-haskell/xml-1.3.5
-		dev-haskell/zlib
-		>=dev-lang/ghc-6.10.4"
+	>=dev-haskell/cabal-1.10
+	>=dev-haskell/deepseq-1.3 <dev-haskell/deepseq-1.4
+	dev-haskell/extensible-exceptions
+	>=dev-haskell/http-4000.0.3
+	dev-haskell/missingh
+	dev-haskell/mtl
+	dev-haskell/network
+	dev-haskell/parsec
+	dev-haskell/regex-compat
+	dev-haskell/tar
+	>=dev-haskell/xml-1.3.7
+	dev-haskell/zlib
+	>=dev-lang/ghc-6.12.1
+	test? ( dev-haskell/hunit )
+"
 
 src_prepare() {
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
