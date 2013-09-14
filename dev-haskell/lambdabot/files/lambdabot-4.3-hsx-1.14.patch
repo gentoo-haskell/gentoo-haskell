@@ -1,0 +1,36 @@
+Fix build failure against haskell-src-exts-1.14
+
+[ 87 of 100] Compiling Lambdabot.Plugin.Undo ( src/Lambdabot/Plugin/Undo.hs, dist/build/Lambdabot/Plugin/Undo.o )
+
+src/Lambdabot/Plugin/Undo.hs:83:14:
+    Constructor `PTuple' should have 2 arguments, but has been given 1
+    In the pattern: PTuple ps
+    In an equation for `irrefutable':
+        irrefutable (PTuple ps) = all irrefutable ps
+
+diff --git a/lambdabot.cabal b/lambdabot.cabal
+index a1bf5b4..01211ac 100644
+--- a/lambdabot.cabal
++++ b/lambdabot.cabal
+@@ -166,7 +166,7 @@ library
+                         edit-distance           >= 0.2,
+                         filepath                >= 1.3,
+                         haskeline               >= 0.7,
+-                        haskell-src-exts        >= 1.12.0,
++                        haskell-src-exts        >= 1.14.0,
+                         hstatsd                 >= 0.1,
+                         hslogger                >= 1.2.1,
+                         HTTP                    >= 4000,
+diff --git a/src/Lambdabot/Plugin/Undo.hs b/src/Lambdabot/Plugin/Undo.hs
+index a7c6061..1ad0005 100644
+--- a/src/Lambdabot/Plugin/Undo.hs
++++ b/src/Lambdabot/Plugin/Undo.hs
+@@ -80,7 +80,7 @@ irrefutable (PIrrPat _)  = True
+ irrefutable PWildCard    = True
+ irrefutable (PAsPat _ p) = irrefutable p
+ irrefutable (PParen p)   = irrefutable p
+-irrefutable (PTuple ps)  = all irrefutable ps
++irrefutable (PTuple _bx ps) = all irrefutable ps
+ irrefutable _              = False
+ 
+ infixed :: Exp -> String -> Exp -> Exp
