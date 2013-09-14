@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/filemanip-0.3.6 <dev-haskell/filemanip-0.3.7 )
 "
 
+# Run only the non-network tests.
+src_test() {
+	haskell-cabal_src_test testsuite
+}
+
 src_install() {
 	haskell-cabal_src_install
 	doman "${S}/doc/man1/${PN}.1"
