@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Create memory-backed &#39;Handle&#39;s, referencing virtual files. This is
+		mostly useful for testing &#39;Handle&#39;-based APIs without having to
+		interact with the filesystem.
+		
+		&gt; import Data.ByteString (pack)
+		&gt; import Data.Knob
+		&gt; import System.IO
+		&gt;
+		&gt; main = do
+		&gt;     knob &lt;- newKnob (pack [])
+		&gt;     h &lt;- newFileHandle knob &quot;test.txt&quot; WriteMode
+		&gt;     hPutStrLn h &quot;Hello world!&quot;
+		&gt;     hClose h
+		&gt;     bytes &lt;- Data.Knob.getContents knob
+		&gt;     putStrLn (&quot;Wrote bytes: &quot; ++ show bytes)
+	</longdescription>
+</pkgmetadata>
