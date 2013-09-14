@@ -18,23 +18,24 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug shared-llvm"
 
-RDEPEND="~dev-haskell/llvm-general-pure-3.3.7.0:=[profile?]
-		>=dev-haskell/mtl-2.0.1.0:=[profile?]
-		>=dev-haskell/parsec-3.1.3:=[profile?]
-		>=dev-haskell/setenv-0.1.0:=[profile?]
-		>=dev-haskell/text-0.11.2.1:=[profile?]
-		>=dev-haskell/transformers-0.3.0.0:=[profile?]
-		>=dev-lang/ghc-7.4.1:=
-		sys-devel/gcc[cxx]"
+RDEPEND="~dev-haskell/llvm-general-pure-3.3.8.1:=[profile?]
+	>=dev-haskell/mtl-2.0.1.0:=[profile?]
+	>=dev-haskell/parsec-3.1.3:=[profile?]
+	>=dev-haskell/setenv-0.1.0:=[profile?]
+	>=dev-haskell/transformers-0.3.0.0:=[profile?]
+	>=dev-haskell/utf8-string-0.3.7:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	sys-devel/gcc[cxx]
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		sys-devel/llvm
-		test? ( >=dev-haskell/hunit-1.2.4.2
-			>=dev-haskell/quickcheck-2.5.1.1
-			>=dev-haskell/test-framework-0.5
-			>=dev-haskell/test-framework-hunit-0.2.7
-			>=dev-haskell/test-framework-quickcheck2-0.3.0.1
-		)"
+	>=dev-haskell/cabal-1.8
+	sys-devel/llvm
+	test? ( >=dev-haskell/hunit-1.2.4.2
+		>=dev-haskell/quickcheck-2.5.1.1
+		>=dev-haskell/test-framework-0.5
+		>=dev-haskell/test-framework-hunit-0.2.7
+		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 )
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
