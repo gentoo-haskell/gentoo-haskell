@@ -18,23 +18,33 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # Ambiguous module name `Data.IP': it was found in multiple packages: network-data-0.5 iproute-1.2.11
-
+# The cabal file has different dependencies for GHC-6.x and 7.x. Rather
+# than overcomplicate things, we just require >=dev-lang/ghc-7 and
+# manually set the dependencies to those from the GHC-7.x clause.
+#
+# This avoids breakage when both network and network-bytestring are
+# installed at the same time.
 RDEPEND="dev-haskell/attoparsec:=[profile?]
-	dev-haskell/attoparsec-conduit:=[profile?]
-	dev-haskell/binary:=[profile?]
-	dev-haskell/blaze-builder:=[profile?]
-	dev-haskell/conduit:=[profile?]
-	>=dev-haskell/iproute-1.2.4:=[profile?]
-	dev-haskell/mtl:=[profile?]
-	dev-haskell/network:=[profile?]
-	dev-haskell/network-bytestring:=[profile?]
-	dev-haskell/network-conduit:=[profile?]
-	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
-"
+		dev-haskell/attoparsec-conduit:=[profile?]
+		dev-haskell/binary:=[profile?]
+		dev-haskell/blaze-builder:=[profile?]
+		>=dev-haskell/conduit-0.5:=[profile?]
+		>=dev-haskell/iproute-1.2.4:=[profile?]
+		dev-haskell/mtl:=[profile?]
+		>=dev-haskell/network-2.3:=[profile?]
+		dev-haskell/network-conduit:=[profile?]
+		dev-haskell/random:=[profile?]
+		>=dev-lang/ghc-7:="
+
+# The doctests are still built even though they won't be run.
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/doctest
-		dev-haskell/hspec )
-"
+		>=dev-haskell/cabal-1.10
+		test? ( dev-haskell/doctest
+			dev-haskell/hspec
+		)"
+
+# We can't run the "network" or "doctest" testsuites because they
+# access the network. But the "spec" testsuite doesn't.
+src_test() {
+	haskell-cabal_src_test spec
+}
