@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
 CABAL_FEATURES="bin"
-inherit base eutils haskell-cabal autotools
+inherit eutils haskell-cabal autotools
 
 DESCRIPTION="Happy is a parser generator for Haskell"
 HOMEPAGE="http://www.haskell.org/happy/"
@@ -13,7 +13,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND=""
@@ -24,39 +24,36 @@ DEPEND="${RDEPEND}
 		doc? (  ~app-text/docbook-xml-dtd-4.2
 				app-text/docbook-xsl-stylesheets )"
 
-PATCHES=("${FILESDIR}/${PN}-1.18.6-man.patch"
-	"${FILESDIR}/${PN}-1.18.9-missing-tests.patch")
-
 src_prepare() {
-	base_src_prepare
-
 	use doc && cd doc && eautoconf
 }
 
 src_configure() {
-	cabal_src_configure
+	haskell-cabal_src_configure
 
 	if use doc; then
-		cd doc && econf || die "econf failed in /doc"
+		# does not like out-of-source builds
+		cd doc || die
+		econf
 	fi
 }
 
 src_compile() {
-	cabal_src_compile
+	haskell-cabal_src_compile
 
 	if use doc; then
-		cd doc && emake -j1 || die "emake failed in /doc"
+		emake -C doc -j1
 	fi
 }
 
 src_test() {
-	emake -C "${S}/tests/" || die "emake for tests failed"
+	emake -C "${S}/tests/"
 }
 
 src_install() {
-	cabal_src_install
+	haskell-cabal_src_install
 	if use doc; then
-		cd doc
+		cd doc || die
 		dohtml -r happy/*
 		doman "${S}/doc/happy.1"
 	fi
