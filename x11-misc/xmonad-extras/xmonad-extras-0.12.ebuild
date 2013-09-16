@@ -28,6 +28,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	eval? ( >=dev-haskell/hint-0.3:=[profile?] <dev-haskell/hint-0.4:=[profile?]
 			dev-haskell/network:=[profile?] )
 	mpd? ( >=dev-haskell/libmpd-0.8:=[profile?] <dev-haskell/libmpd-0.9:=[profile?] )
+	perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 )
 	volume? ( >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
 			>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?] )
 "
