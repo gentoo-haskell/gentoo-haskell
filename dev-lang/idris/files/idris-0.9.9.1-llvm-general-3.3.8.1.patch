@@ -1,0 +1,22 @@
+diff --git a/src/IRTS/CodegenLLVM.hs b/src/IRTS/CodegenLLVM.hs
+index b6cfd36..35b8b30 100644
+--- a/src/IRTS/CodegenLLVM.hs
++++ b/src/IRTS/CodegenLLVM.hs
+@@ -19,7 +19,7 @@ import LLVM.General.Target ( TargetMachine
+                            , initializeAllTargets, lookupTarget
+                            )
+ import LLVM.General.AST.DataLayout
+-import LLVM.General.PassManager
++import LLVM.General.PassManager hiding (dataLayout)
+ import qualified LLVM.General.Module as M
+ import qualified LLVM.General.AST.IntegerPredicate as IPred
+ import qualified LLVM.General.AST.Linkage as L
+@@ -72,7 +72,7 @@ codegenLLVM defs triple cpu optimize file outty = withContext $ \context -> do
+              let ast = codegen (Target triple layout) (map snd defs)
+              result <- runErrorT .  M.withModuleFromAST context ast $ \m ->
+                        do let opts = defaultCuratedPassSetSpec
+-                                     { optLevel = Just optimize
++                                     { optLevel = Just $ fromIntegral optimize
+                                      , simplifyLibCalls = Just True
+                                      , useInlinerWithThreshold = Just 225
+                                      }
