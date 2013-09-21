@@ -36,3 +36,9 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	# Need stricter deps to select the gtk+2 stuff
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'cairo >= 0.9.11' 'cairo >= 0.9.11 && < 0.13.0'
+}
