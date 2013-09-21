@@ -22,7 +22,7 @@ RDEPEND="=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/semigroupoids-1.2:=[profile?]
 		<dev-haskell/semigroupoids-3.2:=[profile?]
 		>=dev-haskell/semigroups-0.1:=[profile?]
-		<dev-haskell/semigroups-0.10:=[profile?]
+		<dev-haskell/semigroups-1:=[profile?]
 		=dev-haskell/vector-space-0.8*:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4.2
 			<dev-haskell/quickcheck-2.7
 		)"
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.1 && < 0.10' 'semigroups >= 0.1 && < 1'
+}
