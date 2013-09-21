@@ -19,7 +19,7 @@ HOMEPAGE="https://github.com/timbod7/haskell-chart/wiki"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
@@ -36,3 +36,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	# Need stricter deps to select the gtk+2 stuff
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'cairo >= 0.9.11' 'cairo >= 0.9.11 && < 0.13.0' \
+		'gtk >= 0.9.11' 'gtk >= 0.9.11 && < 0.13.0'
+}
