@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/certificate-1.3.5:=[profile?] <dev-haskell/certificate-1.
 	>=dev-haskell/cryptohash-0.6:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
-	>=dev-haskell/pem-0.1.0:=[profile?] <dev-haskell/pem-0.2.0:=[profile?]
+	>=dev-haskell/pem-0.1.0:=[profile?] <dev-haskell/pem-0.3.0:=[profile?]
 	>=dev-haskell/tls-1.1.0:=[profile?] <dev-haskell/tls-1.2.0:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
@@ -38,6 +38,11 @@ RDEPEND=">=dev-haskell/certificate-1.3.5:=[profile?] <dev-haskell/certificate-1.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'pem >= 0.1.0 && < 0.2.0' 'pem >= 0.1.0 && < 0.3.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
