@@ -65,6 +65,11 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${P}/src"
 
+src_prepare() {
+	cabal_chdeps \
+		'-Werror' ' '
+}
+
 src_configure() {
 	# FIXME: cmake hack!
 	cmake cpp || die
