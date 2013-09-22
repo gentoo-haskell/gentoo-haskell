@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/asn1-data-0.7.1:=[profile?]
 		<dev-haskell/crypto-pubkey-types-0.5:=[profile?]
 		dev-haskell/cryptohash:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		=dev-haskell/pem-0.1*:=[profile?]
+		>=dev-haskell/pem-0.1:=[profile?] <dev-haskell/pem-0.3:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
 		executable? ( dev-haskell/cmdargs:=[profile?]
 			dev-haskell/crypto-pubkey:=[profile?]
@@ -36,6 +36,11 @@ RDEPEND=">=dev-haskell/asn1-data-0.7.1:=[profile?]
 		)"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'pem >= 0.1 && < 0.2' 'pem >= 0.1 && < 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
