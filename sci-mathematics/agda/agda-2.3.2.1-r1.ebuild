@@ -64,7 +64,8 @@ src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
 		'hashtables == 1.0.*' 'hashtables >= 1.0 && < 1.2' \
-		'haskell-src-exts >= 1.9.6 && < 1.14' 'haskell-src-exts >= 1.9.6 && < 1.15'
+		'haskell-src-exts >= 1.9.6 && < 1.14' 'haskell-src-exts >= 1.9.6 && < 1.15' \
+		'alex >= 2.3.1 && < 3.1' 'alex >= 2.3.1 && < 3.2'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
