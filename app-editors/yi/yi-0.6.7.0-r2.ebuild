@@ -83,7 +83,8 @@ src_prepare() {
 	cabal_chdeps \
 		'Diff >=0.1 && <0.3' 'Diff >=0.1 && <0.4' \
 		'fingertree >= 0 && <0.1' 'fingertree >= 0 && <0.2' \
-		'Cabal >= 1.10 && < 1.18' 'Cabal >= 1.10 && < 1.20'
+		'Cabal >= 1.10 && < 1.18' 'Cabal >= 1.10 && < 1.20' \
+		'alex >= 3.0.3 && <= 3.0.5' 'alex >= 3.0.3 && <= 3.2'
 }
 
 src_configure() {
