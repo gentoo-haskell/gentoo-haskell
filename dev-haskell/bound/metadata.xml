@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		We represent the target language itself as an ideal monad supplied by the
+		user, and provide a &#39;Scope&#39; monad transformer for introducing bound variables
+		in user supplied terms. Users supply a &#39;Monad&#39; and &#39;Traversable&#39; instance,
+		and we traverse to find free variables, and use the Monad to perform
+		substitution that avoids bound variables.
+		
+		Slides describing and motivating this approach to name binding are available
+		online at:
+		
+		&lt;http://www.slideshare.net/ekmett/bound-making-de-bruijn-succ-less&gt;
+		
+		The goal of this package is to make it as easy as possible to deal with name
+		binding without forcing an awkward monadic style on the user.
+		
+		With generalized de Bruijn term you can &#39;lift&#39; whole trees instead of just
+		applying &#39;succ&#39; to individual variables, weakening the all variables bound
+		by a scope and greatly speeding up instantiation. By giving binders more
+		structure we permit easy simultaneous substitution and further speed up
+		instantiation.
+	</longdescription>
+</pkgmetadata>
