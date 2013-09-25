@@ -27,10 +27,15 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/numinstances-1.2:=[profile?] <dev-haskell/numinstances-1.4:=[profile?]
-	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.10:=[profile?]
+	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+	  'semigroups >= 0.3.4 && < 0.10' 'semigroups >= 0.3.4 && < 1'
+}
