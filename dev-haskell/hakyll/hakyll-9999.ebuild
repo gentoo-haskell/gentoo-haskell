@@ -79,8 +79,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-	      'QuickCheck                 >= 2.4 && < 2.6' \
-		  'QuickCheck >= 2.4 && < 2.7' \
 		  'tagsoup      >= 0.12.6 && < 0.13' 'tagsoup      >= 0.12.6 && < 0.14'
 
 
