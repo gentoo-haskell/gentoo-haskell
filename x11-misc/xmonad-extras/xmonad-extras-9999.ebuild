@@ -34,7 +34,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'xmonad>=0.10 && <0.12' 'xmonad>=0.10 && <0.13' \
 		'xmonad-contrib>=0.10 && <0.12' 'xmonad-contrib>=0.10 && <0.13'
 	epatch "${FILESDIR}"/${PN}-alt-config.patch
 }
