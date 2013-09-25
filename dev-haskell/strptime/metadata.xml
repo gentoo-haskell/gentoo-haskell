@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides a binding to strptime, that allows to parse
+		dates and times from strings and strict/lazy bytestrings. The library
+		creates LocalTime values. It provides some extra features which
+		the original strptime lacks - parsing of fractional seconds and parsing
+		of ten-powers of seconds since epoch (for example milliseconds since epoch).
+	</longdescription>
+</pkgmetadata>
