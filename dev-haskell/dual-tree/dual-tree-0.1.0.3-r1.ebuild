@@ -22,7 +22,12 @@ RDEPEND=">=dev-haskell/monoid-extras-0.2:=[profile?]
 		<dev-haskell/monoid-extras-0.4:=[profile?]
 		=dev-haskell/newtype-0.2*:=[profile?]
 		>=dev-haskell/semigroups-0.8:=[profile?]
-		<dev-haskell/semigroups-0.10:=[profile?]
+		<dev-haskell/semigroups-1:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+	   'semigroups >= 0.8 && < 0.10'  'semigroups >= 0.8 && < 1'
+}
