@@ -75,8 +75,8 @@ RDEPEND="
 
 DEPEND="${RDEPEND}
 	>=dev-haskell/alex-2.3
-	>=dev-haskell/happy-1.18
-	doc? (	app-text/docbook-xml-dtd:4.2
+	>=dev-haskell/happy-1.19
+	doc? ( app-text/docbook-xml-dtd:4.2
 	app-text/docbook-xml-dtd:4.5
 	app-text/docbook-xsl-stylesheets
 	>=dev-libs/libxslt-1.1.2 )"
