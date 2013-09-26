@@ -199,20 +199,13 @@ git-2_gc() {
 
 	git config diff.ignoreSubmodules dirty \
 		|| die 'git config --global diff.ignoreSubmodules dirty failed'
-	if [[ -f ghc-tarballs/LICENSE ]]; then
-		einfo "./sync-all ${args} --testsuite pull"
-		./sync-all ${args} --testsuite pull
-		if [[ "$?" != "0" ]]; then
-			ewarn "sync-all ${args} --testsuite pull failed, trying get"
-			einfo "./sync-all ${args} --testsuite get ${bargs}"
-			./sync-all ${args} --testsuite get ${bargs} \
-				|| die "sync-all ${args} --testsuite get ${bargs} failed"
-		fi
-	else
-		einfo "./sync-all ${args} --testsuite get ${bargs}"
-		./sync-all ${args} --testsuite get ${bargs} \
-			|| die "sync-all ${args} --testsuite get ${bargs} failed"
-	fi
+
+	set -- ./sync-all ${args} --testsuite get  ${bargs}
+	einfo "$@"
+	"$@"
+	set -- ./sync-all ${args} --testsuite pull
+	einfo "$@"
+	"$@" || die
 
 	popd > /dev/null
 }
