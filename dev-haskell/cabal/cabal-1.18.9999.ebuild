@@ -32,22 +32,21 @@ else
 	S="${WORKDIR}/${MY_PN}"
 fi
 
-RDEPEND=">=dev-lang/ghc-6:="
+RDEPEND=">=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
-		test? ( dev-haskell/extensible-exceptions
-			dev-haskell/hunit
-			>=dev-haskell/quickcheck-2.1.0.1
-			dev-haskell/regex-posix
-			dev-haskell/test-framework
-			dev-haskell/test-framework-hunit
-			>=dev-haskell/test-framework-quickcheck2-0.2.12
-		)"
-
-CABAL_CORE_LIB_GHC_PV="7.5.* 7.7.*"
+	test? ( dev-haskell/extensible-exceptions
+		dev-haskell/hunit
+		>=dev-haskell/quickcheck-2.1.0.1
+		dev-haskell/regex-posix
+		dev-haskell/test-framework
+		dev-haskell/test-framework-hunit
+		>=dev-haskell/test-framework-quickcheck2-0.2.12 )
+"
 
 src_prepare() {
 	if [[ -n ${LIVE_EBUILD} ]]; then
-		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.17.0' "version: ${PV}"
+		# one of renaming reasons is to avoid clashing with bundled ghc-cabal
+		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.19.0' "version: ${PV}"
 	fi
 }
 
