@@ -18,6 +18,7 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
 EGIT_REPO_URI="git://github.com/haskell/cabal.git"
+CABAL_CORE_LIB_GHC_PV="7.7.* 7.8.*"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
