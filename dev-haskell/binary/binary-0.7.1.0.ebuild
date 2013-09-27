@@ -28,6 +28,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
+CABAL_CORE_LIB_GHC_PV="7.7.2013*"
+
 src_prepare() {
 	if has_version ">=dev-lang/ghc-7.7"; then
 		sed -e '/test-suite read-write-file/,/ghc-options: -Wall/d' \
