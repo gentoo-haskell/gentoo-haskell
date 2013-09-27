@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (27 Sep 2013)
+# Masked as is broke 0.10 API (at least for lens-3.9.1's Stream instance)
+=dev-haskell/vector-0.10.9.0
+
 # Sergei Trofimovich <slyfox@gentoo.org> (16 Dec 2012)
 # Masked as needs masked version of wxGTK:2.9:
 # > Ryan Hill <dirtyepic@gentoo.org> (22 Jan 2011)
