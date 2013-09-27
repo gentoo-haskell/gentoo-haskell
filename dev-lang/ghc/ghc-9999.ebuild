@@ -245,13 +245,7 @@ src_prepare() {
 		fi
 	fi
 
-	if use dph; then
-		if [[ ${PV} != *9999* ]]; then
-			# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-			# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-			epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
-		fi
-	else
+	if ! use dph ; then
 		if [ -d "${S}"/libraries/dph ]; then
 			rm -rf "${S}"/libraries/dph || die "Could not rm -rf ${S}/libraries/dph"
 		fi
