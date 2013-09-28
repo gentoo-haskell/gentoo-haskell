@@ -48,6 +48,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hunit-1.2.5
 		>=dev-haskell/system-fileio-0.3.11 )
 "
+
+PATCHES=("${FILESDIR}/${PN}-4.2.21-old-hackage.patch")
+
 src_prepare() {
 	base_src_prepare
 	if use localdb; then
