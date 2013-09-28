@@ -1,0 +1,20 @@
+Fix missing CPP language feature.
+
+call:
+    $ ./setup configure --ghc --prefix=/usr --with-compiler=/usr/bin/ghc --with-hc-pkg=/usr/bin/ghc-pkg --prefix=/usr --libdir=/usr/lib64 --libsubdir=citeproc-hs-0.3.8/ghc-7.6.3 --datadir=/usr/share/ --datasubdir=citeproc-hs-0.3.8/ghc-7.6.3 --with-haddock=/usr/bin/haddock --ghc-option=-O0 --ghc-option=-optl-Wl,-O1 --ghc-option=-optl-Wl,--as-needed --ghc-option=-optl-Wl,--hash-style=gnu --disable-executable-stripping --docdir=/usr/share/doc/citeproc-hs-0.3.8 --verbose --flags=small_base --flags=-bibutils --flags=-network --flags=-hexpat --flags=-embed_data_files
+failed as:
+    Preprocessing library citeproc-hs-0.3.8...
+    src/Text/CSL/Pickle.hs:27:2: lexical error at character 'i'
+
+Reported-by: Marc
+Gentoo-bug: http://bugs.gentoo.org/475084
+diff --git a/src/Text/CSL/Pickle.hs b/src/Text/CSL/Pickle.hs
+index 2d69e48..8c00530 100644
+--- a/src/Text/CSL/Pickle.hs
++++ b/src/Text/CSL/Pickle.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE PatternGuards #-}
++{-# LANGUAGE PatternGuards, CPP #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Text.CSL.Pickle
