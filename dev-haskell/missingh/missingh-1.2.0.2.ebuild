@@ -31,11 +31,22 @@ RDEPEND="dev-haskell/hslogger:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
+	virtual/libiconv
 	>=dev-haskell/cabal-1.8.0.2
 	test? ( dev-haskell/quickcheck
 		dev-haskell/testpack )
 "
 
+# libiconv is needed for the trick below to make it compile with ghc-6.12
+
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=("${FILESDIR}/${PN}-1.2.0.2-ghc-7.7.patch")
+
+src_prepare() {
+	base_src_prepare
+	# (non-ASCII non-UTF-8 source breaks hscolour)
+	cd src/System/Time
+	mv ParseDate.hs ParseDate.hs.ISO-8859-1
+	iconv -f ISO-8859-1 -t UTF-8 -c ParseDate.hs.ISO-8859-1 > ParseDate.hs || die "unable to recode ParseDate.hs to UTF-8"
+}
