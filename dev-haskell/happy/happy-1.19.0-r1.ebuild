@@ -38,7 +38,9 @@ src_prepare() {
 }
 
 src_configure() {
-	haskell-cabal_src_configure
+	# '--with-happy=false' allows detecting circular
+	# depends even when 'happy' is installed in system
+	haskell-cabal_src_configure --with-happy=false
 
 	if use doc; then
 		# does not like out-of-source builds
