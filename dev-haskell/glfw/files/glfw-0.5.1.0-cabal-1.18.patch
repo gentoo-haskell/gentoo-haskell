@@ -1,0 +1,13 @@
+diff --git a/Setup.hs b/Setup.hs
+index 197b9a3..80a157a 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -164,7 +164,7 @@ performTest verbosity contents flags = do
+         hClose outHandle
+         hPutStr inHandle contents
+         hClose inHandle
+-        (out, err, exitCode) <- rawSystemStdInOut verbosity "cc" (["-c", path, "-o", objPath] ++ flags) Nothing False
++        exitCode <- rawSystem "cc" (["-c", path, "-o", objPath] ++ flags)
+         return (exitCode == ExitSuccess)     
+ 
+ progXrandr = unlines
