@@ -16,7 +16,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/language-c"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/syb[profile?]
