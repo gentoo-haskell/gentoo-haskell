@@ -51,6 +51,11 @@ RESTRICT=test # missing modules: Could not find module `Httpd'
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'base >= 2 && < 4.7' 'base >= 2 && < 5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-network23 \
