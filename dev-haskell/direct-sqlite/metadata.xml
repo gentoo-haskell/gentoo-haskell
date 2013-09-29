@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package is not very different from the other SQLite3 bindings out
+		there, but it fixes a few deficiencies I was finding.  As compared to
+		bindings-sqlite3, it is slightly higher-level, in that it supports
+		marshalling of data values to and from the database.  In particular, it
+		supports strings encoded as UTF8, and BLOBs represented as ByteStrings.
+		
+		Release history:
+		
+		[Version 2.3.6] Re-apply the stat64 hack after upgrade to the bundled
+		SQLite3.  Oops!
+		
+		[Version 2.3.5] Add support to compile bundled SQLite3 with full-text search.  Upgrade bundled SQLite3 to 3.7.17.
+		
+		[Version 2.3.4] Work around a linker error on some systems; add
+		column-name reporting.
+		
+		[Version 2.3.3.1] Upgrade bundled SQLite3 to 3.7.15.2.
+		
+		[Version 2.3.3] Add trace support, as a feature for debugging.
+		
+		[Version 2.3.2] Add execPrint, execWithCallback, and interruptibly functions.
+		Add bindings for sqlite3_last_insert_rowid and sqlite3_changes.  Change the
+		Show instance of the Utf8 newtype to better match the IsString instance.
+		
+		[Version 2.3.1] Upgrade the bundled SQLite3 to 3.7.15.  Add bindings for
+		sqlite3_interrupt.  Export Int rather than CInt.
+		
+		[Version 2.3] Mark some FFI calls &quot;unsafe&quot;, for a substantial performance
+		benefit.
+		
+		[Version 2.2.1] Bump down text library version to match with the
+		latest Haskell Platform.
+		
+		[Version 2.2] actually does what version 2.1 claimed to, since the author
+		made a mistake with git.
+		
+		[Version 2.1] improves handling of invalid UTF-8 and changes error handling
+		to be more complete.  It also adds a build flag to build against the system
+		sqlite instead of the bundled one, optionally (disabled by default).
+		
+		[Version 2.0] uses Text for strings instead of String.
+		
+		[Version 1.1.0.1] switches to the Faction packaging system and makes no other
+		changes.
+		
+		[Version 1.1] adds the SQLite amalgamation file (version 3.7.5) to the
+		project, so that there are no external dependencies.
+	</longdescription>
+</pkgmetadata>
