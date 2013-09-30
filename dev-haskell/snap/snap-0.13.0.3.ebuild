@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.4:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/comonad-1.1:=[profile?] <dev-haskell/comonad-3.2:=[profile?]
 	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.3:=[profile?]
