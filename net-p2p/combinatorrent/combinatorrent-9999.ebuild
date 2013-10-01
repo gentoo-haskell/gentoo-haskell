@@ -26,7 +26,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/attoparsec-0.8
 		>=dev-haskell/cabal-1.6
-		=dev-haskell/cereal-0.3*
+		>=dev-haskell/cereal-0.3
 		dev-haskell/cryptohash
 		dev-haskell/deepseq
 		dev-haskell/hslogger
@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/network
 		<dev-haskell/parsec-4
 		dev-haskell/psqueue
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.6
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7
 		dev-haskell/random
 		dev-haskell/random-shuffle
 		dev-haskell/stm
@@ -47,3 +47,9 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.12.1"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.7' \
+		'cereal == 0.3.*' 'cereal >= 0.3'
+}
