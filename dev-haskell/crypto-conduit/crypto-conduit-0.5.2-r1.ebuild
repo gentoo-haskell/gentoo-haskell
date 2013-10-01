@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 		=dev-haskell/conduit-1.0*:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
@@ -39,3 +39,8 @@ DEPEND="${RDEPEND}
 #    Perhaps you meant `C.incIV' (imported from Crypto.Classes)
 RESTRICT=test
 CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-tests"
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal       >= 0.3 && < 0.4' 'cereal       >= 0.3 && < 0.5'
+}
