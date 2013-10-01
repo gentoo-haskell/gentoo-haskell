@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+test-properties transformers2"
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.6:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.4:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal               >= 0.3 && < 0.4' 'cereal               >= 0.3 && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
