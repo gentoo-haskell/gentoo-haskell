@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="explicitbackend glfw +glut"
 
 RDEPEND=">=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
-	>=dev-haskell/glut-2.4:=[profile?] <dev-haskell/glut-2.5:=[profile?]
-	>=dev-haskell/opengl-2.8:=[profile?] <dev-haskell/opengl-2.9:=[profile?]
+	>=dev-haskell/glut-2.4:=[profile?] <dev-haskell/glut-2.6:=[profile?]
+	>=dev-haskell/opengl-2.8:=[profile?] <dev-haskell/opengl-2.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 	glfw? ( >=dev-haskell/glfw-b-0.1.0.1:=[profile?] <dev-haskell/glfw-b-0.2:=[profile?] )
 "
@@ -29,8 +29,12 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-opengl-2.9.patch
+
 	cabal_chdeps \
-		'base       == 4.6.*' 'base       >= 4.6'
+		'base       == 4.6.*' 'base       >= 4.6' \
+		'OpenGL     == 2.8.*' 'OpenGL     >= 2.8 && < 2.10' \
+		'GLUT       == 2.4.*' 'GLUT       >= 2.4 && <2.6'
 }
 
 src_configure() {
