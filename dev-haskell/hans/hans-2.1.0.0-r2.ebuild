@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/cereal-0.3*:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.3:=[profile?]
 		>=dev-haskell/fingertree-0.0:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 		>=dev-haskell/monadlib-3.6:=[profile?] <dev-haskell/monadlib-3.8:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
@@ -30,7 +30,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
 
 	cabal_chdeps \
-		'cereal        == 0.3.0.*' 'cereal        == 0.3.*' \
+		'cereal        == 0.3.0.*' 'cereal        >= 0.3' \
+		'cereal     == 0.3.*'      'cereal        >= 0.3' \
 		'bytestring == 0.9.1.*' 'bytestring    >= 0.9 && < 0.11' \
 		'bytestring    == 0.9.1.*' 'bytestring    >= 0.9 && < 0.11' \
 		'containers    >= 0.4.0.0 && < 0.5.0.0' 'containers    >= 0.4.0.0 && < 0.7.0.0' \
