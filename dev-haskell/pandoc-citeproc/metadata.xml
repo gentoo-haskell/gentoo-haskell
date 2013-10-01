@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The pandoc-citeproc library exports functions for
+		using the citeproc system with pandoc.  It relies on
+		citeproc-hs, a library for rendering
+		bibliographic reference citations into a variety
+		of styles using a macro language called Citation
+		Style Language (CSL). More details on CSL can be
+		found here: &lt;http://citationstyles.org/&gt;.
+		
+		Currently this package includes a copy of the citeproc-hs
+		code. When citeproc-hs is updated to be compatible,
+		this package will simply depend on citeproc-hs.
+		
+		This package also contains two executables: pandoc-citeproc,
+		which works as a pandoc filter (pandoc &gt;= 1.12), and
+		biblio2yaml, which converts bibliographic databases to
+		a yaml format suitable for inclusion in pandoc YAML
+		metadata.
+	</longdescription>
+</pkgmetadata>
