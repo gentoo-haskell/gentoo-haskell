@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.4:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/clientsession-0.9:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?]
 	>=dev-haskell/cookie-0.4:=[profile?] <dev-haskell/cookie-0.5:=[profile?]
@@ -62,3 +62,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/wai-test-1.3.0.5 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal                >= 0.3      && < 0.4' 'cereal                >= 0.3      && < 0.5'
+}
