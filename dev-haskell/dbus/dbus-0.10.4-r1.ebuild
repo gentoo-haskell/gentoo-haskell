@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?]
-		<dev-haskell/cereal-0.4:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 		=dev-haskell/libxml-sax-0.7*:=[profile?]
 		>=dev-haskell/network-2.2.3:=[profile?]
 		>=dev-haskell/parsec-2.0:=[profile?]
@@ -35,3 +34,8 @@ RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal >= 0.3.4 && < 0.4' 'cereal >= 0.3.4 && < 0.5'
+}
