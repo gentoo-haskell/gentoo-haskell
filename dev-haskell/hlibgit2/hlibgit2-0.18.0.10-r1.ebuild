@@ -24,3 +24,8 @@ RDEPEND=">=dev-haskell/bindings-dsl-1.0.11:=[profile?]
 		dev-libs/openssl"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'ssl, crypto' 'ssl, crypto, pthread'
+}
