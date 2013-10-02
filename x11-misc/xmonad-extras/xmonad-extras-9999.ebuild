@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.1"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-alt-config.patch
+	epatch "${FILESDIR}"/${P}-alt-config.patch
 }
 
 src_configure() {
