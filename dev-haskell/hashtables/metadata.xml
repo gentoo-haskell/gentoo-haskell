@@ -2,6 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
+	<herd>proxy-maintainers</herd>
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
@@ -98,4 +99,7 @@
 		Please send bug reports to
 		&lt;https://github.com/gregorycollins/hashtables/issues&gt;.
 	</longdescription>
+	<use>
+		<flag name="sse4_1">Enable optimization for SSE4_1 capable processors (Intel Core 2 Penryn and later chips)</flag>
+	</use>
 </pkgmetadata>
