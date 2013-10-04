@@ -18,11 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils embed_data_files +hexpat +network +small_base unicode_collation"
 
+RESTRICT=test # missing files: locales-en-US.xml: openBinaryFile
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/json:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pandoc-types-1.12:=[profile?]
+	>=dev-haskell/pandoc-types-1.12.2.3:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
@@ -42,11 +44,10 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
-	test? ( dev-haskell/aeson-pretty
+	test? ( >=app-text/pandoc-1.12
+		dev-haskell/aeson-pretty
 		>=dev-haskell/diff-0.3 )
 "
-
-RESTRICT=test # pandoc-citeproc: key "tag" not present
 
 src_configure() {
 	haskell-cabal_src_configure \
