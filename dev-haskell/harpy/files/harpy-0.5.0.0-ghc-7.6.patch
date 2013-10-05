@@ -1,0 +1,32 @@
+fix forein call mismatch on ghc-7.6
+
+Harpy/Call.hs:25:3:
+    Unacceptable argument type in foreign declaration: FunPtr ()
+    When checking declaration:
+      foreign import ccall safe "dynamic" conv :: FunPtr () -> IO ()
+diff --git a/Harpy/Call.hs b/Harpy/Call.hs
+index 47ada4d..0da3f9b 100644
+--- a/Harpy/Call.hs
++++ b/Harpy/Call.hs
+@@ -22,7 +22,7 @@ import Foreign.Ptr
+ 
+ #ifndef __HADDOCK__
+ 
+-$(callDecl "callAsVoid" [t|()|])
++$(callDecl "callAsVoid" [t|IO ()|])
+ -- $(callDecl "callAsWord32ToWord32" [t|Word32 -> Word32|])
+ -- $(callDecl "callAs7PtrToVoid" [t|forall a b c d e f g . Ptr a -> Ptr b -> Ptr c -> Ptr d -> Ptr e -> Ptr f -> Ptr g -> () |])
+ 
+diff --git a/Harpy/CodeGenMonad.hs b/Harpy/CodeGenMonad.hs
+index 0c0a281..58d36e0 100644
+--- a/Harpy/CodeGenMonad.hs
++++ b/Harpy/CodeGenMonad.hs
+@@ -559,7 +559,7 @@ callDecl ns qt =  do
+                          _ -> ([], [], t0)
+     let name = mkName ns
+     let funptr = AppT (ConT $ mkName "FunPtr") t
+-    let ioresult = addIO t
++    let ioresult = t
+     let ty = AppT (AppT ArrowT funptr) ioresult
+     dynName <- newName "conv"
+     let dyn = ForeignD $ ImportF CCall Safe "dynamic" dynName $ ForallT tvars cxt ty
