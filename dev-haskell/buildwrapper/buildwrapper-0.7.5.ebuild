@@ -42,3 +42,11 @@ DEPEND="${RDEPEND}
 	test? ( >dev-haskell/htf-0.9
 		dev-haskell/hunit )
 "
+
+src_prepare() {
+	# allow using shipped with GHC cabal, but it will break with ghc-7.8
+	# unstrip binary
+	cabal_chdeps \
+		'    Cabal,' '    Cabal < 1.18,' \
+		' -optl -s' '    '
+}
