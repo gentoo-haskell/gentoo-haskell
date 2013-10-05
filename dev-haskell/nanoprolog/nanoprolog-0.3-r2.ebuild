@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/listlike-3.1*:=[profile?]
+RDEPEND=">=dev-haskell/listlike-3.1:=[profile?]
 		>=dev-haskell/uu-parsinglib-2.7.1:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
@@ -32,5 +32,6 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'containers     == 0.4.*' 'containers     >= 0.4' \
-		'uu-parsinglib  >= 2.7.1  && < 2.8' 'uu-parsinglib  >= 2.7.1'
+		'uu-parsinglib  >= 2.7.1  && < 2.8' 'uu-parsinglib  >= 2.7.1' \
+		'ListLike       == 3.1.*' 'ListLike       >= 3.1'
 }
