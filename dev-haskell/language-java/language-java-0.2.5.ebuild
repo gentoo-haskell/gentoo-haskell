@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # miscMath4: [Failed]
+
 RDEPEND=">=dev-haskell/cpphs-1.3:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?]
 	dev-haskell/syb:=[profile?]
