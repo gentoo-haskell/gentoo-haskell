@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'base, haskell98' 'base'
+}
