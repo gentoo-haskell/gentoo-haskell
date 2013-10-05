@@ -49,6 +49,19 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/warp-tls-1.4.1
 		)"
 
+pkg_setup() {
+	ebegin "Creating mighttpd2 user and group"
+	enewgroup ${PN}
+	enewuser ${PN} -1 -1 -1 ${PN}
+	eend $?
+}
+
+src_prepare() {
+	# app-text/texlive-core-2012-r1 (/usr/bin/mkindex)
+	cabal_chdeps \
+		'Executable mkindex' 'Executable mighty-mkindex'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag rev-proxy rev-proxy) \
@@ -63,11 +76,4 @@ src_install() {
 	cp "${FILESDIR}"/mighttpd2.route "${ED}"/etc/mighttpd2/mighttpd2.route || die
 
 	newinitd "${FILESDIR}"/mighttpd2.initd mighttpd2
-}
-
-pkg_setup() {
-	ebegin "Creating mighttpd2 user and group"
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 -1 ${PN}
-	eend $?
 }
