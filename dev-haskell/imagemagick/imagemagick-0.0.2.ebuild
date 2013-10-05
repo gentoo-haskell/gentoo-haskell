@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # unable to open image `data/mona-lisa.jpg'
+
 RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
 		<dev-haskell/lifted-base-0.3:=[profile?]
 		>=dev-haskell/resourcet-0.3:=[profile?]
