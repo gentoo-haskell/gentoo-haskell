@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+test-properties transformers2"
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.6:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -37,6 +37,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'binary               >= 0.5 && < 0.6' 'binary               >= 0.5 && < 0.8' \
 		'cereal               >= 0.3 && < 0.4' 'cereal               >= 0.3 && < 0.5'
 }
 
