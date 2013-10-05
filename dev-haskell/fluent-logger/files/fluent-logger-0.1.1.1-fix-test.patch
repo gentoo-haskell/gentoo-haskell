@@ -1,0 +1,7 @@
+diff --git a/test/Spec.hs b/test/Spec.hs
+index e517a43..a824f8c 100644
+--- a/test/Spec.hs
++++ b/test/Spec.hs
+@@ -1 +1 @@
+-{-# OPTIONS_GHC -F -pgmF cabal-dev/bin/hspec-discover #-}
++{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
