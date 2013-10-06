@@ -41,6 +41,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-3.4-PGFService-base-4.patch
 	"${FILESDIR}"/${PN}-3.4-Setup-base-4.patch
 	"${FILESDIR}"/${PN}-3.4-stderr-utf8.patch
+	"${FILESDIR}"/${PN}-3.4-fix-O2.patch
 	)
 
 src_configure() {
