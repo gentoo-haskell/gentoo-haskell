@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal
@@ -20,7 +20,6 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/haxml-1.20
-		<dev-haskell/haxml-1.24
 		dev-haskell/mtl
 		>=dev-lang/ghc-6.10.1"
 
@@ -29,4 +28,6 @@ src_prepare() {
 		epatch "${FILESDIR}/${P}-haxml-1.22.patch"
 	fi
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
+	cabal_chdeps \
+		'HaXml >= 1.22 && < 1.24' 'HaXml >= 1.22'
 }
