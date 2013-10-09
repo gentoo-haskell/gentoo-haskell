@@ -67,7 +67,8 @@ S="${WORKDIR}/${P}/src"
 
 src_prepare() {
 	cabal_chdeps \
-		'-Werror' ' '
+		'-Werror' ' ' \
+		'-optl-s' ' '
 }
 
 src_configure() {
