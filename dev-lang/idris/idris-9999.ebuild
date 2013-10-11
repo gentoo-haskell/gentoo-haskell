@@ -8,6 +8,7 @@ EAPI="5"
 
 if [[ ${PV} = 9999* ]]; then
 	GIT_ECLASS="git-2"
+	DOC_DEPS="doc? ( dev-texlive/texlive-latex )"
 fi
 
 CABAL_FEATURES="bin"
@@ -18,12 +19,12 @@ HOMEPAGE="http://www.idris-lang.org/"
 if [[ $PV != 9999* ]]; then
 	SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 fi
-EGIT_REPO_URI="git://github.com/edwinb/Idris-dev.git"
+EGIT_REPO_URI="git://github.com/idris-lang/Idris-dev.git"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="+llvm noeffects"
+IUSE="doc examples +llvm noeffects"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -45,12 +46,45 @@ DEPEND="${RDEPEND}
 	dev-haskell/vector
 	dev-haskell/vector-binary-instances
 	>=dev-lang/ghc-7.6.1
+	${DOC_DEPS}
 	llvm? ( >=dev-haskell/llvm-general-3.3.8 <dev-haskell/llvm-general-3.3.9
 		>=dev-haskell/llvm-general-pure-3.3.8 <dev-haskell/llvm-general-pure-3.3.9 )
 "
+
+src_prepare() {
+	if [[ ${PV} = 9999* ]]; then
+		rm -f "${S}/tutorial/idris-tutorial.pdf"
+		cabal_chdeps \
+			'trifecta == 1.1' 'trifecta >= 1.1'
+	fi
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag llvm llvm) \
 		$(cabal_flag noeffects noeffects)
+}
+
+src_compile() {
+	haskell-cabal_src_compile
+	if [[ ${PV} = 9999* ]]; then
+		if use doc; then
+			pushd tutorial || die "Could not cd to tutorial"
+			emake
+			popd tutorial
+		fi
+	fi
+}
+
+src_install() {
+	haskell-cabal_src_install
+	if [[ ${PV} = 9999* ]]; then
+		if use doc; then
+			dodoc "${S}/tutorial/idris-tutorial.pdf"
+		fi
+	fi
+	if use examples; then
+		insinto "/usr/share/${P}/examples"
+		doins -r "${S}"/tutorial/examples/*.idr
+	fi
 }
