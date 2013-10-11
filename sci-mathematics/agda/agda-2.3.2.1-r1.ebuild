@@ -85,6 +85,12 @@ src_configure() {
 		$(cabal_flag epic epic)
 }
 
+src_compile() {
+	elisp-compile src/data/emacs-mode/*.el \
+		|| die "Failed to compile emacs mode"
+	haskell-cabal_src_compile
+}
+
 src_install() {
 	haskell-cabal_src_install
 	elisp-install ${PN} src/data/emacs-mode/*.el \

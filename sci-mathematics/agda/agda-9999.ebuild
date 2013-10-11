@@ -31,11 +31,12 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		<dev-haskell/geniplate-0.7:=[profile?]
 		>=dev-haskell/hashable-1.1.2.3:=[profile?]
 		<dev-haskell/hashable-1.3:=[profile?]
-		=dev-haskell/hashtables-1.0*:=[profile?]
+		>=dev-haskell/hashtables-1.0:=[profile?]
+		<dev-haskell/hashtables-1.2:=[profile?]
 		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
 		<dev-haskell/haskeline-0.8:=[profile?]
 		>=dev-haskell/haskell-src-exts-1.9.6:=[profile?]
-		<dev-haskell/haskell-src-exts-1.14:=[profile?]
+		<dev-haskell/haskell-src-exts-1.15:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		<dev-haskell/parallel-3.3:=[profile?]
@@ -60,9 +61,7 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
-		'hashable >= 1.1.2.3 && < 1.2' 'hashable >= 1.1.2.3 && < 1.3'
-	epatch "${FILESDIR}/${PN}-2.3.2-hashable-1.2.patch"
+		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
@@ -75,10 +74,26 @@ src_prepare() {
 		ewarn 'backends." Hence you may wish to remove the epic use flag if you wish to use'
 		ewarn "the Agda standard library."
 	fi
+	sed -e 's@-Werror@@g' \
+		-i "${S}/${MY_PN}.cabal" \
+		-i "${S}/mk/config.mk.in" \
+		-i "${S}/src/prototyping/eval/Makefile" \
+		-i "${S}/src/prototyping/nameless/Makefile" \
+		-i "${S}/src/rts/${PN}-rts.cabal" \
+		|| die "sed to remove -Werror failed"
+	sed -e '/, "-Werror"/d' \
+		-i "${S}/src/full/Agda/Compiler/MAlonzo/Compiler.hs" \
+		|| die "sed to remove -Werror from Compiler.hs failed"
 }
 
 src_configure() {
 	cabal_src_configure $(cabal_flag epic)
+}
+
+src_compile() {
+	elisp-compile src/data/emacs-mode/*.el \
+		|| die "Failed to compile emacs mode"
+	haskell-cabal_src_compile
 }
 
 src_install() {
