@@ -18,12 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/byteable-0.1.1:=[profile?]
-	>=dev-haskell/crypto-cipher-types-0.0.6:=[profile?]
+RDEPEND=">=dev-haskell/byteable-0.1.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
+	>=dev-haskell/crypto-cipher-types-0.0.7:=[profile?] <dev-haskell/crypto-cipher-types-0.1:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/quickcheck-2:=[profile?]
-	>=dev-haskell/securemem-0.1.1:=[profile?]
+	>=dev-haskell/securemem-0.1.1:=[profile?] <dev-haskell/securemem-0.2:=[profile?]
 	dev-haskell/test-framework:=[profile?]
 	dev-haskell/test-framework-hunit:=[profile?]
 	dev-haskell/test-framework-quickcheck2:=[profile?]
