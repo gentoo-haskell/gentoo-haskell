@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/byteable:=[profile?]
-	>=dev-haskell/crypto-cipher-types-0.0.5:=[profile?]
+	>=dev-haskell/crypto-cipher-types-0.0.5:=[profile?] <dev-haskell/crypto-cipher-types-0.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
