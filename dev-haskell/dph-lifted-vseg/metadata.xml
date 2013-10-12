@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides the following:
+		nested arrays and the primitive operators that work on them (PA functions);
+		the lifted array combinators that the vectoriser introduces (PP functions);
+		the user facing library functions that work on [::] style arrays (P functions).
+		This implementation directly encodes sharing between array segments,
+		and avoids the copying that dph-lifted-copy would otherwise do.
+		Use this version for production code.
+	</longdescription>
+</pkgmetadata>
