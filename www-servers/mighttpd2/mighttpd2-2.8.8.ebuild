@@ -56,12 +56,6 @@ pkg_setup() {
 	eend $?
 }
 
-src_prepare() {
-	# app-text/texlive-core-2012-r1 (/usr/bin/mkindex)
-	cabal_chdeps \
-		'Executable mkindex' 'Executable mighty-mkindex'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag rev-proxy rev-proxy) \
