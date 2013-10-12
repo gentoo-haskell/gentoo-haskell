@@ -61,6 +61,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
 
+src_prepare() {
+	# allow ghc-7.7
+	cabal_chdeps \
+		'process >= 1 && < 1.2' 'process >= 1 && < 1.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \
