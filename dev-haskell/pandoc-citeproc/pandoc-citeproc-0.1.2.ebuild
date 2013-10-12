@@ -20,19 +20,21 @@ IUSE="+bibutils embed_data_files +hexpat +network +small_base unicode_collation"
 
 RESTRICT=test # missing files: locales-en-US.xml: openBinaryFile
 
-RDEPEND="dev-haskell/aeson:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12.0.2:=[profile?]
+	dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/json:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/pandoc-types-1.12.2.3:=[profile?]
 	dev-haskell/parsec:=[profile?]
+	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
 	>=dev-haskell/texmath-0.6.4:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
-	dev-haskell/yaml:=[profile?]
+	>=dev-haskell/yaml-0.8:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	bibutils? ( >=dev-haskell/hs-bibutils-0.3:=[profile?] )
 	hexpat? ( >=dev-haskell/hexpat-0.20.2:=[profile?] )
@@ -44,8 +46,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
-	test? ( >=app-text/pandoc-1.12
-		dev-haskell/aeson-pretty
+	test? ( dev-haskell/aeson-pretty
 		>=dev-haskell/diff-0.3 )
 "
 
