@@ -21,3 +21,9 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	# ghc-7.7
+	cabal_chdeps \
+		'unix >= 2.3 && < 2.7' 'unix >= 2.3 && < 2.8'
+}
