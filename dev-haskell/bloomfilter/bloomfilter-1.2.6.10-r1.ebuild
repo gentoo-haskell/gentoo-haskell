@@ -36,4 +36,5 @@ src_prepare() {
 	if has_version ">=dev-haskell/quickcheck-2.5"; then
 		epatch "${FILESDIR}/${PN}-1.2.6.10-quickcheck-2.6.patch"
 	fi
+	epatch "${FILESDIR}/${PN}-1.2.6.10-ghc-7.7.patch"
 }
