@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 CABAL_FEATURES="bin"
 inherit haskell-cabal eutils darcs
@@ -24,7 +24,7 @@ RESTRICT="test"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		~sci-mathematics/agda-9999
+		~sci-mathematics/agda-9999:=
 		>=dev-haskell/cabal-1.8
 		>=dev-lang/ghc-6.8.2"
 
