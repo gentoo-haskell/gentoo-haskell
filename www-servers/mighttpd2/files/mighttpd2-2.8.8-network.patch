@@ -1,0 +1,41 @@
+From f9a5eac58f5662de96953aca02cd1a530dcedf55 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sun, 13 Oct 2013 11:49:22 +0300
+Subject: [PATCH] Fix build failure against recent network update
+
+[13 of 20] Compiling Net              ( src/Net.hs, dist/build/mighty/mighty-tmp/Net.o )
+
+src/Net.hs:28:14:
+    Ambiguous occurrence `sClose'
+    It could refer to either `Network.sClose',
+                             imported from `Network' at src/Net.hs:4:1-14
+                          or `Network.Socket.sClose',
+                             imported from `Network.Socket' at src/Net.hs:6:1-21
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ src/Net.hs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Net.hs b/src/Net.hs
+index 92b2c24..3e9bbb9 100644
+--- a/src/Net.hs
++++ b/src/Net.hs
+@@ -3,7 +3,7 @@ module Net (listenSocket) where
+ import Control.Exception
+ import Network
+ import Network.BSD
+-import Network.Socket
++import Network.Socket as NS
+ 
+ listenSocket :: String -> IO Socket
+ listenSocket serv = do
+@@ -25,4 +25,4 @@ listenSocket' addr = bracketOnError setup cleanup $ \sock -> do
+     return sock
+  where
+    setup = socket (addrFamily addr) (addrSocketType addr) (addrProtocol addr)
+-   cleanup = sClose
++   cleanup = NS.sClose
+-- 
+1.8.3.2
+
