@@ -25,7 +25,7 @@ SITEFILE="50${PN}-gentoo.el"
 src_prepare() {
 	cp "${FILESDIR}/${SITEFILE}" "${S}" \
 		|| die "Could not cp ${SITEFILE}"
-	sed -e 's@"--ideslave"@"--quiet" "--nocolour" "--ideslave"@' \
+	sed -e 's@"--ideslave"@"--nocolour" "--ideslave"@' \
 		-i "${S}/inferior-idris.el" \
 		|| die "Could not set --nocolour in inferior-idris.el"
 }
