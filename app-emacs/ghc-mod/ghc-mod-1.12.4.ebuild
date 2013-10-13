@@ -58,9 +58,11 @@ src_install() {
 pkg_postinst() {
 	if use emacs ; then
 		elisp-site-regen
-		elog "To configure ghc-mod either add this one line to ~/.emacs:"
+		elog "To configure ghc-mod either add this line to ~/.emacs:"
+		elog "(autoload 'ghc-init \"ghc\" nil t)"
+		elog "and either this line:"
 		elog "(add-hook 'haskell-mode-hook (lambda () (ghc-init)))"
-		elog "or if you wish to use flymake, instead add this one line to ~/.emacs:"
+		elog "or if you wish to use flymake:"
 		elog "(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))"
 	fi
 }
