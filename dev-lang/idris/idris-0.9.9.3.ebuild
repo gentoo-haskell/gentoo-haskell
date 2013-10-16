@@ -16,11 +16,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+llvm noeffects"
+IUSE="+effects +llvm"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
 	dev-haskell/ansi-terminal
+	dev-haskell/ansi-wl-pprint
 	dev-haskell/binary
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/haskeline-0.7
@@ -28,7 +29,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/libffi
 	dev-haskell/mtl
 	>=dev-haskell/parsec-3
-	>=dev-haskell/parsers-0.9
+	~dev-haskell/parsers-0.9
 	dev-haskell/split
 	dev-haskell/text
 	dev-haskell/transformers
@@ -42,8 +43,18 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/llvm-general-pure-3.3.8 <dev-haskell/llvm-general-pure-3.3.9 )
 "
 
+src_prepare() {
+	# Loosening the trifecta dependency should be ok, as idris upstream only set it to ==
+	# https://github.com/idris-lang/Idris-dev/commit/6469b164699c558c9a6869bb1b2f57e3266abaac
+	# because trifecta 1.2 was broken: https://github.com/ekmett/trifecta/issues/15
+	# Upstream say that parsers 0.10 breaks idris:
+	# https://github.com/idris-lang/Idris-dev/commit/1d6453514500e2ebb60a74b52c9227498410ab3b
+	cabal_chdeps \
+		'trifecta == 1.1' 'trifecta >= 1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag llvm llvm) \
-		$(cabal_flag noeffects noeffects)
+		$(cabal_flag effects effects) \
+		$(cabal_flag llvm llvm)
 }
