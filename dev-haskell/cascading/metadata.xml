@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library implements an HTML-specific domain-specific language
+		for cascading style sheets (CSS) in the spirit of blaze-html.  See
+		the documentation of the Data.CSS module for a tutorial.
+	</longdescription>
+</pkgmetadata>
