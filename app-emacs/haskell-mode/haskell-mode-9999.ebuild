@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,17 +21,18 @@ RDEPEND="virtual/emacs
 DEPEND="${RDEPEND}"
 
 DOCS="NEWS README.md"
+ELISP_TEXINFO="${PN}.texi"
 SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
-	# remove '@$(RM) $*.elc' from 'make check'
+	# remove '@$(RM) $*.elc' and '@$(RM) haskell-mode.info' from 'make check'
 	sed -e 's/\$(RM) \$\*\.elc/echo gento REFUSED to &/' \
+		-e 's/check: clean/check:/' \
 		-i Makefile || die
 }
 
 src_compile() {
-	elisp-make-autoload-file haskell-site-file.el || die
-	elisp-compile *.el || die
+	emake all
 	if use examples; then
 		pushd examples || die
 		elisp-compile *.el || die
@@ -58,6 +59,8 @@ pkg_postinst() {
 	elog "or indentation will not work."
 	elog "Read the README.md file in ${ROOT}usr/share/doc/${PF}."
 	elog "or at: https://github.com/haskell/haskell-mode"
+	elog "Add the following to ~/.emacs:"
+	elog "(require 'haskell-mode-autoloads)"
 	elog "There's a screen cast: http://www.youtube.com/watch?v=E6xIjl06Lr4"
 	if use examples; then
 		INIT_RAW="${ROOT}${SITELISP}/${PN}/examples/init.el"
