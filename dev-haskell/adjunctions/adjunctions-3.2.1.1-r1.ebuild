@@ -18,15 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
-	>=dev-haskell/comonad-transformers-3:=[profile?] <dev-haskell/comonad-transformers-4:=[profile?]
+RDEPEND=">=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-5:=[profile?]
+	>=dev-haskell/comonad-transformers-3:=[profile?] <dev-haskell/comonad-transformers-5:=[profile?]
 	>=dev-haskell/contravariant-0.2.0.1:=[profile?] <dev-haskell/contravariant-1:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
-	>=dev-haskell/free-3:=[profile?] <dev-haskell/free-4:=[profile?]
+	>=dev-haskell/free-3:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/keys-3:=[profile?] <dev-haskell/keys-4:=[profile?]
 	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/representable-functors-3.1:=[profile?] <dev-haskell/representable-functors-4:=[profile?]
-	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-4:=[profile?]
+	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/void-0.5.5.1:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
@@ -34,3 +34,11 @@ RDEPEND=">=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad                >= 3       && < 4' 'comonad                >= 3       && < 5' \
+		'comonad-transformers   >= 3       && < 4' 'comonad-transformers   >= 3       && < 5' \
+		'free                   >= 3       && < 4' 'free                   >= 3       && < 5' \
+		'semigroupoids          >= 3       && < 4' 'semigroupoids          >= 3       && < 5'
+}
