@@ -18,12 +18,18 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/groupoids-4:=[profile?]
+RDEPEND="<dev-haskell/groupoids-5:=[profile?]
 	<dev-haskell/groups-0.5:=[profile?]
-	<dev-haskell/semigroupoids-4:=[profile?]
+	<dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.12:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'groupoids < 4' 'groupoids < 5' \
+		'semigroupoids < 4' 'semigroupoids < 5'
+}
