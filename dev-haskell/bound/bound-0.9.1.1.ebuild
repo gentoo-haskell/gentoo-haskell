@@ -18,15 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-4:=[profile?]
+RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/bytes-0.4:=[profile?] <dev-haskell/bytes-1:=[profile?]
 	>=dev-haskell/cereal-0.3.5.2:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
-	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
+	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hashable-extras-0.1:=[profile?] <dev-haskell/hashable-extras-1:=[profile?]
 	>=dev-haskell/prelude-extras-0.3:=[profile?] <dev-haskell/prelude-extras-1:=[profile?]
-	>=dev-haskell/profunctors-3.3:=[profile?] <dev-haskell/profunctors-4:=[profile?]
+	>=dev-haskell/profunctors-3.3:=[profile?] <dev-haskell/profunctors-5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
