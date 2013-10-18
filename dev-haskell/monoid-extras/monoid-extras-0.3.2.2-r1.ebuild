@@ -30,6 +30,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'groupoids < 4' 'groupoids < 5' \
-		'semigroupoids < 4' 'semigroupoids < 5'
+		'semigroupoids < 4' 'semigroupoids < 5' \
+		'groupoids < 4' 'groupoids < 5'
 }
