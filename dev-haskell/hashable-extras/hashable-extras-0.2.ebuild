@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="lib-werror +test-doctests"
 
-RDEPEND=">=dev-haskell/bifunctors-3.2:=[profile?] <dev-haskell/bifunctors-4:=[profile?]
+RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.7:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
