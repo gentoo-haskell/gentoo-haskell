@@ -19,7 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/semigroupoids-3.0:=[profile?]
-		<dev-haskell/semigroupoids-4:=[profile?]
+		<dev-haskell/semigroupoids-5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroupoids >= 3.0 && < 4' 'semigroupoids >= 3.0 && < 5'
+}
