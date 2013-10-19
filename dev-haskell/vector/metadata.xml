@@ -66,4 +66,11 @@
 		* Performance improvements
 		
 	</longdescription>
+	<use>
+		<flag name="boundschecks">Enable bounds checking</flag>
+		<flag name="internalchecks">Enable internal consistency checks at the cost of a
+                significant performance penalty</flag>
+		<flag name="unsafechecks">Enable bounds checking in unsafe operations at the cost of a
+                significant performance penalty</flag>
+	</use>
 </pkgmetadata>
