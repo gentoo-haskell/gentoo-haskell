@@ -29,6 +29,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	chap_chdeps \
+	cabal_chdeps \
 		'th-orphans >= 0.5 && < 0.8' 'th-orphans >= 0.5 && < 0.9'
 }
