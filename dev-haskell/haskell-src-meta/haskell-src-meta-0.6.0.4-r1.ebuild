@@ -20,10 +20,15 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
-	>=dev-haskell/th-orphans-0.5:=[profile?] <dev-haskell/th-orphans-0.8:=[profile?]
+	>=dev-haskell/th-orphans-0.5:=[profile?] <dev-haskell/th-orphans-0.9:=[profile?]
 	>=dev-haskell/uniplate-1.3:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	chap_chdeps \
+		'th-orphans >= 0.5 && < 0.8' 'th-orphans >= 0.5 && < 0.9'
+}
