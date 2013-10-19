@@ -59,9 +59,10 @@ pkg_postinst() {
 	elog "or indentation will not work."
 	elog "Read the README.md file in ${ROOT}usr/share/doc/${PF}."
 	elog "or at: https://github.com/haskell/haskell-mode"
+	elog "The info haskell-mode documentation is included, or you can read it online:"
+	elog "http://haskell.github.io/haskell-mode/manual/latest/"
 	elog "Add the following to ~/.emacs:"
 	elog "(require 'haskell-mode-autoloads)"
-	elog "There's a screen cast: http://www.youtube.com/watch?v=E6xIjl06Lr4"
 	if use examples; then
 		INIT_RAW="${ROOT}${SITELISP}/${PN}/examples/init.el"
 		INIT_EX="${INIT_RAW/\/\///}"
