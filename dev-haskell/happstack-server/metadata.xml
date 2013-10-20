@@ -8,4 +8,7 @@
 	<longdescription>
 		Happstack Server provides an HTTP server and a rich set of functions for routing requests, handling query parameters, generating responses, working with cookies, serving files, and more. For in-depth documentation see the Happstack Crash Course &lt;http://happstack.com/docs/crashcourse/index.html&gt;
 	</longdescription>
+	<use>
+		<flag name='template_haskell'>Description: Template Haskell is available on this system</flag>
+	</use>
 </pkgmetadata>
