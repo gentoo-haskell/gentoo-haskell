@@ -17,7 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils embed_data_files +hexpat +network +small_base unicode_collation"
-
 RESTRICT=test # missing files: locales-en-US.xml: openBinaryFile
 
 RDEPEND=">=app-text/pandoc-1.12.0.2:=[profile?]
@@ -25,7 +24,7 @@ RDEPEND=">=app-text/pandoc-1.12.0.2:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/json:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pandoc-types-1.12.2.3:=[profile?]
+	>=dev-haskell/pandoc-types-1.12.3:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
