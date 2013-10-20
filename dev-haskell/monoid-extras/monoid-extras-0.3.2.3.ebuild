@@ -27,9 +27,3 @@ RDEPEND="<dev-haskell/groupoids-5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'semigroupoids < 4' 'semigroupoids < 5' \
-		'groupoids < 4' 'groupoids < 5'
-}
