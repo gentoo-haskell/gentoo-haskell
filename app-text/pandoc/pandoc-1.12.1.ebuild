@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/network-2:=[profile?] <dev-haskell/network-2.5:=[profile?]
-	>=dev-haskell/pandoc-types-1.12.1:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
+	>=dev-haskell/pandoc-types-1.12.3:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
@@ -61,23 +61,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
 
-src_prepare() {
-	# allow ghc-7.7
-	cabal_chdeps \
-		'process >= 1 && < 1.2' 'process >= 1 && < 1.3'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \
 		$(cabal_flag http-conduit http-conduit)
-}
-
-src_install() {
-	cabal_src_install
-
-	doman "${S}/man/man1/${PN}.1"
-
-	# COPYING is installed by the Cabal eclass
-	dodoc README COPYRIGHT changelog
 }
