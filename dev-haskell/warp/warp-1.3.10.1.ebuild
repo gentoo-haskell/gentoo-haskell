@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+allow-sendfilefd network-bytestring"
+IUSE="+allow-sendfilefd"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.1:=[profile?]
@@ -33,9 +33,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-buil
 	>=dev-haskell/wai-1.3:=[profile?] <dev-haskell/wai-1.5:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	allow-sendfilefd? ( dev-haskell/hashable:=[profile?] )
-	network-bytestring? ( >=dev-haskell/network-2.2.1.5:=[profile?] <dev-haskell/network-2.2.3:=[profile?]
-				>=dev-haskell/network-bytestring-0.1.3:=[profile?] <dev-haskell/network-bytestring-0.1.4:=[profile?] )
-	!network-bytestring? ( >=dev-haskell/network-2.3:=[profile?] )
+	>=dev-haskell/network-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -48,6 +46,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag allow-sendfilefd allow-sendfilefd) \
-		$(cabal_flag network-bytestring network-bytestring)
+		$(cabal_flag allow-sendfilefd allow-sendfilefd)
 }
