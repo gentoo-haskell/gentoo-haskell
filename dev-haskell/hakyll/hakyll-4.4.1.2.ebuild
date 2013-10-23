@@ -23,7 +23,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
-	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.11:=[profile?]
+	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.2:=[profile?]
@@ -54,10 +54,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-src_prepare() {
-	cabal_chdeps \
-		'tagsoup         >= 0.12.6 && < 0.13' 'tagsoup         >= 0.12.6 && < 0.14'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
