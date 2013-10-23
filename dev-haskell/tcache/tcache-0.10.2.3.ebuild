@@ -21,7 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/mtl:=[profile?]
+RDEPEND="dev-haskell/hashtables:=[profile?]
+	dev-haskell/mtl:=[profile?]
 	dev-haskell/refserialize:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
