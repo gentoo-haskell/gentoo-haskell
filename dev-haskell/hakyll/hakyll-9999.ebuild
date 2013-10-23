@@ -77,13 +77,6 @@ DEPEND="${RDEPEND}
 			<dev-haskell/test-framework-quickcheck2-0.4
 		)"
 
-src_prepare() {
-	cabal_chdeps \
-		  'tagsoup      >= 0.12.6 && < 0.13' 'tagsoup      >= 0.12.6 && < 0.14'
-
-
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag previewserver previewserver) \
