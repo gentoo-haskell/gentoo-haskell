@@ -34,8 +34,9 @@ else
 	S="${WORKDIR}/${MY_PN}-${PV}"
 fi
 
-RDEPEND=">=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
-	>=dev-lang/ghc-6.12.1:=
+# cabal must not depend on anything except GHC
+#RDEPEND=">=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
+RDEPEND=">=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
