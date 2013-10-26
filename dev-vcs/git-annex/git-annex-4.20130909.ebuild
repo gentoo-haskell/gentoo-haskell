@@ -126,4 +126,8 @@ src_install() {
 	use doc && emake install-docs DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
 	mv "${ED}"/usr/share/doc/{${PN},${PF}}
 	dodoc CHANGELOG README
+	if use webapp ; then
+		doicon "${FILESDIR}"/${PN}.xpm
+		make_desktop_entry "${PN} webapp" "git-annex" ${PN}.xpm "Office"
+	fi
 }
