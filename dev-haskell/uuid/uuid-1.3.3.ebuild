@@ -21,10 +21,11 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
-	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/network-info-0.2:=[profile?] <dev-haskell/network-info-0.3:=[profile?]
 	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
+	|| ( ( >=dev-haskell/hashable-1.1.1.0:=[profile?] <dev-haskell/hashable-1.2.0:=[profile?] )
+		( >=dev-haskell/hashable-1.2.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
