@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
-RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
-		<app-text/pandoc-1.12:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 		>=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
 		>=dev-haskell/blaze-html-0.4:=[profile?]
@@ -30,8 +29,7 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		>=dev-haskell/feed-0.3.6:=[profile?]
 		<dev-haskell/feed-0.4:=[profile?]
 		=dev-haskell/filestore-0.6*:=[profile?]
-		>=dev-haskell/happstack-server-7.0:=[profile?]
-		<dev-haskell/happstack-server-7.2:=[profile?]
+		>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
 		>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?]
 		<dev-haskell/highlighting-kate-0.6:=[profile?]
 		>=dev-haskell/hslogger-1:=[profile?]
@@ -45,7 +43,7 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/network-2.1.0.0:=[profile?]
 		<dev-haskell/network-2.5:=[profile?]
-		=dev-haskell/pandoc-types-1.10*:=[profile?]
+		>=dev-haskell/pandoc-types-1.12:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-haskell/recaptcha-0.1:=[profile?]
@@ -53,8 +51,7 @@ RDEPEND=">=app-text/pandoc-1.10.0.5:=[profile?]
 		>dev-haskell/sha-1:=[profile?]
 		<dev-haskell/sha-1.7:=[profile?]
 		dev-haskell/syb:=[profile?]
-		>=dev-haskell/tagsoup-0.12:=[profile?]
-		<dev-haskell/tagsoup-0.14:=[profile?]
+		>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 		dev-haskell/text:=[profile?]
 		=dev-haskell/url-2.1*:=[profile?]
 		=dev-haskell/utf8-string-0.3*:=[profile?]
@@ -69,9 +66,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-pandoc-1.12.patch
+
 	cabal_chdeps \
-		'tagsoup >= 0.12 && < 0.13' 'tagsoup >= 0.12 && < 0.14'
-	epatch "${FILESDIR}"/${P}-tagsoup-0.13.patch
+		'happstack-server >= 7.0 && < 7.2' 'happstack-server >= 7.0 && < 7.4'
 }
 
 src_configure() {
