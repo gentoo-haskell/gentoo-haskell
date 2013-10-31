@@ -18,9 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+derivedatatypeable"
 
-RDEPEND=">=dev-haskell/comonad-1.1.1.3:=[profile?] <dev-haskell/comonad-3.2:=[profile?]
-	>=dev-haskell/comonad-transformers-2.0:=[profile?] <dev-haskell/comonad-transformers-3.2:=[profile?]
-	>=dev-haskell/semigroupoids-1.2.4:=[profile?] <dev-haskell/semigroupoids-3.2:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-4.1:=[profile?]
+	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-4.1:=[profile?]
 	>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
