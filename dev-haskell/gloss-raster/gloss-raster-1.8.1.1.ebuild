@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/gloss-1.8.0:=[profile?] <dev-haskell/gloss-1.8.1:=[profile?]
+RDEPEND=">=dev-haskell/gloss-1.8:=[profile?] <dev-haskell/gloss-1.9:=[profile?]
 	>=dev-haskell/repa-3.2:=[profile?] <dev-haskell/repa-3.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
