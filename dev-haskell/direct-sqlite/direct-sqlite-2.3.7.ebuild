@@ -17,8 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+fulltextsearch systemlib"
-# tests fail: user error (Pattern match failure in do expression at test/Main.hs:410:15-21)
-RESTRICT="test"
 
 RDEPEND=">=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
