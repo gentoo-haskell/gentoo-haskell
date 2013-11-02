@@ -16,16 +16,19 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+separate_syb"
+IUSE="+separate_syb +typeable_fingerprint"
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=
-	separate_syb? ( dev-haskell/syb:=[profile?] )
+RDEPEND=">=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+	dev-haskell/syb:=[profile?]
+	>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6.0.3
+	>=dev-haskell/cabal-1.6
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag separate_syb separate_syb)
+		$(cabal_flag separate_syb separate_syb) \
+		$(cabal_flag typeable_fingerprint typeable_fingerprint)
 }
