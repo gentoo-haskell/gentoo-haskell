@@ -126,8 +126,7 @@ src_prepare() {
 			'gio >=0.12.2 && <0.13' 'gio >=0.13.0'
 	fi
 	cabal_chdeps \
-		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5' \
-		'haskell-src-exts >=1.13.5 && <1.14' 'haskell-src-exts >=1.13.5 && <1.15'
+		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5'
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
 	sed -e 's@-- ^@--@g' \
