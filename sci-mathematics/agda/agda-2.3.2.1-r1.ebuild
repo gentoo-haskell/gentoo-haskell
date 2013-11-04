@@ -51,6 +51,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 			>=dev-lang/epic-0.1.13:=[profile?]
 		)
 		|| ( >=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.1:=[profile?] >=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?] )"
+PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
 		>=dev-haskell/cabal-1.8
