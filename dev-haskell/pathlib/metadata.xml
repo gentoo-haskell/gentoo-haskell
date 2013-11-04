@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Pathlib provides an API for parsing and manipulating *tree* paths,
+		represented as bytestrings. The path types come with witnesses
+		(similar to the pathtype package) for improved type safety,
+		although they are optional and disabled by the default interface
+		(&quot;Data.Path&quot;) since they can be somewhat inconvenient. The safe
+		interface is exported by &quot;Data.Path.Witnessed&quot;.
+		
+		A number of path combinators is provided (&lt;/&gt;, &lt;.&gt;, +/+), as well
+		as a few selectors (especially well suited for use as view
+		patterns or pattern guards). All paths are kept normalised and
+		this invariant is maintained throughout the API, providing both
+		nicer path strings and easier equality checking.
+		
+		The API is limited to trees, which means that POSIX systems that
+		allow arbitrary graphs in the filesystem, through symlinks, are
+		not supported 100 % correctly: the @..@ components in paths are,
+		in path parsing and manipulation, treated as parent directory of
+		the *path* and the actual @..@ hardlinks in the filesystem are not
+		consulted. This is consistent with the behaviour of @cd ..@ in
+		shells, but inconsistent with how paths are resolved by the
+		operating system.
+	</longdescription>
+</pkgmetadata>
