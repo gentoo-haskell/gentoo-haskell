@@ -9,16 +9,25 @@ inherit haskell-cabal elisp-common
 
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
+SRC_URI="http://www.cse.chalmers.se/~nad/software/lib-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="profile"
 
-DEPEND=">=sci-mathematics/agda-executable-2.3.0.1"
-RDEPEND="=sci-mathematics/agda-2.3.2*[profile?]
-		=dev-haskell/filemanip-0.3*[profile?]"
+# filemanip is used in lib.cabal to make the GenerateEverything and
+# AllNonAsciiChars executables, so agda-stdlib does not require a subslot
+# dependency on filemanip.
+
+RDEPEND="=sci-mathematics/agda-2.3.2*:=[profile?]
+	=dev-haskell/filemanip-0.3*[profile?]
+	>=sci-mathematics/agda-executable-2.3.0.1:=
+	>=dev-lang/ghc-6.12.1
+"
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.8.0.2
+"
 
 SITEFILE="50${PN}-gentoo.el"
 
@@ -26,6 +35,14 @@ S="${WORKDIR}/lib-${PV}"
 
 src_prepare() {
 	cabal-mksetup
+}
+
+src_configure() {
+	haskell-cabal_src_configure
+	pushd "${S}/ffi"
+	cabal-bootstrap
+	cabal-configure
+	popd
 }
 
 src_compile() {
@@ -44,6 +61,9 @@ src_compile() {
 	# /usr/share/agda-9999/ghc-7.4.1/Agda.css: copyFile: does not exist
 	local cssdir=$(egrep 'datadir *=' "${S}/dist/build/autogen/Paths_lib.hs" | sed -e 's@datadir    = \(.*\)@\1@')
 	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" "${S}"/README.agda || die
+	pushd "${S}/ffi"
+	cabal_src_compile
+	popd
 }
 
 src_test() {
@@ -56,4 +76,7 @@ src_install() {
 	doins -r src/*
 	dodoc -r html/*
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
+	pushd "${S}/ffi"
+	cabal_src_install
+	popd
 }
