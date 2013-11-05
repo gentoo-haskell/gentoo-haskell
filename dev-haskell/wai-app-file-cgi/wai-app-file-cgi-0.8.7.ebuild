@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+rev-proxy"
 
-RESTRICT=test # PatternMatchFail (test/ClassicSpec.hs:64:17-58: Irrefutable pattern failed for pattern Data.Maybe.Just
+RESTRICT=test # PatternMatchFail (test/ClassicSpec.hs:64:17-58: Irrefutable pattern
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.0:=[profile?]
 	dev-haskell/attoparsec-conduit:=[profile?]
