@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="cocoa dochack hacking gtk profiling scion testing vte +vty"
+IUSE="dochack hacking gtk profiling testing vte +vty"
 RESTRICT="test" # tests are missing
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
@@ -48,17 +48,9 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2.1:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
-	cocoa? ( dev-haskell/hoc:=[profile?]
-			dev-haskell/hoc-appkit:=[profile?]
-			dev-haskell/hoc-foundation:=[profile?] )
-	scion? ( dev-haskell/ghc-syb-utils:=[profile?]
-			>=dev-haskell/scion-0.1:=[profile?] <dev-haskell/scion-0.2:=[profile?] )
 	testing? ( >=dev-haskell/quickcheck-2.1.0.2:=[profile?] )
 	vte? ( dev-haskell/executable-path:=[profile?]
-		>=dev-haskell/vte-0.12:=[profile?] <dev-haskell/vte-0.13:=[profile?]
-		cocoa? ( !gtk? ( >=dev-haskell/glib-0.12:=[profile?] <dev-haskell/glib-0.13:=[profile?]
-					>=dev-haskell/gtk-0.12:=[profile?] <dev-haskell/gtk-0.13:=[profile?]
-					>=dev-haskell/pango-0.12:=[profile?] <dev-haskell/pango-0.13:=[profile?] ) ) )
+		>=dev-haskell/vte-0.12:=[profile?] <dev-haskell/vte-0.13:=[profile?] )
 	vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -76,12 +68,10 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag cocoa cocoa) \
 		$(cabal_flag dochack dochack) \
 		$(cabal_flag hacking hacking) \
 		$(cabal_flag gtk pango) \
 		$(cabal_flag profiling profiling) \
-		$(cabal_flag scion scion) \
 		$(cabal_flag test testing) \
 		$(cabal_flag vte vte) \
 		$(cabal_flag vty vty)
