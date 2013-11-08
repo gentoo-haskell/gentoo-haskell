@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/cmdargs
 		>=dev-haskell/doctest-0.8
 		>=dev-haskell/hspec-1.7 <dev-haskell/hspec-1.8
