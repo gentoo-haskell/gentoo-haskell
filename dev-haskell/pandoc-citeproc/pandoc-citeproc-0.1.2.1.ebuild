@@ -50,6 +50,11 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	# workaround bug on ghc-7.6.3:
+	# > [13 of 24] Compiling Text.CSL.Input.Bibtex ...
+	# > stack overflow: use +RTS -K<size> to increase it
+	replace-hcflags -O[2-9] -O1
+
 	haskell-cabal_src_configure \
 		$(cabal_flag bibutils bibutils) \
 		$(cabal_flag embed_data_files embed_data_files) \

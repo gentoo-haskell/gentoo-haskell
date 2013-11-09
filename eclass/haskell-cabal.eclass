@@ -700,3 +700,25 @@ cabal-constraint() {
 		echo "--constraint \"$p == $v\""
 	done < $(ghc-pkgdeps ${1})
 }
+
+# @FUNCTION: replace-hcflags
+# @USAGE: <old> <new>
+# @DESCRIPTION:
+# Replace the <old> flag with <new> in HCFLAGS. Accepts shell globs for <old>.
+# The implementation is picked from flag-o-matic.eclass:replace-flags()
+replace-hcflags() {
+	[[ $# != 2 ]] && die "Usage: replace-hcflags <old flag> <new flag>"
+
+	local f new=()
+	for f in ${HCFLAGS} ; do
+		# Note this should work with globs like -O*
+		if [[ ${f} == ${1} ]]; then
+			einfo "HCFLAGS: replacing '${f}' to '${2}'"
+			f=${2}
+		fi
+		new+=( "${f}" )
+	done
+	export HCFLAGS="${new[*]}"
+
+	return 0
+}
