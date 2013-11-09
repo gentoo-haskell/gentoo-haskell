@@ -27,6 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.2:=[profile?]
 	>=dev-haskell/text-0.11.1:=[profile?]
 	dev-haskell/transformers:=[profile?]
+	>=dev-haskell/uuid-1.3.1:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
