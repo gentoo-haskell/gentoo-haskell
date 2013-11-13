@@ -39,6 +39,12 @@ src_prepare() {
 	if use noprefs; then
 		epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
 	fi
+
+	# no chance to link to -threaded on ppc64, alpha and others
+	# who use UNREG, not only ARM
+	if ! ghc-supports-threaded-runtime; then
+		cabal_chdeps '-threaded' '-DCABAL_NO_THREADED'
+	fi
 }
 
 src_install() {
