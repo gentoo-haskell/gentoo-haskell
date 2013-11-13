@@ -62,7 +62,7 @@ src_prepare() {
 	# no chance to link to -threaded on ppc64, alpha and others
 	# who use UNREG, not only ARM
 	if ! ghc-supports-threaded-runtime; then
-		cabal_chdeps '-threaded' '-DCABAL_NO_THREADED'
+		cabal_chdeps 'ghc-options: -threaded' 'cc-options:  -DCABAL_NO_THREADED'
 	fi
 }
 
