@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# allow ghc-7.7.2013+
 	cabal_chdeps \
+		'array >= 0.1.0 && < 0.5' 'array >= 0.1.0 && < 0.6' \
 		'base >= 3.0.0 && < 4.7' 'base >= 3' \
 		'QuickCheck ==2.5.*' 'QuickCheck >=2.5 && <2.7'
 }
