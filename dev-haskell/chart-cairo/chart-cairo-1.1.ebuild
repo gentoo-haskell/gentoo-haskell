@@ -24,11 +24,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.9.11:${GTK_MAJ_VER}=[profile?]
-	>=dev-haskell/chart-1.0:=[profile?]
-	>=dev-haskell/colour-2.2.1:=[profile?]
+	>=dev-haskell/chart-1.1:=[profile?] <dev-haskell/chart-1.2:=[profile?]
+	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-3.11:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/operational-0.2.2:=[profile?]
+	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
