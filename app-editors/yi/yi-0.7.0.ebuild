@@ -64,6 +64,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.6.7.0-vte.patch
+	cabal_chdeps \
+		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3'
 }
 
 src_configure() {
