@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name='openssl'>enable https support using <pkg>dev-haskell/hsopenssl</pkg></flag>
+		<flag name='portable'>no non-haskell unportable code.</flag>
+	</use>
 	<longdescription>
 		Snap is a simple and fast web development framework and server written in
 		Haskell. For more information or to download the latest version, you can
