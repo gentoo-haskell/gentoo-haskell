@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/dual-tree-0.1:=[profile?] <dev-haskell/dual-tree-0.2:=[profile?]
+RDEPEND=">=dev-haskell/dual-tree-0.1:=[profile?] <dev-haskell/dual-tree-0.3:=[profile?]
 	>=dev-haskell/memotrie-0.4.7:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-	   'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1'
+		'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1' \
+		'dual-tree >= 0.1 && < 0.2' 'dual-tree >= 0.1 && < 0.3'
 }
