@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Using &quot;Data.Vinyl&quot; records (similar in spirit to @HList@)
+		to carry GLSL uniform parameters and vertex data enables
+		library code to reflect over the types of the data to
+		facilitate interaction between Haskell and GLSL. See the
+		@examples@ directory in the repository for more
+		information.
+	</longdescription>
+</pkgmetadata>
