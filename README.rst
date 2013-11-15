@@ -22,7 +22,7 @@ If you happen to use ``eix-sync`` for rsyncs you might
 like the following ``/etc/eix-sync.conf``::
 
     *
-    @egencache --jobs="$(($(nproc) + 1))" --repo=gentoo-haskell --update
+    @egencache --jobs="$(($(nproc) + 1))" --repo=gentoo-haskell --update --update-use-local-desc
 
 It basically means:
 
