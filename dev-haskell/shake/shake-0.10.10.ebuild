@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Build system library, like Make, but more accurate dependencies."
-HOMEPAGE="http://community.haskell.org/~ndm/shake/"
+HOMEPAGE="https://github.com/ndmitchell/shake"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -29,6 +29,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
+	test? ( >=dev-haskell/quickcheck-2.0 )
 "
 
 src_configure() {
