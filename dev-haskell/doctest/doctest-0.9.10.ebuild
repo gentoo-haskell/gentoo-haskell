@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/deepseq:=[profile?]
@@ -26,8 +26,7 @@ RDEPEND="dev-haskell/deepseq:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/base-compat-0.2.1
-		>=dev-haskell/hspec-1.5.1
+	test? ( >=dev-haskell/hspec-1.5.1
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.5
 		dev-haskell/setenv
