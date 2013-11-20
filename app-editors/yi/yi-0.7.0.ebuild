@@ -54,7 +54,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	dev-haskell/alex
+	<=dev-haskell/alex-3.1.0
+	>=dev-haskell/alex-3.0.3
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hunit
 		dev-haskell/test-framework
