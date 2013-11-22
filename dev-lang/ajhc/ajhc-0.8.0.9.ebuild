@@ -39,6 +39,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-src_preare() {
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-cpphs-utf8.patch
 }
