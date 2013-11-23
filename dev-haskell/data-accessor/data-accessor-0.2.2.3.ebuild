@@ -23,3 +23,8 @@ RDEPEND=">=dev-haskell/transformers-0.2[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'array >=0.1 && <0.5' 'array >=0.1 && <0.6'
+}
