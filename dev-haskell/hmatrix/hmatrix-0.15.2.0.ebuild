@@ -69,6 +69,5 @@ src_configure() {
 		$(cabal_flag finit finit) \
 		$(cabal_flag mkl mkl) \
 		$(cabal_flag unsafe unsafe) \
-		${hmatrix_opts} \
-		--verbose=3
+		${hmatrix_opts}
 }
