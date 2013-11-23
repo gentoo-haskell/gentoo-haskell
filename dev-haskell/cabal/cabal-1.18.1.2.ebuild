@@ -33,6 +33,8 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 
+CABAL_CORE_LIB_GHC_PV="7.7.20131*"
+
 src_prepare() {
 	if [[ -n ${LIVE_EBUILD} ]]; then
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.17.0' "version: ${PV}"
