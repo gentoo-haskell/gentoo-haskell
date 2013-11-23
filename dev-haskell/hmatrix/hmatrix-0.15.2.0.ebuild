@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/storable-complex:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	!mkl? ( sci-libs/gsl )
+	sci-libs/gsl
 	mkl? ( sci-libs/mkl )
 	virtual/blas
 	virtual/cblas
@@ -43,12 +43,24 @@ src_prepare() {
 }
 
 src_configure() {
+	local modules="gsl lapack cblas"
+	if use mkl; then
+		modules+=" mkl"
+	fi
 	local hmatrix_opts=""
-	local hmatrix_incs=$(pkg-config gsl lapack cblas --cflags-only-I | sed -e 's@ -I@,@g' -e 's@-I@@')
+	local hmatrix_incs=$(pkg-config "${modules}" --cflags-only-I | sed -e 's@ -I@,@g' -e 's@-I@@')
 	if [ ! -e "${hmatrix_incs}" ]; then
 		hmatrix_opts="--extra-include-dirs=${hmatrix_incs} "
 	fi
-	local hmatrix_libs=$(pkg-config gsl lapack cblas --libs-only-l | sed -e 's@ -l@,@g' -e 's@-l@@')
+	local hmatrix_cflags_other=$(pkg-config "${modules}" --cflags-only-other)
+	if [ ! -e "${hmatrix_cflags_other}" ]; then
+		hmatrix_opts="--gcc-options=\"${hmatrix_cflags_other}\" "
+	fi
+	local hmatrix_linkflags_other=$(pkg-config "${modules}" --libs-only-other)
+	if [ ! -e "${hmatrix_cflags_other}" ]; then
+		hmatrix_opts="--ld-options=\"${hmatrix_linkflags_other}\" "
+	fi
+	local hmatrix_libs=$(pkg-config "${modules}" --libs-only-l | sed -e 's@ -l@,@g' -e 's@-l@@')
 	local hmatrix_opts+="--configure-option=link:${hmatrix_libs}"
 	haskell-cabal_src_configure \
 		$(cabal_flag dd dd) \
