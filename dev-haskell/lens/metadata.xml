@@ -90,6 +90,7 @@
   <flag name='safe'>Disallow unsafeCoerce</flag>
   <flag name='dump-splices'>Build and run the doctests test-suite.</flag>
   <flag name='test-doctests'>Build and run the doctests test-suite.</flag>
+  <flag name='test-hlint'>You can disable the hlint test suite with -f-test-hlint</flag>
   <flag name='test-hunit'>You can disable the hunit test suite with -f-test-hunit</flag>
   <flag name='test-properties'>Build the properties test if we're building tests</flag>
   <flag name='trustworthy'>Assert that we are trustworthy when we can</flag>
