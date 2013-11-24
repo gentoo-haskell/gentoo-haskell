@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,8 +35,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'gtk >= 0.12' 'gtk >= 0.12 && < 0.13' \
-		'cairo' 'cairo >= 0.12 && < 0.13' \
-		'glib' 'glib >= 0.12 && < 0.13' \
-		'pango' 'pango >= 0.12 && < 0.13'
+		'gtk >= 0.12' 'gtk >= 0.12 && < 0.12.5.0' \
+		'cairo' 'cairo >= 0.12 && < 0.12.5.0' \
+		'glib' 'glib >= 0.12 && < 0.12.5.0' \
+		'pango' 'pango >= 0.12 && < 0.12.5.0'
 }
