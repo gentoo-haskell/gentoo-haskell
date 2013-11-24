@@ -31,9 +31,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 src_prepare() {
-	sed -e 's@gtk,@gtk >= 0.12 \&\& < 0.13,@' \
-		-e 's@cairo,@cairo >= 0.12 \&\& < 0.13,@' \
-		-e 's@vgcairo,@svgcairo >= 0.12 \&\& < 0.13,@' \
+	sed -e 's@gtk,@gtk >= 0.12 \&\& < 0.12.5.0,@' \
+		-e 's@cairo,@cairo >= 0.12 \&\& < 0.12.5.0,@' \
+		-e 's@vgcairo,@svgcairo >= 0.12 \&\& < 0.12.5.0,@' \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change deps for gtk+2 in ${S}/${PN}.cabal"
 }
