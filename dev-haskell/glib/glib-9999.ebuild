@@ -9,12 +9,13 @@ EAPI=5
 GTK_MAJ_VER="3"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit darcs haskell-cabal
+inherit git-2 haskell-cabal
 
 DESCRIPTION="Binding to the GLIB library for Gtk2Hs."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EDARCS_REPOSITORY="http://code.haskell.org/gtk2hs"
+EGIT_REPO_URI="https://github.com/gtk2hs/gtk2hs.git"
 
+EGIT_SOURCEDIR="${WORKDIR}/${P}"
 S="${WORKDIR}/${P}/${PN}"
 
 LICENSE="LGPL-2.1"
@@ -26,7 +27,7 @@ RDEPEND=">=dev-lang/ghc-6.10.4:=
 		dev-libs/glib:2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
-		>=dev-haskell/gtk2hs-buildtools-0.13:${GTK_MAJ_VER}=
+		>=dev-haskell/gtk2hs-buildtools-0.12.5.0:${GTK_MAJ_VER}=
 		virtual/pkgconfig"
 
 src_prepare() {
@@ -36,7 +37,6 @@ src_prepare() {
 		-i "${S}/Gtk2HsSetup.hs" \
 		|| die "Could not change Gtk2HsSetup.hs for GTK+ slot ${GTK_MAJ_VER}"
 	sed -e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
-		-e "s@Version:        0.12.4.1@Version:        0.13.0@" \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 }
