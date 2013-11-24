@@ -9,12 +9,13 @@ EAPI=5
 GTK_MAJ_VER="3"
 
 CABAL_FEATURES="bin"
-inherit darcs haskell-cabal
+inherit git-2 haskell-cabal
 
 DESCRIPTION="Tools to build the Gtk2Hs suite of User Interface libraries."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EDARCS_REPOSITORY="http://code.haskell.org/gtk2hs"
+EGIT_REPO_URI="https://github.com/gtk2hs/gtk2hs.git"
 
+EGIT_SOURCEDIR="${WORKDIR}/${P}"
 S="${WORKDIR}/${P}/tools"
 
 LICENSE="GPL-2"
