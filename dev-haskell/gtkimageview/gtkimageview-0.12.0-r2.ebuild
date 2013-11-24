@@ -23,8 +23,8 @@ IUSE=""
 
 CABAL_EXTRA_CONFIGURE_FLAGS="--extra-include-dirs="${S}
 
-RDEPEND="=dev-haskell/glib-0.12*:${GTK_MAJ_VER}=[profile?]
-		=dev-haskell/gtk-0.12*:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/gtk-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		media-gfx/gtkimageview"
@@ -47,4 +47,7 @@ src_prepare() {
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 	sed -e 's@haskell98@base@' \
 		-i "${S}/${PN}.cabal" || die "Could not change haskell98 to base for ghc 7.2.2"
+	cabal_chdeps \
+		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12 && < 0.12.5.0' \
+		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12 && < 0.12.5.0'
 }
