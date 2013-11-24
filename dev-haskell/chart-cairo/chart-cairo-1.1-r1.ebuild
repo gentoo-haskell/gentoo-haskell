@@ -23,7 +23,7 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cairo-0.9.11:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.9.11:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 	>=dev-haskell/chart-1.1:=[profile?] <dev-haskell/chart-1.2:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
@@ -41,5 +41,5 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	# Need stricter deps to select the gtk+2 stuff
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'cairo >= 0.9.11' 'cairo >= 0.9.11 && < 0.13.0'
+		'cairo >= 0.9.11' 'cairo >= 0.9.11 && < 0.12.5.0'
 }
