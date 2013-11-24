@@ -1,0 +1,44 @@
+diff --git a/src/System/ZMQ3.hs b/src/System/ZMQ3.hs
+index e1dd39e..cb9e277 100644
+--- a/src/System/ZMQ3.hs
++++ b/src/System/ZMQ3.hs
+@@ -772,7 +772,9 @@ monitor es ctx sock = do
+     next soc m True  = onSocket "recv" soc $ \s -> do
+         retry "recv" (waitRead soc) $ c_zmq_recvmsg s (msgPtr m) (flagVal dontWait)
+         ptr <- c_zmq_msg_data (msgPtr m)
+-        str <- peekByteOff ptr zmqEventAddrOffset >>= SB.packCString
++        str <- if zmqEventAddrOffset == -1
++                   then peekByteOff ptr zmqEventAddrOffset >>= SB.packCString
++                   else return SB.empty
+         dat <- peekByteOff ptr zmqEventDataOffset :: IO CInt
+         tag <- peek ptr :: IO CInt
+         return . Just $ eventMessage str dat (ZMQEventType tag)
+diff --git a/src/System/ZMQ3/Base.hsc b/src/System/ZMQ3/Base.hsc
+index 039067e..a2b0951 100644
+--- a/src/System/ZMQ3/Base.hsc
++++ b/src/System/ZMQ3/Base.hsc
+@@ -8,8 +8,8 @@ import Control.Applicative
+ 
+ #include <zmq.h>
+ 
+-#if ZMQ_VERSION_MAJOR != 3
+-    #error *** INVALID 0MQ VERSION (must be 3.x) ***
++#if ZMQ_VERSION_MAJOR < 3
++    #error *** INVALID 0MQ VERSION (must be >=3.x) ***
+ #endif
+ 
+ newtype ZMQMsg = ZMQMsg { content :: Ptr () } deriving (Eq, Ord)
+@@ -125,8 +125,13 @@ newtype ZMQEventType = ZMQEventType { eventTypeVal :: CInt } deriving (Eq, Ord)
+ }
+ 
+ zmqEventAddrOffset, zmqEventDataOffset :: Int
++#if ZMQ_VERSION_MAJOR == 3
+ zmqEventAddrOffset = #{offset zmq_event_t, data.connected.addr}
+ zmqEventDataOffset = #{offset zmq_event_t, data.connected.fd}
++#else
++zmqEventAddrOffset = -1
++zmqEventDataOffset = #{offset zmq_event_t, value}
++#endif
+ 
+ newtype ZMQMsgOption = ZMQMsgOption { msgOptVal :: CInt } deriving (Eq, Ord)
+ 
