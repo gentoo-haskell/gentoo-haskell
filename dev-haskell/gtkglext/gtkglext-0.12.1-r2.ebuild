@@ -21,9 +21,9 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="have-quartz-gtk use-deprecated"
 
-RDEPEND="=dev-haskell/glib-0.12*:${GTK_MAJ_VER}=[profile?]
-		=dev-haskell/gtk-0.12*:${GTK_MAJ_VER}=[profile?]
-		=dev-haskell/pango-0.12*:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/gtk-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/pango-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/pango-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		>=x11-libs/gtkglext-1.0.5"
 DEPEND="${RDEPEND}
@@ -42,6 +42,10 @@ src_prepare() {
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
+	cabal_chdeps \
+		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12 && < 0.12.5.0' \
+		'pango >= 0.12 && < 0.13' 'pango >= 0.12 && < 0.12.5.0' \
+		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12 && < 0.12.5.0'
 }
 
 src_configure() {
