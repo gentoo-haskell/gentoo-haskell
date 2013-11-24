@@ -50,7 +50,11 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	testing? ( >=dev-haskell/quickcheck-2.1.0.2:=[profile?] )
 	vte? ( dev-haskell/executable-path:=[profile?]
-		>=dev-haskell/vte-0.12:=[profile?] <dev-haskell/vte-0.13:=[profile?] )
+		>=dev-haskell/vte-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/vte-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/glib-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/pango-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/pango-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+ )
 	vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -65,7 +69,11 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.6.7.0-vte.patch
 	cabal_chdeps \
-		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3'
+		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3' \
+		'gtk ==0.12.*' 'gtk >=0.12.0 && < 0.12.5.0' \
+		'glib ==0.12.*' 'glib >=0.12.0 && < 0.12.5.0' \
+		'pango ==0.12.*' 'pango >=0.12.0 && < 0.12.5.0' \
+		'vte ==0.12.*' 'vte >=0.12.0 && < 0.12.5.0'
 }
 
 src_configure() {
