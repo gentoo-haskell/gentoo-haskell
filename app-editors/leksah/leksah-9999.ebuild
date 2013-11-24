@@ -38,20 +38,20 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		>=dev-haskell/enumerator-0.4.14:=[profile?]
 		<dev-haskell/enumerator-0.5:=[profile?]
 		gtk3? (
-			>=dev-haskell/gio-0.13.0:3=[profile?]
-			>=dev-haskell/glib-0.13.0:3=[profile?]
-			>=dev-haskell/gtk-0.13.0:3=[profile?]
-			>=dev-haskell/gtksourceview-0.13.0:3=[profile?]
+			>=dev-haskell/gio-0.12.5.0:3=[profile?]
+			>=dev-haskell/glib-0.12.5.0:3=[profile?]
+			>=dev-haskell/gtk-0.12.5.0:3=[profile?]
+			>=dev-haskell/gtksourceview-0.12.5.0:3=[profile?]
 		)
 		!gtk3? (
 			>=dev-haskell/gio-0.12.2:2=[profile?]
-			<dev-haskell/gio-0.13:2=[profile?]
+			<dev-haskell/gio-0.12.5.0:2=[profile?]
 			>=dev-haskell/glib-0.10:2=[profile?]
-			<dev-haskell/glib-0.13:2=[profile?]
+			<dev-haskell/glib-0.12.5.0:2=[profile?]
 			>=dev-haskell/gtk-0.10:2=[profile?]
-			<dev-haskell/gtk-0.13:2=[profile?]
+			<dev-haskell/gtk-0.12.5.0:2=[profile?]
 			>=dev-haskell/gtksourceview-0.10.0:2=[profile?]
-			<dev-haskell/gtksourceview-0.13:2=[profile?]
+			<dev-haskell/gtksourceview-0.12.5.0:2=[profile?]
 		)
 		>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 		<dev-haskell/haskell-src-exts-1.15:=[profile?]
@@ -122,8 +122,8 @@ src_prepare() {
 	fi
 	if use gtk3; then
 		cabal_chdeps \
-			'glib >=0.10 && <0.13' 'glib >=0.13' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.13.0'
+			'glib >=0.10 && <0.13' 'glib >=0.12.5.0' \
+			'gio >=0.12.2 && <0.13' 'gio >=0.12.5.0'
 	fi
 	cabal_chdeps \
 		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5'
