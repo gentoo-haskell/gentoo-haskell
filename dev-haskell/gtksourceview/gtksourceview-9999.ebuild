@@ -10,11 +10,11 @@ GTK_MAJ_VER="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
-inherit darcs haskell-cabal
+inherit git-2 haskell-cabal
 
 DESCRIPTION="Binding to the GtkSourceView library."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EDARCS_REPOSITORY="http://code.haskell.org/gtksourceview"
+EGIT_REPO_URI="https://github.com/gtk2hs/gtksourceview.git"
 
 LICENSE="LGPL-2.1"
 SLOT="${GTK_MAJ_VER}/${PV}"
@@ -45,5 +45,5 @@ src_prepare() {
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not change ${MY_PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'glib  >= 0.12 && < 0.13' 'glib  >= 0.13'
+		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12.5.0'
 }

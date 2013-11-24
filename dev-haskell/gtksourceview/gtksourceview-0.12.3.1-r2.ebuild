@@ -45,4 +45,7 @@ src_prepare() {
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
+	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12 && < 0.12.5.0' \
+		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12 && < 0.12.5.0'
 }
