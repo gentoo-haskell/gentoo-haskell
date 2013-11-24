@@ -21,9 +21,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.1:${GTK_MAJ_VER}=[profile?]
-		<dev-haskell/glib-0.13:${GTK_MAJ_VER}=[profile?]
+		<dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/gtk-0.12.1:${GTK_MAJ_VER}=[profile?]
-		<dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+		<dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		x11-libs/libX11
 		x11-libs/gtk+:2"
@@ -36,4 +36,7 @@ src_prepare() {
 		sed -e 's@default-language: Haskell2010@default-language: Haskell98@' \
 			-i "${S}/${PN}.cabal" || die "Could not change default-language to Haskell98"
 	fi
+	cabal_chdeps \
+		'gtk >= 0.12.1 && < 0.13' 'gtk >= 0.12.1 && < 0.12.5.0' \
+		'glib >= 0.12.1 && < 0.13' 'glib >= 0.12.1 && < 0.12.5.0'
 }
