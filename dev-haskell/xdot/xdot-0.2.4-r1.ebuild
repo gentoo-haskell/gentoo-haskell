@@ -20,9 +20,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cairo-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0.13:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 	>=dev-haskell/graphviz-2999.16:=[profile?] <dev-haskell/graphviz-2999.17:=[profile?]
-	>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+	>=dev-haskell/gtk-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?] <dev-haskell/polyparse-1.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
@@ -31,3 +31,9 @@ RDEPEND=">=dev-haskell/cairo-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cairo == 0.12.*' 'cairo >= 0.12.0 && < 0.12.5.0' \
+		'gtk == 0.12.*' 'gtk >= 0.12.0 && < 0.12.5.0'
+}
