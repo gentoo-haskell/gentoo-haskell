@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 MY_PN="Raincat"
 MY_P="${MY_PN}-${PV}"
@@ -38,3 +38,7 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-opengl-2.9.patch
+}
