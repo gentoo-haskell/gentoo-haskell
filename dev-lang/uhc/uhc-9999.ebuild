@@ -36,5 +36,4 @@ S=${S}/EHC
 
 src_prepare() {
 	export HOME=${T} # needs for inplace install
-	epatch "${FILESDIR}"/${P}-hashable-1.2.patch
 }
