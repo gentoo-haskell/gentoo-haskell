@@ -18,13 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
-	>=dev-haskell/diagrams-core-0.7:=[profile?] <dev-haskell/diagrams-core-0.8:=[profile?]
-	>=dev-haskell/diagrams-lib-0.7:=[profile?] <dev-haskell/diagrams-lib-0.8:=[profile?]
+RDEPEND=">=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
+	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.6:=[profile?]
+	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.12:=[profile?]
+	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
@@ -32,3 +32,8 @@ RDEPEND=">=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profi
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1'
+}
