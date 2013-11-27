@@ -21,14 +21,19 @@ IUSE=""
 RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?]
 	>=dev-haskell/colour-2.3.2:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/diagrams-core-0.7:=[profile?] <dev-haskell/diagrams-core-0.8:=[profile?]
+	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
-	>=dev-haskell/intervals-0.2.2:=[profile?] <dev-haskell/intervals-0.3:=[profile?]
+	>=dev-haskell/intervals-0.3:=[profile?] <dev-haskell/intervals-0.5:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-3.11:=[profile?]
+	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
-	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/numinstances-1.2:=[profile?] <dev-haskell/numinstances-1.4:=[profile?]
+	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.8:=[profile?]
+	>=dev-haskell/safe-0.2:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
+	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
+	>=dev-haskell/vector-space-points-0.1.2:=[profile?] <dev-haskell/vector-space-points-0.2:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,5 +42,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-	  'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1'
+		'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1'
 }
