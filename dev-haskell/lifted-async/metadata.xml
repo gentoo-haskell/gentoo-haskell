@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides IO operations from @async@ package lifted to any
+		instance of &#39;MonadBase&#39; or &#39;MonadBaseControl&#39;.
+	</longdescription>
+</pkgmetadata>
