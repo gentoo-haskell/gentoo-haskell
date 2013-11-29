@@ -30,13 +30,6 @@ RDEPEND=">=dev-haskell/transformers-0.2:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-src_prepare() {
-	# ghc-7.7
-	cabal_chdeps \
-		'base >=4.1 && < 4.7' 'base >=4.1 && < 4.8' \
-		'unix>=2.0 && < 2.7' 'unix>=2.0 && < 2.8'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag libiconv libiconv) \
