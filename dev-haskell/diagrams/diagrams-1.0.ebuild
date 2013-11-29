@@ -8,7 +8,7 @@ EAPI=5
 
 GTK_MAJ_VER="2"
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile" # virtual package
 inherit haskell-cabal
 
 DESCRIPTION="Embedded domain-specific language for declarative vector graphics"
