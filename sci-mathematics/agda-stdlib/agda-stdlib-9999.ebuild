@@ -39,14 +39,6 @@ src_prepare() {
 	cabal-mksetup
 }
 
-src_configure() {
-	haskell-cabal_src_configure
-	pushd "${S}/ffi"
-	cabal-bootstrap
-	cabal-configure
-	popd
-}
-
 src_compile() {
 	haskell-cabal_src_compile
 	"${S}"/dist/build/GenerateEverything/GenerateEverything \
@@ -63,9 +55,6 @@ src_compile() {
 	# /usr/share/agda-9999/ghc-7.4.1/Agda.css: copyFile: does not exist
 	local cssdir=$(egrep 'datadir *=' "${S}/dist/build/autogen/Paths_lib.hs" | sed -e 's@datadir    = \(.*\)@\1@')
 	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" "${S}"/README.agda || die
-	pushd "${S}/ffi"
-	cabal_src_compile
-	popd
 }
 
 src_test() {
@@ -78,7 +67,4 @@ src_install() {
 	doins -r src/*
 	dodoc -r html/*
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
-	pushd "${S}/ffi"
-	cabal_src_install
-	popd
 }
