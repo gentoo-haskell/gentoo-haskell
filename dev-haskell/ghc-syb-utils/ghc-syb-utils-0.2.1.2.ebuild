@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/ghc-syb-0.2:=[profile?] <dev-haskell/ghc-syb-0.3:=[profile?]
-	>=dev-haskell/syb-0.1.0:=[profile?]
+RDEPEND=">=dev-haskell/syb-0.1.0:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
