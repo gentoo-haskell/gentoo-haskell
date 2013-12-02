@@ -18,11 +18,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/monoid-extras-0.2:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
+RDEPEND=">=dev-haskell/monoid-extras-0.2:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
-	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.13:=[profile?]
+	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'monoid-extras >= 0.2 && < 0.4' 'monoid-extras >= 0.2 && < 0.5' \
+		'semigroups >= 0.8 && < 0.13' 'semigroups >= 0.8 && < 1'
+}
