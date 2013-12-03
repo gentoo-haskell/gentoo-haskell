@@ -9,30 +9,27 @@ EAPI=5
 GTK_MAJ_VER="3"
 
 CABAL_FEATURES="bin"
-inherit git-2 haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Tools to build the Gtk2Hs suite of User Interface libraries."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EGIT_REPO_URI="https://github.com/gtk2hs/gtk2hs.git"
-
-EGIT_SOURCEDIR="${WORKDIR}/${P}"
-S="${WORKDIR}/${P}/tools"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="${GTK_MAJ_VER}/${PV}"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+closuresignals"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		dev-haskell/alex
-		>=dev-haskell/cabal-1.8
-		dev-haskell/happy
-		dev-haskell/hashtables
-		dev-haskell/random
-		>=dev-lang/ghc-6.10.4"
+	dev-haskell/alex
+	>=dev-haskell/cabal-1.8
+	dev-haskell/happy
+	dev-haskell/random
+	>=dev-lang/ghc-6.10.4
+"
 
-src_prepare() {
+src_configure() {
 	sed -e "s@Executable gtk2hsTypeGen@Executable gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@Executable gtk2hsHookGenerator@Executable gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-e "s@Executable gtk2hsC2hs@Executable gtk2hsC2hs${GTK_MAJ_VER}@" \
