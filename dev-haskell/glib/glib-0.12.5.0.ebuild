@@ -10,18 +10,15 @@ GTK_MAJ_VER="3"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
-inherit git-2 haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Binding to the GLIB library for Gtk2Hs."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EGIT_REPO_URI="https://github.com/gtk2hs/gtk2hs.git"
-
-EGIT_SOURCEDIR="${WORKDIR}/${P}"
-S="${WORKDIR}/${P}/${PN}"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="${GTK_MAJ_VER}/${PV}"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+closure_signals"
 
 RDEPEND=">=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
@@ -30,7 +27,8 @@ RDEPEND=">=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.0:${GTK_MAJ_VER}=
-	virtual/pkgconfig"
+	virtual/pkgconfig
+"
 
 src_prepare() {
 	sed -e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
