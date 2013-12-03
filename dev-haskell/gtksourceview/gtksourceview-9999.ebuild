@@ -21,8 +21,8 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.13:${GTK_MAJ_VER}=[profile?]
-		>=dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		x11-libs/gtksourceview:3.0"
@@ -45,5 +45,6 @@ src_prepare() {
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not change ${MY_PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12.5.0'
+		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12.5.0' \
+		'gtk3 >=0.12.5.0 && <0.13' 'gtk >=0.12.5.0 && <0.13'
 }
