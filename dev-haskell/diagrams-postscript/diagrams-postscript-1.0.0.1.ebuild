@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
 	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.6:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.7:=[profile?]
 	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
