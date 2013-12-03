@@ -33,8 +33,6 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		=dev-haskell/binary-shared-0.8*:=[profile?]
 		>=dev-haskell/cabal-1.6.0.1:=[profile?]
 		<dev-haskell/cabal-1.18:=[profile?]
-		>=dev-haskell/deepseq-1.1.0.0:=[profile?]
-		<dev-haskell/deepseq-1.4:=[profile?]
 		>=dev-haskell/enumerator-0.4.14:=[profile?]
 		<dev-haskell/enumerator-0.5:=[profile?]
 		gtk3? (
@@ -123,7 +121,13 @@ src_prepare() {
 	if use gtk3; then
 		cabal_chdeps \
 			'glib >=0.10 && <0.13' 'glib >=0.12.5.0' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.12.5.0'
+			'gio >=0.12.2 && <0.13' 'gio >=0.12.5.0' \
+			'gtk3 >=0.12.4 && <0.13' 'gtk >=0.12.5.0 && <0.13'
+	else
+		cabal_chdeps \
+			'glib >=0.10 && <0.13' 'glib >=0.10 && <0.12.5.0' \
+			'gio >=0.12.2 && <0.13' 'gio >=0.12.2 && <0.12.5.0' \
+			'gtk >=0.12.4 && <0.13' 'gtk >=0.12.4 && <0.12.5.0'
 	fi
 	cabal_chdeps \
 		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5'
