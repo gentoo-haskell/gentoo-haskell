@@ -36,7 +36,6 @@ RDEPEND=">=dev-haskell/cairo-0.12.0:${GTK_MAJ_VER}=[profile?]
 		gio? ( >=dev-haskell/gio-0.12.0:${GTK_MAJ_VER}[profile?]
 			   <dev-haskell/gio-0.12.5.0:${GTK_MAJ_VER}[profile?] )"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
 		>=dev-haskell/gtk2hs-buildtools-0.12.4:${GTK_MAJ_VER}=
 		<dev-haskell/gtk2hs-buildtools-0.12.5.0:${GTK_MAJ_VER}=
 		virtual/pkgconfig"
