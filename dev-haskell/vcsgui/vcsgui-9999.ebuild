@@ -12,8 +12,8 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit git-2 haskell-cabal
 
 DESCRIPTION="GUI library for source code management systems"
-HOMEPAGE="https://github.com/forste/haskellVCSGUI"
-EGIT_REPO_URI="https://github.com/forste/haskellVCSGUI.git"
+HOMEPAGE="https://github.com/leksah/haskellVCSGUI"
+EGIT_REPO_URI="https://github.com/leksah/haskellVCSGUI.git"
 EGIT_SOURCEDIR="${WORKDIR}/${P}"
 
 LICENSE="GPL-2"
@@ -23,7 +23,7 @@ IUSE=""
 
 S="${WORKDIR}/${P}/${PN}"
 
-RDEPEND=">=dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/missingh-1.1.0.3:=[profile?]
 		<dev-haskell/missingh-1.3:=[profile?]
 		>=dev-haskell/mtl-2.0.1.0:=[profile?]
@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'gtk >=0.12.0 && <0.13' 'gtk3 >=0.12.4.1'
+		'gtk3 >=0.12.4.1 && <0.13' 'gtk >=0.12.5.0 && <0.13'
 }
