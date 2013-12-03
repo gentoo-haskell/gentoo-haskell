@@ -40,11 +40,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	# gtk in git still calls it gtk3.cabal, however the hackage gtk-0.12.5.0 calls it gtk.cabal
-	# So it is necessary to rename it here for consistency.
-	if [ -e "${S}/${PN}3.cabal" ]; then
-		mv "${S}/${PN}3.cabal" "${S}/${PN}.cabal"
-	fi
 	sed -e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
@@ -53,8 +48,8 @@ src_prepare() {
 	sed -e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
-		-i "${S}/${PN}.cabal" \
-		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
+		-i "${S}/${PN}3.cabal" \
+		|| die "Could not change ${PN}3.cabal for GTK+ slot ${GTK_MAJ_VER}"
 }
 
 src_configure() {
