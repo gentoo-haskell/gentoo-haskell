@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/colour-2.3*:=[profile?]
-		=dev-haskell/dlist-0.5*:=[profile?]
+		>=dev-haskell/dlist-0.5:=[profile?]
 		=dev-haskell/fgl-5.4*:=[profile?]
 		>=dev-haskell/polyparse-1.7:=[profile?]
 		<dev-haskell/polyparse-1.10:=[profile?]
@@ -40,5 +40,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.7' \
-		'polyparse >= 1.7 && < 1.9' 'polyparse >= 1.7 && < 1.10'
+		'polyparse >= 1.7 && < 1.9' 'polyparse >= 1.7 && < 1.10' \
+		'dlist == 0.5.*' 'dlist >= 0.5'
 }
