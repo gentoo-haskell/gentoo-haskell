@@ -43,7 +43,8 @@ src_prepare() {
 			-i "${S}/${PN}.cabal"
 	fi
 	cabal_chdeps \
-		'glib >=0.10.0 && <0.13' 'glib >=0.12.5.0 && < 0.13'
+		'glib >=0.10.0 && <0.13' 'glib >=0.12.5.0 && < 0.13' \
+		'gtk3 >=0.12.4 && <0.13' 'gtk >=0.12.5.0 && <0.13'
 }
 
 src_configure() {
