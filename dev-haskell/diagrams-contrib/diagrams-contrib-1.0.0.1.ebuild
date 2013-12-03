@@ -48,5 +48,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'semigroups >= 0.3.4 && < 0.12' 'semigroups >= 0.3.4 && < 1'
+		'semigroups >= 0.3.4 && < 0.13' 'semigroups >= 0.3.4 && < 1'
 }
