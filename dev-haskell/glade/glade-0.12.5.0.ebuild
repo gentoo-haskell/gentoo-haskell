@@ -41,5 +41,5 @@ src_prepare() {
 		-e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
 		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
 		-i "${S}/${PN}.cabal" \
-		|| die "Could not change ${PN}3.cabal for GTK+ slot ${GTK_MAJ_VER}"
+		|| die "Could not change ${PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
 }
