@@ -36,8 +36,13 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/filemanip
-		~dev-haskell/pretty-show-1.6.1
+		>=dev-haskell/pretty-show-1.6.1
 		dev-haskell/tasty
 		dev-haskell/tasty-golden
 		dev-haskell/utf8-string )
 "
+src_prepare() {
+	# better fix broken tests, really :]
+	cabal_chdeps \
+		'pretty-show == 1.6.1' 'pretty-show >= 1.6.1'
+}
