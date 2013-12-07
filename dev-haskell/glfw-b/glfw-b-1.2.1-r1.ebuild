@@ -23,7 +23,7 @@ IUSE=""
 
 RESTRICT=test # needs access to video driver
 
-RDEPEND=">=dev-haskell/bindings-glfw-0.1:=[profile?] <dev-haskell/bindings-glfw-0.2:=[profile?]
+RDEPEND=">=dev-haskell/bindings-glfw-0.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
+		'bindings-GLFW == 0.1.*' 'bindings-GLFW >= 0.1'
+}
