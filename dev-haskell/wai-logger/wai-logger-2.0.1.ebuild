@@ -21,11 +21,11 @@ IUSE=""
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/byteorder:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
-	>=dev-haskell/date-cache-0.3:=[profile?]
-	>=dev-haskell/fast-logger-0.3:=[profile?]
+	>=dev-haskell/fast-logger-2.0.0:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/network:=[profile?]
-	dev-haskell/wai:=[profile?]
+	dev-haskell/unix-time:=[profile?]
+	>=dev-haskell/wai-2.0.0:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
