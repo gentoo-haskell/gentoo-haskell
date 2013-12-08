@@ -45,7 +45,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/zip-archive-0.1.3.3:=[profile?] <dev-haskell/zip-archive-0.2:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
-	http-conduit? ( >=dev-haskell/http-conduit-1.9:=[profile?] <dev-haskell/http-conduit-1.10:=[profile?]
+	http-conduit? ( >=dev-haskell/http-conduit-1.9:=[profile?] <dev-haskell/http-conduit-2.1:=[profile?]
 			>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -60,6 +60,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'http-conduit >= 1.9 && < 1.10' 'http-conduit >= 1.9 && < 2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
