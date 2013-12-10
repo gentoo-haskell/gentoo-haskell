@@ -16,11 +16,11 @@ HOMEPAGE="http://projects.haskell.org/diagrams"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="${GTK_MAJ_VER}/${PV}"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cairo-0.12.4:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.12.4:0=[profile?] <dev-haskell/cairo-0.13.0:0=[profile?]
 	dev-haskell/colour:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
@@ -34,8 +34,3 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'cairo >= 0.12.4 && < 0.13' 'cairo >= 0.12.4 && < 0.12.5.0'
-}
