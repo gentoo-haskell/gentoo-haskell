@@ -20,20 +20,12 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/cairo:${GTK_MAJ_VER}=[profile?]
+RDEPEND="dev-haskell/cairo:0=[profile?]
 		dev-haskell/deepseq:=[profile?]
 		dev-haskell/gtk:${GTK_MAJ_VER}=[profile?]
 		dev-haskell/strict-concurrency:=[profile?]
-		dev-haskell/svgcairo:${GTK_MAJ_VER}=[profile?]
+		dev-haskell/svgcairo:0=[profile?]
 		>=dev-haskell/vacuum-0.0.5.1:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
-
-src_prepare() {
-	sed -e 's@gtk,@gtk >= 0.12 \&\& < 0.12.5.0,@' \
-		-e 's@cairo,@cairo >= 0.12 \&\& < 0.12.5.0,@' \
-		-e 's@vgcairo,@svgcairo >= 0.12 \&\& < 0.12.5.0,@' \
-		-i "${S}/${PN}.cabal" \
-		|| die "Could not change deps for gtk+2 in ${S}/${PN}.cabal"
-}
