@@ -8,21 +8,18 @@ EAPI=5
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
-inherit git-2 haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Binding to the GIO."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-EGIT_REPO_URI="https://github.com/gtk2hs/gtk2hs.git"
-
-EGIT_SOURCEDIR="${WORKDIR}/${P}"
-S="${WORKDIR}/${P}/${PN}"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12.5:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.5:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	dev-libs/glib:2
