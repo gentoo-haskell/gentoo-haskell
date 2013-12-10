@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.3:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
@@ -52,7 +52,8 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8'
+		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
+		'text == 0.11.*' 'text >= 0.11'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
