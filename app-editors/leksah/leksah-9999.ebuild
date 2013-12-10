@@ -36,20 +36,16 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		>=dev-haskell/enumerator-0.4.14:=[profile?]
 		<dev-haskell/enumerator-0.5:=[profile?]
 		gtk3? (
-			>=dev-haskell/gio-0.12.5.0:3=[profile?]
-			>=dev-haskell/glib-0.12.5.0:3=[profile?]
+			>=dev-haskell/gio-0.12.5.0:0=[profile?]
+			>=dev-haskell/glib-0.12.5.0:0=[profile?]
 			>=dev-haskell/gtk-0.12.5.0:3=[profile?]
 			>=dev-haskell/gtksourceview-0.12.5.0:3=[profile?]
 		)
 		!gtk3? (
-			>=dev-haskell/gio-0.12.2:2=[profile?]
-			<dev-haskell/gio-0.12.5.0:2=[profile?]
-			>=dev-haskell/glib-0.10:2=[profile?]
-			<dev-haskell/glib-0.12.5.0:2=[profile?]
+			>=dev-haskell/gio-0.12.2:0=[profile?]
+			>=dev-haskell/glib-0.10:0=[profile?]
 			>=dev-haskell/gtk-0.10:2=[profile?]
-			<dev-haskell/gtk-0.12.5.0:2=[profile?]
 			>=dev-haskell/gtksourceview-0.10.0:2=[profile?]
-			<dev-haskell/gtksourceview-0.12.5.0:2=[profile?]
 		)
 		>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 		<dev-haskell/haskell-src-exts-1.15:=[profile?]
@@ -93,7 +89,12 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 			dev-haskell/hamlet:=[profile?]
 			dev-haskell/jsc:=[profile?]
 			dev-haskell/lens:=[profile?]
-			dev-haskell/webkit:=[profile?]
+			gtk3? (
+				dev-haskell/webkit:3=[profile?]
+			)
+			!gtk3? (
+				dev-haskell/webkit:2=[profile?]
+			)
 			dev-haskell/webkit-javascriptcore:=[profile?]
 		)
 		yi? ( >=app-editors/yi-0.6.6.1:=[profile?]
@@ -117,17 +118,6 @@ src_prepare() {
 		sed -e '/executable bewleksah/,/    hs-source-dirs: bew/d' \
 			-i "${S}/${PN}.cabal" \
 			|| die "Could not remove executable bewleksah from ${S}/${PN}.cabal"
-	fi
-	if use gtk3; then
-		cabal_chdeps \
-			'glib >=0.10 && <0.13' 'glib >=0.12.5.0' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.12.5.0' \
-			'gtk3 >=0.12.4 && <0.13' 'gtk3 >=0.12.5.0 && <0.13'
-	else
-		cabal_chdeps \
-			'glib >=0.10 && <0.13' 'glib >=0.10 && <0.12.5.0' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.12.2 && <0.12.5.0' \
-			'gtk >=0.12.4 && <0.13' 'gtk >=0.12.4 && <0.12.5.0'
 	fi
 	cabal_chdeps \
 		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5'
