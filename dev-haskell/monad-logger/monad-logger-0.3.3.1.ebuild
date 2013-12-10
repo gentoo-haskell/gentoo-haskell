@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
-	>=dev-haskell/fast-logger-0.2:=[profile?] <dev-haskell/fast-logger-2.1:=[profile?]
+	>=dev-haskell/fast-logger-2.0:=[profile?] <dev-haskell/fast-logger-2.1:=[profile?]
 	dev-haskell/lifted-base:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
