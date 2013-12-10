@@ -20,16 +20,11 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/diagrams-cairo-1.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/diagrams-cairo-1.1:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/diagrams-cairo-1.0:0=[profile?] <dev-haskell/diagrams-cairo-1.1:0=[profile?]
 	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
-	>=dev-haskell/gtk-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+	>=dev-haskell/gtk-0.12.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13.0:${GTK_MAJ_VER}=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'gtk >= 0.12.0 && < 0.13' 'gtk >= 0.12.0 && < 0.12.5.0'
-}
