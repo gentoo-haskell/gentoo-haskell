@@ -20,7 +20,7 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/glib-0.12*:${GTK_MAJ_VER}=[profile?]
+RDEPEND="=dev-haskell/glib-0.12*:0=[profile?]
 		=dev-haskell/gtk-0.12*:${GTK_MAJ_VER}=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
