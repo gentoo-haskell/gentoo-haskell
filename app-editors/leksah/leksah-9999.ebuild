@@ -70,7 +70,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		>=dev-haskell/strict-0.3.2:=[profile?]
 		<dev-haskell/strict-0.4:=[profile?]
 		>=dev-haskell/text-0.11.1.5:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
+		<dev-haskell/text-1.2:=[profile?]
 		>=dev-haskell/transformers-0.2.2.0:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1.1:=[profile?]
@@ -120,7 +120,8 @@ src_prepare() {
 			|| die "Could not remove executable bewleksah from ${S}/${PN}.cabal"
 	fi
 	cabal_chdeps \
-		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5'
+		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5' \
+		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5 && < 1.2'
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
 	sed -e 's@-- ^@--@g' \
