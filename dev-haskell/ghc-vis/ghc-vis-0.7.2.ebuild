@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.13:=
 	>=dev-haskell/deepseq-1.3:= <dev-haskell/deepseq-1.4:=
 	>=dev-haskell/fgl-5.4:= <dev-haskell/fgl-5.5:=
 	>=dev-haskell/ghc-heap-view-0.5:= <dev-haskell/ghc-heap-view-0.6:=
-	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.13:=
+	>=dev-haskell/gtk-0.12:2= <dev-haskell/gtk-0.13:=
 	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.2:=
 	>=dev-haskell/svgcairo-0.12:= <dev-haskell/svgcairo-0.13:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-0.12:=
