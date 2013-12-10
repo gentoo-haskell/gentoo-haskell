@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/diagrams-contrib-1.0:=[profile?] <dev-haskell/diagrams-co
 	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
 	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	cairo? ( >=dev-haskell/diagrams-cairo-1.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/diagrams-cairo-1.1:${GTK_MAJ_VER}=[profile?] )
+	cairo? ( >=dev-haskell/diagrams-cairo-1.0:0=[profile?] <dev-haskell/diagrams-cairo-1.1:0=[profile?] )
 	gtk? ( >=dev-haskell/diagrams-gtk-1.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/diagrams-gtk-1.1:${GTK_MAJ_VER}=[profile?] )
 	ps? ( >=dev-haskell/diagrams-postscript-1.0:=[profile?] <dev-haskell/diagrams-postscript-1.1:=[profile?] )
 	svg? ( >=dev-haskell/diagrams-svg-1.0:=[profile?] <dev-haskell/diagrams-svg-1.1:=[profile?] )
