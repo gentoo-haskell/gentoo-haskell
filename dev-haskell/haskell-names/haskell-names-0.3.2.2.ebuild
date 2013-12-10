@@ -44,5 +44,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# better fix broken tests, really :]
 	cabal_chdeps \
-		'pretty-show == 1.6.1' 'pretty-show >= 1.6.1'
+		'pretty-show >= 1.6.1 && <= 1.6.2' 'pretty-show >= 1.6.1'
 }
