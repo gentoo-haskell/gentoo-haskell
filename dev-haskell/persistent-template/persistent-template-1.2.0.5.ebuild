@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[profile?]
-	>=dev-haskell/text-0.5:=[profile?] <dev-haskell/text-1.0:=[profile?]
+	>=dev-haskell/text-0.5:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text                     >= 0.5       && < 1.0' 'text                     >= 0.5       && < 1.2'
+}
