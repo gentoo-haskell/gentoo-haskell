@@ -9,7 +9,7 @@ EAPI=5
 GTK_MAJ_VER="2"
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="A graphical tool for profiling parallel Haskell programs."
 HOMEPAGE="http://www.haskell.org/haskellwiki/ThreadScope"
@@ -24,19 +24,13 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
-		dev-haskell/cairo:${GTK_MAJ_VER}
+		>=dev-haskell/cairo-0.12.5.0:0
 		>=dev-haskell/deepseq-1.1
 		>=dev-haskell/ghc-events-0.4.2
-		dev-haskell/glib:${GTK_MAJ_VER}
-		>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}
+		dev-haskell/glib:0
+		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}
 		dev-haskell/mtl
-		dev-haskell/pango:${GTK_MAJ_VER}
+		dev-haskell/pango:0
 		>=dev-lang/ghc-6.10.4"
 
-src_prepare() {
-	cabal_chdeps \
-		'gtk >= 0.12' 'gtk >= 0.12 && < 0.12.5.0' \
-		'cairo' 'cairo >= 0.12 && < 0.12.5.0' \
-		'glib' 'glib >= 0.12 && < 0.12.5.0' \
-		'pango' 'pango >= 0.12 && < 0.12.5.0'
-}
+PATCHES=("${FILESDIR}/${PN}-0.2.2-gtk2hs-0.12.5.0.patch")
