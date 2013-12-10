@@ -23,27 +23,11 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?]
 		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		x11-libs/gtksourceview:3.0"
 DEPEND="${RDEPEND}
-		dev-haskell/gtk2hs-buildtools:${GTK_MAJ_VER}=
+		>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 		virtual/pkgconfig"
-
-src_prepare() {
-	sed -e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
-		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
-		-e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
-		-i "${S}/Gtk2HsSetup.hs" \
-		-i "${S}/SetupMain.hs" \
-		|| die "Could not change SetupMain.hs for GTK+ slot ${GTK_MAJ_VER}"
-	sed -e "s@gtk2hsC2hs@gtk2hsC2hs${GTK_MAJ_VER}@" \
-		-e "s@gtk2hsTypeGen@gtk2hsTypeGen${GTK_MAJ_VER}@" \
-		-e "s@gtk2hsHookGenerator@gtk2hsHookGenerator${GTK_MAJ_VER}@" \
-		-i "${S}/${MY_PN}.cabal" \
-		|| die "Could not change ${MY_PN}.cabal for GTK+ slot ${GTK_MAJ_VER}"
-	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'glib  >= 0.12 && < 0.13' 'glib  >= 0.12.5.0'
-}
