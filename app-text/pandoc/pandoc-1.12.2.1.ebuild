@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/tagsoup-0.12.5:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.2:=[profile?]
 	>=dev-haskell/texmath-0.6.5.2:=[profile?] <dev-haskell/texmath-0.7:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/xml-1.3.12:=[profile?] <dev-haskell/xml-1.4:=[profile?]
@@ -63,7 +63,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'http-conduit >= 1.9 && < 1.10' 'http-conduit >= 1.9 && < 2.1'
+		'http-conduit >= 1.9 && < 1.10' 'http-conduit >= 1.9 && < 2.1' \
+		'text >= 0.11 && < 0.12' 'text >= 0.11 && < 1.2'
 }
 
 src_configure() {
