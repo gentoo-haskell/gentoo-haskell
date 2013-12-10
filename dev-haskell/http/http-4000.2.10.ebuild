@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 RESTRICT=test # missing modules: Could not find module `Httpd'
 #	test? ( >=dev-haskell/case-insensitive-0.4 <dev-haskell/case-insensitive-1.2
 #		>=dev-haskell/conduit-0.4 <dev-haskell/conduit-1.1
-#		>=dev-haskell/deepseq-1.3 <dev-haskell/deepseq-1.4
 #		>=dev-haskell/http-types-0.6 <dev-haskell/http-types-0.9
 #		dev-haskell/httpd-shed
 #		dev-haskell/hunit
