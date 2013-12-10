@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
 		<dev-haskell/cabal-1.17:=[profile?]
-		>=dev-haskell/glib-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/glib-0.12.5.0:0=[profile?]
 		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/mtl-1.1.0.2:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
@@ -42,9 +42,6 @@ src_prepare() {
 		sed -e 's@build-depends: Cabal >=1.6.0 && <1.17@build-depends: Cabal >=1.6.0 \&\& <1.9@g' \
 			-i "${S}/${PN}.cabal"
 	fi
-	cabal_chdeps \
-		'glib >=0.10.0 && <0.13' 'glib >=0.12.5.0 && < 0.13' \
-		'gtk3 >=0.12.4 && <0.13' 'gtk3 >=0.12.5.0 && <0.13'
 }
 
 src_configure() {

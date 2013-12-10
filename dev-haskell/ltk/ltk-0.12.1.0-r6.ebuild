@@ -22,8 +22,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
-		>=dev-haskell/glib-0.10.0:${GTK_MAJ_VER}=[profile?]
-		<dev-haskell/glib-0.13:${GTK_MAJ_VER}=[profile?]
+		>=dev-haskell/glib-0.10.0:0=[profile?]
+		<dev-haskell/glib-0.13:0=[profile?]
 		>=dev-haskell/gtk-0.10.0:${GTK_MAJ_VER}=[profile?]
 		<dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/mtl-1.1.0.2:=[profile?]
