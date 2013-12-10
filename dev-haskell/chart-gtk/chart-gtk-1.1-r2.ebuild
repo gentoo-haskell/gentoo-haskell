@@ -23,11 +23,11 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cairo-0.9.11:${GTK_MAJ_VER}=[profile?] <dev-haskell/cairo-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.9.11:0=[profile?]
 	>=dev-haskell/chart-1.1:=[profile?] <dev-haskell/chart-1.2:=[profile?]
-	>=dev-haskell/chart-cairo-1.1:${GTK_MAJ_VER}=[profile?] <dev-haskell/chart-cairo-1.2:${GTK_MAJ_VER}=[profile?]
+	>=dev-haskell/chart-cairo-1.1:0=[profile?] <dev-haskell/chart-cairo-1.2:0=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	>=dev-haskell/gtk-0.9.11:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
+	>=dev-haskell/gtk-0.9.11:${GTK_MAJ_VER}=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
@@ -36,10 +36,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	# Need stricter deps to select the gtk+2 stuff
-	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'cairo >= 0.9.11' 'cairo >= 0.9.11 && < 0.12.5.0' \
-		'gtk >= 0.9.11' 'gtk >= 0.9.11 && < 0.12.5.0'
-}
