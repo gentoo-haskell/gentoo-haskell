@@ -23,14 +23,14 @@ RDEPEND="dev-haskell/conduit:=[profile?]
 	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3 <dev-haskell/hspec-1.8
+	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/monad-control
 		>=dev-haskell/persistent-sqlite-1.2 <dev-haskell/persistent-sqlite-1.3
@@ -40,4 +40,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.6-haddock.patch
+	cabal_chdeps \
+		'base                 >= 4.5    && < 4.7' 'base                 >= 4.5' \
+		'spec               >= 1.3 && < 1.8' 'spec               >= 1.3' \
+		'text                 == 0.11.*' 'text                 >= 0.11'
 }
