@@ -59,9 +59,9 @@ DEPEND="${RDEPEND}
 		dev-haskell/hs3
 		webapp? ( !webdav? ( dev-haskell/http-types ) ) )
 	tdfa? ( dev-haskell/regex-tdfa )
-	testsuite? ( dev-haskell/tasty
-			dev-haskell/tasty-hunit
-			dev-haskell/tasty-quickcheck )
+	testsuite? ( >=dev-haskell/tasty-0.5.1
+			>=dev-haskell/tasty-hunit-0.4.1
+			>=dev-haskell/tasty-quickcheck-0.3.1 )
 	webapp? ( dev-haskell/blaze-builder
 			dev-haskell/case-insensitive
 			dev-haskell/clientsession
