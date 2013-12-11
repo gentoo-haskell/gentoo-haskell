@@ -16,10 +16,10 @@ RESTRICT="test"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~amd64-linux"
 IUSE="android +assistant +cryptohash +dbus +dns doc +feed +inotify +pairing +production +quvi +s3 +tdfa +testsuite +webapp +webdav +xmpp"
 
-RDEPEND=""
+RDEPEND="dev-vcs/git"
 DEPEND="${RDEPEND}
 	dev-haskell/async
 	dev-haskell/bloomfilter
