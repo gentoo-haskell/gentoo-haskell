@@ -19,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
 IUSE="android +assistant +cryptohash +dbus +dns doc +feed +inotify +pairing +production +quvi +s3 +tdfa +testsuite +webapp +webdav +xmpp"
 
-RDEPEND="dev-vcs/git"
+RDEPEND="dev-vcs/git
+"
 DEPEND="${RDEPEND}
 	dev-haskell/async
 	dev-haskell/bloomfilter
@@ -46,6 +47,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/utf8-string
 	dev-haskell/uuid
 	>=dev-lang/ghc-7.4.1
+	www-apps/ikiwiki
 	android? ( dev-haskell/data-endian )
 	assistant? ( >=dev-haskell/stm-2.3
 			inotify? ( dev-haskell/hinotify ) )
