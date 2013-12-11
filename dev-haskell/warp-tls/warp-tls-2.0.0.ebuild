@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+tls_1_1_3"
+IUSE=""
 
 RDEPEND=">=dev-haskell/certificate-1.2:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
@@ -30,10 +30,8 @@ RDEPEND=">=dev-haskell/certificate-1.2:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.1:=[profile?]
 	>=dev-haskell/warp-2.0:=[profile?] <dev-haskell/warp-2.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	tls_1_1_3? ( >=dev-haskell/cprng-aes-0.5.0:=[profile?]
-			>=dev-haskell/tls-1.1.3:=[profile?] )
-	!tls_1_1_3? ( >=dev-haskell/cprng-aes-0.3.4:=[profile?] <dev-haskell/cprng-aes-0.5.0:=[profile?]
-			>=dev-haskell/tls-1.1:=[profile?] <dev-haskell/tls-1.1.3:=[profile?] )
+	>=dev-haskell/cprng-aes-0.5.0:=[profile?]
+	>=dev-haskell/tls-1.1.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
@@ -41,5 +39,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag tls_1_1_3 tls_1_1_3)
+		--flag=tls_1_1_3
 }
