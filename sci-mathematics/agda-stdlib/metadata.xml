@@ -6,4 +6,7 @@
 <longdescription lang="en">
   Agda standard library.
 </longdescription>
+<use>
+	<flag name='ffi'>Install agda-lib-ffi for compilation using the MAlonzo backend</flag>
+</use>
 </pkgmetadata>
