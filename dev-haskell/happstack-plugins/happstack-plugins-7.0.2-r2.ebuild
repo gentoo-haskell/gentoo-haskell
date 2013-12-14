@@ -21,7 +21,7 @@ IUSE="tests"
 RDEPEND=">=dev-haskell/happstack-server-6:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/plugins-auto-0.0:=[profile?] <dev-haskell/plugins-auto-0.1:=[profile?]
-	>=dev-haskell/th-lift-0.5:=[profile?] <dev-haskell/th-lift-0.6:=[profile?]
+	>=dev-haskell/th-lift-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -31,7 +31,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'template-haskell >= 2.6 && <2.8' 'template-haskell >= 2.6 && <2.9' \
-		'happstack-server >= 6   && <7.2' 'happstack-server >= 6'
+		'happstack-server >= 6   && <7.2' 'happstack-server >= 6' \
+		'th-lift          == 0.5.*' 'th-lift          >= 0.5'
 }
 
 src_configure() {
