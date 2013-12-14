@@ -18,9 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/th-lift-0.5:=[profile?] <dev-haskell/th-lift-0.6:=[profile?]
+RDEPEND=">=dev-haskell/th-lift-0.5:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.2 && < 4.8' 'base >= 4.2' \
+		'th-lift == 0.5.*' 'th-lift >= 0.5'
+}
