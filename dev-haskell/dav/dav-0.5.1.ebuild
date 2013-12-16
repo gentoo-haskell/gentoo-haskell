@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/http-client-0.2:=[profile?]
-	>=dev-haskell/http-conduit-2:=[profile?]
+	>=dev-haskell/http-client-tls-0.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
