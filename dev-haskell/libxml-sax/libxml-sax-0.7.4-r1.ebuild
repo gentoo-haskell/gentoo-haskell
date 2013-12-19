@@ -19,10 +19,14 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/text-0.7:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
 		=dev-haskell/xml-types-0.3*:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		dev-libs/libxml2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		virtual/pkgconfig"
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.7 && < 0.12' 'text >= 0.7'
+}
