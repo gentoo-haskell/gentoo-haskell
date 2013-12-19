@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Type equality evidence you can carry around"
-HOMEPAGE="http://github.com/glehel/type-eq"
+HOMEPAGE="http://github.com/glaebhoerl/type-eq"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
