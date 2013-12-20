@@ -21,7 +21,11 @@ IUSE=""
 RDEPEND=">=dev-haskell/system-filepath-0.3.1:=[profile?]
 		<dev-haskell/system-filepath-0.5:=[profile?]
 		>=dev-haskell/text-0.7.1:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.7.1 && < 0.12' 'text >= 0.7.1'
+}
