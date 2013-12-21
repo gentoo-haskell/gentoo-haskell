@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND="dev-haskell/deepseq:=[profile?]
-		>=dev-haskell/text-0.11.1.5:=[profile?]
+RDEPEND=">=dev-haskell/text-0.11.1.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4
