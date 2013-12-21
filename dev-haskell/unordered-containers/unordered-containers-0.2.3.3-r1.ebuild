@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND=">=dev-haskell/deepseq-1.1:=[profile?]
-	>=dev-haskell/hashable-1.0.1.1:=[profile?]
+RDEPEND=">=dev-haskell/hashable-1.0.1.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
