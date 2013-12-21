@@ -23,7 +23,6 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	>=dev-haskell/deepseq-1.3 <dev-haskell/deepseq-1.4
 	dev-haskell/extensible-exceptions
 	>=dev-haskell/http-4000.0.3
 	dev-haskell/missingh
