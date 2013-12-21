@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/conduit-0.5.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
-	>=dev-haskell/http-client-0.2:=[profile?]
+	>=dev-haskell/http-client-0.2.0.2:=[profile?]
 	dev-haskell/http-client-conduit:=[profile?]
 	dev-haskell/http-client-tls:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
@@ -40,7 +40,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/cookie
 		dev-haskell/cprng-aes
 		dev-haskell/data-default
-		dev-haskell/deepseq
 		dev-haskell/failure
 		>=dev-haskell/hspec-1.3
 		dev-haskell/http-client-multipart
