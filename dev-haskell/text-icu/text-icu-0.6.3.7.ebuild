@@ -24,8 +24,7 @@ RDEPEND=">=dev-haskell/text-0.9.1.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/deepseq
-		>=dev-haskell/hunit-1.2
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4
 		dev-haskell/random
 		>=dev-haskell/test-framework-0.4
