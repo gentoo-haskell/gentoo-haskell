@@ -22,8 +22,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/deepseq
-		>=dev-haskell/hunit-1.2
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4
 		dev-haskell/random
 		>=dev-haskell/test-framework-0.4
