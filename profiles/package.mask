@@ -6,3 +6,7 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (25 Dec 2012)
 # Masked as needs old removed darcs-2.5
 dev-vcs/darcs-fastconvert
+
+# Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
+# Masked for removal, use dev-haskell/dbus instead
+dev-haskell/dbus-client
