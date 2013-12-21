@@ -34,8 +34,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/deepseq
-		dev-haskell/hspec
+	test? ( dev-haskell/hspec
 		dev-haskell/monad-control
 		dev-haskell/zlib )
 "
