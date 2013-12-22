@@ -38,6 +38,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'QuickCheck     == 2.5.*' 'QuickCheck     >= 2.5' \
-	    'text          == 0.11.*' 'text >= 1.11 && < 1.1'
-
+		'text          == 0.11.*' 'text >= 0.11 && < 1.1'
 }
