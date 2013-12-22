@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+fulltextsearch systemlib"
 
-RDEPEND=">=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1:=[profile?]
+RDEPEND=">=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	systemlib? ( >=dev-db/sqlite-3.0 )
 	!systemlib? ( virtual/libc )
@@ -28,6 +28,11 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/base16-bytestring
 		dev-haskell/hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11 && < 1' 'text >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
