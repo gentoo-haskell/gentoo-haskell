@@ -40,5 +40,5 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-cpphs-utf8.patch
+	epatch "${FILESDIR}"/${PN}-0.8.0.9-cpphs-utf8.patch
 }
