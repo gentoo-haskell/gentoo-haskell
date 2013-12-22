@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/binary[profile?]
 		dev-haskell/data-binary-ieee754[profile?]
 		>=dev-haskell/mtl-2[profile?]
 		dev-haskell/network[profile?]
-		=dev-haskell/text-0.11*[profile?]
+		>=dev-haskell/text-0.11[profile?]
 		>=dev-lang/ghc-6.8.2"
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2[profile?]
@@ -43,5 +43,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'test-framework             >= 0.4 && < 0.7' 'test-framework             >= 0.4 && < 0.9' \
-		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
+		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4' \
+		'text == 0.11.*' 'text >= 0.11'
 }
