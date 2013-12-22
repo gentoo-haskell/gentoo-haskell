@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?]
 		<dev-haskell/attoparsec-0.11:=[profile?]
 		<dev-haskell/blaze-builder-0.4:=[profile?]
 		<dev-haskell/deepseq-1.4:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
+		dev-haskell/text:=[profile?]
 		<dev-haskell/unordered-containers-0.3:=[profile?]
 		<dev-haskell/vector-0.11:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 			dev-haskell/test-framework-quickcheck2
 		)"
+
+src_prepare() {
+	cabal_chdeps \
+		'text < 0.12' 'text'
+}
