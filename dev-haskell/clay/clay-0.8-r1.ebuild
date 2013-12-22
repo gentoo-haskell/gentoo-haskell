@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
-		=dev-haskell/text-0.11*:=[profile?]
+		>=dev-haskell/text-0.11:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# missing test deps
 	cabal_chdeps \
-		'HUnit                >= 1.2 && < 1.3,' 'HUnit                >= 1.2 && < 1.3, text, mtl,'
+		'HUnit                >= 1.2 && < 1.3,' 'HUnit                >= 1.2 && < 1.3, text, mtl,' \
+		'text  >= 0.11 && < 0.12' 'text  >= 0.11'
 }
