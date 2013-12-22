@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 	>=dev-haskell/http-client-0.2:=[profile?]
-	dev-haskell/resourcet:=[profile?]
+	>=dev-haskell/resourcet-0.4.6:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
