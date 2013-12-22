@@ -18,11 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
-		<dev-haskell/attoparsec-0.11:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
 		dev-haskell/quickcheck:=[profile?]
 		>=dev-haskell/text-0.11.3.1:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'text >=0.11.3.1 && <0.12' 'text >=0.11.3.1'
+}
