@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -50,6 +50,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'text                 == 0.11.*' 'text                 >= 0.11'
+}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug)
