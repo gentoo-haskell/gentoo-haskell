@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-
 	>=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-3:=[profile?]
 	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1:=[profile?]
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-1:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text          >= 0.11 && < 1' 'text          >= 0.11'
+}
