@@ -18,13 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+colors"
 
-RDEPEND="dev-haskell/mtl:=[profile?]
+RDEPEND=">=dev-haskell/either-4.0:=[profile?]
+	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/optparse-applicative-0.6:=[profile?]
 	dev-haskell/regex-posix:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?]
 	>=dev-haskell/tagged-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	colors? ( dev-haskell/ansi-terminal:=[profile?] )
+	colors? ( >=dev-haskell/ansi-terminal-0.6.1:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
