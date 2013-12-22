@@ -44,9 +44,11 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	local cabal_upstream_version=$(sed -n 's/^version: //ip' ${MY_PN}.cabal)
+
 	if [[ -n ${LIVE_EBUILD} ]]; then
 		# one of renaming reasons is to avoid clashing with bundled ghc-cabal
-		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.19.1' "version: ${PV}"
+		CABAL_FILE=${MY_PN}.cabal cabal_chdeps "version: ${cabal_upstream_version}" "version: ${PV}"
 	fi
 }
 
