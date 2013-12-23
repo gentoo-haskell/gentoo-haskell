@@ -18,13 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/network-2.1:=[profile?]
-		<dev-haskell/network-2.5:=[profile?]
-		=dev-haskell/text-0.11*:=[profile?]
-		>=dev-haskell/utf8-string-0.3.1:=[profile?]
-		<dev-haskell/utf8-string-0.4:=[profile?]
+RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-2.5:=[profile?]
+		>=dev-haskell/text-0.11:=[profile?]
+		>=dev-haskell/utf8-string-0.3.1:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		test? ( dev-haskell/data-default
@@ -33,3 +30,8 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/quickcheck-2.1
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'text == 0.11.*' 'text >= 0.11'
+}
