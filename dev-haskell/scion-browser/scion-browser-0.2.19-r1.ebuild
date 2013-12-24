@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.4:=[profile?]
 	>=dev-haskell/persistent-sqlite-1.2:=[profile?]
 	>=dev-haskell/persistent-template-1.2:=[profile?]
 	>=dev-haskell/tar-0.3:=[profile?] <dev-haskell/tar-0.5:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
@@ -47,3 +47,8 @@ RDEPEND=">=dev-haskell/aeson-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text == 0.11.*' 'text >= 0.11'
+}
