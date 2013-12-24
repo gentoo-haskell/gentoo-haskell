@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	cabal_chdep \
+	cabal_chdeps \
 	  'text                      >= 0.11     && < 0.12'\
 	  'text                      >= 0.11     && < 1.1'
 }
