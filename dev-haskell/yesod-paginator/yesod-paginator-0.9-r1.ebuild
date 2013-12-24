@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[profile?]
 	>=dev-haskell/resourcet-0.4.4:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/yesod-1.2:=[profile?] <dev-haskell/yesod-1.3:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -28,3 +28,8 @@ RDEPEND=">=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text       >= 0.11 && < 0.12' 'text       >= 0.11'
+}
