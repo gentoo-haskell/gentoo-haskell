@@ -383,6 +383,7 @@ cabal-configure() {
 		--libsubdir=${P}/ghc-$(ghc-version) \
 		--datadir="${EPREFIX}"/usr/share/ \
 		--datasubdir=${P}/ghc-$(ghc-version) \
+		--sysconfdir="${EPREFIX}"/etc \
 		${cabalconf} \
 		${CABAL_CONFIGURE_FLAGS} \
 		${CABAL_EXTRA_CONFIGURE_FLAGS} \
