@@ -302,51 +302,52 @@ cabal-show-brokens-and-die() {
 }
 
 cabal-configure() {
+	local cabalconf=()
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
 
 	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-		cabalconf="${cabalconf} --with-haddock=${EPREFIX}/usr/bin/haddock"
+		cabalconf+=(--with-haddock=${EPREFIX}/usr/bin/haddock)
 	fi
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
-		cabalconf="${cabalconf} --enable-library-profiling"
+		cabalconf+=(--enable-library-profiling)
 	fi
 	if [[ -n "${CABAL_USE_ALEX}" ]]; then
-		cabalconf="${cabalconf} --with-alex=${EPREFIX}/usr/bin/alex"
+		cabalconf+=(--with-alex=${EPREFIX}/usr/bin/alex)
 	fi
 
 	if [[ -n "${CABAL_USE_HAPPY}" ]]; then
-		cabalconf="${cabalconf} --with-happy=${EPREFIX}/usr/bin/happy"
+		cabalconf+=(--with-happy=${EPREFIX}/usr/bin/happy)
 	fi
 
 	if [[ -n "${CABAL_USE_C2HS}" ]]; then
-		cabalconf="${cabalconf} --with-c2hs=${EPREFIX}/usr/bin/c2hs"
+		cabalconf+=(--with-c2hs=${EPREFIX}/usr/bin/c2hs)
 	fi
 	if [[ -n "${CABAL_USE_CPPHS}" ]]; then
-		cabalconf="${cabalconf} --with-cpphs=${EPREFIX}/usr/bin/cpphs"
+		cabalconf+=(--with-cpphs=${EPREFIX}/usr/bin/cpphs)
 	fi
 	if [[ -n "${CABAL_TEST_SUITE}" ]]; then
-		cabalconf="${cabalconf} $(use_enable test tests)"
+		cabalconf+=($(use_enable test tests))
 	fi
 
 	if [[ -n "${CABAL_GHC_CONSTRAINT}" ]]; then
-		cabalconf=${cabalconf} $(cabal-constraint "ghc")
+		cabalconf+=($(cabal-constraint "ghc"))
 	fi
 
 	local option
 	for option in ${HCFLAGS}
 	do
-		cabalconf+=" --ghc-option=$option"
+		cabalconf+=(--ghc-option="$option")
 	done
 
 	# Building GHCi libs on ppc64 causes "TOC overflow".
 	if use ppc64; then
-		cabalconf="${cabalconf} --disable-library-for-ghci"
+		cabalconf+=(--disable-library-for-ghci)
 	fi
 
 	# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
 	# so translate LDFLAGS to ghc parameters (without filtering)
 	local flag
-	for flag in $LDFLAGS; do cabalconf="${cabalconf} --ghc-option=-optl$flag"; done
+	for flag in $LDFLAGS; do cabalconf+=(--ghc-option="-optl$flag"); done
 
 	# disable executable stripping for the executables, as portage will
 	# strip by itself, and pre-stripping gives a QA warning.
@@ -354,24 +355,29 @@ cabal-configure() {
 	# not accept the flag.
 	# this fixes numerous bugs, amongst them;
 	# bug #251881, bug #251882, bug #251884, bug #251886, bug #299494
-	cabalconf="${cabalconf} --disable-executable-stripping"
+	cabalconf+=(--disable-executable-stripping)
 
-	cabalconf="${cabalconf} --docdir=${EPREFIX}/usr/share/doc/${PF}"
+	cabalconf+=(--docdir="${EPREFIX}"/usr/share/doc/${PF})
 	# As of Cabal 1.2, configure is quite quiet. For diagnostic purposes
 	# it's better if the configure chatter is in the build logs:
-	cabalconf="${cabalconf} --verbose"
+	cabalconf+=(--verbose)
 
 	# We build shared version of our Cabal where ghc ships it's shared
 	# version of it. We will link ./setup as dynamic binary againt Cabal later.
 	[[ ${CATEGORY}/${PN} == "dev-haskell/cabal" ]] && \
 		$(ghc-supports-shared-libraries) && \
-			cabalconf="${cabalconf} --enable-shared"
+			cabalconf+=(--enable-shared)
 
 	if $(ghc-supports-shared-libraries); then
 		# maybe a bit lower
 		if $(ghc-supports-dynamic-by-default); then
-			cabalconf="${cabalconf} --enable-shared"
+			cabalconf+=(--enable-shared)
 		fi
+	fi
+
+	# --sysconfdir appeared in Cabal-1.18+
+	if ./setup configure --help | grep -q -- --sysconfdir; then
+		cabalconf+=(--sysconfdir="${EPREFIX}"/etc)
 	fi
 
 	set -- configure \
@@ -383,8 +389,7 @@ cabal-configure() {
 		--libsubdir=${P}/ghc-$(ghc-version) \
 		--datadir="${EPREFIX}"/usr/share/ \
 		--datasubdir=${P}/ghc-$(ghc-version) \
-		--sysconfdir="${EPREFIX}"/etc \
-		${cabalconf} \
+		"${cabalconf[@]}" \
 		${CABAL_CONFIGURE_FLAGS} \
 		${CABAL_EXTRA_CONFIGURE_FLAGS} \
 		"$@"
