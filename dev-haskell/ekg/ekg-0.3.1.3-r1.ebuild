@@ -30,5 +30,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cabal_chdep 'text < 0.12' 'text < 1.1'
+	cabal_chdeps 'text < 0.12' 'text < 1.1'
 }
