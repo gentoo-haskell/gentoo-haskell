@@ -44,10 +44,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 	test? ( dev-haskell/hunit )
 "
+
 src_prepare() {
 	cabal_chdeps \
-	  'text >= 0.10 && < 0.12'\
-	  'text >= 0.10 && < 0.12'
+	  'text >= 0.10 && < 0.12' \
+	  'text >= 0.10 && < 1.1'
 }
 
 src_configure() {
