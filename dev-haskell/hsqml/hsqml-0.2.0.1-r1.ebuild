@@ -23,7 +23,7 @@ RESTRICT=test # needs X server
 
 RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
 	>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	dev-qt/qtdeclarative
@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text         == 0.11.*' 'text         >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
