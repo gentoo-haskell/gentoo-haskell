@@ -40,8 +40,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'bindings-GLFW        == 3.0.3' 'bindings-GLFW'
-}
