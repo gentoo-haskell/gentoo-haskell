@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd"
 
+RESTRICT=test # Ambiguous module name `Network.Socket.ByteString'
+
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.1:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
