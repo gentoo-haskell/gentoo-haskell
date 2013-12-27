@@ -16,10 +16,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+template_haskell"
 
-RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
-	>=dev-haskell/fast-logger-2.0:=[profile?] <dev-haskell/fast-logger-2.1:=[profile?]
+RDEPEND="dev-haskell/blaze-builder:=[profile?]
+	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/fast-logger-2.0:=[profile?] <dev-haskell/fast-logger-2.2:=[profile?]
 	dev-haskell/lifted-base:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
@@ -35,3 +36,8 @@ RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.1:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag template_haskell template_haskell)
+}
