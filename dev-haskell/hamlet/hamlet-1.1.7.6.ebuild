@@ -18,17 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-# unexpected '&'
-# expecting end of input, "\n" or "\r\n"
-RESTRICT=test
-CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-tests"
-
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/failure-0.1:=[profile?] <dev-haskell/failure-0.3:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
-	>=dev-haskell/shakespeare-1.0.1:=[profile?] <dev-haskell/shakespeare-1.3:=[profile?]
+	>=dev-haskell/shakespeare-1.2.0.4:=[profile?] <dev-haskell/shakespeare-1.3:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
