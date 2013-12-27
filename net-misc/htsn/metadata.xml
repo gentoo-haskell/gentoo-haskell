@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		/Usage/:
+		
+		@
+		htsn [OPTIONS] [HOSTNAMES]
+		@
+		
+		The Sports Network &lt;http://www.sportsnetwork.com/&gt; offers an XML feed
+		containing various sports news and statistics. The goal of /htsn/
+		is to watch the XML feed and parse the individual XML documents into
+		files.
+		
+		Once started, we will choose an XML feed host to connect to. The
+		choice is made from a list in a round-robin fashion, and by default,
+		the list contains all known TSN feed hosts. Once we have a connection,
+		your username and password are sent. If they are accepted, we begin to
+		parse the feed saving all XML files to the configured output directory
+		(see @--output-directory@).
+		
+		If we encounter an error (say, the connection is dropped), then we
+		will attempt to connect to the next host in the list after waiting
+		five seconds. This process continues indefinitely.
+		
+		The program can run either interactively (that is, outputting to the
+		console), or as a daemon with the @--daemonize@ flag.
+		
+		/Input/:
+		
+		The program takes no input; a username and password must be supplied
+		on the command-line or in a configuration file.
+		
+		/Output/:
+		
+		Output is not generated when running as a daemon; otherwise, standard
+		out and standard error are fairly noisy. All traffic between /htsn/ and
+		the feed server is displayed on stdout. Status messages are
+		interspersed when they are generated with warnings and errors going to
+		stderr. The following can be expected:
+		
+		* The only data we send to the feed are the username and password.
+		These will be highlighted in green on stdout.
+		
+		* All data received from the feed will be echoed in the default color
+		to stdout.
+		
+		* Informational messages will be highlighted in cyan and sent to stdout.
+		
+		* Warnings will be highlighted in yellow and sent to stderr.
+		
+		* Errors will be highlighted in red and sent to stderr.
+		
+		/Logging/:
+		
+		Logging is done either to syslog or a file. The destination and
+		verbosity are controlled by the @--log-file@, @--log-level@,
+		and @--syslog@ parameters which may be specified either on the command
+		line or in the configuration file.
+		
+		/Options/:
+		
+		@
+		\--daemonize, -d
+		@
+		
+		Run as a daemon, in the background. When running as a daemon the
+		\--pidfile, --run-as-group, and --run-as-user flags become relevant.
+		
+		Default: disabled
+		
+		@
+		\--log-file
+		@
+		
+		If you specify a file here, logs will be written to it (possibly in
+		addition to syslog). Can be either a relative or absolute path. It
+		will not be auto-rotated; use something log logrotate for that.
+		
+		Default: none
+		
+		@
+		\--log-level
+		@
+		
+		How verbose should the logs be? We log notifications at three levels:
+		INFO, WARN, and ERROR. Specify the \&quot;most boring\&quot; level of
+		notifications you would like to receive (in all-caps); more
+		interesting notifications will be logged as well.
+		
+		Default: INFO
+		
+		@
+		\--output-directory, -o
+		@
+		
+		To which directory should we write the XML files?
+		
+		Default: .
+		
+		@
+		\--password
+		@
+		
+		The password associated with your TSN username. A password is
+		required, so you must supply one either on the command line or in a
+		configuration file.
+		
+		Default: none
+		
+		@
+		\--pidfile
+		@
+		
+		(Daemon mode only) Create a PID file in the given location. This is
+		used by the init system on Unix to keep track of the running daemon.
+		Its parent directory must be writable by the user/group that we will
+		run as!
+		
+		Default: \/run\/htsn\/htsn.pid
+		
+		@
+		\--run-as-group
+		@
+		
+		(Daemon mode only) Run as the given system group. The PID file is
+		written before privileges are dropped, so the only privileges needed
+		by /htsn/ are those necessary to write the XML files and (optionally)
+		the log file.
+		
+		Default: the current group
+		
+		@
+		\--run-as-user
+		@
+		
+		(Daemon mode only) Run as the given system user. The PID file is
+		written before privileges are dropped, so the only privileges needed
+		by /htsn/ are those necessary to write the XML files and (optionally)
+		the log file.
+		
+		Default: the current user
+		
+		@
+		\--syslog, -s
+		@
+		
+		Enable logging to syslog. On Windows this will attempt to communicate
+		(over UDP) with a syslog daemon on localhost, which will most likely
+		not work.
+		
+		Default: disabled
+		
+		@
+		\--username, -u
+		@
+		
+		Your TSN username. A username is required, so you must supply one
+		either on the command line or in a configuration file.
+		
+		Default: none
+		
+		/Feed Hosts/:
+		
+		It is possible to pass a list of feed hostnames on the command-line
+		(see [HOSTNAMES] in the synopsis). By default /htsn/ will attempt
+		to connect to every known TSN XML feed host in a round-robin fashion,
+		so there is rarely a need to do this.
+		
+		/Configuration File/:
+		
+		Any of the command-line options mentioned above can be specified in a
+		configuration file instead. We first look for \&quot;htsnrc\&quot; in the
+		system configuration directory. We then look for a file named
+		\&quot;.htsnrc\&quot; in the user&#39;s home directory. The latter will override
+		the former.
+		
+		The user&#39;s home directory is simply $HOME on Unix; on Windows its
+		wherever %APPDATA% points. The system configuration directory
+		is determined by Cabal; the /sysconfdir/ parameter during
+		the \&quot;configure\&quot; step is used.
+		
+		The file&#39;s syntax is given by examples in the htsnrc.example file
+		(included with /htsn/).
+		
+		Options specified on the command-line override those in either
+		configuration file.
+	</longdescription>
+</pkgmetadata>
