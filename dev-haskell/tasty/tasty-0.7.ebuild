@@ -15,7 +15,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+# sparc, ppc, ppc64 - requires either and regex-tdfa
+KEYWORDS="~amd64 ~x86"
 IUSE="+colors"
 
 RDEPEND=">=dev-haskell/deepseq-1.3:=[profile?]
