@@ -24,6 +24,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
 		>=dev-haskell/parsec-3
+		dev-haskell/regex-compat
 		>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
 		=dev-haskell/x11-1.6*
 		xft?  ( =dev-haskell/utf8-string-0.3*
