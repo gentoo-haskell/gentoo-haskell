@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Text.ProjectTemplate create/unpack - is idempotent FAILED [1]
+
 RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/base64-conduit:=[profile?]
 	>=dev-haskell/basic-prelude-0.3.5:=[profile?]

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides types and functions to store and manipulate evidence of equality between types.
+		
+		To take advantage of kind polymorphism when it is available but not require it, it is split into the following primary modules:
+		
+		- @/Type.Eq/@: Types and functions which can be kind-polymorphic if @PolyKinds@ are available, but are specific to kind @*@ otherwise.
+		
+		- @/Type.Eq.Higher/@: Kind-monomorphic types and functions of higher kind, up to @* -&gt; * -&gt; *@.
+		
+		- @/Type.Eq.Poly/@: Combinators that require kind polymorphism. This module is only available if @PolyKinds@ are available.
+		
+		Major required extensions: @GADTs@, @TypeFamilies@ (for @~@), @Rank2Types@, @TypeOperators@
+		
+		Optional extensions: @PolyKinds@ (GHC 7.6+)
+		
+		Minimum GHC: 6.10
+		
+		Related packages:
+		
+		- &lt;http://hackage.haskell.org/package/type-equality&gt;
+		
+		- &lt;http://hackage.haskell.org/package/eq&gt;
+		
+		- &lt;http://hackage.haskell.org/package/ty&gt;
+		
+		- &lt;http://hackage.haskell.org/package/dependent-sum&gt;
+		
+		- &lt;http://hackage.haskell.org/package/categories&gt; (@Data.Category.Discrete@)
+	</longdescription>
+</pkgmetadata>

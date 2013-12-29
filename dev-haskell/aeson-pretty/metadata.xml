@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name='lib-only'>don't build 'aeson-pretty' executable.</flag>
+	</use>
 	<longdescription>
 		A JSON pretty-printing library compatible with aeson as well as
 		a command-line tool to improve readabilty of streams of JSON data.

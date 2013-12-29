@@ -71,7 +71,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'tagsoup >= 0.12 && < 0.13' 'tagsoup >= 0.12 && < 0.14'
-	epatch ${FILESDIR}/${P}-tagsoup-0.13.patch
+	epatch "${FILESDIR}"/${P}-tagsoup-0.13.patch
 }
 
 src_configure() {

@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/hslogger
 	dev-haskell/http
 	dev-haskell/ifelse
-	dev-haskell/json
+	dev-haskell/json[generic]
 	dev-haskell/missingh
 	dev-haskell/monad-control
 	dev-haskell/monadcatchio-transformers
@@ -80,6 +80,8 @@ DEPEND="${RDEPEND}
 	xmpp? ( >=dev-haskell/gnutls-0.1.4
 		dev-haskell/network-protocol-xmpp
 		dev-haskell/xml-types )
+		dev-lang/perl
+		doc? ( www-apps/ikiwiki net-misc/rsync )
 "
 
 PATCHES=("${FILESDIR}"/${PN}-4.20130815-dns-1.0.patch)
@@ -126,4 +128,8 @@ src_install() {
 	use doc && emake install-docs DESTDIR="${D}" PREFIX="${EPREFIX}/usr"
 	mv "${ED}"/usr/share/doc/{${PN},${PF}}
 	dodoc CHANGELOG README
+	if use webapp ; then
+		doicon "${FILESDIR}"/${PN}.xpm
+		make_desktop_entry "${PN} webapp" "git-annex" ${PN}.xpm "Office"
+	fi
 }

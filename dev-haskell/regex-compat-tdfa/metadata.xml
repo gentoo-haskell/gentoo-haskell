@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		One module layer over regex-tdfa to replace Text.Regex.
+		
+		regex-compat can&#39;t use Unicode characters correctly because
+		of using regex-posix. This is not good for Unicode users.
+		
+		I modified regex-compat to use regex-tdfa for solving today&#39;s
+		problem.
+	</longdescription>
+</pkgmetadata>

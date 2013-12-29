@@ -27,3 +27,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 PATCHES=("${FILESDIR}"/${P}-ghc-7.7.patch)
+
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'array >= 0.3 && < 0.5' 'array >= 0.3 && < 0.6'
+}

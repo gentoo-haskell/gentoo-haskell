@@ -16,7 +16,7 @@ EDARCS_LOCALREPO="Agda2-stdlib"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="profile"
+IUSE="profile +ffi"
 
 # filemanip is used in lib.cabal to make the GenerateEverything and
 # AllNonAsciiChars executables, so agda-stdlib does not require a subslot
@@ -26,6 +26,7 @@ RDEPEND="=sci-mathematics/agda-9999*:=[profile?]
 	=dev-haskell/filemanip-0.3*[profile?]
 	=sci-mathematics/agda-executable-9999*:=
 	>=dev-lang/ghc-6.12.1
+	ffi? ( =sci-mathematics/agda-lib-ffi-0.0.2 )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2

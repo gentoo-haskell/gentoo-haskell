@@ -33,25 +33,19 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		=dev-haskell/binary-shared-0.8*:=[profile?]
 		>=dev-haskell/cabal-1.6.0.1:=[profile?]
 		<dev-haskell/cabal-1.18:=[profile?]
-		>=dev-haskell/deepseq-1.1.0.0:=[profile?]
-		<dev-haskell/deepseq-1.4:=[profile?]
 		>=dev-haskell/enumerator-0.4.14:=[profile?]
 		<dev-haskell/enumerator-0.5:=[profile?]
 		gtk3? (
-			>=dev-haskell/gio-0.13.0:3=[profile?]
-			>=dev-haskell/glib-0.13.0:3=[profile?]
-			>=dev-haskell/gtk-0.13.0:3=[profile?]
-			>=dev-haskell/gtksourceview-0.13.0:3=[profile?]
+			>=dev-haskell/gio-0.12.5.0:0=[profile?]
+			>=dev-haskell/glib-0.12.5.0:0=[profile?]
+			>=dev-haskell/gtk-0.12.5.0:3=[profile?]
+			>=dev-haskell/gtksourceview-0.12.5.0:3=[profile?]
 		)
 		!gtk3? (
-			>=dev-haskell/gio-0.12.2:2=[profile?]
-			<dev-haskell/gio-0.13:2=[profile?]
-			>=dev-haskell/glib-0.10:2=[profile?]
-			<dev-haskell/glib-0.13:2=[profile?]
+			>=dev-haskell/gio-0.12.2:0=[profile?]
+			>=dev-haskell/glib-0.10:0=[profile?]
 			>=dev-haskell/gtk-0.10:2=[profile?]
-			<dev-haskell/gtk-0.13:2=[profile?]
 			>=dev-haskell/gtksourceview-0.10.0:2=[profile?]
-			<dev-haskell/gtksourceview-0.13:2=[profile?]
 		)
 		>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 		<dev-haskell/haskell-src-exts-1.15:=[profile?]
@@ -76,7 +70,7 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 		>=dev-haskell/strict-0.3.2:=[profile?]
 		<dev-haskell/strict-0.4:=[profile?]
 		>=dev-haskell/text-0.11.1.5:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
+		<dev-haskell/text-1.2:=[profile?]
 		>=dev-haskell/transformers-0.2.2.0:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		>=dev-haskell/utf8-string-0.3.1.1:=[profile?]
@@ -95,7 +89,12 @@ RDEPEND="=app-editors/leksah-server-9999*:=[profile?]
 			dev-haskell/hamlet:=[profile?]
 			dev-haskell/jsc:=[profile?]
 			dev-haskell/lens:=[profile?]
-			dev-haskell/webkit:=[profile?]
+			gtk3? (
+				dev-haskell/webkit:3=[profile?]
+			)
+			!gtk3? (
+				dev-haskell/webkit:2=[profile?]
+			)
 			dev-haskell/webkit-javascriptcore:=[profile?]
 		)
 		yi? ( >=app-editors/yi-0.6.6.1:=[profile?]
@@ -120,14 +119,9 @@ src_prepare() {
 			-i "${S}/${PN}.cabal" \
 			|| die "Could not remove executable bewleksah from ${S}/${PN}.cabal"
 	fi
-	if use gtk3; then
-		cabal_chdeps \
-			'glib >=0.10 && <0.13' 'glib >=0.13' \
-			'gio >=0.12.2 && <0.13' 'gio >=0.13.0'
-	fi
 	cabal_chdeps \
 		'pretty-show >=1.5 && <1.6' 'pretty-show >=1.5' \
-		'haskell-src-exts >=1.13.5 && <1.14' 'haskell-src-exts >=1.13.5 && <1.15'
+		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5 && < 1.2'
 
 	# workaround haddock 2.10.0 error: parse error on input `-- ^ source buffer view'
 	sed -e 's@-- ^@--@g' \

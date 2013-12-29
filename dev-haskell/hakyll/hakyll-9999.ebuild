@@ -20,7 +20,7 @@ KEYWORDS=""
 IUSE="+previewserver +checkexternal"
 
 RDEPEND=">=app-text/pandoc-1.10:=[profile?]
-		<app-text/pandoc-1.12:=[profile?]
+		<app-text/pandoc-1.13:=[profile?]
 		>=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/blaze-html-0.5:=[profile?]
@@ -31,7 +31,7 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 		<dev-haskell/citeproc-hs-0.4:=[profile?]
 		=dev-haskell/cmdargs-0.10*:=[profile?]
 		>=dev-haskell/cryptohash-0.7:=[profile?]
-		<dev-haskell/cryptohash-0.11:=[profile?]
+		<dev-haskell/cryptohash-0.12:=[profile?]
 		>=dev-haskell/data-default-0.4:=[profile?]
 		<dev-haskell/data-default-0.6:=[profile?]
 		=dev-haskell/deepseq-1.3*:=[profile?]
@@ -76,13 +76,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.2
 			<dev-haskell/test-framework-quickcheck2-0.4
 		)"
-
-src_prepare() {
-	cabal_chdeps \
-		  'tagsoup      >= 0.12.6 && < 0.13' 'tagsoup      >= 0.12.6 && < 0.14'
-
-
-}
 
 src_configure() {
 	haskell-cabal_src_configure \

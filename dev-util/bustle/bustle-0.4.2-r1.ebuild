@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/bustle/bustle-0.4.2-r1.ebuild,v 1.4 2013/12/12 05:55:30 gienah Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SRC_URI="http://willthompson.co.uk/${PN}/releases/${PV}/${P}.tar.gz http://dev.g
 
 LICENSE="LGPL-2 GPL-2" # bustle-dbus-monitor.c is GPL-2, rest is LGPL-2
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND="dev-libs/glib:2
@@ -31,12 +31,12 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)
 		>=dev-haskell/cabal-1.8
-		dev-haskell/cairo:2
+		dev-haskell/cairo:0
 		>=dev-haskell/dbus-0.10
-		dev-haskell/glib:2
+		dev-haskell/glib:0
 		>=dev-haskell/gtk-0.12.3:2
 		dev-haskell/mtl
-		dev-haskell/pango:2
+		dev-haskell/pango:0
 		dev-haskell/parsec
 		dev-haskell/pcap
 		dev-haskell/text

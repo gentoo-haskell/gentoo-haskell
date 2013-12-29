@@ -16,27 +16,29 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~ppc-macos ~x86-macos"
-IUSE="tests"
+IUSE="test"
 
 RDEPEND=">=dev-lang/ghc-6.10.4:=
-	tests? ( dev-haskell/hunit:=[profile?]
-			>=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-2.6:=[profile?]
+"
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.6.0.3
+	test? ( dev-haskell/hunit:=[profile?]
+			>=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?]
 			dev-haskell/test-framework:=[profile?]
 			dev-haskell/test-framework-hunit:=[profile?]
 			dev-haskell/test-framework-quickcheck2:=[profile?]
 			dev-haskell/test-framework-th:=[profile?] )
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6.0.3
-"
 
 src_prepare() {
 	# allow ghc-7.7.2013+
 	cabal_chdeps \
-		'base >= 3.0.0 && < 4.7' 'base >= 3'
+		'array >= 0.1.0 && < 0.5' 'array >= 0.1.0 && < 0.6' \
+		'base >= 3.0.0 && < 4.7' 'base >= 3' \
+		'QuickCheck ==2.5.*' 'QuickCheck >=2.5 && <2.7'
 }
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag tests tests)
+		$(cabal_flag test tests)
 }

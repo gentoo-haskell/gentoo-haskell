@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,7 +30,8 @@ RESTRICT=test # missing events
 
 src_prepare() {
 	cabal_chdeps \
-		'binary     >= 0.5 && < 0.7' 'binary     >= 0.5 && < 0.8'
+		'binary     >= 0.5 && < 0.7' 'binary     >= 0.5 && < 0.8' \
+		'array      >= 0.2 && < 0.5' 'array      >= 0.2 && < 0.6'
 	mkdir -p dist/build \
 		|| die "Could not create dist/build directory"
 	cp -p GHC/RTS/EventLogFormat.h dist/build/ \

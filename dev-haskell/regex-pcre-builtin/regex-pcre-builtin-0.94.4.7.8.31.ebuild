@@ -15,8 +15,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
-IUSE="+newbase +splitbase"
+KEYWORDS="amd64 ~x86"
+IUSE=""
 
 RDEPEND=">=dev-haskell/regex-base-0.93:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -24,9 +24,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2.3"
 
 PATCHES=("${FILESDIR}"/${P}-ghc-7.7.patch)
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag newbase newbase) \
-		$(cabal_flag splitbase splitbase)
-}

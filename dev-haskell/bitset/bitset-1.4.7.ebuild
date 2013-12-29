@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 "
 src_prepare() {
 	cabal_chdeps \
-	  'QuickCheck                 == 2.5.*' 'QuickCheck >= 2.5 && < 2.7' \
-	  'test-framework             == 0.6.*' 'test-framework >= 0.6 && < 0.9' \
-	  'test-framework-quickcheck2 == 0.2.*' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
+		'QuickCheck                 == 2.5.*' 'QuickCheck >= 2.5 && < 2.7' \
+		'test-framework             == 0.6.*' 'test-framework >= 0.6 && < 0.9' \
+		'test-framework-quickcheck2 == 0.2.*' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
 }

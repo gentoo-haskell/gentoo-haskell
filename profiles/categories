@@ -14,13 +14,17 @@ dev-tex
 dev-util
 dev-vcs
 games-action
+games-arcade
+games-fps
 games-puzzle
+games-sports
 media-sound
 net-mail
 net-misc
 net-p2p
 sci-biology
 sci-mathematics
+sci-physics
 sys-apps
 www-apps
 www-client

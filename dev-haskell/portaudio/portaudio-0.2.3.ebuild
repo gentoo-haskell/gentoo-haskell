@@ -13,7 +13,7 @@ DESCRIPTION="Haskell bindings for the PortAudio library."
 HOMEPAGE="http://code.haskell.org/portaudio"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="OtherLicense"
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

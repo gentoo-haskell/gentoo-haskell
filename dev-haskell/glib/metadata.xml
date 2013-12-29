@@ -11,4 +11,8 @@
 		much functionality as required to support the packages that
 		wrap libraries that are themselves based on GLib.
 	</longdescription>
+	<use>
+		<flag name='closure_signals'>Use the the GClosure-based signals
+        	implementation.</flag>
+        </use>
 </pkgmetadata>

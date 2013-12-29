@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+base4"
+IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
@@ -24,5 +24,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag base4 base4)
+		--flags=base4
 }
