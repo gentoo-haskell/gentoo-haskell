@@ -42,3 +42,11 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.8.0.9-cpphs-utf8.patch
 }
+
+src_install() {
+	haskell-cabal_src_install
+	# build system does not attempt to copy bits to staging area
+	emake -f Makefile.cabalinst install \
+		TARGET="${ED}"/usr/share/${P}/ghc-$(ghc-version) \
+		BINDIR="${ED}"/usr/bin
+}
