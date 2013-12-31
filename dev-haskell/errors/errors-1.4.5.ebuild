@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/either-3.1:=[profile?] <dev-haskell/either-4.2:=[profile?]
+RDEPEND=">=dev-haskell/either-3.1:=[profile?] <dev-haskell/either-5:=[profile?]
 	>=dev-haskell/safe-0.3.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -26,9 +26,3 @@ RDEPEND=">=dev-haskell/either-3.1:=[profile?] <dev-haskell/either-4.2:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
-
-src_prepare() {
-  cabal_chdeps \
-	  'either       >= 3.1   && < 4.1' \
-	  'either       >= 3.1   && < 4.2'
-}
