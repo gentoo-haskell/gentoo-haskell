@@ -25,17 +25,14 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
-	dev-libs/openssl
-		>=dev-libs/crypto++-5.6.1-r3
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
 
-CABAL_EXTRA_CONFIGURE_FLAGS="--extra-lib-dirs="${EPREFIX}"/usr/$(get_libdir) \
-		--extra-include-dirs="${EPREFIX}"/usr/include/crypto++"
-
 src_prepare() {
-	sed -e 's@cryptopp@crypto++@g' \
-		-i "${S}/${PN}.cabal" || die "Could not correct crypto++ library name"
+	# just remove depends on extralibs. I've failed to find their usage
+	cabal_chdeps \
+		'Extra-Libraries:   ssl' 'Build-Depends:     base' \
+		'Extra-Libraries: cryptopp' 'Build-Depends:     base'
 }
