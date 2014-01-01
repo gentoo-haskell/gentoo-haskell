@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="big-endian force-endianness reference"
 
 RDEPEND=">=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
-	>=dev-haskell/crypto-api-0.6:=[profile?] <dev-haskell/crypto-api-0.13:=[profile?]
+	>=dev-haskell/crypto-api-0.6:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -27,6 +27,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hspec-1.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'crypto-api   >= 0.6 && < 0.13' 'crypto-api   >= 0.6 && < 0.14'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
