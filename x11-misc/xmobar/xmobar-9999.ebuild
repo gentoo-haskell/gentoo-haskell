@@ -16,7 +16,7 @@ EGIT_REPO_URI="git://github.com/jaor/xmobar.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="alsa dbus inotify mpd mpris timezone wifi xft"
 
 RDEPEND="x11-libs/libXrandr
