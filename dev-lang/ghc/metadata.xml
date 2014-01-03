@@ -12,6 +12,5 @@
 		<flag name='ghcmakebinary'>Internal: Build binary friendly for redistribution.</flag>
 		<flag name='gmp'>use <pkg>dev-libs/gmp</pkg> for integer operations (works faster, but an external depend).</flag>
 		<flag name='llvm'>Enable llvm code generator for ghc (activated by -fllvm)</flag>
-		<flag name='shared'>Resulting ghc will generate dynamically linked libraries by default.</flag>
 	</use>
 </pkgmetadata>
