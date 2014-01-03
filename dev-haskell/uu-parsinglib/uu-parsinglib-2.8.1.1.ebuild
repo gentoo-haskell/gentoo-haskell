@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Fast, online, error-correcting, monadic, applicative, merging, permuting, idiomatic parser combinators."
+DESCRIPTION="Utrecht University parser combinator library."
 HOMEPAGE="http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
