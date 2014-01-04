@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="base4">Use base-4.0.</flag>
+	</use>
 	<longdescription>
 		HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code.
 		The trhsx preprocessor translates .hsx source files into ordinary .hs files. Literal
