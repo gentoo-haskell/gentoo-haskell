@@ -16,4 +16,7 @@
 		one cryptographic algorithm (ex: padding) is within
 		scope of this package.
 	</longdescription>
+	<use>
+		<flag name="all_cpolys">Build all the CMAC polynomes up to 10000 bits instead of just the usual ones.</flag>
+	</use>
 </pkgmetadata>
