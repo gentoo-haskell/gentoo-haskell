@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="warn-as-error">Build with warnings as errors.</flag>
+	</use>
 	<longdescription>
 		A library for restricted monads based on associated datatypes.
 		This allows datatypes such as Set to be made into monads.
