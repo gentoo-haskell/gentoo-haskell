@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/glib-0.12:0=[profile?] <dev-haskell/glib-0.13.0:0=[profile?]
 		>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/pango-0.12:0=[profile?] <dev-haskell/pango-0.13.0:0=[profile?]
- )
+		)
 	vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] )
 "
 DEPEND="${RDEPEND}
