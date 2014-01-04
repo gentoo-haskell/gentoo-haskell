@@ -13,4 +13,7 @@
 		&lt;http://hackage.haskell.org/package/accelerate&gt;
 		
 	</longdescription>
+	<use>
+		<flag name="cuda">Enable support for using CUFFT via the CUDA backend's FFI.</flag>
+	</use>
 </pkgmetadata>
