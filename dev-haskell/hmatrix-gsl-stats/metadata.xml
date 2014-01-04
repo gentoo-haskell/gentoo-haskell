@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="mkl">Link with Intel's MKL optimized libraries.</flag>
+	</use>
 	<longdescription>
 		Purely functional interface for statistics based on hmatrix and GSL
 		
