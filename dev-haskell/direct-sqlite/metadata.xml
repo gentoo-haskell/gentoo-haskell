@@ -54,4 +54,8 @@
 		[Version 1.1] adds the SQLite amalgamation file (version 3.7.5) to the
 		project, so that there are no external dependencies.
 	</longdescription>
+	<use>
+		<flag name="fulltextsearch">Enable full-text search when using the bundled sqlite library.</flag>
+		<flag name="systemlib">Use the system-wide sqlite library.</flag>
+	</use>
 </pkgmetadata>
