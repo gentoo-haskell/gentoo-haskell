@@ -44,4 +44,7 @@
 		
 		http://github.com/creswick/cabal-dev/blob/master/README.md
 	</longdescription>
+	<use>
+		<flag name="no-cabal-dev">Do not build cabal-dev (just build ghc-pkg-6_8-compat).</flag>
+	</use>
 </pkgmetadata>
