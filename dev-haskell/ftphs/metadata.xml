@@ -17,4 +17,7 @@
 		* Server can serve up a real or a virtual filesystem tree
 		* Standards compliant
 	</longdescription>
+	<use>
+		<flag name="buildtests">Build the executable to run unit tests.</flag>
+	</use>
 </pkgmetadata>
