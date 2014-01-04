@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="usenativewindowslibraries">When compiling under Windows, use the native.</flag>
+	</use>
 	<longdescription>
 		A Haskell binding for the OpenAL cross-platform 3D audio API,
 		appropriate for use with gaming applications and many other
