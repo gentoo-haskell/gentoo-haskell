@@ -25,4 +25,7 @@
 		This package also includes a simple reference implementation based
 		on &#39;IORef&#39; and &quot;Data.Sequence&quot;.
 	</longdescription>
+	<use>
+		<flag name="usecas">Enable the reference implementation to use hardware compare-and-swap.</flag>
+	</use>
 </pkgmetadata>
