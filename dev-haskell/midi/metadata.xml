@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="buildtests">Build test executables.</flag>
+	</use>
 	<longdescription>
 		MIDI is the Musical Instrument Digital Interface.
 		The package contains definition of realtime and file MIDI messages,
