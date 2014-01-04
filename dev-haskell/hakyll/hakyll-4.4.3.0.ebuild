@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -38,12 +38,10 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	checkexternal? ( >=dev-haskell/http-conduit-1.8:=[profile?] <dev-haskell/http-conduit-2.1:=[profile?]
 				>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
-	previewserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
-				>=dev-haskell/snap-core-0.6:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
+	previewserver? ( >=dev-haskell/snap-core-0.6:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
 				>=dev-haskell/snap-server-0.6:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
-				>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] )
-	!previewserver? ( watchserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
-						>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] ) )
+				checkexternal? ( !watchserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
+								>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] ) ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
