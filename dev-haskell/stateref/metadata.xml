@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="usestm">Include instances for STM types.</flag>
+		<flag name="usetmvar">Include instances for TMVar.</flag>
+	</use>
 	<longdescription>
 		A collection of type-classes generalizing the
 		read\/write\/modify operations for stateful variables
