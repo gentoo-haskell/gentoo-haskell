@@ -9,4 +9,9 @@
 		This package provides efficient conversion routines between a range of array types
 		and Accelerate arrays.
 	</longdescription>
+	<use>
+		<flag name="bounds-checks">Enable bounds checking.</flag>
+		<flag name="internal-checks">Enable internal consistency checks.</flag>
+		<flag name="unsafe-checks">Enable bounds checking in unsafe operations.</flag>
+	</use>
 </pkgmetadata>
