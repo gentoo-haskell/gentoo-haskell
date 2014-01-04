@@ -13,4 +13,7 @@
 		command-line, curses and web interfaces, and aims to be a
 		reliable, practical tool for daily use.
 	</longdescription>
+	<use>
+		<flag name="threaded">Build with support for multithreaded execution.</flag>
+	</use>
 </pkgmetadata>
