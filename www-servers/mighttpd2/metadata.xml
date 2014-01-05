@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="rev-proxy">Reverse proxy with http-conduit.</flag>
+		<flag name="tls">HTTPS support.</flag>
+	</use>
 	<longdescription>
 		High performance web server to handle static
 		files and CGI on WAI/warp.
