@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="devel">Build without optimizations and executable stripping.</flag>
+	</use>
 	<longdescription>
 		
 	</longdescription>
