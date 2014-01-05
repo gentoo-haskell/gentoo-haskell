@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( dev-haskell/hunit
 		dev-haskell/mtl
-		dev-haskell/test-framework
-		dev-haskell/test-framework-hunit
-		dev-haskell/test-framework-th )
+		dev-haskell/tasty
+		dev-haskell/tasty-hunit
+		dev-haskell/tasty-th )
 "
