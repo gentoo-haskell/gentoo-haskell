@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -38,6 +38,5 @@ src_prepare() {
 		    'QuickCheck >= 2.1 && < 2.6' \
 	    	'QuickCheck >= 2.1 && < 2.7' \
 			'haskell-src-exts >= 1.11 && < 1.14' \
-			'haskell-src-exts >= 1.11 && < 1.15' \
-
+			'haskell-src-exts >= 1.11 && < 1.15'
 }
