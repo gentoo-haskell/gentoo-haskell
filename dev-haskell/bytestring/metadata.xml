@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		An efficient compact, immutable byte string type (both strict and lazy)
+		suitable for binary or 8-bit character data.
+		
+		The &#39;ByteString&#39; type represents sequences of bytes or 8-bit characters.
+		It is suitable for high performance use, both in terms of large data
+		quantities, or high speed requirements. The &#39;ByteString&#39; functions follow
+		the same style as Haskell\&#39;s ordinary lists, so it is easy to convert code
+		from using &#39;String&#39; to &#39;ByteString&#39;.
+		
+		Two &#39;ByteString&#39; variants are provided:
+		
+		* Strict &#39;ByteString&#39;s keep the string as a single large array. This
+		makes them convenient for passing data between C and Haskell.
+		
+		* Lazy &#39;ByteString&#39;s use a lazy list of strict chunks which makes it
+		suitable for I\/O streaming tasks.
+		
+		The @Char8@ modules provide a character-based view of the same
+		underlying &#39;ByteString&#39; types. This makes it convenient to handle mixed
+		binary and 8-bit character content (which is common in many file formats
+		and network protocols).
+		
+		The &#39;Builder&#39; module provides an efficient way to build up &#39;ByteString&#39;s
+		in an ad-hoc way by repeated concatenation. This is ideal for fast
+		serialisation or pretty printing.
+		
+		There is also a &#39;ShortByteString&#39; type which has a lower memory overhead
+		and can can be converted to or from a &#39;ByteString&#39;, but supports very few
+		other operations. It is suitable for keeping many short strings in memory.
+		
+		&#39;ByteString&#39;s are not designed for Unicode. For Unicode strings you should
+		use the &#39;Text&#39; type from the @text@ package.
+		
+		These modules are intended to be imported qualified, to avoid name clashes
+		with &quot;Prelude&quot; functions, e.g.
+		
+		&gt; import qualified Data.ByteString as BS
+	</longdescription>
+</pkgmetadata>
