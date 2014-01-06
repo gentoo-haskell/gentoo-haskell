@@ -1,7 +1,7 @@
 Quick start
 ===========
 
-So, you need to grab our overlay, add some patches there and send it us.
+So, you need to grab our overlay, add some patches there and send them to us.
 
 It's mostly a set of following commands:
 
@@ -26,8 +26,8 @@ Some notes:
 - ``--rebase`` parameter allows us to avoid useless merge commits:
   commits are usually absolutely independent, so we like linear history.
 
-- Commit one ebuild at a time: don't modify more, than one package
-  in single commit. It makes review easier.
+- Commit one ebuild at a time: don't modify more than one package
+  in single commit. It makes reviewing easier.
 
 - Write meaningful commit messages! Look at the examples in the tree:
   ``git log``
@@ -36,7 +36,7 @@ Some notes:
 
       app-admin/haskell-updater: bump up to 1.2.0.1 (ghc-7.2 support)
 
-If you don't like github for some reason you can send us patches as well.
+If you don't like github for some reason, you can send us patches as well.
 Just export them (or publish the tree somewhere else) and send them out
 to haskell@gentoo.org:
 
