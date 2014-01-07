@@ -40,5 +40,5 @@ src_prepare() {
 
 	# fix missing ghci depend
 	cabal_chdeps \
-		'HsImport.Main' 'HsImport.Main, Paths_hsimport'
+		'HsImport.Main' 'HsImport.Main, Paths_hsimport, HsImport.ImportChange, HsImport.Parse'
 }
