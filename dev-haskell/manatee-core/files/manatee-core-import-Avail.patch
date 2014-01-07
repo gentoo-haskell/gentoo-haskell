@@ -1,0 +1,6 @@
+--- Manatee/Core/Dynload.hs.orig	2013-12-20 17:50:15.278908272 +0800
++++ Manatee/Core/Dynload.hs	2013-12-20 17:50:31.678908266 +0800
+@@ -22,2 +22,3 @@
+ 
++import Avail
+ import Control.Concurrent

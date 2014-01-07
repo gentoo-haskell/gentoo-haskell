@@ -48,4 +48,11 @@ src_prepare() {
 	sed -e 's@dbus-client >= 0.3 && < 0.4@dbus-client >= 0.3 \&\& < 0.5@' \
 		-i "${S}/${PN}.cabal" || die "Could not loosen dbus-client dependency"
 	epatch "${FILESDIR}/${P}-dbus-client-0.4.patch"
+	epatch "${FILESDIR}/${PN}-STM.patch"
+	epatch "${FILESDIR}/${PN}-import-Avail.patch"
+	sed -e '/programFindLocation/s/$/ [ProgramSearchPathDefault]/' \
+		-i Manatee/Toolkit/General/Process.hs || \
+		die "Could not build with >=cabal-1.18"
+	sed -e 's/defaultCallbacks//' -i Manatee/Core/Dynload.hs || die
+	epatch "${FILESDIR}/${PN}-ghc-7.6.patch"
 }

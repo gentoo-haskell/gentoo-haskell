@@ -1,0 +1,43 @@
+diff --git a/Manatee/Core/Dynload.hs b/Manatee/Core/Dynload.hs
+index 4499c87..6132af7 100644
+--- a/Manatee/Core/Dynload.hs
++++ b/Manatee/Core/Dynload.hs
+@@ -65,7 +65,7 @@ castCustomize (CustomizeWrap c) =
+ -- | Dynamic loading module in running program.
+ dynload :: (String, String, [(String, HValue -> IO ())]) -> IO ()
+ dynload (filepath, moduleName, loadList) = 
+-   defaultErrorHandler defaultDynFlags $ 
++   defaultErrorHandler defaultFatalMessager defaultFlushOut $ 
+       runGhc (Just libdir) $ 
+         ghandle 
+           -- Avoid exception when dynamic loading.
+@@ -85,9 +85,9 @@ dynload (filepath, moduleName, loadList) =
+                  Succeeded -> do
+                      liftIO $ putStrLn $ "* Load module " ++ moduleName ++ " success."
+                      -- Find module.
+-                     m <- findModule (mkModuleName moduleName) Nothing
++                     -- m <- findModule (mkModuleName moduleName) Nothing
+                      -- Set context.
+-                     setContext [] [(m, Nothing)]
++                     setContext [IIModule . mkModuleName $ moduleName]
+                      -- Load value.
+                      forM_ loadList $ \ (symbolName, loadFun) -> 
+                          ghandle 
+@@ -153,14 +153,9 @@ generateConfig configFile scanList = do
+        -- Get export list.
+        moduleInterface <- readBinIface' configHiFile
+        let ifaceExport = mi_exports moduleInterface
+-           exports = map (\ (mod, items) -> 
+-                            (Module.moduleNameString $ Module.moduleName mod
+-                            ,concatMap (\item -> 
+-                                            case item of
+-                                              Avail name -> [occNameString name]
+-                                              AvailTC _ list -> 
+-                                                  map occNameString list
+-                                       ) items)
++           exports = map (\ aitem -> 
++                            (occNameString (occName (availName aitem))
++                            ,[occNameString (occName (availName aitem))])
+                          ) ifaceExport
+            (((_, exportList):_), _) = partition (\ (mName, _) -> mName == "Config.User") exports
+        -- Generate Import.hs
