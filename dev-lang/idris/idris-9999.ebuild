@@ -55,13 +55,6 @@ src_prepare() {
 	if [[ ${PV} = 9999* ]]; then
 		rm -f "${S}/tutorial/idris-tutorial.pdf"
 	fi
-	# Loosening the trifecta dependency should be ok, as idris upstream only set it to ==
-	# https://github.com/idris-lang/Idris-dev/commit/6469b164699c558c9a6869bb1b2f57e3266abaac
-	# because trifecta 1.2 was broken: https://github.com/ekmett/trifecta/issues/15
-	# Upstream say that parsers 0.10 breaks idris:
-	# https://github.com/idris-lang/Idris-dev/commit/1d6453514500e2ebb60a74b52c9227498410ab3b
-	cabal_chdeps \
-		'trifecta == 1.1' 'trifecta >= 1.1'
 }
 
 src_configure() {
