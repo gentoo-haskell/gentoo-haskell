@@ -42,6 +42,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/random
 	dev-haskell/safesemaphore
 	dev-haskell/sha
+	>=dev-haskell/stm-2.3
 	dev-haskell/text
 	dev-haskell/unix-compat
 	dev-haskell/utf8-string
@@ -89,6 +90,13 @@ DEPEND="${RDEPEND}
 		dev-lang/perl
 		doc? ( www-apps/ikiwiki net-misc/rsync )
 "
+
+src_prepare() {
+	# at least USE="cryptohash dbus dns inotify pairing production quvi s3 tdfa testsuite -xmpp -webdav -webapp -feed -assistant"
+	# need STM via Remote.External
+	cabal_chdeps \
+		'MissingH, hslogger, directory, filepath,' 'MissingH, hslogger, directory, filepath, stm,'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
