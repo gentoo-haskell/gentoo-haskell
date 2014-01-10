@@ -47,6 +47,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
+	dev-python/pip
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
