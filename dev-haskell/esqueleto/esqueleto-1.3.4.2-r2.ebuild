@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
-	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[profile?]
+	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
@@ -33,8 +33,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/monad-control
-		>=dev-haskell/persistent-sqlite-1.2 <dev-haskell/persistent-sqlite-1.3
-		>=dev-haskell/persistent-template-1.2 <dev-haskell/persistent-template-1.3
+		>=dev-haskell/persistent-sqlite-1.2 <dev-haskell/persistent-sqlite-1.4
+		>=dev-haskell/persistent-template-1.2 <dev-haskell/persistent-template-1.4
 		dev-haskell/quickcheck )
 "
 
@@ -43,5 +43,8 @@ src_prepare() {
 	cabal_chdeps \
 		'base                 >= 4.5    && < 4.7' 'base                 >= 4.5' \
 		'spec               >= 1.3 && < 1.8' 'spec               >= 1.3' \
-		'text                 == 0.11.*' 'text                 >= 0.11'
+		'text                 == 0.11.*' 'text                 >= 0.11' \
+		'persistent           == 1.2.*' 'persistent           >= 1.2 && < 1.4' \
+		'persistent-sqlite   == 1.2.*' 'persistent-sqlite   >= 1.2 && < 1.4' \
+		'persistent-template == 1.2.*' 'persistent-template >= 1.2 && < 1.4'
 }
