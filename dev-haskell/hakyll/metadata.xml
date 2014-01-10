@@ -5,6 +5,11 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name='previewserver'>Include the preview server</flag>
+		<flag name='checkexternal'>Include external link checking</flag>
+		<flag name='watchserver'>wait for filesystem changes and rebuild pages</flag>
+	</use>
 	<longdescription>
 		Hakyll is a static website compiler library. It provides you with the tools to
 		create a simple or advanced static website using a Haskell DSL and formats
@@ -22,8 +27,4 @@
 		Additionally, there&#39;s the Haddock documentation in the different modules,
 		meant as a reference.
 	</longdescription>
-<use>
-  <flag name='previewserver'>Include the preview server</flag>
-  <flag name='checkexternal'>Include external link checking</flag>
-</use>
 </pkgmetadata>

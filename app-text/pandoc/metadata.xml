@@ -16,6 +16,7 @@
 		slide shows.
 	</longdescription>
 	<use>
-                <flag name="embed_data_files">Embed data files in binary for relocatable executable.</flag>
+		<flag name="http-conduit">Enable downloading of resources over https.</flag>
+		<flag name="embed_data_files">Embed data files in binary for relocatable executable.</flag>
 	</use>
 </pkgmetadata>

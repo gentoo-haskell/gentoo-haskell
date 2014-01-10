@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="base4">Use base-4.0.</flag>
+	</use>
 	<longdescription>
 		A grab bag of functions for use with Template Haskell.
 		

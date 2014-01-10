@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="portable">Obtain FileTime using portable functions.</flag>
+	</use>
 	<longdescription>
 		Shake is a Haskell library for writing build systems - designed as a
 		replacement for make. To use Shake the user writes a Haskell program

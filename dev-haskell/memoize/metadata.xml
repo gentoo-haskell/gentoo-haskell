@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides a type class &#39;Memoizable&#39; for memoizing
+		functions, along with instances for a variety of argument types.
+		It includes a Template Haskell function for deriving
+		&#39;Memoizable&#39; instances for arbitrary algebraic datatypes.
+		
+		The library constructs pure memo caches without the use of
+		&#39;unsafePerformIO&#39;.  This technique relies on implementation
+		assumptions that, while not guaranteed by the semantics of
+		Haskell, appear to be true.
+	</longdescription>
+</pkgmetadata>

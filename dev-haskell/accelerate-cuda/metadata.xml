@@ -13,4 +13,9 @@
 		currently there is no support for &#39;Char&#39; and &#39;Bool&#39; arrays (this is a
 		limitation of the front-end language).
 	</longdescription>
+	<use>
+		<flag name="bounds-checks">Enable bounds checking.</flag>
+		<flag name="internal-checks">Enable internal consistency checks.</flag>
+		<flag name="unsafe-checks">Enable bounds checking in unsafe operations.</flag>
+	</use>
 </pkgmetadata>

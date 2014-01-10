@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="dochack hacking gtk profiling testing vte +vty"
+IUSE="doc hacking gtk profiling testing vte +vty"
 RESTRICT="test" # tests are missing
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/glib-0.12:0=[profile?] <dev-haskell/glib-0.13.0:0=[profile?]
 		>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/pango-0.12:0=[profile?] <dev-haskell/pango-0.13.0:0=[profile?]
- )
+		)
 	vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -74,7 +74,7 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag dochack dochack) \
+		$(cabal_flag doc dochack) \
 		$(cabal_flag hacking hacking) \
 		$(cabal_flag gtk pango) \
 		$(cabal_flag profiling profiling) \

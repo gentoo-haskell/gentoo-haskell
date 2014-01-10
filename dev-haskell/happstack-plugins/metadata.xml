@@ -8,4 +8,7 @@
 	<longdescription>
 		This library provides support for automatically recompiling and reloading modules into a running server.
 	</longdescription>
+	<use>
+		<flag name="tests">Build the testsuite, and include the tests in the library.</flag>
+	</use>
 </pkgmetadata>

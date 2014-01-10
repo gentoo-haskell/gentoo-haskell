@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="system-lua">Use the system-wide lua instead of the bundled copy.</flag>
+	</use>
 	<longdescription>
 		The Scripting.Lua module is a wrapper of Lua language interpreter
 		as described in www.lua.org.

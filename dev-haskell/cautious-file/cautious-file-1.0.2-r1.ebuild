@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Ways to write a file cautiously, to reduce the chances of problems such as data loss due to crashes or power failures"
+DESCRIPTION="Ways to write a file cautiously, reducing e.g. the chances of data loss due to crashes"
 HOMEPAGE="http://hackage.haskell.org/package/cautious-file"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

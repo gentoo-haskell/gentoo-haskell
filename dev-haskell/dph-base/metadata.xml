@@ -8,4 +8,7 @@
 	<longdescription>
 		Common configuration, debugging and utilities.
 	</longdescription>
+	<use>
+		<flag name="dtrace">Enable experimental support for dtrace-based profiling.</flag>
+	</use>
 </pkgmetadata>

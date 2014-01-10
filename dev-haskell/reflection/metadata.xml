@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="slow">Use more portable but slower and unsupported implementation.</flag>
+	</use>
 	<longdescription>
 		This package provides an implementation of the ideas presented in the paper
 		\&quot;Functional Pearl: Implicit Configurations\&quot; by Oleg Kiselyov and

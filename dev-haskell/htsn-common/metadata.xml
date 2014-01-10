@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library contains three modules,
+		
+		* Network.Services.TSN.Logging
+		
+		* Network.Services.TSN.Report
+		
+		* Network.Services.TSN.Terminal
+		
+		They work together to provide \&quot;reporting\&quot; for the htsn and htsn-import
+		executables which both display and log things in the same way.
+		
+		The Network.Services.TSN.Logging module allows the application to
+		log to syslog, a file, or both. Four convenience functions are
+		provided to log messages at each priority: error, debug, info, and
+		warn.
+		
+		The Network.Services.TSN.Terminal provides similar functions that
+		instead display messages on the console (terminal). The output is
+		color-coded according to the severity of the message.
+		
+		The Network.Services.TSN.Report modules contains convenience
+		functions that both log and display informational message. This is
+		what an (optionally interactive) application will usually want to
+		do.
+	</longdescription>
+</pkgmetadata>

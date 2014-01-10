@@ -1,7 +1,7 @@
 .hackport
 .cache
 *.swp
-*.ebuild~
+*~
 projects/lambdaman/*.hi
 projects/lambdaman/*.o
 projects/lambdaman/lambdaman

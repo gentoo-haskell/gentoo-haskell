@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="threadedtestsuite">Build test executable with the threaded RTS.</flag>
+		<flag name="usepkgconfig">Use pkg-config for libraries instead of the platform default mechanism.</flag>
+	</use>
 	<longdescription>
 		A Haskell binding for Qt Quick.
 		General documentation is present in the &#39;Graphics.QML&#39; module.

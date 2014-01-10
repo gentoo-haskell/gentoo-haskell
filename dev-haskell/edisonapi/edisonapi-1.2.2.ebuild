@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,10 +13,10 @@ MY_PN="EdisonAPI"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library of efficent, purely-functional data structures (API)"
-HOMEPAGE="http://www.cs.princeton.edu/~rdockins/edison/home/"
+HOMEPAGE="http://web.cecs.pdx.edu/~rdockins/edison/home/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE=""	# FIXME: Please look at license file of package and pick it manually.
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

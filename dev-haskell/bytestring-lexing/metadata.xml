@@ -8,4 +8,7 @@
 	<longdescription>
 		Parse literals efficiently from bytestrings
 	</longdescription>
+	<use>
+		<flag name="base4">Use base-4.0.</flag>
+	</use>
 </pkgmetadata>

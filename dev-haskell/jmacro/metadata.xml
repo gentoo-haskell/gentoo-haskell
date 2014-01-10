@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="benchmarks">Build the benchmarks.</flag>
+	</use>
 	<longdescription>
 		Javascript syntax, functional syntax, hygienic names, compile-time guarantees of syntactic correctness, limited typechecking. Additional documentation available at &lt;http://www.haskell.org/haskellwiki/Jmacro&gt;
 	</longdescription>

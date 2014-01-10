@@ -9,6 +9,6 @@
 		categories from category-extras
 	</longdescription>
 	<use>
-		<flag name="optimization">enable optimizations</flag>
+		<flag name="optimize">enable optimizations</flag>
 	</use>
 </pkgmetadata>

@@ -11,4 +11,7 @@
 		just a wrapper that depends on the diagrams-core,
 		diagrams-lib, and diagrams-cairo packages.
 	</longdescription>
+	<use>
+		<flag name="ps">Enable the Haskell-native PostScript backend.</flag>
+	</use>
 </pkgmetadata>

@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="high_precision_date">Use a time storage with nano second precision.</flag>
+	</use>
 	<longdescription>
 		Backend for the persistent library using mongoDB.
 	</longdescription>

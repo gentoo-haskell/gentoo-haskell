@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="test-properties">Enable the properties test-suite.</flag>
+		<flag name="transformers2">Enable old versions of transformers. Non-developers should never set this.</flag>
+	</use>
 	<longdescription>
 		In-memory storage with multiple keys using lenses and traversals
 		

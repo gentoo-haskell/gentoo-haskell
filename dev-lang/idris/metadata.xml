@@ -5,6 +5,11 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="effects">Build the effects package.</flag>
+		<flag name="llvm">Build the LLVM backend.</flag>
+		<flag name="noeffects">Build without the effects package.</flag>
+	</use>
 	<longdescription>
 		Idris is a general purpose language with full dependent types.
 		It is compiled, with eager evaluation.

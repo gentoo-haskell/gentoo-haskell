@@ -1,3 +1,24 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
+# A bit broken
+www-apps/blogliterately
+
+# Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
+# Masked as abandonware. Uses outdated depends.
+dev-haskell/manatee
+dev-haskell/manatee-browser
+dev-haskell/manatee-core
+dev-haskell/manatee-imageviewer
+dev-haskell/manatee-ircclient
+dev-haskell/manatee-mplayer
+dev-haskell/manatee-pdfviewer
+dev-haskell/manatee-processmanager
+dev-haskell/manatee-reader
+dev-haskell/manatee-terminal
+
+# Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
+# Masked for removal, use dev-haskell/dbus instead
+dev-haskell/dbus-client
+
 # Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2013)
 # ghc-7.6.3 comes with deepseq-1.3.0.1. It's not easy to
 # shift user to new package entirely.
@@ -6,7 +27,3 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (25 Dec 2012)
 # Masked as needs old removed darcs-2.5
 dev-vcs/darcs-fastconvert
-
-# Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
-# Masked for removal, use dev-haskell/dbus instead
-dev-haskell/dbus-client

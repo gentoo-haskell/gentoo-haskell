@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/glib-0.12:0=[profile?] <dev-haskell/glib-0.13:0=[profile?
 	>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	x11-libs/gtksourceview:3.0
+	x11-libs/gtksourceview:2.0
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=

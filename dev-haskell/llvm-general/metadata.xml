@@ -14,6 +14,6 @@
 		For haddock, see &lt;http://bscarlet.github.io/llvm-general/3.3.5.0/doc/html/llvm-general/index.html&gt;.
 	</longdescription>
 	<use>
-		<flag name="llvm-shared">link against llvm shared rather than static library</flag>
+		<flag name="shared-llvm">link against llvm shared rather than static library</flag>
 	</use>
 </pkgmetadata>
