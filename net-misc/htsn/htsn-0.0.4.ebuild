@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,18 +20,17 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	>=dev-haskell/ansi-terminal-0.6 <dev-haskell/ansi-terminal-0.7
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/cmdargs-0.10.6
 	>=dev-haskell/configurator-0.2 <dev-haskell/configurator-0.3
 	>=dev-haskell/hdaemonize-0.4 <dev-haskell/hdaemonize-0.5
 	>=dev-haskell/hslogger-1.2 <dev-haskell/hslogger-1.3
+	=dev-haskell/htsn-common-0.0.1
 	>=dev-haskell/hxt-9.3 <dev-haskell/hxt-9.4
 	>=dev-haskell/missingh-1.2 <dev-haskell/missingh-1.3
 	>=dev-haskell/network-2.4 <dev-haskell/network-2.5
-	>=dev-haskell/tasty-0.6 <dev-haskell/tasty-0.7
+	>=dev-haskell/tasty-0.7 <dev-haskell/tasty-0.8
 	>=dev-haskell/tasty-hunit-0.4 <dev-haskell/tasty-hunit-0.5
-	>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.4
 	>=dev-lang/ghc-7.6.1
 "
 pkg_setup() {
@@ -71,8 +70,4 @@ src_install() {
 	# user loosen the permissions than require him to tighten them.
 	fowners "${PN}:${PN}" "/etc/${PN}rc"
 	fperms 640 "/etc/${PN}rc"
-
-	# Our user needs to be able to write to the PID directory.
-	diropts --owner="${PN}" --group="${PN}" --mode=0755
-	dodir "/run/${PN}"
 }
