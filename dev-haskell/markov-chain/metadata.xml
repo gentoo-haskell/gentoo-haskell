@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library can be used to generate random sequences of anything
+		with a behaviour that is adapted to some training data.
+		Input a marketing text or a speech and
+		recompose it to another arbitrary text of this sort.
+		Input a dictionary of person names and create new names.
+		Input a sequence of notes and get out a new melody.
+		Input a set of Haskell modules and generate ...
+		nice idea but the result will certainly have neither correct syntax nor types.
+		I think, it&#39;s a good thing about Haskell, that you cannot fool it so easily.
+		The idea is very simple:
+		The algorithm analyses your input\/training data
+		with respect to how likely an @a@ or @e@ follows the letters @r@ and @e@.
+		Then on recomposition it chooses subsequent letters randomly
+		according to the frequencies found in the training data.
+		This library is well suited for /bull-shit generators/.
+	</longdescription>
+</pkgmetadata>
