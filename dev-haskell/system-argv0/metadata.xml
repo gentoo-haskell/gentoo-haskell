@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Get @argv[0]@ as a FilePath. This is how the program was invoked, and might
+		not correspond to any actual file.
+		
+		Use this instead of @System.Environment.getProgName@ if you want the full
+		path, and not just the last component.
+	</longdescription>
+</pkgmetadata>
