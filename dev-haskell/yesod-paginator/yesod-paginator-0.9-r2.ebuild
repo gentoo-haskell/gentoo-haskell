@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.3:=[profile?]
+RDEPEND=">=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
 	>=dev-haskell/resourcet-0.4.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	dev-haskell/transformers:=[profile?]
@@ -31,5 +31,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text       >= 0.11 && < 0.12' 'text       >= 0.11'
+		'text       >= 0.11 && < 0.12' 'text       >= 0.11' \
+		'persistent >= 1.2  && < 1.3' 'persistent >= 1.2  && < 1.4'
 }
