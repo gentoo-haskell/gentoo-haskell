@@ -21,7 +21,7 @@ RESTRICT="test" # failing
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
@@ -33,6 +33,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text >= 0.10 && < 0.12'\
-		'text >= 0.10 && < 1.1'
+		'text >= 0.10 && < 0.12' 'text >= 0.10'
 }
