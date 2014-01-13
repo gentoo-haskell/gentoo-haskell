@@ -21,9 +21,14 @@ IUSE=""
 RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/http:=[profile?]
 	<dev-haskell/puremd5-3:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text       >= 0.11  && < 1.1' 'text       >= 0.11'
+}
