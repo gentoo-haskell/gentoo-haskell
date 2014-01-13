@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/regex-posix-0.95:=[profile?] <dev-haskell/regex-posix-1:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.11:=[profile?]
@@ -45,8 +45,7 @@ DEPEND="${RDEPEND}
 "
 src_prepare() {
 	cabal_chdeps \
-	  'text                      >= 0.11    && < 0.12'\
-	  'text                      >= 0.11    && < 1.1'
+		'text                      >= 0.11    && < 0.12' 'text                      >= 0.11'
 }
 
 src_configure() {
