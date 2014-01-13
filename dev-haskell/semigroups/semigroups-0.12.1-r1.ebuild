@@ -20,10 +20,15 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-1:=[profile?]
-	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text                 >= 0.10 && < 1.1' 'text >= 0.10'
+}
