@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.13:=[profile?]
 	>=dev-haskell/split-0.2.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-haskell/vector-space-points-0.1:=[profile?] <dev-haskell/vector-space-points-0.2:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
@@ -45,3 +45,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11 && < 1.1' 'text >= 0.11'
+}
