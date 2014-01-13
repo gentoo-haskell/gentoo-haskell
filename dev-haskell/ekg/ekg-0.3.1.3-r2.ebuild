@@ -22,7 +22,7 @@ RDEPEND="<dev-haskell/aeson-0.7:=[profile?]
 		<dev-haskell/network-2.5:=[profile?]
 		<dev-haskell/snap-core-0.10:=[profile?]
 		<dev-haskell/snap-server-0.10:=[profile?]
-		<dev-haskell/text-1.1:=[profile?]
+		dev-haskell/text:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
 		<dev-haskell/unordered-containers-0.3:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
@@ -30,5 +30,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
-	cabal_chdeps 'text < 0.12' 'text < 1.1'
+	cabal_chdeps 'text < 0.12' 'text'
 }
