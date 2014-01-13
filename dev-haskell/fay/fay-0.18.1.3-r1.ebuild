@@ -39,7 +39,7 @@ RDEPEND="<dev-haskell/aeson-0.7:=[profile?]
 	<dev-haskell/test-framework-0.9:=[profile?]
 	<dev-haskell/test-framework-hunit-0.4:=[profile?]
 	<dev-haskell/test-framework-th-0.3:=[profile?]
-	<dev-haskell/text-1.1:=[profile?]
+	dev-haskell/text:=[profile?]
 	>=dev-haskell/uniplate-1.6.11:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	<dev-haskell/utf8-string-0.4:=[profile?]
@@ -49,3 +49,8 @@ RDEPEND="<dev-haskell/aeson-0.7:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text                               < 1.1' 'text'
+}
