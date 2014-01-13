@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2.1:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
-	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
@@ -43,5 +43,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'text                       >= 0.10    && < 0.12' \
-		'text                       >= 0.10    && < 1.1'
+		'text                       >= 0.10'
 }
