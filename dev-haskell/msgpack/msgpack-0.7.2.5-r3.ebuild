@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8:=[profile?] <dev-haskell/attoparsec-0.11:=
 	>=dev-haskell/deepseq-1.1:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unordered-containers-0.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -38,5 +38,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'QuickCheck     == 2.5.*' 'QuickCheck     >= 2.5' \
-		'text          == 0.11.*' 'text >= 0.11 && < 1.1'
+		'text          == 0.11.*' 'text >= 0.11'
 }
