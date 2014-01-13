@@ -1,7 +1,0 @@
-diff --git a/src/IHaskell/IPython.hs b/src/IHaskell/IPython.hs
-index d2174e9..c5b4218 100644
---- a/src/IHaskell/IPython.hs
-+++ b/src/IHaskell/IPython.hs
-@@ -179 +179 @@ installPipDependencies = withTmpDir $ \tmpDir ->
--      , ("jinja2","2.7.1")
-+      , ("Jinja2","2.7.1")
