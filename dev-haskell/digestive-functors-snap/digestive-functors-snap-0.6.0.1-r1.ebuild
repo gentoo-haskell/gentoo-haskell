@@ -21,9 +21,14 @@ IUSE=""
 RDEPEND=">=dev-haskell/digestive-functors-0.6:=[profile?] <dev-haskell/digestive-functors-0.7:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/snap-core-0.7:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text               >= 0.11 && < 1.1' 'text               >= 0.11'
+}
