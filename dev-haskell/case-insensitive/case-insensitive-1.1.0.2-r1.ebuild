@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/text-0.3:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.2.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.4 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text       >= 0.3 && < 1.1' 'text       >= 0.3' \
+		'text                 >= 0.3   && < 1.1' 'text                 >= 0.3'
+}
