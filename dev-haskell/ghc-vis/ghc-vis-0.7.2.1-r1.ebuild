@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.13:=
 	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.13:=
 	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.2:=
 	>=dev-haskell/svgcairo-0.12:= <dev-haskell/svgcairo-0.13:=
-	>=dev-haskell/text-0.11:= <dev-haskell/text-1.1:=
+	>=dev-haskell/text-0.11:=
 	>=dev-haskell/transformers-0.3:= <dev-haskell/transformers-0.4:=
 	>=dev-lang/ghc-7.4.1:=
 	graph? ( >=dev-haskell/graphviz-2999.16:= <dev-haskell/graphviz-2999.17:=
@@ -34,6 +34,11 @@ RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.13:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11 && < 1.1' 'text >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
