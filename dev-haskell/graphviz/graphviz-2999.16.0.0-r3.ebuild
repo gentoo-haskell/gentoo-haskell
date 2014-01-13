@@ -23,7 +23,7 @@ RDEPEND="=dev-haskell/colour-2.3*:=[profile?]
 		=dev-haskell/fgl-5.4*:=[profile?]
 		>=dev-haskell/polyparse-1.7:=[profile?]
 		<dev-haskell/polyparse-1.10:=[profile?]
-		=dev-haskell/temporary-1.1*:=[profile?]
+		>=dev-haskell/temporary-1.1:=[profile?]
 		dev-haskell/text:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
 		<dev-haskell/transformers-0.4:=[profile?]
@@ -41,5 +41,6 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.7' \
 		'polyparse >= 1.7 && < 1.9' 'polyparse >= 1.7 && < 1.10' \
-		'dlist == 0.5.*' 'dlist >= 0.5'
+		'dlist == 0.5.*' 'dlist >= 0.5' \
+		'temporary >=1.1 && <1.2' 'temporary >=1.1'
 }
