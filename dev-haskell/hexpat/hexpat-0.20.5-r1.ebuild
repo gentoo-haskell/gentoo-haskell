@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/list-0.4.2:=[profile?] <dev-haskell/list-0.6:=[profile?]
-	>=dev-haskell/text-0.5.0.0:=[profile?] <dev-haskell/text-1.1.0.0:=[profile?]
+	>=dev-haskell/text-0.5.0.0:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/list-0.4.2:=[profile?] <dev-haskell/list-0.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.5.0.0 && < 1.1.0.0' 'text >= 0.5.0.0'
+}
