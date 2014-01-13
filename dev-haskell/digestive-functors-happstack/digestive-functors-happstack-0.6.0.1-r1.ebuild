@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/digestive-functors-0.6:=[profile?] <dev-haskell/digestive-functors-0.7:=[profile?]
 	>=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'happstack-server   >= 6.0  && < 7.2' 'happstack-server   >= 6.0  && < 7.4'
+		'happstack-server   >= 6.0  && < 7.2' 'happstack-server   >= 6.0  && < 7.4' \
+		'text               >= 0.11 && < 1.1' 'text               >= 0.11'
 }
