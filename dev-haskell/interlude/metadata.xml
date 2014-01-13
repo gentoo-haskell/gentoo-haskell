@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Interlude is a CPP include file, and a module which you can use instead of the
+		(often implicit) Prelude import.  It replaces some partial
+		functions (i.e. functions that may fail on correctly typed input like &#39;head []&#39;)
+		with pattern matches, so that a sensible error message that includes
+		location can be printed out.
+	</longdescription>
+</pkgmetadata>
