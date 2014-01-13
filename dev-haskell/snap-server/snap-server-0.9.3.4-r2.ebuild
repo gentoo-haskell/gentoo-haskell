@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
 	>=dev-haskell/snap-core-0.9.3:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-0.12:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	openssl? ( >=dev-haskell/hsopenssl-0.10:=[profile?] <dev-haskell/hsopenssl-0.11:=[profile?] )
@@ -36,6 +36,11 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text                      >= 0.11     && < 0.12' 'text                      >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
