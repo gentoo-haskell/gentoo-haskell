@@ -23,10 +23,15 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 	>=dev-haskell/hsp-0.9.2:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.5:=[profile?]
-	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.1:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text             >= 0.10 && < 1.1' 'text             >= 0.10'
+}
