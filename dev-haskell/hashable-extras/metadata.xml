@@ -5,6 +5,10 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="lib-werror">Treat warnings as errors when building.</flag>
+		<flag name="test-doctests">Enable the doctest suite when using the enable-tests option for cabal.</flag>
+	</use>
 	<longdescription>
 		This package provides higher rank analogues to the Hashable data type.
 		
