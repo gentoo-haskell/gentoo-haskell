@@ -5,9 +5,6 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
-	<use>
-		<flag name="buildtests">Build the executable to run unit tests.</flag>
-	</use>
 	<longdescription>
 		The idea is to minimize external dependencies so this is usable in just about any context.
 	</longdescription>
