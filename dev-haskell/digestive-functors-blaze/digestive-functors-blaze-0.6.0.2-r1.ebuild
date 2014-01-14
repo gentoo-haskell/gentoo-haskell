@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
 
-src_preare() {
+src_prepare() {
 	cabal_chdeps \
 		'text               >= 0.11 && < 1.1' 'text               >= 0.11'
 }
