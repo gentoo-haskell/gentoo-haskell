@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,11 +30,11 @@ PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch
 	"${FILESDIR}"/${P}-notype.patch)
 
 src_prepare() {
-        cabal_chdeps \
-                'text >= 0.7 && < 0.12' 'text >= 0.7' \
-                'containers >= 0.1 && < 0.5' 'containers >= 0.1' \
-                'dbus-core >= 0.8 && < 0.9' 'dbus-core >= 0.8' \
-                'transformers >= 0.2 && < 0.3' 'transformers >= 0.2'
-        sed -i 's/type E.ErrorType/type ErrorType/' \
-                hs/DBus/Client.hs
+	cabal_chdeps \
+		'text >= 0.7 && < 0.12' 'text >= 0.7' \
+		'containers >= 0.1 && < 0.5' 'containers >= 0.1' \
+		'dbus-core >= 0.8 && < 0.9' 'dbus-core >= 0.8' \
+		'transformers >= 0.2 && < 0.3' 'transformers >= 0.2'
+	sed -i 's/type E.ErrorType/type ErrorType/' \
+		hs/DBus/Client.hs
 }
