@@ -23,7 +23,5 @@
 	<use>
 		<flag name="chaselev">Use Chase-Lev Deques for higher-perf
 		work-stealing.</flag>
-		<flag name="newgeneric">Provide instances for the new par-classes
-		generic Par programming interface.</flag>
 	</use>
 </pkgmetadata>
