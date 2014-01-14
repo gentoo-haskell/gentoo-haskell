@@ -6,7 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<use>
-		<flag name="rev-proxy">Reverse proxy with http-conduit.</flag>
 		<flag name="tls">HTTPS support.</flag>
 	</use>
 	<longdescription>
