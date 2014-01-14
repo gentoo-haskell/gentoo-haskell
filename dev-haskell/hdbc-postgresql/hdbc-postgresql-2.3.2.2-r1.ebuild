@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc-postgresql/hdbc-postgresql-2.3.2.2-r1.ebuild,v 1.1 2014/01/14 08:34:09 slyfox Exp $
 
 EAPI=5
 
@@ -18,7 +18,7 @@ HOMEPAGE="http://github.com/hdbc/hdbc-postgresql"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="test" # requires configured postgresql
