@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="benchmark">Build benchmarks.</flag>
+	</use>
 	<longdescription>
 		Symmetrical Block, Stream and PubKey Ciphers
 	</longdescription>
