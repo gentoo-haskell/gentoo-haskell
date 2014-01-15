@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/enumerator-0.4:=[profile?] <dev-haskell/enumerator-0.5:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec >= 0.10 && < 0.11' 'attoparsec >= 0.10'
+}
