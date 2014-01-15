@@ -21,7 +21,7 @@ IUSE=""
 
 RESTRICT=test
 
-RDEPEND="=dev-haskell/attoparsec-0.10*:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 		=dev-haskell/boundedchan-1.0*:=[profile?]
 		=dev-haskell/bytestring-lexing-0.4*:=[profile?]
 		=dev-haskell/mtl-2*:=[profile?]
@@ -36,3 +36,8 @@ DEPEND="${RDEPEND}
 			dev-haskell/test-framework-hunit
 		)
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec == 0.10.*' 'attoparsec >= 0.10'
+}
