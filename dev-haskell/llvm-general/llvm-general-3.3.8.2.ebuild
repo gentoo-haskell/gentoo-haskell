@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,7 +30,7 @@ RDEPEND="~dev-haskell/llvm-general-pure-3.3.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	sys-devel/llvm
+	=sys-devel/llvm-3.3*
 	test? ( >=dev-haskell/hunit-1.2.4.2
 		>=dev-haskell/quickcheck-2.5.1.1
 		>=dev-haskell/test-framework-0.5
