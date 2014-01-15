@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (15 Jan 2014)
+# outdated. does not compile against modern hlist
+dev-haskell/nettle-openflow
+
 # Sergei Trofimovich <slyfox@gentoo.org> (13 Jan 2014)
 # outdated. does not compile against modern WAI API
 dev-haskell/wai-logger-prefork
