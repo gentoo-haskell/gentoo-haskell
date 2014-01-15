@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?]
-	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
+	>=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.12:=[profile?]
@@ -42,6 +42,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text                       >= 0.10    && < 0.12' \
-		'text                       >= 0.10'
+		'attoparsec                 >= 0.10    && < 0.11' 'attoparsec                 >= 0.10' \
+		'text                       >= 0.10    && < 0.12' 'text                       >= 0.10'
 }
