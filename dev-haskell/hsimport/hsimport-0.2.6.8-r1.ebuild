@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/cmdargs-0.10.5:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14.0:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	>=dev-haskell/lens-3.9.2:=[profile?] <dev-haskell/lens-4.0:=[profile?]
@@ -35,5 +35,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'attoparsec >= 0.10.4.0 && < 0.11' 'attoparsec >= 0.10.4.0' \
 		'text >= 0.11.3.1 && < 0.12' 'text >= 0.11.3.1'
 }
