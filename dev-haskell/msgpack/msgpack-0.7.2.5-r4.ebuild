@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.8:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.8:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/deepseq-1.1:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	dev-haskell/hashable:=[profile?]
@@ -38,5 +38,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'QuickCheck     == 2.5.*' 'QuickCheck     >= 2.5' \
+		'attoparsec    >= 0.8 && < 0.11' 'attoparsec    >= 0.8' \
 		'text          == 0.11.*' 'text >= 0.11'
 }
