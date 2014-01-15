@@ -1,0 +1,27 @@
+diff --git a/Hbro/Config.hs b/Hbro/Config.hs
+index 51fa707..7807708 100644
+--- a/Hbro/Config.hs
++++ b/Hbro/Config.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE FlexibleInstances, TemplateHaskell, UndecidableInstances #-}
++{-# LANGUAGE CPP, FlexibleInstances, TemplateHaskell, UndecidableInstances #-}
+ module Hbro.Config where
+ 
+ -- {{{ Imports
+@@ -73,6 +73,8 @@ type ConfigState n m = (ConfigReader n m, ConfigWriter n m)
+ modifyConfig :: (ConfigState n m) => Simple Lens (Config n) a -> (a -> a) -> m ()
+ modifyConfig l f = writeConfig l . f =<< readConfig l
+ 
++-- defined in latest webkit
++#if 0
+ instance Eq NavigationReason where
+   a == b = (fromEnum a) == (fromEnum b)
+ 
+@@ -83,6 +85,7 @@ instance Show NavigationReason where
+   show WebNavigationReasonReload        = "Reload"
+   show WebNavigationReasonFormResubmitted = "Form resubmitted"
+   show WebNavigationReasonOther         = "Other"
++#endif
+ -- }}}
+ 
+ -- | Run an action unless verbosity is 'Quiet'
