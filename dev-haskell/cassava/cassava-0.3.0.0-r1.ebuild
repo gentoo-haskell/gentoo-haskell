@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.11:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?]
 	<dev-haskell/blaze-builder-0.4:=[profile?]
 	dev-haskell/text:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
@@ -36,5 +36,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'attoparsec >= 0.10.2 && < 0.11' 'attoparsec >= 0.10.2' \
 		'text < 0.12' 'text'
 }
