@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/aeson-0.7:=[profile?]
-	<dev-haskell/attoparsec-0.11:=[profile?]
+	dev-haskell/attoparsec:=[profile?]
 	<dev-haskell/cabal-1.19:=[profile?]
 	<dev-haskell/cpphs-1.19:=[profile?]
 	<dev-haskell/data-default-0.6:=[profile?]
@@ -52,5 +52,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'attoparsec                         < 0.11' 'attoparsec' \
 		'text                               < 1.1' 'text'
 }
