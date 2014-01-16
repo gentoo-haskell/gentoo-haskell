@@ -45,3 +45,9 @@ src_configure() {
 		$(cabal_flag full full) \
 		$(cabal_flag graph graph)
 }
+
+pkg_postinst() {
+	elog "To use ghc-vis you have to load its ghci file in GHCi. To do this"
+	elog "automatically when GHCi is started run:"
+	elog "echo \":script ${EROOT}/usr/share/${P}/ghc-$(ghc-version)/ghci\" >> ~/.ghci"
+}
