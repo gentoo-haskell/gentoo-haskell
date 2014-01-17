@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package defines a class for monads which can keep a monadic call trace.
+		
+		* See the blog post &lt;http://pepeiborra.wordpress.com/2009/11/01/monadic-stack-traces-that-make-a-lot-of-sense&gt; for more information.
+		
+		A preprocessor is available (see the package monadloc-pp) which inserts calls
+		to &quot;Control.Monad.Loc.withLoc&quot; before every monadic statement in a module.
+		To invoke the preprocessor, add the pragma @OPTIONS_GHC -F -pgmF MonadLoc@  at the top of your Haskell files  together with an import for the &quot;Control.Monad.Loc&quot; module
+		
+		This package provides no implementation of the &quot;Control.Monad.Loc.MonadLoc&quot; interface.
+		Currently the only package that does so is @control-monad-exception@,
+		but any other package can implement it and provide monadic call traces.
+		/Changes/:
+		
+		* 0.7 - Extracted Template Haskell macro to separate module to allow @Control.Monad.Loc@ to be Safe. (thanks to Deian Stefan)
+		
+		* 0.6 - Extracted the preprocessor to a separate package @monadloc-pp@ to minimize the set of dependencies.
+	</longdescription>
+</pkgmetadata>
