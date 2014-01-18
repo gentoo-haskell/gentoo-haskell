@@ -1,0 +1,39 @@
+From 06de086be1078042f124243393f9251f49bffd9c Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sat, 18 Jan 2014 13:20:48 +0300
+Subject: [PATCH: hs-java] JVM/Converter.hs: unbreak interface class links to
+ Constant Pool
+
+Bug ws noticed on class of kind:
+
+    public class Foo extends JApplet implements ActionListener, Runnable {}
+
+'rebuild-class.hs' did break .class file by mangling
+references to interfaces in constant pool.
+
+Patch fixes interface references from Strings representing Class
+names to Classes in constant pool.
+
+Thanks!
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ JVM/Converter.hs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/JVM/Converter.hs b/JVM/Converter.hs
+index 6380168..8a525a9 100644
+--- a/JVM/Converter.hs
++++ b/JVM/Converter.hs
+@@ -67,7 +67,7 @@ classDirect2File (Class {..}) =
+     thisClass = force "this" $ poolClassIndex poolInfo thisClass,
+     superClass = force "super" $ poolClassIndex poolInfo superClass,
+     interfacesCount = fromIntegral (length interfaces),
+-    interfaces = map (force "ifaces" . poolIndex poolInfo) interfaces,
++    interfaces = map (force "ifaces" . poolClassIndex poolInfo) interfaces,
+     classFieldsCount = fromIntegral (length classFields),
+     classFields = map (fieldDirect2File poolInfo) classFields,
+     classMethodsCount = fromIntegral (length classMethods),
+-- 
+1.8.5.2
+
