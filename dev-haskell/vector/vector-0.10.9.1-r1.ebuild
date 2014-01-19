@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,6 +24,19 @@ RDEPEND=">=dev-haskell/primitive-0.5.0.1:=[profile?] <dev-haskell/primitive-0.6:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	local can_spec_const="yes"
+
+	ghc-supports-interpreter || can_spec_const="no"
+
+	# ghci-less GHC can't do ANN #482960
+	if [[ ${can_spec_const} == "no" ]]; then
+		einfo "Disabling 'ForceSpecConstr' due to bug #482960"
+		sed -e 's/{-# ANN type SPEC ForceSpecConstr #-}/{- # ANN type SPEC ForceSpecConstr #-}/' \
+			-i Data/Vector/Fusion/Stream/Monadic.hs || die
+	fi
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
