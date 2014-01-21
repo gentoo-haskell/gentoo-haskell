@@ -33,7 +33,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.2:=[profile?]
-	>=dev-haskell/tagsoup-0.12.6:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
+	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	checkexternal? ( >=dev-haskell/http-conduit-1.8:=[profile?] <dev-haskell/http-conduit-2.1:=[profile?]
