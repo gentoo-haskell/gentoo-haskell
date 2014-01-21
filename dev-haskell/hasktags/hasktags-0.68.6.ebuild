@@ -16,19 +16,17 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug +enable_caching"
+IUSE="debug"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-	dev-haskell/interlude
 	>=dev-haskell/json-0.5 <dev-haskell/json-0.8
 	>=dev-lang/ghc-7.0.1
+	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag debug debug) \
-		$(cabal_flag enable_caching enable_caching)
+		$(cabal_flag debug debug)
 }
