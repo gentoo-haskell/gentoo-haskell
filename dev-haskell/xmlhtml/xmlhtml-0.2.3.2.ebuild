@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
-	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/parsec-3.1.2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
