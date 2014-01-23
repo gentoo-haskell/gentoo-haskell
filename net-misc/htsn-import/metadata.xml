@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		/Usage/:
+		
+		@
+		htsn-import [OPTIONS] [FILES]
+		@
+		
+		The Sports Network &lt;http://www.sportsnetwork.com/&gt; offers an XML feed
+		containing various sports news and statistics. Our sister program
+		/htsn/ is capable of retrieving the feed and saving the individual
+		XML documents contained therein. But what to do with them?
+		
+		The purpose of /htsn-import/ is to take these XML documents and
+		get them into something we can use, a relational database management
+		system (RDBMS), loosely known as a SQL database. The structure of
+		relational database, is, well, relational, and the feed XML is not. So
+		there is some work to do before the data can be inserted.
+		
+		First, we must parse the XML. Each supported document type (see below)
+		has a full pickle/unpickle implementation (\&quot;pickle\&quot; is simply a
+		synonym for serialize here). That means that we parse the entire
+		document into a data structure, and if we pickle (serialize) that data
+		structure, we get the exact same XML document tha we started with.
+		
+		This is important for two reasons. First, it serves as a second level
+		of validation. The first validation is performed by the XML parser,
+		but if that succeeds and unpicking fails, we know that something is
+		fishy. Second, we don&#39;t ever want to be surprised by some new element
+		or attribute showing up in the XML. The fact that we can unpickle the
+		whole thing now means that we won&#39;t be surprised in the future.
+		
+		The aforementioned feature is especially important because we
+		automatically migrate the database schema every time we import a
+		document. If you attempt to import a \&quot;newsxml.dtd\&quot; document, all
+		database objects relating to the news will be created if they do not
+		exist. We don&#39;t want the schema to change out from under us without
+		warning, so it&#39;s important that no XML be parsed that would result in
+		a different schema than we had previously. Since we can
+		pickle/unpickle everything already, this should be impossible.
+		
+		Examples and usage documentation are available in the man page.
+	</longdescription>
+</pkgmetadata>
