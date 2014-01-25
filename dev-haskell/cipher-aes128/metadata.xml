@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Cipher-aes128 is an implementation of AES and common modes of operation.  It borrows Hanquez&#39;s C AES code (see &#39;cipher-aes&#39;) but
+		is unique due to including compile-time detection of
+		NI compiler support, a slightly more functional interface
+		for GCM operations, exposure of &#39;Ptr&#39; based operations via the .Internal module, and build-in crypto-api support.
+		Cipher-aes128 was originally developed as &quot;&#39;cipher-aes&#39; plus trampolines&quot;, which has since been adopted into cipher-aes.
+	</longdescription>
+</pkgmetadata>
