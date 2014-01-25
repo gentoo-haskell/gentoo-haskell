@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A test framework for hash and cipher operations using
+		the crypto-api interface.  Known answer tests (KATs)
+		for common cryptographic algorithms are included.
+		Patches welcome (both adding KATs for more algorithms
+		or property tests for classes of algorithms).
+	</longdescription>
+</pkgmetadata>
