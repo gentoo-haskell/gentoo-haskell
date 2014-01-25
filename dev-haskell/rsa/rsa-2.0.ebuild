@@ -22,6 +22,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # make 30 minutes on i7 box
+
 RDEPEND=">dev-haskell/binary-0.0:=[profile?] <dev-haskell/binary-10000:=[profile?]
 	>=dev-haskell/crypto-api-0.10:=[profile?] <dev-haskell/crypto-api-10000:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.2:=[profile?] <dev-haskell/crypto-pubkey-types-10000:=[profile?]
