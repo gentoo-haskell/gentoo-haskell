@@ -24,10 +24,10 @@ RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.1:=[profil
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.16.0
 "
 
 src_configure() {
