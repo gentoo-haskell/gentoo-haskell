@@ -31,10 +31,10 @@ RDEPEND=">=dev-haskell/async-2.0.1:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/stm-chans-2.0:=[profile?] <dev-haskell/stm-chans-3.1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <=dev-haskell/transformers-0.4:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.10.0.0
 	test? ( dev-haskell/hunit
 		>=dev-haskell/quickcheck-2
 		dev-haskell/test-framework
