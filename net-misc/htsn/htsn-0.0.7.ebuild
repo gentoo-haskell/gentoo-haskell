@@ -32,6 +32,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/tasty-0.7 <dev-haskell/tasty-0.8
 	>=dev-haskell/tasty-hunit-0.4 <dev-haskell/tasty-hunit-0.5
 	>=dev-lang/ghc-7.6.1
+	test? ( >=dev-util/shelltestrunner-1.3 )
 "
 pkg_setup() {
 	haskell-cabal_pkg_setup
