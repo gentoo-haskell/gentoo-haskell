@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
@@ -26,14 +26,15 @@ SLOT="0"
 KEYWORDS=""
 IUSE="doc examples +llvm noeffects"
 
-RDEPEND=""
+RDEPEND="dev-haskell/libffi
+	dev-libs/gmp"
+
 DEPEND="${RDEPEND}
 	dev-haskell/ansi-terminal
 	dev-haskell/binary
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/haskeline-0.7
 	>=dev-haskell/language-java-0.2.2
-	dev-haskell/libffi
 	dev-haskell/mtl
 	>=dev-haskell/parsec-3
 	>=dev-haskell/parsers-0.9
@@ -48,7 +49,8 @@ DEPEND="${RDEPEND}
 	>=dev-lang/ghc-7.6.1
 	${DOC_DEPS}
 	llvm? ( >=dev-haskell/llvm-general-3.3.8 <dev-haskell/llvm-general-3.3.9
-		>=dev-haskell/llvm-general-pure-3.3.8 <dev-haskell/llvm-general-pure-3.3.9 )
+		>=dev-haskell/llvm-general-pure-3.3.8 <dev-haskell/llvm-general-pure-3.3.9
+		dev-libs/boehm-gc )
 "
 
 src_prepare() {
