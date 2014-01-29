@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+threaded emacs"
+IUSE="emacs"
 
 RDEPEND=">=dev-haskell/cpphs-1.11:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
@@ -32,15 +32,14 @@ DEPEND="${RDEPEND}
 SITEFILE="60${PN}-gentoo.el"
 
 src_configure() {
-	threaded_flag=""
-	if $(ghc-getghc) --info | grep "support smp" | grep -q "yes"; then
+	local threaded_flag=""
+	if $(ghc-supports-threaded-runtime); then
 		threaded_flag="--flags=threaded"
-		einfo "$p will be built with threads support"
 	else
 		threaded_flag="--flags=-threaded"
-		einfo "$p will be built without threads support"
 	fi
-	cabal_src_configure $threaded_flag
+	cabal_src_configure \
+		$threaded_flag
 }
 
 src_compile() {
