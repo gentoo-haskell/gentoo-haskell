@@ -41,10 +41,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.6-haddock.patch
-
-	cabal_chdeps \
-		'base                 >= 4.5    && < 4.7' 'base                 >= 4.5' \
-		'text                 == 0.11.*' 'text                 >= 0.11'
 }
 
 src_configure() {
