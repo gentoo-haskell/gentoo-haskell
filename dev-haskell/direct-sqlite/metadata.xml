@@ -57,5 +57,6 @@
 	<use>
 		<flag name="fulltextsearch">Enable full-text search when using the bundled sqlite library.</flag>
 		<flag name="systemlib">Use the system-wide sqlite library.</flag>
+		<flag name="urifilenames">Enable URI filenames when using the bundled sqlite library.</flag>
 	</use>
 </pkgmetadata>
