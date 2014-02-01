@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/cpphs:=[profile?]
 	dev-haskell/derive:=[profile?]
+	dev-haskell/drift:=[profile?]
 	dev-haskell/fgl:=[profile?]
 	dev-haskell/haskeline:=[profile?]
 	dev-haskell/hssyck:=[profile?]
