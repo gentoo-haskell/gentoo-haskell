@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # does not work corectly when current ihaskell version is broken
+
 RDEPEND=">=dev-haskell/aeson-0.6.1:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
