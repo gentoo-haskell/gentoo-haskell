@@ -51,7 +51,7 @@ RDEPEND=">=app-editors/leksah-server-0.12.1.2:=[profile?]
 		>=dev-haskell/quickcheck-2.4.2:=[profile?]
 		<dev-haskell/quickcheck-2.7:=[profile?]
 		=dev-haskell/regex-base-0.93*:=[profile?]
-		=dev-haskell/regex-tdfa-1.1*:=[profile?]
+		>=dev-haskell/regex-tdfa-1.1:=[profile?]
 		>=dev-haskell/strict-0.3.2:=[profile?]
 		<dev-haskell/strict-0.4:=[profile?]
 		>=dev-haskell/text-0.11.1.5:=[profile?]
@@ -81,7 +81,8 @@ src_prepare() {
 	cabal_chdeps \
 		'binary >=0.5.0.0 && <0.7' 'binary >=0.5.0.0 && <0.8' \
 		'QuickCheck >=2.4.2 && <2.6' 'QuickCheck >=2.4.2 && <2.7' \
-		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5 && < 1.2'
+		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5 && < 1.2' \
+		'regex-tdfa ==1.1.*' 'regex-tdfa >= 1.1'
 }
 
 src_configure() {
