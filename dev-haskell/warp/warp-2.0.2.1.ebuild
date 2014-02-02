@@ -25,7 +25,6 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builde
 	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.1:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
-	dev-haskell/http-attoparsec:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
