@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/puremd5-0.2.3:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
-	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.2:=[profile?]
+	>=dev-haskell/regex-tdfa-1.1:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	dev-haskell/uniplate:=[profile?]
 	>=dev-haskell/unix-compat-0.1:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
@@ -69,7 +69,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.6.7.0-vte.patch
 	cabal_chdeps \
-		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3'
+		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3' \
+		'regex-tdfa == 1.1.*' 'regex-tdfa >= 1.1'
 }
 
 src_configure() {
