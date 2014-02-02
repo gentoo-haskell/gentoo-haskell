@@ -6,6 +6,7 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<use>
+		<flag name="forceghcilib">Force enable GHCi workaround library if not using shared libraries.</flag>
 		<flag name="threadedtestsuite">Build test executable with the threaded RTS.</flag>
 		<flag name="usepkgconfig">Use pkg-config for libraries instead of the platform default mechanism.</flag>
 	</use>

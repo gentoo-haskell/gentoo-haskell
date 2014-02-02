@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+threadedtestsuite usepkgconfig"
+IUSE="+forceghcilib +threadedtestsuite usepkgconfig"
 
 RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
 	>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
@@ -36,6 +36,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
+		$(cabal_flag forceghcilib forceghcilib) \
 		$(cabal_flag threadedtestsuite threadedtestsuite) \
 		$(cabal_flag usepkgconfig usepkgconfig)
 }
