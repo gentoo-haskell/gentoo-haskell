@@ -27,9 +27,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/filemanip-0.3 <dev-haskell/filemanip-0.4
 	<dev-haskell/hunit-1.3
 	<dev-haskell/parsec-3.2
-	>=dev-haskell/regex-tdfa-1.1 <dev-haskell/regex-tdfa-1.2
+	>=dev-haskell/regex-tdfa-1.1 <dev-haskell/regex-tdfa-1.3
 	>=dev-haskell/test-framework-0.3.2 <dev-haskell/test-framework-0.9
 	>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 	>=dev-haskell/utf8-string-0.3.5 <dev-haskell/utf8-string-0.4
 	>=dev-lang/ghc-6.10.4
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'regex-tdfa           >= 1.1   && < 1.2' 'regex-tdfa           >= 1.1   && < 1.3'
+}
