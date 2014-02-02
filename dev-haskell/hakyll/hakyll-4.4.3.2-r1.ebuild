@@ -32,7 +32,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
-	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.2:=[profile?]
+	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -54,6 +54,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
