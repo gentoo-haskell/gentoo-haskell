@@ -20,28 +20,24 @@ IUSE=""
 
 RESTRICT=test # fails to build
 
-RDEPEND=">=dev-haskell/deepseq-1.1:=[profile?]
-		<dev-haskell/deepseq-1.4:=[profile?]
-		>=dev-haskell/mtl-1.1.1.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/parallel-2.2:=[profile?]
-		<dev-haskell/parallel-3.3:=[profile?]
-		>=dev-haskell/parsec-2:=[profile?]
-		<dev-haskell/parsec-4:=[profile?]
-		dev-haskell/string-qq:=[profile?]
-		=dev-haskell/terminfo-0.3*:=[profile?]
-		=dev-haskell/utf8-string-0.3*:=[profile?]
-		>=dev-haskell/vector-0.7:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+RDEPEND=">=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/parallel-2.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
+	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
+	dev-haskell/string-qq:=[profile?]
+	>=dev-haskell/terminfo-0.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?]
+	=dev-haskell/utf8-string-0.3*:=[profile?]
+	>=dev-haskell/vector-0.7:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.14.0
-		test? ( >=dev-haskell/quickcheck-2.4
-			=dev-haskell/random-1.0*
-		)"
+	>=dev-haskell/cabal-1.14.0
+	test? ( >=dev-haskell/quickcheck-2.4
+		=dev-haskell/random-1.0*
+	)"
 
 src_prepare() {
 	cabal_chdeps \
-		'Cabal == 1.17.*' 'Cabal >= 1.10'
+		'Cabal == 1.17.*' 'Cabal >= 1.10' \
+		'terminfo >= 0.3 && < 0.4' 'terminfo >= 0.3 && < 0.5'
 }
 
 src_configure() {
