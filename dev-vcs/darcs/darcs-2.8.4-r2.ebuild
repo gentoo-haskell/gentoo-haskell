@@ -33,7 +33,7 @@ RDEPEND="=dev-haskell/extensible-exceptions-0.1*:=[profile?]
 		>=dev-haskell/regex-compat-0.95.1:=[profile?]
 		>=dev-haskell/tar-0.3:=[profile?]
 		<dev-haskell/tar-0.5:=[profile?]
-		=dev-haskell/terminfo-0.3*:=[profile?]
+		>=dev-haskell/terminfo-0.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?]
 		>=dev-haskell/text-0.11.0.6:=[profile?]
 		>=dev-haskell/vector-0.7:=[profile?]
 		>=dev-haskell/zlib-0.5.1.0:=[profile?]
@@ -66,7 +66,8 @@ src_prepare() {
 	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
 
 	cabal_chdeps \
-		'text       >= 0.11.0.6 && < 0.12.0.0' 'text       >= 0.11.0.6'
+		'text       >= 0.11.0.6 && < 0.12.0.0' 'text       >= 0.11.0.6' \
+		'terminfo == 0.3.*' 'terminfo >= 0.3 && < 0.5'
 }
 
 src_configure() {
