@@ -1,34 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-# Brief explanation of the bootstrap logic:
-#
-# Previous ghc ebuilds have been split into two: ghc and ghc-bin,
-# where ghc-bin was primarily used for bootstrapping purposes.
-# From now on, these two ebuilds have been combined, with the
-# binary USE flag used to determine whether or not the pre-built
-# binary package should be emerged or whether ghc should be compiled
-# from source.  If the latter, then the relevant ghc-bin for the
-# arch in question will be used in the working directory to compile
-# ghc from source.
-#
-# This solution has the advantage of allowing us to retain the one
-# ebuild for both packages, and thus phase out virtual/ghc.
-
-# Note to users of hardened gcc-3.x:
-#
-# If you emerge ghc with hardened gcc it should work fine (because we
-# turn off the hardened features that would otherwise break ghc).
-# However, emerging ghc while using a vanilla gcc and then switching to
-# hardened gcc (using gcc-config) will leave you with a broken ghc. To
-# fix it you would need to either switch back to vanilla gcc or re-emerge
-# ghc (or ghc-bin). Note that also if you are using hardened gcc-3.x and
-# you switch to gcc-4.x that this will also break ghc and you'll need to
-# re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
-# gcc-3.x and 4.x with no problems.
-
-EAPI="5"
+EAPI=5
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
@@ -41,7 +15,8 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-inherit base autotools bash-completion-r1 eutils flag-o-matic multilib toolchain-funcs ghc-package versionator pax-utils
+inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
+inherit multilib pax-utils toolchain-funcs versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -71,6 +46,7 @@ yet_binary() {
 		#	return 0
 		#;;
 		#amd64) return 0 ;;
+		#ia64) return 0 ;;
 		#ppc) return 0 ;;
 		#ppc64) return 0 ;;
 		#sparc) return 0 ;;
@@ -79,17 +55,17 @@ yet_binary() {
 	esac
 }
 
-# snapshot copied from http://www.haskell.org/ghc/dist/current/dist/
-# SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/current/dist/${P}-src.tar.bz2 )"
+#SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.8.1-rc1/ghc-7.8.20140130-src.tar.bz2 )"
+S="${WORKDIR}"/ghc-7.8.20140130
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0/${PV}"
-# ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
-#KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+#KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
 IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
+IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
@@ -106,15 +82,15 @@ RDEPEND="
 # that we want the binaries to use the latest versioun available, and not to be
 # built against gmp-4
 
+# similar for glibc. we have bootstrapped binaries against glibc-2.17
 DEPEND="${RDEPEND}
 	ghcbootstrap? (		>=dev-haskell/alex-2.3
 						>=dev-haskell/happy-1.18
 				doc? (	app-text/docbook-xml-dtd:4.2
 				app-text/docbook-xml-dtd:4.5
 				app-text/docbook-xsl-stylesheets
-				>=dev-libs/libxslt-1.1.2 ) )"
-# In the ghcbootstrap case we rely on the developer having
-# >=ghc-5.04.3 on their $PATH already
+				>=dev-libs/libxslt-1.1.2 ) )
+	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
@@ -313,8 +289,6 @@ pkg_setup() {
 	fi
 }
 
-S="${WORKDIR}/ghc-7.8.20140130"
-
 src_unpack() {
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
@@ -358,12 +332,12 @@ src_prepare() {
 				mkdir "${WORKDIR}"/ghc-bin-installer || die
 				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
 				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
-				use x86-solaris && unpack ghc-7.8.1-i386-unknown-solaris2.tar.bz2
-				use ppc-macos && unpack ghc-7.8.1-powerpc-apple-darwin.tar.bz2
-				use x86-macos && unpack ghc-7.8.1-i386-apple-darwin.tar.bz2
+				use x86-solaris && unpack ghc-7.0.3-i386-unknown-solaris2.tar.bz2
+				use x86-macos && unpack ghc-7.4.1-i386-apple-darwin.tar.bz2
+				use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
 				popd > /dev/null
 
-				pushd "${WORKDIR}"/ghc-bin-installer/ghc-7.8.? > /dev/null || die
+				pushd "${WORKDIR}"/ghc-bin-installer/ghc-[67].?*.? > /dev/null || die
 				# fix the binaries so they run, on Solaris we need an
 				# LD_LIBRARY_PATH which has our prefix libdirs, on
 				# Darwin we need to replace the frameworks with our libs
@@ -372,11 +346,6 @@ src_prepare() {
 				if [[ ${CHOST} == *-solaris* ]] ; then
 					export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
 				elif [[ ${CHOST} == *-darwin* ]] ; then
-					# http://hackage.haskell.org/trac/ghc/ticket/2942
-					pushd utils/haddock/dist-install/build > /dev/null
-					ln -s Haddock haddock >& /dev/null # fails on IN-sensitive
-					popd > /dev/null
-
 					local readline_framework=GNUreadline.framework/GNUreadline
 					local gmp_framework=/opt/local/lib/libgmp.10.dylib
 					local ncurses_file=/opt/local/lib/libncurses.5.dylib
@@ -426,25 +395,6 @@ src_prepare() {
 
 		# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
 		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
-
-		we_want_libffi_workaround() {
-			use ghcmakebinary && return 1
-
-			# pick only registerised arches
-			# http://bugs.gentoo.org/463814
-			use amd64 && return 0
-			use x86 && return 0
-			return 1
-		}
-		# one mode external depend with unstable ABI be careful to stash it
-		# avoid external libffi runtime when we build binaries
-		#we_want_libffi_workaround && epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
-
-		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
-		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-		#epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
-
-		#epatch "${FILESDIR}"/${PN}-7.7.20121101-corelibs-rpath.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -586,19 +536,7 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		#limit_jobs() {
-		#	if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
-		#		ewarn "You have requested parallel build which is known to break."
-		#		ewarn "Please report all breakages upstream."
-		#		return
-		#	fi
-		#	echo $@
-		#}
-		# ghc massively parallel make: #409631, #409873
-		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
-		#emake $(limit_jobs -j1) all
-		# ^ above seems to be fixed.
-		emake all
+		emake all V=1
 
 		if is_crosscompile; then
 			# runghc does not work for a stage1 compiler, we can build it anyway
@@ -717,7 +655,8 @@ src_install() {
 		# remove wrapper and linker
 		rm -f "${ED}"/usr/bin/haddock*
 
-		add-c_nonshared-to-ghci-libs
+		#TODO: remove me if 7.8 works fine
+		#add-c_nonshared-to-ghci-libs
 
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
@@ -762,12 +701,6 @@ pkg_postinst() {
 	# the package.conf.d directory.
 	touch "${PKGCACHE}"
 
-	ewarn "For portage place lines like these in /etc/portage/package.keywords"
-	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-	ewarn "=dev-haskell/cabal-2.17.0_p$(get_version_component_range 3) **"
-	ewarn "=dev-haskell/haddock-2.11.0_p$(get_version_component_range 3) **"
-	ewarn "=dev-lang/ghc-7.8* **"
-	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
