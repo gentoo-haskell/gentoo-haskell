@@ -385,6 +385,11 @@ cabal-configure() {
 		cabalconf+=(--sysconfdir="${EPREFIX}"/etc)
 	fi
 
+	# appeared in Cabal-1.18+ (see '--disable-executable-stripping')
+	if ./setup configure --help | grep -q -- --disable-library-stripping; then
+		cabalconf+=(--disable-library-stripping)
+	fi
+
 	set -- configure \
 		--ghc --prefix="${EPREFIX}"/usr \
 		--with-compiler="$(ghc-getghc)" \
