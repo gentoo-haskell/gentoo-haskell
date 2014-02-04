@@ -5,6 +5,9 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
+	<use>
+		<flag name="exe">Build a sha1 and a sha384 executable similar to 'md5sum'.</flag>
+	</use>
 	<longdescription>
 		This library implements the SHA suite of message digest functions,
 		according to NIST FIPS 180-2 (with the SHA-224 addendum), as well
