@@ -55,9 +55,14 @@ yet_binary() {
 	esac
 }
 
+#GHC_PV=${PV}
+GHC_PV=7.8.20140130
+GHC_P=${PN}-${GHC_PV}
+
 #SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
-SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.8.1-rc1/ghc-7.8.20140130-src.tar.bz2 )"
-S="${WORKDIR}"/ghc-7.8.20140130
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.8.1-rc1/${GHC_P}-src.tar.bz2 )"
+S="${WORKDIR}"/${GHC_P}
+
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -408,8 +413,6 @@ src_prepare() {
 }
 
 src_configure() {
-	GHC_PV=${PV} # overrided in live ebuilds
-
 	if ! use binary; then
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
@@ -529,7 +532,10 @@ src_configure() {
 		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot \
 			|| die "econf failed"
 
-		[[ ${PV} == *9999* ]] && GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+		if [[ ${PV} == *9999* ]]; then
+			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+			GHC_P=${PN}-${GHC_PV}
+		fi
 		GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	fi # ! use binary
 }
@@ -672,7 +678,7 @@ src_install() {
 	fi
 
 	# path to the package.cache
-	local package_confdir="${ED}/usr/$(get_libdir)/${PN}-${GHC_PV}/package.conf.d"
+	local package_confdir="${ED}/usr/$(get_libdir)/${GHC_P}/package.conf.d"
 	PKGCACHE="${package_confdir}"/package.cache
 	# copy the package.conf.d, including timestamp, save it so we can help
 	# users that have a broken package.conf.d
