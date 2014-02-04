@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Command-line utility to paste images to image hosting sites.
+		Image hosting sites are internally called engines. Some engines
+		support pasting not just image files but any files so with
+		some engines the program can be used as a file sharing client.
+	</longdescription>
+</pkgmetadata>
