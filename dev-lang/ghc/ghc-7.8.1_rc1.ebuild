@@ -81,7 +81,7 @@ yet_binary() {
 
 # snapshot copied from http://www.haskell.org/ghc/dist/current/dist/
 # SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/current/dist/${P}-src.tar.bz2 )"
-SRC_URI="!binary? ( http://dev.gentoo.org/~gienah/snapshots/${P}-src.tar.bz2 )"
+SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.8.1-rc1/ghc-7.8.20140130-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0/${PV}"
