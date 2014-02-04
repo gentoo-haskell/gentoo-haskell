@@ -645,7 +645,7 @@ src_install() {
 			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
 				|| die "failed to copy docs"
 		else
-			dodoc "${S}/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
+			dodoc "${S}/distrib/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 		fi
 
 		emake -j1 ${insttarget} \
