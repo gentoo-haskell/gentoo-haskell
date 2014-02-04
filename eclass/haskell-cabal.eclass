@@ -339,6 +339,11 @@ cabal-configure() {
 		cabalconf+=(--ghc-option="$option")
 	done
 
+	# parallel on all available cores
+	if ghc-supports-parallel-make; then
+		cabalconf+=(--ghc-option=-j)
+	fi
+
 	# Building GHCi libs on ppc64 causes "TOC overflow".
 	if use ppc64; then
 		cabalconf+=(--disable-library-for-ghci)

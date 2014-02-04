@@ -124,6 +124,14 @@ ghc-supports-interpreter() {
 	$(ghc-getghc) --info | grep "Have interpreter" | grep -q "YES"
 }
 
+# @FUNCTION: ghc-supports-parallel-make
+# @DESCRIPTION:
+# checks if ghc has support for '--make -j' mode
+# The option was introduced in ghc-7.8-rc1.
+ghc-supports-parallel-make() {
+	$(ghc-getghc) --info | grep "Support parallel --make" | grep -q "YES"
+}
+
 # @FUNCTION: ghc-extractportageversion
 # @DESCRIPTION:
 # extract the version of a portage-installed package
