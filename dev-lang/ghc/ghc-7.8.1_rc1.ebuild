@@ -89,12 +89,12 @@ RDEPEND="
 
 # similar for glibc. we have bootstrapped binaries against glibc-2.17
 DEPEND="${RDEPEND}
-	ghcbootstrap? (		>=dev-haskell/alex-2.3
-						>=dev-haskell/happy-1.18
-				doc? (	app-text/docbook-xml-dtd:4.2
-				app-text/docbook-xml-dtd:4.5
-				app-text/docbook-xsl-stylesheets
-				>=dev-libs/libxslt-1.1.2 ) )
+	ghcbootstrap? ( >=dev-haskell/alex-2.3
+		>=dev-haskell/happy-1.18
+		doc? ( app-text/docbook-xml-dtd:4.2
+			app-text/docbook-xml-dtd:4.5
+			app-text/docbook-xsl-stylesheets
+			>=dev-libs/libxslt-1.1.2 ) )
 	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
