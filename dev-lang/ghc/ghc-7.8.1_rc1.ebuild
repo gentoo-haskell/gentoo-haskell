@@ -88,7 +88,7 @@ SLOT="0/${PV}"
 # ghc on ia64 needs gcc to support -mcmodel=medium (or some dark hackery) to avoid TOC overflow
 #KEYWORDS="~alpha ~amd64 -ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
-IUSE="doc ghcbootstrap ghcmakebinary llvm"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
 
 RDEPEND="
@@ -120,6 +120,9 @@ PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
+
+# ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
+REQUIRED_USE="ia64? ( !gmp )"
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -232,9 +235,32 @@ relocate_path() {
 relocate_ghc() {
 	local to=$1
 
+	# libdir for prebuilt binary and for current system may mismatch
+	# It does for prefix installation for example: bug #476998
+	local bin_ghc_prefix=${WORKDIR}/usr
+	local bin_libpath=$(echo "${bin_ghc_prefix}"/lib*)
+	local bin_libdir=${bin_libpath#${bin_ghc_prefix}/}
+
 	# backup original script to use it later after relocation
 	local gp_back="${T}/ghc-pkg-${PV}-orig"
 	cp "${WORKDIR}/usr/bin/ghc-pkg-${PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+
+	if [[ ${bin_libdir} != $(get_libdir) ]]; then
+		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
+		# moving the dir itself is not strictly needed
+		# but then USE=binary would result in installing
+		# in '${bin_libdir}'
+		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
+
+		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
+			"${WORKDIR}/usr/bin/ghc-${PV}" \
+			"${WORKDIR}/usr/bin/ghci-${PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${PV}" \
+			"$gp_back" \
+			"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
+	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
@@ -242,10 +268,11 @@ relocate_ghc() {
 		"${WORKDIR}/usr/bin/ghci-${PV}" \
 		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
+		"${WORKDIR}/usr/bin/runghc-${PV}" \
 		"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
-	# so it shoult point to current tree location
+	# so it should point to current tree location
 	relocate_path "/usr" "${WORKDIR}/usr" "$gp_back"
 
 	if use prefix; then
@@ -256,6 +283,8 @@ relocate_ghc() {
 			"${WORKDIR}/usr/bin/ghc-${PV}" \
 			"${WORKDIR}/usr/bin/ghci-${PV}" \
 			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${PV}" \
 			"$gp_back" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
@@ -300,7 +329,7 @@ src_unpack() {
 src_prepare() {
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
+	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
 		# Modify the wrapper script from the binary tarball to use GHC_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
@@ -327,12 +356,12 @@ src_prepare() {
 				mkdir "${WORKDIR}"/ghc-bin-installer || die
 				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
 				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
-				use x86-solaris && unpack ghc-6.10.4-i386-unknown-solaris2.tar.bz2
-				use ppc-macos && unpack ghc-6.10.1-powerpc-apple-darwin.tar.bz2
-				use x86-macos && unpack ghc-6.10.1-i386-apple-darwin.tar.bz2
+				use x86-solaris && unpack ghc-7.8.1-i386-unknown-solaris2.tar.bz2
+				use ppc-macos && unpack ghc-7.8.1-powerpc-apple-darwin.tar.bz2
+				use x86-macos && unpack ghc-7.8.1-i386-apple-darwin.tar.bz2
 				popd > /dev/null
 
-				pushd "${WORKDIR}"/ghc-bin-installer/ghc-6.10.? > /dev/null || die
+				pushd "${WORKDIR}"/ghc-bin-installer/ghc-7.8.? > /dev/null || die
 				# fix the binaries so they run, on Solaris we need an
 				# LD_LIBRARY_PATH which has our prefix libdirs, on
 				# Darwin we need to replace the frameworks with our libs
@@ -347,7 +376,7 @@ src_prepare() {
 					popd > /dev/null
 
 					local readline_framework=GNUreadline.framework/GNUreadline
-					local gmp_framework=/opt/local/lib/libgmp.3.dylib
+					local gmp_framework=/opt/local/lib/libgmp.10.dylib
 					local ncurses_file=/opt/local/lib/libncurses.5.dylib
 					for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
 						install_name_tool -change \
@@ -396,15 +425,24 @@ src_prepare() {
 		# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
 		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
+		we_want_libffi_workaround() {
+			use ghcmakebinary && return 1
+
+			# pick only registerised arches
+			# http://bugs.gentoo.org/463814
+			use amd64 && return 0
+			use x86 && return 0
+			return 1
+		}
 		# one mode external depend with unstable ABI be careful to stash it
 		# avoid external libffi runtime when we build binaries
-		use ghcmakebinary || epatch "${FILESDIR}"/${PN}-7.7.20121013-system-libffi.patch
+		we_want_libffi_workaround && epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
-		epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
+		#epatch "${FILESDIR}"/${PN}-7.5-dph-base_dist_install_GHCI_LIB_not_defined.patch
 
-		epatch "${FILESDIR}"/${PN}-7.7.20121101-corelibs-rpath.patch
+		#epatch "${FILESDIR}"/${PN}-7.7.20121101-corelibs-rpath.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -471,7 +509,11 @@ src_configure() {
 		# we have to tell it to build unregisterised on some arches
 		# ppc64: EvilMangler currently does not understand some TOCs
 		# ia64: EvilMangler bitrot
-		if use alpha || use ia64 || use ppc64; then
+		# set GHC_IS_UNREG if you like to build slow unregisterised
+		# host compiler. Handy if you plan to user resulting
+		# host compiler as a booting compiler for crosscompiler
+		# which can work only in unregisterised mode.
+		if use alpha || use ia64 || use ppc64 || [[ -n ${GHC_IS_UNREG} ]]; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
@@ -509,8 +551,11 @@ src_configure() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		# This is only for head builds
-		perl boot || die "perl boot failed"
+		if use gmp; then
+			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
+		else
+			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
+		fi
 
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
 		# compiled with, by saving the path to it. The purpose is to make sure
@@ -570,6 +615,75 @@ src_compile() {
 	fi # ! use binary
 }
 
+add-c_nonshared-to-ghci-libs() {
+	local ghci_lib
+	local nonshared_dir=${T}/libc_nonshared_objects
+
+	is_crosscompile && return
+	use elibc_glibc || return
+
+	# we expect 'libc.a' bits be self-sufficient
+	if gcc-specs-pie; then
+		use x86 && return # but on x86 pie means linker support: #486140
+	fi
+
+	get-nonshared-objects() {
+		# ns - 'nonshared'
+		local ns_objects=" "
+		local ns_sym
+		local ns_srco
+		local ns_dsto
+
+		# extract
+		mkdir "${nonshared_dir}" || die
+		pushd "${nonshared_dir}" >/dev/null || die
+		$(tc-getAR) x "${ROOT}"/usr/$(get_libdir)/libc.a
+		popd >/dev/null || die
+
+		# they are mostly contents of /usr/$(get_libdir)/libc_nonstahed.a
+		# but 'c_nonstahed' contains PIC variants of symbols.
+		# ghci uses non-PIC ones
+		for ns_sym in \
+			stat    fstat   lstat mknod \
+			stat64  fstat64 lstat64 \
+			fstatat fstatat64 mknodat
+		do
+			ns_srco=${nonshared_dir}/${ns_sym}.o
+			ns_dsto=${nonshared_dir}/${ns_sym}_weakened.o
+			[[ -f ${ns_srco} ]] || continue
+			# here we do The Magic:
+			# 1. --keep-global-symbol= hides everything to adoid double definition
+			#    of stuff like __stat, __fstat and
+			# 2. --weaken converts exported symbols to weak symbols to be available
+			#    for redefinition
+			$(tc-getOBJCOPY) \
+				--weaken --keep-global-symbol=${ns_sym} \
+				"${ns_srco}" "${ns_dsto}" || die
+
+			ns_objects+=" ${ns_dsto}"
+		done
+
+		echo "${ns_objects}"
+	}
+	# bug #452442: when building libraries for ghci
+	# ghc basically glues them together:
+	#   $ ld -r -o result foo.o bar.o ...
+	# that way some symbols defined in libc_nonshared.a
+	# do not get included into final HS*.o files
+	# We piggyback on one of early loaded wired-in library
+	# loaded before 'base'.
+	while read ghci_lib
+	do
+		einfo "relinking '${ghci_lib}' with c_includes"
+		mv "${ghci_lib}" "${ghci_lib}".unrelinked.o || die
+		$(tc-getLD) -r -o "${ghci_lib}"  \
+			"${ghci_lib}".unrelinked.o \
+			$(get-nonshared-objects) || die
+		rm -r "${nonshared_dir}" || die
+		rm "${ghci_lib}".unrelinked.o || die
+	done < <(find "${ED}"/usr/$(get_libdir)/${P}/ -name 'HSghc-prim*.o')
+}
+
 src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
@@ -600,6 +714,8 @@ src_install() {
 
 		# remove wrapper and linker
 		rm -f "${ED}"/usr/bin/haddock*
+
+		add-c_nonshared-to-ghci-libs
 
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
@@ -648,7 +764,7 @@ pkg_postinst() {
 	ewarn "=dev-haskell/deepseq-1.3.0.1* **"
 	ewarn "=dev-haskell/cabal-2.17.0_p$(get_version_component_range 3) **"
 	ewarn "=dev-haskell/haddock-2.11.0_p$(get_version_component_range 3) **"
-	ewarn "=dev-lang/ghc-7.7* **"
+	ewarn "=dev-lang/ghc-7.8* **"
 	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
 		ewarn
