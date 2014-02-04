@@ -313,6 +313,8 @@ pkg_setup() {
 	fi
 }
 
+S="${WORKDIR}/ghc-7.8.20140130"
+
 src_unpack() {
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
@@ -436,7 +438,7 @@ src_prepare() {
 		}
 		# one mode external depend with unstable ABI be careful to stash it
 		# avoid external libffi runtime when we build binaries
-		we_want_libffi_workaround && epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
+		#we_want_libffi_workaround && epatch "${FILESDIR}"/${PN}-7.5.20120505-system-libffi.patch
 
 		# FIXME this should not be necessary, workaround ghc 7.5.20120505 build failure
 		# http://web.archiveorange.com/archive/v/j7U5dEOAbcD9aCZJDOPT
