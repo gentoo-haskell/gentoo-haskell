@@ -1,0 +1,32 @@
+commit 21782da09df74bb96128636c10f55bff135d66af
+Author: Jose Antonio Ortega Ruiz <jao@gnu.org>
+Date:   Mon Nov 25 00:51:44 2013 +0100
+
+    findFiles renamed for directory-1.2.0.2 compat (fixes #137)
+
+diff --git a/src/Plugins/Monitors/CoreCommon.hs b/src/Plugins/Monitors/CoreCommon.hs
+index c7fb7d5..5d6efd4 100644
+--- a/src/Plugins/Monitors/CoreCommon.hs
++++ b/src/Plugins/Monitors/CoreCommon.hs
+@@ -35,7 +35,8 @@ retrieveData :: (Ord a, Num a)
+              => [String] -> Maybe (String, String -> Int)
+              -> (Double -> a) -> (a -> String) -> Monitor (Maybe String)
+ retrieveData path lbl trans fmt = do
+-  pairs <- map snd . sortBy (compare `on` fst) <$> (mapM readFiles =<< findFiles path lbl)
++  pairs <- map snd . sortBy (compare `on` fst) <$>
++             (mapM readFiles =<< findFilesAndLabel path lbl)
+   if null pairs
+     then return Nothing
+     else Just <$> (     parseTemplate
+@@ -84,9 +85,9 @@ pathComponents = joinComps . drop 2 . intercalate [Space] . map splitParts
+ 
+ -- | Function to find all files matching the given path and possible label file.
+ -- The path must be absolute (start with a leading slash).
+-findFiles :: [String] -> Maybe (String, String -> Int)
++findFilesAndLabel :: [String] -> Maybe (String, String -> Int)
+           -> Monitor [(String, Either Int (String, String -> Int))]
+-findFiles path lbl  =  catMaybes
++findFilesAndLabel path lbl  =  catMaybes
+                    <$> (     mapM addLabel . zip [0..] . sort
+                          =<< recFindFiles (pathComponents path) "/"
+                        )
