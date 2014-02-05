@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
+RDEPEND=">=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/blaze-svg-0.3.3:=[profile?]
 	dev-haskell/colour:=[profile?]
 	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
