@@ -35,5 +35,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5'
+		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5' \
+	    'unix >= 2.2 && < 2.7' 'unix >= 2.2 && < 2.8'
+
 }
