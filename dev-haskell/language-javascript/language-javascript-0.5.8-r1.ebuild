@@ -32,3 +32,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare () {
+#	epatch "${FILESDIR}"/${P}-ghc-78.patch
+	cabal_chdeps \
+		"array            >= 0.3     && < 0.5" \
+		"array            >= 0.3     && < 0.6"
+}
