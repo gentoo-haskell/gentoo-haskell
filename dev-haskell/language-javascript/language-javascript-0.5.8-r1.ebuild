@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare () {
-#	epatch "${FILESDIR}"/${P}-ghc-78.patch
+	epatch "${FILESDIR}"/${P}-ghc-78.patch
 	cabal_chdeps \
 		"array            >= 0.3     && < 0.5" \
 		"array            >= 0.3     && < 0.6"
