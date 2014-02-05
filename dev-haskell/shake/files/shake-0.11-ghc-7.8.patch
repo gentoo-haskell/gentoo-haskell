@@ -1,0 +1,38 @@
+ghc-7.8-rc1 fails as:
+
+Development/Ninja/Lexer.hs:47:36:
+    Kind incompatibility when matching types:
+      s0 :: *
+      Addr# :: #
+diff --git a/Development/Ninja/Lexer.hs b/Development/Ninja/Lexer.hs
+index 0677815..4a1c17e 100644
+--- a/Development/Ninja/Lexer.hs
++++ b/Development/Ninja/Lexer.hs
+@@ -41,10 +41,10 @@ break0 f (Str0 bs) = (BS.unsafeTake i bs, Str0 $ BS.unsafeDrop i bs)
+         i = Internal.inlinePerformIO $ BS.unsafeUseAsCString bs $ \ptr -> do
+             let start = castPtr ptr :: S
+             let end = go start
+-            return $! Ptr end `minusPtr` start
++            return $! end `minusPtr` start
+ 
+-        go s@(Ptr a) | c == '\0' || f c = a
+-                     | otherwise = go $ inc s
++        go s | c == '\0' || f c = s
++             | otherwise = go $ inc s
+             where c = chr s
+ 
+ {-# INLINE break00 #-}
+@@ -55,10 +55,10 @@ break00 f (Str0 bs) = (BS.unsafeTake i bs, Str0 $ BS.unsafeDrop i bs)
+         i = Internal.inlinePerformIO $ BS.unsafeUseAsCString bs $ \ptr -> do
+             let start = castPtr ptr :: S
+             let end = go start
+-            return $! Ptr end `minusPtr` start
++            return $! end `minusPtr` start
+ 
+-        go s@(Ptr a) | f c = a
+-                     | otherwise = go $ inc s
++        go s | f c = s
++             | otherwise = go $ inc s
+             where c = chr s
+ 
+ head0 :: Str0 -> Char
