@@ -19,9 +19,16 @@ KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="dev-haskell/syb:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+	>=dev-haskell/cabal-1.6
+	dev-haskell/happy
+"
+
+src_prepare() {
+	# to be buildable against ghc-7.8
+	rm dist/build/Language/Haskell/Parser.hs || die
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
