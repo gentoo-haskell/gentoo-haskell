@@ -67,7 +67,13 @@ src_prepare() {
 
 	cabal_chdeps \
 		'text       >= 0.11.0.6 && < 0.12.0.0' 'text       >= 0.11.0.6' \
-		'terminfo == 0.3.*' 'terminfo >= 0.3 && < 0.5'
+		'terminfo == 0.3.*' 'terminfo >= 0.3 && < 0.5' \
+        'array      >= 0.1 && < 0.5' 'array >= 0.1 && <0.6' \
+		'process    >= 1.0.0.0 && < 1.2.0.0' 'process    >= 1.0.0.0 && < 1.3' \
+		'unix >= 1.0 && < 2.7' 'unix >=1.0 && <2.8' \
+		'base >= 4.5 && < 4.7' 'base >= 4.5 && < 4.8' \
+		'ghc >= 6.10 && < 7.8' 'ghc >= 6.10 && < 7.9'
+	  
 }
 
 src_configure() {
@@ -92,6 +98,7 @@ src_configure() {
 		--flags=color \
 		--flags=terminfo \
 		--flags=mmap \
+		--flags=force-char8-encoding \
 		$threaded_flag \
 		$(cabal_flag test)
 }
