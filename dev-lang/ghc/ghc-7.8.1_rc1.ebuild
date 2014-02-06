@@ -445,22 +445,6 @@ src_configure() {
 			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 
-		# circumvent a very strange bug that seems related with ghc producing
-		# too much output while being filtered through tee (e.g. due to
-		# portage logging) reported as bug #111183
-		echo "SRC_HC_OPTS+=-w" >> mk/build.mk
-
-		# some arches do not support ELF parsing for ghci module loading
-		# PPC64: never worked (should be easy to implement)
-		# alpha: never worked
-		# arm: http://hackage.haskell.org/trac/ghc/changeset/27302c9094909e04eb73f200d52d5e9370c34a8a
-		if use alpha || use ppc64; then
-			echo "GhcWithInterpreter=NO" >> mk/build.mk
-		fi
-
-		# we have to tell it to build unregisterised on some arches
-		# ppc64: EvilMangler currently does not understand some TOCs
-		# ia64: EvilMangler bitrot
 		# set GHC_IS_UNREG if you like to build slow unregisterised
 		# host compiler. Handy if you plan to user resulting
 		# host compiler as a booting compiler for crosscompiler
@@ -469,19 +453,12 @@ src_configure() {
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
-			echo "GhcRTSWays := debug" >> mk/build.mk
-			echo "GhcNotThreaded=YES" >> mk/build.mk
 		fi
 
 		# arm: no EvilMangler support, no NCG support
 		if use arm; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
-		fi
-
-		# Have "ld -r --relax" problem with split-objs on sparc:
-		if use sparc; then
-			echo "SplitObjs=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
