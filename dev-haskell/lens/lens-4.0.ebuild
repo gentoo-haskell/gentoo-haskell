@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="benchmark-uniplate dump-splices +inlining lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
 
+RESTRICT=test # missing files: https://github.com/ekmett/lens/pull/392
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
