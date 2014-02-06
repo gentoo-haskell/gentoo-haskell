@@ -181,18 +181,6 @@ ghc_setup_cflags() {
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
 	use ia64 && append-ghc-cflags compile -G0 -Os
-
-	# Unfortunately driver/split/ghc-split.lprl is dumb
-	# enough to preserve stack marking for each split object
-	# and it flags stack marking violation:
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__1.o
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__2.o
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__3.o
-	case $($(tc-getAS) -v 2>&1 </dev/null) in
-		*"GNU Binutils"*) # GNU ld
-			append-ghc-cflags compile assemble -Wa,--noexecstack
-			;;
-	esac
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
