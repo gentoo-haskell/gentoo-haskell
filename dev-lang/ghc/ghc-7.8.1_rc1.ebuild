@@ -449,7 +449,7 @@ src_configure() {
 		# host compiler. Handy if you plan to user resulting
 		# host compiler as a booting compiler for crosscompiler
 		# which can work only in unregisterised mode.
-		if use alpha || use ia64 || use ppc64 || [[ -n ${GHC_IS_UNREG} ]]; then
+		if [[ -n ${GHC_IS_UNREG} ]]; then
 			echo "GhcUnregisterised=YES" >> mk/build.mk
 			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 			echo "SplitObjs=NO" >> mk/build.mk
