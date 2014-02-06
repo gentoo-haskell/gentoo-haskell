@@ -22,9 +22,11 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 	dev-haskell/glut
+	dev-haskell/hashtables
 	>=dev-haskell/opengl-2.0
 	dev-haskell/random
 	>=dev-lang/ghc-6.10.4
 "
 
-PATCHES=("${FILESDIR}"/${P}-unrust.patch)
+PATCHES=("${FILESDIR}"/${P}-unrust.patch
+	"${FILESDIR}"/${P}-ghc-7.8.patch)
