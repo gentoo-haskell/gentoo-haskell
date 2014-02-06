@@ -68,7 +68,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 #KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
-IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
 
@@ -98,9 +98,6 @@ DEPEND="${RDEPEND}
 	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
-PDEPEND="
-	${PDEPEND}
-	llvm? ( sys-devel/llvm )"
 
 # ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
 REQUIRED_USE="ia64? ( !gmp )"
@@ -485,10 +482,6 @@ src_configure() {
 		# Have "ld -r --relax" problem with split-objs on sparc:
 		if use sparc; then
 			echo "SplitObjs=NO" >> mk/build.mk
-		fi
-
-		if ! use llvm; then
-			echo "GhcWithLlvmCodeGen=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
