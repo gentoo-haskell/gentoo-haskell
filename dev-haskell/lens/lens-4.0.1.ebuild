@@ -50,7 +50,6 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	dev-haskell/cpphs
 	test? ( test-doctests? ( dev-haskell/deepseq
 					>=dev-haskell/doctest-0.9.1
 					dev-haskell/generic-deriving
