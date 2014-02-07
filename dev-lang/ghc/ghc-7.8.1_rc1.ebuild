@@ -386,6 +386,8 @@ src_prepare() {
 		# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
 		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
 
+		epatch "${FILESDIR}"/${P}-trac-8722-__threaded-fix.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
@@ -601,18 +603,6 @@ pkg_postinst() {
 		ewarn "You may have to run"
 		ewarn "      'haskell-updater --upgrade'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
-		ewarn
-		ewarn "\e[1;31m************************************************************************\e[0m"
-		ewarn
-	fi
-	if is_crosscompile; then
-		ewarn
-		ewarn "\e[1;31m************************************************************************\e[0m"
-		ewarn
-		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
-		ewarn "not work for a cross compiler."
-		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
-		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
