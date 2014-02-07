@@ -35,7 +35,7 @@ RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?]
 	>=dev-haskell/wai-app-file-cgi-2.0:=[profile?]
-	>=dev-haskell/wai-logger-2.0:=[profile?]
+	>=dev-haskell/wai-logger-2.1:=[profile?]
 	>=dev-haskell/warp-2.0:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	tls? ( dev-haskell/tls:=[profile?]
