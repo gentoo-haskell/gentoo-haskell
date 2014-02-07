@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing module
+
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/cpphs-1.12:=[profile?]
 	>=dev-haskell/diff-0.3:=[profile?]
