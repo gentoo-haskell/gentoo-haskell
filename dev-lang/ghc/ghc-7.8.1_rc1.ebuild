@@ -519,75 +519,6 @@ src_compile() {
 	fi # ! use binary
 }
 
-add-c_nonshared-to-ghci-libs() {
-	local ghci_lib
-	local nonshared_dir=${T}/libc_nonshared_objects
-
-	is_crosscompile && return
-	use elibc_glibc || return
-
-	# we expect 'libc.a' bits be self-sufficient
-	if gcc-specs-pie; then
-		use x86 && return # but on x86 pie means linker support: #486140
-	fi
-
-	get-nonshared-objects() {
-		# ns - 'nonshared'
-		local ns_objects=" "
-		local ns_sym
-		local ns_srco
-		local ns_dsto
-
-		# extract
-		mkdir "${nonshared_dir}" || die
-		pushd "${nonshared_dir}" >/dev/null || die
-		$(tc-getAR) x "${ROOT}"/usr/$(get_libdir)/libc.a
-		popd >/dev/null || die
-
-		# they are mostly contents of /usr/$(get_libdir)/libc_nonstahed.a
-		# but 'c_nonstahed' contains PIC variants of symbols.
-		# ghci uses non-PIC ones
-		for ns_sym in \
-			stat    fstat   lstat mknod \
-			stat64  fstat64 lstat64 \
-			fstatat fstatat64 mknodat
-		do
-			ns_srco=${nonshared_dir}/${ns_sym}.o
-			ns_dsto=${nonshared_dir}/${ns_sym}_weakened.o
-			[[ -f ${ns_srco} ]] || continue
-			# here we do The Magic:
-			# 1. --keep-global-symbol= hides everything to adoid double definition
-			#    of stuff like __stat, __fstat and
-			# 2. --weaken converts exported symbols to weak symbols to be available
-			#    for redefinition
-			$(tc-getOBJCOPY) \
-				--weaken --keep-global-symbol=${ns_sym} \
-				"${ns_srco}" "${ns_dsto}" || die
-
-			ns_objects+=" ${ns_dsto}"
-		done
-
-		echo "${ns_objects}"
-	}
-	# bug #452442: when building libraries for ghci
-	# ghc basically glues them together:
-	#   $ ld -r -o result foo.o bar.o ...
-	# that way some symbols defined in libc_nonshared.a
-	# do not get included into final HS*.o files
-	# We piggyback on one of early loaded wired-in library
-	# loaded before 'base'.
-	while read ghci_lib
-	do
-		einfo "relinking '${ghci_lib}' with c_includes"
-		mv "${ghci_lib}" "${ghci_lib}".unrelinked.o || die
-		$(tc-getLD) -r -o "${ghci_lib}"  \
-			"${ghci_lib}".unrelinked.o \
-			$(get-nonshared-objects) || die
-		rm -r "${nonshared_dir}" || die
-		rm "${ghci_lib}".unrelinked.o || die
-	done < <(find "${ED}"/usr/$(get_libdir)/${P}/ -name 'HSghc-prim*.o')
-}
-
 src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
@@ -618,9 +549,6 @@ src_install() {
 
 		# remove wrapper and linker
 		rm -f "${ED}"/usr/bin/haddock*
-
-		#TODO: remove me if 7.8 works fine
-		#add-c_nonshared-to-ghci-libs
 
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
