@@ -37,8 +37,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'hspec == 1.7.*' 'hspec >= 1.7'
-}
