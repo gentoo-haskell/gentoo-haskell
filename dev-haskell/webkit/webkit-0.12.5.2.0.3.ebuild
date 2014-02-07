@@ -10,7 +10,7 @@ GTK_MAJ_VER="3"
 
 MY_PN="webkitgtk3"
 MY_PV="${PV%.*.*}"
-MY_P="${PN}-${MY_PV}"
+MY_P="${MY_PN}-${MY_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
