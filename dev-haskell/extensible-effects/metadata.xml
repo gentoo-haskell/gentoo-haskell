@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package introduces datatypes for typeclass-constrained effects,
+		as an alternative to monad-transformer based (datatype-constrained)
+		approach of multi-layered effects.
+		For more information, see the original paper at
+		&lt;http://okmij.org/ftp/Haskell/extensible/exteff.pdf&gt;.
+		Any help is appreciated!
+	</longdescription>
+</pkgmetadata>
