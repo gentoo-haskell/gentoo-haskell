@@ -474,6 +474,9 @@ src_configure() {
 			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 		fi
 
+		# don't strip anything. Very useful when stage2 SIGSEGVs on you
+		echo "STRIP_CMD = :" >> mk/build.mk
+
 		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
 		# compiled with, by saving the path to it. The purpose is to make sure
 		# that GHC will use the very same gcc version when it compiles haskell
