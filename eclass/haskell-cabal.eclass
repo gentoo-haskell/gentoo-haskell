@@ -36,7 +36,7 @@
 #				   not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
-inherit eutils ghc-package multilib
+inherit eutils ghc-package multilib multiprocessing
 
 # @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @DESCRIPTION:
@@ -341,7 +341,12 @@ cabal-configure() {
 
 	# parallel on all available cores
 	if ghc-supports-parallel-make; then
-		cabalconf+=(--ghc-option=-j)
+		local max_jobs=$(makeopts_jobs)
+
+		# limit to sort-of-sane value (same as Cabal)
+		[[ ${max_jobs} -gt 64 ]] && max_jobs=64
+
+		cabalconf+=(--ghc-option=-j"$max_jobs")
 	fi
 
 	# Building GHCi libs on ppc64 causes "TOC overflow".
