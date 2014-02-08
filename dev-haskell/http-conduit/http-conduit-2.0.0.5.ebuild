@@ -40,7 +40,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/cookie
 		dev-haskell/cprng-aes
 		dev-haskell/data-default-class
-		dev-haskell/deepseq
 		dev-haskell/failure
 		>=dev-haskell/hspec-1.3
 		dev-haskell/http-client-multipart
