@@ -1,3 +1,7 @@
+# Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
+# Masked for removal. Deprecated, use tls instead.
+dev-haskell/tls-extra
+
 # Sergei Trofimovich <slyfox@gentoo.org> (15 Jan 2014)
 # outdated. does not compile against modern hlist
 dev-haskell/nettle-openflow
