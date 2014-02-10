@@ -556,8 +556,8 @@ src_install() {
 			DESTDIR="${D}" \
 			|| die "make ${insttarget} failed"
 
-		# remove wrapper and linker
-		rm -f "${ED}"/usr/bin/haddock*
+		# remove link, but leave 'haddock-${GHC_P}'
+		rm -f "${ED}"/usr/bin/haddock
 
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
