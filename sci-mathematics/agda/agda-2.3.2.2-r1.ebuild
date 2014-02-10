@@ -53,7 +53,10 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8' \
-		'text == 0.11.*' 'text >= 0.11'
+		'text == 0.11.*' 'text >= 0.11' \
+		'base >= 4.2 && < 4.7' 'base >= 4.2 && < 4.8' \
+		'array >= 0.1 && < 0.5' 'array >= 0.1 && < 0.6' \
+        'process >= 1.0.1.0 && < 1.2' 'process >= 1.0.1.0 && < 1.3'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
