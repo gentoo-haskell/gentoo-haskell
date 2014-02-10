@@ -1,0 +1,55 @@
+commit 97bc9663c9f7310668c013d3c03d546c0bd546b0
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Mon Feb 10 15:55:25 2014 +0300
+
+    rts/Capability.c: fix crash in -threaded mode on UNREG build
+    
+    UNREG mode has quite nasty invariant to maintain:
+        capabilities[0] == &MainCapability
+    
+    and it's a non-heap memory, while other
+    capabilities are dynamically allocated.
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/rts/Capability.c b/rts/Capability.c
+index 5988d42..16b71b7 100644
+--- a/rts/Capability.c
++++ b/rts/Capability.c
+@@ -357,15 +357,18 @@ moreCapabilities (nat from USED_IF_THREADS, nat to USED_IF_THREADS)
+         // BaseReg (eg. unregisterised), so in this case
+ 	// capabilities[0] must coincide with &MainCapability.
+         capabilities[0] = &MainCapability;
++        initCapability(&MainCapability, 0);
+     }
+-
+-    for (i = 0; i < to; i++) {
+-        if (i < from) {
+-            capabilities[i] = old_capabilities[i];
+-        } else {
+-            capabilities[i] = stgMallocBytes(sizeof(Capability),
+-                                             "moreCapabilities");
+-            initCapability(capabilities[i], i);
++    else
++    {
++        for (i = 0; i < to; i++) {
++            if (i < from) {
++                capabilities[i] = old_capabilities[i];
++            } else {
++                capabilities[i] = stgMallocBytes(sizeof(Capability),
++                                                 "moreCapabilities");
++                initCapability(capabilities[i], i);
++            }
+         }
+     }
+ 
+@@ -983,7 +986,8 @@ freeCapabilities (void)
+     nat i;
+     for (i=0; i < n_capabilities; i++) {
+         freeCapability(capabilities[i]);
+-        stgFree(capabilities[i]);
++        if (capabilities[i] != &MainCapability)
++            stgFree(capabilities[i]);
+     }
+ #else
+     freeCapability(&MainCapability);

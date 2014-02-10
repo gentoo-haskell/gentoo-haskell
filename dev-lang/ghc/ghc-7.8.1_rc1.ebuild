@@ -389,6 +389,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${P}-trac-8722-__threaded-fix.patch
 		epatch "${FILESDIR}"/${P}-trac-8748-NOSMP-for-hc.patch
 		epatch "${FILESDIR}"/${P}-trac-8748-rts_prof.patch
+		epatch "${FILESDIR}"/${P}-fix-UNREG-threaded.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
