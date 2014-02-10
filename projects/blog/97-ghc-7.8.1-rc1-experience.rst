@@ -13,7 +13,7 @@ As a packager I was especially interested in following features:
 3. what did seriously break, what was fixed?
 
 First off, **-rc1** is packaged in `gentoo-haskell overlay <https://github.com/gentoo-haskell/gentoo-haskell/blob/master/dev-lang/ghc/ghc-7.8.1_rc1.ebuild>`_
-(not keyworded as quite a bit of packages wail to build against **ghc-7.8**).
+(not keyworded as quite a bit of packages fail to build against **ghc-7.8**).
 
 **GHCi** (and dynamic linking)
 ==============================
@@ -81,7 +81,7 @@ Type inference changed a bit.
 -----------------------------
 
 Traditionally `darcs <https://github.com/gentoo-haskell/gentoo-haskell/blob/master/dev-vcs/darcs/files/darcs-2.8.4-ghc-7.8-part-1.patch>`_ needed a patch :]
-It that big mostly dumb patch most interesting bit is explicit assignment:
+In that big mostly dumb patch most interesting bit is explicit assignment:
 
 .. code-block:: Diff
 
