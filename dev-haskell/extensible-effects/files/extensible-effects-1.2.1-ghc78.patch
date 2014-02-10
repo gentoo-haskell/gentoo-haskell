@@ -1,0 +1,102 @@
+commit d05068c28d733c2a0a70aeec880ce8fef88a45c8
+Author: Alexander Vershilov <alexander.vershilov@gmail.com>
+Date:   Fri Feb 7 23:36:31 2014 +0400
+
+    Allow ghc-7.8
+
+diff --git a/src/Control/Eff.hs b/src/Control/Eff.hs
+index 12b1bd9..307ecd4 100644
+--- a/src/Control/Eff.hs
++++ b/src/Control/Eff.hs
+@@ -11,6 +11,7 @@
+ {-# LANGUAGE ExistentialQuantification #-}
+ {-# LANGUAGE ScopedTypeVariables #-}
+ {-# LANGUAGE NoMonomorphismRestriction #-}
++{-# LANGUAGE CPP #-}
+ 
+ -- | Original work available at <http://okmij.org/ftp/Hgetell/extensible/Eff.hs>.
+ -- This module implements extensible effects as an alternative to monad transformers,
+@@ -85,6 +86,10 @@ import Control.Monad (ap)
+ import Data.OpenUnion1
+ import Data.Typeable
+ 
++#if MIN_VERSION_base(4,7,0)
++#define Typeable1 Typeable
++#endif
++
+ -- | A `VE` is either a value, or an effect of type @`Union` r@ producing another `VE`.
+ -- The result is that a `VE` can produce an arbitrarily long chain of @`Union` r@
+ -- effects, terminated with a pure value.
+diff --git a/src/Control/Eff/Exception.hs b/src/Control/Eff/Exception.hs
+index 3d06c52..cbee137 100644
+--- a/src/Control/Eff/Exception.hs
++++ b/src/Control/Eff/Exception.hs
+@@ -2,6 +2,7 @@
+ {-# LANGUAGE DeriveDataTypeable #-}
+ {-# LANGUAGE DeriveFunctor #-}
+ {-# LANGUAGE FlexibleContexts #-}
++{-# LANGUAGE CPP #-}
+ -- | Exception-producing and exception-handling effects
+ module Control.Eff.Exception( Exc(..)
+                             , Fail
+@@ -24,6 +25,10 @@ import Data.Typeable
+ import Control.Eff
+ import Control.Eff.Lift
+ 
++#if MIN_VERSION_base(4,7,0)
++#define Typeable1 Typeable
++#endif
++
+ -- | These are exceptions of the type e. This is akin to the error monad.
+ newtype Exc e v = Exc e
+     deriving (Functor, Typeable)
+diff --git a/src/Control/Eff/Lift.hs b/src/Control/Eff/Lift.hs
+index aa2f91d..9d18700 100644
+--- a/src/Control/Eff/Lift.hs
++++ b/src/Control/Eff/Lift.hs
+@@ -5,6 +5,8 @@
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE ScopedTypeVariables #-}
+ {-# LANGUAGE ExistentialQuantification #-}
++{-# LANGUAGE CPP #-}
++{-# LANGUAGE DeriveDataTypeable #-}
+ -- | Lifting primitive Monad types to effectful computations.
+ -- We only allow a single Lifted Monad because Monads aren't commutative
+ -- (e.g. Maybe (IO a) is functionally distinct from IO (Maybe a)).
+@@ -15,13 +17,20 @@ module Control.Eff.Lift( Lift
+ 
+ import Control.Eff
+ import Data.Typeable
++#if MIN_VERSION_base(4,7,0)
++#define Typeable1 Typeable
++#endif
+ 
+ -- | Lift a Monad m to an effect.
+ data Lift m v = forall a. Lift (m a) (a -> v)
++#if MIN_VERSION_base(4,7,0)
++	 deriving (Typeable) -- starting from ghc-7.8 Typeable can only be derived
++#else
+ 
+ instance Typeable1 m => Typeable1 (Lift m) where
+     typeOf1 _ = mkTyConApp (mkTyCon3 "" "Eff" "Lift")
+                            [typeOf1 (undefined :: m ())]
++#endif
+ 
+ instance Functor (Lift m) where
+     fmap f (Lift m k) = Lift m (f . k)
+diff --git a/src/Data/OpenUnion1.hs b/src/Data/OpenUnion1.hs
+index 95b5b76..5495120 100644
+--- a/src/Data/OpenUnion1.hs
++++ b/src/Data/OpenUnion1.hs
+@@ -8,7 +8,11 @@
+ {-# LANGUAGE DeriveDataTypeable #-}
+ {-# LANGUAGE OverlappingInstances #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE CPP #-}
+ 
++#if MIN_VERSION_base(4,7,0)
++#define Typeable1 Typeable
++#endif
+ -- | Original work at <http://okmij.org/ftp/Haskell/extensible/OpenUnion1.hs>.
+ -- Open unions (type-indexed co-products) for extensible effects.
+ -- This implementation relies on _closed_ overlapping instances
