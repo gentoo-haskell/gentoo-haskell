@@ -57,9 +57,9 @@ yet_binary() {
 
 #GHC_PV=${PV}
 GHC_PV=7.8.20140130
-GHC_P=${PN}-${GHC_PV}
+GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-#SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
+#SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${GHC_P}-src.tar.bz2 )"
 SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/7.8.1-rc1/${GHC_P}-src.tar.bz2 )"
 S="${WORKDIR}"/${GHC_P}
 
@@ -219,7 +219,7 @@ relocate_ghc() {
 			"${WORKDIR}/usr/bin/hsc2hs" \
 			"${WORKDIR}/usr/bin/runghc-${PV}" \
 			"$gp_back" \
-			"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
+			"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
@@ -229,7 +229,7 @@ relocate_ghc() {
 		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
 		"${WORKDIR}/usr/bin/runghc-${PV}" \
-		"${WORKDIR}/usr/$(get_libdir)/${P}/package.conf.d/"*
+		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
 	# so it should point to current tree location
@@ -279,7 +279,7 @@ src_unpack() {
 	# unpacked separately, so prevent them from being unpacked
 	local ONLYA=${A}
 	case ${CHOST} in
-		*-darwin* | *-solaris*)  ONLYA=${P}-src.tar.bz2  ;;
+		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
 	unpack ${ONLYA}
 
@@ -304,7 +304,7 @@ src_prepare() {
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${P}/ghc"
+		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/ghc"
 	fi
 
 	if use binary; then
@@ -515,7 +515,7 @@ src_install() {
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
 		# so mark resulting binary
-		pax-mark -m "${ED}/usr/$(get_libdir)/${P}/ghc"
+		pax-mark -m "${ED}/usr/$(get_libdir)/${GHC_P}/ghc"
 
 		if [[ ! -f "${S}/VERSION" ]]; then
 			echo "${GHC_PV}" > "${S}/VERSION" \
@@ -549,7 +549,7 @@ pkg_postinst() {
 	ghc-reregister
 
 	# path to the package.cache
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	PKGCACHE="${EROOT}/usr/$(get_libdir)/${GHC_P}/package.conf.d/package.cache"
 
 	# give the cache a new timestamp, it must be as recent as
 	# the package.conf.d directory.
@@ -577,7 +577,7 @@ pkg_prerm() {
 	# * pkg_prerm for the package being replaced
 	# * pkg_postrm for the package being replaced
 	# so you'll actually be touching the new packages files, not the one you
-	# uninstall, due to that or installation directory ${P} will be the same for
+	# uninstall, due to that or installation directory ${GHC_P} will be the same for
 	# both packages.
 
 	# Call order for reinstalling is (according to PMS):
@@ -590,7 +590,7 @@ pkg_prerm() {
 	# Overwrite the modified package.cache with a copy of the
 	# original one, so that it will be removed during uninstall.
 
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${P}/package.conf.d/package.cache"
+	PKGCACHE="${EROOT}/usr/$(get_libdir)/${GHC_P}/package.conf.d/package.cache"
 	rm -rf "${PKGCACHE}"
 
 	cp -p "${PKGCACHE}"{.shipped,}
