@@ -116,7 +116,7 @@ append-ghc-cflags() {
 			*)
 				[[ ${compile}  ]] && GHC_FLAGS="${GHC_FLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
 				[[ ${assemble} ]] && GHC_FLAGS="${GHC_FLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${link}     ]] && GHC_FLAGS="${GHC_FLAGS} -optl${flag}" FILTERED_LDFLAGS="${FILTERED_LDFLAGS} ${flag}";;
+				[[ ${link}     ]] && GHC_FLAGS="${GHC_FLAGS} -optl${flag}" LDFLAGS="${LDFLAGS} ${flag}";;
 		esac
 	done
 }
@@ -159,14 +159,8 @@ ghc_setup_cflags() {
 		esac
 	done
 
-	FILTERED_LDFLAGS=""
 	for flag in ${LDFLAGS}; do
-		case ${flag} in
-			# Pass the canary. we don't quite respect LDFLAGS, but we have an excuse!
-			"-Wl,--hash-style="*) append-ghc-cflags link ${flag};;
-
-			# Ignore all other flags
-		esac
+		append-ghc-cflags link ${flag}
 	done
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
@@ -422,7 +416,7 @@ src_configure() {
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
-		echo "SRC_LD_OPTS+=${FILTERED_LDFLAGS}" >> mk/build.mk
+		echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
