@@ -496,8 +496,7 @@ src_configure() {
 
 		is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
 
-		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot \
-			|| die "econf failed"
+		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
@@ -540,9 +539,7 @@ src_install() {
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 	else
-		local insttarget="install"
-
-		# We only built docs if we were bootstrapping, otherwise
+		# We only build docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
 		if use doc && ! use ghcbootstrap; then
 			mkdir -p "${ED}/usr/share/doc"
@@ -552,9 +549,7 @@ src_install() {
 			dodoc "${S}/distrib/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
 		fi
 
-		emake -j1 ${insttarget} \
-			DESTDIR="${D}" \
-			|| die "make ${insttarget} failed"
+		emake -j1 install DESTDIR="${D}"
 
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/haddock
