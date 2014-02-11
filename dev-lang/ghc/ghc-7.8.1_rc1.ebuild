@@ -73,13 +73,14 @@ IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
+	>=dev-lang/perl-5.6.1
+	>=dev-libs/gmp-5
+	sys-libs/ncurses[unicode]
+	!ghcmakebinary? ( virtual/libffi )
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
 	kernel_linux? ( >=sys-devel/binutils-2.17 )
 	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
-	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-5
-	virtual/libffi
-	sys-libs/ncurses[unicode]"
+"
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
 # that we want the binaries to use the latest versioun available, and not to be
@@ -459,7 +460,12 @@ src_configure() {
 		# GHC embeds 'gcc' it was built by and uses it later.
 		# Don't allow things like ccache or versioned binary slip.
 		# We use stable thing across gcc upgrades.
-		is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
+		is_crosscompile || econf_args+=(--with-gcc=${CHOST}-gcc)
+
+		if ! use ghcmakebinary; then
+			econf_args+=(--with-system-libffi)
+			econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
+		fi
 
 		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
 
