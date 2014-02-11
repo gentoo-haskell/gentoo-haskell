@@ -97,8 +97,9 @@ DEPEND="${RDEPEND}
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
+REQUIRED_USE="?? ( ghcbootstrap binary )"
 # ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
-REQUIRED_USE="ia64? ( !gmp )"
+REQUIRED_USE+=" ia64? ( !gmp )"
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -169,8 +170,8 @@ ghc_setup_cflags() {
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	gcc-specs-pie && append-ghc-cflags compile link	-nopie
-	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
+	gcc-specs-pie && append-ghc-cflags compile link -nopie
+	gcc-specs-ssp && append-ghc-cflags compile      -fno-stack-protector
 
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
@@ -262,10 +263,8 @@ relocate_ghc() {
 pkg_setup() {
 	if use ghcbootstrap; then
 		ewarn "You requested ghc bootstrapping, this is usually only used"
-		ewarn "by Gentoo developers to make binary .tbz2 packages for"
-		ewarn "use with the ghc ebuild's USE=\"binary\" feature."
-		use binary && \
-			die "USE=\"ghcbootstrap binary\" is not a valid combination."
+		ewarn "by Gentoo developers to make binary .tbz2 packages."
+
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	else
