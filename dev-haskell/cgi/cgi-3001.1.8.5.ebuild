@@ -29,6 +29,9 @@ RDEPEND="dev-haskell/monadcatchio-mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc78.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
