@@ -288,6 +288,14 @@ src_unpack() {
 		*-darwin* | *-solaris*)  ONLYA=${P}-src.tar.bz2  ;;
 	esac
 	unpack ${ONLYA}
+
+	if [[ -d "${S}"/libraries/dph ]]; then
+		# Sometimes dph libs get accidentally shipped with ghc
+		# but they are not installed unless user requests it.
+		# We never install them.
+		elog "Removing 'libraries/dph'"
+		rm -rf "${S}"/libraries/dph
+	fi
 }
 
 src_prepare() {
