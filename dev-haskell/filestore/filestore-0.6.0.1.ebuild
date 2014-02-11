@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 			dev-haskell/mtl
 		)"
 
+src_prepare() {
+	cabal_chdeps \
+		'process >= 1.0 && < 1.2' 'process >= 1.0 && < 1.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag maxcount maxcount)
