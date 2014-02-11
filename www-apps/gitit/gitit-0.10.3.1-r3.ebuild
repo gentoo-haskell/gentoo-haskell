@@ -22,7 +22,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 		>=dev-haskell/base64-bytestring-0.1:=[profile?]
 		<dev-haskell/base64-bytestring-1.1:=[profile?]
 		>=dev-haskell/blaze-html-0.4:=[profile?]
-		<dev-haskell/blaze-html-0.7:=[profile?]
+		<dev-haskell/blaze-html-0.8:=[profile?]
 		dev-haskell/cgi:=[profile?]
 		>=dev-haskell/configfile-1:=[profile?]
 		<dev-haskell/configfile-1.2:=[profile?]
@@ -69,7 +69,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-pandoc-1.12.patch
 
 	cabal_chdeps \
-		'happstack-server >= 7.0 && < 7.2' 'happstack-server >= 7.0 && < 7.4'
+		'happstack-server >= 7.0 && < 7.2' 'happstack-server >= 7.0 && < 7.4' \
+        'blaze-html >= 0.4 && < 0.7' 'blaze-html >= 0.4 && < 0.8'
 }
 
 src_configure() {
