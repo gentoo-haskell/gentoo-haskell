@@ -1,0 +1,73 @@
+From a32cf5a69a8cd9e7e4bc0c303b5960e4b1c860ed Mon Sep 17 00:00:00 2001
+From: Thomas Schilling <nominolo@googlemail.com>
+Date: Fri, 7 Feb 2014 17:27:29 +0100
+Subject: [PATCH 1/2] Fix for GHC 7.8: use standalone deriving for Typeable
+ instance
+
+---
+ src/Snap/Internal/Types.hs | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/Snap/Internal/Types.hs b/src/Snap/Internal/Types.hs
+index d2d6a05..ece7740 100644
+--- a/src/Snap/Internal/Types.hs
++++ b/src/Snap/Internal/Types.hs
+@@ -8,6 +8,7 @@
+ {-# LANGUAGE Rank2Types                #-}
+ {-# LANGUAGE ScopedTypeVariables       #-}
+ {-# LANGUAGE TypeSynonymInstances      #-}
++{-# LANGUAGE StandaloneDeriving        #-}
+ 
+ module Snap.Internal.Types where
+ 
+@@ -273,8 +274,12 @@ snapTyCon = mkTyCon "Snap.Core.Snap"
+ #endif
+ {-# NOINLINE snapTyCon #-}
+ 
++#if __GLASGOW_HASKELL__ < 708
+ instance Typeable1 Snap where
+     typeOf1 _ = mkTyConApp snapTyCon []
++#else
++deriving instance Typeable Snap
++#endif
+ 
+ 
+ ------------------------------------------------------------------------------
+-- 
+1.8.5.1
+
+
+From 9aa261285aeaef1a6dd58c18951d9599a03044ff Mon Sep 17 00:00:00 2001
+From: Thomas Schilling <nominolo@googlemail.com>
+Date: Fri, 7 Feb 2014 17:27:58 +0100
+Subject: [PATCH 2/2] Fix deprecation warning: add Applicative instance to
+ Monad
+
+---
+ src/Snap/Internal/Test/RequestBuilder.hs | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/Snap/Internal/Test/RequestBuilder.hs b/src/Snap/Internal/Test/RequestBuilder.hs
+index a200738..52ebdba 100644
+--- a/src/Snap/Internal/Test/RequestBuilder.hs
++++ b/src/Snap/Internal/Test/RequestBuilder.hs
+@@ -37,6 +37,7 @@ module Snap.Internal.Test.RequestBuilder
+ ------------------------------------------------------------------------------
+ import           Blaze.ByteString.Builder
+ import           Blaze.ByteString.Builder.Char8
++import           Control.Applicative
+ import           Control.Monad.State            hiding (get, put)
+ import qualified Control.Monad.State            as State
+ import           Data.Bits
+@@ -69,7 +70,7 @@ import qualified Snap.Types.Headers             as H
+ -- | RequestBuilder is a monad transformer that allows you to conveniently
+ -- build a snap 'Request' for testing.
+ newtype RequestBuilder m a = RequestBuilder (StateT Request m a)
+-  deriving (Monad, MonadIO, MonadState Request, MonadTrans)
++  deriving (Functor, Applicative, Monad, MonadIO, MonadState Request, MonadTrans)
+ 
+ 
+ ------------------------------------------------------------------------------
+-- 
+1.8.5.1
+
