@@ -487,7 +487,7 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		emake all V=1
+		emake all
 	fi # ! use binary
 }
 
