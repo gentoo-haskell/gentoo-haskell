@@ -392,6 +392,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${P}-fix-UNREG-threaded.patch
 		epatch "${FILESDIR}"/${P}-fix-UNREG-prof.patch
 		epatch "${FILESDIR}"/${P}-libbfd.patch
+		epatch "${FILESDIR}"/${P}-fix-UNREG-ffi.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
