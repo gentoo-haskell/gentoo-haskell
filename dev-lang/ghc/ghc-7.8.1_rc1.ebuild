@@ -422,14 +422,7 @@ src_configure() {
 			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if is_crosscompile; then
-				# TODO this is a workaround for this build error with the live ebuild with haddock:
-				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
-				# needed by `utils/haddock/dist/build/Main.o'.  Stop.
-				echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-			else
-				echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-			fi
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
 			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
@@ -461,21 +454,11 @@ src_configure() {
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
 
-		# Since GHC 6.12.2 the GHC wrappers store which GCC version GHC was
-		# compiled with, by saving the path to it. The purpose is to make sure
-		# that GHC will use the very same gcc version when it compiles haskell
-		# sources, as the extra-gcc-opts files contains extra gcc options which
-		# match only this GCC version.
-		# However, this is not required in Gentoo, as only modern GCCs are used
-		# (>4).
-		# Instead, this causes trouble when for example ccache is used during
-		# compilation, but we don't want the wrappers to point to ccache.
-		# Due to the above, we simply set GCC to be "gcc". When compiling ghc it
-		# might point to ccache, once installed it will point to the users
-		# regular gcc.
-
 		local econf_args=()
 
+		# GHC embeds 'gcc' it was built by and uses it later.
+		# Don't allow things like ccache or versioned binary slip.
+		# We use stable thing across gcc upgrades.
 		is_crosscompile || econf_args+=--with-gcc=${CHOST}-gcc
 
 		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
@@ -491,21 +474,6 @@ src_configure() {
 src_compile() {
 	if ! use binary; then
 		emake all V=1
-
-		if is_crosscompile; then
-			# runghc does not work for a stage1 compiler, we can build it anyway
-			# so it will print the error message: not built for interactive use
-			pushd "${S}/utils/runghc" || die "Could not cd to utils/runghc"
-			if [ ! -f Setup.hs ]; then
-				echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
-					> Setup.hs || die "failed to create default Setup.hs"
-			fi
-			ghc -o setup --make Setup.hs || die "setup build failed"
-			./setup configure || die "runghc configure failed"
-			sed -e "s@VERSION@\"${GHC_PV}\"@" -i runghc.hs
-			./setup build || die "runghc build failed"
-			popd
-		fi
 	fi # ! use binary
 }
 
