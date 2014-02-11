@@ -79,9 +79,7 @@ RDEPEND="
 	>=dev-lang/perl-5.6.1
 	>=dev-libs/gmp-5
 	virtual/libffi
-	!<dev-haskell/haddock-2.4.2
 	sys-libs/ncurses[unicode]"
-# earlier versions than 2.4.2 of haddock only works with older ghc releases
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
 # that we want the binaries to use the latest versioun available, and not to be
@@ -437,22 +435,6 @@ src_configure() {
 			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
 			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-		fi
-
-		# set GHC_IS_UNREG if you like to build slow unregisterised
-		# host compiler. Handy if you plan to user resulting
-		# host compiler as a booting compiler for crosscompiler
-		# which can work only in unregisterised mode.
-		if [[ -n ${GHC_IS_UNREG} ]]; then
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
-			echo "SplitObjs=NO" >> mk/build.mk
-		fi
-
-		# arm: no EvilMangler support, no NCG support
-		if use arm; then
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			echo "GhcWithNativeCodeGen=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
