@@ -20,8 +20,8 @@ IUSE="+checkexternal +previewserver +watchserver"
 
 RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
-	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
@@ -57,7 +57,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3'
+		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3' \
+		'blaze-html      >= 0.5    && < 0.7' 'blaze-html      >= 0.5    && < 0.8' \
+		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7' 
 }
 
 src_configure() {
