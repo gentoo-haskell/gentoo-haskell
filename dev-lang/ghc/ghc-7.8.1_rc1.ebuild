@@ -107,16 +107,23 @@ is_crosscompile() {
 }
 
 append-ghc-cflags() {
-	local flag compile assemble link
+	local persistent compile assemble link
+	local flag ghcflag_prefix ghcflag
+
 	for flag in $*; do
 		case ${flag} in
+			persistent)	persistent="yes";;
 			compile)	compile="yes";;
 			assemble)	assemble="yes";;
 			link)		link="yes";;
 			*)
-				[[ ${compile}  ]] && GHC_FLAGS="${GHC_FLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${assemble} ]] && GHC_FLAGS="${GHC_FLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${link}     ]] && GHC_FLAGS="${GHC_FLAGS} -optl${flag}" LDFLAGS="${LDFLAGS} ${flag}";;
+				[[ ${compile}  ]] && ghcflag_prefix="-optc" CFLAGS+=" ${flag}"
+				[[ ${assemble} ]] && ghcflag_prefix="-opta" CFLAGS+=" ${flag}"
+				[[ ${link}     ]] && ghcflag_prefix="-optl" LDFLAGS+=" ${flag}"
+				ghcflag=${ghcflag_prefix}${flag}
+				GHC_FLAGS+=" ${ghcflag}"
+				[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				;;
 		esac
 	done
 }
@@ -140,7 +147,11 @@ ghc_setup_cflags() {
 	strip-flags
 	strip-unsupported-flags
 
+	# Cmm can't parse line numbers #482086
+	replace-flags -ggdb[3-9] -ggdb2
+
 	GHC_FLAGS=""
+	GHC_PERSISTENT_FLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
 
@@ -165,16 +176,16 @@ ghc_setup_cflags() {
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	gcc-specs-pie && append-ghc-cflags compile link -nopie
-	gcc-specs-ssp && append-ghc-cflags compile      -fno-stack-protector
+	gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
+	gcc-specs-ssp && append-ghc-cflags persistent compile      -fno-stack-protector
 
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
-	use ppc64 && append-ghc-cflags compile -mminimal-toc
+	use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
 	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags compile -G0 -Os
+	use ia64 && append-ghc-cflags persistent compile -G0 -Os
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
@@ -296,9 +307,9 @@ src_prepare() {
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
-		# Modify the wrapper script from the binary tarball to use GHC_FLAGS.
+		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
+		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 			"${WORKDIR}/usr/bin/ghc-${PV}"
 
 		# allow hardened users use vanilla binary to bootstrap ghc
@@ -372,7 +383,7 @@ src_prepare() {
 			esac
 		fi
 
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_FLAGS}|" \
+		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
 
 		cd "${S}" # otherwise epatch will break
