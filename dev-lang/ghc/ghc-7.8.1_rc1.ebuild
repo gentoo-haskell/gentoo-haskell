@@ -108,7 +108,7 @@ is_crosscompile() {
 
 append-ghc-cflags() {
 	local persistent compile assemble link
-	local flag ghcflag_prefix ghcflag
+	local flag ghcflag
 
 	for flag in $*; do
 		case ${flag} in
@@ -117,12 +117,12 @@ append-ghc-cflags() {
 			assemble)	assemble="yes";;
 			link)		link="yes";;
 			*)
-				[[ ${compile}  ]] && ghcflag_prefix="-optc" CFLAGS+=" ${flag}"
-				[[ ${assemble} ]] && ghcflag_prefix="-opta" CFLAGS+=" ${flag}"
-				[[ ${link}     ]] && ghcflag_prefix="-optl" LDFLAGS+=" ${flag}"
-				ghcflag=${ghcflag_prefix}${flag}
-				GHC_FLAGS+=" ${ghcflag}"
-				[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				[[ ${compile}  ]] && ghcflag="-optc${flag}"  CFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				[[ ${assemble} ]] && ghcflag="-opta${flag}"  CFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				[[ ${link}     ]] && ghcflag="-optl${flag}" LDFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
 				;;
 		esac
 	done
