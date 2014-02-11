@@ -69,7 +69,7 @@ SLOT="0/${PV}"
 #KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 KEYWORDS=""
 IUSE="doc ghcbootstrap ghcmakebinary +gmp"
-IUSE+=" binary" # don't forget about me later!
+IUSE+=" binary"
 IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
