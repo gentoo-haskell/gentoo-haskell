@@ -113,3 +113,14 @@ src_configure() {
 		$(cabal_flag test-properties test-properties) \
 		$(cabal_flag trustworthy trustworthy)
 }
+
+src_compile() {
+	# On ghc-7.8.1_rc1:
+	# fails due to a bug https://ghc.haskell.org/trac/ghc/ticket/8696
+	# We allow it to fail during: 1. vanilla build, 2. profiles build, 3. dynamic build
+	for i in v p d
+	do
+		nonfatal haskell-cabal_src_compile
+	done
+	haskell-cabal_src_compile
+}
