@@ -20,7 +20,7 @@ IUSE="no-exe system-libyaml"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
-	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/conduit-1.0.11:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-0.5:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/text:=[profile?]
