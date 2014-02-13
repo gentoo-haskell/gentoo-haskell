@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${MY_P}.tar.gz"
+SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${MY_P}_pre20140130.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -54,4 +54,17 @@ src_compile() {
 	cabal-is-dummy-lib && return
 
 	cabal-build
+}
+
+pkg_postinst() {
+	ghc-package_pkg_postinst
+	ewarn
+	ewarn "\e[1;31m************************************************************************\e[0m"
+	ewarn
+	ewarn "This is *NOT* cabal-1.18.1.3 - it is just an evil snapshot from ghc 7.8.1_rc1."
+	ewarn "You may at some later date when the real cabal-1.18.1.3 is released emerge it"
+	ewarn "again to to purge this abomination from your system!"
+	ewarn
+	ewarn "\e[1;31m************************************************************************\e[0m"
+	ewarn
 }
