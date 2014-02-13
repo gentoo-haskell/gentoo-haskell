@@ -27,12 +27,12 @@ arch_binaries=""
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
+arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -45,12 +45,12 @@ yet_binary() {
 		#	ewarn "ARM binary is built on armv5tel-eabi toolchain. Use with caution."
 		#	return 0
 		#;;
-		#amd64) return 0 ;;
+		amd64) return 0 ;;
 		#ia64) return 0 ;;
 		#ppc) return 0 ;;
 		#ppc64) return 0 ;;
 		#sparc) return 0 ;;
-		#x86) return 0 ;;
+		x86) return 0 ;;
 		*) return 1 ;;
 	esac
 }
@@ -213,8 +213,8 @@ relocate_ghc() {
 	local bin_libdir=${bin_libpath#${bin_ghc_prefix}/}
 
 	# backup original script to use it later after relocation
-	local gp_back="${T}/ghc-pkg-${PV}-orig"
-	cp "${WORKDIR}/usr/bin/ghc-pkg-${PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+	local gp_back="${T}/ghc-pkg-${GHC_PV}-orig"
+	cp "${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
 
 	if [[ ${bin_libdir} != $(get_libdir) ]]; then
 		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
@@ -224,22 +224,22 @@ relocate_ghc() {
 		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
 
 		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
-			"${WORKDIR}/usr/bin/ghc-${PV}" \
-			"${WORKDIR}/usr/bin/ghci-${PV}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${PV}" \
+			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 			"$gp_back" \
 			"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
-		"${WORKDIR}/usr/bin/ghc-${PV}" \
-		"${WORKDIR}/usr/bin/ghci-${PV}" \
-		"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+		"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
-		"${WORKDIR}/usr/bin/runghc-${PV}" \
+		"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
@@ -251,11 +251,11 @@ relocate_ghc() {
 		# TODO: add the same for darwin's CHOST and it's DYLD_
 		local new_ldpath='LD_LIBRARY_PATH="'${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir)'${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"\nexport LD_LIBRARY_PATH'
 		sed -i -e '2i'"$new_ldpath" \
-			"${WORKDIR}/usr/bin/ghc-${PV}" \
-			"${WORKDIR}/usr/bin/ghci-${PV}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${PV}" \
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${PV}" \
+			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 			"$gp_back" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
@@ -310,7 +310,7 @@ src_prepare() {
 		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${WORKDIR}/usr/bin/ghc-${PV}"
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}"
 
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
@@ -421,7 +421,7 @@ src_configure() {
 		# initialize build.mk
 		echo '# Gentoo changes' > mk/build.mk
 
-		# Put docs into the right place, ie /usr/share/doc/ghc-${PV}
+		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
 		echo "docdir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 		echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 
