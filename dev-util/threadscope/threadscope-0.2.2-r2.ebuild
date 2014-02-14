@@ -34,3 +34,11 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.4"
 
 PATCHES=("${FILESDIR}/${PN}-0.2.2-gtk2hs-0.12.5.0.patch")
+
+src_prepare() {
+	base_src_prepare
+
+	# ghc-7.8
+	cabal_chdeps \
+		'unix >= 2.3 && < 2.7' 'unix >= 2.3'
+}
