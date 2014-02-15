@@ -13,7 +13,7 @@ DESCRIPTION="Parallel execution of monadic computations"
 HOMEPAGE="http://trac.haskell.org/SCC/wiki/monad-parallel"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
