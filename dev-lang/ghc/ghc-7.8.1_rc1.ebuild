@@ -102,6 +102,9 @@ REQUIRED_USE="?? ( ghcbootstrap binary )"
 # ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
 REQUIRED_USE+=" ia64? ( !gmp )"
 
+# yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
+use binary && QA_PREBUILT="*"
+
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
 }
