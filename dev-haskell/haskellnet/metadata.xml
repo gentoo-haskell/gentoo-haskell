@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides client support for the POP3,
+		SMTP, and IMAP protocols.  NOTE: this package will be
+		split into smaller, protocol-specific packages in the
+		future.
+	</longdescription>
+</pkgmetadata>
