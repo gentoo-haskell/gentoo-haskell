@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A liberalised re-implementation of cpp, the C pre-processor."
-HOMEPAGE="http://haskell.org/cpphs/"
+HOMEPAGE="http://projects.haskell.org/cpphs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
