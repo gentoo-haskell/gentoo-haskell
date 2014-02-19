@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This module exports functions that abstract simple network socket
+		usage patterns.
+		
+		See the @NEWS@ file in the source distribution to learn about any
+		important changes between version.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package adds resource management and exception handling to the @pipes@
+		ecosystem.
+		
+		Notable features include:
+		
+		* /Resource Safety/: Guarantee finalization using @finally@, @bracket@ and
+		more
+		
+		* /Exception Safety/: Even against asynchronous exceptions!
+		
+		* /Laziness/: Only acquire resources when you need them
+		
+		* /Promptness/: Finalize resources early when you are done with them
+		
+		* /Native Exception Handling/: Catch and resume from exceptions inside pipes
+		
+		* /No Buy-in/: Mix resource-safe pipes with unmanaged pipes using @hoist@
+	</longdescription>
+</pkgmetadata>
