@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides light-weight concurrency primitives for
+		pipes, with the following features:
+		
+		* /Simple API/: Use only five functions
+		
+		* /Deadlock Safety/: Automatically avoid concurrency deadlocks
+		
+		* /Flexibility/: Build many-to-many and cyclic communication topologies
+		
+		* /Dynamic Graphs/: Add or remove readers and writers at any time
+		
+		Import &quot;Pipes.Concurrent&quot; to use the library.
+		
+		Read &quot;Pipes.Concurrent.Tutorial&quot; for a tutorial.
+	</longdescription>
+</pkgmetadata>
