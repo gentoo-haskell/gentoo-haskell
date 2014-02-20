@@ -408,6 +408,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${P}-libbfd.patch
 		epatch "${FILESDIR}"/${P}-fix-UNREG-ffi.patch
 		epatch "${FILESDIR}"/${P}-UNREG-deopt.patch
+		epatch "${FILESDIR}"/${P}-add-missing-markStablePtrTable-decl.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix

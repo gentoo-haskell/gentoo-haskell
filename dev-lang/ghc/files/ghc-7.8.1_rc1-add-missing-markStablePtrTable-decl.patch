@@ -1,0 +1,28 @@
+commit f997612c00c2e280e866a0d385bc08f7b43c9ab1
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Thu Feb 20 10:46:16 2014 +0300
+
+    rts/RetainerProfile.c: include missing header for 'markStableTables'
+    
+    Found by clang:
+    
+      rts_dist_HC rts/dist/build/RetainerProfile.p_o
+    
+      rts/RetainerProfile.c:1779:5:
+         error: implicit declaration of function 'markStableTables' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+            markStableTables(retainRoot, NULL);
+            ^
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/rts/RetainerProfile.c b/rts/RetainerProfile.c
+index 8cf8848..973e03b 100644
+--- a/rts/RetainerProfile.c
++++ b/rts/RetainerProfile.c
+@@ -30,6 +30,7 @@
+ #include "Stats.h"
+ #include "ProfHeap.h"
+ #include "Apply.h"
++#include "Stable.h" /* markStableTables */
+ #include "sm/Storage.h" // for END_OF_STATIC_LIST
+ 
+ /*
