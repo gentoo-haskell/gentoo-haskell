@@ -19,11 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=app-text/pandoc-1.10:=[profile?] <app-text/pandoc-1.13:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/hamlet-1.1:=[profile?] <dev-haskell/hamlet-1.2:=[profile?]
 	>=dev-haskell/persistent-0.9:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.1:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.3:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.4:=[profile?]
@@ -35,5 +35,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text            >= 0.11  && < 0.12' 'text            >= 0.11'
+		'text            >= 0.11  && < 0.12' 'text            >= 0.11' \
+        'blaze-html      >= 0.5   && < 0.7'  'blaze-html >= 0.5 && < 0.8'
+
 }
