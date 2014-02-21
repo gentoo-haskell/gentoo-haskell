@@ -22,7 +22,7 @@ KEYWORDS="amd64 ~ppc64 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="+screensaver +xinerama"
 
 RDEPEND="dev-haskell/data-default:=[profile?]
-		>=dev-lang/ghc-6.10.4:=
+		>=dev-lang/ghc-7.4.1:=
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXrandr
