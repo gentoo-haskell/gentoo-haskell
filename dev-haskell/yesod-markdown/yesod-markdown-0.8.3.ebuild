@@ -35,7 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text            >= 0.11  && < 0.12' 'text            >= 0.11' \
-        'blaze-html      >= 0.5   && < 0.7'  'blaze-html >= 0.5 && < 0.8'
-
+		'blaze-html      >= 0.5   && < 0.7'  'blaze-html >= 0.5 && < 0.8'
 }
