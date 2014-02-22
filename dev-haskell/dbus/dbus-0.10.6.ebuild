@@ -32,10 +32,3 @@ RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'text >= 0.11.1.5 && < 0.12' 'text >= 0.11.1.5' \
-	    'unix >= 2.2 && < 2.7' 'unix >= 2.2 && < 2.8'
-
-}
