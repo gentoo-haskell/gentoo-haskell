@@ -12,7 +12,4 @@
 		C library on which this binding is based, please see:
 		&lt;http://connect.creativelabs.com/openal/Documentation/The%20OpenAL%20Utility%20Toolkit.pdf&gt;.
 	</longdescription>
-	<use>
-		<flag name="usenativewindowslibraries">When compiling under Windows, use the native libraries.</flag>
-	</use>
 </pkgmetadata>
