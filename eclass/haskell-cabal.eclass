@@ -671,7 +671,8 @@ cabal_flag() {
 #}
 #
 cabal_chdeps() {
-	local cf=${CABAL_FILE:-${S}/${PN}.cabal}
+	local cabal_fn=${MY_PN:-${PN}}.cabal
+	local cf=${CABAL_FILE:-${S}/${cabal_fn}}
 	local from_ss # ss - substring
 	local to_ss
 	local orig_c # c - contents
