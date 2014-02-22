@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test
+RESTRICT=test # needs local rabbitmq
 
 RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
 	>=dev-haskell/clock-0.4.0.1:=[profile?]
