@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/cabal-1.14:=[profile?]
-	dev-haskell/eithert:=[profile?]
+	dev-haskell/either:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14:=[profile?]
 	dev-haskell/hse-cpp:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
