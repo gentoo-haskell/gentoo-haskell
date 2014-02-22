@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This is a modified version of wl-pprint, which was based on Wadler&#39;s
+		paper &quot;A Prettier  Printer&quot;.  See the haddocks for full info.  This
+		version allows the library user to annotate the text with semantic
+		information, which can later be rendered in a variety of ways.
+	</longdescription>
+</pkgmetadata>
