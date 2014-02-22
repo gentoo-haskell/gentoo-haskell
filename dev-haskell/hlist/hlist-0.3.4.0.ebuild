@@ -25,6 +25,7 @@ IUSE=""
 RESTRICT=test # Ambiguous module name `Control.Monad.Identity': mtl-2.1.2 monads-tf-0.1.0.1 monads-fd-0.2.0.0
 
 RDEPEND="dev-haskell/mtl:=[profile?]
+	dev-haskell/tagged:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
