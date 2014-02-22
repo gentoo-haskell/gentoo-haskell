@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug shared-llvm"
 
+RESTRICT=test # missing files
+
 RDEPEND="~dev-haskell/llvm-general-pure-3.4.1.0:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?]
 	>=dev-haskell/parsec-3.1.3:=[profile?]
