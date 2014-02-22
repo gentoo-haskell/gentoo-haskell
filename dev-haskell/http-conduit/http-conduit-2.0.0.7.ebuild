@@ -30,36 +30,19 @@ RDEPEND=">=dev-haskell/conduit-0.5.5:=[profile?] <dev-haskell/conduit-1.1:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/asn1-data
-		dev-haskell/base64-bytestring
-		dev-haskell/blaze-builder
-		dev-haskell/blaze-builder-conduit
+	test? ( dev-haskell/blaze-builder
 		dev-haskell/case-insensitive
-		dev-haskell/certificate
 		>=dev-haskell/connection-0.2
 		dev-haskell/cookie
-		dev-haskell/cprng-aes
 		dev-haskell/data-default-class
-		dev-haskell/deepseq
-		dev-haskell/failure
 		>=dev-haskell/hspec-1.3
 		dev-haskell/http-client-multipart
 		dev-haskell/hunit
-		dev-haskell/mime-types
-		dev-haskell/monad-control
-		dev-haskell/mtl
 		dev-haskell/network
 		>=dev-haskell/network-conduit-0.6
-		dev-haskell/publicsuffixlist
-		dev-haskell/random
-		dev-haskell/regex-compat
-		dev-haskell/socks
 		dev-haskell/text
-		dev-haskell/transformers-base
 		dev-haskell/utf8-string
-		dev-haskell/void
 		>=dev-haskell/wai-2.0 <dev-haskell/wai-2.1
 		>=dev-haskell/warp-2.0 <dev-haskell/warp-2.1
-		dev-haskell/warp-tls
-		dev-haskell/zlib-conduit )
+		dev-haskell/warp-tls )
 "
