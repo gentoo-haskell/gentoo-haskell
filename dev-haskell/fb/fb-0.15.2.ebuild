@@ -45,15 +45,10 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	test? ( >=dev-haskell/hspec-1.4
+	test? ( >=dev-haskell/hspec-1.8 <dev-haskell/hspec-1.9
 		dev-haskell/hunit
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'hspec >= 1.4 && < 1.8' 'hspec >= 1.4'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
