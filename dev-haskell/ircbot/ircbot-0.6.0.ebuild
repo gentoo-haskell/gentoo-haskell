@@ -18,14 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/irc-0.5:=[profile?] <dev-haskell/irc-0.6:=[profile?]
+RDEPEND=">=dev-haskell/irc-0.6:=[profile?] <dev-haskell/irc-0.7:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/safesemaphore-0.10:=[profile?] <dev-haskell/safesemaphore-0.11:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.16.0
 "
