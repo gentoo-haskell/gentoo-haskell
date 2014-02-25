@@ -64,6 +64,9 @@ src_prepare() {
 	if ! ghc-supports-threaded-runtime; then
 		cabal_chdeps '-threaded' ' '
 	fi
+	if [[ -n ${LIVE_EBUILD} ]]; then
+		cabal_chdeps 'Cabal      == 1.19.2' 'Cabal == 1.18.9999'
+	fi
 }
 
 src_install() {
