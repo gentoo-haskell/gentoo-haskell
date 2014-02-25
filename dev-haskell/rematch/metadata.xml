@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Rematch is a simple library of matchers, which express rules
+		that can pass or fail. Matchers also report their failure with
+		human readable output. Custom matchers can be build, and
+		matchers can be combined using several predefined combinators
+		or you can write your own.
+		Matchers are often used in automated tests to provide expressive
+		failure messages.
+		Rematch is very similar to, and very inspired by the hamcrest
+		library for Java
+	</longdescription>
+</pkgmetadata>
