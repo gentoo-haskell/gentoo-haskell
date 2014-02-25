@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 src_configure() {
 	# workarond bug on ghc-7.6.3, where
 	# compilation causes endless loop
-	replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.6.* ]] && replace-hcflags -O[2-9] -O1
 
 	haskell-cabal_src_configure
 }
