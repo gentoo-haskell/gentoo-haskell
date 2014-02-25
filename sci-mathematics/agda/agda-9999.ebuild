@@ -49,7 +49,9 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
 		<dev-haskell/zlib-0.6:=[profile?]
 		>=dev-lang/ghc-6.12.1:=
 		virtual/emacs
-		app-emacs/haskell-mode"
+		app-emacs/haskell-mode
+		virtual/emacs
+"
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
 		dev-haskell/alex
@@ -91,6 +93,7 @@ src_configure() {
 }
 
 src_compile() {
+	BYTECOMPFLAGS="-L ./src/data/emacs-mode"
 	elisp-compile src/data/emacs-mode/*.el \
 		|| die "Failed to compile emacs mode"
 	haskell-cabal_src_compile
