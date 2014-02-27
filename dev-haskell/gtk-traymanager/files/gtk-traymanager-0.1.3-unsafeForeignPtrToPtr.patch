@@ -1,0 +1,16 @@
+diff --git a/src/Graphics/UI/Gtk/Misc/TrayManager.hs b/src/Graphics/UI/Gtk/Misc/TrayManager.hs
+index 632b893..e938dfd 100644
+--- a/src/Graphics/UI/Gtk/Misc/TrayManager.hs
++++ b/src/Graphics/UI/Gtk/Misc/TrayManager.hs
+@@ -63,9 +63,10 @@ import System.Glib.UTFString ( peekUTFString )
+ 
+ import Control.Monad ( liftM )
+ 
+-import Foreign
++import Foreign hiding ( unsafeForeignPtrToPtr )
+ import Foreign.C.String ( CString, peekCString )
+ import Foreign.C.Types
++import Foreign.ForeignPtr.Unsafe ( unsafeForeignPtrToPtr )
+ import Unsafe.Coerce ( unsafeCoerce )
+ 
+ newtype TrayManager = TrayManager (ForeignPtr TrayManager)

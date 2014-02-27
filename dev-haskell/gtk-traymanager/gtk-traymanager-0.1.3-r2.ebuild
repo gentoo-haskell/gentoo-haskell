@@ -36,4 +36,5 @@ src_prepare() {
 		sed -e 's@default-language: Haskell2010@default-language: Haskell98@' \
 			-i "${S}/${PN}.cabal" || die "Could not change default-language to Haskell98"
 	fi
+	epatch "${FILESDIR}/${P}-unsafeForeignPtrToPtr.patch"
 }
