@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library allows you to write WebSocket-capable servers.
+		
+		An example server:
+		&lt;https://github.com/jaspervdj/websockets/blob/master/example/server.lhs&gt;
+		
+		An example client:
+		&lt;https://github.com/jaspervdj/websockets/blob/master/example/client.hs&gt;
+		
+		See also:
+		
+		* The specification of the WebSocket protocol:
+		&lt;http://www.whatwg.org/specs/web-socket-protocol/&gt;
+		
+		* The JavaScript API for dealing with WebSockets:
+		&lt;http://www.w3.org/TR/websockets/&gt;
+	</longdescription>
+</pkgmetadata>
