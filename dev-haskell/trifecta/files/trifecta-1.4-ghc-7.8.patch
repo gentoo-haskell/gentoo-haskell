@@ -1,0 +1,32 @@
+commit d6377de9b40e22d2335a478105ae48cf7b8d85bc
+Author: Adam Vogt <vogt.adam@gmail.com>
+Date:   Mon Feb 17 15:03:05 2014 -0500
+
+    GHC.Exts exports a toList/fromList with ghc-7.8
+
+diff --git a/src/Text/Trifecta/Util/Array.hs b/src/Text/Trifecta/Util/Array.hs
+index e9c21be..9d842c5 100644
+--- a/src/Text/Trifecta/Util/Array.hs
++++ b/src/Text/Trifecta/Util/Array.hs
+@@ -56,7 +56,20 @@ import qualified Data.Traversable as Traversable
+ import Control.Applicative (Applicative)
+ import Control.DeepSeq
+ import Control.Monad.ST
+-import GHC.Exts
++import GHC.Exts (
++      Array#,
++      copyArray#,
++      copyMutableArray#,
++      indexArray#,
++      Int(I#),
++      MutableArray#,
++      newArray#,
++      readArray#,
++      sizeofArray#,
++      sizeofMutableArray#,
++      thawArray#,
++      unsafeFreezeArray#,
++      writeArray#)
+ import GHC.ST (ST(..))
+ import Prelude hiding (filter, foldr, length, map, read)
+ 
