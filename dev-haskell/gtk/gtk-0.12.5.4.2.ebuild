@@ -26,14 +26,14 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+gio"
 
-RDEPEND=">=dev-haskell/cairo-0.12.5:0=[profile?] <dev-haskell/cairo-0.13:0=[profile?]
-	>=dev-haskell/glib-0.12.5:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.12.5.3:0=[profile?] <dev-haskell/cairo-0.13:0=[profile?]
+	>=dev-haskell/glib-0.12.5.3:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pango-0.12.5:0=[profile?] <dev-haskell/pango-0.13:0=[profile?]
+	>=dev-haskell/pango-0.12.5.3:0=[profile?] <dev-haskell/pango-0.13:0=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	dev-libs/glib:2
 	x11-libs/gtk+:${GTK_MAJ_VER}
-	gio? ( >=dev-haskell/gio-0.12.5:0=[profile?] <dev-haskell/gio-0.13:0=[profile?] )
+	gio? ( >=dev-haskell/gio-0.12.5.3:0=[profile?] <dev-haskell/gio-0.13:0=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
