@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/blaze-builder-0.2.1.4 <dev-haskell/blaze-builder-0.4
 	>=dev-haskell/cabal-1.10.0.0
 	>=dev-haskell/conduit-0.5 <dev-haskell/conduit-1.1
-	dev-haskell/data-default
+	dev-haskell/data-default-class
 	dev-haskell/file-embed
 	>=dev-haskell/fsnotify-0.0 <dev-haskell/fsnotify-0.1
 	>=dev-haskell/ghc-paths-0.1
