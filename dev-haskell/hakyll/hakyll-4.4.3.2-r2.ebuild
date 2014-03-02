@@ -59,7 +59,7 @@ src_prepare() {
 	cabal_chdeps \
 		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3' \
 		'blaze-html      >= 0.5    && < 0.7' 'blaze-html      >= 0.5    && < 0.8' \
-		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7' 
+		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7'
 }
 
 src_configure() {
