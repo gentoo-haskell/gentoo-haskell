@@ -31,6 +31,7 @@ RDEPEND=">=dev-haskell/comonad-3.0.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	test? ( dev-haskell/hspec
+	test? ( dev-haskell/foldl
+		dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
