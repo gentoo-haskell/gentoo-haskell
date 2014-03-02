@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
-	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
+RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/digestive-functors-0.6:=[profile?] <dev-haskell/digestive-functors-0.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -27,3 +27,9 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'blaze-html         >= 0.5  && < 0.7' 'blaze-html         >= 0.5  && < 0.8' \
+		'blaze-markup       >= 0.5  && < 0.6' 'blaze-markup       >= 0.5  && < 0.7'
+}
