@@ -21,8 +21,8 @@ IUSE=""
 RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.1:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.7:=[profile?]
-	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/charset-0.3.5.1:=[profile?] <dev-haskell/charset-1:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
@@ -43,3 +43,11 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}"/${P}-ghc-7.8.patch)
+
+src_prepare() {
+	base_src_prepare
+
+	cabal_chdeps \
+		'blaze-html           >= 0.5     && < 0.7' 'blaze-html           >= 0.5     && < 0.8' \
+		'blaze-markup         >= 0.5     && < 0.6' 'blaze-markup         >= 0.5     && < 0.7'
+}
