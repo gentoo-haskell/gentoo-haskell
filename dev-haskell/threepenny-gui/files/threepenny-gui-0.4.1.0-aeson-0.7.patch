@@ -1,0 +1,16 @@
+diff --git a/src/Graphics/UI/Threepenny/Internal/Types.hs b/src/Graphics/UI/Threepenny/Internal/Types.hs
+index bbd2e56..74b153c 100644
+--- a/src/Graphics/UI/Threepenny/Internal/Types.hs
++++ b/src/Graphics/UI/Threepenny/Internal/Types.hs
+@@ -62,9 +62,9 @@ type Events   = EventId -> E.Event EventData
+ 
+ -- Marshalling ElementId
+ instance ToJSON ElementId where
+-    toJSON (ElementId o)  = toJSON o
++    toJSON (ElementId o)  = toJSON (BS.unpack o)
+ instance FromJSON ElementId where
+-    parseJSON (Object v)  = ElementId <$> v .: "Element"
++    parseJSON (Object v)  = (ElementId . BS.pack) <$> v .: "Element"
+     parseJSON _           = mzero
+ 
+ 
