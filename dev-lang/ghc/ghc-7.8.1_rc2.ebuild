@@ -318,7 +318,7 @@ src_prepare() {
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/ghc"
+		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/bin/ghc"
 	fi
 
 	if use binary; then
