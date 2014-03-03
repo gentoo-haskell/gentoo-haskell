@@ -76,4 +76,8 @@
 		
 		* 0.10.3.1 - Compatibility with base 4.6
 	</longdescription>
+	<use>
+		<flag name="extensibleexceptions">Use dev-haskell/extensible-exceptions.</flag>
+	</use>
+
 </pkgmetadata>
