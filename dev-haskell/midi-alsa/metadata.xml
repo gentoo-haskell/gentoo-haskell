@@ -15,4 +15,7 @@
 		for the @alsa-seq:Event@ type
 		of the @midi:Message.Class.Check@ and @midi:Message.Class.Query@ classes.
 	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables.</flag>
+	</use>
 </pkgmetadata>
