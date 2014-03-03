@@ -6,7 +6,9 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<use>
+		<flag name="curses">Use curses to get the screen width.</flag>
 		<flag name="effects">Build the effects package.</flag>
+		<flag name="ffi">Build support for libffi.</flag>
 		<flag name="llvm">Build the LLVM backend.</flag>
 		<flag name="noeffects">Build without the effects package.</flag>
 	</use>
