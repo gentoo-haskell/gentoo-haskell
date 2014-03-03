@@ -1,0 +1,21 @@
+commit c07a5899046bdc558a9965d24edc1e7edacd20c1
+Author: Edward Kmett <ekmett@gmail.com>
+Date:   Thu Feb 27 11:40:46 2014 -0500
+
+    hack to fix building on ghc-7.8.1-rc2 (closes #402 and #403)
+
+diff --git a/src/Control/Lens/Internal/Exception.hs b/src/Control/Lens/Internal/Exception.hs
+index 8852c49..bf685a0 100644
+--- a/src/Control/Lens/Internal/Exception.hs
++++ b/src/Control/Lens/Internal/Exception.hs
+@@ -40,8 +40,9 @@ import Data.Monoid
+ import Data.Proxy
+ import Data.Typeable
+ 
++-- This is needed because ghc 7.8-rc2 has Typeable1 as a type alias.
+ #if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 707
+-type Typeable1 = Typeable
++#define Typeable1 Typeable
+ #endif
+ 
+ ------------------------------------------------------------------------------
