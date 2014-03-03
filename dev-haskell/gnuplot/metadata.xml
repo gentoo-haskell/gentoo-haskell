@@ -31,4 +31,10 @@
 		but probably less portable ways
 		of feeding gnuplot with a script.
 	</longdescription>
+	<use>
+		<flag name="buildexamples">Build test executables.</flag>
+		<flag name="buildtests">Build example executables.</flag>
+		<flag name="executepipe">Avoid a temporary script by running with runInteractiveProcess.</flag>
+		<flag name="executeshell">Avoid a temporary script by calling via a UNIX shell and its piping syntax.</flag>
+	</use>
 </pkgmetadata>
