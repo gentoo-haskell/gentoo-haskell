@@ -8,4 +8,9 @@
 	<longdescription>
 		Haskell 98 Lenses
 	</longdescription>
+	<use>
+		<flag name="derivedatatypeable">Use the DeriveDataTypeable extension.
+		This makes lens compile with old compilers. Users need not worry about
+		it.</flag>
+	</use>
 </pkgmetadata>
