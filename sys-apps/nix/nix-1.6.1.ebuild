@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ COMMON_DEPENDS="
 	dev-libs/openssl
 	gc? ( dev-libs/boehm-gc )
 	doc? ( dev-libs/libxml2
-		    dev-libs/libxslt 
+		    dev-libs/libxslt
 			app-text/docbook-xsl-stylesheets
 			)
 	dev-lang/perl
