@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +release
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
@@ -49,6 +49,8 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-7.8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
