@@ -9,4 +9,7 @@
 		The Parser Generator for Haskell
 		&lt;http://tanakh.github.com/Peggy&gt;
 	</longdescription>
+	<use>
+		<flag name="build-example">Build an example executable.</flag>
+	</use>
 </pkgmetadata>
