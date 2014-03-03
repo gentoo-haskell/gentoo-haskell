@@ -10,4 +10,7 @@
 		into a local web server. The user can decide how to interpret
 		the requests, and the library is intended for implementing Ajax APIs.
 	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables.</flag>
+	</use>
 </pkgmetadata>
