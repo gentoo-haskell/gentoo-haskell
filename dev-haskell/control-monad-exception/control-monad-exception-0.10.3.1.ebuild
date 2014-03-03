@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Explicitly typed, checked exceptions with stack traces"
-HOMEPAGE="http://pepeiborra.github.com/control-monad-exception"
+HOMEPAGE="http://pepeiborra.github.io/control-monad-exception/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"
