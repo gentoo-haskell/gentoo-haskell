@@ -5,9 +5,6 @@
 	<maintainer>
 		<email>haskell@gentoo.org</email>
 	</maintainer>
-	<use>
-		<flag name="developer">Operate in developer mode.</flag>
-	</use>
 	<longdescription>
 		A low-level client library for the MySQL database, implemented as
 		bindings to the C @mysqlclient@ API.
