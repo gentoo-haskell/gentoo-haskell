@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The Union\/Find algorithm implements these operations in
+		(effectively) constant-time:
+		
+		1. Check whether two elements are in the same equivalence class.
+		
+		2. Create a union of two equivalence classes.
+		
+		3. Look up the descriptor of the equivalence class.
+	</longdescription>
+</pkgmetadata>
