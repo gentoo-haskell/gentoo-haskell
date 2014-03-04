@@ -1,0 +1,68 @@
+diff --git a/src/Lambdabot.hs b/src/Lambdabot.hs
+index f14931a..2230fbf 100644
+--- a/src/Lambdabot.hs
++++ b/src/Lambdabot.hs
+@@ -14,6 +14,7 @@ module Lambdabot
+     , checkPrivs
+     , checkIgnore
+     
++    , ircCodepage
+     , ircGetChannels
+     , ircQuit
+     , ircReconnect
+@@ -138,6 +139,13 @@ checkIgnore msg = liftM2 (&&) (liftM not (checkPrivs msg))
+ ------------------------------------------------------------------------
+ -- Some generic server operations
+ 
++-- Send a CODEPAGE command to set encoding for current session.
++-- Some IRC networks don't provide UTF-8 ports, but allow
++-- switching it in runtime
++ircCodepage :: String -> String -> LB ()
++ircCodepage svr cpage = do
++    send $ codepage svr cpage
++
+ ircGetChannels :: LB [Nick]
+ ircGetChannels = (map getCN . M.keys) `fmap` gets ircChannels
+ 
+diff --git a/src/Lambdabot/IRC.hs b/src/Lambdabot/IRC.hs
+index 9c81ecf..7cd9559 100644
+--- a/src/Lambdabot/IRC.hs
++++ b/src/Lambdabot/IRC.hs
+@@ -8,6 +8,7 @@ module Lambdabot.IRC
+     , partChannel
+     , getTopic
+     , setTopic
++    , codepage
+     , privmsg
+     , quit
+     , timeReply
+@@ -72,6 +73,11 @@ getTopic chan       = mkMessage (nTag chan) "TOPIC" [nName chan]
+ setTopic :: Nick -> String -> IrcMessage
+ setTopic chan topic = mkMessage (nTag chan) "TOPIC" [nName chan, ':' : topic]
+ 
++-- | 'codepage' creates a server CODEPAGE message. The input string given is the
++--   codepage name for current session.
++codepage :: String -> String -> IrcMessage
++codepage svr codepage = mkMessage svr "CODEPAGE" [' ':codepage]
++
+ -- | 'privmsg' creates a private message to the person designated.
+ privmsg :: Nick -- ^ Who should recieve the message (nick)
+         -> String -- ^ What is the message?
+diff --git a/src/Lambdabot/Plugin/System.hs b/src/Lambdabot/Plugin/System.hs
+index a17cbfc..34580e9 100644
+--- a/src/Lambdabot/Plugin/System.hs
++++ b/src/Lambdabot/Plugin/System.hs
+@@ -89,6 +89,13 @@ system = newModule
+                 tgtNick <- readNick tgt
+                 lb $ ircPrivmsg tgtNick txt
+             }
++        , (command "codepage")
++            { privileged = True
++            , help = say "codepage <server> <CP-name>"
++            , process = \rest -> do
++                let (server, cp) = splitFirstWord rest
++                lb $ ircCodepage server cp
++            }
+         , (command "quit")
+             { privileged = True
+             , help = say "quit [msg], have the bot exit with msg"
