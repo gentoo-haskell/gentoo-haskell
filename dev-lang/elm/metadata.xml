@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Elm aims to make client-side web-development more pleasant.
+		It is a statically/strongly typed, functional reactive
+		language to HTML, CSS, and JS. This package provides a
+		library for Elm compilation in Haskell and a compiler
+		executable.
+	</longdescription>
+</pkgmetadata>
