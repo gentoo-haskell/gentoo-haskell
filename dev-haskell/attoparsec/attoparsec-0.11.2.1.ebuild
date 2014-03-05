@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/scientific-0.2:=[profile?]
-	>=dev-haskell/text-0.11.1.5:=[profile?]
+	>=dev-haskell/text-0.11.3.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
