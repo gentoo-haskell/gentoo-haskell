@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>dev-haskell/hint-0.3.1:=[profile?]
 	>=dev-haskell/mtl-0.1.0.1:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?]
-	>=dev-haskell/pointedlist-0.4:=[profile?] <dev-haskell/pointedlist-0.6:=[profile?]
+	>=dev-haskell/pointedlist-0.4:=[profile]
 	>=dev-haskell/puremd5-0.2.3:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
@@ -70,7 +70,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.6.7.0-vte.patch
 	cabal_chdeps \
 		'alex >= 3.0.3 && <= 3.1.0' 'alex >= 3.0.3' \
-		'regex-tdfa == 1.1.*' 'regex-tdfa >= 1.1'
+		'regex-tdfa == 1.1.*' 'regex-tdfa >= 1.1' \
+		'pointedlist >= 0.4 && < 0.6' 'pointedlist >= 0.4'
 }
 
 src_configure() {
