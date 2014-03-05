@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="net-libs/nodejs"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 	dev-haskell/cmdargs
