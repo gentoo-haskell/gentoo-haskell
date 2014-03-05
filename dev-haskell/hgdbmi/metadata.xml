@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		GDB\/MI lets programs drive GDB. It can be used, for example, by GDB
+		frontends. See section 27 of the GDB manual
+		
+		This module encapsualtes a GDB subprocess and provides an API to send
+		commands as well as receive both responses and notifications.
+		
+		The actual GDB behavior diverges from the GDB manual in many points, so the
+		implementation of the Machine Interface highly depends on the GDB version.
+		This module is tested with GDB version 7.4.
+	</longdescription>
+</pkgmetadata>
