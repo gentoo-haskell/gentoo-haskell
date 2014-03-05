@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		A read-eval-print-loop (REPL) for evaluating Elm expressions,
+		definitions, ADTs, and module imports. This tool is meant to
+		help you play with small expressions and interact with
+		functions deep inside of larger projects.
+	</longdescription>
+</pkgmetadata>
