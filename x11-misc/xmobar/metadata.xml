@@ -6,11 +6,9 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<use>
-		<flag name='mail'>Support the mail plugin. Pulls dependency dev-haskell/hinotify.</flag>
 		<flag name='mpd'>Support mpd plugin</flag>
 		<flag name='timezone'>Enables localized date support</flag>
 		<flag name='mpris'>Enables MPRIS v1, v2  support</flag>
-		<flag name='threaded'>Use threaded runtime.</flag>
 	</use>
 	<longdescription>
 		Xmobar is a minimalistic text based status bar.
