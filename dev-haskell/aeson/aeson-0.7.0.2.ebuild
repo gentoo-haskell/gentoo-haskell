@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.2.1:=[profile?]
 	>=dev-haskell/scientific-0.2:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/text-0.11.1.0:=[profile?]
-	>=dev-haskell/unordered-containers-0.1.3.0:=[profile?]
+	>=dev-haskell/unordered-containers-0.2.3.0:=[profile?]
 	>=dev-haskell/vector-0.7.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
