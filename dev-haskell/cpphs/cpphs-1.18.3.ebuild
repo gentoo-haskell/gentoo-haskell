@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=
+RDEPEND=">=dev-haskell/polyparse-1.9:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
