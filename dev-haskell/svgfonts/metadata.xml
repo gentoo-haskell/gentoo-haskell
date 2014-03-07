@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Native font support for the diagrams framework (&lt;http://projects.haskell.org/diagrams/&gt;). Note that this package can be used with any diagrams backend, not just the SVG backend.  The SVG-tont format is easy to parse
+		and was therefore chosen for a font library completely written in Haskell.
+		
+		You can convert your own font to SVG with &lt;http://fontforge.sourceforge.net/&gt;, or use the included LinLibertine and Bitstream fonts.
+		
+		Features:
+		
+		* Complete implementation of the features that Fontforge produces (though not the complete SVG format)
+		
+		* Kerning (/i.e./ the two characters in \&quot;VA\&quot; are closer than the characters in \&quot;VV\&quot;)
+		
+		* Unicode
+		
+		* Ligatures
+		
+		* An example that shows how to do text boxes with syntax highlighting using highlighting-kate:
+		&lt;http://hackage.haskell.org/package/highlighting-kate&gt;
+		
+		XML speed issues can be solved by trimming the svg file to only those characters that are used (or maybe binary xml one day).
+		
+		Version 1.0 of this library supports texturing, though this would only sense in a diagrams backend that does rasterization in Haskell.
+		
+		Example:
+		
+		&gt;  # LANGUAGE NoMonomorphismRestriction #
+		&gt;
+		&gt; import Diagrams.Prelude
+		&gt; import Diagrams.Backend.Cairo.CmdLine
+		&gt; import Graphics.SVGFonts.ReadFont (textSVG)
+		&gt;
+		&gt; main = defaultMain (text&#39; &quot;Hello World&quot;)
+		&gt;
+		&gt; text&#39;   t = stroke (textSVG t 1) # fc purple # fillRule EvenOdd
+		&gt; text&#39;&#39;  t = stroke (textSVG&#39; $ TextOpts t lin INSIDE_H KERN False 1 1 ) # fillRule EvenOdd
+		&gt; text&#39;&#39;&#39; t =        (textSVG_ $ TextOpts t lin INSIDE_H KERN True  1 1 ) # fillRule EvenOdd
+		
+	</longdescription>
+</pkgmetadata>
