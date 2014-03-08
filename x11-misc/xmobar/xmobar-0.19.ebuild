@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/x11-1.6.1
 	>=dev-lang/ghc-6.12.1
 	alsa? ( >=dev-haskell/alsa-core-0.5 <dev-haskell/alsa-core-0.6
-		>=dev-haskell/alsa-mixer-0.1 <dev-haskell/alsa-mixer-0.2 )
+		>=dev-haskell/alsa-mixer-0.2 <dev-haskell/alsa-mixer-0.3 )
 	dbus? ( >=dev-haskell/dbus-0.10 )
 	inotify? ( >=dev-haskell/hinotify-0.3 <dev-haskell/hinotify-0.4 )
 	mpd? ( >=dev-haskell/libmpd-0.8 <dev-haskell/libmpd-0.9 )
@@ -43,7 +43,7 @@ DEPEND="${RDEPEND}
 "
 RDEPEND+="mpd? ( media-sound/mpd )"
 
-PATCHES=("${FILESDIR}"/${P}-ghc-7.8.patch)
+PATCHES=("${FILESDIR}"/${P}-ghc-7.8.patch "${FILESDIR}"/${P}-alsa-mixer-0.2.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
