@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to the ALSA simple mixer API."
-HOMEPAGE="http://hackage.haskell.org/package/alsa-mixer"
+HOMEPAGE="https://github.com/ttuegel/alsa-mixer"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
