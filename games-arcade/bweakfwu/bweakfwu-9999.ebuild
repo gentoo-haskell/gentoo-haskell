@@ -25,3 +25,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gloss-1.8.0.1
 	>=dev-lang/ghc-6.10.4
 "
+
+src_prepare() {
+	# seems to work fine as-is
+	cabal_chdeps \
+		', GLUT ==2.4.0.0' ' '
+}
