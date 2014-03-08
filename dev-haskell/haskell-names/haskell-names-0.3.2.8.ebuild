@@ -38,6 +38,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/filemanip
 		>=dev-haskell/pretty-show-1.6.1 <dev-haskell/pretty-show-1.7
 		dev-haskell/tasty
-		dev-haskell/tasty-golden
+		>=dev-haskell/tasty-golden-2.2.1
 		dev-haskell/utf8-string )
 "
