@@ -6,8 +6,6 @@
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<use>
-		<flag name="blaze_html_0_4">Use the older 0.4 version of blaze-html.</flag>
-		<flag name="dev">Turn on development settings.</flag>
 		<flag name="library-only">Build for use with "yesod devel.</flag>
 		<flag name="threaded">Build with support for multithreaded execution.</flag>
 	</use>
