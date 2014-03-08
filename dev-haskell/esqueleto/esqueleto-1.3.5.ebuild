@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
-	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
+	>=dev-haskell/persistent-1.3:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
