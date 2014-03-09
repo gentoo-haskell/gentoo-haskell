@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/basic-prelude-0.3.5:=[profile?]
+RDEPEND="dev-haskell/async:=[profile?]
+	>=dev-haskell/basic-prelude-0.3.5:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?]
