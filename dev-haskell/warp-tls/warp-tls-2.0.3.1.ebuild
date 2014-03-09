@@ -26,8 +26,8 @@ RDEPEND=">=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profil
 	>=dev-haskell/network-conduit-0.6:=[profile?] <dev-haskell/network-conduit-1.1:=[profile?]
 	>=dev-haskell/tls-1.2.1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
-	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.1:=[profile?]
-	>=dev-haskell/warp-2.0.2:=[profile?] <dev-haskell/warp-2.1:=[profile?]
+	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
+	>=dev-haskell/warp-2.0.2:=[profile?] <dev-haskell/warp-2.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
