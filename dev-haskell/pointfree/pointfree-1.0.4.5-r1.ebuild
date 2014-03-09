@@ -38,5 +38,9 @@ src_prepare() {
 		    'QuickCheck >= 2.1 && < 2.6' \
 	    	'QuickCheck >= 2.1 && < 2.7' \
 			'haskell-src-exts >= 1.11 && < 1.14' \
-			'haskell-src-exts >= 1.11 && < 1.15'
+			'haskell-src-exts >= 1.11 && < 1.15' \
+			'base >= 3 && < 4.7' \
+			'base >= 3 && < 5' \
+			'array >= 0.3 && < 0.5' \
+			'array >= 0.3 && < 0.6'
 }
