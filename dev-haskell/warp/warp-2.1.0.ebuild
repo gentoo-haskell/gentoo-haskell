@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builde
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	dev-haskell/void:=[profile?]
-	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.1:=[profile?]
+	>=dev-haskell/wai-2.1:=[profile?] <dev-haskell/wai-2.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	allow-sendfilefd? ( dev-haskell/hashable:=[profile?] )
 "
