@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/conduit-0.5 <dev-haskell/conduit-1.1
 	dev-haskell/data-default-class
 	dev-haskell/file-embed
+	>=dev-haskell/filesystem-conduit-1.0 <dev-haskell/filesystem-conduit-2.0
 	>=dev-haskell/fsnotify-0.0 <dev-haskell/fsnotify-0.1
 	>=dev-haskell/ghc-paths-0.1
 	dev-haskell/http-conduit
