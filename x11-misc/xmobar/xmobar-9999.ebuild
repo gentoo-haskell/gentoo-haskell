@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -all_extensions,+with_threaded,+with_utf8,with_iwlib:wifi,with_alsa:alsa,with_xft:xft,with_datezone:timezone,with_dbus:dbus,with_mpd:mpd,with_inotify:inotify,with_mpris:mpris
 
 CABAL_FEATURES="bin"
-inherit base git-r3 haskell-cabal
+inherit git-r3 haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://projects.haskell.org/xmobar/"
@@ -42,8 +42,6 @@ DEPEND="${RDEPEND}
 	xft? ( >=dev-haskell/x11-xft-0.2 <dev-haskell/x11-xft-0.4 )
 "
 RDEPEND+="mpd? ( media-sound/mpd )"
-
-PATCHES=("${FILESDIR}"/${PN}-0.19-alsa-mixer-0.2.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
