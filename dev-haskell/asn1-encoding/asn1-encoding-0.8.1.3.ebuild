@@ -22,13 +22,13 @@ RDEPEND=">=dev-haskell/asn1-types-0.2.1:=[profile?] <dev-haskell/asn1-types-0.3:
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
+"
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.8.0.2
 	test? ( dev-haskell/hunit:=[profile?]
 		>=dev-haskell/quickcheck-2:=[profile?]
 		>=dev-haskell/test-framework-0.3:=[profile?]
 		>=dev-haskell/test-framework-quickcheck2-0.2:=[profile?] )
-"
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8.0.2
 "
 
 src_configure() {
