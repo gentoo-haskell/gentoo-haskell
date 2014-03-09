@@ -26,6 +26,7 @@ RDEPEND=">=dev-haskell/comonad-3.0.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
+	>=dev-haskell/vector-algorithms-0.6:=[profile?]
 	dev-haskell/vector-instances:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
