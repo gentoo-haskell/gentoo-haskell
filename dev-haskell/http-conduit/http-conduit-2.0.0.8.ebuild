@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/network-conduit-0.6
 		dev-haskell/text
 		dev-haskell/utf8-string
-		>=dev-haskell/wai-2.0 <dev-haskell/wai-2.1
-		>=dev-haskell/warp-2.0 <dev-haskell/warp-2.1
+		>=dev-haskell/wai-2.0 <dev-haskell/wai-2.2
+		>=dev-haskell/warp-2.0 <dev-haskell/warp-2.2
 		dev-haskell/warp-tls )
 "
