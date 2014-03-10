@@ -8,4 +8,7 @@
 	<longdescription>
 		UI Framework used by leksah
 	</longdescription>
+	<use>
+		<flag name="gtk3">Use gtk3</flag>
+	</use>
 </pkgmetadata>

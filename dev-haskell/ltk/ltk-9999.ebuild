@@ -19,10 +19,10 @@ EGIT_REPO_URI="https://github.com/leksah/ltk.git"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE=""
+IUSE="+gtk3"
 
 RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
-		<dev-haskell/cabal-1.17:=[profile?]
+		<dev-haskell/cabal-1.19:=[profile?]
 		>=dev-haskell/glib-0.12.5.0:0=[profile?]
 		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
 		>=dev-haskell/mtl-1.1.0.2:=[profile?]
@@ -47,5 +47,5 @@ src_prepare() {
 src_configure() {
 	cabal_src_configure \
 		--constraint="Cabal == $(cabal-version)" \
-		--flag=gtk3
+		$(cabal_flag gtk3 gtk3)
 }
