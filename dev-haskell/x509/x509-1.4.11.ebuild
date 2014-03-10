@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/asn1-encoding-0.8:=[profile?] <dev-haskell/asn1-encoding-0.9:=[profile?]
 	>=dev-haskell/asn1-parse-0.8:=[profile?] <dev-haskell/asn1-parse-0.9:=[profile?]
-	>=dev-haskell/asn1-types-0.2:=[profile?] <dev-haskell/asn1-types-0.3:=[profile?]
+	>=dev-haskell/asn1-types-0.2.3:=[profile?] <dev-haskell/asn1-types-0.3:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.4.2.1:=[profile?] <dev-haskell/crypto-pubkey-types-0.5:=[profile?]
 	>=dev-haskell/cryptohash-0.9:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	dev-haskell/mtl:=[profile?]
