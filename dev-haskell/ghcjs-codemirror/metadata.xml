@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		CodeMirror is a versatile text editor implemented in
+		JavaScript for the browser. It is specialized for
+		editing code, and comes with a number of language modes
+		and addons that implement more advanced editing
+		functionaly.
+	</longdescription>
+</pkgmetadata>
