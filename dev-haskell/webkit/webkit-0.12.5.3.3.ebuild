@@ -9,7 +9,7 @@ EAPI=5
 GTK_MAJ_VER="3"
 
 MY_PN="webkitgtk3"
-MY_PV="${PV%.*.*}"
+MY_PV="${PV%.*}"
 MY_P="${MY_PN}-${MY_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
@@ -25,8 +25,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?] <dev-haskell/cairo-0.13:0=[profile?]
-	>=dev-haskell/glib-0.12.1:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
-	>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+	>=dev-haskell/glib-0.12.3:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
+	>=dev-haskell/gtk-0.12.5.4:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/pango-0.12:0=[profile?] <dev-haskell/pango-0.13:0=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?] <dev-haskell/cairo-0.13:0=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	>=dev-haskell/gtk2hs-buildtools-0.12.5.0-r1:0=
+	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 	virtual/pkgconfig
 "
 
