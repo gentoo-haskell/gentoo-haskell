@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides an EDSL for calling JavaScript code using
+		the JavaScriptCore engine and low level Haskell bindings
+		in the webkit-javascriptcore library &lt;https://github.com/ghcjs/webkit-javascriptcore&gt;.
+	</longdescription>
+	<use>
+		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
+		<flag name='jsffi'>Use JavaScriptFFI extension for GHCJS JavaScript output</flag>
+		<flag name='jmacro'>Include some JMacro support</flag>
+	</use>
+</pkgmetadata>
