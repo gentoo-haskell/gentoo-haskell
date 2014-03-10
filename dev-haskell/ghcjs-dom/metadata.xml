@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Documentent Object Model (DOM) functions that work with
+		GHCJS, but can also be used with GHC and WebKitGTK.
+	</longdescription>
+	<use>
+		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
+		<flag name='jsc'>Use WebKitGtk JavaScriptCore</flag>
+		<flag name='jsffi'>Use JavaScriptFFI extension for GHCJS JavaScript output</flag>
+	</use>
+</pkgmetadata>
