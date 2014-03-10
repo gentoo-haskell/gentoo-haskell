@@ -8,4 +8,7 @@
 	<longdescription>
 		The interface to GHC-API for leksah
 	</longdescription>
+	<use>
+		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
+	</use>
 </pkgmetadata>
