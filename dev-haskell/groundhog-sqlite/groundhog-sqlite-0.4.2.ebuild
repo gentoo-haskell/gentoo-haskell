@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/direct-sqlite-2.3.5:=[profile?]
-	>=dev-haskell/groundhog-0.4.1:=[profile?] <dev-haskell/groundhog-0.5.0:=[profile?]
+	>=dev-haskell/groundhog-0.4.2:=[profile?] <dev-haskell/groundhog-0.5.0:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	>=dev-haskell/resource-pool-0.2.1:=[profile?]
