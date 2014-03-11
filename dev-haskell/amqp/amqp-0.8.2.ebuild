@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs local rabbitmq
 
-RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/clock-0.4.0.1:=[profile?]
 	>=dev-haskell/connection-0.2:=[profile?] <dev-haskell/connection-0.3:=[profile?]
 	>=dev-haskell/data-binary-ieee754-0.4.2.1:=[profile?]
