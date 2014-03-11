@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.8.5.3:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.0:=[profile?]
-	>=dev-haskell/groundhog-0.4.1:=[profile?] <dev-haskell/groundhog-0.5.0:=[profile?]
+	>=dev-haskell/groundhog-0.4.2:=[profile?] <dev-haskell/groundhog-0.5.0:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.1:=[profile?]
