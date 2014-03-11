@@ -25,6 +25,6 @@ RDEPEND=">=dev-haskell/hashable-1.1.2:=[profile?] <dev-haskell/hashable-1.3:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/smallcheck-1.0 <dev-haskell/smallcheck-1.2
-		>=dev-haskell/tasty-0.3.1 <dev-haskell/tasty-0.8
-		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.3 )
+		>=dev-haskell/tasty-0.3.1 <dev-haskell/tasty-0.9
+		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.9 )
 "
