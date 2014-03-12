@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/cmdargs-0.4:=[profile?]
-	>=dev-haskell/hint-0.3.2.3:=[profile?] <dev-haskell/hint-0.4:=[profile?]
+	>=dev-haskell/hint-0.3.2.3:=[profile?] <dev-haskell/hint-0.5:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/network-2.2.1.5:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
@@ -33,3 +33,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'hint                  >= 0.3.2.3       && < 0.4' 'hint                  >= 0.3.2.3       && < 0.5'
+}
