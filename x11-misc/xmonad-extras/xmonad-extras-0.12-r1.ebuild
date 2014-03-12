@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.13:=[profile?]
 	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?]
-	eval? ( >=dev-haskell/hint-0.3:=[profile?] <dev-haskell/hint-0.4:=[profile?]
+	eval? ( >=dev-haskell/hint-0.3:=[profile?] <dev-haskell/hint-0.5:=[profile?]
 			dev-haskell/network:=[profile?] )
 	mpd? ( >=dev-haskell/libmpd-0.8:=[profile?] <dev-haskell/libmpd-0.9:=[profile?] )
 	perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 )
@@ -35,6 +35,10 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+src_prepare() {
+	cabal_chdeps \
+		'hint >= 0.3.3.3 && < 0.4' 'hint >= 0.3.3.3 && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
