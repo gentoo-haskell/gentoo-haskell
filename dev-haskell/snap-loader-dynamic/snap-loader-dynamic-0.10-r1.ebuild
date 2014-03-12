@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?]
 		<dev-haskell/directory-tree-0.12:=[profile?]
 		>=dev-haskell/hint-0.3.3.1:=[profile?]
-		<dev-haskell/hint-0.4:=[profile?]
+		<dev-haskell/hint-0.5:=[profile?]
 		>dev-haskell/mtl-2.0:=[profile?]
 		<dev-haskell/mtl-2.2:=[profile?]
 		>=dev-haskell/snap-core-0.9:=[profile?]
@@ -29,3 +29,8 @@ RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'hint              >= 0.3.3.1 && < 0.4' 'hint              >= 0.3.3.1 && < 0.5'
+}
