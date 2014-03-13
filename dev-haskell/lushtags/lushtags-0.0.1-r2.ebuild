@@ -38,7 +38,7 @@ src_install() {
 	haskell-cabal_src_install
 
 	# vim-plugin.eclass is insane
-	dodir /usr/share/vim/vimfiles
+	dodir /usr/share/vim/vimfiles/plugin
 	cp "${S}"/util/tagbar-haskell.vim "${ED}"/usr/share/vim/vimfiles/ || die
 }
 
