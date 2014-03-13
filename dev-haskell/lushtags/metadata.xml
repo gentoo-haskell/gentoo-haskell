@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		&gt; Create ctags compatible tags files for Haskell programs
+		&gt;
+		&gt; Similar programs are [hasktags][1], [gasbag][2], [hothasktags][3], and GHC&#39;s
+		&gt; builtin ctags generation.
+		&gt;
+		&gt; lushtags differs from these by being designed to have smooth integration with
+		&gt; the [Vim Tagbar][4] plugin.
+		&gt;
+		&gt; Tagbar is nice because it deals with creating tags automatically. There is no
+		&gt; need to manually run commands or keep track of tag files. Just open any Haskell
+		&gt; file in Vim and the Tagbar window will instantly show an interactive browsable
+		&gt; list of all the functions and declarations in the file. This window also
+		&gt; updates automatically as you edit the file.
+		&gt;
+		&gt; The tags created by lushtags are marked with several extensions, so that when
+		&gt; used with Tagbar you get these features:
+		&gt;
+		&gt; - Type signatures are displayed for functions.
+		&gt; - Tags are properly scoped so that, for example, data declarations appear as a
+		&gt;   tree with their constructors scoped as children.
+		&gt; - Definitions that are exported from the module are marked as &quot;public&quot; and
+		&gt;   appear emphasized in Tagbar.
+		&gt; - Tag locations are internally stored as patterns, not line numbers, so that
+		&gt;   you can correctly jump to tags even if they have moved in the source code
+		&gt;   during editing.
+		&gt;
+		&gt; ![screenshot](https://github.com/bitc/lushtags/raw/master/doc/screenshot-tagbar-2011-09-19.png)
+		&gt;
+		&gt; [1]: http://hackage.haskell.org/package/hasktags
+		&gt; [2]: http://kingfisher.nfshost.com/sw/gasbag/
+		&gt; [3]: http://hackage.haskell.org/package/hothasktags
+		&gt; [4]: http://majutsushi.github.com/tagbar/
+	</longdescription>
+</pkgmetadata>
