@@ -39,7 +39,7 @@ src_install() {
 
 	# vim-plugin.eclass is insane
 	dodir /usr/share/vim/vimfiles/plugin
-	cp "${S}"/util/tagbar-haskell.vim "${ED}"/usr/share/vim/vimfiles/ || die
+	cp "${S}"/util/tagbar-haskell.vim "${ED}"/usr/share/vim/vimfiles/plugin/ || die
 }
 
 pkg_postinst() {
