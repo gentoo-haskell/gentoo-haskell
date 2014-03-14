@@ -27,8 +27,19 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
 	dev-haskell/happy
+	dev-haskell/alex
 	test? ( dev-haskell/hunit
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	# lexer is ghc-7.8 incompatible
+	rm -rv dist || die
+	rm -v src/Language/JavaScript/Parser/Lexer.hs || die
+
+	cabal_chdeps \
+		'happy >= 1.18.5' 'happy >= 1.18.5, alex' \
+		'hs-source-dirs: src' 'hs-source-dirs: src, src-dev'
+}
