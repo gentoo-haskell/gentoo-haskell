@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+colors"
 
-RDEPEND=">=dev-haskell/async-2.0:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.6.1:=[profile?]
+	>=dev-haskell/async-2.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/optparse-applicative-0.6:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2:=[profile?]
@@ -26,7 +27,6 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?]
 	>=dev-haskell/tagged-0.5:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	colors? ( >=dev-haskell/ansi-terminal-0.6.1:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
