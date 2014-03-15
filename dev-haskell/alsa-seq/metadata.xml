@@ -11,4 +11,7 @@
 		Included are some simple example programs.
 		For more example programs including a GUI, see the alsa-gui programs.
 	</longdescription>
+	<use>
+	  <flag name="modifyfilter">Use native event filter functions that are provided by newer ALSA versions</flag>
+	</use>
 </pkgmetadata>
