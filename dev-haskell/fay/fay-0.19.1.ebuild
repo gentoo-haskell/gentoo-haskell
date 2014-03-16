@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/aeson-0.8:=[profile?]
 	<dev-haskell/attoparsec-0.12:=[profile?]
-	<dev-haskell/cabal-1.19:=[profile?]
+	<dev-haskell/cabal-1.20:=[profile?]
 	<dev-haskell/cpphs-1.19:=[profile?]
 	<dev-haskell/data-default-0.6:=[profile?]
 	<dev-haskell/ghc-paths-0.2:=[profile?]
