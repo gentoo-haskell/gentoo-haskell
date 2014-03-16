@@ -43,10 +43,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-ghc78.patch
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug) \
