@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		/Overview/
+		
+		An HTTP client, using the Snap Framework&#39;s &#39;io-streams&#39; library to
+		hande the streaming IO. The API is optimized for ease of use for the
+		rather common case of code needing to query web services and deal with
+		the result.
+		
+		The library is exported in a single module; see &quot;Network.Http.Client&quot;
+		for full documentation.
+	</longdescription>
+</pkgmetadata>
