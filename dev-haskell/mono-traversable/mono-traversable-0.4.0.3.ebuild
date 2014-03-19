@@ -19,6 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-3.0.3:=[profile?]
+	>=dev-haskell/dlist-0.6:=[profile?] <dev-haskell/dlist-1.0:=[profile?]
+	>=dev-haskell/dlist-instances-0.1:=[profile?] <dev-haskell/dlist-instances-0.2:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/semigroupoids-3.0:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?]
