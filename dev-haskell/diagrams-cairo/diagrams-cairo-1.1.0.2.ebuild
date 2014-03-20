@@ -21,13 +21,16 @@ IUSE=""
 RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.13:=[profile?]
 	dev-haskell/colour:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
-	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
+	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.2:=[profile?]
+	>=dev-haskell/diagrams-lib-1.0.1:=[profile?] <dev-haskell/diagrams-lib-1.2:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
+	>=dev-haskell/juicypixels-3.1.3.2:=[profile?] <dev-haskell/juicypixels-3.2:=[profile?]
+	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.9:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
+	>=dev-haskell/vector-0.10.0:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
