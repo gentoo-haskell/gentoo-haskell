@@ -23,10 +23,10 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 	>=dev-haskell/colour-2.3.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	>=dev-haskell/data-default-0.3:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
-	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
+	>=dev-haskell/diagrams-core-1.1:=[profile?] <dev-haskell/diagrams-core-1.2:=[profile?]
+	>=dev-haskell/diagrams-lib-1.1:=[profile?] <dev-haskell/diagrams-lib-1.2:=[profile?]
 	>=dev-haskell/force-layout-0.3:=[profile?] <dev-haskell/force-layout-0.4:=[profile?]
-	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
+	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/monadrandom-0.1.8:=[profile?] <dev-haskell/monadrandom-0.2:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 	>=dev-haskell/split-0.2.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
-	>=dev-haskell/vector-space-points-0.1:=[profile?] <dev-haskell/vector-space-points-0.2:=[profile?]
+	>=dev-haskell/vector-space-points-0.1:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
