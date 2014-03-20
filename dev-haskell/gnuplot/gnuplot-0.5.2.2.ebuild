@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildexamples buildtests executepipe executeshell"
 
-REQUIRED_USE="?? ( executepipe executeshell )"
-
 RDEPEND=">=dev-haskell/data-accessor-0.2.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1:=[profile?] <dev-haskell/data-accessor-transformers-0.3:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
@@ -30,11 +28,6 @@ RDEPEND=">=dev-haskell/data-accessor-0.2.2:=[profile?] <dev-haskell/data-accesso
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'temporary >=1.1 && <1.2' 'temporary >=1.1 && <1.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
