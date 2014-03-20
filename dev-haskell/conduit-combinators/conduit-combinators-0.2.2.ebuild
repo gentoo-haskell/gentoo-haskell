@@ -21,13 +21,16 @@ IUSE=""
 RDEPEND="dev-haskell/chunked-data:=[profile?]
 	>=dev-haskell/conduit-1.0.12:=[profile?]
 	>=dev-haskell/mono-traversable-0.4:=[profile?] <dev-haskell/mono-traversable-0.5:=[profile?]
+	dev-haskell/mwc-random:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/system-fileio:=[profile?]
 	dev-haskell/system-filepath:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
+	dev-haskell/unix-compat:=[profile?]
 	dev-haskell/vector:=[profile?]
+	dev-haskell/void:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
