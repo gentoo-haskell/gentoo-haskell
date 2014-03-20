@@ -18,11 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.1:=[profile?]
-	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.1:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.7:=[profile?]
+RDEPEND="<dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/diagrams-core-1.0:=[profile?] <dev-haskell/diagrams-core-1.2:=[profile?]
+	>=dev-haskell/diagrams-lib-1.0.1:=[profile?] <dev-haskell/diagrams-lib-1.2:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4:=[profile?]
+	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.13:=[profile?]
