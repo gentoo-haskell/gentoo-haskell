@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/lens-3:=[profile?] <dev-haskell/lens-4.1:=[profile?]
+	>=dev-haskell/lens-3:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-haskell/vector-space-points-0.1.1:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
