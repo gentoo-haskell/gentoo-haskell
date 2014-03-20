@@ -20,19 +20,16 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/exceptions-0.3:=[profile?]
-	dev-haskell/monadcatchio-transformers:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	net-libs/zeromq
+	>=net-libs/zeromq-4.0
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
+	virtual/pkgconfig
 	test? ( >=dev-haskell/ansi-terminal-0.6
 		>=dev-haskell/checkers-0.3
+		dev-haskell/monadcatchio-transformers
 		>=dev-haskell/quickcheck-2.6 )
 "
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-helpers.patch
-}
