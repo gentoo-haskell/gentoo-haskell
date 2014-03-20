@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="benchmark-uniplate dump-splices +inlining j lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
+IUSE="benchmark-uniplate dump-splices +inlining lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
@@ -24,6 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/contravariant-0.3:=[profile?] <dev-haskell/contravariant-1:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-1:=[profile?]
+	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/parallel-3.1.0.1:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
@@ -101,7 +102,6 @@ src_configure() {
 		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
 		$(cabal_flag dump-splices dump-splices) \
 		$(cabal_flag inlining inlining) \
-		$(cabal_flag j j) \
 		$(cabal_flag lib-werror lib-werror) \
 		$(cabal_flag old-inline-pragmas old-inline-pragmas) \
 		$(cabal_flag safe safe) \
