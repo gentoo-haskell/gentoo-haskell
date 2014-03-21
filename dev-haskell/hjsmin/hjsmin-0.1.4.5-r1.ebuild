@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-1:=[profile?]
 	>=dev-haskell/language-javascript-0.5.1:=[profile?] <dev-haskell/language-javascript-0.6:=[profile?]
-	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.8:=[profile?]
+	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.9:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
