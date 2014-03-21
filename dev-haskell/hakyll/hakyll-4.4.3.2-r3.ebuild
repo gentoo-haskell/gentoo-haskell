@@ -28,7 +28,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.2:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.5:=[profile?]
-	>=dev-haskell/pandoc-citeproc-0.1:=[profile?] <dev-haskell/pandoc-citeproc-0.3:=[profile?]
+	>=dev-haskell/pandoc-citeproc-0.1:=[profile?] <dev-haskell/pandoc-citeproc-0.4:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
@@ -59,7 +59,8 @@ src_prepare() {
 	cabal_chdeps \
 		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3' \
 		'blaze-html      >= 0.5    && < 0.7' 'blaze-html      >= 0.5    && < 0.8' \
-		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7'
+		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7' \
+	    'pandoc-citeproc >= 0.1    && < 0.3' 'pandoc-citeproc >= 0.1    && < 0.4'
 }
 
 src_configure() {
