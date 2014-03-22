@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/chunked-data:=[profile?]
+RDEPEND="dev-haskell/base16-bytestring:=[profile?]
+	>=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
+	dev-haskell/chunked-data:=[profile?]
 	>=dev-haskell/conduit-1.0.12:=[profile?]
 	>=dev-haskell/mono-traversable-0.4:=[profile?] <dev-haskell/mono-traversable-0.5:=[profile?]
 	dev-haskell/mwc-random:=[profile?]
