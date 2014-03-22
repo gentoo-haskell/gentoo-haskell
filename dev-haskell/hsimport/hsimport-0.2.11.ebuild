@@ -32,8 +32,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.6 <dev-haskell/tasty-0.9
 		>=dev-haskell/tasty-golden-2.2.0.1 <dev-haskell/tasty-golden-2.3 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >=3.9.2 && <4.1' 'lens >=3.9.2 && <4.2'
-}
