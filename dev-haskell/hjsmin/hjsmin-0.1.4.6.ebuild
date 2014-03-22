@@ -31,10 +31,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
-
-src_prepare() {
-	cabal_chdeps \
-	  'optparse-applicative >= 0.7     && < 0.8' \
-	  'optparse-applicative >= 0.7     && < 0.9'
-
-}
