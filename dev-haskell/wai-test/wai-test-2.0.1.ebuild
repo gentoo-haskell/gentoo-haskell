@@ -24,12 +24,11 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-buil
 	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
 	>=dev-haskell/cookie-0.2:=[profile?] <dev-haskell/cookie-0.5:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
-	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-1.3:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
