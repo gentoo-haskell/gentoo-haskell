@@ -23,9 +23,9 @@ RDEPEND=">=dev-haskell/glib-0.12.3.1:=[profile?] <dev-haskell/glib-0.13:=[profil
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	gtk3? ( >=dev-haskell/gtk-0.12.4:3=[profile?] <dev-haskell/gtk-0.13:3=[profile?]
-		>=dev-haskell/webkit-0.12.5.1:3=[profile?] <dev-haskell/webkit-0.13:3=[profile?] )
+		>=dev-haskell/webkit-0.12.6.0:3=[profile?] <dev-haskell/webkit-0.13:3=[profile?] )
 	!gtk3? ( >=dev-haskell/gtk-0.12.4:2=[profile?] <dev-haskell/gtk-0.13:2=[profile?]
-			>=dev-haskell/webkit-0.12.5.1:2=[profile?] <dev-haskell/webkit-0.13:2=[profile?] )
+			>=dev-haskell/webkit-0.12.6.0:2=[profile?] <dev-haskell/webkit-0.13:2=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
