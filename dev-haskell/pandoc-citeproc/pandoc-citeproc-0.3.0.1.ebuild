@@ -56,6 +56,6 @@ src_configure() {
 		$(cabal_flag bibutils bibutils) \
 		$(cabal_flag hexpat hexpat) \
 		$(cabal_flag network network) \
-		--flag=small_base
+		--flag=small_base \
 		$(cabal_flag unicode_collation unicode_collation)
 }
