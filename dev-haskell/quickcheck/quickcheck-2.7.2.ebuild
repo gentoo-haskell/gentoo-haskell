@@ -34,11 +34,6 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	cabal_chdeps \
-		'QuickCheck == 2.7' 'QuickCheck == 2.7.1'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-base3 \
