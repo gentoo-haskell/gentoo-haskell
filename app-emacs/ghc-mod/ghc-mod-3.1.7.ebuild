@@ -33,7 +33,8 @@ RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/doctest-0.9.3
-		dev-haskell/executable-path
+		|| ( ( <dev-lang/ghc-7.6.0 dev-haskell/executable-path )
+			( >=dev-lang/ghc-7.6.0 ) )
 		>=dev-haskell/hspec-1.7.1 )
 "
 SITEFILE=50${PN}-gentoo.el
