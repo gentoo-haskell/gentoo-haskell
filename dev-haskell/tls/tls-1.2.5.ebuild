@@ -21,7 +21,7 @@ IUSE="+compat"
 RDEPEND="dev-haskell/asn1-encoding:=[profile?]
 	>=dev-haskell/asn1-types-0.2.0:=[profile?]
 	dev-haskell/byteable:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?]
+	>=dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/cipher-aes-0.2:=[profile?] <dev-haskell/cipher-aes-0.3:=[profile?]
 	dev-haskell/cipher-rc4:=[profile?]
 	dev-haskell/crypto-numbers:=[profile?]
