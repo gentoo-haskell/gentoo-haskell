@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/json:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6.0.3
+	>=dev-haskell/cabal-1.8
 "
 
 S="${WORKDIR}/${MY_P}"
