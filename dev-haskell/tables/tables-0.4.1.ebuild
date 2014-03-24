@@ -35,11 +35,6 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'cereal               >= 0.3 && < 0.4' 'cereal               >= 0.3 && < 0.5'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag test-properties test-properties) \
