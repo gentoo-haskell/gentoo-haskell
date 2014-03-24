@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
-	dev-haskell/random:=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.7:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
