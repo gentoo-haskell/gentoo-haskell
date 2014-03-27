@@ -5,6 +5,7 @@
 EAPI=5
 
 CABAL_FEATURES="bootstrap lib profile test-suite"
+CABAL_FEATURES+=" bootstrap" # does not beed cabal to build itself
 inherit haskell-cabal eutils
 
 if [[ ${PV} == *9999* ]]; then
