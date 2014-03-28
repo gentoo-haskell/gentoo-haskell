@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test
-
 RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
