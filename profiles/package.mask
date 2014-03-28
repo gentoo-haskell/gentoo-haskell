@@ -1,3 +1,8 @@
+# Alexander Vershilov <qnikst@gentoo.org> (28 Mar 2014)
+# Masked for removal in 30 days. Deprecated in favour of
+# dev-haskell/exceptions.
+dev-haskell/attempt
+
 # Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
 # Yesod platform has rules that doesn't play well with
 # gentoo haskell rules, so it's completely unmaintainable.
