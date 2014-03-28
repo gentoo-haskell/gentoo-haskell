@@ -37,7 +37,6 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/basic-prelude
-		>=dev-haskell/hspec-1.3
+	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/silently )
 "
