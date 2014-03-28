@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/resource-pool-0.2.1:=[profile?] <dev-haskell/resource-pool-0.3:=[profile?]
-	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-0.5:=[profile?]
+	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
