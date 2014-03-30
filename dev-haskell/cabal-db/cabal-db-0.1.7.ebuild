@@ -20,8 +20,10 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
+	dev-haskell/ansi-wl-pprint
 	>=dev-haskell/cabal-1.8
 	dev-haskell/mtl
+	dev-haskell/optparse-applicative
 	>=dev-haskell/tar-0.4.0
 	dev-haskell/utf8-string
 	>=dev-lang/ghc-6.10.4
