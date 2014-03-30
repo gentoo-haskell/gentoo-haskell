@@ -1,0 +1,21 @@
+diff --git a/Test/Framework/Providers/QuickCheck2.hs b/Test/Framework/Providers/QuickCheck2.hs
+index bd5cf34..316c6ab 100644
+--- a/Test/Framework/Providers/QuickCheck2.hs
++++ b/Test/Framework/Providers/QuickCheck2.hs
+@@ -9,6 +9,7 @@ module Test.Framework.Providers.QuickCheck2 (
+ import Test.Framework.Providers.API
+ 
+ import Test.QuickCheck.Property (Testable, Callback(PostTest), CallbackKind(NotCounterexample), callback)
++import Test.QuickCheck.Random
+ import Test.QuickCheck.State (numSuccessTests)
+ import Test.QuickCheck.Test
+ 
+@@ -70,7 +71,7 @@ runProperty topts testable = do
+     (gen, seed) <- newSeededStdGen (unK $ topt_seed topts)
+     let max_success = unK $ topt_maximum_generated_tests topts
+         max_discard = unK $ topt_maximum_unsuitable_generated_tests topts
+-        args = stdArgs { replay = Just (gen, 0) -- NB: the 0 is the saved size. Defaults to 0 if you supply "Nothing" for "replay".
++        args = stdArgs { replay = Just (mkQCGen seed, 0) -- NB: the 0 is the saved size. Defaults to 0 if you supply "Nothing" for "replay".
+                        , maxSuccess = max_success
+ #if MIN_VERSION_QuickCheck(2,5,0)
+                        , maxDiscardRatio = (max_discard `div` max_success) + 1
