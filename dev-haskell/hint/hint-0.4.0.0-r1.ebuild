@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.3.2:=[profile?] <dev-haskell/exceptions-0.4:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.3.2:=[profile?] <dev-haskell/exceptions-0.5:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/ghc-mtl-1.1:=[profile?] <dev-haskell/ghc-mtl-1.2:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+	  'exceptions < 0.4' 'exceptions < 0.5'
+}
