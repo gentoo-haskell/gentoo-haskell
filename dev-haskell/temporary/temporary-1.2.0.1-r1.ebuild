@@ -18,10 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-0.4:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-0.5:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'exceptions >= 0.1.1 && < 0.4' 'exceptions >= 0.1.1 && < 0.5'
+}
