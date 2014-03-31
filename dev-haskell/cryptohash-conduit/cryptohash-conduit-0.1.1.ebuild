@@ -19,7 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/conduit:=[profile?]
+	dev-haskell/conduit-extra:=[profile?]
 	dev-haskell/cryptohash:=[profile?]
+	dev-haskell/resourcet:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
