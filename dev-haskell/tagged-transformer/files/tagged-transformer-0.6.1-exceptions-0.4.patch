@@ -1,0 +1,26 @@
+diff --git a/src/Data/Functor/Trans/Tagged.hs b/src/Data/Functor/Trans/Tagged.hs
+index 83876c6..0941166 100644
+--- a/src/Data/Functor/Trans/Tagged.hs
++++ b/src/Data/Functor/Trans/Tagged.hs
+@@ -37,7 +37,7 @@ import Prelude hiding (catch, foldr, foldl, mapM, sequence, foldr1, foldl1)
+ #endif
+ import Control.Applicative (Alternative(..), Applicative(..), (<$), (<$>))
+ import Control.Monad (liftM, MonadPlus(..))
+-import Control.Monad.Catch (MonadCatch(..))
++import Control.Monad.Catch (MonadCatch(..), MonadThrow(..))
+ import Control.Monad.Fix (MonadFix(..))
+ import Control.Monad.Trans (MonadIO(..), MonadTrans(..))
+ import Control.Monad.Reader (MonadReader(..))
+@@ -220,9 +220,11 @@ instance ComonadHoist (TaggedT s) where
+   cohoist f = TagT . f . untagT
+   {-# INLINE cohoist #-}
+ 
+-instance MonadCatch m => MonadCatch (TaggedT s m) where
++instance MonadThrow m => MonadThrow (TaggedT s m) where
+   throwM e = lift $ throwM e
+   {-# INLINE throwM #-}
++
++instance MonadCatch m => MonadCatch (TaggedT s m) where
+   catch m f = tag (catch (untag m) (untag . f))
+   {-# INLINE catch #-}
+   mask a = tag $ mask $ \u -> untag (a $ q u)
