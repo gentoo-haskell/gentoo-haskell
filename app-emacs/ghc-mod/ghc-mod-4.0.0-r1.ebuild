@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 "
 SITEFILE=50${PN}-gentoo.el
 
-PATCHES=("${FILESDIR}/${PN}-3.0.0-gentoo.patch")
+PATCHES=("${FILESDIR}/${PN}-4.0.0-gentoo.patch")
 
 src_compile() {
 	haskell-cabal_src_compile
