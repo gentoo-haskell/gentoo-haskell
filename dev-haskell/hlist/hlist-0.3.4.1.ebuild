@@ -20,9 +20,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-# https://github.com/sol/doctest-haskell/issues/6
-RESTRICT=test # Ambiguous module name `Control.Monad.Identity': mtl-2.1.2 monads-tf-0.1.0.1 monads-fd-0.2.0.0
+RESTRICT="test"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/tagged:=[profile?]
