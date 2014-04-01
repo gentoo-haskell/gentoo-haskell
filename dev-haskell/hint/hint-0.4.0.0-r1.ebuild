@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-exceptions-0.4.patch
 	cabal_chdeps \
 	  'exceptions < 0.4' 'exceptions < 0.5'
 }

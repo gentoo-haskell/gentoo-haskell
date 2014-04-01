@@ -1,0 +1,16 @@
+diff --git a/src/Hint/InterpreterT.hs b/src/Hint/InterpreterT.hs
+index f8df7c0..d9681fd 100644
+--- a/src/Hint/InterpreterT.hs
++++ b/src/Hint/InterpreterT.hs
+@@ -63,7 +63,11 @@ runGhc_impl f = do s <- fromSession versionSpecific -- i.e. the ghc session
+ newtype InterpreterT m a = InterpreterT{
+                              unInterpreterT :: ReaderT  InterpreterSession
+                                               (GHC.GhcT m) a}
++#if MIN_VERSION_exceptions(0,4,0)                                               
++    deriving (Functor, Monad, MonadIO, MonadCatch, MonadThrow)
++#else    
+     deriving (Functor, Monad, MonadIO, MonadCatch)
++#endif
+ 
+ execute :: (MonadIO m, MonadCatch m, Functor m)
+         => InterpreterSession
