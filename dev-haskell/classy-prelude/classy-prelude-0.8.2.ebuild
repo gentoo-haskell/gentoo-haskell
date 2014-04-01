@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/basic-prelude-0.3.6:=[profile?] <dev-haskell/basic-prelude-0.4:=[profile?]
+RDEPEND=">=dev-haskell/basic-prelude-0.3.7:=[profile?] <dev-haskell/basic-prelude-0.4:=[profile?]
 	dev-haskell/chunked-data:=[profile?]
 	dev-haskell/enclosed-exceptions:=[profile?]
 	dev-haskell/hashable:=[profile?]
@@ -38,8 +38,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	# don't let builds hang
-	[[ $(ghc-version) == 7.6.* ]] && replace-hcflags -O[2-9] -O1
-}
