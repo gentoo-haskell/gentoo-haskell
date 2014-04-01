@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/ghc-paths-0.1.0.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/deepseq
+	test? ( >=dev-haskell/base-compat-0.4.2
 		>=dev-haskell/hspec-1.5.1
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.5
