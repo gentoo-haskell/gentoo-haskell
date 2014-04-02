@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
-	>=dev-haskell/hamlet-1.1:=[profile?] <dev-haskell/hamlet-1.2:=[profile?]
+	>=dev-haskell/hamlet-1.1:=[profile?]
+	dev-haskell/shakespeare:=[profile?]
 	>=dev-haskell/text-0.9:=[profile?]
 	>=dev-haskell/xml-conduit-1.0:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.3:=[profile?]
