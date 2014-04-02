@@ -19,11 +19,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+RDEPEND=">=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/cprng-aes-0.5.0:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/network-2.2.1:=[profile?]
-	>=dev-haskell/network-conduit-0.6:=[profile?] <dev-haskell/network-conduit-1.1:=[profile?]
+	>=dev-haskell/network-conduit-0.6:=[profile?] <dev-haskell/network-conduit-1.2:=[profile?]
+	dev-haskell/resourcet:=[profile?]
+	dev-haskell/streaming-commons:=[profile?]
 	>=dev-haskell/tls-1.2.1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
