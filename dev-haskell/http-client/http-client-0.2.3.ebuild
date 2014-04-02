@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
-	>=dev-haskell/case-insensitive-1.0:=[profile?] <dev-haskell/case-insensitive-1.2:=[profile?]
+	>=dev-haskell/case-insensitive-1.0:=[profile?]
 	dev-haskell/cookie:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/failure-0.2:=[profile?] <dev-haskell/failure-0.3:=[profile?]
@@ -34,8 +34,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/deepseq
-		dev-haskell/hspec
+	test? ( dev-haskell/hspec
 		dev-haskell/monad-control
 		dev-haskell/zlib )
 "
