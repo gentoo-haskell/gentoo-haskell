@@ -19,9 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.1:=[profile?]
+	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.2:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
-	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/cookie-0.2:=[profile?] <dev-haskell/cookie-0.5:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	dev-haskell/network:=[profile?]
