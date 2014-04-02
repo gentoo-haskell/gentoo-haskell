@@ -19,13 +19,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.1:=[profile?]
-	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/blaze-builder-conduit-0.5:=[profile?] <dev-haskell/blaze-builder-conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-extra-0.0:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
 	>=dev-haskell/warp-2.0:=[profile?] <dev-haskell/warp-2.2:=[profile?]
-	>=dev-haskell/zlib-conduit-0.5:=[profile?] <dev-haskell/zlib-conduit-1.1:=[profile?]
+	>=dev-haskell/zlib-conduit-0.5:=[profile?] <dev-haskell/zlib-conduit-1.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
