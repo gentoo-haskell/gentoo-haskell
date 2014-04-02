@@ -18,9 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
+RDEPEND="dev-haskell/async:=[profile?]
+	>=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
 	>=dev-haskell/byteable-0.1:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?]
+	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?]
 	>=dev-haskell/cryptohash-conduit-0.1:=[profile?]
 	dev-haskell/data-default:=[profile?]
@@ -28,7 +30,6 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
 	dev-haskell/hjsmin:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/mime-types-0.1:=[profile?]
-	>=dev-haskell/process-conduit-1.0:=[profile?] <dev-haskell/process-conduit-1.1:=[profile?]
 	>=dev-haskell/resourcet-0.4:=[profile?]
 	>=dev-haskell/shakespeare-css-1.0.3:=[profile?]
 	>=dev-haskell/system-fileio-0.3:=[profile?]
