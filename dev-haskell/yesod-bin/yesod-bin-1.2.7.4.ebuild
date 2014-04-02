@@ -24,7 +24,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/base64-bytestring
 	>=dev-haskell/blaze-builder-0.2.1.4 <dev-haskell/blaze-builder-0.4
 	>=dev-haskell/cabal-1.10.0.0
-	>=dev-haskell/conduit-0.5 <dev-haskell/conduit-1.1
+	>=dev-haskell/conduit-0.5 <dev-haskell/conduit-1.2
+	dev-haskell/conduit-extra
 	dev-haskell/data-default-class
 	dev-haskell/file-embed
 	>=dev-haskell/fsnotify-0.0 <dev-haskell/fsnotify-0.1
@@ -38,12 +39,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/optparse-applicative-0.5
 	>=dev-haskell/parsec-2.1 <dev-haskell/parsec-4
 	>=dev-haskell/project-template-0.1.1
-	>=dev-haskell/resourcet-0.3 <dev-haskell/resourcet-0.5
-	>=dev-haskell/shakespeare-1.0.2 <dev-haskell/shakespeare-1.3
-	>=dev-haskell/shakespeare-css-1.0.2 <dev-haskell/shakespeare-css-1.1
-	>=dev-haskell/shakespeare-js-1.0.2 <dev-haskell/shakespeare-js-1.3
-	>=dev-haskell/shakespeare-text-1.0 <dev-haskell/shakespeare-text-1.1
+	>=dev-haskell/resourcet-0.3 <dev-haskell/resourcet-1.2
+	>=dev-haskell/shakespeare-1.0.2 <dev-haskell/shakespeare-2.1
+	>=dev-haskell/shakespeare-css-1.0.2
+	>=dev-haskell/shakespeare-js-1.0.2
+	>=dev-haskell/shakespeare-text-1.0
 	>=dev-haskell/split-0.2 <dev-haskell/split-0.3
+	dev-haskell/streaming-commons
 	>=dev-haskell/system-fileio-0.3 <dev-haskell/system-fileio-0.4
 	>=dev-haskell/system-filepath-0.4 <dev-haskell/system-filepath-0.5
 	>=dev-haskell/tar-0.4 <dev-haskell/tar-0.5
