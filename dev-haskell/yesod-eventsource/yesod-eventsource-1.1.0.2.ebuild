@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
-	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/wai-1.3:=[profile?]
 	>=dev-haskell/wai-eventsource-1.3:=[profile?]
