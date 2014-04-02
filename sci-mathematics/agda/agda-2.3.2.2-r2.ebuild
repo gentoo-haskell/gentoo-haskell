@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/haskeline-0.6.3.2:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
-	>=dev-haskell/quickcheck-2.3:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?]
+	>=dev-haskell/quickcheck-2.3:=[profile?] <dev-haskell/quickcheck-2.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
@@ -57,7 +57,8 @@ src_prepare() {
 		'text == 0.11.*' 'text >= 0.11' \
 		'base >= 4.2 && < 4.7' 'base >= 4.2 && < 4.8' \
 		'array >= 0.1 && < 0.5' 'array >= 0.1 && < 0.6' \
-		'process >= 1.0.1.0 && < 1.2' 'process >= 1.0.1.0 && < 1.3'
+		'process >= 1.0.1.0 && < 1.2' 'process >= 1.0.1.0 && < 1.3' \
+        'QuickCheck >= 2.3 && < 2.7' 'QuickCheck >= 2.3 && < 2.8'
 
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
