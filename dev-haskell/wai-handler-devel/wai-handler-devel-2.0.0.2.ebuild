@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="WAI server that automatically reloads code after modification."
+DESCRIPTION="WAI server that automatically reloads code after modification. (deprecated)"
 HOMEPAGE="http://github.com/yesodweb/wai"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
