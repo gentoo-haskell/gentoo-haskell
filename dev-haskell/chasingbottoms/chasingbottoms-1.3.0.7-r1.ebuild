@@ -22,7 +22,7 @@ KEYWORDS="amd64 x86"
 IUSE="test"
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/quickcheck-2.1:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?]
+	>=dev-haskell/quickcheck-2.1:=[profile?] <dev-haskell/quickcheck-2.8:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/syb-0.1.0.2:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
@@ -32,6 +32,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.1 && < 2.7' 'QuickCheck >= 2.1 && < 2.8'
+
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
