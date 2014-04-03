@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides the standard Haskell list library
+		reimplemented to allow stream fusion. This should in general
+		provide faster list operations, and faster code for list-heavy
+		programs.  See the paper /Stream Fusion: From Lists to Streams to Nothing at All/,
+		Coutts, Leshchinskiy and Stewart, 2007.
+		To use, simply import Data.List.Stream in place of Data.List,
+		and hide list functions from the Prelude.
+	</longdescription>
+</pkgmetadata>
