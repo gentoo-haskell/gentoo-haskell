@@ -621,6 +621,7 @@ add-c_nonshared-to-ghci-libs() {
 
 	is_crosscompile && return
 	use elibc_glibc || return
+	use prefix && return
 
 	# we expect 'libc.a' bits be self-sufficient
 	if gcc-specs-pie; then
