@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This library provides a small templating DSL extension
+		for Scotty via the `hastache` library.
+		
+		[Scotty] is a light-weighted Web framework\/router &lt;http://hackage.haskell.org/package/scotty&gt;
+		
+		[Hashache] is a Haskell implementation of the Mustache templates: &lt;http://mustache.github.io/&gt;, &lt;http://hackage.haskell.org/package/hastache&gt;
+	</longdescription>
+</pkgmetadata>
