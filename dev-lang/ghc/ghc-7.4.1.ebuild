@@ -106,6 +106,8 @@ PDEPEND="
 	${PDEPEND}
 	llvm? ( sys-devel/llvm )"
 
+use binary && QA_PREBUILT="*"
+
 append-ghc-cflags() {
 	local flag compile assemble link
 	for flag in $*; do
@@ -129,6 +131,9 @@ ghc_setup_cflags() {
 	# We also use these CFLAGS for building the C parts of ghc, ie the rts.
 	strip-flags
 	strip-unsupported-flags
+
+	# Cmm can't parse line numbers #482086
+	replace-flags -ggdb[3-9] -ggdb2
 
 	GHC_FLAGS=""
 	for flag in ${CFLAGS}; do
