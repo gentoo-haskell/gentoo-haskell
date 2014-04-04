@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.3.2:=[profile?] <dev-haskell/exceptions-0.4:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.4:=[profile?] <dev-haskell/exceptions-0.6:=[profile?]
 	>=dev-haskell/pipes-4.0.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
