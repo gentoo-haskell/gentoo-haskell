@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Resource pool allocations via ResourceT."
+DESCRIPTION="Resource pool allocations via ResourceT. (deprecated)"
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
