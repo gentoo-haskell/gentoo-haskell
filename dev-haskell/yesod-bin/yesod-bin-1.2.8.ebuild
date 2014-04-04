@@ -57,5 +57,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/warp-1.3.7.5
 	>=dev-haskell/yaml-0.8 <dev-haskell/yaml-0.9
 	>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6
-	>=dev-lang/ghc-7.0.1
+	>=dev-lang/ghc-7.0.3 <dev-lang/ghc-7.8
 "
