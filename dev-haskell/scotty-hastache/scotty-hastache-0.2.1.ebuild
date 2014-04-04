@@ -18,12 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-html-0.6.0.0:=[profile?]
-	>=dev-haskell/blaze-markup-0.5.1.0:=[profile?]
-	>=dev-haskell/hastache-0.5.0:=[profile?]
+RDEPEND=">=dev-haskell/hastache-0.6.0:=[profile?]
 	>=dev-haskell/http-types-0.7.3.0.1:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?]
-	>=dev-haskell/scotty-0.6:=[profile?]
+	>=dev-haskell/scotty-0.7:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?]
 	>=dev-haskell/wai-1.3.0.1:=[profile?]
 	>=dev-haskell/warp-1.3.4.1:=[profile?]
