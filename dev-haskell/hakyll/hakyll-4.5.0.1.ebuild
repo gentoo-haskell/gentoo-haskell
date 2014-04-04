@@ -38,30 +38,46 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	checkexternal? ( >=dev-haskell/http-conduit-1.8:=[profile?] <dev-haskell/http-conduit-2.1:=[profile?]
 				>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
-	previewserver? ( >=dev-haskell/snap-core-0.6:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
+	previewserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
+				>=dev-haskell/snap-core-0.6:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
 				>=dev-haskell/snap-server-0.6:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
-				!watchserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
-						>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] ) )
+				>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] )
 	watchserver? ( >=dev-haskell/fsnotify-0.0.6:=[profile?] <dev-haskell/fsnotify-0.1:=[profile?]
 			>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/deepseq-1.3 <dev-haskell/deepseq-1.4
+	test? ( >=app-text/pandoc-1.12 <app-text/pandoc-1.13
+		>=dev-haskell/binary-0.5 <dev-haskell/binary-0.8
+		>=dev-haskell/blaze-html-0.5 <dev-haskell/blaze-html-0.8
+		>=dev-haskell/blaze-markup-0.5.1 <dev-haskell/blaze-markup-0.7
+		>=dev-haskell/cmdargs-0.10 <dev-haskell/cmdargs-0.11
+		>=dev-haskell/cryptohash-0.7 <dev-haskell/cryptohash-0.12
+		>=dev-haskell/data-default-0.4 <dev-haskell/data-default-0.6
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7
+		>=dev-haskell/lrucache-1.1.1 <dev-haskell/lrucache-1.2
+		>=dev-haskell/mtl-1 <dev-haskell/mtl-2.2
+		>=dev-haskell/network-2.4 <dev-haskell/network-2.5
+		>=dev-haskell/pandoc-citeproc-0.1 <dev-haskell/pandoc-citeproc-0.4
+		>=dev-haskell/parsec-3.0 <dev-haskell/parsec-3.2
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
+		>=dev-haskell/random-1.0 <dev-haskell/random-1.1
+		>=dev-haskell/regex-base-0.93 <dev-haskell/regex-base-0.94
+		>=dev-haskell/regex-tdfa-1.1 <dev-haskell/regex-tdfa-1.3
+		>=dev-haskell/tagsoup-0.13.1 <dev-haskell/tagsoup-0.14
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
-		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
+		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
+		>=dev-haskell/text-0.11 <dev-haskell/text-1.2
+		checkexternal? ( >=dev-haskell/http-conduit-1.8 <dev-haskell/http-conduit-2.1
+					>=dev-haskell/http-types-0.7 <dev-haskell/http-types-0.9 )
+		previewserver? ( >=dev-haskell/fsnotify-0.0.6 <dev-haskell/fsnotify-0.1
+					>=dev-haskell/snap-core-0.6 <dev-haskell/snap-core-0.10
+					>=dev-haskell/snap-server-0.6 <dev-haskell/snap-server-0.10
+					>=dev-haskell/system-filepath-0.4.6 <=dev-haskell/system-filepath-0.5 )
+		watchserver? ( >=dev-haskell/fsnotify-0.0.6 <dev-haskell/fsnotify-0.1
+				>=dev-haskell/system-filepath-0.4.6 <=dev-haskell/system-filepath-0.5 ) )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'regex-tdfa      >= 1.1    && < 1.2' 'regex-tdfa      >= 1.1    && < 1.3' \
-		'blaze-html      >= 0.5    && < 0.7' 'blaze-html      >= 0.5    && < 0.8' \
-		'blaze-markup    >= 0.5.1  && < 0.6' 'blaze-markup    >= 0.5.1  && < 0.7' \
-	    'pandoc-citeproc >= 0.1    && < 0.3' 'pandoc-citeproc >= 0.1    && < 0.4'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
