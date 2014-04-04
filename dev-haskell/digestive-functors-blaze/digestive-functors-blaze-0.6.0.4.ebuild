@@ -27,9 +27,3 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'blaze-html         >= 0.5  && < 0.7' 'blaze-html         >= 0.5  && < 0.8' \
-		'blaze-markup       >= 0.5  && < 0.6' 'blaze-markup       >= 0.5  && < 0.7'
-}
