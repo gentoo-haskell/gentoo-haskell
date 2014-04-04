@@ -28,11 +28,6 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 "
 
-src_prepare() {
-	rm dist/build/Language/C/Parser/Lexer.hs || die
-	rm dist/build/Language/C/Parser/Parser.hs || die
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=separatesyb \
