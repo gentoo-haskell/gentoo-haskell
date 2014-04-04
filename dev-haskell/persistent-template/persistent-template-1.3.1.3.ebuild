@@ -30,5 +30,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hspec-1.3
-		dev-haskell/quickcheck )
+		dev-haskell/persistent
+		dev-haskell/quickcheck
+		dev-haskell/transformers )
 "
