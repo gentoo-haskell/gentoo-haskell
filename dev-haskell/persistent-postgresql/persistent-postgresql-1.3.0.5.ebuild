@@ -25,6 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/persistent-1.3:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.1:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?]
 	>=dev-haskell/postgresql-simple-0.3:=[profile?] <dev-haskell/postgresql-simple-0.5:=[profile?]
+	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/transformers-0.2.1:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
