@@ -30,8 +30,13 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-de
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/data-default-class-0.0.1 <dev-haskell/data-default-class-0.1
+		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+		>=dev-haskell/mtl-1 <dev-haskell/mtl-3
+		>=dev-haskell/parsec-3 <dev-haskell/parsec-3.2.0
+		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-3
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3.0 <dev-haskell/test-framework-hunit-0.4
-		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 <dev-haskell/test-framework-quickcheck2-0.4 )
+		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 <dev-haskell/test-framework-quickcheck2-0.4
+		>=dev-haskell/uniplate-1.6 <dev-haskell/uniplate-1.7 )
 "
