@@ -49,110 +49,29 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	test-doctests? ( test-hlint? ( test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
-										>=dev-haskell/doctest-0.9.1
-										dev-haskell/generic-deriving
-										>=dev-haskell/hlint-1.7
-										>=dev-haskell/hunit-1.2
-										dev-haskell/nats
-										>=dev-haskell/quickcheck-2.4
-										>=dev-haskell/simple-reflect-0.3.1
-										>=dev-haskell/test-framework-0.6
-										>=dev-haskell/test-framework-hunit-0.2
-										>=dev-haskell/test-framework-quickcheck2-0.2
-										>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											>=dev-haskell/hlint-1.7
-											>=dev-haskell/hunit-1.2
-											dev-haskell/nats
-											>=dev-haskell/simple-reflect-0.3.1
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-					!test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											>=dev-haskell/hlint-1.7
-											dev-haskell/nats
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/simple-reflect-0.3.1
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											>=dev-haskell/hlint-1.7
-											dev-haskell/nats
-											>=dev-haskell/simple-reflect-0.3.1 ) ) ) )
-				!test-hlint? ( test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											>=dev-haskell/hunit-1.2
-											dev-haskell/nats
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/simple-reflect-0.3.1
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											>=dev-haskell/hunit-1.2
-											dev-haskell/nats
-											>=dev-haskell/simple-reflect-0.3.1
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-					!test-hunit? ( test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											dev-haskell/nats
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/simple-reflect-0.3.1
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( dev-haskell/deepseq
-											>=dev-haskell/doctest-0.9.1
-											dev-haskell/generic-deriving
-											dev-haskell/nats
-											>=dev-haskell/simple-reflect-0.3.1 ) ) ) ) )
-	!test-doctests? ( test-hlint? ( test-hunit? ( test-properties? ( test? ( >=dev-haskell/hlint-1.7
-											>=dev-haskell/hunit-1.2
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( >=dev-haskell/hlint-1.7
-											>=dev-haskell/hunit-1.2
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-					!test-hunit? ( test-properties? ( test? ( >=dev-haskell/hlint-1.7
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( >=dev-haskell/hlint-1.7 ) ) ) )
-				!test-hlint? ( test-hunit? ( test-properties? ( test? ( >=dev-haskell/hunit-1.2
-											>=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) )
-							!test-properties? ( test? ( >=dev-haskell/hunit-1.2
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-hunit-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-						!test-hunit? ( test? ( test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) ) ) )
+	test? ( test-doctests? ( >=dev-lang/ghc-7.4.1
+					>=dev-haskell/doctest-0.9.1
+					dev-haskell/generic-deriving
+					dev-haskell/nats
+					dev-haskell/parallel
+					>=dev-haskell/semigroups-0.9
+					>=dev-haskell/simple-reflect-0.3.1
+					dev-haskell/split
+					dev-haskell/text
+					dev-haskell/unordered-containers
+					dev-haskell/vector
+					!test-hunit? ( dev-haskell/mtl ) )
+		test-hlint? ( >=dev-haskell/hlint-1.7 )
+		test-hunit? ( >=dev-haskell/hunit-1.2
+				dev-haskell/mtl
+				>=dev-haskell/test-framework-0.6
+				>=dev-haskell/test-framework-hunit-0.2
+				>=dev-haskell/test-framework-th-0.2 )
+		test-properties? ( >=dev-haskell/quickcheck-2.4
+					>=dev-haskell/test-framework-0.6
+					>=dev-haskell/test-framework-quickcheck2-0.2
+					>=dev-haskell/test-framework-th-0.2
+					dev-haskell/transformers ) )
 "
 
 src_configure() {
