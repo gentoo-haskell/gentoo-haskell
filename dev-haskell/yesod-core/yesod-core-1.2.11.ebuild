@@ -61,11 +61,16 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( dev-haskell/async
+		dev-haskell/blaze-builder
 		>=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/network
 		dev-haskell/network-conduit
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
+		dev-haskell/random
+		dev-haskell/resourcet
+		dev-haskell/shakespeare
 		dev-haskell/streaming-commons
+		dev-haskell/transformers
 		>=dev-haskell/wai-test-1.3.0.5 )
 "
