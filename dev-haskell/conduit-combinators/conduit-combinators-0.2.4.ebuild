@@ -22,9 +22,12 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
 	dev-haskell/chunked-data:=[profile?]
 	>=dev-haskell/conduit-1.0.12:=[profile?]
+	dev-haskell/conduit-extra:=[profile?]
+	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/mono-traversable-0.4:=[profile?] <dev-haskell/mono-traversable-0.5:=[profile?]
 	dev-haskell/mwc-random:=[profile?]
 	dev-haskell/primitive:=[profile?]
+	dev-haskell/resourcet:=[profile?]
 	dev-haskell/system-fileio:=[profile?]
 	dev-haskell/system-filepath:=[profile?]
 	dev-haskell/text:=[profile?]
@@ -38,5 +41,6 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hspec-1.3
+		dev-haskell/mono-traversable
 		dev-haskell/silently )
 "
