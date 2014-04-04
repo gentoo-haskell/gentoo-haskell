@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	>=dev-haskell/hspec-expectations-0.5.0:=[profile?] <dev-haskell/hspec-expectations-0.5.1:=[profile?]
 	>=dev-haskell/hunit-1.2.5:=[profile?]
-	>=dev-haskell/quickcheck-2.7:=[profile?]
+	>=dev-haskell/quickcheck-2.5.1:=[profile?]
 	dev-haskell/quickcheck-io:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/setenv:=[profile?]
@@ -31,9 +31,9 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/deepseq
-		>=dev-haskell/doctest-0.9.4.1
+	test? ( >=dev-haskell/doctest-0.9.4.1
 		dev-haskell/ghc-paths
 		>=dev-haskell/hspec-meta-1.9.0
-		>=dev-haskell/silently-1.2.4 )
+		>=dev-haskell/silently-1.2.4
+		dev-haskell/transformers )
 "
