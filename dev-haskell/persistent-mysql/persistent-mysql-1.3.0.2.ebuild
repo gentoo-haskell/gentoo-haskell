@@ -25,6 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/mysql-0.1.1.3:=[profile?] <dev-haskell/mysql-0.2:=[profile?]
 	>=dev-haskell/mysql-simple-0.2.2.3:=[profile?] <dev-haskell/mysql-simple-0.3:=[profile?]
 	>=dev-haskell/persistent-1.3:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
+	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/text-0.11.0.6:=[profile?]
 	>=dev-haskell/transformers-0.2.1:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
