@@ -24,6 +24,7 @@ RDEPEND="x11-libs/libXrandr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
+	>=dev-haskell/http-4000
 	>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
 	>=dev-haskell/parsec-3.1 <dev-haskell/parsec-3.2
 	dev-haskell/regex-compat
