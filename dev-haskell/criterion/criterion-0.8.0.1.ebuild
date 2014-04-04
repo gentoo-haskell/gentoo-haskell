@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.3.2.12:=[profile?]
 	>=dev-haskell/binary-0.6.3.0:=[profile?]
 	>=dev-haskell/glob-0.7.2:=[profile?]
-	>=dev-haskell/hastache-0.5.0:=[profile?]
+	>=dev-haskell/hastache-0.5.0:=[profile?] <dev-haskell/hastache-0.6.0:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/mwc-random-0.8.0.3:=[profile?]
 	>=dev-haskell/parsec-3.1.0:=[profile?]
