@@ -26,5 +26,6 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
-	test? ( >=dev-haskell/hspec-1.3 )
+	test? ( dev-haskell/blaze-builder
+		>=dev-haskell/hspec-1.3 )
 "
