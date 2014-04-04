@@ -24,6 +24,7 @@ IUSE="+template_haskell"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	dev-haskell/random:=[profile?]
+	dev-haskell/tf-random:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
