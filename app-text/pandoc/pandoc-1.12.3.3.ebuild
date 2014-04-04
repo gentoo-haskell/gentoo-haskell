@@ -56,11 +56,16 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 		>=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
 		>=dev-haskell/test-framework-0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.7' 'QuickCheck >= 2.4 && < 2.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
