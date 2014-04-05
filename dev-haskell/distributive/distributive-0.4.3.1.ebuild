@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell 98 Distributive functors -- Dual to Traversable"
+DESCRIPTION="Distributive functors -- Dual to Traversable"
 HOMEPAGE="http://github.com/ekmett/distributive/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-0.2:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
