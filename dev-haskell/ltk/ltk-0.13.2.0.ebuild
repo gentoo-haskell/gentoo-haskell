@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	cabal_src_configure \
+	haskell-cabal_src_configure \
 		--constraint="Cabal == $(cabal-version)" \
 		$(cabal_flag gtk3 gtk3)
 }
