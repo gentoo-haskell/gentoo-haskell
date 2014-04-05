@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/diagrams-core-1.1:=[profile?] <dev-haskell/diagrams-core-1.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/intervals-0.3:=[profile?] <dev-haskell/intervals-0.5:=[profile?]
+	>=dev-haskell/intervals-0.7:=[profile?] <dev-haskell/intervals-0.8:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
@@ -34,8 +34,8 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-haskell/vector-space-points-0.1.2:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
-	>=dev-lang/ghc-7.0.1:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10.0.0
+	>=dev-haskell/cabal-1.10
 "
