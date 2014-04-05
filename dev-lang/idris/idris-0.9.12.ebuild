@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +release
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
@@ -24,8 +24,10 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
 	dev-haskell/binary:=[profile?]
 	dev-haskell/cabal:=[profile?]
+	dev-haskell/cheapskate:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?]
 	>=dev-haskell/language-java-0.2.6:=[profile?]
+	>=dev-haskell/lens-4.1.1:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/parsers-0.9:=[profile?]
@@ -41,7 +43,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 	curses? ( dev-haskell/hscurses:=[profile?] )
-	ffi? ( !gmp? ( dev-haskell/libffi:=[profile?] ) )
+	ffi? ( dev-haskell/libffi:=[profile?] )
 	gmp? ( dev-haskell/libffi:=[profile?] )
 	llvm? ( >=dev-haskell/llvm-general-3.3.8:=[profile?] <dev-haskell/llvm-general-3.3.9:=[profile?]
 		>=dev-haskell/llvm-general-pure-3.3.8:=[profile?] <dev-haskell/llvm-general-pure-3.3.9:=[profile?] )
@@ -49,8 +51,6 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
-
-PATCHES=("${FILESDIR}"/${P}-ghc-7.8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
