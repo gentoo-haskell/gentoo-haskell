@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
-RDEPEND=">=dev-haskell/cpphs-1.11:=[profile?]
+RDEPEND=">=dev-haskell/cmdargs-0.10:=[profile?]
+	>=dev-haskell/cpphs-1.18.1:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	>=dev-haskell/hscolour-1.17:=[profile?]
 	>=dev-haskell/transformers-0.0:=[profile?]
