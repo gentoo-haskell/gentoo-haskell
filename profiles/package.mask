@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (06 Apr 2014)
+# Old ghc versions.
+<dev-lang/ghc-7.4
+
 # Alexander Vershilov <qnikst@gentoo.org> (28 Mar 2014)
 # Masked for removal in 30 days. Deprecated in favour of
 # dev-haskell/exceptions.
