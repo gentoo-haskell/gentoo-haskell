@@ -39,3 +39,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	# don't let builds hang
+	[[ $(ghc-version) == 7.6.* ]] && replace-hcflags -O[2-9] -O1
+}
