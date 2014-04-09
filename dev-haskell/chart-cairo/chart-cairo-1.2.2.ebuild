@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
 	>=dev-haskell/chart-1.2:=[profile?] <dev-haskell/chart-1.3:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
@@ -35,8 +35,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >= 3.9 && < 3.11' 'lens >= 3.9'
-}
