@@ -29,8 +29,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/hxt-9.3 <dev-haskell/hxt-9.4
 	>=dev-haskell/missingh-1.2 <dev-haskell/missingh-1.3
 	>=dev-haskell/network-2.4 <dev-haskell/network-2.5
-	>=dev-haskell/tasty-0.7 <dev-haskell/tasty-0.8
-	>=dev-haskell/tasty-hunit-0.4 <dev-haskell/tasty-hunit-0.5
+	>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.9
+	>=dev-haskell/tasty-hunit-0.8 <dev-haskell/tasty-hunit-0.9
 	>=dev-lang/ghc-7.6.1
 	test? ( >=dev-util/shelltestrunner-1.3 )
 "
