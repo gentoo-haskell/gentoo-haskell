@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+colors"
+IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.1:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
@@ -31,8 +31,3 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag colors colors)
-}
