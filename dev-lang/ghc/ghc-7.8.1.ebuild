@@ -392,14 +392,10 @@ src_prepare() {
 
 		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-		# epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
-		# failed to apply. FIXME
-		#epatch "${FILESDIR}"/${PN}-6.12.3-mach-o-relocation-limit.patch
-
-		# epatch "${FILESDIR}"/${PN}-7.4-rc2-macos-prefix-respect-gcc.patch
-		# epatch "${FILESDIR}"/${PN}-7.2.1-freebsd-CHOST.patch
-
 		epatch "${FILESDIR}"/${PN}-7.8.1_rc1-libbfd.patch
+
+		epatch "${FILESDIR}"/${PN}-7.8.1-no-cpp-asm.patch
+		epatch "${FILESDIR}"/${PN}-7.8.1-typecheck.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix

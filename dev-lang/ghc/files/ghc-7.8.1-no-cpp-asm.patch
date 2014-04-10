@@ -1,0 +1,190 @@
+commit 396648eebaa1144d4d1f5326db716e8130f73732
+Author: Simon Marlow <marlowsd@gmail.com>
+Date:   Tue Apr 8 10:21:27 2014 +0100
+
+    Don't preprocess .s files
+    
+    One important reason is that gcc 4.8.1 sometimes crashes:
+    
+      http://gcc.gnu.org/bugzilla/show_bug.cgi?id=60436
+    
+    Another reason is that preprocessing assembly files unnecessarily
+    slows down compilation.
+
+diff --git a/compiler/main/DriverPhases.hs b/compiler/main/DriverPhases.hs
+index c406f6a..2981269 100644
+--- a/compiler/main/DriverPhases.hs
++++ b/compiler/main/DriverPhases.hs
+@@ -82,7 +82,7 @@ data Phase
+         | HCc           -- Haskellised C (as opposed to vanilla C) compilation
+         | Splitter      -- Assembly file splitter (part of '-split-objs')
+         | SplitAs       -- Assembler for split assembly files (part of '-split-objs')
+-        | As            -- Assembler for regular assembly files
++        | As Bool       -- Assembler for regular assembly files (Bool: with-cpp)
+         | LlvmOpt       -- Run LLVM opt tool over llvm assembly
+         | LlvmLlc       -- LLVM bitcode to native assembly
+         | LlvmMangle    -- Fix up TNTC by processing assembly produced by LLVM
+@@ -119,7 +119,7 @@ eqPhase Cobjcpp     Cobjcpp    = True
+ eqPhase HCc         HCc        = True
+ eqPhase Splitter    Splitter   = True
+ eqPhase SplitAs     SplitAs    = True
+-eqPhase As          As         = True
++eqPhase (As x)      (As y)     = x == y
+ eqPhase LlvmOpt     LlvmOpt    = True
+ eqPhase LlvmLlc     LlvmLlc    = True
+ eqPhase LlvmMangle  LlvmMangle = True
+@@ -150,21 +150,21 @@ nextPhase dflags p
+       Splitter   -> SplitAs
+       LlvmOpt    -> LlvmLlc
+       LlvmLlc    -> LlvmMangle
+-      LlvmMangle -> As
++      LlvmMangle -> As False
+       SplitAs    -> MergeStub
+-      As         -> MergeStub
+-      Ccpp       -> As
+-      Cc         -> As
+-      Cobjc      -> As
+-      Cobjcpp    -> As
++      As _       -> MergeStub
++      Ccpp       -> As False
++      Cc         -> As False
++      Cobjc      -> As False
++      Cobjcpp    -> As False
+       CmmCpp     -> Cmm
+       Cmm        -> maybeHCc
+-      HCc        -> As
++      HCc        -> As False
+       MergeStub  -> StopLn
+       StopLn     -> panic "nextPhase: nothing after StopLn"
+     where maybeHCc = if platformUnregisterised (targetPlatform dflags)
+                      then HCc
+-                     else As
++                     else As False
+ 
+ -- the first compilation phase for a given file is determined
+ -- by its suffix.
+@@ -186,8 +186,8 @@ startPhase "mm"       = Cobjcpp
+ startPhase "cc"       = Ccpp
+ startPhase "cxx"      = Ccpp
+ startPhase "split_s"  = Splitter
+-startPhase "s"        = As
+-startPhase "S"        = As
++startPhase "s"        = As False
++startPhase "S"        = As True
+ startPhase "ll"       = LlvmOpt
+ startPhase "bc"       = LlvmLlc
+ startPhase "lm_s"     = LlvmMangle
+@@ -215,7 +215,8 @@ phaseInputExt Cobjc               = "m"
+ phaseInputExt Cobjcpp             = "mm"
+ phaseInputExt Cc                  = "c"
+ phaseInputExt Splitter            = "split_s"
+-phaseInputExt As                  = "s"
++phaseInputExt (As True)           = "S"
++phaseInputExt (As False)          = "s"
+ phaseInputExt LlvmOpt             = "ll"
+ phaseInputExt LlvmLlc             = "bc"
+ phaseInputExt LlvmMangle          = "lm_s"
+diff --git a/compiler/main/DriverPipeline.hs b/compiler/main/DriverPipeline.hs
+index 564edd2..2c71967 100644
+--- a/compiler/main/DriverPipeline.hs
++++ b/compiler/main/DriverPipeline.hs
+@@ -498,8 +498,8 @@ compileFile hsc_env stop_phase (src, mb_phase) = do
+          | otherwise = Persistent
+ 
+         stop_phase' = case stop_phase of
+-                        As | split -> SplitAs
+-                        _          -> stop_phase
++                        As _ | split -> SplitAs
++                        _            -> stop_phase
+ 
+    ( _, out_file) <- runPipeline stop_phase' hsc_env
+                             (src, fmap RealPhase mb_phase) Nothing output
+@@ -730,7 +730,7 @@ getOutputFilename stop_phase output basename dflags next_phase maybe_location
+           -- sometimes, we keep output from intermediate stages
+           keep_this_output =
+                case next_phase of
+-                       As      | keep_s     -> True
++                       As _    | keep_s     -> True
+                        LlvmOpt | keep_bc    -> True
+                        HCc     | keep_hc    -> True
+                        _other               -> False
+@@ -1078,7 +1078,7 @@ runPhase (RealPhase cc_phase) input_fn dflags
+                    | otherwise            = []
+ 
+         -- Decide next phase
+-        let next_phase = As
++        let next_phase = As False
+         output_fn <- phaseOutputFilename next_phase
+ 
+         let
+@@ -1190,7 +1190,7 @@ runPhase (RealPhase Splitter) input_fn dflags
+ -- As, SpitAs phase : Assembler
+ 
+ -- This is for calling the assembler on a regular assembly file (not split).
+-runPhase (RealPhase As) input_fn dflags
++runPhase (RealPhase (As with_cpp)) input_fn dflags
+   = do
+         -- LLVM from version 3.0 onwards doesn't support the OS X system
+         -- assembler, so we use clang as the assembler instead. (#5636)
+@@ -1231,7 +1231,10 @@ runPhase (RealPhase As) input_fn dflags
+                            then [SysTools.Option "-mcpu=v9"]
+                            else [])
+ 
+-                       ++ [ SysTools.Option "-x", SysTools.Option "assembler-with-cpp"
++                       ++ [ SysTools.Option "-x"
++                          , if with_cpp
++                              then SysTools.Option "assembler-with-cpp"
++                              else SysTools.Option "assembler"
+                           , SysTools.Option "-c"
+                           , SysTools.FileOption "" inputFilename
+                           , SysTools.Option "-o"
+@@ -1385,7 +1388,7 @@ runPhase (RealPhase LlvmLlc) input_fn dflags
+     let next_phase = case gopt Opt_NoLlvmMangler dflags of
+                          False                            -> LlvmMangle
+                          True | gopt Opt_SplitObjs dflags -> Splitter
+-                         True                             -> As
++                         True                             -> As False
+                         
+     output_fn <- phaseOutputFilename next_phase
+ 
+@@ -1454,7 +1457,7 @@ runPhase (RealPhase LlvmLlc) input_fn dflags
+ 
+ runPhase (RealPhase LlvmMangle) input_fn dflags
+   = do
+-      let next_phase = if gopt Opt_SplitObjs dflags then Splitter else As
++      let next_phase = if gopt Opt_SplitObjs dflags then Splitter else As False
+       output_fn <- phaseOutputFilename next_phase
+       liftIO $ llvmFixupAsm dflags input_fn output_fn
+       return (RealPhase next_phase, output_fn)
+@@ -2186,7 +2189,7 @@ hscPostBackendPhase dflags _ hsc_lang =
+   case hsc_lang of
+         HscC -> HCc
+         HscAsm | gopt Opt_SplitObjs dflags -> Splitter
+-               | otherwise                 -> As
++               | otherwise                 -> As False
+         HscLlvm        -> LlvmOpt
+         HscNothing     -> StopLn
+         HscInterpreted -> StopLn
+diff --git a/ghc/Main.hs b/ghc/Main.hs
+index 46b0970..d056bf9 100644
+--- a/ghc/Main.hs
++++ b/ghc/Main.hs
+@@ -562,7 +562,7 @@ mode_flags =
+   , Flag "M"            (PassFlag (setMode doMkDependHSMode))
+   , Flag "E"            (PassFlag (setMode (stopBeforeMode anyHsc)))
+   , Flag "C"            (PassFlag (setMode (stopBeforeMode HCc)))
+-  , Flag "S"            (PassFlag (setMode (stopBeforeMode As)))
++  , Flag "S"            (PassFlag (setMode (stopBeforeMode (As False))))
+   , Flag "-make"        (PassFlag (setMode doMakeMode))
+   , Flag "-interactive" (PassFlag (setMode doInteractiveMode))
+   , Flag "-abi-hash"    (PassFlag (setMode doAbiHashMode))
+@@ -629,7 +629,8 @@ doMake srcs  = do
+         haskellish (f,Nothing) =
+           looksLikeModuleName f || isHaskellUserSrcFilename f || '.' `notElem` f
+         haskellish (_,Just phase) =
+-          phase `notElem` [As, Cc, Cobjc, Cobjcpp, CmmCpp, Cmm, StopLn]
++          phase `notElem` [ As True, As False, Cc, Cobjc, Cobjcpp, CmmCpp, Cmm
++                          , StopLn]
+ 
+     hsc_env <- GHC.getSession
+ 
