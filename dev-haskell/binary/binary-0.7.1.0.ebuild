@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/test-framework-quickcheck2-0.3
 		)"
 
-CABAL_CORE_LIB_GHC_PV="7.7.2013* 7.8.20140130 7.8.0.20140228 7.8.1"
+CABAL_CORE_LIB_GHC_PV="7.7.2013* 7.8.20140130 7.8.0.20140228 7.8.1 7.8.2"
 
 src_prepare() {
 	if has_version ">=dev-lang/ghc-7.7"; then
