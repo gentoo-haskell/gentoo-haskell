@@ -1,0 +1,52 @@
+From 1883bb60788b96d367342117bce8561c8e8e11b1 Mon Sep 17 00:00:00 2001
+From: Colin Watson <cjwatson@debian.org>
+Date: Sat, 12 Apr 2014 01:55:07 +0100
+Subject: [PATCH 1/2] Be less untruthful about the prototypes of external
+ functions
+
+GHC's generated C code uses dummy prototypes for foreign imports.  At the
+moment these all claim to be (void), i.e. functions of zero arguments.  On
+most platforms this doesn't matter very much: calls to these functions put
+the parameters in the usual places anyway, and (with the exception of
+varargs) things just work.
+
+However, the ELFv2 ABI on ppc64 optimises stack allocation
+(http://gcc.gnu.org/ml/gcc-patches/2013-11/msg01149.html): a call to a
+function that has a prototype, is not varargs, and receives all parameters
+in registers rather than on the stack does not require the caller to
+allocate an argument save area.  The incorrect prototypes cause GCC to
+believe that all functions declared this way can be called without an
+argument save area, but if the callee has sufficiently many arguments then
+it will expect that area to be present, and will thus corrupt the caller's
+stack.  This happens in particular with calls to runInteractiveProcess in
+libraries/process/cbits/runProcess.c.
+
+The simplest fix appears to be to declare these external functions with an
+unspecified argument list rather than a void argument list.  This is no
+worse for platforms that don't care either way, and allows a successful
+bootstrap of GHC 7.8 on little-endian Linux ppc64 (which uses the ELFv2
+ABI).
+
+Fixes #8965
+
+Signed-off-by: Colin Watson <cjwatson@debian.org>
+---
+ includes/Stg.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/includes/Stg.h b/includes/Stg.h
+index be966aa..1707c9b 100644
+--- a/includes/Stg.h
++++ b/includes/Stg.h
+@@ -213,7 +213,7 @@ typedef StgFunPtr       F_;
+ #define II_(X)          static StgWordArray (X) GNU_ATTRIBUTE(aligned (8))
+ #define IF_(f)    static StgFunPtr GNUC3_ATTRIBUTE(used) f(void)
+ #define FN_(f)    StgFunPtr f(void)
+-#define EF_(f)    extern StgFunPtr f(void)
++#define EF_(f)    extern StgFunPtr f()
+ 
+ /* -----------------------------------------------------------------------------
+    Tail calls
+-- 
+1.9.1
+

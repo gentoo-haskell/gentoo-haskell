@@ -395,6 +395,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.1_rc1-libbfd.patch
 
 		epatch "${FILESDIR}"/${PN}-7.8.1-no-cpp-asm.patch
+		epatch "${FILESDIR}"/${PN}-7.8.2-stg-fptr-8965.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
