@@ -188,10 +188,11 @@ cabal-bootstrap() {
 
 	make_setup() {
 		set -- -package "${cabalpackage}" --make "${setupmodule}" \
+			${HCFLAGS} \
 			${GHC_BOOTSTRAP_FLAGS} \
 			"$@" \
 			-o setup
-		echo $(ghc-getghc) ${HCFLAGS} "$@"
+		echo $(ghc-getghc) "$@"
 		$(ghc-getghc) "$@"
 	}
 	if $(ghc-supports-shared-libraries); then
