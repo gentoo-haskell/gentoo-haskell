@@ -18,21 +18,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-1:=[profile?]
-	>=dev-haskell/fgl-5.4:=[profile?] <dev-haskell/fgl-6.0:=[profile?]
-	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.2:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
+	>=dev-haskell/fgl-5.4:=[profile?]
+	>=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/listlike-4.0.0:=[profile?]
-	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
+	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/syb-0.3.6:=[profile?]
-	>=dev-haskell/time-compat-0.1.0.1:=[profile?] <dev-haskell/time-compat-0.2:=[profile?]
-	>=dev-haskell/uulib-0.9:=[profile?] <dev-haskell/uulib-1:=[profile?]
+	>=dev-haskell/time-compat-0.1.0.1:=[profile?]
+	>=dev-haskell/uulib-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'hashable >= 1.1 && < 1.2' 'hashable >= 1.1 && < 1.3'
-}
