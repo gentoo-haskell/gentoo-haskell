@@ -21,10 +21,15 @@ IUSE=""
 RDEPEND="dev-haskell/network:=[profile?]
 	>=dev-haskell/network-simple-0.3:=[profile?] <dev-haskell/network-simple-0.4:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
-	>=dev-haskell/pipes-safe-2.0.1:=[profile?] <dev-haskell/pipes-safe-2.1:=[profile?]
+	>=dev-haskell/pipes-safe-2.0.1:=[profile?] <dev-haskell/pipes-safe-2.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'pipes-safe     (>=2.0.1 && <2.1)' 'pipes-safe     (>=2.0.1 && <2.2)'
+}
