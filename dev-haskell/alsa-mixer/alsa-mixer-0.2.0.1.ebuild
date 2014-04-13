@@ -26,3 +26,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/c2hs
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'unix == 2.6.*' 'unix >= 2.6 && < 2.8'
+}
