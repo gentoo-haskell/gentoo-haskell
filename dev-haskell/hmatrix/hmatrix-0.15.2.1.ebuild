@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/storable-complex:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	sci-libs/gsl
+	>=sci-libs/gsl-1.15
 	mkl? ( sci-libs/mkl )
 	virtual/blas
 	virtual/cblas
