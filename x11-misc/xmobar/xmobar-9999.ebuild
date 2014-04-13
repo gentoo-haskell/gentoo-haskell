@@ -42,7 +42,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/timezone-series-0.1 <dev-haskell/timezone-series-0.2 )
 	xft? ( >=dev-haskell/x11-xft-0.2 <dev-haskell/x11-xft-0.4 )
 "
-RDEPEND+="mpd? ( media-sound/mpd )"
 
 src_configure() {
 	haskell-cabal_src_configure \
