@@ -1,0 +1,26 @@
+diff --git a/tests/Data/GraphViz/Testing/Instances/Attributes.hs b/tests/Data/GraphViz/Testing/Instances/Attributes.hs
+index 3b2c434..0ed0071 100644
+--- a/tests/Data/GraphViz/Testing/Instances/Attributes.hs
++++ b/tests/Data/GraphViz/Testing/Instances/Attributes.hs
+@@ -28,7 +28,7 @@ import Data.GraphViz.Attributes.Internal(compassLookup)
+ import Data.GraphViz.State(initialState, layerSep, layerListSep)
+ import Data.GraphViz.Util(bool)
+ 
+-import Test.QuickCheck
++import Test.QuickCheck hiding (shrinkList)
+ 
+ import Data.List(nub, delete, groupBy)
+ import qualified Data.Map as Map
+diff --git a/tests/Data/GraphViz/Testing/Instances/Helpers.hs b/tests/Data/GraphViz/Testing/Instances/Helpers.hs
+index 2d3c1be..4f28e7a 100644
+--- a/tests/Data/GraphViz/Testing/Instances/Helpers.hs
++++ b/tests/Data/GraphViz/Testing/Instances/Helpers.hs
+@@ -14,7 +14,7 @@ module Data.GraphViz.Testing.Instances.Helpers where
+ import Data.GraphViz.Parsing(isNumString)
+ import Data.GraphViz.State(initialState, layerSep, layerListSep)
+ 
+-import Test.QuickCheck
++import Test.QuickCheck hiding (shrinkList)
+ 
+ import qualified Data.Text.Lazy as T
+ import Data.Text.Lazy(Text)

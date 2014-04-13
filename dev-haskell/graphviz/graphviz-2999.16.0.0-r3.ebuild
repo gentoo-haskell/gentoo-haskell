@@ -33,13 +33,13 @@ RDEPEND="=dev-haskell/colour-2.3*:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14
-		test? ( >=dev-haskell/quickcheck-2.3:2
-			<dev-haskell/quickcheck-2.7:2
-		)"
+		test? ( >=dev-haskell/quickcheck-2.3:2 <dev-haskell/quickcheck-2.8:2 )
+"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-qc-2.7.patch
 	cabal_chdeps \
-		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.7' \
+		'QuickCheck >= 2.3 && < 2.6' 'QuickCheck >= 2.3 && < 2.8' \
 		'polyparse >= 1.7 && < 1.9' 'polyparse >= 1.7 && < 1.10' \
 		'dlist == 0.5.*' 'dlist >= 0.5' \
 		'temporary >=1.1 && <1.2' 'temporary >=1.1'
