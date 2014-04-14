@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/digits:=[profile?]
-		dev-haskell/quickcheck:=[profile?]
+		dev-haskell/quickcheck:2=[profile?]
 		dev-haskell/safe:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
