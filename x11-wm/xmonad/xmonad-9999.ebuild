@@ -17,7 +17,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="+default-term"
+IUSE="+default-term vanilla"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -36,6 +36,8 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
+	use vanilla || epatch "$FILESDIR/$PN-check-repeat.patch"
+
 	# allow user patches
 	epatch_user
 }

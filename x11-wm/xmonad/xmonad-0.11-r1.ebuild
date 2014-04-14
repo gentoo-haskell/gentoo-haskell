@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="amd64 ~ppc64 ~sparc x86"
-IUSE="+default-term"
+IUSE="+default-term vanilla"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -34,6 +34,8 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
+	use vanilla || epatch "$FILESDIR/$PN-check-repeat.patch"
+
 	# allow user patches
 	epatch_user
 }
