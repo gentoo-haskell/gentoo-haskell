@@ -8,6 +8,7 @@
 	<use>
 		<flag name='default-term'>Pull terminal specified in default xmonad config
 			to be a bit less hostile by default.</flag>
+		<flag name="no-autorepeat-keys">Allow ignoring of keyboard autorepeat.</flag>
 		<flag name='pass-focus-click'>Apply patches that add option to allow
 			focusing click to be also passed to window it focuses.
 			Option is disabled by default, for details see http://code.google.com/p/xmonad/issues/detail?id=225

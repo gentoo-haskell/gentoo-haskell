@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="+default-term vanilla"
+IUSE="+default-term no-autorepeat-keys"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -36,7 +36,7 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
-	use vanilla || epatch "$FILESDIR/$PN-check-repeat.patch"
+	use no-autorepeat-keys && epatch "$FILESDIR/$PN-check-repeat.patch"
 
 	# allow user patches
 	epatch_user
