@@ -22,7 +22,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/lazysmallcheck-0.3:=[profile?]
-	>=dev-haskell/quickcheck-2.0:=[profile?]
+	>=dev-haskell/quickcheck-2.0:2=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
