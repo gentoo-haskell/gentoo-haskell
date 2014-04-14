@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/ghc-6.10.4:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 	test? ( dev-haskell/hunit:=[profile?]
-			>=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?]
+			>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.7:2=[profile?]
 			dev-haskell/test-framework:=[profile?]
 			dev-haskell/test-framework-hunit:=[profile?]
 			dev-haskell/test-framework-quickcheck2:=[profile?]
