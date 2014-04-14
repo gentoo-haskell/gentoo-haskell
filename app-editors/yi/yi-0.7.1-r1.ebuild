@@ -49,7 +49,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	gtk? ( >=dev-haskell/glib-0.12:=[profile?] <dev-haskell/glib-0.13:=[profile?]
 		>=dev-haskell/gtk-0.12:=[profile?] <dev-haskell/gtk-0.13:=[profile?]
 		>=dev-haskell/pango-0.12:=[profile?] <dev-haskell/pango-0.13:=[profile?] )
-	testing? ( >=dev-haskell/quickcheck-2.1.0.2:=[profile?]
+	testing? ( >=dev-haskell/quickcheck-2.1.0.2:2=[profile?]
 			dev-haskell/random:=[profile?]
 			vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] ) )
 	!testing? ( vty? ( >=dev-haskell/vty-4.7.0.0:=[profile?] <dev-haskell/vty-5:=[profile?] ) )
