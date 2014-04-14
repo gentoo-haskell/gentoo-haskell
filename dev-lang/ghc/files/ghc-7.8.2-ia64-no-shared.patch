@@ -1,0 +1,18 @@
+Attempt to disable dynamic libs.
+
+Crash in threaded runtime (and in -dynamic builds)
+looks very similar to sparc failures.
+diff --git a/mk/config.mk.in b/mk/config.mk.in
+index 7cc7aec..9f21256 100644
+--- a/mk/config.mk.in
++++ b/mk/config.mk.in
+@@ -99,7 +99,8 @@ NoSharedLibsPlatformList = powerpc-unknown-linux \
+ 	x86_64-unknown-mingw32 \
+ 	i386-unknown-mingw32 \
+ 	sparc-sun-solaris2 \
+-	sparc-unknown-linux
++	sparc-unknown-linux \
++	ia64-unknown-linux
+ 
+ ifeq "$(SOLARIS_BROKEN_SHLD)" "YES"
+ NoSharedLibsPlatformList += i386-unknown-solaris2
