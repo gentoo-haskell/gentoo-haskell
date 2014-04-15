@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/cereal-0.2:=[profile?]
 		dev-haskell/cipher-aes:=[profile?]
 		dev-haskell/crypto-api-tests:=[profile?]
 		dev-haskell/hunit:=[profile?]
-		dev-haskell/quickcheck:=[profile?]
+		dev-haskell/quickcheck:2=[profile?]
 		dev-haskell/test-framework:=[profile?]
 		dev-haskell/test-framework-hunit:=[profile?] )
 "
