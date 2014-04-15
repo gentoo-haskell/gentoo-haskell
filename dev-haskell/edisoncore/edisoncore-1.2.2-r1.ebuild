@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND="~dev-haskell/edisonapi-1.2.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/quickcheck-2.0:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
+	>=dev-haskell/quickcheck-2.0:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
