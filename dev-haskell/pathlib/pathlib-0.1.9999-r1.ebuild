@@ -21,7 +21,7 @@ IUSE="hpc test"
 
 RDEPEND="dev-haskell/quickcheck:=[profile?]
 	dev-haskell/test-framework:=[profile?]
-	dev-haskell/test-framework-quickcheck2:=[profile?]
+	dev-haskell/test-framework-quickcheck2:2=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
