@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( >=dev-haskell/hunit-1.2:=[profile?]
 			>=dev-haskell/libxml-0.1.1:=[profile?]
-			>=dev-haskell/quickcheck-2.3:=[profile?] <dev-haskell/quickcheck-2.7:=[profile?] )
+			>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.7:2=[profile?] )
 "
 
 src_prepare() {
