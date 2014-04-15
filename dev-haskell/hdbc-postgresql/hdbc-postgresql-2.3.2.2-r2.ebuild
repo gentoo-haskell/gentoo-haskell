@@ -35,7 +35,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 	test? ( >=dev-haskell/hdbc-2.2.6:=[profile?]
 			dev-haskell/hunit:=[profile?]
-			dev-haskell/quickcheck:=[profile?]
+			dev-haskell/quickcheck:2=[profile?]
 			dev-haskell/testpack:=[profile?] )
 "
 
