@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>dev-haskell/quickcheck-2:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
+	>dev-haskell/quickcheck-2:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	<dev-haskell/tagshare-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
