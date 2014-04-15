@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/non-negative-0.0.5:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
 	>=dev-haskell/parsec-1:=[profile?] <dev-haskell/parsec-4:=[profile?]
-	>=dev-haskell/quickcheck-1:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
+	>=dev-haskell/quickcheck-1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/storable-record-0.0.1:=[profile?] <dev-haskell/storable-record-0.1:=[profile?]
 	>=dev-haskell/utility-ht-0.0.6:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
