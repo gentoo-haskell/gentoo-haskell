@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.5:=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.5:2=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
