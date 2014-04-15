@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/binary-0.4.2:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/explicit-exception-0.1:=[profile?] <dev-haskell/explicit-exception-0.2:=[profile?]
 	>=dev-haskell/monoid-transformer-0.0.1:=[profile?] <dev-haskell/monoid-transformer-0.1:=[profile?]
 	>=dev-haskell/non-negative-0.0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
-	>=dev-haskell/quickcheck-2.1:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
+	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
 	>=dev-haskell/utility-ht-0.0.8:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
