@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+base4 withquickcheck +withutils"
 
 RDEPEND=">=dev-lang/ghc-6.10.4:=
-	withquickcheck? ( >dev-haskell/quickcheck-2.4:=[profile?] )
+	withquickcheck? ( >dev-haskell/quickcheck-2.4:2=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
