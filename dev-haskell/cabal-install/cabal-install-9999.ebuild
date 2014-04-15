@@ -32,20 +32,13 @@ IUSE="+noprefs"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.17.0
-		<dev-haskell/cabal-1.19
-		>=dev-haskell/http-4000.0.8
-		<dev-haskell/http-4001
-		>=dev-haskell/mtl-2.0
-		<dev-haskell/mtl-3
-		>=dev-haskell/network-1
-		<dev-haskell/network-3
-		>=dev-haskell/random-1
-		<dev-haskell/random-1.1
-		>=dev-haskell/stm-2.0
-		<dev-haskell/stm-3
-		>=dev-haskell/zlib-0.5.3
-		<dev-haskell/zlib-0.6
+		>=dev-haskell/cabal-1.17.0 <dev-haskell/cabal-1.20
+		>=dev-haskell/http-4000.0.8 <dev-haskell/http-4001
+		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-3
+		>=dev-haskell/network-1 <dev-haskell/network-3
+		>=dev-haskell/random-1 <dev-haskell/random-1.1
+		>=dev-haskell/stm-2.0 <dev-haskell/stm-3
+		>=dev-haskell/zlib-0.5.3 <dev-haskell/zlib-0.6
 		>=dev-lang/ghc-6.12.1
 		test? ( dev-haskell/hunit
 			>=dev-haskell/quickcheck-2.5
