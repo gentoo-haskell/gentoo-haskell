@@ -20,7 +20,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-	>=dev-haskell/quickcheck-2.4:=[profile?] <dev-haskell/quickcheck-2.8:=[profile?]
+	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/random-1:=[profile?]
 	>=dev-haskell/test-framework-0.7.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
