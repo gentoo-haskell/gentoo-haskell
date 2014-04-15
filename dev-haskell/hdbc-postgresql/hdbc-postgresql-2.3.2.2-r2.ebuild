@@ -29,7 +29,7 @@ RDEPEND=">=dev-db/postgresql-base-7
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
-	>=dev-haskell/hdbc-2.2.0:=[profile?]
+	>=dev-haskell/hdbc-2.2.0:2=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
