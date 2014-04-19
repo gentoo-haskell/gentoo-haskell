@@ -12,32 +12,40 @@ inherit haskell-cabal darcs
 DESCRIPTION="Hashed file storage support code."
 HOMEPAGE="http://hackage.haskell.org/package/hashed-storage"
 SRC_URI=""
-EDARCS_REPOSITORY="http://repos.mornfall.net/hashed-storage/"
+# according to #darcs unmaintained
+#EDARCS_REPOSITORY="http://repos.mornfall.net/hashed-storage/"
+EDARCS_REPOSITORY="http://darcs.net/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="test"
+IUSE="diff hpc test"
 
 RDEPEND="dev-haskell/binary:=[profile?]
-		dev-haskell/dataenc:=[profile?]
-		dev-haskell/extensible-exceptions:=[profile?]
-		=dev-haskell/mmap-0.5*:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
-DEPEND=">=dev-haskell/cabal-1.6
-		test? (
-			>=dev-haskell/quickcheck-2.3
-			dev-haskell/test-framework[profile?]
-			dev-haskell/test-framework-hunit[profile?]
-			dev-haskell/test-framework-quickcheck2[profile?]
-			dev-haskell/zip-archive[profile?]
-		)
-		${RDEPEND}"
+	dev-haskell/dataenc:=[profile?]
+	dev-haskell/extensible-exceptions:=[profile?]
+	>=dev-haskell/mmap-0.5:=[profile?] <dev-haskell/mmap-0.6:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/zlib:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	diff? ( dev-haskell/lcs:=[profile?] )
+"
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.6
+	test? ( dev-haskell/hunit:=[profile?]
+		>=dev-haskell/quickcheck-2.3:2=[profile?]
+		dev-haskell/test-framework:=[profile?]
+		dev-haskell/test-framework-hunit:=[profile?]
+		dev-haskell/test-framework-quickcheck2:=[profile?]
+		dev-haskell/zip-archive:=[profile?] )
+"
+S="${S}/${PN}"
 
 src_configure() {
-	cabal_src_configure $(cabal_flag test)
+	haskell-cabal_src_configure \
+		$(cabal_flag diff diff) \
+		$(cabal_flag hpc hpc) \
+		$(cabal_flag test test)
 }
 
 src_install() {
