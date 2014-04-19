@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,32 +23,28 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="epic +stdlib"
 
-RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?]
-		<dev-haskell/binary-0.8:=[profile?]
-		=dev-haskell/deepseq-1.3*:=[profile?]
-		epic? ( dev-lang/epic:=[profile?] )
-		>=dev-haskell/geniplate-0.6.0.3:=[profile?]
-		<dev-haskell/geniplate-0.7:=[profile?]
-		>=dev-haskell/hashable-1.1.2.3:=[profile?]
-		<dev-haskell/hashable-1.3:=[profile?]
-		>=dev-haskell/hashtables-1.0:=[profile?]
-		<dev-haskell/hashtables-1.2:=[profile?]
-		>=dev-haskell/haskeline-0.6.3.2:=[profile?]
-		<dev-haskell/haskeline-0.8:=[profile?]
-		>=dev-haskell/haskell-src-exts-1.9.6:=[profile?]
-		<dev-haskell/haskell-src-exts-1.15:=[profile?]
-		>=dev-haskell/mtl-2.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		<dev-haskell/parallel-3.3:=[profile?]
-		>=dev-haskell/quickcheck-2.3:2=[profile?]
-		<dev-haskell/quickcheck-2.7:2=[profile?]
-		=dev-haskell/text-0.11*:=[profile?]
-		=dev-haskell/unordered-containers-0.2*:=[profile?]
-		=dev-haskell/xhtml-3000.2*:=[profile?]
-		>=dev-haskell/zlib-0.4.0.1:=[profile?]
-		<dev-haskell/zlib-0.6:=[profile?]
-		>=dev-lang/ghc-6.12.1:=
-		virtual/emacs
+RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
+	~dev-haskell/data-hash-0.2.0.0:=[profile?]
+	>=dev-haskell/geniplate-0.6.0.3:=[profile?] <dev-haskell/geniplate-0.7:=[profile?]
+	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.2:=[profile?]
+	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
+	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	<dev-haskell/parallel-3.3:=[profile?]
+	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
+	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?] )
+	|| ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
+		( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
+"
+RDEPEND+="
 		app-emacs/haskell-mode
 		virtual/emacs
 "
@@ -62,8 +58,6 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'binary >= 0.4.4 && < 0.6' 'binary >= 0.4.4 && < 0.8'
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
