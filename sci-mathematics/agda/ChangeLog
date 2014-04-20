@@ -1,6 +1,12 @@
 # ChangeLog for sci-mathematics/agda
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/sci-mathematics/agda/ChangeLog,v 1.10 2010/11/20 13:45:12 kolmodin Exp $
+
+*agda-2.3.2.2-r4 (20 Apr 2014)
+
+  20 Apr 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
+  +agda-2.3.2.2-r4.ebuild, -agda-2.3.2.2-r3.ebuild:
+  Use quickcheck < 2.7
 
 *agda-2.2.6-r1 (20 Nov 2010)
 
@@ -61,4 +67,3 @@
   +agda-20050601.ebuild:
   Initial commit. The doc generation is broken for now due to unsupported
   haddock stuff.
-

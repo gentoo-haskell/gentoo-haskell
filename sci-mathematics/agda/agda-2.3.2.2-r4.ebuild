@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/haskeline-0.6.3.2:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
-	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.7:2=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
