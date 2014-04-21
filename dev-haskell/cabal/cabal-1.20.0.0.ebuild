@@ -27,7 +27,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/extensible-exceptions
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.1.0.1 <dev-haskell/quickcheck-2.7
+		>=dev-haskell/quickcheck-2.1.0.1 <dev-haskell/quickcheck-2.8
 		dev-haskell/regex-posix
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
@@ -40,6 +40,10 @@ src_prepare() {
 	if [[ -n ${LIVE_EBUILD} ]]; then
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps 'version: 1.17.0' "version: ${PV}"
 	fi
+
+	cabal_chdeps \
+		'QuickCheck < 2.7' 'QuickCheck < 2.8' \
+		'QuickCheck >= 2.1.0.1 && < 2.7' 'QuickCheck >= 2.1.0.1 && < 2.8'
 }
 
 src_configure() {
