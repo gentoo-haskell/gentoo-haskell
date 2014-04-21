@@ -1,22 +1,20 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal elisp-common darcs
+inherit haskell-cabal elisp-common git-r3
 
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-EDARCS_REPOSITORY="http://www.cse.chalmers.se/~nad/repos/lib/"
-EDARCS_GET_CMD="get --verbose"
-EDARCS_LOCALREPO="Agda2-stdlib"
+EGIT_REPO_URI="https://github.com/agda/agda-stdlib.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="profile +ffi"
+IUSE="profile +ffi test"
 
 # filemanip is used in lib.cabal to make the GenerateEverything and
 # AllNonAsciiChars executables, so agda-stdlib does not require a subslot
@@ -34,8 +32,6 @@ DEPEND="${RDEPEND}
 
 SITEFILE="50${PN}-gentoo.el"
 
-S="${WORKDIR}/agda-stdlib-${PV}"
-
 src_prepare() {
 	cabal-mksetup
 }
@@ -44,22 +40,25 @@ src_compile() {
 	haskell-cabal_src_compile
 	"${S}"/dist/build/GenerateEverything/GenerateEverything \
 		|| die "GenerateEverything failed"
+
+	# Run Everything.agda which imports all generated modules.
 	local prof
 	use profile && prof="--ghc-flag=-prof"
-	agda +RTS -K1G -RTS ${prof} \
-		-i "${S}" -i "${S}"/src "${S}"/Everything.agda || die
-	# Although my agda-9999 build has
-	# /var/tmp/portage/sci-mathematics/agda-9999/work/agda-9999/dist/build/autogen/Paths_Agda.hs
-	# containing:
-	# datadir    = "/usr/share/agda-9999/ghc-7.6.1"
-	# it fails without the --css option like:
-	# /usr/share/agda-9999/ghc-7.4.1/Agda.css: copyFile: does not exist
-	local cssdir=$(egrep 'datadir *=' "${S}/dist/build/autogen/Paths_lib.hs" | sed -e 's@datadir    = \(.*\)@\1@')
-	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" "${S}"/README.agda || die
+	agda +RTS -K1G -RTS ${prof} -i. -isrc Everything.agda \
+		|| die "failed loading generated modules"
+
+	# Generate the documentation.
+	agda --html -i. -isrc README.agda \
+		|| die "failed to generate html docs"
 }
 
 src_test() {
-	agda -i "${S}" -i "${S}"/src README.agda || die
+	# The makefile has a "test" target, but it won't run if you don't
+	# use the makefile to build the library (we don't). We just steal
+	# the command from `make test`.
+	einfo ">>> Test phase [test]: ${CATEGORY}/${PF}"
+	agda -i. -isrc README.agda \
+		|| die "Test suite failed. See above for details."
 }
 
 src_install() {
