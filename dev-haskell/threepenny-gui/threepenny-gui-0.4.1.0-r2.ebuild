@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/hashable-1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.3:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
-	>=dev-haskell/network-2.3.0:=[profile?] <dev-haskell/network-2.5:=[profile?]
+	>=dev-haskell/network-2.3.0:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/snap-core-0.9:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
 	>=dev-haskell/snap-server-0.9:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
@@ -46,7 +46,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-aeson-0.7.patch
 
 	cabal_chdeps \
-		'aeson                  == 0.6.*' 'aeson                  >= 0.6'
+		'aeson                  == 0.6.*' 'aeson                  >= 0.6' \
+		'network                >= 2.3.0  && < 2.5' 'network                >= 2.3.0  && < 2.6'
 }
 
 src_configure() {
