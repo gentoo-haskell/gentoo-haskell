@@ -27,7 +27,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.2:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.5:=[profile?]
+	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/pandoc-citeproc-0.1:=[profile?] <dev-haskell/pandoc-citeproc-0.4:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
@@ -57,7 +57,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
 		>=dev-haskell/lrucache-1.1.1 <dev-haskell/lrucache-1.2
 		>=dev-haskell/mtl-1 <dev-haskell/mtl-2.2
-		>=dev-haskell/network-2.4 <dev-haskell/network-2.5
+		>=dev-haskell/network-2.4 <dev-haskell/network-2.6
 		>=dev-haskell/pandoc-citeproc-0.1 <dev-haskell/pandoc-citeproc-0.4
 		>=dev-haskell/parsec-3.0 <dev-haskell/parsec-3.2
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
@@ -78,6 +78,11 @@ DEPEND="${RDEPEND}
 		watchserver? ( >=dev-haskell/fsnotify-0.0.6 <dev-haskell/fsnotify-0.1
 				>=dev-haskell/system-filepath-0.4.6 <=dev-haskell/system-filepath-0.5 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network         >= 2.4    && < 2.5' 'network         >= 2.4    && < 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
