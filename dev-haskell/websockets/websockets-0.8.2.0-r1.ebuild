@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.9:=[profile?] <dev-haskell/attoparsec-0.12:=
 	>=dev-haskell/entropy-0.2.1:=[profile?] <dev-haskell/entropy-0.3:=[profile?]
 	>=dev-haskell/io-streams-1.1:=[profile?] <dev-haskell/io-streams-1.2:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/sha-1.5:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
@@ -40,3 +40,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network           >= 2.3    && < 2.5' 'network           >= 2.3    && < 2.6'
+}
