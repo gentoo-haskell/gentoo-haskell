@@ -41,8 +41,7 @@ RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.13:=[profile?]
 		>=dev-haskell/json-0.4:=[profile?]
 		<dev-haskell/json-0.8:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		>=dev-haskell/network-2.1.0.0:=[profile?]
-		<dev-haskell/network-2.5:=[profile?]
+		>=dev-haskell/network-2.1.0.0:=[profile?] <dev-haskell/network-2.6:=[profile?]
 		>=dev-haskell/pandoc-types-1.12:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/random:=[profile?]
@@ -70,7 +69,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'happstack-server >= 7.0 && < 7.2' 'happstack-server >= 7.0 && < 7.4' \
-        'blaze-html >= 0.4 && < 0.7' 'blaze-html >= 0.4 && < 0.8'
+		'blaze-html >= 0.4 && < 0.7' 'blaze-html >= 0.4 && < 0.8'
 }
 
 src_configure() {
