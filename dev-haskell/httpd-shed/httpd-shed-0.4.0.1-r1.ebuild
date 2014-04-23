@@ -18,12 +18,17 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
 IUSE="buildexamples"
 
-RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
+RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network >=2.3 && <2.5' 'network >=2.3 && <2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
