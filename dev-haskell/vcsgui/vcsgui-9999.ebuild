@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'gtk3 >=0.12.4.1 && <0.13' 'gtk3 >=0.12.5.0 && <0.13'
+		'gtk3 >=0.12.4 && <0.13' 'gtk3 >=0.12.5.0 && <0.13'
 }
