@@ -31,12 +31,16 @@ DEPEND="${RDEPEND}
 	dev-haskell/c2hs
 	>=dev-haskell/cabal-1.14
 	virtual/pkgconfig
-	test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7 )
+	test? ( >=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.7:2 )
 "
+
+RESTRICT=test # needs X
 
 src_prepare() {
 	cabal_chdeps \
-		'network      >= 2.3 && < 2.5' 'network      >= 2.3 && < 2.6'
+		'network      >= 2.3 && < 2.5' 'network      >= 2.3 && < 2.6' \
+		'network    >= 2.3 && < 2.5' 'network    >= 2.3 && < 2.6' \
+		'QuickCheck >= 2.4 && < 2.7' 'QuickCheck >= 2.4 && < 2.8'
 }
 
 src_configure() {
