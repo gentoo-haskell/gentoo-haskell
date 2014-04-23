@@ -18,12 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/msgpack-0.7.1:=[profile?]
-		<dev-haskell/msgpack-0.8:=[profile?]
-		>=dev-haskell/network-2.3.0.13:=[profile?]
-		<dev-haskell/network-2.5:=[profile?]
-		>=dev-haskell/network-socket-options-0.1:=[profile?]
-		<dev-haskell/network-socket-options-0.3:=[profile?]
+RDEPEND=">=dev-haskell/msgpack-0.7.1:=[profile?] <dev-haskell/msgpack-0.8:=[profile?]
+		>=dev-haskell/network-2.3.0.13:=[profile?] <dev-haskell/network-2.6:=[profile?]
+		>=dev-haskell/network-socket-options-0.1:=[profile?] <dev-haskell/network-socket-options-0.3:=[profile?]
 		>=dev-haskell/stm-2.3:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
@@ -36,3 +33,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 PATCHES=("${FILESDIR}"/${P}-fix-test.patch)
+
+src_prepare() {
+	base_src_prepare
+
+	cabal_chdeps \
+		'network >=2.3.0.13 && <2.5' 'network >=2.3.0.13 && <2.6'
+}
