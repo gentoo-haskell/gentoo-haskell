@@ -18,9 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # hangs?
-
-RDEPEND="dev-haskell/network:=[profile?]
+RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+	dev-haskell/network:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/zlib:=[profile?]
@@ -29,6 +28,9 @@ RDEPEND="dev-haskell/network:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/async
+		dev-haskell/blaze-builder
 		>=dev-haskell/hspec-1.8
 		dev-haskell/quickcheck )
 "
+
+RESTRICT=test # hangs?
