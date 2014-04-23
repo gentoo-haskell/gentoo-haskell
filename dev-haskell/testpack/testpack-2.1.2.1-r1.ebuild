@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/hunit:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		>=dev-haskell/quickcheck-2.1.0.3:2=[profile?]
+		>=dev-haskell/quickcheck-2.1.0.3:2=[profile?] <dev-haskell/quickcheck-2.7:2=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
