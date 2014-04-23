@@ -25,7 +25,7 @@ IUSE=""
 RESTRICT=test # outdated tests
 
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	<dev-haskell/network-2.5:=[profile?]
+	<dev-haskell/network-2.6:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network < 2.5' 'network < 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
