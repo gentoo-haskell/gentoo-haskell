@@ -69,7 +69,9 @@ src_prepare() {
 
 	cabal_chdeps \
 		'happstack-server >= 7.0 && < 7.2' 'happstack-server >= 7.0 && < 7.4' \
-		'blaze-html >= 0.4 && < 0.7' 'blaze-html >= 0.4 && < 0.8'
+		'blaze-html >= 0.4 && < 0.7' 'blaze-html >= 0.4 && < 0.8' \
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6' \
+		'network >= 2.1.0.0 && < 2.5' 'network >= 2.1.0.0 && < 2.6'
 }
 
 src_configure() {
