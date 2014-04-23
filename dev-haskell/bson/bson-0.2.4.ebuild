@@ -29,14 +29,17 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
-	test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7
+	test? ( >=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.8:2
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+RESTRICT=test # missing file
+
 src_prepare() {
 
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4 && < 2.5' 'QuickCheck                 >= 2.4 && < 2.7' \
+		'QuickCheck                 >= 2.4 && < 2.5' 'QuickCheck                 >= 2.4 && < 2.8' \
 		'test-framework             >= 0.4 && < 0.7' 'test-framework             >= 0.4 && < 0.9' \
 		'test-framework-quickcheck2 >= 0.2 && < 0.3' 'test-framework-quickcheck2 >= 0.2 && < 0.4'
 }
