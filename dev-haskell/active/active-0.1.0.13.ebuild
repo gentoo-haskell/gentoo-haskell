@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/newtype-0.2 <dev-haskell/newtype-0.3
 		>=dev-haskell/quickcheck-2.4.2 <dev-haskell/quickcheck-2.8
 		>=dev-haskell/semigroupoids-1.2 <dev-haskell/semigroupoids-4.1
-		>=dev-haskell/semigroups-0.1 <dev-haskell/semigroups-0.13
+		>=dev-haskell/semigroups-0.1 <dev-haskell/semigroups-0.14
 		>=dev-haskell/vector-space-0.8 <dev-haskell/vector-space-0.9 )
 "
+
+RESTRICT=test # hangs?
