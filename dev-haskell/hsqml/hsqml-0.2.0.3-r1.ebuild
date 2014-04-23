@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+forceghcilib +threadedtestsuite usepkgconfig"
 
-RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
+RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.7 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network      >= 2.3 && < 2.5' 'network      >= 2.3 && < 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
