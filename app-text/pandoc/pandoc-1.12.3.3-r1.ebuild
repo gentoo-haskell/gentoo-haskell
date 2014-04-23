@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/hslua-0.3:=[profile?] <dev-haskell/hslua-0.4:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
-	>=dev-haskell/network-2:=[profile?] <dev-haskell/network-2.5:=[profile?]
+	>=dev-haskell/network-2:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/pandoc-types-1.12.3:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.1:=[profile?]
@@ -64,7 +64,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'QuickCheck >= 2.4 && < 2.7' 'QuickCheck >= 2.4 && < 2.8'
+		'QuickCheck >= 2.4 && < 2.7' 'QuickCheck >= 2.4 && < 2.8' \
+		'network >= 2 && < 2.5' 'network >= 2 && < 2.6'
 }
 
 src_configure() {
