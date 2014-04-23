@@ -36,9 +36,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/chell-quickcheck-0.2 <dev-haskell/chell-quickcheck-0.3
 		>=dev-haskell/libxml-sax-0.7 <dev-haskell/libxml-sax-0.8
 		>=dev-haskell/parsec-2.0 <dev-haskell/parsec-3.2
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.5
+		>=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.8:2
 		>=dev-haskell/random-1.0 <dev-haskell/random-1.1
 		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
 		>=dev-haskell/vector-0.7 <dev-haskell/vector-0.11
 		>=dev-haskell/xml-types-0.3 <dev-haskell/xml-types-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && < 2.8'
+}
