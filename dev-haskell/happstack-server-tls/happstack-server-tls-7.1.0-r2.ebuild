@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/happstack-server-6.6.4:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
 	>=dev-haskell/hslogger-1.1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/hsopenssl-0.10:=[profile?] <dev-haskell/hsopenssl-0.11:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.5:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
@@ -35,4 +35,7 @@ src_prepare() {
 	cabal_chdeps \
 		'Extra-Libraries:   ssl' 'Build-Depends:     base' \
 		'Extra-Libraries: cryptopp' 'Build-Depends:     base'
+
+	cabal_chdeps \
+		'network               >= 2.3 && < 2.5' 'network               >= 2.3 && < 2.6'
 }
