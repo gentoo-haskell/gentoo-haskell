@@ -19,8 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/data-accessor-0.2*:=[profile?]
-		>=dev-haskell/network-2.3:=[profile?]
-		<dev-haskell/network-2.5:=[profile?]
+		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
@@ -42,3 +41,8 @@ RESTRICT=test # fails under load:
 # Running "EarlyDisconnect": TestTCP: user error (Pattern match failure in do expression at tests/TestTCP.hs:108:7-21)
 # Trace:
 # 0       Left bind: resource busy (Address already in use)
+
+src_prepare() {
+	cabal_chdeps \
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6'
+}
