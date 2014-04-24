@@ -80,6 +80,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-nopreview-fix.patch
+
 	cabal_chdeps \
 		'network         >= 2.4    && < 2.5' 'network         >= 2.4    && < 2.6'
 }
