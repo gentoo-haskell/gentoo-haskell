@@ -66,6 +66,7 @@ src_prepare() {
 	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
 
 	epatch "${FILESDIR}"/${P}-ghc-7.8-part-1.patch
+	epatch "${FILESDIR}"/${P}-fix-nonatomic-global.patch
 
 	cabal_chdeps \
 		'text       >= 0.11.0.6 && < 0.12.0.0' 'text       >= 0.11.0.6' \
