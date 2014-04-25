@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This is an implementation of Tarjan&#39;s Union-Find algorithm (Robert
+		E. Tarjan. &quot;Efficiency of a Good But Not Linear Set Union
+		Algorithm&quot;, JACM 22(2), 1975) in order to maintain an equivalence
+		relation.
+		This implementation is a port of the /union-find/ package using the
+		ST monad transformer (instead of the IO monad).
+	</longdescription>
+</pkgmetadata>
