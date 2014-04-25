@@ -26,6 +26,7 @@ IUSE="epic +stdlib"
 RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	~dev-haskell/data-hash-0.2.0.0:=[profile?]
+	>=dev-haskell/equivalence-0.2.3:=[profile?] <dev-haskell/equivalence-0.3:=[profile?]
 	>=dev-haskell/geniplate-0.6.0.3:=[profile?] <dev-haskell/geniplate-0.7:=[profile?]
 	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
@@ -33,6 +34,7 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/stmonadtrans-0.3.2:=[profile?] <dev-haskell/stmonadtrans-0.4:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
@@ -83,7 +85,8 @@ src_prepare() {
 }
 
 src_configure() {
-	cabal_src_configure $(cabal_flag epic)
+	haskell-cabal_src_configure \
+		$(cabal_flag epic epic)
 }
 
 src_compile() {
