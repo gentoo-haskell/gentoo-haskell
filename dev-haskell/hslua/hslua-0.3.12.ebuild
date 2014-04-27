@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="system-lua"
+IUSE="apicheck system-lua"
 
 RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
+		$(cabal_flag apicheck apicheck) \
 		$(cabal_flag system-lua system-lua)
 }
