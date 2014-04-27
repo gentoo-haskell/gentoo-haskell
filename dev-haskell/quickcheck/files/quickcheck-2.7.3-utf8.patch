@@ -1,0 +1,71 @@
+commit ccf15ee45ee8a0e392b6bc6c68ac2b017a3ef701
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Sun Apr 27 21:39:06 2014 +0300
+
+    Test/QuickCheck/All.hs: fix 'quickCheckAll' to read haskell sources in UTF-8
+    
+    Today I've got an Agda build failure on a box running
+    LANG=C locale (UTF-8 incapable).
+    
+        examples/Heap.hs:151:10:
+            Exception when trying to run compile-time code:
+              examples/Heap.hs: hGetContents: invalid argument (invalid byte sequence)
+              Code: quickCheckAll
+            In the expression: $quickCheckAll
+            In an equation for `main': main = $quickCheckAll
+    
+    It's a common error of a 'readFile' assuming locale input.
+    Fixed to read in UTF-8 in recent GHCs.
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/Test/QuickCheck/All.hs b/Test/QuickCheck/All.hs
+index 325b2a3..f94e9ad 100644
+--- a/Test/QuickCheck/All.hs
++++ b/Test/QuickCheck/All.hs
+@@ -22,6 +22,8 @@ import Data.Char
+ import Data.List
+ import Control.Monad
+ 
++import qualified System.IO as S
++
+ -- | Test a polymorphic property, defaulting all type variables to 'Integer'.
+ --
+ -- Invoke as @$('polyQuickCheck' 'prop)@, where @prop@ is a property.
+@@ -103,7 +105,7 @@ forAllProperties :: Q Exp -- :: (Property -> IO Result) -> IO Bool
+ forAllProperties = do
+   Loc { loc_filename = filename } <- location
+   when (filename == "<interactive>") $ error "don't run this interactively"
+-  ls <- runIO (fmap lines (readFile filename))
++  ls <- runIO (fmap lines (readUTF8File filename))
+   let prefixes = map (takeWhile (\c -> isAlphaNum c || c == '_') . dropWhile (\c -> isSpace c || c == '>')) ls
+       idents = nubBy (\x y -> snd x == snd y) (filter (("prop_" `isPrefixOf`) . snd) (zip [1..] prefixes))
+       warning x = reportWarning ("Name " ++ x ++ " found in source file but was not in scope")
+@@ -115,6 +117,19 @@ forAllProperties = do
+          else return []
+   [| runQuickCheckAll $(fmap (ListE . concat) (mapM quickCheckOne idents)) |]
+ 
++readUTF8File name = S.openFile name S.ReadMode >>=
++                    set_utf8_io_enc >>=
++                    S.hGetContents
++
++-- Deal with UTF-8 input and output.
++set_utf8_io_enc :: S.Handle -> IO S.Handle
++#if __GLASGOW_HASKELL__ > 611
++-- possibly if MIN_VERSION_base(4,2,0)
++set_utf8_io_enc h = do S.hSetEncoding h S.utf8; return h
++#else
++set_utf8_io_enc h = return h
++#endif
++
+ -- | Test all properties in the current module.
+ -- The name of the property must begin with @prop_@.
+ -- Polymorphic properties will be defaulted to 'Integer'.
+diff --git a/examples/Heap.hs b/examples/Heap.hs
+index bbbfe76..911ab69 100644
+--- a/examples/Heap.hs
++++ b/examples/Heap.hs
+@@ -146,1 +146,3 @@ instance (Ord a, Arbitrary a) => Arbitrary (Heap a) where
++-- quickCheckAll reads this file and treats it as UTF-8
++-- Here is a bait to test: Привет!
+ main = $(quickCheckAll)

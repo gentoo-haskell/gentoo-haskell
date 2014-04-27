@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +base4,-base3,templatehaskell:template_haskell
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="QuickCheck"
 MY_P="${MY_PN}-${PV}"
@@ -33,6 +33,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}"/${PN}-2.7.3-utf8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
