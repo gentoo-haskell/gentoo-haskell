@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/conduit-0.5:=[profile?] <dev-haskell/conduit-1.2:=[profil
 	>=dev-haskell/tls-1.2.1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
-	>=dev-haskell/warp-2.1.4:=[profile?] <dev-haskell/warp-2.2:=[profile?]
+	>=dev-haskell/warp-2.1.5:=[profile?] <dev-haskell/warp-2.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
