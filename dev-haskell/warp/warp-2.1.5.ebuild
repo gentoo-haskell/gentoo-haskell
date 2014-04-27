@@ -56,8 +56,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai )
 "
 
-RESTRICT=test # fails tests
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag allow-sendfilefd allow-sendfilefd) \
