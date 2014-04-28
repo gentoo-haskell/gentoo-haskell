@@ -31,5 +31,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base <=4.1.0.0' 'base >= 4' \
-		'extensions:' 'extensions: FlexibleInstances'
+		'extensions:' 'extensions: FlexibleInstances' \
+		'license-file: ""' ' '
 }
