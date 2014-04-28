@@ -61,10 +61,9 @@ S="${WORKDIR}/${P}"
 
 src_prepare() {
 	sed -e '/.*emacs-mode.*$/d' \
-		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
-		|| die "Could not remove agda and agda-mode from ${MY_PN}.cabal"
-	cabal-mksetup
+		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
+
 	if use epic && use stdlib; then
 		ewarn "Note that the agda-stdlib README:"
 		ewarn "http://www.cse.chalmers.se/~nad/listings/lib/README.html"
@@ -97,7 +96,18 @@ src_compile() {
 }
 
 src_install() {
+	local add="${ED}"/usr/share/"${P}/ghc-$(ghc-version)"
+
 	haskell-cabal_src_install
+
+	# generate Primitive.agdai, emulate Setup.hs postinst phase
+	Agda_datadir="${add}" \
+		"${ED}"/usr/bin/agda "${add}"/lib/prim/Agda/Primitive.agda
+
+	rm "${ED}"/usr/bin/agda-mode || die
+	# lives in sci-mathematics/agda-executable
+	rm "${ED}"/usr/bin/agda || die
+
 	elisp-install ${PN} src/data/emacs-mode/*.el \
 		|| die "Failed to install emacs mode"
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
