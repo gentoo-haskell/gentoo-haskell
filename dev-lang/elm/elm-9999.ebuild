@@ -15,7 +15,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="The Elm language module."
 HOMEPAGE="http://elm-lang.org"
 #SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
-EGIT_REPO_URI="git://github.com/evancz/Elm.git"
+EGIT_REPO_URI="git://github.com/elm-lang/Elm.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -48,11 +48,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
-
-#S="${WORKDIR}/${MY_PN}"
-
-src_prepare() {
-	cabal_chdeps \
-		'blaze-html == 0.5.* || == 0.6.*' 'blaze-html >= 0.5' \
-		'blaze-markup == 0.5.1.*' 'blaze-markup >= 0.5.1'
-}
