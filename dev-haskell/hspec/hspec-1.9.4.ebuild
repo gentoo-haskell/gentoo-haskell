@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/setenv:=[profile?]
 	dev-haskell/tf-random:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.4.0:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -34,6 +34,5 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.4.1
 		dev-haskell/ghc-paths
 		>=dev-haskell/hspec-meta-1.9.1
-		>=dev-haskell/silently-1.2.4
-		dev-haskell/transformers )
+		>=dev-haskell/silently-1.2.4 )
 "
