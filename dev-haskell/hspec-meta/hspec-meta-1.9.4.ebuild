@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/setenv:=[profile?]
 	dev-haskell/tf-random:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.4.0:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
