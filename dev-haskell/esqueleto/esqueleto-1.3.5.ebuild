@@ -31,7 +31,7 @@ RDEPEND="dev-haskell/conduit:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3 <dev-haskell/hspec-1.9
+	test? ( >=dev-haskell/hspec-1.3 <dev-haskell/hspec-1.10
 		dev-haskell/hunit
 		dev-haskell/monad-control
 		>=dev-haskell/persistent-sqlite-1.2 <dev-haskell/persistent-sqlite-1.4
@@ -41,6 +41,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.6-haddock.patch
+	cabal_chdeps \
+		'hspec               >= 1.3 && < 1.9' 'hspec               >= 1.3 && < 1.10'
 }
 
 src_configure() {
