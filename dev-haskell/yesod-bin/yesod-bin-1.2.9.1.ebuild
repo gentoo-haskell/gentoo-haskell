@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="The yesod helper executable."
+DESCRIPTION="The yesod helper executable"
 HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -54,6 +54,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/unix-compat-0.2 <dev-haskell/unix-compat-0.5
 	dev-haskell/unordered-containers
 	>=dev-haskell/wai-1.4
+	dev-haskell/wai-extra
 	>=dev-haskell/warp-1.3.7.5
 	>=dev-haskell/yaml-0.8 <dev-haskell/yaml-0.9
 	>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6
