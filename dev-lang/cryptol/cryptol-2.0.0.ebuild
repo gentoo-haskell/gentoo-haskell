@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	./configure
+	./configure # https://github.com/GaloisInc/cryptol/pull/23
 
 	haskell-cabal_src_configure \
 		$(cabal_flag static static)
