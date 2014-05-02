@@ -41,6 +41,8 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	./configure
+
 	haskell-cabal_src_configure \
 		$(cabal_flag static static)
 }
