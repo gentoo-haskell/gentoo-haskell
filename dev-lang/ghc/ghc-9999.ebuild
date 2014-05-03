@@ -17,7 +17,7 @@ fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib pax-utils toolchain-funcs versionator
-[[ ${PV} = *9999* ]] && inherit git-2
+[[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -33,7 +33,7 @@ arch_binaries=""
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -51,7 +51,7 @@ yet_binary() {
 		#ppc) return 0 ;;
 		#ppc64) return 0 ;;
 		#sparc) return 0 ;;
-		x86) return 0 ;;
+		#x86) return 0 ;;
 		*) return 1 ;;
 	esac
 }
@@ -66,7 +66,7 @@ S="${WORKDIR}"/${GHC_P}
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
 if [[ ${PV} = *9999* ]]; then
-    EGIT_REPO_URI="https://github.com/ghc/ghc.git"
+    EGIT_REPO_URI="https://git.haskell.org/ghc.git"
     unset SRC_URI
 fi
 
@@ -299,7 +299,35 @@ src_unpack() {
 			EGIT_BRANCH="${GHC_BRANCH}"
 		fi
 
-		git-2_src_unpack
+		git-r3_src_unpack
+
+		repos_root="https://git.haskell.org"
+		improper_submodule_map=(
+			"libffi-tarballs       ${repos_root}/libffi-tarballs.git"
+			"utils/hsc2hs          ${repos_root}/hsc2hs.git"
+			"libraries/array       ${repos_root}/packages/array.git"
+			"libraries/deepseq     ${repos_root}/packages/deepseq.git"
+			"libraries/directory   ${repos_root}/packages/directory.git"
+			"libraries/filepath    ${repos_root}/packages/filepath.git"
+			"libraries/haskell98   ${repos_root}/packages/haskell98.git"
+			"libraries/haskell2010 ${repos_root}/packages/haskell2010.git"
+			"libraries/hoopl       ${repos_root}/packages/hoopl.git"
+			"libraries/hpc         ${repos_root}/packages/hpc.git"
+			"libraries/old-locale  ${repos_root}/packages/old-locale.git"
+			"libraries/old-time    ${repos_root}/packages/old-time.git"
+			"libraries/process     ${repos_root}/packages/process.git"
+			"libraries/unix        ${repos_root}/packages/unix.git"
+		)
+		for improper_submodule in "${improper_submodule_map[@]}"
+		do
+			einfo "fetching improper submodules: '${improper_submodule}'"
+			set -- ${improper_submodule}
+			is_path=$1
+			is_repo=$2
+
+			git-r3_fetch    "${is_repo}"
+			git-r3_checkout "${is_repo}" "${S}"/"${is_path}"
+		done
 	fi
 
 	# Create the ${S} dir if we're using the binary version
@@ -311,7 +339,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
-	unpack ${ONLYA}
+	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
 
 	if [[ -d "${S}"/libraries/dph ]]; then
 		# Sometimes dph libs get accidentally shipped with ghc
@@ -411,8 +439,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.8.1_rc1-libbfd.patch
 
-		epatch "${FILESDIR}"/${PN}-7.8.1-no-cpp-asm.patch
-		epatch "${FILESDIR}"/${PN}-7.8.2-stg-fptr-8965.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 
