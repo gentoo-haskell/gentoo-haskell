@@ -1,0 +1,45 @@
+commit b3450f3c91b8ce4b2443f1692e309e105a60ad4f
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Sat May 3 22:20:05 2014 +0300
+
+    fix rts exported symbols base_GHCziIOziException_allocationLimitExceeded_closure
+    
+    Commit  b0534f78a73f972e279eed4447a5687bd6a8308e added new exported rts symbols,
+    but slightly misspelled them.
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/rts/package.conf.in b/rts/package.conf.in
+index 25fb5eb..914dd9c 100644
+--- a/rts/package.conf.in
++++ b/rts/package.conf.in
+@@ -98,7 +98,7 @@ ld-options:
+          , "-Wl,-u,_base_ControlziExceptionziBase_nonTermination_closure"
+          , "-Wl,-u,_base_GHCziIOziException_blockedIndefinitelyOnMVar_closure"
+          , "-Wl,-u,_base_GHCziIOziException_blockedIndefinitelyOnSTM_closure"
+-         , "-Wl,-u,_base_GHCziIOziException_allocationQuotaExceeded_closure"
++         , "-Wl,-u,_base_GHCziIOziException_allocationLimitExceeded_closure"
+          , "-Wl,-u,_base_ControlziExceptionziBase_nestedAtomically_closure"
+          , "-Wl,-u,_base_GHCziWeak_runFinalizzerBatch_closure"
+          , "-Wl,-u,_base_GHCziTopHandler_flushStdHandles_closure"
+@@ -139,7 +139,7 @@ ld-options:
+          , "-Wl,-u,base_ControlziExceptionziBase_nonTermination_closure"
+          , "-Wl,-u,base_GHCziIOziException_blockedIndefinitelyOnMVar_closure"
+          , "-Wl,-u,base_GHCziIOziException_blockedIndefinitelyOnSTM_closure"
+-         , "-Wl,-u,base_GHCziIOziException_allocationQuotaExceeded_closure"
++         , "-Wl,-u,base_GHCziIOziException_allocationLimitExceeded_closure"
+          , "-Wl,-u,base_ControlziExceptionziBase_nestedAtomically_closure"
+          , "-Wl,-u,base_GHCziWeak_runFinalizzerBatch_closure"
+          , "-Wl,-u,base_GHCziTopHandler_flushStdHandles_closure"
+diff --git a/rts/win32/libHSbase.def b/rts/win32/libHSbase.def
+index 119237b..6bb19da 100644
+--- a/rts/win32/libHSbase.def
++++ b/rts/win32/libHSbase.def
+@@ -36,6 +36,7 @@ EXPORTS
+ 	base_GHCziPack_unpackCString_closure
+ 	base_GHCziIOziException_blockedIndefinitelyOnMVar_closure
+ 	base_GHCziIOziException_blockedIndefinitelyOnSTM_closure
++	base_GHCziIOziException_allocationLimitExceeded_closure
+ 	base_GHCziIOziException_stackOverflow_closure
+ 
+ 	base_ControlziExceptionziBase_nonTermination_closure
