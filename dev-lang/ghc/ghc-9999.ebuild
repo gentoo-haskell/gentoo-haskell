@@ -442,8 +442,6 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 
-		epatch "${FILESDIR}"/${PN}-9999-rts-export.patch
-
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
