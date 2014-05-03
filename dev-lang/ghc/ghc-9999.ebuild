@@ -1,34 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-# Brief explanation of the bootstrap logic:
-#
-# Previous ghc ebuilds have been split into two: ghc and ghc-bin,
-# where ghc-bin was primarily used for bootstrapping purposes.
-# From now on, these two ebuilds have been combined, with the
-# binary USE flag used to determine whether or not the pre-built
-# binary package should be emerged or whether ghc should be compiled
-# from source.  If the latter, then the relevant ghc-bin for the
-# arch in question will be used in the working directory to compile
-# ghc from source.
-#
-# This solution has the advantage of allowing us to retain the one
-# ebuild for both packages, and thus phase out virtual/ghc.
-
-# Note to users of hardened gcc-3.x:
-#
-# If you emerge ghc with hardened gcc it should work fine (because we
-# turn off the hardened features that would otherwise break ghc).
-# However, emerging ghc while using a vanilla gcc and then switching to
-# hardened gcc (using gcc-config) will leave you with a broken ghc. To
-# fix it you would need to either switch back to vanilla gcc or re-emerge
-# ghc (or ghc-bin). Note that also if you are using hardened gcc-3.x and
-# you switch to gcc-4.x that this will also break ghc and you'll need to
-# re-emerge ghc (or ghc-bin). People using vanilla gcc can switch between
-# gcc-3.x and 4.x with no problems.
-
-EAPI="5"
+EAPI=5
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
@@ -90,16 +64,23 @@ is_crosscompile() {
 }
 
 append-ghc-cflags() {
-	local flag compile assemble link
+	local persistent compile assemble link
+	local flag ghcflag
+
 	for flag in $*; do
 		case ${flag} in
+			persistent)	persistent="yes";;
 			compile)	compile="yes";;
 			assemble)	assemble="yes";;
 			link)		link="yes";;
 			*)
-				[[ ${compile}  ]] && GHC_FLAGS="${GHC_FLAGS} -optc${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${assemble} ]] && GHC_FLAGS="${GHC_FLAGS} -opta${flag}" CFLAGS="${CFLAGS} ${flag}"
-				[[ ${link}     ]] && GHC_FLAGS="${GHC_FLAGS} -optl${flag}" FILTERED_LDFLAGS="${FILTERED_LDFLAGS} ${flag}";;
+				[[ ${compile}  ]] && ghcflag="-optc${flag}"  CFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				[[ ${assemble} ]] && ghcflag="-opta${flag}"  CFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				[[ ${link}     ]] && ghcflag="-optl${flag}" LDFLAGS+=" ${flag}" && GHC_FLAGS+=" ${ghcflag}" &&
+					[[ ${persistent} ]] && GHC_PERSISTENT_FLAGS+=" ${ghcflag}"
+				;;
 		esac
 	done
 }
@@ -123,7 +104,11 @@ ghc_setup_cflags() {
 	strip-flags
 	strip-unsupported-flags
 
+	# Cmm can't parse line numbers #482086
+	replace-flags -ggdb[3-9] -ggdb2
+
 	GHC_FLAGS=""
+	GHC_PERSISTENT_FLAGS=""
 	for flag in ${CFLAGS}; do
 		case ${flag} in
 
@@ -142,40 +127,22 @@ ghc_setup_cflags() {
 		esac
 	done
 
-	FILTERED_LDFLAGS=""
 	for flag in ${LDFLAGS}; do
-		case ${flag} in
-			# Pass the canary. we don't quite respect LDFLAGS, but we have an excuse!
-			"-Wl,--hash-style="*) append-ghc-cflags link ${flag};;
-
-			# Ignore all other flags
-		esac
+		append-ghc-cflags link ${flag}
 	done
 
 	# hardened-gcc needs to be disabled, because the mangler doesn't accept
 	# its output.
-	gcc-specs-pie && append-ghc-cflags compile link	-nopie
-	gcc-specs-ssp && append-ghc-cflags compile		-fno-stack-protector
+	gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
+	gcc-specs-ssp && append-ghc-cflags persistent compile      -fno-stack-protector
 
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
-	use ppc64 && append-ghc-cflags compile -mminimal-toc
+	use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
 	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags compile -G0 -Os
-
-	# Unfortunately driver/split/ghc-split.lprl is dumb
-	# enough to preserve stack marking for each split object
-	# and it flags stack marking violation:
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__1.o
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__2.o
-	# * !WX --- --- usr/lib64/ghc-7.4.1/base-4.5.0.0/libHSbase-4.5.0.0.a:Fingerprint__3.o
-	case $($(tc-getAS) -v 2>&1 </dev/null) in
-		*"GNU Binutils"*) # GNU ld
-			append-ghc-cflags compile assemble -Wa,--noexecstack
-			;;
-	esac
+	use ia64 && append-ghc-cflags persistent compile -G0 -Os
 }
 
 pkg_setup() {
@@ -481,25 +448,10 @@ pkg_postinst() {
 	# the package.conf.d directory.
 	touch "${PKGCACHE}"
 
-	ewarn
-	ewarn "\e[1;31m************************************************************************\e[0m"
-	ewarn
-	ewarn "For the master branch (ghc 7.7) place lines like these in"
-	ewarn "/etc/portage/package.keywords"
-	if [[ "${PV}" == "7.7.20121213" ]]; then
-		ewarn "=dev-haskell/deepseq-1.3.0.1* **"
-		ewarn "=dev-haskell/haddock-2.11.0_p2012* **"
-	else
-		ewarn "=dev-haskell/deepseq-1.3.0.2* **"
-		if [[ "${PV}" =~ "7.7.2013*" ]]; then
-			ewarn "=dev-haskell/haddock-2.13.2_p2013* **"
-		else
-			ewarn "=dev-haskell/haddock-9999* **"
-		fi
-	fi
-	ewarn "=dev-lang/ghc-${PV}* **"
-	ewarn ""
 	if [[ "${haskell_updater_warn}" == "1" ]]; then
+		ewarn
+		ewarn "\e[1;31m************************************************************************\e[0m"
+		ewarn
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
 		ewarn "      'haskell-updater --upgrade'"
