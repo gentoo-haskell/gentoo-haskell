@@ -571,6 +571,7 @@ src_install() {
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 	else
+		[[ -f VERSION ]] || emake VERSION
 		# We only build docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
 		if use doc && ! use ghcbootstrap; then
@@ -591,10 +592,6 @@ src_install() {
 		# so mark resulting binary
 		pax-mark -m "${ED}/usr/$(get_libdir)/${GHC_P}/ghc"
 
-		if [[ ! -f "${S}/VERSION" ]]; then
-			echo "${GHC_PV}" > "${S}/VERSION" \
-				|| die "Could not create file ${S}/VERSION"
-		fi
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
 	fi
