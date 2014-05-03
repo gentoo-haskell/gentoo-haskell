@@ -1,0 +1,32 @@
+commit a6049abce040713e9a5f175887cf70d12b9057c6
+Author: Jan Stolarek <jan.stolarek@p.lodz.pl>
+Date:   Sat Apr 19 09:08:49 2014 +0200
+
+    Add LANGUAGE extensions for inferred signatures.
+    
+    Some of the inferred signatures required LANGUAGE extensions that
+    were not enabled. Since now GHC checks that we have to explicitly
+    list required extensions.
+
+diff --git a/Data/Vector/Generic/Mutable.hs b/Data/Vector/Generic/Mutable.hs
+index 91e7036..17a7540 100644
+--- a/Data/Vector/Generic/Mutable.hs
++++ b/Data/Vector/Generic/Mutable.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE MultiParamTypeClasses, BangPatterns, ScopedTypeVariables #-}
++{-# LANGUAGE MultiParamTypeClasses, BangPatterns, ScopedTypeVariables,
++             TypeFamilies #-}
+ -- |
+ -- Module      : Data.Vector.Generic.Mutable
+ -- Copyright   : (c) Roman Leshchinskiy 2008-2010
+diff --git a/Data/Vector/Mutable.hs b/Data/Vector/Mutable.hs
+index e896f3a..e97c4a8 100644
+--- a/Data/Vector/Mutable.hs
++++ b/Data/Vector/Mutable.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE MultiParamTypeClasses, FlexibleInstances, BangPatterns #-}
++{-# LANGUAGE MultiParamTypeClasses, FlexibleInstances, BangPatterns,
++             TypeFamilies  #-}
+ 
+ -- |
+ -- Module      : Data.Vector.Mutable
