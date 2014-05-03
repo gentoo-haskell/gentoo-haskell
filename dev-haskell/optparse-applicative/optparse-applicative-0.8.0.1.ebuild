@@ -25,9 +25,14 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprin
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.6 <dev-haskell/quickcheck-2.7
+		>=dev-haskell/quickcheck-2.6:2 <dev-haskell/quickcheck-2.8:2
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-th-prime-0.0 <dev-haskell/test-framework-th-prime-0.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck == 2.6.*' 'QuickCheck >= 2.6 && < 2.8'
+}
