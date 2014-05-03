@@ -1,0 +1,15 @@
+diff --git a/Main.hs b/Main.hs
+index b9e92e3..a2be41f 100644
+--- a/Main.hs
++++ b/Main.hs
+@@ -264,8 +264,8 @@ loop state stuff lastTime = do
+   -- exit if window closed or Esc pressed
+   esc <- GLFW.getKey GLFW.ESC
+   q <- GLFW.getKey 'Q'
+-  open <- get $ GLFW.windowParam GLFW.Opened
+-  if open == 1 && esc /= GLFW.Press && q /= GLFW.Press
++  open <- GLFW.getParam GLFW.Opened
++  if open && esc /= GLFW.Press && q /= GLFW.Press
+     then loop newState stuff now
+     else return ()
+ 

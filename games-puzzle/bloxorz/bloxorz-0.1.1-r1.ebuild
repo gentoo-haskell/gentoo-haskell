@@ -7,7 +7,7 @@
 EAPI="3"
 
 CABAL_FEATURES="bin"
-inherit flag-o-matic haskell-cabal
+inherit base flag-o-matic haskell-cabal
 
 DESCRIPTION="OpenGL Logic Game"
 HOMEPAGE="http://hackage.haskell.org/package/bloxorz"
@@ -24,6 +24,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/glfw
 		>=dev-haskell/opengl-2.3
 		>=dev-lang/ghc-6.8.2"
+
+PATCHES=("${FILESDIR}"/${P}-glfw-0.5.patch)
 
 src_configure() {
 	# WORKAROUND:
