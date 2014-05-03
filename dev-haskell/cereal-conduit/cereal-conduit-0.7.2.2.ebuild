@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits"
-HOMEPAGE="https://github.com/litherum/cereal-conduit"
+HOMEPAGE="https://github.com/snoyberg/conduit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
