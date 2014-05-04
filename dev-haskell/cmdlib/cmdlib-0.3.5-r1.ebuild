@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/mtl-2:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-0.3.4-ghc-6.12.patch")
+PATCHES=("${FILESDIR}/${PN}-0.3.4-ghc-6.12.patch" "${FILESDIR}"/${P}-ghc-7.9.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
