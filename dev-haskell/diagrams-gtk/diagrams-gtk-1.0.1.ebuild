@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.13:=[profile?]
 	>=dev-haskell/diagrams-cairo-1.0:=[profile?] <dev-haskell/diagrams-cairo-1.2:=[profile?]
 	>=dev-haskell/diagrams-lib-1.0:=[profile?] <dev-haskell/diagrams-lib-1.2:=[profile?]
-	>=dev-haskell/gtk-0.12.0:=[profile?] <dev-haskell/gtk-0.13:=[profile?]
+	>=dev-haskell/gtk-0.12.0:2=[profile?] <dev-haskell/gtk-0.13:2=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
