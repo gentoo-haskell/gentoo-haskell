@@ -344,8 +344,10 @@ cabal-configure() {
 	if ghc-supports-parallel-make; then
 		local max_jobs=$(makeopts_jobs)
 
-		# limit to sort-of-sane value (same as Cabal)
-		[[ ${max_jobs} -gt 64 ]] && max_jobs=64
+		# limit to very small value, as parallelism
+		# helps slightly, but makes things severely worse
+		# when amount of threads is Very Large.
+		[[ ${max_jobs} -gt 4 ]] && max_jobs=4
 
 		cabalconf+=(--ghc-option=-j"$max_jobs")
 	fi
