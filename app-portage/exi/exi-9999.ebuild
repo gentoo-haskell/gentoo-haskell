@@ -9,7 +9,6 @@
 EAPI=5
 
 EDARCS_REPOSITORY="http://kosmikus.org/repos/exi/"
-EDARCS_GET_CMD="get --partial"
 
 CABAL_FEATURES="bin lib haddock"
 

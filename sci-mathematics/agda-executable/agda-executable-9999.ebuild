@@ -13,7 +13,6 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Command-line program for type-checking and compiling Agda programs"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
 EDARCS_REPOSITORY="http://code.haskell.org/Agda"
-EDARCS_GET_CMD="get --verbose"
 EDARCS_LOCALREPO="Agda2"
 
 LICENSE="MIT"

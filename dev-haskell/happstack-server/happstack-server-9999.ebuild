@@ -10,7 +10,6 @@ inherit darcs haskell-cabal
 DESCRIPTION="Web related tools and services."
 HOMEPAGE="http://happstack.com"
 EDARCS_REPOSITORY="http://patch-tag.com/r/mae/happstack"
-EDARCS_GET_CMD="get --partial"
 
 S="${WORKDIR}/${P}/${PN}"
 

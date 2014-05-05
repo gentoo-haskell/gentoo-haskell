@@ -15,7 +15,6 @@ KEYWORDS=""
 IUSE=""
 
 EDARCS_REPOSITORY="http://repetae.net/repos/jhc"
-EDARCS_GET_CMD="get --partial"
 
 DEPEND=">=dev-lang/ghc-6.10
 		dev-haskell/binary

@@ -19,7 +19,6 @@ DEPEND=""
 RDEPEND="dev-lang/python"
 
 EDARCS_REPOSITORY="http://cakoose.com/darcs/darcs-reannotate/"
-EDARCS_GET_CMD="get --partial"
 
 src_install() {
 	dobin darcs-reannotate

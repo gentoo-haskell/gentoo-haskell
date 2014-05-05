@@ -15,7 +15,6 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="A dependently typed functional programming language and proof assistant"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
 EDARCS_REPOSITORY="http://code.haskell.org/Agda"
-EDARCS_GET_CMD="get --verbose"
 EDARCS_LOCALREPO="Agda2"
 
 LICENSE="MIT"
