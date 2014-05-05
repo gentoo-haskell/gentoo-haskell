@@ -39,6 +39,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck )
 "
 
+RESTRICT=test # hangs
+
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.6-haddock.patch
 	cabal_chdeps \
