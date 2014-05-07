@@ -19,14 +19,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/async:=[profile?]
+	>=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.0.1:=[profile?]
+	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/byteable-0.1:=[profile?]
 	>=dev-haskell/conduit-0.5:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?]
 	>=dev-haskell/cryptohash-conduit-0.1:=[profile?]
+	>=dev-haskell/css-text-0.1.2:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/file-embed-0.0.4.1:=[profile?] <dev-haskell/file-embed-0.5:=[profile?]
+	>=dev-haskell/hashable-1.1:=[profile?]
 	dev-haskell/hjsmin:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/mime-types-0.1:=[profile?]
