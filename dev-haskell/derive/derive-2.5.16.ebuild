@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
 	dev-haskell/syb:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
