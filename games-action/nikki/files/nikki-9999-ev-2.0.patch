@@ -1,0 +1,14 @@
+Wed May  7 23:32:16 FET 2014  Sergei Trofimovich <slyfox@community.haskell.org>
+  * allow email-validate-2
+diff -rN -u old-nikki/src/nikki.cabal new-nikki/src/nikki.cabal
+--- old-nikki/src/nikki.cabal	2014-05-07 23:33:13.592830680 +0300
++++ new-nikki/src/nikki.cabal	2014-05-07 23:33:13.938830697 +0300
+@@ -127,7 +127,7 @@
+         , data-accessor-mtl >= 0.2.0.2
+         , deepseq == 1.3.*
+         , directory
+-        , email-validate == 1.0.*
++        , email-validate >= 1.0 && < 2.1
+         , filepath
+         , FindBin >= 0.0.5
+         , hashable == 1.1.* || == 1.2.*
