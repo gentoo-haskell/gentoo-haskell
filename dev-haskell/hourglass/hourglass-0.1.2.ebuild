@@ -10,15 +10,13 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="simple performant time related library"
-HOMEPAGE="http://github.com/vincenthz/hs-hourglass"
+HOMEPAGE="https://github.com/vincenthz/hs-hourglass"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-RESTRICT=test # missing files
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
