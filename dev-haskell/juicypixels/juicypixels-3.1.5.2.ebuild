@@ -22,9 +22,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="mmap"
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.6:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/zlib-0.5.3.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
