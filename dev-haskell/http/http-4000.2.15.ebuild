@@ -22,7 +22,7 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~ppc-macos ~x86-macos"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.2.0.1:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,12 +30,11 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	dev-lang/ghc
-	test? ( >=dev-haskell/case-insensitive-0.4 <dev-haskell/case-insensitive-1.2
-		>=dev-haskell/conduit-0.4 <dev-haskell/conduit-1.1
+	test? ( >=dev-haskell/case-insensitive-0.4 <dev-haskell/case-insensitive-1.3
 		>=dev-haskell/http-types-0.6 <dev-haskell/http-types-0.9
 		dev-haskell/httpd-shed
 		dev-haskell/hunit
-		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
+		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.3
 		dev-haskell/network
 		>=dev-haskell/puremd5-2.1 <dev-haskell/puremd5-2.2
 		>=dev-haskell/split-0.1 <dev-haskell/split-0.3
@@ -43,6 +42,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		>=dev-haskell/wai-1.2 <dev-haskell/wai-2.2
 		>=dev-haskell/warp-1.2 <dev-haskell/warp-2.2 )
+	test? ( >=dev-haskell/conduit-0.4 <dev-haskell/conduit-1.2 )
 "
 
 S="${WORKDIR}/${MY_P}"
