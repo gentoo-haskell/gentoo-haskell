@@ -25,3 +25,9 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 CABAL_CORE_LIB_GHC_PV="7.6.*"
+
+src_prepare() {
+	# ghc-7.8
+	cabal_chdeps \
+		'array      >= 0.1 && < 0.5' 'array      >= 0.1 && < 0.6'
+}
