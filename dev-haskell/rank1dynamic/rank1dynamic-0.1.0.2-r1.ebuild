@@ -26,5 +26,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8'
+		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8' \
+		'base >= 4.4 && < 4.7' 'base >= 4.4'
 }
