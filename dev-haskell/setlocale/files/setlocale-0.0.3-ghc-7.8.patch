@@ -1,0 +1,22 @@
+diff --git a/System/Locale/SetLocale.hsc b/System/Locale/SetLocale.hsc
+index 4451094..c8e6e3f 100644
+--- a/System/Locale/SetLocale.hsc
++++ b/System/Locale/SetLocale.hsc
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE ForeignFunctionInterface, DeriveDataTypeable #-}
+ 
+ module System.Locale.SetLocale (
+     Category(..),
+@@ -21,10 +21,7 @@ data Category
+     | LC_MONETARY
+     | LC_NUMERIC
+     | LC_TIME
+-    deriving (Eq, Ord, Read, Show, Enum, Bounded)
+-
+-instance Typeable Category where
+-    typeOf _ = mkTyConApp (mkTyCon "System.Locale.SetLocale.Category") []
++    deriving (Eq, Ord, Read, Show, Enum, Bounded, Typeable)
+ 
+ #include <locale.h>
+ 
