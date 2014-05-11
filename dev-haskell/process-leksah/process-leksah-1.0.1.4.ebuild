@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+	>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}/${PN}-1.0.1.4-ghc-7.6.patch")
+PATCHES=("${FILESDIR}"/${PN}-1.0.1.4-ghc-7.6.patch
+	"${FILESDIR}"/${PN}-1.0.1.4-ghc-7.8.patch)
