@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/dph-base-0.7:=[profile?] <dev-haskell/dph-base-0.8:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base     == 4.6.*' 'base     >= 4.6 && < 4.8'
+}
