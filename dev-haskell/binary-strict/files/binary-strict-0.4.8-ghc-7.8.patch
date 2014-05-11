@@ -1,0 +1,22 @@
+diff --git a/src/Data/Binary/BitBuilder.hs b/src/Data/Binary/BitBuilder.hs
+index 4df2fc6..d61e2a2 100644
+--- a/src/Data/Binary/BitBuilder.hs
++++ b/src/Data/Binary/BitBuilder.hs
+@@ -56,6 +56,8 @@ import Data.Binary.Strict.BitUtil
+ import GHC.Base
+ #endif
+ 
++import qualified System.IO.Unsafe as U
++
+ ------------------------------------------------------------------------
+ 
+ -- | A 'BitBuilder' is an efficient way to build lazy 'L.ByteString's.
+@@ -202,7 +204,7 @@ data Buffer = Buffer {-# UNPACK #-} !(ForeignPtr Word8)
+ -- the lazy 'L.ByteString' is demanded.
+ --
+ toLazyByteString :: BitBuilder -> L.ByteString
+-toLazyByteString m = L.fromChunks $ unsafePerformIO $ do
++toLazyByteString m = L.fromChunks $ U.unsafePerformIO $ do
+     fp <- S.mallocByteString (defaultSize `div` 8)
+     let buf = Buffer fp 0 0 0 (defaultSize `div` 8)
+     return (runBitBuilder (m `append` zeroExtendFinalByte `append` flush) (const []) buf)
