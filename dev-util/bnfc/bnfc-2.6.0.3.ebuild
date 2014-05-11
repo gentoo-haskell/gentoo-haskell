@@ -22,8 +22,16 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+	>=dev-lang/ghc-7.4.1:=
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8
+	dev-haskell/alex
+	dev-haskell/happy
+"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	rm dist/build/bnfc/bnfc-tmp/{LexBNF.hs,ParBNF.hs} || die
+}
