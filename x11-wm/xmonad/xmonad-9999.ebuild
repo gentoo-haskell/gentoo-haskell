@@ -36,7 +36,7 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
-	use no-autorepeat-keys && epatch "$FILESDIR/$PN-check-repeat.patch"
+	use no-autorepeat-keys && epatch "$FILESDIR/$PN-0.12-check-repeat.patch"
 
 	# allow user patches
 	epatch_user
