@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 CABAL_CONFIGURE_FLAGS=(--flags=link)
+
+src_prepare() {
+	cabal_chdeps \
+		'base < 4.7' 'base'
+}
