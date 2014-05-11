@@ -1,0 +1,32 @@
+diff --git a/Data/COrdering.hs b/Data/COrdering.hs
+index a131f55..5bcbe09 100644
+--- a/Data/COrdering.hs
++++ b/Data/COrdering.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE DeriveDataTypeable #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Data.COrdering
+@@ -46,21 +47,7 @@ module Data.COrdering
+ import Data.Typeable
+ 
+ -- | Result of a combining comparison.
+-data COrdering a = Lt | Eq a | Gt deriving (Eq,Ord,Read,Show)
+-
+--- A name for the COrdering type constructor, fully qualified
+-cOrderingTyConName :: String
+-cOrderingTyConName = "Data.COrdering.COrdering"
+-
+--- A Typeable1 instance
+-instance Typeable1 COrdering where
+- typeOf1 _ = mkTyConApp (mkTyCon cOrderingTyConName) []
+-
+-#ifndef __GLASGOW_HASKELL__
+--- A Typeable instance (not needed by ghc, but Haddock fails to document this instance)
+-instance Typeable e => Typeable (COrdering e) where
+- typeOf = typeOfDefault
+-#endif
++data COrdering a = Lt | Eq a | Gt deriving (Eq,Ord,Read,Show,Typeable)
+ 
+ -- | A combining comparison for an instance of 'Ord' which returns unit () where appropriate.
+ {-# INLINE unitCC #-}
