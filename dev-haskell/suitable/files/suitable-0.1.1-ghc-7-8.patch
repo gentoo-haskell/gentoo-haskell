@@ -1,0 +1,10 @@
+diff --git a/src/Data/Suitable.hs b/src/Data/Suitable.hs
+index 45ff9f5..269ef6b 100644
+--- a/src/Data/Suitable.hs
++++ b/src/Data/Suitable.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE MultiParamTypeClasses, TypeFamilies, ScopedTypeVariables, FlexibleInstances #-}
++{-# LANGUAGE MultiParamTypeClasses, TypeFamilies, ScopedTypeVariables, FlexibleInstances, GADTs #-}
+ module Data.Suitable (Suitable(..), Constraints(..), withResConstraints, withConstraintsOf) where
+ 
+ import Data.Set
