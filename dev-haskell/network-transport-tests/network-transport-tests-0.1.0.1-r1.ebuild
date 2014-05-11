@@ -28,5 +28,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5'
+		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5' \
+		'base >= 4.5 && < 4.7' 'base >= 4.5'
 }
