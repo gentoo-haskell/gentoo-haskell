@@ -23,6 +23,11 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'base == 4.5.* || == 4.6.*' 'base >= 4.5 && < 4.8'
+}
