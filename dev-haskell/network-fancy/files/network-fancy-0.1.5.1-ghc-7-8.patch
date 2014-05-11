@@ -1,0 +1,21 @@
+diff --git a/Network/Fancy.hsc b/Network/Fancy.hsc
+index 5643b9c..1a36107 100644
+--- a/Network/Fancy.hsc
++++ b/Network/Fancy.hsc
+@@ -25,6 +25,7 @@ import Data.List(intercalate)
+ import Data.Typeable(Typeable)
+ import Foreign
+ import Foreign.C
++import qualified Foreign.ForeignPtr.Unsafe as U
+ import Numeric(showHex)
+ import System.IO(Handle, hClose, IOMode(ReadWriteMode))
+ import System.IO.Unsafe(unsafeInterleaveIO)
+@@ -287,7 +288,7 @@ getAddrInfo host serv flags fam typ = withResolverLock $ do
+                     sa' <- (#peek struct addrinfo, ai_addr)      ai
+                     let sal = fromIntegral sal'
+                     sa  <- mallocForeignPtrBytes sal
+-                    copyBytes (unsafeForeignPtrToPtr sa) sa' sal
++                    copyBytes (U.unsafeForeignPtrToPtr sa) sa' sal
+                     next<- (#peek struct addrinfo, ai_next)      ai
+                     rest<- unai next
+                     return ((SA sa sal):rest)
