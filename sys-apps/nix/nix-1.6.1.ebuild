@@ -20,9 +20,9 @@ COMMON_DEPENDS="
 	dev-libs/openssl
 	gc? ( dev-libs/boehm-gc )
 	doc? ( dev-libs/libxml2
-		    dev-libs/libxslt
-			app-text/docbook-xsl-stylesheets
-			)
+		dev-libs/libxslt
+		app-text/docbook-xsl-stylesheets
+	)
 	dev-lang/perl
 	sys-libs/zlib
 "
