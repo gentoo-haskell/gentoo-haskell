@@ -68,6 +68,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8-part-1.patch
 	epatch "${FILESDIR}"/${P}-fix-nonatomic-global.patch
 	epatch "${FILESDIR}"/${P}-issue2364.patch
+	epatch "${FILESDIR}"/${P}-issue2364-part-2.patch
 
 	cabal_chdeps \
 		'text       >= 0.11.0.6 && < 0.12.0.0' 'text       >= 0.11.0.6' \
