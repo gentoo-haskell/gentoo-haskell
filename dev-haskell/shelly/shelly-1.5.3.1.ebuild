@@ -19,10 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/async:=[profile?]
+	dev-haskell/enclosed-exceptions:=[profile?]
+	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
+	dev-haskell/lifted-async:=[profile?]
+	dev-haskell/lifted-base:=[profile?]
+	>=dev-haskell/monad-control-0.3.2:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	<dev-haskell/system-fileio-0.4:=[profile?]
 	>=dev-haskell/system-filepath-0.4.7:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/transformers:=[profile?]
+	dev-haskell/transformers-base:=[profile?]
 	<dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
