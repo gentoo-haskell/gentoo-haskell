@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		This package provides datatypes to construct Free monads,
+		Free monad transformers, and useful instances. In addition it
+		provides the constructs to avoid quadratic complexity of left
+		associative bind, as explained in:
+		
+		* Janis Voigtlander, /Asymptotic Improvement of Computations over Free Monads, MPC&#39;08/
+	</longdescription>
+</pkgmetadata>
