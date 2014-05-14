@@ -1,0 +1,55 @@
+restore buildability against ghc-7.6
+
+[6 of 9] Compiling Physics.Hipmunk.Space ( dist/build/Physics/Hipmunk/Space.hs, dist/build/Physics/Hipmunk/Space.o )
+
+Physics/Hipmunk/Space.hsc:177:20:
+    Ambiguous occurrence `unsafeForeignPtrToPtr'
+    It could refer to either `Foreign.unsafeForeignPtrToPtr',
+                             imported from `Foreign' at Physics/Hipmunk/Space.hsc:64:1-27
+                             (and originally defined in `Foreign.ForeignPtr')
+                          or `Foreign.ForeignPtr.Unsafe.unsafeForeignPtrToPtr',
+                             imported from `Foreign.ForeignPtr.Unsafe' at Physics/Hipmunk/Space.hsc:66:35-55
+                             (and originally defined in `GHC.ForeignPtr')
+
+Physics/Hipmunk/Space.hsc:192:18:
+    Ambiguous occurrence `unsafeForeignPtrToPtr'
+    It could refer to either `Foreign.unsafeForeignPtrToPtr',
+                             imported from `Foreign' at Physics/Hipmunk/Space.hsc:64:1-27
+                             (and originally defined in `Foreign.ForeignPtr')
+                          or `Foreign.ForeignPtr.Unsafe.unsafeForeignPtrToPtr',
+                             imported from `Foreign.ForeignPtr.Unsafe' at Physics/Hipmunk/Space.hsc:66:35-55
+                             (and originally defined in `GHC.ForeignPtr')
+Reported-by: Alexander Berntsen
+diff --git a/Physics/Hipmunk/Space.hsc b/Physics/Hipmunk/Space.hsc
+index 3032105..0f254e5 100644
+--- a/Physics/Hipmunk/Space.hsc
++++ b/Physics/Hipmunk/Space.hsc
+@@ -62,9 +62,7 @@ import Control.Monad (when)
+ import Data.IORef
+ import Data.StateVar
+ import Foreign hiding (new)
+-#if MIN_VERSION_base(4,4,0)
+-import Foreign.ForeignPtr.Unsafe (unsafeForeignPtrToPtr)
+-#endif
++import Foreign.ForeignPtr.Unsafe as U
+ import Foreign.C.Types (CInt(..))
+ #include "wrapper.h"
+ 
+@@ -174,7 +172,7 @@ spaceAddHelper :: (a -> ForeignPtr b)
+ spaceAddHelper get_ add toShape =
+     \(P sp entities _) new_c ->
+         let new  = get_ new_c
+-            key  = unsafeForeignPtrToPtr $ castForeignPtr new
++            key  = U.unsafeForeignPtrToPtr $ castForeignPtr new
+             val  = case toShape new_c of
+                      Just shape -> Right shape
+                      Nothing    -> Left (castForeignPtr new)
+@@ -189,7 +187,7 @@ spaceRemoveHelper :: (a -> ForeignPtr b)
+ spaceRemoveHelper get_ remove =
+     \(P sp entities _) old_c -> do
+       let old  = get_ old_c
+-          key  = unsafeForeignPtrToPtr $ castForeignPtr old
++          key  = U.unsafeForeignPtrToPtr $ castForeignPtr old
+       modifyIORefStrict entities (M.delete key)
+       withForeignPtr sp $ \sp_ptr ->
+         withForeignPtr old $ \old_ptr ->

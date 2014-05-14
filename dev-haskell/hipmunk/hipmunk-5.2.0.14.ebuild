@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -system-chipmunk,+small_base,-debug
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="Hipmunk"
 MY_P="${MY_PN}-${PV}"
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/statevar-1.0:=[profile?] <dev-haskell/statevar-1.1:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
-
+PATCHES=("${FILESDIR}"/${P}-ghc-7.6.patch)
 S="${WORKDIR}/${MY_P}"
 
 src_configure() {
