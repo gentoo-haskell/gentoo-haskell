@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+tagged"
+IUSE=""
 
 RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
@@ -26,8 +26,3 @@ RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag tagged tagged)
-}
