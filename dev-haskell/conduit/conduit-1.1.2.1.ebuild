@@ -16,16 +16,15 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="nohandles"
+IUSE=""
 
-RDEPEND=">=dev-haskell/lifted-base-0.1:=[profile?]
+RDEPEND="dev-haskell/exceptions:=[profile?]
+	>=dev-haskell/lifted-base-0.1:=[profile?]
 	dev-haskell/mmorph:=[profile?]
 	>=dev-haskell/monad-control-0.3.1:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/resourcet-0.4.3:=[profile?] <dev-haskell/resourcet-0.5:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-haskell/text-stream-decode-0.1.0.4:=[profile?] <dev-haskell/text-stream-decode-0.2:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/resourcet-1.1:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/void-0.5.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
@@ -35,8 +34,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag nohandles nohandles)
-}
