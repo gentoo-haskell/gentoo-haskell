@@ -24,5 +24,6 @@ RDEPEND="dev-haskell/errorcall-eq-instance:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3 )
+	test? ( >=dev-haskell/hspec-1.8
+		dev-haskell/quickcheck )
 "
