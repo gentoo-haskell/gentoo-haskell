@@ -16,20 +16,28 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="test_export"
+IUSE="test_coffee test_export test_roy"
 
-RDEPEND=">=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
+RDEPEND="dev-haskell/aeson:=[profile?]
+	dev-haskell/blaze-html:=[profile?]
+	dev-haskell/blaze-markup:=[profile?]
+	dev-haskell/exceptions:=[profile?]
+	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/system-fileio-0.3:=[profile?]
 	>=dev-haskell/system-filepath-0.4:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
+	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
-	test? ( >=dev-haskell/hspec-1.3 )
+	test? ( >=dev-haskell/hspec-1.3
+		dev-haskell/hunit )
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag test_export test_export)
+		$(cabal_flag test_coffee test_coffee) \
+		$(cabal_flag test_export test_export) \
+		$(cabal_flag test_roy test_roy)
 }
