@@ -11,5 +11,6 @@
 	<use>
 		<flag name='allow-sendfilefd'>Allow use of sendfileFd (not
                 available on GNU/kFreeBSD).</flag>
-        </use>
+		<flag name="warp-debug">Add additional debuging information</flag>
+    </use>
 </pkgmetadata>
