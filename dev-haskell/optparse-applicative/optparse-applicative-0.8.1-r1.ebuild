@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-th-prime-0.0 <dev-haskell/test-framework-th-prime-0.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.2 && < 0.4' \
+		'transformers >= 0.2 && < 0.5'
+}
+
