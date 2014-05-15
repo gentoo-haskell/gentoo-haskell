@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-4.1:=[profile?]
-	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.14:=[profile?]
+	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.15:=[profile?]
 	>=dev-haskell/vector-space-0.8:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 "
 
 RESTRICT=test # hangs?
+
+src_prepare() {
+	cabal_chdeps \
+		"semigroups >= 0.1 && < 0.14" "semigroups >= 0.1 && < 0.15"
+}
