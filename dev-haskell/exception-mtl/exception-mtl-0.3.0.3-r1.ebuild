@@ -20,9 +20,15 @@ IUSE=""
 
 RDEPEND="=dev-haskell/exception-transformers-0.3*[profile?]
 		>=dev-haskell/mtl-2.0[profile?]
-		<dev-haskell/mtl-2.2[profile?]
+		<dev-haskell/mtl-2.3[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
-		<dev-haskell/transformers-0.4[profile?]
+		<dev-haskell/transformers-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers           >=0.2 && <0.4' 'transformers           >=0.2 && <0.5' \
+		'mtl                    >=2.0 && <2.2' 'mtl                    >=2.0 && <2.3' 
+}
