@@ -1,0 +1,13 @@
+diff --git a/src/Process/Listen.hs b/src/Process/Listen.hs
+index 4db033c..233af58 100644
+--- a/src/Process/Listen.hs
++++ b/src/Process/Listen.hs
+@@ -10,7 +10,7 @@ import Control.Monad.Reader
+ 
+ import Data.Word
+ 
+-import Network hiding (accept)
++import Network hiding (accept, sClose)
+ import Network.Socket
+ import Network.BSD
+ 
