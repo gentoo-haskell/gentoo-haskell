@@ -8,7 +8,4 @@
 	<longdescription>
 		Haskell 98 Distributive functors -- Dual to Traversable
 	</longdescription>
-<use>
-  <flag name='lib-werror'>Compile with the ghc -Werror option</flag>
-</use>
 </pkgmetadata>
