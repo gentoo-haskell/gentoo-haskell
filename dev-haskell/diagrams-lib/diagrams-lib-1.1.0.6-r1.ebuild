@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.9:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?] <dev-haskell/safe-0.4:=[profile?]
-	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.14:=[profile?]
+	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.15:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-haskell/vector-space-points-0.1.2:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
@@ -39,3 +39,9 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.3.4 && < 0.14' 'semigroups >= 0.3.4 && < 0.15'
+
+}
