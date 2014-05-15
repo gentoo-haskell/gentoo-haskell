@@ -21,9 +21,15 @@ IUSE=""
 RDEPEND=">=dev-haskell/stm-2.1[profile?]
 		<dev-haskell/stm-2.5[profile?]
 		>=dev-haskell/transformers-0.2[profile?]
-		<dev-haskell/transformers-0.4[profile?]
+		<dev-haskell/transformers-0.5[profile?]
 		>=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
 		test? ( =dev-haskell/hunit-1.2*
 		)
 		>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.2 && <0.4' \
+		'transformers >=0.2 && <0.5'
+}
