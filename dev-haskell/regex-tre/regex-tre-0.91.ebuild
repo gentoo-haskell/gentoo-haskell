@@ -26,6 +26,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 
 	cabal_chdeps \
 		'base >= 2.0' 'base >= 3.0, array, containers, bytestring' \

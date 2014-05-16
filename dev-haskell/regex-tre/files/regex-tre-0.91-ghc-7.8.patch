@@ -1,0 +1,31 @@
+diff --git a/Text/Regex/TRE/Wrap.hsc b/Text/Regex/TRE/Wrap.hsc
+index 256a720..4a54c06 100644
+--- a/Text/Regex/TRE/Wrap.hsc
++++ b/Text/Regex/TRE/Wrap.hsc
+@@ -72,7 +72,7 @@ import Foreign.C
+ import Foreign.C.String(CString,CStringLen)
+ import Text.Regex.Base.RegexLike(RegexOptions(..),RegexMaker(..),RegexContext(..),MatchArray)
+ #endif
+-
++import qualified System.IO.Unsafe as U
+ 
+ -- | return version of libtre used or Nothing if libtre is not available.
+ getVersion :: Maybe String
+@@ -130,7 +130,7 @@ fi :: (Integral i,Num n ) => i -> n
+ fi x = fromIntegral x
+ 
+ {-# INLINE getNumSubs #-}
+-getNumSubs (Regex r _ _) = fi . unsafePerformIO $ withForeignPtr r getNumSubs'
++getNumSubs (Regex r _ _) = fi . U.unsafePerformIO $ withForeignPtr r getNumSubs'
+ 
+ getNumSubs' :: Ptr Regex_t -> IO CSize
+ {-# INLINE getNumSubs' #-}
+@@ -271,7 +271,7 @@ wrapCount (Regex fregex _ flags) (in_source,in_len) = do
+                     else return (Right (succ count))
+       in loop flags (in_source,fi in_len) 0
+ 
+-getVersion = unsafePerformIO $ do
++getVersion = U.unsafePerformIO $ do
+   version <- c_tre_version
+   if version == nullPtr
+     then return (Just "tre_version was null")
