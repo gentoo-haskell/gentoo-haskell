@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/deepseq-1.1:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-3.1:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base >= 4.0 && < 4.7' 'base >= 4.0'
+		'base >= 4.0 && < 4.7' 'base >= 4.0' \
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3'
 }
