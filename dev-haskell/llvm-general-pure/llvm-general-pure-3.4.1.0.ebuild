@@ -33,3 +33,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2.7
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 )
 "
+
+src_prepare() {
+	cabal-mksetup # default setup overrides GHCRTS
+}
