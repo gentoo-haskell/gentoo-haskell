@@ -20,16 +20,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	dev-haskell/csv:=[profile?]
-	>=dev-haskell/data-pprint-0.2.3:=[profile?] <dev-haskell/data-pprint-0.3:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
-	>=dev-haskell/pretty-show-1.6.4:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	>=dev-haskell/regexpr-0.5.1:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
@@ -38,3 +36,9 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
+}
+
