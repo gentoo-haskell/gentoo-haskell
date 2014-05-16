@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.1:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/data-default-0.4.0:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
@@ -39,5 +39,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'network >= 2.1 && < 2.5' 'network >= 2.1 && < 2.6'
+		'network >= 2.1 && < 2.5' 'network >= 2.1 && < 2.6' \
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3'
+
 }
