@@ -20,9 +20,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/csv-0.1:=[profile?] <dev-haskell/csv-0.2:=[profile?]
 	>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-2.0:=[profile?]
-	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+	  'mtl >= 1 && < 2.2' 'mtl >= 1 && < 2.3'
+}
