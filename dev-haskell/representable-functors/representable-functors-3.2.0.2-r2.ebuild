@@ -36,3 +36,9 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}/${PN}-3.2.0.2-comonad-4.0.patch")
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2     && < 0.4' \
+		'transformers         >= 0.2     && < 0.5'
+}
