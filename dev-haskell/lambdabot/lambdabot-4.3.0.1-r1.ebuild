@@ -67,4 +67,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
-PATCHES=("${FILESDIR}"/${P}-codepage.patch)
+PATCHES=("${FILESDIR}"/${P}-codepage.patch
+	"${FILESDIR}"/${P}-ghc-7.8.patch)

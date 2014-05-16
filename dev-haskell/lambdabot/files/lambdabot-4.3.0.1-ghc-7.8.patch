@@ -1,0 +1,17 @@
+diff --git a/src/Lambdabot/Monad.hs-boot b/src/Lambdabot/Monad.hs-boot
+index a807ff5..7479fb5 100644
+--- a/src/Lambdabot/Monad.hs-boot
++++ b/src/Lambdabot/Monad.hs-boot
+@@ -1,5 +1,11 @@
+ {-# LANGUAGE RankNTypes #-}
+ module Lambdabot.Monad where
+ 
+-data LB a
++import Control.Monad.Reader
++import Data.IORef
++
++data IRCRState
++data IRCRWState
++
++newtype LB a = LB {runLB :: ReaderT (IRCRState, IORef IRCRWState) IO a}
+ instance Monad LB
