@@ -1,0 +1,48 @@
+diff --git a/src/Control/RMonad/Trans/Cont.hs b/src/Control/RMonad/Trans/Cont.hs
+index 96a6113..d64b487 100644
+--- a/src/Control/RMonad/Trans/Cont.hs
++++ b/src/Control/RMonad/Trans/Cont.hs
+@@ -4,6 +4,7 @@
+ #if __GLASGOW_HASKELL__>=700
+ {-# LANGUAGE RebindableSyntax #-}
+ #endif
++{-# LANGUAGE ExistentialQuantification #-}
+ 
+ module Control.RMonad.Trans.Cont where
+ 
+diff --git a/src/Control/RMonad/Trans/List.hs b/src/Control/RMonad/Trans/List.hs
+index 4ad3de1..80ec947 100644
+--- a/src/Control/RMonad/Trans/List.hs
++++ b/src/Control/RMonad/Trans/List.hs
+@@ -4,6 +4,7 @@
+ #if __GLASGOW_HASKELL__>=700
+ {-# LANGUAGE RebindableSyntax #-}
+ #endif
++{-# LANGUAGE ExistentialQuantification #-}
+ 
+ module Control.RMonad.Trans.List where
+ 
+diff --git a/src/Control/RMonad/Trans/Reader.hs b/src/Control/RMonad/Trans/Reader.hs
+index bf67f0f..a404c70 100644
+--- a/src/Control/RMonad/Trans/Reader.hs
++++ b/src/Control/RMonad/Trans/Reader.hs
+@@ -4,6 +4,7 @@
+ #if __GLASGOW_HASKELL__>=700
+ {-# LANGUAGE RebindableSyntax #-}
+ #endif
++{-# LANGUAGE ExistentialQuantification #-}
+ 
+ module Control.RMonad.Trans.Reader where
+ 
+diff --git a/src/Control/RMonad/Trans/Set.hs b/src/Control/RMonad/Trans/Set.hs
+index a1d7576..c88fc91 100644
+--- a/src/Control/RMonad/Trans/Set.hs
++++ b/src/Control/RMonad/Trans/Set.hs
+@@ -3,6 +3,7 @@
+ #if __GLASGOW_HASKELL__>=700
+ {-# LANGUAGE RebindableSyntax #-}
+ #endif
++{-# LANGUAGE ExistentialQuantification #-}
+ 
+ module Control.RMonad.Trans.Set where
+ 
