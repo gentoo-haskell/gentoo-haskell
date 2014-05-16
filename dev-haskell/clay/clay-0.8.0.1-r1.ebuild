@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -31,5 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'test-framework-hunit >= 0.3 && < 0.4' 'test-framework-hunit >= 0.3 && < 0.4, text, mtl'
+		'test-framework-hunit >= 0.3 && < 0.4' 'test-framework-hunit >= 0.3 && < 0.4, text, mtl' \
+	    'mtl   >= 1    && < 2.2'  'mtl   >= 1    && < 2.3' 
+
 }
