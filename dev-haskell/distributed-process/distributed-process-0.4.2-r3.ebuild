@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		=dev-haskell/distributed-static-0.2*:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
+		<dev-haskell/mtl-2.3:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
 		=dev-haskell/rank1dynamic-0.1*:=[profile?]
@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/syb-0.3:=[profile?]
 		<dev-haskell/syb-0.5:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
+		<dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
@@ -51,7 +51,11 @@ src_prepare() {
 	cabal_chdeps \
 		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5 && < 0.7' \
 		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.9' \
-		'syb >= 0.3 && < 0.4' 'syb >= 0.3 && < 0.5'
+		'syb >= 0.3 && < 0.4' 'syb >= 0.3 && < 0.5' \
+        'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5' \
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3'
+
+
 
 	sed -e 's@\(by Hans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
