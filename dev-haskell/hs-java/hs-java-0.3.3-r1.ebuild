@@ -35,4 +35,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
 
-PATCHES=("${FILESDIR}"/${P}-cif-refs.patch)
+PATCHES=("${FILESDIR}"/${P}-cif-refs.patch
+	"${FILESDIR}"/${P}-ghc-7.8.patch)
