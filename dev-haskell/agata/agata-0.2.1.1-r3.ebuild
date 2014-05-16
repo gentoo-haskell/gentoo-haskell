@@ -35,6 +35,8 @@ PATCHES=("${FILESDIR}/${PN}-0.2.1.1-ghc-7.7.patch")
 
 src_prepare() {
 	base_src_prepare
+
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'QuickCheck>=2.1&&<2.6' 'QuickCheck>=2.1&&<2.8'
+		'QuickCheck>=2.1&&<2.6' 'QuickCheck>=2.1&&<2.8' \
+		'template-haskell<2.9' 'template-haskell<2.10'
 }
