@@ -21,12 +21,13 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		<dev-haskell/binary-0.8:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
+		<dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8'
+		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8' \
+		'transformers >= 0.2 && < 0.4'  'transformers >= 0.2 && < 0.5' 
 }
