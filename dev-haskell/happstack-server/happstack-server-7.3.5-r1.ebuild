@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	>=dev-haskell/hslogger-1.0.2:=[profile?]
 	dev-haskell/html:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
-	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.2.3:=[profile?]
 	<dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/sendfile-0.7.1:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/threads-0.5:=[profile?]
 	dev-haskell/time-compat:=[profile?]
-	>=dev-haskell/transformers-0.1.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.1.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	dev-haskell/xhtml:=[profile?]
@@ -45,6 +45,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit )
 "
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.1.3 && < 0.4' 'transformers >= 0.1.3 && < 0.5' \
+		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
