@@ -19,12 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+optimize"
 
 RDEPEND=">=dev-haskell/stm-2.1:=[profile?] <dev-haskell/stm-2.5:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.2.2.0 && < 0.4' 'transformers >= 0.2.2.0 && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
