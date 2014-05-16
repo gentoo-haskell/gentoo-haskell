@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 		=dev-haskell/network-multicast-0.0*:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		=dev-haskell/network-transport-tcp-0.3*:=[profile?]
-		>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
