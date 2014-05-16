@@ -218,18 +218,14 @@ cabal-bootstrap() {
 }
 
 cabal-mksetup() {
-	local setupdir
+	local setupdir=${1:-${S}}
+	local setup_src=${setupdir}/Setup.hs
 
-	if [[ -n $1 ]]; then
-		setupdir=$1
-	else
-		setupdir=${S}
-	fi
-
-	rm -f "${setupdir}"/Setup.{lhs,hs}
+	rm -vf "${setupdir}"/Setup.{lhs,hs}
+	elog "Creating 'Setup.hs' for 'Simple' build type."
 
 	echo 'import Distribution.Simple; main = defaultMainWithHooks defaultUserHooks' \
-		> $setupdir/Setup.hs || die "failed to create default Setup.hs"
+		> "${setup_src}" || die "failed to create default Setup.hs"
 }
 
 cabal-hscolour() {
