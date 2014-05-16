@@ -33,7 +33,9 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8' \
-		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6'
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6' \
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
+
 }
 
 src_configure() {
