@@ -30,6 +30,9 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	# SpecConstr OOMs ghc
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable) \
 		$(cabal_flag pcre-light pcre-light)
