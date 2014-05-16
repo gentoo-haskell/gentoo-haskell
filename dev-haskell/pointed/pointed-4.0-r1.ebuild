@@ -24,9 +24,14 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/stm-2.1.2.1:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/tagged-0.5:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2     && < 0.4'  'transformers >= 0.2 && < 0.5'
+}
+
