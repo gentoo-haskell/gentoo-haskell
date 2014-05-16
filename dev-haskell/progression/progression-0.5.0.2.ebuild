@@ -19,11 +19,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/criterion-0.4:=[profile?]
-		<dev-haskell/criterion-0.9:=[profile?]
-		>=dev-haskell/haskeline-0.6:=[profile?]
-		<dev-haskell/haskeline-0.8:=[profile?]
-		>=dev-haskell/txt-sushi-0.5:=[profile?]
-		<dev-haskell/txt-sushi-0.7:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+	<dev-haskell/criterion-0.9:=[profile?]
+	>=dev-haskell/haskeline-0.6:=[profile?]
+	<dev-haskell/haskeline-0.8:=[profile?]
+	>=dev-haskell/txt-sushi-0.5:=[profile?]
+	<dev-haskell/txt-sushi-0.7:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"
+
+src_prepare() {
+	cabal_chdeps \
+		'process >= 1.0 && < 1.2' 'process >= 1.0 && < 1.3'
+}
