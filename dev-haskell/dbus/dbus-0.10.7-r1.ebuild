@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profil
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -45,5 +45,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && < 2.8'
+		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && < 2.8' \
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5' 
+
 }
