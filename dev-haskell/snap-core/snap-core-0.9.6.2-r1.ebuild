@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.12:
 	>=dev-haskell/enumerator-0.4.15:=[profile?] <dev-haskell/enumerator-0.5:=[profile?]
 	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-2:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2.1:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/regex-posix-0.95:=[profile?] <dev-haskell/regex-posix-1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
@@ -42,6 +42,11 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.12:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl                       >= 2.0     && < 2.2' 'mtl >= 2.0 && < 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
