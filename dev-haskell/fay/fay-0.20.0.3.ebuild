@@ -19,26 +19,23 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/aeson-0.8:=[profile?]
-	<dev-haskell/attoparsec-0.12:=[profile?]
-	<dev-haskell/cabal-1.20:=[profile?]
-	<dev-haskell/cpphs-1.19:=[profile?]
+	dev-haskell/attoparsec:=[profile?]
 	<dev-haskell/data-default-0.6:=[profile?]
 	<dev-haskell/ghc-paths-0.2:=[profile?]
-	>=dev-haskell/haskell-names-0.3.1:=[profile?] <dev-haskell/haskell-names-0.4:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
-	<dev-haskell/hunit-1.3:=[profile?]
-	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-1.0:=[profile?]
-	<dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/groom-0.1:=[profile?] <dev-haskell/groom-0.2:=[profile?]
+	>=dev-haskell/haskell-names-0.3.1:=[profile?] <dev-haskell/haskell-names-0.5:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.15.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
+	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.17:=[profile?]
+	<dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.6:=[profile?] <dev-haskell/optparse-applicative-0.9:=[profile?]
-	>=dev-haskell/pretty-show-1.6:=[profile?] <dev-haskell/pretty-show-1.7:=[profile?]
 	<dev-haskell/safe-0.4:=[profile?]
-	<dev-haskell/scientific-0.3:=[profile?]
 	<dev-haskell/sourcemap-0.2:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
+	<dev-haskell/spoon-0.4:=[profile?]
 	<dev-haskell/syb-0.5:=[profile?]
-	<dev-haskell/test-framework-0.9:=[profile?]
-	<dev-haskell/test-framework-hunit-0.4:=[profile?]
-	<dev-haskell/test-framework-th-0.3:=[profile?]
+	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-0.9:=[profile?]
+	>=dev-haskell/tasty-hunit-0.8:=[profile?] <dev-haskell/tasty-hunit-0.9:=[profile?]
+	>=dev-haskell/tasty-th-0.1:=[profile?] <dev-haskell/tasty-th-0.2:=[profile?]
 	<dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/uniplate-1.6.11:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
@@ -47,6 +44,8 @@ RDEPEND="<dev-haskell/aeson-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	|| ( ( >dev-haskell/haskell-packages-0.2.3.2:=[profile?] <dev-haskell/haskell-packages-0.3:=[profile?] )
 		~dev-haskell/haskell-packages-0.2.3.1:=[profile?] )
+	|| ( ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
+		( >dev-haskell/transformers-0.4.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?] ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
