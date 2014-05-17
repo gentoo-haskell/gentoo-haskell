@@ -66,6 +66,7 @@ src_prepare() {
 	rm "${S}/tests/utf8.sh" || die "Could not rm utf8.sh"
 
 	epatch "${FILESDIR}"/${P}-ghc-7.8-part-1.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.8-part-2.patch
 	epatch "${FILESDIR}"/${P}-fix-nonatomic-global.patch
 	epatch "${FILESDIR}"/${P}-issue2364.patch
 	epatch "${FILESDIR}"/${P}-issue2364-part-2.patch
