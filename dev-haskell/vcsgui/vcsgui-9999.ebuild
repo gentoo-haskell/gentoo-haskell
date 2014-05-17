@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,21 +19,26 @@ EGIT_SOURCEDIR="${WORKDIR}/${P}"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE=""
+IUSE="+gtk3"
 
 S="${WORKDIR}/${P}/${PN}"
 
-RDEPEND=">=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
-		>=dev-haskell/missingh-1.1.0.3:=[profile?]
-		<dev-haskell/missingh-1.3:=[profile?]
-		>=dev-haskell/mtl-2.0.1.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/vcswrapper-0.0.1:=[profile?]
-		>=dev-lang/ghc-7.0.1:="
+RDEPEND=">=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	~dev-haskell/vcswrapper-0.0.4:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	gtk3? ( >=dev-haskell/gtk-0.12.4.1:3=[profile?] <dev-haskell/gtk-0.13:3=[profile?] )
+	!gtk3? ( >=dev-haskell/gtk-0.12.4.1:2=[profile?] <dev-haskell/gtk-0.13:2=[profile?] )
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8
+"
 
 src_prepare() {
 	cabal_chdeps \
-		'gtk3 >=0.12.4 && <0.13' 'gtk3 >=0.12.5.0 && <0.13'
+		'mtl >=2.0.1.0 && <2.2' 'mtl >=2.0.1.0 && <2.3'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag gtk3 gtk3)
 }
