@@ -12,5 +12,9 @@
 	</longdescription>
         <use>
           <flag name='gio'>Depend on GIO package, thereby enabling certain features.</flag>
+          <flag name='fmode-binary'>Set the default file translation mode for
+          file I/O operations to _O_BINARY.  Some GTK libraries open image
+          files without specifing binary mode.  If you have trouble loading
+          gtk in ghci, then it may help to turn this option off.</flag>
         </use>
 </pkgmetadata>
