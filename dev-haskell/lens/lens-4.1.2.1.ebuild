@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/primitive-0.4.0.1:=[profile?] <dev-haskell/primitive-0.6:=[profile?]
 	>=dev-haskell/profunctors-4:=[profile?] <dev-haskell/profunctors-5:=[profile?]
 	>=dev-haskell/reflection-1.1.6:=[profile?] <dev-haskell/reflection-2:=[profile?]
-	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.3:=[profile?]
+	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -73,6 +73,7 @@ DEPEND="${RDEPEND}
 					>=dev-haskell/test-framework-th-0.2
 					dev-haskell/transformers ) )
 "
+
 src_prepare() {
 	cabal_chdeps \
 		'transformers              >= 0.2      && < 0.4' \

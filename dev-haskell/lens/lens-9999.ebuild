@@ -18,86 +18,68 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="benchmark-uniplate dump-splices +inlining lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
 
-RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
+	>=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
-	>=dev-haskell/constraints-0.3.3:=[profile?] <dev-haskell/constraints-1:=[profile?]
 	>=dev-haskell/contravariant-0.3:=[profile?] <dev-haskell/contravariant-1:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-1:=[profile?]
+	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-3.1.0.1:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/primitive-0.4.0.1:=[profile?] <dev-haskell/primitive-0.6:=[profile?]
 	>=dev-haskell/profunctors-4:=[profile?] <dev-haskell/profunctors-5:=[profile?]
 	>=dev-haskell/reflection-1.1.6:=[profile?] <dev-haskell/reflection-2:=[profile?]
+	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/tagged-0.4.4:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-haskell/utf8-string-0.3.7:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/void-0.5:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-haskell/zlib-0.5.4:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
-	dev-haskell/cpphs
 	>=dev-haskell/cabal-1.10.0.0
-	test? ( test-hlint? ( >=dev-haskell/hlint-1.7
-				test-doctests? ( dev-haskell/deepseq
-						>=dev-haskell/doctest-0.9.1
-						dev-haskell/generic-deriving
-						dev-haskell/nats
-						>=dev-haskell/simple-reflect-0.3.1
-						test-hunit? ( >=dev-haskell/hunit-1.2
-								>=dev-haskell/test-framework-0.6
-								>=dev-haskell/test-framework-hunit-0.2
-								>=dev-haskell/test-framework-th-0.2
-								test-properties? ( >=dev-haskell/quickcheck-2.4
-										>=dev-haskell/test-framework-quickcheck2-0.2 ) )
-						!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-				!test-doctests? ( test-hunit? ( >=dev-haskell/hunit-1.2
-								>=dev-haskell/test-framework-0.6
-								>=dev-haskell/test-framework-hunit-0.2
-								>=dev-haskell/test-framework-th-0.2
-								test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-quickcheck2-0.2 ) )
-						!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) ) )
-		!test-hlint? ( test-doctests? ( dev-haskell/deepseq
-						>=dev-haskell/doctest-0.9.1
-						dev-haskell/generic-deriving
-						dev-haskell/nats
-						>=dev-haskell/simple-reflect-0.3.1
-						test-hunit? ( >=dev-haskell/hunit-1.2
-								>=dev-haskell/test-framework-0.6
-								>=dev-haskell/test-framework-hunit-0.2
-								>=dev-haskell/test-framework-th-0.2
-								test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-quickcheck2-0.2 ) )
-						!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) )
-				!test-doctests? ( test-hunit? ( >=dev-haskell/hunit-1.2
-								>=dev-haskell/test-framework-0.6
-								>=dev-haskell/test-framework-hunit-0.2
-								>=dev-haskell/test-framework-th-0.2
-								test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-quickcheck2-0.2 ) )
-							!test-hunit? ( test-properties? ( >=dev-haskell/quickcheck-2.4
-											>=dev-haskell/test-framework-0.6
-											>=dev-haskell/test-framework-quickcheck2-0.2
-											>=dev-haskell/test-framework-th-0.2 ) ) ) ) )
+	test? ( test-doctests? ( >=dev-lang/ghc-7.4.1
+					>=dev-haskell/doctest-0.9.1
+					dev-haskell/generic-deriving
+					dev-haskell/nats
+					dev-haskell/parallel
+					>=dev-haskell/semigroups-0.9
+					>=dev-haskell/simple-reflect-0.3.1
+					dev-haskell/split
+					dev-haskell/text
+					dev-haskell/unordered-containers
+					dev-haskell/vector
+					!test-hunit? ( dev-haskell/mtl ) )
+		test-hlint? ( >=dev-haskell/hlint-1.7 )
+		test-hunit? ( >=dev-haskell/hunit-1.2
+				dev-haskell/mtl
+				>=dev-haskell/test-framework-0.6
+				>=dev-haskell/test-framework-hunit-0.2
+				>=dev-haskell/test-framework-th-0.2 )
+		test-properties? ( >=dev-haskell/quickcheck-2.4
+					>=dev-haskell/test-framework-0.6
+					>=dev-haskell/test-framework-quickcheck2-0.2
+					>=dev-haskell/test-framework-th-0.2
+					dev-haskell/transformers ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers              >= 0.2      && < 0.4' \
+		'transformers              >= 0.2      && < 0.5' \
+		'mtl                       >= 2.0.1    && < 2.2' \
+		'mtl                       >= 2.0.1    && < 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
