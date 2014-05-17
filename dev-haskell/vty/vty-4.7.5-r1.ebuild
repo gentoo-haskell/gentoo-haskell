@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # fails to build
 
-RDEPEND=">=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+RDEPEND=">=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-2.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	dev-haskell/string-qq:=[profile?]
@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'Cabal == 1.17.*' 'Cabal >= 1.10'
+		'mtl >= 1.1.1.0 && < 2.2' 'mtl >= 1.1.1.0 && < 2.3'
 }
 
 src_configure() {
