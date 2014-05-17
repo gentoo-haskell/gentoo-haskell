@@ -1,0 +1,12 @@
+diff --git a/src/Data/Audio.hs b/src/Data/Audio.hs
+index 2a26e75..57eae29 100644
+--- a/src/Data/Audio.hs
++++ b/src/Data/Audio.hs
+@@ -41,6 +41,7 @@ import Data.Int
+ 
+ import Data.Array.Unboxed
+ import Data.Array.IO
++import Data.Array.Unsafe
+ 
+ import Data.Monoid
+ 
