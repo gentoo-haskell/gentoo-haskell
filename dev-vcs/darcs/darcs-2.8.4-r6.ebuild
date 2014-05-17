@@ -26,7 +26,7 @@ RDEPEND="=dev-haskell/extensible-exceptions-0.1*:=[profile?]
 		=dev-haskell/html-1.0*:=[profile?]
 		=dev-haskell/mmap-0.5*:=[profile?]
 		>=dev-haskell/mtl-1.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
+		<dev-haskell/mtl-2.3:=[profile?]
 		>=dev-haskell/parsec-2.0:=[profile?]
 		<dev-haskell/parsec-3.2:=[profile?]
 		=dev-haskell/random-1.0*:=[profile?]
@@ -77,7 +77,8 @@ src_prepare() {
 		'process    >= 1.0.0.0 && < 1.2.0.0' 'process    >= 1.0.0.0 && < 1.3' \
 		'unix >= 1.0 && < 2.7' 'unix >=1.0 && <2.8' \
 		'base >= 4.5 && < 4.7' 'base >= 4.5 && < 4.8' \
-		'ghc >= 6.10 && < 7.8' 'ghc >= 6.10'
+		'ghc >= 6.10 && < 7.8' 'ghc >= 6.10' \
+		'mtl          >= 1.0 && < 2.2' 'mtl          >= 1.0 && < 2.3'
 }
 
 src_configure() {
