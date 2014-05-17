@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'Cabal == 1.17.*' 'Cabal >= 1.10'
+		'Cabal == 1.17.*' 'Cabal >= 1.10' \
 		'mtl >= 1.1.1.0 && < 2.2' 'mtl >= 1.1.1.0 && < 2.3'
 }
 
