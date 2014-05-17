@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+base4"
 
-RDEPEND=">=dev-haskell/haskell-src-exts-1.13:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
+RDEPEND=">=dev-haskell/haskell-src-exts-1.13:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -30,7 +30,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-haskell-src-exts.patch
 	cabal_chdeps \
 		'haskell-src-exts >= 1.13 && < 1.14' \
-		'haskell-src-exts >= 1.13 && < 1.15'
+		'haskell-src-exts >= 1.13 && < 1.16'
 }
 
 src_configure() {
