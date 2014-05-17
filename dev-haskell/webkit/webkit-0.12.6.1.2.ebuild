@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?] <dev-haskell/cairo-0.13:0=[profil
 	>=dev-haskell/glib-0.12.1:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
 	>=dev-haskell/gtk-0.12.5.4:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pango-0.12:=[profile?] <dev-haskell/pango-0.13:=[profile?]
+	>=dev-haskell/pango-0.12:0=[profile?] <dev-haskell/pango-0.13:0=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	net-libs/webkit-gtk:2
 "
@@ -36,3 +36,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 	virtual/pkgconfig
 "
+
+S="${WORKDIR}/${MY_P}"

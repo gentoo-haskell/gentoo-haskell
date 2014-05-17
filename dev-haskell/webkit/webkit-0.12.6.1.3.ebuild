@@ -34,6 +34,8 @@ RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?] <dev-haskell/cairo-0.13:0=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	dev-haskell/gtk2hs-buildtools
+	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 	virtual/pkgconfig
 "
+
+S="${WORKDIR}/${MY_P}"
