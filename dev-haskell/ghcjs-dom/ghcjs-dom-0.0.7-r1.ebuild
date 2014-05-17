@@ -20,7 +20,7 @@ IUSE="+gtk3 jsc +jsffi webkit"
 
 RDEPEND=">=dev-haskell/glib-0.12.3.1:=[profile?] <dev-haskell/glib-0.13:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	gtk3? ( >=dev-haskell/gtk-0.12.4:3=[profile?] <dev-haskell/gtk-0.13:3=[profile?]
 		>=dev-haskell/webkit-0.12.6.0:3=[profile?] <dev-haskell/webkit-0.13:3=[profile?] )
@@ -30,6 +30,11 @@ RDEPEND=">=dev-haskell/glib-0.12.3.1:=[profile?] <dev-haskell/glib-0.13:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.3.0.0 && <0.4' 'transformers >=0.3.0.0 && <0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
