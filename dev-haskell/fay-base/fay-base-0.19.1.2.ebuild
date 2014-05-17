@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/fay-0.19.1:=[profile?] <dev-haskell/fay-0.20:=[profile?]
+RDEPEND=">=dev-haskell/fay-0.19.1:=[profile?] <dev-haskell/fay-0.21:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
