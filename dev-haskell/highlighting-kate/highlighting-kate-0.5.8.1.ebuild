@@ -21,9 +21,10 @@ IUSE="executable pcre-light"
 RDEPEND=">=dev-haskell/blaze-html-0.4.2:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	pcre-light? ( >=dev-haskell/pcre-light-0.4:=[profile?] <dev-haskell/pcre-light-0.5:=[profile?] )
-	!pcre-light? ( dev-haskell/regex-pcre-builtin:=[profile?] )
+	!pcre-light? ( >=dev-haskell/regex-pcre-builtin-0.94.4.8.8.35:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
