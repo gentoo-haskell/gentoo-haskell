@@ -18,6 +18,8 @@ DESCRIPTION="Binding to the Gtk+ graphical user interface library."
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${MY_PV}/${MY_P}.tar.gz"
 
+S="${WORKDIR}/${MY_P}"
+
 LICENSE="LGPL-2.1"
 SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
