@@ -1,0 +1,13 @@
+diff --git a/Graphics/UI/SDL/Events.hsc b/Graphics/UI/SDL/Events.hsc
+index a33ea61..6600629 100644
+--- a/Graphics/UI/SDL/Events.hsc
++++ b/Graphics/UI/SDL/Events.hsc
+@@ -53,7 +53,7 @@ import Prelude hiding (Enum(..))
+ import qualified Prelude (Enum(..))
+ 
+ import Foreign.StablePtr (newStablePtr,castStablePtrToPtr,castPtrToStablePtr,deRefStablePtr)
+-import Data.Typeable (Typeable(typeOf),TypeRep)
++import Data.Typeable
+ 
+ import Graphics.UI.SDL.Keysym (SDLKey, Modifier, Keysym)
+ import Graphics.UI.SDL.Utilities (Enum(..), intToBool, toBitmask, fromBitmask, fromCInt)
