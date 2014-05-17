@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="embed_data_files +http-conduit"
 
-RESTRICT=test # missing files
-
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -28,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
-	>=dev-haskell/highlighting-kate-0.5.7:=[profile?] <dev-haskell/highlighting-kate-0.6:=[profile?]
+	>=dev-haskell/highlighting-kate-0.5.8:=[profile?] <dev-haskell/highlighting-kate-0.6:=[profile?]
 	>=dev-haskell/hslua-0.3:=[profile?] <dev-haskell/hslua-0.4:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -36,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/pandoc-types-1.12.3.3:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.1:=[profile?]
-	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.3:=[profile?]
+	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
@@ -58,7 +56,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 	test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 		>=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
-		>=dev-haskell/highlighting-kate-0.5.7 <dev-haskell/highlighting-kate-0.6
+		>=dev-haskell/highlighting-kate-0.5.8 <dev-haskell/highlighting-kate-0.6
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
 		>=dev-haskell/pandoc-types-1.12.3.3 <dev-haskell/pandoc-types-1.13
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
@@ -68,6 +66,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/text-0.11 <dev-haskell/text-1.2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'scientific >= 0.2 && < 0.3' 'scientific >= 0.2 && < 0.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
