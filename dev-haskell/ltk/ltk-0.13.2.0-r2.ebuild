@@ -21,9 +21,9 @@ IUSE="+gtk3"
 
 RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.21:=[profile?]
 	>=dev-haskell/glib-0.10.0:=[profile?] <dev-haskell/glib-0.13:=[profile?]
-	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	gtk3? ( >=dev-haskell/gtk-0.12.4:3=[profile?] <dev-haskell/gtk-0.13:3=[profile?] )
 	!gtk3? ( >=dev-haskell/gtk-0.12.4:2=[profile?] <dev-haskell/gtk-0.13:2=[profile?] )
@@ -31,6 +31,12 @@ RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.21:=[profile
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
+		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
