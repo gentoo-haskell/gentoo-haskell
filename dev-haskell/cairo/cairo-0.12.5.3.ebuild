@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	sed -e "s@#include<cairo-features.h>@#define $(usex amd64 __x86_64__ __i386__)#include<cairo-features.h>@" \
+	sed -e "s@#include<cairo-features.h>@#define $(usex amd64 __x86_64__ __i386__)\n#include<cairo-features.h>@" \
 		-i "${S}"/Graphics/Rendering/Cairo.hs \
 		|| die "Could not define ABI in Graphics/Rendering/Cairo.hs"
 }
