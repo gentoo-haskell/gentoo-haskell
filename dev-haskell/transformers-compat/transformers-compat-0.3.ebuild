@@ -16,19 +16,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="transformers2 transformers3"
+IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.0.1:=
-	transformers2? ( >=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.3:=[profile?] )
-	!transformers2? ( transformers3? ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
-				!transformers3? ( >=dev-haskell/transformers-0.4:=[profile?] <dev-haskell/transformers-0.5:=[profile?] ) )
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag transformers2 transformers2) \
-		$(cabal_flag transformers3 transformers3)
-}
