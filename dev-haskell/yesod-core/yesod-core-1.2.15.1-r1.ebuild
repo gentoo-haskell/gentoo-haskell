@@ -73,7 +73,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'transformers          >= 0.2.2    && < 0.4'
-		'transformers          >= 0.2.2    && < 0.5'
+		'transformers          >= 0.2.2    && < 0.4' 'transformers          >= 0.2.2    && < 0.5'
 }
-
