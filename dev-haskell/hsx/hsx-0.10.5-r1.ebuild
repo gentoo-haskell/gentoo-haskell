@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 "
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-haskell-src-exts.patch
+	epatch "${FILESDIR}"/${P}-haskell-src-exts-2.patch
 	cabal_chdeps \
 		'haskell-src-exts >= 1.13 && < 1.14' \
 		'haskell-src-exts >= 1.13 && < 1.16'
