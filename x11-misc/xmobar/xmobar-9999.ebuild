@@ -25,7 +25,7 @@ RDEPEND="x11-libs/libXrandr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 	>=dev-haskell/http-4000
-	>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
+	>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.3
 	>=dev-haskell/parsec-3.1 <dev-haskell/parsec-3.2
 	dev-haskell/regex-compat
 	>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
@@ -42,7 +42,6 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/timezone-series-0.1 <dev-haskell/timezone-series-0.2 )
 	xft? ( >=dev-haskell/x11-xft-0.2 <dev-haskell/x11-xft-0.4 )
 "
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-all_extensions \
