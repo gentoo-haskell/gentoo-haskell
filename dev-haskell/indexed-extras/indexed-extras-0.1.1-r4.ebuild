@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/bifunctors:=[profile?]
 		<dev-haskell/indexed-0.2:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
+		<dev-haskell/mtl-2.3:=[profile?]
 		<dev-haskell/pointed-5:=[profile?]
 		>=dev-lang/ghc-6.8.2:="
 DEPEND="${RDEPEND}
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'bifunctors < 0.2' 'bifunctors' \
-		'pointed < 2.2' 'pointed < 5'
+		'pointed < 2.2' 'pointed < 5' \
+		'mtl < 2.2' 'mtl < 2.3'
 }
