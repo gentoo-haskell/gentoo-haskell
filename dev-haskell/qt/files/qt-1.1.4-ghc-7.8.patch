@@ -1,0 +1,52 @@
+diff --git a/Qtc/Classes/Object.hs b/Qtc/Classes/Object.hs
+index 045f894..965ff08 100644
+--- a/Qtc/Classes/Object.hs
++++ b/Qtc/Classes/Object.hs
+@@ -22,6 +22,7 @@ import Foreign.ForeignPtr
+ import Foreign.Storable
+ import Foreign.Marshal.Alloc
+ import Foreign.Marshal.Array
++import Foreign.ForeignPtr.Unsafe as U
+ 
+ data Object a = Object ! (ForeignPtr a)
+ 
+@@ -73,7 +74,7 @@ objectFromPtr_nf p
+     return $ Object nfp
+ 
+ ptrFromObject :: Object a -> Ptr a
+-ptrFromObject (Object fp) = unsafeForeignPtrToPtr fp
++ptrFromObject (Object fp) = U.unsafeForeignPtrToPtr fp
+ 
+ objectListFromPtrList :: FunPtr (Ptr a -> IO ()) -> [Ptr a] -> IO [Object a]
+ objectListFromPtrList f pl = objectListFromPtrList_r f [] pl
+diff --git a/Qtc/Classes/Types.hs b/Qtc/Classes/Types.hs
+index a1e4b7d..e9017e4 100644
+--- a/Qtc/Classes/Types.hs
++++ b/Qtc/Classes/Types.hs
+@@ -59,6 +59,7 @@ import Foreign.ForeignPtr
+ import Foreign.Storable
+ import Foreign.Marshal.Alloc
+ import Foreign.Marshal.Array
++import Foreign.ForeignPtr.Unsafe as U
+ 
+ import Qtc.Classes.Object
+ type QVoid a = Object (CQVoid a)
+@@ -498,7 +499,7 @@ fptrNull = newForeignPtr_ nullPtr
+ 
+ fptrIsNull :: ForeignPtr a -> Bool
+ fptrIsNull fp
+-  = ((unsafeForeignPtrToPtr fp) == ptrNull)
++  = ((U.unsafeForeignPtrToPtr fp) == ptrNull)
+ 
+ fptrCast :: ForeignPtr a -> ForeignPtr b
+ fptrCast p = castForeignPtr p
+diff --git a/Qtc/Core/Attributes.hs b/Qtc/Core/Attributes.hs
+index 225c442..9afbb41 100755
+--- a/Qtc/Core/Attributes.hs
++++ b/Qtc/Core/Attributes.hs
+@@ -1,4 +1,5 @@
+ {-# OPTIONS -fglasgow-exts -XOverlappingInstances -XUndecidableInstances#-}
++{-# LANGUAGE AllowAmbiguousTypes #-}
+ -----------------------------------------------------------------------------
+ {-| Module    : Attributes.hs
+     Copyright : (c) David Harley 2010
