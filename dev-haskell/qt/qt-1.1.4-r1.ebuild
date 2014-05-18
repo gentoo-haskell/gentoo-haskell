@@ -30,6 +30,7 @@ PATCHES=("${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
 	"${FILESDIR}/${PN}-1.1.4-qtc-classes-base-monad-to-control-monad.patch"
 	"${FILESDIR}/${PN}-1.1.4-qtc-core-attributes-fix-type-error.patch"
 	"${FILESDIR}/${PN}-1.1.4-ghc-7.6.patch"
+	"${FILESDIR}/${PN}-1.1.4-ghc-7.8.patch"
 )
 
 src_install() {
