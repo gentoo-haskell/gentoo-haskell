@@ -21,9 +21,9 @@ IUSE="+test-doctests"
 
 RDEPEND=">=dev-haskell/binary-0.5.1:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-0.7:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
@@ -32,6 +32,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( test-doctests? ( >=dev-haskell/doctest-0.9.1 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl                       >= 2.0      && < 2.2' 'mtl                       >= 2.0      && < 2.3' \
+		'transformers              >= 0.2      && < 0.4' 'transformers              >= 0.2      && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
