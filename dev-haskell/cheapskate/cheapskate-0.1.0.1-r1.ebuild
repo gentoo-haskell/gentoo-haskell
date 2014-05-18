@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-html-0.6:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
-	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/text-0.9:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
