@@ -23,7 +23,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/statevar-1.0:=[profile?] <dev-haskell/statevar-1.1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/libc
 "
@@ -32,6 +32,13 @@ DEPEND="${RDEPEND}
 "
 PATCHES=("${FILESDIR}"/${P}-ghc-7.6.patch)
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	base_src_prepare
+
+	cabal_chdeps \
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
