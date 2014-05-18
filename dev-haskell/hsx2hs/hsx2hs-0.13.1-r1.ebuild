@@ -20,10 +20,16 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?]
 	>=dev-haskell/haskell-src-meta-0.6:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl              >= 2.0 && < 2.2' 'mtl              >= 2.0 && < 2.3' \
+		'template-haskell >= 2.7 && < 2.9' 'template-haskell >= 2.7 && < 2.10'
+}
