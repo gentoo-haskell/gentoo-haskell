@@ -1,0 +1,66 @@
+diff --git a/Data/Functor/Foldable.hs b/Data/Functor/Foldable.hs
+index 00d5368..abac346 100644
+--- a/Data/Functor/Foldable.hs
++++ b/Data/Functor/Foldable.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE CPP, TypeFamilies, Rank2Types, FlexibleContexts, FlexibleInstances, GADTs, StandaloneDeriving, UndecidableInstances #-}
++{-# LANGUAGE DeriveDataTypeable #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Data.Functor.Foldable
+@@ -77,10 +78,7 @@ import Data.Functor.Identity
+ import Control.Arrow
+ import Data.Function (on)
+ import Text.Read
+-#ifdef __GLASGOW_HASKELL__
+-import Data.Data hiding (gunfold)
+-import qualified Data.Data as Data
+-#endif
++import Data.Typeable
+ 
+ type family Base t :: * -> *
+ 
+@@ -253,6 +251,7 @@ distGFutu _ (Pure fa) = Pure <$> fa
+ distGFutu k (Free as) = Free <$> k (distGFutu k <$> as)
+ 
+ newtype Fix f = Fix (f (Fix f))
++  deriving Typeable
+ 
+ unfix :: Fix f -> f (Fix f)
+ unfix (Fix f) = f
+@@ -262,35 +261,6 @@ deriving instance Ord (f (Fix f)) => Ord (Fix f)
+ deriving instance Show (f (Fix f)) => Show (Fix f)
+ deriving instance Read (f (Fix f)) => Read (Fix f)
+ 
+-#ifdef __GLASGOW_HASKELL__
+-instance Typeable1 f => Typeable (Fix f) where
+-  typeOf t = mkTyConApp fixTyCon [typeOf1 (undefined `asArgsTypeOf` t)]
+-    where asArgsTypeOf :: f a -> Fix f -> f a
+-          asArgsTypeOf = const
+-
+-fixTyCon :: TyCon
+-#if MIN_VERSION_base(4,4,0)
+-fixTyCon = mkTyCon3 "recursion-schemes" "Data.Functor.Foldable" "Fix"
+-#else
+-fixTyCon = mkTyCon "Data.Functor.Foldable.Fix"
+-#endif
+-{-# NOINLINE fixTyCon #-}
+-
+-instance (Typeable1 f, Data (f (Fix f))) => Data (Fix f) where
+-  gfoldl f z (Fix a) = z Fix `f` a
+-  toConstr _ = fixConstr
+-  gunfold k z c = case constrIndex c of
+-    1 -> k (z (Fix))
+-    _ -> error "gunfold"
+-  dataTypeOf _ = fixDataType
+-
+-fixConstr :: Constr
+-fixConstr = mkConstr fixDataType "Fix" [] Prefix
+-
+-fixDataType :: DataType
+-fixDataType = mkDataType "Data.Functor.Foldable.Fix" [fixConstr]
+-#endif
+-
+ type instance Base (Fix f) = f
+ instance Functor f => Foldable (Fix f) where
+   project (Fix a) = a
