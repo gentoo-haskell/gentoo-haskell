@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 	>=dev-haskell/harp-0.4:=[profile?] <dev-haskell/harp-0.5:=[profile?]
 	>=dev-haskell/hsp-0.9.2:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
 	>=dev-haskell/hsx2hs-0.13.0:=[profile?] <dev-haskell/hsx2hs-0.14:=[profile?]
-	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
@@ -31,3 +31,8 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl              >= 1.1 && < 2.2' 'mtl              >= 1.1 && < 2.3'
+}
