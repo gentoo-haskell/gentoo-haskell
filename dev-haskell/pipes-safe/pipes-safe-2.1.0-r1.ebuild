@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.4:=[profile?] <dev-haskell/exceptions-0.6:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.4:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
 	>=dev-haskell/pipes-4.0.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'transformers >= 0.2.0.0 && < 0.4' 'transformers >= 0.2.0.0 && < 0.5'
+		'transformers >= 0.2.0.0 && < 0.4' 'transformers >= 0.2.0.0 && < 0.5' \
+		'exceptions   >= 0.4     && < 0.6' 'exceptions   >= 0.4     && < 0.7'
 }
