@@ -53,6 +53,8 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+
 	haskell-cabal_src_configure \
 		$(cabal_flag curses curses) \
 		$(cabal_flag ffi ffi) \
