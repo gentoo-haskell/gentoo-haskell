@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-buil
 	>=dev-haskell/http-types-0.7:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/wai-2.0:=[profile?] <dev-haskell/wai-2.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -36,3 +36,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/wai )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers              >= 0.2.2    && < 0.4' 'transformers              >= 0.2.2    && < 0.5'
+}
