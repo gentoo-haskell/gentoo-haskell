@@ -1,0 +1,31 @@
+diff --git a/Data/IterIO/Iter.hs b/Data/IterIO/Iter.hs
+index 465970f..4ac53c3 100644
+--- a/Data/IterIO/Iter.hs
++++ b/Data/IterIO/Iter.hs
+@@ -144,6 +144,7 @@ chunkEOF = Chunk mempty True
+ -- Internally, an @Iter@ is a function from an input 'Chunk' to a
+ -- result of type 'IterR'.
+ newtype Iter t m a = Iter { runIter :: Chunk t -> IterR t m a }
++    deriving Typeable
+ 
+ -- | Builds an 'Iter' that keeps requesting input until it receives a
+ -- non-'null' 'Chunk'.  In other words, the 'Chunk' fed to the
+@@ -281,18 +282,6 @@ instance (ChunkData t) => Show (IterR t m a) where
+                         (if isJust a then " Just _ " else " Nothing ")
+                         ++ shows c rest)
+ 
+-iterTc :: TyCon
+-iterTc = mkTyCon3 "iterIO" "Data.IterIO.Iter" "Iter"
+--- iterTc = mkTyCon "Iter"
+-
+-instance (Typeable t, Typeable1 m) => Typeable1 (Iter t m) where
+-    typeOf1 iter = mkTyConApp iterTc [typeOf $ t iter, typeOf1 $ m iter]
+-        where t :: Iter t m a -> t; t _ = undefined
+-              m :: Iter t m a -> m (); m _ = undefined
+-
+-instance (Typeable t, Typeable1 m, Typeable a) => Typeable (Iter t m a) where
+-    typeOf = typeOfDefault
+-
+ instance (Monad m) => Functor (Iter t m) where
+     {-# INLINE fmap #-}
+     fmap = fmapI

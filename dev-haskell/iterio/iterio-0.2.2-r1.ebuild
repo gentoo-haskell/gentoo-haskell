@@ -7,7 +7,7 @@
 EAPI=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 MY_PN="iterIO"
 MY_P="${MY_PN}-${PV}"
@@ -41,6 +41,8 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
 		'ListLike >= 1.0 && < 4' 'ListLike >= 1.0 && < 5'
 	sed -e '/#if defined(__GLASGOW_HASKELL__) && (__GLASGOW_HASKELL__ >= 702)/,/#endif/d' \
