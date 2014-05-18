@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/parsers-0.10:=[profile?] <dev-haskell/parsers-1:=[profile?]
 	>=dev-haskell/reducers-3.10:=[profile?] <dev-haskell/reducers-4:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -41,3 +41,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl                  >= 2.0.1   && < 2.2' 'mtl                  >= 2.0.1   && < 2.3' \
+		'transformers         >= 0.2     && < 0.4' 'transformers         >= 0.2     && < 0.5'
+}
