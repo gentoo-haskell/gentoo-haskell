@@ -1,0 +1,14 @@
+diff --git a/Setup.hs b/Setup.hs
+index abd6ab9..4dcd65e 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -130,8 +130 @@ main = do
+-      testHook simpleUserHooks packageDescription localBuildInfo userHooks testFlags,
+-
+-    haddockHook = \packageDescription localBuildInfo userHooks haddockFlags -> do
+-       let v = "GHCRTS"
+-       oldGhcRts <- try $ getEnv v :: IO (Either SomeException String)
+-       setEnv v (either (const id) (\o n -> o ++ " " ++ n) oldGhcRts "-K32M")
+-       haddockHook simpleUserHooks packageDescription localBuildInfo userHooks haddockFlags
+-       either (const (unsetEnv v)) (setEnv v) oldGhcRts
++      testHook simpleUserHooks packageDescription localBuildInfo userHooks testFlags
