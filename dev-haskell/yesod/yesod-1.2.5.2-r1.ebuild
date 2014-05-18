@@ -33,7 +33,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/shakespeare-css-1.0:=[profile?]
 	>=dev-haskell/shakespeare-js-1.0.2:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/wai-1.3:=[profile?]
 	>=dev-haskell/wai-extra-1.3:=[profile?]
@@ -48,3 +48,8 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers              >= 0.2.2    && < 0.4' 'transformers              >= 0.2.2    && < 0.5'
+}
