@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/monads-fd-0.0:=[profile?] <dev-haskell/monads-fd-0.3:=[profile?]
-		>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
