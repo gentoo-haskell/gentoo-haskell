@@ -39,5 +39,6 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck     == 2.5.*' 'QuickCheck     >= 2.5' \
 		'attoparsec    >= 0.8 && < 0.11' 'attoparsec    >= 0.8' \
-		'text          == 0.11.*' 'text >= 0.11'
+		'text          == 0.11.*' 'text >= 0.11' \
+		'template-haskell >= 2.4 && < 2.9' 'template-haskell >= 2.4 && < 2.10'
 }
