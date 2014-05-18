@@ -61,7 +61,7 @@ DEPEND="${RDEPEND}
 	|| ( <dev-haskell/mtl-2.1
 		>dev-haskell/mtl-2.1 )
 	|| ( ( >=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.3 )
-		( >=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.4 ) )
+		( >=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.5 ) )
 	dev-util/cmake
 "
 
@@ -72,7 +72,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'-Werror' ' ' \
-		'-optl-s' ' '
+		'-optl-s' ' ' \
+		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5'
 }
 
 src_configure() {
