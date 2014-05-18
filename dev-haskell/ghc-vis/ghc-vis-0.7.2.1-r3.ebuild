@@ -23,10 +23,10 @@ RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.13:=
 	>=dev-haskell/fgl-5.4:= <dev-haskell/fgl-5.5:=
 	>=dev-haskell/ghc-heap-view-0.5:= <dev-haskell/ghc-heap-view-0.6:=
 	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.13:=
-	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.2:=
+	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.3:=
 	>=dev-haskell/svgcairo-0.12:= <dev-haskell/svgcairo-0.13:=
 	>=dev-haskell/text-0.11:=
-	>=dev-haskell/transformers-0.3:= <dev-haskell/transformers-0.4:=
+	>=dev-haskell/transformers-0.3:= <dev-haskell/transformers-0.5:=
 	>=dev-lang/ghc-7.4.1:=
 	graph? ( >=dev-haskell/graphviz-2999.16:= <dev-haskell/graphviz-2999.17:=
 			>=dev-haskell/xdot-0.2:= <dev-haskell/xdot-0.3:= )
@@ -37,7 +37,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text >= 0.11 && < 1.1' 'text >= 0.11'
+		'text >= 0.11 && < 1.1' 'text >= 0.11' \
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3' \
+		'transformers == 0.3.*'  'transformers >= 0.3 && < 0.5' 
 }
 
 src_configure() {
