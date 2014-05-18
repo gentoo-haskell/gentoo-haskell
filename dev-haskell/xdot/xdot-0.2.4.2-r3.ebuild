@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.13:=[profile?]
-	>=dev-haskell/graphviz-2999.16:=[profile?] <dev-haskell/graphviz-2999.17:=[profile?]
+	>=dev-haskell/graphviz-2999.16:=[profile?] <dev-haskell/graphviz-2999.18:=[profile?]
 	>=dev-haskell/gtk-0.12:=[profile?] <dev-haskell/gtk-0.13:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?] <dev-haskell/polyparse-1.10:=[profile?]
@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'text >= 0.11 && < 1.1' 'text >= 0.11' \
-		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3'
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3' \
+		'graphviz == 2999.16.*' 'graphviz >= 2999.16 && < 2999.18'
 }
