@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
-	>=dev-haskell/fgl-5.4.2.2:=[profile?] <dev-haskell/fgl-5.5:=[profile?]
+	>=dev-haskell/fgl-5.4.2.2:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'fgl >= 5.4.2.2 && < 5.5' 'fgl >= 5.4.2.2 && < 5.6'
+}
