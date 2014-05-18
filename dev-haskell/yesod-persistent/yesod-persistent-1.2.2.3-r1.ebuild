@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/persistent-template-1.2:=[profile?] <dev-haskell/persistent-template-1.4:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/resourcet-0.4.5:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/yesod-core-1.2.2:=[profile?] <dev-haskell/yesod-core-1.3:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -35,3 +35,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/text
 		dev-haskell/wai-test )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers              >= 0.2.2    && < 0.4' 'transformers              >= 0.2.2    && < 0.5'
+}
