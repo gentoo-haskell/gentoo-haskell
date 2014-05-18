@@ -28,5 +28,6 @@ DEPEND="${RDEPEND}
 "
 src_prepare() {
 	cabal_chdeps \
-		'mtl ==2.1.*' 'mtl >=2.1 && <2.3'
+		'mtl ==2.1.*' 'mtl >=2.1 && <2.3' \
+		'base >= 4.5 && < 4.7' 'base >= 4.5'
 }
