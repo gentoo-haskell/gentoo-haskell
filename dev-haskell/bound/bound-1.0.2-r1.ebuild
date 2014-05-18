@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-5:=[prof
 	>=dev-haskell/hashable-extras-0.1:=[profile?] <dev-haskell/hashable-extras-1:=[profile?]
 	>=dev-haskell/prelude-extras-0.3:=[profile?] <dev-haskell/prelude-extras-1:=[profile?]
 	>=dev-haskell/profunctors-3.3:=[profile?] <dev-haskell/profunctors-5:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,3 +37,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers
 		>=dev-haskell/vector-0.9 <dev-haskell/vector-0.11 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers    >= 0.2     && < 0.4' 'transformers    >= 0.2     && < 0.5'
+}
