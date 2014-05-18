@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # hangs?
+
 RDEPEND=">=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-4.1:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.15:=[profile?]
@@ -29,13 +31,6 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/newtype-0.2 <dev-haskell/newtype-0.3
 		>=dev-haskell/quickcheck-2.4.2 <dev-haskell/quickcheck-2.8
 		>=dev-haskell/semigroupoids-1.2 <dev-haskell/semigroupoids-4.1
-		>=dev-haskell/semigroups-0.1 <dev-haskell/semigroups-0.14
+		>=dev-haskell/semigroups-0.1 <dev-haskell/semigroups-0.15
 		>=dev-haskell/vector-space-0.8 <dev-haskell/vector-space-0.9 )
 "
-
-RESTRICT=test # hangs?
-
-src_prepare() {
-	cabal_chdeps \
-		"semigroups >= 0.1 && < 0.14" "semigroups >= 0.1 && < 0.15"
-}
