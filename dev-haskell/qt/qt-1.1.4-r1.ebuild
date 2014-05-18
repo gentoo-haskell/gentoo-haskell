@@ -33,6 +33,12 @@ PATCHES=("${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
 	"${FILESDIR}/${PN}-1.1.4-ghc-7.8.patch"
 )
 
+src_prepare() {
+	base_src_prepare
+	# takes A Lot of RAM
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+}
+
 src_install() {
 	cabal_src_install
 	dodoc INSTALL README
