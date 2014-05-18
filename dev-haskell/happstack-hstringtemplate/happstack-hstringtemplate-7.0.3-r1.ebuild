@@ -18,13 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
-		<dev-haskell/happstack-server-7.4:=[profile?]
+RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
 		dev-haskell/hslogger:=[profile?]
-		>=dev-haskell/hstringtemplate-0.4.3:=[profile?]
-		<dev-haskell/hstringtemplate-0.8:=[profile?]
-		>=dev-haskell/mtl-1.1:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
+		>=dev-haskell/hstringtemplate-0.4.3:=[profile?] <dev-haskell/hstringtemplate-0.8:=[profile?]
+		>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl >= 1.1 && < 2.2' 'mtl >= 1.1 && < 2.3'
+}
