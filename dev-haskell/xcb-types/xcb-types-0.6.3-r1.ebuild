@@ -18,9 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2.0:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		=dev-haskell/xml-1.3*:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	=dev-haskell/xml-1.3*:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+	>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl == 2.0.* || == 2.1.*' 'mtl >= 2.0 && < 2.3'
+}
