@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/cmdargs-0.9:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/strict-0.3:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-haskell/yaml-0.7:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
@@ -33,9 +33,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cmdargs-0.9 <dev-haskell/cmdargs-0.11
 		>=dev-haskell/haskell-src-exts-1.14 <dev-haskell/haskell-src-exts-1.16
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.2
+		>=dev-haskell/mtl-2.0 <dev-haskell/mtl-2.3
 		>=dev-haskell/syb-0.3 <dev-haskell/syb-0.5
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/yaml-0.7 <dev-haskell/yaml-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl              >= 2.0  && < 2.2' 'mtl              >= 2.0  && < 2.3'
+}
