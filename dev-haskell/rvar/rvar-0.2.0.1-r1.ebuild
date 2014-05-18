@@ -20,10 +20,14 @@ IUSE=""
 
 RDEPEND="=dev-haskell/monadprompt-1.0*:=[profile?]
 		=dev-haskell/random-source-0.3*:=[profile?]
-		>=dev-haskell/transformers-0.2:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		=dev-haskell/mtl-2*:=[profile?]
 		"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers    >= 0.2 && < 0.4' 'transformers    >= 0.2 && < 0.5'
+}
