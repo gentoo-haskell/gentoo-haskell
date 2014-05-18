@@ -1,0 +1,13 @@
+diff --git a/src/Control/Distributed/Process/Serializable.hs b/src/Control/Distributed/Process/Serializable.hs
+index ca6badf..e35ce63 100644
+--- a/src/Control/Distributed/Process/Serializable.hs
++++ b/src/Control/Distributed/Process/Serializable.hs
+@@ -10,7 +10,7 @@ module Control.Distributed.Process.Serializable
+   ) where
+ 
+ import Data.Binary (Binary)
+-import Data.Typeable (Typeable(..))
++import Data.Typeable
+ import Data.Typeable.Internal (TypeRep(TypeRep))
+ import Numeric (showHex)
+ import Control.Exception (throw)
