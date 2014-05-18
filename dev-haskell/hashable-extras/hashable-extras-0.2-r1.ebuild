@@ -21,13 +21,18 @@ IUSE="lib-werror +test-doctests"
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.7:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.0.0
 	test? ( test-doctests? ( >=dev-haskell/doctest-0.9.1 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers     >= 0.2      && < 0.4' 'transformers     >= 0.2      && < 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
