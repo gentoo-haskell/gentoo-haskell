@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
 
-src_preare() {
+src_prepare() {
 	cabal_chdeps \
 		'transformers           >= 0.2      && < 0.4' 'transformers           >= 0.2      && < 0.5'
 }
