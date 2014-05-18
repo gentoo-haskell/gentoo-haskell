@@ -21,13 +21,18 @@ IUSE="buildexamples buildtests executepipe executeshell"
 RDEPEND=">=dev-haskell/data-accessor-0.2.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1:=[profile?] <dev-haskell/data-accessor-transformers-0.3:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utility-ht-0.0.8:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.3 && <0.4' 'transformers >=0.3 && <0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
