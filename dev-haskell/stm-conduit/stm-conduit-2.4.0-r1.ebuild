@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/async-2.0.1:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/stm-chans-2.0:=[profile?] <dev-haskell/stm-chans-3.1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <=dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <=dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -42,3 +42,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers   >= 0.2 && <= 0.4' 'transformers   >= 0.2 && < 0.5'
+}
