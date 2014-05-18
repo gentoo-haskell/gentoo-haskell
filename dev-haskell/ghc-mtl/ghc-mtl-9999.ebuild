@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:  $
+# $Header: $
 
 EAPI=5
 
@@ -16,7 +16,7 @@ DESCRIPTION="An mtl compatible version of the Ghc-Api monads
 and monad-transformers."
 HOMEPAGE="http://darcsden.com/jcpetruzza/ghc-mtl"
 #SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-EDARCS_REPOSITORY="http://darcsden.com/jcpetruzza/ghc-mtl"
+EDARCS_REPOSITORY="http://hub.darcs.net/jcpetruzza/ghc-mtl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -24,8 +24,11 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/monadcatchio-mtl-0.2.0.0:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?]
+	dev-haskell/extensible-exceptions:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.6.0.3
+"
