@@ -21,8 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
-	dev-haskell/matrix:=[profile?]
+RDEPEND="dev-haskell/matrix:=[profile?]
+	>=dev-haskell/parsec-3.1:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -31,7 +31,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.1
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/tasty
+	test? ( dev-haskell/quickcheck
+		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
 
