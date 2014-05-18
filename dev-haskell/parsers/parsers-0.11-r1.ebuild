@@ -36,6 +36,11 @@ src_prepare() {
 		'transformers         >= 0.2     && < 0.4' 'transformers >= 0.2     && < 0.5'
 }
 
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2     && < 0.4' 'transformers         >= 0.2     && < 0.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-lib-werror
