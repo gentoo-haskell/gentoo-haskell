@@ -43,5 +43,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/hspec )
+	test? ( dev-haskell/hspec
+		dev-haskell/text )
 "
