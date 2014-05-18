@@ -51,6 +51,12 @@ src_prepare() {
 		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3'
 }
 
+src_prepare() {
+	cabal_chdeps \
+		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3' \
+		'transformers >= 0.1.3 && < 0.4' 'transformers >= 0.1.3 && < 0.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=network_2_2_3 \
