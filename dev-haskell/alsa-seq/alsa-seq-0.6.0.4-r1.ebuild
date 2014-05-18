@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	>=dev-haskell/enumset-0.0.3:=[profile?] <dev-haskell/enumset-0.1:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
 	>=dev-haskell/poll-0.0:=[profile?] <dev-haskell/poll-0.1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utility-ht-0.0.7:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	media-libs/alsa-lib
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.2 && <0.4' 'transformers >=0.2 && <0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
