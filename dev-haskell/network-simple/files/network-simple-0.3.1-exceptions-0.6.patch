@@ -1,0 +1,46 @@
+diff --git a/src/Network/Simple/TCP.hs b/src/Network/Simple/TCP.hs
+index e1388ad..570c68a 100644
+--- a/src/Network/Simple/TCP.hs
++++ b/src/Network/Simple/TCP.hs
+@@ -116,7 +116,12 @@ import qualified Network.Socket.ByteString      as NSB
+ -- If you prefer to acquire and close the socket yourself, then use
+ -- 'connectSock' and 'closeSock'.
+ connect
+-  :: (MonadIO m, C.MonadCatch m)
++  :: (MonadIO m
++     , C.MonadCatch m
++#if MIN_VERSION_exceptions(0,6,0)
++     , C.MonadMask m
++#endif
++     )
+   => NS.HostName      -- ^Server hostname.
+   -> NS.ServiceName   -- ^Server service port.
+   -> ((NS.Socket, NS.SockAddr) -> m r)
+@@ -180,7 +185,12 @@ serve hp port k = liftIO $ do
+ -- 2048 as the default size of the listening queue. The 'NS.NoDelay' and
+ -- 'NS.ReuseAddr' options are set on the socket.
+ listen
+-  :: (MonadIO m, C.MonadCatch m)
++  :: (MonadIO m
++     , C.MonadCatch m
++#if MIN_VERSION_exceptions(0,6,0)
++     , C.MonadMask m
++#endif
++     )
+   => HostPreference   -- ^Preferred host to bind.
+   -> NS.ServiceName   -- ^Service port to bind.
+   -> ((NS.Socket, NS.SockAddr) -> m r)
+@@ -199,7 +209,12 @@ listen hp port = C.bracket listen' (silentCloseSock . fst)
+ --
+ -- The connection socket is closed when done or in case of exceptions.
+ accept
+-  :: (MonadIO m, C.MonadCatch m)
++  :: (MonadIO m
++     , C.MonadCatch m
++#if MIN_VERSION_exceptions(0,6,0)
++     , C.MonadMask m
++#endif
++     )
+   => NS.Socket        -- ^Listening and bound socket.
+   -> ((NS.Socket, NS.SockAddr) -> m r)
+                       -- ^Computation to run once an incoming
