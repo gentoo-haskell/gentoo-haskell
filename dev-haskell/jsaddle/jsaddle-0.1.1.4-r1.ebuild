@@ -20,7 +20,7 @@ IUSE="+gtk3 +jmacro +jsffi webkit"
 
 RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	jmacro? ( >=dev-haskell/jmacro-0.6.3:=[profile?] <dev-haskell/jmacro-0.8:=[profile?]
 			!webkit? ( gtk3? ( >=dev-haskell/webkit-0.12.5:3=[profile?] <dev-haskell/webkit-0.13:3=[profile?]
@@ -53,7 +53,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >=3.8.5 && <4.1' 'lens >=3.8.5 && <4.2'
+		'lens >=3.8.5 && <4.1' 'lens >=3.8.5 && <4.2' \
+		'transformers >=0.3.0.0 && <0.4' 'transformers >=0.3.0.0 && <0.5'
 }
 
 src_configure() {
