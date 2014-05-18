@@ -18,11 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/repa-3.2.0.0:=[profile?]
-		<dev-haskell/repa-4.0:=[profile?]
-		>=dev-haskell/transformers-0.2:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
+RDEPEND=">=dev-haskell/repa-3.2.0.0:=[profile?] <dev-haskell/repa-4.0:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
 		media-libs/devil"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers      >= 0.2 && < 0.4' 'transformers      >= 0.2 && < 0.5'
+}
