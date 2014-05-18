@@ -33,7 +33,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/resourcet-0.4.6:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/stringsearch-0.3:=[profile?] <dev-haskell/stringsearch-0.4:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/void-0.5:=[profile?]
 	>=dev-haskell/wai-2.1:=[profile?] <dev-haskell/wai-2.2:=[profile?]
 	>=dev-haskell/wai-logger-2.0:=[profile?] <dev-haskell/wai-logger-2.2:=[profile?]
@@ -49,3 +49,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/zlib
 		dev-haskell/zlib-bindings )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers              >= 0.2.2    && < 0.4' 'transformers              >= 0.2.2    && < 0.5'
+}
