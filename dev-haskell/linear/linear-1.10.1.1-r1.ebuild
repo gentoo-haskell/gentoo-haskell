@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/tagged-0.4.4:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1:=[profile?]
@@ -43,3 +43,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2   && < 0.4' 'transformers         >= 0.2   && < 0.5'
+}
