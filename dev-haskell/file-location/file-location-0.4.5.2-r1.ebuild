@@ -22,8 +22,12 @@ IUSE=""
 RESTRICT="test"
 
 RDEPEND="dev-haskell/lifted-base:=[profile?]
-		>=dev-haskell/transformers-0.2:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
+		>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers     >= 0.2 && < 0.4' 'transformers     >= 0.2 && < 0.5'
+}
