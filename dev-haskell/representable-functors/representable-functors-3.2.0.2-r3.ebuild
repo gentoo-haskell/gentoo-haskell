@@ -25,10 +25,10 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/free-3:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/keys-3:=[profile?] <dev-haskell/keys-4:=[profile?]
-	>=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -39,6 +39,6 @@ PATCHES=("${FILESDIR}/${PN}-3.2.0.2-comonad-4.0.patch")
 
 src_prepare() {
 	cabal_chdeps \
-		'transformers         >= 0.2     && < 0.4' \
-		'transformers         >= 0.2     && < 0.5'
+		'transformers         >= 0.2     && < 0.4' 'transformers         >= 0.2     && < 0.5' \
+		'mtl                  >= 2.0.1.0 && < 2.2' 'mtl                  >= 2.0.1.0 && < 2.3'
 }
