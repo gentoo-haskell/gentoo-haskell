@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	>=dev-haskell/persistent-1.3:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
 	>=dev-haskell/text-0.5:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/transformers )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers             >= 0.2       && < 0.4' 'transformers             >= 0.2       && < 0.5'
+}
