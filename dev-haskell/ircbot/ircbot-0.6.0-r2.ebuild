@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/irc-0.6:=[profile?] <dev-haskell/irc-0.7:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'network    >= 2.3  && < 2.5' 'network    >= 2.3  && < 2.6'
+		'network    >= 2.3  && < 2.5' 'network    >= 2.3  && < 2.6' \
+		'mtl        >= 2.0  && < 2.2' 'mtl        >= 2.0  && < 2.3'
 }
