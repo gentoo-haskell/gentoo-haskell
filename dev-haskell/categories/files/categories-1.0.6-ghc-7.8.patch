@@ -1,0 +1,166 @@
+diff --git a/src/Control/Categorical/Functor.hs b/src/Control/Categorical/Functor.hs
+index 4902ad3..c57502d 100644
+--- a/src/Control/Categorical/Functor.hs
++++ b/src/Control/Categorical/Functor.hs
+@@ -3,6 +3,7 @@
+ {-# LANGUAGE Trustworthy #-}
+ #endif
+ {-# LANGUAGE MultiParamTypeClasses, FunctionalDependencies, FlexibleContexts, UndecidableInstances, FlexibleInstances #-}
++{-# LANGUAGE DeriveDataTypeable #-}
+ -------------------------------------------------------------------------------------------
+ -- |
+ -- Module      : Control.Categorical.Functor
+@@ -29,86 +30,12 @@ module Control.Categorical.Functor
+ import Control.Category
+ import Prelude hiding (id, (.), Functor(..))
+ import qualified Prelude
+-#ifdef __GLASGOW_HASKELL__
+-import Data.Data (Data(..), mkDataType, DataType, mkConstr, Constr, constrIndex, Fixity(..))
+-#if MIN_VERSION_base(4,4,0)
+-import Data.Typeable (Typeable1(..), TyCon, mkTyCon3, mkTyConApp, gcast1)
+-#else
+-import Data.Typeable (Typeable1(..), TyCon, mkTyCon, mkTyConApp, gcast1)
+-#endif
+-#endif
++import Data.Typeable
+ 
+ -- TODO Data, Typeable
+-newtype LiftedFunctor f a = LiftedFunctor (f a) deriving (Show, Read)
+-
+-#ifdef __GLASGOW_HASKELL__
+-
+-liftedTyCon :: TyCon
+-#if MIN_VERSION_base(4,4,0)
+-liftedTyCon = mkTyCon3 "categories" "Control.Categorical.Functor" "LiftedFunctor"
+-#else
+-liftedTyCon = mkTyCon "Control.Categorical.Functor.LiftedFunctor"
+-#endif
+-{-# NOINLINE liftedTyCon #-}
+-
+-liftedConstr :: Constr
+-liftedConstr = mkConstr liftedDataType "LiftedFunctor" [] Prefix
+-{-# NOINLINE liftedConstr #-}
+-
+-liftedDataType :: DataType
+-liftedDataType = mkDataType "Control.Categorical.Fucntor.LiftedFunctor" [liftedConstr]
+-{-# NOINLINE liftedDataType #-}
+-
+-instance Typeable1 f => Typeable1 (LiftedFunctor f) where
+-  typeOf1 tfa = mkTyConApp liftedTyCon [typeOf1 (undefined `asArgsType` tfa)]
+-    where asArgsType :: f a -> t f a -> f a
+-          asArgsType = const
+-
+-instance (Typeable1 f, Data (f a), Data a) => Data (LiftedFunctor f a) where
+-  gfoldl f z (LiftedFunctor a) = z LiftedFunctor `f` a
+-  toConstr _ = liftedConstr
+-  gunfold k z c = case constrIndex c of
+-    1 -> k (z LiftedFunctor)
+-    _ -> error "gunfold"
+-  dataTypeOf _ = liftedDataType
+-  dataCast1 f = gcast1 f
+-#endif
++newtype LiftedFunctor f a = LiftedFunctor (f a) deriving (Show, Read, Typeable)
+ 
+-newtype LoweredFunctor f a = LoweredFunctor (f a) deriving (Show, Read)
+-
+-#ifdef __GLASGOW_HASKELL__
+-
+-loweredTyCon :: TyCon
+-#if MIN_VERSION_base(4,4,0)
+-loweredTyCon = mkTyCon3 "categories" "Control.Categorical.Functor" "LoweredFunctor"
+-#else
+-loweredTyCon = mkTyCon "Control.Categorical.Functor.LoweredFunctor"
+-#endif
+-{-# NOINLINE loweredTyCon #-}
+-
+-loweredConstr :: Constr
+-loweredConstr = mkConstr loweredDataType "LoweredFunctor" [] Prefix
+-{-# NOINLINE loweredConstr #-}
+-
+-loweredDataType :: DataType
+-loweredDataType = mkDataType "Control.Categorical.Fucntor.LoweredFunctor" [loweredConstr]
+-{-# NOINLINE loweredDataType #-}
+-
+-instance Typeable1 f => Typeable1 (LoweredFunctor f) where
+-  typeOf1 tfa = mkTyConApp loweredTyCon [typeOf1 (undefined `asArgsType` tfa)]
+-    where asArgsType :: f a -> t f a -> f a
+-          asArgsType = const
+-
+-instance (Typeable1 f, Data (f a), Data a) => Data (LoweredFunctor f a) where
+-  gfoldl f z (LoweredFunctor a) = z LoweredFunctor `f` a
+-  toConstr _ = loweredConstr
+-  gunfold k z c = case constrIndex c of
+-    1 -> k (z LoweredFunctor)
+-    _ -> error "gunfold"
+-  dataTypeOf _ = loweredDataType
+-  dataCast1 f = gcast1 f
+-
+-#endif
++newtype LoweredFunctor f a = LoweredFunctor (f a) deriving (Show, Read, Typeable)
+ 
+ class (Category r, Category t) => Functor f r t | f r -> t, f t -> r where
+   fmap :: r a b -> t (f a) (f b)
+diff --git a/src/Control/Category/Dual.hs b/src/Control/Category/Dual.hs
+index 71546d0..1d0fdee 100644
+--- a/src/Control/Category/Dual.hs
++++ b/src/Control/Category/Dual.hs
+@@ -3,6 +3,7 @@
+ #if defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ >= 702
+ {-# LANGUAGE Trustworthy #-}
+ #endif
++{-# LANGUAGE DeriveDataTypeable #-}
+ -------------------------------------------------------------------------------------------
+ -- |
+ -- Module   : Control.Category.Dual
+@@ -25,49 +26,11 @@ module Control.Category.Dual
+ import Prelude (undefined,const,error)
+ import Control.Category
+ 
+-#ifdef __GLASGOW_HASKELL__
+-import Data.Data (Data(..), mkDataType, DataType, mkConstr, Constr, constrIndex, Fixity(..))
+-#if MIN_VERSION_base(4,4,0)
+-import Data.Typeable (Typeable2(..), TyCon, mkTyCon3, mkTyConApp, gcast1)
+-#else
+-import Data.Typeable (Typeable2(..), TyCon, mkTyCon, mkTyConApp, gcast1)
+-#endif
+-#endif
++import Data.Typeable
+ 
+ data Dual k a b = Dual { runDual :: k b a }
++    deriving Typeable
+ 
+ instance Category k => Category (Dual k) where
+   id = Dual id
+   Dual f . Dual g = Dual (g . f)
+-
+-#ifdef __GLASGOW_HASKELL__
+-instance Typeable2 k => Typeable2 (Dual k) where
+-  typeOf2 tfab = mkTyConApp dataTyCon [typeOf2 (undefined `asDualArgsType` tfab)]
+-    where asDualArgsType :: f b a -> t f a b -> f b a
+-          asDualArgsType = const
+-
+-dataTyCon :: TyCon
+-#if MIN_VERSION_base(4,4,0)
+-dataTyCon = mkTyCon3 "categories" "Control.Category.Dual" "Dual"
+-#else
+-dataTyCon = mkTyCon "Control.Category.Dual.Dual"
+-#endif
+-{-# NOINLINE dataTyCon #-}
+-
+-dualConstr :: Constr
+-dualConstr = mkConstr dataDataType "Dual" [] Prefix
+-{-# NOINLINE dualConstr #-}
+-
+-dataDataType :: DataType
+-dataDataType = mkDataType "Control.Category.Dual.Dual" [dualConstr]
+-{-# NOINLINE dataDataType #-}
+-
+-instance (Typeable2 k, Data a, Data b, Data (k b a)) => Data (Dual k a b) where
+-  gfoldl f z (Dual a) = z Dual `f` a
+-  toConstr _ = dualConstr
+-  gunfold k z c = case constrIndex c of
+-    1 -> k (z Dual)
+-    _ -> error "gunfold"
+-  dataTypeOf _ = dataDataType
+-  dataCast1 f = gcast1 f
+-#endif
