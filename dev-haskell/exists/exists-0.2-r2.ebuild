@@ -18,13 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/contravariant-0.1:=[profile?]
-		<dev-haskell/contravariant-0.5:=[profile?]
-		>=dev-lang/ghc-7.4.1:="
+RDEPEND=">=dev-haskell/contravariant-0.1:=[profile?] <dev-haskell/contravariant-0.7:=[profile?]
+	>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10"
 
 src_prepare() {
 	cabal_chdeps \
-		'contravariant >= 0.1 && < 0.3' 'contravariant >= 0.1 && < 0.5'
+		'contravariant >= 0.1 && < 0.3' 'contravariant >= 0.1 && < 0.7'
 }
