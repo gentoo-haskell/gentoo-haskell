@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="tests"
 
 RDEPEND=">=dev-haskell/happstack-server-6:=[profile?]
-	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/plugins-auto-0.0:=[profile?] <dev-haskell/plugins-auto-0.1:=[profile?]
 	>=dev-haskell/th-lift-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -32,7 +32,9 @@ src_prepare() {
 	cabal_chdeps \
 		'template-haskell >= 2.6 && <2.8' 'template-haskell >= 2.6 && <2.9' \
 		'happstack-server >= 6   && <7.2' 'happstack-server >= 6' \
-		'th-lift          == 0.5.*' 'th-lift          >= 0.5'
+		'th-lift          == 0.5.*' 'th-lift          >= 0.5' \
+		'mtl              >= 2.0 && <2.2' 'mtl              >= 2.0 && <2.3' \
+		'template-haskell >= 2.6 && <2.9' 'template-haskell >= 2.6 && <2.10'
 }
 
 src_configure() {
