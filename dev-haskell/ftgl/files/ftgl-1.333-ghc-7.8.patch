@@ -1,0 +1,36 @@
+diff --git a/Graphics/Rendering/FTGL.hs b/Graphics/Rendering/FTGL.hs
+index 9c26e0e..9fe51da 100644
+--- a/Graphics/Rendering/FTGL.hs
++++ b/Graphics/Rendering/FTGL.hs
+@@ -26,7 +26,6 @@
+ module Graphics.Rendering.FTGL 
+ where
+ 
+-import Foreign (unsafePerformIO)
+ import Foreign.C
+ import Foreign.Ptr
+ import Foreign.Marshal.Alloc
+@@ -34,6 +33,8 @@ import Foreign.Marshal.Array
+ import Data.Bits 
+ import Data.Char (ord)
+ 
++import qualified System.IO.Unsafe as U (unsafePerformIO)
++
+ import qualified Graphics.Rendering.OpenGL.GL as GL
+ 
+ import Control.Applicative ((<$>))
+@@ -162,12 +163,12 @@ setCharMap font charmap = fsetFontCharMap font (marshalCharMap charmap)
+ foreign import ccall unsafe "ftglGetFontCharMapCount" fgetFontCharMapCount :: Font -> IO CInt
+ -- | Get the number of characters loaded into the current charmap for the font.
+ getFontCharMapCount :: Font -> Int
+-getFontCharMapCount f = fromIntegral . unsafePerformIO $ fgetFontCharMapCount f
++getFontCharMapCount f = fromIntegral . U.unsafePerformIO $ fgetFontCharMapCount f
+ 
+ 
+ foreign import ccall unsafe "ftglGetFontCharMapList" fgetFontCharMapList  :: Font -> IO (Ptr CInt)
+ -- | Get the different character mappings available in this font.
+-getFontCharMapList f = unsafePerformIO $ fgetFontCharMapList f
++getFontCharMapList f = U.unsafePerformIO $ fgetFontCharMapList f
+ 
+ 
+ foreign import ccall unsafe "ftglSetFontFaceSize" fsetFontFaceSize  :: Font -> CInt -> CInt -> IO CInt
