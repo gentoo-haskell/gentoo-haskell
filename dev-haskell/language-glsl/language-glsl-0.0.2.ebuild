@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="GLSL abstract syntax tree, parser, and pretty-printer"
-HOMEPAGE="https://github.com/noteed/language-glsl"
+HOMEPAGE="http://hackage.haskell.org/package/language-glsl"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
