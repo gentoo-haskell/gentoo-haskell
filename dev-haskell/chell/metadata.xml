@@ -42,4 +42,7 @@
 		PASS: 2 tests run, 2 tests passed
 		@
 	</longdescription>
+	<use>
+		<flag name="color-output">use colors in program output</flag>
+	</use>
 </pkgmetadata>
