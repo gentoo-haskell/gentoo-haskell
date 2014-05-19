@@ -29,6 +29,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
 
+src_prepare() {
+	# The compiler error occurs compiling Setup.hs so we can not use
+	# LANGUAGE CPP here, hence the conditionally applied patch
+	if has_version ">=dev-lang/ghc-7.8"; then
+		epatch "${FILESDIR}/${PN}-0.7-ghc-7.8.patch"
+	fi
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag systemencoding systemencoding)

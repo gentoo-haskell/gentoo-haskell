@@ -1,0 +1,26 @@
+--- encoding-0.7-orig/Data/Static.hs	2014-01-17 13:29:27.000000000 +1100
++++ encoding-0.7/Data/Static.hs	2014-05-19 18:00:27.320667348 +1000
+@@ -36,7 +36,7 @@
+ 
+ instance StaticElement (Maybe Char) where
+     extract addr i = let !v = indexWord32OffAddr# addr i
+-                     in if eqWord# v (int2Word# 4294967295#) -- -1 in Word32
++                     in if tagToEnum# (eqWord# v (int2Word# 4294967295#)) -- -1 in Word32
+                         then Nothing
+                         else (if (I# (word2Int# v)) > 0x10FFFF
+                               then error (show (I# (word2Int# v))++" is not a valid char ("++show (I# i)++")")
+--- encoding-0.7-orig/Data/Array/Static.hs	2014-01-17 13:29:27.000000000 +1100
++++ encoding-0.7/Data/Array/Static.hs	2014-05-19 22:37:40.034883332 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE MagicHash #-}
++{-# LANGUAGE BangPatterns, MagicHash #-}
+ module Data.Array.Static where
+ 
+ import Data.Static
+@@ -11,5 +11,5 @@
+ bounds (StaticArray s e _) = (s,e)
+ 
+ (!) :: (StaticElement e,Ix i) => StaticArray i e -> i -> e
+-(!) (StaticArray s e addr) i = let (I# ri) = index (s,e) i
++(!) (StaticArray s e addr) i = let !(I# ri) = index (s,e) i
+                                in extract addr ri
