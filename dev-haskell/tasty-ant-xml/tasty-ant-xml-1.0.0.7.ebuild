@@ -26,8 +26,8 @@ RDEPEND=">=dev-haskell/generic-deriving-1.6.2:=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-0.9:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?]
 	>=dev-haskell/xml-1.3.13:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.10
 "
