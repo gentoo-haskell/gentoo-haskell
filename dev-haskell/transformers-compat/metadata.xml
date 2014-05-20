@@ -17,8 +17,4 @@
 		Note: missing methods are not supplied
 		but this at least permits the types to be used.
 	</longdescription>
-	<use>
-		<flag name="transformers2">Provide compatibility with transformers 2</flag>
-		<flag name="transformers3">Provide compatibility with transformers 3</flag>
-	</use>
 </pkgmetadata>
