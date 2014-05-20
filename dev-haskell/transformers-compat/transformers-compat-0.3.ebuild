@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A small compatibility shim exposing the new types from transformers 0.3 and 0.4 to older Haskell platforms."
+DESCRIPTION="Thin compatibility shim on top of transformers 0.2 which add the types from transformers-0.3."
 HOMEPAGE="http://github.com/ekmett/transformers-compat/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
