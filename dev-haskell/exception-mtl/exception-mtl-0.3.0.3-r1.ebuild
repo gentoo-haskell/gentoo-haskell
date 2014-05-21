@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,5 +30,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'transformers           >=0.2 && <0.4' 'transformers           >=0.2 && <0.5' \
-		'mtl                    >=2.0 && <2.2' 'mtl                    >=2.0 && <2.3' 
+		'mtl                    >=2.0 && <2.2' 'mtl                    >=2.0 && <2.3'
 }
