@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name='binary'>Install the binary version directly, rather than using it to build the source version.</flag>
-		<flag name='dph'>Internal: Build ghc with Data Parallel Haskell</flag>
 		<flag name='ghcbootstrap'>Internal: Bootstrap GHC from an existing GHC installation.</flag>
 		<flag name='ghcmakebinary'>Internal: Build binary friendly for redistribution.</flag>
 		<flag name='gmp'>use <pkg>dev-libs/gmp</pkg> for integer operations (works faster, but an external depend).</flag>
