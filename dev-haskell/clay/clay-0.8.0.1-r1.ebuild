@@ -32,6 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'test-framework-hunit >= 0.3 && < 0.4' 'test-framework-hunit >= 0.3 && < 0.4, text, mtl' \
-	    'mtl   >= 1    && < 2.2'  'mtl   >= 1    && < 2.3' 
+	    'mtl   >= 1    && < 2.2'  'mtl   >= 1    && < 2.3'
 
 }
