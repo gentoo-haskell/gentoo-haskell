@@ -1,0 +1,42 @@
+commit ce757c7161775a83237db6325b824de241765969
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Mon May 19 01:06:36 2014 +0300
+
+    port to fclabels-2,0
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/LambdaWars.cabal b/LambdaWars.cabal
+index d95dbf7..f61a318 100644
+--- a/LambdaWars.cabal
++++ b/LambdaWars.cabal
+@@ -35,7 +35,7 @@ executable LambdaWars
+                , AC-Vector
+                , AC-Vector-Fancy
+                , AC-Angle
+-               , fclabels
++               , fclabels >= 2.0
+                , time
+                , OpenGL >= 2.9
+                , GLUT
+diff --git a/src/Engine.hs b/src/Engine.hs
+index 8979c74..c90ae9e 100644
+--- a/src/Engine.hs
++++ b/src/Engine.hs
+@@ -7,7 +7,7 @@ import Control.Monad.Random
+ import Control.Monad.Random.Class
+ import Control.Monad.Loops
+ import Data.List
+-import Data.Label.Pure
++import Data.Label.Total
+ import Debug.Trace
+ 
+ -- Vectors
+@@ -23,7 +23,6 @@ import Control.Applicative
+ 
+ import Core
+ import GeometryUtils
+-import Data.Label.Pure
+ import WorldRules
+ import TupleUtils
+ 
