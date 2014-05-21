@@ -43,19 +43,10 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/hunit )
+	test? ( dev-haskell/hunit
+		<dev-haskell/parsec-4
+		dev-haskell/zlib )
 "
-src_prepare() {
-	cabal_chdeps \
-		'transformers >= 0.1.3 && < 0.4' 'transformers >= 0.1.3 && < 0.5' \
-		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3'
-}
-
-src_prepare() {
-	cabal_chdeps \
-		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3' \
-		'transformers >= 0.1.3 && < 0.4' 'transformers >= 0.1.3 && < 0.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
