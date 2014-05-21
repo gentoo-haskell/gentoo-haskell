@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -10,7 +10,6 @@ inherit darcs haskell-cabal
 DESCRIPTION="Support for using HStringTemplate in Happstack"
 HOMEPAGE="http://www.happstack.com/"
 EDARCS_REPOSITORY="http://patch-tag.com/r/mae/happstack"
-
 
 S="${WORKDIR}/${P}/${PN}"
 
