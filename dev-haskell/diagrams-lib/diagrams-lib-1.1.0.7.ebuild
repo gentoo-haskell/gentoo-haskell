@@ -39,9 +39,3 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'semigroups >= 0.3.4 && < 0.14' 'semigroups >= 0.3.4 && < 0.15'
-
-}
