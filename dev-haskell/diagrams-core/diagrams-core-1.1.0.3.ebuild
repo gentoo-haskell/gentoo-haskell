@@ -31,8 +31,3 @@ RDEPEND=">=dev-haskell/dual-tree-0.2:=[profile?] <dev-haskell/dual-tree-0.3:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-src_prepare() {
-	cabal_chdeps \
-		'semigroups >= 0.8.4 && < 0.14' 'semigroups >= 0.8.4 && < 0.15'
-
-}
