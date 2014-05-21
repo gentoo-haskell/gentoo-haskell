@@ -66,8 +66,8 @@ S="${WORKDIR}"/${GHC_P}
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
 if [[ ${PV} = *9999* ]]; then
-    EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-    unset SRC_URI
+	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
+	unset SRC_URI
 fi
 
 LICENSE="BSD"
