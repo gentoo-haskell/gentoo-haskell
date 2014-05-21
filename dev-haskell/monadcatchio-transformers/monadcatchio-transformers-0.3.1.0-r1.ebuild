@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -36,4 +36,3 @@ src_prepare() {
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
 	  'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
 }
-
