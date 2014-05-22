@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/enumerator-0.4:=[profile?] <dev-haskell/enumerator-0.5:=[profile?]
 	>=dev-haskell/io-streams-1.1:=[profile?] <dev-haskell/io-streams-1.2:=[profile?]
-	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/snap-core-0.8:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
 	>=dev-haskell/snap-server-0.8:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
 	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.9:=[profile?]
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl           >= 2.1 && < 2.2' 'mtl           >= 2.1 && < 2.3'
+}
