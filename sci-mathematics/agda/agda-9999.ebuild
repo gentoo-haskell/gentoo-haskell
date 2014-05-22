@@ -30,13 +30,13 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
-	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/stmonadtrans-0.3.2:=[profile?] <dev-haskell/stmonadtrans-0.4:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
@@ -80,6 +80,10 @@ src_prepare() {
 	sed -e '/, "-Werror"/d' \
 		-i "${S}/src/full/Agda/Compiler/MAlonzo/Compiler.hs" \
 		|| die "sed to remove -Werror from Compiler.hs failed"
+
+		cabal_chdeps \
+			'mtl >= 2.1.1 && < 2.2' 'mtl >= 2.1.1 && < 2.3' \
+			'transformers == 0.3.*' 'transformers >= 0.3 && < 0.5'
 }
 
 src_configure() {
