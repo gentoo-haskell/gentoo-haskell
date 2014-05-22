@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-lang/ghc-6.12.1:=
 	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?] )
 	|| ( ( >=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.1:=[profile?] )
-		( >=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?] ) )
+		( >=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] ) )
 	|| ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
 		( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
 	virtual/emacs
@@ -58,7 +58,9 @@ src_prepare() {
 		'base >= 4.2 && < 4.7' 'base >= 4.2 && < 4.8' \
 		'array >= 0.1 && < 0.5' 'array >= 0.1 && < 0.6' \
 		'process >= 1.0.1.0 && < 1.2' 'process >= 1.0.1.0 && < 1.3' \
-        'QuickCheck >= 2.3 && < 2.7' 'QuickCheck >= 2.3 && < 2.8'
+		'QuickCheck >= 2.3 && < 2.7' 'QuickCheck >= 2.3 && < 2.8' \
+		'mtl >= 2.0 && < 2.1 || >= 2.1.1 && < 2.2' 'mtl >= 2.0 && < 2.1 || >= 2.1.1 && < 2.3' \
+		
 
 	sed -e '/.*emacs-mode.*$/d' \
 		-e '/^executable agda/,$d' \
