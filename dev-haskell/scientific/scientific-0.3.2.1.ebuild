@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+bytestring-builder"
 
 RDEPEND=">=dev-haskell/hashable-1.1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -32,3 +32,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.9
 		>=dev-haskell/text-0.8 <dev-haskell/text-1.3 )
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag bytestring-builder bytestring-builder)
+}
