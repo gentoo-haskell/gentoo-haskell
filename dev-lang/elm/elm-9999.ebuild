@@ -31,6 +31,7 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 	dev-haskell/cmdargs:=[profile?]
 	dev-haskell/indents:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-1.0:=[profile?]
+	>=dev-haskell/language-glsl-0.0.2:=
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/parsec-3.1.1:=[profile?]
 	dev-haskell/text:=[profile?]
