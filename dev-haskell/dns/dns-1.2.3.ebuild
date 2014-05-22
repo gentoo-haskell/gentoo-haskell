@@ -19,19 +19,24 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# The cabal file has different dependencies for GHC-6.x and 7.x. Rather
+# than overcomplicate things, we just require >=dev-lang/ghc-7 and
+# manually set the dependencies to those from the GHC-7.x clause.
+#
+# This avoids breakage when both network and network-bytestring are
+# installed at the same time.
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/attoparsec-conduit:=[profile?]
 	dev-haskell/binary:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?]
-	dev-haskell/conduit-extra:=[profile?]
+	>=dev-haskell/conduit-extra-1.1:=[profile?]
 	>=dev-haskell/iproute-1.2.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
-	dev-haskell/network-bytestring:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-7:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
