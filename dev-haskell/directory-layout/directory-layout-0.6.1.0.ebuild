@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # some files are missing
+
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?]
 	>=dev-haskell/free-4.7:=[profile?]
 	>=dev-haskell/hspec-1.8:=[profile?]
