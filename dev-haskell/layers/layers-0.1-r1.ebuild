@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+RDEPEND=">dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -27,4 +27,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	HCFLAGS+=" -XImpredicativeTypes"
+
+	cabal_chdeps \
+		'transformers > 0.2 && < 0.4' 'transformers > 0.2 && < 0.5'
 }
