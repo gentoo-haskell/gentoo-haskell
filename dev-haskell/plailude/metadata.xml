@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		The prelude used internally at plaimi.
+		It does not make a whole lot of sense to use this unless
+		you are hacking on a plaimi project. Arguably, it
+		doesn&#39;t even make a little sense.
+	</longdescription>
+</pkgmetadata>
