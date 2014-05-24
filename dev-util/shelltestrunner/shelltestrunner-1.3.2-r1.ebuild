@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -36,5 +36,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'regex-tdfa           >= 1.1   && < 1.2' 'regex-tdfa           >= 1.1   && < 1.3'
+		'regex-tdfa           >= 1.1   && < 1.2' \
+		'regex-tdfa           >= 1.1   && < 1.3'
+
+	cabal_chdeps \
+		'process                          < 1.2' \
+		'process                          < 1.3'
 }
