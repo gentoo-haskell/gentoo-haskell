@@ -22,6 +22,8 @@ SLOT="0/${PV}"
 #KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # some tests fail downlaods
+
 RDEPEND=">=app-text/pandoc-1.10:=[profile?]
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
