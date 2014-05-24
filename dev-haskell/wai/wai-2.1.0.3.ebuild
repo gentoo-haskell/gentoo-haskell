@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
-	>=dev-haskell/conduit-extra-1.1:=[profile?]
+	>=dev-haskell/conduit-extra-1.0:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/network-2.2.1.5:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
