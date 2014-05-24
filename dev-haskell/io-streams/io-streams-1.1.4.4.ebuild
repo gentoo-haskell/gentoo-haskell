@@ -42,15 +42,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/text-0.10 <dev-haskell/text-1.2
-		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
+		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.5
 		>=dev-haskell/vector-0.7 <dev-haskell/vector-0.11
 		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6
 		>=dev-haskell/zlib-bindings-0.1 <dev-haskell/zlib-bindings-0.2 )
 "
-src_prepare() {
-	cabal_chdeps \
-		'transformers  >= 0.2   && <0.4' 'transformers  >= 0.2   && <0.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
