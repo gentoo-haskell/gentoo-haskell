@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -37,14 +37,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/resourcet
-		>=dev-haskell/transformers-0.1 <dev-haskell/transformers-0.5 )
+		dev-haskell/text
+		>=dev-haskell/transformers-0.1
+		dev-haskell/unordered-containers
+		dev-haskell/vector )
 	system-libyaml? ( virtual/pkgconfig )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'transformers >= 0.1 && < 0.4' 'transformers >= 0.1 && < 0.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
