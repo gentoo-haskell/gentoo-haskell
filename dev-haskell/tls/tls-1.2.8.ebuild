@@ -23,7 +23,9 @@ RDEPEND="dev-haskell/asn1-encoding:=[profile?]
 	dev-haskell/byteable:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/cipher-aes-0.2:=[profile?] <dev-haskell/cipher-aes-0.3:=[profile?]
+	dev-haskell/cipher-des:=[profile?]
 	dev-haskell/cipher-rc4:=[profile?]
+	>=dev-haskell/crypto-cipher-types-0.0.8:=[profile?]
 	dev-haskell/crypto-numbers:=[profile?]
 	>=dev-haskell/crypto-pubkey-0.2.4:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.4:=[profile?]
@@ -39,8 +41,12 @@ RDEPEND="dev-haskell/asn1-encoding:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/cprng-aes-0.5
+	test? ( >=dev-haskell/cereal-0.3
+		>=dev-haskell/cprng-aes-0.5
+		>=dev-haskell/crypto-pubkey-0.2
 		dev-haskell/crypto-random
+		dev-haskell/data-default-class
+		dev-haskell/mtl
 		>=dev-haskell/quickcheck-2
 		dev-haskell/test-framework
 		dev-haskell/test-framework-quickcheck2
