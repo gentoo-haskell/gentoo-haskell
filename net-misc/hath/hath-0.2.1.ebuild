@@ -25,12 +25,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/dns-1.2
 	>=dev-haskell/missingh-1.2 <dev-haskell/missingh-1.3
 	>=dev-haskell/parallel-io-0.3 <dev-haskell/parallel-io-0.4
-	>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.8
 	>=dev-haskell/split-0.2 <dev-haskell/split-0.3
 	>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.9
 	>=dev-haskell/tasty-hunit-0.8 <dev-haskell/tasty-hunit-0.9
-	>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
+	>=dev-haskell/tasty-quickcheck-0.8.1
 	>=dev-lang/ghc-7.6.1
+	test? ( >=dev-util/shelltestrunner-1.3 )
 "
 
 # Run only the non-network tests.
