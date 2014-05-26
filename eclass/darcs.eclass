@@ -88,7 +88,7 @@ DEPEND="dev-vcs/darcs
 # @DESCRIPTION:
 # Internal function to determine amount of patches in repository.
 darcs_patchcount() {
-	set -- $(HOME="${EDARCS_TOP_DIR}" ${EDARCS_DARCS_CMD} show repo | grep "Num Patches")
+	set -- $(HOME="${EDARCS_TOP_DIR}" ${EDARCS_DARCS_CMD} show repo --repodir="${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}" | grep "Num Patches")
 	# handle string like: "    Num Patches: 3860"
 	echo ${3}
 }
