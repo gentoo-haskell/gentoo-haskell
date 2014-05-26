@@ -26,6 +26,6 @@ DEPEND="${RDEPEND}
 	dev-haskell/snap-core
 	dev-haskell/snap-server
 	dev-haskell/unordered-containers
-	>=dev-lang/elm-0.11
+	>=dev-lang/elm-0.12.3
 	>=dev-lang/ghc-7.4.1
 "
