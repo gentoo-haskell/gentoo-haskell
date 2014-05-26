@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -39,4 +39,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
+}
+
+src_install() {
+	doman man/hackport.1
 }
