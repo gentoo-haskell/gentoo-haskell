@@ -45,8 +45,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2.1:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
-	>=dev-lang/ghc-7.6:=[profile?]
+	>=dev-lang/ghc-7.6:=
 	ghcapi? ( >=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 			>=dev-haskell/puremd5-0.2.3:=[profile?]
 			>=dev-haskell/rosezipper-0.1:=[profile?] <dev-haskell/rosezipper-0.3:=[profile?] )
