@@ -42,5 +42,6 @@ src_prepare() {
 }
 
 src_install() {
+	haskell-cabal_src_install
 	doman man/hackport.1
 }
