@@ -30,11 +30,17 @@ RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/doctest-0.9.3
-		|| ( ( <dev-lang/ghc-7.6.0 dev-haskell/executable-path )
-			( >=dev-lang/ghc-7.6.0 ) )
-		>=dev-haskell/hspec-1.7.1 )
+	test? ( || ( ( <dev-lang/ghc-7.6.0 dev-haskell/executable-path )
+				 ( >=dev-lang/ghc-7.6.0 )
+			   )
+			   dev-haskell/convertible
+			   >=dev-haskell/doctest-0.9.3
+			   dev-haskell/ghc-syb-utils
+			   >=dev-haskell/hlint-1.7.1
+			   >=dev-haskell/hspec-1.7.1
+			   dev-haskell/io-choice
+			   dev-haskell/syb
+			   dev-haskell/transformers )
 "
 SITEFILE=50${PN}-gentoo.el
 
