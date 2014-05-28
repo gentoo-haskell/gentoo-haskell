@@ -47,6 +47,7 @@ src_configure() {
 	# as external one is likely to break our haddock
 	# (known to work on 1.16.0 and breaks on 1.16.0.1!)
 	haskell-cabal_src_configure \
+		--ghc-options=-rtsopts \
 		--with-haddock="${exe}" \
 		--constraint="Cabal == $(cabal-version)"
 }
