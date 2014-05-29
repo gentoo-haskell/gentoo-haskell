@@ -21,28 +21,23 @@ IUSE="portable"
 RESTRICT=test # hangs
 
 RDEPEND="dev-haskell/binary:=[profile?]
-	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+	>=dev-haskell/hashable-1.1.2.3:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
+	>=dev-haskell/unordered-containers-0.2.1:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/binary
-		>=dev-haskell/hashable-1.1.2.3 <dev-haskell/hashable-1.3
+		>=dev-haskell/hashable-1.1.2.3
 		>=dev-haskell/quickcheck-2.0
 		dev-haskell/random
-		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.4
-		>=dev-haskell/unordered-containers-0.2.1 <dev-haskell/unordered-containers-0.3
+		>=dev-haskell/transformers-0.2
+		>=dev-haskell/unordered-containers-0.2.1
 		>=dev-haskell/utf8-string-0.3 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
