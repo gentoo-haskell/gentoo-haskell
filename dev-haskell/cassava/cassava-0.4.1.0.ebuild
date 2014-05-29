@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	<dev-haskell/blaze-builder-0.4:=[profile?]
 	<dev-haskell/text-1.2:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
@@ -32,5 +32,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.0
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
-		dev-haskell/test-framework-quickcheck2 )
+		dev-haskell/test-framework-quickcheck2
+		dev-haskell/text
+		dev-haskell/unordered-containers
+		dev-haskell/vector )
 "
