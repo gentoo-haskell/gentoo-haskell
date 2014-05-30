@@ -27,7 +27,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/extensible-exceptions
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.1.0.1 <dev-haskell/quickcheck-2.8
+		>=dev-haskell/quickcheck-2.1.0.1:2 <dev-haskell/quickcheck-2.8:2
 		dev-haskell/regex-posix
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
