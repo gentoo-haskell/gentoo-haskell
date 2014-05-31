@@ -1,0 +1,12 @@
+diff --git a/Annotations/MultiRec/Annotated.hs b/Annotations/MultiRec/Annotated.hs
+index 9b6c836..9345656 100644
+--- a/Annotations/MultiRec/Annotated.hs
++++ b/Annotations/MultiRec/Annotated.hs
+@@ -4,6 +4,7 @@
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE RankNTypes #-}
+ {-# LANGUAGE ScopedTypeVariables #-}
++{-# LANGUAGE AllowAmbiguousTypes #-}
+ 
+ module Annotations.MultiRec.Annotated (
+     AnnFix, AnnFix1, mkAnnFix, AnyAnnFix,
