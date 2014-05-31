@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (31 May 2014)
+# Deprecated in favour of dev-haskell/cabal-install sandbox feature.
+dev-haskell/cabal-dev
+
 # Sergei Trofimovich <slyfox@gentoo.org> (21 May 2014)
 # Was merged into dev-haskell/network.
 dev-haskell/network-bytestring
