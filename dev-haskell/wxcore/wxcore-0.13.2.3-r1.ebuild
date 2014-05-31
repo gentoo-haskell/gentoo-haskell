@@ -27,7 +27,8 @@ RDEPEND="dev-haskell/parsec:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/${PN}-0.13.2.3-ghc-7.6.patch")
+PATCHES=("${FILESDIR}/${PN}"-0.13.2.3-ghc-7.6.patch
+	"${FILESDIR}/${PN}"-0.13.2.3-stdcpp.patch)
 
 src_prepare() {
 	base_src_prepare
