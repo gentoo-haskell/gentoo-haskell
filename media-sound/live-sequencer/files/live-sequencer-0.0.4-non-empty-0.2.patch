@@ -1,0 +1,13 @@
+diff --git a/src/Option.hs b/src/Option.hs
+index ed625f2..f29a4c6 100644
+--- a/src/Option.hs
++++ b/src/Option.hs
+@@ -142,7 +142,7 @@ description deflt =
+         (flip ReqArg "PORTNAME" $ \str flags ->
+             return $ flags{connect =
+                 NEList.cons (Port str Nothing (Just [])) $
+-                connect flags})
++                NEList.flatten $ connect flags})
+         ("create new ALSA output port and add 16 MIDI channels") :
+     Opt.Option [] ["sequencer-name"]
+         (flip ReqArg "NAME" $ \str flags ->
