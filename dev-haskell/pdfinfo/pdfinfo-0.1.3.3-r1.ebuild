@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,9 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
+RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'mtl >= 1.1 && < 2.2' 'mtl >= 1.1 && < 2.3' \
+		'process >= 1.0 && < 1.2' 'process >= 1.0 && < 1.3'
+}
