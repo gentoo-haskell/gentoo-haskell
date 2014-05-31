@@ -24,8 +24,13 @@ RDEPEND=">=dev-haskell/monads-tf-0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/chell-0.3.1 <dev-haskell/chell-0.4
+	test? ( >=dev-haskell/chell-0.3.1 <dev-haskell/chell-0.5
 		>=dev-haskell/chell-quickcheck-0.2 <dev-haskell/chell-quickcheck-0.3
 		>=dev-haskell/monads-tf-0.1
 		>=dev-haskell/transformers-0.2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'chell >= 0.3.1 && < 0.4' 'chell >= 0.3.1 && < 0.5'
+}
