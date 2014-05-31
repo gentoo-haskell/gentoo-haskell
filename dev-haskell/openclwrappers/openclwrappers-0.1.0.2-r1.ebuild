@@ -21,11 +21,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+RDEPEND=">=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -33,5 +32,6 @@ CABAL_CONFIGURE_FLAGS=(--flags=link)
 
 src_prepare() {
 	cabal_chdeps \
-		'base < 4.7' 'base'
+		'base < 4.7' 'base' \
+		'mtl >= 2 && < 2.2' 'mtl >= 2 && < 2.3'
 }
