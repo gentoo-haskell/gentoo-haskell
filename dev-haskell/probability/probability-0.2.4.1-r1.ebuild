@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2:=[profile?]
-	>=dev-haskell/transformers-0.0.1:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utility-ht-0.0.6:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -28,3 +28,8 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}/${PN}-0.2.4-haddock-remove-unicode.patch")
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.0.1 && <0.4' 'transformers >=0.0.1 && <0.5'
+}
