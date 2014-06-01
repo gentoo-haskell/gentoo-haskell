@@ -36,7 +36,7 @@ PATCHES=("${FILESDIR}/${PN}-1.1.4-cabal-remove-haskell98.patch"
 src_prepare() {
 	base_src_prepare
 	# takes A Lot of RAM
-	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[1-9] -O0
 }
 
 src_install() {
