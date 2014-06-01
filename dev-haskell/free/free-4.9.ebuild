@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/distributive-0.2.1:=[profile?]
-	>=dev-haskell/either-4.1.1:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/prelude-extras-0.4:=[profile?] <dev-haskell/prelude-extras-1:=[profile?]
 	>=dev-haskell/profunctors-4:=[profile?] <dev-haskell/profunctors-5:=[profile?]
