@@ -18,9 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/pdfinfo-0*
+RDEPEND=">=dev-haskell/pdfinfo-0
 		>=dev-haskell/temporary-1
 		>=dev-lang/ghc-6.10.1"
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	cabal_chdeps \
+		'pdfinfo >= 0 && < 1' 'pdfinfo >= 0'
+}
