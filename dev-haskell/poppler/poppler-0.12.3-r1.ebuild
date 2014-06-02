@@ -13,7 +13,7 @@ GTK_MAJ_VER="2"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the Poppler."
 HOMEPAGE="http://www.haskell.org/gtk2hs/"
@@ -37,3 +37,5 @@ RDEPEND=">=dev-haskell/cairo-0.12.0:0=[profile?] <dev-haskell/cairo-0.13.0:0=[pr
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0="
+
+PATCHES=("${FILESDIR}"/${PN}-0.12.3-printf.patch)
