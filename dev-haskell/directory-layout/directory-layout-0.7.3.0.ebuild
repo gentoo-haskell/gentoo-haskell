@@ -20,7 +20,8 @@ IUSE=""
 
 RESTRICT=test # needs 'root' for tests
 
-RDEPEND=">=dev-haskell/free-4.7:=[profile?]
+RDEPEND=">=dev-haskell/command-qq-0.2.2.0:=[profile?]
+	>=dev-haskell/free-4.7:=[profile?]
 	>=dev-haskell/hspec-1.8:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
 	>=dev-haskell/semigroups-0.12:=[profile?]
