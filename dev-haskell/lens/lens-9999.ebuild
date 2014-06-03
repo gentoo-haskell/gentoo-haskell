@@ -16,9 +16,10 @@ EGIT_REPO_URI="https://github.com/ekmett/lens/"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="benchmark-uniplate dump-splices +inlining lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
+IUSE="benchmark-uniplate dump-splices +inlining j lib-werror old-inline-pragmas safe +test-doctests +test-hlint +test-hunit +test-properties +trustworthy"
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
+	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/contravariant-0.3:=[profile?] <dev-haskell/contravariant-1:=[profile?]
@@ -40,37 +41,25 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/utf8-string-0.3.7:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/void-0.5:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-haskell/zlib-0.5.4:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
-	>=dev-lang/ghc-7.0.1:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10.0.0
-	test? ( test-doctests? ( >=dev-lang/ghc-7.4.1
-					>=dev-haskell/doctest-0.9.1
-					dev-haskell/generic-deriving
-					dev-haskell/nats
-					dev-haskell/parallel
-					>=dev-haskell/semigroups-0.9
-					>=dev-haskell/simple-reflect-0.3.1
-					dev-haskell/split
-					dev-haskell/text
-					dev-haskell/unordered-containers
-					dev-haskell/vector
-					!test-hunit? ( dev-haskell/mtl ) )
-		test-hlint? ( >=dev-haskell/hlint-1.7 )
-		test-hunit? ( >=dev-haskell/hunit-1.2
-				dev-haskell/mtl
-				>=dev-haskell/test-framework-0.6
-				>=dev-haskell/test-framework-hunit-0.2
-				>=dev-haskell/test-framework-th-0.2 )
-		test-properties? ( >=dev-haskell/quickcheck-2.4
-					>=dev-haskell/test-framework-0.6
-					>=dev-haskell/test-framework-quickcheck2-0.2
-					>=dev-haskell/test-framework-th-0.2
-					dev-haskell/transformers ) )
+	>=dev-haskell/cabal-1.8
+	test? ( >=dev-haskell/doctest-0.9.1
+		dev-haskell/generic-deriving
+		>=dev-haskell/hlint-1.7
+		>=dev-haskell/hunit-1.2
+		dev-haskell/nats
+		>=dev-haskell/quickcheck-2.4
+		>=dev-haskell/semigroups-0.9
+		>=dev-haskell/simple-reflect-0.3.1
+		>=dev-haskell/test-framework-0.6
+		>=dev-haskell/test-framework-hunit-0.2
+		>=dev-haskell/test-framework-quickcheck2-0.2
+		>=dev-haskell/test-framework-th-0.2 )
 "
 
 src_configure() {
@@ -78,6 +67,7 @@ src_configure() {
 		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
 		$(cabal_flag dump-splices dump-splices) \
 		$(cabal_flag inlining inlining) \
+		$(cabal_flag j j) \
 		$(cabal_flag lib-werror lib-werror) \
 		$(cabal_flag old-inline-pragmas old-inline-pragmas) \
 		$(cabal_flag safe safe) \
