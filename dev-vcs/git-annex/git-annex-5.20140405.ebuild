@@ -78,6 +78,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/http-types
 			dev-haskell/transformers
 			dev-haskell/network-conduit
+			dev-haskell/shakespeare
 			dev-haskell/transformers
 			dev-haskell/wai
 			dev-haskell/wai-logger
@@ -111,6 +112,9 @@ src_prepare() {
 	# need STM via Remote.External
 	cabal_chdeps \
 		'MissingH, hslogger, directory, filepath,' 'MissingH, hslogger, directory, filepath, stm,'
+
+	cabal_chdeps \
+		'hamlet' 'hamlet, shakespeare'
 }
 
 src_configure() {
