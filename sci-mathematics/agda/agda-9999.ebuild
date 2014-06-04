@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
 	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
-	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/quickcheck-2.7.5:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/stmonadtrans-0.3.2:=[profile?] <dev-haskell/stmonadtrans-0.4:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
