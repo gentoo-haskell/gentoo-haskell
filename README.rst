@@ -10,7 +10,7 @@ likely need to keyword everything in it::
     # install layman, if you don't have it yet:
     emerge layman
     layman -f
-    echo source /var/lib/layman/make.conf >> /etc/make.conf
+    echo source /var/lib/layman/make.conf >> /etc/portage/make.conf
     #
     # and the overlay configuration itself:
     layman -a haskell
