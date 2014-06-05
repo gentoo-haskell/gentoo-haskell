@@ -28,6 +28,7 @@ DEPEND=">=dev-lang/ghc-6.10
 	dev-haskell/regex-compat
 	dev-haskell/utf8-string
 	dev-haskell/zlib
+	dev-perl/List-MoreUtils
 	dev-perl/yaml
 "
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
