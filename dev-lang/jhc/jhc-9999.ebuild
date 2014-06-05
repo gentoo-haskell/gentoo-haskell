@@ -17,17 +17,19 @@ IUSE=""
 EDARCS_REPOSITORY="http://repetae.net/repos/jhc"
 
 DEPEND=">=dev-lang/ghc-6.10
-		dev-haskell/binary
-		>=dev-haskell/drift-2.1.1
-		dev-haskell/fgl
-		dev-haskell/happy
-		dev-haskell/hssyck
-		dev-haskell/mtl
-		app-text/pandoc
-		dev-haskell/readline
-		dev-haskell/regex-compat
-		dev-haskell/utf8-string
-		dev-haskell/zlib"
+	dev-haskell/binary
+	>=dev-haskell/drift-2.1.1
+	dev-haskell/fgl
+	dev-haskell/happy
+	dev-haskell/hssyck
+	dev-haskell/mtl
+	app-text/pandoc
+	dev-haskell/readline
+	dev-haskell/regex-compat
+	dev-haskell/utf8-string
+	dev-haskell/zlib
+	dev-perl/yaml
+"
 DEPEND="${DEPEND}	virtual/libiconv" # for source mangling
 RDEPEND=""
 
