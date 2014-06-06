@@ -26,6 +26,7 @@ DEPEND=">=dev-lang/ghc-6.10
 	app-text/pandoc
 	dev-haskell/readline
 	dev-haskell/regex-compat
+	dev-haskell/syb
 	dev-haskell/utf8-string
 	dev-haskell/zlib
 	dev-perl/List-MoreUtils
