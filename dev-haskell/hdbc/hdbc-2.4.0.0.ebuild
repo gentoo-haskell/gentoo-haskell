@@ -35,12 +35,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/testpack-2.0 )
 "
 
-PDEPEND="mysql? ( dev-haskell/hdbc-mysql )
-		odbc? ( dev-haskell/hdbc-odbc )
-		postgres? ( dev-haskell/hdbc-postgresql )
-		sqlite3? ( dev-haskell/hdbc-sqlite )
-"
-
 S="${WORKDIR}/${MY_P}"
 
 src_configure() {
