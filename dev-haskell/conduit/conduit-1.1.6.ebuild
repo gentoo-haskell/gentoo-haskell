@@ -31,6 +31,7 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3
+	test? ( >=dev-haskell/exceptions-0.6
+		>=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
