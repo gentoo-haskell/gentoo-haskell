@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Provides a Storable instance for pair and triple
+		which should be binary compatible with C99 and C++.
+		The only purpose of this package is to provide a standard location
+		for this instance so that other packages needing this instance
+		can play nicely together.
+	</longdescription>
+</pkgmetadata>
