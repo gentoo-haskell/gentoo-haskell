@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		Low level audio signal processing
+		used by the other synthesizer packages.
+		The routines can be really fast
+		due to StorableVector, Stream-like list type and aggressive inlining.
+		For an interface to Haskore see &lt;http://code.haskell.org/haskore/revised/synthesizer/&gt;.
+		For introductory examples see &quot;Synthesizer.Plain.Tutorial&quot;
+		and &quot;Synthesizer.Generic.Tutorial&quot;.
+		
+		Functions:
+		Oscillators, Noise generators, Frequency filters,
+		Fast Fourier transform for computation of frequency spectrum
+	</longdescription>
+</pkgmetadata>
