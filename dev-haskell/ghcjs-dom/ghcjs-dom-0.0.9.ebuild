@@ -31,11 +31,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'transformers >=0.3.0.0 && <0.4' 'transformers >=0.3.0.0 && <0.5'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag gtk3 gtk3) \
