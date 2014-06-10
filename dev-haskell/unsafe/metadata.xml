@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+		SafeHaskell introduced the notion of safe and unsafe modules.
+		In order to make as many as possible modules \&quot;safe\&quot;,
+		the well-known unsafe functions were moved to distinguished modules.
+		This makes it hard to write packages that work
+		with both old and new versions of GHC.
+		This package provides a single module @System.Unsafe@
+		that exports the unsafe functions from the base package.
+		It provides them in a style ready for qualification,
+		that is, you should import them by
+		
+		&gt; import qualified System.Unsafe as Unsafe
+		
+		The package also contains a script called @rename-unsafe.sh@.
+		It replaces all occurrences of the original identifiers
+		with the qualified identifiers from this package.
+		You still have to adapt the import commands.
+		It uses the @darcs-replace-rec@ script from the @darcs-scripts@ package.
+	</longdescription>
+</pkgmetadata>
