@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+optimizeadvanced"
 
+RESTRICT=test # slow
+
 RDEPEND=">=dev-haskell/binary-0.1:=[profile?] <dev-haskell/binary-1:=[profile?]
 	>=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[profile?]
 	>=dev-haskell/explicit-exception-0.1.6:=[profile?] <dev-haskell/explicit-exception-0.2:=[profile?]
