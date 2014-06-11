@@ -48,7 +48,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/shakespeare-i18n-1.0:=[profile?]
 	>=dev-haskell/shakespeare-js-1.0.2:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
@@ -70,8 +70,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/streaming-commons
 		>=dev-haskell/wai-test-1.3.0.5 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'transformers          >= 0.2.2    && < 0.4' 'transformers          >= 0.2.2    && < 0.5'
-}
