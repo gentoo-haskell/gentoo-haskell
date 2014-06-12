@@ -22,7 +22,7 @@ RESTRICT=test # hangs
 
 RDEPEND=">=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
 	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
-	>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utility-ht-0.0.10:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-2.0 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.1 && <0.4' 'transformers >=0.1 && <0.5'
+}
