@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
 inherit elisp git-2
 
@@ -26,7 +26,7 @@ SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
 	# remove '@$(RM) $*.elc' and '@$(RM) haskell-mode.info' from 'make check'
-	sed -e 's/\$(RM) \$\*\.elc/echo gento REFUSED to &/' \
+	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
 		-e 's/check: clean/check:/' \
 		-i Makefile || die
 }
@@ -55,14 +55,11 @@ src_install() {
 pkg_postinst() {
 	elisp-site-regen
 
-	elog "If you update from before version 2.5 you must reconfigure,"
-	elog "or indentation will not work."
 	elog "Read the README.md file in ${ROOT}usr/share/doc/${PF}."
 	elog "or at: https://github.com/haskell/haskell-mode"
 	elog "The info haskell-mode documentation is included, or you can read it online:"
 	elog "http://haskell.github.io/haskell-mode/manual/latest/"
-	elog "Add the following to ~/.emacs:"
-	elog "(require 'haskell-mode-autoloads)"
+
 	if use examples; then
 		INIT_RAW="${ROOT}${SITELISP}/${PN}/examples/init.el"
 		INIT_EX="${INIT_RAW/\/\///}"
