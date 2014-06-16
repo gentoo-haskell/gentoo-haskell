@@ -13,7 +13,7 @@ and do something about it. My idea to debug the mystery was simple: to reproduce
 for **ghc-7.6/7.8** and start plugging debug info unless difference I can understand will pop up.
 
 Darcs has great **debug-verbose** option for most of commands. I used
-**debugMessage** function to litter code with mode debugging statements unless
+**debugMessage** function to litter code with more debugging statements unless
 complete horrible image would emerge.
 
 As you can see in bugtracker issue I posted there various intermediate points
@@ -41,7 +41,7 @@ But, OK. Then i've started digging why **7.6**/**7.8** request download
 patterns were so severely different. At first I thought of `new IO manager <http://haskell.cs.yale.edu/wp-content/uploads/2013/08/hask035-voellmy.pdf>`_
 being a cause of difference. The paper says it fixed haskell thread scheduling issue (paper is nice even for leisure reading!):
 
-.. code-block::
+.. code-block:: bash
 
      GHC’s RTS had a bug in which yield
      placed the thread back on the front of the run queue. This bug
@@ -56,7 +56,7 @@ decided to disable optimizations (**-O0**) to speedup rebuilds.
 And, the bug has vanished.
 
 That made the click: **unsafePerformIO** might be the real problem.
-I've grepped for all **unsafePerformIO** instances and examined all difinition sites.
+I've grepped for all **unsafePerformIO** instances and examined all definition sites.
 
 Two were especially interesting:
 
@@ -125,7 +125,7 @@ And there still _is_ a few of such offenders:
 
 Looks like there is yet something to fix :]
 
-Would be great if **hlint** wuld be able to detect pragma-like comments
+Would be great if **hlint** would be able to detect pragma-like comments
 and warn when comment contents is a valid pragma, but comment brackets
 don't allow it to fire.
 
