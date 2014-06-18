@@ -69,7 +69,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/optparse-applicative
 			)
 	webapp? ( dev-haskell/blaze-builder
-		    dev-haskell/aeson
+			dev-haskell/aeson
 			dev-haskell/case-insensitive
 			dev-haskell/clientsession
 			dev-haskell/crypto-api
@@ -104,7 +104,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/network-protocol-xmpp
 		dev-haskell/xml-types )
 		dev-lang/perl
-		doc? ( www-apps/ikiwiki net-misc/rsync )
+	doc? ( www-apps/ikiwiki net-misc/rsync )
 "
 
 src_prepare() {

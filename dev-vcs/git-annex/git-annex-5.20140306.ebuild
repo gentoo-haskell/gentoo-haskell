@@ -89,7 +89,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/network-protocol-xmpp
 		dev-haskell/xml-types )
 		dev-lang/perl
-		doc? ( www-apps/ikiwiki net-misc/rsync )
+	doc? ( www-apps/ikiwiki net-misc/rsync )
 "
 
 src_prepare() {
