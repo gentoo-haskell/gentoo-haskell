@@ -20,7 +20,7 @@ IUSE="profile +ffi"
 # AllNonAsciiChars executables, so agda-stdlib does not require a subslot
 # dependency on filemanip.
 
-RDEPEND="=sci-mathematics/agda-2.3.2*:=[profile?]
+RDEPEND=">=sci-mathematics/agda-2.3.2:=[profile?]
 	=dev-haskell/filemanip-0.3*[profile?]
 	>=sci-mathematics/agda-executable-2.3.0.1:=
 	>=dev-lang/ghc-6.12.1
