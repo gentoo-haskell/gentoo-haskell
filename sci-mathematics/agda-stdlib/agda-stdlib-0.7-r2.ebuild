@@ -36,6 +36,9 @@ S="${WORKDIR}/lib-${PV}"
 
 src_prepare() {
 	cabal-mksetup
+
+	CABAL_FILE=lib.cabal cabal_chdeps \
+		'base >= 4.2 && < 4.7' 'base >= 4.2'
 }
 
 src_compile() {
