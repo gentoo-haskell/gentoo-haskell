@@ -414,7 +414,6 @@ cabal-configure() {
 }
 
 cabal-build() {
-	unset LANG LC_ALL LC_MESSAGES
 	set --  build ${CABAL_EXTRA_BUILD_FLAGS} "$@"
 	echo ./setup "$@"
 	./setup "$@" \
