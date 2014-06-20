@@ -50,9 +50,10 @@ RDEPEND+="
 "
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
-		dev-haskell/alex
-		>=dev-haskell/cabal-1.8
-		dev-haskell/happy"
+	dev-haskell/alex
+	>=dev-haskell/cabal-1.8
+	dev-haskell/happy
+"
 
 SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"

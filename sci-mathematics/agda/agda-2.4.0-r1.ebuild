@@ -35,16 +35,18 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/stmonadtrans-0.3.2:=[profile?] <dev-haskell/stmonadtrans-0.4:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?]
-		|| ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
-			( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) ) )
-	!epic? ( || ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
-			( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) ) )
+	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?] )
+	|| ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
+		( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
+"
+RDEPEND+="
+		app-emacs/haskell-mode
+		virtual/emacs
 "
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
@@ -57,15 +59,13 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'mtl >= 2.1.1 && < 2.2' 'mtl >= 2.1.1 && < 2.3'
+	cabal_chdeps \
+		'mtl >= 2.1.1 && < 2.2' 'mtl >= 2.1.1 && < 2.3' \
+		'transformers == 0.3.*' 'transformers >= 0.3 && < 0.5'
 
 	sed -e '/.*emacs-mode.*$/d' \
-		-e '/^executable agda/,$d' \
 		-i "${S}/${MY_PN}.cabal" \
-		|| die "Could not remove agda and agda-mode from ${MY_PN}.cabal"
-
-	cabal-mksetup
+		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
 
 	if use epic && use stdlib; then
 		ewarn "Note that the agda-stdlib README:"
@@ -95,7 +95,18 @@ src_compile() {
 }
 
 src_install() {
+	local add="${ED}"/usr/share/"${P}/ghc-$(ghc-version)"
+
 	haskell-cabal_src_install
+
+	# generate Primitive.agdai, emulate Setup.hs postinst phase
+	Agda_datadir="${add}" \
+		"${ED}"/usr/bin/agda "${add}"/lib/prim/Agda/Primitive.agda
+
+	rm "${ED}"/usr/bin/agda-mode || die
+	# lives in sci-mathematics/agda-executable
+	rm "${ED}"/usr/bin/agda || die
+
 	elisp-install ${PN} src/data/emacs-mode/*.el \
 		|| die "Failed to install emacs mode"
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
