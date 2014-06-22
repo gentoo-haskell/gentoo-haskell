@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 RDEPEND+=" sys-apps/dbus
-		sys-power/upower"
+		sys-power/upower-pm-utils"
 
 PATCHES=("${FILESDIR}"/${PN}-0.2.1-haddock-2.10.0.patch
 	"${FILESDIR}"/${P}-haddock-utf-8.patch
