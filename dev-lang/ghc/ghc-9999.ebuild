@@ -293,41 +293,12 @@ pkg_setup() {
 
 src_unpack() {
 	if [[ ${PV} == *9999* ]]; then
-		EGIT_NONBARE="true"
 		EGIT_BRANCH="master"
 		if [[ -n ${GHC_BRANCH} ]]; then
 			EGIT_BRANCH="${GHC_BRANCH}"
 		fi
 
 		git-r3_src_unpack
-
-		repos_root="https://git.haskell.org"
-		improper_submodule_map=(
-			"libffi-tarballs       ${repos_root}/libffi-tarballs.git"
-			"utils/hsc2hs          ${repos_root}/hsc2hs.git"
-			"libraries/array       ${repos_root}/packages/array.git"
-			"libraries/deepseq     ${repos_root}/packages/deepseq.git"
-			"libraries/directory   ${repos_root}/packages/directory.git"
-			"libraries/filepath    ${repos_root}/packages/filepath.git"
-			"libraries/haskell98   ${repos_root}/packages/haskell98.git"
-			"libraries/haskell2010 ${repos_root}/packages/haskell2010.git"
-			"libraries/hoopl       ${repos_root}/packages/hoopl.git"
-			"libraries/hpc         ${repos_root}/packages/hpc.git"
-			"libraries/old-locale  ${repos_root}/packages/old-locale.git"
-			"libraries/old-time    ${repos_root}/packages/old-time.git"
-			"libraries/process     ${repos_root}/packages/process.git"
-			"libraries/unix        ${repos_root}/packages/unix.git"
-		)
-		for improper_submodule in "${improper_submodule_map[@]}"
-		do
-			einfo "fetching improper submodules: '${improper_submodule}'"
-			set -- ${improper_submodule}
-			is_path=$1
-			is_repo=$2
-
-			git-r3_fetch    "${is_repo}"
-			git-r3_checkout "${is_repo}" "${S}"/"${is_path}"
-		done
 	fi
 
 	# Create the ${S} dir if we're using the binary version
