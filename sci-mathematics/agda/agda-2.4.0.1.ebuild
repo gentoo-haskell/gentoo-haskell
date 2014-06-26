@@ -40,9 +40,9 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?] )
 	|| ( ( >=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
 		( >=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
+	epic? ( >=dev-lang/epic-0.1.13:=[profile?] <dev-lang/epic-0.10:=[profile?] )
 "
 RDEPEND+="
 		app-emacs/haskell-mode
