@@ -30,8 +30,3 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-2.0 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'transformers >=0.1 && <0.4' 'transformers >=0.1 && <0.5'
-}
