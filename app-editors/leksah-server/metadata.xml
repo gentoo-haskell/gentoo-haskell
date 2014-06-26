@@ -10,5 +10,6 @@
 	</longdescription>
 	<use>
 		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
+                <flag name='libcurl'>Use libcurl instead of running wget</flag>
 	</use>
 </pkgmetadata>
