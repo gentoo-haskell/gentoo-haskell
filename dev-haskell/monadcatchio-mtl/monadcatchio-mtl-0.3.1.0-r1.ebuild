@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
-	~dev-haskell/monadcatchio-transformers-0.3.1.0:=[profile?]
+	>=dev-haskell/monadcatchio-transformers-0.3.1.0:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'MonadCatchIO-transformers==0.3.1.0' 'MonadCatchIO-transformers>=0.3.1.0'
+}
