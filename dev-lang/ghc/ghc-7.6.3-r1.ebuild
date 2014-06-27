@@ -125,6 +125,9 @@ REQUIRED_USE="ia64? ( !gmp )"
 
 use binary && QA_PREBUILT="*"
 
+# haskell libraries built with cabal in configure mode, #515354
+QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
+
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
 }
