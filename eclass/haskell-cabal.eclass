@@ -66,6 +66,10 @@ inherit eutils ghc-package multilib multiprocessing
 
 HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install"
 
+# 'dev-haskell/cabal' passes those options with ./configure-based
+# configuration, but most packages don't need/don't accept it
+QA_CONFIGURE_OPTIONS+=" --with-hc --with-hc-pkg --with-gcc"
+
 case "${EAPI:-0}" in
 	2|3|4|5) HASKELL_CABAL_EXPF+=" src_configure" ;;
 	*) ;;
