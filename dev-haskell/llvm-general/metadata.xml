@@ -11,7 +11,7 @@
 		handles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not
 		only from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.
 		
-		For haddock, see &lt;http://bscarlet.github.io/llvm-general/3.3.5.0/doc/html/llvm-general/index.html&gt;.
+		For haddock, see &lt;http://bscarlet.github.io/llvm-general/3.4.3.0/doc/html/llvm-general/index.html&gt;.
 	</longdescription>
 	<use>
 		<flag name="shared-llvm">link against llvm shared rather than static library</flag>
