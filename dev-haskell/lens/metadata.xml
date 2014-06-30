@@ -89,6 +89,7 @@
   uses old style inline pragmas. This lets them turn on inlining.</flag>
   <flag name='safe'>Disallow unsafeCoerce</flag>
   <flag name='dump-splices'>Build and run the doctests test-suite.</flag>
+  <flag name='j'>Attempt a parallel build with GHC 7.8.</flag>
   <flag name='test-doctests'>Build and run the doctests test-suite.</flag>
   <flag name='test-hlint'>You can disable the hlint test suite with -f-test-hlint</flag>
   <flag name='test-hunit'>You can disable the hunit test suite with -f-test-hunit</flag>
