@@ -17,10 +17,9 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug shared-llvm"
-
 RESTRICT=test # missing files
 
-RDEPEND="~dev-haskell/llvm-general-pure-3.4.3.0:=[profile?]
+RDEPEND="~dev-haskell/llvm-general-pure-3.4.3.1:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?]
 	>=dev-haskell/parsec-3.1.3:=[profile?]
 	>=dev-haskell/setenv-0.1.0:=[profile?]
@@ -31,9 +30,8 @@ RDEPEND="~dev-haskell/llvm-general-pure-3.4.3.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	sys-devel/llvm
+	=sys-devel/llvm-3.4*
 	test? ( >=dev-haskell/hunit-1.2.4.2
-		~dev-haskell/llvm-general-pure-3.4.2.2
 		>=dev-haskell/mtl-2.0.1.0
 		>=dev-haskell/quickcheck-2.5.1.1
 		>=dev-haskell/test-framework-0.5
