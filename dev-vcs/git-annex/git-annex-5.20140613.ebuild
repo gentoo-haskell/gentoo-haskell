@@ -25,7 +25,9 @@ DEPEND="${RDEPEND}
 	dev-haskell/async
 	dev-haskell/bloomfilter
 	>=dev-haskell/cabal-1.8
+	dev-haskell/case-insensitive
 	dev-haskell/dataenc
+	dev-haskell/data-default
 	dev-haskell/dlist
 	dev-haskell/edit-distance
 	>=dev-haskell/exceptions-0.5
@@ -60,8 +62,10 @@ DEPEND="${RDEPEND}
 	feed? ( dev-haskell/feed )
 	pairing? ( dev-haskell/network-info
 			dev-haskell/network-multicast )
+	quvi? ( dev-haskell/aeson )
 	s3? ( dev-haskell/hs3 )
 	tdfa? ( dev-haskell/regex-tdfa )
+	tahoe? ( dev-haskell/aeson )
 	testsuite? ( >=dev-haskell/tasty-0.7
 			dev-haskell/tasty-hunit
 			dev-haskell/tasty-quickcheck
@@ -70,10 +74,8 @@ DEPEND="${RDEPEND}
 			)
 	webapp? ( dev-haskell/blaze-builder
 			dev-haskell/aeson
-			dev-haskell/case-insensitive
 			dev-haskell/clientsession
 			dev-haskell/crypto-api
-			dev-haskell/data-default
 			dev-haskell/hamlet
 			dev-haskell/http-types
 			dev-haskell/transformers
