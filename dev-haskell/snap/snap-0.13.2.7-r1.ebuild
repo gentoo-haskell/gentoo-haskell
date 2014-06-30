@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/errors-1.4:=[profile?] <dev-haskell/errors-1.5:=[profile?]
 	>=dev-haskell/heist-0.13:=[profile?] <dev-haskell/heist-0.14:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.2:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-5.0:=[profile?]
 	>=dev-haskell/logict-0.4.2:=[profile?] <dev-haskell/logict-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -58,7 +58,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'mtl                       >  2.0      && < 2.2' 'mtl                       >  2.0      && < 2.3' \
-		'transformers              >= 0.2      && < 0.4' 'transformers              >= 0.2      && < 0.5'
+		'transformers              >= 0.2      && < 0.4' 'transformers              >= 0.2      && < 0.5' \
+		'lens                      >= 3.7.6    && < 4.2' 'lens                      >= 3.7.6    && < 5.0'
 }
 
 src_configure() {
