@@ -23,7 +23,7 @@ RESTRICT=test # missing files
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/data-default-0.5.3:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
-	>=dev-haskell/lens-3.9.0.2:=[profile?] <dev-haskell/lens-4.2:=[profile?]
+	>=dev-haskell/lens-3.9.0.2:=[profile?] <dev-haskell/lens-5.0:=[profile?]
 	>=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-2.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
@@ -50,5 +50,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'mtl >= 1.1.1.0 && < 2.2' 'mtl >= 1.1.1.0 && < 2.3'
+		'mtl >= 1.1.1.0 && < 2.2' 'mtl >= 1.1.1.0 && < 2.3' \
+		'lens >= 3.9.0.2 && < 4.2' 'lens >= 3.9.0.2 && < 5.0'
 }
