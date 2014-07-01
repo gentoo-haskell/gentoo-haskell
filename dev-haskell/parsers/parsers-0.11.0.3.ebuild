@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.11.2:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.12.1:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/charset-0.3:=[profile?] <dev-haskell/charset-1:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
