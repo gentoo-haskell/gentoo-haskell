@@ -314,14 +314,6 @@ src_unpack() {
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
 	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
-
-	if [[ -d "${S}"/libraries/dph ]]; then
-		# Sometimes dph libs get accidentally shipped with ghc
-		# but they are not installed unless user requests it.
-		# We never install them.
-		elog "Removing 'libraries/dph'"
-		rm -rf "${S}"/libraries/dph
-	fi
 }
 
 src_prepare() {
@@ -462,6 +454,8 @@ src_configure() {
 			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
 			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
+		# not used outside of ghc's test
+		echo "BUILD_DPH = NO" >> mk/build.mk
 
 		# might need additional fiddling with --host parameter:
 		#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
