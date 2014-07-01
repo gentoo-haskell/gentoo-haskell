@@ -21,7 +21,7 @@ IUSE="embed_data_files +http-conduit"
 RESTRICT=test # missing files
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
-	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
@@ -71,7 +71,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'scientific >= 0.2 && < 0.3' 'scientific >= 0.2 && < 0.4'
+		'scientific >= 0.2 && < 0.3' 'scientific >= 0.2 && < 0.4' \
+		'attoparsec >= 0.10 && < 0.12' 'attoparsec >= 0.10 && < 0.13'
 }
 
 src_configure() {
