@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="curl +gtk3 libcurl"
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/attoparsec-conduit-1.1:=[profile?]
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
@@ -45,6 +45,12 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}/${PN}-0.13.1.1-conduit-1.1.patch"
 	"${FILESDIR}/${PN}-0.13.1.1-transformers-0.4.patch")
+
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'attoparsec >=0.10.0.3 && <0.12' 'attoparsec >=0.10.0.3 && <0.13'
+}
 
 src_configure() {
 	threaded_flag=""
