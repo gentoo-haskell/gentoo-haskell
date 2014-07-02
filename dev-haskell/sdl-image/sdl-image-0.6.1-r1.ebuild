@@ -23,9 +23,11 @@ IUSE=""
 
 RDEPEND="dev-haskell/sdl:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	media-libs/sdl-image
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
+	virtual/pkgconfig
 "
 PATCHES=("${FILESDIR}"/${PN}-0.6.1-pc.patch)
 S="${WORKDIR}/${MY_P}"
