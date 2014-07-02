@@ -20,4 +20,7 @@
 		It&#39;s possible to make a config file parsable by this module,
 		the Unix shell, and make.
 	</longdescription>
+<use>
+  <flag name='buildtests'>Build the executable to run unit tests.</flag>
+</use>
 </pkgmetadata>
