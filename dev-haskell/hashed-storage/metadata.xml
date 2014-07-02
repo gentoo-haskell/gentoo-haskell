@@ -15,4 +15,8 @@
 		plain filesystem tree and an indexed plain tree (where the index
 		maintains hashes of the plain files and directories).
 	</longdescription>
+	<use>
+		<flag name="diff">Provide the Storage.Hashed.Diff module.</flag>
+		<flag name="hpc">Compile with the profiling ghc flag -fhpc.</flag>
+	</use>
 </pkgmetadata>
