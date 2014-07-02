@@ -1,0 +1,20 @@
+--- yesod-bin-1.2.11-orig/GhcBuild.hs	2014-06-18 15:02:50.000000000 +1000
++++ yesod-bin-1.2.11/GhcBuild.hs	2014-07-02 11:32:06.211492637 +1000
+@@ -151,7 +151,7 @@
+         haskellish (f,Nothing) =
+           looksLikeModuleName f || isHaskellSrcFilename f || '.' `notElem` f
+         haskellish (_,Just phase) =
+-#if MIN_VERSION_ghc(7,8,3)
++#if MIN_VERSION_ghc(7,8,2)
+           phase `notElem` [As True, As False, Cc, Cobjc, Cobjcpp, CmmCpp, Cmm, StopLn]
+ #elif MIN_VERSION_ghc(7,4,0)
+           phase `notElem` [As, Cc, Cobjc, Cobjcpp, CmmCpp, Cmm, StopLn]
+@@ -303,7 +303,7 @@
+   , Flag "E"            (PassFlag (setMode (stopBeforeMode anyHsc)))
+   , Flag "C"            (PassFlag (\f -> do setMode (stopBeforeMode HCc) f
+                                             addFlag "-fvia-C" f))
+-#if MIN_VERSION_ghc(7,8,3)
++#if MIN_VERSION_ghc(7,8,2)
+   , Flag "S"            (PassFlag (setMode (stopBeforeMode (As True))))
+ #else
+   , Flag "S"            (PassFlag (setMode (stopBeforeMode As)))
