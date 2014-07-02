@@ -68,5 +68,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/network-conduit
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		dev-haskell/streaming-commons
+		>=dev-haskell/wai-3.0
 		>=dev-haskell/wai-test-1.3.0.5 )
 "
