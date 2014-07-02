@@ -29,11 +29,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'transformers >=0.2 && <0.4' 'transformers >=0.2 && <0.5'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executeshell executeshell)
