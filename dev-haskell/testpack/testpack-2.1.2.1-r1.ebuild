@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
-KEYWORDS="amd64 ~sparc x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/hunit:=[profile?]
