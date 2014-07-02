@@ -40,8 +40,18 @@ RDEPEND="dev-haskell/async:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3
+	test? ( dev-haskell/blaze-builder
+		>=dev-haskell/conduit-1.1
+		dev-haskell/conduit-extra
+		>=dev-haskell/hspec-1.3
 		dev-haskell/http-conduit
+		dev-haskell/http-types
+		dev-haskell/lifted-base
+		dev-haskell/network
 		dev-haskell/network-conduit
+		dev-haskell/resourcet
+		dev-haskell/streaming-commons
+		dev-haskell/transformers
+		dev-haskell/wai
 		>=dev-haskell/warp-2.1 )
 "
