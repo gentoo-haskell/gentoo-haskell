@@ -19,4 +19,8 @@
 		scientific notation they can be efficiently
 		parsed to a @Scientific@ number.
 	</longdescription>
+	<use>
+	  <flag name="bytestring-builder">Provide the
+          Data.ByteString.Builder.Scientific module (requires bytestring >= 0.10).</flag>
+	</use>
 </pkgmetadata>
