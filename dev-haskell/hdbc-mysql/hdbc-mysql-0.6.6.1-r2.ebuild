@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ EAPI=5
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_FEATURES+=" nocabaldep" # workaround depend on old cabal-1.16
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="HDBC-mysql"
 MY_P="${MY_PN}-${PV}"
@@ -24,8 +24,11 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hdbc-2.1.0:=[profile?]
 		dev-haskell/utf8-string:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+		>=dev-lang/ghc-6.12.1:=
+		virtual/mysql"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-0.6.6.1-cabal-1.18.patch")
