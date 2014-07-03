@@ -8,4 +8,10 @@
 	<longdescription>
 		Haskell 98 natural numbers
 	</longdescription>
+	<use>
+		<flag name="hashable">You can disable the use of the `hashable` package using
+                USE=-hashable. Disabling this is an unsupported configuration, but it may be
+                useful for accelerating builds in sandboxes for expert users. If set we will
+                not supply an instance of `Hashable`.</flag>
+	</use>
 </pkgmetadata>
