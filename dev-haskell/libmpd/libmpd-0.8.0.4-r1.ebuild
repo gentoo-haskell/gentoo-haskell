@@ -17,8 +17,9 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+RESTRICT="test" # Could not find module Test.Hspec.Monadic
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.1:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.1:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/data-default-0.4.0:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-2.6:=[profile?]
@@ -37,3 +38,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/text
 		dev-haskell/utf8-string )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec >= 0.10.1 && < 0.12' 'attoparsec >= 0.10.1 && < 0.13'
+}
