@@ -20,11 +20,10 @@ IUSE=""
 
 RDEPEND="dev-haskell/hunit:=[profile?]
 		dev-haskell/mtl:=[profile?]
-		>=dev-haskell/quickcheck-2.1.0.3:2=[profile?] <dev-haskell/quickcheck-2.7:2=[profile?]
+		>=dev-haskell/quickcheck-2.1.0.3:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
 		dev-haskell/random:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
-PATCHES=("${FILESDIR}/${PN}-2.1.2-quickcheck-2.5.patch"
-	"${FILESDIR}/${PN}-2.1.2.1-quickcheck-2.6.patch")
+PATCHES=("${FILESDIR}/${PN}-2.1.2.1-quickcheck-2.7.patch")
