@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Jul 2014)
+# Needs qt-5. Not in the main tree yet.
+>=dev-haskell/hsqml-0.3.1.0
+
 # Sergei Trofimovich <slyfox@gentoo.org> (31 May 2014)
 # Deprecated in favour of dev-haskell/cabal-install sandbox feature.
 dev-haskell/cabal-dev
