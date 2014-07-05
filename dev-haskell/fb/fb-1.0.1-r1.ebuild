@@ -21,7 +21,7 @@ IUSE="debug"
 RESTRICT="test" # requires FB account
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
-	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.12:=[profile?]
+	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
@@ -58,6 +58,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/text
 		dev-haskell/transformers )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec           >= 0.10.4  && < 0.12' 'attoparsec           >= 0.10.4  && < 0.13'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
