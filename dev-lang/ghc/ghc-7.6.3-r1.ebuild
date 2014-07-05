@@ -603,8 +603,13 @@ src_compile() {
 		# ghc massively parallel make: #409631, #409873
 		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
 		# 4 parallel jobs usually does not break
-		emake $(limit_jobs 4) all
-		emake all V=1
+
+		# 1. build compiler binary(+wrapper) first
+		emake $(limit_jobs 4) inplace/bin/ghc-stage2 V=1
+		# 2. pax-mark (bug #516430)
+		pax-mark -m inplace/lib/ghc-stage2
+		# 3. and then all the rest
+		emake $(limit_jobs 4) all V=1
 
 		if is_crosscompile; then
 			# runghc does not work for a stage1 compiler, we can build it anyway

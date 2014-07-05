@@ -490,6 +490,11 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
+		# 1. build compiler binary(+wrapper) first
+		emake inplace/bin/ghc-stage2
+		# 2. pax-mark (bug #516430)
+		pax-mark -m inplace/lib/bin/ghc-stage2
+		# 3. and then all the rest
 		emake all
 	fi # ! use binary
 }
