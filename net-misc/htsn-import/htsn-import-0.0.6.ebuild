@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/htsn-common-0.0.1
 	>=dev-haskell/hxt-9.3
 	>=dev-haskell/missingh-1.2
+	>=dev-haskell/split-0.2
 	>=dev-haskell/tasty-0.8
 	>=dev-haskell/tasty-hunit-0.8
 	>=dev-haskell/transformers-0.3
