@@ -21,12 +21,12 @@ IUSE="test"
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
-	test? ( dev-haskell/hunit:=[profile?]
-			>=dev-haskell/quickcheck-2.0:2=[profile?]
-			>=dev-haskell/testpack-2.0:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
+	test? ( dev-haskell/hunit:=[profile?]
+			>=dev-haskell/quickcheck-2.0:2=[profile?]
+			>=dev-haskell/testpack-2.0:=[profile?] )
 "
 
 src_configure() {
