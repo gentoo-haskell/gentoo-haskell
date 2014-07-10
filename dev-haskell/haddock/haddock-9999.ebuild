@@ -1,10 +1,11 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI=5
 
-CABAL_FEATURES="bin lib profile haddock hscolour"
+CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES+=" nocabaldep"
 inherit eutils git-2 haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
@@ -12,22 +13,28 @@ HOMEPAGE="http://www.haskell.org/haddock/"
 EGIT_REPO_URI="http://darcs.haskell.org/haddock.git https://github.com/ghc/haddock.git"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
 # the live ebuild requires alex and happy
-RDEPEND="dev-haskell/ghc-paths[profile?]
-		=dev-haskell/xhtml-3000.2*[profile?]
-		>=dev-lang/ghc-7.5"
+RDEPEND="dev-haskell/ghc-paths:=[profile?]
+	dev-haskell/haddock-library
+	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
+	>=dev-lang/ghc-7.9:=
+"
 DEPEND="${RDEPEND}
-		dev-haskell/alex
-		dev-haskell/happy
-		>=dev-haskell/cabal-1.14"
+	dev-haskell/alex
+	dev-haskell/happy
+	test? ( dev-haskell/hspec
+		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
+"
 
-RESTRICT="test" # avoid depends on QC
-
-CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
+src_prepare() {
+	if [[ ! -e "${S}/html" ]]; then
+		ln -s resources/html "${S}/html" || die "Could not create symbolic link ${S}/html"
+	fi
+}
 
 src_configure() {
 	# create a fake haddock executable. it'll set the right version to cabal
@@ -39,7 +46,13 @@ src_configure() {
 	echo -e "#!/bin/sh\necho Haddock version ${haddock_pv}" > "${exe}"
 	chmod +x "${exe}"
 
-	haskell-cabal_src_configure --with-haddock="${exe}"
+	# we use 'nocabaldep' to use ghc's bundled Cabal
+	# as external one is likely to break our haddock
+	# (known to work on 1.16.0 and breaks on 1.16.0.1!)
+	haskell-cabal_src_configure \
+		--ghc-options=-rtsopts \
+		--with-haddock="${exe}" \
+		--constraint="Cabal == $(cabal-version)"
 }
 
 src_compile() {
