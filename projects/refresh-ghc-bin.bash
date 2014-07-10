@@ -137,11 +137,12 @@ run mkdir "${chroot_temp}"
 	USE="binary ${USE}"                            emerge --verbose --oneshot dev-lang/ghc || exit 1
 	echo "Building pkg '${needed_atom}'"
 	mkdir -p /etc/portage/package.accept_keywords
+	mkdir -p /etc/portage/package.unmask
 	echo "${needed_atom} ~${target_arch} **" > /etc/portage/package.accept_keywords/ghc
+	echo "${needed_atom}"                    > /etc/portage/package.unmask/ghc
 	mkdir -p /etc/portage/package.use
-	echo "${needed_atom} -binary doc ghcbootstrap ghcmakebinary llvm ${USE}" > /etc/portage/package.use/ghc
-	FEATURES="${FEATURES} -test -strict -stricter" emerge --verbose --onlydeps   "${needed_atom}"
-	                                               emerge --verbose --buildpkg=y "${needed_atom}"
+	echo "${needed_atom} -binary doc ghcbootstrap ghcmakebinary ${USE}" > /etc/portage/package.use/ghc
+	FEATURES="${FEATURES} -test"                   emerge --verbose --buildpkg=y "${needed_atom}"
 	EOF
 
         cat >store-results.bash <<-EOF
