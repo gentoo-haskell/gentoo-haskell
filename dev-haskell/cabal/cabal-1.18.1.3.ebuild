@@ -35,7 +35,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 
-CABAL_CORE_LIB_GHC_PV="7.8.2014* 7.8.0.2014* 7.8.1 7.8.2"
+CABAL_CORE_LIB_GHC_PV="7.8.2014* 7.8.0.2014* 7.8.1 7.8.2 7.8.3"
 
 src_prepare() {
 	if [[ -n ${LIVE_EBUILD} ]]; then
