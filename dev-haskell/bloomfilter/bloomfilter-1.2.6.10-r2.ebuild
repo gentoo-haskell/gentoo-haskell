@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/deepseq:=[profile?]
 		>=dev-lang/ghc-6.8.2:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2
-			<dev-haskell/quickcheck-2.7:2
+			<dev-haskell/quickcheck-2.8:2
 			dev-haskell/random
 			dev-haskell/test-framework
 			dev-haskell/test-framework-quickcheck2
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && < 2.7'
+		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4 && < 2.8'
 
 	if has_version ">=dev-haskell/quickcheck-2.5"; then
 		epatch "${FILESDIR}/${PN}-1.2.6.10-quickcheck-2.6.patch"
