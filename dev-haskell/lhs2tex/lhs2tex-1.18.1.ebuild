@@ -26,3 +26,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/mtl
 		dev-haskell/regex-compat
 		>=dev-lang/ghc-6.12.1"
+
+# Setup.hs uses 'Text.Regex' available in both 'r-c' and 'r-c-tdfa'
+HCFLAGS+=" -ignore-package=regex-compat-tdfa"
