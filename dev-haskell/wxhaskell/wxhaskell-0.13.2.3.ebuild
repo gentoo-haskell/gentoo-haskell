@@ -34,6 +34,8 @@ S="${WORKDIR}/${MY_P}"
 src_configure() {
 	# ghc DCE bug: https://ghc.haskell.org/trac/ghc/ticket/9155
 	[[ $(ghc-version) == 7.8.2 ]] && replace-hcflags -O[2-9] -O1
+	# ghc DCE bug: https://ghc.haskell.org/trac/ghc/ticket/9303
+	[[ $(ghc-version) == 7.8.3 ]] && replace-hcflags -O[2-9] -O1
 
 	haskell-cabal_src_configure \
 		--flag=newbase
