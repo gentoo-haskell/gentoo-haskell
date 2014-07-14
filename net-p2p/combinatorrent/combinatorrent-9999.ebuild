@@ -24,27 +24,26 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		>=dev-haskell/attoparsec-0.8
-		>=dev-haskell/cabal-1.6
-		>=dev-haskell/cereal-0.3
-		dev-haskell/cryptohash
-		dev-haskell/deepseq
-		dev-haskell/hslogger
-		dev-haskell/http
-		dev-haskell/hunit
-		dev-haskell/mtl
-		dev-haskell/network
-		<dev-haskell/parsec-4
-		dev-haskell/psqueue
-		>=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.8:2
-		dev-haskell/random
-		dev-haskell/random-shuffle
-		dev-haskell/stm
-		dev-haskell/test-framework
-		dev-haskell/test-framework-hunit
-		dev-haskell/test-framework-quickcheck2
-		dev-haskell/text
-		>=dev-lang/ghc-6.12.1"
+	>=dev-haskell/attoparsec-0.8
+	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cereal-0.3
+	dev-haskell/cryptohash
+	dev-haskell/hslogger
+	dev-haskell/http
+	dev-haskell/hunit
+	dev-haskell/mtl
+	dev-haskell/network
+	<dev-haskell/parsec-4
+	dev-haskell/psqueue
+	>=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.8:2
+	dev-haskell/random
+	dev-haskell/random-shuffle
+	dev-haskell/stm
+	dev-haskell/test-framework
+	dev-haskell/test-framework-hunit
+	dev-haskell/test-framework-quickcheck2
+	dev-haskell/text
+	>=dev-lang/ghc-6.12.1"
 
 #S="${WORKDIR}/${MY_P}"
 

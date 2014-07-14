@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
 IUSE=""
 
-RDEPEND="dev-haskell/deepseq:=[profile?]
-		>=dev-lang/ghc-6.8.2:="
+RDEPEND=">=dev-lang/ghc-6.8.2:="
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/quickcheck-2.4:2
 			<dev-haskell/quickcheck-2.8:2

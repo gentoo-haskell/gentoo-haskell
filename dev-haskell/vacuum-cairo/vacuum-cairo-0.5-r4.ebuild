@@ -21,11 +21,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/cairo:0=[profile?]
-		dev-haskell/deepseq:=[profile?]
-		dev-haskell/gtk:${GTK_MAJ_VER}=[profile?]
-		dev-haskell/strict-concurrency:=[profile?]
-		dev-haskell/svgcairo:0=[profile?]
-		>=dev-haskell/vacuum-0.0.5.1:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+	dev-haskell/gtk:${GTK_MAJ_VER}=[profile?]
+	dev-haskell/strict-concurrency:=[profile?]
+	dev-haskell/svgcairo:0=[profile?]
+	>=dev-haskell/vacuum-0.0.5.1:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.2"

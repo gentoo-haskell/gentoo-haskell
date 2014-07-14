@@ -20,8 +20,7 @@ IUSE=""
 
 QC_SLOT=1
 
-RDEPEND=">=dev-haskell/deepseq-1.1:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
-	>=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
+RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
 	>=dev-haskell/quickcheck-1.1:${QC_SLOT}=[profile?] <dev-haskell/quickcheck-2:${QC_SLOT}=[profile?]
 	>=dev-haskell/random-1:=[profile?]
 	>=dev-haskell/test-framework-0.2.0:=[profile?]

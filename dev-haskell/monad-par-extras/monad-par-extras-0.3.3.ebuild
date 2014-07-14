@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND="=dev-haskell/abstract-par-0.3*:=[profile?]
 		>=dev-haskell/cereal-0.3:=[profile?]
-		>=dev-haskell/deepseq-1.3:=[profile?]
 		>=dev-haskell/mtl-2.0:=[profile?]
 		>=dev-haskell/random-1.0:=[profile?]
 		>=dev-haskell/transformers-0.2:=[profile?]

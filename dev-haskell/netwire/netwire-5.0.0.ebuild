@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="testprogram"
 
-RDEPEND=">=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-2:=[profile?]
-	>=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-4:=[profile?]
+RDEPEND=">=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-4:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-1:=[profile?]

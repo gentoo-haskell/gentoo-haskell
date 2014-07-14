@@ -19,15 +19,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.3.2.12:=[profile?]
-		>=dev-haskell/deepseq-1.1.0.0:=[profile?]
-		>=dev-haskell/hastache-0.5.0:=[profile?]
-		>=dev-haskell/mtl-2:=[profile?]
-		>=dev-haskell/mwc-random-0.8.0.3:=[profile?]
-		>=dev-haskell/parsec-3.1.0:=[profile?]
-		>=dev-haskell/statistics-0.10.0.0:=[profile?]
-		dev-haskell/transformers:=[profile?]
-		>=dev-haskell/vector-0.7.1:=[profile?]
-		>=dev-haskell/vector-algorithms-0.4:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+	>=dev-haskell/hastache-0.5.0:=[profile?]
+	>=dev-haskell/mtl-2:=[profile?]
+	>=dev-haskell/mwc-random-0.8.0.3:=[profile?]
+	>=dev-haskell/parsec-3.1.0:=[profile?]
+	>=dev-haskell/statistics-0.10.0.0:=[profile?]
+	dev-haskell/transformers:=[profile?]
+	>=dev-haskell/vector-0.7.1:=[profile?]
+	>=dev-haskell/vector-algorithms-0.4:=[profile?]
+	>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+	>=dev-haskell/cabal-1.6"

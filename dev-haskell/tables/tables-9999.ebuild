@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-4:=[profile?]
-	>=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-3.8:=[profile?]
 	>=dev-haskell/profunctors-3.2:=[profile?] <dev-haskell/profunctors-4:=[profile?]

@@ -22,7 +22,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="epic +stdlib"
 
 RDEPEND=">=dev-haskell/binary-0.4.4:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/deepseq-1.3:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	>=dev-haskell/geniplate-0.6.0.3:=[profile?] <dev-haskell/geniplate-0.7:=[profile?]
 	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.2:=[profile?]
 	>=dev-haskell/haskeline-0.6.3.2:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]

@@ -16,9 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/deepseq-1
-		>=dev-lang/ghc-6.10.1"
+RDEPEND=">=dev-lang/ghc-6.10.1"
 DEPEND="${RDEPEND}
-		dev-haskell/cabal"
+	dev-haskell/cabal"
 
 PATCHES=("${FILESDIR}"/${P}-base-4.patch)

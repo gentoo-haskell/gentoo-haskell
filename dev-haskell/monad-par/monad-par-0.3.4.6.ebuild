@@ -30,8 +30,7 @@ RDEPEND=">=dev-haskell/abstract-deque-0.1.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/deepseq-1.2
-		dev-haskell/hunit
+	test? ( dev-haskell/hunit
 		dev-haskell/quickcheck
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit

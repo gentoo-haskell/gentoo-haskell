@@ -25,7 +25,6 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.6:=[profile?]
 	>=dev-haskell/charset-0.3.2.1:=[profile?] <dev-haskell/charset-1:=[profile?]
 	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-5:=[profile?]
-	>=dev-haskell/deepseq-1.2.0.1:=[profile?] <dev-haskell/deepseq-1.4:=[profile?]
 	>=dev-haskell/fingertree-0.0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-3.8.2:=[profile?] <dev-haskell/lens-4:=[profile?]

@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="profile X"
 
 RDEPEND=">=dev-haskell/cgi-3001.1.7.4[profile?]
-		>=dev-haskell/deepseq-1.3.0.0[profile?]
 		>=dev-haskell/fgl-5.4.2.4[profile?]
 		>=dev-haskell/haskell-src-1.0.1.5[profile?]
 		>=dev-haskell/html-1.0.1.2[profile?]

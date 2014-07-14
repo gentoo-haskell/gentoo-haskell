@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/deepseq-1.1
-		<dev-haskell/quickcheck-2
+RDEPEND="<dev-haskell/quickcheck-2
 		>=dev-haskell/test-framework-0.2.0
 		>=dev-lang/ghc-6.10.4"
 DEPEND="${RDEPEND}

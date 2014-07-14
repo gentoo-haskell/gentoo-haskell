@@ -24,8 +24,7 @@ RDEPEND=">=dev-haskell/text-1.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/deepseq
-		>=dev-haskell/hspec-1.8 )
+	test? ( >=dev-haskell/hspec-1.8 )
 "
 
 src_configure() {

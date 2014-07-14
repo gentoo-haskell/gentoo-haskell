@@ -19,8 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+colors"
 
-RDEPEND=">=dev-haskell/deepseq-1.3:=[profile?]
-	>=dev-haskell/either-4.0:=[profile?]
+RDEPEND=">=dev-haskell/either-4.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/optparse-applicative-0.6:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1.8:=[profile?]
