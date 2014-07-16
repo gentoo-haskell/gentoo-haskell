@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # some tests 404. not all files?
+
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.0:=[profile?]
 	dev-haskell/attoparsec-conduit:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
