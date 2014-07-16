@@ -25,7 +25,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
-	>=dev-haskell/streaming-commons-0.1.2:=[profile?]
+	dev-haskell/stm:=[profile?]
+	>=dev-haskell/streaming-commons-0.1.4:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
@@ -33,6 +34,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/exceptions
+	test? ( dev-haskell/async
+		dev-haskell/exceptions
 		>=dev-haskell/hspec-1.3 )
 "
