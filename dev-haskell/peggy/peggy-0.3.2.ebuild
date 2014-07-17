@@ -37,5 +37,6 @@ src_configure() {
 src_prepare() {
 	cabal_chdeps \
 		'ListLike         == 3.1.*' 'ListLike         >= 3.1' \
-		'hashtables       == 1.0.*' 'hashtables       >= 1.0'
+		'hashtables       == 1.0.*' 'hashtables       >= 1.0' \
+		'template-haskell >= 2.5 && < 2.9' 'template-haskell >= 2.5 && < 2.10'
 }
