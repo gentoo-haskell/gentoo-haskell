@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="An HTTP client engine, intended as a base layer for more user-friendly packages."
+DESCRIPTION="An HTTP client engine, intended as a base layer for more user-friendly packages"
 HOMEPAGE="https://github.com/snoyberg/http-client"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
