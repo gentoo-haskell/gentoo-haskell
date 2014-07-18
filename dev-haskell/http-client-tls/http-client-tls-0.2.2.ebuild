@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/connection-0.2:=[profile?]
+RDEPEND=">=dev-haskell/connection-0.2.2:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
-	>=dev-haskell/http-client-0.2.2:=[profile?]
+	>=dev-haskell/http-client-0.3.5:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/tls-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
