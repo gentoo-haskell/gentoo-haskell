@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/comonad-1.1:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
-	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.3:=[profile?]
+	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.4:=[profile?]
 	>=dev-haskell/directory-tree-0.11:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/errors-1.4:=[profile?] <dev-haskell/errors-1.5:=[profile?]
