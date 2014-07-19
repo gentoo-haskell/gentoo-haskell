@@ -1,3 +1,11 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (19 Jul 2014)
+# ghc-7.8 using packages
+>=dev-lang/ghc-7.8
+>=dev-haskell/deepseq-1.3.0.2
+>=dev-haskell/repa-3.2.5.1
+>=dev-haskell/repa-io-3.2.5.1
+>=dev-haskell/repa-algorithms-3.2.5.1
+
 # Sergei Trofimovich <slyfox@gentoo.org> (03 Jul 2014)
 # Needs qt-5. Not in the main tree yet.
 >=dev-haskell/hsqml-0.3.1.0
@@ -57,11 +65,6 @@ dev-haskell/manatee-terminal
 # Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
 # Masked for removal, use dev-haskell/dbus instead
 dev-haskell/dbus-client
-
-# Sergei Trofimovich <slyfox@gentoo.org> (11 Nov 2013)
-# ghc-7.6.3 comes with deepseq-1.3.0.1. It's not easy to
-# shift user to new package entirely.
-=dev-haskell/deepseq-1.3.0.2
 
 # Sergei Trofimovich <slyfox@gentoo.org> (25 Dec 2012)
 # Masked as needs old removed darcs-2.5
