@@ -25,9 +25,12 @@ DEPEND="${RDEPEND}
 	dev-haskell/async
 	dev-haskell/bloomfilter
 	>=dev-haskell/cabal-1.8
+	dev-haskell/case-insensitive
 	dev-haskell/dataenc
+	dev-haskell/data-default
 	dev-haskell/dlist
 	dev-haskell/edit-distance
+	>=dev-haskell/exceptions-0.5
 	dev-haskell/extensible-exceptions
 	dev-haskell/hslogger
 	dev-haskell/http
@@ -35,10 +38,9 @@ DEPEND="${RDEPEND}
 	dev-haskell/json[generic]
 	dev-haskell/missingh
 	dev-haskell/monad-control
-	dev-haskell/monadcatchio-transformers
 	>=dev-haskell/mtl-2
 	>=dev-haskell/network-2.0
-	>=dev-haskell/quickcheck-2.1
+	>=dev-haskell/quickcheck-2.1:2
 	dev-haskell/random
 	dev-haskell/safesemaphore
 	dev-haskell/sha
@@ -60,8 +62,10 @@ DEPEND="${RDEPEND}
 	feed? ( dev-haskell/feed )
 	pairing? ( dev-haskell/network-info
 			dev-haskell/network-multicast )
+	quvi? ( dev-haskell/aeson )
 	s3? ( dev-haskell/hs3 )
 	tdfa? ( dev-haskell/regex-tdfa )
+	tahoe? ( dev-haskell/aeson )
 	testsuite? ( >=dev-haskell/tasty-0.7
 			dev-haskell/tasty-hunit
 			dev-haskell/tasty-quickcheck
@@ -70,18 +74,15 @@ DEPEND="${RDEPEND}
 			)
 	webapp? ( dev-haskell/blaze-builder
 			dev-haskell/aeson
-			dev-haskell/case-insensitive
 			dev-haskell/clientsession
 			dev-haskell/crypto-api
-			dev-haskell/data-default
 			dev-haskell/hamlet
 			dev-haskell/http-types
+			dev-haskell/path-pieces
 			dev-haskell/transformers
-			dev-haskell/network-conduit
 			dev-haskell/shakespeare
-			dev-haskell/transformers
 			dev-haskell/wai
-			dev-haskell/wai-logger
+			dev-haskell/wai-extra
 			dev-haskell/warp
 			dev-haskell/warp-tls
 			dev-haskell/yesod
@@ -89,11 +90,9 @@ DEPEND="${RDEPEND}
 			dev-haskell/yesod-default
 			dev-haskell/yesod-form
 			dev-haskell/yesod-static
-			webapp-secure? (
-			  dev-haskell/warp-tls
-			  dev-haskell/securemem
-			  dev-haskell/byteable
-			) )
+			webapp-secure? ( dev-haskell/warp-tls
+					dev-haskell/securemem
+					dev-haskell/byteable ) )
 	webdav? ( >=dev-haskell/dav-0.3
 			dev-haskell/http-conduit
 			dev-haskell/http-client
