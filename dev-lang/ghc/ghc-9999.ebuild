@@ -532,6 +532,16 @@ src_compile() {
 	fi # ! use binary
 }
 
+src_test() {
+	# TODO: deal with:
+	#    - sandbox (pollutes environment)
+	#    - extra packages (to extend testsuite coverage)
+	# bits are taken from 'validate'
+	local make_test_target='test' # can be fulltest
+	# not 'emake' as testsuite uses '$MAKE' without jobserver available
+	make $make_test_target stage=2 THREADS=$(makeopts_jobs)
+}
+
 src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
