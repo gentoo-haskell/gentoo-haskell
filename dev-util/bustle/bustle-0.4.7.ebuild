@@ -13,7 +13,7 @@ DESCRIPTION="Draw pretty sequence diagrams of D-Bus traffic"
 HOMEPAGE="http://hackage.haskell.org/package/bustle"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="LGPL-2 GPL-2"
+LICENSE="LGPL-2 GPL-2 GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
