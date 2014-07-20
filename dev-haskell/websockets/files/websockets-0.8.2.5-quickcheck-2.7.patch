@@ -1,14 +1,3 @@
---- websockets-0.8.2.5-orig/websockets.cabal	2014-06-27 22:44:42.000000000 +1000
-+++ websockets-0.8.2.5/websockets.cabal	2014-07-02 16:16:25.990877403 +1000
-@@ -94,7 +94,7 @@
- 
-   Build-depends:
-     HUnit                      >= 1.2 && < 1.3,
--    QuickCheck                 >= 2.4 && < 2.7,
-+    QuickCheck                 >= 2.4 && < 2.8,
-     test-framework             >= 0.4 && < 0.9,
-     test-framework-hunit       >= 0.2 && < 0.4,
-     test-framework-quickcheck2 >= 0.2 && < 0.4,
 --- websockets-0.8.2.5-orig/tests/haskell/Network/WebSockets/Server/Tests.hs	2014-06-27 22:44:42.000000000 +1000
 +++ websockets-0.8.2.5/tests/haskell/Network/WebSockets/Server/Tests.hs	2014-07-02 16:33:05.048485696 +1000
 @@ -1,4 +1,5 @@
