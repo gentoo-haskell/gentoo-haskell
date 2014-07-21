@@ -455,7 +455,11 @@ src_configure() {
 			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
 		# not used outside of ghc's test
-		echo "BUILD_DPH = NO" >> mk/build.mk
+		if [[ -n ${GHC_BUILD_DPH} ]]; then
+				echo "BUILD_DPH = YES" >> mk/build.mk
+			else
+				echo "BUILD_DPH = NO" >> mk/build.mk
+		fi
 
 		# might need additional fiddling with --host parameter:
 		#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
@@ -494,6 +498,9 @@ src_configure() {
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
+
+		elog "Final mk/build.mk:"
+		cat mk/build.mk || die
 
 		if [[ ${PV} == *9999* ]]; then
 			perl boot || die "perl boot failed"
