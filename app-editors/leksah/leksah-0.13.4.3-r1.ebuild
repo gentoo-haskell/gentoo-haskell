@@ -31,7 +31,7 @@ RDEPEND=">=app-editors/leksah-server-0.13.1.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/gio-0.12.2:=[profile?] <dev-haskell/gio-0.13:=[profile?]
 	>=dev-haskell/glib-0.10:=[profile?] <dev-haskell/glib-0.13:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.13.5:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
-	>=dev-haskell/hlint-1.8.59:=[profile?] <dev-haskell/hlint-1.9:=[profile?]
+	>=dev-haskell/hlint-1.8.59:=[profile?] <dev-haskell/hlint-1.10:=[profile?]
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/ltk-0.13.2.0:=[profile?] <dev-haskell/ltk-0.14:=[profile?]
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -85,7 +85,8 @@ src_prepare() {
 		'haskell-src-exts >=1.13.5 && <1.15' 'haskell-src-exts >=1.13.5 && <1.16' \
 		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5' \
 		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
-		'yi >=0.6.6.1 && <0.7' 'yi >=0.8.1 && <0.9'
+		'yi >=0.6.6.1 && <0.7' 'yi >=0.8.1 && <0.9' \
+		'hlint >=1.8.59 && <1.9' 'hlint >=1.8.59 && <1.10'
 	sed -e 's@Data.Conduit.Util@Data.Conduit.Internal@' \
 		-i "${S}/src/IDE/Metainfo/Provider.hs" \
 		-i "${S}/src/IDE/Debug.hs" \
