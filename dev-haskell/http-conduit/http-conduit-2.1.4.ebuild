@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/conduit-0.5.5:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
-	>=dev-haskell/http-client-0.3.5:=[profile?] <dev-haskell/http-client-0.4:=[profile?]
+	>=dev-haskell/http-client-0.3.6:=[profile?] <dev-haskell/http-client-0.4:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
