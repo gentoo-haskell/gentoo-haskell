@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A program to find and display the docs of a name from a
-given module."
+DESCRIPTION="A program to find and display the docs of a name from a given module"
 HOMEPAGE="http://github.com/chrisdone/haskell-docs"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

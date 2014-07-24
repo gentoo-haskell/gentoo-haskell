@@ -2,10 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<herd>proxy-maintainers</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This package provides a couple of different implementations of mutable hash
 		tables in the ST monad, as well as a typeclass abstracting their common

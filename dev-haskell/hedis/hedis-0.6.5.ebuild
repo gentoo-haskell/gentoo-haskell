@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Client library for the Redis datastore: supports full command set,
-pipelining."
+DESCRIPTION="Client library for the Redis datastore: supports full command set, pipelining"
 HOMEPAGE="https://github.com/informatikr/hedis"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

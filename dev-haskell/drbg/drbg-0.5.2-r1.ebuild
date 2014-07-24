@@ -12,8 +12,7 @@ inherit haskell-cabal
 MY_PN="DRBG"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Deterministic random bit generator (aka RNG, PRNG) based
-HMACs, Hashes, and Ciphers."
+DESCRIPTION="Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers"
 HOMEPAGE="http://hackage.haskell.org/package/DRBG"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

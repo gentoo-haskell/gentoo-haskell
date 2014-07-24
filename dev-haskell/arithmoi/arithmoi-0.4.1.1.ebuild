@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Efficient basic number-theoretic functions.
-Primes, powers, integer logarithms."
+DESCRIPTION="Efficient basic number-theoretic functions: Primes, powers, integer logarithms"
 HOMEPAGE="https://bitbucket.org/dafis/arithmoi"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Pretty printing for well-behaved Show
-instances."
+DESCRIPTION="Pretty printing for well-behaved Show instances"
 HOMEPAGE="http://hackage.haskell.org/package/groom"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="BSON documents are JSON-like objects with a standard binary
-encoding."
+DESCRIPTION="BSON documents are JSON-like objects with a standard binary encoding"
 HOMEPAGE="http://github.com/selectel/bson-haskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

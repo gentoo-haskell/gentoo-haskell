@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Implementation of difficult monads made easy
-with operational semantics."
+DESCRIPTION="Implementation of difficult monads made easy with operational semantics"
 HOMEPAGE="http://haskell.org/haskellwiki/Operational"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Enumeratees for the incremental conversion of builders to
-bytestrings."
+DESCRIPTION="Enumeratees for the incremental conversion of builders to bytestrings"
 HOMEPAGE="https://github.com/meiersi/blaze-builder-enumerator"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell bindings to bibutils, the bibliography
-conversion utilities."
+DESCRIPTION="Haskell bindings to bibutils, the bibliography conversion utilities"
 HOMEPAGE="http://gorgias.mine.nu/repos/hs-bibutils/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

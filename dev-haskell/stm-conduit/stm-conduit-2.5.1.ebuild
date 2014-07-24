@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Introduces conduits to channels, and promotes using
-conduits concurrently."
+DESCRIPTION="Introduces conduits to channels, and promotes using conduits concurrently"
 HOMEPAGE="https://github.com/wowus/stm-conduit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

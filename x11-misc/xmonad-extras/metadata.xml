@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>haskell</herd>
-<maintainer>
-  <email>haskell@gentoo.org</email>
-</maintainer>
-<use>
-  <flag name="perwindow">Enable PerWindowLayout plugin support</flag>
-  <flag name="volume">Enable Volume plugin</flag>
-  <flag name="mpd">Enable mpd plugin</flag>
-  <flag name="eval">Enable eval plugin</flag>
-</use>
+	<herd>haskell</herd>
+	<use>
+		<flag name="perwindow">Enable PerWindowLayout plugin support</flag>
+		<flag name="volume">Enable Volume plugin</flag>
+		<flag name="mpd">Enable mpd plugin</flag>
+		<flag name="eval">Enable eval plugin</flag>
+	</use>
 </pkgmetadata>

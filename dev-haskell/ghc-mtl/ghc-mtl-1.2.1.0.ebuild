@@ -9,8 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="An mtl compatible version of the Ghc-Api monads
-and monad-transformers."
+DESCRIPTION="An mtl compatible version of the Ghc-Api monads and monad-transformers"
 HOMEPAGE="http://hub.darcs.net/jcpetruzza/ghc-mtl"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
