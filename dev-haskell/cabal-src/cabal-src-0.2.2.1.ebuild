@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Alternative install procedure to avoid the diamond dependency issue."
+DESCRIPTION="Alternative install procedure to avoid the diamond dependency issue"
 HOMEPAGE="https://github.com/yesodweb/cabal-src"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

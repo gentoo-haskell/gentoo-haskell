@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Derive Template Haskell's Lift class for datatypes."
+DESCRIPTION="Derive Template Haskell's Lift class for datatypes"
 HOMEPAGE="http://hackage.haskell.org/package/th-lift"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal bash-completion-r1 eutils
 
-DESCRIPTION="The command-line interface for Cabal and Hackage."
+DESCRIPTION="The command-line interface for Cabal and Hackage"
 HOMEPAGE="http://www.haskell.org/cabal/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

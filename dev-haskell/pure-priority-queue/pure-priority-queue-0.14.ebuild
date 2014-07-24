@@ -7,7 +7,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
-DESCRIPTION="A pure priority queue."
+DESCRIPTION="A pure priority queue"
 HOMEPAGE="http://hackage.haskell.org/package/pure-priority-queue"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

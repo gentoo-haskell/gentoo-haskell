@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="GUI framework that uses the web browser as a display."
+DESCRIPTION="GUI framework that uses the web browser as a display"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Threepenny-gui"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

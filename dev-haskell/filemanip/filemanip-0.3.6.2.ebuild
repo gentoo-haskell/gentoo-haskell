@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Expressive file and directory manipulation for Haskell."
+DESCRIPTION="Expressive file and directory manipulation for Haskell"
 HOMEPAGE="https://github.com/bos/filemanip"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Library for network data structures and their serialization."
+DESCRIPTION="Library for network data structures and their serialization"
 HOMEPAGE="http://hackage.haskell.org/package/network-data"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

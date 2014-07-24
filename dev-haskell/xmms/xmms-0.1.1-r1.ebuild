@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="XMMS"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="XMMS2 client library."
+DESCRIPTION="XMMS2 client library"
 HOMEPAGE="http://kawais.org.ua/XMMS/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

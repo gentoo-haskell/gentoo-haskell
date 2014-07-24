@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Efficient buffered output."
+DESCRIPTION="Efficient buffered output"
 HOMEPAGE="http://github.com/meiersi/blaze-builder"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

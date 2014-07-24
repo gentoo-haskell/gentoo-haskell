@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="High performance, regular, shape polymorphic parallel arrays."
+DESCRIPTION="High performance, regular, shape polymorphic parallel arrays"
 HOMEPAGE="http://repa.ouroborus.net"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Catch errors thrown from pure computations."
+DESCRIPTION="Catch errors thrown from pure computations"
 HOMEPAGE="http://hackage.haskell.org/package/spoon"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

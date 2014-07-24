@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="BNFC"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A compiler front-end generator."
+DESCRIPTION="A compiler front-end generator"
 HOMEPAGE="http://bnfc.digitalgrammars.com/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

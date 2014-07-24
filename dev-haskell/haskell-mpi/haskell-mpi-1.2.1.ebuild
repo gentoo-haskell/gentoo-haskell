@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Distributed parallel programming in Haskell using MPI."
+DESCRIPTION="Distributed parallel programming in Haskell using MPI"
 HOMEPAGE="http://github.com/bjpop/haskell-mpi"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

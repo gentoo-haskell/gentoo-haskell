@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Low level bindings to libzip."
+DESCRIPTION="Low level bindings to libzip"
 HOMEPAGE="http://bitbucket.org/astanin/hs-libzip/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

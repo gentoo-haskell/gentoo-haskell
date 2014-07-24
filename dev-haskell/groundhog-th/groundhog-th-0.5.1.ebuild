@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Type-safe datatype-database mapping library."
+DESCRIPTION="Type-safe datatype-database mapping library"
 HOMEPAGE="http://hackage.haskell.org/package/groundhog-th"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

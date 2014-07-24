@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="The HTTP query builder."
+DESCRIPTION="The HTTP query builder"
 HOMEPAGE="https://github.com/worksap-ate/http-querystring"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="HCodecs"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files."
+DESCRIPTION="A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files"
 HOMEPAGE="http://www-db.informatik.uni-tuebingen.de/team/giorgidze"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

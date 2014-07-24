@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="An Haskell template system supporting both HTML5 and XML."
+DESCRIPTION="An Haskell template system supporting both HTML5 and XML"
 HOMEPAGE="http://snapframework.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

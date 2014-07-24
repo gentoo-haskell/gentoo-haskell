@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Find a local optimum of strictness annotations."
+DESCRIPTION="Find a local optimum of strictness annotations"
 HOMEPAGE="http://hackage.haskell.org/package/strictify"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

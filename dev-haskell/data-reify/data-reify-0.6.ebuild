@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Reify a recursive data structure into an explicit graph."
+DESCRIPTION="Reify a recursive data structure into an explicit graph"
 HOMEPAGE="http://www.ittc.ku.edu/csdl/fpg/Tools/IOReification"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

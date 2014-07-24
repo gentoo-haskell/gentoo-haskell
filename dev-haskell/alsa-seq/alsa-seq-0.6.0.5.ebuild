@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Binding to the ALSA Library API (MIDI sequencer)."
+DESCRIPTION="Binding to the ALSA Library API (MIDI sequencer)"
 HOMEPAGE="http://www.haskell.org/haskellwiki/ALSA"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

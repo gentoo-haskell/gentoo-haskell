@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Wrapper around the pdfinfo command."
+DESCRIPTION="Wrapper around the pdfinfo command"
 HOMEPAGE="http://hackage.haskell.org/package/pdfinfo"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

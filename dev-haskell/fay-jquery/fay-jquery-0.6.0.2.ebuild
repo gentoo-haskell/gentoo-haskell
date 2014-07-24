@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="jQuery bindings for Fay."
+DESCRIPTION="jQuery bindings for Fay"
 HOMEPAGE="https://github.com/faylang/fay-jquery"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

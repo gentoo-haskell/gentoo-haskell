@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile"
 inherit haskell-cabal
 
-DESCRIPTION="Colourise Haskell code."
+DESCRIPTION="Colourise Haskell code"
 HOMEPAGE="http://code.haskell.org/~malcolm/hscolour/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

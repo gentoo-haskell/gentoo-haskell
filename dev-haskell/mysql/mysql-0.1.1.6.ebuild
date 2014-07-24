@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A low-level MySQL client library."
+DESCRIPTION="A low-level MySQL client library"
 HOMEPAGE="https://github.com/bos/mysql"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

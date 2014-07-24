@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Base64 implementation for String's."
+DESCRIPTION="Base64 implementation for String's"
 HOMEPAGE="http://urchin.earth.li/~ian/cabal/base64-string/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

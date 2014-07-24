@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Binary processing extensions to Attoparsec."
+DESCRIPTION="Binary processing extensions to Attoparsec"
 HOMEPAGE="http://hackage.haskell.org/package/attoparsec-binary"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

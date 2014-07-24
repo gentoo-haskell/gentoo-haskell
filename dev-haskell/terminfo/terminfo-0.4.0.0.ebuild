@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell bindings to the terminfo library."
+DESCRIPTION="Haskell bindings to the terminfo library"
 HOMEPAGE="https://github.com/judah/terminfo"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

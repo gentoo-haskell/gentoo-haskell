@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Real-time heap graphing utility and profile stream server with a reusable graphing module."
+DESCRIPTION="Real-time heap graphing utility and profile stream server with a reusable graphing module"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Hp2any"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

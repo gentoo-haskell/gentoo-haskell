@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simple modules for writing apps with Snap, abstracted from hpaste."
+DESCRIPTION="Simple modules for writing apps with Snap, abstracted from hpaste"
 HOMEPAGE="Simple modules for writing apps with Snap, abstracted from hpaste."
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

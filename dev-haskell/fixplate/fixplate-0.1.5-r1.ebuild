@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Uniplate-style generic traversals for optionally annotated fixed-point types."
+DESCRIPTION="Uniplate-style generic traversals for optionally annotated fixed-point types"
 HOMEPAGE="http://code.haskell.org/~bkomuves/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

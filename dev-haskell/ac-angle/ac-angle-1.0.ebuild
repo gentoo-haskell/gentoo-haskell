@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="AC-Angle"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Angles in degrees and radians."
+DESCRIPTION="Angles in degrees and radians"
 HOMEPAGE="http://hackage.haskell.org/package/AC-Angle"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

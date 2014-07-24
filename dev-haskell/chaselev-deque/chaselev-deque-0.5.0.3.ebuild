@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile test-suite" # haddock hoogle hscolour, fails on LANG=C
 inherit haskell-cabal
 
-DESCRIPTION="Chase & Lev work-stealing lock-free double-ended queues (deques)."
+DESCRIPTION="Chase & Lev work-stealing lock-free double-ended queues (deques)"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

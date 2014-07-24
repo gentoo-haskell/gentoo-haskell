@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A test framework and KATs for cryptographic operations."
+DESCRIPTION="A test framework and KATs for cryptographic operations"
 HOMEPAGE="http://trac.haskell.org/crypto-api/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

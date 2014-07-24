@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Reliable, persistent, fast priority queues."
+DESCRIPTION="Reliable, persistent, fast priority queues"
 HOMEPAGE="http://hackage.haskell.org/package/pqueue"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

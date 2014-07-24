@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="QuickCheck support for the test-framework package."
+DESCRIPTION="QuickCheck support for the test-framework package"
 HOMEPAGE="http://batterseapower.github.com/test-framework/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

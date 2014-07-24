@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A library for postfix control flow."
+DESCRIPTION="A library for postfix control flow"
 HOMEPAGE="https://patch-tag.com/r/salazar/concatenative/snapshot/current/content/pretty"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

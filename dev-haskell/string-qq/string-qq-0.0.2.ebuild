@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="QuasiQuoter for non-interpolated strings, texts and bytestrings."
+DESCRIPTION="QuasiQuoter for non-interpolated strings, texts and bytestrings"
 HOMEPAGE="http://hackage.haskell.org/package/string-qq"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

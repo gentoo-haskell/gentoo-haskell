@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Michael and Scott lock-free queues."
+DESCRIPTION="Michael and Scott lock-free queues"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

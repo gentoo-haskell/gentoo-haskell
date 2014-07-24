@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Cabal support for creating Mac OSX application bundles."
+DESCRIPTION="Cabal support for creating Mac OSX application bundles"
 HOMEPAGE="http://github.com/gimbo/cabal-macosx"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

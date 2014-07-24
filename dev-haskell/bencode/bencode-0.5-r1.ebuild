@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Parser and printer for bencoded data."
+DESCRIPTION="Parser and printer for bencoded data"
 HOMEPAGE="http://hackage.haskell.org/package/bencode"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

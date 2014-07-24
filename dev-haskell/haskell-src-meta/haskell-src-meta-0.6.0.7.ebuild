@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Parse source to template-haskell abstract syntax."
+DESCRIPTION="Parse source to template-haskell abstract syntax"
 HOMEPAGE="http://hackage.haskell.org/package/haskell-src-meta"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

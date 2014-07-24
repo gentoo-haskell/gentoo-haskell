@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="HStringTemplate"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="StringTemplate implementation in Haskell."
+DESCRIPTION="StringTemplate implementation in Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/HStringTemplate"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

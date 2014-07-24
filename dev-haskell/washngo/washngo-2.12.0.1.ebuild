@@ -12,7 +12,7 @@ inherit eutils haskell-cabal
 MY_PN="WashNGo"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="WASH is a family of EDSLs for programming Web applications in Haskell."
+DESCRIPTION="WASH is a family of EDSLs for programming Web applications in Haskell"
 HOMEPAGE="http://www.informatik.uni-freiburg.de/~thiemann/haskell/WASH/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

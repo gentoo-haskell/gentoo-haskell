@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit eutils haskell-cabal
 
-DESCRIPTION="Type-safe EDSL for SQL queries on persistent backends."
+DESCRIPTION="Type-safe EDSL for SQL queries on persistent backends"
 HOMEPAGE="https://github.com/prowdsponsor/esqueleto"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

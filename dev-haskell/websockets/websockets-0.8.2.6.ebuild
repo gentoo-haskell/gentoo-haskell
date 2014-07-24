@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit base haskell-cabal
 
-DESCRIPTION="A sensible and clean way to write WebSocket-capable servers in Haskell."
+DESCRIPTION="A sensible and clean way to write WebSocket-capable servers in Haskell"
 HOMEPAGE="http://jaspervdj.be/websockets"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

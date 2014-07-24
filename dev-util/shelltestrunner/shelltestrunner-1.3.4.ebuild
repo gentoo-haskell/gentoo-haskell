@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A tool for testing command-line programs."
+DESCRIPTION="A tool for testing command-line programs"
 HOMEPAGE="http://joyful.com/shelltestrunner"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Asymptotically optimal Brodal/Okasaki heaps."
+DESCRIPTION="Asymptotically optimal Brodal/Okasaki heaps"
 HOMEPAGE="http://github.com/ekmett/heaps/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

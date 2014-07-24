@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Pure-Haskell utilities for dealing with XML with the conduit package."
+DESCRIPTION="Pure-Haskell utilities for dealing with XML with the conduit package"
 HOMEPAGE="http://github.com/snoyberg/xml"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

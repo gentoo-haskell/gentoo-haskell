@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Utrecht University parser combinator library."
+DESCRIPTION="Utrecht University parser combinator library"
 HOMEPAGE="http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

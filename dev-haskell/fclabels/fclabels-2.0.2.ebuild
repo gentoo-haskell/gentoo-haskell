@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="First class accessor labels implemented as lenses."
+DESCRIPTION="First class accessor labels implemented as lenses"
 HOMEPAGE="https://github.com/sebastiaanvisser/fclabels"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="AES and common modes using AES-NI when available."
+DESCRIPTION="AES and common modes using AES-NI when available"
 HOMEPAGE="https://github.com/TomMD/cipher-aes128"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

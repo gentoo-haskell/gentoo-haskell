@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Generic programming library for regular datatypes."
+DESCRIPTION="Generic programming library for regular datatypes"
 HOMEPAGE="http://hackage.haskell.org/package/regular"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

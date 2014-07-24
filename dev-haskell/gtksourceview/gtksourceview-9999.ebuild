@@ -14,7 +14,7 @@ MY_PN=gtksourceview${GTK_MAJ_VER}
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
 inherit git-2 haskell-cabal
 
-DESCRIPTION="Binding to the GtkSourceView library."
+DESCRIPTION="Binding to the GtkSourceView library"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 EGIT_REPO_URI="https://github.com/gtk2hs/gtksourceview.git"
 

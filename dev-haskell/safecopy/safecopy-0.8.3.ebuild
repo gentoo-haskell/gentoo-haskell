@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Binary serialization with version control."
+DESCRIPTION="Binary serialization with version control"
 HOMEPAGE="http://acid-state.seize.it/safecopy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="MonadRandom"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Random-number generation monad."
+DESCRIPTION="Random-number generation monad"
 HOMEPAGE="http://hackage.haskell.org/package/MonadRandom"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

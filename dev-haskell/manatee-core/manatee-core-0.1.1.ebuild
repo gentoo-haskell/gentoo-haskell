@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="The core of Manatee."
+DESCRIPTION="The core of Manatee"
 HOMEPAGE="http://hackage.haskell.org/package/manatee-core"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

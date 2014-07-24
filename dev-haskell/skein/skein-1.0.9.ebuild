@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Skein, a family of cryptographic hash functions.  Includes Skein-MAC as well."
+DESCRIPTION="Skein, a family of cryptographic hash functions.  Includes Skein-MAC as well"
 HOMEPAGE="https://github.com/meteficha/skein"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

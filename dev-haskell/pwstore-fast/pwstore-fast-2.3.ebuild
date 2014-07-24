@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Secure password storage."
+DESCRIPTION="Secure password storage"
 HOMEPAGE="https://github.com/PeterScott/pwstore"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

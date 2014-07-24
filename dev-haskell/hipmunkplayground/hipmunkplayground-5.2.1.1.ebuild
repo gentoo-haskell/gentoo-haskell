@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="HipmunkPlayground"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A playground for testing Hipmunk."
+DESCRIPTION="A playground for testing Hipmunk"
 HOMEPAGE="https://github.com/meteficha/HipmunkPlayground"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

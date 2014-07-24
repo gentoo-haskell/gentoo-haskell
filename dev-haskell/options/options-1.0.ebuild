@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A powerful and easy-to-use command-line option parser."
+DESCRIPTION="A powerful and easy-to-use command-line option parser"
 HOMEPAGE="https://john-millikin.com/software/haskell-options/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

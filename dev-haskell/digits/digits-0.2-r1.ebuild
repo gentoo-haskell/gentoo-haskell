@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Converts integers to lists of digits and back."
+DESCRIPTION="Converts integers to lists of digits and back"
 HOMEPAGE="http://hackage.haskell.org/package/digits"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

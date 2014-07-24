@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Static file serving subsite for Yesod Web Framework."
+DESCRIPTION="Static file serving subsite for Yesod Web Framework"
 HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

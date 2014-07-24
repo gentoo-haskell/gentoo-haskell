@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Combinators for building memo tables."
+DESCRIPTION="Combinators for building memo tables"
 HOMEPAGE="http://github.com/luqui/data-memocombinators"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

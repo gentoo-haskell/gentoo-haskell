@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Pretty printing designed for printing source code."
+DESCRIPTION="Pretty printing designed for printing source code"
 HOMEPAGE="http://www.eecs.harvard.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

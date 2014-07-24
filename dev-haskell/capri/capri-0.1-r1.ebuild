@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A simple wrapper over cabal-install to operate in project-private mode."
+DESCRIPTION="A simple wrapper over cabal-install to operate in project-private mode"
 HOMEPAGE="http://hackage.haskell.org/package/capri"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

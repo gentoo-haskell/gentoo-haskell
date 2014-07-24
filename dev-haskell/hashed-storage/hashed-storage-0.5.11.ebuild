@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Hashed file storage support code."
+DESCRIPTION="Hashed file storage support code"
 HOMEPAGE="http://hackage.haskell.org/package/hashed-storage"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

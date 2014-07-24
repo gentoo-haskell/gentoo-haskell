@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Jailed IO monad."
+DESCRIPTION="Jailed IO monad"
 HOMEPAGE="http://hackage.haskell.org/package/jail"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

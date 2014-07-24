@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="persistent-mongoDB"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Backend for the persistent library using mongoDB."
+DESCRIPTION="Backend for the persistent library using mongoDB"
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

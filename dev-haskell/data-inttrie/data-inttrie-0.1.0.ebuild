@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A lazy, infinite trie of integers."
+DESCRIPTION="A lazy, infinite trie of integers"
 HOMEPAGE="http://github.com/luqui/data-inttrie"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

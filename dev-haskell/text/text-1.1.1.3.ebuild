@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="An efficient packed Unicode text type."
+DESCRIPTION="An efficient packed Unicode text type"
 HOMEPAGE="https://github.com/bos/text"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

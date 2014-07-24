@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit base haskell-cabal
 
-DESCRIPTION="The yesod helper executable."
+DESCRIPTION="The yesod helper executable"
 HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

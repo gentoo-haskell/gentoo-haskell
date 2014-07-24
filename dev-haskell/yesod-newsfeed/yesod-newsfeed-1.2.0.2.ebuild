@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Helper functions and data types for producing News feeds."
+DESCRIPTION="Helper functions and data types for producing News feeds"
 HOMEPAGE="http://www.yesodweb.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI="4"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="A simple XML library."
+DESCRIPTION="A simple XML library"
 HOMEPAGE="http://code.galois.com"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

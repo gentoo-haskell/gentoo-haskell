@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Calculate the crc16-ccitt."
+DESCRIPTION="Calculate the crc16-ccitt"
 HOMEPAGE="http://hackage.haskell.org/package/crc16"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

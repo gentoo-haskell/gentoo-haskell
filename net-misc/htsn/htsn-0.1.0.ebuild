@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal user
 
-DESCRIPTION="Parse XML files from The Sports Network feed."
+DESCRIPTION="Parse XML files from The Sports Network feed"
 HOMEPAGE="http://hackage.haskell.org/package/${PN}"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

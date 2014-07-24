@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Abstraction for things that work like IORef."
+DESCRIPTION="Abstraction for things that work like IORef"
 HOMEPAGE="http://hackage.haskell.org/package/stateref"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

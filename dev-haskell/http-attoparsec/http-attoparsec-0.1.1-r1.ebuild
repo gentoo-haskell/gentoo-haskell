@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Attoparsec parsers for http-types."
+DESCRIPTION="Attoparsec parsers for http-types"
 HOMEPAGE="https://github.com/tlaitinen/http-attoparsec"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

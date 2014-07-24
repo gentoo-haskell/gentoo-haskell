@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Confirm delegation of NS and MX records."
+DESCRIPTION="Confirm delegation of NS and MX records"
 HOMEPAGE="http://michael.orlitzky.com/code/haeredes.php"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

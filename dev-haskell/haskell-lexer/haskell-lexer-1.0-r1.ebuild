@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A fully compliant Haskell 98 lexer."
+DESCRIPTION="A fully compliant Haskell 98 lexer"
 HOMEPAGE="http://hackage.haskell.org/package/haskell-lexer"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

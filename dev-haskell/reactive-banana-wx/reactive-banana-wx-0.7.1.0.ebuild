@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Examples for the reactive-banana library, using wxHaskell."
+DESCRIPTION="Examples for the reactive-banana library, using wxHaskell"
 HOMEPAGE="http://haskell.org/haskellwiki/Reactive-banana"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

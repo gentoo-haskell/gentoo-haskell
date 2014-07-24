@@ -12,7 +12,7 @@ inherit base haskell-cabal
 MY_PN="Takusen"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC."
+DESCRIPTION="Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC"
 HOMEPAGE="http://hackage.haskell.org/package/Takusen"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="AvlTree"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Balanced binary trees using the AVL algorithm."
+DESCRIPTION="Balanced binary trees using the AVL algorithm"
 HOMEPAGE="http://hackage.haskell.org/package/AvlTree"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

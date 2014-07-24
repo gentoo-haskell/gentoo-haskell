@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell source parser from GHC."
+DESCRIPTION="Haskell source parser from GHC"
 HOMEPAGE="https://github.com/gibiansky/IHaskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

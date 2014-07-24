@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Conversion of LaTeX math formulas to MathML or OMML."
+DESCRIPTION="Conversion of LaTeX math formulas to MathML or OMML"
 HOMEPAGE="http://github.com/jgm/texmath"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

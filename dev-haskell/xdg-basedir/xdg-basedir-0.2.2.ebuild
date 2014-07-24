@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A basic implementation of the XDG Base Directory specification."
+DESCRIPTION="A basic implementation of the XDG Base Directory specification"
 HOMEPAGE="http://github.com/willdonnelly/xdg-basedir"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

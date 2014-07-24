@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A class of monads which can log messages."
+DESCRIPTION="A class of monads which can log messages"
 HOMEPAGE="https://github.com/kazu-yamamoto/logger"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

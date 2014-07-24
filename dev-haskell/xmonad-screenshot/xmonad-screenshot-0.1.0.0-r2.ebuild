@@ -11,7 +11,7 @@ GTK_MAJ_VER="2"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Workspaces screenshooting utility for XMonad."
+DESCRIPTION="Workspaces screenshooting utility for XMonad"
 HOMEPAGE="http://github.com/supki/xmonad-screenshot"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

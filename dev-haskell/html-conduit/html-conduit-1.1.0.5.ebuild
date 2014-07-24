@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Parse HTML documents using xml-conduit datatypes."
+DESCRIPTION="Parse HTML documents using xml-conduit datatypes"
 HOMEPAGE="https://github.com/snoyberg/xml"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

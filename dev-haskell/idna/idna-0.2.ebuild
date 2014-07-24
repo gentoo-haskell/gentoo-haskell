@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Implements IDNA (RFC 3490)."
+DESCRIPTION="Implements IDNA (RFC 3490)"
 HOMEPAGE="http://hackage.haskell.org/package/idna"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

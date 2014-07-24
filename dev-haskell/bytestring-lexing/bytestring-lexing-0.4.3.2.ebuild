@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Parse and produce literals efficiently from strict or lazy bytestrings."
+DESCRIPTION="Parse and produce literals efficiently from strict or lazy bytestrings"
 HOMEPAGE="http://code.haskell.org/~wren/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

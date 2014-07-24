@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Type classes generalizing the functionality of the 'monad-par' library."
+DESCRIPTION="Type classes generalizing the functionality of the 'monad-par' library"
 HOMEPAGE="https://github.com/simonmar/monad-par"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

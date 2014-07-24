@@ -7,7 +7,7 @@ EAPI="4"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="HUnit support for the test-framework package."
+DESCRIPTION="HUnit support for the test-framework package"
 HOMEPAGE="http://batterseapower.github.com/test-framework/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Feed reader extension for Manatee."
+DESCRIPTION="Feed reader extension for Manatee"
 HOMEPAGE="http://hackage.haskell.org/package/manatee-reader"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -7,7 +7,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Finding out the full path of the executable."
+DESCRIPTION="Finding out the full path of the executable"
 HOMEPAGE="http://code.haskell.org/~bkomuves/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

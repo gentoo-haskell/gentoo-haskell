@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Template Haskell utilities for HaskellDB."
+DESCRIPTION="Template Haskell utilities for HaskellDB"
 HOMEPAGE="http://trac.haskell.org/haskelldb-th"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

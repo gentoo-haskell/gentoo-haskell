@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A utility to visualise and compare heap profiles."
+DESCRIPTION="A utility to visualise and compare heap profiles"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Hp2any"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

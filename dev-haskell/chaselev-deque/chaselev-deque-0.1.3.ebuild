@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib haddock hoogle hscolour test-suite" #atomic primops doesn't support profile
 inherit haskell-cabal
 
-DESCRIPTION="Chase & Lev work-stealing lock-free double-ended queues (deques)."
+DESCRIPTION="Chase & Lev work-stealing lock-free double-ended queues (deques)"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree-queue/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 RESTRICT="test" #missing files

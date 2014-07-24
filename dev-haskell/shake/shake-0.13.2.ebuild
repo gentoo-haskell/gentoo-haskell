@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Build system library, like Make, but more accurate dependencies."
+DESCRIPTION="Build system library, like Make, but more accurate dependencies"
 HOMEPAGE="https://github.com/ndmitchell/shake"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

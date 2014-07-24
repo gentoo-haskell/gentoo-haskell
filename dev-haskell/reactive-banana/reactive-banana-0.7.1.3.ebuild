@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Practical library for functional reactive programming (FRP)."
+DESCRIPTION="Practical library for functional reactive programming (FRP)"
 HOMEPAGE="http://haskell.org/haskellwiki/Reactive-banana"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

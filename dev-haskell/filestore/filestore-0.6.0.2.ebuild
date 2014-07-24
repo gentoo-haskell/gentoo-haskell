@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Interface for versioning file stores."
+DESCRIPTION="Interface for versioning file stores"
 HOMEPAGE="http://hackage.haskell.org/package/filestore"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

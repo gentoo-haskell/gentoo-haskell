@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Efficient conversion of values into readable byte strings."
+DESCRIPTION="Efficient conversion of values into readable byte strings"
 HOMEPAGE="http://code.haskell.org/~dolio/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

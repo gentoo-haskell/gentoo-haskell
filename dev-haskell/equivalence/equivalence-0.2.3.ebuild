@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Maintaining an equivalence relation implemented as union-find using STT."
+DESCRIPTION="Maintaining an equivalence relation implemented as union-find using STT"
 HOMEPAGE="https://bitbucket.org/paba/equivalence/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

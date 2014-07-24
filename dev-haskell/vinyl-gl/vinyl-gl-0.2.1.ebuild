@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Utilities for working with OpenGL's GLSL shading language and vinyl records."
+DESCRIPTION="Utilities for working with OpenGL's GLSL shading language and vinyl records"
 HOMEPAGE="http://hackage.haskell.org/package/vinyl-gl"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

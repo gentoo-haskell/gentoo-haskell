@@ -15,7 +15,7 @@ MY_P="${MY_PN}-${MY_PV}"
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Binding to the Gtk+ graphical user interface library."
+DESCRIPTION="Binding to the Gtk+ graphical user interface library"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${MY_PV}/${MY_P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Display/logging facilities used by both htsn and htsn-import."
+DESCRIPTION="Display/logging facilities used by both htsn and htsn-import"
 HOMEPAGE="http://hackage.haskell.org/package/htsn-common"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="SVG backend for diagrams drawing EDSL."
+DESCRIPTION="SVG backend for diagrams drawing EDSL"
 HOMEPAGE="http://projects.haskell.org/diagrams/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

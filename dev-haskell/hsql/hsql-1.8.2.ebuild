@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
-DESCRIPTION="Database access from Haskell."
+DESCRIPTION="Database access from Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/hsql"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

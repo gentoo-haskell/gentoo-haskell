@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Core data types, parsers and utilities for the hledger accounting tool."
+DESCRIPTION="Core data types, parsers and utilities for the hledger accounting tool"
 HOMEPAGE="http://hledger.org"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

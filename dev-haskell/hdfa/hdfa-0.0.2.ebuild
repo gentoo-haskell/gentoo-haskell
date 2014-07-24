@@ -12,7 +12,7 @@ inherit base haskell-cabal
 MY_PN="hDFA"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A simple library for representing and minimising DFAs."
+DESCRIPTION="A simple library for representing and minimising DFAs"
 HOMEPAGE="http://hackage.haskell.org/package/hDFA"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

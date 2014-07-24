@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Gamma function and related functions."
+DESCRIPTION="Gamma function and related functions"
 HOMEPAGE="https://github.com/mokus0/gamma"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

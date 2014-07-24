@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Prevent or capture writing to stdout and other handles."
+DESCRIPTION="Prevent or capture writing to stdout and other handles"
 HOMEPAGE="https://github.com/trystan/silently"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

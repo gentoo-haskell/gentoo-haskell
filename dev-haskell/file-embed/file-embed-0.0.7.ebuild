@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Use Template Haskell to embed file contents directly."
+DESCRIPTION="Use Template Haskell to embed file contents directly"
 HOMEPAGE="https://github.com/snoyberg/file-embed"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

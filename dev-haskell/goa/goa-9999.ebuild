@@ -6,7 +6,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile"
 inherit eutils git-2 haskell-cabal
 
-DESCRIPTION="GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features."
+DESCRIPTION="GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features"
 HOMEPAGE="http://haskell.org/haskellwiki/GHC/GHCi#GHCi_on_Acid"
 EGIT_REPO_URI="git://github.com/chrisdone/goa.git"
 

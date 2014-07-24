@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Simple wikitext-like markup format implementation."
+DESCRIPTION="Simple wikitext-like markup format implementation"
 HOMEPAGE="http://hackage.haskell.org/package/hmarkup"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Read and write uncompressed BMP image files."
+DESCRIPTION="Read and write uncompressed BMP image files"
 HOMEPAGE="http://code.ouroborus.net/bmp"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Additional types of channels for STM."
+DESCRIPTION="Additional types of channels for STM"
 HOMEPAGE="http://code.haskell.org/~wren/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

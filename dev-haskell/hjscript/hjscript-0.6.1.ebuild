@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="HJScript"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="HJScript is a Haskell EDSL for writing JavaScript programs."
+DESCRIPTION="HJScript is a Haskell EDSL for writing JavaScript programs"
 HOMEPAGE="http://patch-tag.com/r/nibro/hjscript"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

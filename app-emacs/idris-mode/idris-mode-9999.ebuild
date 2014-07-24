@@ -9,7 +9,7 @@ NEED_EMACS=23
 
 inherit elisp git-2
 
-DESCRIPTION="Idris syntax highlighting and (eventually) other things for emacs."
+DESCRIPTION="Idris syntax highlighting and (eventually) other things for emacs"
 HOMEPAGE="https://github.com/idris-hackers/idris-mode"
 LICENSE="GPL-3"
 IUSE=""

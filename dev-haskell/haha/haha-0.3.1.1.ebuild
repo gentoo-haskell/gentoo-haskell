@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A simple library for creating animated ascii art on ANSI terminals."
+DESCRIPTION="A simple library for creating animated ascii art on ANSI terminals"
 HOMEPAGE="http://hackage.haskell.org/package/haha"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

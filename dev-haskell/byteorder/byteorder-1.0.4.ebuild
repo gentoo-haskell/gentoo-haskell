@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Exposes the native endianness or byte ordering of the system."
+DESCRIPTION="Exposes the native endianness or byte ordering of the system"
 HOMEPAGE="http://community.haskell.org/~aslatter/code/byteorder"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

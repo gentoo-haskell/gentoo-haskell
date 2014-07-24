@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A collection of tools for processing XML with Haskell."
+DESCRIPTION="A collection of tools for processing XML with Haskell"
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Generic HTTP types for Haskell (for both client and server code)."
+DESCRIPTION="Generic HTTP types for Haskell (for both client and server code)"
 HOMEPAGE="https://github.com/aristidb/http-types"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
-DESCRIPTION="Painless 2D vector graphics, animations and simulations."
+DESCRIPTION="Painless 2D vector graphics, animations and simulations"
 HOMEPAGE="http://gloss.ouroborus.net"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

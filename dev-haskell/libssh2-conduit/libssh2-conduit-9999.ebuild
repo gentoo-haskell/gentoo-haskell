@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal git-2
 
-DESCRIPTION="Conduit wrappers for libssh2 FFI bindings (see libssh2 package)."
+DESCRIPTION="Conduit wrappers for libssh2 FFI bindings (see libssh2 package)"
 HOMEPAGE="http://redmine.iportnov.ru/projects/libssh2-hs"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/qnikst/${PN}.git"

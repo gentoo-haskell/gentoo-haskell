@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
-DESCRIPTION="Bindings to the editline library (libedit)."
+DESCRIPTION="Bindings to the editline library (libedit)"
 HOMEPAGE="http://code.haskell.org/editline"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

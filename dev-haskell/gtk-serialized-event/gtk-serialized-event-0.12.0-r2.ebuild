@@ -11,7 +11,7 @@ GTK_MAJ_VER="2"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="GTK+ Serialized event."
+DESCRIPTION="GTK+ Serialized event"
 HOMEPAGE="http://www.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

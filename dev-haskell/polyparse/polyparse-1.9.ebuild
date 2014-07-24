@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A variety of alternative parser combinator libraries."
+DESCRIPTION="A variety of alternative parser combinator libraries"
 HOMEPAGE="http://code.haskell.org/~malcolm/polyparse/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

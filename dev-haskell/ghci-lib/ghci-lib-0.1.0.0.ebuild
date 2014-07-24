@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A library for interactively evaluating Haskell code."
+DESCRIPTION="A library for interactively evaluating Haskell code"
 HOMEPAGE="http://github.com/gibiansky/IHaskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

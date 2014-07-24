@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="PostgreSQL backend for the groundhog library."
+DESCRIPTION="PostgreSQL backend for the groundhog library"
 HOMEPAGE="http://hackage.haskell.org/package/groundhog-postgresql"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

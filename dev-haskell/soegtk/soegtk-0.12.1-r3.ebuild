@@ -11,7 +11,7 @@ GTK_MAJ_VER="2"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="GUI functions as used in the book \"The Haskell School of Expression\"."
+DESCRIPTION="GUI functions as used in the book \"The Haskell School of Expression\""
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

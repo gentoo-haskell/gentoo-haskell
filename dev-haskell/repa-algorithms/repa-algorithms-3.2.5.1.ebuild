@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Algorithms using the Repa array library."
+DESCRIPTION="Algorithms using the Repa array library"
 HOMEPAGE="http://repa.ouroborus.net"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

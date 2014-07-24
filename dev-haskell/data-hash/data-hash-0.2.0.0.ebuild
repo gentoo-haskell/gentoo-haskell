@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Combinators for building fast hashing functions."
+DESCRIPTION="Combinators for building fast hashing functions"
 HOMEPAGE="http://hackage.haskell.org/package/data-hash"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

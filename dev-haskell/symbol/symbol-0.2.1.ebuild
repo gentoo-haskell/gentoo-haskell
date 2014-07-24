@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A 'Symbol' type for fast symbol comparison."
+DESCRIPTION="A 'Symbol' type for fast symbol comparison"
 HOMEPAGE="http://www.cs.drexel.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Launch a web app in the default browser."
+DESCRIPTION="Launch a web app in the default browser"
 HOMEPAGE="http://hackage.haskell.org/package/wai-handler-launch"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

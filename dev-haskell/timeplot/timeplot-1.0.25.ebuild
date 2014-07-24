@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A tool for visualizing time series from log files."
+DESCRIPTION="A tool for visualizing time series from log files"
 HOMEPAGE="http://haskell.org/haskellwiki/Timeplot"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

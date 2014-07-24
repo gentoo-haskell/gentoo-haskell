@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Process manager extension for Manatee."
+DESCRIPTION="Process manager extension for Manatee"
 HOMEPAGE="http://hackage.haskell.org/package/manatee-processmanager"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

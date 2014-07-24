@@ -7,7 +7,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hscolour hoogle test-suite"
 inherit darcs haskell-cabal
 
-DESCRIPTION="Web related tools and services."
+DESCRIPTION="Web related tools and services"
 HOMEPAGE="http://happstack.com"
 EDARCS_REPOSITORY="http://patch-tag.com/r/mae/happstack"
 

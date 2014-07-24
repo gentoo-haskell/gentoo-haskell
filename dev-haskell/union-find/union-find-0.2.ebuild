@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Efficient union and equivalence testing of sets."
+DESCRIPTION="Efficient union and equivalence testing of sets"
 HOMEPAGE="http://github.com/nominolo/union-find"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

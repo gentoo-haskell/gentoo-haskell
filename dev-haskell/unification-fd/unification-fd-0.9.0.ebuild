@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simple generic unification algorithms."
+DESCRIPTION="Simple generic unification algorithms"
 HOMEPAGE="http://code.haskell.org/~wren/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

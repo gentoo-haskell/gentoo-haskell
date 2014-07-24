@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Whitespace, an esoteric programming language."
+DESCRIPTION="Whitespace, an esoteric programming language"
 HOMEPAGE="https://github.com/haroldl/whitespace-nd"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -10,7 +10,7 @@ MY_PN="qtHaskell"
 MY_P="${MY_PN}-${PV}"
 S="${WORKDIR}/${MY_P}"
 
-DESCRIPTION="qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia."
+DESCRIPTION="qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia"
 HOMEPAGE="http://qthaskell.berlios.de/"
 SRC_URI="mirror://berlios/qthaskell/${MY_P}.1.tar.bz2"
 

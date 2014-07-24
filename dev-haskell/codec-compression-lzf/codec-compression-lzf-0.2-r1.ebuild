@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Codec-Compression-LZF"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="LZF compression bindings."
+DESCRIPTION="LZF compression bindings"
 HOMEPAGE="http://www.cs.helsinki.fi/u/ekarttun/Codec-Compression-LZF/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

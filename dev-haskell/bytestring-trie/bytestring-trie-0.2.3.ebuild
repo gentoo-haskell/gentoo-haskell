@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="An efficient finite map from (byte)strings to values."
+DESCRIPTION="An efficient finite map from (byte)strings to values"
 HOMEPAGE="http://code.haskell.org/~wren/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

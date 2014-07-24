@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Client library for the XMPP protocol."
+DESCRIPTION="Client library for the XMPP protocol"
 HOMEPAGE="https://john-millikin.com/software/haskell-xmpp/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

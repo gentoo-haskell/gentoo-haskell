@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simple wrapper around Data.Binary, which adds StateT to Get/Put monads."
+DESCRIPTION="Simple wrapper around Data.Binary, which adds StateT to Get/Put monads"
 HOMEPAGE="http://hackage.haskell.org/package/binary-state"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

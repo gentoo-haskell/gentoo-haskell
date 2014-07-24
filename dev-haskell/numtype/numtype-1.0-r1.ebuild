@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Type-level (low cardinality) integers."
+DESCRIPTION="Type-level (low cardinality) integers"
 HOMEPAGE="http://dimensional.googlecode.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

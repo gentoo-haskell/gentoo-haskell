@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Check properties on standard classes and data structures."
+DESCRIPTION="Check properties on standard classes and data structures"
 HOMEPAGE="http://hackage.haskell.org/package/checkers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

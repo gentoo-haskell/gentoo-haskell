@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit autotools eutils haskell-cabal
 
-DESCRIPTION="FFI bindings to the LLVM compiler toolkit."
+DESCRIPTION="FFI bindings to the LLVM compiler toolkit"
 HOMEPAGE="https://github.com/bos/llvm"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

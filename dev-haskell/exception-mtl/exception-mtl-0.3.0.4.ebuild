@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Exception monad transformer instances for mtl2 classes."
+DESCRIPTION="Exception monad transformer instances for mtl2 classes"
 HOMEPAGE="http://www.eecs.harvard.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

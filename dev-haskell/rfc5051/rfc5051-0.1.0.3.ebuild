@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simple unicode collation as per RFC5051."
+DESCRIPTION="Simple unicode collation as per RFC5051"
 HOMEPAGE="http://hackage.haskell.org/package/rfc5051"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

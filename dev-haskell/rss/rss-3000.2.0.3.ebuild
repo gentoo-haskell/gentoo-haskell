@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A library for generating RSS 2.0 feeds."
+DESCRIPTION="A library for generating RSS 2.0 feeds"
 HOMEPAGE="https://github.com/basvandijk/rss"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

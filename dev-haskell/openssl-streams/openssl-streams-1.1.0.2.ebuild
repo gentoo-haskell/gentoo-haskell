@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="OpenSSL network support for io-streams."
+DESCRIPTION="OpenSSL network support for io-streams"
 HOMEPAGE="http://hackage.haskell.org/package/openssl-streams"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

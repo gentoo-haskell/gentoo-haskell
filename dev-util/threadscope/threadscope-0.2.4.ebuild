@@ -11,7 +11,7 @@ GTK_MAJ_VER="2"
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A graphical tool for profiling parallel Haskell programs."
+DESCRIPTION="A graphical tool for profiling parallel Haskell programs"
 HOMEPAGE="http://www.haskell.org/haskellwiki/ThreadScope"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

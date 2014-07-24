@@ -13,7 +13,7 @@ if [[ ${PV} == 9999* ]]; then
 	inherit git-2
 fi
 
-DESCRIPTION="The command-line interface for Cabal and Hackage."
+DESCRIPTION="The command-line interface for Cabal and Hackage"
 HOMEPAGE="http://www.haskell.org/cabal/"
 EGIT_REPO_URI="git://github.com/haskell/cabal.git"
 

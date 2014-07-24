@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Rasterific"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A pure haskell drawing engine."
+DESCRIPTION="A pure haskell drawing engine"
 HOMEPAGE="http://hackage.haskell.org/package/Rasterific"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

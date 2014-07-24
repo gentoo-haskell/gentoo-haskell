@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Hath manipulates network blocks in CIDR notation."
+DESCRIPTION="Hath manipulates network blocks in CIDR notation"
 HOMEPAGE="http://hackage.haskell.org/package/hath"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

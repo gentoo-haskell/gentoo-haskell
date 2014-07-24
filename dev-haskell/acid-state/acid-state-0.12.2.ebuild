@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Add ACID guarantees to any serializable Haskell data structure."
+DESCRIPTION="Add ACID guarantees to any serializable Haskell data structure"
 HOMEPAGE="http://acid-state.seize.it/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

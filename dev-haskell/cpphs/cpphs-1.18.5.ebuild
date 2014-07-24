@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A liberalised re-implementation of cpp, the C pre-processor."
+DESCRIPTION="A liberalised re-implementation of cpp, the C pre-processor"
 HOMEPAGE="http://projects.haskell.org/cpphs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

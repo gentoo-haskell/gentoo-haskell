@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Provides Word128, Word192 and Word256 and a way of producing other large words if required."
+DESCRIPTION="Provides Word128, Word192 and Word256 and a way of producing other large words if required"
 HOMEPAGE="https://github.com/idontgetoutmuch/largeword"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

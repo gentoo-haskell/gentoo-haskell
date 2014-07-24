@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Declarative command-line option parsing and documentation library."
+DESCRIPTION="Declarative command-line option parsing and documentation library"
 HOMEPAGE="http://github.com/eli-frey/cmdtheline"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -8,7 +8,7 @@ EAPI="2"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Binding to TagLib C library."
+DESCRIPTION="Binding to TagLib C library"
 HOMEPAGE="https://patch-tag.com/r/AndyStewart/libtagc/home"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

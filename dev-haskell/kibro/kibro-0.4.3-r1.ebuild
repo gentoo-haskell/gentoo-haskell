@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Web development framework."
+DESCRIPTION="Web development framework"
 HOMEPAGE="http://hackage.haskell.org/package/kibro"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

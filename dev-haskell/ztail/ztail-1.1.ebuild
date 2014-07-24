@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Multi-file, colored, filtered log tailer."
+DESCRIPTION="Multi-file, colored, filtered log tailer"
 HOMEPAGE="http://hackage.haskell.org/package/ztail"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

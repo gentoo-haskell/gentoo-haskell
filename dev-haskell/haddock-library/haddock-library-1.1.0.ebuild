@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Library exposing some functionality of Haddock."
+DESCRIPTION="Library exposing some functionality of Haddock"
 HOMEPAGE="http://www.haskell.org/haddock/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

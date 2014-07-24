@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="MIME implementation for String's."
+DESCRIPTION="MIME implementation for String's"
 HOMEPAGE="http://hackage.haskell.org/package/mime-string"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

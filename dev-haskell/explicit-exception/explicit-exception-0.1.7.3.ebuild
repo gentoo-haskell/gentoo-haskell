@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Exceptions which are explicit in the type signature."
+DESCRIPTION="Exceptions which are explicit in the type signature"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Exception"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

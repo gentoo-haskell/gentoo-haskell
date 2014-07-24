@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Wiki using happstack, git or darcs, and pandoc."
+DESCRIPTION="Wiki using happstack, git or darcs, and pandoc"
 HOMEPAGE="http://gitit.net"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

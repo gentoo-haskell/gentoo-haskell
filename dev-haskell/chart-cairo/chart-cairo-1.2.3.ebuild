@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Chart-cairo"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Cairo backend for Charts."
+DESCRIPTION="Cairo backend for Charts"
 HOMEPAGE="https://github.com/timbod7/haskell-chart/wiki"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

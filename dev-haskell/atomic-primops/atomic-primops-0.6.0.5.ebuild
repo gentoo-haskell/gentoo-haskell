@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A safe approach to CAS and other atomic ops in Haskell."
+DESCRIPTION="A safe approach to CAS and other atomic ops in Haskell"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

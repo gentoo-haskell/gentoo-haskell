@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Library for maintaining correctness and composability of URLs within an application."
+DESCRIPTION="Library for maintaining correctness and composability of URLs within an application"
 HOMEPAGE="http://hackage.haskell.org/package/web-routes"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

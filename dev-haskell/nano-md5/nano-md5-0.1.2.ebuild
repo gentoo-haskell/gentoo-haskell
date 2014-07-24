@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Efficient, ByteString bindings to OpenSSL."
+DESCRIPTION="Efficient, ByteString bindings to OpenSSL"
 HOMEPAGE="http://code.haskell.org/~dons/code/nano-md5"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

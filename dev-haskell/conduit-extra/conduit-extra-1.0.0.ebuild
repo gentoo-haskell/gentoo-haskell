@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
-DESCRIPTION="Temporary placeholder package."
+DESCRIPTION="Temporary placeholder package"
 HOMEPAGE="http://github.com/snoyberg/conduit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

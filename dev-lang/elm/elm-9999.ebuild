@@ -12,7 +12,7 @@ inherit haskell-cabal git-r3
 MY_PN="Elm"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="The Elm language module."
+DESCRIPTION="The Elm language module"
 HOMEPAGE="http://elm-lang.org"
 #SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 EGIT_REPO_URI="git://github.com/elm-lang/Elm.git"

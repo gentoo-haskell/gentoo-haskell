@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Data types for managing source code locations."
+DESCRIPTION="Data types for managing source code locations"
 HOMEPAGE="http://www.eecs.harvard.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A simple and intuitive library for automated testing."
+DESCRIPTION="A simple and intuitive library for automated testing"
 HOMEPAGE="https://john-millikin.com/software/chell/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

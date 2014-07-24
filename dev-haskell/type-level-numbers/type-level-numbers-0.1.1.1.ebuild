@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Type level numbers implemented using type families."
+DESCRIPTION="Type level numbers implemented using type families"
 HOMEPAGE="http://hackage.haskell.org/package/type-level-numbers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

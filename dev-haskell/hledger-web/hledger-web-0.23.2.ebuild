@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A web interface for the hledger accounting tool."
+DESCRIPTION="A web interface for the hledger accounting tool"
 HOMEPAGE="http://hledger.org"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

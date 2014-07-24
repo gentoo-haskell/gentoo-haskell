@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Securely store session data in a client-side cookie."
+DESCRIPTION="Securely store session data in a client-side cookie"
 HOMEPAGE="http://github.com/yesodweb/clientsession/tree/master"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Use network sockets together with the pipes library."
+DESCRIPTION="Use network sockets together with the pipes library"
 HOMEPAGE="https://github.com/k0001/pipes-network"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

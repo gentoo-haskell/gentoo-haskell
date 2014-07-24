@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="An enhanced core prelude; a common foundation for alternate preludes."
+DESCRIPTION="An enhanced core prelude; a common foundation for alternate preludes"
 HOMEPAGE="https://github.com/snoyberg/basic-prelude"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

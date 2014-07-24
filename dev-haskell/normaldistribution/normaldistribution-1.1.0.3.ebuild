@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Minimum fuss normally distributed random values."
+DESCRIPTION="Minimum fuss normally distributed random values"
 HOMEPAGE="https://github.com/bjornbm/normaldistribution"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

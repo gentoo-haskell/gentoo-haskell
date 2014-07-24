@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Utilities to make Data.Time.* easier to use."
+DESCRIPTION="Utilities to make Data.Time.* easier to use"
 HOMEPAGE="http://github.com/esessoms/datetime"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI="4"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="A mid-level MySQL client library."
+DESCRIPTION="A mid-level MySQL client library"
 HOMEPAGE="https://github.com/bos/mysql-simple"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

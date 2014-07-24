@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="IORefCAS"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Atomic compare and swap for IORefs and STRefs."
+DESCRIPTION="Atomic compare and swap for IORefs and STRefs"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree-queue/wiki"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

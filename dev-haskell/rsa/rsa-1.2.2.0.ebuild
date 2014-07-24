@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="RSA"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Implementation of RSA, using the padding schemes of PKCS#1 v2.1."
+DESCRIPTION="Implementation of RSA, using the padding schemes of PKCS#1 v2.1"
 HOMEPAGE="http://hackage.haskell.org/package/RSA"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

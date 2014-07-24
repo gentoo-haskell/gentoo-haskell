@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Bit parsing/writing on top of binary."
+DESCRIPTION="Bit parsing/writing on top of binary"
 HOMEPAGE="http://hackage.haskell.org/package/binary-bits"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

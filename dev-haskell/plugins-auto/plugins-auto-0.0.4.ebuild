@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Automatic recompilation and reloading of haskell modules."
+DESCRIPTION="Automatic recompilation and reloading of haskell modules"
 HOMEPAGE="http://hackage.haskell.org/package/plugins-auto"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

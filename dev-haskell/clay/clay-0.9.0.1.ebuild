@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="CSS preprocessor as embedded Haskell."
+DESCRIPTION="CSS preprocessor as embedded Haskell"
 HOMEPAGE="http://fvisser.nl/clay"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

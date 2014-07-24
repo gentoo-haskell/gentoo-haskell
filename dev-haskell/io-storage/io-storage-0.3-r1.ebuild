@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A key-value store in the IO monad."
+DESCRIPTION="A key-value store in the IO monad"
 HOMEPAGE="http://github.com/willdonnelly/io-storage"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

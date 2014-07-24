@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Data Parallel Haskell common definitions used by other dph-lifted packages."
+DESCRIPTION="Data Parallel Haskell common definitions used by other dph-lifted packages"
 HOMEPAGE="http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

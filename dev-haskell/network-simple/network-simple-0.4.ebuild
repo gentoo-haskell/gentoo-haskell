@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simple network sockets usage patterns."
+DESCRIPTION="Simple network sockets usage patterns"
 HOMEPAGE="https://github.com/k0001/network-simple"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

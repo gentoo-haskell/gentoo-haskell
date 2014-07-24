@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Diff"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="O(ND) diff algorithm in haskell."
+DESCRIPTION="O(ND) diff algorithm in haskell"
 HOMEPAGE="http://hackage.haskell.org/package/Diff"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

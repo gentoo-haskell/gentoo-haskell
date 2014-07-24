@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Perform basic syntax and deliverability checks on email addresses."
+DESCRIPTION="Perform basic syntax and deliverability checks on email addresses"
 HOMEPAGE="http://hackage.haskell.org/package/email-validator"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit base haskell-cabal
 MY_PN="IOSpec"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A pure specification of the IO monad."
+DESCRIPTION="A pure specification of the IO monad"
 HOMEPAGE="http://hackage.haskell.org/package/IOSpec"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

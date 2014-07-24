@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A Haskell backend kernel for the IPython project."
+DESCRIPTION="A Haskell backend kernel for the IPython project"
 HOMEPAGE="http://gibiansky.github.io/IHaskell/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

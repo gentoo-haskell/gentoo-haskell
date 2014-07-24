@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Scrap Your Boilerplate utilities for the GHC API."
+DESCRIPTION="Scrap Your Boilerplate utilities for the GHC API"
 HOMEPAGE="http://github.com/nominolo/ghc-syb"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="pureMD5"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A Haskell-only implementation of the MD5 digest (hash) algorithm."
+DESCRIPTION="A Haskell-only implementation of the MD5 digest (hash) algorithm"
 HOMEPAGE="http://hackage.haskell.org/package/pureMD5"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

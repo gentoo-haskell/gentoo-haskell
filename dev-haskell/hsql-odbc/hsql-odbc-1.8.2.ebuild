@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="A Haskell Interface to ODBC."
+DESCRIPTION="A Haskell Interface to ODBC"
 HOMEPAGE="http://hackage.haskell.org/package/hsql-odbc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

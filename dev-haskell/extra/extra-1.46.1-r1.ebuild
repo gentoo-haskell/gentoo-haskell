@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Extra"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A grab bag of modules."
+DESCRIPTION="A grab bag of modules"
 HOMEPAGE="http://src.seereason.com/haskell-extra"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

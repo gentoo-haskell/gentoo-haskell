@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Bindings to Facebook's API."
+DESCRIPTION="Bindings to Facebook's API"
 HOMEPAGE="https://github.com/prowdsponsor/fb"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile" # haddock hoogle hscolour" needs ImpredicativeTypes
 inherit haskell-cabal
 
-DESCRIPTION="Modular type class machinery for monad transformer stacks."
+DESCRIPTION="Modular type class machinery for monad transformer stacks"
 HOMEPAGE="http://github.com/duairc/layers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

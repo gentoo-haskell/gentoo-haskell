@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="monadLib"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A collection of monad transformers."
+DESCRIPTION="A collection of monad transformers"
 HOMEPAGE="http://wiki.github.com/yav/monadlib"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

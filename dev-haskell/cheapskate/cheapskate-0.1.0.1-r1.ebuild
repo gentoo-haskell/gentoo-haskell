@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Experimental markdown processor."
+DESCRIPTION="Experimental markdown processor"
 HOMEPAGE="http://github.com/jgm/cheapskate"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

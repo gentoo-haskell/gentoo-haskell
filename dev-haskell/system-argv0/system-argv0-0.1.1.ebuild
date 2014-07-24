@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Get argv[0] as a FilePath."
+DESCRIPTION="Get argv[0] as a FilePath"
 HOMEPAGE="https://john-millikin.com/software/haskell-filesystem/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Tokenizes Tag, so [ Tag ] can be used as parser input."
+DESCRIPTION="Tokenizes Tag, so [ Tag ] can be used as parser input"
 HOMEPAGE="http://www.killersmurf.com"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

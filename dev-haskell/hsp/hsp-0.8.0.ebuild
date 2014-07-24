@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell Server Pages is a library for writing dynamic server-side web pages."
+DESCRIPTION="Haskell Server Pages is a library for writing dynamic server-side web pages"
 HOMEPAGE="http://patch-tag.com/r/nibro/hsp"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

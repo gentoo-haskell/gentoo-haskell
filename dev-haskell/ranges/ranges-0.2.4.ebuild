@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Ranges and various functions on them."
+DESCRIPTION="Ranges and various functions on them"
 HOMEPAGE="http://hackage.haskell.org/package/ranges"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

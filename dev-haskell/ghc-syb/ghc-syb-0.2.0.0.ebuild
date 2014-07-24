@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Data and Typeable instances for the GHC API."
+DESCRIPTION="Data and Typeable instances for the GHC API"
 HOMEPAGE="http://github.com/nominolo/ghc-syb"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

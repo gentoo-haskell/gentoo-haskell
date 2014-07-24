@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="HJavaScript"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="HJavaScript is an abstract syntax for a typed subset of JavaScript."
+DESCRIPTION="HJavaScript is an abstract syntax for a typed subset of JavaScript"
 HOMEPAGE="http://hackage.haskell.org/package/HJavaScript"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

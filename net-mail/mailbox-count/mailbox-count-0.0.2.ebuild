@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Count mailboxes in a SQL database."
+DESCRIPTION="Count mailboxes in a SQL database"
 HOMEPAGE="http://hackage.haskell.org/package/mailbox-count"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

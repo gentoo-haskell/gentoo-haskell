@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Pretty printing class similar to Show."
+DESCRIPTION="Pretty printing class similar to Show"
 HOMEPAGE="http://hackage.haskell.org/package/prettyclass"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

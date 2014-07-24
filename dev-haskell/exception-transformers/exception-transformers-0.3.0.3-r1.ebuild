@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Type classes and monads for unchecked extensible exceptions."
+DESCRIPTION="Type classes and monads for unchecked extensible exceptions"
 HOMEPAGE="http://www.eecs.harvard.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

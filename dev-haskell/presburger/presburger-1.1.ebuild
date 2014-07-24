@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A decision procedure for quantifier-free linear arithmetic."
+DESCRIPTION="A decision procedure for quantifier-free linear arithmetic"
 HOMEPAGE="http://github.com/yav/presburger"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

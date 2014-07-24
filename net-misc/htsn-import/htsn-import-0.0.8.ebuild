@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal user
 
-DESCRIPTION="Import XML files from The Sports Network into an RDBMS."
+DESCRIPTION="Import XML files from The Sports Network into an RDBMS"
 HOMEPAGE="http://hackage.haskell.org/package/htsn-import"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

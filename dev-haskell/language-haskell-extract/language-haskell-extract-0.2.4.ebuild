@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Module to automatically extract functions from the local code."
+DESCRIPTION="Module to automatically extract functions from the local code"
 HOMEPAGE="http://github.com/finnsson/template-helper"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI="3"
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="Mplayer client extension for Manatee."
+DESCRIPTION="Mplayer client extension for Manatee"
 HOMEPAGE="http://hackage.haskell.org/package/manatee-mplayer"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

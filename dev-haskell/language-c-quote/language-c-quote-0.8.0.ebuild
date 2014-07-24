@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="C/CUDA/OpenCL/Objective-C quasiquoting library."
+DESCRIPTION="C/CUDA/OpenCL/Objective-C quasiquoting library"
 HOMEPAGE="http://www.cs.drexel.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Statically checked physical dimensions."
+DESCRIPTION="Statically checked physical dimensions"
 HOMEPAGE="http://dimensional.googlecode.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

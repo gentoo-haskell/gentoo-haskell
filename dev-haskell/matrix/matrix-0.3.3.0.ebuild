@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A native implementation of matrix operations."
+DESCRIPTION="A native implementation of matrix operations"
 HOMEPAGE="http://hackage.haskell.org/package/matrix"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

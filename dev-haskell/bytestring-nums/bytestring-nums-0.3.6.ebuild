@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Parse numeric literals from ByteStrings."
+DESCRIPTION="Parse numeric literals from ByteStrings"
 HOMEPAGE="http://github.com/solidsnack/bytestring-nums"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

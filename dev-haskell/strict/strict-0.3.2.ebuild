@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Strict data types and String IO."
+DESCRIPTION="Strict data types and String IO"
 HOMEPAGE="http://www.cse.unsw.edu.au/~rl/code/strict.html"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

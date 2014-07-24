@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="HaskellDB support for the HDBC SQLite driver."
+DESCRIPTION="HaskellDB support for the HDBC SQLite driver"
 HOMEPAGE="https://github.com/m4dc4p/haskelldb"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

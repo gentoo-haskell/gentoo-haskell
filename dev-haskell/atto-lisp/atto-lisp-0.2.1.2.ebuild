@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Efficient parsing and serialisation of S-Expressions."
+DESCRIPTION="Efficient parsing and serialisation of S-Expressions"
 HOMEPAGE="http://github.com/nominolo/atto-lisp"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

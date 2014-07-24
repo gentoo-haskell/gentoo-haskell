@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="General A* search algorithm."
+DESCRIPTION="General A* search algorithm"
 HOMEPAGE="http://hackage.haskell.org/package/astar"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

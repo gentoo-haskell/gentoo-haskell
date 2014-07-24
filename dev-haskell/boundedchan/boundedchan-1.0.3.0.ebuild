@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="BoundedChan"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Implementation of bounded channels."
+DESCRIPTION="Implementation of bounded channels"
 HOMEPAGE="http://hackage.haskell.org/package/BoundedChan"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 

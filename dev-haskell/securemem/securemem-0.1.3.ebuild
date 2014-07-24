@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="abstraction to an auto scrubbing and const time eq, memory chunk."
+DESCRIPTION="abstraction to an auto scrubbing and const time eq, memory chunk"
 HOMEPAGE="http://github.com/vincenthz/hs-securemem"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -12,7 +12,7 @@ inherit eutils git-r3 haskell-cabal
 MY_PN="LambdaWars"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="RoboWars for London Haskell User Group."
+DESCRIPTION="RoboWars for London Haskell User Group"
 HOMEPAGE="https://github.com/andreyLevushkin/LambdaWars"
 EGIT_REPO_URI="git://github.com/andreyLevushkin/LambdaWars.git"
 

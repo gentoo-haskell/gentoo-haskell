@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell bindings for the PortAudio library."
+DESCRIPTION="Haskell bindings for the PortAudio library"
 HOMEPAGE="http://code.haskell.org/portaudio"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

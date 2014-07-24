@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Simplistic D&D style dice-rolling system."
+DESCRIPTION="Simplistic D&D style dice-rolling system"
 HOMEPAGE="http://hackage.haskell.org/package/dice"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

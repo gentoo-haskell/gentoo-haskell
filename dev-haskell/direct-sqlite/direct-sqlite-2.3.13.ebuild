@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Low-level binding to SQLite3.  Includes UTF8 and BLOB support."
+DESCRIPTION="Low-level binding to SQLite3.  Includes UTF8 and BLOB support"
 HOMEPAGE="http://ireneknapp.com/software/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

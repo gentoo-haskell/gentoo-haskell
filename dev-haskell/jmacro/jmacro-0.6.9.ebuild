@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="QuasiQuotation library for programmatic generation of Javascript code."
+DESCRIPTION="QuasiQuotation library for programmatic generation of Javascript code"
 HOMEPAGE="http://hackage.haskell.org/package/jmacro"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

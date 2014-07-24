@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A package for working with bit masks and flags in general."
+DESCRIPTION="A package for working with bit masks and flags in general"
 HOMEPAGE="http://hackage.haskell.org/package/data-flags"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

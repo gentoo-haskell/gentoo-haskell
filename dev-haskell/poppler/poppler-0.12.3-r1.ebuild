@@ -15,7 +15,7 @@ GTK_MAJ_VER="2"
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
 inherit base haskell-cabal
 
-DESCRIPTION="Binding to the Poppler."
+DESCRIPTION="Binding to the Poppler"
 HOMEPAGE="http://www.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

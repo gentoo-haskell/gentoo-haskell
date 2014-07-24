@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="A reflective batch tester for Haskell."
+DESCRIPTION="A reflective batch tester for Haskell"
 HOMEPAGE="https://github.com/davidsiegel/quicktest"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -10,7 +10,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Conduit interface for cryptographic operations (from crypto-api)."
+DESCRIPTION="Conduit interface for cryptographic operations (from crypto-api)"
 HOMEPAGE="https://github.com/prowdsponsor/crypto-conduit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

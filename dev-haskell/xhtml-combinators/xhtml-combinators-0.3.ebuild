@@ -7,7 +7,7 @@
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="Fast and easy to use XHTML combinators."
+DESCRIPTION="Fast and easy to use XHTML combinators"
 HOMEPAGE="http://www.dcs.shef.ac.uk/~aca08aa/xhtmlc.html"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

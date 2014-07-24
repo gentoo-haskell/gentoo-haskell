@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Use template Haskell to generate Uniplate-like functions."
+DESCRIPTION="Use template Haskell to generate Uniplate-like functions"
 HOMEPAGE="http://hackage.haskell.org/package/geniplate"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

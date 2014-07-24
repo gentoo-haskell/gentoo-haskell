@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Socks proxy (version 5) implementation."
+DESCRIPTION="Socks proxy (version 5) implementation"
 HOMEPAGE="http://github.com/vincenthz/hs-socks"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

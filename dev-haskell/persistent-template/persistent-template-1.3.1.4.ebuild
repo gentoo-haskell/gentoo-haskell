@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Type-safe, non-relational, multi-backend persistence."
+DESCRIPTION="Type-safe, non-relational, multi-backend persistence"
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

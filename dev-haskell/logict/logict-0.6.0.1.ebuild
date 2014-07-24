@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
-DESCRIPTION="A backtracking logic-programming monad."
+DESCRIPTION="A backtracking logic-programming monad"
 HOMEPAGE="http://code.haskell.org/~dolio/logict"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

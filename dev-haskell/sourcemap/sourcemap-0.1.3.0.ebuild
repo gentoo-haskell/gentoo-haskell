@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Implementation of source maps as proposed by Google and Mozilla."
+DESCRIPTION="Implementation of source maps as proposed by Google and Mozilla"
 HOMEPAGE="http://hackage.haskell.org/package/sourcemap"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

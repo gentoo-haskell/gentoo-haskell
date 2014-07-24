@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A parallel wrapper for 'ghc --make'."
+DESCRIPTION="A parallel wrapper for 'ghc --make'"
 HOMEPAGE="https://github.com/23Skidoo/ghc-parmake"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

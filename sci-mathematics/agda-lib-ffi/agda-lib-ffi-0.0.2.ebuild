@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 AGDA_P="lib-0.7"
 
-DESCRIPTION="Auxiliary Haskell code used by Agda's standard library."
+DESCRIPTION="Auxiliary Haskell code used by Agda's standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
 SRC_URI="http://www.cse.chalmers.se/~nad/software/${AGDA_P}.tar.gz"
 

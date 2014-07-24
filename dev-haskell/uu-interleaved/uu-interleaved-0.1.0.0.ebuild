@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Providing an interleaving combinator for use with applicative/alternative style implementations."
+DESCRIPTION="Providing an interleaving combinator for use with applicative/alternative style implementations"
 HOMEPAGE="http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

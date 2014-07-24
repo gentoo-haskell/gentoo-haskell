@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Binding to the ALSA Library API (Exceptions)."
+DESCRIPTION="Binding to the ALSA Library API (Exceptions)"
 HOMEPAGE="http://www.haskell.org/haskellwiki/ALSA"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

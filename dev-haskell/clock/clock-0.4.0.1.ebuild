@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="High-resolution clock functions: monotonic, realtime, cputime."
+DESCRIPTION="High-resolution clock functions: monotonic, realtime, cputime"
 HOMEPAGE="https://github.com/corsis/clock/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Field-of-view calculation for low-resolution 2D raster grids."
+DESCRIPTION="Field-of-view calculation for low-resolution 2D raster grids"
 HOMEPAGE="https://github.com/nornagon/hfov"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

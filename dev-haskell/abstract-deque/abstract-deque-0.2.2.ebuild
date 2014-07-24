@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Abstract, parameterized interface to mutable Deques."
+DESCRIPTION="Abstract, parameterized interface to mutable Deques"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree-queue/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

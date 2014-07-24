@@ -9,7 +9,7 @@ EAPI=4
 CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
-DESCRIPTION="MySQL driver for HSQL."
+DESCRIPTION="MySQL driver for HSQL"
 HOMEPAGE="http://hackage.haskell.org/package/hsql-mysql"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

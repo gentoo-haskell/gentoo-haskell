@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Transform text from the command-line using Haskell expressions."
+DESCRIPTION="Transform text from the command-line using Haskell expressions"
 HOMEPAGE="http://hackage.haskell.org/package/haskell-awk"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

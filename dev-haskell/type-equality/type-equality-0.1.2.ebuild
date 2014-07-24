@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Type equality, coercion/cast and other operations."
+DESCRIPTION="Type equality, coercion/cast and other operations"
 HOMEPAGE="http://github.com/hesselink/type-equality/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
