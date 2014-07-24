@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Interlude is a CPP include file, and a module which you can use instead of the
 		(often implicit) Prelude import.  It replaces some partial

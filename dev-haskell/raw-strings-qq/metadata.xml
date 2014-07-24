@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		A quasiquoter for raw string literals - that is, string literals that don&#39;t
 		recognise the standard escape sequences (such as @\&#39;\\n\&#39;@). Basically, they

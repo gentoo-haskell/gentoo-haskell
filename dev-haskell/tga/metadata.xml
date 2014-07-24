@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		TGA is a very simple format (like Bitmap), but in contrast to Bitmap also stores an alpha channel for transparency. Although tga might be outdated it had to be implemented because stb-image only supports reading. This version supports raw RGB24 and RGB32 data without palettes or run length encoding
 	</longdescription>

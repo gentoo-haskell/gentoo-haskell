@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		HaNS is a lightweight, pure Haskell network stack that can be used for Haskell
 		networking in the context of the HaLVM, or with a Linux tap device. Currently,

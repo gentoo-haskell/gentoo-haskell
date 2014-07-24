@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		@lifted-base@ exports IO operations from the base library lifted to
 		any instance of &#39;MonadBase&#39; or &#39;MonadBaseControl&#39;.

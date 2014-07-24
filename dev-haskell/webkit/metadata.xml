@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		WebKit is a web content engine, derived from KHTML and KJS from KDE, and
 		used primarily in Apple&#39;s Safari browser.  It is made to be embedded in

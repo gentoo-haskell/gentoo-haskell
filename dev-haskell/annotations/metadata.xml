@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		@Annotations@ provides utility functions to make working with annotated trees easier. There are two implementations: one for working with open datatypes that explicitly make their child positions accessible through a type argument, and one for working with MultiRec datatypes.
 		

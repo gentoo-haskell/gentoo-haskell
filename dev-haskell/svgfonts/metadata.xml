@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Native font support for the diagrams framework (&lt;http://projects.haskell.org/diagrams/&gt;). Note that this package can be used with any diagrams backend, not just the SVG backend.  The SVG-tont format is easy to parse
 		and was therefore chosen for a font library completely written in Haskell.

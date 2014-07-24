@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Synchronous and Asynchronous exceptions which are explicit in the type signature.
 		The first ones are very similar to &#39;Either&#39; and &#39;Control.Monad.Error.ErrorT&#39;.

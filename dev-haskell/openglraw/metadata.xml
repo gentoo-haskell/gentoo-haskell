@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		OpenGLRaw is a raw Haskell binding for the OpenGL 3.2 graphics system and
 		lots of OpenGL extensions. It is basically a 1:1 mapping of OpenGL&#39;s C API,

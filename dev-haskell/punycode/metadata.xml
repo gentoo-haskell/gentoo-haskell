@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Encode unicode strings to ascii forms according to RFC 3492. It is written in pure Haskell, as opposed to gnuidn&#39;s Data.Text.IDN.Punycode. Please note that Data.Encoding.BootString from the &#39;encoding&#39; package also contains an implementation of the Punycode algorithm.
 	</longdescription>

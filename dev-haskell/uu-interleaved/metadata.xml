@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This module contains parser library independent code which can be used to describe inlerleaved execution of applicative style structures.
 		It is amongst other used in the uu-options package, which provides facilities for parsing command-line options or files containing preferences.

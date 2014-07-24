@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Gloss hides the pain of drawing simple vector graphics behind a nice data type and
 		a few display functions. Gloss uses OpenGL under the hood, but you won&#39;t need to

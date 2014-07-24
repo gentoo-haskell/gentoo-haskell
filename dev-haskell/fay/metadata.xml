@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Fay is a proper subset of Haskell which can be compiled (type-checked)
 		with GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,

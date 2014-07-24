@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		A Haskell binding for the portable TrueType to OpenGL font rendering library FTGL.
 		This package provides OpenGL with polygonal, texture mapped, and extruded fonts using

@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		llvm-general-pure is a set of pure Haskell types and functions for interacting with LLVM &lt;http://llvm.org/&gt;.
 		It includes an ADT to represent LLVM IR (&lt;http://llvm.org/docs/LangRef.html&gt;). The llvm-general package

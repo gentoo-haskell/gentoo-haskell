@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Buster is best described by the following blog post: http:\/\/vis.renci.org\/jeff\/2009\/03\/31\/almost-but-not-quite-entirely-like-frp\/
 		

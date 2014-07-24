@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Asymptotically optimal Brodal/Okasaki bootstrapped skew-binomial heaps from the paper \&quot;Optimal Purely Functional Priority Queues\&quot;, extended with a Foldable interface.
 	</longdescription>

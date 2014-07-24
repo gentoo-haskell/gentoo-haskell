@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This library provides FFI bindings to syslog(3) from POSIX.1-2001.
 		See &lt;http://www.opengroup.org/onlinepubs/009695399/basedefs/syslog.h.html&gt; for

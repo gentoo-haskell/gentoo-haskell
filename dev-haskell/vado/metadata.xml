@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Lets you quickly run ssh on a machine that you have an sshfs connection to.
 		It works out the username, host and the directory on the host based on the current directory and the output of &#39;mount&#39;.

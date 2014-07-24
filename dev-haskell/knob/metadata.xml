@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Create memory-backed &#39;Handle&#39;s, referencing virtual files. This is
 		mostly useful for testing &#39;Handle&#39;-based APIs without having to

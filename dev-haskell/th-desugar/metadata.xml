@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This package provides the Language.Haskell.TH.Desugar module, which desugars
 		Template Haskell&#39;s rich encoding of Haskell syntax into a simpler encoding.

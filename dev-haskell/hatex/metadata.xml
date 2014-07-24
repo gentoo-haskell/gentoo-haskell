@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		The LaTeX project site states: \&quot;LaTeX is a high-quality typesetting system\&quot;. This library provides
 		a bridge between that system and Haskell (i.e. it is a LaTeX DSL).

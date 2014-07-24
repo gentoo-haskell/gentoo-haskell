@@ -3,9 +3,6 @@
 <pkgmetadata>
 	<herd>haskell</herd>
 	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
-	<maintainer>
 		<email>jekarlson@gmail.com</email>
 		<name>Emil Karlson</name>
 	</maintainer>

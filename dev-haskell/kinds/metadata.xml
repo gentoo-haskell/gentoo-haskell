@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Subkinds are the kind-level analog to subtypes. A kind denotes a set of types, and a
 		subkind of some base kind denotes a subset of the base kind&amp;#x2019;s set of types.

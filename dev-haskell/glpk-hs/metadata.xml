@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Friendly interface to GLPK&#39;s linear programming and mixed integer programming features.  Intended for easy extensibility,
 		with a general, pure-Haskell representation of linear programs.  Also includes usefully general algebraic structures.

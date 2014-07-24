@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Generates sequence diagrams from textual descriptions with help of Graphviz graph drawing tool.
 		Check out &lt;http://adept.linux.kiev.ua:8080/repos/flow2dot/sample.flow&gt; (source)

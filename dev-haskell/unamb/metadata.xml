@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		unamb contains the &quot;unambiguous choice&quot; operator &quot;unamb&quot;, which
 		wraps thread racing up in a purely functional, semantically simple

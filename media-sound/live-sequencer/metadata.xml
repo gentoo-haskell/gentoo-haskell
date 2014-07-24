@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<use>
 		<flag name="gui">Build the wxWidgets GUI for the sequencer.</flag>
 		<flag name="httpserver">Enable access to modules via a web browser.</flag>

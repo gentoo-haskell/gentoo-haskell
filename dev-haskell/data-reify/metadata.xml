@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		&#39;data-reify&#39; provided the ability to turn recursive structures into explicit graphs.
 		Many (implicitly or explicitly) recursive data structure can be given this ability, via

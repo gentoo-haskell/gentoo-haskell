@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		A platform independent method to obtain cryptographically strong entropy
 		(RDRAND when available anywhere, urandom on nix, CryptAPI on Windows, patches welcome).

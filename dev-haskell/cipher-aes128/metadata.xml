@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Cipher-aes128 is an implementation of AES and common modes of operation.  It borrows Hanquez&#39;s C AES code (see &#39;cipher-aes&#39;) but
 		is unique due to including compile-time detection of

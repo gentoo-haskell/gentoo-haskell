@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This package supports emulation of type-level functions using defunctionalization.
 		All functions whose domain is a subkind of&amp;#xA0;@*@ and whose codomain is&amp;#xA0;@*@

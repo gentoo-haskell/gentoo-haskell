@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		QuickTest inspects Haskell source files for unit tests, and runs all tests found through GHCi with a dynamically generated test harness. This means you can simply write properties about your code, and QuickTest will test these properties en masse using QuickCheck. QuickTest is based on quickcheck-script by Koen Claessen and John Hughes.
 	</longdescription>

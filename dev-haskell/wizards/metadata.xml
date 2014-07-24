@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		@wizards@ is a package designed for the quick and painless development of /interrogative/ programs, which
 		revolve around a \&quot;dialogue\&quot; with the user, who is asked a series of questions in a sequence much like an

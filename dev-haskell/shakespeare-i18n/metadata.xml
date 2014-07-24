@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This package uses the same approach of type-safe URLs to create translated content. It has a simple syntax for translators, while allowing the ful power of Haskell for applying complex grammar rules.
 		

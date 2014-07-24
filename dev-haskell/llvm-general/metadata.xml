@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		llvm-general is a set of Haskell bindings for LLVM &lt;http://llvm.org/&gt;. Unlike other current Haskell bindings,
 		it uses an ADT to represent LLVM IR (&lt;http://llvm.org/docs/LangRef.html&gt;), and so offers two advantages: it

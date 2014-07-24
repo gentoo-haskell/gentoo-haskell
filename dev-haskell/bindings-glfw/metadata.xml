@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		Low-level bindings to &lt;http://www.glfw.org/ GLFW&gt;, an open source,
 		multi-platform library for creating windows with OpenGL contexts and managing

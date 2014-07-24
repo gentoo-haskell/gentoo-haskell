@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		New version of the Utrecht University parser combinator library, which  provides online, error correction,
 		annotation free, applicative style parser combinators. In addition to this we do  provide a monadic and idomatic interface.

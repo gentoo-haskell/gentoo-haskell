@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<use>
 		<flag name="bibutils">use Chris Putnam's <pkg>app-text/bibutils</pkg></flag>
 		<flag name="embed_data_files">Embed locale files into the library (needed for windows packaging)</flag>
