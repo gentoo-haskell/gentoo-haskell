@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<maintainer>
-		<email>haskell@gentoo.org</email>
-	</maintainer>
 	<longdescription>
 		This is an implementation of Tarjan&#39;s Union-Find algorithm (Robert
 		E. Tarjan. &quot;Efficiency of a Good But Not Linear Set Union
