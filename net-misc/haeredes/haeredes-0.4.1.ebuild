@@ -26,11 +26,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/cmdargs-0.10 <dev-haskell/cmdargs-0.11
 	>=dev-haskell/dns-1.4
-	>=dev-haskell/iproute-1.2 <dev-haskell/iproute-1.3
+	>=dev-haskell/iproute-1.2 <dev-haskell/iproute-1.4
 	>=dev-haskell/missingh-1.2 <dev-haskell/missingh-1.3
 	>=dev-haskell/parallel-io-0.3 <dev-haskell/parallel-io-0.4
 	>=dev-lang/ghc-7.6.1
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'iproute                     == 1.2.*' 'iproute                     >= 1.2 && < 1.4'
+}
 
 src_install() {
 	haskell-cabal_src_install
