@@ -46,7 +46,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'ghc-options: -j +RTS -A20M -RTS' 'ghc-options: '
+		'ghc-options: -j +RTS -A20M -RTS' 'ghc-options: ' \
+		'build-depends: binary' 'build-depends: binary, data-binary-ieee754'
 }
 
 src_configure() {
