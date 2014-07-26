@@ -1,0 +1,14 @@
+--- tasty-golden-2.2.2.4-orig/tasty-golden.cabal	2014-07-06 09:51:38.000000000 +1000
++++ tasty-golden-2.2.2.4/tasty-golden.cabal	2014-07-26 13:12:51.550412609 +1000
+@@ -3,9 +3,9 @@
+ synopsis:            Golden tests support for tasty
+ description:
+-  This package provides support for «golden testing».
++  This package provides support for golden testing.
+ 
+   A golden test is an IO action that writes its result to a file.
+   To pass the test, this output file should be identical to the corresponding
+-  «golden» file, which contains the correct result for the test.
++  golden file, which contains the correct result for the test.
+ 
+ license:             MIT
