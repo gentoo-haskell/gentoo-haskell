@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/optparse-applicative-0.8:=[profile?]
-	>=dev-haskell/parsers-0.9:=[profile?] <dev-haskell/parsers-0.12:=[profile?]
+	>=dev-haskell/parsers-0.9:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
@@ -61,7 +61,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-trifecta-1.4.3.patch
 
 	cabal_chdeps \
-		'parsers >= 0.9 && < 0.11.0.2' 'parsers >= 0.9 && < 0.12'
+		'parsers >= 0.9 && < 0.11.0.2' 'parsers >= 0.9'
 }
 
 src_configure() {
