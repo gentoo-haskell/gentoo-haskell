@@ -528,7 +528,7 @@ src_install() {
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
 		# so mark resulting binary
-		pax-mark -m "${ED}/usr/$(get_libdir)/${GHC_P}/ghc"
+		pax-mark -m "${ED}/usr/$(get_libdir)/${GHC_P}/bin/ghc"
 
 		if [[ ! -f "${S}/VERSION" ]]; then
 			echo "${GHC_PV}" > "${S}/VERSION" \
