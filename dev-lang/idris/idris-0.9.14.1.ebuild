@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +release,-freestanding
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
@@ -58,8 +58,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-trifecta-1.4.3.patch
-
 	cabal_chdeps \
 		'parsers >= 0.9 && < 0.11.0.2' 'parsers >= 0.9'
 }
