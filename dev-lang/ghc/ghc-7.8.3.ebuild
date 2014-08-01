@@ -400,6 +400,8 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+		# bug 518734
+		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix

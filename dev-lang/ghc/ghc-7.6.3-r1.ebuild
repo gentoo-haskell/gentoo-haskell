@@ -443,6 +443,8 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.6.2-integer-simple-div-mod.patch
 		# ghc-7.8 changed linker code and likely fixed it
 		epatch "${FILESDIR}"/${PN}-7.6.3-trac-3333-weak-syms.patch
+		# bug 518734
+		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
