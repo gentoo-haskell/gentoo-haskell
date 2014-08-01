@@ -34,7 +34,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/void-0.5:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
-	>=dev-haskell/wai-logger-2.0:=[profile?] <dev-haskell/wai-logger-2.2:=[profile?]
+	>=dev-haskell/wai-logger-2.0:=[profile?] <dev-haskell/wai-logger-2.3:=[profile?]
 	dev-haskell/word8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
