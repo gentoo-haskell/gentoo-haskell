@@ -407,6 +407,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -530,10 +531,10 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		# 1. build compiler binary(+wrapper) first
-		emake inplace/bin/ghc-stage2
+		# 1. build compiler binary first
+		emake ghc/stage2/build/tmp/ghc-stage2
 		# 2. pax-mark (bug #516430)
-		pax-mark -m inplace/lib/bin/ghc-stage2
+		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
 		# 3. and then all the rest
 		emake all
 	fi # ! use binary
@@ -576,11 +577,6 @@ src_install() {
 
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/haddock
-
-		# ghci uses mmap with rwx protection at it implements dynamic
-		# linking on it's own (bug #299709)
-		# so mark resulting binary
-		pax-mark -m "${ED}/usr/$(get_libdir)/${GHC_P}/ghc"
 
 		dobashcomp "${FILESDIR}/ghc-bash-completion"
 
