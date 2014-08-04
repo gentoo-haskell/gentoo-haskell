@@ -15,7 +15,7 @@ SRC_URI="https://github.com/GaloisInc/${PN}/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="static"
 
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
