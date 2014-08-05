@@ -10,5 +10,6 @@
   <flag name="profiling">Build for profiling.</flag>
   <flag name='vty'>Build with Vty frontend.</flag>
   <flag name="testing"> bake-in the self-checks</flag>
+  <flag name="ghcapi">Enable linking with GHC API for advanced features</flag>
 </use>
 </pkgmetadata>
