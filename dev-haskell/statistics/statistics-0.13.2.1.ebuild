@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.0.0:=[profile?]
 	>=dev-haskell/monad-par-0.3.4:=[profile?]
 	>=dev-haskell/mwc-random-0.13.0.0:=[profile?]
 	>=dev-haskell/primitive-0.3:=[profile?]
-	>=dev-haskell/vector-0.7.1:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/vector-algorithms-0.4:=[profile?]
 	>=dev-haskell/vector-binary-instances-0.2.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
