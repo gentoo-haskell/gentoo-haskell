@@ -2,6 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
+	<use>
+		<flag name="system-glfw">use <pkg>media-libs/glfw</pkg> instead of bundled version</flag>
+	</use>
 	<longdescription>
 		A Haskell binding for GLFW, a window system independent toolkit
 		for writing OpenGL programs. For more information about the C
