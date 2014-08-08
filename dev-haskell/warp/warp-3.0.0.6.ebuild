@@ -19,7 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd warp-debug"
 
-RDEPEND=">=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
+	>=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.8.5:=[profile?]
