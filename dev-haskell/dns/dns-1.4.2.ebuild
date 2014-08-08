@@ -32,7 +32,9 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/hspec )
+	test? ( dev-haskell/doctest
+		dev-haskell/hspec
+		dev-haskell/word8 )
 "
 
 # There are two additional test suites, "doctest" and "network" which
