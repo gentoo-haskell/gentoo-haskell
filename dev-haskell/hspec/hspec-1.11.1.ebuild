@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Behavior-Driven Development for Haskell"
+DESCRIPTION="A Testing Framework for Haskell"
 HOMEPAGE="http://hspec.github.io/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -32,8 +32,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/doctest-0.9.4.1
-		dev-haskell/ghc-paths
+	test? ( dev-haskell/ghc-paths
 		>=dev-haskell/hspec-meta-1.9.1
 		>=dev-haskell/silently-1.2.4 )
 "
