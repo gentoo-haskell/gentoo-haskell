@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/stmonadtrans-0.3.2:=[profile?] <dev-haskell/stmonadtrans-0.4:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
