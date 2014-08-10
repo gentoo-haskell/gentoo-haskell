@@ -23,18 +23,15 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?] <app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/persistent-0.9:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
-	dev-haskell/temporary:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.1:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.3:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	|| ( <dev-haskell/texmath-0.6.5.1:=[profile?]
+		|| ( ( >dev-haskell/texmath-0.6.5.1:=[profile?] <dev-haskell/texmath-0.6.7:=[profile?] )
+			>dev-haskell/texmath-0.6.7:=[profile?] ) )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'temporary                   < 1.2.0.2' 'temporary'
-}
