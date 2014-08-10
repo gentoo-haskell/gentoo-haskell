@@ -12,5 +12,6 @@
 	</longdescription>
 	<use>
 		<flag name='download'>Build with Download module.</flag>
-        </use>
+		<flag name='testprog'>Build the test program.</flag>
+	</use>
 </pkgmetadata>
