@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.13:=[profil
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.3.2:=[profile?] <dev-haskell/juicypixels-3.2:=[profile?]
-	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4.3:=[profile?]
+	>=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-4.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.7:=[profile?] <dev-haskell/optparse-applicative-0.10:=[profile?]
 	>=dev-haskell/pango-0.12.5:=[profile?] <dev-haskell/pango-0.13:=[profile?]
@@ -38,3 +38,8 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.13:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 3.8 && < 4.3' 'lens >= 3.8 && < 4.4'
+}
