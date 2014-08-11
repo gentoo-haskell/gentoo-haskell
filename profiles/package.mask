@@ -1,14 +1,3 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (19 Jul 2014)
-# ghc-7.8 using packages
->=dev-lang/ghc-7.8
->=dev-haskell/deepseq-1.3.0.2
->=dev-haskell/repa-3.2.5.1
->=dev-haskell/repa-io-3.2.5.1
->=dev-haskell/repa-algorithms-3.2.5.1
->=dev-haskell/gloss-1.8.2.1
->=dev-haskell/gloss-raster-1.8.2.1
->=dev-haskell/gloss-examples-1.8.2.1
-
 # Sergei Trofimovich <slyfox@gentoo.org> (03 Jul 2014)
 # Needs qt-5. Not in the main tree yet.
 >=dev-haskell/hsqml-0.3.1.0
