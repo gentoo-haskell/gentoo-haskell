@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,4 +28,9 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag prim-supports-any prim-supports-any)
+}
+
+src_prepare() {
+	cabal_chdeps \
+	  'base >= 4.5 && < 4.7' 'base >= 4.5 && < 4.8'
 }
