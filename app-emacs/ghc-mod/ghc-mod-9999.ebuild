@@ -22,11 +22,21 @@ RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 			( >=dev-lang/ghc-7.7 ) )
 	>=dev-haskell/cabal-1.10:=[profile?]
 	dev-haskell/convertible:=[profile?]
+	>=dev-haskell/djinn-ghc-0.0.2.1:=[profile?]
+	dev-haskell/ghc-paths:=[profile?]
 	dev-haskell/ghc-syb-utils:=[profile?]
-	>=dev-haskell/hlint-1.8.58:=[profile?]
+	dev-haskell/haskell-src-exts:=[profile?]
+	>=dev-haskell/hlint-1.8.61:=[profile?]
 	dev-haskell/io-choice:=[profile?]
+	dev-haskell/monad-control:=[profile?]
+	>=dev-haskell/monad-journal-0.2.2.0:=[profile?]
+	>=dev-haskell/mtl-2.0:=[profile?]
+	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
+	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
+	dev-haskell/transformers-base:=[profile?]
+	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -34,7 +44,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.3
 		|| ( ( <dev-lang/ghc-7.6.0 dev-haskell/executable-path )
 			( >=dev-lang/ghc-7.6.0 ) )
-		>=dev-haskell/hspec-1.7.1 )
+		>=dev-haskell/hspec-1.8.2 )
 "
 SITEFILE=50${PN}-gentoo.el
 
