@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
+	<use>
+		<flag name="example-client">build example client</flag>
+		<flag name="gcrypt">add hack that allows to run threaded program when libssh2 is built against gcrypt</flag>
+	</use>
 	<longdescription>
 		This package provides FFI bindings for SSH2 client library named libssh2.
 		
