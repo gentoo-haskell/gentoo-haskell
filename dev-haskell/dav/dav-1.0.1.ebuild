@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	dev-haskell/data-default:=[profile?]
-	>=dev-haskell/either-4.1:=[profile?]
+	>=dev-haskell/either-4.3:=[profile?]
 	dev-haskell/errors:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/http-client-0.2:=[profile?]
