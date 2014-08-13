@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing files
-
 RDEPEND=">=dev-haskell/cmdtheline-0.2:=[profile?] <dev-haskell/cmdtheline-0.3:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/monad-unify-0.2.2:=[profile?] <dev-haskell/monad-unify-0.3:=[profile?]
@@ -35,9 +33,3 @@ RDEPEND=">=dev-haskell/cmdtheline-0.2:=[profile?] <dev-haskell/cmdtheline-0.3:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'mtl >= 2.1.0 && < 2.2.0' 'mtl >= 2.1.0 && < 2.3.0' \
-		'transformers >= 0.3 && < 0.4' 'transformers >= 0.3 && < 0.5'
-}
