@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	>=dev-haskell/async-2:=[profile?]
-	>=dev-haskell/hspec-expectations-0.5.0:=[profile?] <dev-haskell/hspec-expectations-0.6.1:=[profile?]
+	>=dev-haskell/hspec-expectations-0.6.1:=[profile?] <dev-haskell/hspec-expectations-0.6.2:=[profile?]
 	>=dev-haskell/hunit-1.2.5:=[profile?]
 	>=dev-haskell/quickcheck-2.5.1:2=[profile?]
 	dev-haskell/quickcheck-io:=[profile?]
