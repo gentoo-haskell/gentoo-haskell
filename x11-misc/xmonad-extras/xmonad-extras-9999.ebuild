@@ -34,10 +34,6 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
-src_prepare() {
-	cabal_chdeps \
-		'hint >= 0.3.3.3 && < 0.4' 'hint >= 0.3.3.3 && < 0.5'
-}
 
 src_configure() {
 	cabal_src_configure \
