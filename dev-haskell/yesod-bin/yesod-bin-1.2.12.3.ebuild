@@ -63,5 +63,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-	--constraint="Cabal == $(cabal-version)"
+		--constraint="Cabal == $(cabal-version)"
 }
