@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The @HFlags@ library supports easy definition of command line flags,
+		reimplementing the ideas from Google&#39;s @gflags@
+		(&lt;http://code.google.com/p/gflags&gt;).
+		
+		Command line flags can be declared in any file at the toplevel,
+		using &#39;defineFlag&#39;.  At runtime, the actual values are assigned to
+		the toplevel @flags_name@ constants.  Those can be used purely
+		throughout the program.
+		
+		At the beginning of the @main@ function, @$initHFlags \&quot;program
+		description\&quot;@ has to be called to initialize the flags.  All flags
+		will be initialized that are transitively reachable via imports from
+		@main@.  This means, that any Haskell package can easily define
+		command line flags with @HFlags@.  This feature is demonstrated by
+		&lt;http://github.com/errge/hflags/blob/master/examples/ImportExample.hs&gt;
+		and &lt;http://github.com/errge/hflags/tree/master/examples/package&gt;.
+		
+		A simple example (more in the
+		&lt;http://github.com/errge/hflags/tree/master/examples&gt; directory):
+		
+		@
+		\#!\/usr\/bin\/env runhaskell
+		
+		&amp;#x7b;-\# LANGUAGE TemplateHaskell \#-&amp;#x7d;
+		
+		import HFlags
+		
+		&#39;defineFlag&#39; \&quot;name\&quot; \&quot;Indiana Jones\&quot; \&quot;Who to greet.\&quot;
+		&#39;defineFlag&#39; \&quot;r:repeat\&quot; (3 + 4 :: Int) \&quot;Number of times to repeat the message.\&quot;
+		
+		main = do s &lt;- $initHFlags \&quot;Simple program v0.1\&quot;
+		&amp;#x20;         sequence_ $ replicate flags_repeat greet
+		&amp;#x20;         putStrLn $ \&quot;Your additional arguments were: \&quot; ++ show s
+		&amp;#x20;         putStrLn $ \&quot;Which is the same as: \&quot; ++ show HFlags.arguments
+		&amp;#x20; where
+		&amp;#x20;   greet = putStrLn $ \&quot;Hello \&quot; ++ flags_name ++ \&quot;, very nice to meet you!\&quot;
+		@
+		
+		At @initHFlags@ time, the library also tries to gather flags out of
+		environment variables.  @HFLAGS_verbose=True@ is equivalent to
+		specify --verbose=True.  This environment feature only works with
+		long options and the user has to specify a value even for Bools.
+		
+		/Since version 0.2, you mustn&#39;t put the initHFlags in a parentheses with the program description.  Just/ @$initHFlags@, /it&#39;s cleaner./
+		
+		See &lt;http://github.com/errge/hflags/tree/master/changelog&gt; for recent changes.
+	</longdescription>
+</pkgmetadata>
