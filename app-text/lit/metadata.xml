@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		lit has a minimal syntax for implementing literate
+		programming. It generates both HTML and the native
+		source code.
+	</longdescription>
+</pkgmetadata>
