@@ -5,10 +5,7 @@ diff --git a/libraries/ghc-prim/ghc-prim.cabal b/libraries/ghc-prim/ghc-prim.cab
 index ffb32af..0431380 100644
 --- a/libraries/ghc-prim/ghc-prim.cabal
 +++ b/libraries/ghc-prim/ghc-prim.cabal
-@@ -65,3 +65,7 @@ Library
-     -- We need to set the package name to ghc-prim (without a version number)
-     -- as it's magic.
-     ghc-options: -package-name ghc-prim
+@@ -68,0 +68,4 @@ Library
 +
 +    -- ghc 'sin' (and other) primops generate 'libm' calls,
 +    -- but ghc itself does not add '-lm'
