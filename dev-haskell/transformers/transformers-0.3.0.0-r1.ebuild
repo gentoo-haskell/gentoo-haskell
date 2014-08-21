@@ -20,6 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6"
+	>=dev-haskell/cabal-1.6"
 
 CABAL_CORE_LIB_GHC_PV="7.8.1 7.8.2 7.8.3"
