@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/cmdargs-0.10.5:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/dyre-0.8:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14.0:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
-	>=dev-haskell/lens-3.9.2:=[profile?] <dev-haskell/lens-4.4:=[profile?]
+	>=dev-haskell/lens-3.9.2:=[profile?] <dev-haskell/lens-4.5:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.2:=[profile?]
