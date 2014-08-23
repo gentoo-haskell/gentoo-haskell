@@ -401,6 +401,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		# bug 518734
 		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-unreg-lit.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
