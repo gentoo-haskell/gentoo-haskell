@@ -9,4 +9,7 @@
 		
 		Changes to 9.1.3: New warnings from ghc-7.4 removed
 	</longdescription>
+	<use>
+		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
+	</use>
 </pkgmetadata>
