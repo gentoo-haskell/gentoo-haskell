@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+template_haskell"
 
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
-	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
-	>=dev-haskell/conduit-extra-1.0:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
+	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
+	>=dev-haskell/conduit-extra-1.0:=[profile?] <dev-haskell/conduit-extra-1.3:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/fast-logger-2.0:=[profile?] <dev-haskell/fast-logger-2.3:=[profile?]
 	dev-haskell/lifted-base:=[profile?]
