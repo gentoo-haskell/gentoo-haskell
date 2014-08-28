@@ -25,6 +25,8 @@ RDEPEND=">=dev-haskell/basic-prelude-0.3.8:=[profile?] <dev-haskell/basic-prelud
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/mono-traversable-0.6.1:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/primitive:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/stm:=[profile?]
 	>=dev-haskell/system-filepath-0.4:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
