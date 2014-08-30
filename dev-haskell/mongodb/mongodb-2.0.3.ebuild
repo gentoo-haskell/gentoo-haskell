@@ -13,7 +13,7 @@ MY_PN="mongoDB"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Driver (client) for MongoDB, a free, scalable, fast, document DBMS"
-HOMEPAGE="http://github.com/selectel/mongodb-haskell"
+HOMEPAGE="https://github.com/mongodb-haskell/mongodb"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/binary:=[profile?]
-	>=dev-haskell/bson-0.2.0:=[profile?] <dev-haskell/bson-0.3.0:=[profile?]
+	>=dev-haskell/bson-0.3:=[profile?] <dev-haskell/bson-0.4:=[profile?]
 	dev-haskell/cryptohash:=[profile?]
 	>=dev-haskell/hashtables-1.1.2.0:=[profile?]
 	>=dev-haskell/lifted-base-0.1.0.3:=[profile?]
@@ -37,7 +37,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.2
+	>=dev-haskell/cabal-1.6
 "
 
 S="${WORKDIR}/${MY_P}"
