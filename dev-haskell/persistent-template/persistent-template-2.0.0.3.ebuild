@@ -18,10 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/aeson:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
-	>=dev-haskell/persistent-1.3:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
+	dev-haskell/path-pieces:=[profile?]
+	>=dev-haskell/persistent-2.0:=[profile?] <dev-haskell/persistent-2.1:=[profile?]
+	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/text-0.5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
