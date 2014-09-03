@@ -22,6 +22,7 @@ RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
+	dev-haskell/ghc-api:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
