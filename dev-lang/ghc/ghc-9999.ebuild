@@ -405,7 +405,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-9999-libbfd.patch
 
-		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
