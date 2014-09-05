@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing files
-
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.3:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
