@@ -377,6 +377,9 @@ src_prepare() {
 			sed -i -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' configure.ac || die
 		fi
 
+		# disable bitrot bfd support, bug #522268
+		sed -i -e 's/^AC_CHECK_LIB(bfd,    bfd_init)$/dnl &/' configure.ac || die
+
 		# as we have changed the build system
 		eautoreconf
 	fi
