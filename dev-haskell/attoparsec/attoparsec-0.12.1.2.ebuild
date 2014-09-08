@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/quickcheck-2.7
 		>=dev-haskell/test-framework-0.8.0.2
-		>=dev-haskell/test-framework-quickcheck2-0.3.0.3 )
+		>=dev-haskell/test-framework-quickcheck2-0.3.0.3
+		dev-haskell/vector )
 "
 
 src_configure() {
