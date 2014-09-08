@@ -33,6 +33,6 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/ghc-paths
-		>=dev-haskell/hspec-meta-1.9.1
+		~dev-haskell/hspec-meta-1.11.4
 		>=dev-haskell/silently-1.2.4 )
 "
