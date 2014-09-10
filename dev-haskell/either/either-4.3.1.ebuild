@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
 	>=dev-haskell/free-4.9:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/monad-control-0.3.2:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
-	>=dev-haskell/monadrandom-0.1:=[profile?] <dev-haskell/monadrandom-0.3:=[profile?]
+	>=dev-haskell/monadrandom-0.1:=[profile?] <dev-haskell/monadrandom-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
