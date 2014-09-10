@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+bytestring +containers +hashable +text +unordered-containers"
+IUSE="+bytestring +containers +deepseq +hashable +text +unordered-containers"
 
 RDEPEND=">=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -32,6 +32,7 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bytestring bytestring) \
 		$(cabal_flag containers containers) \
+		$(cabal_flag deepseq deepseq) \
 		$(cabal_flag hashable hashable) \
 		$(cabal_flag text text) \
 		$(cabal_flag unordered-containers unordered-containers)
