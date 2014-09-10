@@ -23,7 +23,8 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/hashable-1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.3:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
-	>=dev-haskell/network-2.3.0:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.3.0:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/snap-core-0.9:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
 	>=dev-haskell/snap-server-0.9:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
@@ -41,6 +42,11 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network                >= 2.3.0  && < 2.6' 'network                >= 2.3.0  && < 2.7, network-uri'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
