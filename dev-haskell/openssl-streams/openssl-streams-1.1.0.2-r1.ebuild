@@ -22,9 +22,14 @@ RESTRICT=test # needs old test-framework versions
 
 RDEPEND=">=dev-haskell/hsopenssl-0.10.3:=[profile?] <dev-haskell/hsopenssl-0.11:=[profile?]
 	>=dev-haskell/io-streams-1.0:=[profile?] <dev-haskell/io-streams-1.2:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network       >= 2.4    && <2.6' 'network       >= 2.4    && <2.7'
+}
