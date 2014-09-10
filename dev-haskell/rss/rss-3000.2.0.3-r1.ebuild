@@ -19,9 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/haxml-1.24:=[profile?]
-	>=dev-haskell/network-2.0:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.0:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network    >= 2.0    && < 2.6' 'network    >= 2.0    && < 2.7, network-uri'
+}
