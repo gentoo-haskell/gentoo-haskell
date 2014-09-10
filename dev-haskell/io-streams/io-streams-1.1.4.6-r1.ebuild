@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.1:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/primitive-0.2:=[profile?] <dev-haskell/primitive-0.6:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -39,6 +39,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network       >= 2.3   && <2.6' 'network       >= 2.3   && <2.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
