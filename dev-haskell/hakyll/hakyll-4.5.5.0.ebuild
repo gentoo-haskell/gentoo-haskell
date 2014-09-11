@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
 RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
-	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
@@ -27,7 +27,8 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.2:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/pandoc-citeproc-0.4:=[profile?] <dev-haskell/pandoc-citeproc-0.5:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
