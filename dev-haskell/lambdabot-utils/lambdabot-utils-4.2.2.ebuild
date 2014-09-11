@@ -19,16 +19,22 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/binary:=[profile?]
-		dev-haskell/haskell-src:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		dev-haskell/network:=[profile?]
-		dev-haskell/random:=[profile?]
-		dev-haskell/regex-compat:=[profile?]
-		dev-haskell/regex-posix:=[profile?]
-		dev-haskell/syb:=[profile?]
-		>dev-haskell/tagsoup-0.6:=[profile?]
-		dev-haskell/utf8-string:=[profile?]
-		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+	dev-haskell/haskell-src:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
+	dev-haskell/random:=[profile?]
+	dev-haskell/regex-compat:=[profile?]
+	dev-haskell/regex-posix:=[profile?]
+	dev-haskell/syb:=[profile?]
+	>dev-haskell/tagsoup-0.6:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
+	dev-haskell/zlib:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10"
+	>=dev-haskell/cabal-1.10"
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
