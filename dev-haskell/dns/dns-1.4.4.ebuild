@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous modules
+
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/binary:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
@@ -26,6 +28,7 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/iproute-1.2.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -36,3 +39,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		dev-haskell/word8 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network >= 2.3' 'network >= 2.3, network-uri'
+}
