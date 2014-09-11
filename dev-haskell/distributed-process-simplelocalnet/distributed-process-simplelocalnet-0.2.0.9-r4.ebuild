@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		>=dev-haskell/distributed-process-0.4.2:=[profile?] <dev-haskell/distributed-process-0.5:=[profile?]
-		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
+		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 		=dev-haskell/network-multicast-0.0*:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		=dev-haskell/network-transport-tcp-0.3*:=[profile?]
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'binary >= 0.5 && < 0.7' 'binary >= 0.5 && < 0.8' \
-		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6' \
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.7' \
 		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
 
 }
