@@ -27,6 +27,7 @@ RDEPEND="dev-haskell/http:=[profile?]
 		dev-haskell/maybet:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/network:=[profile?]
+		dev-haskell/network-uri:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -34,3 +35,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
