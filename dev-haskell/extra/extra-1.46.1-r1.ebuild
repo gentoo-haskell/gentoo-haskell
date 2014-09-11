@@ -22,17 +22,23 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/bzlib:=[profile?]
-		dev-haskell/hunit:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		>=dev-haskell/network-2.4:=[profile?]
-		dev-haskell/puremd5:=[profile?]
-		=dev-haskell/quickcheck-2*:2=[profile?]
-		dev-haskell/random:=[profile?]
-		dev-haskell/regex-compat:=[profile?]
-		>=dev-haskell/unixutils-1.51:=[profile?]
-		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+	dev-haskell/hunit:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	>=dev-haskell/network-2.4:=[profile?]
+	dev-haskell/network-uri:=[profile?]
+	dev-haskell/puremd5:=[profile?]
+	=dev-haskell/quickcheck-2*:2=[profile?]
+	dev-haskell/random:=[profile?]
+	dev-haskell/regex-compat:=[profile?]
+	>=dev-haskell/unixutils-1.51:=[profile?]
+	dev-haskell/zlib:=[profile?]
+	>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-0"
+	>=dev-haskell/cabal-0"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network >= 2.4' 'network >= 2.4, network-uri'
+}
