@@ -27,6 +27,7 @@ RDEPEND=">=dev-haskell/crypto-4.1.0:=[profile?]
 	>=dev-haskell/hxt-9.0.0:=[profile?] <dev-haskell/hxt-10:=[profile?]
 	>=dev-haskell/missingh-0.18.6:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
@@ -37,3 +38,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
