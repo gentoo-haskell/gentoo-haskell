@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="=dev-haskell/data-accessor-0.2*:=[profile?]
-		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
+		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 		=dev-haskell/network-transport-0.3*:=[profile?]
 		>=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
@@ -44,5 +44,5 @@ RESTRICT=test # fails under load:
 
 src_prepare() {
 	cabal_chdeps \
-		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6'
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.7'
 }
