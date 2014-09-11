@@ -36,6 +36,7 @@ RDEPEND=">=app-editors/leksah-server-0.13.1.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/ltk-0.13.2.0:=[profile?] <dev-haskell/ltk-0.14:=[profile?]
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-3.0:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/quickcheck-2.4.2:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
@@ -86,7 +87,8 @@ src_prepare() {
 		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5' \
 		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
 		'yi >=0.6.6.1 && <0.7' 'yi >=0.8.1 && <0.9' \
-		'hlint >=1.8.59 && <1.9' 'hlint >=1.8.59 && <1.10'
+		'hlint >=1.8.59 && <1.9' 'hlint >=1.8.59 && <1.10' \
+		'network >= 2.2 && <3.0' 'network >= 2.2 && <3.0, network-uri'
 	sed -e 's@Data.Conduit.Util@Data.Conduit.Internal@' \
 		-i "${S}/src/IDE/Metainfo/Provider.hs" \
 		-i "${S}/src/IDE/Debug.hs" \
