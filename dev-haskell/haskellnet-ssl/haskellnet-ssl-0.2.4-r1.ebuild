@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/connection-0.2:=[profile?] <dev-haskell/connection-0.3:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/haskellnet-0.3:=[profile?] <dev-haskell/haskellnet-0.4:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/tls-1.2:=[profile?] <dev-haskell/tls-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -33,3 +33,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network >= 2.4 && < 2.6' 'network >= 2.4 && < 2.7'
+}
