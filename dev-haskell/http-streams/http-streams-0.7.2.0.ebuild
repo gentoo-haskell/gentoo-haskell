@@ -30,6 +30,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/io-streams-1.1:=[profile?] <dev-haskell/io-streams-1.3:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/openssl-streams-1.1:=[profile?] <dev-haskell/openssl-streams-1.2:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
@@ -48,3 +49,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/system-fileio-0.3.10 <dev-haskell/system-fileio-0.4
 		>=dev-haskell/system-filepath-0.4.1 <dev-haskell/system-filepath-0.5 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
