@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/happstack-server-6.6.4:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
 	>=dev-haskell/hslogger-1.1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/hsopenssl-0.10:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -34,5 +34,7 @@ src_prepare() {
 	# just remove depends on extralibs. I've failed to find their usage
 	cabal_chdeps \
 		'Extra-Libraries:   ssl' 'Build-Depends:     base' \
-		'Extra-Libraries: cryptopp' 'Build-Depends:     base'
+		'Extra-Libraries: cryptopp' 'Build-Depends:     base' \
+		\
+		'network               >= 2.3 && < 2.6' 'network               >= 2.3 && < 2.7'
 }
