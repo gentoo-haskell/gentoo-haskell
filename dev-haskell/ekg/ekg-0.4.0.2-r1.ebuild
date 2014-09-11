@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/ekg-core-0.1:=[profile?] <dev-haskell/ekg-core-0.2:=[profile?]
-	<dev-haskell/network-2.6:=[profile?]
+	<dev-haskell/network-2.7:=[profile?]
 	<dev-haskell/snap-core-0.10:=[profile?]
 	<dev-haskell/snap-server-0.10:=[profile?]
 	<dev-haskell/text-1.2:=[profile?]
@@ -31,3 +31,8 @@ RDEPEND="<dev-haskell/aeson-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network < 2.6' 'network < 2.7'
+}
