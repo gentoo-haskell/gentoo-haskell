@@ -27,6 +27,7 @@ RDEPEND="dev-haskell/cond:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	dev-haskell/pango:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
@@ -38,6 +39,11 @@ RDEPEND="dev-haskell/cond:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
