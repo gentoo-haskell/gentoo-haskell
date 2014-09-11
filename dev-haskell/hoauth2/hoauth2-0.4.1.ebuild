@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
+RESTRICT=test # missing files
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/bytestring-show-0.3.5:=[profile?] <dev-haskell/bytestring-show-0.4:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
