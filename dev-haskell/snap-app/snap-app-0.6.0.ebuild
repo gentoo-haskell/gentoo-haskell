@@ -19,19 +19,25 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-html-0.6:=[profile?]
-		>=dev-haskell/blaze-markup-0.5:=[profile?]
-		dev-haskell/cgi:=[profile?]
-		dev-haskell/data-default:=[profile?]
-		dev-haskell/feed:=[profile?]
-		dev-haskell/monadcatchio-transformers:=[profile?]
-		dev-haskell/mtl:=[profile?]
-		dev-haskell/network:=[profile?]
-		dev-haskell/postgresql-simple:=[profile?]
-		dev-haskell/safe:=[profile?]
-		dev-haskell/snap-core:=[profile?]
-		dev-haskell/text:=[profile?]
-		dev-haskell/utf8-string:=[profile?]
-		dev-haskell/xml:=[profile?]
-		>=dev-lang/ghc-6.12.1:="
+	>=dev-haskell/blaze-markup-0.5:=[profile?]
+	dev-haskell/cgi:=[profile?]
+	dev-haskell/data-default:=[profile?]
+	dev-haskell/feed:=[profile?]
+	dev-haskell/monadcatchio-transformers:=[profile?]
+	dev-haskell/mtl:=[profile?]
+	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
+	dev-haskell/postgresql-simple:=[profile?]
+	dev-haskell/safe:=[profile?]
+	dev-haskell/snap-core:=[profile?]
+	dev-haskell/text:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
+	dev-haskell/xml:=[profile?]
+	>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8"
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
