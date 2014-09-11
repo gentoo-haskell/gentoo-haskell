@@ -67,5 +67,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
-PATCHES=("${FILESDIR}"/${P}-codepage.patch
-	"${FILESDIR}"/${P}-ghc-7.8.patch)
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-codepage.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+
+	cabal_chdeps \
+		'network                 >= 2.3.0.13' \
+		'network                 >= 2.3.0.13, network-uri'
+}
