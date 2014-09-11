@@ -25,6 +25,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?]
 	>=dev-haskell/http-client-tls-0.2:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	dev-haskell/puremd5:=[profile?]
 	dev-haskell/semigroups:=[profile?]
@@ -41,6 +42,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/lens-4.0.1
 		>=dev-haskell/xml-html-conduit-lens-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
