@@ -32,6 +32,7 @@ RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/optparse-applicative-0.5.0:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
@@ -45,3 +46,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'network >= 2.3' 'network >= 2.3, network-uri'
+}
