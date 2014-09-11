@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # wai-test cyclic depend
+
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/byteorder:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
@@ -25,6 +27,7 @@ RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/fast-logger-2.1.4:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/unix-time-0.2.2:=[profile?]
 	>=dev-haskell/wai-2.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -34,3 +37,8 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/doctest
 		dev-haskell/wai-test )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
