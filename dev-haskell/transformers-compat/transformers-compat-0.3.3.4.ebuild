@@ -16,11 +16,17 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="three"
 
-RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+RDEPEND="three? ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
+		!three? ( >=dev-haskell/transformers-0.4:=[profile?] <dev-haskell/transformers-0.5:=[profile?] )
 		>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag three three)
+}
