@@ -19,7 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?]
+	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	dev-haskell/network-uri:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -31,5 +32,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'network == 2.4.*' 'network >= 2.4 && < 2.6'
+		'network == 2.4.*' 'network >= 2.4 && < 2.7, network-uri'
 }
