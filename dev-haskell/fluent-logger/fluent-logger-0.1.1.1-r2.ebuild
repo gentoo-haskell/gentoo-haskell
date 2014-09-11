@@ -18,8 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # bitrot? Not in scope: data constructor ‘HostAny’
+
 RDEPEND=">=dev-haskell/msgpack-0.7.1:=[profile?] <dev-haskell/msgpack-0.8:=[profile?]
-		>=dev-haskell/network-2.3.0.13:=[profile?] <dev-haskell/network-2.6:=[profile?]
+		>=dev-haskell/network-2.3.0.13:=[profile?] <dev-haskell/network-2.7:=[profile?]
 		>=dev-haskell/network-socket-options-0.1:=[profile?] <dev-haskell/network-socket-options-0.3:=[profile?]
 		>=dev-haskell/stm-2.3:=[profile?]
 		>=dev-lang/ghc-6.12.1:="
@@ -38,5 +40,6 @@ src_prepare() {
 	base_src_prepare
 
 	cabal_chdeps \
-		'network >=2.3.0.13 && <2.5' 'network >=2.3.0.13 && <2.6'
+		'network >=2.3.0.13 && <2.5' 'network >=2.3.0.13 && <2.7' \
+		'conduit' 'conduit, conduit-extra'
 }
