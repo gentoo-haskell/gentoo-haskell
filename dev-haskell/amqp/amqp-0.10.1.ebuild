@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+network-uri"
 
 RESTRICT=test # needs local rabbitmq
 
@@ -25,15 +25,23 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/connection-0.2:=[profile?] <dev-haskell/connection-0.3:=[profile?]
 	>=dev-haskell/data-binary-ieee754-0.4.2.1:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
-	>=dev-haskell/network-2.2.3.1:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?]
 	>=dev-haskell/text-0.11.2:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-haskell/xml-1.3:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	network-uri? ( >dev-haskell/network-2.6:=[profile?]
+			>=dev-haskell/network-uri-2.6:=[profile?] )
+	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hspec-1.3
-		>=dev-haskell/hspec-expectations-0.3.3 )
+		>=dev-haskell/hspec-expectations-0.3.3
+		!network-uri? ( >=dev-haskell/network-2.2.3.1 ) )
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag network-uri network-uri)
+}
