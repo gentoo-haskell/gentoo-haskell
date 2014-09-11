@@ -19,14 +19,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RESTRICT="test" # requires FB account
-
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
-	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/crypto-api-0.11:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?]
