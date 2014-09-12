@@ -33,7 +33,8 @@ RDEPEND="dev-haskell/fst:=[profile?]
 	server? ( dev-haskell/cgi:=[profile?]
 			dev-haskell/httpd-shed:=[profile?]
 			dev-haskell/json:=[profile?]
-			dev-haskell/network:=[profile?] )
+			dev-haskell/network:=[profile?]
+			dev-haskell/network-uri:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex
@@ -46,7 +47,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'ghc-options: -j +RTS -A20M -RTS' 'ghc-options: ' \
-		'build-depends: binary' 'build-depends: binary, data-binary-ieee754'
+		'build-depends: binary' 'build-depends: binary, data-binary-ieee754' \
+		'network' 'network, network-uri'
 }
 
 src_configure() {
