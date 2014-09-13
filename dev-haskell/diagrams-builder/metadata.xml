@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		@diagrams-builder@ provides backend-agnostic tools for
+		dynamically turning code into rendered diagrams,
+		using the @hint@ wrapper to the GHC API.  It
+		supports conditional recompilation using hashing
+		of diagrams source code, to avoid recompiling
+		code that has not changed.  It is useful for
+		creating tools which compile diagrams code
+		embedded in other documents.  For example, it is
+		used by the @BlogLiterately-diagrams@ package (a
+		plugin for @BlogLiterately@) to compile diagrams
+		embedded in Markdown-formatted blog posts.
+		
+		Executables specific to the cairo, SVG, and postscript
+		backends are included (more executables specific
+		to other backends may be included in the future).
+		All take an input file and an expression to
+		render, and output an image file.  If you want
+		these executables you must explicitly enable the
+		@-fcairo@, @-fsvg@, or @-fps@ flags.
+		
+		A LaTeX package, @diagrams-latex.sty@, is also
+		provided in the @latex/@ directory of the source
+		distribution, which renders diagrams code found
+		within @diagram@ environments. Note that
+		@diagrams-latex.sty@ is licensed under the GPL.
+	</longdescription>
+</pkgmetadata>
