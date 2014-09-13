@@ -1,4 +1,4 @@
-:PostID: 113
+:PostID: 119
 :Title: ghc 7.8.3 and rare architectures
 :Keywords: gentoo, ghc, ghci, haskell, sparc, ia64, ppc
 :Categories: news
