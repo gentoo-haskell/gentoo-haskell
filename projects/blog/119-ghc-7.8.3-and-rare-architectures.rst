@@ -10,7 +10,7 @@ fixes.
 On rare arches **ghc-7.8.3** behaves a bit bad:
 
 - **ia64** build stopped being able to link itself after **ghc-7.4** (**gprel** overflow)
-- on **sparc**, **ia64** and **ppc** **ghc** was not able to cheare working shared libraries
+- on **sparc**, **ia64** and **ppc** **ghc** was not able to create working shared libraries
 - **integer-gmp** library on **ia64** crashed, and we had to use **integer-simple**
 
 I have written a small story of those fixes
