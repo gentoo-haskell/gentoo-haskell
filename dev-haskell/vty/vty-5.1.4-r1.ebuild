@@ -23,7 +23,7 @@ RESTRICT=test # tests hang?
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/data-default-0.5.3:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
-	>=dev-haskell/lens-3.9.0.2:=[profile?] <dev-haskell/lens-4.4:=[profile?]
+	>=dev-haskell/lens-3.9.0.2:=[profile?] <dev-haskell/lens-4.5:=[profile?]
 	>=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-2.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
@@ -47,3 +47,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		>=dev-haskell/test-framework-smallcheck-0.2 <dev-haskell/test-framework-smallcheck-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 3.9.0.2 && < 4.4' 'lens >= 3.9.0.2 && < 4.5'
+}
