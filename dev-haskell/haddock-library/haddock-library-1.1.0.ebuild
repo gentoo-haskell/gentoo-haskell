@@ -26,3 +26,9 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
+
+src_prepare() {
+	sed -e "s@\(see the \).*\(haddock\).*\( package\)@\1'\2'\3'@" \
+		-i "${S}/${PN}.cabal" \
+		|| die "Could not remove non-ASCII characters from ${PN}.cabal"
+}
