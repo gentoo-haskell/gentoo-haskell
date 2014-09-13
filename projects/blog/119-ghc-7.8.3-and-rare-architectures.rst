@@ -1,0 +1,28 @@
+:PostID: 113
+:Title: ghc 7.8.3 and rare architectures
+:Keywords: gentoo, ghc, ghci, haskell, sparc, ia64, ppc
+:Categories: news
+
+After some initially `positive experience <http://gentoohaskell.wordpress.com/2014/02/08/7-8-1-rc1-gentoo-experience/>`_
+with **ghc-7.8-rc1** I've decided to upstream most of gentoo
+fixes.
+
+On rare arches **ghc-7.8.3** behaves a bit bad:
+
+- **ia64** build stopped being able to link itself after **ghc-7.4** (**gprel** overflow)
+- on **sparc**, **ia64** and **ppc** **ghc** was not able to cheare working shared libraries
+- **integer-gmp** library on **ia64** crashed, and we had to use **integer-simple**
+
+I have written a small story of those fixes
+`here <http://trofi.github.io/posts/187-fixing-ghc-on-sparc-ia64-and-friends.html>`_ if you are curious.
+
+TL;DR:
+
+To get ghc-7.8.3 working nicer for exotic arches
+you will need to backport at least the following patches:
+
+- `integer literals trimming <https://git.haskell.org/ghc.git/commitdiff/43f1b2ecd1960fa7377cf55a2b97c66059a701ef>`_
+- `incorrect -fPIC passing to the assembler <https://git.haskell.org/ghc.git/commitdiff/a93ab43ab5f40cadbedea2f6342b93c245e91434>`_
+- `fixed foreign export propotype <http://git.haskell.org/ghc.git/commitdiff/e18525fae273f4c1ad8d6cbe1dea4fc074cac721>`_
+
+Thank you!
