@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="<dev-haskell/primitive-0.6:=[profile?]
-	>=dev-haskell/text-0.11.2.0:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11.2.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
