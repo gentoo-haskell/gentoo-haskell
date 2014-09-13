@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+network-uri"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?]
@@ -27,8 +27,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/email-validate-1.0:=[profile?]
 	>=dev-haskell/hamlet-1.1.8:=[profile?]
-	>=dev-haskell/network-2.2:=[profile?]
-	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
+	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-2.1:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/shakespeare:=[profile?]
 	>=dev-haskell/shakespeare-css-1.0:=[profile?]
@@ -40,8 +39,15 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.3:=[profile?]
 	>=dev-haskell/yesod-persistent-1.2:=[profile?] <dev-haskell/yesod-persistent-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
+	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hspec )
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag network-uri network-uri)
+}
