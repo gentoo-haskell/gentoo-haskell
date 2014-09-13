@@ -59,10 +59,6 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${P}"
 
 src_prepare() {
-	cabal_chdeps \
-		'mtl >= 2.1.1 && < 2.2' 'mtl >= 2.1.1 && < 2.3' \
-		'transformers == 0.3.*' 'transformers >= 0.3 && < 0.5'
-
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
