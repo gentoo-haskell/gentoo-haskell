@@ -16,9 +16,9 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+network-uri"
 
-RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/attoparsec-conduit:=[profile?]
 	>=dev-haskell/authenticate-1.3:=[profile?]
 	dev-haskell/base16-bytestring:=[profile?]
@@ -40,9 +40,8 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
 	>=dev-haskell/mime-mail-0.3:=[profile?]
-	dev-haskell/network:=[profile?]
-	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-1.4:=[profile?]
-	>=dev-haskell/persistent-template-1.2:=[profile?] <dev-haskell/persistent-template-1.4:=[profile?]
+	>=dev-haskell/persistent-1.2:=[profile?] <dev-haskell/persistent-2.1:=[profile?]
+	>=dev-haskell/persistent-template-1.2:=[profile?] <dev-haskell/persistent-template-2.1:=[profile?]
 	>=dev-haskell/random-1.0.0.2:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/safe:=[profile?]
@@ -57,7 +56,14 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.4:=[profile?]
 	>=dev-haskell/yesod-persistent-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
+	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag network-uri network-uri)
+}
