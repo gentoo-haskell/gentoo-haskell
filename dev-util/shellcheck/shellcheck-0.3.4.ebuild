@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	# workaround bug on ghc-7.8.3:
+	# > [5 of 6] Compiling ShellCheck.Analytics ( ShellCheck/Analytics.hs, dist/build/ShellCheck/Analytics.o )
+	# > <no location info>: stack overflow
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+}
