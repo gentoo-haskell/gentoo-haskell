@@ -84,23 +84,6 @@ DEPEND="${RDEPEND}
 	!gtk3? ( test? ( !webkit? ( dev-haskell/webkit:2 ) ) )
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'QuickCheck >=2.4.2 && <2.7' 'QuickCheck >=2.4.2 && <2.8' \
-		'conduit >= 1.0.8 && <1.1' 'conduit >= 1.1 && <1.2, conduit-extra' \
-		'haskell-src-exts >=1.13.5 && <1.15' 'haskell-src-exts >=1.13.5 && <1.16' \
-		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5' \
-		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
-		'yi >=0.6.6.1 && <0.7' 'yi >=0.8.1 && <0.9'
-	sed -e 's@Data.Conduit.Util@Data.Conduit.Internal@' \
-		-i "${S}/src/IDE/Metainfo/Provider.hs" \
-		-i "${S}/src/IDE/Debug.hs" \
-		-i "${S}/src/IDE/Pane/PackageEditor.hs" \
-		-i "${S}/src/IDE/Package.hs" \
-		-i "${S}/src/IDE/Sandbox.hs" \
-		|| die "Could not change Data.Conduit.Util to Data.Conduit.Zlib"
-}
-
 src_configure() {
 	threaded_flag=""
 	if $(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"; then
