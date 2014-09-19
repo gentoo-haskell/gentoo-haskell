@@ -40,6 +40,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/monad-control
 	>=dev-haskell/mtl-2
 	>=dev-haskell/network-2.0
+	dev-haskell/network-uri
 	>=dev-haskell/quickcheck-2.1:2
 	dev-haskell/random
 	dev-haskell/safesemaphore
@@ -129,6 +130,11 @@ src_configure() {
 		$(cabal_flag webapp-secure webapp-secure) \
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
+}
+
+src_prepare() {
+	cabal_chdeps \
+		'network (>= 2.0),' 'network (>= 2.0),network-uri,'
 }
 
 src_compile() {
