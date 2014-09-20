@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 DEPEND="${RDEPEND}
 		test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 			=dev-haskell/hunit-1.2*
-			>=dev-haskell/network-2.3 <dev-haskell/network-2.6
+			>=dev-haskell/network-2.3 <dev-haskell/network-2.7
 			=dev-haskell/network-transport-tcp-0.3*
 			>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 			>=dev-haskell/test-framework-hunit-0.2.0 <dev-haskell/test-framework-hunit-0.4
@@ -49,7 +49,7 @@ src_prepare() {
 		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5' \
 		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3' \
 		'template-haskell >= 2.6 && < 2.9' 'template-haskell >= 2.6 && < 2.10' \
-		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.6'
+		'network >= 2.3 && < 2.5' 'network >= 2.3 && < 2.7'
 
 	sed -e 's@\(by Hans Svensson, L\).*\( Fredlund and Clara Benac Earle\)@\1.\2@' \
 		-i "${S}/${PN}.cabal" \
