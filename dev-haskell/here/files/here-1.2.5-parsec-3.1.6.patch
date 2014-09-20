@@ -1,0 +1,12 @@
+diff --git a/src/Data/String/Here/Interpolated.hs b/src/Data/String/Here/Interpolated.hs
+index b7754e1..117da72 100644
+--- a/src/Data/String/Here/Interpolated.hs
++++ b/src/Data/String/Here/Interpolated.hs
+@@ -18,6 +18,7 @@ import Language.Haskell.TH
+ import Language.Haskell.TH.Quote
+ 
+ import Text.Parsec
++import Text.Parsec.Prim
+ import Text.Parsec.String
+ 
+ import Data.String.Here.Internal
