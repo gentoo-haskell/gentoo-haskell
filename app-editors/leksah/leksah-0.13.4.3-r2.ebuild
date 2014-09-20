@@ -25,7 +25,7 @@ RDEPEND=">=app-editors/leksah-server-0.13.1.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8.2:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
 	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.22:=[profile?]
-	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
 	>=dev-haskell/gio-0.12.2:=[profile?] <dev-haskell/gio-0.13:=[profile?]
@@ -82,7 +82,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'QuickCheck >=2.4.2 && <2.7' 'QuickCheck >=2.4.2 && <2.8' \
-		'conduit >= 1.0.8 && <1.1' 'conduit >= 1.1 && <1.2, conduit-extra' \
+		'conduit >= 1.0.8 && <1.1' 'conduit >= 1.1 && <1.3, conduit-extra' \
 		'haskell-src-exts >=1.13.5 && <1.15' 'haskell-src-exts >=1.13.5 && <1.16' \
 		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5' \
 		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
