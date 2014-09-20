@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+RDEPEND=">=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -27,3 +27,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.10
 		dev-haskell/resourcet )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'conduit                  >= 1.1          && < 1.2' 'conduit                  >= 1.1          && < 1.3'
+}
