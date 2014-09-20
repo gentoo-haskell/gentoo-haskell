@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test-api"
 
+RESTRICT=test # missing aeson-lens dep
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/cereal:=[profile?]
 	dev-haskell/contravariant:=[profile?]
