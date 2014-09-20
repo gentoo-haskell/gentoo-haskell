@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
 	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.22:=[profile?]
-	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
 	>=dev-haskell/haddock-2.7.2:=[profile?] <dev-haskell/haddock-2.15:=[profile?]
@@ -48,8 +48,10 @@ PATCHES=("${FILESDIR}/${PN}-0.13.1.1-conduit-1.1.patch"
 
 src_prepare() {
 	base_src_prepare
+
 	cabal_chdeps \
-		'attoparsec >=0.10.0.3 && <0.12' 'attoparsec >=0.10.0.3 && <0.13'
+		'attoparsec >=0.10.0.3 && <0.12' 'attoparsec >=0.10.0.3 && <0.13' \
+		'conduit >= 1.0.8 && <1.2' 'conduit >= 1.0.8 && <1.3'
 }
 
 src_configure() {
