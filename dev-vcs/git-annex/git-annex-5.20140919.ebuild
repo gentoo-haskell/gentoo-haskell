@@ -74,7 +74,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/tasty-hunit
 			dev-haskell/tasty-quickcheck
 			dev-haskell/tasty-rerun
-			dev-haskell/optparse-applicative
+			>=dev-haskell/optparse-applicative-0.9.1
 			)
 	webapp? ( dev-haskell/blaze-builder
 			dev-haskell/aeson
@@ -130,11 +130,6 @@ src_configure() {
 		$(cabal_flag webapp-secure webapp-secure) \
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
-}
-
-src_prepare() {
-	cabal_chdeps \
-		'network (>= 2.0),' 'network (>= 2.0),network-uri,'
 }
 
 src_compile() {
