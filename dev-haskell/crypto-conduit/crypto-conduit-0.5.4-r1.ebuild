@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+conduit11"
 
 RDEPEND=">=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
-	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.2:=[profile?]
+	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/crypto-api-0.9:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -35,6 +35,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-1.3
 		>=dev-haskell/skein-0.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'conduit      >= 1.0 && < 1.2' 'conduit      >= 1.0 && < 1.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
