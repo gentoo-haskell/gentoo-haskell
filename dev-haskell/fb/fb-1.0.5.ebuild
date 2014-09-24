@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
+RESTRICT=test # needs fb account
+
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?]
@@ -44,10 +46,15 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.9 <dev-haskell/hspec-1.11
+	test? ( >=dev-haskell/hspec-1.9 <dev-haskell/hspec-1.12
 		dev-haskell/hunit
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'hspec >= 1.9 && < 1.11' 'hspec >= 1.9 && < 1.12'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
