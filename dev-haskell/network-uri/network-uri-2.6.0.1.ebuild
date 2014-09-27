@@ -22,6 +22,7 @@ RESTRICT=test # does not work with missing network-uri
 
 RDEPEND=">=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	!<dev-haskell/network-2.6
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
