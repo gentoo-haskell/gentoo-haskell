@@ -27,13 +27,13 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.15.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.16:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.17:=[profile?]
 	<dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.6:=[profile?] <dev-haskell/optparse-applicative-0.10:=[profile?]
+	>=dev-haskell/optparse-applicative-0.6:=[profile?] <dev-haskell/optparse-applicative-0.11:=[profile?]
 	<dev-haskell/safe-0.4:=[profile?]
 	<dev-haskell/sourcemap-0.2:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
 	<dev-haskell/spoon-0.4:=[profile?]
 	<dev-haskell/syb-0.5:=[profile?]
-	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-0.9:=[profile?]
+	>=dev-haskell/tasty-0.8:=[profile?]
 	>=dev-haskell/tasty-hunit-0.8:=[profile?] <dev-haskell/tasty-hunit-0.10:=[profile?]
 	>=dev-haskell/tasty-th-0.1:=[profile?] <dev-haskell/tasty-th-0.2:=[profile?]
 	<dev-haskell/text-1.2:=[profile?]
@@ -49,3 +49,9 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'optparse-applicative >= 0.6 && < 0.10' 'optparse-applicative >= 0.6 && < 0.11' \
+		'tasty == 0.8.*' 'tasty >= 0.8'
+}
