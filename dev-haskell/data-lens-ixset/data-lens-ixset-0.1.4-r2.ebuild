@@ -18,23 +18,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/data-lens-2.0:=[profile?]
-		<dev-haskell/data-lens-2.11:=[profile?]
-		=dev-haskell/ixset-1.0*:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
-DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.10
-		test? (
-			>=dev-haskell/quickcheck-2.4.0.1[profile?]
-		)
-		"
+RESTRICT=test
 
-PATCHES=("${FILESDIR}/${PN}-0.1.4-test.patch")
+RDEPEND=">=dev-haskell/data-lens-2.0:=[profile?]
+	<dev-haskell/data-lens-2.11:=[profile?]
+	=dev-haskell/ixset-1.0*:=[profile?]
+	>=dev-lang/ghc-6.10.4:="
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.10
+"
 
 src_prepare() {
-	base_src_prepare
-
 	cabal_chdeps \
-		'data-lens == 2.0.*' 'data-lens >= 2.0 && < 2.11' \
-		'QuickCheck == 2.4.*' 'QuickCheck >= 2.4'
+		'data-lens == 2.0.*' 'data-lens >= 2.0 && < 2.11'
 }
