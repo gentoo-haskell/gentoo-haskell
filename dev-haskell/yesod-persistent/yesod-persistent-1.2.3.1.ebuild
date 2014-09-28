@@ -36,3 +36,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai-extra
 		dev-haskell/wai-test )
 "
+
+src_prepare() {
+	HCFLAGS+=" -XTypeSynonymInstances -XMultiParamTypeClasses"
+}
