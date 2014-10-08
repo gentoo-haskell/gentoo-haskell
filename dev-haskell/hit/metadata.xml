@@ -13,4 +13,7 @@
 		and doesn&#39;t do anything with the index or your working directory files.
 		
 	</longdescription>
+	<use>
+	    <flag name="executable">Build the executable</flag>
+	</use>
 </pkgmetadata>
