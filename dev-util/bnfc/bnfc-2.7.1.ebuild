@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
+RESTRICT=test # collides with monads-fd
+
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -28,7 +30,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.8
 	dev-haskell/happy
-	test? ( dev-haskell/hspec
+	test? ( >=dev-haskell/doctest-0.8
+		dev-haskell/hspec
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.5
 		dev-haskell/temporary )
