@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.2:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.5:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.10:=[profile?] <dev-haskell/optparse-applicative-0.11:=[profile?]
+	>=dev-haskell/optparse-applicative-0.10:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
 	>=dev-haskell/rasterific-0.2:=[profile?] <dev-haskell/rasterific-0.4:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-1.3:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
