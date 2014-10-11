@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,27 +21,25 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="+gtk3"
 
-RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
-		<dev-haskell/cabal-1.19:=[profile?]
-		>=dev-haskell/glib-0.12.5.0:0=[profile?]
-		>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?]
-		>=dev-haskell/mtl-1.1.0.2:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/parsec-2.1.0.1:=[profile?]
-		<dev-haskell/parsec-3.2:=[profile?]
-		>=dev-haskell/transformers-0.2.2.0:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
-		>=dev-lang/ghc-6.10.4:="
+RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.22:=[profile?]
+	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
+	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
+	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	gtk3? ( >=dev-haskell/gtk-0.13.0.0:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?] )
+	!gtk3? ( >=dev-haskell/gtk-0.13.0.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?] )
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8
+"
 
 src_prepare() {
-	if has_version "<dev-lang/ghc-7.0.1" && has_version ">=dev-haskell/cabal-1.10.0.0"; then
-		# with ghc 6.12 leksah-server does not work with cabal-1.10, so use ghc-6.12 shipped one
-		# since leksah-server uses cabal, haddock, and ltk, ltk must use ghc 6.12 cabal for ghc < 7.
-		sed -e 's@build-depends: Cabal >=1.6.0 && <1.17@build-depends: Cabal >=1.6.0 \&\& <1.9@g' \
-			-i "${S}/${PN}.cabal"
-	fi
+	cabal_chdeps \
+		'mtl >=1.1.0.2 && <2.2' 'mtl >=1.1.0.2 && <2.3' \
+		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5' \
+		'text >=0.11.0.6 && <1.2' 'text >=0.11.0.6 && <1.3'
 }
 
 src_configure() {
