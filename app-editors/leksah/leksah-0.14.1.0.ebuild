@@ -8,7 +8,7 @@ EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 CABAL_FEATURES+=" nocabaldep" # needs ghc's version as uses leksah-server and ltk linked against ghc's Cabal
-inherit haskell-cabal
+inherit haskell-cabal pax-utils
 
 DESCRIPTION="Haskell IDE written in Haskell"
 HOMEPAGE="http://www.leksah.org"
