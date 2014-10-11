@@ -1,0 +1,20 @@
+--- leksah-server-0.14.0.0-orig/src/IDE/Utils/GHCUtils.hs	2014-08-30 22:22:31.000000000 +1000
++++ leksah-server-0.14.0.0/src/IDE/Utils/GHCUtils.hs	2014-10-11 10:13:45.144115899 +1100
+@@ -45,7 +45,7 @@
+ import qualified Parser as P (parseModule,parseHeader)
+ import HscStats (ppSourceStats)
+ #if MIN_VERSION_ghc(7,2,0)
+-#if !MIN_VERSION_ghc(7,7,0)
++#if !MIN_VERSION_ghc(7,7,0) || MIN_VERSION_transformers(0,4,0)
+ import GhcMonad (Ghc(..))
+ #endif
+ import SrcLoc (mkRealSrcLoc)
+@@ -64,7 +64,7 @@
+ import qualified Data.Text as T (pack, unpack)
+ import Data.Monoid ((<>))
+ 
+-#if !MIN_VERSION_ghc(7,7,0)
++#if !MIN_VERSION_ghc(7,7,0) || MIN_VERSION_transformers(0,4,0)
+ -- this should not be repeated here, why is it necessary?
+ instance MonadIO Ghc where
+   liftIO ioA = Ghc $ \_ -> ioA
