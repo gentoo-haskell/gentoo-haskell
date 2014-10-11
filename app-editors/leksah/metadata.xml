@@ -9,6 +9,7 @@
   <flag name='dyre'>Experimental Yi dyre support</flag>
   <flag name='gtk3'>Use GTK3 rather than GTK2</flag>
   <flag name='loc'>Experimental localization support</flag>
+  <flag name='network-uri'>Get Network.URI from the network-uri package</flag>
   <flag name='webkit'>Use WebKitGTK+</flag>
   <flag name='yi'>Experimental Yi support</flag>
 </use>
