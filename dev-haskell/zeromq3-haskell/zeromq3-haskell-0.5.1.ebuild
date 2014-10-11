@@ -33,4 +33,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-zmq4-support.patch
+	epatch "${FILESDIR}"/${P}-qc-2.7.patch
 }

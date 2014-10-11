@@ -1,0 +1,13 @@
+diff --git a/tests/Test/Tools.hs b/tests/Test/Tools.hs
+index ba96ce8..f4b539e 100644
+--- a/tests/Test/Tools.hs
++++ b/tests/Test/Tools.hs
+@@ -21,7 +21,7 @@ checkBatch' args (name, tsts) = do
+         case r of
+             Success _ _ m           -> write Green m
+             GaveUp  _ _ m           -> write Magenta m >> exitFailure
+-            Failure _ _ _ _ _ _ _ m -> write Red m     >> exitFailure
++            Failure {output=m}      -> write Red m     >> exitFailure
+             NoExpectedFailure _ _ m -> write Red m     >> exitFailure
+ 
+ write, writeLn :: Color -> String -> IO ()
