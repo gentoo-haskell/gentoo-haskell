@@ -24,19 +24,15 @@ IUSE="+gtk3"
 S="${WORKDIR}/${P}/${PN}"
 
 RDEPEND=">=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	~dev-haskell/vcswrapper-0.0.4:=[profile?]
+	dev-haskell/text:=[profile?]
+	~dev-haskell/vcswrapper-0.1.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	gtk3? ( >=dev-haskell/gtk-0.12.4.1:3=[profile?] <dev-haskell/gtk-0.13:3=[profile?] )
-	!gtk3? ( >=dev-haskell/gtk-0.12.4.1:2=[profile?] <dev-haskell/gtk-0.13:2=[profile?] )
+	gtk3? ( >=dev-haskell/gtk-0.13.0.0:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?] )
+	!gtk3? ( >=dev-haskell/gtk-0.13.0.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'mtl >=2.0.1.0 && <2.2' 'mtl >=2.0.1.0 && <2.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
