@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	media-libs/gst-plugins-base
@@ -28,3 +28,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'glib  >= 0.12.5.0 && < 0.13' 'glib  >= 0.12.5.0 && < 0.14'
+}
