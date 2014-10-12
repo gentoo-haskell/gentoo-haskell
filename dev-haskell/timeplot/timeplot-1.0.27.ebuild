@@ -23,8 +23,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/bytestring-lexing
 	>=dev-haskell/cabal-1.6
 	dev-haskell/cairo
-	>=dev-haskell/chart-1.2
-	>=dev-haskell/chart-cairo-1 <dev-haskell/chart-cairo-2
+	>=dev-haskell/chart-1.3
+	>=dev-haskell/chart-cairo-1.3
 	dev-haskell/colour
 	dev-haskell/data-default
 	>=dev-haskell/lens-3.9
