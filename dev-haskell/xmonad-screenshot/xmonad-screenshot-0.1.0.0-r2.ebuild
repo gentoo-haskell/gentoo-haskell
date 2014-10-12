@@ -20,11 +20,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/gtk-0.12.3:${GTK_MAJ_VER}=[profile?]
-		>=dev-lang/ghc-6.10.4:=
-		>=x11-wm/xmonad-0.9:=[profile?]"
+RDEPEND=">=dev-haskell/gtk-0.12.3:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13.0:${GTK_MAJ_VER}=[profile?]
+	>=dev-lang/ghc-6.10.4:=
+	>=x11-wm/xmonad-0.9:=[profile?]
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8"
+	>=dev-haskell/cabal-1.8
+"
 
 src_prepare() {
 	cabal_chdeps \
