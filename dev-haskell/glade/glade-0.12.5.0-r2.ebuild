@@ -21,8 +21,8 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.13:0=[profile?]
-	>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.13:${GTK_MAJ_VER}=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
+	>=dev-haskell/gtk-0.12.5.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.14:${GTK_MAJ_VER}=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	gnome-base/libglade:2.0
 "
@@ -30,3 +30,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'glib >= 0.12.5.0 && < 0.13' 'glib >= 0.12.5.0 && < 0.14' \
+		'gtk >= 0.12.5.0 && < 0.13' 'gtk >= 0.12.5.0 && < 0.14'
+}
