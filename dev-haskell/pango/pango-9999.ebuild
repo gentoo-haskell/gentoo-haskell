@@ -31,6 +31,6 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[prof
 	x11-libs/pango
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.13.11:0=
+	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
 	virtual/pkgconfig
 "
