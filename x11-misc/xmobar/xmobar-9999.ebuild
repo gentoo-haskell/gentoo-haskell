@@ -26,10 +26,11 @@ RDEPEND="x11-libs/libXrandr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 	>=dev-haskell/http-4000
-	>=dev-haskell/mtl-2.2.1 <dev-haskell/mtl-2.3
+	>=dev-haskell/mtl-2.1 <dev-haskell/mtl-2.3
 	>=dev-haskell/parsec-3.1 <dev-haskell/parsec-3.2
 	dev-haskell/regex-compat
 	>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
+	dev-haskell/transformers
 	>=dev-haskell/utf8-string-0.3 <dev-haskell/utf8-string-0.4
 	>=dev-haskell/x11-1.6.1
 	>=dev-lang/ghc-7.4.1
