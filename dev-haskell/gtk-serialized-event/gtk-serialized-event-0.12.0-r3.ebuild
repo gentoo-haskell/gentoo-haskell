@@ -20,16 +20,18 @@ SLOT="${GTK_MAJ_VER}/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="=dev-haskell/glib-0.12*:0=[profile?]
-		=dev-haskell/gtk-0.12*:${GTK_MAJ_VER}=[profile?]
-		dev-haskell/mtl:=[profile?]
-		>=dev-lang/ghc-6.10.4:=
-		x11-libs/gtk+:2"
+RDEPEND=">=dev-haskell/glib-0.12:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
+	>=dev-haskell/gtk-0.12:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.14:${GTK_MAJ_VER}=[profile?]
+	dev-haskell/mtl:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
+	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.6
-		virtual/pkgconfig"
+	>=dev-haskell/cabal-1.6
+	virtual/pkgconfig"
 
 src_prepare() {
-	sed -e 's@haskell98@base@' \
-		-i "${S}/${PN}.cabal" || die "Could not change haskell98 to base for ghc 7.2.2"
+	cabal_chdeps \
+		'haskell98' 'base' \
+		'glib >= 0.12 && < 0.13' 'glib >= 0.12 && < 0.14' \
+		'gtk >= 0.12 && < 0.13' 'gtk >= 0.12 && < 0.14'
 }
