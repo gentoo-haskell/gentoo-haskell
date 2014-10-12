@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails on -O2 as heap layout changes
+
 RDEPEND="dev-haskell/binary:=
 	dev-haskell/transformers:=
 	>=dev-lang/ghc-7.6.1:=
