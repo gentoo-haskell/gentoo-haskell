@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This module presents a type for storing numbers
+		in the log-domain. The main reason for doing this
+		is to prevent underflow when multiplying many
+		probabilities as is done in Hidden Markov Models.
+		It is also helpful for preventing overflow.
+	</longdescription>
+</pkgmetadata>
