@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Extensible Haskell pretty printer
+	</longdescription>
+	<use>
+		<flag name='vim'>
+			Install a vim plugin allowing hindent to be used as the formatter by `gq`
+		</flag>
+	</use>
+</pkgmetadata>
