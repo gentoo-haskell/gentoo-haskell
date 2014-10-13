@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # breaks when installed mwc-random is broken
+
 RDEPEND="dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
