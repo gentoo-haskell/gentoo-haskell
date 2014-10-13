@@ -41,7 +41,7 @@ RDEPEND=">=app-editors/leksah-server-0.14.0.0:=[profile?] <app-editors/leksah-se
 	dev-haskell/regex-tdfa-text:=[profile?]
 	>=dev-haskell/shakespeare-2.0.0.1:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
-	>=dev-haskell/text-0.11.1.5:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11.1.5:=[profile?]
 	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1.1:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-haskell/vado-0.0.1:=[profile?] <dev-haskell/vado-0.1:=[profile?]
@@ -83,7 +83,8 @@ src_prepare() {
 	cabal_chdeps \
 		'conduit >= 1.0.8 && <1.2' 'conduit >= 1.0.8 && <1.3' \
 		'haskell-src-exts >=1.13.5 && <1.16' 'haskell-src-exts >=1.13.5 && <1.17' \
-		'yi >=0.6.6.1 && <0.7' 'yi >=0.6.6.1 && <0.10'
+		'yi >=0.6.6.1 && <0.7' 'yi >=0.6.6.1 && <0.10' \
+		'text >= 0.11.1.5 && < 1.2' 'text >= 0.11.1.5'
 }
 
 src_configure() {
