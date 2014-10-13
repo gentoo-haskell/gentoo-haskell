@@ -18,9 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/text-0.11.0.0:=[profile?] <dev-haskell/text-1.2.0.0:=[profile?]
+RDEPEND=">=dev-haskell/text-0.11.0.0:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11.0.0 && < 1.2.0.0' 'text >= 0.11.0.0'
+}
