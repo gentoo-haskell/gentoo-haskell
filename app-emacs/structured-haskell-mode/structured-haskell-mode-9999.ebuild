@@ -21,6 +21,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/haskell-src-exts-1.15 <dev-haskell/haskell-src-exts-1.16
 	>=dev-lang/ghc-6.10.4
+	app-emacs/hindent
 	emacs? ( virtual/emacs )
 "
 SITEFILE="50${PN}-gentoo.el"
