@@ -23,9 +23,14 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?
 	>=dev-haskell/gtk-0.12:=[profile?] <dev-haskell/gtk-0.14:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?] <dev-haskell/polyparse-1.10:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11 && < 1.2' 'text >= 0.11'
+}
