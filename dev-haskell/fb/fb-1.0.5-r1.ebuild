@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -53,7 +53,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec >= 1.9 && < 1.11' 'hspec >= 1.9 && < 1.12'
+		'hspec >= 1.9 && < 1.11' 'hspec >= 1.9 && < 1.12' \
+		'text                 >= 0.11    && < 1.2' 'text                 >= 0.11'
 }
 
 src_configure() {
