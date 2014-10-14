@@ -39,3 +39,8 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-0.9:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text             >= 0.11.3.1 && < 1.2' 'text             >= 0.11.3.1'
+}
