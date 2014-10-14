@@ -21,7 +21,7 @@ IUSE="+forceghcilib +threadedtestsuite usepkgconfig"
 RDEPEND=">=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	dev-qt/qtdeclarative:4
@@ -42,7 +42,9 @@ src_prepare() {
 		'network      >= 2.3 && < 2.5' 'network      >= 2.3 && < 2.7, network-uri' \
 		'network    >= 2.3 && < 2.5' 'network    >= 2.3 && < 2.7' \
 		'QuickCheck >= 2.4 && < 2.7' 'QuickCheck >= 2.4 && < 2.8' \
-		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5'
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5' \
+		'text         >= 0.11 && < 1.2' 'text         >= 0.11' \
+		'text       >= 0.11 && < 1.2' 'text       >= 0.11'
 }
 
 src_configure() {
