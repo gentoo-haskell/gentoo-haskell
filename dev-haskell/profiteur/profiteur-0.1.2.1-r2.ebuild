@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/aeson-0.6 <dev-haskell/aeson-0.8
 	>=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.13
 	>=dev-haskell/cabal-1.8
-	>=dev-haskell/text-0.11 <dev-haskell/text-1.2
+	>=dev-haskell/text-0.11
 	>=dev-haskell/unordered-containers-0.2 <dev-haskell/unordered-containers-0.3
 	>=dev-haskell/vector-0.10 <dev-haskell/vector-0.11
 	>=dev-lang/ghc-7.4.1
@@ -31,5 +31,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'attoparsec           >= 0.10 && < 0.12' 'attoparsec           >= 0.10 && < 0.13'
+		'attoparsec           >= 0.10 && < 0.12' 'attoparsec           >= 0.10 && < 0.13' \
+		'text                 >= 0.11 && < 1.2' 'text                 >= 0.11'
 }
