@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+gtk3 jsc +jsffi webkit"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.11.0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -31,6 +31,11 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'text >= 0.11.0.6 && < 1.2' 'text >= 0.11.0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
