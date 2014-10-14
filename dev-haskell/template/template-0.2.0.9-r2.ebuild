@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/text-0.7.2:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.7.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
@@ -28,5 +28,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'mtl >= 1.1 && < 2.2' 'mtl >= 1.1 && < 2.3'
+		'mtl >= 1.1 && < 2.2' 'mtl >= 1.1 && < 2.3' \
+		'text >= 0.7.2 && < 1.2' 'text >= 0.7.2'
 }
