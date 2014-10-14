@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.9:=[profile?] <dev-haskell/attoparsec-0.13:=
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/sha-1.5:=[profile?] <dev-haskell/sha-1.7:=[profile?]
-	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.2:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -46,5 +46,6 @@ PATCHES=("${FILESDIR}/${PN}-0.8.2.5-quickcheck-2.7.patch")
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.8.2.5-quickcheck-2.7.patch
 	cabal_chdeps \
-		'network           >= 2.3    && < 2.6' 'network           >= 2.3    && < 2.7'
+		'network           >= 2.3    && < 2.6' 'network           >= 2.3    && < 2.7' \
+		'text              >= 0.10   && < 1.2' 'text              >= 0.10'
 }
