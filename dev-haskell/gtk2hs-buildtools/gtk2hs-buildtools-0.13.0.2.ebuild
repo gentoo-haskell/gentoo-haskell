@@ -25,6 +25,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 	dev-haskell/random
 	>=dev-lang/ghc-7.4.1
+	|| ( ( >=dev-lang/ghc-7.7 dev-haskell/hashtables ) <dev-lang/ghc-7.7 )
 "
 
 src_configure() {
