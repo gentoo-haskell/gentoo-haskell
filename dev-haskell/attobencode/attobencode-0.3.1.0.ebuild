@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs old quickcheck
+
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/blaze-textual:=[profile?]
