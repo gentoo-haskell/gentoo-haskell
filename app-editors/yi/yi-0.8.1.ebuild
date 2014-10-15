@@ -75,5 +75,5 @@ src_configure() {
 		$(cabal_flag testing testing) \
 		$(cabal_flag vty vty)
 
-	use gtk || use vty || ewarn "${PN} requires either USE=gtk or USE=vty or USE=vte to build a user interface."
+	use gtk || use vty || ewarn "${PN} requires either USE=gtk or USE=vty to build a user interface."
 }
