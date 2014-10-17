@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profil
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18
 	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
 	virtual/pkgconfig
 "
