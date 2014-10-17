@@ -19,12 +19,13 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+pdf +postscript +svg"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	x11-libs/cairo[svg?]
 "
 DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-1.18
 	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
 	virtual/pkgconfig
 "
