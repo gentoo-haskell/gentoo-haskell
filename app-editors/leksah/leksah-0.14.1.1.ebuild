@@ -49,11 +49,11 @@ RDEPEND=">=app-editors/leksah-server-0.14.0.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/vcswrapper-0.1.0:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	gtk3? ( >=dev-haskell/gtk-0.13.0.0:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?]
-		>=dev-haskell/gtksourceview-0.13.0.0:3=[profile?] <dev-haskell/gtksourceview-0.14:3=[profile?]
+		>=dev-haskell/gtksourceview-0.13.1.0:3=[profile?] <dev-haskell/gtksourceview-0.14:3=[profile?]
 		webkit? ( dev-haskell/webkit:3=[profile?]
 				dev-haskell/webkitgtk-javascriptcore:3=[profile?] ) )
 	!gtk3? ( >=dev-haskell/gtk-0.13.0.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
-			>=dev-haskell/gtksourceview-0.13.0.0:2=[profile?] <dev-haskell/gtksourceview-0.14:2=[profile?]
+			>=dev-haskell/gtksourceview-0.13.1.0:2=[profile?] <dev-haskell/gtksourceview-0.14:2=[profile?]
 			webkit? ( dev-haskell/webkit:2=[profile?]
 				dev-haskell/webkitgtk-javascriptcore:2=[profile?] ) )
 	loc? ( dev-haskell/hgettext:=[profile?]
@@ -81,10 +81,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'conduit >= 1.0.8 && <1.2' 'conduit >= 1.0.8 && <1.3' \
-		'haskell-src-exts >=1.13.5 && <1.16' 'haskell-src-exts >=1.13.5 && <1.17' \
-		'yi >=0.6.6.1 && <0.7' 'yi >=0.6.6.1 && <0.10' \
-		'text >= 0.11.1.5 && < 1.2' 'text >= 0.11.1.5'
+		'yi >=0.6.6.1 && <0.7' 'yi >=0.6.6.1 && <0.10'
 }
 
 src_configure() {
