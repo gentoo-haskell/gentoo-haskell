@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.0.0.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
-	>=dev-haskell/haddock-2.7.2:=[profile?] <dev-haskell/haddock-2.11:=[profile?]
+	>=dev-haskell/haddock-2.7.2:=[profile?] <dev-haskell/haddock-2.15:=[profile?]
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/ltk-0.14.0.0:=[profile?] <dev-haskell/ltk-0.15:=[profile?]
 	>=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-3.0:=[profile?]
@@ -45,15 +45,6 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}/${PN}-0.14.0.0-transformers-0.4.patch")
-
-src_prepare() {
-	base_src_prepare
-
-	cabal_chdeps \
-		'conduit >= 1.0.8 && <1.2' 'conduit >= 1.0.8 && <1.3' \
-		'text >=0.11.3.1 && <1.2' 'text >=0.11.3.1 && <1.3' \
-		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5'
-}
 
 src_configure() {
 	threaded_flag=""
