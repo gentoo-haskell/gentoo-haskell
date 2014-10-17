@@ -73,16 +73,6 @@ src_prepare() {
 		ewarn 'backends." Hence you may wish to remove the epic use flag if you wish to use'
 		ewarn "the Agda standard library."
 	fi
-	sed -e 's@-Werror@@g' \
-		-i "${S}/${MY_PN}.cabal" \
-		-i "${S}/mk/config.mk.in" \
-		-i "${S}/src/prototyping/eval/Makefile" \
-		-i "${S}/src/prototyping/nameless/Makefile" \
-		-i "${S}/src/rts/${PN}-rts.cabal" \
-		|| die "sed to remove -Werror failed"
-	sed -e '/, "-Werror"/d' \
-		-i "${S}/src/full/Agda/Compiler/MAlonzo/Compiler.hs" \
-		|| die "sed to remove -Werror from Compiler.hs failed"
 }
 
 src_configure() {

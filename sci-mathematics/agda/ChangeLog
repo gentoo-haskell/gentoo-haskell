@@ -4,6 +4,10 @@
 
   17 Oct 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
   agda-9999.ebuild:
+  sci-mathematics/agda: Remove Werror fix since it is no longer used
+
+  17 Oct 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
+  agda-9999.ebuild:
   sci-mathematics/agda: Update deps
 
   04 Jun 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
