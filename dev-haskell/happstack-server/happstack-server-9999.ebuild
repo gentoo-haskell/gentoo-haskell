@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,43 +16,40 @@ S="${WORKDIR}/${P}/${PN}"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE=""
+IUSE="+network-uri +template_haskell"
 
-RDEPEND="=dev-haskell/base64-bytestring-1.0*:=[profile?]
-		>=dev-haskell/blaze-html-0.5:=[profile?]
-		<dev-haskell/blaze-html-0.7:=[profile?]
-		dev-haskell/extensible-exceptions:=[profile?]
-		>=dev-haskell/hslogger-1.0.2:=[profile?]
-		dev-haskell/html:=[profile?]
-		=dev-haskell/monad-control-0.3*:=[profile?]
-		>=dev-haskell/mtl-2:=[profile?]
-		<dev-haskell/mtl-2.2:=[profile?]
-		>=dev-haskell/network-2.2.3:=[profile?]
-		<dev-haskell/parsec-4:=[profile?]
-		>=dev-haskell/sendfile-0.7.1:=[profile?]
-		<dev-haskell/sendfile-0.8:=[profile?]
-		dev-haskell/syb:=[profile?]
-		>=dev-haskell/system-filepath-0.3.1:=[profile?]
-		>=dev-haskell/text-0.10:=[profile?]
-		<dev-haskell/text-0.12:=[profile?]
-		>=dev-haskell/threads-0.5:=[profile?]
-		dev-haskell/time-compat:=[profile?]
-		>=dev-haskell/transformers-0.1.3:=[profile?]
-		<dev-haskell/transformers-0.4:=[profile?]
-		=dev-haskell/transformers-base-0.4*:=[profile?]
-		>=dev-haskell/utf8-string-0.3.4:=[profile?]
-		<dev-haskell/utf8-string-0.4:=[profile?]
-		dev-haskell/xhtml:=[profile?]
-		dev-haskell/zlib:=[profile?]
-		>=dev-lang/ghc-6.12.1:=
-		"
+RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	dev-haskell/extensible-exceptions:=[profile?]
+	>=dev-haskell/hslogger-1.0.2:=[profile?]
+	dev-haskell/html:=[profile?]
+	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
+	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	<dev-haskell/parsec-4:=[profile?]
+	>=dev-haskell/sendfile-0.7.1:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
+	dev-haskell/syb:=[profile?]
+	>=dev-haskell/system-filepath-0.3.1:=[profile?]
+	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/threads-0.5:=[profile?]
+	dev-haskell/time-compat:=[profile?]
+	>=dev-haskell/transformers-0.1.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
+	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	dev-haskell/xhtml:=[profile?]
+	dev-haskell/zlib:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+	network-uri? ( >dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
+	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.8
-		test? ( dev-haskell/hunit
-		)"
+	>=dev-haskell/cabal-1.8
+	test? ( dev-haskell/hunit )
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flags=network_2_2_3 \
-		--flags=template_haskell
+		$(cabal_flag network-uri network-uri) \
+		--flag=network_2_2_3 \
+		$(cabal_flag template_haskell template_haskell)
 }
