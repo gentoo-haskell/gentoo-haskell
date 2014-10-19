@@ -54,7 +54,7 @@ PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.8
-	dev-haskell/cpphs
+	>=dev-haskell/cpphs-1.18.6
 	dev-haskell/happy
 "
 
