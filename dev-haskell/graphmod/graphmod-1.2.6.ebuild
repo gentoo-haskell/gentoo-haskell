@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin"
 inherit haskell-cabal
 
-DESCRIPTION="Present the module dependencies of a program as a "dot" graph"
+DESCRIPTION="Present the module dependencies of a program as a \"dot\" graph"
 HOMEPAGE="http://github.com/yav/graphmod/wiki"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
