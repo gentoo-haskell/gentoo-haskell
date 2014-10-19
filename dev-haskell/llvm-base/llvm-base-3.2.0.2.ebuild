@@ -24,6 +24,10 @@ RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+src_prepare() {
+	HCFLAGS="${HCFLAGS} -XAllowAmbiguousTypes"
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag developer developer)
