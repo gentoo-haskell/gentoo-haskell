@@ -1,20 +1,3 @@
---- bindings-bfd-1.2.0.0-orig/bindings-bfd.cabal	2012-07-17 01:32:14.000000000 +1000
-+++ bindings-bfd-1.2.0.0/bindings-bfd.cabal	2012-10-12 12:11:05.780504945 +1100
-@@ -60,10 +60,10 @@
-                         Bindings.Bfd.Symbol.Flags
-                         Bindings.Bfd.SymbolTable
-                         Bindings.Bfd.Target
--   build-depends:       array >= 0.3 && < 0.4,
--                        base >= 4.3 && < 4.4,
--                        containers >= 0.4 && < 0.5,
--                        unix >= 2.4 && < 2.5
-+   build-depends:       array >= 0.3 && < 0.5,
-+                        base >= 4.3 && < 5.0,
-+                        containers >= 0.4 && < 0.6,
-+                        unix >= 2.4 && < 2.7
-    hs-source-dirs:      src
-    extensions:          CPP, 
-                         ForeignFunctionInterface
 --- bindings-bfd-1.2.0.0-orig/src/Bindings/Bfd.hsc	2012-07-17 01:32:14.000000000 +1000
 +++ bindings-bfd-1.2.0.0/src/Bindings/Bfd.hsc	2012-10-12 12:15:21.811374158 +1100
 @@ -73,7 +73,7 @@
