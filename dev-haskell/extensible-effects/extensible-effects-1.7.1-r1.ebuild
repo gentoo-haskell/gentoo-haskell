@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.4.3:=[profile?]
+	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -33,5 +33,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'transformers-base == 0.4.1.*' 'transformers-base >= 0.4.1 && < 0.4.3'
+		'transformers-base == 0.4.1.*' 'transformers-base >= 0.4.1 && < 0.5'
 }
