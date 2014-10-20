@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # sometimes hangs, sometimes fails
+
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 		=dev-haskell/data-accessor-0.2*:=[profile?]
 		=dev-haskell/distributed-static-0.2*:=[profile?]
