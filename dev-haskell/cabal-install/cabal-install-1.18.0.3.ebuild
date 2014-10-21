@@ -50,5 +50,5 @@ src_prepare() {
 src_install() {
 	haskell-cabal_src_install
 
-	newbashcomp "${S}/bash-completion/cabal" ${PN}
+	dobashcomp "${S}/bash-completion/cabal"
 }
