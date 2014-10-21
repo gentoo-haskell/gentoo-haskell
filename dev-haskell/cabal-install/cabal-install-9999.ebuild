@@ -58,7 +58,7 @@ src_prepare() {
 		cabal_chdeps '-threaded' ' '
 	fi
 	if [[ -n ${LIVE_EBUILD} ]]; then
-		cabal_chdeps 'Cabal      == 1.21.0.0' 'Cabal == 1.21.9999'
+		cabal_chdeps 'Cabal      == 1.21.1.0' 'Cabal == 1.21.9999'
 	fi
 }
 
