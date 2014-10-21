@@ -21,8 +21,18 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14 <dev-haskell/cabal-1.21
-	>=dev-haskell/haskell-src-exts-1.13 <dev-haskell/haskell-src-exts-1.16
-	>=dev-haskell/optparse-applicative-0.8 <dev-haskell/optparse-applicative-0.9
+	>=dev-haskell/haskell-src-exts-1.13 <dev-haskell/haskell-src-exts-1.17
+	<dev-haskell/optparse-applicative-0.12
 	>=dev-haskell/split-0.2 <dev-haskell/split-0.3
 	>=dev-lang/ghc-7.4.1
 "
+
+src_prepare(){
+	# https://github.com/hvr/packunused/pull/8
+	cabal_chdeps \
+		'optparse-applicative == 0.8.*' \
+		'optparse-applicative < 0.12'
+	cabal_chdeps \
+		'haskell-src-exts     >=1.13 && <1.16' \
+		'haskell-src-exts     >=1.13 && <1.17'
+}
