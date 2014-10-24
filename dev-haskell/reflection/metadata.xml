@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<use>
-		<flag name="slow">Use more portable but slower and unsupported implementation.</flag>
-	</use>
 	<longdescription>
 		This package provides an implementation of the ideas presented in the paper
 		\&quot;Functional Pearl: Implicit Configurations\&quot; by Oleg Kiselyov and
