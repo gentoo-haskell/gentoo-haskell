@@ -13,7 +13,7 @@ DESCRIPTION="The XPath modules for HXT"
 HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE=""	# FIXME: Please look at license file of package and pick it manually.
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="MIT"
