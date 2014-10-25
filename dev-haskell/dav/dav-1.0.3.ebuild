@@ -19,7 +19,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+network-uri"
 
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	dev-haskell/data-default:=[profile?]
@@ -31,8 +31,6 @@ RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?]
-	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/optparse-applicative-0.10.0:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
@@ -40,6 +38,9 @@ RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/xml-conduit-1.0:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
 	>=dev-haskell/xml-hamlet-0.4:=[profile?] <dev-haskell/xml-hamlet-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
+			>=dev-haskell/network-uri-2.6:=[profile?] )
+	!network-uri? ( >=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -47,7 +48,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	cabal_chdeps \
-		'network >= 2.3' 'network >= 2.3, network-uri'
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag network-uri network-uri)
 }
