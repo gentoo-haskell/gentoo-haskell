@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.1.1:=[profile?]
