@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests hang
+
 RDEPEND=">=dev-haskell/mtl-2.1.1:=[profile?]
 	>=dev-haskell/th-desugar-1.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
