@@ -54,6 +54,7 @@ pkg_setup() {
 src_install() {
 	haskell-cabal_src_install
 
+	dodoc "${S}"/doc/CHANGES*
 	dodoc "${S}"/doc/README*
 	dodoc -r "${S}/schema"
 
