@@ -20,7 +20,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/haskell-src-exts-1.15 <dev-haskell/haskell-src-exts-1.16
-	>=dev-lang/ghc-6.10.4
+	>=dev-lang/ghc-7.4.1
 	app-emacs/hindent
 	emacs? ( virtual/emacs )
 "
