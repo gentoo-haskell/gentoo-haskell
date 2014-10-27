@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/mtl-2.0 <dev-haskell/mtl-3
 	>=dev-haskell/network-2.0 <dev-haskell/network-2.7
 	dev-haskell/network-uri
-	>=dev-haskell/random-1 <dev-haskell/random-1.1
+	>=dev-haskell/random-1 <dev-haskell/random-1.2
 	>=dev-haskell/stm-2.0 <dev-haskell/stm-3
 	>=dev-haskell/zlib-0.5.3 <dev-haskell/zlib-0.6
 	>=dev-lang/ghc-7.4.1
@@ -49,7 +49,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'network    >= 2.0      && < 2.6' 'network    >= 2.0      && < 2.7, network-uri' \
-		'network,' 'network,network-uri,'
+		'network,' 'network,network-uri,' \
+		'random     >= 1        && < 1.1' 'random     >= 1        && < 1.2'
 }
 
 src_install() {
