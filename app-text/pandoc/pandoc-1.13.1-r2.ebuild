@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.9:=[profil
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/pandoc-types-1.12.4:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/sha-1.6:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
@@ -73,7 +73,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text >= 0.11 && < 1.2' 'text >= 0.11'
+		'text >= 0.11 && < 1.2' 'text >= 0.11' \
+		'random >= 1 && < 1.1' 'random >=1 && <1.2'
 }
 
 src_configure() {
