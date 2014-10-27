@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-1.1:=[profile?]
 	>=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/regex-compat-0.95.1:=[profile?]
 	>=dev-haskell/tar-0.3:=[profile?] <dev-haskell/tar-0.5:=[profile?]
 	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -57,7 +57,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'terminfo == 0.3.*' 'terminfo >= 0.3 && < 0.5' \
-		'text       >= 0.11.0.6 && < 1.2' 'text       >= 0.11.0.6 && < 1.3'
+		'text       >= 0.11.0.6 && < 1.2' 'text       >= 0.11.0.6 && < 1.3' \
+		'random     == 1.0.*' 'random     >= 1.0 && < 1.2'
 }
 
 src_configure() {
