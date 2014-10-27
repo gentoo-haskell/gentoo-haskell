@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -51,6 +51,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.4:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 	>=dev-haskell/alex-3.0.5
 	>=dev-haskell/cabal-1.16.0.3
+	>=dev-haskell/cabal-install-1.16.0.3
 	>=dev-haskell/happy-1.18.10
 	>=dev-haskell/hscolour-1.19
 	doc? ( >=dev-haskell/haddock-2.13.2 )
