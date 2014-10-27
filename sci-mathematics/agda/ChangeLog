@@ -2,6 +2,10 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/sci-mathematics/agda/ChangeLog,v 1.10 2010/11/20 13:45:12 kolmodin Exp $
 
+  27 Oct 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
+  agda-9999.ebuild:
+  sci-mathematics/agda: Update deps
+
   17 Oct 2014; Vikraman Choudhury (vikraman) <vikraman@gentoo.org>
   agda-9999.ebuild:
   sci-mathematics/agda: Remove Werror fix since it is no longer used
