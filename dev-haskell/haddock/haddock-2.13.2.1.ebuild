@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/haddock-2.13.2-r1.ebuild,v 1.1 2013/05/29 08:21:16 qnikst Exp $
+# $Header: $
 
 EAPI=5
 
@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/ghc-paths:=[profile?]
 		=dev-haskell/xhtml-3000.2*:=[profile?]
-		>=dev-lang/ghc-7.6.1:="
+		>=dev-lang/ghc-7.6:= <dev-lang/ghc-7.7:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.14"
 
