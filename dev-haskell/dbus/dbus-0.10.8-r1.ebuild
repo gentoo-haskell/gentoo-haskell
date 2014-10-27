@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profil
 	>=dev-haskell/libxml-sax-0.7:=[profile?] <dev-haskell/libxml-sax-0.8:=[profile?]
 	>=dev-haskell/network-2.2.3:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
@@ -35,3 +35,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/chell-quickcheck-0.2 <dev-haskell/chell-quickcheck-0.3
 		>=dev-haskell/quickcheck-2.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'random >= 1.0 && < 1.1' 'random >= 1.0 && < 1.2'
+}
