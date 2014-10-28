@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/dph-base-0.7:=[profile?] <dev-haskell/dph-base-0.8:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base     == 4.6.*' 'base     >= 4.6 && < 4.8'
+		'base     == 4.6.*' 'base     >= 4.6 && < 4.8' \
+		'random   == 1.0.*' 'random   >= 1.0 && < 1.2'
 }
