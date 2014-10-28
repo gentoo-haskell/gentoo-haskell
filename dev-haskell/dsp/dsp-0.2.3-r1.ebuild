@@ -18,12 +18,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+buildexamples"
 
-RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'random >=1.0 && <1.1' 'random >=1.0 && <1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
