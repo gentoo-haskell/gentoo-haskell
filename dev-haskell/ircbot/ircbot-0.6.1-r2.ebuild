@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/irc-0.6:=[profile?] <dev-haskell/irc-0.7:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/safesemaphore-0.10:=[profile?] <dev-haskell/safesemaphore-0.11:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'network    >= 2.3  && < 2.6' 'network    >= 2.3  && < 2.7'
+		'network    >= 2.3  && < 2.6' 'network    >= 2.3  && < 2.7' \
+		'random     == 1.0.*' 'random     >= 1.0 && < 1.2'
 }
