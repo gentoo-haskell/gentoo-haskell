@@ -30,10 +30,11 @@ RDEPEND=">=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
-	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-1.1 )
+	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-1.2 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'syb >=0.1 && <0.4' 'syb >=0.1 && <0.5'
+		'syb >=0.1 && <0.4' 'syb >=0.1 && <0.5' \
+		'random >=1.0 && <1.1' 'random >=1.0 && <1.2'
 }
