@@ -24,7 +24,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/syb-0.1.0.2:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'random == 1.0.*' 'random >= 1.0 && < 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
