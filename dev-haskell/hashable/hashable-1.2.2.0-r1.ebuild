@@ -26,12 +26,17 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.4.0.1
-		>=dev-haskell/random-1.0 <dev-haskell/random-1.1
+		>=dev-haskell/random-1.0 <dev-haskell/random-1.2
 		>=dev-haskell/test-framework-0.3.3
 		dev-haskell/test-framework-hunit
 		>=dev-haskell/test-framework-quickcheck2-0.2.9
 		>=dev-haskell/text-0.11.0.5 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'random == 1.0.*' 'random >= 1.0 && < 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
