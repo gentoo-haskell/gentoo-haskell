@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	=dev-haskell/network-transport-0.3*:=[profile?]
-	=dev-haskell/random-1.0*:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-lang/ghc-7.4.2:="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8"
@@ -30,5 +30,6 @@ src_prepare() {
 	cabal_chdeps \
 		'ansi-terminal >= 0.5 && < 0.6' 'ansi-terminal >= 0.5' \
 		'base >= 4.5 && < 4.7' 'base >= 4.5' \
-		'mtl >= 2.1 && < 2.2' 'mtl >= 2.1 && < 2.3'
+		'mtl >= 2.1 && < 2.2' 'mtl >= 2.1 && < 2.3' \
+		'random >= 1.0 && < 1.1' 'random >= 1.0 && < 1.2'
 }
