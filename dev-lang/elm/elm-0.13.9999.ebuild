@@ -51,3 +51,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	cabal-mksetup
+}
