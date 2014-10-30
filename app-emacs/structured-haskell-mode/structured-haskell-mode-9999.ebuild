@@ -5,7 +5,7 @@
 EAPI=5
 
 CABAL_FEATURES="bin"
-inherit elisp-common git-2 haskell-cabal
+inherit base elisp-common git-2 haskell-cabal
 
 DESCRIPTION="Structured editing Emacs mode for Haskell"
 HOMEPAGE="https://github.com/chrisdone/structured-haskell-mode"
@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 	emacs? ( virtual/emacs )
 "
 SITEFILE="50${PN}-gentoo.el"
+
+PATCHES=( "${FILESDIR}/${PN}-1.0.4.patch" )
 
 src_compile() {
 	haskell-cabal_src_compile
