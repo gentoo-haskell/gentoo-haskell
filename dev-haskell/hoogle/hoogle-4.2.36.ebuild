@@ -64,7 +64,7 @@ src_install() {
 	if use fetchdb; then
 		hoogle_datadir="${ED}"/usr/share/"${P}/ghc-$(ghc-version)"
 		hoogle_datadir=$hoogle_datadir "${ED}"/usr/bin/hoogle data $(use fetchdb-ghc && echo "ghc")
-		rm -rf "$hoogle_datadir"/databases/download # takes A LOT of space
+		rm -r "$hoogle_datadir"/databases/downloads || die # takes A LOT of space
 		if use localdb; then
 			cp "${FILESDIR}/hoogle-build-localdb" "${S}" || die "Could not copy hoogle-build-localdb"
 			sed -e "s@ROOT=\"/\"@ROOT=\"${ROOT}\"@" \
