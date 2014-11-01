@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-	>=dev-haskell/aeson-0.6 <dev-haskell/aeson-0.8
+	>=dev-haskell/aeson-0.6 <dev-haskell/aeson-0.9
 	>=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.13
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/text-0.11
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'attoparsec           >= 0.10 && < 0.12' 'attoparsec           >= 0.10 && < 0.13' \
-		'text                 >= 0.11 && < 1.2' 'text                 >= 0.11'
+		'text                 >= 0.11 && < 1.2' 'text                 >= 0.11' \
+		'aeson                >= 0.6  && < 0.8' 'aeson                >= 0.6  && < 0.9'
 }
