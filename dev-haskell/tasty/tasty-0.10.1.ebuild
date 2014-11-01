@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.6.1:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?]
