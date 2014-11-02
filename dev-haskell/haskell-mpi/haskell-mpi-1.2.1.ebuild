@@ -26,4 +26,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/c2hs
 		>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}"/${P}-ghc-7.6.patch)
+PATCHES=("${FILESDIR}"/${P}-ghc-7.6.patch
+	"${FILESDIR}"/${P}-ghc-7.8.patch)
