@@ -1,0 +1,20 @@
+diff --git a/src/LockRestart.hs b/src/LockRestart.hs
+index 53e02a3..4d5184a 100644
+--- a/src/LockRestart.hs
++++ b/src/LockRestart.hs
+@@ -22,6 +22,7 @@ module LockRestart
+ 	, lockRestart
+ 	) where
+ 
++import GHC.IO.Exception
+ import System.FilePath
+ import System.Directory
+ import System.IO
+@@ -29,7 +30,6 @@ import System.IO.Error
+ import System.Posix.Temp
+ import Control.Monad
+ import qualified Control.Exception as E
+-import GHC.IOBase
+ import Safe
+ 
+ cE :: IO a -> (IOError -> IO a) -> IO a
