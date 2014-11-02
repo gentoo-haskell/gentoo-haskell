@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+maxcount"
 
-RESTRICT=test # needs git environment (TODO: pick from git-annex)
+RESTRICT=test # one darcs test fails
 
 RDEPEND=">=dev-haskell/diff-0.2:=[profile?] <dev-haskell/diff-0.4:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -32,8 +32,22 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
 		dev-haskell/mtl )
 "
+DEPEND+="
+	test? ( dev-vcs/darcs
+		dev-vcs/git
+		dev-vcs/mercurial
+	)
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag maxcount maxcount)
+}
+
+src_test() {
+	export HOME=${T}/
+	git config --global user.email "git@src_test"
+	git config --global user.name "Mr. ${P} The Test"
+
+	haskell-cabal_src_test
 }
