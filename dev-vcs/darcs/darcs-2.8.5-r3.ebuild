@@ -79,3 +79,11 @@ src_configure() {
 		$(cabal_flag threaded threaded) \
 		--flag=-warn-as-error
 }
+
+src_install() {
+	haskell-cabal_src_install
+
+	# fixup perms in such an an awkward way
+	mv "${ED}/usr/share/man/man1/darcs.1" "${S}/darcs.1" || die "darcs.1 not found"
+	doman "${S}/darcs.1" || die "failed to register darcs.1 as a manpage"
+}
