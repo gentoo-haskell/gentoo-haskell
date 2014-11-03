@@ -1,0 +1,22 @@
+--- hi.cabal.orig	2014-11-04 04:57:08.759458979 +0530
++++ hi.cabal	2014-11-04 04:57:17.381339667 +0530
+@@ -124,19 +124,6 @@
+       , text       > 1.0
+       , time
+
+-test-suite doctests
+-  type:
+-      exitcode-stdio-1.0
+-  ghc-options:
+-      -threaded
+-  hs-source-dirs:
+-      src
+-    , test
+-  main-is:
+-      doctests.hs
+-  build-depends:
+-      base, doctest >= 0.8, process
+-
+ source-repository head
+   type:     git
+   location: https://github.com/fujimura/hi.git
