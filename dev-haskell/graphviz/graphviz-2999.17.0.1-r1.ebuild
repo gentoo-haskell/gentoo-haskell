@@ -23,7 +23,7 @@ RESTRICT=test # very slow
 RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/fgl-5.4:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
-	>=dev-haskell/polyparse-1.9:=[profile?] <dev-haskell/polyparse-1.10:=[profile?]
+	>=dev-haskell/polyparse-1.9:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.8
 		dev-haskell/text )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'polyparse == 1.9.*' 'polyparse >= 1.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
