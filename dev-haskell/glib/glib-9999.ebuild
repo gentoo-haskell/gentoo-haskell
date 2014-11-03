@@ -24,7 +24,7 @@ IUSE="+closure_signals"
 
 RDEPEND=">=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.9.1:=
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
