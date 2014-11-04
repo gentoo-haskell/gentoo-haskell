@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The CSV format is defined by RFC 4180.
+		These efficient lazy parsers (String and ByteString variants)
+		can report all CSV formatting errors, whilst also
+		returning all the valid data, so the user can choose
+		whether to continue, to show warnings, or to halt on
+		error.  Valid fields retain information about their
+		original location in the input, so a secondary parser from
+		textual fields to typed values can give intelligent error
+		messages.
+	</longdescription>
+</pkgmetadata>
