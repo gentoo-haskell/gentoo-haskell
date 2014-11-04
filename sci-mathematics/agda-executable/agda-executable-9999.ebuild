@@ -5,15 +5,14 @@
 EAPI=5
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal eutils darcs
+inherit haskell-cabal eutils git-r3
 
 MY_PN="Agda"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Command-line program for type-checking and compiling Agda programs"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-EDARCS_REPOSITORY="http://code.haskell.org/Agda"
-EDARCS_LOCALREPO="Agda2"
+EGIT_REPO_URI="https://github.com/agda/agda.git"
 
 LICENSE="MIT"
 SLOT="0"
