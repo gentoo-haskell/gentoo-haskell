@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/colour:=[profile?]
 	dev-haskell/hashable:=[profile?]
+	dev-haskell/hmt:=[profile?]
 	>dev-haskell/hosc-0.13:=[profile?]
 	dev-haskell/mersenne-random-pure64:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
