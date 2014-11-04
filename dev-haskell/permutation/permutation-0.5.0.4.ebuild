@@ -18,6 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# uses very old quickcheck
+RESTRICT="test"
+
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
