@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/parsec:=[profile?]
 	dev-haskell/split:=[profile?]
 	>=dev-haskell/template-0.2:=[profile?] <dev-haskell/template-0.3:=[profile?]
-	~dev-haskell/temporary-rc-1.2.0.3:=[profile?]
+	~dev-haskell/temporary-1.2.0.3:=[profile?]
 	>dev-haskell/text-1.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -33,4 +33,6 @@ DEPEND="${RDEPEND}
 "
 
 # doctests needs a git repository
-PATCHES=("${FILESDIR}/hi-0.0.8.2-no-doctests.patch")
+PATCHES=( "${FILESDIR}/hi-0.0.8.2-temporary.patch"
+		  "${FILESDIR}/hi-0.0.8.2-no-doctests.patch"
+		)

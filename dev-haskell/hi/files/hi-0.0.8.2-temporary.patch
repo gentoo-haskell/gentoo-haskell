@@ -1,0 +1,29 @@
+--- hi.cabal.orig	2014-11-05 03:32:35.728248249 +0530
++++ hi.cabal	2014-11-05 03:32:47.710072423 +0530
+@@ -74,7 +74,7 @@
+       , process
+       , split
+       , template      == 0.2.*
+-      , temporary-rc  >= 1.2.0.3
++      , temporary  >= 1.2.0.3
+       , text          > 1.0
+       , time
+ 
+@@ -94,7 +94,7 @@
+       , process
+       , split
+       , template   == 0.2.*
+-      , temporary-rc  == 1.2.0.3
++      , temporary  == 1.2.0.3
+       , text       > 1.0
+       , time
+ 
+@@ -120,7 +120,7 @@
+       , process
+       , split
+       , template    == 0.2.*
+-      , temporary-rc   == 1.2.0.3
++      , temporary   == 1.2.0.3
+       , text       > 1.0
+       , time
+ 
