@@ -1,0 +1,61 @@
+diff --git i/h2048.cabal w/h2048.cabal
+index 12feb75..0663f6d 100644
+--- i/h2048.cabal
++++ w/h2048.cabal
+@@ -44,8 +44,8 @@ library
+                        mtl >= 2 && < 3,
+                        MonadRandom >= 0 && < 1,
+                        text >= 1 && < 2,
+-                       vty >= 4 && < 6,
+-                       vty-ui >= 1 && < 2
++                       vty >= 5 && < 6,
++                       vty-ui >= 1.8 && < 2
+ 
+   ghc-options:         -Wall
+   default-language:    Haskell2010
+@@ -67,11 +67,11 @@ executable h2048-simple
+ executable h2048-vty
+   hs-source-dirs:      src
+   main-is:             MainVty.hs
+-  ghc-options:         -Wall
++  ghc-options:         -Wall -threaded
+   build-depends:       base >= 4 && < 5,
+                        text >= 1 && < 2,
+-                       vty >= 4 && < 6,
+-                       vty-ui >= 1 && < 2,
++                       vty >= 5 && < 6,
++                       vty-ui >= 1.8 && < 2,
+                        transformers >= 0 && < 1,
+                        mtl >= 2 && < 3,
+                        MonadRandom >= 0 && < 1
+diff --git i/src/Game/H2048/UI/Vty.hs w/src/Game/H2048/UI/Vty.hs
+index 49eb091..875e92b 100644
+--- i/src/Game/H2048/UI/Vty.hs
++++ w/src/Game/H2048/UI/Vty.hs
+@@ -183,21 +183,21 @@ mainVty = do
+ 
+     pScore `onKeyPressed` \_ key _ ->
+         case key of
+-          KASCII 'q' ->
++          KChar 'q' ->
+               shutdownUi >> return True
+-          KASCII 'i' ->
++          KChar 'i' ->
+               doUpdate DUp
+           KUp ->
+               doUpdate DUp
+-          KASCII 'k' ->
++          KChar 'k' ->
+               doUpdate DDown
+           KDown ->
+               doUpdate DDown
+-          KASCII 'j' ->
++          KChar 'j' ->
+               doUpdate DLeft
+           KLeft ->
+               doUpdate DLeft
+-          KASCII 'l' ->
++          KChar 'l' ->
+               doUpdate DRight
+           KRight ->
+               doUpdate DRight
