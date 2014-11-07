@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/monadrandom-0:=[profile?] <dev-haskell/monadrandom-1:=[pr
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/transformers-0:=[profile?] <dev-haskell/transformers-1:=[profile?]
-	>=dev-haskell/vty-4:=[profile?] <dev-haskell/vty-6:=[profile?]
-	>=dev-haskell/vty-ui-1:=[profile?] <dev-haskell/vty-ui-2:=[profile?]
+	>=dev-haskell/vty-5:=[profile?] <dev-haskell/vty-6:=[profile?]
+	>=dev-haskell/vty-ui-1.8:=[profile?] <dev-haskell/vty-ui-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
