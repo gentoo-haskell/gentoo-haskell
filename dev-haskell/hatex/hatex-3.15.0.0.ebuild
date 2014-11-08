@@ -13,7 +13,7 @@ MY_PN="HaTeX"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="The Haskell LaTeX library"
-HOMEPAGE="http://daniel-diaz.github.io/projects/hatex"
+HOMEPAGE="http://wrongurl.net/haskell/HaTeX"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
