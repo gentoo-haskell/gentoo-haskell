@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cmdtheline-0.2:=[profile?] <dev-haskell/cmdtheline-0.3:=[profile?]
+	>=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.0.8:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/monad-unify-0.2.2:=[profile?] <dev-haskell/monad-unify-0.3:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?] <dev-haskell/mtl-2.3.0:=[profile?]
