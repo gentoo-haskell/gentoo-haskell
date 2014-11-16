@@ -1,0 +1,34 @@
+commit e9edb0b7afb206aedb48649be66e8daccc41a081
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Sun Nov 16 21:22:01 2014 +0000
+
+    work/hscurses-1.4.1.2: workaround build failures on ghc-7.8
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/UI/HSCurses/MonadException.hs b/UI/HSCurses/MonadException.hs
+index e95e879..3eb2e22 100644
+--- a/UI/HSCurses/MonadException.hs
++++ b/UI/HSCurses/MonadException.hs
+@@ -24,6 +24,8 @@ import Prelude hiding (catch)
+ import Control.Exception
+ import Control.Monad.State
+ 
++import qualified GHC.IO as GI
++
+ class Monad m => MonadExc m where
+     catchM      :: Exception e => m a -> (e -> m a) -> m a
+     blockM      :: m a -> m a
+@@ -104,8 +106,10 @@ a `finally` sequel =
+ 
+ instance MonadExc IO where
+     catchM       = catch
+-    blockM       = block
+-    unblockM     = unblock
++    -- blockM       = block
++    -- unblockM     = unblock
++    blockM       = GI.uninterruptibleMask_
++    unblockM     = GI.unsafeUnmask
+ 
+ instance MonadExcIO IO
+ 
