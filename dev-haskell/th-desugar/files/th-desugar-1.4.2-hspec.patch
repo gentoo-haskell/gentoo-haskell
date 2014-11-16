@@ -1,0 +1,38 @@
+Test/Run.hs:124:25:
+    Ambiguous occurrence ‘runIO’
+    It could refer to either ‘Test.Hspec.runIO’,
+                             imported from ‘Test.Hspec’ at Test/Run.hs:19:1-17
+                             (and originally defined in ‘hspec-1.12.2:Test.Hspec.Core.Type’)
+                          or ‘Language.Haskell.TH.runIO’,
+                             imported from ‘Language.Haskell.TH’ at Test/Run.hs:29:1-26
+                             (and originally defined in ‘Language.Haskell.TH.Syntax’)
+    In the splice:
+      $(do { info <- reify ''Poly;
+             dinfo@(DTyConI (DFamilyD TypeFam _name _tvbs (Just resK))
+                            (Just [DTySynInstD _name2 (DTySynEqn lhs _rhs)])) <- dsInfo info;
+             case (resK, lhs) of {
+               (DStarK, [DVarT _]) -> ...
+               _ -> ... } })
+
+diff --git a/Test/Run.hs b/Test/Run.hs
+index 25ec6fd..727d41b 100644
+--- a/Test/Run.hs
++++ b/Test/Run.hs
+@@ -26,7 +26,7 @@ import Test.Dec ( RecordSel )
+ import Language.Haskell.TH.Desugar
+ import Language.Haskell.TH.Desugar.Expand
+ import Language.Haskell.TH.Desugar.Sweeten
+-import Language.Haskell.TH
++import Language.Haskell.TH as TH
+ 
+ import Control.Monad
+ 
+@@ -121,7 +121,7 @@ test_bug8884 = $(do info <- reify ''Poly
+                     case (resK, lhs) of
+                       (DStarK, [DVarT _]) -> [| True |]
+                       _                                     -> do
+-                        runIO $ do
++                        TH.runIO $ do
+                           putStrLn "Failed bug8884 test:"
+                           putStrLn $ show dinfo
+                         [| False |] )
