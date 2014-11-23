@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/intervals-0.7:=[profile?] <dev-haskell/intervals-0.8:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.2:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.5:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
