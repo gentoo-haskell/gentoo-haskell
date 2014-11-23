@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests need node.js
+
 RDEPEND=">=dev-haskell/cmdtheline-0.2:=[profile?] <dev-haskell/cmdtheline-0.3:=[profile?]
 	>=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.0.8:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
