@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (23 Nov 2014)
+# Likes to clash with popular 'mtl' namespace, subsumed by transformers/mtl.
+dev-haskell/monads-fd
+dev-haskell/data-accessor-monads-fd
+
 # Sergei Trofimovich <slyfox@gentoo.org> (03 Jul 2014)
 # Needs qt-5. Not in the main tree yet.
 >=dev-haskell/hsqml-0.3.1.0
