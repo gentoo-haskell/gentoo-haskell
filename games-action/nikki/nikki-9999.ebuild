@@ -48,6 +48,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/statevar
 	>=dev-haskell/stickykeyshotkey-0.1 <dev-haskell/stickykeyshotkey-0.2
 	>=dev-haskell/strict-0.3.2
+	dev-haskell/string-conversions
 	>=dev-haskell/template-0.2 <dev-haskell/template-0.3
 	>=dev-haskell/temporary-1.1.1
 	dev-haskell/text
@@ -69,11 +70,13 @@ S="${WORKDIR}/${P}/src"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ev-2.0.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 
 	cabal_chdeps \
 		'-Werror' ' ' \
 		'-optl-s' ' ' \
-		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5'
+		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5' \
+		', network == 2.*' ', network == 2.*, network-uri, string-conversions'
 }
 
 src_configure() {
