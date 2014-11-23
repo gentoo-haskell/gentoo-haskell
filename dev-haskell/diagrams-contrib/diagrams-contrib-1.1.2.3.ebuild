@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 	>=dev-haskell/diagrams-core-1.2:=[profile?] <dev-haskell/diagrams-core-1.3:=[profile?]
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
 	>=dev-haskell/force-layout-0.3:=[profile?] <dev-haskell/force-layout-0.4:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.5:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/monadrandom-0.1.8:=[profile?] <dev-haskell/monadrandom-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
