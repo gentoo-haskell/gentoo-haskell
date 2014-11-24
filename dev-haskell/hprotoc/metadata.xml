@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<use>
-		<flag name="small_base">Build the new smaller, split-up base package.</flag>
-	</use>
 	<longdescription>
 		Parse language defined at &quot;http://code.google.com/apis/protocolbuffers/docs/proto.html&quot; and general haskell code to implement messages.
 	</longdescription>
