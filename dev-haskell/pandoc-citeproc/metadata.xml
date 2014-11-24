@@ -23,8 +23,6 @@
 	</longdescription>
 	<use>
 		<flag name="bibutils">Use Chris Putnam's Bibutils.</flag>
-		<flag name="network">Use network and HTTP to retrieve csl file from URIs.</flag>
-		<flag name="hexpat">Use hexpat to parse XML</flag>
 		<flag name="test_citeproc">Build the test-citeproc program</flag>
 		<flag name="unicode_collation">Use Haskell bindings to the International Components for Unicode (ICU) libraries</flag>
 	</use>
