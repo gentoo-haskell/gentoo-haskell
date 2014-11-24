@@ -5,7 +5,6 @@
 	<use>
 		<flag name="curses">Use curses to get the screen width.</flag>
 		<flag name="ffi">Build support for libffi.</flag>
-		<flag name="llvm">Build the LLVM backend.</flag>
 	</use>
 	<longdescription>
 		Idris is a general purpose language with full dependent types.
