@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
 	dev-haskell/cookie:=[profile?]
-	>=dev-haskell/hspec-1.4:=[profile?]
+	>=dev-haskell/hspec-1.4:=[profile?] <dev-haskell/hspec-2
 	>=dev-haskell/html-conduit-0.1:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/hunit-1.2:=[profile?]
