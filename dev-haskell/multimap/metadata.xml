@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a simple implementation of a multimap, based on &quot;Data.Map&quot;.
+		
+		[@v1.1@]
+		@!@ had its arguments flipped. Fixed.
+		Also added @fromMap@.
+		
+		[@v1.2@]
+		Added &quot;Data.SetMap&quot;, renamed @Multimap@ to &quot;Data.MultiMap&quot;.
+		Fixed the type of @delete@. Derive instances for @Data@
+		and @Typeable@.
+		
+		[@v1.2.1@]
+		Fixed typos in the documentation.
+	</longdescription>
+</pkgmetadata>
