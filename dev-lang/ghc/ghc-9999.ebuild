@@ -401,8 +401,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
 
-		epatch "${FILESDIR}"/${PN}-9999-libbfd.patch
-
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
