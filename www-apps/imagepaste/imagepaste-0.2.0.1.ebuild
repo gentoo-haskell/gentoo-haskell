@@ -25,9 +25,15 @@ DEPEND="${RDEPEND}
 	dev-haskell/json
 	dev-haskell/mtl
 	dev-haskell/network
+	dev-haskell/network-uri
 	dev-haskell/regex-posix
 	dev-haskell/tagsoup
 	dev-haskell/transformers
 	dev-haskell/vcs-revision
 	>=dev-lang/ghc-6.10.4
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'network' 'network, network-uri'
+}
