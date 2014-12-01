@@ -1,0 +1,24 @@
+diff --git Devel.hs Devel.hs
+index c4311c3..2c9d768 100644
+--- Devel.hs
++++ Devel.hs
+@@ -214,7 +214,7 @@ devel opts passThroughArgs = withSocketsDo $ withManager $ \manager -> do
+     mainOuterLoop develHsPath iappPort filesModified = do
+       ghcVer <- liftIO ghcVersion
+       cabal  <- liftIO $ D.findPackageDesc "."
+-      gpd    <- liftIO $ D.readPackageDescription D.normal cabal
++      gpd    <- liftIO $ D.readPackageDescription D.normal (either id id cabal)
+       ldar   <- liftIO lookupLdAr
+       (hsSourceDirs, _) <- liftIO $ checkCabalFile gpd
+       liftIO $ removeFileIfExists (bd </> "setup-config")
+@@ -226,8 +226,8 @@ devel opts passThroughArgs = withSocketsDo $ withManager $ \manager -> do
+                                                , "yesod-devel/arargs.txt"
+                                                , "yesod-devel/ldargs.txt"
+                                                ]
+-             rebuild <- liftIO $ mkRebuild ghcVer cabal opts ldar
+-             mainInnerLoop develHsPath iappPort hsSourceDirs filesModified cabal rebuild
++             rebuild <- liftIO $ mkRebuild ghcVer (either id id cabal) opts ldar
++             mainInnerLoop develHsPath iappPort hsSourceDirs filesModified  (either id id cabal) rebuild
+            else do
+              liftIO (threadDelay 5000000)
+              mainOuterLoop develHsPath iappPort filesModified
