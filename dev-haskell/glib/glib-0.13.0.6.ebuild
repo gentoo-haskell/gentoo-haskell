@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
+	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
 
