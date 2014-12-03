@@ -8,7 +8,7 @@ EAPI=5
 
 GTK_MAJ_VER="2"
 
-MY_PV="${PV%.*}"
+MY_PV="${PV%.0.*}"
 MY_P="${PN}-${MY_PV}"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[prof
 	gio? ( >=dev-haskell/gio-0.13.0:=[profile?] <dev-haskell/gio-0.14:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
+	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
 
