@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 	>=dev-haskell/monadrandom-0.1.8:=[profile?] <dev-haskell/monadrandom-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.16:=[profile?]
+	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
 	>=dev-haskell/split-0.2.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
