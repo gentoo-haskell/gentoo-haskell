@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/leksah/leksah.git"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="+dyre +gtk3 loc +network-uri yi"
 # Tests fail to compile (they try to compile stuff with yi)
 RESTRICT="test"
