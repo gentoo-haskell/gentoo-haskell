@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bytestring +containers +deepseq +hashable +text +unordered-containers"
 
-RDEPEND=">=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-1:=[profile?]
+RDEPEND=">=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	hashable? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 			unordered-containers? ( >=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] ) )
