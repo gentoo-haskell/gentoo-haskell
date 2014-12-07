@@ -10,6 +10,5 @@
 	<use>
 		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
 		<flag name='jsffi'>Use JavaScriptFFI extension for GHCJS JavaScript output</flag>
-		<flag name='jmacro'>Include some JMacro support</flag>
 	</use>
 </pkgmetadata>

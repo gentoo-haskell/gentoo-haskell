@@ -16,17 +16,16 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+gtk3 +jmacro +jsffi webkit"
+IUSE="+gtk3 +jsffi webkit"
 
-RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.5:=[profile?]
+RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	gtk3? ( >=dev-haskell/webkit-0.13.0.0:3=[profile?] <dev-haskell/webkit-0.14:3=[profile?]
 			>=dev-haskell/webkitgtk-javascriptcore-0.13.0.0:3=[profile?] <dev-haskell/webkitgtk-javascriptcore-0.14:3=[profile?] )
 	!gtk3? ( >=dev-haskell/webkit-0.13.0.0:2=[profile?] <dev-haskell/webkit-0.14:2=[profile?]
-				>=dev-haskell/webkitgtk-javascriptcore-0.13.0.0:2=[profile?] <dev-haskell/webkitgtk-javascriptcore-0.14:2=[profile?] )
-	jmacro? ( >=dev-haskell/jmacro-0.6.3:=[profile?] <dev-haskell/jmacro-0.8:=[profile?] )
+			>=dev-haskell/webkitgtk-javascriptcore-0.13.0.0:2=[profile?] <dev-haskell/webkitgtk-javascriptcore-0.14:2=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
@@ -40,17 +39,10 @@ DEPEND="${RDEPEND}
 	!gtk3? ( test? ( webkit? ( dev-haskell/gtk:2 ) ) )
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'lens >=3.8.5 && <4.4' 'lens >=3.8.5 && <4.5' \
-		'text >=0.11.2.3 && <1.2' 'text >=0.11.2.3 && <1.3'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flags=-ghcjs \
 		$(cabal_flag gtk3 gtk3) \
-		$(cabal_flag jmacro jmacro) \
 		$(cabal_flag jsffi jsffi) \
 		$(cabal_flag webkit webkit)
 }
