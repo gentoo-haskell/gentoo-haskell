@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/binary-0.5.1:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
-	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-0.7:=[profile?]
+	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
