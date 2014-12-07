@@ -7,6 +7,7 @@
 		to provide a flexible, powerful, and correct editor for haskell hacking.
 	</longdescription>
 <use>
+  <flag name="eventlog">Runtime binary will be compiled with eventlog and RTS options enabled.</flag>
   <flag name="profiling">Build for profiling.</flag>
   <flag name='vty'>Build with Vty frontend.</flag>
   <flag name="testing"> bake-in the self-checks</flag>
