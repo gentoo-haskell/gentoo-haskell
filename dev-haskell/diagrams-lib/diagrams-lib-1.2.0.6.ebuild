@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/active-0.1:=[profile?] <dev-haskell/active-0.2:=[profile?
 	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
-	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.16:=[profile?]
+	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/vector-space-0.7.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-haskell/vector-space-points-0.1.2:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
