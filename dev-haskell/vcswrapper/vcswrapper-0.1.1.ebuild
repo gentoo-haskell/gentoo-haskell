@@ -28,8 +28,3 @@ RDEPEND=">=dev-haskell/hxt-9.1.2:=[profile?] <dev-haskell/hxt-9.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'text >=0.11.1.5 && <1.2' 'text >=0.11.1.5 && <1.3'
-}
