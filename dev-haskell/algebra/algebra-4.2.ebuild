@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-1:=[profile?]
+	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/tagged-0.4.2:=[profile?] <dev-haskell/tagged-1:=[profile?]
