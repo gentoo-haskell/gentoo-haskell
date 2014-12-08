@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
 RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
-	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
