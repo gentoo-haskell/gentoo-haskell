@@ -17,7 +17,7 @@ EGIT_REPO_URI="https://github.com/leksah/leksah-server.git"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="curl libcurl"
+IUSE="+network-uri"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/attoparsec-conduit-1.0.1.2:=[profile?] <dev-haskell/attoparsec-conduit-1.2:=[profile?]
@@ -29,31 +29,22 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
 	>=dev-haskell/haddock-2.7.2:=[profile?] <dev-haskell/haddock-2.11:=[profile?]
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
+	>=dev-haskell/http-4000.1.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/ltk-0.14.0.0:=[profile?] <dev-haskell/ltk-0.15:=[profile?]
-	>=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-3.0:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	libcurl? ( >=dev-haskell/curl-1.3.5:=[profile?] <dev-haskell/curl-1.4:=[profile?] )
+	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
+	!network-uri? ( >=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.2
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
 "
-
-PATCHES=("${FILESDIR}/${PN}-0.14.0.0-transformers-0.4.patch")
-
-src_prepare() {
-	base_src_prepare
-
-	cabal_chdeps \
-		'conduit >= 1.0.8 && <1.2' 'conduit >= 1.0.8 && <1.3' \
-		'text >=0.11.3.1 && <1.2' 'text >=0.11.3.1 && <1.3' \
-		'transformers >=0.2.2.0 && <0.4' 'transformers >=0.2.2.0 && <0.5'
-}
 
 src_configure() {
 	threaded_flag=""
@@ -65,7 +56,6 @@ src_configure() {
 		einfo "$P will be built without threads support"
 	fi
 	cabal_src_configure $threaded_flag \
-		$(cabal_flag curl curl) \
-		$(cabal_flag libcurl libcurl) \
+		$(cabal_flag network-uri network-uri) \
 		--constraint="Cabal == $(cabal-version)"
 }

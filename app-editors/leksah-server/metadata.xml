@@ -6,6 +6,6 @@
 		The interface to GHC-API for leksah
 	</longdescription>
 	<use>
-                <flag name='libcurl'>Use libcurl instead of running wget</flag>
+		<flag name='network-uri'>Get Network.URI from the network-uri package</flag>
 	</use>
 </pkgmetadata>
