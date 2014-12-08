@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?]
+	>=dev-haskell/blaze-markup-0.6:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?]
 	>=dev-haskell/data-default-0.3:=[profile?]
