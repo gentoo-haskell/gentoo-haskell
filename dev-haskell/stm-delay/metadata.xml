@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library lets you create a one-shot timer, poll it using STM,
+		and update it to ring at a different time than initially specified.
+		
+		It uses GHC event manager timeouts when available
+		(GHC 7.2+, @-threaded@, non-Windows OS), yielding performance similar
+		to @threadDelay@ and @registerDelay@.  Otherwise, it falls back to
+		forked threads and @threadDelay@.
+		
+		[0.1.1]
+		Add tryWaitDelayIO, improve performance for certain cases of @newDelay@
+		and @updateDelay@, and improve example.
+	</longdescription>
+</pkgmetadata>
