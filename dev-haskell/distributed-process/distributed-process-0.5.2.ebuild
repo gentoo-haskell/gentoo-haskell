@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/binary-0.6.3:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/hashable-1.2.0.5:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-transport-0.4.1.0:=[profile?] <dev-haskell/network-transport-0.5:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.1:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/rank1dynamic-0.1:=[profile?] <dev-haskell/rank1dynamic-0.3:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.5:=[profile?]
