@@ -30,3 +30,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/http-types )
 "
+
+# The only test in the suite requires internet access.
+RESTRICT="test"
