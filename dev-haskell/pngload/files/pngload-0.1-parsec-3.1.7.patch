@@ -28,7 +28,7 @@ index d863568..091dea1 100644
 +instance (Monad m) => Stream PLB m Word8 where
 +    uncons (PLB lb) = return $ case LB.uncons lb of
 +                          Nothing -> Nothing
-+                          Just (c, r) -> Just (c, PLB lb)
++                          Just (c, r) -> Just (c, PLB r)
  
 -word8 :: (Stream LB.ByteString m Word8) => Word8 -> ParsecT LB.ByteString u m Word8
 +type Parser = Parsec PLB ()
