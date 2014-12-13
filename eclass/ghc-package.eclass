@@ -171,15 +171,6 @@ ghc-localpkgconf() {
 	echo "${PF}.conf"
 }
 
-# @FUNCTION: ghc-makeghcilib
-# @DESCRIPTION:
-# make a ghci foo.o file from a libfoo.a file
-ghc-makeghcilib() {
-	local outfile
-	outfile="$(dirname $1)/$(basename $1 | sed 's:^lib\?\(.*\)\.a$:\1.o:')"
-	ld --relocatable --discard-all --output="${outfile}" --whole-archive "$1"
-}
-
 # @FUNCTION: ghc-package-exists
 # @DESCRIPTION:
 # tests if a ghc package exists
