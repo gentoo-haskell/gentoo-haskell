@@ -5,4 +5,7 @@
 	<longdescription>
 		Fast AES cipher implementation with advanced mode of operations
 	</longdescription>
+	<use>
+		<flag name="support_aesni">allow compilation with AESNI on system and architecture that supports it.</flag>
+	</use>
 </pkgmetadata>
