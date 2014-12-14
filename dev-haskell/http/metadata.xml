@@ -35,4 +35,8 @@
 		
 		Git repository available at &lt;git://github.com/haskell/HTTP.git&gt;
 	</longdescription>
+	<use>
+		<flag name='conduit10'>Use version 1.0.x or below of the conduit package (for the test suite).</flag>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>
