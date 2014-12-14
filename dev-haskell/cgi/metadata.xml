@@ -9,4 +9,7 @@
 		<flag name='extensible-exceptions-in-base'>Required to be
                 enabled for >=dev-lang/ghc-7.</flag>
         </use>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>
