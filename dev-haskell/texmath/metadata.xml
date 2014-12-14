@@ -15,4 +15,7 @@
 		Use the @cgi@ flag to install a cgi script,
 		@texmath-cgi@.
 	</longdescription>
+<use>
+  <flag name='executable'>Compile test executable.</flag>
+</use>
 </pkgmetadata>
