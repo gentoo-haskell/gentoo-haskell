@@ -43,4 +43,7 @@
 		reduces the need for helper functions and scoped type variables in user
 		code.
 	</longdescription>
+<use>
+  <flag name='th'>Enable template haskell.</flag>
+</use>
 </pkgmetadata>
