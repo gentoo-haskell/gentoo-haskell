@@ -16,11 +16,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="no-exe no-unicode system-libyaml"
+IUSE="no-exe unicode system-libyaml"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
-	>=dev-haskell/conduit-1.0.11:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
+	>=dev-haskell/conduit-1.1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
+	dev-haskell/enclosed-exceptions:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/text:=[profile?]
@@ -34,6 +35,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/aeson-qq
 		>=dev-haskell/hspec-1.3
+		dev-haskell/hspec-expectations
 		dev-haskell/hunit )
 	system-libyaml? ( virtual/pkgconfig )
 "
@@ -41,6 +43,6 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag no-exe no-exe) \
-		$(cabal_flag no-unicode no-unicode) \
+		$(usex unicode "--flags=-no-unicode" "--flags=no-unicode") \
 		$(cabal_flag system-libyaml system-libyaml)
 }
