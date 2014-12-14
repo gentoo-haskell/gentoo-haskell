@@ -20,7 +20,7 @@ IUSE="+systemencoding"
 
 RDEPEND="<dev-haskell/binary-0.8:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
-	>=dev-haskell/haxml-1.22:=[profile?] <dev-haskell/haxml-1.25:=[profile?]
+	>=dev-haskell/haxml-1.22:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -28,6 +28,11 @@ RDEPEND="<dev-haskell/binary-0.8:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HaXml >= 1.22 && < 1.25' 'HaXml >= 1.22'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
