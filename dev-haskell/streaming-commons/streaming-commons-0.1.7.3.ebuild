@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # slow
-
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/random:=[profile?]
