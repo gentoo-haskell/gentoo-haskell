@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="bounds-checking debug portable sse42 +unsafe-tricks"
+IUSE="bounds-checking debug portable sse4_2 +unsafe-tricks"
 
 RDEPEND="dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.12:=[profile?]
@@ -33,6 +33,6 @@ src_configure() {
 		$(cabal_flag bounds-checking bounds-checking) \
 		$(cabal_flag debug debug) \
 		$(cabal_flag portable portable) \
-		$(cabal_flag sse42 sse42) \
+		$(cabal_flag sse4_2 sse42) \
 		$(cabal_flag unsafe-tricks unsafe-tricks)
 }

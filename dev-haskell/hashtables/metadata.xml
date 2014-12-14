@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
+	<herd>proxy-maintainers</herd>
+	<maintainer>
+		<email>haskell@gentoo.org</email>
+	</maintainer>
 	<longdescription>
 		This package provides a couple of different implementations of mutable hash
 		tables in the ST monad, as well as a typeclass abstracting their common
@@ -48,9 +52,9 @@
 		&gt;
 		&gt; foo :: IO (HashTable Int Int)
 		&gt; foo = do
-		&gt;     ht &lt;- H.new
-		&gt;     H.insert ht 1 1
-		&gt;     return ht
+		&gt;	 ht &lt;- H.new
+		&gt;	 H.insert ht 1 1
+		&gt;	 return ht
 		
 		Firstly, this makes it easy to switch to a different hash table implementation,
 		and secondly, using a concrete type rather than leaving your functions abstract
@@ -99,6 +103,7 @@
 		<flag name="bounds-checking">if on, use bounds-checking array accesses</flag>
 		<flag name="portable">if on, use only pure Haskell code and no GHC extensions.</flag>
 		<flag name="sse4_1">Enable optimization for SSE4_1 capable processors (Intel Core 2 Penryn and later chips)</flag>
+		<flag name="sse4_2">Enables SSE4.2 optimizations: Nehalem-based Intel Core i7 or later.</flag>
 		<flag name="unsafe-tricks">turn on unsafe GHC tricks</flag>
 	</use>
 </pkgmetadata>
