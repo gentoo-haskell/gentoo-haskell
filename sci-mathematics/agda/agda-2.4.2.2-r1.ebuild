@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	~dev-haskell/data-hash-0.2.0.0:=[profile?]
 	>=dev-haskell/equivalence-0.2.5:=[profile?] <dev-haskell/equivalence-0.3:=[profile?]
 	>=dev-haskell/geniplate-0.6.0.3:=[profile?] <dev-haskell/geniplate-0.7:=[profile?]
-	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.2:=[profile?]
+	>=dev-haskell/hashtables-1.0:=[profile?] <dev-haskell/hashtables-1.3:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.9.6:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	<dev-haskell/parallel-3.3:=[profile?]
@@ -62,6 +62,9 @@ SITEFILE="50${PN}2-gentoo.el"
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
+	cabal_chdeps \
+		'hashtables >= 1.0 && < 1.2' 'hashtables >= 1.0 && < 1.3'
+
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
