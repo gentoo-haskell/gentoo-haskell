@@ -5,4 +5,7 @@
 	<longdescription>
 		HLint gives suggestions on how to improve your source code.
 	</longdescription>
+<use>
+  <flag name="gpl">Use GPL libraries, specifically hscolour.</flag>
+</use>
 </pkgmetadata>
