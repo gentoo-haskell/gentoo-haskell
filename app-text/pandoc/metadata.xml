@@ -17,7 +17,6 @@
 	</longdescription>
   <use>
     <flag name="embed_data_files">Embed data files in binary for relocatable executable.</flag>
-    <flag name="http-conduit">Enable downloading of resources over https.</flag>
     <flag name="trypandoc">Build trypandoc cgi executable.</flag>
     <flag name="https">Enable support for downloading of resources over https.</flag>
     <flag name="make-pandoc-man-pages">Build program to regenerate pandoc man pages from README.</flag>

@@ -1,0 +1,14 @@
+diff --git a/src/Text/Pandoc/Shared.hs b/src/Text/Pandoc/Shared.hs
+index 54d252d..cf4fc83 100644
+--- a/src/Text/Pandoc/Shared.hs
++++ b/src/Text/Pandoc/Shared.hs
+@@ -132,8 +132,8 @@ import Text.Pandoc.Data (dataFiles)
+ #else
+ import Paths_pandoc (getDataFileName)
+ #endif
+-#ifdef HTTP_CLIENT
+ import Data.ByteString.Lazy (toChunks)
++#ifdef HTTP_CLIENT
+ import Network.HTTP.Client (httpLbs, parseUrl, withManager,
+                             responseBody, responseHeaders,
+                             Request(port,host))

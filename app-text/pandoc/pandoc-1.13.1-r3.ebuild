@@ -76,6 +76,7 @@ src_prepare() {
 		'text >= 0.11 && < 1.2' 'text >= 0.11' \
 		'random >= 1 && < 1.1' 'random >=1 && <1.2' \
 		'http-client >= 0.3.2 && < 0.4' 'http-client >= 0.3.2 && < 0.5'
+	epatch ${FILESDIR}/"${P}"-no-https.patch
 }
 
 src_configure() {
