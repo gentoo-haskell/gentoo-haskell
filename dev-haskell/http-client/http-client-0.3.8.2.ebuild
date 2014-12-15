@@ -49,3 +49,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri)
 }
+
+# Prior to version 0.4.6.1, the test suite required internet access.
+RESTRICT="test"
