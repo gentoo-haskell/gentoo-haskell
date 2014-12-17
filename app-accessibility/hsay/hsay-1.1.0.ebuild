@@ -18,9 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="media-sound/mpg123"
+RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/hclip-3 <dev-haskell/hclip-4
 	>=dev-haskell/http-4000.2 <dev-haskell/http-4000.3
 	>=dev-lang/ghc-7.8.2
 "
