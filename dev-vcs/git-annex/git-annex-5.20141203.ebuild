@@ -68,6 +68,7 @@ DEPEND="${RDEPEND}
 	s3? ( >=dev-haskell/aws-0.9.2
 		dev-haskell/conduit
 		dev-haskell/conduit-extra
+		dev-haskell/http-client
 		dev-haskell/resourcet )
 	tdfa? ( dev-haskell/regex-tdfa )
 	tahoe? ( dev-haskell/aeson )
@@ -133,6 +134,11 @@ src_configure() {
 		$(cabal_flag webapp-secure webapp-secure) \
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
+}
+
+src_prepare() {
+	cabal_chdeps \
+		', aws (>= 0.9.2)' ', aws (>= 0.9.2), http-client'
 }
 
 src_compile() {
