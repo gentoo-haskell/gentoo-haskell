@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-1:=[profile?]
 	>=dev-haskell/hxt-charproperties-9.1:=[profile?] <dev-haskell/hxt-charproperties-10:=[profile?]
 	>=dev-haskell/hxt-regex-xmlschema-9:=[profile?] <dev-haskell/hxt-regex-xmlschema-10:=[profile?]
 	>=dev-haskell/hxt-unicode-9.0.1:=[profile?] <dev-haskell/hxt-unicode-10:=[profile?]
-	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-3:=[profile?]
+	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/parsec-2.1:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
