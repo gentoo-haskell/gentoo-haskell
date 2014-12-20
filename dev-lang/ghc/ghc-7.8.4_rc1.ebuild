@@ -402,6 +402,7 @@ src_prepare() {
 		# upstream backports
 		epatch "${FILESDIR}"/${PN}-7.8.3-linker-warn.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-pic-sparc.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-ppc32-fPIC.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
