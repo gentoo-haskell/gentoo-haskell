@@ -21,7 +21,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
 	dev-haskell/mmorph:=[profile?]
-	>=dev-haskell/monad-control-0.3.1:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
