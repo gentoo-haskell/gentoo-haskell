@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
-	>=dev-haskell/lens-4.1.1:=[profile?] <dev-haskell/lens-4.5:=[profile?]
+	>=dev-haskell/lens-4.1.1:=[profile?]
 	<dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
@@ -56,10 +56,13 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	sed -i 's/-Werror//' \
 		src/Idris/Output.hs || die
+
+	cabal_chdeps \
+		'lens >= 4.1.1 && < 4.5' 'lens >= 4.1.1'
 }
 
 src_configure() {
-	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.8.[123] ]] && replace-hcflags -O[2-9] -O1
 
 	haskell-cabal_src_configure \
 		$(cabal_flag curses curses) \
