@@ -18,20 +18,22 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT="test" # Needs elasticsearch.
+RESTRICT="test" # Needs elasticsearch
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
-	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-0.16:=[profile?]
+	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.10.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/hspec-1.8 <dev-haskell/hspec-2.1
+	>=dev-haskell/cabal-1.16.0
+	test? ( dev-haskell/doctest
+		dev-haskell/doctest-prop
+		>=dev-haskell/hspec-1.8 <dev-haskell/hspec-2.1
 		dev-haskell/quickcheck
 		>=dev-haskell/unordered-containers-0.2.5.0 <dev-haskell/unordered-containers-0.3 )
 "
