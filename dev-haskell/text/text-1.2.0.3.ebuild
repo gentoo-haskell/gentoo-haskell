@@ -24,6 +24,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.7
+		dev-haskell/quickcheck-unicode
 		dev-haskell/random
 		>=dev-haskell/test-framework-0.4
 		>=dev-haskell/test-framework-hunit-0.2
