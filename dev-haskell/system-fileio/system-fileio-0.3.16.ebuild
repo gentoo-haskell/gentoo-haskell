@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Consistent filesystem interaction across GHC versions"
-HOMEPAGE="https://john-millikin.com/software/haskell-filesystem/"
+HOMEPAGE="https://github.com/fpco/haskell-filesystem"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
