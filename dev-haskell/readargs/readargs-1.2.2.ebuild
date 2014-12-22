@@ -27,7 +27,12 @@ RDEPEND=">=dev-haskell/system-filepath-0.4.7:=[profile?] <dev-haskell/system-fil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.3 <dev-haskell/hspec-2.1 )
+	test? ( >=dev-haskell/hspec-1.3 )
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'hspec >= 1.3 && < 2.1' 'hspec >= 1.3'
+}
