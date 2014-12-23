@@ -33,11 +33,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/text-0.11.0.5 )
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'random == 1.0.*' 'random >= 1.0 && < 1.2'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag gmp integer-gmp) \
