@@ -25,3 +25,8 @@ RDEPEND=">=dev-haskell/gloss-1.8.2:=[profile?] <dev-haskell/gloss-1.8.3:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'-fllvm -optlo-O3' ' '
+}
