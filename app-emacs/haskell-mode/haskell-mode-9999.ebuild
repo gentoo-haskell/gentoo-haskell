@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/haskell/haskell-mode.git https://github.com/hask
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+examples"
+IUSE="+examples +snippets"
 
 RDEPEND="virtual/emacs
 		dev-haskell/hasktags"
@@ -48,6 +48,11 @@ src_install() {
 		dodir /usr/share/${PN}/examples
 		insinto /usr/share/${PN}/examples
 		doins *.hs
+		popd
+	fi
+	if use snippets; then
+		pushd snippets || die
+		elisp-install ${PN}/snippets/${PN} ${PN}/* ${PN}/.* || die
 		popd
 	fi
 }
