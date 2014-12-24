@@ -29,8 +29,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.8
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
-		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
-		>=dev-haskell/text-0.10 <dev-haskell/text-1.2 )
+		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
 
 src_prepare() {
