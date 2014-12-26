@@ -25,7 +25,7 @@ RESTRICT="test" # Could not find module Arbitrary
 RDEPEND=">=dev-haskell/dlist-0.6:=[profile?]
 	>=dev-haskell/fontyfruity-0.3:=[profile?] <dev-haskell/fontyfruity-0.4:=[profile?]
 	>=dev-haskell/free-4.7:=[profile?]
-	>=dev-haskell/juicypixels-3.1.5.2:=[profile?] <dev-haskell/juicypixels-3.2:=[profile?]
+	>=dev-haskell/juicypixels-3.1.5.2:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
 	>=dev-haskell/mtl-1.9:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/vector-algorithms-0.3:=[profile?]
@@ -41,6 +41,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'JuicyPixels >= 3.1.5.2 && < 3.2' 'JuicyPixels >= 3.1.5.2 && < 3.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
