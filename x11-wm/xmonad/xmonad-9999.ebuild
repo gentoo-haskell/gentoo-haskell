@@ -21,6 +21,7 @@ IUSE="+default-term no-autorepeat-keys"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
+		dev-haskell/setlocale:=[profile?]
 		=dev-haskell/utf8-string-0.3*:=[profile?]
 		>=dev-haskell/x11-1.5:=[profile?]
 		<dev-haskell/x11-1.7:=[profile?]
