@@ -20,7 +20,7 @@ IUSE="+network-uri"
 
 RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
-	>=dev-haskell/haxml-1.22:=[profile?] <dev-haskell/haxml-1.25:=[profile?]
+	>=dev-haskell/haxml-1.22:=[profile?] <dev-haskell/haxml-1.26:=[profile?]
 	>=dev-haskell/http-4000:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
@@ -33,6 +33,11 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HaXml >= 1.22 && < 1.25' 'HaXml >= 1.22 && < 1.26'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
