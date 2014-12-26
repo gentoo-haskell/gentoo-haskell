@@ -187,7 +187,7 @@ ghc_setup_cflags() {
 	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
 	# currently ghc fails to build haddock
 	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags persistent compile -G0 -Os
+	use ia64 && append-ghc-cflags persistent compile -G0
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
