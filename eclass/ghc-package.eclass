@@ -257,7 +257,7 @@ ghc-install-pkg() {
 	mkdir -p "${pkg_db}" || die
 	for pkg_path in "${S}/$(ghc-localpkgconf)"/*.conf; do
 		pkg=$(basename "${pkg_path}")
-		cp -v "${pkg_path}" "${pkg_db}/${pkg}" || die
+		cp "${pkg_path}" "${pkg_db}/${pkg}" || die
 	done
 
 	mkdir -p "${hint_db}" || die
