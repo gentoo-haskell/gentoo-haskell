@@ -23,3 +23,8 @@ RDEPEND=">=dev-lang/ghc-6.12.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'|| == 4.7.*' '|| == 4.7.* || == 4.8.*'
+}
