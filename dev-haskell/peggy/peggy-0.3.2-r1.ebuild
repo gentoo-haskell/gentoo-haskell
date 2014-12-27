@@ -21,7 +21,7 @@ IUSE="build-example"
 RDEPEND=">=dev-haskell/hashtables-1.0:=[profile?]
 	>=dev-haskell/haskell-src-meta-0.5:=[profile?]
 	>=dev-haskell/listlike-3.1:=[profile?]
-	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
+	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
@@ -38,5 +38,6 @@ src_prepare() {
 	cabal_chdeps \
 		'ListLike         == 3.1.*' 'ListLike         >= 3.1' \
 		'hashtables       == 1.0.*' 'hashtables       >= 1.0' \
-		'template-haskell >= 2.5 && < 2.9' 'template-haskell >= 2.5 && < 2.10'
+		'template-haskell >= 2.5 && < 2.9' 'template-haskell >= 2.5 && < 2.10' \
+		'monad-control    == 0.3.*' 'monad-control    >= 0.3'
 }
