@@ -35,5 +35,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'random          == 1.0.*' \
-		'random   >= 1.0 && < 1.2'
+		'random   >= 1.0 && < 1.2' \
+		'-fllvm -optlo-O3' ' '
 }
