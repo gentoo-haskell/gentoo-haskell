@@ -156,9 +156,7 @@ cabal-version() {
 			# of this package itself.
 			_CABAL_VERSION_CACHE="${PV}"
 		elif [[ "${CABAL_FROM_GHC}" ]]; then
-			local cabal_package=$(echo "$(ghc-libdir)"/Cabal-*)
-			# /path/to/ghc/Cabal-${VER} -> ${VER}
-			_CABAL_VERSION_CACHE="${cabal_package/*Cabal-/}"
+			_CABAL_VERSION_CACHE="$(ghc-cabal-version)"
 		else
 			# We ask portage, not ghc, so that we only pick up
 			# portage-installed cabal versions.

@@ -71,6 +71,15 @@ ghc-bestcabalversion() {
 	echo "Cabal-${cabalversion}"
 }
 
+# @FUNCTION: ghc-cabal-version
+# @DESCRIPTION:
+# return version of the Cabal library bundled with ghc
+ghc-cabal-version() {
+	local cabal_package=`echo "$(ghc-libdir)"/Cabal-*`
+	# /path/to/ghc/Cabal-${VER} -> ${VER}
+	echo "${cabal_package/*Cabal-/}"
+}
+
 # @FUNCTION: ghc-sanecabal
 # @DESCRIPTION:
 # check if a standalone Cabal version is available for the
