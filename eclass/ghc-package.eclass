@@ -77,9 +77,15 @@ ghc-bestcabalversion() {
 # @DESCRIPTION:
 # return version of the Cabal library bundled with ghc
 ghc-cabal-version() {
-	local cabal_package=`echo "$(ghc-libdir)"/Cabal-*`
-	# /path/to/ghc/Cabal-${VER} -> ${VER}
-	echo "${cabal_package/*Cabal-/}"
+	if version_is_at_least "7.9.20141222" "$(ghc-version)"; then
+		# outputs in format: 'version: 1.18.1.5'
+		set -- `$(ghc-getghcpkg) --package-db=$(ghc-libdir)/package.conf.d.initial field Cabal version`
+		echo "$2"
+	else
+		local cabal_package=`echo "$(ghc-libdir)"/Cabal-*`
+		# /path/to/ghc/Cabal-${VER} -> ${VER}
+		echo "${cabal_package/*Cabal-/}"
+	fi
 }
 
 # @FUNCTION: ghc-sanecabal
