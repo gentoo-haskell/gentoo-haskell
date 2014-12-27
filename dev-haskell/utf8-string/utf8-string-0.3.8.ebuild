@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2
 "
 
-src_prpeare() {
+src_prepare() {
 	cabal_chdeps \
 		'base >= 3 && < 4.8' 'base >= 3'
 }
