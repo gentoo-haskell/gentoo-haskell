@@ -279,7 +279,7 @@ ghc-unregister-pkg() {
 	local pkg
 
 	if [[ -f "${localpkgconf}" ]]; then
-		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
+		for pkg in `ghc-reverse "$(ghc-listpkg ${localpkgconf})"`; do
 		  if ! ghc-package-exists "${pkg}"; then
 			einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
 		  else
