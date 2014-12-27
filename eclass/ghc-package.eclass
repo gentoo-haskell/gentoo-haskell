@@ -222,12 +222,37 @@ ghc-setup-pkg() {
 	done
 }
 
+
+# @FUNCTION: check-for-collisions
+# @DESCRIPTION: makes sure no packages
+# have the same version as initial package setup
+check-for-collisions() {
+	local localpkgconf="${S}/$(ghc-localpkgconf)"
+	local checked_pkg
+	local initial_pkg_db="$(ghc-libdir)/package.conf.d.initial"
+
+	for checked_pkg in `$(ghc-getghcpkgbin) -f "${localpkgconf}" list --simple-output`
+	do
+		# should return empty output
+		local collided=`$(ghc-getghcpkgbin) -f ${initial_pkg_db} list --simple-output "${checked_pkg}"`
+
+		if [[ -n ${collided} ]]; then
+			eerror "Package ${checked_pkg} is shipped with $(ghc-version)."
+			eerror "Ebuild author forgot CABAL_CORE_LIB_GHC_PV entry."
+			eerror "Found in ${initial_pkg_db}."
+			die
+		fi
+	done
+}
+
 # @FUNCTION: ghc-install-pkg
 # @DESCRIPTION:
 # moves the local (package-specific) package configuration
 # file to its final destination
 ghc-install-pkg() {
 	local pkg_path pkg pkg_db="${D}/$(ghc-package-db)" hint_db="${D}/$(ghc-confdir)"
+
+	check-for-collisions
 
 	mkdir -p "${pkg_db}" || die
 	for pkg_path in "${S}/$(ghc-localpkgconf)"/*.conf; do
