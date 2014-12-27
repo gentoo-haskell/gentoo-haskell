@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-0.9:=[profil
 	>=dev-haskell/case-insensitive-1.0.0.1:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/data-default-0.5.3:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/http-types-0.8.2:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
-	>=dev-haskell/monad-control-0.3.2.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
+	>=dev-haskell/monad-control-0.3.2.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/regex-compat-0.95.1:=[profile?] <dev-haskell/regex-compat-0.96:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -42,5 +42,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text             >= 0.11.3.1 && < 1.2' 'text             >= 0.11.3.1'
+		'text             >= 0.11.3.1 && < 1.2' 'text             >= 0.11.3.1' \
+		'monad-control    >= 0.3.2.3  && < 0.4' 'monad-control    >= 0.3.2.3  && < 1.1'
 }
