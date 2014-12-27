@@ -588,27 +588,10 @@ cabal_src_install() {
 	local ghc_confdir_with_prefix="$(ghc-confdir)"
 	# remove EPREFIX
 	dodir ${ghc_confdir_with_prefix#${EPREFIX}}
-	local conf_file="${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
-	[[ -e $conf_file ]] || echo '[]' > "$conf_file" || die
-
-	# make sure installed packages do not destroy ghc's
-	# bundled packages
-	local initial_pkg_db=${ROOT}/$(ghc-libdir)/package.conf.d.initial
-	if [[ -e ${initial_pkg_db} ]]; then
-		local checked_pkg
-		for checked_pkg in $(ghc-listpkg "${conf_file}")
-		do
-			local initial_pkg
-			for initial_pkg in $(ghc-listpkg "${initial_pkg_db}"); do
-				if [[ ${checked_pkg} = ${initial_pkg} ]]; then
-					eerror "Package ${checked_pkg} is shipped with $(ghc-version)."
-					eerror "Ebuild author forgot CABAL_CORE_LIB_GHC_PV entry."
-					eerror "Found in ${initial_pkg_db}."
-					die
-				fi
-			done
-		done
-	fi
+	local hint_db="${D}/$(ghc-confdir)"
+	local hint_file="${hint_db}/${PF}.conf"
+	mkdir -p "${hint_db}" || die
+	touch "${hint_file}" || die
 }
 
 haskell-cabal_src_install() {

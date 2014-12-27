@@ -36,16 +36,26 @@ ghc-getghcpkg() {
 # because for some reason the global package file
 # must be specified
 ghc-getghcpkgbin() {
-	# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
-	# the wrapper script with the static flags
-	if version_is_at_least "7.7.20121101" "$(ghc-version)"; then
+	if version_is_at_least "7.9.20141222" "$(ghc-version)"; then
+		# ghc-7.10 stopped supporting single-file database
+		local empty_db="${T}/empty.conf.d" ghc_pkg="$(ghc-libdir)/bin/ghc-pkg"
+		if [[ ! -d ${empty_db} ]]; then
+			"${ghc_pkg}" init "${empty_db}" || die "Failed to initialize empty global db"
+		fi
+		echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${empty_db}"
+
+	elif version_is_at_least "7.7.20121101" "$(ghc-version)"; then
+		# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
+		# the wrapper script with the static flags
 		# was moved to bin/ subtree by:
 		# http://www.haskell.org/pipermail/cvs-ghc/2012-September/076546.html
 		echo '[]' > "${T}/empty.conf"
 		echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${T}/empty.conf"
+
 	elif version_is_at_least "7.5.20120516" "$(ghc-version)"; then
 		echo '[]' > "${T}/empty.conf"
 		echo "$(ghc-libdir)/ghc-pkg" "--global-package-db=${T}/empty.conf"
+
 	else
 		echo '[]' > "${T}/empty.conf"
 		echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
@@ -165,9 +175,18 @@ ghc-libdir() {
 
 # @FUNCTION: ghc-confdir
 # @DESCRIPTION:
-# returns the (Gentoo) library configuration directory
+# returns the (Gentoo) library configuration directory, we
+# store here a hint for 'haskell-updater' about packages
+# installed for old ghc versions and current ones.
 ghc-confdir() {
 	echo "$(ghc-libdir)/gentoo"
+}
+
+# @FUNCTION: ghc-package-db
+# @DESCRIPTION:
+# returns the global package database directory
+ghc-package-db() {
+	echo "$(ghc-libdir)/package.conf.d"
 }
 
 # @FUNCTION: ghc-localpkgconf
@@ -195,7 +214,7 @@ ghc-package-exists() {
 # empty
 ghc-setup-pkg() {
 	local localpkgconf="${S}/$(ghc-localpkgconf)"
-	echo '[]' > "${localpkgconf}"
+	$(ghc-getghcpkgbin) init "${localpkgconf}" || die "Failed to initialize empty local db"
 
 	for pkg in $*; do
 		$(ghc-getghcpkgbin) -f "${localpkgconf}" update - --force \
@@ -208,9 +227,24 @@ ghc-setup-pkg() {
 # moves the local (package-specific) package configuration
 # file to its final destination
 ghc-install-pkg() {
-	mkdir -p "${D}/$(ghc-confdir)"
-	cat "${S}/$(ghc-localpkgconf)" | sed "s|${D}||g" \
-		> "${D}/$(ghc-confdir)/$(ghc-localpkgconf)"
+	local pkg_path pkg pkg_db="${D}/$(ghc-package-db)" hint_db="${D}/$(ghc-confdir)"
+
+	mkdir -p "${pkg_db}" || die
+	for pkg_path in "${S}/$(ghc-localpkgconf)"/*.conf; do
+		pkg=$(basename "${pkg_path}")
+		cp -v "${pkg_path}" "${pkg_db}/${pkg}" || die
+	done
+
+	mkdir -p "${hint_db}" || die
+	touch "${hint_db}/${PF}.conf" || die
+}
+
+# @FUNCTION: ghc-recache-db
+# @DESCRIPTION:
+# updates 'package.cache' binary cacne for registered '*.conf'
+# packages
+ghc-recache-db() {
+	$(ghc-getghcpkg) recache
 }
 
 # @FUNCTION: ghc-register-pkg
@@ -218,16 +252,7 @@ ghc-install-pkg() {
 # registers all packages in the local (package-specific)
 # package configuration file
 ghc-register-pkg() {
-	local localpkgconf="$(ghc-confdir)/$1"
-
-	if [[ -f "${localpkgconf}" ]]; then
-		for pkg in $(ghc-listpkg "${localpkgconf}"); do
-			ebegin "Registering ${pkg} "
-			$(ghc-getghcpkgbin) -f "${localpkgconf}" describe "${pkg}" \
-				| $(ghc-getghcpkg) update - --force > /dev/null
-			eend $?
-		done
-	fi
+	ghc-recache-db
 }
 
 # @FUNCTION: ghc-reregister
@@ -235,81 +260,14 @@ ghc-register-pkg() {
 # re-adds all available .conf files to the global
 # package conf file, to be used on a ghc reinstallation
 ghc-reregister() {
-	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
-	einfo "Re-adding packages (may cause several harmless warnings) ..."
-	PATH="${EPREFIX}/usr/bin:${PATH}" CONFDIR="$(ghc-confdir)"
-	if [ -d "${CONFDIR}" ]; then
-		pushd "${CONFDIR}" > /dev/null
-		for conf in *.conf; do
-			PATH="${EPREFIX}/usr/bin:${PATH}" ghc-register-pkg "${conf}"
-		done
-		popd > /dev/null
-	fi
+	ghc-recache-db
 }
 
 # @FUNCTION: ghc-unregister-pkg
 # @DESCRIPTION:
 # unregisters a package configuration file
-# protected are all packages that are still contained in
-# another package configuration file
 ghc-unregister-pkg() {
-	local localpkgconf="$(ghc-confdir)/$1"
-	local i
-	local pkg
-
-	if [[ -f "${localpkgconf}" ]]; then
-		for pkg in `ghc-reverse "$(ghc-listpkg ${localpkgconf})"`; do
-		  if ! ghc-package-exists "${pkg}"; then
-			einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
-		  else
-			ebegin "Unregistering ${pkg} "
-			$(ghc-getghcpkg) unregister "${pkg}" --force > /dev/null
-			eend $?
-		  fi
-		done
-	fi
-}
-
-# @FUNCTION: ghc-reverse
-# @DESCRIPTION:
-# help-function: reverse a list
-ghc-reverse() {
-	local result
-	local i
-	for i in $1; do
-		result="${i} ${result}"
-	done
-	echo "${result}"
-}
-
-# @FUNCTION: ghc-elem
-# @DESCRIPTION:
-# help-function: element-check
-ghc-elem() {
-	local i
-	for i in $2; do
-		[[ "$1" == "${i}" ]] && return 0
-	done
-	return 1
-}
-
-# @FUNCTION: ghc-listpkg
-# @DESCRIPTION:
-# show the packages in a package configuration file
-ghc-listpkg() {
-	local ghcpkgcall
-	local i
-	local extra_flags
-	if version_is_at_least '6.12.3' "$(ghc-version)"; then
-		extra_flags="${extra_flags} -v0"
-	fi
-	for i in $*; do
-		echo $($(ghc-getghcpkg) list ${extra_flags} -f "${i}") \
-			| sed \
-				-e "s|^.*${i}:\([^:]*\).*$|\1|" \
-				-e "s|/.*$||" \
-				-e "s|,| |g" -e "s|[(){}]||g"
-	done
+	ghc-recache-db
 }
 
 # @FUNCTION: ghc-pkgdeps
@@ -329,7 +287,7 @@ ghc-pkgdeps() {
 # exported function: registers the package-specific package
 # configuration file
 ghc-package_pkg_postinst() {
-	ghc-register-pkg "$(ghc-localpkgconf)"
+	ghc-register-pkg
 }
 
 # @FUNCTION: ghc-package_pkg_prerm
@@ -339,7 +297,7 @@ ghc-package_pkg_postinst() {
 # only if it the same package is not also contained in another
 # package configuration file ...
 ghc-package_pkg_prerm() {
-	ghc-unregister-pkg "$(ghc-localpkgconf)"
+	ghc-unregister-pkg
 }
 
 EXPORT_FUNCTIONS pkg_postinst pkg_prerm
