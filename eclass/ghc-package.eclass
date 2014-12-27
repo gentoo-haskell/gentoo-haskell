@@ -63,16 +63,6 @@ ghc-version() {
 	echo "${_GHC_VERSION_CACHE}"
 }
 
-# @FUNCTION: ghc-bestcabalversion
-# @DESCRIPTION:
-# return the best version of the Cabal library that is available
-ghc-bestcabalversion() {
-	# We ask portage, not ghc, so that we only pick up
-	# portage-installed cabal versions.
-	local cabalversion="$(ghc-extractportageversion dev-haskell/cabal)"
-	echo "Cabal-${cabalversion}"
-}
-
 # @FUNCTION: ghc-cabal-version
 # @DESCRIPTION:
 # return version of the Cabal library bundled with ghc
