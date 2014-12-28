@@ -257,6 +257,7 @@ ghc-install-pkg() {
 # updates 'package.cache' binary cacne for registered '*.conf'
 # packages
 ghc-recache-db() {
+	einfo "Recaching GHC package DB"
 	$(ghc-getghcpkg) recache
 }
 
@@ -297,20 +298,22 @@ ghc-pkgdeps() {
 
 # @FUNCTION: ghc-package_pkg_postinst
 # @DESCRIPTION:
-# exported function: registers the package-specific package
-# configuration file
+# updates package.cache after package install
 ghc-package_pkg_postinst() {
-	ghc-register-pkg
+	ghc-recache-db
 }
 
 # @FUNCTION: ghc-package_pkg_prerm
 # @DESCRIPTION:
-# exported function: unregisters the package-specific package
-# configuration file; a package contained therein is unregistered
-# only if it the same package is not also contained in another
-# package configuration file ...
+# updates package.cache after package deinstall
 ghc-package_pkg_prerm() {
-	ghc-unregister-pkg
+	ewarn "ghc-package.eclass: 'ghc-package_pkg_prerm()' is a noop"
+	ewarn "ghc-package.eclass: consider 'haskell-cabal_pkg_postrm()' instead"
 }
 
-EXPORT_FUNCTIONS pkg_postinst pkg_prerm
+# @FUNCTION: ghc-package_pkg_postrm
+# @DESCRIPTION:
+# updates package.cache after package deinstall
+ghc-package_pkg_postrm() {
+	ghc-recache-db
+}

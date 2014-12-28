@@ -31,9 +31,9 @@
 #   nocabaldep --  don't add dependency on cabal.
 #                  only used for packages that _must_ not pull the dependency
 #                  on cabal, but still use this eclass (e.g. haskell-updater).
-#	ghcdeps	   --  constraint dependency on package to ghc onces
-#				   only used for packages that use libghc internally and _must_
-#				   not pull upper versions
+#   ghcdeps    --  constraint dependency on package to ghc onces
+#                  only used for packages that use libghc internally and _must_
+#                  not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
 inherit eutils ghc-package multilib multiprocessing
@@ -64,7 +64,7 @@ inherit eutils ghc-package multilib multiprocessing
 # Needs working 'diff'.
 : ${CABAL_DEBUG_LOOSENING:=}
 
-HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install"
+HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install pkg_postinst pkg_postrm"
 
 # 'dev-haskell/cabal' passes those options with ./configure-based
 # configuration, but most packages don't need/don't accept it:
@@ -599,6 +599,14 @@ haskell-cabal_src_install() {
 	cabal_src_install
 
 	popd > /dev/null
+}
+
+haskell-cabal_pkg_postinst() {
+	ghc-package_pkg_postinst
+}
+
+haskell-cabal_pkg_postrm() {
+	ghc-package_pkg_postrm
 }
 
 # @FUNCTION: cabal_flag
