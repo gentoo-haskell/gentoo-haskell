@@ -487,7 +487,7 @@ src_configure() {
 		fi
 
 		if use gmp; then
-			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
+			echo "INTEGER_LIBRARY=integer-gmp2" >> mk/build.mk
 		else
 			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 		fi
