@@ -189,12 +189,12 @@ ghc-package-db() {
 	echo "$(ghc-libdir)/package.conf.d"
 }
 
-# @FUNCTION: ghc-localpkgconf
+# @FUNCTION: ghc-localpkgconfd
 # @DESCRIPTION:
 # returns the name of the local (package-specific)
 # package configuration file
-ghc-localpkgconf() {
-	echo "${PF}.conf"
+ghc-localpkgconfd() {
+	echo "${PF}.conf.d"
 }
 
 # @FUNCTION: ghc-package-exists
@@ -204,30 +204,11 @@ ghc-package-exists() {
 	$(ghc-getghcpkg) describe "$1" > /dev/null 2>&1
 }
 
-# @FUNCTION: ghc-setup-pkg
-# @DESCRIPTION:
-# creates a local (package-specific) package
-# configuration file; the arguments should be
-# uninstalled package description files, each
-# containing a single package description; if
-# no arguments are given, the resulting file is
-# empty
-ghc-setup-pkg() {
-	local localpkgconf="${S}/$(ghc-localpkgconf)"
-	$(ghc-getghcpkgbin) init "${localpkgconf}" || die "Failed to initialize empty local db"
-
-	for pkg in $*; do
-		$(ghc-getghcpkgbin) -f "${localpkgconf}" update - --force \
-			< "${pkg}" || die "failed to register ${pkg}"
-	done
-}
-
-
 # @FUNCTION: check-for-collisions
 # @DESCRIPTION: makes sure no packages
 # have the same version as initial package setup
 check-for-collisions() {
-	local localpkgconf="${S}/$(ghc-localpkgconf)"
+	local localpkgconf=$1
 	local checked_pkg
 	local initial_pkg_db="$(ghc-libdir)/package.conf.d.initial"
 
@@ -250,18 +231,25 @@ check-for-collisions() {
 # moves the local (package-specific) package configuration
 # file to its final destination
 ghc-install-pkg() {
+	local pkg_config_file=$1
+	local localpkgconf="${T}/$(ghc-localpkgconfd)"
 	local pkg_path pkg pkg_db="${D}/$(ghc-package-db)" hint_db="${D}/$(ghc-confdir)"
 
-	check-for-collisions
+	$(ghc-getghcpkgbin) init "${localpkgconf}" || die "Failed to initialize empty local db"
+	$(ghc-getghcpkgbin) -f "${localpkgconf}" update - --force \
+		< "${pkg_config_file}" || die "failed to register ${pkg}"
+
+	check-for-collisions "${localpkgconf}"
 
 	mkdir -p "${pkg_db}" || die
-	for pkg_path in "${S}/$(ghc-localpkgconf)"/*.conf; do
+	for pkg_path in "${localpkgconf}"/*.conf; do
 		pkg=$(basename "${pkg_path}")
 		cp "${pkg_path}" "${pkg_db}/${pkg}" || die
 	done
 
 	mkdir -p "${hint_db}" || die
-	touch "${hint_db}/${PF}.conf" || die
+	cp "${pkg_config_file}" "${hint_db}/${PF}.conf" || die
+	chmod 0644 "${hint_db}/${PF}.conf" || die
 }
 
 # @FUNCTION: ghc-recache-db

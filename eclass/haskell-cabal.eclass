@@ -443,8 +443,7 @@ cabal-pkg() {
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
 		# Newer cabal can generate a package conf for us:
 		./setup register --gen-pkg-config="${T}/${P}.conf"
-		ghc-setup-pkg "${T}/${P}.conf"
-		ghc-install-pkg
+		ghc-install-pkg "${T}/${P}.conf"
 	fi
 }
 
