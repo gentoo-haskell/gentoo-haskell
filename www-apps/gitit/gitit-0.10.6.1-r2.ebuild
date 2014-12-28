@@ -33,7 +33,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/http-4000.0:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
 	>=dev-haskell/http-conduit-2.1.4:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
-	>=dev-haskell/json-0.4:=[profile?] <dev-haskell/json-0.8:=[profile?]
+	>=dev-haskell/json-0.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/pandoc-types-1.12.3:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
 	dev-haskell/parsec:=[profile?]
@@ -65,7 +65,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'http-conduit >= 2.1.4 && < 2.1.5' 'http-conduit >= 2.1.4 && < 2.2'
+		'http-conduit >= 2.1.4 && < 2.1.5' 'http-conduit >= 2.1.4 && < 2.2' \
+		'json >= 0.4 && < 0.8' 'json >= 0.4'
 }
 
 src_configure() {
