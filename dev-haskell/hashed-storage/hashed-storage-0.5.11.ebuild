@@ -37,6 +37,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/zip-archive:=[profile?] )
 "
 
+src_prepare() {
+	HCFLAGS+=" -XFlexibleContexts"
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag diff diff) \
