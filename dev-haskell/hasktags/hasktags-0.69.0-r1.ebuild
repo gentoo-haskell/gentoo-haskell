@@ -18,13 +18,18 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.8:=[profile?]
+RDEPEND=">=dev-haskell/json-0.5:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'json >= 0.5 && < 0.8' 'json >= 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
