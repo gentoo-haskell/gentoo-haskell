@@ -11,7 +11,11 @@ inherit haskell-cabal
 
 DESCRIPTION="Next generation GHCi"
 HOMEPAGE="https://github.com/chrisdone/ghci-ng"
-SRC_URI="https://github.com/chrisdone/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+
+MY_PV="0.0.0"
+S="${WORKDIR}/${PN}-${MY_PV}"
+
+SRC_URI="https://github.com/chrisdone/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
