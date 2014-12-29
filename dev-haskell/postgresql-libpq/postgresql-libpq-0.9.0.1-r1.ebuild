@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-db/postgresql-base-7
+RDEPEND="dev-db/postgresql
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
