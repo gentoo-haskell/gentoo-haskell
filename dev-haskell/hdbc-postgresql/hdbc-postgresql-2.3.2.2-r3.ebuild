@@ -23,7 +23,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="test" # requires configured postgresql
 
-RDEPEND=">=dev-db/postgresql-base-7
+RDEPEND="dev-db/postgresql
 	dev-haskell/convertible:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
