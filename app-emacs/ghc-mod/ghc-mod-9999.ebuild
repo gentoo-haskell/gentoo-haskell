@@ -36,8 +36,8 @@ RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
-	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	dev-haskell/ghc-api
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
