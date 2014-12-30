@@ -49,7 +49,8 @@ DEPEND="${RDEPEND}
 "
 SITEFILE=50${PN}-gentoo.el
 
-PATCHES=("${FILESDIR}/ghc-mod-5.2.1.1-no-elisp.patch")
+PATCHES=("${FILESDIR}/ghc-mod-5.2.1.1-no-elisp.patch"
+	"${FILESDIR}/ghc-mod-5.2.1.1-monad-control-1.0.0.patch")
 
 src_configure() {
 	haskell-cabal_src_configure \
