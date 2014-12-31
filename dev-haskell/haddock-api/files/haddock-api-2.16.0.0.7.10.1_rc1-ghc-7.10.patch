@@ -1,0 +1,10 @@
+--- haddock-api-2.16.0.0.7.10.1_rc1-orig/src/Haddock.hs	2014-12-23 02:58:26.000000000 +1100
++++ haddock-api-2.16.0.0.7.10.1_rc1/src/Haddock.hs	2014-12-31 18:56:53.994088433 +1100
+@@ -59,6 +59,7 @@
+ #else
+ import qualified GHC.Paths as GhcPaths
+ import Paths_haddock_api (getDataDir)
++import System.Directory (doesDirectoryExist)
+ #endif
+ 
+ import GHC hiding (verbosity)
