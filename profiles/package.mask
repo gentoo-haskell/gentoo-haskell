@@ -43,10 +43,6 @@ dev-haskell/nettle-openflow
 dev-haskell/wai-logger-prefork
 
 # Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
-# A bit broken
-www-apps/blogliterately
-
-# Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
 # Masked as abandonware. Uses outdated depends.
 dev-haskell/manatee
 dev-haskell/manatee-browser

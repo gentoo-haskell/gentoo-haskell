@@ -23,17 +23,18 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		=app-text/pandoc-1.11*
-		dev-haskell/attoparsec
-		>=dev-haskell/blaze-html-0.5 <dev-haskell/blaze-html-0.7
-		=dev-haskell/blaze-markup-0.5*
-		>=dev-haskell/cabal-1.5
-		>=dev-haskell/haxml-1.22 <dev-haskell/haxml-1.25
-		>=dev-haskell/haxr-3000.2.1 <dev-haskell/haxr-3000.10
-		>=dev-haskell/hscolour-1.15 <dev-haskell/hscolour-1.21
-		>=dev-haskell/parsec-2.1.0.0 <dev-haskell/parsec-3.2
-		=dev-haskell/utf8-string-0.3*
-		=dev-haskell/xhtml-3000.2*
-		>=dev-lang/ghc-6.10.1"
+	>=app-text/pandoc-1.13
+	dev-haskell/attoparsec
+	>=dev-haskell/blaze-html-0.5
+	>=dev-haskell/blaze-markup-0.5
+	>=dev-haskell/cabal-1.5
+	>=dev-haskell/haxml-1.22
+	>=dev-haskell/haxr-3000.2.1
+	>=dev-haskell/hscolour-1.15
+	>=dev-haskell/parsec-2.1.0.0
+	>=dev-haskell/utf8-string-0.3
+	>=dev-haskell/xhtml-3000.2
+	>=dev-lang/ghc-6.10.1
+"
 
 S="${WORKDIR}/${MY_P}"
