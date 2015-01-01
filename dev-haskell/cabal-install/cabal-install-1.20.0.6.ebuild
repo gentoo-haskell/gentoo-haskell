@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -48,9 +48,6 @@ src_prepare() {
 	if ! ghc-supports-threaded-runtime; then
 		cabal_chdeps '-threaded' ' '
 	fi
-	cabal_chdeps \
-		'random     >= 1        && < 1.1' 'random     >= 1        && < 1.2' \
-		'network,' 'network,network-uri,'
 }
 
 
