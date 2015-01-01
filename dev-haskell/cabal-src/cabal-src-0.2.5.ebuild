@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,8 +21,11 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
+	dev-haskell/classy-prelude-conduit
 	>=dev-haskell/conduit-1.1
 	dev-haskell/conduit-extra
+	dev-haskell/http-client
+	dev-haskell/http-client-tls
 	>=dev-haskell/http-conduit-1.5
 	dev-haskell/http-types
 	dev-haskell/network
@@ -31,6 +34,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/system-fileio-0.3 <dev-haskell/system-fileio-0.4
 	>=dev-haskell/system-filepath-0.4 <dev-haskell/system-filepath-0.5
 	>=dev-haskell/tar-0.4 <dev-haskell/tar-0.5
+	dev-haskell/temporary
 	dev-haskell/text
 	dev-haskell/transformers
 	>=dev-lang/ghc-7.4.1
