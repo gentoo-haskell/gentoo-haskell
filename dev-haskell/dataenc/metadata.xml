@@ -7,7 +7,4 @@
 		Base32Hex, Base64, Base64Url, Base85, Python string escaping,
 		Quoted-Printable, URL encoding, uuencode, xxencode, and yEncoding.
 	</longdescription>
-<use>
-  <flag name='tests'>Build unit and quickcheck tests.</flag>
-</use>
 </pkgmetadata>
