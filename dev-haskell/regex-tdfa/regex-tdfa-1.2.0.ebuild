@@ -28,6 +28,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.3
 "
 
+src_prepare() {
+	# too much load on compiler (~2GB RAM against ~500)
+	cabal_chdeps \
+		'-O2 ' ' '
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=base4
