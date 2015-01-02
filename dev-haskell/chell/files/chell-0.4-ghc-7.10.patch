@@ -1,0 +1,20 @@
+--- chell-0.4-orig/lib/Test/Chell.hs	2014-05-19 03:42:17.000000000 +1000
++++ chell-0.4/lib/Test/Chell.hs	2015-01-02 14:19:11.555163417 +1100
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeSynonymInstances #-}
+ {-# LANGUAGE FlexibleInstances #-}
++{-# LANGUAGE CPP #-}
+ 
+ -- | Chell is a simple and intuitive library for automated testing. It natively
+ -- supports assertion-based testing, and can use companion libraries
+@@ -118,6 +119,9 @@
+ 	, testOptionTimeout
+ 	) where
+ 
++#if MIN_VERSION_base(4,8,0)
++import Prelude hiding(pure)
++#endif
+ import qualified Control.Applicative
+ import qualified Control.Exception
+ import           Control.Exception (Exception)
