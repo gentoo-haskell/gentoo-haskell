@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 	test? ( dev-haskell/hunit:=[profile?]
-			>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-2.6:2=[profile?]
+			>=dev-haskell/quickcheck-2.5:2=[profile?]
 			dev-haskell/test-framework:=[profile?]
 			dev-haskell/test-framework-hunit:=[profile?]
 			dev-haskell/test-framework-quickcheck2:=[profile?]
@@ -32,7 +32,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base >= 3.0.0 && < 4.8' 'base >= 3.0.0'
+		'base >= 3.0.0 && < 4.8' 'base >= 3.0.0' \
+		'QuickCheck ==2.5.*' 'QuickCheck >=2.5'
 }
 
 src_configure() {
