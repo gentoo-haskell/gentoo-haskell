@@ -9,7 +9,7 @@ HOMEPAGE="http://www.haskell.org/ghc"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE="cabal"
 
 # The easiest way to fetch libraries 'ghc' package depends on
