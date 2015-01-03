@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/cmdargs-0.10.5:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/dyre-0.8:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16.0:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
-	>=dev-haskell/lens-3.9.2:=[profile?] <dev-haskell/lens-4.7:=[profile?]
+	>=dev-haskell/lens-3.9.2:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -33,3 +33,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.9.0.1 <dev-haskell/tasty-0.11
 		>=dev-haskell/tasty-golden-2.2.0.1 <dev-haskell/tasty-golden-2.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >=3.9.2 && <4.7' 'lens >=3.9.2'
+}
