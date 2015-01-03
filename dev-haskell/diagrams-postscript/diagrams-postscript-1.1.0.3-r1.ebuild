@@ -23,7 +23,7 @@ RDEPEND="<dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.7:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
@@ -34,3 +34,8 @@ RDEPEND="<dev-haskell/data-default-class-0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 4.0 && < 4.7' 'lens >= 4.0'
+}
