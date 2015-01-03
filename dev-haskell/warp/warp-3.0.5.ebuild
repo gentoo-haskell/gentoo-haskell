@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,6 +24,7 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.8.5:=[profile?]
+	>=dev-haskell/iproute-1.3.1:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/simple-sendfile-0.2.7:=[profile?] <dev-haskell/simple-sendfile-0.3:=[profile?]
 	>=dev-haskell/streaming-commons-0.1.2:=[profile?]
