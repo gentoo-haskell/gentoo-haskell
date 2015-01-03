@@ -573,8 +573,8 @@ src_install() {
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/haddock
 
-		dobashcomp "${FILESDIR}/ghc-bash-completion"
-
+		newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
+		newbashcomp utils/completion/ghc.bash         ghc
 	fi
 
 	# path to the package.cache

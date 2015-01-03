@@ -524,8 +524,8 @@ src_install() {
 			echo "${GHC_PV}" > "${S}/VERSION" \
 				|| die "Could not create file ${S}/VERSION"
 		fi
-		newbashcomp "${FILESDIR}/ghc-bash-completion" ghc-pkg
-
+		newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
+		newbashcomp utils/completion/ghc.bash         ghc
 	fi
 
 	# path to the package.cache
