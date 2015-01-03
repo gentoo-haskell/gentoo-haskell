@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.7:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -36,3 +36,8 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 4.0 && < 4.7' 'lens >= 4.0'
+}
