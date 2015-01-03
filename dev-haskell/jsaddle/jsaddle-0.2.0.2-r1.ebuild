@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+gtk3 +jsffi webkit"
 
-RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.7:=[profile?]
+RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -38,6 +38,11 @@ DEPEND="${RDEPEND}
 	gtk3? ( test? ( webkit? ( dev-haskell/gtk:3 ) ) )
 	!gtk3? ( test? ( webkit? ( dev-haskell/gtk:2 ) ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >=3.8.5 && <4.7' 'lens >=3.8.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
