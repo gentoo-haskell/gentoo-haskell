@@ -1,0 +1,12 @@
+diff --git a/System/Unix/Directory.hs b/System/Unix/Directory.hs
+index 890e220..a6adccc 100644
+--- a/System/Unix/Directory.hs
++++ b/System/Unix/Directory.hs
+@@ -10,6 +10,7 @@ module System.Unix.Directory
+     )
+     where
+ 
++import Prelude hiding (traverse)
+ import Control.Exception
+ import Data.List (isSuffixOf)
+ import System.Cmd
