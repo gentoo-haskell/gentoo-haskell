@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -40,8 +40,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/data-default
-		>=dev-haskell/hspec-1.3
+	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/zlib )
 "
