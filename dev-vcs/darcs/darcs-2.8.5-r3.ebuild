@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +library,+executable,-hpc,-warn-as-error
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
@@ -54,11 +54,16 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.8:=[profile?] )
 "
 
+PATCHES=("${FILESDIR}/${P}-ghc-7.10.patch")
+
 src_prepare() {
+	base_src_prepare
 	cabal_chdeps \
 		'terminfo == 0.3.*' 'terminfo >= 0.3 && < 0.5' \
 		'text       >= 0.11.0.6 && < 1.2' 'text       >= 0.11.0.6 && < 1.3' \
-		'random     == 1.0.*' 'random     >= 1.0 && < 1.2'
+		'random     == 1.0.*' 'random     >= 1.0 && < 1.2' \
+		'base >= 4.5 && < 4.8' 'base >= 4.5 && < 4.9' \
+		'ghc >= 6.10 && < 7.10' 'ghc >= 6.10 && < 7.12'
 }
 
 src_configure() {
