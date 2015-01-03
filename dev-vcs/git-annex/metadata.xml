@@ -32,6 +32,7 @@
 		<flag name="tahoe">Enable the tahoe special remote</flag>
 		<flag name="tdfa">Use regex-tdfa for wildcards</flag>
 		<flag name="testsuite">Embed the test suite into git-annex</flag>
+		<flag name="torrentparser">Use haskell torrent library to parse torrent files</flag>
 		<flag name="webapp">Enable git-annex webapp</flag>
 		<flag name="webapp-secure">Secure webapp</flag>
 		<flag name="webdav">Enable webdav remote</flag>
