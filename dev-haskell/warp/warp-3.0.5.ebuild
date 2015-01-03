@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd warp-debug"
 
+RESTRICT=test # Ambiguous module name 'Data.IP': in network-data-0.5.2 iproute-1.3.1
+
 RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
