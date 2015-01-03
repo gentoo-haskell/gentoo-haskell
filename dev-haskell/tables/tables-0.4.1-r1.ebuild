@@ -36,6 +36,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.7.patch
+
 	cabal_chdeps \
 		'transformers         >= 0.2 && < 0.4' 'transformers         >= 0.2 && < 0.5'
 }
