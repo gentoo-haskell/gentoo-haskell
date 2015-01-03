@@ -30,4 +30,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-hspec.patch
+
+	cabal_chdeps \
+		'-Werror' ' '
 }
+
