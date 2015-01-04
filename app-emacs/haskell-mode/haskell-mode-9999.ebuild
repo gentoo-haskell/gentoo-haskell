@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/haskell/haskell-mode.git https://github.com/hask
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="+examples +snippets"
 
 RDEPEND="virtual/emacs
