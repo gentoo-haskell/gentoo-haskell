@@ -29,10 +29,10 @@ DEPEND="${RDEPEND}
 	dev-haskell/cairo
 	>=dev-haskell/dbus-0.10
 	dev-haskell/glib
-	>=dev-haskell/gtk-0.12.4
+	>=dev-haskell/gtk-0.13
 	>=dev-haskell/hgettext-0.1.5
 	dev-haskell/mtl
-	dev-haskell/pango
+	>=dev-haskell/pango-0.13
 	dev-haskell/parsec
 	dev-haskell/pcap
 	dev-haskell/setlocale
@@ -44,6 +44,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gtk-0.13.patch
+}
 
 src_compile() {
 	# compile haskell part
