@@ -9,7 +9,7 @@ inherit elisp git-2
 DESCRIPTION="Mode for editing (and running) Haskell programs in Emacs"
 HOMEPAGE="http://projects.haskell.org/haskellmode-emacs/
 	http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs"
-EGIT_REPO_URI="git://github.com/haskell/haskell-mode.git https://github.com/haskell/haskell-mode.git"
+EGIT_REPO_URI="https://github.com/haskell/haskell-mode.git"
 
 LICENSE="GPL-3"
 SLOT="0"
