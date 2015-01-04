@@ -8,7 +8,7 @@ EAPI=5
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
-inherit base haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Binding to the GIO"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -30,4 +30,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
-PATCHES=("${FILESDIR}/${PN}-0.13.0.4-ghc-7.10.patch")
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.13.0.4-ghc-7.10.patch
+
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
+}
