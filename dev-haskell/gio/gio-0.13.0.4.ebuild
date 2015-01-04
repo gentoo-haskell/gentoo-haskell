@@ -31,8 +31,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.13.0.4-ghc-7.10.patch
-
+	sed -i -e 's/import System.Exit/import System.Exit (exitWith, ExitCode(..))/' \
+		SetupWrapper.hs || die
 	# workaround for module order
 	cabal_chdeps \
 		'other-modules:' 'exposed-modules:'
