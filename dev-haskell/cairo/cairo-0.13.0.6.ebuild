@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -34,6 +34,11 @@ src_prepare() {
 	sed -e "s@#include<cairo-features.h>@#define $(usex amd64 __x86_64__ __i386__)\n#include<cairo-features.h>@" \
 		-i "${S}"/Graphics/Rendering/Cairo.hs \
 		|| die "Could not define ABI in Graphics/Rendering/Cairo.hs"
+	sed -i -e 's/import System.Exit/import System.Exit (exitWith, ExitCode(..))/' \
+		SetupWrapper.hs || die
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
 }
 
 src_configure() {
