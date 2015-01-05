@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -32,3 +32,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	sed -i -e 's/import System.Exit/import System.Exit (exitWith, ExitCode(..))/' \
+		SetupWrapper.hs || die
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
+}
