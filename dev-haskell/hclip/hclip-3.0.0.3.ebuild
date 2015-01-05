@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # hangs under sandbox
+
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/strict:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
