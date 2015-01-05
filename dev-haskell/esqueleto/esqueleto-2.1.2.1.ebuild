@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests hang
+
 RDEPEND=">=dev-haskell/conduit-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.2:=[profile?]
