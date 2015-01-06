@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,8 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-RESTRICT=test # breaks when installed mwc-random is broken
 
 RDEPEND="dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
