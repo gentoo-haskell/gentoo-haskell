@@ -16,7 +16,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib pax-utils toolchain-funcs versionator
+inherit multilib multiprocessing pax-utils toolchain-funcs versionator
 [[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
