@@ -18,24 +18,28 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+network-uri +noprefs"
 
+RESTRICT=test # missing files
+
 RDEPEND=""
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.20.0 <dev-haskell/cabal-1.21
+	>=dev-haskell/cabal-1.22 <dev-haskell/cabal-1.23
 	>=dev-haskell/http-4000.2.5 <dev-haskell/http-4000.3
 	>=dev-haskell/mtl-2.0 <dev-haskell/mtl-3
 	>=dev-haskell/random-1 <dev-haskell/random-1.2
 	>=dev-haskell/stm-2.0 <dev-haskell/stm-3
 	>=dev-haskell/zlib-0.5.3 <dev-haskell/zlib-0.6
 	>=dev-lang/ghc-7.4.1
-	test? ( dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.5
+	test? ( dev-haskell/extensible-exceptions
+		dev-haskell/hunit
+		>=dev-haskell/quickcheck-2.5:2 <dev-haskell/quickcheck-2.8:2
+		dev-haskell/regex-posix
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		>=dev-haskell/test-framework-quickcheck2-0.3 )
-	network-uri? ( >=dev-haskell/network-2.6 <dev-haskell/network-2.7
+	network-uri? ( >=dev-haskell/network-2.6
 			>=dev-haskell/network-uri-2.6 )
 	!network-uri? ( >=dev-haskell/network-2.0 <dev-haskell/network-2.6
-			<dev-haskell/network-uri-2.6 )
+			test? ( <dev-haskell/network-uri-2.6 ) )
 "
 
 src_prepare() {

@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -57,9 +57,9 @@ src_prepare() {
 	if ! ghc-supports-threaded-runtime; then
 		cabal_chdeps '-threaded' ' '
 	fi
-	if [[ -n ${LIVE_EBUILD} ]]; then
-		cabal_chdeps 'Cabal      == 1.21.1.0' 'Cabal == 1.21.9999'
-	fi
+	#if [[ -n ${LIVE_EBUILD} ]]; then
+	#	cabal_chdeps 'Cabal      == 1.23.0.0' 'Cabal == 1.23.9999'
+	#fi
 }
 
 src_install() {
