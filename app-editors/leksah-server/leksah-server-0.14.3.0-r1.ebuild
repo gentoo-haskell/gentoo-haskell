@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/attoparsec-conduit-1.0.1.2:=[profile?] <dev-haskell/attoparsec-conduit-1.2:=[profile?]
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
-	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.22:=[profile?]
+	>=dev-haskell/cabal-1.10.2.0:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.0.0.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
