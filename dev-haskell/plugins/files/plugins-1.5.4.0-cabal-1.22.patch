@@ -1,0 +1,34 @@
+diff --git a/src/System/Plugins/Env.hs b/src/System/Plugins/Env.hs
+index ae37bd2..f06b7f1 100644
+--- a/src/System/Plugins/Env.hs
++++ b/src/System/Plugins/Env.hs
+@@ -69,10 +69,10 @@ import System.IO.Error          ( catch, ioError, isDoesNotExistError )
+ 
+ import Control.Concurrent.MVar  ( MVar(), newMVar, withMVar )
+ 
+-import Distribution.Package hiding (depends, packageName, PackageName(..))
++import Distribution.Package as DP hiding (depends, packageName, PackageName(..))
+ import Distribution.Text
+ 
+-import Distribution.InstalledPackageInfo
++import Distribution.InstalledPackageInfo as DI
+ -- import Distribution.Package hiding (packageName, PackageName(..))
+ import Distribution.Simple.Compiler
+ import Distribution.Simple.GHC
+@@ -300,14 +300,14 @@ union ls ps' =
+         in foldr addOnePkg fm ps' : ls
+     where 
+       -- we add each package with and without it's version number and with the full installedPackageId
+-      addOnePkg p fm' = addToPkgEnvs (addToPkgEnvs (addToPkgEnvs fm' (display $ sourcePackageId p) p) (display $ installedPackageId p) p)
++      addOnePkg p fm' = addToPkgEnvs (addToPkgEnvs (addToPkgEnvs fm' (display $ sourcePackageId p) p) (display $ DI.installedPackageId p) p)
+                                      (packageName p) p
+       
+       -- if no version number specified, pick the higher version
+       addToPkgEnvs = addWithFM higherVersion
+ 
+       higherVersion pkgconf1 pkgconf2 
+-        | installedPackageId pkgconf1 >= installedPackageId pkgconf2 = pkgconf1
++        | DI.installedPackageId pkgconf1 >= DI.installedPackageId pkgconf2 = pkgconf1
+         | otherwise                                                  = pkgconf2
+         
+ -- 
