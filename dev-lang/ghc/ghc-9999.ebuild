@@ -277,6 +277,8 @@ relocate_ghc() {
 }
 
 pkg_setup() {
+	[[ ${MERGE_TYPE} == binary ]] && return
+
 	if use ghcbootstrap; then
 		ewarn "You requested ghc bootstrapping, this is usually only used"
 		ewarn "by Gentoo developers to make binary .tbz2 packages."
