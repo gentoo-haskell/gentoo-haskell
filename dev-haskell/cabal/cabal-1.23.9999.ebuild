@@ -33,7 +33,7 @@ else
 	S="${WORKDIR}/${MY_PN}"
 fi
 
-RDEPEND=">=dev-lang/ghc-6.12.1:="
+RDEPEND=">=dev-lang/ghc-7.8.1:="
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/extensible-exceptions
 		dev-haskell/hunit

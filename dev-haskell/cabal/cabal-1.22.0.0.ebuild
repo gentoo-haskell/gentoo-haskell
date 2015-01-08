@@ -24,7 +24,7 @@ IUSE=""
 
 RESTRICT=test
 
-RDEPEND=">=dev-lang/ghc-7.4.1:="
+RDEPEND=">=dev-lang/ghc-7.8.1:="
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/extensible-exceptions
 		dev-haskell/hunit
