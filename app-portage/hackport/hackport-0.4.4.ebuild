@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'deepseq >= 1.3 && < 1.4' 'deepseq >= 1.3'
+}
+
 src_install() {
 	haskell-cabal_src_install
 	doman man/hackport.1
