@@ -40,3 +40,9 @@ src_configure() {
 		$(cabal_flag exe exe) \
 		$(cabal_flag test test)
 }
+
+src_test() {
+	# This package builds a test executable called test_sha, but the
+	# suite isn't integrated with cabal yet. It's fixed upstream in git.
+	dist/build/test_sha/test_sha || die "test suite failed"
+}
