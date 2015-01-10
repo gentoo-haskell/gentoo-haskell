@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	dev-haskell/blaze-textual:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/postgresql-libpq-0.9:=[profile?]
+	>=dev-haskell/postgresql-libpq-0.9:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	>=dev-haskell/text-0.11.1:=[profile?]
 	dev-haskell/transformers:=[profile?]
