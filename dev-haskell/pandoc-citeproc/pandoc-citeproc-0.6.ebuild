@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -small_base
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Supports using pandoc with citeproc"
 HOMEPAGE="http://hackage.haskell.org/package/pandoc-citeproc"
@@ -45,6 +45,8 @@ RDEPEND=">=app-text/pandoc-1.12.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 "
+
+PATCHES=("${FILESDIR}/${PN}-0.6-ghc-7.10.patch")
 
 src_configure() {
 	# workaround bug on ghc-7.6.3:
