@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/happstack-server-6.6:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+RDEPEND=">=dev-haskell/happstack-server-6.6:=[profile?] <dev-haskell/happstack-server-7.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/web-routes-0.27.1:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
