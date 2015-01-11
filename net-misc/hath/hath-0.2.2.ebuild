@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/tasty-hunit-0.8
 	>=dev-haskell/tasty-quickcheck-0.8.1
 	>=dev-lang/ghc-7.6.1
+	test? ( dev-util/shelltestrunner )
 "
 
 # Run only the non-network tests.
