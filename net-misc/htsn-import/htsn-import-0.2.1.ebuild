@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,10 +23,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/cmdargs-0.10.6
 	>=dev-haskell/configurator-0.2
-	>=dev-haskell/groundhog-0.5
-	>=dev-haskell/groundhog-postgresql-0.5
-	>=dev-haskell/groundhog-sqlite-0.5
-	>=dev-haskell/groundhog-th-0.5
+	>=dev-haskell/fixed-vector-hetero-0.3
+	>=dev-haskell/groundhog-0.7
+	>=dev-haskell/groundhog-postgresql-0.7
+	>=dev-haskell/groundhog-sqlite-0.7
+	>=dev-haskell/groundhog-th-0.7
 	>=dev-haskell/hslogger-1.2
 	>=dev-haskell/htsn-common-0.0.1
 	>=dev-haskell/hxt-9.3
