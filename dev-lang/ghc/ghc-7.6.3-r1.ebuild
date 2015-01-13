@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-7.6.2.ebuild,v 1.1 2013/02/09 18:33:57 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-7.6.3-r1.ebuild,v 1.15 2015/01/02 23:50:56 slyfox Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -41,7 +41,8 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-inherit base autotools bash-completion-r1 eutils flag-o-matic multilib toolchain-funcs ghc-package versionator pax-utils
+inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
+inherit multilib multiprocessing pax-utils toolchain-funcs versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -50,13 +51,13 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 arch_binaries=""
 
 # sorted!
-arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
+arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-r1-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
 arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
-arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64.tbz2 )"
-#arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
-#arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
-#arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
+arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-r1-ia64.tbz2 )"
+arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-r1-ppc.tbz2 )"
+arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-r1-ppc64.tbz2 )"
+arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-r1-sparc.tbz2 )"
 arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
 
 # various ports:
@@ -72,9 +73,9 @@ yet_binary() {
 		#;;
 		amd64) return 0 ;;
 		ia64) return 0 ;;
-		#ppc) return 0 ;;
-		#ppc64) return 0 ;;
-		#sparc) return 0 ;;
+		ppc) return 0 ;;
+		ppc64) return 0 ;;
+		sparc) return 0 ;;
 		x86) return 0 ;;
 		*) return 1 ;;
 	esac
@@ -84,7 +85,7 @@ SRC_URI="!binary? ( http://www.haskell.org/ghc/dist/${PV}/${P}-src.tar.bz2 )"
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="doc ghcbootstrap ghcmakebinary +gmp llvm"
 IUSE+=" binary" # don't forget about me later!
 IUSE+=" elibc_glibc" # system stuff
@@ -121,6 +122,11 @@ PDEPEND="
 
 # ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
 REQUIRED_USE="ia64? ( !gmp )"
+
+use binary && QA_PREBUILT="*"
+
+# haskell libraries built with cabal in configure mode, #515354
+QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -159,6 +165,9 @@ ghc_setup_cflags() {
 	# We also use these CFLAGS for building the C parts of ghc, ie the rts.
 	strip-flags
 	strip-unsupported-flags
+
+	# Cmm can't parse line numbers #482086
+	replace-flags -ggdb[3-9] -ggdb2
 
 	GHC_FLAGS=""
 	for flag in ${CFLAGS}; do
@@ -408,7 +417,7 @@ src_prepare() {
 
 		cd "${S}" # otherwise epatch will break
 
-		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
+		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 
 		# epatch "${FILESDIR}"/${PN}-7.0.4-darwin8.patch
 		# failed to apply. FIXME
@@ -432,6 +441,10 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.4.1-ticket-7339-fix-unaligned-unreg.patch
 		epatch "${FILESDIR}"/${PN}-7.6.2-integer-simple-div-mod.patch
+		# ghc-7.8 changed linker code and likely fixed it
+		epatch "${FILESDIR}"/${PN}-7.6.3-trac-3333-weak-syms.patch
+		# bug 518734
+		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -573,19 +586,32 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		#limit_jobs() {
-		#	if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
-		#		ewarn "You have requested parallel build which is known to break."
-		#		ewarn "Please report all breakages upstream."
-		#		return
-		#	fi
-		#	echo $@
-		#}
+		limit_jobs() {
+			local user_jobs=$(makeopts_jobs)
+			local max_nonbreaking_jobs=$1
+
+			[[ ${user_jobs} -le ${max_nonbreaking_jobs} ]] && return
+
+			if [[ -n ${I_DEMAND_MY_CORES_LOADED} ]]; then
+				ewarn "You have requested parallel build which is known to break."
+				ewarn "Please report all breakages upstream."
+				return
+			else
+				ewarn "Limiting MAKEOPTS -j${user_jobs} -> -j${max_nonbreaking_jobs} (bug #456386)"
+				user_jobs=${max_nonbreaking_jobs}
+			fi
+			echo -j${user_jobs}
+		}
 		# ghc massively parallel make: #409631, #409873
 		#   but let users screw it by setting 'I_DEMAND_MY_CORES_LOADED'
-		#emake $(limit_jobs -j1) all
-		# ^ above seems to be fixed.
-		emake all V=1
+		# 4 parallel jobs usually does not break
+
+		# 1. build compiler binary first
+		emake $(limit_jobs 4) ghc/stage2/build/tmp/ghc-stage2 V=1
+		# 2. pax-mark (bug #516430)
+		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
+		# 3. and then all the rest
+		emake $(limit_jobs 4) all V=1
 
 		if is_crosscompile; then
 			# runghc does not work for a stage1 compiler, we can build it anyway
@@ -602,6 +628,76 @@ src_compile() {
 			popd
 		fi
 	fi # ! use binary
+}
+
+add-c_nonshared-to-ghci-libs() {
+	local ghci_lib
+	local nonshared_dir=${T}/libc_nonshared_objects
+
+	is_crosscompile && return
+	use elibc_glibc || return
+	use prefix && return
+
+	# we expect 'libc.a' bits be self-sufficient
+	if gcc-specs-pie; then
+		use x86 && return # but on x86 pie means linker support: #486140
+	fi
+
+	get-nonshared-objects() {
+		# ns - 'nonshared'
+		local ns_objects=" "
+		local ns_sym
+		local ns_srco
+		local ns_dsto
+
+		# extract
+		mkdir "${nonshared_dir}" || die
+		pushd "${nonshared_dir}" >/dev/null || die
+		$(tc-getAR) x "${ROOT}"/usr/$(get_libdir)/libc.a
+		popd >/dev/null || die
+
+		# they are mostly contents of /usr/$(get_libdir)/libc_nonstahed.a
+		# but 'c_nonstahed' contains PIC variants of symbols.
+		# ghci uses non-PIC ones
+		for ns_sym in \
+			stat    fstat   lstat mknod \
+			stat64  fstat64 lstat64 \
+			fstatat fstatat64 mknodat
+		do
+			ns_srco=${nonshared_dir}/${ns_sym}.o
+			ns_dsto=${nonshared_dir}/${ns_sym}_weakened.o
+			[[ -f ${ns_srco} ]] || continue
+			# here we do The Magic:
+			# 1. --keep-global-symbol= hides everything to adoid double definition
+			#    of stuff like __stat, __fstat and
+			# 2. --weaken converts exported symbols to weak symbols to be available
+			#    for redefinition
+			$(tc-getOBJCOPY) \
+				--weaken --keep-global-symbol=${ns_sym} \
+				"${ns_srco}" "${ns_dsto}" || die
+
+			ns_objects+=" ${ns_dsto}"
+		done
+
+		echo "${ns_objects}"
+	}
+	# bug #452442: when building libraries for ghci
+	# ghc basically glues them together:
+	#   $ ld -r -o result foo.o bar.o ...
+	# that way some symbols defined in libc_nonshared.a
+	# do not get included into final HS*.o files
+	# We piggyback on one of early loaded wired-in library
+	# loaded before 'base'.
+	while read ghci_lib
+	do
+		einfo "relinking '${ghci_lib}' with c_includes"
+		mv "${ghci_lib}" "${ghci_lib}".unrelinked.o || die
+		$(tc-getLD) -r -o "${ghci_lib}"  \
+			"${ghci_lib}".unrelinked.o \
+			$(get-nonshared-objects) || die
+		rm -r "${nonshared_dir}" || die
+		rm "${ghci_lib}".unrelinked.o || die
+	done < <(find "${ED}"/usr/$(get_libdir)/${P}/ -name 'HSghc-prim*.o')
 }
 
 src_install() {
@@ -632,13 +728,10 @@ src_install() {
 			DESTDIR="${D}" \
 			|| die "make ${insttarget} failed"
 
-		# remove wrapper and linker
+		# remove wrapper and link
 		rm -f "${ED}"/usr/bin/haddock*
 
-		# ghci uses mmap with rwx protection at it implements dynamic
-		# linking on it's own (bug #299709)
-		# so mark resulting binary
-		pax-mark -m "${ED}/usr/$(get_libdir)/${P}/ghc"
+		add-c_nonshared-to-ghci-libs
 
 		if [[ ! -f "${S}/VERSION" ]]; then
 			echo "${GHC_PV}" > "${S}/VERSION" \
