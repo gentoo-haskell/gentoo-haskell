@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,3 +24,7 @@ RDEPEND=">=dev-haskell/dependent-sum-0.2:=[profile?] <dev-haskell/dependent-sum-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare(){
+	sed 's/-trust /-trust=/g' -i ${PN}.cabal
+}
