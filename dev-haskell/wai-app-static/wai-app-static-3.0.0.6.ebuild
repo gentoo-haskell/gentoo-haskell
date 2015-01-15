@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,6 +29,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/mime-types-0.1:=[profile?] <dev-haskell/mime-types-0.2:=[profile?]
+	>=dev-haskell/old-locale-1.0.0.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.7:=[profile?]
 	>=dev-haskell/system-fileio-0.3:=[profile?]
 	>=dev-haskell/system-filepath-0.4:=[profile?]
