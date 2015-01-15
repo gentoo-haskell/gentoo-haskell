@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/asn1-types-0.1:=[profile?] <dev-haskell/asn1-types-0.4:=[profile?]
+RDEPEND="dev-haskell/asn1-encoding:=[profile?]
+	>=dev-haskell/asn1-types-0.1:=[profile?] <dev-haskell/asn1-types-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
