@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+gtk3"
 
-RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.21:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
 	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
