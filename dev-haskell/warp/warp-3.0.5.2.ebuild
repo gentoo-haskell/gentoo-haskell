@@ -45,6 +45,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/http
 		dev-haskell/hunit
 		>=dev-haskell/lifted-base-0.1
+		dev-haskell/old-locale
 		dev-haskell/quickcheck
 		>=dev-haskell/transformers-0.2.2 )
 "
