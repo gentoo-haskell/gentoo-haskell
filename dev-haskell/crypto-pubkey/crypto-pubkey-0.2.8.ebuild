@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files
+
 RDEPEND="dev-haskell/byteable:=[profile?]
 	>=dev-haskell/crypto-numbers-0.2.2:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.4.1:=[profile?] <dev-haskell/crypto-pubkey-types-0.5:=[profile?]
@@ -27,9 +29,8 @@ RDEPEND="dev-haskell/byteable:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/hunit
-		>=dev-haskell/quickcheck-2
-		>=dev-haskell/test-framework-0.3.3
-		dev-haskell/test-framework-hunit
-		>=dev-haskell/test-framework-quickcheck2-0.2.9 )
+	test? ( dev-haskell/tasty
+		dev-haskell/tasty-hunit
+		dev-haskell/tasty-kat
+		dev-haskell/tasty-quickcheck )
 "
