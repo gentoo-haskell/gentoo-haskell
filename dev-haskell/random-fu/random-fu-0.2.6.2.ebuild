@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/erf:=[profile?]
-	>=dev-haskell/logfloat-0.12:=[profile?] <dev-haskell/logfloat-0.13:=[profile?]
+	>=dev-haskell/log-domain-0.9:=[profile?] <dev-haskell/log-domain-1.0:=[profile?]
 	dev-haskell/math-functions:=[profile?]
 	>=dev-haskell/monad-loops-0.3.0.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
@@ -37,10 +37,6 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	# workarond bug on ghc-7.6.3, where
-	# compilation causes endless loop
-	[[ $(ghc-version) == 7.6.* ]] && replace-hcflags -O[2-9] -O1
-
 	haskell-cabal_src_configure \
 		--flag=mtl2
 }
