@@ -400,6 +400,8 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		# bug 518734
 		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
+		# fix threaded runtime on ia64
+		epatch "${FILESDIR}"/${PN}-7.8.4-ia64-CLOSUREs.patch
 
 		# upstream backports
 		epatch "${FILESDIR}"/${PN}-7.8.3-linker-warn.patch
