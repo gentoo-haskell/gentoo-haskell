@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-byt
 	>=dev-haskell/http-client-0.3:=[profile?]
 	>=dev-haskell/http-types-0.6:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-haskell/rsa-2.0:=[profile?] <dev-haskell/rsa-2.1:=[profile?]
+	>=dev-haskell/rsa-2.0:=[profile?] <dev-haskell/rsa-2.2:=[profile?]
 	>=dev-haskell/sha-1.4:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
