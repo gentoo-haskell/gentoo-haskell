@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,16 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/lens-3:=[profile?]
-	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
+	>=dev-haskell/lens-3:=[profile?] <dev-haskell/lens-4.8:=[profile?]
+	>=dev-haskell/vector-space-0.7:=[profile?] <dev-haskell/vector-space-0.10:=[profile?]
 	>=dev-haskell/vector-space-points-0.1.1:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >= 3 && < 4.7' 'lens >= 3'
-}
