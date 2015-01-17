@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,8 +23,9 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
 	>=dev-haskell/fontyfruity-0.2:=[profile?] <dev-haskell/fontyfruity-0.5:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.8:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	dev-haskell/old-time:=[profile?]
 	>=dev-haskell/optparse-applicative-0.10:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
 	>=dev-haskell/rasterific-0.2:=[profile?] <dev-haskell/rasterific-0.5:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-1.3:=[profile?]
@@ -34,8 +35,3 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >= 4.0 && < 4.7' 'lens >= 4.0'
-}
