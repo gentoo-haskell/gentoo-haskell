@@ -397,8 +397,6 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		epatch "${FILESDIR}"/${P}-boot.patch
-		# fix threaded runtime on ia64
-		epatch "${FILESDIR}"/${PN}-7.8.4-ia64-CLOSUREs.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
