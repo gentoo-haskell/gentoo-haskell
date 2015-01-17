@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -37,6 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
+	dev-haskell/old-locale:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -46,10 +47,15 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-1.9 <dev-haskell/hspec-1.12
+	test? ( >=dev-haskell/hspec-1.9
 		dev-haskell/hunit
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'hspec >= 1.9 && < 1.12' 'hspec >= 1.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
