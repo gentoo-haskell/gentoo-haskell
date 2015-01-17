@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,20 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/dual-tree-0.2:=[profile?] <dev-haskell/dual-tree-0.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.8:=[profile?]
 	>=dev-haskell/memotrie-0.4.7:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.4:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
-	>=dev-haskell/vector-space-0.8.4:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
+	>=dev-haskell/vector-space-0.8.4:=[profile?] <dev-haskell/vector-space-0.10:=[profile?]
 	>=dev-haskell/vector-space-points-0.1:=[profile?] <dev-haskell/vector-space-points-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >= 4.0 && < 4.7' 'lens >= 4.0'
-}
