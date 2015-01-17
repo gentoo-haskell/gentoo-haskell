@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -26,6 +26,7 @@ RDEPEND="dev-haskell/base64-string:=[profile?]
 	>=dev-haskell/mime-mail-0.4.0:=[profile?] <dev-haskell/mime-mail-0.5:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/old-time:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
