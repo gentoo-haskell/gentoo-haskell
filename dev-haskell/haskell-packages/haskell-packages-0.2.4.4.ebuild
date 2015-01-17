@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
-	>=dev-haskell/cabal-1.14:=[profile?]
+	>=dev-haskell/cabal-1.14:=[profile?] <=dev-haskell/cabal-1.20.0.2:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.14:=[profile?]
 	dev-haskell/hse-cpp:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
