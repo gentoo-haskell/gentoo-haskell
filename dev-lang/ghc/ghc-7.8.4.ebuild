@@ -63,6 +63,7 @@ SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src
 S="${WORKDIR}"/${GHC_P}
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
+SRC_URI+=" http://dev.gentoo.org/~slyfox/distfiles/${P}-ia64-CLOSUREs-regenerated.patch.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
@@ -402,6 +403,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
 		# fix threaded runtime on ia64
 		epatch "${FILESDIR}"/${PN}-7.8.4-ia64-CLOSUREs.patch
+		epatch "${WORKDIR}"/${PN}-7.8.4-ia64-CLOSUREs-regenerated.patch
 
 		# upstream backports
 		epatch "${FILESDIR}"/${PN}-7.8.3-linker-warn.patch
