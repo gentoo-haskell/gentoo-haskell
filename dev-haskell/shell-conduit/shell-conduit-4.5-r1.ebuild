@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.5:=[profile?]
 	dev-haskell/conduit:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	dev-haskell/control-monad-loop:=[profile?]
-	dev-haskell/monad-control:=[profile?]
+	>=dev-haskell/monad-control-1.0:=[profile?]
 	dev-haskell/monads-tf:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/semigroups:=[profile?]
@@ -35,3 +35,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
+}
