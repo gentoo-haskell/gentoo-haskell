@@ -1,0 +1,12 @@
+diff --git a/test/instances.hs b/test/instances.hs
+index 861c2d0..0cce206 100644
+--- a/test/instances.hs
++++ b/test/instances.hs
+@@ -12,6 +12,7 @@
+ 
+ import Control.Applicative
+ import Control.Lens
++import Control.Lens.Action
+ import Data.Array (Array)
+ import Data.Array.Unboxed (UArray)
+ import Data.Data.Lens

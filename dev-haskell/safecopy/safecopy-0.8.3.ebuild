@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.7.patch
 	cabal_chdeps \
 		'lens' 'lens >= 4.7, lens-action'
 }
