@@ -7,7 +7,7 @@ index 7fa4db4..3d3317e 100644
  
  main :: IO ()
 -main = doctest
-+main = doctest $ [ "-hide-package=monads-fd", "-hide-package=monads-tf"] ++
++main = doctest $ [ "-ignore-package=monads-fd", "-ignore-package=monads-tf"] ++
         [ "Text/ParserCombinators/Parsec/Rfc2234.hs"
         , "Text/ParserCombinators/Parsec/Rfc2821.hs"
         , "Text/ParserCombinators/Parsec/Rfc2822.hs"
