@@ -25,8 +25,14 @@ RDEPEND=">=dev-haskell/cereal-0.3.1.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
-	test? ( dev-haskell/lens
+	test? ( >=dev-haskell/lens-4.7
+		dev-haskell/lens-action
 		dev-haskell/quickcheck-instances
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens' 'lens >= 4.7, lens-action'
+}
