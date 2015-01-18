@@ -1,0 +1,38 @@
+diff --git a/Control/Monad/Exception/Base.hs b/Control/Monad/Exception/Base.hs
+index cce891a..f4064ff 100644
+--- a/Control/Monad/Exception/Base.hs
++++ b/Control/Monad/Exception/Base.hs
+@@ -96,14 +96,14 @@ instance MonadBase b m => MonadBase b (EMT l m) where
+     liftBase = liftBaseDefault
+ 
+ instance MonadBaseControl b m => MonadBaseControl b (EMT l m) where
+-     newtype StM (EMT l m) a = StmEMT {unStmEMT :: ComposeSt (EMT l) m a}
+-     liftBaseWith = defaultLiftBaseWith StmEMT
+-     restoreM     = defaultRestoreM   unStmEMT
++     type StM (EMT l m) a = ComposeSt (EMT l) m a
++     liftBaseWith = defaultLiftBaseWith
++     restoreM     = defaultRestoreM
+ 
+ instance MonadTransControl (EMT l) where
+-     newtype StT (EMT l) a = StEMT {unStEMT :: Either (CallTrace, CheckedException l) a}
+-     liftWith f = EMT $ liftM return $ f $ liftM StEMT . unEMT
+-     restoreT       = EMT . liftM unStEMT
++     type StT (EMT l) a = Either (CallTrace, CheckedException l) a
++     liftWith f = EMT $ liftM return $ f $ liftM id . unEMT
++     restoreT       = EMT . liftM id
+ 
+ instance Monad m => MonadLoc (EMT l m) where
+     withLoc loc (EMT emt) = EMT $ do
+diff --git a/control-monad-exception.cabal b/control-monad-exception.cabal
+index cac63ea..9cc663f 100644
+--- a/control-monad-exception.cabal
++++ b/control-monad-exception.cabal
+@@ -82,7 +82,7 @@ Library
+                , transformers >= 0.2
+                , transformers-base >= 0.4.1
+                , monadloc >= 0.7
+-               , monad-control >= 0.3
++               , monad-control >= 1.0
+                , lifted-base >= 0.2.1
+ 
+   if flag(extensibleExceptions)
