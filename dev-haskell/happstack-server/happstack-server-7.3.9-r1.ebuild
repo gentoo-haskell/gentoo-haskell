@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +network_2_2_3
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Web related tools and services"
 HOMEPAGE="http://happstack.com"
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/hslogger-1.0.2:=[profile?]
 	dev-haskell/html:=[profile?]
-	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-0.4:=[profile?]
+	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/sendfile-0.7.1:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
@@ -47,6 +47,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

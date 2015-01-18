@@ -1,0 +1,90 @@
+diff --git a/happstack-server.cabal b/happstack-server.cabal
+index f224121..0fef26e 100644
+--- a/happstack-server.cabal
++++ b/happstack-server.cabal
+@@ -83,7 +83,7 @@ Library
+                        filepath,
+                        hslogger >= 1.0.2,
+                        html,
+-                       monad-control >= 0.3 && < 0.4,
++                       monad-control >= 1.0,
+                        mtl >= 2 && < 2.3,
+                        old-locale,
+                        parsec < 4,
+diff --git a/src/Happstack/Server/Internal/Monads.hs b/src/Happstack/Server/Internal/Monads.hs
+index cb619e7..069bc3e 100644
+--- a/src/Happstack/Server/Internal/Monads.hs
++++ b/src/Happstack/Server/Internal/Monads.hs
+@@ -66,16 +66,16 @@ instance (MonadIO m) => MonadIO (ServerPartT m) where
+     {-# INLINE liftIO #-}
+ 
+ instance MonadTransControl ServerPartT where
+-    newtype StT ServerPartT a = StSP {unStSP :: StT WebT (StT (ReaderT Request) a)}
++    type StT ServerPartT a = StT WebT (StT (ReaderT Request) a)
+     liftWith f = ServerPartT $ liftWith $ \runReader ->
+                                  liftWith $ \runWeb ->
+-                                   f $ liftM StSP . runWeb . runReader . unServerPartT
+-    restoreT = ServerPartT . restoreT . restoreT . liftM unStSP
++                                   f $ liftM id . runWeb . runReader . unServerPartT
++    restoreT = ServerPartT . restoreT . restoreT . liftM id
+ 
+ instance MonadBaseControl b m => MonadBaseControl b (ServerPartT m) where
+-    newtype StM (ServerPartT m) a = StMSP {unStMSP :: ComposeSt ServerPartT m a}
+-    liftBaseWith = defaultLiftBaseWith StMSP
+-    restoreM     = defaultRestoreM     unStMSP
++    type StM (ServerPartT m) a = ComposeSt ServerPartT m a
++    liftBaseWith = defaultLiftBaseWith
++    restoreM     = defaultRestoreM
+ 
+ -- | Particularly useful when combined with 'runWebT' to produce
+ -- a @m ('Maybe' 'Response')@ from a 'Request'.
+@@ -259,14 +259,14 @@ instance (MonadIO m) => MonadIO (FilterT a m) where
+     {-# INLINE liftIO #-}
+ 
+ instance MonadTransControl (FilterT a) where
+-    newtype StT (FilterT a) b = StFilter {unStFilter :: StT (Lazy.WriterT (FilterFun a)) b}
+-    liftWith f = FilterT $ liftWith $ \run -> f $ liftM StFilter . run . unFilterT
+-    restoreT = FilterT . restoreT . liftM unStFilter
++    type StT (FilterT a) b = StT (Lazy.WriterT (FilterFun a)) b
++    liftWith f = FilterT $ liftWith $ \run -> f $ liftM id . run . unFilterT
++    restoreT = FilterT . restoreT . liftM id
+ 
+ instance MonadBaseControl b m => MonadBaseControl b (FilterT a m) where
+-    newtype StM (FilterT a m) c = StMFilter {unStMFilter :: ComposeSt (FilterT a) m c}
+-    liftBaseWith = defaultLiftBaseWith StMFilter
+-    restoreM     = defaultRestoreM     unStMFilter
++    type StM (FilterT a m) c = ComposeSt (FilterT a) m c
++    liftBaseWith = defaultLiftBaseWith
++    restoreM     = defaultRestoreM
+ 
+ -- | A set of functions for manipulating filters.
+ --
+@@ -312,21 +312,21 @@ instance (MonadIO m) => MonadIO (WebT m) where
+     {-# INLINE liftIO #-}
+ 
+ instance MonadTransControl WebT where
+-    newtype StT WebT a = StWeb {unStWeb :: StT MaybeT
++    type StT WebT a = StT MaybeT
+                                              (StT (FilterT Response)
+-                                               (StT (ErrorT Response) a))}
++                                               (StT (ErrorT Response) a))
+     liftWith f = WebT $ liftWith $ \runError ->
+                           liftWith $ \runFilter ->
+                             liftWith $ \runMaybe ->
+-                              f $ liftM StWeb . runMaybe .
++                              f $ liftM id . runMaybe .
+                                                   runFilter .
+                                                     runError . unWebT
+-    restoreT = WebT . restoreT . restoreT . restoreT . liftM unStWeb
++    restoreT = WebT . restoreT . restoreT . restoreT . liftM id
+ 
+ instance MonadBaseControl b m => MonadBaseControl b (WebT m) where
+-    newtype StM (WebT m) a = StMWeb {unStMWeb :: ComposeSt WebT m a}
+-    liftBaseWith = defaultLiftBaseWith StMWeb
+-    restoreM     = defaultRestoreM     unStMWeb
++    type StM (WebT m) a = ComposeSt WebT m a
++    liftBaseWith = defaultLiftBaseWith
++    restoreM     = defaultRestoreM
+ 
+ -- | 'UnWebT' is almost exclusively used with 'mapServerPartT'. If you
+ -- are not using 'mapServerPartT' then you do not need to wrap your
