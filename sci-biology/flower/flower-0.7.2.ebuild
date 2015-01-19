@@ -7,7 +7,7 @@
 EAPI=5
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Analyze 454 flowgrams  (.SFF files)"
 HOMEPAGE="http://biohaskell.org/Applications/Flower"
@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 		>=dev-lang/ghc-6.10.1"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 	cabal_chdeps \
 		'binary == 0.4.*' 'binary >= 0.4 && <0.8'
 }
