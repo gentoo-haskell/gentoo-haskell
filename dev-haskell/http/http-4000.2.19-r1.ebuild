@@ -25,6 +25,7 @@ IUSE="conduit10 +network-uri"
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+    >=dev-haskell/old-time-1.0:=[profile] <dev-haskell/old-time-1.2=[profile?]
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.2.1.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
