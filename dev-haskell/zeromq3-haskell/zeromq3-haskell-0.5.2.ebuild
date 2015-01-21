@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 # needs a bit of porting to zeromq-4 as previous ebuild had
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/async:=[profile?]
@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	unknown-pkg-config/libzmq
+	=net-libs/zeromq-3*
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
