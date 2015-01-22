@@ -29,4 +29,7 @@
 		
 		* Early TLS support via the tls package
 	</longdescription>
+	<use>
+		<flag name="httpbin">Install client</flag>
+	</use>
 </pkgmetadata>
