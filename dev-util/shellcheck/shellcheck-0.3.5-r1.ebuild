@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,8 +21,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # hung
-
 RDEPEND="dev-haskell/json:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
@@ -32,14 +30,32 @@ RDEPEND="dev-haskell/json:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
+	app-text/pandoc
 	>=dev-haskell/cabal-1.8
 "
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	# workaround bug on ghc-7.8.3:
-	# > [5 of 6] Compiling ShellCheck.Analytics ( ShellCheck/Analytics.hs, dist/build/ShellCheck/Analytics.o )
-	# > <no location info>: stack overflow
-	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+src_compile() {
+	cabal_src_compile
+
+	# The cabal build system doesn't build the man page, this is
+	#
+	#   https://github.com/koalaman/shellcheck/issues/247
+	#
+	# The command to build it can be found in the Makefile from the
+	# project's v0.3.3 tag.
+	#
+	pandoc -s -t man "${PN}.1.md" -o "${PN}.1" || \
+		die 'failed to build man page'
+}
+
+src_test() {
+	# See bug #537500 for this beauty.
+	runghc Setup.hs test || die 'test suite failed'
+}
+
+src_install() {
+	cabal_src_install
+	doman "${PN}.1"
 }
