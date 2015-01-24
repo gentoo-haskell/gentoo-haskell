@@ -14,7 +14,8 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Shell script analysis tool"
 HOMEPAGE="http://www.shellcheck.net/"
-SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz
+	http://dev.gentoo.org/~mjo/distfiles/${PN}-man-${PV}.tar.xz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
@@ -30,25 +31,10 @@ RDEPEND="dev-haskell/json:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	app-text/pandoc
 	>=dev-haskell/cabal-1.8
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_compile() {
-	cabal_src_compile
-
-	# The cabal build system doesn't build the man page, this is
-	#
-	#   https://github.com/koalaman/shellcheck/issues/247
-	#
-	# The command to build it can be found in the Makefile from the
-	# project's v0.3.3 tag.
-	#
-	pandoc -s -t man "${PN}.1.md" -o "${PN}.1" || \
-		die 'failed to build man page'
-}
 
 src_test() {
 	# See bug #537500 for this beauty.
