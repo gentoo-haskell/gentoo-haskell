@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,7 +29,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-PATCHES=("${FILESDIR}/${PN}-2.16.0.0.7.10.1_rc1-ghc-7.10.patch")
+PATCHES=("${FILESDIR}/${PN}-2.16.0.0.7.10.1_rc1-ghc-7.10.patch"
+		 "${FILESDIR}/${PN}-2.16.0.0.7.10.1_rc1-hoogle.patch")
 
 src_prepare() {
 	base_src_prepare
