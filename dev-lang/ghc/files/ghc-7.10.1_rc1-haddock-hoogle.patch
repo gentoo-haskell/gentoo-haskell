@@ -1,0 +1,202 @@
+commit 8e06728afb0784128ab2df0be7a5d7a191d30ff4
+Author: Mateusz Kowalczyk <fuuzetsu@fuuzetsu.co.uk>
+Date:   Thu Jan 22 23:34:05 2015 +0000
+
+    --package-name and --package-version flags
+    
+    Used for --hoogle amongst other things. Now we need to teach cabal to
+    use it. The situation is still a bit sub-par because if the flags aren't
+    passed in, the crash will occur. Closes #353.
+
+diff --git a/haddock-api/src/Haddock.hs b/haddock-api/src/Haddock.hs
+index 915ad47..72c544e 100644
+--- a/haddock-api/src/Haddock.hs
++++ b/haddock-api/src/Haddock.hs
+@@ -25,6 +25,7 @@ module Haddock (
+   withGhc
+ ) where
+ 
++import Data.Version
+ import Haddock.Backends.Xhtml
+ import Haddock.Backends.Xhtml.Themes (getThemes)
+ import Haddock.Backends.LaTeX
+@@ -36,7 +37,6 @@ import Haddock.Version
+ import Haddock.InterfaceFile
+ import Haddock.Options
+ import Haddock.Utils
+-import Haddock.GhcUtils hiding (pretty)
+ 
+ import Control.Monad hiding (forM_)
+ import Data.Foldable (forM_)
+@@ -66,9 +66,9 @@ import GHC hiding (verbosity)
+ import Config
+ import DynFlags hiding (projectVersion, verbosity)
+ import StaticFlags (discardStaticFlags)
++import Packages
+ import Panic (handleGhcException)
+ import Module
+-import PackageConfig
+ import FastString
+ 
+ --------------------------------------------------------------------------------
+@@ -252,7 +252,7 @@ render dflags flags qual ifaces installedIfaces srcMap = do
+     pkgMod           = ifaceMod (head ifaces)
+     pkgKey            = modulePackageKey pkgMod
+     pkgStr           = Just (packageKeyString pkgKey)
+-    (pkgName,pkgVer) = modulePackageInfo dflags pkgMod
++    (pkgName,pkgVer) = modulePackageInfo dflags flags pkgMod
+ 
+     (srcBase, srcModule, srcEntity, srcLEntity) = sourceUrls flags
+     srcMap' = maybe srcMap (\path -> Map.insert pkgKey path srcMap) srcEntity
+@@ -299,6 +299,27 @@ render dflags flags qual ifaces installedIfaces srcMap = do
+     ppLaTeX title pkgStr visibleIfaces odir (fmap _doc prologue) opt_latex_style
+                   libDir
+ 
++-- | From GHC 7.10, this function has a potential to crash with a
++-- nasty message such as @expectJust getPackageDetails@ because
++-- package name and versions can no longer reliably be extracted in
++-- all cases: if the package is not installed yet then this info is no
++-- longer available. The @--package-name@ and @--package-version@
++-- Haddock flags allow the user to specify this information and it is
++-- returned here if present: if it is not present, the error will
++-- occur. Nasty but that's how it is for now. Potential TODO.
++modulePackageInfo :: DynFlags
++                  -> [Flag] -- ^ Haddock flags are checked as they may
++                            -- contain the package name or version
++                            -- provided by the user which we
++                            -- prioritise
++                  -> Module -> (PackageName, Data.Version.Version)
++modulePackageInfo dflags flags modu =
++  (fromMaybe (packageName pkg) (optPackageName flags),
++   fromMaybe (packageVersion pkg) (optPackageVersion flags))
++  where
++    pkg = getPackageDetails dflags (modulePackageKey modu)
++
++
+ -------------------------------------------------------------------------------
+ -- * Reading and dumping interface files
+ -------------------------------------------------------------------------------
+diff --git a/haddock-api/src/Haddock/GhcUtils.hs b/haddock-api/src/Haddock/GhcUtils.hs
+index 5aa9b81..416f5d7 100644
+--- a/haddock-api/src/Haddock/GhcUtils.hs
++++ b/haddock-api/src/Haddock/GhcUtils.hs
+@@ -16,18 +16,14 @@
+ module Haddock.GhcUtils where
+ 
+ 
+-import Data.Version
+ import Control.Applicative  ( (<$>) )
+ import Control.Arrow
+-import Data.Foldable hiding (concatMap)
+ import Data.Function
+-import Data.Traversable
+ 
+ import Exception
+ import Outputable
+ import Name
+ import Lexeme
+-import Packages
+ import Module
+ import RdrName (GlobalRdrEnv)
+ import GhcMonad (withSession)
+@@ -40,15 +36,6 @@ import Class
+ moduleString :: Module -> String
+ moduleString = moduleNameString . moduleName
+ 
+-
+--- return the (name,version) of the package
+-modulePackageInfo :: DynFlags -> Module -> (PackageName, Version)
+-modulePackageInfo dflags modu =
+-    (packageName pkg, packageVersion pkg)
+-  where
+-    pkg = getPackageDetails dflags (modulePackageKey modu)
+-
+-
+ lookupLoadedHomeModuleGRE  :: GhcMonad m => ModuleName -> m (Maybe GlobalRdrEnv)
+ lookupLoadedHomeModuleGRE mod_name = withSession $ \hsc_env ->
+   case lookupUFM (hsc_HPT hsc_env) mod_name of
+@@ -288,4 +275,3 @@ setStubDir    f d = d{ stubDir    = Just f, includePaths = f : includePaths d }
+   -- -stubdir D adds an implicit -I D, so that gcc can find the _stub.h file
+   -- \#included from the .hc file when compiling with -fvia-C.
+ setOutputDir  f = setObjectDir f . setHiDir f . setStubDir f
+-
+diff --git a/haddock-api/src/Haddock/Options.hs b/haddock-api/src/Haddock/Options.hs
+index 3fa6397..e847333 100644
+--- a/haddock-api/src/Haddock/Options.hs
++++ b/haddock-api/src/Haddock/Options.hs
+@@ -28,15 +28,21 @@ module Haddock.Options (
+   qualification,
+   verbosity,
+   ghcFlags,
+-  readIfaceArgs
++  readIfaceArgs,
++  optPackageName,
++  optPackageVersion
+ ) where
+ 
+ 
+-import Distribution.Verbosity
+-import Haddock.Utils
+-import Haddock.Types
+-import System.Console.GetOpt
+ import qualified Data.Char as Char
++import           Data.Version
++import           Distribution.Verbosity
++import           FastString
++import           Haddock.Types
++import           Haddock.Utils
++import           Packages
++import           System.Console.GetOpt
++import qualified Text.ParserCombinators.ReadP as RP
+ 
+ 
+ data Flag
+@@ -83,7 +89,9 @@ data Flag
+   | Flag_Qualification String
+   | Flag_PrettyHtml
+   | Flag_NoPrintMissingDocs
+-  deriving (Eq)
++  | Flag_PackageName String
++  | Flag_PackageVersion String
++  deriving (Eq, Show)
+ 
+ 
+ options :: Bool -> [OptDescr Flag]
+@@ -107,7 +115,7 @@ options backwardsCompat =
+     Option []  ["latex-style"]  (ReqArg Flag_LaTeXStyle "FILE") "provide your own LaTeX style in FILE",
+     Option ['U'] ["use-unicode"] (NoArg Flag_UseUnicode) "use Unicode in HTML output",
+     Option []  ["hoogle"]     (NoArg Flag_Hoogle)
+-      "output for Hoogle",
++      "output for Hoogle; you may want --package-name and --package-version too",
+     Option []  ["source-base"]   (ReqArg Flag_SourceBaseURL "URL")
+       "URL for a source code link on the contents\nand index pages",
+     Option ['s'] (if backwardsCompat then ["source", "source-module"] else ["source-module"])
+@@ -171,7 +179,11 @@ options backwardsCompat =
+     Option [] ["pretty-html"] (NoArg Flag_PrettyHtml)
+       "generate html with newlines and indenting (for use with --html)",
+     Option [] ["no-print-missing-docs"] (NoArg Flag_NoPrintMissingDocs)
+-      "don't print information about any undocumented entities"
++      "don't print information about any undocumented entities",
++    Option [] ["package-name"] (ReqArg Flag_PackageName "NAME")
++      "name of the package being documented",
++    Option [] ["package-version"] (ReqArg Flag_PackageVersion "VERSION")
++      "version of the package being documented in usual x.y.z.w format"
+   ]
+ 
+ 
+@@ -192,6 +204,15 @@ parseHaddockOpts params =
+       usage <- getUsage
+       throwE (concat errors ++ usage)
+ 
++optPackageVersion :: [Flag] -> Maybe Data.Version.Version
++optPackageVersion flags =
++  let ver = optLast [ v | Flag_PackageVersion v <- flags ]
++  in ver >>= fmap fst . optLast . RP.readP_to_S parseVersion
++
++optPackageName :: [Flag] -> Maybe PackageName
++optPackageName flags =
++  optLast [ PackageName $ mkFastString n | Flag_PackageName n <- flags ]
++
+ 
+ optTitle :: [Flag] -> Maybe String
+ optTitle flags =

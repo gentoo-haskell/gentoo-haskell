@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -396,6 +396,13 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		epatch "${FILESDIR}"/${P}-boot.patch
+		pushd utils/haddock || die
+		epatch "${FILESDIR}"/${P}-haddock-hoogle.patch
+		popd
+		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
+		# The libraries/dist-haddock/index.html is still broken though, adding --package-name
+		# and --package-version does not help, it is fixed in src_install below.
+		epatch "${FILESDIR}"/${P}-gen_contents_index.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -491,6 +498,23 @@ src_compile() {
 		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
 		# 3. and then all the rest
 		emake all
+		# 4. this is to work around haddock --gen-index is broken
+		# We need to change <a href="Data-List.html">Data.List</a> to
+		# <a href="base-4.8.0.0/Data-List.html">Data.List</a>
+		if use doc; then
+			pushd libraries || die
+			for i in $(find . -regex './[-_A-Za-z0-9]*/dist-install/doc/html/[-_A-Za-z0-9]*/[A-Z][-_A-Za-z0-9]*.html' -print)
+			do
+				local j=${i:2}
+				local pkg="${j%%/*}"
+				local f="${j##*/}"
+				if [[ "${f}" =~ ^[A-Z].* ]]; then
+					local version="$(grep -i ^version: ${pkg}/*.cabal | cut -d: -f 2 | sed -e 's@[ \t]*@@')"
+					sed -e "s@\"\(${f}\)\"@\"${pkg}-${version}/\1\"@g" -i dist-haddock/index.html || die
+				fi
+			done
+			popd
+		fi
 	fi # ! use binary
 }
 
