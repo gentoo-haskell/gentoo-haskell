@@ -1,0 +1,36 @@
+commit 6ccb3e139d0599b248ec33b5097bdee6b78c7655
+Author: Alexander Vershilov <alexander.vershilov@gmail.com>
+Date:   Sun Jan 25 23:17:04 2015 +0300
+
+    Fix compatibility with cabal-1.22
+
+diff --git a/Src/Main.hs b/Src/Main.hs
+index c13a622..3d0e7eb 100644
+--- a/Src/Main.hs
++++ b/Src/Main.hs
+@@ -37,8 +37,10 @@ import Database
+ 
+ import qualified Text.PrettyPrint.ANSI.Leijen as PP
+ 
++#if !MIN_VERSION_Cabal(1,22,0)
+ unPackageName :: PackageName -> String
+ unPackageName (PackageName n) = n
++#endif
+ 
+ dependencyName :: Dependency -> PackageName
+ dependencyName (Dependency n _) = n
+@@ -46,8 +48,14 @@ dependencyName (Dependency n _) = n
+ dependencyConstraints :: Dependency -> VersionRange
+ dependencyConstraints (Dependency _ v) = v
+ 
++#if MIN_VERSION_Cabal(1,22,0)
++finPkgDesc :: GenericPackageDescription -> Either [Dependency] (PackageDescription, FlagAssignment)
++finPkgDesc = finalizePackageDescription [] (const True) buildPlatform compilerInfo []
++  where compilerInfo = unknownCompilerInfo (CompilerId buildCompilerFlavor (Version []{-[7, 6, 2]-} [])) NoAbiTag
++#else
+ finPkgDesc :: GenericPackageDescription -> Either [Dependency] (PackageDescription, FlagAssignment)
+ finPkgDesc = finalizePackageDescription [] (const True) buildPlatform (CompilerId buildCompilerFlavor (Version []{-[7, 6, 2]-} [])) []
++#endif
+ 
+ showVerconstr c = render $ Distribution.Text.disp c
+ 

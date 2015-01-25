@@ -21,10 +21,14 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	dev-haskell/ansi-wl-pprint
-	>=dev-haskell/cabal-1.8 <dev-haskell/cabal-1.22
+	>=dev-haskell/cabal-1.8
 	dev-haskell/mtl
 	>=dev-haskell/optparse-applicative-0.11
 	>=dev-haskell/tar-0.4.0
 	dev-haskell/utf8-string
 	>=dev-lang/ghc-7.4.1
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-cabal-compat.patch
+}
