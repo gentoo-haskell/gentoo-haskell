@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="use-mock-network"
+IUSE=""
+#hackport: -f-use-mock-network
 
 RDEPEND=">=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
@@ -25,19 +26,5 @@ RDEPEND=">=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/network-transport-tests-0.2.1.0 <dev-haskell/network-transport-tests-0.3
-		use-mock-network? ( dev-haskell/data-accessor-transformers
-					dev-haskell/hunit
-					dev-haskell/lockfree-queue
-					dev-haskell/mtl
-					dev-haskell/quickcheck
-					dev-haskell/test-framework
-					dev-haskell/test-framework-hunit
-					dev-haskell/test-framework-quickcheck2
-					dev-haskell/transformers ) )
+	test? ( >=dev-haskell/network-transport-tests-0.2.1.0 <dev-haskell/network-transport-tests-0.3 )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag use-mock-network use-mock-network)
-}
