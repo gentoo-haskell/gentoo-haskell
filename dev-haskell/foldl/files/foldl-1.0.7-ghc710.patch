@@ -1,0 +1,30 @@
+From 981e8046cd132a18513eba0142e200c07075ed60 Mon Sep 17 00:00:00 2001
+From: Michael Thompson <what_is_it_to_do_anything@yahoo.com>
+Date: Wed, 7 Jan 2015 00:42:00 -0500
+Subject: [PATCH] Update for ghc-7.10
+
+The new Prelude includes mconcat and foldMap, so the export list was declared ambiguous. Fortunately since there is no ambiguous use within the file, this expedient
+
+    , Control.Foldl.mconcat
+    , Control.Foldl.foldMap
+
+seems to work fine.
+---
+ src/Control/Foldl.hs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Control/Foldl.hs b/src/Control/Foldl.hs
+index e61e414..f0491cc 100644
+--- a/src/Control/Foldl.hs
++++ b/src/Control/Foldl.hs
+@@ -39,8 +39,8 @@ module Control.Foldl (
+     , scan
+ 
+     -- * Folds
+-    , mconcat
+-    , foldMap
++    , Control.Foldl.mconcat
++    , Control.Foldl.foldMap
+     , head
+     , last
+     , lastDef
