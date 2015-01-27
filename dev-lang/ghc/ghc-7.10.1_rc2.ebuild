@@ -398,7 +398,6 @@ src_prepare() {
 		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
 		# The libraries/dist-haddock/index.html is still broken though, adding --package-name
 		# and --package-version does not help, it is fixed in src_install below.
-		epatch "${FILESDIR}"/${P}-gen_contents_index.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
