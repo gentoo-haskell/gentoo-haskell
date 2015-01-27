@@ -395,10 +395,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		epatch "${FILESDIR}"/${P}-boot.patch
-		pushd utils/haddock || die
-		epatch "${FILESDIR}"/${P}-haddock-hoogle.patch
-		popd
 		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
 		# The libraries/dist-haddock/index.html is still broken though, adding --package-name
 		# and --package-version does not help, it is fixed in src_install below.
