@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">dev-db/postgresql-base-7
+RDEPEND=">dev-db/postgresql-7
 		=dev-haskell/haskelldb-2*:=[profile?]
 		=dev-haskell/haskelldb-hdbc-2*:=[profile?]
 		=dev-haskell/hdbc-2*:=[profile?]
