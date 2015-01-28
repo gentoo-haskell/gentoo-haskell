@@ -1,0 +1,28 @@
+commit d356d5894c1bb2aa5a4407c1deade0c7d6edc5b3
+Author: Alexander Vershilov <alexander.vershilov@gmail.com>
+Date:   Wed Jan 28 00:36:23 2015 +0300
+
+    Provide compatibility with ghc-7.10
+
+diff --git a/src/Control/Eff/Cut.hs b/src/Control/Eff/Cut.hs
+index bbaa1aa..4a6cd88 100644
+--- a/src/Control/Eff/Cut.hs
++++ b/src/Control/Eff/Cut.hs
+@@ -2,6 +2,8 @@
+ {-# LANGUAGE PatternGuards #-}
+ {-# LANGUAGE DeriveDataTypeable #-}
+ {-# LANGUAGE FlexibleContexts #-}
++{-# LANGUAGE TypeFamilies #-}
++{-# LANGUAGE ScopedTypeVariables #-}
+ -- | An example of non-trivial interaction of effects, handling of two
+ -- effects together
+ -- Non-determinism with control (cut)
+@@ -65,7 +67,7 @@ cutfalse = throwExc CutFalse
+ -- of its argument computation. When it encounteres a cutfalse request,
+ -- it discards the remaining choicepoints.
+ -- It completely handles CutFalse effects but not non-determinism.
+-call :: Member Choose r => Eff (Exc CutFalse :> r) a -> Eff r a
++call :: forall r a . Member Choose r => Eff (Exc CutFalse :> r) a -> Eff r a
+ call = loop [] where
+  loop jq = freeMap
+            (\x -> return x `mplus'` next jq)          -- (C2)

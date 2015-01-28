@@ -32,3 +32,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc710.patch
+}
