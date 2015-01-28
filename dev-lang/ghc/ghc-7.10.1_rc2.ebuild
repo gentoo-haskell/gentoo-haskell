@@ -396,8 +396,8 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
-		# The libraries/dist-haddock/index.html is still broken though, adding --package-name
-		# and --package-version does not help, it is fixed in src_install below.
+		sed -e 's@\(for REPO in .*\)@\1 base integer-gmp integer-gmp2 integer-simple template-haskell@' \
+			-i libraries/gen_contents_index || die
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
