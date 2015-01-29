@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+#hackport: -f-openblas
 
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/random:=[profile?]
@@ -25,7 +26,6 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/blas
-	virtual/cblas
 	virtual/lapack
 "
 DEPEND="${RDEPEND}

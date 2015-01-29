@@ -17,12 +17,4 @@
 		
 		- &quot;Numeric.LinearAlgebra&quot;: everything + instances of standard Haskell numeric classes
 	</longdescription>
-<use>
-  <flag name='dd'>svd = zgesdd</flag>
-  <flag name='mkl'>Link with Intel's MKL optimized libraries.</flag>
-  <flag name='unsafe'>Compile the library with bound checking disabled.</flag>
-  <flag name='finit'>Force FPU initialization in foreing calls.</flag>
-  <flag name='debugfpu'>Check FPU stack.</flag>
-  <flag name='debugnan'>Check NaN.</flag>
-</use>
 </pkgmetadata>
