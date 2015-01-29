@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,4 +22,4 @@ RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6"
 
-CABAL_CORE_LIB_GHC_PV="7.8.3 7.8.3.20141119 7.8.4 7.10.0.20141222"
+CABAL_CORE_LIB_GHC_PV="7.8.3 7.8.3.20141119 7.8.4 7.10.0.20141222 7.10.0.20150123"
