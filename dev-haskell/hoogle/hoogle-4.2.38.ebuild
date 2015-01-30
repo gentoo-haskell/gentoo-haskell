@@ -52,7 +52,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-cabal-1.22.patch
 	if use localdb; then
 		sed -e "s@\(return $ x ++ \)\(\[d </> \"databases\"\]\)@\1[\"${ROOT}var/lib/hoogle/databases/\"\] ++ \2@" \
 			-i "${S}/src/CmdLine/All.hs" || die "Could not add localdb support to hoogle"
