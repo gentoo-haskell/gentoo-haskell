@@ -1,0 +1,39 @@
+--- uu-parsinglib-2.8.1.1-orig/src/Text/ParserCombinators/UU/BasicInstances.hs	2013-11-03 01:58:34.000000000 +1100
++++ uu-parsinglib-2.8.1.1/src/Text/ParserCombinators/UU/BasicInstances.hs	2015-01-30 19:54:13.168429048 +1100
+@@ -89,10 +89,10 @@
+                        }
+ 
+ -- | A `Parser` is a parser that is prepared to accept "Data.Listlike" input; hence we can deal with @String@'s, @ByteString@'s, etc.
+-type Parser      a    = (IsLocationUpdatedBy loc Char, LL.ListLike state Char) => P (Str Char state loc) a
++type Parser      a    = forall loc. forall state. (IsLocationUpdatedBy loc Char, LL.ListLike state Char) => P (Str Char state loc) a
+ 
+ -- | A @`ParserTrafo` a b@ maps a @`Parser` a@ onto a @`Parser` b@.
+-type ParserTrafo a  b = (IsLocationUpdatedBy loc Char, LL.ListLike state Char) => P (Str Char state loc) a ->  P (Str Char state loc) b
++type ParserTrafo a  b = forall loc. forall state. (IsLocationUpdatedBy loc Char, LL.ListLike state Char) => P (Str Char state loc) a ->  P (Str Char state loc) b
+ 
+ -- |  `createStr` initialises the input stream with the input data and the initial position. There are no error messages yet.
+ createStr :: LL.ListLike s a => loc -> s -> Str a s loc
+--- uu-parsinglib-2.8.1.1-orig/src/Text/ParserCombinators/UU/Core.hs	2013-11-03 01:58:34.000000000 +1100
++++ uu-parsinglib-2.8.1.1/src/Text/ParserCombinators/UU/Core.hs	2015-01-30 19:51:36.439596121 +1100
+@@ -3,7 +3,8 @@
+               MultiParamTypeClasses,
+               FunctionalDependencies,
+               FlexibleInstances,  
+-              KindSignatures #-}
++              KindSignatures,
++              CPP #-}
+ -- | The module `Core` contains the basic functionality of the parser library.
+ --   It defines the types and implementations of the elementary  parsers and  recognisers involved.  
+ 
+@@ -54,7 +55,11 @@
+ import Control.Monad 
+ import Data.Char
+ import Debug.Trace
++#if MIN_VERSION_base(4,8,0)
++import Prelude hiding ((.), traverse)
++#else
+ import Prelude hiding ((.))
++#endif
+ import Data.Maybe
+ 
+ f . g = \x ->  f ( g x)
