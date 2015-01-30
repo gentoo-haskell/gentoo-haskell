@@ -1,0 +1,133 @@
+commit 600476446a0ddabb02b5f490301894b656bec6c5
+Author: RyanGlScott <ryan.gl.scott@ku.edu>
+Date:   Sat Jan 3 20:39:13 2015 -0600
+
+    Fix building with base-4.8.0.0
+
+diff --git a/src/Text/Trifecta/Delta.hs b/src/Text/Trifecta/Delta.hs
+index 68156bd..abebed2 100644
+--- a/src/Text/Trifecta/Delta.hs
++++ b/src/Text/Trifecta/Delta.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DeriveDataTypeable, DeriveGeneric #-}
++{-# LANGUAGE CPP, DeriveDataTypeable, DeriveGeneric #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Text.Trifecta.Delta
+@@ -26,7 +26,9 @@ import Data.Hashable
+ import Data.Int
+ import Data.Data
+ import Data.Word
++#if !(MIN_VERSION_base(4,8,0))
+ import Data.Foldable
++#endif
+ import Data.Function (on)
+ import Data.FingerTree hiding (empty)
+ import Data.ByteString as Strict hiding (empty)
+diff --git a/src/Text/Trifecta/Util/Array.hs b/src/Text/Trifecta/Util/Array.hs
+index e58f999..63803c5 100644
+--- a/src/Text/Trifecta/Util/Array.hs
++++ b/src/Text/Trifecta/Util/Array.hs
+@@ -1,4 +1,8 @@
+ {-# LANGUAGE BangPatterns, CPP, MagicHash, Rank2Types, UnboxedTuples #-}
++
++#ifndef MIN_VERSION_base
++#define MIN_VERSION_base(x,y,z) 1
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Text.Trifecta.Util.Array
+@@ -53,7 +57,9 @@ module Text.Trifecta.Util.Array
+   ) where
+ 
+ import qualified Data.Traversable as Traversable
++#if !(MIN_VERSION_base(4,8,0))
+ import Control.Applicative (Applicative)
++#endif
+ import Control.DeepSeq
+ import Control.Monad.ST
+ import GHC.Exts (
+@@ -71,7 +77,12 @@ import GHC.Exts (
+       unsafeFreezeArray#,
+       writeArray#)
+ import GHC.ST (ST(..))
+-import Prelude hiding (filter, foldr, length, map, read)
++import Prelude hiding
++  ( filter, foldr, length, map, read
++#if MIN_VERSION_base(4,8,0)
++  , traverse
++#endif
++  )
+ 
+ ------------------------------------------------------------------------
+ 
+diff --git a/src/Text/Trifecta/Util/IntervalMap.hs b/src/Text/Trifecta/Util/IntervalMap.hs
+index b1cf6f3..1b0fc9f 100644
+--- a/src/Text/Trifecta/Util/IntervalMap.hs
++++ b/src/Text/Trifecta/Util/IntervalMap.hs
+@@ -1,6 +1,11 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE FlexibleInstances #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE TypeFamilies #-}
++
++#ifndef MIN_VERSION_base
++#define MIN_VERSION_base(x,y,z) 1
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Text.Trifecta.Util.IntervalMap
+@@ -51,7 +56,9 @@ import Control.Applicative hiding (empty)
+ import Control.Lens hiding ((<|),(|>))
+ import qualified Data.FingerTree as FT
+ import Data.FingerTree (FingerTree, Measured(..), ViewL(..), (<|), (><))
++#if !(MIN_VERSION_base(4,8,0))
+ import Data.Foldable (Foldable(foldMap))
++#endif
+ import Data.Semigroup
+ import Data.Semigroup.Reducer
+ import Data.Semigroup.Union
+diff --git a/src/Text/Trifecta/Util/It.hs b/src/Text/Trifecta/Util/It.hs
+index 6c87082..f649e0c 100644
+--- a/src/Text/Trifecta/Util/It.hs
++++ b/src/Text/Trifecta/Util/It.hs
+@@ -1,8 +1,13 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE BangPatterns #-}
+ {-# LANGUAGE MagicHash #-}
+ {-# LANGUAGE UnboxedTuples #-}
+ {-# LANGUAGE TypeFamilies #-}
++
++#ifndef MIN_VERSION_base
++#define MIN_VERSION_base(x,y,z) 1
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Text.Trifecta.Util.It
+@@ -26,10 +31,11 @@ module Text.Trifecta.Util.It
+   , sliceIt
+   ) where
+ 
++#if !(MIN_VERSION_base(4,8,0))
+ import Control.Applicative
++#endif
+ import Control.Comonad
+ import Control.Monad
+-import Data.Semigroup
+ import Data.ByteString as Strict
+ import Data.ByteString.Lazy as Lazy
+ import Text.Trifecta.Rope
+diff --git a/trifecta.cabal b/trifecta.cabal
+index 44cbab9..fb5a43e 100644
+--- a/trifecta.cabal
++++ b/trifecta.cabal
+@@ -52,7 +52,7 @@ library
+     charset              >= 0.3.5.1 && < 1,
+     comonad              >= 4       && < 5,
+     containers           >= 0.3     && < 0.6,
+-    deepseq              >= 1.2.0.1 && < 1.4,
++    deepseq              >= 1.2.0.1 && < 1.5,
+     fingertree           >= 0.1     && < 0.2,
+     ghc-prim,
+     hashable             >= 1.2.1   && < 1.3,

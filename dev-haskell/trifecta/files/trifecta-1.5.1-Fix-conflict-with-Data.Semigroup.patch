@@ -1,0 +1,26 @@
+commit 9289f5a0e72a9f9b973e69aa66fa8c23dfbcdfec
+Author: RyanGlScott <ryan.gl.scott@ku.edu>
+Date:   Sat Jan 3 20:47:54 2015 -0600
+
+    Fix conflict with Data.Semigroup
+
+diff --git a/src/Text/Trifecta/Util/It.hs b/src/Text/Trifecta/Util/It.hs
+index f649e0c..aff7b80 100644
+--- a/src/Text/Trifecta/Util/It.hs
++++ b/src/Text/Trifecta/Util/It.hs
+@@ -38,10 +38,15 @@ import Control.Comonad
+ import Control.Monad
+ import Data.ByteString as Strict
+ import Data.ByteString.Lazy as Lazy
++import Data.Semigroup
+ import Text.Trifecta.Rope
+ import Text.Trifecta.Delta
+ import Text.Trifecta.Util.Combinators as Util
+ 
++#if MIN_VERSION_base(4,8,0)
++import Prelude hiding (mempty)
++#endif
++
+ data It r a
+   = Pure a
+   | It a (r -> It r a)
