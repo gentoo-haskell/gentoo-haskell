@@ -1,0 +1,47 @@
+commit 9310e8c4b831a6c58fb1f4d3a684cd5459ab597f
+Author: Alexander Vershilov <alexander.vershilov@gmail.com>
+Date:   Fri Jan 30 14:40:25 2015 +0300
+
+    Support compability with GHC-7.10
+
+diff --git a/GHC/RTS/EventParserUtils.hs b/GHC/RTS/EventParserUtils.hs
+index 41546b6..c83fcfb 100644
+--- a/GHC/RTS/EventParserUtils.hs
++++ b/GHC/RTS/EventParserUtils.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE CPP #-}
++{-# LANGUAGE FlexibleContexts #-}
+ {-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+ 
+ module GHC.RTS.EventParserUtils (
+diff --git a/GhcEvents.hs b/GhcEvents.hs
+index 9f1d5b4..34649cd 100644
+--- a/GhcEvents.hs
++++ b/GhcEvents.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ module Main where
+ 
+ import GHC.RTS.Events
+@@ -211,7 +212,9 @@ readLogOrDie file = do
+         Left s    -> die ("Failed to parse " ++ file ++ ": " ++ s)
+         Right log -> return log
+ 
++#if ! MIN_VERSION_base(4,8,0)
+ die s = do hPutStrLn stderr s; exitWith (ExitFailure 1)
++#endif
+ 
+ showValidate :: (s -> String) -> (i -> String) -> Either (s, i) s -> String
+ showValidate showState showInput (Left (state, input)) =
+diff --git a/ghc-events.cabal b/ghc-events.cabal
+index 54a0001..39e40e9 100644
+--- a/ghc-events.cabal
++++ b/ghc-events.cabal
+@@ -46,6 +46,7 @@ library
+                     GHC.RTS.EventTypes
+   include-dirs:     GHC/RTS
+   extensions:	    RecordWildCards, NamedFieldPuns, BangPatterns, PatternGuards
++  other-extensions: FlexibleContexts, CPP
+ 
+ executable ghc-events
+   main-is:          GhcEvents.hs

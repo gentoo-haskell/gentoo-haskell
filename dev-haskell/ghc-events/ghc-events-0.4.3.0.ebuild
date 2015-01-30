@@ -29,3 +29,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/binary
 		dev-haskell/mtl )
 "
+src_prepare() {
+	epatch ${FILESDIR}/${P}-ghc710.patch
+}
