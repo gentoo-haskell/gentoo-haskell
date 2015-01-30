@@ -1,0 +1,17 @@
+# HG changeset patch
+# User Gabor Greif <ggreif@gmail.com>
+# Date 1414682381 0
+# Branch ggreif/update-for-ghc-head-v79-1414682378929
+# Node ID 6cfedec9e6624165c14ae7d0b4bb3fbf8d76b0ac
+# Parent  30212c41bcfc61e3efc2430a31312c237aa5d212
+Update for GHC HEAD (v7.9)
+
+diff --git a/Data/ByteString/Search/Internal/Utils.hs b/Data/ByteString/Search/Internal/Utils.hs
+--- a/Data/ByteString/Search/Internal/Utils.hs
++++ b/Data/ByteString/Search/Internal/Utils.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE BangPatterns #-}
++{-# LANGUAGE BangPatterns, FlexibleContexts #-}
+ {-# OPTIONS_HADDOCK hide, prune #-}
+ -- |
+ -- Module         : Data.ByteString.Search.Internal.Utils

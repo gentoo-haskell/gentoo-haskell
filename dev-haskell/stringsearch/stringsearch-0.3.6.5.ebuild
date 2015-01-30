@@ -23,3 +23,7 @@ RDEPEND=">=dev-lang/ghc-6.10.4:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc710.patch
+}
