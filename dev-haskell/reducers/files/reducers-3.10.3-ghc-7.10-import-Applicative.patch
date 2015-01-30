@@ -1,0 +1,20 @@
+commit 2f0a6c9fcbf6357a1a1f685051f8ecf1d81a147e
+Author: RyanGlScott <ryan.gl.scott@ku.edu>
+Date:   Sat Jan 3 20:33:24 2015 -0600
+
+    Import Applicative
+
+diff --git a/src/Data/Semigroup/MonadPlus.hs b/src/Data/Semigroup/MonadPlus.hs
+index f0c1931..6ba4acc 100644
+--- a/src/Data/Semigroup/MonadPlus.hs
++++ b/src/Data/Semigroup/MonadPlus.hs
+@@ -27,7 +27,7 @@ module Data.Semigroup.MonadPlus
+ import Control.Monad (MonadPlus(..))
+ import Control.Applicative (Alternative(..))
+ #if !(MIN_VERSION_base(4,8,0))
+-import Control.Applicative (Alternative(..))
++import Control.Applicative (Applicative(..))
+ import Data.Monoid (Monoid(..))
+ #endif
+ import Data.Semigroup (Semigroup(..))
+
