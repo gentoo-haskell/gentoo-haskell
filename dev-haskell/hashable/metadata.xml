@@ -9,7 +9,4 @@
 		structures.  The package provides instances for
 		basic types and a way to combine hash values.
 	</longdescription>
-	<use>
-		<flag name="sse4_1">Enable optimization for SSE4_1 capable processors (Intel Core 2 Penryn and later chips)</flag>
-	</use>
 </pkgmetadata>

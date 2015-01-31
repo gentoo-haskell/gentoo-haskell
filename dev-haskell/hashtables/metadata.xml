@@ -102,8 +102,6 @@
 	<use>
 		<flag name="bounds-checking">if on, use bounds-checking array accesses</flag>
 		<flag name="portable">if on, use only pure Haskell code and no GHC extensions.</flag>
-		<flag name="sse4_1">Enable optimization for SSE4_1 capable processors (Intel Core 2 Penryn and later chips)</flag>
-		<flag name="sse4_2">Enables SSE4.2 optimizations: Nehalem-based Intel Core i7 or later.</flag>
 		<flag name="unsafe-tricks">turn on unsafe GHC tricks</flag>
 	</use>
 </pkgmetadata>
