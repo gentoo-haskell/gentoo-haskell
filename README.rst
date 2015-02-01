@@ -15,20 +15,20 @@ likely need to keyword everything in it::
     # and the overlay configuration itself:
     layman -a haskell
     # and unmask unstable versions for your arch:
-    echo "*/*::gentoo-haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
+    echo "*/*::haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
 
 And here is the trick to speed up metadata resolution a bit.
 If you happen to use ``eix-sync`` for rsyncs you might
 like the following ``/etc/eix-sync.conf``::
 
     *
-    @egencache --jobs="$(($(nproc) + 1))" --repo=gentoo-haskell --update --update-use-local-desc
+    @egencache --jobs="$(($(nproc) + 1))" --repo=haskell --update --update-use-local-desc
 
 It basically means:
 
 - sync overlays in layman list before the main tree sync
 
-- generate metadata for gentoo-haskell repo after main
+- generate metadata for haskell repo after main
   tree sync is done, using N+1 cores
 
 Getting involved
