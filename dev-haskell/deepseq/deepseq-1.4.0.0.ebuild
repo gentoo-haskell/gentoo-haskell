@@ -27,4 +27,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
-CABAL_CORE_LIB_GHC_PV="7.10.0.2014*"
+CABAL_CORE_LIB_GHC_PV="7.10.* 7.11.*"
