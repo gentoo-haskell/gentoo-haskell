@@ -25,7 +25,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
-	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.2:=[profile?]
+	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
@@ -56,6 +56,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lrucache        >= 1.1.1  && < 1.2'\
+		'lrucache        >= 1.1.1  && < 1.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
