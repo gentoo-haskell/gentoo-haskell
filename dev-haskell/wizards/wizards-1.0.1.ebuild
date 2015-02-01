@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/control-monad-free-0.5:=[profile?] <dev-haskell/control-monad-free-0.6:=[profile?]
+RDEPEND=">=dev-haskell/control-monad-free-0.5:=[profile?] <dev-haskell/control-monad-free-0.7:=[profile?]
 	>=dev-haskell/haskeline-0.6:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/transformers-0.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -30,5 +30,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'mtl >= 2.0 && < 2.2, transformers >= 0.1 && < 0.4' \
-		'mtl >= 2.0 && < 2.3, transformers >= 0.1 && < 0.5'
+		'mtl >= 2.0 && < 2.3, transformers >= 0.1 && < 0.5' \
+		'control-monad-free ==0.5.*' 'control-monad-free >= 0.5 && < 0.7'
 }
