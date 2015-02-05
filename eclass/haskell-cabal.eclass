@@ -455,10 +455,21 @@ cabal-pkg() {
 # However portage still records the dependency and we can upgrade the package
 # to a later one that's not included with ghc.
 # You can also put a space separated list, eg CABAL_CORE_LIB_GHC_PV="6.6 6.6.1".
+# Those versions are taken as-is from ghc `--numeric-version`.
+# Package manager versions are also supported:
+#     CABAL_CORE_LIB_GHC_PV="7.10.* PM:7.8.4-r1".
 cabal-is-dummy-lib() {
+	local bin_ghc_version=$(ghc-version)
+	local pm_ghc_p=$(best_version dev-lang/ghc)
+	local pm_ghc_version version
+
+	pm_ghc_version=PM:${pm_ghc_p#dev-lang/ghc-}
+
 	for version in ${CABAL_CORE_LIB_GHC_PV[*]}; do
-		[[ "$(ghc-version)" == ${version} ]] && return 0
+		[[ "${bin_ghc_version}" == ${version} ]] && return 0
+		[[ "${pm_ghc_version}"  == ${version} ]] && return 0
 	done
+
 	return 1
 }
 
