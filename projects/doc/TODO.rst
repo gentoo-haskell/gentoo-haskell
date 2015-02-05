@@ -19,6 +19,7 @@ Perpetual TODO
   - ``git grep PATCHES``
   - ``git grep epatch``
   - ``git grep -E '\<sed\>'``
+  - ``git grep cabal_chdeps``
 
 - [moderate] Some packages have their testuites, but ebuilds don't utilize it or
   have tests blocked. Blocked tests are easy to find with ``git grep RESTRICT``.
@@ -46,6 +47,6 @@ Perpetual TODO
 Speculative TODO
 ================
 
-- SLOT libs
+- SLOT libs (i personally think it's a worthless goal)
 - SLOT ghc (probly not possible with current portage)
 - eclectic/haskell-config (related to SLOTting ghc & libs)
