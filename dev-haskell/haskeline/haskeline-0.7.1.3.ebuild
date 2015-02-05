@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16
 "
 
+CABAL_CORE_LIB_GHC_PV="PM:7.8.4-r1"
+
 src_prepare() {
 	cabal_chdeps \
 		'base >=4.3 && < 4.8' 'base >=4.3'
