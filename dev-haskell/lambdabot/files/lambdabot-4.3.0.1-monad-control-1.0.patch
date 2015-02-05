@@ -1,0 +1,95 @@
+diff --git a/lambdabot.cabal b/lambdabot.cabal
+index 1ee38d1..1433bc2 100644
+--- a/lambdabot.cabal
++++ b/lambdabot.cabal
+@@ -172,7 +172,7 @@ library
+                         HTTP                    >= 4000,
+                         lifted-base             >= 0.2,
+                         misfortune              >= 0.1,
+-                        monad-control           >= 0.3,
++                        monad-control           >= 1.0,
+                         mtl                     >= 2,
+                         network                 >= 2.3.0.13, network-uri,
+                         oeis                    >= 0.3.1,
+diff --git a/src/Lambdabot/Command.hs b/src/Lambdabot/Command.hs
+index 4d64e96..3b7a889 100644
+--- a/src/Lambdabot/Command.hs
++++ b/src/Lambdabot/Command.hs
+@@ -57,17 +57,17 @@ instance MonadBase b m => MonadBase b (Cmd m) where
+ instance MonadTrans Cmd where
+     lift = Cmd . lift . lift
+ instance MonadTransControl Cmd where
+-    newtype StT Cmd a = StCmd {unStCmd :: (a, [String])}
++    type StT Cmd a = (a, [String])
+     liftWith f = do
+         r <- Cmd ask
+-        lift $ f $ \t -> liftM StCmd (runWriterT (runReaderT (unCmd t) r))
+-    restoreT = Cmd . lift . WriterT . liftM unStCmd
++        lift $ f $ \t -> runWriterT (runReaderT (unCmd t) r)
++    restoreT = Cmd . lift . WriterT
+     {-# INLINE liftWith #-}
+     {-# INLINE restoreT #-}
+ instance MonadBaseControl b m => MonadBaseControl b (Cmd m) where
+-    newtype StM (Cmd m) a = StMCmd {unStMCmd :: ComposeSt Cmd m a}
+-    liftBaseWith = defaultLiftBaseWith StMCmd
+-    restoreM     = defaultRestoreM     unStMCmd
++    type StM (Cmd m) a = ComposeSt Cmd m a
++    liftBaseWith = defaultLiftBaseWith
++    restoreM     = defaultRestoreM
+     {-# INLINE liftBaseWith #-}
+     {-# INLINE restoreM #-}
+ instance MonadConfig m => MonadConfig (Cmd m) where
+diff --git a/src/Lambdabot/Module.hs b/src/Lambdabot/Module.hs
+index 7039669..756a96a 100644
+--- a/src/Lambdabot/Module.hs
++++ b/src/Lambdabot/Module.hs
+@@ -99,18 +99,18 @@ instance MonadBase b m => MonadBase b (ModuleT st m) where
+     liftBase = lift . liftBase
+ 
+ instance MonadTransControl (ModuleT st) where
+-    newtype StT (ModuleT st) a = StModule {unStModule :: a}
++    type StT (ModuleT st) a = a
+     liftWith f = do
+         r <- ModuleT ask
+-        lift $ f $ \t -> liftM StModule (runReaderT (runModuleT t) r)
+-    restoreT = lift . liftM unStModule
++        lift $ f $ \t -> runReaderT (runModuleT t) r
++    restoreT = lift
+     {-# INLINE liftWith #-}
+     {-# INLINE restoreT #-}
+ 
+ instance MonadBaseControl b m => MonadBaseControl b (ModuleT st m) where
+-    newtype StM (ModuleT st m) a = StMModule {unStMModule :: ComposeSt (ModuleT st) m a}
+-    liftBaseWith = defaultLiftBaseWith StMModule
+-    restoreM     = defaultRestoreM     unStMModule
++    type StM (ModuleT st m) a = ComposeSt (ModuleT st) m a
++    liftBaseWith = defaultLiftBaseWith
++    restoreM     = defaultRestoreM
+     {-# INLINE liftBaseWith #-}
+     {-# INLINE restoreM #-}
+ 
+diff --git a/src/Lambdabot/Monad.hs b/src/Lambdabot/Monad.hs
+index e23e537..aa307d0 100644
+--- a/src/Lambdabot/Monad.hs
++++ b/src/Lambdabot/Monad.hs
+@@ -5,6 +5,7 @@
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE RankNTypes #-}
+ {-# LANGUAGE TypeFamilies #-}
++{-# LANGUAGE UndecidableInstances #-}
+ module Lambdabot.Monad
+     ( IRCRState
+     , initRoState
+@@ -205,9 +206,9 @@ instance MonadBase IO LB where
+     liftBase = LB . liftBase
+ 
+ instance MonadBaseControl IO LB where
+-    newtype StM LB a = StLB { unStLB :: StM (ReaderT (IRCRState,IORef IRCRWState) IO) a }
+-    liftBaseWith action = LB (liftBaseWith (\run -> action (fmap StLB . run . runLB)))
+-    restoreM = LB . restoreM . unStLB
++    type StM LB a = StM (ReaderT (IRCRState,IORef IRCRWState) IO) a
++    liftBaseWith action = LB (liftBaseWith (\run -> action (fmap id . run . runLB)))
++    restoreM = LB . restoreM . id
+ 
+ class (MonadIO m, MonadBaseControl IO m, MonadConfig m, MonadLogging m, Applicative m) => MonadLB m where
+     lb :: LB a -> m a

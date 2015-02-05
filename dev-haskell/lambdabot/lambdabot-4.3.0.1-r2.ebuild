@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/logict-0.5:=[profile?]
 	>=dev-haskell/misfortune-0.1:=[profile?]
-	>=dev-haskell/monad-control-0.3:=[profile?]
+	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/monadrandom-0.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/mueval-0.9:=[profile?]
@@ -70,6 +70,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-codepage.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
 
 	cabal_chdeps \
 		'network                 >= 2.3.0.13' \
