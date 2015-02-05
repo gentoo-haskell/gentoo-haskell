@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Gloss picture data types and rendering functions. These functions
+		don&#39;t do any window management. If you want gloss to setup your window as
+		well then use the plain @gloss@ package.
+	</longdescription>
+</pkgmetadata>
