@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/dice-0.1:=[profile?]
 	>=dev-haskell/edit-distance-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.14.0:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.16.0:=[profile?]
 	>=dev-haskell/hoogle-4.2:=[profile?]
 	>=dev-haskell/hslogger-1.2.1:=[profile?]
 	>=dev-haskell/hstatsd-0.1:=[profile?]
@@ -71,6 +71,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-codepage.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
+	epatch "${FILESDIR}"/${P}-haskell-src-exts-1.16.patch
 
 	cabal_chdeps \
 		'network                 >= 2.3.0.13' \

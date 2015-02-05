@@ -1,0 +1,77 @@
+diff --git a/src/Lambdabot/Plugin/Pointful.hs b/src/Lambdabot/Plugin/Pointful.hs
+index fcf9461..8d8a29a 100644
+--- a/src/Lambdabot/Plugin/Pointful.hs
++++ b/src/Lambdabot/Plugin/Pointful.hs
+@@ -54,7 +54,7 @@ succAlpha []       = "a"
+ 
+ -- move lambda patterns into LHS
+ optimizeD :: Decl -> Decl
+-optimizeD (PatBind locat (PVar fname) Nothing (UnGuardedRhs (Lambda _ pats rhs)) (BDecls []))
++optimizeD (PatBind locat (PVar fname) (UnGuardedRhs (Lambda _ pats rhs)) (BDecls []))
+         =  FunBind [Match locat fname pats Nothing (UnGuardedRhs rhs) (BDecls [])]
+ ---- combine function binding and lambda
+ optimizeD (FunBind [Match locat fname pats1 Nothing (UnGuardedRhs (Lambda _ pats2 rhs)) (BDecls [])])
+@@ -174,7 +174,7 @@ combinators = M.fromList $ map declToTuple defs
+   where defs = case parseModule combinatorModule of
+           ParseOk (Hs.Module _ _ _ _ _ _ d) -> d
+           f@(ParseFailed _ _) -> error ("Combinator loading: " ++ show f)
+-        declToTuple (PatBind _ (PVar fname) _ (UnGuardedRhs body) (BDecls []))
++        declToTuple (PatBind _ (PVar fname) (UnGuardedRhs body) (BDecls []))
+           = (UnQual fname, Paren body)
+         declToTuple _ = error "Pointful Plugin error: can't convert declaration to tuple"
+ 
+diff --git a/src/Lambdabot/Plugin/Pretty.hs b/src/Lambdabot/Plugin/Pretty.hs
+index ef43386..397da22 100644
+--- a/src/Lambdabot/Plugin/Pretty.hs
++++ b/src/Lambdabot/Plugin/Pretty.hs
+@@ -54,7 +54,7 @@ doPretty :: Hs.Module -> [String]
+ doPretty (Hs.Module _ _ _ _ _ _ decls) =
+     let defaultLen = 4
+         declLen (FunBind mtches)   = maximum $ map matchLen mtches
+-        declLen (PatBind _ pat _ _ _) = patLen pat
++        declLen (PatBind _ pat _ _) = patLen pat
+         declLen _  = defaultLen
+         patLen (PVar nm) = nameLen nm
+         patLen  _  = defaultLen
+@@ -73,7 +73,7 @@ doPretty (Hs.Module _ _ _ _ _ _ decls) =
+             caseIndent   = 4,
+             onsideIndent = 0
+         }
+-        prettyDecl (PatBind _ (PVar (Ident "__expr__")) _ (UnGuardedRhs e) (BDecls [])) -- pretty printing an expression
++        prettyDecl (PatBind _ (PVar (Ident "__expr__")) (UnGuardedRhs e) (BDecls [])) -- pretty printing an expression
+                      = prettyPrintWithMode (makeModeExp e) e
+         prettyDecl d = prettyPrintWithMode (makeMode d) d
+     -- TODO: prefixing with hashes is done, because i didn't find a way
+diff --git a/src/Lambdabot/Plugin/Undo.hs b/src/Lambdabot/Plugin/Undo.hs
+index 1c17099..7d085aa 100644
+--- a/src/Lambdabot/Plugin/Undo.hs
++++ b/src/Lambdabot/Plugin/Undo.hs
+@@ -54,7 +54,7 @@ undo v (Do stms) = f stms
+                                             (var "fail")
+                                             (Lit $ String "")
+                                     ]
+-        where alt pat x = Alt s pat (UnGuardedAlt x) (BDecls [])
++        where alt pat x = Alt s pat (UnGuardedRhs x) (BDecls [])
+     f _ = error "Undo plugin error: can't undo!"
+ undo v (ListComp e stms) = f stms
+  where
+@@ -69,7 +69,7 @@ undo v (ListComp e stms) = f stms
+                                     [ alt p (f xs)
+                                     , alt PWildCard nil
+                                     ]
+-        where alt pat x = Alt s pat (UnGuardedAlt x) (BDecls [])
++        where alt pat x = Alt s pat (UnGuardedRhs x) (BDecls [])
+               concatMap' fun = App (App (var "concatMap") (Paren fun)) l
+     f _ = error "Undo plugin error: can't undo!"
+ undo _ x           = x
+@@ -103,8 +103,8 @@ do' v e@(InfixApp l (QVarOp (UnQual (Symbol op))) r) =
+              case r of
+                  (Lambda loc [p] (Do stms)) -> Do (Generator loc p l : stms)
+                  (Lambda loc [PVar v1] (Case (Var (UnQual v2))
+-                                            [ Alt _ p (UnGuardedAlt s) (BDecls [])
+-                                            , Alt _ PWildCard (UnGuardedAlt (App (Var (UnQual (Ident "fail"))) _)) (BDecls [])
++                                            [ Alt _ p (UnGuardedRhs s) (BDecls [])
++                                            , Alt _ PWildCard (UnGuardedRhs (App (Var (UnQual (Ident "fail"))) _)) (BDecls [])
+                                             ]))
+                            | v1 == v2           -> case s of
+                                                        Do stms -> Do (Generator loc p l : stms)
