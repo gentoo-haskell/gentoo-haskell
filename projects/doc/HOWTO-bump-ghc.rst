@@ -10,18 +10,7 @@ Quick-n-dirty start (aka. inital preparation):
   what ones you need to update. I usually look at ``ghc/libraries/*/*.cabal``
   in ghc source tarball.
 
-  .. note::
-
-      Updating ``CABAL_CORE_LIB_GHC_PV`` is an important step! Otherwise you
-      might break your ghc installation if you forget to update some ebuild.
-      Merging of such package will overwrite piece of installed package
-      database bundled with ghc. When you unmerge such badly installed package
-      it will unregister library, bundled with ghc and you'll likely break ghc.
-
-      For more details about registration bits see ``ghc-register-pkg ()`` and
-      ``ghc-reregister ()`` in ``eclass/ghc-package.eclass``.
-
-Done. You can safely try to emerge your shiny new ghc!
+Done! You can safely try to emerge your shiny new ghc!
 
 Or not quite done (aka final cleanup):
 ======================================
@@ -29,10 +18,18 @@ Or not quite done (aka final cleanup):
 If you really like to expose such ghc to users you'll need to add some
 packages to overlay. Those packages are **the only ones we allow to update**. Now they are:
 
-- haddock
+- binary
 - Cabal
 - extensible-exceptions
+- ghc-api (virtual ebuild)
+- haddock
+- hoopl
 - hpc
+- old-locale
+- old-time
+- terminfo
+- transformers
+- xhtml
 
 (wisely) Use `hackport <https://raw.github.com/gentoo-haskell/hackport/master/README.rst>`_ for that!
 
