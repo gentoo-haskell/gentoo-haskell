@@ -27,7 +27,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/hunit )
+	test? ( app-arch/zip
+		dev-haskell/hunit )
 "
 
 src_configure() {
