@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A collection of tools for processing XML with Haskell"
-HOMEPAGE="http://www.fh-wedel.de/~si/HXmlToolbox/index.html"
+HOMEPAGE="https://github.com/UweSchmidt/hxt"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
