@@ -15,7 +15,7 @@ IUSE="cabal"
 # The easiest way to fetch libraries 'ghc' package depends on
 # is to fire ghci and run ':set -package ghc' there.
 RDEPEND="
-	~dev-haskell/binary-0.7.1.0:=
+	~dev-haskell/binary-0.7.3.0:=
 	cabal? ( ~dev-haskell/cabal-1.18.1.3:= )
 	~dev-lang/ghc-${PV}:=
 	~dev-haskell/hoopl-3.10.0.1:=

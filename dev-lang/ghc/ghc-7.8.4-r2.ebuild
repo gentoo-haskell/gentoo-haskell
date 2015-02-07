@@ -66,7 +66,8 @@ S="${WORKDIR}"/${GHC_P}
 SRC_URI+=" http://dev.gentoo.org/~slyfox/distfiles/${P}-ia64-CLOSUREs-regenerated.patch.gz"
 
 BUMP_LIBRARIES=(
-	"transformers 0.4.2.0" # latest transformers-0.4.* on hackage
+	"binary       0.7.3.0" # latest 0.7.* on hackage
+	"transformers 0.4.2.0" # latest 0.4.* on hackage
 	"haskeline    0.7.1.3" # loosen depends
 )
 
