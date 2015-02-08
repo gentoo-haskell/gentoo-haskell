@@ -18,7 +18,7 @@ RDEPEND="
 	~dev-haskell/binary-0.7.3.0:=
 	cabal? ( ~dev-haskell/cabal-1.18.1.3:= )
 	~dev-lang/ghc-${PV}:=
-	~dev-haskell/hoopl-3.10.0.1:=
+	~dev-haskell/hoopl-3.10.0.2:=
 	~dev-haskell/hpc-0.6.0.1:=
 	~dev-haskell/transformers-0.4.2.0:=
 "
