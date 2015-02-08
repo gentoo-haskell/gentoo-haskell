@@ -66,9 +66,10 @@ S="${WORKDIR}"/${GHC_P}
 SRC_URI+=" http://dev.gentoo.org/~slyfox/distfiles/${P}-ia64-CLOSUREs-regenerated.patch.gz"
 
 BUMP_LIBRARIES=(
-	"binary       0.7.3.0" # latest 0.7.* on hackage
-	"transformers 0.4.2.0" # latest 0.4.* on hackage
-	"haskeline    0.7.1.3" # loosen depends
+	"binary          0.7.3.0"    # latest 0.7.* on hackage
+	"transformers    0.4.2.0"    # latest 0.4.* on hackage
+	"haskeline       0.7.1.3"    # loosen depends
+	"hoopl          3.10.0.2"    # latest 3.10.* on hackage
 )
 
 LICENSE="BSD"
@@ -578,6 +579,22 @@ src_install() {
 		fi
 
 		emake -j1 install DESTDIR="${D}"
+
+		# rename ghc-shipped files to avoid collision
+		# of external packages. Motivating example:
+		#  user had installed:
+		#      dev-lang/ghc-7.8.4-r0 (with transformers-0.3.0.0)
+		#      dev-haskell/transformers-0.4.2.0
+		#  then user tried to update to
+		#      dev-lang/ghc-7.8.4-r1 (with transformers-0.4.2.0)
+		#  this will lead to single .conf file collision.
+		local shipped_conf renamed_conf
+		local package_confdir="${ED}/usr/$(get_libdir)/${GHC_P}/package.conf.d"
+		for shipped_conf in "${package_confdir}"/*.conf; do
+			# rename 'pkg-ver-id.conf' to 'pkg-ver-id-gentoo-${PF}.conf'
+			renamed_conf=${shipped_conf%.conf}-gentoo-${PF}.conf
+			mv "${shipped_conf}" "${renamed_conf}" || die
+		done
 
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/haddock
