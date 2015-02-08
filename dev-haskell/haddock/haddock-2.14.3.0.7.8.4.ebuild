@@ -20,6 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files
+
 RDEPEND="dev-haskell/ghc-paths:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-lang/ghc-7.8.3:= <dev-lang/ghc-7.9:=
