@@ -9,13 +9,12 @@ HOMEPAGE="http://www.haskell.org/ghc"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-IUSE="cabal"
+IUSE=""
 
 # The easiest way to fetch libraries 'ghc' package depends on
 # is to fire ghci and run ':set -package ghc' there.
 RDEPEND="
 	~dev-haskell/binary-0.7.3.0:=
-	cabal? ( ~dev-haskell/cabal-1.18.1.3:= )
 	~dev-lang/ghc-${PV}:=
 	~dev-haskell/hoopl-3.10.0.2:=
 	~dev-haskell/hpc-0.6.0.2:=
