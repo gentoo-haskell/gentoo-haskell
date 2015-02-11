@@ -11,5 +11,5 @@ before_script:
     - wget -O - "https://github.com/gentoo/portage/archive/master.tar.gz" | tar -xz
 script:
     - ret=0; cx=0;
-      python ../portage-*/bin/repoman full -v || ret=1;
+      python portage-*/bin/repoman full -v || ret=1;
       exit "${ret}"
