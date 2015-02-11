@@ -1,0 +1,38 @@
+language: python
+python:
+    - pypy
+env:
+    - JOB=0
+    - JOB=1
+    - JOB=2
+    - JOB=3
+    - JOB=4
+    - JOB=5
+    - JOB=6
+    - JOB=7
+    - JOB=8
+    - JOB=9
+    - JOB=10
+    - JOB=11
+    - JOB=12
+    - JOB=13
+    - JOB=14
+    - JOB=15
+before_script:
+    - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr
+    - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
+    - echo "portage::250:portage,travis" >> /etc/group
+    - ln -s "${PWD}" /usr/portage
+    - mkdir -p /etc/portage distfiles
+    - ln -s "${PWD}"/profiles/base/ /etc/portage/make.profile
+    - wget -O - "https://github.com/gentoo/portage/archive/master.tar.gz" | tar -xz
+script:
+    - ret=0; cx=0;
+      for x in $(cat profiles/categories); do
+      if test $(( cx++ % 16 )) -eq ${JOB}; then
+      cd ${x} && {
+          python ../portage-*/bin/repoman full -v || ret=1;
+    } && cd -;
+    fi;
+    done;
+    exit "${ret}"
