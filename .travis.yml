@@ -1,15 +1,33 @@
+#
+# Run repoman via travis
+# Taken from https://github.com/mrueg/repoman-travis
+#
 language: python
 python:
     - pypy
+env:
+    - PORTAGE_VER="2.2.15"
 before_script:
-    - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr
+    - mkdir travis-overlay
+    - mv !(travis-overlay) travis-overlay/
+    - mv .git travis-overlay/
+    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
+    - wget "https://github.com/gentoo/portage/archive/v${PORTAGE_VER}.tar.gz" -O portage-${PORTAGE_VER}.tar.gz
+    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
+    - wget "https://github.com/gentoo/gentoo-portage-rsync-mirror/archive/master.tar.gz" -O portage-tree.tar.gz
+    - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr spinner.sh
+    - chmod a+rwx spinner.sh
     - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
     - echo "portage::250:portage,travis" >> /etc/group
-    - git clone https://github.com/gentoo/gentoo-portage-rsync-mirror.git /usr/portage
-    - mkdir -p /etc/portage distfiles
+    - mkdir -p /etc/portage/ /usr/portage/distfiles
+    - tar xzf portage-${PORTAGE_VER}.tar.gz
+    - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
+    - ls -lisa /usr/portage
+    - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
-    - wget -O - "https://github.com/gentoo/portage/archive/master.tar.gz" | tar -xz
+    - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
+    - SIZE=`stat -c %s .travis.yml.upstream`
+    - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then  echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
+    - cd travis-overlay
 script:
-    - ret=0; cx=0;
-      python portage-*/bin/repoman full -v || ret=1;
-      exit "${ret}"
+    - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
