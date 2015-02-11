@@ -32,7 +32,7 @@ script:
       if test $(( cx++ % 16 )) -eq ${JOB}; then
       cd ${x} && {
           python ../portage-*/bin/repoman full -v || ret=1;
-    } && cd -;
-    fi;
-    done;
-    exit "${ret}"
+      } && cd -;
+      fi;
+      done;
+      exit "${ret}"
