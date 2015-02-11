@@ -22,10 +22,10 @@ before_script:
     - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr
     - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
     - echo "portage::250:portage,travis" >> /etc/group
-    - ln -s "${PWD}" /usr/portage
+    - git clone git@github.com:gentoo/gentoo-portage-rsync-mirror.git /usr/portage
     - mkdir -p /etc/portage distfiles
-    - ln -s "${PWD}"/profiles/base/ /etc/portage/make.profile
-    - wget -O - "https://github.com/gentoo/portage/archive/master.tar.gz" | tar -xz
+    - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
+      # - wget -O - "https://github.com/gentoo/portage/archive/master.tar.gz" | tar -xz
 script:
     - ret=0; cx=0;
       for x in $(cat profiles/categories); do
