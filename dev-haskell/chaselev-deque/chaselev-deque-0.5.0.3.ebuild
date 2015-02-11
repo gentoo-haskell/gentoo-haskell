@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
+RESTRICT=test # slow
+
 RDEPEND=">=dev-haskell/abstract-deque-0.3:=[profile?] <dev-haskell/abstract-deque-0.4:=[profile?]
 	>=dev-haskell/atomic-primops-0.5.0.2:=[profile?]
 	dev-haskell/bits-atomic:=[profile?]
@@ -32,6 +34,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-atomic-primops-0.7.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

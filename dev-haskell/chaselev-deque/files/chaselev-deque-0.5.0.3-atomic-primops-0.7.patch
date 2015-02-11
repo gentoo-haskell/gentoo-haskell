@@ -1,0 +1,26 @@
+diff --git a/Data/Concurrent/Deque/ChaseLev.hs b/Data/Concurrent/Deque/ChaseLev.hs
+index f810659..c54f592 100644
+--- a/Data/Concurrent/Deque/ChaseLev.hs
++++ b/Data/Concurrent/Deque/ChaseLev.hs
+@@ -33,7 +33,7 @@ import Control.Monad (when, unless, forM_)
+ 
+ import Data.Atomics (storeLoadBarrier, writeBarrier, loadLoadBarrier)
+ -- TODO: Use whichever counter is exported as the DEFAULT:
+-import Data.Atomics.Counter.Unboxed
++import Data.Atomics.Counter
+        (AtomicCounter, newCounter, readCounter, writeCounter, casCounter, readCounterForCAS, peekCTicket)
+ 
+ -- Debugging:
+diff --git a/Data/Concurrent/Deque/ChaseLevUnboxed.hs b/Data/Concurrent/Deque/ChaseLevUnboxed.hs
+index 46f9c98..87b7006 100644
+--- a/Data/Concurrent/Deque/ChaseLevUnboxed.hs
++++ b/Data/Concurrent/Deque/ChaseLevUnboxed.hs
+@@ -33,7 +33,7 @@ import Control.Monad (when, unless, forM_)
+ 
+ import Data.Atomics (storeLoadBarrier, writeBarrier, loadLoadBarrier)
+ -- TODO: Use whichever counter is exported as the DEFAULT:
+-import Data.Atomics.Counter.Unboxed
++import Data.Atomics.Counter
+        (AtomicCounter, newCounter, readCounter, writeCounter, casCounter, readCounterForCAS, peekCTicket)
+ 
+ -- Debugging:
