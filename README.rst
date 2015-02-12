@@ -1,6 +1,8 @@
 Gentoo Haskell project
 **********************
 
+.. image:: https://travis-ci.org/gentoo-haskell/gentoo-haskell.svg?branch=master
+
 Quickest start
 ==============
 
