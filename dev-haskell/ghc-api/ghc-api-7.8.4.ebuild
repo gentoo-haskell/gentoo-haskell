@@ -17,7 +17,7 @@ IUSE="cabal"
 RDEPEND="
 	~dev-haskell/binary-0.7.1.0:=
 	cabal? ( ~dev-haskell/cabal-1.18.1.3:= )
-	~dev-lang/ghc-${PV}:=
+	=dev-lang/ghc-${PVR}:=
 	~dev-haskell/hoopl-3.10.0.1:=
 	~dev-haskell/hpc-0.6.0.1:=
 	~dev-haskell/transformers-0.3.0.0:=

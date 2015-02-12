@@ -15,7 +15,7 @@ IUSE=""
 # is to fire ghci and run ':set -package ghc' there.
 RDEPEND="
 	~dev-haskell/binary-0.7.3.0:=
-	~dev-lang/ghc-${PV}:=
+	=dev-lang/ghc-${PVR}:=
 	~dev-haskell/hoopl-3.10.0.2:=
 	~dev-haskell/hpc-0.6.0.2:=
 	~dev-haskell/transformers-0.4.2.0:=
