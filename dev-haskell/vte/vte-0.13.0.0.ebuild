@@ -9,6 +9,7 @@ EAPI=5
 GTK_MAJ_VER="2"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the VTE library"
@@ -31,3 +32,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/gtk2hs-buildtools:0=
 	virtual/pkgconfig
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--constraint="Cabal == $(cabal-version)"
+}
