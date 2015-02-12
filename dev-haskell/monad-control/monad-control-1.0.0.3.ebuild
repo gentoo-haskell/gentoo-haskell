@@ -20,7 +20,8 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/stm-2.3:=[profile?] <dev-haskell/stm-3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/transformers-base-0.4.3:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
+	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
