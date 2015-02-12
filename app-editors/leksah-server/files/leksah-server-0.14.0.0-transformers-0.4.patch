@@ -5,7 +5,7 @@
  import HscStats (ppSourceStats)
  #if MIN_VERSION_ghc(7,2,0)
 -#if !MIN_VERSION_ghc(7,7,0)
-+#if !MIN_VERSION_ghc(7,7,0) || MIN_VERSION_transformers(0,4,0)
++#if !MIN_VERSION_transformers(0,4,0)
  import GhcMonad (Ghc(..))
  #endif
  import SrcLoc (mkRealSrcLoc)
@@ -14,7 +14,7 @@
  import Data.Monoid ((<>))
  
 -#if !MIN_VERSION_ghc(7,7,0)
-+#if !MIN_VERSION_ghc(7,7,0) || MIN_VERSION_transformers(0,4,0)
++#if !MIN_VERSION_transformers(0,4,0)
  -- this should not be repeated here, why is it necessary?
  instance MonadIO Ghc where
    liftIO ioA = Ghc $ \_ -> ioA
