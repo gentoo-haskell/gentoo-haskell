@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-5:=[profile?]
-	>=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
+	>=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
 	>=dev-haskell/free-4.9:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/monad-control-0.3.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/monadrandom-0.1:=[profile?] <dev-haskell/monadrandom-0.4:=[profile?]
