@@ -21,7 +21,7 @@ IUSE=""
 RESTRICT=test # hangs?
 
 RDEPEND=">=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
-	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-4.3:=[profile?]
+	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-4.4:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
 	>=dev-haskell/vector-space-0.8:=[profile?] <dev-haskell/vector-space-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,3 +30,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/quickcheck-2.4.2 <dev-haskell/quickcheck-2.8 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroupoids >= 1.2 && < 4.3' \
+		'semigroupoids >= 1.2 && < 4.4'
+
+}
