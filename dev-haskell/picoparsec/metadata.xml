@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A fast and flexible parser combinator library, accepting any input type that is an instance of an appropriate
+		monoid subclass.
+	</longdescription>
+</pkgmetadata>
