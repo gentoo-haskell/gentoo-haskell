@@ -103,7 +103,13 @@ i "chroot profile:  ${chroot_profile}"
 
 [[ -z ${dry_run} ]] || exit 0
 
-relative_stage3_bz2=$(wget "${stage3_url}" -O - | fgrep .tar.bz2)
+first() {
+    echo "$1"
+}
+
+# we get a string of form:
+#     "20141204/stage3-amd64-20141204.tar.bz2 207889127"
+relative_stage3_bz2=$(first `wget "${stage3_url}" -O - | fgrep .tar.bz2`)
 full_stage3_bz2=$(dirname "${stage3_url}")/${relative_stage3_bz2}
 stage3_name=$(basename "${full_stage3_bz2}")
 
