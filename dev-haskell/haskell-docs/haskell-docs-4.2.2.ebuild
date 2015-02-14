@@ -21,11 +21,11 @@ IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
-	|| ( ( >=dev-lang/ghc-7.8 <dev-lang/ghc-7.9 >=dev-haskell/haddock-2.14 <dev-haskell/haddock-2.15 )
-		 ( >=dev-lang/ghc-7.6 <dev-lang/ghc-7.7 >=dev-haskell/haddock-2.13 <dev-haskell/haddock-2.14 )
-		 ( >=dev-lang/ghc-7.4 <dev-lang/ghc-7.5 >=dev-haskell/haddock-2.11 <dev-haskell/haddock-2.12 )
-		 ( >=dev-lang/ghc-7.2 <dev-lang/ghc-7.3 >=dev-haskell/haddock-2.9  <dev-haskell/haddock-2.10 )
-	   )
+	|| (
+		( >=dev-lang/ghc-7.8 <dev-lang/ghc-7.9 >=dev-haskell/haddock-2.14 <dev-haskell/haddock-2.15 )
+		( >=dev-lang/ghc-7.6 <dev-lang/ghc-7.7 >=dev-haskell/haddock-2.13 <dev-haskell/haddock-2.14 )
+		( >=dev-lang/ghc-7.4 <dev-lang/ghc-7.5 >=dev-haskell/haddock-2.11 <dev-haskell/haddock-2.12 )
+	)
 	dev-haskell/ghc-api
 	dev-haskell/monad-loops:=[profile?]
 	dev-haskell/text:=[profile?]
