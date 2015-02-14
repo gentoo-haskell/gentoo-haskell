@@ -12,6 +12,7 @@ MY_PV="${PV%.*}"
 MY_P="${PN}-${MY_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the Webkit library"
@@ -39,3 +40,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--constraint="Cabal == $(cabal-version)"
+}
