@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1.0.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
+	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
