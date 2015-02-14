@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<herd>haskell</herd>
-	<longdescription>
-		Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is
-		to provide a flexible, powerful, and correct editor for haskell hacking.
-	</longdescription>
-</pkgmetadata>
