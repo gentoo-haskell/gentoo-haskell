@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xmonad-log-applet/xmonad-log-applet-2.0.0-r301.ebuild,v 1.2 2015/02/15 14:35:25 slyfox Exp $
 
 EAPI=4
 
@@ -13,17 +13,17 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+gnome2 gnome3 xfce4"
+IUSE=""
 
 RESTRICT="mirror"
 
-RDEPEND="sys-apps/dbus
-	gnome2? ( gnome-base/gnome-panel )
-	gnome3? ( >=gnome-base/gnome-panel-3.0.2 )
-	xfce4? ( xfce-base/xfce4-panel )
+RDEPEND="
+	sys-apps/dbus
+	xfce-base/xfce4-panel
 	dev-libs/glib:2
 	dev-haskell/dbus
-	x11-libs/gtk+:2"
+	x11-libs/gtk+:3
+"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -31,20 +31,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf
-	myconf=""
-
-	if use gnome2; then
-		myconf="${myconf} --with-panel=gnome2"
-	fi
-	if use gnome3; then
-		myconf="${myconf} --with-panel=gnome3"
-	fi
-	if use xfce4; then
-		myconf="${myconf} --with-panel=xfce4"
-	fi
-
-	econf --sysconfdir=/etc ${myconf}
+	econf --sysconfdir=/etc --with-panel=xfce4
 }
 
 src_install() {
