@@ -55,7 +55,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.8
 	dev-haskell/happy
-	cpphs? ( >=dev-haskell/cpphs-1.18.8:= <dev-haskell/cpphs-1.19:= )
+	cpphs? ( >=dev-haskell/cpphs-1.18.8 <dev-haskell/cpphs-1.19 )
 "
 
 SITEFILE="50${PN}2-gentoo.el"
