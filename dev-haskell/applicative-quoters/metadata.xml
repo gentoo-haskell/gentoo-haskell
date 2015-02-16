@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Quasiquoters taken from Matt Morrow&#39;s haskell-src-meta to implement
+		Conor McBride&#39;s idiom brackets, and a do-notation that only requires
+		Applicative (and is correspondingly less powerful).
+		
+		applicative-quoters currently has no maintainer: if it is broken and
+		you want it to be fixed, then fix it!
+	</longdescription>
+</pkgmetadata>
