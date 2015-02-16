@@ -15,10 +15,6 @@ dev-haskell/cabal-dev
 # Was merged into dev-haskell/network.
 dev-haskell/network-bytestring
 
-# Sergei Trofimovich <slyfox@gentoo.org> (06 Apr 2014)
-# Old ghc versions.
-<dev-lang/ghc-7.4
-
 # Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
 # Yesod platform has rules that doesn't play well with
 # gentoo haskell rules, so it's completely unmaintainable.
