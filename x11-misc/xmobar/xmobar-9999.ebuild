@@ -20,13 +20,15 @@ KEYWORDS=""
 IUSE="alsa dbus inotify mpd mpris timezone wifi xft xpm"
 
 RDEPEND="x11-libs/libXrandr
+	x11-libs/libXrender
 	wifi? ( net-wireless/wireless-tools )
 	xpm? ( x11-libs/libXpm )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
-	>=dev-haskell/http-4000
+	>=dev-haskell/http-4000.2.4
 	>=dev-haskell/mtl-2.1 <dev-haskell/mtl-2.3
+	dev-haskell/old-locale
 	>=dev-haskell/parsec-3.1 <dev-haskell/parsec-3.2
 	dev-haskell/regex-compat
 	>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
