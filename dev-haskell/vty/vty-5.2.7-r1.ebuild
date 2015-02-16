@@ -47,4 +47,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/vty-5.2.6-disable-mock-input-tests.patch
+	cabal_chdeps \
+		'utf8-string >= 0.3 && < 0.4' 'utf8-string >= 0.3 && < 1.1'
 }
