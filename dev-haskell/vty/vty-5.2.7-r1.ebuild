@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-buil
 	>=dev-haskell/terminfo-0.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?]
 	>=dev-haskell/text-0.11.3:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
