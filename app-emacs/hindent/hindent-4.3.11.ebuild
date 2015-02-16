@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,13 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs vim"
 
-RESTRICT="test" # missing files?
-
 RDEPEND="dev-haskell/data-default:=[profile?]
+	>=dev-haskell/descriptive-0.7:=[profile?] <dev-haskell/descriptive-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
