@@ -47,7 +47,6 @@ src_install() {
 		elisp-install "${PN}" elisp/*.{el,elc}
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	fi
-	dodoc README.md
 }
 
 pkg_postinst() {
