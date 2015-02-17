@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/regex-compat-0.95.1:=[profile?]
 	>=dev-haskell/tar-0.3:=[profile?] <dev-haskell/tar-0.5:=[profile?]
 	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-haskell/zlib-0.5.1.0:=[profile?] <dev-haskell/zlib-0.6.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -63,7 +63,9 @@ src_prepare() {
 		'text       >= 0.11.0.6 && < 1.2' 'text       >= 0.11.0.6 && < 1.3' \
 		'random     == 1.0.*' 'random     >= 1.0 && < 1.2' \
 		'base >= 4.5 && < 4.8' 'base >= 4.5 && < 4.9' \
-		'ghc >= 6.10 && < 7.10' 'ghc >= 6.10 && < 7.12'
+		'ghc >= 6.10 && < 7.10' 'ghc >= 6.10 && < 7.12' \
+	    'utf8-string >= 0.3.6 && < 0.4' 'utf8-string >= 0.3.6 && < 1.1'
+
 }
 
 src_configure() {
