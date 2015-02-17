@@ -38,7 +38,9 @@ src_prepare() {
 		SetupWrapper.hs || die
 	# workaround for module order
 	cabal_chdeps \
-		'other-modules:' 'exposed-modules:'
+		'other-modules:' 'exposed-modules:' \
+		'utf8-string >= 0.2 && < 0.4' 'utf8-string >= 0.2 && < 1.1'
+
 }
 
 src_configure() {
