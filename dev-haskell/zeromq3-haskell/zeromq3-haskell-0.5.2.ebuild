@@ -33,3 +33,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/checkers-0.3
 		>=dev-haskell/quickcheck-2.6 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-zmq4-support.patch
+	epatch "${FILESDIR}"/${PN}-0.5.1-qc-2.7.patch
+}
