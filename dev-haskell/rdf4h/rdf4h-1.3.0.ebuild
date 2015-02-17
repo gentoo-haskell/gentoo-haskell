@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+hpc +network-uri tests"
 
+RESTRICT=test # some files are missing
+
 RDEPEND="dev-haskell/hashable:=[profile?]
 	>=dev-haskell/http-4000.0.0:=[profile?]
 	>=dev-haskell/hxt-9.3.1.2:=[profile?]
