@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	>=dev-haskell/plailude-0.3 <dev-haskell/plailude-0.5
+	>=dev-haskell/plailude-0.5 <dev-haskell/plailude-0.6
 	>=dev-haskell/safe-0.3 <dev-haskell/safe-0.4
 	>=dev-lang/ghc-7.8.2
 "
