@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	dev-haskell/time-compat:=[profile?]
 	>=dev-haskell/transformers-0.1.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -47,6 +47,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string            >= 0.3.4 && < 0.4' 'utf8-string            >= 0.3.4 && < 1.1'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
