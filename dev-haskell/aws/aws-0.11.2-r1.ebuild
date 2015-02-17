@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -70,6 +70,10 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	cabal_chdeps \
+		'utf8-string          == 0.3.*' \
+		'utf8-string          >= 0.3 && <1.1'
+
 	haskell-cabal_src_configure \
 		$(cabal_flag examples examples)
 }
