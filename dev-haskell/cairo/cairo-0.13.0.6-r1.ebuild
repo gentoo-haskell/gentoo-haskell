@@ -20,7 +20,7 @@ IUSE="+pdf +postscript +svg"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	x11-libs/cairo[svg?]
 "
