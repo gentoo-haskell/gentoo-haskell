@@ -23,7 +23,7 @@ RESTRICT=test # one darcs test fails
 RDEPEND=">=dev-haskell/diff-0.2:=[profile?] <dev-haskell/diff-0.4:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/xml-1.3:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -40,6 +40,9 @@ DEPEND+="
 "
 
 src_configure() {
+	cabal_chdeps \
+		'utf8-string >= 0.3 && < 0.4' 'utf8-string >= 0.3 && < 1.1'
+
 	haskell-cabal_src_configure \
 		$(cabal_flag maxcount maxcount)
 }
