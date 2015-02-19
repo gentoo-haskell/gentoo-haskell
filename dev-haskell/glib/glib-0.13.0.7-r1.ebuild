@@ -20,7 +20,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+closure_signals"
 
 RDEPEND=">=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.8.1:=
 	dev-libs/glib:2
 "
@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}/${PN}-0.13.0.7-ghc-7.10.patch")
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string >= 0.2 && < 0.4' 'utf8-string >= 0.2 && < 1.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
