@@ -34,7 +34,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/uniplate-1.6.11:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
-	<dev-haskell/utf8-string-0.4:=[profile?]
+	<dev-haskell/utf8-string-1.1:=[profile?]
 	<dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/haskell-packages-0.2.3.1:=[profile?]
@@ -44,3 +44,8 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string < 0.4' 'utf8-string < 1.1'
+}
