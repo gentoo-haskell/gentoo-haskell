@@ -14,4 +14,7 @@
 		fenced code blocks, significant list start numbers, and
 		autolinked URLs.  See README.markdown for details.
 	</longdescription>
+	<use>
+		<flag name="dingus">Build cheapskate-dingus cgi script</flag>
+	</use>
 </pkgmetadata>
