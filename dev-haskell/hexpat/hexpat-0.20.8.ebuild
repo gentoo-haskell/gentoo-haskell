@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/list-0.4.2:=[profile?] <dev-haskell/list-0.6:=[profile?]
 	>=dev-haskell/text-0.5.0.0:=[profile?] <dev-haskell/text-1.3.0.0:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
