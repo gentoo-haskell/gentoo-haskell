@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[prof
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/tabular-0.2:=[profile?] <dev-haskell/tabular-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/wizards-1.0:=[profile?] <dev-haskell/wizards-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -45,6 +45,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/transformers )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string >= 0.3.5 && < 0.4' 'utf8-string >= 0.3.5 && < 1.1'
+
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
