@@ -24,7 +24,7 @@ DEPEND=">=dev-lang/ghc-6.10
 	dev-haskell/shuffle
 	dev-haskell/syb
 	dev-haskell/uuagc
-	dev-haskell/uhc-util
+	>=dev-haskell/uhc-util-0.1.5.0
 	dev-haskell/uulib"
 RDEPEND=""
 
