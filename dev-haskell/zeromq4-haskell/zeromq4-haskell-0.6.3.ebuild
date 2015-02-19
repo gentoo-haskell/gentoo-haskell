@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
-	net-libs/zeromq
+	>=net-libs/zeromq-4
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
