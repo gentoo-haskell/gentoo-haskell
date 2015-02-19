@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -38,3 +38,8 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string >= 0.3.5 && < 0.4' 'utf8-string >= 0.3.5 && < 1.1'
+}
