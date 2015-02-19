@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A program and library to derive instances for data types"
-HOMEPAGE="http://community.haskell.org/~ndm/derive/"
+HOMEPAGE="https://github.com/ndmitchell/derive#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
