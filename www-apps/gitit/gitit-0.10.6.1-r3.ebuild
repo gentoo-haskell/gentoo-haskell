@@ -25,7 +25,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?] <dev-haskell/configfile-1.2:=[profile?]
 	>=dev-haskell/feed-0.3.6:=[profile?] <dev-haskell/feed-0.4:=[profile?]
 	>=dev-haskell/filestore-0.6:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
-	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+	>=dev-haskell/happstack-server-7.0:=[profile?]
 	>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?] <dev-haskell/highlighting-kate-0.6:=[profile?]
 	>=dev-haskell/hoauth2-0.4.2:=[profile?] <dev-haskell/hoauth2-0.5:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
@@ -66,7 +66,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'http-conduit >= 2.1.4 && < 2.1.5' 'http-conduit >= 2.1.4 && < 2.2' \
-		'json >= 0.4 && < 0.8' 'json >= 0.4'
+		'json >= 0.4 && < 0.8' 'json >= 0.4' \
+		'happstack-server >= 7.0 && < 7.4' 'happstack-server >= 7.0'
 }
 
 src_configure() {
