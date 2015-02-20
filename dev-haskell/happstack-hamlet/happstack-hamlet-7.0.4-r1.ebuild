@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'happstack-server >= 6.0 && < 7.4' 'happstack-server >= 6.0'
+}
