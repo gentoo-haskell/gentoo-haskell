@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+RDEPEND=">=dev-haskell/happstack-server-7.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -30,4 +30,9 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=base4 \
 		--flag=-tests
+}
+
+src_prepare() {
+	cabal_chdeps \
+		'happstack-server >= 7.0 && < 7.4' 'happstack-server >= 6.0'
 }
