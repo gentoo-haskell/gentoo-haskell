@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.0.8:=[profile?]
+RDEPEND=">=dev-haskell/file-embed-0.0.7:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/monad-unify-0.2.2:=[profile?] <dev-haskell/monad-unify-0.3:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?] <dev-haskell/mtl-2.3.0:=[profile?]
@@ -34,3 +34,8 @@ RDEPEND=">=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'file-embed >= 0.0.7 && < 0.0.8' 'file-embed >= 0.0.7'
+}
