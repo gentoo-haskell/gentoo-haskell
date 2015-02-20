@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	>=dev-haskell/hstringtemplate-0.4.3:=[profile?] <dev-haskell/hstringtemplate-0.8:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -27,3 +27,8 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'happstack-server >= 6.0 && < 7.4' 'happstack-server >= 6.0'
+}
