@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/digestive-functors-0.7:=[profile?] <dev-haskell/digestive-functors-0.8:=[profile?]
-	>=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?]
+	>=dev-haskell/happstack-server-6.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text               >= 0.11 && < 1.2' 'text               >= 0.11'
+		'text               >= 0.11 && < 1.2' 'text               >= 0.11' \
+		'happstack-server   >= 6.0  && < 7.4' 'happstack-server   >= 6.0'
 }
