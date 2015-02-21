@@ -43,3 +43,30 @@ Have a nice haskell-related ebuild to share with community?
 Look at our `Developer's README`_!
 
 .. _Developer's README: http://github.com/gentoo-haskell/gentoo-haskell/blob/master/projects/doc/README.rst
+
+Loner's corner
+==============
+
+Alternatively if you really don't want to share any ebuilds (want to keep
+outdated package versions, highly experimental things, publically unavailable
+stuff, other reasons) that's also fine.
+
+You can keep such ebuilds in your local overlay.
+
+Here is a complete example of creating minimal overlay with a
+single haskell ebuild from hackage::
+
+    # create overlay and populate it (gentoo-generic):
+    $ mkdir my-ovl
+    $ cd    my-ovl
+    $ mkdir metadata
+    $ echo 'masters = gentoo' > metadata/layout.conf
+    $ echo 'PORTDIR_OVERLAY="'$(pwd) '${PORTDIR_OVERLAY}"' >> /etc/portage/make.conf
+    
+    # haskell-specific stuff
+    $ hackport -p . update
+    # DONE!
+    
+    # adding an example ebuild
+    $ hackport merge hichi
+    $ emerge -av1 hichi
