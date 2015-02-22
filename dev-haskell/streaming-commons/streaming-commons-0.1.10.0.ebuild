@@ -21,7 +21,7 @@ IUSE=""
 
 RESTRICT=test # slow
 
-RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/stm:=[profile?]
