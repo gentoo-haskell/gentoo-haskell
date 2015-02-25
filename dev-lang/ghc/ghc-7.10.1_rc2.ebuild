@@ -420,7 +420,7 @@ src_configure() {
 		echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
-		echo "SRC_HC_OPTS+=${GHC_FLAGS}" >> mk/build.mk
+		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
 		echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
 
