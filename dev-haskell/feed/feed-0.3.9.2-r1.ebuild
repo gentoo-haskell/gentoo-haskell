@@ -25,3 +25,7 @@ RDEPEND="dev-haskell/utf8-string:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/"${P}"-utf8-string.patch
+}
