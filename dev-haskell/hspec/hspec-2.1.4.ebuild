@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~dev-haskell/hspec-core-2.1.3:=[profile?]
-	~dev-haskell/hspec-discover-2.1.3:=[profile?]
+RDEPEND="~dev-haskell/hspec-core-2.1.4:=[profile?]
+	~dev-haskell/hspec-discover-2.1.4:=[profile?]
 	>=dev-haskell/hspec-expectations-0.6.1:=[profile?] <dev-haskell/hspec-expectations-0.6.2:=[profile?]
 	>=dev-haskell/hunit-1.2.5:=[profile?]
 	>=dev-haskell/quickcheck-2.5.1:2=[profile?]
