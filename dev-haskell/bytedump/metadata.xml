@@ -6,4 +6,7 @@
 		A set of helpers to dump bytes with lots of different output formats
 		easy to read for humans eyes.
 	</longdescription>
+	<use>
+		<flag name="executable">build executable file</flag>
+	</use>
 </pkgmetadata>
