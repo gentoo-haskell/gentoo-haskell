@@ -1,0 +1,22 @@
+diff --git a/Text/StringTemplate/Group.hs b/Text/StringTemplate/Group.hs
+index dd32d2b..1536adf 100644
+--- a/Text/StringTemplate/Group.hs
++++ b/Text/StringTemplate/Group.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE BangPatterns #-}
++{-# LANGUAGE BangPatterns, CPP #-}
+ {-# OPTIONS_HADDOCK not-home #-}
+ 
+ module Text.StringTemplate.Group
+@@ -21,7 +21,11 @@ import System.Directory
+ import Data.IORef
+ import System.IO.Unsafe
+ import System.IO.Error
++#if MIN_VERSION_utf8_string(1,0,0)
++import Prelude as U
++#else
+ import System.IO.UTF8 as U
++#endif
+ import qualified Data.Map as M
+ 
+ import Text.StringTemplate.Base
