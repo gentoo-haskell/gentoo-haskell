@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/regex-compat
 	>=dev-haskell/stm-2.3 <dev-haskell/stm-2.5
 	dev-haskell/transformers
-	>=dev-haskell/utf8-string-0.3 <dev-haskell/utf8-string-0.4
+	>=dev-haskell/utf8-string-0.3 <dev-haskell/utf8-string-1.1
 	>=dev-haskell/x11-1.6.1
 	>=dev-lang/ghc-7.4.1
 	alsa? ( >=dev-haskell/alsa-core-0.5 <dev-haskell/alsa-core-0.6
@@ -44,6 +44,11 @@ DEPEND="${RDEPEND}
 			>=dev-haskell/timezone-series-0.1 <dev-haskell/timezone-series-0.2 )
 	xft? ( >=dev-haskell/x11-xft-0.2 <dev-haskell/x11-xft-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+	       "utf8-string == 0.3.*" "utf8-string >= 0.3 && <1.1"
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
