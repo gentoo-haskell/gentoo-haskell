@@ -27,6 +27,7 @@ RDEPEND=">=dev-haskell/basic-prelude-0.3.10:=[profile?] <dev-haskell/basic-prelu
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/mono-traversable-0.6.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
+	>=dev-haskell/mutable-containers-0.2:=[profile?] <dev-haskell/mutable-containers-0.3:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/stm:=[profile?]
