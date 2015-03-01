@@ -19,7 +19,8 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+macosxusechdir +macosxusemenubar"
+#hackport: flags: -macosxusechdir -macosxusemenubar"
+IUSE=""
 
 RESTRICT=test # needs video driver access
 
@@ -40,9 +41,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag macosxusechdir macosxusechdir) \
-		$(cabal_flag macosxusemenubar macosxusemenubar)
-}
