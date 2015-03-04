@@ -21,6 +21,7 @@ IUSE="+network-uri"
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/case-insensitive-1.0:=[profile?]
+	>=dev-haskell/clock-0.4.1.3:=[profile?]
 	dev-haskell/cookie:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/exceptions-0.4:=[profile?]
