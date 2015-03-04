@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 	>=dev-haskell/trifecta-1.1:=[profile?] <dev-haskell/trifecta-1.6:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
-	<dev-haskell/utf8-string-0.4:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
 	<dev-haskell/vector-0.11:=[profile?]
 	<dev-haskell/vector-binary-instances-0.3:=[profile?]
 	<dev-haskell/xml-1.4:=[profile?]
@@ -53,6 +53,11 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string < 0.4' 'utf8-string'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
