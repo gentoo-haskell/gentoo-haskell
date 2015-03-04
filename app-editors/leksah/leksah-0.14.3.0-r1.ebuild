@@ -17,7 +17,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+dyre +gtk3 loc +network-uri threaded yi"
+IUSE="+dyre +gtk3 loc +network-uri yi"
 # Tests fail to compile (they try to compile stuff with yi)
 RESTRICT="test"
 
@@ -50,7 +50,7 @@ RDEPEND=">=app-editors/leksah-server-0.14.3.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/utf8-string-0.3.1.1:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3.1.1:=[profile?]
 	>=dev-haskell/vado-0.0.1:=[profile?] <dev-haskell/vado-0.1:=[profile?]
 	>=dev-haskell/vcsgui-0.1.0:=[profile?] <dev-haskell/vcsgui-0.2:=[profile?]
 	>=dev-haskell/vcswrapper-0.1.0:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
@@ -80,7 +80,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'yi >=0.11.2 && <0.12' 'yi >=0.11.1 && <0.12'
+		'yi >=0.11.2 && <0.12' 'yi >=0.11.1 && <0.12' \
+		'utf8-string >=0.3.1.1 && <0.4' 'utf8-string >=0.3.1.1'
 }
 
 src_configure() {
