@@ -47,7 +47,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/uri-0.1:=[profile?] <dev-haskell/uri-0.2:=[profile?]
 	>=dev-haskell/url-2.1:=[profile?] <dev-haskell/url-2.2:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/uuid-1.3:=[profile?] <dev-haskell/uuid-1.4:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	>=dev-haskell/xml-1.3.5:=[profile?]
@@ -67,7 +67,8 @@ src_prepare() {
 	cabal_chdeps \
 		'http-conduit >= 2.1.4 && < 2.1.5' 'http-conduit >= 2.1.4 && < 2.2' \
 		'json >= 0.4 && < 0.8' 'json >= 0.4' \
-		'happstack-server >= 7.0 && < 7.4' 'happstack-server >= 7.0'
+		'happstack-server >= 7.0 && < 7.4' 'happstack-server >= 7.0' \
+		'utf8-string >= 0.3 && < 0.4' 'utf8-string >= 0.3'
 }
 
 src_configure() {
