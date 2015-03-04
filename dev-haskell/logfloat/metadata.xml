@@ -9,4 +9,7 @@
 		probabilities as is done in Hidden Markov Models.
 		It is also helpful for preventing overflow.
 	</longdescription>
+	<use>
+		<flag name="useffi">Use bindings to C libraries</flag>
+	</use>
 </pkgmetadata>
