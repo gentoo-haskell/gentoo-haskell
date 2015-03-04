@@ -1,0 +1,21 @@
+commit c5267fa563bc3571e8a269f4ab750a14b5a8855b
+Author: Chris Done <chrisdone@gmail.com>
+Date:   Sun Nov 16 00:03:04 2014 +0100
+
+    Strip out manual UTF8 encoding (no longer necessary on modern GHC)
+
+diff --git a/Mueval/Interpreter.hs b/Mueval/Interpreter.hs
+index e4ec4c4..1f34952 100644
+--- a/Mueval/Interpreter.hs
++++ b/Mueval/Interpreter.hs
+@@ -7,1 +7,0 @@ import           Control.Monad (forM_,guard,mplus,unless,when)
+-import qualified System.IO.UTF8 as UTF (putStrLn)
+@@ -109,7 +108,7 @@ mvload lfl = do canonfile <- makeRelativeToCurrentDirectory lfl
+ -- flooding. Lambdabot has a similar limit.
+ sayIO :: String -> IO ()
+ sayIO str = do (out,b) <- render 1024 str
+-               UTF.putStrLn out
++               putStrLn out
+                when b exitFailure
+ 
+ -- | Oh no, something has gone wrong. If it's a compilation error pretty print
