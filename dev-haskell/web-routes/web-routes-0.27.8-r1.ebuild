@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	dev-haskell/split:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -36,3 +36,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 		dev-haskell/test-framework-th )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string   >= 0.3  && < 0.4' 'utf8-string   >= 0.3'
+}
