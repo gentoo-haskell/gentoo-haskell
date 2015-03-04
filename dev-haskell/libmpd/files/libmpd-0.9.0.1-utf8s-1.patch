@@ -1,0 +1,29 @@
+diff --git a/src/Network/MPD/Core.hs b/src/Network/MPD/Core.hs
+index 6bcda1b..1949250 100644
+--- a/src/Network/MPD/Core.hs
++++ b/src/Network/MPD/Core.hs
+@@ -36,7 +36,6 @@ import qualified Data.Foldable as F
+ import           Network (PortID(..), withSocketsDo, connectTo)
+ import           System.IO (Handle, hPutStrLn, hReady, hClose, hFlush)
+ import           System.IO.Error (isEOFError, tryIOError, ioeGetErrorType)
+-import qualified System.IO.UTF8 as U
+ import           Text.Printf (printf)
+ import qualified GHC.IO.Exception as GE
+ 
+@@ -45,7 +44,6 @@ import           Prelude hiding (break, drop, dropWhile, read)
+ import           Data.ByteString.Char8 (ByteString, isPrefixOf, break, drop, dropWhile)
+ import qualified Data.ByteString.Char8 as B
+ import qualified Data.ByteString.UTF8 as UTF8
+-
+ --
+ -- Data types.
+ --
+@@ -169,7 +167,7 @@ mpdSend str = send' `catchError` handler
+         send' = MPD $ gets stHandle >>= maybe (throwError NoMPD) go
+ 
+         go handle = (liftIO . tryIOError $ do
+-            unless (null str) $ U.hPutStrLn handle str >> hFlush handle
++            unless (null str) $ B.hPutStrLn handle (UTF8.fromString str) >> hFlush handle
+             getLines handle [])
+                 >>= either (\err -> modify (\st -> st { stHandle = Nothing })
+                                  >> throwError (ConnectionError err)) return
