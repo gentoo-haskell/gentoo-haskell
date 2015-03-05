@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="hoauth2"
+DESCRIPTION="Haskell OAuth2 authentication"
 HOMEPAGE="https://github.com/freizl/hoauth2"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
