@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lambdabot is an IRC bot written over several years by
+		those on the #haskell IRC channel.
+		
+		Provided plugins:
+		
+		[check] Quick, check!
+		[djinn] Derive implementations from types intuitinistically.
+		[eval] Run Haskell code.
+		[free] Theorems for free.
+		[haddock] Find modules implementing a function.
+		[hoogle] Search for functions by type using hoogle.
+		[instances] Query instances of type classes.
+		[pl] Produce point-less code.
+		[pointful] Produce point-ful code.
+		[pretty] Print code prettily.
+		[source] Show implementations of standard functions.
+		[type] Query type of expressions.
+		[undo] Unfold do notation.
+		[unmtl] Expand monad transformers stacks.
+	</longdescription>
+</pkgmetadata>
