@@ -137,6 +137,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-2.11-dont-print-man-help.patch"
 	"${FILESDIR}/${PN}-2.11-daemon-util-tests.patch"
 	"${FILESDIR}/${PN}-2.12-tests.patch"
+	"${FILESDIR}/${PN}-2.12.1-unclach.patch"
 )
 
 REQUIRED_USE="kvm? ( || ( amd64 x86 ) )"
