@@ -34,13 +34,9 @@ src_prepare() {
 	sed -e "s@#include<cairo-features.h>@#define $(usex amd64 __x86_64__ __i386__)\n#include<cairo-features.h>@" \
 		-i "${S}"/Graphics/Rendering/Cairo.hs \
 		|| die "Could not define ABI in Graphics/Rendering/Cairo.hs"
-	sed -i -e 's/import System.Exit/import System.Exit (exitWith, ExitCode(..))/' \
-		SetupWrapper.hs || die
 	# workaround for module order
 	cabal_chdeps \
-		'other-modules:' 'exposed-modules:' \
-		'utf8-string >= 0.2 && < 0.4' 'utf8-string >= 0.2 && < 1.1'
-
+		'other-modules:' 'exposed-modules:'
 }
 
 src_configure() {
