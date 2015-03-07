@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -23,12 +23,12 @@ KEYWORDS=""
 IUSE="+closure_signals"
 
 RDEPEND=">=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.9.1:=
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
+	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
 
