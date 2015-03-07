@@ -1,0 +1,28 @@
+From 98ac4e0cca844de826952c823676a930a837a12c Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <siarheit@google.com>
+Date: Sat, 7 Mar 2015 20:17:20 +0000
+Subject: [PATCH] utf8-encode output from compiler
+
+Signed-off-by: Sergei Trofimovich <siarheit@google.com>
+---
+ lambdabot-haskell-plugins/src/Lambdabot/Plugin/Haskell/Eval.hs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lambdabot-haskell-plugins/src/Lambdabot/Plugin/Haskell/Eval.hs b/lambdabot-haskell-plugins/src/Lambdabot/Plugin/Haskell/Eval.hs
+index 3188ff5..0e731a3 100644
+--- a/lambdabot-haskell-plugins/src/Lambdabot/Plugin/Haskell/Eval.hs
++++ b/lambdabot-haskell-plugins/src/Lambdabot/Plugin/Haskell/Eval.hs
+@@ -81,8 +81,8 @@ runGHC src = do
+     case (out,err) of
+         ([],[]) -> return "Terminated\n"
+         _       -> do
+-            let o = munge out
+-                e = munge err
++            let o = mungeEnc out
++                e = mungeEnc err
+             return $ case () of {_
+                 | null o && null e -> "Terminated\n"
+                 | null o           -> e
+-- 
+2.3.1
+
