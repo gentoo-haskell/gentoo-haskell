@@ -52,7 +52,6 @@ HASKELL_DEPS=">=dev-lang/ghc-6.12:0=
 	>=dev-haskell/hslogger-1.2.6:0=
 	dev-haskell/snap-server:0=
 	dev-haskell/utf8-string:0=
-	dev-haskell/deepseq:0=
 	dev-haskell/attoparsec:0=
 	dev-haskell/crypto:0=
 	dev-haskell/vector:0=
