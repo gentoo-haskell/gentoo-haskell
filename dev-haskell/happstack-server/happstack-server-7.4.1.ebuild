@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +network_2_2_3
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Web related tools and services"
 HOMEPAGE="http://happstack.com"
@@ -21,11 +21,13 @@ IUSE="+network-uri +template_haskell"
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	dev-haskell/exceptions:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/hslogger-1.0.2:=[profile?]
 	dev-haskell/html:=[profile?]
-	>=dev-haskell/monad-control-1.0:=[profile?]
+	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	dev-haskell/old-locale:=[profile?]
 	<dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/sendfile-0.7.1:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
 	dev-haskell/syb:=[profile?]
@@ -35,7 +37,8 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	dev-haskell/time-compat:=[profile?]
 	>=dev-haskell/transformers-0.1.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -47,10 +50,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit )
 "
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
