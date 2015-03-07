@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ IUSE="+default-term no-autorepeat-keys"
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		dev-haskell/setlocale:=[profile?]
-		=dev-haskell/utf8-string-0.3*:=[profile?]
+		>=dev-haskell/utf8-string-0.3:=[profile?]
 		>=dev-haskell/x11-1.5:=[profile?]
 		<dev-haskell/x11-1.7:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -38,6 +38,9 @@ SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
 	use no-autorepeat-keys && epatch "$FILESDIR/$PN-0.12-check-repeat.patch"
+
+	cabal_chdeps \
+		"utf8-string >= 0.3 && < 0.4" "utf8-string >= 0.3 && < 1.1"
 
 	# allow user patches
 	epatch_user
