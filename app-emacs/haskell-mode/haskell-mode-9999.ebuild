@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -45,9 +45,6 @@ src_install() {
 	if use examples; then
 		pushd examples || die
 		elisp-install ${PN}/examples *.el *.elc || die
-		dodir /usr/share/${PN}/examples
-		insinto /usr/share/${PN}/examples
-		doins *.hs
 		popd
 	fi
 	if use snippets; then
