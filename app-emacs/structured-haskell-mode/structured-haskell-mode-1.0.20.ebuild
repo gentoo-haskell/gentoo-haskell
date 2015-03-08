@@ -22,7 +22,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	dev-haskell/applicative-quoters
 	>=dev-haskell/cabal-1.8
-	>=dev-haskell/descriptive-0.7 <dev-haskell/descriptive-0.9
+	>=dev-haskell/descriptive-0.7 <dev-haskell/descriptive-0.10
 	>=dev-haskell/haskell-src-exts-1.16 <dev-haskell/haskell-src-exts-1.17
 	dev-haskell/text
 	>=dev-lang/ghc-7.4.1
