@@ -18,8 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs vim"
 
-RDEPEND="dev-haskell/data-default:=[profile?]
-	>=dev-haskell/descriptive-0.7:=[profile?] <dev-haskell/descriptive-0.9:=[profile?]
+RDEPEND="dev-haskell/applicative-quoters:=[profile?]
+	dev-haskell/data-default:=[profile?]
+	>=dev-haskell/descriptive-0.7:=[profile?] <dev-haskell/descriptive-0.10:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
 	dev-haskell/mtl:=[profile?]
