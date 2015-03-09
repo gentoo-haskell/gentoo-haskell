@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
-	>=dev-haskell/th-orphans-0.5:=[profile?] <dev-haskell/th-orphans-0.9:=[profile?]
+	>=dev-haskell/th-orphans-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}/${PN}-0.6.0.8-ghc-7.10.patch")
+
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'th-orphans >= 0.5 && < 0.9' 'th-orphans >= 0.5'
+}
