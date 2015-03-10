@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ MY_P="${MY_PN}-${MY_PV}"
 
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the Gtk+ graphical user interface library"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -42,6 +42,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
+
+PATCHES=("${FILESDIR}/${PN}-0.13.4-ghc-7.10.patch")
+
+src_prepare() {
+	base_src_prepare
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
+}
 
 src_configure() {
 	cabal_src_configure \
