@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ MY_P="${PN}-${MY_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_FEATURES+=" nocabaldep"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Binding to the Webkit library"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
@@ -40,6 +40,15 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-0.13.1.1-ghc-7.10.patch")
+
+src_prepare() {
+	base_src_prepare
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
