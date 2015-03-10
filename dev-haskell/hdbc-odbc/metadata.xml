@@ -8,4 +8,7 @@
 		and Microsoft ODBC on Windows.  It is also the preferred way to access
 		MySQL databases from Haskell.
 	</longdescription>
+<use>
+  <flag name='buildstresstest'>Build stress test</flag>
+</use>
 </pkgmetadata>
