@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Conversion functions between Haskell time types and the ISO 8601 format,
+		which is often used for printing times, e.g. JavaScript&#39;s @new Date().toISOString()@.
+		
+		CHANGELOG
+		
+		Version 0.1.0
+		
+		* Initial version.
+	</longdescription>
+</pkgmetadata>
