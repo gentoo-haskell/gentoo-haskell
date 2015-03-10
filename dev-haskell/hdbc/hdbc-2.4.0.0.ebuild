@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: buildtests:test
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 MY_PN="HDBC"
 MY_P="${MY_PN}-${PV}"
@@ -21,6 +21,7 @@ LICENSE="BSD"
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+RESTRICT="test" # Tests do not compile with time 1.5
 
 RDEPEND=">=dev-haskell/convertible-1.1.0.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -36,6 +37,15 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=("${FILESDIR}/${PN}-2.4.0.0-ghc-7.10-1.patch"
+		"${FILESDIR}/${PN}-2.4.0.0-ghc-7.10-2.patch")
+
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'time>=1.1.3 && <=1.5' 'time>=1.1.3 && <=1.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
