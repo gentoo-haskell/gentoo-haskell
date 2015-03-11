@@ -21,7 +21,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
