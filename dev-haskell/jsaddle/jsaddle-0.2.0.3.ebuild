@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >=3.8.5 && <4.7' 'lens >=3.8.5'
+		'lens >=3.8.5 && <4.8' 'lens >=3.8.5'
 }
 
 src_configure() {
