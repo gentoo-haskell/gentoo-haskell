@@ -1,0 +1,13 @@
+diff --git a/ncurses.cabal b/ncurses.cabal
+index aba504c..6b80687 100644
+--- a/ncurses.cabal
++++ b/ncurses.cabal
+@@ -97,6 +97,8 @@ library
+   build-tools:
+     c2hs >= 0.15
+ 
++  cc-options: -DNCURSES_OPAQUE=1
++
+   if flag(use-pkgconfig)
+     if flag(force-narrow-library)
+       cc-options: -DHSNCURSES_NARROW_HEADER

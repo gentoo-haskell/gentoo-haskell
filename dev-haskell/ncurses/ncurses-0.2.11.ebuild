@@ -30,6 +30,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-opaque.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag force-c2hs-newtype-pointer-hooks force-c2hs-newtype-pointer-hooks) \
