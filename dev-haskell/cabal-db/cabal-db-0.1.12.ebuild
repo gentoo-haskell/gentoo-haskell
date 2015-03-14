@@ -28,7 +28,3 @@ DEPEND="${RDEPEND}
 	dev-haskell/utf8-string
 	>=dev-lang/ghc-7.4.1
 "
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-cabal-compat.patch
-}
