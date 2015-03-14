@@ -28,3 +28,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		>=dev-haskell/test-framework-quickcheck2-0.3 )
 "
+
+CABAL_CORE_LIB_GHC_PV="PM:7.8.4-r4 7.11.2015*"
