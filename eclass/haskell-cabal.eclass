@@ -148,8 +148,9 @@ if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]]; then
 	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
 fi
 
-# returns the version of cabal currently in use
-_CABAL_VERSION_CACHE=""
+# returns the version of cabal currently in use.
+# Rarely it's handy to pin cabal version from outside.
+: ${_CABAL_VERSION_CACHE:=""}
 cabal-version() {
 	if [[ -z "${_CABAL_VERSION_CACHE}" ]]; then
 		if [[ "${CABAL_BOOTSTRAP}" ]]; then
