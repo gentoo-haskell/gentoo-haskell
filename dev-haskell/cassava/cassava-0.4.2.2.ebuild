@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
-	<dev-haskell/blaze-builder-0.4:=[profile?]
+	<dev-haskell/blaze-builder-0.5:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	<dev-haskell/vector-0.11:=[profile?]
