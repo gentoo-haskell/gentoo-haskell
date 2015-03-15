@@ -44,6 +44,10 @@ src_prepare() {
 	einfo "Using default mueval timeout: ${MUEVAL_TIMEOUT} * 0.7s"
 	sed -e "s@timeLimit = 5@timeLimit = ${MUEVAL_TIMEOUT}@" \
 		-i "${S}"/Mueval/ArgsParse.hs || die
+
+	# i wonder why they do it
+	cabal_chdeps \
+		' -static' ' '
 }
 
 src_install() {
