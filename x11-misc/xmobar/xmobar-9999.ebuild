@@ -47,11 +47,6 @@ DEPEND="${RDEPEND}
 	xft? ( >=dev-haskell/x11-xft-0.2 <dev-haskell/x11-xft-0.4 )
 "
 
-src_prepare() {
-	cabal_chdeps \
-	       "utf8-string == 0.3.*" "utf8-string >= 0.3 && <1.1"
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-all_extensions \
