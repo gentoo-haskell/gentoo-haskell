@@ -29,6 +29,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/regex-tdfa-1.1 <dev-haskell/regex-tdfa-1.3
 	>=dev-haskell/test-framework-0.3.2 <dev-haskell/test-framework-0.9
 	>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
-	>=dev-haskell/utf8-string-0.3.5 <dev-haskell/utf8-string-0.4
+	>=dev-haskell/utf8-string-0.3.5
 	>=dev-lang/ghc-7.4.1
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string          >= 0.3.5 && < 0.4' 'utf8-string          >= 0.3.5'
+}
