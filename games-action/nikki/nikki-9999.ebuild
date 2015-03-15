@@ -54,7 +54,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/text
 	dev-haskell/transformers
 	>=dev-haskell/uniplate-1.6
-	>=dev-haskell/utf8-string-0.3 <dev-haskell/utf8-string-0.4
+	>=dev-haskell/utf8-string-0.3
 	>=dev-haskell/vector-0.10 <dev-haskell/vector-0.11
 	>=dev-lang/ghc-7.6.1
 	|| ( ( >=dev-haskell/hashable-1.1 <dev-haskell/hashable-1.2 )
@@ -76,7 +76,8 @@ src_prepare() {
 		'-Werror' ' ' \
 		'-optl-s' ' ' \
 		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5' \
-		', network == 2.*' ', network == 2.*, network-uri, string-conversions'
+		', network == 2.*' ', network == 2.*, network-uri, string-conversions' \
+		'utf8-string == 0.3.*' 'utf8-string >= 0.3'
 }
 
 src_configure() {
