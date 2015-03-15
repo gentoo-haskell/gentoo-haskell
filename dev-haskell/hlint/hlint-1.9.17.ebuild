@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	>=dev-haskell/transformers-0.0:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	gpl? ( >=dev-haskell/hscolour-1.17:=[profile?] )
+	gpl? ( >=dev-haskell/hscolour-1.21:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
