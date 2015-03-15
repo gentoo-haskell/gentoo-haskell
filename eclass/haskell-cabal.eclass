@@ -41,7 +41,8 @@ inherit eutils ghc-package multilib multiprocessing
 # @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup configure'.
-# example: /etc/portage/make.conf: CABAL_EXTRA_CONFIGURE_FLAGS=--enable-shared
+# example: /etc/portage/make.conf:
+#    CABAL_EXTRA_CONFIGURE_FLAGS="--enable-shared --enable-executable-dynamic"
 : ${CABAL_EXTRA_CONFIGURE_FLAGS:=}
 
 # @ECLASS-VARIABLE: CABAL_EXTRA_BUILD_FLAGS
