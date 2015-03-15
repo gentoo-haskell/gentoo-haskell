@@ -362,7 +362,8 @@ cabal-configure() {
 	# currently cabal does not respect CFLAGS and LDFLAGS on it's own (bug #333217)
 	# so translate LDFLAGS to ghc parameters (without filtering)
 	local flag
-	for flag in $LDFLAGS; do cabalconf+=(--ghc-option="-optl$flag"); done
+	for flag in   $CFLAGS; do cabalconf+=(--ghc-option="-optc$flag"); done
+	for flag in  $LDFLAGS; do cabalconf+=(--ghc-option="-optl$flag"); done
 
 	# disable executable stripping for the executables, as portage will
 	# strip by itself, and pre-stripping gives a QA warning.
