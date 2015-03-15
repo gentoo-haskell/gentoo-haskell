@@ -79,6 +79,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-no-u8.patch
 	cabal_chdeps \
 		'yi >=0.11.2 && <0.12' 'yi >=0.11.1 && <0.12' \
 		'utf8-string >=0.3.1.1 && <0.4' 'utf8-string >=0.3.1.1'
