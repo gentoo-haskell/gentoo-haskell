@@ -67,4 +67,3 @@ src_prepare() {
 	sed -i 's/create tarFile/-- create tarFile/' Setup.hs \
 		|| die "unable to disable prebuild step"
 }
-
