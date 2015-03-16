@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,14 +16,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="benchmark fuzz tests"
+IUSE=""
+#hackport: flags: -test -fuzz -benchmark
 
 RDEPEND=">dev-haskell/extensible-exceptions-0.1.0.1:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	tests? ( >=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-2:=[profile?]
-			>=dev-haskell/test-framework-0.1.1:=[profile?]
-			>=dev-haskell/test-framework-hunit-0.1.1:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2
@@ -32,11 +30,4 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'random >= 1.0 && < 1.1' 'random >= 1.0 && < 1.2'
-}
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag benchmark benchmark) \
-		$(cabal_flag fuzz fuzz) \
-		$(cabal_flag tests tests)
 }
