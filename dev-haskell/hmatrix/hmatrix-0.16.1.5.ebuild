@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-#hackport: -f-openblas
+#hackport: flag -openblas
 
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/random:=[profile?]
