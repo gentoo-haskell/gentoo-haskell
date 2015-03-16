@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -42,4 +42,3 @@ src_prepare() {
 	cabal_chdeps \
 		'random >= 1.0 && < 1.1' 'random >= 1.0 && < 1.2'
 }
-
