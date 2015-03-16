@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="This library provides an implementation of <http://socket.io Socket.io> protocol (version 1). It builds on top of Engine.IO, allowing Socket.io to work with both long polling XHR requests, and seamlessly upgrading them to HTML 5 web sockets"
+DESCRIPTION="An implementation of <http://socket.io Socket.io> protocol (version 1)."
 HOMEPAGE="http://github.com/ocharles/engine.io"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
