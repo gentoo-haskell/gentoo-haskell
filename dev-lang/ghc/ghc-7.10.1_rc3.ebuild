@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,8 +16,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator
-[[ ${PV} = *9999* ]] && inherit git-r3
+inherit multilib pax-utils toolchain-funcs versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -69,15 +68,10 @@ BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 )
 
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-	unset SRC_URI
-fi
-
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp"
 IUSE+=" binary"
 IUSE+=" elibc_glibc" # system stuff
 
@@ -104,16 +98,9 @@ DEPEND="${RDEPEND}
 			>=dev-libs/libxslt-1.1.2 ) )
 	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
 
-# release tarballs ship generated lexers/parsers
-[[ ${PV} = *9999* ]] && DEPEND+="
-	ghcbootstrap? ( >=dev-haskell/alex-3.1.3
-		>=dev-haskell/happy-1.19.3 )
-"
-
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-[[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
 use binary && QA_PREBUILT="*"
@@ -343,15 +330,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		EGIT_BRANCH="master"
-		if [[ -n ${GHC_BRANCH} ]]; then
-			EGIT_BRANCH="${GHC_BRANCH}"
-		fi
-
-		git-r3_src_unpack
-	fi
-
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
@@ -361,7 +339,15 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
-	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
+	unpack ${ONLYA}
+
+	if [[ -d "${S}"/libraries/dph ]]; then
+		# Sometimes dph libs get accidentally shipped with ghc
+		# but they are not installed unless user requests it.
+		# We never install them.
+		elog "Removing 'libraries/dph'"
+		rm -rf "${S}"/libraries/dph
+	fi
 }
 
 src_prepare() {
@@ -453,6 +439,9 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
+		sed -e 's@\(for REPO in .*\)@\1 base integer-gmp integer-gmp2 integer-simple template-haskell@' \
+			-i libraries/gen_contents_index || die
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
@@ -488,39 +477,12 @@ src_configure() {
 			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if is_crosscompile; then
-				# TODO this is a workaround for this build error with the live ebuild with haddock:
-				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
-				# needed by `utils/haddock/dist/build/Main.o'.  Stop.
-				echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-			else
-				echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-			fi
+			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
 			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
 			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-		fi
-		# not used outside of ghc's test
-		if [[ -n ${GHC_BUILD_DPH} ]]; then
-				echo "BUILD_DPH = YES" >> mk/build.mk
-			else
-				echo "BUILD_DPH = NO" >> mk/build.mk
-		fi
-
-		# might need additional fiddling with --host parameter:
-		#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
-		if is_crosscompile; then
-			if [[ ${CHOST} != ${CTARGET} ]]; then
-				echo "Stage1Only=YES" >> mk/build.mk
-			fi
-			# in registerised mode ghc is too keen to use llvm
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			# above is not enough to give up on llvm (x86_64 host, ia64 target)
-			econf_args+=(--enable-unregisterised)
-			# otherwise stage1 tries to run nonexistent ghc-split.lprl
-			echo "SplitObjs=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
@@ -546,13 +508,6 @@ src_configure() {
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
-
-		elog "Final mk/build.mk:"
-		cat mk/build.mk || die
-
-		if [[ ${PV} == *9999* ]]; then
-			perl boot || die "perl boot failed"
-		fi
 
 		local econf_args=()
 
@@ -584,17 +539,24 @@ src_compile() {
 		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
 		# 3. and then all the rest
 		emake all
+		# 4. this is to work around haddock --gen-index is broken
+		# We need to change <a href="Data-List.html">Data.List</a> to
+		# <a href="base-4.8.0.0/Data-List.html">Data.List</a>
+		if use doc; then
+			pushd libraries || die
+			for i in $(find . -regex './[-_A-Za-z0-9]*/dist-install/doc/html/[-_A-Za-z0-9]*/[A-Z][-_A-Za-z0-9]*.html' -print)
+			do
+				local j=${i:2}
+				local pkg="${j%%/*}"
+				local f="${j##*/}"
+				if [[ "${f}" =~ ^[A-Z].* ]]; then
+					local version="$(grep -i ^version: ${pkg}/*.cabal | cut -d: -f 2 | sed -e 's@[ \t]*@@')"
+					sed -e "s@\"\(${f}\)\"@\"${pkg}-${version}/\1\"@g" -i dist-haddock/index.html || die
+				fi
+			done
+			popd
+		fi
 	fi # ! use binary
-}
-
-src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	make $make_test_target stage=2 THREADS=$(makeopts_jobs)
 }
 
 src_install() {
@@ -609,7 +571,6 @@ src_install() {
 				|| die "could not remove docs (P vs PF revision mismatch?)"
 		fi
 	else
-		[[ -f VERSION ]] || emake VERSION
 		# We only build docs if we were bootstrapping, otherwise
 		# we copy them out of the unpacked binary .tbz2
 		if use doc && ! use ghcbootstrap; then
@@ -641,6 +602,10 @@ src_install() {
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/haddock
 
+		if [[ ! -f "${S}/VERSION" ]]; then
+			echo "${GHC_PV}" > "${S}/VERSION" \
+				|| die "Could not create file ${S}/VERSION"
+		fi
 		newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
 		newbashcomp utils/completion/ghc.bash         ghc
 	fi
@@ -686,14 +651,6 @@ pkg_postinst() {
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
-	fi
-
-	if is_crosscompile; then
-		ewarn
-		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
-		ewarn "not work for a cross compiler."
-		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
-		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
 	fi
 }
 
