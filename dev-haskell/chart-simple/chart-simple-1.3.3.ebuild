@@ -12,7 +12,7 @@ inherit haskell-cabal
 MY_PN="Chart-simple"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A wrapper for the chart library to assist with basic plots (Deprecated - use the Easy module instead)"
+DESCRIPTION="A wrapper for the chart library to assist with basic plots (Deprecated: use the Easy module instead)"
 HOMEPAGE="https://github.com/timbod7/haskell-chart/wiki"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
