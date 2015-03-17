@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -31,7 +31,8 @@ CABAL_CORE_LIB_GHC_PV="PM:7.8.4-r1 PM:7.8.4-r2 PM:7.8.4-r3 PM:7.8.4-r4"
 
 src_prepare() {
 	cabal_chdeps \
-		'base >=4.3 && < 4.8' 'base >=4.3'
+		'base >=4.3 && < 4.8' 'base >=4.3' \
+		'filepath >= 1.2 && < 1.4' 'filepath >= 1.2'
 }
 
 src_configure() {
