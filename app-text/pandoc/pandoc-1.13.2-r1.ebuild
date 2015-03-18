@@ -74,6 +74,12 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}/${PN}-1.13.2-ghc-7.10.patch")
 
+src_prepare() {
+	base_src_prepare
+	cabal_chdeps \
+		'filepath >= 1.1 && < 1.4' 'filepath >= 1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \
