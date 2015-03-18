@@ -126,13 +126,6 @@ ghc-supports-smp() {
 	$(ghc-getghc) --info | grep "Support SMP" | grep -q "YES"
 }
 
-# @FUNCTION: ghc-supports-dynamic-by-default
-# @DESCRIPTION:
-# checks if ghc links against shared haskell libraries by default
-ghc-supports-dynamic-by-default() {
-	$(ghc-getghc) --info | grep "Dynamic by default" | grep -q "YES"
-}
-
 # @FUNCTION: ghc-supports-interpreter
 # @DESCRIPTION:
 # checks if ghc has interpreter mode (aka GHCi)

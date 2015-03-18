@@ -387,8 +387,14 @@ cabal-configure() {
 
 	if $(ghc-supports-shared-libraries); then
 		# maybe a bit lower
-		if $(ghc-supports-dynamic-by-default); then
-			cabalconf+=(--enable-shared)
+		cabalconf+=(--enable-shared)
+
+		# Experimental support for dynamically linked binaries.
+		# We are enabling it since 7.10.1_rc3
+		if version_is_at_least "7.10.0.20150316" "$(ghc-version)"; then
+			# Known to break on ghc-7.8/Cabal-1.18
+			# https://ghc.haskell.org/trac/ghc/ticket/9625
+			cabalconf+=(--enable-executable-dynamic)
 		fi
 	fi
 
