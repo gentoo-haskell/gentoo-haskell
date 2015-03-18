@@ -21,6 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?]
 	>=dev-haskell/th-lift-0.6.1:=[profile?]
+	>=dev-haskell/th-orphans-0.9.1:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
