@@ -21,7 +21,11 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	>=dev-haskell/plailude-0.5 <dev-haskell/plailude-0.6
+	>=dev-haskell/dsp-0.2 <dev-haskell/dsp-0.3
+	>=dev-haskell/optparse-applicative-0.11 <dev-haskell/optparse-applicative-0.12
+	>=dev-haskell/plailude-0.6 <dev-haskell/plailude-0.7
+	>=dev-haskell/pretty-tree-0.1 <dev-haskell/pretty-tree-0.2
 	>=dev-haskell/safe-0.3 <dev-haskell/safe-0.4
+	>=dev-haskell/split-0.2 <dev-haskell/split-0.3
 	>=dev-lang/ghc-7.8.2
 "
