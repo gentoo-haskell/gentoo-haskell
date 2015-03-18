@@ -612,3 +612,7 @@ pkg_prerm() {
 
 	cp -p "${PKGCACHE}"{.shipped,}
 }
+
+pkg_postrm() {
+	ghc-package_pkg_postrm
+}
