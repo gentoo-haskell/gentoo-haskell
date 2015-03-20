@@ -51,7 +51,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
