@@ -54,4 +54,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal-mksetup
+
+	CABAL_FILE=elm-compiler.cabal cabal_chdeps \
+		' -Werror' ' '
 }
