@@ -29,9 +29,9 @@ RDEPEND=">=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profi
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	cairo? ( >=dev-haskell/diagrams-cairo-0.6:=[profile?] <dev-haskell/diagrams-cairo-1.3:=[profile?]
-			>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.8:=[profile?] )
-	!cairo? ( ps? ( >=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.8:=[profile?] )
-			!ps? ( >=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.8:=[profile?] ) )
+			>=dev-haskell/lens-4.0:=[profile?] )
+	!cairo? ( ps? ( >=dev-haskell/lens-4.0:=[profile?] )
+			!ps? ( >=dev-haskell/lens-4.0:=[profile?] ) )
 	ps? ( >=dev-haskell/diagrams-postscript-0.6:=[profile?] <dev-haskell/diagrams-postscript-1.2:=[profile?] )
 	svg? ( >=dev-haskell/blaze-svg-0.3.3:=[profile?] <dev-haskell/blaze-svg-0.4:=[profile?]
 		>=dev-haskell/diagrams-svg-0.8.0.1:=[profile?] <dev-haskell/diagrams-svg-1.2:=[profile?] )
@@ -42,7 +42,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >= 3.8 && < 4.7' 'lens >= 3.8'
+		'lens >= 3.8 && < 4.7' 'lens >= 3.8' \
+		'lens >= 4.0 && < 4.8' 'lens >= 4.0'
 }
 
 src_configure() {
