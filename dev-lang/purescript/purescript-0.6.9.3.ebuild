@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-haskell/file-embed-0.0.7:=[profile?]
+RDEPEND=">=dev-haskell/boxes-0.1.4:=[profile?] <dev-haskell/boxes-0.2.0:=[profile?]
+	>=dev-haskell/file-embed-0.0.7:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?] <dev-haskell/mtl-2.3.0:=[profile?]
 	>=dev-haskell/optparse-applicative-0.10.0:=[profile?]
