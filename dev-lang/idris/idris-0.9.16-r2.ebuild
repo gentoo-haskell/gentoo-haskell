@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
-	>=dev-haskell/lens-4.1.1:=[profile?] <dev-haskell/lens-4.8:=[profile?]
+	>=dev-haskell/lens-4.1.1:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
@@ -56,7 +56,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'utf8-string < 0.4' 'utf8-string'
+		'utf8-string < 0.4' 'utf8-string' \
+		'lens >= 4.1.1 && < 4.8' 'lens >= 4.1.1'
 }
 
 src_configure() {
