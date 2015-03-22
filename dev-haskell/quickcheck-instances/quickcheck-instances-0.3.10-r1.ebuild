@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -27,3 +27,9 @@ RDEPEND=">=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		"QuickCheck >= 2.1 && < 2.8" "QuickCheck >= 2.1 && < 3"
+}
+
