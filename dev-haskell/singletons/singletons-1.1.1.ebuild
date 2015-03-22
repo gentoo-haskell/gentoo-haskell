@@ -28,3 +28,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.6
 		>=dev-haskell/tasty-golden-2.2 )
 "
+
+src_prepare() {
+	# https://github.com/gentoo-haskell/gentoo-haskell/pull/360
+	# https://ghc.haskell.org/trac/ghc/ticket/9160
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.10.0.* ]] && replace-hcflags -O[2-9] -O1
+}
