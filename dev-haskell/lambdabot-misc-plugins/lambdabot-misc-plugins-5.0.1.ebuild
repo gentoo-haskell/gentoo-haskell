@@ -19,9 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
 RDEPEND=">=dev-haskell/hstatsd-0.1:=[profile?]
-	>=dev-haskell/lambdabot-core-5:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+	>=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
-	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/parsec-3:=[profile?]
 	>=dev-haskell/random-1:=[profile?]
@@ -44,11 +43,6 @@ RDEPEND=">=dev-haskell/hstatsd-0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'monad-control           >= 0.3 && < 1' 'monad-control           >= 0.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
