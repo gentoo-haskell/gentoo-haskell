@@ -42,7 +42,7 @@ pkg_setup() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=unix
+		--flag=unix \
 		--prefix="${GAMES_PREFIX}"
 }
 
