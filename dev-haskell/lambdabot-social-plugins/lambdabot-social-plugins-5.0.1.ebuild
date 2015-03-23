@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-	>=dev-haskell/lambdabot-core-5:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+	>=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
