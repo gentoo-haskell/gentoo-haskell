@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/network-uri
 	<dev-haskell/parsec-4
 	dev-haskell/psqueue
-	>=dev-haskell/quickcheck-2.4:2 <dev-haskell/quickcheck-2.8:2
+	>=dev-haskell/quickcheck-2.4:2
 	dev-haskell/random
 	dev-haskell/random-shuffle
 	dev-haskell/stm
@@ -52,7 +52,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-network-2.4.patch
 
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
-		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4 && < 2.8' \
+		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4' \
 		'cereal == 0.3.*' 'cereal >= 0.3' \
 		'network,' 'network,network-uri,'
 }
