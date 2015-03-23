@@ -20,7 +20,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/quickcheck-2.4:2=[profile?]
 	>=dev-haskell/random-1:=[profile?]
 	>=dev-haskell/test-framework-0.7.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -28,6 +28,11 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/exte
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.8' 'QuickCheck >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
