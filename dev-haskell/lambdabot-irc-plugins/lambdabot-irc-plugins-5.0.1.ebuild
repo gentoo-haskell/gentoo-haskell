@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/lambdabot-core-5:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+RDEPEND=">=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/network-2.3.0.13:=[profile?]
