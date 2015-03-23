@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/dice-0.1:=[profile?]
-	>=dev-haskell/lambdabot-core-5:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+	>=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
 	>=dev-haskell/misfortune-0.1:=[profile?]
 	>=dev-haskell/random-fu-0.2:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?]
