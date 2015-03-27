@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="UHC utilities"
-HOMEPAGE="https://github.com/UU-ComputerScience/uhc-utils"
+HOMEPAGE="https://github.com/UU-ComputerScience/uhc-util"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
+	>=dev-haskell/fclabels-2.0.2:=[profile?]
 	>=dev-haskell/fgl-5.4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/listlike-4.0.0:=[profile?]
