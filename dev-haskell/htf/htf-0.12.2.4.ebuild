@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -31,6 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?]
+	>=dev-haskell/old-time-1.0:=[profile?]
 	>=dev-haskell/quickcheck-2.3:2=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/regex-compat-0.92:=[profile?]
