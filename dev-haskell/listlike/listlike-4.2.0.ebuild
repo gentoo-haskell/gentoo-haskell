@@ -27,10 +27,10 @@ RDEPEND=">=dev-haskell/dlist-0.7:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/fmlist-0.8:=[profile?] <dev-haskell/fmlist-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?] <dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-2
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-3
 		>=dev-haskell/random-1 <dev-haskell/random-2 )
