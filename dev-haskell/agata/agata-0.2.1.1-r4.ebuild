@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-		>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+		>=dev-haskell/quickcheck-2.1:2=[profile?]
 		>=dev-haskell/tagged-0.4.2.1:=[profile?]
 		<dev-haskell/tagged-1.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
@@ -37,6 +37,6 @@ src_prepare() {
 	base_src_prepare
 
 	CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
-		'QuickCheck>=2.1&&<2.6' 'QuickCheck>=2.1&&<2.8' \
+		'QuickCheck>=2.1&&<2.6' 'QuickCheck>=2.1' \
 		'template-haskell<2.9' 'template-haskell<2.10'
 }
