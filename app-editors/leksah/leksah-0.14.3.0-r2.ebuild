@@ -42,7 +42,7 @@ RDEPEND=">=app-editors/leksah-server-0.14.3.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/pretty-show-1.6.3:=[profile?] <dev-haskell/pretty-show-1.7:=[profile?]
-	>=dev-haskell/quickcheck-2.4.2:2=[profile?] <dev-haskell/quickcheck-2.8:2=[profile?]
+	>=dev-haskell/quickcheck-2.4.2:2=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	dev-haskell/regex-tdfa-text:=[profile?]
@@ -82,7 +82,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-no-u8.patch
 	cabal_chdeps \
 		'yi >=0.11.2 && <0.12' 'yi >=0.11.1 && <0.12' \
-		'utf8-string >=0.3.1.1 && <0.4' 'utf8-string >=0.3.1.1'
+		'utf8-string >=0.3.1.1 && <0.4' 'utf8-string >=0.3.1.1' \
+		'QuickCheck >=2.4.2 && <2.8' 'QuickCheck >=2.4.2'
 }
 
 src_configure() {
