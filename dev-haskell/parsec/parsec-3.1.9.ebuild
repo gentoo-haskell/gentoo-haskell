@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Monadic parser combinators"
-HOMEPAGE="http://www.cs.uu.nl/~daan/parsec.html"
+HOMEPAGE="https://github.com/aslatter/parsec"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
