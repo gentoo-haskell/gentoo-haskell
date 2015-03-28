@@ -11,19 +11,18 @@ inherit haskell-cabal
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.10:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
-	>=dev-haskell/haddock-library-1.2.0:=[profile?] <dev-haskell/haddock-library-1.3:=[profile?]
+	>=dev-haskell/haddock-library-1.2.0:=[profile?] <dev-haskell/haddock-library-1.2.1:=[profile?]
 	>=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-lang/ghc-7.8.0:=
+	>=dev-lang/ghc-7.10:= <dev-lang/ghc-7.10.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
