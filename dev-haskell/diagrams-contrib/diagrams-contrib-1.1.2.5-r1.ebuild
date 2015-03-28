@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
+		>=dev-haskell/quickcheck-2.4:2
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -48,5 +48,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >= 4.0 && < 4.8' 'lens >= 4.0'
+		'lens >= 4.0 && < 4.8' 'lens >= 4.0' \
+		'QuickCheck                 >= 2.4 && < 2.8' 'QuickCheck                 >= 2.4'
 }
