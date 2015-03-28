@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+CABAL_CORE_LIB_GHC_PV="PM:7.10.1"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag legacy-encoding legacy-encoding) \
