@@ -66,7 +66,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
 		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.8
+		>=dev-haskell/quickcheck-2.4:2
 		>=dev-haskell/test-framework-0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -77,7 +77,8 @@ PATCHES=("${FILESDIR}/${PN}-1.13.2-ghc-7.10.patch")
 src_prepare() {
 	base_src_prepare
 	cabal_chdeps \
-		'filepath >= 1.1 && < 1.4' 'filepath >= 1.1'
+		'filepath >= 1.1 && < 1.4' 'filepath >= 1.1' \
+		'QuickCheck >= 2.4 && < 2.8' 'QuickCheck >= 2.4'
 }
 
 src_configure() {
