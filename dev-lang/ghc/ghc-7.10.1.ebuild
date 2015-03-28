@@ -440,6 +440,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		epatch "${FILESDIR}"/${PN}-7.10.1-rc3-ghc-7.10-bootstrap.patch
+		epatch "${FILESDIR}"/${PN}-7.10.1-libffi-x86-noexecstack.patch
 		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
 		sed -e 's@\(for REPO in .*\)@\1 base integer-gmp integer-gmp2 integer-simple template-haskell@' \
 			-i libraries/gen_contents_index || die
