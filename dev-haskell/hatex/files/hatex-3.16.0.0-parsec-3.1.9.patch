@@ -1,0 +1,21 @@
+diff --git a/test/Main.hs b/test/Main.hs
+index 1938922..1920d6d 100644
+--- a/test/Main.hs
++++ b/test/Main.hs
+@@ -1,12 +1,15 @@
+-
++{-# LANGUAGE CPP #-}
+ import Text.LaTeX
+ import Text.LaTeX.Base.Parser
+ 
+ import Test.Tasty
+ import qualified Test.Tasty.QuickCheck as QC
+ 
++#if !MIN_VERSION_parsec(3,1,9)
++-- newer parsec has good instance
+ instance Eq ParseError where
+   _ == _ = undefined
++#endif
+ 
+ main :: IO ()
+ main = defaultMain $ testGroup "HaTeX"
