@@ -26,7 +26,12 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.8
+	test? ( >=dev-haskell/quickcheck-2.5:2
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'QuickCheck                 >= 2.5      && < 2.8' 'QuickCheck                 >= 2.5'
+}
