@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RDEPEND="<dev-haskell/exceptions-0.7:=[profile?]
+RDEPEND="dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/multipart-0.1.2:=[profile?] <dev-haskell/multipart-0.2:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -31,6 +31,11 @@ RDEPEND="<dev-haskell/exceptions-0.7:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'exceptions < 0.7' 'exceptions'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
