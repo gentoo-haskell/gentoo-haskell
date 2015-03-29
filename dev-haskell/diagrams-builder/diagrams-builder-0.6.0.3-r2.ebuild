@@ -20,7 +20,7 @@ IUSE="cairo ps svg"
 
 RDEPEND=">=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.3:=[profile?]
-	>=dev-haskell/exceptions-0.3:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
+	>=dev-haskell/exceptions-0.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	>=dev-haskell/hint-0.4:=[profile?] <dev-haskell/hint-0.5:=[profile?]
@@ -43,7 +43,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'lens >= 3.8 && < 4.7' 'lens >= 3.8' \
-		'lens >= 4.0 && < 4.8' 'lens >= 4.0'
+		'lens >= 4.0 && < 4.8' 'lens >= 4.0' \
+		'exceptions >= 0.3 && < 0.7' 'exceptions >= 0.3'
 }
 
 src_configure() {
