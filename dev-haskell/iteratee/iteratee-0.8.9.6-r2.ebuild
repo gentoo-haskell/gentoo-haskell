@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.3:=[profile?] <dev-haskell/exceptions-0.7:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.3:=[profile?]
 	>=dev-haskell/listlike-3.0:=[profile?] <dev-haskell/listlike-5:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/parallel-2:=[profile?] <dev-haskell/parallel-4:=[profile?]
@@ -43,4 +43,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
+
+	cabal_chdeps \
+		'exceptions                >= 0.3     && < 0.7' 'exceptions                >= 0.3'
 }
