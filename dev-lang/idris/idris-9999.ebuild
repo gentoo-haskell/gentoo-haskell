@@ -16,7 +16,7 @@ EGIT_REPO_URI="git://github.com/idris-lang/Idris-dev.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="curses ffi gmp"
 
 RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annotated-wl-pprint-0.6:=[profile?]
