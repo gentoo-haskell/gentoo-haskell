@@ -24,4 +24,4 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:7.8.4-r1 PM:7.8.4-r2  PM:7.8.4-r3 PM:7.10.1_rc3 7.11.2015* PM:7.10.1"
+CABAL_CORE_LIB_GHC_PV="PM:7.8.4-r1 PM:7.8.4-r2  PM:7.8.4-r3 PM:7.10.1_rc3 PM:7.10.1 7.11.2015*"
