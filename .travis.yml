@@ -1,12 +1,12 @@
 #
 # Run repoman via travis
-# Taken from https://github.com/mrueg/repoman-travis
+# See https://github.com/mrueg/repoman-travis
 #
 language: python
 python:
     - pypy
 env:
-    - PORTAGE_VER="2.2.15"
+    - PORTAGE_VER="2.2.18"
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
@@ -22,7 +22,6 @@ before_script:
     - mkdir -p /etc/portage/ /usr/portage/distfiles
     - tar xzf portage-${PORTAGE_VER}.tar.gz
     - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
-    - ls -lisa /usr/portage
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
     - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
@@ -31,3 +30,4 @@ before_script:
     - cd travis-overlay
 script:
     - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
+# You can append own scripts after this line
