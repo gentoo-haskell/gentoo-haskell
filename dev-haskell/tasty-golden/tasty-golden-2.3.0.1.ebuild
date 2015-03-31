@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,9 +24,9 @@ RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?]
 	dev-haskell/temporary-rc:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.14
+	>=dev-haskell/cabal-1.16.0
 	test? ( dev-haskell/tasty-hunit )
 "
