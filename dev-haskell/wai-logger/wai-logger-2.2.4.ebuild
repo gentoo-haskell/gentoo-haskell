@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # wai-test cyclic depend
+
 RDEPEND="dev-haskell/auto-update:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/byteorder:=[profile?]
