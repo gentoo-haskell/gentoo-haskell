@@ -57,7 +57,7 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-GHC_PV=7.10.0.20150316 # uncomment only for -rc ebuilds
+#GHC_PV=7.10.0.20150316 # uncomment only for -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
@@ -539,7 +539,7 @@ src_configure() {
 		fi
 
 		if use gmp; then
-			echo "INTEGER_LIBRARY=integer-gmp2" >> mk/build.mk
+			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
 		else
 			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
 		fi
