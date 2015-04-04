@@ -26,7 +26,7 @@ RESTRICT=test # whoops, not good
 RDEPEND=">=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	dev-libs/openssl
+	dev-libs/openssl:*
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'integer-gmp >= 0.2 && < 1' 'integer-gmp >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
