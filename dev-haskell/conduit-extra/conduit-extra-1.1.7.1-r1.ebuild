@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
+	dev-haskell/bytestring-builder:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
