@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -63,7 +63,8 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	cabal_chdeps \
-		'hashtables >= 1.0 && < 1.2' 'hashtables >= 1.0 && < 1.3'
+		'hashtables >= 1.0 && < 1.2' 'hashtables >= 1.0 && < 1.3' \
+		'cpphs >= 1.18.6 && < 1.19' 'cpphs >= 1.18.6 && < 1.20'
 
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
