@@ -40,9 +40,6 @@ DEPEND+="
 "
 
 src_configure() {
-	cabal_chdeps \
-		'utf8-string >= 0.3 && < 0.4' 'utf8-string >= 0.3 && < 1.1'
-
 	haskell-cabal_src_configure \
 		$(cabal_flag maxcount maxcount)
 }
