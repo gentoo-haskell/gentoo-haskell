@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -55,7 +55,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.8
 	dev-haskell/happy
-	cpphs? ( >=dev-haskell/cpphs-1.18.8 <dev-haskell/cpphs-1.19 )
+	cpphs? ( dev-haskell/cpphs )
 "
 
 SITEFILE="50${PN}2-gentoo.el"
