@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +network_2_2_3
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit base haskell-cabal
 
 DESCRIPTION="Web related tools and services"
 HOMEPAGE="http://happstack.com"
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +template_haskell"
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/hslogger-1.0.2:=[profile?]
@@ -50,6 +50,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit )
 "
+
+PATCHES=("${FILESDIR}/${PN}-7.4.2-time-1.5.patch"
+		"${FILESDIR}/${PN}-7.4.2-ghc-7.10.patch")
 
 src_configure() {
 	haskell-cabal_src_configure \
