@@ -34,8 +34,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	sed -i -e 's/import System.Exit/import System.Exit (exitWith, ExitCode(..))/' \
-		SetupWrapper.hs || die
 	# workaround for module order
 	cabal_chdeps \
 		'other-modules:' 'exposed-modules:'
