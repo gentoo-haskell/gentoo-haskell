@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -31,3 +31,10 @@ RDEPEND=">=dev-haskell/mtl-2.1.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.6 && <4.8' 'base >=4.6'
+	sed -e 's@LANGUAGE @LANGUAGE FlexibleContexts, @' \
+		-i "${S}/src/Test/Tasty/Ingredients/Rerun.hs" || die
+}
