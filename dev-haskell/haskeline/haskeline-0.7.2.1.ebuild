@@ -20,7 +20,7 @@ IUSE="legacy-encoding libiconv +terminfo"
 
 RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	legacy-encoding? ( >=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-0.4:=[profile?] )
+	legacy-encoding? ( >=dev-haskell/utf8-string-0.3.6:=[profile?] )
 	terminfo? ( >=dev-haskell/terminfo-0.3.1.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -28,6 +28,11 @@ DEPEND="${RDEPEND}
 "
 
 CABAL_CORE_LIB_GHC_PV="PM:7.10.1"
+
+src_prepare() {
+	cabal_chdeps \
+		'utf8-string==0.3.* && >=0.3.6' 'utf8-string >=0.3.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
