@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'bytestring        >= 0.10.4 && < 0.10.5' 'bytestring        >= 0.10.4'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag test test)
