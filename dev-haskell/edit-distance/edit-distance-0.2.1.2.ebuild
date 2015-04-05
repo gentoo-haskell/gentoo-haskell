@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,6 +22,11 @@ RDEPEND=">=dev-haskell/random-1.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.2"
+
+src_prepare() {
+	sed -e 's@LANGUAGE @LANGUAGE FlexibleContexts, @' \
+		-i "${S}/Text/EditDistance/STUArray.hs" || die
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
