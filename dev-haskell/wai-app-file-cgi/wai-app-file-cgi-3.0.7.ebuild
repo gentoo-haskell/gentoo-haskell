@@ -50,5 +50,5 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.3
 		>=dev-haskell/hspec-1.3
 		dev-haskell/http
-		>=dev-haskell/warp-3.0.2 )
+		>=dev-haskell/warp-3.0.11 )
 "
