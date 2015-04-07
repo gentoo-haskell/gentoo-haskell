@@ -56,6 +56,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'filepath                  >= 1.1      && < 1.4' 'filepath                  >= 1.1' \
+		'filepath            >= 1.1     && < 1.4' 'filepath            >= 1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-old-base
