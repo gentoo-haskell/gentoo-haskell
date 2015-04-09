@@ -17,7 +17,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="cpu_flags_x86_aes"
+IUSE="cpu_flags_x86_aes cpu_flags_x86_ssse3"
 
 RDEPEND="dev-haskell/byteable:=[profile?]
 	>=dev-haskell/crypto-cipher-types-0.0.6:=[profile?] <dev-haskell/crypto-cipher-types-0.1:=[profile?]
@@ -33,6 +33,12 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	local want_aes="-"
+
+	use cpu_flags_x86_aes && \
+		use cpu_flags_x86_ssse3 && \
+			want_aes=""
+
 	haskell-cabal_src_configure \
-		$(cabal_flag cpu_flags_x86_aes support_aesni)
+		--flag=${want_aes}support_aesni
 }
