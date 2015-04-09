@@ -49,7 +49,24 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-	       "utf8-string == 0.3.*" "utf8-string >= 0.3 && <1.1"
+		"utf8-string == 0.3.*" "utf8-string >= 0.3 && <1.1"
+
+	# xmobar is an idle multithreaded program
+	# which sits in 'while { sleep(1); }'
+	# loops in multiple threads.
+	# It has a pathological behaviour in GHC:
+	#   everything program does is thread context switch
+	#   100 times per second. It's easily seen with
+	#
+	#       $ strace -f -p `pidof xmobar`
+	#
+	#   where rt_sigreturn() manages to enter/exit
+	# kernel 32 times in each second to do nothing
+	# This workaround allows shrinkng wakeups/thread
+	# switches down to one per second (internal xmobar's
+	# cycle).
+	# Be careful when remove it :]
+	HCFLAGS+=" -with-rtsopts=-V0"
 }
 
 src_configure() {
