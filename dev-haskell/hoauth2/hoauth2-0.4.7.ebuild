@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell OAuth2 authentication"
+DESCRIPTION="hoauth2"
 HOMEPAGE="https://github.com/freizl/hoauth2"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -24,16 +24,11 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'bytestring        >= 0.10.4 && < 0.10.5' 'bytestring        >= 0.10.4'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
