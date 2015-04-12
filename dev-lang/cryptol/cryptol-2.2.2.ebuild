@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/presburger-1.3:=[profile?]
 	>=dev-haskell/quickcheck-2.7:2=[profile?]
 	>=dev-haskell/random-1.0.1:=[profile?]
-	>=dev-haskell/sbv-4.2:=[profile?]
+	>=dev-haskell/sbv-4.2:=[profile?] <dev-haskell/sbv-4.3:=[profile?]
 	>=dev-haskell/smtlib-1.0.7:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?]
@@ -40,13 +40,9 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.20
 	dev-haskell/happy
 "
-
-src_prepare() {
-	cabal-mksetup
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
