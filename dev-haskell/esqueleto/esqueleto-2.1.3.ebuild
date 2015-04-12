@@ -23,7 +23,7 @@ RESTRICT=test # tests hang
 
 RDEPEND=">=dev-haskell/conduit-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
-	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.2:=[profile?]
+	>=dev-haskell/persistent-2.1.1.7:=[profile?] <dev-haskell/persistent-2.2:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -41,11 +41,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/persistent-template-2.1 <dev-haskell/persistent-template-2.2
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'base                 >= 4.5    && < 4.8' 'base                 >= 4.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
