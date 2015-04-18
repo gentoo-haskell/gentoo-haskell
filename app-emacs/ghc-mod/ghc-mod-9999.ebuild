@@ -21,6 +21,7 @@ IUSE="emacs"
 RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 			( >=dev-lang/ghc-7.7 ) )
 	>=dev-haskell/cabal-1.10:=[profile?]
+	>=dev-haskell/cabal-helper-0.3.2.0:=[profile?]
 	dev-haskell/convertible:=[profile?]
 	>=dev-haskell/djinn-ghc-0.0.2.1:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
@@ -48,7 +49,7 @@ DEPEND="${RDEPEND}
 "
 SITEFILE=50${PN}-gentoo.el
 
-PATCHES=("${FILESDIR}/${PN}-4.0.0-gentoo.patch")
+PATCHES=("${FILESDIR}/${PN}-9999-gentoo.patch")
 
 src_compile() {
 	haskell-cabal_src_compile
