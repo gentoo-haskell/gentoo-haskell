@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=app-text/pandoc-1.10:=[profile?] <app-text/pandoc-1.14:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/persistent-0.9:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
@@ -35,3 +35,8 @@ RDEPEND=">=app-text/pandoc-1.10:=[profile?] <app-text/pandoc-1.14:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'blaze-html      >= 0.5   && < 0.8' 'blaze-html      >= 0.5'
+}
