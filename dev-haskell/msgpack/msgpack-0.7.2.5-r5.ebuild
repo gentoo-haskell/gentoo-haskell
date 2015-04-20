@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.8:=[profile?]
-	>=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
@@ -39,5 +39,6 @@ src_prepare() {
 		'QuickCheck     == 2.5.*' 'QuickCheck     >= 2.5' \
 		'attoparsec    >= 0.8 && < 0.11' 'attoparsec    >= 0.8' \
 		'text          == 0.11.*' 'text >= 0.11' \
-		'template-haskell >= 2.4 && < 2.9' 'template-haskell >= 2.4 && < 2.10'
+		'template-haskell >= 2.4 && < 2.9' 'template-haskell >= 2.4 && < 2.10' \
+		'blaze-builder >= 0.3 && < 0.4' 'blaze-builder >= 0.3'
 }
