@@ -20,9 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/blaze-builder-0.3.0.1:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+	>=dev-haskell/blaze-builder-0.3.0.1:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
-	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.7:=[profile?]
+	>=dev-haskell/blaze-markup-0.5:=[profile?]
 	>=dev-haskell/charset-0.3.5.1:=[profile?] <dev-haskell/charset-1:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
@@ -42,3 +42,9 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.1
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'blaze-builder        >= 0.3.0.1 && < 0.4' 'blaze-builder        >= 0.3.0.1' \
+		'blaze-markup         >= 0.5     && < 0.7' 'blaze-markup         >= 0.5'
+}
