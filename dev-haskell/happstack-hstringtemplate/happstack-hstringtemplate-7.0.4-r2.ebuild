@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?]
 	dev-haskell/hslogger:=[profile?]
-	>=dev-haskell/hstringtemplate-0.4.3:=[profile?] <dev-haskell/hstringtemplate-0.8:=[profile?]
+	>=dev-haskell/hstringtemplate-0.4.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -30,5 +30,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'happstack-server >= 6.0 && < 7.4' 'happstack-server >= 6.0'
+		'happstack-server >= 6.0 && < 7.4' 'happstack-server >= 6.0' \
+		'HStringTemplate >= 0.4.3 && < 0.8' 'HStringTemplate >= 0.4.3'
 }
