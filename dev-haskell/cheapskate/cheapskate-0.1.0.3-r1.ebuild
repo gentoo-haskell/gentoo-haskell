@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="dingus"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	>=dev-haskell/blaze-html-0.6:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-html-0.6:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -38,4 +38,9 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag dingus dingus)
+}
+
+src_prepare() {
+	cabal_chdeps \
+		'blaze-html >=0.6 && < 0.8' 'blaze-html >=0.6'
 }
