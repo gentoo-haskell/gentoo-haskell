@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+RESTRICT=test # tests don't like blaze-builder-0.4
+
+RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?]
 	>=dev-haskell/data-default-0.5.3:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
 	>=dev-haskell/lens-3.9.0.2:=[profile?]
@@ -49,5 +51,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/vty-5.2.6-disable-mock-input-tests.patch
 	cabal_chdeps \
 		'utf8-string >= 0.3 && < 0.4' 'utf8-string >= 0.3 && < 1.1' \
-		'lens >= 3.9.0.2 && < 4.8' 'lens >= 3.9.0.2'
+		'lens >= 3.9.0.2 && < 4.8' 'lens >= 3.9.0.2' \
+		'blaze-builder >= 0.3.3.2 && < 0.4' 'blaze-builder >= 0.3.3.2'
 }
