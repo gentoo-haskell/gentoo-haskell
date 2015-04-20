@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?]
+RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?]
 	>=dev-haskell/http-types-0.6:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
@@ -39,5 +39,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'utf8-string   >= 0.3  && < 0.4' 'utf8-string   >= 0.3'
+		'utf8-string   >= 0.3  && < 0.4' 'utf8-string   >= 0.3' \
+		'blaze-builder >= 0.2  && < 0.4' 'blaze-builder >= 0.2'
 }
