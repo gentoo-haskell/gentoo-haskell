@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.8:=[profile?]
+	>=dev-haskell/blaze-html-0.6.1.3:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?]
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
@@ -60,7 +60,8 @@ src_prepare() {
 	cabal_chdeps \
 		'utf8-string < 0.4' 'utf8-string' \
 		'lens >= 4.1.1 && < 4.8' 'lens >= 4.1.1' \
-		'blaze-markup >= 0.5.2.1 && < 0.6.3.0' 'blaze-markup'
+		'blaze-markup >= 0.5.2.1 && < 0.6.3.0' 'blaze-markup' \
+		'blaze-html >= 0.6.1.3 && < 0.8' 'blaze-html >= 0.6.1.3'
 }
 
 src_configure() {
