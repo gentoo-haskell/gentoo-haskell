@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/bloomfilter
 	>=dev-haskell/cabal-1.8
 	dev-haskell/case-insensitive
-	>=dev-haskell/cryptohash-0.10.0
+	>=dev-haskell/cryptohash-0.11.0
 	dev-haskell/dataenc
 	dev-haskell/data-default
 	dev-haskell/dlist
@@ -51,7 +51,6 @@ DEPEND="${RDEPEND}
 	dev-haskell/random
 	dev-haskell/resourcet
 	dev-haskell/safesemaphore
-	dev-haskell/sha
 	>=dev-haskell/stm-2.3
 	dev-haskell/text
 	dev-haskell/transformers
