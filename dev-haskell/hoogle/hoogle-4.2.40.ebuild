@@ -19,6 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="fetchdb fetchdb-ghc localdb"
 REQUIRED_USE="fetchdb-ghc? ( fetchdb ) localdb? ( fetchdb )"
 
+RESTRICT=test # slooooooow
+
 RDEPEND=">=dev-haskell/aeson-0.6.1:=[profile?]
 	dev-haskell/binary:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?]
