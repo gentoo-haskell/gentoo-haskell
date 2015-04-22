@@ -56,5 +56,7 @@ src_prepare() {
 	cabal-mksetup
 
 	CABAL_FILE=elm-compiler.cabal cabal_chdeps \
-		' -Werror' ' '
+		' -Werror' ' ' \
+		'blaze-html >= 0.5 && < 0.8' 'blaze-html >= 0.5' \
+		'blaze-markup >= 0.5.1 && < 0.7' 'blaze-markup >= 0.5.1'
 }
