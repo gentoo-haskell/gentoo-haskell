@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		TOML is an obvious and minimal format for config files.
+		
+		This package provides a TOML parser,
+		build with the Parsec library, and providing a JSON
+		interface using the Aeson library.
+	</longdescription>
+</pkgmetadata>
