@@ -59,7 +59,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'utf8-string < 0.4' 'utf8-string' \
-		'lens >= 4.1.1 && < 4.8' 'lens >= 4.1.1' \
 		'blaze-markup >= 0.5.2.1 && < 0.6.3.0' 'blaze-markup' \
 		'blaze-html >= 0.6.1.3 && < 0.8' 'blaze-html >= 0.6.1.3'
 }
