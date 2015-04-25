@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/path-pieces-0.1:=[profile?] <dev-haskell/path-pieces-0.2:=[profile?]
+RDEPEND=">=dev-haskell/path-pieces-0.1:=[profile?]
 	>=dev-haskell/text-0.5:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -28,3 +28,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'path-pieces               >= 0.1      && < 0.2' 'path-pieces               >= 0.1'
+}
