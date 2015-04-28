@@ -91,11 +91,10 @@ RDEPEND="
 
 # similar for glibc. we have bootstrapped binaries against glibc-2.17
 DEPEND="${RDEPEND}
-	ghcbootstrap? (
-		doc? ( app-text/docbook-xml-dtd:4.2
-			app-text/docbook-xml-dtd:4.5
-			app-text/docbook-xsl-stylesheets
-			>=dev-libs/libxslt-1.1.2 ) )
+	doc? ( app-text/docbook-xml-dtd:4.2
+		app-text/docbook-xml-dtd:4.5
+		app-text/docbook-xsl-stylesheets
+		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
@@ -475,17 +474,16 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		# app-text/dblatex is not in portage, can not build PDF or PS
-		if use ghcbootstrap && use doc; then
-			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
-			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+		echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
+		echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
+		if use doc; then
 			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 		else
-			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
-			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
 			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
-			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
 		fi
+
+		# this controls presence on 'xhtml' and 'haddock' in final install
+		echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 
 		# allows overriding build flavours for libraries:
 		# v   - vanilla (static libs)
@@ -541,23 +539,6 @@ src_compile() {
 		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
 		# 3. and then all the rest
 		emake all
-		# 4. this is to work around haddock --gen-index is broken
-		# We need to change <a href="Data-List.html">Data.List</a> to
-		# <a href="base-4.8.0.0/Data-List.html">Data.List</a>
-		if use doc; then
-			pushd libraries || die
-			for i in $(find . -regex './[-_A-Za-z0-9]*/dist-install/doc/html/[-_A-Za-z0-9]*/[A-Z][-_A-Za-z0-9]*.html' -print)
-			do
-				local j=${i:2}
-				local pkg="${j%%/*}"
-				local f="${j##*/}"
-				if [[ "${f}" =~ ^[A-Z].* ]]; then
-					local version="$(grep -i ^version: ${pkg}/*.cabal | cut -d: -f 2 | sed -e 's@[ \t]*@@')"
-					sed -e "s@\"\(${f}\)\"@\"${pkg}-${version}/\1\"@g" -i dist-haddock/index.html || die
-				fi
-			done
-			popd
-		fi
 	fi # ! use binary
 }
 
@@ -565,25 +546,10 @@ src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
 		mv "${S}/usr" "${ED}"
-
-		# Remove the docs if not requested
-		if ! use doc; then
-			rm -rf "${ED}/usr/share/doc/${P}/*/" \
-				"${ED}/usr/share/doc/${P}/*.html" \
-				|| die "could not remove docs (P vs PF revision mismatch?)"
-		fi
 	else
-		# We only build docs if we were bootstrapping, otherwise
-		# we copy them out of the unpacked binary .tbz2
-		if use doc && ! use ghcbootstrap; then
-			mkdir -p "${ED}/usr/share/doc"
-			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
-				|| die "failed to copy docs"
-		else
-			dodoc "${S}/distrib/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
-		fi
 
 		emake -j1 install DESTDIR="${D}"
+		dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
 
 		# rename ghc-shipped files to avoid collision
 		# of external packages. Motivating example:
