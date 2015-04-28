@@ -22,8 +22,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
-	>=dev-haskell/chart-1.3:=[profile?] <dev-haskell/chart-1.4:=[profile?]
-	>=dev-haskell/chart-cairo-1.3:=[profile?] <dev-haskell/chart-cairo-1.4:=[profile?]
+	>=dev-haskell/chart-1.3:=[profile?] <dev-haskell/chart-1.5:=[profile?]
+	>=dev-haskell/chart-cairo-1.3:=[profile?] <dev-haskell/chart-cairo-1.5:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/gtk-0.9.11:=[profile?]
