@@ -29,4 +29,8 @@
 		within @diagram@ environments. Note that
 		@diagrams-latex.sty@ is licensed under the GPL.
 	</longdescription>
+	<use>
+		<flag name="ps">Enable postscript backend</flag>
+		<flag name="rasterific">Enable rasterific backend</flag>
+	</use>
 </pkgmetadata>
