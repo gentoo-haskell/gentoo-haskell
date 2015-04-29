@@ -20,7 +20,7 @@ IUSE="portable"
 RESTRICT="test" #too long
 
 RDEPEND="dev-haskell/binary:=[profile?]
-	>=dev-haskell/extra-1.1:=[profile?]
+	>=dev-haskell/extra-1.1:2=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?]
 	dev-haskell/js-flot:=[profile?]
 	dev-haskell/js-jquery:=[profile?]
