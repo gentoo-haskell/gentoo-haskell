@@ -310,7 +310,15 @@ cabal-configure() {
 	has "${EAPI:-0}" 0 1 2 && ! use prefix && EPREFIX=
 
 	if [[ -n "${CABAL_USE_HADDOCK}" ]] && use doc; then
-		cabalconf+=(--with-haddock=${EPREFIX}/usr/bin/haddock)
+		# We use the bundled with GHC version if exists
+		# Haddock is very picky about index files
+		# it generates for ghc's base and other packages.
+		local p=${EPREFIX}/usr/bin/haddock-ghc-$(ghc-version)
+		if [[ -f $p ]]; then
+			cabalconf+=(--with-haddock="${p}")
+		else
+			cabalconf+=(--with-haddock=${EPREFIX}/usr/bin/haddock)
+		fi
 	fi
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
 		cabalconf+=(--enable-library-profiling)
