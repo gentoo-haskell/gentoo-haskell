@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # hangs
+
 RDEPEND=">=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
