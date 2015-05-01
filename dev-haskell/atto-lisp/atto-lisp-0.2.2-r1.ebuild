@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'blaze-builder >= 0.3     && < 0.4' 'blaze-builder >= 0.3'
+		'blaze-builder >= 0.3     && < 0.4' 'blaze-builder >= 0.3' \
+		'deepseq       >= 1.1     && < 1.4' 'deepseq       >= 1.1'
 }
