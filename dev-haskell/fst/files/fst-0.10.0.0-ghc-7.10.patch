@@ -1,0 +1,28 @@
+diff --git a/FST/NReg.hs b/FST/NReg.hs
+index a9ac0df..9a3084b 100644
+--- a/FST/NReg.hs
++++ b/FST/NReg.hs
+@@ -16,0 +17 @@ import FST.RRegTypes
++import Prelude hiding ((<*>))
+diff --git a/FST/Parse.hs b/FST/Parse.hs
+index 9301573..3dd6d7d 100644
+--- a/FST/Parse.hs
++++ b/FST/Parse.hs
+@@ -10 +10 @@ import FST.Lexer
+-import Control.Monad (liftM,liftM2)
++import Control.Monad (liftM,liftM2,ap)
+@@ -712,0 +713,7 @@ data E a =   Ok a
++instance Functor E where
++    fmap  = liftM
++
++instance Applicative E where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+diff --git a/FST/RRegTypes.hs b/FST/RRegTypes.hs
+index a133c6c..a3de8d0 100644
+--- a/FST/RRegTypes.hs
++++ b/FST/RRegTypes.hs
+@@ -16 +16 @@ import FST.TransducerTypes (Symbol(..))
+-
++import Prelude hiding ((<*>))
