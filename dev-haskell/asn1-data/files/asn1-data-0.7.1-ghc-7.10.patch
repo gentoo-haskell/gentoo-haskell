@@ -2,6 +2,9 @@ diff --git a/Data/ASN1/Parse.hs b/Data/ASN1/Parse.hs
 index eeea2be..83bc80e 100644
 --- a/Data/ASN1/Parse.hs
 +++ b/Data/ASN1/Parse.hs
+@@ -24 +24 @@ import Control.Monad.Error
+-import Control.Applicative ((<$>))
++import Control.Applicative ((<$>), Applicative)
 @@ -25,7 +25,7 @@ import Control.Applicative ((<$>))
  
  -- | Parse ASN1 Monad
