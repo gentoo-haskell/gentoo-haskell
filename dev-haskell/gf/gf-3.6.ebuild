@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -c-runtime,+custom-binary
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Grammatical Framework"
 HOMEPAGE="http://www.grammaticalframework.org/"
@@ -45,6 +45,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+
 	cabal_chdeps \
 		'ghc-options: -j +RTS -A20M -RTS' 'ghc-options: ' \
 		'build-depends: binary' 'build-depends: binary, data-binary-ieee754' \
