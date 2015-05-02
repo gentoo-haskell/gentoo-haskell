@@ -29,5 +29,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'base >= 4.0 && < 4.7' 'base >= 4.0' \
-		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3'
+		'mtl >= 2.0 && < 2.2' 'mtl >= 2.0 && < 2.3' \
+		'deepseq >= 1.1 && < 1.4' 'deepseq >= 1.1' \
+		'time >= 1.2 && < 1.5' 'time >= 1.2'
 }
