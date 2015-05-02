@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: +unix
 
 CABAL_FEATURES="bin"
-inherit haskell-cabal games
+inherit eutils haskell-cabal games
 
 DESCRIPTION="scroll(6), a roguelike game"
 HOMEPAGE="https://joeyh.name/code/scroll/"
@@ -38,6 +38,10 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	games_pkg_setup
 	haskell-cabal_pkg_setup
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
 
 src_configure() {

@@ -1,0 +1,13 @@
+diff --git a/Player/Move.hs b/Player/Move.hs
+index c302656..4269fa5 100644
+--- a/Player/Move.hs
++++ b/Player/Move.hs
+@@ -0,0 +1 @@
++{-# LANGUAGE FlexibleContexts #-}
+diff --git a/Unicode.hs b/Unicode.hs
+index 1c5827e..ccaf3d1 100644
+--- a/Unicode.hs
++++ b/Unicode.hs
+@@ -62 +62 @@ unicodeCharDesc c
+-	| l1 `elem` "AEIOU" = "an " ++ s
++	| l1 `elem` ("AEIOU" :: String) = "an " ++ s
