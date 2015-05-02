@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
+	HCFLAGS+=" -XFlexibleContexts"
 
 	cabal_chdeps \
 		'network' 'network, network-uri'
