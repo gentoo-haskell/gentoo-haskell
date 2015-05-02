@@ -29,3 +29,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/split-0.2 <dev-haskell/split-0.3
 	>=dev-lang/ghc-7.8.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base                 >=4.7  && <4.8' 'base                 >=4.7'
+}
