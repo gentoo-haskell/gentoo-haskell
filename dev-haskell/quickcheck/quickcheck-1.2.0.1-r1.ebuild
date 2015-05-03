@@ -2,8 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 CABAL_FEATURES="lib profile haddock"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 MY_PN="QuickCheck"
 MY_P="${MY_PN}-${PV}"
@@ -18,8 +20,14 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~p
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-6.6.1
-		dev-haskell/random"
+	dev-haskell/random:=[profile?]
+"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2"
+	>=dev-haskell/cabal-1.2
+"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
