@@ -40,6 +40,7 @@ CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-utf8s-1.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	einfo "Using default mueval timeout: ${MUEVAL_TIMEOUT} * 0.7s"
 	sed -e "s@timeLimit = 5@timeLimit = ${MUEVAL_TIMEOUT}@" \
