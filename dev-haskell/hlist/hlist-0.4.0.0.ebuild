@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # show
+
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	dev-haskell/tagged:=[profile?]
