@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		QuickCheck-safe reimplements the quickCheck functionality with a pure
+		interface and a very small trusted base (see Test.QuickCheck.Safe.Trusted).
+		
+		* uses the existing Arbitrary instances
+		* implemented features: testing, result minimization (i.e., shrinking)
+		* missing features: expected failures, label frequencies, coverage
+		
+		The package is targeted at users who want to leverage SafeHaskell for
+		sandboxing.
+		
+		&gt;&gt;&gt; putStr $ quickCheck (inventQCGen ()) (\x -&gt; length (x :: [()]) &lt; 10)
+		*** Failed! Falsifiable (after 18 tests and 3 shrinks):
+		[(),(),(),(),(),(),(),(),(),(),(),(),(),(),()]
+	</longdescription>
+</pkgmetadata>
