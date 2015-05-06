@@ -1,0 +1,19 @@
+diff --git a/Language/Unlambda.hs b/Language/Unlambda.hs
+index 0b4be6b..980e574 100644
+--- a/Language/Unlambda.hs
++++ b/Language/Unlambda.hs
+@@ -31,2 +31,4 @@ import Prelude hiding(catch)
+ import Control.Exception (catch, IOException)
++import Control.Applicative
++import Control.Monad
+ 
+@@ -87,2 +89,9 @@ type Cont a = (Maybe Char, Int) -> a -> IO Exp
+ 
++instance Functor Eval where
++    fmap  = liftM
++
++instance Applicative Eval where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Monad Eval where
