@@ -1,0 +1,10 @@
+diff --git a/src/Fortune.hs b/src/Fortune.hs
+index ac70f47..2dfab4e 100644
+--- a/src/Fortune.hs
++++ b/src/Fortune.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE RecordWildCards #-}
++{-# LANGUAGE FlexibleContexts #-}
+ module Main (main) where
+ 
+ import Control.Applicative
