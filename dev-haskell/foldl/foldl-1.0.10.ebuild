@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/primitive-0.7:=[profile?]
+RDEPEND=">=dev-haskell/mwc-random-0.13.1.0:=[profile?] <dev-haskell/mwc-random-0.14:=[profile?]
+	<dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/text-0.11.2.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
