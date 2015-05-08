@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # insert then delete: [Failed] *** Failed! Falsifiable (after 15 tests)
 
-RDEPEND=">=dev-haskell/hashable-1.1.1:=[profile?] <dev-haskell/hashable-1.2:=[profile?]
+RDEPEND=">=dev-haskell/hashable-1.1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
