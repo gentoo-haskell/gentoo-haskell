@@ -1,0 +1,15 @@
+diff --git a/Codec/Text/IConv/Internal.hs b/Codec/Text/IConv/Internal.hs
+index 12f4812..51fb771 100644
+--- a/Codec/Text/IConv/Internal.hs
++++ b/Codec/Text/IConv/Internal.hs
+@@ -51,0 +52,2 @@ import Control.Exception (assert)
++import Control.Monad
++import Control.Applicative
+@@ -204,0 +207,7 @@ newtype IConv a = I {
++instance Functor IConv where
++    fmap  = liftM
++
++instance Applicative IConv where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
