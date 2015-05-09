@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: dynamic:system-glfw
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 MY_PN="GLFW"
 MY_P="${MY_PN}-${PV}"
@@ -33,6 +33,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
