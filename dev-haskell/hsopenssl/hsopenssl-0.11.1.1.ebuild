@@ -37,12 +37,13 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	cabal_chdeps \
-		'integer-gmp >= 0.2 && < 1' 'integer-gmp >= 0.2'
-}
-
 src_configure() {
+	local fbn_flag=$(cabal_flag fast-bignum fast-bignum)
+
+	# not ported to integer-gmp-1.0:
+	#  https://github.com/phonohawk/HsOpenSSL/issues/36
+	[[ $(ghc-version) == 7.10.* ]] && fbn_flag=-f-fast-bignum
+
 	haskell-cabal_src_configure \
-		$(cabal_flag fast-bignum fast-bignum)
+		${fbn_flag}
 }
