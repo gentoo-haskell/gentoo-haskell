@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (10 May 2015)
+# outdated, lambdabot-5.0 does not use it
+dev-haskell/lambdabot-utils
+
 # Sergei Trofimovich <slyfox@gentoo.org> (23 Nov 2014)
 # Likes to clash with popular 'mtl' namespace, subsumed by transformers/mtl.
 dev-haskell/monads-fd
