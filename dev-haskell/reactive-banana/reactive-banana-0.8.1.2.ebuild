@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+useextensions"
 
 RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/pqueue-1.0:=[profile?] <dev-haskell/pqueue-1.3:=[profile?]
+	>=dev-haskell/psqueues-0.2:=[profile?] <dev-haskell/psqueues-0.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
