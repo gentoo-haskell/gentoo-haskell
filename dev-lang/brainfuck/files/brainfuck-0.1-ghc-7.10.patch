@@ -1,7 +1,0 @@
-diff --git a/Language/Brainfuck.hs b/Language/Brainfuck.hs
-index 26a53ca..be6c83e 100644
---- a/Language/Brainfuck.hs
-+++ b/Language/Brainfuck.hs
-@@ -1 +1,2 @@
-+{-# LANGUAGE FlexibleContexts #-}
- {-
