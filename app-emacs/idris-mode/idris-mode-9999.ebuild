@@ -22,6 +22,8 @@ RDEPEND="app-emacs/haskell-mode"
 
 SITEFILE="50${PN}-gentoo.el"
 
+RESTRICT=test # fails frequently
+
 src_prepare() {
 	cp "${FILESDIR}/${SITEFILE}" "${S}" \
 		|| die "Could not cp ${SITEFILE}"
