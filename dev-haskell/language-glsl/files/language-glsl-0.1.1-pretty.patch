@@ -1,0 +1,14 @@
+diff --git a/bin/glsl-pprint.hs b/bin/glsl-pprint.hs
+index 2d5dfa9..982772c 100644
+--- a/bin/glsl-pprint.hs
++++ b/bin/glsl-pprint.hs
+@@ -1,7 +1,8 @@
++{-# LANGUAGE PackageImports #-}
+ module Main where
+ 
+ import System.Environment (getArgs)
+-import Text.PrettyPrint.HughesPJClass
++import "prettyclass" Text.PrettyPrint.HughesPJClass
+ 
+ import Language.GLSL
+ 
