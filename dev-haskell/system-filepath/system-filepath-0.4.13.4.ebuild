@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="High-level, byte-based file and directory path manipulations"
+DESCRIPTION="High-level, byte-based file and directory path manipulations (deprecated)"
 HOMEPAGE="https://github.com/fpco/haskell-filesystem"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
