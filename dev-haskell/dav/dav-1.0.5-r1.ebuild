@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-haskell/xml-conduit-1.0:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
+	>=dev-haskell/xml-conduit-1.0:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?]
 	>=dev-haskell/xml-hamlet-0.4:=[profile?] <dev-haskell/xml-hamlet-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
@@ -47,6 +47,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'xml-conduit >= 1.0          && < 1.3' 'xml-conduit >= 1.0          && < 1.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
