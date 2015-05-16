@@ -47,15 +47,15 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 	examples? ( >=dev-haskell/errors-1.4:=[profile?] <dev-haskell/errors-2.0:=[profile?]
 			dev-haskell/exceptions:=[profile?]
 			>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?] )
 	!examples? ( >=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/aeson-0.7
 		>=dev-haskell/errors-1.4.7 <dev-haskell/errors-2.0
 		>=dev-haskell/http-client-0.3
@@ -69,6 +69,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/transformers-base-0.4
 		!examples? ( >=dev-haskell/transformers-0.3 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'xml-conduit          >= 1.2     && <1.3' 'xml-conduit          >= 1.2     && <1.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
