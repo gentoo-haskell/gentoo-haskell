@@ -50,6 +50,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-network-2.4.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'QuickCheck >= 2.4 && < 2.6' 'QuickCheck >= 2.4' \
