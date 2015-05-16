@@ -108,8 +108,7 @@ DEPEND="${RDEPEND}
 					dev-haskell/securemem
 					dev-haskell/byteable ) )
 	webdav? ( >=dev-haskell/dav-1.0
-			dev-haskell/http-client
-			dev-haskell/xml-conduit )
+			dev-haskell/http-client )
 	xmpp? ( >=dev-haskell/gnutls-0.1.4
 		dev-haskell/network-protocol-xmpp
 		dev-haskell/xml-types )
