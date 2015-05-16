@@ -29,5 +29,5 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	cabal_chdeps \
-		'base == 4.5.* || == 4.6.*' 'base >= 4.5 && < 4.8'
+		'base == 4.5.* || == 4.6.*' 'base >= 4.5'
 }
