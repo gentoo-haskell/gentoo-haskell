@@ -21,11 +21,10 @@ IUSE=""
 RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.1:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
-	>=dev-haskell/system-filepath-0.4:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	>=dev-haskell/tagstream-conduit-0.5.5.3:=[profile?] <dev-haskell/tagstream-conduit-0.6:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-haskell/xml-conduit-1.1:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
+	>=dev-haskell/xml-conduit-1.3:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
