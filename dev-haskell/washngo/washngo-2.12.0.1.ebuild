@@ -35,4 +35,5 @@ src_prepare() {
 		'haskell98, parsec < 3' 'parsec'
 
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
