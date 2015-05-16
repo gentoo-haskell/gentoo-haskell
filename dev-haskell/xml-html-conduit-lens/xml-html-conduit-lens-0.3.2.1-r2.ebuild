@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.3:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-haskell/xml-conduit-1.1:=[profile?] <dev-haskell/xml-conduit-1.3:=[profile?]
+	>=dev-haskell/xml-conduit-1.1:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -33,5 +33,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text                    >= 0.11  && < 1.2' 'text                    >= 0.11'
+		'text                    >= 0.11  && < 1.2' 'text                    >= 0.11' \
+		'xml-conduit             >= 1.1   && < 1.3' 'xml-conduit             >= 1.1   && < 1.4'
 }
