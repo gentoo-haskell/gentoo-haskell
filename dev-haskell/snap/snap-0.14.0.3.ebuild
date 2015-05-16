@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/errors-1.4:=[profile?] <dev-haskell/errors-1.5:=[profile?]
 	>=dev-haskell/heist-0.14:=[profile?] <dev-haskell/heist-0.15:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.10:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.11:=[profile?]
 	>=dev-haskell/logict-0.4.2:=[profile?] <dev-haskell/logict-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7.1:=[profile?] <dev-haskell/vector-0.11:=[profile?]
-	>=dev-haskell/vector-algorithms-0.4:=[profile?] <dev-haskell/vector-algorithms-0.7:=[profile?]
+	>=dev-haskell/vector-algorithms-0.4:=[profile?] <dev-haskell/vector-algorithms-0.8:=[profile?]
 	>=dev-haskell/xmlhtml-0.1:=[profile?] <dev-haskell/xmlhtml-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	|| ( ( >=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.7:=[profile?] )
@@ -55,12 +55,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'filepath                  >= 1.1      && < 1.4' 'filepath                  >= 1.1' \
-		'filepath            >= 1.1     && < 1.4' 'filepath            >= 1.1'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
