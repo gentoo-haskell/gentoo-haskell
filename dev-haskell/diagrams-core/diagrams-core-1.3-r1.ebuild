@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1.0:=[profile?]
 	>=dev-haskell/dual-tree-0.2:=[profile?] <dev-haskell/dual-tree-0.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.10:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/linear-1.11.3:=[profile?] <dev-haskell/linear-1.19:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -32,3 +32,8 @@ RDEPEND=">=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 4.0 && < 4.10' 'lens >= 3.9'
+}
