@@ -1,9 +1,0 @@
-diff --git a/Data/Array/Accelerate/Data/Complex.hs b/Data/Array/Accelerate/Data/Complex.hs
-index 8cb46dd..d33fcc9 100644
---- a/Data/Array/Accelerate/Data/Complex.hs
-+++ b/Data/Array/Accelerate/Data/Complex.hs
-@@ -28,3 +28,3 @@ module Data.Array.Accelerate.Data.Complex (
- 
--import Prelude
-+import Prelude hiding ((<*))
- import Data.Complex                             ( Complex(..) )
