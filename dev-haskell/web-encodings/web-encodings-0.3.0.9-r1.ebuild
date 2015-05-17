@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -buildtests
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Encapsulate multiple web encoding in a single package. (deprecated)"
 HOMEPAGE="http://hackage.haskell.org/package/web-encodings"
@@ -21,6 +21,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/failure-0.0.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
+	dev-haskell/time-locale-compat:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,6 +29,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-time-1.5.patch
+
 	cabal_chdeps \
 		'bytestring >= 0.9.1.4 && < 0.10' 'bytestring >= 0.9.1.4' \
 		'directory >= 1 && < 1.2' 'directory >= 1' \
