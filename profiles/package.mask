@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (17 May 2015)
+# Nothing uses it directly, needs porting (or reexporting)
+# to ghc-7.10
+dev-haskell/bitset
+
 # Sergei Trofimovich <slyfox@gentoo.org> (10 May 2015)
 # outdated, lambdabot-5.0 does not use it
 dev-haskell/lambdabot-utils
