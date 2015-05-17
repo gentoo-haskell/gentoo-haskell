@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/hashable-1.1.2.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/keys-3.10:=[profile?] <dev-haskell/keys-4:=[profile?]
 	>=dev-haskell/pointed-4:=[profile?] <dev-haskell/pointed-5:=[profile?]
-	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
+	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -33,3 +33,8 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroupoids          >= 4        && < 5' 'semigroupoids          >= 4'
+}
