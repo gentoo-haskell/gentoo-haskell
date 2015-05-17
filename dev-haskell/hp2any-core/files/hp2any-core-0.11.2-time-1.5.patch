@@ -1,0 +1,18 @@
+diff --git a/Profiling/Heap/Read.hs b/Profiling/Heap/Read.hs
+index 35002d9..7c87070 100644
+--- a/Profiling/Heap/Read.hs
++++ b/Profiling/Heap/Read.hs
+@@ -62,3 +62,3 @@ import Data.Time.LocalTime (getZonedTime)
+ import Data.Time.Format (formatTime)
+-import System.Locale (defaultTimeLocale)
++import Data.Time.Locale.Compat (defaultTimeLocale)
+ 
+diff --git a/hp2any-core.cabal b/hp2any-core.cabal
+index 74c8f7f..30b6069 100644
+--- a/hp2any-core.cabal
++++ b/hp2any-core.cabal
+@@ -40,3 +40,3 @@ Library
+   Build-Depends: base >= 4 && < 5, containers, time, directory,
+-                 filepath, process, old-locale, network,
++                 filepath, process, old-locale, time-locale-compat, network,
+                  bytestring, attoparsec
