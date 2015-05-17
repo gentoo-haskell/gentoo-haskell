@@ -44,6 +44,6 @@
 		code.
 	</longdescription>
 <use>
-  <flag name='th'>Enable template haskell.</flag>
+  <flag name='template-haskell'>Enable template haskell.</flag>
 </use>
 </pkgmetadata>
