@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/distributive-0.3.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
-	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
+	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.0.1:=
 "
@@ -32,5 +32,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 
 	cabal_chdeps \
-		'transformers         >= 0.2   && < 0.4' 'transformers         >= 0.2   && < 0.5'
+		'transformers         >= 0.2   && < 0.4' 'transformers         >= 0.2   && < 0.5' \
+		'semigroupoids        >= 4     && < 5' 'semigroupoids        >= 4'
 }
