@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Golden tests support for tasty. Fork of tasty-golden"
+DESCRIPTION="A fancy test runner, including support for golden tests"
 HOMEPAGE="https://github.com/phile314/tasty-silver"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
