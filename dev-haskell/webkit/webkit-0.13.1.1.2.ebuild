@@ -48,6 +48,9 @@ src_prepare() {
 	# workaround for module order
 	cabal_chdeps \
 		'other-modules:' 'exposed-modules:'
+	# fix build with gcc 5.1.0 and later https://github.com/gtk2hs/gtk2hs/issues/104
+	sed -e 's@gccProg, "--cppopts=-E"@gccProg, "--cppopts=-E", "--cppopts=-P"@' \
+		-i Gtk2HsSetup.hs || die
 }
 
 src_configure() {
