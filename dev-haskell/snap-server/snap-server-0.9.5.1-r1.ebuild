@@ -38,11 +38,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec                >= 0.10     && < 0.13' 'attoparsec                >= 0.10     && < 0.14'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug) \
 		$(cabal_flag openssl openssl) \
 		$(cabal_flag portable portable)
-	cabal_chdeps \
-		'attoparsec                >= 0.10     && < 0.13' 'attoparsec                >= 0.10     && < 0.14'
 }
