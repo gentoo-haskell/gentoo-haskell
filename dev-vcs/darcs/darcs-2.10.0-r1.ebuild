@@ -21,7 +21,7 @@ IUSE="+curl diff +http +terminfo +threaded"
 
 RESTRICT=test # some files are missing
 
-RDEPEND=">=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cryptohash-0.4:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
@@ -77,7 +77,8 @@ src_prepare() {
 	cabal_chdeps \
 		'terminfo == 0.3.*' 'terminfo >= 0.3' \
 		'network >= 2.3 && < 2.5' 'network >= 2.6, network-uri' \
-		'QuickCheck   >= 2.3 && < 2.8' 'QuickCheck   >= 2.3'
+		'QuickCheck   >= 2.3 && < 2.8' 'QuickCheck   >= 2.3' \
+		'attoparsec   >= 0.11 && < 0.13' 'attoparsec   >= 0.11 && < 0.14'
 }
 
 src_configure() {
