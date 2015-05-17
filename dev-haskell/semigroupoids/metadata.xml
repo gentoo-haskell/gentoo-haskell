@@ -50,5 +50,9 @@
   package using `-f-distributive`. Disabling this is an unsupported
   configuration, but it may be useful for accelerating builds in sandboxes for
   expert users. If disabled we will not supply instances of `Distributive`</flag>
+  <flag name="tagged">You can disable the use of the `tagged` package
+  using `-f-tagged`. Disabing this is an unsupported
+  configuration, but it may be useful for accelerating builds in
+  sandboxes for expert users.</flag>
 </use>
 </pkgmetadata>
