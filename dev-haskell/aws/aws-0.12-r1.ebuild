@@ -21,7 +21,7 @@ IUSE="examples"
 RESTRICT=test # needs aws accound
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
-	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
@@ -72,7 +72,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'xml-conduit          >= 1.2     && <1.3' 'xml-conduit          >= 1.2     && <1.4'
+		'xml-conduit          >= 1.2     && <1.3' 'xml-conduit          >= 1.2     && <1.4' \
+		'attoparsec           >= 0.11    && < 0.13' 'attoparsec           >= 0.11    && < 0.14'
+
 }
 
 src_configure() {
