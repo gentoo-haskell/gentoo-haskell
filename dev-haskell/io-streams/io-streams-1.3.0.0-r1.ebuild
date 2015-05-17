@@ -40,10 +40,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6 )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec         >= 0.10  && <0.13' 'attoparsec         >= 0.10  && <0.14'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=nointeractivetests
-	cabal_chdeps \
-		'attoparsec         >= 0.10  && <0.13' 'attoparsec         >= 0.10  && <0.14'
-
 }
