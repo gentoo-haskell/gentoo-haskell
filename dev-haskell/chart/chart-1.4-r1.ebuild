@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4.10:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 3.9 && < 4.10' 'lens >= 3.9'
+}
