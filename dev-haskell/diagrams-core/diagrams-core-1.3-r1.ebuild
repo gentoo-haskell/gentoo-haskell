@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >= 4.0 && < 4.10' 'lens >= 3.9'
+		'lens >= 4.0 && < 4.10' 'lens >= 4.0'
 }
