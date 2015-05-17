@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug portable"
 
-RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-enumerator-0.3:=[profile?] <dev-haskell/attoparsec-enumerator-0.4:=[profile?]
 	>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-builder-enumerator-0.2:=[profile?] <dev-haskell/blaze-builder-enumerator-0.3:=[profile?]
@@ -43,6 +43,10 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec                >= 0.10    && < 0.13' 'attoparsec                >= 0.10    && < 0.14'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
