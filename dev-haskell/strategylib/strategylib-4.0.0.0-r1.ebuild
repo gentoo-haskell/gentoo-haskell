@@ -30,6 +30,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	CABAL_FILE=${MY_PN}.cabal cabal_chdeps \
 		'base' 'base, directory, syb'

@@ -1,0 +1,33 @@
+diff --git a/library/Control/Monad/Maybe.hs b/library/Control/Monad/Maybe.hs
+index c090b1c..f53ae2b 100644
+--- a/library/Control/Monad/Maybe.hs
++++ b/library/Control/Monad/Maybe.hs
+@@ -18,2 +18,3 @@ module Control.Monad.Maybe (
+ 
++import Control.Applicative
+ import Control.Monad
+@@ -39,2 +40,6 @@ instance (Monad m) => Functor (MaybeT m) where
+ 
++instance (Monad m) => Applicative (MaybeT m) where
++	pure  = return
++	(<*>) = ap  -- defined in Control.Monad
++
+ instance (Monad m) => Monad (MaybeT m) where
+@@ -48,3 +53,7 @@ instance (Monad m) => Monad (MaybeT m) where
+ 
+-instance (Monad m) => MonadPlus (MaybeT m) where
++instance (MonadPlus m) => Alternative (MaybeT m) where
++	(<|>) = mplus
++	empty = mzero
++
++instance (MonadPlus m) => MonadPlus (MaybeT m) where
+ 	mzero       = MaybeT $ return (Nothing)
+diff --git a/library/Control/Monad/Run.hs b/library/Control/Monad/Run.hs
+index 3347af7..01cbad9 100644
+--- a/library/Control/Monad/Run.hs
++++ b/library/Control/Monad/Run.hs
+@@ -150,3 +150,3 @@ mswitch (tm:tms) m	=  tm `mplus'` (mswitch tms m)
+ -- | Specialization of 'mswitch' for MaybeT.
+-mayswitch		:: (Monad m) => [MaybeT m b] -> m b -> m b
++mayswitch		:: (MonadPlus m) => [MaybeT m b] -> m b -> m b
+ mayswitch tms m		=  (foldr mplus mzero tms) `mplus'` m 
