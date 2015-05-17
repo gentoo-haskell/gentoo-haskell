@@ -19,10 +19,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
-	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-4.10:=[profile?]
+	>=dev-haskell/lens-3.0:=[profile?]
 	>=dev-haskell/linear-1.10:=[profile?] <dev-haskell/linear-1.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 3.0 && < 4.10' 'lens >= 3.0'
+}
