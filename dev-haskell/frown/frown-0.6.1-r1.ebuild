@@ -21,9 +21,8 @@ RDEPEND=""
 S="${WORKDIR}/Frown-${PV}"
 
 src_prepare() {
-	# enabling optimisation is strongly recommended
-	echo "ghc-options: -O" >> "${S}/frown.cabal"
 	epatch "${FILESDIR}/${P}-ghc74.patch"
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
 
 src_install() {
