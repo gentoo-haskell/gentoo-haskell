@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="testprogram"
 
 RDEPEND=">=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-4:=[profile?]
-	>=dev-haskell/profunctors-4.3:=[profile?] <dev-haskell/profunctors-5:=[profile?]
+	>=dev-haskell/profunctors-4.3:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-1:=[profile?]
@@ -32,4 +32,6 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag testprogram testprogram)
+	cabal_chdeps \
+		'profunctors  >= 4.3  && < 5'  'profunctors  >= 4.3  && < 6'
 }
