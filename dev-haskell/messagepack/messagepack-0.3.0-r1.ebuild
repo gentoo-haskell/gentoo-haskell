@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -30,3 +30,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-th-0.2 <dev-haskell/test-framework-th-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'attoparsec == 0.12.*' 'attoparsec >= 0.12 && < 0.14'
+}
+
