@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -test-parsing
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Bindings to Graphviz for graph visualisation"
 HOMEPAGE="http://projects.haskell.org/graphviz/"
@@ -33,8 +33,12 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
-	test? ( >=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.8 )
+	test? ( >=dev-haskell/quickcheck-2.3 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
