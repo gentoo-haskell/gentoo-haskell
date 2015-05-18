@@ -31,6 +31,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
+	doc? ( app-text/pandoc )
 	test? ( >=dev-haskell/quickcheck-2 )
 "
 
