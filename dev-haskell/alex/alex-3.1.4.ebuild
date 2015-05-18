@@ -64,6 +64,11 @@ src_compile() {
 	fi
 }
 
+src_test() {
+	# workaround https://github.com/haskell/cabal/issues/2398
+	emake -k -C tests all || die
+}
+
 src_install() {
 	cabal_src_install
 
