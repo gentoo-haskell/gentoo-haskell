@@ -21,8 +21,13 @@ IUSE=""
 RESTRICT=test # missing files
 
 RDEPEND=">=dev-haskell/network-2.2.1.5:=[profile?]
+	dev-haskell/time-locale-compat:=[profile?]
 	>=dev-lang/ghc-6.12.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.6
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-time-1.5.patch
+}
