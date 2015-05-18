@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	HCFLAGS+=" -XFlexibleContexts"
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
 
 src_configure() {
