@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.6.1:="
-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	dev-haskell/cpphs
