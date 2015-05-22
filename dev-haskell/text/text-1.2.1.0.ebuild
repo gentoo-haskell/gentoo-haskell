@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="developer"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:="
+RDEPEND="dev-haskell/binary:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
+"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2
