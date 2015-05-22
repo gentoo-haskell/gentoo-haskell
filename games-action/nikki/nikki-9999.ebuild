@@ -77,7 +77,8 @@ src_prepare() {
 		'-optl-s' ' ' \
 		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5' \
 		', network == 2.*' ', network == 2.*, network-uri, string-conversions' \
-		'utf8-string == 0.3.*' 'utf8-string >= 0.3'
+		'utf8-string == 0.3.*' 'utf8-string >= 0.3' \
+		'deepseq == 1.3.*' 'deepseq >= 1.3'
 }
 
 src_configure() {
