@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/errors-1.4:=[profile?] <dev-haskell/errors-1.5:=[profile?]
 	>=dev-haskell/heist-0.14:=[profile?] <dev-haskell/heist-0.15:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.12:=[profile?]
 	>=dev-haskell/logict-0.4.2:=[profile?] <dev-haskell/logict-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -55,13 +55,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'attoparsec                >= 0.10     && < 0.13' 'attoparsec                >= 0.10     && < 0.14' \
-		'lens                      >= 3.7.6    && < 3.8' 'lens                      >= 3.7.6' \
-		'lens                      >= 3.7.6    && < 4.11' 'lens                      >= 3.7.6'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
