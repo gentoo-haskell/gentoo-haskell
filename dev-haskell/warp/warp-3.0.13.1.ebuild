@@ -32,7 +32,6 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?]
-	dev-haskell/void:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	allow-sendfilefd? ( dev-haskell/hashable:=[profile?] )
