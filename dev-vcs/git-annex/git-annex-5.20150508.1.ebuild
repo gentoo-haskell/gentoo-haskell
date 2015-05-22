@@ -17,7 +17,7 @@ RESTRICT="test"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="android androidsplice +assistant +dbus +dns doc +desktop-notify ekg +feed +inotify +new-time +pairing +production +quvi +s3 +tahoe +tdfa +testsuite torrentparser +webapp +webapp-secure +webdav +xmpp"
+IUSE="android androidsplice +assistant +dbus +dns doc +desktop-notify ekg +feed +inotify +pairing +production +quvi +s3 +tahoe +tdfa +testsuite torrentparser +webapp +webapp-secure +webdav +xmpp"
 
 RDEPEND="dev-vcs/git
 "
@@ -67,7 +67,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/ekg
 		dev-haskell/http-types )
 	feed? ( >=dev-haskell/feed-0.3.4 )
-	!new-time? ( dev-haskell/old-locale )
+	dev-haskell/old-locale
 	pairing? ( dev-haskell/network-info
 			dev-haskell/network-multicast )
 	quvi? ( dev-haskell/aeson )
@@ -127,7 +127,6 @@ src_configure() {
 		$(cabal_flag ekg ekg) \
 		$(cabal_flag feed feed) \
 		$(cabal_flag inotify inotify) \
-		$(cabal_flag new-time new-time) \
 		$(cabal_flag pairing pairing) \
 		$(cabal_flag production production) \
 		$(cabal_flag quvi quvi) \
