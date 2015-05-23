@@ -30,4 +30,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-cabal-1.22.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
