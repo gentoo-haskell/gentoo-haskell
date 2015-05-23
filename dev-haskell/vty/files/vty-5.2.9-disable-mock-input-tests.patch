@@ -1,9 +1,8 @@
---- vty.cabal.orig	2014-11-04 21:12:32.414198531 +0530
-+++ vty.cabal	2014-11-04 21:13:54.027463700 +0530
-@@ -537,39 +537,6 @@
-                        utf8-string >= 0.3 && < 0.4,
-                        vector >= 0.7
-   
+diff --git a/vty.cabal b/vty.cabal
+index c470372..fb7a874 100644
+--- a/vty.cabal
++++ b/vty.cabal
+@@ -539,33 +538,0 @@ test-suite verify-utf8-width
 -test-suite verify-using-mock-input
 -  default-language:    Haskell2010
 -  default-extensions:  ScopedTypeVariables
@@ -32,11 +31,8 @@
 -                       terminfo >= 0.3 && < 0.5,
 -                       text >= 0.11.3,
 -                       unix,
--                       utf8-string >= 0.3 && < 0.4,
+-                       utf8-string >= 0.3 && < 1.1,
 -                       vector >= 0.7
 -  
 -  ghc-options:         -threaded -Wall
 -
- test-suite verify-config
-   default-language:    Haskell2010
-   default-extensions:  ScopedTypeVariables
