@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'time       >= 1.1.2  && < 1.5' 'time       >= 1.1.2  && < 1.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri)
