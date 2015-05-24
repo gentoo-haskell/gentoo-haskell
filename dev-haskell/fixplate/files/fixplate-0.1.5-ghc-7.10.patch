@@ -1,0 +1,38 @@
+diff --git a/Data/Generics/Fixplate/Base.hs b/Data/Generics/Fixplate/Base.hs
+index 8597ed2..237b56c 100644
+--- a/Data/Generics/Fixplate/Base.hs
++++ b/Data/Generics/Fixplate/Base.hs
+@@ -9,3 +9,3 @@ module Data.Generics.Fixplate.Base where
+ import Control.Applicative
+-import Control.Monad (liftM)
++import Control.Monad (liftM, ap)
+ import Data.Foldable
+@@ -311,2 +311,7 @@ instance Traversable f => Traversable (CoAttrib f) where
+ 
++
++instance Functor f => Applicative (CoAttrib f) where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Functor f => Monad (CoAttrib f) where
+diff --git a/Data/Generics/Fixplate/Misc.hs b/Data/Generics/Fixplate/Misc.hs
+index f329034..f1123af 100644
+--- a/Data/Generics/Fixplate/Misc.hs
++++ b/Data/Generics/Fixplate/Misc.hs
+@@ -12,2 +12,4 @@ import Data.Ord
+ import Data.Traversable
++import Control.Applicative
++import Control.Monad
+ 
+@@ -103,3 +105,10 @@ mapAccumM act x0 t = runStateT (mapM (StateT . flip act) t) x0 where
+ newtype StateT s m a = StateT { runStateT :: s -> m (s,a) }
+-
++
++instance (Monad m) => Functor (StateT s m) where
++    fmap  = liftM
++
++instance (Monad m) => Applicative (StateT s m) where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance (Monad m) => Monad (StateT s m) where
