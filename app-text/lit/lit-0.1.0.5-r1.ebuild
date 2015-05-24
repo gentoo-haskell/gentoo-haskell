@@ -34,5 +34,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'blaze-markup ==0.6.*' 'blaze-markup >=0.6' \
-		'blaze-html == 0.7.*' 'blaze-html >= 0.7'
+		'blaze-html == 0.7.*' 'blaze-html >= 0.7' \
+		'filepath ==1.3.*' 'filepath >=1.3' \
+		'time ==1.4.*' 'time >=1.4'
 }
