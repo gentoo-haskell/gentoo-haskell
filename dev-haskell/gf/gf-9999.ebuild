@@ -18,7 +18,7 @@ LICENSE="GPL-2 LGPL-2 BSD"
 SLOT="0/${PV}"
 IUSE="+interrupt +server"
 
-RESTRICT=test # hangs
+RESTRICT=test # some files are missing?
 
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/data-binary-ieee754:=[profile?]
@@ -43,12 +43,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/htf
 		dev-haskell/hunit )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'ghc-options: -j +RTS -A20M -RTS' 'ghc-options: ' \
-		'build-depends: binary' 'build-depends: binary, data-binary-ieee754'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
