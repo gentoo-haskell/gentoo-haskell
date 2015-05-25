@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -parsec2
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="A CSS preprocessor"
 HOMEPAGE="http://sandbox.pocoo.org/clevercss-hs/"
@@ -26,6 +26,10 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

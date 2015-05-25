@@ -1,0 +1,15 @@
+diff --git a/Text/CSS/CleverCSS.hs b/Text/CSS/CleverCSS.hs
+index d2e149f..b3a55a8 100644
+--- a/Text/CSS/CleverCSS.hs
++++ b/Text/CSS/CleverCSS.hs
+@@ -12,2 +12,3 @@
+ {-# LANGUAGE PatternGuards, TypeSynonymInstances, CPP #-}
++{-# LANGUAGE FlexibleContexts #-}
+ 
+diff --git a/Text/CSS/CleverCSSUtil.hs b/Text/CSS/CleverCSSUtil.hs
+index 1fa4444..fe22441 100644
+--- a/Text/CSS/CleverCSSUtil.hs
++++ b/Text/CSS/CleverCSSUtil.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ -----------------------------------------------------------------------------------------
