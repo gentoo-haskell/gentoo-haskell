@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Runtime code generation for x86 machine code"
-HOMEPAGE="http://hackage.haskell.org/package/harpy"
+HOMEPAGE="https://github.com/mgrabmueller/harpy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -24,5 +24,5 @@ RDEPEND=">=dev-haskell/disassembler-0.2.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.2
+	>=dev-haskell/cabal-1.6
 "
