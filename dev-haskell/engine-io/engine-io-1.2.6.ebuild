@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
-	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/either-3.4:=[profile?] <dev-haskell/either-4.4:=[profile?]
 	>=dev-haskell/free-4.9:=[profile?] <dev-haskell/free-5.0:=[profile?]
