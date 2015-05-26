@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Use Template Haskell to generate Uniplate-like functions"
-HOMEPAGE="http://hackage.haskell.org/package/geniplate-mirror"
+HOMEPAGE="https://github.com/danr/geniplate"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
