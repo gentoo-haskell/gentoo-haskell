@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.1:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/vector-algorithms-0.6:=[profile?]
 	>=dev-haskell/wai-1.1:=[profile?]
-	>=dev-haskell/warp-1.1:=[profile?]
+	>=dev-haskell/warp-2.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	localdb? ( app-portage/fquery )
 "
