@@ -16,10 +16,13 @@ EGIT_REPO_URI="git://github.com/idris-lang/Idris-dev.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="curses ffi gmp"
 
 RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annotated-wl-pprint-0.6:=[profile?]
+	>=dev-haskell/directory-1.2.2.0:=[profile?]
+	>=dev-haskell/lens-4.1.1:=[profile?]
+	>=dev-haskell/zip-archive-0.2.3.5:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -58,6 +61,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'lens >= 4.1.1 && < 4.10' 'lens >= 4.1.1' \
 		'utf8-string < 0.4' 'utf8-string' \
 		'blaze-markup >= 0.5.2.1 && < 0.6.3.0' 'blaze-markup' \
 		'blaze-html >= 0.6.1.3 && < 0.8' 'blaze-html >= 0.6.1.3'
