@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/http-types-0.8.0:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
@@ -28,5 +28,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0 && < 0.13'
+		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0'
 }
