@@ -30,5 +30,5 @@ S="${WORKDIR}/${AGDA_P}/ffi"
 
 src_prepare() {
 	cabal_chdeps \
-		'base >= 3.0.3.1 && < 4.7' 'base >= 3.0.3.1 && < 4.8'
+		'base >= 3.0.3.1 && < 4.7' 'base >= 3.0.3.1'
 }
