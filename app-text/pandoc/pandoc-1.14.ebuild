@@ -20,16 +20,19 @@ IUSE="embed_data_files +https make-pandoc-man-pages +network-uri trypandoc"
 
 RESTRICT=test # likes to break on highlighting-kate update
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
+	>=dev-haskell/cmark-0.3.3:=[profile?] <dev-haskell/cmark-0.4:=[profile?]
+	>=dev-haskell/css-text-0.1.2:=[profile?] <dev-haskell/css-text-0.3:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/deepseq-generics-0.1:=[profile?] <dev-haskell/deepseq-generics-0.2:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
+	>=dev-haskell/filemanip-0.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
 	>=dev-haskell/haddock-library-1.1:=[profile?] <dev-haskell/haddock-library-1.3:=[profile?]
-	>=dev-haskell/highlighting-kate-0.5.11.1:=[profile?] <dev-haskell/highlighting-kate-0.6:=[profile?]
+	>=dev-haskell/highlighting-kate-0.6:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
 	>=dev-haskell/hslua-0.3:=[profile?] <dev-haskell/hslua-0.4:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.6.1:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
@@ -44,16 +47,15 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.9:=[profil
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
 	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
-	>=dev-haskell/texmath-0.8.0.1:=[profile?] <dev-haskell/texmath-0.9:=[profile?]
+	>=dev-haskell/texmath-0.8.1:=[profile?] <dev-haskell/texmath-0.9:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/xml-1.3.12:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-haskell/yaml-0.8.8.2:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
 	>=dev-haskell/zip-archive-0.2.3.4:=[profile?] <dev-haskell/zip-archive-0.3:=[profile?]
-	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
+	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	embed_data_files? ( dev-haskell/hsb2hs )
 	https? ( >=dev-haskell/http-client-0.3.2:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 			>=dev-haskell/http-client-tls-0.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
 			>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
@@ -70,7 +72,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
 		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
-		>=dev-haskell/quickcheck-2.4:2
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9
 		>=dev-haskell/test-framework-0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -78,14 +80,22 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'QuickCheck >= 2.4 && < 2.8' 'QuickCheck >= 2.4'
+		'aeson >= 0.7 && < 0.9' 'aeson >= 0.7 && < 0.10' \
+		'aeson >= 0.7.0.5 && < 0.9' 'aeson >= 0.7.0.5 && < 0.10'
+	if ! use make-pandoc-man-pages; then
+		sed -e '/Executable make-pandoc-man-pages/,/Buildable:   True/d' \
+			-i "${S}/${PN}.cabal" \
+				|| die "Could not disable build of Executable make-pandoc-man-pages in ${S}/${PN}.cabal"
+		sed -e '/makeManPages args bf pkgdescr lbi/d' \
+			-i "${S}/Setup.hs" \
+				|| die "Could not disable build of Executable make-pandoc-man-pages in ${S}/Setup.hs"
+	fi
 }
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \
 		$(cabal_flag https https) \
-		$(cabal_flag make-pandoc-man-pages make-pandoc-man-pages) \
 		$(cabal_flag network-uri network-uri) \
 		$(cabal_flag trypandoc trypandoc)
 }
