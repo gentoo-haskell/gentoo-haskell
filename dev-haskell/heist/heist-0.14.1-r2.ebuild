@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?]
@@ -43,6 +43,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'aeson                      >= 0.6     && < 0.9' 'aeson                      >= 0.6     && < 0.10' \
 		'filepath                   >= 1.3     && < 1.4' 'filepath                   >= 1.3' \
 		'blaze-builder              >= 0.2     && < 0.4' 'blaze-builder              >= 0.2' \
 		'blaze-html                 >= 0.4     && < 0.8' 'blaze-html                 >= 0.4' \
