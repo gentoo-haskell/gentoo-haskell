@@ -1,0 +1,255 @@
+commit 674e0f88d1f82fc797a4595ebe38e6ecbac8a8bf
+Author: RyanGlScott <ryan.gl.scott@ku.edu>
+Date:   Fri May 29 11:02:47 2015 -0500
+
+    Use scotty-0.10
+
+diff --git a/Web/Scotty/Comet.hs b/Web/Scotty/Comet.hs
+index 2f1788b..c5ebfb6 100644
+--- a/Web/Scotty/Comet.hs
++++ b/Web/Scotty/Comet.hs
+@@ -39,27 +39,27 @@ import Numeric
+ 
+ connect :: Options             -- ^ URL path prefix for this page
+         -> (Document -> IO ()) -- ^ called for access of the page
+-        -> ScottyM ()
++        -> IO (ScottyM ())
+ connect opt callback = do
+    if not rtsSupportsBoundThreads  -- we need the -threaded flag turned on
+-   then liftIO $ do putStrLn "Application needs to be re-compiled with -threaded flag"
+-                    exitFailure
++   then do putStrLn "Application needs to be re-compiled with -threaded flag"
++           exitFailure
+    else return ()                 
+                   
+           
+-   when (verbose opt >= 1) $ liftIO $ putStrLn $ "kansas-comet connect with prefix=" ++ show (prefix opt)
++   when (verbose opt >= 1) $ putStrLn $ "kansas-comet connect with prefix=" ++ show (prefix opt)
+ 
+    -- A unique number generator, or ephemeral generator.
+    -- This is the (open) secret between the client and server.
+    -- (Why are we using an MVar vs a TMVar? No specific reason here)
+-   uniqVar <- liftIO $ newMVar 0
++   uniqVar <- newMVar 0
+    let getUniq :: IO Int
+        getUniq = do
+               u <- takeMVar uniqVar
+               putMVar uniqVar (u + 1)
+               return u
+ 
+-   tm ::  UTCTime  <- liftIO $ getCurrentTime
++   tm ::  UTCTime  <- getCurrentTime
+ 
+    let server_id
+            = Numeric.showHex (toModifiedJulianDay (utctDay tm))
+@@ -67,7 +67,7 @@ connect opt callback = do
+            $ Numeric.showHex (floor (utctDayTime tm * 1000) :: Integer)
+            $ ""
+ 
+-   contextDB <- liftIO $ atomically $ newTVar $ (Map.empty :: Map.Map Int Document)
++   contextDB <- atomically $ newTVar $ (Map.empty :: Map.Map Int Document)
+    let newContext :: IO Int
+        newContext = do
+             uq <- getUniq
+@@ -84,104 +84,103 @@ connect opt callback = do
+             return uq
+ 
+    -- POST starts things off.
+-   post (capture $ prefix opt ++ "/") $ do
+-            uq  <- liftIO $ newContext
+-            text (LT.pack $ "$.kc.session(" ++ show server_id ++ "," ++ show uq ++ ");")
+-
+-   -- GET the updates to the documents (should this be an (empty) POST?)
+-
+---   liftIO $ print $ prefix opt ++ "/act/:id/:act"
+-   get (capture $ prefix opt ++ "/act/" ++ server_id ++ "/:id/:act") $ do
+-            setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
+-            -- do something and return a new list of commands to the client
+-            num <- param "id"
+-
+-            when (verbose opt >= 2) $ liftIO $ putStrLn $
+-                "Kansas Comet: get .../act/" ++ show num
+---            liftIO $ print (num :: Int)
+-
+-            let tryPushAction :: TMVar T.Text -> Int -> ActionM ()
+-                tryPushAction var n = do
+-                    -- The PUSH archtecture means that we wait upto 3 seconds if there
+-                    -- is not javascript to push yet. This stops a busy-waiting
+-                    -- (or technically restricts it to once every 3 second busy)
+-                    ping <- liftIO $ registerDelay (3 * 1000 * 1000)
+-                    res <- liftIO $ atomically $ do
+-                            b <- readTVar ping
+-                            if b then return Nothing else do
+-                                 liftM Just (takeTMVar var)
+-
+-
+-                    when (verbose opt >= 2) $ liftIO $ putStrLn $
+-                                "Kansas Comet (sending to " ++ show n ++ "):\n" ++ show res
+-
+-                    case res of
+-                     Just js -> do
+---                            liftIO $ putStrLn $ show js
+-                            text $ LT.fromChunks [js]
+-                     Nothing  ->
+-                            -- give the browser something to do (approx every 3 seconds)
+-                            text LT.empty
+-
+-            db <- liftIO $ atomically $ readTVar contextDB
+-            case Map.lookup num db of
+-               Nothing  -> text (LT.pack $ "console.warn('Can not find act #" ++ show num ++ "');")
+-               Just doc -> tryPushAction (sending doc) num
+-
+-
+-   post (capture $ prefix opt ++ "/reply/" ++ server_id ++ "/:id/:uq") $ do
+-           setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
+-           num <- param "id"
+-           uq :: Int <- param "uq"
+-           --liftIO $ print (num :: Int, event :: String)
+-
+-           when (verbose opt >= 2) $ liftIO $ putStrLn $
+-                "Kansas Comet: post .../reply/" ++ show num ++ "/" ++ show uq
+-
+-           wrappedVal :: Value <- jsonData
+-           -- Unwrap the data wrapped, because 'jsonData' only supports
+-           -- objects or arrays, but not primitive values like numbers
+-           -- or booleans.
+-           let val = fromJust $ let (Object m) = wrappedVal
+-                                in HashMap.lookup (T.pack "data") m
+-           --liftIO $ print (val :: Value)
+-           db <- liftIO $ atomically $ readTVar contextDB
+-           case Map.lookup num db of
+-               Nothing  -> do
+-                   text (LT.pack $ "console.warn('Ignore reply for session #" ++ show num ++ "');")
+-               Just doc -> do
+-                   liftIO $ do
+-                         atomically $ do
+-                           m <- readTVar (replies doc)
+-                           writeTVar (replies doc) $ Map.insert uq val m
+-                   text $ LT.pack ""
+-
+-
+-   post (capture $ prefix opt ++ "/event/" ++ server_id ++ "/:id") $ do
+-           setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
+-           num <- param "id"
+-
+-           when (verbose opt >= 2) $ liftIO $ putStrLn $
+-                "Kansas Comet: post .../event/" ++ show num 
+-
+-           wrappedVal :: Value <- jsonData
+-           -- Unwrap the data wrapped, because 'jsonData' only supports
+-           -- objects or arrays, but not primitive values like numbers
+-           -- or booleans.
+-           let val = fromJust $ let (Object m) = wrappedVal
+-                                in HashMap.lookup (T.pack "data") m
+-           --liftIO $ print (val :: Value)
+-
+-           db <- liftIO $ atomically $ readTVar contextDB
+-           case Map.lookup num db of
+-               Nothing  -> do
+-                   text (LT.pack $ "console.warn('Ignore reply for session #" ++ show num ++ "');")
+-               Just doc -> do
+-                   liftIO $ atomically $ do
+-                           writeTChan (eventQueue doc) val
+-                   text $ LT.pack ""
+-           
+-   return ()
++   return $ do
++       post (capture $ prefix opt ++ "/") $ do
++                uq  <- liftIO $ newContext
++                text (LT.pack $ "$.kc.session(" ++ show server_id ++ "," ++ show uq ++ ");")
++    
++       -- GET the updates to the documents (should this be an (empty) POST?)
++    
++    --   liftIO $ print $ prefix opt ++ "/act/:id/:act"
++       get (capture $ prefix opt ++ "/act/" ++ server_id ++ "/:id/:act") $ do
++                setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
++                -- do something and return a new list of commands to the client
++                num <- param "id"
++    
++                when (verbose opt >= 2) $ liftIO $ putStrLn $
++                    "Kansas Comet: get .../act/" ++ show num
++    --            liftIO $ print (num :: Int)
++    
++                let tryPushAction :: TMVar T.Text -> Int -> ActionM ()
++                    tryPushAction var n = do
++                        -- The PUSH archtecture means that we wait upto 3 seconds if there
++                        -- is not javascript to push yet. This stops a busy-waiting
++                        -- (or technically restricts it to once every 3 second busy)
++                        ping <- liftIO $ registerDelay (3 * 1000 * 1000)
++                        res <- liftIO $ atomically $ do
++                                b <- readTVar ping
++                                if b then return Nothing else do
++                                     liftM Just (takeTMVar var)
++    
++    
++                        when (verbose opt >= 2) $ liftIO $ putStrLn $
++                                    "Kansas Comet (sending to " ++ show n ++ "):\n" ++ show res
++    
++                        case res of
++                         Just js -> do
++    --                            liftIO $ putStrLn $ show js
++                                text $ LT.fromChunks [js]
++                         Nothing  ->
++                                -- give the browser something to do (approx every 3 seconds)
++                                text LT.empty
++    
++                db <- liftIO $ atomically $ readTVar contextDB
++                case Map.lookup num db of
++                   Nothing  -> text (LT.pack $ "console.warn('Can not find act #" ++ show num ++ "');")
++                   Just doc -> tryPushAction (sending doc) num
++    
++    
++       post (capture $ prefix opt ++ "/reply/" ++ server_id ++ "/:id/:uq") $ do
++               setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
++               num <- param "id"
++               uq :: Int <- param "uq"
++               --liftIO $ print (num :: Int, event :: String)
++    
++               when (verbose opt >= 2) $ liftIO $ putStrLn $
++                    "Kansas Comet: post .../reply/" ++ show num ++ "/" ++ show uq
++    
++               wrappedVal :: Value <- jsonData
++               -- Unwrap the data wrapped, because 'jsonData' only supports
++               -- objects or arrays, but not primitive values like numbers
++               -- or booleans.
++               let val = fromJust $ let (Object m) = wrappedVal
++                                    in HashMap.lookup (T.pack "data") m
++               --liftIO $ print (val :: Value)
++               db <- liftIO $ atomically $ readTVar contextDB
++               case Map.lookup num db of
++                   Nothing  -> do
++                       text (LT.pack $ "console.warn('Ignore reply for session #" ++ show num ++ "');")
++                   Just doc -> do
++                       liftIO $ do
++                             atomically $ do
++                               m <- readTVar (replies doc)
++                               writeTVar (replies doc) $ Map.insert uq val m
++                       text $ LT.pack ""
++    
++    
++       post (capture $ prefix opt ++ "/event/" ++ server_id ++ "/:id") $ do
++               setHeader "Cache-Control" "max-age=0, no-cache, private, no-store, must-revalidate"
++               num <- param "id"
++    
++               when (verbose opt >= 2) $ liftIO $ putStrLn $
++                    "Kansas Comet: post .../event/" ++ show num 
++    
++               wrappedVal :: Value <- jsonData
++               -- Unwrap the data wrapped, because 'jsonData' only supports
++               -- objects or arrays, but not primitive values like numbers
++               -- or booleans.
++               let val = fromJust $ let (Object m) = wrappedVal
++                                    in HashMap.lookup (T.pack "data") m
++               --liftIO $ print (val :: Value)
++    
++               db <- liftIO $ atomically $ readTVar contextDB
++               case Map.lookup num db of
++                   Nothing  -> do
++                       text (LT.pack $ "console.warn('Ignore reply for session #" ++ show num ++ "');")
++                   Just doc -> do
++                       liftIO $ atomically $ do
++                               writeTChan (eventQueue doc) val
++                       text $ LT.pack ""
+ 
+ -- | 'kCometPlugin' provides the location of the Kansas Comet jQuery plugin.
+ kCometPlugin :: IO String
