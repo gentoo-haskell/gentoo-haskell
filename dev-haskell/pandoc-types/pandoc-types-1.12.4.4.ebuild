@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/deepseq-generics-0.1:=[profile?] <dev-haskell/deepseq-generics-0.2:=[profile?]
-	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
+	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
