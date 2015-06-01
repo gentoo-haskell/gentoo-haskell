@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/xmonad/xmonad-0.11-r1.ebuild,v 1.3 2013/07/29 05:28:36 ago Exp $
 
 EAPI=5
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="amd64 ~ppc64 ~sparc x86"
-IUSE="+default-term no-autorepeat-keys"
+IUSE="+default-term"
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -34,9 +34,6 @@ SAMPLE_CONFIG="xmonad.hs"
 SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
-	epatch "$FILESDIR"/${P}-ghc-7.10.patch
-	use no-autorepeat-keys && epatch "$FILESDIR"/${PN}-check-repeat.patch
-
 	# allow user patches
 	epatch_user
 }
