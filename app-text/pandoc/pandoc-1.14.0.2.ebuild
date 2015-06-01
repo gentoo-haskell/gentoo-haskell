@@ -79,14 +79,11 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	cabal_chdeps \
-		'aeson >= 0.7 && < 0.9' 'aeson >= 0.7 && < 0.10' \
-		'aeson >= 0.7.0.5 && < 0.9' 'aeson >= 0.7.0.5 && < 0.10'
 	if ! use make-pandoc-man-pages; then
 		sed -e '/Executable make-pandoc-man-pages/,/Buildable:   True/d' \
 			-i "${S}/${PN}.cabal" \
 				|| die "Could not disable build of Executable make-pandoc-man-pages in ${S}/${PN}.cabal"
-		sed -e '/makeManPages args bf pkgdescr lbi/d' \
+		sed -e '/, postBuild = /,/makeManPages args bf pkgdescr lbi/d' \
 			-i "${S}/Setup.hs" \
 				|| die "Could not disable build of Executable make-pandoc-man-pages in ${S}/Setup.hs"
 	fi
