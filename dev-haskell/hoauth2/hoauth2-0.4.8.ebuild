@@ -30,11 +30,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'aeson             >= 0.7    && < 0.9' 'aeson             >= 0.7    && < 0.10'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag test test)
