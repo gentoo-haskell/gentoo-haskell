@@ -18,12 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/conduit-0.5.3:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?]
 	>=dev-haskell/monad-logger-0.3.4:=[profile?]
-	>=dev-haskell/persistent-2.1.1.1:=[profile?] <dev-haskell/persistent-3:=[profile?]
+	>=dev-haskell/persistent-2.1.5:=[profile?] <dev-haskell/persistent-3:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.1:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?]
 	>=dev-haskell/postgresql-simple-0.4.0:=[profile?] <dev-haskell/postgresql-simple-0.5:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
