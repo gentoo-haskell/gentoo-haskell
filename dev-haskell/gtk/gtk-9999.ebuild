@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -36,9 +36,18 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[prof
 	gio? ( >=dev-haskell/gio-0.13.0:=[profile?] <dev-haskell/gio-0.14:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
+	>=dev-haskell/gtk2hs-buildtools-0.13.0.3:0=
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	# workaround for module order
+	cabal_chdeps \
+		'other-modules:' 'exposed-modules:'
+	# fix build with gcc 5.1.0 and later https://github.com/gtk2hs/gtk2hs/issues/104
+	sed -e 's@gccProg, "--cppopts=-E"@gccProg, "--cppopts=-E", "--cppopts=-P"@' \
+		-i Gtk2HsSetup.hs || die
+}
 
 src_configure() {
 	cabal_src_configure \
