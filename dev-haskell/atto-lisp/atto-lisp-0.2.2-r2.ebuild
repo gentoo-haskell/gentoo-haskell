@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/blaze-textual-0.1:=[profile?] <dev-haskell/blaze-textual-0.3:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -34,5 +34,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'blaze-builder >= 0.3     && < 0.4' 'blaze-builder >= 0.3' \
-		'deepseq       >= 1.1     && < 1.4' 'deepseq       >= 1.1'
+		'deepseq       >= 1.1     && < 1.4' 'deepseq       >= 1.1' \
+		'attoparsec    >= 0.10    && < 0.13' 'attoparsec    >= 0.10'
 }
