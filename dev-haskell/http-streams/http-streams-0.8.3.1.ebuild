@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]
