@@ -19,11 +19,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
-	>=dev-haskell/profunctors-4:=[profile?] <dev-haskell/profunctors-5:=[profile?]
-	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-5:=[profile?]
+	>=dev-haskell/profunctors-4:=[profile?]
+	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'profunctors >= 4 && < 5' 'profunctors >= 4' \
+		'semigroupoids >= 4 && < 5' 'semigroupoids >= 4'
+}
