@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+comonad +containers +contravariant +distributive +tagged"
+IUSE="+comonad +containers +contravariant +distributive +doctests +tagged"
 
 RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/doctest-0.9.1 <dev-haskell/doctest-0.10 )
+	test? ( doctests? ( >=dev-haskell/doctest-0.9.1 <dev-haskell/doctest-0.10 ) )
 "
 
 src_configure() {
@@ -40,6 +40,6 @@ src_configure() {
 		$(cabal_flag containers containers) \
 		$(cabal_flag contravariant contravariant) \
 		$(cabal_flag distributive distributive) \
-		$(cabal_flag test doctests) \
+		$(cabal_flag doctests doctests) \
 		$(cabal_flag tagged tagged)
 }
