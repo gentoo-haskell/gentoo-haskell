@@ -18,15 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +plugins"
 
-RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.15:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?] <dev-haskell/configfile-1.2:=[profile?]
 	>=dev-haskell/feed-0.3.6:=[profile?] <dev-haskell/feed-0.4:=[profile?]
 	>=dev-haskell/filestore-0.6:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.5:=[profile?]
-	>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?] <dev-haskell/highlighting-kate-0.6:=[profile?]
+	>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
 	>=dev-haskell/hoauth2-0.4.2:=[profile?] <dev-haskell/hoauth2-0.5:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/hstringtemplate-0.6:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
@@ -54,7 +54,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.14:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	>=dev-haskell/xml-1.3.5:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
-	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
+	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
