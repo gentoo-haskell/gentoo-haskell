@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/cmdargs-0.10.5:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/dyre-0.8:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16.0:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
@@ -31,10 +31,12 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/tasty-0.9.0.1 <dev-haskell/tasty-0.11
-		>=dev-haskell/tasty-golden-2.2.0.1 <dev-haskell/tasty-golden-2.3 )
+		>=dev-haskell/tasty-golden-2.2.0.1 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >=3.9.2 && <4.9' 'lens >=3.9.2'
+		'lens >=3.9.2 && <4.9' 'lens >=3.9.2' \
+		'attoparsec >=0.10.4.0 && <0.13' 'attoparsec >=0.10.4.0' \
+		'tasty-golden >=2.2.0.1 && <2.3' 'tasty-golden >=2.2.0.1'
 }
