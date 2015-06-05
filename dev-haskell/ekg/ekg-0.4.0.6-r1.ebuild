@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/aeson-0.9:=[profile?]
+RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/ekg-core-0.1:=[profile?] <dev-haskell/ekg-core-0.2:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	<dev-haskell/snap-core-0.10:=[profile?]
@@ -31,3 +31,8 @@ RDEPEND="<dev-haskell/aeson-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson < 0.9' 'aeson'
+}
