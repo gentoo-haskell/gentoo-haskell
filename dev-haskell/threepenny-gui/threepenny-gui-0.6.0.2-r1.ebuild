@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildexamples +network-uri rebug"
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/hashable-1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -40,6 +40,11 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                  >= 0.7   && < 0.9' 'aeson                  >= 0.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
