@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
-	>=dev-haskell/profunctors-4:=[profile?] <dev-haskell/profunctors-5:=[profile?]
+	>=dev-haskell/profunctors-4:=[profile?]
 	>=dev-haskell/safecopy-0.6.3:=[profile?] <dev-haskell/safecopy-0.9:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'profunctors          >= 4   && < 5' 'profunctors          >= 4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
