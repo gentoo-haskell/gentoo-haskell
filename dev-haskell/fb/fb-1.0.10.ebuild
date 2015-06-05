@@ -21,8 +21,8 @@ IUSE="debug"
 
 RESTRICT=test # needs fb account
 
-RDEPEND=">=dev-haskell/aeson-0.5:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
-	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.13:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
+	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
@@ -54,7 +54,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec >= 1.9 && < 1.12' 'hspec >= 1.9'
+		'hspec >= 1.9 && < 1.12' 'hspec >= 1.9' \
+		'aeson                >= 0.5     && < 0.9' 'aeson                >= 0.5'
 }
 
 src_configure() {
