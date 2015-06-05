@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/blaze-html-0.7:=
 	>=dev-haskell/blaze-markup-0.6:=
 	>=dev-haskell/cheapskate-0.1:= <dev-haskell/cheapskate-0.2:=
-	>=dev-haskell/highlighting-kate-0.5:= <dev-haskell/highlighting-kate-0.6:=
+	>=dev-haskell/highlighting-kate-0.5:=
 	>=dev-haskell/parsec-3:= <dev-haskell/parsec-4:=
 	>=dev-haskell/text-1:= <dev-haskell/text-2:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
@@ -36,5 +36,6 @@ src_prepare() {
 		'blaze-markup ==0.6.*' 'blaze-markup >=0.6' \
 		'blaze-html == 0.7.*' 'blaze-html >= 0.7' \
 		'filepath ==1.3.*' 'filepath >=1.3' \
-		'time ==1.4.*' 'time >=1.4'
+		'time ==1.4.*' 'time >=1.4' \
+		'highlighting-kate ==0.5.*' 'highlighting-kate >=0.5'
 }
