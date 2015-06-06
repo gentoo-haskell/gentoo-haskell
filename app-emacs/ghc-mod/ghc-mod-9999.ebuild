@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="emacs"
 
+RESTRICT=test # Ambiguous module name ‘System.IO.Temp’ in temorary / temporary-rc
+
 RDEPEND="|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] )
 			( >=dev-lang/ghc-7.7 ) )
 	>=dev-haskell/cabal-1.10:=[profile?]
