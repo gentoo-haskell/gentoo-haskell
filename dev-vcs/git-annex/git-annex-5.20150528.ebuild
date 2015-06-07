@@ -17,7 +17,7 @@ RESTRICT="test"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="android androidsplice +assistant +dbus +dns doc +desktop-notify ekg +feed +inotify +pairing +production +quvi +s3 +tahoe +tdfa +testsuite torrentparser +webapp +webapp-secure +webdav +xmpp"
+IUSE="android androidsplice asciiprogress +assistant +dbus +dns doc +desktop-notify ekg +feed +inotify +pairing +production +quvi +s3 +tahoe +tdfa +testsuite torrentparser +webapp +webapp-secure +webdav +xmpp"
 
 RDEPEND="dev-vcs/git
 "
@@ -32,6 +32,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/edit-distance
 	dev-haskell/esqueleto
 	>=dev-haskell/exceptions-0.6
+	dev-haskell/hamlet
 	dev-haskell/hslogger
 	dev-haskell/http-conduit
 	dev-haskell/http-types
@@ -59,6 +60,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/uuid
 	>=dev-lang/ghc-7.4.1
 	android? ( dev-haskell/data-endian )
+	asciiprogress? ( dev-haskell/ascii-progress
+		dev-haskell/terminal-size )
 	assistant? ( >=dev-haskell/stm-2.3
 			inotify? ( dev-haskell/hinotify ) )
 	dbus? ( >=dev-haskell/dbus-0.10.3 )
@@ -116,10 +119,16 @@ DEPEND="${RDEPEND}
 	doc? ( www-apps/ikiwiki net-misc/rsync )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'ascii-progress (<= 0.2.1.2)' 'ascii-progress'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag android android) \
 		$(cabal_flag androidsplice androidsplice) \
+		$(cabal_flag asciiprogress asciiprogress) \
 		$(cabal_flag assistant assistant) \
 		$(cabal_flag dbus dbus) \
 		$(cabal_flag desktop-notify desktop-notify) \
