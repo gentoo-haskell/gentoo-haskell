@@ -26,8 +26,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/binary
 		>=dev-haskell/cabal-1.6
 		dev-haskell/mtl
+		dev-haskell/time-locale-compat
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=("${FILESDIR}/${PN}"-0.0-ghc-7.2.patch)
+PATCHES=("${FILESDIR}/${PN}"-0.0-ghc-7.2.patch
+	"${FILESDIR}/${PN}"-0.0-time-1.5.patch
+)
 
 S="${WORKDIR}/${MY_P}"
