@@ -19,6 +19,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd warp-debug"
 
+RESTRICT=test # Ambiguous module name ‘Data.IP’: it was found in multiple packages:
+              # iproute-1.4.0@ network-data-0.5.3@
+
 RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	dev-haskell/bytestring-builder:=[profile?]
