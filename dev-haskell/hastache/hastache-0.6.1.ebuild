@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails to build with ghc-7.10
+
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/ieee754:=[profile?]
 	dev-haskell/mtl:=[profile?]
