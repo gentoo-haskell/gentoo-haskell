@@ -96,8 +96,6 @@ src_configure() {
 src_install() {
 	haskell-cabal_src_install
 
-	if use make-pandoc-man-pages; then
-		doman man/man1/pandoc.1
-		doman man/man5/pandoc_markdown.5
-	fi
+	doman man/man1/pandoc.1
+	doman man/man5/pandoc_markdown.5
 }
