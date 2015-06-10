@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs ClassP from TH (absent in ghc-7.10)
+
 RDEPEND=">=dev-haskell/cereal-0.3.1.0:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/text:=[profile?]
