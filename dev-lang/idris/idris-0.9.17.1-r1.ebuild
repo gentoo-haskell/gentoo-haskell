@@ -58,6 +58,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	epatch "${FILESDIR}"/${P}-text-1.2.1.patch
 
 	cabal_chdeps \
 		'utf8-string < 0.4' 'utf8-string' \

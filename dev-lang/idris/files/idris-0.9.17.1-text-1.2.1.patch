@@ -1,0 +1,22 @@
+diff --git a/src/Idris/Core/Binary.hs b/src/Idris/Core/Binary.hs
+index 382f5b4..8a6d19a 100644
+--- a/src/Idris/Core/Binary.hs
++++ b/src/Idris/Core/Binary.hs
+@@ -1,3 +1,4 @@
+ {-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
++{-# LANGUAGE CPP #-}
+ 
+ {-| Binary instances for the core datatypes -}
+@@ -267,8 +268,12 @@ instance Binary Name where
+                    _ -> error "Corrupted binary data for Name"
+ 
++#if MIN_VERSION_text(1,2,1)
++-- already presents
++#else
+ instance Binary T.Text where
+         put x = put (str x)
+         get = do x <- get
+                  return (txt x)
++#endif
+ 
+ instance Binary SpecialName where
