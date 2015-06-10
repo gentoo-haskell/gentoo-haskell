@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fail to build under ghc-7.10
+
 RDEPEND=">=dev-haskell/exceptions-0.3:=[profile?]
 	>=dev-haskell/listlike-3.0:=[profile?] <dev-haskell/listlike-5:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
