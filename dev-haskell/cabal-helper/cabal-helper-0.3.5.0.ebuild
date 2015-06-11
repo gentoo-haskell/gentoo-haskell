@@ -27,4 +27,5 @@ RDEPEND=">=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
+	test? ( dev-haskell/extra )
 "
