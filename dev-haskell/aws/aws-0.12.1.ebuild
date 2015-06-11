@@ -70,13 +70,6 @@ DEPEND="${RDEPEND}
 		!examples? ( >=dev-haskell/transformers-0.3 ) )
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'xml-conduit          >= 1.2     && <1.3' 'xml-conduit          >= 1.2     && <1.4' \
-		'attoparsec           >= 0.11    && < 0.13' 'attoparsec           >= 0.11    && < 0.14'
-
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples examples)
