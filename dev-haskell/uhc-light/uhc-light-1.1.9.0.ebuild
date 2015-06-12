@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	~dev-haskell/uhc-util-0.1.5.5:=[profile?]
+	>=dev-haskell/uhc-util-0.1.5.5:=[profile?]
 	>=dev-haskell/uulib-0.9.19:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -35,3 +35,8 @@ RDEPEND="dev-haskell/binary:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'uhc-util==0.1.5.5' 'uhc-util>=0.1.5.5'
+}
