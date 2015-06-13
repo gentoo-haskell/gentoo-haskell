@@ -89,6 +89,12 @@ src_compile() {
 	haskell-cabal_src_compile
 }
 
+src_test() {
+	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+
+	dist/build/agda/agda --test +RTS -M1g || die
+}
+
 src_install() {
 	local add="${ED}"/usr/share/"${P}/ghc-$(ghc-version)"
 
@@ -109,11 +115,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	ghc-package_pkg_postinst
 	elisp-site-regen
 }
 
 pkg_postrm() {
-	ghc-package_pkg_prerm
 	elisp-site-regen
 }
