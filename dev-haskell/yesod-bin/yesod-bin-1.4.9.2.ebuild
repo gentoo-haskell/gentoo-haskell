@@ -43,8 +43,6 @@ RDEPEND="dev-haskell/async:=
 	>=dev-haskell/shakespeare-2.0:=
 	>=dev-haskell/split-0.2:= <dev-haskell/split-0.3:=
 	dev-haskell/streaming-commons:=
-	>=dev-haskell/system-fileio-0.3:= <dev-haskell/system-fileio-0.4:=
-	>=dev-haskell/system-filepath-0.4:= <dev-haskell/system-filepath-0.5:=
 	>=dev-haskell/tar-0.4:= <dev-haskell/tar-0.5:=
 	>=dev-haskell/text-0.11:=
 	dev-haskell/transformers:=
