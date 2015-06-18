@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,11 +9,13 @@ EAPI=5
 CABAL_FEATURES="lib"
 inherit haskell-cabal
 
-AGDA_P="lib-0.7"
+AGDA_PN="agda-stdlib"
+AGDA_PV="0.9"
+AGDA_P="${AGDA_PN}-${AGDA_PV}"
 
 DESCRIPTION="Auxiliary Haskell code used by Agda's standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="http://www.cse.chalmers.se/~nad/software/${AGDA_P}.tar.gz"
+SRC_URI="https://github.com/agda/${AGDA_PN}/archive/v${AGDA_PV}.tar.gz -> ${AGDA_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
@@ -30,5 +32,5 @@ S="${WORKDIR}/${AGDA_P}/ffi"
 
 src_prepare() {
 	cabal_chdeps \
-		'base >= 3.0.3.1 && < 4.7' 'base >= 3.0.3.1'
+		'base >= 3.0.3.1 && < 4.8' 'base >= 3.0.3.1'
 }
