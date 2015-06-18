@@ -104,10 +104,6 @@ src_install() {
 	Agda_datadir="${add}" \
 		"${ED}"/usr/bin/agda "${add}"/lib/prim/Agda/Primitive.agda
 
-	rm "${ED}"/usr/bin/agda-mode || die
-	# lives in sci-mathematics/agda-executable
-	rm "${ED}"/usr/bin/agda || die
-
 	elisp-install ${PN} src/data/emacs-mode/*.el \
 		|| die "Failed to install emacs mode"
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
