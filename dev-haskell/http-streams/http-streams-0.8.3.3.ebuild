@@ -18,9 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RESTRICT=test # fails to connect
-
-
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]
