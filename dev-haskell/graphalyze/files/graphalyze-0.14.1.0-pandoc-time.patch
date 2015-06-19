@@ -1,0 +1,47 @@
+patch ce2ae093924dc57c26b7987dbc828d732e86673b
+Author: Sergei Trofimovich <slyfox@community.haskell.org>
+Date:   Fri Jun  5 23:33:06 BST 2015
+  * Port to time-1.5 and allow pandoc-1.14
+  
+  Data/Graph/Analysis/Reporting.hs:187:32:
+      Couldn't match expected type ‘time-1.5.0.1:Data.Time.Format.Locale.TimeLocale’
+                  with actual type ‘System.Locale.TimeLocale’
+      NB: ‘time-1.5.0.1:Data.Time.Format.Locale.TimeLocale’
+            is defined in ‘Data.Time.Format.Locale’ in package ‘time-1.5.0.1’
+          ‘System.Locale.TimeLocale’
+            is defined in ‘System.Locale’ in package ‘old-locale-1.0.0.7’
+      In the first argument of ‘formatTime’, namely ‘locale’
+      In the second argument of ‘($)’, namely
+        ‘formatTime locale fmt localT’
+diff -rN -u old-Graphalyze/Data/Graph/Analysis/Reporting.hs new-Graphalyze/Data/Graph/Analysis/Reporting.hs
+--- old-Graphalyze/Data/Graph/Analysis/Reporting.hs	2015-06-05 23:34:36.987947306 +0100
++++ new-Graphalyze/Data/Graph/Analysis/Reporting.hs	2015-06-05 23:34:36.988947306 +0100
+@@ -40,7 +40,7 @@
+ import System.Directory(createDirectoryIfMissing)
+ import System.FilePath(makeRelative)
+ import System.FilePath.Posix((</>), (<.>))
+-import System.Locale(defaultTimeLocale)
++import Data.Time.Locale.Compat(defaultTimeLocale)
+ import Control.Monad(liftM, when)
+ 
+ -- -----------------------------------------------------------------------------
+diff -rN -u old-Graphalyze/Graphalyze.cabal new-Graphalyze/Graphalyze.cabal
+--- old-Graphalyze/Graphalyze.cabal	2015-06-05 23:34:36.987947306 +0100
++++ new-Graphalyze/Graphalyze.cabal	2015-06-05 23:34:36.988947306 +0100
+@@ -24,14 +24,14 @@
+                          containers,
+                          directory,
+                          filepath,
+-                         old-locale,
++                         time-locale-compat,
+                          process,
+                          random,
+                          time,
+                          bktrees >= 0.2 && <0.4,
+                          fgl == 5.5.*,
+                          graphviz >= 2999.15 && < 2999.18,
+-                         pandoc == 1.12.*,
++                         pandoc >= 1.12 && < 1.15,
+                          text
+ 
+         Exposed-Modules:     Data.Graph.Analysis

@@ -1,0 +1,54 @@
+From ca64c8b489868c9ab4e43386c91e0a38085e0ea0 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Fri, 28 Nov 2014 22:23:46 +0000
+Subject: [PATCH] System/LibVirt: fix build error against ghc-7.8.4-r1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+GT is now exported from Data.Generics
+
+  System/LibVirt/Foreign.chs:129:18:
+    Ambiguous occurrence ‘GT’
+    It could refer to either ‘Prelude.GT’,
+                             imported from ‘Prelude’ at System/LibVirt/Foreign.chs:7:8-29
+                             (and originally defined in ‘ghc-prim:GHC.Types’)
+                          or ‘Data.Generics.GT’,
+                             imported from ‘Data.Generics’ at System/LibVirt/Foreign.chs:81:1-20
+                             (and originally defined in ‘Data.Generics.Aliases’)
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ System/LibVirt/Errors.chs  | 2 +-
+ System/LibVirt/Foreign.chs | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/System/LibVirt/Errors.chs b/System/LibVirt/Errors.chs
+index a395d0c..32eed3e 100644
+--- a/System/LibVirt/Errors.chs
++++ b/System/LibVirt/Errors.chs
+@@ -14,7 +14,7 @@ module System.LibVirt.Errors
+   where
+ 
+ import qualified Control.Exception as E
+-import Data.Generics
++import Data.Generics (Data, Typeable)
+ import Foreign
+ import Foreign.C.Types
+ import Foreign.C.String
+diff --git a/System/LibVirt/Foreign.chs b/System/LibVirt/Foreign.chs
+index 4525604..3fa94e8 100644
+--- a/System/LibVirt/Foreign.chs
++++ b/System/LibVirt/Foreign.chs
+@@ -78,7 +78,7 @@ module System.LibVirt.Foreign
+   ) where
+ 
+ import Data.Bits
+-import Data.Generics
++import Data.Generics ()
+ import Foreign
+ import Foreign.C.Types
+ import Foreign.C.String
+-- 
+2.1.3
+

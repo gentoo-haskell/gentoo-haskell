@@ -1,0 +1,33 @@
+--- readline-1.0.1.0-orig/System/Console/Readline.hsc	2007-11-06 02:25:00.000000000 +1100
++++ readline-1.0.1.0/System/Console/Readline.hsc	2012-09-15 17:30:53.690973810 +1000
+@@ -298,6 +298,9 @@
+ import Foreign.C.Types	( CInt, CChar, CFile )
+ import Foreign.C.String	( newCString, peekCString, withCString,
+ 			  castCharToCChar, castCCharToChar )
++#if (__GLASGOW_HASKELL__>=705)
++import Foreign.C.Types(CInt(..))
++#endif
+ import GHC.Handle	( fdToHandle )
+ 
+ {-# CFILES HsReadline_cbits.c #-}
+--- readline-1.0.1.0-orig/include/HsReadline.h	2007-11-06 02:25:00.000000000 +1100
++++ readline-1.0.1.0/include/HsReadline.h	2012-10-11 19:08:56.177893341 +1100
+@@ -13,4 +13,8 @@
+     
+ extern void hs_rl_message (const char *s);
+ 
++#if (__GLASGOW_HASKELL__>=706)
++extern int __hscore_hs_fileno (FILE *f);
++#endif
++  
+ #endif
+--- readline-1.0.1.0-orig/HsReadline_cbits.c	2007-11-06 02:25:00.000000000 +1100
++++ readline-1.0.1.0/HsReadline_cbits.c	2012-10-11 19:09:08.054208074 +1100
+@@ -4,3 +4,7 @@
+ {
+     rl_message ("%s", s);
+ }
++
++#if (__GLASGOW_HASKELL__>=706)
++int __hscore_hs_fileno (FILE *f) { return fileno (f); }
++#endif

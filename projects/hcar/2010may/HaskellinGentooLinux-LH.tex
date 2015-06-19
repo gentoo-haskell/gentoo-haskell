@@ -1,0 +1,61 @@
+\begin{hcarentry}[updated]{Haskell in Gentoo Linux}
+\label{gentoo}
+\report{Lennart Kolmodin}%11/09
+\makeheader
+
+Gentoo Linux currently officially supports GHC 6.10.4, including the
+latest Haskell Platform~\cref{haskell-platform} for x86, amd64, sparc
+and ppc64.  For previous GHC versions we also have binaries available
+for alpha, hppa and ia64.
+
+The full list of packages available through the official repository
+can be viewed at
+\url{http://packages.gentoo.org/category/dev-haskell?full\_cat}.
+
+The GHC architecture/version matrix is available at
+\url{http://packages.gentoo.org/package/dev-lang/ghc}.
+
+Please report problems in the normal Gentoo bug tracker
+at \url{bugs.gentoo.org}.
+
+We have also recently started an official Gentoo Haskell blog where we
+can communicate with our users what we are doing
+\url{http://gentoohaskell.wordpress.com/}.
+
+There is also an overlay which contains more than 300 extra unofficial
+and testing packages. Thanks to the Haskell developers using Cabal and
+Hackage~\cref{hackagedb}, we have been able to write a tool called
+``hackport'' (initiated by Henning G\"unther) to generate Gentoo
+packages with minimal user intervention.  Notable packages in the
+overlay include the latest version of the Haskell Platform as well as
+the latest 6.12.2 release of GHC, as well as popular Haskell packages
+such as pandoc and gitit.
+
+More information can be found about the Gentoo Haskell Overlay at
+\url{http://haskell.org/haskellwiki/Gentoo}. Using Darcs~\cref{darcs},
+it is easy to keep updated and submit new packages and to fix any
+problems in existing packages.  It is also available via the Gentoo
+overlay manager ``layman''.  If you choose to use the overlay, then
+any problems should be reported on IRC (\verb+#gentoo-haskell+ on
+freenode), where we coordinate development, or via email
+\email{haskell@gentoo.org} (as we have more people with the ability to
+fix the overlay packages that are contactable in the IRC channel than
+via the bug tracker).
+
+Through recent efforts we have devoped a tool called
+``haskell-updater''
+\url{http://www.haskell.org/haskellwiki/Gentoo#haskell-updater}
+(initiated by Ivan Lazar Miljenovic).  This is a replacement of the
+old \verb+ghc-updater+ script for rebuilding packages when a new
+version of GHC is installed which is now not only written in Haskell
+but will also rebuild broken packages.  ``haskell-updater'' is still
+in active development to further refine and add to its features and
+capabilities.
+
+As always we are more than happy for (and in fact encourage) Gentoo
+users to get involved and help us maintain our tools and packages,
+even if it's as simple as reporting packages that do not always work
+or need updating: with such a wide range of GHC and package versions
+to co-ordinate, it's hard to keep up!  Please contact us on IRC or
+email if you are interested!
+\end{hcarentry}

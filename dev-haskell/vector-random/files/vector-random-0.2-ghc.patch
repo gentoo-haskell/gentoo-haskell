@@ -1,0 +1,12 @@
+diff --git a/Data/Vector/Random/Mersenne.hs b/Data/Vector/Random/Mersenne.hs
+index 17976d7..83f2d93 100644
+--- a/Data/Vector/Random/Mersenne.hs
++++ b/Data/Vector/Random/Mersenne.hs
+@@ -82,7 +82,6 @@ class PureMTRandom a where
+     -- | Given a pure mersenne twister state, yield a new random value,
+     -- and the next state.
+     random :: R.PureMT -> (a, R.PureMT)
+-    {-# INLINE random #-}
+ 
+ instance PureMTRandom Double where
+     random = R.randomDouble

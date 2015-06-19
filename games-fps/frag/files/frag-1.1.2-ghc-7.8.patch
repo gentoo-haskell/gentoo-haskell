@@ -1,0 +1,285 @@
+diff --git a/frag.cabal b/frag.cabal
+index 6bb52c5..a19ebcb 100644
+--- a/frag.cabal
++++ b/frag.cabal
+@@ -83,7 +83,7 @@ data-files:          README,
+ 
+ Executable frag
+    Main-is:             Main.hs
+-   Build-Depends:       base==4.*, GLUT, OpenGL>=2.0, array, random
++   Build-Depends:       base==4.*, GLUT, OpenGL>=2.0, array, random, hashtables
+    Hs-source-dirs:      src
+    Ghc-options:         -O2 -funbox-strict-fields
+    Extensions:          BangPatterns,
+diff --git a/src/MD3.hs b/src/MD3.hs
+index 132fc32..4c80c83 100644
+--- a/src/MD3.hs
++++ b/src/MD3.hs
+@@ -55,7 +55,7 @@ import Foreign.C.String
+ import System.IO hiding (withBinaryFile)
+ import Control.Exception ( bracket )
+ import Textures
+-import Data.HashTable
++import qualified Data.HashTable.IO as HT
+ import Data.Maybe
+ import Data.List
+ import Data.Array
+@@ -568,14 +568,14 @@ stripPath str = splitPath!!((length splitPath)-1)
+ 
+ readMD3Textures ::
+    [FilePath] -> String ->
+-         IO (HashTable String (Maybe TextureObject))
++         IO (HT.BasicHashTable String (Maybe TextureObject))
+ readMD3Textures files dir = do
+                 texs <- mapM readMD3Skin files
+                 let texF = concat texs
+                 let unqtex = nub (map snd texF)
+                 textures <- mapM getAndCreateTexture (map (dir++) unqtex)
+                 let nmobj = concat $ map (assoc texF) (zip unqtex textures)
+-                fromList hashString nmobj
++                HT.fromList nmobj
+ 
+ assoc ::
+    [(String,String)] -> (String,Maybe TextureObject) ->
+@@ -667,7 +667,7 @@ noAnims = do
+ 
+ 
+ readMD3 :: FilePath ->
+-   (HashTable String (Maybe TextureObject))->
++   (HT.BasicHashTable String (Maybe TextureObject))->
+           [(String,(MD3Model,IORef(AnimState)))] -> IO MD3Model
+ readMD3 filePath hashtable lns  = withBinaryFile filePath $ \handle -> do
+                 header <- readMD3Header handle
+@@ -740,7 +740,7 @@ readWeapon filePath shader = withBinaryFile filePath $ \handle -> do
+    texObj    <- mapM getAndCreateTexture (map ("tga/models/weapons/"++) weaponTex)
+    readBones handle header
+    readTags handle header
+-   hash1           <- (fromList hashString [])
++   hash1           <- (HT.fromList [])
+    objs    <- readMeshes handle header hash1
+    let objs2      = map attachTex (zip texObj objs)
+    let emptyList = listArray (0,0) []
+@@ -786,7 +786,7 @@ attachTex (texObj,object) =
+ 
+ readMeshes ::
+    Handle -> MD3Header ->
+-         (HashTable String (Maybe TextureObject)) -> IO [MeshObject]
++         (HT.BasicHashTable String (Maybe TextureObject)) -> IO [MeshObject]
+ readMeshes handle header hashTable= do
+                  posn <- hTell handle
+                  meshObjects <- readMeshData handle posn (numMeshes header) hashTable
+@@ -795,7 +795,7 @@ readMeshes handle header hashTable= do
+ 
+ readMeshData ::
+    Handle -> Integer -> Int ->
+-         (HashTable String (Maybe TextureObject)) -> IO [MeshObject]
++         (HT.BasicHashTable String (Maybe TextureObject)) -> IO [MeshObject]
+ readMeshData handle posn meshesLeft hashTable
+     | meshesLeft <= 0 = return []
+     | otherwise = do
+@@ -821,7 +821,7 @@ readMeshData handle posn meshesLeft hashTable
+ 
+ convertMesh :: MD3MeshHeader ->
+    [MD3Face] -> [MD3TexCoord] -> [MD3Vertex] ->
+-          (HashTable String (Maybe TextureObject)) -> IO MeshObject
++          (HT.BasicHashTable String (Maybe TextureObject)) -> IO MeshObject
+ convertMesh header faceIndex texcoords vertices hashTable = do
+     let verts           = map vert vertices
+     let scaledVerts = map devideBy64 verts
+@@ -859,7 +859,7 @@ convertMesh header faceIndex texcoords vertices hashTable = do
+          arrayPointer TextureCoordArray $=
+             VertexArrayDescriptor 2 Float 0 nullPtr-}
+ 
+-    tex <- (Data.HashTable.lookup hashTable (strName header))
++    tex <- (HT.lookup hashTable (strName header))
+     return MeshObject {
+             numOfVerts    = (length (head keyframes))*3,
+             numOfFaces    = 3*(fromIntegral (numTriangles header)),
+diff --git a/src/Main.hs b/src/Main.hs
+index 5a8448d..bc3cfa4 100644
+--- a/src/Main.hs
++++ b/src/Main.hs
+@@ -25,7 +25,7 @@ import Camera
+ import System.Exit (ExitCode(..), exitWith)
+ import Matrix
+ import MD3
+-import Data.HashTable
++import qualified Data.HashTable.IO as HT
+ import Frustum
+ import Data.List (find)
+ import Textures
+@@ -89,7 +89,7 @@ createAWindow windowName level = do
+    --read the BSP files and player models specified in the *.med files
+    (mapRef,modls) <- readMapMedia (level ++ ".med")
+ 
+-   listModels <- toList modls
++   listModels <- HT.toList modls
+    animList   <- mapM getAnims listModels
+ 
+    --complete the objects
+@@ -100,11 +100,11 @@ createAWindow windowName level = do
+    numbase <- buildBigNums
+ 
+    --create a hashmap  for textures
+-   texs <- fromList hashString []
++   texs <- HT.fromList []
+ 
+    --create the crosshair
+    crosshair <- getAndCreateTexture "crosshaira"
+-   insert texs "crosshair" crosshair
++   HT.insert texs "crosshair" crosshair
+ 
+    --set up the variables needed by our callbacks and game loop
+    tme            <- get elapsedTime
+diff --git a/src/MapCfg.hs b/src/MapCfg.hs
+index 12e177b..c95293b 100644
+--- a/src/MapCfg.hs
++++ b/src/MapCfg.hs
+@@ -12,7 +12,7 @@ module MapCfg where
+ import BSP
+ import Camera
+ import Control.Exception ( bracket )
+-import Data.HashTable (HashTable,lookup,insert,fromList,hashString)
++import qualified Data.HashTable.IO as HT
+ import Data.IORef
+ import Data.List (find)
+ import Data.Maybe
+@@ -41,43 +41,43 @@ readMapCfg filepath = withBinaryFile filepath $ \handle -> do
+    let objects  = map lines2ObjectCons lnes
+    return $ map objectCons2IntermediateObjects objects
+ 
+-readMapMedia :: FilePath -> IO (IORef BSPMap,(HashTable String Model))
++readMapMedia :: FilePath -> IO (IORef BSPMap,(HT.BasicHashTable String Model))
+ readMapMedia filepath = withBinaryFile filepath $ \handle -> do
+    lnes <- readLines handle
+    print lnes
+    let levelModels = lines2LevelModels lnes
+    let (MMap lvlName) = head levelModels
+    bsp <- readBSP lvlName
+-   hash <- fromList hashString []
++   hash <- HT.fromList []
+    mapM_ (readLevelModels hash) (tail levelModels)
+    return (bsp,hash)
+ 
+ 
+-readLevelModels :: HashTable String Model -> LevelModel -> IO ()
++readLevelModels :: HT.BasicHashTable String Model -> LevelModel -> IO ()
+ readLevelModels hash (MWeapon name) =
+    getWeaponModel hash name
+ readLevelModels hash (MPlayerModel name weaponName) =
+    getModel hash name weaponName
+ 
+ 
+-getModel :: HashTable String Model -> String -> String -> IO ()
++getModel :: HT.BasicHashTable String Model -> String -> String -> IO ()
+ getModel hash name weaponName = do
+    getWeaponModel hash weaponName
+-   Just weapon <- Data.HashTable.lookup hash weaponName
++   Just weapon <- HT.lookup hash weaponName
+    model       <- readModel name weapon
+-   insert hash name model
++   HT.insert hash name model
+ 
+ 
+-getWeaponModel :: HashTable String Model -> String -> IO ()
++getWeaponModel :: HT.BasicHashTable String Model -> String -> IO ()
+ getWeaponModel hash name = do
+-   model <- Data.HashTable.lookup hash name
++   model <- HT.lookup hash name
+    case model of
+       Just _ -> return ()
+       Nothing -> do
+                 weaponModel <-
+                   readWeaponModel
+                     ("tga/models/weapons/"++name++".md3") ("tga/models/weapons/"++name++".shader")
+-                insert hash name weaponModel
++                HT.insert hash name weaponModel
+ 
+ 
+ readLines :: Handle -> IO [String]
+diff --git a/src/Render.hs b/src/Render.hs
+index ea91e9e..933ffd1 100644
+--- a/src/Render.hs
++++ b/src/Render.hs
+@@ -16,14 +16,14 @@ import Camera
+ import Matrix
+ import Frustum
+ import BSP
+-import Data.HashTable
++import qualified Data.HashTable.IO as HT
+ import Visibility
+ import TextureFonts
+ 
+ data GameData = GameData {
+                             gamemap        :: IORef(BSPMap),
+-                            models         :: HashTable String Model,
+-                            textures       :: HashTable String (Maybe TextureObject),
++                            models         :: HT.BasicHashTable String Model,
++                            textures       :: HT.BasicHashTable String (Maybe TextureObject),
+                             camera         :: IORef(Camera),
+                             lastDrawTime   :: IORef(Int),
+                             lastDrawTime2  :: IORef(Int),
+@@ -114,7 +114,7 @@ printLife font life
+    where printf str = printFonts' 292 32 font 1 (str)
+ 
+ 
+-renderObjects :: IORef(Camera) -> HashTable String Model ->
++renderObjects :: IORef(Camera) -> HT.BasicHashTable String Model ->
+    Frustum -> BSPMap  -> ObsObjState -> IO()
+ renderObjects camRef mdels frust mp oos
+    | isRay oos        = renderRay oos
+@@ -123,9 +123,9 @@ renderObjects camRef mdels frust mp oos
+    | otherwise        = return ()
+ 
+ 
+-renderGun :: Camera -> HashTable String Model -> IO()
++renderGun :: Camera -> HT.BasicHashTable String Model -> IO()
+ renderGun cam mdels = do
+-   Just weapon <- Data.HashTable.lookup mdels "railgun"
++   Just weapon <- HT.lookup mdels "railgun"
+    let (x,y,z)    = cpos cam
+    let (vx,vy,vz) = viewPos cam
+    unsafePreservingMatrix $ do
+@@ -209,7 +209,7 @@ renderProjectile (OOSProjectile {projectileOldPos = (x,y,z)}) = do
+ 
+ 
+ renderEnemy ::
+-  IORef(Camera) -> HashTable String Model ->
++  IORef(Camera) -> HT.BasicHashTable String Model ->
+         Frustum -> BSPMap  -> ObsObjState -> IO()
+ renderEnemy camRef mdels frust bspmap (OOSAICube {oosOldCubePos = (x,y,z),
+                                                                             oosCubeSize = (sx,sy,sz),
+@@ -241,7 +241,7 @@ renderEnemy camRef mdels frust bspmap (OOSAICube {oosOldCubePos = (x,y,z),
+                            unsafePreservingMatrix $ do
+                                  lineWidth $= 5.0
+                                  translate (Vector3 x y z)
+-                                 Just model <- Data.HashTable.lookup mdels name
++                                 Just model <- HT.lookup mdels name
+                                  writeIORef (pitch model)
+                                     (Just $ do
+                                                     cullFace $=  Nothing
+diff --git a/src/TextureFonts.hs b/src/TextureFonts.hs
+index ffdd29a..47046f5 100644
+--- a/src/TextureFonts.hs
++++ b/src/TextureFonts.hs
+@@ -12,7 +12,7 @@ import Graphics.UI.GLUT
+ import Textures
+ import Data.Maybe
+ import Data.Char
+-import Data.HashTable
++import qualified Data.HashTable.IO as HT
+ 
+ 
+ -- build a display list for the fonts
+@@ -122,9 +122,9 @@ setUpOrtho func = do
+    matrixMode   $= Modelview 0
+ 
+ -- just renders the crosshair
+-renderCrosshair :: HashTable String (Maybe TextureObject) -> IO()
++renderCrosshair :: HT.BasicHashTable String (Maybe TextureObject) -> IO()
+ renderCrosshair texs = do
+-   Just  crosshairTex <- Data.HashTable.lookup texs "crosshair"
++   Just  crosshairTex <- HT.lookup texs "crosshair"
+    texture Texture2D $= Enabled
+    textureBinding Texture2D $= crosshairTex
+    unsafePreservingMatrix $ do

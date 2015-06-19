@@ -1,0 +1,21 @@
+--- cabal-dev-0.8-orig/cabal-dev.cabal	2011-07-19 06:08:17.000000000 +1000
++++ cabal-dev-0.8/cabal-dev.cabal	2011-07-19 12:52:55.349271830 +1000
+@@ -111,9 +111,6 @@
+   if os(windows)
+      build-depends: Win32 >= 2.1  && < 2.3
+ 
+-  Build-tools:
+-    cabal >= 0.8.2
+-
+   Other-modules:
+     Distribution.Dev.AddSource,
+     Distribution.Dev.BuildOpts,
+@@ -145,7 +142,7 @@
+ Executable cabal-dev-test
+   Main-is: RunTests.hs
+   GHC-Options: -Wall
+-  HS-Source-Dirs: src, test
++  HS-Source-Dirs: src, test, cabal-install-0.8.2
+   if flag(no-cabal-dev) || !flag(build-tests)
+     Buildable: False
+   else

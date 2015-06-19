@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		/Warning:/ This version of the package is very experimental and the interface
+		may change in later versions. I am seeking comments to improve it.
+		
+		This package is composed of two functions for formatted conversion between
+		strings and typed values. Each is defined as a type-indexed function using a
+		type class with multiple parameters and functional dependencies along with
+		format descriptors.
+		
+		&quot;Text.XFormat.Read&quot; allows one to parse values from a formatted string. Its
+		functionality is similar to the C @scanf@ function. Unlike @scanf@, however,
+		the format descriptor is well-typed, ensuring that the output type is
+		statically known.
+		
+		&quot;Text.XFormat.Show&quot; allows one to print values to a formatted string. Its
+		functionality is similar to the C @printf@ function. Unlike @printf@, however,
+		the format descriptor is well-typed, ensuring that the variable number
+		arguments are statically known.
+		
+		These functions can be easily extended to support new formats and new types.
+		Extension is simple: define a format descriptor and an instance of the
+		appropriate class.
+	</longdescription>
+</pkgmetadata>

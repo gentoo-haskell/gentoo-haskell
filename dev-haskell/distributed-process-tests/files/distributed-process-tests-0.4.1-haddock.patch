@@ -1,0 +1,28 @@
+commit 86b69d63b908360e25ada0f3eff30e4f9f8fb361
+Author: Alexander Vershilov <alexander.vershilov@gmail.com>
+Date:   Thu Dec 18 02:10:47 2014 +0300
+
+    Workaround haddock problem
+
+diff --git a/src/Control/Distributed/Process/Tests/CH.hs b/src/Control/Distributed/Process/Tests/CH.hs
+index a9b9b76..c284111 100644
+--- a/src/Control/Distributed/Process/Tests/CH.hs
++++ b/src/Control/Distributed/Process/Tests/CH.hs
+@@ -104,14 +104,14 @@ math = do
+ 
+ -- | Monitor or link to a remote node
+ monitorOrLink :: Bool            -- ^ 'True' for monitor, 'False' for link
+-              -> ProcessId       -- Process to monitor/link to
+-              -> Maybe (MVar ()) -- MVar to signal on once the monitor has been set up
++              -> ProcessId       -- ^ Process to monitor/link to
++              -> Maybe (MVar ()) -- ^ MVar to signal on once the monitor has been set up
+               -> Process (Maybe MonitorRef)
+ monitorOrLink mOrL pid mSignal = do
+   result <- if mOrL then Just <$> monitor pid
+                     else link pid >> return Nothing
+   -- Monitor is asynchronous, which usually does not matter but if we want a
+-  -- *specific* signal then it does. Therefore we wait an arbitrary delay and
++  --  *specific* signal then it does. Therefore we wait an arbitrary delay and
+   -- hope that this means the monitor has been set up
+   forM_ mSignal $ \signal -> liftIO . forkIO $ threadDelay 100000 >> putMVar signal ()
+   return result

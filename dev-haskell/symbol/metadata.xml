@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides a &#39;Symbol&#39; data type allowing fast symbol comparisons
+		and functions for interning symbols and recovering their
+		&#39;String&#39; representation.
+	</longdescription>
+</pkgmetadata>

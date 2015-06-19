@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a strict version of the Get monad from the binary
+		package. It&#39;s pretty much just a copy and paste job from the
+		original source code. The binary team are currently unsure
+		about their future plans w.r.t. strictness, so this is just a
+		stop gap measure. See
+		&lt;http://www.haskell.org/haskellwiki/DealingWithBinaryData&gt; for
+		documentation.
+	</longdescription>
+</pkgmetadata>

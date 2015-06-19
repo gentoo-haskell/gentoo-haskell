@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package adds a collection of helper functions to make
+		the task dealing with binary data of varying endianness from within an
+		Attoparsec parser easier.
+	</longdescription>
+</pkgmetadata>

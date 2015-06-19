@@ -1,0 +1,12 @@
+diff --git a/Codec/Image/DevIL.hsc b/Codec/Image/DevIL.hsc
+index 12ec961..5b152b9 100644
+--- a/Codec/Image/DevIL.hsc
++++ b/Codec/Image/DevIL.hsc
+@@ -13,6 +13,7 @@ import Foreign.C
+ 
+ import Data.Array.Storable
+ import Data.Array.Unboxed
++import Data.Array.Unsafe
+ import Control.Applicative
+ import Control.Monad
+ 

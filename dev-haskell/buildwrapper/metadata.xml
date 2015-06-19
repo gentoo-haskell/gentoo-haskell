@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Buildwrapper is an alternative to scion.
+		It provides services to configure, build and give information on source files to help IDEs manage Haskell projects.
+		You can use buildwrapper to build project and retrieve errors, get outline for each module source, get the type of something inside a source file, get lexer tokens, etc.
+		Buildwrapper is used in the EclipseFP project (Eclipse plugins for Haskell development)
+	</longdescription>
+</pkgmetadata>

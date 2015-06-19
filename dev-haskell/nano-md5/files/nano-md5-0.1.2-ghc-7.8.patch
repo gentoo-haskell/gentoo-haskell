@@ -1,0 +1,21 @@
+diff --git a/Data/Digest/OpenSSL/MD5.hs b/Data/Digest/OpenSSL/MD5.hs
+index a988cc0..ca5c514 100644
+--- a/Data/Digest/OpenSSL/MD5.hs
++++ b/Data/Digest/OpenSSL/MD5.hs
+@@ -29,6 +29,7 @@ import qualified Data.ByteString      as B
+ import Foreign
+ import Foreign.C.Types
+ import Numeric                        (showHex)
++import qualified System.IO.Unsafe as U
+ 
+ md5_digest_length :: Int
+ md5_digest_length = 16
+@@ -46,7 +47,7 @@ md5_digest_length = 16
+ -- While this md5sum binding will return:
+ --
+ md5sum :: B.ByteString -> String
+-md5sum p = unsafePerformIO $ B.unsafeUseAsCStringLen p $ \(ptr,n) -> do
++md5sum p = U.unsafePerformIO $ B.unsafeUseAsCStringLen p $ \(ptr,n) -> do
+     allocaBytes md5_digest_length $ \digest_ptr -> do
+         digest  <- c_md5 ptr (fromIntegral n) digest_ptr
+         go digest 0 []

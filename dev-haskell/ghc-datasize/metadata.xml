@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		ghc-datasize is a tool to determine the size of data
+		structures in GHC&#39;s memory. Determining the size of
+		recursive data structures is supported. All sizes are in
+		Bytes.
+	</longdescription>
+</pkgmetadata>

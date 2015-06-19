@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lambdabot is an IRC bot written over several years by
+		those on the #haskell IRC channel.
+		
+		Our own custom libraries for various plugin functions.
+		
+		AltTime.hs: alternate version of the time library
+		
+		MiniHTTP.hs: a mini http server
+		
+		Process.hs: a wrapper over System.Process
+		
+		Regex.hsc: a fast packed string regex library
+		
+		Serial.hs:: a serialisation API
+		
+		Util.hs: miscellaneous string, and other, functions
+	</longdescription>
+</pkgmetadata>

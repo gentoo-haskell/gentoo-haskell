@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a light-weight algebraic data type representing parsed Yaml files. It is implemented as a more conveinent wrapper around the HsSyck package, and provides utility functions as well.
+	</longdescription>
+</pkgmetadata>

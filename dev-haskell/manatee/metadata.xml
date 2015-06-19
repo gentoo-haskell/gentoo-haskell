@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Manatee is Haskell integrated environment written in Haskell.
+		
+		The goal of the Manatee project is to provide
+		a fast, safe and flexible integrated environment for haskell hacking.
+		
+		You can consider it is new environment mix Gnome and Emacs.
+		Like Gnome to provide friendly graphics interface and work efficient like Emacs.
+		
+		Manatee use multi-processes framework, any sub-module running in separate process to protected core won&#39;t crash.
+		So it minimize your losses when some unexpected exception throw in extension.
+		
+		Video (Select 720p HD) at : &lt;http://www.youtube.com/watch?v=weS6zys3U8k&gt; or &lt;http://www.youtube.com/watch?v=A3DgKDVkyeM&gt;
+		
+		You can find screenshots at : &lt;http://goo.gl/MkVw&gt;
+		
+		Below is build step for Manatee:
+		
+		1) Install gold-linker to accelerate installation:
+		
+		I suggest use gold-linker instead ld to accelerate installation.
+		
+		In Debian system, you just need do below command:
+		
+		&gt; sudo aptitude install binutils-gold -y
+		
+		This step is optional, it&#39;s okay use ld link program, just much slow. :)
+		
+		2) Install GHC compiler &lt;http://www.haskell.org/ghc/download_ghc_7_0_3&gt;:
+		
+		Download ghc package for your system, then do below command :
+		
+		&gt; ./configure &amp;&amp; sudo make install
+		
+		3) Install C library:
+		In Debian use below command:
+		
+		&gt; sudo aptitude install libgtksourceview2.0-dev libgconf2-dev libwebkit-dev libcurl4-openssl-dev libgtkimageview-dev libpoppler-glib-dev poppler-data libtagc0-dev libvte-dev -y
+		
+		4) Install cabal:
+		
+		Download &lt;http://hackage.haskell.org/packages/archive/cabal-install/0.10.2/cabal-install-0.10.2.tar.gz&gt;
+		
+		Decompress cabal-install-0.10.2.tar.gz and do below command:
+		
+		&gt; cd ./cabal-install-0.10.2 &amp;&amp; sudo chmod +x ./bootstrap.sh &amp;&amp; ./bootstrap.sh
+		
+		5) Install dependent Haskell library:
+		
+		First make sure `HOME/.cabal/bin/` in your PATH
+		
+		Generic way is add `PATH=$PATH:~\/.cabal\/bin` in your `~/.bashrc`
+		
+		Then do below command (NOTE: don&#39;t use root permission with cabal, otherwise Manatee can&#39;t work):
+		
+		&gt; cabal update &amp;&amp; cabal install alex happy c2hs &amp;&amp; cabal install gtk2hs-buildtools glib gio pango cairo gtk
+		
+		6) Install Manatee:
+		
+		Install all Manatee packages (same, don&#39;t use root permission):
+		
+		&gt; cabal install manatee-all
+		
+		If you don&#39;t want install all Manatee packages, you can install basic package like below:
+		
+		&gt; cabal install manatee-core manatee-welcome manatee
+		
+		Then choose extension package list in below to install:
+		
+		&gt; manatee-browser
+		&gt; manatee-editor
+		&gt; manatee-filemanager
+		&gt; manatee-imageviewer
+		&gt; manatee-ircclient
+		&gt; manatee-mplayer
+		&gt; manatee-pdfviewer
+		&gt; manatee-processmanager
+		&gt; manatee-reader
+		&gt; manatee-curl
+		&gt; manatee-terminal
+		
+		Note if you don&#39;t install any extension package, nothing will show in manatee, so you at least to choose one extension to install.
+		
+		That&#39;s all, then type command &quot;manatee&quot; to play it! :)
+		
+		I have test, Manatee can works well in Gnome, KDE, XMonad and XFCE
+		
+		Video (Select 720p HD) at : &lt;http://www.youtube.com/watch?v=weS6zys3U8k&gt; &lt;http://www.youtube.com/watch?v=A3DgKDVkyeM&gt; &lt;http://v.youku.com/v_show/id_XMjI2MDMzODI4.html&gt;
+		
+		Screenshots at : &lt;http://goo.gl/MkVw&gt;
+		
+		Manual at : &lt;http://haskell.org/haskellwiki/Manatee&gt;
+		
+		IRC channel: irc.freenode.net 6667 &lt;##manatee&gt;
+		
+		Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
+		
+		Manatee is distributed framework, it allowed you install extension don&#39;t need depend each other, but it&#39;s easy to break if some package is older than core packages (manatee-core, manatee). So please make sure *all* packages has update to newest version before you report bug to manatee-user\@googlegroups.com . Thanks! :)
+		
+	</longdescription>
+</pkgmetadata>

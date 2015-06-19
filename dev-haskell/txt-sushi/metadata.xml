@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		TxtSushi is a collection of command line utilities for processing
+		comma-separated and tab-delimited files (AKA flat files, spreadsheets).
+		The most important utility (tssql) lets you perform SQL selects on CSV files.
+		By focusing exclusively on processing text files with a tabular structure,
+		TxtSushi simplifies common tasks like filtering, joining and transformation
+		that would take more effort to accomplish with a general purpose text
+		processing language.
+	</longdescription>
+</pkgmetadata>

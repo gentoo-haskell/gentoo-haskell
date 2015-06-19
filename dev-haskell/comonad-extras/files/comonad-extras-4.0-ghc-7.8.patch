@@ -1,0 +1,49 @@
+diff --git a/src/Control/Comonad/Store/Pointer.hs b/src/Control/Comonad/Store/Pointer.hs
+index 5044a1e..251dcb2 100644
+--- a/src/Control/Comonad/Store/Pointer.hs
++++ b/src/Control/Comonad/Store/Pointer.hs
+@@ -3,6 +3,7 @@
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE FunctionalDependencies #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE DeriveDataTypeable #-}
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Control.Comonad.Store.Pointer
+@@ -51,28 +52,7 @@ import Control.Comonad.Env.Class
+ import Data.Functor.Identity
+ import Data.Functor.Extend
+ import Data.Array
+-
+-#ifdef __GLASGOW_HASKELL__
+ import Data.Typeable
+-instance (Typeable i, Typeable1 w) => Typeable1 (PointerT i w) where
+-  typeOf1 diwa = mkTyConApp storeTTyCon [typeOf (i diwa), typeOf1 (w diwa)]
+-    where
+-      i :: PointerT i w a -> i
+-      i = undefined
+-      w :: PointerT i w a -> w a
+-      w = undefined
+-
+-instance (Typeable i, Typeable1 w, Typeable a) => Typeable (PointerT i w a) where
+-  typeOf = typeOfDefault
+-
+-storeTTyCon :: TyCon
+-#if __GLASGOW_HASKELL__ < 704
+-storeTTyCon = mkTyCon "Control.Comonad.Trans.Store.Pointer.PointerT"
+-#else
+-storeTTyCon = mkTyCon3 "comonad-extras" "Control.Comonad.Trans.Store.Pointer" "PointerT"
+-#endif
+-{-# NOINLINE storeTTyCon #-}
+-#endif
+ 
+ type Pointer i = PointerT i Identity
+ 
+@@ -83,6 +63,7 @@ runPointer :: Pointer i a -> (Array i a, i)
+ runPointer (PointerT (Identity f) i) = (f, i)
+ 
+ data PointerT i w a = PointerT (w (Array i a)) i
++    deriving Typeable
+ 
+ runPointerT :: PointerT i w a -> (w (Array i a), i)
+ runPointerT (PointerT g i) = (g, i)

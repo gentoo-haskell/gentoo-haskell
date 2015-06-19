@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="oldtypeable">ENable support for older GHC versions. Users should not set this.</flag>
+	</use>
+	<longdescription>
+		Fast unicode character sets based on complemented PATRICIA tries
+	</longdescription>
+</pkgmetadata>

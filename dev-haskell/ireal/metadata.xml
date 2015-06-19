@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a type IReal of real numbers and intervals with arbitrary precision arithmetic,
+		instance declarations for the standard numeric classes, Eq and Ord (the two latter non-total for
+		computability reasons). Significantly more efficient than other Haskell modules for exact
+		real arithmetic that we are aware of. Does not depend on non-Haskell libraries.
+		A QuickCheck test suite, documentation, and a number of small example
+		applications in validated numerics are available at &lt;https://github.com/sydow/ireal.git&gt;.
+	</longdescription>
+</pkgmetadata>

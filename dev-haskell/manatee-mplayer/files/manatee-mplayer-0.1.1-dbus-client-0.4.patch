@@ -1,0 +1,37 @@
+--- manatee-mplayer-0.1.1-orig/manatee-mplayer.cabal	2011-05-14 14:19:52.000000000 +1000
++++ manatee-mplayer-0.1.1/manatee-mplayer.cabal	2011-07-25 20:46:33.530092430 +1000
+@@ -34,11 +34,11 @@
+   location:     http://patch-tag.com/r/AndyStewart/manatee-mplayer
+   
+ Library
+-     build-depends: base >= 4 && < 5, manatee-core >= 0.1.1, dbus-client >= 0.3 && < 0.4, stm >= 2.1.2.0,
++     build-depends: base >= 4 && < 5, manatee-core >= 0.1.1, dbus-client >= 0.3 && < 0.5, stm >= 2.1.2.0,
+                     containers >= 0.3.0.0, gtk >= 0.12.0, derive, binary,
+                     text >= 0.7.1.0, bytestring >= 0.9.1.5, libtagc >= 0.12.0, regex-tdfa >= 1.1.2,
+                     filepath >= 1.1.0.3, utf8-string >= 0.3.4, time, dbus-core, gio >= 0.12.0,
+-                    random >= 1.0.0.2, unix >= 2.4.0.0, process
++                    random >= 1.0.0.2, unix >= 2.4.0.0, process, mtl
+      exposed-modules:
+          Manatee.Extension.Mplayer
+          Manatee.Extension.Mplayer.PlaylistBuffer
+--- manatee-mplayer-0.1.1-orig/Manatee/Extension/Mplayer/DBus.hs	2011-05-14 14:19:51.000000000 +1000
++++ manatee-mplayer-0.1.1/Manatee/Extension/Mplayer/DBus.hs	2011-07-25 20:49:43.225049226 +1000
+@@ -21,6 +21,7 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
+ module Manatee.Extension.Mplayer.DBus where
+ 
++import Control.Monad.Trans (liftIO)
+ import DBus.Client hiding (Signal)
+ import DBus.MatchRule
+ import DBus.Message (Signal, signalBody)
+@@ -94,8 +95,8 @@
+                           (mkRenderClientName processId)
+                           []
+     -- Use postGUIAsync wrap DBus action to protect gtk+ main thread. 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickMplayerClientSignalArgs member signal >?>= (postGUIAsync . fun)
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        liftIO (pickMplayerClientSignalArgs member signal >?>= (liftIO . postGUIAsync . fun)))
+ 
+ -- | Build daemon signal.
+ mkMplayerDaemonSignal :: Client -> String -> [String] -> IO ()

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lenses
+	</longdescription>
+	<use>
+		<flag name="derivedatatypeable">Use the DeriveDataTypeable extension.
+		This makes lens compile with old compilers. Users need not worry about
+		it.</flag>
+	</use>
+</pkgmetadata>

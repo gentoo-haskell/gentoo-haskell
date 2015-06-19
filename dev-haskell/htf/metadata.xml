@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The Haskell Test Framework (/HTF/ for short) lets you define unit
+		tests (&lt;http://hunit.sourceforge.net&gt;), QuickCheck properties
+		(&lt;http://www.cs.chalmers.se/~rjmh/QuickCheck/&gt;), and black box
+		tests in an easy and convenient way. The HTF uses a custom
+		preprocessor that collects test definitions automatically.
+		Furthermore, the preprocessor allows the HTF to report failing
+		test cases with exact file name and line number information.
+		
+		The documentation of the &quot;Test.Framework.Tutorial&quot; module
+		provides a tutorial for the HTF.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,92 @@
+diff --git a/cabal-dev.cabal b/cabal-dev.cabal
+index 1d8f8c2..6c66e80 100644
+--- a/cabal-dev.cabal
++++ b/cabal-dev.cabal
+@@ -91,10 +91,14 @@ Executable cabal-dev
+ 
+     -- Containers 0.2 did not specify a constraint on base, so we
+     -- avoid using it:
+-    if impl(ghc >= 6.12)
++    if impl(ghc >= 6.12 && < 7.6)
+       Build-depends:
+         containers >= 0.3 && < 0.5
+ 
++    if impl(ghc >= 7.6)
++      Build-depends:
++        containers >= 0.5 && < 0.6
++
+     -- Require this specific version that came with GHC 6.10 because
+     -- of packaging problems with containers-0.2
+     if impl(ghc == 6.10)
+
+
+diff --git a/src/Distribution/Dev/AddSource.hs b/src/Distribution/Dev/AddSource.hs
+index 97568f8..3852881 100644
+--- a/src/Distribution/Dev/AddSource.hs
++++ b/src/Distribution/Dev/AddSource.hs
+@@ -6,7 +6,7 @@ add-source command
+ Puts local source packages into a repository readable by cabal-install
+ 
+ -}
+-{-# LANGUAGE CPP #-}
++{-# LANGUAGE CPP, ScopedTypeVariables #-}
+ module Distribution.Dev.AddSource
+     ( actions
+     )
+@@ -73,6 +73,7 @@ import Distribution.Dev.Flags   ( Config, getVerbosity )
+ import Distribution.Dev.Sandbox ( resolveSandbox, localRepoPath
+                                 , Sandbox, indexTar, indexTarBase
+                                 )
++import qualified Control.Exception  as E (catch, IOException) 
+ 
+ import Distribution.Simple.Utils ( debug, notice )
+ 
+@@ -154,7 +155,7 @@ toIndexEntry pkgId c = right toEnt $ T.toTarPath False (indexName pkgId)
+ -- entries.
+ readExistingIndex :: Sandbox a -> IO (Either T.FormatError [T.Entry])
+ readExistingIndex sandbox =
+-    readIndexFile `catch` \e ->
++    readIndexFile `E.catch` \(e::E.IOException) ->
+         if isDoesNotExistError e
+         then return $ Right []
+         else ioError e
+@@ -300,7 +301,7 @@ displayPackageName = id
+ -- file
+ processDirectory :: V.Verbosity -> FilePath
+                  -> IO (Either String (PackageIdentifier, L.ByteString, PackageDescription))
+-processDirectory v d = go `catch` \e ->
++processDirectory v d = go `E.catch` \(e::E.IOException) ->
+                      if expected e
+                      then return $ Left $ show e
+                      else ioError e
+
+
+diff --git a/src/Distribution/Dev/RewriteCabalConfig.hs b/src/Distribution/Dev/RewriteCabalConfig.hs
+index d4ce0f6..2c49abc 100644
+--- a/src/Distribution/Dev/RewriteCabalConfig.hs
++++ b/src/Distribution/Dev/RewriteCabalConfig.hs
+@@ -9,6 +9,7 @@ This module is written so that it will work out-of-the-box with GHC >=
+ 6.8 && < 6.13 with no other packages installed.
+ 
+ -}
++{-# LANGUAGE ScopedTypeVariables #-}
+ module Distribution.Dev.RewriteCabalConfig
+     ( rewriteCabalConfig
+     , Rewrite(..)
+@@ -24,6 +25,7 @@ import Data.Traversable          ( traverse, Traversable )
+ import Distribution.ParseUtils   ( Field(..), readFields, ParseResult(..) )
+ import Distribution.Simple.Utils ( readUTF8File )
+ import Text.PrettyPrint.HughesPJ
++import qualified Control.Exception  as E (catch, IOException) 
+ 
+ data Rewrite = Rewrite { homeDir          :: FilePath
+                        , sandboxDir       :: FilePath
+@@ -39,7 +41,7 @@ readConfig s = case readFields s of
+ -- XXX: we should avoid this lazy IO that leaks a file handle.
+ readConfigF :: FilePath -> IO (Either String [Field])
+ readConfigF fn =
+-    (readConfig <$> readUTF8File fn) `catch` \e -> return $ Left $ show e
++    (readConfig <$> readUTF8File fn) `E.catch` (\(e::E.IOException) -> return $ Left $ show e)
+ 
+ readConfigF_ :: FilePath -> IO [Field]
+ readConfigF_ fn = either error id <$> readConfigF fn

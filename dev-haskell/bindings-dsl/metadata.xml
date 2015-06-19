@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a set of macros to be used when writing Haskell FFI.
+		They were designed to be able to fully describe C interfaces,
+		so that hsc2hs can extract from them all Haskell code needed to
+		mimic such interfaces. All Haskell names used are automatically
+		derived from C names, structures are mapped to Haskell instances
+		of Storable, and there are also macros you can use with C code
+		to help write bindings to inline functions or macro functions.
+		Documentation is available at package homepage:
+		
+		&lt;http://bitbucket.org/mauricio/bindings-dsl&gt;
+		
+		This package contains no Haskell code, only C header files
+		designed for hsc2hs.
+	</longdescription>
+</pkgmetadata>

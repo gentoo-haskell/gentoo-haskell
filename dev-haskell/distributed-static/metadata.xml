@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		/Towards Haskell in the Cloud/ (Epstein et al, Haskell
+		Symposium 2011) introduces the concept of /static/ values:
+		values that are known at compile time. In a distributed
+		setting where all nodes are running the same executable,
+		static values can be serialized simply by transmitting a
+		code pointer to the value. This however requires special
+		compiler support, which is not yet available in ghc. We
+		can mimick the behaviour by keeping an explicit mapping
+		(&#39;RemoteTable&#39;) from labels to values (and making sure
+		that all distributed nodes are using the same
+		&#39;RemoteTable&#39;). In this module we implement this mimickry
+		and various extensions: type safety (including for
+		polymorphic static values) and compositionality.
+	</longdescription>
+</pkgmetadata>

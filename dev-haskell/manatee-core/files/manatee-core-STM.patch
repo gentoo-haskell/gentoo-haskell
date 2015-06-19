@@ -1,0 +1,13 @@
+--- Manatee/Toolkit/General/STM.hs.orig	2013-12-20 17:42:33.498908425 +0800
++++ Manatee/Toolkit/General/STM.hs	2013-12-20 17:42:47.098908420 +0800
+@@ -26,6 +26,6 @@
+ -- and write the transformed value back to the same variable.
+-modifyTVar :: TVar a -> (a -> a) -> STM ()
+-modifyTVar var f = do
+-  x <- readTVar var
+-  writeTVar var (f x)
++-- modifyTVar :: TVar a -> (a -> a) -> STM ()
++-- modifyTVar var f = do
++--   x <- readTVar var
++--   writeTVar var (f x)
+ 

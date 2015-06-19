@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides two functions that help writing better UNIX daemons,
+		daemonize and serviced: daemonize does what a daemon should do
+		(forking and closing descriptors), while serviced does that and
+		more (syslog interface, PID file writing, start-stop-restart
+		command line handling, dropping privileges).
+	</longdescription>
+</pkgmetadata>

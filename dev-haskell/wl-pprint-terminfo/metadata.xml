@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="cursed">Use curses to determine window width..</flag>
+	</use>
+	<longdescription>
+		A color pretty printer with terminfo support
+	</longdescription>
+</pkgmetadata>

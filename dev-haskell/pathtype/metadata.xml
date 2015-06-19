@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides type-safe access to filepath manipulations.
+		
+		&quot;System.Path&quot; is designed to be used instead of &quot;System.FilePath&quot;.
+		(It is intended to provide versions of functions from that
+		module which have equivalent functionality but are more
+		typesafe). &quot;System.Path.Directory&quot; is a companion module
+		providing a type-safe alternative to &quot;System.Directory&quot;.
+		
+		The heart of this module is the @&#39;Path&#39; ar fd@ abstract type which
+		represents file and directory paths. The idea is that there are
+		two phantom type parameters - the first should be &#39;Abs&#39; or &#39;Rel&#39;,
+		and the second &#39;File&#39; or &#39;Dir&#39;. A number of type synonyms are
+		provided for common types:
+		
+		&gt; type AbsFile     = Path Abs File
+		&gt; type RelFile     = Path Rel File
+		&gt; type AbsDir      = Path Abs Dir
+		&gt; type RelDir      = Path Rel Dir
+		&gt;
+		&gt; type AbsPath  fd = Path Abs fd
+		&gt; type RelPath  fd = Path Rel fd
+		&gt; type FilePath ar = Path ar File
+		&gt; type DirPath  ar = Path ar Dir
+		
+		The type of the &#39;combine&#39; (aka &#39;&lt;/&gt;&#39;) function gives the idea:
+		
+		&gt; (&lt;/&gt;) :: DirPath ar -&gt; RelPath fd -&gt; Path ar fd
+		
+		Together this enables us to give more meaningful types to
+		a lot of the functions, and (hopefully) catch a bunch more
+		errors at compile time.
+		
+		Overloaded string literals are supported, so with the @OverloadedStrings@
+		extension enabled, you can:
+		
+		&gt; f :: FilePath ar
+		&gt; f = &quot;tmp&quot; &lt;/&gt; &quot;someFile&quot; &lt;.&gt; &quot;ext&quot;
+		
+		If you don&#39;t want to use @OverloadedStrings@, you can use the construction fns:
+		
+		&gt; f :: FilePath ar
+		&gt; f = asDirPath &quot;tmp&quot; &lt;/&gt; asFilePath &quot;someFile&quot; &lt;.&gt; &quot;ext&quot;
+		
+		or...
+		
+		&gt; f :: FilePath ar
+		&gt; f = asPath &quot;tmp&quot; &lt;/&gt; asPath &quot;someFile&quot; &lt;.&gt; &quot;ext&quot;
+		
+		or just...
+		
+		&gt; f :: FilePath ar
+		&gt; f = asPath &quot;tmp/someFile.ext&quot;
+		
+		One point to note is that whether one of these is interpreted as
+		an absolute or a relative path depends on the type at which it is
+		used:
+		
+		&gt; *System.Path&gt; f :: AbsFile
+		&gt; /tmp/someFile.ext
+		&gt; *System.Path&gt; f :: RelFile
+		&gt; tmp/someFile.ext
+		
+		You will typically want to import as follows:
+		
+		&gt; import Prelude hiding (FilePath)
+		&gt; import System.Path
+		&gt; import System.Path.Directory
+		&gt; import System.Path.IO
+		
+		The basic API (and properties satisfied) are heavily influenced
+		by Neil Mitchell&#39;s &quot;System.FilePath&quot; module.
+		
+		
+	</longdescription>
+</pkgmetadata>

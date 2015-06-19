@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Networked stream transducers
+		
+		Runar Bjarnasons talk on machines can be downloaded from:
+		&lt;https://dl.dropbox.com/u/4588997/Machines.pdf&gt;
+	</longdescription>
+</pkgmetadata>

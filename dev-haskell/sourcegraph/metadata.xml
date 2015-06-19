@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Statically analyse Haskell source code using graph-theoretic
+		techniques.  Sample reports can be found at:
+		&lt;http://code.haskell.org/~ivanm/Sample_SourceGraph/SampleReports.html&gt;
+		
+		To use SourceGraph, call it as either:
+		
+		&gt; SourceGraph path/to/Foo.cabal
+		
+		Or, if your project doesn&#39;t use Cabal, then there is limited support
+		for using an overall module from your program\/library:
+		
+		&gt; SourceGraph path/to/Foo.hs
+		
+		Note that the Cabal method is preferred, as it is better able to
+		determine the project name and exported modules (when passing a
+		Haskell file to SourceGraph, it uses that module&#39;s name as the overall
+		name of project and assumes that it is the only exported module; as
+		such, it works better for programs than libraries).
+		
+		Whichever way you run SourceGraph, it then creates a @SourceGraph@
+		subdirectory in the same directory as the file that was passed to it,
+		and within that subdirectory creates the analysis report in
+		@Foo.html@.
+		
+		SourceGraph is still experimental in terms of its ability to parse and
+		properly understand Haskell source code and in the types of analyses
+		it performs.
+	</longdescription>
+</pkgmetadata>

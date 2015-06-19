@@ -1,0 +1,19 @@
+--- Makefile~
++++ Makefile
+@@ -36,12 +36,16 @@
+ all: fptools src/Makefile
+ 	cd src; $(MAKE) all
+ 	cd libraries; $(MAKE) all
++
++doc:
+ 	cd docs; $(MAKE) all
+ 
+ # We install the standard libraries and the simple demos.
+ # We don't install things which don't work on Unix (e.g. Win32).
+ 
+ install: install_all_but_docs
++
++install_doc: 
+ 	cd docs; $(MAKE) install
+ 
+ # Install everything except documentation, which is installed differently

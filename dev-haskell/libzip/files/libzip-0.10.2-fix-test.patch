@@ -1,0 +1,81 @@
+From b659a9a4ef2921b5454970ab6c3aaccd4b6ea5c5 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sun, 25 Nov 2012 12:36:42 +0300
+Subject: [PATCH] LibZip.cabal: fix tests by using cabal testsuite
+
+ * >>> Test phase [cabal test]: dev-haskell/libzip-0.10.2
+./setup test
+
+Codec/Archive/LibZip.hs:105:8:
+    Ambiguous module name `Control.Monad.State.Strict':
+      it was found in multiple packages:
+      monads-tf-0.1.0.1 mtl-2.1.2 monads-fd-0.2.0.0
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ LibZip.cabal | 15 ++++++++++++++-
+ Setup.lhs    | 21 ++++-----------------
+ 2 files changed, 18 insertions(+), 18 deletions(-)
+
+diff --git a/LibZip.cabal b/LibZip.cabal
+index c8dc210..448675b 100644
+--- a/LibZip.cabal
++++ b/LibZip.cabal
+@@ -14,7 +14,7 @@ Description:
+   This package allows to use it from Haskell code.
+ 
+ Build-Type:     Simple
+-Cabal-Version:  >= 1.2.3
++Cabal-Version:  >= 1.8
+ Tested-With:    GHC == 7.4.1, GHC == 7.6.1
+ 
+ Extra-Source-Files:
+@@ -37,3 +37,16 @@ Library
+     , mtl
+   GHC-Options:
+       -Wall
++
++Test-Suite test-libzip
++  Type:                 exitcode-stdio-1.0
++  Main-Is:              runTests.hs
++  Build-Depends:
++      LibZip
++    , base >= 3 && < 5
++    , bindings-libzip >= 0.10 && < 0.11
++    , directory
++    , filepath
++    , HUnit
++    , mtl
++    , time
+diff --git a/Setup.lhs b/Setup.lhs
+index afadc65..a8faf03 100644
+--- a/Setup.lhs
++++ b/Setup.lhs
+@@ -1,20 +1,7 @@
+ #!/usr/bin/env runhaskell
+-> import Distribution.Simple
+-> import System.Cmd (system)
+-> import System.Exit (ExitCode(..))
+-> import Distribution.PackageDescription (emptyHookedBuildInfo)
+->
+-> main = defaultMainWithHooks simpleUserHooks
+->   { runTests = runUnitTests
+->   }
++> module Main where
+ >
++> import Distribution.Simple
+ >
+-> runUnitTests _ _ _ _ =
+->   system "runhaskell -lzip -fno-warn-warnings-deprecations runTests.hs" >>=
+->   onExit "\nSome tests did not pass." ()
+->
+-> onExit :: String -> a -> ExitCode -> IO a
+-> onExit errmsg okvalue r =
+->   case r of
+->     ExitSuccess -> return okvalue
+->     _           -> fail errmsg
++> main :: IO ()
++> main = defaultMain
+-- 
+1.8.0
+

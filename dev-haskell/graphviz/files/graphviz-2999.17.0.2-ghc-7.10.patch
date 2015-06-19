@@ -1,0 +1,60 @@
+patch 4c12de54a4e02903e7a203d3d422be7deda34dcf
+Author: Sergei Trofimovich <slyfox@community.haskell.org>
+Date:   Mon May 18 22:56:30 BST 2015
+  * Fix 'traverse' name clash in ghc-7.10
+  
+  ghc-7.10.1 fails as:
+    [25 of 31] Compiling Data.GraphViz.Algorithms ( Data/GraphViz/Algorithms.hs, dist/build/Data/GraphViz/Algorithms.o )
+  
+    Data/GraphViz/Algorithms.hs:385:22:
+      Ambiguous occurrence .traverse.
+      It could refer to either .Data.GraphViz.Algorithms.traverse.,
+                               defined at Data/GraphViz/Algorithms.hs:446:1
+                            or .Prelude.traverse.,
+                               imported from .Prelude. at Data/GraphViz/Algorithms.hs:18:8-31
+                               (and originally defined in .Data.Traversable.)
+  
+    Data/GraphViz/Algorithms.hs:474:34:
+      Ambiguous occurrence .traverse.
+      It could refer to either .Data.GraphViz.Algorithms.traverse.,
+                               defined at Data/GraphViz/Algorithms.hs:446:1
+                            or .Prelude.traverse.,
+                               imported from .Prelude. at Data/GraphViz/Algorithms.hs:18:8-31
+                               (and originally defined in .Data.Traversable.)
+diff -rN -u old-graphviz/Data/GraphViz/Algorithms.hs new-graphviz/Data/GraphViz/Algorithms.hs
+--- old-graphviz/Data/GraphViz/Algorithms.hs	2015-05-18 23:01:36.858614323 +0100
++++ new-graphviz/Data/GraphViz/Algorithms.hs	2015-05-18 23:01:36.859614323 +0100
+@@ -382,7 +382,7 @@
+ 
+     esMS = do edgeGraph tes
+               ns <- getsMap Map.keys
+-              mapM_ (traverse zeroTag) ns
++              mapM_ (dfs_traverse zeroTag) ns
+ 
+     esM = fst $ execState esMS (Map.empty, Set.empty)
+ 
+@@ -442,12 +442,12 @@
+                                }
+ 
+ -- Perform a DFS to determine whether or not to keep each edge.
+-traverse     :: (Ord n) => Tag -> n -> TagState n ()
+-traverse t n = do setMark True
+-                  checkIncoming
+-                  outEs <- getsMap (maybe [] outgoing . Map.lookup n)
+-                  mapM_ maybeRecurse outEs
+-                  setMark False
++dfs_traverse     :: (Ord n) => Tag -> n -> TagState n ()
++dfs_traverse t n = do setMark True
++                      checkIncoming
++                      outEs <- getsMap (maybe [] outgoing . Map.lookup n)
++                      mapM_ maybeRecurse outEs
++                      setMark False
+ 
+   where
+     setMark mrk = modifyMap (Map.adjust (\tv -> tv { marked = mrk }) n)
+@@ -471,4 +471,4 @@
+                              delSet <- getSet
+                              let n' = toNode e
+                              unless (isMarked m n' || t' `Set.member` delSet)
+-                               $ traverse t' n'
++                               $ dfs_traverse t' n'

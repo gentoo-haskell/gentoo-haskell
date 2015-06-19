@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a function for parsing dates and times
+		given a date format string.
+		This package creates CalendarTime values and is meant
+		for use with the old-time package. New code should
+		use the time package, which now includes parsing, instead.
+	</longdescription>
+</pkgmetadata>

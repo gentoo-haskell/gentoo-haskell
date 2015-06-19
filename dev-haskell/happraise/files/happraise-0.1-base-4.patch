@@ -1,0 +1,18 @@
+diff --git a/Setup.hs b/Setup.hs
+index 4dad300..782f292 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -2,10 +2,10 @@
+ import Distribution.Simple
+    ( simpleUserHooks
+    , UserHooks
+-   , defaultMainWithHooks   
++   , defaultMainWithHooks
+    )
+-import System.Cmd  ( system )
+-import System      ( getArgs )
++import System.Process     ( system )
++import System.Environment ( getArgs )
+ 
+ 
+ myHooks :: UserHooks

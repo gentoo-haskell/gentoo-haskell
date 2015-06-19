@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a flexible record system which has some novel features:
+		
+		* Using record type families, the type system can be used to describe relationships
+		between field types.
+		
+		* Record scheme induction permits the implementation of polymorphic record
+		combinators that work on whole records instead of only a fixed set of fields.
+		
+		* Subkind polymorphism for sorts makes it possible to impose varying restrictions on
+		the structure of field types.
+		
+		For detailed information, please refer to the paper
+		/Generic Record Combinators with Static Type Checking/.
+	</longdescription>
+</pkgmetadata>

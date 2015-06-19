@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A decimal number has an integer mantissa and a negative
+		exponent.  The exponent can be interpreted as the number
+		of decimal places in the value.
+	</longdescription>
+</pkgmetadata>

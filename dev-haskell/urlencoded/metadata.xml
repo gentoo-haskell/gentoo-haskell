@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Generate or process x-www-urlencoded data as it
+		appears in HTTP or HTTPS URIs and HTTP POSTs. See
+		&lt;http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1&gt;
+	</longdescription>
+</pkgmetadata>

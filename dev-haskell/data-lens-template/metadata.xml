@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Automatically derive @Lens@es for your data type for use with @Data.Lens@. Note: the code is derived from data-accessor-template &lt;http://hackage.haskell.org/package/data-accessor-template&gt; by Luke Palmer and Henning Thielemann.
+	</longdescription>
+</pkgmetadata>

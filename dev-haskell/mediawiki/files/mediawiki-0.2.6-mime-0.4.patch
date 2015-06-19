@@ -1,0 +1,57 @@
+diff -uraN mediawiki-0.2.6/MediaWiki/API.hs mediawiki-0.2.6.fixed/MediaWiki/API.hs
+--- mediawiki-0.2.6/MediaWiki/API.hs	2014-02-07 20:33:13.462086718 +0300
++++ mediawiki-0.2.6.fixed/MediaWiki/API.hs	2014-02-07 20:30:20.356077912 +0300
+@@ -29,6 +29,7 @@
+ import MediaWiki.API.Action.Login.Import as Login
+ 
+ import Data.Maybe
++import qualified Data.Text as T
+ 
+ import Control.Exception as CE
+ import Data.Typeable
+@@ -55,13 +56,13 @@
+      postContentsURL mbUser
+                   url_q
+                   [ ("Content-Length", show $ length pload)
+-		  , ("Content-Type",   showMIMEType form_mime_ty)
++		  , ("Content-Type",   T.unpack $ showMIMEType form_mime_ty)
+ 		  ]
+ 		  [{-no cookies..-}]
+ 		  pload
+   return (hs, p)
+  where
+-  form_mime_ty = Application "x-www-form-urlencoded"
++  form_mime_ty = Application $ T.pack "x-www-form-urlencoded"
+ 
+ webPostXml :: (String -> Either (String,[String]) a)
+            -> Maybe Fetch.AuthUser
+diff -uraN mediawiki-0.2.6/mediawiki.cabal mediawiki-0.2.6.fixed/mediawiki.cabal
+--- mediawiki-0.2.6/mediawiki.cabal	2014-02-07 20:33:13.465086718 +0300
++++ mediawiki-0.2.6.fixed/mediawiki.cabal	2014-02-07 20:31:44.213082178 +0300
+@@ -113,22 +113,22 @@
+                      MediaWiki.Util.Codec.Percent,
+                      MediaWiki.Util.Codec.URLEncoder
+    Ghc-Options:    -Wall -O2
+-   Build-Depends:  base >= 3 && < 5, xml, HTTP >= 3001, network, mime, utf8-string
++   Build-Depends:  base >= 3 && < 5, xml, HTTP >= 3001, network, mime >= 0.4, text, utf8-string
+ 
+ executable main {
+-  Build-Depends:   mediawiki, base >= 3 && < 5, xml, HTTP >= 3001, network, mime, utf8-string
++  Build-Depends:   mediawiki, base >= 3 && < 5, xml, HTTP >= 3001, network, mime >= 0.4, text, utf8-string
+   Main-is:         Main.hs
+   Ghc-options:     -Wall
+ }
+ 
+ executable listCat {
+-  Build-Depends:   mediawiki, base >= 3 && < 5, xml, HTTP >= 3001, network, mime, utf8-string, pretty
++  Build-Depends:   mediawiki, base >= 3 && < 5, xml, HTTP >= 3001, network, mime >= 0.4, text, utf8-string, pretty
+   Main-is:         examples/ListCat.hs
+   Ghc-options:     -Wall -iexamples
+ }
+ 
+ executable linksTo {
+-  Build-Depends:   mediawiki, base >= 4, xml, HTTP >= 3001, network, mime, utf8-string, pretty
++  Build-Depends:   mediawiki, base >= 4, xml, HTTP >= 3001, network, mime >= 0.4, text, utf8-string, pretty
+   Main-is:         examples/LinksTo.hs
+   Ghc-options:     -Wall -iexamples
+ }

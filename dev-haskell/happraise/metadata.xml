@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A small program for counting the comments in the haskell source files of
+		a project. It can work recursively over directories and/or over a list
+		of given files. For example one can run: &quot;happraise $(darcs query manifest)&quot;.
+		Or put this as a command in your Setup.hs file.
+	</longdescription>
+</pkgmetadata>

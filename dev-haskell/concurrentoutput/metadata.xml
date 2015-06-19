@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a simple interface to output status
+		messages from more than one thread.
+		
+		It will continue adding information (such as dots, or \&quot;done\&quot;)
+		to the correct line and continue scrolling when a line is done.
+		
+		For example, this screen:
+		
+		@
+		Thread ThreadId 27: still working... done
+		Thread ThreadId 25: still working...
+		Thread ThreadId 26: still working...
+		_
+		@
+		
+		will, once thread 25 has finished, look like this:
+		
+		@
+		Thread ThreadId 25: still working... done
+		Thread ThreadId 27: still working... done
+		Thread ThreadId 26: still working...
+		_
+		@
+		
+		If standard output is not a terminal, it will only print
+		complete lines and not output any control characters.
+		
+		At the moment, it can only handle lines that are shorter than
+		the terminal. If they are not, output will be garbled again.
+		
+	</longdescription>
+</pkgmetadata>

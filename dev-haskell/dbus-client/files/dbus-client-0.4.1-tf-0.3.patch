@@ -1,0 +1,13 @@
+diff --git a/dbus-client.cabal b/dbus-client.cabal
+index 11222a5..117a724 100644
+--- a/dbus-client.cabal
++++ b/dbus-client.cabal
+@@ -31,7 +31,7 @@ library
+     , dbus-core >= 0.8 && < 0.9
+     , containers >= 0.1 && < 0.5
+     , text >= 0.7 && < 0.12
+-    , transformers >= 0.2 && < 0.3
++    , transformers >= 0.2 && < 0.4
+     , monads-tf >= 0.1 && < 0.2
+ 
+   exposed-modules:

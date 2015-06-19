@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides an &#39;mtl&#39; compatible version of the &#39;GhcT&#39;
+		monad-transformer defined in the &#39;GHC-API&#39; since version
+		6.10.1.
+	</longdescription>
+</pkgmetadata>

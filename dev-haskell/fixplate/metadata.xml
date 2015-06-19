@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Uniplate-style generic traversals for fixed-point types, which can be
+		optionally annotated with attributes. We also provide recursion schemes,
+		and a generic zipper. See the module &quot;Data.Generics.Fixplate&quot; and then
+		the individual modules for more detailed information.
+	</longdescription>
+	<use>
+		<flag name="base4">Use base-4.0.</flag>
+		<flag name="withquickcheck">Compile with the QuickCheck tests.</flag>
+		<flag name="withutils">Include utility modules.</flag>
+	</use>
+</pkgmetadata>

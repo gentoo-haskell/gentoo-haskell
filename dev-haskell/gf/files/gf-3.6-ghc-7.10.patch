@@ -1,0 +1,22 @@
+diff --git a/Setup.hs b/Setup.hs
+index 7d6aafa..ebb4df6 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -1,7 +1,7 @@
+ import Distribution.Simple
+ import Distribution.Simple.LocalBuildInfo
+ import Distribution.Simple.BuildPaths
+-import Distribution.Simple.Utils
++import Distribution.Simple.Utils as DSU
+ import Distribution.Simple.Setup
+ import Distribution.PackageDescription hiding (Flag)
+ import Control.Monad
+@@ -349,7 +349,7 @@ run_gfc pkg lbi args =
+        case e of
+          ExitSuccess   -> return ()
+          ExitFailure i -> do putStrLn $ "Ran: " ++ gf_cmdline
+-                             die $ "gf exited with exit code: " ++ show i
++                             DSU.die $ "gf exited with exit code: " ++ show i
+   where
+     showArg arg = if ' ' `elem` arg then "'" ++ arg ++ "'" else arg
+ 

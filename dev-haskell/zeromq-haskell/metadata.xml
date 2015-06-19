@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The 0MQ lightweight messaging kernel is a library which extends
+		the standard socket interfaces with features traditionally provided
+		by specialised messaging middleware products. 0MQ sockets provide
+		an abstraction of asynchronous message queues, multiple messaging
+		patterns, message filtering (subscriptions), seamless access to
+		multiple transport protocols and more.
+		This library provides the Haskell language binding to 0MQ and
+		support 0MQ 2.x as well as 3.x (use -fzmq2 or -fzmq3 to select
+		between the two).
+	</longdescription>
+</pkgmetadata>

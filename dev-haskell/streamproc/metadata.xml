@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A continuation-based stream processor implemented as an
+		Arrow. This version generalizes the SP type described
+		in John Hughes \&quot;Generalising Monads to Arrows\&quot; to
+		function as a wrapper for arbitrary monads.
+	</longdescription>
+</pkgmetadata>

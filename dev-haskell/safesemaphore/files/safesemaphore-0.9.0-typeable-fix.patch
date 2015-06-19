@@ -1,0 +1,89 @@
+This patch fixes typeable usage and compatible with GHC >= 7.7
+
+From 04b000b892482032cdee80f4d3d76a50b18bafcb Mon Sep 17 00:00:00 2001
+From: Ben Gamari <bgamari.foss@gmail.com>
+Date: Mon, 23 Dec 2013 23:19:33 -0500
+Subject: [PATCH 1/2] Update Typeable usage for GHC >= 7.7
+
+---
+ src/Control/Concurrent/MSampleVar.hs | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/Control/Concurrent/MSampleVar.hs b/src/Control/Concurrent/MSampleVar.hs
+index d029c64..2e3d7cb 100644
+--- a/src/Control/Concurrent/MSampleVar.hs
++++ b/src/Control/Concurrent/MSampleVar.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DeriveDataTypeable #-}
++{-# LANGUAGE DeriveDataTypeable, CPP #-}
+ --
+ -- Module      :  Control.Concurrent.MSampleVar
+ -- Copyright   :  (c) Chris Kuklewicz 2011
+@@ -30,7 +30,7 @@ module Control.Concurrent.MSampleVar
+ import Control.Monad(void,join)
+ import Control.Concurrent.MVar(MVar,newMVar,newEmptyMVar,tryTakeMVar,takeMVar,putMVar,withMVar,isEmptyMVar)
+ import Control.Exception(mask_)
+-import Data.Typeable(Typeable1(typeOf1),mkTyCon,mkTyConApp)
++import Data.Typeable
+ 
+ -- |
+ -- Sample variables are slightly different from a normal 'MVar':
+@@ -60,11 +60,17 @@ import Data.Typeable(Typeable1(typeOf1),mkTyCon,mkTyConApp)
+ -- value possible while still guaranteeing progress.
+ data MSampleVar a = MSampleVar { readQueue :: MVar ()
+                                , lockedStore :: MVar (MVar a) }
+-  deriving (Eq)
++  deriving ( Eq
++#if __GLASGOW_HASKELL__ >= 707
++           , Typeable
++#endif
++           )
+ 
++#if __GLASGOW_HASKELL__ < 707
+ instance Typeable1 MSampleVar where
+   typeOf1 _ = mkTyConApp tc []
+     where tc = mkTyCon "MSampleVar"
++#endif
+ 
+ 
+ -- | 'newEmptySV' allocates a new MSampleVar in an empty state.  No futher
+-- 
+1.8.5.1
+
+
+From a9cbfb85da15c439ebb5e55a21120238d2b003fb Mon Sep 17 00:00:00 2001
+From: Ben Gamari <bgamari.foss@gmail.com>
+Date: Mon, 23 Dec 2013 23:23:37 -0500
+Subject: [PATCH 2/2] SSemInternals: Derive Typeable instance where possible
+
+Not entirely sure why this is currently done with a macro. Perhaps this
+could be always derived now?
+---
+ src/Control/Concurrent/STM/SSemInternals.hs | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/src/Control/Concurrent/STM/SSemInternals.hs b/src/Control/Concurrent/STM/SSemInternals.hs
+index 8aeaae6..4715c15 100644
+--- a/src/Control/Concurrent/STM/SSemInternals.hs
++++ b/src/Control/Concurrent/STM/SSemInternals.hs
+@@ -20,8 +20,17 @@ module Control.Concurrent.STM.SSemInternals(SSem(SSem)) where
+ import Control.Concurrent.STM.TVar(TVar)
+ import Data.Typeable(Typeable) -- Typeable(typeOf),TyCon,mkTyCon,mkTyConApp)
+ 
++#if __GLASGOW_HASKELL__ < 707
+ #include "Typeable.h"
++#endif
+ 
+-newtype SSem = SSem (TVar Int)  deriving (Eq)
++newtype SSem = SSem (TVar Int)
++             deriving ( Eq
++#if __GLASGOW_HASKELL__ >= 707
++                      , Typeable
++#endif
++                      )
+ 
++#if __GLASGOW_HASKELL__ < 707
+ INSTANCE_TYPEABLE0(SSem,semTc,"SSem")
++#endif
+-- 
+1.8.5.1

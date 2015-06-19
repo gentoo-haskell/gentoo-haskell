@@ -1,0 +1,21 @@
+diff --git a/src/System/Console/Shell/PPrint.hs b/src/System/Console/Shell/PPrint.hs
+index e8ec520..8d271e1 100644
+--- a/src/System/Console/Shell/PPrint.hs
++++ b/src/System/Console/Shell/PPrint.hs
+@@ -50,2 +50,3 @@ module System.Console.Shell.PPrint
+ import System.IO      (Handle,hPutStr,hPutChar,stdout)
++import Prelude hiding ((<$>))
+ 
+diff --git a/src/System/Console/Shell/Types.hs b/src/System/Console/Shell/Types.hs
+index 4ec47a9..07112bb 100644
+--- a/src/System/Console/Shell/Types.hs
++++ b/src/System/Console/Shell/Types.hs
+@@ -10,2 +10,3 @@ import qualified Control.Exception as Ex
+ 
++import Control.Applicative (Applicative)
+ import Control.Monad.Reader
+@@ -76,3 +77,3 @@ type OutputCommand = BackendOutput -> IO ()
+ newtype Sh st a = Sh { unSh :: StateT (CommandResult st) (ReaderT OutputCommand IO) a }
+-   deriving (Monad, MonadIO, MonadFix, Functor)
++   deriving (Applicative, Monad, MonadIO, MonadFix, Functor)
+ 

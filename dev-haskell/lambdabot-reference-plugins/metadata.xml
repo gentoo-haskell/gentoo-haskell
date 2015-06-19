@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lambdabot is an IRC bot written over several years by
+		those on the #haskell IRC channel.
+		
+		Provided plugins:
+		
+		[dict] Query various dictionaries.
+		[metar] Look up avian weather reports.
+		[oeis] Look up number sequences on OEIS.
+		[search] Query search engines.
+		[spell] Check spelling of wrods.
+		[ticker] Look up stock quotes.
+		[url] Display titles of URLs on channels.
+		[where] Manage and query a key-URL list.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Generalized bananas, lenses and barbed wire
+		
+		/Changes since 0.4.2/:
+		
+		* Added futumorphisms
+		
+		/Changes since 0.2.2/:
+		
+		* Split distHisto from distGHisto
+		
+		* Added zygohistomorphic prepromorphisms
+		
+		/Changes since 0.2.1/:
+		
+		* Added (generalized) prepro- and postpro- morphisms
+		
+		/Changes since 0.2/:
+		
+		* Added Elgot (co)algebras
+		
+		/Changes since 0.1/:
+		
+		* Removed dependency on Foldable from Mendler-style recursion schemes
+		
+		* Added Lambek&#39;s Lemma
+	</longdescription>
+</pkgmetadata>

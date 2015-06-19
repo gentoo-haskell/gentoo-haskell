@@ -1,0 +1,26 @@
+diff --git a/hsdns.cabal b/hsdns.cabal
+index cf211a2..9e1d581 100644
+--- a/hsdns.cabal
++++ b/hsdns.cabal
+@@ -4,7 +4,7 @@ Copyright:              (c) 2004-2010 Peter Simons
+ License:                LGPL
+ License-File:           COPYING.LESSER
+ Author:                 Peter Simons <simons@cryp.to>, Lutz Donnerhacke <lutz@iks-jena.de>,
+-                        Григорий Холомьёв <omever@gmail.com>, Evan Rinehart <ebr@sciresearch.com>
++                        Grigory Holomiev <omever@gmail.com>, Evan Rinehart <ebr@sciresearch.com>
+ Maintainer:             Peter Simons <simons@cryp.to>
+ Homepage:               http://gitorious.org/hsdns
+ Category:               Foreign, Network
+diff --git a/hsdns.cabal b/hsdns.cabal
+index 9e1d581..51f42cd 100644
+--- a/hsdns.cabal
++++ b/hsdns.cabal
+@@ -15,7 +15,7 @@ Description:            This library provides an asynchronous DNS resolver on to
+                         work nicely. There is also support for retrieving generic
+                         RR types, CNAMEs, and for NSEC zone walking. The library
+                         can be expected to work with fine ADNS 1.4 or later. It
+-                        might also work with version ADNS 1.3, but that hasn’t
++                        might also work with version ADNS 1.3, but that hasn't
+                         been tested.
+                         .
+                         The example program adns-reverse-lookup.hs demonstrates

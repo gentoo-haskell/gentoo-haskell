@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A ranged set is an ordered list of ranges.  This allows sets such as all reals x such that:
+		
+		&gt; (0.25 &lt; x &lt;= 0.75 or 1.4 &lt;= x &lt; 2.3 or 4.5 &lt; x)
+		
+		Alternatively you can have all strings s such that:
+		
+		&gt;    (&quot;F&quot; &lt;= s &lt; &quot;G&quot;)
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		An even more improved version of xtail/tail -f, including inotify support, full regex-based filtering, substitution, and colorization.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Visualize live Haskell data structures using vacuum, graphviz and cairo
+		
+		&gt; $ view &quot;hello&quot;
+		
+		&lt;http://code.haskell.org/~dons/images/vacuum/hello.png&gt;
+		
+		&gt; $ view [1..5]
+		
+		&lt;http://code.haskell.org/~dons/images/vacuum/list.png&gt;
+		
+		&gt; $ view (IntMap.fromList $ zip [1..10] [1..])
+		
+		&lt;http://code.haskell.org/~dons/images/vacuum/intmap.png&gt;
+	</longdescription>
+</pkgmetadata>

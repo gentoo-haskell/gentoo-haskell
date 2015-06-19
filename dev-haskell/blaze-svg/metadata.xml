@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A blazingly fast SVG combinator library for the Haskell
+		programming language. The &quot;Text.Blaze.SVG&quot; module is a good
+		starting point.
+		
+		Other documentation:
+		
+		* Programs in the /examples/ folder of this project: &lt;https://github.com/deepakjois/blaze-svg/tree/master/examples/&gt;
+		
+		* Jasper Van Der Jeugt has written a tutorial for /blaze-html/,
+		which is a sister library of /blaze-svg/. It may not be directly relevant,
+		but still it gives a good overview on how to use the  combinators in
+		&quot;Text.Blaze.Svg11&quot; and &quot;Text.Blaze.Svg11.Attributes&quot;:
+		&lt;http://jaspervdj.be/blaze/tutorial.html&gt;.
+	</longdescription>
+</pkgmetadata>

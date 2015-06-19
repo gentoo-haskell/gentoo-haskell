@@ -1,0 +1,12 @@
+.hackport
+.cache
+*.swp
+*~
+projects/lambdaman/*.hi
+projects/lambdaman/*.o
+projects/lambdaman/lambdaman
+
+# egencache autostuff
+metadata/cache/
+metadata/md5-cache/
+profiles/use.local.desc

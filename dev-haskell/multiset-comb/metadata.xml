@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Various combinatorial algorithms over multisets,
+		including generating all permutations,
+		partitions, size-2 partitions, size-k subsets,
+		and Sawada&#39;s algorithm for generating all
+		necklaces with elements from a multiset.
+	</longdescription>
+</pkgmetadata>

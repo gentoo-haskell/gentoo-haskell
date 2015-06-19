@@ -1,0 +1,28 @@
+diff --git a/Control/Monad/Ghc.hs b/Control/Monad/Ghc.hs
+index e76cc96..cf9e73e 100644
+--- a/Control/Monad/Ghc.hs
++++ b/Control/Monad/Ghc.hs
+@@ -58,8 +58,10 @@ instance MTL.MonadIO Ghc where
+     liftIO = GHC.liftIO
+ #endif
+ 
+-instance MonadCatch Ghc where
++instance MonadThrow Ghc where
+     throwM  = liftIO . E.throwIO
++
++instance MonadCatch Ghc where
+     catch   = GHC.gcatch
+ 
+ #if __GLASGOW_HASKELL__ >= 700
+@@ -111,9 +113,10 @@ instance MTL.MonadIO m => GHC.MonadIO (GhcT m) where
+     liftIO = MTL.liftIO
+ #endif
+ 
+-instance (MonadIO m,MonadCatch m) => MonadCatch (GhcT m) where
++instance MonadThrow m => MonadThrow (GhcT m) where
+     throwM = lift . throwM
+ 
++instance (MonadIO m,MonadCatch m) => MonadCatch (GhcT m) where
+     m `catch` f = GhcT ((unGhcT m) `GHC.gcatch` (unGhcT . f))
+ 
+     mask f = wrap $ \s ->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Iteratee-based IO is an alternative to lazy IO that offers
+		better error handling, referential transparency, and
+		convenient composition of protocol layers or parsers.  This
+		package provides iteratees based around /pipe/ operators for
+		hooking together application components and directing data
+		flow.  New users should see the tutorial in the &quot;Data.IterIO&quot;
+		module documentation.  Highlights of the library include:
+		
+		* Heavy emphasis on ease of use, ease of learning, and
+		uniformity of mechanism.
+		
+		* Copious documentation.
+		
+		* Consistent EOF and error handling to avoid resource leaks
+		and other issues in corner cases.
+		
+		* A set of iteratee parsing combinators providing LL(*)
+		parsing while generally not consuming large amounts of
+		memory for backtracking.
+		
+		* Seamless integration with attoparsec for LL(1) parsing.
+		
+		See &quot;Data.IterIO&quot; for a discussion of the differences between
+		iterIO and the two previous iteratee implementations (iteratee
+		and enumerator).
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,11 @@
+--- a/configure
++++ b/configure
+@@ -3003,7 +3003,7 @@
+ import Char
+ main = print (isAlphaNum 'a')
+ EOF
+-$GHC conftest.hs -o conftest 2>/dev/null && curry_cv_prog_GHC_haskell98=yes
++$GHC -package haskell98 -hide-package base conftest.hs -o conftest 2>/dev/null && curry_cv_prog_GHC_haskell98=yes
+ rm -f conftest* Main.hi
+ fi
+ echo "$as_me:$LINENO: result: $curry_cv_prog_GHC_haskell98" >&5

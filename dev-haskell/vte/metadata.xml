@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The VTE library inserts terminal capability strings into a trie, and then
+		uses it to determine if data received from a pseudo-terminal is a control
+		sequence or just random data. The sample program &quot;interpret&quot; illustrates
+		more or less what the widget sees after it filters incoming data.
+	</longdescription>
+</pkgmetadata>

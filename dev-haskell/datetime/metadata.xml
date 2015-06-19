@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides several utilities for easily converting among the
+		various standard library Date and Time types, and for converting
+		between these and standard external representations.
+	</longdescription>
+</pkgmetadata>

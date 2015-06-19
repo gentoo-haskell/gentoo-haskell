@@ -1,0 +1,40 @@
+diff --git a/Commands/Ls.hs b/Commands/Ls.hs
+index 865cc9c..9b63fea 100644
+--- a/Commands/Ls.hs
++++ b/Commands/Ls.hs
+@@ -83,7 +83,8 @@ lsepisodes_worker gi (opts, casts) =
+        when (islong) (printf "            Episode URL\n")
+        eps <- mapM (getEpisodes (gdbh gi)) pc
+        mapM_ printep (concat eps)
+-    where printep ep =
++    where printep :: Episode -> IO ()
++          printep ep =
+               do printf "%-5d %-5d %-4s %-60.60s\n" 
+                             (castid (podcast ep)) (epid ep) 
+                             (take 4 . show $ epstatus ep) (eptitle ep)
+diff --git a/FeedParser.hs b/FeedParser.hs
+index d30b77c..08f24ca 100644
+--- a/FeedParser.hs
++++ b/FeedParser.hs
+@@ -125,7 +125,7 @@ channel =
+ attrofelem :: String -> Content Posn -> Maybe AttValue
+ attrofelem attrname (CElem inelem _) =
+     case unesc inelem of
+-      Elem name al _ -> lookup attrname al
++      Elem name al _ -> lookup (N attrname) al
+ attrofelem _ _ =
+     error "attrofelem: called on something other than a CElem"
+ stratt :: String -> Content Posn -> Maybe [String]
+diff --git a/hpodder.cabal b/hpodder.cabal
+index ae27ec2..4f10311 100644
+--- a/hpodder.cabal
++++ b/hpodder.cabal
+@@ -69,7 +69,7 @@ Description:  Podcasting is a method of publishing radio-like programs on the
+  beginning.  It should be exceedingly difficult to lose a podcast
+  episode, even in the event of a power failure.
+ Build-Depends: network, unix, parsec, MissingH>=1.0.0,
+- HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base>=3 && < 5, HaXml >= 1.20 && < 1.21, hslogger,
++ HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base>=3 && < 5, HaXml >= 1.22, hslogger,
+  ConfigFile, filepath, old-time, directory, process
+ 
+ Executable: hpodder

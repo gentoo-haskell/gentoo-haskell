@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a straightforward port of @monadLib@&#39;s BaseM
+		typeclass to @transformers@.
+	</longdescription>
+	<use>
+		<flag name="orphaninstances">Build instances for orphan datatypes.</flag>
+	</use>
+</pkgmetadata>

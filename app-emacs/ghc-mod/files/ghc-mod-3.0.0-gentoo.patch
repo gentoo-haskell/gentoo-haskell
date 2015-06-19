@@ -1,0 +1,14 @@
+diff -urN ghc-mod-3.0.0.orig/ghc-mod.cabal ghc-mod-3.0.0/ghc-mod.cabal
+--- ghc-mod-3.0.0.orig/ghc-mod.cabal	2013-09-06 14:24:53.000000000 +0900
++++ ghc-mod-3.0.0/ghc-mod.cabal	2013-09-10 02:06:35.780457262 +0900
+@@ -19,10 +19,6 @@
+ Category:               Development
+ Cabal-Version:          >= 1.10
+ Build-Type:             Simple
+-Data-Dir:               elisp
+-Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
+-                        ghc-flymake.el ghc-command.el ghc-info.el
+-                        ghc-ins-mod.el ghc-indent.el ghc-pkg.el
+ Extra-Source-Files:     ChangeLog
+ 			test/data/*.cabal
+                         test/data/*.hs

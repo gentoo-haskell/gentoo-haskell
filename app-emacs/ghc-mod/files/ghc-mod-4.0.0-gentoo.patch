@@ -1,0 +1,15 @@
+diff --git i/ghc-mod.cabal w/ghc-mod.cabal
+index be7b045..1244ad4 100644
+--- i/ghc-mod.cabal
++++ w/ghc-mod.cabal
+@@ -19,10 +19,6 @@ Description:            The ghc-mod command is a backend command to enrich
+ Category:               Development
+ Cabal-Version:          >= 1.10
+ Build-Type:             Simple
+-Data-Dir:               elisp
+-Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
+-                        ghc-check.el ghc-process.el ghc-command.el ghc-info.el
+-                        ghc-ins-mod.el ghc-indent.el ghc-pkg.el
+ Extra-Source-Files:     ChangeLog
+ 			test/data/*.cabal
+                         test/data/*.hs

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides low-level bindings to libzip (v0.10) library.
+		For higher-level interface please use LibZip package:
+		&lt;http://hackage.haskell.org/package/LibZip&gt;
+	</longdescription>
+</pkgmetadata>

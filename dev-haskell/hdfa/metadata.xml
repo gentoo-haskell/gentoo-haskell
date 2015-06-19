@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		hDFA provides a simple API for representing and minimizing
+		deterministic finite automata (DFAs) using an explicit representation
+		(a list of transitions). It includes a port of Antti Valmari&#39;s
+		efficient DFA minimization algorithm from C++ to C. (See A. Valmari,
+		&quot;Fast brief practical DFA minimization&quot; Information Processing
+		Letters 112(6) 2012.)
+	</longdescription>
+</pkgmetadata>

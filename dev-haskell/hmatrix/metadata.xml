@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Purely functional interface to basic linear algebra
+		and other numerical computations, internally implemented using
+		GSL, BLAS and LAPACK.
+		
+		The Linear Algebra API is organized as follows:
+		
+		- &quot;Data.Packed&quot;: structure manipulation
+		
+		- &quot;Numeric.Container&quot;: simple numeric functions
+		
+		- &quot;Numeric.LinearAlgebra.Algorithms&quot;: matrix computations
+		
+		- &quot;Numeric.LinearAlgebra&quot;: everything + instances of standard Haskell numeric classes
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a simple OpenGL program that allows you to see
+		some of Hipmunk&#39;s functions in action.
+		
+		New in version 5.2.0.5:
+		
+		* Accept GLFW 0.5 as well.
+		
+		New in version 5.2.0.4:
+		
+		* Now buildable on GHC 7.0.  Thanks, Sergei Trofimovich.
+		
+		New in version 5.2.0.3:
+		
+		* Correctly handle window resizes.
+		
+		New in version 5.2.0.2:
+		
+		* Add repo URL to cabal file.
+		
+		New in version 5.2.0.1:
+		
+		* Show collision points.
+		
+		Licensed under the MIT license (like Hipmunk itself).
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Read, Show and Data.Binary do not check for internal data references to the same address.
+		As a result, the data is duplicated when serialized. This is a waste of space in the filesystem
+		and  also a waste of serialization time. but the worst consequence is that, when the serialized data is read,
+		it allocates multiple copies for the same object when referenced multiple times. Because multiple referenced
+		data is very typical in a pure language such is Haskell, this means that the resulting data loose the beatiful
+		economy of space and processing time that referential transparency permits.
+		
+		Every instance of Show/Read can be an instance of Data.RefSerialize.
+		
+		This package allows the serialization and deserialization of large data structures without duplication of data, with
+		the result of optimized performance and memory usage. Since the serialized data is also human readable, It is also
+		useful for debugging purposes.
+		
+		The deserializer contains a subset of Parsec.Token for defining deserializing parsers.
+		
+		the serialized string has the form:
+		
+		@expr( var1, ...varn) where  var1=value1,..valn=valueN @
+		
+		so that the string can agree with the haskell syntax.
+		
+		See demo.hs and tutorial.
+		
+		in this release:
+		
+		* Serialization instance now includes an internal wiriter
+		
+		* Solved a criitical bug only appearing in structures with many references, when StableNames started to be
+		freed by the gartbage colllector before serialization was completed, which gave erroneous references
+		
+		*  Bug in 0.2.5 fixed: empty lists were written with two indirections (insertVar . insertVar). That caused an error in readp
+		
+		*  Bug in 0.2.6 fixed for lists
+		
+		*  Added   instances for standard datatypes. More &quot;deeper&quot; instances favouring more variable usage
+		
+		*  Instance of Serialize [a] changed
+		
+		*  Derived Serialize instances for Data.Binary instances: readpBinary, showpBinary
+		
+		*- Serialization now is to/from ByteStings
+	</longdescription>
+</pkgmetadata>

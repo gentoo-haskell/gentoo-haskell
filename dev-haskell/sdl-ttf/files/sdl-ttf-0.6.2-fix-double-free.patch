@@ -1,0 +1,40 @@
+Reported by maksbotan
+
+    module Main where
+    import Graphics.UI.SDL as SDL
+    import Graphics.UI.SDL.TTF as TTF
+    main :: IO ()
+    main = do
+        SDL.init [SDL.InitVideo, SDL.InitTimer]
+        setVideoMode 640 480 32 []
+        setCaption "TTF Test" ""
+        TTF.init
+        font <- openFont "Vera.ttf" 20
+        back <- getVideoSurface
+        fillRect back Nothing (Pixel 0xffffff)
+        text <- renderTextShaded font "SDL-ttf test..." (Color 0 0 0) (Color 255 255 255)
+        blitSurface text Nothing back (Just $ Rect 10 10 0 0)
+        freeSurface text
+        SDL.flip back
+        eventLoop
+        closeFont font -- app craches afterwards as it calls finalizer twice
+        TTF.quit
+        SDL.quit
+    eventLoop = do
+        event <- SDL.waitEventBlocking
+        case event of
+            Quit -> return ()
+            _ -> eventLoop
+diff --git a/Graphics/UI/SDL/TTF/Management.hs b/Graphics/UI/SDL/TTF/Management.hs
+index 7538589..70d4527 100644
+--- a/Graphics/UI/SDL/TTF/Management.hs
++++ b/Graphics/UI/SDL/TTF/Management.hs
+@@ -33,7 +33,7 @@ mkFinalizedFont = newForeignPtr ttfCloseFontFinal
+ 
+ foreign import ccall unsafe "TTF_CloseFont" ttfCloseFont :: Ptr FontStruct -> IO ()
+ closeFont :: Font -> IO ()
+-closeFont font = withForeignPtr font ttfCloseFont
++closeFont font = finalizeForeignPtr font
+ 
+ -- TTF_Font *TTF_OpenFont(const char *file, int ptsize)
+ foreign import ccall unsafe "TTF_OpenFont" ttfOpenFont :: CString -> CInt -> IO (Ptr FontStruct)

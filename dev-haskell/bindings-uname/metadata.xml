@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a low-level binding to POSIX uname(3)
+		function. Perhaps it shoule be part of unix package.
+	</longdescription>
+</pkgmetadata>

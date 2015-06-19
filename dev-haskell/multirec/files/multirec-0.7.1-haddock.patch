@@ -1,0 +1,22 @@
+diff --git a/multirec.cabal b/multirec.cabal
+index 6ac6078..0dc6316 100644
+--- a/multirec.cabal
++++ b/multirec.cabal
+@@ -4,7 +4,7 @@ license:              BSD3
+ license-file:         LICENSE
+ author:               Alexey Rodriguez,
+                       Stefan Holdermans,
+-                      Andres Löh,
++                      Andres Loeh,
+                       Johan Jeuring
+ maintainer:           generics@haskell.org
+ category:             Generics
+@@ -31,7 +31,7 @@ description:
+   .
+   The library is based on ideas described in the paper:
+   .
+-  *  Alexey Rodriguez, Stefan Holdermans, Andres Löh, Johan Jeuring.
++  *  Alexey Rodriguez, Stefan Holdermans, Andres Loeh, Johan Jeuring.
+      /Generic programming with fixed points for mutually recursive datatypes/.
+      ICFP 2009.
+  

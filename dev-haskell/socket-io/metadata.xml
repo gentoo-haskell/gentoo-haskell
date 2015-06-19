@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides an implementation of &lt;http://socket.io Socket.io&gt;
+		protocol (version 1). It builds on top of Engine.IO, allowing Socket.io to
+		work with both long polling XHR requests, and seamlessly upgrading them to
+		HTML 5 web sockets.
+	</longdescription>
+</pkgmetadata>

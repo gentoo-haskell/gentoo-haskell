@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Happstack is a web application development framework.
+		Hamlet provides HTML templates which are checked for
+		correctness at compile time. This package add support
+		for using Hamlet templates with Happstack.
+	</longdescription>
+</pkgmetadata>

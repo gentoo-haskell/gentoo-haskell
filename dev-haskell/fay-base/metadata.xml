@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The base package for Fay.
+		This package exports Prelude and FFI which you probably want to use with Fay.
+	</longdescription>
+</pkgmetadata>

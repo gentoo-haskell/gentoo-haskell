@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		parse library on mtl package
+		
+		Parse and ParseT is like State and StateT
+		
+		The package ease implementation of look-ahead look-behind
+		and so on.
+	</longdescription>
+</pkgmetadata>

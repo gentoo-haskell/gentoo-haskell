@@ -1,0 +1,13 @@
+diff --git a/Data/BitSyntax.hs b/Data/BitSyntax.hs
+index 3dc487a..8693316 100644
+--- a/Data/BitSyntax.hs
++++ b/Data/BitSyntax.hs
+@@ -219,7 +219,7 @@ data ReadType = -- | An unsigned number of some number of bytes. Valid
+                 --   decoding to return the trailing part at that point.
+                 Rest
+ 
+-fromBytes :: (Bits a) => [a] -> a
++fromBytes :: (Num a, Bits a) => [a] -> a
+ fromBytes input =
+     let dofb accum [] = accum
+         dofb accum (x:xs) = dofb ((shiftL accum 8) .|. x) xs

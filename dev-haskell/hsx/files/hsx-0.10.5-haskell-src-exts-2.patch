@@ -1,0 +1,14 @@
+diff --git a/src/HSX/Transform.hs b/src/HSX/Transform.hs
+index b57b201..a1f89cc 100644
+--- a/src/HSX/Transform.hs
++++ b/src/HSX/Transform.hs
+@@ -1008,7 +1008,9 @@ trPattern s p = case p of
+     PWildCard          -> return p
+     PIrrPat p          -> tr1pat p PIrrPat (trPattern s)
+     PatTypeSig s p t   -> tr1pat p (\p -> PatTypeSig s p t) (trPattern s)
++#if ! MIN_VERSION_haskell_src_exts(1,15,0)
+     PExplTypeArg _ _   -> return p
++#endif    
+     PQuasiQuote _ _    -> return p
+     PBangPat p         -> tr1pat p PBangPat (trPattern s)
+     PNPlusK _ _        -> return p

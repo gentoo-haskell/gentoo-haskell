@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Get an efficient, optimal, type-safe diff and patch function for your
+		datatypes of choice by defining a simple GADT and some class instances.
+		
+		Extracted from Eelco Lempsink&#39;s Thesis (&lt;http://eelco.lempsink.nl/thesis.pdf&gt;).
+	</longdescription>
+</pkgmetadata>

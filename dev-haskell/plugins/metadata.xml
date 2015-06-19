@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Dynamic linking and runtime evaluation of Haskell,
+		and C, including dependency chasing and package resolution.
+		
+		Described in the papers:
+		* /Plugging Haskell In/, &lt;http://www.cse.unsw.edu.au/~dons/papers/PSSC04.html&gt;
+		* /Dynamic Applications from the Ground Up/, &lt;http://www.cse.unsw.edu.au/~dons/papers/SC05.html&gt;
+		* /Dynamic Extension of Typed Functional Languages/.
+	</longdescription>
+</pkgmetadata>

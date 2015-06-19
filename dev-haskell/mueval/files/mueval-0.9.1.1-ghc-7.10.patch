@@ -1,0 +1,6 @@
+diff --git a/Mueval/Interpreter.hs b/Mueval/Interpreter.hs
+index deb4f48..578c94e 100644
+--- a/Mueval/Interpreter.hs
++++ b/Mueval/Interpreter.hs
+@@ -1,0 +2 @@
++{-# LANGUAGE FlexibleContexts #-}

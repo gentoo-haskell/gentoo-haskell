@@ -1,0 +1,74 @@
+diff --git a/src/CachedGet.hs b/src/CachedGet.hs
+index bd0babf..808a31f 100644
+--- a/src/CachedGet.hs
++++ b/src/CachedGet.hs
+@@ -27,6 +27,7 @@ import Network.HTTP
+ import Network.HTTP.Headers
+ import System.Directory
+ import Control.Monad
++import qualified Control.Exception as E
+ 
+ import qualified Data.ByteString.Char8 as B
+ import Data.ByteString.Char8 (ByteString)
+@@ -38,7 +39,7 @@ import Data.ByteString.Char8 (ByteString)
+ --   updated, and False if it is the same as in the cache.
+ get :: (String -> IO ()) -> Bool -> FilePath -> String -> IO (Maybe (ByteString, Bool))
+ get write trustCache dir' uri =
+-	flip catch (\e -> write ("Error downloading uri: " ++ show e++ "\n")
++	flip (E.catch :: IO a -> (IOError -> IO a) -> IO a) (\e -> write ("Error downloading uri: " ++ show e++ "\n")
+                           >> return Nothing) $ do
+ 	write $ "Getting URL " ++ uri ++ " ... "
+ 	e_cache <- doesFileExist cacheFile
+diff --git a/src/LockRestart.hs b/src/LockRestart.hs
+index 37a1727..53e02a3 100644
+--- a/src/LockRestart.hs
++++ b/src/LockRestart.hs
+@@ -28,16 +28,19 @@ import System.IO
+ import System.IO.Error
+ import System.Posix.Temp
+ import Control.Monad
+-import Control.Exception (finally)
++import qualified Control.Exception as E
+ import GHC.IOBase
+ import Safe
+ 
++cE :: IO a -> (IOError -> IO a) -> IO a
++cE = E.catch
++
+ -- | tries to get the lock. If it fails, notifies the running process
+ --   to re-start itself afterwards, with the given information
+ --   returns True if the lock was aquired
+ lockOrMark :: Show a => FilePath -> a -> IO Bool
+ lockOrMark dir msg = do 
+-  (createDirectory lockDir >> return True) `catch` \err -> do
++  (createDirectory lockDir >> return True) `cE` \err -> do
+     if isAlreadyExistsError err then markOrLock dir msg
+                                 else ioError err
+   where lockDir = dir </> ".lock"
+@@ -47,7 +50,7 @@ markOrLock dir msg = do
+   (file, fh) <- openTempFile dir "lock.tmp"
+   hPutStr fh (show msg)
+   hClose fh
+-  (renameFile file (replaceDirectory file lockDir) >> return False) `catch` \err -> do
++  (renameFile file (replaceDirectory file lockDir) >> return False) `cE` \err -> do
+     if isDoesNotExistError err then do removeFile file
+                                        markOrLock dir msg
+                                else    ioError err
+@@ -59,7 +62,7 @@ markOrLock dir msg = do
+ releaseLock :: Read a => FilePath -> IO [a]
+ releaseLock dir = do
+   files <- pickFiles `liftM` getDirectoryContents lockDir
+-  if (null files) then (removeDirectory lockDir >> return []) `catch` \err ->
++  if (null files) then (removeDirectory lockDir >> return []) `cE` \err ->
+       if ioe_type err == UnsatisfiedConstraints then releaseLock dir else ioError err
+     else do
+       mapM (\f -> do
+@@ -97,7 +100,7 @@ lockRestart dir event combine verbose action = do
+ 	    workAndCheck event
+ 	  else
+ 	    when verbose $ putStrLn "Could not get locked, signaled restart"
+-  where workAndCheck event = finally (action event) $ do
++  where workAndCheck event = E.finally (action event) $ do
+ 	when verbose $ putStrLn "Trying to release the lock..."
+ 	msgs <- releaseLock dir
+ 	if null msgs then do

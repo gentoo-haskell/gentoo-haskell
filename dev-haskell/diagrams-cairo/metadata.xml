@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A full-featured backend for rendering
+		diagrams using the cairo rendering engine.
+		To get started, see &quot;Diagrams.Backend.Cairo.CmdLine&quot;.
+	</longdescription>
+</pkgmetadata>

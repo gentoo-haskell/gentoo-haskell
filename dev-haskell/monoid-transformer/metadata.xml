@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Monoid transformers: State, Reader
+		
+		There is no Writer transformer.
+		It&#39;s vice versa: The Writer monad transforms a monoid to a monad.
+	</longdescription>
+</pkgmetadata>

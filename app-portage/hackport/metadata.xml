@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A command line tool to manage an overlay of Gentoo ebuilds
+		that are generated from a hackage repo of Cabal packages.
+	</longdescription>
+</pkgmetadata>

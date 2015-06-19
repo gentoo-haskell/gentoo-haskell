@@ -1,0 +1,26 @@
+diff --git a/Yesod/Markdown.hs b/Yesod/Markdown.hs
+index 4652833..0f494b3 100644
+--- a/Yesod/Markdown.hs
++++ b/Yesod/Markdown.hs
+@@ -113,5 +113,9 @@ writePandocTrusted wo = preEscapedToMarkup . writeHtmlString wo
+ 
+ parseMarkdown :: ReaderOptions -> Markdown -> Pandoc
+-parseMarkdown ro = readMarkdown ro . T.unpack . unMarkdown
++parseMarkdown ro =
++#if MIN_VERSION_pandoc(1,14,0)
++    either (error "parseMarkdown: failed to parse") id .
++#endif
++    readMarkdown ro . T.unpack . unMarkdown
+ 
+ -- | Defaults plus Html5, minus WrapText
+diff --git a/yesod-markdown.cabal b/yesod-markdown.cabal
+index 0699364..5d8e9e6 100644
+--- a/yesod-markdown.cabal
++++ b/yesod-markdown.cabal
+@@ -18,5 +18,5 @@ library
+                , text            >= 0.11  && < 2.0
+                , bytestring      >= 0.9   && < 0.11
+-               , pandoc          >= 1.10  && < 1.14
++               , pandoc          >= 1.10  && < 1.15
+                , blaze-html      >= 0.5   && < 0.9
+                , blaze-markup    >= 0.5   && < 0.8

@@ -1,0 +1,77 @@
+diff --git a/Download.hs b/Download.hs
+index 2666930..35fea2a 100644
+--- a/Download.hs
++++ b/Download.hs
+@@ -43,7 +43,7 @@ import System.Posix.Process
+ import System.Posix.Types
+ import System.Posix.IO
+ import Data.Hash.MD5
+-import Control.Exception(evaluate)
++import qualified Control.Exception as E
+ 
+ data Result = Success | Failure
+             deriving (Eq, Show, Read)
+@@ -74,7 +74,8 @@ getCurlConfig =
+     do ad <- getAppDir
+        return $ ad ++ "/curlrc"
+ 
+-getsize fp = catch (getFileStatus fp >>= (return . Just . fileSize))
++getsize fp = (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++             (getFileStatus fp >>= (return . Just . fileSize))
+              (\_ -> return Nothing)
+ 
+ {- | Begin the download process on the given URL.
+diff --git a/DownloadQueue.hs b/DownloadQueue.hs
+index 897967a..d6fc6f8 100644
+--- a/DownloadQueue.hs
++++ b/DownloadQueue.hs
+@@ -58,6 +58,7 @@ import Control.Concurrent.MVar
+ import Control.Concurrent
+ import Data.Char
+ import Control.Monad(when)
++import qualified Control.Exception as E
+ 
+ d = debugM "downloadqueue"
+ i = infoM "downloadqueue"
+@@ -192,7 +193,8 @@ childthread dqmvar semaphore =
+                      do callback x (DLEnded (dltok, status, result, messages))
+                         -- Delete the messages file now that we don't
+                         -- care about it anymore
+-                        catch (removeFile (tokpath dltok ++ ".msg"))
++                        (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++                              (removeFile (tokpath dltok ++ ".msg"))
+                               (\_ -> return ())
+                         return (dq {completedDownloads = 
+                                         (x, dltok, result) :
+diff --git a/Utils.hs b/Utils.hs
+index b8406a2..7c1a9dc 100644
+--- a/Utils.hs
++++ b/Utils.hs
+@@ -42,7 +42,7 @@ import System.Time
+ import System.Time.Utils
+ import System.IO
+ import System.Posix.IO
+-import Control.Exception(finally)
++import qualified Control.Exception as E
+ 
+ simpleCmd :: IConnection conn => 
+           String -> String -> String -> [OptDescr (String, String)] 
+@@ -79,8 +79,8 @@ lock func =
+     do appdir <- getAppDir
+        lockh <- openFile (appdir ++ "/.lock") WriteMode
+        lockfd <- handleToFd lockh
+-       catch (placelock lockfd) errorhandler
+-       r <- finally func (releaselock lockfd)
++       (E.catch :: IO a -> (IOError -> IO a) -> IO a) (placelock lockfd) errorhandler
++       r <- E.finally func (releaselock lockfd)
+        return r
+ 
+     where placelock lockfd = setLock lockfd (WriteLock, AbsoluteSeek, 0, 0)
+@@ -120,6 +120,6 @@ filter_disabled = filter (\x -> pcenabled x == PCEnabled)
+ emptyDir :: FilePath -> IO ()
+ emptyDir fp =
+     do dircontents <- getDirectoryContents fp
+-       mapM_ (\f -> catch (removeFile $ fp ++ "/" ++ f) (\_ -> return ()))
++       mapM_ (\f -> (E.catch :: IO a -> (IOError -> IO a) -> IO a) (removeFile $ fp ++ "/" ++ f) (\_ -> return ()))
+                     dircontents
+ 

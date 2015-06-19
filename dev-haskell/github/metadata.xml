@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The Github API provides programmatic access to the full
+		Github Web site, from Issues to Gists to repos down to the underlying git data
+		like references and trees. This library wraps all of that, exposing a basic but
+		Haskell-friendly set of functions and data structures.
+		
+		For more of an overview please see the README: &lt;https://github.com/fpco/github/blob/master/README.md&gt;
+	</longdescription>
+</pkgmetadata>

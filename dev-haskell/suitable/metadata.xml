@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a general purpose typeclass, &#39;Suitable f a&#39;,
+		which expresses that values of type &#39;f a&#39; are legal or &quot;make sense&quot;.
+	</longdescription>
+</pkgmetadata>

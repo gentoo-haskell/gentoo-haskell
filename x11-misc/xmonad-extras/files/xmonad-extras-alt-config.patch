@@ -1,0 +1,33 @@
+diff --git a/xmonad-extras.cabal b/xmonad-extras.cabal
+index 968cef6..262234f 100644
+--- a/xmonad-extras.cabal
++++ b/xmonad-extras.cabal
+@@ -31,6 +31,10 @@ flag with_hlist
+   description: Build modules depending on HList.
+   default: False
+ 
++flag with_alt_config
++  description: Build modules for alternative configurations
++  default: False
++
+ flag with_regex_posix
+   description: Build modules depending on posix-regex.
+ 
+@@ -78,7 +82,7 @@ library
+         build-depends: regex-posix
+         exposed-modules: XMonad.Util.WindowPropertiesRE
+ 
+-    if impl(ghc >= 6.12.1) && flag(with_template_haskell) && flag(with_hlist)
++    if impl(ghc >= 6.12.1) && flag(with_template_haskell) && flag(with_hlist) && flag(with_alt_config)
+         build-depends: template-haskell, HList >= 0.2.3 && < 0.3
+         exposed-modules: XMonad.Config.Alt
+                          XMonad.Config.Alt.Desktop
+@@ -88,6 +92,8 @@ library
+ 
+         other-modules:   XMonad.Config.Alt.Types
+ 
++    if impl(ghc >= 6.12.1) && flag(with_template_haskell) && flag(with_hlist)
++
+         exposed-modules: XMonad.Hooks.PerWindowKbdLayout
+ 
+     if impl(ghc >= 6.12.1)

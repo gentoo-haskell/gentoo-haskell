@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a wrapper around the prolific eggtraymanager code.
+		Note that it is *NOT* itself a system tray widget, though it is a very
+		convenient utility for implementing one.  This package adopts the style
+		of gtk2hs and is designed to work well with it.
+		
+		Changes in 0.1.3: Remove an unnecessary include
+		
+		Changes in 0.1.2: depend on gtk 0.12.1 to build with ghc 7.2
+	</longdescription>
+</pkgmetadata>

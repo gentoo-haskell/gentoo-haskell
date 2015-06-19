@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a Haskell implementation of
+		&lt;https://github.com/Automattic/engine.io Engine.IO&gt;, a library for real-time
+		client-server communication on the web. Engine.IO works with old browsers via
+		XHR long-polling, and seamlessy upgrades to web sockets. This implementation
+		supports the majority of the Engine.IO protocol, including text and binary
+		packets and the upgrading protocol.
+	</longdescription>
+</pkgmetadata>

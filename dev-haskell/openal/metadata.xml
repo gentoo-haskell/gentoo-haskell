@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A Haskell binding for the OpenAL cross-platform 3D audio API,
+		appropriate for use with gaming applications and many other
+		types of audio applications.  For more information about OpenAL,
+		please see: &lt;http://connect.creativelabs.com/openal/&gt;.
+	</longdescription>
+</pkgmetadata>

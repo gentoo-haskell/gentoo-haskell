@@ -1,0 +1,6 @@
+diff --git a/template-hsc-gtk2hs.h b/template-hsc-gtk2hs.h
+index dc871ee..7b89099 100644
+--- a/template-hsc-gtk2hs.h
++++ b/template-hsc-gtk2hs.h
+@@ -4,0 +5 @@
++#include <stdio.h> /* printf */

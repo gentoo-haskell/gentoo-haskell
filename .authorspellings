@@ -1,0 +1,19 @@
+-- Canonical author spellings can be defined in this file, to clean up
+-- the output of show authors. Each line contains one or more
+-- comma-separated fields: the canonical name and email address in
+-- angle brackets, optionally followed by additional regular
+-- expression patterns. Blank lines and lines beginning with -- are
+-- ignored. An author string which contains the canonical email
+-- address or any of the patterns will be replaced by the full
+-- canonical form.  All matching is case-insensitive. To match the
+-- whole author string use ^ and $.
+
+Andres Loeh <kosmikus@gentoo.org>, andres@cs.uu.nl
+Chris Parrott <cparrott@gentoo.org>, chris@parrotts.net
+Duncan Coutts <dcoutts@gentoo.org>, duncan.coutts@worc.ox.ac.uk
+Lennart Kolmodin <kolmodin@gentoo.org>, kolmodin@dtek.chalmers.se
+Luis F. Araujo <araujo@gentoo.org>, araujo@gentoo.org
+Martin Rosenberg <mjrosenb@andrew.cmu.edu>, mjrosennb@andrew.cmu.edu
+Sergei Trofimovich <slyfox@community.haskell.org>, slyfox@inbox.ru
+Ivan Lazar Miljenovic <Ivan.Miljenovic@gmail.com>
+Emil Karlson <jekarlson@gmail.com>

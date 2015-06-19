@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A Haskell-library for tasks which are usually done in
+		shell scripts. This includes parsing command line
+		arguments; dealing with paths; some commands for dealing
+		with files; calling external programs and subroutines as
+		separate processes; pipes and redirection of input and
+		output; and error handling.
+	</longdescription>
+</pkgmetadata>

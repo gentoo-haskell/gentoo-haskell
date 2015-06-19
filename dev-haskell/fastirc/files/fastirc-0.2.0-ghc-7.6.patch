@@ -1,0 +1,21 @@
+diff --git a/Network/FastIRC/Session.hs b/Network/FastIRC/Session.hs
+index e8728ef..af0aa6a 100644
+--- a/Network/FastIRC/Session.hs
++++ b/Network/FastIRC/Session.hs
+@@ -54,6 +54,7 @@ import qualified Data.ByteString.Char8 as B
+ import qualified Data.Map as M
+ import Control.Applicative
+ import Control.Concurrent
++import qualified Control.Exception as E
+ import Data.Map (Map)
+ import Data.Unique
+ import MonadLib
+@@ -360,7 +361,7 @@ startBot params = do
+                   hPrint stderr err
+                   hPutStrLn stderr "Please report this to the author."
+                 Right _ -> return ()
+-    in comp `catch` (putMVar errorVar . Just)
++    in (E.catch :: IO a -> (IOError -> IO a) -> IO a) comp (putMVar errorVar . Just)
+ 
+   error <- takeMVar errorVar
+   case error of

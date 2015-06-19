@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library allows an application to extend the &#39;global state&#39;
+		hidden inside the IO monad with semi-arbitrary data. Data is
+		required to be &#39;Typeable&#39;. The library provides an essentially
+		unbounded number of key-value stores indexed by strings, with
+		each key within the stores also being a string.
+	</longdescription>
+</pkgmetadata>

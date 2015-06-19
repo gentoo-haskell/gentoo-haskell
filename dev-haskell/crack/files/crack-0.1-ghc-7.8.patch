@@ -1,0 +1,21 @@
+diff --git a/Text/Crack.hs b/Text/Crack.hs
+index 5b6a8f0..c07519e 100644
+--- a/Text/Crack.hs
++++ b/Text/Crack.hs
+@@ -22,6 +22,7 @@ import Control.Applicative
+ import Foreign
+ import Foreign.C.String
+ import Foreign.Ptr
++import qualified System.IO.Unsafe as U
+ 
+ -- | Check a password
+ -- Returns Right () if the password is good, or Left String where the string
+@@ -29,7 +30,7 @@ import Foreign.Ptr
+ crack :: String -- ^ Password
+       -> String -- ^ Dictionary location (i.e. /usr/share/cracklib/pw_dict)
+       -> Either String ()
+-crack pw dict = unsafePerformIO $
++crack pw dict = U.unsafePerformIO $
+   withCString pw $ \c_pw -> withCString dict $ \c_dict -> do
+   p <- c_fascist_check c_pw c_dict
+   if p == nullPtr

@@ -1,0 +1,1700 @@
+diff --git a/frag.cabal b/frag.cabal
+index 8893fb0..6bb52c5 100644
+--- a/frag.cabal
++++ b/frag.cabal
+@@ -85,7 +85,7 @@ Executable frag
+    Main-is:             Main.hs
+    Build-Depends:       base==4.*, GLUT, OpenGL>=2.0, array, random
+    Hs-source-dirs:      src
+-   Ghc-options:         -O2 -funbox-strict-fields -fvia-C -optc-O2
++   Ghc-options:         -O2 -funbox-strict-fields
+    Extensions:          BangPatterns,
+                         FunctionalDependencies,
+                         FlexibleInstances,
+diff --git a/src/AFRP.hs b/src/AFRP.hs
+index aaf2e2a..a0c9d99 100644
+--- a/src/AFRP.hs
++++ b/src/AFRP.hs
+@@ -266,6 +266,7 @@ import AFRPMiscellany (( # ), dup, swap)
+ import AFRPEvent
+ import AFRPVectorSpace
+ 
++import Graphics.Rendering.OpenGL.GL (GLdouble)
+ 
+ infixr 0 -->, >--, -=>, >=-
+ 
+@@ -282,14 +283,14 @@ infixr 0 -->, >--, -=>, >=-
+ -- Time is used both for time intervals (duration), and time w.r.t. some
+ -- agreed reference point in time. Conceptually, Time = R, i.e. time can be 0
+ -- or even negative.
+-type Time = Double      -- [s]
++type Time = GLdouble      -- [s]
+ 
+ 
+ -- DTime is the time type for lengths of sample intervals. Conceptually,
+ -- DTime = R+ = { x in R | x > 0 }. Don't assume Time and DTime have the
+ -- same representation.
+ 
+-type DTime = Double -- [s]
++type DTime = GLdouble -- [s]
+ 
+ 
+ -- Representation of signal function in initial state.
+@@ -617,7 +618,7 @@ constant b = SF {sfTF = \_ -> (sfConst b, b)}
+ 
+ -- Outputs the time passed since the signal function instance was started.
+ localTime :: SF a Time
+-localTime = constant 1.0 >>> integral
++localTime = constant (1.0 :: Time) >>> integral
+ 
+ 
+ -- Alternative name for localTime.
+@@ -1361,7 +1362,7 @@ occasionally g t_avg x | t_avg > 0 = SF {sfTF = tf0}
+         -- we can think of the preceding interval as being 0, implying
+         -- no probability of an event occurring.
+ 
+-        tf0 _ = (occAux ((randoms g) :: [Double]), NoEvent)
++        tf0 _ = (occAux ((randoms g) :: [GLdouble]), NoEvent)
+ 
+         occAux (r:rs) = SFTIVar {sfTF' = tf}
+             where
+@@ -1509,7 +1510,7 @@ embed sf0 (a0, dtas) = b0 : lp a0 sf dtas
+ -- !!! It's kind of hard to se why, but "frame dropping" was a problem
+ -- !!! in the old robot simulator. Try to find an example!
+ 
+-embedSynch :: SF a b -> (a, [(DTime, Maybe a)]) -> SF Double b
++embedSynch :: SF a b -> (a, [(DTime, Maybe a)]) -> SF GLdouble b
+ embedSynch sf0 (a0, dtas) = SF {sfTF = tf0}
+     where
+         tts             = scanl (\t (dt, _) -> t + dt) 0 dtas
+diff --git a/src/AFRPVectorSpace.hs b/src/AFRPVectorSpace.hs
+index 1a24439..f811ceb 100644
+--- a/src/AFRPVectorSpace.hs
++++ b/src/AFRPVectorSpace.hs
+@@ -15,6 +15,8 @@
+ 
+ module AFRPVectorSpace where
+ 
++import Graphics.Rendering.OpenGL.GL -- GLdouble
++
+ ------------------------------------------------------------------------------
+ -- Vector space type relation
+ ------------------------------------------------------------------------------
+@@ -29,7 +31,7 @@ infixl 6 ^+^, ^-^
+ -- be Fractional (roughly a Field) rather than Floating.
+ 
+ -- Minimal instance: zeroVector, (*^), (^+^), dot
+-class Floating a => VectorSpace v a | v -> a where
++class (Eq a, Floating a) => VectorSpace v a | v -> a where
+     zeroVector   :: v
+     (*^)         :: a -> v -> v
+     (^/)         :: v -> a -> v
+@@ -53,10 +55,10 @@ class Floating a => VectorSpace v a | v -> a where
+ 	    nv = norm v
+ 
+ ------------------------------------------------------------------------------
+--- Vector space instances for Float and Double
++-- Vector space instances for GLfloat and GLdouble
+ ------------------------------------------------------------------------------
+ 
+-instance VectorSpace Float Float where
++instance VectorSpace GLfloat GLfloat where
+     zeroVector = 0
+ 
+     a *^ x = a * x
+@@ -72,7 +74,7 @@ instance VectorSpace Float Float where
+     x1 `dot` x2 = x1 * x2
+ 
+ 
+-instance VectorSpace Double Double where
++instance VectorSpace GLdouble GLdouble where
+     zeroVector = 0
+ 
+     a *^ x = a * x
+@@ -92,7 +94,7 @@ instance VectorSpace Double Double where
+ -- Vector space instances for small tuples of Floating
+ ------------------------------------------------------------------------------
+ 
+-instance Floating a => VectorSpace (a,a) a where
++instance (Eq a, Floating a) => VectorSpace (a,a) a where
+     zeroVector = (0,0)
+ 
+     a *^ (x,y) = (a * x, a * y)
+@@ -108,7 +110,7 @@ instance Floating a => VectorSpace (a,a) a where
+     (x1,y1) `dot` (x2,y2) = x1 * x2 + y1 * y2
+ 
+ 
+-instance Floating a => VectorSpace (a,a,a) a where
++instance (Eq a, Floating a) => VectorSpace (a,a,a) a where
+     zeroVector = (0,0,0)
+ 
+     a *^ (x,y,z) = (a * x, a * y, a * z)
+@@ -124,7 +126,7 @@ instance Floating a => VectorSpace (a,a,a) a where
+     (x1,y1,z1) `dot` (x2,y2,z2) = x1 * x2 + y1 * y2 + z1 * z2
+ 
+ 
+-instance Floating a => VectorSpace (a,a,a,a) a where
++instance (Eq a, Floating a) => VectorSpace (a,a,a,a) a where
+     zeroVector = (0,0,0,0)
+ 
+     a *^ (x,y,z,u) = (a * x, a * y, a * z, a * u)
+@@ -140,7 +142,7 @@ instance Floating a => VectorSpace (a,a,a,a) a where
+     (x1,y1,z1,u1) `dot` (x2,y2,z2,u2) = x1 * x2 + y1 * y2 + z1 * z2 + u1 * u2
+ 
+ 
+-instance Floating a => VectorSpace (a,a,a,a,a) a where
++instance (Eq a, Floating a) => VectorSpace (a,a,a,a,a) a where
+     zeroVector = (0,0,0,0,0)
+ 
+     a *^ (x,y,z,u,v) = (a * x, a * y, a * z, a * u, a * v)
+diff --git a/src/BSP.hs b/src/BSP.hs
+index ebea55f..283d670 100644
+--- a/src/BSP.hs
++++ b/src/BSP.hs
+@@ -120,13 +120,13 @@ data BSPMap = BSPMap {
+      bitset     :: !BitSet
+ }
+ 
+-type VertexArrays = (Ptr Float,Ptr Float,Ptr Float,Ptr Float,Ptr Word8)
++type VertexArrays = (Ptr GLfloat,Ptr GLfloat,Ptr GLfloat,Ptr GLfloat,Ptr Word8)
+ 
+ data BSPLeaf = BSPLeaf {
+     cluster    :: !Int,
+     area       :: Int,
+-    leafMin    :: (Double,Double,Double),
+-    leafMax    :: (Double,Double,Double),
++    leafMin    :: (GLdouble,GLdouble,GLdouble),
++    leafMax    :: (GLdouble,GLdouble,GLdouble),
+     leafface     :: Int,
+     numOfLeafFaces   :: Int,
+     leafBrush    :: Int,
+@@ -157,11 +157,11 @@ data BSPFace = BSPFace {
+     -- The size of the lightmap section
+     lMapSize       :: (Int,Int),
+     -- The 3D origin of lightmap.
+-    lMapPos        :: (Float,Float,Float),
++    lMapPos        :: (GLfloat,GLfloat,GLfloat),
+     -- The 3D space for s and t unit vectors.
+-    lMapVecs       :: [(Float,Float,Float)],
++    lMapVecs       :: [(GLfloat,GLfloat,GLfloat)],
+     -- The face normal.
+-    vNormal        :: (Float,Float,Float),
++    vNormal        :: (GLfloat,GLfloat,GLfloat),
+     -- The bezier patch dimensions.
+     size           :: (Int,Int),
+     faceNo         :: Int,
+@@ -179,16 +179,16 @@ data BSPBrush = BSPBrush {
+ 
+ data BSPBrushSide = BSPBrushSide {
+     bsPlane     :: Int,
+-    bsPlaneNorm    :: (Double,Double,Double),
+-    bsPlaneDist    :: Double,
++    bsPlaneNorm    :: (GLdouble,GLdouble,GLdouble),
++    bsPlaneDist    :: GLdouble,
+     bsTextureID    :: Int
+ } deriving Show
+ 
+ data Tree  = Leaf BSPLeaf | Branch BSPNode Tree Tree
+ 
+ data BSPNode = BSPNode {
+-    planeNormal :: (Double,Double,Double),
+-    dist     :: Double,
++    planeNormal :: (GLdouble,GLdouble,GLdouble),
++    dist     :: GLdouble,
+     front    :: Int,
+     back     :: Int,
+     nodeMin  :: (Int,Int,Int),
+@@ -198,7 +198,7 @@ data BSPNode = BSPNode {
+ data BSPVisData = BSPVisData {
+     numOfClusters :: Int,
+     bytesPerCluster :: Int,
+-    bitSets   :: IOArr.IOUArray Int Bool
++    bitSets   :: IOArr.IOArray Int Bool
+ }
+ 
+ data BSPLump = BSPLump {
+@@ -217,21 +217,21 @@ data BSPTexInfo = BSPTexInfo {
+     contents :: Int
+ } deriving Show
+ 
+-type VertexData = ([Float],[Float],[Float],[Float],[Word8])
++type VertexData = ([GLfloat],[GLfloat],[GLfloat],[GLfloat],[Word8])
+ 
+ type VertexPointers = (Ptr GLfloat, Ptr GLfloat, Ptr GLfloat, Ptr GLint)
+ 
+ type BSPLeafFace = Int
+ 
+ data BSPPlane = BSPPlane {
+-    pNormal  :: (Double,Double,Double),
+-    distance :: Double
++    pNormal  :: (GLdouble,GLdouble,GLdouble),
++    distance :: GLdouble
+ } deriving Show
+ 
+ -------------------------------------------------------------------------------
+ --BSP rendering
+ 
+-renderBSP :: IORef(BSPMap) -> (Double,Double,Double)-> IO()
++renderBSP :: IORef(BSPMap) -> (GLdouble,GLdouble,GLdouble)-> IO()
+ renderBSP mapRef (x,y,z) = do
+    activeTexture $= TextureUnit 0
+    clientActiveTexture $= TextureUnit 0
+@@ -250,7 +250,7 @@ renderBSP mapRef (x,y,z) = do
+ 
+ 
+ -- given a position finds a in the tree where the position lies in
+-findLeaf :: (Double, Double,Double) -> Tree -> IO BSPLeaf
++findLeaf :: (GLdouble, GLdouble,GLdouble) -> Tree -> IO BSPLeaf
+ findLeaf (x,y,z) (Branch node left right) = do
+    let (px,py,pz) = (planeNormal node)
+    let d = (dist node)
+@@ -914,7 +914,7 @@ createLightmapTexture ptr = do
+ 
+ 
+ -- adjusts the brightness of the lightmap
+-adjustRGB :: Ptr Word8 -> Float -> Int -> IO ()
++adjustRGB :: Ptr Word8 -> GLfloat -> Int -> IO ()
+ adjustRGB lightMap factor offst = do
+    ptr <- return (advancePtr lightMap (3*offst))
+    [r,g,b] <- (peekArray 3 ptr)
+@@ -927,7 +927,7 @@ adjustRGB lightMap factor offst = do
+    pokeArray (advancePtr lightMap (3*offst)) [byter2,byteg2,byteb2]
+ 
+ 
+-scaleRGB :: Float -> Float -> IO (Float,Float)
++scaleRGB :: GLfloat -> GLfloat -> IO (GLfloat,GLfloat)
+ scaleRGB clr scl = do
+                      if ((clr > 1.0) && ((1.0/clr) < scl))
+                         then return (clr, 1.0/clr)
+@@ -1017,7 +1017,7 @@ getOffsets lngth off sze = return $ map ((off+) . (sze*)) [0.. ((lngth `div` sze
+ toInts :: (Integral a)=>[a] -> [Int]
+ toInts a = map fromIntegral a
+ 
+-toFloats :: (Real a) => [a] -> [Float]
++toFloats :: (Real a) => [a] -> [GLfloat]
+ toFloats a = map realToFrac a
+ 
+ get2t :: [a] -> (a, a)
+@@ -1038,7 +1038,7 @@ getInts ptr n = do
+    ints <- peekArray n (castPtr ptr:: Ptr CInt)
+    return $ toInts ints
+ 
+-getFloats :: Ptr a -> Int -> IO [Float]
++getFloats :: Ptr a -> Int -> IO [GLfloat]
+ getFloats ptr n = do
+    floats <- peekArray n (castPtr ptr :: Ptr CFloat)
+    return $ toFloats floats
+diff --git a/src/Camera.hs b/src/Camera.hs
+index d701bf6..c9a85c1 100644
+--- a/src/Camera.hs
++++ b/src/Camera.hs
+@@ -11,9 +11,9 @@ import qualified AFRPGeometry as P
+ import PhysicalDimensions
+ import Graphics.UI.GLUT
+ 
+-data Camera = Camera {cpos      :: !(Double,Double,Double),
+-                      viewPos   :: !(Double,Double,Double),
+-                      upVec     :: !(Double,Double,Double)
++data Camera = Camera {cpos      :: !(GLdouble,GLdouble,GLdouble),
++                      viewPos   :: !(GLdouble,GLdouble,GLdouble),
++                      upVec     :: !(GLdouble,GLdouble,GLdouble)
+                      } deriving (Show,Read)
+ 
+ -- initialise a camera
+@@ -75,7 +75,7 @@ firePos (x,y,z) (vx,vy,vz) =
+ 
+ 
+ -- rotates the view vector along a vector
+-rotateView :: Camera -> Double -> Vec3 -> Camera
++rotateView :: Camera -> GLdouble -> Vec3 -> Camera
+ rotateView cam angle (x,y,z)=
+    let
+      (viewX,viewY,viewZ) = vectorSub (viewPos cam) (cpos cam)
+@@ -96,7 +96,7 @@ rotateView cam angle (x,y,z)=
+ 
+ 
+ -- moves the camera along the view vector
+-move :: (Double,Camera) -> Camera
++move :: (GLdouble,Camera) -> Camera
+ move (speed,cam) =
+   let
+      (x,y,z)       = (cpos cam)
+@@ -114,7 +114,7 @@ move (speed,cam) =
+ 
+ 
+ -- moves the camera pependicular to the view vector
+-strafe :: (Double,Camera) -> Camera
++strafe :: (GLdouble,Camera) -> Camera
+ strafe (speed,cam) =
+    let
+       (sx,_,sz) =
+@@ -139,7 +139,7 @@ setPos vec cam =
+ 
+ 
+ -- lowers the camera along the y-axis
+-dropCam :: (Camera,Double) -> Camera
++dropCam :: (Camera,GLdouble) -> Camera
+ dropCam (cam,vel) =
+    let cam1 = setPos (vectorAdd (cpos cam) (0,vel,0)) cam
+    in setViewPos (vectorAdd (viewPos cam1) (0,vel,0)) cam1
+diff --git a/src/Collision.hs b/src/Collision.hs
+index 1ecb4f8..8faeac0 100644
+--- a/src/Collision.hs
++++ b/src/Collision.hs
+@@ -15,10 +15,11 @@ module Collision (clipCamera, clipObject, clipRay, CollisionType(..)) where
+ import BSP
+ import Matrix
+ import Camera
++import Graphics.UI.GLUT
+ 
+-data CollisionType = Box !Vec3 !Vec3 !Vec3 | SphereT !Double
++data CollisionType = Box !Vec3 !Vec3 !Vec3 | SphereT !GLdouble
+ 
+-epsilon :: Double
++epsilon :: GLdouble
+ epsilon = 0.03125
+ 
+ -------------------------------------------------------------------------------
+@@ -67,7 +68,7 @@ clipRay mp pos oldpos (_,_,_) =
+ 
+ 
+ -- allows an object to step across low obstacles
+-traceStep :: CollisionType -> BSPMap -> Vec3 -> Vec3 -> (Vec3,Bool,Bool,Double)
++traceStep :: CollisionType -> BSPMap -> Vec3 -> Vec3 -> (Vec3,Bool,Bool,GLdouble)
+ traceStep cType mp start end
+    | (col && step) =
+      let (nsteps,finalPos) = tryToStep cType mp newPos end 1 15
+@@ -125,7 +126,7 @@ createBox v1 v2 = Box v1 v2 (getBoxExtents v1 v2)
+ 
+ 
+ -- creates a sphere for collision detection
+-createSphere :: Double ->  CollisionType
++createSphere :: GLdouble ->  CollisionType
+ createSphere rad = SphereT rad
+ 
+ 
+@@ -135,19 +136,19 @@ getBoxExtents (x,y,z) (x1,y1,z1) =
+    (max (-x) x1,max (-y) y1, max (-z) z1)
+ 
+ 
+-getBoxOffs :: Vec3 -> Vec3 -> Double
++getBoxOffs :: Vec3 -> Vec3 -> GLdouble
+ getBoxOffs (x,y,z) (x1,y1,z1) =
+    (abs (x*x1))+(abs (y*y1))+(abs (z*z1))
+ 
+ 
+-getOffset :: CollisionType -> Vec3 -> Double
++getOffset :: CollisionType -> Vec3 -> GLdouble
+ getOffset (Box _ _ extents) plane = getBoxOffs extents plane
+ getOffset (SphereT rad) _ = rad
+ 
+ 
+ fixCheck ::
+-   Maybe (Bool, Bool, Bool, Double, Vec3) ->
+-      (Bool, Bool, Bool, Double, Vec3)
++   Maybe (Bool, Bool, Bool, GLdouble, Vec3) ->
++      (Bool, Bool, Bool, GLdouble, Vec3)
+ fixCheck (Just a) = a
+ fixCheck Nothing = (False,False,False,1.0, (0.0,0.0,0.0))
+ 
+@@ -156,7 +157,7 @@ fixCheck Nothing = (False,False,False,1.0, (0.0,0.0,0.0))
+ tryToStep ::
+    CollisionType -> BSPMap ->
+       Vec3 -> Vec3 ->
+-         Double -> Double  -> (Double,Vec3)
++         GLdouble -> GLdouble  -> (GLdouble,Vec3)
+ tryToStep  cType mp (x,y,z) (x1,y1,z1) i maxheight
+    | i < maxheight =
+      let (pos,col,_,_,_) = trace cType mp  (x,y+i,z) (x1,y1+i,z1)
+@@ -169,9 +170,9 @@ tryToStep  cType mp (x,y,z) (x1,y1,z1) i maxheight
+ -- checks for collisions with brushes
+ 
+ checkBrushes ::
+-   CollisionType -> (Bool, Bool, Bool, Double,Vec3) ->
++   CollisionType -> (Bool, Bool, Bool, GLdouble,Vec3) ->
+       Tree -> Vec3 -> Vec3 ->
+-         Maybe (Bool, Bool, Bool, Double, Vec3)
++         Maybe (Bool, Bool, Bool, GLdouble, Vec3)
+ checkBrushes cType _ (Leaf leaf) start end =
+    case (map (checkBrush start end cType) (leafBrushes leaf)) of
+       []     -> Nothing
+@@ -181,7 +182,7 @@ checkBrushes _ _ (Branch _ _ _) _ _ = Nothing
+ 
+ checkBrush ::
+    Vec3-> Vec3 -> CollisionType ->
+-      BSPBrush -> Maybe (Bool,Bool,Bool,Double,Vec3)
++      BSPBrush -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ checkBrush  start end cType brush
+    |((numOfBrushSides brush) > 0) && ((textureType brush)==1) =
+      let colout =
+@@ -206,9 +207,9 @@ checkBrush  start end cType brush
+ -- of a brush check so that we get the closest
+ -- collision
+ brushCompare ::
+-   Maybe (Bool, Bool, Bool, Double, Vec3) ->
+-      Maybe (Bool, Bool, Bool, Double, Vec3) ->
+-         Maybe (Bool, Bool, Bool, Double, Vec3)
++   Maybe (Bool, Bool, Bool, GLdouble, Vec3) ->
++      Maybe (Bool, Bool, Bool, GLdouble, Vec3) ->
++         Maybe (Bool, Bool, Bool, GLdouble, Vec3)
+ brushCompare (Just (a1,b1,c1,d1,e1)) (Just(a2,b2,c2,d2,e2))
+      | d1 < d2   = Just (a1 || a2, b1 || b2, c1 || c2, d1, e1)
+      | otherwise = Just (a1 || a2, b1 || b2, c1 || c2, d2, e2)
+@@ -220,9 +221,9 @@ brushCompare Nothing Nothing = Nothing
+ -- this checks if we have collided with a brush
+ checkBrushSides ::
+    Vec3 -> Vec3 -> CollisionType->
+-      Bool -> Bool -> Bool -> Bool -> Double ->
+-         Double -> Vec3 -> [BSPBrushSide] ->
+-            (Maybe (Bool,Bool,Bool,Bool,Double,Double,Vec3))
++      Bool -> Bool -> Bool -> Bool -> GLdouble ->
++         GLdouble -> Vec3 -> [BSPBrushSide] ->
++            (Maybe (Bool,Bool,Bool,Bool,GLdouble,GLdouble,Vec3))
+ checkBrushSides  (_,_,_) (_,_,_)
+    _ out collided step ground startR endR cNorm [] =
+       Just (out,collided,step,ground,startR,endR,cNorm)
+@@ -260,7 +261,7 @@ checkBrushSides  start@(x,_,z) end@(x1,_,z1)
+       endDist   = vDist end   cType (bsPlaneNorm b) (bsPlaneDist b)
+ 
+ 
+-vDist :: Vec3 -> CollisionType -> Vec3 -> Double  ->  Double
++vDist :: Vec3 -> CollisionType -> Vec3 -> GLdouble  ->  GLdouble
+ vDist vec box@(Box _ _ _) pnorm pdist =
+    (dotProd (vectorAdd vec (getVOffs pnorm box)) pnorm) - pdist
+ vDist vec (SphereT rad) pnorm pdist =
+@@ -280,9 +281,9 @@ getVOffs (_, _, _) (SphereT _) = (0,0,0)
+ -- recurse down the bsp tree checking for collisions
+ 
+ checkNode ::
+-   CollisionType -> (Bool,Bool,Bool,Double,Vec3) ->
+-      Tree -> Double-> Double -> Vec3 -> Vec3 ->
+-         Maybe (Bool,Bool,Bool,Double,Vec3)
++   CollisionType -> (Bool,Bool,Bool,GLdouble,Vec3) ->
++      Tree -> GLdouble-> GLdouble -> Vec3 -> Vec3 ->
++         Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ checkNode cType cState (Leaf leaf) _ _ start end =
+    checkBrushes cType cState (Leaf leaf)  start end
+ checkNode cType cState (Branch node left right) startRatio endRatio start end =
+@@ -304,9 +305,9 @@ checkNode cType cState (Branch node left right) startRatio endRatio start end =
+ 
+ -- splits the movement vector if it lies on both sides of a splitting plane
+ split ::
+-   CollisionType -> (Bool,Bool,Bool,Double,Vec3) ->
+-      Double -> Double -> Double -> Double ->
+-         Vec3 -> Vec3 -> Tree -> Maybe (Bool,Bool,Bool,Double,Vec3)
++   CollisionType -> (Bool,Bool,Bool,GLdouble,Vec3) ->
++      GLdouble -> GLdouble -> GLdouble -> GLdouble ->
++         Vec3 -> Vec3 -> Tree -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ split cType cState startDist endDist startRatio endRatio
+    start end (Branch node left right)
+    | startDist < endDist =
+@@ -349,12 +350,12 @@ split cType cState startDist endDist startRatio endRatio
+          | otherwise = x
+ split _ _ _ _ _ _ _ _ (Leaf _) = Nothing
+ 
+-getMiddleRatio :: Double -> Double -> Double -> Double
++getMiddleRatio :: GLdouble -> GLdouble -> GLdouble -> GLdouble
+ getMiddleRatio startRatio endRatio ratio =
+    startRatio + (ratio * (endRatio - startRatio))
+ 
+ 
+-getHalfVec :: Vec3 -> Vec3 -> Double -> Vec3
++getHalfVec :: Vec3 -> Vec3 -> GLdouble -> Vec3
+ getHalfVec start end ratio =
+    vectorAdd start (mapTup (ratio*) (vectorSub end start))
+ 
+diff --git a/src/Curves.hs b/src/Curves.hs
+index 671ecd2..0ef14f2 100644
+--- a/src/Curves.hs
++++ b/src/Curves.hs
+@@ -20,13 +20,15 @@ import Foreign hiding (newArray)
+ import Data.Array.IArray
+ -- import Data.Array.MArray (newArray)
+ import Data.Array.IO
+-import Graphics.UI.GLUT (GLint, GLsizei)
++import Graphics.UI.GLUT
+ import Foreign.Storable
+ 
++-- for IOUarray instance
++import Control.Monad.ST
+ 
+ data BSPPatch = BSPPatch {
+            patchLOD    :: Int,               -- the level of tesselation
+-           patchPtr    :: Ptr Float,         -- points to patch vertices
++           patchPtr    :: Ptr GLfloat,         -- points to patch vertices
+            indexPtrPtr :: Ptr (Ptr GLint),  -- points to indices
+            numIndexPtr :: Ptr GLsizei       -- the number of indices
+            } deriving Show
+@@ -35,7 +37,7 @@ data BSPPatch = BSPPatch {
+ -- given a face type return a list of patches if the facetype is 2.
+ -- Otherwise return an empty list.
+ checkForPatch :: Int -> Int -> (Int, Int) ->
+-   (Ptr Float, Ptr Float, Ptr Float,Ptr Float, Ptr Word8)
++   (Ptr GLfloat, Ptr GLfloat, Ptr GLfloat,Ptr GLfloat, Ptr Word8)
+           -> IO [BSPPatch]
+ checkForPatch faceType startVIndex (width,height) vertData
+    |faceType == 2 = do
+@@ -65,7 +67,7 @@ splitControlPoints tups = (take 9 tups):(splitControlPoints $ drop 9 tups)
+ 
+ 
+ -- gets the control points
+-getControlPoints  :: (Ptr Float, Ptr Float, Ptr Float, Ptr Float, Ptr Word8) ->
++getControlPoints  :: (Ptr GLfloat, Ptr GLfloat, Ptr GLfloat, Ptr GLfloat, Ptr Word8) ->
+    Int -> Int -> Int -> IO [Array Int VertTup]
+ getControlPoints vertexData startIndex width height = do
+    -- get the indices for the control points
+@@ -76,7 +78,7 @@ getControlPoints vertexData startIndex width height = do
+    return $ map (listArray (0,8)) (splitControlPoints controlPoints)
+ 
+ -- reads the control point information from the vertex arrays
+-readControlPoints :: (Ptr Float, Ptr Float, Ptr Float,Ptr Float, Ptr Word8) ->
++readControlPoints :: (Ptr GLfloat, Ptr GLfloat, Ptr GLfloat,Ptr GLfloat, Ptr Word8) ->
+    Int -> IO VertTup
+ readControlPoints  (vert, uv, lmuv, _, _) i = do
+    x   <- peekElemOff vert  vertIndex     -- vertex coord
+@@ -95,7 +97,7 @@ readControlPoints  (vert, uv, lmuv, _, _) i = do
+ 
+ -- write the coordinate, texture coordinate and lightmap coordinates
+ -- for the cntrol points
+-writeControlPointData :: [VertTup] -> Int -> Ptr Float -> IO ()
++writeControlPointData :: [VertTup] -> Int -> Ptr GLfloat -> IO ()
+ writeControlPointData  [] _ _ = return()
+ writeControlPointData  ((a,b,c,d,e,f,g):rest) indx ptr = do
+    let i = (indx*7)
+@@ -108,10 +110,10 @@ writeControlPointData  ((a,b,c,d,e,f,g):rest) indx ptr = do
+    pokeElemOff ptr (i+6) g
+    writeControlPointData rest (indx+1) ptr
+ 
+-type VertTup = (Float,Float,Float,Float,Float,Float,Float)
++type VertTup = (GLfloat,GLfloat,GLfloat,GLfloat,GLfloat,GLfloat,GLfloat)
+ 
+ -- multiplies a set of floats by n
+-mul7 :: VertTup -> Float -> VertTup
++mul7 :: VertTup -> GLfloat -> VertTup
+ mul7 (a,b,c,d,e,f,g) n = ((n*a),(n*b),(n*c),(n*d),(n*e),(n*f),(n*g))
+ 
+ 
+@@ -122,7 +124,7 @@ add7 (u1,u2,u3,u4,u5,u6,u7) (v1,v2,v3,v4,v5,v6,v7) =
+ 
+ 
+ -- create a set of patches
+-createPatches :: (Ptr Float, Ptr Float, Ptr Float, Ptr Float, Ptr Word8) ->
++createPatches :: (Ptr GLfloat, Ptr GLfloat, Ptr GLfloat, Ptr GLfloat, Ptr Word8) ->
+    Int -> Int -> Int -> Int -> IO [BSPPatch]
+ createPatches vertData startVert width height tesselation = do
+    controlPoints <- getControlPoints vertData startVert width height
+@@ -144,18 +146,18 @@ createPatch tesselation controlPoints  = do
+                  })
+ 
+ 
+-createPatch' ::Int ->  Ptr Float -> Array Int VertTup -> IO()
++createPatch' ::Int ->  Ptr GLfloat -> Array Int VertTup -> IO()
+ createPatch' tess ptr arr = do
+    let patchVerts = map (bezier tess (arr!0) (arr!3) (arr!6)) [0..tess]
+    writeControlPointData patchVerts 0 ptr
+ 
+ 
+-createPatch'' ::Int ->  Ptr Float -> Array Int VertTup -> IO()
++createPatch'' ::Int ->  Ptr GLfloat -> Array Int VertTup -> IO()
+ createPatch'' tess ptr arr = do
+    mapM_        (createPatch''' tess ptr arr) [1..tess]
+ 
+ 
+-createPatch''' ::Int -> Ptr Float -> Array Int VertTup -> Int -> IO()
++createPatch''' ::Int -> Ptr GLfloat -> Array Int VertTup -> Int -> IO()
+ createPatch''' tess ptr arr u = do
+    let tup1 = bezier tess (arr!0) (arr!1) (arr!2) u
+    let tup2 = bezier tess (arr!3) (arr!4) (arr!5) u
+@@ -197,5 +199,5 @@ generateIndices tess = do
+ 
+ 
+ -- writes the indices to memory
+-writeIndices :: IOUArray Int GLint -> (Int,GLint) -> IO ()
++writeIndices :: IOArray Int GLint -> (Int,GLint) -> IO ()
+ writeIndices indcs (pos,content) = writeArray indcs pos content
+diff --git a/src/Frustum.hs b/src/Frustum.hs
+index 2a956e4..a3bcc48 100644
+--- a/src/Frustum.hs
++++ b/src/Frustum.hs
+@@ -11,7 +11,7 @@ import Graphics.UI.GLUT
+ import Graphics.Rendering.OpenGL.GL.CoordTrans
+ 
+ 
+-type FPlane =  (Double, Double, Double, Double)
++type FPlane =  (GLdouble, GLdouble, GLdouble, GLdouble)
+ type Frustum = (FPlane,FPlane,FPlane,FPlane,FPlane,FPlane)
+ 
+ 
+@@ -97,7 +97,7 @@ getFrustum = do
+ 
+ 
+ -- tests if a box intersects a plane
+-testBox :: (Double,Double,Double)->(Double,Double,Double) -> FPlane ->Bool
++testBox :: (GLdouble,GLdouble,GLdouble)->(GLdouble,GLdouble,GLdouble) -> FPlane ->Bool
+ testBox (x,y,z) (x2,y2,z2) (a,b,c,d)
+    | (a * x  + b * y  + c * z  + d > 0) = True
+    | (a * x2 + b * y  + c * z  + d > 0) = True
+@@ -111,7 +111,7 @@ testBox (x,y,z) (x2,y2,z2) (a,b,c,d)
+ 
+ 
+ -- tests if an AABB lies within a frustum
+-boxInFrustum :: Frustum -> (Double,Double,Double) -> (Double,Double,Double) -> Bool
++boxInFrustum :: Frustum -> (GLdouble,GLdouble,GLdouble) -> (GLdouble,GLdouble,GLdouble) -> Bool
+ boxInFrustum (a,b,c,d,e,f) mn mx
+    | not(test a) || not(test b) || not(test c)
+      || not(test d) || not(test e) || not(test f) = False
+diff --git a/src/MD3.hs b/src/MD3.hs
+index 5cef464..132fc32 100644
+--- a/src/MD3.hs
++++ b/src/MD3.hs
+@@ -71,10 +71,10 @@ import Foreign.Marshal.Array
+ 
+ data MD3Bone =
+         MD3Bone {
+-           minPos  :: (Float,Float,Float),
+-           maxPos  :: (Float,Float,Float),
+-           bonePos :: (Float,Float,Float),
+-           bscale  :: Float,
++           minPos  :: (GLfloat,GLfloat,GLfloat),
++           maxPos  :: (GLfloat,GLfloat,GLfloat),
++           bonePos :: (GLfloat,GLfloat,GLfloat),
++           bscale  :: GLfloat,
+            creator :: String
+         }  deriving Show
+ 
+@@ -96,8 +96,8 @@ data MD3Header =
+ data MD3Tag =
+         MD3Tag {
+            tagName  :: String,
+-           tagPos   :: (Float,Float,Float),
+-           rotation :: (Float,Float,Float,Float)
++           tagPos   :: (GLfloat,GLfloat,GLfloat),
++           rotation :: (GLfloat,GLfloat,GLfloat,GLfloat)
+         } deriving Show
+ 
+ data MD3MeshHeader =
+@@ -117,7 +117,7 @@ data MD3MeshHeader =
+ 
+ data MD3Vertex =
+         MD3Vertex {
+-           vert :: (Float,Float,Float),
++           vert :: (GLfloat,GLfloat,GLfloat),
+            norm :: (CUChar,CUChar)
+ } deriving Show
+ 
+@@ -137,8 +137,8 @@ data MD3Model =
+            links                 :: [(MD3Model,IORef(AnimState))],
+            auxFunc       :: IORef(Maybe (IO())),
+            auxFunc2      :: IORef(Maybe (IO())),
+-           tags          :: Array Int [((Float,Float,Float),
+-                                                          (Float,Float,Float,Float))]
++           tags          :: Array Int [((GLfloat,GLfloat,GLfloat),
++                                                          (GLfloat,GLfloat,GLfloat,GLfloat))]
+         } |
+         MD3Weapon {
+            wmodelObjects :: IORef [MeshObject]
+@@ -152,11 +152,11 @@ data MeshObject =
+            materialID    :: Maybe TextureObject,
+            bHasTexture  :: Bool,
+            objName       :: String,
+-           verticesp     :: Array Int (Ptr Float),
+-           normals       :: [(Float,Float,Float)],
+-           texCoordsl    :: [((Float,Float),(Float,Float),(Float,Float))],
+-           texCoords     :: Ptr Float,
+-           vertPtr       :: Ptr Float,
++           verticesp     :: Array Int (Ptr GLfloat),
++           normals       :: [(GLfloat,GLfloat,GLfloat)],
++           texCoordsl    :: [((GLfloat,GLfloat),(GLfloat,GLfloat),(GLfloat,GLfloat))],
++           texCoords     :: Ptr GLfloat,
++           vertPtr       :: Ptr GLfloat,
+            numIndices    :: GLsizei,
+            vertIndex     :: Ptr CInt,
+            indexBuf      :: BufferObject,
+@@ -170,7 +170,7 @@ data MD3Animation =
+            startFrame :: Int,
+            endFrame   :: Int,
+            loopFrames :: Int,
+-           fp      :: Float
++           fp      :: GLfloat
+ } deriving Show
+ 
+ data AnimState =
+@@ -179,13 +179,13 @@ data AnimState =
+            currentAnim    :: !MD3Animation,
+            currentFrame   :: !Int,
+            nextFrame       :: !Int,
+-           currentTime    :: !Float,
+-           lastTime        :: !Float
++           currentTime    :: !GLfloat,
++           lastTime        :: !GLfloat
+         }
+ 
+ type MD3Face = (Int,Int,Int)
+ 
+-type MD3TexCoord = (Float,Float)
++type MD3TexCoord = (GLfloat,GLfloat)
+ 
+ 
+ -------------------------------------------------------------------------------
+@@ -316,7 +316,7 @@ setAnim (animIndex,animState)
+ 
+ 
+ -- updates the animation
+-updateAnim :: (Int,Double,AnimState) -> (Bool,AnimState)
++updateAnim :: (Int,GLdouble,AnimState) -> (Bool,AnimState)
+ updateAnim (animIndex,time,animState)
+    | snd(Data.Array.bounds(anims animState)) == 0 =
+          let
+@@ -362,7 +362,7 @@ cycleFrame _ startframe endframe currentframe
+    where
+     nextFrme = (currentframe + 1) `mod` endframe
+ 
+-updateTime :: Float -> Int -> Int -> MD3Animation-> Double ->(Float,Float,Int)
++updateTime :: GLfloat -> Int -> Int -> MD3Animation-> GLdouble ->(GLfloat,GLfloat,Int)
+ updateTime lasttime currentframe nextframe anim presentTime =
+    let
+         animSpeed    = (fp anim)
+@@ -395,10 +395,10 @@ drawModel (model,stateRef) = do
+    recurseDraw (currentTime animState) aux (links model) currentTag nextTag
+    texture Texture2D $= Disabled
+ 
+-recurseDraw :: Float ->
++recurseDraw :: GLfloat ->
+    Maybe (IO())-> [(MD3Model,IORef(AnimState))] ->
+-         [((Float,Float,Float),(Float,Float,Float,Float))] ->
+-            [((Float,Float,Float),(Float,Float,Float,Float))] ->  IO()
++         [((GLfloat,GLfloat,GLfloat),(GLfloat,GLfloat,GLfloat,GLfloat))] ->
++            [((GLfloat,GLfloat,GLfloat),(GLfloat,GLfloat,GLfloat,GLfloat))] ->  IO()
+ recurseDraw _ _ [] _ _  = return ()
+ recurseDraw t func ((model,state):mss)
+    (((c1,c2,c3),quat1):ccqs) (((n1,n2,n3),quat2):ncqs) = do
+@@ -456,7 +456,7 @@ drawObject animState obj = do
+ 
+ 
+ convertToVertArray ::
+-   Float -> Ptr Float -> Ptr Float -> Ptr Float -> Int -> Int ->IO()
++   GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Int -> Int ->IO()
+ convertToVertArray t cs ns arr ind limit
+     | ind == limit= return()
+     | otherwise = do
+@@ -705,7 +705,7 @@ splitTags n tgs = (take n tgs):(splitTags n $ drop n tgs)
+ trimTags ::
+    [Int] ->
+           [[MD3Tag]] ->
+-                [[((Float,Float,Float),(Float,Float,Float,Float))]]
++                [[((GLfloat,GLfloat,GLfloat),(GLfloat,GLfloat,GLfloat,GLfloat))]]
+ trimTags _ [] = []
+ trimTags n (t:ts) = (map (getTagpos.(t!!)) n):(trimTags n ts)
+    where getTagpos u = (tagPos u, rotation u)
+@@ -886,20 +886,20 @@ convertInd ((i1,i2,i3):is) =
+    [fromIntegral i1,fromIntegral  i2,fromIntegral  i3]++(convertInd is)
+ 
+ 
+-convertTex2 :: [(Float,Float)] -> [Float]
++convertTex2 :: [(GLfloat,GLfloat)] -> [GLfloat]
+ convertTex2 [] = []
+ convertTex2 ((u,v):uvs) = [u,v]++(convertTex2 uvs)
+ 
+ 
+-convertVert :: [(Float,Float,Float)] -> [Float]
++convertVert :: [(GLfloat,GLfloat,GLfloat)] -> [GLfloat]
+ convertVert [] = []
+ convertVert ((x,y,z):xyzs) = [x,y,z]++(convertVert xyzs)
+ 
+ 
+ convertTex ::
+    [(Int,Int,Int)] ->
+-          [(Float,Float)] ->
+-                IO [((Float,Float),(Float,Float),(Float,Float))]
++          [(GLfloat,GLfloat)] ->
++                IO [((GLfloat,GLfloat),(GLfloat,GLfloat),(GLfloat,GLfloat))]
+ convertTex indces uvs = do
+    let uvarray = listArray (0,((length uvs)-1)) uvs
+    let uv = map (getUVs uvarray) indces
+@@ -907,20 +907,20 @@ convertTex indces uvs = do
+ 
+ 
+ getUVs ::
+-   Array Int (Float,Float) ->
++   Array Int (GLfloat,GLfloat) ->
+          (Int,Int,Int) ->
+-            ((Float,Float),(Float,Float),(Float,Float))
++            ((GLfloat,GLfloat),(GLfloat,GLfloat),(GLfloat,GLfloat))
+ getUVs uvs (i1,i2,i3) = (uvs ! i1, uvs ! i2 , uvs ! i3)
+ 
+ 
+ devideIntoKeyframes :: Int ->
+-   [(Float,Float,Float)] -> [[(Float,Float,Float)]]
++   [(GLfloat,GLfloat,GLfloat)] -> [[(GLfloat,GLfloat,GLfloat)]]
+ devideIntoKeyframes _ [] = []
+ devideIntoKeyframes n verts =
+    (take n verts):(devideIntoKeyframes n (drop n verts))
+ 
+ 
+-devideBy64 :: (Float,Float,Float) -> (Float,Float,Float)
++devideBy64 :: (GLfloat,GLfloat,GLfloat) -> (GLfloat,GLfloat,GLfloat)
+ devideBy64 (x,y,z) = (x / 64,y /64,z / 64)
+ 
+ -- - - - - - - - - - - - - - - - - - -
+@@ -1185,14 +1185,14 @@ withBinaryFile filePath = bracket (openBinaryFile filePath ReadMode) hClose
+ toInts :: (Integral a)=>[a] -> [Int]
+ toInts a = map fromIntegral a
+ 
+-toFloats :: (Real a) => [a] -> [Float]
++toFloats :: (Real a) => [a] -> [GLfloat]
+ toFloats a = map realToFrac a
+ 
+ getInts :: Ptr a -> Int -> IO [Int]
+ getInts ptr n = do ints <- peekArray n (castPtr ptr:: Ptr CInt)
+                    return $ toInts ints
+ 
+-getFloats :: Ptr a -> Int -> IO [Float]
++getFloats :: Ptr a -> Int -> IO [GLfloat]
+ getFloats ptr n = do floats <- peekArray n (castPtr ptr :: Ptr CFloat)
+                      return $ toFloats floats
+ 
+diff --git a/src/Main.hs b/src/Main.hs
+index 77d4e1b..5a8448d 100644
+--- a/src/Main.hs
++++ b/src/Main.hs
+@@ -35,7 +35,7 @@ import Render
+ msInterval :: Int
+ msInterval = 16
+ 
+-clkRes :: Double
++clkRes :: GLdouble
+ clkRes = 1000
+ 
+ data Input
+@@ -252,7 +252,7 @@ render gd oos = do
+                     return()
+ 
+ 
+-getPos :: [(Double,Double,Double)] -> [(Int,Int,Int)]
++getPos :: [(GLdouble,GLdouble,GLdouble)] -> [(Int,Int,Int)]
+ getPos coords = map ints l
+         where
+           l = map (vectorAdd (0,90,0)) coords
+diff --git a/src/MapCfg.hs b/src/MapCfg.hs
+index 7c256fb..12e177b 100644
+--- a/src/MapCfg.hs
++++ b/src/MapCfg.hs
+@@ -23,13 +23,13 @@ import Object
+ import ObjectBehavior
+ import Prelude
+ import System.IO hiding (withBinaryFile)
+-
++import Graphics.Rendering.OpenGL.GL (GLdouble)
+ 
+ data ObjectConstructor =
+    ConsCamera Camera |
+-   ConsAICube {startPosition :: (Double,Double,Double),
+-               size          :: (Double,Double,Double),
+-               wayPoints     :: [(Double,Double,Double)],
++   ConsAICube {startPosition :: (GLdouble,GLdouble,GLdouble),
++               size          :: (GLdouble,GLdouble,GLdouble),
++               wayPoints     :: [(GLdouble,GLdouble,GLdouble)],
+                modlName      :: String}
+                deriving (Read,Show)
+ 
+diff --git a/src/Matrix.hs b/src/Matrix.hs
+index 7325cce..9cc69fc 100644
+--- a/src/Matrix.hs
++++ b/src/Matrix.hs
+@@ -8,14 +8,14 @@ module Matrix where
+ import Graphics.UI.GLUT
+ 
+ --type Vec3 = (GLdouble,GLdouble,GLdouble)
+-type Vec3 = (Double,Double,Double)
++type Vec3 = (GLdouble,GLdouble,GLdouble)
+ type Mat3 = (Vec3,Vec3,Vec3)
+ 
+ mapTup::(a->b)->(a,a,a)->(b,b,b)
+ mapTup f (a,b,c) = (f a, f b, f c)
+ 
+ -- Finds the dot product of two vectors
+-dotProd :: Vec3->Vec3->Double
++dotProd :: Vec3->Vec3->GLdouble
+ dotProd (a,b,c) (aa,bb,cc) = a*aa + b*bb + c*cc
+ 
+ -- Finds the cross product of two 3-vectors
+@@ -55,7 +55,7 @@ vectorSub2 :: Vec3->Vec3->Vec3
+ vectorSub2 a b = vectorSub b a
+ 
+ -- Multiplies a vecotor by a scalar
+-vectorMult :: Vec3->Double->Vec3
++vectorMult :: Vec3->GLdouble->Vec3
+ vectorMult v s = mapTup (s*) v
+ 
+ -- finds the normal of a flat polygon
+@@ -74,7 +74,7 @@ vert::Vec3->Vertex3(GLdouble)
+ vert (x,y,z) = Vertex3 x y z
+ 
+ -- Makes a TexCoord2 (GLdouble) from a Vec3
+-coord::(Double,Double)->TexCoord2(GLdouble)
++coord::(GLdouble, GLdouble)->TexCoord2(GLdouble)
+ coord (x,y) = TexCoord2 x y
+ 
+ -- Makes a Vector3 (GLdouble) from a Vec3
+diff --git a/src/Object.hs b/src/Object.hs
+index f36b3c0..e54cfda 100644
+--- a/src/Object.hs
++++ b/src/Object.hs
+@@ -20,7 +20,7 @@ import Camera
+ import IdentityList
+ import MD3 (AnimState)
+ import Parser (GameInput)
+-
++import Graphics.Rendering.OpenGL(GLdouble, GLfloat) -- GLdouble
+ 
+ type Object = SF ObjInput ObjOutput
+ 
+@@ -28,7 +28,7 @@ data ObjInput = ObjInput {
+           oiHit           :: !(Event [(ILKey,ObsObjState)]),
+           oiMessage       :: !(Event [(ILKey,Message)]),
+           oiCollision     :: !Camera,
+-          oiCollisionPos :: !(Double,Double,Double),
++          oiCollisionPos :: !(GLdouble,GLdouble,GLdouble),
+           oiOnLand        :: !Bool,
+           oiGameInput     :: !GameInput,
+           oiVisibleObjs  :: !(Event [(ILKey,ObsObjState)])
+@@ -41,11 +41,11 @@ data ObjOutput = ObjOutput {
+     ooSpawnReq    :: (Event [ILKey->Object])
+ }
+ 
+-data Message = Coord !(Double,Double,Double) |
++data Message = Coord !(GLdouble,GLdouble,GLdouble) |
+                         PlayerLockedOn |
+                         PlayerLockedOn2 |
+-                        TargetPosition !(Double,Double,Double) |
+-                        TargetPosition2 !(Double,Double,Double) |
++                        TargetPosition !(GLdouble,GLdouble,GLdouble) |
++                        TargetPosition2 !(GLdouble,GLdouble,GLdouble) |
+                         EnemyDown
+ 
+ -- most fields are strict to prevent space leaks
+@@ -54,36 +54,36 @@ data ObsObjState =
+     OOSCamera {
+           newCam          ::  !Camera,
+           oldCam          ::  !Camera,
+-          health          ::  !Double,
+-          ammo    ::  !Double,
++          health          ::  !GLdouble,
++          ammo    ::  !GLdouble,
+           score   ::  !Int,
+-          cood    ::  ![(Double,Double,Double)]
++          cood    ::  ![(GLdouble,GLdouble,GLdouble)]
+          }
+     | OOSRay {
+-          rayStart ::    !(Double,Double,Double),
+-          rayEnd         ::      !(Double,Double,Double),
+-          rayUC  ::      !(Double,Double,Double),
++          rayStart ::    !(GLdouble,GLdouble,GLdouble),
++          rayEnd         ::      !(GLdouble,GLdouble,GLdouble),
++          rayUC  ::      !(GLdouble,GLdouble,GLdouble),
+           clipped  ::    !Bool,
+           firedFrom :: !ILKey
+          }
+     | OOSProjectile {
+-          projectileOldPos :: !(Double,Double,Double),
+-          projectileNewPos :: !(Double,Double,Double),
++          projectileOldPos :: !(GLdouble,GLdouble,GLdouble),
++          projectileNewPos :: !(GLdouble,GLdouble,GLdouble),
+           firedFrom :: !ILKey
+          }
+-    | OOSWayPoint !(Double,Double,Double)
++    | OOSWayPoint !(GLdouble,GLdouble,GLdouble)
+     | OOSAICube {
+-          oosOldCubePos  :: !(Double,Double,Double),
+-          oosNewCubePos  :: !(Double,Double,Double),
+-          oosCubeSize     :: !(Double,Double,Double),
+-          oosCubeAngle :: !Double,
+-          oosCubePitch :: !Double,
++          oosOldCubePos  :: !(GLdouble,GLdouble,GLdouble),
++          oosNewCubePos  :: !(GLdouble,GLdouble,GLdouble),
++          oosCubeSize     :: !(GLdouble,GLdouble,GLdouble),
++          oosCubeAngle :: !GLdouble,
++          oosCubePitch :: !GLdouble,
+           upperAnim     :: !AnimState,
+           lowerAnim     :: !AnimState,
+-          health                :: !Double,
++          health                :: !GLdouble,
+           modelName     :: !String,
+-          target                :: !(Double,Double,Double),
+-          fade          :: !Float
++          target                :: !(GLdouble,GLdouble,GLdouble),
++          fade          :: !GLfloat
+          }
+ 
+ instance Forceable ObsObjState where
+diff --git a/src/ObjectBehavior.hs b/src/ObjectBehavior.hs
+index 59d9b32..6c2d2eb 100644
+--- a/src/ObjectBehavior.hs
++++ b/src/ObjectBehavior.hs
+@@ -12,9 +12,11 @@ import Matrix
+ import Object
+ import Parser
+ 
++import Graphics.Rendering.OpenGL.GL -- GLdouble
++
+ ray ::
+-    (Double, Double, Double) ->
+-      (Double, Double, Double) -> ILKey -> ILKey -> Object
++    (GLdouble, GLdouble, GLdouble) ->
++      (GLdouble, GLdouble, GLdouble) -> ILKey -> ILKey -> Object
+ ray (!x, !y, !z) (!vx, !vy, !vz) firedfrom iD
+   = (arr
+        (\ oi ->
+@@ -400,9 +402,9 @@ getCoordFromMsg (_, (Coord xyz)) = xyz
+ getCoordFromMsg _                = (0,0,0)
+ 
+ aicube ::
+-       (Double, Double, Double) ->
+-         (Double, Double, Double) ->
+-           [(Double, Double, Double)] ->
++       (GLdouble, GLdouble, GLdouble) ->
++         (GLdouble, GLdouble, GLdouble) ->
++           [(GLdouble, GLdouble, GLdouble)] ->
+              String -> (AnimState, AnimState) -> ILKey -> Object
+ aicube (x, y, z) size waypoints modelname (ua, la) iD
+   = (((arr (\ oi -> let gi = oiGameInput oi in (gi, oi)) >>>
+@@ -762,7 +764,7 @@ getMuzzlePoint ((x, y, z), (ox, oy, oz))
+         fireVec = normalise $ (vectorSub muzzlePoint muzzleEnd)
+       in (muzzlePoint, fireVec)
+ 
+-falling :: SF (Bool, GameInput, Double) Double
++falling :: SF (Bool, GameInput, GLdouble) GLdouble
+ falling
+   = (loop
+        (arr
+@@ -773,9 +775,9 @@ falling
+           >>> (((iPre 0) <<< identity) >>> arr (\ pos -> (pos, pos)))))
+ 
+ turnToFaceTarget ::
+-                 (Vec3, Double) ->
++                 (Vec3, GLdouble) ->
+                    SF (ObjInput, Event (), Event ())
+-                     (Vec3, Vec3, Double, Double, Event (), (Int, Int))
++                     (Vec3, Vec3, GLdouble, GLdouble, Event (), (Int, Int))
+ turnToFaceTarget (currentPos, initialAngle)
+   = (arr
+        (\ (oi, ev1, ev2) ->
+@@ -1022,7 +1024,7 @@ followWayPoints ::
+                 Vec3 ->
+                   [Vec3] ->
+                     SF (ObjInput, Event (), Event ())
+-                      (Vec3, Vec3, Double, Double, Event (), (Int, Int))
++                      (Vec3, Vec3, GLdouble, GLdouble, Event (), (Int, Int))
+ followWayPoints (x, y, z) waypoints
+   = (arr
+        (\ (oi, ev1, ev2) ->
+@@ -1120,8 +1122,8 @@ followWayPoints (x, y, z) waypoints
+                         (newPos, (ox, oy, oz), holdAngle, 0, noEvent, (stand, legAnim))))
+ 
+ turnToNextWp ::
+-             Double ->
+-               Double -> SF (ObjInput, Event (), Event ()) (Bool, Bool, Double)
++             GLdouble ->
++               GLdouble -> SF (ObjInput, Event (), Event ()) (Bool, Bool, GLdouble)
+ turnToNextWp currentangle nextAngle
+   = (((arr
+          (\ (_, _, lev) ->
+@@ -1171,7 +1173,7 @@ turnToNextWp currentangle nextAngle
+               (ret, (abs (currentangle - targetAngle) > 30), angle)))
+ 
+ stepdist ::
+-         Vec3 -> Vec3 -> Vec3 -> Double -> Double -> (Bool, Vec3)
++         Vec3 -> Vec3 -> Vec3 -> GLdouble -> GLdouble -> (Bool, Vec3)
+ stepdist (wx1, _, wz1) (_, _, _) (x, _, z) vel dt
+   = let (dx, _, dz) = normalise $ vectorSub (wx1, 0, wz1) (x, 0, z)
+         distance = sqrt (((x - wx1) * (x - wx1)) + ((z - wz1) * (z - wz1)))
+@@ -1183,9 +1185,9 @@ stepdist (wx1, _, wz1) (_, _, _) (x, _, z) vel dt
+ 
+ playDead ::
+          Vec3 ->
+-           Double ->
++           GLdouble ->
+              SF (ObjInput, Event (), Event ())
+-               (Vec3, Vec3, Double, Double, Event (), (Int, Int))
++               (Vec3, Vec3, GLdouble, GLdouble, Event (), (Int, Int))
+ playDead start angle
+   = (arr (\ (_, ev1, _) -> ev1) >>>
+        (notYet >>> arr (\ ev -> ((), ev `tag` (constant dead1)))) >>>
+@@ -1193,7 +1195,7 @@ playDead start angle
+             arr
+               (\ death -> (start, start, angle, 0, noEvent, (death, death)))))
+ 
+-getAngle :: (Vec3, Vec3) -> Double
++getAngle :: (Vec3, Vec3) -> GLdouble
+ getAngle ((x, _, z), (vx, _, vz))
+   = let angle
+           = acos $
+@@ -1203,14 +1205,14 @@ getAngle ((x, _, z), (vx, _, vz))
+           False -> (angle * 180 / pi)
+           True -> (360 - (angle * 180 / pi))
+ 
+-getVertAngle :: (Vec3, Vec3) -> Double
++getVertAngle :: (Vec3, Vec3) -> GLdouble
+ getVertAngle ((x, y, z), (vx, vy, vz))
+   = let angle1
+           = acos $
+               dotProd (normalise $ vectorSub (vx, vy, vz) (x, y, z)) (0, 1, 0)
+       in ((angle1 * 180 / pi) - 90)
+ 
+-updateAnimSF :: AnimState -> SF (Double, Int) (Event (), AnimState)
++updateAnimSF :: AnimState -> SF (GLdouble, Int) (Event (), AnimState)
+ updateAnimSF iAnim
+   = (loop
+        (arr
+@@ -1233,7 +1235,7 @@ updateAnimSF iAnim
+                              False -> (Event (), anim2)
+                  False -> (noEvent, anim2))))
+ 
+-moves :: SF (Double, Camera) Camera
++moves :: SF (GLdouble, Camera) Camera
+ moves
+   = (arr
+        (\ (speed, cam) ->
+@@ -1251,7 +1253,7 @@ moves
+             Camera{cpos = (x + newx, y, z + newz),
+                    viewPos = (vpx + newvx, vpy, vpz + newvz), upVec = (upVec cam)}))
+ 
+-strafes :: SF (Double, Camera) Camera
++strafes :: SF (GLdouble, Camera) Camera
+ strafes
+   = (arr
+        (\ (speed, cam) ->
+@@ -1268,7 +1270,7 @@ strafes
+             Camera{cpos = (x + newx, y, z + newz),
+                    viewPos = (vx + newvx, vy, vz + newvz), upVec = (upVec cam)}))
+ 
+-movementKS :: Double -> SF GameInput Double
++movementKS :: GLdouble -> SF GameInput GLdouble
+ movementKS speed
+   = (keyStat >>>
+        loop
+@@ -1280,7 +1282,7 @@ movementKS speed
+           | (key == Event ('w', False) || key == Event ('s', False)) = 0
+           | otherwise = v
+ 
+-strafeKS :: Double -> SF GameInput Double
++strafeKS :: GLdouble -> SF GameInput GLdouble
+ strafeKS speed
+   = (keyStat >>>
+        loop
+@@ -1292,7 +1294,7 @@ strafeKS speed
+           | (key == Event ('d', False) || key == Event ('a', False)) = 0
+           | otherwise = v
+ 
+-fallingp :: SF (Bool, GameInput) Double
++fallingp :: SF (Bool, GameInput) GLdouble
+ fallingp
+   = (arr (\ (lnd, gi) -> (gi, lnd)) >>>
+        (first keyStat >>> arr (\ (key, lnd) -> (key, (key, lnd)))) >>>
+@@ -1339,13 +1341,13 @@ fallingp
+                   arr
+                     (\ (notlanded, (jumping, landed)) ->
+                        ((),
+-                        (jumping `tag` falling' (- 200 :: Double) (40 :: Double)) `lMerge`
++                        (jumping `tag` falling' (- 200 :: GLdouble) (40 :: GLdouble)) `lMerge`
+                           (landed `tag` constant (- 5.0e-2))
+                           `lMerge`
+-                          (notlanded `tag` falling' (- 200 :: Double) (0 :: Double)))))
+-                 >>> drSwitch (falling' (- 200 :: Double) (0 :: Double)))
++                          (notlanded `tag` falling' (- 200 :: GLdouble) (0 :: GLdouble)))))
++                 >>> drSwitch (falling' (- 200 :: GLdouble) (0 :: GLdouble)))
+ 
+-falling' :: Double -> Double -> SF () Double
++falling' :: GLdouble -> GLdouble -> SF () GLdouble
+ falling' grav int
+   = (arr (\ () -> grav) >>> (integral >>> arr (\ vel -> (vel + int))) >>> integral)
+ 
+@@ -1354,7 +1356,7 @@ bool2Ev b
+   | b = Event ()
+   | otherwise = noEvent
+ 
+-jump2Vel :: Bool -> Double
++jump2Vel :: Bool -> GLdouble
+ jump2Vel b
+   | b == True = 40
+   | otherwise = 0
+diff --git a/src/Parser.hs b/src/Parser.hs
+index 1166cfb..5b5c518 100644
+--- a/src/Parser.hs
++++ b/src/Parser.hs
+@@ -50,6 +50,8 @@ import AFRPGeometry
+ import PhysicalDimensions
+ import Command
+ 
++import Graphics.Rendering.OpenGL.GL (GLdouble)
++
+ type WinInput = Event HGL.Event
+ 
+ 
+@@ -89,7 +91,7 @@ parseWinInput = (wiToCmd <<< (arr fst))&&&
+ command :: SF GameInput (Event Command)
+ command = giCmd ^>> notYet
+ 
+-gDt :: SF a (Double,Double)
++gDt :: SF a (GLdouble,GLdouble)
+ gDt
+   = (arr (\_ -> 1) >>>
+           (imIntegral 0 >>> arr (\ t -> (t, t))) >>>
+diff --git a/src/Quaternion.hs b/src/Quaternion.hs
+index 6bc2907..92d4b30 100644
+--- a/src/Quaternion.hs
++++ b/src/Quaternion.hs
+@@ -10,14 +10,14 @@ module Quaternion where
+ 
+ import Graphics.UI.GLUT -- (GLmatrix, GLfloat, newMatrix, ColumnMajor)
+ 
+-type Quaternion = (Float,Float,Float,Float)
++type Quaternion = (GLfloat,GLfloat,GLfloat,GLfloat)
+ 
+-type Matrix3x3 = ((Float,Float,Float),
+-                  (Float,Float,Float),
+-                  (Float,Float,Float))
++type Matrix3x3 = ((GLfloat,GLfloat,GLfloat),
++                  (GLfloat,GLfloat,GLfloat),
++                  (GLfloat,GLfloat,GLfloat))
+ 
+ -- converts from quaternion to matrix
+-quat2Mat :: Quaternion -> (Float,Float,Float) -> IO (GLmatrix GLfloat)
++quat2Mat :: Quaternion -> (GLfloat,GLfloat,GLfloat) -> IO (GLmatrix GLfloat)
+ quat2Mat (x,y,z,w) (t1,t2,t3)=
+    newMatrix ColumnMajor [(r00 :: GLfloat),r01,r02,r03,
+                           r10,r11,r12,r13,
+@@ -74,7 +74,7 @@ mat2Quat ((r00,r01,r02),
+ 
+ -- does not really perform spherical linaer interpolation
+ -- but the difference isn't really noticeable
+-slerp :: Quaternion -> Quaternion -> Float -> Quaternion
++slerp :: Quaternion -> Quaternion -> GLfloat -> Quaternion
+ slerp q1@(x0,y0,z0,w0) q2@(x1,y1,z1,w1) t
+    | q1 == q2 = q1
+    |otherwise = ((scale0*x0)+(scale1*x1),
+diff --git a/src/Raybox.hs b/src/Raybox.hs
+index b8fe1c3..02bf38e 100644
+--- a/src/Raybox.hs
++++ b/src/Raybox.hs
+@@ -7,10 +7,11 @@ This module performs collision tests between AABBs, spheres and rays.
+ module Raybox where
+ 
+ import Matrix
++import Graphics.UI.GLUT -- GLdouble
+ 
+ -- tests if a ray intersects a box
+-rayBox :: (Double,Double,Double) ->  (Double,Double,Double) ->
+-               (Double,Double,Double) -> (Double,Double,Double) -> Bool
++rayBox :: (GLdouble,GLdouble,GLdouble) ->  (GLdouble,GLdouble,GLdouble) ->
++               (GLdouble,GLdouble,GLdouble) -> (GLdouble,GLdouble,GLdouble) -> Bool
+ rayBox (rayOx,rayOy,rayOz) (rayDx,rayDy,rayDz) (minx,miny,minz)(maxx,maxy,maxz)
+    | (rayOx,rayOy,rayOz) == (rayDx,rayDy,rayDz) = False
+    | otherwise =
+@@ -23,7 +24,7 @@ rayBox (rayOx,rayOy,rayOz) (rayDx,rayDy,rayDz) (minx,miny,minz)(maxx,maxy,maxz)
+           intersectz    =
+              not (((max txmin tymin) > tzmax) || (tzmin > (min txmax tymax)))
+ 
+-getT :: Double ->  Double -> Double -> Double -> (Double, Double)
++getT :: GLdouble ->  GLdouble -> GLdouble -> GLdouble -> (GLdouble, GLdouble)
+ getT rayO rayD mn mx
+    | dd >= 0   = ((mn-rayO)*dd, (mx-rayO)*dd)
+    | otherwise = ((mx-rayO)*dd, (mn-rayO)*dd)
+@@ -40,7 +41,7 @@ boxBox (x1,y1,z1) (w1,h1,d1) (x2,y2,z2) (w2,h2,d2)
+ 
+ 
+ -- tests if an AABB intersects a sphere
+-boxSphere :: Vec3 -> Vec3 -> Vec3 -> Double  -> Bool
++boxSphere :: Vec3 -> Vec3 -> Vec3 -> GLdouble  -> Bool
+ boxSphere (x1,y1,z1) (w1,h1,d1) (x2,y2,z2) rad
+    | (abs (x1 - x2)) <= (w1+rad) = True
+    | (abs (y1 - y2)) <= (h1+rad) = True
+@@ -49,13 +50,13 @@ boxSphere (x1,y1,z1) (w1,h1,d1) (x2,y2,z2) rad
+ 
+ 
+ -- test if two spheres intersect
+-sphereSphere ::  Vec3 -> Vec3 -> Double -> Double -> Bool
++sphereSphere ::  Vec3 -> Vec3 -> GLdouble -> GLdouble -> Bool
+ sphereSphere (x1,y1,z1) (x2,y2,z2) rad1 rad2 =
+    (sqrt ((x1-x2)*(x1-x2))+((y1-y2)*(y1-y2))+((z1-z2)*(z1-z2))) <= (rad1+rad2)
+ 
+ 
+ -- tests if a point lies within a sphere
+-spherePoint :: Vec3 -> Vec3 -> Double -> Bool
++spherePoint :: Vec3 -> Vec3 -> GLdouble -> Bool
+ spherePoint (x1,y1,z1) (x2,y2,z2) rad =
+    (sqrt $ ((x1-x2)*(x1-x2)) + ((y1-y2)*(y1-y2)) + ((z1-z2)*(z1-z2))) <= rad
+ 
+diff --git a/src/Render.hs b/src/Render.hs
+index 28c90d3..ea91e9e 100644
+--- a/src/Render.hs
++++ b/src/Render.hs
+@@ -31,8 +31,8 @@ data GameData = GameData {
+                             fonts          :: (Maybe TextureObject,DisplayList),
+                             nbase          :: DisplayList,
+                             lock           :: IORef(Bool),
+-                            fpsc           :: IORef(Double,Double),
+-                            fpss           :: IORef(Double,Double,Double),
++                            fpsc           :: IORef(GLdouble,GLdouble),
++                            fpss           :: IORef(GLdouble,GLdouble,GLdouble),
+                             nems           :: !Int
+                          }
+ 
+@@ -45,7 +45,7 @@ renderHud gd playerState noos tme = do
+           let dt = ((realToFrac(tme - lastTime3))/1000)
+           color $ Color4 255 255 255 (255 :: GLubyte)
+           printFonts' 0 464 (fonts gd) 1 $
+-                "framerate = " ++ (show $ ((truncate ((1/dt) :: Double)) :: Int))
++                "framerate = " ++ (show $ ((truncate ((1/dt) :: GLdouble)) :: Int))
+ 
+           --print the player's score
+           printFonts' 0 448 (fonts gd) 1
+@@ -134,7 +134,7 @@ renderGun cam mdels = do
+           clear [DepthBuffer ]
+ 
+           --translate and rotate the gun so it is aligned with players view vector
+-          translate (Vector3 x (y+30) (z :: Double))
++          translate (Vector3 x (y+30) (z :: GLdouble))
+           let angle2 =
+                     acos $ dotProd (normalise $ vectorSub (vx,0,vz) (x,0,z)) (1,0,0)
+           case (vz > z ) of
+@@ -143,8 +143,8 @@ renderGun cam mdels = do
+           let angle1 =
+                     acos $ dotProd (normalise $ vectorSub (vx,vy,vz) (x,y,z)) (0,1,0)
+           rotate (90-(angle1*180/pi) :: GLdouble) (Vector3 0 0 1)
+-          rotate (-90 :: Double) (Vector3 1 0 0)
+-          translate (Vector3 (4.8) (-9.5) ((-20) :: Double))
++          rotate (-90 :: GLdouble) (Vector3 1 0 0)
++          translate (Vector3 (4.8) (-9.5) ((-20) :: GLdouble))
+           scale 2 2 (2 :: GLfloat)
+ 
+           --setup the animation state and drw the model
+@@ -249,13 +249,13 @@ renderEnemy camRef mdels frust bspmap (OOSAICube {oosOldCubePos = (x,y,z),
+                                                     (rotate p (Vector3 0 1 0)))
+                                  writeIORef (lowerState model)  la
+                                  writeIORef (upperState model)  ua
+-                                 currentColor $= Color4 (f*60) (f*60) (f*60) (1 :: Float)
++                                 currentColor $= Color4 (f*60) (f*60) (f*60) (1 :: GLfloat)
+                                  unsafePreservingMatrix $ do
+                                     rotate ((-90) :: GLdouble) (Vector3 1 0 0)
+                                     rotate (angle) (Vector3 0 0 1)
+-                                    translate (Vector3 (-10) 0 (-10 :: Double))
++                                    translate (Vector3 (-10) 0 (-10 :: GLdouble))
+                                     scale 1.5 1.5 (1.5 :: GLfloat)
+                                     drawModel (modelRef model,lowerState model)
+-                                 currentColor $= Color4 1 1 1 (1 :: Float)
++                                 currentColor $= Color4 1 1 1 (1 :: GLfloat)
+                                  writeIORef (pitch model) Nothing
+             False -> return ()
+\ No newline at end of file
+diff --git a/src/RenderObject.hs b/src/RenderObject.hs
+index 4779ad3..0b97ba0 100644
+--- a/src/RenderObject.hs
++++ b/src/RenderObject.hs
+@@ -122,14 +122,14 @@ renderEnemy camRef models frust bspmap (OOSAICube {oosOldCubePos = (x,y,z),
+                                                     (rotate p (Vector3 0 1 0)))
+                                  writeIORef (lowerState model)  la
+                                  writeIORef (upperState model)  ua
+-                                 currentColor $= Color4 (f*60) (f*60) (f*60) (1 :: Float)
++                                 currentColor $= Color4 (f*60) (f*60) (f*60) (1 :: GLfloat)
+                                  unsafePreservingMatrix $ do
+                                     rotate ((-90) :: GLdouble) (Vector3 1 0 0)
+                                     rotate (angle) (Vector3 0 0 1)
+-                                    translate (Vector3 (-10) 0 (-10 :: Double))
++                                    translate (Vector3 (-10) 0 (-10 :: GLdouble))
+                                     scale 1.5 1.5 (1.5 :: GLfloat)
+                                     drawModel (modelRef model,lowerState model)
+-                                 currentColor $= Color4 1 1 1 (1 :: Float)
++                                 currentColor $= Color4 1 1 1 (1 :: GLfloat)
+                                  writeIORef (pitch model) Nothing
+             False -> return()
+ 
+diff --git a/src/TextureFonts.hs b/src/TextureFonts.hs
+index eeaedb9..ffdd29a 100644
+--- a/src/TextureFonts.hs
++++ b/src/TextureFonts.hs
+@@ -34,19 +34,19 @@ splitList list = (splitList (drop 16 list))++[(take 16 list)]
+ 
+ 
+ -- the steps needed to display every font
+-genFontList :: ((Float,Float),DisplayList) -> IO()
++genFontList :: ((GLfloat,GLfloat),DisplayList) -> IO()
+ genFontList ((cx,cy),list) = do
+    defineList list Compile $ do
+      unsafeRenderPrimitive Quads $ do
+          texCoord (TexCoord2 cx (1-cy-0.0625))
+-         vertex   (Vertex2 0 (16 :: Float))
++         vertex   (Vertex2 0 (16 :: GLfloat))
+          texCoord (TexCoord2 (cx+0.0625) (1-cy-0.0625))
+-         vertex   (Vertex2 16 (16 :: Float))
++         vertex   (Vertex2 16 (16 :: GLfloat))
+          texCoord (TexCoord2 (cx+0.0625) (1-cy-0.001))
+-         vertex   (Vertex2 16 (0 :: Float))
++         vertex   (Vertex2 16 (0 :: GLfloat))
+          texCoord (TexCoord2 cx (1-cy-0.001))
+-         vertex   (Vertex2 0 (0 :: Float))
+-     translate (Vector3 (14 :: Float) 0 0)
++         vertex   (Vertex2 0 (0 :: GLfloat))
++     translate (Vector3 (14 :: GLfloat) 0 0)
+ 
+ 
+ -- generates a displaylist for displaying large digits
+@@ -64,26 +64,26 @@ genBigNumList (tex,list) = do
+    defineList list Compile $ do
+       textureBinding Texture2D $= tex
+       unsafeRenderPrimitive Quads $ do
+-         texCoord (TexCoord2  0 ( 1 :: Float))
+-         vertex   (Vertex2    0 ( 0 :: Float))
+-         texCoord (TexCoord2  0 ( 0 :: Float))
+-         vertex   (Vertex2    0 (45 :: Float))
+-         texCoord (TexCoord2  1 ( 0 :: Float))
+-         vertex   (Vertex2   30 (45 :: Float))
+-         texCoord (TexCoord2  1 ( 1 :: Float))
+-         vertex   (Vertex2   30 ( 0 :: Float))
+-      translate   (Vector3 (32 :: Float) 0 0)
++         texCoord (TexCoord2  0 ( 1 :: GLfloat))
++         vertex   (Vertex2    0 ( 0 :: GLfloat))
++         texCoord (TexCoord2  0 ( 0 :: GLfloat))
++         vertex   (Vertex2    0 (45 :: GLfloat))
++         texCoord (TexCoord2  1 ( 0 :: GLfloat))
++         vertex   (Vertex2   30 (45 :: GLfloat))
++         texCoord (TexCoord2  1 ( 1 :: GLfloat))
++         vertex   (Vertex2   30 ( 0 :: GLfloat))
++      translate   (Vector3 (32 :: GLfloat) 0 0)
+ 
+ 
+ -- renders a large digit
+-renderNum :: Float -> Float -> DisplayList -> Int -> IO()
++renderNum :: GLfloat -> GLfloat -> DisplayList -> Int -> IO()
+ renderNum x y (DisplayList base) n = unsafePreservingMatrix $ do
+    loadIdentity
+    texture Texture2D $= Enabled
+-   alphaFunc $= Just (Greater,0.1:: Float)
++   alphaFunc $= Just (Greater,0.1:: GLfloat)
+    let list = map toDList (show n)
+    unsafePreservingMatrix $ do
+-      translate (Vector3 x y (0::Float))
++      translate (Vector3 x y (0::GLfloat))
+       mapM_ callList list
+    alphaFunc $= Nothing
+    texture Texture2D $= Disabled
+@@ -92,7 +92,7 @@ renderNum x y (DisplayList base) n = unsafePreservingMatrix $ do
+ 
+ 
+ -- print a string starting at a 2D screen position
+-printFonts' :: Float -> Float ->
++printFonts' :: GLfloat -> GLfloat ->
+    (Maybe TextureObject,DisplayList)->
+        Int-> String -> IO()
+ printFonts' x y (fontTex,DisplayList _) st string =
+@@ -100,9 +100,9 @@ printFonts' x y (fontTex,DisplayList _) st string =
+       loadIdentity
+       texture Texture2D $= Enabled
+       textureBinding Texture2D $= fontTex
+-      translate (Vector3 x y (0::Float))
++      translate (Vector3 x y (0::GLfloat))
+       let lists = map (toDisplayList (128*(fromIntegral st))) string
+-      alphaFunc $= Just (Greater,0.1:: Float)
++      alphaFunc $= Just (Greater,0.1:: GLfloat)
+       mapM_ callList lists --(map DisplayList [17..(32:: GLuint)])
+       alphaFunc $= Nothing
+       texture Texture2D $= Disabled
+@@ -129,17 +129,17 @@ renderCrosshair texs = do
+    textureBinding Texture2D $= crosshairTex
+    unsafePreservingMatrix $ do
+       loadIdentity
+-      translate (Vector3 304 224 (0::Float))
+-      alphaFunc $= Just (Greater,0.1:: Float)
++      translate (Vector3 304 224 (0::GLfloat))
++      alphaFunc $= Just (Greater,0.1:: GLfloat)
+       unsafeRenderPrimitive Quads $ do
+-         texCoord (TexCoord2 0 (1 :: Float))
+-         vertex   (Vertex2 0 (0 :: Float))
+-         texCoord (TexCoord2 0 (0 :: Float))
+-         vertex   (Vertex2 0 (32 :: Float))
+-         texCoord (TexCoord2 1 (0 :: Float))
+-         vertex   (Vertex2 32 (32 :: Float))
+-         texCoord (TexCoord2 1 (1 :: Float))
+-         vertex   (Vertex2 32 (0 :: Float))
++         texCoord (TexCoord2 0 (1 :: GLfloat))
++         vertex   (Vertex2 0 (0 :: GLfloat))
++         texCoord (TexCoord2 0 (0 :: GLfloat))
++         vertex   (Vertex2 0 (32 :: GLfloat))
++         texCoord (TexCoord2 1 (0 :: GLfloat))
++         vertex   (Vertex2 32 (32 :: GLfloat))
++         texCoord (TexCoord2 1 (1 :: GLfloat))
++         vertex   (Vertex2 32 (0 :: GLfloat))
+       alphaFunc $= Nothing
+    texture Texture2D $= Disabled
+ 
+diff --git a/src/Textures.hs b/src/Textures.hs
+index 7383fd8..0705c72 100644
+--- a/src/Textures.hs
++++ b/src/Textures.hs
+@@ -10,6 +10,7 @@ import Graphics.UI.GLUT
+ import TGA (readTga)
+ import Data.Word (Word8)
+ import Foreign.Marshal.Alloc (free)
++import qualified Control.Exception as E
+ 
+ 
+ -- read a list of images and returns a list of textures
+@@ -29,11 +30,14 @@ getAndCreateTexture fileName = do
+    texObj <- createTexture texData
+    return texObj
+ 
+-
++
++catchIO :: IO a -> (E.IOException -> IO a) -> IO a
++catchIO = E.catch
++
+ -- read the image data
+ readImageC :: String -> IO (Maybe (Size, PixelData Word8))
+-readImageC path = catch (readTga path) (\_ -> do print ("missing texture: "++path)
+-                                                 return Nothing)
++readImageC path = catchIO (readTga path) (\_ -> do print ("missing texture: "++path)
++                                                   return Nothing)
+ 
+ 
+ -- creates the texture
+diff --git a/src/Visibility.hs b/src/Visibility.hs
+index de26ea9..ae6d94a 100644
+--- a/src/Visibility.hs
++++ b/src/Visibility.hs
+@@ -18,16 +18,17 @@ import Matrix (Vec3,
+                vectorSub)
+ import BSP -- (bsPlaneNorm, bsPlaneDist, numOfBrushSides, textureType, brushside, BSPBrushSide(..), tree, planeNormal, dist, Tree(..))
+ import Collision(CollisionType(..))
++import Graphics.UI.GLUT
+ 
+ 
+-epsilon :: Double
++epsilon :: GLdouble
+ epsilon = 0.03125
+ 
+-getOffset :: CollisionType -> Vec3 -> Double
++getOffset :: CollisionType -> Vec3 -> GLdouble
+ getOffset (Box _ _ extents) plane = getBoxOffs extents plane
+ getOffset (SphereT rad) _ = rad
+ 
+-getBoxOffs :: Vec3 -> Vec3 -> Double
++getBoxOffs :: Vec3 -> Vec3 -> GLdouble
+ getBoxOffs (x,y,z) (x1,y1,z1) =
+    (abs (x*x1))+(abs (y*y1))+(abs (z*z1))
+ 
+@@ -35,7 +36,7 @@ getBoxOffs (x,y,z) (x1,y1,z1) =
+ -------------------------------------------------------------------------------
+ -- visibility tests
+ 
+-aiVisTest :: BSPMap -> Vec3 -> Double -> Vec3 -> Int -> Bool
++aiVisTest :: BSPMap -> Vec3 -> GLdouble -> Vec3 -> Int -> Bool
+ aiVisTest bsp currentPos angle targetPos range =
+   case (fieldTest currentPos angle targetPos range) of
+      False -> False
+@@ -43,8 +44,8 @@ aiVisTest bsp currentPos angle targetPos range =
+ 
+ 
+ -- test if the objct lies wihitn the field of view
+-fieldTest :: (Double,Double,Double) ->Double ->
+-  (Double,Double,Double) -> Int -> Bool
++fieldTest :: (GLdouble,GLdouble,GLdouble) ->GLdouble ->
++  (GLdouble,GLdouble,GLdouble) -> Int -> Bool
+ fieldTest  (x,y,z) angle (ox,oy,oz) range =
+   (distance < (realToFrac range)  &&
+   (horizangle <= 30) &&
+@@ -85,7 +86,7 @@ rayTest bsp (x,y,z) vec2@(_,_,_) =
+                                     True -> False
+ 
+ 
+-createSphere :: Double ->  CollisionType
++createSphere :: GLdouble ->  CollisionType
+ createSphere rad = SphereT rad
+ 
+ 
+@@ -133,14 +134,14 @@ drawTest bsp vec1@(x,y,z) vec2@(ox,oy,oz) = do
+ --  check for collisions with brushes
+ 
+ 
+-checkBrushes:: CollisionType -> (Bool, Bool, Bool, Double,Vec3)  ->
+-   Tree -> Vec3 -> Vec3 -> Maybe (Bool, Bool, Bool, Double, Vec3)
++checkBrushes:: CollisionType -> (Bool, Bool, Bool, GLdouble,Vec3)  ->
++   Tree -> Vec3 -> Vec3 -> Maybe (Bool, Bool, Bool, GLdouble, Vec3)
+ checkBrushes cType _ (Leaf leaf) start end =
+    checkBrush start end cType (leafBrushes leaf)
+ 
+ 
+ checkBrush :: Vec3-> Vec3 -> CollisionType ->
+-   [BSPBrush] -> Maybe (Bool,Bool,Bool,Double,Vec3)
++   [BSPBrush] -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ checkBrush _ _ _ [] = Just (False,False,False,0,(0,0,0))
+ checkBrush start end cType (brush:brushes) =
+      let res = checkBrush'  start end cType brush
+@@ -150,7 +151,7 @@ checkBrush start end cType (brush:brushes) =
+ 
+ 
+ checkBrush' :: Vec3-> Vec3 -> CollisionType ->
+-   BSPBrush -> Maybe (Bool,Bool,Bool,Double,Vec3)
++   BSPBrush -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ checkBrush'  start end cType brush
+      |((numOfBrushSides brush) > 0) && ((textureType brush)==1) =
+        let colout =
+@@ -171,8 +172,8 @@ checkBrush'  start end cType brush
+ 
+ 
+ checkBrushSides ::  Vec3 -> Vec3 -> CollisionType-> Bool -> Bool ->
+-   Bool -> Bool -> Double -> Double -> Vec3 -> [BSPBrushSide] ->
+-     (Maybe (Bool,Bool,Bool,Bool,Double,Double,Vec3))
++   Bool -> Bool -> GLdouble -> GLdouble -> Vec3 -> [BSPBrushSide] ->
++     (Maybe (Bool,Bool,Bool,Bool,GLdouble,GLdouble,Vec3))
+ checkBrushSides  (_,_,_) (_,_,_) _
+   out collided step ground startR endR cNorm [] =
+      Just (out,collided,step,ground,startR,endR,cNorm)
+@@ -213,7 +214,7 @@ checkBrushSides  start@(x,_,z) end@(x1,_,z1) cType
+         get2nd3 (_,a,_) = a
+ 
+ 
+-vDist :: Vec3 -> CollisionType -> Vec3 -> Double  ->  Double
++vDist :: Vec3 -> CollisionType -> Vec3 -> GLdouble  ->  GLdouble
+ vDist vec box@(Box _ _ _) pnorm pdist =
+    (dotProd (vectorAdd vec (getVOffs pnorm box)) pnorm) - pdist
+ vDist vec (SphereT rad) pnorm pdist =
+@@ -235,8 +236,8 @@ getVOffs (p1,p2,p3) (Box (x,y,z) (x1,y1,z1) _) =
+ 
+ 
+ -- recurse down a nodes
+-checkNode :: CollisionType -> (Bool,Bool,Bool,Double,Vec3) ->
+-   Tree -> Double-> Double -> Vec3 -> Vec3 -> Maybe (Bool,Bool,Bool,Double,Vec3)
++checkNode :: CollisionType -> (Bool,Bool,Bool,GLdouble,Vec3) ->
++   Tree -> GLdouble-> GLdouble -> Vec3 -> Vec3 -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ checkNode cType cState (Leaf leaf) _ _ start end =
+    checkBrushes cType cState (Leaf leaf)  start end
+ checkNode cType cState (Branch node left right) startRatio endRatio start end =
+@@ -258,9 +259,9 @@ checkNode cType cState (Branch node left right) startRatio endRatio start end =
+ 
+ -- splits a vector if it lies on both side of
+ -- the splitting plane
+-split :: CollisionType -> (Bool,Bool,Bool,Double,Vec3) ->
+-   Double -> Double -> Double -> Double -> Vec3 -> Vec3 ->
+-      Tree -> Maybe (Bool,Bool,Bool,Double,Vec3)
++split :: CollisionType -> (Bool,Bool,Bool,GLdouble,Vec3) ->
++   GLdouble -> GLdouble -> GLdouble -> GLdouble -> Vec3 -> Vec3 ->
++      Tree -> Maybe (Bool,Bool,Bool,GLdouble,Vec3)
+ split cType cState startDist endDist startRatio
+    endRatio start end (Branch node left right)
+        |startDist < endDist =
+@@ -310,13 +311,13 @@ split cType cState startDist endDist startRatio
+ 
+ 
+ -- gets the middle of 2 ratios
+-getMiddleRatio :: Double -> Double -> Double -> Double
++getMiddleRatio :: GLdouble -> GLdouble -> GLdouble -> GLdouble
+ getMiddleRatio startRatio endRatio ratio =
+        startRatio + (ratio * (endRatio - startRatio))
+ 
+ 
+ -- gets half a vector
+-getHalfVec :: Vec3 -> Vec3 -> Double -> Vec3
++getHalfVec :: Vec3 -> Vec3 -> GLdouble -> Vec3
+ getHalfVec start end ratio =
+        vectorAdd start (mapTup (ratio*) (vectorSub end start))
+ 

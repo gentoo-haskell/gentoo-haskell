@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A convenient command line wrapper for GHC that displays
+		GHC&#39;s optimised core and assembly output in a human
+		readable, colourised manner, in a pager. Unix systems
+		only, currently.
+		
+		Usage:
+		
+		&gt; ghc-core A.hs
+		
+		&gt; ghc-core -fvia-C -optc-O3 A.hs
+		
+		Screenshot: &lt;http://galois.com/~dons/images/ghc-core.png&gt;
+		
+	</longdescription>
+</pkgmetadata>

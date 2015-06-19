@@ -1,0 +1,31 @@
+diff --git a/Setup.hs b/Setup.hs
+index 78dfb2d..fd25590 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -20,7 +20,7 @@ import qualified System.Info (os)
+ import System.Directory (canonicalizePath, removeFile)
+ import System.Environment (getEnv)
+ import System.FilePath (combine, dropFileName, FilePath, pathSeparators)
+-import System.IO.Error (try)
++import qualified Control.Exception as E (try, catch)
+ import Data.List (isInfixOf)
+ import Data.Maybe (fromJust)
+ import Data.Monoid (mconcat)
+@@ -55,7 +55,7 @@ main = defaultMainWithHooks autoconfUserHooks
+   where
+     preConf :: Args -> ConfigFlags -> IO HookedBuildInfo
+     preConf args flags = do
+-      try (removeFile "Takusen.buildinfo")
++      (E.try :: IO a -> IO (Either IOError a)) (removeFile "Takusen.buildinfo")
+       return emptyHookedBuildInfo
+     postConf :: Args -> ConfigFlags -> PackageDescription -> LocalBuildInfo -> IO ()
+     postConf args flags pkgdesc localbuildinfo = do
+@@ -101,7 +101,7 @@ makeConfig path libDir includeDir = do
+ 
+ maybeGetEnv :: String -> IO (Maybe String)
+ maybeGetEnv env = do
+-  catch ( getEnv env >>= return . Just ) ( const (return Nothing) )
++  (E.catch :: IO a -> (IOError -> IO a) -> IO a) ( getEnv env >>= return . Just ) ( const (return Nothing) )
+ 
+ -- Check that the program is in the buildtools.
+ -- If it is, then run the action (which should return BuildInfo).

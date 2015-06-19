@@ -1,0 +1,64 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (17 May 2015)
+# Nothing uses it directly, needs porting (or reexporting)
+# to ghc-7.10
+dev-haskell/bitset
+
+# Sergei Trofimovich <slyfox@gentoo.org> (10 May 2015)
+# outdated, lambdabot-5.0 does not use it
+dev-haskell/lambdabot-utils
+
+# Sergei Trofimovich <slyfox@gentoo.org> (23 Nov 2014)
+# Likes to clash with popular 'mtl' namespace, subsumed by transformers/mtl.
+dev-haskell/monads-fd
+dev-haskell/data-accessor-monads-fd
+
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Jul 2014)
+# Needs qt-5. Not in the main tree yet.
+>=dev-haskell/hsqml-0.3.1.0
+
+# Sergei Trofimovich <slyfox@gentoo.org> (31 May 2014)
+# Deprecated in favour of dev-haskell/cabal-install sandbox feature.
+dev-haskell/cabal-dev
+
+# Sergei Trofimovich <slyfox@gentoo.org> (21 May 2014)
+# Was merged into dev-haskell/network.
+dev-haskell/network-bytestring
+
+# Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
+# Yesod platform has rules that doesn't play well with
+# gentoo haskell rules, so it's completely unmaintainable.
+# Consider using @yesod-platform set or fix this package.
+dev-haskell/yesod-platform
+
+# Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
+# Masked for removal. Deprecated, use tls instead.
+dev-haskell/tls-extra
+
+# Sergei Trofimovich <slyfox@gentoo.org> (15 Jan 2014)
+# outdated. does not compile against modern hlist
+dev-haskell/nettle-openflow
+
+# Sergei Trofimovich <slyfox@gentoo.org> (13 Jan 2014)
+# outdated. does not compile against modern WAI API
+dev-haskell/wai-logger-prefork
+
+# Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
+# Masked as abandonware. Uses outdated depends.
+dev-haskell/manatee
+dev-haskell/manatee-browser
+dev-haskell/manatee-core
+dev-haskell/manatee-imageviewer
+dev-haskell/manatee-ircclient
+dev-haskell/manatee-mplayer
+dev-haskell/manatee-pdfviewer
+dev-haskell/manatee-processmanager
+dev-haskell/manatee-reader
+dev-haskell/manatee-terminal
+
+# Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
+# Masked for removal, use dev-haskell/dbus instead
+dev-haskell/dbus-client
+
+# Sergei Trofimovich <slyfox@gentoo.org> (25 Dec 2012)
+# Masked as needs old removed darcs-2.5
+dev-vcs/darcs-fastconvert

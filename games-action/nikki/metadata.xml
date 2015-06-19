@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="devel">Build without optimizations and executable stripping.</flag>
+	</use>
+	<longdescription>
+		
+	</longdescription>
+</pkgmetadata>

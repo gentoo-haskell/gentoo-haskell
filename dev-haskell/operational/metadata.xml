@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="buildexamples">Build example executables.</flag>
+	</use>
+	<longdescription>
+		Tiny library for implementing monads by specifying the primitive instructions
+		and their operational semantics. The monad laws will hold automatically.
+		Can also be used to define monad transformers,
+		and the lifting laws are, again, automatic.
+		
+		Accompanies the article: \&quot;The Operational Monad Tutorial\&quot;,
+		published in Issue 15 of The Monad.Reader &lt;http://themonadreader.wordpress.com/2010/01/26/issue-15/&gt;.
+		
+		Related packages: MonadPrompt &lt;http://hackage.haskell.org/package/MonadPrompt&gt;.
+	</longdescription>
+</pkgmetadata>

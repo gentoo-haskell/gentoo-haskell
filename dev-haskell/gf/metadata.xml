@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		GF, Grammatical Framework, is a programming language for multilingual grammar applications
+	</longdescription>
+	<use>
+		<flag name="server">server-mode (HTTP GCI)</flag>
+	</use>
+	<use>
+		<flag name="interrupt">Enable Ctrl+Break in the shell</flag>
+	</use>
+</pkgmetadata>

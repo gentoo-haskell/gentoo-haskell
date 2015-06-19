@@ -1,0 +1,10 @@
+diff --git a/colock.cabal b/colock.cabal
+index 4488e28..8f4bfbc 100644
+--- a/colock.cabal
++++ b/colock.cabal
+@@ -23,4 +23,4 @@ library
+   includes: System_IO_Lock.h
+   install-includes: System_IO_Lock.h
+   c-sources: System_IO_Lock.c
+-  ghc-options: -O2 -Wall -fvia-C
++  ghc-options: -O2 -Wall

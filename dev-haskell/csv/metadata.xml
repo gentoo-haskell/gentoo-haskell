@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		CSV loader and dumper
+		
+		This library parses and dumps documents that are formatted
+		according to RFC 4180, \&quot;The common Format and MIME Type for
+		Comma-Separated Values (CSV) Files\&quot;. This format is used, among
+		many other things, as a lingua franca for spreadsheets, and for
+		certain web services.
+	</longdescription>
+</pkgmetadata>

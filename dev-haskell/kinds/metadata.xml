@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Subkinds are the kind-level analog to subtypes. A kind denotes a set of types, and a
+		subkind of some base kind denotes a subset of the base kind&amp;#x2019;s set of types.
+		Haskell has no support for subkinds and subkind polymorphism. However, this package
+		can be used to emulate subkinds of kind&amp;#xA0;@*@ and subkind variables.
+		
+		To define a new subkind, the user declares a type that represents the subkind, and
+		instantiates some classes. Afterwards, the user can declare types to be of that
+		subkind and universally quantify over the inhabitants of the subkind. Since subkinds
+		are represented by types, type-level polymorphism can be used to emulate kind-level
+		polymorphism.
+		
+		For detailed information, please refer to Section&amp;#xA0;6 of the paper
+		/Generic Record Combinators with Static Type Checking/.
+	</longdescription>
+</pkgmetadata>

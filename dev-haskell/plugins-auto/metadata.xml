@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides support for automatically recompiling and reloading
+		modules into your programs when the source code is modified.
+		
+		Any program called ghc in your PATH will be used for recompiling.
+		
+		&gt; module Main where
+		&gt; import System.IO           (hSetBuffering,stdout,BufferMode(..))
+		&gt; import System.Plugins.Auto (withMonadIO,initPlugins)
+		&gt; import Answer
+		&gt;
+		&gt; main :: IO ()
+		&gt; main = do ph&lt;-initPlugins
+		&gt;         hSetBuffering stdout NoBuffering
+		&gt;         putStrLn &quot;This program interacts with you in a loop.&quot;
+		&gt;         putStrLn &quot;Type something, and the program will respond when you hit the Enter Key.&quot;
+		&gt;         putStrLn &quot;Modify Answer.hs while interacting and you should see the answers&quot;
+		&gt;         putStrLn &quot;change accordingly.&quot;
+		&gt;         let interactiveLoop = prompt ph &gt;&gt; interactiveLoop
+		&gt;         interactiveLoop
+		&gt; where
+		&gt;   prompt ph = do
+		&gt;      putStr &quot;&gt; &quot;
+		&gt;      input &lt;- getLine
+		&gt;      $(withMonadIO &#39;getAnswer) ph id notLoaded$ \errs getAnswer -&gt;
+		&gt;          mapM_ putStrLn errs  &gt;&gt; getAnswer input
+		&gt;
+		&gt;   notLoaded errs =
+		&gt;      if null errs then putStrLn &quot;Plugin not loaded yet.&quot;
+		&gt;        else putStrLn &quot;Errors found:&quot; &gt;&gt; mapM_ (putStrLn . (&quot;  &quot;++)) errs
+		&gt;               &gt;&gt; putStrLn &quot;Try fixing the errors and come back here.&quot;
+		
+		&gt; module Answer where
+		&gt;
+		&gt; getAnswer :: String -&gt; IO ()
+		&gt; getAnswer input = putStrLn (&quot;What you typed: &quot;++input)
+	</longdescription>
+</pkgmetadata>

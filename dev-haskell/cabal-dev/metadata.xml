@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		cabal-dev is a tool for managing development builds of
+		Haskell projects. It supports maintaining sandboxed
+		cabal-install repositories, and sandboxed ghc package
+		databases.
+		
+		By default, it uses a cabal-dev directory under
+		the current working directory as the sandbox.
+		
+		For most packages, just use @cabal-dev@ instead of
+		@cabal@, and you will get a sandboxed build that
+		will not install anything (even automatically installed
+		dependencies) into the user or global ghc package
+		databases.
+		
+		If your build depends on patched or unreleased libraries,
+		you can add them to your sandboxed build environment so
+		they can be installed by @cabal-dev@ or @cabal@. Just run:
+		
+		&gt; cabal-dev add-source /path/to/source/code
+		
+		@cabal-dev add-source@ also supports importing tarballs
+		into a local cabal repository.
+		
+		Alternatively, install unreleased dependencies into the
+		target cabal-dev sandbox instead of using @add-source@:
+		
+		&gt; cd /path/to/dependency
+		&gt; cabal-dev install --sandobox=/path/to/sandbox
+		
+		Then build your library/application with the specified
+		sandbox.
+		
+		
+		Additional documentation can be found in the README.md on
+		github:
+		
+		http://github.com/creswick/cabal-dev/blob/master/README.md
+	</longdescription>
+	<use>
+		<flag name="no-cabal-dev">Do not build cabal-dev (just build ghc-pkg-6_8-compat).</flag>
+	</use>
+</pkgmetadata>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Parses .eventlog files emitted by GHC 6.12.1 and later.
+		Includes the show-ghc-events tool to dump an event
+		log file as text.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,49 @@
+diff --git a/StrategyLib.cabal b/StrategyLib.cabal
+index fb47aa8..4a100f5 100644
+--- a/StrategyLib.cabal
++++ b/StrategyLib.cabal
+@@ -28,4 +28,8 @@ exposed-modules:
+         Data.Generics.Strafunski.StrategyLib.StrategyInfix,
+         Data.Generics.Strafunski.StrategyLib.StrategyPrelude,
+         Data.Generics.Strafunski.StrategyLib.TraversalTheme
+-        
++
++Extensions: MultiParamTypeClasses
++          , FunctionalDependencies
++          , FlexibleContexts
++          , RankNTypes
+diff --git a/library/Data/Generics/Strafunski/StrategyLib/ChaseImports.hs b/library/Data/Generics/Strafunski/StrategyLib/ChaseImports.hs
+index 35e6e5c..725b0a6 100644
+--- a/library/Data/Generics/Strafunski/StrategyLib/ChaseImports.hs
++++ b/library/Data/Generics/Strafunski/StrategyLib/ChaseImports.hs
+@@ -20,10 +20,10 @@ module Data.Generics.Strafunski.StrategyLib.ChaseImports (
+ ) where
+ 
+ import Control.Monad
+-import System.Directory
++import qualified System.Directory as SD
+ import Control.Monad.Error () -- This import gives us (MonadPlus IO) !!
+ import System.IO
+-import Control.Exception (try)
++import qualified Control.Exception as E
+ 
+ 
+ ------------------------------------------------------------------------------
+@@ -101,7 +101,7 @@ chaseFile dirs basename exts
+       fnames = [d++'/':basename++'.':e | d <- dirs, e <- exts]
+       hasFailed (Left _) = True
+       hasFailed _        = False
+-      tryReadFile fn = try ( readFile fn >>= \fc -> return (fc,fn) )
++      tryReadFile fn = (E.try :: IO a -> IO (Either E.IOException a)) ( readFile fn >>= \fc -> return (fc,fn) )
+ 
+       
+ -- | Find a file in a number of possible directories, given a
+@@ -112,7 +112,7 @@ findFile :: [FilePath]          -- ^ path (directories to search)
+ 	 -> [String]            -- ^ possible extensions
+ 	 -> IO FilePath         -- ^ contents of file
+ findFile dirs basename exts
+-  = do existingFileNames <- filterM doesFileExist fnames
++  = do existingFileNames <- filterM SD.doesFileExist fnames
+        case existingFileNames of
+          (fn:_) 
+ 	     -> errLn ("Found file: "++fn) >> return fn

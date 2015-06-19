@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Simulation engine for doing simple force-based layout,
+		/e.g./ for trees or graphs.  See the diagrams-contrib package
+		for usage examples.
+	</longdescription>
+</pkgmetadata>

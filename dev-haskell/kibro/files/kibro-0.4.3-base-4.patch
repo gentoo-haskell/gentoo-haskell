@@ -1,0 +1,67 @@
+diff --git a/executable/Main.hs b/executable/Main.hs
+index 1bb2920..d252bfc 100644
+--- a/executable/Main.hs
++++ b/executable/Main.hs
+@@ -10,7 +10,7 @@ import Prelude hiding (catch)
+ import Control.Applicative
+ import Control.Arrow hiding ((<+>))
+ import Control.Concurrent
+-import Control.Exception
++import qualified Control.Exception as E
+ import Control.Monad.Error
+ import Control.Monad.State
+ import Control.Monad.Reader
+@@ -19,7 +19,8 @@ import Data.ConfigFile (CPError,ConfigParser)
+ import qualified Data.ConfigFile as C
+ import Data.List
+ import Data.Maybe
+-import System
++import System.Environment
++import System.Exit
+ import System.IO
+ import qualified System.IO.Strict as SIO
+ import System.FilePath
+@@ -676,22 +677,25 @@ runShellCmdSilent cmd = do
+ -- Big-ass-but-stable process launcher
+ run :: String -> String -> IO (Either String (ExitCode,String,String))
+ run cmd input = do
+-  pipe <- catch (Right `fmap` runInteractiveCommand cmd)
++  pipe <- (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++                (Right `fmap` runInteractiveCommand cmd)
+                 (const $ return $ Left "")
+   case pipe of
+     Right (inp,out,err,pid) -> do
+-                  catch (do hSetBuffering inp NoBuffering
++                  (E.catch :: IO a -> (E.IOException -> IO a) -> IO a)
++                        (do hSetBuffering inp NoBuffering
+                             hPutStr inp input 
+                             hClose inp
+                             errv <- newEmptyMVar
+                             outv <- newEmptyMVar
+                             output <- hGetContents out
+                             errput <- hGetContents err
+-                            forkIO $ evaluate (length output) >> putMVar outv ()
+-                            forkIO $ evaluate (length errput) >> putMVar errv ()
++                            forkIO $ E.evaluate (length output) >> putMVar outv ()
++                            forkIO $ E.evaluate (length errput) >> putMVar errv ()
+                             takeMVar errv
+                             takeMVar outv
+-                            e <- catch (waitForProcess pid)
++                            e <- (E.catch :: IO a -> (IOError -> IO a) -> IO a)
++                                       (waitForProcess pid)
+                                        (const $ return $ ExitFailure 1)
+                             return $ Right (e,errput,output))
+                         (const $ return $ Left "Broken pipe")
+diff --git a/library/Kibro.hs b/library/Kibro.hs
+index bb159d7..50bb1e7 100644
+--- a/library/Kibro.hs
++++ b/library/Kibro.hs
+@@ -136,7 +136,7 @@ type MatchResult = ((String, (String, String)), [(Int, String)])
+ newtype KibroT m v a = Kibro { unKibro :: (StateT (KibroSt v) (CGIT m) a) }
+     deriving (Monad, MonadIO, MonadState (KibroSt v), Functor)
+ 
+-instance Monad m => Applicative (KibroT m v) where
++instance (Monad m, Functor m) => Applicative (KibroT m v) where
+     pure = return
+     (<*>) = ap
+ 

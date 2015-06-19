@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides an interface to the terminfo database (via bindings to the
+		curses library).  Terminfo allows POSIX systems to interact with a variety of terminals
+		using a standard set of capabilities.
+	</longdescription>
+</pkgmetadata>

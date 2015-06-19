@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Automatically derived Show instances are an easy way
+		to inspect data in your program.  However, for large
+		data-structures, the resulting output lacks
+		whitespace, making it unreadable.  Groom offers an
+		replacement to `show&#39; called `groom&#39; which attempts
+		to pretty-print the output of `show&#39;.  For example:
+		
+		&gt; let x = parseExp &quot;foobar 1 [1,2]&quot;
+		&gt; in do
+		&gt;   putStrLn (show x)
+		&gt;   putStrLn (groom x)
+		
+		results in:
+		
+		&gt; ParseOk (App (App (Var (UnQual (Ident &quot;foobar&quot;))) (Lit (Int 1))) (List [Lit (Int 1),Lit (Int 2)]))
+		&gt; ParseOk
+		&gt;   (App (App (Var (UnQual (Ident &quot;foobar&quot;))) (Lit (Int 1)))
+		&gt;      (List [Lit (Int 1), Lit (Int 2)]))
+		
+		Groom works only on Show instances that output valid
+		Haskell code; if Groom can&#39;t understand its input,
+		it will not make any changes.
+	</longdescription>
+</pkgmetadata>

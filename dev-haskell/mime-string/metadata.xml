@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Implementation of the MIME RFCs 2045-2049.
+		Rather rough around the edges at the moment.
+	</longdescription>
+</pkgmetadata>

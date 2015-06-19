@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides generic functionality for regular datatypes.
+		Regular datatypes are recursive datatypes such as lists, binary trees,
+		etc. This library cannot be used with mutually recursive datatypes or
+		with nested datatypes. The multirec library [1] can deal with mutually
+		recursive datatypes.
+		
+		This library has been described in the paper:
+		
+		*  /A Lightweight Approach to Datatype-Generic Rewriting./
+		Thomas van Noort, Alexey Rodriguez, Stefan Holdermans, Johan Jeuring, Bastiaan Heeren.
+		ACM SIGPLAN Workshop on Generic Programming 2008.
+		
+		More information about this library can be found at
+		&lt;http://www.cs.uu.nl/wiki/GenericProgramming/Regular&gt;.
+		
+		\[1] &lt;http://hackage.haskell.org/package/multirec&gt;
+	</longdescription>
+</pkgmetadata>

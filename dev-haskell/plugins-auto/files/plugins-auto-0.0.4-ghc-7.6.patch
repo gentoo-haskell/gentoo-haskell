@@ -1,0 +1,13 @@
+diff --git a/System/Plugins/Auto/LiftName.hs b/System/Plugins/Auto/LiftName.hs
+index 0fdf6b3..6ac3103 100644
+--- a/System/Plugins/Auto/LiftName.hs
++++ b/System/Plugins/Auto/LiftName.hs
+@@ -4,7 +4,7 @@ module System.Plugins.Auto.LiftName(liftName) where
+ import GHC.Exts
+ import Language.Haskell.TH
+ import Language.Haskell.TH.Syntax
+-import Language.Haskell.TH.Syntax.Internals
++-- import Language.Haskell.TH.Syntax.Internals
+ 
+ -- | Lifts a Name to an ExpQ. @$(liftName n) == n@
+ liftName :: Name -> ExpQ

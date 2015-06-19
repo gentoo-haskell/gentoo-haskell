@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Regular expression library like Perl and Ruby&#39;s regular expressions.
+		This package has a module RegexPR.
+		And RegexPR export functions matchRegexPR and gsubRegexPR.
+		
+		&gt; matchRegexPR      :: String -&gt; String -&gt; Maybe ((String, (String, String)), [(Int, String)])
+		&gt; multiMatchRegexPR :: String -&gt; String -&gt; [ ((String, (String, String)), [(Int, String)]) ]
+		&gt; gmatchRegexPR     :: String -&gt; String -&gt; [ ((String, (String, String)), [(Int, String)]) ]
+		&gt; getbrsRegexPR     :: String -&gt; String -&gt; [ String ]
+		&gt; ggetbrsRegexPR    :: String -&gt; String -&gt; [ [ String ] ]
+		&gt; subRegexPR        :: String -&gt; String -&gt; String -&gt; String
+		&gt; subRegexPRBy      :: String -&gt; (String -&gt; String) -&gt; String -&gt; String
+		&gt; gsubRegexPR       :: String -&gt; String -&gt; String -&gt; String
+		&gt; gsubRegexPRBy     :: String -&gt; (String -&gt; String) -&gt; String -&gt; String
+		&gt; splitRegexPR      :: String -&gt; String -&gt; [String]
+		
+		Examples
+		
+		&gt; matchRegexPR &quot;ab(cde)f\\1&quot; &quot;kkkabcdefcdefgh&quot; =&gt;
+		&gt;              Just ((&quot;abcdefcde&quot;, (&quot;kkk&quot;, &quot;fgh&quot;)),[(1,&quot;cde&quot;)])
+		&gt; matchRegexPR &quot;(?&lt;=hij)abc&quot; &quot;kkkabchijabcde&quot; =&gt;
+		&gt;              Just ((&quot;abc&quot;,(&quot;kkkabchij&quot;,&quot;de&quot;)),[])
+		&gt; gsubRegexPR &quot;\\G(\\d\\d\\d)&quot; &quot;\\1,&quot; &quot;123456 789&quot; =&gt; &quot;123,456, 789&quot;
+		&gt; subRegexPR &quot;(?&lt;=(.)(.)(.))e&quot; &quot; \\3\\2\\1 &quot; &quot;abcdefg&quot; =&gt; &quot;abcd dcb fg&quot;
+		&gt; gsubRegexPR &quot;(?ixm)  aBc  . # comment \n\n&quot; &quot;abc!&quot; &quot;abc\nABCDAbcAbc&quot; =&gt;
+		&gt;             &quot;abc!abc!abc!bc&quot;
+		&gt; gmatchRegexPR &quot;(?=(?&lt;!(?!abc)))abc&quot; &quot;abcdefdefabc&quot; =&gt;
+		&gt;              [((&quot;abc&quot;, (&quot;&quot;, &quot;defdefabc&quot;)), []), ((&quot;abc&quot;, (&quot;defdef&quot;, &quot;&quot;)), [])]
+		&gt; splitRegexPR &quot;\\s*,\\s*&quot; &quot;a,b ,c\t ,d , e&quot; =&gt; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;]
+	</longdescription>
+</pkgmetadata>

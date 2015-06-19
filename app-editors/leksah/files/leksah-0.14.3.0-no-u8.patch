@@ -1,0 +1,57 @@
+diff --git a/src/IDE/Package.hs b/src/IDE/Package.hs
+index 10d003c..8b5886f 100644
+--- a/src/IDE/Package.hs
++++ b/src/IDE/Package.hs
+@@ -94,7 +94,6 @@ import IDE.Utils.FileUtils(getConfigFilePathForLoad)
+ import IDE.LogRef
+ import Distribution.ModuleName (ModuleName(..))
+ import Data.List (isInfixOf, nub, foldl', delete)
+-import qualified System.IO.UTF8 as UTF8  (readFile)
+ import IDE.Utils.Tool (ToolOutput(..), runTool, newGhci, ToolState(..), toolline)
+ import qualified Data.Set as  Set (fromList)
+ import qualified Data.Map as  Map (empty, fromList)
+diff --git a/src/IDE/Pane/Modules.hs b/src/IDE/Pane/Modules.hs
+index 9727153..d79c9ad 100644
+--- a/src/IDE/Pane/Modules.hs
++++ b/src/IDE/Pane/Modules.hs
+@@ -67,7 +67,6 @@ import Graphics.UI.Editor.Parameters
+ import Graphics.UI.Editor.Simple
+        (textEditor, boolEditor, staticListEditor)
+ import Graphics.UI.Editor.Composite (maybeEditor)
+-import qualified System.IO.UTF8 as UTF8  (writeFile)
+ import IDE.Utils.GUIUtils (stockIdFromType, __)
+ import IDE.Metainfo.Provider
+        (getSystemInfo, getWorkspaceInfo, getPackageInfo)
+diff --git a/src/IDE/Pane/SourceBuffer.hs b/src/IDE/Pane/SourceBuffer.hs
+index e54d4bb..3e27584 100644
+--- a/src/IDE/Pane/SourceBuffer.hs
++++ b/src/IDE/Pane/SourceBuffer.hs
+@@ -103,7 +103,6 @@ import IDE.SourceCandy
+ import IDE.SymbolNavigation
+ import IDE.Completion as Completion (complete,cancel)
+ import IDE.TextEditor
+-import qualified System.IO.UTF8 as UTF8
+ import Data.IORef (writeIORef,readIORef,newIORef)
+ import Control.Event (triggerEvent)
+ import IDE.Metainfo.Provider (getSystemInfo, getWorkspaceInfo)
+@@ -792,7 +791,7 @@ revert (buf@IDEBuffer{sourceView = sv}) = do
+         Nothing -> return ()
+         Just fn -> liftIDE $ do
+             buffer <- getBuffer sv
+-            fc <- liftIO $ UTF8.readFile fn
++            fc <- liftIO $ readFile fn
+             mt <- liftIO $ getModificationTime fn
+             beginNotUndoableAction buffer
+             setText buffer $ T.pack fc
+diff --git a/src/IDE/Workspaces.hs b/src/IDE/Workspaces.hs
+index 19a9b44..1361ea2 100644
+--- a/src/IDE/Workspaces.hs
++++ b/src/IDE/Workspaces.hs
+@@ -74,7 +74,6 @@ import Graphics.UI.Gtk.Windows.Dialog (ResponseId(..))
+ import qualified Control.Exception as Exc (SomeException(..), throw, Exception)
+ import qualified Data.Map as  Map (empty)
+ import IDE.Pane.SourceBuffer (fileOpenThis, fileCheckAll, belongsToPackages)
+-import qualified System.IO.UTF8 as UTF8 (writeFile)
+ import System.Glib.Attributes (AttrOp(..), set)
+ import Graphics.UI.Gtk.General.Enums (WindowPosition(..))
+ import Control.Applicative ((<$>))

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a type of all natural numbers, that is, non-negative integers.
+		
+		In contrast to the @naturals@ package, it does not use an “indeterminate value” to
+		represent underflows, but raises errors on underflows. We think this is more
+		reasonable, as this “indeterminate value” is not really a natural.
+	</longdescription>
+</pkgmetadata>

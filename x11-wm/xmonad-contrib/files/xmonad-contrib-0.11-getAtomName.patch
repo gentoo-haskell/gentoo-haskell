@@ -1,0 +1,33 @@
+Mon Feb 25 21:03:23 FET 2013  Daniel Wagner <daniel@wagner-home.com>
+  * getAtomName is now defined in the X11 library
+diff -rN -u old-XMonadContrib/XMonad/Hooks/DebugEvents.hs new-XMonadContrib/XMonad/Hooks/DebugEvents.hs
+--- old-XMonadContrib/XMonad/Hooks/DebugEvents.hs	2013-02-26 17:41:10.187127142 +0300
++++ new-XMonadContrib/XMonad/Hooks/DebugEvents.hs	2013-02-26 17:41:10.207127143 +0300
+@@ -42,27 +42,12 @@
+ import           Data.Maybe                                  (fromMaybe)
+ import           Data.Monoid
+ import           Foreign
+-import           Foreign.C.String
+ import           Foreign.C.Types
+ import           Numeric                                     (showHex)
+ import           System.Exit
+ import           System.IO
+ import           System.Process
+ 
+--- this should move into X11
+-foreign import ccall unsafe "XGetAtomName"
+-  xGetAtomName :: Display -> Atom -> IO CString
+-
+-getAtomName     :: Display -> Atom -> IO (Maybe String)
+-getAtomName d a =  do
+-  n <- xGetAtomName d a
+-  if n == nullPtr
+-    then return Nothing
+-    else do
+-      n' <- peekCString n
+-      xFree n
+-      return $ Just n'
+-
+ -- | Event hook to dump all received events.  You should probably not use this
+ --   unconditionally; it will produce massive amounts of output.
+ debugEventsHook   :: Event -> X All

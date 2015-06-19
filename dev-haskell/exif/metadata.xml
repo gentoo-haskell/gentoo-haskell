@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a Haskell binding to a subset of libexif.
+		Only tag reading is currently supported.
+		Image files containing EXIF data can be read from memory or
+		disk.
+	</longdescription>
+</pkgmetadata>

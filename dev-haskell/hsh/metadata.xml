@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		HSH is designed to let you mix and match shell expressions with
+		Haskell programs. With HSH, it is possible to easily run shell
+		commands, capture their output or provide their input, and pipe them
+		to and from other shell commands and arbitrary Haskell functions at will.
+		Category: System
+	</longdescription>
+</pkgmetadata>

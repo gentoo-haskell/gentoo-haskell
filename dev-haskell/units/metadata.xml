@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The units package provides a mechanism for compile-time
+		dimensional analysis in Haskell programs. It defines an embedded
+		type system based on units-of-measure. The units defined are fully
+		extensible, and need not relate to physical properties.
+		The package supports defining multiple inter-convertible units,
+		such as Meter and Foot. When extracting a number from a
+		dimensioned quantity, the desired unit must be specified, and the
+		value is converted into that unit.
+		If you are looking for specific systems of units (such as SI),
+		please see the `units-defs` package.
+		The Haddock documentation is insufficient for using the units
+		package. Please see the README file, available from the package
+		home page.
+	</longdescription>
+</pkgmetadata>

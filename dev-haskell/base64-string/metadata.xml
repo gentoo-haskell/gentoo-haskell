@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This Base64 implementation uses the characters
+		A-Z a-z 0-9 + /
+		along with
+		=
+		to signal the number of characters mod 3.
+		It is compliant with both PEM (RFC 989 / RFC 1421) and MIME (RFC 2045).
+	</longdescription>
+</pkgmetadata>

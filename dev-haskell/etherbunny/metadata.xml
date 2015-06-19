@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A network analysis toolkit for Haskell, based on the Network.Pcap library. Currently not very useful, but getting there.
+	</longdescription>
+</pkgmetadata>

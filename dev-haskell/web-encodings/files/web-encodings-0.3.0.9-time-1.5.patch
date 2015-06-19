@@ -1,0 +1,17 @@
+diff --git a/Web/Encodings.hs b/Web/Encodings.hs
+index fcc52c2..06b5c4e 100644
+--- a/Web/Encodings.hs
++++ b/Web/Encodings.hs
+@@ -59,3 +59,3 @@ import Data.Maybe (fromMaybe)
+ import Data.Time.Clock
+-import System.Locale
++import Data.Time.Locale.Compat
+ import Data.Time.Format
+diff --git a/web-encodings.cabal b/web-encodings.cabal
+index 2d2af86..174504b 100644
+--- a/web-encodings.cabal
++++ b/web-encodings.cabal
+@@ -22,2 +22,3 @@ library
+                      old-locale >= 1.0.0.1 && < 1.1,
++                     time-locale-compat,
+                      bytestring >= 0.9.1.4,

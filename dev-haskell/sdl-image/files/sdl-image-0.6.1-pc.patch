@@ -1,0 +1,12 @@
+diff --git a/SDL-image.cabal b/SDL-image.cabal
+index 220ba37..ba3a93a 100644
+--- a/SDL-image.cabal
++++ b/SDL-image.cabal
+@@ -25,6 +25,7 @@ Library
+     Graphics.UI.SDL.Image.Version
+   Includes:         SDL.h SDL_image.h
+   GHC-Options:      -Wall
++  pkgconfig-depends: SDL_image
+ 
+ source-repository head
+     type:     darcs

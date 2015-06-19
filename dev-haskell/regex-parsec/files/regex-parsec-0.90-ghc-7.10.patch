@@ -1,0 +1,7 @@
+diff --git a/Text/Regex/Parsec/ReadRegex.hs b/Text/Regex/Parsec/ReadRegex.hs
+index d4577b4..99e0a07 100644
+--- a/Text/Regex/Parsec/ReadRegex.hs
++++ b/Text/Regex/Parsec/ReadRegex.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ {-# OPTIONS_GHC -fno-warn-missing-signatures #-}

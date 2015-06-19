@@ -1,0 +1,35 @@
+diff --git a/BitSyntax.cabal b/BitSyntax.cabal
+index df2058b..7edde32 100644
+--- a/BitSyntax.cabal
++++ b/BitSyntax.cabal
+@@ -5,7 +5,7 @@ Author:          Adam Langley
+ Homepage:        http://www.imperialviolet.org/bitsyntax
+ Stability:       experimental
+ Synopsis:        A module to aid in the (de)serialisation of binary data
+-Build-Depends:   base, haskell98, QuickCheck, template-haskell, bytestring
++Build-Depends:   base, QuickCheck, template-haskell, bytestring
+ Build-Type:      Simple
+ Exposed-modules: Data.BitSyntax
+ Extensions:      ForeignFunctionInterface
+diff --git a/Data/BitSyntax.hs b/Data/BitSyntax.hs
+index 580feba..3dc487a 100644
+--- a/Data/BitSyntax.hs
++++ b/Data/BitSyntax.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# OPTIONS_GHC -fth -ffi #-}
+ -- | This module contains fuctions and templates for building up and breaking
+ --   down packed bit structures. It's something like Erlang's bit-syntax (or,
+@@ -409,10 +410,12 @@ prop_bitPacking fields =
+     packed = bits $ PackBits fields'
+     postvalues = decodeBits (map (fromIntegral . fst) fields') packed
+ 
++#if ! MIN_VERSION_QuickCheck(2,4,1)
+ instance Arbitrary Word16 where
+   arbitrary = (arbitrary :: Gen Int) >>= return . fromIntegral
+ instance Arbitrary Word32 where
+   arbitrary = (arbitrary :: Gen Int) >>= return . fromIntegral
++#endif
+ 
+ -- | This only works on little-endian machines as it checks that the foreign
+ --   functions (htonl and htons) match the native ones

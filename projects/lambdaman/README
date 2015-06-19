@@ -1,0 +1,15 @@
+Lambdaman
+=========
+
+repoman equivalent but for the gentoo haskell overlay.
+
+Checks for:
+  * Missing ebuilds in the Manifests
+  * Inconsistencies between the manifest checksum and ebuilds
+  * Ebuilds that git does not know about but the Manifest do
+
+Requires package SHA for digests.
+
+Add the following line to your .git/hooks/pre-commit:
+
+  projects/lambdaman/run

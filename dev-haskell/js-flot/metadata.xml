@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package bundles the minified &lt;http://www.flotcharts.org/ Flot&gt; code
+		(a jQuery plotting library) into a Haskell package,
+		so it can be depended upon by Cabal packages. The first three components of
+		the version number match the upstream flot version. The package is designed
+		to meet the redistribution requirements of downstream users (e.g. Debian).
+	</longdescription>
+</pkgmetadata>

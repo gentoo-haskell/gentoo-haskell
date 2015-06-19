@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Sequence a set of Alternative actions in each possible order,
+		based on \&quot;Parsing Permutation Phrases\&quot;, by Arthur Baars,
+		Andres Loeh and S. Doaitse Swierstra, /Haskell Workshop 2001/.
+		This is particularly useful for constructing a parser for
+		permutations of elements.
+		This version has a slightly different interface from the paper.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,107 @@
+:PostID: 43
+:Title: ghc-7.4 in the gentoo tree
+:Keywords: gentoo, ghc, hackage, hackport, overlay
+:Categories: news
+
+A year has passed since last update from gentoo haskell team.
+Quite a few things have happened in haskell land since:
+
+- **ghc-7.2** and **7.4** were released by **GHC HQ**
+- **hackage** got ever increasing ton of package bumps
+- overlay got some of those updates
+- cabal test suite by Thomas Tuegel became more popular
+- and many others!
+
+.. raw:: html
+
+   <!--more-->
+
+ghc-7.4
+-------
+
+Yes! **ghc-7.4.1** is now in main tree (but masked).
+We've just finished building ghc binaries.
+
+Thus far ghc on gentoo is expected to work on:
+
+ **alpha**, **amd64**, **ppc**, **ppc64**, **sparc** and **x86**.
+
+It should also work on **arm**, but you will have to bootstrap it yourself from
+**ghc-7.0.4** binary. It took me 2 days of CPU time. I'll try to build proper
+**armv5** binary a bit later.
+
+**ia64** support was **not** restored yet: it needs either patching **gcc** to support ``-mcmodel-medium``
+or hacking **ghc** **C Codegen** to generate less global objects.
+
+While things generally work in overlay some **~arch** things in main tree are still broken
+against **ghc-7.4.1**. Please, drop a note on **#gentoo-haskell** when
+you find such one. Thanks in advance!
+
+Overlay contributors
+--------------------
+
+For the past year we have got new contributions:
+
+::
+
+  gentoo-haskell $ git shortlog -s -n --since='last year'
+  2048  Mark Wright
+   786  Sergei Trofimovich
+    43  Alexander Vershilov
+    25  Lennart Kolmodin
+     7  Dmitry Dzhus
+     5  Mike Limansky
+     4  Emil Karlson
+     4  jay groven
+     3  Florian Schmaus
+     3  Tom Prince
+     3  exbb2
+     2  Jacques Kvam
+     2  Oleg 'silver' Osipovich
+     1  James Cloos
+     1  Jared Hance
+     1  Keshav Kini
+     1  Naohiro Aota
+     1  Oleg Osipovich
+     1  Perttu Luukko
+     1  Ulya Fokanova
+     1  chiro
+
+First of all, a lot of new names!
+
+Mark became the gentoo developer and now helps haskell and science
+teams to keep the things rolling.
+
+Alexander not only helps us to keep things up-to-date but also
+managed to tweak hackport to generate ``USE=profile`` style depends
+like the following:
+
+::
+
+    RDEPEND="=dev-haskell/conduit-0.2*[profile?]
+             =dev-haskell/stm-2.2*[profile?]
+             =dev-haskell/stm-chans-1.3*[profile?]
+             =dev-haskell/transformers-0.2*[profile?]
+             >=dev-lang/ghc-6.10.1"
+    DEPEND="${RDEPEND}
+            >=dev-haskell/cabal-1.8"
+
+It will help users get less build-time failures when they enable
+profiling only for a subset of haskell libraries (`gentoo bug #341795 <http://bugs.gentoo.org/341795>`_).
+
+I've added a feature to hackport which helps us spy on hackage updates:
+``hackport status --from-hackage``.
+
+The following (clickable) sample output should be selfdescriptive:
+
+.. raw:: html
+
+    <a href="http://slyfox.ath.cx:8081/i/2012-03-11-23-02-41_s.png">
+        <img src="http://slyfox.ath.cx:8081/i/2012-03-11-23-02-41_s.png" width="446px">
+    </a>
+
+You can see there **leksah**, **unordered-containers**, **git-annex** and other updates.
+
+Some upstreams don't upload their releases on hackage.
+Think about it: by uploading you get more users for free, ease distro packaging
+and get more feedback! Thanks!

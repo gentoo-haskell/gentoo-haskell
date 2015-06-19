@@ -1,0 +1,228 @@
+:PostID: 89
+:Title: ghc-7.6: weak symbols and ghci
+:Keywords: gentoo, ghc, ghci, haskell, bug, stat, glibc
+:Categories: news
+
+Time to time internetz stumble upon a **ghci** bug
+which is seen as inability to load **base** **haskell** package:
+
+::
+
+    Loading package ghc-prim ... linking ... done.
+    Loading package integer-gmp ... linking ... done.
+    Loading package base ... linking ... ghc: /usr/lib64/ghc-7.4.2/base-4.5.1.0/HSbase-4.5.1.0.o: unknown symbol `stat'
+    ghc: unable to load package `base'
+
+But the bug was most popular across rare **gentoo** users.
+An interesting correlation!
+
+This post is about the root of this problem:
+the gory implementation details of **ghci** dynamic loader down
+to **libC** and even **ELF** symbols!
+
+Not scared? Fasten your belts and Read On!
+
+.. raw:: html
+
+   <!--more-->
+
+**GHC** (`this one <http://www.haskell.org/ghc/>`_) is both:
+
+1. a compiler (**ghc** binary)
+2. and **REPL** (**ghci** binary)
+
+To put simplistic **ghc** allows you to create final binaries
+out of haskell sources while **ghci** allows runtime loading
+of haskell sources.
+
+Typical session starts like that:
+
+::
+
+    $ ghci
+    GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help
+    Loading package ghc-prim ... linking ... done.
+    Loading package integer-gmp ... linking ... done.
+    Loading package base ... linking ... done.
+    Prelude> <some code to evaluate>
+
+**ghci**'s implementation allows loading arbitrary shared library:
+
+::
+
+    $ ghci -lpcre
+    GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help
+    Loading package ghc-prim ... linking ... done.
+    Loading package integer-gmp ... linking ... done.
+    Loading package base ... linking ... done.
+    Loading object (dynamic) /usr/lib/gcc/x86_64-pc-linux-gnu/4.8.1/../../../../lib64/libpcre.so ... done
+    final link ... done
+    Prelude>
+
+and even object file:
+
+::
+
+    $ echo 'void foo(){}' > a.c &&
+        gcc -c a.c -o a.o &&
+        ghci a.o
+    GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help
+    Loading package ghc-prim ... linking ... done.
+    Loading package integer-gmp ... linking ... done.
+    Loading package base ... linking ... done.
+    Loading object (static) a.o ... done
+    final link ... done
+    Prelude>
+
+**ghci** libraries are basically the same object files built of many source files.
+
+It took me a while reproduce the bug mentioned in the very start of the post.
+First time I've heard of a bug was in December 2012 by nand but I had no idea
+where it comes from.
+
+First I though it was a problem of missing headers somewhere in **C** code due to **glibc**
+upgrade, but no matter what combinations of **binutils**/**gcc**/**glibc** I tried
+bug did not want to show up.
+
+6 months after after some `bugs <http://bugs.gentoo.org/452442>`_ got collected I've noticed
+dreadful **CFLAGS=-Os** common amongst reporters which was a trigger.
+
+Let's explore exported symbol difference of 2 files:
+
+1. CFLAGS=-O2 **/usr/lib64/ghc-7.6.3/base-4.6.0.1/HSbase-4.6.0.1.o**
+2. CFLAGS=-Os **/usr/lib64/ghc-7.6.3/base-4.6.0.1/HSbase-4.6.0.1.o**
+
+::
+
+    $ nm --undefined-only /usr/lib64/ghc-7.6.3/base-4.6.0.1/HSbase-4.6.0.1.o > base-O2
+    $ nm --undefined-only /gentoo/chroots/amd64-unstable//usr/lib64/ghc-7.6.3/base-4.6.0.1/HSbase-4.6.0.1.o > base-Os
+    $ diff -U0 base-O2 base-Os
+    -                 U __fxstat
+    +                 U fstat
+    -                 U __lxstat
+    +                 U lstat
+    -                 U memset
+    -                 U __xstat
+    +                 U stat
+
+Do you see it?
+
+**-Os** build has **stat** call while **-O2** has **__xstat**.
+It was the right track.
+
+Let's try simpler example:
+
+::
+
+    cat >stat-test.c <<-EOF
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <unistd.h>
+    int f()
+    {
+        struct stat s;
+        return stat("/", &s);
+    }
+    EOF
+
+::
+
+     $ gcc -c stat-test.c -Os -o stat-test-Os.o
+     $ gcc -c stat-test.c -O2 -o stat-test-O2.o
+     $ nm --undefined-only stat-test-O[2s].o
+     stat-test-O2.o:
+     U __xstat
+     stat-test-Os.o:
+     U stat
+
+The symbols differ on different types of optimization.
+Let's see if **ghci** treats them differently:
+
+::
+
+     $ ghci stat-test-O2.o
+     ...
+     Loading object (static) stat-test-Os.o ... done
+     final link ... done
+     $ ghci stat-test-Os.o
+     ...
+     final link ... ghc: a.o: unknown symbol `stat'
+     linking extra libraries/objects failed
+
+And it does! It means that **__xstat** comes from **libc.so.6**,
+but **stat** codes from somewhere else.
+
+After some investivation I've found it's definition:
+
+::
+
+    $ nm --defined-only --extern-only /usr/lib/libc_nonshared.a
+    ...
+    stat.oS:
+    00000000 T __i686.get_pc_thunk.bx
+    00000000 W stat
+    00000000 T __stat
+    ...
+
+We see here the file defining two symbols for us:
+
+1. global weak **stat** (the one we really need)
+2. global **__stat** (useless and potentially harmful as it might
+   lead to symbol collision)
+
+Now we can build-up working **stat-test-Os.o** by linking
+that weak **stat** symbol to our **ghci**:
+
+::
+
+    $ ar x /usr/lib/libc_nonshared.a
+    $ mv stat.oS stat.o # ghci dislikes non-'*.o' extensions for object files
+    $ ghci a.o stat.o
+    Loading object (static) a.o ... done
+    Loading object (static) stat.o ... done
+    final link ... ghc: stat.o: unknown symbol `stat'
+
+Almost works! Well, no. Nothing changed.
+But the reason is missing support for loading weak symbols to **ghci**.
+Whick is known as `bug 3333 <http://ghc.haskell.org/trac/ghc/ticket/3333>`_.
+
+I've pulled series of patches by **akio** and actualized it to **ghc-7.6.3**
+(`the result <https://github.com/gentoo-haskell/gentoo-haskell/blob/master/dev-lang/ghc/files/ghc-7.6.3-trac-3333-weak-syms.patch>`_)
+
+After pulling that patch into **ghc** I've got previous example to load on **x86_64**:
+
+::
+
+    $ ar x /usr/lib/libc_nonshared.a
+    $ mv stat.oS stat.o # ghci dislikes non-'*.o' extensions for object files
+    $ ghci a.o stat.o
+    Loading object (static) a.o ... done
+    Loading object (static) stat.o ... done
+    final link ... done
+
+Ideally, I should load all those and only those **libc_nonshared.a** symbols into **ghci**
+as a first library. I've decided to biggyback on **ghc-prim** module and stuff all those
+nonshared symbols `there <https://github.com/gentoo-haskell/gentoo-haskell/blob/master/dev-lang/ghc/ghc-7.6.3-r1.ebuild#L632>`_.
+
+Perhaps, that bit of shell is the worst piece of code I have ever written.
+It weakens all needed symbols, localizes all the rest, and merges the result into **ghc-prim**.
+It also known to break on **i386** as I have hidden **GOT** and module base
+required for **PIC** code.
+
+**ghci**'s loader interface used not only for interactive use but also for
+**TemplateHaskell** (where we have seen **vector** package failing to compile)
+thus.
+
+This post is a great example why using native system's loader is a good idea
+proposed in `bug 4244 <http://ghc.haskell.org/trac/ghc/ticket/4244>`_.
+
+I don't know if it fixes all our cases but it will be way more clean than it is now.
+
+If the workaround will show itself as too fragile I'll have to roll back
+to force **CFLAGS=-O2** when building **ghc**.
+
+**UPDATE:**
+Now **x86** works as well: **libc_nonshared.a** contained **PIC** code thus
+I've picked implementation from **libc.a** `directly <https://github.com/gentoo-haskell/gentoo-haskell/commit/18a4a5a96c5c663799d899caab7ead6cb6534ac9>`_.
+
+Our workaround even passes test from `bug 7072 <http://ghc.haskell.org/trac/ghc/ticket/7072>`_!

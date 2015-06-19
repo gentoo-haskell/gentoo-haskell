@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A complete Haskell binding to the MediaWiki API letting you
+		programmatically access (read and write) MediaWiki content.
+		
+		See &lt;http://www.mediawiki.org/wiki/API&gt; and &lt;http://haskell.forkio.com/&gt;
+		for more.
+	</longdescription>
+</pkgmetadata>

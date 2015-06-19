@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a Haskell interface to the C libmagic library.
+		With it, you can determine the type of a file by examining its contents
+		rather than its name.  The Haskell interface provides a full-featured
+		binding.
+	</longdescription>
+</pkgmetadata>

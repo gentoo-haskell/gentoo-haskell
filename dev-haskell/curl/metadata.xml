@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		libcurl is a client-side URL transfer library, supporting FTP, FTPS, HTTP,
+		HTTPS, SCP, SFTP, TFTP, TELNET, DICT, LDAP, LDAPS and FILE.
+		libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading,
+		HTTP form based upload, proxies, cookies, user+password authentication
+		(Basic, Digest, NTLM, Negotiate, Kerberos4), file transfer resume,
+		http proxy tunneling and more!
+		
+		This package provides a Haskell binding to libcurl.
+	</longdescription>
+</pkgmetadata>

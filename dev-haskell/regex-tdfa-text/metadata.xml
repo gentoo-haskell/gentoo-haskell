@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This provides text interface for regex-tdfa.
+		
+		This should be part of regex-tdfa package. But my patches are not accepted yet.
+		So, I made a separate package. If you are interested in my patches, see
+		&lt;http://hub.darcs.net/shelarcy/regex-base&gt; and &lt;http://hub.darcs.net/shelarcy/regex-tdfa&gt;.
+	</longdescription>
+</pkgmetadata>

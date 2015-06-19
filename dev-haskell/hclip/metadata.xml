@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A small cross-platform library for reading and modifying the system clipboard.
+		
+		Hclip works on Windows, Mac OS X and Linux (but see the requirements below!).
+		
+		Requirements:
+		
+		* Windows: No additional requirements.
+		
+		* Mac OS X: Requires the pbcopy and pbpaste commands, which ship with Mac OS X.
+		
+		* Linux: Requires xclip or xsel installed.
+	</longdescription>
+</pkgmetadata>

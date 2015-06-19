@@ -1,0 +1,25 @@
+Sat Dec 27 23:45:52 GMT 2014  Sergei Trofimovich <slyfox@community.haskell.org>
+  * add Applicative instance for ghc-7.10
+diff -rN -u old-tar/Codec/Archive/Tar/Read.hs new-tar/Codec/Archive/Tar/Read.hs
+--- old-tar/Codec/Archive/Tar/Read.hs	2014-12-27 23:47:03.081416164 +0000
++++ new-tar/Codec/Archive/Tar/Read.hs	2014-12-27 23:47:03.084416159 +0000
+@@ -15,6 +15,8 @@
+ 
+ import Codec.Archive.Tar.Types
+ 
++import Control.Applicative (Applicative(..))
++import Control.Monad       (liftM, ap)
+ import Data.Char     (ord)
+ import Data.Int      (Int64)
+ import Numeric       (readOct)
+@@ -205,3 +207,10 @@
+     Error m >>= _ = Error m
+     Ok    x >>= k = k x
+     fail          = error "fail @(Partial e)"
++
++instance Functor (Partial e) where
++    fmap = liftM
++
++instance Applicative (Partial e) where
++    pure  = return
++    (<*>) = ap

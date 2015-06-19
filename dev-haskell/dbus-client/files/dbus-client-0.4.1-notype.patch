@@ -1,0 +1,12 @@
+diff --git a/hs/DBus/Client.hs b/hs/DBus/Client.hs
+index 26390ed..39356ae 100644
+--- a/hs/DBus/Client.hs
++++ b/hs/DBus/Client.hs
+@@ -184,7 +184,6 @@ data DBusException
+ instance Exc.Exception DBusException
+ 
+ instance E.MonadError DBus where
+-	type E.ErrorType DBus = DBusException
+ 	throwError = MIO.liftIO . Exc.throwIO
+ 	catchError dbus h = do
+ 		c <- getClient

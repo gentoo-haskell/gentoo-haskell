@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides a very simple interface to the DevIL image library.
+		Provides functions readImage and writeImage, which can read
+		and write many image formats from/to an RGBA array of values
+		to work with.
+	</longdescription>
+</pkgmetadata>

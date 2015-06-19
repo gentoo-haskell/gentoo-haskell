@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		manatee-terminal is terminal emulator extension for Manatee (Haskell/Gtk+ Integrated Live Environment)
+		
+		Because VTE widget is not MVC design as Manatee&#39;s framework, so terminal process won&#39;t running in background like other extension, instead terminal process will kill when terminal buffer close by user.
+		
+		VTE widget will replace by MVC design terminal emulator widget in the future, as temporary solution, please make sure command have finish before you close terminal buffer, i warning you. :)
+		
+		Video (Select 720p HD) at : &lt;http://www.youtube.com/watch?v=weS6zys3U8k&gt; &lt;http://www.youtube.com/watch?v=A3DgKDVkyeM&gt; &lt;http://v.youku.com/v_show/id_XMjI2MDMzODI4.html&gt;
+		
+		Screenshots at : &lt;http://goo.gl/MkVw&gt;
+		
+		Manual at : &lt;http://haskell.org/haskellwiki/Manatee&gt;
+		
+		IRC channel: irc.freenode.net 6667 &lt;##manatee&gt;
+		
+		Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
+		
+	</longdescription>
+</pkgmetadata>

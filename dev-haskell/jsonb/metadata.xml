@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This parser consumes lazy ByteStrings to produce JSON in a simple, efficient
+		format backed with strict ByteStrings, Rationals and ByteString tries. See
+		the schema generation tools and the command line JSON schema generator (in
+		the examples subdir) for an example of how to use the parsing tools.
+		
+		Have you considered @aeson@ (&lt;http://hackage.haskell.org/package/aeson&gt;), a
+		newer, extensively benchmarked JSON parsing library?
+	</longdescription>
+</pkgmetadata>

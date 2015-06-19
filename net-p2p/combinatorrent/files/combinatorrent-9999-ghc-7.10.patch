@@ -1,0 +1,90 @@
+diff --git a/src/Data/PieceSet.hs b/src/Data/PieceSet.hs
+index df30e4b..d497db8 100644
+--- a/src/Data/PieceSet.hs
++++ b/src/Data/PieceSet.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE FlexibleContexts #-}
+ -- | Module for the representation of PieceSets. Exist so we can abstract on the implementation later
+ module Data.PieceSet
+     ( PieceSet
+diff --git a/src/Process.hs b/src/Process.hs
+index 50ebe1c..80a0dd4 100644
+--- a/src/Process.hs
++++ b/src/Process.hs
+@@ -25,6 +25,7 @@ module Process (
+     )
+ where
+ 
++import Control.Applicative
+ import Control.Concurrent
+ import Control.Exception
+ 
+@@ -42,7 +43,7 @@ import System.Log.Logger
+ --   channels, and the state the internal process state. It is implemented by means of a transformer
+ --   stack on top of IO.
+ newtype Process a b c = Process (ReaderT a (StateT b IO) c)
+-  deriving (Functor, Monad, MonadIO, MonadState b, MonadReader a)
++  deriving (Functor, Applicative, Monad, MonadIO, MonadState b, MonadReader a)
+ 
+ data StopException = StopException
+   deriving (Show, Typeable)
+diff --git a/src/Process/ChokeMgr.hs b/src/Process/ChokeMgr.hs
+index a4717c4..5bab35e 100644
+--- a/src/Process/ChokeMgr.hs
++++ b/src/Process/ChokeMgr.hs
+@@ -50,7 +50,8 @@ data ChokeMgrMsg = Tick
+                  | TorrentComplete InfoHash
+                    -- ^ Note that the torrent in question is complete
+ 
+-instance NFData ChokeMgrMsg
++instance NFData ChokeMgrMsg where
++    rnf x = seq x ()
+ 
+ 
+ type ChokeMgrChannel = TChan ChokeMgrMsg
+diff --git a/src/Process/Peer.hs b/src/Process/Peer.hs
+index c2175ab..288e07a 100644
+--- a/src/Process/Peer.hs
++++ b/src/Process/Peer.hs
+@@ -1,5 +1,6 @@
+ -- | Peer proceeses
+ {-# LANGUAGE ScopedTypeVariables, BangPatterns #-}
++{-# LANGUAGE FlexibleContexts #-}
+ module Process.Peer (
+     -- * Interface
+       Process.Peer.start
+diff --git a/src/Process/PeerMgr.hs b/src/Process/PeerMgr.hs
+index 17705f5..3343396 100644
+--- a/src/Process/PeerMgr.hs
++++ b/src/Process/PeerMgr.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE TupleSections #-}
++{-# LANGUAGE CPP #-}
+ module Process.PeerMgr (
+    -- * Types
+      Peer(..)
+@@ -49,8 +50,10 @@ data TorrentLocal = TorrentLocal
+                         , tcPM      :: !PieceMap
+                         }
+ 
++#if ! MIN_VERSION_deepseq(1,4,0)
+ instance NFData ThreadId where
+     rnf x = x `seq` ()
++#endif
+ 
+ type PeerMgrChannel = TChan PeerMgrMsg
+ 
+diff --git a/src/Torrent.hs b/src/Torrent.hs
+index 9491829..7e5ccb1 100644
+--- a/src/Torrent.hs
++++ b/src/Torrent.hs
+@@ -66,7 +66,8 @@ data TorrentInfo = TorrentInfo {
+ data TorrentState = Seeding | Leeching
+     deriving Show
+ 
+-instance NFData TorrentState
++instance NFData TorrentState where
++    rnf x = seq x ()
+ 
+ ----------------------------------------------------------------------
+ -- Capabilities

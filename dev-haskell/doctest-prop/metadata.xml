@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package allows you to write QuickCheck properties and HUnit
+		assertions within doctest, using functions that keep silence when
+		test succeeds and print out the test outputs otherwise.
+		
+		To enjoy behavior driven development in Haskell, first import
+		@Test.DocTest.Prop@, and use @prop@, @propWith@ and @unit@ to write
+		in-place tests. For more details, please refer to examples in the
+		module @Test.DocTest.Prop@ .
+	</longdescription>
+</pkgmetadata>

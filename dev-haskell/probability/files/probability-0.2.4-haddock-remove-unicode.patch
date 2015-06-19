@@ -1,0 +1,20 @@
+--- probability-0.2.4-orig/src/Numeric/Probability/Example/Kruskal.hs	2012-04-09 22:12:05.000000000 +1000
++++ probability-0.2.4/src/Numeric/Probability/Example/Kruskal.hs	2012-04-11 18:59:10.464788215 +1000
+@@ -154,14 +154,14 @@
+ 
+ {- |
+ 'gameLeastScore' can be written in terms of a matrix power.
+-For n pips we need a n² × n² matrix.
+-Using symmetries, we reduce it to a square matrix with size n·(n+1)/2.
++For n pips we need a n^2 × n^2 matrix.
++Using symmetries, we reduce it to a square matrix with size n(n+1)/2.
+ 
+ / p[n+1,(n+1,n+1)] \          / p[n,(n+0,n+0)] \
+ | p[n+1,(n+1,n+2)] |          | p[n,(n+0,n+1)] |
+ | p[n+1,(n+1,n+3)] |          | p[n,(n+0,n+2)] |
+ |        ...       |          |       ...      |
+-| p[n+1,(n+1,n+6)] |  = M/6 · | p[n,(n+0,n+5)] |
++| p[n+1,(n+1,n+6)] |  = M/6 * | p[n,(n+0,n+5)] |
+ | p[n+1,(n+2,n+2)] |          | p[n,(n+1,n+1)] |
+ |        ...       |          |       ...      |
+ | p[n+1,(n+2,n+6)] |          | p[n,(n+1,n+5)] |

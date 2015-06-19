@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A Haskell binding for the OpenAL Utility Toolkit, which makes
+		managing of OpenAL contexts, loading sounds in various formats
+		and creating waveforms very easy. For more information about the
+		C library on which this binding is based, please see:
+		&lt;http://connect.creativelabs.com/openal/Documentation/The%20OpenAL%20Utility%20Toolkit.pdf&gt;.
+	</longdescription>
+</pkgmetadata>

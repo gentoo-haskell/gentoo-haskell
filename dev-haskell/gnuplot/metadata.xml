@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is a wrapper to gnuplot
+		which lets you create 2D and 3D plots.
+		
+		Start a simple session with @make ghci@.
+		This loads the module &quot;Graphics.Gnuplot.Simple&quot;
+		which is ready for use in GHCi.
+		It does not address all fancy gnuplot features
+		in order to stay simple.
+		For more sophisticated plots,
+		especially batch generated graphics,
+		I recommend &quot;Graphics.Gnuplot.Advanced&quot;.
+		This module contains also an overview
+		of the hierarchy of objects.
+		
+		Examples for using this interface can be found in the &quot;Demo&quot; module.
+		In order to compile this and install an example data file,
+		use the Cabal flag @buildExamples@:
+		
+		&gt; $ cabal install -fbuildExamples gnuplot
+		
+		With the Cabal flags executePipe and executeShell
+		you can switch to more convenient
+		but probably less portable ways
+		of feeding gnuplot with a script.
+	</longdescription>
+	<use>
+		<flag name="buildexamples">Build test executables.</flag>
+		<flag name="buildtests">Build example executables.</flag>
+		<flag name="executepipe">Avoid a temporary script by running with runInteractiveProcess.</flag>
+		<flag name="executeshell">Avoid a temporary script by calling via a UNIX shell and its piping syntax.</flag>
+	</use>
+</pkgmetadata>

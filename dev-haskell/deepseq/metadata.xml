@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides methods for fully evaluating data structures
+		(\&quot;deep evaluation\&quot;). Deep evaluation is often used for adding
+		strictness to a program, e.g. in order to force pending exceptions,
+		remove space leaks, or force lazy I/O to happen. It is also useful
+		in parallel programs, to ensure pending work does not migrate to the
+		wrong thread.
+		
+		The primary use of this package is via the &#39;deepseq&#39; function, a
+		\&quot;deep\&quot; version of &#39;seq&#39;. It is implemented on top of an &#39;NFData&#39;
+		typeclass (\&quot;Normal Form Data\&quot;, data structures with no unevaluated
+		components) which defines strategies for fully evaluating different
+		data types.
+		
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		An implementation of multi-prompt delimited continuations based
+		on the paper, /A Monadic Framework for Delimited Continuations/,
+		by R. Kent Dybvig, Simon Peyton Jones and Amr Sabry
+		(&lt;http://www.cs.indiana.edu/~sabry/papers/monadicDC.pdf&gt;).
+		It also includes a corresponding implementation of dynamically
+		scoped variables, as implemented in the paper,
+		/Delimited Dynamic Binding/, by Oleg Kiselyov, Chung-chieh Shan
+		and Amr Sabry
+		(&lt;http://okmij.org/ftp/papers/DDBinding.pdf&gt;),
+		adapted from the original haskell code,
+		(&lt;http://okmij.org/ftp/packages/DBplusDC.tar.gz&gt;).
+	</longdescription>
+</pkgmetadata>

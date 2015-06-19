@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		An alternative implementation of the graphics library used in the book The Haskell
+		School of Expression, by Paul Hudak, &lt;http://www.haskell.org/soe/
+		This library builds on top of Gtk+.
+	</longdescription>
+</pkgmetadata>

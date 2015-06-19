@@ -1,0 +1,119 @@
+diff --git a/Commands/Download.hs b/Commands/Download.hs
+index f3c3e74..a335577 100644
+--- a/Commands/Download.hs
++++ b/Commands/Download.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {- hpodder component
+ Copyright (C) 2006-2008 John Goerzen <jgoerzen@complete.org>
+ 
+@@ -150,7 +151,12 @@ watchTheFiles progressinterval watchFilesMV =
+ procEpisode gi meter dltok ep name r =
+        case r of
+          (Success, _) -> procSuccess gi ep (tokpath dltok)
+-         (Failure, Terminated sigINT) -> 
++         (Failure, Terminated sigINT
++#if MIN_VERSION_unix(2,7,0)
++                                     _ -- Bool did core dump?
++#endif
++
++           ) -> 
+              do i "Ctrl-C hit; aborting!"
+                 -- Do not consider Ctrl-C a trackable error
+                 exitFailure
+@@ -301,7 +307,12 @@ runHook fn script =
+        case status of
+          Nothing -> fail "No status unexpected."
+          Just (Stopped _) -> fail "Stopped process unexpected."
+-         Just (Terminated sig) -> fail (printf "Post-hook \"%s\" terminated by signal %s" script (show sig))
++         Just (Terminated sig
++#if MIN_VERSION_unix(2,7,0)
++                              _ -- Bool did core dump?
++#endif
++
++                               ) -> fail (printf "Post-hook \"%s\" terminated by signal %s" script (show sig))
+          Just (Exited (ExitFailure code)) -> fail (printf "Post-hook \"%s\" failed with exit code %s" script (show code))
+          Just (Exited ExitSuccess) -> return ()
+     where runScript =
+@@ -347,7 +358,7 @@ findNonExisting template =
+ 
+ helptext = "Usage: hpodder download [castid [castid...]]\n\n" ++ 
+            genericIdHelp ++
+- "\nThe download command will cause hpodder to download any podcasts\n\
+- \episodes that are marked Pending.  Such episodes are usually generated\n\
+- \by a prior call to \"hpodder update\".  If you want to combine an update\n\
+- \with a download, as is normally the case, you may want \"hpodder fetch\".\n"
++ "\nThe download command will cause hpodder to download any podcasts\n" ++
++ "episodes that are marked Pending.  Such episodes are usually generated\n" ++
++ "by a prior call to \"hpodder update\".  If you want to combine an update\n" ++
++ "with a download, as is normally the case, you may want \"hpodder fetch\".\n"
+diff --git a/Commands/Update.hs b/Commands/Update.hs
+index d9b42bb..c36fb5b 100644
+--- a/Commands/Update.hs
++++ b/Commands/Update.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {- hpodder component
+ Copyright (C) 2006-2007 John Goerzen <jgoerzen@complete.org>
+ 
+@@ -89,7 +90,11 @@ updateThePodcast gi pt meter dlentry dltok status result =
+        case feed of
+          Nothing ->                         -- some problem with the feed
+            case status of 
+-             Terminated sigINT -> return () -- Ctrl-C is not a tackable error
++             Terminated sigINT
++#if MIN_VERSION_unix(2,7,0)
++                             _ -- Bool did core dump?
++#endif
++               -> return () -- Ctrl-C is not a tackable error
+              _ -> do curtime <- now
+                      let newpc = considerDisable gi
+                            (pc {lastattempt = Just curtime,
+@@ -157,14 +162,19 @@ getFeed meter pc (result, status) dltok =
+                                  " *** " ++ (show . castid $ pc) ++ 
+                                  ": Failure parsing feed: " ++ x ++ "\n"
+                                return Nothing
+-         (Failure, Terminated sigINT) -> do w "\n   Ctrl-C hit; aborting!"
+-                                            exitFailure
++         (Failure, Terminated sigINT
++#if MIN_VERSION_unix(2,7,0)
++                                      _ -- Bool did core dump?
++#endif
++
++                                       ) -> do w "\n   Ctrl-C hit; aborting!"
++                                               exitFailure
+          _ -> do writeMeterString stderr meter $
+                   " *** " ++ (show . castid $ pc) ++ ": Failure downloading feed\n"
+                  return Nothing
+ 
+ helptext = "Usage: hpodder update [castid [castid...]]\n\n" ++ genericIdHelp ++
+- "\nRunning update will cause hpodder to look at each requested podcast.  It\n\
+- \will download the feed for each one and update its database of available\n\
+- \episodes.  It will not actually download any episodes; see the download\n\
+- \command for that."
++ "\nRunning update will cause hpodder to look at each requested podcast.  It\n" ++
++ "will download the feed for each one and update its database of available\n" ++
++ "episodes.  It will not actually download any episodes; see the download\n" ++
++ "command for that."
+diff --git a/Download.hs b/Download.hs
+index 35fea2a..11c5f0f 100644
+--- a/Download.hs
++++ b/Download.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {- hpodder component
+ Copyright (C) 2006-2007 John Goerzen <jgoerzen@complete.org>
+ 
+@@ -119,7 +120,11 @@ finishGetURL dltok ec =
+        let r = case ec of
+                   Exited ExitSuccess -> Success
+                   Exited (ExitFailure i) -> Failure
+-                  Terminated _ -> Failure
++                  Terminated _
++#if MIN_VERSION_unix(2,7,0)
++                             _ -- Bool did core dump?
++#endif
++                            -> Failure
+                   Stopped _ -> Failure
+        if r == Success
+           then do d $ "curl returned successfully; new size is " ++

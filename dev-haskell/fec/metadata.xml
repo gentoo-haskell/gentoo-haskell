@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This code, based on zfec by Zooko, based on code by Luigi
+		Rizzo implements an erasure code, or forward error
+		correction code. The most widely known example of an erasure
+		code is the RAID-5 algorithm which makes it so that in the
+		event of the loss of any one hard drive, the stored data can
+		be completely recovered.  The algorithm in the zfec package
+		has a similar effect, but instead of recovering from the loss
+		of only a single element, it can be parameterized to choose in
+		advance the number of elements whose loss it can tolerate.
+	</longdescription>
+</pkgmetadata>

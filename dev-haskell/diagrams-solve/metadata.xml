@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Pure Haskell solver routines used by the diagrams
+		project.  Currently includes finding real roots
+		of low-degree (n &lt; 5) polynomials, and solving
+		tridiagonal and cyclic tridiagonal linear
+		systems.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		libzip is a C library for reading, creating, and modifying zip archives.
+		This package allows to use it from Haskell code.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Instances of the numerical classes for a variety of
+		different numbers: (computable) real numbers,
+		arbitrary precision fixed numbers,
+		arbitrary precision floating point numbers,
+		differentiable numbers, symbolic numbers,
+		natural numbers, interval arithmetic.
+	</longdescription>
+</pkgmetadata>

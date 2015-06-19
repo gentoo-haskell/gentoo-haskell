@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This module provides a generic infrastructure for supporting storage
+		of hash-like items with String-to-String mappings.  It can be used
+		for in-memory or on-disk storage.
+		
+		Two simple backend drivers are included with this package: one
+		that is RAM-only, and one that is persistent and disk-backed.
+		The hdbc-anydbm package provides another driver, which lets you use
+		simple tables in any SQL database to provide a DBM-like interface.
+		MissingPy also provides a Python driver which lets you use any
+		Python anydbm driver under Haskell AnyDBM.
+	</longdescription>
+</pkgmetadata>

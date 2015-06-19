@@ -1,0 +1,38 @@
+Mon May 12 10:15:45 FET 2014  Sergei Trofimovich <slyfox@community.haskell.org>
+  * Fixer/VMap: avoid clashing with Data.Typeable.Proxy
+  
+  Fails on ghc-7.8 thusly:
+  [ 83 of 182] Compiling Fixer.VMap       ( src/Fixer/VMap.hs, src/Fixer/VMap.o )
+  
+  src/Fixer/VMap.hs:29:28:
+      Ambiguous occurrence 'Proxy'
+      It could refer to either 'Fixer.VMap.Proxy',
+                               defined at src/Fixer/VMap.hs:33:1
+                            or 'Data.Typeable.Proxy',
+                               imported from 'Data.Typeable' at src/Fixer/VMap.hs:16:1-20
+                               (and originally defined in 'Data.Proxy')
+diff -rN -u old-jhc/src/Fixer/VMap.hs new-jhc/src/Fixer/VMap.hs
+--- old-jhc/src/Fixer/VMap.hs	2014-05-12 10:22:53.867378136 +0300
++++ new-jhc/src/Fixer/VMap.hs	2014-05-12 10:22:54.129378149 +0300
+@@ -13,7 +13,7 @@
+     )where
+ 
+ import Data.Monoid(Monoid(..))
+-import Data.Typeable
++import qualified Data.Typeable as T -- qualified to avoid clashing with T.Proxy
+ import List(intersperse)
+ import qualified Data.Map as Map
+ import qualified Data.Set as Set
+@@ -28,10 +28,10 @@
+     vmapArgs    :: Map.Map (n,Int) (VMap p n),
+     vmapNodes   :: Either (Proxy p) (Set.Set n)
+     }
+-    deriving(Typeable)
++    deriving(T.Typeable)
+ 
+ data Proxy p = Proxy p | DepthExceeded
+-    deriving(Eq,Ord,Typeable)
++    deriving(Eq,Ord,T.Typeable)
+ 
+ instance Show p => Show (Proxy p) where
+     showsPrec n (Proxy p) = showsPrec n p

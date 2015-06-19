@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		(ab)Use Google Translate as a speech synthesiser.
+		Downloads mp3s from Google Translate with whatever
+		you wanted synthesised, and plays them with mpg123.
+	</longdescription>
+</pkgmetadata>

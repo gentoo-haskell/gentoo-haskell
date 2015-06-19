@@ -1,0 +1,28 @@
+Fix build failure agains ghc-7.6:
+
+[2 of 5] Compiling Spread.Client.Message ( Spread/Client/Message.hs, dist/build/Spread/Client/Message.o )
+
+Spread/Client/Message.hs:232:24:
+    Could not deduce (Num a) arising from the literal `0'
+    from the context (Bits a)
+      bound by the type signature for isSet :: Bits a => a -> a -> Bool
+      at Spread/Client/Message.hs:231:10-35
+    Possible fix:
+      add (Num a) to the context of
+        the type signature for isSet :: Bits a => a -> a -> Bool
+    In the second argument of `(/=)', namely `0'
+    In the expression: t .&. f /= 0
+    In an equation for `isSet': isSet f t = t .&. f /= 0
+diff --git a/Spread/Client/Message.hs b/Spread/Client/Message.hs
+index fcad57d..8ebd379 100644
+--- a/Spread/Client/Message.hs
++++ b/Spread/Client/Message.hs
+@@ -228,7 +228,7 @@ getInt :: Get Word32
+ getInt = getWord32host
+ putInt :: Word32 -> Put
+ putInt = putWord32host
+-isSet :: (Bits a) => a -> a -> Bool
++isSet :: (Num a, Bits a) => a -> a -> Bool
+ isSet f t = t .&. f /= 0
+ 
+ class Sendable a where

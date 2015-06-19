@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A library for efficiently rendering Haskell datatypes to
+		bytestrings.
+		
+		/Note/: if you use GHCi or Template Haskell, please see the
+		@README@ file for important details about building this package,
+		and other packages that depend on it:
+		&lt;https://github.com/bos/blaze-textual#readme&gt;
+	</longdescription>
+</pkgmetadata>

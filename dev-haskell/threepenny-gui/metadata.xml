@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Threepenny-GUI is a GUI framework that uses the web browser as a display.
+		
+		It&#39;s cheap and easy to install because everyone has a web browser installed.
+		
+		Internally, the library implements a small web server
+		that serves a HTML/JavaScript page with the GUI elements.
+		You can freely manipulate the HTML DOM and handle browser events
+		from your Haskell code.
+		
+		Stability forecast: This is an experimental release! Send us your feedback!
+		Significant API changes are likely in future versions.
+		
+		NOTE: This library contains examples, but they are not built by default.
+		To build and install the example, use the @buildExamples@ flag like this
+		
+		@cabal install threepenny-gui -fbuildExamples@
+	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables.</flag>
+		<flag name="network-uri">Use network-uri library.</flag>
+		<flag name="rebug">Expose more bugs related to non-determinism.</flag>
+	</use>
+</pkgmetadata>

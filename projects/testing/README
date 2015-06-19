@@ -1,0 +1,5 @@
+This directory hierarchy is for tracking testing activities of interest
+to the gentoo-haskell team.  Feel free to put things here like test suite
+runs, test matrices for packages, and so on.  We should probably organize
+this better, but this is a start.
+

@@ -1,0 +1,30 @@
+diff --git a/Network/SimpleIRC/Core.hs b/Network/SimpleIRC/Core.hs
+index 9560f30..cb034ce 100644
+--- a/Network/SimpleIRC/Core.hs
++++ b/Network/SimpleIRC/Core.hs
+@@ -47,6 +47,7 @@ import Control.Monad
+ import Control.Concurrent
+ import Control.Concurrent.Chan
+ import Control.Concurrent.MVar
++import qualified Control.Exception as E
+ import Network.SimpleIRC.Messages
+ import Data.Unique
+ import System.IO.Error
+@@ -143,7 +144,7 @@ connect :: IrcConfig       -- ^ Configuration
+            -> Bool         -- ^ Run in a new thread
+            -> Bool         -- ^ Print debug messages
+            -> IO (Either IOError MIrc) -- ^ IrcServer instance
+-connect config threaded debug = try $ do
++connect config threaded debug = E.try $ do
+   (when debug $
+     B.putStrLn $ "Connecting to " `B.append` B.pack (cAddr config))
+   
+@@ -181,7 +182,7 @@ disconnect server quitMsg = do
+ 
+ -- |Reconnects to the server.
+ reconnect :: MIrc -> IO (Either IOError MIrc)
+-reconnect mServer = try $ do
++reconnect mServer = E.try $ do
+   server <- readMVar mServer
+   
+   h <- connectTo (B.unpack $ sAddr server) (PortNumber $ fromIntegral $ sPort server)

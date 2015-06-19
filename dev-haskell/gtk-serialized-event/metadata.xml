@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		For communicate GTK+ event in multi-processes GTK+ program,
+		we can use &quot;serializeEvent&quot; serialized event at *server* process,
+		then pass serialized event over the network, when *client* process receive
+		serialized event from the network, we can use &quot;deserializeEvent serializedEvent mainDoEvent&quot;
+		re-emit same event at *client* side.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Provides a very minimal interface to the audio module of sfml.
+		Currently, only the playing of sounds is covered.
+		Playing background music is not yet supported, but planned.
+		(sfml is a multimedia library: &lt;http://www.sfml-dev.org/&gt;)
+	</longdescription>
+</pkgmetadata>

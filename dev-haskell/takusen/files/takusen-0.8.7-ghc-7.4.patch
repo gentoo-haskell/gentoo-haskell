@@ -1,0 +1,11 @@
+--- Takusen-0.8.7-orig/Database/Util.lhs	2011-01-27 02:42:43.000000000 +1100
++++ Takusen-0.8.7/Database/Util.lhs	2012-02-09 16:11:01.191792995 +1100
+@@ -210,7 +210,7 @@
+ >      , (parts !! 3), (parts !! 4), secs, tz)
+ 
+ 
+-> utcTimeToIsoString :: (Integral a, Integral b) =>
++> utcTimeToIsoString :: (Integral a, Show a, Integral b) =>
+ >   UTCTime -> String -> (a -> a) -> (b -> String) -> String
+ > utcTimeToIsoString utc dtSep adjYear mkSuffix =
+ >   let

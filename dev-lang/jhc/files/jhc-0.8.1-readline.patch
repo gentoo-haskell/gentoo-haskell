@@ -1,0 +1,29 @@
+Mon May 12 10:21:14 FET 2014  Sergei Trofimovich <slyfox@community.haskell.org>
+  * Util.Interact: fix build failure against readline
+  
+  On ghc with both readline and editline enabled fails thusly:
+  [ 84 of 182] Compiling Util.Interact    ( src/Util/Interact.hs, src/Util/Interact.o )
+  
+  src/Util/Interact.hs:41:5:
+      Not in scope: 'setCompletionEntryFunction'
+  
+  src/Util/Interact.hs:42:10:
+      Not in scope: 'readline'
+      Perhaps you meant one of these:
+        'readLine' (line 40), 'readFile' (imported from IO)
+  
+  src/Util/Interact.hs:46:19: Not in scope: 'addHistory'
+  src/Util/Interact.hs:154:29: Not in scope: 'addHistory'
+  src/Util/Interact.hs:188:19: Not in scope: 'addHistory'
+diff -rN -u old-jhc/src/Util/Interact.hs new-jhc/src/Util/Interact.hs
+--- old-jhc/src/Util/Interact.hs	2014-05-12 10:23:06.760378792 +0300
++++ new-jhc/src/Util/Interact.hs	2014-05-12 10:23:07.033378806 +0300
+@@ -23,7 +23,7 @@
+ import IO
+ #if    USE_EDITLINE
+    ;import System.Console.Editline.Readline
+-#elif  USE_NOLINE
++#elif  USE_READLINE
+    ;import System.Console.Readline
+ #endif
+ 

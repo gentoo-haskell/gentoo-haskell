@@ -1,0 +1,268 @@
+--- manatee-core-0.1.1-orig/Manatee/Toolkit/General/DBus.hs	2011-05-14 14:17:05.000000000 +1000
++++ manatee-core-0.1.1/Manatee/Toolkit/General/DBus.hs	2011-07-25 00:31:29.998787558 +1000
+@@ -58,7 +58,7 @@
+ 
+ -- | Build system bus client.
+ mkSystemClient :: IO Client                      
+-mkSystemClient = mkClient =<< getSystemBus
++mkSystemClient = newClient =<< getSystemBus
+ 
+ -- | Build system bus client with name.
+ mkSystemClientWithName :: Text -> IO Client
+@@ -69,7 +69,7 @@
+ 
+ -- | Build session bus client.
+ mkSessionClient :: IO Client                      
+-mkSessionClient = mkClient =<< getSessionBus
++mkSessionClient = newClient =<< getSessionBus
+ 
+ -- | Build session bus client with name.
+ mkSessionClientWithName :: Text -> IO Client
+@@ -80,23 +80,23 @@
+ 
+ -- | Build starter bus client.
+ mkStarterClient :: IO Client                      
+-mkStarterClient = mkClient =<< getStarterBus
++mkStarterClient = newClient =<< getStarterBus
+ 
+ -- | Request name.
+ requestName' :: Client -> BusNameText -> [DNR.RequestNameFlag] -> IO DNR.RequestNameReply
+-requestName' client name = requestName client (mkBusName_ name)
++requestName' client name f = runDBus client (requestName_ (mkBusName_ name) f)
+ 
+ -- | Build LoaclObject with Text information, handy!.
+-mkLocalObject :: [(InterfaceNameText, [(MemberNameText, Member)])] -> LocalObject
+-mkLocalObject list = LocalObject $ M.fromList $ zip interfaceName interface
++mkLocalObject :: [(InterfaceNameText, [(MemberNameText, Member)])] -> Object
++mkLocalObject list = Object $ M.fromList $ zip interfaceName interface
+     where interfaceNameList = fst $ unzip list                       -- [InterfaceNameText]
+           interfaceList     = snd $ unzip list                       -- [[(MemberNameText, Member)]]
+           interfaceName     = map mkInterfaceName_ interfaceNameList -- [interfaceName]
+           interface         = map (Interface . M.fromList . map (first mkMemberName_)) interfaceList -- [Interface]
+ 
+ -- | Like `export`, but instead ObjectPath with ObjectPathText.
+-export' :: Client -> ObjectPathText -> LocalObject -> IO ()
+-export' client path = export client (mkObjectPath_ path)
++export' :: Client -> ObjectPathText -> Object -> IO ()
++export' client path obj = runDBus client (export (mkObjectPath_ path) obj)
+ 
+ -- | Export LocalObject.
+ exportLocalObject :: Client -> ObjectPathText -> [(InterfaceNameText, [(MemberNameText, Member)])] -> IO ()
+@@ -122,10 +122,10 @@
+ -- | Create Signal Memeber.
+ mkSignalMember :: SignatureText -> Member            
+ mkSignalMember = 
+-  DC.Signal . mkSignature_
++  DC.MemberSignal . mkSignature_
+ 
+ -- | Create Method Member.
+-mkMethodMember :: SignatureText -> SignatureText -> (MethodCall -> IO ()) -> Member
++mkMethodMember :: SignatureText -> SignatureText -> (MethodCtx -> DBus ()) -> Method
+ mkMethodMember input output = 
+     DC.Method (mkSignature_ input) (mkSignature_ output)
+ 
+@@ -146,7 +146,7 @@
+ isBusNameExist busName = do
+   -- Request a list of connected clients from the bus
+   client <- mkSessionClient
+-  reply  <- callProxyBlocking_ client dbus "ListNames" [] []
++  reply  <- runDBus client (callProxyBlocking_ dbus "ListNames" [] [])
+ 	
+   -- Get bus name list.
+   let names = fromMaybe [] (fromArray =<< fromVariant (head $ messageBody reply))
+@@ -155,4 +155,4 @@
+   return (busName `elem` names)
+       where 
+         dbus :: Proxy
+-        dbus = Proxy (RemoteObject "org.freedesktop.DBus" "/org/freedesktop/DBus") "org.freedesktop.DBus"
++        dbus = Proxy "org.freedesktop.DBus" "/org/freedesktop/DBus" "org.freedesktop.DBus"
+--- manatee-core-0.1.1-orig/Manatee/Core/DBus.hs	2011-05-14 14:17:05.000000000 +1000
++++ manatee-core-0.1.1/Manatee/Core/DBus.hs	2011-07-25 20:51:37.491032814 +1000
+@@ -23,6 +23,7 @@
+ 
+ import Control.Concurrent.MVar
+ import Control.Monad
++import Control.Monad.Trans (liftIO)
+ import DBus.Client hiding (Signal)
+ import DBus.MatchRule
+ import DBus.Message (Signal, signalBody, MethodReturn, Error)
+@@ -139,6 +140,9 @@
+ -- Return False if mismatch.
+ mkFunDec "checkDaemonBroadcastSignalArgs" (checkSignalArgs ''DaemonBroadcastMember ''DaemonBroadcastSignalArgs)
+ 
++emitSignal :: Client -> Signal -> IO ()
++emitSignal c s = runDBus c (send_ s)
++
+ -- | Build daemon broadcast signal.
+ mkDaemonBroadcastSignal :: Client -> DaemonBroadcastMember -> DaemonBroadcastSignalArgs -> IO ()
+ mkDaemonBroadcastSignal client memberName args 
+@@ -156,8 +160,8 @@
+ -- | Build daemon broadcast match rule.
+ mkDaemonBroadcastMatchRule :: Client -> (DaemonBroadcastMember, DaemonBroadcastSignalArgs -> IO ()) -> IO ()
+ mkDaemonBroadcastMatchRule client (member, fun) =
+-    onSignal client matchRule $ \_ signal -> 
+-        pickDaemonBroadcastSignalArgs member signal >?>= fun
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickDaemonBroadcastSignalArgs member signal >?>= (liftIO . fun))
+         where matchRule = mkMatchRule
+                           (Just Signal) 
+                           TL.empty
+@@ -187,8 +191,8 @@
+ mkDaemonMatchRule :: Client -> (DaemonMember, DaemonSignalArgs -> IO ()) -> IO ()
+ mkDaemonMatchRule client (member, fun) = 
+     -- Use postGUIAsync wrap DBus action to protect gtk+ main thread. 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickDaemonSignalArgs member signal >?>= (postGUIAsync . fun)
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickDaemonSignalArgs member signal >?>= (liftIO . postGUIAsync . fun))
+         where matchRule = mkMatchRule
+                           (Just Signal) 
+                           TL.empty 
+@@ -203,22 +207,22 @@
+ mkDaemonMatchRules client = mapM_ (mkDaemonMatchRule client)
+ 
+ -- | Pick DaemonSignalArgs.
+-pickDaemonSignalArgs :: DaemonMember -> Signal -> IO (Maybe DaemonSignalArgs)          
++pickDaemonSignalArgs :: DaemonMember -> Signal -> DBus (Maybe DaemonSignalArgs)          
+ pickDaemonSignalArgs member signal = 
+-  Exc.catch 
++  liftIO (Exc.catch 
+      (return $ unpackDaemonSignalArgs member $ signalBody signal)
+      (\ (_ :: Exc.SomeException) -> 
+         printDBusMessageError "pickDaemonSignalArgs" (show member)
+-        >> return Nothing)
++        >> return Nothing))
+ 
+ -- | Pick DaemonBroadcastSignalArgs.
+-pickDaemonBroadcastSignalArgs :: DaemonBroadcastMember -> Signal -> IO (Maybe DaemonBroadcastSignalArgs)          
++pickDaemonBroadcastSignalArgs :: DaemonBroadcastMember -> Signal -> DBus (Maybe DaemonBroadcastSignalArgs)          
+ pickDaemonBroadcastSignalArgs member signal = 
+-    Exc.catch
++    liftIO (Exc.catch
+        (return $ unpackDaemonBroadcastSignalArgs member $ signalBody signal)
+        (\ (_ :: Exc.SomeException) -> 
+           printDBusMessageError "pickDaemonBroadcastSignalArgs" (show member)
+-          >> return Nothing)
++          >> return Nothing))
+ 
+ -- | Build render signal.
+ -- If signal argument not match render member name.
+@@ -251,8 +255,8 @@
+                         (mkRenderClientName processId)
+                         []
+     -- Use postGUIAsync wrap DBus action to protect gtk+ main thread. 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickRenderSignalArgs member signal >?>= (postGUIAsync . fun)
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickRenderSignalArgs member signal >?>= (liftIO . postGUIAsync . fun))
+ 
+ -- | Build render process match rule for catch signal.
+ -- Simliar 'mkRenderMatchRule', but don't use 'postGUIAsync' wrap all signal handler.
+@@ -269,21 +273,21 @@
+                         renderPathName
+                         (mkRenderClientName processId)
+                         []
+-    onSignal client matchRule $ \_ signal -> 
+-        pickRenderSignalArgs member signal >?>= fun
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickRenderSignalArgs member signal >?>= (liftIO . fun))
+ 
+ -- | Build render math rule list.
+ mkRenderMatchRules :: Client -> [(RenderMember, RenderSignalArgs -> IO ())] -> IO ()
+ mkRenderMatchRules client = mapM_ (mkRenderMatchRule client)
+ 
+ -- | Pick RenderSignalArgs.
+-pickRenderSignalArgs :: RenderMember -> Signal -> IO (Maybe RenderSignalArgs)
++pickRenderSignalArgs :: RenderMember -> Signal -> DBus (Maybe RenderSignalArgs)
+ pickRenderSignalArgs member signal = 
+-    Exc.catch
++    liftIO (Exc.catch
+        (return $ unpackRenderSignalArgs member $ signalBody signal)
+        (\ (_ :: Exc.SomeException) -> 
+           printDBusMessageError "pickRenderSignalArgs" (show member)
+-          >> return Nothing)
++          >> return Nothing))
+ 
+ -- | Wait broadcast exit signal.
+ -- This function is useful for listen exit status of main process of manatee.
+@@ -292,7 +296,7 @@
+ waitBroadcastExitSignal client = do
+   -- Quit process when received exit signal from manatee daemon process.
+   exitSignal :: MVar String <- newEmptyMVar
+-  mkDaemonBroadcastMatchRule client (ExitDaemonProcess, \_ -> putMVar exitSignal "Exit")
++  mkDaemonBroadcastMatchRule client (ExitDaemonProcess, \_ -> liftIO (putMVar exitSignal "Exit"))
+   readMVar exitSignal           -- read exit signal to exit
+   return ()
+ 
+@@ -300,28 +304,32 @@
+ mkDaemonMethods :: [(Text, Member)] -> IO ()
+ mkDaemonMethods methods = 
+     forM_ methods $ \ (name, member) -> do
+-      let object = LocalObject $ M.fromList [(mkInterfaceName_ daemonInterfaceName
++      let object = Object $ M.fromList [(mkInterfaceName_ daemonInterfaceName
+                                              ,Interface $ M.fromList [(mkMemberName_ name, member)])] 
+       client <- mkSessionClientWithName (TL.append daemonBusName name)
+-      export client (mkObjectPath_ daemonPathName) object
++      runDBus client (export (mkObjectPath_ daemonPathName) object)
+ 
+ -- | Call daemon method.
+ callDaemonMethod :: Client -> Text -> [Variant] -> IO (Either Error MethodReturn)
+-callDaemonMethod client methodName =
+-  callProxyBlocking client (Proxy (RemoteObject 
++callDaemonMethod client methodName vs =
++  runDBus client (callProxyBlocking (Proxy
+                                     (mkBusName_ (TL.append daemonBusName methodName)) 
+-                                    (mkObjectPath_ daemonPathName)) 
++                                    (mkObjectPath_ daemonPathName) 
+                              (mkInterfaceName_ daemonInterfaceName))
+-                     (mkMemberName_ methodName) []
++                     (mkMemberName_ methodName) [] vs)
+ 
+ -- | Call daemon method asynchronously.
+ callDaemonMethodAsync :: Client -> Text -> [Variant] -> (Error -> IO ()) -> (MethodReturn -> IO ()) -> IO ()
+-callDaemonMethodAsync client methodName = 
+-  callProxy client (Proxy (RemoteObject 
+-                           (mkBusName_ (TL.append daemonBusName methodName)) 
+-                           (mkObjectPath_ daemonPathName)) 
++callDaemonMethodAsync client methodName vs e m = 
++  runDBus client (callProxy (Proxy (mkBusName_ (TL.append daemonBusName methodName))
++                           (mkObjectPath_ daemonPathName) 
+                     (mkInterfaceName_ daemonInterfaceName))
+-                   (mkMemberName_ methodName) []
++                   (mkMemberName_ methodName) [] vs de dm)
++  where
++    de :: Error -> DBus ()
++    de x = liftIO (e x)
++    dm :: MethodReturn -> DBus ()
++    dm x = liftIO (m x)
+ 
+ -- | Check daemon signal argument.
+ -- Return False if mismatch.
+@@ -353,8 +361,8 @@
+ -- | Build daemon match rule.
+ mkGenericDaemonMatchRule :: Client -> Text -> (GenericDaemonMember, GenericDaemonSignalArgs -> IO ()) -> IO ()
+ mkGenericDaemonMatchRule client busName (member, fun) = 
+-    onSignal client matchRule $ \_ signal -> 
+-        pickGenericDaemonSignalArgs member signal >?>= fun
++    runDBus client (onSignal matchRule $ \_ signal -> 
++        pickGenericDaemonSignalArgs member signal >?>= (liftIO . fun))
+         where matchRule = mkMatchRule
+                           (Just Signal) 
+                           TL.empty 
+@@ -365,13 +373,13 @@
+                           []
+ 
+ -- | Pick GenericDaemonSignalArgs.
+-pickGenericDaemonSignalArgs :: GenericDaemonMember -> Signal -> IO (Maybe GenericDaemonSignalArgs)          
++pickGenericDaemonSignalArgs :: GenericDaemonMember -> Signal -> DBus (Maybe GenericDaemonSignalArgs)          
+ pickGenericDaemonSignalArgs member signal = 
+-  Exc.catch 
++  liftIO (Exc.catch 
+       (return $ unpackGenericDaemonSignalArgs member $ signalBody signal)
+       (\ (_ :: Exc.SomeException) -> 
+          printDBusMessageError "pickGenericDaemonSignalArgs" (show member)
+-         >> return Nothing)
++         >> return Nothing))
+ 
+ -- | Pack generic bus name.
+ packGenericBusName :: Text -> Text

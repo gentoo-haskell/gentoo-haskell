@@ -1,0 +1,41 @@
+--- darcs-monitor-0.4.2-orig/darcs-monitor.cabal	2011-06-14 00:20:58.000000000 +1000
++++ darcs-monitor-0.4.2/darcs-monitor.cabal	2012-06-16 18:43:19.565179119 +1000
+@@ -28,7 +28,7 @@
+   description: Choose the new smaller, split-up base package.
+ 
+ Executable darcs-monitor
+-  Build-Depends: mtl, HaXml == 1.20.*
++  Build-Depends: mtl, HaXml >= 1.22 && < 1.24
+   if flag(splitBase)
+     Build-Depends: base >=3 && < 5, containers, directory, process
+   else
+--- darcs-monitor-0.4.2-orig/darcs-monitor.hs	2011-06-14 00:20:58.000000000 +1000
++++ darcs-monitor-0.4.2/darcs-monitor.hs	2011-08-14 11:44:47.758302919 +1000
+@@ -194,13 +194,13 @@
+   liftIO $ createDirectoryIfMissing True (repo++dir)
+   seenPatches <- readSeenPatches repo
+   xml <- invokeDarcs ["changes", "--reverse", "--repo="++repo,"--xml-output","-a"]
+-  let Document _ _ (Elem "changelog" _ content) _ = xmlParse repo xml 
++  let Document _ _ (Elem (N "changelog") _ content) _ = xmlParse repo xml 
+   let patches
+         = filter (\c -> case c of CElem _e _ -> True ; _ -> False) content
+-  spl <- forM patches $ \ (CElem (Elem "patch" attrs content_) _) -> 
+-      do let author = getAttr "author" attrs
+-             localDate = getAttr "local_date" attrs
+-             hash = getAttr "hash" attrs
++  spl <- forM patches $ \ (CElem (Elem (N "patch") attrs content_) _) -> 
++      do let author = getAttr (N "author") attrs
++             localDate = getAttr (N "local_date") attrs
++             hash = getAttr (N "hash") attrs
+              name = getElem "name" content_
+              comment = getElem "comment" content_
+              (authorName, authorEmail) = parseAuthor author
+@@ -252,7 +252,7 @@
+           massage [] = id
+ 
+ getElem :: Name -> [Content Posn] -> String
+-getElem name (CElem (Elem name' _ content) _ : _rest)
++getElem name (CElem (Elem (N name') _ content) _ : _rest)
+     | name == name'     = getContent content ""
+ getElem name (_ : rest) = getElem name rest
+ getElem name []

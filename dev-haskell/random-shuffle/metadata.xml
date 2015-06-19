@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Random shuffle implementation, on immutable lists.
+		Based on `perfect shuffle&#39; implementation by Oleg Kiselyov,
+		available on http://okmij.org/ftp/Haskell/perfect-shuffle.txt
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,13 @@
+--- ghc-mod.cabal.orig	2014-11-05 03:11:57.377697595 +0530
++++ ghc-mod.cabal	2014-11-05 03:12:02.398605475 +0530
+@@ -21,10 +21,6 @@
+ Category:               Development
+ Cabal-Version:          >= 1.10
+ Build-Type:             Simple
+-Data-Dir:               elisp
+-Data-Files:             Makefile ghc.el ghc-func.el ghc-doc.el ghc-comp.el
+-                        ghc-check.el ghc-process.el ghc-command.el ghc-info.el
+-                        ghc-ins-mod.el ghc-indent.el ghc-pkg.el ghc-rewrite.el
+ Extra-Source-Files:     ChangeLog
+ 			test/data/*.cabal
+                         test/data/*.hs

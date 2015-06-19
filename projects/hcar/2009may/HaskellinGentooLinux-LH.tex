@@ -1,0 +1,39 @@
+\begin{hcarentry}[updated]{Haskell in Gentoo Linux}
+\label{gentoo}
+\report{Lennart Kolmodin}%05/09
+\makeheader
+
+Gentoo Linux is working towards supporting GHC 6.10.3 and the Haskell
+Platform~\cref{haskell-platform}, and at the time of writing both are available hard masked in portage.
+For previous GHC versions we have binaries available for alpha, amd64, hppa,
+ia64, sparc, and x86.
+
+Browse the packages in portage at 
+\url{http://packages.gentoo.org/category/dev-haskell?full\_cat}.
+
+The GHC architecture/version matrix is available at
+\url{http://packages.gentoo.org/package/dev-lang/ghc}.
+
+Please report problems in the normal Gentoo bug tracker
+at \url{bugs.gentoo.org}.
+
+There is also a Haskell overlay providing another 300 packages. Thanks to
+the haskell developers using Cabal and Hackage~\cref{hackagedb}, we have been
+able to write a tool called ``hackport'' (initiated by Henning G\"unther) to
+generate Gentoo packages that rarely need much tweaking.
+
+The overlay is available at
+\url{http://haskell.org/haskellwiki/Gentoo}. Using
+Darcs~\cref{darcs}, it is easy to keep updated and send patches.
+It is also available via the Gentoo overlay manager ``layman''.
+If you choose to use the overlay, then problems should be
+reported on
+IRC (\verb+#gentoo-haskell+ on freenode), where we coordinate
+development, or via email \email{haskell@gentoo.org}.
+
+Lately a few of our developers have shifted focus, and only a few
+developers remain. If you would like to help, which would include
+working on the Gentoo Haskell framework, hacking on hackport, writing
+ebuilds, and supporting users, please contact us on IRC or email as noted
+above.
+\end{hcarentry}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		hsparql includes a DSL to easily create queries, as well as methods to
+		submit those queries to a SPARQL server, returning the results as simple
+		Haskell data structures. Supports SELECT, CONSTRUCT, ASK and UPDATE queries.
+		Example queries are included in the tests:
+		&lt;https://github.com/robstewart57/hsparql/blob/master/tests/DBPedia.hs&gt;.
+	</longdescription>
+</pkgmetadata>

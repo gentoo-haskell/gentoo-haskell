@@ -1,0 +1,66 @@
+diff --git a/GraphUtils.hs b/GraphUtils.hs
+index ffded30..fb1cbbb 100644
+--- a/GraphUtils.hs
++++ b/GraphUtils.hs
+@@ -23,11 +23,11 @@ totalCost :: [ CallInfo ] -> (Integer, Integer, Integer)
+ totalCost cis = let
+          cis' = nubBy (\x y -> stackNumber x == stackNumber y) cis
+          in
+-           foldl (\(c, t, a) ci -> (c + counts ci, t + ticks ci, a + allocs ci)) (0, 0, 0) cis'
++           List.foldl (\(c, t, a) ci -> (c + counts ci, t + ticks ci, a + allocs ci)) (0, 0, 0) cis'
+ 
+ 
+ collapseCost :: [ CallInfo ] -> CallInfo
+-collapseCost = foldl (\ci ci' -> ci { parentNodeNumber = parentNodeNumber ci',
++collapseCost = List.foldl (\ci ci' -> ci { parentNodeNumber = parentNodeNumber ci',
+                                       stackNumber      = stackNumber ci',
+                                       counts           = counts ci + counts ci',
+                                       ticks            = ticks  ci + ticks ci',
+@@ -54,7 +54,7 @@ pruneOnce g = let
+         pruneNode (i, g') nc = if prunable (g' ! nc)
+                                   then (i + 1, IntMap.delete nc g')
+                                   else (i, g')
+-        (nChanges, g'') = foldl pruneNode (0, g) (keys g)
++        (nChanges, g'') = List.foldl pruneNode (0, g) (keys g)
+         in
+           (nChanges, markParents g'')
+ 
+diff --git a/Grapher.hs b/Grapher.hs
+index 0144b1c..7f48a4f 100644
+--- a/Grapher.hs
++++ b/Grapher.hs
+@@ -98,7 +98,7 @@ extractNodes p = toList (profileGraph p)
+ --   fields may be due to different nodes.
+ --
+ maxCost :: [ (Int, Node) ] -> CallInfo
+-maxCost ns = foldl' maxCosts CallInfo {parentNodeNumber = undefined, stackNumber = undefined, counts = 0, ticks = 0, allocs = 0} ns
++maxCost ns = List.foldl' maxCosts CallInfo {parentNodeNumber = undefined, stackNumber = undefined, counts = 0, ticks = 0, allocs = 0} ns
+                where
+                  maxCosts :: CallInfo -> (Int,  Node) -> CallInfo
+                  maxCosts c (_, n) = let
+diff --git a/ParseProfile.hs b/ParseProfile.hs
+index 4cfba39..2bb501a 100644
+--- a/ParseProfile.hs
++++ b/ParseProfile.hs
+@@ -390,7 +390,7 @@ markParents g = let
+         markAsParent :: ProfileGraph -> NodeCode -> ProfileGraph
+         markAsParent gr n = update (\n' -> Just n' { isLeaf = False }) n gr
+         in
+-          foldl markAsParent g' nonLeaf
++          List.foldl markAsParent g' nonLeaf
+ 
+ 
+ -- Convert the raw CostCenter, CostCenterStack and CostCenterReport
+diff --git a/Prof2Dot.hs b/Prof2Dot.hs
+index d266e7f..8ee95e8 100644
+--- a/Prof2Dot.hs
++++ b/Prof2Dot.hs
+@@ -15,7 +15,7 @@ module Main where
+ import Data.List
+ import Data.Maybe
+ import System.Console.GetOpt
+-import System
++import System.Environment
+ import System.FilePath
+ import System.IO
+ 

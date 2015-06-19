@@ -1,0 +1,20 @@
+diff --git a/src/Nettle/Servers/Server.hs b/src/Nettle/Servers/Server.hs
+index e315e36..229657d 100755
+--- a/src/Nettle/Servers/Server.hs
++++ b/src/Nettle/Servers/Server.hs
+@@ -48,7 +48,7 @@ import Text.Printf
+ 
+ 
+ type ServerPortNumber = Word16
+-deriving instance Ord SockAddr
++-- deriving instance Ord SockAddr
+ 
+ -- | Abstract type containing the state of the OpenFlow server.
+ newtype OpenFlowServer = OpenFlowServer (Socket, IORef (Map SwitchID SwitchHandle))
+@@ -246,4 +246,4 @@ untilNothing sense act = go
+                 case ma of
+                   Nothing -> return ()
+                   Just a  -> act a >> go
+-                  
+\ No newline at end of file
++

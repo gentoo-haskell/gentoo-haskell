@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Binding to NCurses, a library of functions that manage an
+		application&#39;s display on character-cell terminals. Additionally,
+		it contains some basic widgets such as a text input widget and
+		a table widget.
+	</longdescription>
+</pkgmetadata>

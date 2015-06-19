@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package provides a convenient and fast alternative to the common
+		`forM_ [1..n]` idiom, which in many cases GHC cannot fuse to efficient
+		code.
+		
+		See https://ghc.haskell.org/trac/ghc/ticket/8763.
+	</longdescription>
+</pkgmetadata>

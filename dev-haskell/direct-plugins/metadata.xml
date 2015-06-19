@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The Plugins package unfortunately does not work on GHC 6.12, and is at any rate
+		rather poorly documented.  This package uses the same general strategy but without
+		quite as many options, aiming to be simple and useful rather than complete.  This
+		release renames load to unsafeLoad and adds loadDynamic, which is type-safe.
+	</longdescription>
+</pkgmetadata>

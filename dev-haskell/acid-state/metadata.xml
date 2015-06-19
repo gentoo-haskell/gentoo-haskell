@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Use regular Haskell data structures as your database and get stronger ACID guarantees than most RDBMS offer.
+	</longdescription>
+</pkgmetadata>

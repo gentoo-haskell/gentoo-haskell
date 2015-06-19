@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package contains bindings to the BSD editline library
+		(&lt;http://www.thrysoee.dk/editline/&gt;).
+		It provides a basic interface to the editline API for
+		reading lines of input from the user.
+		
+		Additionally, a readline compatibility module is included
+		which provides a subset of the functions from the
+		readline package.
+	</longdescription>
+</pkgmetadata>

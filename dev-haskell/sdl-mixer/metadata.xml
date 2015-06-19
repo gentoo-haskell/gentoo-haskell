@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		SDL_mixer is a sample multi-channel audio mixer library.
+		It supports any number of simultaneously playing channels
+		of 16 bit stereo audio, plus a single channel of music,
+		mixed by the popular MikMod MOD, Timidity MIDI, Ogg Vorbis,
+		and SMPEG MP3 libraries.
+	</longdescription>
+</pkgmetadata>

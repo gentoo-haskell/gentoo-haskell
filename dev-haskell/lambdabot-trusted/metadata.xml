@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lambdabot is an IRC bot written over several years by
+		those on the #haskell IRC channel.
+		
+		This small package provides functions used by
+		the \@run command.
+	</longdescription>
+</pkgmetadata>

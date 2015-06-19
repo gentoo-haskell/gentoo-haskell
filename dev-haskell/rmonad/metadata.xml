@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="warn-as-error">Build with warnings as errors.</flag>
+	</use>
+	<longdescription>
+		A library for restricted monads based on associated datatypes.
+		This allows datatypes such as Set to be made into monads.
+		Users can either use the NoImplicitPrelude extension and use
+		Control.RMonad directly, or use Control.RMonad.AsMonad with
+		the embed and unEmbed combinators to use the normal Prelude
+		monad operations.
+	</longdescription>
+</pkgmetadata>

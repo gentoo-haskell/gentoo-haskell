@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A Haskell binding to the liblzf by Marc Lehmann. LZF is a fast
+		compression algorithm sacrifising compression quality for an extra
+		bit of speed. The tiny library is contained in the source and
+		statically linked in the Haskell library resulting in no external
+		dependencies.  Exposed-modules: Codec.Compression.LZF
+	</longdescription>
+</pkgmetadata>

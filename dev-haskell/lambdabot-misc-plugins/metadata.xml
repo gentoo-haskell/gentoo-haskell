@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Lambdabot is an IRC bot written over several years by
+		those on the #haskell IRC channel.
+		
+		Provided plugins:
+		
+		[dummy] Many commands with fixed replies.
+		[error] Debug error handling.
+		[fresh] Generate Haskell project names.
+		[hello] Hello, world.
+		[stats] Ad-hoc statsd queries.
+		[todo] A to-do list for lambdabot.
+	</longdescription>
+</pkgmetadata>

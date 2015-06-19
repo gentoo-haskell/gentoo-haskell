@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		ftphs provides a Haskell library to implement a FTP client
+		and a FTP server.
+		
+		ftphs has a number of features:
+		
+		* Easy to use operation
+		* Full support of text and binary transfers
+		* Optional lazy interaction
+		* Server can serve up a real or a virtual filesystem tree
+		* Standards compliant
+	</longdescription>
+	<use>
+		<flag name="buildtests">Build the executable to run unit tests.</flag>
+	</use>
+</pkgmetadata>

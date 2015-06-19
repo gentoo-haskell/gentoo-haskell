@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		See examples and full readme on the Github page: https:\/\/github.com\/egonSchiele\/HandsomeSoup
+	</longdescription>
+</pkgmetadata>

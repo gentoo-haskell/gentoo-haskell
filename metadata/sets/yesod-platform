@@ -1,0 +1,10 @@
+dev-haskell/yesod
+dev-haskell/yesod-auth
+dev-haskell/yesod-core
+dev-haskell/yesod-default
+dev-haskell/yesod-form
+dev-haskell/yesod-newsfeed
+dev-haskell/yesod-persistent
+dev-haskell/yesod-static
+dev-haskell/yesod-test
+

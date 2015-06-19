@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Fst is an application for construction and running of
+		finite state transducers. The application was written
+		purely in Haskell, and is intended to be a tool for the
+		Haskell programmer, especially for ones that develop language applications.
+	</longdescription>
+</pkgmetadata>

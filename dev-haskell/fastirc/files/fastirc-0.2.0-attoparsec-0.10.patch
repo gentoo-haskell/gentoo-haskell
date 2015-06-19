@@ -1,0 +1,31 @@
+--- fastirc-0.2.0-orig/Network/FastIRC/Utils.hs	2010-04-01 12:02:22.000000000 +1100
++++ fastirc-0.2.0/Network/FastIRC/Utils.hs	2011-11-30 00:14:38.296856312 +1100
+@@ -28,6 +28,7 @@
+ 
+ import qualified Data.ByteString.Char8 as B
+ import Data.Attoparsec.Char8
++import qualified Data.Attoparsec.Types as T
+ 
+ 
+ -- | Character predicate for channel names.
+@@ -106,6 +107,6 @@
+ parseComplete p = complete . parse p
+   where
+     complete :: Result a -> Maybe a
+-    complete (Partial f)  = complete (f B.empty)
+-    complete (Done _ r)   = Just r
+-    complete (Fail _ _ _) = Nothing
++    complete (T.Partial f)  = complete (f B.empty)
++    complete (T.Done _ r)   = Just r
++    complete (T.Fail _ _ _) = Nothing
+--- fastirc-0.2.0-orig/Network/FastIRC/Messages.hs	2010-04-01 12:02:22.000000000 +1100
++++ fastirc-0.2.0/Network/FastIRC/Messages.hs	2011-11-30 00:14:50.585170169 +1100
+@@ -28,7 +28,7 @@
+ import qualified Data.Set as S
+ import Control.Applicative
+ import Control.Monad
+-import Data.Attoparsec.Char8 as P hiding (many)
++import Data.Attoparsec.Char8 as P
+ import Data.Char
+ import Data.Map (Map)
+ import Data.Maybe

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		vty is terminal GUI library in the niche of ncurses.  It is intended to be easy to use, have no
+		confusing corner cases, and good support for common terminal types.
+		
+		Included in the source distribution is a program test/interactive_terminal_test.hs that
+		demonstrates the various features.
+		
+		If your terminal is not behaving as expected the results of the test/interactive_terminal_test.hs
+		program should be sent to the Vty maintainter to aid in debugging the issue.
+		
+		Notable infelicities: Sometimes poor efficiency; Assumes UTF-8 character encoding support by the
+		terminal;
+		
+		Project is hosted on github.com: https://github.com/coreyoconnor/vty
+		
+		git clone git://github.com/coreyoconnor/vty.git
+		
+		&amp;#169; 2006-2007 Stefan O&#39;Rear; BSD3 license.
+		
+		&amp;#169; 2008-2011 Corey O&#39;Connor; BSD3 license.
+	</longdescription>
+</pkgmetadata>

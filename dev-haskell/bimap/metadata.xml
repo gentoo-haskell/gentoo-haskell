@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A data structure representing a bidirectional mapping between two
+		key types. Each value in the bimap is associated with exactly one
+		value of the opposite type.
+	</longdescription>
+</pkgmetadata>

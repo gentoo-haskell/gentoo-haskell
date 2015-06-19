@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The Mersenne twister is a pseudorandom number generator developed by
+		Makoto Matsumoto and Takuji Nishimura that is based on a matrix linear
+		recurrence over a finite binary field. It provides for fast generation
+		of very high quality pseudorandom numbers
+		
+		This library uses SFMT, the SIMD-oriented Fast Mersenne Twister, a
+		variant of Mersenne Twister that is much faster than the original.
+		It is designed to be fast when it runs on 128-bit SIMD. It can be
+		compiled with either SSE2 and PowerPC AltiVec support, to take
+		advantage of these instructions.
+		
+		&gt; cabal install -fuse_sse2
+		
+		On an x86 system, for performance win.
+		
+		By default the period of the function is 2^19937-1, however, you can
+		compile in other defaults. Note that this algorithm on its own
+		is not cryptographically secure.
+		
+		For more information about the algorithm and implementation, see
+		the SFMT homepage,
+		
+		&lt;http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html&gt;
+		
+		and, Mutsuo Saito and Makoto Matsumoto,
+		/SIMD-oriented Fast Mersenne Twister: a 128-bit Pseudorandom Number
+		Generator/, in the Proceedings of MCQMC2006, here:
+		
+		&lt;http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/ARTICLES/sfmt.pdf&gt;
+		
+	</longdescription>
+</pkgmetadata>

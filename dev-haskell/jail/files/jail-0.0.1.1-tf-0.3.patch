@@ -1,0 +1,24 @@
+diff --git a/jail.cabal b/jail.cabal
+index b488061..581c2d9 100644
+--- a/jail.cabal
++++ b/jail.cabal
+@@ -67,9 +67,15 @@ License-file:     LICENSE
+ Author:           Sebastiaan Visser
+ Maintainer:       sfvisser@cs.uu.nl
+ Build-Type:       Simple
+-Build-Depends:    base >= 3 && <= 5, containers ==0.2.*, directory ==1.0.*, monads-fd ==0.0.*, transformers ==0.1.*
+ 
+-GHC-Options:      -Wall
+-HS-Source-Dirs:   src
+-Exposed-modules:  System.IO.Jail
++Library
+ 
++    Build-Depends:    base >= 3 && < 5,
++                      containers >= 0.2 && < 0.6,
++                      directory >=1.0 && < 1.3,
++                      mtl,
++                      transformers >= 0.1 && < 0.5
++
++    GHC-Options:      -Wall
++    HS-Source-Dirs:   src
++    Exposed-modules:  System.IO.Jail

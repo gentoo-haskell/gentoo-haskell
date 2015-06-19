@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package declares BinaryState type class, which is similar to
+		Data.Binary.Binary, but Get/Put monads can track state.
+	</longdescription>
+</pkgmetadata>

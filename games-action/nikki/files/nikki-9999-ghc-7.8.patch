@@ -1,0 +1,108 @@
+diff --git a/Base/Pixmap.hs b/Base/Pixmap.hs
+index 8e7e1b1..da220c2 100644
+--- a/Base/Pixmap.hs
++++ b/Base/Pixmap.hs
+@@ -1,4 +1,4 @@
+-{-# language FlexibleInstances, DeriveDataTypeable #-}
++{-# language FlexibleInstances, DeriveDataTypeable, StandaloneDeriving #-}
+ 
+ -- | provides a data type for pixmaps that saves the size and the internal offset (padding)
+ -- of the image.
+@@ -34,16 +34,17 @@ import Control.DeepSeq
+ import System.IO.Unsafe
+ 
+ import Foreign.Ptr (nullPtr)
+-import Foreign.ForeignPtr (unsafeForeignPtrToPtr)
++import Foreign.ForeignPtr.Unsafe (unsafeForeignPtrToPtr)
+ 
+ import Graphics.Qt
+ import Physics.Chipmunk (Angle, rad2deg)
+ 
+ import Utils
+ 
+-
+ type Offset a = Position a
+ 
++deriving instance Data QPixmap
++
+ data Pixmap = Pixmap {
+     pixmap :: ForeignPtr QPixmap,
+     pixmapOffset_ :: Position Double,
+diff --git a/Base/Types.hs b/Base/Types.hs
+index 6a7340b..6428cd2 100644
+--- a/Base/Types.hs
++++ b/Base/Types.hs
+@@ -1,6 +1,6 @@
+ {-# language ExistentialQuantification, FunctionalDependencies, RecordWildCards,
+     NamedFieldPuns, FlexibleInstances, MultiParamTypeClasses,
+-    DeriveDataTypeable, DeriveFunctor, DeriveFoldable, DeriveTraversable #-}
++    DeriveDataTypeable, DeriveFunctor, DeriveFoldable, DeriveTraversable, ImpredicativeTypes #-}
+ 
+ 
+ -- module for often used types (in one Base module, to avoid module import cycles.)
+diff --git a/Distribution/AutoUpdate/MenuItem.hs b/Distribution/AutoUpdate/MenuItem.hs
+index e4bd9de..bb5ba0a 100644
+--- a/Distribution/AutoUpdate/MenuItem.hs
++++ b/Distribution/AutoUpdate/MenuItem.hs
+@@ -18,7 +18,7 @@ import Control.Concurrent
+ 
+ import Graphics.Qt
+ 
+-import Utils
++import Utils as U
+ 
+ import Base
+ 
+@@ -57,7 +57,7 @@ data AutoUpdateMenuItem = AutoUpdateMenuItem {selected :: Bool}
+ 
+ instance Renderable AutoUpdateMenuItem where
+     render ptr app config size (AutoUpdateMenuItem selected) = do
+-        v <- tryReadMVar $ autoUpdateVersion app
++        v <- U.tryReadMVar $ autoUpdateVersion app
+         let r :: Prose -> IO (Size Double, IO ())
+             r = render ptr app config size . proseMod v
+             selectionMod = if selected then select else deselect
+diff --git a/Graphics/Qt/CPPWrapper.hs b/Graphics/Qt/CPPWrapper.hs
+index 690dbeb..4ce5295 100644
+--- a/Graphics/Qt/CPPWrapper.hs
++++ b/Graphics/Qt/CPPWrapper.hs
+@@ -124,7 +124,7 @@ import System.IO.Unsafe
+ import Graphics.Qt.Types
+ import Graphics.Qt.Events
+ 
+-import Utils
++import Utils as U
+ 
+ 
+ -- ** Globals
+@@ -669,7 +669,7 @@ foreign import ccall "textQClipboard" cppTextQClipboard :: IO (Ptr QByteArray)
+ -- (cpp has to call 'freePostGUIFunPtr' after performing the action.)
+ postGUI :: IO () -> IO ()
+ postGUI action = do
+-    mm <- tryReadMVar _mainWindowRef
++    mm <- U.tryReadMVar _mainWindowRef
+     case mm of
+         Nothing -> error "initialize _mainWindowRef before calling postGUI or postGUIBlocking!"
+         Just window ->
+diff --git a/StoryMode/Menus.hs b/StoryMode/Menus.hs
+index fe69fc7..ca16639 100644
+--- a/StoryMode/Menus.hs
++++ b/StoryMode/Menus.hs
+@@ -18,7 +18,7 @@ import Network.Download
+ 
+ import Graphics.Qt
+ 
+-import Utils
++import Utils as U
+ 
+ import Base
+ 
+@@ -56,7 +56,7 @@ data StoryModeMenuItem = StoryModeMenuItem {selected :: Bool}
+ 
+ instance Renderable StoryModeMenuItem where
+     render ptr app config size (StoryModeMenuItem selected) = do
+-        available <- tryReadMVar $ storyModeAvailability app
++        available <- U.tryReadMVar $ storyModeAvailability app
+         let prose = case available of
+                 Nothing -> selMod $ p "Story Episodes"
+                 Just Installed -> selMod $ p "Story Episodes"
