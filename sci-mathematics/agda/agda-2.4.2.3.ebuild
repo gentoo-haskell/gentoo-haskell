@@ -53,7 +53,7 @@ RDEPEND+="
 		app-emacs/haskell-mode
 		virtual/emacs
 "
-PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
+PDEPEND="stdlib? ( =sci-mathematics/agda-stdlib-${PV} )"
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.8
