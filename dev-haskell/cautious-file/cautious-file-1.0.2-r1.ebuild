@@ -22,12 +22,14 @@ RDEPEND=">=dev-lang/ghc-7.0.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 
+RESTRICT=test # requires library already already installed
+
+src_prepare() {
+	cabal_chdeps \
+		'filepath >= 1.2, filepath < 1.4' 'filepath >= 1.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=posix
-}
-
-src_test() {
-	ghc -D_POSIX -o test -isrc --make Test.hs || die "test compile failed!"
-	./test || die "Tests failed!"
 }
