@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 	dev-haskell/edit-distance
 	dev-haskell/esqueleto
 	>=dev-haskell/exceptions-0.6
-	dev-haskell/hamlet
 	dev-haskell/hslogger
 	dev-haskell/http-conduit
 	dev-haskell/http-types
@@ -93,11 +92,10 @@ DEPEND="${RDEPEND}
 			dev-haskell/aeson
 			dev-haskell/clientsession
 			dev-haskell/crypto-api
-			dev-haskell/hamlet
 			dev-haskell/http-types
 			>=dev-haskell/path-pieces-0.1.4
 			dev-haskell/transformers
-			dev-haskell/shakespeare
+			>=dev-haskell/shakespeare-2
 			dev-haskell/wai
 			dev-haskell/wai-extra
 			>=dev-haskell/warp-3.0.0.5
