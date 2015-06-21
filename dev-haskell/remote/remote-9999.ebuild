@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/jepst/CloudHaskell.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="dev-haskell/binary[profile?]
