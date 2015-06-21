@@ -9,7 +9,7 @@ EAPI=5
 GTK_MAJ_VER="2"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Workspaces screenshooting utility for XMonad"
 HOMEPAGE="http://github.com/supki/xmonad-screenshot"
@@ -27,3 +27,7 @@ RDEPEND=">=dev-haskell/gtk-0.12.3:${GTK_MAJ_VER}=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.1.1.0-ghc-7.10.patch
+}
