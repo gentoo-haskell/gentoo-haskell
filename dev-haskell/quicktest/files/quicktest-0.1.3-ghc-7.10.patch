@@ -1,0 +1,17 @@
+diff --git a/src/QuickTest/Monad.hs b/src/QuickTest/Monad.hs
+index b4ae51f..dcb0018 100644
+--- a/src/QuickTest/Monad.hs
++++ b/src/QuickTest/Monad.hs
+@@ -9,4 +9,5 @@ module QuickTest.Monad
+   ) where
+ 
++import Control.Applicative
+ import Control.Monad
+ import "mtl" Control.Monad.Reader
+@@ -16,5 +17,5 @@ import QuickTest.Types
+ 
+ newtype QuickTest a = QuickTest { runQT :: WriterT [Snippet] (Reader QuickTestState) a }
+-  deriving (Monad, MonadWriter [Snippet], MonadReader QuickTestState)
++  deriving (Functor, Applicative, Monad, MonadWriter [Snippet], MonadReader QuickTestState)
+ 
+ runQuickTest :: QuickTestState -> QuickTest () -> [Snippet]
