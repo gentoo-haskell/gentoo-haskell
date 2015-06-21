@@ -1,0 +1,21 @@
+diff --git a/Graphics/HGL/Internals/Draw.hs b/Graphics/HGL/Internals/Draw.hs
+index 923aa64..71b9382 100644
+--- a/Graphics/HGL/Internals/Draw.hs
++++ b/Graphics/HGL/Internals/Draw.hs
+@@ -32,5 +32,6 @@ import Graphics.HGL.Win32.Types(DC)
+ #endif
+ import qualified Graphics.HGL.Internals.Utilities as Utils (bracket, bracket_)
+-import Control.Monad (liftM)
++import Control.Applicative
++import Control.Monad
+ 
+ ----------------------------------------------------------------
+@@ -54,4 +55,8 @@ mkDraw :: (DC -> IO a) -> Draw a
+ mkDraw = MkDraw
+ 
++instance Applicative Draw where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ -- a standard reader monad
+ instance Monad Draw where
