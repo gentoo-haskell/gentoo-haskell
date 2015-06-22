@@ -20,11 +20,14 @@ IUSE=""
 
 RDEPEND="sci-visualization/gnuplot"
 DEPEND="${RDEPEND}
-		>=dev-haskell/cabal-1.2
-		>=dev-lang/ghc-6.10.4"
+	>=dev-haskell/cabal-1.2
+	dev-haskell/time-locale-compat
+	>=dev-lang/ghc-6.10.4
+"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
 		'base >= 3 && < 4' 'base >= 4 && < 5'
