@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ MY_PN="MissingH"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Large utility library"
-HOMEPAGE="http://software.complete.org/missingh"
+HOMEPAGE="https://github.com/jgoerzen/missingh/wiki"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -25,6 +25,7 @@ RDEPEND="dev-haskell/hslogger:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
+	dev-haskell/old-time:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
