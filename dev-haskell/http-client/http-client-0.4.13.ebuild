@@ -41,7 +41,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		dev-haskell/monad-control
 		>=dev-haskell/streaming-commons-0.1.1
-		dev-haskell/zlib )
+		dev-haskell/zlib
+		!network-uri? ( dev-haskell/network-uri ) )
 "
 
 src_configure() {
