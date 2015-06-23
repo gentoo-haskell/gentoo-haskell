@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/either-3.4:=[profile?]
+	>=dev-haskell/either-3.4:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/free-4.9:=[profile?] <dev-haskell/free-5.0:=[profile?]
 	>=dev-haskell/monad-loops-0.4:=[profile?] <dev-haskell/monad-loops-0.5:=[profile?]
 	>=dev-haskell/mwc-random-0.13:=[profile?] <dev-haskell/mwc-random-0.14:=[profile?]
@@ -38,8 +38,3 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'either >= 3.4 && <4.4' 'either >= 3.4'
-}
