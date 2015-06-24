@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Please see the README.md for usage information, and
+		the wiki on Github for more details.  Also, note that
+		the API for the library is not currently stable, and may
+		change significantly, even between minor releases. It is
+		currently only intended for use by the executable.
+	</longdescription>
+</pkgmetadata>
