@@ -38,7 +38,7 @@ RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.15:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/time-locale-compat-0.1.0.0:=[profile?] <dev-haskell/time-locale-compat-0.1.1.0:=[profile?]
+	>=dev-haskell/time-locale-compat-0.1.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	checkexternal? ( >=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 				>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?] )
@@ -57,6 +57,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'time-locale-compat >= 0.1.0.0 && < 0.1.1.0' 'time-locale-compat >= 0.1.0.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
