@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Simple interface to Cabal's configuration state used by ghc-mod"
+DESCRIPTION="Simple interface to some of Cabal's configuration state used by ghc-mod"
 HOMEPAGE="http://hackage.haskell.org/package/cabal-helper"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -23,6 +23,7 @@ RDEPEND=">=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/transformers:=[profile?]
+	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
