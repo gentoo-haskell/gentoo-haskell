@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
-	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.5:=[profile?]
-	>=dev-haskell/th-orphans-0.9.1:=[profile?] <dev-haskell/th-orphans-0.12:=[profile?]
+	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.6:=[profile?]
+	>=dev-haskell/th-orphans-0.9.1:=[profile?] <dev-haskell/th-orphans-0.13:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
