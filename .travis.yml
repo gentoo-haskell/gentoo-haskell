@@ -6,7 +6,7 @@ language: python
 python:
     - pypy
 env:
-    - PORTAGE_VER="2.2.18"
+    - PORTAGE_VER="2.2.20"
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
@@ -24,7 +24,7 @@ before_script:
     - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
-    - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
+    - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
     - SIZE=`stat -c %s .travis.yml.upstream`
     - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then  echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
