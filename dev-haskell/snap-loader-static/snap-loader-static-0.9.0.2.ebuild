@@ -23,3 +23,8 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'template-haskell  >= 2.2     && < 2.10' 'template-haskell  >= 2.2'
+}
