@@ -51,6 +51,8 @@ SITEFILE=50${PN}-gentoo.el
 
 PATCHES=("${FILESDIR}/${PN}-9999-gentoo.patch")
 
+RESTRICT=test # doctests break on modules collisions: temporary / temporary-rc
+
 src_compile() {
 	haskell-cabal_src_compile
 	if use emacs ; then
