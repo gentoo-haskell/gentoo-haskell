@@ -1,0 +1,19 @@
+diff --git a/Harp/Match.hs b/Harp/Match.hs
+index cd7f359..491daa7 100644
+--- a/Harp/Match.hs
++++ b/Harp/Match.hs
+@@ -26,2 +26,4 @@ module Harp.Match (
+ import Data.List (unzip3, unzip4, unzip5, unzip6, unzip7)
++import Control.Monad
++import Control.Applicative
+ 
+@@ -37,2 +39,9 @@ newtype Match e a = Match ([e] -> [(a, [e])])
+ 
++instance Functor (Match e) where
++    fmap  = liftM
++
++instance Applicative (Match e) where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Monad (Match e) where
