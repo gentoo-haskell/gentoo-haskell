@@ -1,0 +1,26 @@
+diff --git a/gnuplot.cabal b/gnuplot.cabal
+index b1108a5..da5ff5c 100644
+--- a/gnuplot.cabal
++++ b/gnuplot.cabal
+@@ -90,2 +90,3 @@ Library
+       time >=1.1,
++      time-locale-compat,
+       old-locale >=1.0 && <1.1,
+diff --git a/src/Graphics/Gnuplot/Time.hs b/src/Graphics/Gnuplot/Time.hs
+index 2bafdd7..ea42757 100644
+--- a/src/Graphics/Gnuplot/Time.hs
++++ b/src/Graphics/Gnuplot/Time.hs
+@@ -2,3 +2,3 @@ module Graphics.Gnuplot.Time where
+ 
+-import System.Locale (defaultTimeLocale, )
++import Data.Time.Locale.Compat (defaultTimeLocale, )
+ import Data.Time.Format (FormatTime, formatTime, )
+diff --git a/src/Graphics/Gnuplot/Value/Tuple.hs b/src/Graphics/Gnuplot/Value/Tuple.hs
+index c779c1a..91c6d5e 100644
+--- a/src/Graphics/Gnuplot/Value/Tuple.hs
++++ b/src/Graphics/Gnuplot/Value/Tuple.hs
+@@ -11,3 +11,3 @@ module Graphics.Gnuplot.Value.Tuple (
+ 
+-import System.Locale (defaultTimeLocale, )
++import Data.Time.Locale.Compat (defaultTimeLocale, )
+ import qualified Data.Time as Time
