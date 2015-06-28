@@ -7,4 +7,7 @@
 		appears in HTTP or HTTPS URIs and HTTP POSTs. See
 		&lt;http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1&gt;
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package</flag>
+	</use>
 </pkgmetadata>
