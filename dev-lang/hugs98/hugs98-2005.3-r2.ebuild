@@ -46,7 +46,6 @@ RDEPEND="
 	opengl? ( virtual/opengl media-libs/freeglut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
-	opengl? ( app-admin/eselect-opengl )
 	~app-text/docbook-sgml-dtd-4.2"
 
 # the testsuite is not included in the tarball
@@ -92,10 +91,6 @@ src_compile() {
 
 	if use opengl; then
 		myconf="--enable-opengl"
-		# the nvidia drivers *seem* not to work together with pthreads
-		if ! /usr/bin/eselect opengl show | grep -q nvidia; then
-			myconf="$myconf --with-pthreads"
-		fi
 	fi
 
 	econf \
