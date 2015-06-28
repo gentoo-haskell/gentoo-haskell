@@ -18,10 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="portable"
 
-RESTRICT="test" #ambiguous import
+RESTRICT="test" #ambiguous import monad-extras / extra
 
 RDEPEND="dev-haskell/binary:=[profile?]
-	>=dev-haskell/extra-1.1:2=[profile?]
+	>=dev-haskell/extra-1.3:2=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?]
 	dev-haskell/js-flot:=[profile?]
 	dev-haskell/js-jquery:=[profile?]

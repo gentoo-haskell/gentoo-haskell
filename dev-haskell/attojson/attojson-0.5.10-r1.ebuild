@@ -31,4 +31,6 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=("${FILESDIR}/${MY_PN}-0.5.10-attoparsec-0.10.patch")
+PATCHES=("${FILESDIR}"/${PN}-0.5.10-attoparsec-0.10.patch
+	"${FILESDIR}"/${PN}-0.5.10-ghc-7.10.patch
+)
