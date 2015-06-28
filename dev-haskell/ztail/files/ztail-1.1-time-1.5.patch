@@ -1,0 +1,22 @@
+diff --git a/Tail.hs b/Tail.hs
+index cade3fd..dc97e4b 100644
+--- a/Tail.hs
++++ b/Tail.hs
+@@ -13,2 +13,3 @@ import qualified Data.Time.Format
+ import qualified System.Locale
++import qualified Data.Time.Locale.Compat as DTLC
+ 
+@@ -26,3 +27,3 @@ timeFmt f = do
+   z <- Data.Time.LocalTime.getCurrentTimeZone
+-  return $ Data.Time.Format.formatTime System.Locale.defaultTimeLocale f (Data.Time.LocalTime.utcToLocalTime z t)
++  return $ Data.Time.Format.formatTime DTLC.defaultTimeLocale f (Data.Time.LocalTime.utcToLocalTime z t)
+ 
+diff --git a/ztail.cabal b/ztail.cabal
+index 9f2c668..b7d7257 100644
+--- a/ztail.cabal
++++ b/ztail.cabal
+@@ -25,3 +25,3 @@ Executable ztail
+     Other-Modules:	Util, Display, TailTypes, TailHandle, Tail
+-    Build-Depends:	base == 4.*, regex-compat, unix, time, old-locale, process, array, containers, filepath
++    Build-Depends:	base == 4.*, regex-compat, unix, time, old-locale, process, array, containers, filepath, time-locale-compat
+     if flag(inotify)
