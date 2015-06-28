@@ -42,10 +42,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit )
 "
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag interactivetests interactivetests) \
