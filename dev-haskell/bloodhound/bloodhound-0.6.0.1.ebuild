@@ -16,11 +16,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="developmentmode"
+IUSE=""
 
 RESTRICT=test # slooooooow
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
@@ -40,13 +40,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck-properties
 		>=dev-haskell/unordered-containers-0.2.5.0 <dev-haskell/unordered-containers-0.3 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'aeson            >= 0.7     && <0.9' 'aeson            >= 0.7'
-}
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag developmentmode developmentmode)
-}
