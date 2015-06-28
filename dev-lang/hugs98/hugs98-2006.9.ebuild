@@ -60,7 +60,6 @@ RDEPEND="
 	opengl? ( virtual/opengl media-libs/freeglut )
 	openal? ( media-libs/openal )"
 DEPEND="${RDEPEND}
-	opengl? ( app-admin/eselect-opengl )
 	~app-text/docbook-sgml-dtd-4.2"
 
 # the testsuite is not included in the tarball
@@ -82,13 +81,6 @@ src_compile() {
 	# See bug #73611
 	[ "${ARCH}" = "ppc" ] && filter-flags "-O?"
 
-	if use opengl; then
-		# the nvidia drivers *seem* not to work together with pthreads
-		if ! /usr/bin/eselect opengl show | grep -q nvidia; then
-			myconf="$myconf --with-pthreads"
-		fi
-	fi
-
 	econf \
 		--build=${CHOST} \
 		--enable-ffi \
@@ -104,7 +96,7 @@ src_compile() {
 	fi
 }
 
-src_install () {
+src_install() {
 	emake install DESTDIR="${D}" || die "make install failed"
 
 	if use doc; then
