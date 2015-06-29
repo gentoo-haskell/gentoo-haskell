@@ -1,0 +1,9 @@
+diff --git a/src/Monadius.hs b/src/Monadius.hs
+index 8d35ecf..fdaeb11 100644
+--- a/src/Monadius.hs
++++ b/src/Monadius.hs
+@@ -19,3 +19,3 @@ import Data.List
+ import Data.Maybe
+-import Graphics.UI.GLUT hiding (position)
++import Graphics.UI.GLUT hiding (position, DebugMessage)
+ 
