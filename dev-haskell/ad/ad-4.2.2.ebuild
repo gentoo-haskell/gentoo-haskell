@@ -31,8 +31,13 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/doctest-0.9.0.1 <=dev-haskell/doctest-0.10 )
+	test? ( >=dev-haskell/doctest-0.9.0.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'doctest >= 0.9.0.1 && <= 0.10' 'doctest >= 0.9.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
