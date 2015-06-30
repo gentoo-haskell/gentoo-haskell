@@ -38,12 +38,17 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.10
+	test? ( >=dev-haskell/doctest-0.8
 		>=dev-haskell/hunit-1.2.5
 		>=dev-haskell/simple-reflect-0.3.1
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'doctest   >= 0.8 && < 0.10' 'doctest   >= 0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
