@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The blubber client. blubber is an arcade game in
+		which the player tries to build the biggest blub
+		by blubberping the other blubs before they
+		blubber the player&#39;s blub.
+	</longdescription>
+</pkgmetadata>
