@@ -1,0 +1,40 @@
+diff --git a/Codec/MIME/String/ContentDisposition.hs b/Codec/MIME/String/ContentDisposition.hs
+index 40b11fe..7a5eda7 100644
+--- a/Codec/MIME/String/ContentDisposition.hs
++++ b/Codec/MIME/String/ContentDisposition.hs
+@@ -23,4 +23,5 @@ import Codec.MIME.String.Headers
+        cws, p_ci_string, p_extension_token, p_value, p_quoted_string,
+       )
++import Prelude hiding ((<$>), (<*>), (<*), (<$))
+ 
+ data ContentDisposition = ContentDisposition DispositionType
+diff --git a/Codec/MIME/String/Date.hs b/Codec/MIME/String/Date.hs
+index 50a3853..7ff1cfa 100644
+--- a/Codec/MIME/String/Date.hs
++++ b/Codec/MIME/String/Date.hs
+@@ -20,4 +20,5 @@ import Control.Monad.Trans (MonadIO, liftIO)
+ import System.Time hiding (Month(May), Day)
+ import qualified System.Time as Time (Month(May))
++import Prelude hiding ((<$>), (<*>), (<*), (<$))
+ 
+ data FullDate = FullDate (Maybe DOW) Date Time
+diff --git a/Codec/MIME/String/Headers.hs b/Codec/MIME/String/Headers.hs
+index 393c0d1..a245bb5 100644
+--- a/Codec/MIME/String/Headers.hs
++++ b/Codec/MIME/String/Headers.hs
+@@ -39,4 +39,5 @@ import qualified Data.ByteString.Lazy.Char8 as BS
+ import Data.Char
+ import Data.List
++import Prelude hiding ((<$>), (<*>), (<*), (<$))
+ 
+ -----------------------
+diff --git a/Codec/MIME/String/Internal/ABNF.hs b/Codec/MIME/String/Internal/ABNF.hs
+index a0f3f3a..98ea988 100644
+--- a/Codec/MIME/String/Internal/ABNF.hs
++++ b/Codec/MIME/String/Internal/ABNF.hs
+@@ -8,4 +8,5 @@ module Codec.MIME.String.Internal.ABNF
+ 
+ import Data.Word
++import Prelude hiding ((<$>), (<*>), (<*), (<$))
+ 
+ newtype Parser inp res = Parser ([(inp, Pos)] -> ParseResult inp res)
