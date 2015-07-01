@@ -38,6 +38,11 @@ pkg_setup() {
 	haskell-cabal_pkg_setup
 }
 
+src_prepare() {
+	cabal_chdeps \
+		'base       >=4.7 && <4.8' 'base       >=4.7'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--prefix="${GAMES_PREFIX}"
