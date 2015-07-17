@@ -37,16 +37,13 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-lang/ghc-7.4.1:=
 	|| ( ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.2:=[profile?] )
 		( >=dev-haskell/hashable-1.2.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] ) )
-	portable? ( >=dev-haskell/old-locale-1:=[profile?] <dev-haskell/old-locale-2:=[profile?] )
-	!portable? ( >=dev-haskell/bytestring-mmap-0.2.2:=[profile?] <dev-haskell/bytestring-mmap-0.3:=[profile?] )
+	portable? ( >=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?] )
+	!portable? ( >=dev-haskell/bytestring-mmap-0.2.2:=[profile?] <dev-haskell/bytestring-mmap-0.3:=[profile?]
+			>=dev-haskell/old-locale-1:=[profile?] <dev-haskell/old-locale-2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-src_prepare() {
-	cabal_chdeps \
-		'attoparsec                >= 0.10    && < 0.13' 'attoparsec                >= 0.10    && < 0.14'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
