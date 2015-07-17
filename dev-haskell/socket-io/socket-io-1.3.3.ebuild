@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="This library provides an implementation of Socket.io protocol (version 1)"
+DESCRIPTION="This library provides an implementation of <http://socket.io Socket.io> protocol (version 1). It builds on top of Engine.IO, allowing Socket.io to work with both long polling XHR requests, and seamlessly upgrading them to HTML 5 web sockets"
 HOMEPAGE="http://github.com/ocharles/engine.io"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
