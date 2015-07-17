@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.8:=[profile?]
+RDEPEND=">=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
