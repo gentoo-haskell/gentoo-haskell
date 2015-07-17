@@ -13,7 +13,7 @@ DESCRIPTION="Pure-Haskell utilities for dealing with XML with the conduit packag
 HOMEPAGE="http://github.com/snoyberg/xml"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
