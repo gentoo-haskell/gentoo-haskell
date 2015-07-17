@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.2:=[profile?] <dev-haskell/attoparsec-0.1
 	<dev-haskell/hashable-1.3:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
-	<dev-haskell/vector-0.11:=[profile?]
+	<dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
