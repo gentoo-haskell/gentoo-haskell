@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +plugins"
 
-RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.15:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.16:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
