@@ -85,7 +85,7 @@ DEPEND="${RDEPEND}
 			dev-haskell/tasty-hunit
 			dev-haskell/tasty-quickcheck
 			dev-haskell/tasty-rerun
-			>=dev-haskell/optparse-applicative-0.9.1
+			>=dev-haskell/optparse-applicative-0.10
 			)
 	torrentparser? ( >=dev-haskell/torrent-10000.0.0 )
 	webapp? ( dev-haskell/blaze-builder
