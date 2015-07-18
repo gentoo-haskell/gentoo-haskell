@@ -13,7 +13,7 @@ DESCRIPTION="Types for representing a structured document"
 HOMEPAGE="http://johnmacfarlane.net/pandoc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
