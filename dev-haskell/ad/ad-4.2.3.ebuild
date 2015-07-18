@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/erf-2.0:=[profile?] <dev-haskell/erf-2.1:=[profile?]
 	>=dev-haskell/free-4.6.1:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/nats-0.1.2:=[profile?] <dev-haskell/nats-2:=[profile?]
-	>=dev-haskell/reflection-1.4:=[profile?] <dev-haskell/reflection-2:=[profile?]
+	>=dev-haskell/reflection-1.4:=[profile?] <dev-haskell/reflection-3:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
