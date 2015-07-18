@@ -14,9 +14,12 @@ HOMEPAGE="https://github.com/ndmitchell/extra#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
+# this package has nothing to do with extra:0 (aka Extra on hackage)
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # hangs
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
