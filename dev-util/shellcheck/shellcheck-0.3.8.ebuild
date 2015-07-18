@@ -16,7 +16,7 @@ DESCRIPTION="Shell script analysis tool"
 HOMEPAGE="http://www.shellcheck.net/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
-LICENSE="AGPL-3"
+LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
