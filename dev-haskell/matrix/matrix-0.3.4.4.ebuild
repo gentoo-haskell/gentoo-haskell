@@ -22,7 +22,7 @@ RESTRICT=test # hangs
 
 RDEPEND=">=dev-haskell/loop-0.2:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
