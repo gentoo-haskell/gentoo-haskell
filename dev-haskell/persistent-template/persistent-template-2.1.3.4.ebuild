@@ -34,8 +34,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'aeson                    >= 0.7       && < 0.9' 'aeson                    >= 0.7       && < 0.10'
-}
