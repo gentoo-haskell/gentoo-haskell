@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fails tests
+RESTRICT=test # fails tests, will be fixed in next release
 
 RDEPEND=">=dev-haskell/primes-0.2:=[profile?] <dev-haskell/primes-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
