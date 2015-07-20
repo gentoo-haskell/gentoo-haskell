@@ -35,11 +35,6 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_test() {
-	# See bug #537500 for this beauty.
-	runghc Setup.hs test || die 'test suite failed'
-}
-
 src_install() {
 	cabal_src_install
 	doman "${PN}.1"
