@@ -171,6 +171,8 @@ cabal-version() {
 cabal-bootstrap() {
 	local setupmodule
 	local cabalpackage
+	local setup_bootstrap_args=()
+
 	if [[ -f "${S}/Setup.lhs" ]]; then
 		setupmodule="${S}/Setup.lhs"
 	elif [[ -f "${S}/Setup.hs" ]]; then
@@ -191,8 +193,16 @@ cabal-bootstrap() {
 	cabalpackage=Cabal-$(cabal-version)
 	einfo "Using cabal-$(cabal-version)."
 
+	if $(ghc-supports-threaded-runtime); then
+		# Cabal has a bug that deadlocks non-threaded RTS:
+		#     https://bugs.gentoo.org/537500
+		#     https://github.com/haskell/cabal/issues/2398
+		setup_bootstrap_args+=(-threaded)
+	fi
+
 	make_setup() {
 		set -- -package "${cabalpackage}" --make "${setupmodule}" \
+			${setup_bootstrap_args} \
 			${HCFLAGS} \
 			${GHC_BOOTSTRAP_FLAGS} \
 			"$@" \
