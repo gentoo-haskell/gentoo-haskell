@@ -31,6 +31,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
+src_prepare() {
+	# 7.10.2_rc2 exposed an interesting bug:
+	#     https://ghc.haskell.org/trac/ghc/ticket/10627
+	[[ $(ghc-version) == 7.10.1.20150630 ]] && HCFLAGS+=" -fno-enable-rewrite-rules"
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-buildexamples
