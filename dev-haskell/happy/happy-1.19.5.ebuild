@@ -57,6 +57,11 @@ src_compile() {
 	fi
 }
 
+src_test() {
+	# workaround https://github.com/haskell/cabal/issues/2398
+	emake -k -C tests all || die
+}
+
 src_install() {
 	haskell-cabal_src_install
 	if use doc; then
