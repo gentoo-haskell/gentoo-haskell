@@ -26,3 +26,8 @@ RDEPEND="dev-haskell/old-locale:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	# TODO: add a link to GHC bug
+	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
+}
