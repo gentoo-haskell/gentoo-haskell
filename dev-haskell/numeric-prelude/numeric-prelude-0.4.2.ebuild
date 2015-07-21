@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# 7.10.2_rc2 exposed an interesting bug:
 	#     https://ghc.haskell.org/trac/ghc/ticket/10627
-	[[ $(ghc-version) == 7.10.1.20150630 ]] && HCFLAGS+=" -fno-enable-rewrite-rules"
+	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -O[1-9] -O0
 }
 
 src_configure() {
