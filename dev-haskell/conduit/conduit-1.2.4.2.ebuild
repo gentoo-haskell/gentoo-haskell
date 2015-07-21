@@ -36,6 +36,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	# TODO: file a bug on ghc trac
+	# https://ghc.haskell.org/trac/ghc/ticket/10665
 	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
 }
