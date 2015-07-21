@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.5
 		dev-haskell/safe )
 "
+
+src_prepare() {
+	# TODO: file a bug on ghc trac
+	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
+}
