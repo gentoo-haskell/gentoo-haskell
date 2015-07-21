@@ -512,6 +512,9 @@ src_configure() {
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
 
+		elog "Final mk/build.mk:"
+		cat mk/build.mk || die
+
 		local econf_args=()
 
 		# GHC embeds 'gcc' it was built by and uses it later.
