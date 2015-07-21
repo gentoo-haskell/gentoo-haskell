@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="no-exe unicode system-libyaml"
+IUSE="no-exe no-unicode system-libyaml"
 
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
@@ -34,15 +34,16 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/aeson-qq
+		dev-haskell/base-compat
 		>=dev-haskell/hspec-1.3
-		dev-haskell/hspec-expectations
-		dev-haskell/hunit )
+		dev-haskell/hunit
+		dev-haskell/mockery )
 	system-libyaml? ( virtual/pkgconfig )
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag no-exe no-exe) \
-		$(usex unicode "--flags=-no-unicode" "--flags=no-unicode") \
+		$(cabal_flag no-unicode no-unicode) \
 		$(cabal_flag system-libyaml system-libyaml)
 }
