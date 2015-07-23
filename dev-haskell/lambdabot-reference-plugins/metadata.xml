@@ -17,4 +17,7 @@
 		[url] Display titles of URLs on channels.
 		[where] Manage and query a key-URL list.
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>
