@@ -19,18 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+derivedatatypeable"
 
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
-	>=dev-haskell/semigroupoids-4.0:=[profile?]
+	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
 	>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'semigroupoids        >= 4.0     && < 5.0' 'semigroupoids        >= 4.0'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
