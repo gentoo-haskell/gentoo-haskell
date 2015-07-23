@@ -102,6 +102,15 @@ ghc-sanecabal() {
 	done
 	return 1
 }
+# @FUNCTION: ghc-is-dynamic
+# @DESCRIPTION:
+# checks if ghc is built against dynamic libraries
+# binaries linked against GHC library (and using plugin loading)
+# have to be linked the same way:
+#    https://ghc.haskell.org/trac/ghc/ticket/10301
+ghc-is-dynamic() {
+	$(ghc-getghc) --info | grep "GHC Dynamic" | grep -q "YES"
+}
 
 # @FUNCTION: ghc-supports-shared-libraries
 # @DESCRIPTION:
