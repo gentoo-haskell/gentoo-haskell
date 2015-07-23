@@ -55,10 +55,10 @@ RDEPEND="dev-haskell/async:=
 	>=dev-haskell/warp-tls-3.0.1:=
 	>=dev-haskell/yaml-0.8:= <dev-haskell/yaml-0.9:=
 	>=dev-haskell/zlib-0.5:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.18.1.3
 "
 
 src_configure() {
