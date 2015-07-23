@@ -25,7 +25,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	>=dev-lang/ghc-7.4.1
-	~dev-haskell/haddock-api-2.16.0
+	~dev-haskell/haddock-api-2.16.1
 "
 
 src_prepare() {
