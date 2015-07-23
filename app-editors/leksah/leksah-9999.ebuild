@@ -54,8 +54,7 @@ RDEPEND=">=app-editors/leksah-server-0.14.3.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/vado-0.0.1:=[profile?] <dev-haskell/vado-0.1:=[profile?]
 	>=dev-haskell/vcsgui-0.1.0:=[profile?] <dev-haskell/vcsgui-0.2:=[profile?]
 	>=dev-haskell/vcswrapper-0.1.0:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
-	>=dev-lang/ghc-6.10.1:=[profile?] <dev-lang/ghc-7.9:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:= <dev-lang/ghc-7.9:=
 	gtk3? ( >=dev-haskell/gtk-0.13.2:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?]
 		>=dev-haskell/gtksourceview-0.13.1.0:3=[profile?] <dev-haskell/gtksourceview-0.14:3=[profile?]
 		dev-haskell/webkit:3=[profile?]
