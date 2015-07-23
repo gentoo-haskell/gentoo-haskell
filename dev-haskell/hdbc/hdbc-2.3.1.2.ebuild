@@ -19,7 +19,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="mysql odbc postgres sqlite3 test"
+IUSE="mysql odbc postgres sqlite test"
 
 RDEPEND=">=dev-haskell/convertible-1.0.10.0:=[profile?] <dev-haskell/convertible-1.1.0.0:=[profile?]
 		dev-haskell/mtl:=[profile?]
@@ -38,7 +38,7 @@ DEPENDV="$(get_version_component_range 1-2)"
 PDEPEND="mysql? ( dev-haskell/hdbc-mysql )
 		odbc? ( =dev-haskell/hdbc-odbc-${DEPENDV}* )
 		postgres? ( =dev-haskell/hdbc-postgresql-${DEPENDV}* )
-		sqlite3? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
+		sqlite? ( >=dev-haskell/hdbc-sqlite-${DEPENDV} )"
 
 S="${WORKDIR}/${MY_P}"
 
