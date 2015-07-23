@@ -2,4 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
+	<use>
+		<flag name='etc_profile'>Install /etc/profile.d/ entry to inject nix support for all users.</flag>
+		<flag name='gc'>Enable garbage collection in the Nix expression evaluator (use <pkg>dev-libs/boehm-gc</pkg>).</flag>
+	</use>
 </pkgmetadata>
