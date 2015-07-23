@@ -28,4 +28,7 @@
 		
 		&amp;#169; 2009 Andy Gill; BSD3 license.
 	</longdescription>
+	<use>
+		<flag name='tests'>Build test binaries.</flag>
+	</use>
 </pkgmetadata>
