@@ -35,4 +35,7 @@
 		
 		* Use the GTK+ rc-file styling system for colors instead of hard coding them
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>
