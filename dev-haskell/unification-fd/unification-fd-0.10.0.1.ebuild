@@ -25,3 +25,8 @@ RDEPEND=">=dev-haskell/logict-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	# https://ghc.haskell.org/trac/ghc/ticket/10665
+	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -g ''
+}
