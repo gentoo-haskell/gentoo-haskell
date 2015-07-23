@@ -5,4 +5,8 @@
 	<longdescription>
 		Draw pretty sequence diagrams of D-Bus traffic
 	</longdescription>
+	<use>
+		<flag name="interactivetests">Build interactive test programs</flag>
+		<flag name="threaded">Build with support for multithreaded execution.</flag>
+	</use>
 </pkgmetadata>
