@@ -5,4 +5,7 @@
 	<longdescription>
 		Tarjan&#39;s algorithm for computing the strongly connected components of a graph.
 	</longdescription>
+	<use>
+		<flag name="use-maps">Use IntMap instead of mutable arrays.</flag>
+	</use>
 </pkgmetadata>
