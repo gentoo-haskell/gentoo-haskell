@@ -5,4 +5,7 @@
 	<longdescription>
 		See examples and full readme on the Github page: https:\/\/github.com\/egonSchiele\/HandsomeSoup
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>
