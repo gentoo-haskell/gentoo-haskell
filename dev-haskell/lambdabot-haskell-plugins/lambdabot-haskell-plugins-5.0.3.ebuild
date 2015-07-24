@@ -24,8 +24,8 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/hoogle-4.2:=[profile?]
 	>=dev-haskell/http-4000:=[profile?]
 	>=dev-haskell/iospec-0.2:=[profile?]
-	>=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
-	>=dev-haskell/lambdabot-reference-plugins-5.0.1:=[profile?] <dev-haskell/lambdabot-reference-plugins-5.1:=[profile?]
+	>=dev-haskell/lambdabot-core-5.0.3:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+	>=dev-haskell/lambdabot-reference-plugins-5.0.3:=[profile?] <dev-haskell/lambdabot-reference-plugins-5.1:=[profile?]
 	>=dev-haskell/lambdabot-trusted-5.0.2:=[profile?] <dev-haskell/lambdabot-trusted-5.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/logict-0.5:=[profile?]
@@ -49,8 +49,3 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'utf8-string             >= 0.3 && < 1' 'utf8-string             >= 0.3'
-}
