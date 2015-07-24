@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
 RDEPEND=">=dev-haskell/http-4000:=[profile?]
-	>=dev-haskell/lambdabot-core-5.0.1:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
+	>=dev-haskell/lambdabot-core-5.0.3:=[profile?] <dev-haskell/lambdabot-core-5.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/oeis-0.3.1:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?]
@@ -35,11 +35,6 @@ RDEPEND=">=dev-haskell/http-4000:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'utf8-string             >= 0.3 && < 1' 'utf8-string             >= 0.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
