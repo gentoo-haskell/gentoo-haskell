@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
-RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.15:=[profile?]
+RDEPEND=">=app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
@@ -60,7 +60,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'time-locale-compat >= 0.1.0.0 && < 0.1.1.0' 'time-locale-compat >= 0.1.0.0'
+		'time-locale-compat >= 0.1.0.0 && < 0.1.1.0' 'time-locale-compat >= 0.1.0.0' \
+		'pandoc             >= 1.14    && < 1.15' 'pandoc             >= 1.14'
 }
 
 src_configure() {
