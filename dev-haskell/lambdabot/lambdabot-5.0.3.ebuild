@@ -18,12 +18,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/lambdabot-core-5.0.1:= <dev-haskell/lambdabot-core-5.1:=
-	>=dev-haskell/lambdabot-haskell-plugins-5.0.2:= <dev-haskell/lambdabot-haskell-plugins-5.1:=
-	>=dev-haskell/lambdabot-irc-plugins-5.0.1:= <dev-haskell/lambdabot-irc-plugins-5.1:=
+RDEPEND=">=dev-haskell/lambdabot-core-5.0.3:= <dev-haskell/lambdabot-core-5.1:=
+	>=dev-haskell/lambdabot-haskell-plugins-5.0.3:= <dev-haskell/lambdabot-haskell-plugins-5.1:=
+	>=dev-haskell/lambdabot-irc-plugins-5.0.3:= <dev-haskell/lambdabot-irc-plugins-5.1:=
 	>=dev-haskell/lambdabot-misc-plugins-5.0.1:= <dev-haskell/lambdabot-misc-plugins-5.1:=
-	>=dev-haskell/lambdabot-novelty-plugins-5.0.1:= <dev-haskell/lambdabot-novelty-plugins-5.1:=
-	>=dev-haskell/lambdabot-reference-plugins-5.0.1:= <dev-haskell/lambdabot-reference-plugins-5.1:=
+	>=dev-haskell/lambdabot-novelty-plugins-5.0.3:= <dev-haskell/lambdabot-novelty-plugins-5.1:=
+	>=dev-haskell/lambdabot-reference-plugins-5.0.3:= <dev-haskell/lambdabot-reference-plugins-5.1:=
 	>=dev-haskell/lambdabot-social-plugins-5.0.1:= <dev-haskell/lambdabot-social-plugins-5.1:=
 	>=dev-lang/ghc-7.4.1:=
 "
