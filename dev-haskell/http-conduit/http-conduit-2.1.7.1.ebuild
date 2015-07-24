@@ -46,6 +46,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-haskell/wai-3.0 <dev-haskell/wai-3.1
 		dev-haskell/wai-conduit
-		>=dev-haskell/warp-3.0.0.2 <dev-haskell/warp-3.1
+		>=dev-haskell/warp-3.0.0.2 <dev-haskell/warp-3.2
 		dev-haskell/warp-tls )
 "
