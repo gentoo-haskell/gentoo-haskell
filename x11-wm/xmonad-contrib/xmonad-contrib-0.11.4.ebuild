@@ -36,6 +36,12 @@ DEPEND="${RDEPEND}
 # https://code.google.com/p/xmonad/issues/detail?id=597
 PATCHES=("${FILESDIR}/${P}-import-Applicative.patch")
 
+src_prepare() {
+	# https://ghc.haskell.org/trac/ghc/ticket/10667
+	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
+	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -g ''
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-testing \
