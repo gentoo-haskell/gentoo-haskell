@@ -5,4 +5,7 @@
 	<longdescription>
 		This package provides log-domain floats, doubles and complex numbers.
 	</longdescription>
+	<use>
+		<flag name='ffi'>Use C FFI to call math.h functions.</flag>
+	</use>
 </pkgmetadata>
