@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
-	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.8:=[profile?]
+	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.9:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hashable-extras-0.2:=[profile?] <dev-haskell/hashable-extras-1:=[profile?]
 	>=dev-haskell/safecopy-0.8.1:=[profile?] <dev-haskell/safecopy-0.9:=[profile?]
