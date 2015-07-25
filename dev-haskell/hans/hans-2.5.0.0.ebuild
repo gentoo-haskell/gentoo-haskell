@@ -42,6 +42,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bounded-channels bounded-channels) \
 		$(cabal_flag enable-tests enable-tests) \
-		$(cabal_flag example examples) \
+		$(cabal_flag examples example) \
 		$(cabal_flag web-server web-server)
 }
