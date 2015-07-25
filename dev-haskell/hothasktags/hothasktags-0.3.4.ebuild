@@ -18,9 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/cmdargs:=
-	>=dev-haskell/cpphs-1.11:= <dev-haskell/cpphs-1.20:=
+RDEPEND=">=dev-haskell/cpphs-1.11:= <dev-haskell/cpphs-1.20:=
 	>=dev-haskell/haskell-src-exts-1.14:=
+	dev-haskell/optparse-applicative:=
+	dev-haskell/split:=
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
