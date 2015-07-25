@@ -8,4 +8,7 @@
 		on avaliability.  Note that this package may be compiled against
 		readline, which is licended under the GPL.
 	</longdescription>
+	<use>
+		<flag name='editline'>Use editline instead of readline backend.</flag>
+	</use>
 </pkgmetadata>
