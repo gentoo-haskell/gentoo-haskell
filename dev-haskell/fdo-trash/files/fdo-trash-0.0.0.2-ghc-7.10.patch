@@ -1,0 +1,24 @@
+diff --git a/Freedesktop/Trash.hs b/Freedesktop/Trash.hs
+index 51b3764..849b51b 100644
+--- a/Freedesktop/Trash.hs
++++ b/Freedesktop/Trash.hs
+@@ -23,3 +23,4 @@ import System.Directory(getDirectoryContents,removeDirectoryRecursive)
+ import Data.Maybe(fromJust,catMaybes)
+-import System.Locale(iso8601DateFormat,defaultTimeLocale)
++import System.Locale(iso8601DateFormat)
++import Data.Time.Locale.Compat(defaultTimeLocale)
+ import Text.ParserCombinators.Parsec(parse,many,try,(<|>),string,noneOf,oneOf,many)
+diff --git a/fdo-trash.cabal b/fdo-trash.cabal
+index 7605f40..b60c004 100755
+--- a/fdo-trash.cabal
++++ b/fdo-trash.cabal
+@@ -27,3 +27,4 @@ library
+                    url,
+-                   time
++                   time,
++                   time-locale-compat
+   ghc-options:     -Wall -fno-warn-missing-signatures
+@@ -41,2 +42,3 @@ executable fdo-trash
+                  time,
++                 time-locale-compat,
+                  unix
