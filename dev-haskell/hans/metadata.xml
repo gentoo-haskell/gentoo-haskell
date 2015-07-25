@@ -7,4 +7,9 @@
 		networking in the context of the HaLVM, or with a Linux tap device. Currently,
 		HaNS supports 802.3, IPv4, ARP, DHCP (partially), ICMP, UDP, and TCP.
 	</longdescription>
+	<use>
+		<flag name='bounded-channels'>Use bounded channels for message passing.</flag>
+		<flag name='enable-tests'>Build the executable to run unit tests.</flag>
+		<flag name='web-server'>Build a simple web-server example.</flag>
+	</use>
 </pkgmetadata>
