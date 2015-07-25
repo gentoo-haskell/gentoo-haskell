@@ -6,4 +6,7 @@
 		This package provides LDAP interface code for Haskell programs,
 		binding to the C LDAP API.
 	</longdescription>
+	<use>
+		<flag name='buildtests'>Build the executable to run unit tests.</flag>
+	</use>
 </pkgmetadata>
