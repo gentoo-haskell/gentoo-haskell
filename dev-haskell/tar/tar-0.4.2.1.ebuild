@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86 ~x86-macos"
 IUSE=""
 
-RESTRICT=test # broken
-
 RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
