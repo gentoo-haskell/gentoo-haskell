@@ -21,4 +21,7 @@
 		
 		An overview is available in the README: &lt;https://github.com/yesodweb/Shelly.hs/blob/master/README.md&gt;
 	</longdescription>
+	<use>
+		<flag name='lifted'>run the tests against Shelly.Lifted</flag>
+	</use>
 </pkgmetadata>
