@@ -1,0 +1,16 @@
+diff --git a/executable/Main.hs b/executable/Main.hs
+index d252bfc..d6d5069 100644
+--- a/executable/Main.hs
++++ b/executable/Main.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE FlexibleInstances, PostfixOperators #-}
++{-# LANGUAGE FlexibleInstances, PostfixOperators, FlexibleContexts #-}
+ 
+diff --git a/library/Kibro.hs b/library/Kibro.hs
+index 50bb1e7..92588e4 100644
+--- a/library/Kibro.hs
++++ b/library/Kibro.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE GeneralizedNewtypeDeriving, FlexibleInstances #-}
++{-# LANGUAGE GeneralizedNewtypeDeriving, FlexibleInstances, FlexibleContexts #-}
+ 
