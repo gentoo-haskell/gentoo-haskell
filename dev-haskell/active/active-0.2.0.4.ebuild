@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.12:=[profile?]
-	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.19:=[profile?]
+RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.13:=[profile?]
+	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.20:=[profile?]
 	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
