@@ -6,4 +6,7 @@
 		A haskell implementation of Game 2048,
 		based on &lt;https://github.com/gabrielecirulli/2048&gt;.
 	</longdescription>
+	<use>
+		<flag name='vty'>build UI written in vty-ui.</flag>
+	</use>
 </pkgmetadata>

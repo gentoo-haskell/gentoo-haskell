@@ -1,0 +1,38 @@
+diff --git a/src/Engine.hs b/src/Engine.hs
+index 67582a2..90ae02e 100644
+--- a/src/Engine.hs
++++ b/src/Engine.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE TypeSynonymInstances, GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE TypeSynonymInstances, GeneralizedNewtypeDeriving, FlexibleContexts #-}
+ 
+@@ -69,2 +69,3 @@ import qualified Network.URI as URI
+ import qualified Control.Monad.Reader as R
++import Control.Applicative
+ 
+@@ -86,3 +87,3 @@ newtype PasteHandler a = PasteHandlerA {
+             MonadState PasteContext,
+-            Functor)
++            Functor, Applicative)
+ 
+diff --git a/src/EngineImgur.hs b/src/EngineImgur.hs
+index 1c36ef7..49dd424 100644
+--- a/src/EngineImgur.hs
++++ b/src/EngineImgur.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ module EngineImgur (config, handler) where
+diff --git a/src/EngineImm.hs b/src/EngineImm.hs
+index 3b6ff23..9679feb 100644
+--- a/src/EngineImm.hs
++++ b/src/EngineImm.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ module EngineImm (config, handler) where
+diff --git a/src/Processing.hs b/src/Processing.hs
+index 5173f18..ebb5fe6 100644
+--- a/src/Processing.hs
++++ b/src/Processing.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ module Processing (getAttrs,

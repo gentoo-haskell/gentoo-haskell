@@ -41,7 +41,7 @@ diff -rN -u old-Graphalyze/Graphalyze.cabal new-Graphalyze/Graphalyze.cabal
                           fgl == 5.5.*,
                           graphviz >= 2999.15 && < 2999.18,
 -                         pandoc == 1.12.*,
-+                         pandoc >= 1.12 && < 1.15,
++                         pandoc >= 1.12,
                           text
  
          Exposed-Modules:     Data.Graph.Analysis

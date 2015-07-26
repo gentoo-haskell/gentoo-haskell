@@ -615,7 +615,7 @@ pkg_postinst() {
 		ewarn
 		ewarn "You have just upgraded from an older version of GHC."
 		ewarn "You may have to run"
-		ewarn "      'haskell-updater --upgrade'"
+		ewarn "      'haskell-updater'"
 		ewarn "to rebuild all ghc-based Haskell libraries."
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"

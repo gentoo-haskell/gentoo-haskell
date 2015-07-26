@@ -21,6 +21,6 @@ index 0699364..5d8e9e6 100644
                 , text            >= 0.11  && < 2.0
                 , bytestring      >= 0.9   && < 0.11
 -               , pandoc          >= 1.10  && < 1.14
-+               , pandoc          >= 1.10  && < 1.15
++               , pandoc          >= 1.10
                 , blaze-html      >= 0.5   && < 0.9
                 , blaze-markup    >= 0.5   && < 0.8

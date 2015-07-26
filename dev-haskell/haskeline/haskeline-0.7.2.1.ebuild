@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:7.10.1"
+CABAL_CORE_LIB_GHC_PV="PM:7.10.1 PM:7.10.2_rc2 PM:7.10.2"
 
 src_prepare() {
 	cabal_chdeps \

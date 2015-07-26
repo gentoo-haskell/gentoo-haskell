@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # hangs
+RESTRICT=test # fails tests due to ghc changes
 
 RDEPEND=">=dev-haskell/mtl-2.1.1:=[profile?]
 	>=dev-haskell/th-desugar-1.5.2:=[profile?] <dev-haskell/th-desugar-1.6:=[profile?]
@@ -34,6 +34,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# https://github.com/gentoo-haskell/gentoo-haskell/pull/360
 	# https://ghc.haskell.org/trac/ghc/ticket/9160
+	# https://ghc.haskell.org/trac/ghc/ticket/10689
 	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
 	[[ $(ghc-version) == 7.10.1 ]] && replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -O[2-9] -O1
 }

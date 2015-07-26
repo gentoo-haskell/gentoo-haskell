@@ -29,3 +29,9 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/exte
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4 && < 5, random >= 1, deepseq >= 1.1 && < 1.4' \
+		'base >= 4 && < 5, random >= 1, deepseq >= 1.1'
+}

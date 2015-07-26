@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>emacs</herd>
-<herd>haskell</herd>
+	<herd>emacs</herd>
+	<herd>haskell</herd>
+	<use>
+		<flag name='snippets'>install snippets/ modules</flag>
+	</use>
 </pkgmetadata>

@@ -1,0 +1,17 @@
+diff --git a/Data/Yarr/Flow.hs b/Data/Yarr/Flow.hs
+index 053c002..73ca64c 100644
+--- a/Data/Yarr/Flow.hs
++++ b/Data/Yarr/Flow.hs
+@@ -30,2 +30,3 @@ import Data.Yarr.Utils.FixedVector as V hiding ( index, traverse )
+ import Data.Vector.Fixed.Cont ( Fn )
++import Prelude hiding ( traverse )
+ 
+diff --git a/Data/Yarr/Repr/Foreign.hs b/Data/Yarr/Repr/Foreign.hs
+index 0b4bded..34a60e6 100644
+--- a/Data/Yarr/Repr/Foreign.hs
++++ b/Data/Yarr/Repr/Foreign.hs
+@@ -172,3 +172,3 @@ newEmpty :: (Shape sh, Storable a, Integral a) => sh -> IO (UArray F L sh a)
+ newEmpty sh = do
+-    arr <- internalNew callocBytes sh
++    arr <- internalNew Foreign.Marshal.MissingAlloc.callocBytes sh
+     arr `deepseq` return ()

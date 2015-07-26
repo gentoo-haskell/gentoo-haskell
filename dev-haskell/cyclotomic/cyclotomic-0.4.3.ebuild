@@ -24,3 +24,8 @@ RDEPEND=">=dev-haskell/arithmoi-0.4:=[profile?] <dev-haskell/arithmoi-0.5:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.2 && < 4.8' 'base >= 4.2'
+}

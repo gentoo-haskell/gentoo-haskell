@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		@pipes-parse@ builds upon the @pipes@ library to provide shared
+		parsing idioms and utilities:
+		
+		* /Leftovers/: Save unused input for later consumption
+		
+		* /Leftover propagation/: Leftovers are propagated backwards perfectly
+		
+		* /Connect and Resume/: Use @StateT@ to save unused input for later
+		
+		* /Termination Safety/: Detect and recover from end of input
+		
+		@Pipes.Parse@ contains the full documentation for this library.
+		
+		Read @Pipes.Parse.Tutorial@ for an extensive tutorial.
+	</longdescription>
+</pkgmetadata>

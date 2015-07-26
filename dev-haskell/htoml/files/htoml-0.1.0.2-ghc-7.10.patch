@@ -1,0 +1,22 @@
+diff --git a/htoml.cabal b/htoml.cabal
+index 27ab635..d8cf147 100644
+--- a/htoml.cabal
++++ b/htoml.cabal
+@@ -49,2 +49,3 @@ library
+                         , old-locale             -any
++                        , time-locale-compat
+ 
+diff --git a/src/Text/Toml/Parser.hs b/src/Text/Toml/Parser.hs
+index 6037e98..2820a3b 100644
+--- a/src/Text/Toml/Parser.hs
++++ b/src/Text/Toml/Parser.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE OverloadedStrings #-}
++{-# LANGUAGE FlexibleContexts #-}
+ 
+@@ -17,3 +18,4 @@ import           Data.Time.Format    (parseTime)
+ import           Numeric             (readHex)
+-import           System.Locale       (defaultTimeLocale, iso8601DateFormat)
++import           System.Locale       (iso8601DateFormat)
++import           Data.Time.Locale.Compat (defaultTimeLocale)
+ import           Text.Parsec

@@ -35,6 +35,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
 		'base==3.*' 'base == 4.*' \

@@ -9,4 +9,7 @@
 		change significantly, even between minor releases. It is
 		currently only intended for use by the executable.
 	</longdescription>
+	<use>
+		<flag name='integration-tests'>run the integration test suite.</flag>
+	</use>
 </pkgmetadata>

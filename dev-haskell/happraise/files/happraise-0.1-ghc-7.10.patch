@@ -1,0 +1,8 @@
+diff --git a/Main.hs b/Main.hs
+index 58c57e0..6f99ad0 100644
+--- a/Main.hs
++++ b/Main.hs
+@@ -32,2 +32,3 @@ import System.FilePath
+   )
++import Prelude hiding ( Word )
+ {- External Library Modules Imported -}

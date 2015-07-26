@@ -5,4 +5,7 @@
 	<longdescription>
 		This library allows you to generate RSS 2.0 feeds.
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>

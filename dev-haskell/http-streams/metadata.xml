@@ -13,4 +13,7 @@
 		The library is exported in a single module; see &quot;Network.Http.Client&quot;
 		for full documentation.
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>

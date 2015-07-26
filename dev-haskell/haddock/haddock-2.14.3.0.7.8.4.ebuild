@@ -8,7 +8,7 @@ EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 CABAL_FEATURES+=" nocabaldep"
-inherit haskell-cabal pax-utils
+inherit flag-o-matic haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
@@ -38,13 +38,25 @@ src_prepare() {
 }
 
 src_configure() {
+	local exe="${S}/dist/build/haddock/haddock"
+	local more_conf_opts=()
+
 	# create a fake haddock executable. it'll set the right version to cabal
 	# configure, but will eventually get overwritten in src_compile by
 	# the real executable.
-	local exe="${S}/dist/build/haddock/haddock"
 	mkdir -p $(dirname "${exe}")
 	echo -e "#!/bin/sh\necho Haddock version ${PV}" > "${exe}"
 	chmod +x "${exe}"
+
+	# haddock has to be linked the same way as ghc does:
+	# static/static or dynamic.dynamic
+	if $(ghc-is-dynamic); then
+		more_conf_opts+=(--enable-executable-dynamic)
+		# and on Cabal-1.18 there is a bug of not writing
+		# correct rpath to a final binary if package
+		# provides both library and executable.
+		append-ldflags -Wl,-rpath,${EROOT}/usr/$(get_libdir)/${P}/ghc-$(ghc-version)
+	fi
 
 	# we use 'nocabaldep' to use ghc's bundled Cabal
 	# as external one is likely to break our haddock
@@ -52,7 +64,8 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--ghc-options=-rtsopts \
 		--with-haddock="${exe}" \
-		--constraint="Cabal == $(cabal-version)"
+		--constraint="Cabal == $(cabal-version)" \
+		"${more_conf_opts[@]}"
 
 }
 

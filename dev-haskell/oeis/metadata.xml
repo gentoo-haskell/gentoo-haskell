@@ -5,4 +5,7 @@
 	<longdescription>
 		Interface to the Online Encyclopedia of Integer Sequences. See &lt;http://oeis.org/&gt;.
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>

@@ -1,0 +1,29 @@
+diff --git a/snap-app.cabal b/snap-app.cabal
+index 61979d1..f3d3e49 100644
+--- a/snap-app.cabal
++++ b/snap-app.cabal
+@@ -40,2 +40,3 @@ library
+                      old-locale,
+-                     time
++                     time,
++                     time-locale-compat
+diff --git a/src/Snap/App/RSS.hs b/src/Snap/App/RSS.hs
+index 15eb31d..4ddfeb3 100644
+--- a/src/Snap/App/RSS.hs
++++ b/src/Snap/App/RSS.hs
+@@ -10,2 +10,3 @@ import           Snap.App.XML
+ import           System.Locale
++import           Data.Time.Locale.Compat as DTLC
+ import           Text.Feed.Export
+@@ -32,2 +33,2 @@ makeFeed title link = xmlFeed . RSSFeed . makeRSS where
+     }
+-  toPubDate = formatTime defaultTimeLocale "%a, %d %b %Y %H:%M:%S UT"
++  toPubDate = formatTime DTLC.defaultTimeLocale "%a, %d %b %Y %H:%M:%S UT"
+diff --git a/src/Text/Blaze/Pagination.hs b/src/Text/Blaze/Pagination.hs
+index eeae8dd..4f8bb6c 100644
+--- a/src/Text/Blaze/Pagination.hs
++++ b/src/Text/Blaze/Pagination.hs
+@@ -2,2 +2,3 @@
+ {-# LANGUAGE RecordWildCards #-}
++{-# LANGUAGE FlexibleContexts #-}
+ {-# OPTIONS -fno-warn-name-shadowing -fno-warn-unused-do-bind #-}

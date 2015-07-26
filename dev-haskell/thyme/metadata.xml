@@ -8,4 +8,9 @@
 		
 		See &quot;Data.Thyme&quot; for a full description.
 	</longdescription>
+	<use>
+		<flag name='bug-for-bug'>bug-for-bug compatibility with time</flag>
+		<flag name='lens'>use the full lens package</flag>
+		<flag name='show-internal'>instance Show of internal representation</flag>
+	</use>
 </pkgmetadata>

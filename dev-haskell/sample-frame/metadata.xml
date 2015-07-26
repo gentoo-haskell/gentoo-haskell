@@ -16,4 +16,7 @@
 		
 		This is used by packages @sox@, @alsa@, @synthesizer@.
 	</longdescription>
+	<use>
+		<flag name='buildbenchmarks'>Build and install benchmarking executable.</flag>
+	</use>
 </pkgmetadata>

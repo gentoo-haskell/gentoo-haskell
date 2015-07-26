@@ -9,4 +9,7 @@
 		for triples  containing a particular subject, predicate, or object, or
 		selecting triples that satisfy an arbitrary predicate function.
 	</longdescription>
+	<use>
+		<flag name='network-uri'>Get Network.URI from the network-uri package.</flag>
+	</use>
 </pkgmetadata>

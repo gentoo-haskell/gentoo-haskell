@@ -9,4 +9,7 @@
 		Additionally, the graphing capability is exposed to other programs
 		as well in the form of a library module.
 	</longdescription>
+	<use>
+		<flag name='serveronly'>Suppress building the client, thereby removing the dependency on OpenGL.</flag>
+	</use>
 </pkgmetadata>
