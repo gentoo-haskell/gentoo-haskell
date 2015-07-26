@@ -32,4 +32,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-gloss-1.9.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
