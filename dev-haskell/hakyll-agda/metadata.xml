@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Simple module useful to generate blog posts from literate
+		Agda files.  See &lt;http://mazzo.li/posts/agda-hakyll.html&gt;
+		for more info.
+	</longdescription>
+</pkgmetadata>
