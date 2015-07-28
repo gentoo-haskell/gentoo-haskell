@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<herd>sci-mathematics</herd>
+	<use>
+		<flag name='cln'>Use <pkg>sci-libs/cln</pkg> as a bignum backend.</flag>
+		<flag name='compat'>Install CVC3 compatibility modules.</flag>
+		<flag name='glpk'>Use <pkg>sci-mathematics/glpk</pkg> as a linear backend.</flag>
+	</use>
+</pkgmetadata>

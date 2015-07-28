@@ -44,6 +44,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.20
 	dev-haskell/happy
 "
+# runtime-only depend, used for :prove
+RDEPEND+="
+	sci-mathematics/cvc4
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
