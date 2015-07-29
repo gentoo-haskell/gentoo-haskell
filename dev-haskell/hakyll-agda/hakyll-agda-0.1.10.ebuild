@@ -19,18 +19,21 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="app-text/pandoc:=[profile?]
-	~dev-haskell/hakyll-4.7.0.0-r1:=[profile?]
+	>=dev-haskell/hakyll-4.7.0.0-r1:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	~sci-mathematics/agda-2.4.2.3:=[profile?]
+	>=sci-mathematics/agda-2.4.2.3:=[profile?]
+	>=sci-mathematics/agda-stdlib-2.4.2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
 src_prepare() {
-	cabal_chdeps 'hakyll       == 4.7.2.0' 'hakyll'
-	epatch "${FILESDIR}/older-ghc-support.patch"
+	epatch "${FILESDIR}/${P}-ghc-7.8-support.patch"
+	cabal_chdeps \
+            'Agda         == 2.4.2.3' 'Agda >= 2.4.2.3' \
+            'hakyll       == 4.7.2.0' 'hakyll'
 }
