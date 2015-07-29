@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+test-doctests"
 
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
-	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.8:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
