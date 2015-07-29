@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
@@ -60,3 +60,9 @@ DEPEND="${RDEPEND}
 	dev-haskell/gtk2hs-buildtools
 	>=dev-python/ipython-3.0.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                >=0.7 && < 0.9' 'aeson                >=0.7' \
+		'aeson >=0.6 && < 0.9' 'aeson >=0.6'
+}
