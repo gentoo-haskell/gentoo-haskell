@@ -18,6 +18,7 @@ IUSE="+cln compat glpk"
 RDEPEND=">=dev-libs/antlr-c-3.2
 	dev-libs/boost:=
 	>=dev-libs/gmp-4.2:=
+	cln? ( sci-libs/cln )
 	compat? ( !sci-mathematics/cvc3 )
 	glpk? ( sci-mathematics/glpk )
 "
