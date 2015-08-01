@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86" # uses ghc-7.10
+KEYWORDS="~amd64 ~x86"
 IUSE="explicitbackend glfw +glut"
 
 RDEPEND=">=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]

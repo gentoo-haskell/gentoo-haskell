@@ -76,7 +76,7 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc ghcbootstrap ghcmakebinary +gmp"
 IUSE+=" binary"
 IUSE+=" elibc_glibc" # system stuff
@@ -86,9 +86,9 @@ RDEPEND="
 	>=dev-libs/gmp-5:=
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
-	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
-	kernel_linux? ( >=sys-devel/binutils-2.17 )
-	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
+	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3:* )
+	kernel_linux? ( >=sys-devel/binutils-2.17:* )
+	kernel_SunOS? ( >=sys-devel/binutils-2.17:* )
 "
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
