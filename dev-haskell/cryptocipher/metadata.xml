@@ -2,9 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<herd>haskell</herd>
-	<use>
-		<flag name="benchmark">Build benchmarks.</flag>
-	</use>
 	<longdescription>
 		Symmetrical Block, Stream and PubKey Ciphers
 	</longdescription>
