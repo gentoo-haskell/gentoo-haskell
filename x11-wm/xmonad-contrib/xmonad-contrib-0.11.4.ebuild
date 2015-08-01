@@ -8,7 +8,7 @@ EAPI=5
 #hackport: flags: -testing,use_xft:xft
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit base haskell-cabal
+inherit eutils haskell-cabal
 
 DESCRIPTION="Third party extensions for xmonad"
 HOMEPAGE="http://xmonad.org/"
@@ -32,11 +32,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-# Upstream bug 597 xmonad-contrib-0.11.4 does not compile
-# https://code.google.com/p/xmonad/issues/detail?id=597
-PATCHES=("${FILESDIR}/${P}-import-Applicative.patch")
-
 src_prepare() {
+	# Upstream bug 597 xmonad-contrib-0.11.4 does not compile
+	# https://code.google.com/p/xmonad/issues/detail?id=597
+	epatch "${FILESDIR}"/${P}-import-Applicative.patch
+
 	# https://ghc.haskell.org/trac/ghc/ticket/10667
 	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
 	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -g ''
