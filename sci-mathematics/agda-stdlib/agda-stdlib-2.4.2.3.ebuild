@@ -9,7 +9,7 @@ inherit haskell-cabal elisp-common
 
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="https://github.com/agda/${PN}/archive/${PV}.tar.gz -> ${P}-r1.tar.gz"
+SRC_URI="https://github.com/agda/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,7 +20,7 @@ IUSE="profile +ffi"
 # AllNonAsciiChars executables, so agda-stdlib does not require a subslot
 # dependency on filemanip.
 
-RDEPEND="=sci-mathematics/agda-${PV}:=[profile?]
+RDEPEND="=sci-mathematics/agda-${PV}*:=[profile?]
 	=dev-haskell/filemanip-0.3*[profile?]
 	>=dev-lang/ghc-6.12.1
 	ffi? ( sci-mathematics/agda-lib-ffi )
