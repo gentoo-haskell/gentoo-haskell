@@ -8,20 +8,16 @@ EAPI=5
 
 GTK_MAJ_VER="2"
 
-MY_PN="webkit-javascriptcore"
-MY_PV="${PV%.*}"
-MY_P="${MY_PN}-${MY_PV}"
-
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_FEATURES+=" nocabaldep"
 inherit base haskell-cabal
 
 DESCRIPTION="JavaScriptCore FFI from webkitgtk"
 HOMEPAGE="http://hackage.haskell.org/package/webkit-javascriptcore"
-SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${MY_PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="${GTK_MAJ_VER}/${PV}"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
@@ -29,15 +25,13 @@ RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profil
 	>=dev-haskell/gtk-0.13.0.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/gtk-0.14:${GTK_MAJ_VER}=[profile?]
 	>=dev-haskell/webkit-0.13.0.0:${GTK_MAJ_VER}=[profile?] <dev-haskell/webkit-0.14:${GTK_MAJ_VER}=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	net-libs/webkit-gtk:${GTK_MAJ_VER}
+	net-libs/webkit-gtk:2
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/gtk2hs-buildtools-0.13.0.2:0=
 	virtual/pkgconfig
 "
-
-S="${WORKDIR}/${MY_P}"
 
 PATCHES=("${FILESDIR}/${PN}-0.13.0.3-ghc-7.10.patch")
 

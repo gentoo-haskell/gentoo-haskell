@@ -22,20 +22,20 @@ RDEPEND=">=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	gtk3? ( >=dev-haskell/webkit-0.13.0.0:3=[profile?] <dev-haskell/webkit-0.14:3=[profile?]
-			>=dev-haskell/webkitgtk-javascriptcore-0.13.0.0:3=[profile?] <dev-haskell/webkitgtk-javascriptcore-0.14:3=[profile?] )
+	gtk3? ( >=dev-haskell/webkitgtk3-0.13.0.0:=[profile?] <dev-haskell/webkitgtk3-0.14:=[profile?]
+			>=dev-haskell/webkitgtk3-javascriptcore-0.13.0.0:=[profile?] <dev-haskell/webkitgtk3-javascriptcore-0.14:=[profile?] )
 	!gtk3? ( >=dev-haskell/webkit-0.13.0.0:2=[profile?] <dev-haskell/webkit-0.14:2=[profile?]
-			>=dev-haskell/webkitgtk-javascriptcore-0.13.0.0:2=[profile?] <dev-haskell/webkitgtk-javascriptcore-0.14:2=[profile?] )
+			>=dev-haskell/webkit-javascriptcore-0.13.0.0:=[profile?] <dev-haskell/webkit-javascriptcore-0.14:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hslogger
 		webkit? ( dev-haskell/glib ) )
 	gtk3? ( test? ( dev-haskell/glib
-					dev-haskell/gtk:3 ) )
+					dev-haskell/gtk3 ) )
 	!gtk3? ( test? ( dev-haskell/glib
 					dev-haskell/gtk:2 ) )
-	gtk3? ( test? ( webkit? ( dev-haskell/gtk:3 ) ) )
+	gtk3? ( test? ( webkit? ( dev-haskell/gtk3 ) ) )
 	!gtk3? ( test? ( webkit? ( dev-haskell/gtk:2 ) ) )
 "
 

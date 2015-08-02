@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/vcswrapper-0.1.1:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	gtk3? ( >=dev-haskell/gtk-0.13.0.0:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?] )
+	gtk3? ( >=dev-haskell/gtk3-0.13.0.0:=[profile?] <dev-haskell/gtk3-0.14:=[profile?] )
 	!gtk3? ( >=dev-haskell/gtk-0.13.0.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?] )
 "
 DEPEND="${RDEPEND}

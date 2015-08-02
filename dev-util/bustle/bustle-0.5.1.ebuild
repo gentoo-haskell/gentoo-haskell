@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/cairo:=
 	>=dev-haskell/dbus-0.10:=
 	dev-haskell/gio:=
 	dev-haskell/glib:=
-	>=dev-haskell/gtk-0.13.7:3=
+	>=dev-haskell/gtk3-0.13.7:0=
 	>=dev-haskell/hgettext-0.1.5:=
 	dev-haskell/mtl:=
 	dev-haskell/pango:=

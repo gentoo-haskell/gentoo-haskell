@@ -1,3 +1,18 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (02 Aug 2015)
+# Packages were moved to reflect package names on hackage:
+#     dev-haskell/gtk:3 -> dev-haskell/gtk3
+#     dev-haskell/gtksourceview:2 -> dev-haskell/gtksourceview2
+#     dev-haskell/gtksourceview:3 -> dev-haskell/gtksourceview3
+#     dev-haskell/webkit:3 -> dev-haskell/webkit3
+#     dev-haskell/webkitgtk-javascriptcore:2 -> dev-haskell/webkit-javascriptcore
+#     dev-haskell/webkitgtk-javascriptcore:3 -> dev-haskell/webkitgtk3-javascriptcore
+dev-haskell/gtk:3
+dev-haskell/gtksourceview:2
+dev-haskell/gtksourceview:3
+dev-haskell/webkit:3
+dev-haskell/webkitgtk-javascriptcore:2
+dev-haskell/webkitgtk-javascriptcore:3
+
 # Sergei Trofimovich <slyfox@gentoo.org> (17 May 2015)
 # Nothing uses it directly, needs porting (or reexporting)
 # to ghc-7.10

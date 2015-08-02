@@ -9,8 +9,6 @@ EAPI=5
 # Upstream have introduced a gtk3 flag, however there can be only 1 library
 # called poppler when it has the same version number, so ignoring the gtk3 flag.
 
-GTK_MAJ_VER="2"
-
 #nocabaldep is for the fancy cabal-detection feature at build-time
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
 inherit haskell-cabal
@@ -20,7 +18,7 @@ HOMEPAGE="http://www.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="${GTK_MAJ_VER}/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 

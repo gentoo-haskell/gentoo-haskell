@@ -55,14 +55,14 @@ RDEPEND=">=app-editors/leksah-server-0.14.3.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/vcsgui-0.1.0:=[profile?] <dev-haskell/vcsgui-0.2:=[profile?]
 	>=dev-haskell/vcswrapper-0.1.0:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:= <dev-lang/ghc-7.9:=
-	gtk3? ( >=dev-haskell/gtk-0.13.2:3=[profile?] <dev-haskell/gtk-0.14:3=[profile?]
-		>=dev-haskell/gtksourceview-0.13.1.0:3=[profile?] <dev-haskell/gtksourceview-0.14:3=[profile?]
-		dev-haskell/webkit:3=[profile?]
-		dev-haskell/webkitgtk-javascriptcore:3=[profile?] )
+	gtk3? ( >=dev-haskell/gtk3-0.13.2:=[profile?] <dev-haskell/gtk3-0.14:=[profile?]
+		>=dev-haskell/gtksourceview3-0.13.1.0:=[profile?] <dev-haskell/gtksourceview3-0.14:=[profile?]
+		dev-haskell/webkitgtk3:=[profile?]
+		dev-haskell/webkitgtk3-javascriptcore:=[profile?] )
 	!gtk3? ( >=dev-haskell/gtk-0.13.2:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
-			>=dev-haskell/gtksourceview-0.13.1.0:2=[profile?] <dev-haskell/gtksourceview-0.14:2=[profile?]
+			>=dev-haskell/gtksourceview2-0.13.1.0:=[profile?] <dev-haskell/gtksourceview2-0.14:=[profile?]
 			dev-haskell/webkit:2=[profile?]
-			dev-haskell/webkitgtk-javascriptcore:2=[profile?] )
+			dev-haskell/webkit-javascriptcore:=[profile?] )
 	loc? ( dev-haskell/hgettext:=[profile?]
 		dev-haskell/setlocale:=[profile?] )
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
