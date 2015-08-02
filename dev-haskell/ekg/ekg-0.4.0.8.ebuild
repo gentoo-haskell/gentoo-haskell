@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/ekg-core-0.1:=[profile?] <dev-haskell/ekg-core-0.2:=[profile?]
+	>=dev-haskell/ekg-json-0.1:=[profile?] <dev-haskell/ekg-json-0.2:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	<dev-haskell/snap-core-0.10:=[profile?]
 	<dev-haskell/snap-server-0.10:=[profile?]
