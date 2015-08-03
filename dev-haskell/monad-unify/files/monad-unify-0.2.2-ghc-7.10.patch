@@ -1,0 +1,9 @@
+diff --git a/src/Control/Monad/Unify.hs b/src/Control/Monad/Unify.hs
+index 17d1a71..62e3255 100644
+--- a/src/Control/Monad/Unify.hs
++++ b/src/Control/Monad/Unify.hs
+@@ -89,3 +89,3 @@ defaultUnifyState = UnifyState 0 mempty
+ newtype UnifyT t m a = UnifyT { unUnify :: StateT (UnifyState t) m a }
+-  deriving (Functor, Monad, Applicative, MonadPlus)
++  deriving (Functor, Monad, Applicative, Alternative, MonadPlus)
+ 
