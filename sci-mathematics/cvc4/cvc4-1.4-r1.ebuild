@@ -15,6 +15,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cln compat glpk"
 
+RESTRICT=test # many tests SIGSEGV at least on gcc-5.2.0
+
 RDEPEND=">=dev-libs/antlr-c-3.2
 	dev-libs/boost:=
 	>=dev-libs/gmp-4.2:=
