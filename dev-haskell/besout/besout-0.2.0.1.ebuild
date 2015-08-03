@@ -23,3 +23,8 @@ RDEPEND=">=dev-lang/ghc-7.8.2:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.7 && <4.8' 'base >=4.7'
+}
