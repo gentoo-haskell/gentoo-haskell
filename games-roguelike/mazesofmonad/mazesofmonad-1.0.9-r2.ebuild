@@ -4,7 +4,7 @@
 
 EAPI=5
 CABAL_FEATURES="bin"
-inherit haskell-cabal games
+inherit eutils haskell-cabal games
 
 MY_PN=MazesOfMonad
 MY_P=${MY_PN}-${PV}
@@ -27,13 +27,19 @@ DEPEND="${RDEPEND}
 	dev-haskell/hunit
 	dev-haskell/mtl
 	dev-haskell/random
-	dev-haskell/regex-posix"
+	dev-haskell/regex-posix
+	dev-haskell/time-locale-compat
+"
 
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	games_pkg_setup
 	haskell-cabal_pkg_setup
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.0.9-time-1.5.patch
 }
 
 src_configure() {
