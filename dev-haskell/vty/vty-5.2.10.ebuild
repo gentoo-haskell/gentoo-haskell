@@ -46,7 +46,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/vty-5.2.9-disable-mock-input-tests.patch
+	epatch "${FILESDIR}"/${PN}-5.2.9-disable-mock-input-tests.patch
 
 	cabal_chdeps \
 		'deepseq >= 1.1 && < 1.4' 'deepseq >= 1.1'
