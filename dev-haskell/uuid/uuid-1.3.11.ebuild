@@ -22,7 +22,8 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/network-info-0.2:=[profile?] <dev-haskell/network-info-0.3:=[profile?]
 	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-haskell/uuid-types-1.0:=[profile?] <dev-haskell/uuid-types-2:=[profile?]
+	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/uuid-types-1.0.2:=[profile?] <dev-haskell/uuid-types-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
