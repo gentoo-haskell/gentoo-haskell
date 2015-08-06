@@ -486,12 +486,9 @@ cabal-pkg() {
 #     CABAL_CORE_LIB_GHC_PV="7.10.* PM:7.8.4-r1".
 cabal-is-dummy-lib() {
 	local bin_ghc_version=$(ghc-version)
-	local pm_ghc_p=$(best_version dev-lang/ghc)
-	local pm_ghc_version version
+	local pm_ghc_version=$(ghc-pm-version)
 
-	pm_ghc_version=PM:${pm_ghc_p#dev-lang/ghc-}
-
-	for version in ${CABAL_CORE_LIB_GHC_PV[*]}; do
+	for version in ${CABAL_CORE_LIB_GHC_PV}; do
 		[[ "${bin_ghc_version}" == ${version} ]] && return 0
 		[[ "${pm_ghc_version}"  == ${version} ]] && return 0
 	done
