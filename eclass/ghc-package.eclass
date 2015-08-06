@@ -64,7 +64,7 @@ ghc-getghcpkgbin() {
 
 # @FUNCTION: ghc-version
 # @DESCRIPTION:
-# returns unstream version of ghc
+# returns upstream version of ghc
 # as reported by '--numeric-version'
 # Examples: "7.10.2", "7.9.20141222"
 _GHC_VERSION_CACHE=""
