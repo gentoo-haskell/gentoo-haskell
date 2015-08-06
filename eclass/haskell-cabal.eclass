@@ -491,7 +491,7 @@ cabal-is-dummy-lib() {
 
 	pm_ghc_version=PM:${pm_ghc_p#dev-lang/ghc-}
 
-	for version in ${CABAL_CORE_LIB_GHC_PV[*]}; do
+	for version in ${CABAL_CORE_LIB_GHC_PV}; do
 		[[ "${bin_ghc_version}" == ${version} ]] && return 0
 		[[ "${pm_ghc_version}"  == ${version} ]] && return 0
 	done
