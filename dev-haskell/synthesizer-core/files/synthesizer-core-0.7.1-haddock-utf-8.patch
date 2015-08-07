@@ -1,0 +1,22 @@
+diff --git a/private/Synthesizer/Basic/NumberTheory.hs b/private/Synthesizer/Basic/NumberTheory.hs
+index 4856f60..998fa43 100644
+--- a/private/Synthesizer/Basic/NumberTheory.hs
++++ b/private/Synthesizer/Basic/NumberTheory.hs
+@@ -42,7 +42,7 @@ Wikipedia: (primitive) roots of unity modulo n
+          list it in multiplicative function
+       f(n,1) = 1 for n>=2
+       f(n,lambda(n)) = phi(n)
+-      f(n,a·b) = f(n,a)·f(n,b) if a and b are coprime (conjecture)
++      f(n,aÂ·b) = f(n,a)Â·f(n,b) if a and b are coprime (conjecture)
+       f(n,lcm(a,b)) = lcm(f(n,a),f(n,b)) (conjecture)
+       If this conjecture is true, then we only need to know f(n,p^i).
+       The following conjecture is wrong:
+@@ -989,7 +989,7 @@ Determine an integer residue ring
+ in which a Fast Fourier transform of size n can be performed.
+ It must contain certain primitive roots.
+ If we choose a non-primitive root,
+-then some off-diagonal values in F^-1·F are non-zero.
++then some off-diagonal values in F^-1Â·F are non-zero.
+ -}
+ {-
+ When we need roots of orders o1,...,ok and according inverse elements

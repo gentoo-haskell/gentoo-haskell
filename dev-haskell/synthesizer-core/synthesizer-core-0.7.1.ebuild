@@ -45,6 +45,11 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/non-empty-0.2.1 <dev-haskell/non-empty-0.3 )
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	epatch "${FILESDIR}"/${P}-haddock-utf-8.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-optimizeadvanced
