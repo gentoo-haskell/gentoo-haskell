@@ -1,0 +1,29 @@
+https://ghc.haskell.org/trac/ghc/ticket/10748#comment:1
+diff --git a/src/Synthesizer/Causal/Class.hs b/src/Synthesizer/Causal/Class.hs
+index 358dd85..89c9c71 100644
+--- a/src/Synthesizer/Causal/Class.hs
++++ b/src/Synthesizer/Causal/Class.hs
+@@ -12,7 +12,8 @@ import Control.Arrow (Arrow, arr, (<<<), (&&&), )
+ 
+ 
++type family ProcessOf (signal :: * -> *) :: * -> * -> *
++
+ class (Arrow process, ProcessOf (SignalOf process) ~ process) => C process where
+    type SignalOf process :: * -> *
+-   type ProcessOf (signal :: * -> *) :: * -> * -> *
+    toSignal :: process () a -> SignalOf process a
+    fromSignal :: SignalOf process b -> process a b
+diff --git a/src/Synthesizer/Causal/Process.hs b/src/Synthesizer/Causal/Process.hs
+index e64afcd..33027ef 100644
+--- a/src/Synthesizer/Causal/Process.hs
++++ b/src/Synthesizer/Causal/Process.hs
+@@ -175,8 +175,8 @@ instance ArrowLoop T where
+    loop = liftKleisli loop
+ 
++type instance Class.ProcessOf Sig.T = T
+ 
+ instance Class.C T where
+    type SignalOf T = Sig.T
+-   type ProcessOf Sig.T = T
+    toSignal = flip applyConst ()
+    fromSignal sig = const () ^>> feed sig
