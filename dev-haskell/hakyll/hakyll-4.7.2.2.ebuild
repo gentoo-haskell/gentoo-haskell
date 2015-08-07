@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
+RESTRICT=test # missing depend
+
 RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.16:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
