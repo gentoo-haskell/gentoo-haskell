@@ -1,0 +1,15 @@
+diff --git a/Spread/Client/Message.hs b/Spread/Client/Message.hs
+index 8ebd379..570dd2b 100644
+--- a/Spread/Client/Message.hs
++++ b/Spread/Client/Message.hs
+@@ -14,2 +14,3 @@ import Data.Binary.Put
+ import Data.Map (fromList,findWithDefault)
++import Control.Applicative
+ import Control.Monad
+@@ -39,2 +40,6 @@ instance Functor m => Functor (Ask p m) where
+ 
++instance Monad m => Applicative (Ask p m) where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ -- | Represents the orderings as specified by the Spread toolkit.
