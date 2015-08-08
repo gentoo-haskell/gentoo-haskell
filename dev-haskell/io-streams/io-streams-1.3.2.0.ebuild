@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/primitive-0.2:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/zlib-bindings-0.1:=[profile?] <dev-haskell/zlib-bindings-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -37,13 +37,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
-		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.6 )
+		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.7 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'attoparsec         >= 0.10  && <0.13' 'attoparsec         >= 0.10  && <0.14'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
