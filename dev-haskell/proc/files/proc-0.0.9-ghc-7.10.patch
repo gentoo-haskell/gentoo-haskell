@@ -1,0 +1,8 @@
+diff --git a/System/Linux/Proc.hs b/System/Linux/Proc.hs
+index 28915cc..ce75103 100644
+--- a/System/Linux/Proc.hs
++++ b/System/Linux/Proc.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE TypeOperators, ScopedTypeVariables, DeriveDataTypeable #-}
++{-# LANGUAGE TypeOperators, ScopedTypeVariables, DeriveDataTypeable, FlexibleContexts #-}
+ -- This library is for parse information from /proc on Linux.
