@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/conduit-extra:=
 	dev-haskell/data-default-class:=
 	dev-haskell/file-embed:=
-	>=dev-haskell/fsnotify-0.0:= <dev-haskell/fsnotify-0.2:=
+	>=dev-haskell/fsnotify-0.0:= <dev-haskell/fsnotify-0.3:=
 	>=dev-haskell/ghc-paths-0.1:=
 	dev-haskell/http-client:=
 	>=dev-haskell/http-conduit-2.1.4:=
