@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.18.1.2
 "
 
 # it's not quite true, but there was no major releases
