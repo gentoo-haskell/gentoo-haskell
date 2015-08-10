@@ -1,0 +1,14 @@
+_eclasses_=toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	4b755f0615bbbcb17a8bf01e83104f13	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	eutils	351a78113be5b393c09a2c948701ad36
+_md5_=9423c6a5ce0c6e410b5db38c44abafbe
+SLOT=0/0.11
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+EAPI=5
+DEPEND=dev-haskell/extensible-exceptions:=[profile?] dev-haskell/mtl:=[profile?] >=dev-haskell/utf8-string-0.3:=[profile?] >=dev-haskell/x11-1.5:=[profile?] <dev-haskell/x11-1.7:=[profile?] >=dev-lang/ghc-6.10.4:= >=dev-haskell/cabal-1.6 doc? ( dev-haskell/haddock ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A tiling window manager
+LICENSE=BSD
+IUSE=+default-term no-autorepeat-keys doc hscolour hoogle profile
+PDEPEND=default-term? ( x11-terms/xterm ) x11-apps/xmessage
+SRC_URI=mirror://hackage/packages/archive/xmonad/0.11/xmonad-0.11.tar.gz
+KEYWORDS=~amd64 ~ppc64 ~sparc ~x86
+HOMEPAGE=http://xmonad.org
+RDEPEND=dev-haskell/extensible-exceptions:=[profile?] dev-haskell/mtl:=[profile?] >=dev-haskell/utf8-string-0.3:=[profile?] >=dev-haskell/x11-1.5:=[profile?] <dev-haskell/x11-1.7:=[profile?] >=dev-lang/ghc-6.10.4:=

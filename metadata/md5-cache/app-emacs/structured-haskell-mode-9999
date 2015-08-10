@@ -1,0 +1,10 @@
+_eclasses_=git-2	1bb87192831f668cd20d93ffb1689c94	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	base	84d9f879f57a8316ff02be0373a3d6f9	haskell-cabal	4b755f0615bbbcb17a8bf01e83104f13	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	eutils	351a78113be5b393c09a2c948701ad36
+_md5_=5fc6ac13af012eb22fbfebf339de123
+SLOT=0
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+EAPI=5
+DEPEND=dev-haskell/applicative-quoters >=dev-haskell/cabal-1.8 >=dev-haskell/descriptive-0.7 <dev-haskell/descriptive-0.9 >=dev-haskell/haskell-src-exts-1.16 <dev-haskell/haskell-src-exts-1.17 dev-haskell/text >=dev-lang/ghc-7.4.1 emacs? ( virtual/emacs app-emacs/hindent ) dev-vcs/git >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Structured editing Emacs mode for Haskell
+LICENSE=BSD
+IUSE=emacs
+HOMEPAGE=https://github.com/chrisdone/structured-haskell-mode

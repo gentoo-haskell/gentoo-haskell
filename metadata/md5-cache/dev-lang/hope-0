@@ -1,0 +1,12 @@
+_eclasses_=
+_md5_=c270b944e6596911007c98be0373f4f1
+SLOT=0
+DEFINED_PHASES=install prepare
+EAPI=3
+DEPEND=doc? ( virtual/latex-base dev-tex/latex2html dev-texlive/texlive-latexextra )
+DESCRIPTION=A lazy interpreter for the small functional programming language Hope
+LICENSE=GPL-2
+IUSE=doc
+SRC_URI=http://www.soi.city.ac.uk/~ross/Hope/hope.tar.gz
+KEYWORDS=~amd64 ~x86
+HOMEPAGE=http://www.soi.city.ac.uk/~ross/Hope
