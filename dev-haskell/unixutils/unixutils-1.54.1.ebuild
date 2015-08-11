@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/exceptions:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	dev-haskell/process-extras:=[profile?]
+	>=dev-haskell/process-extras-0.3:=[profile?]
 	dev-haskell/puremd5:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	dev-haskell/zlib:=[profile?]
