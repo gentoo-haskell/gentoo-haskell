@@ -36,7 +36,7 @@ RDEPEND=">=app-text/pandoc-1.13:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?]
 	>=dev-haskell/yaml-0.8.8.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
