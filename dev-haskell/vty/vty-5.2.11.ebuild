@@ -46,11 +46,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-5.2.9-disable-mock-input-tests.patch
-
-	cabal_chdeps \
-		'deepseq >= 1.1 && < 1.4' 'deepseq >= 1.1'
-
 	#workaround https://ghc.haskell.org/trac/ghc/ticket/9625
 	export CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-executable-dynamic"
 }
