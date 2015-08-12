@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests are broken: need path to ebuild tree
+
 RDEPEND="dev-haskell/extensible-exceptions:=
 	>=dev-haskell/http-4000.0.3:=
 	dev-haskell/missingh:=

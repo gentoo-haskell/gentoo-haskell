@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,6 +30,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.13.2.3-ghc-7.10.patch
+}
 
 src_configure() {
 	# ghc DCE bug: https://ghc.haskell.org/trac/ghc/ticket/9155
