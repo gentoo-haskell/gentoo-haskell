@@ -1,14 +1,14 @@
-_eclasses_=toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	libtool	7f78cd7d403808a350c9ae23f5821fb4	autotools	8056957fdccf2b3cd6e282a4b4551d1a	eutils	351a78113be5b393c09a2c948701ad36
-_md5_=3b26fb4b88822911c4fc461e26e3229f
-SLOT=0/1.4
 DEFINED_PHASES=configure prepare
-EAPI=5
 DEPEND=>=dev-libs/antlr-c-3.2 dev-libs/boost:= >=dev-libs/gmp-4.2:= cln? ( sci-libs/cln ) compat? ( !sci-mathematics/cvc3 ) glpk? ( sci-mathematics/glpk ) app-shells/bash sys-devel/gcc[cxx] !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=efficient open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
-LICENSE=BSD MIT HPND
-IUSE=+cln compat glpk
-RESTRICT=test
-SRC_URI=http://cvc4.cs.nyu.edu/builds/src/cvc4-1.4.tar.gz
-KEYWORDS=~amd64 ~x86
+EAPI=5
 HOMEPAGE=http://cvc4.cs.nyu.edu/web
+IUSE=+cln compat glpk
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD MIT HPND
 RDEPEND=>=dev-libs/antlr-c-3.2 dev-libs/boost:= >=dev-libs/gmp-4.2:= cln? ( sci-libs/cln ) compat? ( !sci-mathematics/cvc3 ) glpk? ( sci-mathematics/glpk )
+RESTRICT=test
+SLOT=0/1.4
+SRC_URI=http://cvc4.cs.nyu.edu/builds/src/cvc4-1.4.tar.gz
+_eclasses_=autotools	8056957fdccf2b3cd6e282a4b4551d1a	elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	eutils	351a78113be5b393c09a2c948701ad36	libtool	7f78cd7d403808a350c9ae23f5821fb4	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361
+_md5_=897c4c27b101e3ca271ac7752b4c92ea

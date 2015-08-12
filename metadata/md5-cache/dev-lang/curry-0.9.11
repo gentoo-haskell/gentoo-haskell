@@ -1,12 +1,12 @@
-_eclasses_=toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	base	84d9f879f57a8316ff02be0373a3d6f9	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	eutils	351a78113be5b393c09a2c948701ad36	flag-o-matic	2090c5a622458303e6bf68837ac6b96
-_md5_=e83aa65b292880e8d512a89946b7e524
-SLOT=0
 DEFINED_PHASES=compile configure install prepare unpack
-EAPI=3
 DEPEND=>=dev-lang/ghc-6.6
 DESCRIPTION=Munster Curry Compiler
-LICENSE=BSD
-SRC_URI=http://danae.uni-muenster.de/~lux/curry/download/curry-0.9.11/curry-0.9.11.tar.gz
-KEYWORDS=~amd64 ~x86
+EAPI=3
 HOMEPAGE=http://danae.uni-muenster.de/~lux/curry/
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
 RDEPEND=dev-libs/gmp sys-devel/gcc
+SLOT=0
+SRC_URI=http://danae.uni-muenster.de/~lux/curry/download/curry-0.9.11/curry-0.9.11.tar.gz
+_eclasses_=base	84d9f879f57a8316ff02be0373a3d6f9	eutils	351a78113be5b393c09a2c948701ad36	flag-o-matic	02090c5a622458303e6bf68837ac6b96	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361
+_md5_=8e8fea8555d7e851e11ef8ff7b2cb237

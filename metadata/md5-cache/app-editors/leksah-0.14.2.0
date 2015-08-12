@@ -10,5 +10,5 @@ RDEPEND=>=app-editors/leksah-server-0.14.0.0:=[profile?] <app-editors/leksah-ser
 RESTRICT=test
 SLOT=0/0.14.2.0
 SRC_URI=mirror://hackage/packages/archive/leksah/0.14.2.0/leksah-0.14.2.0.tar.gz
-_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	pax-utils	a472fe09c2264598d61d4887809e6016	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=dec9fb16cef14416ad86c1941cab4648
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	pax-utils	a472fe09c2264598d61d4887809e6016	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=ac4103cb9ec645959a10657869697d1e

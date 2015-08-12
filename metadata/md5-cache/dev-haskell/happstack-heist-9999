@@ -7,5 +7,5 @@ IUSE=doc hscolour hoogle profile
 LICENSE=BSD
 RDEPEND=>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.4:=[profile?] >=dev-haskell/either-3.4:=[profile?] >=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.4:=[profile?] >=dev-haskell/heist-0.13:=[profile?] <dev-haskell/heist-0.14:=[profile?] >=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?] >=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-0.12:=[profile?] >=dev-lang/ghc-6.10.4:=
 SLOT=0/9999
-_eclasses_=darcs	affcee6ae9d18e2de6bec5f8cc29b40a	eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=0b79d9564c055ba1897b1c589c039c79
+_eclasses_=darcs	4cd4e599f4aac32e177c825081e3e6df	eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=5218486fe4d497e417cca6d74671a48a

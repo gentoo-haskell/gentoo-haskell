@@ -1,12 +1,11 @@
-_eclasses_=
-_md5_=485b7828807242492c0509c58a1452e6
-SLOT=0/7.8.4
 DEFINED_PHASES=-
-EAPI=5
 DEPEND=~dev-haskell/binary-0.7.4.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.4-r4:= ~dev-haskell/hoopl-3.10.0.2:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.4.3.0:=
 DESCRIPTION=The Glasgow Haskell Compiler API (ghc package)
-LICENSE=BSD
+EAPI=5
+HOMEPAGE=http://www.haskell.org/ghc
 IUSE=cabal
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
-HOMEPAGE=http://www.haskell.org/ghc
+LICENSE=BSD
 RDEPEND=~dev-haskell/binary-0.7.4.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.4-r4:= ~dev-haskell/hoopl-3.10.0.2:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.4.3.0:=
+SLOT=0/7.8.4
+_md5_=a948118db102350cf46f1da479530a79

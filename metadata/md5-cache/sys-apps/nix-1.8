@@ -1,13 +1,12 @@
-_eclasses_=
-_md5_=67d3f2982bec385ed301a0331887ff42
-SLOT=0
 DEFINED_PHASES=configure install
-EAPI=4
 DEPEND=app-arch/bzip2 dev-db/sqlite dev-libs/openssl gc? ( dev-libs/boehm-gc ) doc? ( dev-libs/libxml2 dev-libs/libxslt app-text/docbook-xsl-stylesheets ) dev-lang/perl sys-libs/zlib >=sys-devel/bison-2.6 >=sys-devel/flex-2.5.35 virtual/perl-ExtUtils-ParseXS
 DESCRIPTION=A purely functional package manager
-LICENSE=LGPL-2.1
-IUSE=etc_profile +gc doc
-SRC_URI=http://nixos.org/releases/nix/nix-1.8/nix-1.8.tar.xz
-KEYWORDS=~amd64 ~x86
+EAPI=4
 HOMEPAGE=http://nixos.org/nix
+IUSE=etc_profile +gc doc
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1
 RDEPEND=app-arch/bzip2 dev-db/sqlite dev-libs/openssl gc? ( dev-libs/boehm-gc ) doc? ( dev-libs/libxml2 dev-libs/libxslt app-text/docbook-xsl-stylesheets ) dev-lang/perl sys-libs/zlib dev-perl/DBD-SQLite dev-perl/WWW-Curl dev-perl/DBI net-misc/curl
+SLOT=0
+SRC_URI=http://nixos.org/releases/nix/nix-1.8/nix-1.8.tar.xz
+_md5_=c133307b98ba887a3026d94496a02a78
