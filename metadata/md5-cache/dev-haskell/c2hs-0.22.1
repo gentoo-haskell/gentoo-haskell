@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/cabal-1.8 dev-haskell/dlist >=dev-haskell/language-c-0.4.7 <dev-haskell/language-c-0.5 >=dev-lang/ghc-7.4.1 test? ( dev-haskell/hunit dev-haskell/test-framework dev-haskell/test-framework-hunit dev-haskell/transformers ) regression? ( >=dev-haskell/shelly-1.0 dev-haskell/text >=dev-haskell/yaml-0.8 ) !regression? ( test? ( >=dev-haskell/shelly-1.0 dev-haskell/text ) ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=C->Haskell FFI tool that gives some cross-language type safety
+EAPI=5
+HOMEPAGE=https://github.com/haskell/c2hs
+IUSE=regression test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=mirror://hackage/packages/archive/c2hs/0.22.1/c2hs-0.22.1.tar.gz
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=fea7526ba0c4bb12d6196cacbf1fb511

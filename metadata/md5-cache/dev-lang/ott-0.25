@@ -1,0 +1,12 @@
+_eclasses_=
+_md5_=bca19103466dfb5de1e6284b367eb81b
+SLOT=0
+DEFINED_PHASES=compile install
+EAPI=5
+DEPEND=>=dev-lang/ocaml-3.9
+DESCRIPTION=Ott is a tool for writing definitions of programming languages and calculi.
+LICENSE=BSD
+SRC_URI=http://www.cl.cam.ac.uk/~pes20/ott/ott_distro_0.25.tar.gz
+KEYWORDS=~amd64
+HOMEPAGE=http://www.cl.cam.ac.uk/~pes20/ott/
+RDEPEND=>=dev-lang/ocaml-3.9

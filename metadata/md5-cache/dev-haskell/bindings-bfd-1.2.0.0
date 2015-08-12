@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-lang/ghc-7.0.1:= sys-devel/binutils dev-haskell/alex >=dev-haskell/cabal-1.4 dev-haskell/happy doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Bindings for libbfd, a library of the GNU binutils
+EAPI=5
+HOMEPAGE=http://projects.haskell.org/bindings-bfd/
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-3
+RDEPEND=>=dev-lang/ghc-7.0.1:= sys-devel/binutils
+SLOT=0/1.2.0.0
+SRC_URI=mirror://hackage/packages/archive/bindings-bfd/1.2.0.0/bindings-bfd-1.2.0.0.tar.gz
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=4094eed92c2c7e6f38a0febf05697cae

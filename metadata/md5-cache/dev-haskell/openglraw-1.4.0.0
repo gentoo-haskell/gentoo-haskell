@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-lang/ghc-6.10.4:= virtual/opengl >=dev-haskell/cabal-1.6.0.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A raw binding for the OpenGL graphics system
+EAPI=5
+HOMEPAGE=http://www.haskell.org/haskellwiki/Opengl
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~sparc ~x86
+LICENSE=BSD
+RDEPEND=>=dev-lang/ghc-6.10.4:= virtual/opengl
+SLOT=0/1.4.0.0
+SRC_URI=mirror://hackage/packages/archive/OpenGLRaw/1.4.0.0/OpenGLRaw-1.4.0.0.tar.gz
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=290f7da53259bd5a584265da43e2b24f

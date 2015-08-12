@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+DEPEND=dev-haskell/extensible-exceptions:=[profile?] =dev-haskell/ghc-mtl-9999:=[profile?] dev-haskell/ghc-paths:=[profile?] dev-haskell/haskell-src:=[profile?] >=dev-haskell/monadcatchio-mtl-0.3:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-lang/ghc-6.10.1 >=dev-haskell/cabal-1.2.3 dev-vcs/darcs net-misc/rsync doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Runtime Haskell interpreter (GHC API wrapper)
+EAPI=5
+HOMEPAGE=http://darcsden.com/jcpetruzza/hint
+IUSE=doc hscolour hoogle profile
+LICENSE=BSD
+RDEPEND=dev-haskell/extensible-exceptions:=[profile?] =dev-haskell/ghc-mtl-9999:=[profile?] dev-haskell/ghc-paths:=[profile?] dev-haskell/haskell-src:=[profile?] >=dev-haskell/monadcatchio-mtl-0.3:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-lang/ghc-6.10.1
+SLOT=0/9999
+_eclasses_=base	84d9f879f57a8316ff02be0373a3d6f9	darcs	affcee6ae9d18e2de6bec5f8cc29b40a	eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=5e5f84b4a28c80124afce0575ccbb6c6

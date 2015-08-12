@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=dev-haskell/ghc-paths:=[profile?] =dev-haskell/xhtml-3000.2*:=[profile?] >=dev-lang/ghc-7.6:= <dev-lang/ghc-7.7:= >=dev-haskell/cabal-1.14 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A documentation-generation tool for Haskell libraries
+EAPI=5
+HOMEPAGE=http://www.haskell.org/haddock/
+IUSE=doc hscolour profile
+KEYWORDS=~alpha ~amd64 -ia64 ~ppc ~sparc ~x86 ~x86-fbsd
+LICENSE=BSD
+RDEPEND=dev-haskell/ghc-paths:=[profile?] =dev-haskell/xhtml-3000.2*:=[profile?] >=dev-lang/ghc-7.6:= <dev-lang/ghc-7.7:=
+RESTRICT=test
+SLOT=0/2.13.1
+SRC_URI=mirror://hackage/packages/archive/haddock/2.13.1/haddock-2.13.1.tar.gz
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	pax-utils	a472fe09c2264598d61d4887809e6016	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=ed05b576168c76f52ebc6ee162255c29

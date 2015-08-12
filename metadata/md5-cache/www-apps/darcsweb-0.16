@@ -1,0 +1,13 @@
+_eclasses_=webapp	2442891c368d310c1d3fe77d9c77fe5b
+_md5_=25ed6a27b9694f0e2338b9131dbcf88e
+SLOT=0.16
+DEFINED_PHASES=install postinst prerm setup
+EAPI=0
+DEPEND=>=app-admin/webapp-config-1.50.15
+DESCRIPTION=A web interface for darcs
+LICENSE=public-domain
+IUSE=vhosts
+SRC_URI=http://users.auriga.wearlab.de/~alb/darcsweb/files/0.16/darcsweb-0.16.tar.bz2
+KEYWORDS=~amd64 ~x86
+HOMEPAGE=http://users.auriga.wearlab.de/~alb/darcsweb/
+RDEPEND=dev-vcs/darcs dev-lang/python >=app-admin/webapp-config-1.50.15

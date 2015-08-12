@@ -1,0 +1,13 @@
+_eclasses_=toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f	multilib	62927b3db3a589b0806255f3a002d5d3	ghc-package	36fba604ad9bbc73ed80c3bdac7a8a12	haskell-cabal	2905206380093c269a7ef267635ce644	multiprocessing	d7f2985a2c76c365ee20269db5261414	eutils	9fb270e417e0e83d64ca52586c4a79de
+_md5_=bb95531b027143a9b7d4e89ed46f3b93
+SLOT=0/0.13.3.1
+DEFINED_PHASES=compile configure install postinst postrm setup test
+EAPI=5
+DEPEND=>=dev-lang/ghc-7.4.1:= useffi? ( virtual/libc ) >=dev-haskell/cabal-1.6 doc? ( dev-haskell/haddock ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Log-domain floating point numbers
+LICENSE=BSD
+IUSE=+useffi doc hscolour hoogle profile
+SRC_URI=mirror://hackage/packages/archive/logfloat/0.13.3.1/logfloat-0.13.3.1.tar.gz
+KEYWORDS=~amd64 ~x86
+HOMEPAGE=http://code.haskell.org/~wren/
+RDEPEND=>=dev-lang/ghc-7.4.1:= useffi? ( virtual/libc )

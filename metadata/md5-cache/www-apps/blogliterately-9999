@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test unpack
+DEPEND=>=app-text/pandoc-1.14:= >=dev-haskell/attoparsec-0.12:= >=dev-haskell/blaze-html-0.5:= >=dev-haskell/blaze-markup-0.5:= >=dev-haskell/haxml-1.22:= >=dev-haskell/haxr-3000.2.1:= >=dev-haskell/highlighting-kate-0.5.3.0:= >=dev-haskell/hscolour-1.15:= >=dev-haskell/parsec-2.1.0.0:= >=dev-haskell/xhtml-3000.2:= >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.5 dev-vcs/git >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A tool for posting Haskelly articles to blogs
+EAPI=5
+HOMEPAGE=http://github.com/trofi/BlogLiterately
+LICENSE=GPL-2
+RDEPEND=>=app-text/pandoc-1.14:= >=dev-haskell/attoparsec-0.12:= >=dev-haskell/blaze-html-0.5:= >=dev-haskell/blaze-markup-0.5:= >=dev-haskell/haxml-1.22:= >=dev-haskell/haxr-3000.2.1:= >=dev-haskell/highlighting-kate-0.5.3.0:= >=dev-haskell/hscolour-1.15:= >=dev-haskell/parsec-2.1.0.0:= >=dev-haskell/xhtml-3000.2:= >=dev-lang/ghc-7.4.1:=
+SLOT=0
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	git-2	1bb87192831f668cd20d93ffb1689c94	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=315f46b4bc225d1eb46b64964b004d1f
