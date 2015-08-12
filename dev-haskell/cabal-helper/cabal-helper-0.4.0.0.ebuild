@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test
+
 RDEPEND=">=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/mtl:=[profile?]
