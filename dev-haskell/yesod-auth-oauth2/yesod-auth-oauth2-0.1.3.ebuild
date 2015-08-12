@@ -21,12 +21,14 @@ IUSE="+network-uri"
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/authenticate-1.3.2.7:=[profile?] <dev-haskell/authenticate-1.4:=[profile?]
 	>=dev-haskell/hoauth2-0.4.7:=[profile?] <dev-haskell/hoauth2-0.5:=[profile?]
+	>=dev-haskell/http-client-0.4.0:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-3.0:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.4:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-2.0:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
 	>=dev-haskell/yesod-auth-1.3:=[profile?] <dev-haskell/yesod-auth-1.5:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.5:=[profile?]
@@ -37,11 +39,6 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'aeson                   >= 0.6       && < 0.9' 'aeson                   >= 0.6       && < 0.10'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
