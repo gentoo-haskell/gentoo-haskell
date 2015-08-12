@@ -28,7 +28,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
 
-PATCHES=("${FILESDIR}/${PN}-0.13.1.3-ghc-7.6.patch")
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.13.1.3-ghc-7.6.patch
+	"${FILESDIR}"/${PN}-0.13.1.3-ghc-7.10.patch
+)
 
 src_prepare() {
 	base_src_prepare
