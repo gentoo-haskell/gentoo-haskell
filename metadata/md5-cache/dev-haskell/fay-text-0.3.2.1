@@ -1,13 +1,13 @@
-_eclasses_=toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	4b755f0615bbbcb17a8bf01e83104f13	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	eutils	351a78113be5b393c09a2c948701ad36
-_md5_=e72bb1e189596578d5b2c64631c2e4ab
-SLOT=0/0.3.2.1
 DEFINED_PHASES=compile configure install postinst postrm setup test
-EAPI=5
-DEPEND=>=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.23:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.20:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( dev-haskell/haddock ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=>=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.23:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.20:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Fay Text type represented as JavaScript strings
-LICENSE=MIT
-IUSE=doc hscolour hoogle profile
-SRC_URI=mirror://hackage/packages/archive/fay-text/0.3.2.1/fay-text-0.3.2.1.tar.gz
-KEYWORDS=~amd64 ~x86
+EAPI=5
 HOMEPAGE=https://github.com/faylang/fay-text
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
 RDEPEND=>=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.23:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.20:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.3.2.1
+SRC_URI=mirror://hackage/packages/archive/fay-text/0.3.2.1/fay-text-0.3.2.1.tar.gz
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	fd1b16ca8ea270d7994fd3a656a4ff3c	haskell-cabal	1a85b1d1059a0c3a78f92bdcb49cb340	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=e72bb1e189596578d5b2c64631c2e4ab
