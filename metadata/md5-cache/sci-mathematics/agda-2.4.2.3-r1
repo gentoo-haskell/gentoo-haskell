@@ -11,4 +11,4 @@ RDEPEND=>=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0
 SLOT=0/2.4.2.3
 SRC_URI=mirror://hackage/packages/archive/Agda/2.4.2.3/Agda-2.4.2.3.tar.gz
 _eclasses_=elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=34cbc4b094ddee55fd0c8d552c608b54
+_md5_=1a0282e21f9175ee87b72406e92ae536
