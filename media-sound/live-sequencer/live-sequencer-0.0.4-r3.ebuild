@@ -60,7 +60,8 @@ src_prepare() {
 		'process >=1.0 && <1.2' 'process >=1.0' \
 		'unix >=2.4 && <2.7' 'unix >=2.4' \
 		'transformers >=0.2.2 && <0.4' 'transformers >=0.2.2 && <0.5' \
-		'cgi >=3001.1 && <3001.2' 'cgi >=3001.1 && <3001.3'
+		'cgi >=3001.1 && <3001.2' 'cgi >=3001.1 && <3001.3' \
+		'filepath >=1.1 && <1.4' 'filepath >=1.1'
 }
 
 src_configure() {
