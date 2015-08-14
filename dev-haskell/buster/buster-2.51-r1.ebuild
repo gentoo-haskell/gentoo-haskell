@@ -22,12 +22,14 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/dataenc:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parsec-3.0.0:=[profile?]
+		dev-haskell/time-locale-compat:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
+	epatch "${FILESDIR}"/${P}-time-1.5.patch
 
 	cabal_chdeps \
 		'base <=4.1.0.0' 'base >= 4' \
