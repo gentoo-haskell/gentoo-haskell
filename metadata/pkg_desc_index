@@ -1069,7 +1069,7 @@ dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2: Generalized bananas, lenses and barbed wire
-dev-haskell/reducers 3.10.3.2: Semigroups, specialized containers and a general map/reduce framework
+dev-haskell/reducers 3.11: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/reflection 1.5.2.1: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
