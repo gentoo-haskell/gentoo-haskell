@@ -675,7 +675,7 @@ dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.20: A library for client-side HTTP
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.18.1: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.19: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
@@ -949,7 +949,7 @@ dev-haskell/optional-args 1.0.0: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.7.3: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.7.3.1: Supports using pandoc with citeproc
 dev-haskell/pandoc-types 1.12.4.5: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.0.6: Parallel programming library
@@ -1444,7 +1444,7 @@ dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.3: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.13.1: The yesod helper executable
-dev-haskell/yesod-core 1.4.12: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.13: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.7.1: Utilities for using the Fay Haskell-to-JS compiler with Yesod
@@ -1545,7 +1545,7 @@ sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portab
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.11.1: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.11.1.1: Wiki using happstack, git or darcs, and pandoc
 www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2: Minimal KISS compliant browser
