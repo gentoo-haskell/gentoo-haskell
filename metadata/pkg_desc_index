@@ -980,7 +980,7 @@ dev-haskell/persistent-redis 0.3.2: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 1.3.0.5 2.0.0.1 2.0.1 2.0.5 2.1.4.1 2.1.4.2: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.1.3.4: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
-dev-haskell/picoparsec 0.1.2.2: Fast combinator parsing for bytestrings and text
+dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.6: Compositional pipelines
 dev-haskell/pipes-binary 0.4.0.4: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.1: ByteString support for pipes
