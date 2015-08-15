@@ -1124,7 +1124,7 @@ dev-haskell/sdl-mixer 0.6.1.1: Binding to libSDL_mixer
 dev-haskell/sdl-ttf 0.6.2.1: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
-dev-haskell/semigroupoids 4.2 4.3 5.0.0.2: Semigroupoids: Category sans id
+dev-haskell/semigroupoids 4.2 4.3 5.0.0.3: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.16.2.2: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
@@ -1356,7 +1356,7 @@ dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control rev
 dev-haskell/vcsgui 0.1.1.0 9999: GUI library for source code management systems
 dev-haskell/vcswrapper 0.1.2: Wrapper for source code management systems
 dev-haskell/vector 0.10.12.3: Efficient Arrays
-dev-haskell/vector-algorithms 0.7: Efficient algorithms for vector arrays
+dev-haskell/vector-algorithms 0.7.0.1: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.1.0: Instances of Data.Binary and Data.Serialize for vector
 dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
@@ -1435,7 +1435,7 @@ dev-haskell/xmlhtml 0.2.3.4-r2: XML parser and renderer with HTML 5 quirks mode
 dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
 dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.12: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.13: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.1.5: Creation of type-safe, RESTful web applications
