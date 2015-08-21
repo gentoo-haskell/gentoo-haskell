@@ -26,6 +26,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+
 	cabal_chdeps \
 		'mtl >= 2.1 && <2.2' 'mtl >= 2.1'
 }

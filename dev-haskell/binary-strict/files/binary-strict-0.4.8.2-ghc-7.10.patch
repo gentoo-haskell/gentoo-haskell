@@ -1,0 +1,51 @@
+diff --git a/src/Data/Binary/BitBuilder.hs b/src/Data/Binary/BitBuilder.hs
+index 4a8c9d2..728b115 100644
+--- a/src/Data/Binary/BitBuilder.hs
++++ b/src/Data/Binary/BitBuilder.hs
+@@ -55,3 +55,3 @@ import Data.Binary.Strict.BitUtil
+ #if defined(__GLASGOW_HASKELL__) && !defined(__HADDOCK__)
+-import GHC.Base
++import GHC.Base hiding (empty, foldr)
+ #endif
+diff --git a/src/Data/Binary/BitPut.hs b/src/Data/Binary/BitPut.hs
+index 47e3ff8..da1724e 100644
+--- a/src/Data/Binary/BitPut.hs
++++ b/src/Data/Binary/BitPut.hs
+@@ -37,2 +37,3 @@ module Data.Binary.BitPut
+ import Data.Bits (bitSize, Bits)
++import Control.Applicative
+ import Control.Monad
+@@ -51,2 +52,6 @@ instance Functor BitPutM where
+ 
++instance Applicative BitPutM where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Monad BitPutM where
+@@ -98,2 +103,6 @@ runBitPutM m = let (x, w) = unPut m
+ 
++instance Monad m => Applicative (BitPutT m) where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Monad m => Functor (BitPutT m) where
+diff --git a/src/Data/Binary/Strict/BitGet.hs b/src/Data/Binary/Strict/BitGet.hs
+index 73a4a6f..71fd95e 100644
+--- a/src/Data/Binary/Strict/BitGet.hs
++++ b/src/Data/Binary/Strict/BitGet.hs
+@@ -68,2 +68,5 @@ import Data.Bits
+ 
++import Control.Applicative
++import Control.Monad
++
+ #if defined(__GLASGOW_HASKELL__) && !defined(__HADDOCK__)
+@@ -80,2 +83,9 @@ newtype BitGet a = BitGet { unGet :: S -> (Either String a, S) }
+ 
++instance Functor BitGet where
++    fmap  = liftM
++
++instance Applicative BitGet where
++    pure  = return
++    (<*>) = ap  -- defined in Control.Monad
++
+ instance Monad BitGet where
