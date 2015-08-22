@@ -51,7 +51,7 @@ dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.0: A binding for the OpenAL Utility Toolk
 dev-haskell/amqp 0.13.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.1: Constructing, analyzing and destructing annotated trees
-dev-haskell/ansi-terminal 0.6.2.1: Simple ANSI terminal support, with Windows compatibility
+dev-haskell/ansi-terminal 0.6.2.2: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/anydbm 1.0.7: Interface for DBM-like database systems
 dev-haskell/appar 0.1.4: A simple applicative parser
@@ -668,14 +668,14 @@ dev-haskell/hstringtemplate 0.7.3-r1 0.8.3: StringTemplate implementation in Has
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx2hs 0.13.3.2: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyslog 1.6 2.0: FFI interface to syslog(3) from POSIX.1-2001
-dev-haskell/htf 0.13.0.0: The Haskell Test Framework
+dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.0: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.20: A library for client-side HTTP
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.19: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.20: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
@@ -938,11 +938,11 @@ dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
-dev-haskell/openal 1.6.0.1 1.7.0.0: A binding to the OpenAL cross-platform 3D audio API
+dev-haskell/openal 1.6.0.1 1.7.0.1: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.2-r1: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1: A binding for the OpenGL graphics system
-dev-haskell/openglraw 1.1.0.2 1.2.0.0 1.3.0.0 1.4.0.0 1.5.0.1 2.5.1.0: A raw binding for the OpenGL graphics system
+dev-haskell/openglraw 1.1.0.2 1.2.0.0 1.3.0.0 1.4.0.0 1.5.0.1 2.5.1.0 2.5.2.1: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.0: Optional function arguments
@@ -1044,7 +1044,7 @@ dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings. qtHaskell is a set of Haskel
 dev-haskell/quickcheck 1.2.0.1-r1 2.7.6 2.8.1: Automatic testing of Haskell programs
 dev-haskell/quickcheck-assertions 0.1.1-r1 0.2.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-instances 0.3.10-r1 0.3.11: Common quickcheck instances
-dev-haskell/quickcheck-io 0.1.1-r1: Use HUnit assertions as QuickCheck properties
+dev-haskell/quickcheck-io 0.1.2: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.1: Safe reimplementation of QuickCheck's core
 dev-haskell/quickcheck-unicode 1.0.0.1: Generator and shrink functions for testing Unicode-related software
@@ -1159,7 +1159,7 @@ dev-haskell/smtlib 1.0.7: A library for working with the SMTLIB format
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
 dev-haskell/snap 0.14.0.6: Top-level package for the Snap Web Framework
 dev-haskell/snap-app 0.6.1 0.7.0: None
-dev-haskell/snap-core 0.9.7.2: Snap: A Haskell Web Framework (core interfaces and types)
+dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.3: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2: Snap: A Haskell Web Framework: static loader
 dev-haskell/snap-server 0.9.5.1-r1: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
@@ -1237,7 +1237,7 @@ dev-haskell/tar 0.4.2.1: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.1: Render tasty output to XML for Jenkins
 dev-haskell/tasty-golden 2.3.0.1: Golden tests support for tasty
-dev-haskell/tasty-hspec 1.1: Hspec support for the Tasty test framework
+dev-haskell/tasty-hspec 1.1.1: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.9.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-quickcheck 0.8.3.2: QuickCheck support for the Tasty test framework
@@ -1261,7 +1261,7 @@ dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit- and Quick
 dev-haskell/test-framework-th-prime 0.0.8: Template Haskell for test framework
 dev-haskell/testing-feat 0.4.0.2: Functional Enumeration of Algebraic Types
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
-dev-haskell/texmath 0.8.2.2: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.8.3: Conversion between formats used to represent mathematics
 dev-haskell/text 1.2.1.3: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
@@ -1336,8 +1336,8 @@ dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
 dev-haskell/utf8-light 0.4.2: Unicode
-dev-haskell/utf8-string 0.3.8 1: Support for reading and writing UTF8 Strings
-dev-haskell/utility-ht 0.0.10: Various small helper functions for Lists, Maybes, Tuples, Functions
+dev-haskell/utf8-string 1.0.1: Support for reading and writing UTF8 Strings
+dev-haskell/utility-ht 0.0.11: Various small helper functions for Lists, Maybes, Tuples, Functions
 dev-haskell/utilitytm 0.0.4: Utility functions that are missing from the standard library
 dev-haskell/uu-interleaved 0.2.0.0: Providing an interleaving combinator for use with applicative/alternative style implementations
 dev-haskell/uu-parsinglib 2.9.1: Utrecht University parser combinator library
@@ -1391,7 +1391,7 @@ dev-haskell/web-routes-happstack 0.23.9: Adds support for using web-routes with 
 dev-haskell/webkit 0.13.1.3: Binding to the Webkit library
 dev-haskell/webkit-javascriptcore 0.13.0.4: JavaScriptCore FFI from webkitgtk
 dev-haskell/webkitgtk3 0.13.1.3: Binding to the Webkit library
-dev-haskell/webkitgtk3-javascriptcore 0.13.0.4: JavaScriptCore FFI from webkitgtk
+dev-haskell/webkitgtk3-javascriptcore 0.13.1.0: JavaScriptCore FFI from webkitgtk
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.5.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0: Snap integration for the websockets library
@@ -1444,7 +1444,7 @@ dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.3: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.13.1: The yesod helper executable
-dev-haskell/yesod-core 1.4.13: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.14: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.7.1: Utilities for using the Fay Haskell-to-JS compiler with Yesod
