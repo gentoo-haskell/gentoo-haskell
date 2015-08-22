@@ -26,3 +26,7 @@ RDEPEND="dev-haskell/regex-base:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
