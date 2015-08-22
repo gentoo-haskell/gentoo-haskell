@@ -7,5 +7,5 @@ IUSE=doc hscolour hoogle profile test
 LICENSE=BSD
 RDEPEND=dev-haskell/ghc-paths:=[profile?] dev-haskell/haddock-library >=dev-haskell/xhtml-3000.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?] >=dev-lang/ghc-7.9:=
 SLOT=0/9999
-_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	git-2	1bb87192831f668cd20d93ffb1689c94	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	pax-utils	a472fe09c2264598d61d4887809e6016	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	git-2	1bb87192831f668cd20d93ffb1689c94	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	pax-utils	4f1280c0d4dcd8340f731827007c0a53	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=fd647386aad69e5ac082fd5655952cac
