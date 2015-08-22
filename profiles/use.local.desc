@@ -6,8 +6,10 @@ app-editors/leksah:dyre - Experimental Yi dyre support
 app-editors/leksah:gtk3 - Use GTK3 rather than GTK2
 app-editors/leksah:loc - Experimental localization support
 app-editors/leksah:network-uri - Get Network.URI from the network-uri package
+app-editors/leksah:threaded - Use threaded runtime.
 app-editors/leksah:yi - Experimental Yi support
 app-editors/leksah-server:network-uri - Get Network.URI from the network-uri package
+app-editors/leksah-server:threaded - Enable multithreaded runtime.
 app-editors/yi:eventlog - Runtime binary will be compiled with eventlog and RTS options enabled.
 app-editors/yi:hint - Include hint (haskell interpreter) in yi
 app-editors/yi:profiling - Runtime binary will be compiled with profiling and RTS options enabled.
