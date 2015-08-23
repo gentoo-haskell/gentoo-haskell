@@ -525,7 +525,7 @@ dev-haskell/hakyll 4.7.2.3: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handsomesoup 0.3.5: Work with HTML more easily in HXT
-dev-haskell/hans 2.5.0.0: IPv4 Network Stack
+dev-haskell/hans 2.6.0.0: IPv4 Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
