@@ -1,9 +1,0 @@
-diff --git a/web-server/Main.hs b/web-server/Main.hs
-index 846ce44..b9bbce3 100644
---- a/web-server/Main.hs
-+++ b/web-server/Main.hs
-@@ -31,3 +31,3 @@ import System.Exit
- import System.Info
--import Text.Blaze.Html5 as H hiding (map)
-+import Text.Blaze.Html5 as H hiding (map, main)
- import Text.Blaze.Html5.Attributes(href)
