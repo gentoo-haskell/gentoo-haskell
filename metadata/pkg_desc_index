@@ -261,6 +261,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.10.0 0.11.6: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
+dev-haskell/cryptonite 0.6: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2: CSV loader and dumper
 dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
@@ -1506,7 +1507,7 @@ dev-util/shelltestrunner 1.3.5: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.8.5-r4 2.10.0-r1 2.10.1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 5.20150710 5.20150731: manage files with git, without checking their contents into git
+dev-vcs/git-annex 5.20150710 5.20150731 5.20150824: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
