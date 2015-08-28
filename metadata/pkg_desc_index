@@ -628,7 +628,7 @@ dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
 dev-haskell/hpc 0.6.0.1 0.6.0.2: Code Coverage Library for Haskell
-dev-haskell/hpdf 1.4.6: Generation of PDF documents
+dev-haskell/hpdf 1.4.7: Generation of PDF documents
 dev-haskell/hprotoc 2.0.17: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
@@ -676,7 +676,7 @@ dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.20: A library for client-side HTTP
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.20: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.21: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
