@@ -1,7 +1,0 @@
-diff --git a/Text/Regex/TDFA/Text/Lazy.hs b/Text/Regex/TDFA/Text/Lazy.hs
-index f19c35e..b732199 100644
---- a/Text/Regex/TDFA/Text/Lazy.hs
-+++ b/Text/Regex/TDFA/Text/Lazy.hs
-@@ -1 +1,2 @@
-+{-# LANGUAGE FlexibleContexts #-}
- {-| 
