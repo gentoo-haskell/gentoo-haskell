@@ -529,7 +529,9 @@ src_configure() {
 			#  - embed libffi (default GHC behaviour)
 			#  - disable ncurses support for ghci (via haskeline)
 			#    https://bugs.gentoo.org/557478
+			#  - disable ncurses support for ghc-pkg
 			echo "libraries/haskeline_CONFIGURE_OPTS += --flag=-terminfo" >> mk/build.mk
+			echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
 		else
 			econf_args+=(--with-system-libffi)
 			econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
