@@ -1082,7 +1082,7 @@ dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
 dev-haskell/regex-posix 0.95.2: Replaces/Enhances Text.Regex
-dev-haskell/regex-tdfa 1.1.8-r1 1.2.0: Replaces/Enhances Text.Regex
+dev-haskell/regex-tdfa 1.1.8-r1 1.2.1: Replaces/Enhances Text.Regex
 dev-haskell/regex-tdfa-rc 1.1.8.3: Replaces/Enhances Text.Regex (fork by Roman Cheplyaka)
 dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91: Replaces/Enhances Text.Regex
