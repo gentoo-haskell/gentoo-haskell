@@ -214,6 +214,7 @@ dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
 dev-haskell/lens:test-hlint - You can disable the hlint test suite with -f-test-hlint
 dev-haskell/lens:test-hunit - You can disable the hunit test suite with -f-test-hunit
 dev-haskell/lens:test-properties - Build the properties test if we're building tests
+dev-haskell/lens:test-templates - Build the test templates if we're building tests
 dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
 dev-haskell/libssh2:example-client - build example client
 dev-haskell/libssh2:gcrypt - add hack that allows to run threaded program when libssh2 is built against gcrypt

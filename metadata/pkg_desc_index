@@ -766,7 +766,7 @@ dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated valu
 dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell programs
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.10: Haskell binding for C LDAP API
-dev-haskell/lens 4.2 4.3.3 4.4.0.2 4.6.0.1 4.7 4.8 4.9.1 4.11 9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.11 4.12.3 9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.0.1: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.0.0.4-r1: Law-abiding lenses for aeson
 dev-haskell/lens-family-core 1.2.0: Haskell 98 Lens Families
@@ -784,7 +784,7 @@ dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 0.10.2 0.11.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.7.0.1: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.6: lifted IO operations from the base library
-dev-haskell/linear 1.18.1.1: Linear Algebra
+dev-haskell/linear 1.18.1.1-r1: Linear Algebra
 dev-haskell/lio 0.11.5.0: Labeled IO Information Flow Control Library
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/listlike 4.2.0: Generic support for list-like structures
@@ -1071,7 +1071,7 @@ dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web 
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2: Generalized bananas, lenses and barbed wire
 dev-haskell/reducers 3.11: Semigroups, specialized containers and a general map/reduce framework
-dev-haskell/reflection 1.5.2.1: Reifies arbitrary terms into types that can be reflected back into terms
+dev-haskell/reflection 1.5.2.1 2: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
 dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
