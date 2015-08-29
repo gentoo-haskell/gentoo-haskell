@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
-	>=dev-haskell/reflection-1.3.2:=[profile?] <dev-haskell/reflection-2:=[profile?]
+	>=dev-haskell/reflection-1.3.2:=[profile?]
 	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/tagged-0.4.4:=[profile?] <dev-haskell/tagged-1:=[profile?]
@@ -47,7 +47,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'doctest   >= 0.8 && < 0.10' 'doctest   >= 0.8'
+		'doctest   >= 0.8 && < 0.10' 'doctest   >= 0.8' \
+		'reflection           >= 1.3.2 && < 2' 'reflection           >= 1.3.2'
 }
 
 src_configure() {
