@@ -29,3 +29,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck
 		dev-haskell/text )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-32bit-tests.patch
+}
