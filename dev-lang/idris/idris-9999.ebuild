@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 #KEYWORDS="~amd64 ~x86"
 IUSE="curses ffi gmp"
 
-RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annotated-wl-pprint-0.7:=[profile?]
+RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -29,7 +29,6 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.5.3:=[profile?] <dev-haskell/annota
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
-	>=dev-haskell/lens-4.1.1:=[profile?] <dev-haskell/lens-4.12:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
