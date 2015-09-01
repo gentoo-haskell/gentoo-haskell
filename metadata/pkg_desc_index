@@ -1554,7 +1554,7 @@ www-misc/feed-cli 2009.7.5: A simple command line interface for creating and upd
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.2.9: High performance web server on WAI/warp
-x11-misc/taffybar 0.4.5-r1: A desktop bar similar to xmobar, but with more GUI
+x11-misc/taffybar 0.4.5-r2: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.23.1 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1 9999: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-log-applet 2.0.0-r301: Gnome and XFCE applet for displaying XMonad log
