@@ -52,7 +52,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 RDEPEND+=" sys-apps/dbus
-		sys-power/upower-pm-utils"
+	( || ( sys-power/upower sys-power/upower-pm-utils ) )"
 
 src_configure() {
 	haskell-cabal_src_configure \
