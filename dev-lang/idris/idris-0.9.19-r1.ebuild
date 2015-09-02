@@ -59,7 +59,7 @@ src_prepare() {
 	# runs dist/build/idris directly and breaks sandboxing
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
 
-	cabal_chdeps 'utf8-string < 1' 'utf8-string'
+	cabal_chdeps 'utf8-string <= 1' 'utf8-string'
 }
 
 src_configure() {
