@@ -19,13 +19,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="curses ffi gmp"
 
-RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
+RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/blaze-html-0.6.1.3:=[profile?]
-	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?]
+	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
+	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/parsers-0.9:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
 	dev-haskell/safe:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
-	<dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/trifecta-1.1:=[profile?] <dev-haskell/trifecta-1.6:=[profile?]
@@ -44,9 +44,9 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	dev-haskell/utf8-string:=[profile?]
 	<dev-haskell/vector-0.11:=[profile?]
 	<dev-haskell/vector-binary-instances-0.3:=[profile?]
+	>dev-haskell/zip-archive-0.2.3.5:=[profile?] <dev-haskell/zip-archive-0.2.4:=[profile?]
 	<dev-haskell/zlib-0.6:=[profile?]
-	>=dev-haskell/zip-archive-0.2.3.5:=[profile?]
-	>=dev-lang/ghc-7.10.2:=
+	>=dev-lang/ghc-7.10.1:=
 	curses? ( <dev-haskell/hscurses-1.5:=[profile?] )
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
 	gmp? ( <dev-haskell/libffi-0.2:=[profile?] )
@@ -58,6 +58,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# runs dist/build/idris directly and breaks sandboxing
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+
+	cabal_chdeps 'utf8-string < 1' 'utf8-string'
 }
 
 src_configure() {
