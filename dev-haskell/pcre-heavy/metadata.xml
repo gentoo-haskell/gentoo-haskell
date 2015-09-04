@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A regular expressions library that does not suck.
+		Based on &lt;https://hackage.haskell.org/package/pcre-light pcre-light&gt;.
+		Takes and returns &lt;https://hackage.haskell.org/package/stringable Stringables&gt; everywhere.
+		Includes a QuasiQuoter for regexps that does compile time checking.
+		SEARCHES FOR MULTIPLE MATCHES! DOES REPLACEMENT!
+	</longdescription>
+</pkgmetadata>
