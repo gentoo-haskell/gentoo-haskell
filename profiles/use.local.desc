@@ -190,6 +190,7 @@ dev-haskell/httpd-shed:buildexamples - Build example executables.
 dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hxt:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
+dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/jmacro:benchmarks - Build the benchmarks.

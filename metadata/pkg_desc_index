@@ -472,7 +472,7 @@ dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.1.1.3: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the GIO
 dev-haskell/github 0.13.2: Access to the Github API, v3
-dev-haskell/gitrev 1.0.0: Compile git revision info into Haskell projects
+dev-haskell/gitrev 1.1.0: Compile git revision info into Haskell projects
 dev-haskell/glade 0.12.5.0-r2: Binding to the glade library
 dev-haskell/glfw 0.5.2.4: A Haskell binding for GLFW
 dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.7.2: Bindings to GLFW OpenGL library
@@ -701,6 +701,7 @@ dev-haskell/iconv 0.4.1.3: String encoding conversion
 dev-haskell/idna 0.2 0.3.0: Implements IDNA (RFC 3490)
 dev-haskell/ieee754 0.7.6: Utilities for dealing with IEEE floating point numbers
 dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
+dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
 dev-haskell/ihaskell 0.6.4.0-r1: A Haskell backend kernel for the IPython project
 dev-haskell/imagemagick 0.0.3.5-r1: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
@@ -967,6 +968,7 @@ dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
 dev-haskell/pcg-random 0.1.3.2: Haskell bindings to the PCG random number generator
+dev-haskell/pcre-heavy 1.0.0.1: A regexp library on top of pcre-light you can actually use
 dev-haskell/pcre-light 0.4.0.3: A small, efficient and portable regex library for Perl 5 compatible regular expressions
 dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
@@ -1176,7 +1178,7 @@ dev-haskell/speculation 1.5.0.2: A framework for safe, programmable, speculative
 dev-haskell/split 0.2.2: Combinator library for splitting lists
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
-dev-haskell/stack 0.1.3.1 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 0.1.3.1 0.1.4.1 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.4: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.1.0.1: State variables
