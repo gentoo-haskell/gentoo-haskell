@@ -105,6 +105,7 @@ dev-haskell/distributed-process:template_haskell - Enable additional test module
 dev-haskell/dph-base:dtrace - Enable experimental support for dtrace-based profiling.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.
+dev-haskell/extra:network-uri - use network-uri package
 dev-haskell/fastcgi:small_base - Choose the new smaller, split-up base package.
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/fixplate:base4 - Use base-4.0.
