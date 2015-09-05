@@ -1021,7 +1021,7 @@ dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
 dev-haskell/primitive 0.4.1 0.5.2.1 0.5.4.0 0.5.9999: Primitive memory-related operations
-dev-haskell/probability 0.2.4.1-r1: Probabilistic Functional Programming
+dev-haskell/probability 0.2.5: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
 dev-haskell/process-extras 0.3.3.5: Process extras
@@ -1106,7 +1106,7 @@ dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/rosezipper 0.1 0.2: Generic zipper implementation for Data.Tree
-dev-haskell/rsa 2.0.0 2.1.0.1: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
+dev-haskell/rsa 2.1.0.3: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2: Random Variables
 dev-haskell/safe 0.3.9: Library of safe (exception free) functions
@@ -1240,7 +1240,7 @@ dev-haskell/tar 0.4.2.1: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.1: Render tasty output to XML for Jenkins
 dev-haskell/tasty-golden 2.3.0.1: Golden tests support for tasty
-dev-haskell/tasty-hspec 1.1.1: Hspec support for the Tasty test framework
+dev-haskell/tasty-hspec 1.1.2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.9.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-quickcheck 0.8.3.2: QuickCheck support for the Tasty test framework
@@ -1392,7 +1392,7 @@ dev-haskell/web-plugins 0.2.8: dynamic plugin system for web applications
 dev-haskell/web-routes 0.27.9: Library for maintaining correctness and composability of URLs within an application
 dev-haskell/web-routes-happstack 0.23.9: Adds support for using web-routes with Happstack
 dev-haskell/webkit 0.13.1.3: Binding to the Webkit library
-dev-haskell/webkit-javascriptcore 0.13.0.4: JavaScriptCore FFI from webkitgtk
+dev-haskell/webkit-javascriptcore 0.13.1.0: JavaScriptCore FFI from webkitgtk
 dev-haskell/webkitgtk3 0.13.1.3: Binding to the Webkit library
 dev-haskell/webkitgtk3-javascriptcore 0.13.1.0: JavaScriptCore FFI from webkitgtk
 dev-haskell/webserver 0.7.1.1: HTTP server library
@@ -1438,7 +1438,7 @@ dev-haskell/xmlhtml 0.2.3.4-r2: XML parser and renderer with HTML 5 quirks mode
 dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
 dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.13: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.14: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.2: Creation of type-safe, RESTful web applications
