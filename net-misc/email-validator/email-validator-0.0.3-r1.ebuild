@@ -22,16 +22,24 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/cmdargs-0.10 <dev-haskell/cmdargs-0.11
-	>=dev-haskell/dns-1 <dev-haskell/dns-2
+	>=dev-haskell/dns-1
 	>=dev-haskell/email-validate-2 <dev-haskell/email-validate-3
 	>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
 	>=dev-haskell/parallel-io-0.3 <dev-haskell/parallel-io-0.4
 	>=dev-haskell/pcre-light-0.4
-	>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.9
-	>=dev-haskell/tasty-hunit-0.8 <dev-haskell/tasty-hunit-0.9
+	>=dev-haskell/tasty-0.8
+	>=dev-haskell/tasty-hunit-0.8
 	>=dev-lang/ghc-7.6.1
-	test? ( >=dev-haskell/doctest-0.9 <dev-haskell/doctest-0.10 )
+	test? ( >=dev-haskell/doctest-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'doctest   == 0.9.*' 'doctest   >= 0.9' \
+		'dns                         == 1.*' 'dns                         >= 1' \
+		'tasty                       == 0.8.*' 'tasty                       >= 0.8' \
+		'tasty-hunit                 == 0.8.*' 'tasty-hunit                 >= 0.8'
+}
 
 src_install() {
 	haskell-cabal_src_install
