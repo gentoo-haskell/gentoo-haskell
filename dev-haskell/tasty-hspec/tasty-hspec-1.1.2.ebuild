@@ -18,21 +18,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.2:=[profile?]
+RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.3:=[profile?]
 	>=dev-haskell/hspec-core-2:=[profile?] <dev-haskell/hspec-core-3:=[profile?]
-	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/quickcheck-2.7:2=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
-	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-1.0:=[profile?]
-	>=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.9:=[profile?]
-	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
+	>=dev-haskell/tasty-0.8:=[profile?]
+	>=dev-haskell/tasty-quickcheck-0.3:=[profile?]
+	>=dev-haskell/tasty-smallcheck-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'tagged           >=0.7 && <0.8' 'tagged           >=0.7'
-}
