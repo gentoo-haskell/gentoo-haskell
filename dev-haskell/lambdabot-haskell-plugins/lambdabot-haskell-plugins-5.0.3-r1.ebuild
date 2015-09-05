@@ -49,3 +49,7 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-fix-enc.patch
+}
