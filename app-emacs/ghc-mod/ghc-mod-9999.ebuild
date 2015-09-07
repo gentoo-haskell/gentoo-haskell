@@ -19,10 +19,11 @@ KEYWORDS=""
 IUSE="emacs"
 
 RDEPEND="dev-haskell/async:=[profile?]
-	>=dev-haskell/cabal-helper-0.5.1.0:=[profile?] <dev-haskell/cabal-helper-0.6:=[profile?]
+	>=dev-haskell/cabal-helper-0.6.0.0:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
 	dev-haskell/convertible:=[profile?]
 	>=dev-haskell/djinn-ghc-0.0.2.2:=[profile?]
+	>=dev-haskell/extra-1.4:2=[profile?]
 	dev-haskell/fclabels:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
 	dev-haskell/ghc-syb-utils:=[profile?]
