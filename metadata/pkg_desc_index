@@ -486,7 +486,7 @@ dev-haskell/gloss-raster 1.8.2.1 1.9.2.1 1.9.4.1: Parallel rendering of raster i
 dev-haskell/gloss-rendering 1.9.2.1 1.9.3.1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 1.4.0.2 1.5.0.1: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.1: A binding for the OpenGL Utility Toolkit
+dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.2: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.8.6: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.1: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.3.1 0.5.4: 2D and 3D plots using gnuplot
@@ -603,7 +603,7 @@ dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
-dev-haskell/hjsmin 0.1.5.0: Haskell implementation of a javascript minifier
+dev-haskell/hjsmin 0.1.5.1: Haskell implementation of a javascript minifier
 dev-haskell/hledger 0.25.1: The main command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1: Core data types, parsers and utilities for the hledger accounting tool
@@ -628,7 +628,7 @@ dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
 dev-haskell/hpc 0.6.0.1 0.6.0.2: Code Coverage Library for Haskell
-dev-haskell/hpdf 1.4.7: Generation of PDF documents
+dev-haskell/hpdf 1.4.8: Generation of PDF documents
 dev-haskell/hprotoc 2.0.17: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
