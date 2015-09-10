@@ -21,7 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
+	>=dev-haskell/binary-0.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
