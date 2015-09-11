@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/temporary:=[profile?] dev-haskell/transformers:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( dev-haskell/extra ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/temporary:=[profile?] dev-haskell/transformers:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( dev-haskell/extra:2 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Simple interface to some of Cabal's configuration state used by ghc-mod
 EAPI=5
 HOMEPAGE=http://hackage.haskell.org/package/cabal-helper
@@ -10,4 +10,4 @@ RDEPEND=>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
 SLOT=0/0.6.0.0
 SRC_URI=mirror://hackage/packages/archive/cabal-helper/0.6.0.0/cabal-helper-0.6.0.0.tar.gz
 _eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	11c00e49bda93dcac8ed2be32f7c36da	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=b26cb64db0fa29c2fa5f2228c9eeeb33
+_md5_=7239aa8061fc5cacf220bc06bb81f4d8
