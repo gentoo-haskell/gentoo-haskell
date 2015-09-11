@@ -1198,7 +1198,7 @@ dev-haskell/storablevector 0.2.10: Fast, packed, strict storable arrays with a l
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.12.1: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.13: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
