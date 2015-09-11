@@ -1096,7 +1096,7 @@ dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.1: High performance, regular, shape po
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.1: Read and write Repa arrays in various formats
-dev-haskell/replib 0.5.3.3: Generic programming library with representation types
+dev-haskell/replib 0.5.3.4: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
@@ -1171,7 +1171,7 @@ dev-haskell/socket-io 1.3.3: This library provides an implementation of Socket.i
 dev-haskell/socks 0.5.4: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r4: GUI functions as used in the book "The Haskell School of Expression"
-dev-haskell/sourcegraph 0.7.0.6: Static code analysis using graph-theoretic techniques
+dev-haskell/sourcegraph 0.7.0.7: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.3.0: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.2.5: Play, write, read, convert audio signals using Sox
 dev-haskell/speculation 1.5.0.2: A framework for safe, programmable, speculative parallelism
@@ -1438,7 +1438,7 @@ dev-haskell/xmlhtml 0.2.3.4-r2: XML parser and renderer with HTML 5 quirks mode
 dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
 dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.14: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.15.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.2: Creation of type-safe, RESTful web applications
