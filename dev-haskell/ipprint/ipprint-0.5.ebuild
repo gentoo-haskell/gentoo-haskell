@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/extra-1.33:=[profile?]
-		<dev-haskell/extra-1.50:=[profile?]
+RDEPEND=">=dev-haskell/extra-1.33:0=[profile?]
+		<dev-haskell/extra-1.50:0=[profile?]
 		dev-haskell/haskell-src:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
