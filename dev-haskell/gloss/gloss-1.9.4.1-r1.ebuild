@@ -21,13 +21,18 @@ IUSE="explicitbackend glfw +glut"
 RDEPEND=">=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
 	>=dev-haskell/gloss-rendering-1.9.3:=[profile?] <dev-haskell/gloss-rendering-1.9.4:=[profile?]
 	>=dev-haskell/glut-2.7:=[profile?] <dev-haskell/glut-2.8:=[profile?]
-	>=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-2.13:=[profile?]
+	>=dev-haskell/opengl-2.12:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	glfw? ( >=dev-haskell/glfw-b-0.1.4.1:=[profile?] <dev-haskell/glfw-b-0.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'OpenGL     == 2.12.*' 'OpenGL     >= 2.12'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
