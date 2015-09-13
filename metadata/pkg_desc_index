@@ -834,11 +834,11 @@ dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
-dev-haskell/memory 0.7: memory and related abtraction stuff
+dev-haskell/memory 0.10: memory and related abstraction stuff
 dev-haskell/memotrie 0.5 0.6.2: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
-dev-haskell/messagepack 0.4.0: Serialize instance for Message Pack Object
+dev-haskell/messagepack 0.5.0: Serialize instance for Message Pack Object
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.1.5: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
