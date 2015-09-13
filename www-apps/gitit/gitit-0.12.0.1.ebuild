@@ -62,7 +62,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.16:=[profile?]
 	plugins? ( dev-haskell/ghc-paths:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.8
 "
 
 src_configure() {
