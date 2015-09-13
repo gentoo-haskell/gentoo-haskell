@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/monad-control-0.3.2.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/path-pieces-0.1:=[profile?]
-	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.2:=[profile?]
+	>=dev-haskell/persistent-2.1:=[profile?]
 	>=dev-haskell/scientific-0.3.1:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/text-1.2.0.0:=[profile?]
 	>=dev-haskell/transformers-0.4.0.0:=[profile?] <dev-haskell/transformers-0.5.0.0:=[profile?]
@@ -42,5 +42,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'utf8-string           >= 0.3.7    && < 0.4.0' 'utf8-string           >= 0.3.7    && < 1.1' \
-		'monad-control         >= 0.3.2.0  && < 0.4'   'monad-control         >= 0.3.2.0  && < 1.1'
+		'monad-control         >= 0.3.2.0  && < 0.4'   'monad-control         >= 0.3.2.0  && < 1.1' \
+		'persistent            >= 2.1      && < 2.2'   'persistent            >= 2.1'
 }
