@@ -29,13 +29,18 @@ RDEPEND=">=dev-haskell/binary-0.6.3:=[profile?] <dev-haskell/binary-0.8:=[profil
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/rank1dynamic-0.1:=[profile?] <dev-haskell/rank1dynamic-0.4:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
-	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.5:=[profile?]
+	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'syb >= 0.3 && < 0.5' 'syb >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
