@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-0.10:=[profi
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-haskell/wai-3.0.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
 	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
-	>=dev-haskell/warp-3.0.0:=[profile?] <dev-haskell/warp-3.1:=[profile?]
+	>=dev-haskell/warp-3.0.0:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 "
 DEPEND="${RDEPEND}
@@ -44,3 +44,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-wai-0.6.3
 		dev-haskell/lifted-base )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'warp                >= 3.0.0    && < 3.1' 'warp                >= 3.0.0'
+}
