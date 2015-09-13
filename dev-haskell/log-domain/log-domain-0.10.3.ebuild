@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Log-domain arithmetic"
-HOMEPAGE="http://github.com/analytics/log-domain/"
+HOMEPAGE="http://github.com/ekmett/log-domain/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
