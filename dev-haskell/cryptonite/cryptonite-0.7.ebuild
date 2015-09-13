@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+integer-gmp +support_aesni +support_deepseq support_pclmuldq +support_rdrand"
 
-RDEPEND=">=dev-haskell/memory-0.2:=[profile?]
+RESTRICT=test # slow
+
+RDEPEND=">=dev-haskell/memory-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
