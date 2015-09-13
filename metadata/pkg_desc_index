@@ -334,7 +334,7 @@ dev-haskell/direct-sqlite 2.3.15: Low-level binding to SQLite3. Includes UTF8 an
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
-dev-haskell/distributed-process 0.5.3 0.5.5: Cloud Haskell: Erlang-style concurrency in Haskell
+dev-haskell/distributed-process 0.5.3 0.5.5-r1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.2.0-r1 0.2.3.0: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.1: Tests for distributed-process
 dev-haskell/distributed-static 0.3.1.0 0.3.2.0: Compositional, type-safe, polymorphic static values and closures
@@ -757,7 +757,7 @@ dev-haskell/lambdabot-social-plugins 5.0.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1: Lambdabot trusted code
 dev-haskell/lambdabot-utils 4.2.2: Utility libraries for the advanced IRC bot, Lambdabot
 dev-haskell/language-c 0.4.7: Analysis and generation of C code
-dev-haskell/language-c-quote 0.8.0 0.10.2.2: C/CUDA/OpenCL/Objective-C quasiquoting library
+dev-haskell/language-c-quote 0.8.0 0.10.2.2-r1: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-ecmascript 0.17.0.1: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
@@ -1196,7 +1196,7 @@ dev-haskell/stmonadtrans 0.3.3: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.2: Storable instance for pairs and triples
-dev-haskell/storablevector 0.2.10: Fast, packed, strict storable arrays with a list interface like ByteString
+dev-haskell/storablevector 0.2.10-r1: Fast, packed, strict storable arrays with a list interface like ByteString
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
@@ -1218,7 +1218,7 @@ dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svgcairo 0.12.5.2 0.13.0.3: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.5.0.0: Fonts from the SVG-Font format
-dev-haskell/syb 0.4.4: Scrap Your Boilerplate
+dev-haskell/syb 0.4.4 0.5.1: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
