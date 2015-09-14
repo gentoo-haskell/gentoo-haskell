@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Bower is a package manager for the web (see &lt;http://bower.io&gt;).
+		This package provides a data type and ToJSON/FromJSON instances for Bower&#39;s
+		package manifest file, bower.json.
+	</longdescription>
+</pkgmetadata>
