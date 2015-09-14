@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A small package which gives you the tools to build parsers to decode JSON
+		values, and gives good error messages when parsing fails.
+		See also &lt;http://harry.garrood.me/blog/aeson-better-errors/&gt;.
+	</longdescription>
+</pkgmetadata>
