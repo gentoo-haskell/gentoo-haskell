@@ -37,6 +37,7 @@ dev-haskell/ad 4.2.4: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1: Fast JSON parsing and encoding
+dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
@@ -129,6 +130,7 @@ dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
 dev-haskell/bound 1.0.6: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
+dev-haskell/bower-json 0.7.0.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
 dev-haskell/bson 0.3.1: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/buildwrapper 0.7.7: A library and an executable that provide an easy API for a Haskell IDE
@@ -1495,7 +1497,7 @@ dev-lang/idris 0.9.18.1 0.9.19-r1 9999: Functional Programming Language with Dep
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.6.9.5: PureScript Programming Language Compiler
+dev-lang/purescript 0.7.4.1: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
