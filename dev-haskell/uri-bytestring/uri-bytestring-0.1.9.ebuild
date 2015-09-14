@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/lens
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances
+		<dev-haskell/semigroups-0.17
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
