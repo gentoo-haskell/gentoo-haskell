@@ -20,10 +20,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glfw-b-1.4:=[profile?] <dev-haskell/glfw-b-1.5:=[profile?]
-	>=dev-haskell/reactive-banana-0.8:=[profile?] <dev-haskell/reactive-banana-0.9:=[profile?]
+	>=dev-haskell/reactive-banana-0.8:=[profile?]
 	>=dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'reactive-banana == 0.8.*' 'reactive-banana >= 0.8'
+}
