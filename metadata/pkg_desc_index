@@ -723,7 +723,7 @@ dev-haskell/io-streams 1.3.2.0: Simple, composable, and easy-to-use stream I/O
 dev-haskell/iorefcas 0.2.0.1: Atomic compare and swap for IORefs and STRefs
 dev-haskell/iospec 0.3: A pure specification of the IO monad
 dev-haskell/ipprint 0.5: Tiny helper for pretty-printing values in ghci console
-dev-haskell/iproute 1.6.0: IP Routing Table
+dev-haskell/iproute 1.7.0: IP Routing Table
 dev-haskell/ipython-kernel 0.6.1.0: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/ircbot 0.6.2 0.6.4: A library for writing irc bots
@@ -989,7 +989,7 @@ dev-haskell/persistent-template 2.1.3.4: Type-safe, non-relational, multi-backen
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.6: Compositional pipelines
-dev-haskell/pipes-binary 0.4.0.4: Encode and decode binary streams using the pipes and binary libraries
+dev-haskell/pipes-binary 0.4.0.5: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.1: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.3: Concurrency for the pipes ecosystem
@@ -1100,7 +1100,7 @@ dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.1: High performance, regular, shape po
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.1: Read and write Repa arrays in various formats
-dev-haskell/replib 0.5.3.4: Generic programming library with representation types
+dev-haskell/replib 0.5.3.5: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
