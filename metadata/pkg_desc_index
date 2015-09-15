@@ -32,7 +32,7 @@ dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.0.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.12.4: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
-dev-haskell/active 0.2.0.4: Abstractions for animation
+dev-haskell/active 0.2.0.5: Abstractions for animation
 dev-haskell/ad 4.2.4: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
@@ -386,7 +386,7 @@ dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine wor
 dev-haskell/equivalence 0.2.5 0.3.1: Maintaining an equivalence relation implemented as union-find using STT
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.1.0: An orphan Eq instance for ErrorCall
-dev-haskell/errors 1.4.7: Simplified error-handling
+dev-haskell/errors 1.4.7 2.0.1: Simplified error-handling
 dev-haskell/esqueleto 2.4.1: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.3.0.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
