@@ -173,9 +173,9 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.1.8.5 3001.2.2.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.0.1: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1: Cairo backend for Charts
-dev-haskell/chart-gtk 1.4: Utility functions for using the chart library with GTK
+dev-haskell/chart 1.4-r1 1.5.3: A library for generating 2D Charts and Plots
+dev-haskell/chart-cairo 1.4-r1 1.5.1: Cairo backend for Charts
+dev-haskell/chart-gtk 1.4 1.5.1: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.0.13: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.4: Experimental markdown processor
@@ -632,7 +632,7 @@ dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profil
 dev-haskell/hpc 0.6.0.1 0.6.0.2: Code Coverage Library for Haskell
 dev-haskell/hpdf 1.4.8: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0: A Haskell pre-processor
-dev-haskell/hprotoc 2.0.17: Parse Google Protocol Buffer specifications
+dev-haskell/hprotoc 2.1.6: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
 dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
@@ -946,7 +946,7 @@ dev-haskell/onetuple 0.2.1: Singleton Tuple
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
 dev-haskell/openal 1.6.0.1 1.7.0.1: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
-dev-haskell/openclwrappers 0.1.0.2-r1: The OpenCL Standard for heterogenous data-parallel computing
+dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.0.0: A binding for the OpenGL graphics system
 dev-haskell/openglraw 1.1.0.2 1.2.0.0 1.3.0.0 1.4.0.0 1.5.0.1 2.5.1.0 2.5.3.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
@@ -1037,8 +1037,8 @@ dev-haskell/profunctors 4.4.1 5.1.1: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
-dev-haskell/protocol-buffers 2.0.17: Parse Google Protocol Buffer specifications
-dev-haskell/protocol-buffers-descriptor 2.0.17: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
+dev-haskell/protocol-buffers 2.1.6: Parse Google Protocol Buffer specifications
+dev-haskell/protocol-buffers-descriptor 2.1.6: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
 dev-haskell/psqueue 1.1-r1: Priority Search Queue
 dev-haskell/psqueues 0.2.0.2: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?

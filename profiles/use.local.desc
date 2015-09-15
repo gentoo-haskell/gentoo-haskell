@@ -235,6 +235,7 @@ dev-haskell/nats:hashable - You can disable the use of the `hashable` package us
 dev-haskell/netwire:testprogram - Build the test program.
 dev-haskell/network-data:small_base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
 dev-haskell/pandoc-citeproc:embed_data_files - Embed locale files into the library (needed for windows packaging).
