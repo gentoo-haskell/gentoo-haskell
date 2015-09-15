@@ -9,4 +9,7 @@
 	<longdescription>
 		Light opencl wrappers, a fork of the OpenCLRaw package.
 	</longdescription>
+	<use>
+		<flag name="link">Link against OpenCL library.</flag>
+	</use>
 </pkgmetadata>
