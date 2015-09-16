@@ -533,7 +533,7 @@ dev-haskell/happraise 0.1-r1: A small program for counting the comments in haske
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-heist 7.2.3-r1 9999: Support for using Heist templates in Happstack
-dev-haskell/happstack-hsp 7.3.2-r1 9999: Support for using HSP templates in Happstack
+dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3 9999: The haskell application server stack + reload
 dev-haskell/happstack-server 7.4.4: Web related tools and services
@@ -551,8 +551,8 @@ dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskel
 dev-haskell/haskell-docs 0.2.0.0 4.2.2: A program to find and display the docs and type of a name
 dev-haskell/haskell-lexer 1.0-r1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
-dev-haskell/haskell-names 0.4.1: Name resolution library for Haskell
-dev-haskell/haskell-packages 0.2.4.4: Haskell suite library for package management and integration with Cabal
+dev-haskell/haskell-names 0.4.1 0.5.3: Name resolution library for Haskell
+dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
