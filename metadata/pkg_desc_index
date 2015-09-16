@@ -362,7 +362,7 @@ dev-haskell/dph-prim-seq 0.7.0.1: Data Parallel Haskell segmented arrays. (seque
 dev-haskell/drbg 0.5.4: Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers
 dev-haskell/drift 2.2.0 2.2.3 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3-r1: Haskell Digital Signal Processing
-dev-haskell/dual-tree 0.2.0.6: Rose trees with cached and accumulating monoidal annotations
+dev-haskell/dual-tree 0.2.0.7: Rose trees with cached and accumulating monoidal annotations
 dev-haskell/dynamic-state 0.2.0.0: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.1: Cross-platform File handling
@@ -398,18 +398,18 @@ dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executabl
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
 dev-haskell/explicit-exception 0.1.7.3: Exceptions which are explicit in the type signature
-dev-haskell/extensible-effects 1.9.2.2: An Alternative to Monad Transformers
+dev-haskell/extensible-effects 1.11.0.0: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.3 1.3.1 1.4.1 1.46.3: A grab bag of modules
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
 dev-haskell/fast-logger 2.4.1: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.22.0.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
-dev-haskell/fay-base 0.19.4.2: The base package for Fay
+dev-haskell/fay 0.23.1.8: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
-dev-haskell/fay-jquery 0.6.0.3: jQuery bindings for Fay
-dev-haskell/fay-text 0.3.2.1: Fay Text type represented as JavaScript strings
+dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
+dev-haskell/fay-text 0.3.2.2: Fay Text type represented as JavaScript strings
 dev-haskell/fay-uri 0.2.0.0: Persistent FFI bindings for using jsUri in Fay
 dev-haskell/fb 1.0.11: Bindings to Facebook's API
 dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
@@ -492,7 +492,7 @@ dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.2: A binding for the OpenGL Utili
 dev-haskell/glutil 0.8.7: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.1: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.3.1 0.5.4: 2D and 3D plots using gnuplot
-dev-haskell/gnutls 0.1.6: Bindings for GNU libgnutls
+dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
 dev-haskell/goa 3.3 9999: GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
@@ -881,7 +881,7 @@ dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
 dev-haskell/mongodb 2.0.7: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.9.3: Type classes for mapping, folding, and traversing monomorphic containers
-dev-haskell/monoid-extras 0.3.3.5 0.4.0.1: Various extra monoid-related definitions and utilities
+dev-haskell/monoid-extras 0.4.0.2: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.1.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
