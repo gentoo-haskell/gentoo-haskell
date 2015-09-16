@@ -418,6 +418,7 @@ dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
 dev-haskell/feed 0.3.10.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
+dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
 dev-haskell/file-embed 0.0.9: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9: common functions that show file location information
 dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
@@ -499,7 +500,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.6: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.1: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
