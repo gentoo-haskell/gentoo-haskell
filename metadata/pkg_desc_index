@@ -580,7 +580,7 @@ dev-haskell/hdbc-mysql 0.6.6.1-r2: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
-dev-haskell/hdevtools 0.1.0.9: Persistent GHC powered background server for FAST haskell development tools
+dev-haskell/hdevtools 0.1.2.1: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.2: Heaps in Haskell
 dev-haskell/heaps 0.3.2.1: Asymptotically optimal Brodal/Okasaki heaps
@@ -596,7 +596,7 @@ dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism gr
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.0.5: A simple graphics library based on X11 or Win32
-dev-haskell/hi 0.0.8.2: Generate scaffold for cabal project
+dev-haskell/hi 1.2.0.0: Generate scaffold for cabal project
 dev-haskell/highlighting-kate 0.5.15 0.6: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
 dev-haskell/hint 0.4.0.0-r1 0.4.2.0 0.4.2.1 0.4.2.3 9999: Runtime Haskell interpreter (GHC API wrapper)
@@ -1509,11 +1509,11 @@ dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
 dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependencies
 dev-util/shellcheck 0.4.1: Shell script analysis tool
-dev-util/shelltestrunner 1.3.5: A tool for testing command-line programs
+dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.8.5-r4 2.10.0-r1 2.10.1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 5.20150710 5.20150731 5.20150824: manage files with git, without checking their contents into git
+dev-vcs/git-annex 5.20150710 5.20150731 5.20150916: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
