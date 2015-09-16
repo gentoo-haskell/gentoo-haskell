@@ -74,6 +74,10 @@ src_prepare() {
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
+
+
+	cabal_chdeps \
+		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1'
 }
 
 src_configure() {
