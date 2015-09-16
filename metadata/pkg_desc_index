@@ -527,7 +527,7 @@ dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on AN
 dev-haskell/hakyll 4.7.2.3-r1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
-dev-haskell/handsomesoup 0.3.5: Work with HTML more easily in HXT
+dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
 dev-haskell/hans 2.6.0.0: IPv4 Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
@@ -536,7 +536,7 @@ dev-haskell/happstack-heist 7.2.3-r1 9999: Support for using Heist templates in 
 dev-haskell/happstack-hsp 7.3.2-r1 9999: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3 9999: The haskell application server stack + reload
-dev-haskell/happstack-server 7.4.3: Web related tools and services
+dev-haskell/happstack-server 7.4.4: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
@@ -1502,7 +1502,7 @@ dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8: A compiler front-end generator
-dev-util/bustle 0.4.7-r1 0.5.1: Draw sequence diagrams of D-Bus traffic
+dev-util/bustle 0.4.7-r1 0.5.2: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
