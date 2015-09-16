@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:=
 	>=dev-haskell/diff-0.2.0:= <dev-haskell/diff-0.4:=
 	>=dev-haskell/filemanip-0.3:= <dev-haskell/filemanip-0.4:=
-	<dev-haskell/hunit-1.3:=
+	dev-haskell/hunit:=
 	<dev-haskell/parsec-3.2:=
 	>=dev-haskell/pretty-show-1.6.5:=
 	>=dev-haskell/regex-tdfa-1.1:= <dev-haskell/regex-tdfa-1.3:=
@@ -34,3 +34,8 @@ RDEPEND=">=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit                            < 1.3' 'HUnit'
+}
