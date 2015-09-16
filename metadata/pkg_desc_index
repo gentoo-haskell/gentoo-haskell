@@ -1474,7 +1474,7 @@ dev-haskell/zeromq3-haskell 0.5.2: Bindings to ZeroMQ 3.x
 dev-haskell/zeromq4-haskell 0.6.3: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.2.3.7: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2-r1 9999: Traversal based zippers
-dev-haskell/zlib 0.5.4.2: Compression and decompression in the gzip and zlib formats
+dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
 dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits. (deprecated)
 dev-haskell/zlib-enum 0.2.3.1: Enumerator interface for zlib compression
@@ -1493,7 +1493,7 @@ dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2005.3-r2 2006.9: The Hugs98 Haskell interpreter
-dev-lang/idris 0.9.18.1 0.9.19-r1 9999: Functional Programming Language with Dependent Types
+dev-lang/idris 0.9.18.1 0.9.19-r2 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
