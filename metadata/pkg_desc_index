@@ -172,7 +172,7 @@ dev-haskell/cereal-conduit 0.7.2.3: Turn Data.Serialize Gets and Puts into Sourc
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.1.8.5 3001.2.2.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
-dev-haskell/charsetdetect-ae 1.0.1: Character set detection using Mozilla's Universal Character Set Detector
+dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.3: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.4-r1 1.5.1: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1: Utility functions for using the chart library with GTK
@@ -182,7 +182,7 @@ dev-haskell/cheapskate 0.1.0.4: Experimental markdown processor
 dev-haskell/checkers 0.4.3: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5: QuickCheck support for the Chell testing library
-dev-haskell/chunked-data 0.1.0.1: Typeclasses for dealing with various chunked data representations
+dev-haskell/chunked-data 0.2.0: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.1: AES and common modes using AES-NI when available
 dev-haskell/cipher-blowfish 0.0.3: Blowfish cipher
@@ -524,7 +524,7 @@ dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2
 dev-haskell/haddock-api 2.16.1: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.7.2.3: A static website compiler library
+dev-haskell/hakyll 4.7.2.3-r1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handsomesoup 0.3.5: Work with HTML more easily in HXT
@@ -693,7 +693,7 @@ dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client an
 dev-haskell/http2 1.0.4: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
-dev-haskell/hunit 1.2.5.2-r1: A unit testing framework for Haskell
+dev-haskell/hunit 1.2.5.2-r1 1.3.0.0: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.0: Approximate equality for floating point numbers with HUnit
 dev-haskell/hxt 9.3.1.15: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.2.0.1: Character properties and classes for XML and Unicode
@@ -982,7 +982,7 @@ dev-haskell/persistent 2.1.6 2.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.2.1 2.1.2.2: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.3: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.2: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.2.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.1.3.4: Type-safe, non-relational, multi-backend persistence
@@ -1304,7 +1304,7 @@ dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a tran
 dev-haskell/transformers-compat 0.4.0.4: A small compatibility shim for dev-haskell/transformers
 dev-haskell/transformers-lift 0.1.0.0: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
-dev-haskell/trifecta 1.5.1.3-r1: A modern parser combinator library with convenient diagnostics
+dev-haskell/trifecta 1.5.2: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
