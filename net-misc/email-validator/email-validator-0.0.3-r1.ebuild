@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cmdargs-0.10 <dev-haskell/cmdargs-0.11
 	>=dev-haskell/dns-1
 	>=dev-haskell/email-validate-2 <dev-haskell/email-validate-3
-	>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	>=dev-haskell/hunit-1.2
 	>=dev-haskell/parallel-io-0.3 <dev-haskell/parallel-io-0.4
 	>=dev-haskell/pcre-light-0.4
 	>=dev-haskell/tasty-0.8
@@ -38,7 +38,8 @@ src_prepare() {
 		'doctest   == 0.9.*' 'doctest   >= 0.9' \
 		'dns                         == 1.*' 'dns                         >= 1' \
 		'tasty                       == 0.8.*' 'tasty                       >= 0.8' \
-		'tasty-hunit                 == 0.8.*' 'tasty-hunit                 >= 0.8'
+		'tasty-hunit                 == 0.8.*' 'tasty-hunit                 >= 0.8' \
+		'HUnit                       == 1.2.*' 'HUnit                       >= 1.2'
 }
 
 src_install() {
