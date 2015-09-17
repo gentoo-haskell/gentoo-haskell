@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~dev-haskell/protocol-buffers-2.1.6:=[profile?]
+RDEPEND="~dev-haskell/protocol-buffers-2.1.7:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
