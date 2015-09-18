@@ -391,8 +391,8 @@ dev-haskell/esqueleto 2.4.1: Type-safe EDSL for SQL queries on persistent backen
 dev-haskell/ether 0.3.0.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.2: Event lists with relative or absolute time stamps
-dev-haskell/exception-mtl 0.3.0.5: Exception monad transformer instances for mtl2 classes
-dev-haskell/exception-transformers 0.3.0.4: Type classes and monads for unchecked extensible exceptions
+dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
+dev-haskell/exception-transformers 0.3.0.4 0.4.0.1: Type classes and monads for unchecked extensible exceptions
 dev-haskell/exceptions 0.6.1 0.8.0.2: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
