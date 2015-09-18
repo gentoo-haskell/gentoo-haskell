@@ -40,6 +40,7 @@ RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
+	>=dev-haskell/pipes-4.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	dev-haskell/ghc-api
 "
