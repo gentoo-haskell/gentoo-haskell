@@ -175,6 +175,7 @@ dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hsh:buildtests - Build the executable to run unit tests.
 dev-haskell/hslogger:buildtests - Build the executable to run unit tests.
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
+dev-haskell/hslua:luajit - Use luajit instead of lua.
 dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled copy.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC Only)
 dev-haskell/hsp:base4 - Use base-4.0.
