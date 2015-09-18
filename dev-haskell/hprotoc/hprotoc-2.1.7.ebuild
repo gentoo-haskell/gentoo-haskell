@@ -22,8 +22,8 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
-	~dev-haskell/protocol-buffers-2.1.6:=[profile?]
-	~dev-haskell/protocol-buffers-descriptor-2.1.6:=[profile?]
+	~dev-haskell/protocol-buffers-2.1.7:=[profile?]
+	~dev-haskell/protocol-buffers-descriptor-2.1.7:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
