@@ -24,7 +24,7 @@ IUSE="+network-uri"
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/exceptions-0.7:=[profile?]
-	>=dev-haskell/http-client-0.2:=[profile?]
+	>=dev-haskell/http-client-0.4:=[profile?]
 	>=dev-haskell/http-client-tls-0.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?]
@@ -47,10 +47,6 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-mtl-2.2.patch
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
