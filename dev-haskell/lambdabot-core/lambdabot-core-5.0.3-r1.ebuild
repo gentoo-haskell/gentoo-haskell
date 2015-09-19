@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-	>=dev-haskell/dependent-map-0.1:=[profile?] <dev-haskell/dependent-map-0.2:=[profile?]
-	>=dev-haskell/dependent-sum-0.2:=[profile?] <dev-haskell/dependent-sum-0.3:=[profile?]
+	>=dev-haskell/dependent-map-0.2:=[profile?]
+	>=dev-haskell/dependent-sum-0.3:=[profile?]
 	>=dev-haskell/dependent-sum-template-0.0.0.1:=[profile?]
 	>=dev-haskell/edit-distance-0.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?]
@@ -46,3 +46,11 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ds-0.3.patch
+
+	cabal_chdeps \
+		'dependent-map           == 0.1.*' 'dependent-map           >= 0.2' \
+		'dependent-sum           == 0.2.*' 'dependent-sum           >= 0.3'
+}
