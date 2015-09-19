@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cpphs +stdlib"
 
-RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0.4:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0.5:=[profile?]
 	>=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
@@ -67,6 +67,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	cabal_chdeps \
+		'base-orphans >= 0.3.1 && < 0.4' 'base-orphans >= 0.3.1 && < 0.5' \
 		'data-hash == 0.2.0.0' 'data-hash >= 0.2.0.0 && < 0.3' \
 		'geniplate-mirror >= 0.6.0.6 && < 0.7' 'geniplate-mirror >= 0.6.0.6 && < 0.8'
 	sed -e '/.*emacs-mode.*$/d' \
