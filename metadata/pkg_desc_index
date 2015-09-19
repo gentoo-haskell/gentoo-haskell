@@ -1456,7 +1456,7 @@ dev-haskell/yesod-bin 1.4.14: The yesod helper executable
 dev-haskell/yesod-core 1.4.15: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
-dev-haskell/yesod-fay 0.7.1: Utilities for using the Fay Haskell-to-JS compiler with Yesod
+dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
 dev-haskell/yesod-form 1.4.4.1: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.9.4-r1: Tools for using markdown in a yesod application
