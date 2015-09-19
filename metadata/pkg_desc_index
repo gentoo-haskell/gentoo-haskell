@@ -161,7 +161,7 @@ dev-haskell/cairo 0.12.5.0-r1 0.12.5.1 0.12.5.3 0.13.1.0 9999: Binding to the Ca
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/cascading 0.1.0-r1: DSL for HTML CSS (Cascading Style Sheets)
-dev-haskell/case-insensitive 1.1.0.3 1.2.0.4: Case insensitive string comparison
+dev-haskell/case-insensitive 1.1.0.3 1.2.0.4-r1: Case insensitive string comparison
 dev-haskell/cassava 0.4.4.0: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
@@ -963,7 +963,7 @@ dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the Pango text 
 dev-haskell/parallel 3.2.0.6: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.1.5.2: Command-line argument parsing library for Haskell programs
-dev-haskell/parsec 3.1.9: Monadic parser combinators
+dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
