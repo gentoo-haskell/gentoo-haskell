@@ -1,7 +1,7 @@
 app-accessibility/hsay 1.1.0-r1: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.9 9999: Rebuild Haskell dependencies in Gentoo
 app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3 9999: Haskell IDE written in Haskell
-app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 9999: Metadata collection for leksah
+app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.2: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
@@ -304,8 +304,8 @@ dev-haskell/dbus-client 0.4.1: Monadic and object-oriented interfaces to DBus
 dev-haskell/dbus-core 0.8.5.4 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.1.1.2: GHC.Generics-based Control.DeepSeq.rnf implementation
-dev-haskell/dependent-map 0.1.1.3: Dependent finite maps (partial dependent products)
-dev-haskell/dependent-sum 0.2.1.0: Dependent sum type
+dev-haskell/dependent-map 0.1.1.3 0.2.0.1: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-sum 0.2.1.0 0.3.2.1: Dependent sum type
 dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.5.22: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
@@ -751,7 +751,7 @@ dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
 dev-haskell/lambdabot 5.0.3: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.0.3: Lambdabot core functionality
+dev-haskell/lambdabot-core 5.0.3-r1: Lambdabot core functionality
 dev-haskell/lambdabot-haskell-plugins 5.0.3-r1: Lambdabot Haskell plugins
 dev-haskell/lambdabot-irc-plugins 5.0.3: IRC plugins for lambdabot
 dev-haskell/lambdabot-misc-plugins 5.0.1: Lambdabot miscellaneous plugins
@@ -957,7 +957,7 @@ dev-haskell/optional-args 1.0.0: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.7.3.1: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.7.4: Supports using pandoc with citeproc
 dev-haskell/pandoc-types 1.12.4.5: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.0.6: Parallel programming library
@@ -1025,6 +1025,7 @@ dev-haskell/pretty-ncols 0.1-r1: A implementation of multi-column layout w/ Text
 dev-haskell/pretty-show 1.6.8.2: Tools for working with derived 'Show' instances and generic inspection of values
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
+dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
 dev-haskell/primitive 0.6: Primitive memory-related operations
 dev-haskell/probability 0.2.5: Probabilistic Functional Programming
@@ -1354,7 +1355,7 @@ dev-haskell/uuagc 0.9.52.1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-bootstrap 0.9.40.2: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.0.6.0: Cabal plugin for the Universiteit Utrecht Attribute Grammar System
 dev-haskell/uuid 1.3.11-r1: For creating, comparing, parsing and printing Universally Unique Identifiers
-dev-haskell/uuid-types 1.0.2: Type definitions for Universally Unique Identifiers
+dev-haskell/uuid-types 1.0.2-r1: Type definitions for Universally Unique Identifiers
 dev-haskell/uulib 0.9.20: Haskell Utrecht Tools Library
 dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using vacuum, graphviz and cairo
