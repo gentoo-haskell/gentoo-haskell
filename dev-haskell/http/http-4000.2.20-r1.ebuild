@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	dev-lang/ghc
 	test? ( >=dev-haskell/httpd-shed-0.4 <dev-haskell/httpd-shed-0.5
-		>=dev-haskell/hunit-1.2.0.1 <dev-haskell/hunit-1.3
+		>=dev-haskell/hunit-1.2.0.1
 		>=dev-haskell/puremd5-0.2.4 <dev-haskell/puremd5-2.2
 		>=dev-haskell/split-0.1.3 <dev-haskell/split-0.3
 		>=dev-haskell/test-framework-0.2.0 <dev-haskell/test-framework-0.9
@@ -42,6 +42,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit >= 1.2.0.1 && < 1.3' 'HUnit >= 1.2.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
