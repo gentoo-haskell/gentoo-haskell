@@ -63,8 +63,12 @@ packages there:
     for m in $(git grep -l -F '<herd>haskell</herd>'); do
       cp=$(dirname "$m")
       egrep -q -R '^KEYWORDS=.*[^~-]amd64' "${cp}/" && echo "${cp}"
-    done
+    done > stable-to-check-against-ghc-7.8
 
-And now try to build them. Whatever does not build requires stabilising new version.
+And now try to build them. Whatever does not build requires stabilising new version:
+
+::
+
+  $ emerge -1 -j$((nproc) $(cat stable-to-check-against-ghc-7.8)
 
 Simple :)
