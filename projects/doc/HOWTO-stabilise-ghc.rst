@@ -45,12 +45,13 @@ This is the hard part. It requires building a few packages :)
 Suppose we are stabilising for ``amd64``. Let's grep all tthe known stable
 packages there:
 
-```
-for m in $(git grep -l -F '<herd>haskell</herd>'); do
-    cp=$(dirname "$m")
-    egrep -q -R '^KEYWORDS=.*[^~-]amd64' "${cp}/" && echo "${cp}"
-done
-```
+::
+
+  # /gentoo.git $
+    for m in $(git grep -l -F '<herd>haskell</herd>'); do
+      cp=$(dirname "$m")
+      egrep -q -R '^KEYWORDS=.*[^~-]amd64' "${cp}/" && echo "${cp}"
+    done
 
 And now try to build them. Whatever does not build requires stabilising new version.
 
