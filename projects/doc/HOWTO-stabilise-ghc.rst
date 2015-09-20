@@ -72,3 +72,8 @@ And now try to build them. Whatever does not build requires stabilising new vers
   $ emerge -1 -j$((nproc) $(cat stable-to-check-against-ghc-7.8)
 
 Simple :)
+
+Previous stabilisations
+-----------------------
+
+- `ghc-7.8.4 <https://bugs.gentoo.org/show_bug.cgi?id=524790#c23>`_
