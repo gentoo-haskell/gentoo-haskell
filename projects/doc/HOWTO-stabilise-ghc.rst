@@ -2,6 +2,18 @@ Suppose you want a new ghc be stabilised in ::gentoo.
 
 I'll pick ``dev-lang/ghc-7.8.4`` as an example.
 
+Arches to stabilise
+===================
+
+We try to stabilise all arches at once as it makes
+fixing packages easier: you mostly need to target
+two ghc versions to support in each haskell package:
+one stable and one unstable.
+
+Our standard list of arches:
+
+    alpha amd64 ia64 ppc ppc64 sparc x86
+
 Packages to stabilise
 =====================
 
