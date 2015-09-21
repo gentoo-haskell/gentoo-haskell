@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="A command-line client for hpaste.org"
-HOMEPAGE="http://github.com/parcs/hpasteit"
+HOMEPAGE="https://github.com/parcs/hpasteit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Constructive abstract algebra"
-HOMEPAGE="http://github.com/ekmett/algebra/"
+HOMEPAGE="https://github.com/ekmett/algebra/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

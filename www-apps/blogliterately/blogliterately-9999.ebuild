@@ -13,7 +13,7 @@ MY_PN="BlogLiterately"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A tool for posting Haskelly articles to blogs"
-HOMEPAGE="http://github.com/trofi/BlogLiterately"
+HOMEPAGE="https://github.com/trofi/BlogLiterately"
 EGIT_REPO_URI="git://github.com/trofi/${MY_PN}.git"
 
 LICENSE="GPL-2"

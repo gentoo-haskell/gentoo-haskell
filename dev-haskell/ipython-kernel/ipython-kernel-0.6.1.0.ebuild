@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A library for creating kernels for IPython frontends"
-HOMEPAGE="http://github.com/gibiansky/IHaskell"
+HOMEPAGE="https://github.com/gibiansky/IHaskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

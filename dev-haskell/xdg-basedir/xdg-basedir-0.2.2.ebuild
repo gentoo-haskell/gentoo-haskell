@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A basic implementation of the XDG Base Directory specification"
-HOMEPAGE="http://github.com/willdonnelly/xdg-basedir"
+HOMEPAGE="https://github.com/willdonnelly/xdg-basedir"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

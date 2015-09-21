@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Retry combinators for monadic actions that may fail"
-HOMEPAGE="http://github.com/Soostone/retry"
+HOMEPAGE="https://github.com/Soostone/retry"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

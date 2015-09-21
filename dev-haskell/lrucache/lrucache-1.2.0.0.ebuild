@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="a simple, pure LRU cache"
-HOMEPAGE="http://github.com/chowells79/lrucache"
+HOMEPAGE="https://github.com/chowells79/lrucache"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

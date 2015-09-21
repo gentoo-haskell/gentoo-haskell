@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Monadic Getters and Folds"
-HOMEPAGE="http://github.com/ekmett/lens-action/"
+HOMEPAGE="https://github.com/ekmett/lens-action/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Representable functors"
-HOMEPAGE="http://github.com/ekmett/representable-functors/"
+HOMEPAGE="https://github.com/ekmett/representable-functors/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

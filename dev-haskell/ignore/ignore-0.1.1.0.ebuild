@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Handle ignore files of different VCSes"
-HOMEPAGE="http://github.com/agrafix/ignore"
+HOMEPAGE="https://github.com/agrafix/ignore"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

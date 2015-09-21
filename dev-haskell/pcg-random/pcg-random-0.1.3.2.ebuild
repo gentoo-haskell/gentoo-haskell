@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings to the PCG random number generator"
-HOMEPAGE="http://github.com/cchalmers/pcg-random"
+HOMEPAGE="https://github.com/cchalmers/pcg-random"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generalized bananas, lenses and barbed wire"
-HOMEPAGE="http://github.com/ekmett/recursion-schemes/"
+HOMEPAGE="https://github.com/ekmett/recursion-schemes/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

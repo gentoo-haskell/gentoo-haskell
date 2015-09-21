@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Manage sandboxed Haskell build environments"
-HOMEPAGE="http://github.com/creswick/cabal-dev"
+HOMEPAGE="https://github.com/creswick/cabal-dev"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

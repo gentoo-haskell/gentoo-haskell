@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple Functional Lenses"
-HOMEPAGE="http://github.com/jvranish/Lenses/tree/master"
+HOMEPAGE="https://github.com/jvranish/Lenses/tree/master"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

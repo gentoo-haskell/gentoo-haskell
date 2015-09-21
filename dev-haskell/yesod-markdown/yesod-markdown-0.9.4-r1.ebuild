@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Tools for using markdown in a yesod application"
-HOMEPAGE="http://github.com/pbrisbin/yesod-markdown"
+HOMEPAGE="https://github.com/pbrisbin/yesod-markdown"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"

@@ -11,7 +11,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Console and GUI interface for Google Translate service"
-HOMEPAGE="http://github.com/styx/gtc"
+HOMEPAGE="https://github.com/styx/gtc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"

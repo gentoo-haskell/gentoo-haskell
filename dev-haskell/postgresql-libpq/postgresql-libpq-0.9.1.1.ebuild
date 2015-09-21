@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="low-level binding to libpq"
-HOMEPAGE="http://github.com/lpsmith/postgresql-libpq"
+HOMEPAGE="https://github.com/lpsmith/postgresql-libpq"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

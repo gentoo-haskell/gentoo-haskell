@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Portable interface to file locking (flock / LockFileEx)"
-HOMEPAGE="http://github.com/takano-akio/filelock"
+HOMEPAGE="https://github.com/takano-akio/filelock"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"

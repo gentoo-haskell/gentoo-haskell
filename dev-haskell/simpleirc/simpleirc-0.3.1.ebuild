@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Simple IRC Library"
-HOMEPAGE="http://github.com/dom96/SimpleIRC"
+HOMEPAGE="https://github.com/dom96/SimpleIRC"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

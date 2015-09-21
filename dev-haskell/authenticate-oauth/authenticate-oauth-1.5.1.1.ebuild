@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library to authenticate with OAuth for Haskell web applications"
-HOMEPAGE="http://github.com/yesodweb/authenticate"
+HOMEPAGE="https://github.com/yesodweb/authenticate"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A free monad based on the Wadler/Leijen pretty printer"
-HOMEPAGE="http://github.com/ekmett/wl-pprint-extras/"
+HOMEPAGE="https://github.com/ekmett/wl-pprint-extras/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

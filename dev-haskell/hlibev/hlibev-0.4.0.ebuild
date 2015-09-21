@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="FFI interface to libev"
-HOMEPAGE="http://github.com/aycanirican/hlibev"
+HOMEPAGE="https://github.com/aycanirican/hlibev"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

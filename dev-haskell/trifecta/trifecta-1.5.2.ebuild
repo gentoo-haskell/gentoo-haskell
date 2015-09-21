@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A modern parser combinator library with convenient diagnostics"
-HOMEPAGE="http://github.com/ekmett/trifecta/"
+HOMEPAGE="https://github.com/ekmett/trifecta/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

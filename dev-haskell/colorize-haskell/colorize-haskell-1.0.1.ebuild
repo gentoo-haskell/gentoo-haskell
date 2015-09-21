@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Highligt Haskell source"
-HOMEPAGE="http://github.com/yav/colorize-haskell"
+HOMEPAGE="https://github.com/yav/colorize-haskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

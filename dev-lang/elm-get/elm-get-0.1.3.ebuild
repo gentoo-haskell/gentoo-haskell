@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Tool for sharing and using Elm libraries"
-HOMEPAGE="http://github.com/elm-lang/elm-get"
+HOMEPAGE="https://github.com/elm-lang/elm-get"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

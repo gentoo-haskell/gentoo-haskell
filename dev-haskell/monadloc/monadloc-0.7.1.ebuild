@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A class for monads which can keep a monadic call trace"
-HOMEPAGE="http://github.com/pepeiborra/monadloc"
+HOMEPAGE="https://github.com/pepeiborra/monadloc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"

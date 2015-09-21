@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Making de Bruijn Succ Less"
-HOMEPAGE="http://github.com/ekmett/bound/"
+HOMEPAGE="https://github.com/ekmett/bound/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

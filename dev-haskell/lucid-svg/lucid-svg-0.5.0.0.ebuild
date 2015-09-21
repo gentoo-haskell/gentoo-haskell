@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="DSL for SVG using lucid for HTML"
-HOMEPAGE="http://github.com/jeffreyrosenbluth/lucid-svg.git"
+HOMEPAGE="https://github.com/jeffreyrosenbluth/lucid-svg.git"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

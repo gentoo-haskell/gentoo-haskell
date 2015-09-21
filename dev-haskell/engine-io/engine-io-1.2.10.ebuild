@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell implementation of Engine.IO"
-HOMEPAGE="http://github.com/ocharles/engine.io"
+HOMEPAGE="https://github.com/ocharles/engine.io"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

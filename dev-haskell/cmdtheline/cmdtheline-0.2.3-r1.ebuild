@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Declarative command-line option parsing and documentation library"
-HOMEPAGE="http://github.com/eli-frey/cmdtheline"
+HOMEPAGE="https://github.com/eli-frey/cmdtheline"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

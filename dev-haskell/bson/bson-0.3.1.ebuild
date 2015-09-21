@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="BSON documents are JSON-like objects with a standard binary encoding"
-HOMEPAGE="http://github.com/mongodb-haskell/bson"
+HOMEPAGE="https://github.com/mongodb-haskell/bson"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Exotic comonad transformers"
-HOMEPAGE="http://github.com/ekmett/comonad-extras/"
+HOMEPAGE="https://github.com/ekmett/comonad-extras/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

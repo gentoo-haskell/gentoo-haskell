@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Tests for distributed-process"
-HOMEPAGE="http://github.com/haskell-distributed/distributed-process-tests"
+HOMEPAGE="https://github.com/haskell-distributed/distributed-process-tests"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

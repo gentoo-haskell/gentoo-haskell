@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="data serialization/deserialization conduit library"
-HOMEPAGE="http://github.com/qnikst/binary-conduit/"
+HOMEPAGE="https://github.com/qnikst/binary-conduit/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

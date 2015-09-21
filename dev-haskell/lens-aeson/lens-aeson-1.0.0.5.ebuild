@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Law-abiding lenses for aeson"
-HOMEPAGE="http://github.com/lens/lens-aeson/"
+HOMEPAGE="https://github.com/lens/lens-aeson/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

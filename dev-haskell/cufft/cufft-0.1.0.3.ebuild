@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal multilib
 
 DESCRIPTION="Haskell bindings for the CUFFT library"
-HOMEPAGE="http://github.com/robeverest/cufft"
+HOMEPAGE="https://github.com/robeverest/cufft"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

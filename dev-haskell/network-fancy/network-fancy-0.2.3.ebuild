@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Networking support with a cleaner API"
-HOMEPAGE="http://github.com/taruti/network-fancy"
+HOMEPAGE="https://github.com/taruti/network-fancy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

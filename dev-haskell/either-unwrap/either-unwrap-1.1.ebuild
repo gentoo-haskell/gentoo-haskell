@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Functions for probing and unwrapping values inside of Either"
-HOMEPAGE="http://github.com/gcross/either-unwrap"
+HOMEPAGE="https://github.com/gcross/either-unwrap"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

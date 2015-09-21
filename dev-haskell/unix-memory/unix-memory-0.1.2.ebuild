@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Unix memory syscalls"
-HOMEPAGE="http://github.com/vincenthz/hs-unix-memory"
+HOMEPAGE="https://github.com/vincenthz/hs-unix-memory"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

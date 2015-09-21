@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Set of programs for TLS testing and debugging"
-HOMEPAGE="http://github.com/vincenthz/hs-tls"
+HOMEPAGE="https://github.com/vincenthz/hs-tls"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

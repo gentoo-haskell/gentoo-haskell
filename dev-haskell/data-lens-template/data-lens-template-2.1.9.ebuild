@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Utilities for Data.Lens"
-HOMEPAGE="http://github.com/roconnor/data-lens-template/"
+HOMEPAGE="https://github.com/roconnor/data-lens-template/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

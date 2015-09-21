@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="An adapter to convert attoparsec Parsers into blazing-fast Iteratees"
-HOMEPAGE="http://github.com/gregorycollins"
+HOMEPAGE="https://github.com/gregorycollins"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

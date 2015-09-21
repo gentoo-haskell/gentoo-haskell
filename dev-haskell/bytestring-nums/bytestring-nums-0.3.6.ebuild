@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parse numeric literals from ByteStrings"
-HOMEPAGE="http://github.com/solidsnack/bytestring-nums"
+HOMEPAGE="https://github.com/solidsnack/bytestring-nums"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

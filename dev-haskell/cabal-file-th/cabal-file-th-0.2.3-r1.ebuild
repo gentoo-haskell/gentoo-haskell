@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Template Haskell expressions for reading fields from a project's cabal file"
-HOMEPAGE="http://github.com/nkpart/cabal-file-th"
+HOMEPAGE="https://github.com/nkpart/cabal-file-th"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

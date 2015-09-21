@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Pure logger typeclass and monad transformer"
-HOMEPAGE="http://github.com/phaazon/monad-journal"
+HOMEPAGE="https://github.com/phaazon/monad-journal"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

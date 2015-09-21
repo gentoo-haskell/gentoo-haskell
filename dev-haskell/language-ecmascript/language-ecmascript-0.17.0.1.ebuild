@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="JavaScript parser and pretty-printer library"
-HOMEPAGE="http://github.com/jswebtools/language-ecmascript"
+HOMEPAGE="https://github.com/jswebtools/language-ecmascript"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

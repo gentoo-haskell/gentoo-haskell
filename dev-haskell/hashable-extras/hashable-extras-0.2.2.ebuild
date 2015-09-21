@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Higher-rank Hashable"
-HOMEPAGE="http://github.com/analytics/hashable-extras/"
+HOMEPAGE="https://github.com/analytics/hashable-extras/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

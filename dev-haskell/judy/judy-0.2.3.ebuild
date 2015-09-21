@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Fast, scalable, mutable dynamic arrays, maps and hashes"
-HOMEPAGE="http://github.com/mwotton/judy"
+HOMEPAGE="https://github.com/mwotton/judy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

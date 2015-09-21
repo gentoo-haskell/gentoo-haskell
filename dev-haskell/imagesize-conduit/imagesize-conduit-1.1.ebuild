@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Determine the size of some common image formats"
-HOMEPAGE="http://github.com/silkapp/imagesize-conduit"
+HOMEPAGE="https://github.com/silkapp/imagesize-conduit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

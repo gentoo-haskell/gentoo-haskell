@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Efficient, purely functional generation of prime numbers"
-HOMEPAGE="http://github.com/sebfisch/primes"
+HOMEPAGE="https://github.com/sebfisch/primes"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

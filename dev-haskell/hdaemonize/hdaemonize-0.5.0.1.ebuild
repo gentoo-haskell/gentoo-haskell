@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library to handle the details of writing daemons for UNIX"
-HOMEPAGE="http://github.com/greydot/hdaemonize"
+HOMEPAGE="https://github.com/greydot/hdaemonize"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

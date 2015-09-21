@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A color pretty printer with terminfo support"
-HOMEPAGE="http://github.com/ekmett/wl-pprint-terminfo/"
+HOMEPAGE="https://github.com/ekmett/wl-pprint-terminfo/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

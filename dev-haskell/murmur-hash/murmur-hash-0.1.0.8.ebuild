@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="MurmurHash2 implementation for Haskell"
-HOMEPAGE="http://github.com/nominolo/murmur-hash"
+HOMEPAGE="https://github.com/nominolo/murmur-hash"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

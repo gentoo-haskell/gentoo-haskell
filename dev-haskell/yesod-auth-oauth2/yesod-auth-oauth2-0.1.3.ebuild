@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="OAuth 2.0 authentication plugins"
-HOMEPAGE="http://github.com/thoughtbot/yesod-auth-oauth2"
+HOMEPAGE="https://github.com/thoughtbot/yesod-auth-oauth2"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

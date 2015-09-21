@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Interval Arithmetic"
-HOMEPAGE="http://github.com/ekmett/intervals"
+HOMEPAGE="https://github.com/ekmett/intervals"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

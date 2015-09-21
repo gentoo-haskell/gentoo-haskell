@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Git operations in haskell"
-HOMEPAGE="http://github.com/vincenthz/hit"
+HOMEPAGE="https://github.com/vincenthz/hit"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
