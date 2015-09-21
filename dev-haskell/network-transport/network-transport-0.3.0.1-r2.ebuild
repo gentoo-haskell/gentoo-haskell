@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Network abstraction layer"
-HOMEPAGE="http://github.com/haskell-distributed/distributed-process"
+HOMEPAGE="https://github.com/haskell-distributed/distributed-process"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

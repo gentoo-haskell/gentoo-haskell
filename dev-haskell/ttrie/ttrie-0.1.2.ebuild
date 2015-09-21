@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Contention-free STM hash map"
-HOMEPAGE="http://github.com/mcschroeder/ttrie"
+HOMEPAGE="https://github.com/mcschroeder/ttrie"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

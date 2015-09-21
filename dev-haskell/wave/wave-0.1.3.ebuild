@@ -13,7 +13,7 @@ MY_PN="WAVE"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="WAVE audio file IO library"
-HOMEPAGE="http://github.com/BartMassey/WAVE"
+HOMEPAGE="https://github.com/BartMassey/WAVE"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

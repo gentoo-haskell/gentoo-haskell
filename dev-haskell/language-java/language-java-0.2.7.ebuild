@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer"
-HOMEPAGE="http://github.com/vincenthz/language-java"
+HOMEPAGE="https://github.com/vincenthz/language-java"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

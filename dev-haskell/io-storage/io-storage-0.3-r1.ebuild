@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A key-value store in the IO monad"
-HOMEPAGE="http://github.com/willdonnelly/io-storage"
+HOMEPAGE="https://github.com/willdonnelly/io-storage"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

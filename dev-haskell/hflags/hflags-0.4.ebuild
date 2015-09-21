@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Command line flag parser, very similar to Google's gflags"
-HOMEPAGE="http://github.com/errge/hflags"
+HOMEPAGE="https://github.com/errge/hflags"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"

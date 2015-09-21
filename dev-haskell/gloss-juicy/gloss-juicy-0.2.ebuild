@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Load any image supported by Juicy.Pixels in your gloss application"
-HOMEPAGE="http://github.com/alpmestan/gloss-juicy"
+HOMEPAGE="https://github.com/alpmestan/gloss-juicy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

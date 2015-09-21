@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Wrapper for flock(2)"
-HOMEPAGE="http://github.com/hesselink/flock"
+HOMEPAGE="https://github.com/hesselink/flock"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="FFI interface to syslog(3) from POSIX.1-2001"
-HOMEPAGE="http://github.com/peti/hsyslog"
+HOMEPAGE="https://github.com/peti/hsyslog"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

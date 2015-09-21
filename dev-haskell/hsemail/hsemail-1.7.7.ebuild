@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit base haskell-cabal
 
 DESCRIPTION="Internet Message Parsers"
-HOMEPAGE="http://github.com/peti/hsemail"
+HOMEPAGE="https://github.com/peti/hsemail"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

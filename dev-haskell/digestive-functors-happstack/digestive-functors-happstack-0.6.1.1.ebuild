@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Happstack backend for the digestive-functors library"
-HOMEPAGE="http://github.com/jaspervdj/digestive-functors"
+HOMEPAGE="https://github.com/jaspervdj/digestive-functors"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

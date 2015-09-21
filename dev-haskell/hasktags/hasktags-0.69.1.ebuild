@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs"
-HOMEPAGE="http://github.com/MarcWeber/hasktags"
+HOMEPAGE="https://github.com/MarcWeber/hasktags"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

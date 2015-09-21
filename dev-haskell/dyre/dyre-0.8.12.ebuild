@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Dynamic reconfiguration in Haskell"
-HOMEPAGE="http://github.com/willdonnelly/dyre"
+HOMEPAGE="https://github.com/willdonnelly/dyre"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="This library provides an implementation of Socket.io protocol (version 1)"
-HOMEPAGE="http://github.com/ocharles/engine.io"
+HOMEPAGE="https://github.com/ocharles/engine.io"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

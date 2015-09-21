@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="C10k server library using prefork"
-HOMEPAGE="http://github.com/kazu-yamamoto/c10k"
+HOMEPAGE="https://github.com/kazu-yamamoto/c10k"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

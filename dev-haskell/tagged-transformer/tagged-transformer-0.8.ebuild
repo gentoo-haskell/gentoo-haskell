@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments"
-HOMEPAGE="http://github.com/ekmett/tagged-transformer"
+HOMEPAGE="https://github.com/ekmett/tagged-transformer"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Free monads and monad transformers"
-HOMEPAGE="http://github.com/pepeiborra/control-monad-free"
+HOMEPAGE="https://github.com/pepeiborra/control-monad-free"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="public-domain"

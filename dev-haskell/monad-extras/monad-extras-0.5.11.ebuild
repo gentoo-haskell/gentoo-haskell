@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Extra utility functions for working with monads"
-HOMEPAGE="http://github.com/jwiegley/monad-extras"
+HOMEPAGE="https://github.com/jwiegley/monad-extras"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A pagination approach for yesod"
-HOMEPAGE="http://github.com/pbrisbin/yesod-paginator"
+HOMEPAGE="https://github.com/pbrisbin/yesod-paginator"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

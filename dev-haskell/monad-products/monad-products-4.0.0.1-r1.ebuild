@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Monad products"
-HOMEPAGE="http://github.com/ekmett/monad-products"
+HOMEPAGE="https://github.com/ekmett/monad-products"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

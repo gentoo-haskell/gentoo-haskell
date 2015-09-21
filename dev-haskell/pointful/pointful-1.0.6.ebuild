@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Pointful refactoring tool"
-HOMEPAGE="http://github.com/23Skidoo/pointful"
+HOMEPAGE="https://github.com/23Skidoo/pointful"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

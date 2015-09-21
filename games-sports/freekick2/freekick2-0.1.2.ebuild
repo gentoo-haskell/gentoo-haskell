@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit eutils haskell-cabal
 
 DESCRIPTION="A soccer game"
-HOMEPAGE="http://github.com/anttisalonen/freekick2"
+HOMEPAGE="https://github.com/anttisalonen/freekick2"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"

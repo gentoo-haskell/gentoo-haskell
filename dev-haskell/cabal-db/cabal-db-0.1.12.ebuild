@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="query tools for the local cabal database"
-HOMEPAGE="http://github.com/vincenthz/cabal-db"
+HOMEPAGE="https://github.com/vincenthz/cabal-db"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

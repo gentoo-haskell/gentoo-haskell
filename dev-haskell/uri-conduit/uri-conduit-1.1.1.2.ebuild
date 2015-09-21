@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Read and write URIs (deprecated)"
-HOMEPAGE="http://github.com/snoyberg/xml"
+HOMEPAGE="https://github.com/snoyberg/xml"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

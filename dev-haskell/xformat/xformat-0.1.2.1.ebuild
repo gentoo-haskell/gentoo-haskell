@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Extensible, type-safe formatting with scanf- and printf-like functions"
-HOMEPAGE="http://github.com/spl/xformat"
+HOMEPAGE="https://github.com/spl/xformat"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

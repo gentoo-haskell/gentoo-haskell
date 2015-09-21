@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Stream Processer Arrow"
-HOMEPAGE="http://github.com/peti/streamproc"
+HOMEPAGE="https://github.com/peti/streamproc"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

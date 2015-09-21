@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A practical formlet library"
-HOMEPAGE="http://github.com/jaspervdj/digestive-functors"
+HOMEPAGE="https://github.com/jaspervdj/digestive-functors"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

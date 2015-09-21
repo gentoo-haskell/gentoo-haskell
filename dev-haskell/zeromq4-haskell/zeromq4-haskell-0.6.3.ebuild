@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to ZeroMQ 4.x"
-HOMEPAGE="http://github.com/twittner/zeromq-haskell/"
+HOMEPAGE="https://github.com/twittner/zeromq-haskell/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"

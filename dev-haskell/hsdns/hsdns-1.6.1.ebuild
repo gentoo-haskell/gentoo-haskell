@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Asynchronous DNS Resolver"
-HOMEPAGE="http://github.com/peti/hsdns"
+HOMEPAGE="https://github.com/peti/hsdns"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-3"

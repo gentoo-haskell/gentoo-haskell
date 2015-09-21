@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Useful tools from the C standard library"
-HOMEPAGE="http://github.com/ekmett/numeric-extras"
+HOMEPAGE="https://github.com/ekmett/numeric-extras"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

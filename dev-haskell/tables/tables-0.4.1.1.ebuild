@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="In-memory storage with multiple keys using lenses and traversals"
-HOMEPAGE="http://github.com/ekmett/tables/"
+HOMEPAGE="https://github.com/ekmett/tables/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Memoize Strings as Atoms for fast comparison and sorting, with maps and sets"
-HOMEPAGE="http://github.com/audreyt/stringtable-atom/"
+HOMEPAGE="https://github.com/audreyt/stringtable-atom/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -11,7 +11,7 @@ MY_PN="HNC"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="source-to-source translator of a variant of ML core into C++"
-HOMEPAGE="http://github.com/kayuri/HNC"
+HOMEPAGE="https://github.com/kayuri/HNC"
 EGIT_REPO_URI="git://github.com/kayuri/${MY_PN}.git"
 
 LICENSE="GPL-3"

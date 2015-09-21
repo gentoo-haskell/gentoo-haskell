@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell binding to MeCab"
-HOMEPAGE="http://github.com/tanakh/hsmecab"
+HOMEPAGE="https://github.com/tanakh/hsmecab"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

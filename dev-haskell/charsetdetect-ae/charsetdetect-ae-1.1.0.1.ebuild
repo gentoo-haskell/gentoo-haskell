@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Character set detection using Mozilla's Universal Character Set Detector"
-HOMEPAGE="http://github.com/aelve/charsetdetect-ae"
+HOMEPAGE="https://github.com/aelve/charsetdetect-ae"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

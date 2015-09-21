@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Command-line argument parsing library for Haskell programs"
-HOMEPAGE="http://github.com/BartMassey/parseargs"
+HOMEPAGE="https://github.com/BartMassey/parseargs"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

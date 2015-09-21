@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A desktop bar similar to xmobar, but with more GUI"
-HOMEPAGE="http://github.com/travitch/taffybar"
+HOMEPAGE="https://github.com/travitch/taffybar"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

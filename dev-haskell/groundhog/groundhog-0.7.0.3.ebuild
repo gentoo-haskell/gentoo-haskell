@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Type-safe datatype-database mapping library"
-HOMEPAGE="http://github.com/lykahb/groundhog"
+HOMEPAGE="https://github.com/lykahb/groundhog"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

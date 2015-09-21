@@ -11,7 +11,7 @@ CABAL_FEATURES+=" nocabaldep" # uses ghc's bin-package-db
 inherit haskell-cabal
 
 DESCRIPTION="A program to find and display the docs and type of a name"
-HOMEPAGE="http://github.com/chrisdone/haskell-docs"
+HOMEPAGE="https://github.com/chrisdone/haskell-docs"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

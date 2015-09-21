@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Networked stream transducers"
-HOMEPAGE="http://github.com/ekmett/machines/"
+HOMEPAGE="https://github.com/ekmett/machines/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

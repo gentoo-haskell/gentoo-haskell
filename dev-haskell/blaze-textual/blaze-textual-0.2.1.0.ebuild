@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Fast rendering of common datatypes"
-HOMEPAGE="http://github.com/bos/blaze-textual"
+HOMEPAGE="https://github.com/bos/blaze-textual"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

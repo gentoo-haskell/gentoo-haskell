@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Utilities to make Data.Time.* easier to use"
-HOMEPAGE="http://github.com/stackbuilders/datetime"
+HOMEPAGE="https://github.com/stackbuilders/datetime"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"

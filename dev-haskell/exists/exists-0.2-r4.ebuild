@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Existential datatypes holding evidence of constraints"
-HOMEPAGE="http://github.com/glehel/exists"
+HOMEPAGE="https://github.com/glehel/exists"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

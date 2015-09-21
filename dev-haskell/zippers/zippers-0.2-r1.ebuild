@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Traversal based zippers"
-HOMEPAGE="http://github.com/ekmett/zippers/"
+HOMEPAGE="https://github.com/ekmett/zippers/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

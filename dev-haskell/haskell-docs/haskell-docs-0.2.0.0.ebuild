@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="A program to find and display the docs of a name from a given module"
-HOMEPAGE="http://github.com/chrisdone/haskell-docs"
+HOMEPAGE="https://github.com/chrisdone/haskell-docs"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

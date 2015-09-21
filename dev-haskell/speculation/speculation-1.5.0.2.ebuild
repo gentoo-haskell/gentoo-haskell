@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A framework for safe, programmable, speculative parallelism"
-HOMEPAGE="http://github.com/ekmett/speculation"
+HOMEPAGE="https://github.com/ekmett/speculation"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

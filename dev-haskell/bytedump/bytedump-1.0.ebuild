@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Flexible byte dump helpers for human readers"
-HOMEPAGE="http://github.com/vincenthz/hs-bytedump"
+HOMEPAGE="https://github.com/vincenthz/hs-bytedump"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

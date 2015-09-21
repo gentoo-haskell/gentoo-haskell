@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple interface for shell scripting in Haskell"
-HOMEPAGE="http://github.com/valderman/shellmate"
+HOMEPAGE="https://github.com/valderman/shellmate"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

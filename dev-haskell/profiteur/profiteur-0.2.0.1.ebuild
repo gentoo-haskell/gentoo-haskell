@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Treemap visualiser for GHC prof files"
-HOMEPAGE="http://github.com/jaspervdj/profiteur"
+HOMEPAGE="https://github.com/jaspervdj/profiteur"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

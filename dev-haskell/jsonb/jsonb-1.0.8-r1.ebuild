@@ -13,7 +13,7 @@ MY_PN="JSONb"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="JSON parser that uses byte strings"
-HOMEPAGE="http://github.com/solidsnack/JSONb/"
+HOMEPAGE="https://github.com/solidsnack/JSONb/"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

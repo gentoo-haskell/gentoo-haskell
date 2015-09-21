@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Provides access to the dynamic pointer tagging bits used by GHC"
-HOMEPAGE="http://github.com/ekmett/tag-bits"
+HOMEPAGE="https://github.com/ekmett/tag-bits"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

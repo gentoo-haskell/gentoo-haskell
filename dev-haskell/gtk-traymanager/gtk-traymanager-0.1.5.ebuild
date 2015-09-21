@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A wrapper around the eggtraymanager library for Linux system trays"
-HOMEPAGE="http://github.com/travitch/gtk-traymanager"
+HOMEPAGE="https://github.com/travitch/gtk-traymanager"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

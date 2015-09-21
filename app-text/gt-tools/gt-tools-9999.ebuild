@@ -11,7 +11,7 @@ CABAL_FEATURES="bin"
 inherit git-2 haskell-cabal
 
 DESCRIPTION="Console and GUI interface for Google Translate service"
-HOMEPAGE="http://github.com/styx/gtc"
+HOMEPAGE="https://github.com/styx/gtc"
 EGIT_REPO_URI="git://github.com/styx/gtc.git"
 
 S=${WORKDIR}/gtc

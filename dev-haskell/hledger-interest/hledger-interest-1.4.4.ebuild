@@ -10,7 +10,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="computes interest for a given account"
-HOMEPAGE="http://github.com/peti/hledger-interest"
+HOMEPAGE="https://github.com/peti/hledger-interest"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
