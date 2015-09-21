@@ -2,7 +2,7 @@ DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/aeson-0.4:=[profile?] >=dev-haskell/attoparsec-0.10:=[profile?] >=dev-haskell/cabal-0.10:=[profile?] >=dev-haskell/conduit-1.0:=[profile?] >=dev-haskell/derive-2.5:=[profile?] <dev-haskell/derive-3:=[profile?] >=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?] >=dev-haskell/haskeline-0.7:=[profile?] >=dev-haskell/haskell-src-exts-1.11:=[profile?] <dev-haskell/haskell-src-exts-1.15:=[profile?] >=dev-haskell/http-4000:=[profile?] <dev-haskell/http-5000:=[profile?] >=dev-haskell/monad-logger-0.3:=[profile?] >=dev-haskell/mtl-2:=[profile?] >=dev-haskell/parallel-io-0.3:=[profile?] >=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-4:=[profile?] >=dev-haskell/persistent-1.2:=[profile?] >=dev-haskell/persistent-sqlite-1.2:=[profile?] >=dev-haskell/persistent-template-1.2:=[profile?] >=dev-haskell/tar-0.3:=[profile?] <dev-haskell/tar-0.5:=[profile?] >=dev-haskell/text-0.11:=[profile?] dev-haskell/transformers:=[profile?] >=dev-haskell/unordered-containers-0.1.3:=[profile?] dev-haskell/utf8-string:=[profile?] dev-haskell/vector:=[profile?] >=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.6:=[profile?] >=dev-lang/ghc-6.10.4:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Command-line interface for browsing and searching packages documentation
 EAPI=5
-HOMEPAGE=http://github.com/JPMoresmau/scion-class-browser
+HOMEPAGE=https://github.com/JPMoresmau/scion-class-browser
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
@@ -10,4 +10,4 @@ RDEPEND=>=dev-haskell/aeson-0.4:=[profile?] >=dev-haskell/attoparsec-0.10:=[prof
 SLOT=0/0.2.19
 SRC_URI=mirror://hackage/packages/archive/scion-browser/0.2.19/scion-browser-0.2.19.tar.gz
 _eclasses_=eutils	351a78113be5b393c09a2c948701ad36	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	9ec745d5c7018756d160750ada3f0a6c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	4b8d3388c0a6e798504e20ba30b49361	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=9a69edb34973039d519b53c1b4404bd6
+_md5_=34316b7571d66faaea5447f85424d527
