@@ -1424,7 +1424,7 @@ dev-haskell/x11-xft 0.3.1-r1: Bindings to the Xft, X Free Type interface library
 dev-haskell/x509 1.5.1 1.6.1: X509 reader and writer
 dev-haskell/x509-store 1.5.0 1.6.1: X.509 collection accessing and storing methods
 dev-haskell/x509-system 1.5.0 1.6.1: Handle per-operating-system X.509 accessors and storage
-dev-haskell/x509-validation 1.5.2 1.6.2: X.509 Certificate and CRL validation
+dev-haskell/x509-validation 1.5.2 1.6.3: X.509 Certificate and CRL validation
 dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
