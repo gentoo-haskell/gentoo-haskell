@@ -320,7 +320,7 @@ dev-haskell/diagrams-lib 1.3.0.5: Embedded domain-specific language for declarat
 dev-haskell/diagrams-postscript 1.3.0.3: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.4: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.4: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.5: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -1205,7 +1205,7 @@ dev-haskell/storablevector 0.2.10-r1: Fast, packed, strict storable arrays with 
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.13: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.14: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
