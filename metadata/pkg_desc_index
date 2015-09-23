@@ -310,15 +310,15 @@ dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate in
 dev-haskell/derive 2.5.22: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.7.1.1: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.7.2.0: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.4: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.2: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.6: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.3: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.3.0.5: Embedded domain-specific language for declarative graphics
-dev-haskell/diagrams-postscript 1.3.0.2: Postscript backend for diagrams drawing EDSL
-dev-haskell/diagrams-rasterific 1.3.1.3: Rasterific backend for diagrams
+dev-haskell/diagrams-postscript 1.3.0.3: Postscript backend for diagrams drawing EDSL
+dev-haskell/diagrams-rasterific 1.3.1.4: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.3.1.4: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
@@ -332,7 +332,7 @@ dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-func
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
 dev-haskell/dimensional 0.13.0.2: Statically checked physical dimensions
 dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
-dev-haskell/direct-sqlite 2.3.15: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.16: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
@@ -572,7 +572,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.16.1.1: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.1: XML-RPC client and server library
+dev-haskell/haxr 3000.11.1.2: XML-RPC client and server library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.1: Library to handle the details of writing daemons for UNIX
@@ -958,7 +958,7 @@ dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option pars
 dev-haskell/optparse-applicative 0.11.0.2: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/pandoc-citeproc 0.7.4: Supports using pandoc with citeproc
-dev-haskell/pandoc-types 1.12.4.6: Types for representing a structured document
+dev-haskell/pandoc-types 1.12.4.7: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.0.6: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
@@ -987,7 +987,7 @@ dev-haskell/persistent-mysql 2.3: Backend for the persistent library using MySQL
 dev-haskell/persistent-postgresql 2.2.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.1.3.4: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.1.3.5: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.6: Compositional pipelines
