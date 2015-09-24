@@ -24,6 +24,7 @@ RDEPEND="dev-haskell/cryptonite:=
 	dev-haskell/pem:=
 	>=dev-haskell/tls-1.3.0:= <dev-haskell/tls-1.4:=
 	dev-haskell/x509:=
+	dev-haskell/x509-store:=
 	>=dev-haskell/x509-system-1.4:=
 	>=dev-haskell/x509-validation-1.5.0:=
 	>=dev-lang/ghc-7.4.1:=

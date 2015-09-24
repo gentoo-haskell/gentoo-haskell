@@ -16,22 +16,23 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+compat"
+IUSE="+compat hans +network"
 
 RDEPEND="dev-haskell/asn1-encoding:=[profile?]
 	>=dev-haskell/asn1-types-0.2.0:=[profile?]
 	dev-haskell/async:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
-	>=dev-haskell/cryptonite-0.3:=[profile?]
+	>=dev-haskell/cryptonite-0.7:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/memory:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	dev-haskell/network:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-haskell/x509-1.6:=[profile?] <dev-haskell/x509-1.7.0:=[profile?]
+	>=dev-haskell/x509-1.6.2:=[profile?] <dev-haskell/x509-1.7.0:=[profile?]
 	>=dev-haskell/x509-store-1.6:=[profile?]
-	>=dev-haskell/x509-validation-1.6:=[profile?] <dev-haskell/x509-validation-1.7.0:=[profile?]
+	>=dev-haskell/x509-validation-1.6.3:=[profile?] <dev-haskell/x509-validation-1.7.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	hans? ( dev-haskell/hans:=[profile?] )
+	network? ( dev-haskell/network:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -43,5 +44,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag compat compat)
+		$(cabal_flag compat compat) \
+		$(cabal_flag hans hans) \
+		$(cabal_flag network network)
 }
