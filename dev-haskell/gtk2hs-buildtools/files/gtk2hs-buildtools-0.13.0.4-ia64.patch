@@ -27,7 +27,7 @@ index f79b6d9..aa1b5e4 100644
 +#endif /* ia64_HOST_ARCH */
 +    (h:t) -> h : raw_mangle t
 +  where chop_head prefix new_prefix =
-+            case splitAt p_len prefix of
++            case splitAt p_len s of
 +                (h, t) | h == prefix -> Just (new_prefix, t)
 +                _                    -> Nothing
 +              where p_len = length prefix
