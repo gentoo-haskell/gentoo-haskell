@@ -514,7 +514,7 @@ dev-haskell/gstreamer 0.12.5.0-r2: Binding to the GStreamer open source multimed
 dev-haskell/gtk 0.13.7: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r3: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.4 0.1.5: A wrapper around the eggtraymanager library for Linux system trays
-dev-haskell/gtk2hs-buildtools 0.13.0.4-r2: Tools to build the Gtk2Hs suite of User Interface libraries
+dev-haskell/gtk2hs-buildtools 0.13.0.4-r3: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.7 0.13.9: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtkglext 0.12.5.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
