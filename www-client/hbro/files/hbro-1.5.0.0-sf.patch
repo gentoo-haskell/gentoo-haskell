@@ -1,0 +1,26 @@
+diff --git a/hbro.cabal b/hbro.cabal
+index 3c47890..043695d 100644
+--- a/hbro.cabal
++++ b/hbro.cabal
+@@ -36,2 +36,3 @@ Library
+         filepath,
++        system-filepath,
+         glib,
+diff --git a/library/Hbro/Core.hs b/library/Hbro/Core.hs
+index e035117..9f25521 100644
+--- a/library/Hbro/Core.hs
++++ b/library/Hbro/Core.hs
+@@ -56,2 +56,3 @@ import           Network.URI.Extended
+ import           System.Process.Extended
++import qualified Filesystem.Path.CurrentOS as FP
+ -- }}}
+@@ -184,3 +185,3 @@ quit = gAsync mainQuit
+ saveWebPage :: (ControlIO m, MonadLogger m, MonadReader r m, Has MainView r, MonadThrow m) => FilePath -> m ()
+-saveWebPage file = writeFile file =<< getPageData
++saveWebPage file = writeFile (FP.decodeString file) =<< getPageData
+ 
+@@ -190,3 +191,3 @@ executeJSFile filePath webView' = do
+     debug $ "Executing Javascript file: " ++ pack filePath
+-    script <- readFile filePath
++    script <- readFile (FP.decodeString filePath)
+     let script' = asText . unwords . map (++ "\n") . lines $ script
