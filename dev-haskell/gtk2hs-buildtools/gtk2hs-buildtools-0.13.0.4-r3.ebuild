@@ -28,6 +28,10 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ia64.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag closuresignals closuresignals)
