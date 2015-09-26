@@ -23,3 +23,15 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_configure() {
+	# llvm-general-pure passes rtsopts
+	haskell-cabal_src_configure --ghc-options=-rtsopts
+}
+
+src_install() {
+	cabal_src_install
+	if use doc; then
+		dohtml hscolour.css
+	fi
+}
