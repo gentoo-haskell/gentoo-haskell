@@ -20,6 +20,7 @@ IUSE="+threaded"
 
 RDEPEND=">=dev-haskell/classy-prelude-0.12:=[profile?]
 	dev-haskell/cond:=[profile?]
+	>=dev-haskell/chunked-data-0.2:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/dyre-0.8.8:=[profile?]
 	dev-haskell/errors:=[profile?]
@@ -54,10 +55,6 @@ RDEPEND=">=dev-haskell/classy-prelude-0.12:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-sf.patch
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
