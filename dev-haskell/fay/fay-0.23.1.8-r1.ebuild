@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	<dev-haskell/data-default-0.6:=[profile?]
 	<dev-haskell/data-lens-light-0.2:=[profile?]
 	<dev-haskell/ghc-paths-0.2:=[profile?]
@@ -54,6 +54,11 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson > 0.6 && < 0.10' 'aeson > 0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

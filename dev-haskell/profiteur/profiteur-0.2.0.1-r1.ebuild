@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-0.10:=
+RDEPEND=">=dev-haskell/aeson-0.6:=
 	>=dev-haskell/attoparsec-0.10:= <dev-haskell/attoparsec-0.14:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-1.3:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
@@ -28,3 +28,8 @@ RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-0.10:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                >= 0.6  && < 0.10' 'aeson                >= 0.6'
+}

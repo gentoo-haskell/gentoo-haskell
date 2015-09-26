@@ -15,12 +15,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="embed_data_files +https +network-uri trypandoc"
 
 RESTRICT=test # likes to break on highlighting-kate update
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -80,6 +80,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-no-https.patch
+
+	cabal_chdeps \
+		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7' \
+		'aeson >= 0.7.0.5 && < 0.10' 'aeson >= 0.7.0.5'
 }
 
 src_configure() {

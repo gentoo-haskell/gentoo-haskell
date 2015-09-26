@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/lens-4.4:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/scientific-0.3.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -35,6 +35,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/semigroups-0.9
 		>=dev-haskell/simple-reflect-0.3.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                >= 0.7.0.5   && < 0.10' 'aeson                >= 0.7.0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
