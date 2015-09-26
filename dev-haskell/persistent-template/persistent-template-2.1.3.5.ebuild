@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # broken on aeson-0.10
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
