@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	>=dev-haskell/classy-prelude-0.12.3:=[profile?] <dev-haskell/classy-prelude-0.12.4:=[profile?]
-	>=dev-haskell/classy-prelude-conduit-0.12.3:=[profile?] <dev-haskell/classy-prelude-conduit-0.12.4:=[profile?]
+	>=dev-haskell/classy-prelude-0.12.4:=[profile?] <dev-haskell/classy-prelude-0.12.5:=[profile?]
+	>=dev-haskell/classy-prelude-conduit-0.12.4:=[profile?] <dev-haskell/classy-prelude-conduit-0.12.5:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
 	dev-haskell/http-types:=[profile?]
