@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
 	>=dev-haskell/bower-json-0.7:=[profile?]
@@ -47,3 +47,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson >= 0.8 && < 0.10' 'aeson >= 0.8'
+}
