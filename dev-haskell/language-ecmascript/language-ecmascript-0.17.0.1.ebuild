@@ -30,8 +30,13 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-de
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3.0 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2'
+}
