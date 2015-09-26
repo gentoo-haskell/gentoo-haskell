@@ -22,7 +22,7 @@ IUSE="+bibutils debug embed_data_files test_citeproc unicode_collation"
 RESTRICT=test # fd:8: hClose: resource vanished (Broken pipe)
 
 RDEPEND=">=app-text/pandoc-1.13:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/data-default:=[profile?]
@@ -48,6 +48,11 @@ RDEPEND=">=app-text/pandoc-1.13:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
