@@ -27,10 +27,15 @@ RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit                == 1.2.*' 'HUnit                >= 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
