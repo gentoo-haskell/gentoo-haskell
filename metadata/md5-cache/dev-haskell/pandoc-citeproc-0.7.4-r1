@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=app-text/pandoc-1.13:=[profile?] >=dev-haskell/aeson-0.7:=[profile?] dev-haskell/aeson-pretty:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/data-default:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/old-locale:=[profile?] >=dev-haskell/pandoc-types-1.12.3:=[profile?] dev-haskell/parsec:=[profile?] >=dev-haskell/setenv-0.1:=[profile?] <dev-haskell/setenv-0.2:=[profile?] dev-haskell/split:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/tagsoup:=[profile?] >=dev-haskell/temporary-1.1:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?] >=dev-haskell/yaml-0.8.8.7:=[profile?] >=dev-lang/ghc-7.4.1:= bibutils? ( >=dev-haskell/hs-bibutils-0.3:=[profile?] ) debug? ( dev-haskell/pretty-show:=[profile?] ) unicode_collation? ( dev-haskell/text-icu:=[profile?] ) !unicode_collation? ( dev-haskell/rfc5051:=[profile?] ) >=dev-haskell/cabal-1.12 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Supports using pandoc with citeproc
+EAPI=5
+HOMEPAGE=http://hackage.haskell.org/package/pandoc-citeproc
+IUSE=+bibutils debug embed_data_files test_citeproc unicode_collation doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=app-text/pandoc-1.13:=[profile?] >=dev-haskell/aeson-0.7:=[profile?] dev-haskell/aeson-pretty:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/data-default:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/old-locale:=[profile?] >=dev-haskell/pandoc-types-1.12.3:=[profile?] dev-haskell/parsec:=[profile?] >=dev-haskell/setenv-0.1:=[profile?] <dev-haskell/setenv-0.2:=[profile?] dev-haskell/split:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/tagsoup:=[profile?] >=dev-haskell/temporary-1.1:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.4:=[profile?] >=dev-haskell/yaml-0.8.8.7:=[profile?] >=dev-lang/ghc-7.4.1:= bibutils? ( >=dev-haskell/hs-bibutils-0.3:=[profile?] ) debug? ( dev-haskell/pretty-show:=[profile?] ) unicode_collation? ( dev-haskell/text-icu:=[profile?] ) !unicode_collation? ( dev-haskell/rfc5051:=[profile?] )
+RESTRICT=test
+SLOT=0/0.7.4
+SRC_URI=mirror://hackage/packages/archive/pandoc-citeproc/0.7.4/pandoc-citeproc-0.7.4.tar.gz
+_eclasses_=eutils	95613dd6157fb4a3b225eafdc56bd441	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	9ec745d5c7018756d160750ada3f0a6c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	1dfcad7b3f439dbc511d76c49f23da0d	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=f15707d0e8b27cce31eb16e7f5b94c3f
