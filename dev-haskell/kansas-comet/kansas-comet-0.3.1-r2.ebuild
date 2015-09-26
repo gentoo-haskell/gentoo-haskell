@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/scotty-0.8:=[profile?] <dev-haskell/scotty-0.11:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
@@ -37,6 +37,6 @@ src_prepare() {
 	base_src_prepare
 	cabal_chdeps \
 		'base                 >= 4.6   && < 4.8' 'base                 >= 4.6' \
-		'aeson                >= 0.7   && < 0.9' 'aeson                >= 0.7   && < 0.10' \
+		'aeson                >= 0.7   && < 0.9' 'aeson                >= 0.7' \
 		'scotty               >= 0.8   && < 0.10' 'scotty               >= 0.8   && < 0.11'
 }
