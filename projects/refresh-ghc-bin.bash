@@ -82,6 +82,9 @@ while [[ ${#@} -gt 0 ]]; do
         --chroot-profile=*)
             chroot_profile=${1#--chroot-profile=}
             ;;
+        --needed-atom=*)
+            needed_atom=${1#--needed-atom=}
+            ;;
         --dry-run)
             dry_run=yes
             ;;
