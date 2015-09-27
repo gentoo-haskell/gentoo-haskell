@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.14:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-1.3:=
 	>=dev-haskell/transformers-0.3:= <dev-haskell/transformers-0.5:=
 	>=dev-lang/ghc-7.4.1:=
-	graph? ( >=dev-haskell/graphviz-2999.17:= <dev-haskell/graphviz-2999.18:=
+	graph? ( >=dev-haskell/graphviz-2999.17:=
 			>=dev-haskell/xdot-0.2:= <dev-haskell/xdot-0.3:= )
 "
 DEPEND="${RDEPEND}
@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'base >= 4.5 && < 4.8' 'base >= 4.5' \
-		'deepseq == 1.3.*' 'deepseq >= 1.3'
+		'deepseq == 1.3.*' 'deepseq >= 1.3' \
+		'graphviz == 2999.17.*' 'graphviz >= 2999.17'
 }
 
 src_configure() {
