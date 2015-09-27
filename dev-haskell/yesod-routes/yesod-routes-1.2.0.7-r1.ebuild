@@ -26,10 +26,11 @@ RDEPEND=">=dev-haskell/path-pieces-0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hspec-1.3
-		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
+		>=dev-haskell/hunit-1.2 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'path-pieces               >= 0.1      && < 0.2' 'path-pieces               >= 0.1'
+		'path-pieces               >= 0.1      && < 0.2' 'path-pieces               >= 0.1' \
+		'HUnit                     >= 1.2      && < 1.3' 'HUnit                     >= 1.2'
 }
