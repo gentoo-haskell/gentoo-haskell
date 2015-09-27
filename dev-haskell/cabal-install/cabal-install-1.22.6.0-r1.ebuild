@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/cabal-1.22.2:= <dev-haskell/cabal-1.23:=
 	>=dev-haskell/old-time-1:= <dev-haskell/old-time-1.2:=
 	>=dev-haskell/random-1:= <dev-haskell/random-1.2:=
 	>=dev-haskell/stm-2.0:= <dev-haskell/stm-3:=
-	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.6:=
+	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.7:=
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=
 			>=dev-haskell/network-uri-2.6:= )
@@ -48,6 +48,7 @@ src_prepare() {
 	if use noprefs; then
 		epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
 	fi
+	epatch "${FILESDIR}"/${P}-zlib-0.6.patch
 
 	# no chance to link to -threaded on ppc64, alpha and others
 	# who use UNREG, not only ARM
