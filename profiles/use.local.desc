@@ -393,6 +393,8 @@ games-action/nikki:devel - Build without optimizations and executable stripping.
 games-puzzle/h2048:vty - build UI written in vty-ui.
 media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
 media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.
+net-p2p/combinatorrent:threaded - Build with -threaded.
+net-p2p/combinatorrent:threadscope - Build with -eventlog.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:epic - Add support for the epic compiler.
 sci-mathematics/agda:stdlib - Install the standard library.
