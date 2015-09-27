@@ -14,7 +14,4 @@
 		Note: missing methods are not supplied
 		but this at least permits the types to be used.
 	</longdescription>
-	<use>
-	  <flag name="three">Use transformers-0.3</flag>
-	</use>
 </pkgmetadata>
