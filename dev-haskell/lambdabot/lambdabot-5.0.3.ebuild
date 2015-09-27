@@ -30,3 +30,7 @@ RDEPEND=">=dev-haskell/lambdabot-core-5.0.3:= <dev-haskell/lambdabot-core-5.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ds-0.3.patch
+}
