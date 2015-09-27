@@ -10,4 +10,8 @@
 		It is expected that the package currently contains numerous and even
 		grave bugs. Patches to fix any problem are welcome!
 	</longdescription>
+	<use>
+		<flag name="threaded">Build with -threaded.</flag>
+		<flag name="threadscope">Build with -eventlog.</flag>
+	</use>
 </pkgmetadata>
