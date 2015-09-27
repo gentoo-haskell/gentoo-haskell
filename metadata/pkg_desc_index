@@ -436,7 +436,7 @@ dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagr
 dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
 dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9: FoldMap lists
-dev-haskell/foldl 1.1.1: Composable, streaming, and efficient left folds
+dev-haskell/foldl 1.1.2: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
 dev-haskell/free 4.12.1: Monads for free
@@ -1154,7 +1154,7 @@ dev-haskell/shellac-editline 0.9.5.2: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.5.2: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/shellmate 0.1.6: Simple interface for shell scripting in Haskell
-dev-haskell/shelly 1.6.3.4: shell-like (systems) programming in Haskell
+dev-haskell/shelly 1.6.4: shell-like (systems) programming in Haskell
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
