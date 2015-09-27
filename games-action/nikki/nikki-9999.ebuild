@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/crypto-pubkey-types-0.1 <dev-haskell/crypto-pubkey-types-0.5
 	>=dev-haskell/data-accessor-0.2.1.7
 	>=dev-haskell/data-accessor-mtl-0.2.0.2
-	>=dev-haskell/email-validate-1.0 <dev-haskell/email-validate-2.1
+	>=dev-haskell/email-validate-1.0
 	>=dev-haskell/findbin-0.0.5
 	>=dev-haskell/hipmunk-5.2.0.6
 	>=dev-haskell/http-4000.2 <dev-haskell/http-4000.3
@@ -69,7 +69,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${P}/src"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-ev-2.0.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 
 	cabal_chdeps \
@@ -78,7 +77,8 @@ src_prepare() {
 		'transformers == 0.2.* || == 0.3.*' 'transformers >= 0.2 && < 0.5' \
 		', network == 2.*' ', network == 2.*, network-uri, string-conversions' \
 		'utf8-string == 0.3.*' 'utf8-string >= 0.3' \
-		'deepseq == 1.3.*' 'deepseq >= 1.3'
+		'deepseq == 1.3.*' 'deepseq >= 1.3' \
+		'email-validate == 1.0.*' 'email-validate >= 1.0'
 }
 
 src_configure() {
