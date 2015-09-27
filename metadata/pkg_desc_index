@@ -467,7 +467,7 @@ dev-haskell/ghc-parmake 0.1.8: A parallel wrapper for 'ghc --make'
 dev-haskell/ghc-parser 0.1.8.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
 dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
-dev-haskell/ghc-vis 0.7.2.7: Live visualization of data structures in GHCi
+dev-haskell/ghc-vis 0.7.2.7-r1: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 7.8.3 9999: Next generation GHCi
 dev-haskell/ghcid 0.5: GHCi based bare bones IDE
