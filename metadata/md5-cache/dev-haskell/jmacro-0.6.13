@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/aeson-0.5:=[profile?] dev-haskell/haskell-src-exts:=[profile?] dev-haskell/haskell-src-meta:=[profile?] >dev-haskell/mtl-1.1:=[profile?] dev-haskell/parseargs:=[profile?] >dev-haskell/parsec-3.0:=[profile?] >dev-haskell/regex-posix-0.9:=[profile?] >=dev-haskell/safe-0.2:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/unordered-containers-0.2:=[profile?] >=dev-haskell/vector-0.8:=[profile?] dev-haskell/wl-pprint-text:=[profile?] >=dev-lang/ghc-7.4.1:= benchmarks? ( dev-haskell/criterion:=[profile?] )
 SLOT=0/0.6.13
 SRC_URI=mirror://hackage/packages/archive/jmacro/0.6.13/jmacro-0.6.13.tar.gz
-_eclasses_=eutils	95613dd6157fb4a3b225eafdc56bd441	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	9ec745d5c7018756d160750ada3f0a6c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	1dfcad7b3f439dbc511d76c49f23da0d	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	43da5163ba106e87d22d2e7d6d67537f	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	9ec745d5c7018756d160750ada3f0a6c	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	1dfcad7b3f439dbc511d76c49f23da0d	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=7be63a38aed20598ec969cb5323e26c4
