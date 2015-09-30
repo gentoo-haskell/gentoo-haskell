@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/exception-mtl-0.3:=[profile?] <dev-haskell/exception-mtl-
 	>=dev-haskell/mainland-pretty-0.4:=[profile?] <dev-haskell/mainland-pretty-0.5:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/srcloc-0.4:=[profile?] <dev-haskell/srcloc-0.6:=[profile?]
-	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.6:=[profile?]
+	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-haskell/symbol-0.1:=[profile?] <dev-haskell/symbol-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
