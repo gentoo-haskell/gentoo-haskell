@@ -9,8 +9,8 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A practical formlet library"
-HOMEPAGE="https://github.com/jaspervdj/digestive-functors"
+DESCRIPTION="A blazingly fast HTML combinator library for Haskell"
+HOMEPAGE="http://jaspervdj.be/blaze"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,21 +18,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-1.1.0.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
+RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
+	>=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2
-		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.9
+	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'HUnit                      >= 1.2 && < 1.3' 'HUnit                      >= 1.2'
-}
