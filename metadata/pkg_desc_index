@@ -587,6 +587,7 @@ dev-haskell/heap 1.0.2: Heaps in Haskell
 dev-haskell/heaps 0.3.2.1: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.9: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.1-r1: An Haskell template system supporting both HTML5 and XML
+dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.7: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
@@ -1184,6 +1185,7 @@ dev-haskell/sox 0.2.2.5: Play, write, read, convert audio signals using Sox
 dev-haskell/speculation 1.5.0.2: A framework for safe, programmable, speculative parallelism
 dev-haskell/split 0.2.2: Combinator library for splitting lists
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
+dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/stack 0.1.3.1 0.1.4.1 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
