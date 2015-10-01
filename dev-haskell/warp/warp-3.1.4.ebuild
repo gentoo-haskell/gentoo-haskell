@@ -25,9 +25,10 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	>=dev-haskell/blaze-builder-0.4:=[profile?]
 	dev-haskell/bytestring-builder:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
+	dev-haskell/hashable:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.8.5:=[profile?]
-	>=dev-haskell/http2-1.0.2:=[profile?]
+	>=dev-haskell/http2-1.1:=[profile?]
 	>=dev-haskell/iproute-1.3.1:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/simple-sendfile-0.2.7:=[profile?] <dev-haskell/simple-sendfile-0.3:=[profile?]
@@ -36,10 +37,9 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?]
-	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
+	>=dev-haskell/wai-3.0.4:=[profile?] <dev-haskell/wai-3.1:=[profile?]
 	dev-haskell/word8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	allow-sendfilefd? ( dev-haskell/hashable:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
