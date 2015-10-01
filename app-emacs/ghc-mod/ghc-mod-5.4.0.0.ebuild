@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
+RESTRICT=test # doctests break on modules collisions: temporary / temporary-rc
+
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/cabal-helper-0.6.0.0:=[profile?] <dev-haskell/cabal-helper-0.7:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
