@@ -926,6 +926,7 @@ dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
 dev-haskell/network-simple 0.4.0.4: Simple network sockets usage patterns
 dev-haskell/network-socket-options 0.2.0.1: Type-safe, portable alternative to getSocketOption/setSocketOption
 dev-haskell/network-transport 0.3.0.1-r2 0.4.2.0: Network abstraction layer
+dev-haskell/network-transport-inmemory 0.5.0: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.4.2: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.2.0: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0 2.6.0.3: URI manipulation
