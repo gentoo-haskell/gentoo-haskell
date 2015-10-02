@@ -1,0 +1,15 @@
+diff --git a/Control/Monad/CC/Prompt.hs b/Control/Monad/CC/Prompt.hs
+index ced982c..de676b1 100644
+--- a/Control/Monad/CC/Prompt.hs
++++ b/Control/Monad/CC/Prompt.hs
+@@ -37,2 +37,5 @@ import Control.Monad.Trans
+ 
++import Control.Applicative
++import Control.Monad
++
+ import Unsafe.Coerce
+@@ -51,3 +54,3 @@ newtype Prompt ans a = Prompt Int
+ newtype P ans m a = P { unP :: StateT Int m a }
+-    deriving (Functor, Monad, MonadTrans, MonadState Int, MonadReader r)
++    deriving (Functor, Applicative, Monad, MonadTrans, MonadState Int, MonadReader r)
+ 
