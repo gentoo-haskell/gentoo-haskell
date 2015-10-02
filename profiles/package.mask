@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (01 Oct 2015)
+# Broken package, upstream uses C macros heavily, hsc2hs
+# does not understand them
+dev-haskell/bindings-bfd
+
 # Sergei Trofimovich <slyfox@gentoo.org> (02 Aug 2015)
 # Packages were moved to reflect package names on hackage:
 #     dev-haskell/gtk:3 -> dev-haskell/gtk3
