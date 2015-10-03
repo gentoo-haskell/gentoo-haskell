@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Oct 2015)
+# 'Any' changed definition from data-like
+# to typefamily-like in ghc-7.10
+dev-haskell/exists
+
 # Sergei Trofimovich <slyfox@gentoo.org> (02 Oct 2015)
 # Gentoo has libzip-1, haskell bindings need libzip-0.11.
 # masked depends
