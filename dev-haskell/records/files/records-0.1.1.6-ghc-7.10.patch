@@ -1,0 +1,9 @@
+diff --git a/src/Data/Record/Combinators.hs b/src/Data/Record/Combinators.hs
+index 265ab4a..5102b0b 100644
+--- a/src/Data/Record/Combinators.hs
++++ b/src/Data/Record/Combinators.hs
+@@ -163,3 +163,3 @@ X :& Surname := \"Jeltsch\" :& Age := 33 :& Room := \"HG/2.39\" \`withStyle\` 'I
+     repeatNilAlt = RepeatThing nilRepeat where
+-
++        nilRepeat :: Universal style -> X style
+         nilRepeat _ = X
