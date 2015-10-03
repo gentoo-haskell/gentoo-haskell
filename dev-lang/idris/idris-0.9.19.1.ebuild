@@ -59,8 +59,8 @@ src_prepare() {
 	# runs dist/build/idris directly and breaks sandboxing
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
 
-	# Is able to OOM on 20GB RAM when compilers with -O2
-	MAKEOPTS+=" -j1"
+	# when built with -O2 takes 10GB RAM at least on ghc-7.10.2
+	replace-hcflags -g ''
 
 	cabal_chdeps \
 		'zlib < 0.6' 'zlib'
