@@ -37,6 +37,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-haxml-1.22.patch
 	epatch "${FILESDIR}"/${P}-base-4.patch
 	epatch "${FILESDIR}"/${P}-unix-2.7.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
 		'network,' 'network >= 2.6, network-uri,'

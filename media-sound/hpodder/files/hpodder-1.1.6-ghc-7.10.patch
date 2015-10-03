@@ -1,0 +1,7 @@
+diff --git a/DB.hs b/DB.hs
+index 6e1e93c..8e0a250 100644
+--- a/DB.hs
++++ b/DB.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ {- hpodder component
