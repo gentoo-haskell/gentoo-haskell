@@ -1,0 +1,31 @@
+diff --git a/darcswatch.cabal b/darcswatch.cabal
+index 74186dd..39754ca 100644
+--- a/darcswatch.cabal
++++ b/darcswatch.cabal
+@@ -78,2 +78,3 @@ Executable darcswatch-generate
+                         , time
++                        , time-locale-compat
+                         , old-locale
+diff --git a/src/Darcs/Watch/UpdateRepoData.hs b/src/Darcs/Watch/UpdateRepoData.hs
+index badae6f..3df3717 100644
+--- a/src/Darcs/Watch/UpdateRepoData.hs
++++ b/src/Darcs/Watch/UpdateRepoData.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ {-
+diff --git a/src/HTML.hs b/src/HTML.hs
+index b4409b1..dd6bcea 100644
+--- a/src/HTML.hs
++++ b/src/HTML.hs
+@@ -50,2 +50,3 @@ import System.Time
+ import System.Locale
++import qualified Data.Time.Locale.Compat as DTLC
+ 
+@@ -419,5 +420,5 @@ instance HTML ByteString where
+ instance HTML UTCTime where
+-	toHtml = toHtml . formatTime defaultTimeLocale "%c" 
++	toHtml = toHtml . formatTime DTLC.defaultTimeLocale "%c" 
+ 
+ instance HTML ZonedTime where
+-	toHtml = toHtml . formatTime defaultTimeLocale "%c" 
++	toHtml = toHtml . formatTime DTLC.defaultTimeLocale "%c" 
