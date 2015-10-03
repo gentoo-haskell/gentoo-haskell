@@ -1,0 +1,7 @@
+diff --git a/Text/HTML/TagSoup/Parsec.hs b/Text/HTML/TagSoup/Parsec.hs
+index 300957a..9bdb04f 100644
+--- a/Text/HTML/TagSoup/Parsec.hs
++++ b/Text/HTML/TagSoup/Parsec.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE FlexibleContexts #-}
+ module Text.HTML.TagSoup.Parsec 
