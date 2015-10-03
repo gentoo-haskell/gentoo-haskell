@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/parsec
 		dev-haskell/regex-compat
 		dev-haskell/safe
+		dev-haskell/time-locale-compat
 		dev-haskell/xhtml
 		dev-haskell/zlib
 		>=dev-lang/ghc-6.10.4"
@@ -40,6 +41,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+	epatch "${FILESDIR}"/${P}-time-1.5.patch
 
 	cabal_chdeps \
 		'network' 'network, network-uri'
