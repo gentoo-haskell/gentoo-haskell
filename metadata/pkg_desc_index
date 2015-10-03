@@ -455,7 +455,7 @@ dev-haskell/generic-deriving 1.8.0: Generic programming library for generalised 
 dev-haskell/generics-sop 0.1.1.2-r1: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.1: Use Template Haskell to generate Uniplate-like functions
-dev-haskell/gf 3.6 3.7 9999: Grammatical Framework
+dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
