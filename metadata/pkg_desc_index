@@ -1019,7 +1019,7 @@ dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
-dev-haskell/pqueue 1.3.0: Reliable, persistent, fast priority queues
+dev-haskell/pqueue 1.3.1: Reliable, persistent, fast priority queues
 dev-haskell/prelude-extras 0.4.0.2: Higher order versions of Prelude classes
 dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax via quick-and-dirty preprocessors
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
