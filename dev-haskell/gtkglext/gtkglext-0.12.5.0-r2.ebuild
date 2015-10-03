@@ -31,6 +31,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-new-cabal.patch
+
 	cabal_chdeps \
 		'glib  >= 0.12.5.0 && < 0.13' 'glib  >= 0.12.5.0 && < 0.14' \
 		'pango >= 0.12.5.0 && < 0.13' 'pango >= 0.12.5.0 && < 0.14' \
