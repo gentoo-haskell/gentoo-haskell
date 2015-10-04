@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	HCFLAGS+=" -XImpredicativeTypes"
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
 		'transformers > 0.2 && < 0.4' 'transformers > 0.2 && < 0.5'
