@@ -849,7 +849,7 @@ dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.1.5: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
-dev-haskell/mime-mail 0.4.10: Compose MIME email messages
+dev-haskell/mime-mail 0.4.11: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
 dev-haskell/mime-types 0.1.0.6: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
@@ -1249,11 +1249,11 @@ dev-haskell/takusen 0.8.7: Database library with left-fold interface, for Postgr
 dev-haskell/tar 0.4.2.1: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
-dev-haskell/tasty-golden 2.3.0.1: Golden tests support for tasty
+dev-haskell/tasty-golden 2.3.0.2: Golden tests support for tasty
 dev-haskell/tasty-hspec 1.1.2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.9.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
-dev-haskell/tasty-quickcheck 0.8.3.2: QuickCheck support for the Tasty test framework
+dev-haskell/tasty-quickcheck 0.8.4: QuickCheck support for the Tasty test framework
 dev-haskell/tasty-rerun 1.1.5: Run tests by filtering the test tree depending on the result of previous test runs
 dev-haskell/tasty-silver 3.1.7: A fancy test runner, including support for golden tests
 dev-haskell/tasty-smallcheck 0.2 0.8.0.1: SmallCheck support for the Tasty test framework
