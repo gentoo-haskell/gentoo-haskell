@@ -23,3 +23,9 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'deepseq             >= 1.1   && < 1.4' 'deepseq             >= 1.1' \
+		'filepath            >= 1.2   && < 1.4' 'filepath            >= 1.2'
+}
