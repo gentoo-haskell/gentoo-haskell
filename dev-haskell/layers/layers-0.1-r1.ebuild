@@ -26,7 +26,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	# The patch is not quite correct, workarounds GHC bug:
+	# https://ghc.haskell.org/trac/ghc/ticket/10931
+	[[ $(ghc-version) == 7.10.2 ]] && epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
 		'transformers > 0.2 && < 0.4' 'transformers > 0.2 && < 0.5'
