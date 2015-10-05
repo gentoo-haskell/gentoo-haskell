@@ -1,0 +1,53 @@
+diff --git a/Network/Web/Date.hs b/Network/Web/Date.hs
+index 477f652..0384d18 100644
+--- a/Network/Web/Date.hs
++++ b/Network/Web/Date.hs
+@@ -7,2 +7,4 @@ import System.Locale
+ 
++import qualified Data.Time.Locale.Compat as DTLC
++
+ type HttpDate = S.ByteString
+@@ -35,6 +37,6 @@ preferredFormat = rfc1123Format
+ rfc1123Date :: String -> Maybe UTCTime
+-rfc1123Date = parseTime defaultTimeLocale preferredFormat
++rfc1123Date = parseTime DTLC.defaultTimeLocale preferredFormat
+ 
+ rfc850Date :: String -> Maybe UTCTime
+-rfc850Date str = parseTime defaultTimeLocale rfc850Format str >>= y2k
++rfc850Date str = parseTime DTLC.defaultTimeLocale rfc850Format str >>= y2k
+   where
+@@ -46,3 +48,3 @@ rfc850Date str = parseTime defaultTimeLocale rfc850Format str >>= y2k
+ asctimeDate :: String -> Maybe UTCTime
+-asctimeDate = parseTime defaultTimeLocale asctimeFormat
++asctimeDate = parseTime DTLC.defaultTimeLocale asctimeFormat
+ 
+@@ -51,2 +53,2 @@ asctimeDate = parseTime defaultTimeLocale asctimeFormat
+ utcToDate :: UTCTime -> HttpDate
+-utcToDate = S.pack . formatTime defaultTimeLocale preferredFormat
++utcToDate = S.pack . formatTime DTLC.defaultTimeLocale preferredFormat
+diff --git a/Network/Web/Params.hs b/Network/Web/Params.hs
+index 07aae48..aff6e7d 100644
+--- a/Network/Web/Params.hs
++++ b/Network/Web/Params.hs
+@@ -136,3 +136,3 @@ toStatus _     = Nothing
+ badStatus :: Status -> Bool
+-badStatus status = n `elem` "45"
++badStatus status = n `elem` ("45" :: String)
+   where
+diff --git a/Network/Web/Server/CGI.hs b/Network/Web/Server/CGI.hs
+index 2c8d1b6..90a7e00 100644
+--- a/Network/Web/Server/CGI.hs
++++ b/Network/Web/Server/CGI.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE OverloadedStrings, CPP #-}
++{-# LANGUAGE OverloadedStrings, CPP, FlexibleContexts #-}
+ 
+diff --git a/webserver.cabal b/webserver.cabal
+index 02b1f3b..de272b4 100644
+--- a/webserver.cabal
++++ b/webserver.cabal
+@@ -29,3 +29,3 @@ library
+                         stm,
+-                        filepath, time, unix, process, c10k, zlib
++                        filepath, time, time-locale-compat, unix, process, c10k, zlib
+ Source-Repository head

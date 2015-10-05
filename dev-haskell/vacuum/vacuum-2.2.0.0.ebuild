@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-lang/ghc-7.4.1:= <dev-lang/ghc-7.10:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
