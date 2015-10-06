@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal git-r3
 
-MY_PN="Elm"
+MY_PN="elm-compiler"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="The Elm language module"
@@ -55,8 +55,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal-mksetup
 
-	CABAL_FILE=elm-compiler.cabal cabal_chdeps \
-		' -Werror' ' ' \
-		'blaze-html >= 0.5 && < 0.8' 'blaze-html >= 0.5' \
-		'blaze-markup >= 0.5.1 && < 0.7' 'blaze-markup >= 0.5.1'
+	cabal_chdeps \
+		'aeson >= 0.7 && < 0.9' 'aeson >= 0.7'
 }

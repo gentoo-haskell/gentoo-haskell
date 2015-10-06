@@ -34,7 +34,7 @@ src_prepare() {
 		'happstack-server >= 6   && <7.2' 'happstack-server >= 6' \
 		'th-lift          == 0.5.*' 'th-lift          >= 0.5' \
 		'mtl              >= 2.0 && <2.2' 'mtl              >= 2.0 && <2.3' \
-		'template-haskell >= 2.6 && <2.9' 'template-haskell >= 2.6 && <2.10'
+		'template-haskell >= 2.6 && <2.9' 'template-haskell >= 2.6'
 }
 
 src_configure() {
