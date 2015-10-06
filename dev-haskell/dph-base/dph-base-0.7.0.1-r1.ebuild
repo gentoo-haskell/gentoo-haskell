@@ -28,9 +28,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base     == 4.6.*' 'base     >= 4.6 && < 4.8' \
+		'base     == 4.6.*' 'base     >= 4.6' \
 		'array    == 0.4.*' 'array    >= 0.4 && < 0.6' \
-		'random   == 1.0.*' 'random >= 1.0 && < 1.2'
+		'random   == 1.0.*' 'random >= 1.0 && < 1.2' \
+		'ghc-prim == 0.3.*' 'ghc-prim >= 0.3'
 }
 
 src_configure() {

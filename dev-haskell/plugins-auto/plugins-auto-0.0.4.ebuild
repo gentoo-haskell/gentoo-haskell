@@ -27,11 +27,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+
 	mkdir -p "${S}/Test" || die "Could not create Test directory"
 	cp "${FILESDIR}/Test.hs" "${S}/Test/Test.hs" || die "Could not copy Test.hs"
 }
 
 src_configure() {
 	cabal_src_configure $(use_enable test tests)
-	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
 }

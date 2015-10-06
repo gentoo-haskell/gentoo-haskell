@@ -22,8 +22,8 @@ IUSE=""
 RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	media-libs/gst-plugins-base
-	media-libs/gstreamer
+	media-libs/gst-plugins-base:0.10=
+	media-libs/gstreamer:0.10=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
@@ -31,6 +31,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-refresh-cabal.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+
 	cabal_chdeps \
 		'glib  >= 0.12.5.0 && < 0.13' 'glib  >= 0.12.5.0 && < 0.14'
 }
