@@ -1,0 +1,21 @@
+diff --git a/System/Plugins/Auto/LiftName.hs b/System/Plugins/Auto/LiftName.hs
+index 0fdf6b3..217e6d3 100644
+--- a/System/Plugins/Auto/LiftName.hs
++++ b/System/Plugins/Auto/LiftName.hs
+@@ -1,2 +1,2 @@
+-{-# LANGUAGE TemplateHaskell, MagicHash #-}
++{-# LANGUAGE TemplateHaskell, MagicHash, CPP #-}
+ module System.Plugins.Auto.LiftName(liftName) where
+@@ -29,2 +29,8 @@ liftNameFlavour NameS           = [| NameS |]
+ liftNameFlavour (NameQ modName) = appE [| NameQ |] (liftModName modName)
++#if MIN_VERSION_template_haskell(2,10,0)
++liftNameFlavour (NameU i)       = [| case $( lift i ) of
++                                       i' -> NameU i' |]
++liftNameFlavour (NameL i)       = [| case $( lift i ) of
++                                       i' -> NameL i' |]
++#else
+ liftNameFlavour (NameU i)       = [| case $( lift (I# i) ) of
+@@ -33,2 +39,3 @@ liftNameFlavour (NameL i)       = [| case $( lift (I# i) ) of
+                                        I# i' -> NameL i' |]
++#endif
+ liftNameFlavour (NameG nameSpace pkgName modName) 
