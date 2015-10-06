@@ -537,7 +537,7 @@ dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happ
 dev-haskell/happstack-heist 7.2.3-r1 9999: Support for using Heist templates in Happstack
 dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
-dev-haskell/happstack-plugins 7.0.2-r3 9999: The haskell application server stack + reload
+dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
 dev-haskell/happstack-server 7.4.4: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
@@ -972,7 +972,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
 dev-haskell/path-pieces 0.2.0: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.5.4: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.5.4.1: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
@@ -1126,7 +1126,7 @@ dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/sandi 0.3.5: Data encoding library
 dev-haskell/sbv 5.0: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
-dev-haskell/scientific 0.3.4.0: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.4.1: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.10.2-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
@@ -1550,7 +1550,7 @@ sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-calculators/clac 0.5.0: Simple CLI RPN calculator
 sci-mathematics/agda 2.3.2.2-r5 2.4.0.2-r1 2.4.2.2-r1 2.4.2.3-r2 2.4.2.4 9999: A dependently typed functional programming language and proof assistant
-sci-mathematics/agda-executable 2.3.0.1-r2 9999: Command-line program for type-checking and compiling Agda programs
+sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checking and compiling Agda programs
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 0.7-r2 0.8 0.9-r1 2.4.2.3 2.4.2.4 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: efficient open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
