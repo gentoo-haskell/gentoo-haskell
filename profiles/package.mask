@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (05 Oct 2015)
+# Needs a port to ghc-7.10 to reflect AMP changes
+dev-haskell/iterio
+
+# Sergei Trofimovich <slyfox@gentoo.org> (05 Oct 2015)
 # Needs a port to ghc-7.10, including RApplicative?
 dev-haskell/rmonad
 
