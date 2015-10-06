@@ -1015,7 +1015,7 @@ dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.9 1.10 1.11: A variety of alternative parser combinator libraries
 dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (deprecated)
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
-dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13: Binding to the Poppler
+dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13 0.13.1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
