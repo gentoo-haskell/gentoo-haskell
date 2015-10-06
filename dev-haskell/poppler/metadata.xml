@@ -7,4 +7,7 @@
 		library, to centralize the maintenance effort.
 		And move to forward in a number of areas that don&#39;t fit within the goals of xpdf.
 	</longdescription>
+	<use>
+		<flag name='gtk3'>Use GTK3 rather than GTK2</flag>
+	</use>
 </pkgmetadata>
