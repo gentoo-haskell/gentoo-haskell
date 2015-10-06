@@ -30,4 +30,5 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 }
