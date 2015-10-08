@@ -972,7 +972,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
 dev-haskell/path-pieces 0.2.0: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.5.4.1: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.5.4.3: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
@@ -1453,7 +1453,7 @@ dev-haskell/yaml 0.8.15.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.2: Creation of type-safe, RESTful web applications
-dev-haskell/yesod-auth 1.4.6.1: Authentication for Yesod
+dev-haskell/yesod-auth 1.4.7: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.3-r1: OAuth 2.0 authentication plugins
