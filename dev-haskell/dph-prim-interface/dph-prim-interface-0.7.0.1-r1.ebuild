@@ -29,6 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base     == 4.6.*' 'base     >= 4.6 && < 4.8' \
-		'random   == 1.0.*' 'random   >= 1.0 && < 1.2'
+		'base     == 4.6.*' 'base     >= 4.6' \
+		'random   == 1.0.*' 'random   >= 1.0'
 }
