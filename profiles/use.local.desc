@@ -294,6 +294,7 @@ dev-haskell/snap-core:portable - No non-haskell unportable code.
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
 dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/speculation:optimize - Enable optimizations
+dev-haskell/sr-extra:network-uri - use network-uri package
 dev-haskell/stack:integration-tests - run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
