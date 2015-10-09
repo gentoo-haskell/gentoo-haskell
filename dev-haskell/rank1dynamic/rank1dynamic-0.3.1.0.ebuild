@@ -23,7 +23,12 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.0 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2'
+}
