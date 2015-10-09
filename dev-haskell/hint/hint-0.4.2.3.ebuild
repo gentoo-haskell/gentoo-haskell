@@ -29,5 +29,10 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3 )
+	test? ( >=dev-haskell/hunit-1.2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit==1.2.*' 'HUnit>=1.2'
+}
