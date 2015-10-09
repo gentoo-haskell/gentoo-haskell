@@ -32,4 +32,3 @@ src_prepare() {
 	cabal_chdeps \
 		"QuickCheck >= 2.1 && < 2.8" "QuickCheck >= 2.1 && < 3"
 }
-

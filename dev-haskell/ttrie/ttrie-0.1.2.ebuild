@@ -36,4 +36,3 @@ src_prepare() {
 		'base >=4.7 && <4.8' 'base >=4.7 && <4.9' \
 		'QuickCheck ==2.5.*' 'QuickCheck >=2.5 && <2.9'
 }
-

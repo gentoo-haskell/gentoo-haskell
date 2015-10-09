@@ -6,13 +6,6 @@
 		<flag name='default-term'>Pull terminal specified in default xmonad config
 			to be a bit less hostile by default.</flag>
 		<flag name="no-autorepeat-keys">Allow ignoring of keyboard autorepeat.</flag>
-		<flag name='pass-focus-click'>Apply patches that add option to allow
-			focusing click to be also passed to window it focuses.
-			Option is disabled by default, for details see http://code.google.com/p/xmonad/issues/detail?id=225
-			</flag>
-		<flag name="icccwm-focus"> fix WM_TAKE_FOCUS protocol.
-			Option is disable by default, for details see http://code.google.com/p/xmonad/issues/detail?id=177
-			</flag>
 	</use>
 	<longdescription>
 		xmonad is a tiling window manager for X. Windows are arranged
