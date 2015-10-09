@@ -23,5 +23,10 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.3
-		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.3 )
+		>=dev-haskell/hunit-1.2.5.2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit             >= 1.2.5.2 && < 1.3' 'HUnit             >= 1.2.5.2'
+}

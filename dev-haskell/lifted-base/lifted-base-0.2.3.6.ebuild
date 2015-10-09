@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/hunit-1.2.2
 		>=dev-haskell/monad-control-1.0.0.3 <dev-haskell/monad-control-1.1
 		>=dev-haskell/test-framework-0.2.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.4 <dev-haskell/test-framework-hunit-0.4
@@ -32,3 +32,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/transformers-base-0.4.4 <dev-haskell/transformers-base-0.5
 		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.5 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit                >= 1.2.2   && < 1.3' 'HUnit                >= 1.2.2'
+}
