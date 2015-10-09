@@ -25,7 +25,4 @@
 		For more information, see:
 		&lt;http://corsis.sourceforge.net/index.php/Haskell/Clock&gt;
 	</longdescription>
-	<use>
-		<flag name="llvm">Compile via LLVM.</flag>
-	</use>
 </pkgmetadata>
