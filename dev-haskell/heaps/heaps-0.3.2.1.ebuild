@@ -22,5 +22,10 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/doctest-0.9 <=dev-haskell/doctest-0.10 )
+	test? ( >=dev-haskell/doctest-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'doctest >= 0.9 && <= 0.10' 'doctest >= 0.9'
+}
