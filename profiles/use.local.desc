@@ -50,7 +50,6 @@ dev-haskell/biosff:frecover - Build the frecover executable.
 dev-haskell/blaze-builder-enumerator:newbuilder - use bytestring-builder instead of blaze-builder-0.3
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
-dev-haskell/bytestring-lexing:base4 - Use base-4.0.
 dev-haskell/bytestring-trie:usecinternal - use optimized C implementation for indexOfDifference.
 dev-haskell/c2hs:regression - run regression tests
 dev-haskell/cabal-dev:no-cabal-dev - Do not build cabal-dev (just build ghc-pkg-6_8-compat).
@@ -60,7 +59,6 @@ dev-haskell/categories:optimize - enable optimizations
 dev-haskell/certificate:executable - Build the executable
 dev-haskell/cgi:extensible-exceptions-in-base - Required to be enabled for >=dev-lang/ghc-7.
 dev-haskell/cgi:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/charset:oldtypeable - ENable support for older GHC versions. Users should not set this.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
@@ -69,14 +67,12 @@ dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/x
 dev-haskell/citeproc-hs:network - use dev-haskell/network and dev-haskell/http to retrieve CSL file from URIs
 dev-haskell/citeproc-hs:small_base - Choose the new smaller, split-up base package.
 dev-haskell/citeproc-hs:unicode_collation - Use Haskell bindings to the dev-libs/icu
-dev-haskell/clock:llvm - Compile via LLVM.
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
 dev-haskell/comonad:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/comonad:contravariant - You can disable the use of the `contravariant` package using `-f-contravariant`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
 dev-haskell/comonad:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/comonad:test-doctests - Run the doctests test suite
-dev-haskell/conduit:nohandles - experimental code to use raw system calls in place of handles. Not recommended for general use
 dev-haskell/configfile:buildtests - Build the executable to run unit tests.
 dev-haskell/contravariant:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/contravariant:statevar - You can disable the use of the `StateVar` package using `-f-StateVar`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -127,7 +123,6 @@ dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends tha
 dev-haskell/gloss:glfw - Enable the GLFW backend.
 dev-haskell/gloss:glut - Enable the GLUT backend.
 dev-haskell/gnuplot:buildexamples - Build test executables.
-dev-haskell/gnuplot:buildtests - Build example executables.
 dev-haskell/gnuplot:executepipe - Avoid a temporary script by running with runInteractiveProcess.
 dev-haskell/gnuplot:executeshell - Avoid a temporary script by calling via a UNIX shell and its piping syntax.
 dev-haskell/graphscc:use-maps - Use IntMap instead of mutable arrays.
@@ -146,7 +141,6 @@ dev-haskell/hans:web-server - Build a simple web-server example.
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-server:template_haskell - Description: Template Haskell is available on this system
-dev-haskell/hashable-extras:lib-werror - Treat warnings as errors when building.
 dev-haskell/hashable-extras:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/hashed-storage:diff - Provide the Storage.Hashed.Diff module.
 dev-haskell/hashed-storage:hpc - Compile with the profiling ghc flag -fhpc.
@@ -202,7 +196,6 @@ dev-haskell/json:generic - Add support for generic encoder (dev-haskell/syb)
 dev-haskell/json:mapdict - Encode Haskell maps as JSON dicts
 dev-haskell/json:parsec - Add support for parsing with Parsec
 dev-haskell/json:pretty - Add support for using pretty printing combinators
-dev-haskell/lambdabot:eval - use dev-haskell/mueval to evaluate pure Haskell expressions at runtime
 dev-haskell/lambdabot-misc-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/lambdabot-reference-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
@@ -210,7 +203,6 @@ dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell'
 dev-haskell/lens:dump-splices - Build and run the doctests test-suite.
 dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell. This defaults to enabled, but you can to shut it off to benchmark the relative performance impact, or as last ditch effort to address compile errors resulting from the myriad versions of template-haskell that all purport to be 2.8.
 dev-haskell/lens:j - Attempt a parallel build with GHC 7.8.
-dev-haskell/lens:lib-werror - Turn on ghc-options: -Werror
 dev-haskell/lens:old-inline-pragmas - Some 7.6.1-rc1 users report their TH still uses old style inline pragmas. This lets them turn on inlining.
 dev-haskell/lens:safe - Disallow unsafeCoerce
 dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
@@ -246,7 +238,6 @@ dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high_precision_date - Use a time storage with nano second precision.
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable.
-dev-haskell/persistent-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/poppler:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
@@ -305,7 +296,6 @@ dev-haskell/tagsoup:testprog - Build the test program.
 dev-haskell/tasty-quickcheck:old-quickcheck - Use Quick-Check < 2.7.
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/text:developer - operate in developer mode
 dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
 dev-haskell/threepenny-gui:network-uri - Use network-uri library.
@@ -414,7 +404,5 @@ x11-misc/xmonad-extras:mpd - Enable mpd plugin
 x11-misc/xmonad-extras:perwindow - Enable PerWindowLayout plugin support
 x11-misc/xmonad-extras:volume - Enable Volume plugin
 x11-wm/xmonad:default-term - Pull terminal specified in default xmonad config to be a bit less hostile by default.
-x11-wm/xmonad:icccwm-focus - fix WM_TAKE_FOCUS protocol. Option is disable by default, for details see http://code.google.com/p/xmonad/issues/detail?id=177
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
-x11-wm/xmonad:pass-focus-click - Apply patches that add option to allow focusing click to be also passed to window it focuses. Option is disabled by default, for details see http://code.google.com/p/xmonad/issues/detail?id=225
 x11-wm/xmonad-contrib:testing - Build in testing mode.
