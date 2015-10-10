@@ -29,3 +29,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 		dev-haskell/test-framework-th )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+}
