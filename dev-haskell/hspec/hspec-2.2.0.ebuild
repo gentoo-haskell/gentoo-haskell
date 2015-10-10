@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # has circular dependency
+
 RDEPEND="~dev-haskell/hspec-core-2.2.0:=[profile?]
 	~dev-haskell/hspec-discover-2.2.0:=[profile?]
 	>=dev-haskell/hspec-expectations-0.7.2:=[profile?] <dev-haskell/hspec-expectations-0.7.3:=[profile?]
