@@ -42,5 +42,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
-		', tasty-hspec' ', tasty-hspec, aeson'
+		', tasty-hspec' ', tasty-hspec, aeson' \
+		'executable tests' 'executable htoml-tests'
 }
