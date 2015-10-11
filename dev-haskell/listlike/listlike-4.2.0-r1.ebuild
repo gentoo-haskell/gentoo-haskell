@@ -26,7 +26,7 @@ RESTRICT=test #hang?
 RDEPEND=">=dev-haskell/dlist-0.7:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/fmlist-0.8:=[profile?] <dev-haskell/fmlist-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/vector-0.5:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,3 +37,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'vector     >= 0.5   && < 0.11' 'vector     >= 0.5'
+}
