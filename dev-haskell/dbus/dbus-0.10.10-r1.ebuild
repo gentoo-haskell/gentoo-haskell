@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profil
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2.0:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
-	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -35,3 +35,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/chell-quickcheck-0.2 <dev-haskell/chell-quickcheck-0.3
 		>=dev-haskell/quickcheck-2.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'vector >= 0.7 && < 0.11' 'vector >= 0.7'
+}
