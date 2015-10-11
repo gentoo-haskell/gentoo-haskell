@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-haskell/unix-compat-0.1.2:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-haskell/zip-archive-0.2.3:=[profile?] <dev-haskell/zip-archive-0.3:=[profile?]
 	>=dev-haskell/zlib-0.5.3.0:=[profile?] <dev-haskell/zlib-0.7.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -72,6 +72,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 	curl? ( virtual/pkgconfig )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'vector       >= 0.7 && < 0.11' 'vector       >= 0.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

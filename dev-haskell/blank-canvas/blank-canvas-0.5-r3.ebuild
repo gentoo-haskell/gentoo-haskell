@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/wai-3:=[profile?] <dev-haskell/wai-4:=[profile?]
 	>=dev-haskell/wai-extra-3.0.1:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
 	>=dev-haskell/warp-3:=[profile?] <dev-haskell/warp-4:=[profile?]
@@ -45,5 +45,6 @@ src_prepare() {
 	cabal_chdeps \
 		'aeson              >= 0.7   && < 0.9' 'aeson              >= 0.7' \
 		'base               >= 4.3.1 && < 4.8' 'base               >= 4.3.1' \
-		'scotty             >= 0.8   && < 0.10' 'scotty             >= 0.8   && < 0.11'
+		'scotty             >= 0.8   && < 0.10' 'scotty             >= 0.8   && < 0.11' \
+		'vector             >= 0.10  && < 0.11' 'vector             >= 0.10'
 }

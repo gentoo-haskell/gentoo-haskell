@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/path-pieces-0.1:=[profile?]
 	>=dev-haskell/text-0.5:=[profile?]
-	>=dev-haskell/vector-0.8:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'path-pieces               >= 0.1      && < 0.2' 'path-pieces               >= 0.1' \
-		'HUnit                     >= 1.2      && < 1.3' 'HUnit                     >= 1.2'
+		'HUnit                     >= 1.2      && < 1.3' 'HUnit                     >= 1.2' \
+		'vector                    >= 0.8      && < 0.11' 'vector                    >= 0.8'
 }

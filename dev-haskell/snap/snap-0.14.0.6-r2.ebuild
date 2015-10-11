@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/either-4.3:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/heist-0.14:=[profile?] <dev-haskell/heist-0.15:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.13:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?]
 	>=dev-haskell/logict-0.4.2:=[profile?] <dev-haskell/logict-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -57,7 +57,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4 && < 0.10)' 'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4)'
+		'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4 && < 0.10)' 'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4)' \
+		'lens                      >= 3.7.6    && < 4.13' 'lens                      >= 3.7.6'
 }
 
 src_configure() {

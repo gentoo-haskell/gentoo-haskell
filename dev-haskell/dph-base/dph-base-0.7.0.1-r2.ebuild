@@ -9,18 +9,17 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Data Parallel Haskell segmented arrays. (abstract interface)"
+DESCRIPTION="Data Parallel Haskell common config and debugging functions"
 HOMEPAGE="http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="dtrace"
 
-RDEPEND=">=dev-haskell/dph-base-0.7:=[profile?] <dev-haskell/dph-base-0.8:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -30,5 +29,13 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'base     == 4.6.*' 'base     >= 4.6' \
-		'random   == 1.0.*' 'random   >= 1.0'
+		'array    == 0.4.*' 'array    >= 0.4 && < 0.6' \
+		'random   == 1.0.*' 'random >= 1.0 && < 1.2' \
+		'ghc-prim == 0.3.*' 'ghc-prim >= 0.3' \
+		'vector   == 0.10.*' 'vector   >= 0.10'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag dtrace dtrace)
 }

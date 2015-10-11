@@ -23,7 +23,7 @@ RESTRICT=test # needs ClassP from TH (absent in ghc-7.10)
 RDEPEND=">=dev-haskell/cereal-0.3.1.0:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'vector == 0.10.*' 'vector >= 0.10'
+}

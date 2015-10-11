@@ -29,12 +29,18 @@ RDEPEND=">=dev-haskell/bmp-1.2:= <dev-haskell/bmp-1.3:=
 	>=dev-haskell/repa-3.4:= <dev-haskell/repa-3.5:=
 	>=dev-haskell/repa-algorithms-3.4:= <dev-haskell/repa-algorithms-3.5:=
 	>=dev-haskell/repa-io-3.4:= <dev-haskell/repa-io-3.5:=
-	>=dev-haskell/vector-0.10:= <dev-haskell/vector-0.11:=
+	>=dev-haskell/vector-0.10:=
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'vector          == 0.10.*' 'vector          >= 0.10' \
+		'vector         == 0.10.*' 'vector         >= 0.10'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

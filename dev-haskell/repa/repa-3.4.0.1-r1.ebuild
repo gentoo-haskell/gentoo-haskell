@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Read and write Repa arrays in various formats"
+DESCRIPTION="High performance, regular, shape polymorphic parallel arrays"
 HOMEPAGE="http://repa.ouroborus.net"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -18,13 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
-	>=dev-haskell/old-time-1.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
-	>=dev-haskell/repa-3.4:=[profile?] <dev-haskell/repa-3.5:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'vector               == 0.10.*' 'vector               >= 0.10'
+}
