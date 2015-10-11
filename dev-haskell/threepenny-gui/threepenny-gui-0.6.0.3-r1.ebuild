@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/transformers-0.3.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.10:=[profile?]
 	>=dev-haskell/websockets-snap-0.8:=[profile?] <dev-haskell/websockets-snap-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -43,7 +43,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson                  >= 0.7   && < 0.9' 'aeson                  >= 0.7'
+		'aeson                  >= 0.7   && < 0.9' 'aeson                  >= 0.7' \
+		'vector                 >= 0.10   && < 0.11' 'vector                 >= 0.10'
 }
 
 src_configure() {
