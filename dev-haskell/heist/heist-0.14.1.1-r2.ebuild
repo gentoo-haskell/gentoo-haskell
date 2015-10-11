@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/xmlhtml-0.2.3:=[profile?] <dev-haskell/xmlhtml-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -43,5 +43,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson                      >= 0.6     && < 0.9' 'aeson                      >= 0.6'
+		'aeson                      >= 0.6     && < 0.9' 'aeson                      >= 0.6' \
+		'vector                     >= 0.9     && < 0.11' 'vector                     >= 0.9'
 }
