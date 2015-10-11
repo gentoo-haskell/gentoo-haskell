@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="dtrace"
 
 RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.11:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -31,7 +31,8 @@ src_prepare() {
 		'base     == 4.6.*' 'base     >= 4.6' \
 		'array    == 0.4.*' 'array    >= 0.4 && < 0.6' \
 		'random   == 1.0.*' 'random >= 1.0 && < 1.2' \
-		'ghc-prim == 0.3.*' 'ghc-prim >= 0.3'
+		'ghc-prim == 0.3.*' 'ghc-prim >= 0.3' \
+		'vector   == 0.10.*' 'vector   >= 0.10'
 }
 
 src_configure() {
