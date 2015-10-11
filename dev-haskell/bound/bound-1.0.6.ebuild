@@ -33,10 +33,11 @@ RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-6:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
 	test? ( >=dev-haskell/doctest-0.9
-		>=dev-haskell/vector-0.9 <dev-haskell/vector-0.11 )
+		>=dev-haskell/vector-0.9 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'doctest   >= 0.9 && < 0.10' 'doctest   >= 0.9'
+		'doctest   >= 0.9 && < 0.10' 'doctest   >= 0.9' \
+		'vector    >= 0.9 && < 0.11' 'vector    >= 0.9'
 }
