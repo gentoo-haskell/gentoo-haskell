@@ -56,6 +56,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.13.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag threaded threaded)
