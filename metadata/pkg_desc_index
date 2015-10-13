@@ -623,7 +623,7 @@ dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.4.8-r1: Haskell OAuth2 authentication
 dev-haskell/hood 0.2.1: Debugging by observing in place
-dev-haskell/hoogle 4.2.36 4.2.41: Haskell API Search
+dev-haskell/hoogle 4.2.36 4.2.42: Haskell API Search
 dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
