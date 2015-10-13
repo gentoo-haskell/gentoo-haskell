@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.13:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-haskell/numinstances-1.0:=[profile?] <dev-haskell/numinstances-1.5:=[profile?]
 	>=dev-haskell/optparse-applicative-0.10:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
@@ -34,3 +34,8 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens >= 4.0 && < 4.13' 'lens >= 4.0'
+}
