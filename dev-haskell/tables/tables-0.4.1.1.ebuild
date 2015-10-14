@@ -21,6 +21,7 @@ IUSE="+test-properties transformers2"
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+	>=dev-haskell/contravariant-1.3.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/profunctors-4:=[profile?]
@@ -36,6 +37,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.13.patch
+
 	cabal_chdeps \
 		'profunctors          >= 4   && < 5' 'profunctors          >= 4'
 }
