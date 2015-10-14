@@ -34,6 +34,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.13.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=test-doctests
