@@ -17,7 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-#hackport: flag -openblas
 
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/random:=[profile?]
@@ -35,4 +34,6 @@ src_prepare() {
 	# https://ghc.haskell.org/trac/ghc/ticket/10667
 	[[ $(ghc-version) == 7.10.1.20150630 ]] && replace-hcflags -g ''
 	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -g ''
+
+	epatch "${FILESDIR}"/${P}-gentoo-blas.patch
 }
