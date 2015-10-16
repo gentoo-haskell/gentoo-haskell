@@ -1140,6 +1140,7 @@ dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.0.4: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.16.2.2: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
+dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
