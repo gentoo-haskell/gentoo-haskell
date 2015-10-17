@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
+# Bundled with ghc, nobody uses in overlay. Better way
+# to upgrade it is to bump bundled libs in ghc ebuld.
+dev-haskell/hoopl
+
 # Sergei Trofimovich <slyfox@gentoo.org> (05 Oct 2015)
 # Needs a port to ghc-7.10 to reflect AMP changes
 dev-haskell/iterio
