@@ -1083,7 +1083,7 @@ dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2: Generalized bananas, lenses and barbed wire
-dev-haskell/reducers 3.11: Semigroups, specialized containers and a general map/reduce framework
+dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/reflection 1.5.2.1 2 2.1: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
@@ -1117,7 +1117,7 @@ dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/rosezipper 0.1 0.2: Generic zipper implementation for Data.Tree
-dev-haskell/rsa 2.1.0.3: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
+dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2: Random Variables
 dev-haskell/safe 0.3.9: Library of safe (exception free) functions
