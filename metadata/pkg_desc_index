@@ -79,7 +79,7 @@ dev-haskell/attoparsec-iteratee 0.4.0-r1: An adapter to convert attoparsec Parse
 dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
 dev-haskell/authenticate 1.3.2.11: Authentication methods for Haskell web applications
 dev-haskell/authenticate-kerberos 1.0.0: Authentication methods for Haskell web applications
-dev-haskell/authenticate-oauth 1.5.1.1: Library to authenticate with OAuth for Haskell web applications
+dev-haskell/authenticate-oauth 1.5.1.1-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.2.2: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
