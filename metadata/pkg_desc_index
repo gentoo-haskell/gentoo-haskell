@@ -348,7 +348,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.7.1.2: Difference lists
 dev-haskell/dlist-instances 0.1: Difference lists instances
-dev-haskell/dns 1.4.5 2.0.0: DNS library in Haskell
+dev-haskell/dns 1.4.5 2.0.1: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
@@ -539,7 +539,7 @@ dev-haskell/happstack-heist 7.2.3-r1 9999: Support for using Heist templates in 
 dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
-dev-haskell/happstack-server 7.4.4: Web related tools and services
+dev-haskell/happstack-server 7.4.5: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
