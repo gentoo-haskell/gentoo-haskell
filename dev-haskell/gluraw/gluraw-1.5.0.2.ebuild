@@ -10,24 +10,22 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-MY_PN="GLUT"
+MY_PN="GLURaw"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A binding for the OpenGL Utility Toolkit"
+DESCRIPTION="A raw binding for the OpenGL graphics system"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Opengl"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-2.14:=[profile?]
-	>=dev-haskell/openglraw-2.3:=[profile?] <dev-haskell/openglraw-2.6:=[profile?]
-	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
+RDEPEND=">=dev-haskell/openglraw-2.4:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	media-libs/freeglut
+	virtual/glu
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -20,19 +20,19 @@ IUSE=""
 
 RESTRICT=test # collides with vector / AC-Vector-Fancy
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
+	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/mtl-compat:=[profile?]
+	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-haskell/uri-bytestring-0.1:=[profile?] <dev-haskell/uri-bytestring-0.2:=[profile?]
 	>=dev-haskell/vector-0.10.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -46,6 +46,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8' \
-		'aeson            >= 0.7     && <0.10' 'aeson            >= 0.7'
+		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8'
 }
