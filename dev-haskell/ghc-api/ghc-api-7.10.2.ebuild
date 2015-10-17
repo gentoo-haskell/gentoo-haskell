@@ -17,7 +17,6 @@ IUSE=""
 RDEPEND="
 	~dev-haskell/binary-0.7.5.0:=
 	=dev-lang/ghc-${PVR}:=
-	~dev-haskell/hoopl-3.10.1.0:=
 	~dev-haskell/hpc-0.6.0.2:=
 	~dev-haskell/transformers-0.4.3.0:=
 "
