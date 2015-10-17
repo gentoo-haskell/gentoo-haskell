@@ -1,0 +1,28 @@
+diff --git a/Data/Vector/Random/Mersenne.hs b/Data/Vector/Random/Mersenne.hs
+index 83f2d93..24ba277 100644
+--- a/Data/Vector/Random/Mersenne.hs
++++ b/Data/Vector/Random/Mersenne.hs
+@@ -32,5 +32,5 @@ import qualified Data.Vector.Generic.Mutable as GM
+ 
+-import qualified Data.Vector.Fusion.Stream         as Stream
+ import qualified Data.Vector.Fusion.Stream.Monadic as S
+-import qualified Data.Vector.Fusion.Stream.Size    as S
++import qualified Data.Vector.Fusion.Bundle.Monadic as B
++import qualified Data.Vector.Fusion.Bundle.Size    as B
+ import Data.Vector.Fusion.Util
+@@ -62,10 +62,10 @@ import Data.Word
+ randoms :: (PureMTRandom a, G.Vector v a) => R.PureMT -> Int -> v a
+-randoms g n = G.unstream (randomS g n)
++randoms g n = G.unstream (randomB g n)
+ {-# INLINE randoms #-}
+ 
+--- A stream of 'n' random numbers.
++-- A bundle of 'n' random numbers.
+ --
+-randomS :: PureMTRandom a => R.PureMT -> Int -> Stream.Stream a
+-{-# INLINE [1] randomS #-}
+-randomS g n = S.Stream (return . step) (n, g) (S.Exact (delay_inline max n 0))
++randomB :: PureMTRandom a => R.PureMT -> Int -> B.Bundle Id v a
++{-# INLINE [1] randomB #-}
++randomB g n = B.fromStream (S.Stream (return . step) (n, g)) (B.Exact (delay_inline max n 0))
+   where

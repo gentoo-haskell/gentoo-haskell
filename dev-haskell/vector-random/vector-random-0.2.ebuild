@@ -28,4 +28,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc.patch
+	epatch "${FILESDIR}"/${P}-vector-0.11.patch
 }
