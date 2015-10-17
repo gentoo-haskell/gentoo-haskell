@@ -868,7 +868,7 @@ dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
-dev-haskell/monad-parallel 0.7.1.4: Parallel execution of monadic computations
+dev-haskell/monad-parallel 0.7.2: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.0.1-r1: Monad products
 dev-haskell/monad-unify 0.2.2: Generic first-order unification
@@ -883,7 +883,7 @@ dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
-dev-haskell/mongodb 2.0.7: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
+dev-haskell/mongodb 2.0.8: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.9.3: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.2: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.1.2: Subclasses of Monoid
@@ -1037,7 +1037,7 @@ dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
 dev-haskell/process-extras 0.3.3.5: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
-dev-haskell/profiteur 0.2.0.1-r2: Treemap visualiser for GHC prof files
+dev-haskell/profiteur 0.2.0.2: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 4.4.1 5.1.1: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
@@ -1102,10 +1102,10 @@ dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1 9999: Cloud Haskell. Fault-tolerant distributed computing framework
-dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.1-r1: High performance, regular, shape polymorphic parallel arrays
-dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.1-r1: Algorithms using the Repa array library
+dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6: Support for image reading and writing of Repa arrays using in-place FFI calls
-dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.1-r1: Read and write Repa arrays in various formats
+dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2: Read and write Repa arrays in various formats
 dev-haskell/replib 0.5.3.5: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
