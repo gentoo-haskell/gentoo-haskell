@@ -1,11 +1,11 @@
 DEFINED_PHASES=-
-DEPEND=~dev-haskell/binary-0.7.1.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.3:= ~dev-haskell/hoopl-3.10.0.1:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.3.0.0:=
+DEPEND=~dev-haskell/binary-0.7.1.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.3:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.3.0.0:=
 DESCRIPTION=The Glasgow Haskell Compiler API (ghc package)
 EAPI=5
 HOMEPAGE=http://www.haskell.org/ghc
 IUSE=cabal
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=BSD
-RDEPEND=~dev-haskell/binary-0.7.1.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.3:= ~dev-haskell/hoopl-3.10.0.1:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.3.0.0:=
+RDEPEND=~dev-haskell/binary-0.7.1.0:= cabal? ( ~dev-haskell/cabal-1.18.1.3:= ) =dev-lang/ghc-7.8.3:= ~dev-haskell/hpc-0.6.0.1:= ~dev-haskell/transformers-0.3.0.0:=
 SLOT=0/7.8.3
-_md5_=240dee659f40985856db47f20f0fc76a
+_md5_=db222a45992795f52ec20fe1fb9a10d4
