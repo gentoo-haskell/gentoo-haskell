@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/gluraw-1.3:=[profile?] <dev-haskell/gluraw-1.6:=[profile?]
 	>=dev-haskell/objectname-1.1:=[profile?] <dev-haskell/objectname-1.2:=[profile?]
-	>=dev-haskell/openglraw-2.1:=[profile?] <dev-haskell/openglraw-2.6:=[profile?]
+	>=dev-haskell/openglraw-2.5.5:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
 	>=dev-haskell/text-0.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
