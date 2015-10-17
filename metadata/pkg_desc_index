@@ -29,7 +29,7 @@ dev-haskell/ac-vector-fancy 2.4.0: Fancy type-system stuff for AC-Vector
 dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0: An embedded language for accelerated array processing
 dev-haskell/accelerate-cuda 0.15.0.0: Accelerate backend for NVIDIA GPUs
 dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
-dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.0.0: Read and write Accelerate arrays in various formats
+dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.12.4: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.6: Abstractions for animation
@@ -38,6 +38,7 @@ dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.10.0.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
+dev-haskell/aeson-extra 0.2.1.0: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
@@ -125,7 +126,7 @@ dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.4.1: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
-dev-haskell/bloodhound 0.8.0.0-r1: ElasticSearch client library for Haskell
+dev-haskell/bloodhound 0.9.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
@@ -489,8 +490,8 @@ dev-haskell/gloss-juicy 0.2: Load any image supported by Juicy.Pixels in your gl
 dev-haskell/gloss-raster 1.8.2.1 1.9.2.1 1.9.4.1: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.9.2.1 1.9.3.1-r1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
-dev-haskell/gluraw 1.4.0.2 1.5.0.1: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.2: A binding for the OpenGL Utility Toolkit
+dev-haskell/gluraw 1.4.0.2 1.5.0.2: A raw binding for the OpenGL graphics system
+dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.3: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.8.7: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.1: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.3.1 0.5.4: 2D and 3D plots using gnuplot
@@ -526,7 +527,7 @@ dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2
 dev-haskell/haddock-api 2.16.1: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.7.3.0: A static website compiler library
+dev-haskell/hakyll 4.7.3.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
@@ -920,7 +921,7 @@ dev-haskell/network-data 0.5.3: Library for network data structures and their se
 dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
 dev-haskell/network-fancy 0.2.3: Networking support with a cleaner API
 dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP
-dev-haskell/network-info 0.2.0.7: Access the local computer's basic network configuration
+dev-haskell/network-info 0.2.0.8: Access the local computer's basic network configuration
 dev-haskell/network-msg 0.5: Recvmsg and sendmsg bindings
 dev-haskell/network-multicast 0.0.11: Simple multicast library
 dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
@@ -952,7 +953,7 @@ dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
 dev-haskell/openal 1.6.0.1 1.7.0.1: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
-dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.0.0: A binding for the OpenGL graphics system
+dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.1.0: A binding for the OpenGL graphics system
 dev-haskell/openglraw 1.1.0.2 1.2.0.0 1.3.0.0 1.4.0.0 1.5.0.1 2.5.4.0 2.5.5.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
@@ -986,11 +987,11 @@ dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistent 2.1.6 2.2.1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.2.1 2.1.2.2: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.3: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-mysql 2.3.0.2: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.2.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.1.3.5: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.1.3.7: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.6: Compositional pipelines
