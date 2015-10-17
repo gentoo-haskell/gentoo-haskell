@@ -300,7 +300,7 @@ dev-haskell/dataenc 0.14.0.7: Data encoding library
 dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
 dev-haskell/dav 1.2: RFC 4918 WebDAV support
-dev-haskell/dbus 0.10.10-r1: A client library for the D-Bus IPC system
+dev-haskell/dbus 0.10.11: A client library for the D-Bus IPC system
 dev-haskell/dbus-client 0.4.1: Monadic and object-oriented interfaces to DBus
 dev-haskell/dbus-core 0.8.5.4 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
@@ -339,7 +339,7 @@ dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with u
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/distributed-process 0.5.3 0.5.5.1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.0 0.2.3.1: Simple zero-configuration backend for Cloud Haskell
-dev-haskell/distributed-process-tests 0.4.3.1: Tests and test support tools for distributed-process
+dev-haskell/distributed-process-tests 0.4.3.2: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.1.0 0.3.2.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.4.4: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
@@ -417,7 +417,7 @@ dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
-dev-haskell/feed 0.3.10.2: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
+dev-haskell/feed 0.3.10.3: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
 dev-haskell/file-embed 0.0.9: Use Template Haskell to embed file contents directly
