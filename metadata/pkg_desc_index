@@ -913,7 +913,7 @@ dev-haskell/nanoprolog 0.3-r2: Very small interpreter for a Prolog-like language
 dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's API
 dev-haskell/nats 1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
-dev-haskell/ncurses 0.2.12: Modernised bindings to GNU ncurses
+dev-haskell/ncurses 0.2.13: Modernised bindings to GNU ncurses
 dev-haskell/nettle-openflow 0.2.0: OpenFlow protocol messages, binary formats, and servers
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
 dev-haskell/network 2.6.2.1: Low-level networking interface
