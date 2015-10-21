@@ -23,8 +23,11 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/blaze-markup:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
+	dev-haskell/scientific:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	dev-haskell/transformers:=[profile?]
+	dev-haskell/unordered-containers:=[profile?]
+	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
