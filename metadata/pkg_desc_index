@@ -504,7 +504,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.6: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.1: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
@@ -873,7 +873,7 @@ dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
-dev-haskell/monad-parallel 0.7.2: Parallel execution of monadic computations
+dev-haskell/monad-parallel 0.7.2.0: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.0.1-r1: Monad products
 dev-haskell/monad-unify 0.2.2: Generic first-order unification
@@ -977,7 +977,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
 dev-haskell/path-pieces 0.2.0: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.5.4.3: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.5.5: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
@@ -1076,7 +1076,7 @@ dev-haskell/ranges 0.2.4: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.2.0.0 0.2.0.1 0.2.0.1-r1 0.3.1.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.6.1: A pure haskell drawing engine
 dev-haskell/raw-strings-qq 1.0.2: Raw string literals for Haskell
-dev-haskell/rdf4h 1.3.2: A library for RDF processing in Haskell
+dev-haskell/rdf4h 1.3.3: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
 dev-haskell/re2 0.1: Bindings to the re2 regular expression library
 dev-haskell/reactive-banana 0.8.1.2 0.9.0.0: Library for functional reactive programming (FRP)
@@ -1528,7 +1528,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.8.5-r4 2.10.0-r1 2.10.1-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 5.20150930: manage files with git, without checking their contents into git
+dev-vcs/git-annex 5.20151019: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
