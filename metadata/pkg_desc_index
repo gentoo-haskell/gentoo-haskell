@@ -773,7 +773,7 @@ dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-p
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.7: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/language-javascript 0.5.14.2: Parser for JavaScript
-dev-haskell/largeword 1.2.3: Provides Word128, Word192 and Word256 and a way of producing other large words if required
+dev-haskell/largeword 1.2.4: Provides Word128, Word192 and Word256 and a way of producing other large words if required
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
 dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell programs
@@ -1124,7 +1124,7 @@ dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes 
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2: Random Variables
 dev-haskell/safe 0.3.9: Library of safe (exception free) functions
-dev-haskell/safecopy 0.8.5-r1: Binary serialization with version control
+dev-haskell/safecopy 0.8.6: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
