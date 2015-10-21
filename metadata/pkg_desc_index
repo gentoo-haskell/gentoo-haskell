@@ -95,7 +95,7 @@ dev-haskell/basic-prelude 0.4.1: An enhanced core prelude; a common foundation f
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 4.2.1 5: Bifunctors
-dev-haskell/bimap 0.2.4-r1 0.3.0: Bidirectional mapping between two key types
+dev-haskell/bimap 0.3.1: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
@@ -226,7 +226,7 @@ dev-haskell/concurrent-extra 0.7.0.9: Extra concurrency primitives
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.5: Streaming data processing library
+dev-haskell/conduit 1.2.5.1: Streaming data processing library
 dev-haskell/conduit-combinators 0.3.1 1.0.3: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.9.1: Batteries included conduit: adapters for common libraries
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
@@ -383,7 +383,7 @@ dev-haskell/ekg-json 0.1.0.0: JSON encoding of ekg metrics
 dev-haskell/email-validate 1.0.0 2.0.1 2.1.3: Validating an email address string against RFC 5322
 dev-haskell/enclosed-exceptions 1.0.1.1: Catching all exceptions from within an enclosed computation
 dev-haskell/encoding 0.7.0.2-r1 0.8: A library for various character encodings
-dev-haskell/engine-io 1.2.10-r1: A Haskell implementation of Engine.IO
+dev-haskell/engine-io 1.2.11: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.7: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine words
@@ -392,7 +392,7 @@ dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 1.4.7 2.0.1: Simplified error-handling
 dev-haskell/esqueleto 2.4.1: Type-safe EDSL for SQL queries on persistent backends
-dev-haskell/ether 0.3.0.0: Monad transformers and classes
+dev-haskell/ether 0.3.1.1: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
@@ -686,6 +686,7 @@ dev-haskell/html-conduit 1.2.0: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.20-r1: A library for client-side HTTP
+dev-haskell/http-api-data 0.2.1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.24: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
@@ -987,14 +988,14 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
-dev-haskell/persistent 2.1.6 2.2.1: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.1.6 2.2.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.2.1 2.1.2.2: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.4: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.3.0.2: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.2.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.1.3.7: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.1.4: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.6: Compositional pipelines
@@ -1150,7 +1151,7 @@ dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.5: Build system library, like Make, but more accurate dependencies
-dev-haskell/shakespeare 2.0.6: A toolkit for making compile-time interpolated templates
+dev-haskell/shakespeare 2.0.7: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time. (deprecated)
@@ -1287,6 +1288,7 @@ dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
+dev-haskell/text-show 2.1.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
