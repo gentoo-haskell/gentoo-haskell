@@ -39,3 +39,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/wai-3.0.0
 		>=dev-haskell/warp-3.0.1 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-rdf4h-1.3.3.patch
+}

@@ -1,0 +1,77 @@
+diff --git a/Database/HSparql/Connection.hs b/Database/HSparql/Connection.hs
+index 7cd0fba..0b7ba10 100644
+--- a/Database/HSparql/Connection.hs
++++ b/Database/HSparql/Connection.hs
+@@ -19,2 +19,3 @@ import Data.RDF
+ import qualified Data.Text as T
++import qualified Data.Text.Lazy as TL
+ import qualified Data.Text.Encoding as E
+@@ -57,8 +58,8 @@ structureContent s =
+             case qName (elName e) of
+-              "uri"     -> Bound $ Data.RDF.unode $ (T.pack $ strContent e)
++              "uri"     -> Bound $ Data.RDF.unode $ (TL.pack $ strContent e)
+               "literal" -> case findAttr (unqual "datatype") e of
+-                             Just dt -> Bound $ Data.RDF.lnode $ Data.RDF.typedL (T.pack $ strContent e) (T.pack dt)
++                             Just dt -> Bound $ Data.RDF.lnode $ Data.RDF.typedL (TL.pack $ strContent e) (TL.pack dt)
+                              Nothing -> case findAttr langAttr e of
+-                                          Just lang -> Bound $ Data.RDF.lnode $ Data.RDF.plainLL (T.pack $ strContent e) (T.pack lang)
+-                                          Nothing   -> Bound $ Data.RDF.lnode $ Data.RDF.plainL (T.pack $ strContent e)
++                                          Just lang -> Bound $ Data.RDF.lnode $ Data.RDF.plainLL (TL.pack $ strContent e) (TL.pack lang)
++                                          Nothing   -> Bound $ Data.RDF.lnode $ Data.RDF.plainL (TL.pack $ strContent e)
+               -- TODO: what about blank nodes?
+@@ -164,2 +165,2 @@ httpCallForRdf uri = do
+   response <- simpleHTTP request >>= getResponseBody
+-  return $ parseString (TurtleParser Nothing Nothing) $ E.decodeUtf8 (B.pack response)
++  return $ parseString (TurtleParser Nothing Nothing) $ TL.fromStrict $ E.decodeUtf8 (B.pack response)
+diff --git a/Database/HSparql/QueryGenerator.hs b/Database/HSparql/QueryGenerator.hs
+index 1bc022c..6697c7d 100644
+--- a/Database/HSparql/QueryGenerator.hs
++++ b/Database/HSparql/QueryGenerator.hs
+@@ -81,2 +81,3 @@ import Data.List (intercalate)
+ import qualified Data.Text as T
++import qualified Data.Text.Lazy as TL
+ import Data.RDF
+@@ -273,9 +274,9 @@ instance TermLike Integer where
+ instance TermLike T.Text where
+-  varOrTerm = Term . RDFLiteralTerm . plainL
++  varOrTerm = Term . RDFLiteralTerm . plainL . TL.fromStrict
+ 
+ instance TermLike (T.Text, T.Text) where
+-  varOrTerm (s, lang') = Term . RDFLiteralTerm $ plainLL s lang'
++  varOrTerm (s, lang') = Term . RDFLiteralTerm $ plainLL (TL.fromStrict s) (TL.fromStrict lang')
+ 
+ instance TermLike (T.Text, IRIRef) where
+-  varOrTerm (s, ref) = Term . RDFLiteralTerm $ typedL s (getFQN ref)
++  varOrTerm (s, ref) = Term . RDFLiteralTerm $ typedL (TL.fromStrict s) (TL.fromStrict $ getFQN ref)
+ 
+@@ -429,7 +430,7 @@ data IRIRef = AbsoluteIRI Node
+ iriRef :: T.Text -> IRIRef
+-iriRef uri = AbsoluteIRI $ unode uri
++iriRef uri = AbsoluteIRI $ unode $ TL.fromStrict uri
+ 
+ getFQN :: IRIRef -> T.Text
+-getFQN (AbsoluteIRI (UNode n)) = n
+-getFQN (PrefixedName (Prefix _ (UNode n)) s) = T.append n s
++getFQN (AbsoluteIRI (UNode n)) = TL.toStrict n
++getFQN (PrefixedName (Prefix _ (UNode n)) s) = T.append (TL.toStrict n) s
+ 
+@@ -536,3 +537,3 @@ instance QueryShow Limit where
+ instance QueryShow Node where
+-  qshow (UNode n) = "<" ++ T.unpack n ++ ">"
++  qshow (UNode n) = "<" ++ TL.unpack n ++ ">"
+ 
+@@ -553,5 +554,5 @@ instance QueryShow (Maybe IRIRef) where
+ instance QueryShow LValue where
+-  qshow (PlainL s)        = "\"" ++ (T.unpack $ escapeQuotes s) ++ "\""
+-  qshow (PlainLL s lang') = "\"" ++ (T.unpack $ escapeQuotes s) ++ "\"@" ++ (T.unpack lang')
+-  qshow (TypedL s ref)    = "\"" ++ (T.unpack $ escapeQuotes s) ++ "\"^^" ++ (T.unpack ref)
++  qshow (PlainL s)        = "\"" ++ (TL.unpack $ escapeQuotes s) ++ "\""
++  qshow (PlainLL s lang') = "\"" ++ (TL.unpack $ escapeQuotes s) ++ "\"@" ++ (TL.unpack lang')
++  qshow (TypedL s ref)    = "\"" ++ (TL.unpack $ escapeQuotes s) ++ "\"^^" ++ (TL.unpack ref)
+ 
+@@ -676,3 +677,3 @@ instance QueryShow QueryData where
+ -- Internal utilities
+-escapeQuotes :: T.Text -> T.Text
+-escapeQuotes = T.replace "\"" "\\\""
++escapeQuotes :: TL.Text -> TL.Text
++escapeQuotes = TL.replace "\"" "\\\""
