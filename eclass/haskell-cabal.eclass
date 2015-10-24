@@ -522,13 +522,13 @@ haskell-cabal_pkg_setup() {
 haskell-cabal_src_configure() {
 	cabal-is-dummy-lib && return
 
-	pushd "${S}" > /dev/null
+	pushd "${S}" > /dev/null || die
 
 	cabal-bootstrap
 
 	cabal-configure "$@"
 
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 # exported function: nice alias
@@ -591,15 +591,15 @@ cabal_src_compile() {
 }
 
 haskell-cabal_src_compile() {
-	pushd "${S}" > /dev/null
+	pushd "${S}" > /dev/null || die
 
 	cabal_src_compile "$@"
 
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 haskell-cabal_src_test() {
-	pushd "${S}" > /dev/null
+	pushd "${S}" > /dev/null || die
 
 	if cabal-is-dummy-lib; then
 		einfo ">>> No tests for dummy library: ${CATEGORY}/${PF}"
@@ -610,7 +610,7 @@ haskell-cabal_src_test() {
 		./setup "$@" || die "cabal test failed"
 	fi
 
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 # exported function: cabal-style copy and register
@@ -634,11 +634,11 @@ cabal_src_install() {
 }
 
 haskell-cabal_src_install() {
-	pushd "${S}" > /dev/null
+	pushd "${S}" > /dev/null || die
 
 	cabal_src_install
 
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 haskell-cabal_pkg_postinst() {
