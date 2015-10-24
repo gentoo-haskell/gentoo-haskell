@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="integration-tests"
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.10:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/attoparsec-0.12.1.5:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
