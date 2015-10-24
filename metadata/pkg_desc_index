@@ -927,7 +927,7 @@ dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
 dev-haskell/network-fancy 0.2.3: Networking support with a cleaner API
 dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP
 dev-haskell/network-info 0.2.0.8: Access the local computer's basic network configuration
-dev-haskell/network-msg 0.5: Recvmsg and sendmsg bindings
+dev-haskell/network-msg 0.6: Recvmsg and sendmsg bindings
 dev-haskell/network-multicast 0.0.11: Simple multicast library
 dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
 dev-haskell/network-simple 0.4.0.4: Simple network sockets usage patterns
