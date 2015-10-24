@@ -82,7 +82,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.10:=[profi
 	>=dev-haskell/void-0.7:=[profile?] <dev-haskell/void-0.8:=[profile?]
 	>=dev-haskell/word8-0.1.2:=[profile?] <dev-haskell/word8-0.2:=[profile?]
 	>=dev-haskell/yaml-0.8.10.1:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
-	>=dev-haskell/zlib-0.5.4.2:=[profile?] <dev-haskell/zlib-0.6:=[profile?]
+	>=dev-haskell/zlib-0.5.4.2:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
