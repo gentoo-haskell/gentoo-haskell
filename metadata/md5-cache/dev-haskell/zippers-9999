@@ -7,5 +7,5 @@ IUSE=doc hscolour hoogle profile test
 LICENSE=BSD
 RDEPEND=>=dev-haskell/lens-3.10:=[profile?] >=dev-haskell/profunctors-3.2:=[profile?] <dev-haskell/profunctors-4:=[profile?] >=dev-haskell/semigroupoids-3.0.2:=[profile?] <dev-haskell/semigroupoids-4:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/9999
-_eclasses_=eutils	43da5163ba106e87d22d2e7d6d67537f	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	git-2	1bb87192831f668cd20d93ffb1689c94	haskell-cabal	e30d4883bce242bb5c2a1f77eef24dd6	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	43da5163ba106e87d22d2e7d6d67537f	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	git-2	32530738ee006bc09e1ac93f6e73d719	haskell-cabal	e30d4883bce242bb5c2a1f77eef24dd6	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=ef8ed2c17e9aca0bcf64ae83975a2067
