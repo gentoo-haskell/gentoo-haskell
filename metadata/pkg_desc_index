@@ -30,7 +30,7 @@ dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0: An embedded language for acce
 dev-haskell/accelerate-cuda 0.15.0.0: Accelerate backend for NVIDIA GPUs
 dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
-dev-haskell/acid-state 0.12.4: Add ACID guarantees to any serializable Haskell data structure
+dev-haskell/acid-state 0.13.0: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.6: Abstractions for animation
 dev-haskell/ad 4.2.4: Automatic Differentiation
@@ -105,7 +105,7 @@ dev-haskell/binary-search 0.1: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.2-r1: Binary deserialisation using strict ByteStrings
-dev-haskell/binary-tagged 0.1.2.0: Tagged binary serialisation
+dev-haskell/binary-tagged 0.1.3.0: Tagged binary serialisation
 dev-haskell/bindings-bfd 1.2.0.0: Bindings for libbfd, a library of the GNU binutils
 dev-haskell/bindings-dsl 1.0.23: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 0.1.0 3.0.3.3 3.1.1.4: Low-level bindings to GLFW OpenGL library
@@ -457,7 +457,7 @@ dev-haskell/gconf 0.13.0.2: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.8.0: Generic programming library for generalised deriving
-dev-haskell/generics-sop 0.1.1.2-r1: Generic Programming using True Sums of Products
+dev-haskell/generics-sop 0.2.0.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.1: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
@@ -839,7 +839,7 @@ dev-haskell/manatee-reader 0.1.1: Feed reader extension for Manatee
 dev-haskell/manatee-terminal 0.1.1: Terminal Emulator extension for Manatee
 dev-haskell/map-syntax 0.2: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.13.2: Convert Markdown to HTML, with XSS protection
-dev-haskell/markdown-unlit 0.2.0.1: Literate Haskell support for Markdown
+dev-haskell/markdown-unlit 0.3.1: Literate Haskell support for Markdown
 dev-haskell/math-functions 0.1.5.2: Special functions and Chebyshev polynomials
 dev-haskell/matrix 0.3.4.4: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
