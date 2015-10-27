@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
+RESTRICT=test # needs nodejs, npm and stuff
+
+RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
 	>=dev-haskell/bower-json-0.7:=[profile?]
@@ -27,16 +29,19 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.8:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/language-javascript-0.5:=[profile?] <dev-haskell/language-javascript-0.6:=[profile?]
+	>=dev-haskell/lifted-base-0.2.3:=[profile?] <dev-haskell/lifted-base-0.2.4:=[profile?]
+	>=dev-haskell/monad-control-1.0.0.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?] <dev-haskell/mtl-2.3.0:=[profile?]
 	>=dev-haskell/optparse-applicative-0.10.0:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	>=dev-haskell/pattern-arrows-0.0.2:=[profile?] <dev-haskell/pattern-arrows-0.1:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?] <dev-haskell/safe-0.4:=[profile?]
-	>=dev-haskell/semigroups-0.16.2:=[profile?] <dev-haskell/semigroups-0.17:=[profile?]
+	>=dev-haskell/semigroups-0.16.2:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/transformers-0.3.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-base-0.4.0:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3.0:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/utf8-string-1:=[profile?] <dev-haskell/utf8-string-2:=[profile?]
@@ -47,8 +52,3 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'aeson >= 0.8 && < 0.10' 'aeson >= 0.8'
-}
