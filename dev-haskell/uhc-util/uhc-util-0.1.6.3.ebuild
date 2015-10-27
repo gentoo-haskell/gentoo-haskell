@@ -26,8 +26,8 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/syb-0.3.6:=[profile?]
 	>=dev-haskell/time-compat-0.1.0.1:=[profile?]
 	>=dev-haskell/uulib-0.9.19:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.22.2.0
 "
