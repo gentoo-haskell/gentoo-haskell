@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-haskell/uhc-util-0.1.6.2:=[profile?] <dev-haskell/uhc-util-0.1.7:=[profile?]
+	>=dev-haskell/uhc-util-0.1.6.3:=[profile?] <dev-haskell/uhc-util-0.1.7:=[profile?]
 	>=dev-haskell/uulib-0.9.19:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
