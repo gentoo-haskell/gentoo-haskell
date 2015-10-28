@@ -869,7 +869,7 @@ dev-haskell/mockery 0.3.2: Support functions for automated testing
 dev-haskell/monad-control 1.0.0.4: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.1: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.14: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.15: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
@@ -976,7 +976,7 @@ dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
-dev-haskell/path-pieces 0.2.0: Components of paths
+dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
 dev-haskell/pathtype 0.5.5: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
@@ -1089,6 +1089,7 @@ dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web 
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2: Generalized bananas, lenses and barbed wire
 dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
+dev-haskell/refact 0.3.0.1: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
