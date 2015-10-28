@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides a datatype which can be interpreted by apply-refact. It exists
+		as a seperate library so that applications can specify refactorings without depending on GHC.
+	</longdescription>
+</pkgmetadata>
