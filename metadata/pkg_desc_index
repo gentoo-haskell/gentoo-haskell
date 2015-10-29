@@ -620,7 +620,7 @@ dev-haskell/hledger-lib 0.25.1 0.26: Core data types, parsers and utilities for 
 dev-haskell/hledger-web 0.25.1 0.26: A web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.14: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.21: Source code suggestions
+dev-haskell/hlint 1.9.22: Source code suggestions
 dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5: Numeric Linear Algebra
