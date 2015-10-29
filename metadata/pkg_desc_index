@@ -179,7 +179,7 @@ dev-haskell/cgi 3001.1.8.5 3001.2.2.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.4: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1 1.5.1-r1: Cairo backend for Charts
+dev-haskell/chart-cairo 1.4-r1 1.5.4: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.0.13: For testing partial and infinite values
@@ -1355,7 +1355,7 @@ dev-haskell/unlambda 0.1.4.1: Unlambda interpreter
 dev-haskell/unordered-containers 0.2.5.1 9999: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.3: Library for working with URIs
-dev-haskell/uri-bytestring 0.1.9: Haskell URI parsing as ByteStrings
+dev-haskell/uri-bytestring 0.1.9.1: Haskell URI parsing as ByteStrings
 dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
