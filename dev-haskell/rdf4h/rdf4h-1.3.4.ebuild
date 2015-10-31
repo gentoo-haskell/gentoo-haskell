@@ -40,6 +40,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.2.2.1
 		dev-haskell/knob
 		>=dev-haskell/quickcheck-1.2.0.0
+		dev-haskell/safe
 		>=dev-haskell/test-framework-0.2.3
 		>=dev-haskell/test-framework-hunit-0.2.7
 		dev-haskell/test-framework-quickcheck2 )
