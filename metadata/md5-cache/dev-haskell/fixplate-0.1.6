@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-lang/ghc-7.4.1:= withquickcheck? ( >dev-haskell/quickcheck-2.4:2=[profile?] ) >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Uniplate-style generic traversals for optionally annotated fixed-point types
+EAPI=5
+HOMEPAGE=http://code.haskell.org/~bkomuves/
+IUSE=withquickcheck +withutils doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-lang/ghc-7.4.1:= withquickcheck? ( >dev-haskell/quickcheck-2.4:2=[profile?] )
+SLOT=0/0.1.6
+SRC_URI=mirror://hackage/packages/archive/fixplate/0.1.6/fixplate-0.1.6.tar.gz
+_eclasses_=eutils	43da5163ba106e87d22d2e7d6d67537f	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e30d4883bce242bb5c2a1f77eef24dd6	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=375d2cb8e219a2bed3760e6ab7bde377
