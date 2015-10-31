@@ -27,11 +27,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-src_prepare() {
-	cabal_chdeps \
-		'executable tagsoup' 'executable haskell-tagsoup'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag download download) \
