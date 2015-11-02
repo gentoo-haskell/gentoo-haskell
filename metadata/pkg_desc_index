@@ -1404,7 +1404,7 @@ dev-haskell/wai-handler-launch 3.0.0.4: Launch a web app in the default browser
 dev-haskell/wai-logger 2.2.4.1: A logging system for WAI
 dev-haskell/wai-logger-prefork 0.3.0: A logging system for preforked WAI apps
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
-dev-haskell/warp 3.0.13.1 3.1.7: A fast, light-weight web server for WAI applications
+dev-haskell/warp 3.0.13.1 3.1.8: A fast, light-weight web server for WAI applications
 dev-haskell/warp-tls 3.0.4.2 3.1.4: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.1.3: WAVE audio file IO library
