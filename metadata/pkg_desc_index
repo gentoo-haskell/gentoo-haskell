@@ -700,7 +700,7 @@ dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 1.1.0: HTTP/2.0 library including frames and HPACK
+dev-haskell/http2 1.1.0 1.2.0: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.2.5.2-r1 1.3.0.0: A unit testing framework for Haskell
@@ -1273,7 +1273,7 @@ dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.0.3: Portable temporary file and directory support for Windows and Unix, based on code from Cabal
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix, based on code from Cabal
 dev-haskell/tensor 1.0.0.1: Tensor data types
-dev-haskell/terminal-size 0.3.2: Get terminal window height and width
+dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
 dev-haskell/terminfo 0.4.0.1: Haskell bindings to the terminfo library
 dev-haskell/test-framework 0.5 0.6 0.6.1 0.8.0.3 0.8.1.0 0.8.1.1: Framework for running and organising tests, with HUnit and QuickCheck support
 dev-haskell/test-framework-hunit 0.3.0.2: HUnit support for the test-framework package
@@ -1294,14 +1294,14 @@ dev-haskell/text-show 2.1.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
-dev-haskell/th-desugar 1.5.4.1: Functions to desugar Template Haskell
+dev-haskell/th-desugar 1.5.5: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.3.0.6: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.2: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.2: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-orphans 0.12.2: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.3: Recurseively reify template haskell datatype info
 dev-haskell/threads 0.5.1.3: Fork threads and wait for their result
-dev-haskell/threepenny-gui 0.6.0.3-r1: GUI framework that uses the web browser as a display
+dev-haskell/threepenny-gui 0.6.0.4: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 0.6: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
