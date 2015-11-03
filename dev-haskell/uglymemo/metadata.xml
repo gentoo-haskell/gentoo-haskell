@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		A simple (but internally ugly) memoization function.
+		
+		* New in 0.1.0.1: Make it exception safe.
+	</longdescription>
+</pkgmetadata>
