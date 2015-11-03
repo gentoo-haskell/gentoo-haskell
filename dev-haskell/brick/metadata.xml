@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="demos">Build demonstration programs.</flag>
+	</use>
+	<longdescription>
+		Write terminal applications painlessly with &#39;brick&#39;! You write an
+		event handler and a drawing function and the library does the rest.
+		
+		
+		&gt; module Main where
+		&gt;
+		&gt; import Brick
+		&gt;
+		&gt; ui :: Widget
+		&gt; ui = str &quot;Hello, world!&quot;
+		&gt;
+		&gt; main :: IO ()
+		&gt; main = simpleMain ui
+		
+		
+		To get started, see:
+		
+		* &lt;https://github.com/jtdaugherty/brick/blob/master/README.md The README&gt;
+		
+		* The &lt;https://github.com/jtdaugherty/brick/blob/master/docs/guide.rst Brick user guide&gt;
+		
+		* The demonstration programs in the &#39;programs&#39; directory
+		
+		
+		This package deprecates &lt;http://hackage.haskell.org/package/vty-ui vty-ui&gt;.
+	</longdescription>
+</pkgmetadata>
