@@ -96,7 +96,7 @@ dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 4.2.1 5: Bifunctors
 dev-haskell/bimap 0.3.1: Bidirectional mapping between two key types
-dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0: Binary serialisation for Haskell values using lazy ByteStrings
+dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0 0.7.6.1: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
@@ -462,7 +462,7 @@ dev-haskell/generics-sop 0.2.0.0: Generic Programming using True Sums of Product
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.1: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
-dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1: The Glasgow Haskell Compiler API (ghc package)
+dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1 7.10.3_rc1: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0: Library and tool for parsing .eventlog files from GHC
@@ -631,7 +631,7 @@ dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.4.8-r1: Haskell OAuth2 authentication
 dev-haskell/hood 0.2.1: Debugging by observing in place
 dev-haskell/hoogle 4.2.36 4.2.42: Haskell API Search
-dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0: A library to support dataflow analysis and optimization
+dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.4: Generates ctags for Haskell, incorporating import lists and qualified imports
@@ -784,7 +784,7 @@ dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell p
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.10: Haskell binding for C LDAP API
 dev-haskell/lens 4.11 4.12.3 4.13 9999: Lenses, Folds and Traversals
-dev-haskell/lens-action 0.2.0.1: Monadic Getters and Folds
+dev-haskell/lens-action 0.2.0.2: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.0.0.5: Law-abiding lenses for aeson
 dev-haskell/lens-family-core 1.2.0: Haskell 98 Lens Families
 dev-haskell/lenses 0.1.7: Simple Functional Lenses
@@ -986,7 +986,7 @@ dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
 dev-haskell/pcg-random 0.1.3.2: Haskell bindings to the PCG random number generator
 dev-haskell/pcre-heavy 1.0.0.1: A regexp library on top of pcre-light you can actually use
-dev-haskell/pcre-light 0.4.0.3: A small, efficient and portable regex library for Perl 5 compatible regular expressions
+dev-haskell/pcre-light 0.4.0.4: Portable regex library for Perl 5 compatible regular expressions
 dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
@@ -1251,7 +1251,7 @@ dev-haskell/system-time-monotonic 0.2: Simple library for using the system's mon
 dev-haskell/tables 0.4.1.1: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
-dev-haskell/tagged 0.8.1: Haskell 98 phantom types to avoid unsafely passing dummy arguments
+dev-haskell/tagged 0.8.2: Haskell 98 phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagged-transformer 0.8: Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagshare 0.0: TagShare - explicit sharing with tags
 dev-haskell/tagsoup 0.13.5: Parsing and extracting information from (possibly malformed) HTML/XML documents
@@ -1509,7 +1509,7 @@ dev-lang/elm 0.13.9999: The Elm language module
 dev-lang/elm-get 0.1.3: Tool for sharing and using Elm libraries
 dev-lang/elm-repl 0.3: a REPL for Elm
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
-dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 9999: The Glasgow Haskell Compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
