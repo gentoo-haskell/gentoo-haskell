@@ -30,6 +30,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-c2hs-0.26.2.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag example-client example-client) \
