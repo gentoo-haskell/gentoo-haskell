@@ -22,6 +22,8 @@ SLOT="2/${PV}"
 KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~amd64-linux"
 IUSE="+template_haskell"
 
+RESTRICT=test # to avoid test circular depends
+
 RDEPEND="dev-haskell/random:=[profile?]
 	>=dev-haskell/tf-random-0.4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
