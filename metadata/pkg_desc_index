@@ -136,7 +136,7 @@ dev-haskell/bound 1.0.6: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 0.7.0.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
-dev-haskell/brick 0.2.1: A declarative terminal user interface library
+dev-haskell/brick 0.2.2: A declarative terminal user interface library
 dev-haskell/bson 0.3.1: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/buildwrapper 0.7.7: A library and an executable that provide an easy API for a Haskell IDE
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
@@ -935,7 +935,7 @@ dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
 dev-haskell/network-simple 0.4.0.4: Simple network sockets usage patterns
 dev-haskell/network-socket-options 0.2.0.1: Type-safe, portable alternative to getSocketOption/setSocketOption
 dev-haskell/network-transport 0.3.0.1-r2 0.4.2.0: Network abstraction layer
-dev-haskell/network-transport-inmemory 0.5.0: In-memory instantiation of Network.Transport
+dev-haskell/network-transport-inmemory 0.5.1: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.4.2: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.2.0: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0 2.6.0.3: URI manipulation
@@ -1079,7 +1079,7 @@ dev-haskell/ranges 0.2.4: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.2.0.0 0.2.0.1 0.2.0.1-r1 0.3.1.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.6.1: A pure haskell drawing engine
 dev-haskell/raw-strings-qq 1.0.2: Raw string literals for Haskell
-dev-haskell/rdf4h 1.3.4: A library for RDF processing in Haskell
+dev-haskell/rdf4h 1.3.5: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
 dev-haskell/re2 0.1: Bindings to the re2 regular expression library
 dev-haskell/reactive-banana 0.8.1.2 0.9.0.0: Library for functional reactive programming (FRP)
@@ -1142,7 +1142,7 @@ dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
 dev-haskell/sdl 0.6.5.1: Binding to libSDL
 dev-haskell/sdl-gfx 0.6.0.1: Binding to libSDL_gfx
 dev-haskell/sdl-image 0.6.1.1: Binding to libSDL_image
-dev-haskell/sdl-mixer 0.6.1.1: Binding to libSDL_mixer
+dev-haskell/sdl-mixer 0.6.2.0: Binding to libSDL_mixer
 dev-haskell/sdl-ttf 0.6.2.1: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
@@ -1518,7 +1518,7 @@ dev-lang/idris 0.9.19.1-r1 9999: Functional Programming Language with Dependent 
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.7.5.2: PureScript Programming Language Compiler
+dev-lang/purescript 0.7.5.4: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
@@ -1534,7 +1534,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.8.5-r4 2.10.0-r1 2.10.1-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 5.20151019: manage files with git, without checking their contents into git
+dev-vcs/git-annex 5.20151102.1: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
