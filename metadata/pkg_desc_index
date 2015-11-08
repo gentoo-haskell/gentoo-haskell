@@ -1325,7 +1325,7 @@ dev-haskell/transformers-compat 0.4.0.4: A small compatibility shim for dev-hask
 dev-haskell/transformers-lift 0.1.0.0: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
 dev-haskell/trifecta 1.5.2: A modern parser combinator library with convenient diagnostics
-dev-haskell/ttrie 0.1.2: Contention-free STM hash map
+dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
 dev-haskell/turtle 1.1.1 1.2.2: Shell programming, Haskell-style
