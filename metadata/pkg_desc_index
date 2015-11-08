@@ -653,7 +653,7 @@ dev-haskell/hsdns 1.6 1.6.1: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
-dev-haskell/hsimport 0.6.6: A command line program for extending the import list of a Haskell source file
+dev-haskell/hsimport 0.6.7: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.9: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
@@ -891,7 +891,7 @@ dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
-dev-haskell/mongodb 2.0.8: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
+dev-haskell/mongodb 2.0.9: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.9.3: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.2: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.1.2: Subclasses of Monoid
