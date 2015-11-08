@@ -21,7 +21,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/binary:=[profile?]
+RDEPEND=">=dev-haskell/base16-bytestring-0.1.1.6:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
+	dev-haskell/binary:=[profile?]
 	>=dev-haskell/bson-0.3:=[profile?] <dev-haskell/bson-0.4:=[profile?]
 	dev-haskell/cryptohash:=[profile?]
 	>=dev-haskell/hashtables-1.1.2.0:=[profile?]
@@ -29,6 +31,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 	>=dev-haskell/monad-control-0.3.1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	dev-haskell/network:=[profile?]
+	>=dev-haskell/nonce-1.0.2:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/random-shuffle:=[profile?]
