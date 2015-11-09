@@ -573,7 +573,7 @@ dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r1: HaskellDB support for the HDBC P
 dev-haskell/haskelldb-hdbc-sqlite3 2.1.2: HaskellDB support for the HDBC SQLite driver
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.4.5: Client support for POP3, SMTP, and IMAP
-dev-haskell/haskellnet-ssl 0.3.1.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
+dev-haskell/haskellnet-ssl 0.3.2.1: Helpers to connect to SSL/TLS mail servers with HaskellNet
 dev-haskell/hasktags 0.69.1: Produces ctags "tags" and etags "TAGS" files for Haskell programs
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
@@ -1328,7 +1328,7 @@ dev-haskell/trifecta 1.5.2: A modern parser combinator library with convenient d
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.1.1 1.2.2: Shell programming, Haskell-style
+dev-haskell/turtle 1.1.1 1.2.3: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
