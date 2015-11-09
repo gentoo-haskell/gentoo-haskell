@@ -32,7 +32,7 @@ dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.13.1: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
-dev-haskell/active 0.2.0.6: Abstractions for animation
+dev-haskell/active 0.2.0.7: Abstractions for animation
 dev-haskell/ad 4.2.4: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
@@ -1001,7 +1001,7 @@ dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqli
 dev-haskell/persistent-template 2.1.4: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
-dev-haskell/pipes 4.1.6: Compositional pipelines
+dev-haskell/pipes 4.1.7: Compositional pipelines
 dev-haskell/pipes-binary 0.4.0.5: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.1: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0: Encode and decode binary streams using the pipes and cereal libraries
