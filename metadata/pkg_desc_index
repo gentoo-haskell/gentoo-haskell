@@ -792,6 +792,7 @@ dev-haskell/lhs2tex 1.16 1.17 1.18.1-r1 1.19: Preprocessor for typesetting Haske
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.5.1: Lastfm API interface
 dev-haskell/libmpd 0.9.0.4: An MPD client library
+dev-haskell/libnotify 0.1.1.0: Bindings to libnotify library
 dev-haskell/libssh2 0.2.0.3: FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)
 dev-haskell/libssh2-conduit 9999: Conduit wrappers for libssh2 FFI bindings (see libssh2 package)
 dev-haskell/libtagc 0.12.0-r1: Binding to TagLib C library
