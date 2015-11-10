@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		The package provides a high level interface to libnotify API (see &quot;Libnotify&quot;)
+		
+		&quot;Libnotify.C.Notify&quot; and &quot;Libnotify.C.NotifyNotification&quot; modules contain
+		bindings to C-level functions if you&#39;re into that
+	</longdescription>
+</pkgmetadata>
