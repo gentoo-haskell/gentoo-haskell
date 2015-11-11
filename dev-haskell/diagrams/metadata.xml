@@ -9,7 +9,7 @@
 		diagrams-lib, and diagrams-cairo packages.
 	</longdescription>
 	<use>
-		<flag name="ps">Enable the Haskell-native PostScript backend.</flag>
+		<flag name="postscript">Enable the Haskell-native PostScript backend.</flag>
 		<flag name="canvas">Enable canvas backend.</flag>
 		<flag name="rasterific">Enable rasterific backend.</flag>
 	</use>
