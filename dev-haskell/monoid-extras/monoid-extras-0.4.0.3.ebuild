@@ -9,8 +9,8 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Rose trees with cached and accumulating monoidal annotations"
-HOMEPAGE="http://hackage.haskell.org/package/dual-tree"
+DESCRIPTION="Various extra monoid-related definitions and utilities"
+HOMEPAGE="http://hackage.haskell.org/package/monoid-extras"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/monoid-extras-0.2:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
-	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
-	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
+RDEPEND="<dev-haskell/groups-0.5:=[profile?]
+	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
+	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
