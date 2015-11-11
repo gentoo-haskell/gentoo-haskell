@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/monoid-extras-0.2:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
-	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
+	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
