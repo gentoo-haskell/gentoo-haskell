@@ -198,9 +198,9 @@ dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.4: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
-dev-haskell/classy-prelude 0.12.4: A typeclass-based Prelude
-dev-haskell/classy-prelude-conduit 0.12.4: conduit instances for classy-prelude
-dev-haskell/classy-prelude-yesod 0.12.4: Provide a classy prelude including common Yesod functionality
+dev-haskell/classy-prelude 0.12.4 0.12.5: A typeclass-based Prelude
+dev-haskell/classy-prelude-conduit 0.12.4 0.12.5: conduit instances for classy-prelude
+dev-haskell/classy-prelude-yesod 0.12.4 0.12.5: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.10 0.10.1: CSS preprocessor as embedded Haskell
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.1: Securely store session data in a client-side cookie
@@ -893,7 +893,7 @@ dev-haskell/monadrandom 0.4: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
 dev-haskell/mongodb 2.0.9: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
-dev-haskell/mono-traversable 0.9.3: Type classes for mapping, folding, and traversing monomorphic containers
+dev-haskell/mono-traversable 0.9.3 0.10.0: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.3: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.1.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
@@ -1481,7 +1481,7 @@ dev-haskell/yesod-form 1.4.5: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.10.0: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.5: Helper functions and data types for producing News feeds
-dev-haskell/yesod-paginator 0.9.1: A pagination approach for yesod
+dev-haskell/yesod-paginator 0.10.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.4.0.3: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-platform 1.2.13.3: Meta package for Yesod (deprecated)
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod

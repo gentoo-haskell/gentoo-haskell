@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/persistent-2.0:=[profile?] >=dev-haskell/resourcet-0.4.4:=[profile?] >=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?] dev-haskell/transformers:=[profile?] >=dev-haskell/yesod-1.4:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A pagination approach for yesod
+EAPI=5
+HOMEPAGE=https://github.com/pbrisbin/yesod-paginator
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/persistent-2.0:=[profile?] >=dev-haskell/resourcet-0.4.4:=[profile?] >=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?] dev-haskell/transformers:=[profile?] >=dev-haskell/yesod-1.4:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.10.0
+SRC_URI=mirror://hackage/packages/archive/yesod-paginator/0.10.0/yesod-paginator-0.10.0.tar.gz
+_eclasses_=eutils	8644194de7be04932084752fb1327080	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=a19ac7bee86b677d8cf92c12b60b88a2
