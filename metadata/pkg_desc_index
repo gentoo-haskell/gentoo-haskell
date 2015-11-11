@@ -323,6 +323,7 @@ dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagra
 dev-haskell/diagrams-core 1.3.0.4: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.3.0.8: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
@@ -1288,6 +1289,7 @@ dev-haskell/test-framework-th-prime 0.0.8: Template Haskell for test framework
 dev-haskell/testing-feat 0.4.0.2: Functional Enumeration of Algebraic Types
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
 dev-haskell/texmath 0.8.4: Conversion between formats used to represent mathematics
+dev-haskell/texrunner 0.0.1.0: Functions for running Tex from Haskell
 dev-haskell/text 1.2.1.3: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting

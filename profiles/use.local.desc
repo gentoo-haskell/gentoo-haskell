@@ -91,7 +91,7 @@ dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extensi
 dev-haskell/data-reify:tests - Build test binaries.
 dev-haskell/dav:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/diagrams:canvas - Enable canvas backend.
-dev-haskell/diagrams:ps - Enable the Haskell-native PostScript backend.
+dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend.
 dev-haskell/diagrams:rasterific - Enable rasterific backend.
 dev-haskell/diagrams-builder:ps - Enable postscript backend
 dev-haskell/diagrams-builder:rasterific - Enable rasterific backend
