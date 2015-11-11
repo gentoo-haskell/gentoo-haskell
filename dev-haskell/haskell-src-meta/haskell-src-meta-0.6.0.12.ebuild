@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.7:=[profile?]
-	>=dev-haskell/th-orphans-0.9.1:=[profile?] <dev-haskell/th-orphans-0.13:=[profile?]
+	>=dev-haskell/th-orphans-0.9.1:=[profile?] <dev-haskell/th-orphans-0.14:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
