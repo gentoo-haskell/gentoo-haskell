@@ -32,13 +32,13 @@ dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.13.1: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
-dev-haskell/active 0.2.0.7: Abstractions for animation
-dev-haskell/ad 4.2.4: Automatic Differentiation
+dev-haskell/active 0.2.0.8: Abstractions for animation
+dev-haskell/ad 4.3.1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.10.0.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
-dev-haskell/aeson-extra 0.2.1.0: Extra goodies for aeson
+dev-haskell/aeson-extra 0.2.2.0: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
@@ -319,14 +319,14 @@ dev-haskell/diagrams 1.3: Embedded domain-specific language for declarative vect
 dev-haskell/diagrams-builder 0.7.2.0: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.2-r1: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.3.0.7: Collection of user contributions to diagrams EDSL
-dev-haskell/diagrams-core 1.3.0.3: Core libraries for diagrams EDSL
+dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-core 1.3.0.4: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3: Backend for rendering diagrams directly to GTK windows
-dev-haskell/diagrams-lib 1.3.0.7: Embedded domain-specific language for declarative graphics
-dev-haskell/diagrams-postscript 1.3.0.3: Postscript backend for diagrams drawing EDSL
+dev-haskell/diagrams-lib 1.3.0.8: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.6: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.7: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -1400,7 +1400,7 @@ dev-haskell/vty 5.2.11 5.4.0: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.4.0: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.0.8: File/CGI/Rev Proxy App of WAI
-dev-haskell/wai-app-static 3.0.1.1 3.1.1: WAI application for static serving
+dev-haskell/wai-app-static 3.0.1.1 3.1.2: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.2: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
 dev-haskell/wai-extra 3.0.12: Provides some basic WAI handlers and middleware
