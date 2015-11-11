@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.14:=[profile?]
 	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
-	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
+	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "

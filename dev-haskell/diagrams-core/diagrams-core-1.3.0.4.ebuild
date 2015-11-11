@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:
 	>=dev-haskell/linear-1.11.3:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
+	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.2.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
