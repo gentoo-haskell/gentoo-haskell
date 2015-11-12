@@ -337,7 +337,7 @@ dev-haskell/digestive-functors-blaze 0.6.0.6: Blaze frontend for the digestive-f
 dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
-dev-haskell/dimensional 0.13.0.2: Statically checked physical dimensions
+dev-haskell/dimensional 1.0.0.0: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
 dev-haskell/direct-sqlite 2.3.16: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
@@ -398,6 +398,7 @@ dev-haskell/esqueleto 2.4.1: Type-safe EDSL for SQL queries on persistent backen
 dev-haskell/ether 0.3.1.1: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.2: Event lists with relative or absolute time stamps
+dev-haskell/exact-pi 0.4.0.0: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
 dev-haskell/exception-transformers 0.3.0.4 0.4.0.2: Type classes and monads for unchecked extensible exceptions
 dev-haskell/exceptions 0.6.1 0.8.0.2: Extensible optionally-pure exceptions
@@ -953,6 +954,7 @@ dev-haskell/numeric-prelude 0.4.2: An experimental alternative hierarchy of nume
 dev-haskell/numeric-quest 0.2.0.1: Math and quantum mechanics
 dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tuples
 dev-haskell/numtype 1.0-r1 1.0.1 1.1: Type-level (low cardinality) integers
+dev-haskell/numtype-dk 0.5: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.0.1.1 1.1.0.0: Explicitly handled object names
 dev-haskell/oeis 0.3.6: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
