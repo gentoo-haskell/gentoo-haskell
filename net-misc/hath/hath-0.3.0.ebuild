@@ -13,7 +13,7 @@ DESCRIPTION="Hath manipulates network blocks in CIDR notation"
 HOMEPAGE="http://hackage.haskell.org/package/hath"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="GPL-3"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -22,9 +22,7 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	>=dev-haskell/cmdargs-0.10
-	>=dev-haskell/dns-1.2
 	>=dev-haskell/missingh-1.2
-	>=dev-haskell/parallel-io-0.3
 	>=dev-haskell/split-0.2
 	>=dev-haskell/tasty-0.8
 	>=dev-haskell/tasty-hunit-0.8
@@ -32,11 +30,6 @@ DEPEND="${RDEPEND}
 	>=dev-lang/ghc-7.6.1
 	test? ( dev-util/shelltestrunner )
 "
-
-# Run only the non-network tests.
-src_test() {
-	haskell-cabal_src_test testsuite shelltests
-}
 
 src_install() {
 	cabal_src_install
