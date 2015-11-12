@@ -5,7 +5,7 @@ app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collectio
 app-editors/yi 0.11.1-r1 0.12.2: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
-app-emacs/hindent 4.5.4 9999: Extensible Haskell pretty printer
+app-emacs/hindent 4.5.5 9999: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-emacs/structured-haskell-mode 1.0.20 9999: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
@@ -985,7 +985,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.2: Path
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.5.5: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.6: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
