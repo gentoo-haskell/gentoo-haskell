@@ -688,7 +688,7 @@ dev-haskell/hsx2hs 0.13.3.2: HSX (Haskell Source with XML) allows literal XML sy
 dev-haskell/hsyslog 1.6 2.0: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
-dev-haskell/html-conduit 1.2.0: Parse HTML documents using xml-conduit datatypes
+dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.20-r1: A library for client-side HTTP
