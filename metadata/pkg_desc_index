@@ -436,6 +436,7 @@ dev-haskell/filestore 0.6.0.6 0.6.1: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.1.0: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.8.0: Finite Fields
+dev-haskell/fixed 0.2.1.1: Signed 15.16 precision fixed point arithmetic
 dev-haskell/fixed-vector 0.7.0.3 0.8.1.0: Generic vectors with statically known size
 dev-haskell/fixed-vector-hetero 0.3.1.0: Generic heterogeneous vectors
 dev-haskell/fixplate 0.1.6: Uniplate-style generic traversals for optionally annotated fixed-point types
@@ -485,6 +486,7 @@ dev-haskell/ghcjs-dom 0.1.1.3: DOM library that supports both GHCJS and WebKitGT
 dev-haskell/gio 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the GIO
 dev-haskell/github 0.13.2: Access to the Github API, v3
 dev-haskell/gitrev 1.1.0: Compile git revision info into Haskell projects
+dev-haskell/gl 0.7.7: Complete OpenGL raw bindings
 dev-haskell/glade 0.12.5.0-r2: Binding to the glade library
 dev-haskell/glfw 0.5.2.4: A Haskell binding for GLFW
 dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.7.3: Bindings to GLFW OpenGL library
