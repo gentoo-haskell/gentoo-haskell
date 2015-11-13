@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs vim"
 
+RESTRICT=test # fils own tests
+
 RDEPEND="dev-haskell/applicative-quoters:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/descriptive-0.7:=[profile?] <dev-haskell/descriptive-0.10:=[profile?]
