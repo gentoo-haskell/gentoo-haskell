@@ -8,6 +8,7 @@
 		for creating graphical user interfaces.
 	</longdescription>
 	<use>
+		<flag name="deprecated">Include definitions in this library that are considered obsolete.</flag>
 		<flag name="gio">Depend on GIO package, thereby enabling certain features.</flag>
 		<flag name="fmode-binary">Set the default file translation mode for file I/O operations to _O_BINARY.</flag>
 	</use>
