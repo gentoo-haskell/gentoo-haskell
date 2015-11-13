@@ -127,6 +127,7 @@ dev-haskell/gnuplot:buildexamples - Build test executables.
 dev-haskell/gnuplot:executepipe - Avoid a temporary script by running with runInteractiveProcess.
 dev-haskell/gnuplot:executeshell - Avoid a temporary script by calling via a UNIX shell and its piping syntax.
 dev-haskell/graphscc:use-maps - Use IntMap instead of mutable arrays.
+dev-haskell/gtk:deprecated - Include definitions in this library that are considered obsolete.
 dev-haskell/gtk:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY.
 dev-haskell/gtk:gio - Depend on GIO package, thereby enabling certain features.
 dev-haskell/gtk2hs-buildtools:closuresignals - Use the the GClosure-based signals implementation.
