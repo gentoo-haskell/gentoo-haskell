@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/pipes-4:=[profile?] <dev-haskell/pipes-5:=[profile?]
 	>=dev-haskell/pipes-bytestring-2:=[profile?] <dev-haskell/pipes-bytestring-3:=[profile?]
@@ -28,3 +28,8 @@ RDEPEND=">=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal >=0.4 && <0.5' 'cereal >=0.4'
+}
