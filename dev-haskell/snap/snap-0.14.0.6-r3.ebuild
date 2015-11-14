@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/comonad-1.1:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
 	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.4:=[profile?]
@@ -58,7 +58,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4 && < 0.10)' 'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4)' \
-		'lens                      >= 3.7.6    && < 4.13' 'lens                      >= 3.7.6'
+		'lens                      >= 3.7.6    && < 4.13' 'lens                      >= 3.7.6' \
+		'cereal                    >= 0.3      && < 0.5' 'cereal                    >= 0.3'
 }
 
 src_configure() {
