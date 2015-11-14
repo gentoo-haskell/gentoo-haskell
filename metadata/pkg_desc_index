@@ -136,7 +136,7 @@ dev-haskell/bound 1.0.6-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 0.7.0.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
-dev-haskell/brick 0.2.2: A declarative terminal user interface library
+dev-haskell/brick 0.2.3: A declarative terminal user interface library
 dev-haskell/bson 0.3.2: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/buildwrapper 0.7.7: A library and an executable that provide an easy API for a Haskell IDE
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
