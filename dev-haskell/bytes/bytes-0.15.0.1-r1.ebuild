@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+test-doctests"
 
 RDEPEND=">=dev-haskell/binary-0.5.1:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.3.5:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -32,6 +32,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( test-doctests? ( >=dev-haskell/doctest-0.9.1 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal                    >= 0.3.5    && < 0.5' 'cereal                    >= 0.3.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

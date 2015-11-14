@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+test-properties transformers2"
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/contravariant-1.3.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -40,7 +40,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-lens-4.13.patch
 
 	cabal_chdeps \
-		'profunctors          >= 4   && < 5' 'profunctors          >= 4'
+		'profunctors          >= 4   && < 5' 'profunctors          >= 4' \
+		'cereal               >= 0.3 && < 0.5' 'cereal               >= 0.3'
 }
 
 src_configure() {
