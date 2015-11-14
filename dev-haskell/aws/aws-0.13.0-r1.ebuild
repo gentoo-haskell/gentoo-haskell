@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/byteable-0.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
@@ -69,6 +69,11 @@ DEPEND="${RDEPEND}
 		!examples? ( >=dev-haskell/errors-2.0
 				>=dev-haskell/transformers-0.3 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
