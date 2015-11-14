@@ -37,6 +37,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-cereal-0.5.patch
+
 	cabal_chdeps \
 		'cereal >= 0.3.4 && < 0.5' 'cereal >= 0.3.4'
 }
