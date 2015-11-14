@@ -29,3 +29,7 @@ RDEPEND=">=dev-haskell/cereal-0.4.1.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.13.1-cereal-0.5.patch
+}
