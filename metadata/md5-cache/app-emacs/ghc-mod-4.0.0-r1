@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=|| ( ( <dev-lang/ghc-7.7 dev-haskell/convertible:=[profile?] ) ( >=dev-lang/ghc-7.7 ) ) >=dev-haskell/cabal-1.10:=[profile?] dev-haskell/convertible:=[profile?] dev-haskell/ghc-syb-utils:=[profile?] >=dev-haskell/hlint-1.8.58:=[profile?] dev-haskell/io-choice:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/transformers:=[profile?] >=dev-lang/ghc-6.12.1:=
 SLOT=0/4.0.0
 SRC_URI=mirror://hackage/packages/archive/ghc-mod/4.0.0/ghc-mod-4.0.0.tar.gz
-_eclasses_=base	9fc6743731ec1d8d8a5eb88ccd5944b6	elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	eutils	8644194de7be04932084752fb1327080	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	elisp-common	73c48c11ad6a6494eda0d0cca848c8fa	eutils	8644194de7be04932084752fb1327080	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=894d087454b01b9f155925fef6131169
