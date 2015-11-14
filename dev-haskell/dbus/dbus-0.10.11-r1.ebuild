@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.3.4:=[profile?]
 	>=dev-haskell/libxml-sax-0.7:=[profile?] <dev-haskell/libxml-sax-0.8:=[profile?]
 	>=dev-haskell/network-2.2.3:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -35,3 +35,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/chell-quickcheck-0.2 <dev-haskell/chell-quickcheck-0.3
 		>=dev-haskell/quickcheck-2.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal >= 0.3.4 && < 0.5' 'cereal >= 0.3.4'
+}
