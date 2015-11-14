@@ -22,7 +22,7 @@ IUSE="+template-haskell"
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/bytes-0.15:=[profile?] <dev-haskell/bytes-1:=[profile?]
-	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.4.1.1:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
@@ -45,6 +45,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal               >= 0.4.1.1 && < 0.5' 'cereal               >= 0.4.1.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
