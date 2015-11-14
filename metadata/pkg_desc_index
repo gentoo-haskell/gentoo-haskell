@@ -83,7 +83,7 @@ dev-haskell/authenticate-oauth 1.5.1.1-r1: Library to authenticate with OAuth fo
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.2.2: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.12.1 0.13.0: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.12.1 0.13.0-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.8.2: A compatibility layer for base
 dev-haskell/base-orphans 0.3.2 0.4.4: Backwards-compatible orphan instances for base
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
@@ -132,7 +132,7 @@ dev-haskell/bloodhound 0.9.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
-dev-haskell/bound 1.0.6: Making de Bruijn Succ Less
+dev-haskell/bound 1.0.6-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 0.7.0.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
@@ -143,7 +143,7 @@ dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
-dev-haskell/bytes 0.15.0.1: Sharing code for serialization between binary and cereal
+dev-haskell/bytes 0.15.0.1-r1: Sharing code for serialization between binary and cereal
 dev-haskell/bytestring-builder 0.10.6.0.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-handle 0.1.0.3: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
@@ -173,8 +173,8 @@ dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing e.g. the chances of data loss due to crashes
 dev-haskell/cc-delcont 0.2-r1: Delimited continuations and dynamically scoped variables
-dev-haskell/cereal 0.4.1.1: A binary serialization library
-dev-haskell/cereal-conduit 0.7.2.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
+dev-haskell/cereal 0.4.1.1 0.5.1.0: A binary serialization library
+dev-haskell/cereal-conduit 0.7.2.3-r1: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.1.8.5 3001.2.2.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
@@ -260,7 +260,7 @@ dev-haskell/crypto-api 0.12.2.2 0.13.2: A generic interface for cryptographic op
 dev-haskell/crypto-api-tests 0.3-r1: A test framework and KATs for cryptographic operations
 dev-haskell/crypto-cipher-tests 0.0.11-r1: Generic cryptography cipher tests
 dev-haskell/crypto-cipher-types 0.0.9: Generic cryptography cipher types
-dev-haskell/crypto-conduit 0.5.5: Conduit interface for cryptographic operations (from crypto-api)
+dev-haskell/crypto-conduit 0.5.5-r1: Conduit interface for cryptographic operations (from crypto-api)
 dev-haskell/crypto-numbers 0.1.3 0.2.7: Cryptographic numbers: functions and algorithms
 dev-haskell/crypto-pubkey 0.2.8: Public Key cryptography
 dev-haskell/crypto-pubkey-types 0.4.3: Generic cryptography Public keys algorithm types
@@ -306,7 +306,7 @@ dev-haskell/dataenc 0.14.0.7: Data encoding library
 dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
 dev-haskell/dav 1.2: RFC 4918 WebDAV support
-dev-haskell/dbus 0.10.11: A client library for the D-Bus IPC system
+dev-haskell/dbus 0.10.11-r1: A client library for the D-Bus IPC system
 dev-haskell/dbus-client 0.4.1: Monadic and object-oriented interfaces to DBus
 dev-haskell/dbus-core 0.8.5.4 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
@@ -420,7 +420,7 @@ dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
 dev-haskell/fay-text 0.3.2.2: Fay Text type represented as JavaScript strings
 dev-haskell/fay-uri 0.2.0.0: Persistent FFI bindings for using jsUri in Fay
-dev-haskell/fb 1.0.12: Bindings to Facebook's API
+dev-haskell/fb 1.0.12-r1: Bindings to Facebook's API
 dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
@@ -807,7 +807,7 @@ dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 0.10.2 0.11.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.7.0.1: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.6: lifted IO operations from the base library
-dev-haskell/linear 1.19.1.3 1.20.1 1.20.2: Linear Algebra
+dev-haskell/linear 1.19.1.3 1.20.1 1.20.2-r1: Linear Algebra
 dev-haskell/lio 0.11.5.0: Labeled IO Information Flow Control Library
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/listlike 4.2.1: Generic support for list-like structures
@@ -818,7 +818,7 @@ dev-haskell/llvm-general 3.3.12.1 3.4.3.1 3.4.4.0: General purpose LLVM bindings
 dev-haskell/llvm-general-pure 3.3.12.1 3.4.3.1 3.4.4.0: Pure Haskell LLVM functionality (no FFI)
 dev-haskell/loch 0.2-r1: Support for precise error locations in source files
 dev-haskell/lockfree-queue 0.2.3.1: Michael and Scott lock-free queues
-dev-haskell/log-domain 0.10.3: Log-domain arithmetic
+dev-haskell/log-domain 0.10.3-r1: Log-domain arithmetic
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
 dev-haskell/logging-facade 0.0.0 0.1.0: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
@@ -859,7 +859,7 @@ dev-haskell/memory 0.10: memory and related abstraction stuff
 dev-haskell/memotrie 0.5 0.6.2: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
-dev-haskell/messagepack 0.5.0: Serialize instance for Message Pack Object
+dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.1.5: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
@@ -1011,7 +1011,7 @@ dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.7: Compositional pipelines
 dev-haskell/pipes-binary 0.4.0.5: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.1: ByteString support for pipes
-dev-haskell/pipes-cereal 0.1.0.0: Encode and decode binary streams using the pipes and cereal libraries
+dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.3: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.3: Group streams into substreams
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
@@ -1183,11 +1183,11 @@ dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing va
 dev-haskell/simple-sendfile 0.2.21: Cross platform library for the sendfile system call
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1: A framework for generating singleton types
-dev-haskell/skein 1.0.9.3: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
+dev-haskell/skein 1.0.9.3-r1: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.7: A library for working with the SMTLIB format
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
-dev-haskell/snap 0.14.0.6-r2: Top-level package for the Snap Web Framework
+dev-haskell/snap 0.14.0.6-r3: Top-level package for the Snap Web Framework
 dev-haskell/snap-app 0.6.1 0.7.0: None
 dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.3: Snap: A Haskell Web Framework: dynamic loader
@@ -1255,7 +1255,7 @@ dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
-dev-haskell/tables 0.4.1.1: In-memory storage with multiple keys using lenses and traversals
+dev-haskell/tables 0.4.1.1-r1: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
 dev-haskell/tagged 0.8.2: Haskell 98 phantom types to avoid unsafely passing dummy arguments
