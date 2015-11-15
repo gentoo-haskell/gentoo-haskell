@@ -545,7 +545,7 @@ dev-haskell/hans 2.6.0.0: IPv4 Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
-dev-haskell/happstack-heist 7.2.3-r1 9999: Support for using Heist templates in Happstack
+dev-haskell/happstack-heist 7.2.4: Support for using Heist templates in Happstack
 dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
@@ -1154,7 +1154,7 @@ dev-haskell/sdl-ttf 0.6.2.1: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.0.4: Semigroupoids: Category sans id
-dev-haskell/semigroups 0.16.2.2: Anything that associates
+dev-haskell/semigroups 0.18.0.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
