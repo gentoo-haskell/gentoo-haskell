@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
 	>=dev-haskell/th-lift-0.7.1:=[profile?]
 	>=dev-haskell/th-reify-many-0.1:=[profile?] <dev-haskell/th-reify-many-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
