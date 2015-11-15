@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Elm aims to make client-side web-development pleasant. It is a
+		statically/strongly typed, functional reactive language that compiles to
+		HTML, CSS, and JS. This package provides a couple helpful values that are
+		intended for use in packages such as elm-package and elm-make.
+	</longdescription>
+</pkgmetadata>
