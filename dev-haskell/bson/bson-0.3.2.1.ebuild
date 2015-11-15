@@ -28,12 +28,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.4
+	test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'QuickCheck                 >= 2.4 && < 2.8' 'QuickCheck                 >= 2.4'
-}

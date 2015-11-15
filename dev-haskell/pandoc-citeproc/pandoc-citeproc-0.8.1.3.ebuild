@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils debug embed_data_files test_citeproc unicode_collation"
 
-RESTRICT=test # fd:8: hClose: resource vanished (Broken pipe)
+RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
 RDEPEND=">=app-text/pandoc-1.13:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
