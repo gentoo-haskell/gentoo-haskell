@@ -128,7 +128,7 @@ dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.4.1: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
-dev-haskell/bloodhound 0.9.0.0: ElasticSearch client library for Haskell
+dev-haskell/bloodhound 0.9.0.0-r1: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
