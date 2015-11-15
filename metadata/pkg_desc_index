@@ -482,7 +482,7 @@ dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell cod
 dev-haskell/ghci-ng 7.8.3 9999: Next generation GHCi
 dev-haskell/ghcid 0.5: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
-dev-haskell/ghcjs-dom 0.1.1.3: DOM library that supports both GHCJS and WebKitGTK
+dev-haskell/ghcjs-dom 0.1.1.3 0.2.3.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.12.5.0-r1 0.12.5.3 0.13.1.0 9999: Binding to the GIO
 dev-haskell/github 0.13.2: Access to the Github API, v3
 dev-haskell/gitrev 1.1.0: Compile git revision info into Haskell projects
@@ -526,7 +526,7 @@ dev-haskell/gtk 0.13.9: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r3: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.4 0.1.5: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.0.4-r3: Tools to build the Gtk2Hs suite of User Interface libraries
-dev-haskell/gtk3 0.13.7 0.13.9: Binding to the Gtk+ graphical user interface library
+dev-haskell/gtk3 0.13.7 0.13.9 0.14.1: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.12.5.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
 dev-haskell/gtksourceview2 0.13.1.3: Binding to the GtkSourceView library
@@ -1424,9 +1424,9 @@ dev-haskell/web-encodings 0.3.0.9-r1: Encapsulate multiple web encoding in a sin
 dev-haskell/web-plugins 0.2.8: dynamic plugin system for web applications
 dev-haskell/web-routes 0.27.9: Library for maintaining correctness and composability of URLs within an application
 dev-haskell/web-routes-happstack 0.23.9: Adds support for using web-routes with Happstack
-dev-haskell/webkit 0.13.1.3: Binding to the Webkit library
+dev-haskell/webkit 0.13.1.3 0.14.1.0: Binding to the Webkit library
 dev-haskell/webkit-javascriptcore 0.13.1.0: JavaScriptCore FFI from webkitgtk
-dev-haskell/webkitgtk3 0.13.1.3: Binding to the Webkit library
+dev-haskell/webkitgtk3 0.13.1.3 0.14.1.0: Binding to the Webkit library
 dev-haskell/webkitgtk3-javascriptcore 0.13.1.0: JavaScriptCore FFI from webkitgtk
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.6.1: A sensible and clean way to write WebSocket-capable servers in Haskell
