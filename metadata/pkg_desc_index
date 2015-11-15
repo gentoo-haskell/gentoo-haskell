@@ -1266,7 +1266,7 @@ dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parse
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
 dev-haskell/tar 0.4.2.2: Reading, writing and manipulating ".tar" archive files
-dev-haskell/tasty 0.10.1.2: Modern and extensible testing framework
+dev-haskell/tasty 0.10.1.2 0.11.0.1: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
 dev-haskell/tasty-golden 2.3.0.2: Golden tests support for tasty
 dev-haskell/tasty-hspec 1.1.2: Hspec support for the Tasty test framework
