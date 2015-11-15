@@ -328,7 +328,7 @@ dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.7: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.8: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -367,7 +367,7 @@ dev-haskell/dph-lifted-vseg 0.7.0.1: Data Parallel Haskell lifted array combinat
 dev-haskell/dph-prim-interface 0.7.0.1-r2: Data Parallel Haskell segmented arrays. (abstract interface)
 dev-haskell/dph-prim-par 0.7.0.1: Data Parallel Haskell segmented arrays. (production version)
 dev-haskell/dph-prim-seq 0.7.0.1: Data Parallel Haskell segmented arrays. (sequential implementation)
-dev-haskell/drbg 0.5.4: Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers
+dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers
 dev-haskell/drift 2.2.0 2.2.3 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3.1: Haskell Digital Signal Processing
 dev-haskell/dual-tree 0.2.0.8: Rose trees with cached and accumulating monoidal annotations
@@ -827,7 +827,7 @@ dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
 dev-haskell/ltk 0.14.3.0 0.15.0.4: Leksah tool kit
 dev-haskell/lucid 2.9.4: Clear to write, read and edit DSL for HTML
-dev-haskell/lucid-svg 0.5.0.0: DSL for SVG using lucid for HTML
+dev-haskell/lucid-svg 0.5.0.0 0.6.0.0: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
