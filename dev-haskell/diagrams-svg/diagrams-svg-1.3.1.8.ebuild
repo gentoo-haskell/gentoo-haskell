@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.14:=[profile?]
-	>=dev-haskell/lucid-svg-0.5:=[profile?] <dev-haskell/lucid-svg-0.6:=[profile?]
+	>=dev-haskell/lucid-svg-0.6:=[profile?] <dev-haskell/lucid-svg-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/old-time:=[profile?]
