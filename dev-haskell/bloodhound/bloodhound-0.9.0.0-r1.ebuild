@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11:=[profile?
 	>=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/mtl-compat:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-0.18:=[profile?]
+	>=dev-haskell/semigroups-0.15:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -46,5 +46,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8'
+		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8' \
+		'semigroups       >= 0.15    && <0.18' 'semigroups       >= 0.15'
 }
