@@ -66,7 +66,7 @@ RDEPEND=">=app-editors/leksah-server-0.15.0.6:=[profile?] <app-editors/leksah-se
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 	yi? ( >=app-editors/yi-0.11.2:=[profile?] <app-editors/yi-0.12:=[profile?]
-		>=dev-haskell/yi-language-0.1.0.8:=[profile?] <dev-haskell/yi-language-0.2:=[profile?]
+		>=dev-haskell/yi-language-0.1.0.8:=[profile?]
 		>=dev-haskell/yi-rope-0.7.0.0:=[profile?] <dev-haskell/yi-rope-0.8:=[profile?]
 		dyre? ( >=dev-haskell/dyre-0.8.3:=[profile?] <dev-haskell/dyre-0.9:=[profile?] ) )
 "
@@ -74,6 +74,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 	test? ( dev-haskell/monad-loops )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'yi-language >=0.1.0.8 && <0.2' 'yi-language >=0.1.0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
