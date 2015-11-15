@@ -69,7 +69,7 @@ RDEPEND=">=app-editors/leksah-server-0.14.3.0:=[profile?] <app-editors/leksah-se
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.2:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 	yi? ( >=app-editors/yi-0.11.1:=[profile?] <app-editors/yi-0.12:=[profile?]
-		>=dev-haskell/yi-language-0.1.0.8:=[profile?] <dev-haskell/yi-language-0.2:=[profile?]
+		>=dev-haskell/yi-language-0.1.0.8:=[profile?]
 		>=dev-haskell/yi-rope-0.7.0.0:=[profile?] <dev-haskell/yi-rope-0.8:=[profile?]
 		dyre? ( >=dev-haskell/dyre-0.8.3:=[profile?] <dev-haskell/dyre-0.9:=[profile?] ) )
 "
