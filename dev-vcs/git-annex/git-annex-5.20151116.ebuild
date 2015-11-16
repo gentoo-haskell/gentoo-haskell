@@ -17,7 +17,7 @@ RESTRICT="test"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="asciiprogress +assistant cryptonite +database +dbus +desktopnotify +dns doc ekg +feed +inotify +network-uri +pairing +quvi +s3 +tahoe +tdfa +torrentparser +webapp +webapp-secure +webdav +xmpp"
+IUSE="+assistant concurrentoutput cryptonite +database +dbus +desktopnotify +dns doc ekg +feed +inotify +network-uri +pairing +quvi +s3 +tahoe +tdfa +torrentparser +webapp +webapp-secure +webdav +xmpp"
 
 RDEPEND="dev-haskell/async:=
 	dev-haskell/bloomfilter:=
@@ -50,9 +50,8 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/utf8-string:=
 	dev-haskell/uuid:=
 	>=dev-lang/ghc-7.6.1:=
-	asciiprogress? ( dev-haskell/ascii-progress:=
-				dev-haskell/terminal-size:= )
 	assistant? ( inotify? ( dev-haskell/hinotify:= ) )
+	concurrentoutput? ( >=dev-haskell/concurrent-output-1.6:= )
 	cryptonite? ( dev-haskell/cryptonite:= )
 	!cryptonite? ( >=dev-haskell/cryptohash-0.11.0:= )
 	database? ( dev-haskell/esqueleto:=
@@ -72,8 +71,7 @@ RDEPEND="dev-haskell/async:=
 	quvi? ( dev-haskell/aeson:= )
 	s3? ( >=dev-haskell/aws-0.9.2:=
 		dev-haskell/conduit:=
-		dev-haskell/conduit-extra:=
-		dev-haskell/http-client:= )
+		dev-haskell/conduit-extra:= )
 	tahoe? ( dev-haskell/aeson:= )
 	tdfa? ( dev-haskell/regex-tdfa:= )
 	!tdfa? ( dev-haskell/regex-compat:= )
@@ -96,8 +94,7 @@ RDEPEND="dev-haskell/async:=
 					dev-haskell/securemem:=
 					>=dev-haskell/warp-tls-1.4:= )
 			!webapp-secure? ( dev-haskell/warp-tls:= ) )
-	webdav? ( >=dev-haskell/dav-1.0:=
-			dev-haskell/http-client:= )
+	webdav? ( >=dev-haskell/dav-1.0:= )
 	xmpp? ( >=dev-haskell/gnutls-0.1.4:=
 		dev-haskell/network-protocol-xmpp:=
 		dev-haskell/xml-types:= )
@@ -109,19 +106,16 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# does not respect staging dir
 	epatch "${FILESDIR}"/${PN}-5.20150731-no-strange-installs.patch
-
-	cabal_chdeps \
-		'ascii-progress (<= 0.2.1.2)' 'ascii-progress'
 }
 
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-android \
 		--flag=-androidsplice \
-		$(cabal_flag asciiprogress asciiprogress) \
 		$(cabal_flag assistant assistant) \
 		$(cabal_flag database database) \
 		$(cabal_flag cryptonite Cryptonite) \
+		$(cabal_flag concurrentoutput ConcurrentOutput) \
 		$(cabal_flag dbus dbus) \
 		$(cabal_flag desktopnotify desktopnotify) \
 		$(cabal_flag dns dns) \
@@ -141,10 +135,6 @@ src_configure() {
 		$(cabal_flag webapp-secure webapp-secure) \
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
-}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-dep.patch
 }
 
 src_compile() {
