@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?] >=dev-haskell/gtk3-0.13.0.0:=[profile?] <dev-haskell/gtk3-0.15:=[profile?] >=dev-haskell/webkitgtk3-0.13.0.0:=[profile?] <dev-haskell/webkitgtk3-0.15:=[profile?] >=dev-lang/ghc-7.4.1:= net-libs/webkit-gtk:3
 SLOT=0/0.13.1.0
 SRC_URI=mirror://hackage/packages/archive/webkitgtk3-javascriptcore/0.13.1.0/webkitgtk3-javascriptcore-0.13.1.0.tar.gz
-_eclasses_=eutils	8644194de7be04932084752fb1327080	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	df4e4d5cfd3d137d0c248e1991c0e4d6	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	f813d23e417656bf3917483643165d5a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=cf9a85c8420d5b478e5c3810e176bb59
