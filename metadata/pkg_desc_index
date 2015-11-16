@@ -1563,7 +1563,7 @@ net-mail/list-remote-forwards 0.0.1: List all remote forwards for mail accounts 
 net-mail/mailbox-count 0.0.2: Count mailboxes in a SQL database
 net-mail/mhailist 0.0: Haskell mailing list manager
 net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability checks on email addresses
-net-misc/haeredes 0.4.3: Confirm delegation of NS and MX records
+net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
 net-misc/hath 0.3.0: Hath manipulates network blocks in CIDR notation
 net-p2p/combinatorrent 9999: A concurrent bittorrent client
 sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
