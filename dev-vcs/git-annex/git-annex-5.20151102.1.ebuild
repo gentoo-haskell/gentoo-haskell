@@ -27,6 +27,7 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/edit-distance:=
 	>=dev-haskell/exceptions-0.6:=
 	dev-haskell/hslogger:=
+	dev-haskell/http-client:=
 	dev-haskell/http-conduit:=
 	dev-haskell/http-types:=
 	dev-haskell/ifelse:=
@@ -140,6 +141,10 @@ src_configure() {
 		$(cabal_flag webapp-secure webapp-secure) \
 		$(cabal_flag webdav webdav) \
 		$(cabal_flag xmpp xmpp)
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-dep.patch
 }
 
 src_compile() {
