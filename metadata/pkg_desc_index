@@ -16,7 +16,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.0.5-r2: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -225,7 +225,7 @@ dev-haskell/composition 1.0.2: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.9: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.0: Ungarble output from several threads
+dev-haskell/concurrent-output 1.7.1: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -680,7 +680,7 @@ dev-haskell/hsql-odbc 1.8.2: A Haskell Interface to ODBC
 dev-haskell/hsql-postgresql 1.8.2: A Haskell Interface to PostgreSQL via the PQ library
 dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
 dev-haskell/hsqml 0.2.0.3-r5 0.3.3.0: Haskell binding for Qt Quick
-dev-haskell/hsshellscript 3.3.3: Haskell for Unix shell scripting tasks
+dev-haskell/hsshellscript 3.3.4: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.3: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
