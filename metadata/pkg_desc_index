@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r1: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.9 9999: Rebuild Haskell dependencies in Gentoo
-app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3-r1 9999: Haskell IDE written in Haskell
+app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3-r1 0.15.1.4 9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.2: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 9999: Happy Haskell Programming
@@ -856,7 +856,7 @@ dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.10: memory and related abstraction stuff
-dev-haskell/memotrie 0.5 0.6.2: Trie-based memo functions
+dev-haskell/memotrie 0.6.3: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
