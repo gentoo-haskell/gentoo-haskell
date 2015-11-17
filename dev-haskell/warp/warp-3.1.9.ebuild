@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/http-date:=[profile?]
 	>=dev-haskell/http-types-0.8.5:=[profile?]
-	>=dev-haskell/http2-1.2:=[profile?]
+	>=dev-haskell/http2-1.3:=[profile?]
 	>=dev-haskell/iproute-1.3.1:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/simple-sendfile-0.2.7:=[profile?] <dev-haskell/simple-sendfile-0.3:=[profile?]
