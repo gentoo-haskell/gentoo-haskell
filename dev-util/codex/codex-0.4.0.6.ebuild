@@ -18,6 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# The hasktags dependency needs to be added manually. Upstream
+# supposedly supports dev-util/ctags as well, but in my experience
+# you're better off going with the default of hasktags.
 RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/either-4.3.0.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
@@ -36,6 +39,7 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 	>=dev-haskell/yaml-0.8.8.3:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
 	>=dev-haskell/zlib-0.5.4.1:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
+	dev-haskell/hasktags
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
