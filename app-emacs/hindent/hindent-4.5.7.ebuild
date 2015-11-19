@@ -23,7 +23,7 @@ RESTRICT=test # fils own tests
 RDEPEND="dev-haskell/applicative-quoters:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/descriptive-0.7:=[profile?] <dev-haskell/descriptive-0.10:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.16:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/text:=[profile?]
