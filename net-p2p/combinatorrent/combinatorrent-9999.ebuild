@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="debug threaded threadscope"
 
 RDEPEND=">=dev-haskell/attoparsec-0.8:=
-	>=dev-haskell/cereal-0.3:= <dev-haskell/cereal-0.5:=
+	>=dev-haskell/cereal-0.3:=
 	dev-haskell/cryptohash:=
 	dev-haskell/hslogger:=
 	dev-haskell/http:=
@@ -49,6 +49,11 @@ DEPEND="${RDEPEND}
 "
 
 #S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal >= 0.3 && < 0.5' 'cereal >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
