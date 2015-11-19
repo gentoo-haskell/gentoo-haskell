@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generic programming library for generalised deriving"
-HOMEPAGE="http://hackage.haskell.org/package/generic-deriving"
+HOMEPAGE="https://github.com/dreixel/generic-deriving"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
