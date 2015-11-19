@@ -5,7 +5,7 @@ app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collectio
 app-editors/yi 0.11.1-r1 0.12.2: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
-app-emacs/hindent 4.5.6 9999: Extensible Haskell pretty printer
+app-emacs/hindent 4.5.7 9999: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-emacs/structured-haskell-mode 1.0.20 9999: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
@@ -478,7 +478,7 @@ dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
 dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-vis 0.7.2.7-r1: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
-dev-haskell/ghci-ng 7.8.3 9999: Next generation GHCi
+dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghcid 0.5: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.1.1.3 0.2.3.0: DOM library that supports both GHCJS and WebKitGTK
@@ -704,7 +704,7 @@ dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.8: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-querystring 1.0: The HTTP query builder
-dev-haskell/http-reverse-proxy 0.4.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
+dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client and server code)
 dev-haskell/http2 1.1.0 1.2.0 1.3.0: HTTP/2.0 library including frames and HPACK
@@ -1412,7 +1412,7 @@ dev-haskell/wai-app-file-cgi 3.0.8: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.0.1.1 3.1.2: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.2: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
-dev-haskell/wai-extra 3.0.12: Provides some basic WAI handlers and middleware
+dev-haskell/wai-extra 3.0.13: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-devel 2.0.0.2: WAI server that automatically reloads code after modification. (deprecated)
 dev-haskell/wai-handler-launch 3.0.0.4: Launch a web app in the default browser
 dev-haskell/wai-logger 2.2.4.1: A logging system for WAI
@@ -1526,7 +1526,7 @@ dev-lang/idris 0.9.19.1-r1 0.9.20.1 9999: Functional Programming Language with D
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.7.5.4: PureScript Programming Language Compiler
+dev-lang/purescript 0.7.6.1: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
