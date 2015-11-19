@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Defines the type-classes &#39;ToByteString&#39; and &#39;FromByteString&#39;
+		to convert values to and from ByteString.
+	</longdescription>
+</pkgmetadata>
