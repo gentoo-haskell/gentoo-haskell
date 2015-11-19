@@ -144,6 +144,7 @@ dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
 dev-haskell/bytes 0.15.0.1-r1: Sharing code for serialization between binary and cereal
 dev-haskell/bytestring-builder 0.10.6.0.0: The new bytestring builder, packaged outside of GHC
+dev-haskell/bytestring-conversion 0.3.1: Type-classes to convert values to and from ByteString
 dev-haskell/bytestring-handle 0.1.0.3: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
@@ -703,6 +704,7 @@ dev-haskell/http-client-tls 0.2.2: http-client backend using the connection pack
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.8: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
+dev-haskell/http-media 0.6.2: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
@@ -1159,6 +1161,7 @@ dev-haskell/semigroupoids 4.2 4.3 5.0.0.4: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.0.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/serialport 0.4.7: Cross platform serial port library
+dev-haskell/servant 0.4.4.5: A family of combinators for defining webservices APIs
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
