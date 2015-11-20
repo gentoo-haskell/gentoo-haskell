@@ -328,7 +328,7 @@ dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.8: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.9: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -559,7 +559,7 @@ dev-haskell/hashable 1.2.3.3: A class for types that can be converted to a hash 
 dev-haskell/hashable-extras 0.2.2: Higher-rank Hashable
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
-dev-haskell/hashtables 1.2.0.2: Mutable hash tables in the ST monad
+dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
 dev-haskell/haskeline 0.7.2.1: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 0.2.0.0 4.2.2: A program to find and display the docs and type of a name
