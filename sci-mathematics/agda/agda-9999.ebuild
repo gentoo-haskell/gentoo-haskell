@@ -61,7 +61,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	dev-haskell/happy
 	test? ( >=dev-haskell/process-extras-0.2.0 <dev-haskell/process-extras-0.4
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-silver-3.1.5 <dev-haskell/tasty-silver-3.2
 		>=dev-haskell/temporary-1.2.0 <dev-haskell/temporary-1.3 )
 	cpphs? ( dev-haskell/cpphs )
