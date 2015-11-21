@@ -1,0 +1,38 @@
+commit 9b18b83a9a0d1fa5136f1ec8b255293bf65892f5
+Author: Sergei Trofimovich <siarheit@google.com>
+Date:   Sat Nov 21 12:25:58 2015 +0000
+
+    pointfree.cabal: tweak for haskell-src-exts-1.17
+    
+    Signed-off-by: Sergei Trofimovich <siarheit@google.com>
+
+diff --git a/Plugin/Pl/Parser.hs b/Plugin/Pl/Parser.hs
+index 8d95b86..6309b08 100644
+--- a/Plugin/Pl/Parser.hs
++++ b/Plugin/Pl/Parser.hs
+@@ -70,5 +70,5 @@ hseToDecl :: HSE.Decl -> Decl
+ hseToDecl dec = case dec of
+-  HSE.PatBind _ (HSE.PVar n) (HSE.UnGuardedRhs e) (HSE.BDecls []) ->
++  HSE.PatBind _ (HSE.PVar n) (HSE.UnGuardedRhs e) Nothing ->
+     Define (snd (nameString n)) (hseToExpr e)
+-  HSE.FunBind [HSE.Match _ n ps Nothing (HSE.UnGuardedRhs e) (HSE.BDecls [])] ->
++  HSE.FunBind [HSE.Match _ n ps Nothing (HSE.UnGuardedRhs e) Nothing] ->
+     Define (snd (nameString n)) (foldr (\p x -> Lambda (hseToPattern p) x) (hseToExpr e) ps)
+diff --git a/pointfree.cabal b/pointfree.cabal
+index a60ad1c..323ade9 100644
+--- a/pointfree.cabal
++++ b/pointfree.cabal
+@@ -30,3 +30,3 @@ library
+                    containers >= 0.4 && < 0.6,
+-                   haskell-src-exts == 1.16.*,
++                   haskell-src-exts == 1.17.*,
+                    transformers < 0.5
+@@ -51,3 +51,3 @@ Executable pointfree
+                  containers >= 0.4 && < 0.6,
+-                 haskell-src-exts == 1.16.*,
++                 haskell-src-exts == 1.17.*,
+                  transformers < 0.5
+@@ -70,2 +70,2 @@ Test-suite tests
+     containers >= 0.3 && < 0.6,
+-    haskell-src-exts == 1.16.*,
++    haskell-src-exts == 1.17.*,
