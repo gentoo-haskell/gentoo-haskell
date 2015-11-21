@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/equivalence-0.2.5:=[profile?] <dev-haskell/equivalence-0.4:=[profile?]
 	>=dev-haskell/geniplate-mirror-0.6.0.6:=[profile?] <dev-haskell/geniplate-mirror-0.8:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.16.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.16.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/old-time-1.1.0.0:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/parallel-3.2.0.4:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]

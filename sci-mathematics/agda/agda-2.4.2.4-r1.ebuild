@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/geniplate-mirror-0.6.0.6:=[profile?] <dev-haskell/geniplate-mirror-0.8:=[profile?]
 	>=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/haskeline-0.7.1.3:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.16.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.16.0.1:=[profile?]
 	>=dev-haskell/parallel-3.2.0.4:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/transformers-compat-0.3.3.3:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.5.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xhtml-3000.2.1:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6.1:=[profile?]
+	>=dev-haskell/zlib-0.4.0.1:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 	|| ( ( >=dev-haskell/hashtables-1.0.1.8:=[profile?] <dev-haskell/hashtables-1.2:=[profile?] )
 		( >=dev-haskell/hashtables-1.2.0.2:=[profile?] <dev-haskell/hashtables-1.3:=[profile?] ) )
@@ -67,6 +67,10 @@ src_prepare() {
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.16.0.1 && < 1.17' 'haskell-src-exts >= 1.16.0.1' \
+		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1'
 }
 
 src_configure() {
