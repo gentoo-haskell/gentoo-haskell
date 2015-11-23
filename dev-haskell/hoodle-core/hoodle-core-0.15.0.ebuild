@@ -85,6 +85,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-time-1.5.patch
+	epatch "${FILESDIR}"/${P}-haddock.patch
 }
 
 src_configure() {
