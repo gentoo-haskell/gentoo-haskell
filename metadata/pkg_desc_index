@@ -15,7 +15,7 @@ app-portage/hackport 0.4.6 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
-app-text/lit 0.1.0.5-r2: A simple tool for literate programming
+app-text/lit 0.1.0.9: A simple tool for literate programming
 app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
@@ -153,12 +153,12 @@ dev-haskell/bytestring-show 0.3.5.6: Efficient conversion of values into readabl
 dev-haskell/bytestring-trie 0.2.4.1: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.0.5: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
-dev-haskell/c2hs 0.26.2: C->Haskell FFI tool that gives some cross-language type safety
+dev-haskell/c2hs 0.26.1 0.26.2: C->Haskell FFI tool that gives some cross-language type safety
 dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.23.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
 dev-haskell/cabal-dev 0.9.1-r5 0.9.2: Manage sandboxed Haskell build environments
 dev-haskell/cabal-file-th 0.2.3-r1: Template Haskell expressions for reading fields from a project's cabal file
-dev-haskell/cabal-helper 0.5.3.0 0.6.1.0: Simple interface to some of Cabal's configuration state used by ghc-mod
+dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 9999: The command-line interface for Cabal and Hackage
 dev-haskell/cabal-macosx 0.2.3.1: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
@@ -314,10 +314,10 @@ dev-haskell/deepseq-generics 0.1.1.2: GHC.Generics-based Control.DeepSeq.rnf imp
 dev-haskell/dependent-map 0.1.1.3 0.2.0.1: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.2.1.0 0.3.2.1: Dependent sum type
 dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate instances of classes in dependent-sum package
-dev-haskell/derive 2.5.22: A program and library to derive instances for data types
+dev-haskell/derive 2.5.22 2.5.23: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.7.2.0: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.7.2.0-r1: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.2-r1: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
@@ -569,7 +569,7 @@ dev-haskell/haskell-names 0.4.1 0.5.3: Name resolution library for Haskell
 dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
-dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.0: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/haskell-src-meta 0.6.0.12: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
@@ -628,7 +628,7 @@ dev-haskell/hledger-ui 0.27: Curses-style user interface for the hledger account
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.14: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.24: Source code suggestions
 dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
@@ -636,7 +636,7 @@ dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.4.8-r1: Haskell OAuth2 authentication
 dev-haskell/hood 0.2.1: Debugging by observing in place
-dev-haskell/hoogle 4.2.43: Haskell API Search
+dev-haskell/hoogle 4.2.43-r1: Haskell API Search
 dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
@@ -659,7 +659,7 @@ dev-haskell/hsdns 1.6 1.6.1: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
-dev-haskell/hsimport 0.6.7: A command line program for extending the import list of a Haskell source file
+dev-haskell/hsimport 0.6.7 0.7: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.9: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
@@ -694,7 +694,7 @@ dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 0.1.0.2: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.2.20-r1: A library for client-side HTTP
+dev-haskell/http 4000.2.21: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.24: An HTTP client engine, intended as a base layer for more user-friendly packages
@@ -851,7 +851,7 @@ dev-haskell/manatee-reader 0.1.1: Feed reader extension for Manatee
 dev-haskell/manatee-terminal 0.1.1: Terminal Emulator extension for Manatee
 dev-haskell/map-syntax 0.2: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.13.2: Convert Markdown to HTML, with XSS protection
-dev-haskell/markdown-unlit 0.3.1: Literate Haskell support for Markdown
+dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/math-functions 0.1.5.2: Special functions and Chebyshev polynomials
 dev-haskell/matrix 0.3.4.4: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
@@ -860,7 +860,7 @@ dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.10: memory and related abstraction stuff
-dev-haskell/memotrie 0.6.3: Trie-based memo functions
+dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
@@ -898,7 +898,7 @@ dev-haskell/monadlib 3.7.3: A collection of monad transformers
 dev-haskell/monadlist 0.0.2: Monadic versions of list functions
 dev-haskell/monadloc 0.7.1: A class for monads which can keep a monadic call trace
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
-dev-haskell/monadrandom 0.4: Random-number generation monad
+dev-haskell/monadrandom 0.4.1: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
 dev-haskell/mongodb 2.0.9: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
@@ -988,7 +988,7 @@ dev-haskell/parseargs 0.1.5.2: Command-line argument parsing library for Haskell
 dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
-dev-haskell/path 0.5.2: Path
+dev-haskell/path 0.5.3: Path
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
 dev-haskell/pathtype 0.6: Type-safe replacement for System.FilePath etc
@@ -1027,8 +1027,8 @@ dev-haskell/plugins-auto 0.0.4: Automatic recompilation and reloading of haskell
 dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 4.2.0.2: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
-dev-haskell/pointfree 1.0.4.8 1.1: Tool for refactoring expressions into pointfree form
-dev-haskell/pointful 1.0.6: Pointful refactoring tool
+dev-haskell/pointfree 1.0.4.8 1.1 1.1-r1: Tool for refactoring expressions into pointfree form
+dev-haskell/pointful 1.0.6 1.0.6-r1: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.9 1.10 1.11: A variety of alternative parser combinator libraries
@@ -1102,7 +1102,7 @@ dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web 
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2: Generalized bananas, lenses and barbed wire
 dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
-dev-haskell/refact 0.3.0.1: Specify refactorings to perform with apply-refact
+dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
@@ -1245,7 +1245,7 @@ dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
 dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.5.14.3: Haskell code prettifier
+dev-haskell/stylish-haskell 0.5.14.3 0.5.14.4: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svgcairo 0.12.5.2 0.13.0.3: Binding to the libsvg-cairo library
@@ -1575,7 +1575,7 @@ net-p2p/combinatorrent 9999: A concurrent bittorrent client
 sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-calculators/clac 0.5.0: Simple CLI RPN calculator
-sci-mathematics/agda 2.3.2.2-r5 2.4.0.2-r1 2.4.2.2-r1 2.4.2.3-r2 2.4.2.4 9999: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda 2.3.2.2-r5 2.4.0.2-r1 2.4.2.2-r1 2.4.2.3-r2 2.4.2.4-r1 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checking and compiling Agda programs
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 0.7-r2 0.8 0.9-r1 2.4.2.3 2.4.2.4 9999: Agda standard library
