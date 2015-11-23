@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This project provides a Haskell library and command-line interface for Google services such as Google Storage, Contacts, Books, etc.
+		
+		For OAuth 2.0, the following operations are supported:
+		
+		* Forming a URL for authorizing one or more Google APIs
+		
+		* Exchanging an authorization code for tokens
+		
+		* Refreshing tokens
+		
+		* Validating tokens
+		
+		
+		For the Google Storage API, the following operations are supported:
+		
+		* GET Service
+		
+		* PUT Bucket
+		
+		* GET Bucket
+		
+		* DELETE Bucket
+		
+		* GET Object
+		
+		* PUT Object
+		
+		* HEAD Object
+		
+		* DELETE Object
+		
+		Operations in the Google Fusion Tables API are also supported.
+		
+		For the unofficial Google Bookmarks API, the following operations are supported:
+		
+		* List bookmarks
+		
+		For the Google Books API, the following operations are supported:
+		
+		* List bookshelves
+		
+		* List books
+		
+		For the Google Contacts API, the following operations are supported:
+		
+		* Downloading a full list of contacts in XML format
+		
+		* Extracting and decrypting GnuPG/PGP text in contacts&#39; Notes fields
+		
+		For the Picasa API, the following operations are supported:
+		
+		* Listing albums
+		
+		* Listing photos in an album
+	</longdescription>
+</pkgmetadata>
