@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.4:=[profile?] >=dev-haskell/monads-fd-0.1:=[profile?] <dev-haskell/monads-fd-0.3:=[profile?] >=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-lang/ghc-6.10.4:=
 SLOT=0/0.2.0.3
 SRC_URI=mirror://hackage/packages/archive/data-accessor-monads-fd/0.2.0.3/data-accessor-monads-fd-0.2.0.3.tar.gz
-_eclasses_=eutils	f813d23e417656bf3917483643165d5a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	f20548a2f7b0128068388cd2ec26708a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=743cb5ec2c59b7d2ed9d9924dc59096d

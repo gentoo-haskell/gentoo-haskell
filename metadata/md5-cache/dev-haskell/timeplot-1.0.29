@@ -8,5 +8,5 @@ LICENSE=BSD
 RDEPEND=<dev-haskell/bytestring-lexing-0.5:= dev-haskell/cairo:= >=dev-haskell/chart-1.3:= >=dev-haskell/chart-cairo-1.3:= dev-haskell/colour:= dev-haskell/data-default:= >=dev-haskell/lens-3.9:= dev-haskell/regex-tdfa:= >=dev-haskell/strptime-0.1.7:= dev-haskell/transformers:= >=dev-haskell/vcs-revision-0.0.2:= >=dev-lang/ghc-7.4.1:=
 SLOT=0
 SRC_URI=mirror://hackage/packages/archive/timeplot/1.0.29/timeplot-1.0.29.tar.gz
-_eclasses_=eutils	f813d23e417656bf3917483643165d5a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	f20548a2f7b0128068388cd2ec26708a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=eb2a6593ae53b65d244a30276a028973
