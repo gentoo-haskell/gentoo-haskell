@@ -247,6 +247,7 @@ dev-haskell/converge 0.1.0.1: Limit operations for converging sequences
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
 dev-haskell/cookie 0.4.1.6: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
+dev-haskell/coroutine-object 0.3: Object-oriented programming realization using coroutine
 dev-haskell/cpphs 1.19.3: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
@@ -462,6 +463,7 @@ dev-haskell/gconf 0.13.0.2: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.9.0: Generic programming library for generalised deriving
+dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.0.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.1: Use Template Haskell to generate Uniplate-like functions
@@ -541,6 +543,7 @@ dev-haskell/hakyll 4.7.4.0: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/half 0.2.2.1: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
+dev-haskell/handa-gdata 0.7.0.3: Library and command-line utility for accessing Google services and APIs
 dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
 dev-haskell/hans 2.6.0.0: IPv4 Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
@@ -636,6 +639,13 @@ dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.4.8-r1: Haskell OAuth2 authentication
 dev-haskell/hood 0.2.1: Debugging by observing in place
+dev-haskell/hoodle 0.4.0: Executable for hoodle
+dev-haskell/hoodle-builder 0.3.0: text builder for hoodle file format
+dev-haskell/hoodle-core 0.15.0: Core library for hoodle
+dev-haskell/hoodle-parser 0.3.0: Hoodle file parser
+dev-haskell/hoodle-publish 0.2.0: publish hoodle files as a static web site
+dev-haskell/hoodle-render 0.5.0: Hoodle file renderer
+dev-haskell/hoodle-types 0.3.0: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1: Haskell API Search
 dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
@@ -998,6 +1008,9 @@ dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packe
 dev-haskell/pcg-random 0.1.3.2: Haskell bindings to the PCG random number generator
 dev-haskell/pcre-heavy 1.0.0.1: A regexp library on top of pcre-light you can actually use
 dev-haskell/pcre-light 0.4.0.4: Portable regex library for Perl 5 compatible regular expressions
+dev-haskell/pdf-toolbox-content 0.0.5.0: A collection of tools for processing PDF files
+dev-haskell/pdf-toolbox-core 0.0.4.0: A collection of tools for processing PDF files
+dev-haskell/pdf-toolbox-document 0.0.7.0: A collection of tools for processing PDF files
 dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
@@ -1335,6 +1348,7 @@ dev-haskell/torrent 10000.0.0: BitTorrent file parser and generater
 dev-haskell/transformers 0.3.0.0-r1 0.4.2.0 0.4.3.0: Concrete functor and monad transformers
 dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a transformer stack
 dev-haskell/transformers-compat 0.4.0.4: A small compatibility shim for dev-haskell/transformers
+dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.0: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
 dev-haskell/trifecta 1.5.2: A modern parser combinator library with convenient diagnostics
@@ -1475,6 +1489,8 @@ dev-haskell/xmlgen 0.6.2.1: Fast XML generation library
 dev-haskell/xmlhtml 0.2.3.4-r2: XML parser and renderer with HTML 5 quirks mode
 dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
+dev-haskell/xournal-parser 0.5.1: Xournal file parser
+dev-haskell/xournal-types 0.5.1: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
 dev-haskell/yaml 0.8.15.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
