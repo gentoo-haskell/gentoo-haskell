@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/data-memocombinators-0.4:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.16.0:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.17.0:=[profile?]
 	>=dev-haskell/hoogle-4.2:=[profile?]
 	>=dev-haskell/http-4000:=[profile?]
 	>=dev-haskell/iospec-0.2:=[profile?]
@@ -52,4 +52,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-fix-enc.patch
+	epatch "${FILESDIR}"/${P}-hse-1.17.patch
 }
