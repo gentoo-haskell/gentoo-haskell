@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name='dyre'>Support dynamic reconfiguration</flag>
+	</use>
+	<longdescription>
+		Hoodle is a pen notetaking program written in haskell.
+	</longdescription>
+</pkgmetadata>
