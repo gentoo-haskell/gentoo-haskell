@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=~dev-haskell/binary-0.7.5.0:= =dev-lang/ghc-7.10.2-r1:= ~dev-haskell/hpc-0.6.0.2:= ~dev-haskell/transformers-0.4.3.0:=
+DESCRIPTION=The Glasgow Haskell Compiler API (ghc package)
+EAPI=5
+HOMEPAGE=http://www.haskell.org/ghc
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
+LICENSE=BSD
+RDEPEND=~dev-haskell/binary-0.7.5.0:= =dev-lang/ghc-7.10.2-r1:= ~dev-haskell/hpc-0.6.0.2:= ~dev-haskell/transformers-0.4.3.0:=
+SLOT=0/7.10.2
+_eclass_exported_funcs=-
+_md5_=ce793de2ecf14d593b3dc7cfeb46072a

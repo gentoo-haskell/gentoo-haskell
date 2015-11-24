@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?] dev-haskell/syb:=[profile?] >=dev-haskell/transformers-0.2:=[profile?] >=dev-haskell/uniplate-1.5:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A program and library to derive instances for data types
+EAPI=5
+HOMEPAGE=https://github.com/ndmitchell/derive#readme
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?] dev-haskell/syb:=[profile?] >=dev-haskell/transformers-0.2:=[profile?] >=dev-haskell/uniplate-1.5:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/2.5.22
+SRC_URI=mirror://hackage/packages/archive/derive/2.5.22/derive-2.5.22.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	f20548a2f7b0128068388cd2ec26708a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=ad47485783a0c0995699d75bd2a7c8e4

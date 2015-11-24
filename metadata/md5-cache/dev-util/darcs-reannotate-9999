@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/darcs net-misc/rsync
+DESCRIPTION=Reformats "darcs annotate" output to look more like "cvs annotate"
+EAPI=5
+HOMEPAGE=http://darcs.net/DarcsWiki/DarcsReannotate
+LICENSE=freedist
+RDEPEND=dev-lang/python
+SLOT=0
+_eclass_exported_funcs=src_unpack:darcs src_install:-
+_eclasses_=darcs	25bcb4c9bede09580ffa4891aa70234d	eutils	f20548a2f7b0128068388cd2ec26708a	multilib	3972ca401cf7dbb430df9995f5d8d580	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
+_md5_=35468155f0eee6e3c927669ec063a950

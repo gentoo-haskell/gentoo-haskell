@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test unpack
+DEPEND=dev-haskell/mtl:=[profile?] dev-haskell/random:=[profile?] dev-haskell/regex-posix:=[profile?] >=dev-haskell/x11-1.4.3:=[profile?] >=dev-lang/ghc-6.10.4:= >=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.13:=[profile?] >=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?] eval? ( >=dev-haskell/hint-0.3:=[profile?] <dev-haskell/hint-0.5:=[profile?] dev-haskell/network:=[profile?] ) mpd? ( >=dev-haskell/libmpd-0.8:=[profile?] <dev-haskell/libmpd-0.9:=[profile?] ) perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 ) volume? ( >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?] >=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?] ) >=dev-haskell/cabal-1.6.0.3 dev-vcs/darcs net-misc/rsync doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Third party extensions for xmonad with wacky dependencies
+EAPI=5
+HOMEPAGE=http://projects.haskell.org/xmonad-extras
+IUSE=+eval mpd perwindow volume doc hscolour hoogle profile
+LICENSE=BSD
+RDEPEND=dev-haskell/mtl:=[profile?] dev-haskell/random:=[profile?] dev-haskell/regex-posix:=[profile?] >=dev-haskell/x11-1.4.3:=[profile?] >=dev-lang/ghc-6.10.4:= >=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.13:=[profile?] >=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?] eval? ( >=dev-haskell/hint-0.3:=[profile?] <dev-haskell/hint-0.5:=[profile?] dev-haskell/network:=[profile?] ) mpd? ( >=dev-haskell/libmpd-0.8:=[profile?] <dev-haskell/libmpd-0.9:=[profile?] ) perwindow? ( >=dev-haskell/hlist-0.2.3 <dev-haskell/hlist-0.3 ) volume? ( >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?] >=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?] )
+SLOT=0/9999
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_unpack:darcs src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=darcs	25bcb4c9bede09580ffa4891aa70234d	eutils	f20548a2f7b0128068388cd2ec26708a	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=a496916e17cd5c73651d69e08787bfc8
