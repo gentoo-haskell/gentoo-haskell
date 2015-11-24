@@ -9,5 +9,5 @@ RDEPEND=>=dev-haskell/glut-2.4:= >=dev-haskell/opengl-2.8:= >=dev-lang/ghc-7.6.1
 SLOT=0
 SRC_URI=mirror://hackage/packages/archive/Monadius/0.99/Monadius-0.99.tar.gz
 _eclass_exported_funcs=pkg_preinst:games pkg_postrm:haskell-cabal pkg_postinst:- pkg_setup:- src_unpack:base src_prepare:- src_configure:- src_compile:- src_test:haskell-cabal src_install:-
-_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	eutils	f20548a2f7b0128068388cd2ec26708a	games	4dae170e58f773c484e07d18ef441804	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	d769539d9bace6eaca30af23bc2b4dde	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	user	906f3c8eb3a2350a4f1191a89baa3e46	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	eutils	f20548a2f7b0128068388cd2ec26708a	games	4dae170e58f773c484e07d18ef441804	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	user	906f3c8eb3a2350a4f1191a89baa3e46	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=c708c11546b732078c91d527c6007ab6
