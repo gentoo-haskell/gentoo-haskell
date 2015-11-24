@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=~dev-haskell/binary-0.7.6.1:= =dev-lang/ghc-7.10.3_rc1:= ~dev-haskell/hpc-0.6.0.2:= ~dev-haskell/transformers-0.4.3.0:=
-DESCRIPTION=The Glasgow Haskell Compiler API (ghc package)
-EAPI=5
-HOMEPAGE=http://www.haskell.org/ghc
-LICENSE=BSD
-RDEPEND=~dev-haskell/binary-0.7.6.1:= =dev-lang/ghc-7.10.3_rc1:= ~dev-haskell/hpc-0.6.0.2:= ~dev-haskell/transformers-0.4.3.0:=
-SLOT=0/7.10.3_rc1
-_md5_=04c4771e1c9d0062b819ed73089e369e

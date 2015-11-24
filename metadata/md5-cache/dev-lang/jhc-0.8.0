@@ -7,4 +7,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=http://repetae.net/computer/jhc/drop/jhc-0.8.0.tar.gz
+_eclass_exported_funcs=src_prepare:- src_configure:-
 _md5_=0029017ae6e8d2dd1fe1774cf5a915be
