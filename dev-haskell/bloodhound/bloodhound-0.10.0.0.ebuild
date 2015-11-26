@@ -24,12 +24,13 @@ RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11:=[profile?
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
+	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/mtl-compat:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-	>=dev-haskell/semigroups-0.15:=[profile?]
+	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -38,7 +39,9 @@ RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hspec-1.8
+	test? ( dev-haskell/derive
+		dev-haskell/errors
+		>=dev-haskell/hspec-1.8
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-properties
 		>=dev-haskell/unordered-containers-0.2.5.0 <dev-haskell/unordered-containers-0.3 )
@@ -46,6 +49,5 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8' \
-		'semigroups       >= 0.15    && <0.18' 'semigroups       >= 0.15'
+		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8'
 }
