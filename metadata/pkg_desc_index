@@ -43,7 +43,7 @@ dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r4: Generator-generator for QuickCheck
-dev-haskell/alex 3.1.4: Alex is a tool for generating lexical analysers in Haskell
+dev-haskell/alex 3.1.5: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/algebra 4.2-r1: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Functional combinators for monadic actions that require allocation and de-allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
@@ -128,7 +128,7 @@ dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.4.1: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
-dev-haskell/bloodhound 0.9.0.0-r1: ElasticSearch client library for Haskell
+dev-haskell/bloodhound 0.10.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
@@ -339,7 +339,7 @@ dev-haskell/digestive-functors-blaze 0.6.0.6: Blaze frontend for the digestive-f
 dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
-dev-haskell/dimensional 1.0.0.0: Statically checked physical dimensions, using Type Families and Data Kinds
+dev-haskell/dimensional 1.0.1.0: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
 dev-haskell/direct-sqlite 2.3.16: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
@@ -1284,16 +1284,16 @@ dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parse
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
 dev-haskell/tar 0.4.2.2: Reading, writing and manipulating ".tar" archive files
-dev-haskell/tasty 0.10.1.2 0.11.0.1: Modern and extensible testing framework
+dev-haskell/tasty 0.10.1.2 0.11.0.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
-dev-haskell/tasty-golden 2.3.0.2: Golden tests support for tasty
+dev-haskell/tasty-golden 2.3.1: Golden tests support for tasty
 dev-haskell/tasty-hspec 1.1.2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.9.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-quickcheck 0.8.4: QuickCheck support for the Tasty test framework
 dev-haskell/tasty-rerun 1.1.5: Run tests by filtering the test tree depending on the result of previous test runs
 dev-haskell/tasty-silver 3.1.8: A fancy test runner, including support for golden tests
-dev-haskell/tasty-smallcheck 0.2 0.8.0.1: SmallCheck support for the Tasty test framework
+dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framework
 dev-haskell/tasty-th 0.1.3: Automagically generate the HUnit- and Quickcheck-bulk-code using Template Haskell
 dev-haskell/tcache 0.12.0: A Transactional cache with user-defined persistence
 dev-haskell/template 0.2.0.10: Simple string substitution
@@ -1335,7 +1335,7 @@ dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 0.6: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
 dev-haskell/time-lens 0.4.0.1: Lens-based interface to Data.Time data structures
-dev-haskell/time-locale-compat 0.1.1.0: Compatibility of TimeLocale between old-locale and time-1.5
+dev-haskell/time-locale-compat 0.1.1.1: Compatibility of TimeLocale between old-locale and time-1.5
 dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.29: A tool for visualizing time series from log files
 dev-haskell/timezone-olson 0.1.7: A pure Haskell parser and renderer for binary Olson timezone files
