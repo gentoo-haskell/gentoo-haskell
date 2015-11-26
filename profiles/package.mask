@@ -1,8 +1,4 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
-# Needs a port to ghc-7.10
-dev-haskell/haskell-docs
-
-# Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
 # Bundled with ghc, nobody uses in overlay. Better way
 # to upgrade it is to bump bundled libs in ghc ebuld.
 dev-haskell/hoopl
