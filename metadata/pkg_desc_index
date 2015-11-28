@@ -792,7 +792,7 @@ dev-haskell/language-c-quote 0.8.0 0.11.3: C/CUDA/OpenCL/Objective-C quasiquotin
 dev-haskell/language-ecmascript 0.17.0.1: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
-dev-haskell/language-java 0.2.7: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/language-javascript 0.5.14.2: Parser for JavaScript
 dev-haskell/largeword 1.2.4: Provides Word128, Word192 and Word256 and a way of producing other large words if required
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
