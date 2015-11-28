@@ -631,7 +631,7 @@ dev-haskell/hledger-ui 0.27: Curses-style user interface for the hledger account
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.14: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22 1.9.24: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.25: Source code suggestions
 dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
@@ -719,7 +719,7 @@ dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 1.1.0 1.2.0 1.3.0: HTTP/2.0 library including frames and HPACK
+dev-haskell/http2 1.1.0 1.2.0 1.3.1: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.2.5.2-r1 1.3.0.0: A unit testing framework for Haskell
@@ -1159,7 +1159,7 @@ dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/sandi 0.3.5: Data encoding library
 dev-haskell/sbv 4.4: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
-dev-haskell/scientific 0.3.4.2: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.10.2-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
