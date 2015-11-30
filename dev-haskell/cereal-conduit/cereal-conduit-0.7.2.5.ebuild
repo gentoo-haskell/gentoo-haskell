@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cereal-0.4.0.0:=[profile?]
+RDEPEND=">=dev-haskell/cereal-0.4.0.0:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/conduit-1.0.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/resourcet-0.4:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2.0.0:=[profile?]
@@ -29,8 +29,3 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit
 		dev-haskell/mtl )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'cereal       >= 0.4.0.0 && < 0.5' 'cereal       >= 0.4.0.0'
-}
