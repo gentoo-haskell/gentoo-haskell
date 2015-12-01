@@ -34,7 +34,7 @@ RDEPEND=">=app-editors/leksah-server-0.15.0.8:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/glib-0.13.2.1:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/gtk3-0.14.1:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
 	>=dev-haskell/gtksourceview3-0.13.1.5:=[profile?] <dev-haskell/gtksourceview3-0.14:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.13.5:=[profile?] <dev-haskell/haskell-src-exts-1.17:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 	>=dev-haskell/hlint-1.9.21:=[profile?] <dev-haskell/hlint-1.10:=[profile?]
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/jsaddle-0.2.1.0:=[profile?] <dev-haskell/jsaddle-0.3:=[profile?]
@@ -77,7 +77,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'yi-language >=0.1.0.8 && <0.2' 'yi-language >=0.1.0.8'
+		'yi-language >=0.1.0.8 && <0.2' 'yi-language >=0.1.0.8' \
+		'haskell-src-exts >=1.13.5 && <1.17' 'haskell-src-exts >=1.13.5'
 }
 
 src_configure() {
