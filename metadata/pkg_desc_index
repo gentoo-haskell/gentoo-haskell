@@ -981,7 +981,7 @@ dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
 dev-haskell/openal 1.6.0.1 1.7.0.1: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
-dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.1.0: A binding for the OpenGL graphics system
+dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.1.0 2.13.1.1: A binding for the OpenGL graphics system
 dev-haskell/openglraw 1.1.0.2 1.2.0.0 1.3.0.0 1.4.0.0 1.5.0.1 2.5.4.0 2.5.5.0 2.6.0.0 2.6.1.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
