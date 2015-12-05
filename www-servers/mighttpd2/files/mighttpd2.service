@@ -1,0 +1,14 @@
+[Unit]
+Description=High performance web server on WAI/warp
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/mighttpd2/mighttpd2.pid
+# ExecStartPre=configuration test
+ExecStart=/usr/bin/mighty /etc/mighttpd2/mighttpd2.conf /etc/mighttpd2/mighttpd2.route
+ExecReload=/usr/bin/mightyctl reload
+ExecStop=/usr/bin/mightyctl stop
+
+[Install]
+WantedBy=multi-user.target

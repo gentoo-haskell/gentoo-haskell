@@ -19,7 +19,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/half-0.2.2.1:=[profile?] <dev-haskell/half-0.3:=[profile?]
