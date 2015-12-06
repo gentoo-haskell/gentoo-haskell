@@ -589,6 +589,7 @@ dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templ
 dev-haskell/hatex 3.16.2.0: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
 dev-haskell/haxr 3000.11.1.2: XML-RPC client and server library
+dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.1: Library to handle the details of writing daemons for UNIX
