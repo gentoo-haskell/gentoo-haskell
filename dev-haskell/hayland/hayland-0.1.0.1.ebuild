@@ -28,6 +28,7 @@ RDEPEND="<dev-haskell/data-flags-0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
+	dev-haskell/c2hs
 "
 
 src_prepare() {
