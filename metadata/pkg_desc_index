@@ -51,6 +51,7 @@ dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.2: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-seq 0.6.0.5: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.0: A binding for the OpenAL Utility Toolkit
 dev-haskell/amqp 0.13.0: Client library for AMQP servers (currently only RabbitMQ)
+dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.1: Constructing, analyzing and destructing annotated trees
 dev-haskell/ansi-terminal 0.6.2.3: Simple ANSI terminal support, with Windows compatibility
