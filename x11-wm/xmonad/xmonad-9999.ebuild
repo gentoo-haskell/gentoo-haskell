@@ -8,11 +8,11 @@ EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 
-inherit haskell-cabal darcs
+inherit haskell-cabal git-2
 
 DESCRIPTION="A tiling window manager"
 HOMEPAGE="http://xmonad.org"
-EDARCS_REPOSITORY="http://code.haskell.org/xmonad"
+EGIT_REPO_URI="https://github.com/xmonad/xmonad.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

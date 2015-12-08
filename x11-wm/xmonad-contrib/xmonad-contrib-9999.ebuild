@@ -8,11 +8,11 @@ EAPI=5
 #hackport: flags: -testing,use_xft:xft
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal darcs
+inherit haskell-cabal git-2
 
 DESCRIPTION="Third party extensions for xmonad"
 HOMEPAGE="http://xmonad.org/"
-EDARCS_REPOSITORY="http://code.haskell.org/XMonadContrib"
+EGIT_REPO_URI="https://github.com/xmonad/xmonad-contrib.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
