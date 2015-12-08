@@ -21,13 +21,13 @@ IUSE="+ffi"
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/bytes-0.7:=[profile?] <dev-haskell/bytes-1:=[profile?]
-	>=dev-haskell/cereal-0.3.5:=[profile?]
+	>=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/generic-deriving-1.4:=[profile?] <dev-haskell/generic-deriving-1.9:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hashable-extras-0.2:=[profile?] <dev-haskell/hashable-extras-1:=[profile?]
-	>=dev-haskell/safecopy-0.8.1:=[profile?] <dev-haskell/safecopy-0.9:=[profile?]
+	>=dev-haskell/safecopy-0.8.1:=[profile?] <dev-haskell/safecopy-0.10:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
@@ -39,11 +39,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/semigroups-0.9
 		>=dev-haskell/simple-reflect-0.3.1 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'cereal                    >= 0.3.5    && < 0.5' 'cereal                    >= 0.3.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
