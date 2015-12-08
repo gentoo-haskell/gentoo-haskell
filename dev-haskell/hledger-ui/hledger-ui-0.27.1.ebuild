@@ -22,10 +22,10 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=
 	>=dev-haskell/brick-0.2:= <dev-haskell/brick-0.3:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
-	~dev-haskell/hledger-0.27:=
-	~dev-haskell/hledger-lib-0.27:=
+	>=dev-haskell/hledger-0.27:= <dev-haskell/hledger-0.28:=
+	>=dev-haskell/hledger-lib-0.27:= <dev-haskell/hledger-lib-0.28:=
 	dev-haskell/hunit:=
-	>=dev-haskell/lens-4.12.3:=
+	>=dev-haskell/lens-4.12.3:= <dev-haskell/lens-4.14:=
 	dev-haskell/old-locale:=
 	>=dev-haskell/pretty-show-1.6.4:=
 	>=dev-haskell/safe-0.2:=
@@ -38,11 +38,6 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'lens >= 4.12.3 && < 4.13' 'lens >= 4.12.3'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \

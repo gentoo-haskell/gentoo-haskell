@@ -27,11 +27,11 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/zlib-0.5.3.1:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.10.1:=
 	mmap? ( dev-haskell/mmap:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.22.2.0
 "
 
 S="${WORKDIR}/${MY_P}"
