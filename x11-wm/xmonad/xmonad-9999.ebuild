@@ -8,7 +8,7 @@ EAPI=5
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 
-inherit haskell-cabal git-2
+inherit haskell-cabal git-r3
 
 DESCRIPTION="A tiling window manager"
 HOMEPAGE="http://xmonad.org"
