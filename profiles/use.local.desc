@@ -363,7 +363,6 @@ dev-vcs/darcs:network-uri - Get Network.URI from the network-uri package.
 dev-vcs/darcs:optimize - Build with optimizations (-O2).
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
 dev-vcs/darcs:threaded - Use threading and SMP support.
-dev-vcs/git-annex:asciiprogress - Use ascii-progress library (experimental)
 dev-vcs/git-annex:assistant - Enable git-annex assistant and watch command
 dev-vcs/git-annex:concurrentoutput - Use concurrent-output library (experimental)
 dev-vcs/git-annex:cryptonite - Use the cryptonite library, instead of the older cryptohash

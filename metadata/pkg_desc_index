@@ -469,7 +469,7 @@ dev-haskell/generics-sop 0.2.0.0: Generic Programming using True Sums of Product
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.1: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
-dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1 7.10.3_rc1: The Glasgow Haskell Compiler API (ghc package)
+dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1 7.10.3_rc1 7.10.3: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0: Library and tool for parsing .eventlog files from GHC
@@ -1539,7 +1539,7 @@ dev-lang/cryptol 2.2.4 2.2.5: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
-dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 7.10.3 9999: The Glasgow Haskell Compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
@@ -1565,7 +1565,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.8.5-r4 2.10.0-r1 2.10.1-r1 2.10.2: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 5.20151116: manage files with git, without checking their contents into git
+dev-vcs/git-annex 5.20151208: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
