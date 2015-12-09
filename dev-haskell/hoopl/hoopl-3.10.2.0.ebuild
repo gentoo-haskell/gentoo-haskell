@@ -35,4 +35,4 @@ src_configure() {
 		--flag=-testcoverage
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:7.10.3_rc1"
+CABAL_CORE_LIB_GHC_PV="PM:7.10.3_rc1 PM:7.10.3"
