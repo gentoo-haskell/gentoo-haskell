@@ -21,8 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hpp-0.1:=[profile?] <dev-haskell/hpp-0.2:=[profile?]
-	>=dev-haskell/juicypixels-3:=[profile?]
+RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
 	>=dev-haskell/linear-1.1.3:=[profile?]
 	>=dev-haskell/opengl-2.9.2:=[profile?] <dev-haskell/opengl-2.14:=[profile?]
 	>=dev-haskell/openglraw-1.1:=[profile?]
@@ -32,6 +31,7 @@ RDEPEND=">=dev-haskell/hpp-0.1:=[profile?] <dev-haskell/hpp-0.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
+	dev-haskell/cpphs
 "
 
 S="${WORKDIR}/${MY_P}"
