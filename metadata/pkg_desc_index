@@ -574,7 +574,7 @@ dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package mana
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/haskell-src-meta 0.6.0.13: Parse source to template-haskell abstract syntax
+dev-haskell/haskell-src-meta 0.6.0.13-r1: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
 dev-haskell/haskelldb-hdbc-mysql 0.1.1-r1: HaskellDB support for the HDBC MySQL driver
