@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="use-text-show"
 
 RDEPEND=">=dev-haskell/text-0.5:=[profile?]
+	dev-haskell/time-locale-compat:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	use-text-show? ( >=dev-haskell/text-show-2:=[profile?] )
 "

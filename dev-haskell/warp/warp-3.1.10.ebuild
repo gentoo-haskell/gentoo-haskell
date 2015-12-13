@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd warp-debug"
 
-RESTRICT=test # missing files
+RESTRICT=test # module colision
 
 RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.4:=[profile?]
@@ -36,6 +36,7 @@ RDEPEND=">=dev-haskell/auto-update-0.1.1:=[profile?] <dev-haskell/auto-update-0.
 	>=dev-haskell/streaming-commons-0.1.10:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
+	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?]
 	>=dev-haskell/wai-3.0.4:=[profile?] <dev-haskell/wai-3.1:=[profile?]
 	dev-haskell/word8:=[profile?]
@@ -49,7 +50,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/http
 		dev-haskell/hunit
 		>=dev-haskell/lifted-base-0.1
-		dev-haskell/old-locale
 		dev-haskell/quickcheck
 		>=dev-haskell/transformers-0.2.2 )
 "
