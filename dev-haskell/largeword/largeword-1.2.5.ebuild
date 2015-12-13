@@ -29,8 +29,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2.6 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'largeword == 1.2.3' 'largeword'
-}
