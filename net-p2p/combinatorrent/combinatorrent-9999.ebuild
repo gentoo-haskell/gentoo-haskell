@@ -48,13 +48,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-#S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	cabal_chdeps \
-		'cereal >= 0.3 && < 0.5' 'cereal >= 0.3'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug) \
