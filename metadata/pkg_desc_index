@@ -1402,7 +1402,7 @@ dev-haskell/uuagc 0.9.52.1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-bootstrap 0.9.40.2: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.0.6.0: Cabal plugin for the Universiteit Utrecht Attribute Grammar System
 dev-haskell/uuid 1.3.11-r1: For creating, comparing, parsing and printing Universally Unique Identifiers
-dev-haskell/uuid-types 1.0.2-r1: Type definitions for Universally Unique Identifiers
+dev-haskell/uuid-types 1.0.2-r2: Type definitions for Universally Unique Identifiers
 dev-haskell/uulib 0.9.21: Haskell Utrecht Tools Library
 dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using vacuum, graphviz and cairo
