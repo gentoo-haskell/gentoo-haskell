@@ -64,7 +64,7 @@ src_prepare() {
 	replace-hcflags -g ''
 
 	cabal_chdeps \
-		'zlib < 0.6' 'zlib' \
+		'zlib < 0.6.1' 'zlib' \
 		'vector < 0.12' 'vector'
 }
 
