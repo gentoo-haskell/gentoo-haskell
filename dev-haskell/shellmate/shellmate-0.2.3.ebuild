@@ -16,16 +16,22 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+download-extras"
 
-RDEPEND=">=dev-haskell/download-curl-0.1:=[profile?] <dev-haskell/download-curl-0.2:=[profile?]
-	>=dev-haskell/feed-0.3:=[profile?] <dev-haskell/feed-0.4:=[profile?]
-	>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
+RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/xml-1.3:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
+	download-extras? ( >=dev-haskell/feed-0.3:=[profile?] <dev-haskell/feed-0.4:=[profile?]
+				>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
+				>=dev-haskell/xml-1.3:=[profile?] <dev-haskell/xml-1.4:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag download-extras download-extras)
+}
