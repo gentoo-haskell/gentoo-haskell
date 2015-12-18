@@ -41,8 +41,6 @@ SAMPLE_CONFIG_LOC="man"
 src_prepare() {
 	use no-autorepeat-keys && epatch "$FILESDIR/$PN-0.12-check-repeat.patch"
 
-	epatch "${FILESDIR}"/${PN}-0.12-ghc-7.10.patch
-
 	# allow user patches
 	epatch_user
 }
@@ -73,7 +71,7 @@ src_install() {
 		dohtml man/xmonad.1.html
 	fi
 
-	dodoc CONFIG README
+	dodoc CONFIG README.md
 }
 
 pkg_postinst() {
