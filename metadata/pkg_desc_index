@@ -225,7 +225,7 @@ dev-haskell/compact-string-fix 0.3.2: Same as compact-string except with a small
 dev-haskell/composition 1.0.2: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
-dev-haskell/concurrent-extra 0.7.0.9: Extra concurrency primitives
+dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
 dev-haskell/concurrent-output 1.7.1: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
