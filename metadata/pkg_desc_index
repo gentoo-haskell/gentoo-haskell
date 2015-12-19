@@ -679,10 +679,10 @@ dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
 dev-haskell/hsopenssl 0.11.1.1 0.11.1.1-r1: Partial OpenSSL binding for Haskell
 dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.2.7: A SPARQL query generator and DSL, and a client to query a SPARQL server
-dev-haskell/hspec 2.1.4 2.2.0: A Testing Framework for Haskell
+dev-haskell/hspec 2.1.4 2.2.0 2.2.1: A Testing Framework for Haskell
 dev-haskell/hspec-contrib 0.3.0: Contributed functionality for Hspec
-dev-haskell/hspec-core 2.1.4 2.2.0: A Testing Framework for Haskell
-dev-haskell/hspec-discover 2.1.4 2.2.0: Automatically discover and run Hspec tests
+dev-haskell/hspec-core 2.1.4 2.2.0 2.2.1: A Testing Framework for Haskell
+dev-haskell/hspec-discover 2.1.4 2.2.0 2.2.1: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.6.1.1 0.7.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
 dev-haskell/hspec-meta 1.12.2 2.0.0 2.2.0: A version of Hspec which is used to test Hspec itself
