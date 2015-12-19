@@ -416,7 +416,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.1: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.8-r1: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.10: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -451,6 +451,7 @@ dev-haskell/fmlist 0.9: FoldMap lists
 dev-haskell/foldl 1.1.2: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
+dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.1: Monads for free
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
 dev-haskell/frown 0.6.1-r1: A parser generator for Haskell
@@ -555,7 +556,7 @@ dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
 dev-haskell/happstack-server 7.4.5: Web related tools and services
-dev-haskell/happstack-server-tls 7.1.6: extend happstack-server with https:// support (TLS/SSL)
+dev-haskell/happstack-server-tls 7.1.6.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
@@ -640,7 +641,7 @@ dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.4.8-r1: Haskell OAuth2 authentication
-dev-haskell/hood 0.2.1: Debugging by observing in place
+dev-haskell/hood 0.3: Debugging by observing in place
 dev-haskell/hoodle 0.4.0: Executable for hoodle
 dev-haskell/hoodle-builder 0.3.0: text builder for hoodle file format
 dev-haskell/hoodle-core 0.15.0: Core library for hoodle
@@ -709,7 +710,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.22: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.25: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.26.1: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
@@ -822,7 +823,7 @@ dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 0.10.2 0.11.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.7.0.2: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.6: lifted IO operations from the base library
-dev-haskell/linear 1.19.1.3 1.20.1 1.20.2-r1: Linear Algebra
+dev-haskell/linear 1.19.1.3 1.20.3: Linear Algebra
 dev-haskell/lio 0.11.5.0: Labeled IO Information Flow Control Library
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/listlike 4.2.1: Generic support for list-like structures
