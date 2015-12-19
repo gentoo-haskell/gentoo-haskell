@@ -9,8 +9,8 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="ASN.1 types"
-HOMEPAGE="http://github.com/vincenthz/hs-asn1-types"
+DESCRIPTION="Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification"
+HOMEPAGE="https://github.com/k-bx/protocol-buffers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,10 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/hourglass:=[profile?]
-	dev-haskell/memory:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+RDEPEND="~dev-haskell/protocol-buffers-2.1.12:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.18.1.3
 "
