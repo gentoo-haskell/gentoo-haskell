@@ -226,7 +226,7 @@ dev-haskell/composition 1.0.2: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.1: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.2: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -763,7 +763,7 @@ dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient ex
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r2: Iteratee-based I/O
 dev-haskell/iterio 0.2.2-r1: Iteratee-based IO with pipe operators
-dev-haskell/ixset 1.0.6: Efficient relational queries on Haskell sets
+dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
@@ -1005,7 +1005,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.3: Path
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.7: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.7.0.1: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
