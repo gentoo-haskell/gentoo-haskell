@@ -19,8 +19,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fails own tests
-
 RDEPEND=">=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-2:=[profile?]
 	>=dev-haskell/quickcheck-2.1.0.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
