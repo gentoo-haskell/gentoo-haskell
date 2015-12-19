@@ -552,7 +552,7 @@ dev-haskell/happraise 0.1-r1: A small program for counting the comments in haske
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-heist 7.2.4: Support for using Heist templates in Happstack
-dev-haskell/happstack-hsp 7.3.6: Support for using HSP templates in Happstack
+dev-haskell/happstack-hsp 7.3.7: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
 dev-haskell/happstack-server 7.4.5: Web related tools and services
@@ -1005,7 +1005,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.3: Path
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
-dev-haskell/pathtype 0.6: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.7: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
