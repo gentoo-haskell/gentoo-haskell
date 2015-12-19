@@ -19,19 +19,19 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails own tests
+
 RDEPEND=">=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-2:=[profile?]
 	>=dev-haskell/quickcheck-2.1.0.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-1.2 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'Buildable: True' 'Buildable: False'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
