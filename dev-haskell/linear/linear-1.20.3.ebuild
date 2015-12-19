@@ -22,7 +22,7 @@ IUSE="+template-haskell"
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/bytes-0.15:=[profile?] <dev-haskell/bytes-1:=[profile?]
-	>=dev-haskell/cereal-0.4.1.1:=[profile?]
+	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -45,11 +45,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'cereal               >= 0.4.1.1 && < 0.5' 'cereal               >= 0.4.1.1'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
