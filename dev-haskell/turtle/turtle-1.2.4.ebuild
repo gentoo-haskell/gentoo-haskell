@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0.0.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
-	>=dev-haskell/clock-0.4.1.2:=[profile?] <dev-haskell/clock-0.6:=[profile?]
+	>=dev-haskell/clock-0.4.1.2:=[profile?] <dev-haskell/clock-0.7:=[profile?]
 	>=dev-haskell/foldl-1.1:=[profile?] <dev-haskell/foldl-1.2:=[profile?]
 	<dev-haskell/hostname-1.1:=[profile?]
 	<dev-haskell/managed-1.1:=[profile?]
