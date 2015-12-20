@@ -998,7 +998,7 @@ dev-haskell/pandoc-types 1.12.4.7: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.0.6: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
-dev-haskell/parseargs 0.1.5.2: Command-line argument parsing library for Haskell programs
+dev-haskell/parseargs 0.1.5.2 0.2.0.4: Full-featured command-line argument parsing library
 dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
