@@ -1223,7 +1223,7 @@ dev-haskell/socks 0.5.4: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r4: GUI functions as used in the book "The Haskell School of Expression"
 dev-haskell/sourcegraph 0.7.0.7: Static code analysis using graph-theoretic techniques
-dev-haskell/sourcemap 0.1.5: Implementation of source maps as proposed by Google and Mozilla
+dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.2.5: Play, write, read, convert audio signals using Sox
 dev-haskell/speculation 1.5.0.2: A framework for safe, programmable, speculative parallelism
 dev-haskell/split 0.2.2: Combinator library for splitting lists
