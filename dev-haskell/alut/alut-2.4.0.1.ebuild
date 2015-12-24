@@ -10,11 +10,11 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-MY_PN="GLUT"
+MY_PN="ALUT"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A binding for the OpenGL Utility Toolkit"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Opengl"
+DESCRIPTION="A binding for the OpenAL Utility Toolkit"
+HOMEPAGE="https://github.com/haskell-openal/ALUT"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,12 +22,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-2.14:=[profile?]
-	>=dev-haskell/openglraw-2.3:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
+RDEPEND=">=dev-haskell/openal-1.7:=[profile?] <dev-haskell/openal-1.8:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	media-libs/freeglut
+	media-libs/freealut
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

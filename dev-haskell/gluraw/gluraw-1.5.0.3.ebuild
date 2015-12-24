@@ -10,11 +10,11 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-MY_PN="OpenAL"
+MY_PN="GLURaw"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A binding to the OpenAL cross-platform 3D audio API"
-HOMEPAGE="https://github.com/haskell-openal/ALUT"
+DESCRIPTION="A raw binding for the OpenGL graphics system"
+HOMEPAGE="http://www.haskell.org/haskellwiki/Opengl"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,12 +22,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/objectname-1.1:=[profile?] <dev-haskell/objectname-1.2:=[profile?]
-	>=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-2.14:=[profile?]
-	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+RDEPEND=">=dev-haskell/openglraw-2.4:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	media-libs/openal
+	virtual/glu
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
