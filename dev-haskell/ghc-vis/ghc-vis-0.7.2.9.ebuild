@@ -21,7 +21,7 @@ IUSE="+full +graph"
 RDEPEND=">=dev-haskell/cairo-0.12:= <dev-haskell/cairo-0.14:=
 	>=dev-haskell/fgl-5.4:= <dev-haskell/fgl-5.6:=
 	>=dev-haskell/ghc-heap-view-0.5:=
-	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.14:=
+	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.15:=
 	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.3:=
 	>=dev-haskell/svgcairo-0.12:= <dev-haskell/svgcairo-0.14:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-1.3:=
