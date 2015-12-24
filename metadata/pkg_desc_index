@@ -711,7 +711,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.22: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.26.1: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.26.2: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
@@ -977,7 +977,7 @@ dev-haskell/numeric-quest 0.2.0.1: Math and quantum mechanics
 dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tuples
 dev-haskell/numtype 1.0-r1 1.0.1 1.1: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
-dev-haskell/objectname 1.0.1.1 1.1.0.0: Explicitly handled object names
+dev-haskell/objectname 1.0.1.1 1.1.0.1: Explicitly handled object names
 dev-haskell/oeis 0.3.6: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
@@ -1046,7 +1046,7 @@ dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 4.2.0.2: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
 dev-haskell/pointfree 1.0.4.8 1.1 1.1-r1: Tool for refactoring expressions into pointfree form
-dev-haskell/pointful 1.0.6 1.0.6-r1: Pointful refactoring tool
+dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.9 1.10 1.11: A variety of alternative parser combinator libraries
@@ -1111,7 +1111,7 @@ dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
 dev-haskell/rdf4h 1.3.5: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
 dev-haskell/re2 0.1: Bindings to the re2 regular expression library
-dev-haskell/reactive-banana 0.8.1.2 0.9.0.0 1.0.0.0: Library for functional reactive programming (FRP)
+dev-haskell/reactive-banana 0.8.1.2 0.9.0.0 1.0.0.1: Library for functional reactive programming (FRP)
 dev-haskell/reactive-banana-glfw 9999: reactive-banana for GLFW
 dev-haskell/reactive-banana-wx 0.8.0.4 0.9.0.2 1.0.0.0: Examples for the reactive-banana library, using wxHaskell
 dev-haskell/readargs 1.2.2: Simple command line argument parsing
@@ -1234,11 +1234,11 @@ dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/stack 0.1.3.1 0.1.4.1 0.1.6.0-r1 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.4: Simple State-like monad transformer with saveable and restorable state
-dev-haskell/statevar 1.1.0.1: State variables
+dev-haskell/statevar 1.1.0.2: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
 dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.2.3: A library of statistical types, data, and functions
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
-dev-haskell/stm 2.4.4: Software Transactional Memory
+dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 2.7.0: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
@@ -1285,7 +1285,7 @@ dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bit
 dev-haskell/tagged 0.8.2: Haskell 98 phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagged-transformer 0.8: Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagshare 0.0: TagShare - explicit sharing with tags
-dev-haskell/tagsoup 0.13.5: Parsing and extracting information from (possibly malformed) HTML/XML documents
+dev-haskell/tagsoup 0.13.6: Parsing and extracting information from (possibly malformed) HTML/XML documents
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
@@ -1465,7 +1465,7 @@ dev-haskell/word-trie 0.2.0.4 0.3.0: Implementation of a finite trie over words
 dev-haskell/word8 0.1.2: Word8 library
 dev-haskell/wordexp 0.2.0.0: wordexp(3) wrappers
 dev-haskell/wraparound 0.0.2: Convenient handling of points on a seamless 2-dimensional plane
-dev-haskell/wreq 0.4.0.0: An easy-to-use HTTP client library
+dev-haskell/wreq 0.4.1.0: An easy-to-use HTTP client library
 dev-haskell/wxc 0.90.0.4 0.90.1.1: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.13.2.3-r1 0.90.0.3 0.90.1.1: wxHaskell core
 dev-haskell/wxdirect 0.13.1.2 0.13.1.3 0.90.0.1 0.90.1.1: helper tool for building wxHaskell
@@ -1480,13 +1480,13 @@ dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
-dev-haskell/xdot 0.2.4.8: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xdot 0.2.4.9: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xkbcommon 0.0.1: Haskell bindings for libxkbcommon
 dev-haskell/xml 1.3.14: A simple XML library
-dev-haskell/xml-conduit 1.3.2: Pure-Haskell utilities for dealing with XML with the conduit package
+dev-haskell/xml-conduit 1.3.3: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.0.11: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.1-r2: Optics for xml-conduit and html-conduit
 dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
