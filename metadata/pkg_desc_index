@@ -2,7 +2,7 @@ app-accessibility/hsay 1.1.0-r1: (ab)Use Google Translate as a speech synthesise
 app-admin/haskell-updater 1.2.9 9999: Rebuild Haskell dependencies in Gentoo
 app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3-r1 0.15.1.4-r1 9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collection for leksah
-app-editors/yi 0.11.1-r1 0.12.2: The Haskell-Scriptable Editor
+app-editors/yi 0.11.1-r1 0.12.3: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 9999: Extensible Haskell pretty printer
@@ -69,7 +69,7 @@ dev-haskell/asn1-types 0.3.2: ASN.1 types
 dev-haskell/astar 0.2.1: General A* search algorithm
 dev-haskell/async 2.0.2: Run IO operations asynchronously and wait for their results
 dev-haskell/atomic-primops 0.6.1.1 0.7 0.8.0.2: A safe approach to CAS and other atomic ops in Haskell
-dev-haskell/atto-lisp 0.2.2.1: Efficient parsing and serialisation of S-Expressions
+dev-haskell/atto-lisp 0.2.2.2: Efficient parsing and serialisation of S-Expressions
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
 dev-haskell/attojson 0.5.10-r1: Simple lightweight JSON parser, generator & manipulator based on ByteString
 dev-haskell/attoparsec 0.12.1.6 0.13.0.1: Fast combinator parsing for bytestrings and text
@@ -482,7 +482,7 @@ dev-haskell/ghc-parmake 0.1.9: A parallel wrapper for 'ghc --make'
 dev-haskell/ghc-parser 0.1.8.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
 dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
-dev-haskell/ghc-vis 0.7.2.8: Live visualization of data structures in GHCi
+dev-haskell/ghc-vis 0.7.2.9: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghcid 0.5: GHCi based bare bones IDE
@@ -1319,7 +1319,7 @@ dev-haskell/testing-feat 0.4.0.2: Functional Enumeration of Algebraic Types
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
 dev-haskell/texmath 0.8.4.1: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.0: Functions for running Tex from Haskell
-dev-haskell/text 1.2.1.3: An efficient packed Unicode text type
+dev-haskell/text 1.2.1.3 1.2.2.0: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
@@ -1442,7 +1442,7 @@ dev-haskell/wai-logger 2.2.4.1: A logging system for WAI
 dev-haskell/wai-logger-prefork 0.3.0: A logging system for preforked WAI apps
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/warp 3.0.13.1 3.1.10: A fast, light-weight web server for WAI applications
-dev-haskell/warp-tls 3.0.4.2 3.1.4: HTTP over TLS support for Warp via the TLS package
+dev-haskell/warp-tls 3.0.4.2 3.1.5: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.1.3: WAVE audio file IO library
 dev-haskell/web-encodings 0.3.0.9-r1: Encapsulate multiple web encoding in a single package. (deprecated)
