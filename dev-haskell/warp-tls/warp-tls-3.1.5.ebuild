@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cprng-aes-0.5.0:=[profile?]
 	dev-haskell/streaming-commons:=[profile?]
 	>=dev-haskell/tls-1.3.2:=[profile?]
 	>=dev-haskell/wai-3.0.4:=[profile?] <dev-haskell/wai-3.1:=[profile?]
-	>=dev-haskell/warp-3.1:=[profile?] <dev-haskell/warp-3.2:=[profile?]
+	>=dev-haskell/warp-3.1.7:=[profile?] <dev-haskell/warp-3.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
