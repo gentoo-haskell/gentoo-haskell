@@ -25,7 +25,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-2.14:=[profile?]
 	>=dev-haskell/openglraw-2.3:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	media-libs/freeglut
 "
