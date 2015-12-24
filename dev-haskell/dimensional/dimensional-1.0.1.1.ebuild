@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Statically checked physical dimensions, using Type Families and Data Kinds"
-HOMEPAGE="https://github.com/bjornbm/dimensional-dk/"
+HOMEPAGE="https://github.com/bjornbm/dimensional/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
