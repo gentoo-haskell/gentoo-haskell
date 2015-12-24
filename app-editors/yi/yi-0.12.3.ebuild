@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
 	>=dev-haskell/yi-rope-0.7.0.0:=[profile?] <dev-haskell/yi-rope-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	gtk? ( >=dev-haskell/glib-0.13:=[profile?] <dev-haskell/glib-0.14:=[profile?]
-		>=dev-haskell/gtk-0.13:=[profile?] <dev-haskell/gtk-0.14:=[profile?]
+		>=dev-haskell/gtk-0.13:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
 		>=dev-haskell/pango-0.13:=[profile?] <dev-haskell/pango-0.14:=[profile?] )
 	hint? ( >dev-haskell/hint-0.3.1:=[profile?] )
 	testing? ( >=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
