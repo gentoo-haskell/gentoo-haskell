@@ -341,7 +341,7 @@ dev-haskell/digestive-functors-blaze 0.6.0.6: Blaze frontend for the digestive-f
 dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
-dev-haskell/dimensional 1.0.1.0: Statically checked physical dimensions, using Type Families and Data Kinds
+dev-haskell/dimensional 1.0.1.1: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
 dev-haskell/direct-sqlite 2.3.16: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
@@ -636,7 +636,7 @@ dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounti
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
 dev-haskell/hlint 1.9.22 1.9.25: Source code suggestions
-dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0: Heterogeneous lists
+dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
