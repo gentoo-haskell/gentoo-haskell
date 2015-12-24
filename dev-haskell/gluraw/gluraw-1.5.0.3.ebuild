@@ -23,7 +23,7 @@ KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/openglraw-2.4:=[profile?] <dev-haskell/openglraw-2.7:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/glu
 "
