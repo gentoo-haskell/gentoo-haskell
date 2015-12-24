@@ -24,7 +24,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/half-0.2.2.1:=[profile?] <dev-haskell/half-0.3:=[profile?]
 	>=dev-haskell/text-0.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/opengl
 "
