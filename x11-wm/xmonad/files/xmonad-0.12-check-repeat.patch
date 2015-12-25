@@ -8,8 +8,8 @@
      , extensibleState  :: !(M.Map String (Either String StateExtension))
      -- ^ stores custom state information.
      --
---- xmonad/src/XMonad/Main.hsc	2010-09-05 05:11:42.000000000 +0400
-+++ xmonad/src/XMonad/Main.hsc	2010-09-18 08:03:11.000000000 +0400
+--- xmonad/src/XMonad/Main.hs	2010-09-05 05:11:42.000000000 +0400
++++ xmonad/src/XMonad/Main.hs	2010-09-18 08:03:11.000000000 +0400
 @@ -129,6 +129,7 @@
              , mapped          = S.empty
              , waitingUnmap    = M.empty
@@ -26,7 +26,7 @@
 -        mClean <- cleanMask m
 -        ks <- asks keyActions
 -        userCodeDef () $ whenJust (M.lookup (mClean, s) ks) id
-+    	kp <- gets keyPressed
++        kp <- gets keyPressed
 +        if kp /= code then do
 +                modify $ \s -> s { keyPressed = code }
 +                s  <- io $ keycodeToKeysym dpy code 0
