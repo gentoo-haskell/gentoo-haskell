@@ -1622,5 +1622,5 @@ x11-misc/xmobar 0.23.1 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1 9999: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-log-applet 2.0.0-r301: Gnome and XFCE applet for displaying XMonad log
 x11-misc/yeganesh 2.5: small dmenu wrapper
-x11-wm/xmonad 0.11-r1 0.11-r2 0.11-r3 0.11.1 9999: A tiling window manager
-x11-wm/xmonad-contrib 0.11 0.11.1 0.11.2 0.11.3 0.11.4 9999: Third party extensions for xmonad
+x11-wm/xmonad 0.11-r1 0.11-r2 0.11-r3 0.11.1 0.12 9999: A tiling window manager
+x11-wm/xmonad-contrib 0.11 0.11.1 0.11.2 0.11.3 0.11.4 0.12 9999: Third party extensions for xmonad
