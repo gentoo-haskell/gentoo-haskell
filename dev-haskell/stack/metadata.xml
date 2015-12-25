@@ -10,6 +10,9 @@
 		currently only intended for use by the executable.
 	</longdescription>
 	<use>
-		<flag name='integration-tests'>run the integration test suite.</flag>
+		<flag name='integration-tests'>Run the integration test suite.</flag>
+	</use>
+	<use>
+		<flag name='disable-git-info'>Disable compile-time inclusion of current git info.</flag>
 	</use>
 </pkgmetadata>
