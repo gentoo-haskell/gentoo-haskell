@@ -1509,6 +1509,7 @@ dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a dat
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.5: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.16.1: The yesod helper executable
+dev-haskell/yesod-content-pdf 0.2.0.2: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.18.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
