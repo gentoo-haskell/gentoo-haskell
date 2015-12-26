@@ -61,6 +61,8 @@ src_prepare() {
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
 
 	# when built with -O2 takes 10GB RAM at least on ghc-7.10.2
+	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
+	[[ $(ghc-version) == 7.10.* ]] && replace-hcflags -O[2-9] -O1
 	replace-hcflags -g ''
 
 	cabal_chdeps \
