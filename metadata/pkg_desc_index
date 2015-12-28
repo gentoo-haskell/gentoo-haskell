@@ -331,7 +331,7 @@ dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.9: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.10: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -1123,7 +1123,7 @@ dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general ma
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
-dev-haskell/regex-applicative 0.3.2.1: Regex-based parsing with applicative interface
+dev-haskell/regex-applicative 0.3.3: Regex-based parsing with applicative interface
 dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat 0.95.1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
