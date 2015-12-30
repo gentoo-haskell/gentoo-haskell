@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # actually needs os x
-
 RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 	>=dev-haskell/fgl-5.4.2.2:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
 	dev-haskell/parsec:=[profile?]
