@@ -35,9 +35,9 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
-	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
+	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-extra-3.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
-	>=dev-haskell/warp-3.0.11:=[profile?] <dev-haskell/warp-3.2:=[profile?]
+	>=dev-haskell/warp-3.0.11:=[profile?] <dev-haskell/warp-3.3:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
