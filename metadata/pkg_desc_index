@@ -94,7 +94,7 @@ dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for By
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basic-prelude 0.4.1: An enhanced core prelude; a common foundation for alternate preludes
-dev-haskell/bcrypt 0.0.7: Haskell bindings to the bcrypt password hash
+dev-haskell/bcrypt 0.0.8: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 4.2.1 5 5.1: Bifunctors
