@@ -424,7 +424,7 @@ dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
 dev-haskell/fay-text 0.3.2.2: Fay Text type represented as JavaScript strings
 dev-haskell/fay-uri 0.2.0.0: Persistent FFI bindings for using jsUri in Fay
-dev-haskell/fb 1.0.12-r1: Bindings to Facebook's API
+dev-haskell/fb 1.0.13: Bindings to Facebook's API
 dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
