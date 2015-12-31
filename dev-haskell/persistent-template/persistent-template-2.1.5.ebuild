@@ -18,15 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # broken tests against old versions of persistent
-
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
-	>=dev-haskell/aeson-extra-0.2.1.0:=[profile?] <dev-haskell/aeson-extra-0.3:=[profile?]
+	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 	>=dev-haskell/http-api-data-0.2:=[profile?] <dev-haskell/http-api-data-0.3:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	dev-haskell/path-pieces:=[profile?]
-	>=dev-haskell/persistent-2.1.3:=[profile?] <dev-haskell/persistent-3:=[profile?]
+	>=dev-haskell/persistent-2.2.2:=[profile?] <dev-haskell/persistent-3:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/text-0.5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
