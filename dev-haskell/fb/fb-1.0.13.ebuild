@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/attoparsec-0.10.4:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1:=[profile?]
-	>=dev-haskell/cereal-0.3:=[profile?]
+	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/crypto-api-0.11:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -54,8 +54,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'hspec >= 1.9 && < 1.12' 'hspec >= 1.9' \
-		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3'
+		'hspec >= 1.9 && < 1.12' 'hspec >= 1.9'
 }
 
 src_configure() {
