@@ -224,7 +224,7 @@ dev-haskell/comonad-extras 4.0-r2: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
 dev-haskell/compact-string-fix 0.3.2: Same as compact-string except with a small fix so it builds on ghc-6.12
-dev-haskell/composition 1.0.2: Combinators for unorthodox function composition
+dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
@@ -661,7 +661,7 @@ dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
 dev-haskell/hpc 0.6.0.1 0.6.0.2: Code Coverage Library for Haskell
-dev-haskell/hpdf 1.4.9: Generation of PDF documents
+dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0 0.3.0.0: A Haskell pre-processor
 dev-haskell/hprotoc 2.1.7 2.1.12: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
