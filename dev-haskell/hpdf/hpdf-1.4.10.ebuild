@@ -21,8 +21,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fail to typecheck
-
 RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/binary-0.4:=[profile?]
 	dev-haskell/errors:=[profile?]
