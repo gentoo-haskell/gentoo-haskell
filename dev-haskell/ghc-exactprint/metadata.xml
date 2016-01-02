@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Using the API Annotations available from GHC 7.10.2, this
+		library provides a means to round trip any code that can
+		be compiled by GHC, currently excluding lhs files.
+		
+		It does this with a phased approach
+		
+		* Delta - converts GHC API Annotations into relative
+		offsets, indexed by SrcSpan
+		
+		* Transform - functions to facilitate changes to
+		the AST, adjusting the annotations generated in the
+		Delta phase to suit the changes.
+		
+		* Print - converts an AST and its annotations to
+		properly formatted source text.
+		
+		
+		Note: requires GHC 7.10.2 or later
+	</longdescription>
+	<use>
+		<flag name='roundtrip'>Build roundtripping executables</flag>
+	</use>
+</pkgmetadata>
