@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This package contains the generic zipper system described
+		in the Scrap Your Zippers paper
+		(see &lt;http://www.cs.indiana.edu/~adamsmd/papers/scrap_your_zippers/&gt;).
+		It defines the @Zipper@ type permitting zipper traversals
+		over arbitrary instances of @Data@.
+	</longdescription>
+</pkgmetadata>
