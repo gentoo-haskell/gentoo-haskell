@@ -476,6 +476,7 @@ dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.10.2 7.10.2-r1 7.10.3_rc1
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0: Library and tool for parsing .eventlog files from GHC
+dev-haskell/ghc-exactprint 0.5.0.1: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.4: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Ghc-Api monads and monad-transformers
@@ -560,6 +561,7 @@ dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + r
 dev-haskell/happstack-server 7.4.5: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
+dev-haskell/hare 0.8.2.1: the Haskell Refactorer
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hashable 1.2.3.3: A class for types that can be converted to a hash value
@@ -1249,6 +1251,7 @@ dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.2: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.10-r1: Fast, packed, strict storable arrays with a list interface like ByteString
+dev-haskell/strafunski-strategylib 5.0.0.8: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
@@ -1280,6 +1283,7 @@ dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
+dev-haskell/syz 0.2.0.0: Scrap Your Zippers
 dev-haskell/tables 0.4.1.1-r1: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
