@@ -55,3 +55,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	# ghc blows up and does not finish compilation
+	[[ $(ghc-version) == 7.10.* ]] && replace-hcflags -O[1-9] -O0
+}
