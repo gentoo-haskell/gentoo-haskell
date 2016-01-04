@@ -7,7 +7,7 @@ app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 9999: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
-app-emacs/structured-haskell-mode 1.0.20 9999: Structured editing Emacs mode for Haskell
+app-emacs/structured-haskell-mode 1.0.20-r1 9999: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
 app-portage/fquery 0.2.1.5: Installed package query tool for Gentoo Linux
