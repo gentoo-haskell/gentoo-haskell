@@ -507,7 +507,7 @@ dev-haskell/gloss-raster 1.8.2.1 1.9.2.1 1.9.4.1: Parallel rendering of raster i
 dev-haskell/gloss-rendering 1.9.2.1 1.9.3.1-r1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 1.4.0.2 1.5.0.3: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.4: A binding for the OpenGL Utility Toolkit
+dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.5: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.8.8: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.3.1 0.5.4: 2D and 3D plots using gnuplot
@@ -883,7 +883,7 @@ dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbe
 dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
-dev-haskell/midi 0.2.1.5: Handling of MIDI messages and files
+dev-haskell/midi 0.2.2: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
 dev-haskell/mime-mail 0.4.11: Compose MIME email messages
@@ -986,7 +986,7 @@ dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
-dev-haskell/openal 1.6.0.1 1.7.0.2: A binding to the OpenAL cross-platform 3D audio API
+dev-haskell/openal 1.6.0.1 1.7.0.3: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 2.6.0.1 2.8.0.0 2.9.0.0 2.9.1.0 2.9.2.0 2.12.0.1 2.13.1.0 2.13.1.1 2.13.2.1: A binding for the OpenGL graphics system
@@ -1165,7 +1165,7 @@ dev-haskell/safecopy 0.8.6: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
-dev-haskell/sandi 0.3.5: Data encoding library
+dev-haskell/sandi 0.3.6: Data encoding library
 dev-haskell/sbv 4.4: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
@@ -1294,7 +1294,7 @@ dev-haskell/tagsoup 0.13.6: Parsing and extracting information from (possibly ma
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
-dev-haskell/tar 0.4.2.2: Reading, writing and manipulating ".tar" archive files
+dev-haskell/tar 0.4.4.0: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2 0.11.0.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
 dev-haskell/tasty-golden 2.3.1: Golden tests support for tasty
