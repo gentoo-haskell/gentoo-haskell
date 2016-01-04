@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.11:=[profi
 	>=dev-haskell/enclosed-exceptions-1.0.1.1:=[profile?] <dev-haskell/enclosed-exceptions-1.1:=[profile?]
 	>=dev-haskell/errors-2.0.1:=[profile?] <dev-haskell/errors-2.1:=[profile?]
 	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
-	>=dev-haskell/extra-1.4.2:=[profile?] <dev-haskell/extra-1.5:=[profile?]
+	>=dev-haskell/extra-1.4.2:2=[profile?] <dev-haskell/extra-1.5:2=[profile?]
 	>=dev-haskell/fast-logger-2.3.1:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/file-embed-0.0.9:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/filelock-0.1.0.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
