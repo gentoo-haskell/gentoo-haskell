@@ -19,7 +19,7 @@ EGIT_REPO_URI="https://github.com/agda/agda.git"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="+cpphs uhc +stdlib"
+IUSE="+cpphs uhc +stdlib emacs"
 
 RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
@@ -52,8 +52,8 @@ RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.8:=[profile?
 		>=dev-haskell/uulib-0.9.20:=[profile?] )
 "
 RDEPEND+="
-		app-emacs/haskell-mode
-		virtual/emacs
+		emacs? ( app-emacs/haskell-mode
+			virtual/emacs )
 "
 PDEPEND="stdlib? ( sci-mathematics/agda-stdlib )"
 DEPEND="${RDEPEND}
@@ -74,6 +74,9 @@ src_prepare() {
 	sed -e '/.*emacs-mode.*$/d' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
+	sed -e '/^executable agda-mode$/a \ \ buildable: False' \
+		-i "${S}/${MY_PN}.cabal" \
+		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
 
 	cabal_chdeps \
 		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1'
@@ -86,9 +89,11 @@ src_configure() {
 }
 
 src_compile() {
-	BYTECOMPFLAGS="-L ./src/data/emacs-mode"
-	elisp-compile src/data/emacs-mode/*.el \
-		|| die "Failed to compile emacs mode"
+	if use emacs; then
+		BYTECOMPFLAGS="-L ./src/data/emacs-mode"
+		elisp-compile src/data/emacs-mode/*.el \
+			|| die "Failed to compile emacs mode"
+	fi
 	haskell-cabal_src_compile
 }
 
@@ -109,16 +114,22 @@ src_install() {
 		"${ED}"/usr/bin/agda "${add}"/lib/prim/Agda/Primitive.agda \
 		|| die "Failed to build 'Primitive.agdai'"
 
-	elisp-install ${PN} src/data/emacs-mode/*.el \
-		|| die "Failed to install emacs mode"
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
-		|| die "Failed to install elisp site file"
+	if use emacs; then
+		elisp-install ${PN} src/data/emacs-mode/*.el \
+			|| die "Failed to install emacs mode"
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
+			|| die "Failed to install elisp site file"
+	fi
 }
 
 pkg_postinst() {
-	elisp-site-regen
+	if use emacs; then
+		elisp-site-regen
+	fi
 }
 
 pkg_postrm() {
-	elisp-site-regen
+	if use emacs; then
+		elisp-site-regen
+	fi
 }
