@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # needs redis?
+RESTRICT=test # needs redis
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/boundedchan-1.0:=[profile?]
@@ -31,8 +31,13 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.3
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/mtl-2 <dev-haskell/mtl-3
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit == 1.2.*' 'HUnit >= 1.2'
+}
