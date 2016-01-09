@@ -743,7 +743,7 @@ dev-haskell/ieee754 0.7.8: Utilities for dealing with IEEE floating point number
 dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
 dev-haskell/ihaskell 0.6.4.0-r1 0.8.2.0 0.8.3.0: A Haskell backend kernel for the IPython project
-dev-haskell/imagemagick 0.0.3.5-r2: bindings to imagemagick library
+dev-haskell/imagemagick 0.0.3.7: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
