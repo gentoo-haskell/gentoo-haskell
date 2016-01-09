@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,6 +24,6 @@ RDEPEND=">=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
-	test? ( >=dev-haskell/async-2.0 <dev-haskell/async-2.1
+	test? ( >=dev-haskell/async-2.0 <dev-haskell/async-2.2
 		>=dev-haskell/pipes-4.0.0 <dev-haskell/pipes-4.2 )
 "
