@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 	>=dev-haskell/fgl-5.4.2.2:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
+	>=dev-haskell/hscolour-1.8:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
