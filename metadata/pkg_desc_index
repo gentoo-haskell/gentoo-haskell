@@ -228,7 +228,7 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.2: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.3: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -429,7 +429,7 @@ dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
-dev-haskell/feed 0.3.10.3: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
+dev-haskell/feed 0.3.11.0: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
 dev-haskell/file-embed 0.0.9: Use Template Haskell to embed file contents directly
@@ -544,7 +544,7 @@ dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2
 dev-haskell/haddock-api 2.16.1: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.7.5.0: A static website compiler library
+dev-haskell/hakyll 4.7.5.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/half 0.2.2.2: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
@@ -608,7 +608,7 @@ dev-haskell/hdevtools 0.1.2.1: Persistent GHC powered background server for FAST
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.2: Heaps in Haskell
 dev-haskell/heaps 0.3.2.1: Asymptotically optimal Brodal/Okasaki heaps
-dev-haskell/hedis 0.6.9: Client library for the Redis datastore: supports full command set, pipelining
+dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.1-r2: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.7: Here docs & interpolated strings via quasiquotation
