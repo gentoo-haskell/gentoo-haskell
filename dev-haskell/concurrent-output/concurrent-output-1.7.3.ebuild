@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-terminal-0.7.0:=[profile?]
-	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
+	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/exceptions-0.6.0:=[profile?] <dev-haskell/exceptions-0.9.0:=[profile?]
 	>=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/terminal-size-0.3.0:=[profile?] <dev-haskell/terminal-size-0.4.0:=[profile?]
