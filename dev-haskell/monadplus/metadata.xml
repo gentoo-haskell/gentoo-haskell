@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Filtering and folding over arbitrary `MonadPlus` instances.
+		This package generalizes many common stream operations such as
+		`filter`, `catMaybes` etc.
+	</longdescription>
+</pkgmetadata>
