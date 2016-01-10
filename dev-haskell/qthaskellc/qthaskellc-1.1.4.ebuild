@@ -39,7 +39,3 @@ src_prepare() {
 src_configure() {
 	eqmake4 "${S}"/qtc.pro
 }
-
-pkg_postinst() {
-	elog "This is just the C bindings to Qt, now you need to emerge dev-haskell/qt"
-}
