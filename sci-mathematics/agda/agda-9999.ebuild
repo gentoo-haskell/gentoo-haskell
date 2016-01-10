@@ -130,7 +130,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	ghc-package_pkg_postrm
+	haskell-cabal_pkg_postrm
 	if use emacs; then
 		elisp-site-regen
 	fi
