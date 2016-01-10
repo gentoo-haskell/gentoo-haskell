@@ -77,6 +77,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	haskell-cabal_pkg_postinst
 	if use emacs ; then
 		elisp-site-regen
 		elog "To configure ghc-mod either add this line to ~/.emacs:"
@@ -89,6 +90,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	haskell-cabal_pkg_postrm
 	if use emacs ; then
 		elisp-site-regen
 	fi
