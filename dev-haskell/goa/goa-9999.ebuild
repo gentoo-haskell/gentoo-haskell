@@ -27,7 +27,8 @@ src_prepare() {
 }
 
 pkg_postinst() {
-	ghc-package_pkg_postinst
+	haskell-cabal_pkg_postinst
+
 	DOT_GHCI=$(equery files dev-haskell/goa | grep dot-ghci)
 	elog "To configure a trippin' ghci, add $DOT_GHCI to your ~/.ghci"
 }

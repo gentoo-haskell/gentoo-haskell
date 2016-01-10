@@ -66,10 +66,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	ghc-package_pkg_postinst
+	haskell-cabal_pkg_postinst
 	use emacs && elisp-site-regen
 }
 
 pkg_postrm() {
+	haskell-cabal_pkg_postrm
 	use emacs && elisp-site-regen
 }
