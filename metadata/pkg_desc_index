@@ -1167,7 +1167,8 @@ dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSem
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/sandi 0.3.6: Data encoding library
-dev-haskell/sbv 4.4: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
+dev-haskell/sbv 4.4 5.9: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
+dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.10.2-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
@@ -1612,6 +1613,7 @@ sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by A
 sci-mathematics/agda-stdlib 0.7-r2 0.8 0.9-r1 2.4.2.3 2.4.2.4 2.4.2.5 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: efficient open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
 sci-mathematics/spline3 0.0.2: A parallel implementation of the Sorokina/Zeilfelder spline scheme
+sci-mathematics/z3 4.3.1 9999: An efficient theorem prover
 sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portable 2D rigid body physics library written in C
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
