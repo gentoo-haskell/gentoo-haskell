@@ -6,12 +6,12 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit autotools flag-o-matic git-r3 python-r1 toolchain-funcs
+inherit flag-o-matic git-r3 python-r1 toolchain-funcs
 
 DESCRIPTION="An efficient theorem prover"
 HOMEPAGE="http://z3.codeplex.com/"
 SRC_URI=""
-EGIT_REPO_URI="https://git01.codeplex.com/z3"
+EGIT_REPO_URI="https://github.com/Z3Prover/z3.git"
 EGIT_MIN_CLONE_TYPE=single
 
 SLOT="0"
@@ -49,16 +49,13 @@ src_prepare() {
 		-i scripts/*mk* || die
 
 	append-ldflags -fopenmp
-
-	eautoreconf
 }
 
 src_configure() {
 	python_export_best
-	econf \
-		--host="" \
+	./configure \
 		--with-python="${PYTHON}" \
-		$(use_with gmp) \
+		$(usex gmp --gmp "") \
 		SLIBFLAGS=" -Wl,-soname,lib${PN}.so.0.1 "
 	${EPYTHON} scripts/mk_make.py || die
 }
