@@ -1548,7 +1548,7 @@ dev-haskell/zmidi-core 0.8.1: Read and write MIDI files
 dev-haskell/ztail 1.1-r1: Multi-file, colored, filtered log tailer
 dev-lang/ajhc 0.8.0.10-r1: Haskell compiler that produce binary through C language
 dev-lang/brainfuck 0.1.0.2: Brainfuck interpreter
-dev-lang/cryptol 2.2.4 2.2.5: Cryptol: The Language of Cryptography
+dev-lang/cryptol 2.2.4 2.2.5 2.2.6: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
