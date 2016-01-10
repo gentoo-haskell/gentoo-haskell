@@ -119,6 +119,6 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	ghc-package_pkg_prerm
+	ghc-package_pkg_postrm
 	elisp-site-regen
 }
