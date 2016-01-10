@@ -111,9 +111,11 @@ src_install() {
 }
 
 pkg_postinst() {
+	ghc-package_pkg_postinst
 	elisp-site-regen
 }
 
 pkg_postrm() {
+	ghc-package_pkg_postrm
 	elisp-site-regen
 }
