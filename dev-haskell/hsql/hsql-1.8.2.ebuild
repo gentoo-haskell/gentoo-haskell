@@ -25,8 +25,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-pkg_postinst () {
-	ghc-package_pkg_postinst
+pkg_postinst() {
+	haskell-cabal_pkg_postinst
 
 	elog "You will probably want to emerge one or more HSQL backend."
 	elog "These backends are available:"
