@@ -372,7 +372,7 @@ dev-haskell/dph-prim-interface 0.7.0.1-r2: Data Parallel Haskell segmented array
 dev-haskell/dph-prim-par 0.7.0.1: Data Parallel Haskell segmented arrays. (production version)
 dev-haskell/dph-prim-seq 0.7.0.1: Data Parallel Haskell segmented arrays. (sequential implementation)
 dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers
-dev-haskell/drift 2.2.0 2.2.3 2.4.2: Program to derive type class instances
+dev-haskell/drift 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3.1: Haskell Digital Signal Processing
 dev-haskell/dual-tree 0.2.0.8: Rose trees with cached and accumulating monoidal annotations
 dev-haskell/dynamic-state 0.2.0.0: Optionally serializable dynamic state keyed by type
