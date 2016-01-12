@@ -875,6 +875,7 @@ dev-haskell/matrix 0.3.4.4: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
+dev-haskell/megaparsec 4.2.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.10: memory and related abstraction stuff
