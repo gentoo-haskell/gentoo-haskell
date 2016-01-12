@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This is industrial-strength monadic parser combinator library. Megaparsec is
+		a fork of Parsec library originally written by Daan Leijen.
+	</longdescription>
+</pkgmetadata>
