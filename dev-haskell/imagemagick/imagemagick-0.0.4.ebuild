@@ -18,36 +18,23 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildexamples"
 
-RESTRICT=test # missing files
-
 RDEPEND=">=dev-haskell/monadcatchio-transformers-0.3:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
-	>=dev-haskell/system-filepath-0.4:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	media-gfx/imagemagick
-	buildexamples? ( >=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
-				>=dev-haskell/vector-0.9:=[profile?] )
-	!buildexamples? ( >=dev-haskell/vector-0.9:=[profile?] )
+	buildexamples? ( >=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	virtual/pkgconfig
-	test? ( dev-haskell/hunit
-		>=dev-haskell/quickcheck-2
-		dev-haskell/test-framework
-		dev-haskell/test-framework-hunit
-		dev-haskell/test-framework-quickcheck2
-		!buildexamples? ( >=dev-haskell/lifted-base-0.1 <dev-haskell/lifted-base-0.3
-					>=dev-haskell/vector-0.9 ) )
+	test? ( >=dev-haskell/quickcheck-2
+		dev-haskell/tasty
+		dev-haskell/tasty-hunit
+		!buildexamples? ( >=dev-haskell/lifted-base-0.1 <dev-haskell/lifted-base-0.3 ) )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'vector >= 0.9 && < 0.11.1' 'vector >= 0.9' \
-		'vector >= 0.9 && <0.11' 'vector >= 0.9'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
