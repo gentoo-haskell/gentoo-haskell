@@ -12,20 +12,18 @@ DESCRIPTION="An efficient theorem prover"
 HOMEPAGE="http://z3.codeplex.com/"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/Z3Prover/z3.git"
+EGIT_COMMIT="${P}"
 
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="+gmp"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}
 	gmp? ( dev-libs/gmp:0 )"
-# A new curl is needed because codeplex has a bug and early version of libcurl
-# will cause a failed git clone.
-DEPEND="${RDEPEND}
-	>=net-misc/curl-7.33"
+DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
