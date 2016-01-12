@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Elegant definition of Storable instances for records
 EAPI=5
 HOMEPAGE=http://code.haskell.org/~thielema/storable-record/
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.0.3
-SRC_URI=mirror://hackage/packages/archive/storable-record/0.0.3/storable-record-0.0.3.tar.gz
+RDEPEND=>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.0.3.1
+SRC_URI=mirror://hackage/packages/archive/storable-record/0.0.3.1/storable-record-0.0.3.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	d9bd2ddd85a58e470b49ca997e255a4c	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=461ee5cd8029dfed75a9cde40aa5d044
+_md5_=6c6709c61083e5289551712245b7437f
