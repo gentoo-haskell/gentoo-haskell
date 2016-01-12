@@ -12,7 +12,6 @@ DESCRIPTION="An efficient theorem prover"
 HOMEPAGE="http://z3.codeplex.com/"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/Z3Prover/z3.git"
-EGIT_MIN_CLONE_TYPE=single
 
 SLOT="0"
 LICENSE="MIT"
