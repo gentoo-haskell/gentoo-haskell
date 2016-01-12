@@ -53,10 +53,10 @@ src_prepare() {
 
 src_configure() {
 	python_export_best
-	./configure \
-		--with-python="${PYTHON}" \
-		$(usex gmp --gmp "") \
-		SLIBFLAGS=" -Wl,-soname,lib${PN}.so.0.1 "
+	set -- \
+		$(usex gmp --gmp "")
+	elog ./configure "$@"
+	./configure "$@" || die
 	${EPYTHON} scripts/mk_make.py || die
 }
 
