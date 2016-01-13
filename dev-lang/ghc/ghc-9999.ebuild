@@ -57,7 +57,7 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-#GHC_PV=7.10.0.20150316 # uncomment only for -rc ebuilds
+#GHC_PV=8.0.0.20160111 # uncomment only for -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
@@ -79,30 +79,21 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="doc +ghcbootstrap ghcmakebinary +gmp"
 IUSE+=" binary"
-IUSE+=" elibc_glibc" # system stuff
 
 RDEPEND="
 	>=dev-lang/perl-5.6.1
-	>=dev-libs/gmp-5:=
+	dev-libs/gmp:0=
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
-	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
-	kernel_linux? ( >=sys-devel/binutils-2.17 )
-	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
 "
 
-# force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
-# that we want the binaries to use the latest versioun available, and not to be
-# built against gmp-4
-
-# similar for glibc. we have bootstrapped binaries against glibc-2.17
 DEPEND="${RDEPEND}
-	ghcbootstrap? (
-		doc? ( app-text/docbook-xml-dtd:4.2
-			app-text/docbook-xml-dtd:4.5
-			app-text/docbook-xsl-stylesheets
-			>=dev-libs/libxslt-1.1.2 ) )
-	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
+	doc? ( app-text/docbook-xml-dtd:4.2
+		app-text/docbook-xml-dtd:4.5
+		app-text/docbook-xsl-stylesheets
+		dev-python/sphinx
+		>=dev-libs/libxslt-1.1.2 )
+"
 
 # release tarballs ship generated lexers/parsers
 [[ ${PV} = *9999* ]] && DEPEND+="
@@ -116,6 +107,7 @@ REQUIRED_USE="?? ( ghcbootstrap binary )"
 [[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
+# Move it to pkg_setup() when bug #566534 gets resolved
 use binary && QA_PREBUILT="*"
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -240,10 +232,6 @@ ghc_setup_cflags() {
 	# prevent from failind building unregisterised ghc:
 	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
 	use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
-	# fix the similar issue as ppc64 TOC on ia64. ia64 has limited size of small data
-	# currently ghc fails to build haddock
-	# http://osdir.com/ml/gnu.binutils.bugs/2004-10/msg00050.html
-	use ia64 && append-ghc-cflags persistent compile -G0
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
@@ -449,9 +437,9 @@ src_prepare() {
 
 		cd "${S}" # otherwise epatch will break
 
-		epatch "${FILESDIR}/ghc-7.0.4-CHOST-prefix.patch"
+		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 
-		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
+		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		if use prefix; then
@@ -484,24 +472,16 @@ src_configure() {
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
 		# app-text/dblatex is not in portage, can not build PDF or PS
-		if use ghcbootstrap && use doc; then
-			echo "BUILD_DOCBOOK_PDF  = NO"  >> mk/build.mk
-			echo "BUILD_DOCBOOK_PS   = NO"  >> mk/build.mk
-			echo "BUILD_DOCBOOK_HTML = YES" >> mk/build.mk
-			if is_crosscompile; then
-				# TODO this is a workaround for this build error with the live ebuild with haddock:
-				# make[1]: *** No rule to make target `compiler/stage2/build/Module.hi',
-				# needed by `utils/haddock/dist/build/Main.o'.  Stop.
-				echo "HADDOCK_DOCS       = NO" >> mk/build.mk
-			else
-				echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-			fi
+		echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
+		if use doc; then
+			echo "BUILD_SPHINX_HTML = YES" >> mk/build.mk
 		else
-			echo "BUILD_DOCBOOK_PDF  = NO" >> mk/build.mk
-			echo "BUILD_DOCBOOK_PS   = NO" >> mk/build.mk
-			echo "BUILD_DOCBOOK_HTML = NO" >> mk/build.mk
-			echo "HADDOCK_DOCS       = NO" >> mk/build.mk
+			echo "BUILD_SPHINX_HTML = NO" >> mk/build.mk
 		fi
+
+		# this controls presence on 'xhtml' and 'haddock' in final install
+		echo "HADDOCK_DOCS       = YES" >> mk/build.mk
+
 		# not used outside of ghc's test
 		if [[ -n ${GHC_BUILD_DPH} ]]; then
 				echo "BUILD_DPH = YES" >> mk/build.mk
@@ -547,9 +527,6 @@ src_configure() {
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
 
-		elog "Final mk/build.mk:"
-		cat mk/build.mk || die
-
 		if [[ ${PV} == *9999* ]]; then
 			perl boot || die "perl boot failed"
 		fi
@@ -561,10 +538,23 @@ src_configure() {
 		# We use stable thing across gcc upgrades.
 		is_crosscompile || econf_args+=(--with-gcc=${CHOST}-gcc)
 
-		if ! use ghcmakebinary; then
+		if use ghcmakebinary; then
+			# When building booting libary we are trying to
+			# bundle or restrict most of external depends
+			# with unstable ABI:
+			#  - embed libffi (default GHC behaviour)
+			#  - disable ncurses support for ghci (via haskeline)
+			#    https://bugs.gentoo.org/557478
+			#  - disable ncurses support for ghc-pkg
+			echo "libraries/haskeline_CONFIGURE_OPTS += --flag=-terminfo" >> mk/build.mk
+			echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
+		else
 			econf_args+=(--with-system-libffi)
 			econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
 		fi
+
+		elog "Final mk/build.mk:"
+		cat mk/build.mk || die
 
 		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
 
@@ -601,26 +591,11 @@ src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
 		mv "${S}/usr" "${ED}"
-
-		# Remove the docs if not requested
-		if ! use doc; then
-			rm -rf "${ED}/usr/share/doc/${P}/*/" \
-				"${ED}/usr/share/doc/${P}/*.html" \
-				|| die "could not remove docs (P vs PF revision mismatch?)"
-		fi
 	else
 		[[ -f VERSION ]] || emake VERSION
-		# We only build docs if we were bootstrapping, otherwise
-		# we copy them out of the unpacked binary .tbz2
-		if use doc && ! use ghcbootstrap; then
-			mkdir -p "${ED}/usr/share/doc"
-			mv "${WORKDIR}/usr/share/doc/${P}" "${ED}/usr/share/doc" \
-				|| die "failed to copy docs"
-		else
-			dodoc "${S}/distrib/README" "${S}/ANNOUNCE" "${S}/LICENSE" "${S}/VERSION"
-		fi
 
-		emake -j1 install DESTDIR="${D}"
+		emake install DESTDIR="${D}"
+		dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
 
 		# rename ghc-shipped files to avoid collision
 		# of external packages. Motivating example:
@@ -686,14 +661,6 @@ pkg_postinst() {
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
-	fi
-
-	if is_crosscompile; then
-		ewarn
-		ewarn "GHC built as a cross compiler.  The interpreter, ghci and runghc, do"
-		ewarn "not work for a cross compiler."
-		ewarn "For the ghci error: \"<command line>: not built for interactive use\" see:"
-		ewarn "http://www.haskell.org/haskellwiki/GHC:FAQ#When_I_try_to_start_ghci_.28probably_one_I_compiled_myself.29_it_says_ghc-5.02:_not_built_for_interactive_use"
 	fi
 }
 
