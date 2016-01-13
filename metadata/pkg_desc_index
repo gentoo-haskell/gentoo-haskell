@@ -1553,7 +1553,7 @@ dev-lang/cryptol 2.2.4 2.2.5 2.2.6: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
-dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 7.10.3 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 7.10.3 8.0.1_rc1 9999: The Glasgow Haskell Compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
