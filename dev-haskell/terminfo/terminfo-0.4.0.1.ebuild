@@ -25,3 +25,8 @@ DEPEND="${RDEPEND}
 "
 
 CABAL_CORE_LIB_GHC_PV="PM:7.10.1 PM:7.10.2_rc2 PM:7.10.2 PM:7.10.2-r1 PM:7.10.3_rc1 PM:7.10.3"
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.3 && < 4.9' 'base >= 4.3'
+}
