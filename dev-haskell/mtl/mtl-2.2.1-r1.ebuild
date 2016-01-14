@@ -18,9 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE=""
 
-RDEPEND=">=dev-haskell/transformers-0.4:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
+RDEPEND=">=dev-haskell/transformers-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers == 0.4.*' 'transformers >= 0.4'
+}
