@@ -57,8 +57,10 @@ src_configure() {
 	cabal-is-dummy-lib && return
 
 	einfo "Bootstrapping Cabal..."
-	$(ghc-getghc) ${HCFLAGS} -i -i. -i"${WORKDIR}/${FP_P}" -cpp --make Setup.hs \
-		-o setup || die "compiling Setup.hs failed"
+	set -- $(ghc-getghc) ${HCFLAGS} -i. -cpp --make Setup.hs \
+		-o setup
+	einfo "$@"
+	"$@" || die "compiling Setup.hs failed"
 	cabal-configure
 }
 
