@@ -729,7 +729,7 @@ dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client an
 dev-haskell/http2 1.1.0 1.2.0 1.3.1: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
-dev-haskell/hunit 1.2.5.2-r1 1.3.0.0: A unit testing framework for Haskell
+dev-haskell/hunit 1.2.5.2-r1 1.3.1.0: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.0: Approximate equality for floating point numbers with HUnit
 dev-haskell/hxt 9.3.1.15: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.2.0.1: Character properties and classes for XML and Unicode
