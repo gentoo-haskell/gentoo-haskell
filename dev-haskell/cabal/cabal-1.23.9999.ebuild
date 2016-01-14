@@ -33,6 +33,8 @@ else
 	S="${WORKDIR}/${MY_PN}"
 fi
 
+RESTRICT=test # circular deps: cabal -> quickcheck -> cabal
+
 RDEPEND=">=dev-lang/ghc-7.8.1:="
 DEPEND="${RDEPEND}
 	test? ( dev-haskell/extensible-exceptions
