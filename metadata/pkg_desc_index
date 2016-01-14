@@ -1569,7 +1569,7 @@ dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.2: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.4.0.6: A ctags file generator for cabal project dependencies
+dev-util/codex 0.4.0.8: A ctags file generator for cabal project dependencies
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
