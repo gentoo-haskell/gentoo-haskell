@@ -1072,7 +1072,7 @@ dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
-dev-haskell/primitive 0.6.1.0: Primitive memory-related operations
+dev-haskell/primitive 0.6.1.0-r1: Primitive memory-related operations
 dev-haskell/probability 0.2.5: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
