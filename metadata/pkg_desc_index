@@ -323,11 +323,11 @@ dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-lin
 dev-haskell/diagrams 1.3: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.7.2.1: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
-dev-haskell/diagrams-canvas 1.3.0.2-r1: HTML5 canvas backend for diagrams drawing EDSL
+dev-haskell/diagrams-canvas 1.3.0.3: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
-dev-haskell/diagrams-core 1.3.0.4: Core libraries for diagrams EDSL
+dev-haskell/diagrams-core 1.3.0.5: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3: Backend for rendering diagrams directly to GTK windows
-dev-haskell/diagrams-lib 1.3.0.8: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-lib 1.3.0.9: Embedded domain-specific language for declarative graphics
 dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
@@ -1397,7 +1397,7 @@ dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a 
 dev-haskell/unix-time 0.3.6: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.1: Unlambda interpreter
-dev-haskell/unordered-containers 0.2.5.1 9999: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.6.0 9999: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.1.9.2: Haskell URI parsing as ByteStrings
@@ -1516,7 +1516,7 @@ dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.6: OAuth 2.0 authentication plugins
-dev-haskell/yesod-bin 1.4.17: The yesod helper executable
+dev-haskell/yesod-bin 1.4.17.1: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.2: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.18.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
