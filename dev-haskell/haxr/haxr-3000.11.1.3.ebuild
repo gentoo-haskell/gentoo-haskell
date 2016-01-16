@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RDEPEND=">=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.9:=[profile?]
+RDEPEND=">=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/haxml-1.22:=[profile?] <dev-haskell/haxml-1.26:=[profile?]
