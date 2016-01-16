@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -42,7 +42,7 @@ RDEPEND="dev-haskell/async:=
 	>=dev-haskell/shakespeare-2.0:=
 	>=dev-haskell/split-0.2:= <dev-haskell/split-0.3:=
 	dev-haskell/streaming-commons:=
-	>=dev-haskell/tar-0.4:= <dev-haskell/tar-0.5:=
+	>=dev-haskell/tar-0.4:= <dev-haskell/tar-0.6:=
 	>=dev-haskell/text-0.11:=
 	dev-haskell/transformers:=
 	dev-haskell/transformers-compat:=
