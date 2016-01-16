@@ -454,7 +454,7 @@ dev-haskell/foldl 1.1.2: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
-dev-haskell/free 4.12.1: Monads for free
+dev-haskell/free 4.12.2: Monads for free
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
 dev-haskell/frown 0.6.1-r1: A parser generator for Haskell
 dev-haskell/fsnotify 0.1.0.3 0.2.1: Cross platform library for file change notification
@@ -564,7 +564,7 @@ dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/hare 0.8.2.1: the Haskell Refactorer
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
-dev-haskell/hashable 1.2.3.3: A class for types that can be converted to a hash value
+dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.2: Higher-rank Hashable
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
@@ -594,7 +594,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.16.2.0: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.2: XML-RPC client and server library
+dev-haskell/haxr 3000.11.1.3: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
@@ -620,7 +620,7 @@ dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster g
 dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
-dev-haskell/hgl 3.2.0.5: A simple graphics library based on X11 or Win32
+dev-haskell/hgl 3.2.2: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.0: Generate scaffold for cabal project
 dev-haskell/highlighting-kate 0.5.15 0.6.1: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
