@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-lang/ghc-7.4.1:=
 	virtual/libiconv
 	|| ( ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4.0.0:=[profile?] )
-		( >dev-haskell/transformers-0.4.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?] ) )
+		( >dev-haskell/transformers-0.4.0.0:=[profile?] ) )
 	curl? ( net-misc/curl )
 	diff? ( dev-haskell/lcs:=[profile?] )
 	http? ( >=dev-haskell/http-4000.2.3:=[profile?] <dev-haskell/http-4000.3:=[profile?]
@@ -74,7 +74,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'vector       >= 0.7 && < 0.11' 'vector       >= 0.7' \
-		'HUnit        >= 1.0 && < 1.3' 'HUnit        >= 1.0'
+		'HUnit        >= 1.0 && < 1.3' 'HUnit        >= 1.0' \
+		'transformers >= 0.3 && < 0.4.0.0 || > 0.4.0.0 && < 0.5' 'transformers >= 0.3 && < 0.4.0.0 || > 0.4.0.0'
 }
 
 src_configure() {
