@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit elisp-common haskell-cabal
 
 DESCRIPTION="Extensible Haskell pretty printer"
-HOMEPAGE="http://www.github.com/chrisdone/hindent"
+HOMEPAGE="https://www.github.com/chrisdone/hindent"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
