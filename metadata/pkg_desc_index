@@ -1096,7 +1096,7 @@ dev-haskell/puremd5 2.1.2.1: A Haskell-only implementation of the MD5 digest (ha
 dev-haskell/pwstore-fast 2.4.4: Secure password storage
 dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings. qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia
-dev-haskell/quickcheck 1.2.0.1-r1 2.7.6 2.8.1: Automatic testing of Haskell programs
+dev-haskell/quickcheck 1.2.0.1-r1 2.7.6 2.8.1 2.8.2: Automatic testing of Haskell programs
 dev-haskell/quickcheck-assertions 0.1.1-r1 0.2.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-instances 0.3.10-r1 0.3.11: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.2: Use HUnit assertions as QuickCheck properties
@@ -1567,7 +1567,7 @@ dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8: A compiler front-end generator
-dev-util/bustle 0.4.7-r1 0.5.2: Draw sequence diagrams of D-Bus traffic
+dev-util/bustle 0.4.7-r1 0.5.3: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.4.0.8: A ctags file generator for cabal project dependencies
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
