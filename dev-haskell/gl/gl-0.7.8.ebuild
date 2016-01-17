@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?] <dev-haskell/fixed-0.3:=[profile?
 	>=dev-haskell/half-0.2:=[profile?] <dev-haskell/half-0.3:=[profile?]
 	>=dev-haskell/hxt-9.3:=[profile?] <dev-haskell/hxt-9.4:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 	virtual/opengl
 "
