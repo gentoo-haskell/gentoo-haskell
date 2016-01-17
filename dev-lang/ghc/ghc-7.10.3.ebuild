@@ -443,6 +443,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		epatch "${FILESDIR}"/${PN}-7.10.1-rc3-ghc-7.10-bootstrap.patch
 		epatch "${FILESDIR}"/${PN}-7.10.3-relnotes.patch
+		epatch "${FILESDIR}"/${PN}-7.10.3-hardfloat.patch
 
 		# Since ${S}/packages does not include base, etc. add them to gen_contents_index
 		sed -e 's@\(for REPO in .*\)@\1 base integer-gmp integer-gmp2 integer-simple template-haskell@' \
