@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Low level bindings to libzip"
-HOMEPAGE="http://bitbucket.org/astanin/hs-libzip/"
+HOMEPAGE="https://bitbucket.org/astanin/hs-libzip/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

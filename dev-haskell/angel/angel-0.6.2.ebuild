@@ -10,7 +10,7 @@ CABAL_FEATURES="bin test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Process management and supervision daemon"
-HOMEPAGE="http://github.com/MichaelXavier/Angel"
+HOMEPAGE="https://github.com/MichaelXavier/Angel"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"

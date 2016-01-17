@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Directory (system) utilities for the machines library"
-HOMEPAGE="http://github.com/aloiscochard/machines-directory"
+HOMEPAGE="https://github.com/aloiscochard/machines-directory"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"

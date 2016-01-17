@@ -13,7 +13,7 @@ MY_PN="AttoBencode"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Fast Bencode encoding and parsing library"
-HOMEPAGE="http://bitbucket.org/FlorianHartwig/attobencode"
+HOMEPAGE="https://bitbucket.org/FlorianHartwig/attobencode"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
