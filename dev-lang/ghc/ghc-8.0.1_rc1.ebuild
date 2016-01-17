@@ -104,6 +104,25 @@ is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
 }
 
+# returns tool prefix for crosscompiler.
+# Example:
+#  CTARGET=armv7a-unknown-linux-gnueabi
+#  CHOST=x86_64-pc-linux-gnu
+#    "armv7a-unknown-linux-gnueabi-"
+#  CTARGET=${CHOST}
+#    ""
+# Used in tools and library prefix:
+#    "${ED}"/usr/bin/$(cross)haddock
+#    "${ED}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d"
+
+cross() {
+	if is_crosscompile; then
+		echo "${CTARGET}-"
+	else
+		echo ""
+	fi
+}
+
 append-ghc-cflags() {
 	local persistent compile assemble link
 	local flag ghcflag
@@ -174,6 +193,7 @@ ghc_setup_cflags() {
 		einfo "   CTARGET: ${CTARGET}"
 		einfo "   CFLAGS:  ${CFLAGS}"
 		einfo "   LDFLAGS: ${LDFLAGS}"
+		einfo "   prefix: $(cross)"
 		return
 	fi
 	# We need to be very careful with the CFLAGS we ask ghc to pass through to
@@ -247,7 +267,7 @@ relocate_ghc() {
 
 	# backup original script to use it later after relocation
 	local gp_back="${T}/ghc-pkg-${GHC_PV}-orig"
-	cp "${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+	cp "${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
 
 	if [[ ${bin_libdir} != $(get_libdir) ]]; then
 		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
@@ -257,23 +277,23 @@ relocate_ghc() {
 		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
 
 		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
-			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
+			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
 			"$gp_back" \
-			"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
+			"${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/"*
 	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
-		"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/hsc2hs" \
-		"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
-		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
+		"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
+		"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
+		"${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
 	# so it should point to current tree location
@@ -284,13 +304,12 @@ relocate_ghc() {
 		# TODO: add the same for darwin's CHOST and it's DYLD_
 		local new_ldpath='LD_LIBRARY_PATH="'${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir)'${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"\nexport LD_LIBRARY_PATH'
 		sed -i -e '2i'"$new_ldpath" \
-			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
+			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
 			"$gp_back" \
-			"${WORKDIR}/usr/bin/hsc2hs" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
 	fi
 
@@ -337,12 +356,12 @@ src_prepare() {
 		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${WORKDIR}/usr/bin/ghc-${GHC_PV}"
+			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}"
 
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/bin/ghc"
+		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/bin/ghc"
 	fi
 
 	if use binary; then
@@ -515,7 +534,6 @@ src_configure() {
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 			GHC_P=${PN}-${GHC_PV}
 		fi
-		GHC_TPF="$(grep 'S\[\"TargetPlatformFull\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
 	fi # ! use binary
 }
 
@@ -548,7 +566,7 @@ src_install() {
 		#      dev-lang/ghc-7.8.4-r1 (with transformers-0.4.2.0)
 		#  this will lead to single .conf file collision.
 		local shipped_conf renamed_conf
-		local package_confdir="${ED}/usr/$(get_libdir)/${GHC_P}/package.conf.d"
+		local package_confdir="${ED}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d"
 		for shipped_conf in "${package_confdir}"/*.conf; do
 			# rename 'pkg-ver-id.conf' to 'pkg-ver-id-gentoo-${PF}.conf'
 			renamed_conf=${shipped_conf%.conf}-gentoo-${PF}.conf
@@ -556,18 +574,20 @@ src_install() {
 		done
 
 		# remove link, but leave 'haddock-${GHC_P}'
-		rm -f "${ED}"/usr/bin/haddock
+		rm -f "${ED}"/usr/bin/$(cross)haddock
 
 		if [[ ! -f "${S}/VERSION" ]]; then
 			echo "${GHC_PV}" > "${S}/VERSION" \
 				|| die "Could not create file ${S}/VERSION"
 		fi
-		newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
-		newbashcomp utils/completion/ghc.bash         ghc
+		if ! is_crosscompile; then
+			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
+			newbashcomp utils/completion/ghc.bash         ghc
+		fi
 	fi
 
 	# path to the package.cache
-	local package_confdir="${ED}/usr/$(get_libdir)/${GHC_P}/package.conf.d"
+	local package_confdir="${ED}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d"
 	PKGCACHE="${package_confdir}"/package.cache
 	# copy the package.conf.d, including timestamp, save it so we can help
 	# users that have a broken package.conf.d
@@ -590,7 +610,7 @@ pkg_postinst() {
 	ghc-reregister
 
 	# path to the package.cache
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${GHC_P}/package.conf.d/package.cache"
+	PKGCACHE="${EROOT}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/package.cache"
 
 	# give the cache a new timestamp, it must be as recent as
 	# the package.conf.d directory.
@@ -611,7 +631,7 @@ pkg_postinst() {
 }
 
 pkg_prerm() {
-	PKGCACHE="${EROOT}/usr/$(get_libdir)/${GHC_P}/package.conf.d/package.cache"
+	PKGCACHE="${EROOT}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/package.cache"
 	rm -rf "${PKGCACHE}"
 
 	cp -p "${PKGCACHE}"{.shipped,}
