@@ -1063,7 +1063,7 @@ dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
 dev-haskell/pqueue 1.3.1: Reliable, persistent, fast priority queues
-dev-haskell/prelude-extras 0.4.0.2: Higher order versions of Prelude classes
+dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
 dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax via quick-and-dirty preprocessors
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
 dev-haskell/pretty-ncols 0.1-r1: A implementation of multi-column layout w/ Text.PrettyPrint
@@ -1076,7 +1076,7 @@ dev-haskell/primitive 0.6.1.0-r1: Primitive memory-related operations
 dev-haskell/probability 0.2.5: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
-dev-haskell/process-extras 0.3.3.5: Process extras
+dev-haskell/process-extras 0.3.3.6: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.2.0.2: Treemap visualiser for GHC prof files
