@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	sys-libs/ncurses:0=
+	sys-libs/ncurses
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs
