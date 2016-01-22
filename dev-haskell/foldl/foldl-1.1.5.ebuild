@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/mwc-random-0.13.1.0:=[profile?] <dev-haskell/mwc-random-0.14:=[profile?]
 	<dev-haskell/primitive-0.7:=[profile?]
 	<dev-haskell/profunctors-5.3:=[profile?]
