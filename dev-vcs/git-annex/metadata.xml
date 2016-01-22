@@ -18,6 +18,7 @@
 	</longdescription>
 	<use>
 		<flag name="assistant">Enable git-annex assistant and watch command</flag>
+		<flag name="benchmark">Enable benchmarking</flag>
 		<flag name="concurrentoutput">Use concurrent-output library (experimental)</flag>
 		<flag name="cryptonite">Use the cryptonite library, instead of the older cryptohash</flag>
 		<flag name="database">Enable building with <pkg>dev-haskell/persistent</pkg> for database use</flag>

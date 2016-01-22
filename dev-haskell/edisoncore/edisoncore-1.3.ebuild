@@ -31,3 +31,7 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.3-QC-2.8.2.patch
+}
