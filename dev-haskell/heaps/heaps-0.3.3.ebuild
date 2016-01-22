@@ -9,22 +9,23 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-MY_PN="HUnit"
-MY_P="${MY_PN}-${PV}"
-
-DESCRIPTION="A unit testing framework for Haskell"
-HOMEPAGE="http://hunit.sourceforge.net/"
-SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+DESCRIPTION="Asymptotically optimal Brodal/Okasaki heaps"
+HOMEPAGE="https://github.com/ekmett/heaps/"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
+	test? ( >=dev-haskell/doctest-0.9 )
 "
 
-S="${WORKDIR}/${MY_P}"
+src_prepare() {
+	cabal_chdeps \
+		'doctest >= 0.9 && <= 0.10' 'doctest >= 0.9'
+}

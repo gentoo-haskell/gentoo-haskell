@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+threaded"
 
 RDEPEND=">=dev-haskell/base-compat-0.8.1:=
-	>=dev-haskell/brick-0.2:= <dev-haskell/brick-0.3:=
+	>=dev-haskell/brick-0.2:= <dev-haskell/brick-0.5:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
 	>=dev-haskell/hledger-0.27:= <dev-haskell/hledger-0.28:=
