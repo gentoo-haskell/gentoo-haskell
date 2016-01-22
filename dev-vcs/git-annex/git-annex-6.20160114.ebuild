@@ -17,15 +17,19 @@ RESTRICT="test"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="+assistant concurrentoutput cryptonite +database +dbus +desktopnotify +dns doc ekg +feed +inotify +network-uri +pairing +quvi +s3 +tahoe +tdfa +torrentparser +webapp +webapp-secure +webdav +xmpp"
+IUSE="+assistant benchmark concurrentoutput cryptonite +dns doc ekg +feed +network-uri +pairing +quvi +s3 +tahoe +tdfa +torrentparser +webapp +webapp-secure +webdav"
 
 RDEPEND="dev-haskell/async:=
 	dev-haskell/bloomfilter:=
 	dev-haskell/case-insensitive:=
 	dev-haskell/data-default:=
+	>=dev-haskell/dbus-0.10.7:=
 	dev-haskell/dlist:=
 	dev-haskell/edit-distance:=
+	dev-haskell/esqueleto:=
 	>=dev-haskell/exceptions-0.6:=
+	>=dev-haskell/fdo-notify-0.3:=
+	>=dev-haskell/gnutls-0.1.4:=
 	dev-haskell/hslogger:=
 	dev-haskell/http-client:=
 	dev-haskell/http-conduit:=
@@ -36,9 +40,13 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/monad-control:=
 	dev-haskell/monad-logger:=
 	>=dev-haskell/mtl-2:=
+	dev-haskell/network-protocol-xmpp:=
 	dev-haskell/old-locale:=
 	>=dev-haskell/optparse-applicative-0.11:=
 	>=dev-haskell/quickcheck-2.1:2=
+	dev-haskell/persistent:=
+	dev-haskell/persistent-sqlite:=
+	dev-haskell/persistent-template:=
 	dev-haskell/random:=
 	dev-haskell/resourcet:=
 	dev-haskell/safesemaphore:=
@@ -49,17 +57,13 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/unix-compat:=
 	dev-haskell/utf8-string:=
 	dev-haskell/uuid:=
+	dev-haskell/xml-types:=
 	>=dev-lang/ghc-7.6.1:=
-	assistant? ( inotify? ( dev-haskell/hinotify:= ) )
+	assistant? ( dev-haskell/hinotify:= )
+	benchmark? ( dev-haskell/criterion:= )
 	concurrentoutput? ( >=dev-haskell/concurrent-output-1.6:= )
 	cryptonite? ( dev-haskell/cryptonite:= )
 	!cryptonite? ( >=dev-haskell/cryptohash-0.11.0:= )
-	database? ( dev-haskell/esqueleto:=
-			dev-haskell/persistent:=
-			dev-haskell/persistent-sqlite:=
-			dev-haskell/persistent-template:= )
-	dbus? ( >=dev-haskell/dbus-0.10.7:=
-		desktopnotify? ( >=dev-haskell/fdo-notify-0.3:= ) )
 	dns? ( dev-haskell/dns:= )
 	ekg? ( dev-haskell/ekg:= )
 	feed? ( >=dev-haskell/feed-0.3.4:= )
@@ -95,9 +99,6 @@ RDEPEND="dev-haskell/async:=
 					>=dev-haskell/warp-tls-1.4:= )
 			!webapp-secure? ( dev-haskell/warp-tls:= ) )
 	webdav? ( >=dev-haskell/dav-1.0:= )
-	xmpp? ( >=dev-haskell/gnutls-0.1.4:=
-		dev-haskell/network-protocol-xmpp:=
-		dev-haskell/xml-types:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
@@ -106,6 +107,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# does not respect staging dir
 	epatch "${FILESDIR}"/${PN}-5.20150731-no-strange-installs.patch
+	epatch "${FILESDIR}"/${PN}-6.20160114-QC-2.8.2.patch
 }
 
 src_configure() {
@@ -113,15 +115,12 @@ src_configure() {
 		--flag=-android \
 		--flag=-androidsplice \
 		$(cabal_flag assistant assistant) \
-		$(cabal_flag database database) \
+		$(cabal_flag benchmark benchmark) \
 		$(cabal_flag cryptonite Cryptonite) \
 		$(cabal_flag concurrentoutput ConcurrentOutput) \
-		$(cabal_flag dbus dbus) \
-		$(cabal_flag desktopnotify desktopnotify) \
 		$(cabal_flag dns dns) \
 		$(cabal_flag ekg ekg) \
 		$(cabal_flag feed feed) \
-		$(cabal_flag inotify inotify) \
 		$(cabal_flag network-uri network-uri) \
 		$(cabal_flag pairing pairing) \
 		--flag=-production \
@@ -133,8 +132,7 @@ src_configure() {
 		$(cabal_flag torrentparser torrentparser) \
 		$(cabal_flag webapp webapp) \
 		$(cabal_flag webapp-secure webapp-secure) \
-		$(cabal_flag webdav webdav) \
-		$(cabal_flag xmpp xmpp)
+		$(cabal_flag webdav webdav)
 }
 
 src_compile() {
