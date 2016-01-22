@@ -98,7 +98,7 @@ dev-haskell/bcrypt 0.0.8: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 4.2.1 5 5.1: Bifunctors
-dev-haskell/bimap 0.3.1: Bidirectional mapping between two key types
+dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0 0.7.6.1: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
@@ -171,7 +171,7 @@ dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file pa
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/cascading 0.1.0-r1: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.1.0.3 1.2.0.5: Case insensitive string comparison
-dev-haskell/cassava 0.4.4.0: A CSV parsing and encoding library
+dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing e.g. the chances of data loss due to crashes
@@ -418,7 +418,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.1: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.10: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
