@@ -565,7 +565,7 @@ dev-haskell/hare 0.8.2.1: the Haskell Refactorer
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash value
-dev-haskell/hashable-extras 0.2.2: Higher-rank Hashable
+dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
@@ -607,7 +607,7 @@ dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
 dev-haskell/hdevtools 0.1.2.1: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.2: Heaps in Haskell
-dev-haskell/heaps 0.3.2.1: Asymptotically optimal Brodal/Okasaki heaps
+dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.1-r2: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
@@ -620,7 +620,7 @@ dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster g
 dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
-dev-haskell/hgl 3.2.2: A simple graphics library based on X11 or Win32
+dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.0: Generate scaffold for cabal project
 dev-haskell/highlighting-kate 0.5.15 0.6.1: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
@@ -634,7 +634,7 @@ dev-haskell/hjsmin 0.1.5.1: Haskell implementation of a javascript minifier
 dev-haskell/hledger 0.25.1 0.26 0.27: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 0.27.1: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-ui 0.27.3: Curses-style user interface for the hledger accounting tool
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
@@ -714,7 +714,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.2.22: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.26.2: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.27: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.2: http-client backend using the connection package and tls library
@@ -729,7 +729,7 @@ dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client an
 dev-haskell/http2 1.1.0 1.2.0 1.3.1: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
-dev-haskell/hunit 1.2.5.2-r1 1.3.1.0: A unit testing framework for Haskell
+dev-haskell/hunit 1.3.1.1: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.0: Approximate equality for floating point numbers with HUnit
 dev-haskell/hxt 9.3.1.15: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.2.0.1: Character properties and classes for XML and Unicode
@@ -856,7 +856,7 @@ dev-haskell/machines-directory 0.2.0.6: Directory (system) utilities for the mac
 dev-haskell/machines-io 0.2.0.8: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.2: Pretty printing designed for printing source code
-dev-haskell/managed 1.0.1: A monad for managed values
+dev-haskell/managed 1.0.2: A monad for managed values
 dev-haskell/manatee 0.2.2: The Haskell/Gtk+ Integrated Live Environment
 dev-haskell/manatee-browser 0.1.1: Browser extension for Manatee
 dev-haskell/manatee-core 0.1.1: The core of Manatee
@@ -918,11 +918,11 @@ dev-haskell/monadlist 0.0.2: Monadic versions of list functions
 dev-haskell/monadloc 0.7.1: A class for monads which can keep a monadic call trace
 dev-haskell/monadplus 1.4.2: Haskell98 partial maps and filters over MonadPlus
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
-dev-haskell/monadrandom 0.4.2.1: Random-number generation monad
+dev-haskell/monadrandom 0.4.2.2: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
-dev-haskell/mono-traversable 0.9.3 0.10.0.1: Type classes for mapping, folding, and traversing monomorphic containers
+dev-haskell/mono-traversable 0.10.1: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.3: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.1.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
@@ -949,7 +949,7 @@ dev-haskell/nanoprolog 0.3-r2: Very small interpreter for a Prolog-like language
 dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's API
 dev-haskell/nats 1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
-dev-haskell/ncurses 0.2.14: Modernised bindings to GNU ncurses
+dev-haskell/ncurses 0.2.15: Modernised bindings to GNU ncurses
 dev-haskell/nettle-openflow 0.2.0: OpenFlow protocol messages, binary formats, and servers
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
 dev-haskell/network 2.6.2.1: Low-level networking interface
@@ -1029,7 +1029,7 @@ dev-haskell/persistent 2.1.6 2.2.4: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.4: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.3.0.2: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.2.1.2: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.2.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.1.5: Type-safe, non-relational, multi-backend persistence
