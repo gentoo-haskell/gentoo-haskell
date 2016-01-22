@@ -79,7 +79,7 @@ dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (d
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
 dev-haskell/attoparsec-iteratee 0.4.0-r1: An adapter to convert attoparsec Parsers into blazing-fast Iteratees
 dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
-dev-haskell/authenticate 1.3.2.11: Authentication methods for Haskell web applications
+dev-haskell/authenticate 1.3.3: Authentication methods for Haskell web applications
 dev-haskell/authenticate-kerberos 1.0.0: Authentication methods for Haskell web applications
 dev-haskell/authenticate-oauth 1.5.1.1-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
@@ -104,7 +104,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
 dev-haskell/binary-orphans 0.1.3.0: Orphan instances for binary
-dev-haskell/binary-search 0.1: Binary and exponential searches
+dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
@@ -281,11 +281,11 @@ dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0: FFI binding to the CUDA interf
 dev-haskell/cufft 0.1.0.3: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.7 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 0.4.4: A subfield of the complex numbers for exact calculation
-dev-haskell/data-accessor 0.2.2.6: Utilities for accessing and manipulating fields of records
+dev-haskell/data-accessor 0.2.2.7: Utilities for accessing and manipulating fields of records
 dev-haskell/data-accessor-monads-fd 0.2.0.3-r3: Use Accessor to access state in monads-fd State monad class
 dev-haskell/data-accessor-mtl 0.2.0.4: Use Accessor to access state in mtl State monad class
 dev-haskell/data-accessor-template 0.2.1.12: Utilities for accessing and manipulating fields of records
-dev-haskell/data-accessor-transformers 0.2.1.6: Use Accessor to access state in transformers State monad
+dev-haskell/data-accessor-transformers 0.2.1.7: Use Accessor to access state in transformers State monad
 dev-haskell/data-binary-ieee754 0.4.3 0.4.4: Parser/Serialiser for IEEE-754 floating-point values
 dev-haskell/data-default 0.5.3: A class for types with a default value
 dev-haskell/data-default-class 0.0.1: A class for types with a default value
@@ -321,7 +321,7 @@ dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate in
 dev-haskell/derive 2.5.22 2.5.23: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.7.2.1: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.7.2.2: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.3: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
@@ -399,14 +399,14 @@ dev-haskell/equivalence 0.2.5 0.3.1: Maintaining an equivalence relation impleme
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 1.4.7 2.0.1: Simplified error-handling
-dev-haskell/esqueleto 2.4.1: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 2.4.2: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.3.1.1: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.4.1.0: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
-dev-haskell/exception-transformers 0.3.0.4 0.4.0.2: Type classes and monads for unchecked extensible exceptions
-dev-haskell/exceptions 0.6.1 0.8.0.2: Extensible optionally-pure exceptions
+dev-haskell/exception-transformers 0.3.0.4 0.4.0.3: Type classes and monads for unchecked extensible exceptions
+dev-haskell/exceptions 0.6.1 0.8.2.1: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
@@ -425,14 +425,14 @@ dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
 dev-haskell/fay-text 0.3.2.2: Fay Text type represented as JavaScript strings
 dev-haskell/fay-uri 0.2.0.0: Persistent FFI bindings for using jsUri in Fay
 dev-haskell/fb 1.0.13: Bindings to Facebook's API
-dev-haskell/fclabels 2.0.2.3: First class accessor labels implemented as lenses
+dev-haskell/fclabels 2.0.2.4: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
 dev-haskell/feed 0.3.11.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
-dev-haskell/file-embed 0.0.9: Use Template Haskell to embed file contents directly
+dev-haskell/file-embed 0.0.9.1: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9: common functions that show file location information
 dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
@@ -450,7 +450,7 @@ dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagr
 dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
 dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9: FoldMap lists
-dev-haskell/foldl 1.1.3: Composable, streaming, and efficient left folds
+dev-haskell/foldl 1.1.5: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
