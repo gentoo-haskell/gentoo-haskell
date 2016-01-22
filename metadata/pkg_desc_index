@@ -1098,7 +1098,7 @@ dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings. qtHaskell is a set of Haskell bindings for the Qt Widget Library from Nokia
 dev-haskell/quickcheck 1.2.0.1-r1 2.7.6 2.8.1 2.8.2: Automatic testing of Haskell programs
 dev-haskell/quickcheck-assertions 0.1.1-r1 0.2.0: HUnit like assertions for QuickCheck
-dev-haskell/quickcheck-instances 0.3.10-r1 0.3.11: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.12: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.2: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.1: Safe reimplementation of QuickCheck's core
