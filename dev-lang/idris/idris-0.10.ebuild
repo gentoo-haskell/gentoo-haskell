@@ -44,10 +44,10 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotate
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	<dev-haskell/utf8-string-1.1:=[profile?]
-	<dev-haskell/vector-0.12:=[profile?]
+	dev-haskell/vector:=[profile?]
 	<dev-haskell/vector-binary-instances-0.3:=[profile?]
 	>dev-haskell/zip-archive-0.2.3.5:=[profile?] <dev-haskell/zip-archive-0.2.4:=[profile?]
-	<dev-haskell/zlib-0.6.1:=[profile?]
+	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	curses? ( <dev-haskell/hscurses-1.5:=[profile?] )
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
