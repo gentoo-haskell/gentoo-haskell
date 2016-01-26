@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Read, Show and Data.Binary do not check for internal data references to the same address.
 		As a result, the data is duplicated when serialized. This is a waste of space in the filesystem
@@ -37,7 +40,7 @@
 		
 		*  Bug in 0.2.6 fixed for lists
 		
-		*  Added   instances for standard datatypes. More &quot;deeper&quot; instances favouring more variable usage
+		*  Added   instances for standard datatypes. More "deeper" instances favouring more variable usage
 		
 		*  Instance of Serialize [a] changed
 		

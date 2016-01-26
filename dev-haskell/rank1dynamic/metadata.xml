@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		&quot;Data.Typeable&quot; and &quot;Data.Dynamic&quot; only support monomorphic types.
+		"Data.Typeable" and "Data.Dynamic" only support monomorphic types.
 		In this package we provide similar functionality but with
 		support for rank-1 polymorphic types.
 	</longdescription>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Regular expression library like Perl and Ruby&#39;s regular expressions.
+		Regular expression library like Perl and Ruby's regular expressions.
 		This package has a module RegexPR.
 		And RegexPR export functions matchRegexPR and gsubRegexPR.
 		
@@ -20,16 +23,16 @@
 		
 		Examples
 		
-		&gt; matchRegexPR &quot;ab(cde)f\\1&quot; &quot;kkkabcdefcdefgh&quot; =&gt;
-		&gt;              Just ((&quot;abcdefcde&quot;, (&quot;kkk&quot;, &quot;fgh&quot;)),[(1,&quot;cde&quot;)])
-		&gt; matchRegexPR &quot;(?&lt;=hij)abc&quot; &quot;kkkabchijabcde&quot; =&gt;
-		&gt;              Just ((&quot;abc&quot;,(&quot;kkkabchij&quot;,&quot;de&quot;)),[])
-		&gt; gsubRegexPR &quot;\\G(\\d\\d\\d)&quot; &quot;\\1,&quot; &quot;123456 789&quot; =&gt; &quot;123,456, 789&quot;
-		&gt; subRegexPR &quot;(?&lt;=(.)(.)(.))e&quot; &quot; \\3\\2\\1 &quot; &quot;abcdefg&quot; =&gt; &quot;abcd dcb fg&quot;
-		&gt; gsubRegexPR &quot;(?ixm)  aBc  . # comment \n\n&quot; &quot;abc!&quot; &quot;abc\nABCDAbcAbc&quot; =&gt;
-		&gt;             &quot;abc!abc!abc!bc&quot;
-		&gt; gmatchRegexPR &quot;(?=(?&lt;!(?!abc)))abc&quot; &quot;abcdefdefabc&quot; =&gt;
-		&gt;              [((&quot;abc&quot;, (&quot;&quot;, &quot;defdefabc&quot;)), []), ((&quot;abc&quot;, (&quot;defdef&quot;, &quot;&quot;)), [])]
-		&gt; splitRegexPR &quot;\\s*,\\s*&quot; &quot;a,b ,c\t ,d , e&quot; =&gt; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;]
+		&gt; matchRegexPR "ab(cde)f\\1" "kkkabcdefcdefgh" =&gt;
+		&gt;              Just (("abcdefcde", ("kkk", "fgh")),[(1,"cde")])
+		&gt; matchRegexPR "(?&lt;=hij)abc" "kkkabchijabcde" =&gt;
+		&gt;              Just (("abc",("kkkabchij","de")),[])
+		&gt; gsubRegexPR "\\G(\\d\\d\\d)" "\\1," "123456 789" =&gt; "123,456, 789"
+		&gt; subRegexPR "(?&lt;=(.)(.)(.))e" " \\3\\2\\1 " "abcdefg" =&gt; "abcd dcb fg"
+		&gt; gsubRegexPR "(?ixm)  aBc  . # comment \n\n" "abc!" "abc\nABCDAbcAbc" =&gt;
+		&gt;             "abc!abc!abc!bc"
+		&gt; gmatchRegexPR "(?=(?&lt;!(?!abc)))abc" "abcdefdefabc" =&gt;
+		&gt;              [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
+		&gt; splitRegexPR "\\s*,\\s*" "a,b ,c\t ,d , e" =&gt; ["a","b","c","d","e"]
 	</longdescription>
 </pkgmetadata>

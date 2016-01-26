@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="gui">Build the wxWidgets GUI for the sequencer.</flag>
 		<flag name="httpserver">Enable access to modules via a web browser.</flag>
@@ -9,7 +12,7 @@
 	<longdescription>
 		An editor shows a textual description of music (like Haskore),
 		an interpreter computes and emits a stream of MIDI events,
-		and (that&#39;s the main point) the user can change the program on the fly.
+		and (that's the main point) the user can change the program on the fly.
 		Additionally the state of the interpreter is shown
 		in the form of the current reduced term
 		for educational and debugging purposes.
@@ -29,7 +32,7 @@
 		Then change one of the numbers
 		that appear in the lines like
 		@qn = 300@
-		and press CTRL-R for \&quot;reloading\&quot; that module into the interpreter.
+		and press CTRL-R for \"reloading\" that module into the interpreter.
 		This should immediately have an effect,
 		namely increasing the tempo of the melody.
 		You may also alter a note name like @c 4@ to @cis 4@, then reload,
@@ -75,15 +78,15 @@
 		one changes some chords of a musical theme).
 		In turn, this implies that we do not store
 		and share results of evaluations,
-		hence, we don&#39;t have local bindings.
+		hence, we don't have local bindings.
 		
 		You may import and use
-		the special functions &#39;Controls.checkBox&#39;, &#39;Controls.slider&#39;
-		from the &quot;Controls&quot; module.
+		the special functions 'Controls.checkBox', 'Controls.slider'
+		from the "Controls" module.
 		For every call to these functions a widget is added to the control window
 		and the state of the widget is the result of the function call.
 		Technically every change of these widgets
-		internally adds or updates a rule in the &quot;Controls&quot; module.
+		internally adds or updates a rule in the "Controls" module.
 		The effect is very similar to updating a value definition in a module
 		and then reloading that module to the interpreter,
 		but using the widgets is more intuitive.
@@ -95,10 +98,10 @@
 		in order to allow offline rendering of music
 		that you programmed within the Live-Sequencer.
 		You may generate a standard MIDI file
-		using functions from the &quot;Render&quot; module.
+		using functions from the "Render" module.
 		To this end load your song module into GHCi and call
 		
-		&gt;YourModule&gt; Render.writeStream &quot;yoursong.mid&quot; yourSong
+		&gt;YourModule&gt; Render.writeStream "yoursong.mid" yourSong
 		
 		4. HTTP access *****
 		
@@ -224,8 +227,8 @@
 		the difference is how liberal is the sequencer
 		with respect to exceeding the ratio for a short time.
 		Read the first setting as:
-		\&quot;For 15 adjacent events,
-		the duration between the first and the last one must be at least 100ms.\&quot;
+		\"For 15 adjacent events,
+		the duration between the first and the last one must be at least 100ms.\"
 		That is, if you emit 20 events simultaneously every second,
 		then the first setting will forbid this,
 		and the second setting will allow it.

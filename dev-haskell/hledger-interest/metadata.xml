@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		hledger-interest is a small command-line utility based on Simon
-		Michael&#39;s hleder library. Its purpose is to compute interest for a
+		Michael's hleder library. Its purpose is to compute interest for a
 		given ledger account. Using command line flags, the program can be
 		configured to use various schemes for day-counting, such as act\/act,
 		30\/360, 30E\/360, and 30\/360isda. Furthermore, it supports a (small)
@@ -84,15 +87,15 @@
 		&gt;   -h          --help            print this message and exit
 		&gt;   -V          --version         show version number and exit
 		&gt;   -v          --verbose         echo input ledger to stdout (default)
-		&gt;   -q          --quiet           don&#39;t echo input ledger to stdout
+		&gt;   -q          --quiet           don't echo input ledger to stdout
 		&gt;               --today           update account until today
 		&gt;   -f FILE     --file=FILE       input ledger file
 		&gt;   -s ACCOUNT  --source=ACCOUNT  interest source account
 		&gt;   -t ACCOUNT  --target=ACCOUNT  interest target account
-		&gt;               --act             use &#39;act&#39; day counting convention
-		&gt;               --30-360          use &#39;30/360&#39; day counting convention
-		&gt;               --30E-360         use &#39;30E/360&#39; day counting convention
-		&gt;               --30E-360isda     use &#39;30E/360isda&#39; day counting convention
+		&gt;               --act             use 'act' day counting convention
+		&gt;               --30-360          use '30/360' day counting convention
+		&gt;               --30E-360         use '30E/360' day counting convention
+		&gt;               --30E-360isda     use '30E/360isda' day counting convention
 		&gt;               --constant=RATE   constant interest rate
 		&gt;               --annual=RATE     annual interest rate
 		&gt;               --bgb288          compute interest according to German BGB288

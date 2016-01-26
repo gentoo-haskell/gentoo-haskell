@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		blank-canvas is a Haskell binding to the complete
 		HTML5 Canvas API. blank-canvas allows Haskell
@@ -21,7 +24,7 @@
 		&amp;#32;&amp;#32;&amp;#32;&amp;#32;moveTo(50,50)
 		&amp;#32;&amp;#32;&amp;#32;&amp;#32;lineTo(200,100)
 		&amp;#32;&amp;#32;&amp;#32;&amp;#32;lineWidth 10
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;strokeStyle &quot;red&quot;
+		&amp;#32;&amp;#32;&amp;#32;&amp;#32;strokeStyle "red"
 		&amp;#32;&amp;#32;&amp;#32;&amp;#32;stroke()                              -- this draws the ink into the canvas
 		@
 		

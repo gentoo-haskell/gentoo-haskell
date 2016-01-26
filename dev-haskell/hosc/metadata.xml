@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@hosc@ implements a subset of the /Open Sound Control/
 		byte protocol, &lt;http://opensoundcontrol.org/&gt;.
 		
-		&quot;Sound.OSC.Core&quot; implements the actual protocol.
+		"Sound.OSC.Core" implements the actual protocol.
 		
-		&quot;Sound.OSC.Transport.FD&quot; implements a
+		"Sound.OSC.Transport.FD" implements a
 		/file descriptor/ based transport layer for @UDP@
 		and @TCP@.
 		
-		&quot;Sound.OSC.Transport.Monad&quot; implements a
+		"Sound.OSC.Transport.Monad" implements a
 		monadic interface to the @FD@ transport layer.
 		
-		Composite modules are at &quot;Sound.OSC&quot; and &quot;Sound.OSC.FD&quot;.
+		Composite modules are at "Sound.OSC" and "Sound.OSC.FD".
 	</longdescription>
 </pkgmetadata>

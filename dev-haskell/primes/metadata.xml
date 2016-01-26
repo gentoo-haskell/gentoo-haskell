@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This Haskell library provides an efficient lazy wheel sieve for
 		prime generation inspired by /Lazy wheel sieves and spirals of/
 		/primes/ by Colin Runciman and /The Genuine Sieve of Eratosthenes/
-		by Melissa O&#39;Neil.
+		by Melissa O'Neil.
 	</longdescription>
 </pkgmetadata>

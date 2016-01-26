@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides explicitly typed, checked exceptions as a library.
 		
@@ -36,11 +39,11 @@
 		
 		In addition to explicitly typed exceptions his package provides:
 		
-		* Support for explicitly documented, unchecked exceptions (via &#39;Control.Monad.Exception.tryEMT&#39;).
+		* Support for explicitly documented, unchecked exceptions (via 'Control.Monad.Exception.tryEMT').
 		
-		* Support for selective unchecked exceptions (via &#39;Control.Monad.Exception.UncaughtException&#39;).
+		* Support for selective unchecked exceptions (via 'Control.Monad.Exception.UncaughtException').
 		
-		* Support for exception call traces via &#39;Control.Monad.Loc.MonadLoc&#39;. /Example:/
+		* Support for exception call traces via 'Control.Monad.Loc.MonadLoc'. /Example:/
 		
 		&gt;
 		&gt; f () = do throw MyException

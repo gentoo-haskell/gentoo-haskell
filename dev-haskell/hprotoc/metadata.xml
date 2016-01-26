@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Parse language defined at &quot;http://code.google.com/apis/protocolbuffers/docs/proto.html&quot; and general haskell code to implement messages.
+		Parse language defined at "http://code.google.com/apis/protocolbuffers/docs/proto.html" and general haskell code to implement messages.
 	</longdescription>
 </pkgmetadata>

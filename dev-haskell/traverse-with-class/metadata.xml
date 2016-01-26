@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This is a generic programming library in the spirit of
-		\&quot;Scrap your boilerplate with class\&quot;, but with several
-		improvements most notably, it&#39;s based on the @gtraverse@
+		\"Scrap your boilerplate with class\", but with several
+		improvements most notably, it's based on the @gtraverse@
 		function instead of @gfoldl@.
 		@gtraverse@ is equivalent in power to @gfoldl@, but lets
 		you more easily write non-standard views of the data type.

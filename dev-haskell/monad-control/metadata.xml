@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package defines the type class @MonadControlIO@, a subset of
 		@MonadIO@ into which generic control operations such as @catch@ can
@@ -11,7 +14,7 @@
 		provides a wrapped version of @Control.Exception@ with types
 		generalized from @IO@ to all monads in @MonadControlIO@.
 		
-		Note that this package is a rewrite of Anders Kaseorg&#39;s @monad-peel@ library.
+		Note that this package is a rewrite of Anders Kaseorg's @monad-peel@ library.
 		The main difference is that this package provides CPS style
 		operators and exploits the @RankNTypes@ language extension to
 		simplify most definitions.

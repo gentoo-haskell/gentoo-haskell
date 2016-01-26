@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		A heap is a container supporting the insertion of elements and the extraction of the minimum element. This library additionally supports melding two heaps. This library models the implementation of asymptotically optimal purely functional heaps given by Brodal and Okasaki in their paper \&quot;Optimal Purely Functional Priority Queues\&quot;. It has been proved correct using the Coq proof assistant. The proofs are included in the Cabal package.
+		A heap is a container supporting the insertion of elements and the extraction of the minimum element. This library additionally supports melding two heaps. This library models the implementation of asymptotically optimal purely functional heaps given by Brodal and Okasaki in their paper \"Optimal Purely Functional Priority Queues\". It has been proved correct using the Coq proof assistant. The proofs are included in the Cabal package.
 		
 		A description of the differences between versions of this package is available at &lt;http://priority-queues.googlecode.com/hg/brodal-okasaki/cabal/CHANGELOG&gt;.
 	</longdescription>

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides an URI manipulation inteface.
 		
 		In network-2.6 the @Network.URI@ module was split off from the
-		network package into this package. If you&#39;re using the @Network.URI@
+		network package into this package. If you're using the @Network.URI@
 		module you can automatically get it from the right package by adding
 		this to your .cabal file:
 		

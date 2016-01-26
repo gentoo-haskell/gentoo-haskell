@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		BlogLiterately is a tool for uploading web log posts to web log servers
 		that support the MetaWeblog API (such as WordPress-based blogs and many
 		others).  Blog posts to be published via BlogLiterately are written in
 		markdown [1] format, with extensions supported by pandoc [2].  Posts may be
-		actual &#39;bird-style&#39; literate Haskell files, with commentary in markdown.
+		actual 'bird-style' literate Haskell files, with commentary in markdown.
 		Code segments (including actual source lines from literate haskell files,
 		as well as markdown code blocks) may be syntax-highlighted in the resulting
 		HTML that is posted to the blog.  There are two types (two different
@@ -23,14 +26,14 @@
 		segments.  In basic markdown, A code segment is set off from normal
 		text via indentation, e.g.:
 		
-		&gt;   -- This is a code segment but the tool doesn&#39;t know what kind!
+		&gt;   -- This is a code segment but the tool doesn't know what kind!
 		&gt;   foo :: String -&gt; String
 		
 		Pandoc offers another way to specify a code segment (replace the
 		square braces with curly braces, haddock/hackage mangles them):
 		
 		&gt; ~~~~ [ .haskell ]
-		&gt; -- This is a code segment, and the tool knows it&#39;s Haskell!
+		&gt; -- This is a code segment, and the tool knows it's Haskell!
 		&gt; foo :: String -&gt; String
 		&gt; ~~~~
 		
@@ -41,39 +44,39 @@
 		e.g. cpp, bash, java, ml, eiffel, etc.):
 		
 		&gt;     [haskell]
-		&gt;     -- This is a code segment, and the tool knows it&#39;s Haskell!
+		&gt;     -- This is a code segment, and the tool knows it's Haskell!
 		&gt;     foo :: String -&gt; String
 		
 		Once you have written your markdown file, you can run the tool, specifying how
 		you want it highlighted.  You can specify different highlighting modes for
 		the haskell segments and the other code segments.  If using hscolour, you
-		can specify that the highlighting be done &#39;inline&#39; via CSS &#39;style&#39;
+		can specify that the highlighting be done 'inline' via CSS 'style'
 		attributes.  You can use the default styling (which is similar to source
 		code in documentation on hackage) or you can specify a configuration file
 		which looks something like this:
 		
-		&gt;     [(&quot;hs-keyword&quot;,&quot;color: blue; font-weight: bold;&quot;)
-		&gt;     , (&quot;hs-keyglyph&quot;,&quot;color: red;&quot;)
-		&gt;     , (&quot;hs-layout&quot;,&quot;color: red;&quot;)
-		&gt;     , (&quot;hs-comment&quot;,&quot;color: green;&quot;)
-		&gt;     , (&quot;hs-conid&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-varid&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-conop&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-varop&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-str&quot;, &quot;color: teal;&quot;)
-		&gt;     , (&quot;hs-chr&quot;, &quot;color: teal;&quot;)
-		&gt;     , (&quot;hs-number&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-cpp&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-selection&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-variantselection&quot;, &quot;&quot;)
-		&gt;     , (&quot;hs-definition&quot;, &quot;&quot;)]
+		&gt;     [("hs-keyword","color: blue; font-weight: bold;")
+		&gt;     , ("hs-keyglyph","color: red;")
+		&gt;     , ("hs-layout","color: red;")
+		&gt;     , ("hs-comment","color: green;")
+		&gt;     , ("hs-conid", "")
+		&gt;     , ("hs-varid", "")
+		&gt;     , ("hs-conop", "")
+		&gt;     , ("hs-varop", "")
+		&gt;     , ("hs-str", "color: teal;")
+		&gt;     , ("hs-chr", "color: teal;")
+		&gt;     , ("hs-number", "")
+		&gt;     , ("hs-cpp", "")
+		&gt;     , ("hs-selection", "")
+		&gt;     , ("hs-variantselection", "")
+		&gt;     , ("hs-definition", "")]
 		
 		It has to be (readable as) a Haskell value of type [(String,String)],
 		and it will only have an effect if you use the above class names (e.g.
-		&#39;hs-keyword&#39; to specify a style for Haskell keywords).
+		'hs-keyword' to specify a style for Haskell keywords).
 		
 		With highlighting-kate (always) and with hscolour
-		(optionally), the style for syntax segments is specified using &#39;class&#39;
+		(optionally), the style for syntax segments is specified using 'class'
 		attributes, so the stylesheet must be provided separately.  Sample
 		stylesheets are provided in the package archive file.
 		
@@ -90,7 +93,7 @@
 		as well).
 		
 		The options for BlogLiterately are, I hope, self-explanatory (given the
-		above background!).  Note that if Pandoc isn&#39;t installed with highlighting
+		above background!).  Note that if Pandoc isn't installed with highlighting
 		enabled, there will be fewer options (no -kate options):
 		
 		&gt; BlogLierately v0.3, (C) Robert Greayer 2009
@@ -110,7 +113,7 @@
 		&gt;      --hs-nohilight     no haskell hilighting
 		&gt;      --hs-kate          hilight haskell with highlighting-kate
 		&gt;      --other-code-kate  hilight other code with highlighting-kate
-		&gt;      --publish          Publish post (otherwise it&#39;s uploaded as a draft)
+		&gt;      --publish          Publish post (otherwise it's uploaded as a draft)
 		&gt;      --category=VALUE   post category (can specify more than one)
 		&gt;      --tag=VALUE        set tag (can specify more than one)
 		&gt;   -b --blogid=VALUE     Blog specific identifier (default=default)
@@ -120,14 +123,14 @@
 		To post to a WordPress blog, the command is:
 		
 		&gt;     BlogLiterately http://blogurl.example.com/xmlrpc.php \
-		&gt;         myname mypasswd &quot;Sample&quot; Sample.lhs
+		&gt;         myname mypasswd "Sample" Sample.lhs
 		
 		(which creates a new post).  If, for example, the post id of that post
-		(which BlogLiterately prints when it uploads a new post) was &#39;37&#39;, then
+		(which BlogLiterately prints when it uploads a new post) was '37', then
 		to update the post, the command would be:
 		
 		&gt;     BlogLiterately --postid=37 http://blogurl.example.com/xmlrpc.php \
-		&gt;         myname mypasswd &quot;Sample&quot; Sample.lhs
+		&gt;         myname mypasswd "Sample" Sample.lhs
 		
 		and the post will be updated with the new text.
 		

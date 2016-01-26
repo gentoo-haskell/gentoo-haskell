@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Manatee is Haskell integrated environment written in Haskell.
 		
@@ -11,7 +14,7 @@
 		You can consider it is new environment mix Gnome and Emacs.
 		Like Gnome to provide friendly graphics interface and work efficient like Emacs.
 		
-		Manatee use multi-processes framework, any sub-module running in separate process to protected core won&#39;t crash.
+		Manatee use multi-processes framework, any sub-module running in separate process to protected core won't crash.
 		So it minimize your losses when some unexpected exception throw in extension.
 		
 		Video (Select 720p HD) at : &lt;http://www.youtube.com/watch?v=weS6zys3U8k&gt; or &lt;http://www.youtube.com/watch?v=A3DgKDVkyeM&gt;
@@ -28,7 +31,7 @@
 		
 		&gt; sudo aptitude install binutils-gold -y
 		
-		This step is optional, it&#39;s okay use ld link program, just much slow. :)
+		This step is optional, it's okay use ld link program, just much slow. :)
 		
 		2) Install GHC compiler &lt;http://www.haskell.org/ghc/download_ghc_7_0_3&gt;:
 		
@@ -55,17 +58,17 @@
 		
 		Generic way is add `PATH=$PATH:~\/.cabal\/bin` in your `~/.bashrc`
 		
-		Then do below command (NOTE: don&#39;t use root permission with cabal, otherwise Manatee can&#39;t work):
+		Then do below command (NOTE: don't use root permission with cabal, otherwise Manatee can't work):
 		
 		&gt; cabal update &amp;&amp; cabal install alex happy c2hs &amp;&amp; cabal install gtk2hs-buildtools glib gio pango cairo gtk
 		
 		6) Install Manatee:
 		
-		Install all Manatee packages (same, don&#39;t use root permission):
+		Install all Manatee packages (same, don't use root permission):
 		
 		&gt; cabal install manatee-all
 		
-		If you don&#39;t want install all Manatee packages, you can install basic package like below:
+		If you don't want install all Manatee packages, you can install basic package like below:
 		
 		&gt; cabal install manatee-core manatee-welcome manatee
 		
@@ -83,9 +86,9 @@
 		&gt; manatee-curl
 		&gt; manatee-terminal
 		
-		Note if you don&#39;t install any extension package, nothing will show in manatee, so you at least to choose one extension to install.
+		Note if you don't install any extension package, nothing will show in manatee, so you at least to choose one extension to install.
 		
-		That&#39;s all, then type command &quot;manatee&quot; to play it! :)
+		That's all, then type command "manatee" to play it! :)
 		
 		I have test, Manatee can works well in Gnome, KDE, XMonad and XFCE
 		
@@ -99,7 +102,7 @@
 		
 		Mailing-List: manatee-user\@googlegroups.com manatee-develop\@googlegroups.com
 		
-		Manatee is distributed framework, it allowed you install extension don&#39;t need depend each other, but it&#39;s easy to break if some package is older than core packages (manatee-core, manatee). So please make sure *all* packages has update to newest version before you report bug to manatee-user\@googlegroups.com . Thanks! :)
+		Manatee is distributed framework, it allowed you install extension don't need depend each other, but it's easy to break if some package is older than core packages (manatee-core, manatee). So please make sure *all* packages has update to newest version before you report bug to manatee-user\@googlegroups.com . Thanks! :)
 		
 	</longdescription>
 </pkgmetadata>

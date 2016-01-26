@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		&#39;&#39;Checkers&#39;&#39; wraps up the expected properties associated with various
+		''Checkers'' wraps up the expected properties associated with various
 		standard type classes as QuickCheck properties.  Also some morphism
 		properties.  It also provides arbitrary instances and generator combinators
 		for common data types.

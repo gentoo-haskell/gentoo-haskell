@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@angel@ is a daemon that runs and monitors other processes.  It
-		is similar to djb&#39;s `daemontools` or the Ruby project `god`.
+		is similar to djb's `daemontools` or the Ruby project `god`.
 		
-		It&#39;s goals are to keep a set of services running, and to facilitate
+		It's goals are to keep a set of services running, and to facilitate
 		the easy configuration and restart of those services.
 		See the homepage for documentation.
 	</longdescription>

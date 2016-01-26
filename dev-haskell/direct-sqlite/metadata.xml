@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package is not very different from the other SQLite3 bindings out
 		there, but it fixes a few deficiencies I was finding.  As compared to
@@ -30,7 +33,7 @@
 		[Version 2.3.1] Upgrade the bundled SQLite3 to 3.7.15.  Add bindings for
 		sqlite3_interrupt.  Export Int rather than CInt.
 		
-		[Version 2.3] Mark some FFI calls &quot;unsafe&quot;, for a substantial performance
+		[Version 2.3] Mark some FFI calls "unsafe", for a substantial performance
 		benefit.
 		
 		[Version 2.2.1] Bump down text library version to match with the

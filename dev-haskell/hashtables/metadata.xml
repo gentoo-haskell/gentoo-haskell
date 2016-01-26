@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
-	<herd>proxy-maintainers</herd>
-	<maintainer>
+	<maintainer type="project">
 		<email>haskell@gentoo.org</email>
+	</maintainer>
+	<maintainer type="project">
+		<email>proxy-maint@gentoo.org</email>
+		<name>Proxy Maintainers</name>
 	</maintainer>
 	<longdescription>
 		This package provides a couple of different implementations of mutable hash
@@ -12,31 +14,31 @@
 		operations, and a set of wrappers to use the hash tables in the IO monad.
 		
 		/QUICK START/: documentation for the hash table operations is provided in the
-		&quot;Data.HashTable.Class&quot; module, and the IO wrappers (which most users will
-		probably prefer) are located in the &quot;Data.HashTable.IO&quot; module.
+		"Data.HashTable.Class" module, and the IO wrappers (which most users will
+		probably prefer) are located in the "Data.HashTable.IO" module.
 		
 		This package currently contains three hash table implementations:
 		
-		1. &quot;Data.HashTable.ST.Basic&quot; contains a basic open-addressing hash table
+		1. "Data.HashTable.ST.Basic" contains a basic open-addressing hash table
 		using linear probing as the collision strategy. On a pure speed basis it
 		should currently be the fastest available Haskell hash table
 		implementation for lookups, although it has a higher memory overhead
 		than the other tables and can suffer from long delays when the table is
 		resized because all of the elements in the table need to be rehashed.
 		
-		2. &quot;Data.HashTable.ST.Cuckoo&quot; contains an implementation of \&quot;cuckoo
-		hashing\&quot; as introduced by Pagh and Rodler in 2001 (see
+		2. "Data.HashTable.ST.Cuckoo" contains an implementation of \"cuckoo
+		hashing\" as introduced by Pagh and Rodler in 2001 (see
 		&lt;http://en.wikipedia.org/wiki/Cuckoo_hashing&gt;). Cuckoo hashing has
-		worst-case /O(1)/ lookups and can reach a high \&quot;load factor\&quot;, in which
+		worst-case /O(1)/ lookups and can reach a high \"load factor\", in which
 		the table can perform acceptably well even when more than 90% full.
 		Randomized testing shows this implementation of cuckoo hashing to be
 		slightly faster on insert and slightly slower on lookup than
-		&quot;Data.Hashtable.ST.Basic&quot;, while being more space efficient by about a
+		"Data.Hashtable.ST.Basic", while being more space efficient by about a
 		half-word per key-value mapping. Cuckoo hashing, like the basic hash
 		table implementation using linear probing, can suffer from long delays
 		when the table is resized.
 		
-		3. &quot;Data.HashTable.ST.Linear&quot; contains a linear hash table (see
+		3. "Data.HashTable.ST.Linear" contains a linear hash table (see
 		&lt;http://en.wikipedia.org/wiki/Linear_hashing&gt;), which trades some insert
 		and lookup performance for higher space efficiency and much shorter
 		delays when expanding the table. In most cases, benchmarks show this
@@ -66,7 +68,7 @@
 		* @unsafe-tricks@, default /ON/. If this flag is enabled, we use some
 		unsafe GHC-specific tricks to save indirections (namely @unsafeCoerce#@
 		and @reallyUnsafePtrEquality#@. These techniques rely on assumptions
-		about the behaviour of the GHC runtime system and, although they&#39;ve been
+		about the behaviour of the GHC runtime system and, although they've been
 		tested and should be safe under normal conditions, are slightly
 		dangerous. Caveat emptor. In particular, these techniques are
 		incompatible with HPC code coverage reports.
@@ -79,7 +81,7 @@
 		* @bounds-checking@, default /OFF/. If this flag is enabled, array accesses
 		are bounds-checked.
 		
-		* @debug@, default /OFF/. If turned on, we&#39;ll rudely spew debug output to
+		* @debug@, default /OFF/. If turned on, we'll rudely spew debug output to
 		stdout.
 		
 		* @portable@, default /OFF/. If this flag is enabled, we use only pure

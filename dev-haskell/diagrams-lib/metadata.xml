@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Diagrams is a flexible, extensible EDSL for creating
 		graphics of many types.  Graphics can be created
@@ -9,6 +12,6 @@
 		multiple backends.  diagrams-lib provides a
 		standard library of primitives and operations for
 		creating diagrams.  To get started using it, see
-		&quot;Diagrams.Prelude&quot;.
+		"Diagrams.Prelude".
 	</longdescription>
 </pkgmetadata>

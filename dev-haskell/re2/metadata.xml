@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		re2 is a regular expression library offering predictable run-time and
 		memory consumption. This package is a binding to re2.
@@ -12,13 +15,13 @@
 		&gt;$ ghci -XOverloadedStrings
 		&gt;ghci&gt; import Regex.RE2
 		&gt;
-		&gt;ghci&gt; find &quot;\\w+&quot; &quot;hello world&quot;
-		&gt;Just (Match [Just &quot;hello&quot;])
+		&gt;ghci&gt; find "\\w+" "hello world"
+		&gt;Just (Match [Just "hello"])
 		&gt;
-		&gt;ghci&gt; find &quot;\\w+$&quot; &quot;hello world&quot;
-		&gt;Just (Match [Just &quot;world&quot;])
+		&gt;ghci&gt; find "\\w+$" "hello world"
+		&gt;Just (Match [Just "world"])
 		&gt;
-		&gt;ghci&gt; find &quot;^\\w+$&quot; &quot;hello world&quot;
+		&gt;ghci&gt; find "^\\w+$" "hello world"
 		&gt;Nothing
 	</longdescription>
 </pkgmetadata>

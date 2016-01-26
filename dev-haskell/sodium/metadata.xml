@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
-	<maintainer>
+	<maintainer type="project">
 		<email>haskell@gentoo.org</email>
 	</maintainer>
 	<longdescription>
@@ -15,7 +14,7 @@
 		* Applicative style: Event implements Functor and Behaviour implements Applicative.
 		
 		* Instead of the common approach where inputs are fed into the front of a monolithic
-		\&#39;reactimate\&#39;, Sodium allows you to push inputs in from scattered places in IO.
+		\'reactimate\', Sodium allows you to push inputs in from scattered places in IO.
 		
 		* Integration with IO: Extensible to provide lots of scope for lifting IO into FRP
 		logic.

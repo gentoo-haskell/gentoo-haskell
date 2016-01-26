@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+          <email>haskell@gentoo.org</email>
+          <name>Gentoo Haskell</name>
+        </maintainer>
 	<longdescription>
 		A JSON parsing and encoding library optimized for ease of use
 		and high performance.
@@ -12,7 +15,7 @@
 		&lt;https://github.com/mailrank/aeson#readme&gt;
 		
 		Parsing performance on a late 2010 MacBook Pro (2.66GHz Core i7),
-		for mostly-English tweets from Twitter&#39;s JSON search API:
+		for mostly-English tweets from Twitter's JSON search API:
 		
 		* 0.8 KB, 32-bit GHC 6.12.3: 30538 msg\/sec (24.9 MB\/sec)
 		
@@ -65,6 +68,6 @@
 		(A note on naming: in Greek mythology, Aeson was the father of Jason.)
 	</longdescription>
         <use>
-          <flag name='developer'>Operate in developer mode.'</flag>
+          <flag name="developer">Operate in developer mode.'</flag>
         </use>
 </pkgmetadata>

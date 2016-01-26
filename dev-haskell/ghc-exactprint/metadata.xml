@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Using the API Annotations available from GHC 7.10.2, this
 		library provides a means to round trip any code that can
@@ -23,6 +26,6 @@
 		Note: requires GHC 7.10.2 or later
 	</longdescription>
 	<use>
-		<flag name='roundtrip'>Build roundtripping executables</flag>
+		<flag name="roundtrip">Build roundtripping executables</flag>
 	</use>
 </pkgmetadata>

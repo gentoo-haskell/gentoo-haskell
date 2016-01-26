@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Random number generation based on modeling random
-		variables by an abstract type (&#39;RVar&#39;) which can be
+		variables by an abstract type ('RVar') which can be
 		composed and manipulated monadically and sampled in
-		either monadic or \&quot;pure\&quot; styles.
+		either monadic or \"pure\" styles.
 		
 		The primary purpose of this library is to support
 		defining and sampling a wide variety of high quality

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+          <email>haskell@gentoo.org</email>
+          <name>Gentoo Haskell</name>
+        </maintainer>
 	<longdescription>
 		Provides library functions to expose some commonly needed scm tasks to the user.
 		Uses GTK+ and GTKBuilder to organize and display windows.
@@ -9,6 +12,6 @@
 		Currently git and SVN are supported.
 	</longdescription>
         <use>
-          <flag name='gtk3'>Use Gtk3.</flag>
+          <flag name="gtk3">Use Gtk3.</flag>
         </use>
 </pkgmetadata>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Template Haskell code to implement default implementations
 		for type-class functions based on which functions are
@@ -15,9 +18,9 @@
 		a system by which more complex rules can be described
 		for choosing default implementations based on which
 		ones the user supplies.  These implementations can
-		additionally be given \&quot;suitability scores\&quot;, so that
+		additionally be given \"suitability scores\", so that
 		when multiple possible choices could be made, the
-		library can choose the \&quot;best\&quot; one.
+		library can choose the \"best\" one.
 		
 		Changes in 0.0.1.0: Updated for Template Haskell changes
 		in GHC 7.6
@@ -25,6 +28,6 @@
 		Changes in v0.0.0.3:  Added a hack to fix under GHC 7.2.
 		
 		Changes in v0.0.0.2:  Nothing at all except setting
-		&#39;buildable: False&#39; under GHC 7.2.1.
+		'buildable: False' under GHC 7.2.1.
 	</longdescription>
 </pkgmetadata>

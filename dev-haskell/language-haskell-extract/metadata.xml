@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@language-haskell-extract@ contains some useful helper functions on top of Template Haskell.
 		
 		@functionExtractor@ extracts all functions after a regexp-pattern.
 		
-		&gt; foo = &quot;test&quot;
-		&gt; boo = &quot;testing&quot;
-		&gt; bar = $(functionExtractor &quot;oo$&quot;)
+		&gt; foo = "test"
+		&gt; boo = "testing"
+		&gt; bar = $(functionExtractor "oo$")
 		
 		will automagically extract the functions ending with @oo@ such as
 		
-		&gt; bar = [(&quot;foo&quot;,foo), (&quot;boo&quot;,boo)]
+		&gt; bar = [("foo",foo), ("boo",boo)]
 		
 		This can be useful if you wish to extract all functions beginning with test (for a test-framework)
 		or all functions beginning with wc (for a web service).
@@ -25,8 +28,8 @@
 		Example:
 		
 		&gt; secondTypeclassTest =
-		&gt;   do let expected = [&quot;45&quot;, &quot;88.8&quot;, &quot;\&quot;hej\&quot;&quot;]
-		&gt;          actual = $(functionExtractorMap &quot;^tc&quot; [|\n f -&gt; show f|] )
+		&gt;   do let expected = ["45", "88.8", "\"hej\""]
+		&gt;          actual = $(functionExtractorMap "^tc" [|\n f -&gt; show f|] )
 		&gt;      expected @=? actual
 		&gt;
 		&gt; tcInt :: Integer
@@ -36,6 +39,6 @@
 		&gt; tcDouble = 88.8
 		&gt;
 		&gt; tcString :: String
-		&gt; tcString = &quot;hej&quot;
+		&gt; tcString = "hej"
 	</longdescription>
 </pkgmetadata>

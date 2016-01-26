@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Common debugging/error/exception functions that give file location information
 		
-		&gt; $(err &quot;OH NO!&quot;)
+		&gt; $(err "OH NO!")
 		&gt;
 		&gt; main:Main main.hs:16:1 OH NO!
 		
@@ -27,9 +30,9 @@
 		&gt; [1,2,3]
 		
 		Also there is a version of thrwIO that gives location information
-		&gt; ($(thrwIO) $ AException) `catch` \e -&gt; putStrLn (&quot;Caught &quot; ++ show (e :: AException))
+		&gt; ($(thrwIO) $ AException) `catch` \e -&gt; putStrLn ("Caught " ++ show (e :: AException))
 		&gt;
-		&gt; Caught AException &quot;main:Main test/main.hs:25:6&quot;
+		&gt; Caught AException "main:Main test/main.hs:25:6"
 		
 		See module for a listing of all the functions with short descriptions, and the homepage for some more examples https://github.com/gregwebs/ErrorLocation.hs
 	</longdescription>

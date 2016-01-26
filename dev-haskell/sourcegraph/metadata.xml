@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Statically analyse Haskell source code using graph-theoretic
 		techniques.  Sample reports can be found at:
@@ -11,14 +14,14 @@
 		
 		&gt; SourceGraph path/to/Foo.cabal
 		
-		Or, if your project doesn&#39;t use Cabal, then there is limited support
+		Or, if your project doesn't use Cabal, then there is limited support
 		for using an overall module from your program\/library:
 		
 		&gt; SourceGraph path/to/Foo.hs
 		
 		Note that the Cabal method is preferred, as it is better able to
 		determine the project name and exported modules (when passing a
-		Haskell file to SourceGraph, it uses that module&#39;s name as the overall
+		Haskell file to SourceGraph, it uses that module's name as the overall
 		name of project and assumes that it is the only exported module; as
 		such, it works better for programs than libraries).
 		

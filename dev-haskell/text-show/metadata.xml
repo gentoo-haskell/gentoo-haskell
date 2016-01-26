@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@text-show@ offers a replacement for the @Show@ typeclass intended
 		for use with @Text@ instead of @String@s. This package was created
@@ -17,7 +20,7 @@
 		borrowed code from those packages in order to ensure that the
 		behaviors of @Show@ and @TextShow@ coincide.
 		
-		For most uses, simply importing &quot;TextShow&quot;
+		For most uses, simply importing "TextShow"
 		will suffice:
 		
 		@
@@ -26,16 +29,16 @@
 		import TextShow
 		
 		main :: IO ()
-		main = printT (Just \&quot;Hello, World!\&quot;)
+		main = printT (Just \"Hello, World!\")
 		@
 		
 		If you desire it, there are also monomorphic versions of the @showb@
-		function available in the submodules of &quot;TextShow&quot;. See the
+		function available in the submodules of "TextShow". See the
 		&lt;https://github.com/RyanGlScott/text-show/wiki/Naming-conventions naming conventions&gt;
 		page for more information.
 		
 		Support for automatically deriving @TextShow@ instances can be found
-		in the &quot;TextShow.TH&quot; and &quot;TextShow.Generic&quot; modules. If you don&#39;t
-		know which one to use, use &quot;TextShow.TH&quot;.
+		in the "TextShow.TH" and "TextShow.Generic" modules. If you don't
+		know which one to use, use "TextShow.TH".
 	</longdescription>
 </pkgmetadata>

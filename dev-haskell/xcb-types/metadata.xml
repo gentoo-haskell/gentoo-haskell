@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides types which mirror the structures
 		used in the XCB code generation XML files.
@@ -14,7 +17,7 @@
 		
 		This package parses these XML files into Haskell data structures.
 		
-		If you want to do something with these XML descriptions but don&#39;t want
+		If you want to do something with these XML descriptions but don't want
 		to learn XSLT, this package should help.
 		
 		This version of xcb-types is intended to fully parse the X Protocol

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Tarjan&#39;s algorithm for computing the strongly connected components of a graph.
+		Tarjan's algorithm for computing the strongly connected components of a graph.
 	</longdescription>
 	<use>
 		<flag name="use-maps">Use IntMap instead of mutable arrays.</flag>

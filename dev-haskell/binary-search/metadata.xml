@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		These modules address the problem of finding the boundary
 		of an upward-closed set of integers, using a combination
 		of exponential and binary searches.  Variants are provided
 		for searching within bounded and unbounded intervals of
-		both &#39;Integer&#39; and bounded integral types.
+		both 'Integer' and bounded integral types.
 	</longdescription>
 </pkgmetadata>

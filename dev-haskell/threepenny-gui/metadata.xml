@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Threepenny-GUI is a GUI framework that uses the web browser as a display.
 		
-		It&#39;s cheap and easy to install because everyone has a web browser installed.
+		It's cheap and easy to install because everyone has a web browser installed.
 		
 		Internally, the library implements a small web server
 		that serves a HTML/JavaScript page with the GUI elements.

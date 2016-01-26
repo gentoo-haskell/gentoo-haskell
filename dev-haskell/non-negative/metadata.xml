@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Provides a class for non-negative numbers,
 		a wrapper which can turn any ordered numeric type into a member of that class,
 		and a lazy number type for non-negative numbers
 		(a generalization of Peano numbers).
-		This library is used by the &#39;event-list&#39; package.
+		This library is used by the 'event-list' package.
 	</longdescription>
 </pkgmetadata>

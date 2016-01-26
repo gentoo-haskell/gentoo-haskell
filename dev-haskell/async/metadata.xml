@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides a higher-level interface over
 		threads, in which an @Async a@ is a concurrent
@@ -16,12 +19,12 @@
 		* When waiting for a thread to return a result,
 		if the thread dies with an exception then the
 		caller must either re-throw the exception
-		(&#39;wait&#39;) or handle it (&#39;waitCatch&#39;); the
+		('wait') or handle it ('waitCatch'); the
 		exception cannot be ignored.
 		
 		* The API makes it possible to build a tree of
 		threads that are automatically killed when
-		their parent dies (see &#39;withAsync&#39;).
+		their parent dies (see 'withAsync').
 		
 		Changes in 2.0.1.3:
 		

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		The repa-image library adds support for reading and
 		writing images in many formats based on the DevIL
 		open source image library. Image data is represented in Haskell
 		as typed, multi-dimensional repa arrays.
 		
-		Developer\&#39;s Image Library (DevIL) is a library to
+		Developer\'s Image Library (DevIL) is a library to
 		develop applications with very powerful image
 		loading capabilities, yet with a relatively simple
 		interface. DevIL can load, save, convert,

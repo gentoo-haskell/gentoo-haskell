@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="forceghcilib">Force enable GHCi workaround library if not using shared libraries.</flag>
 		<flag name="threadedtestsuite">Build test executable with the threaded RTS.</flag>
@@ -10,6 +13,6 @@
 	</use>
 	<longdescription>
 		A Haskell binding for Qt Quick.
-		General documentation is present in the &#39;Graphics.QML&#39; module.
+		General documentation is present in the 'Graphics.QML' module.
 	</longdescription>
 </pkgmetadata>

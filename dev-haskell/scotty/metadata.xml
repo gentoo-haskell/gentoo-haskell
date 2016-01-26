@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		A Haskell web framework inspired by Ruby&#39;s Sinatra, using WAI and Warp.
+		A Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp.
 		
 		@
 		&amp;#123;-&amp;#35; LANGUAGE OverloadedStrings &amp;#35;-&amp;#125;

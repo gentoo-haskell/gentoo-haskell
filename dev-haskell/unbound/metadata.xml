@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Specify the binding structure of your data type with an
 		expressive set of type combinators, and Unbound
 		handles the rest!  Automatically derives
 		alpha-equivalence, free variable calculation,
 		capture-avoiding substitution, and more. See
-		&quot;Unbound.LocallyNameless&quot; to get started.
+		"Unbound.LocallyNameless" to get started.
 	</longdescription>
 </pkgmetadata>

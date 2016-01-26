@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides ShowQ, ShowFun, and SimpleReflect.
 		
@@ -9,7 +12,7 @@
 		
 		ShowQ adds SmallCheck &amp; QuickCheck support.
 		
-		And SimpleReflect allows us to literally see how functions &#39;expand&#39;,
+		And SimpleReflect allows us to literally see how functions 'expand',
 		through appropriate Show magic. See &lt;http://twan.home.fmf.nl/blog/haskell/simple-reflection-of-expressions.details&gt;.
 	</longdescription>
 </pkgmetadata>

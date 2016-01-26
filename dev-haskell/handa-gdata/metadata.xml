@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This project provides a Haskell library and command-line interface for Google services such as Google Storage, Contacts, Books, etc.
 		
@@ -50,7 +53,7 @@
 		
 		* Downloading a full list of contacts in XML format
 		
-		* Extracting and decrypting GnuPG/PGP text in contacts&#39; Notes fields
+		* Extracting and decrypting GnuPG/PGP text in contacts' Notes fields
 		
 		For the Picasa API, the following operations are supported:
 		

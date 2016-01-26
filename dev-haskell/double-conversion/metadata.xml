@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A library that performs fast, accurate conversion between double
 		precision floating point and text.
@@ -10,14 +13,14 @@
 		@double-conversion@ library written by Florian Loitsch at Google:
 		&lt;http://code.google.com/p/double-conversion/&gt;.
 		
-		The &#39;Text&#39; versions of these functions are about 30 times faster
-		than the default &#39;show&#39; implementation for the &#39;Double&#39; type.
+		The 'Text' versions of these functions are about 30 times faster
+		than the default 'show' implementation for the 'Double' type.
 		
-		The &#39;ByteString&#39; versions are /slower/ than the &#39;Text&#39; versions;
+		The 'ByteString' versions are /slower/ than the 'Text' versions;
 		roughly half the speed.  (This seems to be due to the cost of
-		allocating &#39;ByteString&#39; values via @malloc@.)
+		allocating 'ByteString' values via @malloc@.)
 		
 		As a final note, be aware that the @bytestring-show@ package is
-		about 50% slower than simply using &#39;show&#39;.
+		about 50% slower than simply using 'show'.
 	</longdescription>
 </pkgmetadata>

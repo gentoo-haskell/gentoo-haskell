@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Simple DirectMedia Layer \(libSDL\) is a cross-platform multimedia
 		library designed to provide low level access to audio,
 		keyboard, mouse, joystick, 3D hardware via OpenGL, and 2D
 		video framebuffer. It is used by MPEG playback software,
 		emulators, and many popular games, including the award
-		winning Linux port of \&quot;Civilization: Call To Power.\&quot;
+		winning Linux port of \"Civilization: Call To Power.\"
 	</longdescription>
 </pkgmetadata>

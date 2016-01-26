@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Fast, packed, strict storable arrays
 		with a list interface,
 		a chunky lazy list interface with variable chunk size
 		and an interface for write access via the @ST@ monad.
 		This is much like @bytestring@ and @binary@
-		but can be used for every &#39;Foreign.Storable.Storable&#39; type.
+		but can be used for every 'Foreign.Storable.Storable' type.
 		See also package
 		&lt;http://hackage.haskell.org/package/vector&gt;
 		with a similar intention.

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		MPI is defined by the Message-Passing Interface Standard,
 		as specified by the Message Passing Interface Forum. The latest release
@@ -17,16 +20,16 @@
 		the MPI implementation linked to this library (that is, the MPI
 		implementation that was chosen when this Haskell library was compiled).
 		
-		&quot;Control.Parallel.MPI.Fast&quot; contains a high-performance interface
+		"Control.Parallel.MPI.Fast" contains a high-performance interface
 		for working with (possibly mutable) arrays of storable Haskell data types.
 		
-		&quot;Control.Parallel.MPI.Simple&quot; contains a convenient (but slower)
+		"Control.Parallel.MPI.Simple" contains a convenient (but slower)
 		interface for sending arbitrary serializable Haskell data values as messages.
 		
-		&quot;Control.Parallel.MPI.Internal&quot; contains a direct binding to the
+		"Control.Parallel.MPI.Internal" contains a direct binding to the
 		C interface.
 		
-		&quot;Control.Parallel.MPI.Base&quot; contains essential MPI functionality
+		"Control.Parallel.MPI.Base" contains essential MPI functionality
 		which is independent of the message passing API. This is re-exported
 		by the Fast and Simple modules, and usually does not need to be
 		explcitly imported itself.
@@ -37,18 +40,18 @@
 		and receive parts to facilitate a more idiomatic Haskell style of programming.
 		For example, C provides the @MPI_Gather@ function which is called
 		by all processes participating in the communication, whereas
-		Haskell-MPI provides &#39;gatherSend&#39; and &#39;gatherRecv&#39; which are called
+		Haskell-MPI provides 'gatherSend' and 'gatherRecv' which are called
 		by the sending and receiving processes respectively.
 		
 		2. The order of arguments for some functions is changed to allow
 		for the most common patterns of partial function application.
 		
 		3. Errors are raised as exceptions rather than return codes (assuming
-		that the error handler to &#39;errorsThrowExceptions&#39;, otherwise errors
+		that the error handler to 'errorsThrowExceptions', otherwise errors
 		will terminate the computation just like C interface).
 		
 		Below is a small but complete MPI program. Process 1 sends the message
-		@\&quot;Hello World\&quot;@ to process 0, which in turn receives the message and
+		@\"Hello World\"@ to process 0, which in turn receives the message and
 		prints it to standard output. All other processes, if there are any,
 		do nothing.
 		
@@ -59,11 +62,11 @@
 		&gt;main :: IO ()
 		&gt;main = mpiWorld $ \size rank -&gt;
 		&gt;   if size &lt; 2
-		&gt;      then putStrLn &quot;At least two processes are needed&quot;
+		&gt;      then putStrLn "At least two processes are needed"
 		&gt;      else case rank of
 		&gt;         0 -&gt; do (msg, _status) &lt;- recv commWorld 1 unitTag
 		&gt;                 putStrLn msg
-		&gt;         1 -&gt; send commWorld 0 unitTag &quot;Hello World&quot;
+		&gt;         1 -&gt; send commWorld 0 unitTag "Hello World"
 		&gt;         _ -&gt; return ()
 	</longdescription>
 </pkgmetadata>

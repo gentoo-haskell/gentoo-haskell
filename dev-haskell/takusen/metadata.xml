@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Takusen is a DBMS access library. Like HSQL and HDBC, we support
 		arbitrary SQL statements (currently strings, extensible to anything
 		that can be converted to a string).
 		
-		Takusen&#39;s unique selling point is safety and efficiency.
+		Takusen's unique selling point is safety and efficiency.
 		We statically ensure all acquired database resources - such
 		as cursors, connections, and statement handles - are released, exactly
 		once, at predictable times. Takusen can avoid loading the whole result

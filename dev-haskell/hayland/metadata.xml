@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package contains bindings to the Wayland library, which is used to interface display devices, drawable clients, and window managers.
 		
-		Wayland exposes a &quot;fixed&quot; set of functions, and additionally generates a part of its API from a &quot;protocol&quot; file.
+		Wayland exposes a "fixed" set of functions, and additionally generates a part of its API from a "protocol" file.
 		This package locates that protocol file using pkg-config.
 		
-		If you want to interface with other protocols (such as Weston&#39;s), refer to the readme for instructions.
+		If you want to interface with other protocols (such as Weston's), refer to the readme for instructions.
 	</longdescription>
 </pkgmetadata>

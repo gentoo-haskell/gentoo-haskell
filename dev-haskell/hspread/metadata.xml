@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		hspread is a client library for the Spread toolkit.
 		It is fully implemented in haskell and supports the most recent version
-		of the protocol. It&#39;s intended to be used with a serialization library
+		of the protocol. It's intended to be used with a serialization library
 		like binary, and a separate installation of the spread deamon.
 	</longdescription>
 </pkgmetadata>

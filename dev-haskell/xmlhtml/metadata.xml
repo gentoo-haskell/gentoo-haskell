@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Contains renderers and parsers for both XML and HTML 5
 		document fragments, which share data structures wo that
-		it&#39;s easy to work with both.  Document fragments are bits
+		it's easy to work with both.  Document fragments are bits
 		of documents, which are not constrained by some of the
 		high-level structure rules (in particular, they may
 		contain more than one root element).

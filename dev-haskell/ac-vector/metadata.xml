@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This Haskell library implements several small vectors types
 		with @Double@ fields, with seperate types for each size of
 		vector, and a type class for handling vectors generally.
-		(Note that although this package is listed in the \&quot;graphics\&quot;
+		(Note that although this package is listed in the \"graphics\"
 		category, the package itself has no graphics facilities. It
 		just contains data structures that are useful for graphics
 		work.)

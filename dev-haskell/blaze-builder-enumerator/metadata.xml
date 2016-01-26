@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package integrates the builders from the blaze-builder package with
 		the enumerator package. It provides infrastructure and enumeratees for
@@ -9,6 +12,6 @@
 		iteratee.
 	</longdescription>
 	<use>
-		<flag name='newbuilder'>use bytestring-builder instead of blaze-builder-0.3</flag>
+		<flag name="newbuilder">use bytestring-builder instead of blaze-builder-0.3</flag>
 	</use>
 </pkgmetadata>

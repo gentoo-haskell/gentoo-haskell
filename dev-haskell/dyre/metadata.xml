@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Dyre implements dynamic reconfiguration facilities after the
 		style of Xmonad. Dyre aims to be as simple as possible without
 		sacrificing features, and places an emphasis on simplicity of
 		integration with an application.
 		A full introduction with a complete example project can be found
-		in the documentation for &#39;Config.Dyre&#39;
+		in the documentation for 'Config.Dyre'
 	</longdescription>
 </pkgmetadata>

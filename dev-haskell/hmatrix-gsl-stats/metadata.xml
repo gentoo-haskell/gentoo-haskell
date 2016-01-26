@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="mkl">Link with Intel's MKL optimized libraries.</flag>
 	</use>
@@ -12,6 +15,6 @@
 		
 		Documentation can be found at &lt;http://www.gnu.org/software/gsl/manual/&gt;
 		
-		The vector type is Data.Vector.Storable from the &#39;vector&#39; package.
+		The vector type is Data.Vector.Storable from the 'vector' package.
 	</longdescription>
 </pkgmetadata>

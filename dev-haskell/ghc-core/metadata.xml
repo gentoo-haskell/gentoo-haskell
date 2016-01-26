@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A convenient command line wrapper for GHC that displays
-		GHC&#39;s optimised core and assembly output in a human
+		GHC's optimised core and assembly output in a human
 		readable, colourised manner, in a pager. Unix systems
 		only, currently.
 		

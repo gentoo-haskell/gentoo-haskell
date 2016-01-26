@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+	    <email>haskell@gentoo.org</email>
+	    <name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		
 		An haskell implementation of git storage operations, allowing users
@@ -9,8 +12,8 @@
 		
 		This implementation is fully interoperable with the main C implementation.
 		
-		This is stricly only manipulating the git store (what&#39;s inside the .git directory),
-		and doesn&#39;t do anything with the index or your working directory files.
+		This is stricly only manipulating the git store (what's inside the .git directory),
+		and doesn't do anything with the index or your working directory files.
 		
 	</longdescription>
 	<use>

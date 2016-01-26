@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Please see the README.md for usage information, and
 		the wiki on Github for more details.  Also, note that
@@ -10,9 +13,9 @@
 		currently only intended for use by the executable.
 	</longdescription>
 	<use>
-		<flag name='integration-tests'>Run the integration test suite.</flag>
+		<flag name="integration-tests">Run the integration test suite.</flag>
 	</use>
 	<use>
-		<flag name='disable-git-info'>Disable compile-time inclusion of current git info.</flag>
+		<flag name="disable-git-info">Disable compile-time inclusion of current git info.</flag>
 	</use>
 </pkgmetadata>

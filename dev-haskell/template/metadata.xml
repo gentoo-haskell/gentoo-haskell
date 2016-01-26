@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Simple string substitution library that supports
-		\&quot;$\&quot;-based substitution.  Meant to be used when
+		\"$\"-based substitution.  Meant to be used when
 		Text.Printf or string concatenation would lead to
 		code that is hard to read but when a full blown
 		templating system might be overkill.

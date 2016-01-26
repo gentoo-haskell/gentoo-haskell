@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		We provide the data type @NonEmpty@ that allows to store a list-like structure
 		with at least or exactly @n@ elements,
@@ -9,7 +12,7 @@
 		and is usually small.
 		The datatype is intended to increase safety
 		by making functions total that are partial on plain lists.
-		E.g. on a non-empty list, &#39;head&#39; and &#39;tail&#39; are always defined.
+		E.g. on a non-empty list, 'head' and 'tail' are always defined.
 		
 		There are more such data types like @Optional@ and @Empty@.
 		Together with @NonEmpty@ you can define a list type

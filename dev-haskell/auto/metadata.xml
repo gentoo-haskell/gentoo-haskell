@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		(Up to date documentation is maintained at
 		&lt;https://mstksg.github.com/auto&gt;)
@@ -20,13 +23,13 @@
 		values: a stream of input events, output views, etc.
 		
 		/auto/ works by providing a type that encapsulates
-		&quot;value stream transformers&quot;, or locally stateful
+		"value stream transformers", or locally stateful
 		functions; by specifying your program as a (potentially
 		cyclic) graph of relationships between value streams, you
-		create a way of &quot;declaring&quot; a system based simply on
+		create a way of "declaring" a system based simply on
 		static relationships between quantities.
 		
-		Instead of a &quot;state monad&quot; type solution, where all
+		Instead of a "state monad" type solution, where all
 		functions have access to a rigid global state, /auto/
 		works by specifying relationships which each exist
 		independently and on their own, without any global state.
@@ -41,14 +44,14 @@
 		Also, check out the
 		&lt;https://github.com/mstksg/auto-examples auto-examples&gt;
 		repository on github for plenty of real-world and toy
-		examples to learn from; I&#39;ve also done a
+		examples to learn from; I've also done a
 		&lt;blog.jle.im/entries/series/+all-about-auto blog series&gt;
 		on this library, with examples and full tutorials!
 		
-		Support available on freenode&#39;s #haskell-auto,
+		Support available on freenode's #haskell-auto,
 		#haskell-game, and also on the github issue
 		tracker for the source repository.
 		
-		Import &quot;Control.Auto&quot; to begin!
+		Import "Control.Auto" to begin!
 	</longdescription>
 </pkgmetadata>

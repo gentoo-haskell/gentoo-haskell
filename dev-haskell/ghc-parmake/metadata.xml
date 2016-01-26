@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		&#39;ghc-parmake&#39; is a parallel wrapper for &#39;ghc --make&#39;
+		'ghc-parmake' is a parallel wrapper for 'ghc --make'
 		intended to work as its drop-in replacement. It can
 		build your Haskell program in parallel using multiple
 		cores.
-		&#39;ghc-parmake&#39; works by extracting a module dependency
-		graph with &#39;ghc -M&#39; and then running multiple &#39;ghc -c&#39;
+		'ghc-parmake' works by extracting a module dependency
+		graph with 'ghc -M' and then running multiple 'ghc -c'
 		processes in parallel.
-		To set the number of concurrent jobs, use the &#39;-j&#39;
+		To set the number of concurrent jobs, use the '-j'
 		option.
 	</longdescription>
 </pkgmetadata>

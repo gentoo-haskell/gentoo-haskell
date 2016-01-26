@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		/Usage/:
 		
@@ -19,15 +22,15 @@
 		
 		* If the sender has an SPF record authorizing his mail server to send
 		mail on his behalf, then when his message is forwarded by the
-		recipient&#39;s mail server, it will fail any subsequent SPF checks. This
+		recipient's mail server, it will fail any subsequent SPF checks. This
 		will likely cause the message to be rejected, and the original
-		recipient&#39;s server will generate backscatter.
+		recipient's server will generate backscatter.
 		
-		* If any spam makes it through the filter on the recipient&#39;s mail
+		* If any spam makes it through the filter on the recipient's mail
 		server, that spam will then be forwarded to a remote destination. The
 		remote destination will blame the forwarding server for the spam, and
 		that can impact its reputation and potentially lead to a blacklisting
-		even though the spam did not originate on the recipient&#39;s server.
+		even though the spam did not originate on the recipient's server.
 		
 		Whether or not these are an issue depends on the circumstances, but in
 		any case it is useful to know who is forwarding mail off-site.
@@ -58,7 +61,7 @@
 		the set of all domains (i.e one column) that are local to the
 		server. See the default value for an example.
 		
-		Default: \&quot;SELECT domain FROM domain WHERE domain &lt;&gt; &#39;ALL&#39; ORDER BY domain;\&quot;
+		Default: \"SELECT domain FROM domain WHERE domain &lt;&gt; 'ALL' ORDER BY domain;\"
 		
 		@
 		\--exclude-mx, -e
@@ -84,11 +87,11 @@
 		
 		SQL query used to produce a list of all forwards on the mail
 		system. This query should return the set of all (address, goto)
-		triples, where \&quot;goto\&quot; is the destination address; i.e. to where
-		the \&quot;address\&quot; forwards. The \&quot;goto\&quot; field may contain more
+		triples, where \"goto\" is the destination address; i.e. to where
+		the \"address\" forwards. The \"goto\" field may contain more
 		than one email address, separated by commas.
 		
-		Default: \&quot;SELECT address,goto FROM alias ORDER BY address;\&quot;
+		Default: \"SELECT address,goto FROM alias ORDER BY address;\"
 		
 		@
 		\--host, -h

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Native font support for the diagrams framework (&lt;http://projects.haskell.org/diagrams/&gt;). Note that this package can be used with any diagrams backend, not just the SVG backend.  The SVG-tont format is easy to parse
 		and was therefore chosen for a font library completely written in Haskell.
@@ -12,7 +15,7 @@
 		
 		* Complete implementation of the features that Fontforge produces (though not the complete SVG format)
 		
-		* Kerning (/i.e./ the two characters in \&quot;VA\&quot; are closer than the characters in \&quot;VV\&quot;)
+		* Kerning (/i.e./ the two characters in \"VA\" are closer than the characters in \"VV\")
 		
 		* Unicode
 		
@@ -33,11 +36,11 @@
 		&gt; import Diagrams.Backend.Cairo.CmdLine
 		&gt; import Graphics.SVGFonts.ReadFont (textSVG)
 		&gt;
-		&gt; main = defaultMain (text&#39; &quot;Hello World&quot;)
+		&gt; main = defaultMain (text' "Hello World")
 		&gt;
-		&gt; text&#39;   t = stroke (textSVG t 1) # fc purple # fillRule EvenOdd
-		&gt; text&#39;&#39;  t = stroke (textSVG&#39; $ TextOpts t lin INSIDE_H KERN False 1 1 ) # fillRule EvenOdd
-		&gt; text&#39;&#39;&#39; t =        (textSVG_ $ TextOpts t lin INSIDE_H KERN True  1 1 ) # fillRule EvenOdd
+		&gt; text'   t = stroke (textSVG t 1) # fc purple # fillRule EvenOdd
+		&gt; text''  t = stroke (textSVG' $ TextOpts t lin INSIDE_H KERN False 1 1 ) # fillRule EvenOdd
+		&gt; text''' t =        (textSVG_ $ TextOpts t lin INSIDE_H KERN True  1 1 ) # fillRule EvenOdd
 		
 	</longdescription>
 </pkgmetadata>

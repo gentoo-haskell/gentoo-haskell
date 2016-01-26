@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@test-framework-th@ contains two interesting functions: @defaultMainGenerator@ and @testGroupGenerator@.
 		
@@ -37,7 +40,7 @@
 		&gt; -- observe this line!
 		&gt; main =
 		&gt;   defaultMain [
-		&gt;     testGroup &quot;SomeModule&quot; [ testCase &quot;1&quot; case_1, testCase &quot;2&quot; case_2, testProperty &quot;reverse&quot; prop_reverse]
+		&gt;     testGroup "SomeModule" [ testCase "1" case_1, testCase "2" case_2, testProperty "reverse" prop_reverse]
 		&gt;     ]
 		&gt;
 		&gt; case_1 = do 1 @=? 1

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library is intended to be a comprehensive solution to parsing and
 		selecting quality-indexed values in HTTP headers. It is capable of parsing
@@ -12,19 +15,19 @@
 		
 		In the following example, the Accept header is parsed and then matched against
 		a list of server options to serve the appropriate media using
-		&#39;mapAcceptMedia&#39;:
+		'mapAcceptMedia':
 		
 		&gt; getHeader &gt;&gt;= maybe send406Error sendResourceWith . mapAcceptMedia
-		&gt;     [ (&quot;text/html&quot;,        asHtml)
-		&gt;     , (&quot;application/json&quot;, asJson)
+		&gt;     [ ("text/html",        asHtml)
+		&gt;     , ("application/json", asJson)
 		&gt;     ]
 		
 		Similarly, the Content-Type header can be used to produce a parser for request
-		bodies based on the given content type with &#39;mapContentMedia&#39;:
+		bodies based on the given content type with 'mapContentMedia':
 		
 		&gt; getContentType &gt;&gt;= maybe send415Error readRequestBodyWith . mapContentMedia
-		&gt;     [ (&quot;application/json&quot;, parseJson)
-		&gt;     , (&quot;text/plain&quot;,       parseText)
+		&gt;     [ ("application/json", parseJson)
+		&gt;     , ("text/plain",       parseText)
 		&gt;     ]
 		
 		The API is agnostic to your choice of server.

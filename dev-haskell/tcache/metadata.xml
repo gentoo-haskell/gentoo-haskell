@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This version now has full text search. Serialization is now trough byteStrings
 		TCache is a transactional cache with configurable persitence. It allows conventional
@@ -10,12 +13,12 @@
 		
 		This version support  the backward compatible stuff, that permits transparent
 		retrievals of objects and transcactions between objects without directly using STM references
-		(&#39;with*Resource(s)&#39; calls), Now it goes in the oposite direction by providing explicit STM persistent
-		references (called &#39;DBRefś&#39;) that leverage the nice and traditional haskell reference syntax
+		('with*Resource(s)' calls), Now it goes in the oposite direction by providing explicit STM persistent
+		references (called 'DBRefś') that leverage the nice and traditional haskell reference syntax
 		for performing database transactions.
 		
-		&#39;DBRef&#39;s are in essence, persistent TVars indexed in the cache, with a traditional &#39;readDBRef&#39;,
-		&#39;writeDBRef&#39; Haskell interface in the STM monad.
+		'DBRef's are in essence, persistent TVars indexed in the cache, with a traditional 'readDBRef',
+		'writeDBRef' Haskell interface in the STM monad.
 		Additionally, because DBRefs are serializable, they can be embeded in serializable registers.
 		Because they are references,they point to other serializable registers.
 		This permits persistent mutable and efficient Inter-object relations.
@@ -26,11 +29,11 @@
 		
 		It also  implements an straighforwards non-intrusive pure-haskell type safe query language  based
 		on register field relations. This module must be imported separately. See
-		&quot;Data.TCache.IndexQuery&quot; for further information
+		"Data.TCache.IndexQuery" for further information
 		
 		Now the file persistence is more reliable.The IO reads are safe inside STM transactions.
 		
-		To ease the implementation of other user-defined persistence, &quot;Data.TCache.DefaultPersistence&quot; needed
+		To ease the implementation of other user-defined persistence, "Data.TCache.DefaultPersistence" needed
 		to be imported  explcitly for deriving file persistence instances.
 		
 		The 0.9 version adds full text indexation and search, incorporated in the experimental query language
@@ -38,6 +41,6 @@
 		It also changes the default Persistence mechanism. Now ByteStrings are used for serialization and deserialization
 		. a Serializable class and a Persist structure decouple serialization to/from bytestring
 		and write-read to file. Both can be redefined separately, so default persistence can be changed with `setPersist`
-		to write to blobs in databases, for example. Default persistence has&#39;nt to be in files.
+		to write to blobs in databases, for example. Default persistence has'nt to be in files.
 	</longdescription>
 </pkgmetadata>

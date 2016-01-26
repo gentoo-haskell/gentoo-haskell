@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="demos">Build demonstration programs.</flag>
 	</use>
 	<longdescription>
-		Write terminal applications painlessly with &#39;brick&#39;! You write an
+		Write terminal applications painlessly with 'brick'! You write an
 		event handler and a drawing function and the library does the rest.
 		
 		
@@ -15,7 +18,7 @@
 		&gt; import Brick
 		&gt;
 		&gt; ui :: Widget
-		&gt; ui = str &quot;Hello, world!&quot;
+		&gt; ui = str "Hello, world!"
 		&gt;
 		&gt; main :: IO ()
 		&gt; main = simpleMain ui
@@ -27,7 +30,7 @@
 		
 		* The &lt;https://github.com/jtdaugherty/brick/blob/master/docs/guide.rst Brick user guide&gt;
 		
-		* The demonstration programs in the &#39;programs&#39; directory
+		* The demonstration programs in the 'programs' directory
 		
 		
 		This package deprecates &lt;http://hackage.haskell.org/package/vty-ui vty-ui&gt;.

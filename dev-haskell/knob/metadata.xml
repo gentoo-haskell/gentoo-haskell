@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Create memory-backed &#39;Handle&#39;s, referencing virtual files. This is
-		mostly useful for testing &#39;Handle&#39;-based APIs without having to
+		Create memory-backed 'Handle's, referencing virtual files. This is
+		mostly useful for testing 'Handle'-based APIs without having to
 		interact with the filesystem.
 		
 		&gt; import Data.ByteString (pack)
@@ -13,10 +16,10 @@
 		&gt;
 		&gt; main = do
 		&gt;     knob &lt;- newKnob (pack [])
-		&gt;     h &lt;- newFileHandle knob &quot;test.txt&quot; WriteMode
-		&gt;     hPutStrLn h &quot;Hello world!&quot;
+		&gt;     h &lt;- newFileHandle knob "test.txt" WriteMode
+		&gt;     hPutStrLn h "Hello world!"
 		&gt;     hClose h
 		&gt;     bytes &lt;- Data.Knob.getContents knob
-		&gt;     putStrLn (&quot;Wrote bytes: &quot; ++ show bytes)
+		&gt;     putStrLn ("Wrote bytes: " ++ show bytes)
 	</longdescription>
 </pkgmetadata>

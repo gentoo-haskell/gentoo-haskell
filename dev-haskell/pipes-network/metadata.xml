@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Use network sockets together with the @pipes@ library.
 		
 		This package is organized using the following namespaces:
 		
-		* &quot;Pipes.Network.TCP&quot; exports pipes and utilities for using TCP connections in
+		* "Pipes.Network.TCP" exports pipes and utilities for using TCP connections in
 		a streaming fashion.
 		
-		* &quot;Pipes.Network.TCP.Safe&quot; subsumes &quot;Pipes.Network.TCP&quot;, exporting pipes and
+		* "Pipes.Network.TCP.Safe" subsumes "Pipes.Network.TCP", exporting pipes and
 		functions that allow you to safely establish new TCP connections within a
 		pipeline using the @pipes-safe@ facilities. You only need to use this module
 		if you want to safely acquire and release operating system resources within a

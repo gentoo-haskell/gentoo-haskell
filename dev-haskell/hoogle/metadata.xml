@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+  <email>haskell@gentoo.org</email>
+  <name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Hoogle is a Haskell API search engine, which allows you to
 		search many standard Haskell libraries by either function name,
 		or by approximate type signature.
 	</longdescription>
 <use>
-  <flag name='fetchdb'>fetch hoogle db by running: hoogle data</flag>
-  <flag name='fetchdb-ghc'>fetch hoogle db by running: hoogle data ghc (implies fetchdb)</flag>
-  <flag name='localdb'>install hoogle-build-localdb script for building hoogle dbs for installed pkgs</flag>
+  <flag name="fetchdb">fetch hoogle db by running: hoogle data</flag>
+  <flag name="fetchdb-ghc">fetch hoogle db by running: hoogle data ghc (implies fetchdb)</flag>
+  <flag name="localdb">install hoogle-build-localdb script for building hoogle dbs for installed pkgs</flag>
 </use>
 </pkgmetadata>

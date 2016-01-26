@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Shellac is a framework for building read-eval-print style shells.
 		Shells are created by declaratively defining a set of shell commands
 		and an evaluation function.  Shellac supports multiple shell backends,
-		including a &#39;basic&#39; backend which uses only Haskell IO primitives and
-		a full featured &#39;readline&#39; backend based on the the Haskell readline
+		including a 'basic' backend which uses only Haskell IO primitives and
+		a full featured 'readline' backend based on the the Haskell readline
 		bindings found in the standard libraries.
 		This library attempts to allow users to write shells at a high level
 		and still enjoy the advanced features that may be available from a

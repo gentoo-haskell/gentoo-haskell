@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This is an implementation of Cloud Haskell, as described in
 		/Towards Haskell in the Cloud/ by Jeff Epstein, Andrew Black,
@@ -9,7 +12,7 @@
 		(&lt;http://research.microsoft.com/en-us/um/people/simonpj/papers/parallel/&gt;),
 		although some of the details are different. The precise message
 		passing semantics are based on /A unified semantics for future Erlang/
-		by&#9;Hans Svensson, Lars-Åke Fredlund and Clara Benac Earle.
+		by	Hans Svensson, Lars-Åke Fredlund and Clara Benac Earle.
 		You will probably also want to install a Cloud Haskell backend such
 		as distributed-process-simplelocalnet.
 	</longdescription>

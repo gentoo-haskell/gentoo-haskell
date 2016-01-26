@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Given a module name and a name, it will find and display
 		the documentation of that name.
@@ -10,7 +13,7 @@
 		
 		&gt; $ haskell-docs Data.List.Split split
 		&gt; Split a list according to the given splitting strategy. This is
-		&gt;  how to &quot;run&quot; a Splitter that has been built using the other
+		&gt;  how to "run" a Splitter that has been built using the other
 		&gt;  combinators.
 		
 		/INSTALLATION/
@@ -35,7 +38,7 @@
 		
 		/USING WITH GHCI/
 		
-		&gt; &gt; :def doc \input -&gt; return (&quot;:!haskell-docs &quot; ++ input)
+		&gt; &gt; :def doc \input -&gt; return (":!haskell-docs " ++ input)
 		&gt; &gt; :doc System.IO getContents base
 		&gt; The getContents operation returns all user input as a single string,
 		&gt;  which is read lazily as it is needed

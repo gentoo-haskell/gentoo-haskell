@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="curses">Use curses to get the screen width.</flag>
 		<flag name="ffi">Build support for libffi.</flag>
@@ -10,7 +13,7 @@
 		Idris is a general purpose language with full dependent types.
 		It is compiled, with eager evaluation.
 		Dependent types allow types to be predicated on values,
-		meaning that some aspects of a program&#39;s behaviour can be
+		meaning that some aspects of a program's behaviour can be
 		specified precisely in the type. The language is closely
 		related to Epigram and Agda. There is a tutorial at &lt;http://www.idris-lang.org/documentation&gt;.
 		Features include:

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides a FIFO channel for STM supporting a size limit.  When
 		this limit is reached, older entries are discarded to make way for newer
@@ -11,10 +14,10 @@
 		@TChan@, the program will use a lot of memory if it produces log entries
 		faster than they can be processed.  If log entries are written to a bounded
 		channel where writes block (e.g. the @stm-chans@ package), the program may
-		deadlock if the log channel fills up.  With &#39;Data.STM.RollingQueue&#39;, old
+		deadlock if the log channel fills up.  With 'Data.STM.RollingQueue', old
 		entries will be discarded instead.
 		
-		Possible improvements (not available in &#39;Data.STM.RollingQueue&#39;) include:
+		Possible improvements (not available in 'Data.STM.RollingQueue') include:
 		
 		* Discard lower-priority entries first.
 		

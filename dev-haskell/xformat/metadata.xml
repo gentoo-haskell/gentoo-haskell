@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		/Warning:/ This version of the package is very experimental and the interface
 		may change in later versions. I am seeking comments to improve it.
@@ -11,12 +14,12 @@
 		type class with multiple parameters and functional dependencies along with
 		format descriptors.
 		
-		&quot;Text.XFormat.Read&quot; allows one to parse values from a formatted string. Its
+		"Text.XFormat.Read" allows one to parse values from a formatted string. Its
 		functionality is similar to the C @scanf@ function. Unlike @scanf@, however,
 		the format descriptor is well-typed, ensuring that the output type is
 		statically known.
 		
-		&quot;Text.XFormat.Show&quot; allows one to print values to a formatted string. Its
+		"Text.XFormat.Show" allows one to print values to a formatted string. Its
 		functionality is similar to the C @printf@ function. Unlike @printf@, however,
 		the format descriptor is well-typed, ensuring that the variable number
 		arguments are statically known.
