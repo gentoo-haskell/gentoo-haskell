@@ -65,5 +65,6 @@ src_install() {
 	export INSOPTIONS=--preserve-timestamps
 	doins -r src/*
 	dodoc -r html/*
+	doins "${FILESDIR}/agda-stdlib.agda-lib"
 	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 }
