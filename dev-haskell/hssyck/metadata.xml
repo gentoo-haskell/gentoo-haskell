@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		This is a simple YAML (&#39;Yet Another Markup Language&#39;) processor,
+		This is a simple YAML ('Yet Another Markup Language') processor,
 		used by the Pugs project for handling data serialization; this can be
 		useful for optimization and caching purposes.
 		
 		This is an interface to the @syck@ C library for parsing and
 		dumping YAML data. It lets you transform textual YAML data into an
-		object of type &#39;YamlNode&#39;, and vice versa, fast.
+		object of type 'YamlNode', and vice versa, fast.
 	</longdescription>
 </pkgmetadata>

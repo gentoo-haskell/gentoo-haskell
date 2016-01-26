@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		/Usage/:
 		
@@ -57,7 +60,7 @@
 		set of all (domain, username) pairs. See the default value for an
 		example.
 		
-		Default: \&quot;SELECT domain,username FROM mailbox ORDER BY domain;\&quot;
+		Default: \"SELECT domain,username FROM mailbox ORDER BY domain;\"
 		
 		@
 		\--host
@@ -90,8 +93,8 @@
 		(domain, user count) pairs. See the default value for an
 		example.
 		
-		Default: \&quot;SELECT domain,COUNT(username) FROM mailbox GROUP BY domain
-		ORDER BY domain;\&quot;
+		Default: \"SELECT domain,COUNT(username) FROM mailbox GROUP BY domain
+		ORDER BY domain;\"
 		
 		@
 		\--username

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This is a generic programming library based on type classes and type families
 		first described by Chakravarty et al. (see
 		&lt;http://www.cse.unsw.edu.au/~chak/project/generics/&gt;). The current release
 		implements the extensions to support indexed datatypes described in:
 		
-		*  Jos&#233; Pedro Magalh&#227;es and Johan Jeuring.
+		*  José Pedro Magalhães and Johan Jeuring.
 		/Generic Programming for Indexed Datatypes./
 		Draft version, 2011.
 		&lt;http://dreixel.net/research/pdf/gpid_draft.pdf&gt;

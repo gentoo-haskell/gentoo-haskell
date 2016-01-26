@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides a type class
 		to handle signed and unsigned samples
 		of various size and number of channels in a uniform way.
 		
-		We expect that you use the types &#39;Int8&#39;, &#39;Word8&#39; and so on
+		We expect that you use the types 'Int8', 'Word8' and so on
 		for monophonic samples and thus provide instances of the class for them.
 		Further we define Stereo record and mu-law sample type.
 		Quadrophony can be achieved by nested Stereo value,
-		but I&#39;m uncertain, whether this is a good way to go.
+		but I'm uncertain, whether this is a good way to go.
 		Maybe we add 5+1 channels or so in future.
 		
 		This is used by packages @sox@, @alsa@, @synthesizer@.
 	</longdescription>
 	<use>
-		<flag name='buildbenchmarks'>Build and install benchmarking executable.</flag>
+		<flag name="buildbenchmarks">Build and install benchmarking executable.</flag>
 	</use>
 </pkgmetadata>

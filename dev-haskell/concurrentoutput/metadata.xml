@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library provides a simple interface to output status
 		messages from more than one thread.
 		
-		It will continue adding information (such as dots, or \&quot;done\&quot;)
+		It will continue adding information (such as dots, or \"done\")
 		to the correct line and continue scrolling when a line is done.
 		
 		For example, this screen:

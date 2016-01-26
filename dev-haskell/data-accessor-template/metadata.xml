@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Automate generation of @Accessor@&#39;s of the @data-accessor@ package
+		Automate generation of @Accessor@'s of the @data-accessor@ package
 		by Template Haskell functions.
 	</longdescription>
 </pkgmetadata>

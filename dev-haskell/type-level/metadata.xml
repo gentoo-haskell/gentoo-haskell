@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library permits performing computations on the type-level. Type-level
 		functions are implemented using functional dependencies of multi
@@ -15,7 +18,7 @@
 		Although making use of type-level computations might seem devious and
 		obfuscated at first sight, it is indeed useful in practice to implement
 		lightweight dependent types such us number-parameterized types (e.g. an array
-		type parameterized by the array&#39;s size or a modular group type Zn
+		type parameterized by the array's size or a modular group type Zn
 		parameterized by the modulus).
 		Here is a tutorial on type-level numerals and how to use them to
 		implement numerically-parameterized vectors: &lt;http://www.ict.kth.se/forsyde/files/tutorial/tutorial.html#FSVec&gt;

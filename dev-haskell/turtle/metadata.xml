@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		@turtle@ is a reimplementation of the Unix command line environment
 		in Haskell so that you can use Haskell as both a shell and a scripting
@@ -25,7 +28,7 @@
 		
 		* Modern: Supports @text@ and @system-filepath@
 		
-		Read &quot;Turtle.Tutorial&quot; for a detailed tutorial or &quot;Turtle.Prelude&quot; for a
+		Read "Turtle.Tutorial" for a detailed tutorial or "Turtle.Prelude" for a
 		quick-start guide
 		
 		@turtle@ is designed to be beginner-friendly, but as a result lacks certain

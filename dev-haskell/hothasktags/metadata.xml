@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		hothasktags generates ctags files for Haskell, with knowledge of import lists
 		and qualified imports.  It provides a smart go-to-definition for vim, that almost
@@ -12,7 +15,7 @@
 		(The 39 is for the prime character)
 		Usage is easy, just give hothasktags the names of all the haskell sources you
 		want to index and redirect into a tags file.  For example:
-		find . | egrep &#39;\.hs$&#39; | xargs hothasktags &gt; tags
+		find . | egrep '\.hs$' | xargs hothasktags &gt; tags
 		will index all the hs files under the current directory.
 	</longdescription>
 </pkgmetadata>

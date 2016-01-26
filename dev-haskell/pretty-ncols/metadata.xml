@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		pretty-ncols allows for the following layouts to work nicely, so that:
 		One  Two  Three
 		1    2    3
 		a    b    c
 		can be written as:
-		cols_rowMajor = map text $ [[&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;], [&quot;1&quot;, &quot;2&quot;,&quot;3&quot;], [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]]
+		cols_rowMajor = map text $ [["One", "Two", "Three"], ["1", "2","3"], ["a","b","c"]]
 		cols_colMajor = transpose $ cols_rowMajors
 		asColumns cols_rowMajor
 		asColumns cols_colMajor

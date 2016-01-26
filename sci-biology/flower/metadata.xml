@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		flower - FLOWgram ExtractoR tools
 		
 		The flower executable reads files in SFF-format and produces various output,
 		including sequences with quality, or flowgram data in tabular format.  By default,
 		it outputs a textual representation of the data in the SFF-file, much like
-		&#39;sffinfo&#39; from Roche does.
+		'sffinfo' from Roche does.
 		
 		The fselect executable extracts reads from SFF-files, generating a new
 		SFF-file with a subset of the reads based on various criteria.

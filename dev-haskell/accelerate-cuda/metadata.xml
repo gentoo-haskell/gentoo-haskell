@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library implements a backend for the Accelerate language instrumented for
 		parallel execution on CUDA-capable NVIDIA GPUs.
 		
 		To use this backend you need CUDA version 3.x or later installed. Note that
-		currently there is no support for &#39;Char&#39; and &#39;Bool&#39; arrays (this is a
+		currently there is no support for 'Char' and 'Bool' arrays (this is a
 		limitation of the front-end language).
 	</longdescription>
 	<use>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package contains:
 		
@@ -17,7 +20,7 @@
 		
 		(Some of these might be better off as separate packages.)
 		
-		&quot;Data.Exists&quot; has most of the important things.
+		"Data.Exists" has most of the important things.
 		
 		Minimum GHC: 7.4
 		

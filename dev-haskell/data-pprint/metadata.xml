@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Prettyprint and compare Data values.
 		
@@ -17,7 +20,7 @@
 		
 		*   Comparison: Yes, No or Maybe results
 		
-		Probably you need only the &#39;pprint&#39; and &#39;(===)&#39; functions from the &quot;Data.PPrint&quot; module.
+		Probably you need only the 'pprint' and '(===)' functions from the "Data.PPrint" module.
 		
 		Usage examples:
 		
@@ -25,18 +28,18 @@
 		&gt; pprintTo 10000 $ repeat [1..]
 		&gt; pprint $ iterate (*10) 1
 		&gt; pprint $ map length $ replicate 5 [1..] ++ repeat []
-		&gt; pprint [2 `div` 0, error &quot;xxx&quot;, 18, 4 `div` 0]
+		&gt; pprint [2 `div` 0, error "xxx", 18, 4 `div` 0]
 		&gt; [1..10] === reverse [10,9..1]
 		&gt; [1..10] === reverse [10..1]
 		&gt; reverse [10..] === [1..]
 		&gt; [1..] === [1..99] ++ [101..]
 		&gt; ([1..], [1..]) === ([1..], [1..100])
-		&gt; (error &quot;x&quot;, [1..]) === (0 `div` 0, reverse [1..])
-		&gt; error (&quot;xx&quot; ++ show (length [1..])) === 1
-		&gt; error (&quot;xx&quot; ++ error &quot;yy&quot;) === 1
-		&gt; (error $ unlines $ replicate 300 &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;) === 1
-		&gt; pprint [&#39;a&#39;..]
-		&gt; pprint $ &quot;hello&quot; ++ [error &quot;x&quot;] ++ &quot;world!&quot;
+		&gt; (error "x", [1..]) === (0 `div` 0, reverse [1..])
+		&gt; error ("xx" ++ show (length [1..])) === 1
+		&gt; error ("xx" ++ error "yy") === 1
+		&gt; (error $ unlines $ replicate 300 "xxxxxxxxxxxxxxxxxxxxxxxxxxx") === 1
+		&gt; pprint ['a'..]
+		&gt; pprint $ "hello" ++ [error "x"] ++ "world!"
 		
 		See also &lt;http://pnyf.inf.elte.hu/fp/Show_en.xml&gt;
 		

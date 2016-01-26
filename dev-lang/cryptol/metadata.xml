@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Cryptol: The Language of Cryptography
 	</longdescription>
 	<use>
-		<flag name='relocatable'>Don't use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
-		<flag name='self-contained'>Compile the text of the Cryptol Prelude into the library.</flag>
+		<flag name="relocatable">Don't use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
+		<flag name="self-contained">Compile the text of the Cryptol Prelude into the library.</flag>
 	</use>
 </pkgmetadata>

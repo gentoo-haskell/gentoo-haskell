@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		With this package
 		you can build a Storable instance of a record type
@@ -22,27 +25,27 @@
 		We provide Storable instance support for several cases:
 		
 		* If you wrap a type in a @newtype@,
-		then you can lift its &#39;Storable&#39; instance to that @newtype@
-		with the module &quot;Foreign.Storable.Newtype&quot;.
+		then you can lift its 'Storable' instance to that @newtype@
+		with the module "Foreign.Storable.Newtype".
 		This way you do not need the @GeneralizedNewtypeDeriving@ feature of GHC.
 		
-		* If you have a type that is an instance of &#39;Traversable&#39;,
-		you can use that feature for implementation of &#39;Storable&#39; methods.
-		The module &quot;Foreign.Storable.Traversable&quot;
+		* If you have a type that is an instance of 'Traversable',
+		you can use that feature for implementation of 'Storable' methods.
+		The module "Foreign.Storable.Traversable"
 		allows manipulation of the portion of your type,
-		that is accessible by &#39;Traversable&#39; methods.
+		that is accessible by 'Traversable' methods.
 		For instance with the type
 		@data T a = Cons Int [a]@
-		and an according &#39;Traversable&#39; implementation,
+		and an according 'Traversable' implementation,
 		you can load and store the elements of the contained list.
-		This may be part of a &#39;Storable&#39; implementation of the whole type.
+		This may be part of a 'Storable' implementation of the whole type.
 		
 		* If you have a record containing elements of various types,
-		then you need module &quot;Foreign.Storable.Record&quot;.
+		then you need module "Foreign.Storable.Record".
 		
 		Note however that the Storable instances
 		defined with this package are quite slow in (up to) GHC-6.12.1.
-		I&#39;m afraid this is due to incomplete inlining,
+		I'm afraid this is due to incomplete inlining,
 		but we have still to investigate the problem.
 		
 		For examples see packages @storable-tuple@ and @sample-frame@.

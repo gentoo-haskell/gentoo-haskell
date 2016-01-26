@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		In Haskell 98 the name of a record field
 		is automatically also the name of a function which gets the value
@@ -33,19 +36,19 @@
 		
 		Example:
 		
-		&gt; *Data.Accessor.Example&gt; (first^:second^=10) ((&#39;b&#39;,7),&quot;hallo&quot;)
-		&gt; ((&#39;b&#39;,10),&quot;hallo&quot;)
+		&gt; *Data.Accessor.Example&gt; (first^:second^=10) (('b',7),"hallo")
+		&gt; (('b',10),"hallo")
 		
-		You can easily manipulate record fields in a &#39;Control.Monad.State.State&#39; monad,
-		you can easily code &#39;Show&#39; instances that use the Accessor syntax
+		You can easily manipulate record fields in a 'Control.Monad.State.State' monad,
+		you can easily code 'Show' instances that use the Accessor syntax
 		and you can parse binary streams into records.
 		See @Data.Accessor.Example@ for demonstration of all features.
 		
 		It would be great if in revised Haskell versions the names of record fields
-		are automatically &#39;Data.Accessor.Accessor&#39;s
+		are automatically 'Data.Accessor.Accessor's
 		rather than plain @get@ functions.
 		For now, the package @data-accessor-template@ provides Template Haskell functions
-		for automated generation of &#39;Data.Acesssor.Accessor&#39;s.
+		for automated generation of 'Data.Acesssor.Accessor's.
 		See also the other @data-accessor@ packages
 		that provide an Accessor interface to other data types.
 		The package @enumset@ provides accessors to bit-packed records.
@@ -54,13 +57,13 @@
 		A related concept are editors
 		&lt;http://conal.net/blog/posts/semantic-editor-combinators/&gt;.
 		Editors only consist of a modify method
-		(and @modify@ applied to a &#39;const&#39; function is a @set@ function).
+		(and @modify@ applied to a 'const' function is a @set@ function).
 		This way, they can modify all function values of a function at once,
 		whereas an accessor can only change a single function value,
 		say, it can change @f 0 = 1@ to @f 0 = 2@.
 		This way, editors can even change the type of a record or a function.
 		An Arrow instance can be defined for editors,
-		but for accessors only a Category instance is possible (&#39;(.)&#39; method).
+		but for accessors only a Category instance is possible ('(.)' method).
 		The reason is the @arr@ method of the @Arrow@ class,
 		that conflicts with the two-way nature (set and get) of accessors.
 	</longdescription>

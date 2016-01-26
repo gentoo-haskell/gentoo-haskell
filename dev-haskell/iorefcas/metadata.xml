@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		After GHC 7.2 a new `casMutVar#` primop became available, but was
 		not yet exposed in Data.IORef.  This package fills that gap until
 		such a time as Data.IORef obsoletes it.
 		
 		Further, in addition to exposing native Haskell CAS operations, this
-		package contains \&quot;mockups\&quot; that imititate the same functionality
+		package contains \"mockups\" that imititate the same functionality
 		using either atomicModifyIORef and unsafe pointer equality (in
 		@Data.CAS.Fake@) or using foreign functions (@Data.CAS.Foreign@).
 		These alternatives are useful for debugging.

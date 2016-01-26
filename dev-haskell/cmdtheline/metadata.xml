@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		CmdTheLine aims to remove tedium from the definition of command-line
 		programs, producing usage and help with little effort.
 		
-		The inspiration was found in Daniel Bunzli&#39;s
+		The inspiration was found in Daniel Bunzli's
 		&lt;http://erratique.ch/software/cmdliner&gt; library.
 		
 		CmdTheLine uses applicative functors to provide a declarative, compositional
@@ -23,24 +26,24 @@
 		
 		* More type safety: Types in CmdTheLine.Arg have been made more explicit to
 		disalow unwanted behavior.  Positional argument information and optional
-		argument information are distinguished from each other.  As well &#39;Arg&#39;s must
-		be transformed into &#39;Term&#39; before use, as some operations make since to
-		perform on &#39;Arg&#39; but not on &#39;Term&#39;.
+		argument information are distinguished from each other.  As well 'Arg's must
+		be transformed into 'Term' before use, as some operations make since to
+		perform on 'Arg' but not on 'Term'.
 		
-		* ArgVal has only one method: &#39;parser&#39; and &#39;pp&#39; have been fused into a tuple, so
-		that instantiation of &#39;ArgVal&#39; can be simplified for all parties.
+		* ArgVal has only one method: 'parser' and 'pp' have been fused into a tuple, so
+		that instantiation of 'ArgVal' can be simplified for all parties.
 		
-		* Err is an instance of MonadIO:  The &#39;Err&#39; monad now supports IO action.
+		* Err is an instance of MonadIO:  The 'Err' monad now supports IO action.
 		
-		* File and Directory path validation:  Taking advantage of new &#39;Err&#39;
-		capabilities, the library provides new functions for validating &#39;String&#39;s
-		inside of &#39;Term&#39;s as being valid\/existent file\/directory paths.
+		* File and Directory path validation:  Taking advantage of new 'Err'
+		capabilities, the library provides new functions for validating 'String's
+		inside of 'Term's as being valid\/existent file\/directory paths.
 		
 		Changes since 0.2.0:
 		
-		* Test friendly &#39;unwrap&#39; functions:  To allow the testing of terms, there are
-		now two new functions exported with System.Console.CmdTheLine.Term, &#39;unwrap&#39;
-		and &#39;unwrapChoice&#39;.  As well a datatype representing cause of early exit,
-		&#39;EvalExit&#39; is exported.
+		* Test friendly 'unwrap' functions:  To allow the testing of terms, there are
+		now two new functions exported with System.Console.CmdTheLine.Term, 'unwrap'
+		and 'unwrapChoice'.  As well a datatype representing cause of early exit,
+		'EvalExit' is exported.
 	</longdescription>
 </pkgmetadata>

@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Podcasting is a method of publishing radio-like programs on the
 		Internet.  Through podcasting, almost anyone can produce their own
 		audio program, and publish episodes of it as often or as rarely as
 		they like.
 		
-		To listen to podcasts, you need a program to download the podcast&#39;s
+		To listen to podcasts, you need a program to download the podcast's
 		episodes from the Internet.  Such a program is called a podcatcher
 		(or sometimes a podcast aggregator).  hpodder is this program.
 		
-		hpodder&#39;s features include:
+		hpodder's features include:
 		
-		Convenient, easy to learn, and fast command-line interface.  It&#39;s
+		Convenient, easy to learn, and fast command-line interface.  It's
 		simple to do simple things, and advanced things are possible.
 		
 		Automatic discovery of feed metadata

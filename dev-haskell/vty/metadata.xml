@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		vty is terminal GUI library in the niche of ncurses.  It is intended to be easy to use, have no
 		confusing corner cases, and good support for common terminal types.
@@ -19,8 +22,8 @@
 		
 		git clone git://github.com/coreyoconnor/vty.git
 		
-		&amp;#169; 2006-2007 Stefan O&#39;Rear; BSD3 license.
+		&amp;#169; 2006-2007 Stefan O'Rear; BSD3 license.
 		
-		&amp;#169; 2008-2011 Corey O&#39;Connor; BSD3 license.
+		&amp;#169; 2008-2011 Corey O'Connor; BSD3 license.
 	</longdescription>
 </pkgmetadata>

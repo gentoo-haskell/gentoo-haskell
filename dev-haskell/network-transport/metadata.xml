@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		&quot;Network.Transport&quot; is a Network Abstraction Layer which provides
+		"Network.Transport" is a Network Abstraction Layer which provides
 		the following high-level concepts:
 		
-		* Nodes in the network are represented by &#39;EndPoint&#39;s. These are
+		* Nodes in the network are represented by 'EndPoint's. These are
 		heavyweight stateful objects.
 		
-		* Each &#39;EndPoint&#39; has an &#39;EndPointAddress&#39;.
+		* Each 'EndPoint' has an 'EndPointAddress'.
 		
-		* Connections can be established from one &#39;EndPoint&#39; to another
-		using the &#39;EndPointAddress&#39; of the remote end.
+		* Connections can be established from one 'EndPoint' to another
+		using the 'EndPointAddress' of the remote end.
 		
-		* The &#39;EndPointAddress&#39; can be serialised and sent over the
-		network, where as &#39;EndPoint&#39;s and connections cannot.
+		* The 'EndPointAddress' can be serialised and sent over the
+		network, where as 'EndPoint's and connections cannot.
 		
-		* Connections between &#39;EndPoint&#39;s are unidirectional and lightweight.
+		* Connections between 'EndPoint's are unidirectional and lightweight.
 		
-		* Outgoing messages are sent via a &#39;Connection&#39; object that
+		* Outgoing messages are sent via a 'Connection' object that
 		represents the sending end of the connection.
 		
 		* Incoming messages for /all/ of the incoming connections on
-		an &#39;EndPoint&#39; are collected via a shared receive queue.
+		an 'EndPoint' are collected via a shared receive queue.
 		
-		* In addition to incoming messages, &#39;EndPoint&#39;s are notified of
-		other &#39;Event&#39;s such as new connections or broken connections.
+		* In addition to incoming messages, 'EndPoint's are notified of
+		other 'Event's such as new connections or broken connections.
 		
 		This design was heavily influenced by the design of the Common
 		Communication Interface
@@ -39,10 +42,10 @@
 		* Error handling is explicit: every function declares as part of
 		its type which errors it can return (no exceptions are thrown)
 		
-		* Error handling is &quot;abstract&quot;: errors that originate from
-		implementation specific problems (such as &quot;no more sockets&quot; in
+		* Error handling is "abstract": errors that originate from
+		implementation specific problems (such as "no more sockets" in
 		the TCP implementation) get mapped to generic errors
-		(&quot;insufficient resources&quot;) at the Transport level.
+		("insufficient resources") at the Transport level.
 		
 		This package provides the generic interface only; you will
 		probably also want to install at least one transport

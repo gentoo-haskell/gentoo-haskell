@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		texrunner is an interface to tex that attempts to parse errors and
 		can parse tex in online mode to retrive hbox sizes.
 		
 		This package should be considered very experimental. Eventually I hope
-		it will be good enough for general use but for now it&#39;s only suitable
+		it will be good enough for general use but for now it's only suitable
 		for simple things.
 	</longdescription>
 </pkgmetadata>

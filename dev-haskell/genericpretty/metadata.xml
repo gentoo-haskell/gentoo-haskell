@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		GenericPretty is a Haskell library that supports automatic
 		derivation of pretty printing functions on user defined data
@@ -10,7 +13,7 @@
 		The form of generics used is based on that introduced in the paper:
 		Magalhaes, Dijkstra, Jeuring, and Loh,
 		A Generic Deriving Mechanism for Haskell,
-		3&#39;rd ACM Symposium on Haskell, pp. 37-48, September 2010,
+		3'rd ACM Symposium on Haskell, pp. 37-48, September 2010,
 		&lt;http://dx.doi.org/10.1145/1863523.1863529&gt;.
 		Changes from the original paper in the GHC implementation
 		are described here:

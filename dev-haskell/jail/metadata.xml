@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Like all of us know, the IO monad from the System.IO module
 		is a wild beast allowing all forms of insecure computations
@@ -23,7 +26,7 @@
 		allowing to access the standard output and standard error can
 		be enforced like this:
 		
-		&gt; Jail.run (Just &quot;/home/sebas&quot;) [stdout, stderr] yourUntrustworthyComputation
+		&gt; Jail.run (Just "/home/sebas") [stdout, stderr] yourUntrustworthyComputation
 		
 		Only allowing the code to access the standard input and
 		nothing else can be enforced like this:
@@ -35,7 +38,7 @@
 		smuggling in evil file handles from the fierce and dangerous
 		outside world will be punished by border patrol. Only handles
 		from the whitelist or handles securely opened by functions
-		like `openFile&#39; will be accepted. Because of the opaque IO
+		like `openFile' will be accepted. Because of the opaque IO
 		constructor and the restricted set of exported operations
 		this module is not easily fooled.
 		
@@ -51,7 +54,7 @@
 		own programs. Some real &lt;http://tinyurl.com/paranoidpeople&gt;
 		prefer writing their software in one of the most insecure
 		programming languages and perform security audits by hand,
-		I&#39;d rather have my compiler do the job. (Anyone who wants to
+		I'd rather have my compiler do the job. (Anyone who wants to
 		audit this library is more than welcome!)
 	</longdescription>
 </pkgmetadata>

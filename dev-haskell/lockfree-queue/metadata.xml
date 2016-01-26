@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Michael and Scott queues are described in their PODC 1996 paper:
 		
@@ -9,7 +12,7 @@
 		
 		These are single-ended concurrent queues based on a singlly linked
 		list and using atomic CAS instructions to swap the tail pointers.
-		As a well-known efficient algorithm they became the basis for Java&#39;s
+		As a well-known efficient algorithm they became the basis for Java's
 		@ConcurrentLinkedQueue@.
 	</longdescription>
 </pkgmetadata>

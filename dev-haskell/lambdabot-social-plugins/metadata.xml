@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Lambdabot is an IRC bot written over several years by
 		those on the #haskell IRC channel.
@@ -9,7 +12,7 @@
 		Provided plugins:
 		
 		[activity] Check where and how much is lambdabot used.
-		[karma] Track who&#39;s been good and who&#39;s been naughty.
+		[karma] Track who's been good and who's been naughty.
 		[poll] Let the people vote.
 		[seen] Track who was around when.
 		[tell] Leave messages for other users.

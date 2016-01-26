@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides Haskell bindings for
 		&lt;https://github.com/jgm/cmark libcmark&gt;, the reference
@@ -47,7 +50,7 @@
 		&lt;https://hackage.haskell.org/package/markdown markdown&gt;
 		to grind to a halt.)
 		
-		-   Accuracy: cmark passes the CommonMark spec\&#39;s
+		-   Accuracy: cmark passes the CommonMark spec\'s
 		suite of over 500 conformance tests.
 		
 		-   Standardization: Since there is a spec and a

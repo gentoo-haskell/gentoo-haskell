@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Hath is a Haskell program for working with network blocks in CIDR
 		notation. When dealing with blocks of network addresses, there are a
@@ -19,7 +22,7 @@
 		
 		[@Regexed@]
 		This computes a (Perl-compatible) regular expression matching
-		the input CIDR blocks. It&#39;s the default mode of operation.
+		the input CIDR blocks. It's the default mode of operation.
 		
 		[@Reduced@]
 		This combines small blocks into larger ones where possible, and
@@ -40,7 +43,7 @@
 		Combine two \/24s into a \/23:
 		
 		@
-		$ hath reduced &lt;&lt;&lt; \&quot;10.0.0.0\/24 10.0.1.0\/24\&quot;
+		$ hath reduced &lt;&lt;&lt; \"10.0.0.0\/24 10.0.1.0\/24\"
 		10.0.0.0/23
 		@
 		

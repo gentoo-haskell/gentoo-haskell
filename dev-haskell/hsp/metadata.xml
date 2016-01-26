@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="base4">Use base-4.0.</flag>
 	</use>
@@ -15,6 +18,6 @@
 		
 		* A cgi-handler utility (as a separate package, hsp-cgi)
 		
-		For details on usage, please see the website, and the author&#39;s thesis.
+		For details on usage, please see the website, and the author's thesis.
 	</longdescription>
 </pkgmetadata>

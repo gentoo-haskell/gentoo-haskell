@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Functional MetaPost is a Haskell frontend to the
 		MetaPost language by John Hobby. Users write their
@@ -10,9 +13,9 @@
 		files and smoothly included into e.g. LaTeX.
 		
 		A collection of useful examples how to use Functional
-		MetaPost can be found in the user&#39;s manual at
+		MetaPost can be found in the user's manual at
 		&lt;http://download.savannah.nongnu.org/releases/funcmp/Manual_eng.ps&gt;. The
-		document doesn&#39;t offer very much detail in terms of
+		document doesn't offer very much detail in terms of
 		explanations, but the code samples are quite helpful.
 		
 		Further documentation can be found in the original

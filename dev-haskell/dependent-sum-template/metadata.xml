@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Template Haskell code to generate instances of classes in dependent-sum package, such as &#39;GEq&#39; and &#39;GCompare&#39;.
+		Template Haskell code to generate instances of classes in dependent-sum package, such as 'GEq' and 'GCompare'.
 	</longdescription>
 </pkgmetadata>

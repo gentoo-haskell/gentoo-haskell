@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		The @layers@ package provides the type class machinery needed to make monads
 		built out of stacks of monad transformers easy to use. It introduces the
@@ -27,12 +30,12 @@
 		
 		A comprehensive overview of the motivation behind @layers@ and an
 		explanation of the design decisions taken is given in
-		&quot;Documentation.Layers.Overview&quot;. It is /highly recommended/ that you read
+		"Documentation.Layers.Overview". It is /highly recommended/ that you read
 		this if you are considering using this package. The core type classes of the
-		package are defined in &quot;Control.Monad.Layer&quot; (this can be thought of as
-		equivalent to or a replacement of &quot;Control.Monad.Trans.Class&quot; from
+		package are defined in "Control.Monad.Layer" (this can be thought of as
+		equivalent to or a replacement of "Control.Monad.Trans.Class" from
 		@transformers@). The rest of the modules in this package export monad
-		interfaces, in the &quot;Control.Monad.Interface&quot; hierarchy, including
+		interfaces, in the "Control.Monad.Interface" hierarchy, including
 		replacements for all of the monad interfaces of the @mtl@ package.
 	</longdescription>
 </pkgmetadata>

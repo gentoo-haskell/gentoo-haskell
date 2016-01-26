@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A framework for safe, programmable, speculative parallelism, loosely based on:
 		
-		*  Prakash Prabhu, G. Ramalingam, and Kapil Vaswani, \&quot;/Safe Programmable Speculative Parallelism/\&quot;,
+		*  Prakash Prabhu, G. Ramalingam, and Kapil Vaswani, \"/Safe Programmable Speculative Parallelism/\",
 		In the proceedings of Programming Language Design and Implementation (PLDI) Vol 45, Issue 6 (June 2010) pp 50-61.
 		&lt;http://research.microsoft.com/pubs/118795/pldi026-vaswani.pdf&gt;
 		
@@ -14,7 +17,7 @@
 		
 		For example:
 		
-		@&#39;spec&#39; g f a@ evaluates @f g@ while forcing @a@, if @g == a@ then @f g@ is returned, otherwise @f a@ is evaluated and returned. Furthermore, if the argument has already been evaluated, we skip the @f g@ computation entirely. If a good guess at the value of @a@ is available, this is one way to induce parallelism in an otherwise sequential task. However, if the guess isn\&#39;t available more cheaply than the actual answer, then this saves no work and if the guess is wrong, you risk evaluating the function twice. Under high load, since &#39;f g&#39; is computed via the spark queue, the speculation will be skipped and you will obtain the same answer as &#39;f $! a&#39;.
+		@'spec' g f a@ evaluates @f g@ while forcing @a@, if @g == a@ then @f g@ is returned, otherwise @f a@ is evaluated and returned. Furthermore, if the argument has already been evaluated, we skip the @f g@ computation entirely. If a good guess at the value of @a@ is available, this is one way to induce parallelism in an otherwise sequential task. However, if the guess isn\'t available more cheaply than the actual answer, then this saves no work and if the guess is wrong, you risk evaluating the function twice. Under high load, since 'f g' is computed via the spark queue, the speculation will be skipped and you will obtain the same answer as 'f $! a'.
 		
 		The best-case timeline looks like:
 		
@@ -36,7 +39,7 @@
 		&gt; foreground: [----- a -----]
 		&gt; foreground:               [-]               (check g == a)
 		&gt; foreground:                 [---- f a ----]
-		&gt; spark:         [---- f g ----######         (#&#39;s mark when this spark is collectable)
+		&gt; spark:         [---- f g ----######         (#'s mark when this spark is collectable)
 		&gt; overall:    [--------- spec g f a --------]
 		
 		Under high load:
@@ -52,7 +55,7 @@
 		&gt; foreground:               [---- f a ----]
 		&gt; orverall:   [---------- f $! a ---------]
 		
-		&#39;specSTM&#39; provides a similar time table for STM actions, but also rolls back side-effects. The one unfortunate operational distinction is that it is forced to compute &#39;a&#39; in the background thread and therefore degrades slightly less gracefully under load, although we mitigate this effect by only enqueuing if the number of sparks for the current capability is lower than the total number of capabilities, to try to avoid wasting time when all computational resources are in use.
+		'specSTM' provides a similar time table for STM actions, but also rolls back side-effects. The one unfortunate operational distinction is that it is forced to compute 'a' in the background thread and therefore degrades slightly less gracefully under load, although we mitigate this effect by only enqueuing if the number of sparks for the current capability is lower than the total number of capabilities, to try to avoid wasting time when all computational resources are in use.
 	</longdescription>
 	<use>
 		<flag name="optimize">Enable optimizations</flag>

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This simple CLI tool allows to find out which of the packages listed as
 		@build-depends@ in a Cabal package description file are redundant.
 		
-		@packunused@ works by taking advantage of GHC&#39;s
+		@packunused@ works by taking advantage of GHC's
 		@-ddump-minimal-imports@ feature which creates @.import@ files for
 		each compiled module containing a /minimal/ set of explicit import
-		declarations. These @.import@ files together with Cabal&#39;s generated
+		declarations. These @.import@ files together with Cabal's generated
 		package configuration meta-data is analyzed by @packunused@ to
 		detect potentially redundant package dependencies.
 		
@@ -37,7 +40,7 @@
 		&gt;
 		&gt;  - executable(s): packunused
 		&gt;
-		&gt; (component names suffixed with &#39;*&#39; are not configured to be built)
+		&gt; (component names suffixed with '*' are not configured to be built)
 		&gt;
 		&gt; executable(packunused)
 		&gt; ~~~~~~~~~~~~~~~~~~~~~~

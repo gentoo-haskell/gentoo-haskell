@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		
 		An efficient packed, immutable Unicode text type (both strict and
 		lazy), with a powerful loop fusion optimization framework.
 		
-		The &#39;Text&#39; type represents Unicode character strings, in a time and
+		The 'Text' type represents Unicode character strings, in a time and
 		space-efficient manner. This package provides text processing
 		capabilities that are optimized for performance critical use, both
 		in terms of large data quantities and high speed.
 		
-		The &#39;Text&#39; type provides character-encoding, type-safe case
+		The 'Text' type provides character-encoding, type-safe case
 		conversion via whole-string case conversion functions. It also
-		provides a range of functions for converting &#39;Text&#39; values to and from
-		&#39;ByteStrings&#39;, using several standard encodings.
+		provides a range of functions for converting 'Text' values to and from
+		'ByteStrings', using several standard encodings.
 		
 		Efficient locale-sensitive support for text IO is also supported.
 		

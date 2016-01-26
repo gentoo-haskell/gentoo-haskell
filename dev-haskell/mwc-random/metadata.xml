@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package contains code for generating high quality random
 		numbers that follow either a uniform or normal distribution.  The
 		generated numbers are suitable for use in statistical applications.
 		
-		The uniform PRNG uses Marsaglia&#39;s MWC256 (also known as MWC8222)
+		The uniform PRNG uses Marsaglia's MWC256 (also known as MWC8222)
 		multiply-with-carry generator, which has a period of 2^8222 and
 		fares well in tests of randomness.  It is also extremely fast,
 		between 2 and 3 times faster than the Mersenne Twister.

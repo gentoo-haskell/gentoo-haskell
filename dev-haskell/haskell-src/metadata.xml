@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		The &#39;haskell-src&#39; package provides support for manipulating Haskell
+		The 'haskell-src' package provides support for manipulating Haskell
 		source code. The package provides a lexer, parser and
 		pretty-printer, and a definition of a Haskell abstract syntax tree
 		(AST). Common uses of this package are to parse or generate Haskell

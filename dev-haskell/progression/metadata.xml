@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Progression is a library that builds on the criterion
 		benchmarking library.  It stores the results of running
 		your benchmarks and graphs the performance of different
 		versions of your program against each other.  See the
-		&quot;Progression.Main&quot; module, and the original blog post at
+		"Progression.Main" module, and the original blog post at
 		&lt;http://chplib.wordpress.com/2010/02/04/progression-supporting-optimisation-in-haskell/&gt;
 		to get started, as well as the later post &lt;http://chplib.wordpress.com/2010/03/02/progression-0-3-bar-charts-and-normalisation/&gt;.
 	</longdescription>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		unamb contains the &quot;unambiguous choice&quot; operator &quot;unamb&quot;, which
+		unamb contains the "unambiguous choice" operator "unamb", which
 		wraps thread racing up in a purely functional, semantically simple
 		wrapper.  Originally a part of Reactive, I moved unamb to its own
 		package in order to encourage experimentation.
@@ -14,6 +17,6 @@
 		
 		Contributions from: Luke Palmer, Spencer Janssen, Sterling Clover,
 		Bertram Felgenhauer, Peter Verswyvelen, Svein Ove Aas, and Edward Kmett.
-		Please let me know if I&#39;ve forgotten to list you.
+		Please let me know if I've forgotten to list you.
 	</longdescription>
 </pkgmetadata>

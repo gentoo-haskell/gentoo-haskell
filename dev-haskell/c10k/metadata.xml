@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Network server library to handle
 		over 10,000 connections. Since GHC 6.12 or
@@ -10,7 +13,7 @@
 		the prefork technique to get over the barrier.
 		Programs complied by GHC 6.10 or earlier
 		with the -threaded option kill the IO thread
-		when forkProcess is used. So, don&#39;t specify
+		when forkProcess is used. So, don't specify
 		the -threaded option to use this library.
 	</longdescription>
 </pkgmetadata>

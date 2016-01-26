@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		Simple library for using the system&#39;s monotonic clock.  This library is
+		Simple library for using the system's monotonic clock.  This library is
 		geared toward programs that need to run for long periods of time.  It does
 		not (necessarily) provide high-resolution timing.
 		

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Yarr is a new blazing fast dataflow framework (array library),
-		mainly intented to process @Storable@s (including all \&quot;primitive\&quot; numeric types)
+		mainly intented to process @Storable@s (including all \"primitive\" numeric types)
 		and @fixed-vector@s of them, for example coordinates,
 		color components, complex numbers.
 		
@@ -21,7 +24,7 @@
 		
 		Shortcoming by design: lack of pure indexing interface.
 		
-		To start with, read documentation in the root module: &quot;Data.Yarr&quot;.
+		To start with, read documentation in the root module: "Data.Yarr".
 		
 		[@Yarr!@]
 	</longdescription>

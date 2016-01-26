@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="developer">Operate in developer mode.</flag>
 	</use>
@@ -11,7 +14,7 @@
 		We try to stay up to date with LLVM releases.  The current version
 		of this package is compatible with LLVM 2.9 and 2.8.  Please
 		understand that the package may or may not work against older LLVM
-		releases; we don&#39;t have the time or resources to test across
+		releases; we don't have the time or resources to test across
 		multiple releases.
 		
 		* New in 0.9.1.1: Builds against LLVM 2.9.

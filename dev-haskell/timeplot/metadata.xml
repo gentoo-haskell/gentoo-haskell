@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A tool for visualizing time series from log files.
-		Reads an input file with events in different &quot;tracks&quot; and draws a diagram for
+		Reads an input file with events in different "tracks" and draws a diagram for
 		each track, where a diagram may be one of several types. See --help for help and the
 		homepage for a bigger description, examples and a tutorial. See presentation:
 		&lt;http://www.slideshare.net/jkff/two-visualization-tools&gt; or download:

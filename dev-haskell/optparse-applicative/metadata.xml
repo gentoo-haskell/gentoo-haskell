@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Here is a simple example of an applicative option parser:
 		
@@ -13,23 +16,23 @@
 		sample :: Parser Sample
 		sample = Sample
 		&amp;#x20; \&lt;$\&gt; strOption
-		&amp;#x20;     ( long \&quot;hello\&quot;
-		&amp;#x20;     &amp; metavar \&quot;TARGET\&quot;
-		&amp;#x20;     &amp; help \&quot;Target for the greeting\&quot; )
+		&amp;#x20;     ( long \"hello\"
+		&amp;#x20;     &amp; metavar \"TARGET\"
+		&amp;#x20;     &amp; help \"Target for the greeting\" )
 		&amp;#x20; \&lt;*\&gt; switch
-		&amp;#x20;     ( long \&quot;quiet\&quot;
-		&amp;#x20;     &amp; help \&quot;Whether to be quiet\&quot; )
+		&amp;#x20;     ( long \"quiet\"
+		&amp;#x20;     &amp; help \"Whether to be quiet\" )
 		@
 		
 		The parser is built using applicative style starting from a set of basic
-		combinators. In this example, @hello@ is defined as an &#39;option&#39; with a
-		@String@ argument, while @quiet@ is a boolean &#39;flag&#39; (called &#39;switch&#39;).
+		combinators. In this example, @hello@ is defined as an 'option' with a
+		@String@ argument, while @quiet@ is a boolean 'flag' (called 'switch').
 		
 		A parser can be used like this:
 		
 		@
 		greet :: Sample -&gt; IO ()
-		greet (Sample h False) = putStrLn $ \&quot;Hello, \&quot; ++ h
+		greet (Sample h False) = putStrLn $ \"Hello, \" ++ h
 		greet _ = return ()
 		
 		main :: IO ()
@@ -37,16 +40,16 @@
 		&amp;#x20; where
 		&amp;#x20;   opts = info (helper \&lt;*\&gt; sample)
 		&amp;#x20;     ( fullDesc
-		&amp;#x20;     &amp; progDesc \&quot;Print a greeting for TARGET\&quot;
-		&amp;#x20;     &amp; header \&quot;hello - a test for optparse-applicative\&quot; )
+		&amp;#x20;     &amp; progDesc \"Print a greeting for TARGET\"
+		&amp;#x20;     &amp; header \"hello - a test for optparse-applicative\" )
 		@
 		
 		The @greet@ function is the entry point of the program, while @opts@ is a
 		complete description of the program, used when generating a help text. The
-		&#39;helper&#39; combinator takes any parser, and adds a @help@ option to it (which
+		'helper' combinator takes any parser, and adds a @help@ option to it (which
 		always fails).
 		
-		The @hello@ option in this example is mandatory (since it doesn&#39;t have a
+		The @hello@ option in this example is mandatory (since it doesn't have a
 		default value), so running the program without any argument will display a
 		help text:
 		

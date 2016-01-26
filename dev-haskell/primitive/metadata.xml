@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		
 		This package provides wrappers for primitive array operations from
@@ -15,17 +18,17 @@
 		
 		* Support for GHC 7.2 array copying primitives
 		
-		* New in &quot;Data.Primitive.ByteArray&quot;: @copyByteArray@,
+		* New in "Data.Primitive.ByteArray": @copyByteArray@,
 		@copyMutableByteArray@, @moveByteArray@, @fillByteArray@
 		
-		* Deprecated in &quot;Data.Primitive.ByteArray&quot;: @memcpyByteArray@,
-		@memcpyByteArray&#39;@, @memmoveByteArray@, @memsetByteArray@
+		* Deprecated in "Data.Primitive.ByteArray": @memcpyByteArray@,
+		@memcpyByteArray'@, @memmoveByteArray@, @memsetByteArray@
 		
-		* New in &quot;Data.Primitive.Array&quot;: @copyArray@, @copyMutableByteArray@
+		* New in "Data.Primitive.Array": @copyArray@, @copyMutableByteArray@
 		
-		* New in &quot;Data.Primitive.Addr&quot;: @copyAddr@, @moveAddr@
+		* New in "Data.Primitive.Addr": @copyAddr@, @moveAddr@
 		
-		* Deprecated in &quot;Data.Primitive.Addr&quot;: @memcpyAddr@
+		* Deprecated in "Data.Primitive.Addr": @memcpyAddr@
 		
 	</longdescription>
 </pkgmetadata>

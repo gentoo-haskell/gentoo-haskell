@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Generic vectors with fixed length. Package is structured as follows:
 		
 		[@Data.Vector.Fixed@]
-		Generic API. It&#39;s suitable for both ADT-based vector like @Complex@
+		Generic API. It's suitable for both ADT-based vector like @Complex@
 		and array-based ones.
 		
 		[@Data.Vector.Fixed.Mutable@]

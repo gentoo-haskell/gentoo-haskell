@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library provides functions to introspect the Haskell heap, for example
 		to investigate sharing and lazy evaluation.
@@ -15,15 +18,15 @@
 		script or add it to @~/.ghci@, as explained by @cabal install@. Once it is
 		set up, you can do this:
 		
-		&gt;&gt; let value = &quot;A Value&quot;
-		&gt;&gt; let x = (value, if head value == &#39;A&#39; then value else &quot;&quot;, cycle [True, False])
+		&gt;&gt; let value = "A Value"
+		&gt;&gt; let x = (value, if head value == 'A' then value else "", cycle [True, False])
 		&gt;&gt; :printHeap x
 		&gt;let x1 = _bco
 		&gt;    x21 = []
 		&gt;in (x1,_bco,_bco)
 		&gt;&gt; length (take 100 (show x)) `seq` return () -- evaluate everything
 		&gt;&gt; :printHeap x
-		&gt;let x1 = &quot;A Value&quot;
+		&gt;let x1 = "A Value"
 		&gt;    x16 = True : False : x16
 		&gt;in (x1,x1,x16)
 		
@@ -31,7 +34,7 @@
 		
 		&gt;&gt; :setPrintHeapDepth 3
 		&gt;&gt; :printHeap x
-		&gt;let x1 = C# &#39;A&#39; : ... : ...
+		&gt;let x1 = C# 'A' : ... : ...
 		&gt;in (x1,x1,True : ... : ...)
 		
 		If the view is impaired by blackholes (written @_bh@), running

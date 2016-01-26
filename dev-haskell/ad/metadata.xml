@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Forward-, reverse- and mixed- mode automatic differentiation combinators with a common API.
 		
-		Type-level \&quot;branding\&quot; is used to both prevent the end user from confusing infinitesimals
+		Type-level \"branding\" is used to both prevent the end user from confusing infinitesimals
 		and to limit unsafe access to the implementation details of each Mode.
 		
 		Each mode has a separate module full of combinators.
@@ -23,25 +26,25 @@
 		While not every mode can provide all operations, the following basic operations are supported, modified as
 		appropriate by the suffixes below:
 		
-		* &#39;grad&#39; computes the gradient (partial derivatives) of a function at a point.
+		* 'grad' computes the gradient (partial derivatives) of a function at a point.
 		
-		* &#39;jacobian&#39; computes the Jacobian matrix of a function at a point.
+		* 'jacobian' computes the Jacobian matrix of a function at a point.
 		
-		* &#39;diff&#39; computes the derivative of a function at a point.
+		* 'diff' computes the derivative of a function at a point.
 		
-		* &#39;du&#39; computes a directional derivative of a function at a point.
+		* 'du' computes a directional derivative of a function at a point.
 		
-		* &#39;hessian&#39; computes the Hessian matrix (matrix of second partial derivatives) of a function at a point.
+		* 'hessian' computes the Hessian matrix (matrix of second partial derivatives) of a function at a point.
 		
 		The following suffixes alter the meanings of the functions above as follows:
 		
-		* @\&#39;@ -- also return the answer
+		* @\'@ -- also return the answer
 		
 		* @With@ lets the user supply a function to blend the input with the output
 		
-		* @F@ is a version of the base function lifted to return a &#39;Traversable&#39; (or &#39;Functor&#39;) result
+		* @F@ is a version of the base function lifted to return a 'Traversable' (or 'Functor') result
 		
-		* @s@ means the function returns all higher derivatives in a list or f-branching &#39;Stream&#39;
+		* @s@ means the function returns all higher derivatives in a list or f-branching 'Stream'
 		
 		* @T@ means the result is transposed with respect to the traditional formulation.
 		

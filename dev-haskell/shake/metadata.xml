@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="portable">Obtain FileTime using portable functions.</flag>
 	</use>
@@ -25,7 +28,7 @@
 		
 		The theory behind an old version of Shake is described in a video at
 		&lt;http://vimeo.com/15465133&gt;, and an example is given at the top of
-		&quot;Development.Shake&quot;. Further examples are included in the Cabal tarball,
+		"Development.Shake". Further examples are included in the Cabal tarball,
 		under the @Examples@ directory.
 	</longdescription>
 </pkgmetadata>

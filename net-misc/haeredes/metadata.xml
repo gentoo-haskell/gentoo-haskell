@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Haeredes is primarily useful for ISP network administrators.
 		Customers will occasionally decide to switch hosts without alerting
@@ -30,18 +33,18 @@
 		[ab].iana-servers.net:
 		
 		@
-		$ haeredes a.iana-servers.net b.iana-servers.net &lt;&lt;&lt; \&quot;example.com\&quot;
+		$ haeredes a.iana-servers.net b.iana-servers.net &lt;&lt;&lt; \"example.com\"
 		@
 		
 		If you use --no-append-root and your nameservers are rooted, you
-		must remember to supply the trailing dot yourself. Otherwise, you&#39;ll
+		must remember to supply the trailing dot yourself. Otherwise, you'll
 		get false positives.
 		
 		@
 		$ haeredes --no-append-root \
 		&amp;#x20;          a.iana-servers.net b.iana-servers.net \
-		&amp;#x20;          &lt;&lt;&lt; \&quot;example.com\&quot;
-		Domain \&quot;example.com\&quot; delegates somewhere else: \&quot;b.iana-servers.net.\&quot; \&quot;a.iana-servers.net.\&quot;
+		&amp;#x20;          &lt;&lt;&lt; \"example.com\"
+		Domain \"example.com\" delegates somewhere else: \"b.iana-servers.net.\" \"a.iana-servers.net.\"
 		@
 		
 		Check orlitzky.com against the expected name servers, using
@@ -49,22 +52,22 @@
 		
 		@
 		$ haeredes --server 199.7.91.13 dns1.viabit.com dns2.viabit.com \
-		&amp;#x20;          &lt;&lt;&lt; \&quot;orlitzky.com\&quot;
+		&amp;#x20;          &lt;&lt;&lt; \"orlitzky.com\"
 		@
 		
 		Check orlitzky.com against only one of the expected two nameservers:
 		
 		@
-		$ haeredes dns1.viabit.com &lt;&lt;&lt; \&quot;orlitzky.com\&quot;
-		Domain \&quot;orlitzky.com.\&quot; delegates somewhere else: \&quot;dns2.viabit.com.\&quot;
+		$ haeredes dns1.viabit.com &lt;&lt;&lt; \"orlitzky.com\"
+		Domain \"orlitzky.com.\" delegates somewhere else: \"dns2.viabit.com.\"
 		@
 		
 		Check a nonexistent domain (we provide no delegates, since we
 		know .invalid will not be delegated):
 		
 		@
-		$ haeredes &lt;&lt;&lt; \&quot;example.invalid\&quot;
-		Domain \&quot;example.invalid.\&quot; not delegated.
+		$ haeredes &lt;&lt;&lt; \"example.invalid\"
+		Domain \"example.invalid.\" not delegated.
 		@
 	</longdescription>
 </pkgmetadata>

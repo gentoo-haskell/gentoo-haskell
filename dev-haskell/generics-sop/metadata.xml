@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A library to support the definition of generic functions.
 		Datatypes are viewed in a uniform, structured way:
@@ -9,7 +12,7 @@
 		sum, and the arguments of each constructor are represented using
 		an n-ary product.
 		
-		The module &quot;Generics.SOP&quot; is the main module of this library and contains
+		The module "Generics.SOP" is the main module of this library and contains
 		more detailed documentation.
 		
 		Examples of using this library are provided by the following

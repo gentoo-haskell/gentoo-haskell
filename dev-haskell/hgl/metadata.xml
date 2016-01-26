@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A simple graphics library, designed to give the programmer access
 		to most interesting parts of the Win32 Graphics Device Interface
@@ -9,7 +12,7 @@
 		anguish usually associated with using these interfaces.
 		
 		The library also includes a module Graphics.SOE providing the
-		interface used in &quot;The Haskell School of Expression&quot;, by Paul
+		interface used in "The Haskell School of Expression", by Paul
 		Hudak, cf &lt;http://www.haskell.org/soe/&gt;.
 	</longdescription>
 </pkgmetadata>

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A full-featured backend for rendering
 		diagrams using the cairo rendering engine.
-		To get started, see &quot;Diagrams.Backend.Cairo.CmdLine&quot;.
+		To get started, see "Diagrams.Backend.Cairo.CmdLine".
 	</longdescription>
 </pkgmetadata>

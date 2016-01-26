@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Darcs-monitor will send email to a specified recipient
 		about new changes added to a specific darcs repository. It can be run
-		as an apply posthook (resulting in near-instantaneous &quot;push&quot;
+		as an apply posthook (resulting in near-instantaneous "push"
 		emails), or periodically from Cron, or occasionally by hand, whatever
 		seems most convenient.
 	</longdescription>

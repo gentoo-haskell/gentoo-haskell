@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package provides unary type level representations of the
 		(positive and negative) integers and basic operations (addition,
@@ -9,9 +12,9 @@
 		Due to the unary implementation the practical size of the
 		NumTypes is severely limited making them unsuitable for
 		large-cardinality applications. If you will be working with
-		integers beyond (-20, 20) this package probably isn&#39;t for you.
+		integers beyond (-20, 20) this package probably isn't for you.
 		It is, however, eminently suitable for applications such as
-		representing physical dimensions (see the &#39;Dimensional&#39; library).
+		representing physical dimensions (see the 'Dimensional' library).
 		Requires GHC 6.6.1 or later.
 	</longdescription>
 </pkgmetadata>

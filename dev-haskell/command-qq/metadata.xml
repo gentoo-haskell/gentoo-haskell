@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Features:
 		
@@ -11,7 +14,7 @@
 		
 		* Easy way to define custom quasiquoters (see @examples/CustomQQ.hs@)
 		
-		&gt; ghci = QQ.quoter $ QQ.callCommand &quot;ghc&quot; [&quot;-ignore-dot-ghci&quot;, &quot;-e&quot;]
+		&gt; ghci = QQ.quoter $ QQ.callCommand "ghc" ["-ignore-dot-ghci", "-e"]
 		
 		* Can embed Haskell variables in scripts
 		
@@ -22,7 +25,7 @@
 		&gt;   embed = id
 		&gt;
 		&gt; main :: IO ()
-		&gt; main = let excl = replicate 3 &#39;!&#39; in -- I&#39;d love to show an example but haddock markup fails here
+		&gt; main = let excl = replicate 3 '!' in -- I'd love to show an example but haddock markup fails here
 		
 		* Can embed quasiquoters in DSLs (see @examples/CommandT.hs@)
 		

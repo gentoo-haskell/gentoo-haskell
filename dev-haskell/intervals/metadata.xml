@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<use>
 		<flag name="test-doctests">Enable the doctest suite when using the enable-tests option for cabal.</flag>
 	</use>
 	<longdescription>
-		A &#39;Numeric.Interval.Interval&#39; is a closed, convex set of floating point values.
+		A 'Numeric.Interval.Interval' is a closed, convex set of floating point values.
 		
 		We do not control the rounding mode of the end points of the interval when
 		using floating point arithmetic, so be aware that in order to get precise
 		containment of the result, you will need to use an underlying type with
-		both lower and upper bounds like &#39;CReal&#39;
+		both lower and upper bounds like 'CReal'
 	</longdescription>
 </pkgmetadata>

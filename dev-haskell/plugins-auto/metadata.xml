@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This library provides support for automatically recompiling and reloading
 		modules into your programs when the source code is modified.
@@ -16,27 +19,27 @@
 		&gt; main :: IO ()
 		&gt; main = do ph&lt;-initPlugins
 		&gt;         hSetBuffering stdout NoBuffering
-		&gt;         putStrLn &quot;This program interacts with you in a loop.&quot;
-		&gt;         putStrLn &quot;Type something, and the program will respond when you hit the Enter Key.&quot;
-		&gt;         putStrLn &quot;Modify Answer.hs while interacting and you should see the answers&quot;
-		&gt;         putStrLn &quot;change accordingly.&quot;
+		&gt;         putStrLn "This program interacts with you in a loop."
+		&gt;         putStrLn "Type something, and the program will respond when you hit the Enter Key."
+		&gt;         putStrLn "Modify Answer.hs while interacting and you should see the answers"
+		&gt;         putStrLn "change accordingly."
 		&gt;         let interactiveLoop = prompt ph &gt;&gt; interactiveLoop
 		&gt;         interactiveLoop
 		&gt; where
 		&gt;   prompt ph = do
-		&gt;      putStr &quot;&gt; &quot;
+		&gt;      putStr "&gt; "
 		&gt;      input &lt;- getLine
-		&gt;      $(withMonadIO &#39;getAnswer) ph id notLoaded$ \errs getAnswer -&gt;
+		&gt;      $(withMonadIO 'getAnswer) ph id notLoaded$ \errs getAnswer -&gt;
 		&gt;          mapM_ putStrLn errs  &gt;&gt; getAnswer input
 		&gt;
 		&gt;   notLoaded errs =
-		&gt;      if null errs then putStrLn &quot;Plugin not loaded yet.&quot;
-		&gt;        else putStrLn &quot;Errors found:&quot; &gt;&gt; mapM_ (putStrLn . (&quot;  &quot;++)) errs
-		&gt;               &gt;&gt; putStrLn &quot;Try fixing the errors and come back here.&quot;
+		&gt;      if null errs then putStrLn "Plugin not loaded yet."
+		&gt;        else putStrLn "Errors found:" &gt;&gt; mapM_ (putStrLn . ("  "++)) errs
+		&gt;               &gt;&gt; putStrLn "Try fixing the errors and come back here."
 		
 		&gt; module Answer where
 		&gt;
 		&gt; getAnswer :: String -&gt; IO ()
-		&gt; getAnswer input = putStrLn (&quot;What you typed: &quot;++input)
+		&gt; getAnswer input = putStrLn ("What you typed: "++input)
 	</longdescription>
 </pkgmetadata>

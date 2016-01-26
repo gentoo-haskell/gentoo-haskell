@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		SafeHaskell introduced the notion of safe and unsafe modules.
-		In order to make as many as possible modules \&quot;safe\&quot;,
+		In order to make as many as possible modules \"safe\",
 		the well-known unsafe functions were moved to distinguished modules.
 		This makes it hard to write packages that work
 		with both old and new versions of GHC.

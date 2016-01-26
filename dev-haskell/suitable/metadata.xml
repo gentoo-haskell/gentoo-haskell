@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		This library provides a general purpose typeclass, &#39;Suitable f a&#39;,
-		which expresses that values of type &#39;f a&#39; are legal or &quot;make sense&quot;.
+		This library provides a general purpose typeclass, 'Suitable f a',
+		which expresses that values of type 'f a' are legal or "make sense".
 	</longdescription>
 </pkgmetadata>

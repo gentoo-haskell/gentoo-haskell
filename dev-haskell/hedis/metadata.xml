@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Redis is an open source, advanced key-value store. It is often referred to
 		as a data structure server since keys can contain strings, hashes, lists,
@@ -31,7 +34,7 @@
 		machine, Unix domain sockets offer higher performance than the standard
 		TCP connection.
 		
-		For detailed documentation, see the &quot;Database.Redis&quot; module.
+		For detailed documentation, see the "Database.Redis" module.
 		
 		[Changes since version 0.5]
 		
@@ -47,15 +50,15 @@
 		
 		* Added new Redis 2.6 commands, including Lua scripting support.
 		
-		* A transaction context is now created by using the &#39;multiExec&#39; function.
-		The functions &#39;multi&#39;, &#39;exec&#39; and &#39;discard&#39; are no longer available
+		* A transaction context is now created by using the 'multiExec' function.
+		The functions 'multi', 'exec' and 'discard' are no longer available
 		individually.
 		
 		* Inside of a transaction, commands return their results wrapped in a
-		composable /future/, called &#39;Queued&#39;.
+		composable /future/, called 'Queued'.
 		
-		* The &#39;getType&#39; command (the Redis TYPE command) now has a custom return
-		type &#39;RedisType&#39;.
+		* The 'getType' command (the Redis TYPE command) now has a custom return
+		type 'RedisType'.
 		
 		* Minor improvements and fixes to the documentation.
 		

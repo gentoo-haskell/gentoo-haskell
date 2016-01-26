@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		This is a simple implementation of a multimap, based on &quot;Data.Map&quot;.
+		This is a simple implementation of a multimap, based on "Data.Map".
 		
 		[@v1.1@]
 		@!@ had its arguments flipped. Fixed.
 		Also added @fromMap@.
 		
 		[@v1.2@]
-		Added &quot;Data.SetMap&quot;, renamed @Multimap@ to &quot;Data.MultiMap&quot;.
+		Added "Data.SetMap", renamed @Multimap@ to "Data.MultiMap".
 		Fixed the type of @delete@. Derive instances for @Data@
 		and @Typeable@.
 		

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		This is hledger&#39;s curses-style interface.
+		This is hledger's curses-style interface.
 		It is simpler and more convenient for browsing data than the command-line interface,
 		but lighter and faster than hledger-web.
 		hledger is a cross-platform program for tracking money, time, or

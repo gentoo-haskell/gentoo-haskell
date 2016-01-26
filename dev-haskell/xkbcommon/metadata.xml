@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		Wrapper library for libxkbcommon, which is the new alternative for the X11 XKB.h keyboard input
 		API. Specifically, it finds keymap files from disk based on Rule\/Model\/Layout\/Variant\/Option
-		specifications, and compiles them into a &#39;Keymap&#39;. From this &#39;Keymap&#39;, a &#39;KeyboardState&#39; can be
+		specifications, and compiles them into a 'Keymap'. From this 'Keymap', a 'KeyboardState' can be
 		constructed which represents the states of various physical buttons such as the shift/alt/ctrl
 		keys, and can give the correct key symbol based on keyboard events. E.g., pressing the @\&lt;h\&gt;@ key
 		while @\&lt;shift\&gt;@ is pressed produces the @H@ symbol in the common QWERTY keymaps, but in e.g.

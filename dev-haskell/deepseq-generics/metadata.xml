@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
-		This package provides a &quot;GHC.Generics&quot;-based
-		&#39;Control.DeepSeq.Generics.genericRnf&#39; function which can be used
-		for providing a &#39;rnf&#39; implementation. See the documentation for
-		the &#39;genericRnf&#39; function in the &quot;Control.DeepSeq.Generics&quot; module
+		This package provides a "GHC.Generics"-based
+		'Control.DeepSeq.Generics.genericRnf' function which can be used
+		for providing a 'rnf' implementation. See the documentation for
+		the 'genericRnf' function in the "Control.DeepSeq.Generics" module
 		to get started.
 		
 		The original idea was pioneered in the @generic-deepseq@ package
@@ -15,6 +18,6 @@
 		
 		This package differs from the @generic-deepseq@ package by working
 		in combination with the existing @deepseq@ package as opposed to defining a
-		conflicting drop-in replacement for @deepseq@&#39;s @Control.Deepseq@ module.
+		conflicting drop-in replacement for @deepseq@'s @Control.Deepseq@ module.
 	</longdescription>
 </pkgmetadata>
