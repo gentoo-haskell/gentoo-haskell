@@ -9,7 +9,7 @@ inherit haskell-cabal elisp-common
 
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="https://github.com/agda/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/agda/${PN}/archive/${PV}.tar.gz -> ${PF}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
