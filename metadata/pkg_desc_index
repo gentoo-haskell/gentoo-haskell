@@ -274,7 +274,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.10.0 0.11.6: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
-dev-haskell/cryptonite 0.7 0.8: Cryptography Primitives sink
+dev-haskell/cryptonite 0.7 0.8 0.10: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2: CSV loader and dumper
 dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
