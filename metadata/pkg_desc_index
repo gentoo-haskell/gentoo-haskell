@@ -1110,7 +1110,7 @@ dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
 dev-haskell/random-source 0.3.0.6: Generic basis for random number generators
 dev-haskell/ranged-sets 0.3.0: Ranged sets for Haskell
 dev-haskell/ranges 0.2.4: Ranges and various functions on them
-dev-haskell/rank1dynamic 0.2.0.0 0.2.0.1 0.2.0.1-r1 0.3.1.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
+dev-haskell/rank1dynamic 0.3.1.1: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.6.1: A pure haskell drawing engine
 dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
 dev-haskell/rdf4h 1.3.6: A library for RDF processing in Haskell
@@ -1153,7 +1153,7 @@ dev-haskell/replib 0.5.3.5: Generic programming library with representation type
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 0.4.10.2 1.1.7: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 0.4.10.2 1.1.7.1: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.6: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
@@ -1182,7 +1182,7 @@ dev-haskell/sdl-ttf 0.6.2.2: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.1: Semigroupoids: Category sans id
-dev-haskell/semigroups 0.18.0.1: Anything that associates
+dev-haskell/semigroups 0.18.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.4.4.6: A family of combinators for defining webservices APIs
@@ -1311,11 +1311,11 @@ dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framew
 dev-haskell/tasty-th 0.1.3: Automagically generate the HUnit- and Quickcheck-bulk-code using Template Haskell
 dev-haskell/tcache 0.12.0: A Transactional cache with user-defined persistence
 dev-haskell/template 0.2.0.10: Simple string substitution
-dev-haskell/temporary 1.2.0.3: Portable temporary file and directory support for Windows and Unix, based on code from Cabal
+dev-haskell/temporary 1.2.0.4: Portable temporary file and directory support for Windows and Unix, based on code from Cabal
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix, based on code from Cabal
 dev-haskell/tensor 1.0.0.1: Tensor data types
 dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
-dev-haskell/terminfo 0.4.0.1: Haskell bindings to the terminfo library
+dev-haskell/terminfo 0.4.0.2: Haskell bindings to the terminfo library
 dev-haskell/test-framework 0.5 0.6 0.6.1 0.8.0.3 0.8.1.0 0.8.1.1: Framework for running and organising tests, with HUnit and QuickCheck support
 dev-haskell/test-framework-hunit 0.3.0.2: HUnit support for the test-framework package
 dev-haskell/test-framework-quickcheck 0.2.8 0.2.8.1 0.3.0-r1: QuickCheck support for the test-framework package
@@ -1344,7 +1344,7 @@ dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-orphans 0.13.0: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.4: Recurseively reify template haskell datatype info
 dev-haskell/threads 0.5.1.3: Fork threads and wait for their result
-dev-haskell/threepenny-gui 0.6.0.4: GUI framework that uses the web browser as a display
+dev-haskell/threepenny-gui 0.6.0.5: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 0.6: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
@@ -1430,7 +1430,7 @@ dev-haskell/vector-algorithms 0.7.0.1: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.1.0: Instances of Data.Binary and Data.Serialize for vector
 dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
-dev-haskell/vector-space 0.8.7 0.9 0.10.2: Vector & affine spaces, linear maps, and derivatives
+dev-haskell/vector-space 0.10.3: Vector & affine spaces, linear maps, and derivatives
 dev-haskell/vector-space-points 0.1.3 0.2.1 0.2.1.1: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.3: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vinyl 0.5.1: Extensible Records
