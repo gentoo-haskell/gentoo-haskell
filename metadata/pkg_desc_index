@@ -348,7 +348,7 @@ dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 an
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
-dev-haskell/distributed-process 0.5.3 0.5.5.1: Cloud Haskell: Erlang-style concurrency in Haskell
+dev-haskell/distributed-process 0.5.5.1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.0 0.2.3.1: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.2: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.3.0: Compositional, type-safe, polymorphic static values and closures
@@ -1431,7 +1431,7 @@ dev-haskell/vector-binary-instances 0.2.1.0: Instances of Data.Binary and Data.S
 dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
 dev-haskell/vector-space 0.10.3: Vector & affine spaces, linear maps, and derivatives
-dev-haskell/vector-space-points 0.1.3 0.2.1 0.2.1.1: A type for points, as distinct from vectors
+dev-haskell/vector-space-points 0.2.1 0.2.1.1: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.3: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vinyl 0.5.1: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
