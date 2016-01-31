@@ -103,7 +103,7 @@ dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0 0.7.6.1: Binary serialisation for Has
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
-dev-haskell/binary-orphans 0.1.3.0: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.4.0: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
@@ -129,7 +129,7 @@ dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams 
 dev-haskell/blaze-builder-enumerator 0.2.1.0: Enumeratees for the incremental conversion of builders to bytestrings
 dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library for Haskell
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
-dev-haskell/blaze-svg 0.3.5: SVG combinator library
+dev-haskell/blaze-svg 0.3.6: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.10.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
@@ -198,7 +198,7 @@ dev-haskell/cipher-blowfish 0.0.3: Blowfish cipher
 dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
-dev-haskell/circle-packing 0.1.0.4: Simple heuristic for packing discs of varying radii in a circle
+dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 0.12.4 0.12.5: A typeclass-based Prelude
@@ -344,7 +344,7 @@ dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-func
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.1: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
-dev-haskell/direct-sqlite 2.3.16: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
