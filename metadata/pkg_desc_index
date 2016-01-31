@@ -51,7 +51,7 @@ dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-seq 0.6.0.5: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.2: A binding for the OpenAL Utility Toolkit
-dev-haskell/amqp 0.13.0: Client library for AMQP servers (currently only RabbitMQ)
+dev-haskell/amqp 0.13.1: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.1: Constructing, analyzing and destructing annotated trees
@@ -400,7 +400,7 @@ dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 1.4.7 2.0.1: Simplified error-handling
 dev-haskell/esqueleto 2.4.2: Type-safe EDSL for SQL queries on persistent backends
-dev-haskell/ether 0.3.1.1 0.4.0.0: Monad transformers and classes
+dev-haskell/ether 0.4.0.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.4.1.0: Exact rational multiples of pi (and integer powers of pi)
