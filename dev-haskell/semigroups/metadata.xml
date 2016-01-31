@@ -16,4 +16,8 @@
 		where every element did not have to have an inverse, thus the
 		name semigroup.
 	</longdescription>
+	<use>
+		<flag name="binary">provide instances for binary package</flag>
+		<flag name="transformers">provide instances for transformers package.</flag>
+	</use>
 </pkgmetadata>

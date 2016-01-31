@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+binary +transformers"
 
 RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
@@ -25,6 +25,8 @@ RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[prof
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
+	binary? ( dev-haskell/binary:=[profile?] )
+	transformers? ( >=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
@@ -32,11 +34,13 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
+		$(cabal_flag binary binary) \
 		--flag=bytestring \
 		--flag=containers \
 		--flag=deepseq \
 		--flag=hashable \
 		--flag=tagged \
 		--flag=text \
+		$(cabal_flag transformers transformers) \
 		--flag=unordered-containers
 }
