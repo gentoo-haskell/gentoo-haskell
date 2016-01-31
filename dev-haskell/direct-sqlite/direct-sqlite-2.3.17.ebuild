@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,7 +26,8 @@ RDEPEND=">=dev-haskell/text-0.11:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/base16-bytestring
-		dev-haskell/hunit )
+		dev-haskell/hunit
+		dev-haskell/temporary )
 "
 
 src_configure() {
