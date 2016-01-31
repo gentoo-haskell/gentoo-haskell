@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+RDEPEND=">=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/type-aligned-0.9.3:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-0.8:=[profile?]
@@ -27,18 +27,13 @@ RDEPEND=">=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2
+	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-th-0.2 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'HUnit == 1.2.*' 'HUnit >= 1.2'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
