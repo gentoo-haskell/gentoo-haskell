@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		This library provides variants of standard partial functions
+		that include their call-site in the error message when they crash.
+		
+		For example:
+		
+		@
+		ghci&gt; &#39;Data.List.Located.head&#39; []
+		*** Exception: Prelude.head: empty list
+		Callstack:
+		\ \ error, called at src\/Data\/List\/Located.hs:19:14 in locat_KhGZ7Rz1bn9DKFeFxhawNB:Data.List.Located
+		\ \ head, called at \&lt;interactive\&gt;:6:1 in interactive:Ghci1
+		@
+	</longdescription>
+</pkgmetadata>
