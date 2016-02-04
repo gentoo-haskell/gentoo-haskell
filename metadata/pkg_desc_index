@@ -483,6 +483,7 @@ dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Gh
 dev-haskell/ghc-parmake 0.1.9: A parallel wrapper for 'ghc --make'
 dev-haskell/ghc-parser 0.1.8.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
+dev-haskell/ghc-simple 0.3: Simplified interface to the GHC API
 dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-vis 0.7.2.9: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
@@ -1555,6 +1556,7 @@ dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
 dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r3 7.8.4-r4 7.8.4-r5 7.10.2 7.10.2-r1 7.10.3_rc1 7.10.3 8.0.1_rc1 9999: The Glasgow Haskell Compiler
+dev-lang/haste-compiler 0.5.4: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
