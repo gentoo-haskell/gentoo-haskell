@@ -10,7 +10,7 @@ app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other thin
 app-emacs/structured-haskell-mode 1.0.20-r1 9999: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
-app-portage/fquery 0.2.1.5: Installed package query tool for Gentoo Linux
+app-portage/fquery 0.2.1.5 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.4.6 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
