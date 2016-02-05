@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	|| (  ( >=dev-haskell/hashable-1.2.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] )
-		( >=dev-haskell/hashable-1.1.1.0:=[profile?] <dev-haskell/hashable-1.2.0:=[profile?] ) )
+	>=dev-haskell/hashable-1.1.1.0:=[profile?]
+	<dev-haskell/hashable-1.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

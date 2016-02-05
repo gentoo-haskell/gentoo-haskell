@@ -57,8 +57,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/utf8-string-0.3
 	>=dev-haskell/vector-0.10 <dev-haskell/vector-0.11
 	>=dev-lang/ghc-7.6.1
-	|| ( ( >=dev-haskell/hashable-1.1 <dev-haskell/hashable-1.2 )
-		( >=dev-haskell/hashable-1.2 <dev-haskell/hashable-1.3 ) )
+	>=dev-haskell/hashable-1.1
+	<dev-haskell/hashable-1.3
 	|| ( <dev-haskell/mtl-2.1
 		>dev-haskell/mtl-2.1 )
 	|| ( ( >=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.3 )
