@@ -23,10 +23,10 @@ IUSE=""
 
 RESTRICT=test # tests build a lot of time
 
-RDEPEND=">=app-emacs/ghc-mod-5.4:=[profile?]
+RDEPEND=">=app-emacs/ghc-mod-5.5.0.0:=[profile?]
 	>=dev-haskell/cabal-1.22:=[profile?]
 	dev-haskell/cabal-helper:=[profile?]
-	>=dev-haskell/ghc-exactprint-0.4.1:=[profile?]
+	>=dev-haskell/ghc-exactprint-0.5.0.1:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
 	dev-haskell/ghc-syb-utils:=[profile?]
 	dev-haskell/hslogger:=[profile?]
@@ -42,10 +42,10 @@ RDEPEND=">=app-emacs/ghc-mod-5.4:=[profile?]
 	dev-haskell/syz:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-7.10.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-1.22.4.0
 	test? ( >=dev-haskell/diff-0.3.0
 		dev-haskell/hspec
 		dev-haskell/hunit
