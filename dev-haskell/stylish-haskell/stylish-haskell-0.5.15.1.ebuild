@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,10 +25,10 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/strict-0.3:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-haskell/yaml-0.7:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4 )
