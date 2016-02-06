@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/ansi-wl-pprint:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/split:=[profile?]
 	>=dev-haskell/template-0.2:=[profile?] <dev-haskell/template-0.3:=[profile?]
-	~dev-haskell/temporary-1.2.0.3:=[profile?]
+	>=dev-haskell/temporary-1.2.0.3:=[profile?]
 	>dev-haskell/text-1.0:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -36,3 +36,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit
 		dev-haskell/silently )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'temporary ==1.2.0.3' 'temporary >=1.2.0.3'
+}
