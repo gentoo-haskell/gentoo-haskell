@@ -562,7 +562,7 @@ dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + r
 dev-haskell/happstack-server 7.4.5: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
-dev-haskell/hare 0.8.2.1: the Haskell Refactorer
+dev-haskell/hare 0.8.2.3: the Haskell Refactorer
 dev-haskell/harp 0.4.1: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash value
