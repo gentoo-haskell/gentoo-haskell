@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/unordered-containers-0.2.5.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/void-0.5.4:=[profile?] <dev-haskell/void-0.9:=[profile?]
 	>=dev-haskell/xhtml-3000.2.1:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6.1:=[profile?]
+	>=dev-haskell/zlib-0.4.0.1:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 	|| ( ( >=dev-haskell/hashtables-1.0.1.8:=[profile?] <dev-haskell/hashtables-1.2:=[profile?] )
 		( >=dev-haskell/hashtables-1.2.0.2:=[profile?] <dev-haskell/hashtables-1.3:=[profile?] ) )
@@ -83,6 +83,9 @@ src_prepare() {
 	sed -e '/^executable agda-mode$/a \ \ buildable: False' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
+
+	cabal_chdeps \
+		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1'
 }
 
 src_configure() {
