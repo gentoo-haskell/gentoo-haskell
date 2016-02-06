@@ -622,7 +622,7 @@ dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism gr
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
-dev-haskell/hi 1.2.0.0: Generate scaffold for cabal project
+dev-haskell/hi 1.2.0.0-r1: Generate scaffold for cabal project
 dev-haskell/highlighting-kate 0.5.15 0.6.1: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
 dev-haskell/hint 0.4.0.0-r1 0.4.2.0 0.4.2.1 0.4.2.3 9999: Runtime Haskell interpreter (GHC API wrapper)
