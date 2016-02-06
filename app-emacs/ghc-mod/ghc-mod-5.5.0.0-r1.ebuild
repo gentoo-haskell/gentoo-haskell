@@ -36,7 +36,6 @@ RDEPEND=">=dev-haskell/binary-0.5.1.0:=[profile?] <dev-haskell/binary-0.8:=[prof
 	<dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11.0:=[profile?] <dev-haskell/optparse-applicative-0.13.0:=[profile?]
 	>=dev-haskell/pipes-4.1:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
-	<=dev-haskell/random-1.0.1.1:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
 	<dev-haskell/syb-0.7:=[profile?]
