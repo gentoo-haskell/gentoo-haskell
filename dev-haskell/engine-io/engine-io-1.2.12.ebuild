@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
-	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.1:=[profile?]
+	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/either-3.4:=[profile?] <dev-haskell/either-4.5:=[profile?]
