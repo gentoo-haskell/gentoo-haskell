@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,14 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">dev-haskell/cereal-0.3:=[profile?]
-	>=dev-haskell/either-3.1:=[profile?]
-	>=dev-haskell/lens-2.5:=[profile?]
+RDEPEND=">=dev-haskell/either-3.1:=[profile?]
+	>=dev-haskell/free-4.0:=[profile?]
 	>dev-haskell/mtl-2:=[profile?]
-	>=dev-haskell/safecopy-0.6:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
-	>=dev-haskell/transformers-free-1.0:=[profile?]
-	>dev-haskell/uuid-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
