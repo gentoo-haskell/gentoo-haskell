@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,8 +23,8 @@ RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-0.11:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-1.3:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
 	>=dev-haskell/vector-0.10:= <dev-haskell/vector-0.12:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.22.2.0
 "
