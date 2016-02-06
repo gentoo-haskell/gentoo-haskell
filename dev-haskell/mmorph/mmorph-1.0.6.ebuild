@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
+RDEPEND=">=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/transformers-0.2.0.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
