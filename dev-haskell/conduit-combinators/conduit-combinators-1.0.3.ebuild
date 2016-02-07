@@ -44,3 +44,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/safe
 		dev-haskell/silently )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-QC-2.8.2.patch
+}
