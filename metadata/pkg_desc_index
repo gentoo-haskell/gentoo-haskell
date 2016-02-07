@@ -707,6 +707,7 @@ dev-haskell/hstringtemplate 0.7.3-r1 0.8.3: StringTemplate implementation in Has
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx2hs 0.13.4: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyslog 1.6 2.0: FFI interface to syslog(3) from POSIX.1-2001
+dev-haskell/htaglib 1.0.1: Bindings to TagLib, audio meta-data library
 dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
