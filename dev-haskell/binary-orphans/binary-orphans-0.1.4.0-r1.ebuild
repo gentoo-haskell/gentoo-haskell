@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.10.1:=[pro
 	>=dev-haskell/binary-0.5.1.1:=[profile?] <dev-haskell/binary-0.8.1:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/scientific-0.3.3.8:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/semigroups-0.16.2.2:=[profile?] <dev-haskell/semigroups-0.18.2:=[profile?]
-	>=dev-haskell/tagged-0.7.3:=[profile?] <dev-haskell/tagged-0.8.4:=[profile?]
+	>=dev-haskell/semigroups-0.16.2.2:=[profile?]
+	>=dev-haskell/tagged-0.7.3:=[profile?]
 	>=dev-haskell/text-1.2.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-binary-0.1.0:=[profile?] <dev-haskell/text-binary-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.5.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -37,3 +37,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8.3.2 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups               >=0.16.2.2  && <0.18.1' 'semigroups               >=0.16.2.2' \
+		'tagged                   >=0.7.3     && <0.8.3' 'tagged                   >=0.7.3'
+}
