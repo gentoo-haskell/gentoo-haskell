@@ -77,7 +77,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp"
+IUSE="doc +ghcbootstrap ghcmakebinary +gmp +profile"
 IUSE+=" binary"
 
 RDEPEND="
@@ -492,11 +492,7 @@ src_configure() {
 		# must build docs and include them into the binary .tbz2 package
 		# app-text/dblatex is not in portage, can not build PDF or PS
 		echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
-		if use doc; then
-			echo "BUILD_SPHINX_HTML = YES" >> mk/build.mk
-		else
-			echo "BUILD_SPHINX_HTML = NO" >> mk/build.mk
-		fi
+		echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
 
 		# this controls presence on 'xhtml' and 'haddock' in final install
 		echo "HADDOCK_DOCS       = YES" >> mk/build.mk
@@ -530,6 +526,7 @@ src_configure() {
 		if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
 			echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
 		fi
+		echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
 
 		# Get ghc from the unpacked binary .tbz2
 		# except when bootstrapping we just pick ghc up off the path
@@ -537,11 +534,7 @@ src_configure() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		if use gmp; then
-			echo "INTEGER_LIBRARY=integer-gmp" >> mk/build.mk
-		else
-			echo "INTEGER_LIBRARY=integer-simple" >> mk/build.mk
-		fi
+		echo "INTEGER_LIBRARY = $(usex gmp integer-gmp integer-simple)" >> mk/build.mk
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
