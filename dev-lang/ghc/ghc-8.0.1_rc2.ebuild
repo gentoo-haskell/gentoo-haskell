@@ -16,8 +16,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator
-[[ ${PV} = *9999* ]] && inherit git-r3
+inherit multilib pax-utils toolchain-funcs versionator
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -28,12 +27,12 @@ arch_binaries=""
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PVR}-amd64.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PVR}-x86.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -57,7 +56,7 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-#GHC_PV=8.0.0.20160204 # uncomment only for -rc ebuilds
+GHC_PV=8.0.0.20160204 # uncomment only for -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
@@ -69,15 +68,10 @@ BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 )
 
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-	unset SRC_URI
-fi
-
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp"
 IUSE+=" binary"
 
 RDEPEND="
@@ -95,16 +89,9 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 "
 
-# release tarballs ship generated lexers/parsers
-[[ ${PV} = *9999* ]] && DEPEND+="
-	ghcbootstrap? ( >=dev-haskell/alex-3.1.3
-		>=dev-haskell/happy-1.19.3 )
-"
-
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-[[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
 # Move it to pkg_setup() when bug #566534 gets resolved
@@ -350,15 +337,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		EGIT_BRANCH="master"
-		if [[ -n ${GHC_BRANCH} ]]; then
-			EGIT_BRANCH="${GHC_BRANCH}"
-		fi
-
-		git-r3_src_unpack
-	fi
-
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
@@ -368,7 +346,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
-	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
+	unpack ${ONLYA}
 }
 
 src_prepare() {
@@ -501,27 +479,6 @@ src_configure() {
 		# this controls presence on 'xhtml' and 'haddock' in final install
 		echo "HADDOCK_DOCS       = YES" >> mk/build.mk
 
-		# not used outside of ghc's test
-		if [[ -n ${GHC_BUILD_DPH} ]]; then
-				echo "BUILD_DPH = YES" >> mk/build.mk
-			else
-				echo "BUILD_DPH = NO" >> mk/build.mk
-		fi
-
-		# might need additional fiddling with --host parameter:
-		#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
-		if is_crosscompile; then
-			if [[ ${CHOST} != ${CTARGET} ]]; then
-				echo "Stage1Only=YES" >> mk/build.mk
-			fi
-			# in registerised mode ghc is too keen to use llvm
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			# above is not enough to give up on llvm (x86_64 host, ia64 target)
-			econf_args+=(--enable-unregisterised)
-			# otherwise stage1 tries to run nonexistent ghc-split.lprl
-			echo "SplitObjs=NO" >> mk/build.mk
-		fi
-
 		# allows overriding build flavours for libraries:
 		# v   - vanilla (static libs)
 		# p   - profiled
@@ -545,10 +502,6 @@ src_configure() {
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
-
-		if [[ ${PV} == *9999* ]]; then
-			perl boot || die "perl boot failed"
-		fi
 
 		local econf_args=()
 
@@ -595,22 +548,11 @@ src_compile() {
 	fi # ! use binary
 }
 
-src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	make $make_test_target stage=2 THREADS=$(makeopts_jobs)
-}
-
 src_install() {
 	if use binary; then
 		use prefix && mkdir -p "${ED}"
 		mv "${S}/usr" "${ED}"
 	else
-		[[ -f VERSION ]] || emake VERSION
 
 		emake install DESTDIR="${D}"
 		dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
@@ -634,6 +576,10 @@ src_install() {
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/$(cross)haddock
 
+		if [[ ! -f "${S}/VERSION" ]]; then
+			echo "${GHC_PV}" > "${S}/VERSION" \
+				|| die "Could not create file ${S}/VERSION"
+		fi
 		if ! is_crosscompile; then
 			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
 			newbashcomp utils/completion/ghc.bash         ghc
