@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides a data type @These a b@ which can hold a value of either
+		type or values of each type. This is usually thought of as an &quot;inclusive or&quot;
+		type (contrasting @Either a b@ as &quot;exclusive or&quot;) or as an &quot;outer join&quot; type
+		(contrasting @(a, b)@ as &quot;inner join&quot;).
+		
+		The major use case of this is provided by the @Align@ class, representing a
+		generalized notion of &quot;zipping with padding&quot; that combines structures without
+		truncating to the size of the smaller input.
+		
+		Also included is @ChronicleT@, a monad transformer based on the Monad instance
+		for @These a@, along with the usual monad transformer bells and whistles.
+	</longdescription>
+</pkgmetadata>
