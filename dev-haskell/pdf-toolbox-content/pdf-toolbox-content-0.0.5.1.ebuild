@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,13 +19,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
-	>=dev-haskell/errors-2.0:=[profile?] <dev-haskell/errors-3.0:=[profile?]
+	dev-haskell/base16-bytestring:=[profile?]
 	dev-haskell/io-streams:=[profile?]
-	dev-haskell/scientific:=[profile?]
-	dev-haskell/transformers:=[profile?]
-	dev-haskell/zlib-bindings:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-haskell/pdf-toolbox-core-0.0.4:=[profile?] <dev-haskell/pdf-toolbox-core-0.0.5:=[profile?]
+	dev-haskell/text:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.8
 "
