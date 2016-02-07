@@ -901,7 +901,7 @@ dev-haskell/mockery 0.3.2: Support functions for automated testing
 dev-haskell/monad-control 1.0.0.5: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.1: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.17: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.18: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
@@ -1519,7 +1519,7 @@ dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a dat
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.6: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.17.1: The yesod helper executable
-dev-haskell/yesod-content-pdf 0.2.0.2: PDF Content Type for Yesod
+dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.19: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
