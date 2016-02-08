@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+monad-control-1"
 
-RDEPEND=">=dev-haskell/async-2.0.1:=[profile?] <dev-haskell/async-2.1:=[profile?]
+RDEPEND=">=dev-haskell/async-2.0.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
 		dev-haskell/tasty-th )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'async >= 2.0.1 && < 2.1' 'async >= 2.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

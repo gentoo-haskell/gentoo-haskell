@@ -31,5 +31,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2'
+		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2' \
+		'base >= 4.2 && < 4.9' 'base >= 4.2'
 }

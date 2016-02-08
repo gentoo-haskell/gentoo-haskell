@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?]
 	dev-haskell/mmorph:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/void-0.5.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -34,3 +34,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.7
 		dev-haskell/safe )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers             >= 0.2.2        && < 0.5' 'transformers             >= 0.2.2'
+}
