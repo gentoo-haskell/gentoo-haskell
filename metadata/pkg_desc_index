@@ -467,7 +467,7 @@ dev-haskell/gamma 0.9.0.2: Gamma function and related functions
 dev-haskell/gconf 0.13.0.3: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
-dev-haskell/generic-deriving 1.9.0: Generic programming library for generalised deriving
+dev-haskell/generic-deriving 1.9.0 1.10.0: Generic programming library for generalised deriving
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
@@ -1080,7 +1080,7 @@ dev-haskell/primitive 0.6.1.0-r1: Primitive memory-related operations
 dev-haskell/probability 0.2.5: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
-dev-haskell/process-extras 0.3.3.7: Process extras
+dev-haskell/process-extras 0.3.3.8: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.3.0.1: Treemap visualiser for GHC prof files
