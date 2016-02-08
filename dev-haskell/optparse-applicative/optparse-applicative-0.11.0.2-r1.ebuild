@@ -15,14 +15,21 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2' \
+		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3' \
+		'process >= 1.0 && < 1.3' 'process >= 1.0'
+}
