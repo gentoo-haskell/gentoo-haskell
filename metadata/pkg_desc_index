@@ -907,7 +907,7 @@ dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
-dev-haskell/monad-parallel 0.7.2.0: Parallel execution of monadic computations
+dev-haskell/monad-parallel 0.7.2.1: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.1: Monad products
 dev-haskell/monad-unify 0.2.2: Generic first-order unification
