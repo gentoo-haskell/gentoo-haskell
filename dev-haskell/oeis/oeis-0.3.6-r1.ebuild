@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+RDEPEND=">=dev-haskell/http-4000.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] )
@@ -34,7 +34,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'HUnit                == 1.2.*' 'HUnit                >= 1.2'
+		'HUnit                == 1.2.*' 'HUnit                >= 1.2' \
+		'HTTP    == 4000.2.*' 'HTTP    >= 4000.2'
 }
 
 src_configure() {
