@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
 	>=dev-haskell/haddock-2.7.2:=
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
-	>=dev-haskell/http-4000.1.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+	>=dev-haskell/http-4000.1.2:=[profile?]
 	>=dev-haskell/ltk-0.15.0.1:=[profile?] <dev-haskell/ltk-0.16:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	dev-haskell/resourcet:=[profile?]
@@ -47,7 +47,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'HUnit >=1.2 && <1.3' 'HUnit >=1.2'
+		'HUnit >=1.2 && <1.3' 'HUnit >=1.2' \
+		'HTTP >=4000.1.2 && <4000.3' 'HTTP >=4000.1.2'
 }
 
 src_configure() {

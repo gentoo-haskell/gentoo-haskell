@@ -30,7 +30,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.16:=[profile?]
 	>=dev-haskell/hoauth2-0.4.2:=[profile?] <dev-haskell/hoauth2-0.5:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/hstringtemplate-0.6:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
-	>=dev-haskell/http-4000.0:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+	>=dev-haskell/http-4000.0:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
 	>=dev-haskell/http-conduit-2.1.4:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/json-0.4:=[profile?] <dev-haskell/json-0.10:=[profile?]
@@ -67,7 +67,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7'
+		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7' \
+		'HTTP >= 4000.0 && < 4000.3' 'HTTP >= 4000.0'
 }
 
 src_configure() {

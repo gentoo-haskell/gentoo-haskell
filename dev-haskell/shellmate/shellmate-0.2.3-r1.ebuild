@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+download-extras"
 
-RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+RDEPEND=">=dev-haskell/http-4000.2:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -30,6 +30,11 @@ RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.3:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HTTP         >=4000.2 && <4000.3' 'HTTP         >=4000.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
