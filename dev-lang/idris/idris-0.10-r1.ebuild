@@ -22,7 +22,7 @@ IUSE="curses ffi gmp"
 RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	<dev-haskell/async-2.1:=[profile?]
+	dev-haskell/async:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -69,7 +69,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'zlib < 0.6.1' 'zlib' \
-		'vector < 0.12' 'vector'
+		'vector < 0.12' 'vector' \
+		'async < 2.1' 'async'
 }
 
 src_configure() {
