@@ -21,8 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="+cpphs uhc +stdlib emacs"
 
-RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0.5:=[profile?]
-	>=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.9:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
 	>=dev-haskell/edit-distance-0.2.1.2:=[profile?] <dev-haskell/edit-distance-0.3:=[profile?]
