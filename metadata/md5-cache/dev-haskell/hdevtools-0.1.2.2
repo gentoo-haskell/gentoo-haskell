@@ -1,14 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/hspec-meta-2.2.0 ) >=dev-haskell/cabal-1.1.4
-DESCRIPTION=Automatically discover and run Hspec tests
+DEPEND=dev-haskell/cmdargs:= dev-haskell/ghc-paths:= dev-haskell/network:= dev-haskell/syb:= dev-haskell/transformers:= >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Persistent GHC powered background server for FAST haskell development tools
 EAPI=5
-HOMEPAGE=http://hspec.github.io/
-IUSE=profile test
+HOMEPAGE=https://github.com/hdevtools/hdevtools/
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
-RDEPEND=>=dev-lang/ghc-7.4.1:=
-SLOT=0/2.2.1
-SRC_URI=mirror://hackage/packages/archive/hspec-discover/2.2.1/hspec-discover-2.2.1.tar.gz
+RDEPEND=dev-haskell/cmdargs:= dev-haskell/ghc-paths:= dev-haskell/network:= dev-haskell/syb:= dev-haskell/transformers:= >=dev-lang/ghc-7.4.1:=
+SLOT=0
+SRC_URI=mirror://hackage/packages/archive/hdevtools/0.1.2.2/hdevtools-0.1.2.2.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	28fb3e5852485af1c348d446b0b98389	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=7477569b7d424c607bf23b93733da125
+_md5_=5c000a4a026a7d4bcb7bb53a0cdcf7ab
