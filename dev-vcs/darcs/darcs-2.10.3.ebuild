@@ -70,6 +70,11 @@ DEPEND="${RDEPEND}
 	curl? ( virtual/pkgconfig )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.5 && < 4.9' 'base >= 4.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag curl curl) \
