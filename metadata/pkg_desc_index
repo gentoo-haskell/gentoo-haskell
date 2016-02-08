@@ -1,7 +1,7 @@
 app-accessibility/hsay 1.1.0-r1: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
 app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3-r1 0.15.1.4-r1 9999: Haskell IDE written in Haskell
-app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9 9999: Metadata collection for leksah
+app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9-r1 9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.3: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
@@ -16,7 +16,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.0.9: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -378,6 +378,7 @@ dev-haskell/dual-tree 0.2.0.8: Rose trees with cached and accumulating monoidal 
 dev-haskell/dynamic-state 0.2.0.0: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.1: Cross-platform File handling
+dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/edisonapi 1.2.2 1.2.2.1 1.3: A library of efficent, purely-functional data structures (API)
 dev-haskell/edisoncore 1.2.2-r1 1.2.2.1 1.3: A library of efficent, purely-functional data structures (Core Implementations)
 dev-haskell/edit-distance 0.2.2.1: Levenshtein and restricted Damerau-Levenshtein edit distances
@@ -541,6 +542,7 @@ dev-haskell/gtksourceview2 0.13.2.1: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.2.1: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22: access Hackage's package database via Data.Map
+dev-haskell/hackage-security 0.5.0.2: Hackage security library
 dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2_p20130809 2.13.2.1 2.14.0_rc1 2.14.2-r1 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 9999: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-api 2.16.1: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1: Library exposing some functionality of Haddock
@@ -713,7 +715,7 @@ dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 0.1.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.2.22: A library for client-side HTTP
+dev-haskell/http 4000.2.22 4000.3.2: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r2: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.27: An HTTP client engine, intended as a base layer for more user-friendly packages
@@ -985,7 +987,7 @@ dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tup
 dev-haskell/numtype 1.0-r1 1.0.1 1.1: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.0.1.1 1.1.0.1: Explicitly handled object names
-dev-haskell/oeis 0.3.6: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
+dev-haskell/oeis 0.3.6-r1: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
@@ -1205,7 +1207,7 @@ dev-haskell/shellac-compatline 0.9.5.2: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.5.2: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.5.2: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
-dev-haskell/shellmate 0.2.3: Simple interface for shell scripting in Haskell
+dev-haskell/shellmate 0.2.3-r1: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.5: shell-like (systems) programming in Haskell
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
@@ -1299,7 +1301,7 @@ dev-haskell/tagsoup 0.13.8: Parsing and extracting information from (possibly ma
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
-dev-haskell/tar 0.4.5.0: Reading, writing and manipulating ".tar" archive files
+dev-haskell/tar 0.4.5.0 0.5.0.1: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2 0.11.0.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
 dev-haskell/tasty-golden 2.3.1: Golden tests support for tasty
@@ -1624,7 +1626,7 @@ sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portab
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.12.0.1-r1: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.0.1-r2: Wiki using happstack, git or darcs, and pandoc
 www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
