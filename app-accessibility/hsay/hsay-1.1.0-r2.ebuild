@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hclip-3:= <dev-haskell/hclip-4:=
-	>=dev-haskell/http-4000.2:= <dev-haskell/http-4000.3:=
+	>=dev-haskell/http-4000.2:=
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -28,5 +28,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base >=4.7 && <4.8' 'base >=4.7'
+		'base >=4.7 && <4.8' 'base >=4.7' \
+		'HTTP >= 4000.2 && < 4000.3' 'HTTP >= 4000.2'
 }
