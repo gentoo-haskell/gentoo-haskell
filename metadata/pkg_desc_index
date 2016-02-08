@@ -350,7 +350,7 @@ dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with u
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/distributed-process 0.5.5.1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.0 0.2.3.1: Simple zero-configuration backend for Cloud Haskell
-dev-haskell/distributed-process-tests 0.4.3.2: Tests and test support tools for distributed-process
+dev-haskell/distributed-process-tests 0.4.3.3: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.3.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.4.4: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
@@ -456,7 +456,7 @@ dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
-dev-haskell/frown 0.6.1-r1: A parser generator for Haskell
+dev-haskell/frown 0.6.1-r1 0.6.2.2: LALR(k) parser generator
 dev-haskell/fsnotify 0.1.0.3 0.2.1: Cross platform library for file change notification
 dev-haskell/fst 0.10.0.1: Finite state transducers
 dev-haskell/ftgl 1.333 2.1: Portable TrueType font rendering for OpenGL using the Freetype2 library
@@ -468,7 +468,7 @@ dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics librar
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.9.0: Generic programming library for generalised deriving
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
-dev-haskell/generics-sop 0.2.0.0: Generic Programming using True Sums of Products
+dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.2: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
@@ -559,7 +559,7 @@ dev-haskell/happstack-heist 7.2.4: Support for using Heist templates in Happstac
 dev-haskell/happstack-hsp 7.3.7: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
-dev-haskell/happstack-server 7.4.5: Web related tools and services
+dev-haskell/happstack-server 7.4.6: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/hare 0.8.2.3: the Haskell Refactorer
@@ -631,7 +631,7 @@ dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
-dev-haskell/hjsmin 0.1.5.1: Haskell implementation of a javascript minifier
+dev-haskell/hjsmin 0.1.5.2: Haskell implementation of a javascript minifier
 dev-haskell/hledger 0.25.1 0.26 0.27: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27: Core data types, parsers and functionality for the hledger accounting tools
@@ -723,7 +723,7 @@ dev-haskell/http-client-tls 0.2.2: http-client backend using the connection pack
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.8: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
-dev-haskell/http-media 0.6.2: Processing HTTP Content-Type and Accept headers
+dev-haskell/http-media 0.6.3: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
@@ -745,7 +745,7 @@ dev-haskell/ieee754 0.7.8: Utilities for dealing with IEEE floating point number
 dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
 dev-haskell/ihaskell 0.6.4.0-r1 0.8.2.0 0.8.3.0: A Haskell backend kernel for the IPython project
-dev-haskell/imagemagick 0.0.4: bindings to imagemagick library
+dev-haskell/imagemagick 0.0.4.1: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
@@ -779,7 +779,7 @@ dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.2.3: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.6.4: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
+dev-haskell/juicypixels 3.2.7: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.3.1-r3: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keter 1.4.3.1: Web application deployment manager, focusing on Haskell web frameworks
