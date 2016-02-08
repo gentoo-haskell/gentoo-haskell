@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/listlike-4:=[profile?]
+RDEPEND=">=dev-haskell/generic-deriving-1.10:=[profile?]
+	>=dev-haskell/listlike-4:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
