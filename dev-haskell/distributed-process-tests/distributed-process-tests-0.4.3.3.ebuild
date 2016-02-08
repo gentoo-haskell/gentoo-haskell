@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/distributed-process-0.5.3:=[profile?] <dev-haskell/distributed-process-0.6:=[profile?]
 	dev-haskell/distributed-static:=[profile?]
-	>=dev-haskell/hunit-1.2:=[profile?]
+	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-1.4:=[profile?]
 	>=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-transport-0.4.1.0:=[profile?] <dev-haskell/network-transport-0.5:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
@@ -36,8 +36,3 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/network-transport-tcp-0.3 <dev-haskell/network-transport-tcp-0.5 )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2'
-}
