@@ -50,6 +50,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3 )
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-warp-3.10.10.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag tls tls)
