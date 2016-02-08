@@ -1,0 +1,46 @@
+diff --git a/linear.cabal b/linear.cabal
+index 3ac105e..8855c20 100644
+--- a/linear.cabal
++++ b/linear.cabal
+@@ -63,3 +63,4 @@ library
+     vector               >= 0.10  && < 0.12,
+-    void                 >= 0.6   && < 1
++    void                 >= 0.6   && < 1,
++    base-orphans
+ 
+diff --git a/src/Linear/Instances.hs b/src/Linear/Instances.hs
+index 19ec314..410e926 100644
+--- a/src/Linear/Instances.hs
++++ b/src/Linear/Instances.hs
+@@ -46,2 +46,3 @@ instance (Hashable k, Eq k) => Bind (HashMap k) where
+ #if __GLASGOW_HASKELL__ < 711
++#if ! MIN_VERSION_base_orphans(0,5,1)
+ instance Functor Complex where
+@@ -50,2 +51,3 @@ instance Functor Complex where
+ #endif
++#endif
+ 
+@@ -55,2 +57,3 @@ instance Apply Complex where
+ #if __GLASGOW_HASKELL__ < 711
++#if ! MIN_VERSION_base_orphans(0,5,1)
+ instance Applicative Complex where
+@@ -59,2 +62,3 @@ instance Applicative Complex where
+ #endif
++#endif
+ 
+@@ -67,2 +71,3 @@ instance Bind Complex where
+ #if __GLASGOW_HASKELL__ < 711
++#if ! MIN_VERSION_base_orphans(0,5,1)
+ instance Monad Complex where
+@@ -76,2 +81,3 @@ instance Monad Complex where
+ #endif
++#endif
+ 
+@@ -84,2 +90,3 @@ instance MonadFix Complex where
+ #if __GLASGOW_HASKELL__ < 711
++#if ! MIN_VERSION_base_orphans(0,5,1)
+ instance Foldable Complex where
+@@ -92,2 +99,3 @@ instance Traversable Complex where
+ #endif
++#endif
+ 

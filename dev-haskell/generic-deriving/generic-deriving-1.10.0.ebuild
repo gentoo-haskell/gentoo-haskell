@@ -9,18 +9,16 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Process extras"
-HOMEPAGE="https://github.com/seereason/process-extras"
+DESCRIPTION="Generic programming library for generalised deriving"
+HOMEPAGE="https://github.com/dreixel/generic-deriving"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="MIT"
+LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/listlike-4:=[profile?]
-	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
