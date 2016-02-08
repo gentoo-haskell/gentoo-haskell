@@ -35,6 +35,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.9 )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base        >= 4.3   && < 4.9' 'base        >= 4.3' \
+		'base             >= 4.3   && < 4.9' 'base             >= 4.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bytestring-builder bytestring-builder)
