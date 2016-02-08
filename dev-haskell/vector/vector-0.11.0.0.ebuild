@@ -34,7 +34,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		"QuickCheck >=  2.7  && < 2.8" "QuickCheck >=  2.7"
+		"QuickCheck >=  2.7  && < 2.8" "QuickCheck >=  2.7" \
+		'base >= 4.3 && < 4.9' 'base >= 4.3' \
+		'ghc-prim >= 0.2 && < 0.5' 'ghc-prim >= 0.2'
 }
 
 src_configure() {
