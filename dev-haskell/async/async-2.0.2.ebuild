@@ -27,3 +27,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.3 && < 4.9' 'base >= 4.3'
+}
