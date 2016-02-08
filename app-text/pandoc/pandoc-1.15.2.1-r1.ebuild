@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.11:=[profi
 	>=dev-haskell/haddock-library-1.1:=[profile?] <dev-haskell/haddock-library-1.3:=[profile?]
 	>=dev-haskell/highlighting-kate-0.6:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
 	>=dev-haskell/hslua-0.3:=[profile?] <dev-haskell/hslua-0.5:=[profile?]
-	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+	>=dev-haskell/http-4000.0.5:=[profile?]
 	>=dev-haskell/juicypixels-3.1.6.1:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-locale-1:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
@@ -77,6 +77,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 	embed_data_files? ( dev-haskell/hsb2hs )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HTTP >= 4000.0.5 && < 4000.3' 'HTTP >= 4000.0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
