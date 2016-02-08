@@ -1367,7 +1367,7 @@ dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compile
 dev-haskell/torrent 10000.0.0: BitTorrent file parser and generater
 dev-haskell/transformers 0.3.0.0-r1 0.4.2.0 0.4.3.0 0.5.0.0: Concrete functor and monad transformers
 dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a transformer stack
-dev-haskell/transformers-compat 0.4.0.4: A small compatibility shim for dev-haskell/transformers
+dev-haskell/transformers-compat 0.4.0.4-r1: A small compatibility shim for dev-haskell/transformers
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.0: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
