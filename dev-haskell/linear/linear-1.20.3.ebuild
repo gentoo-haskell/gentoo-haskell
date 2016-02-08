@@ -35,6 +35,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1:=[profile?]
+	dev-haskell/base-orphans:=
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -45,6 +46,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-base-orphans-0.5.1.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
