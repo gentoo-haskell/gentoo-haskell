@@ -924,7 +924,7 @@ dev-haskell/monadplus 1.4.2: Haskell98 partial maps and filters over MonadPlus
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4.2.2: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
-dev-haskell/monads-tf 0.1.0.2: Monad classes, using type families
+dev-haskell/monads-tf 0.1.0.2-r1: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.1: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.3: Various extra monoid-related definitions and utilities
