@@ -36,6 +36,11 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.0 && < 4.9' 'base >= 4.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-build-tests
