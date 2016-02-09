@@ -241,7 +241,7 @@ dev-haskell/connection 0.2.4 0.2.5: Simple and easy network connections API
 dev-haskell/constraints 0.4.1.3: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
-dev-haskell/contravariant 1.3.3: Contravariant functors
+dev-haskell/contravariant 1.3.3 1.4: Contravariant functors
 dev-haskell/control-monad-exception 0.11.2: Explicitly typed, checked exceptions with stack traces
 dev-haskell/control-monad-free 0.5.3 0.6.1: Free monads and monad transformers
 dev-haskell/control-monad-loop 0.1: Simple monad transformer for imperative-style loops
