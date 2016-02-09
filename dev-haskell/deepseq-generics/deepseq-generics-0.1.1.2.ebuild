@@ -29,5 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'ghc-prim >= 0.2 && < 0.4' 'ghc-prim >= 0.2 && < 0.5'
+		'ghc-prim >= 0.2 && < 0.4' 'ghc-prim >= 0.2' \
+		'base >= 4.5 && < 4.9' 'base >= 4.5'
 }
