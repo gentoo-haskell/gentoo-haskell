@@ -575,6 +575,7 @@ dev-haskell/hashtables 1.2.1.0-r1: Mutable hash tables in the ST monad
 dev-haskell/haskeline 0.7.2.1 0.7.2.2: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 4.2.6: A program to find and display the docs and type of a name
+dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
 dev-haskell/haskell-lexer 1.0-r1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
 dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0: Name resolution library for Haskell
