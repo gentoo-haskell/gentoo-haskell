@@ -352,7 +352,7 @@ dev-haskell/distributed-process 0.5.5.1: Cloud Haskell: Erlang-style concurrency
 dev-haskell/distributed-process-simplelocalnet 0.2.3.0 0.2.3.1: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.3.0: Compositional, type-safe, polymorphic static values and closures
-dev-haskell/distributive 0.4.4: Distributive functors -- Dual to Traversable
+dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
@@ -1086,7 +1086,7 @@ dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.3.0.1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
-dev-haskell/profunctors 4.4.1 5.1.2: Profunctors
+dev-haskell/profunctors 4.4.1 5.1.2: Profunctors haskell library
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
