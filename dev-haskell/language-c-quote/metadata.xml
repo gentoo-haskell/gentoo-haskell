@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name='full-haskell-antiquotes'>Support full Haskell expressions/patterns in antiquotes</flag>
+	</use>
 	<longdescription>
 		This package provides a general parser for the C language, including most GCC
 		extensions and some CUDA and OpenCL extensions.
