@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'async >= 2.0.1 && < 2.1' 'async >= 2.0.1'
+		'async >= 2.0.1 && < 2.1' 'async >= 2.0.1' \
+		'base >= 4.5 && < 4.9' 'base >= 4.5'
 }
 
 src_configure() {

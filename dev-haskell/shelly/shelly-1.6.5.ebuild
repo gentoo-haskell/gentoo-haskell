@@ -40,6 +40,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/text-0.11 )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'time                      >= 1.3 && < 1.6' 'time                      >= 1.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag lifted lifted)
