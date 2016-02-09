@@ -801,7 +801,7 @@ dev-haskell/lambdabot-social-plugins 5.0.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1: Lambdabot trusted code
 dev-haskell/lambdabot-utils 4.2.2: Utility libraries for the advanced IRC bot, Lambdabot
 dev-haskell/language-c 0.4.7: Analysis and generation of C code
-dev-haskell/language-c-quote 0.8.0 0.11.3: C/CUDA/OpenCL/Objective-C quasiquoting library
+dev-haskell/language-c-quote 0.8.0 0.11.3 0.11.4: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-ecmascript 0.17.0.2: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code

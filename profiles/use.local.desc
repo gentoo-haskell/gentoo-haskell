@@ -213,6 +213,7 @@ dev-haskell/json:pretty - Add support for using pretty printing combinators
 dev-haskell/keter:system-filepath - Deprecated in favor of filepath
 dev-haskell/lambdabot-misc-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/lambdabot-reference-plugins:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
 dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library for comparative performance analysis. Defaults to being turned off to avoid the extra dependency.
 dev-haskell/lens:dump-splices - Build and run the doctests test-suite.
