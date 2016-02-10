@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-6:=[prof
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/bytes-0.4:=[profile?] <dev-haskell/bytes-1:=[profile?]
 	>=dev-haskell/cereal-0.3.5.2:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
-	>=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-5:=[profile?]
+	>=dev-haskell/comonad-3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hashable-extras-0.1:=[profile?] <dev-haskell/hashable-extras-1:=[profile?]
 	>=dev-haskell/prelude-extras-0.3:=[profile?] <dev-haskell/prelude-extras-1:=[profile?]
@@ -39,7 +39,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'doctest   >= 0.9 && < 0.10' 'doctest   >= 0.9' \
-		'vector    >= 0.9 && < 0.11' 'vector    >= 0.9'
+		'vector    >= 0.9 && < 0.11' 'vector    >= 0.9' \
+		'comonad          >= 3       && < 5' 'comonad          >= 3'
 }
 
 src_configure() {

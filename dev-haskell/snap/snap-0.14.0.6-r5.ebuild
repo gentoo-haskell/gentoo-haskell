@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
-	>=dev-haskell/comonad-1.1:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
+	>=dev-haskell/comonad-1.1:=[profile?]
 	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.4:=[profile?]
 	>=dev-haskell/directory-tree-0.11:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
@@ -59,7 +59,8 @@ src_prepare() {
 	cabal_chdeps \
 		'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4 && < 0.10)' 'aeson                     (>= 0.6 && < 0.7) || (>= 0.7.0.4)' \
 		'lens                      >= 3.7.6    && < 4.13' 'lens                      >= 3.7.6' \
-		'cereal                    >= 0.3      && < 0.5' 'cereal                    >= 0.3'
+		'cereal                    >= 0.3      && < 0.5' 'cereal                    >= 0.3' \
+		'comonad                   >= 1.1      && < 4.3' 'comonad                   >= 1.1'
 }
 
 src_configure() {

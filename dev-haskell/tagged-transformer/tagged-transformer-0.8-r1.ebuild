@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/contravariant-0.3:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-1:=[profile?]
@@ -34,5 +34,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'semigroupoids             >= 4        && < 5' 'semigroupoids             >= 4        && < 6'
+		'semigroupoids             >= 4        && < 5' 'semigroupoids             >= 4        && < 6' \
+		'comonad                   >= 4        && < 5' 'comonad                   >= 4'
 }

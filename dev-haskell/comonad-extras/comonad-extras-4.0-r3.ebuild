@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/distributive-0.3.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -33,5 +33,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'transformers         >= 0.2   && < 0.4' 'transformers         >= 0.2   && < 0.5' \
-		'semigroupoids        >= 4     && < 5' 'semigroupoids        >= 4'
+		'semigroupoids        >= 4     && < 5' 'semigroupoids        >= 4' \
+		'comonad              >= 4     && < 5' 'comonad              >= 4'
 }

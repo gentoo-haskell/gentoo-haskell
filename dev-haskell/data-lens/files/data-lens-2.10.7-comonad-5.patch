@@ -1,0 +1,27 @@
+diff --git a/data-lens.cabal b/data-lens.cabal
+index dc828a0..64f66fc 100644
+--- a/data-lens.cabal
++++ b/data-lens.cabal
+@@ -30,3 +30,4 @@ library
+     semigroupoids        >= 4.0     && < 5.1,
+-    transformers         >= 0.2.0   && < 0.5
++    transformers         >= 0.2.0   && < 0.5,
++    transformers-compat  >= 0.4
+ 
+diff --git a/src/Data/Lens/Partial/Common.hs b/src/Data/Lens/Partial/Common.hs
+index 0fd467a..2e25e66 100644
+--- a/src/Data/Lens/Partial/Common.hs
++++ b/src/Data/Lens/Partial/Common.hs
+@@ -10,3 +10,3 @@ import Data.Foldable (any, all)
+ import Data.Functor.Identity
+-import Data.Functor.Coproduct
++import qualified Data.Functor.Sum as FSum
+ import Data.Maybe
+@@ -17,4 +17,6 @@ newtype PartialLens a b = PLens (a -> Maybe (Store b a))
+ -- A partial lens is a coalgebra for the Coproduct Identity (Store b) comonad.
+-runPLens :: PartialLens a b -> a -> (Coproduct Identity (Store b)) a
++runPLens :: PartialLens a b -> a -> (FSum.Sum Identity (Store b)) a
+ runPLens (PLens f) a = maybe (left (Identity a)) right (f a)
++    where left  = FSum.InL
++          right = FSum.InR
+ 

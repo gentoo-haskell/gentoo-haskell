@@ -18,14 +18,22 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+derivedatatypeable"
 
-RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4.0:=[profile?]
 	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
 	>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-comonad-5.patch
+
+	cabal_chdeps \
+		'comonad              >= 4.0     && < 4.3' 'comonad              >= 4.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
