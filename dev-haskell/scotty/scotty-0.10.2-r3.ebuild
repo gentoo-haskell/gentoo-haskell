@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-haskell/wai-3.0.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
 	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
 	>=dev-haskell/warp-3.0.0:=[profile?]
@@ -48,5 +48,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'warp                >= 3.0.0    && < 3.1' 'warp                >= 3.0.0' \
-		'aeson               >= 0.6.2.1  && < 0.10' 'aeson               >= 0.6.2.1'
+		'aeson               >= 0.6.2.1  && < 0.10' 'aeson               >= 0.6.2.1' \
+		'transformers-compat >= 0.4      && < 0.5' 'transformers-compat >= 0.4'
 }
