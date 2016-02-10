@@ -1,0 +1,9 @@
+diff --git a/src/Data/Bifunctor/TH.hs b/src/Data/Bifunctor/TH.hs
+index 7a39bda..027036e 100644
+--- a/src/Data/Bifunctor/TH.hs
++++ b/src/Data/Bifunctor/TH.hs
+@@ -674,3 +674,3 @@ buildTypeInstanceFromTys biClass tyConName dataCxt varTysOrig isDataFamily = do
+     -- If any of the dropped types were polykinded, ensure that there are of kind
+-    -- * after substituting * for the dropped kind variables. If not, throw an error.
++    -- \* after substituting \* for the dropped kind variables. If not, throw an error.
+     unless (all hasKindStar droppedTysExpSubst) $
