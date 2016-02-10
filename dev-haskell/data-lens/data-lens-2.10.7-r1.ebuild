@@ -21,6 +21,7 @@ IUSE="+derivedatatypeable"
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?]
 	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
 	>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,6 +29,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-comonad-5.patch
+
 	cabal_chdeps \
 		'comonad              >= 4.0     && < 4.3' 'comonad              >= 4.0'
 }
