@@ -1337,7 +1337,7 @@ dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
-dev-haskell/text-show 2.1.2: Efficient conversion of values into Text
+dev-haskell/text-show 2.1.2 3: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.3.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
