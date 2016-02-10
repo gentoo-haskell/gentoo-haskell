@@ -20,9 +20,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/safe-0.3.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
-	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers-compat >= 0.4   && < 0.5' 'transformers-compat >= 0.4'
+}
