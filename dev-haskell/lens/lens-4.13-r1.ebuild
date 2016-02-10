@@ -23,7 +23,7 @@ RESTRICT=test # slow
 
 RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
-	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+	>=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/distributive-0.3:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-1:=[profile?]
@@ -75,6 +75,11 @@ DEPEND="${RDEPEND}
 											>=dev-haskell/test-framework-quickcheck2-0.2
 											>=dev-haskell/test-framework-th-0.2 ) ) ) ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad                   >= 4        && < 5' 'comonad                   >= 4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
