@@ -257,6 +257,15 @@ dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high_precision_date - Use a time storage with nano second precision.
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable.
+dev-haskell/pointed:comonad - optional instances
+dev-haskell/pointed:containers - optional instances
+dev-haskell/pointed:kan-extensions - optional instances
+dev-haskell/pointed:semigroupoids - optional instances
+dev-haskell/pointed:semigroups - optional instances
+dev-haskell/pointed:stm - optional instances
+dev-haskell/pointed:tagged - optional instances
+dev-haskell/pointed:transformers - optional instances
+dev-haskell/pointed:unordered-containers - optional instances
 dev-haskell/poppler:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library

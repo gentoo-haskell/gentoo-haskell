@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=dev-haskell/bifunctors:=[profile?] <dev-haskell/indexed-0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?] <dev-haskell/pointed-5:=[profile?] >=dev-lang/ghc-6.8.2:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=dev-haskell/bifunctors:=[profile?] <dev-haskell/indexed-0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?] dev-haskell/pointed:=[profile?] >=dev-lang/ghc-6.8.2:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Indexed functors, monads and comonads that require extensions to Haskell98
 EAPI=5
 HOMEPAGE=https://github.com/reinerp/indexed-extras
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=dev-haskell/bifunctors:=[profile?] <dev-haskell/indexed-0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?] <dev-haskell/pointed-5:=[profile?] >=dev-lang/ghc-6.8.2:=
+RDEPEND=dev-haskell/bifunctors:=[profile?] <dev-haskell/indexed-0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?] dev-haskell/pointed:=[profile?] >=dev-lang/ghc-6.8.2:=
 SLOT=0/0.1.1
 SRC_URI=mirror://hackage/packages/archive/indexed-extras/0.1.1/indexed-extras-0.1.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	28fb3e5852485af1c348d446b0b98389	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=5870ab9f3f76eb1d59a9a1b98fb8b844
+_md5_=ee191a42931dd32358edc59fcc022ea8
