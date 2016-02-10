@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/charset-0.3.5.1:=[profile?] <dev-haskell/charset-1:=[profile?]
-	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+	>=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/hashable-1.2.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-5:=[profile?]
@@ -43,3 +43,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.1
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad              >= 4       && < 5' 'comonad              >= 4'
+}
