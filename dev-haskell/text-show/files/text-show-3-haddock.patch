@@ -1,0 +1,9 @@
+diff --git a/src/TextShow/TH/Internal.hs b/src/TextShow/TH/Internal.hs
+index 86c7e43..31de8ed 100644
+--- a/src/TextShow/TH/Internal.hs
++++ b/src/TextShow/TH/Internal.hs
+@@ -936,3 +936,3 @@ buildTypeInstanceFromTys tsClass tyConName dataCxt varTysOrig isDataFamily = do
+     -- If any of the dropped types were polykinded, ensure that there are of kind
+-    -- * after substituting * for the dropped kind variables. If not, throw an error.
++    -- \* after substituting \* for the dropped kind variables. If not, throw an error.
+     unless (all hasKindStar droppedTysExpSubst) $
