@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+derivedatatypeable"
 
-RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-4.3:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4.0:=[profile?]
 	>=dev-haskell/data-lens-2.10.4:=[profile?] <dev-haskell/data-lens-2.11:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?] <=dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -27,6 +27,11 @@ RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-4.3:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad >= 4.0 && < 4.3' 'comonad >= 4.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
