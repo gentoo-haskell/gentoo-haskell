@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/contravariant-1.2.1:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/lens-4.7:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/doctest-0.9.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad                   >= 4        && < 5' 'comonad                   >= 4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
