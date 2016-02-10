@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/data-reify-0.6:=[profile?] <dev-haskell/data-reify-0.7:=[profile?]
 	>=dev-haskell/erf-2.0:=[profile?] <dev-haskell/erf-2.1:=[profile?]
 	>=dev-haskell/free-4.6.1:=[profile?] <dev-haskell/free-5:=[profile?]
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/doctest-0.9.0.1 <=dev-haskell/doctest-0.11 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad          >= 4     && < 5' 'comonad          >= 4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
