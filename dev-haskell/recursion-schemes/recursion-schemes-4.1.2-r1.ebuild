@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-4:=[profile?]
 	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'comonad              >= 4   && < 5' 'comonad              >= 4'
+}
