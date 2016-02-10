@@ -1229,7 +1229,7 @@ dev-haskell/snap-loader-dynamic 0.10.0.3: Snap: A Haskell Web Framework: dynamic
 dev-haskell/snap-loader-static 0.9.0.2: Snap: A Haskell Web Framework: static loader
 dev-haskell/snap-server 0.9.5.1-r1: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
-dev-haskell/socket-io 1.3.4: This library provides an implementation of Socket.io protocol (version 1)
+dev-haskell/socket-io 1.3.5: This library provides an implementation of Socket.io protocol (version 1)
 dev-haskell/socks 0.5.4: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r4: GUI functions as used in the book "The Haskell School of Expression"
