@@ -235,6 +235,7 @@ dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic v
 dev-haskell/conduit 1.2.6.1-r1: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.3.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.9.2: Batteries included conduit: adapters for common libraries
+dev-haskell/config-value 0.4.0.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0: Configuration management
 dev-haskell/connection 0.2.4 0.2.5: Simple and easy network connections API
@@ -767,6 +768,7 @@ dev-haskell/ipprint 0.6: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.0: IP Routing Table
 dev-haskell/ipython-kernel 0.6.1.0 0.8.2.0 0.8.3.0: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
+dev-haskell/irc-core 1.1.3: An IRC client library and text client
 dev-haskell/ircbot 0.6.2 0.6.4: A library for writing irc bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
