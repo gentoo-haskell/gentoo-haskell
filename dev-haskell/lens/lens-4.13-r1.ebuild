@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:
 	>=dev-haskell/exceptions-0.1.1:=[profile?] <dev-haskell/exceptions-1:=[profile?]
 	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/kan-extensions-4.2.1:=[profile?] <dev-haskell/kan-extensions-5:=[profile?]
+	>=dev-haskell/kan-extensions-4.2.1:=[profile?]
 	>=dev-haskell/mtl-2.0.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parallel-3.1.0.1:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?]
@@ -78,7 +78,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'comonad                   >= 4        && < 5' 'comonad                   >= 4'
+		'comonad                   >= 4        && < 5' 'comonad                   >= 4' \
+		'kan-extensions            >= 4.2.1    && < 5' 'kan-extensions            >= 4.2.1'
 }
 
 src_configure() {
