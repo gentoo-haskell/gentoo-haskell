@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/comonad-3:=[profile?]
 	>=dev-haskell/free-3.1.1:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/pointed-3:=[profile?] <dev-haskell/pointed-5:=[profile?]
+	>=dev-haskell/pointed-3:=[profile?]
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/semigroups-0.8.3:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -36,5 +36,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'doctest >= 0.8 && <= 0.10' 'doctest >= 0.8 && < 0.11' \
-		'comonad      >= 3     && < 5' 'comonad      >= 3'
+		'comonad      >= 3     && < 5' 'comonad      >= 3' \
+		'pointed      >= 3     && < 5' 'pointed      >= 3'
 }
