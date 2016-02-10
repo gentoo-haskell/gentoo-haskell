@@ -62,7 +62,7 @@ GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 #SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.bz2 )"
 # Upstream tarball was repackaged and inplace-updated. CDN cached old version for
 # many users
-SRC_URI="!binary? ( http://dev.gentoo.org/~slyfox/distfiles/${GHC_P}-src.tar.bz2 )"
+SRC_URI="!binary? ( https://dev.gentoo.org/~slyfox/distfiles/${GHC_P}-src.tar.bz2 )"
 S="${WORKDIR}"/${GHC_P}
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
@@ -106,9 +106,6 @@ DEPEND="${RDEPEND}
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-
-# yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
-use binary && QA_PREBUILT="*"
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
@@ -317,6 +314,9 @@ relocate_ghc() {
 }
 
 pkg_setup() {
+	# quiet portage about prebuilt binaries
+	use binary && QA_PREBUILT="*"
+
 	[[ ${MERGE_TYPE} == binary ]] && return
 
 	if use ghcbootstrap; then

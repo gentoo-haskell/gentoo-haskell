@@ -122,8 +122,6 @@ PDEPEND="
 # ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
 REQUIRED_USE="ia64? ( !gmp )"
 
-use binary && QA_PREBUILT="*"
-
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
@@ -301,6 +299,9 @@ relocate_ghc() {
 }
 
 pkg_setup() {
+	# quiet portage about prebuilt binaries
+	use binary && QA_PREBUILT="*"
+
 	if use ghcbootstrap; then
 		ewarn "You requested ghc bootstrapping, this is usually only used"
 		ewarn "by Gentoo developers to make binary .tbz2 packages for"
@@ -429,7 +430,7 @@ src_prepare() {
 			use ghcmakebinary && return 1
 
 			# pick only registerised arches
-			# http://bugs.gentoo.org/463814
+			# https://bugs.gentoo.org/463814
 			use amd64 && return 0
 			use x86 && return 0
 			return 1

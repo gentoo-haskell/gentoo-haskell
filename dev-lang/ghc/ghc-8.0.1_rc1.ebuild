@@ -93,10 +93,6 @@ PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
 
-# yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
-# Move it to pkg_setup() when bug #566534 gets resolved
-use binary && QA_PREBUILT="*"
-
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
@@ -319,6 +315,9 @@ relocate_ghc() {
 }
 
 pkg_setup() {
+	# quiet portage about prebuilt binaries
+	use binary && QA_PREBUILT="*"
+
 	[[ ${MERGE_TYPE} == binary ]] && return
 
 	if use ghcbootstrap; then
