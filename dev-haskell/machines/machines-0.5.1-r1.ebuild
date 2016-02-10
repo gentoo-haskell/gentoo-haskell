@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/comonad-3:=[profile?] <dev-haskell/comonad-5:=[profile?]
+RDEPEND=">=dev-haskell/comonad-3:=[profile?]
 	>=dev-haskell/free-3.1.1:=[profile?] <dev-haskell/free-5:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/pointed-3:=[profile?] <dev-haskell/pointed-5:=[profile?]
@@ -35,5 +35,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'doctest >= 0.8 && <= 0.10' 'doctest >= 0.8 && < 0.11'
+		'doctest >= 0.8 && <= 0.10' 'doctest >= 0.8 && < 0.11' \
+		'comonad      >= 3     && < 5' 'comonad      >= 3'
 }
