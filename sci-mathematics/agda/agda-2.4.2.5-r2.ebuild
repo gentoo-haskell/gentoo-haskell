@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.8:=[prof
 	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-compat-0.3.3.3:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.3.3.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.5.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/void-0.5.4:=[profile?] <dev-haskell/void-0.9:=[profile?]
 	>=dev-haskell/xhtml-3000.2.1:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
@@ -74,7 +74,8 @@ src_prepare() {
 		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
 
 	cabal_chdeps \
-		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1'
+		'zlib >= 0.4.0.1 && < 0.6.1' 'zlib >= 0.4.0.1' \
+		'transformers-compat >= 0.3.3.3 && < 0.5' 'transformers-compat >= 0.3.3.3'
 }
 
 src_configure() {

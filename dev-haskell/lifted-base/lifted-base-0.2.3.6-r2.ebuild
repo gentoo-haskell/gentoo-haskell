@@ -30,12 +30,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2.4 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/transformers-0.3
 		>=dev-haskell/transformers-base-0.4.4 <dev-haskell/transformers-base-0.5
-		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.5 )
+		>=dev-haskell/transformers-compat-0.3 )
 "
 
 src_prepare() {
 	cabal_chdeps \
 		'HUnit                >= 1.2.2   && < 1.3' 'HUnit                >= 1.2.2' \
 		'transformers         >= 0.3     && < 0.5' 'transformers         >= 0.3' \
-		'transformers  >= 0.2 && < 0.5' 'transformers  >= 0.2'
+		'transformers  >= 0.2 && < 0.5' 'transformers  >= 0.2' \
+		'transformers-compat  >= 0.3     && < 0.5' 'transformers-compat  >= 0.3'
 }

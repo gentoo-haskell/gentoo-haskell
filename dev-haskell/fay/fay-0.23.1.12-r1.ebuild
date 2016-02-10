@@ -35,7 +35,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.5:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/traverse-with-class-0.1:=[profile?] <dev-haskell/traverse-with-class-0.3:=[profile?]
 	>=dev-haskell/type-eq-0.1:=[profile?] <dev-haskell/type-eq-0.6:=[profile?]
 	>=dev-haskell/uniplate-1.6.11:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
@@ -55,6 +55,11 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

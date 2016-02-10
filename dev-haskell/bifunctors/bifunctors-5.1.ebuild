@@ -27,8 +27,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.8
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.5
-		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.5 )
+		>=dev-haskell/transformers-compat-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
