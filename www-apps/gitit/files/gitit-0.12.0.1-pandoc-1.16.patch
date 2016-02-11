@@ -1,0 +1,78 @@
+diff --git a/gitit.cabal b/gitit.cabal
+index ecce03e..935adcc 100644
+--- a/gitit.cabal
++++ b/gitit.cabal
+@@ -141,4 +141,4 @@ Library
+                      old-time,
+-                     pandoc >= 1.12.4 && < 1.16,
+-                     pandoc-types >= 1.12.3 && < 1.13,
++                     pandoc >= 1.12.4 && < 1.17,
++                     pandoc-types >= 1.12.3 && < 1.17,
+                      highlighting-kate >= 0.5.0.1 && < 0.7,
+diff --git a/src/Network/Gitit/ContentTransformer.hs b/src/Network/Gitit/ContentTransformer.hs
+index 3286714..eb4f382 100644
+--- a/src/Network/Gitit/ContentTransformer.hs
++++ b/src/Network/Gitit/ContentTransformer.hs
+@@ -719,8 +719,14 @@ wikiLinksTransform pandoc
+ 
++#if MIN_VERSION_pandoc_types(1,16,0)
++#    define P16_ATTRS _attrs
++#else
++#    define P16_ATTRS
++#endif
++
+ -- | Convert links with no URL to wikilinks.
+ convertWikiLinks :: Config -> Inline -> Inline
+-convertWikiLinks cfg (Link ref ("", "")) | useAbsoluteUrls cfg =
+-  Link ref ("/" </> baseUrl cfg </> inlinesToURL ref, "Go to wiki page")
+-convertWikiLinks _cfg (Link ref ("", "")) =
+-  Link ref (inlinesToURL ref, "Go to wiki page")
++convertWikiLinks cfg (Link P16_ATTRS ref ("", "")) | useAbsoluteUrls cfg =
++  Link P16_ATTRS ref ("/" </> baseUrl cfg </> inlinesToURL ref, "Go to wiki page")
++convertWikiLinks _cfg (Link P16_ATTRS ref ("", "")) =
++  Link P16_ATTRS ref (inlinesToURL ref, "Go to wiki page")
+ convertWikiLinks _cfg x = x
+@@ -752,6 +758,8 @@ inlinesToString = concatMap go
+                RawInline _ _           -> ""
+-               Link xs _               -> concatMap go xs
+-               Image xs _              -> concatMap go xs
++               Link P16_ATTRS xs _     -> concatMap go xs
++               Image P16_ATTRS xs _    -> concatMap go xs
+                Note _                  -> ""
+                Span _ xs               -> concatMap go xs
+-
++#if MIN_VERSION_pandoc_types(1,16,0)
++               SoftBreak               -> " "
++#endif
+diff --git a/src/Network/Gitit/Export.hs b/src/Network/Gitit/Export.hs
+index a82aff4..f49b7d2 100644
+--- a/src/Network/Gitit/Export.hs
++++ b/src/Network/Gitit/Export.hs
+@@ -38,2 +38,3 @@ import qualified Data.ByteString as B
+ import qualified Data.ByteString.Lazy as L
++import qualified Data.ByteString.Lazy.Char8 as LC8
+ import Data.ByteString.Lazy.UTF8 (fromString, toString)
+@@ -191,4 +192,9 @@ respondOrg = respondS "org" "text/plain; charset=utf-8" ""
+ respondICML :: String -> Pandoc -> Handler
++#if MIN_VERSION_pandoc(1,16,0)
++respondICML = respondX "icml" "application/xml; charset=utf-8" ""
++  (\o p -> LC8.pack <$> writeICML o p) defaultRespOptions
++#else
+ respondICML = respondS "icml" "application/xml; charset=utf-8" ""
+   writeICML defaultRespOptions
++#endif
+ 
+@@ -266,5 +272,11 @@ fixURLs page pndc = do
+ 
+-    let go (Image ils (url, title)) = do
++#if MIN_VERSION_pandoc_types(1,16,0)
++#    define P16_ATTRS attrs
++#else
++#    define P16_ATTRS
++#endif
++
++    let go (Image P16_ATTRS ils (url, title)) = do
+            fixedURL <- fixURL url
+-           return $ Image ils (fixedURL, title)
++           return $ Image P16_ATTRS ils (fixedURL, title)
+         go x                        = return x

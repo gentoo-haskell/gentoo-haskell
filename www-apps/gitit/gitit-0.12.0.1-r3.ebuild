@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +plugins"
 
-RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.16:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12.4:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -37,7 +37,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.16:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/old-locale-1:=[profile?]
 	dev-haskell/old-time:=[profile?]
-	>=dev-haskell/pandoc-types-1.12.3:=[profile?] <dev-haskell/pandoc-types-1.13:=[profile?]
+	>=dev-haskell/pandoc-types-1.12.3:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/recaptcha-0.1:=[profile?]
@@ -66,6 +66,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-pandoc-1.16.patch
+
 	cabal_chdeps \
 		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7' \
 		'HTTP >= 4000.0 && < 4000.3' 'HTTP >= 4000.0'
