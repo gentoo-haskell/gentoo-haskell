@@ -41,6 +41,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
 	cabal_chdeps \
 		'time                      >= 1.3 && < 1.6' 'time                      >= 1.3'
 }
