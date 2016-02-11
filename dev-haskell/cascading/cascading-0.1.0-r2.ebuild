@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-
 	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1:=[profile?]
+	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-1:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -32,6 +32,10 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-lens-4.patch
+
 	cabal_chdeps \
-		'text          >= 0.11 && < 1' 'text          >= 0.11'
+		'text          >= 0.11 && < 1' 'text          >= 0.11' \
+		'lens          >= 3.9  && < 4' 'lens          >= 3.9' \
+		'utf8-string   >= 0.3  && < 1' 'utf8-string   >= 0.3'
 }
