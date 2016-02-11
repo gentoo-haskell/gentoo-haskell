@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-1.12:=[profile?] <app-text/pandoc-1.16:=[profile?]
+RDEPEND=">=app-text/pandoc-1.12:=[profile?]
 	>=dev-haskell/bktrees-0.2:=[profile?] <dev-haskell/bktrees-0.4:=[profile?]
 	>=dev-haskell/fgl-5.5:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
 	>=dev-haskell/graphviz-2999.15:=[profile?] <dev-haskell/graphviz-2999.19:=[profile?]
@@ -35,3 +35,7 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-pandoc-1.16.patch
+}

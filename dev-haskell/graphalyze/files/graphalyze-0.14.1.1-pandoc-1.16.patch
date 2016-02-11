@@ -1,0 +1,32 @@
+diff --git a/Data/Graph/Analysis/Reporting/Pandoc.hs b/Data/Graph/Analysis/Reporting/Pandoc.hs
+index c133f18..1bf545b 100644
+--- a/Data/Graph/Analysis/Reporting/Pandoc.hs
++++ b/Data/Graph/Analysis/Reporting/Pandoc.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ {- |
+@@ -209,2 +210,8 @@ loc2target (File file) = (file,"")
+ 
++#if MIN_VERSION_pandoc(1,16,0)
++#    define P16_ATTRS nullAttr
++#else
++#    define P16_ATTRS
++#endif
++
+ -- | Conversion of simple inline elements.
+@@ -216,4 +223,4 @@ inlines (Bold inl)         = [Strong (inlines inl)]
+ inlines (Emphasis inl)     = [Emph (inlines inl)]
+-inlines (DocLink inl loc)  = [Link (inlines inl) (loc2target loc)]
+-inlines (DocImage inl loc) = [Image (inlines inl) (loc2target loc)]
++inlines (DocLink inl loc)  = [Link P16_ATTRS (inlines inl) (loc2target loc)]
++inlines (DocImage inl loc) = [Image P16_ATTRS (inlines inl) (loc2target loc)]
+ 
+diff --git a/Graphalyze.cabal b/Graphalyze.cabal
+index 2e6ef6f..150beca 100644
+--- a/Graphalyze.cabal
++++ b/Graphalyze.cabal
+@@ -39,3 +39,3 @@ Library {
+                          graphviz >= 2999.15 && < 2999.19,
+-                         pandoc >= 1.12 && < 1.16,
++                         pandoc >= 1.12,
+                          text
