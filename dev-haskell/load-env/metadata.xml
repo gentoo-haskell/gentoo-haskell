@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Parse a .env file and load any declared variables into
+		the current process&#39;s environment. This allows for a
+		.env file to specify development-friendly defaults for
+		configuration values normally set in the deployment
+		environment.
+	</longdescription>
+</pkgmetadata>
