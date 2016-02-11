@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-0.12:=[profile
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	# takes 4GB RAM otherwise
+	HCFLAGS="${HCFLAGS} -O0"
+}
