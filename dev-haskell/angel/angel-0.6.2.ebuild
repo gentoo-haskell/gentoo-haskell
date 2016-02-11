@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc hoogle hscolour profile"
 
+RESTRICT=test # missing files
+
 RDEPEND=">=dev-haskell/configurator-0.1:=
 	dev-haskell/mtl:=
 	dev-haskell/old-locale:=

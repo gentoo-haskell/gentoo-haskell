@@ -1,0 +1,9 @@
+diff --git a/Data/CSS/Build.hs b/Data/CSS/Build.hs
+index b42b23f..de41fe2 100644
+--- a/Data/CSS/Build.hs
++++ b/Data/CSS/Build.hs
+@@ -34,3 +34,3 @@ import qualified Data.Set as S
+ import Control.Applicative
+-import Control.Lens
++import Control.Lens hiding (below)
+ import Control.Monad.Reader
