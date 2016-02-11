@@ -513,7 +513,7 @@ dev-haskell/gluraw 1.4.0.2 1.5.0.3: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.6: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.8.8: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
-dev-haskell/gnuplot 0.5.3.1 0.5.4: 2D and 3D plots using gnuplot
+dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
 dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
 dev-haskell/goa 3.3 9999: GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
