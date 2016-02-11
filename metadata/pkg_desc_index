@@ -16,7 +16,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -199,7 +199,7 @@ dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
-dev-haskell/citeproc-hs 0.3.10: A Citation Style Language implementation in Haskell
+dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 0.12.4 0.12.5: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.4 0.12.5: conduit instances for classy-prelude
@@ -209,7 +209,7 @@ dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.1: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
-dev-haskell/cmark 0.3.4 0.4.1: Fast, accurate CommonMark (Markdown) parser and renderer
+dev-haskell/cmark 0.3.4 0.4.1 0.5.1: Fast, accurate CommonMark (Markdown) parser and renderer
 dev-haskell/cmdargs 0.10.13: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r1: Declarative command-line option parsing and documentation library
@@ -518,7 +518,7 @@ dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
 dev-haskell/goa 3.3 9999: GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
-dev-haskell/graphalyze 0.14.1.1: Graph-Theoretic Analysis library
+dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.8: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
 dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2: Bindings to Graphviz for graph visualisation
@@ -1007,8 +1007,8 @@ dev-haskell/optional-args 1.0.0: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3: Supports using pandoc with citeproc
-dev-haskell/pandoc-types 1.12.4.7: Types for representing a structured document
+dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3 0.9: Supports using pandoc with citeproc
+dev-haskell/pandoc-types 1.12.4.7 1.16.1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
@@ -1534,7 +1534,7 @@ dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
 dev-haskell/yesod-form 1.4.6: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
-dev-haskell/yesod-markdown 0.10.0: Tools for using markdown in a yesod application
+dev-haskell/yesod-markdown 0.10.0 0.11.0: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 0.10.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.4.0.3: Some helpers for using Persistent from Yesod
@@ -1630,7 +1630,7 @@ sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portab
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.12.0.1-r2: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.0.1-r3: Wiki using happstack, git or darcs, and pandoc
 www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
