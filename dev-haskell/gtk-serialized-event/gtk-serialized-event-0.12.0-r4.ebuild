@@ -18,8 +18,8 @@ SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.12:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
-	>=dev-haskell/gtk-0.12:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
+RDEPEND=">=dev-haskell/glib-0.12:0=[profile?]
+	>=dev-haskell/gtk-0.12:2=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	x11-libs/gtk+:2"
@@ -30,6 +30,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'haskell98' 'base' \
-		'glib >= 0.12 && < 0.13' 'glib >= 0.12 && < 0.14' \
-		'gtk >= 0.12 && < 0.13' 'gtk >= 0.12 && < 0.14'
+		'glib >= 0.12 && < 0.13' 'glib >= 0.12' \
+		'gtk >= 0.12 && < 0.13' 'gtk >= 0.12'
 }
