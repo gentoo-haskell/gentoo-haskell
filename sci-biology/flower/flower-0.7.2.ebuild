@@ -32,5 +32,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 	cabal_chdeps \
-		'binary == 0.4.*' 'binary >= 0.4 && <0.8'
+		'binary == 0.4.*' 'binary >= 0.4 && <0.8' \
+		'Executable     flower'     'Executable     flower-flower' \
+		'Executable     flowselect' 'Executable     flower-flowselect' \
+		'Executable     flowt'      'Executable     flower-flowt'
 }
