@@ -1543,7 +1543,7 @@ dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.0.3: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-test 1.5.0.1: integration testing for WAI/Yesod Applications
-dev-haskell/yesod-worker 0.0.1: Drop-in(ish) background worker system for Yesod apps
+dev-haskell/yesod-worker 0.0.1-r1: Drop-in(ish) background worker system for Yesod apps
 dev-haskell/yi-language 0.1.1.0 0.2.0: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.1: A rope data structure used by Yi
 dev-haskell/zeromq-haskell 0.8.4: Bindings to ZeroMQ 2.1.x
