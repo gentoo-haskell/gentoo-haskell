@@ -497,7 +497,7 @@ dev-haskell/gio 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to GIO
 dev-haskell/github 0.13.2: Access to the Github API, v3
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1: Complete OpenGL raw bindings
-dev-haskell/glade 0.12.5.0-r2: Binding to the glade library
+dev-haskell/glade 0.12.5.0-r3: Binding to the glade library
 dev-haskell/glfw 0.5.2.4: A Haskell binding for GLFW
 dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.7.3: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2: Binding to the GLIB library for Gtk2Hs
@@ -532,14 +532,14 @@ dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.3.0.0 0.4.0.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.6: Bindings for GNU libgsasl
 dev-haskell/gstreamer 0.12.5.0-r2: Binding to the GStreamer open source multimedia framework
-dev-haskell/gtk 0.13.9: Binding to the Gtk+ graphical user interface library
-dev-haskell/gtk-serialized-event 0.12.0-r3: GTK+ Serialized event
+dev-haskell/gtk 0.13.9 0.14.2: Binding to the Gtk+ graphical user interface library
+dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.6: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.0.4-r3: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.7 0.13.9 0.14.2: Binding to the Gtk+ 3 graphical user interface library
-dev-haskell/gtkglext 0.12.5.0-r2: Binding to the GTK+ OpenGL Extension
+dev-haskell/gtkglext 0.12.5.0-r3: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
-dev-haskell/gtksourceview2 0.13.2.1: Binding to the GtkSourceView library
+dev-haskell/gtksourceview2 0.13.2.1-r1: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.2.1: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22: access Hackage's package database via Data.Map
@@ -1065,7 +1065,7 @@ dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.9 1.10 1.11: A variety of alternative parser combinator libraries
 dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (deprecated)
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
-dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13 0.13.1: Binding to the Poppler
+dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13 0.13.1-r1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
@@ -1235,7 +1235,7 @@ dev-haskell/sockaddr 0.0.0: Printing SockAddr
 dev-haskell/socket-io 1.3.5: This library provides an implementation of Socket.io protocol (version 1)
 dev-haskell/socks 0.5.4: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
-dev-haskell/soegtk 0.12.1-r4: GUI functions as used in the book "The Haskell School of Expression"
+dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
 dev-haskell/sourcegraph 0.7.0.7: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.2.6: Play, write, read, convert audio signals using Sox
@@ -1445,7 +1445,7 @@ dev-haskell/vector-th-unbox 0.2.1.3: Deriver for Data.Vector.Unboxed using Templ
 dev-haskell/vinyl 0.5.1: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
-dev-haskell/vte 0.12.5.0 0.13.0.3: Binding to the VTE library
+dev-haskell/vte 0.12.5.0 0.13.0.3-r1: Binding to the VTE library
 dev-haskell/vty 5.2.11 5.4.0: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0: Web Application Interface
