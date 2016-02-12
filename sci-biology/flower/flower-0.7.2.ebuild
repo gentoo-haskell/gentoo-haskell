@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 	cabal_chdeps \
 		'binary == 0.4.*' 'binary >= 0.4 && <0.8'
 }
