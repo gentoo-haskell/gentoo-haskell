@@ -1,0 +1,38 @@
+diff --git a/Yesod/Worker.hs b/Yesod/Worker.hs
+index 97421d7..27b9e24 100644
+--- a/Yesod/Worker.hs
++++ b/Yesod/Worker.hs
+@@ -64,3 +64,3 @@ spawnWorkers site = replicateM_ (workerCount site) . forkIO . forever $ do
+ -- | Add a job to the site queue from within a Handler
+-enqueue :: YesodWorker site => Job -> HandlerT site IO ()
++enqueue :: YesodWorker site => Job site -> HandlerT site IO ()
+ enqueue job = do
+diff --git a/Yesod/Worker/Types.hs b/Yesod/Worker/Types.hs
+index 264faca..7fbc598 100644
+--- a/Yesod/Worker/Types.hs
++++ b/Yesod/Worker/Types.hs
+@@ -23,6 +23,6 @@ class Yesod site => YesodWorker site where
+   -- | Your applications job type
+-  type Job
++  type Job site
+ 
+   -- | How to retreive the application queue
+-  queue :: site -> JobQueue Job
++  queue :: site -> JobQueue (Job site)
+ 
+@@ -33,3 +33,3 @@ class Yesod site => YesodWorker site where
+   -- | How to execute each job
+-  perform :: Job -> WorkerT site IO ()
++  perform :: Job site -> WorkerT site IO ()
+ 
+@@ -78,7 +78,7 @@ instance Monad m => Monad (WorkerT site m) where
+ instance MonadBaseControl b m => MonadBaseControl b (WorkerT site m) where
+-  data StM (WorkerT site m) a = StH (StM m a)
++  type StM (WorkerT site m) a = StM m a
+   liftBaseWith f = WorkerT $ \reader ->
+     liftBaseWith $ \runInBase ->
+-      f $ liftM StH . runInBase . (\(WorkerT r) -> r reader)
+-  restoreM (StH base) = WorkerT $ const $ restoreM base
++      f $ runInBase . (\(WorkerT r) -> r reader)
++  restoreM base = WorkerT $ const $ restoreM base
+ 
