@@ -10,29 +10,37 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
 inherit haskell-cabal
 
-DESCRIPTION="Binding to the glade library"
+DESCRIPTION="Binding to the GTK+ OpenGL Extension"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="2/${PV}"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
-	>=dev-haskell/gtk-0.12.5.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
+	>=dev-haskell/gtk-0.12.5.0:2=[profile?]
+	>=dev-haskell/pango-0.12.5.0:0=[profile?] <dev-haskell/pango-0.14:0=[profile?]
 	>=dev-lang/ghc-6.10.4:=
-	gnome-base/libglade:2.0
+	x11-libs/gtkglext
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/gtk2hs-buildtools-0.12.5.1-r1:0=
+	>=dev-haskell/gtk2hs-buildtools-0.12.5.0-r1:0=
 	virtual/pkgconfig
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	epatch "${FILESDIR}"/${P}-new-cabal.patch
 
 	cabal_chdeps \
-		'glib >= 0.12.5.0 && < 0.13' 'glib >= 0.12.5.0 && < 0.14' \
-		'gtk >= 0.12.5.0 && < 0.13' 'gtk >= 0.12.5.0 && < 0.14'
+		'glib  >= 0.12.5.0 && < 0.13' 'glib  >= 0.12.5.0 && < 0.14' \
+		'pango >= 0.12.5.0 && < 0.13' 'pango >= 0.12.5.0 && < 0.14' \
+		'gtk   >= 0.12.5.0 && < 0.13' 'gtk   >= 0.12.5.0'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-have-quartz-gtk \
+		--flag=-use-deprecated
 }

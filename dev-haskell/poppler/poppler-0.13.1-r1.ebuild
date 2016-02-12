@@ -25,9 +25,9 @@ RDEPEND="app-text/poppler[cairo]
 	>=dev-lang/ghc-7.4.1:=
 	x11-libs/cairo
 	x11-libs/pango
-	gtk3? ( >=dev-haskell/gtk3-0.13:=[profile?] <dev-haskell/gtk3-0.14:=[profile?]
+	gtk3? ( >=dev-haskell/gtk3-0.13:=[profile?]
 		x11-libs/gtk+:3 )
-	!gtk3? ( >=dev-haskell/gtk-0.13:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
+	!gtk3? ( >=dev-haskell/gtk-0.13:2=[profile?]
 			dev-libs/glib:2
 			x11-libs/gtk+:2 )
 "
@@ -39,6 +39,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.12.3-printf.patch
+	cabal_chdeps \
+		'gtk3 >= 0.13 && < 0.14' 'gtk3 >= 0.13' \
+		'gtk >= 0.13 && < 0.14' 'gtk >= 0.13'
 }
 
 src_configure() {

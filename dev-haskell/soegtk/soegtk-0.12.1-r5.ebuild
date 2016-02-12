@@ -18,8 +18,8 @@ SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?] <dev-haskell/cairo-0.14.0:0=[profile?]
-		>=dev-haskell/gtk-0.12:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
+RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?]
+		>=dev-haskell/gtk-0.12:2=[profile?]
 		>=dev-haskell/stm-2.0:=[profile?]
 		<dev-haskell/stm-3.0:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
@@ -29,6 +29,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'cairo >= 0.12 && < 0.13' 'cairo >= 0.12 && < 0.14' \
-		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12 && < 0.14'
+		'cairo >= 0.12 && < 0.13' 'cairo >= 0.12' \
+		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12'
 }
