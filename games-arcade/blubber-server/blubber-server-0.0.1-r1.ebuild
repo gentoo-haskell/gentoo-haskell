@@ -19,10 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
-	>=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.5:=[profile?]
+	>=dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
-	>=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.15:=[profile?]
+	>=app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/scotty-0.7:=[profile?] <dev-haskell/scotty-0.11:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -40,7 +40,11 @@ pkg_setup() {
 
 src_prepare() {
 	cabal_chdeps \
-		'base       >=4.7 && <4.8' 'base       >=4.7'
+		'base       >=4.7 && <4.8' 'base       >=4.7' \
+		'base               >=4.7  && <4.9' 'base               >=4.7' \
+		'cereal     >=0.4 && <0.5' 'cereal     >=0.4' \
+		'cereal             >=0.4   && <0.5' 'cereal             >=0.4' \
+		'pandoc             >=1.14  && <1.15' 'pandoc             >=1.14'
 }
 
 src_configure() {
