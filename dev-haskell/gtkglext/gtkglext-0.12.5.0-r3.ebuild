@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.5.0:0=[profile?] <dev-haskell/glib-0.14:0=[profile?]
-	>=dev-haskell/gtk-0.12.5.0:2=[profile?] <dev-haskell/gtk-0.14:2=[profile?]
+	>=dev-haskell/gtk-0.12.5.0:2=[profile?]
 	>=dev-haskell/pango-0.12.5.0:0=[profile?] <dev-haskell/pango-0.14:0=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	x11-libs/gtkglext
@@ -36,7 +36,7 @@ src_prepare() {
 	cabal_chdeps \
 		'glib  >= 0.12.5.0 && < 0.13' 'glib  >= 0.12.5.0 && < 0.14' \
 		'pango >= 0.12.5.0 && < 0.13' 'pango >= 0.12.5.0 && < 0.14' \
-		'gtk   >= 0.12.5.0 && < 0.13' 'gtk   >= 0.12.5.0 && < 0.14'
+		'gtk   >= 0.12.5.0 && < 0.13' 'gtk   >= 0.12.5.0'
 }
 
 src_configure() {
