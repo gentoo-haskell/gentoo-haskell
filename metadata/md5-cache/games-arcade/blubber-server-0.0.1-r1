@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND=>=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?] >=dev-haskell/cereal-0.4:=[profile?] >=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?] >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?] >=app-text/pandoc-1.14:=[profile?] >=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?] >=dev-haskell/scotty-0.7:=[profile?] <dev-haskell/scotty-0.11:=[profile?] >=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/transformers-0.4:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=The blubber server, serves blubber clients
+EAPI=5
+HOMEPAGE=https://secure.plaimi.net/games/blubber.html
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=AGPL-3
+RDEPEND=>=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?] >=dev-haskell/cereal-0.4:=[profile?] >=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?] >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?] >=app-text/pandoc-1.14:=[profile?] >=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?] >=dev-haskell/scotty-0.7:=[profile?] <dev-haskell/scotty-0.11:=[profile?] >=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/transformers-0.4:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-lang/ghc-7.8.2:= games-misc/games-envd
+SLOT=0/0.0.1
+SRC_URI=mirror://hackage/packages/archive/blubber-server/0.0.1/blubber-server-0.0.1.tar.gz
+_eclass_exported_funcs=pkg_preinst:games pkg_postrm:haskell-cabal pkg_postinst:- pkg_setup:- src_unpack:base src_prepare:- src_configure:- src_compile:- src_test:haskell-cabal src_install:-
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	eutils	28fb3e5852485af1c348d446b0b98389	games	4dae170e58f773c484e07d18ef441804	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	user	906f3c8eb3a2350a4f1191a89baa3e46	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=1b39d05f5f4ce9d75834c78b6bf8d1a2
