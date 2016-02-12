@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.13:=[profile?] <dev-haskell/glib-0.14:=[profile?]
-	>=dev-haskell/gtk-0.13.0.0:=[profile?] <dev-haskell/gtk-0.14:=[profile?]
+	>=dev-haskell/gtk-0.13.0.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,3 +30,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/gtk2hs-buildtools
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'gtk >=0.13.0.0 && <0.14' 'gtk >=0.13.0.0'
+}
