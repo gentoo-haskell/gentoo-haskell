@@ -27,8 +27,8 @@ dev-haskell/ac-angle 1.0: Angles in degrees and radians
 dev-haskell/ac-vector 2.3.2: Efficient geometric vectors and transformations
 dev-haskell/ac-vector-fancy 2.4.0: Fancy type-system stuff for AC-Vector
 dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0: An embedded language for accelerated array processing
-dev-haskell/accelerate-cuda 0.15.0.0: Accelerate backend for NVIDIA GPUs
-dev-haskell/accelerate-fft 0.15.0.0: FFT using the Accelerate library
+dev-haskell/accelerate-cuda 0.15.0.0 0.15.1.1: Accelerate backend for NVIDIA GPUs
+dev-haskell/accelerate-fft 0.15.0.0 0.15.1.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.14.0: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
@@ -278,8 +278,8 @@ dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
 dev-haskell/cryptonite 0.8 0.10: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2: CSV loader and dumper
-dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
-dev-haskell/cufft 0.1.0.3: Haskell bindings for the CUFFT library
+dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
+dev-haskell/cufft 0.1.0.3 0.1.2.1: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.7 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 0.4.4: A subfield of the complex numbers for exact calculation
 dev-haskell/data-accessor 0.2.2.7: Utilities for accessing and manipulating fields of records
@@ -1238,7 +1238,7 @@ dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r4: GUI functions as used in the book "The Haskell School of Expression"
 dev-haskell/sourcegraph 0.7.0.7: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
-dev-haskell/sox 0.2.2.5: Play, write, read, convert audio signals using Sox
+dev-haskell/sox 0.2.2.6: Play, write, read, convert audio signals using Sox
 dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative parallelism
 dev-haskell/split 0.2.3: Combinator library for splitting lists
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
