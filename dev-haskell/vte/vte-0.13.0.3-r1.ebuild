@@ -18,9 +18,9 @@ SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
-	>=dev-haskell/gtk-0.13.0.0:=[profile?] <dev-haskell/gtk-0.14:=[profile?]
-	>=dev-haskell/pango-0.13.0.0:=[profile?] <dev-haskell/pango-0.14:=[profile?]
+RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?]
+	>=dev-haskell/gtk-0.13.0.0:=[profile?]
+	>=dev-haskell/pango-0.13.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	x11-libs/vte:0
 "
@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 	dev-haskell/gtk2hs-buildtools
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'glib  >= 0.13.0.0 && < 0.14' 'glib  >= 0.13.0.0' \
+		'pango >= 0.13.0.0 && < 0.14' 'pango >= 0.13.0.0' \
+		'gtk   >= 0.13.0.0 && < 0.14' 'gtk   >= 0.13.0.0'
+}
