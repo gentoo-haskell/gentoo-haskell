@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-1:=[profile?]
 	>=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-3:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
