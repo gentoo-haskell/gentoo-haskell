@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/fast-logger-2.2:=[profile?]
-	>=dev-haskell/monad-control-0.3:=[profile?]
+	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	>=dev-haskell/persistent-2.1:=[profile?]
 	>=dev-haskell/resourcet-1.1.2.2:=[profile?]
@@ -33,3 +33,9 @@ RDEPEND=">=dev-haskell/fast-logger-2.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	cabal_chdeps \
+		'base              >= 4.7   && < 4.8' 'base              >= 4.7'
+}
