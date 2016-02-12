@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=games-arcade/blubber-server-0.0.1:= <games-arcade/blubber-server-0.0.2:=
-	>=dev-haskell/cereal-0.4:= <dev-haskell/cereal-0.5:=
+RDEPEND=">=games-arcade/blubber-server-0.0.1:=
+	>=dev-haskell/cereal-0.4:=
 	>=dev-haskell/gloss-1.9:= <dev-haskell/gloss-2.0:=
 	>=dev-haskell/network-2.6:= <dev-haskell/network-2.7:=
 	>=dev-lang/ghc-7.8.2:=
@@ -31,6 +31,11 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	games_pkg_setup
 	haskell-cabal_pkg_setup
+}
+
+src_prepare() {
+	cabal_chdeps \
+		'cereal           >=0.4   && <0.5' 'cereal           >=0.4'
 }
 
 src_configure() {
