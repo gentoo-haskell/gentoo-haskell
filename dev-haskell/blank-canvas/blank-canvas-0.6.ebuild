@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/kansas-comet-0.4:=[profile?] <dev-haskell/kansas-comet-0.5:=[profile?]
 	>=dev-haskell/mime-types-0.1.0.3:=[profile?] <dev-haskell/mime-types-0.2:=[profile?]
-	>=dev-haskell/scotty-0.10:=[profile?] <dev-haskell/scotty-0.12:=[profile?]
+	>=dev-haskell/scotty-0.10:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-show-2:=[profile?]
@@ -46,5 +46,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'text-show          >= 2       && < 2.2' 'text-show          >= 2'
+		'text-show          >= 2       && < 2.2' 'text-show          >= 2' \
+		'scotty             >= 0.10    && < 0.11' 'scotty             >= 0.10'
 }
