@@ -122,6 +122,7 @@ dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
 dev-haskell/ghcjs-dom:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/ghcjs-dom:jsc - Use WebKitGtk JavaScriptCore
 dev-haskell/ghcjs-dom:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript output
+dev-haskell/github:aeson-compat - Whether to use aeson-compat or aeson-extra
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
 dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
