@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides some helper functions for testing attoparsec parsers with hspec.
+		
+		See the documentation in @Test.Hspec.Attoparsec@ for examples, or this package&#39;s own test suite.
+	</longdescription>
+</pkgmetadata>
