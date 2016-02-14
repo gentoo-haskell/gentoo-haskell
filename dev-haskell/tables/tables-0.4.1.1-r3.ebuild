@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/profunctors-4:=[profile?]
-	>=dev-haskell/safecopy-0.6.3:=[profile?] <dev-haskell/safecopy-0.9:=[profile?]
+	>=dev-haskell/safecopy-0.6.3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.1:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -42,7 +42,8 @@ src_prepare() {
 	cabal_chdeps \
 		'profunctors          >= 4   && < 5' 'profunctors          >= 4' \
 		'cereal               >= 0.3 && < 0.5' 'cereal               >= 0.3' \
-		'comonad              >= 4   && < 5' 'comonad              >= 4'
+		'comonad              >= 4   && < 5' 'comonad              >= 4' \
+		'safecopy             >= 0.6.3 && < 0.9' 'safecopy             >= 0.6.3'
 }
 
 src_configure() {
