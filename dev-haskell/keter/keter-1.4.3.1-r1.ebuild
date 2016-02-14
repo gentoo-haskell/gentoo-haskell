@@ -42,7 +42,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/unix-compat-0.3:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.1:=[profile?]
+	>=dev-haskell/wai-3.0:=[profile?]
 	>=dev-haskell/wai-app-static-3.1:=[profile?] <dev-haskell/wai-app-static-3.2:=[profile?]
 	>=dev-haskell/wai-extra-3.0.3:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
 	dev-haskell/warp:=[profile?]
@@ -59,6 +59,11 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'wai                       >= 3.0           && < 3.1' 'wai                       >= 3.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
