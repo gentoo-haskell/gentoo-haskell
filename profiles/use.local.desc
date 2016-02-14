@@ -368,6 +368,7 @@ dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri packag
 dev-haskell/zip-archive:executable - Build the Zip executable.
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
 dev-lang/cryptol:self-contained - Compile the text of the Cryptol Prelude into the library.
+dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
