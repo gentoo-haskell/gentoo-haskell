@@ -22,7 +22,7 @@ RESTRICT=test # missing files
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
-	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
+	>=dev-haskell/http-types-0.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -32,7 +32,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson             >= 0.7    && < 0.10' 'aeson             >= 0.7'
+		'aeson             >= 0.7    && < 0.10' 'aeson             >= 0.7' \
+		'http-types        >= 0.8    && < 0.9' 'http-types        >= 0.8'
 }
 
 src_configure() {

@@ -15,11 +15,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
-	>=dev-haskell/http-types-0.8.0:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
+	>=dev-haskell/http-types-0.8.0:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,5 +28,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0'
+		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0' \
+		'http-types >= 0.8.0 && < 0.9' 'http-types >= 0.8.0'
 }
