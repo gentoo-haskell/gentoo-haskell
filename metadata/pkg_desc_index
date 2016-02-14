@@ -16,7 +16,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -36,7 +36,7 @@ dev-haskell/active 0.2.0.8: Abstractions for animation
 dev-haskell/ad 4.3.2-r1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.10.0.0: Fast JSON parsing and encoding
+dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.11.0.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
 dev-haskell/aeson-compat 0.3.1.0: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.2.3.0 0.3.1.0: Extra goodies for aeson
@@ -103,7 +103,7 @@ dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.5.0 0.7.6.1: Binary serialisation for Has
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
-dev-haskell/binary-orphans 0.1.4.0-r1: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.4.0-r2: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
@@ -421,7 +421,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.1: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r1: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r2: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -752,7 +752,7 @@ dev-haskell/idna 0.2 0.3.0: Implements IDNA (RFC 3490)
 dev-haskell/ieee754 0.7.8: Utilities for dealing with IEEE floating point numbers
 dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
-dev-haskell/ihaskell 0.6.4.0-r1 0.8.2.0 0.8.3.0: A Haskell backend kernel for the IPython project
+dev-haskell/ihaskell 0.6.4.0-r1 0.8.2.0 0.8.3.0-r1: A Haskell backend kernel for the IPython project
 dev-haskell/imagemagick 0.0.4.1: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
@@ -770,7 +770,7 @@ dev-haskell/iorefcas 0.2.0.1: Atomic compare and swap for IORefs and STRefs
 dev-haskell/iospec 0.3: A pure specification of the IO monad
 dev-haskell/ipprint 0.6: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.0: IP Routing Table
-dev-haskell/ipython-kernel 0.6.1.0 0.8.2.0 0.8.3.0: A library for creating kernels for IPython frontends
+dev-haskell/ipython-kernel 0.6.1.0 0.8.2.0 0.8.3.0-r1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/irc-core 1.1.3: An IRC client library and text client
 dev-haskell/ircbot 0.6.2 0.6.4: A library for writing irc bots
@@ -1011,7 +1011,7 @@ dev-haskell/optional-args 1.0.0: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3 0.9: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3 0.9-r1: Supports using pandoc with citeproc
 dev-haskell/pandoc-types 1.12.4.7 1.16.1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
@@ -1358,7 +1358,7 @@ dev-haskell/th-orphans 0.13.0: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.4: Recurseively reify template haskell datatype info
 dev-haskell/these 0.6.2.1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.3: Fork threads and wait for their result
-dev-haskell/threepenny-gui 0.6.0.5: GUI framework that uses the web browser as a display
+dev-haskell/threepenny-gui 0.6.0.6: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 0.6: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
