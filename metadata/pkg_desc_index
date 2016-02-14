@@ -676,7 +676,7 @@ dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliogr
 dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
 dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
 dev-haskell/hsb2hs 0.2 0.3.1: Preprocesses a file, adding blobs from files as string literals
-dev-haskell/hscolour 1.23-r1: Colourise Haskell code
+dev-haskell/hscolour 1.23-r1 1.24: Colourise Haskell code
 dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hsdns 1.6 1.6.1: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
