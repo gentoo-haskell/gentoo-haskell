@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.10.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/binary-0.5.1.1:=[profile?] <dev-haskell/binary-0.8.1:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/scientific-0.3.3.8:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -41,5 +41,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'semigroups               >=0.16.2.2  && <0.18.1' 'semigroups               >=0.16.2.2' \
-		'tagged                   >=0.7.3     && <0.8.3' 'tagged                   >=0.7.3'
+		'tagged                   >=0.7.3     && <0.8.3' 'tagged                   >=0.7.3' \
+		'aeson                    >=0.7.0.6   && <0.10.1' 'aeson >=0.7.0.6'
+
 }
