@@ -27,7 +27,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?]
 	>=dev-haskell/filestore-0.6:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.5:=[profile?]
 	>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
-	>=dev-haskell/hoauth2-0.4.2:=[profile?] <dev-haskell/hoauth2-0.5:=[profile?]
+	>=dev-haskell/hoauth2-0.4.2:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/hstringtemplate-0.6:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
 	>=dev-haskell/http-4000.0:=[profile?]
@@ -70,7 +70,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson >= 0.7 && < 0.10' 'aeson >= 0.7' \
-		'HTTP >= 4000.0 && < 4000.3' 'HTTP >= 4000.0'
+		'HTTP >= 4000.0 && < 4000.3' 'HTTP >= 4000.0' \
+		'hoauth2 >= 0.4.2 && < 0.5' 'hoauth2 >= 0.4.2'
 }
 
 src_configure() {
