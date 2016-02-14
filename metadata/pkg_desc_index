@@ -232,9 +232,9 @@ dev-haskell/concurrent-output 1.7.3: Ungarble output from several threads or com
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.6.1-r1: Streaming data processing library
+dev-haskell/conduit 1.2.6.2: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.3.1: Commonly used conduit functions, for both chunked and unchunked data
-dev-haskell/conduit-extra 1.1.9.2: Batteries included conduit: adapters for common libraries
+dev-haskell/conduit-extra 1.1.9.3: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0: Configuration management
@@ -1180,7 +1180,7 @@ dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSem
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/sandi 0.3.6: Data encoding library
-dev-haskell/sbv 4.4 5.9: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
+dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
