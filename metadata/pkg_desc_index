@@ -470,6 +470,7 @@ dev-haskell/gconf 0.13.0.3: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.9.0 1.10.0: Generic programming library for generalised deriving
+dev-haskell/generic-trie 0.3.0.1: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
@@ -1222,6 +1223,7 @@ dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handl
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
 dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing variables
 dev-haskell/simple-sendfile 0.2.21: Cross platform library for the sendfile system call
+dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver process
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
