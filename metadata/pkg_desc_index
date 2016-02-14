@@ -332,7 +332,7 @@ dev-haskell/diagrams-lib 1.3.0.9: Embedded domain-specific language for declarat
 dev-haskell/diagrams-pgf 0.1.0.3: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.4: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
-dev-haskell/diagrams-solve 0.1: Pure Haskell solver routines used by diagrams
+dev-haskell/diagrams-solve 0.1.0.1: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.3.1.10: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
@@ -375,7 +375,7 @@ dev-haskell/dph-prim-seq 0.7.0.1: Data Parallel Haskell segmented arrays. (seque
 dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka RNG, PRNG) based HMACs, Hashes, and Ciphers
 dev-haskell/drift 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3.1: Haskell Digital Signal Processing
-dev-haskell/dual-tree 0.2.0.8: Rose trees with cached and accumulating monoidal annotations
+dev-haskell/dual-tree 0.2.0.9: Rose trees with cached and accumulating monoidal annotations
 dev-haskell/dynamic-state 0.2.1.0: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.1: Cross-platform File handling
@@ -935,7 +935,7 @@ dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2-r1: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.1: Type classes for mapping, folding, and traversing monomorphic containers
-dev-haskell/monoid-extras 0.4.0.3: Various extra monoid-related definitions and utilities
+dev-haskell/monoid-extras 0.4.0.4: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
