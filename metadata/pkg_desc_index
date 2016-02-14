@@ -650,7 +650,7 @@ dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
-dev-haskell/hoauth2 0.4.8-r2: Haskell OAuth2 authentication
+dev-haskell/hoauth2 0.4.8-r2 0.5.2: Haskell OAuth2 authentication client
 dev-haskell/hood 0.3: Debugging by observing in place
 dev-haskell/hoodle 0.4.0: Executable for hoodle
 dev-haskell/hoodle-builder 0.3.0: text builder for hoodle file format
@@ -1053,7 +1053,7 @@ dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the 
 dev-haskell/pipes-concurrency 2.0.5: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.3: Group streams into substreams
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
-dev-haskell/pipes-parse 3.0.3: Parsing infrastructure for the pipes ecosystem
+dev-haskell/pipes-parse 3.0.4: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.3: Safety for the pipes ecosystem
 dev-haskell/plailude 0.2.2 0.3.0 0.4.1.1 0.5.1 0.6.0: plaimi's prelude
 dev-haskell/plugins 1.5.5.0: Dynamic linking for Haskell and C objects
@@ -1164,7 +1164,7 @@ dev-haskell/replib 0.5.3.5: Generic programming library with representation type
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 0.4.10.2 1.1.7.1-r1: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 0.4.10.2 1.1.7.2: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.6: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
@@ -1634,7 +1634,7 @@ sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portab
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.12.0.1-r3: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.0.1-r4: Wiki using happstack, git or darcs, and pandoc
 www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
