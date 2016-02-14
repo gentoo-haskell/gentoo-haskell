@@ -20,7 +20,7 @@ IUSE="embed_data_files +https +network-uri trypandoc"
 
 RESTRICT=test # likes to break on highlighting-kate update
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -76,6 +76,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
 	embed_data_files? ( dev-haskell/hsb2hs )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson >= 0.7 && < 0.11' 'aeson >= 0.7' \
+		'aeson >= 0.7.0.5 && < 0.11' 'aeson >= 0.7.0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

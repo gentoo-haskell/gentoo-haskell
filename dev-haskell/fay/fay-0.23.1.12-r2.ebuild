@@ -58,7 +58,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3'
+		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3' \
+		'aeson > 0.6 && < 0.11' 'aeson > 0.6'
+
 }
 
 src_configure() {

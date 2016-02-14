@@ -55,3 +55,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/setenv-0.1 <dev-haskell/setenv-0.2
 		>=dev-lang/ghc-7.6 <dev-lang/ghc-7.11 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                >=0.7 && < 0.11' 'aeson >= 0.7' \
+		'aeson >=0.6 && < 0.11' 'aeson >= 0.7'
+}
