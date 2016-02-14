@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -14,8 +14,6 @@ DESCRIPTION="Fast JSON parsing and encoding"
 HOMEPAGE="https://github.com/bos/aeson"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-RESTRICT=test # missing files
-
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
@@ -23,10 +21,12 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 	>=dev-haskell/dlist-0.2:=[profile?]
+	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/hashable-1.1.2.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/scientific-0.3.1:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
+	>=dev-haskell/semigroups-0.16.1:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?]
 	dev-haskell/transformers:=[profile?]
@@ -38,6 +38,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.7
+		>=dev-haskell/quickcheck-instances-0.3.12
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
