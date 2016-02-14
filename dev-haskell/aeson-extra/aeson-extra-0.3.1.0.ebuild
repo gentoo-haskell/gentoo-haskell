@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 	>=dev-haskell/base-compat-0.6.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
@@ -41,3 +41,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
 		>=dev-haskell/these-0.6.2.0 <dev-haskell/these-0.7 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
+}
