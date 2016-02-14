@@ -787,7 +787,7 @@ dev-haskell/jsaddle 0.2.1.0-r1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
-dev-haskell/judy 0.2.3: Fast, scalable, mutable dynamic arrays, maps and hashes
+dev-haskell/judy 0.2.4: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.7: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.3.1-r3 0.4: A JavaScript push mechanism based on the comet idiom
@@ -1166,7 +1166,7 @@ dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 0.4.10.2 1.1.7.2: Deterministic allocation and freeing of scarce resources
-dev-haskell/retry 0.6: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.7.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
@@ -1175,7 +1175,7 @@ dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes 
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2: Random Variables
 dev-haskell/safe 0.3.9: Library of safe (exception free) functions
-dev-haskell/safecopy 0.8.6: Binary serialization with version control
+dev-haskell/safecopy 0.8.6 0.9.0.1: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
@@ -1300,7 +1300,7 @@ dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory 
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
 dev-haskell/syz 0.2.0.0: Scrap Your Zippers
-dev-haskell/tables 0.4.1.1-r2: In-memory storage with multiple keys using lenses and traversals
+dev-haskell/tables 0.4.1.1-r3: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
 dev-haskell/tagged 0.8.3: Haskell 98 phantom types to avoid unsafely passing dummy arguments
