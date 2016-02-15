@@ -34,5 +34,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'unordered-containers >= 0.2.3    && < 0.2.6' 'unordered-containers >= 0.2.3' \
-		'scotty               >= 0.10     && < 0.11' 'scotty               >= 0.10'
+		'scotty               >= 0.10     && < 0.11' 'scotty               >= 0.10' \
+		'aeson                >= 0.9      && < 0.11' 'aeson                >= 0.9'
 }

@@ -1,9 +1,0 @@
-diff --git a/Web/Scotty/Comet.hs b/Web/Scotty/Comet.hs
-index 0d57533..c436899 100644
---- a/Web/Scotty/Comet.hs
-+++ b/Web/Scotty/Comet.hs
-@@ -15,3 +15,3 @@ module Web.Scotty.Comet
- import Web.Scotty (ScottyM, text, post, capture, param, setHeader, get, ActionM, jsonData)
--import Data.Aeson hiding ((.=))
-+import Data.Aeson hiding ((.=), defaultOptions)
- import Control.Monad
