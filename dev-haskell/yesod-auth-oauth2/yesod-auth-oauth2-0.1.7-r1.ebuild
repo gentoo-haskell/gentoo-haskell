@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples +network-uri"
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/authenticate-1.3.2.7:=[profile?] <dev-haskell/authenticate-1.4:=[profile?]
 	>=dev-haskell/hoauth2-0.4.7:=[profile?] <dev-haskell/hoauth2-0.6:=[profile?]
 	>=dev-haskell/http-client-0.4.0:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
@@ -44,6 +44,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                   >= 0.6       && < 0.11' 'aeson                   >= 0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
