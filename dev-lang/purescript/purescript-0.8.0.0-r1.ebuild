@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs nodejs, npm and stuff
 
-RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
 	>=dev-haskell/base-compat-0.6.0:=[profile?]
@@ -54,3 +54,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson >= 0.8 && < 0.11' 'aeson >= 0.8'
+}
