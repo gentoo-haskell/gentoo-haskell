@@ -45,3 +45,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-wai-0.6.3
 		dev-haskell/lifted-base )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson               >= 0.6.2.1  && < 0.11' 'aeson >= 0.6.2.1'
+}
