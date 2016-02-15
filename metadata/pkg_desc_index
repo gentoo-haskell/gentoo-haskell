@@ -1184,7 +1184,7 @@ dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem p
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
-dev-haskell/scotty 0.10.2-r3 0.11.0: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
+dev-haskell/scotty 0.11.0-r1: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
 dev-haskell/sdl 0.6.5.1: Binding to libSDL
 dev-haskell/sdl-gfx 0.6.0.2: Binding to libSDL_gfx
