@@ -53,6 +53,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'aeson                 >=0.7.0.6   && <0.11' 'aeson >=0.7.0.6'
+}
+
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag aeson-compat aeson-compat)
