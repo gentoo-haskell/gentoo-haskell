@@ -36,3 +36,9 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag test test)
 }
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson             >= 0.9    && < 0.11' 'aeson >= 0.9' \
+		'aeson             >= 0.9   && < 0.11' 'aeson >= 0.9'
+}
