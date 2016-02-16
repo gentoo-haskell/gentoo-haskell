@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
 	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/data-lens-light-0.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
