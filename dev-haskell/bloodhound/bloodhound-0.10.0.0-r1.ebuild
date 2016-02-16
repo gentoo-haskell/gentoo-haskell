@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # collides with vector / AC-Vector-Fancy
 
-RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.10:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
@@ -48,6 +48,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
+
 	cabal_chdeps \
-		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8'
+		'hspec                >= 1.8 && <2.2' 'hspec                >= 1.8' \
+		'aeson            >= 0.10    && <0.11' 'aeson            >= 0.10'
 }
