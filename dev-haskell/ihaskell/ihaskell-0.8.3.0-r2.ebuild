@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # broken hspec code
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
