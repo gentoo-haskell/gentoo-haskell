@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # ambiguous modules
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/either-4.3:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
@@ -53,3 +53,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary
 		dev-haskell/wai-extra )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson              >= 0.7  && < 0.11' 'aeson              >= 0.7'
+}
