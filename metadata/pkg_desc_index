@@ -131,7 +131,7 @@ dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
-dev-haskell/bloodhound 0.10.0.0: ElasticSearch client library for Haskell
+dev-haskell/bloodhound 0.10.0.0-r1: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
@@ -421,7 +421,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.1: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r2: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r3: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -581,7 +581,7 @@ dev-haskell/haskell-docs 4.2.6: A program to find and display the docs and type 
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
 dev-haskell/haskell-lexer 1.0-r1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
-dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0: Name resolution library for Haskell
+dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0-r1: Name resolution library for Haskell
 dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
@@ -651,7 +651,7 @@ dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
-dev-haskell/hoauth2 0.4.8-r2 0.5.2-r1: Haskell OAuth2 authentication client
+dev-haskell/hoauth2 0.4.8-r2 0.5.2-r2: Haskell OAuth2 authentication client
 dev-haskell/hood 0.3: Debugging by observing in place
 dev-haskell/hoodle 0.4.0: Executable for hoodle
 dev-haskell/hoodle-builder 0.3.0: text builder for hoodle file format
@@ -752,7 +752,7 @@ dev-haskell/idna 0.2 0.3.0: Implements IDNA (RFC 3490)
 dev-haskell/ieee754 0.7.8: Utilities for dealing with IEEE floating point numbers
 dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
-dev-haskell/ihaskell 0.8.3.0-r1: A Haskell backend kernel for the IPython project
+dev-haskell/ihaskell 0.8.3.0-r2: A Haskell backend kernel for the IPython project
 dev-haskell/imagemagick 0.0.4.1: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
@@ -1044,7 +1044,7 @@ dev-haskell/persistent-mysql 2.3.0.2: Backend for the persistent library using M
 dev-haskell/persistent-postgresql 2.2.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.1.5: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.1.5-r1: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.8: Compositional pipelines
@@ -1091,7 +1091,7 @@ dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
 dev-haskell/process-extras 0.3.3.8: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
-dev-haskell/profiteur 0.3.0.1: Treemap visualiser for GHC prof files
+dev-haskell/profiteur 0.3.0.1-r1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 4.4.1 5.1.2 5.2: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
@@ -1198,7 +1198,7 @@ dev-haskell/semigroups 0.18.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.4.4.6: A family of combinators for defining webservices APIs
-dev-haskell/servant-server 0.4.4.6: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant-server 0.4.4.6-r1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
@@ -1250,7 +1250,7 @@ dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.1: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
-dev-haskell/stack 1.0.2 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 1.0.2-r1 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.1.0.3: State variables
@@ -1284,7 +1284,7 @@ dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
 dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.5.15.1: Haskell code prettifier
+dev-haskell/stylish-haskell 0.5.15.1-r1: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4: Binding to the libsvg-cairo library
@@ -1531,7 +1531,7 @@ dev-haskell/yesod-auth 1.4.12: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
-dev-haskell/yesod-auth-oauth2 0.1.7: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.1.7-r1: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.17.1: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.19: Creation of type-safe, RESTful web applications
@@ -1579,7 +1579,7 @@ dev-lang/idris 0.9.19.1-r1 0.9.20.2 0.10-r1 9999: Functional Programming Languag
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.8.0.0: PureScript Programming Language Compiler
+dev-lang/purescript 0.8.0.0-r1: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
