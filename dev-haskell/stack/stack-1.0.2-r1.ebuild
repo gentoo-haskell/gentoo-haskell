@@ -20,7 +20,7 @@ IUSE="disable-git-info integration-tests static"
 
 RESTRICT="test" # missing files
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.12.1.5:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
@@ -102,6 +102,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/resourcet-1.1.7 <dev-haskell/resourcet-1.2
 		>=dev-haskell/text-1.2.2.0 <dev-haskell/text-1.3 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
+	cabal_chdeps \
+		'aeson >=0.8.0.2 && <0.11' 'aeson >=0.8.0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -1,0 +1,33 @@
+diff --git a/src/Stack/Types/Config.hs b/src/Stack/Types/Config.hs
+index 8c6b02c..f04c69d 100644
+--- a/src/Stack/Types/Config.hs
++++ b/src/Stack/Types/Config.hs
+@@ -12,2 +12,3 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
++{-# LANGUAGE OverlappingInstances #-}
+ 
+diff --git a/src/Stack/Types/Docker.hs b/src/Stack/Types/Docker.hs
+index a24d763..9d9faa2 100644
+--- a/src/Stack/Types/Docker.hs
++++ b/src/Stack/Types/Docker.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE OverloadedStrings, FlexibleInstances, RecordWildCards #-}
++{-# LANGUAGE OverlappingInstances #-}
+ 
+diff --git a/src/Stack/Types/Image.hs b/src/Stack/Types/Image.hs
+index 439bbb6..0eef0c7 100644
+--- a/src/Stack/Types/Image.hs
++++ b/src/Stack/Types/Image.hs
+@@ -4,2 +4,4 @@
+ {-# LANGUAGE ScopedTypeVariables #-}
++{-# LANGUAGE OverlappingInstances #-}
++{-# LANGUAGE CPP #-}
+ 
+diff --git a/src/Stack/Types/Nix.hs b/src/Stack/Types/Nix.hs
+index 3ebf3c4..773ac33 100644
+--- a/src/Stack/Types/Nix.hs
++++ b/src/Stack/Types/Nix.hs
+@@ -3,2 +3,3 @@
+ {-# LANGUAGE RecordWildCards #-}
++{-# LANGUAGE OverlappingInstances #-}
+ 
