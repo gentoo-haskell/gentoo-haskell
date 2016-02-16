@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/cmdargs-0.9:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -33,3 +33,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson            >= 0.6  && < 0.11' 'aeson            >= 0.6'
+}

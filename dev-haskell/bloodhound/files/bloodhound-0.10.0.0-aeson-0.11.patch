@@ -1,0 +1,21 @@
+diff --git a/src/Database/Bloodhound/Types.hs b/src/Database/Bloodhound/Types.hs
+index a859b7b..fd3c732 100644
+--- a/src/Database/Bloodhound/Types.hs
++++ b/src/Database/Bloodhound/Types.hs
+@@ -10,2 +10,3 @@
+ {-# LANGUAGE UndecidableInstances       #-}
++{-# LANGUAGE CPP #-}
+ 
+@@ -1624,2 +1625,12 @@ mkDateHistogram t i = DateHistogramAggregation t i Nothing Nothing Nothing Nothi
+ 
++#if MIN_VERSION_aeson(0,11,0)
++-- Modeled from Maybe instance
++instance (ToJSON a) => ToJSON (NonEmpty a) where
++    toJSON v = toJSON (toList v)
++    {-# INLINE toJSON #-}
++
++    toEncoding v = toEncoding (toList v)
++    {-# INLINE toEncoding #-}
++#endif
++
+ instance ToJSON Version where

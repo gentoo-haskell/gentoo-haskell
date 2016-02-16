@@ -20,7 +20,7 @@ IUSE="test"
 
 RESTRICT=test # missing files
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.11:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]

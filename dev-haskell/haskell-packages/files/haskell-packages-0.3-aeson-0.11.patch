@@ -1,0 +1,16 @@
+diff --git a/src/Distribution/HaskellSuite/Packages.hs b/src/Distribution/HaskellSuite/Packages.hs
+index ce062c9..b14493d 100644
+--- a/src/Distribution/HaskellSuite/Packages.hs
++++ b/src/Distribution/HaskellSuite/Packages.hs
+@@ -2,2 +2,3 @@
+              TemplateHaskell, ScopedTypeVariables, OverloadedStrings #-}
++{-# LANGUAGE CPP #-}
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
+@@ -330,2 +331,3 @@ instance FromJSON License where
+ 
++#if ! MIN_VERSION_aeson(0,11,0)
+ instance ToJSON Version where
+@@ -334,2 +336,3 @@ instance FromJSON Version where
+   parseJSON = stdFromJSON
++#endif
+ 

@@ -32,3 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
+}

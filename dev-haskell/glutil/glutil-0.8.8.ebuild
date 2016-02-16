@@ -32,6 +32,7 @@ RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	dev-haskell/cpphs
+	dev-haskell/hpp
 "
 
 S="${WORKDIR}/${MY_P}"
