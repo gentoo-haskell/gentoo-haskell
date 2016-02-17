@@ -210,7 +210,7 @@ dev-haskell/clientsession 0.9.1.1: Securely store session data in a client-side 
 dev-haskell/clock 0.5.1 0.6.0.1: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
 dev-haskell/cmark 0.3.4 0.4.1 0.5.1: Fast, accurate CommonMark (Markdown) parser and renderer
-dev-haskell/cmdargs 0.10.13: Command line argument processing
+dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r1: Declarative command-line option parsing and documentation library
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
@@ -661,7 +661,7 @@ dev-haskell/hoodle-publish 0.2.0: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1: Haskell API Search
-dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0: A library to support dataflow analysis and optimization
+dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0 3.10.2.1: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.4: Generates ctags for Haskell, incorporating import lists and qualified imports
@@ -787,7 +787,7 @@ dev-haskell/jsaddle 0.2.1.0-r1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
-dev-haskell/judy 0.2.4: Fast, scalable, mutable dynamic arrays, maps and hashes
+dev-haskell/judy 0.2.5: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.7: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r1: A JavaScript push mechanism based on the comet idiom
@@ -934,7 +934,7 @@ dev-haskell/monadrandom 0.4.2.2: Random-number generation monad
 dev-haskell/monads-fd 0.2.0.0-r2: Monad classes, using functional dependencies
 dev-haskell/monads-tf 0.1.0.2-r1: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
-dev-haskell/mono-traversable 0.10.1: Type classes for mapping, folding, and traversing monomorphic containers
+dev-haskell/mono-traversable 0.10.1.1: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.4: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
