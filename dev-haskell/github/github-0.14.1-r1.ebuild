@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+aeson-compat"
+IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.4:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
@@ -44,8 +44,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.12:=[profi
 	>=dev-haskell/vector-0.10.12.3:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/vector-instances-3.3.0.1:=[profile?] <dev-haskell/vector-instances-3.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	aeson-compat? ( >=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?] )
-	!aeson-compat? ( >=dev-haskell/aeson-extra-0.2.0.0:=[profile?] <dev-haskell/aeson-extra-0.3:=[profile?] )
+	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -61,5 +60,5 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag aeson-compat aeson-compat)
+		--flag=aeson-compat
 }
