@@ -20,7 +20,7 @@ IUSE="test"
 
 RESTRICT=test # missing files
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -35,10 +35,4 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag test test)
-}
-
-src_prepare() {
-	cabal_chdeps \
-		'aeson             >= 0.9    && < 0.11' 'aeson >= 0.9' \
-		'aeson             >= 0.9   && < 0.11' 'aeson >= 0.9'
 }
