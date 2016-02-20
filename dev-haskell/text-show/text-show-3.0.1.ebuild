@@ -37,15 +37,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/base-compat-0.8.2 <dev-haskell/base-compat-1
 		>=dev-haskell/base-orphans-0.4.2 <dev-haskell/base-orphans-1
+		>=dev-haskell/generic-deriving-1.10.1 <dev-haskell/generic-deriving-2
 		>=dev-haskell/hspec-2 <dev-haskell/hspec-3
 		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-3
 		>=dev-haskell/quickcheck-instances-0.1 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tagged-0.8.3 <dev-haskell/tagged-1 )
 "
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-haddock.patch
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
