@@ -854,6 +854,7 @@ dev-haskell/log-domain 0.10.3.1-r2: Log-domain arithmetic
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
 dev-haskell/logging-facade 0.0.0 0.1.0: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
+dev-haskell/logict-state 0.1.0.0: Library for logic programming based on haskell package logict
 dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
@@ -1396,7 +1397,7 @@ dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using typ
 dev-haskell/typecompose 0.9.10 0.9.11: Type composition classes & instances
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/uhc-light 1.1.9.2: Part of UHC packaged as cabal/hackage installable library
-dev-haskell/uhc-util 0.1.6.3: UHC utilities
+dev-haskell/uhc-util 0.1.6.5: UHC utilities
 dev-haskell/unamb 0.2.5: Unambiguous choice
 dev-haskell/unbound 0.4.4: Generic support for programming with names and binders
 dev-haskell/unbounded-delays 0.1.0.9: Unbounded thread delays and timeouts
