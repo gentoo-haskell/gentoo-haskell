@@ -1072,6 +1072,7 @@ dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (depr
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13 0.13.1-r1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
+dev-haskell/portmidi 0.1.5.2: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
