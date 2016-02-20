@@ -951,7 +951,7 @@ dev-haskell/multiset 0.2.2 0.3.2: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.8: MurmurHash2 implementation for Haskell
 dev-haskell/mutable-containers 0.3.2: Abstactions and concrete implementations of mutable containers
-dev-haskell/mwc-random 0.13.3.2: Fast, high quality pseudo random number generation
+dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
@@ -1345,7 +1345,7 @@ dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
-dev-haskell/text-show 2.1.2 3: Efficient conversion of values into Text
+dev-haskell/text-show 2.1.2 3.0.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.3.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
