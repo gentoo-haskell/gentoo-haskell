@@ -787,7 +787,7 @@ dev-haskell/jsaddle 0.2.1.0-r1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
-dev-haskell/judy 0.2.5: Fast, scalable, mutable dynamic arrays, maps and hashes
+dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.7: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r1: A JavaScript push mechanism based on the comet idiom
@@ -1504,7 +1504,7 @@ dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
-dev-haskell/xdot 0.2.4.9: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xdot 0.2.4.9 0.3: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
