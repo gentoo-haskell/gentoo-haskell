@@ -1638,7 +1638,7 @@ sci-physics/chipmunk 6.2.1: Chipmunk2D is a simple, lightweight, fast and portab
 sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.12.0.1-r4: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.1: Wiki using happstack, git or darcs, and pandoc
 www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
