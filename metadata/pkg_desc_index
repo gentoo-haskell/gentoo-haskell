@@ -1396,7 +1396,7 @@ dev-haskell/type-level 0.2.4: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
 dev-haskell/typecompose 0.9.10 0.9.11: Type composition classes & instances
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
-dev-haskell/uhc-light 1.1.9.2: Part of UHC packaged as cabal/hackage installable library
+dev-haskell/uhc-light 1.1.9.3: Part of UHC packaged as cabal/hackage installable library
 dev-haskell/uhc-util 0.1.6.5: UHC utilities
 dev-haskell/unamb 0.2.5: Unambiguous choice
 dev-haskell/unbound 0.4.4: Generic support for programming with names and binders
