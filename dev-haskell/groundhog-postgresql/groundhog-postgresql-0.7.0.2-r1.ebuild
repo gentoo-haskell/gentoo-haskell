@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.1:=[profile?]
-	>=dev-haskell/postgresql-simple-0.3:=[profile?] <dev-haskell/postgresql-simple-0.5:=[profile?]
+	>=dev-haskell/postgresql-simple-0.3:=[profile?]
 	>=dev-haskell/resource-pool-0.2.1:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?]
 	>=dev-haskell/transformers-0.2.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
@@ -33,3 +33,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'postgresql-simple        >= 0.3       && < 0.5' 'postgresql-simple        >= 0.3'
+}
