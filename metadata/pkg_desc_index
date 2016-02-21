@@ -272,7 +272,7 @@ dev-haskell/crypto-pubkey-types 0.4.3: Generic cryptography Public keys algorith
 dev-haskell/crypto-random 0.0.9: Simple cryptographic random related types
 dev-haskell/crypto-random-api 0.2.0: Simple random generators API for cryptography related code
 dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
-dev-haskell/cryptohash 0.10.0 0.11.6: collection of crypto hashes, fast, pure and practical
+dev-haskell/cryptohash 0.11.7: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
 dev-haskell/cryptonite 0.11 0.12: Cryptography Primitives sink
@@ -637,7 +637,7 @@ dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
-dev-haskell/hjsmin 0.1.5.2: Haskell implementation of a javascript minifier
+dev-haskell/hjsmin 0.1.5.3: Haskell implementation of a javascript minifier
 dev-haskell/hledger 0.25.1 0.26 0.27: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27: Core data types, parsers and functionality for the hledger accounting tools
