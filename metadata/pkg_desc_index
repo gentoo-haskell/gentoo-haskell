@@ -275,7 +275,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.11.7: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
-dev-haskell/cryptonite 0.11 0.12: Cryptography Primitives sink
+dev-haskell/cryptonite 0.13: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2: CSV loader and dumper
 dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
@@ -527,7 +527,7 @@ dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2: Bindings to Graphvi
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
-dev-haskell/groundhog-postgresql 0.7.0.2: PostgreSQL backend for the groundhog library
+dev-haskell/groundhog-postgresql 0.7.0.2-r1: PostgreSQL backend for the groundhog library
 dev-haskell/groundhog-sqlite 0.7.0.1: Sqlite3 backend for the groundhog library
 dev-haskell/groundhog-th 0.7.0.1: Type-safe datatype-database mapping library
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
@@ -1074,7 +1074,7 @@ dev-haskell/poppler 0.12.2.2-r3 0.12.3-r1 0.13 0.13.1-r1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.1.5.2: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
-dev-haskell/postgresql-simple 0.4.10.0: Mid-Level PostgreSQL client library
+dev-haskell/postgresql-simple 0.4.10.0 0.5.1.2: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
 dev-haskell/pqueue 1.3.1: Reliable, persistent, fast priority queues
 dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
