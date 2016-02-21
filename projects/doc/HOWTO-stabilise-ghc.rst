@@ -60,7 +60,7 @@ packages there:
 ::
 
   # /gentoo.git $
-    for m in $(git grep -l -F '<herd>haskell</herd>'); do
+    for m in $(git grep -l -F '<email>haskell@gentoo.org</email>'); do
       cp=$(dirname "$m")
       egrep -q -R '^KEYWORDS=.*[^~-]amd64' "${cp}/" && echo "${cp}"
     done > stable-to-check-against-ghc-7.8
