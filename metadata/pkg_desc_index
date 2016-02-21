@@ -852,7 +852,7 @@ dev-haskell/loch 0.2-r1: Support for precise error locations in source files
 dev-haskell/lockfree-queue 0.2.3.1: Michael and Scott lock-free queues
 dev-haskell/log-domain 0.10.3.1-r2: Log-domain arithmetic
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
-dev-haskell/logging-facade 0.0.0 0.1.0: Simple logging abstraction that allows multiple back-ends
+dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.0: Library for logic programming based on haskell package logict
 dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
