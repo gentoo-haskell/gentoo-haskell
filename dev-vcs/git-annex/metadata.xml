@@ -29,6 +29,7 @@
 		<flag name="dns">Enable the haskell DNS library for DNS lookup</flag>
 		<flag name="ekg">Enable use of EKG to monitor git-annex as it runs.</flag>
 		<flag name="feed">Enable podcast feed support</flag>
+		<flag name="magicmime">Use libmagic to determine file MIME types</flag>
 		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
 		<flag name="pairing">Enable pairing of git annex repositories</flag>
 		<flag name="quvi">Enable use of quvi to download videos</flag>
