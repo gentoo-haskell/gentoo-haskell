@@ -546,9 +546,9 @@ dev-haskell/gtksourceview3 0.13.2.1: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22: access Hackage's package database via Data.Map
 dev-haskell/hackage-security 0.5.0.2: Hackage security library
-dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2_p20130809 2.13.2.1 2.14.0_rc1 2.14.2-r1 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 9999: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-api 2.16.1: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-library 1.1.1 1.2.1: Library exposing some functionality of Haddock
+dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2_p20130809 2.13.2.1 2.14.0_rc1 2.14.2-r1 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.0.0.8.0.1_rc2 9999: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-api 2.16.1 2.17.0.0.8.0.1_rc2: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0.0.8.0.1_rc2: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
 dev-haskell/hakyll 4.7.5.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
