@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -29,3 +29,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${AGDA_P}/ffi"
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.5.0.0 && < 4.9' 'base >= 4.5.0.0'
+}
