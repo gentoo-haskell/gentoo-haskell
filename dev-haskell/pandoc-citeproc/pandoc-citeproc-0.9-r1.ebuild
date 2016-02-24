@@ -52,6 +52,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-no-binutils.patch
+
 	cabal_chdeps \
 		'aeson >= 0.7 && < 0.11' 'aeson >= 0.7'
 }
