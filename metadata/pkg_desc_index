@@ -669,7 +669,7 @@ dev-haskell/hourglass 0.2.9: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
-dev-haskell/hpc 0.6.0.1 0.6.0.2: Code Coverage Library for Haskell
+dev-haskell/hpc 0.6.0.1 0.6.0.2 0.6.0.3_pre20160204: Code Coverage Library for Haskell
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0 0.3.0.0: A Haskell pre-processor
 dev-haskell/hprotoc 2.2.0: Parse Google Protocol Buffer specifications
