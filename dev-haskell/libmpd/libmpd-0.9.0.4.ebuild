@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -32,3 +32,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		>=dev-haskell/quickcheck-2.1 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'time >= 1.5 && <1.6' 'time >= 1.5'
+}
