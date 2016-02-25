@@ -1,0 +1,99 @@
+commit 85bf1dfedabe4b615488e9f31b99e0b9b255c7fa
+Merge: 52dcc1a 28086e8
+Author: DanielSchuessler <githubd.danlex@spamgourmet.com>
+Date:   Sun Jan 17 16:02:19 2016 +0100
+
+    Merge pull request #4 from christiaanb/master
+    
+    Compile on ghc8
+
+commit 28086e8674df8d8f435d2d66216253ed880dcd50
+Author: Christiaan Baaij <christiaan.baaij@gmail.com>
+Date:   Tue Dec 15 11:27:24 2015 +0100
+
+    Compile on ghc8
+
+diff --git a/Language/Haskell/TH/ExpandSyns.hs b/Language/Haskell/TH/ExpandSyns.hs
+index a379ea6..3c97100 100644
+--- a/Language/Haskell/TH/ExpandSyns.hs
++++ b/Language/Haskell/TH/ExpandSyns.hs
+@@ -74,7 +74,11 @@ nameIsSyn n = do
+     TyConI d -> decIsSyn d
+     ClassI {} -> return Nothing
+     PrimTyConI {} -> return Nothing
+-#if MIN_VERSION_template_haskell(2,7,0)
++#if MIN_VERSION_template_haskell(2,11,0)
++    FamilyI (OpenTypeFamilyD (TypeFamilyHead name _ _ _)) _ -> maybeWarnTypeFamily TypeFam name >> return Nothing
++    FamilyI (ClosedTypeFamilyD (TypeFamilyHead name _ _ _) _) _ -> maybeWarnTypeFamily TypeFam name >> return Nothing
++    FamilyI (DataFamilyD _ _ _) _ -> return Nothing
++#elif MIN_VERSION_template_haskell(2,7,0)
+     FamilyI (FamilyD flavour name _ _) _ -> maybeWarnTypeFamily flavour name >> return Nothing
+ #endif
+     _ -> do
+@@ -111,7 +115,11 @@ decIsSyn (ClassD {}) = return Nothing
+ decIsSyn (DataD {}) = return Nothing
+ decIsSyn (NewtypeD {}) = return Nothing
+ decIsSyn (TySynD _ vars t) = return (Just (tyVarBndrGetName <$> vars,t))
+-#if MIN_VERSION_template_haskell(2,4,0)
++#if MIN_VERSION_template_haskell(2,11,0)
++decIsSyn (OpenTypeFamilyD (TypeFamilyHead name _ _ _)) = maybeWarnTypeFamily TypeFam name >> return Nothing
++decIsSyn (ClosedTypeFamilyD (TypeFamilyHead name _ _ _) _) = maybeWarnTypeFamily TypeFam name >> return Nothing
++decIsSyn (DataFamilyD _ _ _) = return Nothing
++#elif MIN_VERSION_template_haskell(2,4,0)
+ decIsSyn (FamilyD flavour name _ _) = maybeWarnTypeFamily flavour name >> return Nothing
+ #endif
+ decIsSyn x = do
+@@ -209,6 +217,24 @@ expandSyns = \t ->
+       go acc x@EqualityT = passThrough acc x
+ #endif
+ 
++#if MIN_VERSION_template_haskell(2,11,0)
++      go acc (InfixT t1 nm t2) =
++          do
++            t1' <- expandSyns t1
++            t2' <- expandSyns t2
++            return (acc,InfixT t1' nm t2')
++      go acc (UInfixT t1 nm t2) =
++          do
++            t1' <- expandSyns t1
++            t2' <- expandSyns t2
++            return (acc,UInfixT t1' nm t2')
++      go acc (ParensT t) =
++          do
++            (acc',t') <- go acc t
++            return (acc',ParensT t')
++      go acc x@(WildCardT _) = passThrough acc x
++#endif
++
+ class SubstTypeVariable a where
+     -- | Capture-free substitution
+     subst :: (Name, Type) -> a -> a
+@@ -251,6 +277,13 @@ instance SubstTypeVariable Type where
+       go s@EqualityT = s
+ #endif
+ 
++#if MIN_VERSION_template_haskell(2,11,0)
++      go (InfixT t1 nm t2) = InfixT (go t1) nm (go t2)
++      go (UInfixT t1 nm t2) = UInfixT (go t1) nm (go t2)
++      go (ParensT t1) = ParensT (go t1)
++      go s@(WildCardT _) = s
++#endif
++
+ -- testCapture :: Type
+ -- testCapture =
+ --     let
+diff --git a/th-expand-syns.cabal b/th-expand-syns.cabal
+index 6d24828..f8c2f9d 100644
+--- a/th-expand-syns.cabal
++++ b/th-expand-syns.cabal
+@@ -16,8 +16,8 @@ source-repository head
+  location: git://github.com/DanielSchuessler/th-expand-syns.git
+ 
+ Library
+-    build-depends:       base >= 4 && < 5, template-haskell < 2.11, syb, containers
+-    ghc-options:         
++    build-depends:       base >= 4 && < 5, template-haskell < 2.12, syb, containers
++    ghc-options:
+     exposed-modules:     Language.Haskell.TH.ExpandSyns
+ 
+ Test-Suite test-th-expand-syns
