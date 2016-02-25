@@ -1,0 +1,28 @@
+commit 55fbd67f70b7518e60ebf18cf559c7d1b8f0d5fe
+Author: Daniel Sch��ssler <daniels@community.haskell.org>
+Date:   Sun Jan 17 18:51:26 2016 +0100
+
+    WildcardT is nullary now
+
+diff --git a/Language/Haskell/TH/ExpandSyns.hs b/Language/Haskell/TH/ExpandSyns.hs
+index 3c97100..459a6a9 100644
+--- a/Language/Haskell/TH/ExpandSyns.hs
++++ b/Language/Haskell/TH/ExpandSyns.hs
+@@ -232,7 +232,7 @@ expandSyns = \t ->
+           do
+             (acc',t') <- go acc t
+             return (acc',ParensT t')
+-      go acc x@(WildCardT _) = passThrough acc x
++      go acc x@WildCardT = passThrough acc x
+ #endif
+ 
+ class SubstTypeVariable a where
+@@ -281,7 +281,7 @@ instance SubstTypeVariable Type where
+       go (InfixT t1 nm t2) = InfixT (go t1) nm (go t2)
+       go (UInfixT t1 nm t2) = UInfixT (go t1) nm (go t2)
+       go (ParensT t1) = ParensT (go t1)
+-      go s@(WildCardT _) = s
++      go s@WildCardT = s
+ #endif
+ 
+ -- testCapture :: Type
