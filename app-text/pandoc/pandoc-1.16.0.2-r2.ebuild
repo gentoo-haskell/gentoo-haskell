@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.12:=[profi
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
 	>=dev-haskell/filemanip-0.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
-	>=dev-haskell/haddock-library-1.1:=[profile?] <dev-haskell/haddock-library-1.3:=[profile?]
+	>=dev-haskell/haddock-library-1.1:=[profile?] <dev-haskell/haddock-library-1.5:=[profile?]
 	>=dev-haskell/highlighting-kate-0.6.1:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
 	>=dev-haskell/hslua-0.3:=[profile?] <dev-haskell/hslua-0.5:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.4:=[profile?]
@@ -80,7 +80,9 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'aeson >= 0.7 && < 0.11' 'aeson >= 0.7' \
-		'aeson >= 0.7.0.5 && < 0.11' 'aeson >= 0.7.0.5'
+		'aeson >= 0.7.0.5 && < 0.11' 'aeson >= 0.7.0.5' \
+		'haddock-library >= 1.1 && < 1.3' 'haddock-library >= 1.1 && < 1.5' \
+		'time >= 1.5 && < 1.6' 'time >= 1.5'
 }
 
 src_configure() {
