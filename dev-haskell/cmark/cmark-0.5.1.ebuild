@@ -25,3 +25,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.5 && < 4.9' 'base >=4.5'
+}
