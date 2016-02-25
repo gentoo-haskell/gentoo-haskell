@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'base       >= 4.5   && < 4.9' 'base       >= 4.5'
+}
