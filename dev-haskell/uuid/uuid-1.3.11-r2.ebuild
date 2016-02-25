@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -38,5 +38,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'HUnit >=1.2 && < 1.3' 'HUnit >=1.2' \
-		'tasty == 0.10.*' 'tasty >= 0.10'
+		'tasty == 0.10.*' 'tasty >= 0.10' \
+		'time >= 1.1 && < 1.6' 'time >= 1.1'
 }

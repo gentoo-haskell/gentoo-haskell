@@ -42,7 +42,8 @@ DEPEND+="
 
 src_prepare() {
 	cabal_chdeps \
-		'time >= 1.1 && < 1.6' 'time >= 1.1'
+		'time >= 1.1 && < 1.6' 'time >= 1.1' \
+		'process >= 1.0 && < 1.3' 'process >= 1.0'
 }
 
 src_configure() {
