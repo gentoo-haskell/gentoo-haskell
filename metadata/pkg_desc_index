@@ -820,7 +820,7 @@ dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated valu
 dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell programs
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.10: Haskell binding for C LDAP API
-dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2 9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2.1 9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.0.2-r1: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.0.0.5: Law-abiding lenses for aeson
 dev-haskell/lens-family-core 1.2.0: Haskell 98 Lens Families
