@@ -1,13 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/cmdargs:= dev-haskell/ghc-paths:= dev-haskell/network:= dev-haskell/syb:= dev-haskell/transformers:= >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 >=dev-haskell/cabal-1.1.4
-DESCRIPTION=Persistent GHC powered background server for FAST haskell development tools
+DEPEND=>=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( dev-haskell/mtl dev-haskell/old-locale dev-haskell/tasty dev-haskell/tasty-hunit dev-haskell/tasty-quickcheck ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=simple performant time related library
 EAPI=5
-HOMEPAGE=https://github.com/hdevtools/hdevtools/
+HOMEPAGE=https://github.com/vincenthz/hs-hourglass
+IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-RDEPEND=dev-haskell/cmdargs:= dev-haskell/ghc-paths:= dev-haskell/network:= dev-haskell/syb:= dev-haskell/transformers:= >=dev-lang/ghc-7.4.1:=
-SLOT=0
-SRC_URI=mirror://hackage/packages/archive/hdevtools/0.1.2.2/hdevtools-0.1.2.2.tar.gz
+LICENSE=BSD
+RDEPEND=>=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.10
+SRC_URI=mirror://hackage/packages/archive/hourglass/0.2.10/hourglass-0.2.10.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=5c000a4a026a7d4bcb7bb53a0cdcf7ab
+_md5_=f186188d5cbecac205a72e94bc69b57b

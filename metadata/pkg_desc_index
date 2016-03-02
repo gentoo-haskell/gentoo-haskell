@@ -259,7 +259,7 @@ dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r1: A haskell binding to cracklib
 dev-haskell/cracknum 1.4 1.5: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
-dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.0.0: Robust, reliable performance measurement and analysis
+dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.1.0: Robust, reliable performance measurement and analysis
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.12.2.2 0.13.2: A generic interface for cryptographic operations
@@ -470,7 +470,7 @@ dev-haskell/gamma 0.9.0.2: Gamma function and related functions
 dev-haskell/gconf 0.13.0.3: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
-dev-haskell/generic-deriving 1.10.3: Generic programming library for generalised deriving
+dev-haskell/generic-deriving 1.10.4: Generic programming library for generalised deriving
 dev-haskell/generic-trie 0.3.0.1: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
@@ -612,9 +612,9 @@ dev-haskell/hdbc-mysql 0.6.6.1-r2: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
-dev-haskell/hdevtools 0.1.2.2: Persistent GHC powered background server for FAST haskell development tools
+dev-haskell/hdevtools 0.1.3.0: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
-dev-haskell/heap 1.0.2: Heaps in Haskell
+dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.1-r2: An Haskell template system supporting both HTML5 and XML
@@ -666,7 +666,7 @@ dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0 3.10.2.1: A library to sup
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.4: Generates ctags for Haskell, incorporating import lists and qualified imports
-dev-haskell/hourglass 0.2.9: simple performant time related library
+dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
@@ -809,7 +809,7 @@ dev-haskell/lambdabot-trusted 5.0.2.1: Lambdabot trusted code
 dev-haskell/lambdabot-utils 4.2.2: Utility libraries for the advanced IRC bot, Lambdabot
 dev-haskell/language-c 0.4.7: Analysis and generation of C code
 dev-haskell/language-c-quote 0.8.0 0.11.3 0.11.4: C/CUDA/OpenCL/Objective-C quasiquoting library
-dev-haskell/language-ecmascript 0.17.0.2: JavaScript parser and pretty-printer library
+dev-haskell/language-ecmascript 0.17.1.0: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
@@ -859,7 +859,7 @@ dev-haskell/logict-state 0.1.0.1: Library for logic programming based on haskell
 dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
-dev-haskell/ltk 0.14.3.0 0.15.0.4: Leksah tool kit
+dev-haskell/ltk 0.14.3.0 0.15.0.5: Leksah tool kit
 dev-haskell/lucid 2.9.4: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.5.0.0 0.6.0.1: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
