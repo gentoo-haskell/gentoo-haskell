@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare setup test unpack
+DEPEND=>=dev-lang/ghc-7.6.1:= curses? ( >=dev-haskell/hscurses-1.4:= ) >=dev-haskell/binary-0.5:= >=dev-haskell/cryptohash-0.8:= >=dev-haskell/mtl-2.2:= >=dev-haskell/network-fancy-0.1.5:= >=dev-haskell/safe-0.2:= >=dev-haskell/stm-2.1:= >=dev-haskell/transformers-0.4:= >=dev-haskell/vector-0.9:= sdl? ( >=dev-haskell/sdl-0.6.5:= >=dev-haskell/sdl-gfx-0.6:= >=dev-haskell/sdl-ttf-0.6:= sound? ( >=dev-haskell/random-1.0:= >=dev-haskell/sdl-mixer-0.6:= ) ) server? ( >=dev-haskell/random-1.0:= >=dev-haskell/pipes-4:= >=dev-haskell/feed-0.3.1:= >=dev-haskell/xml-1.2.6:= ) >=dev-haskell/cabal-1.16.0 >=dev-haskell/cabal-1.1.4
+DESCRIPTION=A game of competitive puzzle-design
+EAPI=5
+HOMEPAGE=http://mbays.freeshell.org/intricacy
+IUSE=+curses +sdl +sound -server
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-lang/ghc-7.6.1:= curses? ( >=dev-haskell/hscurses-1.4:= ) >=dev-haskell/binary-0.5:= >=dev-haskell/cryptohash-0.8:= >=dev-haskell/mtl-2.2:= >=dev-haskell/network-fancy-0.1.5:= >=dev-haskell/safe-0.2:= >=dev-haskell/stm-2.1:= >=dev-haskell/transformers-0.4:= >=dev-haskell/vector-0.9:= sdl? ( >=dev-haskell/sdl-0.6.5:= >=dev-haskell/sdl-gfx-0.6:= >=dev-haskell/sdl-ttf-0.6:= sound? ( >=dev-haskell/random-1.0:= >=dev-haskell/sdl-mixer-0.6:= ) ) server? ( >=dev-haskell/random-1.0:= >=dev-haskell/pipes-4:= >=dev-haskell/feed-0.3.1:= >=dev-haskell/xml-1.2.6:= ) games-misc/games-envd
+REQUIRED_USE=|| ( curses sdl )
+SLOT=0
+SRC_URI=mirror://hackage/packages/archive/intricacy/0.6/intricacy-0.6.tar.gz
+_eclass_exported_funcs=pkg_preinst:games pkg_postrm:haskell-cabal pkg_postinst:- pkg_setup:- src_unpack:base src_prepare:base src_configure:- src_compile:- src_test:haskell-cabal src_install:-
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	eutils	9d81603248f2ba3ec59124320d123e5e	games	2cf0d67d765e6358b435ccda30c13ad8	ghc-package	6165faf4ae46df43d5a9b0dd28ec8654	haskell-cabal	e79dff3529f360a73b65f90c69e3e788	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	user	906f3c8eb3a2350a4f1191a89baa3e46	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=a422ff6a4f1769466308cf38ed291583

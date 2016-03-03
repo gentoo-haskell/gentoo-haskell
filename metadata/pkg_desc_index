@@ -1611,6 +1611,7 @@ games-arcade/shu-thing 1.1.3: A vector shooter game
 games-fps/frag 1.1.2: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
 games-puzzle/h2048 0.2.0.1: a haskell implementation of Game 2048
+games-puzzle/intricacy 0.6: A game of competitive puzzle-design
 games-puzzle/raincat 1.1.1.3: A puzzle game written in Haskell with a cat in lead role
 games-roguelike/mazesofmonad 1.0.9-r2: Console-based roguelike Role Playing Game similar to nethack
 games-roguelike/scroll 1.20151219: scroll(6), a roguelike game

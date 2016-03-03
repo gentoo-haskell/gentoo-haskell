@@ -408,6 +408,10 @@ dev-vcs/git-annex:webapp-secure - Secure webapp
 dev-vcs/git-annex:webdav - Enable webdav remote
 games-action/nikki:devel - Build without optimizations and executable stripping.
 games-puzzle/h2048:vty - build UI written in vty-ui.
+games-puzzle/intricacy:curses - Enables curses user interface
+games-puzzle/intricacy:sdl - Enables SDL user interface
+games-puzzle/intricacy:server - Builds game server
+games-puzzle/intricacy:sound - Enables sound in SDL user interface
 media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
 media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.
 net-p2p/combinatorrent:threaded - Build with -threaded.
