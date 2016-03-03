@@ -38,7 +38,10 @@ RDEPEND=">=dev-lang/ghc-7.6.1:=
 	server? ( >=dev-haskell/random-1.0:=
 		>=dev-haskell/pipes-4:=
 		>=dev-haskell/feed-0.3.1:=
-		>=dev-haskell/xml-1.2.6:= )
+		>=dev-haskell/xml-1.2.6:=
+		>=dev-haskell/email-validate-1.0.0:=
+		dev-haskell/text
+		>=dev-haskell/smtp-mail-0.1.4.1:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
