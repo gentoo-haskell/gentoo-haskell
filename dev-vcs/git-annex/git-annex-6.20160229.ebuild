@@ -70,7 +70,7 @@ RDEPEND="dev-haskell/aeson:=
 	magicmime? ( dev-haskell/magic:= )
 	network-uri? ( >=dev-haskell/network-2.6:=
 			>=dev-haskell/network-uri-2.6:= )
-	!network-uri? ( >=dev-haskell/network-2.0:= <dev-haskell/network-2.6:= )
+	!network-uri? ( >=dev-haskell/network-2.4:= <dev-haskell/network-2.6:= )
 	pairing? ( dev-haskell/network-info:=
 			dev-haskell/network-multicast:= )
 	s3? ( >=dev-haskell/aws-0.9.2:=
