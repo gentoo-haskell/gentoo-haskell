@@ -253,7 +253,7 @@ dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting betwee
 dev-haskell/cookie 0.4.1.6: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
-dev-haskell/cpphs 1.19.3: A liberalised re-implementation of cpp, the C pre-processor
+dev-haskell/cpphs 1.19.3 1.20.1: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r1: A haskell binding to cracklib
@@ -646,7 +646,7 @@ dev-haskell/hledger-ui 0.27.3: Curses-style user interface for the hledger accou
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22 1.9.28: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.31: Source code suggestions
 dev-haskell/hlist 0.2.3 0.3.4.1 0.4.1.0 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
@@ -1055,6 +1055,7 @@ dev-haskell/pipes-bytestring 2.1.1: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.5: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.3: Group streams into substreams
+dev-haskell/pipes-http 1.0.2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.4: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.3: Safety for the pipes ecosystem
@@ -1584,7 +1585,7 @@ dev-lang/idris 0.10-r1 0.10.2 9999: Functional Programming Language with Depende
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.8.0.0-r1: PureScript Programming Language Compiler
+dev-lang/purescript 0.8.2.0: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
@@ -1601,7 +1602,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160114 6.20160126 6.20160211: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160114 6.20160126 6.20160229: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
