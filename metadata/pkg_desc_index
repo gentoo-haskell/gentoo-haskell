@@ -1022,7 +1022,7 @@ dev-haskell/parseargs 0.1.5.2 0.2.0.4: Full-featured command-line argument parsi
 dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
-dev-haskell/path 0.5.3: Path
+dev-haskell/path 0.5.7: Support for well-typed paths
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
 dev-haskell/pathtype 0.7.0.1: Type-safe replacement for System.FilePath etc
