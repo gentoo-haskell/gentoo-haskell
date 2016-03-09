@@ -990,6 +990,7 @@ dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
 dev-haskell/normaldistribution 1.1.0.3: Minimum fuss normally distributed random values
 dev-haskell/numbers 3000.2.0.1: Various number types
+dev-haskell/numbersieves 0.1.2: Number Theoretic Sieves: primes, factorization, and Euler's Totient
 dev-haskell/numeric-extras 0.1: Useful tools from the C standard library
 dev-haskell/numeric-prelude 0.4.2: An experimental alternative hierarchy of numeric type classes
 dev-haskell/numeric-quest 0.2.0.1: Math and quantum mechanics
