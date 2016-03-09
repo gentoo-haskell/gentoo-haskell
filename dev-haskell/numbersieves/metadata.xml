@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package includes the Sieve of O&#39;Neill and two generalizations of the Sieve of Eratosthenes.   The Sieve of O&#39;Neill is a fully incremental primality sieve based on priority queues.  The other two are array based, and are not incremental.   One sieves the smallest prime factor,  and is useful if you want to factor a large quantity of small numbers.   The other sieves Euler&#39;s Totient,  which is the number of positive integers relatively prime and less than a given number.
+	</longdescription>
+</pkgmetadata>
