@@ -623,7 +623,7 @@ dev-haskell/here 1.2.7: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexpat 0.20.9: XML parser/formatter based on expat
-dev-haskell/hflags 0.4: Command line flag parser, very similar to Google's gflags
+dev-haskell/hflags 0.4.1: Command line flag parser, very similar to Google's gflags
 dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster grids
 dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
@@ -895,7 +895,7 @@ dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.10 0.11: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
-dev-haskell/mersenne-random-pure64 0.2.0.4: Generate high quality pseudorandom numbers purely using a Mersenne Twister
+dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2: Handling of MIDI messages and files
