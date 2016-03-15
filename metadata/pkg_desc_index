@@ -36,7 +36,7 @@ dev-haskell/active 0.2.0.8: Abstractions for animation
 dev-haskell/ad 4.3.2-r1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.11.0.0: Fast JSON parsing and encoding
+dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.11.0.0 0.11.1.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
 dev-haskell/aeson-compat 0.3.1.0: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.1.1: Extra goodies for aeson
@@ -617,7 +617,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
-dev-haskell/heist 0.13.1.2-r1 0.14.1.1-r2: An Haskell template system supporting both HTML5 and XML
+dev-haskell/heist 0.13.1.2-r1 0.14.1.2: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.7: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
@@ -1032,7 +1032,7 @@ dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
 dev-haskell/pcg-random 0.1.3.2: Haskell bindings to the PCG random number generator
-dev-haskell/pcre-heavy 1.0.0.1: A regexp library on top of pcre-light you can actually use
+dev-haskell/pcre-heavy 1.0.0.2: A regexp library on top of pcre-light you can actually use
 dev-haskell/pcre-light 0.4.0.4: Portable regex library for Perl 5 compatible regular expressions
 dev-haskell/pdf-toolbox-content 0.0.5.1: A collection of tools for processing PDF files
 dev-haskell/pdf-toolbox-core 0.0.4.1: A collection of tools for processing PDF files
