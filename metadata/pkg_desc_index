@@ -171,7 +171,7 @@ dev-haskell/cairo 0.12.5.0-r1 0.12.5.1 0.12.5.3 0.13.1.1: Binding to the Cairo l
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
-dev-haskell/case-insensitive 1.1.0.3 1.2.0.5: Case insensitive string comparison
+dev-haskell/case-insensitive 1.1.0.3 1.2.0.6: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
@@ -1097,7 +1097,7 @@ dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
 dev-haskell/process-extras 0.3.3.8: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
-dev-haskell/profiteur 0.3.0.1-r1: Treemap visualiser for GHC prof files
+dev-haskell/profiteur 0.3.0.2: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 4.4.1 5.1.2 5.2: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
@@ -1313,7 +1313,7 @@ dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bit
 dev-haskell/tagged 0.8.3: Haskell 98 phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagged-transformer 0.8-r1: Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagshare 0.0: TagShare - explicit sharing with tags
-dev-haskell/tagsoup 0.13.8: Parsing and extracting information from (possibly malformed) HTML/XML documents
+dev-haskell/tagsoup 0.13.9: Parsing and extracting information from (possibly malformed) HTML/XML documents
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
