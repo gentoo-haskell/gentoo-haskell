@@ -1,7 +1,7 @@
 app-accessibility/hsay 1.1.0-r2: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-editors/leksah 0.14.2.0 0.14.3.0-r2 0.15.1.3-r1 0.15.1.4-r1 9999: Haskell IDE written in Haskell
-app-editors/leksah-server 0.14.3.0-r1 0.15.0.7 0.15.0.9-r1 9999: Metadata collection for leksah
+app-editors/leksah 0.15.2.0: Haskell IDE written in Haskell
+app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.3: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 1.12.4 3.0.2 3.1.6 3.1.6-r1 3.1.7 4.0.0-r1 4.0.2 4.1.6 4.1.6-r1 5.2.1.1 5.2.1.2 5.4.0.0 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
@@ -784,7 +784,7 @@ dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.1: Obtain minified jQuery code
-dev-haskell/jsaddle 0.2.1.0-r1: High level interface for webkit-javascriptcore
+dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
