@@ -27,7 +27,7 @@ RDEPEND=">=app-editors/leksah-server-0.15.2.0:=[profile?] <app-editors/leksah-se
 	dev-haskell/blaze-html:=[profile?]
 	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
-	>=dev-haskell/cpphs-1.19:=[profile?] <dev-haskell/cpphs-1.20:=[profile?]
+	>=dev-haskell/cpphs-1.19:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
 	dev-haskell/ghcjs-codemirror:=[profile?]
 	>=dev-haskell/ghcjs-dom-0.2.1.0:=[profile?] <dev-haskell/ghcjs-dom-0.3:=[profile?]
@@ -75,6 +75,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 	test? ( dev-haskell/monad-loops )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'cpphs >=1.19 && <1.20' 'cpphs >=1.19'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
