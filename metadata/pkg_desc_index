@@ -602,7 +602,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.16.2.0: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.3: XML-RPC client and server library
+dev-haskell/haxr 3000.11.1.4: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
@@ -630,7 +630,7 @@ dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.0-r1: Generate scaffold for cabal project
-dev-haskell/highlighting-kate 0.5.15 0.6.1: Syntax highlighting
+dev-haskell/highlighting-kate 0.5.15 0.6.2: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
 dev-haskell/hint 0.4.0.0-r1 0.4.2.0 0.4.2.1 0.4.2.3 9999: Runtime Haskell interpreter (GHC API wrapper)
 dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
