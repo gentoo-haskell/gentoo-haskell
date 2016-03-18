@@ -37,7 +37,7 @@ dev-haskell/ad 4.3.2-r1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.11.0.0 0.11.1.1: Fast JSON parsing and encoding
-dev-haskell/aeson-better-errors 0.9.0: Better error messages when decoding JSON values
+dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
 dev-haskell/aeson-compat 0.3.1.0: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.1.1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
@@ -813,7 +813,7 @@ dev-haskell/language-ecmascript 0.17.1.0: JavaScript parser and pretty-printer l
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/language-javascript 0.5.14.2: Parser for JavaScript
+dev-haskell/language-javascript 0.5.14.5: Parser for JavaScript
 dev-haskell/largeword 1.2.5: Provides Word128, Word192 and Word256 and a way of producing other large words if required
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
