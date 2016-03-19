@@ -1190,7 +1190,7 @@ dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame 
 dev-haskell/sandi 0.3.6: Data encoding library
 dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
-dev-haskell/scientific 0.3.4.4: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.4.6: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.0-r1: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
