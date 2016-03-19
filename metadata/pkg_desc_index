@@ -1028,7 +1028,6 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.7: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-pieces 0.2.1: Components of paths
-dev-haskell/pathlib 0.1.9999-r1: A library for safe (file)path manipulation
 dev-haskell/pathtype 0.7.0.1: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
