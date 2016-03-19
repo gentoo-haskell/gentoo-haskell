@@ -350,6 +350,7 @@ dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 an
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
+dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
 dev-haskell/distributed-process 0.5.5.1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3: Tests and test support tools for distributed-process
@@ -941,6 +942,7 @@ dev-haskell/monoid-extras 0.4.0.4: Various extra monoid-related definitions and 
 dev-haskell/monoid-subclasses 0.4.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
+dev-haskell/mountpoints 1.0.2: list mount points
 dev-haskell/msgpack 1.0.0: A Haskell implementation of MessagePack
 dev-haskell/mtl 2.1.3.1 2.2.1-r1: Monad classes, using functional dependencies
 dev-haskell/mtl-compat 0.2.1.3: Backported Control.Monad.Except module from mtl
@@ -1348,7 +1350,7 @@ dev-haskell/testing-feat 0.4.0.2: Functional Enumeration of Algebraic Types
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
 dev-haskell/texmath 0.8.4.2: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.0: Functions for running Tex from Haskell
-dev-haskell/text 1.2.1.3 1.2.2.0: An efficient packed Unicode text type
+dev-haskell/text 1.2.2.1: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
@@ -1606,7 +1608,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160114 6.20160126 6.20160229: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160114 6.20160126 6.20160229 6.20160318: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
