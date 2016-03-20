@@ -46,6 +46,7 @@ needed_atom="dev-lang/ghc"
 dry_run=
 autobuild_machine=
 keep_temp_chroot=no
+makeopts=auto
 
 default_autobuild_machine() {
     local arch=$1
@@ -86,6 +87,9 @@ while [[ ${#@} -gt 0 ]]; do
         --needed-atom=*)
             needed_atom=${1#--needed-atom=}
             ;;
+        --makeopts=*)
+            makeopts=${1#--makeopts=}
+            ;;
         --dry-run)
             dry_run=yes
             ;;
@@ -110,6 +114,7 @@ i "stage3 URL:        ${stage3_url}"
 i "chroot profile:    ${chroot_profile}"
 i "built atom:        ${needed_atom}"
 i "keep temp chroot:  ${keep_temp_chroot}"
+i "makeopts:          ${makeopts}"
 
 [[ -z ${dry_run} ]] || exit 0
 
@@ -176,7 +181,7 @@ run mkdir "${chroot_temp}"
     (
         run cd gentoo-chrootiez/bound
         run ./make_typical_binds.sh
-        run ./make_typical_confs.sh
+        run ./make_typical_confs.sh --makeopts=${makeopts}
         run ln -s "${ghc_autobuilds_dir}" result
     )
 
