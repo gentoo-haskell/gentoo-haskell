@@ -45,6 +45,7 @@ chroot_profile=1
 needed_atom="dev-lang/ghc"
 dry_run=
 autobuild_machine=
+keep_temp_chroot=no
 
 default_autobuild_machine() {
     local arch=$1
@@ -88,6 +89,9 @@ while [[ ${#@} -gt 0 ]]; do
         --dry-run)
             dry_run=yes
             ;;
+        --keep-temp-chroot)
+            keep_temp_chroot=yes
+            ;;
         *)
             die "unknown option: $1"
             ;;
@@ -100,9 +104,12 @@ done
 [[ -z ${autobuild_machine} ]] && autobuild_machine=$(default_autobuild_machine "${target_arch}")
 [[ -z ${stage3_url} ]] && stage3_url=$(autobuild_dir "${target_arch}")/latest-stage3-${autobuild_machine}.txt
 
-i "target ARCH:     ${target_arch}"
-i "stage3 URL:      ${stage3_url}"
-i "chroot profile:  ${chroot_profile}"
+i "target ARCH:       ${target_arch}"
+i "autobuild machine: ${autobuild_machine}"
+i "stage3 URL:        ${stage3_url}"
+i "chroot profile:    ${chroot_profile}"
+i "built atom:        ${needed_atom}"
+i "keep temp chroot:  ${keep_temp_chroot}"
 
 [[ -z ${dry_run} ]] || exit 0
 
@@ -182,5 +189,9 @@ run mkdir "${chroot_temp}"
     run bash "${chroot_script}" '/store-results.bash'
 )
 
-echo "cleanup '${chroot_temp}'"
-rm -rf -- "${chroot_temp}"
+if [[ -z ${keep_temp_chroot} ]]; then
+    echo "cleanup '${chroot_temp}'"
+    rm -rf -- "${chroot_temp}"
+else
+    echo "keeping '${chroot_temp}'"
+fi
