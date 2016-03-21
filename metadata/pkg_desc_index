@@ -1204,8 +1204,8 @@ dev-haskell/semigroupoids 4.2 4.3 5.0.1: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.4.4.7: A family of combinators for defining webservices APIs
-dev-haskell/servant-server 0.4.4.7: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant 0.4.4.7 0.5: A family of combinators for defining webservices APIs
+dev-haskell/servant-server 0.4.4.7 0.5: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
@@ -1224,6 +1224,7 @@ dev-haskell/shellac-readline 0.9.5.2: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/shellmate 0.2.3-r1: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.5: shell-like (systems) programming in Haskell
+dev-haskell/should-not-typecheck 2.0.1: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
