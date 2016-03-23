@@ -320,10 +320,10 @@ dev-haskell/deepseq-generics 0.1.1.2: GHC.Generics-based Control.DeepSeq.rnf imp
 dev-haskell/dependent-map 0.1.1.3 0.2.0.1 0.2.1.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.2.1.0 0.3.2.1: Dependent sum type
 dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate instances of classes in dependent-sum package
-dev-haskell/derive 2.5.22 2.5.23: A program and library to derive instances for data types
+dev-haskell/derive 2.5.22 2.5.24: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.7.2.2: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.7.2.3: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.3: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
@@ -552,7 +552,7 @@ dev-haskell/haddock 2.10.0-r2 2.11.0_p20121213 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2
 dev-haskell/haddock-api 2.16.1 2.17.0.0.8.0.1_rc2: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0.0.8.0.1_rc2: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.7.5.1: A static website compiler library
+dev-haskell/hakyll 4.7.5.2: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/half 0.2.2.3: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
@@ -784,7 +784,7 @@ dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
-dev-haskell/js-jquery 1.12.1: Obtain minified jQuery code
+dev-haskell/js-jquery 1.12.2: Obtain minified jQuery code
 dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
@@ -911,7 +911,7 @@ dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.3.0.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.6: Monad morphisms
-dev-haskell/mockery 0.3.2: Support functions for automated testing
+dev-haskell/mockery 0.3.3: Support functions for automated testing
 dev-haskell/monad-control 1.0.0.5: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.1: Pure logger typeclass and monad transformer
@@ -984,7 +984,7 @@ dev-haskell/network-transport 0.4.3.1: Network abstraction layer
 dev-haskell/network-transport-inmemory 0.5.1: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.4.2: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport implementations
-dev-haskell/network-uri 2.5.0.0 2.6.0.3: URI manipulation
+dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass and set of functions for working with newtypes, with generics support
 dev-haskell/non-empty 0.2.1: List-like structures with static restrictions on the number of elements
