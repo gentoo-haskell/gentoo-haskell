@@ -21,7 +21,7 @@ IUSE="+bibutils debug embed_data_files test_citeproc unicode_collation"
 
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
-RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-1.17:=[profile?]
+RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-1.18:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
@@ -52,10 +52,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-no-binutils.patch
-
-	cabal_chdeps \
-		'aeson >= 0.7 && < 0.11' 'aeson >= 0.7'
+	epatch "${FILESDIR}"/${PN}-0.9-no-binutils.patch
 }
 
 src_configure() {
