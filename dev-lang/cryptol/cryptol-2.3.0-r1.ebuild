@@ -22,7 +22,7 @@ IUSE="+relocatable server"
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
 	>=dev-haskell/base-compat-0.6:=[profile?]
-	>=dev-haskell/deepseq-generics-0.1:=[profile?] <dev-haskell/deepseq-generics-0.2:=[profile?]
+	>=dev-haskell/deepseq-generics-0.1:=[profile?]
 	>=dev-haskell/generic-trie-0.3.0.1:=[profile?]
 	>=dev-haskell/gitrev-1.0:=[profile?]
 	>=dev-haskell/graphscc-1.0.4:=[profile?]
@@ -59,6 +59,13 @@ DEPEND="${RDEPEND}
 RDEPEND+="
 	sci-mathematics/z3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'deepseq-generics  >= 0.1 && < 0.2' 'deepseq-generics  >= 0.1'
+
+	epatch "${FILESDIR}"/${P}-dg-0.2.patch
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
