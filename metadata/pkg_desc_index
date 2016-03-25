@@ -273,7 +273,7 @@ dev-haskell/crypto-pubkey-types 0.4.3: Generic cryptography Public keys algorith
 dev-haskell/crypto-random 0.0.9: Simple cryptographic random related types
 dev-haskell/crypto-random-api 0.2.0: Simple random generators API for cryptography related code
 dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
-dev-haskell/cryptohash 0.11.7: collection of crypto hashes, fast, pure and practical
+dev-haskell/cryptohash 0.11.9: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.3: Crypto-api interfaces for cryptohash
 dev-haskell/cryptonite 0.13: Cryptography Primitives sink
@@ -1268,7 +1268,7 @@ dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.2.3: A library of statistical type
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
-dev-haskell/stm-conduit 2.7.0: Introduces conduits to channels, and promotes using conduits concurrently
+dev-haskell/stm-conduit 2.8.0: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-split 0.0.0.1: TMVars, TVars and TChans with distinguished input and output side
 dev-haskell/stmonadtrans 0.3.3: A monad transformer version of the ST monad
