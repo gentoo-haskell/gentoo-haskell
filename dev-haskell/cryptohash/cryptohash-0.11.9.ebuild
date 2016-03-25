@@ -19,6 +19,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/byteable:=[profile?]
+	>=dev-haskell/cryptonite-0.13:=[profile?]
+	dev-haskell/memory:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
