@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/unix-compat-0.1.2:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-haskell/utf8-string-0.3.6:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.12:=[profile?]
-	>=dev-haskell/zip-archive-0.2.3:=[profile?] <dev-haskell/zip-archive-0.3:=[profile?]
+	>=dev-haskell/zip-archive-0.2.3:=[profile?]
 	>=dev-haskell/zlib-0.5.3.0:=[profile?] <dev-haskell/zlib-0.7.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/libiconv
@@ -72,7 +72,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base >= 4.5 && < 4.9' 'base >= 4.5'
+		'base >= 4.5 && < 4.9' 'base >= 4.5' \
+		'zip-archive  >= 0.2.3 && < 0.3' 'zip-archive  >= 0.2.3'
 }
 
 src_configure() {
