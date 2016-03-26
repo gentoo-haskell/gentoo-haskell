@@ -49,7 +49,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotate
 	<dev-haskell/utf8-string-1.1:=[profile?]
 	<dev-haskell/vector-0.12:=[profile?]
 	<dev-haskell/vector-binary-instances-0.3:=[profile?]
-	>dev-haskell/zip-archive-0.2.3.5:=[profile?] <dev-haskell/zip-archive-0.2.4:=[profile?]
+	>dev-haskell/zip-archive-0.2.3.5:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
@@ -70,7 +70,8 @@ src_prepare() {
 	replace-hcflags -g ''
 
 	cabal_chdeps \
-		'zlib < 0.6.1' 'zlib'
+		'zlib < 0.6.1' 'zlib' \
+		'zip-archive > 0.2.3.5 && < 0.2.4' 'zip-archive > 0.2.3.5'
 }
 
 src_configure() {
