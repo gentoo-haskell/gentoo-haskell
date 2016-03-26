@@ -17,7 +17,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="curses ffi gmp"
+IUSE="ffi gmp"
 
 RESTRICT=test # pulls stack
 
@@ -39,6 +39,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotate
 	>=dev-haskell/parsers-0.9:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
 	dev-haskell/safe:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
+	<dev-haskell/terminal-size-0.4:=[profile?]
 	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/transformers-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
@@ -51,7 +52,6 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotate
 	>dev-haskell/zip-archive-0.2.3.5:=[profile?] <dev-haskell/zip-archive-0.2.4:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	curses? ( <dev-haskell/hscurses-1.5:=[profile?] )
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
 	gmp? ( <dev-haskell/libffi-0.2:=[profile?]
 		dev-libs/gmp:= )
@@ -76,7 +76,6 @@ src_prepare() {
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-ci \
-		$(cabal_flag curses curses) \
 		--flag=-execonly \
 		$(cabal_flag ffi ffi) \
 		--flag=-freestanding \
