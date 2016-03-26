@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
 	>=dev-haskell/base-compat-0.6.0:=[profile?]
-	>=dev-haskell/bower-json-0.7:=[profile?]
+	>=dev-haskell/bower-json-0.8:=[profile?]
 	>=dev-haskell/boxes-0.1.4:=[profile?] <dev-haskell/boxes-0.2.0:=[profile?]
 	dev-haskell/dlist:=[profile?]
 	dev-haskell/edit-distance:=[profile?]
@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?] <dev-haskell/monad-logger-0.4:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?] <dev-haskell/mtl-2.3.0:=[profile?]
 	dev-haskell/network:=[profile?]
-	>=dev-haskell/optparse-applicative-0.10.0:=[profile?]
+	>=dev-haskell/optparse-applicative-0.12.1:=[profile?]
 	>=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	>=dev-haskell/pattern-arrows-0.0.2:=[profile?] <dev-haskell/pattern-arrows-0.1:=[profile?]
@@ -58,10 +58,10 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/utf8-string-1:=[profile?] <dev-haskell/utf8-string-2:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.22.2.0
 	test? ( dev-haskell/hspec
 		dev-haskell/hspec-discover
 		dev-haskell/hunit )
