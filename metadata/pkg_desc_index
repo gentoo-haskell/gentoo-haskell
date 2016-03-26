@@ -60,7 +60,7 @@ dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored
 dev-haskell/anydbm 1.0.7: Interface for DBM-like database systems
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
-dev-haskell/apply-refact 0.1.0.0: Perform refactorings specified by the refact library
+dev-haskell/apply-refact 0.2.0.0: Perform refactorings specified by the refact library
 dev-haskell/arithmoi 0.4.1.3: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
 dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
 dev-haskell/ascii-progress 0.3.2.0: A simple progress bar for the console
@@ -180,7 +180,7 @@ dev-haskell/cc-delcont 0.2-r1: Delimited continuations and dynamically scoped va
 dev-haskell/cereal 0.4.1.1 0.5.1.0: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
-dev-haskell/cgi 3001.2.2.3: A library for writing CGI programs
+dev-haskell/cgi 3001.2.2.3 3001.3.0.0: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.4 1.6: A library for generating 2D Charts and Plots
@@ -1296,6 +1296,7 @@ dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C
 dev-haskell/stylish-haskell 0.5.15.2: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
+dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.5.0.0: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
