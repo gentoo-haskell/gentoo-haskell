@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	>=dev-haskell/utility-ht-0.0.8:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	gui? ( >=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
-		>=dev-haskell/wxhaskell-0.12.1:${WX_SLOT}=[profile?] <dev-haskell/wxhaskell-0.14:${WX_SLOT}=[profile?]
+		>=dev-haskell/wx-0.12.1:${WX_SLOT}=[profile?] <dev-haskell/wx-0.14:${WX_SLOT}=[profile?]
 		>=dev-haskell/wxcore-0.12.1:${WX_SLOT}=[profile?] <dev-haskell/wxcore-0.14:${WX_SLOT}=[profile?] )
 	httpserver? ( >=dev-haskell/cgi-3001.1:=[profile?]
 			>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-1.1:=[profile?]
