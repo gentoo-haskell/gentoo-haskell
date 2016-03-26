@@ -19,8 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cprng-aes-0.5.0:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?]
+RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/network-2.2.1:=[profile?]
 	dev-haskell/streaming-commons:=[profile?]
 	>=dev-haskell/tls-1.3.2:=[profile?]
