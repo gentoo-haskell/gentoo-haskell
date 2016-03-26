@@ -51,7 +51,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.12:=[profi
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/xml-1.3.12:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-haskell/yaml-0.8.8.2:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
-	>=dev-haskell/zip-archive-0.2.3.4:=[profile?] <dev-haskell/zip-archive-0.3:=[profile?]
+	>=dev-haskell/zip-archive-0.2.3.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	https? ( >=dev-haskell/http-client-0.3.2:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
@@ -82,7 +82,8 @@ src_prepare() {
 		'aeson >= 0.7 && < 0.11' 'aeson >= 0.7' \
 		'aeson >= 0.7.0.5 && < 0.11' 'aeson >= 0.7.0.5' \
 		'haddock-library >= 1.1 && < 1.3' 'haddock-library >= 1.1 && < 1.5' \
-		'time >= 1.5 && < 1.6' 'time >= 1.5'
+		'time >= 1.5 && < 1.6' 'time >= 1.5' \
+		'zip-archive >= 0.2.3.4 && < 0.3' 'zip-archive >= 0.2.3.4'
 }
 
 src_configure() {
