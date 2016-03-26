@@ -824,7 +824,10 @@ dev-haskell/ldap 0.6.10: Haskell binding for C LDAP API
 dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2.1 9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.0.2-r1: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.0.0.5: Law-abiding lenses for aeson
+dev-haskell/lens-family 1.2.0: Lens Families
 dev-haskell/lens-family-core 1.2.0: Haskell 98 Lens Families
+dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
+dev-haskell/lens-simple 0.1.0.8: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.7: Simple Functional Lenses
 dev-haskell/lhs2tex 1.16 1.17 1.18.1-r1 1.19: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
@@ -1427,7 +1430,7 @@ dev-haskell/unlambda 0.1.4.1: Unlambda interpreter
 dev-haskell/unordered-containers 0.2.6.0 0.2.7.0 9999: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
-dev-haskell/uri-bytestring 0.1.9.2: Haskell URI parsing as ByteStrings
+dev-haskell/uri-bytestring 0.2.0.0: Haskell URI parsing as ByteStrings
 dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
@@ -1627,7 +1630,7 @@ games-roguelike/scroll 1.20151219: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r1: Podcast Aggregator (downloader)
-media-sound/live-sequencer 0.0.4-r3: Live coding of MIDI music
+media-sound/live-sequencer 0.0.4-r4: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.2: Count mailboxes in a SQL database
