@@ -380,11 +380,9 @@ dev-lang/idris:curses - Use curses to get the screen width.
 dev-lang/idris:ffi - Build support for libffi.
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with support for multithreaded execution.
-dev-vcs/darcs:color - Use ansi color escapes.
 dev-vcs/darcs:diff - Use 'lcs' for diff building.
 dev-vcs/darcs:http - Use the pure Haskell HTTP package for HTTP support.
 dev-vcs/darcs:network-uri - Get Network.URI from the network-uri package.
-dev-vcs/darcs:optimize - Build with optimizations (-O2).
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
 dev-vcs/darcs:threaded - Use threading and SMP support.
 dev-vcs/git-annex:assistant - Enable git-annex assistant and watch command

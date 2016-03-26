@@ -16,7 +16,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r2: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r3: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -1571,7 +1571,7 @@ dev-haskell/yi-rope 0.7.0.1: A rope data structure used by Yi
 dev-haskell/zeromq-haskell 0.8.4: Bindings to ZeroMQ 2.1.x
 dev-haskell/zeromq3-haskell 0.5.2: Bindings to ZeroMQ 3.x
 dev-haskell/zeromq4-haskell 0.6.4: Bindings to ZeroMQ 4.x
-dev-haskell/zip-archive 0.2.3.7: Library for creating and modifying zip archives
+dev-haskell/zip-archive 0.2.3.7 0.3: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2-r1 9999: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
@@ -1591,7 +1591,7 @@ dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2005.3-r2 2006.9: The Hugs98 Haskell interpreter
-dev-lang/idris 0.10.3 0.11 9999: Functional Programming Language with Dependent Types
+dev-lang/idris 0.10.3 0.11-r1 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
@@ -1610,7 +1610,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.4.3: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 6.20160114 6.20160126 6.20160229 6.20160318: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
