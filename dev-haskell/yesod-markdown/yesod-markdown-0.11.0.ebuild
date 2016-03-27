@@ -28,9 +28,7 @@ RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-1.17:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	|| ( <dev-haskell/texmath-0.6.5.1:=[profile?]
-		|| ( ( >dev-haskell/texmath-0.6.5.1:=[profile?] <dev-haskell/texmath-0.6.7:=[profile?] )
-			>dev-haskell/texmath-0.6.7:=[profile?] ) )
+	>dev-haskell/texmath-0.6.7:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
