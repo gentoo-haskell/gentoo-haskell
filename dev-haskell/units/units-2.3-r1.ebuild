@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 	>=dev-haskell/multimap-1.2:=[profile?]
-	>=dev-haskell/singletons-0.9:=[profile?] <dev-haskell/singletons-2:=[profile?]
+	>=dev-haskell/singletons-0.9:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/th-desugar-1.5.4:=[profile?]
 	>=dev-haskell/units-parser-0.1:=[profile?] <dev-haskell/units-parser-1.0:=[profile?]
@@ -37,4 +37,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# workaround https://ghc.haskell.org/trac/ghc/ticket/10110
 	append-ldflags $(no-as-needed)
+
+	cabal_chdeps \
+		'singletons >= 0.9 && < 2' 'singletons >= 0.9'
 }
