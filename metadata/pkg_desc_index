@@ -874,7 +874,7 @@ dev-haskell/machines-directory 0.2.0.6: Directory (system) utilities for the mac
 dev-haskell/machines-io 0.2.0.8: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.2: Pretty printing designed for printing source code
-dev-haskell/managed 1.0.2: A monad for managed values
+dev-haskell/managed 1.0.3: A monad for managed values
 dev-haskell/manatee 0.2.2: The Haskell/Gtk+ Integrated Live Environment
 dev-haskell/manatee-browser 0.1.1: Browser extension for Manatee
 dev-haskell/manatee-core 0.1.1: The core of Manatee
