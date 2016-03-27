@@ -22,7 +22,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="system-glfw"
 
-RDEPEND=">=dev-haskell/opengl-2.1:=[profile?] <dev-haskell/opengl-3:=[profile?]
+RDEPEND=">=dev-haskell/opengl-2.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	system-glfw? ( media-libs/glfw )
 	!system-glfw? ( virtual/opengl
@@ -33,6 +33,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	cabal_chdeps \
+		'OpenGL >= 2.1 && < 3' 'OpenGL >= 2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
