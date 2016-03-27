@@ -489,6 +489,7 @@ dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Gh
 dev-haskell/ghc-parmake 0.1.9: A parallel wrapper for 'ghc --make'
 dev-haskell/ghc-parser 0.1.8.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
+dev-haskell/ghc-pkg-lib 0.3.1: Provide library support for ghc-pkg information
 dev-haskell/ghc-simple 0.3: Simplified interface to the GHC API
 dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
@@ -1236,7 +1237,7 @@ dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing va
 dev-haskell/simple-sendfile 0.2.21: Cross platform library for the sendfile system call
 dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver process
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
-dev-haskell/singletons 1.1.2.1: A framework for generating singleton types
+dev-haskell/singletons 1.1.2.1 2.0.1: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.7: A library for working with the SMTLIB format
@@ -1419,7 +1420,7 @@ dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2: Efficient union and equivalence testing of sets
 dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic operations
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
-dev-haskell/units 2.3: A domain-specific type system for dimensional analysis
+dev-haskell/units 2.3-r1: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.0.0: A parser for units of measure
 dev-haskell/unix-compat 0.4.1.4: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2: Unix memory syscalls
