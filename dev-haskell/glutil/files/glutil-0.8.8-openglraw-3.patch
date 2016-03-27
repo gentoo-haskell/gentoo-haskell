@@ -1,0 +1,100 @@
+diff --git a/src/Graphics/GLUtil/Linear.hs b/src/Graphics/GLUtil/Linear.hs
+index 6df51b0..2cc8469 100644
+--- a/src/Graphics/GLUtil/Linear.hs
++++ b/src/Graphics/GLUtil/Linear.hs
+@@ -9,3 +9,7 @@ import Foreign.Ptr (Ptr, castPtr)
+ import Graphics.Rendering.OpenGL
++#if MIN_VERSION_OpenGLRaw(3,0,0)
++import Graphics.GL.Core31
++#else
+ import Graphics.Rendering.OpenGL.Raw.Core31
++#endif
+ import Linear
+diff --git a/src/Graphics/GLUtil/Shaders.hs b/src/Graphics/GLUtil/Shaders.hs
+index bd0bfb7..7890db0 100644
+--- a/src/Graphics/GLUtil/Shaders.hs
++++ b/src/Graphics/GLUtil/Shaders.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -- |Utilities for working with fragment and vertex shader programs.
+@@ -9,3 +10,7 @@ import qualified Data.ByteString as BS
+ import Graphics.Rendering.OpenGL
++#if MIN_VERSION_OpenGLRaw(3,0,0)
++import Graphics.GL.Core31
++#else
+ import Graphics.Rendering.OpenGL.Raw.Core31
++#endif
+ import Graphics.GLUtil.GLError
+diff --git a/src/Graphics/GLUtil/TypeMapping.hs b/src/Graphics/GLUtil/TypeMapping.hs
+index f79216c..f145fd4 100644
+--- a/src/Graphics/GLUtil/TypeMapping.hs
++++ b/src/Graphics/GLUtil/TypeMapping.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE FlexibleInstances, ScopedTypeVariables, TypeSynonymInstances #-}
++{-# LANGUAGE CPP #-}
+ -- |This module contains classes and functions to relate Haskell types
+@@ -19,7 +20,20 @@ class HasVariableType a where
+ 
++#if ! MIN_VERSION_OpenGLRaw(3,0,0)
+ instance HasVariableType Float where variableType _ = Float'
+-instance HasVariableType GLfloat where variableType _ = Float'
+-instance HasVariableType GLint where variableType _ = Int'
+ instance HasVariableType Int32 where variableType _ = Int'
+ instance HasVariableType Word32 where variableType _ = UnsignedInt'
++
++instance HasVariableType (V1 Int32) where variableType _ = Int'
++instance HasVariableType (V2 Int32) where variableType _ = IntVec2
++instance HasVariableType (V3 Int32) where variableType _ = IntVec3
++instance HasVariableType (V4 Int32) where variableType _ = IntVec4
++
++instance HasVariableType (V1 Word32) where variableType _ = UnsignedInt'
++instance HasVariableType (V2 Word32) where variableType _ = UnsignedIntVec2
++instance HasVariableType (V3 Word32) where variableType _ = UnsignedIntVec3
++instance HasVariableType (V4 Word32) where variableType _ = UnsignedIntVec4
++#endif
++
++instance HasVariableType GLfloat where variableType _ = Float'
++instance HasVariableType GLint where variableType _ = Int'
+ instance HasVariableType GLuint where variableType _ = UnsignedInt'
+@@ -36,12 +50,2 @@ instance HasVariableType (V4 GLint) where variableType _ = IntVec4
+ 
+-instance HasVariableType (V1 Int32) where variableType _ = Int'
+-instance HasVariableType (V2 Int32) where variableType _ = IntVec2
+-instance HasVariableType (V3 Int32) where variableType _ = IntVec3
+-instance HasVariableType (V4 Int32) where variableType _ = IntVec4
+-
+-instance HasVariableType (V1 Word32) where variableType _ = UnsignedInt'
+-instance HasVariableType (V2 Word32) where variableType _ = UnsignedIntVec2
+-instance HasVariableType (V3 Word32) where variableType _ = UnsignedIntVec3
+-instance HasVariableType (V4 Word32) where variableType _ = UnsignedIntVec4
+-
+ instance HasVariableType (V1 GLuint) where variableType _ = UnsignedInt'
+@@ -92,2 +96,7 @@ class Storable a => HasGLType a where
+ 
++#if ! MIN_VERSION_OpenGLRaw(3,0,0)
++instance HasGLType Float where glType _ = GL.Float
++instance HasGLType Word32 where glType _ = GL.UnsignedInt
++#endif
++
+ instance HasGLType GLint where glType _ = GL.Int
+@@ -95,5 +104,3 @@ instance HasGLType Word8 where glType _ = GL.UnsignedByte
+ instance HasGLType Word16 where glType _ = GL.UnsignedShort
+-instance HasGLType Word32 where glType _ = GL.UnsignedInt
+ instance HasGLType GLuint where glType _ = GL.UnsignedInt
+-instance HasGLType Float where glType _ = GL.Float
+ instance HasGLType GLfloat where glType _ = GL.Float
+diff --git a/src/Graphics/GLUtil/VertexArrayObjects.hs b/src/Graphics/GLUtil/VertexArrayObjects.hs
+index 5494f29..48f17a6 100644
+--- a/src/Graphics/GLUtil/VertexArrayObjects.hs
++++ b/src/Graphics/GLUtil/VertexArrayObjects.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -- | A thin layer over OpenGL 3.1+ vertex array objects.
+@@ -4,3 +5,7 @@ module Graphics.GLUtil.VertexArrayObjects
+ import Graphics.Rendering.OpenGL
++#if MIN_VERSION_OpenGLRaw(3,0,0)
++import Graphics.GL.Core31 (glDeleteVertexArrays)
++#else
+ import Graphics.Rendering.OpenGL.Raw.Core31 (glDeleteVertexArrays)
++#endif
+ import Foreign.Marshal.Array (withArrayLen)
