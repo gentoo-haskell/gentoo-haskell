@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="enableqmldebugging">Allow the QML debug server to be enabled via Qt arguments.</flag>
 		<flag name="forceghcilib">Force enable GHCi workaround library if not using shared libraries.</flag>
 		<flag name="threadedtestsuite">Build test executable with the threaded RTS.</flag>
 		<flag name="useexithook">Override the OnExitHook symbol to shutdown the Qt framework on exit.</flag>
