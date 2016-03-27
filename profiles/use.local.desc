@@ -189,6 +189,7 @@ dev-haskell/hslua:luajit - Use luajit instead of lua.
 dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled copy.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC Only)
 dev-haskell/hsp:base4 - Use base-4.0.
+dev-haskell/hsqml:enableqmldebugging - Allow the QML debug server to be enabled via Qt arguments.
 dev-haskell/hsqml:forceghcilib - Force enable GHCi workaround library if not using shared libraries.
 dev-haskell/hsqml:threadedtestsuite - Build test executable with the threaded RTS.
 dev-haskell/hsqml:useexithook - Override the OnExitHook symbol to shutdown the Qt framework on exit.
