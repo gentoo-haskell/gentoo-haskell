@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/machines-0.2.4:=[profile?] <dev-haskell/machines-0.6:=[profile?]
+RDEPEND=">=dev-haskell/machines-0.2.4:=[profile?]
 	>=dev-haskell/machines-io-0.1:=[profile?] <dev-haskell/machines-io-0.3:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -26,3 +26,8 @@ RDEPEND=">=dev-haskell/machines-0.2.4:=[profile?] <dev-haskell/machines-0.6:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'machines            >= 0.2.4    && < 0.6' 'machines            >= 0.2.4'
+}
