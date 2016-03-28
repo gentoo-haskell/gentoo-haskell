@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 	>=dev-haskell/hackage-db-1.22:=[profile?] <dev-haskell/hackage-db-2:=[profile?]
 	>=dev-haskell/http-client-0.4:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 	>=dev-haskell/lens-4.6:=[profile?] <dev-haskell/lens-5:=[profile?]
-	>=dev-haskell/machines-0.2:=[profile?] <dev-haskell/machines-0.6:=[profile?]
+	>=dev-haskell/machines-0.2:=[profile?]
 	>=dev-haskell/machines-directory-0.0.0.2:=[profile?] <dev-haskell/machines-directory-0.3:=[profile?]
 	>=dev-haskell/missingh-1.2.1.0:=[profile?] <dev-haskell/missingh-1.4:=[profile?]
 	>=dev-haskell/monad-loops-0.4.2:=[profile?] <dev-haskell/monad-loops-0.5:=[profile?]
@@ -40,3 +40,8 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'machines            >= 0.2        && < 0.6' 'machines            >= 0.2'
+}
