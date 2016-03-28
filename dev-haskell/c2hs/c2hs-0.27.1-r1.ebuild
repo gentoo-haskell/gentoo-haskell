@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="regression"
 
 RDEPEND="dev-haskell/dlist:=
-	>=dev-haskell/language-c-0.4.7:= <dev-haskell/language-c-0.5:=
+	>=dev-haskell/language-c-0.4.7:=
 	>=dev-lang/ghc-7.4.1:=
 	regression? ( >=dev-haskell/shelly-1.0:=
 			dev-haskell/text:=
@@ -34,6 +34,11 @@ DEPEND="${RDEPEND}
 		!regression? ( >=dev-haskell/shelly-1.0
 				dev-haskell/text ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'language-c >= 0.4.7 && < 0.5' 'language-c >= 0.4.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
