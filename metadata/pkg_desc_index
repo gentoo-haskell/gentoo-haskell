@@ -870,9 +870,9 @@ dev-haskell/lucid-svg 0.5.0.0 0.6.0.1: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
-dev-haskell/machines 0.5.1-r1: Networked stream transducers
-dev-haskell/machines-directory 0.2.0.6: Directory (system) utilities for the machines library
-dev-haskell/machines-io 0.2.0.8: IO utilities for the machines library
+dev-haskell/machines 0.5.1-r1 0.6: Networked stream transducers
+dev-haskell/machines-directory 0.2.0.6-r1: Directory (system) utilities for the machines library
+dev-haskell/machines-io 0.2.0.8-r1: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.2: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.3: A monad for managed values
@@ -1603,7 +1603,7 @@ dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.1: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.4.0.8: A ctags file generator for cabal project dependencies
+dev-util/codex 0.4.0.8-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
