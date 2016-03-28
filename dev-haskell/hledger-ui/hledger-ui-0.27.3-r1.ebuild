@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+threaded"
 
 RDEPEND=">=dev-haskell/base-compat-0.8.1:=
-	>=dev-haskell/brick-0.2:= <dev-haskell/brick-0.5:=
+	>=dev-haskell/brick-0.2:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
 	>=dev-haskell/hledger-0.27:= <dev-haskell/hledger-0.28:=
@@ -38,6 +38,11 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'brick >= 0.2 && < 0.5' 'brick >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
