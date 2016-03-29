@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
+RDEPEND="dev-haskell/async:=[profile?]
+	>=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/exceptions:=[profile?]
@@ -35,7 +36,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/async
-		dev-haskell/bytestring-builder
+	test? ( dev-haskell/bytestring-builder
 		>=dev-haskell/hspec-1.3 )
 "
