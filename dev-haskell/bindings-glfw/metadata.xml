@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name='exposenative'>Whether or not to use the native access functions.</flag>
+	</use>
 	<longdescription>
 		Low-level bindings to &lt;http://www.glfw.org/ GLFW&gt;, an open source,
 		multi-platform library for creating windows with OpenGL contexts and managing
