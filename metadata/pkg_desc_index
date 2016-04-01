@@ -1464,7 +1464,7 @@ dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
 dev-haskell/vector-space 0.10.3: Vector & affine spaces, linear maps, and derivatives
 dev-haskell/vector-space-points 0.2.1.1: A type for points, as distinct from vectors
-dev-haskell/vector-th-unbox 0.2.1.4: Deriver for Data.Vector.Unboxed using Template Haskell
+dev-haskell/vector-th-unbox 0.2.1.5: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
@@ -1644,7 +1644,7 @@ net-p2p/combinatorrent 9999: A concurrent bittorrent client
 sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
-sci-mathematics/agda 2.3.2.2-r6 2.4.0.2-r2 2.4.2.2-r2 2.4.2.3-r3 2.4.2.4-r1 2.4.2.5-r2 9999: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda 2.4.2.5-r2 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checking and compiling Agda programs
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 0.7-r2 0.8 0.9-r1 2.4.2.3 2.4.2.4 2.4.2.5-r1 9999: Agda standard library
