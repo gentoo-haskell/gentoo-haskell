@@ -43,8 +43,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/utf8-string-0.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	<dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	|| ( ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
-		( >dev-haskell/transformers-0.4.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?] ) )
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 	test? ( dev-haskell/attoparsec:=[profile?]
 		>=dev-haskell/groom-0.1:=[profile?] <dev-haskell/groom-0.2:=[profile?]
 		>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]

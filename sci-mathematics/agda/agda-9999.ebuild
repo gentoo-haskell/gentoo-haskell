@@ -43,12 +43,9 @@ RDEPEND=">=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.9:=[prof
 	>=dev-haskell/xhtml-3000.2.1:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-haskell/zlib-0.4.0.1:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
-	|| ( ( >=dev-haskell/hashtables-1.0.1.8:=[profile?] <dev-haskell/hashtables-1.2:=[profile?] )
-		( >=dev-haskell/hashtables-1.2.0.2:=[profile?] <dev-haskell/hashtables-1.3:=[profile?] ) )
-	|| ( ( >=dev-haskell/mtl-2.1.1:=[profile?] <=dev-haskell/mtl-2.1.3.1:=[profile?] )
-		( >=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] ) )
-	|| ( ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
-		( >=dev-haskell/transformers-0.4.1.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?] ) )
+	>=dev-haskell/hashtables-1.0.1.8:=[profile?] <dev-haskell/hashtables-1.3:=[profile?]
+	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	uhc? ( >=dev-haskell/uhc-light-1.1.9.0:=[profile?] <dev-haskell/uhc-light-1.2:=[profile?]
 		>=dev-haskell/uhc-util-0.1.5.5:=[profile?]
 		>=dev-haskell/uulib-0.9.20:=[profile?] )
