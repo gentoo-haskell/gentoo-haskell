@@ -504,8 +504,8 @@ dev-haskell/github 0.13.2 0.14.1-r1: Access to the GitHub API, v3
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1: Complete OpenGL raw bindings
 dev-haskell/glade 0.12.5.0-r3: Binding to the glade library
-dev-haskell/glfw 0.5.2.4-r1: A Haskell binding for GLFW
-dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.7.3: Bindings to GLFW OpenGL library
+dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
+dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.8.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glob 0.7.5: Globbing library
 dev-haskell/gloss 1.8.1.2 1.8.2.2 1.9.2.1 1.9.4.1-r1: Painless 2D vector graphics, animations and simulations
