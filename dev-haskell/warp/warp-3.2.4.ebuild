@@ -21,7 +21,8 @@ IUSE="+allow-sendfilefd warp-debug"
 
 RESTRICT=test # module colision
 
-RDEPEND=">=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
+RDEPEND="dev-haskell/async:=[profile?]
+	>=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.4:=[profile?]
 	dev-haskell/bytestring-builder:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
@@ -43,13 +44,13 @@ RDEPEND=">=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( dev-haskell/async
-		>=dev-haskell/doctest-0.10.1
+	test? ( >=dev-haskell/doctest-0.10.1
 		>=dev-haskell/hspec-1.3
 		dev-haskell/http
 		dev-haskell/hunit
 		>=dev-haskell/lifted-base-0.1
 		dev-haskell/quickcheck
+		dev-haskell/silently
 		>=dev-haskell/transformers-0.2.2 )
 "
 
