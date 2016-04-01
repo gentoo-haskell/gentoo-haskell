@@ -10,13 +10,15 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="C/CUDA/OpenCL/Objective-C quasiquoting library"
-HOMEPAGE="http://www.cs.drexel.edu/~mainland/"
+HOMEPAGE="http://www.drexel.edu/~mainland/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+full-haskell-antiquotes"
+
+RESTRICT=test # missing CUDA module
 
 RDEPEND=">=dev-haskell/exception-mtl-0.3:=[profile?] <dev-haskell/exception-mtl-0.5:=[profile?]
 	>=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?]
