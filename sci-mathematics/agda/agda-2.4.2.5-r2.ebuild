@@ -44,8 +44,7 @@ RDEPEND=">=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.8:=[prof
 		( >=dev-haskell/hashtables-1.2.0.2:=[profile?] <dev-haskell/hashtables-1.3:=[profile?] ) )
 	|| ( ( >=dev-haskell/mtl-2.1.1:=[profile?] <=dev-haskell/mtl-2.1.3.1:=[profile?] )
 		( >=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] ) )
-	|| ( ( >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.4:=[profile?] )
-		( >=dev-haskell/transformers-0.4.1.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?] ) )
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 "
 RDEPEND+="
 		emacs? ( app-emacs/haskell-mode
