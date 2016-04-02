@@ -1545,7 +1545,7 @@ dev-haskell/yaml 0.8.16: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.2.1: Creation of type-safe, RESTful web applications
-dev-haskell/yesod-auth 1.4.12: Authentication for Yesod
+dev-haskell/yesod-auth 1.4.13: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
