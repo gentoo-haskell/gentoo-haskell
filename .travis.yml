@@ -6,7 +6,7 @@ language: python
 python:
     - pypy
 env:
-    - PORTAGE_VER="2.2.27"
+    - PORTAGE_VER="2.2.28"
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
