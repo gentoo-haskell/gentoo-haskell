@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="useextensions">Use GHC-specific language extensions.</flag>
-	</use>
 	<longdescription>
 		Reactive-banana is a practical library for Functional Reactive Programming (FRP).
 		
