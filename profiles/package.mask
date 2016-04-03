@@ -96,20 +96,7 @@ dev-haskell/nettle-openflow
 # outdated. does not compile against modern WAI API
 dev-haskell/wai-logger-prefork
 
-# Sergei Trofimovich <slyfox@gentoo.org> (5 Jan 2014)
-# Masked as abandonware. Uses outdated depends.
-dev-haskell/manatee
-dev-haskell/manatee-browser
-dev-haskell/manatee-core
-dev-haskell/manatee-imageviewer
-dev-haskell/manatee-ircclient
-dev-haskell/manatee-mplayer
-dev-haskell/manatee-pdfviewer
-dev-haskell/manatee-processmanager
-dev-haskell/manatee-reader
-dev-haskell/manatee-terminal
-
-# Alexander Vershilov <qnikst@gentoo.org> (22 Dev 2013)
+# Alexander Vershilov <qnikst@gentoo.org> (22 Dec 2013)
 # Masked for removal, use dev-haskell/dbus instead
 dev-haskell/dbus-client
 
