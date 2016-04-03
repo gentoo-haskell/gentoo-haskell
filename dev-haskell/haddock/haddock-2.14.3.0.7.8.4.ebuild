@@ -55,7 +55,7 @@ src_configure() {
 		# and on Cabal-1.18 there is a bug of not writing
 		# correct rpath to a final binary if package
 		# provides both library and executable.
-		append-ldflags -Wl,-rpath,${EROOT}/usr/$(get_libdir)/${P}/ghc-$(ghc-version)
+		append-ldflags -Wl,-rpath,"${EROOT}"/usr/$(get_libdir)/${P}/ghc-$(ghc-version)
 	fi
 
 	# we use 'nocabaldep' to use ghc's bundled Cabal
