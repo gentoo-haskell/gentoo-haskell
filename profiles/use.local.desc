@@ -54,7 +54,6 @@ dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/bytestring-trie:usecinternal - use optimized C implementation for indexOfDifference.
 dev-haskell/c2hs:regression - run regression tests
-dev-haskell/cabal-dev:no-cabal-dev - Do not build cabal-dev (just build ghc-pkg-6_8-compat).
 dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
 dev-haskell/categories:optimize - enable optimizations
