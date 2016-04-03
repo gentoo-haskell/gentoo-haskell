@@ -3,7 +3,6 @@
 # * generated automatically using pmaint *
 
 app-editors/leksah:dyre - Experimental Yi dyre support
-app-editors/leksah:gtk3 - Use GTK3 rather than GTK2
 app-editors/leksah:loc - Experimental localization support
 app-editors/leksah:network-uri - Get Network.URI from the network-uri package
 app-editors/leksah:threaded - Use threaded runtime.
@@ -60,7 +59,6 @@ dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri pac
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/certificate:executable - Build the executable
-dev-haskell/cgi:extensible-exceptions-in-base - Required to be enabled for >=dev-lang/ghc-7.
 dev-haskell/cgi:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
@@ -110,7 +108,6 @@ dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/extra:network-uri - use network-uri package
 dev-haskell/fastcgi:small_base - Choose the new smaller, split-up base package.
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
-dev-haskell/fixplate:base4 - Use base-4.0.
 dev-haskell/fixplate:withquickcheck - Compile with the QuickCheck tests.
 dev-haskell/fixplate:withutils - Include utility modules.
 dev-haskell/ftphs:buildtests - Build the executable to run unit tests.
@@ -124,7 +121,6 @@ dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
 dev-haskell/ghcjs-dom:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/ghcjs-dom:jsc - Use WebKitGtk JavaScriptCore
 dev-haskell/ghcjs-dom:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript output
-dev-haskell/github:aeson-compat - Whether to use aeson-compat or aeson-extra
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
 dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
@@ -277,7 +273,6 @@ dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup
 dev-haskell/quickcheck:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/rdf4h:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/reactive-banana:useextensions - Use GHC-specific language extensions.
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/reflection:template-haskell - Enable template haskell.
