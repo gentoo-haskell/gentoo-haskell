@@ -12,7 +12,6 @@
 		the individual modules for more detailed information.
 	</longdescription>
 	<use>
-		<flag name="base4">Use base-4.0.</flag>
 		<flag name="withquickcheck">Compile with the QuickCheck tests.</flag>
 		<flag name="withutils">Include utility modules.</flag>
 	</use>
