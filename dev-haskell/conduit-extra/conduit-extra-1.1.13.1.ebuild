@@ -37,5 +37,6 @@ RDEPEND="dev-haskell/async:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/bytestring-builder
-		>=dev-haskell/hspec-1.3 )
+		>=dev-haskell/hspec-1.3
+		dev-haskell/quickcheck )
 "
