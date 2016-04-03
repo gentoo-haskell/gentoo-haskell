@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Mar 2016)
+# Needs a port to latest wai
+dev-haskell/wai-handler-devel
+
 # Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
 # Bundled with ghc, nobody uses in overlay. Better way
 # to upgrade it is to bump bundled libs in ghc ebuld.
