@@ -57,7 +57,6 @@ src_prepare() {
 		'aeson                 >=0.7.0.6   && <0.11' 'aeson >=0.7.0.6'
 }
 
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=aeson-compat
