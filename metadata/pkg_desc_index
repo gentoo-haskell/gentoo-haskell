@@ -1604,7 +1604,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160114 6.20160126 6.20160229 6.20160318: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160318: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
@@ -1637,7 +1637,7 @@ sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
 sci-mathematics/agda 2.4.2.5-r2 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checking and compiling Agda programs
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
-sci-mathematics/agda-stdlib 2.4.2.5-r1 9999: Agda standard library
+sci-mathematics/agda-stdlib 2.4.2.5 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: efficient open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
 sci-mathematics/spline3 0.0.2: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 sci-mathematics/z3 4.3.1 4.3.2 4.4.1 9999: An efficient theorem prover
