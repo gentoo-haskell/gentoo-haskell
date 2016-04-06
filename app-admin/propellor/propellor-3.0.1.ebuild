@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/async:=[profile?]
-	dev-haskell/concurrent-output:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/ifelse:=[profile?]
