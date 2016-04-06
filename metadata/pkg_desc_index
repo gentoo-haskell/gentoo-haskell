@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r2: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.0.0: property-based host configuration management in haskell
+app-admin/propellor 3.0.1: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r1: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.4: The Haskell-Scriptable Editor
@@ -407,7 +407,7 @@ dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.3: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.4.1.1: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
-dev-haskell/exception-transformers 0.3.0.4 0.4.0.3: Type classes and monads for unchecked extensible exceptions
+dev-haskell/exception-transformers 0.3.0.4 0.4.0.4: Type classes and monads for unchecked extensible exceptions
 dev-haskell/exceptions 0.6.1 0.8.2.1: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
@@ -418,7 +418,7 @@ dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.3 1.3.1 1.4.1 1.4.2 1.46.3: A grab bag of modules
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
-dev-haskell/fast-logger 2.4.1: A fast logging system
+dev-haskell/fast-logger 2.4.2: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
 dev-haskell/fay 0.23.1.12-r3: A compiler for Fay, a Haskell subset that compiles to JavaScript
