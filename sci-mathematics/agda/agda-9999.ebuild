@@ -113,10 +113,15 @@ src_install() {
 	haskell-cabal_src_install
 
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
-	# generate Primitive.agdai, emulate Setup.hs postinst phase
+	# compile Agda.Primitive and Agda.Builtin modules, emulate Setup.hs postinst phase
 	Agda_datadir="${add}" \
 		"${ED}"/usr/bin/agda "${add}"/lib/prim/Agda/Primitive.agda \
 		|| die "Failed to build 'Primitive.agdai'"
+	for file in "${add}"/lib/prim/Agda/Builtin/*.agda; do
+		Agda_datadir="${add}" \
+			"${ED}"/usr/bin/agda "${file}" \
+			|| die "Failed to build '${file}'"
+	done
 
 	if use emacs; then
 		elisp-install ${PN} src/data/emacs-mode/*.el \
