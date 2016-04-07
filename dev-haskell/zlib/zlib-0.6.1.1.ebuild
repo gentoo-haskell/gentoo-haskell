@@ -15,9 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# known to SIGSEGV agda and idris:
-#  https://github.com/agda/agda/issues/1518
-#KEYWORDS="~amd64 ~x86 ~x86-fbsd ~x86-macos"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd ~ppc-macos ~x86-macos"
 IUSE=""
 
 RESTRICT=test # needs porting to new test tools
