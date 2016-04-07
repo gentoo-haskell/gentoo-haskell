@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/unordered-containers-0.2.5.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/void-0.5.4:=[profile?] <dev-haskell/void-0.9:=[profile?]
 	>=dev-haskell/xhtml-3000.2.1:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-haskell/zlib-0.4.0.1:=[profile?] <dev-haskell/zlib-0.6.1:=[profile?]
+	>=dev-haskell/zlib-0.4.0.1:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 	>=dev-haskell/hashtables-1.0.1.8:=[profile?] <dev-haskell/hashtables-1.3:=[profile?]
 	>=dev-haskell/mtl-2.1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
