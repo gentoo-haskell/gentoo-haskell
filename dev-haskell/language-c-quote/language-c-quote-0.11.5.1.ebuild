@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+full-haskell-antiquotes"
 
-RESTRICT=test # missing CUDA module
-
 RDEPEND=">=dev-haskell/exception-mtl-0.3:=[profile?] <dev-haskell/exception-mtl-0.5:=[profile?]
 	>=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?]
 	>=dev-haskell/mainland-pretty-0.4:=[profile?] <dev-haskell/mainland-pretty-0.5:=[profile?]
