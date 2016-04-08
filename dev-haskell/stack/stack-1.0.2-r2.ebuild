@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/attoparsec-0.12.1.5:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/bifunctors-4.2.1:=[profile?] <dev-haskell/bifunctors-5.3:=[profile?]
+	>=dev-haskell/bifunctors-4.2.1:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-tagged-0.1.1:=[profile?] <dev-haskell/binary-tagged-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.4.0.1:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
@@ -106,7 +106,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
 	cabal_chdeps \
-		'aeson >=0.8.0.2 && <0.11' 'aeson >=0.8.0.2'
+		'aeson >=0.8.0.2 && <0.11' 'aeson >=0.8.0.2' \
+		'bifunctors >=4.2.1 && <5.3' 'bifunctors >=4.2.1'
 }
 
 src_configure() {

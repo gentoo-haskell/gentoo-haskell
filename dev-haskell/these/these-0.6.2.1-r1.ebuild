@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.3:=[profile?]
+RDEPEND=">=dev-haskell/bifunctors-0.1:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/hashable-1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -38,3 +38,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'bifunctors               >= 0.1   && < 5.3' 'bifunctors               >= 0.1' \
+		'bifunctors             >= 0.1   && < 5.3' 'bifunctors             >= 0.1'
+}
