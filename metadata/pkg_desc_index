@@ -1509,7 +1509,7 @@ dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xkbcommon 0.0.1 0.0.2: Haskell bindings for libxkbcommon
 dev-haskell/xml 1.3.14: A simple XML library
-dev-haskell/xml-conduit 1.3.4.1: Pure-Haskell utilities for dealing with XML with the conduit package
+dev-haskell/xml-conduit 1.3.4.1-r1: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.0.11: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.1-r2: Optics for xml-conduit and html-conduit
 dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
