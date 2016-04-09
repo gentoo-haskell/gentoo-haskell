@@ -276,7 +276,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.11.9: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
-dev-haskell/cryptonite 0.13: Cryptography Primitives sink
+dev-haskell/cryptonite 0.13 0.15: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2: CSV loader and dumper
 dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
@@ -376,7 +376,7 @@ dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka RNG, PRNG) based
 dev-haskell/drift 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3.1: Haskell Digital Signal Processing
 dev-haskell/dual-tree 0.2.0.9: Rose trees with cached and accumulating monoidal annotations
-dev-haskell/dynamic-state 0.2.1.0: Optionally serializable dynamic state keyed by type
+dev-haskell/dynamic-state 0.2.2.0: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.1: Cross-platform File handling
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
@@ -883,7 +883,7 @@ dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megaparsec 4.4.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
-dev-haskell/memory 0.10 0.11: memory and related abstraction stuff
+dev-haskell/memory 0.10 0.11 0.12: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom numbers purely using a Mersenne Twister
