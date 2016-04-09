@@ -21,21 +21,32 @@ IUSE=""
 
 RESTRICT=test # tests are broken: need path to ebuild tree
 
-RDEPEND=""
+RDEPEND="dev-haskell/base64-bytestring:=
+	dev-haskell/binary:=
+	dev-haskell/cryptohash:=
+	dev-haskell/ed25519:=
+	dev-haskell/extensible-exceptions:=
+	dev-haskell/hashable:=
+	>=dev-haskell/http-4000.0.3:=
+	dev-haskell/missingh:=
+	dev-haskell/mtl:=
+	>=dev-haskell/network-2.6:=
+	>=dev-haskell/network-uri-2.6:=
+	dev-haskell/old-locale:=
+	dev-haskell/old-time:=
+	dev-haskell/parsec:=
+	dev-haskell/random:=
+	dev-haskell/regex-compat:=
+	dev-haskell/split:=
+	dev-haskell/stm:=
+	dev-haskell/tar:=
+	dev-haskell/transformers:=
+	>=dev-haskell/xml-1.3.7:=
+	dev-haskell/zlib:=
+	>=dev-lang/ghc-7.4.1:=
+"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	dev-haskell/extensible-exceptions
-	>=dev-haskell/http-4000.0.3
-	dev-haskell/missingh
-	dev-haskell/mtl
-	>=dev-haskell/network-2.6
-	>=dev-haskell/network-uri-2.6
-	dev-haskell/parsec
-	dev-haskell/regex-compat
-	dev-haskell/tar
-	>=dev-haskell/xml-1.3.7
-	dev-haskell/zlib
-	>=dev-lang/ghc-7.4.1
 	test? ( dev-haskell/hunit )
 "
 
