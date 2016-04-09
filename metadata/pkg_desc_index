@@ -1643,7 +1643,7 @@ www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
 www-misc/feed-cli 2009.7.5: A simple command line interface for creating and updating feeds like RSS
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
-www-servers/mighttpd2 3.2.9 3.3.0: High performance web server on WAI/warp
+www-servers/mighttpd2 3.2.9 3.3.1: High performance web server on WAI/warp
 x11-misc/taffybar 0.4.6: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.23.1 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1 9999: Third party extensions for xmonad with wacky dependencies
