@@ -783,7 +783,7 @@ dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.3: Obtain minified jQuery code
-dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.1: High level interface for webkit-javascriptcore
+dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
