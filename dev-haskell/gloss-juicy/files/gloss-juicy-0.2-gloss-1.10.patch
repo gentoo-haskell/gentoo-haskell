@@ -1,0 +1,16 @@
+diff --git a/Graphics/Gloss/Juicy.hs b/Graphics/Gloss/Juicy.hs
+index 2c6c48c..7844e77 100644
+--- a/Graphics/Gloss/Juicy.hs
++++ b/Graphics/Gloss/Juicy.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ module Graphics.Gloss.Juicy
+@@ -50,3 +51,7 @@ fromImageRGBA8 :: Image PixelRGBA8 -> Picture
+ fromImageRGBA8 img@(Image { imageWidth = w, imageHeight = h, imageData = _ }) =
+-  bitmapOfForeignPtr w h ptr True
++  bitmapOfForeignPtr w h
++#if MIN_VERSION_gloss(1,10,0)
++                     (BitmapFormat BottomToTop PxABGR)
++#endif
++                     ptr True
+     where swapedImage = horizontalSwap img

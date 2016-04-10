@@ -27,3 +27,7 @@ RDEPEND=">=dev-haskell/bmp-1.2.4.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gloss-1.10.patch
+}
