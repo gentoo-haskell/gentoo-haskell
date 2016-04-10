@@ -504,12 +504,12 @@ dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 0.1.0.5 1.2.1-r1 1.4.6 1.4.8.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glob 0.7.5: Globbing library
-dev-haskell/gloss 1.8.1.2 1.8.2.2 1.9.2.1 1.9.4.1-r1: Painless 2D vector graphics, animations and simulations
-dev-haskell/gloss-algorithms 1.9.2.1 1.9.4.1: Data structures and algorithms for working with 2D graphics
-dev-haskell/gloss-examples 1.8.2.1-r1 1.9.2.1 1.9.4.1-r1: Examples using the gloss library
+dev-haskell/gloss 1.8.1.2 1.8.2.2 1.9.2.1 1.9.4.1-r1 1.10.1.1: Painless 2D vector graphics, animations and simulations
+dev-haskell/gloss-algorithms 1.9.2.1 1.9.4.1 1.10.1.1: Data structures and algorithms for working with 2D graphics
+dev-haskell/gloss-examples 1.8.2.1-r1 1.9.2.1 1.9.4.1-r1 1.10.1.1: Examples using the gloss library
 dev-haskell/gloss-juicy 0.2: Load any image supported by Juicy.Pixels in your gloss application
-dev-haskell/gloss-raster 1.8.2.1 1.9.2.1 1.9.4.1: Parallel rendering of raster images
-dev-haskell/gloss-rendering 1.9.2.1 1.9.3.1-r1: Gloss picture data types and rendering functions
+dev-haskell/gloss-raster 1.8.2.1 1.9.2.1 1.9.4.1 1.10.1.1: Parallel rendering of raster images
+dev-haskell/gloss-rendering 1.9.2.1 1.9.3.1-r1 1.10.1.1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 1.4.0.2 1.5.0.3 2.0.0.1: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.3.1.0 2.4.0.0 2.5.1.1 2.7.0.6: A binding for the OpenGL Utility Toolkit

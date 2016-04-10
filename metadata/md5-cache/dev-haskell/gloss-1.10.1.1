@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?] >=dev-haskell/gloss-rendering-1.10:=[profile?] <dev-haskell/gloss-rendering-1.11:=[profile?] >=dev-haskell/glut-2.7:=[profile?] <dev-haskell/glut-2.8:=[profile?] >=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?] >=dev-lang/ghc-7.10.1:= glfw? ( >=dev-haskell/glfw-b-1.4.1.0:=[profile?] <dev-haskell/glfw-b-2:=[profile?] ) >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Painless 2D vector graphics, animations and simulations
+EAPI=6
+HOMEPAGE=http://gloss.ouroborus.net
+IUSE=explicitbackend glfw +glut doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?] >=dev-haskell/gloss-rendering-1.10:=[profile?] <dev-haskell/gloss-rendering-1.11:=[profile?] >=dev-haskell/glut-2.7:=[profile?] <dev-haskell/glut-2.8:=[profile?] >=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?] >=dev-lang/ghc-7.10.1:= glfw? ( >=dev-haskell/glfw-b-1.4.1.0:=[profile?] <dev-haskell/glfw-b-2:=[profile?] )
+SLOT=0/1.10.1.1
+SRC_URI=mirror://hackage/packages/archive/gloss/1.10.1.1/gloss-1.10.1.1.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	ghc-package	892c6c35a9ac0993e65049c039438508	haskell-cabal	0458caac132af78577a70d9b83253460	multilib	3972ca401cf7dbb430df9995f5d8d580	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=7d76b084d9617c859b5bcff9599a5b09
