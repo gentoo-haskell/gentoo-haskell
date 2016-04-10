@@ -1350,7 +1350,7 @@ dev-haskell/text-zipper 0.3.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-desugar 1.5.5: Functions to desugar Template Haskell
-dev-haskell/th-expand-syns 0.3.0.6: Expands type synonyms in Template Haskell ASTs
+dev-haskell/th-expand-syns 0.4.0.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.2: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-orphans 0.13.0: Orphan instances for TH datatypes
