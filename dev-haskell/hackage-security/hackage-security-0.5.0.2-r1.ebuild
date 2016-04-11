@@ -21,7 +21,7 @@ IUSE="+use-network-uri"
 RESTRICT=test
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.25:=[profile?]
+	>=dev-haskell/cabal-1.14:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/ed25519-0.0:=[profile?] <dev-haskell/ed25519-0.1:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -43,6 +43,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary
 		!use-network-uri? ( dev-haskell/network-uri ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal             >= 1.14    && < 1.25' 'Cabal             >= 1.14'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
