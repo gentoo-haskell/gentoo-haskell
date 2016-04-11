@@ -39,6 +39,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/word8 )
 "
 
+src_prepare() {
+	# workaround Cabal bug at picking unused deps
+	eapply "${FILESDIR}"/${P}-less-deps.patch
+	eapply_user
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-devel
