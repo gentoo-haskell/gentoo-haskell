@@ -42,6 +42,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# workaround Cabal bug at picking unused deps
 	eapply "${FILESDIR}"/${P}-less-deps.patch
+	eapply "${FILESDIR}"/${P}-even-less-deps.patch
 	eapply_user
 }
 
