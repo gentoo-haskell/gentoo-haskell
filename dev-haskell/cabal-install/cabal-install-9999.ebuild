@@ -30,8 +30,12 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="+network-uri +noprefs"
 
-RDEPEND=">=dev-haskell/binary-0.5:= <dev-haskell/binary-0.9:=
-	>=dev-haskell/cabal-1.23.1:= <dev-haskell/cabal-1.24:=
+RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-3:=
+	>=dev-haskell/binary-0.5:= <dev-haskell/binary-0.9:=
+	>=dev-haskell/byteable-0.1:= <dev-haskell/byteable-0.2:=
+	>=dev-haskell/bytestring-builder-0.10:= <dev-haskell/bytestring-builder-1:=
+	>=dev-haskell/cabal-1.25:= <dev-haskell/cabal-1.26:=
+	>=dev-haskell/cryptohash-0.11:= <dev-haskell/cryptohash-0.12:=
 	>=dev-haskell/hackage-security-0.5:= <dev-haskell/hackage-security-0.6:=
 	>=dev-haskell/hashable-1.0:= <dev-haskell/hashable-2:=
 	>=dev-haskell/http-4000.1.5:= <dev-haskell/http-4000.4:=
@@ -42,14 +46,15 @@ RDEPEND=">=dev-haskell/binary-0.5:= <dev-haskell/binary-0.9:=
 	>=dev-haskell/tar-0.5.0.1:= <dev-haskell/tar-0.6:=
 	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.7:=
 	>=dev-lang/ghc-7.4.1:=
-	network-uri? ( >=dev-haskell/network-2.6:=
-			>=dev-haskell/network-uri-2.6:= )
+	network-uri? ( >=dev-haskell/network-2.6:= <dev-haskell/network-2.7:=
+			>=dev-haskell/network-uri-2.6:= <dev-haskell/network-uri-2.7:= )
 	!network-uri? ( >=dev-haskell/network-2.4:= <dev-haskell/network-2.6:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/async
-		>=dev-haskell/quickcheck-2.7
+	test? ( dev-haskell/pretty-show
+		>=dev-haskell/quickcheck-2.8.2
+		dev-haskell/regex-posix
 		dev-haskell/tagged
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
@@ -67,9 +72,6 @@ src_prepare() {
 	if ! ghc-supports-threaded-runtime; then
 		cabal_chdeps '-threaded' ' '
 	fi
-	#if [[ -n ${LIVE_EBUILD} ]]; then
-	#	cabal_chdeps 'Cabal      == 1.23.0.0' 'Cabal == 1.23.9999'
-	#fi
 }
 
 src_configure() {
