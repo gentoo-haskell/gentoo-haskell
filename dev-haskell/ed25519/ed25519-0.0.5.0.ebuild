@@ -23,13 +23,14 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/doctest-0.10 <dev-haskell/doctest-0.11
+	test? ( >=dev-haskell/doctest-0.10
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'ghc-prim    >= 0.1 && < 0.5' 'ghc-prim    >= 0.1'
+		'ghc-prim    >= 0.1 && < 0.5' 'ghc-prim    >= 0.1' \
+		'doctest   >= 0.10 && < 0.11' 'doctest   >= 0.10'
 }
 
 src_configure() {
