@@ -1,0 +1,35 @@
+commit 25b8d00a149098d9b7842600dbb93f40836b4546
+Author: Ben Gamari <ben@smart-cactus.org>
+Date:   Mon Feb 8 13:27:06 2016 +0100
+
+    Fix GHC and haddock-library dependency bounds
+
+diff --git a/haddock-api/haddock-api.cabal b/haddock-api/haddock-api.cabal
+index e1e7480..50ebca0 100644
+--- a/haddock-api/haddock-api.cabal
++++ b/haddock-api/haddock-api.cabal
+@@ -49,10 +49,10 @@ library
+     , xhtml >= 3000.2 && < 3000.3
+     , Cabal >= 1.10
+     , ghc-boot
+-    , ghc >= 7.10 && < 7.12
++    , ghc >= 8.0 && < 8.2
+ 
+     , ghc-paths
+-    , haddock-library == 1.2.*
++    , haddock-library == 1.4.*
+ 
+   hs-source-dirs:
+       src
+@@ -115,9 +115,9 @@ test-suite spec
+     Haddock.Backends.Hyperlinker.ParserSpec
+ 
+   build-depends:
+-      base >= 4.3 && < 4.9
++      base
+     , containers
+-    , ghc >= 7.10 && < 7.12
++    , ghc
+     , hspec
+     , QuickCheck == 2.*
+ 
