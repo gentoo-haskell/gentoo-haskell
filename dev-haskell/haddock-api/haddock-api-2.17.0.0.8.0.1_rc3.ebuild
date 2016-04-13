@@ -28,7 +28,3 @@ RDEPEND=">=dev-haskell/cabal-1.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.17.0.0.8.0.1_rc2-fix-deps.patch"
-}
