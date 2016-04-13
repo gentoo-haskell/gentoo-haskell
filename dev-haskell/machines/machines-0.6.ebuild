@@ -34,12 +34,13 @@ RDEPEND=">=dev-haskell/adjunctions-4.2:=[profile?] <dev-haskell/adjunctions-5:=[
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.11 )
+	test? ( >=dev-haskell/doctest-0.8 )
 "
 
 src_prepare() {
 	cabal_chdeps \
 		'comonad      >= 3     && < 5' 'comonad      >= 3' \
 		'pointed      >= 3     && < 5' 'pointed      >= 3' \
-		'distributive             < 0.5' 'distributive'
+		'distributive             < 0.5' 'distributive' \
+		'doctest >= 0.8 && < 0.11' 'doctest >= 0.8'
 }
