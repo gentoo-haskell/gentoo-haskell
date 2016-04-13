@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/comonad-4:=[profile?] >=dev-haskell/data-reify-0.6:=[profile?] <dev-haskell/data-reify-0.7:=[profile?] >=dev-haskell/erf-2.0:=[profile?] <dev-haskell/erf-2.1:=[profile?] >=dev-haskell/free-4.6.1:=[profile?] <dev-haskell/free-5:=[profile?] >=dev-haskell/nats-0.1.2:=[profile?] <dev-haskell/nats-2:=[profile?] >=dev-haskell/reflection-1.4:=[profile?] <dev-haskell/reflection-3:=[profile?] >=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?] >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/doctest-0.9.0.1 <=dev-haskell/doctest-0.11 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=>=dev-haskell/comonad-4:=[profile?] >=dev-haskell/data-reify-0.6:=[profile?] <dev-haskell/data-reify-0.7:=[profile?] >=dev-haskell/erf-2.0:=[profile?] <dev-haskell/erf-2.1:=[profile?] >=dev-haskell/free-4.6.1:=[profile?] <dev-haskell/free-5:=[profile?] >=dev-haskell/nats-0.1.2:=[profile?] <dev-haskell/nats-2:=[profile?] >=dev-haskell/reflection-1.4:=[profile?] <dev-haskell/reflection-3:=[profile?] >=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?] >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/doctest-0.9.0.1 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Automatic Differentiation
 EAPI=5
 HOMEPAGE=https://github.com/ekmett/ad
@@ -11,4 +11,4 @@ SLOT=0/4.3.2
 SRC_URI=mirror://hackage/packages/archive/ad/4.3.2/ad-4.3.2.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	9d81603248f2ba3ec59124320d123e5e	ghc-package	892c6c35a9ac0993e65049c039438508	haskell-cabal	0458caac132af78577a70d9b83253460	multilib	23ae8c186171e6476af098d2a50d0ee0	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=8fa5a0cbc0cd7ca7d10ee9e1785a0224
+_md5_=0c287896dd4a6b4fe433081a7eb8a7c4
