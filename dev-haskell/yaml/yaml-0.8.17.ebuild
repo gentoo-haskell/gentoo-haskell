@@ -29,6 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/transformers-0.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
+	dev-haskell/raw-strings-qq:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	!no-examples? ( dev-haskell/raw-strings-qq:=[profile?] )
 	system-libyaml? ( dev-libs/libyaml )
