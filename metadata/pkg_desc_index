@@ -360,7 +360,7 @@ dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extrac
 dev-haskell/dlist 0.7.1.2: Difference lists
 dev-haskell/dlist-instances 0.1: Difference lists instances
 dev-haskell/dns 1.4.5 2.0.1: DNS library in Haskell
-dev-haskell/doctest 0.9.13 0.10.1: Test interactive Haskell examples
+dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.1.0: Fast conversion between double precision floating point and text
