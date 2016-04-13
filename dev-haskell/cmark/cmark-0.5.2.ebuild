@@ -27,6 +27,11 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4 )
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.5 && < 4.9' 'base >=4.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-pkgconfig
