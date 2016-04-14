@@ -1,0 +1,35 @@
+From b97a20bfe3c069d0b0682ea82d7ba49587df3dd9 Mon Sep 17 00:00:00 2001
+From: Heather <Heather@users.noreply.github.com>
+Date: Thu, 14 Apr 2016 17:13:37 +0400
+Subject: [PATCH] optional depends: correction against pre-Cabal-1.24 bug
+
+using current version of cabal `raw-strings-qq` will come in even with `no-examples` flag due bug in cabal, this condition correction is workaround
+---
+ yaml.cabal | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/yaml.cabal b/yaml.cabal
+index 332d763..8277de6 100644
+--- a/yaml.cabal
++++ b/yaml.cabal
+@@ -142,15 +142,15 @@ executable examples
+       Buildable: False
+    else
+       Buildable: True
++      build-depends: base
++                   , bytestring
++                   , raw-strings-qq
++                   , text
++                   , yaml
+    hs-source-dirs: examples
+    main-is: Main.hs
+    other-modules: Config
+                   Simple
+-   build-depends: base
+-                , bytestring
+-                , raw-strings-qq
+-                , text
+-                , yaml
+    ghc-options:   -Wall
+ 
+ source-repository head

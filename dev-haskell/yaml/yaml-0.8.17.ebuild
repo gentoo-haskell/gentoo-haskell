@@ -29,7 +29,6 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/transformers-0.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	dev-haskell/raw-strings-qq:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	!no-examples? ( dev-haskell/raw-strings-qq:=[profile?] )
 	system-libyaml? ( dev-libs/libyaml )
@@ -43,6 +42,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/mockery )
 	system-libyaml? ( virtual/pkgconfig )
 "
+
+src_prepare() {
+	# workaround Cabal bug at picking unused deps
+	eapply "${FILESDIR}"/${P}-less-deps.patch
+	eapply_user
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
