@@ -469,7 +469,7 @@ dev-haskell/gamma 0.9.0.2: Gamma function and related functions
 dev-haskell/gconf 0.13.0.3: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
-dev-haskell/generic-deriving 1.10.4: Generic programming library for generalised deriving
+dev-haskell/generic-deriving 1.10.4.1: Generic programming library for generalised deriving
 dev-haskell/generic-trie 0.3.0.1: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
@@ -1523,18 +1523,18 @@ dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMona
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.17: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.17.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
-dev-haskell/yesod 1.4.2.1: Creation of type-safe, RESTful web applications
-dev-haskell/yesod-auth 1.4.13: Authentication for Yesod
+dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-auth 1.4.13.1: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.8: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.18: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.20: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.20.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
