@@ -17,7 +17,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r3: Conversion between markup formats
+app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r3 1.17.0.3: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -523,7 +523,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.9: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2-r1: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
@@ -672,7 +672,7 @@ dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profil
 dev-haskell/hpc 0.6.0.1 0.6.0.2 0.6.0.3_pre20160204 0.6.0.3_pre20160411: Code Coverage Library for Haskell
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0 0.3.0.0: A Haskell pre-processor
-dev-haskell/hprotoc 2.2.0 2.3.0: Parse Google Protocol Buffer specifications
+dev-haskell/hprotoc 2.3.1: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
 dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
@@ -1060,7 +1060,7 @@ dev-haskell/pointfree 1.0.4.8 1.1 1.1-r1 1.1.1.1: Tool for refactoring expressio
 dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
-dev-haskell/polyparse 1.9 1.10 1.11: A variety of alternative parser combinator libraries
+dev-haskell/polyparse 1.9 1.10 1.11 1.12: A variety of alternative parser combinator libraries
 dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (deprecated)
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.14: Binding to the Poppler
@@ -1092,8 +1092,8 @@ dev-haskell/profunctors 4.4.1 5.1.2 5.2: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
-dev-haskell/protocol-buffers 2.2.0 2.3.0: Parse Google Protocol Buffer specifications
-dev-haskell/protocol-buffers-descriptor 2.2.0 2.3.0: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
+dev-haskell/protocol-buffers 2.3.1: Parse Google Protocol Buffer specifications
+dev-haskell/protocol-buffers-descriptor 2.3.1: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
 dev-haskell/psqueue 1.1-r1: Priority Search Queue
 dev-haskell/psqueues 0.2.2.0: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
@@ -1504,7 +1504,7 @@ dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
-dev-haskell/xdot 0.2.4.9 0.3: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xdot 0.2.4.9 0.3-r1: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
@@ -1540,7 +1540,7 @@ dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
 dev-haskell/yesod-form 1.4.7: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
-dev-haskell/yesod-markdown 0.10.0 0.11.0: Tools for using markdown in a yesod application
+dev-haskell/yesod-markdown 0.10.0 0.11.0-r1: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 0.10.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.4.0.4: Some helpers for using Persistent from Yesod
