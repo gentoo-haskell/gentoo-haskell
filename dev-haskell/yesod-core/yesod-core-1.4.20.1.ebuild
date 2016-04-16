@@ -71,3 +71,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		dev-haskell/streaming-commons )
 "
+
+PATCHES=("${FILESDIR}"/${P}-wai-logger.patch)
