@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?
 	>=dev-haskell/graphviz-2999.16:=[profile?] <dev-haskell/graphviz-2999.19:=[profile?]
 	>=dev-haskell/gtk3-0.12:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/polyparse-1.8:=[profile?] <dev-haskell/polyparse-1.12:=[profile?]
+	>=dev-haskell/polyparse-1.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'polyparse >= 1.8 && < 1.12' 'polyparse >= 1.8'
+}
