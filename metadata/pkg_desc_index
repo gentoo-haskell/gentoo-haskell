@@ -418,7 +418,7 @@ dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.3 1.3.1 1.4.1 1.4.2 1.46.3: A grab bag of modules
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
-dev-haskell/fast-logger 2.4.3: A fast logging system
+dev-haskell/fast-logger 2.4.5: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
 dev-haskell/fay 0.23.1.12-r3: A compiler for Fay, a Haskell subset that compiles to JavaScript
