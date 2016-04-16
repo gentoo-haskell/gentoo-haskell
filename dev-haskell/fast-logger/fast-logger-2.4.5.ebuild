@@ -20,7 +20,9 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/auto-update-0.1.2:=[profile?]
 	dev-haskell/bytestring-builder:=[profile?]
+	>=dev-haskell/easy-file-0.2:=[profile?]
 	dev-haskell/text:=[profile?]
+	>=dev-haskell/unix-time-0.2.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
