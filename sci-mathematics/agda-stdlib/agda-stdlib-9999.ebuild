@@ -29,8 +29,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
 
-SITEFILE="50${PN}-gentoo.el"
-
 src_prepare() {
 	cabal-mksetup
 }
@@ -66,5 +64,4 @@ src_install() {
 	doins -r src/*
 	dodoc -r html/*
 	doins "${FILESDIR}/agda-stdlib.agda-lib"
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 }
