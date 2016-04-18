@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing files
-
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/byteorder:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
