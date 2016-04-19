@@ -64,7 +64,7 @@ dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an 
 dev-haskell/apply-refact 0.2.0.0: Perform refactorings specified by the refact library
 dev-haskell/arithmoi 0.4.1.3: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
 dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
-dev-haskell/ascii-progress 0.3.2.0: A simple progress bar for the console
+dev-haskell/ascii-progress 0.3.3.0: A simple progress bar for the console
 dev-haskell/asn1-data 0.7.2: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/asn1-encoding 0.9.3: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/asn1-parse 0.9.4: Simple monadic parser for ASN1 stream types
@@ -126,7 +126,7 @@ dev-haskell/bitset 1.4.8: A space-efficient set data structure
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
 dev-haskell/blank-canvas 0.6-r1: HTML5 Canvas Graphics Library
-dev-haskell/blaze-builder 0.3.3.4 0.4.0.1: Efficient buffered output
+dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0: Enumeratees for the incremental conversion of builders to bytestrings
 dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library for Haskell
@@ -1212,7 +1212,7 @@ dev-haskell/shellac-readline 0.9.5.2: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/shellmate 0.2.3-r1: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.5: shell-like (systems) programming in Haskell
-dev-haskell/should-not-typecheck 2.0.1: A HUnit/hspec assertion library to verify that an expression does not typecheck
+dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
@@ -1530,7 +1530,7 @@ dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-auth 1.4.13.1: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
-dev-haskell/yesod-auth-hashdb 1.4.2.2: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.4.3: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.8: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.18: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
@@ -1596,7 +1596,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160412: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160418: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
