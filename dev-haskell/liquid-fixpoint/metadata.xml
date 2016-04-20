@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>haskell</herd>
-	<use>
-		<flag name="build-external">Build native binary. Requires ocaml compiler.</flag>
-		<flag name="z3mem">Link against z3.</flag>
-	</use>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		This package is a Haskell wrapper to the SMTLIB-based
 		Horn-Clause/Logical Implication constraint solver used
