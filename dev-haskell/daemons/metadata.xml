@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		&quot;Control.Pipe.C3&quot; provides simple RPC-like wrappers for pipes.
+		
+		&quot;Control.Pipe.Serialize&quot; provides serialization and
+		incremental deserialization pipes.
+		
+		&quot;Control.Pipe.Socket&quot; provides functions to setup pipes around
+		sockets.
+		
+		&quot;System.Daemon&quot; provides a high-level interface to starting
+		daemonized programs that are controlled through sockets.
+		
+		&quot;System.Posix.Daemon&quot; provides a low-level interface to
+		starting, and controlling detached jobs.
+		
+		See the @README.md@ file and the homepage for details.
+	</longdescription>
+</pkgmetadata>
