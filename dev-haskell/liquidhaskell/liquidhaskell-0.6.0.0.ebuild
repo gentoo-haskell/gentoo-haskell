@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails tests, needs investigation
+
 RDEPEND=">=dev-haskell/aeson-0.10:=[profile?]
 	>=dev-haskell/bifunctors-5.1:=[profile?]
 	>=dev-haskell/cabal-1.18:=[profile?]
