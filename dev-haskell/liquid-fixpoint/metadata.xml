@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<use>
+		<flag name="build-external">Build native binary. Requires ocaml compiler.</flag>
+		<flag name="z3mem">Link against z3.</flag>
+	</use>
+	<longdescription>
+		This package is a Haskell wrapper to the SMTLIB-based
+		Horn-Clause/Logical Implication constraint solver used
+		for Liquid Types.
+		
+		The package includes:
+		
+		1. Types for Expressions, Predicates, Constraints, Solutions
+		
+		2. Code for solving constraints
+		
+		Requirements
+		
+		In addition to the .cabal dependencies you require
+		
+		- A Z3 (&lt;http://z3.codeplex.com&gt;) or CVC4 (&lt;http://cvc4.cs.nyu.edu&gt;) binary.
+	</longdescription>
+</pkgmetadata>

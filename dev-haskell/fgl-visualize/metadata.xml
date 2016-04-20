@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>haskell</herd>
+	<longdescription>
+		Convert FGL graphs to dot files for easy visualization
+		using the &#39;dot&#39; tool.  Other visualizations might follow
+		but there are no immediate plans (patches welcome).
+	</longdescription>
+</pkgmetadata>
