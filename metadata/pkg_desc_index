@@ -1528,7 +1528,7 @@ dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
-dev-haskell/xss-sanitize 0.3.5.6: sanitize untrusted HTML to prevent XSS attacks
+dev-haskell/xss-sanitize 0.3.5.7: sanitize untrusted HTML to prevent XSS attacks
 dev-haskell/yaml 0.8.17.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
@@ -1575,7 +1575,7 @@ dev-lang/cryptol 2.2.4 2.2.5 2.2.6 2.3.0-r1: Cryptol: The Language of Cryptograp
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3: Compiler for a simple functional language
-dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r4 7.8.4-r5 7.10.3 8.0.1_rc2 8.0.1_rc3 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r4 7.8.4-r5 7.10.3 8.0.1_rc2 8.0.1_rc3 8.0.1_rc4 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
