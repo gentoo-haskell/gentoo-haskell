@@ -75,7 +75,7 @@ dev-haskell/atomic-primops 0.8.0.3: A safe approach to CAS and other atomic ops 
 dev-haskell/atto-lisp 0.2.2.2: Efficient parsing and serialisation of S-Expressions
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
 dev-haskell/attojson 0.5.10-r1: Simple lightweight JSON parser, generator & manipulator based on ByteString
-dev-haskell/attoparsec 0.12.1.6 0.13.0.1: Fast combinator parsing for bytestrings and text
+dev-haskell/attoparsec 0.12.1.6 0.13.0.2: Fast combinator parsing for bytestrings and text
 dev-haskell/attoparsec-binary 0.2: Binary processing extensions to Attoparsec
 dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (deprecated)
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
@@ -325,7 +325,7 @@ dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative 
 dev-haskell/diagrams-builder 0.7.2.3: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.0.5: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.3: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.3.0.8: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-contrib 1.3.0.9: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.6: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3.0.1: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.3.1.1: Embedded domain-specific language for declarative graphics
@@ -335,7 +335,7 @@ dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1.0.1: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.3.1.10: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
-dev-haskell/diff 0.3.2: O(ND) diff algorithm in haskell
+dev-haskell/diff 0.3.3: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.1 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
 dev-haskell/digestive-functors 0.7.1.5 0.8.0.1: A practical formlet library
@@ -437,7 +437,7 @@ dev-haskell/feed 0.3.11.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
-dev-haskell/file-embed 0.0.9.1: Use Template Haskell to embed file contents directly
+dev-haskell/file-embed 0.0.10: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9: common functions that show file location information
 dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
@@ -552,7 +552,7 @@ dev-haskell/haddock 2.10.0-r2 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2.1 2.14
 dev-haskell/haddock-api 2.16.1 2.17.0.0.8.0.1_rc2 2.17.0.0.8.0.1_rc3: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0.0.8.0.1_rc2 1.4.0.0.8.0.1_rc3: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.7.5.2: A static website compiler library
+dev-haskell/hakyll 4.7.5.2 4.8.0.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/half 0.2.2.3: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
@@ -576,7 +576,7 @@ dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash 
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
-dev-haskell/hashtables 1.2.1.0-r1: Mutable hash tables in the ST monad
+dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
 dev-haskell/haskeline 0.7.2.1 0.7.2.2: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 4.2.6: A program to find and display the docs and type of a name
@@ -900,7 +900,7 @@ dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the a
 dev-haskell/mime 0.4.0.2: Working with MIME types
 dev-haskell/mime-mail 0.4.11: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
-dev-haskell/mime-types 0.1.0.6: Basic mime-type handling types and functions
+dev-haskell/mime-types 0.1.0.7: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
@@ -929,7 +929,7 @@ dev-haskell/monadlist 0.0.2: Monadic versions of list functions
 dev-haskell/monadloc 0.7.1: A class for monads which can keep a monadic call trace
 dev-haskell/monadplus 1.4.2: Haskell98 partial maps and filters over MonadPlus
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
-dev-haskell/monadrandom 0.4.2.2: Random-number generation monad
+dev-haskell/monadrandom 0.4.2.3: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.2-r1: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.2: Type classes for mapping, folding, and traversing monomorphic containers
@@ -949,7 +949,7 @@ dev-haskell/multirec 0.7.5: Generic programming for families of recursive dataty
 dev-haskell/multiset 0.2.2 0.3.2: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.8: MurmurHash2 implementation for Haskell
-dev-haskell/mutable-containers 0.3.2: Abstactions and concrete implementations of mutable containers
+dev-haskell/mutable-containers 0.3.2.1: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
@@ -1235,7 +1235,7 @@ dev-haskell/smtp-mail 0.1.4.5: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
 dev-haskell/snap 0.14.0.7: Top-level package for the Snap Web Framework
 dev-haskell/snap-app 0.6.1 0.7.0: None
-dev-haskell/snap-core 0.9.8.0-r1: Snap: A Haskell Web Framework (core interfaces and types)
+dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.4: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2: Snap: A Haskell Web Framework: static loader
 dev-haskell/snap-server 0.9.5.1-r1: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
@@ -1274,7 +1274,7 @@ dev-haskell/strafunski-strategylib 5.0.0.8: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.15.2: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.15.3: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
