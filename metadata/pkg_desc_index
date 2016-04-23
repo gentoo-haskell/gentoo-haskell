@@ -1453,7 +1453,7 @@ dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
 dev-haskell/vector-space 0.10.3: Vector & affine spaces, linear maps, and derivatives
 dev-haskell/vector-space-points 0.2.1.1: A type for points, as distinct from vectors
-dev-haskell/vector-th-unbox 0.2.1.5: Deriver for Data.Vector.Unboxed using Template Haskell
+dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
