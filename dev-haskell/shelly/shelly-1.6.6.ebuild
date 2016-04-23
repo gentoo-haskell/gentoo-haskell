@@ -42,6 +42,12 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}"/${PN}-1.6.5-ghc-8.patch)
 
+src_prepare() {
+	cabal_chdeps \
+		'time                      >= 1.3 && < 1.6' 'time                      >= 1.3'
+	default
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag lifted lifted)
