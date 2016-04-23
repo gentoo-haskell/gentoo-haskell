@@ -6,7 +6,7 @@ app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.4: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
-app-emacs/hindent 4.5.7 4.6.1 9999: Extensible Haskell pretty printer
+app-emacs/hindent 4.5.7 4.6.1: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-emacs/structured-haskell-mode 1.0.20-r1 9999: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
@@ -1158,7 +1158,7 @@ dev-haskell/regex-tre 0.91: Replaces/Enhances Text.Regex
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
-dev-haskell/remote 0.1.1-r1 9999: Cloud Haskell. Fault-tolerant distributed computing framework
+dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2: High performance, regular, shape polymorphic parallel arrays
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6: Support for image reading and writing of Repa arrays using in-place FFI calls
@@ -1419,7 +1419,7 @@ dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a 
 dev-haskell/unix-time 0.3.6: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.1: Unlambda interpreter
-dev-haskell/unordered-containers 0.2.6.0 0.2.7.0 9999: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.6.0 0.2.7.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.2.0.0: Haskell URI parsing as ByteStrings
@@ -1563,7 +1563,7 @@ dev-haskell/zeromq-haskell 0.8.4: Bindings to ZeroMQ 2.1.x
 dev-haskell/zeromq3-haskell 0.5.2: Bindings to ZeroMQ 3.x
 dev-haskell/zeromq4-haskell 0.6.4: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.2.3.7 0.3.0.2: Library for creating and modifying zip archives
-dev-haskell/zippers 0.2-r1 9999: Traversal based zippers
+dev-haskell/zippers 0.2-r1: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
 dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits. (deprecated)
