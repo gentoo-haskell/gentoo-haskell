@@ -335,7 +335,7 @@ dev-haskell/diagrams-rasterific 1.3.1.5: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1.0.1: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.3.1.10: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
-dev-haskell/diff 0.3.3: O(ND) diff algorithm in haskell
+dev-haskell/diff 0.3.4: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.1 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
 dev-haskell/digestive-functors 0.7.1.5 0.8.0.1: A practical formlet library
@@ -577,7 +577,7 @@ dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
-dev-haskell/haskeline 0.7.2.1 0.7.2.2: A command-line interface for user input, written in Haskell
+dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 4.2.6: A program to find and display the docs and type of a name
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
@@ -1100,7 +1100,7 @@ dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates an
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.3.1: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.3.1: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
-dev-haskell/psqueue 1.1-r1: Priority Search Queue
+dev-haskell/psqueue 1.1: Priority Search Queue
 dev-haskell/psqueues 0.2.2.0: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
@@ -1536,7 +1536,7 @@ dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-auth 1.4.13.1: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
-dev-haskell/yesod-auth-hashdb 1.4.3: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.5: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.8: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.18: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
