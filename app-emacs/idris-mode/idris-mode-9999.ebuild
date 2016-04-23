@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 EGIT_REPO_URI="https://github.com/idris-hackers/idris-mode.git"
 NEED_EMACS=23
 
-inherit elisp git-2
+inherit elisp git-r3
 
 DESCRIPTION="Idris syntax highlighting and (eventually) other things for emacs"
 HOMEPAGE="https://github.com/idris-hackers/idris-mode"
@@ -25,6 +25,7 @@ SITEFILE="50${PN}-gentoo.el"
 RESTRICT=test # fails frequently
 
 src_prepare() {
+	default
 	cp "${FILESDIR}/${SITEFILE}" "${S}" \
 		|| die "Could not cp ${SITEFILE}"
 	sed -e 's@"--ideslave"@"--nocolour" "--ideslave"@' \

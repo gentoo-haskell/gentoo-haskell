@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-inherit elisp git-2
+inherit elisp git-r3
 
 DESCRIPTION="Mode for editing (and running) Haskell programs in Emacs"
 HOMEPAGE="http://projects.haskell.org/haskellmode-emacs/
@@ -25,6 +25,7 @@ ELISP_TEXINFO="${PN}.texi"
 SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
+	default
 	# remove '@$(RM) $*.elc' and '@$(RM) haskell-mode.info' from 'make check'
 	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
 		-e 's/check: clean/check:/' \
