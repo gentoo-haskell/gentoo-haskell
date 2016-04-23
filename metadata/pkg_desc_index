@@ -314,7 +314,7 @@ dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
 dev-haskell/dav 1.2: RFC 4918 WebDAV support
 dev-haskell/dbus 0.10.11-r1 0.10.12: A client library for the D-Bus IPC system
-dev-haskell/dbus-core 0.8.5.4 0.9.3-r3: Low-level D-Bus protocol implementation
+dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
 dev-haskell/dependent-map 0.1.1.3 0.2.0.1 0.2.1.0: Dependent finite maps (partial dependent products)
@@ -345,7 +345,6 @@ dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the dige
 dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.1: Statically checked physical dimensions, using Type Families and Data Kinds
-dev-haskell/direct-plugins 1.1: Lightweight replacement for Plugins, specific to GHC
 dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
@@ -830,7 +829,7 @@ dev-haskell/lens-family-core 1.2.0: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.8: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.7: Simple Functional Lenses
-dev-haskell/lhs2tex 1.16 1.17 1.18.1-r1 1.19: Preprocessor for typesetting Haskell sources with LaTeX
+dev-haskell/lhs2tex 1.19: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.6.0: Lastfm API interface
 dev-haskell/libmpd 0.9.0.4: An MPD client library
@@ -1171,7 +1170,7 @@ dev-haskell/retry 0.7.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rmonad 0.8.0.2: Restricted monad library
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
-dev-haskell/rosezipper 0.1 0.2: Generic zipper implementation for Data.Tree
+dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2: Random Variables
