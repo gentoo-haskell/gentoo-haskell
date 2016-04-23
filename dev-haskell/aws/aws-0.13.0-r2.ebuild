@@ -51,8 +51,8 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 	examples? ( >=dev-haskell/errors-2.0:=[profile?]
 			dev-haskell/exceptions:=[profile?]
-			>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?] )
-	!examples? ( >=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?] )
+			>=dev-haskell/transformers-0.3:=[profile?] )
+	!examples? ( >=dev-haskell/transformers-0.2.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
@@ -72,7 +72,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3'
+		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3' \
+		'transformers         >= 0.2.2   && < 0.5' 'transformers         >= 0.2.2'
 }
 
 src_configure() {
