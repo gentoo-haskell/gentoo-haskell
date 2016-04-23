@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # circylar depend: mwc-random[test]->statistics->mwc-random
+
 RDEPEND="dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
