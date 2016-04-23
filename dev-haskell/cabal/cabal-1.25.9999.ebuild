@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 CABAL_FEATURES="bootstrap lib profile test-suite"
 CABAL_FEATURES+=" bootstrap" # does not beed cabal to build itself
@@ -10,7 +10,7 @@ inherit haskell-cabal eutils
 
 if [[ ${PV} == *9999* ]]; then
 	LIVE_EBUILD=yes
-	inherit git-2
+	inherit git-r3
 fi
 
 MY_PN="Cabal"
@@ -25,7 +25,6 @@ IUSE="doc"
 
 if [[ -n ${LIVE_EBUILD} ]]; then
 	# Cabal's subdir
-	EGIT_SOURCEDIR=${S}
 	S="${S}"/${MY_PN}
 else
 	SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
@@ -53,6 +52,7 @@ src_prepare() {
 		# one of renaming reasons is to avoid clashing with bundled ghc-cabal
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps "version: ${cabal_upstream_version}" "version: ${PV}"
 	fi
+	eapply_user
 }
 
 src_configure() {
