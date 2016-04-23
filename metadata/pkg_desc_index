@@ -8,14 +8,14 @@ app-emacs/ghc-mod 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
-app-emacs/structured-haskell-mode 1.0.20-r1 9999: Structured editing Emacs mode for Haskell
+app-emacs/structured-haskell-mode 1.0.20-r1: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
 app-portage/fquery 0.2.2 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.4.7 0.5 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
-app-text/gt-tools 0.2.1 9999: Console and GUI interface for Google Translate service
+app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
 app-text/pandoc 1.13.2.1 1.14.0.4 1.15.2.1-r1 1.16.0.2-r3 1.17.0.3: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
@@ -520,7 +520,7 @@ dev-haskell/glutil 0.9.0: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
 dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
-dev-haskell/goa 3.3 9999: GHCi on Acid is an extension to GHCi (Interactive GHC) for adding useful lambdabot features
+dev-haskell/goa 3.3: GHCi bindings to lambdabot
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
@@ -836,7 +836,6 @@ dev-haskell/liblastfm 0.6.0: Lastfm API interface
 dev-haskell/libmpd 0.9.0.4: An MPD client library
 dev-haskell/libnotify 0.1.1.0: Bindings to libnotify library
 dev-haskell/libssh2 0.2.0.3: FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)
-dev-haskell/libssh2-conduit 9999: Conduit wrappers for libssh2 FFI bindings (see libssh2 package)
 dev-haskell/libtagc 0.12.0-r1: Binding to TagLib C library
 dev-haskell/libvirt-hs 0.2.0: FFI bindings to libvirt virtualization API (http://libvirt.org)
 dev-haskell/libxml 0.1.1: Binding to libxml2
