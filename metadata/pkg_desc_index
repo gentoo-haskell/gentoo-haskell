@@ -548,9 +548,9 @@ dev-haskell/gtksourceview3 0.13.2.1: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22: access Hackage's package database via Data.Map
 dev-haskell/hackage-security 0.5.0.2-r1: Hackage security library
-dev-haskell/haddock 2.10.0-r2 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2.1 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.0.0.8.0.1_rc2 2.17.0.0.8.0.1_rc3 9999: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-api 2.16.1 2.17.0.0.8.0.1_rc2 2.17.0.0.8.0.1_rc3: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0.0.8.0.1_rc2 1.4.0.0.8.0.1_rc3: Library exposing some functionality of Haddock
+dev-haskell/haddock 2.10.0-r2 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2.1 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.0_pre20160204 2.17.0_pre20160411 2.17.0_pre20160421 9999: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-api 2.16.1 2.17.0_pre20160204 2.17.0_pre20160411 2.17.0_pre20160421: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0_pre20160204 1.4.0_pre20160411 1.4.0_pre20160421: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
 dev-haskell/hakyll 4.7.5.2 4.8.0.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
@@ -671,7 +671,7 @@ dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
-dev-haskell/hpc 0.6.0.1 0.6.0.2 0.6.0.3_pre20160204 0.6.0.3_pre20160411: Code Coverage Library for Haskell
+dev-haskell/hpc 0.6.0.1 0.6.0.2 0.6.0.3_pre20160204 0.6.0.3_pre20160411 0.6.0.3_pre20160421: Code Coverage Library for Haskell
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0 0.3.0.0: A Haskell pre-processor
 dev-haskell/hprotoc 2.3.1: Parse Google Protocol Buffer specifications
@@ -1378,7 +1378,7 @@ dev-haskell/tls-debug 0.3.4 0.4.1 0.4.2: Set of programs for TLS testing and deb
 dev-haskell/tls-extra 0.6.6-r1: TLS extra default values and helpers
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
 dev-haskell/torrent 10000.0.0: BitTorrent file parser and generater
-dev-haskell/transformers 0.3.0.0-r1 0.4.2.0 0.4.3.0 0.5.0.0 0.5.1.0: Concrete functor and monad transformers
+dev-haskell/transformers 0.3.0.0-r1 0.4.2.0 0.4.3.0 0.5.0.0 0.5.1.0 0.5.2.0: Concrete functor and monad transformers
 dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a transformer stack
 dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim for dev-haskell/transformers
 dev-haskell/transformers-free 1.0.1: Free monad transformers
