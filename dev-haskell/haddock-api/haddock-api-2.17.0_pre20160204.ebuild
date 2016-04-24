@@ -30,5 +30,5 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.17.0.0.8.0.1_rc2-fix-deps.patch"
+	epatch "${FILESDIR}/${PN}-2.17.0_pre20160204-fix-deps.patch"
 }
