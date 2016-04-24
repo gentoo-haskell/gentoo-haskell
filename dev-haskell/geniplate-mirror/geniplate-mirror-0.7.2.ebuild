@@ -24,3 +24,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-0.7.2-ghc-8.0.patch"
+}
