@@ -9,9 +9,6 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal versionator
 
-MY_PV=$(get_version_component_range '1-3')
-MY_P="${MY_PN}-${PV}"
-
 DESCRIPTION="Code Coverage Library for Haskell"
 HOMEPAGE="http://hackage.haskell.org/package/hpc"
 #SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
