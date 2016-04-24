@@ -79,7 +79,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'haddock-library >= 1.1 && < 1.3' 'haddock-library >= 1.1 && < 1.5'
+		'haddock-library >= 1.1 && < 1.3' 'haddock-library >= 1.1 && < 1.5' \
+		'time >= 1.5 && < 1.6' 'time >= 1.5'
 	default
 }
 
