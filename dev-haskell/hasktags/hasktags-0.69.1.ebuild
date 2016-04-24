@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,6 +25,10 @@ RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-0.69.1-ghc-8.0.patch"
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
