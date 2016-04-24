@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-2.17.0.0.8.0.1_rc2-fix-deps.patch"
 	if [[ ! -e "${S}/html" ]]; then
 		ln -s resources/html "${S}/html" || die "Could not create symbolic link ${S}/html"
 	fi
