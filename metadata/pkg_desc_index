@@ -6,7 +6,7 @@ app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.4: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
-app-emacs/hindent 4.5.7 4.6.1: Extensible Haskell pretty printer
+app-emacs/hindent 4.5.7 4.6.1 4.6.3: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-emacs/structured-haskell-mode 1.0.20-r1: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
@@ -666,7 +666,7 @@ dev-haskell/hoogle 4.2.43-r1: Haskell API Search
 dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0 3.10.2.1: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A very simple package providing a cross-platform means of determining the hostname
-dev-haskell/hothasktags 0.3.4: Generates ctags for Haskell, incorporating import lists and qualified imports
+dev-haskell/hothasktags 0.3.5: Generates ctags for Haskell, incorporating import lists and qualified imports
 dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server with a reusable graphing module
@@ -1246,6 +1246,7 @@ dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell Sch
 dev-haskell/sourcegraph 0.7.0.7: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.2.6: Play, write, read, convert audio signals using Sox
+dev-haskell/spdx 0.2.1.0: SPDX license expression language
 dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative parallelism
 dev-haskell/split 0.2.3: Combinator library for splitting lists
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
@@ -1584,7 +1585,7 @@ dev-lang/idris 0.10.3 0.11-r1 9999: Functional Programming Language with Depende
 dev-lang/jhc 0.8.0 0.8.1 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.8.3.0 0.8.4.0: PureScript Programming Language Compiler
+dev-lang/purescript 0.8.5.0: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
