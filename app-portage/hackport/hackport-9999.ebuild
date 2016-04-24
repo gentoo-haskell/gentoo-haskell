@@ -51,6 +51,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
 }
 
