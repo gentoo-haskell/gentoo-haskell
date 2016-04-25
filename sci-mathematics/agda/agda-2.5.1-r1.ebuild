@@ -22,7 +22,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cpphs uhc +stdlib emacs"
 
-RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0.5:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 	>=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
@@ -77,6 +77,8 @@ src_prepare() {
 	sed -e '/^executable agda-mode$/a \ \ buildable: False' \
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
+	cabal_chdeps \
+		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1'
 }
 
 src_configure() {
