@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name='executable'>Install a "highlighter" executable</flag>
+	</use>
+	<longdescription>
+		Processes source code using tons of lexers, tokenizing it and formatting it as e.g. HTML.
+		
+		Very similar to the Python Pygments library; many lexers directly converted from it.
+	</longdescription>
+</pkgmetadata>
