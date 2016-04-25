@@ -253,6 +253,7 @@ dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting betwee
 dev-haskell/cookie 0.4.2: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
+dev-haskell/couchdb 1.2.2: CouchDB interface
 dev-haskell/cpphs 1.19.3 1.20.1: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
@@ -631,6 +632,7 @@ dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.0-r1: Generate scaffold for cabal project
+dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.5.15 0.6.2: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
 dev-haskell/hint 0.4.0.0-r1 0.4.2.0 0.4.2.1 0.4.2.3 9999: Runtime Haskell interpreter (GHC API wrapper)
@@ -1099,6 +1101,7 @@ dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates an
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.3.1: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.3.1: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
+dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
 dev-haskell/psqueues 0.2.2.1: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
@@ -1136,6 +1139,7 @@ dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1: Generalized bananas, lenses and barbed wire
+dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
@@ -1225,6 +1229,7 @@ dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks impl
 dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing variables
 dev-haskell/simple-sendfile 0.2.21: Cross platform library for the sendfile system call
 dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver process
+dev-haskell/simpleaes 0.4.2: Fast AES encryption/decryption for bytestrings
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
@@ -1253,6 +1258,7 @@ dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.1: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
+dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/stack 1.0.2-r2 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
@@ -1303,6 +1309,7 @@ dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
+dev-haskell/system-uuid 2.1.1: Bindings to system UUID functions
 dev-haskell/syz 0.2.0.0: Scrap Your Zippers
 dev-haskell/tables 0.4.1.1-r3: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
@@ -1359,6 +1366,7 @@ dev-haskell/th-desugar 1.5.5: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.0.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.2: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
+dev-haskell/th-lift-instances 0.1.6: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.0: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.4: Recurseively reify template haskell datatype info
 dev-haskell/these 0.6.2.1-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
