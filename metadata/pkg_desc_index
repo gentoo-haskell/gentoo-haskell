@@ -85,7 +85,7 @@ dev-haskell/authenticate 1.3.3.1: Authentication methods for Haskell web applica
 dev-haskell/authenticate-kerberos 1.0.0: Authentication methods for Haskell web applications
 dev-haskell/authenticate-oauth 1.5.1.1-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
-dev-haskell/auto-update 0.1.3: Efficiently run periodic, on-demand actions
+dev-haskell/auto-update 0.1.3.1: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.12.1 0.13.0-r2: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.8.2 0.9.1: A compatibility layer for base
@@ -420,7 +420,7 @@ dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.3 1.3.1 1.4.1 1.4.2 1.4.3 1.46.3: A grab bag of modules
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
-dev-haskell/fast-logger 2.4.5: A fast logging system
+dev-haskell/fast-logger 2.4.6: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
 dev-haskell/fay 0.23.1.12-r3: A compiler for Fay, a Haskell subset that compiles to JavaScript
@@ -477,7 +477,7 @@ dev-haskell/generic-trie 0.3.0.1: A map, where the keys may be complex structure
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
-dev-haskell/geniplate-mirror 0.6.0.7 0.7.2: Use Template Haskell to generate Uniplate-like functions
+dev-haskell/geniplate-mirror 0.6.0.7 0.7.4: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.6 3.7 3.7.1 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r4 7.10.3: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
@@ -495,7 +495,7 @@ dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC AP
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
-dev-haskell/ghcid 0.6.1: GHCi based bare bones IDE
+dev-haskell/ghcid 0.6.2: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.1.1.3 0.2.3.1: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to GIO
@@ -598,7 +598,7 @@ dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r1: HaskellDB support for the HDBC P
 dev-haskell/haskelldb-hdbc-sqlite3 2.1.2: HaskellDB support for the HDBC SQLite driver
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5: Client support for POP3, SMTP, and IMAP
-dev-haskell/haskellnet-ssl 0.3.2.1: Helpers to connect to SSL/TLS mail servers with HaskellNet
+dev-haskell/haskellnet-ssl 0.3.3.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
 dev-haskell/hasktags 0.69.1: Produces ctags "tags" and etags "TAGS" files for Haskell programs
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
@@ -619,7 +619,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
-dev-haskell/heist 0.13.1.2-r1 0.14.1.3: An Haskell template system supporting both HTML5 and XML
+dev-haskell/heist 0.13.1.2-r1 0.14.1.4: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.7: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
@@ -1208,7 +1208,7 @@ dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.6: Build system library, like Make, but more accurate dependencies
-dev-haskell/shakespeare 2.0.8.1: A toolkit for making compile-time interpolated templates
+dev-haskell/shakespeare 2.0.8.2: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time. (deprecated)
@@ -1280,7 +1280,7 @@ dev-haskell/strafunski-strategylib 5.0.0.8: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.15.3: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.15.4: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
@@ -1368,7 +1368,7 @@ dev-haskell/th-extras 0.0.0.2: A grab bag of functions for use with Template Has
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.6: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.0: Orphan instances for TH datatypes
-dev-haskell/th-reify-many 0.1.4: Recurseively reify template haskell datatype info
+dev-haskell/th-reify-many 0.1.4.1: Recurseively reify template haskell datatype info
 dev-haskell/these 0.6.2.1-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.3: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6: GUI framework that uses the web browser as a display
@@ -1397,7 +1397,7 @@ dev-haskell/trifecta 1.5.2-r1: A modern parser combinator library with convenien
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.2.6-r1: Shell programming, Haskell-style
+dev-haskell/turtle 1.2.7: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
@@ -1473,7 +1473,7 @@ dev-haskell/wai-app-file-cgi 3.0.8 3.1.0 3.1.1: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.0.1.1 3.1.5: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
-dev-haskell/wai-extra 3.0.15: Provides some basic WAI handlers and middleware
+dev-haskell/wai-extra 3.0.15.1: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-launch 3.0.1: Launch a web app in the default browser
 dev-haskell/wai-logger 2.2.7: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
@@ -1541,28 +1541,28 @@ dev-haskell/yaml 0.8.17.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.1: Yet another array library
 dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
-dev-haskell/yesod-auth 1.4.13.1: Authentication for Yesod
-dev-haskell/yesod-auth-account 1.4.1: An account authentication plugin for Yesod
+dev-haskell/yesod-auth 1.4.13.2: Authentication for Yesod
+dev-haskell/yesod-auth-account 1.4.2: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
-dev-haskell/yesod-auth-hashdb 1.5: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.5.1: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.1.8: OAuth 2.0 authentication plugins
-dev-haskell/yesod-bin 1.4.18: The yesod helper executable
+dev-haskell/yesod-bin 1.4.18.1: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.20.1: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.20.2: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
-dev-haskell/yesod-form 1.4.7: Form handling support for Yesod Web Framework
+dev-haskell/yesod-form 1.4.7.1: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.10.0 0.11.0-r1: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 0.10.0: A pagination approach for yesod
-dev-haskell/yesod-persistent 1.4.0.4: Some helpers for using Persistent from Yesod
+dev-haskell/yesod-persistent 1.4.0.5: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-platform 1.2.13.3: Meta package for Yesod (deprecated)
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.0.3: Static file serving subsite for Yesod Web Framework
-dev-haskell/yesod-test 1.5.1.0: integration testing for WAI/Yesod Applications
+dev-haskell/yesod-test 1.5.1.1: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-worker 0.0.1-r1: Drop-in(ish) background worker system for Yesod apps
 dev-haskell/yi-language 0.1.1.0 0.2.0: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.1: A rope data structure used by Yi
