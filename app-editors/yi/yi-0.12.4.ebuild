@@ -64,6 +64,10 @@ DEPEND="${RDEPEND}
 		!testing? ( dev-haskell/quickcheck ) )
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-bad-key.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag eventlog eventlog) \
