@@ -60,6 +60,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-noshow.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag checkexternal checkexternal) \
