@@ -1,9 +1,0 @@
-diff --git a/src/Hakyll/Web/Paginate.hs b/src/Hakyll/Web/Paginate.hs
-index 65b4525..32e5631 100644
---- a/src/Hakyll/Web/Paginate.hs
-+++ b/src/Hakyll/Web/Paginate.hs
-@@ -39,3 +39,3 @@ data Paginate = Paginate
-     , paginateDependency :: Dependency
--    } deriving (Show)
-+    }
- 
