@@ -40,6 +40,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-no-show.patch
 	cabal_chdeps \
 		'brick >= 0.2 && < 0.5' 'brick >= 0.2'
 }
