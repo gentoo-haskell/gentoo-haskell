@@ -26,7 +26,7 @@ DEPEND=">=dev-lang/ghc-6.10
 	dev-haskell/syb
 	dev-haskell/utf8-string
 	dev-haskell/zlib
-	dev-perl/yaml
+	dev-perl/YAML
 "
 RDEPEND=""
 
