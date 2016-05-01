@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure prepare unpack
-DEPEND=>=dev-lang/ghc-6.10 dev-haskell/binary >=dev-haskell/drift-2.1.1 dev-haskell/fgl dev-haskell/happy dev-haskell/hssyck dev-haskell/mtl app-text/pandoc dev-haskell/readline dev-haskell/regex-compat dev-haskell/syb dev-haskell/utf8-string dev-haskell/zlib dev-perl/List-MoreUtils dev-perl/yaml virtual/libiconv dev-vcs/darcs net-misc/rsync !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEPEND=>=dev-lang/ghc-6.10 dev-haskell/binary >=dev-haskell/drift-2.1.1 dev-haskell/fgl dev-haskell/happy dev-haskell/hssyck dev-haskell/mtl app-text/pandoc dev-haskell/readline dev-haskell/regex-compat dev-haskell/syb dev-haskell/utf8-string dev-haskell/zlib dev-perl/List-MoreUtils dev-perl/YAML virtual/libiconv dev-vcs/darcs net-misc/rsync !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=jhc is a haskell compiler
 EAPI=4
 HOMEPAGE=http://repetae.net/john/computer/jhc/
@@ -7,4 +7,4 @@ LICENSE=GPL-2
 SLOT=0
 _eclass_exported_funcs=src_unpack:darcs src_prepare:- src_configure:- src_compile:-
 _eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	darcs	25bcb4c9bede09580ffa4891aa70234d	eutils	792f83d5ec9536cb5ccef375469d8bde	libtool	4890219c51da247200223277f993e054	multilib	23ae8c186171e6476af098d2a50d0ee0	toolchain-funcs	d513d423d449877e49d99af3f7af7acb
-_md5_=1d454f8df8e05d9b91b70261fbcaf09b
+_md5_=f0a49131273151f20d47a00930947b11
