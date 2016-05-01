@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r2: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.0.1: property-based host configuration management in haskell
+app-admin/propellor 3.0.2: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r1: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.4: The Haskell-Scriptable Editor
@@ -1075,7 +1075,7 @@ dev-haskell/poppler 0.14: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.1.6.0: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
-dev-haskell/postgresql-simple 0.4.10.0 0.5.1.2: Mid-Level PostgreSQL client library
+dev-haskell/postgresql-simple 0.4.10.0 0.5.1.3: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
 dev-haskell/pqueue 1.3.1: Reliable, persistent, fast priority queues
 dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
@@ -1322,7 +1322,7 @@ dev-haskell/tagsoup 0.13.9: Parsing and extracting information from (possibly ma
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
-dev-haskell/tar 0.4.5.0 0.5.0.1: Reading, writing and manipulating ".tar" archive files
+dev-haskell/tar 0.4.5.0 0.5.0.2: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tasty 0.10.1.2 0.11.0.3: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.3: Mark tasty tests as failure expected
@@ -1392,7 +1392,7 @@ dev-haskell/transformers 0.3.0.0-r1 0.4.2.0 0.4.3.0 0.5.0.0 0.5.1.0 0.5.2.0: Con
 dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a transformer stack
 dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim for dev-haskell/transformers
 dev-haskell/transformers-free 1.0.1: Free monad transformers
-dev-haskell/transformers-lift 0.1.0.0: Ad-hoc type classes for lifting
+dev-haskell/transformers-lift 0.1.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
 dev-haskell/trifecta 1.5.2-r1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
