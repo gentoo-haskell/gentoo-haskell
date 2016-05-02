@@ -25,7 +25,7 @@ RDEPEND=">=app-editors/leksah-server-0.15.2.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8.2:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
 	dev-haskell/blaze-html:=[profile?]
-	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+	>=dev-haskell/cabal-1.10.2.0:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/cpphs-1.19:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
@@ -78,7 +78,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'cpphs >=1.19 && <1.20' 'cpphs >=1.19'
+		'cpphs >=1.19 && <1.20' 'cpphs >=1.19' \
+		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0'
 }
 
 src_configure() {

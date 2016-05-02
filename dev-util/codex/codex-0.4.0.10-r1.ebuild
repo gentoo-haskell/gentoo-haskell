@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.18:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/either-4.3.0.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/hackage-db-1.22:=[profile?] <dev-haskell/hackage-db-2:=[profile?]
@@ -40,3 +40,8 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal               >= 1.18       && < 1.23' 'Cabal               >= 1.18'
+}

@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # runs external cabal and downloads things
 
-RDEPEND=">=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.14:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/transformers:=[profile?]
@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/extra )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal >= 1.14 && < 1.23' 'Cabal >= 1.14'
+}
