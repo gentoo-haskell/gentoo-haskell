@@ -16,17 +16,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE="profile +ffi test"
 
-# filemanip is used in lib.cabal to make the GenerateEverything and
-# AllNonAsciiChars executables, so agda-stdlib does not require a subslot
-# dependency on filemanip.
-
 RDEPEND="=sci-mathematics/agda-9999*:=[profile?]
-	=dev-haskell/filemanip-0.3*[profile?]
-	>=dev-lang/ghc-6.12.1
 	ffi? ( sci-mathematics/agda-lib-ffi )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
+	=dev-haskell/filemanip-0.3*[profile?]
+	>=dev-lang/ghc-6.12.1
 "
 
 src_prepare() {

@@ -7,34 +7,36 @@ EAPI=6
 CABAL_FEATURES="bin"
 inherit haskell-cabal elisp-common
 
+## shared with sci-mathematics/agda-stdlib
+# upstream does not maintain version ordering:
+#  https://github.com/agda/agda-stdlib/releases
+# 0.11 -> 2.5.0.20160213 -> 2.5.0.20160412 -> 0.12
+# As Agda-stdlib is tied to Agda version we encode
+# both versions in gentoo version.
+##
+MY_UPSTREAM_AGDA_STDLIB_V="0.12"
+MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
+MY_UPSTREAM_AGDA_V="${PV%.${MY_UPSTREAM_AGDA_STDLIB_V}}"
+
 DESCRIPTION="Agda standard library"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
-SRC_URI="https://github.com/agda/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-
-MY_AGDA_V="2.5.1"
+SRC_URI="https://github.com/agda/${PN}/archive/v${MY_UPSTREAM_AGDA_STDLIB_V}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="profile +ffi"
 
-# filemanip is used in lib.cabal to make the GenerateEverything and
-# AllNonAsciiChars executables, so agda-stdlib does not require a subslot
-# dependency on filemanip.
-
-RDEPEND=">=sci-mathematics/agda-${MY_AGDA_V}:=[profile?]
-	>=dev-haskell/filemanip-0.3.6.2[profile?] <dev-haskell/filemanip-0.4[profile?]
-	>=dev-lang/ghc-6.12.1
+RDEPEND=">=sci-mathematics/agda-${MY_UPSTREAM_AGDA_V}:=[profile?]
 	ffi? ( sci-mathematics/agda-lib-ffi )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
+	>=dev-haskell/filemanip-0.3.6.2[profile?] <dev-haskell/filemanip-0.4[profile?]
+	>=dev-lang/ghc-6.12.1
 "
 
-src_prepare() {
-	cabal-mksetup
-	eapply_user
-}
+S=${WORKDIR}/${PN}-${MY_UPSTREAM_AGDA_STDLIB_V}
 
 src_compile() {
 	haskell-cabal_src_compile
