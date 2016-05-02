@@ -21,7 +21,7 @@ IUSE="+network-uri +threaded"
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/binary-0.5.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
 	>=dev-haskell/binary-shared-0.8:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
-	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+	>=dev-haskell/cabal-1.10.2.0:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.0.0.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/executable-path-0.0.3:=[profile?] <dev-haskell/executable-path-0.1:=[profile?]
@@ -43,6 +43,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10.2
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
