@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r2: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.0.2: property-based host configuration management in haskell
+app-admin/propellor 3.0.3: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r1: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.4: The Haskell-Scriptable Editor
@@ -39,7 +39,7 @@ dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.6.2.1-r1 0.7.0.6 0.8.0.2 0.8.1.0 0.9.0.1 0.11.1.4 0.11.2.0-r1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
-dev-haskell/aeson-compat 0.3.2.0-r1: Compatibility layer for aeson
+dev-haskell/aeson-compat 0.3.3.0: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.1.1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
@@ -229,7 +229,7 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.4-r1: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.5: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
