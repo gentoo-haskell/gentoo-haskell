@@ -33,7 +33,7 @@ dev-haskell/accelerate-fft 0.15.0.0 0.15.1.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.14.0: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
-dev-haskell/active 0.2.0.8: Abstractions for animation
+dev-haskell/active 0.2.0.9: Abstractions for animation
 dev-haskell/ad 4.3.2-r1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
@@ -229,7 +229,7 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.5: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.6: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -458,7 +458,7 @@ dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9: FoldMap lists
 dev-haskell/foldl 1.2.0: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.1: A true type file format loader
-dev-haskell/force-layout 0.4.0.3: Simple force-directed layout
+dev-haskell/force-layout 0.4.0.4: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
