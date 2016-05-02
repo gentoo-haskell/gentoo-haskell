@@ -11,7 +11,16 @@ inherit haskell-cabal elisp-common
 
 MY_PN="Agda"
 MY_P="${MY_PN}-${PV}"
-MY_LIB_V="0.12"
+
+## shared with sci-mathematics/agda-stdlib
+# upstream does not maintain version ordering:
+#  https://github.com/agda/agda-stdlib/releases
+# 0.11 -> 2.5.0.20160213 -> 2.5.0.20160412 -> 0.12
+# As Agda-stdlib is tied to Agda version we encode
+# both versions in gentoo version.
+##
+MY_UPSTREAM_AGDA_STDLIB_V="0.12"
+MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
 
 DESCRIPTION="A dependently typed functional programming language and proof assistant"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
@@ -58,7 +67,7 @@ RDEPEND+="
 		emacs? ( app-emacs/haskell-mode
 			virtual/emacs )
 "
-PDEPEND="stdlib? ( =sci-mathematics/agda-stdlib-${MY_LIB_V} )"
+PDEPEND="stdlib? ( =sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.16.0
