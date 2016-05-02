@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?]
 	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/gtk3-0.13.2:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-1.23:=[profile
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'Cabal >=1.6.0 && <1.23' 'Cabal >=1.6.0'
+}
