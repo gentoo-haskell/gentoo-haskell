@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/binary-tagged-0.1.1:=[profile?] <dev-haskell/binary-tagged-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.4.0.1:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/byteable-0.1.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
-	>=dev-haskell/cabal-1.18.1.5:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+	>=dev-haskell/cabal-1.18.1.5:=[profile?]
 	>=dev-haskell/conduit-1.2.6.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-combinators-0.3.1:=[profile?] <dev-haskell/conduit-combinators-1.1:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.7.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
@@ -107,7 +107,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-aeson-0.11.patch
 	cabal_chdeps \
 		'aeson >=0.8.0.2 && <0.11' 'aeson >=0.8.0.2' \
-		'bifunctors >=4.2.1 && <5.3' 'bifunctors >=4.2.1'
+		'bifunctors >=4.2.1 && <5.3' 'bifunctors >=4.2.1' \
+		'Cabal >=1.18.1.5 && <1.23' 'Cabal >=1.18.1.5' \
+		'Cabal >=1.22.6.0 && <1.23' 'Cabal >=1.22.6.0'
 }
 
 src_configure() {
