@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.23:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.18:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
@@ -45,7 +45,8 @@ src_prepare() {
 		'cereal     >=0.4 && <0.5' 'cereal     >=0.4' \
 		'cereal             >=0.4   && <0.5' 'cereal             >=0.4' \
 		'pandoc             >=1.14  && <1.15' 'pandoc             >=1.14' \
-		'scotty             >=0.7   && <0.11' 'scotty             >=0.7'
+		'scotty             >=0.7   && <0.11' 'scotty             >=0.7' \
+		'Cabal              >=1.18  && <1.23' 'Cabal              >=1.18'
 }
 
 src_configure() {
