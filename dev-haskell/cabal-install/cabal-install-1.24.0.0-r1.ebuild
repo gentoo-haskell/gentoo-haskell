@@ -67,6 +67,14 @@ src_prepare() {
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri)
+}
+
+src_install() {
+	haskell-cabal_src_install
 
 	dobashcomp "${S}/bash-completion/cabal"
+
+	# fixup perms in such an an awkward way
+	mv "${ED}/usr/share/man/man1/cabal.1" "${S}/cabal.1" || die
+	doman "${S}/cabal.1"
 }
