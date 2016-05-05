@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
 DEPEND=dev-haskell/base64-string:=[profile?] dev-haskell/cryptohash:=[profile?] >=dev-haskell/mime-mail-0.4.7:=[profile?] <dev-haskell/mime-mail-0.5:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/network:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Client support for POP3, SMTP, and IMAP
-EAPI=5
+EAPI=6
 HOMEPAGE=https://github.com/jtdaugherty/HaskellNet
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=dev-haskell/base64-string:=[profile?] dev-haskell/cryptohash:=[profile?] >=dev-haskell/mime-mail-0.4.7:=[profile?] <dev-haskell/mime-mail-0.5:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/network:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.5
-SRC_URI=mirror://hackage/packages/archive/HaskellNet/0.5/HaskellNet-0.5.tar.gz
+SLOT=0/0.5.1
+SRC_URI=mirror://hackage/packages/archive/HaskellNet/0.5.1/HaskellNet-0.5.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	892c6c35a9ac0993e65049c039438508	haskell-cabal	0458caac132af78577a70d9b83253460	multilib	23ae8c186171e6476af098d2a50d0ee0	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=13817348c552f8b6ca0791fc51089a53
+_md5_=db47a9c083965f313cb30da20fbcb083
