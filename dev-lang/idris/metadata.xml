@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="curses">Use curses to get the screen width.</flag>
 		<flag name="ffi">Build support for libffi.</flag>
 	</use>
 	<longdescription>
