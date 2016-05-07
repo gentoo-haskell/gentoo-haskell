@@ -1048,7 +1048,7 @@ dev-haskell/persistent-sqlite 2.2.1: Backend for the persistent library using sq
 dev-haskell/persistent-template 2.1.6: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
-dev-haskell/pipes 4.1.8: Compositional pipelines
+dev-haskell/pipes 4.1.9: Compositional pipelines
 dev-haskell/pipes-binary 0.4.1: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.2: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
@@ -1056,7 +1056,7 @@ dev-haskell/pipes-concurrency 2.0.5: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.4: Group streams into substreams
 dev-haskell/pipes-http 1.0.2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
-dev-haskell/pipes-parse 3.0.5: Parsing infrastructure for the pipes ecosystem
+dev-haskell/pipes-parse 3.0.6: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.3: Safety for the pipes ecosystem
 dev-haskell/plailude 0.2.2 0.3.0 0.4.1.1 0.5.1 0.6.0: plaimi's prelude
 dev-haskell/plugins 1.5.5.0: Dynamic linking for Haskell and C objects
@@ -1383,7 +1383,7 @@ dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31: A tool for visualizing time series from log files
 dev-haskell/timezone-olson 0.1.7: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.5.1: Enhanced timezone handling for Data.Time
-dev-haskell/tls 1.2.18 1.3.4 1.3.5: TLS/SSL protocol native implementation (Server and Client)
+dev-haskell/tls 1.2.18 1.3.4 1.3.5 1.3.6: TLS/SSL protocol native implementation (Server and Client)
 dev-haskell/tls-debug 0.3.4 0.4.1 0.4.2: Set of programs for TLS testing and debugging
 dev-haskell/tls-extra 0.6.6-r1: TLS extra default values and helpers
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
