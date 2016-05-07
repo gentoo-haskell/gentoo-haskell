@@ -8,7 +8,7 @@ app-emacs/ghc-mod 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
-app-emacs/structured-haskell-mode 1.0.20-r1: Structured editing Emacs mode for Haskell
+app-emacs/structured-haskell-mode 1.0.20-r2: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
 app-portage/fquery 0.2.2 9999: Installed package query tool for Gentoo Linux
@@ -44,7 +44,7 @@ dev-haskell/aeson-extra 0.3.1.1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
-dev-haskell/agata 0.2.1.1-r4: Generator-generator for QuickCheck
+dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
 dev-haskell/alex 3.1.7: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/algebra 4.2-r1: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Functional combinators for monadic actions that require allocation and de-allocation
@@ -683,7 +683,7 @@ dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
 dev-haskell/hsb2hs 0.2 0.3.1: Preprocesses a file, adding blobs from files as string literals
 dev-haskell/hscolour 1.23-r1 1.24: Colourise Haskell code
 dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
-dev-haskell/hsdns 1.6 1.6.1: Asynchronous DNS Resolver
+dev-haskell/hsdns 1.6.1-r1: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
