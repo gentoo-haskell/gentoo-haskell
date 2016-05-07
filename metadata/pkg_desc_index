@@ -1107,7 +1107,7 @@ dev-haskell/psqueue 1.1: Priority Search Queue
 dev-haskell/psqueues 0.2.2.1: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
-dev-haskell/pure-priority-queue 0.14: A pure priority queue
+dev-haskell/pure-priority-queue 0.14-r1: A pure priority queue
 dev-haskell/puremd5 2.1.2.1: A Haskell-only implementation of the MD5 digest (hash) algorithm
 dev-haskell/pwstore-fast 2.4.4: Secure password storage
 dev-haskell/qt 1.1.6.1: Qt bindings
@@ -1125,7 +1125,7 @@ dev-haskell/random-fu 0.2.6.2: Random number generation
 dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
 dev-haskell/random-source 0.3.0.6: Generic basis for random number generators
 dev-haskell/ranged-sets 0.3.0: Ranged sets for Haskell
-dev-haskell/ranges 0.2.4: Ranges and various functions on them
+dev-haskell/ranges 0.2.4-r1: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.3.2.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.6.1: A pure haskell drawing engine
 dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
@@ -1138,7 +1138,7 @@ dev-haskell/reactive-banana-wx 1.0.0.0 1.1.0.0: Examples for the reactive-banana
 dev-haskell/readargs 1.2.2: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
-dev-haskell/records 0.1.1.6: A flexible record system
+dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
@@ -1633,7 +1633,7 @@ media-sound/live-sequencer 0.0.4-r4: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.2: Count mailboxes in a SQL database
-net-mail/mhailist 0.0: Haskell mailing list manager
+net-mail/mhailist 0.0-r1: Haskell mailing list manager
 net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability checks on email addresses
 net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
 net-misc/hath 0.3.0: Hath manipulates network blocks in CIDR notation
