@@ -1185,6 +1185,7 @@ dev-haskell/safecopy 0.8.6 0.9.0.1: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
+dev-haskell/samtools 0.2.4.1: Binding to the C samtools library
 dev-haskell/sandi 0.3.6: Data encoding library
 dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
@@ -1202,6 +1203,7 @@ dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.1: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
+dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.6.1 0.7: A family of combinators for defining webservices APIs
 dev-haskell/servant-server 0.6.1 0.7: A family of combinators for defining webservices APIs and serving them
@@ -1640,10 +1642,12 @@ net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability check
 net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
 net-misc/hath 0.3.0: Hath manipulates network blocks in CIDR notation
 net-p2p/combinatorrent 9999: A concurrent bittorrent client
+sci-biology/bamstats 0.4: A program to extract various information from BAM alignmnet files
 sci-biology/clustertools 0.1.5: Tools for manipulating sequence clusters
 sci-biology/estreps 0.3.1: Repeats from ESTs
 sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
+sci-biology/trimpolya 0: Search for, annotate and trim poly-A tail
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
 sci-mathematics/agda 2.4.2.5-r2 2.5.1-r2 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checking and compiling Agda programs
