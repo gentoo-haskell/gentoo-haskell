@@ -11,7 +11,7 @@ app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other thin
 app-emacs/structured-haskell-mode 1.0.20-r2: Structured editing Emacs mode for Haskell
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
-app-portage/fquery 0.2.2 9999: Installed package query tool for Gentoo Linux
+app-portage/fquery 0.2.3 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.4.7 0.5 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
@@ -610,7 +610,7 @@ dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modify
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.1: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
-dev-haskell/hdbc-mysql 0.6.6.1-r2: MySQL driver for HDBC
+dev-haskell/hdbc-mysql 0.6.6.1-r3: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
