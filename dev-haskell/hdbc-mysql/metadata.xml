@@ -9,4 +9,7 @@
 		This package provides a MySQL driver for HDBC, implemented via
 		bindings to the C @mysqlclient@ library.
 	</longdescription>
+	<upstream>
+		<remote-id type="github">bos/hdbc-mysql</remote-id>
+	</upstream>
 </pkgmetadata>
