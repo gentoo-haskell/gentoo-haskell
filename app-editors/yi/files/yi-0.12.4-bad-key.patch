@@ -1,9 +1,0 @@
-diff --git a/src/library/Yi/Editor.hs b/src/library/Yi/Editor.hs
-index 0c3abfe..e328a77 100644
---- a/src/library/Yi/Editor.hs
-+++ b/src/library/Yi/Editor.hs
-@@ -615,3 +615,3 @@ focusWindowE k = do
-     case foldl searchWindowSet  (False, 0, 0) ts of
--        (False, _, _) -> fail $ "No window with key " ++ show wkey ++ "found. (focusWindowE)"
-+        (False, _, _) -> fail $ "No window with key " ++ show k ++ "found. (focusWindowE)"
-         (True, tabIndex, winIndex) -> do
