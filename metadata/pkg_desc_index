@@ -722,7 +722,7 @@ dev-haskell/htaglib 1.0.3: Bindings to TagLib, audio meta-data library
 dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
-dev-haskell/htoml 0.1.0.3: Parser for TOML files
+dev-haskell/htoml 0.2.0.1: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
@@ -1583,7 +1583,7 @@ dev-lang/brainfuck 0.1.0.2: Brainfuck interpreter
 dev-lang/cryptol 2.2.4 2.2.5 2.2.6 2.3.0-r1: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
-dev-lang/epic 0.9.3.3: Compiler for a simple functional language
+dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
 dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r4 7.8.4-r5 7.10.3 8.0.1_rc2 8.0.1_rc3 8.0.1_rc4 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
