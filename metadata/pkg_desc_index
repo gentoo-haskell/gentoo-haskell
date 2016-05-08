@@ -119,6 +119,7 @@ dev-haskell/bindings-uname 0.1: Low-level binding to POSIX uname(3)
 dev-haskell/bio 0.5.3-r1: A bioinformatics library
 dev-haskell/biocore 0.3.1: A bioinformatics library
 dev-haskell/biofasta 0.0.3: Library for reading fasta sequence files
+dev-haskell/biopsl 0.4: Library and executables for working with PSL files
 dev-haskell/biosff 0.3.7.1: Library and executables for working with SFF files
 dev-haskell/bitmap 0.0.2: A library for handling and manipulating bitmaps (rectangular pixel arrays)
 dev-haskell/bits-atomic 0.1.3-r1: Atomic bit operations on memory locations for low-level synchronization
