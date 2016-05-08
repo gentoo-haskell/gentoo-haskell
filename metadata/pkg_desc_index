@@ -1232,6 +1232,7 @@ dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing va
 dev-haskell/simple-sendfile 0.2.21: Cross platform library for the sendfile system call
 dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver process
 dev-haskell/simpleaes 0.4.2: Fast AES encryption/decryption for bytestrings
+dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with better error reporting
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
@@ -1639,6 +1640,7 @@ net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability check
 net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
 net-misc/hath 0.3.0: Hath manipulates network blocks in CIDR notation
 net-p2p/combinatorrent 9999: A concurrent bittorrent client
+sci-biology/clustertools 0.1.5: Tools for manipulating sequence clusters
 sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
