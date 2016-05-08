@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Binding to the C samtools library, which reads and
+		writes SAM format alignments, both binary and tab-
+		delimited text formats. It also supports rapid access
+		to specific alignments in a sorted BAM file and access
+		to sequences from indexed Fasta files.
+	</longdescription>
+</pkgmetadata>
