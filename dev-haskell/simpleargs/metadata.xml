@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The provided getArgs returns an arbitrary tuple of values instead of a
+		list of Strings.  This means that the number and type (i.e. parseability)
+		of parameters are checked, and reported to the user.  The module is not
+		a substitute for proper error handling (use &quot;System.Console.GetOpt&quot; for that),
+		but is useful for making quick and dirty command line tools a bit less dirty,
+		without sacrificing the quick part.
+	</longdescription>
+</pkgmetadata>
