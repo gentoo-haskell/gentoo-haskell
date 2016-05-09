@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
+# Uses outdated block/unblock base API. needs port to mask/unmask
+dev-haskell/strict-concurrency
+
 # Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
 # Bundled with ghc, nobody uses in overlay. Better way
 # to upgrade it is to bump bundled libs in ghc ebuld.
