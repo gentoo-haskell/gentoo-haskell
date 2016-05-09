@@ -27,4 +27,3 @@ DEPEND="${RDEPEND}
 	dev-haskell/c2hs
 	>=dev-haskell/cabal-1.6
 "
-
