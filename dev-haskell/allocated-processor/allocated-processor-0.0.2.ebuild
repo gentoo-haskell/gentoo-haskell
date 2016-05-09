@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Functional combinators for monadic actions that require allocation and de-allocation"
+DESCRIPTION="Combinators for monadic actions that require allocation and de-allocation"
 HOMEPAGE="http://hackage.haskell.org/package/allocated-processor"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
