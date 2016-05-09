@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Fast, online, error-correcting, monadic, applicative, merging, permuting, interleaving, idiomatic parser combinators"
+DESCRIPTION="Online error-correcting monadic applicative and more parser combinators"
 HOMEPAGE="http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
