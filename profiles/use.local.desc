@@ -18,7 +18,6 @@ app-emacs/haskell-mode:snippets - install snippets/ modules
 app-emacs/hindent:vim - Install a vim plugin allowing hindent to be used as the formatter by `gq`
 app-text/pandoc:embed_data_files - Embed data files in binary for relocatable executable.
 app-text/pandoc:https - Enable support for downloading of resources over https.
-app-text/pandoc:make-pandoc-man-pages - Build program to regenerate pandoc man pages from README.
 app-text/pandoc:network-uri - Get Network.URI from the network-uri package.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
@@ -367,7 +366,6 @@ dev-haskell/yesod-auth-oauth2:network-uri - Get Network.URI from the network-uri
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
 dev-haskell/zip-archive:executable - Build the Zip executable.
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
-dev-lang/cryptol:self-contained - Compile the text of the Cryptol Prelude into the library.
 dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
