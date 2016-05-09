@@ -6,7 +6,7 @@ EAPI="5"
 
 inherit autotools eutils elisp-common
 
-DESCRIPTION="efficient open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems"
+DESCRIPTION="automatic theorem prover for Satisfiability Modulo Theories (SMT) problems"
 HOMEPAGE="http://cvc4.cs.nyu.edu/web"
 SRC_URI="http://cvc4.cs.nyu.edu/builds/src/${P}.tar.gz"
 

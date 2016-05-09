@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
-DESCRIPTION="Stick your haskell variables into javascript/coffeescript at compile time. (deprecated)"
+DESCRIPTION="Stick your haskell variables into javascript/coffeescript at compile time"
 HOMEPAGE="http://www.yesodweb.com/book/shakespearean-templates"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
