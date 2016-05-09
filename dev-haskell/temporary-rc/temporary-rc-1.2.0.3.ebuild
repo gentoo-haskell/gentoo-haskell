@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Portable temporary file and directory support for Windows and Unix, based on code from Cabal"
+DESCRIPTION="Portable temporary file and directory support for Windows and Unix"
 HOMEPAGE="https://www.github.com/feuerbach/temporary"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
