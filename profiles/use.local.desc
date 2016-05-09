@@ -34,7 +34,6 @@ dev-haskell/accelerate-fft:cuda - Enable support for using CUFFT via the CUDA ba
 dev-haskell/accelerate-io:bounds-checks - Enable bounds checking.
 dev-haskell/accelerate-io:internal-checks - Enable internal consistency checks.
 dev-haskell/accelerate-io:unsafe-checks - Enable bounds checking in unsafe operations.
-dev-haskell/aeson:developer - Operate in developer mode.'
 dev-haskell/aeson-pretty:lib-only - don't build 'aeson-pretty' executable.
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
 dev-haskell/amqp:network-uri - use network-uri package
