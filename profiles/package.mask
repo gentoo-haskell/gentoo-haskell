@@ -1,6 +1,7 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
 dev-haskell/strict-concurrency
+dev-haskell/vacuum-cairo
 
 # Sergei Trofimovich <slyfox@gentoo.org> (17 Oct 2015)
 # Bundled with ghc, nobody uses in overlay. Better way
