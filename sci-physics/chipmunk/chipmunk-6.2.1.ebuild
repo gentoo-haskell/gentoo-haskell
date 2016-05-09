@@ -10,7 +10,7 @@ MY_PN=Chipmunk
 MAJOR=$(get_major_version)
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="Chipmunk2D is a simple, lightweight, fast and portable 2D rigid body physics library written in C"
+DESCRIPTION="simple, lightweight, fast and portable 2D rigid body physics library"
 HOMEPAGE="http://chipmunk-physics.net/"
 SRC_URI="http://chipmunk-physics.net/release/${MY_PN}-${MAJOR}.x/${MY_P}.tgz"
 
