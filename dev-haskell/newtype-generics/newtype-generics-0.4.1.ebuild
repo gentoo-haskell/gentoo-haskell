@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A typeclass and set of functions for working with newtypes, with generics support"
+DESCRIPTION="A typeclass for working with newtypes, with generics support"
 HOMEPAGE="http://hackage.haskell.org/package/newtype-generics"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
