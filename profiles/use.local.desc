@@ -421,7 +421,6 @@ x11-misc/xmobar:mpris - Enables MPRIS v1, v2 support
 x11-misc/xmobar:timezone - Enables localized date support
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
-x11-misc/xmonad-extras:perwindow - Enable PerWindowLayout plugin support
 x11-misc/xmonad-extras:volume - Enable Volume plugin
 x11-wm/xmonad:default-term - Pull terminal specified in default xmonad config to be a bit less hostile by default.
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
