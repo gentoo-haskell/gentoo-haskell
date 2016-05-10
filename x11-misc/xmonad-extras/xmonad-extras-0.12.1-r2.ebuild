@@ -30,13 +30,22 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?]
 	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?] <dev-haskell/hint-0.5:=[profile?]
 		dev-haskell/network:=[profile?] )
-	mpd? ( >=dev-haskell/libmpd-0.8:=[profile?] <dev-haskell/libmpd-0.9:=[profile?] )
+	mpd? ( >=dev-haskell/libmpd-0.9:=[profile?] )
 	volume? ( >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
 			>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.1
 "
+
+PATCHES=("${FILESDIR}"/${P}-libmpd-0.9.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'libmpd >= 0.8 && < 0.9' 'libmpd >= 0.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
