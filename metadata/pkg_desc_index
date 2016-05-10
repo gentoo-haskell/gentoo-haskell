@@ -527,7 +527,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.9: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.16.0.0-r4 2999.17.0.2 2999.18.0.2-r1: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.18.0.2-r1: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
