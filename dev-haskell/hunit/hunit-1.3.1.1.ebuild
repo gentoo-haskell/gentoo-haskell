@@ -28,3 +28,5 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+RESTRICT=test # breaks on ghc-8 where error contains backtrace
