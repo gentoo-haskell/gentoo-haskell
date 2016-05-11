@@ -95,7 +95,7 @@ dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding f
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
-dev-haskell/basic-prelude 0.5.1: An enhanced core prelude; a common foundation for alternate preludes
+dev-haskell/basic-prelude 0.5.2: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.8: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
@@ -177,7 +177,7 @@ dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
-dev-haskell/cc-delcont 0.2-r1: Delimited continuations and dynamically scoped variables
+dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.4.1.1 0.5.1.0: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
@@ -278,7 +278,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.11.9: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
-dev-haskell/cryptohash-sha256 0.11.7.1: Fast, pure and practical SHA-256 implementation
+dev-haskell/cryptohash-sha256 0.11.7.2: Fast, pure and practical SHA-256 implementation
 dev-haskell/cryptonite 0.13 0.15: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
@@ -666,7 +666,6 @@ dev-haskell/hoodle-publish 0.2.0: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1: Haskell API Search
-dev-haskell/hoopl 3.10.0.1 3.10.0.2 3.10.1.0 3.10.2.0 3.10.2.1: A library to support dataflow analysis and optimization
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.5: Generates ctags for Haskell, incorporating import lists and qualified imports
@@ -1206,7 +1205,7 @@ dev-haskell/semigroups 0.18.1: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.6.1 0.7: A family of combinators for defining webservices APIs
+dev-haskell/servant 0.6.1 0.7.1: A family of combinators for defining webservices APIs
 dev-haskell/servant-server 0.6.1 0.7: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
@@ -1286,7 +1285,7 @@ dev-haskell/strafunski-strategylib 5.0.0.8: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.15.4: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.15.5: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
@@ -1372,7 +1371,7 @@ dev-haskell/th-desugar 1.5.5: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.0.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.2: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
-dev-haskell/th-lift-instances 0.1.6: Lift instances for template-haskell for common data types
+dev-haskell/th-lift-instances 0.1.7: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.1: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
 dev-haskell/these 0.6.2.1-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
@@ -1480,7 +1479,7 @@ dev-haskell/wai-app-static 3.0.1.1 3.1.5: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
 dev-haskell/wai-extra 3.0.15.1: Provides some basic WAI handlers and middleware
-dev-haskell/wai-handler-launch 3.0.1: Launch a web app in the default browser
+dev-haskell/wai-handler-launch 3.0.2: Launch a web app in the default browser
 dev-haskell/wai-logger 2.2.7: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/warp 3.0.13.1 3.1.10 3.2.4 3.2.6: A fast, light-weight web server for WAI applications
@@ -1530,7 +1529,7 @@ dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xkbcommon 0.0.1 0.0.2: Haskell bindings for libxkbcommon
 dev-haskell/xml 1.3.14: A simple XML library
-dev-haskell/xml-conduit 1.3.4.2: Pure-Haskell utilities for dealing with XML with the conduit package
+dev-haskell/xml-conduit 1.3.5: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.0.11: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.1-r2: Optics for xml-conduit and html-conduit
 dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
