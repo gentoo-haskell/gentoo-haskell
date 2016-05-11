@@ -527,7 +527,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.9: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.18.0.2-r1: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.18.0.2-r2: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
@@ -1589,7 +1589,7 @@ dev-lang/cryptol 2.3.0-r1: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
-dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r4 7.8.4-r5 7.10.3 8.0.1_rc2 8.0.1_rc3 8.0.1_rc4 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r4 7.8.4-r5 7.10.3 8.0.1_rc2 8.0.1_rc3 8.0.1_rc4 8.0.1 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
