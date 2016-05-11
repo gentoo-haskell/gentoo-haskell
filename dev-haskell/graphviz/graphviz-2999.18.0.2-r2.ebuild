@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 	>=dev-haskell/polyparse-1.9:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/wl-pprint-text-1.1.0.0:=[profile?] <dev-haskell/wl-pprint-text-1.2.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -39,7 +39,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'polyparse >=1.9 && <1.12' 'polyparse >=1.9'
+		'polyparse >=1.9 && <1.12' 'polyparse >=1.9' \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
 }
 
 src_configure() {
