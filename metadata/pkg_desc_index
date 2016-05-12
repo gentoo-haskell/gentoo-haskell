@@ -409,7 +409,7 @@ dev-haskell/ether 0.4.0.2: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/event-list 0.1.1.3: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.4.1.1: Exact rational multiples of pi (and integer powers of pi)
-dev-haskell/exception-mtl 0.3.0.5 0.4: Exception monad transformer instances for mtl classes
+dev-haskell/exception-mtl 0.3.0.5 0.4.0.1: Exception monad transformer instances for mtl classes
 dev-haskell/exception-transformers 0.3.0.4 0.4.0.4: Type classes and monads for unchecked extensible exceptions
 dev-haskell/exceptions 0.6.1 0.8.2.1: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executable
@@ -496,7 +496,7 @@ dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC AP
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
-dev-haskell/ghcid 0.6.2: GHCi based bare bones IDE
+dev-haskell/ghcid 0.6.3: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.1.1.3 0.2.3.1: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.13.1.1: Binding to GIO
@@ -1387,7 +1387,7 @@ dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31: A tool for visualizing time series from log files
 dev-haskell/timezone-olson 0.1.7: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.5.1: Enhanced timezone handling for Data.Time
-dev-haskell/tls 1.3.7: TLS/SSL protocol native implementation (Server and Client)
+dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
 dev-haskell/tls-debug 0.4.4: Set of programs for TLS testing and debugging
 dev-haskell/tls-extra 0.6.6-r1: TLS extra default values and helpers
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
