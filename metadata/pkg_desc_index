@@ -498,7 +498,7 @@ dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell cod
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghcid 0.6.3: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
-dev-haskell/ghcjs-dom 0.1.1.3 0.2.3.1: DOM library that supports both GHCJS and WebKitGTK
+dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.13.1.1: Binding to GIO
 dev-haskell/github 0.13.2 0.14.1-r1: Access to the GitHub API, v3
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
@@ -515,8 +515,8 @@ dev-haskell/gloss-juicy 0.2: Load any image supported by Juicy.Pixels in your gl
 dev-haskell/gloss-raster 1.10.1.1: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.10.1.1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
-dev-haskell/gluraw 2.0.0.1: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.7.0.7: A binding for the OpenGL Utility Toolkit
+dev-haskell/gluraw 2.0.0.2: A raw binding for the OpenGL graphics system
+dev-haskell/glut 2.7.0.8: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.9.0: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
@@ -1206,7 +1206,7 @@ dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.6.1 0.7.1: A family of combinators for defining webservices APIs
-dev-haskell/servant-server 0.6.1 0.7: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant-server 0.6.1 0.7.1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
