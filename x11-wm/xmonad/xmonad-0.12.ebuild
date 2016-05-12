@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE="+default-term no-autorepeat-keys"
 
+RESTRICT=test # fails test on ghc-8 (assert has different text of exception)
+
 RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	dev-haskell/mtl:=[profile?]
