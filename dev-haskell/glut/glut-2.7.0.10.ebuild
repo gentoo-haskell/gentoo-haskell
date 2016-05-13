@@ -26,7 +26,6 @@ RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.2:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	media-libs/freeglut
 	examples? ( >=dev-haskell/openglraw-1.0:=[profile?] <dev-haskell/openglraw-3.3:=[profile?]
 			>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?] )
 "
