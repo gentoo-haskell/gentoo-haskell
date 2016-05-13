@@ -615,7 +615,7 @@ dev-haskell/hdbc-mysql 0.6.6.1-r3: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
-dev-haskell/hdevtools 0.1.3.0: Persistent GHC powered background server for FAST haskell development tools
+dev-haskell/hdevtools 0.1.3.1: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
@@ -993,7 +993,7 @@ dev-haskell/numeric-extras 0.1: Useful tools from the C standard library
 dev-haskell/numeric-prelude 0.4.2: An experimental alternative hierarchy of numeric type classes
 dev-haskell/numeric-quest 0.2.0.1: Math and quantum mechanics
 dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tuples
-dev-haskell/numtype 1.0-r1 1.0.1 1.1: Type-level (low cardinality) integers
+dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.0.1.1 1.1.0.1: Explicitly handled object names
 dev-haskell/oeis 0.3.6-r1: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
