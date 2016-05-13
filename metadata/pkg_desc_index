@@ -517,7 +517,7 @@ dev-haskell/gloss-rendering 1.10.1.1: Gloss picture data types and rendering fun
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.2: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.10: A binding for the OpenGL Utility Toolkit
-dev-haskell/glutil 0.9.0-r1: Miscellaneous OpenGL utilities
+dev-haskell/glutil 0.9.0.1: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
 dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
@@ -605,7 +605,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.16.2.0: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.4: XML-RPC client and server library
+dev-haskell/haxr 3000.11.1.5: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
