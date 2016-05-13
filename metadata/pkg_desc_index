@@ -516,8 +516,8 @@ dev-haskell/gloss-raster 1.10.1.1: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.10.1.1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.2: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.7.0.8: A binding for the OpenGL Utility Toolkit
-dev-haskell/glutil 0.9.0: Miscellaneous OpenGL utilities
+dev-haskell/glut 2.7.0.10: A binding for the OpenGL Utility Toolkit
+dev-haskell/glutil 0.9.0-r1: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
 dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
@@ -1005,7 +1005,7 @@ dev-haskell/openal 1.6.0.1 1.7.0.4: A binding to the OpenAL cross-platform 3D au
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 3.0.1.0: A binding for the OpenGL graphics system
-dev-haskell/openglraw 3.1.0.0: A raw binding for the OpenGL graphics system
+dev-haskell/openglraw 3.1.0.0 3.2.0.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
