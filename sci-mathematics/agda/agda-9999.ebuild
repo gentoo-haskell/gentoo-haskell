@@ -38,6 +38,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/murmur-hash-0.1:=[profile?] <dev-haskell/murmur-hash-0.2:=[profile?]
 	>=dev-haskell/parallel-3.2.0.4:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/quickcheck-2.8.2:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+	>=dev-haskell/regex-tdfa-1.2.2:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3.3.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
