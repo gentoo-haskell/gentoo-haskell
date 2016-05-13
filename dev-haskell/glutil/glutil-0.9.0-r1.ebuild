@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
 	>=dev-haskell/linear-1.1.3:=[profile?]
 	>=dev-haskell/opengl-3:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
-	>=dev-haskell/openglraw-3.0:=[profile?] <dev-haskell/openglraw-3.2:=[profile?]
+	>=dev-haskell/openglraw-3.0:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'OpenGLRaw >= 3.0 && < 3.2' 'OpenGLRaw >= 3.0'
+}
