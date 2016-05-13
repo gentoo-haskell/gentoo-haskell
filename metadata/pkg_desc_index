@@ -496,7 +496,7 @@ dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC AP
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
-dev-haskell/ghcid 0.6.3: GHCi based bare bones IDE
+dev-haskell/ghcid 0.6.4: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gio 0.13.1.1: Binding to GIO
@@ -1018,7 +1018,7 @@ dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1: Binding to the Pango text rende
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.1.5.2 0.2.0.4: Full-featured command-line argument parsing library
-dev-haskell/parsec 3.1.9-r1: Monadic parser combinators
+dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.7: Support for well-typed paths
