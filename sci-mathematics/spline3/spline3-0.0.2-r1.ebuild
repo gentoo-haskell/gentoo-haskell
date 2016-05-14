@@ -18,11 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous module name ‘Data.Vector’
+
 RDEPEND=">=dev-haskell/cmdargs-0.10:=
 	>=dev-haskell/missingh-1:=
-	<dev-haskell/repa-3.4:=
-	<dev-haskell/repa-algorithms-3.4:=
-	<dev-haskell/repa-io-3.4:=
+	dev-haskell/repa:=
+	dev-haskell/repa-algorithms:=
+	dev-haskell/repa-io:=
 	>=dev-haskell/tasty-0.8:=
 	>=dev-haskell/tasty-hunit-0.8:=
 	>=dev-haskell/tasty-quickcheck-0.8.1:=
@@ -33,3 +35,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/doctest-0.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'repa                        < 3.4' 'repa' \
+		'repa-algorithms             < 3.4' 'repa-algorithms' \
+		'repa-io                     < 3.4' 'repa-io'
+}
