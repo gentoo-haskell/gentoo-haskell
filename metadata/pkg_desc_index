@@ -418,7 +418,7 @@ dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
 dev-haskell/explicit-exception 0.1.8: Exceptions which are explicit in the type signature
 dev-haskell/extensible-effects 1.11.0.3: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
-dev-haskell/extra 1.4.3: Extra functions I use
+dev-haskell/extra 1.4.3 1.4.6: Extra functions I use
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
 dev-haskell/fast-logger 2.4.6: A fast logging system
@@ -887,7 +887,7 @@ dev-haskell/matrix 0.3.4.4: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
-dev-haskell/megaparsec 4.4.0: Monadic parser combinators
+dev-haskell/megaparsec 5.0.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.10 0.11 0.12: memory and related abstraction stuff
@@ -1662,7 +1662,6 @@ sys-apps/nix 1.8: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
 www-apps/gitit 0.12.1.1: Wiki using happstack, git or darcs, and pandoc
-www-apps/hpasteit 0.3.3: A command-line client for hpaste.org
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.1 1.1.2.2 1.5.0.0: Minimal extensible web-browser
 www-misc/feed-cli 2009.7.5: A simple command line interface for creating and updating feeds like RSS
