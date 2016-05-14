@@ -50,7 +50,3 @@ dev-haskell/bitset
 # gentoo haskell rules, so it's completely unmaintainable.
 # Consider using @yesod-platform set or fix this package.
 dev-haskell/yesod-platform
-
-# Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
-# Masked for removal. Deprecated, use tls instead.
-dev-haskell/tls-extra
