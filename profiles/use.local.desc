@@ -237,6 +237,7 @@ dev-haskell/llvm-general:shared-llvm - link against llvm shared rather than stat
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
 dev-haskell/ltk:gtk3 - Use gtk3
+dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/monad-logger:template_haskell - Enable Template Haskell support.
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
