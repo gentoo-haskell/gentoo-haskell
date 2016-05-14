@@ -277,7 +277,6 @@ dev-haskell/reflection:template-haskell - Enable template haskell.
 dev-haskell/regex-compat-tdfa:newbase - Use base-4.0 or newer.
 dev-haskell/regex-compat-tdfa:splitbase - Use the new smaller, split-up base package.
 dev-haskell/rfc5051:mkunicodedata - build codes generator itself
-dev-haskell/rmonad:warn-as-error - Build with warnings as errors.
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
 dev-haskell/sandi:with-conduit - Build with conduit

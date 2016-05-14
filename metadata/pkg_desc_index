@@ -782,7 +782,6 @@ dev-haskell/ircbot 0.6.2 0.6.4: A library for writing irc bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r2: Iteratee-based I/O
-dev-haskell/iterio 0.2.2-r1: Iteratee-based IO with pipe operators
 dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
@@ -1175,7 +1174,6 @@ dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling i
 dev-haskell/resourcet 0.4.10.2 1.1.7.4: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
-dev-haskell/rmonad 0.8.0.2: Restricted monad library
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
@@ -1655,7 +1653,7 @@ sci-mathematics/agda-executable 2.3.0.1-r2: Command-line program for type-checki
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
-sci-mathematics/spline3 0.0.2: A parallel implementation of the Sorokina/Zeilfelder spline scheme
+sci-mathematics/spline3 0.0.2-r1: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 sci-mathematics/z3 4.3.1 4.3.2 4.4.1 9999: An efficient theorem prover
 sci-physics/chipmunk 6.2.1: simple, lightweight, fast and portable 2D rigid body physics library
 sys-apps/nix 1.8: A purely functional package manager
