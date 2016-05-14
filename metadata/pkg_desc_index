@@ -1040,7 +1040,7 @@ dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and write
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistent 2.1.6 2.2.4.1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.0.2 2.0.8 2.1.4: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mongodb 2.1.4: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.3.0.2: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.2.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1: Backend for persistent library using Redis
