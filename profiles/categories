@@ -7,6 +7,7 @@ app-portage
 app-shells
 app-text
 app-vim
+dev-games
 dev-haskell
 dev-lang
 dev-tex
