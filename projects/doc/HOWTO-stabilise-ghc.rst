@@ -77,3 +77,4 @@ Previous stabilisations
 -----------------------
 
 - `ghc-7.8.4 <https://bugs.gentoo.org/show_bug.cgi?id=524790#c23>`_
+- `ghc-7.10.3 <https://bugs.gentoo.org/show_bug.cgi?id=563090#c4>`_
