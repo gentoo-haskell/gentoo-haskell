@@ -150,7 +150,7 @@ dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
 dev-haskell/bytes 0.15.2: Sharing code for serialization between binary and cereal
-dev-haskell/bytestring-builder 0.10.6.0.0: The new bytestring builder, packaged outside of GHC
+dev-haskell/bytestring-builder 0.10.8.1.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-conversion 0.3.1: Type-classes to convert values to and from ByteString
 dev-haskell/bytestring-handle 0.1.0.3: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
@@ -320,9 +320,9 @@ dev-haskell/dbus 0.10.11-r1 0.10.12: A client library for the D-Bus IPC system
 dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
-dev-haskell/dependent-map 0.1.1.3 0.2.0.1 0.2.1.0: Dependent finite maps (partial dependent products)
-dev-haskell/dependent-sum 0.2.1.0 0.3.2.1: Dependent sum type
-dev-haskell/dependent-sum-template 0.0.0.4: Template Haskell code to generate instances of classes in dependent-sum package
+dev-haskell/dependent-map 0.2.2.0: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-sum 0.3.2.2: Dependent sum type
+dev-haskell/dependent-sum-template 0.0.0.5: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.5.25: A program and library to derive instances for data types
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative vector graphics
@@ -528,7 +528,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.9: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.18.0.2-r2: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.18.1.0: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
@@ -878,7 +878,7 @@ dev-haskell/machines-directory 0.2.0.8: Directory (system) utilities for the mac
 dev-haskell/machines-io 0.2.0.12: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
-dev-haskell/managed 1.0.3: A monad for managed values
+dev-haskell/managed 1.0.4: A monad for managed values
 dev-haskell/map-syntax 0.2: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.14: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
@@ -913,7 +913,7 @@ dev-haskell/mmorph 1.0.6: Monad morphisms
 dev-haskell/mockery 0.3.3: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
-dev-haskell/monad-journal 0.7.1: Pure logger typeclass and monad transformer
+dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
 dev-haskell/monad-logger 0.3.18: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
@@ -1609,7 +1609,7 @@ dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
 dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependencies
-dev-util/shellcheck 0.4.3: Shell script analysis tool
+dev-util/shellcheck 0.4.4: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0: a distributed, interactive, smart revision control system
