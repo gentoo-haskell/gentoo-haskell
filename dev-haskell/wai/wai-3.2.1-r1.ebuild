@@ -33,6 +33,8 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'bytestring-builder        >= 0.10.4.0 && < 0.10.7' 'bytestring-builder        >= 0.10.4.0'
 }
