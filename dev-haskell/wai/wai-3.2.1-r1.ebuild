@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
-	>=dev-haskell/bytestring-builder-0.10.4.0:=[profile?] <dev-haskell/bytestring-builder-0.10.7:=[profile?]
+	>=dev-haskell/bytestring-builder-0.10.4.0:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/network-2.2.1.5:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
@@ -31,3 +31,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'bytestring-builder        >= 0.10.4.0 && < 0.10.7' 'bytestring-builder        >= 0.10.4.0'
+}
