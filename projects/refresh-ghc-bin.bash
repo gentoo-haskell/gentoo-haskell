@@ -45,7 +45,7 @@ chroot_profile=1
 needed_atom="dev-lang/ghc"
 dry_run=
 autobuild_machine=
-keep_temp_chroot=no
+keep_temp_chroot=
 makeopts=auto
 
 default_autobuild_machine() {
