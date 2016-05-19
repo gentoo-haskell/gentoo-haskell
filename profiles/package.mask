@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (19 May 2016)
+# Needs porting of gtk2hs-based ebuilds to newer Cabal
+=dev-haskell/cabal-1.24*
+=dev-haskell/cabal-install-1.24*
+
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
 dev-haskell/strict-concurrency
