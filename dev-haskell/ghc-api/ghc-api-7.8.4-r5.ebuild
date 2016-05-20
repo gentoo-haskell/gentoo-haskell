@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.haskell.org/ghc"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="cabal"
 
 # The easiest way to fetch libraries 'ghc' package depends on
