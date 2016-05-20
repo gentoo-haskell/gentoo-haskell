@@ -521,7 +521,7 @@ dev-haskell/glut 2.7.0.10: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.9.0.1: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
-dev-haskell/gnutls 0.1.6 0.2: Bindings for GNU libgnutls
+dev-haskell/gnutls 0.2: Bindings for GNU libgnutls
 dev-haskell/goa 3.3: GHCi bindings to lambdabot
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
