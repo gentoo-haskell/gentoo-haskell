@@ -12,7 +12,7 @@ inherit haskell-cabal git-r3
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
-EGIT_REPO_URI="git://github.com/idris-lang/Idris-dev.git"
+EGIT_REPO_URI="https://github.com/idris-lang/Idris-dev.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

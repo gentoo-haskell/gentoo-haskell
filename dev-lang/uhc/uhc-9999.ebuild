@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-EGIT_REPO_URI="git://github.com/UU-ComputerScience/uhc.git"
+EGIT_REPO_URI="https://github.com/UU-ComputerScience/uhc.git"
 
 RDEPEND="dev-haskell/binary:=
 	dev-haskell/fgl:=

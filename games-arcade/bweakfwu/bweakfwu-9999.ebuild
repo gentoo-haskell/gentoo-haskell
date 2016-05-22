@@ -12,7 +12,7 @@ inherit haskell-cabal git-r3
 DESCRIPTION="Breakout meets PONG"
 HOMEPAGE="https://secure.plaimi.net/games/bweakfwu/"
 #SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-EGIT_REPO_URI="git://github.com/plaimi/bweakfwu.git https://github.com/plaimi/bweakfwu.git"
+EGIT_REPO_URI="https://github.com/plaimi/bweakfwu.git https://github.com/plaimi/bweakfwu.git"
 
 LICENSE="GPL-3"
 SLOT="0"

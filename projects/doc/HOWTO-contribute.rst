@@ -8,8 +8,8 @@ It's mostly a set of following commands:
 ::
 
    # first-time preparation
-   $ git clone git://github.com/YOU-AT-GITHUB/gentoo-haskell.git
-   $ git remote add upstream git://github.com/gentoo-haskell/gentoo-haskell.git
+   $ git clone https://github.com/YOU-AT-GITHUB/gentoo-haskell.git
+   $ git remote add upstream https://github.com/gentoo-haskell/gentoo-haskell.git
    $ git remote update
    #
    # usual workflow:
