@@ -15,7 +15,7 @@ fi
 
 DESCRIPTION="The command-line interface for Cabal and Hackage"
 HOMEPAGE="http://www.haskell.org/cabal/"
-EGIT_REPO_URI="git://github.com/haskell/cabal.git"
+EGIT_REPO_URI="https://github.com/haskell/cabal.git"
 
 if [[ -n ${LIVE_EBUILD} ]]; then
 	# Cabal's subdir

@@ -10,7 +10,7 @@ inherit eutils haskell-cabal git-r3
 DESCRIPTION="Rebuild Haskell dependencies in Gentoo"
 HOMEPAGE="http://haskell.org/haskellwiki/Gentoo#haskell-updater"
 #SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-EGIT_REPO_URI="git://github.com/gentoo-haskell/haskell-updater.git"
+EGIT_REPO_URI="https://github.com/gentoo-haskell/haskell-updater.git"
 
 LICENSE="GPL-2"
 SLOT="0"

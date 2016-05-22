@@ -12,7 +12,7 @@ inherit git-r3 haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="http://projects.haskell.org/xmobar/"
-EGIT_REPO_URI="git://github.com/jaor/xmobar.git"
+EGIT_REPO_URI="https://github.com/jaor/xmobar.git"
 
 LICENSE="BSD"
 SLOT="0"

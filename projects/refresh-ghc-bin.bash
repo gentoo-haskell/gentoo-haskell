@@ -177,7 +177,7 @@ run mkdir "${chroot_temp}"
 	done
 	EOF
     )
-    run git clone git://github.com/trofi/gentoo-chrootiez.git
+    run git clone https://github.com/trofi/gentoo-chrootiez.git
     (
         run cd gentoo-chrootiez/bound
         run ./make_typical_binds.sh
