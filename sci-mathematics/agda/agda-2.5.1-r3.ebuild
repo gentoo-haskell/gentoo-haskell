@@ -60,7 +60,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	uhc? ( >=dev-haskell/shuffle-0.1.3.3:=[profile?]
 		>=dev-haskell/uhc-light-1.1.9.2:=[profile?] <dev-haskell/uhc-light-1.2:=[profile?]
-		>=dev-haskell/uhc-util-0.1.6.3:=[profile?] <dev-haskell/uhc-util-0.1.6.6:=[profile?]
+		>=dev-haskell/uhc-util-0.1.6.3:=[profile?]
 		>=dev-haskell/uulib-0.9.20:=[profile?] )
 "
 RDEPEND+="
@@ -87,7 +87,8 @@ src_prepare() {
 		-i "${S}/${MY_PN}.cabal" \
 		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
 	cabal_chdeps \
-		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1'
+		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1' \
+		'uhc-util >= 0.1.6.3 && < 0.1.6.6' 'uhc-util >= 0.1.6.3'
 }
 
 src_configure() {
