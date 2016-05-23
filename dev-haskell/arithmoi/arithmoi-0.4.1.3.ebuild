@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -27,6 +27,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'ghc-prim < 0.5' 'ghc-prim'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
