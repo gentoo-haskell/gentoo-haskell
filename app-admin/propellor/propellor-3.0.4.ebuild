@@ -13,7 +13,7 @@ DESCRIPTION="property-based host configuration management in haskell"
 HOMEPAGE="https://propellor.branchable.com/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
