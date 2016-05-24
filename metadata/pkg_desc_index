@@ -539,15 +539,15 @@ dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.3.0.0 0.4.0.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.6: Bindings for GNU libgsasl
 dev-haskell/gstreamer 0.12.5.0-r2 0.12.8: Binding to the GStreamer open source multimedia framework
-dev-haskell/gtk 0.13.9 0.14.2: Binding to the Gtk+ graphical user interface library
+dev-haskell/gtk 0.13.9 0.14.2 0.14.3: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.6: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0: Tools to build the Gtk2Hs suite of User Interface libraries
-dev-haskell/gtk3 0.13.7 0.13.9 0.14.2: Binding to the Gtk+ 3 graphical user interface library
+dev-haskell/gtk3 0.13.7 0.13.9 0.14.2 0.14.3: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.12.5.0-r3: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
-dev-haskell/gtksourceview2 0.13.2.1-r1: Binding to the GtkSourceView library
-dev-haskell/gtksourceview3 0.13.2.1: Binding to the GtkSourceView library
+dev-haskell/gtksourceview2 0.13.2.1-r1 0.13.3.0: Binding to the GtkSourceView library
+dev-haskell/gtksourceview3 0.13.2.1 0.13.3.0: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22: access Hackage's package database via Data.Map
 dev-haskell/hackage-security 0.5.1.0: Hackage security library
@@ -1302,7 +1302,7 @@ dev-haskell/stylish-haskell 0.5.16.0: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
-dev-haskell/svgcairo 0.12.5.2 0.13.0.4: Binding to the libsvg-cairo library
+dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.5.0.0: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6: Scrap Your Boilerplate With Class
@@ -1469,7 +1469,7 @@ dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Templ
 dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
-dev-haskell/vte 0.12.5.0 0.13.0.3-r1: Binding to the VTE library
+dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.0: Binding to the VTE library
 dev-haskell/vty 5.2.11 5.4.0: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
@@ -1490,9 +1490,9 @@ dev-haskell/web-plugins 0.2.8: dynamic plugin system for web applications
 dev-haskell/web-routes 0.27.10: portable, type-safe URL routing
 dev-haskell/web-routes-happstack 0.23.10: Adds support for using web-routes with Happstack
 dev-haskell/webdriver 0.8.2: a Haskell client for the Selenium WebDriver protocol
-dev-haskell/webkit 0.13.1.3 0.14.1.1: Binding to the Webkit library
+dev-haskell/webkit 0.13.1.3 0.14.1.1 0.14.2.0: Binding to the Webkit library
 dev-haskell/webkit-javascriptcore 0.13.1.2: JavaScriptCore FFI from webkitgtk
-dev-haskell/webkitgtk3 0.13.1.3 0.14.1.1: Binding to the Webkit library
+dev-haskell/webkitgtk3 0.13.1.3 0.14.1.1 0.14.2.0: Binding to the Webkit library
 dev-haskell/webkitgtk3-javascriptcore 0.13.1.2: JavaScriptCore FFI from webkitgtk
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.6.1: A sensible and clean way to write WebSocket-capable servers in Haskell
