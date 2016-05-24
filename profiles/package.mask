@@ -7,6 +7,9 @@
 =dev-haskell/gio-0.13.2.0
 =dev-haskell/gconf-0.13.1.0
 =dev-haskell/cairo-0.13.2.0
+=dev-haskell/pango-0.13.2.0
+=dev-haskell/gtksourceview3-0.13.3.0
+=dev-haskell/gtksourceview2-0.13.3.0
 
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
