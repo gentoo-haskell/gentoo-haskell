@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0
 	dev-haskell/resourcet:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
@@ -46,7 +46,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0'
+		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0' \
+		'transformers >=0.2.2.0 && <0.5' 'transformers >=0.2.2.0'
 }
 
 src_configure() {
