@@ -11,6 +11,8 @@
 =dev-haskell/gtksourceview3-0.13.3.0
 =dev-haskell/gtksourceview2-0.13.3.0
 =dev-haskell/gstreamer-0.12.8
+=dev-haskell/gtk-0.14.3
+=dev-haskell/gtk3-0.14.3
 
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
