@@ -53,7 +53,7 @@ RDEPEND=">=app-editors/leksah-server-0.15.2.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.1.5:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vado-0.0.1:=[profile?] <dev-haskell/vado-0.1:=[profile?]
 	>=dev-haskell/vcsgui-0.1.0:=[profile?] <dev-haskell/vcsgui-0.2:=[profile?]
@@ -79,7 +79,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'cpphs >=1.19 && <1.20' 'cpphs >=1.19' \
-		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0'
+		'Cabal >=1.10.2.0 && <1.23' 'Cabal >=1.10.2.0' \
+		'transformers >=0.2.2.0 && <0.5' 'transformers >=0.2.2.0'
 }
 
 src_configure() {
