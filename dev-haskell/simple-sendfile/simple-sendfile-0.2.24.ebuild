@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-bsd"
 
-RESTRICT="test" #missing files
-
 RDEPEND="dev-haskell/network:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
