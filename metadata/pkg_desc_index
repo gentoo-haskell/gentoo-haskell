@@ -102,7 +102,7 @@ dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 5.3: Bifunctors
 dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
-dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1: Binary serialisation for Haskell values using lazy ByteStrings
+dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
@@ -481,7 +481,7 @@ dev-haskell/generics-sop 0.2.1.0: Generic Programming using True Sums of Product
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.4: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/gf 3.7.1 9999: Grammatical Framework
-dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r5 7.10.3: The Glasgow Haskell Compiler API (ghc package)
+dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0: Library and tool for parsing .eventlog files from GHC
