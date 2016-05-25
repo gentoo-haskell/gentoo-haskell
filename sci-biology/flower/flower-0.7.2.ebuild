@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		>=dev-haskell/binary-0.4 <dev-haskell/binary-0.8
+		>=dev-haskell/binary-0.4
 		>=dev-haskell/bio-0.4.9
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/cmdargs-0.5
@@ -32,7 +32,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.8.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 	cabal_chdeps \
-		'binary == 0.4.*' 'binary >= 0.4 && <0.8' \
+		'binary == 0.4.*' 'binary >= 0.4' \
 		'Executable     flower'     'Executable     flower-flower' \
 		'Executable     flowselect' 'Executable     flower-flowselect' \
 		'Executable     flowt'      'Executable     flower-flowt'
