@@ -117,7 +117,7 @@ dev-haskell/bindings-dsl 1.0.23: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 0.1.0 3.0.3.3 3.1.2.0: Low-level bindings to GLFW OpenGL library
 dev-haskell/bindings-libzip 0.10.2 0.11: Low level bindings to libzip
 dev-haskell/bindings-uname 0.1: Low-level binding to POSIX uname(3)
-dev-haskell/bio 0.5.3-r1: A bioinformatics library
+dev-haskell/bio 0.5.3-r2: A bioinformatics library
 dev-haskell/biocore 0.3.1: A bioinformatics library
 dev-haskell/biofasta 0.0.3: Library for reading fasta sequence files
 dev-haskell/biopsl 0.4: Library and executables for working with PSL files
