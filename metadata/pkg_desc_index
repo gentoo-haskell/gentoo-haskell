@@ -1578,7 +1578,7 @@ dev-haskell/zippers 0.2.2: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
 dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits. (deprecated)
-dev-haskell/zlib-enum 0.2.3.1: Enumerator interface for zlib compression
+dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
 dev-haskell/zmidi-core 0.8.1: Read and write MIDI files
 dev-haskell/ztail 1.2: Multi-file, colored, filtered log tailer
 dev-lang/ajhc 0.8.0.10-r1: Haskell compiler that produce binary through C language
