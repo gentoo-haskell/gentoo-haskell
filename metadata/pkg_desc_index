@@ -484,7 +484,7 @@ dev-haskell/gf 3.7.1 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
-dev-haskell/ghc-events 0.4.4.0: Library and tool for parsing .eventlog files from GHC
+dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
 dev-haskell/ghc-exactprint 0.5.0.1: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.4: Extract the heap representation of Haskell values and thunks
