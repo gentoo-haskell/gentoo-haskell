@@ -27,6 +27,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base == 4.8.*' 'base >= 4.8' \
+		'time == 1.5.*' 'time >= 1.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag inotify inotify)
