@@ -29,6 +29,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	cabal_chdeps \
+		'process    >= 1.1   && < 1.3' 'process    >= 1.1'
+
 	sed -e "s@executable wxdirect@executable wxdirect-${WX_GTK_VER}@" \
 		-i "${S}/${PN}.cabal" \
 		|| die "Could not change ${PN}.cabal for wxdirect slot ${WX_GTK_VER}"
