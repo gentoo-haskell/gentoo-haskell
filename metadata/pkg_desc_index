@@ -879,7 +879,7 @@ dev-haskell/machines-io 0.2.0.12: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.4: A monad for managed values
-dev-haskell/map-syntax 0.2: Syntax sugar for defining maps
+dev-haskell/map-syntax 0.2-r1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.14: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/math-functions 0.1.7.0: Special functions and Chebyshev polynomials
@@ -1025,7 +1025,7 @@ dev-haskell/parsers 0.12.3: Parsing combinators
 dev-haskell/path 0.5.7: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-pieces 0.2.1: Components of paths
-dev-haskell/pathtype 0.7.0.1: Type-safe replacement for System.FilePath etc
+dev-haskell/pathtype 0.7.0.1-r1: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
