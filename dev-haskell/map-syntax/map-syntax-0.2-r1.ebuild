@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -28,5 +28,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8.0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
-		>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.5 )
+		>=dev-haskell/transformers-0.3 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers               >= 0.3      && < 0.5' 'transformers               >= 0.3'
+}
