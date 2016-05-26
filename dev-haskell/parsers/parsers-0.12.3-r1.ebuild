@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.4:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -35,6 +35,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2      && < 0.5' 'transformers         >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
