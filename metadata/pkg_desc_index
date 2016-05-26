@@ -1143,7 +1143,7 @@ dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web 
 dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
-dev-haskell/reducers 3.12.1: Semigroups, specialized containers and a general map/reduce framework
+dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
