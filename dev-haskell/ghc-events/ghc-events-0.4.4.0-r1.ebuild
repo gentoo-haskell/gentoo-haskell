@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,10 +20,15 @@ IUSE=""
 
 RESTRICT=test # missing .eventlog
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'binary     >= 0.5 && < 0.8' 'binary     >= 0.5'
+}
