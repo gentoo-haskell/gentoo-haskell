@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+binary +hashable +template-haskell"
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
-	binary? ( >=dev-haskell/binary-0.2:=[profile?] <dev-haskell/binary-0.8:=[profile?] )
+	binary? ( >=dev-haskell/binary-0.2:=[profile?] )
 	hashable? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
