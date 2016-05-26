@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-2:=[profile?]
 	>=dev-haskell/quickcheck-2.1.0.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/random-1.0 <dev-haskell/random-1.2 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >=0.3 && <0.5' 'transformers >=0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
