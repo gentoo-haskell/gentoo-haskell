@@ -20,9 +20,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/lens-family-core-1.2:=[profile?] <dev-haskell/lens-family-core-1.3:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers         >= 0.2.0   && < 0.5' 'transformers         >= 0.2.0'
+}
