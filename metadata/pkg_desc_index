@@ -961,7 +961,7 @@ dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.3: Bindings to the nanomsg library
 dev-haskell/nanoprolog 0.3-r2: Very small interpreter for a Prolog-like language
 dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's API
-dev-haskell/nats 1.1: Natural numbers
+dev-haskell/nats 1.1-r1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/ncurses 0.2.15: Modernised bindings to GNU ncurses
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
