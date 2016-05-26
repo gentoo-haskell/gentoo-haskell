@@ -104,7 +104,7 @@ dev-haskell/bifunctors 5.3: Bifunctors
 dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
-dev-haskell/binary-communicator 1.0.2.2: Flexible way to ease transmission of binary data
+dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
 dev-haskell/binary-orphans 0.1.4.0-r2: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
@@ -137,7 +137,7 @@ dev-haskell/blaze-svg 0.3.6: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.11.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
-dev-haskell/bmp 1.2.5.2: Read and write uncompressed BMP image files
+dev-haskell/bmp 1.2.5.2-r1: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
 dev-haskell/bound 1.0.7-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
@@ -156,7 +156,7 @@ dev-haskell/bytestring-handle 0.1.0.3: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
-dev-haskell/bytestring-show 0.3.5.6: Efficient conversion of values into readable byte strings
+dev-haskell/bytestring-show 0.3.5.6-r1: Efficient conversion of values into readable byte strings
 dev-haskell/bytestring-trie 0.2.4.1: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.0.5: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
@@ -1021,7 +1021,7 @@ dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parall
 dev-haskell/parseargs 0.1.5.2 0.2.0.4: Full-featured command-line argument parsing library
 dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
-dev-haskell/parsers 0.12.3: Parsing combinators
+dev-haskell/parsers 0.12.3-r1: Parsing combinators
 dev-haskell/path 0.5.7: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-pieces 0.2.1: Components of paths
