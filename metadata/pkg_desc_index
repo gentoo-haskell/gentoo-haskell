@@ -784,7 +784,7 @@ dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient ex
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r2: Iteratee-based I/O
 dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
-dev-haskell/jail 0.0.1.1-r3: Jailed IO monad
+dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
