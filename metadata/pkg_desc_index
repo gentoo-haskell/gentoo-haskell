@@ -826,7 +826,7 @@ dev-haskell/ldap 0.6.10: Haskell binding for C LDAP API
 dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2.1 9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.0.2-r1: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.0.0.5: Law-abiding lenses for aeson
-dev-haskell/lens-family 1.2.0: Lens Families
+dev-haskell/lens-family 1.2.0-r1: Lens Families
 dev-haskell/lens-family-core 1.2.0-r1: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.8: simplified import of elementary lens-family combinators
