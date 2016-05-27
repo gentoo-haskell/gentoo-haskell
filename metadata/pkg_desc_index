@@ -152,7 +152,7 @@ dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of t
 dev-haskell/bytes 0.15.2: Sharing code for serialization between binary and cereal
 dev-haskell/bytestring-builder 0.10.8.1.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-conversion 0.3.1: Type-classes to convert values to and from ByteString
-dev-haskell/bytestring-handle 0.1.0.3: ByteString-backed Handles
+dev-haskell/bytestring-handle 0.1.0.4: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
@@ -417,7 +417,7 @@ dev-haskell/executable-path 0.0.3-r1: Finding out the full path of the executabl
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
 dev-haskell/explicit-exception 0.1.8: Exceptions which are explicit in the type signature
-dev-haskell/extensible-effects 1.11.0.3: An Alternative to Monad Transformers
+dev-haskell/extensible-effects 1.11.0.4: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.4.3 1.4.6 1.4.7: Extra functions I use
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
@@ -450,7 +450,7 @@ dev-haskell/fingertree 0.1.1.0: Generic finger-tree structure, with example inst
 dev-haskell/finite-field 0.8.0: Finite Fields
 dev-haskell/fixed 0.2.1.1: Signed 15.16 precision fixed point arithmetic
 dev-haskell/fixed-vector 0.7.0.3 0.8.1.0: Generic vectors with statically known size
-dev-haskell/fixed-vector-hetero 0.3.1.0: Generic heterogeneous vectors
+dev-haskell/fixed-vector-hetero 0.3.1.1: Generic heterogeneous vectors
 dev-haskell/fixplate 0.1.6: Uniplate-style generic traversals for optionally annotated fixed-point types
 dev-haskell/flexible-defaults 0.0.1.1: Generate default function implementations for complex type classes
 dev-haskell/flock 0.3.1.8: Wrapper for flock(2)
@@ -919,7 +919,7 @@ dev-haskell/monad-logger-syslog 0.1.1.1: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.7: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
-dev-haskell/monad-parallel 0.7.2.1: Parallel execution of monadic computations
+dev-haskell/monad-parallel 0.7.2.2: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2.1.1: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.1: Monad products
 dev-haskell/monad-unify 0.2.2: Generic first-order unification
@@ -1066,7 +1066,7 @@ dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 4.2.0.2 5: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
 dev-haskell/pointfree 1.1.1.1: Tool for refactoring expressions into pointfree form
-dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7: Pointful refactoring tool
+dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7 1.0.8: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.12: A variety of alternative parser combinator libraries
@@ -1084,7 +1084,7 @@ dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
 dev-haskell/pretty-hex 1.0: A library for hex dumps of ByteStrings
 dev-haskell/pretty-ncols 0.1-r1: A implementation of multi-column layout w/ Text.PrettyPrint
-dev-haskell/pretty-show 1.6.9: Tools for working with derived 'Show' instances and generic inspection of values
+dev-haskell/pretty-show 1.6.10: Tools for working with derived 'Show' instances and generic inspection of values
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
@@ -1522,7 +1522,7 @@ dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
-dev-haskell/xdot 0.2.4.9 0.3-r1: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xdot 0.3.0.1: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
