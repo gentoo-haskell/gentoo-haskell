@@ -31,3 +31,5 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-haddock.patch)
