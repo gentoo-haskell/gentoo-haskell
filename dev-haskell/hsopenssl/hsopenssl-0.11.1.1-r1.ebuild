@@ -49,6 +49,7 @@ src_configure() {
 	# not ported to integer-gmp-1.0:
 	#  https://github.com/phonohawk/HsOpenSSL/issues/36
 	[[ $(ghc-version) == 7.10.* ]] && fbn_flag=-f-fast-bignum
+	[[ $(ghc-version) == 8.0.* ]] && fbn_flag=-f-fast-bignum
 
 	haskell-cabal_src_configure \
 		${fbn_flag}
