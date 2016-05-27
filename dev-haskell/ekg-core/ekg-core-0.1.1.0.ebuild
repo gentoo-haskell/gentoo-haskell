@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,3 +25,9 @@ RDEPEND="<dev-haskell/text-1.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.5 && < 4.9' 'base >= 4.5' \
+		'ghc-prim < 0.5' 'ghc-prim'
+}

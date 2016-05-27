@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+fulltextsearch systemlib +urifilenames"
 
+RESTRICT=test # relies on exact backtrace text
+
 RDEPEND=">=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	systemlib? ( >=dev-db/sqlite-3.0 )
