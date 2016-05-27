@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,3 +25,11 @@ RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9:2
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base                 == 4.8.*' 'base                 >= 4.8' \
+		'ghc-prim             == 0.4.*' 'ghc-prim             >= 0.4' \
+		'template-haskell     == 2.10.*' 'template-haskell     >= 2.10' \
+		'-fcpr-off' ' '
+}
