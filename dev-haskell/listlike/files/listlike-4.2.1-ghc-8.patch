@@ -1,0 +1,8 @@
+diff --git a/testsrc/runtests.hs b/testsrc/runtests.hs
+index 885e215..e35587d 100644
+--- a/testsrc/runtests.hs
++++ b/testsrc/runtests.hs
+@@ -7,2 +7,3 @@
+             ,UndecidableInstances
++            ,AllowAmbiguousTypes
+             ,FlexibleContexts #-}
