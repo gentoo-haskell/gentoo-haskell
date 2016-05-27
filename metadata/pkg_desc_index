@@ -130,7 +130,7 @@ dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
 dev-haskell/blank-canvas 0.6-r1: HTML5 Canvas Graphics Library
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
-dev-haskell/blaze-builder-enumerator 0.2.1.0: Enumeratees for the incremental conversion of builders to bytestrings
+dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
 dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library for Haskell
 dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6: SVG combinator library
