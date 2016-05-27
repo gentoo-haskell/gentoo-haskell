@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	dev-haskell/cryptohash:=[profile?]
 	dev-haskell/data-binary-ieee754:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
@@ -32,3 +32,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.5 && < 0.8' 'binary >= 0.5'
+}
