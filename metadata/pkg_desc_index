@@ -396,7 +396,7 @@ dev-haskell/ekg-core 0.1.1.0: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.1: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.2.0: Validating an email address string against RFC 5322
 dev-haskell/enclosed-exceptions 1.0.1.1: Catching all exceptions from within an enclosed computation
-dev-haskell/encoding 0.7.0.2-r1 0.8: A library for various character encodings
+dev-haskell/encoding 0.7.0.2-r1 0.8-r1: A library for various character encodings
 dev-haskell/engine-io 1.2.13: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.7: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
