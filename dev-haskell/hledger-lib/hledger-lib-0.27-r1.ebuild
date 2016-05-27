@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails to parse date '0000/00/00', might be benign
+
 RDEPEND=">=dev-haskell/base-compat-0.8.1:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
@@ -34,7 +36,7 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	dev-haskell/uglymemo:=[profile?]
 	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -44,6 +46,11 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
