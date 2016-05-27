@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
 	cabal_chdeps \
 		'HUnit >= 1.2 && < 1.3' 'HUnit >= 1.2'
 }
