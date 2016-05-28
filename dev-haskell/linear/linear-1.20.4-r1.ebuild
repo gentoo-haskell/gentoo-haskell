@@ -21,7 +21,7 @@ IUSE="+template-haskell"
 
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/base-orphans-0.5:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
-	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/bytes-0.15:=[profile?] <dev-haskell/bytes-1:=[profile?]
 	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/semigroupoids-3:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/tagged-0.4.4:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
@@ -48,8 +48,12 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
 	cabal_chdeps \
-		'doctest   >= 0.8 && < 0.11' 'doctest   >= 0.8'
+		'doctest   >= 0.8 && < 0.11' 'doctest   >= 0.8' \
+		'binary               >= 0.5   && < 0.8' 'binary               >= 0.5' \
+		'transformers         >= 0.2   && < 0.5' 'transformers         >= 0.2'
 }
 
 src_configure() {

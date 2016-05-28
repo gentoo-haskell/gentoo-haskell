@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
 	>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
 	>=dev-haskell/old-time-1.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/repa-3.4:=[profile?] <dev-haskell/repa-3.5:=[profile?]
@@ -28,3 +28,9 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base                 == 4.8.*' 'base                 >= 4.8' \
+		'binary               == 0.7.*' 'binary               >= 0.7'
+}
