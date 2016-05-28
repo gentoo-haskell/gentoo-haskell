@@ -35,7 +35,7 @@ dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate 
 dev-haskell/acid-state 0.14.0: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.9: Abstractions for animation
-dev-haskell/ad 4.3.2-r1: Automatic Differentiation
+dev-haskell/ad 4.3.2-r2: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1: Fast JSON parsing and encoding
@@ -47,7 +47,7 @@ dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line to
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
 dev-haskell/alex 3.1.7: Alex is a tool for generating lexical analysers in Haskell
-dev-haskell/algebra 4.2-r1: Constructive abstract algebra
+dev-haskell/algebra 4.2-r2: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Combinators for monadic actions that require allocation and de-allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
@@ -105,7 +105,7 @@ dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
-dev-haskell/binary-conduit 1.2.3: data serialization/deserialization conduit library
+dev-haskell/binary-conduit 1.2.3-r1: data serialization/deserialization conduit library
 dev-haskell/binary-orphans 0.1.4.0-r3: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
