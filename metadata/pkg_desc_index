@@ -796,7 +796,7 @@ dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.7: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
-dev-haskell/kansas-comet 0.4-r1: A JavaScript push mechanism based on the comet idiom
+dev-haskell/kansas-comet 0.4-r2: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keter 1.4.3.1-r1: Web application deployment manager, focusing on Haskell web frameworks
 dev-haskell/keys 3.11: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
@@ -1586,7 +1586,7 @@ dev-lang/ajhc 0.8.0.10-r1: Haskell compiler that produce binary through C langua
 dev-lang/brainfuck 0.1.0.2: Brainfuck interpreter
 dev-lang/cryptol 2.3.0-r1: Cryptol: The Language of Cryptography
 dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
-dev-lang/elm-compiler 0.15: Values to help with elm-package, elm-make, and elm-lang.org
+dev-lang/elm-compiler 0.15-r1: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
 dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1_rc4 8.0.1 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
@@ -1594,7 +1594,7 @@ dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2005.3-r2 2006.9: The Hugs98 Haskell interpreter
-dev-lang/idris 0.11.1 0.11.2 9999: Functional Programming Language with Dependent Types
+dev-lang/idris 0.11.1 0.11.2-r1 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
