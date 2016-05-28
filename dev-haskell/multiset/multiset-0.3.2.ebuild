@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs a tweak for new stype Typeable
+
 RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
