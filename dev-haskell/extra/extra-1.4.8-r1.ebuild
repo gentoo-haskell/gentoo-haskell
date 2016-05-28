@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ndmitchell/extra#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
