@@ -1,0 +1,20 @@
+diff --git a/src/Language/Haskell/TH/FlexibleDefaults.hs b/src/Language/Haskell/TH/FlexibleDefaults.hs
+index f126148..5685c7d 100644
+--- a/src/Language/Haskell/TH/FlexibleDefaults.hs
++++ b/src/Language/Haskell/TH/FlexibleDefaults.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -- |A code-generation system for complex typeclass default-implementation
+@@ -72,2 +73,7 @@ withDefaults defs decQ = do
+     case dec of
++#if MIN_VERSION_template_haskell(2,11,0)
++        [InstanceD mo clsCxt cls decs] -> do
++            impl <- implementDefaults defs decs
++            return [InstanceD mo clsCxt cls impl]
++#else
+         [InstanceD clsCxt cls decs] -> do
+@@ -75,3 +81,3 @@ withDefaults defs decQ = do
+             return [InstanceD clsCxt cls impl]
+-        
++#endif
+         _ -> fail "withDefaults: second parameter should be a single instance declaration"

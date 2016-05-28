@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,7 +23,7 @@ RESTRICT=test # slow
 RDEPEND=">=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
 	>=dev-haskell/quickcheck-1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/unsafe-0.0:=[profile?] <dev-haskell/unsafe-0.1:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -35,5 +35,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'syb >=0.1 && <0.5' 'syb >=0.1'
+		'syb >=0.1 && <0.5' 'syb >=0.1' \
+		'transformers >=0.2 && <0.5' 'transformers >=0.2'
 }

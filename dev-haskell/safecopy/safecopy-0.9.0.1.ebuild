@@ -36,4 +36,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-QC-2.8.2.patch
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
+	cabal_chdeps \
+		'template-haskell < 2.11' 'template-haskell' \
+		'time < 1.6' 'time'
 }
