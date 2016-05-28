@@ -26,3 +26,12 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base              >=4.2 && <4.9' 'base              >=4.2' \
+		'base              >=4.5  && <4.9' 'base              >=4.5' \
+		'transformers      >=0.3 && <0.5' 'transformers      >=0.3'
+}
