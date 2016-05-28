@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,7 +22,7 @@ RESTRICT=test # almost compiles
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/aeson-pretty-0.7:=[profile?] <dev-haskell/aeson-pretty-0.8:=[profile?]
-	>=dev-haskell/binary-0.7.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7.0.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	>=dev-haskell/cmdargs-0.7:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/parsec-3.1.1:=[profile?] <dev-haskell/parsec-3.5:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/union-find-0.2:=[profile?] <dev-haskell/union-find-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -55,5 +55,7 @@ src_prepare() {
 		'aeson >= 0.7 && < 0.9' 'aeson >= 0.7' \
 		'blaze-html >= 0.5 && < 0.8' 'blaze-html >= 0.5' \
 		'blaze-markup >= 0.5.1 && < 0.7' 'blaze-markup >= 0.5.1' \
-		'language-glsl >= 0.0.2 && < 0.2' 'language-glsl >= 0.0.2'
+		'language-glsl >= 0.0.2 && < 0.2' 'language-glsl >= 0.0.2' \
+		'binary >= 0.7.0.0 && < 0.8' 'binary >= 0.7.0.0' \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
 }
