@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/async-2.2:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7:=[profile?]
 	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	<dev-haskell/cheapskate-0.2:=[profile?]
@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
 	<dev-haskell/terminal-size-0.4:=[profile?]
 	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	<dev-haskell/transformers-0.5:=[profile?]
+	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/trifecta-1.1:=[profile?] <dev-haskell/trifecta-1.6:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
@@ -73,7 +73,11 @@ src_prepare() {
 	replace-hcflags -g ''
 
 	cabal_chdeps \
-		'zlib < 0.6.1' 'zlib'
+		'zlib < 0.6.1' 'zlib' \
+		'binary >= 0.7 && < 0.8' 'binary >= 0.7' \
+		'process < 1.3' 'process' \
+		'time >= 1.4 && < 1.6' 'time >= 1.4' \
+		'transformers < 0.5' 'transformers'
 }
 
 src_configure() {
