@@ -24,3 +24,9 @@ RDEPEND=">=dev-haskell/kinds-0.0.1:=[profile?] <dev-haskell/kinds-0.1:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+}
