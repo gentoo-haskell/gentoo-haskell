@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,7 +21,7 @@ IUSE="+download-extras"
 RDEPEND=">=dev-haskell/http-4000.2:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	download-extras? ( >=dev-haskell/feed-0.3:=[profile?] <dev-haskell/feed-0.4:=[profile?]
 				>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
@@ -33,7 +33,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'HTTP         >=4000.2 && <4000.3' 'HTTP         >=4000.2'
+		'HTTP         >=4000.2 && <4000.3' 'HTTP         >=4000.2' \
+		'transformers >=0.3    && <0.5' 'transformers >=0.3'
 }
 
 src_configure() {
