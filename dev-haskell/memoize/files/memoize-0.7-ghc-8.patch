@@ -1,0 +1,17 @@
+diff --git a/Data/Function/Memoize/TH.hs b/Data/Function/Memoize/TH.hs
+index f53c9e0..b04e503 100644
+--- a/Data/Function/Memoize/TH.hs
++++ b/Data/Function/Memoize/TH.hs
+@@ -120,2 +120,8 @@ checkName name0 = do
+   case info of
++#if MIN_VERSION_template_haskell(2,11,0)
++    TyConI (DataD _ name tvbs _ cons _)
++               → return (name, tvbs, stdizeCon <$> cons)
++    TyConI (NewtypeD _ name tvbs _ con _)
++               → return (name, tvbs, [stdizeCon con])
++#else
+     TyConI (DataD _ name tvbs cons _)
+@@ -124,2 +130,3 @@ checkName name0 = do
+                → return (name, tvbs, [stdizeCon con])
++#endif
+     _          → fail $
