@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails to load SBV for tests
+
 RDEPEND="dev-haskell/transformers:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
