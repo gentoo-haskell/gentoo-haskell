@@ -458,7 +458,7 @@ dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagr
 dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
 dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9: FoldMap lists
-dev-haskell/foldl 1.2.0-r1: Composable, streaming, and efficient left folds
+dev-haskell/foldl 1.2.1: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.1: A true type file format loader
 dev-haskell/force-layout 0.4.0.4: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
@@ -1173,7 +1173,7 @@ dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 0.4.10.2 1.1.7.4: Deterministic allocation and freeing of scarce resources
-dev-haskell/retry 0.7.2: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.7.3: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
@@ -1396,7 +1396,7 @@ dev-haskell/transformers-base 0.4.4: Lift computations from the bottom of a tran
 dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim for dev-haskell/transformers
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1: Ad-hoc type classes for lifting
-dev-haskell/traverse-with-class 0.2.0.3: Generic applicative traversals
+dev-haskell/traverse-with-class 0.2.0.3 0.2.0.4: Generic applicative traversals
 dev-haskell/trifecta 1.5.2-r1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
@@ -1457,7 +1457,7 @@ dev-haskell/vado 0.0.7: Runs commands on remote machines using ssh
 dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
 dev-haskell/vcsgui 0.1.3.0: GUI library for source code management systems
-dev-haskell/vcswrapper 0.1.2: Wrapper for source code management systems
+dev-haskell/vcswrapper 0.1.3: Wrapper for source code management systems
 dev-haskell/vector 0.10.12.3 0.11.0.0: Efficient Arrays
 dev-haskell/vector-algorithms 0.7.0.1: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.3.2: Instances of Data.Binary and Data.Serialize for vector
