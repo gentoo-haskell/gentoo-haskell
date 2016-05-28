@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'-pgmPhpp' '-pgmPcpphs'
+}
