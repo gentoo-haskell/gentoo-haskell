@@ -786,7 +786,7 @@ dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
-dev-haskell/jmacro 0.6.13: QuasiQuotation library for programmatic generation of Javascript code
+dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
 dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3: High level interface for webkit-javascriptcore
@@ -938,7 +938,7 @@ dev-haskell/monads-tf 0.1.0.2-r1: Monad classes, using type families
 dev-haskell/mongodb 2.0.10: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.0.4: Various extra monoid-related definitions and utilities
-dev-haskell/monoid-subclasses 0.4.2: Subclasses of Monoid
+dev-haskell/monoid-subclasses 0.4.2 0.4.2.1: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
 dev-haskell/mountpoints 1.0.2: list mount points
@@ -1058,7 +1058,7 @@ dev-haskell/pipes-concurrency 2.0.5: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.4: Group streams into substreams
 dev-haskell/pipes-http 1.0.2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
-dev-haskell/pipes-parse 3.0.6: Parsing infrastructure for the pipes ecosystem
+dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.3-r1: Safety for the pipes ecosystem
 dev-haskell/plailude 0.6.0: plaimi's prelude
 dev-haskell/plugins 1.5.5.0: Dynamic linking for Haskell and C objects
