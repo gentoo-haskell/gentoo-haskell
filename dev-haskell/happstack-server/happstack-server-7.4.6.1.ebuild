@@ -51,6 +51,10 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit )
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri) \
