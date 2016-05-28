@@ -37,5 +37,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
 	test? ( dev-haskell/base16-bytestring
 		dev-haskell/cryptohash
-		dev-haskell/hunit )
+		dev-haskell/hunit
+		dev-haskell/tasty
+		dev-haskell/tasty-golden
+		dev-haskell/tasty-hunit )
 "
