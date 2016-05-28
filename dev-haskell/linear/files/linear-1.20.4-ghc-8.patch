@@ -1,0 +1,90 @@
+diff --git a/src/Linear/Plucker.hs b/src/Linear/Plucker.hs
+index 443545f..63fbf10 100644
+--- a/src/Linear/Plucker.hs
++++ b/src/Linear/Plucker.hs
+@@ -592,2 +592,3 @@ instance Serialize a => Serialize (Plucker a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 Plucker where eq1 = (==)
+@@ -596 +597,2 @@ instance Show1 Plucker where showsPrec1 = showsPrec
+ instance Read1 Plucker where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/Quaternion.hs b/src/Linear/Quaternion.hs
+index f755b2e..2a338ac 100644
+--- a/src/Linear/Quaternion.hs
++++ b/src/Linear/Quaternion.hs
+@@ -626,2 +626,3 @@ instance Serialize a => Serialize (Quaternion a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 Quaternion where eq1 = (==)
+@@ -630 +631,2 @@ instance Show1 Quaternion where showsPrec1 = showsPrec
+ instance Read1 Quaternion where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/V.hs b/src/Linear/V.hs
+index 698e25e..33b7d82 100644
+--- a/src/Linear/V.hs
++++ b/src/Linear/V.hs
+@@ -464,2 +464,3 @@ instance (Dim n, Serialize a) => Serialize (V n a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Dim n => Eq1 (V n) where eq1 = (==)
+@@ -468,3 +469,3 @@ instance Dim n => Show1 (V n) where showsPrec1 = showsPrec
+ instance Dim n => Read1 (V n) where readsPrec1 = readsPrec
+-
++#endif
+ 
+diff --git a/src/Linear/V0.hs b/src/Linear/V0.hs
+index 13fd0a0..eb39a47 100644
+--- a/src/Linear/V0.hs
++++ b/src/Linear/V0.hs
+@@ -317,2 +317,3 @@ instance NFData (V0 a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 V0   where eq1 = (==)
+@@ -321 +322,2 @@ instance Show1 V0 where showsPrec1 = showsPrec
+ instance Read1 V0 where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/V1.hs b/src/Linear/V1.hs
+index 22c2138..1f18384 100644
+--- a/src/Linear/V1.hs
++++ b/src/Linear/V1.hs
+@@ -350,2 +350,3 @@ instance Serialize a => Serialize (V1 a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 V1 where eq1 = (==)
+@@ -354 +355,2 @@ instance Show1 V1 where showsPrec1 = showsPrec
+ instance Read1 V1 where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/V2.hs b/src/Linear/V2.hs
+index 86d0f29..3530aa2 100644
+--- a/src/Linear/V2.hs
++++ b/src/Linear/V2.hs
+@@ -412,2 +412,3 @@ instance Serialize a => Serialize (V2 a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 V2 where eq1 = (==)
+@@ -416 +417,2 @@ instance Show1 V2 where showsPrec1 = showsPrec
+ instance Read1 V2 where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/V3.hs b/src/Linear/V3.hs
+index 074c2cb..4e028e7 100644
+--- a/src/Linear/V3.hs
++++ b/src/Linear/V3.hs
+@@ -436,2 +436,3 @@ instance Serialize a => Serialize (V3 a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 V3 where eq1 = (==)
+@@ -440 +441,2 @@ instance Show1 V3 where showsPrec1 = showsPrec
+ instance Read1 V3 where readsPrec1 = readsPrec
++#endif
+diff --git a/src/Linear/V4.hs b/src/Linear/V4.hs
+index d8e31fc..5e48653 100644
+--- a/src/Linear/V4.hs
++++ b/src/Linear/V4.hs
+@@ -570,2 +570,3 @@ instance Serialize a => Serialize (V4 a) where
+ 
++#if ! MIN_VERSION_base(4,9,0)
+ instance Eq1 V4 where eq1 = (==)
+@@ -574 +575,2 @@ instance Show1 V4 where showsPrec1 = showsPrec
+ instance Read1 V4 where readsPrec1 = readsPrec
++#endif
