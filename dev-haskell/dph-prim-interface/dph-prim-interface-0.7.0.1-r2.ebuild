@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -31,5 +31,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base     == 4.6.*' 'base     >= 4.6' \
 		'random   == 1.0.*' 'random   >= 1.0' \
-		'vector   == 0.10.*' 'vector   >= 0.10'
+		'vector   == 0.10.*' 'vector   >= 0.10' \
+		'-fcpr-off' ' '
 }
