@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	>=dev-haskell/parsec-2.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/stm-split-0.0:=[profile?] <dev-haskell/stm-split-0.1:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/utility-ht-0.0.8:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-6.12.1:=
 	gui? ( >=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
@@ -59,7 +59,7 @@ src_prepare() {
 		'stm >=2.2 && <2.4' 'stm >=2.2 && <2.5' \
 		'process >=1.0 && <1.2' 'process >=1.0' \
 		'unix >=2.4 && <2.7' 'unix >=2.4' \
-		'transformers >=0.2.2 && <0.4' 'transformers >=0.2.2 && <0.5' \
+		'transformers >=0.2.2 && <0.4' 'transformers >=0.2.2' \
 		'cgi >=3001.1 && <3001.2' 'cgi >=3001.1' \
 		'filepath >=1.1 && <1.4' 'filepath >=1.1'
 }
