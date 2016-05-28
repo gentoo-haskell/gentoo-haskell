@@ -391,7 +391,7 @@ dev-haskell/editline 0.2.1.1: Bindings to the editline library (libedit)
 dev-haskell/either 4.4.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
-dev-haskell/ekg 0.4.0.9: Remote monitoring of processes
+dev-haskell/ekg 0.4.0.10: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.1: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.2: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.2.0: Validating an email address string against RFC 5322
@@ -1402,7 +1402,7 @@ dev-haskell/trifecta 1.5.2-r2: A modern parser combinator library with convenien
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.2.7: Shell programming, Haskell-style
+dev-haskell/turtle 1.2.7-r1: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
