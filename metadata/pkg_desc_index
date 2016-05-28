@@ -1054,12 +1054,12 @@ dev-haskell/pipes 4.1.9: Compositional pipelines
 dev-haskell/pipes-binary 0.4.1-r1: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.2: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
-dev-haskell/pipes-concurrency 2.0.5: Concurrency for the pipes ecosystem
+dev-haskell/pipes-concurrency 2.0.6: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.4: Group streams into substreams
 dev-haskell/pipes-http 1.0.2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.4: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
-dev-haskell/pipes-safe 2.2.3-r1: Safety for the pipes ecosystem
+dev-haskell/pipes-safe 2.2.4: Safety for the pipes ecosystem
 dev-haskell/plailude 0.6.0: plaimi's prelude
 dev-haskell/plugins 1.5.5.0: Dynamic linking for Haskell and C objects
 dev-haskell/plugins-auto 0.0.4: Automatic recompilation and reloading of haskell modules
