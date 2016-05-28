@@ -531,7 +531,7 @@ dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connec
 dev-haskell/graphviz 2999.18.1.0: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
-dev-haskell/groundhog 0.7.0.3: Type-safe datatype-database mapping library
+dev-haskell/groundhog 0.7.0.3-r1: Type-safe datatype-database mapping library
 dev-haskell/groundhog-postgresql 0.7.0.2-r1: PostgreSQL backend for the groundhog library
 dev-haskell/groundhog-sqlite 0.7.0.1: Sqlite3 backend for the groundhog library
 dev-haskell/groundhog-th 0.7.0.1: Type-safe datatype-database mapping library
@@ -845,7 +845,7 @@ dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 0.10.2 0.11.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.7.0.2-r1 0.8.0.1-r1: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.6-r2: lifted IO operations from the base library
-dev-haskell/linear 1.19.1.3 1.20.3 1.20.4: Linear Algebra
+dev-haskell/linear 1.19.1.3 1.20.3 1.20.4-r1: Linear Algebra
 dev-haskell/lio 0.11.5.0: Labeled IO Information Flow Control Library
 dev-haskell/liquid-fixpoint 0.5.0.1: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
 dev-haskell/liquidhaskell 0.6.0.0: Liquid Types for Haskell
@@ -1168,7 +1168,7 @@ dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2: High performance, regular, shape polymorphic parallel arrays
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6: Support for image reading and writing of Repa arrays using in-place FFI calls
-dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2: Read and write Repa arrays in various formats
+dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1: Read and write Repa arrays in various formats
 dev-haskell/replib 0.5.3.5: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
