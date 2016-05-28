@@ -34,5 +34,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'bifunctors    >=4.2.1    && <5.2' 'bifunctors    >=4.2.1'
+		'bifunctors    >=4.2.1    && <5.2' 'bifunctors    >=4.2.1' \
+		'base             >=4.6      && <4.9' 'base             >=4.6' \
+		'template-haskell >=2.8.0.0  && <2.11' 'template-haskell >=2.8.0.0'
 }

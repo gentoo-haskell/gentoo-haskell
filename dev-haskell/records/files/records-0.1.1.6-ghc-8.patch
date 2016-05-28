@@ -1,0 +1,24 @@
+diff --git a/src/Data/Record.hs b/src/Data/Record.hs
+index e4a37a5..5ba5b79 100644
+--- a/src/Data/Record.hs
++++ b/src/Data/Record.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE PackageImports #-}
+ -- |Record core support.
+@@ -21,3 +22,3 @@ module Data.Record (
+ 
+-    import Data.Kind    as Kind
++    import "kinds" Data.Kind    as Kind
+     import Data.TypeFun as TypeFun
+diff --git a/src/Data/Record/Combinators.hs b/src/Data/Record/Combinators.hs
+index 5102b0b..c610388 100644
+--- a/src/Data/Record/Combinators.hs
++++ b/src/Data/Record/Combinators.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE PackageImports #-}
+ -- |Record combinators built on top of the record core that "Data.Record" provides.
+@@ -39,3 +40,3 @@ module Data.Record.Combinators (
+     -- Data
+-    import Data.Kind    as Kind
++    import "kinds" Data.Kind    as Kind
+     import Data.TypeFun as TypeFun
