@@ -1,0 +1,14 @@
+diff --git a/Extra/Files.hs b/Extra/Files.hs
+index 82286cd..08034fc 100644
+--- a/Extra/Files.hs
++++ b/Extra/Files.hs
+@@ -45,3 +45,3 @@ getSubDirectories path =
+     where
+-      isRealDirectory name = getSymbolicLinkStatus (path ++ "/" ++ name) >>= return . not . isSymbolicLink
++      isRealDirectory name = getSymbolicLinkStatus (path ++ "/" ++ name) >>= return . not . System.Posix.Files.isSymbolicLink
+ 
+@@ -226,3 +226,3 @@ prepareSymbolicLink name path =
+       checkType False = return False
+-      checkType True = getSymbolicLinkStatus path >>= return . isSymbolicLink >>= orReplace
++      checkType True = getSymbolicLinkStatus path >>= return . System.Posix.Files.isSymbolicLink >>= orReplace
+       checkContent False = return ()
