@@ -1,0 +1,14 @@
+diff --git a/src/Language/HJavaScript/Syntax.hs b/src/Language/HJavaScript/Syntax.hs
+index bc4bcdf..cff035b 100644
+--- a/src/Language/HJavaScript/Syntax.hs
++++ b/src/Language/HJavaScript/Syntax.hs
+@@ -217,3 +217,3 @@ class Show a => IsFeature a where
+ -- A class can be a feature
+-instance IsClass c => IsFeature c where
++instance (Show c, IsClass c) => IsFeature c where
+   showsFeature = shows
+@@ -506,3 +506,3 @@ class Show r => IsDeref r
+ -- There are two kinds of dereferencing; either from classes or objects.
+-instance IsClass c  => IsDeref c
++instance (Show c, IsClass c)  => IsDeref c
+ instance IsClass c  => IsDeref (Exp c)

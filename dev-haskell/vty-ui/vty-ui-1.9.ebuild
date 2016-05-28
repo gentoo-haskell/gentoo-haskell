@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -35,6 +35,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.9-test.patch
+	epatch "${FILESDIR}"/${PN}-1.9-ghc-8.patch
 
 	cabal_chdeps \
 		'QuickCheck >= 2.4 && < 2.8' 'QuickCheck >= 2.4'

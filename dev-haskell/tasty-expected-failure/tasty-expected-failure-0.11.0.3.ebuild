@@ -25,3 +25,8 @@ RDEPEND=">=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.5 && <4.9' 'base >= 4.5'
+}
