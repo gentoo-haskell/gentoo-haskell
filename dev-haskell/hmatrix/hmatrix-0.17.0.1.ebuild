@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -36,4 +36,5 @@ src_prepare() {
 	[[ $(ghc-version) == 7.10.2 ]] && replace-hcflags -g ''
 
 	epatch "${FILESDIR}"/${P}-gentoo-blas.patch
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
 }

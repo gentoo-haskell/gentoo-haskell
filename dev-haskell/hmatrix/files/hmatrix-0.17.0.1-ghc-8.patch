@@ -1,0 +1,17 @@
+diff --git a/src/Internal/Matrix.hs b/src/Internal/Matrix.hs
+index 3082e8d..120c44b 100644
+--- a/src/Internal/Matrix.hs
++++ b/src/Internal/Matrix.hs
+@@ -7,2 +7,3 @@
+ {-# LANGUAGE ViewPatterns             #-}
++{-# LANGUAGE ConstrainedClassMethods  #-}
+ 
+diff --git a/src/Internal/Modular.hs b/src/Internal/Modular.hs
+index 239c742..71a0404 100644
+--- a/src/Internal/Modular.hs
++++ b/src/Internal/Modular.hs
+@@ -74,3 +74,3 @@ instance (Ord t, KnownNat m) => Ord (Mod m t)
+ 
+-instance (Real t, KnownNat m, Integral (Mod m t)) => Real (Mod m t)
++instance (Integral t, Real t, KnownNat m, Integral (Mod m t)) => Real (Mod m t)
+   where
