@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -50,6 +50,9 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	# runs dist/build/idris directly and breaks sandboxing
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+	epatch "${FILESDIR}"/${P}-ghc-8-2.patch
 }
 
 src_configure() {
