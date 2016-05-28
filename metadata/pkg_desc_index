@@ -185,7 +185,7 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1 1.5.4 1.6: A library for generating 2D Charts and Plots
+dev-haskell/chart 1.4-r1 1.5.4 1.6-r1: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1 1.6: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
@@ -453,7 +453,7 @@ dev-haskell/fixed-vector 0.7.0.3 0.8.1.0: Generic vectors with statically known 
 dev-haskell/fixed-vector-hetero 0.3.1.1: Generic heterogeneous vectors
 dev-haskell/fixplate 0.1.6: Uniplate-style generic traversals for optionally annotated fixed-point types
 dev-haskell/flexible-defaults 0.0.1.1: Generate default function implementations for complex type classes
-dev-haskell/flock 0.3.1.8: Wrapper for flock(2)
+dev-haskell/flock 0.3.1.8-r1: Wrapper for flock(2)
 dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagrams from plain text source
 dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
 dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
@@ -1398,7 +1398,7 @@ dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim f
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3 0.2.0.4: Generic applicative traversals
-dev-haskell/trifecta 1.5.2-r1: A modern parser combinator library with convenient diagnostics
+dev-haskell/trifecta 1.5.2-r2: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
