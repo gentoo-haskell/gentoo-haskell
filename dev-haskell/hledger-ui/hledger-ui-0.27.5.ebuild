@@ -19,13 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+threaded"
 
 RDEPEND=">=dev-haskell/base-compat-0.8.1:=
-	>=dev-haskell/brick-0.2:=
+	>=dev-haskell/brick-0.2:= <dev-haskell/brick-0.7:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
-	>=dev-haskell/hledger-0.27:= <dev-haskell/hledger-0.28:=
-	>=dev-haskell/hledger-lib-0.27:= <dev-haskell/hledger-lib-0.28:=
+	>=dev-haskell/hledger-0.27.1:= <dev-haskell/hledger-0.28:=
+	>=dev-haskell/hledger-lib-0.27.1:= <dev-haskell/hledger-lib-0.28:=
 	dev-haskell/hunit:=
-	>=dev-haskell/lens-4.12.3:= <dev-haskell/lens-4.14:=
+	>=dev-haskell/lens-4.12.3:= <dev-haskell/lens-4.15:=
 	dev-haskell/old-locale:=
 	>=dev-haskell/pretty-show-1.6.4:=
 	>=dev-haskell/safe-0.2:=
@@ -38,13 +38,6 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'brick >= 0.2 && < 0.5' 'brick >= 0.2'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
