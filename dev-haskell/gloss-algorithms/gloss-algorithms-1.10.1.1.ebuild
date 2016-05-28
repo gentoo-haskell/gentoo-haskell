@@ -24,3 +24,11 @@ RDEPEND=">=dev-haskell/gloss-1.10:=[profile?] <dev-haskell/gloss-1.11:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base       == 4.8.*' 'base       >= 4.8' \
+		'ghc-prim   == 0.4.*' 'ghc-prim   >= 0.4'
+}
