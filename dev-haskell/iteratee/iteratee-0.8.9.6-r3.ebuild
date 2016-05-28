@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/exceptions-0.3:=[profile?]
 	>=dev-haskell/listlike-3.0:=[profile?] <dev-haskell/listlike-5:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/parallel-2:=[profile?] <dev-haskell/parallel-4:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -47,5 +47,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-monad-control-1.0.patch
 
 	cabal_chdeps \
-		'exceptions                >= 0.3     && < 0.7' 'exceptions                >= 0.3'
+		'exceptions                >= 0.3     && < 0.7' 'exceptions                >= 0.3' \
+		'transformers              >= 0.2     && < 0.5' 'transformers              >= 0.2'
 }
