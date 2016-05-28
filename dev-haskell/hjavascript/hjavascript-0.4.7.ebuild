@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+}
