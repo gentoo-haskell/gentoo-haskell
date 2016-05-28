@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,13 +22,18 @@ RDEPEND=">=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/terminfo-0.3.2:=[profile?] <dev-haskell/terminfo-0.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/wl-pprint-extras-3.4:=[profile?] <dev-haskell/wl-pprint-extras-4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
