@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/tagged-0.4.2:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/void-0.5.5.1:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -34,6 +34,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
 	cabal_chdeps \
-		'semigroupoids           >= 4       && < 5' 'semigroupoids           >= 4'
+		'semigroupoids           >= 4       && < 5' 'semigroupoids           >= 4' \
+		'transformers            >= 0.2     && < 0.5' 'transformers            >= 0.2'
 }
