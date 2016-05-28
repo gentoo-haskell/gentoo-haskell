@@ -21,9 +21,15 @@ IUSE=""
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/lucid-2.9.2:=[profile?] <dev-haskell/lucid-3.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base          >= 4.5   && < 4.9' 'base          >= 4.5'\
+		'transformers  >= 0.2   && < 0.5' 'transformers  >= 0.2'
+}
