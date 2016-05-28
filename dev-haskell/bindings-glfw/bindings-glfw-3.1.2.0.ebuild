@@ -44,6 +44,11 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	cabal_chdeps \
+		'template-haskell >= 2.10 && < 2.11' 'template-haskell >= 2.10'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag exposenative exposenative) \
