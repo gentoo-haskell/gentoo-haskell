@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -32,7 +32,8 @@ src_prepare() {
 		'array    == 0.4.*' 'array    >= 0.4 && < 0.6' \
 		'random   == 1.0.*' 'random >= 1.0 && < 1.2' \
 		'ghc-prim == 0.3.*' 'ghc-prim >= 0.3' \
-		'vector   == 0.10.*' 'vector   >= 0.10'
+		'vector   == 0.10.*' 'vector   >= 0.10' \
+		'-fcpr-off' ' '
 }
 
 src_configure() {
