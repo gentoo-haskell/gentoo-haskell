@@ -27,3 +27,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	dev-haskell/happy
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base       >= 4.5     && < 4.9' 'base       >= 4.5'\
+		'transformers >= 0.2   && < 0.5' 'transformers >= 0.2'
+}
