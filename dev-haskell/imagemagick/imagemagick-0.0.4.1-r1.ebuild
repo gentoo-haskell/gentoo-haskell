@@ -21,7 +21,7 @@ IUSE="buildexamples"
 RDEPEND=">=dev-haskell/monadcatchio-transformers-0.3:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	media-gfx/imagemagick
@@ -35,6 +35,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		!buildexamples? ( >=dev-haskell/lifted-base-0.1 <dev-haskell/lifted-base-0.3 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers >= 0.3 && <0.5' 'transformers >= 0.3' \
+		'transformers >= 0.3 && < 0.5' 'transformers >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
