@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,9 +22,14 @@ RDEPEND="dev-haskell/network:=[profile?]
 	>=dev-haskell/network-simple-0.4.0.1:=[profile?] <dev-haskell/network-simple-0.5:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
 	>=dev-haskell/pipes-safe-2.1:=[profile?] <dev-haskell/pipes-safe-2.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'transformers   (>=0.2 && <0.5)' 'transformers   >=0.2'
+}
