@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/adjunctions-4.2:=[profile?] <dev-haskell/adjunctions-5:=[
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/semigroupoids-5:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.8.3:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/void-0.6.1:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -38,9 +38,12 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
 	cabal_chdeps \
 		'comonad      >= 3     && < 5' 'comonad      >= 3' \
 		'pointed      >= 3     && < 5' 'pointed      >= 3' \
 		'distributive             < 0.5' 'distributive' \
-		'doctest >= 0.8 && < 0.11' 'doctest >= 0.8'
+		'doctest >= 0.8 && < 0.11' 'doctest >= 0.8' \
+		'transformers >= 0.3   && < 0.5' 'transformers >= 0.3'
 }

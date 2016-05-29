@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -27,3 +27,9 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.1 <dev-haskell/hunit-1.4
 		>=dev-haskell/quickcheck-2.1 <dev-haskell/quickcheck-2.9 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >= 4.5 && < 4.9' 'base >= 4.5' \
+		'base >= 4.3 && < 4.9' 'base >= 4.3'
+}
