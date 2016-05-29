@@ -127,7 +127,7 @@ dev-haskell/bits-atomic 0.1.3-r1: Atomic bit operations on memory locations for 
 dev-haskell/bitset 1.4.8: A space-efficient set data structure
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.6-r1: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.6-r2: HTML5 Canvas Graphics Library
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
@@ -215,7 +215,7 @@ dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
 dev-haskell/cmark 0.5.2.1: Fast, accurate CommonMark (Markdown) parser and renderer
 dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
-dev-haskell/cmdtheline 0.2.3-r1: Declarative command-line option parsing and documentation library
+dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.3-r1: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2: thread-friendly file locks that don't block the entire program
@@ -223,7 +223,7 @@ dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.3-r1: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
 dev-haskell/comonad 4.2.7.2 5: Comonads
-dev-haskell/comonad-extras 4.0-r3: Exotic comonad transformers
+dev-haskell/comonad-extras 4.0-r4: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
 dev-haskell/compact-string-fix 0.3.2: Same as compact-string except with a small fix so it builds on ghc-6.12
