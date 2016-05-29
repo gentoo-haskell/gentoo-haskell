@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/either-4.3:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/heist-0.14:=[profile?] <dev-haskell/heist-0.15:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.14:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?]
 	>=dev-haskell/logict-0.4.2:=[profile?] <dev-haskell/logict-0.7:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.2:=[profile?] <dev-haskell/monadcatchio-transformers-0.4:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/snap-server-0.9:=[profile?] <dev-haskell/snap-server-0.11:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7.1:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-haskell/vector-algorithms-0.4:=[profile?] <dev-haskell/vector-algorithms-0.8:=[profile?]
@@ -56,7 +56,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'comonad                   >= 1.1      && < 4.3' 'comonad                   >= 1.1'
+		'comonad                   >= 1.1      && < 4.3' 'comonad                   >= 1.1' \
+		'time                      >= 1.1      && < 1.6' 'time                      >= 1.1' \
+		'template-haskell    >= 2.2     && < 2.11' 'template-haskell    >= 2.2' \
+		'transformers              >= 0.2      && < 0.5' 'transformers              >= 0.2' \
+		'lens                      >= 3.7.6    && < 4.14' 'lens                      >= 3.7.6'
 }
 
 src_configure() {
