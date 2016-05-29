@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -28,6 +28,12 @@ RDEPEND=">=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.0.0.0 && <4.9' 'base >=4.0.0.0' \
+		'process >=1.0.1.5 && <1.3' 'process >=1.0.1.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
