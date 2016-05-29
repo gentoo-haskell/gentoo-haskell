@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -27,6 +27,11 @@ RDEPEND=">=dev-haskell/accelerate-0.15.1:=[profile?] <dev-haskell/accelerate-0.1
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base            >= 4.7 && < 4.9' 'base            >= 4.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
