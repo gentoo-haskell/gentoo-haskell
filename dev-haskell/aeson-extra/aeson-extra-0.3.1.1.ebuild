@@ -41,3 +41,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
 		>=dev-haskell/these-0.6.2.0 <dev-haskell/these-0.7 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'template-haskell         >=2.8  && <2.11' 'template-haskell         >=2.8'
+}
