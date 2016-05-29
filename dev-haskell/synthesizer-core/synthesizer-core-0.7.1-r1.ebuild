@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/binary-0.1:=[profile?] <dev-haskell/binary-1:=[profile?]
 	>=dev-haskell/storable-tuple-0.0.1:=[profile?] <dev-haskell/storable-tuple-0.1:=[profile?]
 	>=dev-haskell/storablevector-0.2.5:=[profile?] <dev-haskell/storablevector-0.3:=[profile?]
 	>=dev-haskell/stream-fusion-0.1.2:=[profile?] <dev-haskell/stream-fusion-0.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -48,6 +48,10 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 	epatch "${FILESDIR}"/${P}-haddock-utf-8.patch
+
+	cabal_chdeps \
+		'transformers >=0.2 && <0.5' 'transformers >=0.2' \
+		'process >=1.0 && <1.3' 'process >=1.0'
 }
 
 src_configure() {
