@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
 	>=dev-haskell/free-4.11:=[profile?] <dev-haskell/free-4.13:=[profile?]
 	>=dev-haskell/haskell-lexer-1.0:=[profile?] <dev-haskell/haskell-lexer-1.1:=[profile?]
-	>=dev-haskell/lens-4.7:=[profile?] <dev-haskell/lens-4.14:=[profile?]
+	>=dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/network-2.6.0.2:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -43,3 +43,8 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.2:=[profile?] <dev-haskell/attoparsec-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'lens             >= 4.7      && < 4.14' 'lens             >= 4.7'
+}
