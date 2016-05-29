@@ -1237,7 +1237,7 @@ dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver proces
 dev-haskell/simpleaes 0.4.2: Fast AES encryption/decryption for bytestrings
 dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with better error reporting
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
-dev-haskell/singletons 1.1.2.1 2.0.1: A framework for generating singleton types
+dev-haskell/singletons 1.1.2.1 2.0.1 2.1: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
@@ -1250,7 +1250,7 @@ dev-haskell/snap-loader-dynamic 0.10.0.4: Snap: A Haskell Web Framework: dynamic
 dev-haskell/snap-loader-static 0.9.0.2: Snap: A Haskell Web Framework: static loader
 dev-haskell/snap-server 0.9.5.1-r1: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
-dev-haskell/socket-io 1.3.5: This library provides an implementation of Socket.io protocol (version 1)
+dev-haskell/socket-io 1.3.5-r1: This library provides an implementation of Socket.io protocol (version 1)
 dev-haskell/socks 0.5.5: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
@@ -1274,7 +1274,7 @@ dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.2.3: A library of statistical type
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
-dev-haskell/stm-conduit 2.8.0: Introduces conduits to channels, and promotes using conduits concurrently
+dev-haskell/stm-conduit 2.8.0-r1: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-split 0.0.0.1: TMVars, TVars and TChans with distinguished input and output side
 dev-haskell/stmonadtrans 0.3.3: A monad transformer version of the ST monad
@@ -1368,7 +1368,7 @@ dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF enc
 dev-haskell/text-zipper 0.4: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
-dev-haskell/th-desugar 1.5.5: Functions to desugar Template Haskell
+dev-haskell/th-desugar 1.5.5 1.6: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.0.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
