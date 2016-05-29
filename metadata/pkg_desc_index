@@ -875,7 +875,7 @@ dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haske
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
 dev-haskell/machines 0.5.1-r1 0.6-r1: Networked stream transducers
-dev-haskell/machines-directory 0.2.0.8: Directory (system) utilities for the machines library
+dev-haskell/machines-directory 0.2.0.8-r1: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.12: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
