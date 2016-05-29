@@ -40,6 +40,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base                    >= 4.7 && < 4.9' 'base                    >= 4.7'
+}
+
 src_configure() {
 	# It assumes that configure is run, but does not run it (Andres has
 	# patched upstream to fix this).  So need to run configure.  But its
