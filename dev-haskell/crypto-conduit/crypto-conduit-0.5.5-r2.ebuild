@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/crypto-api-0.9:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	conduit11? ( >=dev-haskell/conduit-extra-1.1:=[profile?] )
 "
@@ -38,7 +38,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'cereal       >= 0.3 && < 0.5' 'cereal       >= 0.3'
+		'cereal       >= 0.3 && < 0.5' 'cereal       >= 0.3' \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
 }
 
 src_configure() {
