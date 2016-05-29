@@ -621,7 +621,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
-dev-haskell/heist 0.13.1.2-r1 0.14.1.4: An Haskell template system supporting both HTML5 and XML
+dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r1: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.8: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
@@ -874,7 +874,7 @@ dev-haskell/lucid-svg 0.5.0.0 0.6.0.1-r1: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
-dev-haskell/machines 0.5.1-r1 0.6: Networked stream transducers
+dev-haskell/machines 0.5.1-r1 0.6-r1: Networked stream transducers
 dev-haskell/machines-directory 0.2.0.8: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.12: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
