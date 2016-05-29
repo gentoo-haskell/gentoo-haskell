@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'time                  >= 1.2 && < 1.6' 'time                  >= 1.2'
+}
