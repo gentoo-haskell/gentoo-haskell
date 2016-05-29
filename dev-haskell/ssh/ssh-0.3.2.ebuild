@@ -54,5 +54,6 @@ src_prepare() {
 	cabal_chdeps \
 		'RSA >= 2.1.0 && < 2.1.1' 'RSA >= 2.1.0' \
 		'HUnit                      >= 1.0   && < 1.3' 'HUnit                      >= 1.0' \
-		'tasty                      >= 0.10  && < 0.11' 'tasty                      >= 0.10'
+		'tasty                      >= 0.10  && < 0.11' 'tasty                      >= 0.10' \
+		'template-haskell           >= 2.8   && < 2.11' 'template-haskell           >= 2.8'
 }
