@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
 RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.18:=[profile?]
-	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
@@ -60,6 +60,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'binary               >= 0.5    && < 0.8' 'binary               >= 0.5' \
+		'process              >= 1.0    && < 1.3' 'process              >= 1.0' \
+		'time                 >= 1.4    && < 1.6' 'time                 >= 1.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

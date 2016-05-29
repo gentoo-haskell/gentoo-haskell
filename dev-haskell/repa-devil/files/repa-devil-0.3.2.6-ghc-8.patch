@@ -1,0 +1,9 @@
+diff --git a/Data/Array/Repa/IO/DevIL.hsc b/Data/Array/Repa/IO/DevIL.hsc
+index 162f325..658afe3 100644
+--- a/Data/Array/Repa/IO/DevIL.hsc
++++ b/Data/Array/Repa/IO/DevIL.hsc
+@@ -64,3 +64,3 @@ import Foreign.Marshal.Utils (with)
+ 
+-import Data.Array.Repa (Array (..), Z (..), (:.) (..), DIM2, DIM3, extent)
++import Data.Array.Repa (Source (..), Z (..), (:.) (..), DIM2, DIM3, extent)
+ import Data.Array.Repa.Repr.ForeignPtr (F, fromForeignPtr, toForeignPtr)
