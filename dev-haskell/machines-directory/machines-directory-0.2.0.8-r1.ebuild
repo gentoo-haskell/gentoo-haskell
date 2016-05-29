@@ -20,9 +20,16 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/machines-0.2.4:=[profile?] <dev-haskell/machines-0.7:=[profile?]
 	>=dev-haskell/machines-io-0.1:=[profile?] <dev-haskell/machines-io-0.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'transformers        >= 0.3      && < 0.5' 'transformers        >= 0.3'
+}
