@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -73,7 +73,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3' \
-		'transformers         >= 0.2.2   && < 0.5' 'transformers         >= 0.2.2'
+		'transformers         >= 0.2.2   && < 0.5' 'transformers         >= 0.2.2' \
+		'time                 >= 1.1.4   && < 1.6' 'time                 >= 1.1.4'
 }
 
 src_configure() {
