@@ -759,7 +759,7 @@ dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
 dev-haskell/ihaskell 0.8.4.0: A Haskell backend kernel for the IPython project
 dev-haskell/ilist 0.2.0.0: Optimised list functions for doing index-related things
-dev-haskell/imagemagick 0.0.4.1: bindings to imagemagick library
+dev-haskell/imagemagick 0.0.4.1-r1: bindings to imagemagick library
 dev-haskell/imagesize-conduit 1.1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
@@ -1605,7 +1605,7 @@ dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.1: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.4.0.10-r2: A ctags file generator for cabal project dependencies
+dev-util/codex 0.5.0.0: A ctags file generator for cabal project dependencies
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
