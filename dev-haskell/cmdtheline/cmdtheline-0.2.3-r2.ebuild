@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -28,14 +28,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/parsec-3.1 <dev-haskell/parsec-3.2
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
-		>=dev-haskell/transformers-0.2 <dev-haskell/transformers-0.5 )
+		>=dev-haskell/transformers-0.2 )
 "
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 
 	cabal_chdeps \
-		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2 && < 0.5' \
+		'transformers >= 0.2 && < 0.4' 'transformers >= 0.2' \
 		'-Werror' ' ' \
 		'filepath >= 1.3 && < 1.4' 'filepath >= 1.3'
 }
