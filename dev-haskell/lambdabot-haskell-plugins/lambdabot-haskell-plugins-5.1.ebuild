@@ -49,3 +49,10 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	# manaes to consume 14GB at build time
+	[[ $(ghc-version) == 8.0.* ]] && replace-hcflags -O[1-9] -O0
+}
