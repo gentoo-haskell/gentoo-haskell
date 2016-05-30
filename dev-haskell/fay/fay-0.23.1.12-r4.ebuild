@@ -44,7 +44,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/utf8-string-0.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	<dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -55,7 +55,11 @@ src_prepare() {
 
 	cabal_chdeps \
 		'transformers-compat >= 0.3 && < 0.5' 'transformers-compat >= 0.3' \
-		'aeson > 0.6 && < 0.11' 'aeson > 0.6'
+		'aeson > 0.6 && < 0.11' 'aeson > 0.6' \
+		'base >= 4.5 && < 4.9' 'base >= 4.5' \
+		'process >= 1.1 && < 1.3' 'process >= 1.1' \
+		'time >= 1.4 && < 1.6' 'time >= 1.4' \
+		'transformers >= 0.3 && < 0.4 || > 0.4.1 && < 0.5' 'transformers >= 0.3 && < 0.4 || > 0.4.1'
 
 }
 
