@@ -1,0 +1,14 @@
+diff --git a/Data/Lens/Template.hs b/Data/Lens/Template.hs
+index 6e4a16e..dfbd1ce 100644
+--- a/Data/Lens/Template.hs
++++ b/Data/Lens/Template.hs
+@@ -86,4 +86,9 @@ decMakeLens t dec namer = do
+     (params, cons) <- case dec of
++#if MIN_VERSION_template_haskell(2,11,0)
++                 DataD _ _ params _ cons' _ -> return (params, cons')
++                 NewtypeD _ _ params _ con' _ -> return (params, [con'])
++#else
+                  DataD _ _ params cons' _ -> return (params, cons')
+                  NewtypeD _ _ params con' _ -> return (params, [con'])
++#endif
+                  _ -> fail $ errmsg t
