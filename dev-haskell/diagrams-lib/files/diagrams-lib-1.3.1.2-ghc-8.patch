@@ -1,0 +1,16 @@
+diff --git a/src/Diagrams/Align.hs b/src/Diagrams/Align.hs
+index ff8bf49..9a9ac39 100644
+--- a/src/Diagrams/Align.hs
++++ b/src/Diagrams/Align.hs
+@@ -3,2 +3,3 @@
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE ConstrainedClassMethods #-}
+ 
+diff --git a/src/Diagrams/Backend/CmdLine.hs b/src/Diagrams/Backend/CmdLine.hs
+index 07135c4..60bf50a 100644
+--- a/src/Diagrams/Backend/CmdLine.hs
++++ b/src/Diagrams/Backend/CmdLine.hs
+@@ -8,2 +8,3 @@
+ {-# LANGUAGE UndecidableInstances      #-}
++{-# LANGUAGE ConstrainedClassMethods   #-}
+ -----------------------------------------------------------------------------
