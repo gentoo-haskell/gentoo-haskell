@@ -54,7 +54,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson                 >=0.7.0.6   && <0.11' 'aeson >=0.7.0.6'
+		'aeson                 >=0.7.0.6   && <0.11' 'aeson >=0.7.0.6' \
+		'base                  >= 4.7      && <4.9' 'base                  >= 4.7'
 }
 
 src_configure() {
