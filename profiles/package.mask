@@ -17,6 +17,8 @@
 >=dev-haskell/webkitgtk3-0.14.2.0
 >=dev-haskell/svgcairo-0.13.1.0
 >=dev-haskell/vte-0.13.1.0
+>=dev-haskell/poppler-0.14-r100
+>=dev-haskell/glade-0.12.5.0-r100
 
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
