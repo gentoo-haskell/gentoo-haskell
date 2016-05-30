@@ -789,7 +789,7 @@ dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
-dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3: High level interface for webkit-javascriptcore
+dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
@@ -1182,7 +1182,7 @@ dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes 
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.2-r1: Random Variables
 dev-haskell/safe 0.3.9: Library of safe (exception free) functions
-dev-haskell/safecopy 0.8.6 0.9.0.1: Binary serialization with version control
+dev-haskell/safecopy 0.8.6 0.9.0.1 0.9.1: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
