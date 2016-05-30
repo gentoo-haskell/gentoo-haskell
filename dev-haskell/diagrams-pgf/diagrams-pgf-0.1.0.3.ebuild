@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -35,3 +35,10 @@ RDEPEND="<dev-haskell/bytestring-builder-1.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base                 >= 4.4   && < 4.9' 'base                 >= 4.4' \
+		'process              >= 1.0   && < 1.3' 'process              >= 1.0' \
+		'time                 >= 1.2   && < 1.6' 'time                 >= 1.2'
+}
