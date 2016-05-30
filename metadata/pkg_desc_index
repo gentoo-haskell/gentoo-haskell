@@ -441,7 +441,7 @@ dev-haskell/fgl 5.5.2.3: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.1: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
 dev-haskell/file-embed 0.0.10: Use Template Haskell to embed file contents directly
-dev-haskell/file-location 0.4.9: common functions that show file location information
+dev-haskell/file-location 0.4.9-r1: common functions that show file location information
 dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
 dev-haskell/filestore 0.6.0.6 0.6.1: Interface for versioning file stores
@@ -651,7 +651,7 @@ dev-haskell/hledger-ui 0.27.5: Curses-style user interface for the hledger accou
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22 1.9.32: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.33: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
