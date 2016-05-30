@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,7 +21,7 @@ IUSE="+derivedatatypeable"
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?]
 	>=dev-haskell/data-lens-2.10.4:=[profile?] <dev-haskell/data-lens-2.11:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?] <=dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
@@ -30,7 +30,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'comonad >= 4.0 && < 4.3' 'comonad >= 4.0'
+		'comonad >= 4.0 && < 4.3' 'comonad >= 4.0' \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
 }
 
 src_configure() {
