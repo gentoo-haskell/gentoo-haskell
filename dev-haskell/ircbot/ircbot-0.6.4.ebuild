@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,3 +30,8 @@ RDEPEND=">=dev-haskell/irc-0.6:=[profile?] <dev-haskell/irc-0.7:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'time       >= 1.5  && < 1.6' 'time       >= 1.5'
+}
