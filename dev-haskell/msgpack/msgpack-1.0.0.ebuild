@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -35,3 +35,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-binary-0.8.patch
+}
