@@ -425,7 +425,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.6: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r3: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r4: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
