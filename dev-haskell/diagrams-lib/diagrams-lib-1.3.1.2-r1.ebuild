@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/text-0.7.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3.0:=[profile?] <dev-haskell/transformers-0.5.0:=[profile?]
+	>=dev-haskell/transformers-0.3.0:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -49,3 +49,14 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9.2 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.2 && < 4.9' 'base >= 4.2' \
+		'process >= 1.1 && < 1.3' 'process >= 1.1' \
+		'transformers >= 0.3.0 && < 0.5.0' 'transformers'
+}
