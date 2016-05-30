@@ -504,7 +504,7 @@ dev-haskell/gio 0.13.1.1 0.13.2.0 0.13.3.0: Binding to GIO
 dev-haskell/github 0.13.2 0.14.1-r1: Access to the GitHub API, v3
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1: Complete OpenGL raw bindings
-dev-haskell/glade 0.12.5.0-r3: Binding to the glade library
+dev-haskell/glade 0.12.5.0-r3 0.12.5.0-r100: Binding to the glade library
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0: Binding to the GLIB library for Gtk2Hs
@@ -1073,7 +1073,7 @@ dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.12: A variety of alternative parser combinator libraries
 dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (deprecated)
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
-dev-haskell/poppler 0.14: Binding to the Poppler
+dev-haskell/poppler 0.14 0.14-r100: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.1.6.0: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
