@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+gtk3"
 
 RDEPEND="dev-haskell/glib:=[profile?]
-	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.14:=[profile?]
+	>=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3.0.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3.0.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	gtk3? ( >=dev-haskell/gtk3-0.14.2:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
 		>=dev-haskell/webkitgtk3-0.13.0.0:=[profile?] <dev-haskell/webkitgtk3-0.15:=[profile?]
@@ -36,6 +36,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		>=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.12 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens >=3.8.5 && <4.14' 'lens >=3.8.5' \
+		'transformers >=0.3.0.0 && <0.5' 'transformers >=0.3.0.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
