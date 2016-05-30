@@ -544,7 +544,7 @@ dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.6: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0 0.13.2.0: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.7 0.13.9 0.14.2 0.14.3 0.14.4: Binding to the Gtk+ 3 graphical user interface library
-dev-haskell/gtkglext 0.12.5.0-r3: Binding to the GTK+ OpenGL Extension
+dev-haskell/gtkglext 0.12.5.0-r3 0.12.5.0-r100: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
 dev-haskell/gtksourceview2 0.13.2.1-r1 0.13.3.0: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.2.1 0.13.3.0: Binding to the GtkSourceView library
@@ -1470,7 +1470,7 @@ dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Templ
 dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
-dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.0: Binding to the VTE library
+dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.0-r1: Binding to the VTE library
 dev-haskell/vty 5.2.11 5.4.0: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
