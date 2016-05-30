@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/data-accessor-0.1:=[profile?] <dev-haskell/data-accessor-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
+	cabal_chdeps \
+		'template-haskell >=2.4 && <2.11' 'template-haskell >=2.4'
+}

@@ -1,0 +1,14 @@
+diff --git a/src-5/Data/Accessor/Template.hs b/src-5/Data/Accessor/Template.hs
+index 1fb8ebe..f777e15 100644
+--- a/src-5/Data/Accessor/Template.hs
++++ b/src-5/Data/Accessor/Template.hs
+@@ -78,4 +78,9 @@ nameDeriveAccessors t namer = do
+     (params, cons) <- case reified of
++#if MIN_VERSION_template_haskell(2,11,0)
++                 DataD _ _ params _ cons' _ -> return (params, cons')
++                 NewtypeD _ _ params _ con' _ -> return (params, [con'])
++#else
+                  DataD _ _ params cons' _ -> return (params, cons')
+                  NewtypeD _ _ params con' _ -> return (params, [con'])
++#endif
+                  _ -> fail errmsg
