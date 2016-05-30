@@ -304,7 +304,7 @@ dev-haskell/data-flags 0.0.3.1: A package for working with bit masks and flags i
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
 dev-haskell/data-lens 2.10.7-r2: Used to be Haskell 98 Lenses
-dev-haskell/data-lens-fd 2.0.5-r1: Lenses
+dev-haskell/data-lens-fd 2.0.5-r2: Lenses
 dev-haskell/data-lens-ixset 0.1.4-r2: A Lens for IxSet
 dev-haskell/data-lens-light 0.1.2.2: Simple lenses, minimum dependencies
 dev-haskell/data-lens-template 2.1.9: Utilities for Data.Lens
