@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.13:=[profile?]
 	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?]
-	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?] <dev-haskell/hint-0.5:=[profile?]
+	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?]
 		dev-haskell/network:=[profile?] )
 	mpd? ( >=dev-haskell/libmpd-0.9:=[profile?] )
 	volume? ( >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?]
@@ -44,7 +44,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'libmpd >= 0.8 && < 0.9' 'libmpd >= 0.9'
+		'libmpd >= 0.8 && < 0.9' 'libmpd >= 0.9' \
+		'hint >= 0.3.3.3 && < 0.5' 'hint >= 0.3.3.3'
 }
 
 src_configure() {
