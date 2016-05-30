@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -39,6 +39,8 @@ DEPEND="${RDEPEND}
 CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
+
 	einfo "Using default mueval timeout: ${MUEVAL_TIMEOUT} * 0.7s"
 	sed -e "s@timeLimit = 5@timeLimit = ${MUEVAL_TIMEOUT}@" \
 		-i "${S}"/Mueval/ArgsParse.hs || die

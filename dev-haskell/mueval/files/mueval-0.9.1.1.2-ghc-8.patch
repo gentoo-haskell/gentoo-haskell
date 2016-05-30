@@ -1,0 +1,14 @@
+diff --git a/Mueval/Interpreter.hs b/Mueval/Interpreter.hs
+index 2522fd7..8019b26 100644
+--- a/Mueval/Interpreter.hs
++++ b/Mueval/Interpreter.hs
+@@ -21,3 +21,3 @@ import           Language.Haskell.Interpreter (eval, set, reset, setImportsQ, lo
+                                      installedModulesInScope, languageExtensions,
+-                                     typeOf, setTopLevelModules, runInterpreter, glasgowExtensions,
++                                     typeOf, setTopLevelModules, runInterpreter,
+                                      OptionVal(..), Interpreter,
+@@ -49,3 +49,3 @@ interpreter Options { extensions = exts, namedExtensions = nexts,
+                       modules = m } = do
+-                                  let lexts = (guard exts >> glasgowExtensions) ++ map readExt nexts
++                                  let lexts = map readExt nexts
+                                   -- Explicitly adding ImplicitPrelude because of
