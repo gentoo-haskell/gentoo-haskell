@@ -2,21 +2,21 @@
 # Needs porting of gtk2hs-based ebuilds to newer Cabal
 =dev-haskell/cabal-1.24*
 =dev-haskell/cabal-install-1.24*
-=dev-haskell/gtk2hs-buildtools-0.13.1.0
-=dev-haskell/glib-0.13.3.0
-=dev-haskell/gio-0.13.2.0
-=dev-haskell/gconf-0.13.1.0
-=dev-haskell/cairo-0.13.2.0
-=dev-haskell/pango-0.13.2.0
-=dev-haskell/gtksourceview3-0.13.3.0
-=dev-haskell/gtksourceview2-0.13.3.0
-=dev-haskell/gstreamer-0.12.8
-=dev-haskell/gtk-0.14.3
-=dev-haskell/gtk3-0.14.3
-=dev-haskell/webkit-0.14.2.0
-=dev-haskell/webkitgtk3-0.14.2.0
-=dev-haskell/svgcairo-0.13.1.0
-=dev-haskell/vte-0.13.1.0
+>=dev-haskell/gtk2hs-buildtools-0.13.1.0
+>=dev-haskell/glib-0.13.3.0
+>=dev-haskell/gio-0.13.2.0
+>=dev-haskell/gconf-0.13.1.0
+>=dev-haskell/cairo-0.13.2.0
+>=dev-haskell/pango-0.13.2.0
+>=dev-haskell/gtksourceview3-0.13.3.0
+>=dev-haskell/gtksourceview2-0.13.3.0
+>=dev-haskell/gstreamer-0.12.8
+>=dev-haskell/gtk-0.14.3
+>=dev-haskell/gtk3-0.14.3
+>=dev-haskell/webkit-0.14.2.0
+>=dev-haskell/webkitgtk3-0.14.2.0
+>=dev-haskell/svgcairo-0.13.1.0
+>=dev-haskell/vte-0.13.1.0
 
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
