@@ -542,7 +542,7 @@ dev-haskell/gstreamer 0.12.5.0-r2 0.12.8: Binding to the GStreamer open source m
 dev-haskell/gtk 0.13.9 0.14.2 0.14.3: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.6: A wrapper around the eggtraymanager library for Linux system trays
-dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0: Tools to build the Gtk2Hs suite of User Interface libraries
+dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0 0.13.2.0: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.7 0.13.9 0.14.2 0.14.3: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.12.5.0-r3: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
@@ -606,7 +606,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.0.1: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.5: XML-RPC client and server library
+dev-haskell/haxr 3000.11.1.6: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
@@ -817,7 +817,7 @@ dev-haskell/language-ecmascript 0.17.1.0: JavaScript parser and pretty-printer l
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/language-javascript 0.5.14.5 0.6.0.4: Parser for JavaScript
+dev-haskell/language-javascript 0.5.14.5 0.6.0.5: Parser for JavaScript
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
