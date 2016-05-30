@@ -802,15 +802,15 @@ dev-haskell/keys 3.11: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
-dev-haskell/lambdabot 5.0.3: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.0.3-r1: Lambdabot core functionality
-dev-haskell/lambdabot-haskell-plugins 5.0.3-r1: Lambdabot Haskell plugins
-dev-haskell/lambdabot-irc-plugins 5.0.3: IRC plugins for lambdabot
-dev-haskell/lambdabot-misc-plugins 5.0.1: Lambdabot miscellaneous plugins
-dev-haskell/lambdabot-novelty-plugins 5.0.3: Novelty plugins for Lambdabot
-dev-haskell/lambdabot-reference-plugins 5.0.3: Lambdabot reference plugins
-dev-haskell/lambdabot-social-plugins 5.0.1: Social plugins for Lambdabot
-dev-haskell/lambdabot-trusted 5.0.2.1: Lambdabot trusted code
+dev-haskell/lambdabot 5.0.3 5.1: Lambdabot is a development tool and advanced IRC bot
+dev-haskell/lambdabot-core 5.0.3-r1 5.1: Lambdabot core functionality
+dev-haskell/lambdabot-haskell-plugins 5.0.3-r1 5.1: Lambdabot Haskell plugins
+dev-haskell/lambdabot-irc-plugins 5.0.3 5.1: IRC plugins for lambdabot
+dev-haskell/lambdabot-misc-plugins 5.0.1 5.1: Lambdabot miscellaneous plugins
+dev-haskell/lambdabot-novelty-plugins 5.0.3 5.1: Novelty plugins for Lambdabot
+dev-haskell/lambdabot-reference-plugins 5.0.3 5.1: Lambdabot reference plugins
+dev-haskell/lambdabot-social-plugins 5.0.1 5.1: Social plugins for Lambdabot
+dev-haskell/lambdabot-trusted 5.0.2.1 5.1: Lambdabot trusted code
 dev-haskell/language-c 0.4.7 0.5.0: Analysis and generation of C code
 dev-haskell/language-c-quote 0.8.0 0.11.4 0.11.5.1 0.11.6.2: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-ecmascript 0.17.1.0: JavaScript parser and pretty-printer library
