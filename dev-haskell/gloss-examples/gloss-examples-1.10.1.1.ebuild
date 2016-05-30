@@ -39,7 +39,12 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'vector          == 0.10.*' 'vector          >= 0.10' \
-		'vector         == 0.10.*' 'vector         >= 0.10'
+		'vector         == 0.10.*' 'vector         >= 0.10' \
+		'base            == 4.8.*' 'base            >= 4.8' \
+		'base             == 4.8.*' 'base             >= 4.8' \
+		'base           == 4.8.*' 'base           >= 4.8' \
+		'ghc-prim        == 0.4.*' 'ghc-prim        >= 0.4' \
+		'ghc-prim       == 0.4.*' 'ghc-prim       >= 0.4'
 	eapply_user
 }
 
