@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.14:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/lucid-svg-0.5:=[profile?] <dev-haskell/lucid-svg-0.7:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -38,3 +38,11 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                 >= 4.3   && < 4.9' 'base                 >= 4.3' \
+		'lens                 >= 4.0   && < 4.14' 'lens                 >= 4.0'
+}
