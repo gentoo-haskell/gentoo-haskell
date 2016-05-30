@@ -25,10 +25,10 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-0.
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/hint-0.4:=[profile?] <dev-haskell/hint-0.6:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.14:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	cairo? ( >=dev-haskell/diagrams-cairo-1.3:=[profile?] <dev-haskell/diagrams-cairo-1.4:=[profile?] )
 	postscript? ( >=dev-haskell/diagrams-postscript-0.6:=[profile?] <dev-haskell/diagrams-postscript-1.4:=[profile?] )
@@ -41,6 +41,13 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base >=4.2 && < 4.9' 'base >=4.2' \
+		'lens >= 4.0 && < 4.14' 'lens >= 4.0' \
+		'transformers >= 0.3 && < 0.5' 'transformers >= 0.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
