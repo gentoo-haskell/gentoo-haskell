@@ -353,10 +353,10 @@ dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
-dev-haskell/distributed-process 0.5.5.1 0.6.1: Cloud Haskell: Erlang-style concurrency in Haskell
+dev-haskell/distributed-process 0.5.5.1 0.6.1-r1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5: Tests and test support tools for distributed-process
-dev-haskell/distributed-static 0.3.3.0 0.3.4.0: Compositional, type-safe, polymorphic static values and closures
+dev-haskell/distributed-static 0.3.3.0 0.3.4.0-r1: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
