@@ -25,3 +25,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.5 && < 0.8' 'binary >= 0.5 && < 0.9'
+}
