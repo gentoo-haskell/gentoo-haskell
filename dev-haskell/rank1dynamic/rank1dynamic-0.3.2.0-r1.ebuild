@@ -27,3 +27,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.0 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-ghc-8.0-compat.patch
+}

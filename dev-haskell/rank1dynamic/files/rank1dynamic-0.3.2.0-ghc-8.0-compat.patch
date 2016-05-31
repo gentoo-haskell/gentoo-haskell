@@ -1,0 +1,52 @@
+From bd647b479bcee47d10060571b8c4e8457ddfd86c Mon Sep 17 00:00:00 2001
+From: Utku Demir <utdemir@gmail.com>
+Date: Thu, 5 May 2016 18:42:19 +0300
+Subject: [PATCH] Compatibility fix to base 4.9 (#14)
+
+It looks like Data.Typeable.Internal doesn't export `tcList` and
+`tcFun` anymore. This patch implements them with `typeRepTyCon` which
+is exported by both base 4.8 and 4.9. It still uses `listTc` and `funTc`
+on base 4.6.
+
+squash
+---
+ src/Data/Rank1Typeable.hs | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+
+diff --git a/src/Data/Rank1Typeable.hs b/src/Data/Rank1Typeable.hs
+index b4b1125..7f1fbbf 100644
+--- a/src/Data/Rank1Typeable.hs
++++ b/src/Data/Rank1Typeable.hs
+@@ -109,11 +109,10 @@ import Data.Typeable
+   , tyConModule
+   , tyConName
+   )
+-#if MIN_VERSION_base(4,9,0)
+-import Data.Typeable.Internal (tcList, tcFun)
+-#else
+-import Data.Typeable.Internal (listTc, funTc)
++#if MIN_VERSION_base(4,7,0)
++import Data.Proxy (Proxy(Proxy))
+ #endif
++import qualified Data.Typeable.Internal as T
+ import Data.Binary (Binary(get, put))
+ import qualified Data.Typeable as Typeable
+   ( TypeRep
+@@ -122,11 +121,13 @@ import qualified Data.Typeable as Typeable
+   , mkTyConApp
+   )
+ 
+-
+-#if !MIN_VERSION_base(4,9,0)
+ tcList, tcFun :: TyCon
+-tcList = listTc
+-tcFun = funTc
++#if MIN_VERSION_base(4,7,0)
++tcList = T.typeRepTyCon (T.typeOf [()])
++tcFun = T.typeRepTyCon (T.typeRep (Proxy :: Proxy (->)))
++#else
++tcList = T.listTc
++tcFun = T.funTc
+ #endif
+ 
+ --------------------------------------------------------------------------------
