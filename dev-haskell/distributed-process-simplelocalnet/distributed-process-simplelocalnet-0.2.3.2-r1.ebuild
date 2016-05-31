@@ -19,19 +19,25 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-haskell/binary-0.6.3:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.6.3:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/distributed-process-0.5.0:=[profile?] <dev-haskell/distributed-process-0.7:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-multicast-0.0:=[profile?] <dev-haskell/network-multicast-0.2:=[profile?]
 	>=dev-haskell/network-transport-0.4.1.0:=[profile?] <dev-haskell/network-transport-0.5:=[profile?]
 	>=dev-haskell/network-transport-tcp-0.4:=[profile?] <dev-haskell/network-transport-tcp-0.6:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.6.3 && < 0.8' 'binary >= 0.6.3 && < 0.9' \
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2 && < 0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
