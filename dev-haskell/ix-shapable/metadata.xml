@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Reshape multi-dimensional arrays.
+		
+		Provides the &#39;Shapable&#39; class, respresenting those
+		instances of &#39;Ix&#39; that provide to arrays indexing
+		that is isomorphic to that of C-style
+		multi-dimensional arrays.
+		
+		Factored out of the &#39;carray&#39; library with the kind
+		permission of its author.
+	</longdescription>
+</pkgmetadata>
