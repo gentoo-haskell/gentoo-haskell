@@ -172,6 +172,7 @@ dev-haskell/cabal-src 0.3.0.1: Alternative install procedure to avoid the diamon
 dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Cairo library
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
+dev-haskell/carray 0.1.6.4: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.1.0.3 1.2.0.6: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
@@ -784,6 +785,7 @@ dev-haskell/ircbot 0.6.2 0.6.4: A library for writing irc bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
+dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.6.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
