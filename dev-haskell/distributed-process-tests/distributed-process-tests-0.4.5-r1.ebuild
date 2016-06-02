@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="tcp"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
-	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/distributed-process-0.6.0:=[profile?] <dev-haskell/distributed-process-0.7:=[profile?]
 	dev-haskell/distributed-static:=[profile?]
 	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-1.4:=[profile?]
@@ -38,6 +38,11 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/network-transport-inmemory-0.5
 		tcp? ( >=dev-haskell/network-transport-tcp-0.5 <dev-haskell/network-transport-tcp-0.6 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'binary >= 0.5 && < 0.8' 'binary >= 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
