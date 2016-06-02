@@ -9,7 +9,7 @@ EAPI=5
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Network abstraction layer"
+DESCRIPTION="Compositional, type-safe, polymorphic static values and closures"
 HOMEPAGE="http://haskell-distributed.github.com"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -19,16 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
-	>=dev-haskell/hashable-1.2.0.5:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/transformers-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-haskell/rank1dynamic-0.1:=[profile?] <dev-haskell/rank1dynamic-0.4:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6
+	>=dev-haskell/cabal-1.16.0
 "
-
 src_prepare() {
 	cabal_chdeps \
-		'binary >= 0.5 && < 0.8' 'binary >= 0.5' \
-		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
+		'binary >= 0.5 && < 0.8' 'binary >= 0.5'
 }
