@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	<dev-haskell/transformers-0.6:=[profile?]
+	<dev-haskell/transformers-0.7:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
