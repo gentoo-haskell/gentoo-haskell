@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5.3:=[profile?]
 	>=dev-haskell/postgresql-simple-0.3:=[profile?]
 	>=dev-haskell/resource-pool-0.2.1:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?]
-	>=dev-haskell/transformers-0.2.1:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.2.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -36,5 +36,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'postgresql-simple        >= 0.3       && < 0.5' 'postgresql-simple        >= 0.3'
+		'postgresql-simple        >= 0.3       && < 0.5' 'postgresql-simple        >= 0.3' \
+		'transformers             >= 0.2.1     && < 0.5' 'transformers             >= 0.2.1'
 }
