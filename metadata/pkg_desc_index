@@ -615,7 +615,7 @@ dev-haskell/hdaemonize 0.5.0.2: Library to handle the details of writing daemons
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
 dev-haskell/hdbc-mysql 0.6.6.1-r3: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
-dev-haskell/hdbc-postgresql 2.3.2.3: PostgreSQL driver for HDBC
+dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
 dev-haskell/hdevtools 0.1.3.1: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
@@ -675,7 +675,6 @@ dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
-dev-haskell/hpc 0.6.0.1 0.6.0.2 0.6.0.3_pre20160204 0.6.0.3_pre20160411 0.6.0.3_pre20160421: Code Coverage Library for Haskell
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.1.0.0 0.3.0.0: A Haskell pre-processor
 dev-haskell/hprotoc 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
@@ -957,7 +956,7 @@ dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mutable-containers 0.3.2.1: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
-dev-haskell/mysql 0.1.1.8: A low-level MySQL client library
+dev-haskell/mysql 0.1.1.8 0.1.1.8-r100: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
 dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
@@ -1176,7 +1175,7 @@ dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 0.4.10.2 1.1.7.4: Deterministic allocation and freeing of scarce resources
-dev-haskell/retry 0.7.3: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.7.4: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
@@ -1272,7 +1271,7 @@ dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.1.0.4: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
-dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.2.3: A library of statistical types, data, and functions
+dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.3.0: A library of statistical types, data, and functions
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
