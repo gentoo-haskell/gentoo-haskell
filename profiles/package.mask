@@ -28,6 +28,7 @@ dev-haskell/concrete-typerep
 >=dev-haskell/webkitgtk3-javascriptcore-0.14.1.0
 >=dev-haskell/hdbc-postgresql-2.3.2.3-r100
 >=dev-haskell/mysql-0.1.1.8-r100
+>=dev-haskell/hdbc-mysql-0.6.6.1-r100
 
 # Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
 # Uses outdated block/unblock base API. needs port to mask/unmask
