@@ -18,14 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
+RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/rank1dynamic-0.1:=[profile?] <dev-haskell/rank1dynamic-0.4:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
-src_prepare() {
-	cabal_chdeps \
-		'binary >= 0.5 && < 0.8' 'binary >= 0.5'
-}
