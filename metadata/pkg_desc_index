@@ -40,8 +40,8 @@ dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
-dev-haskell/aeson-compat 0.3.3.0: Compatibility layer for aeson
-dev-haskell/aeson-extra 0.3.1.1: Extra goodies for aeson
+dev-haskell/aeson-compat 0.3.4.0: Compatibility layer for aeson
+dev-haskell/aeson-extra 0.3.2.0: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
@@ -357,7 +357,7 @@ dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
 dev-haskell/distributed-process 0.5.5.1 0.6.1-r1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1: Tests and test support tools for distributed-process
-dev-haskell/distributed-static 0.3.3.0 0.3.4.0-r2: Compositional, type-safe, polymorphic static values and closures
+dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
