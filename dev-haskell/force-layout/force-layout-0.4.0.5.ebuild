@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-4.15:=[profile?]
 	>=dev-haskell/linear-1.10:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
