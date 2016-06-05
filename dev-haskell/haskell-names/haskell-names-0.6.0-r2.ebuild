@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/transformers-0.4.2.0:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
+	>=dev-haskell/transformers-0.4.2.0:=[profile?]
 	>=dev-haskell/traverse-with-class-0.2.0.3:=[profile?] <dev-haskell/traverse-with-class-0.3:=[profile?]
 	>=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -39,5 +39,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson >= 0.8.0.2 && < 0.11' 'aeson >= 0.8.0.2'
+		'aeson >= 0.8.0.2 && < 0.11' 'aeson >= 0.8.0.2' \
+		'transformers >=0.4.2.0 && < 0.5' 'transformers >=0.4.2.0'
 }
