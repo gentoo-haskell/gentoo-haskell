@@ -35,6 +35,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
 
+src_prepare() {
+	cabal_chdeps \
+		'base            >=4.6 && < 4.9' 'base            >=4.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples examples)
