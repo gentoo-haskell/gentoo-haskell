@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 	>=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
-	~dev-haskell/edisonapi-1.3:=[profile?]
+	>=dev-haskell/edisonapi-1.3:=[profile?]
 	>=dev-haskell/edisoncore-1.3.1.1:=[profile?] <dev-haskell/edisoncore-1.3.2:=[profile?]
 	>=dev-haskell/edit-distance-0.2.1.2:=[profile?] <dev-haskell/edit-distance-0.3:=[profile?]
 	>=dev-haskell/equivalence-0.2.5:=[profile?] <dev-haskell/equivalence-0.4:=[profile?]
@@ -88,7 +88,8 @@ src_prepare() {
 		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
 	cabal_chdeps \
 		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1' \
-		'uhc-util >= 0.1.6.3 && < 0.1.6.6' 'uhc-util >= 0.1.6.3'
+		'uhc-util >= 0.1.6.3 && < 0.1.6.6' 'uhc-util >= 0.1.6.3' \
+		'EdisonAPI == 1.3' 'EdisonAPI >= 1.3'
 }
 
 src_configure() {
