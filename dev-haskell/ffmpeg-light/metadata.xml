@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="builddemo">Build demo executable</flag>
+		<flag name="buildrasterdemo">Build Rasterific demo executable</flag>
+    </use>
+	<longdescription>
+		Stream frames from an encoded video, or stream frames to
+		a video output file. To read the first frame from
+		an @h264@-encoded file into a JuicyPixels
+		@Maybe DynamicImage@,
+		
+		&gt; import Codec.FFmpeg
+		&gt; import Codec.Picture
+		&gt; import Control.Applicative
+		&gt;
+		&gt; go :: IO (Maybe DynamicImage)
+		&gt; go = do (getFrame, cleanup) &lt;- imageReader &quot;myVideo.mov&quot;
+		&gt;         (fmap ImageRGB8 &lt;$&gt; getFrame) &lt;* cleanup
+		
+		Tested with FFmpeg 2.7 - 3.0
+	</longdescription>
+</pkgmetadata>
