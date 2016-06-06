@@ -892,7 +892,7 @@ dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megaparsec 5.0.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.7: A memoization library
-dev-haskell/memory 0.10 0.11 0.12: memory and related abstraction stuff
+dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom numbers purely using a Mersenne Twister
@@ -974,7 +974,7 @@ dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
 dev-haskell/network-fancy 0.2.4: Networking support with a cleaner API
 dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP
 dev-haskell/network-info 0.2.0.8: Access the local computer's basic network configuration
-dev-haskell/network-msg 0.7: Recvmsg and sendmsg bindings
+dev-haskell/network-msg 0.8: Recvmsg and sendmsg bindings
 dev-haskell/network-multicast 0.0.11 0.1.1: Simple multicast library
 dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
 dev-haskell/network-simple 0.4.0.5: Simple network sockets usage patterns
