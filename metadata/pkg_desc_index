@@ -102,7 +102,7 @@ dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bifunctors 5.3: Bifunctors
 dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
-dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.4.0: Binary serialisation for Haskell values using lazy ByteStrings
+dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.3-r1: data serialization/deserialization conduit library
