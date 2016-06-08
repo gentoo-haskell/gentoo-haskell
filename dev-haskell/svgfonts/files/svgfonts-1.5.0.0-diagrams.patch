@@ -1,9 +1,0 @@
-diff --git a/src/Graphics/SVGFonts/ReadFont.hs b/src/Graphics/SVGFonts/ReadFont.hs
-index fcf40cd..abd03e5 100644
---- a/src/Graphics/SVGFonts/ReadFont.hs
-+++ b/src/Graphics/SVGFonts/ReadFont.hs
-@@ -236,3 +236,3 @@ data Kern n = Kern
-   , kernG2S :: Map.Map String [Int]
--  , kernK   :: Vector n
-+  , kernK   :: V.Vector n
-   } deriving Show
