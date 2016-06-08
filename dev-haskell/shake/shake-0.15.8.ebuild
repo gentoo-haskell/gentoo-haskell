@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="portable"
 
+RESTRICT="test" # slow
+
 RDEPEND="dev-haskell/binary:=[profile?]
 	>=dev-haskell/extra-1.4.8:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?]
