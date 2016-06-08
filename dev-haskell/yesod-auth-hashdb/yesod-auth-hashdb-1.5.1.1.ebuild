@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/cryptohash-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0
-	test? ( dev-haskell/classy-prelude
+	test? ( dev-haskell/basic-prelude
 		>=dev-haskell/hspec-2.0.0
 		dev-haskell/http-conduit
 		dev-haskell/http-types
