@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+comonad +containers +kan-extensions +semigroupoids +semigroups +stm +tagged +transformers +unordered-containers"
 
-RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	comonad? ( >=dev-haskell/comonad-5:=[profile?] <dev-haskell/comonad-6:=[profile?] )
 	kan-extensions? ( >=dev-haskell/kan-extensions-5:=[profile?] <dev-haskell/kan-extensions-6:=[profile?] )
@@ -34,6 +34,11 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-de
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

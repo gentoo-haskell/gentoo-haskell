@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/diff-0.3:=[profile?] <dev-haskell/diff-0.4:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2.0:=[profile?]
@@ -35,3 +35,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3.0 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.1 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1'
+}
