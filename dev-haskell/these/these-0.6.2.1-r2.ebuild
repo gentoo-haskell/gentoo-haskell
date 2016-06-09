@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/bifunctors-0.1:=[profile?]
-	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0:=[profile?]
 	>=dev-haskell/hashable-1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
@@ -42,5 +42,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'bifunctors               >= 0.1   && < 5.3' 'bifunctors               >= 0.1' \
-		'bifunctors             >= 0.1   && < 5.3' 'bifunctors             >= 0.1'
+		'bifunctors             >= 0.1   && < 5.3' 'bifunctors             >= 0.1' \
+		'data-default-class       >= 0.0   && < 0.1' 'data-default-class       >= 0.0'
 }
