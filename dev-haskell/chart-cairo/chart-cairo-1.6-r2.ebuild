@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
 	>=dev-haskell/chart-1.6:=[profile?] <dev-haskell/chart-1.7:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	<dev-haskell/data-default-class-0.1:=[profile?]
+	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/lens-3.9:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
@@ -39,5 +39,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	cabal_chdeps \
-		'lens >= 3.9 && < 4.14' 'lens >= 3.9'
+		'lens >= 3.9 && < 4.14' 'lens >= 3.9' \
+		'data-default-class < 0.1' 'data-default-class'
 }

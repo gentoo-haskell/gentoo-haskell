@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
-	>=dev-haskell/data-default-0.5.3:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
+	>=dev-haskell/data-default-0.5.3:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
@@ -74,7 +74,8 @@ src_prepare() {
 	cabal_chdeps \
 		'cereal               >= 0.3     && < 0.5' 'cereal               >= 0.3' \
 		'transformers         >= 0.2.2   && < 0.5' 'transformers         >= 0.2.2' \
-		'time                 >= 1.1.4   && < 1.6' 'time                 >= 1.1.4'
+		'time                 >= 1.1.4   && < 1.6' 'time                 >= 1.1.4' \
+		'data-default         >= 0.5.3   && < 0.6' 'data-default         >= 0.5.3'
 }
 
 src_configure() {

@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
 	>=dev-haskell/chart-1.6:=[profile?] <dev-haskell/chart-1.7:=[profile?]
 	>=dev-haskell/chart-cairo-1.6:=[profile?] <dev-haskell/chart-cairo-1.7:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	<dev-haskell/data-default-class-0.1:=[profile?]
+	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/gtk-0.9.11:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
@@ -36,3 +36,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'data-default-class < 0.1' 'data-default-class'
+}

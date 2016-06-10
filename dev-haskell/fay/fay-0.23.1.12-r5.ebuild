@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
-	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
+	>=dev-haskell/data-default-0.2:=[profile?]
 	>=dev-haskell/data-lens-light-0.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
@@ -59,7 +59,8 @@ src_prepare() {
 		'base >= 4.5 && < 4.9' 'base >= 4.5' \
 		'process >= 1.1 && < 1.3' 'process >= 1.1' \
 		'time >= 1.4 && < 1.6' 'time >= 1.4' \
-		'transformers >= 0.3 && < 0.4 || > 0.4.1 && < 0.5' 'transformers >= 0.3 && < 0.4 || > 0.4.1'
+		'transformers >= 0.3 && < 0.4 || > 0.4.1 && < 0.5' 'transformers >= 0.3 && < 0.4 || > 0.4.1' \
+		'data-default >= 0.2 && < 0.6' 'data-default >= 0.2'
 
 }
 

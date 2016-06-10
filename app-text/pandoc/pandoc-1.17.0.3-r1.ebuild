@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.12:=[profi
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/cmark-0.5:=[profile?] <dev-haskell/cmark-0.6:=[profile?]
-	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.6:=[profile?]
+	>=dev-haskell/data-default-0.4:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
 	>=dev-haskell/filemanip-0.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
 	>=dev-haskell/haddock-library-1.1:=[profile?] <dev-haskell/haddock-library-1.5:=[profile?]
@@ -85,10 +85,12 @@ latex to pdf: virtual/latex-base (bug #541244)
 "
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'haddock-library >= 1.1 && < 1.3' 'haddock-library >= 1.1 && < 1.5' \
-		'time >= 1.5 && < 1.6' 'time >= 1.5'
-	default
+		'time >= 1.5 && < 1.6' 'time >= 1.5' \
+		'data-default >= 0.4 && < 0.6' 'data-default >= 0.4'
 }
 
 src_configure() {

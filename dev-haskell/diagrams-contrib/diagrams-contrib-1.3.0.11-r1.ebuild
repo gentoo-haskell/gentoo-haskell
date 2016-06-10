@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packing-0.2:=[profile?]
 	>=dev-haskell/colour-2.3.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	>=dev-haskell/data-default-0.5.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+	>=dev-haskell/data-default-0.5.2:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
@@ -45,3 +45,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'data-default >= 0.5.2 && < 0.8' 'data-default >= 0.5.2'
+}

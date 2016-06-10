@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/base-compat-0.8.1:=[profile?] <dev-haskell/base-compat-1:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/colour-2.2:=[profile?] <dev-haskell/colour-3.0:=[profile?]
-	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/kansas-comet-0.4:=[profile?] <dev-haskell/kansas-comet-0.5:=[profile?]
 	>=dev-haskell/mime-types-0.1.0.3:=[profile?] <dev-haskell/mime-types-0.2:=[profile?]
@@ -51,5 +51,6 @@ src_prepare() {
 		'aeson              >= 0.7     && < 0.11' 'aeson >= 0.7' \
 		'base               >= 4.6     && < 4.9' 'base               >= 4.6' \
 		'transformers       >= 0.3     && < 0.5' 'transformers       >= 0.3' \
-		'time              >= 1.4  && < 1.6' 'time              >= 1.4'
+		'time              >= 1.4  && < 1.6' 'time              >= 1.4' \
+		'data-default-class == 0.0.*' 'data-default-class >= 0.0'
 }

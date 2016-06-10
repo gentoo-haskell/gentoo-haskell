@@ -24,7 +24,7 @@ RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.18:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
-	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.7:=[profile?]
+	>=dev-haskell/data-default-0.4:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
@@ -67,7 +67,8 @@ src_prepare() {
 	cabal_chdeps \
 		'binary               >= 0.5    && < 0.8' 'binary               >= 0.5' \
 		'process              >= 1.0    && < 1.3' 'process              >= 1.0' \
-		'time                 >= 1.4    && < 1.6' 'time                 >= 1.4'
+		'time                 >= 1.4    && < 1.6' 'time                 >= 1.4' \
+		'data-default         >= 0.4    && < 0.7' 'data-default         >= 0.4'
 }
 
 src_configure() {

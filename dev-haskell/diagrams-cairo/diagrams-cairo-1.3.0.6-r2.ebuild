@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	dev-haskell/colour:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -44,5 +44,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base >= 4.2 && < 4.9' 'base >= 4.2' \
-		'transformers >= 0.3 && <0.5' 'transformers >= 0.3'
+		'transformers >= 0.3 && <0.5' 'transformers >= 0.3' \
+		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1'
 }
