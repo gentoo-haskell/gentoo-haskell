@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
-	>=dev-haskell/cmdargs-0.9:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/optparse-applicative-0.12:=[profile?] <dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/strict-0.3:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-haskell/yaml-0.7:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
