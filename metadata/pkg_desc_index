@@ -17,7 +17,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.17.0.3: Conversion between markup formats
+app-text/pandoc 1.17.0.3-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -88,7 +88,7 @@ dev-haskell/authenticate-oauth 1.5.1.2: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.12.1 0.13.0-r2: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.12.1 0.13.0-r3: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.8.2 0.9.1: A compatibility layer for base
 dev-haskell/base-orphans 0.3.2 0.4.5 0.5.4: Backwards-compatible orphan instances for base
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
@@ -127,7 +127,7 @@ dev-haskell/bits-atomic 0.1.3-r1: Atomic bit operations on memory locations for 
 dev-haskell/bitset 1.4.8: A space-efficient set data structure
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.6-r2: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.6-r3: HTML5 Canvas Graphics Library
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
@@ -186,12 +186,12 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1 1.5.4 1.6-r1: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r1: Cairo backend for Charts
-dev-haskell/chart-gtk 1.4 1.5.1 1.6: Utility functions for using the chart library with GTK
+dev-haskell/chart 1.4-r1 1.5.4 1.6-r2: A library for generating 2D Charts and Plots
+dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2: Cairo backend for Charts
+dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.0.14: For testing partial and infinite values
-dev-haskell/cheapskate 0.1.0.5: Experimental markdown processor
+dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
 dev-haskell/checkers 0.4.4: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5: QuickCheck support for the Chell testing library
@@ -328,9 +328,9 @@ dev-haskell/derive 2.5.25: A program and library to derive instances for data ty
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.7.2.3-r1: hint-based build service for the diagrams graphics EDSL
-dev-haskell/diagrams-cairo 1.3.0.6-r1: Cairo backend for diagrams drawing EDSL
-dev-haskell/diagrams-canvas 1.3.0.4: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.3.0.11: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-cairo 1.3.0.6-r2: Cairo backend for diagrams drawing EDSL
+dev-haskell/diagrams-canvas 1.3.0.4-r1: HTML5 canvas backend for diagrams drawing EDSL
+dev-haskell/diagrams-contrib 1.3.0.11-r1: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.8: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3.0.1: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.3.1.2-r2: Embedded domain-specific language for declarative graphics
@@ -426,7 +426,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.6: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r4: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r5: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -557,7 +557,7 @@ dev-haskell/haddock 2.10.0-r2 2.13.1-r1 2.13.1-r2 2.13.2 2.13.2-r1 2.13.2.1 2.14
 dev-haskell/haddock-api 2.16.1 2.17.0_pre20160204 2.17.0_pre20160411 2.17.0_pre20160421 2.17.2: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0_pre20160204 1.4.0_pre20160411 1.4.0_pre20160421 1.4.1: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.8.3.1-r1: A static website compiler library
+dev-haskell/hakyll 4.8.3.1-r2: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/half 0.2.2.3: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
@@ -798,7 +798,7 @@ dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.7.1: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
-dev-haskell/kansas-comet 0.4-r2: A JavaScript push mechanism based on the comet idiom
+dev-haskell/kansas-comet 0.4-r3: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keter 1.4.3.1-r1: Web application deployment manager, focusing on Haskell web frameworks
 dev-haskell/keys 3.11: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
@@ -1194,7 +1194,7 @@ dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem p
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.6: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
-dev-haskell/scotty 0.11.0-r1: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
+dev-haskell/scotty 0.11.0-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
 dev-haskell/sdl 0.6.5.1: Binding to libSDL
 dev-haskell/sdl-gfx 0.6.0.2: Binding to libSDL_gfx
