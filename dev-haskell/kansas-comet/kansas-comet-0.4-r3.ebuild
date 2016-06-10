@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
-	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0:=[profile?]
 	>=dev-haskell/scotty-0.10:=[profile?] <dev-haskell/scotty-0.12:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -38,5 +38,6 @@ src_prepare() {
 		'aeson                >= 0.9      && < 0.11' 'aeson                >= 0.9' \
 		'base                 >= 4.6      && < 4.9' 'base                 >= 4.6' \
 		'time                 >= 1.2      && < 1.6' 'time                 >= 1.2' \
-		'transformers         >= 0.3      && < 0.5' 'transformers         >= 0.3'
+		'transformers         >= 0.3      && < 0.5' 'transformers         >= 0.3' \
+		'data-default-class   == 0.0.*' 'data-default-class   >= 0.0'
 }
