@@ -1022,7 +1022,7 @@ dev-haskell/pandoc-types 1.12.4.7 1.16.1-r1: Types for representing a structured
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
-dev-haskell/parseargs 0.1.5.2 0.2.0.4: Full-featured command-line argument parsing library
+dev-haskell/parseargs 0.1.5.2 0.2.0.7: Full-featured command-line argument parsing library
 dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.3-r1: Parsing combinators
@@ -1302,7 +1302,7 @@ dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
 dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.5.16.0: Haskell code prettifier
+dev-haskell/stylish-haskell 0.5.17.0: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
