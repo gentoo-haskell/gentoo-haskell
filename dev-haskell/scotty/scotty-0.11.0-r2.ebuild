@@ -23,7 +23,7 @@ RESTRICT=test # tries to rebind local port too frequently
 RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.3.0:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/case-insensitive-1.0.0.1:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	dev-haskell/fail:=[profile?]
 	>=dev-haskell/http-types-0.8.2:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/monad-control-1.0.0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -50,5 +50,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'aeson               >= 0.6.2.1  && < 0.11' 'aeson >= 0.6.2.1'
+		'aeson               >= 0.6.2.1  && < 0.11' 'aeson >= 0.6.2.1' \
+		'data-default-class  >= 0.0.1    && < 0.1' 'data-default-class  >= 0.0.1'
 }
