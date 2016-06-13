@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/transformers-0.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DEPEND=>=dev-haskell/transformers-0.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 >=dev-haskell/cabal-1.1.4
 DESCRIPTION=A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
-EAPI=5
+EAPI=6
 HOMEPAGE=https://github.com/aelve/microlens
-IUSE=doc hscolour hoogle profile
+IUSE=profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/transformers-0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.4.4.1
-SRC_URI=mirror://hackage/packages/archive/microlens/0.4.4.1/microlens-0.4.4.1.tar.gz
+SLOT=0/0.4.4.3
+SRC_URI=mirror://hackage/packages/archive/microlens/0.4.4.3/microlens-0.4.4.3.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	haskell-cabal	4d79df5f0e9a64c607226f89768a3456	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	c9d9187f4caa4026a0ceddd8dfceb3c1	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=c2fc9ec742403da45215269ba0e7a553
+_md5_=08c43739f16d6aa6895b58c694225c36
