@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/config-value-0.4:=[profile?] <dev-haskell/config-value-0.5:=[profile?]
 	>=dev-haskell/connection-0.2.4:=[profile?] <dev-haskell/connection-0.3:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/free-4.11:=[profile?] <dev-haskell/free-4.13:=[profile?]
 	>=dev-haskell/haskell-lexer-1.0:=[profile?] <dev-haskell/haskell-lexer-1.1:=[profile?]
 	>=dev-haskell/lens-4.7:=[profile?]
@@ -46,5 +46,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'lens             >= 4.7      && < 4.14' 'lens             >= 4.7'
+		'lens             >= 4.7      && < 4.14' 'lens             >= 4.7' \
+		'data-default-class >= 0.0.1  && < 0.1' ' data-default-class >= 0.0.1'
 }
