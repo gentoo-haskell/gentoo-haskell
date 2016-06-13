@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-1.18:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=app-text/pandoc-1.14:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
@@ -48,7 +48,8 @@ src_prepare() {
 		'scotty             >=0.7   && <0.11' 'scotty             >=0.7' \
 		'Cabal              >=1.18  && <1.23' 'Cabal              >=1.18' \
 		'process            >=1.2   && <1.3' 'process            >=1.2' \
-		'transformers       >=0.4   && <0.5' 'transformers       >=0.4'
+		'transformers       >=0.4   && <0.5' 'transformers       >=0.4' \
+		'data-default-class >=0.0.1 && <0.1' 'data-default-class >=0.0.1'
 }
 
 src_configure() {
