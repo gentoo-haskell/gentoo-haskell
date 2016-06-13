@@ -781,7 +781,7 @@ dev-haskell/ipprint 0.6: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.0: IP Routing Table
 dev-haskell/ipython-kernel 0.8.4.0: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
-dev-haskell/irc-core 1.1.4-r1: An IRC client library and text client
+dev-haskell/irc-core 1.1.4-r2: An IRC client library and text client
 dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
@@ -1193,7 +1193,7 @@ dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
 dev-haskell/sandi 0.3.6: Data encoding library
 dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
-dev-haskell/scientific 0.3.4.6: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.4.7: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.0-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
