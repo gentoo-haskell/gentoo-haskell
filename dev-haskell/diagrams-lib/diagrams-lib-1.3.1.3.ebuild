@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?]
 	>=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
 	>=dev-haskell/colour-2.3.2:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	dev-haskell/data-default-class:=[profile?]
+	<dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-solve-0.1:=[profile?] <dev-haskell/diagrams-solve-0.2:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1.0:=[profile?]
@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/text-0.7.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-0.3.0:=[profile?]
+	>=dev-haskell/transformers-0.3.0:=[profile?] <dev-haskell/transformers-0.6.0:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -49,15 +49,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9.2 )
 "
-
-PATCHES=("${FILESDIR}"/${P}-ghc-8.patch)
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.2 && < 4.9' 'base >= 4.2' \
-		'process >= 1.1 && < 1.3' 'process >= 1.1' \
-		'transformers >= 0.3.0 && < 0.5.0' 'transformers' \
-		'data-default-class < 0.1' 'data-default-class'
-}
