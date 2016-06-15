@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -86,6 +86,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-time-1.5.patch
 	epatch "${FILESDIR}"/${P}-haddock.patch
+	epatch "${FILESDIR}"/${P}-ghc-8.patch
 }
 
 src_configure() {
