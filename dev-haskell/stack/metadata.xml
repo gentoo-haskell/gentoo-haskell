@@ -14,8 +14,6 @@
 	</longdescription>
 	<use>
 		<flag name="integration-tests">Run the integration test suite.</flag>
-	</use>
-	<use>
 		<flag name="disable-git-info">Disable compile-time inclusion of current git info.</flag>
 	</use>
 </pkgmetadata>
