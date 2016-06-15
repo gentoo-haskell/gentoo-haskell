@@ -3,7 +3,7 @@ app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
 app-admin/propellor 3.0.5: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
-app-editors/yi 0.11.1-r1 0.12.5: The Haskell-Scriptable Editor
+app-editors/yi 0.11.1-r1 0.12.5 0.12.6: The Haskell-Scriptable Editor
 app-emacs/ghc-mod 5.5.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3: Extensible Haskell pretty printer
