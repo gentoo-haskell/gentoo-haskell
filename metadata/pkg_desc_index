@@ -610,7 +610,7 @@ dev-haskell/hatex 3.17.0.2: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
 dev-haskell/haxr 3000.11.1.6: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
-dev-haskell/hclip 3.0.0.3: A small cross-platform library for reading and modifying the system clipboard
+dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.2: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
