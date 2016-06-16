@@ -38,6 +38,8 @@ DEPEND="${RDEPEND}
 				dev-haskell/text ) )
 "
 
+PATCHES=("${FILESDIR}"/${P}-build-deps.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable) \
