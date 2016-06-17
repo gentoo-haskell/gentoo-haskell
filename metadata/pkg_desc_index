@@ -1079,7 +1079,6 @@ dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7 1.0.8: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.12: A variety of alternative parser combinator libraries
-dev-haskell/pool-conduit 0.1.2.3: Resource pool allocations via ResourceT. (deprecated)
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.14 0.14-r100: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
