@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/clock-0.3:=[profile?]
 		dev-haskell/monadcatchio-transformers:=[profile?]
 		dev-haskell/transformers:=[profile?]
 		>=dev-lang/ghc-6.10.4:=
-		dev-qt/qtcore
-		sys-devel/gcc[cxx]"
+		dev-qt/qtcore:4=
+		sys-devel/gcc:*[cxx]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		virtual/pkgconfig"

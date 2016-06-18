@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	dev-libs/openssl
+	dev-libs/openssl:0=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
