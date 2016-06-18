@@ -33,8 +33,7 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.10:=[profile?]
 	>=dev-haskell/websockets-snap-0.8:=[profile?] <dev-haskell/websockets-snap-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
-	|| ( ( >=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.10:=[profile?] )
-		( >=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-0.12:=[profile?] ) )
+	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.3.0:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "

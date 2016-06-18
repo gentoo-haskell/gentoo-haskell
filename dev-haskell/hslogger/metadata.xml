@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="buildtests">Build the executable to run unit tests.</flag>
-	</use>
 	<longdescription>
 		hslogger is a logging framework for Haskell, roughly similar to
 		Python's logging module.
