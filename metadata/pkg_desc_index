@@ -544,7 +544,7 @@ dev-haskell/gstreamer 0.12.5.0-r2 0.12.8: Binding to the GStreamer open source m
 dev-haskell/gtk 0.13.9 0.14.2 0.14.3 0.14.4: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-traymanager 0.1.6: A wrapper around the eggtraymanager library for Linux system trays
-dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0 0.13.2.0: Tools to build the Gtk2Hs suite of User Interface libraries
+dev-haskell/gtk2hs-buildtools 0.13.0.4-r3 0.13.1.0 0.13.2.1: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.7 0.13.9 0.14.2 0.14.3 0.14.4: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.12.5.0-r3 0.12.5.0-r100: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
@@ -968,7 +968,7 @@ dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.3-r1: Bindings to the nanomsg library
 dev-haskell/nanoprolog 0.3-r2: Very small interpreter for a Prolog-like language
 dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's API
-dev-haskell/nats 1.1-r1: Natural numbers
+dev-haskell/nats 1.1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/ncurses 0.2.15: Modernised bindings to GNU ncurses
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
@@ -1232,7 +1232,7 @@ dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
-dev-haskell/shellmate 0.2.3-r2: Simple interface for shell scripting in Haskell
+dev-haskell/shellmate 0.2.3-r2 0.3.2.2: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.6: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
