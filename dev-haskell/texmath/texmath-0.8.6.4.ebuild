@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 				dev-haskell/text ) )
 "
 
-PATCHES=("${FILESDIR}"/${P}-build-deps.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.8.6.3-build-deps.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
