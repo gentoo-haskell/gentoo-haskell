@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/old-locale:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
-DESCRIPTION=Compatibility of TimeLocale between old-locale and time-1.5
+DEPEND=>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=Haskell 98 Lens Families
 EAPI=6
-HOMEPAGE=https://github.com/khibino/haskell-time-locale-compat
+HOMEPAGE=http://hackage.haskell.org/package/lens-family-core
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=dev-haskell/old-locale:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.1.1.2
-SRC_URI=mirror://hackage/packages/archive/time-locale-compat/0.1.1.2/time-locale-compat-0.1.1.2.tar.gz
+RDEPEND=>=dev-haskell/transformers-0.2.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/1.2.1
+SRC_URI=mirror://hackage/packages/archive/lens-family-core/1.2.1/lens-family-core-1.2.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	haskell-cabal	4d79df5f0e9a64c607226f89768a3456	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	c9d9187f4caa4026a0ceddd8dfceb3c1	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=e3d4e7e18f70e443820177e203b9947e
+_md5_=40d1959db9d29f880343f00216df5d8b
