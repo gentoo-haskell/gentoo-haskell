@@ -19,24 +19,24 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
 
 RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.18:=[profile?]
-	>=dev-haskell/binary-0.5:=[profile?]
+	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/cryptohash-0.7:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
-	>=dev-haskell/data-default-0.4:=[profile?]
+	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-	>=dev-haskell/pandoc-citeproc-0.4:=[profile?] <dev-haskell/pandoc-citeproc-0.10:=[profile?]
+	>=dev-haskell/pandoc-citeproc-0.4:=[profile?] <dev-haskell/pandoc-citeproc-0.11:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3.4:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.14:=[profile?]
+	>=dev-haskell/tagsoup-0.13.1:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -60,16 +60,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'binary               >= 0.5    && < 0.8' 'binary               >= 0.5' \
-		'process              >= 1.0    && < 1.3' 'process              >= 1.0' \
-		'time                 >= 1.4    && < 1.6' 'time                 >= 1.4' \
-		'data-default         >= 0.4    && < 0.7' 'data-default         >= 0.4'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
