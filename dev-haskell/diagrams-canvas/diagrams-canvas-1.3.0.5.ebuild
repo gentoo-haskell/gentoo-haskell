@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.7:=[profile?]
 	>=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.15:=[profile?]
@@ -34,11 +34,3 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.6 && < 4.9' 'base >= 4.6' \
-		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1'
-}
