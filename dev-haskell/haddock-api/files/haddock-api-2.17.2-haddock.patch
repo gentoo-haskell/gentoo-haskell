@@ -1,9 +1,0 @@
-diff --git a/src/Haddock/Interface/Create.hs b/src/Haddock/Interface/Create.hs
-index 007038c..61b48f0 100644
---- a/src/Haddock/Interface/Create.hs
-+++ b/src/Haddock/Interface/Create.hs
-@@ -827,3 +827,3 @@ extractRecSel nm mdl t tvs (L _ con : rest) =
-   data_ty
--    -- | ResTyGADT _ ty <- con_res con = ty
-+    -- rm: | ResTyGADT _ ty <- con_res con = ty
-     | ConDeclGADT{} <- con = hsib_body $ con_type con
