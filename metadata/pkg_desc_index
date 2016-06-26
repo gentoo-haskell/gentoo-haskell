@@ -205,9 +205,9 @@ dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
-dev-haskell/classy-prelude 0.12.7: A typeclass-based Prelude
-dev-haskell/classy-prelude-conduit 0.12.7: conduit instances for classy-prelude
-dev-haskell/classy-prelude-yesod 0.12.7: Provide a classy prelude including common Yesod functionality
+dev-haskell/classy-prelude 0.12.7 0.12.8: A typeclass-based Prelude
+dev-haskell/classy-prelude-conduit 0.12.7 0.12.8: conduit instances for classy-prelude
+dev-haskell/classy-prelude-yesod 0.12.7 0.12.8: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.10 0.10.1: CSS preprocessor as embedded Haskell
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.1: Securely store session data in a client-side cookie
@@ -328,11 +328,11 @@ dev-haskell/derive 2.5.26: A program and library to derive instances for data ty
 dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.7.2.3-r1: hint-based build service for the diagrams graphics EDSL
-dev-haskell/diagrams-cairo 1.3.0.6-r2: Cairo backend for diagrams drawing EDSL
-dev-haskell/diagrams-canvas 1.3.0.4-r1: HTML5 canvas backend for diagrams drawing EDSL
+dev-haskell/diagrams-cairo 1.3.1: Cairo backend for diagrams drawing EDSL
+dev-haskell/diagrams-canvas 1.3.0.5: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.11-r1: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.8: Core libraries for diagrams EDSL
-dev-haskell/diagrams-gtk 1.3.0.1: Backend for rendering diagrams directly to GTK windows
+dev-haskell/diagrams-gtk 1.3.0.2: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.3.1.3: Embedded domain-specific language for declarative graphics
 dev-haskell/diagrams-pgf 0.1.0.4: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.6: Postscript backend for diagrams drawing EDSL
@@ -1173,10 +1173,10 @@ dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
-dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2: High performance, regular, shape polymorphic parallel arrays
-dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2: Algorithms using the Repa array library
+dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
-dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1: Read and write Repa arrays in various formats
+dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
 dev-haskell/replib 0.5.3.5: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
