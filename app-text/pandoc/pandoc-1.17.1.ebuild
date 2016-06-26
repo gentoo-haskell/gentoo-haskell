@@ -84,6 +84,13 @@ additional packages:
 latex to pdf: virtual/latex-base (bug #541244)
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tagsoup >= 0.13.7 && < 0.14' 'tagsoup >= 0.13.7'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \
