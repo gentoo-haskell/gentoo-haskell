@@ -487,7 +487,7 @@ dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1: The Glasgow Haskell Co
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
-dev-haskell/ghc-exactprint 0.5.0.1: ExactPrint for GHC
+dev-haskell/ghc-exactprint 0.5.0.1 0.5.1.1: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.4: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Ghc-Api monads and monad-transformers
@@ -653,7 +653,7 @@ dev-haskell/hledger-ui 0.27.5: Curses-style user interface for the hledger accou
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22 1.9.34: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.35: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.1: Numeric Linear Algebra
