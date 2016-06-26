@@ -21,7 +21,7 @@ IUSE="emacs +gpl"
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
 	>=dev-haskell/cpphs-1.20.1:=[profile?]
-	>=dev-haskell/extra-0.5:=[profile?]
+	>=dev-haskell/extra-1.4.9:2=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/refact-0.3:=[profile?]
 	dev-haskell/transformers:=[profile?]
