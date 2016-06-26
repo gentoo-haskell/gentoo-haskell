@@ -822,7 +822,7 @@ dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printe
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/language-javascript 0.5.14.5 0.6.0.5: Parser for JavaScript
+dev-haskell/language-javascript 0.5.14.5 0.6.0.5 0.6.0.7: Parser for JavaScript
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
@@ -1232,7 +1232,7 @@ dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/shellmate 0.2.3-r2 0.3.2.2: Simple interface for shell scripting in Haskell
-dev-haskell/shelly 1.6.6: shell-like (systems) programming in Haskell
+dev-haskell/shelly 1.6.8: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
