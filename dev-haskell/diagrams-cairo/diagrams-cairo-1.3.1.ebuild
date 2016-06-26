@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	dev-haskell/colour:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -31,19 +31,10 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profil
 	>=dev-haskell/pango-0.12.5:=[profile?] <dev-haskell/pango-0.14:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-haskell/vector-0.10.0:=[profile?] <dev-haskell/vector-0.12:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.2 && < 4.9' 'base >= 4.2' \
-		'transformers >= 0.3 && <0.5' 'transformers >= 0.3' \
-		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1'
-}
