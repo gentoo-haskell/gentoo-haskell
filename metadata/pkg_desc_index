@@ -1196,8 +1196,8 @@ dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
 dev-haskell/sandi 0.3.6: Data encoding library
-dev-haskell/sbv 4.4 5.9 5.11: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
-dev-haskell/sbvplugin 0.6: Formally prove properties of Haskell programs using SBV/SMT
+dev-haskell/sbv 4.4 5.9 5.11 5.12: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
+dev-haskell/sbvplugin 0.6 0.7: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.7: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.0-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
@@ -1282,7 +1282,7 @@ dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.3.0: A library of statistical type
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
-dev-haskell/stm-conduit 2.8.0-r1: Introduces conduits to channels, and promotes using conduits concurrently
+dev-haskell/stm-conduit 3.0.0: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-split 0.0.0.1: TMVars, TVars and TChans with distinguished input and output side
 dev-haskell/stmonadtrans 0.3.3: A monad transformer version of the ST monad
