@@ -186,9 +186,9 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1 1.5.4 1.6-r2: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2: Cairo backend for Charts
-dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1: Utility functions for using the chart library with GTK
+dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1: A library for generating 2D Charts and Plots
+dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1: Cairo backend for Charts
+dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.0.14: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
@@ -489,7 +489,7 @@ dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's m
 dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
 dev-haskell/ghc-exactprint 0.5.0.1 0.5.1.1: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
-dev-haskell/ghc-heap-view 0.5.4: Extract the heap representation of Haskell values and thunks
+dev-haskell/ghc-heap-view 0.5.4 0.5.7: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Ghc-Api monads and monad-transformers
 dev-haskell/ghc-parser 0.1.8.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
