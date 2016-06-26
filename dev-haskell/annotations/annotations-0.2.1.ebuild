@@ -21,6 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# https://ghc.haskell.org/trac/ghc/ticket/12234
 RESTRICT=test # tests when build as -O1 blow up all RAM
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
