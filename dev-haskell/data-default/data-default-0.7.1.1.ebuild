@@ -18,8 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE=""
 
-RDEPEND=">=dev-haskell/data-default-class-0.1.1:=[profile?]
-	>=dev-haskell/data-default-instances-base-0.1.0:=[profile?]
+RDEPEND=">=dev-haskell/data-default-class-0.1.2.0:=[profile?]
 	dev-haskell/data-default-instances-containers:=[profile?]
 	dev-haskell/data-default-instances-dlist:=[profile?]
 	dev-haskell/data-default-instances-old-locale:=[profile?]
