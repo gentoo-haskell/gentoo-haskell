@@ -668,7 +668,7 @@ dev-haskell/hoodle-parser 0.3.0: Hoodle file parser
 dev-haskell/hoodle-publish 0.2.0: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0: Data types for programs for hoodle file format
-dev-haskell/hoogle 4.2.43-r1: Haskell API Search
+dev-haskell/hoogle 4.2.43-r1 5.0: Haskell API Search
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.7: Generates ctags for Haskell, incorporating import lists and qualified imports
@@ -1219,7 +1219,7 @@ dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment var
 dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
-dev-haskell/shake 0.15.8: Build system library, like Make, but more accurate dependencies
+dev-haskell/shake 0.15.10: Build system library, like Make, but more accurate dependencies
 dev-haskell/shakespeare 2.0.9: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
