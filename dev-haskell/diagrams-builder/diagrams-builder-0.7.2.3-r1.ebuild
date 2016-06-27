@@ -46,6 +46,7 @@ src_prepare() {
 	cabal_chdeps \
 		'base >=4.2 && < 4.9' 'base >=4.2' \
 		'lens >= 4.0 && < 4.14' 'lens >= 4.0' \
+		'lens >= 3.8 && < 4.14' 'lens >= 3.8' \
 		'transformers >= 0.3 && < 0.5' 'transformers >= 0.3'
 }
 
