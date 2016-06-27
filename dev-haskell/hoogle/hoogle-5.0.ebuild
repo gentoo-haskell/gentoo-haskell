@@ -48,7 +48,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/warp-tls:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	localdb? ( app-portage/fquery )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
