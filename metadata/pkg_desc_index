@@ -1209,7 +1209,7 @@ dev-haskell/sdl-ttf 0.6.2.2: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.1: Semigroupoids: Category sans id
-dev-haskell/semigroups 0.18.1: Anything that associates
+dev-haskell/semigroups 0.18.2: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
