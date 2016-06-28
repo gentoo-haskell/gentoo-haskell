@@ -280,7 +280,7 @@ dev-haskell/cryptocipher 0.6.2: Symmetrical block and stream ciphers
 dev-haskell/cryptohash 0.11.9: collection of crypto hashes, fast, pure and practical
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
-dev-haskell/cryptohash-sha256 0.11.100.0: Fast, pure and practical SHA-256 implementation
+dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
 dev-haskell/cryptonite 0.16 0.17: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
@@ -354,9 +354,9 @@ dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.0: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
-dev-haskell/distributed-process 0.5.5.1 0.6.1-r1: Cloud Haskell: Erlang-style concurrency in Haskell
+dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1: Simple zero-configuration backend for Cloud Haskell
-dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1: Tests and test support tools for distributed-process
+dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1 0.4.6: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
@@ -364,7 +364,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.7.1.2: Difference lists
 dev-haskell/dlist-instances 0.1: Difference lists instances
-dev-haskell/dns 1.4.5 2.0.2: DNS library in Haskell
+dev-haskell/dns 1.4.5 2.0.2 2.0.3: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
@@ -510,7 +510,7 @@ dev-haskell/glade 0.12.5.0-r3 0.12.5.0-r100: Binding to the glade library
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0: Binding to the GLIB library for Gtk2Hs
-dev-haskell/glob 0.7.5: Globbing library
+dev-haskell/glob 0.7.7: Globbing library
 dev-haskell/gloss 1.10.1.1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.10.1.1: Data structures and algorithms for working with 2D graphics
 dev-haskell/gloss-examples 1.10.1.1: Examples using the gloss library
