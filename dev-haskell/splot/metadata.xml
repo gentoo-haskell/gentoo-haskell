@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A tool for visualizing the lifecycle of many concurrent multi-staged processes.
+		Each process has a name, it starts at a point in time, ends at a point in time, and at some
+		points in time it changes colour. See presentation &lt;http://www.slideshare.net/jkff/two-visualization-tools&gt;
+		or download &lt;http://jkff.info/presentations/two-visualization-tools.pdf&gt;.
+	</longdescription>
+</pkgmetadata>
