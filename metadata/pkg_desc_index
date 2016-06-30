@@ -731,7 +731,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.29: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.30: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.4.1: http-client backend using the connection package and tls library
@@ -800,7 +800,7 @@ dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.7.1: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
+dev-haskell/juicypixels 3.2.7.2: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r3: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keter 1.4.3.1-r1: Web application deployment manager, focusing on Haskell web frameworks
@@ -1217,7 +1217,7 @@ dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.6.1 0.7.1: A family of combinators for defining webservices APIs
 dev-haskell/servant-server 0.6.1 0.7.1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
-dev-haskell/setlocale 1.0.0.3: Haskell bindings to setlocale
+dev-haskell/setlocale 1.0.0.4: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.10: Build system library, like Make, but more accurate dependencies
@@ -1270,7 +1270,7 @@ dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative
 dev-haskell/split 0.2.3.1: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
-dev-haskell/spreadsheet 0.1.3.3: Read and write spreadsheets from and to CSV files in a lazy way
+dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
