@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package exports a module which is the recommended starting point for using &lt;http://hackage.haskell.org/package/microlens microlens&gt; if you aren&#39;t trying to keep your dependencies minimal. By importing @Lens.Micro.Platform@ you get all functions and instances from &lt;http://hackage.haskell.org/package/microlens microlens&gt;, &lt;http://hackage.haskell.org/package/microlens-th microlens-th&gt;, &lt;http://hackage.haskell.org/package/microlens-mtl microlens-mtl&gt;, &lt;http://hackage.haskell.org/package/microlens-ghc microlens-ghc&gt;, as well as instances for @Vector@, @Text@, and @HashMap@.
+		
+		The minor and major versions of microlens-platform are incremented whenever the minor and major versions of any other microlens package are incremented, so you can depend on the exact version of microlens-platform without specifying the version of microlens (microlens-mtl, etc) you need.
+		
+		This package is a part of the &lt;http://hackage.haskell.org/package/microlens microlens&gt; family; see the readme &lt;https://github.com/aelve/microlens#readme on Github&gt;.
+	</longdescription>
+</pkgmetadata>
