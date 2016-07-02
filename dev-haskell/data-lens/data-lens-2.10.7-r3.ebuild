@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+derivedatatypeable"
 
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?]
-	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-5.1:=[profile?]
+	>=dev-haskell/semigroupoids-4.0:=[profile?]
 	>=dev-haskell/transformers-0.2.0:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -33,7 +33,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'comonad              >= 4.0     && < 4.3' 'comonad              >= 4.0' \
-		'transformers         >= 0.2.0   && < 0.5' 'transformers         >= 0.2.0'
+		'transformers         >= 0.2.0   && < 0.5' 'transformers         >= 0.2.0' \
+		'semigroupoids        >= 4.0     && < 5.1' 'semigroupoids        >= 4.0'
 }
 
 src_configure() {
