@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/microlens-0.4.4:=[profile?] <dev-haskell/microlens-0.4.5:=[profile?]
-	>=dev-haskell/microlens-ghc-0.4.4:=[profile?] <dev-haskell/microlens-ghc-0.4.5:=[profile?]
-	>=dev-haskell/microlens-mtl-0.1.7:=[profile?] <dev-haskell/microlens-mtl-0.1.8:=[profile?]
+	>=dev-haskell/microlens-0.4.5:=[profile?] <dev-haskell/microlens-0.4.6:=[profile?]
+	>=dev-haskell/microlens-ghc-0.4.5:=[profile?] <dev-haskell/microlens-ghc-0.4.6:=[profile?]
+	>=dev-haskell/microlens-mtl-0.1.8:=[profile?] <dev-haskell/microlens-mtl-0.1.9:=[profile?]
 	>=dev-haskell/microlens-th-0.4.0:=[profile?] <dev-haskell/microlens-th-0.4.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
