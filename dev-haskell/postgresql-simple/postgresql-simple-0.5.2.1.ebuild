@@ -31,10 +31,10 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/uuid-types-1.0.0:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.9.2
+	>=dev-haskell/cabal-1.16.0
 	test? ( dev-haskell/base16-bytestring
 		dev-haskell/cryptohash
 		dev-haskell/hunit
