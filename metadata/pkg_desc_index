@@ -106,7 +106,7 @@ dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Has
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
-dev-haskell/binary-orphans 0.1.5.0: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.5.0-r1: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
@@ -1563,7 +1563,7 @@ dev-haskell/yesod-auth 1.4.13.3: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.2: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.5.1.1: Authentication plugin for Yesod
-dev-haskell/yesod-auth-oauth2 0.1.10: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.1.10 0.2.0: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.18.2: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.22: Creation of type-safe, RESTful web applications
