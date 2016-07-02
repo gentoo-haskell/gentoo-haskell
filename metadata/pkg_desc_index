@@ -305,7 +305,7 @@ dev-haskell/data-endian 0.1: Endian-sensitive data
 dev-haskell/data-flags 0.0.3.1: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
-dev-haskell/data-lens 2.10.7-r2: Used to be Haskell 98 Lenses
+dev-haskell/data-lens 2.10.7-r3: Used to be Haskell 98 Lenses
 dev-haskell/data-lens-fd 2.0.5-r2: Lenses
 dev-haskell/data-lens-ixset 0.1.4-r2: A Lens for IxSet
 dev-haskell/data-lens-light 0.1.2.2: Simple lenses, minimum dependencies
@@ -904,6 +904,7 @@ dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom n
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
 dev-haskell/microlens 0.4.4.3: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
 dev-haskell/microlens-ghc 0.4.4.0: microlens + array, bytestring, containers, transformers
+dev-haskell/microlens-mtl 0.1.7.1: microlens support for Reader/Writer/State from mtl
 dev-haskell/microlens-platform 0.3.1.1: Feature-complete microlens
 dev-haskell/microlens-th 0.4.0.0: Automatic generation of record lenses for microlens
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
@@ -1024,7 +1025,7 @@ dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3 0.9.1.1: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.7.4-r1 0.8.1.3 0.9.1.1 0.10: Supports using pandoc with citeproc
 dev-haskell/pandoc-types 1.12.4.7 1.16.1-r1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
@@ -1211,7 +1212,7 @@ dev-haskell/sdl-mixer 0.6.2.0: Binding to libSDL_mixer
 dev-haskell/sdl-ttf 0.6.2.2: Binding to libSDL_ttf
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
-dev-haskell/semigroupoids 4.2 4.3 5.0.1: Semigroupoids: Category sans id
+dev-haskell/semigroupoids 4.2 4.3 5.0.1 5.1: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.2: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
