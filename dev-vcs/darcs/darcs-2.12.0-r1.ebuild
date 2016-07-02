@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+curl +network-uri +terminfo +threaded"
 
 RESTRICT=test # occasionally hangs on directory creation race conditions
@@ -41,7 +41,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.4:=[profile?] <dev-haskell/async-2.2:=[profil
 	>=dev-haskell/random-1.0.1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/regex-applicative-0.2:=[profile?] <dev-haskell/regex-applicative-0.4:=[profile?]
 	>=dev-haskell/regex-compat-tdfa-0.95.1:=[profile?] <dev-haskell/regex-compat-tdfa-0.96:=[profile?]
-	>=dev-haskell/sandi-0.2:=[profile?] <dev-haskell/sandi-0.4:=[profile?]
+	>=dev-haskell/sandi-0.2:=[profile?]
 	>=dev-haskell/tar-0.4:=[profile?] <dev-haskell/tar-0.6:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
@@ -71,6 +71,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 	curl? ( virtual/pkgconfig )
 "
+
+PATCHES=("${FILESDIR}"/${P}-sandi-0.4.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
