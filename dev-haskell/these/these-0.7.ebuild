@@ -38,3 +38,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'semigroupoids            >= 1.0   && < 5.1' 'semigroupoids            >= 1.0'
+}
