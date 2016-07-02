@@ -1198,7 +1198,7 @@ dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSem
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
-dev-haskell/sandi 0.3.6: Data encoding library
+dev-haskell/sandi 0.3.6 0.4.0: Data encoding library
 dev-haskell/sbv 4.4 5.9 5.11 5.12: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6 0.7: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scientific 0.3.4.8: Numbers represented using scientific notation
@@ -1624,7 +1624,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.4.4: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1 2.12.0-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 6.20160511 6.20160613: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
