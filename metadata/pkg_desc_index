@@ -59,7 +59,6 @@ dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Prin
 dev-haskell/annotations 0.2.1: Constructing, analyzing and destructing annotated trees
 dev-haskell/ansi-terminal 0.6.2.3: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
-dev-haskell/anydbm 1.0.7: Interface for DBM-like database systems
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
 dev-haskell/apply-refact 0.2.0.0: Perform refactorings specified by the refact library
@@ -902,7 +901,7 @@ dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
-dev-haskell/microlens 0.4.4.3: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
+dev-haskell/microlens 0.4.5.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
 dev-haskell/microlens-ghc 0.4.4.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.7.1: microlens support for Reader/Writer/State from mtl
 dev-haskell/microlens-platform 0.3.1.1: Feature-complete microlens
