@@ -21,7 +21,7 @@ IUSE=""
 RESTRICT=test # almost compiles
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
-	>=dev-haskell/aeson-pretty-0.7:=[profile?] <dev-haskell/aeson-pretty-0.8:=[profile?]
+	>=dev-haskell/aeson-pretty-0.7:=[profile?]
 	>=dev-haskell/binary-0.7.0.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
@@ -50,6 +50,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	epatch "${FILESDIR}"/${P}-aeson-pretty-0.8.patch
 
 	cabal_chdeps \
 		'aeson >= 0.7 && < 0.9' 'aeson >= 0.7' \
@@ -57,5 +58,6 @@ src_prepare() {
 		'blaze-markup >= 0.5.1 && < 0.7' 'blaze-markup >= 0.5.1' \
 		'language-glsl >= 0.0.2 && < 0.2' 'language-glsl >= 0.0.2' \
 		'binary >= 0.7.0.0 && < 0.8' 'binary >= 0.7.0.0' \
-		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
+		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2' \
+		'aeson-pretty >= 0.7 && < 0.8' 'aeson-pretty >= 0.7'
 }
