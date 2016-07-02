@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/microlens-0.4.4:=[profile?] <dev-haskell/microlens-0.4.5:=[profile?]
+RDEPEND=">=dev-haskell/microlens-0.4.5:=[profile?] <dev-haskell/microlens-0.4.6:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
