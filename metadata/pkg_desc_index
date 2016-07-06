@@ -770,7 +770,7 @@ dev-haskell/indexed-extras 0.1.1-r5: Indexed functors, monads and comonads that 
 dev-haskell/instant-generics 0.5: Generic programming library with a sum of products view
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
-dev-haskell/intero 0.1.15: Complete interactive development program for Haskell
+dev-haskell/intero 0.1.16: Complete interactive development program for Haskell
 dev-haskell/interpolate 0.1.0: String interpolation done right
 dev-haskell/intervals 0.7.2: Interval Arithmetic
 dev-haskell/invariant 0.2.2 0.3.1: Haskell 98 invariant functors
