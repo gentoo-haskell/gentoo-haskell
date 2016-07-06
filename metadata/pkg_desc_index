@@ -1085,7 +1085,7 @@ dev-haskell/polyparse 1.12: A variety of alternative parser combinator libraries
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.14 0.14-r100: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
-dev-haskell/portmidi 0.1.6.0: A binding for PortMedia/PortMidi
+dev-haskell/portmidi 0.1.6.0 0.1.6.1: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.1.1: low-level binding to libpq
 dev-haskell/postgresql-simple 0.4.10.0 0.5.2.1: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
