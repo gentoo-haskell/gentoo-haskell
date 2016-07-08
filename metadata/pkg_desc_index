@@ -209,7 +209,7 @@ dev-haskell/classy-prelude-conduit 0.12.7 0.12.8: conduit instances for classy-p
 dev-haskell/classy-prelude-yesod 0.12.7 0.12.8: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.11: CSS preprocessor as embedded Haskell
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
-dev-haskell/clientsession 0.9.1.1: Securely store session data in a client-side cookie
+dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
 dev-haskell/cmark 0.5.2.1: Fast, accurate CommonMark (Markdown) parser and renderer
@@ -236,8 +236,8 @@ dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished inpu
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
 dev-haskell/conduit 1.2.6.6: Streaming data processing library
-dev-haskell/conduit-combinators 1.0.3.1: Commonly used conduit functions, for both chunked and unchunked data
-dev-haskell/conduit-extra 1.1.13.1: Batteries included conduit: adapters for common libraries
+dev-haskell/conduit-combinators 1.0.4: Commonly used conduit functions, for both chunked and unchunked data
+dev-haskell/conduit-extra 1.1.13.2: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.2: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0: Configuration management
@@ -252,7 +252,7 @@ dev-haskell/control-monad-loop 0.1: Simple monad transformer for imperative-styl
 dev-haskell/control-timeout 0.1.2-r1: Timeout handling
 dev-haskell/converge 0.1.0.1: Limit operations for converging sequences
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
-dev-haskell/cookie 0.4.2: HTTP cookie parsing and rendering
+dev-haskell/cookie 0.4.2.1: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
@@ -300,8 +300,8 @@ dev-haskell/data-default-instances-base 0.0.1 0.1.0 0.1.0.1: Default instances f
 dev-haskell/data-default-instances-containers 0.0.1: Default instances for types in containers
 dev-haskell/data-default-instances-dlist 0.0.1: Default instances for types in dlist
 dev-haskell/data-default-instances-old-locale 0.0.1: Default instances for types in old-locale
-dev-haskell/data-endian 0.1: Endian-sensitive data
-dev-haskell/data-flags 0.0.3.1: A package for working with bit masks and flags in general
+dev-haskell/data-endian 0.1.1: Endian-sensitive data
+dev-haskell/data-flags 0.0.3.2: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
 dev-haskell/data-lens 2.10.7-r3: Used to be Haskell 98 Lenses
