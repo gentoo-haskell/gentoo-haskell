@@ -962,7 +962,7 @@ dev-haskell/multirec 0.7.5 0.7.6: Generic programming for families of recursive 
 dev-haskell/multiset 0.3.3: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
-dev-haskell/mutable-containers 0.3.2.1: Abstactions and concrete implementations of mutable containers
+dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
@@ -1562,7 +1562,7 @@ dev-haskell/yesod-auth 1.4.13.3: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.2: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.5.1.1: Authentication plugin for Yesod
-dev-haskell/yesod-auth-oauth2 0.1.10 0.2.0: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.1.10 0.2.1: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.4.18.2: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.22: Creation of type-safe, RESTful web applications
