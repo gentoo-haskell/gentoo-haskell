@@ -240,7 +240,7 @@ dev-haskell/conduit-combinators 1.0.4: Commonly used conduit functions, for both
 dev-haskell/conduit-extra 1.1.13.2: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.2: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
-dev-haskell/configurator 0.2.0.2 0.3.0.0: Configuration management
+dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.2.4 0.2.5: Simple and easy network connections API
 dev-haskell/constraints 0.4.1.3 0.8: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
@@ -1646,7 +1646,7 @@ media-fonts/hasklig 0.2 0.4: Hasklig - a Haskell code font with monospaced ligat
 media-sound/hpodder 1.1.6-r1: Podcast Aggregator (downloader)
 media-sound/live-sequencer 0.0.4-r5: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
-net-mail/list-remote-forwards 0.0.1: List all remote forwards for mail accounts stored in a database
+net-mail/list-remote-forwards 0.0.1-r1: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.2: Count mailboxes in a SQL database
 net-mail/mhailist 0.0-r1: Haskell mailing list manager
 net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability checks on email addresses
