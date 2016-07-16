@@ -38,6 +38,7 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-pandoc-1.16.patch
+	epatch "${FILESDIR}"/${P}-fgl-5.5.3.0.patch
 
 	cabal_chdeps \
 		'time == 1.5.*' 'time >= 1.5'
