@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -59,5 +59,5 @@ src_install() {
 	export INSOPTIONS=--preserve-timestamps
 	doins -r src/*
 	dodoc -r html/*
-	doins "${FILESDIR}/agda-stdlib.agda-lib"
+	doins "${FILESDIR}/standard-library.agda-lib"
 }
