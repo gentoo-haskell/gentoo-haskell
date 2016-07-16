@@ -65,5 +65,5 @@ src_install() {
 	insopts --preserve-timestamps
 	doins -r src/*
 	dodoc -r html/*
-	doins "${FILESDIR}/agda-stdlib.agda-lib"
+	doins "${FILESDIR}/standard-library.agda-lib"
 }

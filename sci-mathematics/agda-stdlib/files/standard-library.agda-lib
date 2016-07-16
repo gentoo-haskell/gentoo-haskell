@@ -1,2 +1,2 @@
-name: agda-stdlib
+name: standard-library
 include: /usr/share/agda-stdlib
