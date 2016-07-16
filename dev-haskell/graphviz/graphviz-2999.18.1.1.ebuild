@@ -19,8 +19,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # too slow
-
 RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/fgl-5.4:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
@@ -34,7 +32,7 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 	test? ( >=dev-haskell/fgl-arbitrary-0.2 <dev-haskell/fgl-arbitrary-0.3
-		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.9 )
+		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.10 )
 "
 
 src_configure() {
