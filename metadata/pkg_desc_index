@@ -743,7 +743,7 @@ dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 1.5.4 1.6.0: HTTP/2.0 library including frames and HPACK
+dev-haskell/http2 1.5.4 1.6.1: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.3.1.1: A unit testing framework for Haskell
