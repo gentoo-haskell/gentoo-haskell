@@ -1,0 +1,9 @@
+diff --git a/Data/Graph/Analysis.hs b/Data/Graph/Analysis.hs
+index 4765f3a..3a4f299 100644
+--- a/Data/Graph/Analysis.hs
++++ b/Data/Graph/Analysis.hs
+@@ -45,3 +45,3 @@ import Data.Graph.Analysis.Reporting
+ 
+-import Data.Graph.Inductive.Graph
++import Data.Graph.Inductive.Graph hiding (size)
+ 
