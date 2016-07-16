@@ -25,5 +25,5 @@ RDEPEND=">=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.6 <dev-haskell/quickcheck-2.9 )
+	test? ( >=dev-haskell/quickcheck-2.6 <dev-haskell/quickcheck-2.10 )
 "

@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/binary-0.4.1:=[profile?] <dev-haskell/binary-0.9:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.9
+	test? ( >=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.10
 		>=dev-haskell/smallcheck-1.0 <dev-haskell/smallcheck-1.2
 		>=dev-haskell/tasty-0.5 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-ant-xml-1.0 <dev-haskell/tasty-ant-xml-1.1
