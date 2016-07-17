@@ -712,7 +712,7 @@ dev-haskell/hsql-mysql 1.8.2 1.8.3: MySQL driver for HSQL
 dev-haskell/hsql-odbc 1.8.2: A Haskell Interface to ODBC
 dev-haskell/hsql-postgresql 1.8.2: A Haskell Interface to PostgreSQL via the PQ library
 dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
-dev-haskell/hsqml 0.2.0.3-r5 0.3.3.0 0.3.4.0: Haskell binding for Qt Quick
+dev-haskell/hsqml 0.3.4.0: Haskell binding for Qt Quick
 dev-haskell/hsshellscript 3.3.4: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.3: Statistics
