@@ -8,15 +8,15 @@ EAPI=6
 #hackport: flags: +release,-freestanding,-ci,-execonly
 
 CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal git-r3
+inherit haskell-cabal
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
-EGIT_REPO_URI="https://github.com/idris-lang/Idris-dev.git"
+SRC_URI="https://dev.gentoo.org/~cynede/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="ffi gmp"
 
 RESTRICT=test # pulls stack
@@ -62,6 +62,8 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+S="${WORKDIR}/Idris-dev"
 
 src_prepare() {
 	default
