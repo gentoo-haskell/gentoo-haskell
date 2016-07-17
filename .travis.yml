@@ -6,14 +6,17 @@ language: python
 python:
     - pypy
 env:
-    - PORTAGE_VER="2.2.28"
+    - PORTAGE_VER="2.3.0"
+before_install:
+    - sudo apt-get -qq update
+    - pip install lxml
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
     - mv .git travis-overlay/
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
-    - wget "https://github.com/gentoo/portage/archive/v${PORTAGE_VER}.tar.gz" -O portage-${PORTAGE_VER}.tar.gz
+    - wget "https://github.com/gentoo/portage/archive/portage-${PORTAGE_VER}.tar.gz" -O portage-${PORTAGE_VER}.tar.gz
     - wget "https://github.com/gentoo-mirror/gentoo/archive/master.tar.gz" -O portage-tree.tar.gz
     - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr spinner.sh
     - chmod a+rwx spinner.sh
@@ -21,7 +24,7 @@ before_script:
     - echo "portage::250:portage,travis" >> /etc/group
     - mkdir -p /etc/portage /usr/portage/distfiles
     - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
-    - tar xzf portage-${PORTAGE_VER}.tar.gz
+    - tar xzf portage-${PORTAGE_VER}.tar.gz && mv portage-portage-${PORTAGE_VER} portage-${PORTAGE_VER}
     - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
@@ -29,5 +32,5 @@ before_script:
     - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
 script:
-    - ./../spinner.sh "python ../portage-${PORTAGE_VER}/bin/repoman full -d"
+    - ./../spinner.sh "python ../portage-${PORTAGE_VER}/repoman/bin/repoman full -d"
 # You can append own scripts after this line
