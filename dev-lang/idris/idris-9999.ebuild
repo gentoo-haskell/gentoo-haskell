@@ -21,30 +21,32 @@ IUSE="ffi gmp"
 
 RESTRICT=test # pulls stack
 
-RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+	>=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/async-2.2:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?] <dev-haskell/blaze-markup-0.8:=[profile?]
 	<dev-haskell/cheapskate-0.2:=[profile?]
 	>=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
-	<dev-haskell/fsnotify-2.2:=[profile?]
+	>=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-2.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/ieee754-0.7:=[profile?] <dev-haskell/ieee754-0.8:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/parsers-0.9:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
+	>=dev-haskell/regex-tdfa-1.2:=[profile?]
 	dev-haskell/safe:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
 	<dev-haskell/terminal-size-0.4:=[profile?]
 	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	<dev-haskell/transformers-0.5:=[profile?]
+	<dev-haskell/transformers-0.6:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
-	>=dev-haskell/trifecta-1.1:=[profile?] <dev-haskell/trifecta-1.6:=[profile?]
+	>=dev-haskell/trifecta-1.6:=[profile?] <dev-haskell/trifecta-1.7:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	<dev-haskell/utf8-string-1.1:=[profile?]
@@ -55,7 +57,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotate
 	>=dev-lang/ghc-7.10.1:=
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
 	gmp? ( <dev-haskell/libffi-0.2:=[profile?]
-		dev-libs/gmp:= )
+		dev-libs/gmp )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
