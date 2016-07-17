@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Initial version with very limited bindings to OpenCV 2.0. (See: &lt;http://opencv.willowgarage.com/wiki/Welcome&gt;)
+		
+		For a functional interface to this library, see the package &quot;cv-combinators&quot;.
+		
+		Online module documentation, if not build below, can be found at &lt;http://www.ee.bgu.ac.il/~noamle/&gt;.
+		
+		/Installation/
+		
+		You must install OpenCV (development packages) prior to installing this package. Currently only tested on Ubuntu Linux, but should work on most linux distributions. For OpenCV installation on other *nix platforms, see &lt;http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.0/&gt;
+		
+		On /Ubuntu/ systems, the appropriate version of OpenCV can be installed by:
+		
+		&gt; sudo apt-get install libcv-dev libhighgui-dev libcvaux-dev
+		
+		You should then have libcv4 and libhighgui4 installed automatically too.
+		
+	</longdescription>
+</pkgmetadata>
