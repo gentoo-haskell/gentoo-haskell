@@ -1410,7 +1410,7 @@ dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim f
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3 0.2.0.4: Generic applicative traversals
-dev-haskell/trifecta 1.5.2-r2: A modern parser combinator library with convenient diagnostics
+dev-haskell/trifecta 1.5.2-r2 1.6: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
@@ -1604,7 +1604,7 @@ dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2005.3-r2 2006.9: The Hugs98 Haskell interpreter
-dev-lang/idris 0.11.1 0.11.2-r1 0.12 9999: Functional Programming Language with Dependent Types
+dev-lang/idris 0.11.1 0.11.2-r1 0.12 0.13_pre20160717 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
