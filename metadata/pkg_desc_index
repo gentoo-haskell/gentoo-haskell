@@ -1585,7 +1585,7 @@ dev-haskell/yesod-worker 0.0.1-r1: Drop-in(ish) background worker system for Yes
 dev-haskell/yi-language 0.1.1.0 0.2.1: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.1: A rope data structure used by Yi
 dev-haskell/zeromq4-haskell 0.6.5: Bindings to ZeroMQ 4.x
-dev-haskell/zip-archive 0.2.3.7 0.3.0.2: Library for creating and modifying zip archives
+dev-haskell/zip-archive 0.2.3.7 0.3.0.4: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2.2: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
