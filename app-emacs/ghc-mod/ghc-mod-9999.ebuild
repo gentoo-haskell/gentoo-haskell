@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -43,6 +43,7 @@ RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/pipes-4.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	dev-haskell/ghc-api:=
+	>=dev-haskell/safe-0.3.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
