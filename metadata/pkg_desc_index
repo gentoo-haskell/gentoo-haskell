@@ -823,7 +823,7 @@ dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printe
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/language-javascript 0.5.14.5 0.6.0.5 0.6.0.7: Parser for JavaScript
+dev-haskell/language-javascript 0.5.14.5 0.6.0.8: Parser for JavaScript
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
