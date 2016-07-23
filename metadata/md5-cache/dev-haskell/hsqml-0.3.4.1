@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
 DEPEND=>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.9:=[profile?] >=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-lang/ghc-7.4.1:= dev-qt/qtcore:5 dev-qt/qtdeclarative:5 dev-qt/qtgui:5 dev-qt/qtwidgets:5 sys-devel/gcc:*[cxx] dev-haskell/c2hs >=dev-haskell/cabal-1.14 virtual/pkgconfig test? ( >=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Haskell binding for Qt Quick
-EAPI=5
+EAPI=6
 HOMEPAGE=http://www.gekkou.co.uk/software/hsqml/
 IUSE=enableqmldebugging +forceghcilib +threadedtestsuite +useexithook usepkgconfig doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/tagged-0.4:=[profile?] <dev-haskell/tagged-0.9:=[profile?] >=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-lang/ghc-7.4.1:= dev-qt/qtcore:5 dev-qt/qtdeclarative:5 dev-qt/qtgui:5 dev-qt/qtwidgets:5 sys-devel/gcc:*[cxx]
 RESTRICT=test
-SLOT=0/0.3.4.0
-SRC_URI=mirror://hackage/packages/archive/hsqml/0.3.4.0/hsqml-0.3.4.0.tar.gz
+SLOT=0/0.3.4.1
+SRC_URI=mirror://hackage/packages/archive/hsqml/0.3.4.1/hsqml-0.3.4.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	haskell-cabal	4d79df5f0e9a64c607226f89768a3456	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	82165206dedb2075f9a0fb8f9b1f9441	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=0f08d529338eeb0b9bea4f67f0061571
+_md5_=e2425b246742da07687a072407ff02bc

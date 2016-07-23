@@ -713,7 +713,7 @@ dev-haskell/hsql-mysql 1.8.2 1.8.3: MySQL driver for HSQL
 dev-haskell/hsql-odbc 1.8.2: A Haskell Interface to ODBC
 dev-haskell/hsql-postgresql 1.8.2: A Haskell Interface to PostgreSQL via the PQ library
 dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
-dev-haskell/hsqml 0.3.4.0: Haskell binding for Qt Quick
+dev-haskell/hsqml 0.3.4.1: Haskell binding for Qt Quick
 dev-haskell/hsshellscript 3.3.4: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.3: Statistics
@@ -1069,7 +1069,7 @@ dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the 
 dev-haskell/pipes-concurrency 2.0.6: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.5: Group streams into substreams
 dev-haskell/pipes-http 1.0.3: HTTP client with pipes interface
-dev-haskell/pipes-network 0.6.4-r1: Use network sockets together with the pipes library
+dev-haskell/pipes-network 0.6.4.1: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.4: Safety for the pipes ecosystem
 dev-haskell/plailude 0.6.0: plaimi's prelude
@@ -1555,7 +1555,7 @@ dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMona
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.7: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.18: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.18.1: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.2: Yet another array library
 dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
