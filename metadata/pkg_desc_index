@@ -1018,7 +1018,7 @@ dev-haskell/openal 1.6.0.1 1.7.0.4: A binding to the OpenAL cross-platform 3D au
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 3.0.1.0: A binding for the OpenGL graphics system
-dev-haskell/openglraw 3.1.0.0 3.2.0.0: A raw binding for the OpenGL graphics system
+dev-haskell/openglraw 3.1.0.0 3.2.1.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
@@ -1096,7 +1096,7 @@ dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
 dev-haskell/pretty-hex 1.0: A library for hex dumps of ByteStrings
 dev-haskell/pretty-ncols 0.1-r1: A implementation of multi-column layout w/ Text.PrettyPrint
-dev-haskell/pretty-show 1.6.10 1.6.11: Tools for working with derived 'Show' instances and generic inspection of values
+dev-haskell/pretty-show 1.6.12: Tools for working with derived 'Show' instances and generic inspection of values
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
