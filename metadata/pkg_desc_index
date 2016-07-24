@@ -1118,7 +1118,7 @@ dev-haskell/protocol-buffers 2.3.1 2.4.0: Parse Google Protocol Buffer specifica
 dev-haskell/protocol-buffers-descriptor 2.3.1 2.4.0: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
-dev-haskell/psqueues 0.2.2.1: Pure priority search queues
+dev-haskell/psqueues 0.2.2.2: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
 dev-haskell/pure-priority-queue 0.14-r1: A pure priority queue
@@ -1509,7 +1509,7 @@ dev-haskell/webkit-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0: JavaScriptCore FFI
 dev-haskell/webkitgtk3 0.13.1.3 0.14.1.1 0.14.2.0: Binding to the Webkit library
 dev-haskell/webkitgtk3-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0: JavaScriptCore FFI from webkitgtk
 dev-haskell/webserver 0.7.1.1: HTTP server library
-dev-haskell/websockets 0.9.6.2: A sensible and clean way to write WebSocket-capable servers in Haskell
+dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0: Snap integration for the websockets library
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
@@ -1626,7 +1626,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160511 6.20160613: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160511 6.20160619: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
