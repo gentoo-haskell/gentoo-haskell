@@ -1420,7 +1420,7 @@ dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
 dev-haskell/type-equality 0.1.2: Type equality, coercion/cast and other operations
-dev-haskell/type-equality-check 0.0.0.3: Type equality check
+dev-haskell/type-equality-check 0.0.0.4: Type equality check
 dev-haskell/type-functions 0.2.0.4: Emulation of type-level functions
 dev-haskell/type-level 0.2.4 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
