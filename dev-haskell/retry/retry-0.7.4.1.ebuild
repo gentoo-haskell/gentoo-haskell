@@ -29,6 +29,6 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.9
 		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.4
 		dev-haskell/mtl
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.9
+		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.10
 		dev-haskell/stm )
 "
