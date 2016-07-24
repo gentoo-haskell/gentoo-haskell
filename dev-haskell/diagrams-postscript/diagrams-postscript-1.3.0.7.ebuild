@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="<dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.15:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
