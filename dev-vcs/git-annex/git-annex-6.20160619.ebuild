@@ -18,7 +18,7 @@ RESTRICT="test"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="+assistant benchmark +concurrentoutput +cryptonite doc +dbus ekg +magicmime +network-uri +pairing +s3 +torrentparser +webapp +webdav +xmpp"
+IUSE="+assistant benchmark +concurrentoutput +cryptonite doc +dbus +magicmime +network-uri +pairing +s3 +torrentparser +webapp +webdav +xmpp"
 
 RDEPEND="dev-haskell/aeson:=
 	dev-haskell/async:=
@@ -68,7 +68,6 @@ RDEPEND="dev-haskell/aeson:=
 	!cryptonite? ( >=dev-haskell/cryptohash-0.11.0:= )
 	dbus? ( >=dev-haskell/dbus-0.10.7:=
 		>=dev-haskell/fdo-notify-0.3:= )
-	ekg? ( dev-haskell/ekg:= )
 	magicmime? ( dev-haskell/magic:= )
 	network-uri? ( >=dev-haskell/network-2.6:=
 			>=dev-haskell/network-uri-2.6:= )
@@ -130,7 +129,6 @@ src_configure() {
 		$(cabal_flag concurrentoutput concurrentoutput) \
 		$(cabal_flag cryptonite cryptonite) \
 		$(cabal_flag dbus dbus) \
-		$(cabal_flag ekg ekg) \
 		$(cabal_flag magicmime magicmime) \
 		$(cabal_flag network-uri network-uri) \
 		$(cabal_flag pairing pairing) \
