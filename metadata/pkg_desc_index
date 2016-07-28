@@ -130,8 +130,8 @@ dev-haskell/blank-canvas 0.6-r3: HTML5 Canvas Graphics Library
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
-dev-haskell/blaze-html 0.7.1.0 0.8.1.1: A blazingly fast HTML combinator library for Haskell
-dev-haskell/blaze-markup 0.6.3.0 0.7.0.3: A blazingly fast markup combinator library for Haskell
+dev-haskell/blaze-html 0.7.1.0 0.8.1.2: A blazingly fast HTML combinator library for Haskell
+dev-haskell/blaze-markup 0.6.3.0 0.7.1.0: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.11.0.0: ElasticSearch client library for Haskell
@@ -1501,7 +1501,7 @@ dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web appl
 dev-haskell/wave 0.1.3: WAVE audio file IO library
 dev-haskell/web-encodings 0.3.0.9-r1: Encapsulate multiple web encoding in a single package. (deprecated)
 dev-haskell/web-plugins 0.2.9: dynamic plugin system for web applications
-dev-haskell/web-routes 0.27.10: portable, type-safe URL routing
+dev-haskell/web-routes 0.27.11: portable, type-safe URL routing
 dev-haskell/web-routes-happstack 0.23.10: Adds support for using web-routes with Happstack
 dev-haskell/webdriver 0.8.3: a Haskell client for the Selenium WebDriver protocol
 dev-haskell/webkit 0.13.1.3 0.14.1.1 0.14.2.0: Binding to the Webkit library
