@@ -25,8 +25,7 @@ RDEPEND=">=dev-haskell/text-0.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( dev-haskell/doctest
-		dev-haskell/glob
+	test? ( >=dev-haskell/doctest-0.11 <dev-haskell/doctest-0.12
 		>=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/quickcheck )
