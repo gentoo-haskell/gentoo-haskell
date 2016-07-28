@@ -105,7 +105,7 @@ dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Has
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
-dev-haskell/binary-orphans 0.1.5.1-r1: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.5.1-r2: Orphan instances for binary
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
@@ -530,7 +530,7 @@ dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
 dev-haskell/graphalyze 0.14.1.1-r1: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.2.9: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.18.1.1: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.18.1.2: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3-r1: Type-safe datatype-database mapping library
@@ -729,7 +729,7 @@ dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 1.0.0.1: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
-dev-haskell/http-api-data 0.2.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.2.4: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
