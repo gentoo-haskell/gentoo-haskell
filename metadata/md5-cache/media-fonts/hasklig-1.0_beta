@@ -1,0 +1,14 @@
+DEFINED_PHASES=install postinst postrm setup
+DEPEND=X? ( x11-apps/mkfontdir media-fonts/encodings )
+DESCRIPTION=Hasklig - a Haskell code font with monospaced ligatures
+EAPI=5
+HOMEPAGE=https://github.com/i-tu/Hasklig
+IUSE=X
+KEYWORDS=~amd64 ~x86
+LICENSE=OFL-1.1
+RESTRICT=binchecks strip
+SLOT=0
+SRC_URI=https://github.com/i-tu/Hasklig/releases/download/v1.0-beta/Hasklig-1.0-Beta.zip
+_eclass_exported_funcs=pkg_postrm:font pkg_postinst:font pkg_setup:font src_install:font
+_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	font	cd7790315ca5b8c505e1e0513df6acce	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	82165206dedb2075f9a0fb8f9b1f9441
+_md5_=0362e5b94f1ad5b15d6ed695f8a18a0a
