@@ -417,6 +417,8 @@ x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.
 x11-misc/xmobar:mpd - Support mpd plugin
 x11-misc/xmobar:mpris - Enables MPRIS v1, v2 support
 x11-misc/xmobar:timezone - Enables localized date support
+x11-misc/xmobar:with_conduit - Use conduit to fetch weather data.
+x11-misc/xmobar:with_uvmeter - Plugin to show UV data for Australia.
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
 x11-misc/xmonad-extras:volume - Enable Volume plugin
