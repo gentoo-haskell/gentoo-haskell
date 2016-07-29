@@ -19,15 +19,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.8:=[profile?]
-	>=dev-haskell/path-0.5:=[profile?]
-	>=dev-haskell/temporary-1.1:=[profile?]
-	>=dev-haskell/transformers-0.3:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/path-0.5:=[profile?] <dev-haskell/path-0.6:=[profile?]
+	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
+	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
+	dev-haskell/unix-compat:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/hspec-2.0 )
+	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 )
 "
 
 src_configure() {
