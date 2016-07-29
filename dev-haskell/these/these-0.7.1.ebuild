@@ -18,30 +18,27 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+	>=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.5:=[profile?]
+	>=dev-haskell/binary-0.5.0.2:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/hashable-1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+	>=dev-haskell/keys-3.10:=[profile?] <dev-haskell/keys-3.12:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
+	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9.2:2=[profile?]
 	>=dev-haskell/semigroupoids-1.0:=[profile?] <dev-haskell/semigroupoids-5.2:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
 	>=dev-haskell/transformers-compat-0.2:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.4:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-instances-3.3.1:=[profile?] <dev-haskell/vector-instances-3.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.8.3
-		>=dev-haskell/quickcheck-instances-0.3.6 <dev-haskell/quickcheck-instances-0.4
+	test? ( >=dev-haskell/quickcheck-instances-0.3.6 <dev-haskell/quickcheck-instances-0.3.13
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'semigroupoids            >= 1.0   && < 5.1' 'semigroupoids            >= 1.0'
-}
