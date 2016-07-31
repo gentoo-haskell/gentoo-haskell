@@ -767,7 +767,7 @@ dev-haskell/imagesize-conduit 1.1: Determine the size of some common image forma
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1: Haskell98 indexed functors, monads, comonads
-dev-haskell/indexed-extras 0.1.1-r5 0.2: Indexed functors, monads and comonads that require extensions to Haskell98
+dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
