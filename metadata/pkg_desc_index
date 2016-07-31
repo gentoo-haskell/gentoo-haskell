@@ -902,10 +902,10 @@ dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.0.5: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
-dev-haskell/microlens 0.4.5.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
-dev-haskell/microlens-ghc 0.4.5.0: microlens + array, bytestring, containers, transformers
-dev-haskell/microlens-mtl 0.1.8.0: microlens support for Reader/Writer/State from mtl
-dev-haskell/microlens-platform 0.3.2.0: Feature-complete microlens
+dev-haskell/microlens 0.4.5.0 0.4.6.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
+dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0: microlens + array, bytestring, containers, transformers
+dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0: microlens support for Reader/Writer/State from mtl
+dev-haskell/microlens-platform 0.3.2.0 0.3.4.0: Feature-complete microlens
 dev-haskell/microlens-th 0.4.0.0: Automatic generation of record lenses for microlens
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.1: Handling of MIDI messages and files
