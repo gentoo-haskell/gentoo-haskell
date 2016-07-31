@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="<dev-haskell/bifunctors-5.4:=[profile?]
+RDEPEND="dev-haskell/bifunctors:=[profile?]
 	<dev-haskell/indexed-0.2:=[profile?]
 	<dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/pointed-5.1:=[profile?]
@@ -27,3 +27,10 @@ RDEPEND="<dev-haskell/bifunctors-5.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'bifunctors < 5.4' 'bifunctors'
+}
