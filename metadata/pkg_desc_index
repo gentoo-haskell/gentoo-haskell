@@ -99,7 +99,7 @@ dev-haskell/basic-prelude 0.5.2: An enhanced core prelude; a common foundation f
 dev-haskell/bcrypt 0.0.8 0.0.9: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
-dev-haskell/bifunctors 5.3: Bifunctors
+dev-haskell/bifunctors 5.3 5.4.1: Bifunctors
 dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
@@ -185,9 +185,9 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1: Cairo backend for Charts
-dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7: Utility functions for using the chart library with GTK
+dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: A library for generating 2D Charts and Plots
+dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: Cairo backend for Charts
+dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
