@@ -767,14 +767,14 @@ dev-haskell/imagesize-conduit 1.1: Determine the size of some common image forma
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1: Haskell98 indexed functors, monads, comonads
-dev-haskell/indexed-extras 0.1.1-r5: Indexed functors, monads and comonads that require extensions to Haskell98
-dev-haskell/instant-generics 0.5: Generic programming library with a sum of products view
+dev-haskell/indexed-extras 0.1.1-r5 0.2: Indexed functors, monads and comonads that require extensions to Haskell98
+dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
 dev-haskell/intero 0.1.16: Complete interactive development program for Haskell
 dev-haskell/interpolate 0.1.0: String interpolation done right
 dev-haskell/intervals 0.7.2: Interval Arithmetic
-dev-haskell/invariant 0.2.2 0.3.1: Haskell 98 invariant functors
+dev-haskell/invariant 0.2.2 0.3.1 0.4: Haskell 98 invariant functors
 dev-haskell/io-choice 0.0.6: Choice for IO and lifted IO
 dev-haskell/io-storage 0.3-r1: A key-value store in the IO monad
 dev-haskell/io-streams 1.3.5.0: Simple, composable, and easy-to-use stream I/O
@@ -856,7 +856,7 @@ dev-haskell/lio 0.11.6.0: Labeled IO Information Flow Control Library
 dev-haskell/liquid-fixpoint 0.5.0.1: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
 dev-haskell/liquidhaskell 0.6.0.0: Liquid Types for Haskell
 dev-haskell/list 0.5.2: List monad transformer and class
-dev-haskell/listlike 4.2.1 4.4: Generic support for list-like structures
+dev-haskell/listlike 4.2.1 4.4 4.5: Generic support for list-like structures
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
 dev-haskell/llvm 3.0.1.0 3.2.0.2: Bindings to the LLVM compiler toolkit
 dev-haskell/llvm-base 3.0.1.0 3.2.0.2: FFI bindings to the LLVM compiler toolkit
@@ -1248,7 +1248,7 @@ dev-haskell/simple-smt 0.6.0: A simple way to interact with an SMT solver proces
 dev-haskell/simpleaes 0.4.2: Fast AES encryption/decryption for bytestrings
 dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with better error reporting
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
-dev-haskell/singletons 1.1.2.1 2.0.1 2.1: A framework for generating singleton types
+dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
