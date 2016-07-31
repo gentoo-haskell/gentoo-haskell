@@ -15,10 +15,10 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#bytestring version of recv is broken:
-#  https://github.com/haskell/network/issues/215
-#KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
+
+RESTRICT=test # missing regression test file
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
