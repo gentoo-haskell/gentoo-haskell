@@ -976,7 +976,7 @@ dev-haskell/nats 1.1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/ncurses 0.2.15: Modernised bindings to GNU ncurses
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
-dev-haskell/network 2.6.2.1 2.6.3.0: Low-level networking interface
+dev-haskell/network 2.6.3.1: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
@@ -1020,7 +1020,7 @@ dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-pa
 dev-haskell/opengl 3.0.1.0: A binding for the OpenGL graphics system
 dev-haskell/openglraw 3.1.0.0 3.2.1.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
-dev-haskell/operational 0.2.3.2: Implementation of difficult monads made easy with operational semantics
+dev-haskell/operational 0.2.3.3: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
