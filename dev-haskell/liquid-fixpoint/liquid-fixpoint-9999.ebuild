@@ -46,7 +46,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	|| ( sci-mathematics/cvc4 sci-mathematics/z3 )
+	|| ( sci-mathematics/z3 sci-mathematics/cvc4 )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
