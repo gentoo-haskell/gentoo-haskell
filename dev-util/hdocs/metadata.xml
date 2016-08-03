@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Tool and library to get docs for installed packages and source files.
+		Can return result in JSON format.
+		Can dump docs for all installed modules
+		
+		@Usage:
+		hdocs &lt;module&gt; - get docs for module/file
+		hdocs &lt;module&gt; &lt;name&gt; - get docs for name in module/file
+		hdocs dump [r] - dump all installed docs, if [r], find docs for reexported declarations
+		flags
+		-g GHC_OPT  --ghc=GHC_OPT  option to pass to GHC
+		@
+	</longdescription>
+</pkgmetadata>
