@@ -742,7 +742,7 @@ dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-link-header 1.0.1: A parser and writer for the HTTP Link header as specified in RFC 5988
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
-dev-haskell/http-reverse-proxy 0.4.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
+dev-haskell/http-reverse-proxy 0.4.3.1: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
 dev-haskell/http2 1.5.4 1.6.1: HTTP/2.0 library including frames and HPACK
@@ -1061,7 +1061,7 @@ dev-haskell/persistent-mysql 2.3.0.2 2.5: Backend for the persistent library usi
 dev-haskell/persistent-postgresql 2.2.2 2.5: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library using Redis
 dev-haskell/persistent-sqlite 2.2.1 2.5.0.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.1.4: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.5.1.6: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.9: Compositional pipelines
