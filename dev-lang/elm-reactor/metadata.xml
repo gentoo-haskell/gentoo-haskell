@@ -8,7 +8,7 @@
 	<longdescription>
 		Provides an interactive development tool that makes it easy
 		to develop and debug Elm programs. It will automatically
-		compile any Elm programindependent of editor. It permits
+		compile any Elm program-independent of editor. It permits
 		hot-swapping and time-traveling debugging.
 	</longdescription>
 </pkgmetadata>
