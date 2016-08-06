@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.7.3:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.7.3:2=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.7 && < 2.9' 'QuickCheck >= 2.7'
+}
