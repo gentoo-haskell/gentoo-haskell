@@ -21,15 +21,15 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.7.3:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7:=[profile?]
 	dev-haskell/edit-distance:=[profile?]
-	>=dev-haskell/http-4000.2.5:=[profile?] <dev-haskell/http-4000.3:=[profile?]
+	>=dev-haskell/http-4000.2.5:=[profile?]
 	>=dev-haskell/http-client-0.4.15:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
 	>=dev-haskell/http-client-tls-0.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
-	>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.9:=[profile?]
+	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.12:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	dev-haskell/parallel-io:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -41,3 +41,13 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HTTP >= 4000.2.5 && < 4000.3' 'HTTP >= 4000.2.5' \
+		'optparse-applicative >= 0.11 && < 0.12' 'optparse-applicative >= 0.11' \
+		'binary >= 0.7 && < 0.8' 'binary >= 0.7' \
+		'http-types >= 0.7 && < 0.9' 'http-types >= 0.7'
+}
