@@ -171,7 +171,7 @@ dev-haskell/cabal-src 0.3.0.1: Alternative install procedure to avoid the diamon
 dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Cairo library
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
-dev-haskell/carray 0.1.6.4: A C-compatible array library
+dev-haskell/carray 0.1.6.4-r1: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.1.0.3 1.2.0.7: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
@@ -189,11 +189,11 @@ dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: A library for generating 2D Cha
 dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
-dev-haskell/chasingbottoms 1.3.1: For testing partial and infinite values
+dev-haskell/chasingbottoms 1.3.1-r1: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
 dev-haskell/checkers 0.4.5: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
-dev-haskell/chell-quickcheck 0.2.5: QuickCheck support for the Chell testing library
+dev-haskell/chell-quickcheck 0.2.5-r1: QuickCheck support for the Chell testing library
 dev-haskell/chunked-data 0.2.0: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.1: AES and common modes using AES-NI when available
@@ -1129,12 +1129,12 @@ dev-haskell/puremd5 2.1.3: A Haskell-only implementation of the MD5 digest (hash
 dev-haskell/pwstore-fast 2.4.4: Secure password storage
 dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings for Qt
-dev-haskell/quickcheck 1.2.0.1-r1 2.8.2: Automatic testing of Haskell programs
+dev-haskell/quickcheck 1.2.0.1-r1 2.8.2 2.9.1: Automatic testing of Haskell programs
 dev-haskell/quickcheck-assertions 0.1.1-r1 0.2.0: HUnit like assertions for QuickCheck
-dev-haskell/quickcheck-instances 0.3.12: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.12-r1: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.3: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
-dev-haskell/quickcheck-safe 0.1.0.1: Safe reimplementation of QuickCheck's core
+dev-haskell/quickcheck-safe 0.1.0.1-r1: Safe reimplementation of QuickCheck's core
 dev-haskell/quickcheck-unicode 1.0.0.1: Generator and shrink functions for testing Unicode-related software
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
@@ -1179,7 +1179,7 @@ dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
-dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1: High performance, regular, shape polymorphic parallel arrays
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
@@ -1554,7 +1554,7 @@ dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
 dev-haskell/xml-picklers 0.3.6: XML picklers based on xml-types, ported from hexpat-pickle
 dev-haskell/xml-types 0.3.6: Basic types for representing XML
 dev-haskell/xmlgen 0.6.2.1: Fast XML generation library
-dev-haskell/xmlhtml 0.2.3.4-r2: XML parser and renderer with HTML 5 quirks mode
+dev-haskell/xmlhtml 0.2.3.5: XML parser and renderer with HTML 5 quirks mode
 dev-haskell/xmms 0.1.1-r1: XMMS2 client library
 dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMonad
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
@@ -1668,7 +1668,7 @@ sci-biology/flower 0.7.2: Analyze 454 flowgrams (.SFF files)
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-biology/trimpolya 0: Search for, annotate and trim poly-A tail
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
-sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1 9999: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1-r1 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
