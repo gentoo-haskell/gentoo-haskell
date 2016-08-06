@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8:=
 	dev-haskell/network-uri:=
 	<dev-haskell/parsec-4:=
 	dev-haskell/psqueue:=
-	>=dev-haskell/quickcheck-2.4:2= <dev-haskell/quickcheck-2.9:2=
+	>=dev-haskell/quickcheck-2.4:2=
 	dev-haskell/random:=
 	dev-haskell/random-shuffle:=
 	dev-haskell/stm:=
@@ -47,6 +47,13 @@ RDEPEND=">=dev-haskell/attoparsec-0.8:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.4 && < 2.9' 'QuickCheck >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
