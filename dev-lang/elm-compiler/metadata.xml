@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="dev">Turn off optimization and make warnings errors</flag>
+	</use>
 	<longdescription>
 		Elm aims to make client-side web-development pleasant. It is a
 		statically/strongly typed, functional reactive language that compiles to
