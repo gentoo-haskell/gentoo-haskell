@@ -20,10 +20,17 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/ix-shapable-0.1:=[profile?] <dev-haskell/ix-shapable-0.2:=[profile?]
-	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+	>=dev-haskell/quickcheck-2.4:2=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >=2.4 && <2.9' 'QuickCheck >=2.4'
+}
