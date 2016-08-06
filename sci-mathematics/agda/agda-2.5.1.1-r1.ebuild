@@ -46,7 +46,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.16.0.1:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/monadplus-1.4:=[profile?] <dev-haskell/monadplus-1.5:=[profile?]
 	>=dev-haskell/parallel-3.2.0.4:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
-	>=dev-haskell/quickcheck-2.8.2:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+	>=dev-haskell/quickcheck-2.8.2:2=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3.3.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
@@ -91,7 +91,8 @@ src_prepare() {
 	cabal_chdeps \
 		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1' \
 		'uhc-util >= 0.1.6.3 && < 0.1.6.7' 'uhc-util >= 0.1.6.3' \
-		'EdisonAPI == 1.3' 'EdisonAPI >= 1.3'
+		'EdisonAPI == 1.3' 'EdisonAPI >= 1.3' \
+		'QuickCheck >= 2.8.2 && < 2.9' 'QuickCheck >= 2.8.2'
 }
 
 src_configure() {
