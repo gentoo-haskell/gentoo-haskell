@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # lacks files and depends
+
 RDEPEND="dev-haskell/binary:=
 	>=dev-haskell/bytestring-trie-0.2.2:= <dev-haskell/bytestring-trie-0.3:=
 	>=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:=
