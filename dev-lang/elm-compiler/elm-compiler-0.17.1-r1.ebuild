@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2.1:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.7:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/binary-0.7.0.0:=[profile?] <dev-haskell/binary-0.8:=[profile?]
+	>=dev-haskell/binary-0.7.0.0:=[profile?]
 	>=dev-haskell/edit-distance-0.2:=[profile?] <dev-haskell/edit-distance-0.3:=[profile?]
 	>=dev-haskell/indents-0.3:=[profile?] <dev-haskell/indents-0.4:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.18:=[profile?]
@@ -46,6 +46,13 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-aeson-pretty-0.8.patch
 )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'binary >= 0.7.0.0 && < 0.8' 'binary >= 0.7.0.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
