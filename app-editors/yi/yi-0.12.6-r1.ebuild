@@ -51,7 +51,7 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
 		>=dev-haskell/gtk-0.13:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
 		>=dev-haskell/pango-0.13:=[profile?] <dev-haskell/pango-0.14:=[profile?] )
 	hint? ( >dev-haskell/hint-0.3.1:=[profile?] )
-	testing? ( >=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.9:2=[profile?]
+	testing? ( >=dev-haskell/quickcheck-2.7:2=[profile?]
 			dev-haskell/random:=[profile?] )
 	vty? ( >=dev-haskell/stm-2.2:=[profile?]
 		>=dev-haskell/vty-5.4:=[profile?] )
@@ -64,6 +64,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck
 		!testing? ( dev-haskell/quickcheck ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.7 && < 2.9' 'QuickCheck >= 2.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
