@@ -13,9 +13,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="
-  ~dev-lang/elm-compiler-${PV}
-  ~dev-lang/elm-make-${PV}
-  ~dev-lang/elm-package-${PV}
-  ~dev-lang/elm-reactor-${PV}
-  ~dev-lang/elm-repl-${PV}
+	~dev-lang/elm-compiler-${PV}
+	~dev-lang/elm-make-${PV}
+	~dev-lang/elm-package-${PV}
+	~dev-lang/elm-reactor-${PV}
+	~dev-lang/elm-repl-${PV}
 "
