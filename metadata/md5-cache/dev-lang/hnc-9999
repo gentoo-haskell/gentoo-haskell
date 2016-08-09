@@ -9,5 +9,5 @@ LICENSE=LGPL-2.1
 RDEPEND=dev-haskell/adjunctions:= dev-haskell/bifunctors:= dev-haskell/hunit:= dev-haskell/mtl:= dev-haskell/newtype:= dev-haskell/parsec:= dev-haskell/quickcheck:2= dev-haskell/recursion-schemes:= dev-haskell/safe:= dev-haskell/transformers:= >=dev-haskell/unification-fd-0.10:= dev-haskell/uuagc:= >=dev-lang/ghc-7.10.2:=
 SLOT=0
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_unpack:git-r3 src_prepare:- src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
-_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	git-r3	00f60a84fc7b499c99edfe99caea9f95	haskell-cabal	4d79df5f0e9a64c607226f89768a3456	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	82165206dedb2075f9a0fb8f9b1f9441	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	git-r3	00f60a84fc7b499c99edfe99caea9f95	haskell-cabal	4d79df5f0e9a64c607226f89768a3456	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	6198c04daba0e1307bd844df7d37f423	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=e6da7271aa9c58fe8849fee5206b50e1
