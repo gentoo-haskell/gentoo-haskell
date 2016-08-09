@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.0:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
