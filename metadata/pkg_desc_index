@@ -235,7 +235,7 @@ dev-haskell/concurrent-output 1.7.6: Ungarble output from several threads or com
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.6.6: Streaming data processing library
+dev-haskell/conduit 1.2.7: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.4: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.13.2: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.2: Simple, layout-based value language similar to YAML or JSON
