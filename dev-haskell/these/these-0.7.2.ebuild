@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.5:=[profile?]
 	>=dev-haskell/binary-0.5.0.2:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
