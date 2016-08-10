@@ -888,7 +888,7 @@ dev-haskell/machines-io 0.2.0.12: IO utilities for the machines library
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.5: A monad for managed values
-dev-haskell/map-syntax 0.2-r1: Syntax sugar for defining maps
+dev-haskell/map-syntax 0.2.0.1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.14: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/math-functions 0.1.7.0 0.2.0.1: Special functions and Chebyshev polynomials
@@ -1691,7 +1691,7 @@ www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.2.9 3.3.1: High performance web server on WAI/warp
 x11-misc/taffybar 0.4.6: A desktop bar similar to xmobar, but with more GUI
-x11-misc/xmobar 0.23.1 0.24.1 9999: A Minimalistic Text Based Status Bar
+x11-misc/xmobar 0.23.1 0.24.2 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1-r3: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-log-applet 2.0.0-r301: Gnome and XFCE applet for displaying XMonad log
 x11-misc/yeganesh 2.5: small dmenu wrapper
