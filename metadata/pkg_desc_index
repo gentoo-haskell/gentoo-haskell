@@ -1187,7 +1187,7 @@ dev-haskell/replib 0.5.3.5: Generic programming library with representation type
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 0.4.10.2 1.1.7.4: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 0.4.10.2 1.1.7.5: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.4.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
@@ -1393,7 +1393,7 @@ dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.10: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.2: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
-dev-haskell/these 0.7.1: An either-or-both data type & a generalized 'zip with padding' typeclass
+dev-haskell/these 0.7.2: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
