@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests are dependent on ghc version
+
 RDEPEND="dev-haskell/ghc-paths:=
 	dev-haskell/haskeline:=
 	dev-haskell/syb:=
