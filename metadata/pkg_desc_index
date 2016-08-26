@@ -646,7 +646,7 @@ dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
-dev-haskell/hjsmin 0.1.5.3 0.2.0.1: Haskell implementation of a javascript minifier
+dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1: Core data types, parsers and functionality for the hledger accounting tools
@@ -772,7 +772,7 @@ dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonad
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
-dev-haskell/intero 0.1.16: Complete interactive development program for Haskell
+dev-haskell/intero 0.1.18: Complete interactive development program for Haskell
 dev-haskell/interpolate 0.1.0: String interpolation done right
 dev-haskell/intervals 0.7.2: Interval Arithmetic
 dev-haskell/invariant 0.2.2 0.3.1 0.4: Haskell 98 invariant functors
@@ -842,7 +842,7 @@ dev-haskell/lenses 0.1.7: Simple Functional Lenses
 dev-haskell/lhs2tex 1.19: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.6.0: Lastfm API interface
-dev-haskell/libmpd 0.9.0.4: An MPD client library
+dev-haskell/libmpd 0.9.0.6: An MPD client library
 dev-haskell/libnotify 0.1.1.0: Bindings to libnotify library
 dev-haskell/libssh2 0.2.0.3: FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)
 dev-haskell/libtagc 0.12.0-r1: Binding to TagLib C library
@@ -1028,7 +1028,7 @@ dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option pars
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/pandoc-citeproc 0.10.1: Supports using pandoc with citeproc
-dev-haskell/pandoc-types 1.12.4.7 1.16.1-r1: Types for representing a structured document
+dev-haskell/pandoc-types 1.12.4.7 1.16.1.1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
@@ -1184,7 +1184,7 @@ dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1: High performance, regula
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
-dev-haskell/replib 0.5.3.5: Generic programming library with representation types
+dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
@@ -1639,7 +1639,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160511 6.20160619 6.20160619-r1: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160511 6.20160619 6.20160619-r1 6.20160808: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
