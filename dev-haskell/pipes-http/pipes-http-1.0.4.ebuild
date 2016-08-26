@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-	<dev-haskell/http-client-tls-0.3:=[profile?]
+RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
+	<dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
