@@ -1435,7 +1435,7 @@ dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization functio
 dev-haskell/uhc-light 1.1.9.4: Part of UHC packaged as cabal/hackage installable library
 dev-haskell/uhc-util 0.1.6.6: UHC utilities
 dev-haskell/unamb 0.2.5: Unambiguous choice
-dev-haskell/unbound 0.4.4: Generic support for programming with names and binders
+dev-haskell/unbound 0.5.1: Generic support for programming with names and binders
 dev-haskell/unbounded-delays 0.1.0.9: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.3.0: IO without any non-error, synchronous exceptions
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
