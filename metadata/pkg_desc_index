@@ -650,7 +650,7 @@ dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minif
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.4.4: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 0.27.5: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-ui 0.27.5-r1: Curses-style user interface for the hledger accounting tool
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
@@ -785,7 +785,7 @@ dev-haskell/ipprint 0.6: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.0: IP Routing Table
 dev-haskell/ipython-kernel 0.8.4.0: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
-dev-haskell/irc-core 1.1.5: An IRC client library and text client
+dev-haskell/irc-core 1.1.5-r1: An IRC client library and text client
 dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
