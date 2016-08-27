@@ -40,7 +40,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/vault:=[profile?]
 	>=dev-haskell/void-0.5:=[profile?]
 	>=dev-haskell/wai-3.0.3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
-	>=dev-haskell/wai-logger-2.2.6:=[profile?] <dev-haskell/wai-logger-2.3:=[profile?]
+	>=dev-haskell/wai-logger-2.2.6:=[profile?] <dev-haskell/wai-logger-2.4:=[profile?]
 	dev-haskell/word8:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.6.1:=

@@ -20,8 +20,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/conduit:=[profile?]
-	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.6:=[profile?]
-	>=dev-haskell/persistent-template-2.1:=[profile?] <dev-haskell/persistent-template-2.6:=[profile?]
+	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.7:=[profile?]
+	>=dev-haskell/persistent-template-2.1:=[profile?] <dev-haskell/persistent-template-2.7:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/resourcet-0.4.5:=[profile?]
 	>=dev-haskell/transformers-0.2.2:=[profile?]
