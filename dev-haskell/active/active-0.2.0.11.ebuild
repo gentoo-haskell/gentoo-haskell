@@ -27,5 +27,5 @@ RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.15:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.4.2 <dev-haskell/quickcheck-2.9 )
+	test? ( >=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.10 )
 "
