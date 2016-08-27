@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/text-1.2.0.4:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/tls-1.2.16:=[profile?] <dev-haskell/tls-1.4:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
-	>=dev-haskell/vty-5.2.7:=[profile?] <dev-haskell/vty-5.6:=[profile?]
+	>=dev-haskell/vty-5.2.7:=[profile?]
 	>=dev-haskell/x509-1.5.0.1:=[profile?] <dev-haskell/x509-1.7:=[profile?]
 	>=dev-haskell/x509-store-1.5.0:=[profile?] <dev-haskell/x509-store-1.7:=[profile?]
 	>=dev-haskell/x509-system-1.5.0:=[profile?] <dev-haskell/x509-system-1.7:=[profile?]
@@ -43,3 +43,10 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.1.2:=[profile?] <dev-haskell/attoparsec-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vty              >= 5.2.7    && < 5.6' 'vty              >= 5.2.7'
+}
