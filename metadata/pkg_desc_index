@@ -47,7 +47,7 @@ dev-haskell/aeson-pretty 0.7.2 0.8.1: JSON pretty-printing library and command-l
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
 dev-haskell/alex 3.1.7: Alex is a tool for generating lexical analysers in Haskell
-dev-haskell/algebra 4.2-r2: Constructive abstract algebra
+dev-haskell/algebra 4.3: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Combinators for monadic actions that require allocation and de-allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
@@ -171,7 +171,7 @@ dev-haskell/cabal-src 0.3.0.1: Alternative install procedure to avoid the diamon
 dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Cairo library
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
-dev-haskell/carray 0.1.6.4-r1: A C-compatible array library
+dev-haskell/carray 0.1.6.5: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.1.0.3 1.2.0.7: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.0: A CSV parsing and encoding library
@@ -281,7 +281,7 @@ dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
 dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
 dev-haskell/cryptonite 0.16 0.17: Cryptography Primitives sink
-dev-haskell/css-text 0.1.2.1: CSS parser and renderer
+dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.2: A small program that will read csv files and create qif files
 dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
@@ -584,7 +584,7 @@ dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
 dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
-dev-haskell/haskell-docs 4.2.6: A program to find and display the docs and type of a name
+dev-haskell/haskell-docs 4.2.7: A program to find and display the docs and type of a name
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
 dev-haskell/haskell-lexer 1.0-r1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
@@ -608,7 +608,7 @@ dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.0.2: The Haskell LaTeX library
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.1.6: XML-RPC client and server library
+dev-haskell/haxr 3000.11.2: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
