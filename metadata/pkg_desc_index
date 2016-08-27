@@ -805,7 +805,7 @@ dev-haskell/juicypixels 3.2.7.2: Picture loading/serialization (in png, jpeg, bi
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r3: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
-dev-haskell/keter 1.4.3.1-r1: Web application deployment manager, focusing on Haskell web frameworks
+dev-haskell/keter 1.4.3.1-r1 1.4.3.2: Web application deployment manager, focusing on Haskell web frameworks
 dev-haskell/keys 3.11: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
