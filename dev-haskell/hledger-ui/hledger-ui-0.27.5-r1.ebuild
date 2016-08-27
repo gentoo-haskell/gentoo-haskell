@@ -32,12 +32,19 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=
 	>=dev-haskell/split-0.1:= <dev-haskell/split-0.3:=
 	dev-haskell/transformers:=
 	dev-haskell/vector:=
-	>=dev-haskell/vty-5.2:= <dev-haskell/vty-5.6:=
+	>=dev-haskell/vty-5.2:=
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vty >= 5.2 && < 5.6' 'vty >= 5.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
