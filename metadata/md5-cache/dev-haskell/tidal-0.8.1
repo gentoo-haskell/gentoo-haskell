@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=dev-haskell/binary:=[profile?] dev-haskell/colour:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/hmt:=[profile?] >dev-haskell/hosc-0.13:=[profile?] dev-haskell/mersenne-random-pure64:=[profile?] >=dev-haskell/mtl-2.1:=[profile?] dev-haskell/parsec:=[profile?] dev-haskell/text:=[profile?] dev-haskell/transformers:=[profile?] >dev-haskell/websockets-0.8:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.4 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
 DESCRIPTION=Pattern language for improvised music
 EAPI=6
@@ -7,8 +7,8 @@ IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 RDEPEND=dev-haskell/binary:=[profile?] dev-haskell/colour:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/hmt:=[profile?] >dev-haskell/hosc-0.13:=[profile?] dev-haskell/mersenne-random-pure64:=[profile?] >=dev-haskell/mtl-2.1:=[profile?] dev-haskell/parsec:=[profile?] dev-haskell/text:=[profile?] dev-haskell/transformers:=[profile?] >dev-haskell/websockets-0.8:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.8
-SRC_URI=mirror://hackage/packages/archive/tidal/0.8/tidal-0.8.tar.gz
-_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+SLOT=0/0.8.1
+SRC_URI=mirror://hackage/packages/archive/tidal/0.8.1/tidal-0.8.1.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	792f83d5ec9536cb5ccef375469d8bde	ghc-package	0269d47e1819247f102e9f72ae185b52	haskell-cabal	c8235901ade2908e7b737c5437475345	multilib	d062ae4ba2fc40a19c11de2ad89b6616	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	6198c04daba0e1307bd844df7d37f423	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=cec7ee4a2c27ee86dd554fd79053bde3
+_md5_=cf0438184ec6f5d74fe367eb88a43170
