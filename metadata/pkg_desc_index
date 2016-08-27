@@ -32,9 +32,9 @@ dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0: An embedded language for acce
 dev-haskell/accelerate-cuda 0.15.0.0 0.15.1.1: Accelerate backend for NVIDIA GPUs
 dev-haskell/accelerate-fft 0.15.0.0 0.15.1.0: FFT using the Accelerate library
 dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
-dev-haskell/acid-state 0.14.1: Add ACID guarantees to any serializable Haskell data structure
+dev-haskell/acid-state 0.14.2: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
-dev-haskell/active 0.2.0.10: Abstractions for animation
+dev-haskell/active 0.2.0.11: Abstractions for animation
 dev-haskell/ad 4.3.2.1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
@@ -745,7 +745,7 @@ dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3.1: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.3.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 1.5.4 1.6.1: HTTP/2.0 library including frames and HPACK
+dev-haskell/http2 1.5.4 1.6.2: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.3.1.1: A unit testing framework for Haskell
@@ -1228,7 +1228,7 @@ dev-haskell/setlocale 1.0.0.4: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.10: Build system library, like Make, but more accurate dependencies
-dev-haskell/shakespeare 2.0.10: A toolkit for making compile-time interpolated templates
+dev-haskell/shakespeare 2.0.11: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time
@@ -1239,7 +1239,7 @@ dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
-dev-haskell/shellmate 0.2.3-r2 0.3.2.2: Simple interface for shell scripting in Haskell
+dev-haskell/shellmate 0.2.3-r2 0.3.3: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.8: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
