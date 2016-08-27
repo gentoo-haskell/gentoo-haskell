@@ -35,6 +35,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+PATCHES=("${FILESDIR}"/${P}-less-deps.patch)
+
 src_prepare() {
 	default
 
