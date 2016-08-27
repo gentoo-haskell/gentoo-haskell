@@ -34,3 +34,10 @@ RDEPEND="dev-haskell/binary:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.4
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'mersenne-random-pure64 < 0.2.1.0' 'mersenne-random-pure64'
+}
