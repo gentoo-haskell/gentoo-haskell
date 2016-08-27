@@ -30,6 +30,7 @@ RDEPEND=">=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.10
 	dev-haskell/mtl-compat:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/old-time:=[profile?]
+	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
