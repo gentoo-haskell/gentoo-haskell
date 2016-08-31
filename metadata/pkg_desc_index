@@ -1029,6 +1029,7 @@ dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option pars
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/pandoc-citeproc 0.10.1: Supports using pandoc with citeproc
+dev-haskell/pandoc-crossref 0.2.3.0: Pandoc filter for cross-references
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
@@ -1194,6 +1195,7 @@ dev-haskell/resourcet 0.4.10.2 1.1.7.5: Deterministic allocation and freeing of 
 dev-haskell/retry 0.7.4.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
+dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
