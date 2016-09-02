@@ -11,7 +11,7 @@
 # @DESCRIPTION:
 # Helper eclass to handle ghc installation/upgrade/deinstallation process.
 
-inherit versionator
+inherit multiprocessing versionator
 
 # @FUNCTION: ghc-getghc
 # @DESCRIPTION:
@@ -191,6 +191,22 @@ ghc-libdir() {
 		_GHC_LIBDIR_CACHE="$($(ghc-getghc) --print-libdir)"
 	fi
 	echo "${_GHC_LIBDIR_CACHE}"
+}
+
+# @FUNCTION: ghc-make-args
+# @DESCRIPTION:
+# Returns default arguments passed along 'ghc --make'
+# build mode. Used mainly to enable parallel build mode.
+ghc-make-args() {
+	# parallel on all available cores
+	if ghc-supports-parallel-make; then
+		# It should have been just -j$(makeopts_jobs)
+		# but GHC does not yet have nice defaults:
+		#    https://ghc.haskell.org/trac/ghc/ticket/9221#comment:57
+		echo "-j$(makeopts_jobs) +RTS -A256M -qb0 -RTS"
+	else
+		echo ""
+	fi
 }
 
 # @FUNCTION: ghc-confdir
