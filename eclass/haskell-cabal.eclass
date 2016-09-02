@@ -36,7 +36,7 @@
 #                  not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
 
-inherit eutils ghc-package multilib multiprocessing
+inherit eutils ghc-package multilib
 
 # @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @DESCRIPTION:
@@ -217,6 +217,7 @@ cabal-bootstrap() {
 
 	make_setup() {
 		set -- -package "${cabalpackage}" --make "${setupmodule}" \
+			$(ghc-make-args) \
 			"${setup_bootstrap_args[@]}" \
 			${HCFLAGS} \
 			${GHC_BOOTSTRAP_FLAGS} \
@@ -370,13 +371,7 @@ cabal-configure() {
 		cabalconf+=($(cabal-constraint "ghc"))
 	fi
 
-	# parallel on all available cores
-	if ghc-supports-parallel-make; then
-		# It should have been just -j$(makeopts_jobs)
-		# but GHC does not yet have nice defaults:
-		#    https://ghc.haskell.org/trac/ghc/ticket/9221#comment:57
-		cabalconf+=(--ghc-options="-j$(makeopts_jobs) +RTS -A256M -qb0 -RTS")
-	fi
+	cabalconf+=(--ghc-options="$(ghc-make-args)")
 
 	local option
 	for option in ${HCFLAGS}
