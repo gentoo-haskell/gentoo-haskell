@@ -547,7 +547,7 @@ src_configure() {
 		# GHC embeds 'gcc' it was built by and uses it later.
 		# Don't allow things like ccache or versioned binary slip.
 		# We use stable thing across gcc upgrades.
-		is_crosscompile || econf_args+=(--with-gcc=${CHOST}-gcc)
+		is_crosscompile || econf_args+=(CC=${CHOST}-gcc)
 
 		if use ghcmakebinary; then
 			# When building booting libary we are trying to
