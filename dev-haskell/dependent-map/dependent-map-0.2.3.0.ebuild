@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/dependent-sum-0.3.2:=[profile?] <dev-haskell/dependent-sum-0.4:=[profile?]
+RDEPEND=">=dev-haskell/dependent-sum-0.3.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
