@@ -366,7 +366,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.7.1.2: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
-dev-haskell/dns 1.4.5 2.0.2 2.0.3: DNS library in Haskell
+dev-haskell/dns 1.4.5 2.0.2 2.0.3 2.0.5: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
@@ -605,7 +605,7 @@ dev-haskell/haskelldb-hdbc-sqlite3 2.1.2: HaskellDB support for the HDBC SQLite 
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1: Client support for POP3, SMTP, and IMAP
 dev-haskell/haskellnet-ssl 0.3.3.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
-dev-haskell/hasktags 0.69.1: Produces ctags "tags" and etags "TAGS" files for Haskell programs
+dev-haskell/hasktags 0.69.2: Produces ctags "tags" and etags "TAGS" files for Haskell programs
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.0.2: The Haskell LaTeX library
@@ -664,13 +664,13 @@ dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hoauth2 0.5.4.0: Haskell OAuth2 authentication client
 dev-haskell/hood 0.3: Debugging by observing in place
-dev-haskell/hoodle 0.4.0: Executable for hoodle
-dev-haskell/hoodle-builder 0.3.0: text builder for hoodle file format
-dev-haskell/hoodle-core 0.15.0: Core library for hoodle
-dev-haskell/hoodle-parser 0.3.0: Hoodle file parser
-dev-haskell/hoodle-publish 0.2.0: publish hoodle files as a static web site
-dev-haskell/hoodle-render 0.5.0: Hoodle file renderer
-dev-haskell/hoodle-types 0.3.0: Data types for programs for hoodle file format
+dev-haskell/hoodle 0.4.0 0.5: Executable for hoodle
+dev-haskell/hoodle-builder 0.3.0 0.4: text builder for hoodle file format
+dev-haskell/hoodle-core 0.15.0 0.16.0: Core library for hoodle
+dev-haskell/hoodle-parser 0.3.0 0.4: Hoodle file parser
+dev-haskell/hoodle-publish 0.2.0 0.2.1: publish hoodle files as a static web site
+dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
+dev-haskell/hoodle-types 0.3.0 0.4: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1 5.0.1: Haskell API Search
 dev-haskell/hopencv 0.4.0.1: A binding for the OpenCV computer vision library
 dev-haskell/hosc 0.15: Haskell Open Sound Control

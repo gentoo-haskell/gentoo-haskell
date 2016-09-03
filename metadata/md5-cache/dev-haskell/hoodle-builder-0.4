@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/blaze-builder-0.3:=[profile?] >=dev-haskell/double-conversion-0.2.0.6:=[profile?] >=dev-haskell/hoodle-types-0.4:=[profile?] >=dev-haskell/lens-2.5:=[profile?] >=dev-haskell/strict-0.3:=[profile?] >dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-haskell/cabal-1.1.4
+DESCRIPTION=text builder for hoodle file format
+EAPI=6
+HOMEPAGE=http://hackage.haskell.org/package/hoodle-builder
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/blaze-builder-0.3:=[profile?] >=dev-haskell/double-conversion-0.2.0.6:=[profile?] >=dev-haskell/hoodle-types-0.4:=[profile?] >=dev-haskell/lens-2.5:=[profile?] >=dev-haskell/strict-0.3:=[profile?] >dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.4
+SRC_URI=mirror://hackage/packages/archive/hoodle-builder/0.4/hoodle-builder-0.4.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	3c720fd2dc761f4889e1824679783357	haskell-cabal	d62fd47007adfc41d2464b3e946dab1f	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	6198c04daba0e1307bd844df7d37f423	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=c165758f4c1683a90ee7e1eae7388d03
