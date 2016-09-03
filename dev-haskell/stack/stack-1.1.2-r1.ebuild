@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/fast-logger-2.3.1:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/filelock-0.1.0.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1:=[profile?] <dev-haskell/fsnotify-0.3:=[profile?]
-	>=dev-haskell/generic-deriving-1.9.0:=[profile?] <dev-haskell/generic-deriving-1.11:=[profile?]
+	>=dev-haskell/generic-deriving-1.9.0:=[profile?]
 	>=dev-haskell/hashable-1.2.3.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hastache-0.6.1:=[profile?] <dev-haskell/hastache-0.7:=[profile?]
 	>=dev-haskell/hit-0.6.3:=[profile?] <dev-haskell/hit-0.7:=[profile?]
