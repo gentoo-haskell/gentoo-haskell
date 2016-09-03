@@ -14,21 +14,28 @@ HOMEPAGE="http://hackage.haskell.org/package/ghc-exactprint"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="roundtrip"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=
+RESTRICT=test # slow
+
+RDEPEND=">=dev-haskell/free-4.12:=[profile?]
+	>=dev-haskell/ghc-paths-0.1:=[profile?]
+	>=dev-haskell/mtl-2.2.1:=[profile?]
+	>=dev-haskell/syb-0.5:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	roundtrip? ( dev-haskell/diff:=[profile?]
 			dev-haskell/filemanip:=[profile?]
-			>=dev-haskell/ghc-paths-0.1:=[profile?]
 			dev-haskell/hunit:=[profile?]
 			>=dev-haskell/text-1.2.2:=[profile?]
-			>=dev-haskell/turtle-1.2.5:=[profile?]
-			>=dev-lang/ghc-7.10.2:= )
+			>=dev-haskell/turtle-1.2.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.22.2.0
+	test? ( >=dev-haskell/filemanip-0.3
+		>=dev-haskell/hunit-1.2
+		>=dev-haskell/silently-1.2 )
 "
 
 src_configure() {
