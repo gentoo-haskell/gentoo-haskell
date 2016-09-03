@@ -29,15 +29,14 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/void:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/mtl
 		>=dev-haskell/quickcheck-2.5
