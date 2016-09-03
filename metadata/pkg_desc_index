@@ -1333,7 +1333,7 @@ dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
-dev-haskell/synthesizer-core 0.7.1-r2: Audio signal processing coded in Haskell: Low level part
+dev-haskell/synthesizer-core 0.8.0.1: Audio signal processing coded in Haskell: Low level part
 dev-haskell/system-argv0 0.1.1: Get argv[0] as a FilePath
 dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC versions (deprecated)
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
