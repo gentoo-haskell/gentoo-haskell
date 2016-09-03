@@ -27,6 +27,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Executable test' 'Executable hasktags-test'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug)
