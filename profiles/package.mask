@@ -55,7 +55,6 @@ dev-haskell/exists
 # masked depends
 <dev-haskell/bindings-libzip-1
 <dev-haskell/libzip-1
-dev-haskell/hs-java
 games-action/nikki
 
 # Sergei Trofimovich <slyfox@gentoo.org> (01 Oct 2015)
