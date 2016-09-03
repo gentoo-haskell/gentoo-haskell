@@ -592,7 +592,7 @@ dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0-r2: Name resolution library for Hask
 dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
-dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/haskell-src-meta 0.6.0.14-r1: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
@@ -654,7 +654,7 @@ dev-haskell/hledger-ui 0.27.5-r1: Curses-style user interface for the hledger ac
 dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
-dev-haskell/hlint 1.9.22 1.9.35: Source code suggestions
+dev-haskell/hlint 1.9.22 1.9.35 1.9.37: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.2: Numeric Linear Algebra
@@ -903,7 +903,7 @@ dev-haskell/memoize 0.7: A memoization library
 dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
-dev-haskell/mersenne-random-pure64 0.2.1.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
+dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
 dev-haskell/microlens 0.4.5.0 0.4.6.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0: microlens + array, bytestring, containers, transformers
