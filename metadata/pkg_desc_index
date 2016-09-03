@@ -683,7 +683,7 @@ dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.3.1.0: A Haskell pre-processor
 dev-haskell/hprotoc 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
-dev-haskell/hs-java 0.3.4: Java .class files assembler/disassembler
+dev-haskell/hs-java 0.3.4-r1: Java .class files assembler/disassembler
 dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
 dev-haskell/hsb2hs 0.2 0.3.1: Preprocesses a file, adding blobs from files as string literals
 dev-haskell/hscolour 1.23-r1 1.24 1.24.1: Colourise Haskell code
