@@ -24,7 +24,7 @@ RESTRICT=test # slow
 RDEPEND=">=dev-haskell/binary-0.1:=[profile?] <dev-haskell/binary-1:=[profile?]
 	>=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[profile?]
 	>=dev-haskell/explicit-exception-0.1.6:=[profile?] <dev-haskell/explicit-exception-0.2:=[profile?]
-	>=dev-haskell/non-empty-0.2:=[profile?] <dev-haskell/non-empty-0.3:=[profile?]
+	>=dev-haskell/non-empty-0.2:=[profile?]
 	>=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
 	>=dev-haskell/numeric-prelude-0.4:=[profile?] <dev-haskell/numeric-prelude-0.5:=[profile?]
 	>=dev-haskell/numeric-quest-0.1:=[profile?] <dev-haskell/numeric-quest-0.3:=[profile?]
@@ -42,7 +42,6 @@ RDEPEND=">=dev-haskell/binary-0.1:=[profile?] <dev-haskell/binary-1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
-	test? ( >=dev-haskell/non-empty-0.2.1 <dev-haskell/non-empty-0.3 )
 "
 
 src_prepare() {
@@ -51,7 +50,9 @@ src_prepare() {
 
 	cabal_chdeps \
 		'transformers >=0.2 && <0.5' 'transformers >=0.2' \
-		'process >=1.0 && <1.3' 'process >=1.0'
+		'process >=1.0 && <1.3' 'process >=1.0' \
+		'non-empty >=0.2 && <0.3' 'non-empty >=0.2' \
+		'non-empty >=0.2.1 && <0.3' 'non-empty >=0.2.1'
 }
 
 src_configure() {
