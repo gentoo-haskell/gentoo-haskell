@@ -181,6 +181,7 @@ dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing ch
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.4.1.1 0.5.3.0: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
+dev-haskell/cereal-vector 0.2.0.1: Serialize instances for Data.Vector types
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
@@ -821,7 +822,7 @@ dev-haskell/lambdabot-reference-plugins 5.0.3 5.1: Lambdabot reference plugins
 dev-haskell/lambdabot-social-plugins 5.0.1 5.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1 5.1: Lambdabot trusted code
 dev-haskell/language-c 0.4.7 0.5.0: Analysis and generation of C code
-dev-haskell/language-c-quote 0.8.0 0.11.4 0.11.5.1 0.11.6.2: C/CUDA/OpenCL/Objective-C quasiquoting library
+dev-haskell/language-c-quote 0.8.0 0.11.4 0.11.5.1 0.11.6.2 0.11.6.3: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
@@ -879,7 +880,7 @@ dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
 dev-haskell/ltk 0.14.3.0 0.15.0.5-r1: Leksah tool kit
-dev-haskell/lucid 2.9.5: Clear to write, read and edit DSL for HTML
+dev-haskell/lucid 2.9.6: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.5.0.0 0.6.0.1-r1: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
@@ -900,7 +901,7 @@ dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megaparsec 5.0.1: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
-dev-haskell/memoize 0.7: A memoization library
+dev-haskell/memoize 0.8.1: A memoization library
 dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
@@ -999,7 +1000,7 @@ dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport im
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with generics support
-dev-haskell/non-empty 0.2.1: List-like structures with static restrictions on the number of elements
+dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
 dev-haskell/normaldistribution 1.1.0.3: Minimum fuss normally distributed random values
@@ -1327,12 +1328,12 @@ dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0: Binding to the libsvg-cairo library
-dev-haskell/svgfonts 1.5.0.1: Fonts from the SVG-Font format
+dev-haskell/svgfonts 1.6.0.0: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
-dev-haskell/synthesizer-core 0.7.1-r1: Audio signal processing coded in Haskell: Low level part
+dev-haskell/synthesizer-core 0.7.1-r2: Audio signal processing coded in Haskell: Low level part
 dev-haskell/system-argv0 0.1.1: Get argv[0] as a FilePath
 dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC versions (deprecated)
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
