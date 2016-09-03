@@ -332,10 +332,10 @@ dev-haskell/diagrams 1.3.0.1: Embedded domain-specific language for declarative 
 dev-haskell/diagrams-builder 0.7.2.3-r1: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.3.1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.3.0.5: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.3.0.11-r1: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-contrib 1.3.0.12: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.8: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3.0.2: Backend for rendering diagrams directly to GTK windows
-dev-haskell/diagrams-lib 1.3.1.3: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-lib 1.3.1.4: Embedded domain-specific language for declarative graphics
 dev-haskell/diagrams-pgf 0.1.0.4: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.7: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.3.1.7: Rasterific backend for diagrams
@@ -588,7 +588,7 @@ dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 4.2.7: A program to find and display the docs and type of a name
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
-dev-haskell/haskell-lexer 1.0-r1: A fully compliant Haskell 98 lexer
+dev-haskell/haskell-lexer 1.0.1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
 dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0-r2: Name resolution library for Haskell
 dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
