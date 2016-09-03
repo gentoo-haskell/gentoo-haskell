@@ -17,9 +17,9 @@ LICENSE="CC-BY-SA-3.0"
 SLOT="0"
 IUSE="devel"
 
-RDEPEND="dev-qt/qtcore
-	dev-qt/qtgui
-	dev-qt/qtopengl
+RDEPEND="dev-qt/qtcore:4=
+	dev-qt/qtgui:4=
+	dev-qt/qtopengl:4=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/aeson
