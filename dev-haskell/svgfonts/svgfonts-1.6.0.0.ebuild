@@ -24,6 +24,8 @@ IUSE=""
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?]
 	>=dev-haskell/blaze-svg-0.3.3:=[profile?]
+	dev-haskell/cereal:=[profile?]
+	dev-haskell/cereal-vector:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.4:=[profile?]
@@ -33,10 +35,10 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/tuple:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/xml:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.16.0
 "
 
 S="${WORKDIR}/${MY_P}"
