@@ -53,8 +53,8 @@ dev-haskell/exists
 # Sergei Trofimovich <slyfox@gentoo.org> (02 Oct 2015)
 # Gentoo has libzip-1, haskell bindings need libzip-0.11.
 # masked depends
-dev-haskell/bindings-libzip
-dev-haskell/libzip
+<dev-haskell/bindings-libzip-1
+<dev-haskell/libzip-1
 dev-haskell/hs-java
 games-action/nikki
 
