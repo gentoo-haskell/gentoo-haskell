@@ -50,13 +50,6 @@ dev-haskell/agata
 # to typefamily-like in ghc-7.10
 dev-haskell/exists
 
-# Sergei Trofimovich <slyfox@gentoo.org> (02 Oct 2015)
-# Gentoo has libzip-1, haskell bindings need libzip-0.11.
-# masked depends
-<dev-haskell/bindings-libzip-1
-<dev-haskell/libzip-1
-games-action/nikki
-
 # Sergei Trofimovich <slyfox@gentoo.org> (01 Oct 2015)
 # Broken package, upstream uses C macros heavily, hsc2hs
 # does not understand them
