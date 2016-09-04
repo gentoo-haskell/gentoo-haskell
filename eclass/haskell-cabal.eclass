@@ -97,11 +97,14 @@ for feature in ${CABAL_FEATURES}; do
 		cpphs)      CABAL_USE_CPPHS=yes;;
 		profile)    CABAL_USE_PROFILE=yes;;
 		bootstrap)  CABAL_BOOTSTRAP=yes;;
-		bin)        CABAL_HAS_BINARIES=yes;;
 		lib)        CABAL_HAS_LIBRARIES=yes;;
 		nocabaldep) CABAL_FROM_GHC=yes;;
 		ghcdeps)    CABAL_GHC_CONSTRAINT=yes;;
 		test-suite) CABAL_TEST_SUITE=yes;;
+
+		# does nothing, removed 2016-09-04
+		bin)        ;;
+
 		*) CABAL_UNKNOWN="${CABAL_UNKNOWN} ${feature}";;
 	esac
 done
@@ -507,9 +510,6 @@ cabal-is-dummy-lib() {
 haskell-cabal_pkg_setup() {
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
 		[[ ${RDEPEND} == *dev-lang/ghc* ]] || eqawarn "QA Notice: A library does not have runtime dependency on dev-lang/ghc."
-	fi
-	if [[ -z "${CABAL_HAS_BINARIES}" ]] && [[ -z "${CABAL_HAS_LIBRARIES}" ]]; then
-		eqawarn "QA Notice: Neither bin nor lib are in CABAL_FEATURES."
 	fi
 	if [[ -n "${CABAL_UNKNOWN}" ]]; then
 		eqawarn "QA Notice: Unknown entry in CABAL_FEATURES: ${CABAL_UNKNOWN}"
