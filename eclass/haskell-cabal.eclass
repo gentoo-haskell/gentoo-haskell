@@ -130,15 +130,6 @@ if [[ -n "${CABAL_TEST_SUITE}" ]]; then
 	IUSE="${IUSE} test"
 fi
 
-# We always use a standalone version of Cabal, rather than the one that comes
-# with GHC. But of course we can't depend on cabal when building cabal itself.
-if [[ -z ${CABAL_MIN_VERSION} ]]; then
-	CABAL_MIN_VERSION=1.1.4
-fi
-if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]]; then
-	DEPEND="${DEPEND} >=dev-haskell/cabal-${CABAL_MIN_VERSION}"
-fi
-
 # returns the version of cabal currently in use.
 # Rarely it's handy to pin cabal version from outside.
 : ${_CABAL_VERSION_CACHE:=""}
@@ -172,13 +163,6 @@ cabal-bootstrap() {
 		eqawarn "No Setup.lhs or Setup.hs found. Either add Setup.hs to package or call cabal-mksetup from ebuild"
 		cabal-mksetup
 		setupmodule="${S}/Setup.hs"
-	fi
-
-	if [[ -z "${CABAL_BOOTSTRAP}" && -z "${CABAL_FROM_GHC}" ]] && ! ghc-sanecabal "${CABAL_MIN_VERSION}"; then
-		eerror "The package dev-haskell/cabal is not correctly installed for"
-		eerror "the currently active version of ghc ($(ghc-version)). Please"
-		eerror "run haskell-updater or re-build dev-haskell/cabal."
-		die "cabal is not correctly installed"
 	fi
 
 	# We build the setup program using the latest version of
