@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?]
 	>=dev-haskell/either-3.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/map-syntax-0.2:=[profile?] <dev-haskell/map-syntax-0.3:=[profile?]
@@ -47,5 +47,6 @@ src_prepare() {
 	cabal_chdeps \
 		'process                    >= 1.1     && < 1.3' 'process                    >= 1.1' \
 		'time                       >= 1.1     && < 1.6' 'time                       >= 1.1' \
-		'transformers               >= 0.3     && < 0.5' 'transformers               >= 0.3'
+		'transformers               >= 0.3     && < 0.5' 'transformers               >= 0.3' \
+		'dlist                      >= 0.5     && < 0.8' 'dlist                      >= 0.5'
 }
