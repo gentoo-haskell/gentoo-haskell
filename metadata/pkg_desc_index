@@ -1058,13 +1058,13 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
-dev-haskell/persistent 2.1.6 2.2.4.1 2.5: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.1.6 2.2.4.1 2.5 2.6: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.1.4 2.5: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.3.0.2 2.5: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.2.2 2.5: Backend for the persistent library using postgresql
+dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mysql 2.3.0.2 2.5 2.6: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-postgresql 2.2.2 2.5 2.6: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library using Redis
-dev-haskell/persistent-sqlite 2.2.1 2.5.0.2: Backend for the persistent library using sqlite3
+dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.1.6: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
@@ -1289,7 +1289,7 @@ dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
-dev-haskell/stack 1.0.2-r3 1.1.2-r1 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 1.1.2-r2 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.1.0.4: State variables
