@@ -20,13 +20,8 @@
 #   haddock    --  for documentation generation
 #   hscolour   --  generation of colourised sources
 #   hoogle     --  generation of documentation search index
-#   alex       --  lexer/scanner generator
-#   happy      --  parser generator
-#   c2hs       --  C interface generator
-#   cpphs      --  C preprocessor clone written in Haskell
 #   profile    --  if package supports to build profiling-enabled libraries
 #   bootstrap  --  only used for the cabal package itself
-#   bin        --  the package installs binaries
 #   lib        --  the package installs libraries
 #   nocabaldep --  don't add dependency on cabal.
 #                  only used for packages that _must_ not pull the dependency
@@ -91,10 +86,6 @@ for feature in ${CABAL_FEATURES}; do
 		haddock)    CABAL_USE_HADDOCK=yes;;
 		hscolour)   CABAL_USE_HSCOLOUR=yes;;
 		hoogle)     CABAL_USE_HOOGLE=yes;;
-		alex)       CABAL_USE_ALEX=yes;;
-		happy)      CABAL_USE_HAPPY=yes;;
-		c2hs)       CABAL_USE_C2HS=yes;;
-		cpphs)      CABAL_USE_CPPHS=yes;;
 		profile)    CABAL_USE_PROFILE=yes;;
 		bootstrap)  CABAL_BOOTSTRAP=yes;;
 		lib)        CABAL_HAS_LIBRARIES=yes;;
@@ -129,22 +120,6 @@ fi
 
 if [[ -n "${CABAL_USE_HOOGLE}" ]]; then
 	IUSE="${IUSE} hoogle"
-fi
-
-if [[ -n "${CABAL_USE_ALEX}" ]]; then
-	DEPEND="${DEPEND} dev-haskell/alex"
-fi
-
-if [[ -n "${CABAL_USE_HAPPY}" ]]; then
-	DEPEND="${DEPEND} dev-haskell/happy"
-fi
-
-if [[ -n "${CABAL_USE_C2HS}" ]]; then
-	DEPEND="${DEPEND} dev-haskell/c2hs"
-fi
-
-if [[ -n "${CABAL_USE_CPPHS}" ]]; then
-	DEPEND="${DEPEND} dev-haskell/cpphs"
 fi
 
 if [[ -n "${CABAL_USE_PROFILE}" ]]; then
@@ -352,20 +327,7 @@ cabal-configure() {
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
 		cabalconf+=(--enable-library-profiling)
 	fi
-	if [[ -n "${CABAL_USE_ALEX}" ]]; then
-		cabalconf+=(--with-alex=${EPREFIX}/usr/bin/alex)
-	fi
 
-	if [[ -n "${CABAL_USE_HAPPY}" ]]; then
-		cabalconf+=(--with-happy=${EPREFIX}/usr/bin/happy)
-	fi
-
-	if [[ -n "${CABAL_USE_C2HS}" ]]; then
-		cabalconf+=(--with-c2hs=${EPREFIX}/usr/bin/c2hs)
-	fi
-	if [[ -n "${CABAL_USE_CPPHS}" ]]; then
-		cabalconf+=(--with-cpphs=${EPREFIX}/usr/bin/cpphs)
-	fi
 	if [[ -n "${CABAL_TEST_SUITE}" ]]; then
 		cabalconf+=($(use_enable test tests))
 	fi
