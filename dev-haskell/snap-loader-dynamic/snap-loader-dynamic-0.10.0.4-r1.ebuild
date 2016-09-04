@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/hint-0.3.3.1:=[profile?] <dev-haskell/hint-0.6:=[profile?]
+	>=dev-haskell/hint-0.3.3.1:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/snap-core-0.9:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'template-haskell  >= 2.2     && < 2.11' 'template-haskell  >= 2.2' \
-		'time              >= 1.1     && < 1.6' 'time              >= 1.1'
+		'time              >= 1.1     && < 1.6' 'time              >= 1.1' \
+		'hint              >= 0.3.3.1 && < 0.6' 'hint              >= 0.3.3.1'
 }
