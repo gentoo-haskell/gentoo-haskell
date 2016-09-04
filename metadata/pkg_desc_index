@@ -136,7 +136,7 @@ dev-haskell/blaze-svg 0.3.6: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.11.0.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
-dev-haskell/bmp 1.2.5.2-r1: Read and write uncompressed BMP image files
+dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
 dev-haskell/bound 1.0.7-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
@@ -513,12 +513,12 @@ dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glob 0.7.11: Globbing library
-dev-haskell/gloss 1.10.1.1: Painless 2D vector graphics, animations and simulations
-dev-haskell/gloss-algorithms 1.10.1.1: Data structures and algorithms for working with 2D graphics
-dev-haskell/gloss-examples 1.10.1.1: Examples using the gloss library
-dev-haskell/gloss-juicy 0.2: Load any image supported by Juicy.Pixels in your gloss application
-dev-haskell/gloss-raster 1.10.1.1: Parallel rendering of raster images
-dev-haskell/gloss-rendering 1.10.1.1: Gloss picture data types and rendering functions
+dev-haskell/gloss 1.10.2.3: Painless 2D vector graphics, animations and simulations
+dev-haskell/gloss-algorithms 1.10.2.3: Data structures and algorithms for working with 2D graphics
+dev-haskell/gloss-examples 1.10.2.3: Examples using the gloss library
+dev-haskell/gloss-juicy 0.2.2: Load any image supported by Juicy.Pixels in your gloss application
+dev-haskell/gloss-raster 1.10.2.3: Parallel rendering of raster images
+dev-haskell/gloss-rendering 1.10.3.3: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.3.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.2: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.10: A binding for the OpenGL Utility Toolkit
