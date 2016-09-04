@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The built-in comparisons for textual data are based on Unicode ordinals. This
+		does not match most every-day sorting algorithms. For example,
+		\&quot;z10.txt\&quot; is sorted after \&quot;z2.txt\&quot; by users, but before it by
+		na&amp;#239;ve algorithms.
+		
+		This package provides an implementation of \&quot;natural sort\&quot;, which more
+		closely matches user expectations.
+		
+		See also: &lt;http://www.davekoelle.com/alphanum.html&gt;
+	</longdescription>
+</pkgmetadata>
