@@ -44,7 +44,6 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/streaming-commons:=
 	>=dev-haskell/tar-0.4:= <dev-haskell/tar-0.6:=
 	>=dev-haskell/text-0.11:=
-	dev-haskell/transformers:=
 	dev-haskell/transformers-compat:=
 	>=dev-haskell/unix-compat-0.2:= <dev-haskell/unix-compat-0.5:=
 	dev-haskell/unordered-containers:=
