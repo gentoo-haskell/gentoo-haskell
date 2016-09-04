@@ -614,13 +614,13 @@ dev-haskell/haxr 3000.11.2: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
 dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
-dev-haskell/hdaemonize 0.5.0.2: Library to handle the details of writing daemons for UNIX
+dev-haskell/hdaemonize 0.5.0.2 0.5.2: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
 dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
-dev-haskell/hdevtools 0.1.3.2: Persistent GHC powered background server for FAST haskell development tools
+dev-haskell/hdevtools 0.1.4.0: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
@@ -724,7 +724,7 @@ dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
 dev-haskell/hstringtemplate 0.8.5: StringTemplate implementation in Haskell
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx2hs 0.13.5: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
-dev-haskell/hsyslog 1.6 2.0: FFI interface to syslog(3) from POSIX.1-2001
+dev-haskell/hsyslog 1.6 2.0 4: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htaglib 1.0.3: Bindings to TagLib, audio meta-data library
 dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
@@ -952,7 +952,7 @@ dev-haskell/monadrandom 0.4.2.3: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
 dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.2: Type classes for mapping, folding, and traversing monomorphic containers
-dev-haskell/monoid-extras 0.4.1.2: Various extra monoid-related definitions and utilities
+dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.2 0.4.2.1: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
