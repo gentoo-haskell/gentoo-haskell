@@ -741,7 +741,7 @@ dev-haskell/http-client-tls 0.2.4.1: http-client backend using the connection pa
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.11: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
-dev-haskell/http-link-header 1.0.1: A parser and writer for the HTTP Link header as specified in RFC 5988
+dev-haskell/http-link-header 1.0.2: A parser and writer for the HTTP Link header as specified in RFC 5988 "Web Linking"
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3.1: Reverse proxy HTTP requests, either over raw sockets or with WAI
