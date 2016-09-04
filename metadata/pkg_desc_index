@@ -979,6 +979,7 @@ dev-haskell/nanoprolog 0.3-r2: Very small interpreter for a Prolog-like language
 dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's API
 dev-haskell/nats 1.1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
+dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/netwire 5.0.1-r1: Functional reactive programming library
 dev-haskell/network 2.6.3.1: Low-level networking interface
@@ -1369,6 +1370,7 @@ dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.0.4: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/tensor 1.0.0.1: Tensor data types
+dev-haskell/terminal-progress-bar 0.0.1.4: A simple progress bar in the terminal
 dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
 dev-haskell/terminfo 0.4.0.2: Haskell bindings to the terminfo library
 dev-haskell/test-framework 0.8.1.1: Framework for running and organising tests, with HUnit and QuickCheck support
