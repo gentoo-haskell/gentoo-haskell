@@ -63,7 +63,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/optparse-applicative-0.11.0.2:=[profile?] <dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/path-0.5.7:=[profile?] <dev-haskell/path-0.6:=[profile?]
 	>=dev-haskell/path-io-1.1.0:=[profile?] <dev-haskell/path-io-2.0.0:=[profile?]
-	>=dev-haskell/persistent-2.1.2:=[profile?] <dev-haskell/persistent-2.6:=[profile?]
+	>=dev-haskell/persistent-2.1.2:=[profile?]
 	>=dev-haskell/persistent-template-2.1.1:=[profile?] <dev-haskell/persistent-template-2.6:=[profile?]
 	>=dev-haskell/project-template-0.2:=[profile?] <dev-haskell/project-template-0.3:=[profile?]
 	>=dev-haskell/regex-applicative-text-0.1.0.1:=[profile?] <dev-haskell/regex-applicative-text-0.2:=[profile?]
@@ -90,7 +90,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/zlib-0.5.4.2:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
-	>=dev-haskell/persistent-sqlite-2.1.4:=[profile?] <dev-haskell/persistent-sqlite-2.6:=[profile?]
+	>=dev-haskell/persistent-sqlite-2.1.4:=[profile?]
 	!disable-git-info? ( >=dev-haskell/gitrev-1.1:=[profile?] <dev-haskell/gitrev-1.3:=[profile?]
 				>=dev-haskell/optparse-simple-0.0.3:=[profile?] <dev-haskell/optparse-simple-0.1:=[profile?] )
 "
@@ -123,7 +123,9 @@ src_prepare() {
 		'monad-unlift >=0.1.2.0 && <0.2' 'monad-unlift >=0.1.2.0' \
 		'template-haskell >=2.9.0.0 && <2.11' 'template-haskell >=2.9.0.0' \
 		'generic-deriving >=1.9.0 && <1.10' 'generic-deriving >=1.9.0' \
-		'time >=1.4.2 && <1.6' 'time >=1.4.2'
+		'time >=1.4.2 && <1.6' 'time >=1.4.2' \
+		'persistent >=2.1.2 && <2.6' 'persistent >=2.1.2' \
+		'persistent-sqlite >=2.1.4 && <2.6' 'persistent-sqlite >=2.1.4'
 }
 
 src_configure() {
