@@ -36,6 +36,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc-prim       == 0.5.*' 'ghc-prim        >= 0.4 && < 0.6' \
+		'ghc-prim        == 0.5.*' 'ghc-prim        >= 0.4 && < 0.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-llvm
