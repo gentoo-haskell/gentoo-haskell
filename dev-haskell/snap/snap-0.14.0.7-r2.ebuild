@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/comonad-1.1:=[profile?]
 	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.4:=[profile?]
 	>=dev-haskell/directory-tree-0.11:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.8:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?]
 	>=dev-haskell/either-4.3:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/heist-0.14:=[profile?] <dev-haskell/heist-0.15:=[profile?]
 	>=dev-haskell/lens-3.7.6:=[profile?]
@@ -59,7 +59,8 @@ src_prepare() {
 		'time                      >= 1.1      && < 1.6' 'time                      >= 1.1' \
 		'template-haskell    >= 2.2     && < 2.11' 'template-haskell    >= 2.2' \
 		'transformers              >= 0.2      && < 0.5' 'transformers              >= 0.2' \
-		'lens                      >= 3.7.6    && < 4.14' 'lens                      >= 3.7.6'
+		'lens                      >= 3.7.6    && < 4.14' 'lens                      >= 3.7.6' \
+		'dlist                     >= 0.5      && < 0.8' 'dlist                     >= 0.5'
 }
 
 src_configure() {
