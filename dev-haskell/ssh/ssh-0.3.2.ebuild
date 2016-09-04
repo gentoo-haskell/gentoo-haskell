@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.0
 		>=dev-haskell/libssh2-0.2 <dev-haskell/libssh2-0.3
 		>=dev-haskell/pseudomacros-0.0 <dev-haskell/pseudomacros-0.1
-		>=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.9
+		>=dev-haskell/quickcheck-2.8
 		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
@@ -55,5 +55,6 @@ src_prepare() {
 		'RSA >= 2.1.0 && < 2.1.1' 'RSA >= 2.1.0' \
 		'HUnit                      >= 1.0   && < 1.3' 'HUnit                      >= 1.0' \
 		'tasty                      >= 0.10  && < 0.11' 'tasty                      >= 0.10' \
-		'template-haskell           >= 2.8   && < 2.11' 'template-haskell           >= 2.8'
+		'template-haskell           >= 2.8   && < 2.11' 'template-haskell           >= 2.8' \
+		'QuickCheck                 >= 2.8   && < 2.9' 'QuickCheck                 >= 2.8'
 }
