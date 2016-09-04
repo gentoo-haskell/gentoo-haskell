@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+no-examples no-exe no-unicode system-libyaml"
 
-RESTRICT=test # https://github.com/haskell/cabal/issues/3758
-
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.0:=[profile?]
 	>=dev-haskell/conduit-1.1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
@@ -28,15 +26,14 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-haskell/transformers-0.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 	!no-examples? ( dev-haskell/raw-strings-qq:=[profile?] )
 	system-libyaml? ( dev-libs/libyaml )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/aeson-qq
 		dev-haskell/base-compat
 		>=dev-haskell/hspec-1.3
