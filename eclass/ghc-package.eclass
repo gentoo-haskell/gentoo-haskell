@@ -106,20 +106,6 @@ ghc-cabal-version() {
 	fi
 }
 
-# @FUNCTION: ghc-sanecabal
-# @DESCRIPTION:
-# check if a standalone Cabal version is available for the
-# currently used ghc; takes minimal version of Cabal as
-# an optional argument
-ghc-sanecabal() {
-	local f
-	local version
-	if [[ -z "$1" ]]; then version="1.0.1"; else version="$1"; fi
-	for f in $(ghc-confdir)/cabal-*; do
-		[[ -f "${f}" ]] && version_is_at_least "${version}" "${f#*cabal-}" && return
-	done
-	return 1
-}
 # @FUNCTION: ghc-is-dynamic
 # @DESCRIPTION:
 # checks if ghc is built against dynamic libraries
