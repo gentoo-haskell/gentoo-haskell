@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A progress bar is used to convey the progress of a task. This
+		package implements a very simple textual progress bar.
+		
+		See the module &#39;System.ProgressBar&#39; on how to use the progress bar
+		or build the package with the -fexample flag for a small example
+		program.
+		
+		The animated progress bar depends entirely on the interpretation of
+		the carriage return character (\&#39;\\r\&#39;). If your terminal interprets
+		it as something else then \&quot;move cursor to beginning of line\&quot;, the
+		animation won&#39;t work.
+		
+		Note: Due to a bug in \&quot;cabal haddock\&quot; you will have to manually
+		uncomment the example section in the cabal file. But uncommenting
+		that section will result in \&quot;cabal haddock\&quot; failing.
+	</longdescription>
+</pkgmetadata>

@@ -40,12 +40,21 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/base-orphans-0.5.3 <dev-haskell/base-orphans-0.6
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.8.3
+		>=dev-haskell/quickcheck-2.7
 		>=dev-haskell/quickcheck-instances-0.3.12
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-QC-2.8.3.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.7 && <2.8.3' 'QuickCheck >= 2.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
