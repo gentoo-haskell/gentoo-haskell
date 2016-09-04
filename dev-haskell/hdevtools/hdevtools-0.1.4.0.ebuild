@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/cmdargs:=
+RDEPEND=">=dev-haskell/cabal-1.18:=
+	dev-haskell/cmdargs:=
 	dev-haskell/ghc-paths:=
 	dev-haskell/network:=
 	dev-haskell/syb:=
-	dev-haskell/transformers:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 "
