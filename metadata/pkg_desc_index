@@ -242,7 +242,7 @@ dev-haskell/conduit-extra 1.1.13.2: Batteries included conduit: adapters for com
 dev-haskell/config-value 0.4.0.2: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
-dev-haskell/connection 0.2.4 0.2.5: Simple and easy network connections API
+dev-haskell/connection 0.2.6: Simple and easy network connections API
 dev-haskell/constraints 0.4.1.3 0.8: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
@@ -281,7 +281,7 @@ dev-haskell/cryptohash 0.11.9: collection of crypto hashes, fast, pure and pract
 dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
 dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
-dev-haskell/cryptonite 0.16 0.17: Cryptography Primitives sink
+dev-haskell/cryptonite 0.19: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.2: A small program that will read csv files and create qif files
@@ -317,7 +317,7 @@ dev-haskell/data-reify 0.6.1: Reify a recursive data structure into an explicit 
 dev-haskell/dataenc 0.14.0.7: Data encoding library
 dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
-dev-haskell/dav 1.2: RFC 4918 WebDAV support
+dev-haskell/dav 1.3.1: RFC 4918 WebDAV support
 dev-haskell/dbus 0.10.11-r1 0.10.12: A client library for the D-Bus IPC system
 dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
@@ -349,7 +349,7 @@ dev-haskell/digestive-functors 0.7.1.5 0.8.0.1: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.0.6: Blaze frontend for the digestive-functors library
 dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.6.1.3: Snap backend for the digestive-functors library
-dev-haskell/digits 0.2-r1: Converts integers to lists of digits and back
+dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.2: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
@@ -364,7 +364,7 @@ dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Travers
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
-dev-haskell/dlist 0.7.1.2: Difference lists
+dev-haskell/dlist 0.7.1.2 0.8.0.1: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 1.4.5 2.0.2 2.0.3 2.0.5: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
@@ -625,7 +625,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
-dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r1: An Haskell template system supporting both HTML5 and XML
+dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r2: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.8: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
@@ -1265,7 +1265,7 @@ dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.5: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
-dev-haskell/snap 0.14.0.7-r1: Top-level package for the Snap Web Framework
+dev-haskell/snap 0.14.0.7-r2: Top-level package for the Snap Web Framework
 dev-haskell/snap-app 0.6.1 0.7.0: None
 dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.4-r1: Snap: A Haskell Web Framework: dynamic loader
