@@ -87,7 +87,7 @@ dev-haskell/authenticate-oauth 1.5.1.2: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.12.1 0.13.0-r3: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.14.0: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.8.2 0.9.1: A compatibility layer for base
 dev-haskell/base-orphans 0.3.2 0.4.5 0.5.4: Backwards-compatible orphan instances for base
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
@@ -487,7 +487,7 @@ dev-haskell/geniplate-mirror 0.6.0.7 0.7.4: Use Template Haskell to generate Uni
 dev-haskell/gf 3.7.1 3.8 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
-dev-haskell/ghc-datasize 0.1.2: Determine the size of data structures in GHC's memory
+dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
 dev-haskell/ghc-exactprint 0.5.2.1: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
@@ -620,7 +620,7 @@ dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100: PostgreSQL driver for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
-dev-haskell/hdevtools 0.1.4.0: Persistent GHC powered background server for FAST haskell development tools
+dev-haskell/hdevtools 0.1.4.1: Persistent GHC powered background server for FAST haskell development tools
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
@@ -1570,7 +1570,7 @@ dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMona
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.7: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.18.4: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.18.5: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.2: Yet another array library
 dev-haskell/yesod 1.4.3: Creation of type-safe, RESTful web applications
