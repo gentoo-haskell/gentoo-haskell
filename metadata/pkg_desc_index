@@ -364,7 +364,7 @@ dev-haskell/distributive 0.4.4 0.5.0.2: Distributive functors -- Dual to Travers
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
-dev-haskell/dlist 0.7.1.2 0.8.0.1: Difference lists
+dev-haskell/dlist 0.7.1.2 0.8.0.2: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 1.4.5 2.0.2 2.0.3 2.0.5: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
