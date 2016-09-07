@@ -232,7 +232,7 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.6: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.7: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -257,7 +257,7 @@ dev-haskell/cookie 0.4.2.1: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
-dev-haskell/cpphs 1.19.3 1.20.1: A liberalised re-implementation of cpp, the C pre-processor
+dev-haskell/cpphs 1.19.3 1.20.2: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r1: A haskell binding to cracklib
@@ -565,7 +565,7 @@ dev-haskell/half 0.2.2.3: Half-precision floating-point
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handa-gdata 0.7.0.3: Library and command-line utility for accessing Google services and APIs
 dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
-dev-haskell/hans 3.0.0.1: Network Stack
+dev-haskell/hans 3.0.1: Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
@@ -906,7 +906,7 @@ dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.4: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
-dev-haskell/messagepack 0.5.1: Serialize instance for Message Pack Object
+dev-haskell/messagepack 0.5.3: Serialize instance for Message Pack Object
 dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0 0.1.10.0: microlens support for Reader/Writer/State from mtl
@@ -1701,7 +1701,7 @@ www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.2.9 3.3.1: High performance web server on WAI/warp
 x11-misc/taffybar 0.4.6: A desktop bar similar to xmobar, but with more GUI
-x11-misc/xmobar 0.23.1 0.24.2 9999: A Minimalistic Text Based Status Bar
+x11-misc/xmobar 0.23.1 0.24.2 0.24.3 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1-r3: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-log-applet 2.0.0-r301: Gnome and XFCE applet for displaying XMonad log
 x11-misc/yeganesh 2.5: small dmenu wrapper
