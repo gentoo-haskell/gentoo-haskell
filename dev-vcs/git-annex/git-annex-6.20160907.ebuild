@@ -126,7 +126,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'http-conduit (<2.2.0)' 'http-conduit' \
-		'persistent (<2.5)' 'persistent'
+		'persistent (< 2.5)' 'persistent'
 }
 
 src_configure() {
