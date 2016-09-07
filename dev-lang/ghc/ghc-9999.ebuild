@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -486,6 +486,8 @@ src_configure() {
 		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
 		echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
+		# Speed up initial Cabal bootstrap
+		echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
