@@ -24,7 +24,6 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-termina
 	>=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/terminal-size-0.3.0:=[profile?] <dev-haskell/terminal-size-0.4.0:=[profile?]
 	>=dev-haskell/text-0.11.0:=[profile?] <dev-haskell/text-1.3.0:=[profile?]
-	>=dev-haskell/transformers-0.3.0:=[profile?] <dev-haskell/transformers-0.6.0:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
