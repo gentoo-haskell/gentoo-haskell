@@ -1455,7 +1455,7 @@ dev-haskell/units-parser 0.1.0.0: A parser for units of measure
 dev-haskell/unix-compat 0.4.2.0: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2: Unix memory syscalls
 dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a conduit interface (deprecated)
-dev-haskell/unix-time 0.3.6: Unix time parser/formatter and utilities
+dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unordered-containers 0.2.7.1: Efficient hashing-based container types
