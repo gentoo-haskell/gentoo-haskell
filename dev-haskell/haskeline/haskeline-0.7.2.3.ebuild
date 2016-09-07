@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.0.1_rc4 PM:8.0.1"
+CABAL_CORE_LIB_GHC_PV="PM:8.0.1_rc4 PM:8.0.1 PM:9999"
 
 src_configure() {
 	haskell-cabal_src_configure \
