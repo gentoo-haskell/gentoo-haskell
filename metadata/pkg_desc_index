@@ -732,7 +732,7 @@ dev-haskell/hstringtemplate 0.8.5: StringTemplate implementation in Haskell
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx2hs 0.13.5: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyslog 1.6 2.0 4: FFI interface to syslog(3) from POSIX.1-2001
-dev-haskell/htaglib 1.0.3: Bindings to TagLib, audio meta-data library
+dev-haskell/htaglib 1.0.4: Bindings to TagLib, audio meta-data library
 dev-haskell/htf 0.13.1.0: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1: Parse HTML documents using xml-conduit datatypes
@@ -1510,7 +1510,7 @@ dev-haskell/vector-algorithms 0.7.0.1: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.3.2: Instances of Data.Binary and Data.Serialize for vector
 dev-haskell/vector-instances 3.3.1: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
-dev-haskell/vector-space 0.10.3: Vector & affine spaces, linear maps, and derivatives
+dev-haskell/vector-space 0.10.4: Vector & affine spaces, linear maps, and derivatives
 dev-haskell/vector-space-points 0.2.1.2: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vinyl 0.5.2: Extensible Records
