@@ -25,7 +25,6 @@ RDEPEND="dev-haskell/abstract-par:=
 	dev-haskell/argparser:=
 	dev-haskell/derive:=
 	dev-haskell/linear:=
-	dev-haskell/megadeth:=
 	dev-haskell/monad-par:=
 	dev-haskell/mtl:=
 	dev-haskell/parallel-io:=
@@ -69,7 +68,10 @@ RDEPEND="dev-haskell/abstract-par:=
 		dev-haskell/zlib:= )
 	!imgs? ( archs? ( dev-haskell/zlib:= ) )
 	media? ( dev-haskell/hcodecs:=
-			dev-haskell/hogg:=
+			dev-haskell/hunit:=
+			dev-haskell/mtl:=
+			dev-haskell/old-locale:=
+			dev-haskell/random:=
 			dev-haskell/idiii:=
 			dev-haskell/bitwise:=
 			dev-haskell/monad-loops:=
