@@ -71,7 +71,9 @@ RDEPEND="dev-haskell/abstract-par:=
 	media? ( dev-haskell/hcodecs:=
 			dev-haskell/hogg:=
 			dev-haskell/idiii:=
-			dev-haskell/ttasm:=
+			dev-haskell/bitwise:=
+			dev-haskell/monad-loops:=
+			dev-haskell/mtl:=
 			dev-haskell/wavy:= )
 	net? ( dev-haskell/concurrent-extra:=
 		dev-haskell/dns:=
@@ -97,6 +99,8 @@ PATCHES=(
 	"${FILESDIR}"/${P}-megadeth-better-erroro.patch
 	"${FILESDIR}"/${P}-megadeth-ghc-8-gadt.patch
 
+	"${FILESDIR}"/${P}-ttasm-layout.patch
+
 	# package itself:
 	"${FILESDIR}"/${PN}-0.1-QC-2.9.patch
 	"${FILESDIR}"/${P}-th-2.11-1.patch
@@ -112,6 +116,7 @@ PATCHES=(
 # - svg-tree: expose internal modules
 # - x509: stabilised handling of corrupterd data
 # - megadeth: not a fork but has no releases
+# - ttasm: cabalised, renamed module
 
 src_unpack() {
 	git-r3_src_unpack
@@ -124,6 +129,7 @@ src_unpack() {
 		hs-asn1-encoding
 		hs-certificate-x509
 		svg-tree
+		ttasm
 
 		# not exactly fork. just unreleased upstream library
 		megadeth
@@ -148,9 +154,10 @@ src_prepare() {
 		'hogg'          'array' \
 		'megadeth'      'base' \
 		'svg-tree'      'attoparsec, lens, scientific, thyme' \
+		'ttasm'         'bitwise, mtl, monad-loops' \
 		'x509'          'asn1-parse, cryptonite, hourglass, memory' \
 		\
-		'hs-source-dirs:      src' 'hs-source-dirs: src, bundled/Juicy.Pixels/src, bundled/hogg, bundled/hs-asn1-encoding, bundled/hs-certificate-x509, bundled/megadeth, bundled/svg-tree/src'
+		'hs-source-dirs:      src' 'hs-source-dirs: src, bundled/Juicy.Pixels/src, bundled/hogg, bundled/hs-asn1-encoding, bundled/hs-certificate-x509, bundled/megadeth, bundled/svg-tree/src, bundled/ttasm'
 }
 
 src_configure() {
