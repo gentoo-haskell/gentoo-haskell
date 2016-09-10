@@ -175,6 +175,7 @@ dev-haskell/hoogle:fetchdb - fetch hoogle db by running: hoogle data
 dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (implies fetchdb)
 dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building hoogle dbs for installed pkgs
 dev-haskell/hp2any-graph:serveronly - Suppress building the client, thereby removing the dependency on OpenGL.
+dev-haskell/hps:build-exec - Build the `hps-fractals' executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hsh:buildtests - Build the executable to run unit tests.
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
@@ -197,6 +198,7 @@ dev-haskell/httpd-shed:buildexamples - Build example executables.
 dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hxt:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
+dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
@@ -212,6 +214,7 @@ dev-haskell/keter:system-filepath - Deprecated in favor of filepath
 dev-haskell/lambdabot-misc-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/lambdabot-reference-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
+dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
 dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library for comparative performance analysis. Defaults to being turned off to avoid the extra dependency.
 dev-haskell/lens:dump-splices - Build and run the doctests test-suite.
