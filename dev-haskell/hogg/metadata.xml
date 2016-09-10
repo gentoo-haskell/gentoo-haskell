@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The HOgg package provides a commandline tool for manipulating Ogg files.
+		It supports chained and multiplexed Ogg bitstreams and Ogg Skeleton.
+		HOgg also includes a library that may be used by other packages for handling
+		the Ogg container format.
+	</longdescription>
+</pkgmetadata>
