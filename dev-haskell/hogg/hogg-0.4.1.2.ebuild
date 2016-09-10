@@ -23,6 +23,7 @@ RDEPEND="dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/random:=[profile?]
+	dev-haskell/time-locale-compat:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
