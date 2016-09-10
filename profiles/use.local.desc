@@ -16,6 +16,13 @@ app-editors/yi:testing - bake-in the self-checks
 app-editors/yi:vty - Build with Vty frontend
 app-emacs/haskell-mode:snippets - install snippets/ modules
 app-emacs/hindent:vim - Install a vim plugin allowing hindent to be used as the formatter by `gq`
+app-forensics/quickfuzz:archs - support archive formats
+app-forensics/quickfuzz:codes - support cource code formats
+app-forensics/quickfuzz:docs - support document formats
+app-forensics/quickfuzz:imgs - support image formats
+app-forensics/quickfuzz:media - support media formats
+app-forensics/quickfuzz:net - support networking formats
+app-forensics/quickfuzz:pki - support PKI formats
 app-text/pandoc:embed_data_files - Embed data files in binary for relocatable executable.
 app-text/pandoc:https - Enable support for downloading of resources over https.
 app-text/pandoc:network-uri - Get Network.URI from the network-uri package.
