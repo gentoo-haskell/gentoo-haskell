@@ -1,0 +1,23 @@
+diff --git a/hogg.cabal b/hogg.cabal
+index bb83afd..309b536 100644
+--- a/hogg.cabal
++++ b/hogg.cabal
+@@ -37,3 +37,3 @@ library
+     if flag(splitBase)
+-      build-depends: base >=3 && < 5, mtl, HUnit, array, bytestring, containers, random, time, old-locale
++      build-depends: base >=3 && < 5, mtl, HUnit, array, bytestring, containers, random, time, time-locale-compat, old-locale
+     else
+diff --git a/tools/hogg.hs b/tools/hogg.hs
+index 2f55727..1c5a69d 100644
+--- a/tools/hogg.hs
++++ b/tools/hogg.hs
+@@ -24,3 +24,3 @@ import Data.List hiding (sort)
+ 
+-import System.Locale (defaultTimeLocale)
++import qualified Data.Time.Locale.Compat as DTLC (defaultTimeLocale)
+ import Data.Time.Format (formatTime)
+@@ -909,3 +909,3 @@ man = do
+     currentTime <- liftIO getCurrentTime
+-    let dateStamp = formatTime defaultTimeLocale "%B %Y" currentTime
++    let dateStamp = formatTime DTLC.defaultTimeLocale "%B %Y" currentTime
+     outputC $ C.concat $ map C.pack $ (longMan dateStamp) args
