@@ -1124,7 +1124,7 @@ dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
 dev-haskell/primitive 0.6.1.0-r1: Primitive memory-related operations
-dev-haskell/probability 0.2.5-r1: Probabilistic Functional Programming
+dev-haskell/probability 0.2.5.1: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
 dev-haskell/process-extras 0.3.3.8: Process extras
@@ -1345,7 +1345,7 @@ dev-haskell/stylish-haskell 0.6.1.0: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
-dev-haskell/svg-tree 0.5.1.1: SVG file loader and serializer
+dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.6.0.0: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
@@ -1428,11 +1428,11 @@ dev-haskell/tidal 0.8.1: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
 dev-haskell/time-lens 0.4.0.1: Lens-based interface to Data.Time data structures
 dev-haskell/time-locale-compat 0.1.1.3: Compatibility of TimeLocale between old-locale and time-1.5
-dev-haskell/time-parsers 0.1.0.0: Parsers for types in 'time'
+dev-haskell/time-parsers 0.1.1.0: Parsers for types in 'time'
 dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31 1.0.31-r1: A tool for visualizing time series from log files
 dev-haskell/timezone-olson 0.1.7: A pure Haskell parser and renderer for binary Olson timezone files
-dev-haskell/timezone-series 0.1.5.1: Enhanced timezone handling for Data.Time
+dev-haskell/timezone-series 0.1.6.1: Enhanced timezone handling for Data.Time
 dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
 dev-haskell/tls-debug 0.4.4: Set of programs for TLS testing and debugging
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
@@ -1620,7 +1620,7 @@ dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
 dev-haskell/yi-language 0.1.1.0 0.2.1: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.2: A rope data structure used by Yi
 dev-haskell/zeromq4-haskell 0.6.5: Bindings to ZeroMQ 4.x
-dev-haskell/zip-archive 0.2.3.7 0.3.0.4: Library for creating and modifying zip archives
+dev-haskell/zip-archive 0.2.3.7 0.3.0.5: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2.2: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
@@ -1666,7 +1666,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.4.4: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.2: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.3: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 6.20160511 6.20160619 6.20160619-r1 6.20160907: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
