@@ -184,15 +184,18 @@ ghc-libdir() {
 # Returns default arguments passed along 'ghc --make'
 # build mode. Used mainly to enable parallel build mode.
 ghc-make-args() {
+	local ghc_make_args=()
 	# parallel on all available cores
-	if ghc-supports-parallel-make; then
+	if ghc-supports-smp && ghc-supports-parallel-make; then
 		# It should have been just -j$(makeopts_jobs)
 		# but GHC does not yet have nice defaults:
 		#    https://ghc.haskell.org/trac/ghc/ticket/9221#comment:57
+		# SMP is a requirement for parallel GC's gen0
+		# 'qb' balancing.
 		echo "-j$(makeopts_jobs) +RTS -A256M -qb0 -RTS"
-	else
-		echo ""
+		ghc_make_args=()
 	fi
+	echo "${ghc_make_args[@]}"
 }
 
 # @FUNCTION: ghc-confdir
