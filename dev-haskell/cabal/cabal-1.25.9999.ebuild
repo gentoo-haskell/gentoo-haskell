@@ -57,6 +57,9 @@ src_prepare() {
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps "version: ${cabal_upstream_version}" "version: ${PV}"
 	fi
 	default
+
+	# bootstrap uses full new source of Cabal. Not all extensions are present in .hs file.
+	GHC_BOOTSTRAP_FLAGS="${GHC_BOOTSTRAP_FLAGS} -XRank2Types"
 }
 
 src_configure() {
