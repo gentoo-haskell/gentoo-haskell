@@ -32,6 +32,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck          >= 2   && < 3,' 'QuickCheck          >= 2   && < 3, template-haskell,'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag semigroups semigroups) \
