@@ -18,21 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND="dev-haskell/hunit:=[profile?]
-	>=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.10:=[profile?]
+RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.10:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
+	test? ( dev-haskell/hunit )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'Executable test' 'Executable hasktags-test'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
