@@ -1420,7 +1420,7 @@ dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.10: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.2: Orphan instances for TH datatypes
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
-dev-haskell/these 0.7.2: An either-or-both data type & a generalized 'zip with padding' typeclass
+dev-haskell/these 0.7.2-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
