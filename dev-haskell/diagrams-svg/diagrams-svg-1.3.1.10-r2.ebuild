@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?]
-	>=dev-haskell/lucid-svg-0.5:=[profile?] <dev-haskell/lucid-svg-0.7:=[profile?]
+	>=dev-haskell/lucid-svg-0.5:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/old-time:=[profile?]
@@ -44,5 +44,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base                 >= 4.3   && < 4.9' 'base                 >= 4.3' \
-		'lens                 >= 4.0   && < 4.14' 'lens                 >= 4.0'
+		'lens                 >= 4.0   && < 4.14' 'lens                 >= 4.0' \
+		'lucid-svg            >= 0.5   && < 0.7' 'lucid-svg            >= 0.5'
 }
