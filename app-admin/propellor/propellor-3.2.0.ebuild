@@ -28,10 +28,9 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-haskell/transformers:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.18.1.3
 "
