@@ -30,6 +30,7 @@ RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
+	test? ( >=dev-haskell/quickcheck-2.1 )
 "
 
 S="${WORKDIR}/${MY_P}"
