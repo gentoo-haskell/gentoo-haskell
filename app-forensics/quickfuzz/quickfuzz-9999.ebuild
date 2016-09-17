@@ -101,7 +101,6 @@ PATCHES=(
 	"${FILESDIR}"/${P}-megadeth-ghc-8-gadt.patch
 
 	# package itself:
-	"${FILESDIR}"/${PN}-0.1-QC-2.9.patch
 	"${FILESDIR}"/${P}-th-2.11-1.patch
 	"${FILESDIR}"/${P}-th-2.11-2.patch
 )
