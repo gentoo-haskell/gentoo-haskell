@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-1.1:=[profil
 	>=dev-haskell/keys-3.10:=[profile?] <dev-haskell/keys-3.12:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
-	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.9.2:2=[profile?]
+	>=dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/semigroupoids-1.0:=[profile?] <dev-haskell/semigroupoids-5.2:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
@@ -42,3 +42,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck               >= 2.8     && < 2.9.2' 'QuickCheck               >= 2.8'
+}
