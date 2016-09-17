@@ -39,3 +39,10 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.25:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'codex               == 0.5.0.0' 'codex'
+}
