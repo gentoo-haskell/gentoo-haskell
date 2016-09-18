@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs nodejs, npm and stuff
 
-RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
@@ -77,3 +77,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit
 		dev-haskell/silently )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson >= 0.8 && < 0.12' 'aeson >= 0.8'
+}
