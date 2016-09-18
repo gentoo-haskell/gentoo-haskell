@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?]
 	>=dev-haskell/scotty-0.10:=[profile?] <dev-haskell/scotty-0.12:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
