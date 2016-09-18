@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # uses browser
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base-compat-0.8.1:=[profile?] <dev-haskell/base-compat-1:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/colour-2.2:=[profile?] <dev-haskell/colour-3.0:=[profile?]
