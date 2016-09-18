@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.6.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
@@ -36,9 +36,16 @@ RDEPEND=">=dev-haskell/aeson-0.10:=[profile?] <dev-haskell/aeson-0.11.3:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/base-orphans-0.4.5 <dev-haskell/base-orphans-0.6
-		>=dev-haskell/quickcheck-2.7.6 <dev-haskell/quickcheck-2.8.3
+		>=dev-haskell/quickcheck-2.7.6
 		>=dev-haskell/quickcheck-instances-0.3 <dev-haskell/quickcheck-instances-0.3.13
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck            >=2.7.6 && <2.9.2' 'QuickCheck            >=2.7.6'
+}
