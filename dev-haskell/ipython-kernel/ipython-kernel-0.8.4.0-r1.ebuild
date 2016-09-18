@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?]
@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'base            >=4.6 && < 4.9' 'base            >=4.6'
+		'base            >=4.6 && < 4.9' 'base            >=4.6' \
+		'aeson           >=0.6 && < 0.12' 'aeson           >=0.6'
 }
 
 src_configure() {
