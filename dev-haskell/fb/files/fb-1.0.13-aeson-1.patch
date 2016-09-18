@@ -1,0 +1,14 @@
+diff --git a/src/Facebook/Graph.hs b/src/Facebook/Graph.hs
+index d00458c..15d9c80 100644
+--- a/src/Facebook/Graph.hs
++++ b/src/Facebook/Graph.hs
+@@ -32,3 +32,3 @@ import qualified Control.Monad.Trans.Resource as R
+ import qualified Data.Aeson as A
+-import qualified Data.Aeson.Encode as AE (fromValue)
++import qualified Data.Aeson.Encode as AE
+ import qualified Data.ByteString.Char8 as B
+@@ -260,3 +260,3 @@ instance SimpleType GeoCoordinates where
+                         , "longitude" A..= longitude c]
+-        toBS = TE.encodeUtf8 . TL.toStrict . TLB.toLazyText . AE.fromValue
++        toBS = TE.encodeUtf8 . TL.toStrict . TLB.toLazyText . AE.encodeToTextBuilder
+     in toBS obj
