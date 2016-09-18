@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/generics-sop-0.1:=[profile?] <dev-haskell/generics-sop-0.3:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -40,3 +40,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                    >=0.8  && <0.12' 'aeson                    >=0.8'
+}
