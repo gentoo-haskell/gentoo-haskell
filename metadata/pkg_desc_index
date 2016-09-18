@@ -42,10 +42,10 @@ dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
-dev-haskell/aeson-compat 0.3.5.0 0.3.5.1: Compatibility layer for aeson
+dev-haskell/aeson-compat 0.3.6: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.2.0: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
-dev-haskell/aeson-pretty 0.7.2 0.8.1: JSON pretty-printing library and command-line tool
+dev-haskell/aeson-pretty 0.7.2 0.8.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
 dev-haskell/alex 3.1.7: Alex is a tool for generating lexical analysers in Haskell
@@ -1371,6 +1371,7 @@ dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parse
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
 dev-haskell/tar 0.4.5.0 0.5.0.3: Reading, writing and manipulating ".tar" archive files
+dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.10.1.2 0.11.0.4: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.2: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.4: Mark tasty tests as failure expected
