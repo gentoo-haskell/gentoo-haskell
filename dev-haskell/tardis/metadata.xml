@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A Tardis is a combination of both a forwards and a backwards
+		state transformer, providing two state values that \&quot;travel\&quot;
+		in opposite directions.
+		
+		A detailed description of what a Tardis is and how to use it
+		can be found in the documentation for Control.Monad.Tardis.
+	</longdescription>
+</pkgmetadata>
