@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-0.11.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?]
 	>=dev-haskell/binary-0.5.1.1:=[profile?] <dev-haskell/binary-0.8.5:=[profile?]
 	>=dev-haskell/case-insensitive-1.2.0.4:=[profile?] <dev-haskell/case-insensitive-1.2.1:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -47,5 +47,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'tagged                   >=0.7.3     && <0.8.5' 'tagged                   >=0.7.3' \
-		'QuickCheck           >=2.7      && <2.9.2' 'QuickCheck           >=2.7'
+		'QuickCheck           >=2.7      && <2.9.2' 'QuickCheck           >=2.7' \
+		'aeson                    >=0.7.0.6   && <0.11.3' 'aeson                    >=0.7.0.6'
 }

@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +plugins"
 
 RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.18:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?] <dev-haskell/configfile-1.2:=[profile?]
@@ -69,7 +69,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tagsoup >= 0.13 && < 0.14' 'tagsoup >= 0.13'
+		'tagsoup >= 0.13 && < 0.14' 'tagsoup >= 0.13' \
+		'aeson >= 0.7 && < 0.12' 'aeson >= 0.7'
 }
 
 src_configure() {

@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # tries to rebind local port too frequently
 
-RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.3.0:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/case-insensitive-1.0.0.1:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?]

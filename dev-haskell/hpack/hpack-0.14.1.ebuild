@@ -36,3 +36,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/temporary )
 "
+
+PATCHES=("${FILESDIR}"/${P}-aeson-1.patch)

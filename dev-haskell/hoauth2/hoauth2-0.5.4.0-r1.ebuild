@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 	>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -28,6 +28,14 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson             >= 0.9    && < 0.12' 'aeson             >= 0.9' \
+		'aeson             >= 0.9   && < 0.12' 'aeson             >= 0.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

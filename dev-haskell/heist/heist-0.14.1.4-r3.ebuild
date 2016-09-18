@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -48,5 +48,6 @@ src_prepare() {
 		'process                    >= 1.1     && < 1.3' 'process                    >= 1.1' \
 		'time                       >= 1.1     && < 1.6' 'time                       >= 1.1' \
 		'transformers               >= 0.3     && < 0.5' 'transformers               >= 0.3' \
-		'dlist                      >= 0.5     && < 0.8' 'dlist                      >= 0.5'
+		'dlist                      >= 0.5     && < 0.8' 'dlist                      >= 0.5' \
+		'aeson                      >= 0.6     && < 0.12' 'aeson                      >= 0.6'
 }
