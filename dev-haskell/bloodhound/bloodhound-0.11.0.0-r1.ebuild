@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs a port to QC-2.8.2
 
-RDEPEND=">=dev-haskell/aeson-0.11.1:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11.1:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
@@ -47,3 +47,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck-properties
 		>=dev-haskell/unordered-containers-0.2.5.0 <dev-haskell/unordered-containers-0.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson            >= 0.11.1  && <0.12' 'aeson            >= 0.11.1'
+}
