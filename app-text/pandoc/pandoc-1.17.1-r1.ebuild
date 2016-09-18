@@ -20,7 +20,7 @@ IUSE="embed_data_files +https +network-uri trypandoc"
 
 RESTRICT=test # likes to break on highlighting-kate update
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
@@ -88,7 +88,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tagsoup >= 0.13.7 && < 0.14' 'tagsoup >= 0.13.7'
+		'tagsoup >= 0.13.7 && < 0.14' 'tagsoup >= 0.13.7' \
+		'aeson >= 0.7 && < 0.12' 'aeson >= 0.7' \
+		'aeson >= 0.7.0.5 && < 0.12' 'aeson >= 0.7.0.5'
 }
 
 src_configure() {
