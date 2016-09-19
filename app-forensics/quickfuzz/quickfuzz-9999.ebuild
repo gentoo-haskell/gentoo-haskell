@@ -95,14 +95,7 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
-	# bundled libs:
-	"${FILESDIR}"/${P}-megadeth-ghc-8.patch
-	"${FILESDIR}"/${P}-megadeth-better-erroro.patch
-	"${FILESDIR}"/${P}-megadeth-ghc-8-gadt.patch
-
-	# package itself:
 	"${FILESDIR}"/${P}-th-2.11-1.patch
-	"${FILESDIR}"/${P}-th-2.11-2.patch
 )
 
 # As of 2016-09-10 QuickFuzz forks a few hackage packages
