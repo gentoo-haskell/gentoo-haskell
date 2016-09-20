@@ -5,7 +5,7 @@ index cb84f71..5566b8c 100644
 @@ -101,3 +101,9 @@ githubBaseUrl = "https://github.com/"
  
 -genericParseJSON_ :: forall a. (Generic a, GFromJSON (Rep a), HasTypeName a) => Value -> Parser a
-+#if MIN_VERSION_aeson(0,10,0)
++#if MIN_VERSION_aeson(1,0,0)
 +#    define AESON_ARITY Zero
 +#else
 +#    define AESON_ARITY
