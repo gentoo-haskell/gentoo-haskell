@@ -94,10 +94,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
-PATCHES=(
-	"${FILESDIR}"/${P}-th-2.11-1.patch
-)
-
 # As of 2016-09-10 QuickFuzz forks a few hackage packages
 # without renames:
 # - asn1-encoding: stabilised handling of corrupterd data
