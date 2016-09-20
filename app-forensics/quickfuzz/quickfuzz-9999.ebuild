@@ -94,6 +94,17 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+# $1 - target tarball name (not including extension)
+make_snapshot() {
+	ln -s "${S}" "${WORKDIR}"/"$1" || die
+	tar \
+		--dereference \
+		--directory="${WORKDIR}" \
+		--exclude="$1"/bundled/Juicy.Pixels/tests \
+		-zcvvf \
+		"${WORKDIR}"/"$1".tar.gz "$1"/ || die
+}
+
 # As of 2016-09-10 QuickFuzz forks a few hackage packages
 # without renames:
 # - asn1-encoding: stabilised handling of corrupterd data
@@ -131,6 +142,8 @@ src_unpack() {
 
 	git-r3_fetch    https://github.com/Twinside/svg-tree.git
 	git-r3_checkout https://github.com/Twinside/svg-tree.git "${repo_subdir}/svg-tree"
+
+	make_snapshot quickfuzz-0.1_p$(date "+%Y%m%d")
 }
 
 src_prepare() {
