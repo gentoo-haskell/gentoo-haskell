@@ -69,6 +69,8 @@ DEPEND="${RDEPEND}
 		!examples? ( >=dev-haskell/errors-2.0 ) )
 "
 
+PATCHES=("${FILESDIR}"/${P}-aeson-1.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples examples)

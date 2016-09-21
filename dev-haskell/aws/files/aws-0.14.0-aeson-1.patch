@@ -1,0 +1,61 @@
+commit a09b8afa2017c7fd56490f11d2704e5fbaec8eee
+Author: Ben Gamari <ben@smart-cactus.org>
+Date:   Mon Jul 25 12:16:18 2016 +0200
+
+    DynamoDb: Avoid overlapping ToJSON instance
+    
+    Aeson 1.0 will provide a `ToJSON [a]` instance, which the previous
+    `ToJSON [AttributeUpdate]` instance will overlap with. This internally
+    wraps `[AttributeUpdate]` in a newtype.
+
+diff --git a/Aws/DynamoDb/Commands/UpdateItem.hs b/Aws/DynamoDb/Commands/UpdateItem.hs
+index 8118683..a2290a8 100644
+--- a/Aws/DynamoDb/Commands/UpdateItem.hs
++++ b/Aws/DynamoDb/Commands/UpdateItem.hs
+@@ -19,7 +19,15 @@
+ --
+ ----------------------------------------------------------------------------
+ 
+-module Aws.DynamoDb.Commands.UpdateItem where
++module Aws.DynamoDb.Commands.UpdateItem
++    ( UpdateItem(..)
++    , updateItem
++    , AttributeUpdate(..)
++    , au
++    , UpdateAction(..)
++    , UpdateItem(..)
++    , UpdateItemResponse(..)
++    ) where
+ 
+ -------------------------------------------------------------------------------
+ import           Control.Applicative
+@@ -55,7 +63,10 @@ updateItem
+ updateItem tn key ups = UpdateItem tn key ups def def def def
+ 
+ 
+-type AttributeUpdates = [AttributeUpdate]
++-- | A helper to avoid overlapping instances for 'ToJSON'.
++newtype AttributeUpdates = AttributeUpdates {
++    getAttributeUpdates :: [AttributeUpdate]
++    }
+ 
+ 
+ data AttributeUpdate = AttributeUpdate {
+@@ -77,7 +88,7 @@ au a = AttributeUpdate a def
+ 
+ 
+ instance ToJSON AttributeUpdates where
+-    toJSON = object . map mk
++    toJSON = object . map mk . getAttributeUpdates
+         where
+           mk AttributeUpdate { auAction = UDelete, auAttr = auAttr } =
+             (attrName auAttr) .= object
+@@ -114,7 +125,7 @@ instance ToJSON UpdateItem where
+         object $ expectsJson uiExpect ++
+           [ "TableName" .= uiTable
+           , "Key" .= uiKey
+-          , "AttributeUpdates" .= uiUpdates
++          , "AttributeUpdates" .= AttributeUpdates uiUpdates
+           , "ReturnValues" .= uiReturn
+           , "ReturnConsumedCapacity" .= uiRetCons
+           , "ReturnItemCollectionMetrics" .= uiRetMet
