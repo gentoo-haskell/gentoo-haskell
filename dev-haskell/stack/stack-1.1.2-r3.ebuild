@@ -110,6 +110,8 @@ DEPEND="${RDEPEND}
 		integration-tests? ( >=dev-haskell/async-2.1.0 <dev-haskell/async-2.2 ) )
 "
 
+PATCHES=("${FILESDIR}"/${PN}-1.1.2-aeson-1.patch)
+
 src_prepare() {
 	default
 
@@ -125,7 +127,8 @@ src_prepare() {
 		'generic-deriving >=1.9.0 && <1.10' 'generic-deriving >=1.9.0' \
 		'time >=1.4.2 && <1.6' 'time >=1.4.2' \
 		'persistent >=2.1.2 && <2.6' 'persistent >=2.1.2' \
-		'persistent-sqlite >=2.1.4 && <2.6' 'persistent-sqlite >=2.1.4'
+		'persistent-sqlite >=2.1.4 && <2.6' 'persistent-sqlite >=2.1.4' \
+		'aeson >=0.8.0.2 && <0.10 || ==0.11.*' 'aeson >=0.8.0.2 && <0.10 || >=0.11'
 }
 
 src_configure() {

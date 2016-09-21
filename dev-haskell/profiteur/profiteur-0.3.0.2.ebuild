@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/aeson-0.6:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                >= 0.6  && < 0.12' 'aeson                >= 0.6'
+}
