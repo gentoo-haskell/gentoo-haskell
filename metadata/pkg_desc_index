@@ -1047,7 +1047,7 @@ dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
-dev-haskell/pandoc-citeproc 0.10.1: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.10.1-r1: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.3.0: Pandoc filter for cross-references
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
@@ -1308,7 +1308,7 @@ dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
-dev-haskell/stack 1.1.2-r2 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 1.1.2-r3 9.9.9: The Haskell Tool Stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.1.0.4: State variables
