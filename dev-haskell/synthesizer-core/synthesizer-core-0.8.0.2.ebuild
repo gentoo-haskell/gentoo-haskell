@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/non-empty-0.2.1 <dev-haskell/non-empty-0.4 )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.8.0.1-ghc-8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
