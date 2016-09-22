@@ -89,7 +89,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/zip-archive-0.2.3.7:=[profile?] <dev-haskell/zip-archive-0.4:=[profile?]
 	>=dev-haskell/zlib-0.5.4.2:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-0.12:=[profile?]
+	>=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/persistent-sqlite-2.1.4:=[profile?]
 	!disable-git-info? ( >=dev-haskell/gitrev-1.1:=[profile?] <dev-haskell/gitrev-1.3:=[profile?]
 				>=dev-haskell/optparse-simple-0.0.3:=[profile?] <dev-haskell/optparse-simple-0.1:=[profile?] )
