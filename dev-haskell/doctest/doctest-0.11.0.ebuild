@@ -35,7 +35,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/with-location )
 "
 
-src_prepare() {
-	eapply "${FILESDIR}"/${P}-unamb.patch
-	eapply_user
-}
+PATCHES=(
+	"${FILESDIR}"/${P}-unamb.patch
+	"${FILESDIR}"/${P}-unamb-2.patch
+)
