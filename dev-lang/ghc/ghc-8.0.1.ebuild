@@ -438,6 +438,10 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
+		epatch "${FILESDIR}"/${PN}-8.0.1-limit-jN.patch
+		epatch "${FILESDIR}"/${PN}-8.0.1-ww-args-limit.patch
+		epatch "${FILESDIR}"/${PN}-8.0.1-par-g0-on-A32.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
@@ -464,6 +468,8 @@ src_configure() {
 		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
 		echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
 		echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
+		# Speed up initial Cabal bootstrap
+		echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
 
 		# We can't depend on haddock except when bootstrapping when we
 		# must build docs and include them into the binary .tbz2 package
