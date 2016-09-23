@@ -38,6 +38,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-QC-2.9.2.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev
