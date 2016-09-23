@@ -24,3 +24,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/quickcheck )
 "
+
+PATCHES=("${FILESDIR}"/${P}-QC-2.9.patch)
