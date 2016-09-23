@@ -31,3 +31,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.7
 		>=dev-haskell/tasty-quickcheck-0.7 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-QC-2.9.patch)
