@@ -311,6 +311,7 @@ dev-haskell/skein:big-endian - When manually selecting the endianness, use big-e
 dev-haskell/skein:force-endianness - Use a manually selected endian when compiling (see flag 'big-endian').
 dev-haskell/skein:reference - Use the reference implementation instead of the optimized one.
 dev-haskell/snap-core:portable - No non-haskell unportable code.
+dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
 dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/speculation:optimize - Enable optimizations
