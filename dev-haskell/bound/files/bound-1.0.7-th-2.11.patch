@@ -1,0 +1,21 @@
+diff --git a/src/Bound/TH.hs b/src/Bound/TH.hs
+index 3892f35..0c8a7df 100644
+--- a/src/Bound/TH.hs
++++ b/src/Bound/TH.hs
+@@ -238,3 +238,7 @@ constructBind name = do
+ construct :: Dec -> Q [Components]
++#if MIN_VERSION_template_haskell(2,11,0)
++construct (DataD _ name tyvar _mbkind constructors _) = do
++#else
+ construct (DataD _ name tyvar constructors _) = do
++#endif
+   var <- getPure name
+@@ -333,4 +337,7 @@ getPure :: Name -> Q Name
+ getPure name = do
++#if MIN_VERSION_template_haskell(2,11,0)
++  TyConI (DataD _ _ tyvr _mbkind cons _) <- reify name
++#else
+   TyConI (DataD _ _ tyvr cons _) <- reify name
+-
++#endif
+   let 
