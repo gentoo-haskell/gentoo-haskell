@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
+
+RESTRICT=test # needs a port to snap-1
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
@@ -44,13 +46,19 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec-expectations
 		dev-haskell/hunit
 		dev-haskell/monadcatchio-transformers
-		>=dev-haskell/snap-core-0.9 <dev-haskell/snap-core-1.0
-		>=dev-haskell/snap-server-0.9 <dev-haskell/snap-server-1.0
+		>=dev-haskell/snap-core-0.9
+		>=dev-haskell/snap-server-0.9
 		>=dev-haskell/system-fileio-0.3.10 <dev-haskell/system-fileio-0.4
 		>=dev-haskell/system-filepath-0.4.1 <dev-haskell/system-filepath-0.5
 		!network-uri? ( >=dev-haskell/network-2.6
 				>=dev-haskell/network-uri-2.6 ) )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'snap-core       >= 0.9    && < 1.0' 'snap-core       >= 0.9' \
+		'snap-server     >= 0.9    && < 1.0' 'snap-server     >= 0.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
