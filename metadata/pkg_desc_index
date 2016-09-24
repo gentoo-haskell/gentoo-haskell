@@ -1522,7 +1522,7 @@ dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
 dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.0-r1: Binding to the VTE library
-dev-haskell/vty 5.2.11 5.4.0 5.8 5.10: A simple terminal UI library
+dev-haskell/vty 5.11: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.0.8 3.1.2: File/CGI/Rev Proxy App of WAI
