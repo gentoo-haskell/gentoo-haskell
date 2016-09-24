@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Friday provides functions to manipulate images in a
+		functional way.
+		The library is designed to be fast, generic and
+		type-safe.
+		
+		Images can be represented in two representations:
+		
+		* the &#39;Manifest&#39; representation stores images in Haskell
+		&#39;Vector&#39;s ;
+		
+		* the &#39;Delayed&#39; representation uses functions to produce
+		images pixels. These images can be combined to produce
+		complex transformations. By some inlining, Haskell
+		compilers are able to produce fast algorithms by
+		removing intermediate structures.
+		
+		The library currently support four color spaces: RGB,
+		RGBA, HSV and gray-scale images.
+		
+		Please read our
+		&lt;https://github.com/RaphaelJ/friday/blob/master/README.md README&gt;
+		to get a detailed usage and some examples.
+	</longdescription>
+</pkgmetadata>

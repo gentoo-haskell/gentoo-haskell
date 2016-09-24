@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The library uses FFI calls to the DevIL image library to
+		read images from a wide variety of formats, including
+		BMP, JPG, PNG, GIF, ICO and PSD.
+		
+		Please read our
+		&lt;https://github.com/RaphaelJ/friday-devil/blob/master/README.md README&gt;
+		to get a detailed usage and some examples.
+	</longdescription>
+</pkgmetadata>
