@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/base-orphans-0.5.3 <dev-haskell/base-orphans-0.6
-		>=dev-haskell/generic-deriving-1.10
+		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.12
 		>=dev-haskell/hashable-1.2.4.0
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		dev-haskell/hunit
@@ -49,17 +49,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2 )
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-0.11.2.0-QC-2.8.3.patch
-	"${FILESDIR}"/${PN}-1.0.0.0-QC-2.9.1.patch
-)
-
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >= 2.7 && <2.8.3' 'QuickCheck >= 2.7' \
-		'generic-deriving >= 1.10 && < 1.11' 'generic-deriving >= 1.10'
+		'QuickCheck >= 2.7 && <2.9.2' 'QuickCheck >= 2.7'
 }
 
 src_configure() {
