@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		Happstack is a web application framework. Heist is an XML templating solution. This package makes it easy to use Heist templates with Happstack.
+		Provides a Readable type class for reading data types from ByteString and
+		Text.  Also includes efficient implementations for common data types.
 	</longdescription>
 </pkgmetadata>

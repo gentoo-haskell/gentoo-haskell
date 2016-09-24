@@ -46,8 +46,8 @@ RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.18:=[profile?]
 	checkexternal? ( >=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
 				>=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.10:=[profile?] )
 	previewserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.3:=[profile?]
-				>=dev-haskell/snap-core-0.6:=[profile?] <dev-haskell/snap-core-0.10:=[profile?]
-				>=dev-haskell/snap-server-0.6:=[profile?] <dev-haskell/snap-server-0.10:=[profile?]
+				>=dev-haskell/snap-core-0.6:=[profile?]
+				>=dev-haskell/snap-server-0.6:=[profile?]
 				>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] )
 	!previewserver? ( watchserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.3:=[profile?]
 						>=dev-haskell/system-filepath-0.4.6:=[profile?] <=dev-haskell/system-filepath-0.5:=[profile?] ) )
@@ -65,7 +65,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4 && < 2.9' 'QuickCheck                 >= 2.4'
+		'QuickCheck                 >= 2.4 && < 2.9' 'QuickCheck                 >= 2.4' \
+		'snap-core       >= 0.6   && < 0.10' 'snap-core       >= 0.6' \
+		'snap-server     >= 0.6   && < 0.10' 'snap-server     >= 0.6'
 }
 
 src_configure() {
