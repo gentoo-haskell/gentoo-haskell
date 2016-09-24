@@ -116,8 +116,6 @@ DEPEND="${DEPEND}
 "
 
 PATCHES=(
-	# does not respect staging dir
-	"${FILESDIR}"/${PN}-5.20150731-no-strange-installs.patch
 	"${FILESDIR}"/${PN}-6.20160114-QC-2.8.2.patch
 )
 
@@ -162,7 +160,6 @@ src_test() {
 
 src_install() {
 	haskell-cabal_src_install
-	dosym git-annex /usr/bin/git-annex-shell # standard make install does more, than needed
 
 	newbashcomp "${FILESDIR}"/${PN}.bash ${PN}
 
