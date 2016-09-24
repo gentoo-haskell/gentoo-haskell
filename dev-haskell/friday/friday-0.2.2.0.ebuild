@@ -30,3 +30,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'transformers            >= 0.3          && < 0.5' 'transformers            >= 0.3'
+}
