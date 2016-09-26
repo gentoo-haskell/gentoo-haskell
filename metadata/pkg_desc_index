@@ -510,6 +510,7 @@ dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghcid 0.6.4: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
+dev-haskell/gifcurry 2.0.0.2: Create animated GIFs, overlaid with optional text, from video files
 dev-haskell/gio 0.13.1.1 0.13.2.0 0.13.3.0: Binding to GIO
 dev-haskell/github 0.13.2 0.14.1-r2: Access to the GitHub API, v3
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
