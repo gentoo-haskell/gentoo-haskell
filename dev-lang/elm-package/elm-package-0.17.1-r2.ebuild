@@ -42,6 +42,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9
 "
 
+PATCHES=("${FILESDIR}"/${PN}-0.17.1-asciize.patch)
+
 src_prepare() {
 	default
 
