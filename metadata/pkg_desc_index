@@ -1641,7 +1641,7 @@ dev-lang/curry 0.9.11 0.9.11-r1: Munster Curry Compiler
 dev-lang/elm-compiler 0.15-r2 0.17.1-r1: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/elm-make 0.17.1-r1: A build tool for Elm projects
 dev-lang/elm-meta 0.17.1: Meta package for all Elm packages
-dev-lang/elm-package 0.17.1-r1: Package manager for Elm libraries
+dev-lang/elm-package 0.17.1-r2: Package manager for Elm libraries
 dev-lang/elm-reactor 0.17.1: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.17.1: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
