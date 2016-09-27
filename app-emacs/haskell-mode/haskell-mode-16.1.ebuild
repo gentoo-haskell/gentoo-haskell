@@ -29,7 +29,7 @@ src_prepare() {
 
 src_compile() {
 	elisp_src_compile
-	elisp-make-autoload-file haskell-site-file.el
+	elisp-make-autoload-file haskell-mode-autoloads.el
 }
 
 src_test() {
