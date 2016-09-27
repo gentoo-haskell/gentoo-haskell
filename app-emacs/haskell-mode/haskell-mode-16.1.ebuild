@@ -28,8 +28,8 @@ src_prepare() {
 }
 
 src_compile() {
+	emake all
 	elisp_src_compile
-	elisp-make-autoload-file haskell-mode-autoloads.el
 }
 
 src_test() {
@@ -42,4 +42,14 @@ src_install() {
 	elisp_src_install
 	insinto "${SITEETC}/${PN}"
 	doins logo.svg
+	if [ -f haskell-mode-autoloads.el ]
+	then
+		elisp-make-autoload-file haskell-mode-autoloads.el
+	else
+		die "haskell-mode-autoloads not found."
+	fi
+}
+
+pkg_postinst() {
+	elisp-site-regen
 }
