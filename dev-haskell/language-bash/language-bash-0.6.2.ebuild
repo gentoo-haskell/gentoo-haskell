@@ -25,14 +25,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/quickcheck
 		dev-haskell/tasty
+		dev-haskell/tasty-expected-failure
+		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.patch)
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'transformers >= 0.2 && < 0.5' 'transformers >= 0.2'
-}
+PATCHES=("${FILESDIR}"/${PN}-0.6.1-ghc-8.patch)
