@@ -194,7 +194,7 @@ dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: A library for generating 2D Cha
 dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
-dev-haskell/chasingbottoms 1.3.1.1: For testing partial and infinite values
+dev-haskell/chasingbottoms 1.3.1.2: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
 dev-haskell/checkers 0.4.6: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
