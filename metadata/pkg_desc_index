@@ -240,7 +240,7 @@ dev-haskell/concurrent-output 1.7.7: Ungarble output from several threads or com
 dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.7: Streaming data processing library
+dev-haskell/conduit 1.2.8: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.7: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.13.2: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.2: Simple, layout-based value language similar to YAML or JSON
@@ -834,7 +834,7 @@ dev-haskell/lambdabot-novelty-plugins 5.0.3 5.1: Novelty plugins for Lambdabot
 dev-haskell/lambdabot-reference-plugins 5.0.3 5.1: Lambdabot reference plugins
 dev-haskell/lambdabot-social-plugins 5.0.1 5.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1 5.1: Lambdabot trusted code
-dev-haskell/language-bash 0.6.1: Parsing and pretty-printing Bash shell scripts
+dev-haskell/language-bash 0.6.2: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.4.7 0.5.0: Analysis and generation of C code
 dev-haskell/language-c-quote 0.8.0 0.11.4 0.11.5.1 0.11.6.2 0.11.6.3: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
