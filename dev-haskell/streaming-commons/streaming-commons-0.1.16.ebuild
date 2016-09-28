@@ -20,17 +20,15 @@ IUSE=""
 
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
-	dev-haskell/bytestring-builder:=[profile?]
-	dev-haskell/network:=[profile?]
+	>=dev-haskell/network-2.4.0.0:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-haskell/transformers:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-1.8
 		dev-haskell/quickcheck )
 "
