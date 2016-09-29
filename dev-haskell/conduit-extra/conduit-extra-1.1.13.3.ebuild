@@ -28,14 +28,13 @@ RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
 	dev-haskell/stm:=[profile?]
-	>=dev-haskell/streaming-commons-0.1.11:=[profile?]
+	>=dev-haskell/streaming-commons-0.1.16:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-haskell/transformers:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/bytestring-builder
 		>=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
