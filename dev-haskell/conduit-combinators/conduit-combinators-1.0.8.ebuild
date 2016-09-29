@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
 	dev-haskell/chunked-data:=[profile?]
-	>=dev-haskell/conduit-1.2.2:=[profile?]
+	>=dev-haskell/conduit-1.2.8:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.1:=[profile?]
 	dev-haskell/monad-control:=[profile?]
 	>=dev-haskell/mono-traversable-0.5:=[profile?]
