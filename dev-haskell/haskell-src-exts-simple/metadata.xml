@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides a shim for haskell-src-exts (HSE), exposing the
+		same AST but without annotations, using ghc&#39;s pattern synonyms.
+		
+		See README.md for further information and compatibility considerations.
+	</longdescription>
+</pkgmetadata>
