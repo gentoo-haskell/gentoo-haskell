@@ -1104,7 +1104,7 @@ dev-haskell/plugins-auto 0.0.4: Automatic recompilation and reloading of haskell
 dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 4.2.0.2 5-r1: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
-dev-haskell/pointfree 1.1.1.2: Tool for refactoring expressions into pointfree form
+dev-haskell/pointfree 1.1.1.2 1.1.1.2-r1: Tool for refactoring expressions into pointfree form
 dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7 1.0.8 1.0.9: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
