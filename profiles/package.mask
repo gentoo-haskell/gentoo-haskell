@@ -15,7 +15,7 @@
 #TODO: port diagrams-builder
 #TODO: port hprotoc
 #TODO: port agda
-#TODO: port maskell-src-meta
+#TODO: port haskell-src-meta
 #TODO: port lambdabot-haskell-plugins
 #TODO: port test-framework-th-prime
 #TODO: port hident
