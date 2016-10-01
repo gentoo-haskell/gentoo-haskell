@@ -1,0 +1,37 @@
+diff --git a/src/hgettext.hs b/src/hgettext.hs
+index c3b1b12..2579259 100644
+--- a/src/hgettext.hs
++++ b/src/hgettext.hs
+@@ -1,2 +1,2 @@
+-
++{-# LANGUAGE CPP #-}
+ import qualified Language.Haskell.Exts as H 
+@@ -10,2 +10,3 @@ import Distribution.Simple.PreProcess.Unlit
+ 
++import Data.Data
+ import Data.List
+@@ -50,5 +51,21 @@ parseArgs args =
+ 
+-
+-toTranslate :: String -> H.ParseResult H.Module -> [(Int, String)]
+-toTranslate f (H.ParseOk z) = nub [ (0, s) | H.App (H.Var (H.UnQual (H.Ident x))) (H.Lit (H.String s)) <- universeBi z, x == f]
++#if MIN_VERSION_haskell_src_exts(1,18,0)
++#    define HSE_lt H.SrcSpanInfo
++#    define HSE_l _
++#    define HSE_sl _
++#else
++#    define HSE_lt
++#    define HSE_l
++#    define HSE_sl
++#endif
++
++toTranslate :: String -> H.ParseResult (H.Module HSE_lt) -> [(Int, String)]
++toTranslate f (H.ParseOk z) = nub [ (0, s)
++                                  | H.App HSE_l
++                                      (H.Var HSE_l
++                                        (H.UnQual HSE_l
++                                          (H.Ident HSE_l x)))
++                                      (H.Lit HSE_l
++                                        (H.String HSE_l s HSE_sl)) <- (universeBi z :: [H.Exp HSE_lt])
++                                  , x == f]
+ toTranslate _ _ = []
