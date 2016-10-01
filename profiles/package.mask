@@ -3,7 +3,7 @@
 # until most of users will support it
 >=dev-haskell/haskell-src-exts-1.18
 >=dev-haskell/hlint-1.9.36
->=dev-haskell/fay-0.23.1.6
+>=dev-haskell/fay-0.23.1.16
 >=dev-haskell/haskell-names-0.8.0
 >=dev-haskell/hoogle-5.0.4
 >=dev-haskell/hsimport-0.8.2
