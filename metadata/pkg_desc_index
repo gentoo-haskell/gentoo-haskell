@@ -702,6 +702,7 @@ dev-haskell/hsb2hs 0.2 0.3.1: Preprocesses a file, adding blobs from files as st
 dev-haskell/hscolour 1.23-r1 1.24 1.24.1: Colourise Haskell code
 dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hsdns 1.6.1-r1: Asynchronous DNS Resolver
+dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the import list of a Haskell source file
