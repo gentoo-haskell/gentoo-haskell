@@ -21,6 +21,7 @@
 #TODO: port hident
 #TODO: port haskell-mode
 #TODO: port ghc-mod
+#TODO: port hse-cpp
 
 # Sergei Trofimovich <slyfox@gentoo.org> (30 May 2016)
 # Old package is based on handcrafter Typeable building
