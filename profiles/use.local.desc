@@ -181,6 +181,7 @@ dev-haskell/hoodle-render:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/hoogle:fetchdb - fetch hoogle db by running: hoogle data
 dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (implies fetchdb)
 dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building hoogle dbs for installed pkgs
+dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hp2any-graph:serveronly - Suppress building the client, thereby removing the dependency on OpenGL.
 dev-haskell/hps:build-exec - Build the `hps-fractals' executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
@@ -325,7 +326,6 @@ dev-haskell/tables:test-properties - Enable the properties test-suite.
 dev-haskell/tables:transformers2 - Enable old versions of transformers. Non-developers should never set this.
 dev-haskell/tagsoup:download - Build with Download module.
 dev-haskell/tagsoup:testprog - Build the test program.
-dev-haskell/tasty-quickcheck:old-quickcheck - Use Quick-Check < 2.7.
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/th-extras:base4 - Use base-4.0.

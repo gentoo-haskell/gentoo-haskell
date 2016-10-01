@@ -432,7 +432,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.6: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r5: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r5 0.23.1.16: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -597,11 +597,12 @@ dev-haskell/haskell-docs 4.2.7: A program to find and display the docs and type 
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
 dev-haskell/haskell-lexer 1.0.1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
-dev-haskell/haskell-names 0.4.1 0.5.3 0.6.0-r2: Name resolution library for Haskell
+dev-haskell/haskell-names 0.6.0-r2 0.8.0: Name resolution library for Haskell
 dev-haskell/haskell-packages 0.2.4.4 0.3: Haskell suite library for package management and integration with Cabal
 dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/haskell-src-exts-simple 1.18.0.1.1: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-meta 0.6.0.14-r1: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
@@ -680,7 +681,7 @@ dev-haskell/hoodle-parser 0.3.0 0.4: Hoodle file parser
 dev-haskell/hoodle-publish 0.2.0 0.2.1: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0 0.4: Data types for programs for hoodle file format
-dev-haskell/hoogle 4.2.43-r1 5.0.1: Haskell API Search
+dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4: Haskell API Search
 dev-haskell/hopencv 0.4.0.1: A binding for the OpenCV computer vision library
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
@@ -701,10 +702,9 @@ dev-haskell/hsb2hs 0.2 0.3.1: Preprocesses a file, adding blobs from files as st
 dev-haskell/hscolour 1.23-r1 1.24 1.24.1: Colourise Haskell code
 dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hsdns 1.6.1-r1: Asynchronous DNS Resolver
-dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
-dev-haskell/hsimport 0.7.1: A command line program for extending the import list of a Haskell source file
+dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
@@ -1105,7 +1105,7 @@ dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 4.2.0.2 5-r1: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
 dev-haskell/pointfree 1.1.1.2: Tool for refactoring expressions into pointfree form
-dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7 1.0.8: Pointful refactoring tool
+dev-haskell/pointful 1.0.6 1.0.6-r1 1.0.7 1.0.8 1.0.9: Pointful refactoring tool
 dev-haskell/poll 0.0: Bindings to poll.h
 dev-haskell/polynomial 0.7.2: Polynomials
 dev-haskell/polyparse 1.12: A variety of alternative parser combinator libraries
@@ -1346,7 +1346,7 @@ dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
 dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.6.1.0-r1: Haskell code prettifier
+dev-haskell/stylish-haskell 0.6.1.0-r1 0.6.4.0: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/svg-builder 0.1.0.1: DSL for building SVG
@@ -1666,7 +1666,7 @@ dev-util/codex 0.5.0.2: A ctags file generator for cabal project dependencies
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
-dev-util/hdocs 0.5.0.0: Haskell docs tool
+dev-util/hdocs 0.5.0.1: Haskell docs tool
 dev-util/hsdev 0.2.0.0: Haskell development library
 dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependencies
 dev-util/shellcheck 0.4.4: Shell script analysis tool
