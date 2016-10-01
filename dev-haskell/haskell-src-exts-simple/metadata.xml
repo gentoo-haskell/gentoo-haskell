@@ -6,6 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		Preprocess+parse haskell code
+		This package provides a shim for haskell-src-exts (HSE), exposing the
+		same AST but without annotations, using ghc&#39;s pattern synonyms.
+		
+		See README.md for further information and compatibility considerations.
 	</longdescription>
 </pkgmetadata>
