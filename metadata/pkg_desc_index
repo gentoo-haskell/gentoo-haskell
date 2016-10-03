@@ -992,6 +992,7 @@ dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations o
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
+dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
 dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.3-r1: Bindings to the nanomsg library
