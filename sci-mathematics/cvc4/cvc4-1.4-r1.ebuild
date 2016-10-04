@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI=6
 
 inherit autotools eutils elisp-common
 
@@ -29,8 +29,13 @@ DEPEND="${RDEPEND}
 	sys-devel/gcc[cxx]
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-gcc-5.patch
+	"${FILESDIR}"/${P}-gcc-6.patch
+)
+
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-gcc-5.patch
+	default
 	eautoreconf
 }
 
