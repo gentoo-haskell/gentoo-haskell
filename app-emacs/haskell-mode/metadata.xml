@@ -9,7 +9,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="snippets">install snippets/ modules</flag>
-	</use>
 </pkgmetadata>
