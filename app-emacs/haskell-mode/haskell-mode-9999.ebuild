@@ -11,7 +11,7 @@ HOMEPAGE="http://projects.haskell.org/haskellmode-emacs/
 	http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs"
 EGIT_REPO_URI="https://github.com/haskell/haskell-mode.git"
 
-LICENSE="GPL-3"
+LICENSE="GPL-3+ FDL-1.2+"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -30,4 +30,16 @@ src_prepare() {
 	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
 		-e 's/check: clean/check:/' \
 		-i Makefile || die
+}
+
+src_test() {
+	# perform tests in a separate directory #504660
+	mkdir test && cp -R *.el tests Makefile test || die
+	emake -C test check
+}
+
+src_install() {
+	elisp_src_install
+	insinto "${SITEETC}/${PN}"
+	doins logo.svg
 }

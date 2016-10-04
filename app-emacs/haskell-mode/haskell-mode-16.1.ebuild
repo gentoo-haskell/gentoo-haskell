@@ -15,11 +15,12 @@ LICENSE="GPL-3+ FDL-1.2+"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
-SITEFILE="50${PN}-gentoo.el"
-ELISP_TEXINFO="doc/haskell-mode.texi"
 DOCS="NEWS README.md"
+ELISP_TEXINFO="doc/${PN}.texi"
+SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
+	default
 	# We install the logo in SITEETC, not in SITELISP
 	# https://github.com/haskell/haskell-mode/issues/102
 	sed -i -e "/defconst haskell-process-logo/{n;" \
@@ -27,29 +28,14 @@ src_prepare() {
 		haskell-process.el || die
 }
 
-src_compile() {
-	emake all
-	elisp_src_compile
-}
-
 src_test() {
 	# perform tests in a separate directory #504660
-	mkdir test && cp *.el Makefile test || die
-	emake -C test check
+	mkdir test && cp -R *.el tests Makefile test || die
+	emake -j1 -C test check
 }
 
 src_install() {
 	elisp_src_install
 	insinto "${SITEETC}/${PN}"
 	doins logo.svg
-	if [ -f haskell-mode-autoloads.el ]
-	then
-		elisp-make-autoload-file haskell-mode-autoloads.el
-	else
-		die "haskell-mode-autoloads not found."
-	fi
-}
-
-pkg_postinst() {
-	elisp-site-regen
 }
