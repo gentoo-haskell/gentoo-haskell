@@ -1,7 +1,7 @@
 DEFINED_PHASES=configure prepare
 DEPEND=>=dev-libs/antlr-c-3.2 dev-libs/boost:= >=dev-libs/gmp-4.2:= cln? ( sci-libs/cln ) compat? ( !sci-mathematics/cvc3 ) glpk? ( sci-mathematics/glpk ) app-shells/bash sys-devel/gcc[cxx] !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
-EAPI=5
+EAPI=6
 HOMEPAGE=http://cvc4.cs.nyu.edu/web
 IUSE=+cln compat glpk
 KEYWORDS=~amd64 ~x86
@@ -12,4 +12,4 @@ SLOT=0/1.4
 SRC_URI=http://cvc4.cs.nyu.edu/builds/src/cvc4-1.4.tar.gz
 _eclass_exported_funcs=src_prepare:- src_configure:-
 _eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	elisp-common	9f56c4e9bf1282dbfc2a5a09e1124e74	eutils	b83a2420b796f7c6eff682679d08fe25	libtool	4890219c51da247200223277f993e054	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	6198c04daba0e1307bd844df7d37f423
-_md5_=b17a2f3c6f94cd9cca948f12a74db99c
+_md5_=5110358c7fd2e03ba6598d00b3f4fabd
