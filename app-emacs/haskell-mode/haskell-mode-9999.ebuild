@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -14,14 +14,14 @@ EGIT_REPO_URI="https://github.com/haskell/haskell-mode.git"
 LICENSE="GPL-3"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86"
-IUSE="+examples +snippets"
+IUSE=""
 
 RDEPEND="virtual/emacs
 		dev-haskell/hasktags"
 DEPEND="${RDEPEND}"
 
 DOCS="NEWS README.md"
-ELISP_TEXINFO="${PN}.texi"
+ELISP_TEXINFO="doc/${PN}.texi"
 SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
@@ -30,45 +30,4 @@ src_prepare() {
 	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
 		-e 's/check: clean/check:/' \
 		-i Makefile || die
-}
-
-src_compile() {
-	emake all
-	if use examples; then
-		pushd examples || die
-		elisp-compile *.el || die
-		popd
-	fi
-}
-
-src_install() {
-	elisp_src_install
-	if use examples; then
-		pushd examples || die
-		elisp-install ${PN}/examples *.el *.elc || die
-		popd
-	fi
-	if use snippets; then
-		pushd snippets || die
-		elisp-install ${PN}/snippets/${PN} ${PN}/* ${PN}/.* || die
-		popd
-	fi
-}
-
-pkg_postinst() {
-	elisp-site-regen
-
-	elog "Read the README.md file in ${ROOT}usr/share/doc/${PF}."
-	elog "or at: https://github.com/haskell/haskell-mode"
-	elog "The info haskell-mode documentation is included, or you can read it online:"
-	elog "http://haskell.github.io/haskell-mode/manual/latest/"
-
-	if use examples; then
-		INIT_RAW="${ROOT}${SITELISP}/${PN}/examples/init.el"
-		INIT_EX="${INIT_RAW/\/\///}"
-		if [[ -f "${INIT_EX}" ]]; then
-			elog "An example configuration is installed in"
-			elog "${INIT_EX}"
-		fi
-	fi
 }
