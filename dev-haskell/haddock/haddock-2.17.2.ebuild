@@ -27,8 +27,6 @@ RDEPEND=">=dev-haskell/haddock-api-2.17:= <dev-haskell/haddock-api-2.18:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/haddock-test
-		dev-haskell/hspec )
 "
 
 src_configure() {
