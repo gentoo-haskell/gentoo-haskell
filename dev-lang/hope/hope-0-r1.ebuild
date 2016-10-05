@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="3"
+EAPI=6
 
 DESCRIPTION="A lazy interpreter for the small functional programming language Hope"
 SRC_URI="http://www.soi.city.ac.uk/~ross/Hope/${PN}.tar.gz"
@@ -24,25 +24,28 @@ RDEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_prepare() {
-	sed -i "s|/usr/local|/usr|" src/hopelib.h
+	default
+
+	sed -i "s|/usr/local|/usr|" src/hopelib.h || die
 
 	# getline() collides with glibc-2.10:getline()
 	sed -i 's|getline|get_line|g' \
-		"${S}"/src/{source.c,source.h,yylex.c}
+		"${S}"/src/{source.c,source.h,yylex.c} || die
 
 	# disable stripping
 	sed -i 's|$(INSTALL_PROGRAM) -s|$(INSTALL_PROGRAM)|g' \
-		"${S}"/src/Makefile.in
+		"${S}"/src/Makefile.in || die
 
 	use doc || sed -i "s|doc ||" Makefile
 }
 
 src_install() {
 	dodir /usr/bin
-	# otherwise it will create 'usr/share/man' file
-	mkdir -p "${D}/usr/share/man" || die
-	einstall \
-		hopelib="${D}/usr/share/hope/lib" \
-		docdir="${D}/usr/share/doc/${PF}" \
-		|| die "make install failed"
+	dodir /usr/share/man/man1
+
+	emake install \
+		prefix="${ED}/usr" \
+		docdir="${ED}/usr/share/doc/${PF}" \
+		hopelib="${ED}/usr/share/hope/lib" \
+		mandir="${ED}/usr/share/man/man1"
 }
