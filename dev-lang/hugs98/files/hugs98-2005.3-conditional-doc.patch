@@ -1,5 +1,5 @@
---- Makefile~
-+++ Makefile
+--- a/Makefile
++++ b/Makefile
 @@ -36,12 +36,16 @@
  all: fptools src/Makefile
  	cd src; $(MAKE) all

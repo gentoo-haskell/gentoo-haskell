@@ -1,6 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
+
+EAPI=6
 
 # For resurrectors:
 #   hugs98 has major problems with upstream,
@@ -8,7 +10,7 @@
 #     gentoo bug #303665
 #     gentoo bug #240036
 
-inherit base flag-o-matic eutils versionator multilib
+inherit flag-o-matic versionator
 
 IUSE="X opengl openal doc"
 
@@ -65,21 +67,17 @@ DEPEND="${RDEPEND}
 # the testsuite is not included in the tarball
 RESTRICT="test"
 
-src_unpack() {
-	base_src_unpack
+PATCHES=(
+	"${FILESDIR}"/hugs98-2005.3-find.patch
+	"${FILESDIR}"/hugs98-2005.3-conditional-doc.patch
+	"${FILESDIR}"/hugs98-2006.9-gcc-6.patch
+)
 
-	cd "${S}"
-	epatch "${FILESDIR}/hugs98-2005.3-find.patch"
-	epatch "${FILESDIR}/hugs98-2005.3-conditional-doc.patch"
-}
-
-src_compile() {
-	local myconf
-
+src_configure() {
 	# Strip -O? from CFLAGS because of bugs
 	# in the garbage collection of gcc on ppc.
 	# See bug #73611
-	[ "${ARCH}" = "ppc" ] && filter-flags "-O?"
+	use ppc && filter-flags "-O?"
 
 	econf \
 		--build=${CHOST} \
@@ -87,24 +85,21 @@ src_compile() {
 		--enable-profiling \
 		$(use_enable X x11) \
 		$(use_enable opengl) \
-		$(use_enable openal) \
-		${myconf} || die "econf failed"
-	emake || die "make failed"
+		$(use_enable openal)
+}
 
-	if use doc; then
-		emake doc || die "make doc failed"
-	fi
+src_compile() {
+	default
+
+	use doc && emake doc
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die "make install failed"
+	default
 
-	if use doc; then
-		emake install_doc DESTDIR="${D}" || die "make install_doc failed"
-	fi
+	use doc && emake install_doc DESTDIR="${D}"
 
 	#somewhat clean-up installation of few docs
-	cd "${S}"
 	dodoc Credits License Readme
 	cd "${D}/usr/$(get_libdir)/hugs"
 	rm Credits License Readme
