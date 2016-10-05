@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="3"
+EAPI="4"
 
 inherit base flag-o-matic
 
@@ -21,7 +21,9 @@ RDEPEND="dev-libs/gmp
 
 PATCHES=("${FILESDIR}/${P}-nostrip.patch"
 	"${FILESDIR}/${P}-nonascii-chars.patch"
-	"${FILESDIR}/${P}-fix-make-check.patch")
+	"${FILESDIR}/${P}-fix-make-check.patch"
+	"${FILESDIR}/${P}-fix-modern-ghc-configure.patch"
+	"${FILESDIR}/${P}-ghc-7.6.patch")
 
 src_configure() {
 	filter-flags "-O3 -finline-function"
