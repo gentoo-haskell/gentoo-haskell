@@ -77,7 +77,7 @@ dev-haskell/async 2.0.2 2.1.0: Run IO operations asynchronously and wait for the
 dev-haskell/atomic-primops 0.8.0.4: A safe approach to CAS and other atomic ops in Haskell
 dev-haskell/atto-lisp 0.2.2.2: Efficient parsing and serialisation of S-Expressions
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
-dev-haskell/attojson 0.5.10-r1: Simple lightweight JSON parser, generator & manipulator based on ByteString
+dev-haskell/attojson 0.5.10-r2: Simple lightweight JSON parser, generator & manipulator based on ByteString
 dev-haskell/attoparsec 0.12.1.6 0.13.1.0: Fast combinator parsing for bytestrings and text
 dev-haskell/attoparsec-binary 0.2: Binary processing extensions to Attoparsec
 dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (deprecated)
@@ -222,8 +222,8 @@ dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
-dev-haskell/codec-image-devil 0.2.3-r1: An FFI interface to the DevIL library
-dev-haskell/colock 0.2.2: thread-friendly file locks that don't block the entire program
+dev-haskell/codec-image-devil 0.2.3-r2: An FFI interface to the DevIL library
+dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.3-r1: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
@@ -258,13 +258,13 @@ dev-haskell/control-timeout 0.1.2-r1: Timeout handling
 dev-haskell/converge 0.1.0.1: Limit operations for converging sequences
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
 dev-haskell/cookie 0.4.2.1: HTTP cookie parsing and rendering
-dev-haskell/cordering 2.3-r1: An algebraic data type similar to Prelude Ordering
+dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
 dev-haskell/cpphs 1.19.3 1.20.2: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
-dev-haskell/crack 0.1-r1: A haskell binding to cracklib
+dev-haskell/crack 0.1-r2: A haskell binding to cracklib
 dev-haskell/cracknum 1.4 1.5: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.1.0: Robust, reliable performance measurement and analysis
@@ -1649,7 +1649,7 @@ dev-lang/ghc 7.4.2 7.6.3-r1 7.8.4 7.8.4-r5 7.10.3 8.0.1_rc4 8.0.1 9999: The Glas
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
-dev-lang/hope 0: A lazy interpreter for the small functional programming language Hope
+dev-lang/hope 0-r1: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2006.9-r1: The Hugs98 Haskell interpreter
 dev-lang/idris 0.11.1 0.11.2-r1 0.12 0.12.2 0.12.3 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
