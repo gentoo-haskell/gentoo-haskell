@@ -682,7 +682,6 @@ dev-haskell/hoodle-publish 0.2.0 0.2.1: publish hoodle files as a static web sit
 dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0 0.4: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4: Haskell API Search
-dev-haskell/hopencv 0.4.0.1: A binding for the OpenCV computer vision library
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.7: Generates ctags for Haskell, incorporating import lists and qualified imports
