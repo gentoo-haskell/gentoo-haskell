@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.2.0: property-based host configuration management in haskell
+app-admin/propellor 3.2.1: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -241,7 +241,7 @@ dev-haskell/concurrent-split 0.0.0.1: MVars and Channels with distinguished inpu
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
 dev-haskell/conduit 1.2.8: Streaming data processing library
-dev-haskell/conduit-combinators 1.0.8: Commonly used conduit functions, for both chunked and unchunked data
+dev-haskell/conduit-combinators 1.0.8.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.13.3: Batteries included conduit: adapters for common libraries
 dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
@@ -429,7 +429,7 @@ dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.4.10: Extra functions I use
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
-dev-haskell/fast-logger 2.4.6: A fast logging system
+dev-haskell/fast-logger 2.4.7: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
 dev-haskell/fay 0.23.1.12-r5 0.23.1.16: A compiler for Fay, a Haskell subset that compiles to JavaScript
@@ -517,7 +517,7 @@ dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1: Complete OpenGL raw bindings
 dev-haskell/glade 0.12.5.0-r3 0.12.5.0-r100: Binding to the glade library
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
-dev-haskell/glfw-b 1.4.8.0: Bindings to GLFW OpenGL library
+dev-haskell/glfw-b 1.4.8.1: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glob 0.7.11: Globbing library
 dev-haskell/gloss 1.10.2.3: Painless 2D vector graphics, animations and simulations
@@ -647,7 +647,7 @@ dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism gr
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
-dev-haskell/hi 1.2.0.0-r1: Generate scaffold for cabal project
+dev-haskell/hi 1.2.0.1: Generate scaffold for cabal project
 dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.6.3: Syntax highlighting
 dev-haskell/hinotify 0.3.8.1: Haskell binding to inotify
@@ -919,7 +919,7 @@ dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
-dev-haskell/megaparsec 5.0.1: Monadic parser combinators
+dev-haskell/megaparsec 5.1.1: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memoize 0.8.1: A memoization library
 dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
@@ -949,7 +949,7 @@ dev-haskell/mockery 0.3.3: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.19: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.20: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.2.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
@@ -973,7 +973,7 @@ dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
 dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/mono-traversable 0.10.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
-dev-haskell/monoid-subclasses 0.4.2 0.4.2.1: Subclasses of Monoid
+dev-haskell/monoid-subclasses 0.4.2 0.4.2.1 0.4.3: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
 dev-haskell/mountpoints 1.0.2: list mount points
@@ -1574,9 +1574,9 @@ dev-haskell/wxdirect 0.13.1.2 0.13.1.3 0.90.0.1 0.90.1.1 0.92.2.0-r1: helper too
 dev-haskell/x11 1.6.1.2: A binding to the X11 graphics library
 dev-haskell/x11-xft 0.3.1-r1: Bindings to the Xft, X Free Type interface library, and some Xrender parts
 dev-haskell/x509 1.5.1 1.6.4: X509 reader and writer
-dev-haskell/x509-store 1.5.0 1.6.1: X.509 collection accessing and storing methods
-dev-haskell/x509-system 1.5.0 1.6.3: Handle per-operating-system X.509 accessors and storage
-dev-haskell/x509-validation 1.5.2 1.6.4: X.509 Certificate and CRL validation
+dev-haskell/x509-store 1.5.0 1.6.2: X.509 collection accessing and storing methods
+dev-haskell/x509-system 1.5.0 1.6.4: Handle per-operating-system X.509 accessors and storage
+dev-haskell/x509-validation 1.5.2 1.6.5: X.509 Certificate and CRL validation
 dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
 dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
@@ -1585,7 +1585,7 @@ dev-haskell/xdot 0.3.0.1: Parse Graphviz xdot files and interactively view them 
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
-dev-haskell/xkbcommon 0.0.1 0.0.2: Haskell bindings for libxkbcommon
+dev-haskell/xkbcommon 0.0.3: Haskell bindings for libxkbcommon
 dev-haskell/xml 1.3.14: A simple XML library
 dev-haskell/xml-conduit 1.3.5: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.0.12: Hamlet-style quasiquoter for XML content
