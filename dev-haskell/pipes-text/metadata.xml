@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		/New in version 0.0.2.x/: The new module @Pipes.Prelude.Text@ exports line-based @Text@ producers and consumers as a drop-in replacement for the @String@ material in @Pipes.Prelude@ and @Pipes.Safe.Prelude@. They can be used as one uses @Pipes.Prelude@ without reference to the rest of this package. See the caveats in the documentation for that module.
+		
+		The organization of this package follows the rule:
+		
+		* @pipes-text : pipes-bytestring :: text : bytestring@
+		
+		Familiarity with the other three packages should give one an idea what to expect where. The package has three principal modules, @Pipes.Text@ , @Pipes.Text.Encoding@ and @Pipes.Text.IO@; the division has more or less the significance it has in the @text@ library.
+		
+		The module @Pipes.Text.IO@ is present as a convenience.  Official pipes IO uses @Pipes.ByteString@ together with the bytestring decoding functions in @Pipes.Text.Encoding@.  In particular, the @Pipes.Text.IO@ functions use Text exceptions, while @Pipes.Text@ uses the standard pipes practice of breaking with a failed parse. Thus, for example, the type of @decodeUtf8@ is
+		
+		* @decodeUtf8 :: Monad m =&gt; Producer ByteString m r -&gt; Producer Text m (Producer ByteString m r)@
+		
+		where any unparsed bytes are returned.
+		
+		@Pipes.Text.IO@ and @Pipes.Prelude.Text@ use version 0.11.3 or later of the @text@ library; older versions of @text@ can be used with the flag @-fnoio@
+	</longdescription>
+</pkgmetadata>
