@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Utilities to run Attoparsec parsers on Pipes input streams.
+		
+		See the @changelog.md@ file in the source distribution to learn about any
+		important changes between version.
+	</longdescription>
+</pkgmetadata>
