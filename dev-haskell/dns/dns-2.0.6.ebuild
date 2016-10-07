@@ -18,11 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # ambiguous modules: ip-route / network-data
+RESTRICT=test # uses internet to test resolver
 
 RDEPEND="dev-haskell/attoparsec:=[profile?]
-	dev-haskell/binary:=[profile?]
-	dev-haskell/blaze-builder:=[profile?]
+	dev-haskell/bytestring-builder:=[profile?]
 	>=dev-haskell/conduit-1.1:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?]
 	>=dev-haskell/iproute-1.3.2:=[profile?]
