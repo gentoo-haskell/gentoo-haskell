@@ -90,7 +90,7 @@ dev-haskell/authenticate-oauth 1.5.1.2: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.14.0: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.14.1: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.8.2 0.9.1: A compatibility layer for base
 dev-haskell/base-orphans 0.5.4: Backwards-compatible orphan instances for base
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
@@ -508,7 +508,7 @@ dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC AP
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
-dev-haskell/ghcid 0.6.4: GHCi based bare bones IDE
+dev-haskell/ghcid 0.6.5: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gifcurry 2.0.0.2: Create animated GIFs, overlaid with optional text, from video files
