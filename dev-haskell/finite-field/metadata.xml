@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="useghctypelits">GHC.TypeLits module</flag>
+	</use>
 	<longdescription>
 		This is an implementation of finite fields.
 		Currently only prime fields are supported.
