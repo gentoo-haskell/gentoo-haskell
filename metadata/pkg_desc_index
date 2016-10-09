@@ -914,6 +914,7 @@ dev-haskell/managed 1.0.5: A monad for managed values
 dev-haskell/map-syntax 0.2.0.1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.14: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
+dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
 dev-haskell/math-functions 0.1.7.0 0.2.0.2: Special functions and Chebyshev polynomials
 dev-haskell/matrix 0.3.5.0: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
