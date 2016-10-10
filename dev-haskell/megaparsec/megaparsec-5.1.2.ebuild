@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.9:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
-		>=dev-haskell/hspec-expectations-0.5 <dev-haskell/hspec-expectations-0.8 )
+		>=dev-haskell/hspec-expectations-0.5 <dev-haskell/hspec-expectations-0.9 )
 "
 
 src_configure() {
