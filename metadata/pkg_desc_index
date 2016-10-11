@@ -40,7 +40,7 @@ dev-haskell/active 0.2.0.11: Abstractions for animation
 dev-haskell/ad 4.3.2.1: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.11.2.0-r1 1.0.1.0: Fast JSON parsing and encoding
+dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
 dev-haskell/aeson-compat 0.3.6: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.2.0-r1: Extra goodies for aeson
@@ -1148,7 +1148,7 @@ dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates an
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.3.1 2.4.0: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
-dev-haskell/protolude 0.1.7: A sensible set of defaults for writing custom Preludes
+dev-haskell/protolude 0.1.8: A sensible set of defaults for writing custom Preludes
 dev-haskell/prover 9999: Automatic Prover of Logical Predicates
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
