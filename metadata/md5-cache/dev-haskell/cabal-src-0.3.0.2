@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/conduit-1.1:= dev-haskell/conduit-extra:= >=dev-haskell/http-conduit-1.5:= dev-haskell/http-types:= dev-haskell/network:= dev-haskell/resourcet:= >=dev-haskell/shelly-1.3.1:= >=dev-haskell/system-fileio-0.3:= <dev-haskell/system-fileio-0.4:= >=dev-haskell/system-filepath-0.4:= <dev-haskell/system-filepath-0.5:= >=dev-haskell/tar-0.4:= <dev-haskell/tar-0.6:= dev-haskell/text:= >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3
+DESCRIPTION=Alternative install procedure to avoid the diamond dependency issue
+EAPI=6
+HOMEPAGE=https://github.com/yesodweb/cabal-src
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/conduit-1.1:= dev-haskell/conduit-extra:= >=dev-haskell/http-conduit-1.5:= dev-haskell/http-types:= dev-haskell/network:= dev-haskell/resourcet:= >=dev-haskell/shelly-1.3.1:= >=dev-haskell/system-fileio-0.3:= <dev-haskell/system-fileio-0.4:= >=dev-haskell/system-filepath-0.4:= <dev-haskell/system-filepath-0.5:= >=dev-haskell/tar-0.4:= <dev-haskell/tar-0.6:= dev-haskell/text:= >=dev-lang/ghc-7.8.2:=
+SLOT=0
+SRC_URI=mirror://hackage/packages/archive/cabal-src/0.3.0.2/cabal-src-0.3.0.2.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	6198c04daba0e1307bd844df7d37f423	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=56dd2fba932d9a4415f9cc0d1433e68c
