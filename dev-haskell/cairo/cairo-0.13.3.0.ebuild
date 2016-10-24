@@ -27,6 +27,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
+	dev-haskell/gtk2hs-buildtools
 	virtual/pkgconfig
 "
 
