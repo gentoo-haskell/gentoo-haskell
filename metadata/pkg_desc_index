@@ -1310,6 +1310,7 @@ dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google
 dev-haskell/sox 0.2.2.6: Play, write, read, convert audio signals using Sox
 dev-haskell/spdx 0.2.1.0: SPDX license expression language
 dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative parallelism
+dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
 dev-haskell/split 0.2.3.1: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations

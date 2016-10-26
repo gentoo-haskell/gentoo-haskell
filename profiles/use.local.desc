@@ -316,6 +316,7 @@ dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
 dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/speculation:optimize - Enable optimizations
+dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
 dev-haskell/sr-extra:network-uri - use network-uri package
 dev-haskell/stack:disable-git-info - Disable compile-time inclusion of current git info.
 dev-haskell/stack:integration-tests - Run the integration test suite.
