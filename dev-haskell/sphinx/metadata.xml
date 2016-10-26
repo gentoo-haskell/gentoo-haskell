@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+    <use>
+		<flag name="version-1-1-beta">By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1</flag>
+    </use>
+	<longdescription>
+		Haskell bindings to the Sphinx full-text searching daemon. Compatible with Sphinx version 2.0
+	</longdescription>
+</pkgmetadata>
