@@ -1,0 +1,73 @@
+diff --git a/Parsing/ParseModule.hs b/Parsing/ParseModule.hs
+index 1221827..3273994 100644
+--- a/Parsing/ParseModule.hs
++++ b/Parsing/ParseModule.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE FlexibleInstances #-}
++{-# LANGUAGE CPP #-}
+ 
+@@ -117,3 +118,7 @@ instance ModuleItem ImportDecl where
+ createEnt                      :: ModName -> ImportSpec -> [Entity]
++#if MIN_VERSION_haskell_src_exts(1,17,0)
++createEnt mn (IVar   n)        = [Ent mn (nameOf n) NormalEntity]
++#else
+ createEnt mn (IVar _ n)        = [Ent mn (nameOf n) NormalEntity]
++#endif
+ createEnt mn (IThingWith n cs) = map (\c -> Ent mn c (eT c)) cs'
+@@ -133,3 +138,7 @@ listedEnt                         :: ParsedModule -> EntityLookup
+                                      -> ImportSpec -> [Entity]
++#if MIN_VERSION_haskell_src_exts(1,17,0)
++listedEnt _  el (IVar   n)        = [lookupEntity' el $ nameOf n]
++#else
+ listedEnt _  el (IVar _ n)        = [lookupEntity' el $ nameOf n]
++#endif
+ listedEnt _  _  IAbs{}            = []
+@@ -166,3 +175,7 @@ listedExp                           :: ParsedModule -> EntityLookup
+                                        -> ExportSpec -> [Entity]
++#if MIN_VERSION_haskell_src_exts(1,17,0)
++listedExp _  el (EVar   qn)         = maybe [] (return . lookupEntity el)
++#else
+ listedExp _  el (EVar _ qn)         = maybe [] (return . lookupEntity el)
++#endif
+                                       $ qName qn
+@@ -488,3 +501,3 @@ getMatch (Match _ n ps _ rhs bs) = do (avs, afs) <- getPats ps
+                                       rcs <- getRHS rhs
+-                                      (bds, bcs) <- getBindings bs
++                                      (bds, bcs) <- getBindingsMaybe bs
+                                       let vs = avs `S.union` bds
+@@ -559,2 +572,10 @@ getPField PFieldWildcard   = return noEnts
+ 
++#if MIN_VERSION_haskell_src_exts(1,17,0)
++getBindingsMaybe          :: Maybe Binds -> PState DefCalled
++getBindingsMaybe Nothing  = liftM sMsUnions $ mapM getDecl []
++getBindingsMaybe (Just v) = getBindings v
++#else
++getBindingsMaybe               :: Binds -> PState DefCalled
++getBindingsMaybe = getBindings
++#endif
+ getBindings              :: Binds -> PState DefCalled
+@@ -570,3 +591,3 @@ getDecl (PatBind _ p r bs) = do (pd,pc) <- getPat p
+                                 rc      <- getRHS r
+-                                (bd,bc) <- getBindings bs
++                                (bd,bc) <- getBindingsMaybe bs
+                                 let fs = MS.unions [pc, rc, bc]
+@@ -672,3 +693,3 @@ getAlt (Alt _ p gas bs) = do (pd,pc) <- getPat p
+                              gc <- getRHS gas
+-                             (bd,bc) <- getBindings bs
++                             (bd,bc) <- getBindingsMaybe bs
+                              let d = pd `S.union` bd
+diff --git a/SourceGraph.cabal b/SourceGraph.cabal
+index 290fad7..ee863f5 100644
+--- a/SourceGraph.cabal
++++ b/SourceGraph.cabal
+@@ -70,3 +70,2 @@ Executable SourceGraph {
+     Ghc-Options:        -Wall
+-    Ghc-Prof-Options:   -prof
+ 
+@@ -82,4 +81,4 @@ Executable SourceGraph {
+                         graphviz >= 2999.15.0.0 && < 2999.19,
+-                        Cabal == 1.22.*,
+-                        haskell-src-exts == 1.16.*
++                        Cabal >= 1.22,
++                        haskell-src-exts >= 1.16
+ }
