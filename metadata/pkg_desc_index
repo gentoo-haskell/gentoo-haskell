@@ -995,6 +995,7 @@ dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generat
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
+dev-haskell/names-th 0.2.0.2: Manipulate name strings for TH
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
 dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.3-r1: Bindings to the nanomsg library
@@ -1082,12 +1083,14 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
+dev-haskell/persistable-record 0.4.0.3: Binding between SQL database values and haskell records
 dev-haskell/persistent 2.1.6 2.2.4.1 2.5 2.6: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.3.0.2 2.5 2.6: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.2.2 2.5 2.6: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library using Redis
+dev-haskell/persistent-relational-record 0.1.0.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.1.6-r1: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
@@ -1166,6 +1169,7 @@ dev-haskell/quickcheck-instances 0.3.12-r1: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.3: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.1-r1: Safe reimplementation of QuickCheck's core
+dev-haskell/quickcheck-simple 0.1.0.1: Test properties and default-mains for QuickCheck
 dev-haskell/quickcheck-unicode 1.0.0.1: Generator and shrink functions for testing Unicode-related software
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
@@ -1211,6 +1215,7 @@ dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91: Replaces/Enhances Text.Regex
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
+dev-haskell/relational-query 0.8.3.2: Typeful, Modular, Relational, algebraic query engine
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1: High performance, regular, shape polymorphic parallel arrays
@@ -1315,6 +1320,7 @@ dev-haskell/split 0.2.3.1: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
+dev-haskell/sql-words 0.1.4.1: Simple idea SQL keywords data constructor into OverloadedString
 dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
@@ -1426,12 +1432,14 @@ dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF enc
 dev-haskell/text-zipper 0.4 0.5 0.6.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
+dev-haskell/th-data-compat 0.0.2.2: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.5.5 1.6: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.0.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.10: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.2: Orphan instances for TH datatypes
+dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH reify
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
 dev-haskell/these 0.7.2-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
