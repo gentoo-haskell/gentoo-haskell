@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A client library for a Memcached cluster. Memcached is an in-memory key-value
+		store typically used as a distributed and shared cache. Clients connect to a
+		group of Memcached servers and perform out-of-band caching for things like
+		SQL results, rendered pages, or third-party APIs.
+		
+		It supports the binary Memcached protocol and SASL authentication. No support
+		for the ASCII protocol is provided. It supports connecting to a single, or a
+		cluster of Memcached servers. When connecting to a cluser, consistent hashing
+		is used for routing requests to the appropriate server. Timeouts, retrying
+		failed operations, and failover to a different server are all supported.
+		
+		Complete coverage of the Memcached protocol is provided except for multi-get
+		and other pipelined operations.
+		
+		Basic usage is:
+		
+		&gt; import qualified Database.Memcache.Client as M
+		&gt;
+		&gt; mc &lt;- M.newClient [M.ServerSpec &quot;localhost&quot; 11211 M.NoAuth] M.def
+		&gt; M.set mc &quot;key&quot; &quot;value&quot; 0 0
+		&gt; v &lt;- M.get mc &quot;key&quot;
+		
+		You should only need to import &#39;Database.Memcache.Client&#39;, but for now other
+		modules are exposed.
+	</longdescription>
+</pkgmetadata>
