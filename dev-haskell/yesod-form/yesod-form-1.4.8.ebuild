@@ -31,17 +31,16 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?]
 	>=dev-haskell/text-0.9:=[profile?]
-	>=dev-haskell/transformers-0.2.2:=[profile?]
 	>=dev-haskell/wai-1.3:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.0.1:=[profile?]
 	>=dev-haskell/yesod-core-1.4.14:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-persistent-1.4:=[profile?] <dev-haskell/yesod-persistent-1.5:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
 	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hspec )
 "
 
