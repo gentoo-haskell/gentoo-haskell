@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package extends Cabal&#39;s documentation building capabilities.
+		It extends the Haddock markup language with syntax for subscripts,
+		superscripts, bold text, non-breaking spaces, and images. Moreover,
+		it works around various bugs in Haddock&#39;s and HsColour&#39;s Unicode
+		support, making it possible to use UTF8 encodings in both source
+		code and documentation comments.
+		
+		This package is designed to work transparently. It provides a custom
+		main function that package maintainers can use in their Setup.hs
+		file. In most cases, this is as simple as setting the build-type to
+		Custom, adding superdoc to the package dependencies, and putting the
+		following two lines into Setup.hs:
+		
+		&gt; import Distribution.Superdoc
+		&gt; main = superdocMain
+		
+		For more information on the available markup, see &quot;Distribution.Superdoc&quot;.
+	</longdescription>
+</pkgmetadata>
