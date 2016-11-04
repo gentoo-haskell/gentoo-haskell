@@ -390,6 +390,7 @@ dev-haskell/dual-tree 0.2.0.9: Rose trees with cached and accumulating monoidal 
 dev-haskell/dynamic-state 0.2.2.0: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.1: Cross-platform File handling
+dev-haskell/easyrender 0.1.1.2: User-friendly creation of EPS, PostScript, and PDF files
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/edisonapi 1.2.2 1.2.2.1 1.3.1: A library of efficient, purely-functional data structures (API)
 dev-haskell/edisoncore 1.2.2-r1 1.2.2.1 1.3.1.1: A library of efficent, purely-functional data structures (Core Implementations)
@@ -1363,6 +1364,7 @@ dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C
 dev-haskell/stylish-haskell 0.6.1.0-r1 0.6.4.0: Haskell code prettifier
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
+dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode support
 dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0: Binding to the libsvg-cairo library
