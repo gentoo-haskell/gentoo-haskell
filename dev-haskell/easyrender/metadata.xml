@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This module provides efficient functions for rendering vector
+		graphics to a number of formats, including EPS, PostScript, and
+		PDF. It provides an abstraction for multi-page documents, as well
+		as a set of graphics primitives for page descriptions.
+		
+		The graphics model is similar to that of the PostScript and PDF
+		languages, but we only implement a subset of their functionality.
+		Care has been taken that graphics rendering is done efficiently and
+		as lazily as possible; documents are rendered \&quot;on the fly\&quot;,
+		without the need to store the whole document in memory.
+		
+		The provided document description model consists of two separate
+		layers of abstraction:
+		
+		* /drawing/ is concerned with placing marks on a fixed surface, and
+		takes place in the &#39;Draw&#39; monad;
+		
+		* /document structure/ is concerned with a sequence of pages, their
+		bounding boxes, and other meta-data. It takes place in the
+		&#39;Document&#39; monad.
+		
+		In principle, the functionality provided by EasyRender is similar to
+		a subset of Cairo; however, EasyRender is lightweight and at least
+		an order of magnitude faster.
+	</longdescription>
+</pkgmetadata>
