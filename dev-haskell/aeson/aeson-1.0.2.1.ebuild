@@ -38,11 +38,12 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/base-orphans-0.5.3 <dev-haskell/base-orphans-0.6
+		dev-haskell/base16-bytestring
 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.12
 		>=dev-haskell/hashable-1.2.4.0
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.7
+		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.9.3
 		>=dev-haskell/quickcheck-instances-0.3.12
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
