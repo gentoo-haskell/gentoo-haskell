@@ -372,6 +372,7 @@ dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri packag
 dev-haskell/yesod-auth-oauth2:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
 dev-haskell/zip-archive:executable - Build the Zip executable.
+dev-haskell/zlib:non-blocking-ffi - Execute FFI calls in the context of haskell thread.
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
 dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors

@@ -638,7 +638,7 @@ dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
-dev-haskell/here 1.2.8: Here docs & interpolated strings via quasiquotation
+dev-haskell/here 1.2.9: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexpat 0.20.9: XML parser/formatter based on expat
@@ -757,7 +757,7 @@ dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-link-header 1.0.2: A parser and writer for the HTTP Link header as specified in RFC 5988 "Web Linking"
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
-dev-haskell/http-reverse-proxy 0.4.3.1: Reverse proxy HTTP requests, either over raw sockets or with WAI
+dev-haskell/http-reverse-proxy 0.4.3.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.4.0: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
 dev-haskell/http2 1.5.4 1.6.2: HTTP/2.0 library including frames and HPACK
@@ -800,7 +800,7 @@ dev-haskell/io-streams-haproxy 1.0.0.1: HAProxy protocol 1.5 support for io-stre
 dev-haskell/iorefcas 0.2.0.1: Atomic compare and swap for IORefs and STRefs
 dev-haskell/iospec 0.3: A pure specification of the IO monad
 dev-haskell/ipprint 0.6: Tiny helper for pretty-printing values in ghci console
-dev-haskell/iproute 1.7.0: IP Routing Table
+dev-haskell/iproute 1.7.1: IP Routing Table
 dev-haskell/ipython-kernel 0.8.4.0-r1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/irc-core 2.2.0.0: IRC core library for glirc
@@ -1060,7 +1060,7 @@ dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/pandoc-citeproc 0.10.2.2: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.3.0: Pandoc filter for cross-references
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1: Types for representing a structured document
-dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0: Binding to the Pango text rendering engine
+dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.1.5.2 0.2.0.7: Full-featured command-line argument parsing library
@@ -1338,7 +1338,7 @@ dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 3.0.0: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
-dev-haskell/stm-split 0.0.0.2: TMVars, TVars and TChans with distinguished input and output side
+dev-haskell/stm-split 0.0.1: TMVars, TVars and TChans with distinguished input and output side
 dev-haskell/stmonadtrans 0.3.4: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
@@ -1646,7 +1646,7 @@ dev-haskell/yi-rope 0.7.0.2: A rope data structure used by Yi
 dev-haskell/zeromq4-haskell 0.6.5: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.2.3.7 0.3.0.5: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2.2: Traversal based zippers
-dev-haskell/zlib 0.5.4.2 0.6.1.1: Compression and decompression in the gzip and zlib formats
+dev-haskell/zlib 0.5.4.2 0.6.1.2: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
 dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits. (deprecated)
 dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
