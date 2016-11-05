@@ -355,7 +355,7 @@ dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the dige
 dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.0: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.3: Statically checked physical dimensions, using Type Families and Data Kinds
-dev-haskell/direct-sqlite 2.3.17: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.18: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
@@ -1368,7 +1368,7 @@ dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode suppor
 dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
-dev-haskell/svgfonts 1.6.0.0: Fonts from the SVG-Font format
+dev-haskell/svgfonts 1.6.0.1: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
