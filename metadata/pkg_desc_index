@@ -1367,7 +1367,7 @@ dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters t
 dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode support
 dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
-dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0: Binding to the libsvg-cairo library
+dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.6.0.0: Fonts from the SVG-Font format
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
