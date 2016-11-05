@@ -31,8 +31,6 @@ DEPEND="${RDEPEND}
 
 RESTRICT=test # fails tests
 
-PATCHES=("${FILESDIR}"/${P}-fix-ghc-lexer.patch)
-
 src_prepare() {
 	default
 
