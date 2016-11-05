@@ -32,14 +32,13 @@ RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/streaming-commons:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	dev-haskell/transformers:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?]
 	dev-haskell/wai-logger:=[profile?]
 	>=dev-haskell/word8-0.0:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/http-conduit
 		>=dev-haskell/warp-2.1 )
