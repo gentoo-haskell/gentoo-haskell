@@ -92,7 +92,8 @@ src_prepare() {
 		'base-orphans >= 0.3.1 && < 0.5' 'base-orphans >= 0.3.1' \
 		'uhc-util >= 0.1.6.3 && < 0.1.6.7' 'uhc-util >= 0.1.6.3' \
 		'EdisonAPI == 1.3' 'EdisonAPI >= 1.3' \
-		'QuickCheck >= 2.8.2 && < 2.9' 'QuickCheck >= 2.8.2'
+		'QuickCheck >= 2.8.2 && < 2.9' 'QuickCheck >= 2.8.2' \
+		'alex >= 3.1.0 && < 3.2' 'alex >= 3.1.0'
 }
 
 src_configure() {
