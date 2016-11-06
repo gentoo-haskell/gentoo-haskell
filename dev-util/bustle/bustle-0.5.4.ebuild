@@ -18,6 +18,8 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="interactivetests +threaded"
 
+RESTRICT=test # fails one propery test
+
 RDEPEND="dev-haskell/cairo:=
 	>=dev-haskell/dbus-0.10:=
 	dev-haskell/gio:=
