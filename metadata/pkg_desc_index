@@ -1027,6 +1027,7 @@ dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport im
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with generics support
+dev-haskell/ngx-export 0.2.4.0: Helper module for Nginx haskell module
 dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
