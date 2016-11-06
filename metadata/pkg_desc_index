@@ -22,7 +22,7 @@ app-text/pandoc 1.17.1-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
-dev-games/goatee 0.3.1.1 0.3.1.2: A monadic take on a 2,500-year-old board game - library
+dev-games/goatee 0.3.1.2: A monadic take on a 2,500-year-old board game - library
 dev-haskell/abstract-deque 0.3: Abstract, parameterized interface to mutable Deques
 dev-haskell/abstract-deque-tests 0.3: A test-suite for any queue or double-ended queue satisfying an interface
 dev-haskell/abstract-par 0.3.3-r1: Type classes generalizing the functionality of the 'monad-par' library
