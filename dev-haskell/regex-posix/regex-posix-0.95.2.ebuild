@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,7 +8,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit base haskell-cabal
 
 DESCRIPTION="Replaces/Enhances Text.Regex"
-HOMEPAGE="http://sourceforge.net/projects/lazy-regex"
+HOMEPAGE="https://sourceforge.net/projects/lazy-regex"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
