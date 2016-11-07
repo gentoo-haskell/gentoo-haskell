@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This snaplet provides support for using the SQLite
+		database with a Snap Framework application via the
+		sqlite-simple package.  It also includes an
+		authentication backend.
+		
+		See
+		&lt;https://github.com/nurpax/snaplet-sqlite-simple/tree/master/example&gt;
+		for an example project that demonstrates the use of
+		this snaplet.  It implements a stand-alone application
+		with a login screen that persists user information in
+		a SQLite database and allows a logged in user to save
+		comments.  Querying and listing comments demonstrates
+		how a user of snaplet-sqlite-simple might relate
+		Snaplet.Auth based AuthUsers to his own tables.
+	</longdescription>
+</pkgmetadata>
