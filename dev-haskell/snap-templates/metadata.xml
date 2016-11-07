@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This is the Scaffolding CLI for the official Snap Framework libraries.
+		It includes:
+		
+		* The \&quot;snap\&quot; executable program for generating starter projects
+		
+		To get started, issue the following sequence of commands:
+		
+		@$ cabal install snap-templates
+		$ mkdir myproject
+		$ cd myproject
+		$ snap init@
+		
+		If you have trouble or any questions, see our FAQ page
+		(&lt;http://snapframework.com/faq&gt;) or the documentation
+		(&lt;http://snapframework.com/docs&gt;).
+	</longdescription>
+</pkgmetadata>
