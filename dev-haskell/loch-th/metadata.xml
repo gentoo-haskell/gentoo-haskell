@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This module provides a Template Haskell based mechanism to
+		tag failures with the location of the failure call. The
+		location message includes the file name, line and column
+		numbers.
+	</longdescription>
+</pkgmetadata>

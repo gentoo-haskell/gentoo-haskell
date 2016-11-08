@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		While working on some Haskell code, it is often useful to
+		work incrementally by inserting @undefined@ as a
+		placeholder for missing code.
+		
+		This library provides placeholders that produce better
+		messages when evaluated at run-time and also generate
+		compile-time warnings so that they do not get forgotten
+		so easily.
+		For details, see &lt;http://github.com/ahammar/placeholders&gt;
+	</longdescription>
+</pkgmetadata>

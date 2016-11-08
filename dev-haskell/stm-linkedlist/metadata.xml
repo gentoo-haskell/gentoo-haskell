@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Doubly linked lists are often used in imperative languages to maintain a
+		collection of objects such that an object can remove itself easily.  The
+		same idea applies here.  Thanks to STM, these lists can be shared among
+		threads with little effort.
+		
+		Suppose you have a thread listening for events.  You want to dispatch
+		events to any thread that opts in.  You could write a function that
+		installs an event handler, performs an action, and removes the handler:
+		
+		&gt;withEventHandler list handler action =
+		&gt;    bracket (atomically $ LinkedList.append handler list)
+		&gt;            (atomically . LinkedList.delete)
+		&gt;            (\_ -&gt; action)
+		
+		Then, you could have your listener thread dispatch events using a function
+		like this:
+		
+		&gt;dispatchEvent list event = do
+		&gt;    handlers &lt;- atomically $ LinkedList.toList list
+		&gt;    forM_ handlers $ \handler -&gt; handler event
+	</longdescription>
+</pkgmetadata>
