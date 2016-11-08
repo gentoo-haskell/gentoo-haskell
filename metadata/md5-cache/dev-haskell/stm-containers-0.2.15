@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=<dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-0.2:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-0.2:=[profile?] <dev-haskell/list-t-2:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/free-4.6 <dev-haskell/free-5 <dev-haskell/hashable-1.3 >=dev-haskell/htf-0.13 <dev-haskell/htf-0.14 >=dev-haskell/loch-th-0.2 <dev-haskell/loch-th-0.3 >=dev-haskell/mtl-2 <dev-haskell/mtl-3 <dev-haskell/mtl-prelude-3 >=dev-haskell/placeholders-0.1 <dev-haskell/placeholders-0.2 >=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-3 >=dev-haskell/unordered-containers-0.2 <dev-haskell/unordered-containers-0.3 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Containers for STM
+EAPI=6
+HOMEPAGE=https://github.com/nikita-volkov/stm-containers
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=<dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-0.2:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-0.2:=[profile?] <dev-haskell/list-t-2:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.2.15
+SRC_URI=mirror://hackage/packages/archive/stm-containers/0.2.15/stm-containers-0.2.15.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=984b74c8602f57137056361440492f9f
