@@ -1003,7 +1003,7 @@ dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
-dev-haskell/mysql 0.1.1.8 0.1.1.8-r100: A low-level MySQL client library
+dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
 dev-haskell/names-th 0.2.0.2: Manipulate name strings for TH
@@ -1164,7 +1164,7 @@ dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates an
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.3.1 2.4.0: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
-dev-haskell/protolude 0.1.8: A sensible set of defaults for writing custom Preludes
+dev-haskell/protolude 0.1.8 0.1.10: A sensible set of defaults for writing custom Preludes
 dev-haskell/prover 9999: Automatic Prover of Logical Predicates
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
@@ -1445,7 +1445,7 @@ dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
 dev-haskell/text-region 0.1.0.1: Marking text regions
-dev-haskell/text-show 3.2.2 3.4: Efficient conversion of values into Text
+dev-haskell/text-show 3.2.2 3.4 3.4.1.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.4 0.5 0.6.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
@@ -1556,7 +1556,7 @@ dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
 dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.1: Binding to the VTE library
-dev-haskell/vty 5.11.1: A simple terminal UI library
+dev-haskell/vty 5.11.3: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.0.8 3.1.2: File/CGI/Rev Proxy App of WAI
@@ -1653,7 +1653,7 @@ dev-haskell/yesod-persistent 1.4.0.6: Some helpers for using Persistent from Yes
 dev-haskell/yesod-platform 1.2.13.3: Meta package for Yesod (deprecated)
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
-dev-haskell/yesod-static 1.5.0.5: Static file serving subsite for Yesod Web Framework
+dev-haskell/yesod-static 1.5.1.1: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-test 1.5.3: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
 dev-haskell/yi-language 0.1.1.0 0.2.1: Collection of language-related Yi libraries
@@ -1687,7 +1687,7 @@ dev-lang/idris 0.11.1 0.11.2-r1 0.12 0.12.2 0.12.3 9999: Functional Programming 
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.10.1: PureScript Programming Language Compiler
+dev-lang/purescript 0.10.2: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
@@ -1753,7 +1753,7 @@ sci-physics/chipmunk 6.2.1: simple, lightweight, fast and portable 2D rigid body
 sys-apps/nix 1.8 1.11.4: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
-www-apps/gitit 0.12.1.1-r2: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.2: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-client/hbro 1.1.2.2 1.5.0.0: Minimal extensible web-browser
 www-misc/feed-cli 2009.7.5: A simple command line interface for creating and updating feeds like RSS
