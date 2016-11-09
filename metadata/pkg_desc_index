@@ -850,7 +850,7 @@ dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printe
 dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/language-javascript 0.5.14.5 0.6.0.8: Parser for JavaScript
+dev-haskell/language-javascript 0.5.14.5 0.6.0.9: Parser for JavaScript
 dev-haskell/language-lua 0.10.0: Lua parser and pretty-printer
 dev-haskell/language-python 0.5.4: Parsing and pretty printing of Python code
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
@@ -960,7 +960,7 @@ dev-haskell/mockery 0.3.4: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.20: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.20.1: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.2.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
@@ -1036,7 +1036,7 @@ dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport im
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with generics support
-dev-haskell/ngx-export 0.2.4.0: Helper module for Nginx haskell module
+dev-haskell/ngx-export 0.2.4.2: Helper module for Nginx haskell module
 dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
@@ -1317,7 +1317,7 @@ dev-haskell/snap 0.14.0.7-r3 1.0.0.1: Top-level package for the Snap Web Framewo
 dev-haskell/snap-core 0.9.8.0 1.0.0.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.4-r1 1.0.0.0: Snap dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2 1.0.0.0: Snap static loader
-dev-haskell/snap-server 0.9.5.1-r1 1.0.1.0: A web server for the Snap Framework
+dev-haskell/snap-server 0.9.5.1-r1 1.0.1.1: A web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.0: Scaffolding CLI for the Snap Framework
 dev-haskell/snaplet-sqlite-simple 1.0.0.1: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
