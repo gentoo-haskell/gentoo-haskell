@@ -1247,9 +1247,9 @@ dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries
 dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
-dev-haskell/rss 3000.2.0.5: A library for generating RSS 2.0 feeds
+dev-haskell/rss 3000.2.0.6: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.3: Random Variables
-dev-haskell/safe 0.3.9: Library of safe (exception free) functions
+dev-haskell/safe 0.3.10: Library of safe (exception free) functions
 dev-haskell/safecopy 0.8.6 0.9.0.1 0.9.1 0.9.2: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
