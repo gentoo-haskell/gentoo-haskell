@@ -371,7 +371,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.7.1.2 0.8.0.2: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
-dev-haskell/dns 2.0.6: DNS library in Haskell
+dev-haskell/dns 2.0.9: DNS library in Haskell
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
