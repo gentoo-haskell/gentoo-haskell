@@ -28,6 +28,12 @@ src_prepare() {
 		haskell-process.el || die
 }
 
+src_compile() {
+	# The autoloads aren't present in new releases and must be built.
+	emake haskell-mode-autoloads.el
+	elisp_src_compile
+}
+
 src_test() {
 	# perform tests in a separate directory #504660
 	mkdir test && cp -R *.el tests Makefile test || die
