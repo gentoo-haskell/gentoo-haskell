@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Freer is an implementation of &quot;Freer Monads, More Extensible
+		Effects&quot;
+		
+		The key features of Freer are:
+		
+		* An efficient effect system for Haskell - as a library!
+		
+		* Implementations for several common Haskell monad instances:
+		
+		* Core components for defining your own Effects
+	</longdescription>
+</pkgmetadata>
