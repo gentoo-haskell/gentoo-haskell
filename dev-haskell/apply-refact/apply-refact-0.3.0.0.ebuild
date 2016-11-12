@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/filemanip:=[profile?]
-	>=dev-haskell/ghc-exactprint-0.5:=[profile?]
+	>=dev-haskell/ghc-exactprint-0.5.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/refact-0.2:=[profile?]
@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/filemanip:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/transformers:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -36,3 +36,4 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-expected-failure
 		dev-haskell/tasty-golden )
 "
+
