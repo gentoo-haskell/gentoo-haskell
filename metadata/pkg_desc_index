@@ -824,6 +824,7 @@ dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
 dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1: High level interface for webkit-javascriptcore
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
+dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
@@ -1005,6 +1006,7 @@ dev-haskell/multirec 0.7.5 0.7.6: Generic programming for families of recursive 
 dev-haskell/multiset 0.3.3: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
+dev-haskell/mustache 2.1.2: A mustache template parser library
 dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
@@ -1222,6 +1224,7 @@ dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat 0.95.1-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
 dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
+dev-haskell/regex-do 2.4: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
