@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/binary-0.8:=[profile?] <dev-haskell/binary-0.9:=[profile?] >=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?] >dev-haskell/scientific-0.3:=[profile?] >=dev-lang/ghc-7.6.1:= >=dev-haskell/cabal-1.16.0 test? ( dev-haskell/attoparsec >=dev-haskell/fail-4.9 <dev-haskell/fail-4.10 >=dev-haskell/quickcheck-2.7 >=dev-haskell/quickcheck-instances-0.3 dev-haskell/quickcheck-unicode >=dev-haskell/semigroups-0.16.1 <dev-haskell/semigroups-0.19 >=dev-haskell/tasty-0.11 >=dev-haskell/tasty-hunit-0.8 >=dev-haskell/tasty-quickcheck-0.8 dev-haskell/text dev-haskell/unordered-containers dev-haskell/vector ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Extends binary with parsec/attoparsec style parsing combinators
+EAPI=6
+HOMEPAGE=https://github.com/winterland1989/binary-parsers
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/binary-0.8:=[profile?] <dev-haskell/binary-0.9:=[profile?] >=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?] >dev-haskell/scientific-0.3:=[profile?] >=dev-lang/ghc-7.6.1:=
+SLOT=0/0.2.3.0
+SRC_URI=mirror://hackage/packages/archive/binary-parsers/0.2.3.0/binary-parsers-0.2.3.0.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=4bc5e966124b980c75fe784a8d0a10f2

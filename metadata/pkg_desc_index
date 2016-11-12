@@ -109,7 +109,9 @@ dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Has
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
+dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
 dev-haskell/binary-orphans 0.1.5.1-r3: Orphan instances for binary
+dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
@@ -1005,6 +1007,7 @@ dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
+dev-haskell/mysql-haskell 0.7.0.0: pure haskell MySQL driver
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
 dev-haskell/names-th 0.2.0.2: Manipulate name strings for TH
@@ -1422,6 +1425,7 @@ dev-haskell/tasty-silver 3.1.9: A fancy test runner, including support for golde
 dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framework
 dev-haskell/tasty-th 0.1.4: Automatic tasty test case discovery using TH
 dev-haskell/tcache 0.12.0: A Transactional cache with user-defined persistence
+dev-haskell/tcp-streams 0.6.0.0: One stop solution for tcp client and server with tls support
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.0.4: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
@@ -1586,6 +1590,7 @@ dev-haskell/webkitgtk3-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0 0.14.2.1: JavaS
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0 0.10.0.0: Snap integration for the websockets library
+dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
 dev-haskell/wl-pprint 1.2: The Wadler/Leijen Pretty Printer
@@ -1593,6 +1598,7 @@ dev-haskell/wl-pprint-extras 3.5.0.5: A free monad based on the Wadler/Leijen pr
 dev-haskell/wl-pprint-terminfo 3.7.1.4: A color pretty printer with terminfo support
 dev-haskell/wl-pprint-text 1.1.0.4: A Wadler/Leijen Pretty Printer for Text values
 dev-haskell/word-trie 0.2.0.4 0.3.0: Implementation of a finite trie over words
+dev-haskell/word24 2.0.1: 24-bit word and int types for GHC
 dev-haskell/word8 0.1.2: Word8 library
 dev-haskell/wordexp 0.2.0.0: wordexp(3) wrappers
 dev-haskell/wraparound 0.0.2: Convenient handling of points on a seamless 2-dimensional plane
