@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Searches for a provided nucleotide or protein sequence with the NCBI Blast REST service and returns a blast result in xml format as BlastResult datatype.
+		
+		For more information on BLAST refer to: &lt;http://blast.ncbi.nlm.nih.gov/Blast.cgi&gt;.
+		
+		Information on the webservice can be found at: &lt;http://www.ncbi.nlm.nih.gov/BLAST/developer.shtml&gt;.
+		
+		If you plan to submit more than 20 searches in one session, please look up the Usage Guidelines in the webservice information.
+	</longdescription>
+</pkgmetadata>
