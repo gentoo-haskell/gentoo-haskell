@@ -476,6 +476,7 @@ dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
+dev-haskell/freer 0.2.3.0: Implementation of the Freer Monad
 dev-haskell/friday 0.2.2.0: A functional image processing library for Haskell
 dev-haskell/friday-devil 0.1.1.1: Uses the DevIL C library to read and write images from and to files and memory buffers
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
