@@ -1113,7 +1113,7 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
-dev-haskell/persistable-record 0.4.0.3: Binding between SQL database values and haskell records
+dev-haskell/persistable-record 0.4.1.0: Binding between SQL database values and haskell records
 dev-haskell/persistent 2.1.6 2.2.4.1 2.5 2.6: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1: Backend for the persistent library using mongoDB
@@ -1294,8 +1294,8 @@ dev-haskell/semigroups 0.18.2: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.6.1 0.7.1 0.8 0.8.1: A family of combinators for defining webservices APIs
-dev-haskell/servant-server 0.6.1 0.7.1 0.8 0.8.1: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant 0.8.1: A family of combinators for defining webservices APIs
+dev-haskell/servant-server 0.8.1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.4: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
@@ -1334,7 +1334,7 @@ dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.5: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
 dev-haskell/snap 0.14.0.7-r3 1.0.0.1: Top-level package for the Snap Web Framework
-dev-haskell/snap-core 0.9.8.0 1.0.0.0: Snap: A Haskell Web Framework (core interfaces and types)
+dev-haskell/snap-core 0.9.8.0 1.0.1.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.4-r1 1.0.0.0: Snap dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2 1.0.0.0: Snap static loader
 dev-haskell/snap-server 0.9.5.1-r1 1.0.1.1: A web server for the Snap Framework
