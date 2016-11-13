@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Efficient and flexible wire arrows for functional reactive programming
-		and other forms of locally stateful programming.
-	</longdescription>
 </pkgmetadata>

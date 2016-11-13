@@ -20,13 +20,14 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="libressl"
 
 RESTRICT=test # whoops, not good
 
 RDEPEND=">=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	dev-libs/openssl:0=
+	!libressl? ( dev-libs/openssl:0= )
+	libressl? ( dev-libs/libressl:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
