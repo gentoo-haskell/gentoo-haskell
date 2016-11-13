@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="module and code generated from the Google Protocol Buffer specification"
+DESCRIPTION="module and code generated from the Google Protocol Buffer"
 HOMEPAGE="https://github.com/k-bx/protocol-buffers"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 

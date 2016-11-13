@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A parser and writer for the HTTP Link header as specified in RFC 5988 \"Web Linking\""
+DESCRIPTION="An RFC 5988 parser and writer for the HTTP Link header"
 HOMEPAGE="https://github.com/myfreeweb/http-link-header"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
