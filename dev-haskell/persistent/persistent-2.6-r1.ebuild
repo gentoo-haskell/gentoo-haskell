@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/conduit-1.0:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
 	>=dev-haskell/fast-logger-2.1:=[profile?]
-	>=dev-haskell/http-api-data-0.2:=[profile?] <dev-haskell/http-api-data-0.4:=[profile?]
+	>=dev-haskell/http-api-data-0.2:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/monad-logger-0.3:=[profile?]
@@ -47,8 +47,15 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-1.3
-		>=dev-haskell/http-api-data-0.2 <dev-haskell/http-api-data-0.3 )
+		>=dev-haskell/http-api-data-0.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-api-data            >= 0.2       && < 0.3' 'http-api-data            >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
