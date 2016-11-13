@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package allows to parse many different formats
+		of dates. Both absolute and relative dates are supported.
+		Supported date formats are:
+		
+		* DD.MM.YYYY
+		
+		* YYYY\/MM\/DD
+		
+		* `12 September 2012&#39;
+		
+		* `today&#39;, `tomorrow&#39;, `yesterday&#39;
+		
+		* `in 2 days&#39;, &#39;3 weeks ago&#39;
+		
+		* `last monday&#39;, &#39;next friday&#39;
+		
+		* `last month&#39; (1th of this month), `next year&#39; (1th of January of next year)
+		
+		4-digits years may be abbreviated (such as 12 for 2012).
+		Both 12-hour and 24-hour time formats are supported.
+		
+		User-specified date formats are supported by
+		Data.Dates.Formats module.
+	</longdescription>
+</pkgmetadata>
