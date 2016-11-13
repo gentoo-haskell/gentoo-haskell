@@ -1,0 +1,12 @@
+diff --git a/hakyll-sass.cabal b/hakyll-sass.cabal
+index ef6b2b4..e93c57e 100644
+--- a/hakyll-sass.cabal
++++ b/hakyll-sass.cabal
+@@ -20,7 +20,6 @@ library
+   exposed-modules: Hakyll.Web.Sass
+   build-depends:
+       base >= 4.7 && < 5
+-    , aeson-pretty < 0.8
+     , hakyll >= 4.7.0
+     , data-default-class >= 0.0.1
+     , hsass >= 0.2.0
