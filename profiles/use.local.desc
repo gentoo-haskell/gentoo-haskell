@@ -189,7 +189,6 @@ dev-haskell/hsh:buildtests - Build the executable to run unit tests.
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
 dev-haskell/hslua:luajit - Use luajit instead of lua.
 dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled copy.
-dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC Only)
 dev-haskell/hsp:base4 - Use base-4.0.
 dev-haskell/hsqml:enableqmldebugging - Allow the QML debug server to be enabled via Qt arguments.
 dev-haskell/hsqml:forceghcilib - Force enable GHCi workaround library if not using shared libraries.
@@ -254,7 +253,6 @@ dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-steal
 dev-haskell/nats:binary - enable binary instances
 dev-haskell/nats:hashable - enable hashable instances
 dev-haskell/nats:template-haskell - enable template_haskell
-dev-haskell/netwire:testprogram - Build the test program.
 dev-haskell/network-data:small_base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/openclwrappers:link - Link against OpenCL library.
