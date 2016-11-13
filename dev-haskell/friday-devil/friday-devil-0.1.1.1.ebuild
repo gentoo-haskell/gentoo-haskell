@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Uses the DevIL C library to read and write images from and to files and memory buffers"
+DESCRIPTION="Haskell bindings for DevIL C library"
 HOMEPAGE="https://github.com/RaphaelJ/friday-devil"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
