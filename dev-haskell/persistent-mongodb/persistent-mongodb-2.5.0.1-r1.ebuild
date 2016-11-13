@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 	>=dev-haskell/bson-0.3.1:=[profile?] <dev-haskell/bson-0.4:=[profile?]
 	>=dev-haskell/cereal-0.3.0.0:=[profile?]
 	>=dev-haskell/conduit-0.5.3:=[profile?]
-	>=dev-haskell/http-api-data-0.2:=[profile?] <dev-haskell/http-api-data-0.3:=[profile?]
+	>=dev-haskell/http-api-data-0.2:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/mongodb-2.0.3:=[profile?]
 	>=dev-haskell/network-2.2.1.7:=[profile?]
@@ -43,6 +43,13 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-api-data      >= 0.2       && < 0.3' 'http-api-data      >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
