@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A cross-platform library that tries to find a (reasonable) CA certificate
+		bundle that can be used with @HsOpenSSL@ to verify the certificates of
+		remote peers.
+		
+		This package is for @HsOpenSSL@ what @x509-system@ is for the @tls@ package.
+		Additionally, it borrows some ideas from @x509-system@.
+	</longdescription>
+</pkgmetadata>

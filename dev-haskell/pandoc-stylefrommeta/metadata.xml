@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Pandoc filter to customize links, images and paragraphs
+		(with restrictions). Styles are read from the metadata of the document:
+		they may reside inside the document or in a separate YAML file. See
+		details &lt;http://github.com/lyokha/styleFromMeta#stylefrommeta here&gt;.
+	</longdescription>
+</pkgmetadata>
