@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="testprogram">Build the test program.</flag>
-	</use>
 	<longdescription>
 		Efficient and flexible wire arrows for functional reactive programming
 		and other forms of locally stateful programming.
