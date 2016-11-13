@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile" #haddock crashes: haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this"
+DESCRIPTION="A tiny lens library with no dependencies"
 HOMEPAGE="https://github.com/aelve/microlens"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
