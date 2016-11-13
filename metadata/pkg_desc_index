@@ -43,7 +43,7 @@ dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
 dev-haskell/aeson-compat 0.3.6: Compatibility layer for aeson
-dev-haskell/aeson-extra 0.3.2.0-r1: Extra goodies for aeson
+dev-haskell/aeson-extra 0.3.2.0-r1 0.3.2.0-r2: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2 0.8.2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
@@ -1217,7 +1217,7 @@ dev-haskell/readargs 1.2.2: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
-dev-haskell/recursion-schemes 4.1.2-r1: Generalized bananas, lenses and barbed wire
+dev-haskell/recursion-schemes 4.1.2-r1 5: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
