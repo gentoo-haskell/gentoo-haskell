@@ -168,6 +168,8 @@ dev-haskell/hledger:threaded - Build with support for multithreaded execution.
 dev-haskell/hledger-ui:threaded - Build with support for multithreaded execution.
 dev-haskell/hledger-web:library-only - Build for use with "yesod devel.
 dev-haskell/hledger-web:threaded - Build with support for multithreaded execution.
+dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the system
+dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hmatrix-gsl-stats:mkl - Link with Intel's MKL optimized libraries.
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
