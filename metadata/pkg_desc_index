@@ -481,7 +481,7 @@ dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.3.0: Implementation of the Freer Monad
 dev-haskell/friday 0.2.2.0: A functional image processing library for Haskell
-dev-haskell/friday-devil 0.1.1.1: Uses the DevIL C library to read and write images from and to files and memory buffers
+dev-haskell/friday-devil 0.1.1.1: Haskell bindings for DevIL C library
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
 dev-haskell/frown 0.6.2.3: LALR(k) parser generator
 dev-haskell/fsnotify 0.1.0.3 0.2.1: Cross platform library for file change notification
@@ -769,7 +769,7 @@ dev-haskell/http-client-tls 0.2.4.1: http-client backend using the connection pa
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.11: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
-dev-haskell/http-link-header 1.0.2: A parser and writer for the HTTP Link header as specified in RFC 5988 "Web Linking"
+dev-haskell/http-link-header 1.0.2: An RFC 5988 parser and writer for the HTTP Link header
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
@@ -836,7 +836,7 @@ dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.8: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and radiance)
+dev-haskell/juicypixels 3.2.8: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r4: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
@@ -951,7 +951,7 @@ dev-haskell/memotrie 0.6.7: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.3: Serialize instance for Message Pack Object
-dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies. If you're writing an app, you probably want microlens-platform, not this
+dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0 0.1.10.0: microlens support for Reader/Writer/State from mtl
 dev-haskell/microlens-platform 0.3.2.0 0.3.4.0 0.3.7.0: Feature-complete microlens
@@ -1182,7 +1182,7 @@ dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criteri
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
-dev-haskell/protocol-buffers-descriptor 2.3.1 2.4.0: Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification
+dev-haskell/protocol-buffers-descriptor 2.3.1 2.4.0: module and code generated from the Google Protocol Buffer
 dev-haskell/protolude 0.1.8 0.1.10: A sensible set of defaults for writing custom Preludes
 dev-haskell/prover 9999: Automatic Prover of Logical Predicates
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
