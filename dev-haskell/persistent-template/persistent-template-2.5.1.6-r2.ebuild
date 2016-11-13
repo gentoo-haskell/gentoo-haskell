@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/aeson-compat-0.3.2.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
-	>=dev-haskell/http-api-data-0.2:=[profile?] <dev-haskell/http-api-data-0.3:=[profile?]
+	>=dev-haskell/http-api-data-0.2:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	dev-haskell/path-pieces:=[profile?]
@@ -41,5 +41,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                    >= 0.7       && < 0.12' 'aeson                    >= 0.7'
+		'aeson                    >= 0.7       && < 0.12' 'aeson                    >= 0.7' \
+		'http-api-data            >= 0.2       && < 0.3' 'http-api-data            >= 0.2'
 }
