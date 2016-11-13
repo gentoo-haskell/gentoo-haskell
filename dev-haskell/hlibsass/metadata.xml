@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+    <use>
+		<flag name="externallibsass">Use LibSass that is installed in the system</flag>
+		<flag name="sharedlibsass">Build LibSass as a shared library (only if external_libsass = False)</flag>
+    </use>
+	<longdescription>
+		This package provides (very) low level bindings to LibSass. By default, it
+		uses LibSass compiled as a static library, so if you use this in your project,
+		you have to link your project with C++ runtime (which hLibsass does
+		automatically - links with /libstdc++/).
+		For documentation visit &lt;https://github.com/sass/libsass&gt;.
+	</longdescription>
+</pkgmetadata>

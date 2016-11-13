@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides quite simple (but not too simple) API for
+		compilation of &lt;http://sass-lang.com/ Sass&gt; code. It uses
+		&lt;http://libsass.org libsass&gt; (hlibsass) underneath, so the code it
+		parses/generates should be compatible with original Sass implementation (or at
+		least &lt;http://libsass.org/#sassc sassc&gt;).
+		This package tries to minimize C API usage, so the only place where it is used
+		is in the &#39;compileFile&#39; / &#39;compileString&#39; methods. This allows us to stay pure
+		as long as we can and not waste performance for going back and forth.
+		If you feel that compilation options constrain you too much, you may use rest
+		of modules without it. With them, you can use Haskell types and mechanisms to
+		manage libsass&#39;s data(eg. importers, options, values) and modify compilation
+		process as you like.
+	</longdescription>
+</pkgmetadata>
