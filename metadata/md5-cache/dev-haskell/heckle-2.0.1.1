@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=app-text/pandoc-1.17.0.3:=[profile?] >=dev-haskell/blaze-html-0.8.1.1:=[profile?] >=dev-haskell/dates-0.2.2.1:=[profile?] >=dev-haskell/optparse-applicative-0.12.0.0:=[profile?] <dev-haskell/optparse-applicative-0.13.0.0:=[profile?] >=dev-haskell/optparse-generic-1.1:=[profile?] <dev-haskell/optparse-generic-1.2:=[profile?] >=dev-haskell/pandoc-types-1.16.1:=[profile?] >=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?] >=dev-haskell/tagsoup-0.13.3:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Jekyll in Haskell (feat. LaTeX)
+EAPI=6
+HOMEPAGE=https://github.com/2016rshah/heckle
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=app-text/pandoc-1.17.0.3:=[profile?] >=dev-haskell/blaze-html-0.8.1.1:=[profile?] >=dev-haskell/dates-0.2.2.1:=[profile?] >=dev-haskell/optparse-applicative-0.12.0.0:=[profile?] <dev-haskell/optparse-applicative-0.13.0.0:=[profile?] >=dev-haskell/optparse-generic-1.1:=[profile?] <dev-haskell/optparse-generic-1.2:=[profile?] >=dev-haskell/pandoc-types-1.16.1:=[profile?] >=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?] >=dev-haskell/tagsoup-0.13.3:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/2.0.1.1
+SRC_URI=mirror://hackage/packages/archive/heckle/2.0.1.1/heckle-2.0.1.1.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=9a1c6c40ad8753f2e1179816ffb7b461
