@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="examples">Build examples</flag>
+	</use>
+	<longdescription>
+		This package provides bindings to the low-level btrfs API (i.e. the
+		@BTRFS_IOC_@* @ioctl@s). Currently, only a subset of the API is
+		supported, including all functions needed to work with subvolumes/snapshots
+		as well as file cloning.
+		
+		In order to build this package, @linux-headers@ needs to be installed.
+		
+		Warning: btrfs is still considered experimental. This module is also
+		experimental and may contain serious bugs that may result in data loss.
+		Do not use it on data that has not been backed up yet.
+	</longdescription>
+</pkgmetadata>
