@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Draw and update graphs in real time with OpenGL. Suitable for displaying large amounts of frequently changing data. Line graphs and waterfall plots are supported, as well as axis drawing.
+		
+		See &lt;https://github.com/adamwalker/dynamic-graph&gt; for examples of the graphs it can produce.
+		
+		To get started, see &quot;Graphics.DynamicGraph.Window&quot;
+	</longdescription>
+</pkgmetadata>
