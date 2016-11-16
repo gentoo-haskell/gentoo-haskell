@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library scrapes websites and invokes callbacks when there are changes, similar to a RSS reader.
+		Sending an email by invoking sendmail is a built-in callback mechanism. Of course, users can provide
+		their own callback function in addition.
+		
+		Look at &quot;Network.ScrapeChanges&quot; for a full working example on how to use &quot;scrape-changes&quot;.
+	</longdescription>
+</pkgmetadata>
