@@ -151,7 +151,7 @@ dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 0.8.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
-dev-haskell/brick 0.5.1: A declarative terminal user interface library
+dev-haskell/brick 0.5.1 0.14: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/btrfs 0.1.2.1: Bindings to the btrfs API
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
@@ -364,6 +364,7 @@ dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.3: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/direct-sqlite 2.3.18: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
+dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
@@ -1131,6 +1132,7 @@ dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library usin
 dev-haskell/persistent-relational-record 0.1.0.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.1.6-r2: Type-safe, non-relational, multi-backend persistence
+dev-haskell/pgdl 10.4: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pipes 4.1.9: Compositional pipelines
@@ -1478,7 +1480,7 @@ dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
 dev-haskell/text-region 0.1.0.1: Marking text regions
 dev-haskell/text-show 3.2.2 3.4 3.4.1.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
-dev-haskell/text-zipper 0.4 0.5 0.6.1: A text editor zipper library
+dev-haskell/text-zipper 0.4 0.5 0.6.1 0.9: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-data-compat 0.0.2.2: Compatibility for data definition template of TH
@@ -1587,7 +1589,7 @@ dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
 dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.1: Binding to the VTE library
-dev-haskell/vty 5.11.3: A simple terminal UI library
+dev-haskell/vty 5.11.3 5.12: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.0.8 3.1.2: File/CGI/Rev Proxy App of WAI
