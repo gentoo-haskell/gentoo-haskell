@@ -40,14 +40,13 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/regex-compat:=
 	dev-haskell/split:=
 	dev-haskell/stm:=
-	dev-haskell/tar:=
-	dev-haskell/transformers:=
+	>=dev-haskell/tar-0.5:=
 	>=dev-haskell/xml-1.3.7:=
 	dev-haskell/zlib:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit )
 "
 

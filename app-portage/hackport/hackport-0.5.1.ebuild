@@ -39,7 +39,7 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/regex-compat:=
 	dev-haskell/split:=
 	dev-haskell/stm:=
-	dev-haskell/tar:=
+	>=dev-haskell/tar-0.5:=
 	>=dev-haskell/xml-1.3.7:=
 	dev-haskell/zlib:=
 	>=dev-lang/ghc-7.8.2:=
