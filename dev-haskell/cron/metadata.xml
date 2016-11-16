@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="lib-werror">ghc-options: -Werror</flag>
+	</use>
+	<longdescription>
+		Cron data structure and Attoparsec parser. The idea is to embed it in larger
+		systems which want to roll their own scheduled tasks in a format that people
+		are used to.
+		&#39;System.Cron&#39; is where all the interesting datatypes live. You will also find
+		&#39;scheduleMatches&#39;, which you can use to compare a time against a
+		&#39;CronSchedule&#39; to see if an action needs to be performed.  System.Cron.Parser
+		is where you will find the parsers `cronSchedule`, `crontabEntry` and
+		`cronTab`. To parse individual schedules up to full crontab files.
+	</longdescription>
+</pkgmetadata>
