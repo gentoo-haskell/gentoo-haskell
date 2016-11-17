@@ -15,6 +15,7 @@
 	</longdescription>
 	<use>
 		<flag name="curses">Enable curses support for auto-detecting terminal width.</flag>
+		<flag name="terminfo">On POSIX systems, build with the terminfo lib for detecting terminal width.</flag>
 		<flag name="threaded">Build with support for multithreaded execution.</flag>
 	</use>
 </pkgmetadata>
