@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		LMDB is a read-optimized Berkeley DB replacement developed by Symas
+		for the OpenLDAP project. LMDB has impressive performance characteristics
+		and a friendly BSD-style OpenLDAP license. See &lt;http://symas.com/mdb/&gt;.
+		
+		This library has Haskell bindings to the LMDB library. You must install
+		the lmdb development files before installing this library,
+		e.g. `sudo apt-get install liblmdb-dev` works for Ubuntu 14.04.
+		
+		For now, only a low level interface is provided, and the author is moving
+		on to use LMDB rather than further develop its bindings. If a higher level
+		API is desired, please consider contributing, or develop a separate package.
+	</longdescription>
+</pkgmetadata>
