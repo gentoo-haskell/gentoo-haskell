@@ -30,6 +30,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2.6 <dev-haskell/test-framework-hunit-0.4 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'terminal-progress-bar == 0.1.0' 'terminal-progress-bar'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples example)
