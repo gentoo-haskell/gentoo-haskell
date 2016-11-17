@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library provides a framework to build command line programs.
+		
+		
+		The constructed program can have several \&quot;commands\&quot; that provide different modes of operation.
+		Options can be declared to allow fine-tuning of the behaviour of the program.
+		These options are read from the command line when running the program
+		and from a simple configuration file.
+		
+		
+		Additionally, there is an interactive mode that reads and executes commands from standard input.
+		
+		
+		Examples of using this library may be found in the Examples directory in the package tarball.
+		
+		
+		It provides functionality similar to the cmdargs package. Main differences:
+		
+		- console-program does not use unsafePerformIO, and tries to give a more haskellish, referentially transparent interface;
+		
+		- it allows a full tree of commands, instead of a list, so a command can have subcommands;
+		
+		- it parses a configuration file, in addition to the command line arguments.
+	</longdescription>
+</pkgmetadata>
