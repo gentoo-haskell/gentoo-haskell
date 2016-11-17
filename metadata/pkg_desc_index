@@ -153,7 +153,7 @@ dev-haskell/bower-json 0.8.0: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
 dev-haskell/brick 0.5.1 0.14: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
-dev-haskell/btrfs 0.1.2.1: Bindings to the btrfs API
+dev-haskell/btrfs 0.1.2.2: Bindings to the btrfs API
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
@@ -193,7 +193,7 @@ dev-haskell/cereal 0.5.4.0: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
 dev-haskell/cereal-vector 0.2.0.1: Serialize instances for Data.Vector types
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
-dev-haskell/cgi 3001.2.2.3 3001.3.0.1: A library for writing CGI programs
+dev-haskell/cgi 3001.3.0.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: A library for generating 2D Charts and Plots
@@ -545,7 +545,7 @@ dev-haskell/gloss-rendering 1.10.3.5: Gloss picture data types and rendering fun
 dev-haskell/glpk-hs 0.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.2: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.10: A binding for the OpenGL Utility Toolkit
-dev-haskell/glutil 0.9.0.1 0.9.1.0: Miscellaneous OpenGL utilities
+dev-haskell/glutil 0.9.1.1: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
 dev-haskell/gnutls 0.2: Bindings for GNU libgnutls
@@ -680,11 +680,11 @@ dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
-dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1: Command-line interface for the hledger accounting tool
-dev-haskell/hledger-interest 1.4.4: computes interest for a given account
-dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 0.27.5-r1: Curses-style user interface for the hledger accounting tool
-dev-haskell/hledger-web 0.25.1 0.26 0.27: Web interface for the hledger accounting tool
+dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.0.1: Command-line interface for the hledger accounting tool
+dev-haskell/hledger-interest 1.4.4 1.5: computes interest for a given account
+dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.0.1: Core data types, parsers and functionality for the hledger accounting tools
+dev-haskell/hledger-ui 0.27.5-r1 1.0.4: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-web 0.25.1 0.26 0.27 1.0.1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.5.0: Low-level bindings to Libsass
@@ -757,7 +757,7 @@ dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
 dev-haskell/hsqml 0.3.4.1: Haskell binding for Qt Quick
 dev-haskell/hsshellscript 3.3.4: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
-dev-haskell/hstatistics 0.2.5.3: Statistics
+dev-haskell/hstatistics 0.2.5.4: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
 dev-haskell/hstringtemplate 0.8.5: StringTemplate implementation in Haskell
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
@@ -1318,7 +1318,7 @@ dev-haskell/setlocale 1.0.0.4: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.10: Build system library, like Make, but more accurate dependencies
-dev-haskell/shakespeare 2.0.11.1: A toolkit for making compile-time interpolated templates
+dev-haskell/shakespeare 2.0.11.2: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time
@@ -1375,7 +1375,7 @@ dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurren
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sql-words 0.1.4.1: Simple idea SQL keywords data constructor into OverloadedString
-dev-haskell/sqlite-simple 0.4.9.0: Mid-Level SQLite client library
+dev-haskell/sqlite-simple 0.4.10.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
@@ -1775,7 +1775,7 @@ games-roguelike/scroll 1.20151219: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r1: Podcast Aggregator (downloader)
-media-sound/live-sequencer 0.0.4-r5 0.0.5.1: Live coding of MIDI music
+media-sound/live-sequencer 0.0.5.2: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1-r1: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.2-r1: Count mailboxes in a SQL database
