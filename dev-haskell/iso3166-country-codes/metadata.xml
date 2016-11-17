@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Defines datatype CountryCode that has a two
+		letter constructor corresponding to each of the two letter
+		ISO 3166 country codes, and mappings from that type to the
+		official name of the country.
+	</longdescription>
+</pkgmetadata>
