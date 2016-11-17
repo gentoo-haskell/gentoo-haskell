@@ -770,7 +770,7 @@ dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatyp
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
-dev-haskell/http-api-data 0.2.4 0.3.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
@@ -779,7 +779,7 @@ dev-haskell/http-client-tls 0.2.4.1: http-client backend using the connection pa
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.11: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
-dev-haskell/http-link-header 1.0.2: An RFC 5988 parser and writer for the HTTP Link header
+dev-haskell/http-link-header 1.0.3: An RFC 5988 parser and writer for the HTTP Link header
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.3.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
@@ -1251,7 +1251,7 @@ dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat 0.95.1-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
 dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
-dev-haskell/regex-do 2.4: PCRE wrapper
+dev-haskell/regex-do 2.6.2: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
@@ -1692,7 +1692,7 @@ dev-haskell/yesod-default 1.2.0: Default config and main functions for your yeso
 dev-haskell/yesod-elements 1.0: Non template haskell markup building function in the spirit of lucid
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
-dev-haskell/yesod-form 1.4.8: Form handling support for Yesod Web Framework
+dev-haskell/yesod-form 1.4.9: Form handling support for Yesod Web Framework
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.10.0 0.11.1: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
