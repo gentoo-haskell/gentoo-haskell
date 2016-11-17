@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # accept wrong commandline
+
 RDEPEND="dev-db/postgresql:=
 	>=dev-haskell/aeson-0.6.2.0:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
