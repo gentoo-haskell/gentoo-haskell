@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-0.6.2.0:=[profile?] >=dev-haskell/aeson-pretty-0.8.2:=[profile?] dev-haskell/base64-bytestring:=[profile?] dev-haskell/bloodhound:=[profile?] dev-haskell/cond:=[profile?] >=dev-haskell/exceptions-0.6:=[profile?] >=dev-haskell/hpqtypes-1.5:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/lifted-base:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] >=dev-haskell/monad-time-0.2:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/semigroups:=[profile?] dev-haskell/split:=[profile?] >=dev-haskell/stm-2.4:=[profile?] dev-haskell/text:=[profile?] dev-haskell/text-show:=[profile?] dev-haskell/transformers-base:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/http-types dev-haskell/random dev-haskell/tasty dev-haskell/tasty-hunit ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Structured logging solution with multiple backends
+EAPI=6
+HOMEPAGE=https://github.com/scrive/log
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/aeson-0.6.2.0:=[profile?] >=dev-haskell/aeson-pretty-0.8.2:=[profile?] dev-haskell/base64-bytestring:=[profile?] dev-haskell/bloodhound:=[profile?] dev-haskell/cond:=[profile?] >=dev-haskell/exceptions-0.6:=[profile?] >=dev-haskell/hpqtypes-1.5:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/lifted-base:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] >=dev-haskell/monad-time-0.2:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/semigroups:=[profile?] dev-haskell/split:=[profile?] >=dev-haskell/stm-2.4:=[profile?] dev-haskell/text:=[profile?] dev-haskell/text-show:=[profile?] dev-haskell/transformers-base:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.10.1:=
+RESTRICT=test
+SLOT=0/0.5.5
+SRC_URI=mirror://hackage/packages/archive/log/0.5.5/log-0.5.5.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=4bec07c5bfb219ea7aa4a9c97aa90b92

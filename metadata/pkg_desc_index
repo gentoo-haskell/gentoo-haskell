@@ -770,7 +770,7 @@ dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatyp
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
-dev-haskell/http-api-data 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.2.4 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
@@ -924,7 +924,7 @@ dev-haskell/located-base 0.1.1.0: Location-aware variants of partial functions
 dev-haskell/loch 0.2-r1: Support for precise error locations in source files
 dev-haskell/loch-th 0.2.1: Support for precise error locations in source files (Template Haskell version)
 dev-haskell/lockfree-queue 0.2.3.1: Michael and Scott lock-free queues
-dev-haskell/log 0.5.4: Structured logging solution with multiple backends
+dev-haskell/log 0.5.5: Structured logging solution with multiple backends
 dev-haskell/log-domain 0.10.3.1-r3: Log-domain arithmetic
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
 dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
