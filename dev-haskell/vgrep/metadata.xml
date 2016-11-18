@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		@vgrep@ is a pager for navigating through @grep@ output.
+		
+		Usage:
+		
+		&gt; grep -rn foo | vgrep
+		&gt; vgrep foo /some/path
+		&gt; vgrep foo /some/path | vgrep bar
+		
+		&lt;&lt;https://raw.githubusercontent.com/fmthoma/vgrep/master/vgrep.png&gt;&gt;
+	</longdescription>
+</pkgmetadata>
