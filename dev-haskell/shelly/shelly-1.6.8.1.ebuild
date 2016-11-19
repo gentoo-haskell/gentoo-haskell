@@ -40,6 +40,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/text-0.11 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples build-examples) \
