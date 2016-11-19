@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
+CABAL_CORE_LIB_GHC_PV="PM:8.0.2_rc1"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bundled-binary-generic
