@@ -27,4 +27,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
 	epatch "${FILESDIR}"/${P}-ghc-8.patch
+	epatch "${FILESDIR}"/${P}-ghc-802.patch
 }
