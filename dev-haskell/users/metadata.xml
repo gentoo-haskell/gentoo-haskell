@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Scrap the boilerplate for managing user accounts in web applications
+		
+		Features:
+		
+		* Easy to understand API
+		
+		* CRUD for Users
+		
+		* Session Management
+		
+		* Password reset functionality
+		
+		* Activation functionality
+		
+		Current Backends:
+		
+		* &lt;http://hackage.haskell.org/package/users-postgresql-simple PostgreSQL-Simple Backend&gt;
+		
+		* &lt;http://hackage.haskell.org/package/users-persistent Persistent Backend&gt;
+		
+	</longdescription>
+</pkgmetadata>
