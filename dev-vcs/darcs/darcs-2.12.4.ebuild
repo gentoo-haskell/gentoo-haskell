@@ -67,6 +67,8 @@ DEPEND="${RDEPEND}
 	curl? ( virtual/pkgconfig )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag curl curl) \
