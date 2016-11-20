@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-base-4.patch
 	epatch "${FILESDIR}"/${P}-time-1.5.patch
+	epatch "${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
 
 	cabal_chdeps \
 		'base <=4.1.0.0' 'base >= 4' \
