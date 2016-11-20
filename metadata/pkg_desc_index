@@ -988,7 +988,7 @@ dev-haskell/misfortune 0.1.1.2: fortune-mod clone
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.0.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
-dev-haskell/mmorph 1.0.7: Monad morphisms
+dev-haskell/mmorph 1.0.6 1.0.7: Monad morphisms
 dev-haskell/mockery 0.3.4: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
