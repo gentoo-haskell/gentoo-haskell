@@ -1,0 +1,196 @@
+commit 58d9f9b7a7f1b4d2c94183b9b9428983e7c83fe9
+Author: Ben Gamari <bgamari.foss@gmail.com>
+Date:   Wed Nov 2 17:03:05 2016 -0400
+
+    Merge cpe_ExprIsTrivial and exprIsTrivial
+    
+    Strangely my previous attempts at resolving this all seemed to end in
+    perplexing segmentation faults in the GHC testsuite (including some
+    rather recent attempts). Somehow this attempt miraculously works.
+    
+    However, there was one wrinkle that I still need to work out fully: we
+    need to consider Lits as non-trivial in cpeArg. Failure to do this means
+    that we would transform something like,
+    
+        $trModule = TrModule "HelloWorld"#
+    
+    into
+    
+        $trModule = case "HelloWorld"# of x { __DEFAULT -> TrModule x }
+    
+    Which then fails the consistentStgInfo check in CoreToStg for reasons
+    that I am still trying to work out.
+    
+    Mark T12757 as fixed
+    
+    Reviewers: simonmar, simonpj, austin
+    
+    Reviewed By: simonpj
+    
+    Subscribers: thomie
+    
+    Differential Revision: https://phabricator.haskell.org/D2666
+    
+    GHC Trac Issues: #11158
+    
+    (cherry picked from commit 967dd5c9f59e532fe9d6484888a2bae7d02fba11)
+
+diff --git a/compiler/basicTypes/Literal.hs b/compiler/basicTypes/Literal.hs
+index 18b441244c..968ef6dcd2 100644
+--- a/compiler/basicTypes/Literal.hs
++++ b/compiler/basicTypes/Literal.hs
+@@ -346,7 +346,38 @@ nullAddrLit = MachNullAddr
+ -}
+ 
+ -- | True if there is absolutely no penalty to duplicating the literal.
+--- False principally of strings
++-- False principally of strings.
++--
++-- "Why?", you say? I'm glad you asked. Well, for one duplicating strings would
++-- blow up code sizes. Not only this, it's also unsafe.
++--
++-- Consider a program that wants to traverse a string. One way it might do this
++-- is to first compute the Addr# pointing to the end of the string, and then,
++-- starting from the beginning, bump a pointer using eqAddr# to determine the
++-- end. For instance,
++--
++-- @
++-- -- Given pointers to the start and end of a string, count how many zeros
++-- -- the string contains.
++-- countZeros :: Addr# -> Addr# -> -> Int
++-- countZeros start end = go start 0
++--   where
++--     go off n
++--       | off `addrEq#` end = n
++--       | otherwise         = go (off `plusAddr#` 1) n'
++--       where n' | isTrue# (indexInt8OffAddr# off 0# ==# 0#) = n + 1
++--                | otherwise                                 = n
++-- @
++--
++-- Consider what happens if we considered strings to be trivial (and therefore
++-- duplicable) and emitted a call like @countZeros "hello"# ("hello"#
++-- `plusAddr`# 5)@. The beginning and end pointers do not belong to the same
++-- string, meaning that an iteration like the above would blow up terribly.
++-- This is what happened in #12757.
++--
++-- Ultimately the solution here is to make primitive strings a bit more
++-- structured, ensuring that the compiler can't inline in ways that will break
++-- user code. One approach to this is described in #8472.
+ litIsTrivial :: Literal -> Bool
+ --      c.f. CoreUtils.exprIsTrivial
+ litIsTrivial (MachStr _)      = False
+diff --git a/compiler/coreSyn/CorePrep.hs b/compiler/coreSyn/CorePrep.hs
+index a3c70fd62d..de3fddc5b3 100644
+--- a/compiler/coreSyn/CorePrep.hs
++++ b/compiler/coreSyn/CorePrep.hs
+@@ -5,7 +5,7 @@
+ Core pass to saturate constructors and PrimOps
+ -}
+ 
+-{-# LANGUAGE BangPatterns, CPP #-}
++{-# LANGUAGE BangPatterns, CPP, MultiWayIf #-}
+ 
+ module CorePrep (
+       corePrepPgm, corePrepExpr, cvtLitInteger,
+@@ -382,7 +382,7 @@ cpeBind top_lvl env (NonRec bndr rhs)
+                                           is_unlifted
+                                           env bndr1 rhs
+        -- See Note [Inlining in CorePrep]
+-       ; if cpe_ExprIsTrivial rhs2 && isNotTopLevel top_lvl
++       ; if exprIsTrivial rhs2 && isNotTopLevel top_lvl
+             then return (extendCorePrepEnvExpr env bndr rhs2, floats)
+             else do {
+ 
+@@ -732,7 +732,7 @@ cpeApp top_env expr
+            -- NB: depth from collect_args is right, because e2 is a trivial expression
+            -- and thus its embedded Id *must* be at the same depth as any
+            -- Apps it is under are type applications only (c.f.
+-           -- cpe_ExprIsTrivial).  But note that we need the type of the
++           -- exprIsTrivial).  But note that we need the type of the
+            -- expression, not the id.
+            ; (app, floats) <- rebuild_app args e2 (exprType e2) emptyFloats stricts
+            ; mb_saturate hd app floats depth }
+@@ -817,6 +817,40 @@ isLazyExpr _                       = False
+ --      CpeArg: produces a result satisfying CpeArg
+ -- ---------------------------------------------------------------------------
+ 
++{-
++Note [ANF-ising literal string arguments]
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++Consider a program like,
++
++    data Foo = Foo Addr#
++
++    foo = Foo "turtle"#
++
++When we go to ANFise this we might think that we want to float the string
++literal like we do any other non-trivial argument. This would look like,
++
++    foo = u\ [] case "turtle"# of s { __DEFAULT__ -> Foo s }
++
++However, this 1) isn't necessary since strings are in a sense "trivial"; and 2)
++wreaks havoc on the CAF annotations that we produce here since we the result
++above is caffy since it is updateable. Ideally at some point in the future we
++would like to just float the literal to the top level as suggested in #11312,
++
++    s = "turtle"#
++    foo = Foo s
++
++However, until then we simply add a special case excluding literals from the
++floating done by cpeArg.
++-}
++
++-- | Is an argument okay to CPE?
++okCpeArg :: CoreExpr -> Bool
++-- Don't float literals. See Note [ANF-ising literal string arguments].
++okCpeArg (Lit _) = False
++-- Do not eta expand a trivial argument
++okCpeArg expr    = not (exprIsTrivial expr)
++
+ -- This is where we arrange that a non-trivial argument is let-bound
+ cpeArg :: CorePrepEnv -> Demand
+        -> CoreArg -> Type -> UniqSM (Floats, CpeTriv)
+@@ -828,13 +862,13 @@ cpeArg env dmd arg arg_ty
+                 -- Else case: arg1 might have lambdas, and we can't
+                 --            put them inside a wrapBinds
+ 
+-       ; if cpe_ExprIsTrivial arg2    -- Do not eta expand a trivial argument
+-         then return (floats2, arg2)
+-         else do
+-       { v <- newVar arg_ty
+-       ; let arg3      = cpeEtaExpand (exprArity arg2) arg2
+-             arg_float = mkFloat dmd is_unlifted v arg3
+-       ; return (addFloat floats2 arg_float, varToCoreExpr v) } }
++       ; if okCpeArg arg2
++         then do { v <- newVar arg_ty
++                 ; let arg3      = cpeEtaExpand (exprArity arg2) arg2
++                       arg_float = mkFloat dmd is_unlifted v arg3
++                 ; return (addFloat floats2 arg_float, varToCoreExpr v) }
++         else return (floats2, arg2)
++       }
+   where
+     is_unlifted = isUnliftedType arg_ty
+     want_float  = wantFloatNested NonRecursive dmd is_unlifted
+@@ -921,21 +955,6 @@ of the scope of a `seq`, or dropped the `seq` altogether.
+ ************************************************************************
+ -}
+ 
+-cpe_ExprIsTrivial :: CoreExpr -> Bool
+--- Version that doesn't consider an scc annotation to be trivial.
+--- See also 'exprIsTrivial'
+-cpe_ExprIsTrivial (Var _)         = True
+-cpe_ExprIsTrivial (Type _)        = True
+-cpe_ExprIsTrivial (Coercion _)    = True
+-cpe_ExprIsTrivial (Lit _)         = True
+-cpe_ExprIsTrivial (App e arg)     = not (isRuntimeArg arg) && cpe_ExprIsTrivial e
+-cpe_ExprIsTrivial (Lam b e)       = not (isRuntimeVar b) && cpe_ExprIsTrivial e
+-cpe_ExprIsTrivial (Tick t e)      = not (tickishIsCode t) && cpe_ExprIsTrivial e
+-cpe_ExprIsTrivial (Cast e _)      = cpe_ExprIsTrivial e
+-cpe_ExprIsTrivial (Case e _ _ []) = cpe_ExprIsTrivial e
+-                                    -- See Note [Empty case is trivial] in CoreUtils
+-cpe_ExprIsTrivial _               = False
+-
+ {-
+ -- -----------------------------------------------------------------------------
+ --      Eta reduction
