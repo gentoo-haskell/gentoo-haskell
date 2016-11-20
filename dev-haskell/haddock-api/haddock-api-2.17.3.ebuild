@@ -31,3 +31,5 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
