@@ -846,7 +846,8 @@ dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
-dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1: High level interface for webkit-javascriptcore
+dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle-warp 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
@@ -1253,6 +1254,7 @@ dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1 5: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general map/reduce framework
+dev-haskell/ref-tf 0.4.0.1: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
@@ -1577,6 +1579,8 @@ dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
 dev-haskell/urlpath 5.0.0.1: Painfully simple URL deployment
+dev-haskell/users 0.5.0.0: A library simplifying user management for web applications
+dev-haskell/users-mysql-haskell 0.5.2.0: A mysql-haskell backend for the users library
 dev-haskell/utf8-light 0.4.2: Unicode
 dev-haskell/utf8-string 1.0.1.1: Support for reading and writing UTF8 Strings
 dev-haskell/utility-ht 0.0.12: Various small helper functions for Lists, Maybes, Tuples, Functions
