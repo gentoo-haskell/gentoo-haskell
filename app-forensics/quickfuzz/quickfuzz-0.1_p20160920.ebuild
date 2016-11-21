@@ -96,6 +96,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+
 # $1 - target tarball name (not including extension)
 make_snapshot() {
 	ln -s "${S}" "${WORKDIR}"/"$1" || die
