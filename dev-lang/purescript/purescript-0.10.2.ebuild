@@ -83,6 +83,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/silently )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+
 src_prepare() {
 	default
 
