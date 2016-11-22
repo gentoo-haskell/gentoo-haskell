@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # floats slightly around ghc versions
+
 RDEPEND="dev-haskell/filemanip:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.5.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -37,3 +39,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-golden )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc == 8.0.1' 'ghc >= 8.0.1' \
+		'ghc  == 8.0.1' 'ghc  >= 8.0.1'
+}
