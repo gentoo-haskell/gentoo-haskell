@@ -777,10 +777,10 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.30: An HTTP client engine, intended as a base layer for more user-friendly packages
+dev-haskell/http-client 0.4.30 0.5.3.3: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
-dev-haskell/http-client-tls 0.2.4.1: http-client backend using the connection package and tls library
+dev-haskell/http-client-tls 0.2.4.1 0.3.3: http-client backend using the connection package and tls library
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.11: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
@@ -856,7 +856,7 @@ dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.8: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
-dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
+dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r4: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
 dev-haskell/keter 1.4.3.1-r1 1.4.3.2: Web application deployment manager, focusing on Haskell web frameworks
