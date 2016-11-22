@@ -23,7 +23,7 @@ RESTRICT=test # tests are dependent on ghc version
 RDEPEND="dev-haskell/ghc-paths:=
 	dev-haskell/haskeline:=
 	dev-haskell/syb:=
-	>=dev-lang/ghc-7.8.2:= <=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/regex-compat
 		dev-haskell/temporary )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc >= 7.8 && <= 8.0.1' 'ghc >= 7.8'
+}
