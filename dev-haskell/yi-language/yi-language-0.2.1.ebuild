@@ -36,3 +36,11 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
+
+src_prepare() {
+	default
+
+	# lexer is not compatible with alex-3.2.0
+	# don't regenerate it
+	rm src/Yi/Lexer/*.x || die
+}
