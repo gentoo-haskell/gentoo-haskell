@@ -1414,6 +1414,7 @@ dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.11: Fast, packed, strict storable arrays with a list interface like ByteString
+dev-haskell/store-core 0.3: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.0.9: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
@@ -1516,6 +1517,7 @@ dev-haskell/th-lift-instances 0.1.10: Lift instances for template-haskell for co
 dev-haskell/th-orphans 0.13.3: Orphan instances for TH datatypes
 dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH reify
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
+dev-haskell/th-utilities 0.2.0.1: Collection of useful functions for use with Template Haskell
 dev-haskell/these 0.7.2-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6 0.7.0.0: GUI framework that uses the web browser as a display
@@ -1646,6 +1648,7 @@ dev-haskell/webkitgtk3-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0 0.14.2.1: JavaS
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0 0.10.0.0: Snap integration for the websockets library
+dev-haskell/weigh 0.0.3: Measure allocations of a Haskell functions/values
 dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
