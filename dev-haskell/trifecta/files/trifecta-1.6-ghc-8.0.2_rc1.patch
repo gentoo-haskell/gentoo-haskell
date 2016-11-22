@@ -1,0 +1,27 @@
+commit aaa47fa1e7b403b91921eb1af97c4946304097c3
+Author: Joe Hermaszewski <git@monoid.al>
+Date:   Thu Oct 27 13:31:59 2016 +0100
+
+    Remove redundant constraint in DeltaParsing method
+    
+    Fixes #66
+
+diff --git a/src/Text/Trifecta/Combinators.hs b/src/Text/Trifecta/Combinators.hs
+index 374abb3..62d74af 100644
+--- a/src/Text/Trifecta/Combinators.hs
++++ b/src/Text/Trifecta/Combinators.hs
+@@ -58,12 +58,12 @@ class (MonadPlus m, TokenParsing m) => DeltaParsing m where
+ 
+   -- | Retrieve a 'Rendering' of the current line noting this position, but not
+   -- placing a 'Caret' there.
+-  rend :: DeltaParsing m => m Rendering
++  rend :: m Rendering
+   rend = rendered <$> position <*> line
+   {-# INLINE rend #-}
+ 
+   -- | Grab the remainder of the current line
+-  restOfLine :: DeltaParsing m => m ByteString
++  restOfLine :: m ByteString
+   restOfLine = Strict.drop . fromIntegral . columnByte <$> position <*> line
+   {-# INLINE restOfLine #-}
+ 
