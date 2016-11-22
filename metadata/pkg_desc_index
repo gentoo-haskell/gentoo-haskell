@@ -818,6 +818,7 @@ dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
 dev-haskell/inline-c 0.5.5.9: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
+dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
 dev-haskell/intero 0.1.19: Complete interactive development program for Haskell
