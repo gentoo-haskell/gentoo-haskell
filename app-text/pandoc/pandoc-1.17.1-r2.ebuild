@@ -54,8 +54,8 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	>=dev-haskell/zip-archive-0.2.3.4:=[profile?] <dev-haskell/zip-archive-0.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	https? ( >=dev-haskell/http-client-0.3.2:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-			>=dev-haskell/http-client-tls-0.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
+	https? ( >=dev-haskell/http-client-0.3.2:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
+			>=dev-haskell/http-client-tls-0.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 			>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?] )
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
@@ -90,7 +90,9 @@ src_prepare() {
 	cabal_chdeps \
 		'tagsoup >= 0.13.7 && < 0.14' 'tagsoup >= 0.13.7' \
 		'aeson >= 0.7 && < 0.12' 'aeson >= 0.7' \
-		'aeson >= 0.7.0.5 && < 0.12' 'aeson >= 0.7.0.5'
+		'aeson >= 0.7.0.5 && < 0.12' 'aeson >= 0.7.0.5' \
+		'http-client >= 0.3.2 && < 0.5' 'http-client >= 0.3.2 && < 0.6' \
+		'http-client-tls >= 0.2 && < 0.3' 'http-client-tls >= 0.2 && < 0.4'
 }
 
 src_configure() {
