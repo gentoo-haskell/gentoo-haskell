@@ -1,0 +1,9 @@
+diff --git a/Data/Graph/Analysis/Reporting/Pandoc.hs b/Data/Graph/Analysis/Reporting/Pandoc.hs
+index 1bf545b..5187f6a 100644
+--- a/Data/Graph/Analysis/Reporting/Pandoc.hs
++++ b/Data/Graph/Analysis/Reporting/Pandoc.hs
+@@ -33,3 +33,3 @@ import Data.Graph.Analysis.Reporting
+ import           Data.GraphViz.Commands (GraphvizOutput (Png, Svg))
+-import           Text.Pandoc
++import           Text.Pandoc hiding (Section)
+ import qualified Text.Pandoc.Shared     as P

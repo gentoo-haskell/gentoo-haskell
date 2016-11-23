@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.25:=[profile?
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/either-4.3.0.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/hackage-db-1.22:=[profile?] <dev-haskell/hackage-db-2:=[profile?]
-	>=dev-haskell/http-client-0.4:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
+	>=dev-haskell/http-client-0.4:=[profile?]
 	>=dev-haskell/lens-4.6:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/machines-0.2:=[profile?] <dev-haskell/machines-0.7:=[profile?]
 	>=dev-haskell/machines-directory-0.0.0.2:=[profile?] <dev-haskell/machines-directory-0.3:=[profile?]
@@ -39,3 +39,10 @@ RDEPEND=">=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.25:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-client         >= 0.4        && < 0.5' 'http-client         >= 0.4'
+}
