@@ -1,0 +1,92 @@
+diff --git a/handa-gdata.cabal b/handa-gdata.cabal
+index 83d7c09..5a5360b 100644
+--- a/handa-gdata.cabal
++++ b/handa-gdata.cabal
+@@ -99,2 +99,3 @@ library
+                  , HTTP              >= 4000.2.5
++                 , http-client
+                  , http-conduit      >= 2
+diff --git a/src/Network/Google.hs b/src/Network/Google.hs
+index ef011cb..c261198 100644
+--- a/src/Network/Google.hs
++++ b/src/Network/Google.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -----------------------------------------------------------------------------
+@@ -54,2 +55,5 @@ import Text.XML.Light (Element, parseXMLDoc)
+ 
++#if MIN_VERSION_http_client(0,5,0)
++import Network.HTTP.Client (defaultRequest)
++#endif
+ 
+@@ -78,3 +82,7 @@ makeRequest accessToken (apiName, apiVersion) method (host, path) =
+   -- TODO: In principle, we should UTF-8 encode the bytestrings packed below.
++#if MIN_VERSION_http_client(0,5,0)
++  defaultRequest {
++#else
+   def {
++#endif
+     method = BS8.pack method
+diff --git a/src/Network/Google/Bookmarks.hs b/src/Network/Google/Bookmarks.hs
+index 860139e..95ed1bd 100644
+--- a/src/Network/Google/Bookmarks.hs
++++ b/src/Network/Google/Bookmarks.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -----------------------------------------------------------------------------
+@@ -36,2 +37,5 @@ import Text.XML.Light (Element(..), QName(..), blank_name, filterElement, findAt
+ 
++#if MIN_VERSION_http_client(0,5,0)
++import Network.HTTP.Client (defaultRequest)
++#endif
+ 
+@@ -79,3 +83,5 @@ listBookmarks email password smsToken =
+           , redirectCount = 0
++#if ! MIN_VERSION_http_client(0,5,0)
+           , checkStatus = \_ _ _ -> Nothing
++#endif
+           }
+@@ -95,3 +101,5 @@ listBookmarks email password smsToken =
+           , redirectCount = 0
++#if ! MIN_VERSION_http_client(0,5,0)
+           , checkStatus = \_ _ _ -> Nothing
++#endif
+           }
+@@ -118,3 +126,7 @@ accountsPostRequest path =
+   appendHeaders [("Content-Type", "application/x-www-form-urlencoded")] $
+-  def {
++#if MIN_VERSION_http_client(0,5,0)
++   defaultRequest {
++#else
++   def {
++#endif
+     method = BS8.pack "POST"
+diff --git a/src/Network/Google/OAuth2.hs b/src/Network/Google/OAuth2.hs
+index 53d01de..9167b04 100644
+--- a/src/Network/Google/OAuth2.hs
++++ b/src/Network/Google/OAuth2.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ -----------------------------------------------------------------------------
+@@ -103,2 +104,5 @@ import System.Random (randomIO)
+ 
++#if MIN_VERSION_http_client(0,5,0)
++import Network.HTTP.Client (defaultRequest)
++#endif
+ 
+@@ -250,3 +254,7 @@ doOAuth2 client grantType extraBody =
+       request =
++#if MIN_VERSION_http_client(0,5,0)
++        defaultRequest {
++#else
+         def {
++#endif
+           method = BS8.pack "POST"
+@@ -279,3 +287,7 @@ validateTokens tokens =
+       request =
++#if MIN_VERSION_http_client(0,5,0)
++        defaultRequest {
++#else
+         def {
++#endif
+           method = BS8.pack "GET"
