@@ -974,6 +974,7 @@ dev-haskell/memotrie 0.6.7: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.3: Serialize instance for Message Pack Object
+dev-haskell/mfsolve 0.3.2.0: Equation solver and calculator a la metafont
 dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0 0.1.10.0: microlens support for Reader/Writer/State from mtl
