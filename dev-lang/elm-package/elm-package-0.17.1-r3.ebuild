@@ -24,8 +24,8 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/binary-0.7:=[profile?]
 	dev-haskell/edit-distance:=[profile?]
 	>=dev-haskell/http-4000.2.5:=[profile?]
-	>=dev-haskell/http-client-0.4.15:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-	>=dev-haskell/http-client-tls-0.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
+	>=dev-haskell/http-client-0.4.15:=[profile?]
+	>=dev-haskell/http-client-tls-0.2:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.7:=[profile?]
@@ -42,7 +42,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.17.1-asciize.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.17.1-asciize.patch
+	"${FILESDIR}"/${PN}-0.17.1-http-client-0.5.patch
+)
 
 src_prepare() {
 	default
