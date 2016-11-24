@@ -533,7 +533,7 @@ dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGT
 dev-haskell/gifcurry 2.0.0.2 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
 dev-haskell/ginger 0.3.7.2: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to GIO
-dev-haskell/github 0.13.2 0.14.1-r2: Access to the GitHub API, v3
+dev-haskell/github 0.13.2 0.14.1-r2 0.15.0: Access to the GitHub API, v3
 dev-haskell/github-backup 1.20161118: backs up everything github knows about a repository, to the repository
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1: Complete OpenGL raw bindings
