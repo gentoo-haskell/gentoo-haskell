@@ -22,8 +22,8 @@ IUSE="examples +network-uri"
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/authenticate-1.3.2.7:=[profile?] <dev-haskell/authenticate-1.4:=[profile?]
 	>=dev-haskell/hoauth2-0.4.7:=[profile?] <dev-haskell/hoauth2-0.6:=[profile?]
-	>=dev-haskell/http-client-0.4.0:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-3.0:=[profile?]
+	>=dev-haskell/http-client-0.4.0:=[profile?]
+	>=dev-haskell/http-conduit-2.0:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.4:=[profile?]
 	dev-haskell/random:=[profile?]
@@ -49,7 +49,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                   >= 0.6       && < 0.12' 'aeson                   >= 0.6'
+		'aeson                   >= 0.6       && < 0.12' 'aeson                   >= 0.6' \
+		'http-client             >= 0.4.0     && < 0.5' 'http-client             >= 0.4.0'
 }
 
 src_configure() {
