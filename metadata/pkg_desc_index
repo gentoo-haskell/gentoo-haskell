@@ -1746,7 +1746,7 @@ dev-lang/cryptol 2.3.0-r1 2.4.0: Cryptol: The Language of Cryptography
 dev-lang/elm-compiler 0.15-r2 0.17.1-r1: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/elm-make 0.17.1-r1: A build tool for Elm projects
 dev-lang/elm-meta 0.17.1: Meta package for all Elm packages
-dev-lang/elm-package 0.17.1-r2: Package manager for Elm libraries
+dev-lang/elm-package 0.17.1-r3: Package manager for Elm libraries
 dev-lang/elm-reactor 0.17.1: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.17.1: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
@@ -1760,7 +1760,7 @@ dev-lang/idris 0.11.1 0.11.2-r1 0.12 0.12.2 0.12.3 9999: Functional Programming 
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2-r1: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.10.2: PureScript Programming Language Compiler
+dev-lang/purescript 0.10.2-r1: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.3.6: A C/C++ implementation of a Sass compiler
