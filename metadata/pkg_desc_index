@@ -250,6 +250,7 @@ dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic v
 dev-haskell/conduit 1.2.8: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.8.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.15: Batteries included conduit: adapters for common libraries
+dev-haskell/config-ini 0.1.1.0: A library for simple INI-based configuration files
 dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
@@ -641,6 +642,7 @@ dev-haskell/hasktags 0.69.2.1: Produces ctags "tags" and etags "TAGS" files for 
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.0.2: The Haskell LaTeX library
+dev-haskell/haxl 0.4.0.2: A Haskell library for efficient, concurrent, and concise data access
 dev-haskell/haxml 1.25.3: Utilities for manipulating XML documents
 dev-haskell/haxr 3000.11.2: XML-RPC client and server library
 dev-haskell/hayland 0.1.0.1: Haskell bindings for the C Wayland library
@@ -659,7 +661,7 @@ dev-haskell/hdevtools 0.1.4.1: Persistent GHC powered background server for FAST
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
-dev-haskell/heckle 2.0.1.1: Jekyll in Haskell (feat. LaTeX)
+dev-haskell/heckle 2.0.1.1 2.0.1.5: Jekyll in Haskell (feat. LaTeX)
 dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
@@ -817,6 +819,7 @@ dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
+dev-haskell/ini 0.3.5: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.5.9: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
@@ -1298,6 +1301,7 @@ dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
+dev-haskell/rotating-log 0.4.2: Size-limited, concurrent, automatically-rotating log writer
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.6: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.3: Random Variables
@@ -1354,6 +1358,7 @@ dev-haskell/shelly 1.6.8.1: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
+dev-haskell/sibe 0.2.0.3: Machine Learning algorithms
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
 dev-haskell/simple-log 0.5.0: Simple log for Haskell
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
@@ -1404,6 +1409,7 @@ dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveabl
 dev-haskell/statevar 1.1.0.4: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
 dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.3.0: A library of statistical types, data, and functions
+dev-haskell/stemmer 0.5.2: Haskell bindings to the Snowball stemming library
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
