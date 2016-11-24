@@ -49,9 +49,9 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/hastache-0.6.1:=[profile?] <dev-haskell/hastache-0.7:=[profile?]
 	>=dev-haskell/hit-0.6.3:=[profile?] <dev-haskell/hit-0.7:=[profile?]
 	>=dev-haskell/hpack-0.14.0:=[profile?] <dev-haskell/hpack-0.15:=[profile?]
-	>=dev-haskell/http-client-0.4.28:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
-	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.3:=[profile?]
-	>=dev-haskell/http-conduit-2.1.7:=[profile?] <dev-haskell/http-conduit-2.2:=[profile?]
+	>=dev-haskell/http-client-0.4.28:=[profile?]
+	>=dev-haskell/http-client-tls-0.2.2:=[profile?]
+	>=dev-haskell/http-conduit-2.1.7:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/lifted-base-0.2.3.6:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/microlens-0.3.0.0:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
@@ -110,7 +110,10 @@ DEPEND="${RDEPEND}
 		integration-tests? ( >=dev-haskell/async-2.1.0 <dev-haskell/async-2.2 ) )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-1.1.2-aeson-1.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.1.2-aeson-1.patch
+	"${FILESDIR}"/${PN}-1.1.2-http-client-0.5.patch
+)
 
 src_prepare() {
 	default
