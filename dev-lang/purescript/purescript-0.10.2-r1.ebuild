@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.8:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
-	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.5:=[profile?]
+	>=dev-haskell/http-client-0.4.30:=[profile?]
 	>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/language-javascript-0.6:=[profile?] <dev-haskell/language-javascript-0.7:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
@@ -83,7 +83,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/silently )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
+	"${FILESDIR}"/${P}-http-client-0.5.patch
+)
 
 src_prepare() {
 	default
