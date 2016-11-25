@@ -960,7 +960,7 @@ dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.5: A monad for managed values
 dev-haskell/map-syntax 0.2.0.1: Syntax sugar for defining maps
-dev-haskell/markdown 0.1.15: Convert Markdown to HTML, with XSS protection
+dev-haskell/markdown 0.1.16: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
 dev-haskell/math-functions 0.1.7.0 0.2.0.2: Special functions and Chebyshev polynomials
@@ -1047,7 +1047,7 @@ dev-haskell/mustache 2.1.2: A mustache template parser library
 dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
 dev-haskell/mwc-random 0.13.4.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
-dev-haskell/mysql-haskell 0.7.0.0: pure haskell MySQL driver
+dev-haskell/mysql-haskell 0.7.1.0: pure haskell MySQL driver
 dev-haskell/mysql-haskell-openssl 0.7.0.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
@@ -1081,7 +1081,7 @@ dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport im
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with generics support
-dev-haskell/ngx-export 0.2.4.2: Helper module for Nginx haskell module
+dev-haskell/ngx-export 0.2.5.0: Helper module for Nginx haskell module
 dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
@@ -1095,7 +1095,7 @@ dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tup
 dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5.0.1: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.0.1.1 1.1.0.1: Explicitly handled object names
-dev-haskell/oeis 0.3.7: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
+dev-haskell/oeis 0.3.8: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
@@ -1108,7 +1108,7 @@ dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-pa
 dev-haskell/opengl 3.0.1.0: A binding for the OpenGL graphics system
 dev-haskell/openglraw 3.2.3.0: A raw binding for the OpenGL graphics system
 dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
-dev-haskell/operational 0.2.3.4: Implementation of difficult monads made easy with operational semantics
+dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
@@ -1200,7 +1200,7 @@ dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
-dev-haskell/primitive 0.6.1.0-r1: Primitive memory-related operations
+dev-haskell/primitive 0.6.2.0: Primitive memory-related operations
 dev-haskell/probability 0.2.5.1: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-conduit 1.2.0.1: Conduits for processes (deprecated)
@@ -1295,7 +1295,7 @@ dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.8.1: Deterministic allocation and freeing of scarce resources
-dev-haskell/retry 0.7.4.1: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.7.4.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
@@ -1550,7 +1550,7 @@ dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4: A small compatibility shim f
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.3 0.2.0.4: Generic applicative traversals
-dev-haskell/trifecta 1.5.2-r2 1.6: A modern parser combinator library with convenient diagnostics
+dev-haskell/trifecta 1.6.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
@@ -1587,7 +1587,7 @@ dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unordered-containers 0.2.7.1: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
-dev-haskell/uri-bytestring 0.2.2.0: Haskell URI parsing as ByteStrings
+dev-haskell/uri-bytestring 0.2.2.1: Haskell URI parsing as ByteStrings
 dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
@@ -1610,7 +1610,7 @@ dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using vacuum, graphviz and cairo
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.7: Runs commands on remote machines using ssh
-dev-haskell/validation 0.5.3: A data-type like Either but with an accumulating Applicative
+dev-haskell/validation 0.5.4: A data-type like Either but with an accumulating Applicative
 dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
 dev-haskell/vcsgui 0.1.3.0: GUI library for source code management systems
