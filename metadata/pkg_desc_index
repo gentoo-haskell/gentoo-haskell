@@ -780,7 +780,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.3: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.30 0.5.3.3 0.5.3.4: An HTTP client engine
+dev-haskell/http-client 0.4.30 0.5.4: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.4.1 0.3.3: http-client backend using the connection package and tls library
@@ -1115,7 +1115,7 @@ dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators
 dev-haskell/optparse-generic 1.1.3: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/pandoc-citeproc 0.10.2.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.2.3.0-r1: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.2.4.1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Pango text rendering engine
