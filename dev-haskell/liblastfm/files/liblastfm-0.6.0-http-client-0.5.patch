@@ -1,0 +1,12 @@
+diff --git a/src/Lastfm/Response.hs b/src/Lastfm/Response.hs
+index 46d4077..6f5ee6a 100644
+--- a/src/Lastfm/Response.hs
++++ b/src/Lastfm/Response.hs
+@@ -239,3 +239,7 @@ lastfmWith (Connection man) p r = do
+        { Http.method          = _method r
++#if MIN_VERSION_http_client(0,5,0)
++       , Http.responseTimeout = Http.responseTimeoutMicro 10000000
++#else
+        , Http.responseTimeout = Just 10000000
++#endif
+        }
