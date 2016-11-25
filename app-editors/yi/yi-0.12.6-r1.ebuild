@@ -65,6 +65,8 @@ DEPEND="${RDEPEND}
 		!testing? ( dev-haskell/quickcheck ) )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+
 src_prepare() {
 	default
 
