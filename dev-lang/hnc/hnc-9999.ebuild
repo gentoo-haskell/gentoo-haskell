@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -38,6 +38,8 @@ RDEPEND="dev-haskell/adjunctions:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.4.0
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
 
 src_prepare() {
 	#workaround https://ghc.haskell.org/trac/ghc/ticket/9625
