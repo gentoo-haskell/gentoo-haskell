@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A library that provides a way to record structured log
+		messages. Use this package in conjunction with
+		&#39;log-elasticsearch&#39; or &#39;log-postgres&#39;, depending
+		on which back end you need. Use the &#39;log&#39; library
+		if you need all back ends.
+	</longdescription>
+</pkgmetadata>
