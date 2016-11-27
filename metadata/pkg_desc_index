@@ -1039,7 +1039,7 @@ dev-haskell/mtlparse 0.1.4.0: parse library using mtl package
 dev-haskell/mueval 0.9.1.1.2 0.9.3: Safely evaluate pure Haskell expressions
 dev-haskell/multimap 1.2.1: A multimap
 dev-haskell/multipart 0.1.2: HTTP multipart split out of the cgi package
-dev-haskell/multirec 0.7.5 0.7.6: Generic programming for families of recursive datatypes
+dev-haskell/multirec 0.7.7: Generic programming for families of recursive datatypes
 dev-haskell/multiset 0.3.3: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
@@ -1100,7 +1100,7 @@ dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
-dev-haskell/opaleye 0.5.2.1: An SQL-generating DSL targeting PostgreSQL
+dev-haskell/opaleye 0.5.2.2: An SQL-generating DSL targeting PostgreSQL
 dev-haskell/open-browser 0.2.1.0-r1: Open a web browser from Haskell
 dev-haskell/openal 1.6.0.1 1.7.0.4: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
