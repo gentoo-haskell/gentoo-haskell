@@ -1578,7 +1578,7 @@ dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic opera
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
 dev-haskell/units 2.3-r1 2.4: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.0.0: A parser for units of measure
-dev-haskell/unix-compat 0.4.2.0: Portable POSIX-compatibility layer
+dev-haskell/unix-compat 0.4.2.0-r1: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2: Unix memory syscalls
 dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a conduit interface (deprecated)
 dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
