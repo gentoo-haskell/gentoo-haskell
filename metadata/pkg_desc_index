@@ -938,7 +938,9 @@ dev-haskell/loch 0.2-r1: Support for precise error locations in source files
 dev-haskell/loch-th 0.2.1: Support for precise error locations in source files (Template Haskell version)
 dev-haskell/lockfree-queue 0.2.3.1: Michael and Scott lock-free queues
 dev-haskell/log 0.5.5: Structured logging solution with multiple backends
+dev-haskell/log-base 0.7: Structured logging solution (base package)
 dev-haskell/log-domain 0.10.3.1-r3: Log-domain arithmetic
+dev-haskell/log-elasticsearch 0.7: Structured logging solution (Elasticsearch back end)
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
 dev-haskell/logging-effect 1.1.0: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
