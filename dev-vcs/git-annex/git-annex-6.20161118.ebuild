@@ -122,6 +122,7 @@ DEPEND="${DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-6.20160114-QC-2.8.2.patch
+	"${FILESDIR}"/${PN}-6.20161118-http-client-0.5.patch
 )
 
 src_prepare() {
