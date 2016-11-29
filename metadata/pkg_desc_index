@@ -53,7 +53,7 @@ dev-haskell/algebra 4.3: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Combinators for monadic actions that require allocation and de-allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
-dev-haskell/alsa-seq 0.6.0.6: Binding to the ALSA Library API (MIDI sequencer)
+dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.2: A binding for the OpenAL Utility Toolkit
 dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
