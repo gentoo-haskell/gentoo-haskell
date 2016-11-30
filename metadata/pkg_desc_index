@@ -614,6 +614,7 @@ dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash 
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashable-time 0.2: Hashable instances for Data.Time
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
+dev-haskell/hashmap 1.3.2: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
 dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user input, written in Haskell
@@ -950,6 +951,7 @@ dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
 dev-haskell/ltk 0.14.3.0 0.15.0.5-r1: Leksah tool kit
+dev-haskell/lua-bc 0.1.0.3: Lua bytecode parser
 dev-haskell/lucid 2.9.7: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.5.0.0 0.6.0.1-r1 0.7.0.0: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
@@ -1401,7 +1403,7 @@ dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurren
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sql-words 0.1.4.1: Simple idea SQL keywords data constructor into OverloadedString
-dev-haskell/sqlite-simple 0.4.10.0: Mid-Level SQLite client library
+dev-haskell/sqlite-simple 0.4.12.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
@@ -1675,6 +1677,7 @@ dev-haskell/wordpass 1.0.0.7: Dictionary-based password generator
 dev-haskell/workdays 0.1.1: Workday calculations
 dev-haskell/wraparound 0.0.2: Convenient handling of points on a seamless 2-dimensional plane
 dev-haskell/wreq 0.4.1.0: An easy-to-use HTTP client library
+dev-haskell/wuss 1.1.3: Secure WebSocket (WSS) clients
 dev-haskell/wx 0.13.2.1-r1 0.13.2.3 0.90.0.1 0.90.1.0 0.92.2.0: wxHaskell
 dev-haskell/wxc 0.90.0.4 0.90.1.1 0.92.2.0: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.13.2.3-r1 0.90.0.3 0.90.1.1 0.92.2.0: wxHaskell core
