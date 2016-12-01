@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library provides bindings to Mackerel APIs.
+		
+		The official site of Mackerel: &lt;https://mackerel.io/&gt;.
+		The reference of Mackerel API: &lt;https://mackerel.io/api-docs/&gt;.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Manipulate identifiers and structurally non-complex pieces
+		of text by delimiting word boundaries via a combination of whitespace,
+		control-characters, and case-sensitivity.
+		
+		Has support for common idioms like casing of programmatic variable names,
+		taking, dropping, and splitting by word, and modifying the first character
+		of a piece of text.
+		
+		/Caution:/ this library makes heavy use of the &lt;http://hackage.haskell.org/package/text text&gt;
+		library&#39;s internal loop optimisation framework. Since internal modules are not
+		guaranteed to have a stable API there is potential for build breakage when
+		the text dependency is upgraded. Consider yourself warned!
+	</longdescription>
+</pkgmetadata>
