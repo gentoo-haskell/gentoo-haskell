@@ -1169,6 +1169,7 @@ dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the 
 dev-haskell/pipes-concurrency 2.0.6: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.5: Group streams into substreams
 dev-haskell/pipes-http 1.0.4: HTTP client with pipes interface
+dev-haskell/pipes-key-value-csv 0.4.0.1: Streaming processing of CSV files preceded by key-value pairs
 dev-haskell/pipes-network 0.6.4.1: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-safe 2.2.4: Safety for the pipes ecosystem
@@ -1630,6 +1631,7 @@ dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Templ
 dev-haskell/vgrep 0.1.4.1: A pager for grep
 dev-haskell/vinyl 0.5.2: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
+dev-haskell/vinyl-utils 0.3.0.0: Utilities for vinyl
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
 dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.1: Binding to the VTE library
 dev-haskell/vty 5.11.3 5.12: A simple terminal UI library
@@ -1739,6 +1741,7 @@ dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.1.1: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-test 1.5.3: integration testing for WAI/Yesod Applications
+dev-haskell/yesod-websockets 0.2.4.1: WebSockets support for Yesod
 dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
 dev-haskell/yi-language 0.1.1.0 0.2.1: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.2: A rope data structure used by Yi

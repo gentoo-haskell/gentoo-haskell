@@ -275,6 +275,7 @@ dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Onl
 dev-haskell/persistent-mongodb:high_precision_date - Use a time storage with nano second precision.
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable.
+dev-haskell/pipes-key-value-csv:devel - Development mode (-Werror)
 dev-haskell/pointed:comonad - optional instances
 dev-haskell/pointed:containers - optional instances
 dev-haskell/pointed:kan-extensions - optional instances
@@ -362,6 +363,7 @@ dev-haskell/vector-algorithms:boundschecks - Enable bounds checking.
 dev-haskell/vector-algorithms:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty.
 dev-haskell/vector-algorithms:properties - Enable quickcheck tests.
 dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty.
+dev-haskell/vinyl-utils:devel - Development mode (-Werror)
 dev-haskell/void:safe - dissable effective but unsafe coersions
 dev-haskell/vty-ui:demos - Build demonstration programs.
 dev-haskell/vty-ui:no-tests - Skip build of testing executable.
