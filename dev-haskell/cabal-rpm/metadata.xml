@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides a RPM packaging tool for Haskell Cabal-based packages.
+		
+		cblrpm has commands to generate a RPM spec file and srpm for a package.
+		It can rpmbuild packages, yum/dnf install their dependencies, prep packages,
+		and install them. There are commands to list package dependencies and
+		missing dependencies. The diff command compares the current spec file
+		with a freshly generated one and the update command updates the spec file
+		to latest version from Hackage.
+	</longdescription>
+</pkgmetadata>
