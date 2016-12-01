@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A low-dimensional (2, 3 and 4) linear algebra library,
+		with lots of useful functions. Intended usage is primarily
+		computer graphics (basic OpenGL support is included as a separate package).
+		Projective 4 dimensional operations, as used in eg. OpenGL,
+		are also supported; and so are quaternions.
+		The base field is either Float or Double.
+	</longdescription>
+</pkgmetadata>
