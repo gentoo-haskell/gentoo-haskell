@@ -50,7 +50,7 @@ MY_PV0="$(get_version_component_range 1)-${HUGS_MONTH0}"
 MY_P="${PN}-plus-${MY_PV}"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="The Hugs98 Haskell interpreter"
-SRC_URI="http://cvs.haskell.org/Hugs/downloads/${MY_PV0}/${MY_P}.tar.gz"
+SRC_URI="https://www.haskell.org/hugs/downloads/${MY_PV0}/${MY_P}.tar.gz"
 HOMEPAGE="http://www.haskell.org/hugs/"
 
 SLOT="0"
