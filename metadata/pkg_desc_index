@@ -458,7 +458,7 @@ dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
 dev-haskell/fay-text 0.3.2.2: Fay Text type represented as JavaScript strings
 dev-haskell/fay-uri 0.2.0.0: Persistent FFI bindings for using jsUri in Fay
 dev-haskell/fb 1.0.13: Bindings to Facebook's API
-dev-haskell/fclabels 2.0.3.1: First class accessor labels implemented as lenses
+dev-haskell/fclabels 2.0.3.2: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
@@ -986,7 +986,7 @@ dev-haskell/memory 0.11 0.12 0.13: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.7: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
-dev-haskell/messagepack 0.5.3: Serialize instance for Message Pack Object
+dev-haskell/messagepack 0.5.4: Serialize instance for Message Pack Object
 dev-haskell/mfsolve 0.3.2.0: Equation solver and calculator a la metafont
 dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
