@@ -621,6 +621,7 @@ dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
 dev-haskell/hashmap 1.3.2: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.1.0: Mutable hash tables in the ST monad
+dev-haskell/haskakafka 1.2.0: Kafka bindings for Haskell
 dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-docs 4.2.7: A program to find and display the docs and type of a name
@@ -1178,6 +1179,7 @@ dev-haskell/pipes-http 1.0.4: HTTP client with pipes interface
 dev-haskell/pipes-key-value-csv 0.4.0.1: Streaming processing of CSV files preceded by key-value pairs
 dev-haskell/pipes-network 0.6.4.1: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
+dev-haskell/pipes-random 1.0.0.2: Producers for handling randomness
 dev-haskell/pipes-safe 2.2.4: Safety for the pipes ecosystem
 dev-haskell/pipes-text 0.0.2.4: properly streaming text
 dev-haskell/pipes-transduce 0.4: Interfacing pipes with foldl folds
