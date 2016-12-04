@@ -762,6 +762,7 @@ dev-haskell/hspec-discover 2.2.2 2.2.3 2.2.4: Automatically discover and run Hsp
 dev-haskell/hspec-expectations 0.6.1.1 0.7.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
 dev-haskell/hspec-meta 2.2.1: A version of Hspec which is used to test Hspec itself
+dev-haskell/hspec-smallcheck 0.4.1: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.6.5 0.6.6: Experimental Hspec support for testing WAI applications
 dev-haskell/hspread 0.3.3-r1: A client library for the spread toolkit
 dev-haskell/hsql 1.8.2: Database access from Haskell
