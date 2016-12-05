@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Common functionality depended upon by test suites of the various @amazonka-*@
+		service libraries.
+		
+		The external interface of this library is stable with respect to the
+		downstream Amazonka libraries, only, and as such is not suitable
+		for use in non-Amazonka projects.
+	</longdescription>
+</pkgmetadata>
