@@ -55,6 +55,9 @@ dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.2: A binding for the OpenAL Utility Toolkit
+dev-haskell/amazonka-core 1.4.5: Core data types and functionality for Amazonka libraries
+dev-haskell/amazonka-s3 1.4.5: Amazon Simple Storage Service SDK
+dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-suites
 dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
@@ -1425,6 +1428,7 @@ dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveabl
 dev-haskell/statevar 1.1.0.4: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
 dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.3.0: A library of statistical types, data, and functions
+dev-haskell/stb-image-redux 0.2.1.0: Image loading and writing microlibrary
 dev-haskell/stemmer 0.5.2: Haskell bindings to the Snowball stemming library
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1: Software Transactional Memory
@@ -1556,6 +1560,7 @@ dev-haskell/time-locale-compat 0.1.1.3: Compatibility of TimeLocale between old-
 dev-haskell/time-parsers 0.1.1.0: Parsers for types in 'time'
 dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31 1.0.31-r1: A tool for visualizing time series from log files
+dev-haskell/timespan 0.1.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.7-r1: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.6.1: Enhanced timezone handling for Data.Time
 dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
