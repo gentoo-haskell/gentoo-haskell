@@ -56,7 +56,14 @@ dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.2: A binding for the OpenAL Utility Toolkit
 dev-haskell/amazonka-core 1.4.5: Core data types and functionality for Amazonka libraries
+dev-haskell/amazonka-devicefarm 1.4.5: Amazon Device Farm SDK
+dev-haskell/amazonka-directconnect 1.4.5: Amazon Direct Connect SDK
+dev-haskell/amazonka-dms 1.4.5: Amazon Database Migration Service SDK
+dev-haskell/amazonka-ec2 1.4.5: Amazon Elastic Compute Cloud SDK
+dev-haskell/amazonka-elasticsearch 1.4.5: Amazon Elasticsearch Service SDK
+dev-haskell/amazonka-route53-domains 1.4.5: Amazon Route 53 Domains SDK
 dev-haskell/amazonka-s3 1.4.5: Amazon Simple Storage Service SDK
+dev-haskell/amazonka-shield 1.4.5: Amazon Shield SDK
 dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-suites
 dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
@@ -677,6 +684,7 @@ dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system su
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.9: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
+dev-haskell/heterocephalus 1.0.1.1: A type-safe template engine for working with popular front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexpat 0.20.9: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.2: Command line flag parser, very similar to Google's gflags
