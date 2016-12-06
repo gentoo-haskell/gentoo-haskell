@@ -55,15 +55,29 @@ dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.2: A binding for the OpenAL Utility Toolkit
+dev-haskell/amazonka-cloudformation 1.4.5: Amazon CloudFormation SDK
+dev-haskell/amazonka-cloudfront 1.4.5: Amazon CloudFront SDK
+dev-haskell/amazonka-cloudhsm 1.4.5: Amazon CloudHSM SDK
+dev-haskell/amazonka-cloudtrail 1.4.5: Amazon CloudTrail SDK
 dev-haskell/amazonka-core 1.4.5: Core data types and functionality for Amazonka libraries
 dev-haskell/amazonka-devicefarm 1.4.5: Amazon Device Farm SDK
 dev-haskell/amazonka-directconnect 1.4.5: Amazon Direct Connect SDK
+dev-haskell/amazonka-discovery 1.4.5: Amazon Application Discovery Service SDK
 dev-haskell/amazonka-dms 1.4.5: Amazon Database Migration Service SDK
+dev-haskell/amazonka-dynamodb 1.4.5: Amazon DynamoDB SDK
 dev-haskell/amazonka-ec2 1.4.5: Amazon Elastic Compute Cloud SDK
+dev-haskell/amazonka-ecr 1.4.5: Amazon EC2 Container Registry SDK
+dev-haskell/amazonka-elasticache 1.4.5: Amazon ElastiCache SDK
 dev-haskell/amazonka-elasticsearch 1.4.5: Amazon Elasticsearch Service SDK
+dev-haskell/amazonka-iam 1.4.5: Amazon Identity and Access Management SDK
+dev-haskell/amazonka-marketplace-analytics 1.4.5: Amazon Marketplace Commerce Analytics SDK
+dev-haskell/amazonka-redshift 1.4.5: Amazon Redshift SDK
 dev-haskell/amazonka-route53-domains 1.4.5: Amazon Route 53 Domains SDK
 dev-haskell/amazonka-s3 1.4.5: Amazon Simple Storage Service SDK
 dev-haskell/amazonka-shield 1.4.5: Amazon Shield SDK
+dev-haskell/amazonka-sms 1.4.5: Amazon Server Migration Service SDK
+dev-haskell/amazonka-stepfunctions 1.4.5: Amazon Step Functions SDK
+dev-haskell/amazonka-support 1.4.5: Amazon Support SDK
 dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-suites
 dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
