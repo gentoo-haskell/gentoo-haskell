@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/exceptions:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 test? ( dev-haskell/hspec dev-haskell/hunit dev-haskell/mtl ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/exceptions:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 test? ( dev-haskell/genvalidity dev-haskell/genvalidity-hspec dev-haskell/hspec dev-haskell/hunit dev-haskell/mtl dev-haskell/quickcheck dev-haskell/validity ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Support for well-typed paths
 EAPI=6
 HOMEPAGE=http://hackage.haskell.org/package/path
@@ -7,8 +7,9 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/exceptions:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.5.9
-SRC_URI=mirror://hackage/packages/archive/path/0.5.9/path-0.5.9.tar.gz
+RESTRICT=test
+SLOT=0/0.5.11
+SRC_URI=mirror://hackage/packages/archive/path/0.5.11/path-0.5.11.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=a0d0901fa246d4ff7a0d6282b57c67a6
+_md5_=1ee7b97df3bd37213ca0214f294567ad
