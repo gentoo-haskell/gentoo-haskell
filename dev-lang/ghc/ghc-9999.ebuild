@@ -460,6 +460,9 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
+		# https://phabricator.haskell.org/D2776#82187
+		epatch "${FILESDIR}"/${PN}-9999-gcc-not-ld.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
