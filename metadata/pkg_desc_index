@@ -42,6 +42,7 @@ dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.0.1: Better error messages when decoding JSON values
+dev-haskell/aeson-casing 0.1.0.5: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.6: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.2.0-r1 0.3.2.0-r2: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
@@ -63,6 +64,7 @@ dev-haskell/amazonka-cloudsearch-domains 1.4.5: Amazon CloudSearch Domain SDK
 dev-haskell/amazonka-cloudtrail 1.4.5: Amazon CloudTrail SDK
 dev-haskell/amazonka-cloudwatch 1.4.5: Amazon CloudWatch SDK
 dev-haskell/amazonka-codedeploy 1.4.5: Amazon CodeDeploy SDK
+dev-haskell/amazonka-cognito-identity 1.4.5: Amazon Cognito Identity SDK
 dev-haskell/amazonka-cognito-sync 1.4.5: Amazon Cognito Sync SDK
 dev-haskell/amazonka-config 1.4.5: Amazon Config SDK
 dev-haskell/amazonka-core 1.4.5: Core data types and functionality for Amazonka libraries
@@ -78,6 +80,7 @@ dev-haskell/amazonka-elasticache 1.4.5: Amazon ElastiCache SDK
 dev-haskell/amazonka-elasticsearch 1.4.5: Amazon Elasticsearch Service SDK
 dev-haskell/amazonka-elastictranscoder 1.4.5: Amazon Elastic Transcoder SDK
 dev-haskell/amazonka-iam 1.4.5: Amazon Identity and Access Management SDK
+dev-haskell/amazonka-kinesis 1.4.5: Amazon Kinesis SDK
 dev-haskell/amazonka-lambda 1.4.5: Amazon Lambda SDK
 dev-haskell/amazonka-marketplace-analytics 1.4.5: Amazon Marketplace Commerce Analytics SDK
 dev-haskell/amazonka-opsworks 1.4.5: Amazon OpsWorks SDK
@@ -89,6 +92,7 @@ dev-haskell/amazonka-sdb 1.4.5: Amazon SimpleDB SDK
 dev-haskell/amazonka-ses 1.4.5: Amazon Simple Email Service SDK
 dev-haskell/amazonka-shield 1.4.5: Amazon Shield SDK
 dev-haskell/amazonka-sms 1.4.5: Amazon Server Migration Service SDK
+dev-haskell/amazonka-sns 1.4.5: Amazon Simple Notification Service SDK
 dev-haskell/amazonka-stepfunctions 1.4.5: Amazon Step Functions SDK
 dev-haskell/amazonka-storagegateway 1.4.5: Amazon Storage Gateway SDK
 dev-haskell/amazonka-support 1.4.5: Amazon Support SDK
@@ -1303,6 +1307,7 @@ dev-haskell/ranges 0.2.4-r1: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.3.3.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.6.1.1: A pure haskell drawing engine
 dev-haskell/ratio-int 0.1.2: Fast specialisation of Data.Ratio for Int
+dev-haskell/rattletrap 2.0.0: Parse and generate Rocket League replays
 dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
 dev-haskell/rdf4h 1.3.6 2.0.0: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
