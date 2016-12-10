@@ -1179,7 +1179,7 @@ dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4: Types for representing a
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
-dev-haskell/parseargs 0.1.5.2 0.2.0.7: Full-featured command-line argument parsing library
+dev-haskell/parseargs 0.2.0.8: Full-featured command-line argument parsing library
 dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
@@ -1225,10 +1225,10 @@ dev-haskell/pipes-group 1.0.5: Group streams into substreams
 dev-haskell/pipes-http 1.0.4: HTTP client with pipes interface
 dev-haskell/pipes-key-value-csv 0.4.0.1: Streaming processing of CSV files preceded by key-value pairs
 dev-haskell/pipes-network 0.6.4.1: Use network sockets together with the pipes library
-dev-haskell/pipes-parse 3.0.7: Parsing infrastructure for the pipes ecosystem
+dev-haskell/pipes-parse 3.0.8: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-random 1.0.0.2: Producers for handling randomness
 dev-haskell/pipes-safe 2.2.4: Safety for the pipes ecosystem
-dev-haskell/pipes-text 0.0.2.4: properly streaming text
+dev-haskell/pipes-text 0.0.2.5: properly streaming text
 dev-haskell/pipes-transduce 0.4: Interfacing pipes with foldl folds
 dev-haskell/placeholders 0.1: Placeholders for use while developing Haskell code
 dev-haskell/plailude 0.6.0: plaimi's prelude
@@ -1315,7 +1315,7 @@ dev-haskell/re2 0.1: Bindings to the re2 regular expression library
 dev-haskell/reactive-banana 1.0.0.1 1.1.0.1: Library for functional reactive programming (FRP)
 dev-haskell/reactive-banana-wx 1.0.0.0 1.1.1.0: Examples for the reactive-banana library, using wxHaskell
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
-dev-haskell/readargs 1.2.2: Simple command line argument parsing
+dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
