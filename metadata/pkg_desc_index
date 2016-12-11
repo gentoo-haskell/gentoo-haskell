@@ -1446,7 +1446,7 @@ dev-haskell/snaplet-sqlite-simple 1.0.0.2: sqlite-simple snaplet for the Snap Fr
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
 dev-haskell/socket 0.7.0.0: An extensible socket library
 dev-haskell/socket-io 1.3.5-r2: This library provides an implementation of Socket.io protocol (version 1)
-dev-haskell/socket-sctp 0.2.0.1: STCP socket extensions library
+dev-haskell/socket-sctp 0.3.0.0: STCP socket extensions library
 dev-haskell/socks 0.5.5: Socks proxy (version 5) implementation
 dev-haskell/sodium 0.11.0.3: Sodium Reactive Programming (FRP) System
 dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
@@ -1557,7 +1557,7 @@ dev-haskell/tcp-streams-openssl 0.6.0.0: Tcp streams using openssl for tls suppo
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.0.4: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
-dev-haskell/tensor 1.0.0.1: Tensor data types
+dev-haskell/tensor 1.0.0.1 1.1.0.1: Tensor data types
 dev-haskell/terminal-progress-bar 0.0.1.4 0.1.1: A simple progress bar in the terminal
 dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
 dev-haskell/terminfo 0.4.0.2: Haskell bindings to the terminfo library
@@ -1646,7 +1646,7 @@ dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic opera
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
 dev-haskell/units 2.3-r1 2.4: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.0.0: A parser for units of measure
-dev-haskell/unix-compat 0.4.2.0-r1: Portable POSIX-compatibility layer
+dev-haskell/unix-compat 0.4.2.0-r1 0.4.3.1: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2: Unix memory syscalls
 dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a conduit interface (deprecated)
 dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
