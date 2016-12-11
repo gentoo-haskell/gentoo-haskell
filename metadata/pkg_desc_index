@@ -1004,7 +1004,7 @@ dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lru 0.1.1-r2: Implements an LRU data structure
 dev-haskell/lrucache 1.2.0.0: a simple, pure LRU cache
 dev-haskell/ltk 0.14.3.0 0.15.0.5-r1: Leksah tool kit
-dev-haskell/lua-bc 0.1.0.3: Lua bytecode parser
+dev-haskell/lua-bc 0.1.1: Lua bytecode parser
 dev-haskell/lucid 2.9.7: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.5.0.0 0.6.0.1-r1 0.7.0.0: DSL for SVG using lucid for HTML
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
@@ -1021,7 +1021,7 @@ dev-haskell/map-syntax 0.2.0.1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.16: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
-dev-haskell/math-functions 0.1.7.0 0.2.0.2: Special functions and Chebyshev polynomials
+dev-haskell/math-functions 0.2.1.0: Special functions and Chebyshev polynomials
 dev-haskell/matrix 0.3.5.0: A native implementation of matrix operations
 dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
@@ -1333,7 +1333,7 @@ dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat 0.95.1-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
 dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
-dev-haskell/regex-do 2.6.2: PCRE wrapper
+dev-haskell/regex-do 3.1: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
@@ -1434,7 +1434,7 @@ dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singlet
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
-dev-haskell/smtp-mail 0.1.4.5: Simple email sending via SMTP
+dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
 dev-haskell/snap 0.14.0.7-r3 1.0.0.1: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 0.9.8.0 1.0.1.0: Snap: A Haskell Web Framework (core interfaces and types)
