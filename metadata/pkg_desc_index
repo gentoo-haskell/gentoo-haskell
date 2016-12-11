@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.2.2: property-based host configuration management in haskell
+app-admin/propellor 3.2.3: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -100,7 +100,7 @@ dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-
 dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
-dev-haskell/annotations 0.2.1: Constructing, analyzing and destructing annotated trees
+dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
 dev-haskell/ansi-terminal 0.6.2.3: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/appar 0.1.4: A simple applicative parser
@@ -158,7 +158,7 @@ dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
-dev-haskell/binary-tagged 0.1.4.1: Tagged binary serialisation
+dev-haskell/binary-tagged 0.1.4.2: Tagged binary serialisation
 dev-haskell/bindings-bfd 1.2.0.0: Bindings for libbfd, a library of the GNU binutils
 dev-haskell/bindings-dsl 1.0.23: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 3.1.2.2: Low-level bindings to GLFW OpenGL library
@@ -192,7 +192,7 @@ dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
 dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
-dev-haskell/bower-json 0.8.0: Read bower.json from Haskell
+dev-haskell/bower-json 0.8.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
 dev-haskell/brick 0.5.1 0.14: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
@@ -271,6 +271,7 @@ dev-haskell/cmark 0.5.4: Fast, accurate CommonMark (Markdown) parser and rendere
 dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
+dev-haskell/code-page 0.1.1: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.3-r2: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
