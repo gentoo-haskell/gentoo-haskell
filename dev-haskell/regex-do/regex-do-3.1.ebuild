@@ -18,15 +18,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/mtl:=[profile?]
-	dev-haskell/regex-base:=[profile?]
-	dev-haskell/regex-pcre:=[profile?]
-	dev-haskell/stringsearch:=[profile?]
-	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-haskell/regex-base-0.93.0:=[profile?]
+	>=dev-haskell/regex-pcre-0.94.0:=[profile?]
+	>=dev-haskell/stringsearch-0.3.0:=[profile?]
+	>=dev-haskell/tagged-0.8.0:=[profile?]
+	>=dev-haskell/text-1.2.0:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
