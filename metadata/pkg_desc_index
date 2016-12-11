@@ -259,9 +259,9 @@ dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
-dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1: A typeclass-based Prelude
-dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1: classy-prelude together with conduit functions
-dev-haskell/classy-prelude-yesod 0.12.7 0.12.8 1.0.1: Provide a classy prelude including common Yesod functionality
+dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
+dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
+dev-haskell/classy-prelude-yesod 0.12.7 0.12.8 1.0.1 1.0.2: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12: CSS preprocessor as embedded Haskell
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
@@ -488,7 +488,7 @@ dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
 dev-haskell/explicit-exception 0.1.8: Exceptions which are explicit in the type signature
 dev-haskell/extensible-effects 1.11.0.4: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
-dev-haskell/extra 1.4.10: Extra functions I use
+dev-haskell/extra 1.4.10 1.5.1: Extra functions I use
 dev-haskell/extract-dependencies 0.2.0.1: Given a hackage package outputs the list of its dependencies
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
@@ -703,9 +703,9 @@ dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modify
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.2 0.5.2: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
-dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100: MySQL driver for HDBC
-dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1: ODBC driver for HDBC
-dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100: PostgreSQL driver for HDBC
+dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100 0.7.1.0: MySQL driver for HDBC
+dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1 2.5.0.1: ODBC driver for HDBC
+dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100 2.3.2.4: PostgreSQL driver for HDBC
 dev-haskell/hdbc-session 0.1.1.0: Bracketed connection for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
 dev-haskell/hdbc-sqlite3 2.3.3.1: Sqlite v3 driver for HDBC
@@ -1589,7 +1589,7 @@ dev-haskell/th-desugar 1.5.5 1.6: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.1.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
-dev-haskell/th-lift-instances 0.1.10: Lift instances for template-haskell for common data types
+dev-haskell/th-lift-instances 0.1.11: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.3: Orphan instances for TH datatypes
 dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH reify
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
@@ -1605,7 +1605,7 @@ dev-haskell/time-locale-compat 0.1.1.3: Compatibility of TimeLocale between old-
 dev-haskell/time-parsers 0.1.1.0: Parsers for types in 'time'
 dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31 1.0.31-r1: A tool for visualizing time series from log files
-dev-haskell/timespan 0.1.0.0: Useful timespan datatype and functions
+dev-haskell/timespan 0.2.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.7-r1: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.6.1: Enhanced timezone handling for Data.Time
 dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
