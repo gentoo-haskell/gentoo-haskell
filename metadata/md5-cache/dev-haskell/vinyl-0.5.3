@@ -1,14 +1,15 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( dev-haskell/hspec dev-haskell/quickcheck ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
-DESCRIPTION=FRP through value streams and monadic splines
+DEPEND=>=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/doctest-0.8 dev-haskell/lens >=dev-haskell/singletons-0.10 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Extensible Records
 EAPI=6
-HOMEPAGE=https://github.com/schell/varying
+HOMEPAGE=http://hackage.haskell.org/package/vinyl
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=>=dev-lang/ghc-7.8.2:=
-SLOT=0/0.7.0.2
-SRC_URI=mirror://hackage/packages/archive/varying/0.7.0.2/varying-0.7.0.2.tar.gz
+RESTRICT=test
+SLOT=0/0.5.3
+SRC_URI=mirror://hackage/packages/archive/vinyl/0.5.3/vinyl-0.5.3.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	e32940a7b2a9992ad217eccddb84d548	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=b7e35a3a7eba11b464b8c53ad6c0611b
+_md5_=e52ccaa3bac73c0bac36a702a141bae6
