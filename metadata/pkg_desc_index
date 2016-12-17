@@ -191,6 +191,7 @@ dev-haskell/bloodhound 0.11.0.0-r2 0.11.1.0: ElasticSearch client library for Ha
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
+dev-haskell/boomerang 1.4.5.2: Library for invertible parsing and printing
 dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 0.8.1: Read bower.json from Haskell
@@ -355,12 +356,15 @@ dev-haskell/data-accessor-mtl 0.2.0.4: Use Accessor to access state in mtl State
 dev-haskell/data-accessor-template 0.2.1.13: Utilities for accessing and manipulating fields of records
 dev-haskell/data-accessor-transformers 0.2.1.7: Use Accessor to access state in transformers State monad
 dev-haskell/data-binary-ieee754 0.4.3 0.4.4: Parser/Serialiser for IEEE-754 floating-point values
+dev-haskell/data-bword 0.1.0.1: Extra operations on binary words of fixed length
+dev-haskell/data-checked 0.3: Type-indexed runtime-checked properties
 dev-haskell/data-default 0.5.3 0.7.1.1: A class for types with a default value
 dev-haskell/data-default-class 0.0.1 0.1.2.0: A class for types with a default value
 dev-haskell/data-default-instances-base 0.0.1 0.1.0 0.1.0.1: Default instances for types in base
 dev-haskell/data-default-instances-containers 0.0.1: Default instances for types in containers
 dev-haskell/data-default-instances-dlist 0.0.1: Default instances for types in dlist
 dev-haskell/data-default-instances-old-locale 0.0.1: Default instances for types in old-locale
+dev-haskell/data-dword 0.3.1: Stick two binary words together to get a bigger one
 dev-haskell/data-endian 0.1.1: Endian-sensitive data
 dev-haskell/data-flags 0.0.3.2: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
@@ -374,6 +378,8 @@ dev-haskell/data-memocombinators 0.5.1: Combinators for building memo tables
 dev-haskell/data-ordlist 0.4.7.0: Set and bag operations on ordered lists
 dev-haskell/data-pprint 0.2.4.1: Prettyprint and compare Data values
 dev-haskell/data-reify 0.6.1: Reify a recursive data structure into an explicit graph
+dev-haskell/data-serializer 0.2: Common API for serialization libraries
+dev-haskell/data-textual 0.3.0.2: Human-friendly textual representations
 dev-haskell/dataenc 0.14.0.7: Data encoding library
 dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/dates 0.2.2.1: Small library for parsing different dates formats
@@ -741,6 +747,8 @@ dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
+dev-haskell/hjsonpointer 1.0.0.2: JSON Pointer library
+dev-haskell/hjsonschema 1.2.0.2: JSON Schema library
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.0.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.1: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.0.1: Core data types, parsers and functionality for the hledger accounting tools
@@ -963,6 +971,7 @@ dev-haskell/lenses 0.1.7: Simple Functional Lenses
 dev-haskell/lhs2tex 1.19: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.6.0: Lastfm API interface
+dev-haskell/liblawless 0.14.0.4: Prelude based on protolude for GHC 8 and beyond
 dev-haskell/libmpd 0.9.0.6: An MPD client library
 dev-haskell/libnotify 0.1.1.0 0.2: Bindings to libnotify library
 dev-haskell/libssh2 0.2.0.3: FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)
@@ -1129,6 +1138,7 @@ dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
 dev-haskell/network-fancy 0.2.4: Networking support with a cleaner API
 dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP
 dev-haskell/network-info 0.2.0.8: Access the local computer's basic network configuration
+dev-haskell/network-ip 0.3: Internet Protocol data structures
 dev-haskell/network-msg 0.8: Recvmsg and sendmsg bindings
 dev-haskell/network-multicast 0.0.11 0.1.1: Simple multicast library
 dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
@@ -1579,7 +1589,10 @@ dev-haskell/text-binary 0.2.1.1: Binary instances for text types
 dev-haskell/text-format 0.3.1.1: Text formatting
 dev-haskell/text-format-simple 1.1.0: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
+dev-haskell/text-icu-normalized 0.1.6: Dealing with Strict Text in NFC normalization
+dev-haskell/text-latin1 0.3: Latin-1 (including ASCII) utility functions
 dev-haskell/text-manipulate 0.2.0.1: Case conversion, word boundary manipulation, and textual subjugation
+dev-haskell/text-printer 0.4: Abstract interface for text builders/printers
 dev-haskell/text-region 0.1.0.1: Marking text regions
 dev-haskell/text-show 3.2.2 3.4 3.4.1.1: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
@@ -1632,6 +1645,7 @@ dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
 dev-haskell/type-equality 0.1.2: Type equality, coercion/cast and other operations
 dev-haskell/type-equality-check 0.0.0.4: Type equality check
 dev-haskell/type-functions 0.2.0.4: Emulation of type-level functions
+dev-haskell/type-hint 0.1: Guide type inference with proxy values
 dev-haskell/type-level 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
 dev-haskell/typecompose 0.9.12: Type composition classes & instances
