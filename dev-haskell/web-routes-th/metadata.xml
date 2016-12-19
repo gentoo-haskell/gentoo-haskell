@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		web-routes is a portable library for type-safe URLs. This module adds
+		support for creating the URL parsers/printers automatically using
+		Template Haskell.
+	</longdescription>
+</pkgmetadata>
