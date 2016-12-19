@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
+	</use>
+	<longdescription>
+		clckwrks (pronounced, clockworks) aims to compete
+		directly with popular PHP-based blogging and CMS
+		platforms. Clckwrks aims to support one-click
+		installation of plugins and themes. End users
+		should be able to use it with zero Haskell
+		knowledge. Haskell developers can extend clckwrks
+		by creating new plugins or by building sites
+		around the existing clckwrks core and plugins.
+		
+		clckwrks is still in very early development. Not all features have been implement yet.
+	</longdescription>
+</pkgmetadata>
