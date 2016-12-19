@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		reform follows in the footsteps of formlets and
+		digestive-functors &lt;= 0.2. It provides a
+		type-safe and composable method for generating
+		an HTML form that includes validation.
+	</longdescription>
+</pkgmetadata>
