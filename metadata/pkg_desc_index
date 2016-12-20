@@ -265,6 +265,8 @@ dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
 dev-haskell/classy-prelude-yesod 0.12.7 0.12.8 1.0.1 1.0.2: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12: CSS preprocessor as embedded Haskell
+dev-haskell/clckwrks 0.24.0: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks-plugin-media 0.6.16.1: media plugin for clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
@@ -588,7 +590,7 @@ dev-haskell/ghcid 0.6.6: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gifcurry 2.0.0.2 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
-dev-haskell/ginger 0.3.8.0: An implementation of the Jinja2 template language in Haskell
+dev-haskell/ginger 0.3.9.1: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to GIO
 dev-haskell/github 0.13.2 0.14.1-r2 0.15.0: Access to the GitHub API, v3
 dev-haskell/github-backup 1.20161118: backs up everything github knows about a repository, to the repository
@@ -657,9 +659,11 @@ dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
 dev-haskell/hans 3.0.1: Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
+dev-haskell/happstack-authenticate 2.3.4.6: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-hsp 7.3.7.1: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
+dev-haskell/happstack-jmacro 7.0.11: Support for using JMacro with Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
 dev-haskell/happstack-server 7.4.6.1 7.4.6.2: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.2: extend happstack-server with https:// support (TLS/SSL)
@@ -833,6 +837,7 @@ dev-haskell/hstatistics 0.2.5.4: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
 dev-haskell/hstringtemplate 0.8.5: StringTemplate implementation in Haskell
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
+dev-haskell/hsx-jmacro 7.3.8: hsp+jmacro support
 dev-haskell/hsx2hs 0.13.5: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyslog 1.6 2.0 4: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htaglib 1.0.4: Bindings to TagLib, audio meta-data library
@@ -912,6 +917,7 @@ dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.7: Efficient relational queries on Haskell sets
+dev-haskell/ixset-typed 0.3.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
@@ -924,6 +930,7 @@ dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.8: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/jwt 0.7.2: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 4.2.3 5.0.1: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r4: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
@@ -1117,6 +1124,7 @@ dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations o
 dev-haskell/mwc-random 0.13.5.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
 dev-haskell/mysql-haskell 0.7.1.0: pure haskell MySQL driver
+dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mysql-haskell
 dev-haskell/mysql-haskell-openssl 0.7.0.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
@@ -1300,6 +1308,7 @@ dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC
 dev-haskell/pure-priority-queue 0.14-r1: A pure priority queue
 dev-haskell/puremd5 2.1.3: A Haskell-only implementation of the MD5 digest (hash) algorithm
 dev-haskell/pwstore-fast 2.4.4: Secure password storage
+dev-haskell/pwstore-purehaskell 2.1.4: Secure password storage, in pure Haskell
 dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings for Qt
 dev-haskell/quickcheck 1.2.0.1-r1 2.8.2 2.9.1 2.9.2: Automatic testing of Haskell programs
@@ -1338,6 +1347,9 @@ dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general
 dev-haskell/ref-tf 0.4.0.1: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
+dev-haskell/reform 0.2.7.1: reform is a type-safe HTML form generation and validation library
+dev-haskell/reform-happstack 0.2.5.1: Happstack support for reform
+dev-haskell/reform-hsp 0.2.7.1: Add support for using HSP with Reform
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.3: Regex-based parsing with applicative interface
 dev-haskell/regex-applicative-text 0.1.0.1: regex-applicative on text
@@ -1677,6 +1689,7 @@ dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
 dev-haskell/urlpath 5.0.0.1: Painfully simple URL deployment
+dev-haskell/userid 0.1.2.7: The UserId type and useful instances for web development
 dev-haskell/users 0.5.0.0: A library simplifying user management for web applications
 dev-haskell/users-mysql-haskell 0.5.2.0: A mysql-haskell backend for the users library
 dev-haskell/utf8-light 0.4.2: Unicode
@@ -1689,6 +1702,7 @@ dev-haskell/uuagc 0.9.52.1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-bootstrap 0.9.40.2: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.0.6.0: Cabal plugin for the Universiteit Utrecht Attribute Grammar System
 dev-haskell/uuid 1.3.12: For creating, comparing, parsing and printing Universally Unique Identifiers
+dev-haskell/uuid-orphans 1.4.1: Orphan instances for the UUID datatype
 dev-haskell/uuid-types 1.0.3: Type definitions for Universally Unique Identifiers
 dev-haskell/uulib 0.9.22: Haskell Utrecht Tools Library
 dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
@@ -1737,7 +1751,10 @@ dev-haskell/wavy 0.1.0.0: Process WAVE files in Haskell
 dev-haskell/web-encodings 0.3.0.9-r1: Encapsulate multiple web encoding in a single package. (deprecated)
 dev-haskell/web-plugins 0.2.9: dynamic plugin system for web applications
 dev-haskell/web-routes 0.27.11: portable, type-safe URL routing
+dev-haskell/web-routes-boomerang 0.28.4.2: Use boomerang for type-safe URL parsers/printers
 dev-haskell/web-routes-happstack 0.23.10: Adds support for using web-routes with Happstack
+dev-haskell/web-routes-hsp 0.24.6.1: Adds XMLGenerator instance for RouteT monad
+dev-haskell/web-routes-th 0.22.6: Support for deriving PathInfo using Template Haskell
 dev-haskell/webdriver 0.8.4: a Haskell client for the Selenium WebDriver protocol
 dev-haskell/webkit 0.13.1.3 0.14.1.1 0.14.2.0 0.14.2.1: Binding to the Webkit library
 dev-haskell/webkit-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0 0.14.2.1: JavaScriptCore FFI from webkitgtk
