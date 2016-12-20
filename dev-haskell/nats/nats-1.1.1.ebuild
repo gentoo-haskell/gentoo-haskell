@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+binary +hashable +template-haskell"
 
+RESTRICT=test # avoid circular dep: nats[hashable]->hashable[test]->quickcheck->nats
+
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 	binary? ( >=dev-haskell/binary-0.2:=[profile?] <dev-haskell/binary-0.9:=[profile?] )
 	hashable? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] )
