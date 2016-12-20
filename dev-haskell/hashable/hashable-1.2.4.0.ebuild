@@ -22,6 +22,9 @@ IUSE="+cpu_flags_x86_sse2 cpu_flags_x86_sse4_1"
 RDEPEND=">=dev-haskell/text-0.11.0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
+
+RESTRICT=test # circular deps: hashable[test]->quickcheck->semigroups->hashable
+
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/hunit
