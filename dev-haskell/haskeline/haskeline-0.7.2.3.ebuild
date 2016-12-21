@@ -30,6 +30,13 @@ DEPEND="${RDEPEND}
 
 CABAL_CORE_LIB_GHC_PV="PM:8.0.1_rc4 PM:8.0.1 PM:8.0.2_rc1 PM:9999"
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory>=1.1 && < 1.3' 'directory>=1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag legacy-encoding legacy-encoding) \
