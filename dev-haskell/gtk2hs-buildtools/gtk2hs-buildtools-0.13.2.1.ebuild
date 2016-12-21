@@ -31,6 +31,13 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch)
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1.2.0.0 && < 1.3' 'directory >= 1.2.0.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag closuresignals closuresignals)
