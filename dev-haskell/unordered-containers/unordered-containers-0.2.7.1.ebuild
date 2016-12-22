@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
+RESTRICT=test # circular deps: unordered-containers[test]->quickcheck->semigroups->unordered-containers
+
 RDEPEND=">=dev-haskell/hashable-1.0.1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
