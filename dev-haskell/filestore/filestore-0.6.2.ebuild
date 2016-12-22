@@ -34,6 +34,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/mtl )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1.1 && < 1.3' 'directory >= 1.1' \
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag maxcount maxcount)
