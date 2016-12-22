@@ -37,5 +37,6 @@ src_prepare() {
 		'blaze-html == 0.7.0.3' 'blaze-html >= 0.7' \
 		'filepath ==1.4.*' 'filepath >=1.4' \
 		'time ==1.5.*' 'time >=1.5' \
-		'highlighting-kate ==0.5.*' 'highlighting-kate >=0.5'
+		'highlighting-kate ==0.5.*' 'highlighting-kate >=0.5' \
+		'directory ==1.2.*' 'directory >=1.2'
 }
