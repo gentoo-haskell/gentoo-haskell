@@ -26,6 +26,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory    >=1.1  && <1.3' 'directory    >=1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=with-posix
