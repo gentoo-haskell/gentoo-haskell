@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory > 1.1 && < 1.2.7' 'directory > 1.1'
+}
