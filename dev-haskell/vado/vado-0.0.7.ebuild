@@ -26,3 +26,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >=1.1.0.0 && <1.3' 'directory >=1.1.0.0'
+}
