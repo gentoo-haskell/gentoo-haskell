@@ -38,6 +38,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/quickcheck-2.0 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-directory-1.3.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag portable portable)
