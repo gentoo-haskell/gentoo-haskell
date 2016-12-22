@@ -27,6 +27,13 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1.1 && < 1.3' 'directory >= 1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug)

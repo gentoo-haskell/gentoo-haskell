@@ -31,6 +31,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory == 1.2.*' 'directory >= 1.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-useglxgetprocaddress \
