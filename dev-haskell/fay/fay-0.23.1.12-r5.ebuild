@@ -60,8 +60,8 @@ src_prepare() {
 		'process >= 1.1 && < 1.3' 'process >= 1.1' \
 		'time >= 1.4 && < 1.6' 'time >= 1.4' \
 		'transformers >= 0.3 && < 0.4 || > 0.4.1 && < 0.5' 'transformers >= 0.3 && < 0.4 || > 0.4.1' \
-		'data-default >= 0.2 && < 0.6' 'data-default >= 0.2'
-
+		'data-default >= 0.2 && < 0.6' 'data-default >= 0.2' \
+		'directory >= 1.1 && < 1.3' 'directory >= 1.1'
 }
 
 src_configure() {
