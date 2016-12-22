@@ -47,6 +47,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-herbie \
