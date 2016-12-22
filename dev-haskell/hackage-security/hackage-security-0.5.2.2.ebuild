@@ -44,6 +44,13 @@ DEPEND="${RDEPEND}
 		!use-network-uri? ( dev-haskell/network-uri ) )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory         >= 1.1.0.2 && < 1.3' 'directory         >= 1.1.0.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag use-network-uri use-network-uri)
