@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/data-default-0.5.3:=[profile?] >=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/quickcheck-2.4:2=[profile?] >=dev-haskell/random-1.0:=[profile?] >=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?] >=dev-haskell/stm-2.1:=[profile?] <dev-haskell/stm-2.5:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-haskell/vector-0.9:=[profile?] >=dev-haskell/vty-5.1.0:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=An interactive terminal user interface library for Vty
-EAPI=5
+EAPI=6
 HOMEPAGE=http://jtdaugherty.github.com/vty-ui/
 IUSE=demos no-tests doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
@@ -11,4 +11,4 @@ SLOT=0/1.9
 SRC_URI=mirror://hackage/packages/archive/vty-ui/1.9/vty-ui-1.9.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	089efdad375cb06c71ab15b99e8dcbca	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=6d6a1f42e0392b5752b856961ea93af2
+_md5_=6b0d6383286db597ef77aeaf1a15c850
