@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -39,7 +39,8 @@ src_prepare() {
 		'dns                         == 1.*' 'dns                         >= 1' \
 		'tasty                       == 0.8.*' 'tasty                       >= 0.8' \
 		'tasty-hunit                 == 0.8.*' 'tasty-hunit                 >= 0.8' \
-		'HUnit                       == 1.2.*' 'HUnit                       >= 1.2'
+		'HUnit                       == 1.2.*' 'HUnit                       >= 1.2' \
+		'directory                   == 1.2.*' 'directory                   >= 1.2'
 }
 
 src_install() {
