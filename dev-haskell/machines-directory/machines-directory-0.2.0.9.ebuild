@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/machines-0.2.4:=[profile?] <dev-haskell/machines-0.7:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory           >= 1.2      && < 1.3' 'directory           >= 1.2'
+}
