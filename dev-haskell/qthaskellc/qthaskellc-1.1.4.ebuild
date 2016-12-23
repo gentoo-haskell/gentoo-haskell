@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -22,6 +22,7 @@ IUSE="debug"
 DOCS="${WORKDIR}/${MY_P}/INSTALL ${WORKDIR}/${MY_P}/LICENSE ${WORKDIR}/${MY_P}/README"
 
 DEPEND="virtual/opengl
+		dev-qt/designer:4
 		dev-qt/qtcore:4
 		dev-qt/qtgui:4
 		dev-qt/qtopengl:4
