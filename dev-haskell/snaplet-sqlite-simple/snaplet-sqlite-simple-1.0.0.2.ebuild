@@ -44,3 +44,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory                  >= 1.0      && < 1.3' 'directory                  >= 1.0'
+}

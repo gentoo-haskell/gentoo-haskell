@@ -44,5 +44,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'http-client         >= 0.4        && < 0.5' 'http-client         >= 0.4'
+		'http-client         >= 0.4        && < 0.5' 'http-client         >= 0.4' \
+		'directory           >= 1.2.0.1    && < 1.3' 'directory           >= 1.2.0.1'
 }
