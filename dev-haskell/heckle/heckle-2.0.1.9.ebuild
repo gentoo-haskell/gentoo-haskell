@@ -30,3 +30,10 @@ RDEPEND=">=app-text/pandoc-1.17.0.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >=1.2 && <1.3' 'directory >=1.2'
+}
