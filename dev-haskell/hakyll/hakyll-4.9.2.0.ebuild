@@ -63,6 +63,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory            >= 1.0    && < 1.3' 'directory            >= 1.0' \
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag checkexternal checkexternal) \
