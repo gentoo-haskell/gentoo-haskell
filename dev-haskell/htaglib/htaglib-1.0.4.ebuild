@@ -28,6 +28,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory  >= 1.2 && < 1.3' 'directory  >= 1.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev
