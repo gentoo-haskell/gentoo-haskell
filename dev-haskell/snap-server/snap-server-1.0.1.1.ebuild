@@ -54,6 +54,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.6 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory                           >= 1.0      && < 1.3' 'directory                           >= 1.0' \
+		'directory                           >= 1.1      && < 1.3' 'directory                           >= 1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag build-pong build-pong) \
