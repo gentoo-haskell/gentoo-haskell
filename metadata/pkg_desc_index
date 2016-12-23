@@ -1153,7 +1153,7 @@ dev-haskell/network-protocol-xmpp 0.4.8: Client library for the XMPP protocol
 dev-haskell/network-simple 0.4.0.5: Simple network sockets usage patterns
 dev-haskell/network-socket-options 0.2.0.1: Type-safe, portable alternative to getSocketOption/setSocketOption
 dev-haskell/network-transport 0.4.4.0: Network abstraction layer
-dev-haskell/network-transport-inmemory 0.5.1: In-memory instantiation of Network.Transport
+dev-haskell/network-transport-inmemory 0.5.2: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.4.2 0.5.1: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
@@ -1190,7 +1190,7 @@ dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy wi
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0: Utilities and combinators for parsing command line options
-dev-haskell/optparse-generic 1.1.3: Auto-generate a command-line parser for your datatype
+dev-haskell/optparse-generic 1.1.4: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/pandoc-citeproc 0.10.3: Supports using pandoc with citeproc
@@ -1380,7 +1380,7 @@ dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 1.1.8.1: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 1.1.9: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.4.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
@@ -1486,7 +1486,7 @@ dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurren
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sql-words 0.1.4.1: Simple idea SQL keywords data constructor into OverloadedString
-dev-haskell/sqlite-simple 0.4.12.0: Mid-Level SQLite client library
+dev-haskell/sqlite-simple 0.4.12.1: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
@@ -1564,7 +1564,7 @@ dev-haskell/takusen 0.8.7: Database library with left-fold interface, for Postgr
 dev-haskell/tar 0.4.5.0 0.5.0.3: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.10.1.2 0.11.0.4: Modern and extensible testing framework
-dev-haskell/tasty-ant-xml 1.0.3: Render tasty output to XML for Jenkins
+dev-haskell/tasty-ant-xml 1.0.4: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.4: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.1.1: Golden tests support for tasty
 dev-haskell/tasty-hspec 1.1.3: Hspec support for the Tasty test framework
