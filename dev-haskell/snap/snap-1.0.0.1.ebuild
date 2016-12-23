@@ -63,7 +63,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4.2    && < 2.9' 'QuickCheck                 >= 2.4.2'
+		'QuickCheck                 >= 2.4.2    && < 2.9' 'QuickCheck                 >= 2.4.2' \
+		'directory                 >= 1.1      && < 1.3' 'directory                 >= 1.1'
 }
 
 src_configure() {
