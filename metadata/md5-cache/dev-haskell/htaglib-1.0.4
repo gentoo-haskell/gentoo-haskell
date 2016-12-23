@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= media-libs/taglib >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Bindings to TagLib, audio meta-data library
 EAPI=6
@@ -9,6 +9,6 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= media-libs/taglib
 SLOT=0/1.0.4
 SRC_URI=mirror://hackage/packages/archive/htaglib/1.0.4/htaglib-1.0.4.tar.gz
-_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=764f1d4063a2ae1d7b52c4b270c2b668
+_md5_=2683e4f5e52c2a2bc865752cb2713ed4
