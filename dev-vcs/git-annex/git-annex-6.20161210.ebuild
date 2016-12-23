@@ -125,6 +125,7 @@ DEPEND="${DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-6.20160114-QC-2.8.2.patch
+	"${FILESDIR}"/${PN}-6.20161210-directory-1.3.patch
 )
 
 src_configure() {
