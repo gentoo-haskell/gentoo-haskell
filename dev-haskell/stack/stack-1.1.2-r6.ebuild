@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-termi
 	>=dev-haskell/enclosed-exceptions-1.0.1.1:=[profile?] <dev-haskell/enclosed-exceptions-1.1:=[profile?]
 	>=dev-haskell/errors-2.1.2:=[profile?] <dev-haskell/errors-2.2:=[profile?]
 	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
-	>=dev-haskell/extra-1.4.6:=[profile?] <dev-haskell/extra-1.5:=[profile?]
+	>=dev-haskell/extra-1.4.6:=[profile?]
 	>=dev-haskell/fast-logger-2.3.1:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/filelock-0.1.0.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1:=[profile?] <dev-haskell/fsnotify-0.3:=[profile?]
@@ -131,7 +131,10 @@ src_prepare() {
 		'time >=1.4.2 && <1.6' 'time >=1.4.2' \
 		'persistent >=2.1.2 && <2.6' 'persistent >=2.1.2' \
 		'persistent-sqlite >=2.1.4 && <2.6' 'persistent-sqlite >=2.1.4' \
-		'aeson >=0.8.0.2 && <0.10 || ==0.11.*' 'aeson >=0.8.0.2 && <0.10 || >=0.11'
+		'aeson >=0.8.0.2 && <0.10 || ==0.11.*' 'aeson >=0.8.0.2 && <0.10 || >=0.11' \
+		'directory >=1.2.1.0 && <1.3' 'directory >=1.2.1.0' \
+		'directory >=1.2.2.0 && <1.3' 'directory >=1.2.2.0' \
+		'extra >=1.4.6 && <1.5' 'extra >=1.4.6'
 }
 
 src_configure() {
