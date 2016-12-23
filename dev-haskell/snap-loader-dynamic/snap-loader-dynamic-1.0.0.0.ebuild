@@ -28,3 +28,11 @@ RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory         >= 1.2     && < 1.3' 'directory         >= 1.2' \
+		'directory         >= 1.0     && < 1.3' 'directory         >= 1.0'
+}
