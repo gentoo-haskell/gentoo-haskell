@@ -37,3 +37,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/doctest-0.7 <dev-haskell/doctest-0.12 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory            >= 1.0.7   && < 1.3' 'directory            >= 1.0.7'
+}
