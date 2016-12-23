@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/binary-0.5.1.0:=[profile?] <dev-haskell/binary-0.9:=[prof
 	>=dev-haskell/cabal-helper-0.7.1.0:=[profile?] <dev-haskell/cabal-helper-0.8:=[profile?]
 	dev-haskell/convertible:=[profile?]
 	>=dev-haskell/djinn-ghc-0.0.2.2:=[profile?] <dev-haskell/djinn-ghc-0.1:=[profile?]
-	>=dev-haskell/extra-1.4:2=[profile?] <dev-haskell/extra-1.5:2=[profile?]
+	>=dev-haskell/extra-1.4:2=[profile?]
 	>=dev-haskell/fclabels-2.0:=[profile?] <dev-haskell/fclabels-2.1:=[profile?]
 	<dev-haskell/ghc-paths-0.2:=[profile?]
 	<dev-haskell/ghc-syb-utils-0.3:=[profile?]
@@ -52,9 +52,15 @@ DEPEND="${RDEPEND}
 "
 SITEFILE=50${PN}-gentoo.el
 
+PATCHES=("${FILESDIR}"/${PN}-5.6.0.0-gentoo.patch)
+
 src_prepare() {
 	default
-	epatch "${FILESDIR}"/${PN}-5.6.0.0-gentoo.patch
+
+	cabal_chdeps \
+		'directory         < 1.3' 'directory' \
+		'directory < 1.3' 'directory' \
+		'extra             == 1.4.*' 'extra             >= 1.4'
 }
 
 src_compile() {
