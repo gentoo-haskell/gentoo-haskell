@@ -89,7 +89,8 @@ src_prepare() {
 		'uhc-util >= 0.1.6.3 && < 0.1.6.7' 'uhc-util >= 0.1.6.3' \
 		'EdisonAPI == 1.3' 'EdisonAPI >= 1.3' \
 		'QuickCheck >= 2.8.2 && < 2.9' 'QuickCheck >= 2.8.2' \
-		'alex >= 3.1.0 && < 3.2' 'alex >= 3.1.0'
+		'alex >= 3.1.0 && < 3.2' 'alex >= 3.1.0' \
+		'directory >= 1.2.0.1 && < 1.3' 'directory >= 1.2.0.1'
 }
 
 src_configure() {
