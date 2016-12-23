@@ -46,7 +46,8 @@ src_prepare() {
 		'vector    >= 0.9 && < 0.11' 'vector    >= 0.9' \
 		'comonad          >= 3       && < 5' 'comonad          >= 3' \
 		'binary           >= 0.5     && < 0.8' 'binary           >= 0.5' \
-		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2'
+		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2' \
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
 }
 
 src_configure() {
