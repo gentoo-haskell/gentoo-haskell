@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.9.0.1 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-golden-2.2.0.1 <dev-haskell/tasty-golden-2.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >=1.2.0.1 && <1.3' 'directory >=1.2.0.1'
+}

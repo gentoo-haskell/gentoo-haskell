@@ -69,6 +69,13 @@ DEPEND="${RDEPEND}
 
 PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory    >= 1.2.0.1 && < 1.3.0.0' 'directory    >= 1.2.0.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag curl curl) \
