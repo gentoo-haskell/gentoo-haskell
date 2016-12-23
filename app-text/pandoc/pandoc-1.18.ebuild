@@ -77,6 +77,14 @@ DEPEND="${RDEPEND}
 	embed_data_files? ( dev-haskell/hsb2hs )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1 && < 1.3' 'directory >= 1' \
+		'directory >= 1.2 && < 1.3' 'directory >= 1.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed_data_files embed_data_files) \

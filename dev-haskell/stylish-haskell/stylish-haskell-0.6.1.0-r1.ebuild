@@ -38,5 +38,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson            >= 0.6  && < 0.12' 'aeson            >= 0.6'
+		'aeson            >= 0.6  && < 0.12' 'aeson            >= 0.6' \
+		'directory        >= 1.1  && < 1.3' 'directory        >= 1.1'
 }
