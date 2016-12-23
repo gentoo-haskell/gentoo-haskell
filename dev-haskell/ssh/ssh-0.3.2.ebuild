@@ -56,5 +56,6 @@ src_prepare() {
 		'HUnit                      >= 1.0   && < 1.3' 'HUnit                      >= 1.0' \
 		'tasty                      >= 0.10  && < 0.11' 'tasty                      >= 0.10' \
 		'template-haskell           >= 2.8   && < 2.11' 'template-haskell           >= 2.8' \
-		'QuickCheck                 >= 2.8   && < 2.9' 'QuickCheck                 >= 2.8'
+		'QuickCheck                 >= 2.8   && < 2.9' 'QuickCheck                 >= 2.8' \
+		'directory                  >= 1.2   && < 1.3' 'directory                  >= 1.2'
 }
