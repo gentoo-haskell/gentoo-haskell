@@ -715,8 +715,8 @@ dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and
 dev-haskell/hdaemonize 0.5.0.2 0.5.2: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
 dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100 0.7.1.0: MySQL driver for HDBC
-dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1 2.5.0.1: ODBC driver for HDBC
-dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100 2.3.2.4: PostgreSQL driver for HDBC
+dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1 2.5.0.1-r1: ODBC driver for HDBC
+dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100 2.3.2.4-r1: PostgreSQL driver for HDBC
 dev-haskell/hdbc-session 0.1.1.0: Bracketed connection for HDBC
 dev-haskell/hdbc-sqlite 2.3.3.0 2.3.3.1: Sqlite v3 driver for HDBC
 dev-haskell/hdbc-sqlite3 2.3.3.1: Sqlite v3 driver for HDBC
