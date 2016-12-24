@@ -58,6 +58,8 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc2.patch)
+
 src_prepare() {
 	default
 
