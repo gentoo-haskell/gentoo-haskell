@@ -266,7 +266,9 @@ dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude tog
 dev-haskell/classy-prelude-yesod 0.12.7 0.12.8 1.0.1 1.0.2: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.1: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-page 0.4.3.7: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
