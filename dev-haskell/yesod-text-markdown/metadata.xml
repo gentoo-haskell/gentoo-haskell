@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Use Text.Markdown in a typical yesod project.
+		This module contains instances related to persistence,
+		even though it isn&#39;t tightly coupled to yesod.
+		
+		This package is different from the yesod-markdown package
+		which uses the pandoc renderer for markdown. The main
+		advantages of having Text.Markdown as underlying renderer
+		is the much smaller dependencies and the permissiver
+		license.  See
+		&lt;https://github.com/pbrisbin/yesod-markdown&gt; and
+		&lt;https://github.com/snoyberg/markdown&gt;.
+		
+		This package intentionally tries to be like
+		yesod-markdown, so switching between the markdown backends
+		should be easy.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,13 @@
+diff --git a/yesod-text-markdown.cabal b/yesod-text-markdown.cabal
+index e4ff88b..a22074a 100644
+--- a/yesod-text-markdown.cabal
++++ b/yesod-text-markdown.cabal
+@@ -37,7 +37,7 @@ library
+                    , persistent           >= 1.2  && < 3.0
+                    , text                 >= 0.11 && < 2.0
+                    , shakespeare          >= 2.0  && < 2.1
+-                   , aeson                >= 0.7  && < 1.0
++                   , aeson                >= 0.7  && < 2.0
+   ghc-options: -Wall -fno-warn-orphans
+ 
+ source-repository head
