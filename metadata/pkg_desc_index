@@ -263,7 +263,7 @@ dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in H
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
-dev-haskell/classy-prelude-yesod 0.12.7 0.12.8 1.0.1 1.0.2: Provide a classy prelude including common Yesod functionality
+dev-haskell/classy-prelude-yesod 1.1.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
@@ -294,7 +294,7 @@ dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.7: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.8: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -371,7 +371,7 @@ dev-haskell/data-default-instances-dlist 0.0.1: Default instances for types in d
 dev-haskell/data-default-instances-old-locale 0.0.1: Default instances for types in old-locale
 dev-haskell/data-dword 0.3.1: Stick two binary words together to get a bigger one
 dev-haskell/data-endian 0.1.1: Endian-sensitive data
-dev-haskell/data-flags 0.0.3.2: A package for working with bit masks and flags in general
+dev-haskell/data-flags 0.0.3.3: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
 dev-haskell/data-lens 2.10.7-r3: Used to be Haskell 98 Lenses
@@ -394,7 +394,7 @@ dev-haskell/dbus 0.10.11-r1 0.10.12: A client library for the D-Bus IPC system
 dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
-dev-haskell/dependent-map 0.2.3.0: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-map 0.2.4.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.3.2.2: Dependent sum type
 dev-haskell/dependent-sum-template 0.0.0.5: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.5.26: A program and library to derive instances for data types
@@ -1163,7 +1163,7 @@ dev-haskell/network-transport-tests 0.2.3.0: Unit tests for Network.Transport im
 dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
 dev-haskell/newtype 0.2: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with generics support
-dev-haskell/ngx-export 0.2.5.0: Helper module for Nginx haskell module
+dev-haskell/ngx-export 0.2.5.1: Helper module for Nginx haskell module
 dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
 dev-haskell/nonce 1.0.2: Generate cryptographic nonces
@@ -1361,7 +1361,7 @@ dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat 0.95.1-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
 dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
-dev-haskell/regex-do 3.1: PCRE wrapper
+dev-haskell/regex-do 3.2: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
@@ -1430,7 +1430,7 @@ dev-haskell/setlocale 1.0.0.4: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/shake 0.15.10: Build system library, like Make, but more accurate dependencies
-dev-haskell/shakespeare 2.0.11.2: A toolkit for making compile-time interpolated templates
+dev-haskell/shakespeare 2.0.12: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time
@@ -1484,7 +1484,7 @@ dev-haskell/sox 0.2.2.6: Play, write, read, convert audio signals using Sox
 dev-haskell/spdx 0.2.1.0: SPDX license expression language
 dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative parallelism
 dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
-dev-haskell/spintax 0.3.0.0: Random text generation based on spintax
+dev-haskell/spintax 0.3.1: Random text generation based on spintax
 dev-haskell/split 0.2.3.1: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
@@ -1668,7 +1668,7 @@ dev-haskell/typecompose 0.9.12: Type composition classes & instances
 dev-haskell/typed-process 0.1.0.0: Run external processes, with strong typing of streams
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/uhc-light 1.1.9.4: Part of UHC packaged as cabal/hackage installable library
-dev-haskell/uhc-util 0.1.6.6: UHC utilities
+dev-haskell/uhc-util 0.1.6.7: UHC utilities
 dev-haskell/unamb 0.2.5: Unambiguous choice
 dev-haskell/unbound 0.5.1: Generic support for programming with names and binders
 dev-haskell/unbounded-delays 0.1.0.9: Unbounded thread delays and timeouts
@@ -1685,7 +1685,7 @@ dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a 
 dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
-dev-haskell/unordered-containers 0.2.7.1: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.7.2: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.2.2.1: Haskell URI parsing as ByteStrings
@@ -1828,7 +1828,7 @@ dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a dat
 dev-haskell/yesod-auth-hashdb 1.5.1.3: Authentication plugin for Yesod
 dev-haskell/yesod-auth-nopassword 0.1.0.1: A plugin for Yesod to provide email-only authentication
 dev-haskell/yesod-auth-oauth2 0.1.10 0.2.2-r2: OAuth 2.0 authentication plugins
-dev-haskell/yesod-bin 1.5.0.1: The yesod helper executable
+dev-haskell/yesod-bin 1.5.1: The yesod helper executable
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.30: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
