@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -16,7 +16,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib pax-utils toolchain-funcs versionator
+inherit multilib pax-utils toolchain-funcs versionator prefix
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -86,6 +86,15 @@ RDEPEND="
 	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3:* )
 	kernel_linux? ( >=sys-devel/binutils-2.17:* )
 	kernel_SunOS? ( >=sys-devel/binutils-2.17:* )
+"
+# gentoo binaries are built against ncurses-5
+RDEPEND+="
+	binary? (
+		|| (
+			sys-libs/ncurses:0/5
+			sys-libs/ncurses:5/5
+		)
+	)
 "
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
@@ -322,6 +331,7 @@ relocate_ghc() {
 			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
 			"$gp_back" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
+		hprefixify "${bin_libpath}"/${PN}*/settings
 	fi
 
 	# regenerate the binary package cache
