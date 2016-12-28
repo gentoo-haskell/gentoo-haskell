@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -84,9 +84,6 @@ RDEPEND="
 	>=dev-libs/gmp-5:=
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
-	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3 )
-	kernel_linux? ( >=sys-devel/binutils-2.17 )
-	kernel_SunOS? ( >=sys-devel/binutils-2.17 )
 "
 
 # force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
