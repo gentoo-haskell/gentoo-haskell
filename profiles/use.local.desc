@@ -394,7 +394,6 @@ dev-lang/ghc:binary - Install the binary version directly, rather than using it 
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
 dev-lang/ghc:gmp - use dev-libs/gmp for integer operations (works faster, but an external depend).
-dev-lang/ghc:llvm - Enable llvm code generator for ghc (activated by -fllvm)
 dev-lang/idris:ffi - Build support for libffi.
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with support for multithreaded execution.
