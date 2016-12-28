@@ -16,7 +16,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator
+inherit multilib multiprocessing pax-utils toolchain-funcs versionator prefix
 [[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -85,6 +85,15 @@ RDEPEND="
 	dev-libs/gmp:0=
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
+"
+# gentoo binaries are built against ncurses-6
+RDEPEND+="
+	binary? (
+		|| (
+			sys-libs/ncurses:0/6
+			sys-libs/ncurses:5/6
+		)
+	)
 "
 
 DEPEND="${RDEPEND}
@@ -320,6 +329,7 @@ relocate_ghc() {
 			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
 			"$gp_back" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
+		hprefixify "${bin_libpath}"/${PN}*/settings
 	fi
 
 	# regenerate the binary package cache
