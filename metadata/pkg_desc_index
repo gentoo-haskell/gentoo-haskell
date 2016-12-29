@@ -349,7 +349,7 @@ dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
 dev-haskell/cryptohash-md5 0.11.100.1: Fast, pure and practical MD5 implementation
 dev-haskell/cryptohash-sha1 0.11.100.1: Fast, pure and practical SHA-1 implementation
 dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
-dev-haskell/cryptonite 0.20: Cryptography Primitives sink
+dev-haskell/cryptonite 0.20 0.21: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.2: A small program that will read csv files and create qif files
@@ -855,7 +855,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.4: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.30 0.5.4: An HTTP client engine
+dev-haskell/http-client 0.4.30 0.5.5: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.2.4.1 0.3.3: http-client backend using the connection package and tls library
@@ -1638,7 +1638,7 @@ dev-haskell/time-locale-compat 0.1.1.3: Compatibility of TimeLocale between old-
 dev-haskell/time-parsers 0.1.2.0: Parsers for types in 'time'
 dev-haskell/timeit 1.0.0.0: Time a computation
 dev-haskell/timeplot 1.0.31 1.0.31-r1: A tool for visualizing time series from log files
-dev-haskell/timespan 0.2.0.0: Useful timespan datatype and functions
+dev-haskell/timespan 0.3.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.7-r1: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.6.1: Enhanced timezone handling for Data.Time
 dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
