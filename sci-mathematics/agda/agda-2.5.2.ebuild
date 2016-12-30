@@ -20,7 +20,7 @@ MY_P="${MY_PN}-${PV}"
 # both versions in gentoo version.
 ##
 MY_UPSTREAM_AGDA_STDLIB_V="0.13"
-MY_GENTOO_AGDA_STDLIB_V="2.5.1.${MY_UPSTREAM_AGDA_STDLIB_V}"
+MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
 
 DESCRIPTION="A dependently typed functional programming language and proof assistant"
 HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
