@@ -31,6 +31,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cpphs debug uhc +stdlib emacs"
 
+RESTRICT=test # Unrecognized option: --test (did you mean any of --help --js --css ?)
+
 RDEPEND=">=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
 	>=dev-haskell/edisoncore-1.3.1.1:=[profile?] <dev-haskell/edisoncore-1.3.2:=[profile?]
