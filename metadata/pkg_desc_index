@@ -1640,7 +1640,7 @@ dev-haskell/timeplot 1.0.31 1.0.31-r1: A tool for visualizing time series from l
 dev-haskell/timespan 0.3.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.7-r1: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.6.1: Enhanced timezone handling for Data.Time
-dev-haskell/tls 1.3.8: TLS/SSL protocol native implementation (Server and Client)
+dev-haskell/tls 1.3.9: TLS/SSL protocol native implementation (Server and Client)
 dev-haskell/tls-debug 0.4.4: Set of programs for TLS testing and debugging
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
 dev-haskell/torrent 10000.0.1: BitTorrent file parser and generater
