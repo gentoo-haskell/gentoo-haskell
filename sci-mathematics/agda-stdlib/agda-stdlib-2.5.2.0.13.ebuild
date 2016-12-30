@@ -7,7 +7,7 @@ EAPI=6
 CABAL_FEATURES="bin"
 inherit haskell-cabal elisp-common
 
-## shared with sci-mathematics/agda-stdlib
+## shared with sci-mathematics/agda
 # upstream does not maintain version ordering:
 #  https://github.com/agda/agda-stdlib/releases
 # 0.11 -> 2.5.0.20160213 -> 2.5.0.20160412 -> 0.12 -> 0.13
