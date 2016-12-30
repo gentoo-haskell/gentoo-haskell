@@ -32,3 +32,13 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.7 && <=4.9.0.0' 'base >=4.7' \
+		'process >=1.2 && <=1.4.2.0' 'process >=1.2' \
+		'directory ==1.2.*' 'directory >=1.2' \
+		'directory == 1.2.*' 'directory >= 1.2'
+}
