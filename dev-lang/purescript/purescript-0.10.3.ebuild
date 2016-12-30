@@ -85,6 +85,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.10.2-http-client-0.5.patch
+	"${FILESDIR}"/${PN}-0.10.3-bower-json-1.patch
 )
 
 src_prepare() {
