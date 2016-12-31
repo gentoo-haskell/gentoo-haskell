@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] >=dev-lang/ghc-7.6.1:= >=x11-wm/xmonad-0.12:=[profile?] <x11-wm/xmonad-0.13:=[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] ) >=dev-haskell/cabal-1.16.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Third party extensions for xmonad
+EAPI=6
+HOMEPAGE=http://xmonad.org/
+IUSE=+xft doc hscolour hoogle profile
+KEYWORDS=~amd64 ~ppc64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] >=dev-lang/ghc-7.6.1:= >=x11-wm/xmonad-0.12:=[profile?] <x11-wm/xmonad-0.13:=[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
+SLOT=0/0.12
+SRC_URI=mirror://hackage/packages/archive/xmonad-contrib/0.12/xmonad-contrib-0.12.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=d243cf29b8ede157a20e8114769a90ec
