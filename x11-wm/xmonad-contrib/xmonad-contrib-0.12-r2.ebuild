@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-haskell/x11-1.6.1:=[profile?] <dev-haskell/x11-1.7:=[profile?]
+	>=dev-haskell/x11-1.6.1:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 	>=x11-wm/xmonad-0.12:=[profile?] <x11-wm/xmonad-0.13:=[profile?]
 	xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
@@ -34,7 +34,17 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
+	"${FILESDIR}"/${P}-x11-1.7.patch
+)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'X11>=1.6.1 && < 1.7' 'X11>=1.6.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
