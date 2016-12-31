@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="amd64 ~ppc64 ~sparc x86"
+KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE="+default-term no-autorepeat-keys"
 
 RESTRICT=test # fails test on ghc-8 (assert has different text of exception)
@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/setlocale:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-haskell/x11-1.5:=[profile?] <dev-haskell/x11-1.7:=[profile?]
+	>=dev-haskell/x11-1.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -42,6 +42,9 @@ SAMPLE_CONFIG_LOC="man"
 
 src_prepare() {
 	use no-autorepeat-keys && epatch "$FILESDIR"/${PN}-0.12-check-repeat.patch
+
+	cabal_chdeps \
+		'X11>=1.5 && < 1.7' 'X11>=1.5'
 
 	# allow user patches
 	epatch_user
