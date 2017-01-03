@@ -1,12 +1,12 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test unpack
-DEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] <dev-haskell/x11-1.7:=[profile?] >=dev-lang/ghc-7.4.1:= ~x11-wm/xmonad-9999[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] ) >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-vcs/git-1.8.2.1
+DEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] >=dev-lang/ghc-7.4.1:= ~x11-wm/xmonad-9999[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] ) >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour ) >=dev-vcs/git-1.8.2.1
 DESCRIPTION=Third party extensions for xmonad
 EAPI=5
 HOMEPAGE=http://xmonad.org/
 IUSE=+xft testing doc hscolour hoogle profile
 LICENSE=BSD
-RDEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] <dev-haskell/x11-1.7:=[profile?] >=dev-lang/ghc-7.4.1:= ~x11-wm/xmonad-9999[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
+RDEPEND=dev-haskell/extensible-exceptions:=[profile?] >=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/old-time:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.6.1:=[profile?] >=dev-lang/ghc-7.4.1:= ~x11-wm/xmonad-9999[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
 SLOT=0/9999
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_unpack:git-r3 src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	b83a2420b796f7c6eff682679d08fe25	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	git-r3	e928b84a9f6f1d9076d1d27687876dc6	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=3aa6bca4ea1518b8677dad8889dcf0e4
+_md5_=5eb39a678dfa9fc0a622f74db5b48be4
