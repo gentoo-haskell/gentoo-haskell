@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-haskell/x11-1.6.1:=[profile?] <dev-haskell/x11-1.7:=[profile?]
+	>=dev-haskell/x11-1.6.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	~x11-wm/xmonad-${PV}[profile?]
 	xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
