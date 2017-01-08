@@ -4,6 +4,8 @@
 
 EAPI=6
 
+inherit user
+
 DESCRIPTION="A purely functional package manager"
 HOMEPAGE="http://nixos.org/nix"
 
@@ -12,7 +14,7 @@ SRC_URI="http://nixos.org/releases/${PN}/${P}/${P}.tar.xz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="etc_profile +gc doc sodium"
+IUSE="+etc_profile +gc doc sodium"
 
 RDEPEND="
 	app-arch/bzip2
@@ -38,6 +40,16 @@ DEPEND="${RDEPEND}
 	virtual/perl-ExtUtils-ParseXS
 "
 
+pkg_setup() {
+	enewgroup nixbld 30000
+	for i in {1..10}; do
+		# we list 'nixbld' twice to
+		# both assign a primary group for user
+		# and add an user to /etc/group
+		enewuser nixbld${i} $((30000 +$i)) -1 /var/empty nixbld,nixbld
+	done
+}
+
 src_configure() {
 	econf $(use_enable gc)
 }
@@ -45,6 +57,12 @@ src_configure() {
 src_install() {
 	# TODO: emacs highlighter
 	default
+
+	# TODO: will need a tweak for prefix
+	keepdir             /nix/store
+	fowners root:nixbld /nix/store
+	fperms 1775         /nix/store
+
 	if ! use etc_profile; then
 		rm "${ED}"/etc/profile.d/nix.sh || die
 	fi
@@ -53,6 +71,5 @@ src_install() {
 pkg_postinstall() {
 	if ! use etc_profile; then
 		ewarn "${EROOT}etc/profile.d/nix.sh was removed (due to USE=-etc_profile)."
-		ewarn "Please fix the ebuild by adding nix user/group handling."
 	fi
 }
