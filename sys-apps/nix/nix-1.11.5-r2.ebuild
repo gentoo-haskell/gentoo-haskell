@@ -51,7 +51,9 @@ pkg_setup() {
 }
 
 src_configure() {
-	econf $(use_enable gc)
+	econf \
+		--localstatedir="${EPREFIX}"/nix/var \
+		$(use_enable gc)
 }
 
 src_install() {
@@ -62,6 +64,8 @@ src_install() {
 	keepdir             /nix/store
 	fowners root:nixbld /nix/store
 	fperms 1775         /nix/store
+
+	doenvd "${FILESDIR}"/60nix-remote-daemon
 
 	if ! use etc_profile; then
 		rm "${ED}"/etc/profile.d/nix.sh || die
