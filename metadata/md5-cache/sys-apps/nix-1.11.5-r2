@@ -11,4 +11,4 @@ SLOT=0
 SRC_URI=http://nixos.org/releases/nix/nix-1.11.5/nix-1.11.5.tar.xz
 _eclass_exported_funcs=pkg_setup:- src_configure:- src_install:-
 _eclasses_=user	80aaa71614ced86f02ee1a513821dc87
-_md5_=fa528d5e8f7a65aaba1972036efb0dac
+_md5_=c0a063851b346bd79dbbc270bea38358
