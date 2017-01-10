@@ -66,6 +66,7 @@ src_install() {
 	fperms 1775         /nix/store
 
 	doenvd "${FILESDIR}"/60nix-remote-daemon
+	newinitd "${FILESDIR}"/nix-daemon.initd nix-daemon
 
 	if ! use etc_profile; then
 		rm "${ED}"/etc/profile.d/nix.sh || die
