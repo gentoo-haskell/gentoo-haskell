@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/enclosed-exceptions:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/lifted-base:=[profile?] >=dev-haskell/temporary-1.2:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/wai-3.0:=[profile?] >=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Host content provided by a Git repo
+EAPI=6
+HOMEPAGE=https://github.com/snoyberg/yesod-gitrepo
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-haskell/enclosed-exceptions:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/lifted-base:=[profile?] >=dev-haskell/temporary-1.2:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/wai-3.0:=[profile?] >=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.1.0
+SRC_URI=mirror://hackage/packages/archive/yesod-gitrepo/0.2.1.0/yesod-gitrepo-0.2.1.0.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	017377e73405d964cd0137088cddb9c3	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	66b3bf714f8cfc1b6494db5269b4666e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=43b4b7ac26317e8caea9b02b984a9ffd

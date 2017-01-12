@@ -678,6 +678,7 @@ dev-haskell/happy 1.19.5: Happy is a parser generator for Haskell
 dev-haskell/hare 0.8.3.0: the Haskell Refactorer
 dev-haskell/harp 0.4.2: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
+dev-haskell/hascas 1.0.0: Cassandra driver for haskell
 dev-haskell/hashable 1.2.4.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashable-time 0.2: Hashable instances for Data.Time
@@ -1839,6 +1840,7 @@ dev-haskell/yesod-elements 1.0: Non template haskell markup building function in
 dev-haskell/yesod-eventsource 1.4.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
 dev-haskell/yesod-form 1.4.9: Form handling support for Yesod Web Framework
+dev-haskell/yesod-gitrepo 0.2.1.0: Host content provided by a Git repo
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.10.0 0.11.1-r1 0.11.2: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
