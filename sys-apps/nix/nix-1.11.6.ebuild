@@ -40,6 +40,10 @@ DEPEND="${RDEPEND}
 	virtual/perl-ExtUtils-ParseXS
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-systemd.patch
+)
+
 pkg_setup() {
 	enewgroup nixbld 30000
 	for i in {1..10}; do
