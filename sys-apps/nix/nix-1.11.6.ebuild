@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit user
+inherit readme.gentoo-r1 user
 
 DESCRIPTION="A purely functional package manager"
 HOMEPAGE="http://nixos.org/nix"
@@ -45,6 +45,26 @@ PATCHES=(
 	"${FILESDIR}"/${P}-per-user.patch
 )
 
+DISABLE_AUTOFORMATTING=yes
+DOC_CONTENTS=" Quick start user guide on Gentoo:
+
+[as root] enable nix-daemon service:
+	[systemd] # systemctl enable nix-daemon
+	[openrc]  # rc-update add nix-daemon
+[as an user] relogin to get environment and profile update
+[as an user] fetch nixpkgs update:
+	\$ nix-channel --update
+[as an user] install nix packages:
+	\$ nix-env -i mc
+[as an user] configure environment:
+	Somewhere in .bash_profile you might want to set
+	LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+	but please read https://github.com/NixOS/nixpkgs/issues/21820
+
+Next steps:
+	nix package manager user manual: http://nixos.org/nix/manual/
+"
+
 pkg_setup() {
 	enewgroup nixbld 30000
 	for i in {1..10}; do
@@ -65,6 +85,8 @@ src_install() {
 	# TODO: emacs highlighter
 	default
 
+	readme.gentoo_create_doc
+
 	# here we an eager variant of something that
 	# is lazily done by  nix-daemo and root nix-env
 
@@ -84,8 +106,10 @@ src_install() {
 	fi
 }
 
-pkg_postinstall() {
+pkg_postinst() {
 	if ! use etc_profile; then
 		ewarn "${EROOT}etc/profile.d/nix.sh was removed (due to USE=-etc_profile)."
 	fi
+
+	readme.gentoo_print_elog
 }
