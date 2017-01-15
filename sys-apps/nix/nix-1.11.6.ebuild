@@ -60,10 +60,16 @@ src_install() {
 	# TODO: emacs highlighter
 	default
 
+	# here we an eager variant of something that
+	# is lazily done by  nix-daemo and root nix-env
+
 	# TODO: will need a tweak for prefix
 	keepdir             /nix/store
 	fowners root:nixbld /nix/store
 	fperms 1775         /nix/store
+
+	keepdir             /nix/var/nix/profiles/per-user
+	fperms 1777         /nix/var/nix/profiles/per-user
 
 	doenvd "${FILESDIR}"/60nix-remote-daemon
 	newinitd "${FILESDIR}"/nix-daemon.initd nix-daemon
