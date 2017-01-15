@@ -42,6 +42,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-systemd.patch
+	"${FILESDIR}"/${P}-per-user.patch
 )
 
 pkg_setup() {
