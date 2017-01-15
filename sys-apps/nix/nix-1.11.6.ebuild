@@ -58,7 +58,7 @@ DOC_CONTENTS=" Quick start user guide on Gentoo:
 	\$ nix-env -i mc
 [as an user] configure environment:
 	Somewhere in .bash_profile you might want to set
-	LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+	LOCALE_ARCHIVE=\$HOME/.nix-profile/lib/locale/locale-archive
 	but please read https://github.com/NixOS/nixpkgs/issues/21820
 
 Next steps:
