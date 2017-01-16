@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,6 +21,8 @@ IUSE=""
 RDEPEND="sci-visualization/gnuplot"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2
+	dev-haskell/old-time
+	dev-haskell/old-locale
 	dev-haskell/time-locale-compat
 	>=dev-lang/ghc-6.10.4
 "
