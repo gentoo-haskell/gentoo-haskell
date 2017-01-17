@@ -898,6 +898,7 @@ dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonad
 dev-haskell/ini 0.3.5: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.5.9: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
+dev-haskell/integer-logarithms 1: Integer logarithms
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
@@ -1745,7 +1746,7 @@ dev-haskell/wai-app-file-cgi 3.0.8 3.1.2 3.1.3: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.0.1.1 3.1.6.1: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
-dev-haskell/wai-extra 3.0.19: Provides some basic WAI handlers and middleware
+dev-haskell/wai-extra 3.0.19.1: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-launch 3.0.2.1: Launch a web app in the default browser
 dev-haskell/wai-logger 2.2.7: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
