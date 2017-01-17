@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -32,3 +32,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/quickcheck-simple )
 "
+
+src_prepare() {
+	default
+
+	# ghc blows up and does not finish compilation
+	[[ $(ghc-version) == 8.0.* ]] && replace-hcflags -O[1-9] -O0
+	HCFLAGS="${HCFLAGS} -O0"
+}
