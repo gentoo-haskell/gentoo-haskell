@@ -7,9 +7,8 @@ EAPI=6
 inherit readme.gentoo-r1 user
 
 DESCRIPTION="A purely functional package manager"
-HOMEPAGE="http://nixos.org/nix"
+HOMEPAGE="https://nixos.org/nix"
 
-#in case we have something like _pre15214
 SRC_URI="http://nixos.org/releases/${PN}/${P}/${P}.tar.xz"
 LICENSE="LGPL-2.1"
 SLOT="0"
