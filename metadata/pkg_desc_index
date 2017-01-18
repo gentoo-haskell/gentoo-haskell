@@ -902,7 +902,7 @@ dev-haskell/integer-logarithms 1: Integer logarithms
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
-dev-haskell/intero 0.1.20: Complete interactive development program for Haskell
+dev-haskell/intero 0.1.20-r1: Complete interactive development program for Haskell
 dev-haskell/interpolate 0.1.0: String interpolation done right
 dev-haskell/intervals 0.7.2: Interval Arithmetic
 dev-haskell/invariant 0.2.2 0.3.1 0.4: Haskell 98 invariant functors
