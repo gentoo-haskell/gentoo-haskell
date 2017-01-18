@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/configurator-0.2
 	>=dev-haskell/hdbc-2.4
 	>=dev-haskell/hdbc-postgresql-2.3
-	>=dev-haskell/hdbc-sqlite-2.3
+	>=dev-haskell/hdbc-sqlite3-2.3
 	>=dev-haskell/missingh-1.2
 	>=dev-haskell/tasty-0.8
 	>=dev-haskell/tasty-hunit-0.8
