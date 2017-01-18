@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/configfile
 		>=dev-haskell/haxml-1.22
 		>=dev-haskell/hdbc-1.1.0
-		>=dev-haskell/hdbc-sqlite-1.1.0
+		>=dev-haskell/hdbc-sqlite3-1.1.0
 		dev-haskell/hslogger
 		>=dev-haskell/missingh-1.0.0
 		dev-haskell/mtl

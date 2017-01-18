@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND="=dev-haskell/haskelldb-2*:=[profile?]
 		=dev-haskell/haskelldb-hdbc-2*:=[profile?]
 		=dev-haskell/hdbc-2*:=[profile?]
-		=dev-haskell/hdbc-sqlite-2*:=[profile?]
+		=dev-haskell/hdbc-sqlite3-2*:=[profile?]
 		>=dev-haskell/mtl-1:=[profile?]
 		<dev-haskell/mtl-3:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
