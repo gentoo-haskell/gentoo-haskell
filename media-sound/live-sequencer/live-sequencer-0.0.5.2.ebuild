@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -35,8 +35,8 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	>=dev-haskell/utility-ht-0.0.8:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	gui? ( >=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
-		>=dev-haskell/wx-0.12.1:=[profile?] <dev-haskell/wx-0.14:=[profile?]
-		>=dev-haskell/wxcore-0.12.1:=[profile?] <dev-haskell/wxcore-0.14:=[profile?]
+		>=dev-haskell/wx-0.12.1:=[profile?]
+		>=dev-haskell/wxcore-0.12.1:=[profile?]
 		httpserver? ( >=dev-haskell/cgi-3001.1:=[profile?] <dev-haskell/cgi-3001.4:=[profile?]
 				>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-1.1:=[profile?]
 				>=dev-haskell/httpd-shed-0.4:=[profile?] <dev-haskell/httpd-shed-0.5:=[profile?]
@@ -51,7 +51,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >=1.0 && <1.3' 'directory >=1.0'
+		'directory >=1.0 && <1.3' 'directory >=1.0' \
+		'wx >=0.12.1 && <0.14' 'wx >=0.12.1'\
+		'wxcore >=0.12.1 && <0.14' 'wxcore >=0.12.1'
 }
 
 src_configure() {
