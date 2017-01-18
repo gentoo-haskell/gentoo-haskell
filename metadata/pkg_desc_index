@@ -704,7 +704,7 @@ dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
 dev-haskell/haskelldb-hdbc-mysql 0.1.1-r1: HaskellDB support for the HDBC MySQL driver
 dev-haskell/haskelldb-hdbc-odbc 2.1.2: HaskellDB support for the HDBC ODBC driver
 dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r1: HaskellDB support for the HDBC PostgreSQL driver
-dev-haskell/haskelldb-hdbc-sqlite3 2.1.2: HaskellDB support for the HDBC SQLite driver
+dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLite driver
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1: Client support for POP3, SMTP, and IMAP
 dev-haskell/haskellnet-ssl 0.3.3.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
@@ -720,7 +720,7 @@ dev-haskell/hcg-minus 0.15: haskell cg (minus)
 dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.0.2 0.5.2: Library to handle the details of writing daemons for UNIX
-dev-haskell/hdbc 2.3.1.2 2.4.0.0 2.4.0.1: Haskell Database Connectivity
+dev-haskell/hdbc 2.4.0.1: Haskell Database Connectivity
 dev-haskell/hdbc-mysql 0.6.6.1-r3 0.6.6.1-r100 0.7.1.0: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.3.1.1 2.4.0.1 2.5.0.0-r1 2.5.0.1-r1: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.3 2.3.2.3-r100 2.3.2.4-r1: PostgreSQL driver for HDBC
@@ -1928,11 +1928,11 @@ games-roguelike/mazesofmonad 1.0.9-r2: Console-based roguelike Role Playing Game
 games-roguelike/scroll 1.20151219: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta: Hasklig - a Haskell code font with monospaced ligatures
-media-sound/hpodder 1.1.6-r1: Podcast Aggregator (downloader)
+media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
 media-sound/live-sequencer 0.0.5.2: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
-net-mail/list-remote-forwards 0.0.1-r1: List all remote forwards for mail accounts stored in a database
-net-mail/mailbox-count 0.0.2-r1: Count mailboxes in a SQL database
+net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
+net-mail/mailbox-count 0.0.2-r2: Count mailboxes in a SQL database
 net-mail/mhailist 0.0-r1: Haskell mailing list manager
 net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability checks on email addresses
 net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
