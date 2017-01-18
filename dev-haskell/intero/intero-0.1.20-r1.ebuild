@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,7 +23,7 @@ RESTRICT=test # tests are dependent on ghc version
 RDEPEND="dev-haskell/ghc-paths:=
 	dev-haskell/haskeline:=
 	dev-haskell/syb:=
-	>=dev-lang/ghc-7.8.2:= <dev-lang/ghc-8.0.2:=
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/regex-compat
 		dev-haskell/temporary )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc >= 7.8 && < 8.0.2' 'ghc >= 7.8'
+}
