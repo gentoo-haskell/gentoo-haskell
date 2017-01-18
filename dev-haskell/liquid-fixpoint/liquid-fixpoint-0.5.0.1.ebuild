@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -36,6 +36,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/filemanip:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/intern:=[profile?]
+	dev-haskell/located-base:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parallel:=[profile?]
 	dev-haskell/parsec:=[profile?]
