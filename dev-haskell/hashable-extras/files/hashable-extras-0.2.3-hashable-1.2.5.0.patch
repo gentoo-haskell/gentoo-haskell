@@ -1,0 +1,16 @@
+diff --git a/src/Data/Hashable/Extras.hs b/src/Data/Hashable/Extras.hs
+index 550b59f..75b1436 100644
+--- a/src/Data/Hashable/Extras.hs
++++ b/src/Data/Hashable/Extras.hs
+@@ -17,3 +17,3 @@ module Data.Hashable.Extras
+   , Hashable2(..)
+-  , Hashed(..)
++  , Data.Hashable.Extras.Hashed(..)
+   , hashWith1
+@@ -29,4 +29,4 @@ data Hashed = Hashed { unhashed :: Int -> Int }
+ 
+-instance Hashable Hashed where
+-  hashWithSalt n f = unhashed f n
++instance Hashable Data.Hashable.Extras.Hashed where
++  hashWithSalt n f = Data.Hashable.Extras.unhashed f n
+   {-# INLINE hashWithSalt #-}
