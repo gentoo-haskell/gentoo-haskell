@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,13 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/aeson-casing-0.1:=[profile?] <dev-haskell/aeson-casing-0.2:=[profile?]
 	>=dev-haskell/bimap-0.3:=[profile?] <dev-haskell/bimap-0.4:=[profile?]
 	>=dev-haskell/binary-bits-0.5:=[profile?] <dev-haskell/binary-bits-0.6:=[profile?]
 	>=dev-haskell/data-binary-ieee754-0.4:=[profile?] <dev-haskell/data-binary-ieee754-0.5:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}

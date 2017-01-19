@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/brick-0.13:= <dev-haskell/brick-0.16:=
+RDEPEND=">=dev-haskell/brick-0.13:= <dev-haskell/brick-0.17:=
 	dev-haskell/cabal:=
 	dev-haskell/conduit:=
 	dev-haskell/conduit-extra:=
