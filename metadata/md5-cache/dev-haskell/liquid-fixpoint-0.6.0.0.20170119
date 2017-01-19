@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/ansi-terminal:=[profile?] >=dev-haskell/ascii-progress-0.3:=[profile?] dev-haskell/async:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/bifunctors:=[profile?] dev-haskell/boxes:=[profile?] dev-haskell/cereal:=[profile?] dev-haskell/cmdargs:=[profile?] dev-haskell/dotgen:=[profile?] dev-haskell/fgl:=[profile?] dev-haskell/fgl-visualize:=[profile?] dev-haskell/filemanip:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/intern:=[profile?] dev-haskell/located-base:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/parallel:=[profile?] dev-haskell/parsec:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] dev-haskell/text-format:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/tasty-0.10 dev-haskell/tasty-hunit >=dev-haskell/tasty-rerun-1.1 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
+EAPI=6
+HOMEPAGE=https://github.com/ucsd-progsys/liquid-fixpoint
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/ansi-terminal:=[profile?] >=dev-haskell/ascii-progress-0.3:=[profile?] dev-haskell/async:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/bifunctors:=[profile?] dev-haskell/boxes:=[profile?] dev-haskell/cereal:=[profile?] dev-haskell/cmdargs:=[profile?] dev-haskell/dotgen:=[profile?] dev-haskell/fgl:=[profile?] dev-haskell/fgl-visualize:=[profile?] dev-haskell/filemanip:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/intern:=[profile?] dev-haskell/located-base:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/parallel:=[profile?] dev-haskell/parsec:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] dev-haskell/text-format:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.0.1:=
+RESTRICT=test
+SLOT=0/0.6.0.0.20170119
+SRC_URI=http://code.haskell.org/~slyfox/liquid-fixpoint-0.6.0.0.20170119.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	017377e73405d964cd0137088cddb9c3	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=3b7bcc04edc761e6a1e45d5636c0df76
