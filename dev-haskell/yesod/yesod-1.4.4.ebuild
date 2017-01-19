@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -23,12 +23,11 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
 	dev-haskell/conduit:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.14:=[profile?]
-	dev-haskell/data-default:=[profile?]
+	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/fast-logger:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	dev-haskell/safe:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/shakespeare:=[profile?]
 	dev-haskell/streaming-commons:=[profile?]
@@ -39,7 +38,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/wai-logger:=[profile?]
 	>=dev-haskell/warp-1.3:=[profile?]
 	>=dev-haskell/yaml-0.8.17:=[profile?]
-	>=dev-haskell/yesod-auth-1.4:=[profile?] <dev-haskell/yesod-auth-1.5:=[profile?]
 	>=dev-haskell/yesod-core-1.4:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-form-1.4:=[profile?] <dev-haskell/yesod-form-1.5:=[profile?]
 	>=dev-haskell/yesod-persistent-1.4:=[profile?] <dev-haskell/yesod-persistent-1.5:=[profile?]
