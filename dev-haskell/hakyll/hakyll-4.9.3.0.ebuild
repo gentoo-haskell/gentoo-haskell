@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -17,8 +17,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+checkexternal +previewserver +watchserver"
-
-RESTRICT=test # missing file
 
 RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.20:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]

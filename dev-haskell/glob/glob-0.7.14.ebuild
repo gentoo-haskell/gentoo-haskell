@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -36,11 +36,3 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'directory    <  1.3' 'directory' \
-		'directory                  <  1.3' 'directory'
-}
