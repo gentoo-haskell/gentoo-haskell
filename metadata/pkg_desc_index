@@ -130,7 +130,7 @@ dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
 dev-haskell/authenticate 1.3.3.2: Authentication methods for Haskell web applications
 dev-haskell/authenticate-kerberos 1.0.0: Authentication methods for Haskell web applications
 dev-haskell/authenticate-oauth 1.5.1.2: Library to authenticate with OAuth for Haskell web applications
-dev-haskell/auto 0.4.3.0: Denotative, locally stateful programming DSL & platform
+dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.14.1: Amazon Web Services (AWS) for Haskell
@@ -153,7 +153,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
-dev-haskell/binary-orphans 0.1.5.1-r3: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.5.2: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
@@ -220,7 +220,7 @@ dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
 dev-haskell/cabal-file-th 0.2.4: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 9999: The command-line interface for Cabal and Hackage
-dev-haskell/cabal-macosx 0.2.3.4: Cabal support for creating Mac OSX application bundles
+dev-haskell/cabal-macosx 0.2.3.5: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
 dev-haskell/cabal-rpm 0.10.1: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
@@ -241,7 +241,7 @@ dev-haskell/cereal-vector 0.2.0.1: Serialize instances for Data.Vector types
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.3.0.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
-dev-haskell/charsetdetect-ae 1.1.0.1: Character set detection using Mozilla's Universal Character Set Detector
+dev-haskell/charsetdetect-ae 1.1.0.2: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: Cairo backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8 1.8.1: Utility functions for using the chart library with GTK
@@ -353,7 +353,7 @@ dev-haskell/cryptonite 0.20 0.21: Cryptography Primitives sink
 dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.2: A small program that will read csv files and create qif files
-dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0 0.7.5.1: FFI binding to the CUDA interface for programming NVIDIA GPUs
+dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0 0.7.5.1 0.7.5.2: FFI binding to the CUDA interface for programming NVIDIA GPUs
 dev-haskell/cufft 0.1.0.3 0.1.2.2: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.7 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 0.4.4.1: A subfield of the complex numbers for exact calculation
