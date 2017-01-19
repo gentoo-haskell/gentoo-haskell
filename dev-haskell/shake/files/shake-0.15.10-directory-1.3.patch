@@ -1,9 +1,0 @@
-diff --git a/src/General/Process.hs b/src/General/Process.hs
-index 8b992f5..409ce1a 100644
---- a/src/General/Process.hs
-+++ b/src/General/Process.hs
-@@ -159,3 +159,3 @@ process po = do
-                  ,std_out = stdStream outHandle poStdout poStderr, std_err = stdStream outHandle poStderr poStdout}
--        withCreateProcess cp $ \(inh, outh, errh, pid) ->
-+        General.Process.withCreateProcess cp $ \(inh, outh, errh, pid) ->
-             withTimeout poTimeout (abort pid) $ do
