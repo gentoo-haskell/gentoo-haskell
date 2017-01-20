@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -28,7 +28,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.18:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/mtl-compat-0.1:=[profile?] <dev-haskell/mtl-compat-0.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.13:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/sourcemap-0.1:=[profile?] <dev-haskell/sourcemap-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -49,6 +49,10 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-opa-0.13.patch
+)
 
 src_prepare() {
 	default

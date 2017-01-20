@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=app-text/pandoc-1.17.0.3:=[profile?]
 	>=dev-haskell/blaze-html-0.8.1.1:=[profile?]
-	>=dev-haskell/optparse-applicative-0.12.0.0:=[profile?] <dev-haskell/optparse-applicative-0.13.0.0:=[profile?]
+	>=dev-haskell/optparse-applicative-0.12.0.0:=[profile?]
 	>=dev-haskell/optparse-generic-1.1:=[profile?] <dev-haskell/optparse-generic-1.2:=[profile?]
 	>=dev-haskell/pandoc-types-1.16.1:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -35,5 +35,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >=1.2 && <1.3' 'directory >=1.2'
+		'directory >=1.2 && <1.3' 'directory >=1.2' \
+		'optparse-applicative >= 0.12.0.0 && <0.13.0.0' 'optparse-applicative >= 0.12.0.0'
 }
