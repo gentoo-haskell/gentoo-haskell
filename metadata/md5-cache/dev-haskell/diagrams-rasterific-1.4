@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?] >=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?] >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] >=dev-haskell/fontyfruity-0.5:=[profile?] <dev-haskell/fontyfruity-0.6:=[profile?] >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] >=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?] >=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.16:=[profile?] >=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?] >=dev-haskell/rasterific-0.6.1:=[profile?] <dev-haskell/rasterific-0.8:=[profile?] >=dev-lang/ghc-7.6.1:= >=dev-haskell/cabal-1.16.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Rasterific backend for diagrams
+EAPI=6
+HOMEPAGE=http://projects.haskell.org/diagrams/
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?] >=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?] >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] >=dev-haskell/fontyfruity-0.5:=[profile?] <dev-haskell/fontyfruity-0.6:=[profile?] >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?] >=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?] >=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.16:=[profile?] >=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?] >=dev-haskell/rasterific-0.6.1:=[profile?] <dev-haskell/rasterific-0.8:=[profile?] >=dev-lang/ghc-7.6.1:=
+SLOT=0/1.4
+SRC_URI=mirror://hackage/packages/archive/diagrams-rasterific/1.4/diagrams-rasterific-1.4.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	017377e73405d964cd0137088cddb9c3	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=1197d4ef33bc234583f915e22502bff2
