@@ -61,7 +61,9 @@ single haskell ebuild from hackage::
     $ cd    my-ovl
     $ mkdir metadata
     $ echo 'masters = gentoo' > metadata/layout.conf
-    $ echo 'PORTDIR_OVERLAY="'$(pwd) '${PORTDIR_OVERLAY}"' >> /etc/portage/make.conf
+    # register an overlay in /etc/portage/repos.conf:
+    $ echo '[my-ovl]' >> /etc/portage/repos.conf
+    $ echo "location = $(pwd)" >> /etc/portage/repos.conf
     
     # haskell-specific stuff
     $ hackport -p . update

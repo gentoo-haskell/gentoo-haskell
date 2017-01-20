@@ -19,8 +19,7 @@ if [[ "$#" == "0" ||  "$1" == "-h" || "$1" == "--help" ]]; then
     echo "It is recommended that you install an older version of"
     echo "dev-lang/ghc, if it exists for your arch."
     echo
-    echo "You may also need to set PORTDIR_OVERLAY=\"\""
-    echo "and also ACCEPT_KEYWORDS=\"~\${arch}\""
+    echo "You may also need to set ACCEPT_KEYWORDS=\"~\${arch}\""
 
     ghcpath
 
@@ -40,8 +39,6 @@ export CFLAGS="-O2 -pipe"
 #   - disable ghci (ghcmakebinary)
 export USE="-binary doc ghcbootstrap ghcmakebinary llvm ${USE}"
 
-echo "You may also need to set PORTDIR_OVERLAY=\"\""
-echo "and also ACCEPT_KEYWORDS=\"~\${arch}\""
 ghcpath
 echo "running:"
 echo "  USE=\"${USE}\" CFLAGS=\"${CFLAGS}\" emerge --buildpkgonly =ghc-$1"
