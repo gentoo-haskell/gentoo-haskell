@@ -576,6 +576,7 @@ dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like fu
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.4: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/genvalidity 0.2.0.4: Testing utilities for the validity library
 dev-haskell/genvalidity-hspec 0.2.0.5: Standard spec's for GenValidity instances
+dev-haskell/getopt-generics 0.13: Create command line interfaces with ease
 dev-haskell/gf 3.7.1 3.8 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2_rc1 8.0.2_rc2 8.0.2: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
@@ -1146,6 +1147,7 @@ dev-haskell/nats 1.1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
+dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netwire 5.0.2: Functional reactive programming library
 dev-haskell/network 2.6.3.1: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
@@ -1244,6 +1246,7 @@ dev-haskell/persistent-template 2.5.1.6-r2: Type-safe, non-relational, multi-bac
 dev-haskell/pgdl 10.6: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
+dev-haskell/pid1 0.1.0.1: Do signal handling and orphan reaping for Unix PID1 init processes
 dev-haskell/pipes 4.1.9: Compositional pipelines
 dev-haskell/pipes-attoparsec 0.5.1.4: Attoparsec and Pipes integration
 dev-haskell/pipes-binary 0.4.1-r1: Encode and decode binary streams using the pipes and binary libraries
@@ -1613,6 +1616,7 @@ dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
 dev-haskell/text-icu-normalized 0.1.6: Dealing with Strict Text in NFC normalization
 dev-haskell/text-latin1 0.3: Latin-1 (including ASCII) utility functions
 dev-haskell/text-manipulate 0.2.0.1: Case conversion, word boundary manipulation, and textual subjugation
+dev-haskell/text-metrics 0.2.0: Calculate various string metrics efficiently
 dev-haskell/text-printer 0.4: Abstract interface for text builders/printers
 dev-haskell/text-region 0.1.0.1: Marking text regions
 dev-haskell/text-show 3.2.2 3.4 3.4.1.1: Efficient conversion of values into Text
@@ -1678,6 +1682,7 @@ dev-haskell/unamb 0.2.5: Unambiguous choice
 dev-haskell/unbound 0.5.1: Generic support for programming with names and binders
 dev-haskell/unbounded-delays 0.1.0.9: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.3.0: IO without any non-error, synchronous exceptions
+dev-haskell/unicode-transforms 0.2.0: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2: Efficient union and equivalence testing of sets
 dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic operations
