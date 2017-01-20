@@ -1,11 +1,5 @@
 --- a/ghc-mod.cabal.org	2016-07-29 09:18:31.000000000 -0400
 +++ b/ghc-mod.cabal	2016-08-08 23:16:00.171679823 -0400
-@@ -27,8 +27,6 @@
- Category:               GHC, Development
- Cabal-Version:          >= 1.14
- Build-Type:             Custom
+@@ -29,2 +29,0 @@
 -Data-Files:             elisp/Makefile
 -                        elisp/*.el
- Data-Files:             LICENSE COPYING.BSD3 COPYING.AGPL3
- Extra-Source-Files:     ChangeLog
-                         SetupCompat.hs
