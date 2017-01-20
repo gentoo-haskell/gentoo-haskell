@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.17:=[profile?] <dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.12:=[profile?] <dev-haskell/optparse-applicative-0.13:=[profile?]
+	>=dev-haskell/optparse-applicative-0.12:=[profile?]
 	>=dev-haskell/strict-0.3:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-haskell/yaml-0.7:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
@@ -39,5 +39,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson            >= 0.6  && < 0.12' 'aeson            >= 0.6' \
-		'directory        >= 1.1  && < 1.3' 'directory        >= 1.1'
+		'directory        >= 1.1  && < 1.3' 'directory        >= 1.1' \
+		'optparse-applicative >= 0.12  && < 0.13' 'optparse-applicative >= 0.12'
 }
