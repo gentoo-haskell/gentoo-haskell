@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -59,6 +59,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-lens-4.13.patch
 	"${FILESDIR}"/${P}-more-imports.patch
+	"${FILESDIR}"/${P}-oa-0.13.patch
 )
 
 src_configure() {
