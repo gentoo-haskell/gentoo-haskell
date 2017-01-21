@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/file-embed-0.0.8:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
-	>=dev-haskell/hjsonpointer-0.3:=[profile?] <dev-haskell/hjsonpointer-1.1:=[profile?]
+	>=dev-haskell/hjsonpointer-0.3:=[profile?]
 	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/pcre-heavy-1.0:=[profile?] <dev-haskell/pcre-heavy-1.1:=[profile?]
@@ -40,3 +40,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai-app-static
 		dev-haskell/warp )
 "
+
+PATCHES=("${FILESDIR}"/${P}-jp-1.1.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hjsonpointer         >= 0.3    && < 1.1' 'hjsonpointer         >= 0.3' \
+		'directory            >= 1.2.5 && < 1.3' 'directory            >= 1.2.5'
+}
