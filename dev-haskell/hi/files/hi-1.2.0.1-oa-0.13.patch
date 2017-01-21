@@ -1,0 +1,19 @@
+diff --git a/src/Hi/Cli.hs b/src/Hi/Cli.hs
+index fd70fb7..114381d 100644
+--- a/src/Hi/Cli.hs
++++ b/src/Hi/Cli.hs
+@@ -10,3 +10,3 @@ import           Hi.Types
+ 
+-import           Data.Monoid                  (mempty)
++import           Data.Monoid                  (mempty, (<>))
+ import           Data.Version                 (showVersion)
+diff --git a/src/Hi/CommandLineOption.hs b/src/Hi/CommandLineOption.hs
+index 404a93f..f74b7d9 100644
+--- a/src/Hi/CommandLineOption.hs
++++ b/src/Hi/CommandLineOption.hs
+@@ -6,3 +6,4 @@ module Hi.CommandLineOption
+ 
+-import           Options.Applicative
++import           Options.Applicative hiding ((<>))
++import Data.Monoid ((<>))
+ 
