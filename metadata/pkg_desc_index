@@ -761,7 +761,7 @@ dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed sub
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.1.0.1: JSON Pointer library
-dev-haskell/hjsonschema 1.2.0.2: JSON Schema library
+dev-haskell/hjsonschema 1.2.0.2-r1: JSON Schema library
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.0.1 1.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.1: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.0.1 1.1: Core data types, parsers and functionality for the hledger accounting tools
