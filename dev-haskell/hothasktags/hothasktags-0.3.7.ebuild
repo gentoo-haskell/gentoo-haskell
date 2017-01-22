@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -29,3 +29,5 @@ RDEPEND=">=dev-haskell/cpphs-1.11:= <dev-haskell/cpphs-1.21:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+PATCHES=("${FILESDIR}"/${P}-oa-0.13.patch)
