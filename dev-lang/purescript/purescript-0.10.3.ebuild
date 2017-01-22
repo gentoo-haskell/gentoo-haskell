@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -86,6 +86,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.10.2-http-client-0.5.patch
 	"${FILESDIR}"/${PN}-0.10.3-bower-json-1.patch
+	"${FILESDIR}"/${PN}-0.10.3-turtle-1.3.patch
 )
 
 src_prepare() {
