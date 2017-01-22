@@ -933,7 +933,7 @@ dev-haskell/ixset-typed 0.3.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
-dev-haskell/js-jquery 1.12.4: Obtain minified jQuery code
+dev-haskell/js-jquery 1.12.4 3.1.1: Obtain minified jQuery code
 dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/jsaddle-warp 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
@@ -1304,7 +1304,7 @@ dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/process-streaming 0.9.1.2: Streaming interface to system processes
 dev-haskell/product-profunctors 0.7.1.0: product-profunctors
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
-dev-haskell/profiteur 0.4.0.0: Treemap visualiser for GHC prof files
+dev-haskell/profiteur 0.4.1.0: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 4.4.1 5.1.2 5.2: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
