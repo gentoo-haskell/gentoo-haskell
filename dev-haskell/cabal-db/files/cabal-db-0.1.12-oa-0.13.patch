@@ -1,0 +1,11 @@
+diff --git a/Src/Options.hs b/Src/Options.hs
+index 9e6c92b..fac1d77 100644
+--- a/Src/Options.hs
++++ b/Src/Options.hs
+@@ -6,4 +6,4 @@ module Options
+ 
+-import Options.Applicative
+-import Data.Monoid (mconcat)
++import Options.Applicative hiding ((<>))
++import Data.Monoid (mconcat, (<>))
+ 

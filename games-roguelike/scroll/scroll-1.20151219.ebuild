@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -34,6 +34,8 @@ RDEPEND="dev-haskell/case-insensitive:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+PATCHES=("${FILESDIR}"/${P}-oa-0.13.patch)
 
 pkg_setup() {
 	games_pkg_setup

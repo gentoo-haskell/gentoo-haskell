@@ -1,0 +1,8 @@
+diff --git a/src/Angel/Main.hs b/src/Angel/Main.hs
+index e0eba25..8b873b3 100644
+--- a/src/Angel/Main.hs
++++ b/src/Angel/Main.hs
+@@ -43,2 +43,3 @@ import Angel.Job (pollStale,
+                   syncSupervisors)
++import Data.Monoid
+ 
