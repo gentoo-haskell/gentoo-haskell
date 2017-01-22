@@ -576,7 +576,7 @@ dev-haskell/generics-sop 0.2.3.0: Generic Programming using True Sums of Product
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.4: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/genvalidity 0.2.0.4 0.3.0.0: Testing utilities for the validity library
-dev-haskell/genvalidity-hspec 0.2.0.5: Standard spec's for GenValidity instances
+dev-haskell/genvalidity-hspec 0.2.0.5 0.3.0.0: Standard spec's for GenValidity instances
 dev-haskell/genvalidity-path 0.1.0.0: GenValidity support for Path
 dev-haskell/genvalidity-text 0.2.0.0: GenValidity support for Text
 dev-haskell/getopt-generics 0.13: Create command line interfaces with ease
