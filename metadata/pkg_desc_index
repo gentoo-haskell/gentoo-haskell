@@ -97,8 +97,8 @@ dev-haskell/amazonka-stepfunctions 1.4.5: Amazon Step Functions SDK
 dev-haskell/amazonka-storagegateway 1.4.5: Amazon Storage Gateway SDK
 dev-haskell/amazonka-support 1.4.5: Amazon Support SDK
 dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-suites
-dev-haskell/amqp 0.14.0: Client library for AMQP servers (currently only RabbitMQ)
-dev-haskell/amqp-worker 0.2.3: High level functions for working with message queues
+dev-haskell/amqp 0.14.1: Client library for AMQP servers (currently only RabbitMQ)
+dev-haskell/amqp-worker 0.2.4: High level functions for working with message queues
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
@@ -106,7 +106,7 @@ dev-haskell/ansi-terminal 0.6.2.3: Simple ANSI terminal support, with Windows co
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
-dev-haskell/apply-refact 0.2.0.0-r1 0.3.0.0: Perform refactorings specified by the refact library
+dev-haskell/apply-refact 0.3.0.1: Perform refactorings specified by the refact library
 dev-haskell/argparser 0.3.4: Command line parsing framework for console applications
 dev-haskell/arithmoi 0.4.3.0: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
 dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
@@ -153,7 +153,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
-dev-haskell/binary-orphans 0.1.5.2: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.6.0: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
@@ -264,7 +264,7 @@ dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
 dev-haskell/classy-prelude-yesod 1.1.0: Provide a classy prelude including common Yesod functionality
-dev-haskell/clay 0.12: CSS preprocessor as embedded Haskell
+dev-haskell/clay 0.12.1: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.1: media plugin for clckwrks
@@ -767,7 +767,7 @@ dev-haskell/hjsonschema 1.2.0.2-r1: JSON Schema library
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.0.1 1.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.1: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.0.1 1.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 0.27.5-r1 1.0.4 1.0.5 1.1: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-ui 0.27.5-r1 1.0.4 1.0.5 1.1 1.1.1: Curses-style user interface for the hledger accounting tool
 dev-haskell/hledger-web 0.25.1 0.26 0.27 1.0.1 1.1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
@@ -900,7 +900,7 @@ dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
 dev-haskell/ini 0.3.5: Quick and easy configuration files in the INI format
-dev-haskell/inline-c 0.5.6.0: Write Haskell source files including C code inline. No FFI required
+dev-haskell/inline-c 0.5.6.1: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
 dev-haskell/integer-logarithms 1: Integer logarithms
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
@@ -1009,7 +1009,7 @@ dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
 dev-haskell/liquidhaskell 0.6.0.0 9999: Liquid Types for Haskell
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/list-t 1: ListT done right
-dev-haskell/listlike 4.2.1 4.4 4.5: Generic support for list-like structures
+dev-haskell/listlike 4.2.1 4.4 4.5.1: Generic support for list-like structures
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
 dev-haskell/llvm-general 3.5.1.2: General purpose LLVM bindings
 dev-haskell/llvm-general-pure 3.3.12.1 3.4.3.1 3.4.4.0 3.5.1.0: Pure Haskell LLVM functionality (no FFI)
@@ -1461,7 +1461,7 @@ dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
 dev-haskell/sibe 0.2.0.4: Machine Learning algorithms
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
-dev-haskell/simple-log 0.5.0: Simple log for Haskell
+dev-haskell/simple-log 0.5.1: Simple log for Haskell
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
 dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing variables
 dev-haskell/simple-sendfile 0.2.25: Cross platform library for the sendfile system call
@@ -1810,7 +1810,7 @@ dev-haskell/x509-store 1.5.0 1.6.2: X.509 collection accessing and storing metho
 dev-haskell/x509-system 1.5.0 1.6.4: Handle per-operating-system X.509 accessors and storage
 dev-haskell/x509-validation 1.5.2 1.6.5: X.509 Certificate and CRL validation
 dev-haskell/xattr 0.6.2: Haskell extended file attributes interface
-dev-haskell/xcb-types 0.7.1: Parses XML files used by the XCB project
+dev-haskell/xcb-types 0.8.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
 dev-haskell/xdot 0.3.0.1: Parse Graphviz xdot files and interactively view them using GTK and Cairo
@@ -1935,7 +1935,7 @@ games-puzzle/h2048 0.2.0.1: a haskell implementation of Game 2048
 games-puzzle/intricacy 0.6.1 0.6.2: A game of competitive puzzle-design
 games-puzzle/raincat 1.1.1.3: A puzzle game written in Haskell with a cat in lead role
 games-roguelike/mazesofmonad 1.0.9-r2: Console-based roguelike Role Playing Game similar to nethack
-games-roguelike/scroll 1.20151219: scroll(6), a roguelike game
+games-roguelike/scroll 1.20170122: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
