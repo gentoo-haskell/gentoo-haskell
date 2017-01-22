@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
 DEPEND=>=dev-haskell/configurator-0.1:= dev-haskell/mtl:= dev-haskell/old-locale:= dev-haskell/optparse-applicative:= >=dev-haskell/stm-2.0:= >=dev-haskell/text-0.11:= dev-haskell/transformers:= >=dev-haskell/unordered-containers-0.1.4:= >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/tasty dev-haskell/tasty-hunit dev-haskell/tasty-quickcheck )
 DESCRIPTION=Process management and supervision daemon
-EAPI=5
+EAPI=6
 HOMEPAGE=https://github.com/MichaelXavier/Angel
 IUSE=doc hoogle hscolour profile test
 KEYWORDS=~amd64 ~x86
@@ -12,4 +12,4 @@ SLOT=0
 SRC_URI=mirror://hackage/packages/archive/angel/0.6.2/angel-0.6.2.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=8a6b52d6e3aceef4778c9082bdf9996b
+_md5_=dab8156bdd224ba13c371692ac801854
