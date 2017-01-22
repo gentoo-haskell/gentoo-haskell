@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,6 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-1.1:=
 	>=dev-haskell/attoparsec-0.10:= <dev-haskell/attoparsec-0.14:=
+	>=dev-haskell/js-jquery-3.1:= <dev-haskell/js-jquery-3.2:=
 	>=dev-haskell/text-0.11:= <dev-haskell/text-1.3:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
 	>=dev-haskell/vector-0.10:= <dev-haskell/vector-0.12:=
