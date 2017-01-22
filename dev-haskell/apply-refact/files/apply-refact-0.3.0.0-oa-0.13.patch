@@ -1,8 +1,0 @@
-diff --git a/src/Main.hs b/src/Main.hs
-index eaf508c..6af170f 100644
---- a/src/Main.hs
-+++ b/src/Main.hs
-@@ -28,2 +28,3 @@ import Options.Applicative
- import Data.Maybe
-+import Data.Monoid
- import Control.Monad.Trans.Maybe
