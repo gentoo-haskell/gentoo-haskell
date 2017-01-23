@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library parses and write &lt;http://okmij.org/ftp/Scheme/SXML.html SXML&gt; files, using datatypes from the &lt;https://hackage.haskell.org/package/xml-types xml-types&gt; package to represent their structure. It currently only features a DOM-style parser.
+	</longdescription>
+</pkgmetadata>
