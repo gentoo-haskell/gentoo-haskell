@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit readme.gentoo-r1 user
+inherit autotools flag-o-matic readme.gentoo-r1 user
 
 DESCRIPTION="A purely functional package manager"
 HOMEPAGE="https://nixos.org/nix"
@@ -22,7 +22,7 @@ RDEPEND="
 	dev-libs/openssl:0=
 	net-misc/curl
 	sys-libs/zlib
-	gc? ( dev-libs/boehm-gc )
+	gc? ( dev-libs/boehm-gc[cxx] )
 	doc? ( dev-libs/libxml2
 		dev-libs/libxslt
 		app-text/docbook-xsl-stylesheets
@@ -42,6 +42,8 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-systemd.patch
 	"${FILESDIR}"/${P}-per-user.patch
+	"${FILESDIR}"/${P}-respect-CXXFLAGS.patch
+	"${FILESDIR}"/${P}-respect-LDFLAGS.patch
 )
 
 DISABLE_AUTOFORMATTING=yes
@@ -74,10 +76,24 @@ pkg_setup() {
 	done
 }
 
+src_prepare() {
+	default
+
+	eautoreconf
+}
+
 src_configure() {
 	econf \
 		--localstatedir="${EPREFIX}"/nix/var \
 		$(use_enable gc)
+}
+
+src_compile() {
+	local make_vars=(
+		OPTIMIZE=0 # disable hardcoded -O3
+		V=1 # verbose build
+	)
+	emake "${make_vars[@]}"
 }
 
 src_install() {
