@@ -25,6 +25,7 @@ RDEPEND="dev-haskell/aeson:=
 	dev-haskell/bloomfilter:=
 	dev-haskell/byteable:=
 	dev-haskell/case-insensitive:=
+	dev-haskell/crypto-api:=
 	dev-haskell/data-default:=
 	dev-haskell/disk-free-space:=
 	dev-haskell/dlist:=
@@ -85,7 +86,6 @@ RDEPEND="dev-haskell/aeson:=
 	torrentparser? ( >=dev-haskell/torrent-10000.0.0:= )
 	webapp? ( dev-haskell/blaze-builder:=
 			dev-haskell/clientsession:=
-			dev-haskell/crypto-api:=
 			>=dev-haskell/path-pieces-0.1.4:=
 			>=dev-haskell/shakespeare-2.0.0:=
 			dev-haskell/wai:=
