@@ -51,6 +51,7 @@ dev-haskell/bindings-glfw:exposenative - Whether or not to use the native access
 dev-haskell/biosff:fclip - Build the fclip executable.
 dev-haskell/biosff:flower - Build the flower executable.
 dev-haskell/biosff:frecover - Build the frecover executable.
+dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
 dev-haskell/blaze-builder-enumerator:newbuilder - use bytestring-builder instead of blaze-builder-0.3
 dev-haskell/bound:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.

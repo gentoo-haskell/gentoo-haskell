@@ -174,6 +174,8 @@ dev-haskell/bitarray 0.0.1.1: Mutable and immutable bit arrays
 dev-haskell/bitmap 0.0.2: A library for handling and manipulating bitmaps (rectangular pixel arrays)
 dev-haskell/bits-atomic 0.1.3-r1: Atomic bit operations on memory locations for low-level synchronization
 dev-haskell/bitset 1.4.8: A space-efficient set data structure
+dev-haskell/bitstring 0.0.0: Lazy bit strings
+dev-haskell/bitstringrandommonad 0.1.1.2: A library which turns a bytestring into a random monad.
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 0.1.1.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
@@ -835,6 +837,7 @@ dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
 dev-haskell/hspec-meta 2.2.1: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.4.1: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.6.5 0.6.6: Experimental Hspec support for testing WAI applications
+dev-haskell/hspecvariant 0.1.0.1: Spec for testing properties for variant types
 dev-haskell/hspread 0.3.3-r1: A client library for the spread toolkit
 dev-haskell/hsql 1.8.2: Database access from Haskell
 dev-haskell/hsql-mysql 1.8.2 1.8.3: MySQL driver for HSQL
@@ -1334,6 +1337,7 @@ dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type c
 dev-haskell/quickcheck-safe 0.1.0.1-r1: Safe reimplementation of QuickCheck's core
 dev-haskell/quickcheck-simple 0.1.0.1: Test properties and default-mains for QuickCheck
 dev-haskell/quickcheck-unicode 1.0.0.1: Generator and shrink functions for testing Unicode-related software
+dev-haskell/quickcheckvariant 0.2.0.0: Generator of "valid" and "invalid" data in a type class
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
 dev-haskell/random-fu 0.2.7.0: Random number generation
@@ -1554,6 +1558,7 @@ dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.6.0.1: Fonts from the SVG-Font format
+dev-haskell/sxml 0.1.0.0: A SXML-parser
 dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
