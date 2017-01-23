@@ -22,7 +22,7 @@ RDEPEND="
 	dev-libs/openssl:0=
 	net-misc/curl
 	sys-libs/zlib
-	gc? ( dev-libs/boehm-gc )
+	gc? ( dev-libs/boehm-gc[cxx] )
 	doc? ( dev-libs/libxml2
 		dev-libs/libxslt
 		app-text/docbook-xsl-stylesheets
