@@ -246,6 +246,7 @@ dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented P
 dev-haskell/charsetdetect-ae 1.1.0.2: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: Cairo backend for Charts
+dev-haskell/chart-diagrams 1.8.1: Diagrams backend for Charts
 dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8 1.8.1: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.2: For testing partial and infinite values
@@ -758,6 +759,7 @@ dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.6.3: Syntax highlighting
 dev-haskell/hinotify 0.3.9: Haskell binding to inotify
 dev-haskell/hint 0.4.2.3 0.5.2 0.6.0 9999: Runtime Haskell interpreter (GHC API wrapper)
+dev-haskell/hip 1.5.0.0: Haskell Image Processing (HIP) Library
 dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
 dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
@@ -1154,6 +1156,7 @@ dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
+dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.2: Functional reactive programming library
 dev-haskell/network 2.6.3.1: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
@@ -1907,7 +1910,7 @@ dev-lang/ott 0.25: Ott is a tool for writing definitions of programming language
 dev-lang/purescript 0.10.2-r1 0.10.3: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
-dev-libs/libsass 3.3.6: A C/C++ implementation of a Sass compiler
+dev-libs/libsass 3.4.3: A C/C++ implementation of a Sass compiler
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.1: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4: Draw sequence diagrams of D-Bus traffic
