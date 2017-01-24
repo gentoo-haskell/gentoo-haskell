@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		
+		Haskell Image Processing (HIP) Library provides an easy to use interface with a whole variaty of image manipulation capabilities.
+		
+		Processing can be done sequentially as well as in parallel, with an inherited fusion capabily, all through &lt;https://hackage.haskell.org/package/repa repa&gt; and &lt;https://hackage.haskell.org/package/vector vector&gt; packages. It is highly extendable, with an ability to add various color spaces or provide implementations for underlying array like custom data structures.
+		
+		It is capable of reading and writing a number of popular image formats by using &lt;https://hackage.haskell.org/package/JuicyPixels JuciyPixels&gt; and &lt;https://hackage.haskell.org/package/netpbm netpbm&gt; packages. Being a pure Haskell library it does not require any external programs, although it can display images using a program of your choice.
+	</longdescription>
+</pkgmetadata>
