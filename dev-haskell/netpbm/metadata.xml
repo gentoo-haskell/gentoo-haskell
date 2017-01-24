@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package contains pure Haskell parsers for the netpbm image formats: PBM, PGM and PPM, for both ASCII and binary encodings.
+		
+		All netpbm image formats are implemented (P1 - P6).
+		
+		The current implementation parses PPM images at around 10 MB/s on a Core i5-2520M.
+		
+		CHANGELOG
+		
+		Version 1.0.1
+		
+		* Added required Vector imports necessary for deriving Unbox instances.
+		
+		Version 1.0.0
+		
+		* Use storable instead of unboxed vectors to allow easier integration with Ptr based APIs.
+	</longdescription>
+</pkgmetadata>
