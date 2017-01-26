@@ -739,7 +739,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.1.9-r1: Jekyll in Haskell (feat. LaTeX)
-dev-haskell/hedis 0.6.10: Client library for the Redis datastore: supports full command set, pipelining
+dev-haskell/hedis 0.6.10 0.9.6: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.9: Here docs & interpolated strings via quasiquotation
@@ -1224,6 +1224,7 @@ dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.4: Parsing combinators
+dev-haskell/partial-handler 1.0.2: A composable exception handler
 dev-haskell/path 0.5.11: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.2.2: Interface to directory package for users of path
@@ -1424,6 +1425,7 @@ dev-haskell/sandi 0.3.6 0.4.0: Data encoding library
 dev-haskell/say 0.1.0.0: Initial project template from stack
 dev-haskell/sbv 5.13: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6 0.7: Formally prove properties of Haskell programs using SBV/SMT
+dev-haskell/scanner 0.2: Fast non-backtracking incremental combinator parsing for bytestrings
 dev-haskell/scientific 0.3.4.10: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.0-r3: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
@@ -1478,6 +1480,7 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
+dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
