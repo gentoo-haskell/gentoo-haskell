@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="dev">enable this for local development -Werror and profiling options</flag
-	<use>
 	<longdescription>
 		Redis is an open source, advanced key-value store. It is often referred to
 		as a data structure server since keys can contain strings, hashes, lists,
