@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		If you have ever had to compose an exception handler for exceptions of multiple types,
+		you know how frustraiting it can get.
+		This library approaches this issue by providing a composable exception handler type,
+		which has instances of the standard classes.
+		
+		Composability means that you can define custom partial handlers and
+		reuse them by composing other handlers from them.
+		
+		Here is an example of a composable partial handler,
+		which only defines what to do in case of a ThreadKilled exception
+		(the code uses the LambdaCase extension):
+		
+		&gt;ignoreThreadKilled :: PartialHandler ()
+		&gt;ignoreThreadKilled =
+		&gt;  typed $ \case
+		&gt;    ThreadKilled -&gt; Just $ return ()
+		&gt;    _ -&gt; Nothing
+		
+		Here&#39;s how you can construct a handler of type @SomeException -&gt; IO ()@
+		using this library:
+		
+		&gt;totalizeRethrowing $
+		&gt;  ignoreThreadKilled &lt;&gt;
+		&gt;  onAlreadyExists (putStrLn &quot;Already exists&quot;)
+		
+		and here is how you would do it traditionally (with the MultiWayIf extension):
+		
+		&gt;\e -&gt; if
+		&gt;  | Just ThreadKilled &lt;- fromException e -&gt;
+		&gt;      return ()
+		&gt;  | Just e&#39; &lt;- fromException e, isAlreadyExistsError e&#39; -&gt;
+		&gt;      putStrLn &quot;Already exists&quot;
+		&gt;  | otherwise -&gt;
+		&gt;      throwIO e
+		
+		Putting all the syntactic trickery to make it shorter aside,
+		this handler is a monolith block of code.
+		Unlike with PartialHandler you can neither decompose it into simpler ones,
+		nor compose it with other handlers to form a more complex one.
+	</longdescription>
+</pkgmetadata>
