@@ -134,6 +134,7 @@ dev-haskell/ghcjs-dom:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript o
 dev-haskell/github-backup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
+dev-haskell/glirc:exportcapi - Export C functions used by the extension API (incompatible with GHCi)
 dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
 dev-haskell/gloss:glfw - Enable the GLFW backend.
 dev-haskell/gloss:glut - Enable the GLUT backend.
