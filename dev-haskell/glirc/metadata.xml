@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="exportcapi">Export C functions used by the extension API (incompatible with GHCi)</flag>
+	</use>
+	<longdescription>
+		Console IRC client
+		
+		glirc is a console IRC client with an emphasis on providing
+		dynamic views into the model of your IRC connections.
+		
+		&lt;https://github.com/glguy/irc-core/wiki Documentation Wiki&gt;
+	</longdescription>
+</pkgmetadata>
