@@ -18,12 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/brick-0.13:= <dev-haskell/brick-0.17:=
+RDEPEND=">=dev-haskell/brick-0.13:= <dev-haskell/brick-0.18:=
 	dev-haskell/cabal:=
 	dev-haskell/conduit:=
 	dev-haskell/conduit-extra:=
 	>=dev-haskell/configurator-0.3:=
-	dev-haskell/data-default:=
 	>=dev-haskell/directory-listing-webpage-parser-0.1.1.0:=
 	dev-haskell/http-conduit:=
 	dev-haskell/http-types:=
