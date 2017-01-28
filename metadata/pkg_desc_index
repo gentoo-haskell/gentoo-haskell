@@ -827,7 +827,7 @@ dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the impor
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
-dev-haskell/hsopenssl 0.11.3.2: Partial OpenSSL binding for Haskell
+dev-haskell/hsopenssl 0.11.4: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.3: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.2.7 0.2.8: A SPARQL query generator and DSL, and a client to query a SPARQL server
@@ -909,7 +909,7 @@ dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonad
 dev-haskell/ini 0.3.5: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
-dev-haskell/integer-logarithms 1: Integer logarithms
+dev-haskell/integer-logarithms 1.0.1: Integer logarithms
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.1.4: Efficient hash-consing for arbitrary data types
@@ -1545,7 +1545,7 @@ dev-haskell/strafunski-strategylib 5.0.0.10: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/stream-fusion 0.1.2.5: Faster Haskell lists using stream fusion
-dev-haskell/streaming-commons 0.1.16: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.1.17: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strict-concurrency 0.2.4.1: Strict concurrency abstractions
@@ -1595,7 +1595,7 @@ dev-haskell/tasty 0.11.1: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.4: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.4: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.1.1: Golden tests support for tasty
-dev-haskell/tasty-hspec 1.1.3: Hspec support for the Tasty test framework
+dev-haskell/tasty-hspec 1.1.3.1: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.9.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-quickcheck 0.8.4: QuickCheck support for the Tasty test framework

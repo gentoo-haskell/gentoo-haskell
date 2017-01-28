@@ -7,8 +7,8 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=dev-haskell/async:=[profile?] >=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?] >=dev-haskell/network-2.4.0.0:=[profile?] dev-haskell/random:=[profile?] dev-haskell/stm:=[profile?] dev-haskell/text:=[profile?] dev-haskell/zlib:=[profile?] >=dev-lang/ghc-7.8.2:=
-SLOT=0/0.1.16
-SRC_URI=mirror://hackage/packages/archive/streaming-commons/0.1.16/streaming-commons-0.1.16.tar.gz
+SLOT=0/0.1.17
+SRC_URI=mirror://hackage/packages/archive/streaming-commons/0.1.17/streaming-commons-0.1.17.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=7cf56d476e032455f6237ee6a3b9cd3d
+_md5_=76e14d7b29dcc7357973fc1982ea227e
