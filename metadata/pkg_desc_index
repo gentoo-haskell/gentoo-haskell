@@ -864,7 +864,7 @@ dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.3.4: A library for client-side HTTP
+dev-haskell/http 4000.3.5: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.5: An HTTP client engine
@@ -1076,8 +1076,8 @@ dev-haskell/mfsolve 0.3.2.0: Equation solver and calculator a la metafont
 dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0 0.1.10.0: microlens support for Reader/Writer/State from mtl
-dev-haskell/microlens-platform 0.3.2.0 0.3.4.0 0.3.7.0: Feature-complete microlens
-dev-haskell/microlens-th 0.4.0.0 0.4.1.0: Automatic generation of record lenses for microlens
+dev-haskell/microlens-platform 0.3.2.0 0.3.4.0 0.3.7.0 0.3.7.1: Feature-complete microlens
+dev-haskell/microlens-th 0.4.0.0 0.4.1.0 0.4.1.1: Automatic generation of record lenses for microlens
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.1: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
