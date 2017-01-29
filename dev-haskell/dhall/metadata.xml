@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Dhall is an explicitly typed configuration language that is not Turing
+		complete.  Despite being Turing incomplete, Dhall is a real programming
+		language with a type-checker and evaluator.
+		
+		Use this library to parse, type-check, evaluate, and pretty-print the Dhall
+		configuration language.  This package also includes an executable which
+		type-checks a Dhall file and reduces the file to a fully evaluated normal
+		form.
+		
+		Read &quot;Dhall.Tutorial&quot; to learn how to use this library
+	</longdescription>
+</pkgmetadata>
