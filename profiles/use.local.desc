@@ -183,6 +183,7 @@ dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the syst
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hmatrix-gsl-stats:mkl - Link with Intel's MKL optimized libraries.
+dev-haskell/hnix:parsec - use dev-haskell/parsec instead of dev-haskell/trifecta
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:gtk3 - Use GTK3 rather than GTK2
