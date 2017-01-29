@@ -24,16 +24,16 @@ index 7c5bc9e1b3..4297ed449e 100644
  	chmod +x libffi/ln
  
 +	# fix libffi build failure on alpha
-+	( cd libffi/build && "$(PATCH_CMD)" -p0 < ../libffi-3.2.1-complex_alpha.diff; )
++	( cd libffi/build && "$(PATCH_CMD)" -p0 < ../libffi.3.2.1-complex_alpha.diff; )
 +
  	# We need to use -MMD rather than -MD, as otherwise we get paths
  	# like c:/... in the dependency files on Windows, and the extra
  	# colons break make
-diff --git a/libffi/libffi-3.2.1-complex_alpha.diff b/libffi/libffi-3.2.1-complex_alpha.diff
+diff --git a/libffi/libffi.3.2.1-complex_alpha.diff b/libffi/libffi.3.2.1-complex_alpha.diff
 new file mode 100644
 index 0000000000..0d6e0bc290
 --- /dev/null
-+++ b/libffi/libffi-3.2.1-complex_alpha.diff
++++ b/libffi/libffi.3.2.1-complex_alpha.diff
 @@ -0,0 +1,20 @@
 +--- src/alpha/osf.S.orig	2015-01-16 10:46:15.000000000 +0100
 ++++ src/alpha/osf.S	2015-01-16 10:46:24.000000000 +0100
