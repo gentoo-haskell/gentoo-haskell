@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Performance-oriented time library for haskell. The main differences
+		between this and &quot;time&quot; are that this library:
+		
+		* Uses machine integers where possible. This means that some time-related
+		arithmetic should be faster. It also means that the types are incapable
+		of representing times that are very far in the future or the past.
+		
+		* Provides &quot;ToJSON&quot; and &quot;FromJSON&quot; instances for json serialization.
+		
+		* Provides &quot;Unbox&quot; instances for working with unboxed vectors.
+		
+		* Uses normal non-overloaded haskell functions for encoding and decoding time. It provides
+		&quot;attoparsec&quot; parsers for both &quot;Text&quot; and &quot;ByteString&quot;. Additionally, it
+		provides functions for encoding time as &quot;Text&quot; or &quot;ByteString&quot;. The &quot;time&quot;
+		library uses accomplishes these with the &quot;Data.Time.Format&quot; module,
+		which uses UNIX-style datetime format strings. It is expected that
+		the approach taken in this library is faster and catches more mistakes
+		at compile time at the cost of being less expressive.
+		
+		* Only provides nanosecond resolution instead of picosecond resolution.
+	</longdescription>
+</pkgmetadata>
