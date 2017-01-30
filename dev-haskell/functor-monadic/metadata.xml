@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Monad&#39;s bind (&gt;&gt;=, &gt;=&gt;) allows the infix chaining of monadic
+		functions, but no analogues exist for functors. This package
+		provides a handful of handy operators that ease the piping
+		together a functor- and monad-level functions.
+	</longdescription>
+</pkgmetadata>
