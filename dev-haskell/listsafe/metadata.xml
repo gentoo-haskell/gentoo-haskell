@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Data.List includes a handful of partial functions that throw
+		uncatchable exceptions when given empty lists. This package
+		provides safe alternatives for such functions based on
+		MonadThrow which can provide a variety of failure
+		cases: Nothing, IOException, Left, etc.
+	</longdescription>
+</pkgmetadata>
