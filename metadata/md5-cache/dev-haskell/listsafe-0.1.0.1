@@ -1,13 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
-DESCRIPTION=Primitive memory-related operations
+DEPEND=>=dev-haskell/exceptions-0.4:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Safe wrappers for partial list functions, supporting MonadThrow
 EAPI=6
-HOMEPAGE=https://github.com/haskell/primitive
-IUSE=doc hscolour hoogle profile test
-LICENSE=BSD
-RDEPEND=>=dev-lang/ghc-7.8.2:=
-SLOT=0/0.6.2.0
-SRC_URI=mirror://hackage/packages/archive/primitive/0.6.2.0/primitive-0.6.2.0.tar.gz
+HOMEPAGE=https://github.com/ombocomp/listsafe
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=>=dev-haskell/exceptions-0.4:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.1.0.1
+SRC_URI=mirror://hackage/packages/archive/listsafe/0.1.0.1/listsafe-0.1.0.1.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=2d1044ff4e26bed4525bac93fb3c8f28
+_md5_=e59882ce9d5ff1781f405b81b771cf0c

@@ -222,6 +222,10 @@ dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
+dev-haskell/itemfield:base49 - base 4.8 or later
+dev-haskell/itemfield:brick015 - for Brick version 0.15.x
+dev-haskell/itemfield:brick016 - for Brick version 0.16 or later
+dev-haskell/itemfield:brick017 - for Brick version 0.17 or later
 dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jsaddle:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/jsaddle:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript output
@@ -267,6 +271,7 @@ dev-haskell/nats:hashable - enable hashable instances
 dev-haskell/nats:template-haskell - enable template_haskell
 dev-haskell/network-data:small_base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/onrmt:brick017 - for Brick version 0.17 or later
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
@@ -330,6 +335,7 @@ dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
 dev-haskell/sr-extra:network-uri - use network-uri package
+dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:disable-git-info - Disable compile-time inclusion of current git info.
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.

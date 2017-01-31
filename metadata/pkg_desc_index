@@ -198,7 +198,7 @@ dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
-dev-haskell/brick 0.5.1 0.14: A declarative terminal user interface library
+dev-haskell/brick 0.5.1 0.14 0.16 0.17: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/btrfs 0.1.2.2: Bindings to the btrfs API
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
@@ -254,6 +254,7 @@ dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
 dev-haskell/checkers 0.4.6: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5-r1: QuickCheck support for the Chell testing library
+dev-haskell/chronos 0.4: A performant time library
 dev-haskell/chunked-data 0.2.0 0.3.0: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.3: AES and common modes using AES-NI when available
@@ -570,6 +571,7 @@ dev-haskell/fst 0.10.0.1: Finite state transducers
 dev-haskell/ftgl 1.333 2.1: Portable TrueType font rendering for OpenGL using the Freetype2 library
 dev-haskell/ftphs 1.0.9.1: FTP Client and Server Library
 dev-haskell/funcmp 1.8: Functional MetaPost
+dev-haskell/functor-monadic 0.1.0.3: Monad-style combinators for functors
 dev-haskell/gamma 0.9.0.2: Gamma function and related functions
 dev-haskell/gasp 1.0.1.0: A framework of algebraic classes
 dev-haskell/gconf 0.13.0.3 0.13.1.0: Binding to the GNOME configuration database system
@@ -937,6 +939,7 @@ dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.7: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
+dev-haskell/itemfield 1.2.4.2: A brick Widget for selectable summary of many elements on a terminal
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.7: Efficient relational queries on Haskell sets
@@ -1021,6 +1024,7 @@ dev-haskell/liquidhaskell 0.6.0.0 9999: Liquid Types for Haskell
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/list-t 1: ListT done right
 dev-haskell/listlike 4.2.1 4.4 4.5.1: Generic support for list-like structures
+dev-haskell/listsafe 0.1.0.1: Safe wrappers for partial list functions, supporting MonadThrow
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
 dev-haskell/llvm-general 3.5.1.2: General purpose LLVM bindings
 dev-haskell/llvm-general-pure 3.3.12.1 3.4.3.1 3.4.4.0 3.5.1.0: Pure Haskell LLVM functionality (no FFI)
@@ -1202,6 +1206,7 @@ dev-haskell/oeis 0.3.8: Interface to the Online Encyclopedia of Integer Sequence
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/onetuple 0.2.1: Singleton Tuple
+dev-haskell/onrmt 1.0.0.0: Text UI library for performing parallel remote SSH operations
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
 dev-haskell/opaleye 0.5.2.2: An SQL-generating DSL targeting PostgreSQL
 dev-haskell/open-browser 0.2.1.0-r1: Open a web browser from Haskell
@@ -1405,6 +1410,7 @@ dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1 3.4.1.2: High performance
 dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
+dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
@@ -1521,6 +1527,7 @@ dev-haskell/sqlite-simple 0.4.12.1: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.0: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
+dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 1.1.2-r6 1.3.2 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
@@ -1767,7 +1774,7 @@ dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading l
 dev-haskell/vinyl-utils 0.3.0.0: Utilities for vinyl
 dev-haskell/void 0.7.1: A Haskell 98 logically uninhabited data type
 dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.1: Binding to the VTE library
-dev-haskell/vty 5.11.3 5.12: A simple terminal UI library
+dev-haskell/vty 5.11.3 5.12 5.15: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.1.1: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.0.8 3.1.2 3.1.3: File/CGI/Rev Proxy App of WAI
