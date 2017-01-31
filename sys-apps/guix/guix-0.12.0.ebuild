@@ -37,6 +37,8 @@ PATCHES=(
 DISABLE_AUTOFORMATTING=yes
 DOC_CONTENTS="Quick start user guide on Gentoo:
 
+[as root] allow binary substitution to be downloaded (optional)
+	# guix archive --authorize < /usr/share/guix/hydra.gnu.org.pub
 [as root] enable guix-daemon service:
 	[systemd] # systemctl enable guix-daemon
 	[openrc]  # rc-update add guix-daemon
