@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="base49">base 4.8 or later</flag>
+		<flag name="brick015">for Brick version 0.15.x</flag>
+		<flag name="brick016">for Brick version 0.16 or later</flag>
+		<flag name="brick017">for Brick version 0.17 or later</flag>
+	</use>
+	<longdescription>
+		This module provides a brick Widget that can be used with the brick
+		package to handle situations where there are lots of items to
+		represent to the user along with a corresponding state for each
+		item.  One example of where the itemfield would be used is if there
+		are too many elements to reasonably show in a List widget, if those
+		elements are divided into groups, and if some status needs to be
+		shown for each element.
+		
+		In addition, the user can use the cursor keys and space bar to mark
+		one or more items (presumably so other code can get the list of
+		marked elements and perform a state-changing operation).
+		
+		There are two example programs built when the examples flag is True
+		(the default): bookcase and workreport.  Running these applications
+		should give a better idea of what the itemfield widget is and how it
+		can be used.
+	</longdescription>
+</pkgmetadata>

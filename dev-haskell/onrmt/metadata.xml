@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="brick017">for Brick version 0.17 or later</flag>
+	</use>
+	<longdescription>
+		This library provides the ability to coordinate the remote ssh
+		execution of commands on target nodes and display the results in a
+		console interface.  The console interface can either be a cmdline
+		(CLI) or a text interface (TUI), based on brick and vty; support is
+		provided for extension to other UI components as well.
+		
+		Almost all of the functionality is provided in the library itself;
+		it just needs an executable that will invoke it with the set of
+		remote nodes.  See the &#39;GetRemotes.hs&#39; file for an example: remotes
+		can be of any type that is an instance of @WorkEntry@ with an
+		associated @WorkGroup@ grouping.
+		
+		There is an onrmttest executable built that showcases the
+		functionality using ssh operations to localhost, and a
+		corresponding onrmttestline executable that provides a simple CLI.
+	</longdescription>
+</pkgmetadata>
