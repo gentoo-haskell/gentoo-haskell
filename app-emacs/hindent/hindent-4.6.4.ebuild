@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="emacs vim"
+IUSE="emacs"
 
 RESTRICT=test # missing tests
 
@@ -32,7 +32,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hspec )
 	emacs? ( virtual/emacs )
-	vim? ( || ( app-editors/vim app-editors/gvim ) )
 "
 SITEFILE="50${PN}-gentoo.el"
 
@@ -47,18 +46,16 @@ src_compile() {
 
 src_install() {
 	haskell-cabal_src_install
+
 	if use emacs; then
 		elisp-install "${PN}" elisp/*.{el,elc}
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
-	fi
-	if use vim; then
-		insinto /usr/share/vim/vimfiles/plugin
-		doins vim/${PN}.vim
 	fi
 }
 
 pkg_postinst() {
 	haskell-cabal_pkg_postinst
+
 	if use emacs; then
 		elisp-site-regen
 	fi
@@ -66,6 +63,7 @@ pkg_postinst() {
 
 pkg_postrm() {
 	haskell-cabal_pkg_postrm
+
 	if use emacs; then
 		elisp-site-regen
 	fi
