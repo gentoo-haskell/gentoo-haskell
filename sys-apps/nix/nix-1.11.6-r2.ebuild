@@ -67,12 +67,12 @@ Next steps:
 "
 
 pkg_setup() {
-	enewgroup nixbld 30000
+	enewgroup nixbld
 	for i in {1..10}; do
 		# we list 'nixbld' twice to
 		# both assign a primary group for user
 		# and add an user to /etc/group
-		enewuser nixbld${i} $((30000 +$i)) -1 /var/empty nixbld,nixbld
+		enewuser nixbld${i} -1 -1 /var/empty nixbld,nixbld
 	done
 }
 
