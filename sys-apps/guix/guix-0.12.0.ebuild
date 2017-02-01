@@ -59,7 +59,7 @@ pkg_setup() {
 		# we list 'guixbuild' twice to
 		# both assign a primary group for user
 		# and add an user to /etc/group
-		enewuser guixbuilder${i} $((30000 +$i)) -1 /var/empty guixbuild,guixbuild
+		enewuser guixbuilder${i} -1 -1 /var/empty guixbuild,guixbuild
 	done
 }
 
