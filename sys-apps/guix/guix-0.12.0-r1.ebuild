@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit autotools flag-o-matic readme.gentoo-r1 user
+inherit autotools readme.gentoo-r1 user
 
 DESCRIPTION="GNU package manager (nix sibling)"
 HOMEPAGE="https://www.gnu.org/software/guix/"
