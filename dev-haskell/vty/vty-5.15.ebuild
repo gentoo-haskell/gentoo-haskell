@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Prelude.read: no parse
+
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
 	dev-haskell/microlens:=[profile?]
