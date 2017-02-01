@@ -32,6 +32,7 @@ QA_PREBUILT="usr/share/guile/site/2.0/gnu/packages/bootstrap/*"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-no-json-crate.patch
+	"${FILESDIR}"/${P}-AR.patch
 )
 
 DISABLE_AUTOFORMATTING=yes
