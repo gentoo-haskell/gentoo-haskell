@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The `colonnade` package provides a way to to talk about
+		columnar encodings and decodings of data. This package provides
+		very general types and does not provide a way for the end-user
+		to actually apply the columnar encodings they build to data.
+		Most users will also want to one a companion packages
+		that provides (1) a content type and (2) functions for feeding
+		data into a columnar encoding:
+		
+		* &lt;https://hackage.haskell.org/package/reflex-dom-colonnade reflex-dom-colonnade&gt; for reactive `reflex-dom` tables
+		
+		* &lt;https://hackage.haskell.org/package/yesod-colonnade yesod-colonnade&gt; for `yesod` widgets
+		
+		* &lt;http://hackage.haskell.org/package/siphon siphon&gt; for encoding and decoding CSVs
+	</longdescription>
+</pkgmetadata>
