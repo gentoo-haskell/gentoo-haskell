@@ -19,7 +19,7 @@ RESTRICT=test # complains about size of config.log and refuses to start tests
 
 RDEPEND="
 	dev-libs/libgcrypt:0=
-	dev-scheme/guile
+	>=dev-scheme/guile-2
 	sys-libs/zlib
 	app-arch/bzip2
 	dev-db/sqlite
