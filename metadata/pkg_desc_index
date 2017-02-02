@@ -1990,8 +1990,6 @@ sci-mathematics/cvc4 1.4-r1: automatic theorem prover for Satisfiability Modulo 
 sci-mathematics/spline3 0.0.2-r1: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 sci-mathematics/z3 4.3.1 4.3.2 4.4.1 9999: An efficient theorem prover
 sci-physics/chipmunk 6.2.1: simple, lightweight, fast and portable 2D rigid body physics library
-sys-apps/guix 0.12.0-r1: GNU package manager (nix sibling)
-sys-apps/nix 1.11.6-r3: A purely functional package manager
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 0.16: A web interface for darcs
 www-apps/gitit 0.12.2: Wiki using happstack, git or darcs, and pandoc

@@ -438,9 +438,6 @@ sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the
 sci-mathematics/cvc4:cln - Use sci-libs/cln as a bignum backend.
 sci-mathematics/cvc4:compat - Install CVC3 compatibility modules.
 sci-mathematics/cvc4:glpk - Use sci-mathematics/glpk as a linear backend.
-sys-apps/nix:etc_profile - Install /etc/profile.d/ entry to inject nix support for all users.
-sys-apps/nix:gc - Enable garbage collection in the Nix expression evaluator (use dev-libs/boehm-gc).
-sys-apps/nix:sodium - Use dev-libs/libsodium for cryptography
 www-apps/gitit:network-uri - Get Network.URI from the network-uri package.
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-client/hbro:threaded - Build with -threaded.
