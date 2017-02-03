@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,6 +26,13 @@ RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.8 && < 2.12' 'template-haskell >= 2.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
