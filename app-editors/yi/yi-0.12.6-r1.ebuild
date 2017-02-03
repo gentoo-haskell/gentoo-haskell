@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -65,7 +65,10 @@ DEPEND="${RDEPEND}
 		!testing? ( dev-haskell/quickcheck ) )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
+	"${FILESDIR}"/${P}-vty-5.15.patch
+)
 
 src_prepare() {
 	default
