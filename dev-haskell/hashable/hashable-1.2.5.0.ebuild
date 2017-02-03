@@ -35,6 +35,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.0 && < 4.10' 'base >= 4.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag cpu_flags_x86_sse2 sse2) \
