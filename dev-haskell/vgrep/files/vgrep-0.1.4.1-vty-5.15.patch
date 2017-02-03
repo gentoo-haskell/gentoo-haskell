@@ -1,0 +1,74 @@
+diff --git a/src/Vgrep/Environment.hs b/src/Vgrep/Environment.hs
+index 4937ee8..5f0a647 100644
+--- a/src/Vgrep/Environment.hs
++++ b/src/Vgrep/Environment.hs
+@@ -10,3 +10,4 @@ module Vgrep.Environment
+     , module Vgrep.Environment.Config
+-    , module Graphics.Vty.Prelude
++    , module Graphics.Vty.Image
++    , module Control.Applicative
+     ) where
+@@ -14,3 +15,4 @@ module Vgrep.Environment
+ import Control.Lens
+-import Graphics.Vty.Prelude
++import Graphics.Vty.Image
++import Control.Applicative hiding ((<|>))
+ 
+diff --git a/src/Vgrep/Environment/Config.hs b/src/Vgrep/Environment/Config.hs
+index e8c753e..becf00d 100644
+--- a/src/Vgrep/Environment/Config.hs
++++ b/src/Vgrep/Environment/Config.hs
+@@ -6,2 +6,3 @@ import Data.Maybe
+ import Graphics.Vty.Image
++import Graphics.Vty.Attributes
+ import System.Environment
+diff --git a/src/Vgrep/Widget/Pager.hs b/src/Vgrep/Widget/Pager.hs
+index 757f966..7ddd71b 100644
+--- a/src/Vgrep/Widget/Pager.hs
++++ b/src/Vgrep/Widget/Pager.hs
+@@ -26,3 +26,3 @@ import           Graphics.Vty.Image   hiding (resize)
+ import           Graphics.Vty.Input
+-import           Graphics.Vty.Prelude
++import           Graphics.Vty.Image
+ 
+diff --git a/src/Vgrep/Widget/Results.hs b/src/Vgrep/Widget/Results.hs
+index d9f2f2e..416823f 100644
+--- a/src/Vgrep/Widget/Results.hs
++++ b/src/Vgrep/Widget/Results.hs
+@@ -38,9 +38,9 @@ import           Graphics.Vty.Image           hiding ((<|>))
+ import           Graphics.Vty.Input
+-import           Graphics.Vty.Prelude
++import           Graphics.Vty.Attributes
+ import           Prelude
+ 
+-import Vgrep.Environment
++import Vgrep.Environment hiding ((<|>))
+ import Vgrep.Event
+ import Vgrep.Results
+-import Vgrep.Type
++import Vgrep.Type hiding ((<|>))
+ import Vgrep.Widget.Results.Internal as Internal
+diff --git a/test/Test/Case.hs b/test/Test/Case.hs
+index 528e85c..f226351 100644
+--- a/test/Test/Case.hs
++++ b/test/Test/Case.hs
+@@ -22,2 +22,3 @@ module Test.Case (
+ import Control.Lens
++import Control.Monad
+ import Test.QuickCheck.Monadic
+diff --git a/test/Test/Vgrep/Widget/Pager.hs b/test/Test/Vgrep/Widget/Pager.hs
+index 1903e56..ce09601 100644
+--- a/test/Test/Vgrep/Widget/Pager.hs
++++ b/test/Test/Vgrep/Widget/Pager.hs
+@@ -4,2 +4,3 @@ module Test.Vgrep.Widget.Pager (test) where
+ 
++import Control.Monad
+ import           Control.Lens
+diff --git a/test/Test/Vgrep/Widget/Results.hs b/test/Test/Vgrep/Widget/Results.hs
+index a87e940..d59dfca 100644
+--- a/test/Test/Vgrep/Widget/Results.hs
++++ b/test/Test/Vgrep/Widget/Results.hs
+@@ -4,2 +4,3 @@ module Test.Vgrep.Widget.Results (test) where
+ 
++import Control.Monad
+ import           Control.Lens            (Getter, _1, over, to, view, views)
