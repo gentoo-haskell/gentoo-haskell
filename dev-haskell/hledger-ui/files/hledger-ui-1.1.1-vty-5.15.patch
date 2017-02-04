@@ -1,0 +1,17 @@
+diff --git a/Hledger/UI/Main.hs b/Hledger/UI/Main.hs
+index 7419e2a..df982c6 100644
+--- a/Hledger/UI/Main.hs
++++ b/Hledger/UI/Main.hs
+@@ -19,3 +19,3 @@ import Control.Monad
+ import Data.Default (def)
+--- import Data.Monoid              --
++import Data.Monoid  (mempty)
+ import Data.List
+@@ -228,3 +228,7 @@ runBrickUi uopts@UIOpts{cliopts_=copts@CliOpts{reportopts_=ropts}} j = do
+         -- and start the app. Must be inside the withManager block
++#if MIN_VERSION_vty(5,15,0)
++        void $ customMain (mkVty mempty) (Just eventChan) brickapp ui
++#else
+         void $ customMain (mkVty def) (Just eventChan) brickapp ui
++#endif
+ 
