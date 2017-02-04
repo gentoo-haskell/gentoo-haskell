@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	dev-haskell/json:=[profile?]
-	>=dev-haskell/megaparsec-5.0:=[profile?] <dev-haskell/megaparsec-5.2:=[profile?]
+	>=dev-haskell/megaparsec-5.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?]
@@ -55,6 +55,13 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/yesod-test )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec >=5.0 && < 5.2' 'megaparsec >=5.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
