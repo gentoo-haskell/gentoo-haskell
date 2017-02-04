@@ -53,7 +53,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'brick >= 0.12 && < 0.17' 'brick >= 0.12' \
-		'vty >= 5.5 && < 5.15' 'vty >= 5.5'
+		'vty >= 5.5 && < 5.15' 'vty >= 5.5' \
+		'megaparsec >=5.0 && < 5.2' 'megaparsec >=5.0'
 }
 
 src_configure() {
