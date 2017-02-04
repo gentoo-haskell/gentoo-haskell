@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,7 +20,7 @@ IUSE="build-examples"
 
 RESTRICT=test # hangs up
 
-RDEPEND=">=dev-haskell/megaparsec-5.1.2:=[profile?] <dev-haskell/megaparsec-5.2:=[profile?]
+RDEPEND=">=dev-haskell/megaparsec-5.1.2:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
@@ -32,6 +32,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/microlens
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec            >=5.1.2 && <5.2' 'megaparsec            >=5.1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
