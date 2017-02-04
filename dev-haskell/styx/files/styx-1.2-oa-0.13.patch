@@ -1,0 +1,13 @@
+diff --git a/Main.hs b/Main.hs
+index 4546699..4937938 100644
+--- a/Main.hs
++++ b/Main.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE RecordWildCards #-}
+@@ -7,2 +8,5 @@ import System.Process
+ import Control.Monad.Identity
++#if MIN_VERSION_optparse_applicative(0,13,0)
++import Data.Monoid ((<>))
++#endif
+ import Data.Yaml hiding (Parser)
