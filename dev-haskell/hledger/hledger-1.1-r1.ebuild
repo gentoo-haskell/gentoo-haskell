@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,19 +26,17 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/hashable-1.2.4:=[profile?]
 	>=dev-haskell/haskeline-0.6:=[profile?] <=dev-haskell/haskeline-0.8:=[profile?]
-	~dev-haskell/hledger-lib-1.0.1:=[profile?]
+	>=dev-haskell/hledger-lib-1.1:=[profile?] <dev-haskell/hledger-lib-1.2:=[profile?]
 	dev-haskell/hunit:=[profile?]
-	>=dev-haskell/megaparsec-5.0:=[profile?] <dev-haskell/megaparsec-5.2:=[profile?]
+	>=dev-haskell/megaparsec-5.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/mtl-compat:=[profile?]
-	dev-haskell/old-locale:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	>=dev-haskell/parsec-3:=[profile?]
 	>=dev-haskell/pretty-show-1.6.4:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?]
-	>=dev-haskell/shakespeare-1.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
-	>=dev-haskell/shakespeare-text-1.0:=[profile?] <dev-haskell/shakespeare-text-1.2:=[profile?]
+	>=dev-haskell/shakespeare-2.0.2.2:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/tabular-0.2:=[profile?] <dev-haskell/tabular-0.3:=[profile?]
 	dev-haskell/temporary:=[profile?]
@@ -46,14 +44,21 @@ RDEPEND=">=dev-haskell/base-compat-0.8.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/utf8-string-0.3.5:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/wizards-1.0:=[profile?] <dev-haskell/wizards-1.1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.10.1:=
 	terminfo? ( dev-haskell/terminfo:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.22.2.0
 	test? ( dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec >=5.0 && < 5.2' 'megaparsec >=5.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
