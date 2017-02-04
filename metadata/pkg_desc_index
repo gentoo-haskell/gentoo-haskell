@@ -1574,6 +1574,7 @@ dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of Byt
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
 dev-haskell/stylish-haskell 0.6.1.0-r2 0.6.4.0: Haskell code prettifier
+dev-haskell/styx 1.2: A generator of nix files
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode support
