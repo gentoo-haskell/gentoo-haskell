@@ -21,7 +21,7 @@ IUSE="+threaded"
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:= <dev-haskell/ansi-terminal-0.7:=
 	dev-haskell/async:=
 	>=dev-haskell/base-compat-0.8.1:=
-	>=dev-haskell/brick-0.12:= <dev-haskell/brick-0.17:=
+	>=dev-haskell/brick-0.12:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
 	>=dev-haskell/fsnotify-0.2:= <dev-haskell/fsnotify-0.3:=
@@ -37,12 +37,24 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:= <dev-haskell/ansi-terminal-0.7:=
 	>=dev-haskell/text-1.2:= <dev-haskell/text-1.3:=
 	>=dev-haskell/text-zipper-0.4:= <dev-haskell/text-zipper-0.10:=
 	dev-haskell/vector:=
-	>=dev-haskell/vty-5.5:= <dev-haskell/vty-5.15:=
+	>=dev-haskell/vty-5.5:=
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-vty-5.15.patch
+)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'brick >= 0.12 && < 0.17' 'brick >= 0.12' \
+		'vty >= 5.5 && < 5.15' 'vty >= 5.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
