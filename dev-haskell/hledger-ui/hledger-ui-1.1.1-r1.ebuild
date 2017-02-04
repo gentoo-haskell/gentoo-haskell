@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:= <dev-haskell/ansi-terminal-0.7:=
 	>=dev-haskell/hledger-1.1:= <dev-haskell/hledger-1.2:=
 	>=dev-haskell/hledger-lib-1.1:= <dev-haskell/hledger-lib-1.2:=
 	dev-haskell/hunit:=
-	>=dev-haskell/megaparsec-5.0:= <dev-haskell/megaparsec-5.2:=
+	>=dev-haskell/megaparsec-5.0:=
 	>=dev-haskell/microlens-0.4:= <dev-haskell/microlens-0.5:=
 	>=dev-haskell/microlens-platform-0.2.3.1:= <dev-haskell/microlens-platform-0.4:=
 	>=dev-haskell/pretty-show-1.6.4:=
