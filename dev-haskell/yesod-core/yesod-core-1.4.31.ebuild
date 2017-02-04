@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -53,7 +53,7 @@ RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
-	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?]
 	>=dev-haskell/wai-extra-3.0.7:=[profile?]
 	>=dev-haskell/wai-logger-0.2:=[profile?]
