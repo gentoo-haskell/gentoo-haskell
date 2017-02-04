@@ -780,7 +780,7 @@ dev-haskell/hjsonschema 1.2.0.2-r1: JSON Schema library
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.0.1 1.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.1: computes interest for a given account
 dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.0.1 1.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 0.27.5-r1 1.0.4 1.0.5 1.1 1.1.1: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-ui 0.27.5-r1 1.0.4 1.0.5 1.1 1.1.1-r1: Curses-style user interface for the hledger accounting tool
 dev-haskell/hledger-web 0.25.1 0.26 0.27 1.0.1 1.1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
