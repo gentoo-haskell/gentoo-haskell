@@ -200,7 +200,7 @@ dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
 dev-haskell/brick 0.5.1 0.14 0.16 0.17: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
-dev-haskell/btrfs 0.1.2.2: Bindings to the btrfs API
+dev-haskell/btrfs 0.1.2.2 0.1.2.3: Bindings to the btrfs API
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
@@ -1016,7 +1016,7 @@ dev-haskell/libvirt-hs 0.2.1: FFI bindings to libvirt virtualization API (http:/
 dev-haskell/libxml 0.1.1: Binding to libxml2
 dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
-dev-haskell/lifted-async 0.9.1: Run lifted IO operations asynchronously and wait for their results
+dev-haskell/lifted-async 0.9.1 0.9.1.1: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.8: lifted IO operations from the base library
 dev-haskell/linear 1.20.5: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
