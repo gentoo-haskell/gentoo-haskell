@@ -7,8 +7,8 @@ IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 RDEPEND=>=dev-haskell/cli-0.1.2:=[profile?] <dev-haskell/cli-0.2:=[profile?] >=dev-haskell/hmatrix-0.17.0.2:=[profile?] <dev-haskell/hmatrix-0.19:=[profile?] >=dev-haskell/juicypixels-3.2.8:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?] >=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-7.8.2:=
-SLOT=0/0.2.0.0
-SRC_URI=mirror://hackage/packages/archive/picedit/0.2.0.0/picedit-0.2.0.0.tar.gz
+SLOT=0/0.2.3.0
+SRC_URI=mirror://hackage/packages/archive/picedit/0.2.3.0/picedit-0.2.3.0.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=88cfcafb6f7dfebd90865e9855896262
+_md5_=80e95b9df08a34facbcf9fb306d88125
