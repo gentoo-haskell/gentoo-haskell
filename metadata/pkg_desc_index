@@ -278,7 +278,7 @@ dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
-dev-haskell/cmark 0.5.4: Fast, accurate CommonMark (Markdown) parser and renderer
+dev-haskell/cmark 0.5.4 0.5.5: Fast, accurate CommonMark (Markdown) parser and renderer
 dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
