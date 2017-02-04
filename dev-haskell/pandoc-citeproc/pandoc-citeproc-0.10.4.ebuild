@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,8 +21,8 @@ IUSE="+bibutils debug embed_data_files test_citeproc unicode_collation"
 
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
-RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-1.20:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.1:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/data-default:=[profile?]
