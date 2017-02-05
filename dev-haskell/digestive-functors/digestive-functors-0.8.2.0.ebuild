@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -25,16 +25,9 @@ RDEPEND=">=dev-haskell/mtl-1.1.0.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
-		>=dev-haskell/quickcheck-2.5
+	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
+		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.10
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'QuickCheck                 >= 2.5 && < 2.9' 'QuickCheck                 >= 2.5'
-}
