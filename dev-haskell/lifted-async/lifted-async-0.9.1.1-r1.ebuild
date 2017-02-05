@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/async-2.0.1:=[profile?] <dev-haskell/async-2.2:=[profile?
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	monad-control-1? ( >=dev-haskell/constraints-0.2:=[profile?] <dev-haskell/constraints-0.6:=[profile?]
+	monad-control-1? ( >=dev-haskell/constraints-0.2:=[profile?] <dev-haskell/constraints-0.10:=[profile?]
 				>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?] )
 	!monad-control-1? ( >=dev-haskell/monad-control-0:=[profile?] <dev-haskell/monad-control-1:=[profile?] )
 "
