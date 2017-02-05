@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/wai-1.4:=[profile?]
-	>=dev-haskell/yesod-core-1.4.20:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
+	>=dev-haskell/yesod-core-1.4.31:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-form-1.4:=[profile?] <dev-haskell/yesod-form-1.5:=[profile?]
 	>=dev-haskell/yesod-persistent-1.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
