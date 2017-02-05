@@ -546,6 +546,7 @@ dev-haskell/filestore 0.6.2: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.1.0: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.9.0: Finite Fields
+dev-haskell/fix-agda-whitespace 0.0.4: Fixes whitespace issues for Agda sources
 dev-haskell/fixed 0.2.1.1: Signed 15.16 precision fixed point arithmetic
 dev-haskell/fixed-vector 0.7.0.3 0.8.1.0: Generic vectors with statically known size
 dev-haskell/fixed-vector-hetero 0.3.1.1: Generic heterogeneous vectors
@@ -1228,7 +1229,7 @@ dev-haskell/optparse-generic 1.1.4: Auto-generate a command-line parser for your
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/pandoc-citeproc 0.10.4: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.2.4.1: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.2.4.2: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Pango text rendering engine
@@ -1350,7 +1351,7 @@ dev-haskell/python-pickle 0.2.3: Serialization/deserialization using Python Pick
 dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings for Qt
 dev-haskell/quickcheck 1.2.0.1-r1 2.8.2 2.9.1 2.9.2: Automatic testing of Haskell programs
-dev-haskell/quickcheck-assertions 0.1.1-r1 0.2.0: HUnit like assertions for QuickCheck
+dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-instances 0.3.12-r1: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.4: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
@@ -1431,7 +1432,7 @@ dev-haskell/rotating-log 0.4.2: Size-limited, concurrent, automatically-rotating
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.6: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.3: Random Variables
-dev-haskell/safe 0.3.11: Library of safe (exception free) functions
+dev-haskell/safe 0.3.11 0.3.12: Library of safe (exception free) functions
 dev-haskell/safe-exceptions 0.1.4.0: Safe, consistent, and easy exception handling
 dev-haskell/safecopy 0.8.6 0.9.0.1 0.9.1 0.9.2: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
