@@ -194,6 +194,7 @@ dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.3: Generalized booleans and numbers
 dev-haskell/boomerang 1.4.5.2: Library for invertible parsing and printing
+dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
 dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
@@ -1875,6 +1876,7 @@ dev-haskell/yesod-auth-hashdb 1.5.1.3: Authentication plugin for Yesod
 dev-haskell/yesod-auth-nopassword 0.1.1.1: A plugin for Yesod to provide email-only authentication
 dev-haskell/yesod-auth-oauth2 0.1.10 0.2.2-r2: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.5.1: The yesod helper executable
+dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 0.2: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.31: Creation of type-safe, RESTful web applications

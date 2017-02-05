@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/text:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Bootstrap CSS Framework type-safe interface
+EAPI=6
+HOMEPAGE=http://hackage.haskell.org/package/bootstrap-types
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-haskell/text:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.3
+SRC_URI=mirror://hackage/packages/archive/bootstrap-types/0.3/bootstrap-types-0.3.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	7bb10a841be2368af0c00f27dd67560b	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=c3b1711a9630e2da7c7358d0b4630748
