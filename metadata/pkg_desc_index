@@ -312,7 +312,7 @@ dev-haskell/config-ini 0.1.2.0: A library for simple INI-based configuration fil
 dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
-dev-haskell/connection 0.2.6: Simple and easy network connections API
+dev-haskell/connection 0.2.7: Simple and easy network connections API
 dev-haskell/console-program 0.4.2.0: Interpret the command line and a config file as commands and options
 dev-haskell/constraints 0.4.1.3 0.8: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
@@ -430,7 +430,7 @@ dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.4: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.1 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
-dev-haskell/digestive-functors 0.7.1.5 0.8.0.1 0.8.1.0 0.8.1.1: A practical formlet library
+dev-haskell/digestive-functors 0.7.1.5 0.8.0.1 0.8.2.0: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.0.6 0.6.1.0: Blaze frontend for the digestive-functors library
 dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.0: Snap backend for the digestive-functors library
@@ -776,7 +776,7 @@ dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
-dev-haskell/hjsonpointer 1.1.0.1: JSON Pointer library
+dev-haskell/hjsonpointer 1.1.0.2: JSON Pointer library
 dev-haskell/hjsonschema 1.2.0.2-r1: JSON Schema library
 dev-haskell/hledger 0.25.1 0.26 0.27 0.27.1 1.1-r1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.1: computes interest for a given account
