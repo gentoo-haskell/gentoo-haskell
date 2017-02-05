@@ -29,6 +29,6 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.4
-		>=dev-haskell/http-types-0.8 <dev-haskell/http-types-0.10 )
+	test? ( >=dev-haskell/hspec-2.2 <dev-haskell/hspec-3.0
+		>=dev-haskell/http-types-0.8 <dev-haskell/http-types-1.0 )
 "
