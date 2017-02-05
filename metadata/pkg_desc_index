@@ -219,6 +219,7 @@ dev-haskell/c10k 0.5.0: C10k server library using prefork
 dev-haskell/c2hs 0.28.1: C->Haskell FFI tool that gives some cross-language type safety
 dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.22.5.0 1.22.7.0 1.22.8.0 1.24.0.0 1.24.1.0 1.24.2.0 1.25.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
+dev-haskell/cabal-doctest 1: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.4: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0 0.7.3.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 9999: The command-line interface for Cabal and Hackage
@@ -445,7 +446,7 @@ dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6: Cloud Haskell: Erl
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1 0.4.6 0.4.7: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
-dev-haskell/distributive 0.4.4 0.5.0.2 0.5.1: Distributive functors -- Dual to Traversable
+dev-haskell/distributive 0.5.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
@@ -453,7 +454,7 @@ dev-haskell/dlist 0.7.1.2 0.8.0.2: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 2.0.10: DNS library in Haskell
 dev-haskell/doctemplates 0.1.0.2: Pandoc-style document templates
-dev-haskell/doctest 0.9.13 0.10.1 0.11.0: Test interactive Haskell examples
+dev-haskell/doctest 0.9.13 0.10.1 0.11.0 0.11.1: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision floating point and text
@@ -768,7 +769,7 @@ dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.6.4: Syntax highlighting
 dev-haskell/hinotify 0.3.9: Haskell binding to inotify
 dev-haskell/hint 0.4.2.3 0.5.2 0.6.0 9999: Runtime Haskell interpreter (GHC API wrapper)
-dev-haskell/hip 1.5.1.0: Haskell Image Processing (HIP) Library
+dev-haskell/hip 1.5.2.0: Haskell Image Processing (HIP) Library
 dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
 dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
@@ -1549,7 +1550,7 @@ dev-haskell/stm-containers 0.2.15: Containers for STM
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-linkedlist 0.1.0.0: Mutable, doubly linked lists for STM
 dev-haskell/stm-split 0.0.1: TMVars, TVars and TChans with distinguished input and output side
-dev-haskell/stmonadtrans 0.3.4: A monad transformer version of the ST monad
+dev-haskell/stmonadtrans 0.4: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
@@ -1866,7 +1867,7 @@ dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions arou
 dev-haskell/yarr 1.4.0.2: Yet another array library
 dev-haskell/yesod 1.4.4: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
-dev-haskell/yesod-auth 1.4.15: Authentication for Yesod
+dev-haskell/yesod-auth 1.4.16: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.5.1.3: Authentication plugin for Yesod
