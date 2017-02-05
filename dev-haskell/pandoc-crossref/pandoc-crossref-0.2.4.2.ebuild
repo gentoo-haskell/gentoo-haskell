@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -28,7 +28,6 @@ RDEPEND=">=app-text/pandoc-1.17.1:=[profile?] <app-text/pandoc-1.19:=[profile?]
 	>=dev-haskell/roman-numerals-0.5:=[profile?] <dev-haskell/roman-numerals-0.6:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?] <dev-haskell/syb-0.7:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1.0:=[profile?]
-	>=dev-haskell/yaml-0.8:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
