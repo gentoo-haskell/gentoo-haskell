@@ -81,12 +81,11 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	default
-	sed -e '/.*emacs-mode.*$/d' \
-		-i "${S}/${MY_PN}.cabal" \
-		|| die "Could not remove agda-mode from ${MY_PN}.cabal"
-	sed -e '/^executable agda-mode$/a \ \ buildable: False' \
-		-i "${S}/${MY_PN}.cabal" \
-		|| die "Could not remove agda-mode executable from ${MY_PN}.cabal"
+	if ! use emacs; then
+		sed -e '/.*emacs-mode.*$/d' \
+			-i "${S}/${MY_PN}.cabal" \
+			|| die "Could not remove agda-mode from ${MY_PN}.cabal"
+	fi
 }
 
 src_configure() {
