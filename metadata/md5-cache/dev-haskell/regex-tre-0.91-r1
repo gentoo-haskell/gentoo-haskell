@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/regex-base-0.80:=[profile?] >=dev-lang/ghc-6.10.4:= dev-libs/tre >=dev-haskell/cabal-0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Replaces/Enhances Text.Regex
-EAPI=5
+EAPI=6
 HOMEPAGE=http://sourceforge.net/projects/lazy-regex
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
@@ -11,4 +11,4 @@ SLOT=0/0.91
 SRC_URI=mirror://hackage/packages/archive/regex-tre/0.91/regex-tre-0.91.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_prepare:- src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	eb9be4b678c4e71f3f530a767df31912	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=98d5da38a96f4efeaca3beb5a1a2be61
+_md5_=239f3a1a7073382be49d1a64aead2502

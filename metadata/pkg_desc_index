@@ -1407,7 +1407,7 @@ dev-haskell/regex-posix-unittest 1.1: Unit tests for the plaform's Posix regex l
 dev-haskell/regex-tdfa 1.1.8-r1 1.2.2: Replaces/Enhances Text.Regex
 dev-haskell/regex-tdfa-rc 1.1.8.3: Replaces/Enhances Text.Regex (fork by Roman Cheplyaka)
 dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
-dev-haskell/regex-tre 0.91: Replaces/Enhances Text.Regex
+dev-haskell/regex-tre 0.91-r1: Replaces/Enhances Text.Regex
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/relational-query 0.8.3.4: Typeful, Modular, Relational, algebraic query engine
