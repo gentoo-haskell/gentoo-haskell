@@ -1,0 +1,18 @@
+diff --git a/Text/Regex/TRE/Wrap.hsc b/Text/Regex/TRE/Wrap.hsc
+index 4a54c06..62c4e68 100644
+--- a/Text/Regex/TRE/Wrap.hsc
++++ b/Text/Regex/TRE/Wrap.hsc
+@@ -1,2 +1,3 @@
+ {-# OPTIONS_GHC  -fglasgow-exts -fffi -fno-warn-unused-imports #-}
++{-# LANGUAGE CApiFFI #-}
+ -- | http://laurikari.net/tre/index.html http://laurikari.net/tre/api.html
+@@ -279,3 +280,3 @@ getVersion = U.unsafePerformIO $ do
+ 
+-foreign import ccall unsafe "tre/regex.h regncomp"
++foreign import capi unsafe "tre/regex.h regncomp"
+   c_regncomp :: Ptr Regex_t -> CString -> CSize -> CompOption
+@@ -286,3 +287,3 @@ foreign import ccall unsafe "tre/regex.h tre_version"
+ 
+-foreign import ccall unsafe "tre/regex.h regnexec"
++foreign import capi unsafe "tre/regex.h regnexec"
+   c_regnexec :: Ptr Regex_t -> CString -> CSize 
