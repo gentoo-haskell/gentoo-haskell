@@ -7,8 +7,9 @@ IUSE=debug doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/attoparsec-0.10.0.0:=[profile?] dev-haskell/base16-bytestring:=[profile?] dev-haskell/blaze-builder:=[profile?] dev-haskell/blaze-textual:=[profile?] >=dev-haskell/mysql-0.1.1.1:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/pcre-light:=[profile?] >=dev-haskell/text-0.11.0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+RESTRICT=test
 SLOT=0/0.4.0.0
 SRC_URI=mirror://hackage/packages/archive/mysql-simple/0.4.0.0/mysql-simple-0.4.0.0.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:- src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	ea170b525f6a38a006be05c9d9429f13	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	eb9be4b678c4e71f3f530a767df31912	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=1d4ff843108e265a4ef964390a709366
+_md5_=8f6b74e14868da0a70ef19c5f69a9680
