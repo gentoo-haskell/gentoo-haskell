@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
+RESTRICT=test # need running mysql
+
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.0:=[profile?]
 	dev-haskell/base16-bytestring:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
