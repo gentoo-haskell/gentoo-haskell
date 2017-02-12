@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -67,6 +67,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16
 	>=dev-haskell/hsx2hs-0.13:=[profile?] <dev-haskell/hsx2hs-0.15:=[profile?]
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory                    >= 1.1  && < 1.3' 'directory                    >= 1.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
