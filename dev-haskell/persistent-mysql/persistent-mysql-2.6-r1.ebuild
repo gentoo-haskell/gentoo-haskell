@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	>=dev-haskell/mysql-0.1.1.3:=[profile?] <dev-haskell/mysql-0.2:=[profile?]
-	>=dev-haskell/mysql-simple-0.2.2.3:=[profile?] <dev-haskell/mysql-simple-0.3:=[profile?]
+	>=dev-haskell/mysql-simple-0.2.2.3:=[profile?]
 	>=dev-haskell/persistent-2.6:=[profile?] <dev-haskell/persistent-3:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/resourcet-0.4.10:=[profile?]
@@ -34,3 +34,10 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'mysql-simple          >= 0.2.2.3  && < 0.3' 'mysql-simple          >= 0.2.2.3'
+}
