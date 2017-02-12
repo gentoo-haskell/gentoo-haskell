@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs running postgresql
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/attoparsec-0.10.3:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
