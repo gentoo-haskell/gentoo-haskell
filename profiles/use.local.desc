@@ -197,6 +197,7 @@ dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hp2any-graph:serveronly - Suppress building the client, thereby removing the dependency on OpenGL.
 dev-haskell/hps:build-exec - Build the `hps-fractals' executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv.
 dev-haskell/hsh:buildtests - Build the executable to run unit tests.
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
 dev-haskell/hslua:luajit - Use luajit instead of lua.

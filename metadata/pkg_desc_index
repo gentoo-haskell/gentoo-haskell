@@ -709,6 +709,7 @@ dev-haskell/haskakafka 1.2.0: Kafka bindings for Haskell
 dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-exp-parser 0.1.1: Simple parser parser from Haskell to TemplateHaskell expressions
+dev-haskell/haskell-import-graph 1.0.1: create haskell import graph for graphviz
 dev-haskell/haskell-lexer 1.0.1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.2.1: Distributed parallel programming in Haskell using MPI
 dev-haskell/haskell-names 0.6.0-r2 0.8.0: Name resolution library for Haskell
@@ -834,6 +835,7 @@ dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hsdns 1.7: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
+dev-haskell/hsexif 0.6.1.0: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.10: Versatile logging framework
