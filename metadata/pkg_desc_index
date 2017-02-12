@@ -1161,7 +1161,7 @@ dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
 dev-haskell/mysql-haskell 0.7.1.0: pure haskell MySQL driver
 dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mysql-haskell
 dev-haskell/mysql-haskell-openssl 0.7.0.0: TLS support for mysql-haskell package using openssl
-dev-haskell/mysql-simple 0.2.2.5: A mid-level MySQL client library
+dev-haskell/mysql-simple 0.2.2.5 0.4.0.0: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
 dev-haskell/names-th 0.2.0.2: Manipulate name strings for TH
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
