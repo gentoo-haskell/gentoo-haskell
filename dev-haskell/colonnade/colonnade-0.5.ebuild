@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files
+
 RDEPEND=">=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]

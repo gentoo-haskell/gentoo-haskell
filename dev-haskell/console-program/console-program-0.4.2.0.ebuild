@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,3 +30,10 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?] <dev-haskell/ansi-terminal-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
+}
