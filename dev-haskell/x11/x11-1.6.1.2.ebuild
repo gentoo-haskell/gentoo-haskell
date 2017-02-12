@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,8 +26,8 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/libXrandr
-		screensaver? ( x11-libs/libXScrnSaver )
-		xinerama? ( x11-libs/libXinerama )
+	screensaver? ( x11-libs/libXScrnSaver )
+	xinerama? ( x11-libs/libXinerama )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2
