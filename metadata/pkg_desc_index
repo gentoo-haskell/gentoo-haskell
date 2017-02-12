@@ -1173,6 +1173,7 @@ dev-haskell/nanospec 0.2.1: A lightweight implementation of a subset of Hspec's 
 dev-haskell/nats 1.1.1: Natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
+dev-haskell/natural-transformation 0.4: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
@@ -1555,7 +1556,7 @@ dev-haskell/stm-containers 0.2.15: Containers for STM
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-linkedlist 0.1.0.0: Mutable, doubly linked lists for STM
 dev-haskell/stm-split 0.0.1: TMVars, TVars and TChans with distinguished input and output side
-dev-haskell/stmonadtrans 0.4: A monad transformer version of the ST monad
+dev-haskell/stmonadtrans 0.4.3: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
