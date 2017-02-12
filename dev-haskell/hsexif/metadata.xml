@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="iconv">Enable encoding conversion of the User Comment tag with iconv.</flag>
+	</use>
+	
+	<longdescription>
+		The hsexif library provides functions for working with EXIF data
+		contained in JPEG files. Currently it only supports reading the data.
+	</longdescription>
+</pkgmetadata>
