@@ -223,10 +223,6 @@ dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
-dev-haskell/itemfield:base49 - base 4.8 or later
-dev-haskell/itemfield:brick015 - for Brick version 0.15.x
-dev-haskell/itemfield:brick016 - for Brick version 0.16 or later
-dev-haskell/itemfield:brick017 - for Brick version 0.17 or later
 dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jsaddle:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/jsaddle:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript output

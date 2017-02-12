@@ -229,6 +229,7 @@ dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
 dev-haskell/cabal-rpm 0.10.1: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
 dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo library
+dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/carray 0.1.6.5: A C-compatible array library
@@ -246,10 +247,10 @@ dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.3.0.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
 dev-haskell/charsetdetect-ae 1.1.0.2: Character set detection using Mozilla's Universal Character Set Detector
-dev-haskell/chart 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: A library for generating 2D Charts and Plots
-dev-haskell/chart-cairo 1.4-r1 1.5.4 1.6-r2 1.7.1 1.8 1.8.1: Cairo backend for Charts
-dev-haskell/chart-diagrams 1.8.1: Diagrams backend for Charts
-dev-haskell/chart-gtk 1.4 1.5.1 1.6-r1 1.7 1.8 1.8.1: Utility functions for using the chart library with GTK
+dev-haskell/chart 1.8.2: A library for generating 2D Charts and Plots
+dev-haskell/chart-cairo 1.8.2: Cairo backend for Charts
+dev-haskell/chart-diagrams 1.8.2: Diagrams backend for Charts
+dev-haskell/chart-gtk 1.8.2: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.2: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
@@ -757,7 +758,7 @@ dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system su
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.9: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
-dev-haskell/heterocephalus 1.0.3.1: A type-safe template engine for working with popular front end development tools
+dev-haskell/heterocephalus 1.0.4.0: A type-safe template engine for working with popular front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexpat 0.20.9: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.2: Command line flag parser, very similar to Google's gflags
@@ -947,7 +948,7 @@ dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.7: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
-dev-haskell/itemfield 1.2.4.2: A brick Widget for selectable summary of many elements on a terminal
+dev-haskell/itemfield 1.2.5.0: A brick Widget for selectable summary of many elements on a terminal
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.7: Efficient relational queries on Haskell sets
@@ -1047,7 +1048,7 @@ dev-haskell/log-base 0.7: Structured logging solution (base package)
 dev-haskell/log-domain 0.10.3.1-r3: Log-domain arithmetic
 dev-haskell/log-elasticsearch 0.7: Structured logging solution (Elasticsearch back end)
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
-dev-haskell/logging-effect 1.1.1: A mtl-style monad transformer for general purpose & compositional logging
+dev-haskell/logging-effect 1.1.2: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.2: Library for logic programming based on haskell package logict
@@ -1098,7 +1099,7 @@ dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.1: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
-dev-haskell/mime-mail 0.4.12: Compose MIME email messages
+dev-haskell/mime-mail 0.4.13: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
 dev-haskell/mime-types 0.1.0.7: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
@@ -1768,7 +1769,7 @@ dev-haskell/varying 0.7.0.3: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
 dev-haskell/vcsgui 0.1.3.0: GUI library for source code management systems
-dev-haskell/vcswrapper 0.1.3: Wrapper for source code management systems
+dev-haskell/vcswrapper 0.1.5: Wrapper for source code management systems
 dev-haskell/vect 0.4.7: A low-dimensional linear algebra library, tailored to computer graphics
 dev-haskell/vector 0.10.12.3 0.11.0.0: Efficient Arrays
 dev-haskell/vector-algorithms 0.7.0.1: Efficient algorithms for vector arrays
