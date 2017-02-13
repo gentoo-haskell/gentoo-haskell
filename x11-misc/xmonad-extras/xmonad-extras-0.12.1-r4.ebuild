@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -26,8 +26,8 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-posix:=[profile?]
 	>=dev-haskell/x11-1.4.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.13:=[profile?]
-	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.13:=[profile?]
+	>=x11-wm/xmonad-0.10:=[profile?]
+	>=x11-wm/xmonad-contrib-0.10:=[profile?]
 	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?]
 		dev-haskell/network:=[profile?] )
 	mpd? ( >=dev-haskell/libmpd-0.9:=[profile?] )
@@ -45,7 +45,9 @@ src_prepare() {
 
 	cabal_chdeps \
 		'libmpd >= 0.8 && < 0.9' 'libmpd >= 0.9' \
-		'hint >= 0.3.3.3 && < 0.5' 'hint >= 0.3.3.3'
+		'hint >= 0.3.3.3 && < 0.5' 'hint >= 0.3.3.3' \
+		'xmonad>=0.10 && <0.13' 'xmonad>=0.10' \
+		'xmonad-contrib>=0.10 && <0.13' 'xmonad-contrib>=0.10'
 }
 
 src_configure() {
