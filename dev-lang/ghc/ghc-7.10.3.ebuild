@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -83,9 +83,6 @@ RDEPEND="
 	>=dev-libs/gmp-5:=
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
-	!kernel_Darwin? ( >=sys-devel/gcc-2.95.3:* )
-	kernel_linux? ( >=sys-devel/binutils-2.17:* )
-	kernel_SunOS? ( >=sys-devel/binutils-2.17:* )
 "
 # gentoo binaries are built against ncurses-5
 RDEPEND+="
@@ -247,9 +244,15 @@ ghc_setup_cflags() {
 		append-ghc-cflags link ${flag}
 	done
 
-	# hardened-gcc needs to be disabled, because the mangler doesn't accept
-	# its output.
+	# hardened-gcc needs to be disabled, because our prebuilt binaries/libraries
+	# are not built with fPIC, bug #606666
 	gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
+	tc-is-gcc && version_is_at_least 6.3 $(gcc-version) && if ! use ghcbootstrap; then
+		# gcc-6.3 has support for -no-pie upstream, but spelling differs from
+		# gentoo-specific '-nopie'. We enable it in non-bootstrap to allow
+		# hardened users try '-pie' in USE=ghcbootstrap mode.
+		append-ghc-cflags persistent compile link -no-pie
+	fi
 	gcc-specs-ssp && append-ghc-cflags persistent compile      -fno-stack-protector
 
 	# prevent from failind building unregisterised ghc:
