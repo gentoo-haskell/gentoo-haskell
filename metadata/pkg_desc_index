@@ -676,7 +676,7 @@ dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 9999: A document
 dev-haskell/haddock-api 2.16.1 2.17.0_pre20160204 2.17.0_pre20160411 2.17.0_pre20160421 2.17.3: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0_pre20160204 1.4.0_pre20160411 1.4.0_pre20160421 1.4.2: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.9.3.0: A static website compiler library
+dev-haskell/hakyll 4.9.5.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.3: Hakyll SASS compiler over hsass
 dev-haskell/half 0.2.2.3: Half-precision floating-point
