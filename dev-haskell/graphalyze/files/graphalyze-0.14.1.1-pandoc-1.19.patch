@@ -1,0 +1,24 @@
+diff --git a/Data/Graph/Analysis/Reporting/Pandoc.hs b/Data/Graph/Analysis/Reporting/Pandoc.hs
+index 5187f6a..a08f5f8 100644
+--- a/Data/Graph/Analysis/Reporting/Pandoc.hs
++++ b/Data/Graph/Analysis/Reporting/Pandoc.hs
+@@ -129,4 +129,9 @@ instance DocumentGenerator PandocDocument where
+ writerOptions :: WriterOptions
+-writerOptions = def { writerStandalone = True
+-                    , writerTableOfContents = True
++writerOptions = def {
++#if MIN_VERSION_pandoc(1,19,0)
++#else
++                      writerStandalone = True
++                    ,
++#endif
++                      writerTableOfContents = True
+                     , writerNumberSections = True
+@@ -180,3 +185,7 @@ createPandoc p d = do Right template <- getDefaultTemplate Nothing (templateName
+                    }
++#if MIN_VERSION_pandoc(1,19,0)
++      convert t = writer p (writerOptions {writerTemplate = Just t})
++#else
+       convert t = writer p (writerOptions {writerTemplate = t})
++#endif
+       file = dir </> fileFront d <.> extension p
