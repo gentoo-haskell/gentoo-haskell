@@ -268,9 +268,9 @@ dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
-dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
-dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
-dev-haskell/classy-prelude-yesod 1.1.0: Provide a classy prelude including common Yesod functionality
+dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2 1.2.0: A typeclass-based Prelude
+dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2 1.2.0: classy-prelude together with conduit functions
+dev-haskell/classy-prelude-yesod 1.1.0 1.2.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12.1: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0.3: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
@@ -308,7 +308,7 @@ dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input 
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
 dev-haskell/conduit 1.2.9: Streaming data processing library
-dev-haskell/conduit-combinators 1.0.8.3: Commonly used conduit functions, for both chunked and unchunked data
+dev-haskell/conduit-combinators 1.0.8.3 1.1.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.15: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.1.2.0: A library for simple INI-based configuration files
 dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language similar to YAML or JSON
@@ -316,7 +316,7 @@ dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.2.7: Simple and easy network connections API
 dev-haskell/console-program 0.4.2.1: Interpret the command line and a config file as commands and options
-dev-haskell/constraints 0.4.1.3 0.8: Constraint manipulation
+dev-haskell/constraints 0.4.1.3 0.8 0.9: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
 dev-haskell/contravariant 1.3.3 1.4: Contravariant functors
@@ -880,7 +880,7 @@ dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatyp
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.5: A library for client-side HTTP
-dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.5: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.5: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
@@ -1393,6 +1393,7 @@ dev-haskell/ref-tf 0.4.0.1: A type class for monads with references using type f
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/reform 0.2.7.1: reform is a type-safe HTML form generation and validation library
+dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.1: Happstack support for reform
 dev-haskell/reform-hsp 0.2.7.1: Add support for using HSP with Reform
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
@@ -1857,7 +1858,7 @@ dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xkbcommon 0.0.3: Haskell bindings for libxkbcommon
 dev-haskell/xml 1.3.14: A simple XML library
-dev-haskell/xml-conduit 1.3.5: Pure-Haskell utilities for dealing with XML with the conduit package
+dev-haskell/xml-conduit 1.3.5 1.4.0.3: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.1: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.2: Optics for xml-conduit and html-conduit
 dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
