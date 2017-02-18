@@ -788,7 +788,7 @@ dev-haskell/hledger-lib 0.25.1 0.26 0.27-r1 0.27.1 1.1-r1: Core data types, pars
 dev-haskell/hledger-ui 0.27.5-r1 1.1.1-r1: Curses-style user interface for the hledger accounting tool
 dev-haskell/hledger-web 0.25.1 0.26 0.27 1.1-r1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
-dev-haskell/hlibgit2 0.18.0.15: Low-level bindings to libgit2
+dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.5.0: Low-level bindings to Libsass
 dev-haskell/hlint 1.9.22 1.9.35 1.9.37: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
@@ -946,7 +946,7 @@ dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/irc-core 2.2.0.1: IRC core library for glirc
 dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
-dev-haskell/iso3166-country-codes 0.20140203.7: A datatype for ISO 3166 country codes
+dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
 dev-haskell/itemfield 1.2.4.2 1.2.5.0: A brick Widget for selectable summary of many elements on a terminal
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
@@ -1048,7 +1048,7 @@ dev-haskell/log-base 0.7: Structured logging solution (base package)
 dev-haskell/log-domain 0.10.3.1-r3: Log-domain arithmetic
 dev-haskell/log-elasticsearch 0.7: Structured logging solution (Elasticsearch back end)
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
-dev-haskell/logging-effect 1.1.2: A mtl-style monad transformer for general purpose & compositional logging
+dev-haskell/logging-effect 1.1.3: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.2: Library for logic programming based on haskell package logict
@@ -1065,7 +1065,7 @@ dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
 dev-haskell/machines 0.5.1-r1 0.6.1: Networked stream transducers
 dev-haskell/machines-directory 0.2.0.10: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.13: IO utilities for the machines library
-dev-haskell/mackerel-client 0.0.2: An API client library for Mackerel
+dev-haskell/mackerel-client 0.0.3: An API client library for Mackerel
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.5: A monad for managed values
@@ -1112,7 +1112,7 @@ dev-haskell/mockery 0.3.4: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.20.1: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.20.2: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.3.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
@@ -1136,7 +1136,7 @@ dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4.2.3: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
 dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
-dev-haskell/mono-traversable 0.10.2 1.0.1.1: Type classes for mapping, folding, and traversing monomorphic containers
+dev-haskell/mono-traversable 0.10.2 1.0.1.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/mono-traversable-instances 0.1.0.0: Extra typeclass instances for mono-traversable
 dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.2 0.4.2.1 0.4.3 0.4.3.1: Subclasses of Monoid
@@ -1229,11 +1229,11 @@ dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
-dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0 0.13.0.0: Utilities and combinators for parsing command line options
+dev-haskell/optparse-applicative 0.11.0.2-r1 0.12.1.0 0.13.1.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-generic 1.1.4: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
-dev-haskell/pandoc-citeproc 0.10.4: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.10.4.1: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.4.2-r1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4: Types for representing a structured document
@@ -1615,7 +1615,7 @@ dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
 dev-haskell/tar 0.4.5.0 0.5.0.3: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
-dev-haskell/tasty 0.11.1: Modern and extensible testing framework
+dev-haskell/tasty 0.11.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.4: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.4: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.1.1: Golden tests support for tasty
@@ -1894,7 +1894,7 @@ dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler 
 dev-haskell/yesod-form 1.4.10: Form handling support for Yesod Web Framework
 dev-haskell/yesod-gitrepo 0.2.1.0: Host content provided by a Git repo
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
-dev-haskell/yesod-markdown 0.10.0 0.11.1-r1 0.11.2: Tools for using markdown in a yesod application
+dev-haskell/yesod-markdown 0.11.4: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
 dev-haskell/yesod-pagination 2.0.0: Pagination in Yesod
 dev-haskell/yesod-paginator 0.10.1: A pagination approach for yesod
