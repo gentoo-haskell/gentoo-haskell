@@ -234,7 +234,7 @@ dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file pa
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/carray 0.1.6.5: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
-dev-haskell/case-insensitive 1.1.0.3 1.2.0.7: Case insensitive string comparison
+dev-haskell/case-insensitive 1.2.0.8: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
@@ -272,10 +272,10 @@ dev-haskell/classy-prelude 0.12.7 0.12.8 1.0.1 1.0.2: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2: classy-prelude together with conduit functions
 dev-haskell/classy-prelude-yesod 1.1.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.12.1: CSS preprocessor as embedded Haskell
-dev-haskell/clckwrks 0.24.0: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks 0.24.0.3: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
-dev-haskell/clckwrks-plugin-media 0.6.16.1: media plugin for clckwrks
-dev-haskell/clckwrks-plugin-page 0.4.3.7: support for CMS/Blogging in clckwrks
+dev-haskell/clckwrks-plugin-media 0.6.16.3: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-page 0.4.3.9: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
@@ -303,7 +303,7 @@ dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
 dev-haskell/concrete-typerep 0.1.0.2: Binary and Hashable instances for TypeRep
 dev-haskell/concurrent-extra 0.7.0.10: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.8: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.7.9: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
@@ -315,7 +315,7 @@ dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language simila
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.2.7: Simple and easy network connections API
-dev-haskell/console-program 0.4.2.0: Interpret the command line and a config file as commands and options
+dev-haskell/console-program 0.4.2.1: Interpret the command line and a config file as commands and options
 dev-haskell/constraints 0.4.1.3 0.8: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
@@ -493,11 +493,11 @@ dev-haskell/email-validate 2.2.0: Validating an email address string against RFC
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
 dev-haskell/enclosed-exceptions 1.0.2: Catching all exceptions from within an enclosed computation
 dev-haskell/encoding 0.7.0.2-r1 0.8.1: A library for various character encodings
-dev-haskell/engine-io 1.2.14: A Haskell implementation of Engine.IO
+dev-haskell/engine-io 1.2.15: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.7: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine words
-dev-haskell/equivalence 0.2.5 0.3.1: Maintaining an equivalence relation implemented as union-find using STT
+dev-haskell/equivalence 0.3.2: Maintaining an equivalence relation implemented as union-find using STT
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.1.3: Simplified error-handling
@@ -1414,7 +1414,7 @@ dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91-r1: Replaces/Enhances Text.Regex
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
-dev-haskell/relational-query 0.8.3.4: Typeful, Modular, Relational, algebraic query engine
+dev-haskell/relational-query 0.8.3.5: Typeful, Modular, Relational, algebraic query engine
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1 3.4.1.2: High performance, regular, shape polymorphic parallel arrays
