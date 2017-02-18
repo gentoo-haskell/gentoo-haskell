@@ -1861,7 +1861,7 @@ dev-haskell/xml 1.3.14: A simple XML library
 dev-haskell/xml-conduit 1.3.5 1.4.0.3: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.1: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.2: Optics for xml-conduit and html-conduit
-dev-haskell/xml-lens 0.1.6.3: Lenses, traversals, and prisms for xml-conduit
+dev-haskell/xml-lens 0.1.6.3-r1: Lenses, traversals, and prisms for xml-conduit
 dev-haskell/xml-picklers 0.3.6: XML picklers based on xml-types, ported from hexpat-pickle
 dev-haskell/xml-types 0.3.6: Basic types for representing XML
 dev-haskell/xmlgen 0.6.2.1: Fast XML generation library
