@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -30,17 +30,10 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/stm-delay-0.1.1:=[profile?] <dev-haskell/stm-delay-0.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
-	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.10:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
+	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.11:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'aeson >=0.7 && <0.12' 'aeson >=0.7'
-}
