@@ -1437,7 +1437,7 @@ dev-haskell/rotating-log 0.4.2: Size-limited, concurrent, automatically-rotating
 dev-haskell/rsa 2.1.0.3 2.2.0: Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 dev-haskell/rss 3000.2.0.6: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.3: Random Variables
-dev-haskell/safe 0.3.13: Library of safe (exception free) functions
+dev-haskell/safe 0.3.14: Library of safe (exception free) functions
 dev-haskell/safe-exceptions 0.1.4.0: Safe, consistent, and easy exception handling
 dev-haskell/safecopy 0.8.6 0.9.0.1 0.9.1 0.9.2: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
@@ -1562,7 +1562,7 @@ dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.11: Fast, packed, strict storable arrays with a list interface like ByteString
-dev-haskell/store 0.2.1.2 0.3: Fast binary serialization
+dev-haskell/store 0.2.1.2 0.3.1: Fast binary serialization
 dev-haskell/store-core 0.2.0.2 0.3: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.0.10: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
