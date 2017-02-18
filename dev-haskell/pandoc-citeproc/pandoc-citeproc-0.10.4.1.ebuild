@@ -36,7 +36,7 @@ RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.1:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.5:=[profile?]
+	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.6:=[profile?]
 	>=dev-haskell/yaml-0.8.8.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	bibutils? ( >=dev-haskell/hs-bibutils-0.3:=[profile?] )

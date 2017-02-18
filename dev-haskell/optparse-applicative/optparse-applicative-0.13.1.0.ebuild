@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing files
-
 RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/semigroups-0.10:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
@@ -27,12 +25,5 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.6:=[profile?] <dev-haskell/ansi-wl-ppr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-2.8 )
+	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.11 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'QuickCheck                      == 2.8.*' 'QuickCheck                      >= 2.8'
-}
