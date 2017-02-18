@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # does not specify full dependencies
+
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/byteorder:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
