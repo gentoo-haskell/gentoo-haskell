@@ -948,7 +948,7 @@ dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.7: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
-dev-haskell/itemfield 1.2.5.0: A brick Widget for selectable summary of many elements on a terminal
+dev-haskell/itemfield 1.2.4.2 1.2.5.0: A brick Widget for selectable summary of many elements on a terminal
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.7: Efficient relational queries on Haskell sets
