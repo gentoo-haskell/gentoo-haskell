@@ -1453,7 +1453,7 @@ dev-haskell/scientific 0.3.4.10: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.0-r3: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
-dev-haskell/scrape-changes 0.1.0.4: Scrape websites for changes
+dev-haskell/scrape-changes 0.1.0.5: Scrape websites for changes
 dev-haskell/sdl 0.6.5.1: Binding to libSDL
 dev-haskell/sdl-gfx 0.6.0.2: Binding to libSDL_gfx
 dev-haskell/sdl-image 0.6.1.2: Binding to libSDL_image
@@ -1764,9 +1764,9 @@ dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using va
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.8: Runs commands on remote machines using ssh
 dev-haskell/validation 0.5.4: A data-type like Either but with an accumulating Applicative
-dev-haskell/validity 0.3.1.1: Validity typeclass
+dev-haskell/validity 0.3.2.0: Validity typeclass
 dev-haskell/validity-path 0.1.0.0: Validity instances for Path
-dev-haskell/validity-text 0.1.0.1: Validity instances for text
+dev-haskell/validity-text 0.1.2.0: Validity instances for text
 dev-haskell/varying 0.7.0.3: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
