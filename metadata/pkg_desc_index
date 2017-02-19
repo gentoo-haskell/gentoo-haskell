@@ -1178,7 +1178,7 @@ dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.2: Functional reactive programming library
-dev-haskell/network 2.6.3.1: Low-level networking interface
+dev-haskell/network 2.6.3.1-r1: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
@@ -1842,7 +1842,7 @@ dev-haskell/wx 0.90.0.1 0.90.1.0 0.92.2.0: wxHaskell
 dev-haskell/wxc 0.90.0.4 0.90.1.1 0.92.2.0: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.90.0.3 0.90.1.1 0.92.2.0: wxHaskell core
 dev-haskell/wxdirect 0.90.0.1 0.90.1.1 0.92.2.0-r1: helper tool for building wxHaskell
-dev-haskell/x11 1.6.1.2 1.7 1.8: A binding to the X11 graphics library
+dev-haskell/x11 1.6.1.2 1.7 1.8-r1: A binding to the X11 graphics library
 dev-haskell/x11-xft 0.3.1-r1: Bindings to the Xft, X Free Type interface library, and some Xrender parts
 dev-haskell/x509 1.6.5: X509 reader and writer
 dev-haskell/x509-store 1.5.0 1.6.2: X.509 collection accessing and storing methods
