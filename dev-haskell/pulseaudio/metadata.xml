@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package mainly exists, because I wanted to query the current system
+		volume from the pulse audio server.
+		
+		Doing this required me to build at least the core of the pulse api.
+		
+		This package is provided as is, with very little testing and only a small
+		subset of the pulse api implemented.
+		Expanding this package *should* be rather easy. At least for query/control.
+		If you are interested in doing this, but don&#39;t know how, feel free to contact me.
+		
+		
+		In package is a bit unrefined and rough. If you have better structure for
+		modules feel free to reorganize them and making a PR. This also means, don&#39;t
+		see this structur as fixed yet, it may change if someone has a better idea.
+	</longdescription>
+</pkgmetadata>
