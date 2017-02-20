@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="ibus">enable ibus example</flag>
+	</use>
+	<longdescription>
+		monky started as an alternative to conky, i3-status or similar, that&#39;s fully containing in one process.
+		Also making an effort to keep file descriptors or handles as long as possible.
+		monky 2.0 is the first version on hackage.
+		
+		monky consists of multiple parts. A number of collection modules, output modules, &quot;examples&quot; and a helper application.
+		
+		* collection modules
+		
+		The collection modules are the core library. Collection modules export a handle that can
+		be used to get some detail about the system. They can be used without the other parts
+		of this package, but they are designed with monky in mind.
+		
+		* output modules
+		
+		Output modules take a monky specific output type and transform it into something that can be
+		displayed by some external application. That may be a statusbar (dzen2), the terminal,
+		a network port, that makes it accessible on another machine, or any other thing.
+		
+		* examples
+		
+		The examples are a group of modules, that use collection modules to create the output used
+		by the output modules. The flexibility of the examples varies greatly, some may are really
+		flexible, some are rather static. The intended usecase is for users to create their own
+		examples and use them, if they don&#39;t want to use the provided ones.
+		
+		Later on, I want to create something like xmonad-contrib or a collection of user examples,
+		to provide better usability for users with few to no experience with haskell.
+		
+		* helper application
+		
+		The helper application is used to compile the actual output generator and can generate an
+		example configuration.
+		
+		To generate an example configuration in /~\/.monky/ simply run `monky`.
+		Then modify /~\/.monky\/monky.hs/ to create your own configuration.
+		
+		Modules can have two types. &#39;PollModule&#39; and &#39;EvtModule&#39;. &#39;PollModule&#39;s work by the main loop
+		asking the module to generate new output, while &#39;EvtModule&#39;s block until some event is received and
+		update their output on demand. Some handles are an instance of both, &#39;PollModule&#39; and &#39;EvtModule&#39;.
+		&#39;EvtModule&#39; should be preferred, since they induce less load on your system.
+		The monky main-loop does one &quot;tick&quot; every second. &#39;PollModules&#39; are updated each /N/ ticks, where
+		/N/ is passed to &#39;pollPack&#39;.
+	</longdescription>
+</pkgmetadata>
