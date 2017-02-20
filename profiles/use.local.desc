@@ -264,6 +264,7 @@ dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/monad-logger:template_haskell - Enable Template Haskell support.
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
+dev-haskell/monky:ibus - enable ibus example
 dev-haskell/nats:binary - enable binary instances
 dev-haskell/nats:hashable - enable hashable instances
 dev-haskell/nats:template-haskell - enable template_haskell

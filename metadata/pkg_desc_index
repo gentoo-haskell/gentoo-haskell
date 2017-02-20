@@ -497,6 +497,7 @@ dev-haskell/engine-io 1.2.15: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.7: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine words
+dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
 dev-haskell/equivalence 0.3.2: Maintaining an equivalence relation implemented as union-find using STT
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
@@ -906,6 +907,7 @@ dev-haskell/hxt-http 9.1.5.2: Interface to native Haskell HTTP package HTTP
 dev-haskell/hxt-regex-xmlschema 9.2.0.3: A regular expression library for W3C XML Schema regular expressions
 dev-haskell/hxt-unicode 9.0.2.4: Unicode en-/decoding functions for utf8, iso-latin-* and other encodings
 dev-haskell/hxt-xpath 9.1.2.2: The XPath modules for HXT
+dev-haskell/ibus-hs 0.0.0.1: A simple uncomplete ibus api
 dev-haskell/icalendar 0.4.0.3: iCalendar data types, parser, and printer
 dev-haskell/iconv 0.4.1.3: String encoding conversion
 dev-haskell/idiii 0.1.3.3: ID3v2 (tagging standard for MP3 files) library
@@ -1136,6 +1138,7 @@ dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4.2.3: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
 dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
+dev-haskell/monky 2.1.0.0: A system state collecting library and application
 dev-haskell/mono-traversable 0.10.2 1.0.1.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/mono-traversable-instances 0.1.0.0: Extra typeclass instances for mono-traversable
 dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
@@ -1176,6 +1179,7 @@ dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/natural-transformation 0.4: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
+dev-haskell/netlink 1.0.0.4: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.2: Functional reactive programming library
 dev-haskell/network 2.6.3.1-r1: Low-level networking interface
@@ -1347,6 +1351,7 @@ dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
 dev-haskell/psqueues 0.2.2.3: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
+dev-haskell/pulseaudio 0.0.2.0: A low-level (incomplete) wrapper around the pulseaudio client asynchronous api
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
 dev-haskell/pure-priority-queue 0.14-r1: A pure priority queue
 dev-haskell/puremd5 2.1.3: A Haskell-only implementation of the MD5 digest (hash) algorithm
@@ -1548,6 +1553,7 @@ dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveabl
 dev-haskell/statevar 1.1.0.4: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
 dev-haskell/statistics 0.10.5.2 0.11.0.3 0.13.3.0: A library of statistical types, data, and functions
+dev-haskell/statvfs 0.2: Get unix filesystem statistics with statfs, statvfs
 dev-haskell/stb-image-redux 0.2.1.0: Image loading and writing microlibrary
 dev-haskell/stemmer 0.5.2: Haskell bindings to the Snowball stemming library
 dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
