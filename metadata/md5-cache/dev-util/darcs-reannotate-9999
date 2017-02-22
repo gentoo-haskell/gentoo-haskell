@@ -7,5 +7,5 @@ LICENSE=freedist
 RDEPEND=dev-lang/python
 SLOT=0
 _eclass_exported_funcs=src_unpack:darcs src_install:-
-_eclasses_=darcs	25bcb4c9bede09580ffa4891aa70234d	eutils	ea170b525f6a38a006be05c9d9429f13	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=darcs	25bcb4c9bede09580ffa4891aa70234d	eutils	708f85bc1bf00876604e223fb56e062a	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
 _md5_=35468155f0eee6e3c927669ec063a950
