@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 3.3.0: property-based host configuration management in haskell
+app-admin/propellor 3.3.1: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -192,14 +192,14 @@ dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.11.0.0-r2 0.11.1.0: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
-dev-haskell/boolean 0.2.3: Generalized booleans and numbers
+dev-haskell/boolean 0.2.4: Generalized booleans and numbers
 dev-haskell/boomerang 1.4.5.2: Library for invertible parsing and printing
 dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
 dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4: 2D text pretty-printing library
-dev-haskell/brick 0.5.1 0.14 0.16 0.17: A declarative terminal user interface library
+dev-haskell/brick 0.17.1: A declarative terminal user interface library
 dev-haskell/bson 0.3.2.3: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/btrfs 0.1.2.2 0.1.2.3: Bindings to the btrfs API
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
@@ -224,7 +224,7 @@ dev-haskell/cabal-doctest 1: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.4: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0 0.7.3.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 9999: The command-line interface for Cabal and Hackage
-dev-haskell/cabal-macosx 0.2.3.5: Cabal support for creating Mac OSX application bundles
+dev-haskell/cabal-macosx 0.2.4.0: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
 dev-haskell/cabal-rpm 0.10.1: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
@@ -285,7 +285,7 @@ dev-haskell/cmark 0.5.5: Fast, accurate CommonMark (Markdown) parser and rendere
 dev-haskell/cmdargs 0.10.14: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
-dev-haskell/code-page 0.1.1: Windows code page library for Haskell
+dev-haskell/code-page 0.1.2: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.3-r2: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
@@ -1138,7 +1138,7 @@ dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.4.2.3: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
 dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
-dev-haskell/monky 2.1.0.0: A system state collecting library and application
+dev-haskell/monky 2.1.3.0: A system state collecting library and application
 dev-haskell/mono-traversable 0.10.2 1.0.1.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/mono-traversable-instances 0.1.0.0: Extra typeclass instances for mono-traversable
 dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
@@ -1745,7 +1745,7 @@ dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unordered-containers 0.2.7.2: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
-dev-haskell/uri-bytestring 0.2.2.1: Haskell URI parsing as ByteStrings
+dev-haskell/uri-bytestring 0.2.3.0: Haskell URI parsing as ByteStrings
 dev-haskell/uri-conduit 1.1.1.2: Read and write URIs (deprecated)
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.1: Generate or process x-www-urlencoded data
@@ -1807,7 +1807,7 @@ dev-haskell/wai-http2-extra 0.1.0: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.2.7 2.3.0: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/wai-websockets 3.0.1.1: Provide a bridge between WAI and the websockets package
-dev-haskell/warp 3.2.11: A fast, light-weight web server for WAI applications
+dev-haskell/warp 3.2.11.1: A fast, light-weight web server for WAI applications
 dev-haskell/warp-tls 3.2.3: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.1.4: WAVE audio file IO library
@@ -1877,7 +1877,7 @@ dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMona
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.7: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.21.2: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.22: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yarr 1.4.0.2: Yet another array library
 dev-haskell/yesod 1.4.4: Creation of type-safe, RESTful web applications
