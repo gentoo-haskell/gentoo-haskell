@@ -1958,7 +1958,6 @@ dev-util/codex 0.5.0.2-r1: A ctags file generator for cabal project dependencies
 dev-util/corrode 9999: C-to-rust source-to-source transformer
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
-dev-util/darcs-reannotate 9999: Reformats "darcs annotate" output to look more like "cvs annotate"
 dev-util/hdocs 0.5.0.1: Haskell docs tool
 dev-util/hsdev 0.2.0.0: Haskell development library
 dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependencies
