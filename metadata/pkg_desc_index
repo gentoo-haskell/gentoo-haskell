@@ -1904,7 +1904,7 @@ dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package
 dev-haskell/yesod-markdown 0.11.4: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.6: Helper functions and data types for producing News feeds
 dev-haskell/yesod-pagination 2.0.0: Pagination in Yesod
-dev-haskell/yesod-paginator 0.10.1: A pagination approach for yesod
+dev-haskell/yesod-paginator 0.10.1 0.11.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.4.1.1: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-platform 1.2.13.3: Meta package for Yesod (deprecated)
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
