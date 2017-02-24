@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	>=dev-haskell/env-locale-1.0.0.1:=[profile?]
 	dev-haskell/formatting:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/netlink-1.0.0.4:=[profile?] <dev-haskell/netlink-1.2:=[profile?]
+	dev-haskell/netlink:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
@@ -35,7 +35,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	ibus? ( dev-haskell/dbus:=[profile?]
 		dev-haskell/ibus-hs:=[profile?] )
-	pulseaudio? ( dev-haskell/pulseaudio:=[profile?] )
+	pulseaudio? ( >=dev-haskell/pulseaudio-0.0.2.0:=[profile?] <dev-haskell/pulseaudio-0.1.0.0:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

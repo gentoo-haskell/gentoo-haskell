@@ -21,7 +21,6 @@ IUSE="+no-examples no-exe no-unicode system-libyaml"
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.0:=[profile?]
 	>=dev-haskell/conduit-1.1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
-	dev-haskell/enclosed-exceptions:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/semigroups:=[profile?]
