@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -21,10 +21,12 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.0:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-haskell/th-lift-0.7.5:=[profile?] <dev-haskell/th-lift-0.8:=[profile?]
+	>=dev-haskell/th-lift-instances-0.1.8:=[profile?] <dev-haskell/th-lift-instances-0.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/generics-sop-0.2
 		dev-haskell/hunit
 		dev-haskell/lens-simple
