@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -9,9 +9,6 @@ EAPI=6
 CABAL_FEATURES="bin test-suite"
 inherit git-r3 haskell-cabal
 
-MY_PN="SPL"
-MY_P="${MY_PN}-${PV}"
-
 DESCRIPTION="source-to-source translator of a variant of ML core into C++"
 HOMEPAGE="https://github.com/kayuri/HNC/wiki"
 EGIT_REPO_URI="https://github.com/kayuri/HNC.git"
@@ -20,6 +17,8 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # https://github.com/haskell/cabal/issues/4317
 
 RDEPEND="dev-haskell/adjunctions:=
 	dev-haskell/bifunctors:=
@@ -38,11 +37,3 @@ RDEPEND="dev-haskell/adjunctions:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.4.0
 "
-
-PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
-
-src_prepare() {
-	#workaround https://ghc.haskell.org/trac/ghc/ticket/9625
-	export CABAL_EXTRA_CONFIGURE_FLAGS+=" --disable-executable-dynamic"
-	default
-}
