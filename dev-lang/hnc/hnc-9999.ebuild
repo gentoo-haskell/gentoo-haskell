@@ -9,9 +9,6 @@ EAPI=6
 CABAL_FEATURES="bin test-suite"
 inherit git-r3 haskell-cabal
 
-MY_PN="SPL"
-MY_P="${MY_PN}-${PV}"
-
 DESCRIPTION="source-to-source translator of a variant of ML core into C++"
 HOMEPAGE="https://github.com/kayuri/HNC/wiki"
 EGIT_REPO_URI="https://github.com/kayuri/HNC.git"
