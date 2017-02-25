@@ -18,7 +18,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.17.1-r2 1.18 1.19.2.1: Conversion between markup formats
+app-text/pandoc 1.17.1-r2 1.18 1.19.2.1-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -1509,7 +1509,7 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.1.1.5: syntax highlighting library
+dev-haskell/skylighting 0.1.1.5 0.3: syntax highlighting library
 dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
@@ -1966,7 +1966,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.7: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20160511 6.20160619 6.20160619-r1 6.20161031 6.20161118 6.20161210 6.20170101: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20160511 6.20160619 6.20160619-r1 6.20161031 6.20161118 6.20161210 6.20170214: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
