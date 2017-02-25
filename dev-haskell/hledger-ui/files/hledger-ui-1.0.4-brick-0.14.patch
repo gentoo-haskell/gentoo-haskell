@@ -1,9 +1,0 @@
-diff --git a/Hledger/UI/AccountsScreen.hs b/Hledger/UI/AccountsScreen.hs
-index 953e17d..5bcb721 100644
---- a/Hledger/UI/AccountsScreen.hs
-+++ b/Hledger/UI/AccountsScreen.hs
-@@ -126,3 +126,3 @@ asDraw UIState{aopts=UIOpts{cliopts_=copts@CliOpts{reportopts_=ropts}}
-           V.maximum $
--          V.map (\AccountsScreenItem{..} -> asItemIndentLevel + textWidth asItemDisplayAccountName) $
-+          V.map (\AccountsScreenItem{..} -> asItemIndentLevel + Hledger.Cli.textWidth asItemDisplayAccountName) $
-           -- V.filter (\(indent,_,_,_) -> (indent-1) <= fromMaybe 99999 mdepth) $
