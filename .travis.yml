@@ -24,7 +24,7 @@ before_script:
     - echo "portage::250:portage,travis" >> /etc/group
     - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
     - ln -s portage-portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/repos.conf
-    - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
+    - ln -s /usr/portage/profiles/arch/base/ /etc/portage/make.profile
     - SIZE=$(stat -c %s .travis.yml.upstream)
     - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
