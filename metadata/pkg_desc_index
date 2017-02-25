@@ -1276,7 +1276,7 @@ dev-haskell/persistent-mysql 2.3.0.2 2.5 2.6-r1: Backend for the persistent libr
 dev-haskell/persistent-postgresql 2.2.2 2.5 2.6: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.0.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6: Backend for the persistent library using sqlite3
+dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6.0.1: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.1.6-r2: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgdl 10.7: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
