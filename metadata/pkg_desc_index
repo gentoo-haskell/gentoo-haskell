@@ -1391,7 +1391,7 @@ dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
-dev-haskell/recursion-schemes 4.1.2-r1 5: Generalized bananas, lenses and barbed wire
+dev-haskell/recursion-schemes 4.1.2-r1 5 5.0.1: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/ref-tf 0.4.0.1: A type class for monads with references using type families
