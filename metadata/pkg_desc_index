@@ -825,6 +825,7 @@ dev-haskell/hpp 0.3.1.0: A Haskell pre-processor
 dev-haskell/hpqtypes 1.5.1.1: Haskell bindings to libpqtypes
 dev-haskell/hprotoc 2.3.1 2.4.0: Parse Google Protocol Buffer specifications
 dev-haskell/hps 0.15: Haskell Postscript
+dev-haskell/hreader 1.1.0: Generalization of MonadReader and ReaderT using hset
 dev-haskell/hs-bibutils 4.17 5.0 5.5: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-java 0.3.4-r1: Java .class files assembler/disassembler
 dev-haskell/hs3 0.5.9: Interface to Amazon's Simple Storage Service (S3)
@@ -837,6 +838,7 @@ dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hsdns 1.7: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
+dev-haskell/hset 2.2.0: Primitive list with elements of unique types
 dev-haskell/hsexif 0.6.1.0: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the import list of a Haskell source file
@@ -854,6 +856,7 @@ dev-haskell/hspec-core 2.2.2 2.2.3 2.2.4: A Testing Framework for Haskell
 dev-haskell/hspec-discover 2.2.2 2.2.3 2.2.4: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.6.1.1 0.7.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
+dev-haskell/hspec-megaparsec 0.3.1: Utility functions for testing Megaparsec parsers with Hspec
 dev-haskell/hspec-meta 2.2.1: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.4.1: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.6.5 0.6.6: Experimental Hspec support for testing WAI applications
@@ -923,6 +926,7 @@ dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/indents 0.3.3: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
+dev-haskell/inflections 0.2.0.1: Inflections library for Haskell
 dev-haskell/ini 0.3.5: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1: Write Haskell source files including C code inline. No FFI required
 dev-haskell/instant-generics 0.5 0.6: Generic programming library with a sum of products view
@@ -1315,6 +1319,7 @@ dev-haskell/poppler 0.14 0.14-r100: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.1.6.0 0.1.6.1: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.3.0: low-level binding to libpq
+dev-haskell/postgresql-query 3.0.1: Sql interpolating quasiquote plus some kind of primitive ORM using it
 dev-haskell/postgresql-simple 0.4.10.0 0.5.2.1: Mid-Level PostgreSQL client library
 dev-haskell/pqc 0.8-r1: Parallel batch driver for QuickCheck
 dev-haskell/pqueue 1.3.2: Reliable, persistent, fast priority queues
@@ -1716,6 +1721,7 @@ dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
 dev-haskell/type-equality 0.1.2: Type equality, coercion/cast and other operations
 dev-haskell/type-equality-check 0.0.0.4: Type equality check
+dev-haskell/type-fun 0.1.1: Collection of widely reimplemented type families
 dev-haskell/type-functions 0.2.0.4: Emulation of type-level functions
 dev-haskell/type-hint 0.1: Guide type inference with proxy values
 dev-haskell/type-level 0.3.0: Type-level programming library
