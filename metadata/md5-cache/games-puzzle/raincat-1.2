@@ -1,12 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/cabal-1.8.0.2 dev-haskell/extensible-exceptions dev-haskell/glut dev-haskell/mtl dev-haskell/opengl dev-haskell/random dev-haskell/sdl dev-haskell/sdl-image dev-haskell/sdl-mixer >=dev-lang/ghc-6.12.1
+DEPEND=dev-haskell/extensible-exceptions:= dev-haskell/glut:= dev-haskell/mtl:= dev-haskell/opengl:= dev-haskell/random:= dev-haskell/sdl2:= dev-haskell/sdl2-image:= dev-haskell/sdl2-mixer:= >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8
 DESCRIPTION=A puzzle game written in Haskell with a cat in lead role
-EAPI=5
+EAPI=6
 HOMEPAGE=http://raincat.bysusanlin.com/
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
+RDEPEND=dev-haskell/extensible-exceptions:= dev-haskell/glut:= dev-haskell/mtl:= dev-haskell/opengl:= dev-haskell/random:= dev-haskell/sdl2:= dev-haskell/sdl2-image:= dev-haskell/sdl2-mixer:= >=dev-lang/ghc-7.4.1:=
 SLOT=0
-SRC_URI=mirror://hackage/packages/archive/Raincat/1.1.1.3/Raincat-1.1.1.3.tar.gz
+SRC_URI=mirror://hackage/packages/archive/Raincat/1.2/Raincat-1.2.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=eutils	708f85bc1bf00876604e223fb56e062a	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	eb9be4b678c4e71f3f530a767df31912	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=1bb24364b0708872be73d20726437d15
+_md5_=ca17f26988dcf8b252fa4abadecb800b
