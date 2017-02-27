@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/bytestring-trie-0.2.2:= <dev-haskell/bytestring-trie-0.3:= >=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:= >=dev-haskell/haskeline-0.7:= <dev-haskell/haskeline-0.8:= >=dev-haskell/mtl-2.2.1:= <dev-haskell/mtl-3:= >=dev-haskell/parsec-3.1.1:= <dev-haskell/parsec-3.5:= dev-haskell/text:= ~dev-lang/elm-compiler-0.18.0:= dev-lang/elm-package:= >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 test? ( dev-haskell/hunit dev-haskell/quickcheck dev-haskell/test-framework dev-haskell/test-framework-hunit >=dev-haskell/test-framework-quickcheck2-0.3 )
+DESCRIPTION=a REPL for Elm
+EAPI=6
+HOMEPAGE=https://github.com/elm-lang/elm-repl
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/bytestring-trie-0.2.2:= <dev-haskell/bytestring-trie-0.3:= >=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:= >=dev-haskell/haskeline-0.7:= <dev-haskell/haskeline-0.8:= >=dev-haskell/mtl-2.2.1:= <dev-haskell/mtl-3:= >=dev-haskell/parsec-3.1.1:= <dev-haskell/parsec-3.5:= dev-haskell/text:= ~dev-lang/elm-compiler-0.18.0:= dev-lang/elm-package:= >=dev-lang/ghc-7.4.1:=
+SLOT=0
+SRC_URI=https://github.com/elm-lang/elm-repl/archive/0.18.0.tar.gz -> elm-repl-0.18.0.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=eutils	708f85bc1bf00876604e223fb56e062a	ghc-package	e62b77bfa6dbc88a6576bb54b386edd7	haskell-cabal	58c3a8afd37f070d4bfa0286b2685a06	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	eb9be4b678c4e71f3f530a767df31912	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=b7733ce53b451ae82233f5a5e63220fc

@@ -1935,12 +1935,12 @@ dev-haskell/ztail 1.2: Multi-file, colored, filtered log tailer
 dev-lang/ajhc 0.8.0.10-r1: Haskell compiler that produce binary through C language
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.3.0-r1 2.4.0: Cryptol: The Language of Cryptography
-dev-lang/elm-compiler 0.15-r2 0.17.1-r1: Values to help with elm-package, elm-make, and elm-lang.org
-dev-lang/elm-make 0.17.1-r1: A build tool for Elm projects
-dev-lang/elm-meta 0.17.1: Meta package for all Elm packages
-dev-lang/elm-package 0.17.1-r3: Package manager for Elm libraries
-dev-lang/elm-reactor 0.17.1: Interactive development tool for Elm programs
-dev-lang/elm-repl 0.17.1: a REPL for Elm
+dev-lang/elm-compiler 0.15-r2 0.17.1-r1 0.18.0: Values to help with elm-package, elm-make, and elm-lang.org
+dev-lang/elm-make 0.17.1-r1 0.18.0: A build tool for Elm projects
+dev-lang/elm-package 0.17.1-r3 0.18.0: Package manager for Elm libraries
+dev-lang/elm-platform 0.17.1 0.18.0: Meta package for all Elm packages
+dev-lang/elm-reactor 0.17.1 0.18.0: Interactive development tool for Elm programs
+dev-lang/elm-repl 0.17.1 0.18.0: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
 dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
