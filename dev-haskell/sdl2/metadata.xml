@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package contains bindings to the SDL 2 library, in both high- and
+		low-level forms:
+		
+		The &#39;SDL&#39; namespace contains high-level bindings, where enumerations are split
+		into sum types, and we perform automatic error-checking.
+		
+		The &#39;SDL.Raw&#39; namespace contains an almost 1-1 translation of the C API into
+		Haskell FFI calls. As such, this does not contain sum types nor error
+		checking. Thus this namespace is suitable for building your own abstraction
+		over SDL, but is not recommended for day-to-day programming.
+	</longdescription>
+</pkgmetadata>
