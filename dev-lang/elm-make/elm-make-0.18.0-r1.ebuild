@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/aeson:=
 	dev-haskell/blaze-html:=
 	dev-haskell/blaze-markup:=
 	>=dev-haskell/mtl-2.2.1:= <dev-haskell/mtl-3:=
-	>=dev-haskell/optparse-applicative-0.11:= <dev-haskell/optparse-applicative-0.12:=
+	>=dev-haskell/optparse-applicative-0.11:=
 	dev-haskell/raw-strings-qq:=
 	dev-haskell/text:=
 	~dev-lang/elm-compiler-${PV}:=
@@ -34,3 +34,10 @@ RDEPEND="dev-haskell/aeson:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >=0.11 && <0.12' 'optparse-applicative >=0.11'
+}
