@@ -10,4 +10,4 @@ SLOT=0
 SRC_URI=http://www.vim.org/scripts/download_script.php?src_id=7407 -> haskellindent-0.1.vim
 _eclass_exported_funcs=pkg_postrm:vim-plugin pkg_postinst:vim-plugin src_unpack:- src_prepare:- src_install:vim-plugin
 _eclasses_=vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	6f0171b0a2f2fce005c13b4c0685a0d8
-_md5_=66d17ffe27d053105d25c7af65fb8848
+_md5_=99a2a27030b7159bb50eaa0b251a33a6

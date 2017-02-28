@@ -12,4 +12,4 @@ SLOT=0
 SRC_URI=https://www.haskell.org/hugs/downloads/2006-09/hugs98-plus-Sep2006.tar.gz
 _eclass_exported_funcs=src_configure:- src_compile:- src_install:-
 _eclasses_=eutils	3c847a0129fed780bd709b98e426f89c	flag-o-matic	979af9133d4de419fa98992355b07ca4	multilib	0236be304ee52e7f179ed2f337075515	toolchain-funcs	53b75b4a49cf3e61530a523804045432	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=c975b2d7df0317d13716cfee3e8e27f4
+_md5_=5629b6dbf3d9aba6be18c6b209b14bf8

@@ -7,4 +7,4 @@ LICENSE=metapackage
 RDEPEND=~dev-lang/elm-compiler-0.18.0 ~dev-lang/elm-make-0.18.0 ~dev-lang/elm-package-0.18.0 ~dev-lang/elm-reactor-0.18.0 ~dev-lang/elm-repl-0.18.0
 SLOT=0/0.18.0
 _eclass_exported_funcs=-
-_md5_=524518924d4581a4666b90905bd01c9e
+_md5_=44e2dab3663ceba9876c45a4c9e17638

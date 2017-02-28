@@ -9,4 +9,4 @@ RDEPEND=>=dev-lang/ocaml-3.9
 SLOT=0
 SRC_URI=http://www.cl.cam.ac.uk/~pes20/ott/ott_distro_0.25.tar.gz
 _eclass_exported_funcs=src_compile:- src_install:-
-_md5_=bca19103466dfb5de1e6284b367eb81b
+_md5_=06cab471e9bc72358705bfb024313044
