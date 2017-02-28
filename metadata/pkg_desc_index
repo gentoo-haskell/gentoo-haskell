@@ -1940,7 +1940,7 @@ dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.3.0-r1 2.4.0: Cryptol: The Language of Cryptography
 dev-lang/elm-compiler 0.15-r2 0.17.1-r1 0.18.0: Values to help with elm-package, elm-make, and elm-lang.org
 dev-lang/elm-make 0.17.1-r1 0.18.0: A build tool for Elm projects
-dev-lang/elm-package 0.17.1-r3 0.18.0: Package manager for Elm libraries
+dev-lang/elm-package 0.17.1-r3 0.18.0-r1: Package manager for Elm libraries
 dev-lang/elm-platform 0.17.1 0.18.0: Meta package for all Elm packages
 dev-lang/elm-reactor 0.17.1 0.18.0: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.17.1 0.18.0: a REPL for Elm
