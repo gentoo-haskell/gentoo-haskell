@@ -10,5 +10,5 @@ RDEPEND=dev-vcs/darcs dev-lang/python >=app-admin/webapp-config-1.50.15
 SLOT=0.16
 SRC_URI=http://users.auriga.wearlab.de/~alb/darcsweb/files/0.16/darcsweb-0.16.tar.bz2
 _eclass_exported_funcs=pkg_prerm:webapp pkg_postinst:webapp pkg_setup:webapp src_install:-
-_eclasses_=webapp	42c6ef7af496b228f9854b3c81e4b226
+_eclasses_=webapp	a76ebd3cb5649737496e8238992dd7ca
 _md5_=fb3c56b5106b7569d052f3451ffe9ac2
