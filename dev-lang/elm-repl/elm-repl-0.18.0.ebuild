@@ -17,6 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files for doctest
+
 RDEPEND=">=dev-haskell/bytestring-trie-0.2.2:= <dev-haskell/bytestring-trie-0.3:=
 	>=dev-haskell/cmdargs-0.7:= <dev-haskell/cmdargs-0.11:=
 	>=dev-haskell/haskeline-0.7:= <dev-haskell/haskeline-0.8:=
