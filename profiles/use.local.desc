@@ -344,7 +344,6 @@ dev-haskell/stateref:usetmvar - Include instances for TMVar.
 dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/tables:test-properties - Enable the properties test-suite.
 dev-haskell/tables:transformers2 - Enable old versions of transformers. Non-developers should never set this.
-dev-haskell/tagsoup:download - Build with Download module.
 dev-haskell/tagsoup:testprog - Build the test program.
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
