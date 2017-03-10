@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -12,7 +12,7 @@ MY_PN="HerbiePlugin"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="automatically improve your code's numeric stability"
-HOMEPAGE="github.com/mikeizbicki/herbie-haskell"
+HOMEPAGE="https://github.com/mikeizbicki/herbie-haskell"
 SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
