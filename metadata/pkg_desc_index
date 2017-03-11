@@ -991,7 +991,7 @@ dev-haskell/lambdabot-social-plugins 5.0.1 5.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1 5.1: Lambdabot trusted code
 dev-haskell/language-bash 0.6.2: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.4.7 0.5.0: Analysis and generation of C code
-dev-haskell/language-c-quote 0.11.7.2: C/CUDA/OpenCL/Objective-C quasiquoting library
+dev-haskell/language-c-quote 0.11.7.2-r1: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
 dev-haskell/language-dot 0.1.0: A library for the analysis and creation of Graphviz DOT files
 dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printer library
