@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs nodejs, npm and stuff
+
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]

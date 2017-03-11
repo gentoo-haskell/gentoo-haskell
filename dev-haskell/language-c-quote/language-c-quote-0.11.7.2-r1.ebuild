@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/exception-mtl-0.3:=[profile?] <dev-haskell/exception-mtl-
 	>=dev-haskell/symbol-0.1:=[profile?] <dev-haskell/symbol-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	full-haskell-antiquotes? ( >=dev-haskell/haskell-src-meta-0.4:=[profile?] <dev-haskell/haskell-src-meta-0.7:=[profile?]
-					<=dev-haskell/safe-0.3.9:=[profile?] )
+					dev-haskell/safe:=[profile?] )
 	!full-haskell-antiquotes? ( >=dev-haskell/haskell-exp-parser-0.1:=[profile?] <dev-haskell/haskell-exp-parser-0.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'safe <= 0.3.9' 'safe'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
