@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-haskell/syb-0.1.0.2:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.1.0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,7 +37,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.0 && < 4.10' 'base >= 4.0'
+		'base >= 4.0 && < 4.10' 'base >= 4.0' \
+		'syb >= 0.1.0.2 && < 0.7' 'syb >= 0.1.0.2'
 }
 
 src_configure() {
