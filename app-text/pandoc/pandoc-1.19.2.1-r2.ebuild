@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-1.2:=[profil
 	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/sha-1.6:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/skylighting-0.1.1.4:=[profile?]
-	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.1:=[profile?]
 	>=dev-haskell/tagsoup-0.13.7:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	>=dev-haskell/texmath-0.9:=[profile?] <dev-haskell/texmath-0.10:=[profile?]
@@ -80,7 +80,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'skylighting >= 0.1.1.4 && < 0.2' 'skylighting >= 0.1.1.4' \
-		'skylighting >= 0.1.1.3 && < 0.2' 'skylighting >= 0.1.1.3'
+		'skylighting >= 0.1.1.3 && < 0.2' 'skylighting >= 0.1.1.3' \
+		'syb >= 0.1 && < 0.7' 'syb >= 0.1'
 }
 
 src_configure() {
