@@ -4,7 +4,7 @@ app-admin/propellor 3.4.1: property-based host configuration management in haske
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
-app-emacs/ghc-mod 5.5.0.0-r1 5.6.0.0-r1 5.7.0.0 9999: Happy Haskell Programming
+app-emacs/ghc-mod 5.5.0.0-r1 5.6.0.0-r1 5.7.0.0-r1 9999: Happy Haskell Programming
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3 4.6.4: Extensible Haskell pretty printer
 app-emacs/idris-mode 9999: Idris syntax highlighting and (eventually) other things for emacs
@@ -18,7 +18,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.17.1-r2 1.18 1.19.2.1-r1: Conversion between markup formats
+app-text/pandoc 1.17.1-r2 1.18 1.19.2.1-r2: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -232,7 +232,7 @@ dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo libr
 dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
-dev-haskell/carray 0.1.6.5: A C-compatible array library
+dev-haskell/carray 0.1.6.5-r1: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.8: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
@@ -252,7 +252,7 @@ dev-haskell/chart-cairo 1.8.2: Cairo backend for Charts
 dev-haskell/chart-diagrams 1.8.2: Diagrams backend for Charts
 dev-haskell/chart-gtk 1.8.2: Utility functions for using the chart library with GTK
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
-dev-haskell/chasingbottoms 1.3.1.2: For testing partial and infinite values
+dev-haskell/chasingbottoms 1.3.1.2-r1: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
 dev-haskell/checkers 0.4.6: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
@@ -444,7 +444,7 @@ dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage 
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
-dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6: Cloud Haskell: Erlang-style concurrency in Haskell
+dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6-r1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1 0.4.6 0.4.7: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
@@ -523,7 +523,7 @@ dev-haskell/failure 0.2.0.3: A simple type class for success/failure computation
 dev-haskell/fast-logger 2.4.10: A fast logging system
 dev-haskell/fastcgi 3001.0.2.4: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.23.1.12-r6 0.23.1.16: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.23.1.12-r7 0.23.1.16: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.20.0.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -689,7 +689,7 @@ dev-haskell/happraise 0.1-r1: A small program for counting the comments in haske
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-authenticate 2.3.4.7: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
-dev-haskell/happstack-hsp 7.3.7.1: Support for using HSP templates in Happstack
+dev-haskell/happstack-hsp 7.3.7.1-r1: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-jmacro 7.0.11: Support for using JMacro with Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
@@ -720,7 +720,7 @@ dev-haskell/haskell-platform 2012.2.0.0 2012.4.0.0-r1 2013.2.0.0-r2 2014.2.0.0-r
 dev-haskell/haskell-src 1.0.2.0: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/haskell-src-exts-simple 1.18.0.1.1: A simplified view on the haskell-src-exts AST
-dev-haskell/haskell-src-meta 0.6.0.14-r1: Parse source to template-haskell abstract syntax
+dev-haskell/haskell-src-meta 0.6.0.14-r2: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
 dev-haskell/haskelldb-hdbc-mysql 0.1.1-r1: HaskellDB support for the HDBC MySQL driver
@@ -730,7 +730,7 @@ dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLi
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1: Client support for POP3, SMTP, and IMAP
 dev-haskell/haskellnet-ssl 0.3.3.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
-dev-haskell/hasktags 0.69.2.1: Produces ctags "tags" and etags "TAGS" files for Haskell programs
+dev-haskell/hasktags 0.69.3: Produces ctags "tags" and etags "TAGS" files for Haskell programs
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.1.0: The Haskell LaTeX library
@@ -1242,9 +1242,9 @@ dev-haskell/optparse-generic 1.1.4: Auto-generate a command-line parser for your
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/pandoc-citeproc 0.10.4.1: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.2.5.0: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.2.5.0-r1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
-dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4: Types for representing a structured document
+dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4-r1: Types for representing a structured document
 dev-haskell/pango 0.12.5.0-r1 0.12.5.3 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Pango text rendering engine
 dev-haskell/parallel 3.2.1.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r2: Combinators for executing IO actions in parallel on a thread pool
@@ -1576,7 +1576,7 @@ dev-haskell/stmonadtrans 0.4.3: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
-dev-haskell/storablevector 0.2.11: Fast, packed, strict storable arrays with a list interface like ByteString
+dev-haskell/storablevector 0.2.11-r1: Fast, packed, strict storable arrays with a list interface like ByteString
 dev-haskell/store 0.2.1.2 0.3.1: Fast binary serialization
 dev-haskell/store-core 0.2.0.2 0.3: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.0.10: Library for strategic programming
@@ -1596,7 +1596,7 @@ dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
 dev-haskell/stringsearch 0.3.6.6: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.6.1.0-r2 0.6.4.0: Haskell code prettifier
+dev-haskell/stylish-haskell 0.6.1.0-r3 0.6.4.0: Haskell code prettifier
 dev-haskell/styx 1.2: A generator of nix files
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
@@ -1606,7 +1606,7 @@ dev-haskell/svg-tree 0.5.1.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.6.0.1: Fonts from the SVG-Font format
 dev-haskell/sxml 0.1.0.0: A SXML-parser
-dev-haskell/syb 0.4.4 0.5.1 0.6: Scrap Your Boilerplate
+dev-haskell/syb 0.4.4 0.5.1 0.6 0.7: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
