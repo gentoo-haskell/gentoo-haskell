@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/cabal-helper-0.7.3.0:=[profile?] <dev-haskell/cabal-helpe
 	>=dev-haskell/safe-0.3.9:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.10.0:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/syb-0.5.1:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.5.1:=[profile?]
 	>=dev-haskell/temporary-1.2.0.3:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
@@ -50,6 +50,13 @@ DEPEND="${RDEPEND}
 SITEFILE=50${PN}-gentoo.el
 
 PATCHES=("${FILESDIR}"/${PN}-5.6.0.0-gentoo.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'syb               < 0.7  && >= 0.5.1' 'syb >= 0.5.1'
+}
 
 src_compile() {
 	haskell-cabal_src_compile
