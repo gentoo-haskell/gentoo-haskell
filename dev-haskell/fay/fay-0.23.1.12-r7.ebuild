@@ -32,7 +32,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/sourcemap-0.1:=[profile?] <dev-haskell/sourcemap-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/spoon-0.1:=[profile?] <dev-haskell/spoon-0.4:=[profile?]
-	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.3:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
@@ -64,7 +64,8 @@ src_prepare() {
 		'time >= 1.4 && < 1.6' 'time >= 1.4' \
 		'transformers >= 0.3 && < 0.4 || > 0.4.1 && < 0.5' 'transformers >= 0.3 && < 0.4 || > 0.4.1' \
 		'data-default >= 0.2 && < 0.6' 'data-default >= 0.2' \
-		'directory >= 1.1 && < 1.3' 'directory >= 1.1'
+		'directory >= 1.1 && < 1.3' 'directory >= 1.1' \
+		'syb >= 0.3 && < 0.7' 'syb >= 0.3'
 }
 
 src_configure() {

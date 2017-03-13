@@ -27,7 +27,7 @@ RDEPEND=">=app-text/pandoc-1.17.1:=[profile?] <app-text/pandoc-1.20:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/pandoc-types-1.16:=[profile?] <dev-haskell/pandoc-types-1.18:=[profile?]
 	>=dev-haskell/roman-numerals-0.5:=[profile?] <dev-haskell/roman-numerals-0.6:=[profile?]
-	>=dev-haskell/syb-0.4:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.4:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1.0:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'syb >= 0.4 && < 0.7' 'syb >= 0.4'
+}

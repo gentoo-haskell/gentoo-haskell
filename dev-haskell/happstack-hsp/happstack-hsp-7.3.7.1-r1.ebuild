@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 	>=dev-haskell/hsp-0.9.2:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
 	>=dev-haskell/hsx2hs-0.13.0:=[profile?] <dev-haskell/hsx2hs-0.15:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,3 +30,10 @@ RDEPEND=">=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-s
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'syb              >= 0.3 && < 0.7' 'syb              >= 0.3'
+}

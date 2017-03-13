@@ -1,0 +1,9 @@
+diff --git a/Control/Parallel/Strategies.hs b/Control/Parallel/Strategies.hs
+index bded495..59a81d3 100644
+--- a/Control/Parallel/Strategies.hs
++++ b/Control/Parallel/Strategies.hs
+@@ -146,3 +146,3 @@ import Control.Applicative
+ import Control.Parallel
+-import Control.DeepSeq
++import Control.DeepSeq hiding (rwhnf) -- not sure
+ import Control.Monad
