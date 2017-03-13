@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,9 +20,16 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/ix-shapable-0.1:=[profile?] <dev-haskell/ix-shapable-0.2:=[profile?]
 	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
-	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'syb >=0.1 && <0.7' 'syb >=0.1'
+}
