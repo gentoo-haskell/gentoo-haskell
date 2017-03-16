@@ -34,7 +34,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	dev-haskell/happy
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
-		>=dev-haskell/mainland-pretty-0.4 <dev-haskell/mainland-pretty-0.5
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
