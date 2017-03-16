@@ -537,8 +537,8 @@ dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
 dev-haskell/feed 0.3.12.0: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fficxx 0.3.1: automatic C++ binding generation
 dev-haskell/ffmpeg-light 0.11.3: Minimal bindings to the FFmpeg library
-dev-haskell/fgl 5.5.3.0: Martin Erwig's Functional Graph Library
-dev-haskell/fgl-arbitrary 0.2.0.2: QuickCheck support for fgl
+dev-haskell/fgl 5.5.3.1: Martin Erwig's Functional Graph Library
+dev-haskell/fgl-arbitrary 0.2.0.3: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
 dev-haskell/file-embed 0.0.10: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9-r1: common functions that show file location information
@@ -689,7 +689,7 @@ dev-haskell/happraise 0.1-r1: A small program for counting the comments in haske
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
 dev-haskell/happstack-authenticate 2.3.4.7: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
-dev-haskell/happstack-hsp 7.3.7.1-r1: Support for using HSP templates in Happstack
+dev-haskell/happstack-hsp 7.3.7.2: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
 dev-haskell/happstack-jmacro 7.0.11: Support for using JMacro with Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
@@ -840,7 +840,7 @@ dev-haskell/hse-cpp 0.1: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hset 2.2.0: Primitive list with elements of unique types
 dev-haskell/hsexif 0.6.1.0: EXIF handling library in pure Haskell
-dev-haskell/hsh 2.1.2: Library to mix shell scripting with Haskell programs
+dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
@@ -883,7 +883,7 @@ dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.3.5: A library for client-side HTTP
+dev-haskell/http 4000.3.6: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.5: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.5: An HTTP client engine
@@ -896,10 +896,10 @@ dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-link-header 1.0.3: An RFC 5988 parser and writer for the HTTP Link header
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
-dev-haskell/http-reverse-proxy 0.4.3.2: Reverse proxy HTTP requests, either over raw sockets or with WAI
+dev-haskell/http-reverse-proxy 0.4.3.3: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.4.0: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 1.5.4 1.6.2: HTTP/2.0 library including frames and HPACK
+dev-haskell/http2 1.5.4 1.6.2 1.6.3: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.3.1.2: A unit testing framework for Haskell
@@ -991,7 +991,7 @@ dev-haskell/lambdabot-social-plugins 5.0.1 5.1: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.0.2.1 5.1: Lambdabot trusted code
 dev-haskell/language-bash 0.6.2: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.4.7 0.5.0: Analysis and generation of C code
-dev-haskell/language-c-quote 0.11.7.2-r1: C/CUDA/OpenCL/Objective-C quasiquoting library
+dev-haskell/language-c-quote 0.11.7.3: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
 dev-haskell/language-dot 0.1.0: A library for the analysis and creation of Graphviz DOT files
 dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printer library
@@ -1090,7 +1090,7 @@ dev-haskell/megaparsec 5.2.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
-dev-haskell/memory 0.14.1: memory and related abstraction stuff
+dev-haskell/memory 0.14.2: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.7: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
