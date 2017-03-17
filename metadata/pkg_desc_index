@@ -845,7 +845,7 @@ dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the impor
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
-dev-haskell/hsopenssl 0.11.4: Partial OpenSSL binding for Haskell
+dev-haskell/hsopenssl 0.11.4.2: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.3: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.2.7 0.2.8: A SPARQL query generator and DSL, and a client to query a SPARQL server
@@ -1493,7 +1493,7 @@ dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalizatio
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time
 dev-haskell/shakespeare-sass 0.1.0.3: SASS support for Shakespeare and Yesod
 dev-haskell/shakespeare-text 1.1.0: Interpolation with quasi-quotation: put variables strings (deprecated)
-dev-haskell/shell-conduit 4.5.2: Write shell scripts with Conduit
+dev-haskell/shell-conduit 4.6.1: Write shell scripts with Conduit
 dev-haskell/shell-escape 0.2.0: Shell escaping library
 dev-haskell/shellac 0.9.9: A framework for creating shell envinronments
 dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
@@ -1780,9 +1780,9 @@ dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using va
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.8: Runs commands on remote machines using ssh
 dev-haskell/validation 0.5.4: A data-type like Either but with an accumulating Applicative
-dev-haskell/validity 0.3.2.0: Validity typeclass
-dev-haskell/validity-path 0.1.0.0: Validity instances for Path
-dev-haskell/validity-text 0.1.2.0: Validity instances for text
+dev-haskell/validity 0.3.3.0: Validity typeclass
+dev-haskell/validity-path 0.1.0.1: Validity instances for Path
+dev-haskell/validity-text 0.1.2.1: Validity instances for text
 dev-haskell/varying 0.7.0.3: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
