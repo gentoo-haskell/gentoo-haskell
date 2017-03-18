@@ -700,7 +700,7 @@ dev-haskell/hare 0.8.3.0: the Haskell Refactorer
 dev-haskell/harp 0.4.2: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hascas 1.2.0: Cassandra driver for haskell
-dev-haskell/hashable 1.2.5.0: A class for types that can be converted to a hash value
+dev-haskell/hashable 1.2.6.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashable-time 0.2: Hashable instances for Data.Time
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
@@ -753,7 +753,7 @@ dev-haskell/hdevtools 0.1.5.0: Persistent GHC powered background server for FAST
 dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
-dev-haskell/heckle 2.0.1.9-r1: Jekyll in Haskell (feat. LaTeX)
+dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
 dev-haskell/hedis 0.6.10 0.9.6: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
@@ -1751,7 +1751,7 @@ dev-haskell/unix-process-conduit 0.2.2.3: Run processes on Unix systems, with a 
 dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
-dev-haskell/unordered-containers 0.2.7.2: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.8.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.2.3.1: Haskell URI parsing as ByteStrings
