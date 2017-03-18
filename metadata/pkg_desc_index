@@ -1118,7 +1118,7 @@ dev-haskell/mockery 0.3.4: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.20.2: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.21: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.3.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
@@ -1254,7 +1254,7 @@ dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
 dev-haskell/parsers 0.12.4: Parsing combinators
 dev-haskell/partial-handler 1.0.2: A composable exception handler
-dev-haskell/path 0.5.12: Support for well-typed paths
+dev-haskell/path 0.5.13: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.2.2: Interface to directory package for users of path
 dev-haskell/path-pieces 0.2.1: Components of paths
@@ -1693,7 +1693,7 @@ dev-haskell/these 0.7.3: An either-or-both data type & a generalized 'zip with p
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6 0.7.0.1: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
-dev-haskell/tidal 0.8.2: Pattern language for improvised music
+dev-haskell/tidal 0.9: Pattern language for improvised music
 dev-haskell/time-compat 0.1.0.3: Compatibility with old-time for the time package
 dev-haskell/time-lens 0.4.0.1: Lens-based interface to Data.Time data structures
 dev-haskell/time-locale-compat 0.1.1.3: Compatibility of TimeLocale between old-locale and time-1.5
