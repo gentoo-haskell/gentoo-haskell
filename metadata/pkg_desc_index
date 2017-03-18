@@ -134,7 +134,7 @@ dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platfor
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.14.1: Amazon Web Services (AWS) for Haskell
-dev-haskell/base-compat 0.8.2 0.9.1: A compatibility layer for base
+dev-haskell/base-compat 0.8.2 0.9.2: A compatibility layer for base
 dev-haskell/base-orphans 0.5.4: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.0.1.1: The most complete prelude formed solely from the "base" package
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
@@ -565,7 +565,7 @@ dev-haskell/foldl 1.2.3: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.3: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.4: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
