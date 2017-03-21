@@ -790,7 +790,7 @@ dev-haskell/hledger-ui 1.1.1-r1: Curses-style user interface for the hledger acc
 dev-haskell/hledger-web 0.25.1 0.26 0.27 1.1-r1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
-dev-haskell/hlibsass 0.1.5.0: Low-level bindings to Libsass
+dev-haskell/hlibsass 0.1.5.2: Low-level bindings to Libsass
 dev-haskell/hlint 1.9.22 1.9.35 1.9.37: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
