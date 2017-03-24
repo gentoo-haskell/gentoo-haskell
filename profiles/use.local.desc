@@ -57,6 +57,8 @@ dev-haskell/blaze-builder-enumerator:newbuilder - use bytestring-builder instead
 dev-haskell/bound:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.
 dev-haskell/btrfs:examples - Build examples
+dev-haskell/byline:build-examples - Build examples when building the library.
+dev-haskell/byline:maintainer - Enable settings for the package maintainer.
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/bytestring-trie:usecinternal - use optimized C implementation for indexOfDifference.
@@ -349,6 +351,7 @@ dev-haskell/tagsoup:testprog - Build the test program.
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/th-extras:base4 - Use base-4.0.
+dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
 dev-haskell/threepenny-gui:network-uri - Use network-uri library.
 dev-haskell/threepenny-gui:rebug - Expose more bugs related to non-determinism.
@@ -373,6 +376,7 @@ dev-haskell/vector-algorithms:boundschecks - Enable bounds checking.
 dev-haskell/vector-algorithms:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty.
 dev-haskell/vector-algorithms:properties - Enable quickcheck tests.
 dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty.
+dev-haskell/vimeta:maintainer - Enable settings for the package maintainer.
 dev-haskell/vinyl-utils:devel - Development mode (-Werror)
 dev-haskell/void:safe - dissable effective but unsafe coersions
 dev-haskell/vty-ui:demos - Build demonstration programs.
