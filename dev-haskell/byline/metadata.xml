@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		 <flag name="maintainer">Enable settings for the package maintainer.</flag>
+		 <flag name="build-examples">Build examples when building the library.</flag>
+	</use>
+	<longdescription>
+		Byline simplifies writing interactive terminal applications by
+		building upon @ansi-terminal@ and @haskeline@.  This makes it
+		possible to print messages and prompts that include terminal escape
+		sequences such as colors that are automatically disabled when
+		standard input is a file.  It also means that Byline works on both
+		POSIX-compatible systems and on Windows.
+		
+		The primary features of Byline include printing messages, prompting
+		for input, and generating custom menus.  It was inspired by the
+		@highline@ Ruby library and the @terminal@ library by Craig Roche.
+	</longdescription>
+</pkgmetadata>
