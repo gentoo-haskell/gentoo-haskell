@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This module can acquire terminfo databases and query them for terminal
+		capabilities. For details of terminfo, consult the man pages for
+		term(5) and terminfo(5).
+		This package is dead simple, and doesn&#39;t do anything fancy with the
+		capabilities themselves. It merely provides a means for accessing them.
+	</longdescription>
+</pkgmetadata>

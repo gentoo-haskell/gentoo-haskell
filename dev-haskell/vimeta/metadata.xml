@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		 <flag name="maintainer">Enable settings for the package maintainer.</flag>
+	</use>
+	<longdescription>
+		Vimeta is a tool to fetch video metadata from the interwebs and
+		update video files using a tagging tool.
+	</longdescription>
+</pkgmetadata>
