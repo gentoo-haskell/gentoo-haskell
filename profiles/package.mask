@@ -1,8 +1,3 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (18 Jan 2016)
-# Masked in favour of dev-haskell/hdbc-sqlite3
-# Both are really the same hdbc-sqlite3 hackage package.
-dev-haskell/hdbc-sqlite
-
 # Sergei Trofimovich <slyfox@gentoo.org> (19 Nov 2016)
 # Masked as this minor release has too many breakages:
 #  - Strings are still inlined: https://ghc.haskell.org/trac/ghc/ticket/12855
