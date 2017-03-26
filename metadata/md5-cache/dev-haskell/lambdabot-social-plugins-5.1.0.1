@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/lambdabot-core-5.1:=[profile?] <dev-haskell/lambdabot-core-5.2:=[profile?] >=dev-haskell/mtl-2:=[profile?] >=dev-haskell/split-0.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Social plugins for Lambdabot
+EAPI=6
+HOMEPAGE=https://wiki.haskell.org/Lambdabot
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-haskell/lambdabot-core-5.1:=[profile?] <dev-haskell/lambdabot-core-5.2:=[profile?] >=dev-haskell/mtl-2:=[profile?] >=dev-haskell/split-0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/5.1.0.1
+SRC_URI=mirror://hackage/packages/archive/lambdabot-social-plugins/5.1.0.1/lambdabot-social-plugins-5.1.0.1.tar.gz
+_eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ghc-package	f9cf05643e20f03876bb4807f008c80f	haskell-cabal	e2532aa75df473aa3cbd3c5d26a0d9d4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	0236be304ee52e7f179ed2f337075515	multiprocessing	284a473719153462f3e974d86c8cb81c	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_md5_=c0fa61e7cf311fb5fdfc4c5abf61cd54
