@@ -129,6 +129,7 @@ dev-haskell/gf:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/gf:server - server-mode (HTTP GCI)
 dev-haskell/ghc-api:cabal - fix cabal version
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
+dev-haskell/ghc-prof:dump - build 'dump' tool
 dev-haskell/ghc-vis:full - Full ghc-vis window: decorations, buttons, legend
 dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
 dev-haskell/ghcjs-dom:gtk3 - Use GTK3 rather than GTK2
