@@ -78,7 +78,7 @@ src_prepare() {
 	cabal_chdeps \
 		'zlib < 0.6.1' 'zlib' \
 		'process < 1.5' 'process' \
-		'aeson >= 0.6 && < 1.1' 'aeson >= 0.6' \
+		'aeson >= 0.6 && < 1.2' 'aeson >= 0.6' \
 		'safe == 0.3.9' 'safe'
 }
 
