@@ -1519,7 +1519,7 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.3.1: syntax highlighting library
+dev-haskell/skylighting 0.3.2: syntax highlighting library
 dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
@@ -1740,7 +1740,7 @@ dev-haskell/uhc-light 1.1.9.5: Part of UHC packaged as cabal/hackage installable
 dev-haskell/uhc-util 0.1.6.7: UHC utilities
 dev-haskell/unamb 0.2.5: Unambiguous choice
 dev-haskell/unbound 0.5.1: Generic support for programming with names and binders
-dev-haskell/unbounded-delays 0.1.0.9: Unbounded thread delays and timeouts
+dev-haskell/unbounded-delays 0.1.0.10: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.3.0: IO without any non-error, synchronous exceptions
 dev-haskell/unicode-transforms 0.2.1: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
