@@ -524,6 +524,11 @@ src_configure() {
 			echo "HADDOCK_DOCS=NO" >> mk/build.mk
 			echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
 			echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
+
+			# GHC bug: by default Stage1Only installs ghci and runghc
+			# without cross- prefix. These wrappers and symlinks
+			# are broken anyway as they refer to nonexisting ghc-stage2.
+			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
@@ -644,16 +649,6 @@ src_install() {
 		if ! is_crosscompile; then
 			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
 			newbashcomp utils/completion/ghc.bash         ghc
-		fi
-		# GHC bug: in Stage1Only is installs ghci symlinks:
-		if is_crosscompile; then
-			# these refer to not yet built ghci:
-			#    ghc-${GHC_PV} --interactive
-			rm "${ED}"/usr/bin/ghci || die
-			rm "${ED}"/usr/bin/ghci-${GHC_PV} || die
-			# these refer to nonexistent 'runghc-${GHC_PV}' binary
-			rm "${ED}"/usr/bin/runghc || die
-			rm "${ED}"/usr/bin/runhaskell || die
 		fi
 	fi
 
