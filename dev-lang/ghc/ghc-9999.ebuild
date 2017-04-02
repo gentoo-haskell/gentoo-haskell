@@ -520,10 +520,7 @@ src_configure() {
 			if [[ ${CHOST} != ${CTARGET} ]]; then
 				echo "Stage1Only=YES" >> mk/build.mk
 			fi
-			# in registerised mode ghc is too keen to use llvm
-			echo "GhcUnregisterised=YES" >> mk/build.mk
-			# above is not enough to give up on llvm (x86_64 host, ia64 target)
-			econf_args+=(--enable-unregisterised)
+
 			# otherwise stage1 tries to run nonexistent ghc-split.lprl
 			echo "SplitObjs=NO" >> mk/build.mk
 		fi
