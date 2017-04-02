@@ -5,8 +5,7 @@ EAPI=5
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
-#
-# 'CTARGET' definition and 'is_crosscompile' are taken from 'toolchain.eclass'
+export CBUILD=${CBUILD:-${CHOST}}
 export CTARGET=${CTARGET:-${CHOST}}
 if [[ ${CTARGET} = ${CHOST} ]] ; then
 	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
@@ -119,6 +118,10 @@ QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
+}
+
+is_native() {
+	[[ ${CHOST} == ${CBUILD} ]] && [[ ${CHOST} == ${CTARGET} ]]
 }
 
 # returns tool prefix for crosscompiler.
@@ -248,14 +251,19 @@ ghc_setup_cflags() {
 		append-ghc-cflags link ${flag}
 	done
 
-	# hardened-gcc needs to be disabled, because the mangler doesn't accept
-	# its output.
-	gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
-	gcc-specs-ssp && append-ghc-cflags persistent compile      -fno-stack-protector
+	# GHC uses ${CBUILD}-gcc, ${CHOST}-gcc and ${CTARGET}-gcc at a single build.
+	# Skip any gentoo-specific tweaks for cross-case to avoid passing unsupported
+	# options to gcc.
+	if is_native; then
+		# hardened-gcc needs to be disabled, because the mangler doesn't accept
+		# its output.
+		gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
+		gcc-specs-ssp && append-ghc-cflags persistent compile      -fno-stack-protector
 
-	# prevent from failind building unregisterised ghc:
-	# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
-	use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
+		# prevent from failind building unregisterised ghc:
+		# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
+		use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
+	fi
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
@@ -516,9 +524,9 @@ src_configure() {
 				echo "BUILD_DPH = NO" >> mk/build.mk
 		fi
 
-		if is_crosscompile; then
-			echo "Stage1Only=YES" >> mk/build.mk
-
+		# Any non-native build has to skip as it needs
+		# target haddock binary to be runnabine.
+		if ! is_native; then
 			# otherwise stage1 tries to run nonexistent ghc-split.lprl
 			echo "SplitObjs=NO" >> mk/build.mk
 
@@ -526,6 +534,10 @@ src_configure() {
 			echo "HADDOCK_DOCS=NO" >> mk/build.mk
 			echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
 			echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
+		fi
+
+		if is_crosscompile; then
+			echo "Stage1Only=YES" >> mk/build.mk
 
 			# GHC bug: by default Stage1Only installs ghci and runghc
 			# without cross- prefix. These wrappers and symlinks
@@ -564,6 +576,13 @@ src_configure() {
 		# Don't allow things like ccache or versioned binary slip.
 		# We use stable thing across gcc upgrades.
 		is_crosscompile || econf_args+=(CC=${CHOST}-gcc)
+
+		if [[ ${CBUILD} != ${CHOST} ]]; then
+			# GHC bug: ghc claims not to support cross-building.
+			# It does, but does not distinct --host= value
+			# for stage1 and stage2 compiler.
+			econf_args+=(--host=${CBUILD})
+		fi
 
 		if use ghcmakebinary; then
 			# When building booting libary we are trying to
