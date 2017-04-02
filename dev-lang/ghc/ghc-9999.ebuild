@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -525,9 +525,6 @@ src_configure() {
 		# Any non-native build has to skip as it needs
 		# target haddock binary to be runnabine.
 		if ! is_native; then
-			# otherwise stage1 tries to run nonexistent ghc-split.lprl
-			echo "SplitObjs=NO" >> mk/build.mk
-
 			# disable docs generation as it requires running stage2
 			echo "HADDOCK_DOCS=NO" >> mk/build.mk
 			echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
