@@ -514,12 +514,8 @@ src_configure() {
 				echo "BUILD_DPH = NO" >> mk/build.mk
 		fi
 
-		# might need additional fiddling with --host parameter:
-		#    https://github.com/ghc/ghc/commit/109a1e53287f50103e8a5b592275940b6e3dbb53
 		if is_crosscompile; then
-			if [[ ${CHOST} != ${CTARGET} ]]; then
-				echo "Stage1Only=YES" >> mk/build.mk
-			fi
+			echo "Stage1Only=YES" >> mk/build.mk
 
 			# otherwise stage1 tries to run nonexistent ghc-split.lprl
 			echo "SplitObjs=NO" >> mk/build.mk
@@ -648,6 +644,16 @@ src_install() {
 		if ! is_crosscompile; then
 			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
 			newbashcomp utils/completion/ghc.bash         ghc
+		fi
+		# GHC bug: in Stage1Only is installs ghci symlinks:
+		if is_crosscompile; then
+			# these refer to not yet built ghci:
+			#    ghc-${GHC_PV} --interactive
+			rm "${ED}"/usr/bin/ghci || die
+			rm "${ED}"/usr/bin/ghci-${GHC_PV} || die
+			# these refer to nonexistent 'runghc-${GHC_PV}' binary
+			rm "${ED}"/usr/bin/runghc || die
+			rm "${ED}"/usr/bin/runhaskell || die
 		fi
 	fi
 
