@@ -572,10 +572,12 @@ src_configure() {
 
 		local econf_args=()
 
-		# GHC embeds 'gcc' it was built by and uses it later.
-		# Don't allow things like ccache or versioned binary slip.
-		# We use stable thing across gcc upgrades.
-		is_crosscompile || econf_args+=(CC=${CHOST}-gcc)
+		if is_native; then
+			# GHC embeds 'gcc' it was built by and uses it later.
+			# Don't allow things like ccache or versioned binary slip.
+			# We use stable thing across gcc upgrades.
+			econf_args+=(CC=${CHOST}-gcc)
+		fi
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
 			# GHC bug: ghc claims not to support cross-building.
@@ -620,8 +622,12 @@ src_compile() {
 			# 2. pax-mark (bug #516430)
 			pax-mark -m ghc/stage2/build/tmp/ghc-stage2
 			# 2. build/pax-mark haddock using ghc-stage2
-			emake utils/haddock/dist/build/tmp/haddock
-			pax-mark -m utils/haddock/dist/build/tmp/haddock
+			if is_native; then
+				# non-native build does not build haddock
+				# due to HADDOCK_DOCS=NO, but it could.
+				emake utils/haddock/dist/build/tmp/haddock
+				pax-mark -m utils/haddock/dist/build/tmp/haddock
+			fi
 		fi
 		# 3. and then all the rest
 		emake all
