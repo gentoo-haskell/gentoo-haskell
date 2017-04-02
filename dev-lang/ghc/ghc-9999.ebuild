@@ -523,6 +523,11 @@ src_configure() {
 
 			# otherwise stage1 tries to run nonexistent ghc-split.lprl
 			echo "SplitObjs=NO" >> mk/build.mk
+
+			# disable docs generation as it requires running stage2
+			echo "HADDOCK_DOCS=NO" >> mk/build.mk
+			echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
+			echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
