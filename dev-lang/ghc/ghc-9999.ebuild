@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -468,6 +468,8 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+
+		epatch "${FILESDIR}"/${PN}-9999-nofatal-split.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
