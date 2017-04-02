@@ -591,13 +591,16 @@ src_configure() {
 
 src_compile() {
 	if ! use binary; then
-		# 1. build/pax-mark compiler binary first
-		emake ghc/stage2/build/tmp/ghc-stage2
-		# 2. pax-mark (bug #516430)
-		pax-mark -m ghc/stage2/build/tmp/ghc-stage2
-		# 2. build/pax-mark haddock using ghc-stage2
-		emake utils/haddock/dist/build/tmp/haddock
-		pax-mark -m utils/haddock/dist/build/tmp/haddock
+		# Stage1Only crosscompiler does not build stage2
+		if ! is_crosscompile; then
+			# 1. build/pax-mark compiler binary first
+			emake ghc/stage2/build/tmp/ghc-stage2
+			# 2. pax-mark (bug #516430)
+			pax-mark -m ghc/stage2/build/tmp/ghc-stage2
+			# 2. build/pax-mark haddock using ghc-stage2
+			emake utils/haddock/dist/build/tmp/haddock
+			pax-mark -m utils/haddock/dist/build/tmp/haddock
+		fi
 		# 3. and then all the rest
 		emake all
 	fi # ! use binary
