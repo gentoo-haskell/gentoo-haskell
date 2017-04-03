@@ -474,7 +474,9 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 
-		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
+		# breaks ia64 and hppa. Should be adapted to -HEAD
+		# or upstreamed first.
+		#epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		if use prefix; then
@@ -496,8 +498,8 @@ src_configure() {
 		echo '# Gentoo changes' > mk/build.mk
 
 		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
-		echo "docdir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
-		echo "htmldir = ${EPREFIX}/usr/share/doc/${P}" >> mk/build.mk
+		echo "docdir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
+		echo "htmldir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
