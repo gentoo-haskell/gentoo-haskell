@@ -75,7 +75,7 @@ fi
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp +profile"
+IUSE="doc +ghcbootstrap ghcmakebinary +gmp profile"
 IUSE+=" binary"
 
 RDEPEND="
