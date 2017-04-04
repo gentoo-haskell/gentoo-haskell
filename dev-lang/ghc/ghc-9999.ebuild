@@ -648,7 +648,15 @@ src_install() {
 	else
 		[[ -f VERSION ]] || emake VERSION
 
-		emake install DESTDIR="${D}"
+		# -j1 due to a rare race in install script:
+		#    make --no-print-directory -f ghc.mk phase=final install
+		#    /usr/lib/portage/python3.4/ebuild-helpers/xattr/install -c -m 755 \
+		#        -d "/tmp/portage-tmpdir/portage/cross-armv7a-unknown-linux-gnueabi/ghc-9999/image/usr/lib64/armv7a-unknown-linux-gnueabi-ghc-8.3.20170404/include"
+		#    /usr/lib/portage/python3.4/ebuild-helpers/xattr/install -c -m 644  utils/hsc2hs/template-hsc.h \
+		#           "/tmp/portage-tmpdir/portage/cross-armv7a-unknown-linux-gnueabi/ghc-9999/image/usr/lib64/armv7a-unknown-linux-gnueabi-ghc-8.3.20170404"
+		#    /usr/bin/install: cannot create regular file \
+		#           '/tmp/portage-tmpdir/portage/cross-armv7a-unknown-linux-gnueabi/ghc-9999/image/usr/lib64/armv7a-unknown-linux-gnueabi-ghc-8.3.20170404': No such file or directory
+		emake -j1 install DESTDIR="${D}"
 
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
