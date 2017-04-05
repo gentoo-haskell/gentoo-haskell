@@ -14,8 +14,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator prefix
-[[ ${PV} = *9999* ]] && inherit git-r3
+inherit multilib pax-utils toolchain-funcs versionator prefix
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -69,15 +68,10 @@ BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 )
 
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-	unset SRC_URI
-fi
-
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp profile"
+#KEYWORDS="~alpha ~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp profile"
 IUSE+=" binary"
 
 RDEPEND="
@@ -104,16 +98,9 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 "
 
-# release tarballs ship generated lexers/parsers
-[[ ${PV} = *9999* ]] && DEPEND+="
-	ghcbootstrap? ( >=dev-haskell/alex-3.1.3
-		>=dev-haskell/happy-1.19.3 )
-"
-
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-[[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
@@ -373,15 +360,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		EGIT_BRANCH="master"
-		if [[ -n ${GHC_BRANCH} ]]; then
-			EGIT_BRANCH="${GHC_BRANCH}"
-		fi
-
-		git-r3_src_unpack
-	fi
-
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
@@ -391,7 +369,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
 	esac
-	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
+	unpack ${ONLYA}
 }
 
 src_prepare() {
@@ -570,10 +548,6 @@ src_configure() {
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
 
-		if [[ ${PV} == *9999* ]]; then
-			perl boot || die "perl boot failed"
-		fi
-
 		local econf_args=()
 
 		if is_native; then
@@ -636,16 +610,6 @@ src_compile() {
 		# 3. and then all the rest
 		emake all
 	fi # ! use binary
-}
-
-src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	make $make_test_target stage=2 THREADS=$(makeopts_jobs)
 }
 
 src_install() {
