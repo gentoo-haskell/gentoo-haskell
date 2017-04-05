@@ -116,7 +116,7 @@ dev-haskell/asn1-encoding 0.9.5: ASN1 data reader and writer in RAW, BER and DER
 dev-haskell/asn1-parse 0.9.4: Simple monadic parser for ASN1 stream types
 dev-haskell/asn1-types 0.3.2: ASN.1 types
 dev-haskell/astar 0.3.0.0: General A* search algorithm
-dev-haskell/async 2.1.1: Run IO operations asynchronously and wait for their results
+dev-haskell/async 2.1.1-r1: Run IO operations asynchronously and wait for their results
 dev-haskell/atomic-primops 0.8.0.4: A safe approach to CAS and other atomic ops in Haskell
 dev-haskell/atto-lisp 0.2.2.2: Efficient parsing and serialisation of S-Expressions
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
