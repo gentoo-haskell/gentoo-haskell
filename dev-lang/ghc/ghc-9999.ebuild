@@ -541,12 +541,9 @@ src_configure() {
 		fi
 
 		if is_crosscompile; then
+			# Install ghc-stage1 crosscompiler instead of
+			# ghc-stage2 cross-built compiler.
 			echo "Stage1Only=YES" >> mk/build.mk
-
-			# GHC bug: by default Stage1Only installs ghci and runghc
-			# without cross- prefix. These wrappers and symlinks
-			# are broken anyway as they refer to nonexisting ghc-stage2.
-			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:
