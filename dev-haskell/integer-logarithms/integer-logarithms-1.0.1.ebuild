@@ -31,6 +31,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.3 && < 4.10' 'base >= 4.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-check-bounds
