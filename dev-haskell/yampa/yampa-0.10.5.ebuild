@@ -26,3 +26,5 @@ RDEPEND="dev-haskell/random:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+S="${WORKDIR}/${MY_P}"
