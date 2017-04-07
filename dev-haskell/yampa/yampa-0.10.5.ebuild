@@ -18,24 +18,11 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="test-doc-coverage test-hlint +test-regression"
+IUSE=""
 
 RDEPEND="dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test-hlint? ( test-doc-coverage? ( test? ( >=dev-haskell/hlint-1.7
-							dev-haskell/regex-posix ) )
-			!test-doc-coverage? ( test? ( >=dev-haskell/hlint-1.7 ) ) )
-	!test-hlint? ( test? ( test-doc-coverage? ( dev-haskell/regex-posix ) ) )
 "
-
-S="${WORKDIR}/${MY_P}"
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag test-doc-coverage test-doc-coverage) \
-		$(cabal_flag test-hlint test-hlint) \
-		$(cabal_flag test-regression test-regression)
-}
