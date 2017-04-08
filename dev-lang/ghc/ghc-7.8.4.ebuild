@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -79,10 +79,7 @@ RDEPEND="
 # gentoo binaries are built against ncurses-5
 RDEPEND+="
 	binary? (
-		|| (
-			sys-libs/ncurses:0/5
-			sys-libs/ncurses:5/5
-		)
+		sys-libs/ncurses:5/5
 	)
 "
 

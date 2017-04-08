@@ -83,10 +83,7 @@ RDEPEND="
 # gentoo binaries are built against ncurses-6
 RDEPEND+="
 	binary? (
-		|| (
-			sys-libs/ncurses:0/6
-			sys-libs/ncurses:5/6
-		)
+		sys-libs/ncurses:0/6
 	)
 "
 
