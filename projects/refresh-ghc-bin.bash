@@ -52,7 +52,6 @@ default_autobuild_machine() {
     local arch=$1
 
     case "${arch}" in
-        ppc64) echo "ppc64-64ul" ;;
         sparc) echo "sparc64"    ;;
         x86)   echo "i686"       ;;
         *)     echo "${arch}"    ;;
