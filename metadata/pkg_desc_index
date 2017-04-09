@@ -755,6 +755,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.3: Heaps in Haskell
 dev-haskell/heaps 0.3.3: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
+dev-haskell/hedgehog 0.1: Hedgehog will eat all your bugs
 dev-haskell/hedis 0.6.10 0.9.6: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
@@ -1846,6 +1847,7 @@ dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
 dev-haskell/wl-pprint 1.2: The Wadler/Leijen Pretty Printer
+dev-haskell/wl-pprint-annotated 0.0.1.4: Wadler/Leijen pretty printer with annotations and slightly modernized API
 dev-haskell/wl-pprint-extras 3.5.0.5: A free monad based on the Wadler/Leijen pretty printer
 dev-haskell/wl-pprint-terminfo 3.7.1.4: A color pretty printer with terminfo support
 dev-haskell/wl-pprint-text 1.1.1.0: A Wadler/Leijen Pretty Printer for Text values
