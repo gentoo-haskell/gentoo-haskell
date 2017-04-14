@@ -463,6 +463,14 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-fix-spaceleak.patch
 
+		# a bunch of crosscompiler patches
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-noncanon-triple.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-unphased-cross.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-staged-cross.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-ghci-cross.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-stage2-cross.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
@@ -518,12 +526,9 @@ src_configure() {
 		fi
 
 		if is_crosscompile; then
+			# Install ghc-stage1 crosscompiler instead of
+			# ghc-stage2 cross-built compiler.
 			echo "Stage1Only=YES" >> mk/build.mk
-
-			# GHC bug: by default Stage1Only installs ghci and runghc
-			# without cross- prefix. These wrappers and symlinks
-			# are broken anyway as they refer to nonexisting ghc-stage2.
-			echo "GhcWithInterpreter=NO" >> mk/build.mk
 		fi
 
 		# allows overriding build flavours for libraries:

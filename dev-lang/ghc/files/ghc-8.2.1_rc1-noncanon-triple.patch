@@ -1,0 +1,69 @@
+commit 844704b4883e1d603a5048ddc6cbad737ba8d9e8
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Thu Apr 6 08:51:22 2017 +0100
+
+    Use non-canocalized triple as cross-compiler prefix
+    
+    I've noticed the problem when tried to install
+    cross-compiler using following configuration:
+    
+        $ ./configure --target=s390x-unknown-linux-gnu
+        make install Stage1Only=YES
+    
+    Instead of expected tool prefix
+        's390x-unknown-linux-gnu-'
+    Result was:
+        's390x-ibm-linux-gnu-'
+    
+    It's problematic as installed binaries appear in
+    unpredictable location.
+    
+    The problem is caused by use of ${target} autoconf variable.
+    ${target} contains a canocalized triplet.
+    
+    Luckily we already have non-canonucalized target triplet
+    in ${TargetPlatformFull} variable. The change uses that
+    instead.
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/configure.ac b/configure.ac
+index 3086e03d5e..dd107e5b07 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -425,12 +425,6 @@ with a cross-compiler.  To cross-compile GHC itself, set TARGET: stage
+ GHC.
+ ])
+ fi
+-if test "$CrossCompiling" = "YES"
+-then
+-  CrossCompilePrefix="${target}-"
+-else
+-  CrossCompilePrefix=""
+-fi
+ # Despite its similarity in name to TargetPlatform, TargetPlatformFull is used
+ # in calls to subproject configure scripts and thus must be set to the autoconf
+ # triple, not the normalized GHC triple that TargetPlatform is set to.
+@@ -446,6 +440,8 @@ fi
+ # all be taken care of for us if we configured the subprojects using
+ # AC_CONFIG_DIR, but unfortunately Cabal needs to be the one to do the
+ # configuration.
++#
++# We also use non-canonicalized triple when install stage1 crosscompiler
+ if test -z "${target_alias}"
+ then
+   # --target wasn't given; use result from AC_CANONICAL_TARGET
+@@ -453,6 +449,13 @@ then
+ else
+   TargetPlatformFull="${target_alias}"
+ fi
++if test "$CrossCompiling" = "YES"
++then
++  # Use value passed by user from --target=
++  CrossCompilePrefix="${TargetPlatformFull}-"
++else
++  CrossCompilePrefix=""
++fi
+ AC_SUBST(CrossCompiling)
+ AC_SUBST(CrossCompilePrefix)
+ AC_SUBST(TargetPlatformFull)
