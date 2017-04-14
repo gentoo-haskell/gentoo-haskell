@@ -14,7 +14,7 @@
 
 # example for x86:
 #  path/to/refresh-ghc-bin.bash --target-arch=x86
-#  path/to/refresh-ghc-bin.bash --target-arch=x86 --stage3-url=http://distfiles.gentoo.org/releases/x86/autobuilds/latest-stage3-i686.txt --needed-atom='=ghc-8.2.1_rc1'
+#  path/to/refresh-ghc-bin.bash --target-arch=x86 --stage3-url=http://distfiles.gentoo.org/releases/x86/autobuilds/latest-stage3-i686.txt --needed-atom='=dev-lang/ghc-8.2.1_rc1'
 
 # to make reports more readable
 # en_GB.UTF-8 might be better
@@ -44,7 +44,7 @@ stage3_url=
 # you might like to use '--chroot-profile=hardened/linux/amd64'
 chroot_profile=1
 # this peeks latest ghc in ::gentoo
-# you can override version as --needed-atom='=ghc-8.2.1_rc1'
+# you can override version as --needed-atom='=dev-lang/ghc-8.2.1_rc1'
 needed_atom="dev-lang/ghc"
 dry_run=
 autobuild_machine=
