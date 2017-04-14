@@ -296,7 +296,7 @@ relocate_ghc() {
 
 	# backup original script to use it later after relocation
 	local gp_back="${T}/ghc-pkg-${GHC_PV}-orig"
-	cp "${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+	cp "${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
 
 	if [[ ${bin_libdir} != $(get_libdir) ]]; then
 		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
@@ -306,23 +306,23 @@ relocate_ghc() {
 		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
 
 		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
-			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
-			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 			"$gp_back" \
-			"${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/"*
+			"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
-		"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
-		"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
-		"${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d/"*
+		"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/hsc2hs" \
+		"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
+		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
 	# so it should point to current tree location
@@ -333,11 +333,11 @@ relocate_ghc() {
 		# TODO: add the same for darwin's CHOST and it's DYLD_
 		local new_ldpath='LD_LIBRARY_PATH="'${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir)'${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"\nexport LD_LIBRARY_PATH'
 		sed -i -e '2i'"$new_ldpath" \
-			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)ghci-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)ghc-pkg-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/$(cross)hsc2hs" \
-			"${WORKDIR}/usr/bin/$(cross)runghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/hsc2hs" \
+			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 			"$gp_back" \
 			|| die "Adding LD_LIBRARY_PATH for wrappers failed"
 		hprefixify "${bin_libpath}"/${PN}*/settings
@@ -398,12 +398,12 @@ src_prepare() {
 		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${WORKDIR}/usr/bin/$(cross)ghc-${GHC_PV}"
+			"${WORKDIR}/usr/bin/ghc-${GHC_PV}"
 
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/$(cross)${GHC_P}/bin/ghc"
+		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/bin/ghc"
 	fi
 
 	if use binary; then
