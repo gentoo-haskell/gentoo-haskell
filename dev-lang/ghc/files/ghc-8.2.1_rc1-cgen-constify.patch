@@ -1,0 +1,103 @@
+commit b0cf3ab7a69b878a4335d21a347b56e4b0ca0b7b
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Mon Apr 14 19:06:24 2014 +0300
+
+    compiler/cmm/PprC.hs: constify local string literals
+    
+    Consider one-line module
+        module B (v) where v = "hello"
+    in -fvia-C mode it generates code like
+        static char gibberish_str[] = "hello";
+    
+    It uselessly eats data section (precious resource on ia64!).
+    The patch switches genrator to emit:
+        static const char gibberish_str[] = "hello";
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+diff --git a/compiler/cmm/Cmm.hs b/compiler/cmm/Cmm.hs
+index d2ee531686..bab20f3fdd 100644
+--- a/compiler/cmm/Cmm.hs
++++ b/compiler/cmm/Cmm.hs
+@@ -9,6 +9,7 @@ module Cmm (
+      CmmBlock,
+      RawCmmDecl, RawCmmGroup,
+      Section(..), SectionType(..), CmmStatics(..), CmmStatic(..),
++     isSecConstant,
+ 
+      -- ** Blocks containing lists
+      GenBasicBlock(..), blockId,
+@@ -167,6 +168,18 @@ data SectionType
+   | OtherSection String
+   deriving (Show)
+ 
++-- | Should a data in this section be considered constant
++isSecConstant :: Section -> Bool
++isSecConstant (Section t _) = case t of
++    Text                    -> True
++    ReadOnlyData            -> True
++    RelocatableReadOnlyData -> True
++    ReadOnlyData16          -> True
++    CString                 -> True
++    Data                    -> False
++    UninitialisedData       -> False
++    (OtherSection _)        -> False
++
+ data Section = Section SectionType CLabel
+ 
+ data CmmStatic
+diff --git a/compiler/cmm/PprC.hs b/compiler/cmm/PprC.hs
+index aa21174109..bbbb073555 100644
+--- a/compiler/cmm/PprC.hs
++++ b/compiler/cmm/PprC.hs
+@@ -111,6 +111,12 @@ pprTop (CmmProc infos clbl _ graph) =
+ 
+ -- We only handle (a) arrays of word-sized things and (b) strings.
+ 
++pprTop (CmmData section (Statics lbl [CmmString str])) | isSecConstant section =
++  hcat [
++    pprLocalness lbl, ptext (sLit "const char "), ppr lbl,
++    ptext (sLit "[] = "), pprStringInCStyle str, semi
++  ]
++
+ pprTop (CmmData _section (Statics lbl [CmmString str])) =
+   hcat [
+     pprLocalness lbl, text "char ", ppr lbl,
+diff --git a/compiler/llvmGen/LlvmCodeGen/Data.hs b/compiler/llvmGen/LlvmCodeGen/Data.hs
+index 9bb5a75bda..adb86d312d 100644
+--- a/compiler/llvmGen/LlvmCodeGen/Data.hs
++++ b/compiler/llvmGen/LlvmCodeGen/Data.hs
+@@ -56,18 +56,6 @@ genLlvmData (sec, Statics lbl xs) = do
+ 
+     return ([globDef], [tyAlias])
+ 
+--- | Should a data in this section be considered constant
+-isSecConstant :: Section -> Bool
+-isSecConstant (Section t _) = case t of
+-    Text                    -> True
+-    ReadOnlyData            -> True
+-    RelocatableReadOnlyData -> True
+-    ReadOnlyData16          -> True
+-    CString                 -> True
+-    Data                    -> False
+-    UninitialisedData       -> False
+-    (OtherSection _)        -> False
+-
+ -- | Format the section type part of a Cmm Section
+ llvmSectionType :: Platform -> SectionType -> FastString
+ llvmSectionType p t = case t of
+diff --git a/includes/Stg.h b/includes/Stg.h
+index 939bed6444..92a024cd87 100644
+--- a/includes/Stg.h
++++ b/includes/Stg.h
+@@ -223,8 +223,8 @@ typedef StgInt    I_;
+ typedef StgWord StgWordArray[];
+ typedef StgFunPtr       F_;
+ 
+-#define EB_(X)    extern char X[]
+-#define IB_(X)    static char X[]
++#define EB_(X)    extern const char X[]
++#define IB_(X)    static const char X[]
+ #define EI_(X)          extern StgWordArray (X) GNU_ATTRIBUTE(aligned (8))
+ #define II_(X)          static StgWordArray (X) GNU_ATTRIBUTE(aligned (8))
+ #define IF_(f)    static StgFunPtr GNUC3_ATTRIBUTE(used) f(void)
