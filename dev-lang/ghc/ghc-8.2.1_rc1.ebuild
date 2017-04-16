@@ -456,9 +456,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 
-		# breaks ia64 and hppa. Should be adapted to -HEAD
-		# or upstreamed first.
-		#epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-fix-spaceleak.patch
