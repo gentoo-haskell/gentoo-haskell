@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Pattern language for improvised music"
-HOMEPAGE="http://tidal.lurk.org/"
+HOMEPAGE="http://tidalcycles.org/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
@@ -17,7 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/colour:=[profile?]
+RDEPEND="dev-haskell/applicative-numbers:=[profile?]
+	dev-haskell/colour:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>dev-haskell/hosc-0.13:=[profile?]
 	dev-haskell/mersenne-random-pure64:=[profile?]
