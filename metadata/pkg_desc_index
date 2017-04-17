@@ -1242,7 +1242,7 @@ dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy wi
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.13.2.0: Utilities and combinators for parsing command line options
-dev-haskell/optparse-generic 1.1.4: Auto-generate a command-line parser for your datatype
+dev-haskell/optparse-generic 1.1.5: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/pandoc-citeproc 0.10.4.1: Supports using pandoc with citeproc
@@ -1480,7 +1480,7 @@ dev-haskell/sdl2-mixer 0.1: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 4.2 4.3 5.0.1 5.1: Semigroupoids: Category sans id
-dev-haskell/semigroups 0.18.2: Anything that associates
+dev-haskell/semigroups 0.18.3: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialport 0.4.7: Cross platform serial port library
