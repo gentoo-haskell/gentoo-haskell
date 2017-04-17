@@ -1,9 +1,0 @@
-diff --git a/test/Test/Sound/Synthesizer/Basic/NumberTheory.hs b/test/Test/Sound/Synthesizer/Basic/NumberTheory.hs
-index b100539..977d5bb 100644
---- a/test/Test/Sound/Synthesizer/Basic/NumberTheory.hs
-+++ b/test/Test/Sound/Synthesizer/Basic/NumberTheory.hs
-@@ -52,3 +52,3 @@ instance Arbitrary Big where
-       return $ Big $
--         foldl (\acc d -> mod (Bit.shiftL acc 16 + d) maxi) 0 digits
-+         foldl (\acc d -> mod (Bit.shiftL acc 16 + d) maxi) 0 (digits :: [Integer])
- 
