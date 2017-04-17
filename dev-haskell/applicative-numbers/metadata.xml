@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Any applicative functor can be given numeric instances in a boilerplate way.
+		The /applicative-numbers/ package provides an include file that makes it a
+		snap to define these instances.
+		See &quot;Data.Numeric.Function&quot; for an example.
+		
+		Project wiki page: &lt;http://haskell.org/haskellwiki/applicative-numbers&gt;
+		
+		Copyright 2009-2013 Conal Elliott; BSD3 license.
+		
+		
+		Instances of @Num@ classes for applicative functors.  To be @#include@&#39;d after
+		defining @APPLICATIVE@ as the applicative functor name and @CONSTRAINTS@ as a
+		list of constraints, which must carry its own trailing comma if non-empty.
+		The @APPLICATIVE@ symbol gets @#undef@&#39;d at the end of the include file, so
+		that multiple includes are convenient.
+		
+		For instance,
+		
+		@
+		#define INSTANCE_Ord
+		#define INSTANCE_Enum
+		
+		#define APPLICATIVE Vec2
+		#include \&quot;ApplicativeNumeric-inc.hs\&quot;
+		
+		#define APPLICATIVE Vec3
+		#include \&quot;ApplicativeNumeric-inc.hs\&quot;
+		
+		#define APPLICATIVE Vec4
+		#include \&quot;ApplicativeNumeric-inc.hs\&quot;
+		@
+		
+		You&#39;ll also have to import &#39;pure&#39; and &#39;liftA2&#39; from &quot;Control.Applicative&quot;
+		and specify @the FlexibleContexts@ language extension (due to an implementation hack).
+		
+		Some instances are generated only if a corresponding CPP symbol is
+		defined: @INSTANCE_Eq@, @INSTANCE_Ord@, @INSTANCE_Show@, @INSTANCE_Enum@
+	</longdescription>
+</pkgmetadata>
