@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name='experimental'>enable building experimental features, known as highly unstable or without good support cross-platform</flag>
+	</use>
 	<longdescription>
 		A custom prelude with no dependencies apart from base.
 		

@@ -16,12 +16,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="experimental"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.16.0
 	test? ( dev-haskell/mtl
 		dev-haskell/quickcheck
 		dev-haskell/tasty
@@ -32,5 +32,6 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bench-all \
-		--flag=-bounds-check
+		--flag=-bounds-check \
+		$(cabal_flag experimental experimental)
 }
