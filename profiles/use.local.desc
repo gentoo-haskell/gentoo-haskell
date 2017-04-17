@@ -123,6 +123,7 @@ dev-haskell/ffmpeg-light:builddemo - Build demo executable
 dev-haskell/ffmpeg-light:buildrasterdemo - Build Rasterific demo executable
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/finite-field:useghctypelits - GHC.TypeLits module
+dev-haskell/foundation:experimental - enable building experimental features, known as highly unstable or without good support cross-platform
 dev-haskell/ftphs:buildtests - Build the executable to run unit tests.
 dev-haskell/gf:interrupt - Enable Ctrl+Break in the shell
 dev-haskell/gf:network-uri - Get Network.URI from the network-uri package.
