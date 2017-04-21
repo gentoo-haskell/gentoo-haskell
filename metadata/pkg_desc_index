@@ -2010,7 +2010,7 @@ net-mail/mailbox-count 0.0.2-r2: Count mailboxes in a SQL database
 net-mail/mhailist 0.0-r1: Haskell mailing list manager
 net-misc/email-validator 0.0.3-r1: Perform basic syntax and deliverability checks on email addresses
 net-misc/haeredes 0.4.4: Confirm delegation of NS and MX records
-net-misc/hath 0.3.0: Hath manipulates network blocks in CIDR notation
+net-misc/hath 0.4.1: Hath manipulates network blocks in CIDR notation
 net-p2p/combinatorrent 9999: A concurrent bittorrent client
 sci-biology/bamstats 0.4: A program to extract various information from BAM alignmnet files
 sci-biology/clustertools 0.1.5: Tools for manipulating sequence clusters
