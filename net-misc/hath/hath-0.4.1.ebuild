@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cmdargs-0.10:=
 	>=dev-haskell/tasty-0.8:=
 	>=dev-haskell/tasty-hunit-0.8:=
 	>=dev-haskell/tasty-quickcheck-0.8.1:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-8:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
