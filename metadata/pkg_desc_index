@@ -733,7 +733,7 @@ dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLi
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1: Client support for POP3, SMTP, and IMAP
 dev-haskell/haskellnet-ssl 0.3.3.0: Helpers to connect to SSL/TLS mail servers with HaskellNet
-dev-haskell/hasktags 0.69.3: Produces ctags "tags" and etags "TAGS" files for Haskell programs
+dev-haskell/hasktags 0.69.3 9999: Produces ctags "tags" and etags "TAGS" files for Haskell programs
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.5.1 0.6.0 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.17.1.0: The Haskell LaTeX library
