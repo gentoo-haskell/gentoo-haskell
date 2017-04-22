@@ -136,6 +136,33 @@ dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
 dev-haskell/ghcjs-dom:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/ghcjs-dom:jsc - Use WebKitGtk JavaScriptCore
 dev-haskell/ghcjs-dom:jsffi - Use JavaScriptFFI extension for GHCJS JavaScript output
+dev-haskell/gi-atk:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-atk:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-atk:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-cairo:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-cairo:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-cairo:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-gdk:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-gdk:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-gdk:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-gdkpixbuf:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-gdkpixbuf:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-gdkpixbuf:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-gio:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-gio:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-gio:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-glib:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-glib:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-glib:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-gobject:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-gobject:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-gobject:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-gtk:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-gtk:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-gtk:overloaded-signals - Generate support for overloaded signals.
+dev-haskell/gi-pango:overloaded-methods - Generate support for overloaded methods.
+dev-haskell/gi-pango:overloaded-properties - Generate support for overloaded properties.
+dev-haskell/gi-pango:overloaded-signals - Generate support for overloaded signals.
 dev-haskell/github-backup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
