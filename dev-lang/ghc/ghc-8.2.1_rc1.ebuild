@@ -191,7 +191,8 @@ bump_libs() {
 }
 
 ghc_setup_cflags() {
-	if is_crosscompile; then
+	# TODO: plumb CFLAGS and BUILD_CFLAGS to respective CONF_CC_OPTS_STAGE<N>
+	if ! is_native; then
 		export CFLAGS=${GHC_CFLAGS-"-O2 -pipe"}
 		export LDFLAGS=${GHC_LDFLAGS-"-Wl,-O1"}
 		einfo "Crosscompiling mode:"
