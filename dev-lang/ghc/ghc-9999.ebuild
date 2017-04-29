@@ -596,7 +596,7 @@ src_configure() {
 			econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
 		fi
 
-		elog "Final mk/build.mk:"
+		einfo "Final mk/build.mk:"
 		cat mk/build.mk || die
 
 		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
