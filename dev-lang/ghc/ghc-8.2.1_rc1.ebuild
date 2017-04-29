@@ -577,7 +577,9 @@ src_configure() {
 			#  - disable ncurses support for ghc-pkg
 			echo "libraries/haskeline_CONFIGURE_OPTS += --flag=-terminfo" >> mk/build.mk
 			echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
-		else
+		elif is_native; then
+			# using ${GTARGET}'s libffi is not supported yet:
+			# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
 			econf_args+=(--with-system-libffi)
 			econf_args+=(--with-ffi-includes=$(pkg-config libffi --cflags-only-I | sed -e 's@^-I@@'))
 		fi
