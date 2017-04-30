@@ -23,3 +23,10 @@ RDEPEND="dev-haskell/syb:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell < 2.12' 'template-haskell'
+}
