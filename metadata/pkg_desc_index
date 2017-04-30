@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 4.0.2: property-based host configuration management in haskell
+app-admin/propellor 4.0.3: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -37,7 +37,7 @@ dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate 
 dev-haskell/acid-state 0.14.2: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.12: Abstractions for animation
-dev-haskell/ad 4.3.2.1: Automatic Differentiation
+dev-haskell/ad 4.3.3: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1: Fast JSON parsing and encoding
@@ -1532,7 +1532,7 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.3.2: syntax highlighting library
+dev-haskell/skylighting 0.3.3: syntax highlighting library
 dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
@@ -1697,9 +1697,9 @@ dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-data-compat 0.0.2.2: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.5.5 1.6: Functions to desugar Template Haskell
-dev-haskell/th-expand-syns 0.4.2.0: Expands type synonyms in Template Haskell ASTs
+dev-haskell/th-expand-syns 0.4.3.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
-dev-haskell/th-lift 0.7.6: Derive Template Haskell's Lift class for datatypes
+dev-haskell/th-lift 0.7.7: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.11: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.3: Orphan instances for TH datatypes
 dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH reify
@@ -1735,7 +1735,7 @@ dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.2.8 1.3.2: Shell programming, Haskell-style
+dev-haskell/turtle 1.3.3: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
@@ -1801,7 +1801,7 @@ dev-haskell/validity 0.3.3.0: Validity typeclass
 dev-haskell/validity-path 0.1.0.1: Validity instances for Path
 dev-haskell/validity-text 0.1.2.1: Validity instances for text
 dev-haskell/varying 0.7.0.3: FRP through value streams and monadic splines
-dev-haskell/vault 0.3.0.6: a persistent store for values of arbitrary types
+dev-haskell/vault 0.3.0.7: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
 dev-haskell/vcsgui 0.1.3.0: GUI library for source code management systems
 dev-haskell/vcswrapper 0.1.5: Wrapper for source code management systems
@@ -1854,7 +1854,7 @@ dev-haskell/webkitgtk3-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0 0.14.2.1: JavaS
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0 0.10.2.1: Snap integration for the websockets library
-dev-haskell/weigh 0.0.3: Measure allocations of a Haskell functions/values
+dev-haskell/weigh 0.0.4: Measure allocations of a Haskell functions/values
 dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
