@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.7:=[profile?]
+	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.8:=[profile?]
 	>=dev-haskell/pwstore-fast-2.2:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/yesod-auth-1.4:=[profile?] <dev-haskell/yesod-auth-1.5:=[profile?]
