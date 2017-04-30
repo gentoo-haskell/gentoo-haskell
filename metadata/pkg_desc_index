@@ -147,8 +147,8 @@ dev-haskell/basic-prelude 0.6.1.1: An enhanced core prelude; a common foundation
 dev-haskell/bcrypt 0.0.10: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
-dev-haskell/bifunctors 5.3 5.4.1: Bifunctors
-dev-haskell/bimap 0.3.2: Bidirectional mapping between two key types
+dev-haskell/bifunctors 5.4.2: Bifunctors
+dev-haskell/bimap 0.3.3: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
@@ -176,7 +176,7 @@ dev-haskell/bitmap 0.0.2: A library for handling and manipulating bitmaps (recta
 dev-haskell/bits-atomic 0.1.3-r1: Atomic bit operations on memory locations for low-level synchronization
 dev-haskell/bitset 1.4.8: A space-efficient set data structure
 dev-haskell/bitstring 0.0.0: Lazy bit strings
-dev-haskell/bitstringrandommonad 0.1.1.2: A library which turns a bytestring into a random monad.
+dev-haskell/bitstringrandommonad 0.2.0.2: A library which turns a bytestring into a random monad
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 0.1.1.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
@@ -208,7 +208,7 @@ dev-haskell/byline 0.2.4.0: Library for creating command-line interfaces (colors
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
-dev-haskell/bytes 0.15.2: Sharing code for serialization between binary and cereal
+dev-haskell/bytes 0.15.3: Sharing code for serialization between binary and cereal
 dev-haskell/bytestring-builder 0.10.8.1.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-conversion 0.3.1: Type-classes to convert values to and from ByteString
 dev-haskell/bytestring-handle 0.1.0.5: ByteString-backed Handles
@@ -236,7 +236,7 @@ dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file pa
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/carray 0.1.6.6: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
-dev-haskell/case-insensitive 1.2.0.8: Case insensitive string comparison
+dev-haskell/case-insensitive 1.2.0.9: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/category-extras 1.0.2-r1: A meta-package documenting various packages inspired by category theory
@@ -341,7 +341,7 @@ dev-haskell/cracknum 1.4 1.5: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.1.0 1.1.4.0: Robust, reliable performance measurement and analysis
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
-dev-haskell/cron 0.4.2: Cron datatypes and Attoparsec parser
+dev-haskell/cron 0.5.0: Cron datatypes and Attoparsec parser
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.12.2.2 0.13.2: A generic interface for cryptographic operations
 dev-haskell/crypto-api-tests 0.3-r1: A test framework and KATs for cryptographic operations
@@ -385,7 +385,7 @@ dev-haskell/data-default-instances-dlist 0.0.1: Default instances for types in d
 dev-haskell/data-default-instances-old-locale 0.0.1: Default instances for types in old-locale
 dev-haskell/data-dword 0.3.1: Stick two binary words together to get a bigger one
 dev-haskell/data-endian 0.1.1: Endian-sensitive data
-dev-haskell/data-fix 0.0.3: Fixpoint data types
+dev-haskell/data-fix 0.0.4: Fixpoint data types
 dev-haskell/data-flags 0.0.3.3: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
@@ -405,7 +405,7 @@ dev-haskell/date-cache 0.3.0-r1: Date cacher
 dev-haskell/dates 0.2.2.1: Small library for parsing different dates formats
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
 dev-haskell/dav 1.3.1: RFC 4918 WebDAV support
-dev-haskell/dbus 0.10.11-r1 0.10.12: A client library for the D-Bus IPC system
+dev-haskell/dbus 0.10.11-r1 0.10.12 0.10.13: A client library for the D-Bus IPC system
 dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/decimal 0.4.2: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
@@ -488,9 +488,9 @@ dev-haskell/editline 0.2.1.1: Bindings to the editline library (libedit)
 dev-haskell/either 4.4.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
-dev-haskell/ekg 0.4.0.12: Remote monitoring of processes
+dev-haskell/ekg 0.4.0.13: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.1: Tracking of system metrics
-dev-haskell/ekg-json 0.1.0.4: JSON encoding of ekg metrics
+dev-haskell/ekg-json 0.1.0.5: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.2.0: Validating an email address string against RFC 5322
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
 dev-haskell/enclosed-exceptions 1.0.2: Catching all exceptions from within an enclosed computation
@@ -567,7 +567,7 @@ dev-haskell/foldl 1.2.4: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.7: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.8: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
