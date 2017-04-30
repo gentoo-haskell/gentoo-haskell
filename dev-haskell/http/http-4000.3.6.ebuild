@@ -40,6 +40,13 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.3.0.0 && < 4.10' 'base >= 4.3.0.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag conduit10 conduit10) \
