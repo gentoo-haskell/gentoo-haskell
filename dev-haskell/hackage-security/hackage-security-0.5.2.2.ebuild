@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -47,7 +47,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory         >= 1.1.0.2 && < 1.3' 'directory         >= 1.1.0.2'
+		'directory         >= 1.1.0.2 && < 1.3' 'directory         >= 1.1.0.2' \
+		'time              >= 1.2     && < 1.7' 'time              >= 1.2'
 }
 
 src_configure() {
