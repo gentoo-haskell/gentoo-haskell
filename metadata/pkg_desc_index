@@ -649,7 +649,7 @@ dev-haskell/gloss-raster 1.10.2.4: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.10.3.5: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.3: A raw binding for the OpenGL graphics system
-dev-haskell/glut 2.7.0.11: A binding for the OpenGL Utility Toolkit
+dev-haskell/glut 2.7.0.12: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.9.1.1: Miscellaneous OpenGL utilities
 dev-haskell/gnuidn 0.2.2: Bindings for GNU IDN
 dev-haskell/gnuplot 0.5.4.1: 2D and 3D plots using gnuplot
