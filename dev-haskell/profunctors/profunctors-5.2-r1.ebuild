@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?] <dev-haskell/base-orphans-0.6:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?]
 	>=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/contravariant-1:=[profile?] <dev-haskell/contravariant-2:=[profile?]
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?] <dev-haskell/base-orphans-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans        >= 0.4   && < 0.6' 'base-orphans        >= 0.4'
+}
