@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/base-orphans-0.5.3 <dev-haskell/base-orphans-0.6
+	test? ( >=dev-haskell/base-orphans-0.5.3
 		dev-haskell/base16-bytestring
 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.12
 		>=dev-haskell/hashable-1.2.4.0
@@ -48,6 +48,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans >= 0.5.3 && <0.6' 'base-orphans >= 0.5.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
