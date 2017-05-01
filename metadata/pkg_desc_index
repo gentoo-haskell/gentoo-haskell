@@ -136,7 +136,7 @@ dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.14.1: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.9.3: A compatibility layer for base
-dev-haskell/base-orphans 0.5.4: Backwards-compatible orphan instances for base
+dev-haskell/base-orphans 0.5.4 0.6: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.0.1.1: The most complete prelude formed solely from the "base" package
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
