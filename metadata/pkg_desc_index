@@ -40,10 +40,10 @@ dev-haskell/active 0.2.0.12: Abstractions for animation
 dev-haskell/ad 4.3.3: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.3: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1: Fast JSON parsing and encoding
+dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1-r1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.1.0.5: Tools to change the formatting of field names in Aeson instances
-dev-haskell/aeson-compat 0.3.6: Compatibility layer for aeson
+dev-haskell/aeson-compat 0.3.6-r1: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.2.0-r1 0.3.2.0-r2: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2 0.8.2: JSON pretty-printing library and command-line tool
@@ -154,7 +154,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
-dev-haskell/binary-orphans 0.1.6.0: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.6.0-r1: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
@@ -1359,7 +1359,7 @@ dev-haskell/product-profunctors 0.7.1.0: product-profunctors
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.4.2.2: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
-dev-haskell/profunctors 4.4.1 5.1.2 5.2: Profunctors
+dev-haskell/profunctors 4.4.1 5.1.2 5.2-r1: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
@@ -1411,7 +1411,7 @@ dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
-dev-haskell/recursion-schemes 4.1.2-r1 5 5.0.1: Generalized bananas, lenses and barbed wire
+dev-haskell/recursion-schemes 4.1.2-r1 5 5.0.1-r1: Generalized bananas, lenses and barbed wire
 dev-haskell/redis 0.14.1: A driver for Redis key-value database
 dev-haskell/reducers 3.12.1-r1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/ref-tf 0.4.0.1: A type class for monads with references using type families
