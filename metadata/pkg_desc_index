@@ -1690,7 +1690,7 @@ dev-haskell/text-manipulate 0.2.0.1: Case conversion, word boundary manipulation
 dev-haskell/text-metrics 0.2.0: Calculate various string metrics efficiently
 dev-haskell/text-printer 0.4: Abstract interface for text builders/printers
 dev-haskell/text-region 0.1.0.1: Marking text regions
-dev-haskell/text-show 3.2.2 3.4 3.4.1.1: Efficient conversion of values into Text
+dev-haskell/text-show 3.2.2 3.4 3.4.1.1 3.6: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.4 0.5 0.6.1 0.9: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
