@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous interface for ‘Text.Regex.TDFA’: regex-tdfa-1.2.2 regex-tdfa-rc-1.1.8.3
+
 RDEPEND=">=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cabal-1.20:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.20:=[profile?] <dev-haskell/haskell-gi-base-0.21:=[profile?]
