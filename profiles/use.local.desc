@@ -100,6 +100,7 @@ dev-haskell/cryptonite:support_blake2_sse - Use SSE optimized version of BLAKE2
 dev-haskell/cryptonite:support_deepseq - add deepseq instances for cryptographic types
 dev-haskell/cryptonite:support_pclmuldq - Allow compilation with pclmuldq on architecture that supports it
 dev-haskell/cryptonite:support_rdrand - allow compilation with AESNI on system and architecture that supports it
+dev-haskell/cryptonite:support_sse - Use SSE optimized version when existing (BLAKE2, ARGON2)
 dev-haskell/csv-to-qif:threaded - Enable threaded haskell runtime.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
