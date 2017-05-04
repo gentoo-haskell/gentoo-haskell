@@ -29,6 +29,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'time         >= 1.4     && < 1.7' 'time         >= 1.4'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev
