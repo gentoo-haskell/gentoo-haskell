@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
-	>=dev-haskell/generics-sop-0.1:=[profile?] <dev-haskell/generics-sop-0.3:=[profile?]
+	>=dev-haskell/generics-sop-0.1:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -39,3 +39,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'generics-sop             >=0.1  && <0.3' 'generics-sop             >=0.1'
+}
