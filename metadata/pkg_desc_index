@@ -160,7 +160,7 @@ dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
-dev-haskell/binary-tagged 0.1.4.2: Tagged binary serialisation
+dev-haskell/binary-tagged 0.1.4.2-r1: Tagged binary serialisation
 dev-haskell/bindings-bfd 1.2.0.0: Bindings for libbfd, a library of the GNU binutils
 dev-haskell/bindings-dsl 1.0.23: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 3.1.2.2: Low-level bindings to GLFW OpenGL library
