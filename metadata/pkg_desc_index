@@ -1975,7 +1975,7 @@ dev-lang/idris 0.12.2 0.12.3 1.0 9999: Functional Programming Language with Depe
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2-r1: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.10.2-r1 0.10.3 0.10.7: PureScript Programming Language Compiler
+dev-lang/purescript 0.10.2-r1 0.10.3 0.10.7 0.11.4: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.4.3: A C/C++ implementation of a Sass compiler
