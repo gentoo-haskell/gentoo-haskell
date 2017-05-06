@@ -495,7 +495,7 @@ dev-haskell/email-validate 2.2.0: Validating an email address string against RFC
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
 dev-haskell/enclosed-exceptions 1.0.2: Catching all exceptions from within an enclosed computation
 dev-haskell/encoding 0.7.0.2-r1 0.8.1: A library for various character encodings
-dev-haskell/engine-io 1.2.15: A Haskell implementation of Engine.IO
+dev-haskell/engine-io 1.2.16: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.7: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine words
@@ -547,7 +547,7 @@ dev-haskell/file-location 0.4.9.1: common functions that show file location info
 dev-haskell/file-modules 0.1.2.4: Takes a Haskell source-code file and outputs its modules
 dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
-dev-haskell/filestore 0.6.2: Interface for versioning file stores
+dev-haskell/filestore 0.6.3.1: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.1.0: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.9.0: Finite Fields
@@ -587,7 +587,7 @@ dev-haskell/gasp 1.0.1.0: A framework of algebraic classes
 dev-haskell/gconf 0.13.0.3 0.13.1.0: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
-dev-haskell/generic-deriving 1.10.7 1.11.1-r1: Generic programming library for generalised deriving
+dev-haskell/generic-deriving 1.11.2: Generic programming library for generalised deriving
 dev-haskell/generic-trie 0.3.0.2: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.4.0 0.3.0.0: Generic Programming using True Sums of Products
@@ -664,7 +664,7 @@ dev-haskell/graphmod 1.3: Present the module dependencies of a program as a "dot
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
 dev-haskell/graphviz 2999.18.1.2: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
-dev-haskell/groom 0.1.2: Pretty printing for well-behaved Show instances
+dev-haskell/groom 0.1.2.1: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.7.0.3-r1: Type-safe datatype-database mapping library
 dev-haskell/groundhog-postgresql 0.7.0.2-r2: PostgreSQL backend for the groundhog library
 dev-haskell/groundhog-sqlite 0.7.0.1: Sqlite3 backend for the groundhog library
@@ -859,7 +859,7 @@ dev-haskell/hsimport 0.7.1 0.8.2: A command line program for extending the impor
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
-dev-haskell/hsopenssl 0.11.4.4: Partial OpenSSL binding for Haskell
+dev-haskell/hsopenssl 0.11.4.8: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.3: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.2.7 0.2.8: A SPARQL query generator and DSL, and a client to query a SPARQL server
