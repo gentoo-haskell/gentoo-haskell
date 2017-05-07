@@ -1474,6 +1474,8 @@ dev-haskell/sandi 0.3.6 0.4.0: Data encoding library
 dev-haskell/say 0.1.0.0: Initial project template from stack
 dev-haskell/sbv 5.13: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.6 0.7: Formally prove properties of Haskell programs using SBV/SMT
+dev-haskell/scalpel 0.5.1: A high level web scraping library for Haskell
+dev-haskell/scalpel-core 0.5.1: A high level web scraping library for Haskell
 dev-haskell/scanner 0.2: Fast non-backtracking incremental combinator parsing for bytestrings
 dev-haskell/scientific 0.3.4.12: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
