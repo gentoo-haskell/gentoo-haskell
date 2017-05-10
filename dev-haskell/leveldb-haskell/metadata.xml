@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		From &lt;http://code.google.com/p/snappy&gt;:
+		
+		LevelDB is a fast key-value storage library written at Google that provides
+		an ordered mapping from string keys to string values.
+		
+		
+		This library provides a Haskell language binding to LeveldDB. It is in very
+		early stage and has seen very limited testing.
+		
+		Note: as of v1.3, LevelDB can be built as a shared library. Thus, as of
+		v0.1.0 of this library, LevelDB is no longer bundled and must be installed
+		on the target system (version 1.7 or greater is required).
+	</longdescription>
+</pkgmetadata>
