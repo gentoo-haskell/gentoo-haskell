@@ -1031,6 +1031,7 @@ dev-haskell/lens-family-core 1.2.1: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.7: Simple Functional Lenses
+dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
 dev-haskell/lhs2tex 1.19: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.6.0: Lastfm API interface
@@ -1980,7 +1981,7 @@ dev-lang/ott 0.25: Ott is a tool for writing definitions of programming language
 dev-lang/purescript 0.10.2-r1 0.10.3 0.10.7 0.11.4: PureScript Programming Language Compiler
 dev-lang/uhc 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
-dev-libs/libsass 3.4.3: A C/C++ implementation of a Sass compiler
+dev-libs/libsass 3.4.4: A C/C++ implementation of a Sass compiler
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.1: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4: Draw sequence diagrams of D-Bus traffic
