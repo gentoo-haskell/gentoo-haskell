@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # loads sudoku from internet
+
 RDEPEND=">=dev-haskell/gi-gtk-3.0:=[profile?] <dev-haskell/gi-gtk-3.1:=[profile?]
 	>=dev-haskell/handsomesoup-0.4:=[profile?] <dev-haskell/handsomesoup-0.5:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.20:=[profile?] <dev-haskell/haskell-gi-base-0.21:=[profile?]
