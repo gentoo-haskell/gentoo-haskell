@@ -2007,6 +2007,7 @@ games-arcade/blubber-server 0.0.1-r5: The blubber server, serves blubber clients
 games-arcade/bweakfwu 9999: Breakout meets PONG
 games-arcade/shu-thing 1.1.3: A vector shooter game
 games-board/goatee-gtk 0.3.1.1: A monadic take on a 2,500-year-old board game - GTK+ UI
+games-board/hsudoku 0.1.0.1: Sudoku game with a GTK3 interface
 games-fps/frag 1.1.2: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
 games-puzzle/h2048 0.2.0.1: a haskell implementation of Game 2048
