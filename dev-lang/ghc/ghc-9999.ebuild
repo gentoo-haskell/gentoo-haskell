@@ -476,7 +476,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		epatch "${FILESDIR}"/${PN}-9999-elf-class.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
