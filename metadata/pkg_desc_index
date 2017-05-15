@@ -629,6 +629,7 @@ dev-haskell/gi-gobject 2.0.11: GObject bindings
 dev-haskell/gi-gtk 3.0.13: Gtk bindings
 dev-haskell/gi-gtk-hs 0.3.4.2: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
 dev-haskell/gi-gtksource 3.0.13: GtkSource bindings
+dev-haskell/gi-javascriptcore 4.0.12: JavaScriptCore bindings
 dev-haskell/gi-pango 1.0.12: Pango bindings
 dev-haskell/gi-soup 2.4.12: Libsoup bindings
 dev-haskell/gifcurry 2.0.0.2 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
