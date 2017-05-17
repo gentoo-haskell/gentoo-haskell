@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=
 	>=dev-haskell/websockets-snap-0.8.2.1:=
 	~dev-lang/elm-compiler-${PV}:=
 	dev-lang/elm-package:=
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
