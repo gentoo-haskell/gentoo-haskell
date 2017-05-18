@@ -1,17 +1,17 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit elisp git-r3
+inherit elisp
 
 DESCRIPTION="Idris syntax highlighting and (eventually) other things for emacs"
 HOMEPAGE="https://github.com/idris-hackers/idris-mode"
-EGIT_REPO_URI="https://github.com/idris-hackers/idris-mode.git"
+SRC_URI="https://github.com/idris-hackers/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 IUSE=""
 
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 
 DEPEND=""
@@ -23,9 +23,15 @@ RESTRICT=test # fails frequently
 
 src_prepare() {
 	default
-	cp "${FILESDIR}/${SITEFILE}" "${S}" \
-		|| die "Could not cp ${SITEFILE}"
+
 	sed -e 's@"--ideslave"@"--nocolour" "--ideslave"@' \
 		-i "${S}/inferior-idris.el" \
 		|| die "Could not set --nocolour in inferior-idris.el"
+}
+
+src_test() {
+	export HOME=${T}
+	mkdir "${HOME}/.idris" || die
+
+	default
 }
