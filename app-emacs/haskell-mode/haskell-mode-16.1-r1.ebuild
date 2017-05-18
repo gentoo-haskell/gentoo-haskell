@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,6 +17,8 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 DOCS="NEWS README.md"
 ELISP_TEXINFO="doc/${PN}.texi"
 SITEFILE="50${PN}-gentoo.el"
+
+RESTRICT=test # needs network access to elpa packages
 
 src_prepare() {
 	default
