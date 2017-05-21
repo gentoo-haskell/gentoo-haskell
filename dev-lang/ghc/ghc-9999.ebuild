@@ -477,6 +477,13 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
+		# mingg target
+		epatch "${FILESDIR}"/${PN}-9999-dllwrap-windres.patch
+		pushd "${S}/libraries/Win32"
+			epatch "${FILESDIR}"/${PN}-9999-win32-cross-1.patch # upstreamed, waits for merge to -HEAD
+			epatch "${FILESDIR}"/${PN}-9999-win32-cross-2-hack.patch # bad workaround
+		popd
+
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix
 			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
@@ -572,6 +579,10 @@ src_configure() {
 			AR=${CTARGET}-ar
 			CC=${CTARGET}-gcc
 			LD=${CTARGET}-ld
+			# these should be inferred by GHC but ghc defaults
+			# to using bundled tools on windows.
+			Windres=${CTARGET}-windres
+			DllWrap=${CTARGET}-dllwrap
 		)
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
