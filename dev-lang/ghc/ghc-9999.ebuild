@@ -477,12 +477,9 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
-		epatch "${FILESDIR}"/${PN}-9999-O1-unreg.patch
 		epatch "${FILESDIR}"/${PN}-9999-boot-failure.patch
 
 		# mingw32 target
-		epatch "${FILESDIR}"/${PN}-9999-dllwrap-windres.patch
-		epatch "${FILESDIR}"/${PN}-9999-mingw32-ghc-stage1.patch
 		pushd "${S}/libraries/Win32"
 			epatch "${FILESDIR}"/${PN}-9999-win32-cross-1.patch # upstreamed, waits for merge to -HEAD
 			epatch "${FILESDIR}"/${PN}-9999-win32-cross-2-hack.patch # bad workaround
