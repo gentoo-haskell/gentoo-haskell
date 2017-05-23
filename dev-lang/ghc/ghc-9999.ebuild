@@ -569,7 +569,8 @@ src_configure() {
 		echo "STRIP_CMD = :" >> mk/build.mk
 
 		if [[ ${PV} == *9999* ]]; then
-			perl boot || die "perl boot failed"
+			echo ./boot
+			./boot || die "./boot failed"
 		fi
 
 		local econf_args=()
