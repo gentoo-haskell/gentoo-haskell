@@ -1,0 +1,14 @@
+gentoo's eclasses don't contain reference to 'origin' remote.
+diff --git a/boot b/boot
+index fb3d8c0dba..ed744593e3 100755
+--- a/boot
++++ b/boot
+@@ -25,2 +25,3 @@ def die(mesg):
+ def check_for_url_rewrites():
++  try:
+     if os.path.isdir('.git') and \
+@@ -57,2 +58,4 @@ def check_for_url_rewrites():
+         """)
++  except Exception as e:
++    print_err('check_for_url_rewrites() failed as: %s. Ignoring.' % e)
+ 
