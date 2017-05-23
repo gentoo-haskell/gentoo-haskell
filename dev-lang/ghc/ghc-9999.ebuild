@@ -478,6 +478,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		epatch "${FILESDIR}"/${PN}-9999-O1-unreg.patch
+		epatch "${FILESDIR}"/${PN}-9999-boot-failure.patch
 
 		# mingw32 target
 		epatch "${FILESDIR}"/${PN}-9999-dllwrap-windres.patch
