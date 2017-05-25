@@ -1054,9 +1054,9 @@ dev-haskell/lifted-base 0.2.3.10: lifted IO operations from the base library
 dev-haskell/linear 1.20.6: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.6.0: Labeled IO Information Flow Control Library
-dev-haskell/liquid-fixpoint 0.5.0.1 0.6.0.0.20170119 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
+dev-haskell/liquid-fixpoint 0.5.0.1 0.6.0.1 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
 dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
-dev-haskell/liquidhaskell 0.6.0.0 9999: Liquid Types for Haskell
+dev-haskell/liquidhaskell 0.8.0.0 9999: Liquid Types for Haskell
 dev-haskell/list 0.5.2: List monad transformer and class
 dev-haskell/list-t 1: ListT done right
 dev-haskell/listlike 4.2.1 4.4 4.5.1: Generic support for list-like structures
