@@ -1523,7 +1523,7 @@ dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
-dev-haskell/shellmate 0.3.4.2: Simple interface for shell scripting in Haskell
+dev-haskell/shellmate 0.2.3-r2 0.3.4.2: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.8.3: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
