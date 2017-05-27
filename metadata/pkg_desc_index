@@ -1567,7 +1567,7 @@ dev-haskell/spdx 0.2.1.0: SPDX license expression language
 dev-haskell/speculation 1.5.0.3: A framework for safe, programmable, speculative parallelism
 dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
 dev-haskell/spintax 0.3.1: Random text generation based on spintax
-dev-haskell/split 0.2.3.1-r1: Combinator library for splitting lists
+dev-haskell/split 0.2.3.2: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.4: Read and write spreadsheets from and to CSV files in a lazy way
