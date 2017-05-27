@@ -8,4 +8,7 @@
 	<longdescription>
 		Aims to simplify development of cross-platform shell scripts and similar things.
 	</longdescription>
+	<use>
+		<flag name="download-extras">Build Control.Shell.Download with extras for parsing downloaded HTML, XML, RSS and Atom feeds.</flag>
+	</use>
 </pkgmetadata>
