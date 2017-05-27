@@ -355,7 +355,6 @@ dev-haskell/shakespeare:test_coffee - Render tests through coffeescript render f
 dev-haskell/shakespeare:test_export - Test export.
 dev-haskell/shakespeare:test_roy - Render tests through roy render function.
 dev-haskell/shellac-compatline:editline - Use editline instead of readline backend.
-dev-haskell/shellmate:download-extras - Build Control.Shell.Download with extras for parsing downloaded HTML, XML, RSS and Atom feeds.
 dev-haskell/shelly:lifted - run the tests against Shelly.Lifted
 dev-haskell/shuffle:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/simple-sendfile:allow-bsd - Allow use of BSD sendfile (disable on GNU/kFreeBSD)

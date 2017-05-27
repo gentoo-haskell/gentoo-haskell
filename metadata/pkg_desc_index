@@ -1140,7 +1140,7 @@ dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catch
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
 dev-haskell/monad-logger 0.3.24: A class of monads which can log messages
-dev-haskell/monad-logger-syslog 0.1.3.0: syslog output for monad-logger
+dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
@@ -1230,7 +1230,7 @@ dev-haskell/newtype-generics 0.4.1: A typeclass for working with newtypes, with 
 dev-haskell/ngx-export 0.2.5.1: Helper module for Nginx haskell module
 dev-haskell/non-empty 0.2.1 0.3: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.1: Non-negative numbers
-dev-haskell/nonce 1.0.2: Generate cryptographic nonces
+dev-haskell/nonce 1.0.3: Generate cryptographic nonces
 dev-haskell/normaldistribution 1.1.0.3: Minimum fuss normally distributed random values
 dev-haskell/numbers 3000.2.0.1: Various number types
 dev-haskell/numbersieves 0.1.2: Number Theoretic Sieves: primes, factorization, and Euler's Totient
@@ -1254,7 +1254,7 @@ dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opengl 3.0.2.0: A binding for the OpenGL graphics system
 dev-haskell/openglraw 3.2.4.0: A raw binding for the OpenGL graphics system
-dev-haskell/openssl-streams 1.2.1.0: OpenSSL network support for io-streams
+dev-haskell/openssl-streams 1.2.1.1: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
@@ -1349,7 +1349,7 @@ dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
 dev-haskell/pretty-hex 1.0: A library for hex dumps of ByteStrings
 dev-haskell/pretty-ncols 0.1-r1: A implementation of multi-column layout w/ Text.PrettyPrint
-dev-haskell/pretty-show 1.6.12: Tools for working with derived 'Show' instances and generic inspection of values
+dev-haskell/pretty-show 1.6.13: Tools for working with derived 'Show' instances and generic inspection of values
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
@@ -1393,7 +1393,7 @@ dev-haskell/quickcheck-io 0.1.4: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.2: Safe reimplementation of QuickCheck's core
 dev-haskell/quickcheck-simple 0.1.0.1: Test properties and default-mains for QuickCheck
-dev-haskell/quickcheck-unicode 1.0.0.1: Generator and shrink functions for testing Unicode-related software
+dev-haskell/quickcheck-unicode 1.0.1.0: Generator and shrink functions for testing Unicode-related software
 dev-haskell/quickcheckvariant 0.2.0.0: Generator of "valid" and "invalid" data in a type class
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
@@ -1471,7 +1471,7 @@ dev-haskell/rss 3000.2.0.6: A library for generating RSS 2.0 feeds
 dev-haskell/rvar 0.2.0.3: Random Variables
 dev-haskell/safe 0.3.14: Library of safe (exception free) functions
 dev-haskell/safe-exceptions 0.1.5.0: Safe, consistent, and easy exception handling
-dev-haskell/safecopy 0.9.3.1: Binary serialization with version control
+dev-haskell/safecopy 0.9.3.2: Binary serialization with version control
 dev-haskell/safesemaphore 0.9.0 0.9.0-r1 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4.1: Orphan instances for types from sample-frame and numericprelude
@@ -1523,12 +1523,12 @@ dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
-dev-haskell/shellmate 0.2.3-r2 0.3.4.1: Simple interface for shell scripting in Haskell
+dev-haskell/shellmate 0.3.4.2: Simple interface for shell scripting in Haskell
 dev-haskell/shelly 1.6.8.3: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
-dev-haskell/sibe 0.2.0.4: Machine Learning algorithms
+dev-haskell/sibe 0.2.0.5: Machine Learning algorithms
 dev-haskell/silently 1.2.5: Prevent or capture writing to stdout and other handles
 dev-haskell/simple-log 0.5.1: Simple log for Haskell
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
