@@ -908,7 +908,7 @@ dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.6.1: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
-dev-haskell/http-client-tls 0.3.4.1: http-client backend using the connection package and tls library
+dev-haskell/http-client-tls 0.3.4.2: http-client backend using the connection package and tls library
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.1.11 2.2.3.1: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
@@ -916,7 +916,7 @@ dev-haskell/http-link-header 1.0.3: An RFC 5988 parser and writer for the HTTP L
 dev-haskell/http-media 0.6.4: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.4: Reverse proxy HTTP requests, either over raw sockets or with WAI
-dev-haskell/http-streams 0.8.4.0: An HTTP client using io-streams
+dev-haskell/http-streams 0.8.5.3: An HTTP client using io-streams
 dev-haskell/http-types 0.8.6 0.9.1: Generic HTTP types for Haskell (for both client and server code)
 dev-haskell/http2 1.5.4 1.6.2 1.6.3: HTTP/2.0 library including frames and HPACK
 dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
@@ -969,7 +969,7 @@ dev-haskell/iproute 1.7.1: IP Routing Table
 dev-haskell/ipv6addr 0.6.3: Library to deal with IPv6 address text representations
 dev-haskell/ipython-kernel 0.8.4.0-r1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
-dev-haskell/irc-core 2.2.0.1: IRC core library for glirc
+dev-haskell/irc-core 2.2.1: IRC core library for glirc
 dev-haskell/ircbot 0.6.5: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
