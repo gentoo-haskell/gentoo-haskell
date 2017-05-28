@@ -1049,7 +1049,7 @@ dev-haskell/libvirt-hs 0.2.1: FFI bindings to libvirt virtualization API (http:/
 dev-haskell/libxml 0.1.1: Binding to libxml2
 dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
-dev-haskell/lifted-async 0.9.1 0.9.1.1-r1: Run lifted IO operations asynchronously and wait for their results
+dev-haskell/lifted-async 0.9.1.1-r1: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.10: lifted IO operations from the base library
 dev-haskell/linear 1.20.6: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
@@ -1117,7 +1117,7 @@ dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbe
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.4: Serialize instance for Message Pack Object
 dev-haskell/mfsolve 0.3.2.0: Equation solver and calculator a la metafont
-dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0: A tiny lens library with no dependencies
+dev-haskell/microlens 0.4.5.0 0.4.6.0 0.4.7.0 0.4.8.0: A tiny lens library with no dependencies
 dev-haskell/microlens-ghc 0.4.5.0 0.4.6.0 0.4.7.0: microlens + array, bytestring, containers, transformers
 dev-haskell/microlens-mtl 0.1.8.0 0.1.9.0 0.1.10.0: microlens support for Reader/Writer/State from mtl
 dev-haskell/microlens-platform 0.3.2.0 0.3.4.0 0.3.7.0 0.3.7.1: Feature-complete microlens
