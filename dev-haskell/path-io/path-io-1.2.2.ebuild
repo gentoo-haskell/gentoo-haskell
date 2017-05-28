@@ -9,7 +9,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Interface to directory package for users of path"
+DESCRIPTION="Interface to 'directory' package for users of 'path'"
 HOMEPAGE="https://github.com/mrkkrp/path-io"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
