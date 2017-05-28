@@ -100,7 +100,7 @@ dev-haskell/amazonka-test 1.4.5: Common functionality for Amazonka library test-
 dev-haskell/amqp 0.14.1: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/amqp-worker 0.2.4: High level functions for working with message queues
 dev-haskell/angel 0.6.2: Process management and supervision daemon
-dev-haskell/annotated-wl-pprint 0.5.3 0.6.0 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
+dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
 dev-haskell/ansi-terminal 0.6.2.3: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
@@ -1277,7 +1277,7 @@ dev-haskell/parsers 0.12.4: Parsing combinators
 dev-haskell/partial-handler 1.0.2: A composable exception handler
 dev-haskell/path 0.5.13: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
-dev-haskell/path-io 1.2.2: Interface to directory package for users of path
+dev-haskell/path-io 1.2.2: Interface to 'directory' package for users of 'path'
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathtype 0.8: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
