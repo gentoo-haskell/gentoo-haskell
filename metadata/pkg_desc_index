@@ -567,7 +567,7 @@ dev-haskell/foldl 1.2.5: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.8: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.9: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -621,16 +621,16 @@ dev-haskell/ghcjs-codemirror 0.0.0.1: Installs CodeMirror JavaScript files
 dev-haskell/ghcjs-dom 0.2.4.0: DOM library that supports both GHCJS and WebKitGTK
 dev-haskell/gi-atk 2.0.12: Atk bindings
 dev-haskell/gi-cairo 1.0.12: Cairo bindings
-dev-haskell/gi-gdk 3.0.11: Gdk bindings
-dev-haskell/gi-gdkpixbuf 2.0.11: GdkPixbuf bindings
-dev-haskell/gi-gio 2.0.11: Gio bindings
-dev-haskell/gi-glib 2.0.11: GLib bindings
-dev-haskell/gi-gobject 2.0.11: GObject bindings
-dev-haskell/gi-gtk 3.0.13: Gtk bindings
+dev-haskell/gi-gdk 3.0.12: Gdk bindings
+dev-haskell/gi-gdkpixbuf 2.0.12: GdkPixbuf bindings
+dev-haskell/gi-gio 2.0.12: Gio bindings
+dev-haskell/gi-glib 2.0.12: GLib bindings
+dev-haskell/gi-gobject 2.0.12: GObject bindings
+dev-haskell/gi-gtk 3.0.14: Gtk bindings
 dev-haskell/gi-gtk-hs 0.3.4.2: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
 dev-haskell/gi-gtksource 3.0.13: GtkSource bindings
 dev-haskell/gi-javascriptcore 4.0.12: JavaScriptCore bindings
-dev-haskell/gi-pango 1.0.12: Pango bindings
+dev-haskell/gi-pango 1.0.13: Pango bindings
 dev-haskell/gi-soup 2.4.12: Libsoup bindings
 dev-haskell/gi-webkit2 4.0.12: WebKit2 bindings
 dev-haskell/gifcurry 2.0.0.2 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
