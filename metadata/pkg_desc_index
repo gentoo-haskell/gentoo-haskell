@@ -891,7 +891,7 @@ dev-haskell/hsshellscript 3.3.4: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.4: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
-dev-haskell/hstringtemplate 0.8.5: StringTemplate implementation in Haskell
+dev-haskell/hstringtemplate 0.8.6: StringTemplate implementation in Haskell
 dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx-jmacro 7.3.8: hsp+jmacro support
 dev-haskell/hsx2hs 0.13.5: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
