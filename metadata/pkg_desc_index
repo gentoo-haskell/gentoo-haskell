@@ -902,7 +902,7 @@ dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.3.6: A library for client-side HTTP
+dev-haskell/http 4000.3.7: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.5: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.6.1: An HTTP client engine
@@ -1767,6 +1767,7 @@ dev-haskell/unicode-transforms 0.2.1: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2: Efficient union and equivalence testing of sets
 dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic operations
+dev-haskell/unique 0.4.6.1: It provides the functionality like unix "uniq" utility
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
 dev-haskell/units 2.3-r1 2.4: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.0.0: A parser for units of measure
