@@ -646,12 +646,12 @@ dev-haskell/glfw-b 1.4.8.1: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0 0.13.4.1: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glirc 2.20.2.1: Console IRC client
 dev-haskell/glob 0.7.14: Globbing library
-dev-haskell/gloss 1.10.2.5: Painless 2D vector graphics, animations and simulations
-dev-haskell/gloss-algorithms 1.10.2.3: Data structures and algorithms for working with 2D graphics
-dev-haskell/gloss-examples 1.10.2.4: Examples using the gloss library
+dev-haskell/gloss 1.10.2.5 1.11.1.1: Painless 2D vector graphics, animations and simulations
+dev-haskell/gloss-algorithms 1.10.2.3 1.11.1.1: Data structures and algorithms for working with 2D graphics
+dev-haskell/gloss-examples 1.10.2.4 1.11.1.1: Examples using the gloss library
 dev-haskell/gloss-juicy 0.2.2: Load any image supported by Juicy.Pixels in your gloss application
-dev-haskell/gloss-raster 1.10.2.4: Parallel rendering of raster images
-dev-haskell/gloss-rendering 1.10.3.5: Gloss picture data types and rendering functions
+dev-haskell/gloss-raster 1.10.2.4 1.11.1.1: Parallel rendering of raster images
+dev-haskell/gloss-rendering 1.10.3.5 1.11.1.1: Gloss picture data types and rendering functions
 dev-haskell/glpk-hs 0.5: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.3: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.12: A binding for the OpenGL Utility Toolkit
@@ -776,7 +776,7 @@ dev-haskell/hedgehog 0.1: Hedgehog will eat all your bugs
 dev-haskell/hedis 0.6.10 0.9.6: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system supporting both HTML5 and XML
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
-dev-haskell/here 1.2.9: Here docs & interpolated strings via quasiquotation
+dev-haskell/here 1.2.11: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/heterocephalus 1.0.4.0: A type-safe template engine for working with popular front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
@@ -1050,7 +1050,7 @@ dev-haskell/libxml 0.1.1: Binding to libxml2
 dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.9.1.1-r1: Run lifted IO operations asynchronously and wait for their results
-dev-haskell/lifted-base 0.2.3.10: lifted IO operations from the base library
+dev-haskell/lifted-base 0.2.3.11: lifted IO operations from the base library
 dev-haskell/linear 1.20.6: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.6.0: Labeled IO Information Flow Control Library
@@ -1207,7 +1207,7 @@ dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multil
 dev-haskell/netlink 1.0.0.4: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.2: Functional reactive programming library
-dev-haskell/network 2.6.3.1-r1: Low-level networking interface
+dev-haskell/network 2.6.3.2: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
