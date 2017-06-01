@@ -1743,7 +1743,7 @@ dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.3.4: Shell programming, Haskell-style
+dev-haskell/turtle 1.3.5: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
