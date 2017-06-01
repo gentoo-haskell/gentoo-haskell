@@ -30,6 +30,7 @@ app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 app-text/pandoc:weigh-pandoc - Build weigh-pandoc to measure memory usage.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
+dev-haskell/accelerate:ekg - Enable hooking mechanisp for monitoring via dev-haskell/ekg.
 dev-haskell/accelerate:internal-checks - Enable internal consistency checks.
 dev-haskell/accelerate:llvm - Enable the LLVM backend (sequential).
 dev-haskell/accelerate:more-pp - Enable HTML and Graphviz pretty printing.

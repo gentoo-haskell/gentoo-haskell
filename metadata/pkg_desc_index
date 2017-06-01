@@ -30,10 +30,10 @@ dev-haskell/ac-angle 1.0: Angles in degrees and radians
 dev-haskell/ac-ppm 1.1.1: Trivial package for writing PPM images
 dev-haskell/ac-vector 2.3.2: Efficient geometric vectors and transformations
 dev-haskell/ac-vector-fancy 2.4.0: Fancy type-system stuff for AC-Vector
-dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0: An embedded language for accelerated array processing
+dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0 1.0.0.0: An embedded language for accelerated array processing
 dev-haskell/accelerate-cuda 0.15.1.1: Accelerate backend for NVIDIA GPUs
 dev-haskell/accelerate-fft 0.15.0.0 0.15.1.0: FFT using the Accelerate library
-dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0: Read and write Accelerate arrays in various formats
+dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0 1.0.0.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.14.2: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.13: Abstractions for animation
