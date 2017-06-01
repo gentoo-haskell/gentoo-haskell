@@ -1767,7 +1767,7 @@ dev-haskell/unicode-transforms 0.2.1: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2: Efficient union and equivalence testing of sets
 dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic operations
-dev-haskell/unique 0.4.6.1: It provides the functionality like unix "uniq" utility
+dev-haskell/unique 0: It provides the functionality like unix \
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
 dev-haskell/units 2.3-r1 2.4: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.0.0: A parser for units of measure
