@@ -7,7 +7,7 @@ EAPI=6
 
 WX_GTK_VER="3.0"
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile" # ho docs as it has no haskell files
 inherit haskell-cabal multilib versionator wxwidgets
 
 DESCRIPTION="wxHaskell C++ wrapper"
