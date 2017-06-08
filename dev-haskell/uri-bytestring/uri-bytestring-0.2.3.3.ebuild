@@ -26,9 +26,9 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/generics-sop-0.2
+	test? ( >=dev-haskell/base-compat-0.7.0
+		>=dev-haskell/generics-sop-0.2
 		dev-haskell/hunit
-		dev-haskell/lens-simple
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances
 		dev-haskell/semigroups
