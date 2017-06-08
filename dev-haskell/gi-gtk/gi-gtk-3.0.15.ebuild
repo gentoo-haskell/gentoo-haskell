@@ -33,7 +33,6 @@ RDEPEND=">=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
-	>=dev-haskell/haskell-gi-0.20.1 <dev-haskell/haskell-gi-1
 	virtual/pkgconfig
 "
 
