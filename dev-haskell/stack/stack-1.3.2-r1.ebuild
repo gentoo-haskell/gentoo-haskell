@@ -63,7 +63,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/monad-unlift-0.2.0:=[profile?] <dev-haskell/monad-unlift-0.3:=[profile?]
 	>=dev-haskell/mtl-2.1.3.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/open-browser-0.2.1:=[profile?] <dev-haskell/open-browser-0.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/optparse-simple-0.0.3:=[profile?] <dev-haskell/optparse-simple-0.1:=[profile?]
 	>=dev-haskell/path-0.5.9:=[profile?] <dev-haskell/path-0.6:=[profile?]
 	>=dev-haskell/path-io-1.1.0:=[profile?] <dev-haskell/path-io-2.0.0:=[profile?]
@@ -122,7 +122,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >=1.2.1.0 && <1.3' 'directory >=1.2.1.0'
+		'directory >=1.2.1.0 && <1.3' 'directory >=1.2.1.0' \
+		'optparse-applicative ==0.13.*' 'optparse-applicative >= 0.13'
 }
 
 src_configure() {
