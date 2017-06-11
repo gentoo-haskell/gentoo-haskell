@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/optparse-applicative-0.12.0:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+RDEPEND=">=dev-haskell/optparse-applicative-0.12.0:=[profile?]
 	>=dev-haskell/semigroups-0.5.0:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/system-filepath-0.3.1:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
@@ -27,3 +27,10 @@ RDEPEND=">=dev-haskell/optparse-applicative-0.12.0:=[profile?] <dev-haskell/optp
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >= 0.12.0  && < 0.14' 'optparse-applicative >= 0.12.0'
+}

@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.16:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-haskell/numinstances-1.0:=[profile?] <dev-haskell/numinstances-1.5:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -33,3 +33,10 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?] <dev-haskell/blank-canvas-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13'
+}

@@ -24,7 +24,7 @@ RDEPEND="<dev-haskell/bytestring-builder-1.1:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	dev-haskell/juicypixels:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	<=dev-haskell/texrunner-0.0.2:=[profile?]
 	dev-haskell/vector:=[profile?]
@@ -34,3 +34,10 @@ RDEPEND="<dev-haskell/bytestring-builder-1.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >= 0.13  && < 0.14' 'optparse-applicative >= 0.13'
+}

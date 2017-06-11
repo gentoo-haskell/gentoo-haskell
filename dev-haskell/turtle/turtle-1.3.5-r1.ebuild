@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprin
 	<dev-haskell/hostname-1.1:=[profile?]
 	>=dev-haskell/managed-1.0.3:=[profile?] <dev-haskell/managed-1.1:=[profile?]
 	>=dev-haskell/optional-args-1.0:=[profile?] <dev-haskell/optional-args-2.0:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/semigroups-0.5.0:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	<dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/system-fileio-0.2.1:=[profile?] <dev-haskell/system-fileio-0.4:=[profile?]
@@ -41,3 +41,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.7 <dev-haskell/doctest-0.12
 		>=dev-haskell/system-filepath-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >= 0.13    && < 0.14' 'optparse-applicative >= 0.13'
+}

@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/cabal-helper-0.7.3.0:=[profile?] <dev-haskell/cabal-helpe
 	>=dev-haskell/monad-journal-0.4:=[profile?] <dev-haskell/monad-journal-0.8:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/old-time-1.2:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11.0:=[profile?] <dev-haskell/optparse-applicative-0.14.0:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11.0:=[profile?]
 	>=dev-haskell/pipes-4.1.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.10.0:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -55,7 +55,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'syb               < 0.7  && >= 0.5.1' 'syb >= 0.5.1'
+		'syb               < 0.7  && >= 0.5.1' 'syb >= 0.5.1' \
+		'optparse-applicative >=0.11.0 && <0.14.0' 'optparse-applicative >=0.11.0'
 }
 
 src_compile() {

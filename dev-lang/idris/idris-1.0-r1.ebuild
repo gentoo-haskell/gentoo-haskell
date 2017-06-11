@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/ieee754-0.7:=[profile?] <=dev-haskell/ieee754-0.8.0:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.7:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/parsers-0.9:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?]
@@ -80,7 +80,8 @@ src_prepare() {
 		'zlib < 0.6.1' 'zlib' \
 		'process < 1.5' 'process' \
 		'aeson >= 0.6 && < 1.2' 'aeson >= 0.6' \
-		'safe == 0.3.9' 'safe'
+		'safe == 0.3.9' 'safe' \
+		'optparse-applicative >= 0.11 && < 0.14' 'optparse-applicative >= 0.11'
 }
 
 src_configure() {
