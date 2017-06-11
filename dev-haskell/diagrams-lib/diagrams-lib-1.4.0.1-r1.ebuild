@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/linear-1.20.1:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.5:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
@@ -56,5 +56,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >= 1.2 && < 1.3' 'directory >= 1.2'
+		'directory >= 1.2 && < 1.3' 'directory >= 1.2' \
+		'optparse-applicative >= 0.11 && < 0.14' 'optparse-applicative >= 0.11'
 }
