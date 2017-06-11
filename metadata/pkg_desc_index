@@ -1256,7 +1256,7 @@ dev-haskell/openssl-streams 1.2.1.1: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
-dev-haskell/optparse-applicative 0.13.2.0: Utilities and combinators for parsing command line options
+dev-haskell/optparse-applicative 0.13.2.0 0.14.0.0: Utilities and combinators for parsing command line options
 dev-haskell/optparse-generic 1.1.5: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
