@@ -118,6 +118,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.12 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-oa-0.14.patch)
+
 src_prepare() {
 	default
 
