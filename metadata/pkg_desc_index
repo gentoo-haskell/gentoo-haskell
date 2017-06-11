@@ -4,7 +4,7 @@ app-admin/propellor 4.0.3: property-based host configuration management in haske
 app-editors/leksah 0.15.2.0-r3 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
-app-emacs/ghc-mod 5.5.0.0-r1 5.6.0.0-r1 5.7.0.0-r1 9999: Happy Haskell Programming
+app-emacs/ghc-mod 5.5.0.0-r1 5.6.0.0-r1 5.7.0.0-r2 9999: Happy Haskell Programming
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3 4.6.4: Extensible Haskell pretty printer
 app-emacs/idris-mode 0.9.18 9999: Idris syntax highlighting and (eventually) other things for emacs
@@ -419,17 +419,17 @@ dev-haskell/dhall 1.0.2: A configuration language guaranteed to terminate
 dev-haskell/dhall-nix 1.0.0: Dhall to Nix compiler
 dev-haskell/diagrams 1.3.0.1 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.7.2.3-r2: hint-based build service for the diagrams graphics EDSL
-dev-haskell/diagrams-cairo 1.3.1 1.4: Cairo backend for diagrams drawing EDSL
-dev-haskell/diagrams-canvas 1.3.0.5 1.4: HTML5 canvas backend for diagrams drawing EDSL
+dev-haskell/diagrams-cairo 1.3.1 1.4-r1: Cairo backend for diagrams drawing EDSL
+dev-haskell/diagrams-canvas 1.3.0.5 1.4-r1: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.3.0.12 1.4.0.1: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.8 1.4: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.3.0.2 1.4: Backend for rendering diagrams directly to GTK windows
-dev-haskell/diagrams-lib 1.3.1.4 1.4.0.1: Embedded domain-specific language for declarative graphics
-dev-haskell/diagrams-pgf 0.1.0.4 1.4: PGF backend for diagrams drawing EDSL
+dev-haskell/diagrams-lib 1.3.1.4 1.4.0.1-r1: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-pgf 0.1.0.4 1.4-r1: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.3.0.7 1.4: Postscript backend for diagrams drawing EDSL
-dev-haskell/diagrams-rasterific 1.3.1.7 1.4: Rasterific backend for diagrams
+dev-haskell/diagrams-rasterific 1.3.1.7 1.4-r1: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1.0.1: Pure Haskell solver routines used by diagrams
-dev-haskell/diagrams-svg 1.3.1.10-r2 1.4.1: SVG backend for diagrams drawing EDSL
+dev-haskell/diagrams-svg 1.3.1.10-r2 1.4.1-r1: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/diff 0.3.4: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
@@ -694,7 +694,7 @@ dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 9999: A document
 dev-haskell/haddock-api 2.16.1 2.17.0_pre20160204 2.17.0_pre20160411 2.17.0_pre20160421 2.17.3: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.0_pre20160204 1.4.0_pre20160411 1.4.0_pre20160421 1.4.2: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.9.5.1: A static website compiler library
+dev-haskell/hakyll 4.9.5.1-r1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.3: Hakyll SASS compiler over hsass
 dev-haskell/half 0.2.2.3: Half-precision floating-point
@@ -1257,7 +1257,7 @@ dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy wi
 dev-haskell/optional-args 1.0.1: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.13.2.0 0.14.0.0: Utilities and combinators for parsing command line options
-dev-haskell/optparse-generic 1.1.5: Auto-generate a command-line parser for your datatype
+dev-haskell/optparse-generic 1.1.5-r1: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/pandoc-citeproc 0.10.4.1: Supports using pandoc with citeproc
@@ -1575,7 +1575,7 @@ dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.1: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
-dev-haskell/stack 1.1.2-r6 1.3.2 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 1.1.2-r6 1.3.2-r1 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5: Simple State-like monad transformer with saveable and restorable state
@@ -1741,7 +1741,7 @@ dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.3.5: Shell programming, Haskell-style
+dev-haskell/turtle 1.3.5-r1: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
@@ -1978,7 +1978,7 @@ dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
 dev-lang/hope 0-r1: A lazy interpreter for the small functional programming language Hope
 dev-lang/hugs98 2006.9-r1: The Hugs98 Haskell interpreter
-dev-lang/idris 0.12.2 0.12.3 1.0 9999: Functional Programming Language with Dependent Types
+dev-lang/idris 0.12.2 0.12.3 1.0-r1 9999: Functional Programming Language with Dependent Types
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2-r1: A purely functional programming language and a proof system
 dev-lang/ott 0.25: Ott is a tool for writing definitions of programming languages and calculi.
