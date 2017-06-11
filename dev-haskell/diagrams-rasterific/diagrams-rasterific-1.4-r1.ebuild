@@ -26,10 +26,17 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.16:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/rasterific-0.6.1:=[profile?] <dev-haskell/rasterific-0.8:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13'
+}
