@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package contains the HDBC instance of relational-query and
+		the typed query interface for HDBC.
+		Generating Database table definitions and functions for
+		relational-query by reading table and index definitions
+		from Database system catalogs.
+	</longdescription>
+</pkgmetadata>
