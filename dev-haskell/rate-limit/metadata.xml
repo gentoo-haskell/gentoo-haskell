@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		In many cases, it is useful, necessary, or simply nice to limit how
+		frequently you perform some action. For example, you may want to limit
+		how often your program makes a request of some web site. This library
+		is intended as a general-purpose mechanism for rate-limiting IO actions.
+	</longdescription>
+</pkgmetadata>
