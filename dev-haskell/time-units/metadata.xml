@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		In many cases, it is useful (either for error checking or documentation
+		reasons) to define input and output types as having a particular unit of
+		time. In addition, by creating a type class defining type units, this
+		library should make it easier to separate the units of time the developer
+		wants to think in versus the units of time the library author wants to
+		think in.
+	</longdescription>
+</pkgmetadata>
