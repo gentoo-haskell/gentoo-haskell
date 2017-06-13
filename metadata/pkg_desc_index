@@ -1291,7 +1291,7 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
-dev-haskell/persistable-record 0.4.1.0: Binding between SQL database values and haskell records
+dev-haskell/persistable-record 0.4.1.0 0.5.0.1: Binding between SQL database values and haskell records
 dev-haskell/persistent 2.1.6 2.2.4.1 2.5 2.6-r1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1: Backend for the persistent library using mongoDB
@@ -1445,7 +1445,9 @@ dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91-r1: Replaces/Enhances Text.Regex
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
-dev-haskell/relational-query 0.8.3.5: Typeful, Modular, Relational, algebraic query engine
+dev-haskell/relational-query 0.8.3.5 0.9.1.0: Typeful, Modular, Relational, algebraic query engine
+dev-haskell/relational-query-hdbc 0.6.2.0: HDBC instance of relational-query and typed query interface for HDBC
+dev-haskell/relational-schemas 0.1.3.3: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1 3.4.1.2: High performance, regular, shape polymorphic parallel arrays
