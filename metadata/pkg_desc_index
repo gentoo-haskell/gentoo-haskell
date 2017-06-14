@@ -1292,6 +1292,7 @@ dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistable-record 0.4.1.0 0.5.0.1: Binding between SQL database values and haskell records
+dev-haskell/persistable-types-hdbc-pg 0.0.1.4: HDBC and Relational-Record instances of PostgreSQL extended types
 dev-haskell/persistent 2.1.6 2.2.4.1 2.5 2.6-r1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1: Backend for the persistent library using mongoDB
@@ -1447,6 +1448,7 @@ dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/relational-query 0.8.3.5 0.9.1.0: Typeful, Modular, Relational, algebraic query engine
 dev-haskell/relational-query-hdbc 0.6.2.0: HDBC instance of relational-query and typed query interface for HDBC
+dev-haskell/relational-record 0.1.8.0: Meta package of Relational Record
 dev-haskell/relational-schemas 0.1.3.3: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
@@ -1697,6 +1699,7 @@ dev-haskell/text-icu-normalized 0.1.6: Dealing with Strict Text in NFC normaliza
 dev-haskell/text-latin1 0.3: Latin-1 (including ASCII) utility functions
 dev-haskell/text-manipulate 0.2.0.1: Case conversion, word boundary manipulation, and textual subjugation
 dev-haskell/text-metrics 0.2.0: Calculate various string metrics efficiently
+dev-haskell/text-postgresql 0.0.2.2: Parser and Printer of PostgreSQL extended types
 dev-haskell/text-printer 0.4: Abstract interface for text builders/printers
 dev-haskell/text-region 0.1.0.1: Marking text regions
 dev-haskell/text-show 3.2.2 3.4 3.4.1.1 3.6: Efficient conversion of values into Text
@@ -1989,7 +1992,7 @@ dev-lang/ott 0.25: Ott is a tool for writing definitions of programming language
 dev-lang/purescript 0.10.2-r1 0.10.3 0.10.7 0.11.4: PureScript Programming Language Compiler
 dev-lang/uhc 1.1.9.5 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
-dev-libs/libsass 3.4.4: A C/C++ implementation of a Sass compiler
+dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler
 dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.1: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4: Draw sequence diagrams of D-Bus traffic
