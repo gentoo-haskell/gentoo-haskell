@@ -1109,7 +1109,7 @@ dev-haskell/megaparsec 5.2.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
-dev-haskell/memory 0.14.5: memory and related abstraction stuff
+dev-haskell/memory 0.14.6: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.7: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
@@ -1133,7 +1133,7 @@ dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.0.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9: Monad morphisms
-dev-haskell/mockery 0.3.4: Support functions for automated testing
+dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/monad-control 1.0.1.0: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
@@ -1299,7 +1299,7 @@ dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1: Backend for the persistent 
 dev-haskell/persistent-mysql 2.6-r1: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.2.2 2.5 2.6: Backend for the persistent library using postgresql
 dev-haskell/persistent-redis 0.3.2-r1 2.5.2: Backend for persistent library using Redis
-dev-haskell/persistent-relational-record 0.1.0.0: relational-record on persisten backends
+dev-haskell/persistent-relational-record 0.1.1.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.2.1 2.5.0.2 2.6.0.1: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.1.6-r2: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgdl 10.7: browse directory listing webpages and download files from them
