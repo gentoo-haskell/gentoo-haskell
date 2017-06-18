@@ -570,7 +570,7 @@ src_install() {
 		mv "${S}/usr" "${ED}"
 	else
 
-		emake install DESTDIR="${D}"
+		emake -j1 install DESTDIR="${D}"
 		dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
 
 		# rename ghc-shipped files to avoid collision
