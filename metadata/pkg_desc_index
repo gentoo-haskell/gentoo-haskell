@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 4.0.3: property-based host configuration management in haskell
+app-admin/propellor 4.0.4: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -46,8 +46,8 @@ dev-haskell/aeson-casing 0.1.0.5: Tools to change the formatting of field names 
 dev-haskell/aeson-compat 0.3.6-r1: Compatibility layer for aeson
 dev-haskell/aeson-extra 0.3.2.0-r1 0.3.2.0-r2: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
-dev-haskell/aeson-pretty 0.7.2 0.8.2 0.8.4: JSON pretty-printing library and command-line tool
-dev-haskell/aeson-qq 0.8.1: JSON quasiquoter for Haskell
+dev-haskell/aeson-pretty 0.7.2 0.8.2 0.8.4 0.8.5: JSON pretty-printing library and command-line tool
+dev-haskell/aeson-qq 0.8.2: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
 dev-haskell/alex 3.2.1: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/algebra 4.3: Constructive abstract algebra
@@ -102,7 +102,7 @@ dev-haskell/amqp-worker 0.2.4: High level functions for working with message que
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
-dev-haskell/ansi-terminal 0.6.3: Simple ANSI terminal support, with Windows compatibility
+dev-haskell/ansi-terminal 0.6.3.1: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-numbers 0.1.3: Applicative-based numeric instances
@@ -234,7 +234,7 @@ dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo libr
 dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
-dev-haskell/carray 0.1.6.6: A C-compatible array library
+dev-haskell/carray 0.1.6.7: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.10: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
@@ -273,7 +273,7 @@ dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 1.2.0.1: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 0.12.7 0.12.8 1.0.1 1.0.2 1.2.0: classy-prelude together with conduit functions
 dev-haskell/classy-prelude-yesod 1.1.0 1.2.0: Provide a classy prelude including common Yesod functionality
-dev-haskell/clay 0.12.1: CSS preprocessor as embedded Haskell
+dev-haskell/clay 0.12.2: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0.3: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.3: media plugin for clckwrks
@@ -309,7 +309,7 @@ dev-haskell/concurrent-output 1.7.9: Ungarble output from several threads or com
 dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.10: Streaming data processing library
+dev-haskell/conduit 1.2.11: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.8.3 1.1.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.16: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.1.2.0: A library for simple INI-based configuration files
@@ -567,7 +567,7 @@ dev-haskell/foldl 1.2.5: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.9: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.11: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -590,7 +590,7 @@ dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.11.2: Generic programming library for generalised deriving
 dev-haskell/generic-trie 0.3.0.2: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1: A generic, derivable, haskell pretty printer
-dev-haskell/generics-sop 0.2.4.0 0.3.0.0: Generic Programming using True Sums of Products
+dev-haskell/generics-sop 0.2.4.0 0.3.1.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.6.0.7 0.7.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/genvalidity 0.2.0.4 0.3.0.0: Testing utilities for the validity library
@@ -612,7 +612,7 @@ dev-haskell/ghc-paths 0.1.0.9: Knowledge of GHC's installation directories
 dev-haskell/ghc-pkg-lib 0.3.1: Provide library support for ghc-pkg information
 dev-haskell/ghc-prof 1.4.0.1: Library for parsing GHC time and allocation profiling reports
 dev-haskell/ghc-simple 0.3 0.4: Simplified interface to the GHC API
-dev-haskell/ghc-syb-utils 0.2.3: Scrap Your Boilerplate utilities for the GHC API
+dev-haskell/ghc-syb-utils 0.2.3.2: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
@@ -627,7 +627,7 @@ dev-haskell/gi-gio 2.0.12: Gio bindings
 dev-haskell/gi-glib 2.0.12: GLib bindings
 dev-haskell/gi-gobject 2.0.12: GObject bindings
 dev-haskell/gi-gtk 3.0.15: Gtk bindings
-dev-haskell/gi-gtk-hs 0.3.4.2: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
+dev-haskell/gi-gtk-hs 0.3.4.3: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
 dev-haskell/gi-gtksource 3.0.13: GtkSource bindings
 dev-haskell/gi-javascriptcore 4.0.12: JavaScriptCore bindings
 dev-haskell/gi-pango 1.0.13: Pango bindings
@@ -778,7 +778,7 @@ dev-haskell/heist 0.13.1.2-r1 0.14.1.4-r3 1.0.1.0: An Haskell template system su
 dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.11: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
-dev-haskell/heterocephalus 1.0.4.0: A type-safe template engine for working with popular front end development tools
+dev-haskell/heterocephalus 1.0.5.0: A type-safe template engine for working with popular front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexpat 0.20.10: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.2: Command line flag parser, very similar to Google's gflags
@@ -829,7 +829,7 @@ dev-haskell/hoodle-publish 0.2.0 0.2.1: publish hoodle files as a static web sit
 dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
 dev-haskell/hoodle-types 0.3.0 0.4: Data types for programs for hoodle file format
 dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4: Haskell API Search
-dev-haskell/hookup 0.1.0.0: Abstraction over creating network connections with SOCKS5 and TLS
+dev-haskell/hookup 0.1.1.0: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hora 2.0.2: date time
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
