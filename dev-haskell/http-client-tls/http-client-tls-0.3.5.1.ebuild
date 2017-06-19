@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs network access
+
 RDEPEND="dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/connection-0.2.5:=[profile?]
 	dev-haskell/cryptonite:=[profile?]
