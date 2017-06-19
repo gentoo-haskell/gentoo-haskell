@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This is an interpreter for the simply-typed lambda calculus. It is
+		written making heavy use of generalized algebraic datatypes (GADTs), and is
+		meant to serve as an example how how these GADTs can be useful. See
+		the GitHub repo for more information about the syntax for the language
+		and interpreter commands.
+	</longdescription>
+</pkgmetadata>
