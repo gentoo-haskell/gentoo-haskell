@@ -641,6 +641,7 @@ dev-haskell/github-backup 1.20170301: backs up everything github knows about a r
 dev-haskell/gitrev 1.2.0: Compile git revision info into Haskell projects
 dev-haskell/gl 0.7.8.1 0.8.0: Complete OpenGL raw bindings
 dev-haskell/glade 0.12.5.0-r3 0.12.5.0-r100: Binding to the glade library
+dev-haskell/glambda 1.0.1: A simply typed lambda calculus interpreter, written with GADTs
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.1: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.0 0.13.4.1: Binding to the GLIB library for Gtk2Hs
