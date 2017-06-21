@@ -1869,6 +1869,7 @@ dev-haskell/webkitgtk3-javascriptcore 0.13.1.2 0.14.1.0 0.14.2.0 0.14.2.1: JavaS
 dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0 0.10.2.2: Snap integration for the websockets library
+dev-haskell/weeder 0.1.6: Detect dead code
 dev-haskell/weigh 0.0.4: Measure allocations of a Haskell functions/values
 dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
