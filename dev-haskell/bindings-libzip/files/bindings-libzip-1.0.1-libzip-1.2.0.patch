@@ -1,0 +1,8 @@
+diff --git a/Bindings/LibZip.hsc b/Bindings/LibZip.hsc
+index 82caa2a..151898d 100644
+--- a/Bindings/LibZip.hsc
++++ b/Bindings/LibZip.hsc
+@@ -284,3 +284,2 @@ module Bindings.LibZip where
+ 
+-#ccall zip_archive_set_tempdir , Ptr <zip> -> CString -> IO (CInt)
+ #ccall zip_file_add , Ptr <zip> -> CString -> Ptr <zip_source> -> <zip_flags_t> -> IO (CLLong)
