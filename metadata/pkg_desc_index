@@ -164,7 +164,7 @@ dev-haskell/binary-tagged 0.1.4.2-r1: Tagged binary serialisation
 dev-haskell/bindings-bfd 1.2.0.0: Bindings for libbfd, a library of the GNU binutils
 dev-haskell/bindings-dsl 1.0.23: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 3.1.2.2: Low-level bindings to GLFW OpenGL library
-dev-haskell/bindings-libzip 1.0.1: Low level bindings to libzip
+dev-haskell/bindings-libzip 1.0.1-r1: Low level bindings to libzip
 dev-haskell/bindings-uname 0.1: Low-level binding to POSIX uname(3)
 dev-haskell/bio 0.5.3-r2: A bioinformatics library
 dev-haskell/biocore 0.3.1: A bioinformatics library
