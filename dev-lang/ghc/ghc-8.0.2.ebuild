@@ -81,12 +81,12 @@ RDEPEND="
 	sys-libs/ncurses:=[unicode]
 	!ghcmakebinary? ( virtual/libffi:= )
 "
-# gentoo binaries are built against ncurses-6
-RDEPEND+="
-	binary? (
-		sys-libs/ncurses:0/6
-	)
+
+PREBUILT_BINARY_DEPENDS="
+	sys-libs/ncurses:0/6
 "
+
+RDEPEND+="binary? ( ${PREBUILT_BINARY_DEPENDS} )"
 
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook-xml-dtd:4.2
@@ -94,7 +94,7 @@ DEPEND="${RDEPEND}
 		app-text/docbook-xsl-stylesheets
 		dev-python/sphinx
 		>=dev-libs/libxslt-1.1.2 )
-"
+	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
@@ -457,12 +457,6 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-8.0.2_rc2-old-sphinx.patch
 		epatch "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
 		epatch "${FILESDIR}"/${PN}-8.0.2-O2-unreg.patch
-
-		if use prefix; then
-			# Make configure find docbook-xsl-stylesheets from Prefix
-			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
-				-i utils/haddock/doc/configure.ac || die
-		fi
 
 		bump_libs
 
