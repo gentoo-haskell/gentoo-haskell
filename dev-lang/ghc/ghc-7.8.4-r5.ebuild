@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -85,18 +85,20 @@ RDEPEND="
 	!ghcmakebinary? ( virtual/libffi:= )
 "
 
-# force dependency on >=gmp-5, even if >=gmp-4.1 would be enough. this is due to
-# that we want the binaries to use the latest versioun available, and not to be
-# built against gmp-4
+PREBUILT_BINARY_DEPENDS="
+	!prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) )
+	sys-libs/ncurses:5/5
+"
 
-# similar for glibc. we have bootstrapped binaries against glibc-2.17
+RDEPEND+="binary? ( ${PREBUILT_BINARY_DEPENDS} )"
+
 DEPEND="${RDEPEND}
 	ghcbootstrap? (
 		doc? ( app-text/docbook-xml-dtd:4.2
 			app-text/docbook-xml-dtd:4.5
 			app-text/docbook-xsl-stylesheets
 			>=dev-libs/libxslt-1.1.2 ) )
-	!ghcbootstrap? ( !prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) ) )"
+	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
