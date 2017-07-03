@@ -267,7 +267,7 @@ dev-haskell/cipher-blowfish 0.0.3: Blowfish cipher
 dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
-dev-haskell/circle-packing 0.1.0.5: Simple heuristic for packing discs of varying radii in a circle
+dev-haskell/circle-packing 0.1.0.6: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc-hs 0.3.10-r1: A Citation Style Language implementation in Haskell
 dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 1.2.0.1: A typeclass-based Prelude
@@ -1135,7 +1135,7 @@ dev-haskell/missingh 1.4.0.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
-dev-haskell/monad-control 1.0.2.0: Lift control operations, like exception catching, through monad transformers
+dev-haskell/monad-control 1.0.2.1: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
 dev-haskell/monad-logger 0.3.24: A class of monads which can log messages
@@ -1375,7 +1375,7 @@ dev-haskell/protolude 0.1.8 0.1.10: A sensible set of defaults for writing custo
 dev-haskell/prover 9999: Automatic Prover of Logical Predicates
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1: Priority Search Queue
-dev-haskell/psqueues 0.2.2.3: Pure priority search queues
+dev-haskell/psqueues 0.2.3.0: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/pulseaudio 0.0.2.0: A low-level (incomplete) wrapper around the pulseaudio client asynchronous api
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
