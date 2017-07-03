@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary )
 "
 
+# non-haskell depend i always forget about
+DEPEND="${DEPEND}
+	test? ( app-arch/zip )
+"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable)
