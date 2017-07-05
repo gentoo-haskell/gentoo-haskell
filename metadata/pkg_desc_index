@@ -1652,6 +1652,7 @@ dev-haskell/tagged 0.8.5: Haskell 98 phantom types to avoid unsafely passing dum
 dev-haskell/tagged-transformer 0.8-r1: Provides newtype wrappers for phantom types.
 dev-haskell/tagshare 0.0: TagShare - explicit sharing with tags
 dev-haskell/tagsoup 0.14.1: Parsing and extracting information from (possibly malformed) HTML/XML documents
+dev-haskell/tagsoup-megaparsec 0.2.0.0: A Tag token parser and Tag specific parsing combinators
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
@@ -1907,6 +1908,7 @@ dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and pr
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xkbcommon 0.0.3: Haskell bindings for libxkbcommon
+dev-haskell/xlsx 0.6.0: Simple and incomplete Excel file parser/writer
 dev-haskell/xml 1.3.14: A simple XML library
 dev-haskell/xml-conduit 1.3.5 1.4.0.3: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.4.1: Hamlet-style quasiquoter for XML content
