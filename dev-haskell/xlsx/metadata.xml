@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library can help you to get some data read and written in Office
+		Open XML xlsx format. Small subset of xlsx format is supported.
+		
+		For examples look into &quot;Codec.Xlsx&quot;.
+		
+		Format is covered by ECMA-376 standard:
+		&lt;http://www.ecma-international.org/publications/standards/Ecma-376.htm&gt;
+		
+		4th edition of the standard with the transitional schema is used for this library.
+	</longdescription>
+</pkgmetadata>
