@@ -718,7 +718,7 @@ dev-haskell/hare 0.8.3.0: the Haskell Refactorer
 dev-haskell/harp 0.4.2: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hascas 1.2.0: Cassandra driver for haskell
-dev-haskell/hashable 1.2.6.0: A class for types that can be converted to a hash value
+dev-haskell/hashable 1.2.6.1: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
 dev-haskell/hashable-time 0.2.0.1: Hashable instances for Data.Time
 dev-haskell/hashed-storage 0.5.11 0.5.9999: Hashed file storage support code
