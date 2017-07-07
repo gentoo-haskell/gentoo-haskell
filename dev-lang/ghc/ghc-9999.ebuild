@@ -583,6 +583,12 @@ src_configure() {
 			Windres=${CTARGET}-windres
 			DllWrap=${CTARGET}-dllwrap
 		)
+		if [[ ${CTARGET} == arm* ]] ; then
+			# ld.bfd-2.28 does not work for ghc. Force ld.gold
+			# instead. This should be removed once gentoo gets
+			# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
+			econf_args+=(LD=${CTARGET}-ld.gold)
+		fi
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
 			# GHC bug: ghc claims not to support cross-building.
