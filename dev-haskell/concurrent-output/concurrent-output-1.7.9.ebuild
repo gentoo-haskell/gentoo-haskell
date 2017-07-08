@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-termina
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'process (>= 1.1.0 && < 1.5.0)' 'process >= 1.1.0'
+}
