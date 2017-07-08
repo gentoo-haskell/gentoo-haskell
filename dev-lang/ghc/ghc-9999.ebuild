@@ -15,6 +15,7 @@ fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs versionator prefix
+inherit check-reqs
 [[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -340,7 +341,25 @@ relocate_ghc() {
 	rm "$gp_back"
 }
 
+ghc-check-reqs() {
+	# These are pessimistic values (slightly bigger than worst-case)
+	# Worst case is UNREG USE=profile ia64. See bug #611866 for some
+	# numbers on various arches.
+	CHECKREQS_DISK_BUILD=8G
+	CHECKREQS_DISK_USR=2G
+	# USE=binary roughly takes
+	use binary && CHECKREQS_DISK_BUILD=4G
+
+	"$@"
+}
+
+pkg_pretend() {
+	ghc-check-reqs check-reqs_pkg_pretend
+}
+
 pkg_setup() {
+	ghc-check-reqs check-reqs_pkg_setup
+
 	# quiet portage about prebuilt binaries
 	use binary && QA_PREBUILT="*"
 

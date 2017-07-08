@@ -47,4 +47,4 @@ emerge --buildpkgonly =ghc-$1 || exit
 
 echo "created $(portageq envvar PKGDIR)/dev-lang/ghc-$1.tbz2"
 echo "to make the ghc-bin file just move it:"
-echo "mv $(portageq envvar PKGDIR)/dev-lang/ghc-$1.tbz2 $(portageq envvar DISTDIR)/ghc-bin-$1-$(portageq envvar ARCH).tbz2"
+echo "mv $(portageq envvar PKGDIR)/dev-lang/ghc-$1.tbz2 $(portageq envvar DISTDIR)/ghc-bin-$1-$(portageq envvar CHOST).tbz2"
