@@ -1658,7 +1658,7 @@ dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
 dev-haskell/tar 0.4.5.0 0.5.0.3: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
-dev-haskell/tasty 0.11.2.1: Modern and extensible testing framework
+dev-haskell/tasty 0.11.2.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.0.5: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.0.4: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.1.1: Golden tests support for tasty
