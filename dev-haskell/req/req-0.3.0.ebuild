@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs network access
+
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
 	>=dev-haskell/authenticate-oauth-1.5:=[profile?] <dev-haskell/authenticate-oauth-1.7:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
