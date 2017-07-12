@@ -1461,6 +1461,7 @@ dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files a
 dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/representable-functors 3.2.0.2-r3: Representable functors
 dev-haskell/representable-tries 3.0.2: Tries from representations of polynomial functors
+dev-haskell/req 0.3.0: Easy-to-use, type-safe, expandable, high-level HTTP library
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.9: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.4.2: Retry combinators for monadic actions that may fail
