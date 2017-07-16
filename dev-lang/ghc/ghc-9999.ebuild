@@ -613,12 +613,21 @@ src_configure() {
 			Windres=${CTARGET}-windres
 			DllWrap=${CTARGET}-dllwrap
 		)
-		if [[ ${CTARGET} == arm* ]] ; then
-			# ld.bfd-2.28 does not work for ghc. Force ld.gold
-			# instead. This should be removed once gentoo gets
-			# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
-			econf_args+=(LD=${CTARGET}-ld.gold)
-		fi
+		case ${CTARGET} in
+			arm*)
+				# ld.bfd-2.28 does not work for ghc. Force ld.gold
+				# instead. This should be removed once gentoo gets
+				# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
+				econf_args+=(LD=${CTARGET}-ld.gold)
+			;;
+			sparc*)
+				# ld.gold-2.28 does not work for ghc. Force ld.bfd
+				# instead. This should be removed once gentoo gets
+				# a fix for missing --no-relax support bug:
+				# https://sourceware.org/ml/binutils/2017-07/msg00183.html
+				econf_args+=(LD=${CTARGET}-ld.bfd)
+			;;
+		esac
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
 			# GHC bug: ghc claims not to support cross-building.
