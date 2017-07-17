@@ -607,11 +607,12 @@ src_configure() {
 		econf_args+=(
 			AR=${CTARGET}-ar
 			CC=${CTARGET}-gcc
-			LD=${CTARGET}-ld
 			# these should be inferred by GHC but ghc defaults
 			# to using bundled tools on windows.
 			Windres=${CTARGET}-windres
 			DllWrap=${CTARGET}-dllwrap
+			# we set the linker explicitly below
+			--disable-ld-override
 		)
 		case ${CTARGET} in
 			arm*)
@@ -627,6 +628,8 @@ src_configure() {
 				# https://sourceware.org/ml/binutils/2017-07/msg00183.html
 				econf_args+=(LD=${CTARGET}-ld.bfd)
 			;;
+			*)
+				econf_args+=(LD=${CTARGET}-ld)
 		esac
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
