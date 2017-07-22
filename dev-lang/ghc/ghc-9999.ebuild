@@ -609,8 +609,8 @@ src_configure() {
 			CC=${CTARGET}-gcc
 			# these should be inferred by GHC but ghc defaults
 			# to using bundled tools on windows.
-			Windres=${CTARGET}-windres
-			DllWrap=${CTARGET}-dllwrap
+			WindresCmd=${CTARGET}-windres
+			DllWrapCmd=${CTARGET}-dllwrap
 			# we set the linker explicitly below
 			--disable-ld-override
 		)
