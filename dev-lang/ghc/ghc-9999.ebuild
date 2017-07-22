@@ -607,8 +607,10 @@ src_configure() {
 		econf_args+=(
 			AR=${CTARGET}-ar
 			CC=${CTARGET}-gcc
-			# do not use bundled windres, dllwrap and friends
-			--enable-distro-toolchain
+			# these should be inferred by GHC but ghc defaults
+			# to using bundled tools on windows.
+			Windres=${CTARGET}-windres
+			DllWrap=${CTARGET}-dllwrap
 			# we set the linker explicitly below
 			--disable-ld-override
 		)
