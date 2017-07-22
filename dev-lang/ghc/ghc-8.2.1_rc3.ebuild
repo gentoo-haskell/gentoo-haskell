@@ -494,6 +494,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-stage2-cross.patch
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc3-any-vendor.patch
+		epatch "${FILESDIR}"/${PN}-8.2.1_rc3-stginit-data.patch
 
 		# needs a new libffi release
 		epatch "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
