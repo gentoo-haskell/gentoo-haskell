@@ -107,7 +107,7 @@ dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-numbers 0.1.3: Applicative-based numeric instances
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
-dev-haskell/apply-refact 0.3.0.1: Perform refactorings specified by the refact library
+dev-haskell/apply-refact 0.3.0.1 0.4.0.0: Perform refactorings specified by the refact library
 dev-haskell/argparser 0.3.4: Command line parsing framework for console applications
 dev-haskell/arithmoi 0.4.3.0 0.5.0.0: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
 dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
@@ -222,7 +222,7 @@ dev-haskell/c10k 0.5.0: C10k server library using prefork
 dev-haskell/c2hs 0.28.2: C->Haskell FFI tool that gives some cross-language type safety
 dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.22.5.0 1.22.7.0 1.22.8.0 1.24.0.0 1.24.1.0 1.24.2.0 2.1.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
-dev-haskell/cabal-doctest 1.0.2: A Setup.hs helper for doctests running
+dev-haskell/cabal-doctest 1.0.2-r1: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.4: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0 0.7.3.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 9999: The command-line interface for Cabal and Hackage
@@ -603,7 +603,7 @@ dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2: The Glasgow Haskell Compi
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
-dev-haskell/ghc-exactprint 0.5.2.1: ExactPrint for GHC
+dev-haskell/ghc-exactprint 0.5.2.1 0.5.4.0: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.4 0.5.7: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Ghc-Api monads and monad-transformers
@@ -1503,7 +1503,7 @@ dev-haskell/sdl2-image 2.0.0: Bindings to SDL2_image
 dev-haskell/sdl2-mixer 0.1: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
-dev-haskell/semigroupoids 4.2 4.3 5.0.1 5.1: Semigroupoids: Category sans id
+dev-haskell/semigroupoids 4.2 4.3 5.0.1 5.1 5.2: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.3: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
