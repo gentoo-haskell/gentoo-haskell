@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-3:=
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-0.2:=
 	>=dev-haskell/binary-0.5:= <dev-haskell/binary-0.9:=
 	>=dev-haskell/bytestring-builder-0.10:= <dev-haskell/bytestring-builder-1:=
-	>=dev-haskell/cabal-1.25:= <dev-haskell/cabal-1.26:=
+	>=dev-haskell/cabal-2.1:= <dev-haskell/cabal-2.2:=
 	>=dev-haskell/cryptohash-sha256-0.11:= <dev-haskell/cryptohash-sha256-0.12:=
 	>=dev-haskell/hackage-security-0.5:= <dev-haskell/hackage-security-0.6:=
 	>=dev-haskell/hashable-1.0:= <dev-haskell/hashable-2:=
