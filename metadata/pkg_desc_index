@@ -234,7 +234,7 @@ dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo libr
 dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
-dev-haskell/carray 0.1.6.7: A C-compatible array library
+dev-haskell/carray 0.1.6.8: A C-compatible array library
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.10: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
@@ -256,7 +256,7 @@ dev-haskell/chart-gtk 1.8.2: Utility functions for using the chart library with 
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.2-r1: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
-dev-haskell/checkers 0.4.6: Check properties on standard classes and data structures
+dev-haskell/checkers 0.4.7: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5-r1: QuickCheck support for the Chell testing library
 dev-haskell/chronos 0.4: A performant time library
@@ -289,7 +289,7 @@ dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
 dev-haskell/code-page 0.1.3: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
-dev-haskell/codec-image-devil 0.2.3-r2: An FFI interface to the DevIL library
+dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colonnade 0.5: Generic types and functions for columnar encoding and decoding
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
@@ -312,7 +312,7 @@ dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic v
 dev-haskell/conduit 1.2.11: Streaming data processing library
 dev-haskell/conduit-combinators 1.0.8.3 1.1.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.16: Batteries included conduit: adapters for common libraries
-dev-haskell/config-ini 0.1.2.0: A library for simple INI-based configuration files
+dev-haskell/config-ini 0.1.2.1: A library for simple INI-based configuration files
 dev-haskell/config-value 0.4.0.2 0.5: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
@@ -333,7 +333,7 @@ dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
 dev-haskell/country-codes 0.1.3: ISO 3166 country codes and i18n names
-dev-haskell/cpphs 1.20.5: A liberalised re-implementation of cpp, the C pre-processor
+dev-haskell/cpphs 1.20.8: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
@@ -440,7 +440,7 @@ dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the dige
 dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.0: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.3: Statically checked physical dimensions, using Type Families and Data Kinds
-dev-haskell/direct-sqlite 2.3.19: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.20: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
@@ -564,10 +564,10 @@ dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9: FoldMap lists
 dev-haskell/focus 0.1.5: A general abstraction for manipulating elements of container data structures
 dev-haskell/foldl 1.2.5: Composable, streaming, and efficient left folds
-dev-haskell/fontyfruity 0.5.3.2: A true type file format loader
+dev-haskell/fontyfruity 0.5.3.3: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.11: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.13: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
