@@ -1721,7 +1721,7 @@ dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH rei
 dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
 dev-haskell/th-utilities 0.2.0.1: Collection of useful functions for use with Template Haskell
 dev-haskell/themoviedb 1.1.3.0: Haskell API bindings for http://themoviedb.org
-dev-haskell/these 0.7.3: An either-or-both data type & a generalized 'zip with padding' typeclass
+dev-haskell/these 0.7.3-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6 0.7.0.1: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
