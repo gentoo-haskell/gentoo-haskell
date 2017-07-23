@@ -603,7 +603,7 @@ dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2: The Glasgow Haskell Compi
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.4.4.0-r1: Library and tool for parsing .eventlog files from GHC
-dev-haskell/ghc-exactprint 0.5.2.1 0.5.4.0: ExactPrint for GHC
+dev-haskell/ghc-exactprint 0.5.2.1 0.5.4.0 0.5.5.0: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.4 0.5.7: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-mtl 1.1.0.0-r1 1.2.1.0 9999: An mtl compatible version of the Ghc-Api monads and monad-transformers
@@ -1165,7 +1165,7 @@ dev-haskell/mongodb 2.1.1.1: Driver (client) for MongoDB, a free, scalable, fast
 dev-haskell/monky 2.1.3.0: A system state collecting library and application
 dev-haskell/mono-traversable 1.0.2: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/mono-traversable-instances 0.1.0.0: Extra typeclass instances for mono-traversable
-dev-haskell/monoid-extras 0.4.2: Various extra monoid-related definitions and utilities
+dev-haskell/monoid-extras 0.4.2-r1: Various extra monoid-related definitions and utilities
 dev-haskell/monoid-subclasses 0.4.2 0.4.2.1 0.4.3 0.4.3.1 0.4.3.2: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.3: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/morsecode 0.0.5: Morse code
@@ -1889,7 +1889,7 @@ dev-haskell/wordpass 1.0.0.7: Dictionary-based password generator
 dev-haskell/workdays 0.1.1: Workday calculations
 dev-haskell/wraparound 0.0.2: Convenient handling of points on a seamless 2-dimensional plane
 dev-haskell/wreq 0.4.1.0: An easy-to-use HTTP client library
-dev-haskell/wuss 1.1.4: Secure WebSocket (WSS) clients
+dev-haskell/wuss 1.1.5: Secure WebSocket (WSS) clients
 dev-haskell/wx 0.92.3.0: wxHaskell
 dev-haskell/wxc 0.92.3.0: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.92.3.0: wxHaskell core
@@ -1924,7 +1924,7 @@ dev-haskell/xmonad-screenshot 0.1.2: Workspaces screenshooting utility for XMona
 dev-haskell/xournal-parser 0.5.1: Xournal file parser
 dev-haskell/xournal-types 0.5.1.0: Data types for programs for xournal file format
 dev-haskell/xss-sanitize 0.3.5.7: sanitize untrusted HTML to prevent XSS attacks
-dev-haskell/yaml 0.8.23.1: Support for parsing and rendering YAML documents
+dev-haskell/yaml 0.8.23.3: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yampa 0.10.6: Library for programming hybrid systems
 dev-haskell/yarr 1.4.0.2: Yet another array library
@@ -1940,13 +1940,13 @@ dev-haskell/yesod-bin 1.5.2.3: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 0.2: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.35: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.35.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-dsl 0.2.1: DSL for generating Yesod subsite to manage an RDBMS;
 dev-haskell/yesod-elements 1.0: Non template haskell markup building function in the spirit of lucid
 dev-haskell/yesod-eventsource 1.4.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.8.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
-dev-haskell/yesod-form 1.4.12: Form handling support for Yesod Web Framework
+dev-haskell/yesod-form 1.4.13: Form handling support for Yesod Web Framework
 dev-haskell/yesod-gitrepo 0.2.1.0: Host content provided by a Git repo
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
 dev-haskell/yesod-markdown 0.11.4: Tools for using markdown in a yesod application
@@ -1959,7 +1959,7 @@ dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.3: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
-dev-haskell/yesod-test 1.5.7: integration testing for WAI/Yesod Applications
+dev-haskell/yesod-test 1.5.8: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.8: Yesod support for Text.Markdown
 dev-haskell/yesod-websockets 0.2.6: WebSockets support for Yesod
 dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
