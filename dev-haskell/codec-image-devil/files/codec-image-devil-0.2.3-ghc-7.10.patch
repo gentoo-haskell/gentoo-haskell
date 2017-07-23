@@ -1,8 +1,0 @@
-diff --git a/Codec/Image/DevIL.hsc b/Codec/Image/DevIL.hsc
-index 5b152b9..15ec66a 100644
---- a/Codec/Image/DevIL.hsc
-+++ b/Codec/Image/DevIL.hsc
-@@ -1,2 +1,3 @@
-+{-# LANGUAGE FlexibleContexts #-}
- module Codec.Image.DevIL
-     ( ilInit
