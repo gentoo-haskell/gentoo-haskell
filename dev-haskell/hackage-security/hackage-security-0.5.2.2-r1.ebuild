@@ -19,7 +19,7 @@ IUSE="+use-network-uri"
 
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.26:=[profile?]
+	>=dev-haskell/cabal-1.14:=[profile?]
 	>=dev-haskell/cryptohash-sha256-0.11:=[profile?] <dev-haskell/cryptohash-sha256-0.12:=[profile?]
 	>=dev-haskell/ed25519-0.0:=[profile?] <dev-haskell/ed25519-0.1:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -48,7 +48,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'directory         >= 1.1.0.2 && < 1.3' 'directory         >= 1.1.0.2' \
-		'time              >= 1.2     && < 1.7' 'time              >= 1.2'
+		'time              >= 1.2     && < 1.7' 'time              >= 1.2' \
+		'Cabal             >= 1.14    && < 1.26' 'Cabal             >= 1.14'
 }
 
 src_configure() {
