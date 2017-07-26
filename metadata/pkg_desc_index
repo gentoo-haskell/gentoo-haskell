@@ -126,6 +126,7 @@ dev-haskell/attoparsec 0.12.1.6 0.13.1.0: Fast combinator parsing for bytestring
 dev-haskell/attoparsec-binary 0.2: Binary processing extensions to Attoparsec
 dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (deprecated)
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
+dev-haskell/attoparsec-iso8601 1.0.0.0: Parsing of ISO 8601 dates, originally from aeson
 dev-haskell/attoparsec-iteratee 0.4.0-r1: An adapter to convert attoparsec Parsers into blazing-fast Iteratees
 dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
 dev-haskell/authenticate 1.3.3.2: Authentication methods for Haskell web applications
@@ -904,7 +905,7 @@ dev-haskell/html-conduit 1.2.1.1: Parse HTML documents using xml-conduit datatyp
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.7: A library for client-side HTTP
-dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.5: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.5 0.3.7.1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.7.0: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
@@ -1050,7 +1051,7 @@ dev-haskell/libvirt-hs 0.2.1: FFI bindings to libvirt virtualization API (http:/
 dev-haskell/libxml 0.1.1: Binding to libxml2
 dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
-dev-haskell/lifted-async 0.9.1.1-r1: Run lifted IO operations asynchronously and wait for their results
+dev-haskell/lifted-async 0.9.1.1-r1 0.9.3: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.11: lifted IO operations from the base library
 dev-haskell/linear 1.20.6: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
