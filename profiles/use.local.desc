@@ -467,6 +467,7 @@ media-sound/live-sequencer:httpserver - Enable access to modules via a web brows
 net-p2p/combinatorrent:threaded - Build with -threaded.
 net-p2p/combinatorrent:threadscope - Build with -eventlog.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
+sci-mathematics/agda:enable-cluster-counting - Count extended grapheme clusters when generating LaTeX.
 sci-mathematics/agda:stdlib - Install the standard library.
 sci-mathematics/agda:uhc - Add support for the uhc backend.
 sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the MAlonzo backend
