@@ -27,5 +27,12 @@ RDEPEND="dev-haskell/genvalidity:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hspec
-		>=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.9 )
+		>=dev-haskell/quickcheck-2.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck     >= 2.8 && < 2.9' 'QuickCheck     >= 2.8'
+}
