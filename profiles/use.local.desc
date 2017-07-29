@@ -117,7 +117,6 @@ dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
 dev-haskell/distributed-process:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/distributed-process-tests:tcp - Run TCP tests.
-dev-haskell/dph-base:dtrace - Enable experimental support for dtrace-based profiling.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/fastcgi:small_base - Choose the new smaller, split-up base package.

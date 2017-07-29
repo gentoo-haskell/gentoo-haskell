@@ -464,13 +464,6 @@ dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision floating point and text
 dev-haskell/download-curl 0.1.4-r2: High-level file download based on URLs
-dev-haskell/dph-base 0.7.0.1-r2: Data Parallel Haskell common config and debugging functions
-dev-haskell/dph-lifted-base 0.7.0.1: Data Parallel Haskell common definitions used by other dph-lifted packages
-dev-haskell/dph-lifted-copy 0.7.0.1: Data Parallel Haskell lifted array combinators. (deprecated version)
-dev-haskell/dph-lifted-vseg 0.7.0.1: Data Parallel Haskell lifted array combinators
-dev-haskell/dph-prim-interface 0.7.0.1-r2: Data Parallel Haskell segmented arrays. (abstract interface)
-dev-haskell/dph-prim-par 0.7.0.1: Data Parallel Haskell segmented arrays. (production version)
-dev-haskell/dph-prim-seq 0.7.0.1: Data Parallel Haskell segmented arrays. (sequential implementation)
 dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka PRNG) based HMACs, Hashes, and Ciphers
 dev-haskell/drift 2.4.2: Program to derive type class instances
 dev-haskell/dsp 0.2.3.1: Haskell Digital Signal Processing
