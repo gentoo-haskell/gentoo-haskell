@@ -2036,7 +2036,7 @@ games-roguelike/scroll 1.20170122: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
-media-sound/live-sequencer 0.0.5.2: Live coding of MIDI music
+media-sound/live-sequencer 0.0.6: Live coding of MIDI music
 net-irc/y0l0bot 0.1.1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.2-r2: Count mailboxes in a SQL database
