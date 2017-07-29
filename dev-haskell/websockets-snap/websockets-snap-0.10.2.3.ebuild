@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/bytestring-builder-0.10:=[profile?] <dev-haskell/bytestri
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-haskell/snap-server-1.0:=[profile?] <dev-haskell/snap-server-1.1:=[profile?]
-	>=dev-haskell/websockets-0.9.5:=[profile?] <dev-haskell/websockets-0.12:=[profile?]
+	>=dev-haskell/websockets-0.9.5:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
