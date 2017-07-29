@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/mtl:=[profile?] dev-haskell/safe:=[profile?] dev-haskell/th-expand-syns:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
-DESCRIPTION=Recurseively reify template haskell datatype info
+DEPEND=>=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Compatibility for the result type of TH reify
 EAPI=6
-HOMEPAGE=https://github.com/mgsloan/th-reify-many
-IUSE=doc hscolour hoogle profile test
+HOMEPAGE=https://github.com/khibino/haskell-th-reify-compat/
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=dev-haskell/mtl:=[profile?] dev-haskell/safe:=[profile?] dev-haskell/th-expand-syns:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=0/0.1.6
-SRC_URI=mirror://hackage/packages/archive/th-reify-many/0.1.6/th-reify-many-0.1.6.tar.gz
+RDEPEND=>=dev-lang/ghc-7.4.1:=
+SLOT=0/0.0.1.2
+SRC_URI=mirror://hackage/packages/archive/th-reify-compat/0.0.1.2/th-reify-compat-0.0.1.2.tar.gz
 _eclass_exported_funcs=pkg_postrm:haskell-cabal pkg_postinst:haskell-cabal pkg_setup:haskell-cabal src_configure:haskell-cabal src_compile:haskell-cabal src_test:haskell-cabal src_install:haskell-cabal
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	9c113d6a64826c40154cad7be15d95ea	ghc-package	f9cf05643e20f03876bb4807f008c80f	haskell-cabal	e2532aa75df473aa3cbd3c5d26a0d9d4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	284a473719153462f3e974d86c8cb81c	toolchain-funcs	8fec6b1eb195836560e70b66d98fb163	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=a766335acf6e0878b135ba9c9ac2629d
+_md5_=3d57ad8effdcdf729a9654e180c715b8

@@ -1639,7 +1639,7 @@ dev-haskell/syb 0.4.4 0.5.1 0.6 0.7: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
-dev-haskell/synthesizer-core 0.8.1: Audio signal processing coded in Haskell: Low level part
+dev-haskell/synthesizer-core 0.8.1.1: Audio signal processing coded in Haskell: Low level part
 dev-haskell/system-argv0 0.1.1: Get argv[0] as a FilePath
 dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC versions (deprecated)
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
@@ -1717,13 +1717,13 @@ dev-haskell/th-expand-syns 0.4.3.0: Expands type synonyms in Template Haskell AS
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.7.7: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.11: Lift instances for template-haskell for common data types
-dev-haskell/th-orphans 0.13.3: Orphan instances for TH datatypes
-dev-haskell/th-reify-compat 0.0.1.1: Compatibility for the result type of TH reify
-dev-haskell/th-reify-many 0.1.6: Recurseively reify template haskell datatype info
+dev-haskell/th-orphans 0.13.4: Orphan instances for TH datatypes
+dev-haskell/th-reify-compat 0.0.1.2: Compatibility for the result type of TH reify
+dev-haskell/th-reify-many 0.1.8: Recurseively reify template haskell datatype info
 dev-haskell/th-utilities 0.2.0.1: Collection of useful functions for use with Template Haskell
 dev-haskell/themoviedb 1.1.3.0: Haskell API bindings for http://themoviedb.org
 dev-haskell/these 0.7.3-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
-dev-haskell/threads 0.5.1.4: Fork threads and wait for their result
+dev-haskell/threads 0.5.1.5: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6 0.7.0.1: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 0.9.4: Pattern language for improvised music
@@ -1852,7 +1852,7 @@ dev-haskell/wai-http2-extra 0.1.0: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.2.7 2.3.0: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/wai-websockets 3.0.1.1: Provide a bridge between WAI and the websockets package
-dev-haskell/warp 3.2.12: A fast, light-weight web server for WAI applications
+dev-haskell/warp 3.2.13: A fast, light-weight web server for WAI applications
 dev-haskell/warp-tls 3.2.3: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.1.5: WAVE audio file IO library
