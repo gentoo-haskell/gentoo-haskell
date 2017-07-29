@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.5:=[
 	>=dev-haskell/pipes-safe-2.2:=[profile?] <dev-haskell/pipes-safe-2.3:=[profile?]
 	>=dev-haskell/pipes-text-0.0:=[profile?] <dev-haskell/pipes-text-0.1:=[profile?]
 	>=dev-haskell/reflection-1.5:=[profile?] <dev-haskell/reflection-2.2:=[profile?]
-	>=dev-haskell/semigroupoids-5.0.0:=[profile?] <dev-haskell/semigroupoids-5.2:=[profile?]
+	>=dev-haskell/semigroupoids-5.0.0:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vinyl-0.5.2:=[profile?] <dev-haskell/vinyl-0.6:=[profile?]
@@ -38,8 +38,16 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.5:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/contravariant-1.2 <dev-haskell/contravariant-1.5
-		>=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.9 )
+		>=dev-haskell/quickcheck-2.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck      >= 2.8 && < 2.9' 'QuickCheck      >= 2.8' \
+		'semigroupoids      >= 5.0.0   && < 5.2' 'semigroupoids      >= 5.0.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
