@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # disable tests: free-4.12.4 transformers-free-1.0.1 ambiguity
 
 RDEPEND=">=dev-haskell/bifunctors-5.0:=[profile?]
 	>=dev-haskell/conceit-0.4.0.0:=[profile?]
