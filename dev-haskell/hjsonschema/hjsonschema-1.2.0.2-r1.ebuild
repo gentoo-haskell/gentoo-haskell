@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs network
+
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/file-embed-0.0.8:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/hjsonpointer-0.3:=[profile?]
