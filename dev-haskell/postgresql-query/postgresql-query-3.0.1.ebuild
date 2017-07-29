@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs running postgresql
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
