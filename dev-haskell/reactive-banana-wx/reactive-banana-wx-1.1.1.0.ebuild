@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,6 +30,14 @@ RDEPEND=">=dev-haskell/cabal-macosx-0.1:=[profile?] <dev-haskell/cabal-macosx-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'process >= 1.0 && < 1.4' 'process >= 1.0' \
+		'filepath >= 1.1 && <= 1.4.0.0' 'filepath >= 1.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
