@@ -229,7 +229,7 @@ dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0 0.7.
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 9999: The command-line interface for Cabal and Hackage
 dev-haskell/cabal-macosx 0.2.4.0: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
-dev-haskell/cabal-rpm 0.11.1: RPM packaging tool for Haskell Cabal-based packages
+dev-haskell/cabal-rpm 0.11.2: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
 dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo library
 dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
@@ -276,14 +276,14 @@ dev-haskell/classy-prelude-yesod 1.1.0 1.2.0: Provide a classy prelude including
 dev-haskell/clay 0.12.2: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0.4: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.1: a command-line interface for adminstrating some aspects of clckwrks
-dev-haskell/clckwrks-plugin-media 0.6.16.3: media plugin for clckwrks
-dev-haskell/clckwrks-plugin-page 0.4.3.9: support for CMS/Blogging in clckwrks
+dev-haskell/clckwrks-plugin-media 0.6.16.4: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-page 0.4.3.10: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
-dev-haskell/cmark 0.5.5.1: Fast, accurate CommonMark (Markdown) parser and renderer
+dev-haskell/cmark 0.5.6: Fast, accurate CommonMark (Markdown) parser and renderer
 dev-haskell/cmdargs 0.10.17: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
@@ -337,7 +337,7 @@ dev-haskell/cpphs 1.20.8: A liberalised re-implementation of cpp, the C pre-proc
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
-dev-haskell/cracknum 1.4 1.5: Crack various integer, floating-point data formats
+dev-haskell/cracknum 1.9: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.1.0 1.1.4.0: Robust, reliable performance measurement and analysis
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
@@ -550,6 +550,7 @@ dev-haskell/fixed-vector 0.7.0.3 0.8.1.0: Generic vectors with statically known 
 dev-haskell/fixed-vector-hetero 0.3.1.1: Generic heterogeneous vectors
 dev-haskell/fixplate 0.1.7: Uniplate-style generic traversals for optionally annotated fixed-point types
 dev-haskell/flexible-defaults 0.0.1.1 0.0.1.2: Generate default function implementations for complex type classes
+dev-haskell/floatinghex 0.4: Read and write hexadecimal floating point numbers
 dev-haskell/flock 0.3.1.8-r1: Wrapper for flock(2)
 dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagrams from plain text source
 dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
@@ -1848,7 +1849,7 @@ dev-haskell/web-encodings 0.3.0.9-r1: Encapsulate multiple web encoding in a sin
 dev-haskell/web-plugins 0.2.9: dynamic plugin system for web applications
 dev-haskell/web-routes 0.27.12: portable, type-safe URL routing
 dev-haskell/web-routes-boomerang 0.28.4.2: Use boomerang for type-safe URL parsers/printers
-dev-haskell/web-routes-happstack 0.23.10: Adds support for using web-routes with Happstack
+dev-haskell/web-routes-happstack 0.23.11: Adds support for using web-routes with Happstack
 dev-haskell/web-routes-hsp 0.24.6.1: Adds XMLGenerator instance for RouteT monad
 dev-haskell/web-routes-th 0.22.6.1: Support for deriving PathInfo using Template Haskell
 dev-haskell/webdriver 0.8.5: a Haskell client for the Selenium WebDriver protocol
