@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/brick-0.13:= <dev-haskell/brick-0.19:=
+RDEPEND=">=dev-haskell/brick-0.17:= <dev-haskell/brick-0.24:=
 	dev-haskell/cabal:=
 	dev-haskell/conduit:=
 	dev-haskell/conduit-extra:=
