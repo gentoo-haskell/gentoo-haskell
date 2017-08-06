@@ -1081,7 +1081,7 @@ dev-haskell/lucid-svg 0.5.0.0 0.6.0.1-r1 0.7.0.0: DSL for SVG using lucid for HT
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
-dev-haskell/machines 0.5.1-r1 0.6.2: Networked stream transducers
+dev-haskell/machines 0.6.3: Networked stream transducers
 dev-haskell/machines-directory 0.2.1.0: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.13: IO utilities for the machines library
 dev-haskell/mackerel-client 0.0.4: An API client library for Mackerel
@@ -1336,7 +1336,7 @@ dev-haskell/portmidi 0.1.6.0 0.1.6.1: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-libpq 0.9.3.1: low-level binding to libpq
 dev-haskell/postgresql-query 3.0.1: Sql interpolating quasiquote plus some kind of primitive ORM using it
 dev-haskell/postgresql-simple 0.4.10.0 0.5.3.0: Mid-Level PostgreSQL client library
-dev-haskell/pqueue 1.3.2.2: Reliable, persistent, fast priority queues
+dev-haskell/pqueue 1.3.2.3: Reliable, persistent, fast priority queues
 dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
 dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax via quick-and-dirty preprocessors
 dev-haskell/presburger 1.3.1: A decision procedure for quantifier-free linear arithmetic
@@ -1358,7 +1358,7 @@ dev-haskell/product-profunctors 0.7.1.0: product-profunctors
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.4.3.0: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
-dev-haskell/profunctors 4.4.1 5.1.2 5.2-r1: Profunctors
+dev-haskell/profunctors 5.2.1: Profunctors
 dev-haskell/progression 0.5.0.2: Automates the recording and graphing of criterion benchmarks
 dev-haskell/project-template 0.1.4.2 0.2.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.2.0.1: A Prolog interpreter written in Haskell
@@ -1419,7 +1419,7 @@ dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/reform 0.2.7.1: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
-dev-haskell/reform-happstack 0.2.5.1: Happstack support for reform
+dev-haskell/reform-happstack 0.2.5.2: Happstack support for reform
 dev-haskell/reform-hsp 0.2.7.1: Add support for using HSP with Reform
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
 dev-haskell/regex-applicative 0.3.3: Regex-based parsing with applicative interface
@@ -1452,7 +1452,7 @@ dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writ
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4: Generic programming library with representation types
-dev-haskell/req 0.3.0: Easy-to-use, type-safe, expandable, high-level HTTP library
+dev-haskell/req 0.3.1: Easy-to-use, type-safe, expandable, high-level HTTP library
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.9: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.4.2: Retry combinators for monadic actions that may fail
@@ -1768,7 +1768,7 @@ dev-haskell/uniplate 1.6.12: Help writing simple, concise and fast generic opera
 dev-haskell/unique 0: It provides the functionality like unix \
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
 dev-haskell/units 2.3-r1 2.4: A domain-specific type system for dimensional analysis
-dev-haskell/units-parser 0.1.0.0: A parser for units of measure
+dev-haskell/units-parser 0.1.0.1: A parser for units of measure
 dev-haskell/unix-compat 0.4.2.0-r1 0.4.3.1: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2: Unix memory syscalls
 dev-haskell/unix-time 0.3.7: Unix time parser/formatter and utilities
@@ -1800,7 +1800,7 @@ dev-haskell/uulib 0.9.22: Haskell Utrecht Tools Library
 dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using vacuum, graphviz and cairo
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
-dev-haskell/vado 0.0.8: Runs commands on remote machines using ssh
+dev-haskell/vado 0.0.9: Runs commands on remote machines using ssh
 dev-haskell/validation 0.5.4: A data-type like Either but with an accumulating Applicative
 dev-haskell/validity 0.3.3.0: Validity typeclass
 dev-haskell/validity-path 0.1.0.1: Validity instances for Path
@@ -1821,7 +1821,7 @@ dev-haskell/vector-space-points 0.2.1.2: A type for points, as distinct from vec
 dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vgrep 0.1.4.1: A pager for grep
 dev-haskell/vimeta 0.2.3.0-r1: Frontend for video metadata tagging tools
-dev-haskell/vinyl 0.5.3: Extensible Records
+dev-haskell/vinyl 0.6.0: Extensible Records
 dev-haskell/vinyl-gl 0.3.0.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/vinyl-utils 0.3.0.0: Utilities for vinyl
 dev-haskell/void 0.7.2: A Haskell 98 logically uninhabited data type
@@ -1860,7 +1860,7 @@ dev-haskell/webserver 0.7.1.1: HTTP server library
 dev-haskell/websockets 0.9.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.9.2.0 0.10.2.3: Snap integration for the websockets library
 dev-haskell/weeder 0.1.6: Detect dead code
-dev-haskell/weigh 0.0.4: Measure allocations of a Haskell functions/values
+dev-haskell/weigh 0.0.5: Measure allocations of a Haskell functions/values
 dev-haskell/wire-streams 0.1.1.0: Fast binary io-streams adapter
 dev-haskell/with-location 0.0.0 0.1.0: Use ImplicitParams-based source locations in a backward compatible way
 dev-haskell/wizards 1.0.2-r1: High level, generic library for interrogative user interfaces
@@ -1923,12 +1923,12 @@ dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.6.1: Authentication plugin for Yesod
 dev-haskell/yesod-auth-nopassword 0.1.1.1: A plugin for Yesod to provide email-only authentication
-dev-haskell/yesod-auth-oauth2 0.1.10 0.2.2-r2: OAuth 2.0 authentication plugins
-dev-haskell/yesod-bin 1.5.2.3: The yesod helper executable
+dev-haskell/yesod-auth-oauth2 0.2.4: OAuth 2.0 authentication plugins
+dev-haskell/yesod-bin 1.5.2.5: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 0.2: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.35.1: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.36: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-dsl 0.2.1: DSL for generating Yesod subsite to manage an RDBMS;
 dev-haskell/yesod-elements 1.0: Non template haskell markup building function in the spirit of lucid
