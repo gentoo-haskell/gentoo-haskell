@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Read and write hexadecimal floating point numbers. Provides a quasiquoter for
+		entering hex-float literals, and a function for printing them in hexadecimal.
+		
+		See: &lt;http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf&gt;, pages 57-58.
+		We slightly diverge from the standard and do not allow for the &quot;floating-suffix,&quot;
+		as the type inference of Haskell makes this unnecessary.
+		
+		For details, please see: &lt;http://github.com/LeventErkok/FloatingHex/&gt;
+	</longdescription>
+</pkgmetadata>
