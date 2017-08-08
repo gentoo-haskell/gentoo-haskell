@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils debug embed_data_files test_citeproc unicode_collation"
 
+RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
+
 RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.1:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
