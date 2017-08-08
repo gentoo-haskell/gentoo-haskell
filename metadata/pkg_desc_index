@@ -835,7 +835,7 @@ dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
-dev-haskell/hpack 0.14.1: An alternative format for Haskell packages
+dev-haskell/hpack 0.14.1 0.18.1: An alternative format for Haskell packages
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
 dev-haskell/hpp 0.3.1.0: A Haskell pre-processor
 dev-haskell/hpqtypes 1.5.1.1: Haskell bindings to libpqtypes
@@ -1576,7 +1576,7 @@ dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.1: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
-dev-haskell/stack 1.1.2-r6 1.3.2-r1 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 1.1.2-r6 1.3.2-r1 1.5.1 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-bin 1.5.1: The Haskell Tool Stack (Binary)
 dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
@@ -1600,8 +1600,8 @@ dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.12: Fast, packed, strict storable arrays with a list interface like ByteString
-dev-haskell/store 0.2.1.2 0.3.1: Fast binary serialization
-dev-haskell/store-core 0.2.0.2 0.3: Fast and lightweight binary serialization
+dev-haskell/store 0.2.1.2 0.3.1 0.4.3.1: Fast binary serialization
+dev-haskell/store-core 0.2.0.2 0.3 0.4.1: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.0.10: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
