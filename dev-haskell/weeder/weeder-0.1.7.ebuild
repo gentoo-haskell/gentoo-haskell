@@ -20,6 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/aeson:=
 	dev-haskell/cmdargs:=
 	dev-haskell/extra:=
+	>=dev-haskell/foundation-0.0.10:=
 	dev-haskell/hashable:=
 	dev-haskell/text:=
 	dev-haskell/unordered-containers:=
