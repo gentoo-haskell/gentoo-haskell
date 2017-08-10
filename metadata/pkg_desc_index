@@ -1055,7 +1055,7 @@ dev-haskell/liquid-fixpoint 0.5.0.1 0.6.0.1 9999: Predicate Abstraction-based Ho
 dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
 dev-haskell/liquidhaskell 0.8.0.0 9999: Liquid Types for Haskell
 dev-haskell/list 0.5.2: List monad transformer and class
-dev-haskell/list-t 1: ListT done right
+dev-haskell/list-t 1.0.0.1: ListT done right
 dev-haskell/listlike 4.2.1 4.4 4.5.1: Generic support for list-like structures
 dev-haskell/listsafe 0.1.0.1: Safe wrappers for partial list functions, supporting MonadThrow
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
@@ -1132,7 +1132,7 @@ dev-haskell/missingh 1.4.0.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
-dev-haskell/monad-control 1.0.2.1: Lift control operations, like exception catching, through monad transformers
+dev-haskell/monad-control 1.0.2.2: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
 dev-haskell/monad-logger 0.3.25: A class of monads which can log messages
