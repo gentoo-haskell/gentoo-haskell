@@ -24,6 +24,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'process >= 1.0.1.1 && < 1.5' 'process >= 1.0.1.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples example)
