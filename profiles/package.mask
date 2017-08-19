@@ -5,31 +5,6 @@
 =dev-lang/ghc-8.0.2_rc1
 =dev-haskell/ghc-api-8.0.2_rc1
 
-# Sergei Trofimovich <slyfox@gentoo.org> (02 Sep 2016)
-# Masked dev-haskell/haskell-src-exts and all it's users
-# until most of users will support it
->=dev-haskell/haskell-src-exts-1.18
->=dev-haskell/hlint-1.9.36
->=dev-haskell/fay-0.23.1.16
->=dev-haskell/haskell-names-0.8.0
->=dev-haskell/hoogle-5.0.4
->=dev-haskell/hsimport-0.8.2
->=dev-haskell/pointful-1.0.9
->=dev-haskell/stylish-haskell-0.6.4.0
->=dev-haskell/haskell-src-exts-simple-1.18
->=dev-haskell/pointfree-1.1.1.2-r1
-#TODO: port derive
-#TODO: port diagrams-builder
-#TODO: port hprotoc
-#TODO: port agda
-#TODO: port haskell-src-meta
-#TODO: port lambdabot-haskell-plugins
-#TODO: port test-framework-th-prime
-#TODO: port hident
-#TODO: port haskell-mode
-#TODO: port ghc-mod
-#TODO: port hse-cpp
-
 # Sergei Trofimovich <slyfox@gentoo.org> (30 May 2016)
 # Old package is based on handcrafter Typeable building
 dev-haskell/concrete-typerep

@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RESTRICT=test # fails own tests
 
 RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.19:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/traverse-with-class-0.2.0.3:=[profile?] <dev-haskell/traverse-with-class-0.3:=[profile?]
 	>=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-golden-2.2.1 <dev-haskell/tasty-golden-2.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.18 && < 1.19' 'haskell-src-exts >= 1.18'
+}
