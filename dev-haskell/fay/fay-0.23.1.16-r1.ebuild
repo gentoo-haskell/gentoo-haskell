@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,16 +23,16 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/data-lens-light-0.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18.1:=[profile?] <dev-haskell/haskell-src-exts-1.19:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18.1:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.18:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/mtl-compat-0.1:=[profile?] <dev-haskell/mtl-compat-0.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.14:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/safe-0.2:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/sourcemap-0.1:=[profile?] <dev-haskell/sourcemap-0.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/spoon-0.1:=[profile?] <dev-haskell/spoon-0.4:=[profile?]
-	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.7:=[profile?]
+	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
 	>=dev-haskell/traverse-with-class-0.1:=[profile?] <dev-haskell/traverse-with-class-0.3:=[profile?]
@@ -51,7 +51,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >= 1.1 && < 1.3' 'directory >= 1.1'
+		'directory >= 1.1 && < 1.3' 'directory >= 1.1' \
+		'syb >= 0.3 && < 0.7' 'syb >= 0.3' \
+		'optparse-applicative >= 0.11 && < 0.14' 'optparse-applicative >= 0.11' \
+		'haskell-src-exts >= 1.18.1 && < 1.19' 'haskell-src-exts >= 1.18.1'
 }
 
 src_configure() {
