@@ -41,7 +41,7 @@ RDEPEND=">=app-editors/leksah-server-0.16.2.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/gi-pango-1.0.6:=[profile?] <dev-haskell/gi-pango-1.1:=[profile?]
 	>=dev-haskell/gi-webkit2-4.0.6:=[profile?] <dev-haskell/gi-webkit2-4.1:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.18:=[profile?] <dev-haskell/haskell-gi-base-0.21:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.13.5:=[profile?] <dev-haskell/haskell-src-exts-1.19:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.13.5:=[profile?]
 	>=dev-haskell/hlint-1.9.21:=[profile?] <dev-haskell/hlint-2.1:=[profile?]
 	>=dev-haskell/hslogger-1.0.7:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
 	>=dev-haskell/http-4000.3.3:=[profile?]
