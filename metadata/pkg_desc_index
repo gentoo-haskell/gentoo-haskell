@@ -153,7 +153,7 @@ dev-haskell/bimap 0.3.3: Bidirectional mapping between two key types
 dev-haskell/binary 0.7.3.0 0.7.4.0 0.7.6.1 0.8.3.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
-dev-haskell/binary-conduit 1.2.4.1: data serialization/deserialization conduit library
+dev-haskell/binary-conduit 1.2.5: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
 dev-haskell/binary-orphans 0.1.6.0-r1: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
@@ -195,7 +195,7 @@ dev-haskell/bloodhound 0.11.0.0-r2 0.11.1.0: ElasticSearch client library for Ha
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.4: Generalized booleans and numbers
-dev-haskell/boomerang 1.4.5.2: Library for invertible parsing and printing
+dev-haskell/boomerang 1.4.5.3: Library for invertible parsing and printing
 dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
 dev-haskell/bound 1.0.7-r2: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
@@ -457,7 +457,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.7.1.2 0.8.0.2: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
-dev-haskell/dns 2.0.10: DNS library in Haskell
+dev-haskell/dns 2.0.12: DNS library in Haskell
 dev-haskell/doctemplates 0.1.0.2: Pandoc-style document templates
 dev-haskell/doctest 0.9.13 0.10.1 0.11.0 0.11.1 0.11.2: Test interactive Haskell examples
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
@@ -483,9 +483,9 @@ dev-haskell/editline 0.2.1.1: Bindings to the editline library (libedit)
 dev-haskell/either 4.4.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
-dev-haskell/ekg 0.4.0.13: Remote monitoring of processes
-dev-haskell/ekg-core 0.1.1.1: Tracking of system metrics
-dev-haskell/ekg-json 0.1.0.5: JSON encoding of ekg metrics
+dev-haskell/ekg 0.4.0.14: Remote monitoring of processes
+dev-haskell/ekg-core 0.1.1.2: Tracking of system metrics
+dev-haskell/ekg-json 0.1.0.6: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.2.0: Validating an email address string against RFC 5322
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
 dev-haskell/enclosed-exceptions 1.0.2: Catching all exceptions from within an enclosed computation
@@ -540,7 +540,7 @@ dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
 dev-haskell/file-embed 0.0.10-r1: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9.1: common functions that show file location information
 dev-haskell/file-modules 0.1.2.4: Takes a Haskell source-code file and outputs its modules
-dev-haskell/filelock 0.1.0.1: Portable interface to file locking (flock / LockFileEx)
+dev-haskell/filelock 0.1.1.2: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
 dev-haskell/filestore 0.6.3.1: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
