@@ -830,7 +830,7 @@ dev-haskell/hookup 0.1.1.0: Abstraction over creating network connections with S
 dev-haskell/hora 2.0.2: date time
 dev-haskell/hosc 0.15: Haskell Open Sound Control
 dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
-dev-haskell/hothasktags 0.3.7 0.3.8: Generates ctags for Haskell, incorporating import lists and qualified imports
+dev-haskell/hothasktags 0.3.7 0.3.8 0.3.8-r1: Generates ctags for Haskell, incorporating import lists and qualified imports
 dev-haskell/hourglass 0.2.10: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server
