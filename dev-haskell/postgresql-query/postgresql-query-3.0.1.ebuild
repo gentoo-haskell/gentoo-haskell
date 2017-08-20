@@ -55,3 +55,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck
 		dev-haskell/tasty-th )
 "
+
+PATCHES=("${FILESDIR}"/${P}-hsm-0.8.patch)
