@@ -975,7 +975,7 @@ dev-haskell/itemfield 1.2.4.2 1.2.5.0: A brick Widget for selectable summary of 
 dev-haskell/iteratee 0.8.9.6 0.8.9.6-r3: Iteratee-based I/O
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.0.7: Efficient relational queries on Haskell sets
-dev-haskell/ixset-typed 0.3.1: Efficient relational queries on Haskell sets
+dev-haskell/ixset-typed 0.3.1.1: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jmacro 0.6.14: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
