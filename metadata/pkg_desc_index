@@ -987,7 +987,7 @@ dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.8.2: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/juicypixels 3.2.8.3: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
 dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
 dev-haskell/jwt 0.7.2: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 4.2.3 5.0.2: Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads
@@ -1122,7 +1122,7 @@ dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.1: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
-dev-haskell/mime-mail 0.4.13.1: Compose MIME email messages
+dev-haskell/mime-mail 0.4.14: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
 dev-haskell/mime-types 0.1.0.7: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
@@ -1189,7 +1189,7 @@ dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mys
 dev-haskell/mysql-haskell-openssl 0.7.0.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.4.0.1: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.1: A name generator written in Haskell
-dev-haskell/names-th 0.2.0.2: Manipulate name strings for TH
+dev-haskell/names-th 0.2.0.3: Manipulate name strings for TH
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
 dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.3-r1: Bindings to the nanomsg library
@@ -1271,7 +1271,7 @@ dev-haskell/parseargs 0.2.0.8: Full-featured command-line argument parsing libra
 dev-haskell/parsec 3.1.11: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
-dev-haskell/parsers 0.12.6: Parsing combinators
+dev-haskell/parsers 0.12.7: Parsing combinators
 dev-haskell/partial-handler 1.0.2: A composable exception handler
 dev-haskell/path 0.5.13: Support for well-typed paths
 dev-haskell/path-extra 0.0.3: Chris Done's path library, enriched with URL-related goodies
