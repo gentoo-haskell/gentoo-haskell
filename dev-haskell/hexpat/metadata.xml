@@ -3,7 +3,10 @@
 <pkgmetadata>
 	<maintainer type="project">
 		<email>haskell@gentoo.org</email>
-		<name>Gentoo Haskell</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>proxy-maint@gentoo.org</email>
+		<name>Proxy Maintainers</name>
 	</maintainer>
 	<use>
 		<flag name='bundled-expat'> Use bundled expat instead of <pkg>dev-libs/expat</pkg></flag>
