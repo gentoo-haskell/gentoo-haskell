@@ -1759,7 +1759,7 @@ dev-haskell/type-hint 0.1: Guide type inference with proxy values
 dev-haskell/type-level 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
 dev-haskell/typecompose 0.9.12: Type composition classes & instances
-dev-haskell/typed-process 0.1.0.0: Run external processes, with strong typing of streams
+dev-haskell/typed-process 0.1.0.1: Run external processes, with strong typing of streams
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/uhc-light 1.1.9.5: Part of UHC packaged as cabal/hackage installable library
 dev-haskell/uhc-util 0.1.6.7: UHC utilities
