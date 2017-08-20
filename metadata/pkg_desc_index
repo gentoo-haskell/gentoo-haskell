@@ -8,7 +8,7 @@ app-emacs/ghc-mod 5.5.0.0-r1 5.6.0.0-r1 5.7.0.0-r2 5.8.0.0 9999: Happy Haskell P
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3 4.6.4 5.2.3: Extensible Haskell pretty printer
 app-emacs/idris-mode 0.9.18 9999: Idris syntax highlighting and (eventually) other things for emacs
-app-emacs/structured-haskell-mode 1.0.20-r2: Structured editing Emacs mode for Haskell
+app-emacs/structured-haskell-mode 1.0.20-r2 1.1.0: Structured editing Emacs mode for Haskell
 app-forensics/quickfuzz 0.1_p20160920 9999: An experimental grammar fuzzer in Haskell using QuickCheck
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/exi 9999: A reimplementation of the emerge layer of Portage written in Haskell
