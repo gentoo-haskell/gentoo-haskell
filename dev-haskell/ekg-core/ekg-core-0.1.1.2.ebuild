@@ -8,17 +8,19 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Portable interface to file locking (flock / LockFileEx)"
-HOMEPAGE="https://github.com/takano-akio/filelock"
+DESCRIPTION="Tracking of system metrics"
+HOMEPAGE="https://github.com/tibbe/ekg-core"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="public-domain"
+LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.4.2:=
+RDEPEND="<dev-haskell/text-1.3:=[profile?]
+	<dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.14.0
+	>=dev-haskell/cabal-1.16.0
 "
