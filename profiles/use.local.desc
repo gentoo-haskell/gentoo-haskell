@@ -203,6 +203,7 @@ dev-haskell/haxr:network-uri - use network-uri package
 dev-haskell/hdbc-odbc:buildstresstest - Build stress test
 dev-haskell/hdbc-sqlite3:buildtests - Build the executable to run unit tests
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
+dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/highlighting-kate:executable - Build the Highlight executable.
 dev-haskell/highlighting-kate:pcre-light - Use the pcre-light library instead of regex-pcre-builtin.
