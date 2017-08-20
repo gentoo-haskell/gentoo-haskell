@@ -1,0 +1,9 @@
+diff --git a/src/Database/PostgreSQL/Query/TH/SqlExp.hs b/src/Database/PostgreSQL/Query/TH/SqlExp.hs
+index 1c05b14..c21abe6 100644
+--- a/src/Database/PostgreSQL/Query/TH/SqlExp.hs
++++ b/src/Database/PostgreSQL/Query/TH/SqlExp.hs
+@@ -26,3 +26,3 @@ import Data.Text ( Text )
+ import Database.PostgreSQL.Query.SqlBuilder
+-import Language.Haskell.Meta.Parse.Careful
++import Language.Haskell.Meta.Parse
+ import Language.Haskell.TH
