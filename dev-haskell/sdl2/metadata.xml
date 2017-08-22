@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="no-linear">Do not depend on <pkg>dev-haskell/linear</pkg> library (bundled Vect)</flag>
+	</use>
 	<longdescription>
 		This package contains bindings to the SDL 2 library, in both high- and
 		low-level forms:
