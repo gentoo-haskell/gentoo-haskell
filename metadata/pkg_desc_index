@@ -1494,7 +1494,7 @@ dev-haskell/sdl-gfx 0.6.0.2: Binding to libSDL_gfx
 dev-haskell/sdl-image 0.6.1.2: Binding to libSDL_image
 dev-haskell/sdl-mixer 0.6.2.0: Binding to libSDL_mixer
 dev-haskell/sdl-ttf 0.6.2.2: Binding to libSDL_ttf
-dev-haskell/sdl2 2.2.0: Both high- and low-level bindings to the SDL library (version 2.0.4+)
+dev-haskell/sdl2 2.3.0: Both high- and low-level bindings to the SDL library (version 2.0.4+)
 dev-haskell/sdl2-image 2.0.0: Bindings to SDL2_image
 dev-haskell/sdl2-mixer 0.1: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.9: abstraction to an auto scrubbing and const time eq, memory chunk
