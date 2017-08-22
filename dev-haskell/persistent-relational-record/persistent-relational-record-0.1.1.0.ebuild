@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test-examples"
 
+RESTRICT=test # fails own tests with fresh hlnt
+
 RDEPEND=">=dev-haskell/conduit-1.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/persistable-record-0.4:=[profile?]
