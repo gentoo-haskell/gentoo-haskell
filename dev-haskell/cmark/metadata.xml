@@ -62,14 +62,14 @@
 		implementations will behave the same. Thus, for
 		example, one could use this library for server-side
 		rendering and
-		&lt;http://github.com/jgm/commonmark.js commonmark.js&gt;
+		&lt;https://github.com/jgm/commonmark.js commonmark.js&gt;
 		for client-side previewing.
 		
 		-   Ease of installation: cmark is portable and has
 		minimal dependencies.
 		
 		cmark does not provide Haskell versions of the whole
-		&lt;http://github.com/jgm/cmark libcmark&gt; API, which is
+		&lt;https://github.com/jgm/cmark libcmark&gt; API, which is
 		built around mutable @cmark_node@ objects. Instead, it
 		provides functions for converting CommonMark to HTML
 		(and other formats), and a function for converting
@@ -84,4 +84,7 @@
 		A note on stability: There is a good chance the API
 		will change significantly after this early release.
 	</longdescription>
+	<upstream>
+		<remote-id type="github">jgm/commonmark-hs</remote-id>
+	</upstream>
 </pkgmetadata>
