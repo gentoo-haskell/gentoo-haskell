@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -108,6 +108,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/text-1.2.2.1 <dev-haskell/text-1.3
 		integration-tests? ( >=dev-haskell/async-2.1.0 <dev-haskell/async-2.2 ) )
 "
+RDEPEND+=" !dev-haskell/stack-bin[symlink]"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.1.2-aeson-1.patch

@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -77,6 +77,7 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/unix-compat )
 "
+RDEPEND+=" !dev-haskell/stack-bin[symlink]"
 
 src_prepare() {
 	# workaround https://ghc.haskell.org/trac/ghc/ticket/10110

@@ -117,6 +117,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/th-reify-many-0.1.6 <dev-haskell/th-reify-many-0.2
 		>=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.12 )
 "
+RDEPEND+=" !dev-haskell/stack-bin[symlink]"
 
 PATCHES=("${FILESDIR}"/${P}-oa-0.14.patch)
 
