@@ -119,6 +119,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/th-reify-many-0.1.6 <dev-haskell/th-reify-many-0.2
 		>=dev-haskell/unordered-containers-0.2.8.0 <dev-haskell/unordered-containers-0.3 )
 "
+RDEPEND+=" !dev-haskell/stack-bin[symlink]"
 
 PATCHES=("${FILESDIR}"/${PN}-1.3.2-oa-0.14.patch)
 
