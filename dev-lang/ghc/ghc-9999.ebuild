@@ -407,7 +407,7 @@ src_unpack() {
 	# unpacked separately, so prevent them from being unpacked
 	local ONLYA=${A}
 	case ${CHOST} in
-		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
+		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
 	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
 }
@@ -510,12 +510,6 @@ src_prepare() {
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-1.patch # upstreamed, waits for merge to -HEAD
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
-
-		if use prefix; then
-			# Make configure find docbook-xsl-stylesheets from Prefix
-			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
-				-i utils/haddock/doc/configure.ac || die
-		fi
 
 		bump_libs
 
