@@ -310,6 +310,8 @@ dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input 
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
 dev-haskell/conduit 1.2.11: Streaming data processing library
+dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
+dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
 dev-haskell/conduit-combinators 1.0.8.3 1.1.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.16: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.1.2.1: A library for simple INI-based configuration files
