@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A binding to the @libsamplerate@ library for use with @conduit-audio@,
+		to resample audio streams.
+		
+		Requires the @libsamplerate@ library.
+		On Ubuntu, @apt-get install libsamplerate0-dev@;
+		on Mac with Homebrew, @brew install libsamplerate@.
+		
+		Note that unless you have a commercial license, @libsamplerate@ is GPL licensed.
+	</longdescription>
+</pkgmetadata>
