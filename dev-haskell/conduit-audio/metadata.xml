@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		@conduit-audio@ applies @conduit@&#39;s streaming data abilities
+		to efficiently manipulate audio files and streams.
+		Simple combinator functions let you mix files together,
+		cut and paste sections of audio,
+		and apply more complicated transformations like resampling or timestretching,
+		all with the following properties:
+		
+		* Tiny memory usage, proportional only to the number of simultaneous sources\/effects
+		
+		* Uses no temporary files; everything is done in one pass
+		
+		* Blazing fast! (for most uses)
+	</longdescription>
+</pkgmetadata>
