@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A wrapper around @hsndfile@ (binding to the @libsndfile@ library)
+		for use with @conduit-audio@, to load a wide variety of audio files as streams.
+		
+		@libsndfile@ is LGPL licensed, so you may dynamically link to it from a closed-source program.
+		However, note that @hsndfile@ is also LGPL licensed,
+		so if your program is closed-source you also must dynamically link @hsndfile@.
+	</longdescription>
+</pkgmetadata>

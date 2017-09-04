@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A simple binding to the LAME MP3 library for use with @conduit-audio@,
+		to save audio streams as MP3 files.
+		
+		Requires the LAME library.
+		On Ubuntu, @apt-get install libmp3lame-dev@;
+		on Mac with Homebrew, @brew install lame@.
+		
+		LAME is LGPL licensed, so you may dynamically link to it from a closed-source program.
+	</longdescription>
+</pkgmetadata>
