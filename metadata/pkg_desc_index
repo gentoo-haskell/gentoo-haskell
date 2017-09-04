@@ -311,7 +311,9 @@ dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
 dev-haskell/conduit 1.2.11: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
+dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
+dev-haskell/conduit-audio-sndfile 0.1.2.1: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.0.8.3 1.1.1: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.16: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.1.2.1: A library for simple INI-based configuration files
@@ -863,6 +865,7 @@ dev-haskell/hsimport 0.7.1 0.8.2 0.8.4: A command line program for extending the
 dev-haskell/hslogger 1.2.10: Versatile logging framework
 dev-haskell/hslua 0.3.13 0.4.1: A Lua language interpreter embedding in Haskell
 dev-haskell/hsndfile 0.8.0: Haskell bindings for libsndfile
+dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
 dev-haskell/hsopenssl 0.11.4.9: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.3: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
