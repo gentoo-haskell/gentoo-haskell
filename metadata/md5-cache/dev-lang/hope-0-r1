@@ -8,5 +8,4 @@ KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=http://www.soi.city.ac.uk/~ross/Hope/hope.tar.gz
-_eclass_exported_funcs=src_prepare:- src_install:-
 _md5_=c2291104d5a213d5effd5f0166b0525a
