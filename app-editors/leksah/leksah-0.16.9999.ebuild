@@ -87,7 +87,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'haskell-gi-overloading ==0.0.*' 'base'
+		'haskell-gi-overloading ==0.0.*' 'base' \
+		'haskell-src-exts >=1.13.5 && <1.19' 'haskell-src-exts >=1.13.5'
 }
 
 src_configure() {
