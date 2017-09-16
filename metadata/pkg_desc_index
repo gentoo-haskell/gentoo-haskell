@@ -1633,7 +1633,7 @@ dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode suppor
 dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.6.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
-dev-haskell/svgfonts 1.6.0.1: Fonts from the SVG-Font format
+dev-haskell/svgfonts 1.6.0.2: Fonts from the SVG-Font format
 dev-haskell/sxml 0.1.0.0: A SXML-parser
 dev-haskell/syb 0.4.4 0.5.1 0.6 0.7: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
@@ -1692,7 +1692,7 @@ dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickc
 dev-haskell/test-framework-th-prime 0.0.8 0.0.9: Template Haskell for test framework
 dev-haskell/testing-feat 0.4.0.3: Functional Enumeration of Algebraic Types
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
-dev-haskell/texmath 0.9.4.1: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.9.4.2: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.1: Functions for running Tex from Haskell
 dev-haskell/text 1.2.2.2: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
@@ -1764,7 +1764,7 @@ dev-haskell/type-hint 0.1: Guide type inference with proxy values
 dev-haskell/type-level 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
 dev-haskell/typecompose 0.9.12: Type composition classes & instances
-dev-haskell/typed-process 0.1.0.1: Run external processes, with strong typing of streams
+dev-haskell/typed-process 0.1.1: Run external processes, with strong typing of streams
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/uhc-light 1.1.9.5: Part of UHC packaged as cabal/hackage installable library
 dev-haskell/uhc-util 0.1.6.7: UHC utilities
