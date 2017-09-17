@@ -972,7 +972,7 @@ dev-haskell/ipv6addr 0.6.3: Library to deal with IPv6 address text representatio
 dev-haskell/ipython-kernel 0.8.4.0-r1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/irc-core 2.2.1: IRC core library for glirc
-dev-haskell/ircbot 0.6.5: A library for writing IRC bots
+dev-haskell/ircbot 0.6.5.1: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.4: Convert to/from the ISO 8601 time format
