@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/foundation-0.0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.18
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
