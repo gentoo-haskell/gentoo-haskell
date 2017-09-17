@@ -1018,7 +1018,7 @@ dev-haskell/language-c-quote 0.11.7.3 0.12.1: C/CUDA/OpenCL/Objective-C quasiquo
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
 dev-haskell/language-dot 0.1.0: A library for the analysis and creation of Graphviz DOT files
 dev-haskell/language-ecmascript 0.17.1.0-r1: JavaScript parser and pretty-printer library
-dev-haskell/language-glsl 0.2.0: GLSL abstract syntax tree, parser, and pretty-printer
+dev-haskell/language-glsl 0.2.1: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.8: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/language-javascript 0.5.14.5 0.6.0.10: Parser for JavaScript
@@ -1032,8 +1032,8 @@ dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell p
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2.1 4.14 9999: Lenses, Folds and Traversals
-dev-haskell/lens-action 0.2.1: Monadic Getters and Folds
-dev-haskell/lens-aeson 1.0.1: Law-abiding lenses for aeson
+dev-haskell/lens-action 0.2.2: Monadic Getters and Folds
+dev-haskell/lens-aeson 1.0.2: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.1: Lens Families
 dev-haskell/lens-family-core 1.2.1: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
@@ -1093,7 +1093,7 @@ dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
 dev-haskell/machines 0.6.3: Networked stream transducers
 dev-haskell/machines-directory 0.2.1.0: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.13: IO utilities for the machines library
-dev-haskell/mackerel-client 0.0.4: An API client library for Mackerel
+dev-haskell/mackerel-client 0.0.5: An API client library for Mackerel
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.2.7.2 0.4.1.4 0.6.1: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.5: A monad for managed values
@@ -1112,7 +1112,7 @@ dev-haskell/megaparsec 5.2.0: Monadic parser combinators
 dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
-dev-haskell/memory 0.14.6: memory and related abstraction stuff
+dev-haskell/memory 0.14.8: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.8: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
@@ -1141,7 +1141,7 @@ dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/monad-control 1.0.2.2: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.25: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.25.1: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
@@ -1456,8 +1456,8 @@ dev-haskell/relational-record 0.1.8.0: Meta package of Relational Record
 dev-haskell/relational-schemas 0.1.3.3: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
-dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1 3.4.1.2: High performance, regular, shape polymorphic parallel arrays
-dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1: Algorithms using the Repa array library
+dev-haskell/repa 3.2.5.1 3.3.1.2-r1 3.4.0.2 3.4.1.1-r1 3.4.1.2 3.4.1.3: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa-algorithms 3.2.5.1 3.3.1.2 3.4.0.2 3.4.1.1 3.4.1.2: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.2-r1 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write Repa arrays in various formats
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
