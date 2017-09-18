@@ -6,5 +6,5 @@ HOMEPAGE=http://projects.haskell.org/haskellmode-emacs/ http://www.haskell.org/h
 LICENSE=GPL-3+ FDL-1.2+
 RDEPEND=virtual/emacs dev-haskell/hasktags >=virtual/emacs-23
 SLOT=0
-_eclasses_=elisp	571fd9c6c9d8b71c8461bb9f33e135ab	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	4f7ddb4119309845d6687213171ab445
+_eclasses_=elisp	571fd9c6c9d8b71c8461bb9f33e135ab	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	52a888802d25387c2c74cb845d1219bc
 _md5_=2d5ede11b5838993a8047d2f12ab8e36
