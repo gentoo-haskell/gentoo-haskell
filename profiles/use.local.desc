@@ -396,6 +396,8 @@ dev-haskell/tls:hans - Use the Haskell Network Stack (HaNS).
 dev-haskell/tls:network - Use the base network library.
 dev-haskell/transformers-base:orphaninstances - Build instances for orphan datatypes.
 dev-haskell/unix-compat:old-time - build against old-time package
+dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/urlencoded:network-uri - Get Network.URI from the network-uri package
 dev-haskell/uuagc:bootstrap_external - Use an external uuagc executable for bootstrapping.
 dev-haskell/uuagc:with-loag - Use dev-haskell/minisat external SAT-solver to schedule all Linear Ordered AGs.
