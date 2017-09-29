@@ -2051,9 +2051,9 @@ sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-biology/rarecoal 1.2.1: tools to process and analyse genome sequencing data
 sci-biology/trimpolya 0: Search for, annotate and trim poly-A tail
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
-sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1-r1 2.5.1.2 2.5.2-r1 9999: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1-r1 2.5.1.2 2.5.2-r1 2.5.3 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
-sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 2.5.2.0.13 9999: Agda standard library
+sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 2.5.2.0.13 2.5.3.0.14 9999: Agda standard library
 sci-mathematics/cvc4 1.4-r1: automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
 sci-mathematics/spline3 0.0.2-r1: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 sci-mathematics/z3 4.3.1 4.3.2 4.4.1 9999: An efficient theorem prover
