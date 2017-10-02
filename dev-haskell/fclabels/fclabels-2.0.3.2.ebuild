@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -24,3 +24,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6 )
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'base             >= 4.5 && < 4.10' 'base >= 4.5' \
+		'template-haskell >= 2.2 && < 2.12' 'template-haskell >= 2.2'
+	default
+}
