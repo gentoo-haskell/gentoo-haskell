@@ -518,7 +518,7 @@ dev-haskell/exists 0.2-r4: Existential datatypes holding evidence of constraints
 dev-haskell/explicit-exception 0.1.9: Exceptions which are explicit in the type signature
 dev-haskell/extensible-effects 1.11.0.4: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
-dev-haskell/extra 1.4.10 1.5.1: Extra functions I use
+dev-haskell/extra 1.4.10 1.5.1 1.6: Extra functions I use
 dev-haskell/extract-dependencies 0.2.0.1: Given a hackage package outputs the list of its dependencies
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
