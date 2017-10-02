@@ -18,7 +18,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.17.1-r2 1.18 1.19.2.1-r2: Conversion between markup formats
+app-text/pandoc 1.17.1-r2 1.18 1.19.2.1-r2 1.19.2.4: Conversion between markup formats
 app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -1266,7 +1266,7 @@ dev-haskell/optparse-applicative 0.13.2.0 0.14.0.0: Utilities and combinators fo
 dev-haskell/optparse-generic 1.1.5-r1: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
-dev-haskell/pandoc-citeproc 0.10.4.1 0.10.5.1: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.10.4.1 0.10.5.1 0.11.1.1: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.5.0-r1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.12.4.7 1.16.1.1-r1 1.17.0.4-r1: Types for representing a structured document
