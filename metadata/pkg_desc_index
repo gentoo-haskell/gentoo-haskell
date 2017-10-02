@@ -144,6 +144,7 @@ dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding f
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
+dev-haskell/basement 0.0.2: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.10: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
@@ -567,7 +568,7 @@ dev-haskell/foldl 1.2.5: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.3: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
 dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.13: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.15: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -1984,7 +1985,7 @@ dev-lang/elm-platform 0.17.1 0.18.0: Meta package for all Elm packages
 dev-lang/elm-reactor 0.17.1 0.18.0: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.17.1 0.18.0: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
-dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2 8.2.1_rc1 8.2.1_rc2 8.2.1_rc3 8.2.1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2 8.2.1_rc1 8.2.1_rc2 8.2.1_rc3 8.2.1 8.2.2_rc1 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
