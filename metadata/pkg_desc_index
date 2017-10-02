@@ -794,7 +794,7 @@ dev-haskell/hi 1.2.0.1: Generate scaffold for cabal project
 dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.6.4: Syntax highlighting
 dev-haskell/hinotify 0.3.9: Haskell binding to inotify
-dev-haskell/hint 0.4.2.3 0.5.2 0.6.0 9999: Runtime Haskell interpreter (GHC API wrapper)
+dev-haskell/hint 0.4.2.3 0.5.2 0.6.0 0.7.0 9999: Runtime Haskell interpreter (GHC API wrapper)
 dev-haskell/hip 1.5.3.0: Haskell Image Processing (HIP) Library
 dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
 dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
