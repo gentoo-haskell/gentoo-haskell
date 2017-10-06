@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 4.7.7: property-based host configuration management in haskell
+app-admin/propellor 4.8.1: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
