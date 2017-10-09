@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+examples"
 
+# media-libs/sdl2-mixer[midi]: uses midi unconditionally:
+#  https://github.com/gentoo-haskell/gentoo-haskell/issues/637
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
@@ -25,7 +27,7 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	media-libs/sdl2-mixer
+	media-libs/sdl2-mixer[midi]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
