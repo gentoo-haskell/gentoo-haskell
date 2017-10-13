@@ -69,6 +69,7 @@ dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri pac
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
 dev-haskell/cabal-install:parsec - Use parser written in parsec library.
 dev-haskell/categories:optimize - enable optimizations
+dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
 dev-haskell/certificate:executable - Build the executable
 dev-haskell/cgi:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script

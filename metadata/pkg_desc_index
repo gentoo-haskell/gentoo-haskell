@@ -159,6 +159,7 @@ dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to
 dev-haskell/binary-orphans 0.1.6.0-r1: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
+dev-haskell/binary-serialise-cbor 0.1.1.0: Yet Another Binary Serialisation Library (compatibility shim)
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
@@ -242,6 +243,7 @@ dev-haskell/case-insensitive 1.2.0.10: Case insensitive string comparison
 dev-haskell/cassava 0.4.5.1: A CSV parsing and encoding library
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
+dev-haskell/cborg 0.1.1.0: Concise Binary Object Representation
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.4.0: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
@@ -572,6 +574,7 @@ dev-haskell/foundation 0.0.15: Alternative prelude with batteries and no depende
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
+dev-haskell/fresco-binding 0.3.0: Fresco binding for Haskell
 dev-haskell/friday 0.2.3.1: A functional image processing library for Haskell
 dev-haskell/friday-devil 0.1.1.1: Haskell bindings for DevIL C library
 dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
@@ -787,6 +790,7 @@ dev-haskell/hflags 0.4.2: Command line flag parser, very similar to Google's gfl
 dev-haskell/hformat 0.1.0.1: Simple Haskell formatting
 dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster grids
 dev-haskell/hgal 2.0.0 2.0.0-r1 2.0.0.2: library for computation automorphism group and canonical labelling of a graph
+dev-haskell/hgamer3d 0.9.0: Toolset for the Haskell Game Programmer
 dev-haskell/hgdbmi 0.2: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
@@ -1509,6 +1513,7 @@ dev-haskell/semigroupoids 4.2 4.3 5.0.1 5.1 5.2: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.3: Anything that associates
 dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
+dev-haskell/serialise 0.1.0.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.8.1 0.9.1.1: A family of combinators for defining webservices APIs
 dev-haskell/servant-server 0.8.1 0.9.1.1: A family of combinators for defining webservices APIs and serving them
