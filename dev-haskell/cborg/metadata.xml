@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="optimize-gmp">Use optimized code paths for integer-gmp</flag>
+	</use>
+	<longdescription>
+		This package (formerly @binary-serialise-cbor@) provides an efficient
+		implementation of the Concise Binary Object Representation (CBOR), as
+		specified by RFC 7049.
+		
+		If you are looking for a library for serialisation of Haskell values,
+		have a look at the @serialise@ package, which is built upon this library.
+	</longdescription>
+</pkgmetadata>
