@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		erd transforms a plain text description of a relational database schema to a
+		graphical representation of that schema. It is intended that the graph make
+		use of common conventions when depicting entity-relationship diagrams,
+		including modeling the cardinality of relationships between entities.
+		
+		A quick example that transforms an `er` file to a PDF:
+		
+		&gt; $ curl &#39;https://raw.github.com/BurntSushi/erd/master/examples/simple.er&#39; &gt; simple.er
+		&gt; $ cat simple.er
+		&gt; # Entities are declared in &#39;[&#39; ... &#39;]&#39;. All attributes after the entity header
+		&gt; # up until the end of the file (or the next entity declaration) correspond
+		&gt; # to this entity.
+		&gt; [Person]
+		&gt; *name
+		&gt; height
+		&gt; weight
+		&gt; +birth_location_id
+		&gt;
+		&gt; [Location]
+		&gt; *id
+		&gt; city
+		&gt; state
+		&gt; country
+		&gt;
+		&gt; # Each relationship must be between exactly two entities, which need not
+		&gt; # be distinct. Each entity in the relationship has exactly one of four
+		&gt; # possible cardinalities:
+		&gt; #
+		&gt; # Cardinality    Syntax
+		&gt; # 0 or 1         0
+		&gt; # exactly 1      1
+		&gt; # 0 or more      *
+		&gt; # 1 or more      +
+		&gt; Person *--1 Location
+		&gt; $ erd -i simple.er -o simple.pdf
+		
+		The PDF should now contain a graph that looks like this:
+		
+		&lt;&lt;http://burntsushi.net/stuff/erd-example-simple.png&gt;&gt;
+		
+		See the &lt;https://github.com/BurntSushi/erd#readme README.md&gt; file for more
+		examples and instructions on how to write ER files.
+	</longdescription>
+</pkgmetadata>
