@@ -1918,7 +1918,7 @@ dev-haskell/xkbcommon 0.0.3: Haskell bindings for libxkbcommon
 dev-haskell/xlsx 0.6.0: Simple and incomplete Excel file parser/writer
 dev-haskell/xml 1.3.14: A simple XML library
 dev-haskell/xml-conduit 1.3.5 1.4.0.3: Pure-Haskell utilities for dealing with XML with the conduit package
-dev-haskell/xml-hamlet 0.4.1: Hamlet-style quasiquoter for XML content
+dev-haskell/xml-hamlet 0.4.1.1: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-html-conduit-lens 0.3.2.3: Optics for xml-conduit and html-conduit
 dev-haskell/xml-lens 0.1.6.3-r1: Lenses, traversals, and prisms for xml-conduit
 dev-haskell/xml-picklers 0.3.6: XML picklers based on xml-types, ported from hexpat-pickle
@@ -2020,7 +2020,7 @@ dev-util/shelltestrunner 1.3.5-r1: A tool for testing command-line programs
 dev-util/threadscope 0.2.8: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20170818: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20171003: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
