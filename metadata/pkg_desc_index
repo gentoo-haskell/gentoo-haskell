@@ -49,7 +49,7 @@ dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.7.2 0.8.2 0.8.4 0.8.5: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.2: JSON quasiquoter for Haskell
 dev-haskell/agata 0.2.1.1-r5: Generator-generator for QuickCheck
-dev-haskell/alex 3.2.1: Alex is a tool for generating lexical analysers in Haskell
+dev-haskell/alex 3.2.3: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/algebra 4.3: Constructive abstract algebra
 dev-haskell/allocated-processor 0.0.2: Combinators for monadic actions that require allocation and de-allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
@@ -569,7 +569,7 @@ dev-haskell/focus 0.1.5.2: A general abstraction for manipulating elements of co
 dev-haskell/foldl 1.2.5: Composable, streaming, and efficient left folds
 dev-haskell/fontyfruity 0.5.3.3: A true type file format loader
 dev-haskell/force-layout 0.4.0.6: Simple force-directed layout
-dev-haskell/formatting 6.2.4: Combinator-based type-safe formatting (like printf() or FORMAT)
+dev-haskell/formatting 6.2.5: Combinator-based type-safe formatting (like printf() or FORMAT)
 dev-haskell/foundation 0.0.15: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4: Monads for free
@@ -577,7 +577,7 @@ dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
 dev-haskell/fresco-binding 0.3.0: Fresco binding for Haskell
 dev-haskell/friday 0.2.3.1: A functional image processing library for Haskell
 dev-haskell/friday-devil 0.1.1.1: Haskell bindings for DevIL C library
-dev-haskell/frisby 0.2: Linear time composable parser for PEG grammars
+dev-haskell/frisby 0.2.1: Linear time composable parser for PEG grammars
 dev-haskell/from-sum 0.2.1.0: Canonical fromMaybeM and fromEitherM functions
 dev-haskell/frown 0.6.2.3: LALR(k) parser generator
 dev-haskell/fsnotify 0.2.1.1: Cross platform library for file change notification
