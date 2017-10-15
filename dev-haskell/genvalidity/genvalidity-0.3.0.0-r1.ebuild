@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/validity-0.3:=[profile?] <dev-haskell/validity-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
