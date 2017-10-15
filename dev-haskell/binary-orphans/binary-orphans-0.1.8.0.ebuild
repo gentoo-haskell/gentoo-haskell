@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/quickcheck-2.10 <dev-haskell/quickcheck-2.11
 		>=dev-haskell/quickcheck-instances-0.3.16 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/semigroups-0.16.2.2 <dev-haskell/semigroups-0.18.3
+		>=dev-haskell/semigroups-0.16.2.2
 		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-quickcheck-0.8.3.2 <dev-haskell/tasty-quickcheck-0.10 )
 "
