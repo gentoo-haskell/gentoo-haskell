@@ -503,6 +503,7 @@ dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-f
 dev-haskell/enumset 0.0.4: Sets of enumeration values represented by machine words
 dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
 dev-haskell/equivalence 0.3.2: Maintaining an equivalence relation implemented as union-find using STT
+dev-haskell/erd 0.1.3.0: An entity-relationship diagram generator from a plain text description
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.1.3: Simplified error-handling
@@ -1411,7 +1412,7 @@ dev-haskell/random-source 0.3.0.6: Generic basis for random number generators
 dev-haskell/ranged-sets 0.3.0: Ranged sets for Haskell
 dev-haskell/ranges 0.2.4-r1: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.3.3.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
-dev-haskell/rasterific 0.6.1.1: A pure haskell drawing engine
+dev-haskell/rasterific 0.6.1.1 0.7.2.1: A pure haskell drawing engine
 dev-haskell/rate-limit 1.1.1: A basic library for rate-limiting IO actions
 dev-haskell/ratio-int 0.1.2: Fast specialisation of Data.Ratio for Int
 dev-haskell/rattletrap 2.1.5: Parse and generate Rocket League replays
