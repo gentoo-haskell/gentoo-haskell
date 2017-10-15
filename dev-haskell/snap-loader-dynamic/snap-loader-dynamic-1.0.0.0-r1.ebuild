@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/hint-0.3.3.1:=[profile?] <dev-haskell/hint-0.7:=[profile?]
+	>=dev-haskell/hint-0.3.3.1:=[profile?]
 	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
@@ -33,5 +33,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'directory         >= 1.2     && < 1.3' 'directory         >= 1.2' \
-		'directory         >= 1.0     && < 1.3' 'directory         >= 1.0'
+		'directory         >= 1.0     && < 1.3' 'directory         >= 1.0' \
+		'hint              >= 0.3.3.1 && < 0.7' 'hint              >= 0.3.3.1'
 }
