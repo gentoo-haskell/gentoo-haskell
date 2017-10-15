@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/either-4.4.1.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/errors-2.1.3:=[profile?] <dev-haskell/errors-2.3:=[profile?]
 	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
-	>=dev-haskell/extra-1.4.10:=[profile?] <dev-haskell/extra-1.6:=[profile?]
+	>=dev-haskell/extra-1.4.10:=[profile?]
 	>=dev-haskell/fast-logger-2.3.1:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/filelock-0.1.0.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
@@ -127,7 +127,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13'
+		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13' \
+		'extra >= 1.4.10 && < 1.6' 'extra >= 1.4.10'
 }
 
 src_configure() {
