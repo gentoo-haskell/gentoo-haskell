@@ -18,10 +18,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/fgl-5.5.2.0:=[profile?] <dev-haskell/fgl-6:=[profile?]
-	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
+	>=dev-haskell/quickcheck-2.3:2=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.5 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.3 && < 2.10' 'QuickCheck >= 2.3'
+}
