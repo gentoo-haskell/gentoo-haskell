@@ -1,0 +1,13 @@
+diff --git a/erd.cabal b/erd.cabal
+index bdbbfff..92a51ee 100644
+--- a/erd.cabal
++++ b/erd.cabal
+@@ -67,7 +67,7 @@ executable erd
+   ghc-options: -Wall -fno-warn-name-shadowing -fno-warn-unused-do-bind
+   other-modules: Config, ER, Parse
+   build-depends:
+-    base == 4.7.*
++    base == 4.9.*
+     , graphviz == 2999.*
+     , text == 1.*
+     , parsec == 3.1.*
