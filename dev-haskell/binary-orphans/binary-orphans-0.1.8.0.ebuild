@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.3:=[profil
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3.3.8:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/semigroups-0.16.2.2:=[profile?] <dev-haskell/semigroups-0.18.4:=[profile?]
+	>=dev-haskell/semigroups-0.16.2.2:=[profile?]
 	>=dev-haskell/tagged-0.7.3:=[profile?] <dev-haskell/tagged-0.8.6:=[profile?]
 	>=dev-haskell/text-1.2.0.6:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-binary-0.1.0:=[profile?] <dev-haskell/text-binary-0.3:=[profile?]
