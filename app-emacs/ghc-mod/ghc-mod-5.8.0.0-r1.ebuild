@@ -21,7 +21,7 @@ RESTRICT=test # doctests break on modules collisions: temporary / temporary-rc
 
 RDEPEND=">=dev-haskell/cabal-helper-0.7.3.0:=[profile?] <dev-haskell/cabal-helper-0.8:=[profile?]
 	>=dev-haskell/djinn-ghc-0.0.2.2:=[profile?] <dev-haskell/djinn-ghc-0.1:=[profile?]
-	>=dev-haskell/extra-1.4:=[profile?] <dev-haskell/extra-1.6:=[profile?]
+	>=dev-haskell/extra-1.4:=[profile?]
 	>=dev-haskell/fclabels-2.0:=[profile?] <dev-haskell/fclabels-2.1:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 	>=dev-haskell/ghc-syb-utils-0.2.3:=[profile?] <dev-haskell/ghc-syb-utils-0.3:=[profile?]
@@ -56,7 +56,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'syb                  < 0.7  && >= 0.5.1' 'syb                  >= 0.5.1' \
-		'optparse-applicative < 0.14 && >= 0.13.0.0' 'optparse-applicative >= 0.13.0.0'
+		'optparse-applicative < 0.14 && >= 0.13.0.0' 'optparse-applicative >= 0.13.0.0' \
+		'extra                < 1.6  && >= 1.4' 'extra                  >= 1.4'
 }
 
 src_compile() {
