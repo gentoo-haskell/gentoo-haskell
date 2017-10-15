@@ -1561,7 +1561,7 @@ dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
 dev-haskell/snap 0.14.0.7-r3 1.0.0.1: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 0.9.8.0 1.0.2.1: Snap: A Haskell Web Framework (core interfaces and types)
-dev-haskell/snap-loader-dynamic 0.10.0.4-r1 1.0.0.0: Snap dynamic loader
+dev-haskell/snap-loader-dynamic 0.10.0.4-r1 1.0.0.0-r1: Snap dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2 1.0.0.0: Snap static loader
 dev-haskell/snap-server 0.9.5.1-r1 1.0.2.2: A web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.0: Scaffolding CLI for the Snap Framework
