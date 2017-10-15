@@ -156,7 +156,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.2.5: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
-dev-haskell/binary-orphans 0.1.6.0-r1: Orphan instances for binary
+dev-haskell/binary-orphans 0.1.6.0-r1 0.1.8.0: Orphan instances for binary
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-serialise-cbor 0.1.1.0: Yet Another Binary Serialisation Library (compatibility shim)
@@ -1397,7 +1397,7 @@ dev-haskell/qt 1.1.6.1: Qt bindings
 dev-haskell/qthaskellc 1.1.4: qtHaskell C bindings for Qt
 dev-haskell/quickcheck 1.2.0.1-r1 2.8.2 2.9.1 2.9.2 2.10.1: Automatic testing of Haskell programs
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
-dev-haskell/quickcheck-instances 0.3.12-r1: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.12-r1 0.3.16: Common quickcheck instances
 dev-haskell/quickcheck-io 0.1.4: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.2: Safe reimplementation of QuickCheck's core
@@ -1729,7 +1729,7 @@ dev-haskell/th-reify-compat 0.0.1.2: Compatibility for the result type of TH rei
 dev-haskell/th-reify-many 0.1.8: Recurseively reify template haskell datatype info
 dev-haskell/th-utilities 0.2.0.1: Collection of useful functions for use with Template Haskell
 dev-haskell/themoviedb 1.1.3.0: Haskell API bindings for http://themoviedb.org
-dev-haskell/these 0.7.3-r1: An either-or-both data type & a generalized 'zip with padding' typeclass
+dev-haskell/these 0.7.3-r1 0.7.4: An either-or-both data type & a generalized 'zip with padding' typeclass
 dev-haskell/threads 0.5.1.5: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.6.0.6 0.7.0.1: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
