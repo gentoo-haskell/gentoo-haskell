@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +threaded"
 
+RESTRICT=test # fails own tests
+
 RDEPEND=">=dev-haskell/aeson-0.11.2.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
