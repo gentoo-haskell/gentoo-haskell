@@ -28,7 +28,7 @@ RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.20:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/optparse-applicative-0.12:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
-	>=dev-haskell/pandoc-citeproc-0.10.5:=[profile?] <dev-haskell/pandoc-citeproc-0.11:=[profile?]
+	>=dev-haskell/pandoc-citeproc-0.10.5:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
@@ -60,6 +60,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc-citeproc      >= 0.10.5 && < 0.11' 'pandoc-citeproc      >= 0.10.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
