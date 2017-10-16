@@ -20,6 +20,7 @@ IUSE="+network-uri"
 RDEPEND="dev-haskell/cairo:=[profile?]
 	>=dev-haskell/dbus-0.10.7:=[profile?] <dev-haskell/dbus-1.0:=[profile?]
 	>=dev-haskell/dyre-0.8.6:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
+	>=dev-haskell/either-4.0.0.0:=[profile?]
 	>=dev-haskell/enclosed-exceptions-1.0.0.1:=[profile?]
 	>=dev-haskell/gtk-0.12.1:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
 	>=dev-haskell/gtk-traymanager-0.1.2:=[profile?] <dev-haskell/gtk-traymanager-0.2:=[profile?]
