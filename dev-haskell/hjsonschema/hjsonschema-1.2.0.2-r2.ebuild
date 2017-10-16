@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/pcre-heavy-1.0:=[profile?] <dev-haskell/pcre-heavy-1.1:=[profile?]
 	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
-	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
+	>=dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -49,5 +49,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'hjsonpointer         >= 0.3    && < 1.1' 'hjsonpointer         >= 0.3' \
-		'directory            >= 1.2.5 && < 1.3' 'directory            >= 1.2.5'
+		'directory            >= 1.2.5 && < 1.3' 'directory            >= 1.2.5' \
+		'QuickCheck           >= 2.8    && < 2.10' 'QuickCheck           >= 2.8'
 }

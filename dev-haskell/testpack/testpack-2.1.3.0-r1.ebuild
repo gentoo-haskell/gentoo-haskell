@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -31,4 +31,5 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-qc28.patch
 	epatch "${FILESDIR}"/${P}-HUnit-1.3.patch
 	epatch "${FILESDIR}"/${P}-QC-2.8.2.patch
+	epatch "${FILESDIR}"/${P}-QC-2.10.patch
 }

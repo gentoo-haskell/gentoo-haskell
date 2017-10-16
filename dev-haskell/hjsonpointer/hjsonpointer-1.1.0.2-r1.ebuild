@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.10:2=[profile?]
+	>=dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.2 <dev-haskell/hspec-3.0
 		>=dev-haskell/http-types-0.8 <dev-haskell/http-types-1.0 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck           >= 2.8  && < 2.10' 'QuickCheck           >= 2.8'
+}

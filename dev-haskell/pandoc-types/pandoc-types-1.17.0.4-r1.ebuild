@@ -37,5 +37,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'syb >= 0.1 && < 0.7' 'syb >= 0.1'
+		'syb >= 0.1 && < 0.7' 'syb >= 0.1' \
+		'QuickCheck >= 2.4 && < 2.10' 'QuickCheck >= 2.4'
 }
