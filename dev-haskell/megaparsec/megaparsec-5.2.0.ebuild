@@ -22,6 +22,7 @@ RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.9:=[
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-3.0:2=[profile?]
+	dev-haskell/quickcheck-instances:=
 	>=dev-haskell/scientific-0.3.1:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -32,6 +33,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-expectations-0.5 <dev-haskell/hspec-expectations-0.9 )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-5.2.0-QC-2.10.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
