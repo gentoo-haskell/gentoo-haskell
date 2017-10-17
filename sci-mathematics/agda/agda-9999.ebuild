@@ -20,8 +20,6 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="+cpphs debug emacs enable-cluster-counting +stdlib"
 
-RESTRICT=test # does not support 'test' run
-
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/base-orphans-0.3.1:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?]
 	>=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -105,12 +103,6 @@ src_compile() {
 			|| die "Failed to compile emacs mode"
 	fi
 	haskell-cabal_src_compile
-}
-
-src_test() {
-	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
-
-	dist/build/agda/agda --test +RTS -M1g || die
 }
 
 src_install() {
