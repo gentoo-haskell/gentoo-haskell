@@ -503,9 +503,6 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
-		# needs a new libffi release
-		epatch "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
-
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-1.patch # upstreamed, waits for merge to -HEAD
