@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs network
+
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/io-streams-1.2:=[profile?] <dev-haskell/io-streams-2.0:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.0:=[profile?]
