@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs running mysql
+
 RDEPEND="dev-haskell/binary-ieee754:=[profile?]
 	>=dev-haskell/binary-parsers-0.2.1:=[profile?]
 	>=dev-haskell/blaze-textual-0.2:=[profile?] <dev-haskell/blaze-textual-0.3:=[profile?]

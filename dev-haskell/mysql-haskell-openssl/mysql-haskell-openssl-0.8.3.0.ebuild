@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs running mysql
+
 RDEPEND=">=dev-haskell/hsopenssl-0.10.3:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/mysql-haskell-0.8.3:=[profile?] <dev-haskell/mysql-haskell-0.8.4:=[profile?]
 	>=dev-haskell/tcp-streams-1.0:=[profile?] <dev-haskell/tcp-streams-1.1:=[profile?]
