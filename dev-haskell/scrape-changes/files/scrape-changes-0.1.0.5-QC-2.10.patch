@@ -1,0 +1,27 @@
+diff --git a/scrape-changes.cabal b/scrape-changes.cabal
+index ba364b1..cbb39d4 100644
+--- a/scrape-changes.cabal
++++ b/scrape-changes.cabal
+@@ -54,2 +54,3 @@ test-suite scrapechanges-tests
+                    , QuickCheck >=2.0
++                   , quickcheck-instances
+                    , test-framework >=0.1.0
+diff --git a/test/Network/ScrapeChanges/Internal/Test.hs b/test/Network/ScrapeChanges/Internal/Test.hs
+index d8ff3b3..a7afea2 100644
+--- a/test/Network/ScrapeChanges/Internal/Test.hs
++++ b/test/Network/ScrapeChanges/Internal/Test.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE FlexibleInstances, QuasiQuotes, OverloadedStrings #-}
++{-# LANGUAGE CPP #-}
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
+@@ -12,2 +13,3 @@ import Test.HUnit hiding (assertFailure)
+ import Test.QuickCheck
++import Test.QuickCheck.Instances ()
+ import Test.Framework as TF
+@@ -49,4 +51,6 @@ instance Arbitrary MailAddr where
+ 
++#if ! MIN_VERSION_QuickCheck(2,10,0)
+ instance Arbitrary TextLazy.Text where
+   arbitrary = TextLazy.pack <$> arbitrary
++#endif
+ 

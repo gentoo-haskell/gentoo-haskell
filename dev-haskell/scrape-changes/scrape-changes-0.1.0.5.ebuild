@@ -38,8 +38,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/hunit-1.2.5.2
 		>=dev-haskell/quickcheck-2.0
+		dev-haskell/quickcheck-instances
 		>=dev-haskell/shakespeare-2.0.0
 		>=dev-haskell/test-framework-0.1.0
 		>=dev-haskell/test-framework-hunit-0.3.0.2
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.3 )
 "
+
+PATCHES=("${FILESDIR}"/${PN}-0.1.0.5-QC-2.10.patch)
