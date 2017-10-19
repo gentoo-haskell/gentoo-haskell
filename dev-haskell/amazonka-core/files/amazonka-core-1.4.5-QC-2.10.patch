@@ -1,0 +1,9 @@
+diff --git a/test/Test/AWS/Error.hs b/test/Test/AWS/Error.hs
+index 159331e..f69d911 100644
+--- a/test/Test/AWS/Error.hs
++++ b/test/Test/AWS/Error.hs
+@@ -23,3 +23,3 @@ import           Network.AWS.Prelude
+ import           Test.AWS.Arbitrary       ()
+-import           Test.QuickCheck.Property
++import           Test.QuickCheck.Property hiding (testCase)
+ import           Test.Tasty
