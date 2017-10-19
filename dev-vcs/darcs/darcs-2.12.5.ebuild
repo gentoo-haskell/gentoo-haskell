@@ -57,7 +57,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/cmdargs-0.10 <dev-haskell/cmdargs-0.11
 		>=dev-haskell/findbin-0.0 <dev-haskell/findbin-0.1
 		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.6
-		>=dev-haskell/quickcheck-2.6 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.6
 		>=dev-haskell/shelly-1.6.2 <dev-haskell/shelly-1.7
 		>=dev-haskell/split-0.2.2 <dev-haskell/split-0.3
 		>=dev-haskell/test-framework-0.4.0 <dev-haskell/test-framework-0.9
@@ -67,6 +67,13 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}"/${PN}-2.12.4-ghc-8.0.2_rc1.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck   >= 2.6 && < 2.10' 'QuickCheck   >= 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
