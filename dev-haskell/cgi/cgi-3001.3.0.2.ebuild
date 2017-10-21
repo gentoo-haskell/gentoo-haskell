@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,8 +31,15 @@ RDEPEND="<dev-haskell/exceptions-0.9:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.12
-		>=dev-haskell/quickcheck-2.8.1 <dev-haskell/quickcheck-2.10 )
+		>=dev-haskell/quickcheck-2.8.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.8.1 && < 2.10' 'QuickCheck >= 2.8.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
