@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A simple probability distribution type, where distributions are characterized
+		by sampling functions.
+		
+		This implementation is a thin layer over @mwc-random@, which handles RNG
+		state-passing automatically by using a @PrimMonad@ like @IO@ or @ST s@ under
+		the hood.
+		
+		/Examples/
+		
+		Transform a distribution&#39;s support while leaving its density structure
+		invariant:
+		
+		&gt; -- uniform over [0, 1] to uniform over [1, 2]
+		&gt; succ &lt;$&gt; uniform
+		
+		Sequence distributions together using bind:
+		
+		&gt; -- a beta-binomial conjugate distribution
+		&gt; beta 1 10 &gt;&gt;= binomial 10
+		
+		Use do-notation to build complex joint distributions from composable,
+		local conditionals:
+		
+		&gt; hierarchicalModel = do
+		&gt;   [c, d, e, f] &lt;- replicateM 4 $ uniformR (1, 10)
+		&gt;   a &lt;- gamma c d
+		&gt;   b &lt;- gamma e f
+		&gt;   p &lt;- beta a b
+		&gt;   n &lt;- uniformR (5, 10)
+		&gt;   binomial n p
+	</longdescription>
+</pkgmetadata>
