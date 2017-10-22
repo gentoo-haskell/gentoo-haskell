@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		
+		&lt;&lt;https://tonyday567.github.io/other/mainExample.svg&gt;&gt;
+		
+		chart-unit is a native haskell charting library designed:
+		
+		- as a chart DSL and algebra
+		
+		- towards a minimalist look and feel
+		
+		- to provide a set of default values that are robust across differet data and physical chart scales
+		
+		- around provision of a small but core set of chart types.
+		
+		See &lt;https://tonyday567.github.io/chart-unit/index.html chart-unit&gt; for a chart gallery.
+		
+	</longdescription>
+</pkgmetadata>
