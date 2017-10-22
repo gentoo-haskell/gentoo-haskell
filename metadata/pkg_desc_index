@@ -257,6 +257,7 @@ dev-haskell/chart 1.8.2: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.8.2: Cairo backend for Charts
 dev-haskell/chart-diagrams 1.8.2: Diagrams backend for Charts
 dev-haskell/chart-gtk 1.8.2: Utility functions for using the chart library with GTK
+dev-haskell/chart-unit 0.5.4: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.2-r1 1.3.1.3: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
@@ -1195,6 +1196,7 @@ dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mustache 2.1.3: A mustache template parser library
 dev-haskell/mutable-containers 0.3.3: Abstactions and concrete implementations of mutable containers
+dev-haskell/mwc-probability 1.3.0: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.13.6.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.4: A low-level MySQL client library
 dev-haskell/mysql-haskell 0.7.1.0 0.8.3.0: pure haskell MySQL driver
@@ -1247,6 +1249,8 @@ dev-haskell/numbersieves 0.1.2: Number Theoretic Sieves: primes, factorization, 
 dev-haskell/numeric-extras 0.1: Useful tools from the C standard library
 dev-haskell/numeric-prelude 0.4.2: An experimental alternative hierarchy of numeric type classes
 dev-haskell/numeric-quest 0.2.0.1: Math and quantum mechanics
+dev-haskell/numhask 0.1.2: A numeric prelude
+dev-haskell/numhask-range 0.1.1: Numbers that are range representations
 dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tuples
 dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5.0.1: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
@@ -1273,6 +1277,7 @@ dev-haskell/optparse-applicative 0.13.2.0 0.14.0.0: Utilities and combinators fo
 dev-haskell/optparse-generic 1.1.5-r1: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.0.3: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
+dev-haskell/palette 0.1.0.5: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.10.4.1 0.10.5.1 0.11.1.1: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.6.0: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.1.0.1: Pandoc filter to customize links, images and paragraphs
@@ -1684,6 +1689,7 @@ dev-haskell/tasty-th 0.1.4: Automatic tasty test case discovery using TH
 dev-haskell/tcache 0.12.0: A Transactional cache with user-defined persistence
 dev-haskell/tcp-streams 0.6.0.0 1.0.1.0: One stop solution for tcp client and server with tls support
 dev-haskell/tcp-streams-openssl 0.6.0.0 1.0.1.0: Tcp streams using openssl for tls support
+dev-haskell/tdigest 0.1: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.1.1: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
@@ -1841,6 +1847,7 @@ dev-haskell/vector-space 0.10.4: Vector & affine spaces, linear maps, and deriva
 dev-haskell/vector-space-points 0.2.1.2: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vgrep 0.1.4.1: A pager for grep
+dev-haskell/viewprof 0.0.0.10: Text-based interactive GHC .prof viewer
 dev-haskell/vimeta 0.2.3.0-r1: Frontend for video metadata tagging tools
 dev-haskell/vinyl 0.5.3: Extensible Records
 dev-haskell/vinyl-gl 0.3.1: Utilities for working with OpenGL's GLSL shading language and vinyl records
