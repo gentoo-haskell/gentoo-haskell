@@ -352,6 +352,7 @@ dev-haskell/semigroupoids:tagged - You can disable the use of the `tagged` packa
 dev-haskell/semigroups:binary - provide instances for binary package
 dev-haskell/semigroups:transformers - provide instances for transformers package.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
+dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
 dev-haskell/shake:portable - Obtain FileTime using portable functions.
 dev-haskell/shakespeare:test_coffee - Render tests through coffeescript render function.
