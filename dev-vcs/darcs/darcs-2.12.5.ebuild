@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+curl +network-uri +terminfo +threaded"
 
+RESTRICT=test # QC-2.10 incompatible
+
 RDEPEND=">=dev-haskell/async-2.0.1.4:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
