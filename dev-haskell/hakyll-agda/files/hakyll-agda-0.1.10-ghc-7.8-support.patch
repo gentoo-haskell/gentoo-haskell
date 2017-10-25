@@ -1,5 +1,5 @@
---- Hakyll/Web/Agda.hs1	2015-07-28 11:26:43.849974608 +0400
-+++ Hakyll/Web/Agda.hs	2015-07-28 11:30:54.479972446 +0400
+--- a/Hakyll/Web/Agda.hs1	2015-07-28 11:26:43.849974608 +0400
++++ b/Hakyll/Web/Agda.hs	2015-07-28 11:30:54.479972446 +0400
 @@ -9,6 +9,10 @@
      , pandocAgdaCompiler
      ) where
