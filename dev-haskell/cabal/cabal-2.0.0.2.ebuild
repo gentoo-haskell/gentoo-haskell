@@ -26,9 +26,7 @@ IUSE=""
 RESTRICT=test # circular dependencies
 
 RDEPEND=">=dev-lang/ghc-7.8.1:="
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
-"
+DEPEND="${RDEPEND}"
 
 CABAL_CORE_LIB_GHC_PV="PM:8.2.1"
 
