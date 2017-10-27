@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Datatype to parse redis connection settings from file like
+		
+		&gt; host: localhost                 # host name or address
+		&gt; port: 6379                      # you can specify either port
+		&gt; # socket: /run/redis.socket     # or unix socket path
+		&gt; # service: redis                # or service name
+		&gt; password: &quot;pass&quot;                # if not specified then no password used
+		&gt; database: 0                     # database number to connect to
+		&gt; max-connections: 5              # max connections in pool
+		&gt; max-idle-time: 30               # keep connection open for 30 seconds
+	</longdescription>
+</pkgmetadata>
