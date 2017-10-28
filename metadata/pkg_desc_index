@@ -104,6 +104,7 @@ dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with an
 dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
 dev-haskell/ansi-terminal 0.6.3.1: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
+dev-haskell/api-field-json-th 0.1.0.2: option of aeson's deriveJSON
 dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/applicative-numbers 0.1.3: Applicative-based numeric instances
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
@@ -190,6 +191,7 @@ dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
+dev-haskell/blaze-colonnade 1.1.0: Helper functions for using blaze-html with colonnade
 dev-haskell/blaze-html 0.8.1.3: A blazingly fast HTML combinator library for Haskell
 dev-haskell/blaze-markup 0.7.1.1: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6.1: SVG combinator library
@@ -296,7 +298,7 @@ dev-haskell/code-page 0.1.3: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
-dev-haskell/colonnade 0.5: Generic types and functions for columnar encoding and decoding
+dev-haskell/colonnade 0.5 1.1.1: Generic types and functions for columnar encoding and decoding
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.3-r1: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
@@ -1477,6 +1479,7 @@ dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write R
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/req 0.3.1: Easy-to-use, type-safe, expandable, high-level HTTP library
+dev-haskell/resolv 0.1.1.1: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.9: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.4.2: Retry combinators for monadic actions that may fail
@@ -1564,7 +1567,7 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.3.3.1: syntax highlighting library
+dev-haskell/skylighting 0.3.3.1 0.4.2: syntax highlighting library
 dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.1: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
@@ -1958,7 +1961,7 @@ dev-haskell/yesod-auth-nopassword 0.1.1.1: A plugin for Yesod to provide email-o
 dev-haskell/yesod-auth-oauth2 0.2.4: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.5.2.5: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
-dev-haskell/yesod-colonnade 0.2: Helper functions for using yesod with colonnade
+dev-haskell/yesod-colonnade 0.2 1.1.0: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.3: PDF Content Type for Yesod
 dev-haskell/yesod-core 1.4.37: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
@@ -1975,9 +1978,11 @@ dev-haskell/yesod-pagination 2.0.0: Pagination in Yesod
 dev-haskell/yesod-paginator 0.10.1 0.11.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.4.2: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-platform 1.2.13.3: Meta package for Yesod (deprecated)
+dev-haskell/yesod-recaptcha2 0.1.0.1: yesod recaptcha2
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.4.0.1: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.3.1: Static file serving subsite for Yesod Web Framework
+dev-haskell/yesod-static-angular 0.1.8: Yesod generators for embedding AngularJs code into yesod-static at compile time
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
 dev-haskell/yesod-test 1.5.8: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.8: Yesod support for Text.Markdown

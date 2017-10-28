@@ -434,6 +434,7 @@ dev-haskell/yaml:system-libyaml - Use system libyaml instead on generic one
 dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-auth-oauth2:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
+dev-haskell/yesod-static-angular:example - Build the example program
 dev-haskell/zip-archive:executable - Build the Zip executable.
 dev-haskell/zlib:non-blocking-ffi - Execute FFI calls in the context of haskell thread.
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
