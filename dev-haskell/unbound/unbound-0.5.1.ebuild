@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,5 +26,12 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/parsec-3.1.9 <dev-haskell/parsec-3.2
-		>=dev-haskell/quickcheck-2.8.2 <dev-haskell/quickcheck-2.10 )
+		>=dev-haskell/quickcheck-2.8.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck>=2.8.2 && < 2.10' 'QuickCheck>=2.8.2'
+}
