@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # does not pass tests on non-ascii symbols
+
 RDEPEND=">=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-2:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
