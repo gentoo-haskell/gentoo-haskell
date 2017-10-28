@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/MarcWeber/hasktags.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="debug"
 
 RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.10:=[profile?]
