@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,6 +27,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.9
 		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.6
 		dev-haskell/mtl
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.7
 		dev-haskell/stm )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck         >= 2.7 && < 2.10' 'QuickCheck         >= 2.7'
+}
