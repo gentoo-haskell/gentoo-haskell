@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,6 +16,8 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # tests are broken on QC-2.10
 
 RDEPEND=">=dev-haskell/binary-0.7.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
