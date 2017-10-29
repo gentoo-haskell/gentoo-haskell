@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous package: AC-Vector-Fancy-2.4.0 vector-0.11.0.0
+
 RDEPEND=">=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
 	>=dev-haskell/profunctors-4.0:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
 	>=dev-haskell/semigroups-0.17:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
