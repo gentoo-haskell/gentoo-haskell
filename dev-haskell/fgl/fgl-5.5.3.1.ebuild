@@ -22,5 +22,12 @@ RDEPEND=">=dev-lang/ghc-7.8.2:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.5
-		>=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.10 )
+		>=dev-haskell/quickcheck-2.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.8 && < 2.10' 'QuickCheck >= 2.8'
+}
