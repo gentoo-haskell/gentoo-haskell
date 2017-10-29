@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,9 +17,18 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE=""
 
+RESTRICT=test # needs a tweak for QC-2.10
+
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
-	test? ( >=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.10 )
+	test? ( >=dev-haskell/quickcheck-2.7 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck < 2.10' 'QuickCheck'
+}
