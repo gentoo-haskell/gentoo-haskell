@@ -53,7 +53,7 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-GHC_PV=8.2.1.20170929 # uncomment only for -rc ebuilds
+GHC_PV=8.2.1.20171030 # uncomment only for -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
