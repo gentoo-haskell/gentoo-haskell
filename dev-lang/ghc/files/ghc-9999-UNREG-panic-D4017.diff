@@ -1,0 +1,15 @@
+https://phabricator.haskell.org/D4017
+https://ghc.haskell.org/trac/ghc/ticket/14264
+diff --git a/compiler/cmm/BlockId.hs b/compiler/cmm/BlockId.hs
+--- a/compiler/cmm/BlockId.hs
++++ b/compiler/cmm/BlockId.hs
+@@ -40,7 +40,7 @@
+ newBlockId = mkBlockId <$> getUniqueM
+ 
+ blockLbl :: BlockId -> CLabel
+-blockLbl label = mkAsmTempLabel (getUnique label)
++blockLbl label = mkEntryLabel (mkFCallName (getUnique label) "block") NoCafRefs
+ 
+ infoTblLbl :: BlockId -> CLabel
+ infoTblLbl label = mkInfoTableLabel (mkFCallName (getUnique label) "block") NoCafRefs
+
