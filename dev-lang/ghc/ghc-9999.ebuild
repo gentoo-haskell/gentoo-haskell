@@ -500,6 +500,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		epatch "${FILESDIR}"/${PN}-9999-boot-failure.patch
+		epatch "${FILESDIR}"/${PN}-9999-UNREG-panic-D4017.diff
 
 		epatch "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
