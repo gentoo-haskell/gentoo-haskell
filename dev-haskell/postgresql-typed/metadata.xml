@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="md5">Enable md5 password authentication method.</flag>
+		<flag name="binary">Use binary protocol encoding via postgresql-binary. This may put additional restrictions on supported PostgreSQL server versions.</flag>
+		<flag name="text">Support Text string values via text (implied by binary).</flag>
+		<flag name="uuid">Support the UUID type via uuid (implied by binary).</flag>
+		<flag name="scientific">Support decoding numeric via scientific (implied by binary).</flag>
+		<flag name="aeson">Support decoding json via aeson.</flag>
+		<flag name="hdbc">Provide an HDBC driver backend using the raw PostgreSQL protocol.</flag>
+	</use>
+	<longdescription>
+		Automatically type-check SQL statements at compile time.
+		Uses Template Haskell and the raw PostgreSQL protocol to describe SQL statements at compile time and provide appropriate type marshalling for both parameters and results.
+		Allows not only syntax verification of your SQL but also full type safety between your SQL and Haskell.
+		Supports many built-in PostgreSQL types already, including arrays and ranges, and can be easily extended in user code to support any other types.
+		
+		Also includes an optional HDBC backend that, since it uses the raw PostgreSQL protocol, may be more efficient than the normal libpq backend in some cases (though provides no more type safety than HDBC-postgresql when used without templates).
+		
+		Originally based on Chris Forno&#39;s templatepg library.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		According to
+		&lt;https://github.com/nikita-volkov/bytestring-builders-benchmark the competition benchmarks&gt;,
+		this library provides on average the fastest builder of strict bytestrings.
+		
+		Practical benchmarks have proven it to be highly performant as well.
+		The encoders from the \&quot;postgresql-binary\&quot; library have shown
+		a stable performance improvement by factors of up to 10 after the migration
+		from the standard builder to \&quot;bytestring-strict-builder\&quot;.
+	</longdescription>
+</pkgmetadata>

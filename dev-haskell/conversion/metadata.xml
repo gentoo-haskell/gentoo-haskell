@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library provides a typeclass with instances for types
+		defined in \&quot;base\&quot;.
+		Instances for other types are expected to be defined in other libraries.
+		Such libraries should be listed under
+		&lt;http://hackage.haskell.org/packages/#cat:Conversion the Conversion category&gt;.
+		So far the following are known:
+		
+		* &lt;http://hackage.haskell.org/package/conversion-bytestring &quot;conversion-bytestring&quot;&gt;
+		
+		* &lt;http://hackage.haskell.org/package/conversion-text &quot;conversion-text&quot;&gt;
+		
+		* &lt;http://hackage.haskell.org/package/conversion-case-insensitive &quot;conversion-case-insensitive&quot;&gt;
+	</longdescription>
+</pkgmetadata>
