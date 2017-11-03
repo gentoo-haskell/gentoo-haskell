@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		An API for dealing with PostgreSQL&#39;s binary data format.
+		
+		It can be used to implement performant bindings to Postgres.
+		E.g., &lt;http://hackage.haskell.org/package/hasql &quot;hasql&quot;&gt;
+		is based on this library.
+		
+		It supports all Postgres versions starting from 8.3
+		and is tested against 8.3, 9.3 and 9.5
+		with the @integer_datetimes@ setting off and on.
+	</longdescription>
+</pkgmetadata>
