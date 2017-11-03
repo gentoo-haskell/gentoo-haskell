@@ -140,7 +140,7 @@ dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.14.1: Amazon Web Services (AWS) for Haskell
 dev-haskell/base-compat 0.9.3: A compatibility layer for base
 dev-haskell/base-orphans 0.5.4 0.6: Backwards-compatible orphan instances for base
-dev-haskell/base-prelude 1.0.1.1: The most complete prelude formed solely from the "base" package
+dev-haskell/base-prelude 1.0.1.1 1.2.0.1: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
@@ -159,6 +159,7 @@ dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of
 dev-haskell/binary-conduit 1.2.5: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
 dev-haskell/binary-orphans 0.1.6.0-r1 0.1.8.0: Orphan instances for binary
+dev-haskell/binary-parser 0.5.5: A highly-efficient but limited parser API specialised for bytestrings
 dev-haskell/binary-parsers 0.2.3.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-serialise-cbor 0.1.1.0: Yet Another Binary Serialisation Library (compatibility shim)
@@ -222,6 +223,7 @@ dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals effici
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
 dev-haskell/bytestring-show 0.3.5.6-r1: Efficient conversion of values into readable byte strings
+dev-haskell/bytestring-strict-builder 0.4.5: An efficient strict bytestring builder
 dev-haskell/bytestring-trie 0.2.4.1: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.0.5: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
@@ -333,11 +335,15 @@ dev-haskell/constraints 0.4.1.3 0.8 0.9.1: Constraint manipulation
 dev-haskell/containers-unicode-symbols 0.3.1.1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
 dev-haskell/contravariant 1.3.3 1.4: Contravariant functors
+dev-haskell/contravariant-extras 0.3.3.1: Extras for the "contravariant" package
 dev-haskell/control-monad-exception 0.11.2: Explicitly typed, checked exceptions with stack traces
 dev-haskell/control-monad-free 0.5.3 0.6.1: Free monads and monad transformers
 dev-haskell/control-monad-loop 0.1: Simple monad transformer for imperative-style loops
 dev-haskell/control-timeout 0.1.2-r1: Timeout handling
 dev-haskell/converge 0.1.0.1: Limit operations for converging sequences
+dev-haskell/conversion 1.2.1: Universal converter between values of different types
+dev-haskell/conversion-bytestring 1.0.1: "Conversion" instances for the "bytestring" library
+dev-haskell/conversion-text 1.0.1: "Conversion" instances for the "text" library
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
 dev-haskell/cookie 0.4.2.1: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
@@ -452,6 +458,7 @@ dev-haskell/digestive-functors-happstack 0.6.1.1: Happstack backend for the dige
 dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.0: Snap backend for the digestive-functors library
 dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.3: Statically checked physical dimensions, using Type Families and Data Kinds
+dev-haskell/dimensions 0.3.2.0: Safe type-level dimensionality for multidimensional data
 dev-haskell/direct-sqlite 2.3.20: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
@@ -1000,6 +1007,7 @@ dev-haskell/js-jquery 3.2.1: Obtain minified jQuery code
 dev-haskell/jsaddle 0.2.1.0-r1 0.3.0.3-r1 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/jsaddle-warp 0.6.0.1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
+dev-haskell/json-ast 0.3.1: Universal JSON AST datastructure
 dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
@@ -1359,9 +1367,11 @@ dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.14 0.14-r100: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.1.6.0 0.1.6.1: A binding for PortMedia/PortMidi
+dev-haskell/postgresql-binary 0.12.1: Encoders and decoders for the PostgreSQL's binary format
 dev-haskell/postgresql-libpq 0.9.3.1: low-level binding to libpq
 dev-haskell/postgresql-query 3.0.1: Sql interpolating quasiquote plus some kind of primitive ORM using it
 dev-haskell/postgresql-simple 0.4.10.0 0.5.3.0: Mid-Level PostgreSQL client library
+dev-haskell/postgresql-typed 0.5.2: PostgreSQL interface with compile-time SQL type checking, optional HDBC backend
 dev-haskell/pqueue 1.3.2.3: Reliable, persistent, fast priority queues
 dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
 dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax via quick-and-dirty preprocessors
@@ -1435,6 +1445,7 @@ dev-haskell/reactive-banana-wx 1.1.1.0: Examples for the reactive-banana library
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
 dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0: An interface to the GNU readline library
+dev-haskell/rebase 1.1: A more progressive alternative to the "base" package
 dev-haskell/recaptcha 0.1.0.3: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1 5.0.2: Generalized bananas, lenses and barbed wire
@@ -1482,6 +1493,7 @@ dev-haskell/repa-io 3.2.3.2 3.2.5.1 3.3.1.2 3.4.0.2-r1 3.4.1.1: Read and write R
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4: Generic programming library with representation types
 dev-haskell/req 0.3.1: Easy-to-use, type-safe, expandable, high-level HTTP library
+dev-haskell/rerebase 1.1: Reexports from "base" with a bunch of other standard libraries
 dev-haskell/resolv 0.1.1.1: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.9: Deterministic allocation and freeing of scarce resources
