@@ -644,7 +644,7 @@ dev-haskell/gi-pango 1.0.13: Pango bindings
 dev-haskell/gi-soup 2.4.12: Libsoup bindings
 dev-haskell/gi-webkit2 4.0.12: WebKit2 bindings
 dev-haskell/gifcurry 2.0.0.2 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
-dev-haskell/ginger 0.3.9.1: An implementation of the Jinja2 template language in Haskell
+dev-haskell/ginger 0.3.9.1 0.7.3.0: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to GIO
 dev-haskell/github 0.13.2 0.14.1-r2 0.15.0: Access to the GitHub API, v3
 dev-haskell/github-backup 1.20170301: backs up everything github knows about a repository, to the repository
@@ -1448,6 +1448,7 @@ dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.2: Happstack support for reform
 dev-haskell/reform-hsp 0.2.7.1: Add support for using HSP with Reform
 dev-haskell/refserialize 0.3.1.4: Write to and read from ByteStrings maintaining internal memory references
+dev-haskell/regex 1.0.1.3: Toolkit for regex-base
 dev-haskell/regex-applicative 0.3.3: Regex-based parsing with applicative interface
 dev-haskell/regex-applicative-text 0.1.0.1: regex-applicative on text
 dev-haskell/regex-base 0.93.2-r1: Replaces/Enhances Text.Regex
@@ -1458,12 +1459,14 @@ dev-haskell/regex-do 3.2: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.94.4.8.8.35: Replaces/Enhances Text.Regex
+dev-haskell/regex-pcre-text 0.94.0.1: Text-based PCRE API for regex-base
 dev-haskell/regex-posix 0.95.2-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-posix-unittest 1.1: Unit tests for the plaform's Posix regex library
 dev-haskell/regex-tdfa 1.1.8-r1 1.2.2: Replaces/Enhances Text.Regex
 dev-haskell/regex-tdfa-rc 1.1.8.3: Replaces/Enhances Text.Regex (fork by Roman Cheplyaka)
 dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91-r1: Replaces/Enhances Text.Regex
+dev-haskell/regex-with-pcre 1.0.1.3: Toolkit for regex-base
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/relational-query 0.8.3.5 0.9.1.0: Typeful, Modular, Relational, algebraic query engine
@@ -1664,6 +1667,7 @@ dev-haskell/synthesizer-core 0.8.1.1: Audio signal processing coded in Haskell: 
 dev-haskell/system-argv0 0.1.1: Get argv[0] as a FilePath
 dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC versions (deprecated)
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
+dev-haskell/system-info 0.1.0.9: Get information about CPUs, memory, etc
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
 dev-haskell/system-uuid 2.1.1: Bindings to system UUID functions
