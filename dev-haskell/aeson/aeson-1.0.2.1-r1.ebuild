@@ -42,18 +42,21 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hashable-1.2.4.0
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.9.3
+		>=dev-haskell/quickcheck-2.7:2
 		>=dev-haskell/quickcheck-instances-0.3.12
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-QC-2.10.patch)
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base-orphans >= 0.5.3 && <0.6' 'base-orphans >= 0.5.3'
+		'base-orphans >= 0.5.3 && <0.6' 'base-orphans >= 0.5.3' \
+		'QuickCheck >= 2.7 && <2.9.3' 'QuickCheck >= 2.7'
 }
 
 src_configure() {
