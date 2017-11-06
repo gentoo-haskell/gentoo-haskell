@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,8 +31,15 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 	test? ( >=dev-haskell/fgl-arbitrary-0.2 <dev-haskell/fgl-arbitrary-0.3
-		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.10 )
+		>=dev-haskell/quickcheck-2.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.3 && < 2.10' 'QuickCheck >= 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
