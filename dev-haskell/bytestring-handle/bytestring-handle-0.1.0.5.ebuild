@@ -22,7 +22,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
-		>=dev-haskell/quickcheck-2.1.2 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.1.2
 		>=dev-haskell/test-framework-0.2.0 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.0 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.5 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -32,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.2 && < 4.10' 'base >= 4.2'
+		'base >= 4.2 && < 4.10' 'base >= 4.2' \
+		'QuickCheck >= 2.1.2 && < 2.10' 'QuickCheck >= 2.1.2'
 }
