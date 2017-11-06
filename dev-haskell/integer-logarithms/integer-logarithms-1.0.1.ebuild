@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/nats-1.1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.10
+	test? ( >=dev-haskell/quickcheck-2.9
 		>=dev-haskell/smallcheck-1.1 <dev-haskell/smallcheck-1.2
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
@@ -31,11 +31,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9 )
 "
 
+RESTRICT=test # needs a port to QC-2.10
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.3 && < 4.10' 'base >= 4.3'
+		'base >= 4.3 && < 4.10' 'base >= 4.3' \
+		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9'
 }
 
 src_configure() {
