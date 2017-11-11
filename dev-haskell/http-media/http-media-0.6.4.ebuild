@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,14 @@ RDEPEND=">=dev-haskell/case-insensitive-1.0:=[profile?] <dev-haskell/case-insens
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/quickcheck-2.6 <dev-haskell/quickcheck-2.10
+	test? ( >=dev-haskell/quickcheck-2.6
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck                 >= 2.6  && < 2.10' 'QuickCheck                 >= 2.6'
+}

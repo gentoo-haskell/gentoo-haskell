@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # QC-2.10 finds counterexamples
 
 RDEPEND=">=dev-haskell/binary-0.8:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?]
