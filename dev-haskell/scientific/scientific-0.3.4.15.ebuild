@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/bytestring-builder-0.10.4:=[profile?] <dev-haskell/bytest
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.10
+	test? ( >=dev-haskell/quickcheck-2.5
 		>=dev-haskell/smallcheck-1.0 <dev-haskell/smallcheck-1.2
 		>=dev-haskell/tasty-0.5 <dev-haskell/tasty-0.12
 		>=dev-haskell/tasty-ant-xml-1.0 <dev-haskell/tasty-ant-xml-1.2
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
 		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck       >= 2.5   && < 2.10' 'QuickCheck       >= 2.5'
+}
