@@ -506,7 +506,6 @@ src_prepare() {
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
-			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-1.patch # upstreamed, waits for merge to -HEAD
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
 
