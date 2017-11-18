@@ -33,3 +33,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-QC-2.10.patch)

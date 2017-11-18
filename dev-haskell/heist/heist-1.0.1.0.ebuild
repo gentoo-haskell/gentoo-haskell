@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/bifunctors-5.3 <dev-haskell/bifunctors-5.5
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-2
 		>=dev-haskell/lens-4.3 <dev-haskell/lens-4.15
-		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -51,5 +51,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory                  >= 1.1     && < 1.3' 'directory                  >= 1.1'
+		'directory                  >= 1.1     && < 1.3' 'directory                  >= 1.1' \
+		'QuickCheck                 >= 2        && < 2.10' 'QuickCheck                 >= 2'
 }
