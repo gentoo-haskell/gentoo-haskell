@@ -378,7 +378,7 @@ dev-haskell/cryptohash-md5 0.11.100.1: Fast, pure and practical MD5 implementati
 dev-haskell/cryptohash-sha1 0.11.100.1: Fast, pure and practical SHA-1 implementation
 dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
 dev-haskell/cryptonite 0.23: Cryptography Primitives sink
-dev-haskell/cryptonite-conduit 0.2.0: cryptonite conduit
+dev-haskell/cryptonite-conduit 0.2.0 0.2.2: cryptonite conduit
 dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.2: A small program that will read csv files and create qif files
@@ -799,6 +799,7 @@ dev-haskell/here 1.2.11: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/heterocephalus 1.0.5.0: A type-safe template engine for working with popular front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
+dev-haskell/hexml 0.3.3: XML subset DOM parser
 dev-haskell/hexpat 0.20.13: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.2: Command line flag parser, very similar to Google's gflags
 dev-haskell/hformat 0.1.0.1: Simple Haskell formatting
@@ -1944,6 +1945,7 @@ dev-haskell/xcb-types 0.8.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
 dev-haskell/xdot 0.3.0.1: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xeno 0.3: A fast event-based XML parser in pure Haskell
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
