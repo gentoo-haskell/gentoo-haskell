@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # QC-2.10 finds contradiction
+
 RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/scientific-0.3.1:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.16.1:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -26,12 +28,19 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.10
+	test? ( >=dev-haskell/quickcheck-2.7
 		dev-haskell/quickcheck-unicode
 		>=dev-haskell/tasty-0.11
 		>=dev-haskell/tasty-quickcheck-0.8
 		dev-haskell/vector )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.7 && < 2.10' 'QuickCheck >= 2.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
