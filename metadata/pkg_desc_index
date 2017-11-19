@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.10 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 4.8.1: property-based host configuration management in haskell
+app-admin/propellor 5.0.0: property-based host configuration management in haskell
 app-editors/leksah 0.15.2.0-r3 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.15.2.0-r2 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r1: The Haskell-Scriptable Editor
@@ -146,7 +146,7 @@ dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding f
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
-dev-haskell/basement 0.0.2: Foundation scrap box of array & string
+dev-haskell/basement 0.0.4: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.10: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
@@ -230,7 +230,7 @@ dev-haskell/c10k 0.5.0: C10k server library using prefork
 dev-haskell/c2hs 0.28.2: C->Haskell FFI tool that gives some cross-language type safety
 dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.22.5.0 1.22.7.0 1.22.8.0 1.24.0.0 1.24.1.0 1.24.2.0 2.0.0.2 2.1.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
-dev-haskell/cabal-doctest 1.0.2-r1: A Setup.hs helper for doctests running
+dev-haskell/cabal-doctest 1.0.3: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.4: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-helper 0.5.3.0 0.6.1.0 0.6.2.0 0.6.3.0 0.6.3.1-r1 0.7.2.0 0.7.3.0: Simple interface to some of Cabal's configuration state used by ghc-mod
 dev-haskell/cabal-install 1.18.0.3 1.20.0.6 1.22.0.1 1.22.2.0 1.22.4.0 1.22.6.0-r1 1.22.7.0 1.22.8.0 1.22.9.0 1.24.0.0-r1 1.24.0.1 1.24.0.2 2.0.0.0 9999: The command-line interface for Cabal and Hackage
@@ -238,7 +238,7 @@ dev-haskell/cabal-macosx 0.2.4.1: Cabal support for creating Mac OSX application
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
 dev-haskell/cabal-rpm 0.11.2: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
-dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1: Binding to the Cairo library
+dev-haskell/cairo 0.13.1.1 0.13.2.0 0.13.3.0 0.13.3.1 0.13.4.1: Binding to the Cairo library
 dev-haskell/call-stack 0.1.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
@@ -256,7 +256,7 @@ dev-haskell/cereal-vector 0.2.0.1: Serialize instances for Data.Vector types
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
 dev-haskell/cgi 3001.3.0.2: A library for writing CGI programs
 dev-haskell/charset 0.3.7.1: Fast unicode character sets based on complemented PATRICIA tries
-dev-haskell/charsetdetect-ae 1.1.0.2: Character set detection using Mozilla's Universal Character Set Detector
+dev-haskell/charsetdetect-ae 1.1.0.3: Character set detection using Mozilla's Universal Character Set Detector
 dev-haskell/chart 1.8.2: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.8.2: Cairo backend for Charts
 dev-haskell/chart-diagrams 1.8.2: Diagrams backend for Charts
@@ -264,8 +264,8 @@ dev-haskell/chart-gtk 1.8.2: Utility functions for using the chart library with 
 dev-haskell/chart-unit 0.5.4: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.2-r1 1.3.1.3: For testing partial and infinite values
-dev-haskell/cheapskate 0.1.0.5-r1: Experimental markdown processor
-dev-haskell/checkers 0.4.7: Check properties on standard classes and data structures
+dev-haskell/cheapskate 0.1.1: Experimental markdown processor
+dev-haskell/checkers 0.4.9.5: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5-r1: QuickCheck support for the Chell testing library
 dev-haskell/chronos 0.4: A performant time library
@@ -293,7 +293,7 @@ dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side 
 dev-haskell/clock 0.5.1 0.6.0.1 0.7.2: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/clocked 0.4.1.3: timer functionality to clock IO commands
 dev-haskell/cmark 0.5.6: Fast, accurate CommonMark (Markdown) parser and renderer
-dev-haskell/cmdargs 0.10.17: Command line argument processing
+dev-haskell/cmdargs 0.10.18: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
 dev-haskell/code-page 0.1.3: Windows code page library for Haskell
@@ -318,7 +318,7 @@ dev-haskell/concurrent-output 1.7.9: Ungarble output from several threads or com
 dev-haskell/concurrent-split 0.0.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.11: Streaming data processing library
+dev-haskell/conduit 1.2.12.1: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
 dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
@@ -345,7 +345,7 @@ dev-haskell/conversion 1.2.1: Universal converter between values of different ty
 dev-haskell/conversion-bytestring 1.0.1: "Conversion" instances for the "bytestring" library
 dev-haskell/conversion-text 1.0.1: "Conversion" instances for the "text" library
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
-dev-haskell/cookie 0.4.2.1: HTTP cookie parsing and rendering
+dev-haskell/cookie 0.4.3: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
@@ -376,7 +376,7 @@ dev-haskell/cryptohash-conduit 0.1.1: cryptohash conduit
 dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
 dev-haskell/cryptohash-md5 0.11.100.1: Fast, pure and practical MD5 implementation
 dev-haskell/cryptohash-sha1 0.11.100.1: Fast, pure and practical SHA-1 implementation
-dev-haskell/cryptohash-sha256 0.11.100.1: Fast, pure and practical SHA-256 implementation
+dev-haskell/cryptohash-sha256 0.11.101.0: Fast, pure and practical SHA-256 implementation
 dev-haskell/cryptonite 0.23: Cryptography Primitives sink
 dev-haskell/cryptonite-conduit 0.2.0 0.2.2: cryptonite conduit
 dev-haskell/css-text 0.1.2.1 0.1.2.2: CSS parser and renderer
@@ -459,7 +459,7 @@ dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.0: Snap backend for the digest
 dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.0.1.3: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/dimensions 0.3.2.0: Safe type-level dimensionality for multidimensional data
-dev-haskell/direct-sqlite 2.3.20: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.21: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
@@ -469,7 +469,7 @@ dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6-r1: Cloud Haskell: 
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1 0.4.6 0.4.7: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
-dev-haskell/distributive 0.5.2: Distributive functors -- Dual to Traversable
+dev-haskell/distributive 0.5.3: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.2: Generate Haskell code from a type. Library extracted from djinn package

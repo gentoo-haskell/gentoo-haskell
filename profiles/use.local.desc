@@ -116,6 +116,7 @@ dev-haskell/diagrams:rasterific - Enable rasterific backend.
 dev-haskell/diagrams-builder:ps - Enable postscript backend
 dev-haskell/diagrams-builder:rasterific - Enable rasterific backend
 dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library.
+dev-haskell/direct-sqlite:json1 - Enable json1 extension.
 dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
 dev-haskell/distributed-process:template_haskell - Enable additional test modules requiring Template Haskell support.
