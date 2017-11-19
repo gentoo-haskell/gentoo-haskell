@@ -3,8 +3,10 @@
 # See https://github.com/mrueg/repoman-travis
 #
 language: python
+python:
+    - pypy
 env:
-    - PORTAGE_VER="2.3.6"
+    - PORTAGE_VER="2.3.13"
 before_install:
     - sudo apt-get -qq update
     - pip install lxml
