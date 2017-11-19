@@ -146,7 +146,7 @@ dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding f
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
-dev-haskell/basement 0.0.4: Foundation scrap box of array & string
+dev-haskell/basement 0.0.2: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.10: Haskell bindings to the bcrypt password hash
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
