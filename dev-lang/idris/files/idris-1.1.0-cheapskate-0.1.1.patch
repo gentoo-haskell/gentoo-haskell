@@ -1,0 +1,15 @@
+diff --git a/src/Idris/DeepSeq.hs b/src/Idris/DeepSeq.hs
+index 8d44075..c16e146 100644
+--- a/src/Idris/DeepSeq.hs
++++ b/src/Idris/DeepSeq.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ {-|
+@@ -30,2 +31,3 @@ import Network.Socket (PortNumber)
+ 
++#if ! MIN_VERSION_cheapskate(0,1,1)
+ -- These types don't have Generic instances
+@@ -44,2 +46,3 @@ instance NFData CT.NumWrapper where
+   rnf CT.ParenFollowing = ()
++#endif
+ 

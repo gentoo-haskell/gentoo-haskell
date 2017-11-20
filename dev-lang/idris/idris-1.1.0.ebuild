@@ -65,6 +65,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-rerun-1.0.0 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-cheapskate-0.1.1.patch)
+
 src_prepare() {
 	default
 
