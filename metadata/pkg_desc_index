@@ -1612,7 +1612,7 @@ dev-haskell/spintax 0.3.2: Random text generation based on spintax
 dev-haskell/split 0.2.3.2: Combinator library for splitting lists
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
-dev-haskell/spreadsheet 0.1.3.5: Read and write spreadsheets from and to CSV files in a lazy way
+dev-haskell/spreadsheet 0.1.3.6: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sql-words 0.1.5.1: Simple idea SQL keywords data constructor into OverloadedString
 dev-haskell/sqlite-simple 0.4.14.0: Mid-Level SQLite client library
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
@@ -1641,7 +1641,7 @@ dev-haskell/stm-split 0.0.2: TMVars, TVars and TChans with distinguished input a
 dev-haskell/stmonadtrans 0.4.3: A monad transformer version of the ST monad
 dev-haskell/storable-complex 0.2.2: Storable instance for Complex
 dev-haskell/storable-record 0.0.3.1: Elegant definition of Storable instances for records
-dev-haskell/storable-tuple 0.0.3.2: Storable instance for pairs and triples
+dev-haskell/storable-tuple 0.0.3.3: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.12.1: Fast, packed, strict storable arrays with a list interface like ByteString
 dev-haskell/store 0.2.1.2 0.3.1 0.4.3.2: Fast binary serialization
 dev-haskell/store-core 0.2.0.2 0.3 0.4.1: Fast and lightweight binary serialization
@@ -1666,21 +1666,21 @@ dev-haskell/stylish-haskell 0.6.1.0-r3 0.6.4.0 0.8.1.0: Haskell code prettifier
 dev-haskell/styx 1.3.1: A generator of nix files
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
-dev-haskell/superdoc 0.1.2.4: Additional documentation markup and Unicode support
+dev-haskell/superdoc 0.1.2.5: Additional documentation markup and Unicode support
 dev-haskell/svg-builder 0.1.0.2: DSL for building SVG
 dev-haskell/svg-tree 0.6.2: SVG file loader and serializer
 dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-cairo library
-dev-haskell/svgfonts 1.6.0.2: Fonts from the SVG-Font format
+dev-haskell/svgfonts 1.6.0.3: Fonts from the SVG-Font format
 dev-haskell/sxml 0.1.0.0: A SXML-parser
 dev-haskell/syb 0.4.4 0.5.1 0.6 0.7: Scrap Your Boilerplate
-dev-haskell/syb-with-class 0.6.1.6 0.6.1.7: Scrap Your Boilerplate With Class
+dev-haskell/syb-with-class 0.6.1.8: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
 dev-haskell/synthesizer-core 0.8.1.1: Audio signal processing coded in Haskell: Low level part
 dev-haskell/system-argv0 0.1.1: Get argv[0] as a FilePath
 dev-haskell/system-fileio 0.3.16.3: Consistent filesystem interaction across GHC versions (deprecated)
 dev-haskell/system-filepath 0.4.13.4: High-level, byte-based file and directory path manipulations (deprecated)
-dev-haskell/system-info 0.1.0.9: Get information about CPUs, memory, etc
+dev-haskell/system-info 0.1.0.10: Get information about CPUs, memory, etc
 dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect a program's stdout
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
 dev-haskell/system-uuid 2.1.1: Bindings to system UUID functions
