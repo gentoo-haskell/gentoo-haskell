@@ -357,6 +357,7 @@ dev-haskell/semigroupoids:containers - You can disable the use of the `container
 dev-haskell/semigroupoids:contravariant - You can disable the use of the `contravariant` package using `-f-contravariant`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
 dev-haskell/semigroupoids:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/semigroupoids:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroupoids:unordered-containers - You can disable the use of the `unordered-containers` package (and also its dependency `hashable`) using `-f-unordered-containers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:binary - provide instances for binary package
 dev-haskell/semigroups:transformers - provide instances for transformers package.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
