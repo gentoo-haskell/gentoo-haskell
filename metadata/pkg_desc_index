@@ -1567,7 +1567,7 @@ dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/shellmate 0.2.3-r2 0.3.4.2: Simple interface for shell scripting in Haskell
-dev-haskell/shelly 1.6.8.4: shell-like (systems) programming in Haskell
+dev-haskell/shelly 1.6.8.6: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3: Shuffle tool for UHC
@@ -1583,9 +1583,9 @@ dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with bet
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singletons 1.1.2.1 2.0.1 2.1 2.2: A framework for generating singleton types
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.3.3.1 0.4.2: syntax highlighting library
+dev-haskell/skylighting 0.3.3.1 0.4.3.2: syntax highlighting library
 dev-haskell/slave-thread 1.0.2: A principal solution to ghost threads and silent exceptions
-dev-haskell/smallcheck 1.1.1: A property-based testing library
+dev-haskell/smallcheck 1.1.2: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
