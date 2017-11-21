@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs a port to QC-2.10
+
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?]
 	>=dev-haskell/attoparsec-0.12.1.6:=[profile?]
 	>=dev-haskell/cabal-file-th-0.2.3:=[profile?]
