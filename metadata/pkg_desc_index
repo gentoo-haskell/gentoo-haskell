@@ -1075,7 +1075,7 @@ dev-haskell/libxml-sax 0.7.5: Bindings for the libXML2 SAX interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.9.1.1-r1 0.9.3: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.11: lifted IO operations from the base library
-dev-haskell/linear 1.20.6: Linear Algebra
+dev-haskell/linear 1.20.6 1.20.7: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.6.0: Labeled IO Information Flow Control Library
 dev-haskell/liquid-fixpoint 0.5.0.1 0.6.0.1 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
@@ -2027,7 +2027,7 @@ dev-lang/elm-platform 0.17.1 0.18.0: Meta package for all Elm packages
 dev-lang/elm-reactor 0.17.1 0.18.0: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.17.1 0.18.0: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
-dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2 8.2.1_rc1 8.2.1_rc2 8.2.1_rc3 8.2.1 8.2.2_rc1 8.2.2_rc2 8.2.2_rc3 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.1 8.0.2 8.2.1_rc1 8.2.1_rc2 8.2.1_rc3 8.2.1 8.2.2_rc1 8.2.2_rc2 8.2.2_rc3 8.2.2 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
