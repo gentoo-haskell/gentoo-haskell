@@ -1,12 +1,12 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test unpack
-DEPEND=>=dev-haskell/language-c-0.6:=[profile?] <dev-haskell/language-c-0.7:=[profile?] dev-haskell/markdown-unlit:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/tasty dev-haskell/tasty-quickcheck ) >=dev-vcs/git-1.8.2.1 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+DEPEND=>=dev-haskell/language-c-0.6:=[profile?] dev-haskell/markdown-unlit:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/tasty dev-haskell/tasty-quickcheck ) >=dev-vcs/git-1.8.2.1 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=C-to-rust source-to-source transformer
 EAPI=6
 HOMEPAGE=http://hackage.haskell.org/package/corrode
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
-RDEPEND=>=dev-haskell/language-c-0.6:=[profile?] <dev-haskell/language-c-0.7:=[profile?] dev-haskell/markdown-unlit:=[profile?] >=dev-lang/ghc-7.10.1:=
+RDEPEND=>=dev-haskell/language-c-0.6:=[profile?] dev-haskell/markdown-unlit:=[profile?] >=dev-lang/ghc-7.10.1:=
 SLOT=0/9999
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	227b041a120d309fdefbebb3b8c1dfa9	ghc-package	f9cf05643e20f03876bb4807f008c80f	git-r3	52a888802d25387c2c74cb845d1219bc	haskell-cabal	e2532aa75df473aa3cbd3c5d26a0d9d4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	6f5991c7101863d0b29df63990ad852e	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=f53a7a01034f959d4ad12ab0ddb2c276
+_md5_=2d5c8d8068ffde872479f72c2818ded6
