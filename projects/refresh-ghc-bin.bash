@@ -165,8 +165,19 @@ run mkdir "${chroot_temp}"
         run tar -xjf "${stage_dir}"/"${stage3_name}"
 
         cat >init-portage-env.bash <<-EOF
+	echo "Setting up profile"
 	echo 'source /bound/conf/make.conf' >> /etc/portage/make.conf
 	eselect profile set ${chroot_profile}
+	EOF
+
+        cat >sanitize-use-defaults.bash <<-EOF
+	echo "Sanitizing USE defaults"
+	# USE=bindist in stages is a releng bug: https://bugs.gentoo.org/473332
+	echo 'USE="\${USE} -bindist"' >> /etc/portage/make.conf
+	FEATURES="${FEATURES} -test -strict -stricter"                     emerge -uv1N dev-libs/openssl net-misc/openssh
+
+	# python[sqlite] is needed for sphinx
+	echo 'USE="\${USE} sqlite"' >> /etc/portage/make.conf
 	EOF
 
         cat >refresh-ghc.bash <<-EOF
@@ -206,14 +217,15 @@ run mkdir "${chroot_temp}"
 	EOF
 
     run bash "${chroot_script}" '/init-portage-env.bash'
+    run bash "${chroot_script}" '/sanitize-use-defaults.bash'
     run bash "${chroot_script}" '/refresh-ghc.bash'
     run bash "${chroot_script}" '/store-results.bash'
 )
 
 if [[ -z ${keep_temp_chroot} ]]; then
     echo "cleanup '${chroot_temp}'"
-    [[ ${temp_tmpfs} = yes ]] && run umount "${chroot_temp}"
-    run rm -rf -- "${chroot_temp}"
+    [[ ${temp_tmpfs} = yes ]] && umount "${chroot_temp}"
+    rm -rf -- "${chroot_temp}"
 else
     echo "keeping '${chroot_temp}'"
 fi
