@@ -50,6 +50,10 @@ dry_run=
 autobuild_machine=
 keep_temp_chroot=
 makeopts=auto
+# default to current directory
+temp_dir=
+# mount fresh temp dir as tmpfs
+temp_tmpfs=no
 
 default_autobuild_machine() {
     local arch=$1
@@ -92,11 +96,17 @@ while [[ ${#@} -gt 0 ]]; do
         --makeopts=*)
             makeopts=${1#--makeopts=}
             ;;
+        --temp-dir=*)
+            temp_dir=${1#--temp-dir=}/
+            ;;
         --dry-run)
             dry_run=yes
             ;;
         --keep-temp-chroot)
             keep_temp_chroot=yes
+            ;;
+        --temp-tmpfs)
+            temp_tmpfs=yes
             ;;
         *)
             die "unknown option: $1"
@@ -117,6 +127,8 @@ i "chroot profile:    ${chroot_profile}"
 i "built atom:        ${needed_atom}"
 i "keep temp chroot:  ${keep_temp_chroot}"
 i "makeopts:          ${makeopts}"
+i "temp_dir:          ${temp_dir}"
+i "temp_tmpfs:        ${temp_tmpfs}"
 
 [[ -z ${dry_run} ]] || exit 0
 
@@ -131,8 +143,9 @@ full_stage3_bz2=$(dirname "${stage3_url}")/${relative_stage3_bz2}
 stage3_name=$(basename "${full_stage3_bz2}")
 
 run wget -c "${full_stage3_bz2}"
+stage_dir=$(pwd)
 
-chroot_temp=__ghc_chroot_$(date "+%F-%H-%M-%S")
+chroot_temp=${temp_dir}__ghc_chroot_$(date "+%F-%H-%M-%S")
 chroot_subdir=gentoo-${target_arch}
 chroot_script=${chroot_subdir}.sh
 chroot_bits=as-is
@@ -143,16 +156,28 @@ run mkdir -p "${ghc_autobuilds_dir}"
 ghc_autobuilds_dir=$(realpath "${ghc_autobuilds_dir}")
 
 run mkdir "${chroot_temp}"
+[[ ${temp_tmpfs} = yes ]] && run mount -t tmpfs tmpfs "${chroot_temp}"
 (
     run cd "${chroot_temp}"
     run mkdir "${chroot_subdir}"
     (
         run cd "${chroot_subdir}"
-        run tar -xjf ../../"${stage3_name}"
+        run tar -xjf "${stage_dir}"/"${stage3_name}"
 
         cat >init-portage-env.bash <<-EOF
+	echo "Setting up profile"
 	echo 'source /bound/conf/make.conf' >> /etc/portage/make.conf
 	eselect profile set ${chroot_profile}
+	EOF
+
+        cat >sanitize-use-defaults.bash <<-EOF
+	echo "Sanitizing USE defaults"
+	# USE=bindist in stages is a releng bug: https://bugs.gentoo.org/473332
+	echo 'USE="\${USE} -bindist"' >> /etc/portage/make.conf
+	FEATURES="${FEATURES} -test -strict -stricter"                     emerge -uv1N dev-libs/openssl net-misc/openssh
+
+	# python[sqlite] is needed for sphinx
+	echo 'USE="\${USE} sqlite"' >> /etc/portage/make.conf
 	EOF
 
         cat >refresh-ghc.bash <<-EOF
@@ -192,12 +217,14 @@ run mkdir "${chroot_temp}"
 	EOF
 
     run bash "${chroot_script}" '/init-portage-env.bash'
+    run bash "${chroot_script}" '/sanitize-use-defaults.bash'
     run bash "${chroot_script}" '/refresh-ghc.bash'
     run bash "${chroot_script}" '/store-results.bash'
 )
 
 if [[ -z ${keep_temp_chroot} ]]; then
     echo "cleanup '${chroot_temp}'"
+    [[ ${temp_tmpfs} = yes ]] && umount "${chroot_temp}"
     rm -rf -- "${chroot_temp}"
 else
     echo "keeping '${chroot_temp}'"
