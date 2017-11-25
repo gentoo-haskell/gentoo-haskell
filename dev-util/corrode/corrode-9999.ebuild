@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/language-c-0.6:=[profile?] <dev-haskell/language-c-0.7:=[profile?]
+RDEPEND=">=dev-haskell/language-c-0.6:=[profile?]
 	dev-haskell/markdown-unlit:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -27,3 +27,10 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'language-c >=0.6 && <0.7' 'language-c >=0.6'
+}
