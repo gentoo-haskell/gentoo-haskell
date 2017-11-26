@@ -23,9 +23,16 @@ RDEPEND=">=dev-haskell/mtl-2.1.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/stm-2.4.2:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
-	>=dev-haskell/tasty-0.10:=[profile?] <dev-haskell/tasty-0.12:=[profile?]
+	>=dev-haskell/tasty-0.10:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty >=0.10 && <0.12' 'tasty >=0.10'
+}
