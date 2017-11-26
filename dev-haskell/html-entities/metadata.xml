@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This library provides the following APIs for coding and decoding of
+		HTML-escaped text:
+		
+		* \&quot;attoparsec\&quot; parser
+		
+		* Text decoder
+		
+		* Encoding text builder
+	</longdescription>
+</pkgmetadata>
