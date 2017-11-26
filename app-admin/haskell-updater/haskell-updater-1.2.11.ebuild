@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 CABAL_FEATURES="bin nocabaldep"
 inherit eutils haskell-cabal
@@ -23,6 +23,8 @@ RDEPEND="|| ( >=sys-apps/portage-2.1.6
 		sys-apps/paludis )"
 
 src_prepare() {
+	default
+
 	if use prefix; then
 		sed -i -e "s,/var/db/pkg,${EPREFIX}&,g" \
 			"${S}/Distribution/Gentoo/Packages.hs" || die
