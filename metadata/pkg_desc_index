@@ -733,7 +733,7 @@ dev-haskell/happstack-server 7.4.6.4: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.2: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5 1.19.8: Happy is a parser generator for Haskell
 dev-haskell/hare 0.8.3.0 0.8.4.1: the Haskell Refactorer
-dev-haskell/harp 0.4.2: HaRP allows pattern-matching with regular expressions
+dev-haskell/harp 0.4.3: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hascas 1.2.0: Cassandra driver for haskell
 dev-haskell/hashable 1.2.6.1: A class for types that can be converted to a hash value
@@ -880,7 +880,7 @@ dev-haskell/hsdns 1.7: Asynchronous DNS Resolver
 dev-haskell/hse-cpp 0.1 0.2: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7: Internet Message Parsers
 dev-haskell/hset 2.2.0: Primitive list with elements of unique types
-dev-haskell/hsexif 0.6.1.2: EXIF handling library in pure Haskell
+dev-haskell/hsexif 0.6.1.5: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.7.1 0.8.2 0.8.4: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.10: Versatile logging framework
