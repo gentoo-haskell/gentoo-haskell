@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/DanielG/cabal-helper.git"
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="dev"
+IUSE=""
 
 RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -25,17 +25,8 @@ RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:
 	>=dev-haskell/unix-compat-0.4.3.1:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
 	>=dev-haskell/utf8-string-1.0.1.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	|| ( ( >=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.26:=[profile?] )
-		( >=dev-haskell/cabal-2.0:=[profile?] <dev-haskell/cabal-2.1:=[profile?] ) )
-	dev? ( dev-haskell/cabal:=[profile?] )
-"
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-	|| ( ( >=dev-haskell/cabal-1.14 <dev-haskell/cabal-1.25 )
+	>=dev-haskell/cabal-1.18.1.3:=[profile?]
+	|| ( ( <dev-haskell/cabal-1.26 )
 		( >=dev-haskell/cabal-2.0 <dev-haskell/cabal-2.1 ) )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag dev dev)
-}
+DEPEND="${RDEPEND}"
