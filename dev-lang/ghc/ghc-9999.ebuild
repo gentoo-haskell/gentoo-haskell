@@ -500,6 +500,8 @@ src_prepare() {
 		pushd "${S}/libraries/Win32"
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
+		epatch "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
+		epatch "${FILESDIR}"/${PN}-9999-rts-mingw32-case.patch
 
 		bump_libs
 
