@@ -493,15 +493,11 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
-		# Unbreak temporary breaka of hsc2hs
-		epatch "${FILESDIR}"/${PN}-9999-unbreak-hsc2hs.patch
-
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
 			epatch "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
 		epatch "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
-		epatch "${FILESDIR}"/${PN}-9999-rts-mingw32-case.patch
 
 		bump_libs
 
