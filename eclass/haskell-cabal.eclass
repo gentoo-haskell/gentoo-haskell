@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: haskell-cabal.eclass
@@ -426,7 +426,11 @@ cabal-pkg() {
 	if [[ -n ${CABAL_HAS_LIBRARIES} ]]; then
 		# Newer cabal can generate a package conf for us:
 		./setup register --gen-pkg-config="${T}/${P}.conf"
-		ghc-install-pkg "${T}/${P}.conf"
+		if [[ -d "${T}/${P}.conf" ]]; then
+			ghc-install-pkg "${T}/${P}.conf"/*
+		else
+			ghc-install-pkg "${T}/${P}.conf"
+		fi
 	fi
 }
 

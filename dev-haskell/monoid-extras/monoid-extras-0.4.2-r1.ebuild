@@ -30,5 +30,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'semigroupoids >= 4.0 && < 5.2' 'semigroupoids >= 4.0'
+		'semigroupoids >= 4.0 && < 5.2' 'semigroupoids >= 4.0' \
+		'base >= 4.3 && < 4.10' 'base >= 4.3' \
+		'base          >= 4.3 &&  < 4.10' 'base          >= 4.3'
 }
