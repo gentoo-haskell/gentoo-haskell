@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -19,13 +19,19 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-1.4:=[profile?]
+	>=dev-haskell/hunit-1.2:=[profile?]
 	>=dev-haskell/test-framework-0.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2'
+	default
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
