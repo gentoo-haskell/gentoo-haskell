@@ -1,5 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.12 test? ( >=dev-haskell/base16-bytestring-0.1.1 <dev-haskell/base16-bytestring-0.2 >=dev-haskell/sha-1.6.4 <dev-haskell/sha-1.7 >=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.12 >=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10 >=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.12 test? ( >=dev-haskell/base16-bytestring-0.1.1 <dev-haskell/base16-bytestring-0.2 >=dev-haskell/sha-1.6.4 <dev-haskell/sha-1.7 >=dev-haskell/tasty-0.11 >=dev-haskell/tasty-hunit-0.9 >=dev-haskell/tasty-quickcheck-0.8 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Fast, pure and practical SHA-256 implementation
 EAPI=6
 HOMEPAGE=https://github.com/hvr/cryptohash-sha256
@@ -10,4 +10,4 @@ RDEPEND=>=dev-lang/ghc-7.4.1:=
 SLOT=0/0.11.101.0
 SRC_URI=mirror://hackage/packages/archive/cryptohash-sha256/0.11.101.0/cryptohash-sha256-0.11.101.0.tar.gz
 _eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	97ce9decef1ff4b6c5be700283f67343	ghc-package	0cb443d7baa50c473ed0a66d975de37f	haskell-cabal	5901516a7b3f0e3403a890b17801d63b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	6f5991c7101863d0b29df63990ad852e	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=33da8d1f97898d8321530c1cdaa605d1
+_md5_=03c95417e91dcebf6f8ad214b9583a26
