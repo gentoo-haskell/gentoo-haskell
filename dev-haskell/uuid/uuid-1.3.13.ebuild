@@ -30,9 +30,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
 		>=dev-haskell/quickcheck-2.4
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.10
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 src_prepare() {
@@ -40,5 +40,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'QuickCheck       >= 2.4   && < 2.10' 'QuickCheck       >= 2.4' \
-		'time            >= 1.1      && < 1.8' 'time            >= 1.1'
+		'time            >= 1.1      && < 1.8' 'time            >= 1.1' \
+		'tasty            >= 0.10  && < 0.12' 'tasty            >= 0.10' \
+		'tasty-hunit      == 0.9.*' 'tasty-hunit      >= 0.9' \
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
 }
