@@ -23,13 +23,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/base16-bytestring-0.1.1 <dev-haskell/base16-bytestring-0.2
 		>=dev-haskell/sha-1.6.4 <dev-haskell/sha-1.7
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 src_prepare() {
 	cabal_chdeps \
-		'base             >= 4.5   && < 4.10' 'base             >= 4.5'
+		'base             >= 4.5   && < 4.10' 'base             >= 4.5' \
+		'tasty             == 0.11.*' 'tasty             >= 0.11' \
+		'tasty-quickcheck  == 0.8.*' 'tasty-quickcheck  >= 0.8' \
+		'tasty-hunit       == 0.9.*' 'tasty-hunit       >= 0.9'
 	default
 }
