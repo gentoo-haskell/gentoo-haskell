@@ -1726,7 +1726,7 @@ dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
 dev-haskell/terminfo 0.4.0.2 0.4.1.0: Haskell bindings to the terminfo library
 dev-haskell/terminfo-hs 0.2.1: A pure-Haskell (no FFI) module for accessing terminfo databases
 dev-haskell/test-framework 0.8.1.1: Framework for running and organising tests, with HUnit and QuickCheck support
-dev-haskell/test-framework-hunit 0.3.0.2: HUnit support for the test-framework package
+dev-haskell/test-framework-hunit 0.3.0.2-r1: HUnit support for the test-framework package
 dev-haskell/test-framework-quickcheck 0.3.0-r1: QuickCheck support for the test-framework package
 dev-haskell/test-framework-quickcheck2 0.3.0.4: QuickCheck2 support for the test-framework package
 dev-haskell/test-framework-smallcheck 0.2: Support for SmallCheck tests in test-framework
