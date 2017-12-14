@@ -1592,11 +1592,11 @@ dev-haskell/smallcheck 1.1.2: A property-based testing library
 dev-haskell/smtlib 1.0.8: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0: A simple SMTP client library
-dev-haskell/snap 0.14.0.7-r3 1.0.0.1: Top-level package for the Snap Web Framework
-dev-haskell/snap-core 0.9.8.0 1.0.2.1: Snap: A Haskell Web Framework (core interfaces and types)
+dev-haskell/snap 0.14.0.7-r3 1.0.0.2: Top-level package for the Snap Web Framework
+dev-haskell/snap-core 0.9.8.0 1.0.3.1: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 0.10.0.4-r1 1.0.0.0-r1: Snap dynamic loader
 dev-haskell/snap-loader-static 0.9.0.2 1.0.0.0: Snap static loader
-dev-haskell/snap-server 0.9.5.1-r1 1.0.2.2: A web server for the Snap Framework
+dev-haskell/snap-server 0.9.5.1-r1 1.0.3.3: A web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.0: Scaffolding CLI for the Snap Framework
 dev-haskell/snaplet-sqlite-simple 1.0.0.2: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
@@ -1858,9 +1858,9 @@ dev-haskell/vacuum-cairo 0.5-r4: Visualize live Haskell data structures using va
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.9: Runs commands on remote machines using ssh
 dev-haskell/validation 0.5.5: A data-type like Either but with an accumulating Applicative
-dev-haskell/validity 0.3.3.0: Validity typeclass
-dev-haskell/validity-path 0.1.0.1: Validity instances for Path
-dev-haskell/validity-text 0.1.2.1: Validity instances for text
+dev-haskell/validity 0.3.3.0 0.4.0.2: Validity typeclass
+dev-haskell/validity-path 0.1.0.1 0.2.0.2: Validity instances for Path
+dev-haskell/validity-text 0.1.2.1 0.2.0.0: Validity instances for text
 dev-haskell/varying 0.7.0.3: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.0.7: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
