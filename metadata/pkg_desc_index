@@ -894,7 +894,7 @@ dev-haskell/hsp 0.7.1-r1 0.8.0 0.9.2 0.10.0: Haskell Server Pages is a library f
 dev-haskell/hsparql 0.2.7 0.2.8: A SPARQL query generator and DSL, and a client to query a SPARQL server
 dev-haskell/hspec 2.2.4 2.4.4: A Testing Framework for Haskell
 dev-haskell/hspec-attoparsec 0.1.0.2: Utility functions for testing your attoparsec parsers with hspec
-dev-haskell/hspec-contrib 0.3.0: Contributed functionality for Hspec
+dev-haskell/hspec-contrib 0.3.0 0.4.0: Contributed functionality for Hspec
 dev-haskell/hspec-core 2.2.4 2.4.4: A Testing Framework for Haskell
 dev-haskell/hspec-discover 2.2.4 2.4.4: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.6.1.1 0.7.2 0.8.2: Catchy combinators for HUnit
