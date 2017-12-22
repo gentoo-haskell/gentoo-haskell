@@ -14,10 +14,8 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator prefix
+inherit multilib pax-utils toolchain-funcs versionator prefix
 inherit check-reqs
-[[ ${PV} = *9999* ]] && inherit git-r3
-
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
@@ -26,14 +24,14 @@ arch_binaries=""
 
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
-#arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-arm.tbz2 )"
-#arch_binaries="$arch_binaries arm64? ( http://code.haskell.org/~slyfox/ghc-arm64/ghc-bin-${PV}-arm64.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
+#arch_binaries="$arch_binaries arm64? ( http://code.haskell.org/~slyfox/ghc-arm64/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -55,10 +53,10 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-#GHC_PV=8.2.0.20170404 # uncomment only for -rc ebuilds
+GHC_PV=8.4.0.20171214 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
+SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz )"
 S="${WORKDIR}"/${GHC_P}
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
@@ -67,15 +65,10 @@ BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 )
 
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-	unset SRC_URI
-fi
-
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp profile"
+#KEYWORDS="~alpha ~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp profile"
 IUSE+=" binary"
 
 RDEPEND="
@@ -112,7 +105,6 @@ DEPEND="${RDEPEND}
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-[[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
@@ -380,15 +372,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		EGIT_BRANCH="master"
-		if [[ -n ${GHC_BRANCH} ]]; then
-			EGIT_BRANCH="${GHC_BRANCH}"
-		fi
-
-		git-r3_src_unpack
-	fi
-
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
@@ -398,7 +381,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
+	unpack ${ONLYA}
 }
 
 src_prepare() {
@@ -488,17 +471,20 @@ src_prepare() {
 		cd "${S}" # otherwise eapply will break
 
 		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
+		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		eapply "${FILESDIR}"/${PN}-9999-prim-libm.patch
-		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
 
-		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
+		# a bunch of crosscompiler patches
+		# needs newer version:
+		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
+
+		# needs a new libffi release
+		eapply "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
 			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
-		eapply "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
 
 		bump_libs
 
@@ -576,11 +562,6 @@ src_configure() {
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
-
-		if [[ ${PV} == *9999* ]]; then
-			echo ./boot
-			./boot || die "./boot failed"
-		fi
 
 		local econf_args=()
 
@@ -671,16 +652,6 @@ src_compile() {
 		# 3. and then all the rest
 		emake all
 	fi # ! use binary
-}
-
-src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	make $make_test_target stage=2 THREADS=$(makeopts_jobs)
 }
 
 src_install() {
