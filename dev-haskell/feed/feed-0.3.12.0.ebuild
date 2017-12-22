@@ -26,14 +26,16 @@ RDEPEND=">=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'base >= 4 && < 4.10' 'base >= 4' \
-		'time < 1.7' 'time'
-	default
+		'time < 1.7' 'time' \
+		'HUnit >= 1.2 && < 1.6' 'HUnit >= 1.2'
 }
