@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/bifunctors-4.2.1 <dev-haskell/bifunctors-5.5
 		>=dev-haskell/parsec-3.1.9 <dev-haskell/parsec-3.2
 		>=dev-haskell/parsers-0.12.3 <dev-haskell/parsers-0.13
-		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9.2 <dev-haskell/tasty-hunit-0.10
+		>=dev-haskell/tasty-0.10.1.2
+		>=dev-haskell/tasty-hunit-0.9.2
 		dev-haskell/text )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty         >=0.10.1.2 && <0.12' 'tasty         >=0.10.1.2' \
+		'tasty-hunit   >=0.9.2    && <0.10' 'tasty-hunit   >=0.9.2'
+}
