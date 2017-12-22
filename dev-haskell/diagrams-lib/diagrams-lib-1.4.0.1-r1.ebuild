@@ -47,9 +47,9 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/numeric-extras
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
+		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9.2 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 src_prepare() {
@@ -57,5 +57,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'directory >= 1.2 && < 1.3' 'directory >= 1.2' \
-		'optparse-applicative >= 0.11 && < 0.14' 'optparse-applicative >= 0.11'
+		'optparse-applicative >= 0.11 && < 0.14' 'optparse-applicative >= 0.11' \
+		'tasty >= 0.10 && < 0.12' 'tasty >= 0.10' \
+		'tasty-quickcheck >= 0.8 && < 0.9' 'tasty-quickcheck >= 0.8'
 }
