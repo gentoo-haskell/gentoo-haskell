@@ -31,8 +31,15 @@ RDEPEND=">=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.6:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.12 ) )
+	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest        >= 0.11.1 && <0.12' 'doctest        >= 0.11.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
