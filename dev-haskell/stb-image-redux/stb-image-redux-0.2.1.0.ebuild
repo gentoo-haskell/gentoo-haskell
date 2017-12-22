@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,5 +22,12 @@ RDEPEND=">=dev-haskell/vector-0.10.12.3:=[profile?] <dev-haskell/vector-0.12:=[p
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/hspec-2.1.5 <dev-haskell/hspec-2.4 )
+	test? ( >=dev-haskell/hspec-2.1.5 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec >=2.1.5 && <2.4' 'hspec >=2.1.5'
+}
