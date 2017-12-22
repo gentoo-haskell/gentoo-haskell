@@ -34,6 +34,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-th )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag monad-control-1 monad-control-1)
