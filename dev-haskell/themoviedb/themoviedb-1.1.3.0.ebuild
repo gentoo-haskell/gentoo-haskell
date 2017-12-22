@@ -30,9 +30,17 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10 )
+	test? ( >=dev-haskell/tasty-0.10
+		>=dev-haskell/tasty-hunit-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty       >= 0.10 && < 0.12' 'tasty       >= 0.10' \
+		'tasty-hunit >= 0.9  && < 0.10' 'tasty-hunit >= 0.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
