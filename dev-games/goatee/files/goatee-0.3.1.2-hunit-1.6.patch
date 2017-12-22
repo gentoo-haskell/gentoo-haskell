@@ -1,0 +1,9 @@
+diff --git a/tests/Game/Goatee/CommonTest.hs b/tests/Game/Goatee/CommonTest.hs
+index 7e3265c..61abf51 100644
+--- a/tests/Game/Goatee/CommonTest.hs
++++ b/tests/Game/Goatee/CommonTest.hs
+@@ -143,3 +143,3 @@ forTests = "for" ~: TestList
+   [ "passes an empty list through" ~:
+-    ([] @=?) =<< sequence (for [] $ const $ assertFailure "Nope.")
++    ([] @=?) =<< sequence (for [] $ const $ (assertFailure "Nope." :: IO ()))
+ 

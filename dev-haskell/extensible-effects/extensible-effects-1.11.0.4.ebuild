@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,13 +26,20 @@ RDEPEND=">=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-th-0.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

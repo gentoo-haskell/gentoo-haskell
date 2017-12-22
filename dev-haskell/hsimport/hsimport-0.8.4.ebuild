@@ -30,6 +30,13 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/tasty-0.9.0.1 <dev-haskell/tasty-0.12
+	test? ( >=dev-haskell/tasty-0.9.0.1
 		>=dev-haskell/tasty-golden-2.2.0.1 <dev-haskell/tasty-golden-2.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty >=0.9.0.1 && <0.12' 'tasty >=0.9.0.1'
+}
