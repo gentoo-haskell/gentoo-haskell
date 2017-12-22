@@ -24,9 +24,16 @@ RDEPEND=">=dev-haskell/distributive-0.2:=[profile?] <dev-haskell/distributive-1:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14
+	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1
 					dev-haskell/quickcheck ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest        >= 0.11.1 && <0.13' 'doctest        >= 0.11.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
