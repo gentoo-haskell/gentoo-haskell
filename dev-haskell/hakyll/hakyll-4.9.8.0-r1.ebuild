@@ -55,8 +55,8 @@ RDEPEND=">=app-text/pandoc-1.14:=[profile?] <app-text/pandoc-1.20:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.11
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
 "
 
@@ -64,7 +64,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'pandoc-citeproc      >= 0.10.5 && < 0.11' 'pandoc-citeproc      >= 0.10.5'
+		'pandoc-citeproc      >= 0.10.5 && < 0.11' 'pandoc-citeproc      >= 0.10.5' \
+		'tasty                      >= 0.11 && < 0.12' 'tasty                      >= 0.11' \
+		'tasty-hunit                >= 0.9  && < 0.10' 'tasty-hunit                >= 0.9'
 }
 
 src_configure() {
