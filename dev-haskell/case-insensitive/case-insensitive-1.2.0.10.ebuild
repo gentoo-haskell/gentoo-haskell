@@ -24,7 +24,14 @@ RDEPEND=">=dev-haskell/hashable-1.0:=[profile?] <dev-haskell/hashable-1.3:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2.2 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.2.2
 		>=dev-haskell/test-framework-0.2.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.4 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                >= 1.2.2 && < 1.6' 'HUnit                >= 1.2.2'
+}
