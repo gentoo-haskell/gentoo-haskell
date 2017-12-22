@@ -23,12 +23,21 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
-		>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.8 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.8
+		>=dev-haskell/tasty-hunit-0.8
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 PATCHES=("${FILESDIR}"/${P}-fix-w8-tests.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty            >= 0.8 && < 0.12' 'tasty            >= 0.8' \
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
+		'tasty-hunit      >= 0.8 && < 0.10' 'tasty-hunit      >= 0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
