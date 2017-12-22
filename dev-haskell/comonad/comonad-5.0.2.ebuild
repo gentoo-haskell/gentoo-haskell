@@ -27,8 +27,15 @@ RDEPEND=">=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.13 ) )
+	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.11.1 && < 0.13' 'doctest >= 0.11.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
