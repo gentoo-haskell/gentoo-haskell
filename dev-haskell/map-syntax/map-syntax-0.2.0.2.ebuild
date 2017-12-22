@@ -22,8 +22,16 @@ RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/hspec-2.2.3 <dev-haskell/hspec-2.4
-		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-2
+	test? ( >=dev-haskell/hspec-2.2.3
+		>=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.3.0.2 <dev-haskell/quickcheck-3
 		>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.6 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                      >= 1.2      && < 2' 'HUnit                      >= 1.2' \
+		'hspec                      >= 2.2.3    && < 2.4' 'hspec                      >= 2.2.3'
+}

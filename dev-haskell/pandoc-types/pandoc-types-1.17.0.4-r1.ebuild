@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-1.1:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.10
 		~dev-haskell/string-qq-0.0.2
 		>=dev-haskell/test-framework-0.3 <dev-haskell/test-framework-0.9
@@ -38,5 +38,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'syb >= 0.1 && < 0.7' 'syb >= 0.1' \
-		'QuickCheck >= 2.4 && < 2.10' 'QuickCheck >= 2.4'
+		'QuickCheck >= 2.4 && < 2.10' 'QuickCheck >= 2.4' \
+		'HUnit >= 1.2 && < 1.6' 'HUnit >= 1.2'
 }
