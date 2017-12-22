@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -25,16 +25,20 @@ RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.9:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.10
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >=2.4 && < 2.9' 'QuickCheck >=2.4'
+		'QuickCheck >=2.4 && < 2.9' 'QuickCheck >=2.4' \
+		'HUnit >=1.2 && < 1.4' 'HUnit >=1.2' \
+		'tasty >= 0.10 && < 0.12' 'tasty >= 0.10' \
+		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9' \
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
 }
