@@ -24,10 +24,17 @@ RDEPEND=">=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-3.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/hunit-1.2.4.2 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.2.4.2
 		>=dev-haskell/test-framework-0.3.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.6 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                 >= 1.2.4.2 && < 1.6' 'HUnit                 >= 1.2.4.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
