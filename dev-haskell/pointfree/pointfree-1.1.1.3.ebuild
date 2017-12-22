@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-sr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/hunit-1.1 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.1
 		>=dev-haskell/quickcheck-2.1 )
 "
 
@@ -30,5 +30,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >= 2.1 && < 2.10' 'QuickCheck >= 2.1'
+		'QuickCheck >= 2.1 && < 2.10' 'QuickCheck >= 2.1' \
+		'HUnit >= 1.1 && < 1.6' 'HUnit >= 1.1'
 }

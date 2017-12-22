@@ -22,12 +22,14 @@ RDEPEND=">=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6 )
+	test? ( >=dev-haskell/hunit-1.2 )
 "
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'base             >= 4.5 && < 4.10' 'base >= 4.5' \
-		'template-haskell >= 2.2 && < 2.12' 'template-haskell >= 2.2'
-	default
+		'template-haskell >= 2.2 && < 2.12' 'template-haskell >= 2.2' \
+		'HUnit            >= 1.2 && < 1.6' 'HUnit            >= 1.2'
 }
