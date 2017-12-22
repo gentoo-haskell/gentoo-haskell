@@ -21,6 +21,13 @@ RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
+	test? ( >=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty             >=0.10 && <0.12' 'tasty             >=0.10'
+}

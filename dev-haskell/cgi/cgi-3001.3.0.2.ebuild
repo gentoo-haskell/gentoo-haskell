@@ -30,7 +30,7 @@ RDEPEND="<dev-haskell/exceptions-0.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.12
+	test? ( >=dev-haskell/doctest-0.8
 		>=dev-haskell/quickcheck-2.8.1 )
 "
 
@@ -39,7 +39,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'QuickCheck >= 2.8.1 && < 2.10' 'QuickCheck >= 2.8.1' \
-		'time >= 1.5 && < 1.7' 'time >= 1.5'
+		'time >= 1.5 && < 1.7' 'time >= 1.5' \
+		'doctest >= 0.8 && < 0.12' 'doctest >= 0.8'
 }
 
 src_configure() {

@@ -41,8 +41,15 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0 <dev-haskell/cabal-1.25
-	test? ( >=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.4 )
+	test? ( >=dev-haskell/hunit-1.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                >=1.3 && <1.4' 'HUnit                >=1.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

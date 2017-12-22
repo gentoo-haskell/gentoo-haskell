@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -42,8 +42,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/pseudomacros-0.0 <dev-haskell/pseudomacros-0.1
 		>=dev-haskell/quickcheck-2.8
 		>=dev-haskell/tasty-0.10
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8
 		>=dev-haskell/th-lift-instances-0.1 <dev-haskell/th-lift-instances-0.2 )
 "
 
@@ -56,5 +56,7 @@ src_prepare() {
 		'tasty                      >= 0.10  && < 0.11' 'tasty                      >= 0.10' \
 		'template-haskell           >= 2.8   && < 2.11' 'template-haskell           >= 2.8' \
 		'QuickCheck                 >= 2.8   && < 2.9' 'QuickCheck                 >= 2.8' \
-		'directory                  >= 1.2   && < 1.3' 'directory                  >= 1.2'
+		'directory                  >= 1.2   && < 1.3' 'directory                  >= 1.2' \
+		'tasty-hunit                >= 0.9   && < 0.10' 'tasty-hunit                >= 0.9' \
+		'tasty-quickcheck           >= 0.8   && < 0.9' 'tasty-quickcheck           >= 0.8'
 }
