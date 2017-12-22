@@ -1,5 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/dlist-0.4:=[profile?] <dev-haskell/dlist-0.9:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?] >=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6 >=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 >=dev-haskell/test-framework-0.2 <dev-haskell/test-framework-1 >=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-1 >=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-1 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/dlist-0.4:=[profile?] <dev-haskell/dlist-0.9:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?] >=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/hunit-1.2 >=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 >=dev-haskell/test-framework-0.2 <dev-haskell/test-framework-1 >=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-1 >=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-1 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Globbing library
 EAPI=6
 HOMEPAGE=http://iki.fi/matti.niemenmaa/glob/
@@ -10,4 +10,4 @@ RDEPEND=>=dev-haskell/dlist-0.4:=[profile?] <dev-haskell/dlist-0.9:=[profile?] >
 SLOT=0/0.7.14
 SRC_URI=mirror://hackage/packages/archive/Glob/0.7.14/Glob-0.7.14.tar.gz
 _eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	97ce9decef1ff4b6c5be700283f67343	ghc-package	0cb443d7baa50c473ed0a66d975de37f	haskell-cabal	5901516a7b3f0e3403a890b17801d63b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	6f5991c7101863d0b29df63990ad852e	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=27cf8cbcefe1047eceeb8765e914b60c
+_md5_=e771a9ee77e00220f0e92a5e3a51d3ca
