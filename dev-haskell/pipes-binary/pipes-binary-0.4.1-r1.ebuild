@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -29,8 +29,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/binary-0.6
 		>=dev-haskell/lens-family-core-1.0 <dev-haskell/lens-family-core-1.3
 		>=dev-haskell/smallcheck-1.0 <dev-haskell/smallcheck-1.2
-		>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.8 <dev-haskell/tasty-hunit-0.10
+		>=dev-haskell/tasty-0.8
+		>=dev-haskell/tasty-hunit-0.8
 		>=dev-haskell/tasty-smallcheck-0.2 <dev-haskell/tasty-smallcheck-0.9
 		>=dev-haskell/transformers-0.2 )
 "
@@ -38,5 +38,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'binary           >= 0.6     && < 0.8' 'binary           >= 0.6' \
-		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2'
+		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2' \
+		'tasty            >= 0.8     && < 0.12' 'tasty            >= 0.8' \
+		'tasty-hunit      >= 0.8     && < 0.10' 'tasty-hunit      >= 0.8'
 }
