@@ -23,6 +23,14 @@ RDEPEND=">=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/quickcheck-instances-0.1 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-0.8 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.8
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty                  >= 0.8 && < 0.12' 'tasty                  >= 0.8' \
+		'tasty-quickcheck       >= 0.8 && < 0.9' 'tasty-quickcheck       >= 0.8'
+}
