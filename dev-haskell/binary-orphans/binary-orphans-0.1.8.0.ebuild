@@ -37,6 +37,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/quickcheck-2.10 <dev-haskell/quickcheck-2.11
 		>=dev-haskell/quickcheck-instances-0.3.16 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/semigroups-0.16.2.2
-		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-0.12
+		>=dev-haskell/tasty-0.10.1.2
 		>=dev-haskell/tasty-quickcheck-0.8.3.2 <dev-haskell/tasty-quickcheck-0.10 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty                >=0.10.1.2 && <0.12' 'tasty                >=0.10.1.2'
+}
