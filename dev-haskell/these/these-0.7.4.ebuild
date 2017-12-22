@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-1.3:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/quickcheck-instances-0.3.15 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-0.12
+		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
 "
 
@@ -44,5 +44,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'quickcheck-instances    >= 0.3.15 && < 0.3.16' 'quickcheck-instances    >= 0.3.15'
+		'quickcheck-instances    >= 0.3.15 && < 0.3.16' 'quickcheck-instances    >= 0.3.15' \
+		'tasty                   >= 0.10   && < 0.12' 'tasty                   >= 0.10'
 }
