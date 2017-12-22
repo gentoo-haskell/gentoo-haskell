@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit
 		dev-haskell/mtl
 		dev-haskell/tasty
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
+		>=dev-haskell/tasty-hunit-0.9
 		dev-haskell/tasty-th )
 "
 
