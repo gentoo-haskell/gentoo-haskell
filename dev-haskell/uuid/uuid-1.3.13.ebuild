@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/cryptohash-md5-0.11.100:=[profile?] <dev-haskell/cryptoha
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4
 		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9
@@ -43,5 +43,6 @@ src_prepare() {
 		'time            >= 1.1      && < 1.8' 'time            >= 1.1' \
 		'tasty            >= 0.10  && < 0.12' 'tasty            >= 0.10' \
 		'tasty-hunit      == 0.9.*' 'tasty-hunit      >= 0.9' \
-		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
+		'HUnit            >= 1.2   && < 1.4' 'HUnit            >= 1.2'
 }
