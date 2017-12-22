@@ -25,8 +25,17 @@ RDEPEND=">=dev-haskell/mtl-1.1.0.0:=[profile?] <dev-haskell/mtl-3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
-		>=dev-haskell/quickcheck-2.5 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.5
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                      >= 1.2 && < 1.6' 'HUnit                      >= 1.2' \
+		'test-framework-hunit       >= 0.3 && < 0.4' 'test-framework-hunit       >= 0.3' \
+		'QuickCheck                 >= 2.5 && < 2.10' 'QuickCheck                 >= 2.5'
+}
