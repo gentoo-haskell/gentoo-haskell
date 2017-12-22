@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/dlist-0.4:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
+	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/test-framework-0.2 <dev-haskell/test-framework-1
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-1
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HUnit                      >= 1.2 && < 1.6' 'HUnit                      >= 1.2'
+}
