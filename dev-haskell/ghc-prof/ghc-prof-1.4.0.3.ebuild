@@ -26,9 +26,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.14
 		<dev-haskell/tasty-0.13
-		>=dev-haskell/tasty-hunit-0.9.1 <dev-haskell/tasty-hunit-0.10
+		>=dev-haskell/tasty-hunit-0.9.1
 		dev-haskell/temporary )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty-hunit >= 0.9.1 && < 0.10' 'tasty-hunit >= 0.9.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
