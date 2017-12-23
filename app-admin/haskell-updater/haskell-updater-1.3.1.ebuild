@@ -4,15 +4,15 @@
 EAPI=6
 
 CABAL_FEATURES="bin nocabaldep"
-inherit eutils haskell-cabal git-r3
+inherit eutils haskell-cabal
 
 DESCRIPTION="Rebuild Haskell dependencies in Gentoo"
 HOMEPAGE="http://haskell.org/haskellwiki/Gentoo#haskell-updater"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-EGIT_REPO_URI="https://github.com/gentoo-haskell/haskell-updater.git"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE=""
 
 DEPEND=">=dev-lang/ghc-6.12.1"
@@ -32,8 +32,6 @@ src_prepare() {
 		sed -i -e 's,"/","'"${EPREFIX}"'/",g' \
 			"${S}/Distribution/Gentoo/GHC.hs" || die
 	fi
-
-	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
 }
 
 src_configure() {
