@@ -25,9 +25,16 @@ RDEPEND=">=dev-haskell/bitarray-0.0.1:=[profile?] <dev-haskell/bitarray-0.1:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/getopt-generics-0.11 <dev-haskell/getopt-generics-0.14
-		>=dev-haskell/quickcheck-2.1 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.1
 		>=dev-haskell/split-0.1 <dev-haskell/split-0.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck  >= 2.1 && < 2.10' 'QuickCheck  >= 2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
