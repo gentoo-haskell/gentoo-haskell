@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,6 +18,7 @@ KEYWORDS=""
 IUSE="+network-uri"
 
 RDEPEND="dev-haskell/cairo:=[profile?]
+	dev-haskell/configfile:=[profile?]
 	>=dev-haskell/dbus-0.10.7:=[profile?] <dev-haskell/dbus-1.0:=[profile?]
 	>=dev-haskell/dyre-0.8.6:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
 	>=dev-haskell/either-4.0.0.0:=[profile?]
@@ -41,6 +42,8 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-haskell/x11-1.5.0.1:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
+	dev-haskell/xml:=[profile?]
+	dev-haskell/xml-helpers:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	x11-libs/gtk+:2
 	x11-wm/xmonad:=[profile?]
