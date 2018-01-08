@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,6 +31,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/doctest-0.9.0.1 <dev-haskell/doctest-0.14 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.9.0.1 && < 0.13' 'doctest >= 0.9.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
