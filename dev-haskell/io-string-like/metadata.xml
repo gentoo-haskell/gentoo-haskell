@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The functions in the Prelude such as &quot;getContents&quot;, &quot;putStr&quot; only work for plain Strings.
+		
+		There are similar functions in &quot;ByteString&quot; for reading and writing, as well as \&quot;Text\&quot;.
+		
+		This requires one to import the appropriate functions, usually qualified, for the particular datatype one is using. Changing the datatype at the very least involves changing import statements across your program.
+		
+		The package introduces classes to overload functions like &quot;getContents&quot;, &quot;putStr&quot; over multiple datatypes, so implementations can be changed easily.
+		
+		All the code documentation is in &quot;System.IO.StringLike.Impl&quot;.
+		
+		All the other modules are just re-exports.
+	</longdescription>
+</pkgmetadata>
