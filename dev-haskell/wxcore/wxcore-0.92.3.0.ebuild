@@ -17,14 +17,14 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="wxWinLL-3.1"
 SLOT="${WX_GTK_VER}/${PV}"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
+IUSE="gstreamer"
 
 RDEPEND="dev-haskell/parsec:=[profile?]
 	dev-haskell/stm:=[profile?]
-	>=dev-haskell/wxc-0.92:${WX_GTK_VER}=[profile?]
+	>=dev-haskell/wxc-0.92:${WX_GTK_VER}=[profile?,gstreamer?]
 	>=dev-haskell/wxdirect-0.91:${WX_GTK_VER}=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer,opengl]
+	x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer?,opengl]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.23
