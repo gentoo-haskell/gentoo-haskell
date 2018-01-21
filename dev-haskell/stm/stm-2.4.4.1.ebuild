@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.4.1_alpha1"
+CABAL_CORE_LIB_GHC_PV="PM:8.4.1_alpha1 PM:8.4.1_alpha2"
 
 src_prepare() {
 	default
