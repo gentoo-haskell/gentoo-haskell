@@ -138,7 +138,9 @@ first() {
 
 # we get a string of form:
 #     "20141204/stage3-amd64-20141204.tar.bz2 207889127"
-relative_stage3_bz2=$(first `wget "${stage3_url}" -O - | fgrep .tar.bz2`)
+# or
+#     "20180117T214502Z/stage3-i686-20180117T214502Z.tar.xz 179923656"
+relative_stage3_bz2=$(first `wget "${stage3_url}" -O - | fgrep .tar`)
 full_stage3_bz2=$(dirname "${stage3_url}")/${relative_stage3_bz2}
 stage3_name=$(basename "${full_stage3_bz2}")
 
@@ -162,7 +164,7 @@ run mkdir "${chroot_temp}"
     run mkdir "${chroot_subdir}"
     (
         run cd "${chroot_subdir}"
-        run tar -xjf "${stage_dir}"/"${stage3_name}"
+        run tar -xf "${stage_dir}"/"${stage3_name}"
 
         cat >init-portage-env.bash <<-EOF
 	echo "Setting up profile"
