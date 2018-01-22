@@ -33,6 +33,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2 )
 "
 
+CABAL_CORE_LIB_GHC_PV="PM:8.4.1_alpha2"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bytestring-builder \
