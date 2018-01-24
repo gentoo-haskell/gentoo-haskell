@@ -1,0 +1,7 @@
+diff --git a/hadolint.cabal b/hadolint.cabal
+index 0022181..b861c88 100644
+--- a/hadolint.cabal
++++ b/hadolint.cabal
+@@ -60,2 +59,0 @@ executable hadolint
+-  if !(os(osx))
+-    ld-options: -static -pthread
