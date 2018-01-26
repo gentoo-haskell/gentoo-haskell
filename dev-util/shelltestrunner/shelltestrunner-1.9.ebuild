@@ -13,7 +13,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND=">=dev-haskell/cmdargs-0.7:=
 	>=dev-haskell/diff-0.2.0:=
@@ -32,3 +32,19 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 
 "
+
+src_test() {
+	# First we have to prepend "dist/build/shelltest" to the PATH, so
+	# that when the tests themselves run "shelltest", they get the
+	# recently-built executable and not an already-installed one. Then
+	# we exclude the Windows tests, leaving (for now...) only the Unix
+	# and generic ones.
+	#
+	# We also skip the macro tests for now because the sdist is missing
+	# some files:
+	#
+	#   https://github.com/simonmichael/shelltestrunner/issues/13
+	#
+	PATH="dist/build/shelltest:${PATH}" \
+		shelltest -x .windows -x macros.test tests/ || die 'test suite failed'
+}
