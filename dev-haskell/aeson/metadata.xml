@@ -2,9 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="project">
-          <email>haskell@gentoo.org</email>
-          <name>Gentoo Haskell</name>
-        </maintainer>
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
 	<longdescription>
 		A JSON parsing and encoding library optimized for ease of use
 		and high performance.
@@ -67,4 +67,7 @@
 		
 		(A note on naming: in Greek mythology, Aeson was the father of Jason.)
 	</longdescription>
+	<use>
+		<flag name="cffi">Controls whether to include c-ffi bits or pure haskell. Default to False for security.</flag>
+	</use>
 </pkgmetadata>

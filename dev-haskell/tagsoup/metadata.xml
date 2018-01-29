@@ -13,7 +13,4 @@
 		
 		Users should start from the "Text.HTML.TagSoup" module.
 	</longdescription>
-	<use>
-		<flag name="testprog">Build the test program.</flag>
-	</use>
 </pkgmetadata>

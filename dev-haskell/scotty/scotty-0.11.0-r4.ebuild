@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?]
 	>=dev-haskell/case-insensitive-1.0.0.1:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	dev-haskell/fail:=[profile?]
-	>=dev-haskell/http-types-0.8.2:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
+	>=dev-haskell/http-types-0.8.2:=[profile?]
 	>=dev-haskell/monad-control-1.0.0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
@@ -50,5 +50,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'aeson               >= 0.6.2.1  && < 0.11' 'aeson >= 0.6.2.1' \
-		'data-default-class  >= 0.0.1    && < 0.1' 'data-default-class  >= 0.0.1'
+		'data-default-class  >= 0.0.1    && < 0.1' 'data-default-class  >= 0.0.1' \
+		'http-types          >= 0.8.2    && < 0.10' 'http-types          >= 0.8.2'
 }

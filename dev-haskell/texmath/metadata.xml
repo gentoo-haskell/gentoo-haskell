@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="project">
-  <email>haskell@gentoo.org</email>
-  <name>Gentoo Haskell</name>
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
 		The texmathml library provides functions to convert LaTeX
@@ -19,7 +19,7 @@
 		@texmath-cgi@.
 	</longdescription>
 <use>
-  <flag name="executable">Compile test executable.</flag>
-  <flag name="network-uri">Get Network.URI from the network-uri package.</flag>
+	<flag name="executable">Compile test executable.</flag>
+	<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
 </use>
 </pkgmetadata>
