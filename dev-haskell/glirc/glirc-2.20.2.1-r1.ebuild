@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/config-value-0.5:=[profile?] <dev-haskell/config-value-0.6:=[profile?]
-	>=dev-haskell/gitrev-1.2:=[profile?] <dev-haskell/gitrev-1.3:=[profile?]
+	>=dev-haskell/gitrev-1.2:=[profile?]
 	>=dev-haskell/hashable-1.2.4:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hookup-0.1:=[profile?] <dev-haskell/hookup-0.2:=[profile?]
 	>=dev-haskell/hsopenssl-0.11:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
@@ -48,7 +48,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'HUnit                >=1.3 && <1.4' 'HUnit                >=1.3'
+		'HUnit                >=1.3 && <1.4' 'HUnit                >=1.3' \
+		'gitrev               >=1.2    && <1.3' 'gitrev               >=1.2'
 }
 
 src_configure() {
