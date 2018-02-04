@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
-	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.9:=[profile?]
+	>=dev-haskell/blaze-html-0.4:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -52,5 +52,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'directory                  >= 1.1     && < 1.3' 'directory                  >= 1.1' \
-		'QuickCheck                 >= 2        && < 2.10' 'QuickCheck                 >= 2'
+		'QuickCheck                 >= 2        && < 2.10' 'QuickCheck                 >= 2' \
+		'blaze-html                 >= 0.4     && < 0.9' 'blaze-html                 >= 0.4'
 }
