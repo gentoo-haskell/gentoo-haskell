@@ -15,9 +15,11 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#keep keywords in sync with ghc-8.2.1
+#KEYWORDS="~amd64 ~x86"
 IUSE="ffi gmp"
 
+RESTRICT=test # pulls stack
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.8:=[profile?]
@@ -50,7 +52,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
 	gmp? ( <dev-haskell/libffi-0.2:=[profile?]
-		dev-libs/gmp )
+		dev-libs/gmp:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2 <dev-haskell/cabal-2.1
