@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,8 +19,8 @@ IUSE="+no-examples no-exe no-unicode system-libyaml"
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.0:=[profile?]
-	>=dev-haskell/conduit-1.1.0:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
-	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.2:=[profile?]
+	>=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
+	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/text:=[profile?]
@@ -32,8 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( dev-haskell/aeson-qq
-		dev-haskell/base-compat
+	test? ( dev-haskell/base-compat
 		>=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/mockery
