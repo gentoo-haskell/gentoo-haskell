@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.1:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -41,3 +41,12 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.1
 		dev-haskell/quickcheck )
 "
+
+PATCHES=("${FILESDIR}"/${P}-awp068.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ansi-terminal        >= 0.6     && < 0.7' 'ansi-terminal        >= 0.6'
+}
