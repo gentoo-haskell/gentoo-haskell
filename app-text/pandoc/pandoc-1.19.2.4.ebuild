@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -84,7 +84,8 @@ src_prepare() {
 		'skylighting >= 0.1.1.5 && < 0.2' 'skylighting >= 0.1.1.5' \
 		'skylighting >= 0.1.1.4 && < 0.2' 'skylighting >= 0.1.1.4' \
 		'skylighting >= 0.1.1.3 && < 0.2' 'skylighting >= 0.1.1.3' \
-		'syb >= 0.1 && < 0.8' 'syb >= 0.1'
+		'syb >= 0.1 && < 0.8' 'syb >= 0.1' \
+		'pandoc-types >= 1.17 && < 1.17.1' 'pandoc-types >= 1.17'
 }
 
 src_configure() {

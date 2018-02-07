@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT="test" # requires running redis
+
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/attoparsec-0.12.0.0:=[profile?]
 	>=dev-haskell/hedis-0.6.0:=[profile?]
