@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs redis
+
 RDEPEND=">=dev-haskell/async-2.1:=[profile?]
 	>=dev-haskell/bytestring-lexing-0.5:=[profile?]
 	dev-haskell/errors:=[profile?]
