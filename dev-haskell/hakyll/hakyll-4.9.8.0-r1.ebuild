@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -59,6 +59,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-pandoc-citeproc-0.14.patch)
 
 src_prepare() {
 	default

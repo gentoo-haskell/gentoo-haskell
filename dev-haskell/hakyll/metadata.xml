@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="buildwebsite">Build the hakyll website</flag>
 		<flag name="previewserver">Include the preview server</flag>
 		<flag name="checkexternal">Include external link checking</flag>
 		<flag name="watchserver">wait for filesystem changes and rebuild pages</flag>
