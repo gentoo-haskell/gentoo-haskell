@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cereal-0.4.0.0:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
-	>=dev-haskell/conduit-1.0.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
+	>=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/resourcet-0.4:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "

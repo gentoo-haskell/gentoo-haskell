@@ -31,6 +31,7 @@
 >=dev-haskell/xmlhtml-0.2.5
 >=dev-haskell/persistent-mongodb-2.8
 >=dev-haskell/hakyll-4.11
+>=dev-haskell/cereal-conduit-0.8
 
 # Sergei Trofimovich <slyfox@gentoo.org> (19 Nov 2016)
 # Masked as this minor release has too many breakages:
