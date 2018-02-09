@@ -20,6 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs running mongodb
+
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1.6:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
 	>=dev-haskell/bson-0.3:=[profile?] <dev-haskell/bson-0.4:=[profile?]
