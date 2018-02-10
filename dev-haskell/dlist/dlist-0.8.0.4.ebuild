@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,5 +21,5 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
-	test? ( >=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.11 )
+	test? ( >=dev-haskell/quickcheck-2.10 <dev-haskell/quickcheck-2.12 )
 "
