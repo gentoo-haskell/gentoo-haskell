@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
+RDEPEND=">=dev-haskell/hpp-0.3.1:=[profile?] <dev-haskell/hpp-0.6:=[profile?]
+	>=dev-haskell/juicypixels-3:=[profile?]
 	>=dev-haskell/linear-1.1.3:=[profile?]
 	>=dev-haskell/opengl-3:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-haskell/openglraw-3.0:=[profile?] <dev-haskell/openglraw-3.3:=[profile?]
