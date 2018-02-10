@@ -1,0 +1,10 @@
+Remove URI reference to avoid networking attempts.
+
+diff --git a/docs/users_guide/users_guide.xml b/docs/users_guide/users_guide.xml
+index 2dea1fd..468dd65 100644
+--- a/docs/users_guide/users_guide.xml
++++ b/docs/users_guide/users_guide.xml
+@@ -2,3 +2,2 @@
+ <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+-                    "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+                       [

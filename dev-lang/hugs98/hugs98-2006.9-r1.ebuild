@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -70,6 +70,7 @@ PATCHES=(
 	"${FILESDIR}"/hugs98-2005.3-find.patch
 	"${FILESDIR}"/hugs98-2005.3-conditional-doc.patch
 	"${FILESDIR}"/hugs98-2006.9-gcc-6.patch
+	"${FILESDIR}"/hugs98-2006.9-no-oasis.patch
 )
 
 src_configure() {
