@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.16:=[profile?]
+RDEPEND=">=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -33,5 +33,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9'
+		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9' \
+		'lens >= 4.0 && < 4.16' 'lens >= 4.0'
 }
