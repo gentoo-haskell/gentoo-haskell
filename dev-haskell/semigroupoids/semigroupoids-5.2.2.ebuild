@@ -33,15 +33,8 @@ RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 )
+	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'doctest   >= 0.11.1 && < 0.13' 'doctest   >= 0.11.1'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
