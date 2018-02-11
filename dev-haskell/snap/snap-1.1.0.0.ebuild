@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/hashable-1.2.0.6:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/heist-1.0:=[profile?] <dev-haskell/heist-1.1:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.16:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/map-syntax-0.2:=[profile?] <dev-haskell/map-syntax-0.3:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -45,8 +45,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/async-2.0.1.5 <dev-haskell/async-2.2
-		>=dev-haskell/glob-0.7.5 <dev-haskell/glob-0.9
+	test? ( >=dev-haskell/async-2.0.1.5
 		>=dev-haskell/http-streams-0.7.1.1 <dev-haskell/http-streams-0.9
 		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.7
 		>=dev-haskell/quickcheck-2.4.2
@@ -62,7 +61,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4.2    && < 2.10' 'QuickCheck                 >= 2.4.2'
+		'async                      >= 2.0.1.5  && < 2.2' 'async                      >= 2.0.1.5' \
+		'QuickCheck                 >= 2.4.2    && < 2.11' 'QuickCheck                 >= 2.4.2' \
+		'lens                      >= 3.7.6    && < 4.16' 'lens                      >= 3.7.6'
 }
 
 src_configure() {
