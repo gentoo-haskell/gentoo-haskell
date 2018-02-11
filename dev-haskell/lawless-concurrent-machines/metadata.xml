@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A simple use-case for this library is to run the stages
+		of a pipelined streaming computation concurrently. If
+		data is streaming through multiple processing stages, you
+		might build a machine like
+		
+		@
+		step1 &gt;~&gt; step2 &gt;~&gt; step3
+		@
+		
+		The @&gt;~&gt;@ operator connects the machines on
+		either side with a one-element buffer. This means that
+		data is pulled from upstream sources eagerly (perhaps
+		pulling one more value than will be consumed by
+		downstream), but it also means that each stage can be
+		working simultaneously, increasing throughput of the
+		entire pipeline.
+		
+		A few small examples are available in the @examples@
+		directory of the source repository.
+		
+		NOTE: This is a temporary fork until concurrent-machines
+		0.3.1 is released.
+	</longdescription>
+</pkgmetadata>
