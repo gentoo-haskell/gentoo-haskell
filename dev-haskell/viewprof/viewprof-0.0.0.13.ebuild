@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,16 +17,24 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/brick-0.16:= <dev-haskell/brick-0.30:=
+RDEPEND=">=dev-haskell/brick-0.16:= <dev-haskell/brick-0.34:=
 	>=dev-haskell/ghc-prof-1.4:= <dev-haskell/ghc-prof-1.5:=
-	>=dev-haskell/lens-4.14:= <dev-haskell/lens-4.16:=
+	>=dev-haskell/lens-4.14:=
 	>=dev-haskell/scientific-0.3.4.4:= <dev-haskell/scientific-0.4:=
 	>=dev-haskell/text-1.2.2.0:= <dev-haskell/text-1.3:=
 	>=dev-haskell/vector-0.10.12.3:= <dev-haskell/vector-0.13:=
 	>=dev-haskell/vector-algorithms-0.6.0.4:= <dev-haskell/vector-algorithms-0.8:=
-	>=dev-haskell/vty-5.13:= <dev-haskell/vty-5.19:=
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-haskell/vty-5.13:= <dev-haskell/vty-5.20:=
+	>=dev-lang/ghc-8.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-1.24.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.9 && < 4.11' 'base >= 4.9' \
+		'lens >= 4.14 && < 4.16' 'lens >= 4.14'
+}
