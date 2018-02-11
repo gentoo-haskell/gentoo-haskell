@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/hsopenssl-0.11:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/irc-core-2.2:=[profile?] <dev-haskell/irc-core-2.3:=[profile?]
 	>=dev-haskell/kan-extensions-5.0:=[profile?] <dev-haskell/kan-extensions-5.1:=[profile?]
-	>=dev-haskell/lens-4.14:=[profile?] <dev-haskell/lens-4.16:=[profile?]
+	>=dev-haskell/lens-4.14:=[profile?]
 	>=dev-haskell/network-2.6.2:=[profile?] <dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
 	>=dev-haskell/socks-0.5.5:=[profile?] <dev-haskell/socks-0.6:=[profile?]
@@ -49,7 +49,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'HUnit                >=1.3 && <1.4' 'HUnit                >=1.3' \
-		'gitrev               >=1.2    && <1.3' 'gitrev               >=1.2'
+		'gitrev               >=1.2    && <1.3' 'gitrev               >=1.2' \
+		'lens                 >=4.14   && <4.16' 'lens                 >=4.14'
 }
 
 src_configure() {
