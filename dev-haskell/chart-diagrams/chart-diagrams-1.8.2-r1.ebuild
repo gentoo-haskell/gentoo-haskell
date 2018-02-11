@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/diagrams-postscript-0.7:=[profile?] <dev-haskell/diagrams-postscript-1.5:=[profile?]
 	>=dev-haskell/diagrams-svg-1.4:=[profile?] <dev-haskell/diagrams-svg-1.5:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-4.16:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
@@ -42,3 +42,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens >= 3.9 && < 4.16' 'lens >= 3.9'
+}
