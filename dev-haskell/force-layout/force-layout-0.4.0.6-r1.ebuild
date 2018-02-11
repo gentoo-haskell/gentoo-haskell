@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,10 +18,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-4.16:=[profile?]
+	>=dev-haskell/lens-3.0:=[profile?]
 	>=dev-haskell/linear-1.10:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.2 && < 4.10' 'base >= 4.2' \
+		'lens >= 3.0 && < 4.16' 'lens >= 3.0'
+}
