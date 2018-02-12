@@ -38,6 +38,7 @@
 >=dev-haskell/classy-prelude-conduit-1.4.0
 >=dev-haskell/pandoc-crossref-0.3
 >=dev-haskell/yesod-bin-1.6
+>=dev-haskell/yesod-eventsource-1.6
 
 # Sergei Trofimovich <slyfox@gentoo.org> (19 Nov 2016)
 # Masked as this minor release has too many breakages:
