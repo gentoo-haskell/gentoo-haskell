@@ -33,6 +33,10 @@
 >=dev-haskell/hakyll-4.11
 >=dev-haskell/cereal-conduit-0.8
 
+# Mark Wright <gienah@gentoo.org> (12 Feb 2018)
+# Mask more revdeps of masked versions
+>=dev-haskell/pandoc-crossref-0.3
+
 # Sergei Trofimovich <slyfox@gentoo.org> (19 Nov 2016)
 # Masked as this minor release has too many breakages:
 #  - Strings are still inlined: https://ghc.haskell.org/trac/ghc/ticket/12855
