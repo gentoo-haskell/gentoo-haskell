@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/generic-deriving-1.6.2:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?]
 	>=dev-haskell/stm-2.4.2:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
-	>=dev-haskell/tasty-0.10:=[profile?] <dev-haskell/tasty-0.13:=[profile?]
+	>=dev-haskell/tasty-0.10:=[profile?] <dev-haskell/tasty-1.1:=[profile?]
 	>=dev-haskell/xml-1.3.13:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
