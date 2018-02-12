@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,5 +36,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'tasty         >=0.10.1.2 && <0.12' 'tasty         >=0.10.1.2' \
-		'tasty-hunit   >=0.9.2    && <0.10' 'tasty-hunit   >=0.9.2'
+		'tasty-hunit   >=0.9.2    && <0.10' 'tasty-hunit   >=0.9.2' \
+		'base             >=4.6      && <4.10' 'base             >=4.6' \
+		'template-haskell >=2.8.0.0  && <2.12' 'template-haskell >=2.8.0.0' \
+		'time             >=1.4.2    && <1.7' 'time             >=1.4.2'
 }
