@@ -33,6 +33,7 @@
 		@diagrams-latex.sty@ is licensed under the GPL.
 	</longdescription>
 	<use>
+		<flag name="pgf">install PGF-specific builder tool</flag>
 		<flag name="ps">Enable postscript backend</flag>
 		<flag name="rasterific">Enable rasterific backend</flag>
 	</use>
