@@ -37,6 +37,7 @@
 # Mask more revdeps of masked versions
 >=dev-haskell/classy-prelude-conduit-1.4.0
 >=dev-haskell/pandoc-crossref-0.3
+>=dev-haskell/yesod-auth-1.6
 >=dev-haskell/yesod-bin-1.6
 >=dev-haskell/yesod-eventsource-1.6
 
