@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.6:=[profile?] <dev-haskell/binary-0.9:=[profile?]
-	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.2:=[profile?]
+	>=dev-haskell/pipes-4.0:=[profile?]
 	>=dev-haskell/pipes-bytestring-2.0:=[profile?] <dev-haskell/pipes-bytestring-2.2:=[profile?]
 	>=dev-haskell/pipes-parse-3.0:=[profile?] <dev-haskell/pipes-parse-3.1:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
@@ -40,5 +40,6 @@ src_prepare() {
 		'binary           >= 0.6     && < 0.8' 'binary           >= 0.6' \
 		'transformers     >= 0.2     && < 0.5' 'transformers     >= 0.2' \
 		'tasty            >= 0.8     && < 0.12' 'tasty            >= 0.8' \
-		'tasty-hunit      >= 0.8     && < 0.10' 'tasty-hunit      >= 0.8'
+		'tasty-hunit      >= 0.8     && < 0.10' 'tasty-hunit      >= 0.8' \
+		'pipes            >= 4.0     && < 4.2' 'pipes            >= 4.0'
 }
