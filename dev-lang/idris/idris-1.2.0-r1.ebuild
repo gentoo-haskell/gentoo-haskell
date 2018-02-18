@@ -22,7 +22,7 @@ IUSE="ffi gmp"
 RESTRICT=test # pulls stack
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
-	<dev-haskell/ansi-terminal-0.8:=[profile?]
+	dev-haskell/ansi-terminal:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/async-2.2:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -76,7 +76,8 @@ src_prepare() {
 	cabal_chdeps \
 		'process < 1.7' 'process' \
 		'aeson >= 0.6 && < 1.3' 'aeson >= 0.6' \
-		'optparse-applicative >= 0.13 && < 0.15' 'optparse-applicative >= 0.13'
+		'optparse-applicative >= 0.13 && < 0.15' 'optparse-applicative >= 0.13' \
+		'ansi-terminal < 0.8' 'ansi-terminal'
 }
 
 src_configure() {
