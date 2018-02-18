@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.5:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.5:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -34,5 +34,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory >= 1.0 && < 1.3' 'directory >= 1.0'
+		'directory >= 1.0 && < 1.3' 'directory >= 1.0' \
+		'ansi-terminal >= 0.5 && < 0.7' 'ansi-terminal >= 0.5'
 }
