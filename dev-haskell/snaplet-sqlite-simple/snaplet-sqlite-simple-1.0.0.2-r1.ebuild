@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.11.1.4:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/monad-control-1.0.1.0:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>=dev-haskell/snap-1.0:=[profile?] <dev-haskell/snap-1.1:=[profile?]
+	>=dev-haskell/snap-1.0:=[profile?]
 	>=dev-haskell/sqlite-simple-0.4.1:=[profile?] <dev-haskell/sqlite-simple-1.0:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
@@ -48,5 +48,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory                  >= 1.0      && < 1.3' 'directory                  >= 1.0'
+		'directory                  >= 1.0      && < 1.3' 'directory                  >= 1.0' \
+		'snap                       >= 1.0      && < 1.1' 'snap                       >= 1.0' \
+		'snap                       >= 1.0     && < 1.1' 'snap                       >= 1.0'
 }
