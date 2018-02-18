@@ -1,0 +1,25 @@
+--- hledger-web-1.5-orig/Foundation.hs	2017-12-31 05:17:59.000000000 +1100
++++ hledger-web-1.5/Foundation.hs	2018-02-18 20:29:56.062790627 +1100
+@@ -152,9 +152,9 @@
+ 
+     -- This is done to provide an optimization for serving static files from
+     -- a separate domain. Please see the staticRoot setting in Settings.hs
+-    urlRenderOverride y (StaticR s) =
++    urlParamRenderOverride y (StaticR s) _ =
+         Just $ uncurry (joinPath y (Settings.staticRoot $ settings y)) $ renderRoute s
+-    urlRenderOverride _ _ = Nothing
++    urlParamRenderOverride _ _ _ = Nothing
+ 
+ #ifndef DEVELOPMENT
+     -- This function creates static content files in the static folder
+@@ -169,8 +169,8 @@
+ 
+     -- What messages should be logged. The following includes all messages when
+     -- in development, and warnings and errors in production.
+-    shouldLog _ _source level =
+-        development || level == LevelWarn || level == LevelError
++    shouldLogIO _ _source level =
++        return $ development || level == LevelWarn || level == LevelError
+ 
+ -- This instance is required to use forms. You can modify renderMessage to
+ -- achieve customized and internationalized form validation messages.
