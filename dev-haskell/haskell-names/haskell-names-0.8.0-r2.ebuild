@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.1:=[profil
 	>=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/traverse-with-class-0.2.0.3:=[profile?] <dev-haskell/traverse-with-class-0.3:=[profile?]
+	>=dev-haskell/traverse-with-class-0.2.0.3:=[profile?]
 	>=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -39,5 +39,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'haskell-src-exts >= 1.18 && < 1.19' 'haskell-src-exts >= 1.18'
+		'haskell-src-exts >= 1.18 && < 1.19' 'haskell-src-exts >= 1.18' \
+		'traverse-with-class >= 0.2.0.3 && < 0.3' 'traverse-with-class >= 0.2.0.3'
 }
