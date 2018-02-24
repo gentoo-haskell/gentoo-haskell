@@ -9,6 +9,9 @@ dev-haskell/webkitgtk3
 dev-haskell/webkitgtk3-javascriptcore
 <app-editors/leksah-0.16
 <app-editors/leksah-server-0.16
+<dev-haskell/ghcjs-dom-0.3
+<dev-haskell/jsaddle-0.6
+<www-client/hbro-1.8
 
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Jan 2018)
 # Masked as many reverse dependencies depend on older versions.
