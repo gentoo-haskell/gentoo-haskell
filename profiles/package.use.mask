@@ -1,0 +1,6 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
+# Follow ::gentoo mask bindings for outdated
+#   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
+# Dependencies will need to be ported to
+#   dev-haskell/gi-webkit2 and dev-haskell/gi-javascriptcore
+app-editors/leksah codemirror
