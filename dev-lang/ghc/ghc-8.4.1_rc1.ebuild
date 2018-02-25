@@ -474,6 +474,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
+		eapply "${FILESDIR}"/${PN}-8.4.1_rc1-LD.patch
+
 		# a bunch of crosscompiler patches
 		# needs newer version:
 		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
