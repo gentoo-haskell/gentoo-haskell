@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/async:=
 	dev-haskell/base64-bytestring:=
 	>=dev-haskell/blaze-builder-0.2.1.4:= <dev-haskell/blaze-builder-0.5:=
 	>=dev-haskell/cabal-1.18:=
-	>=dev-haskell/conduit-1.2:=
+	>=dev-haskell/conduit-1.2.13:=
 	dev-haskell/conduit-extra:=
 	dev-haskell/data-default-class:=
 	dev-haskell/file-embed:=
