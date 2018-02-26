@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/brick-0.17:= <dev-haskell/brick-0.24:=
+RDEPEND=">=dev-haskell/brick-0.17:=
 	dev-haskell/cabal:=
 	dev-haskell/conduit:=
 	dev-haskell/conduit-extra:=
@@ -36,3 +36,10 @@ RDEPEND=">=dev-haskell/brick-0.17:= <dev-haskell/brick-0.24:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'brick >= 0.17 && < 0.21' 'brick >= 0.17'
+}
