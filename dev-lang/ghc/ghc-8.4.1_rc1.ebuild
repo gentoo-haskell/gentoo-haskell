@@ -102,7 +102,7 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
-PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
+PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
 
