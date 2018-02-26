@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.2:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/vty-5.11.1:=[profile?] <dev-haskell/vty-5.16:=[profile?]
+	>=dev-haskell/vty-5.11.1:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -50,7 +50,8 @@ src_prepare() {
 	cabal_chdeps \
 		'HUnit                >=1.3 && <1.4' 'HUnit                >=1.3' \
 		'gitrev               >=1.2    && <1.3' 'gitrev               >=1.2' \
-		'lens                 >=4.14   && <4.16' 'lens                 >=4.14'
+		'lens                 >=4.14   && <4.16' 'lens                 >=4.14' \
+		'vty                  >=5.11.1 && <5.16' 'vty                  >=5.11.1'
 }
 
 src_configure() {

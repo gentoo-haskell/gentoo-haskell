@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -24,7 +24,7 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.20:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?] <dev-haskell/configfile-1.2:=[profile?]
 	>=dev-haskell/feed-0.3.6:=[profile?] <dev-haskell/feed-0.4:=[profile?]
 	>=dev-haskell/filestore-0.6:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
-	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.5:=[profile?]
+	>=dev-haskell/happstack-server-7.0:=[profile?]
 	>=dev-haskell/highlighting-kate-0.5.0.1:=[profile?] <dev-haskell/highlighting-kate-0.7:=[profile?]
 	>=dev-haskell/hoauth2-0.4.2:=[profile?] <dev-haskell/hoauth2-0.6:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
@@ -64,6 +64,13 @@ RDEPEND=">=app-text/pandoc-1.12.4:=[profile?] <app-text/pandoc-1.20:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'happstack-server >= 7.0 && < 7.5' 'happstack-server >= 7.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
