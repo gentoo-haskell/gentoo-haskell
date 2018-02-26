@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -88,8 +88,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'haskell-gi-overloading ==0.0.*' 'base' \
-		'haskell-src-exts >=1.13.5 && <1.19' 'haskell-src-exts >=1.13.5' \
-		'QuickCheck >=2.4.2 && <2.10' 'QuickCheck >=2.4.2'
+		'lens >=4.15.4 && <4.16' 'lens >=4.15.4'
 }
 
 src_configure() {
