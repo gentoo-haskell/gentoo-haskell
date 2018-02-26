@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,3 +34,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 		>=dev-haskell/brick-0.17 )
 "
+
+PATCHES=("${FILESDIR}"/${PN}-1.2.4.2-brick-0.34.patch)

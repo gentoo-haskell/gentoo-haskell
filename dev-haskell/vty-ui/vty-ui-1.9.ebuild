@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,6 +36,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.9-test.patch
 	"${FILESDIR}"/${PN}-1.9-ghc-8.patch
 	"${FILESDIR}"/${PN}-1.9-vty-5.15.patch
+	"${FILESDIR}"/${PN}-1.9-vty-5.18.patch
 )
 
 src_prepare() {
