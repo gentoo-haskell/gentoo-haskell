@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/async:=[profile?]
-	>=dev-haskell/basic-prelude-0.4:=[profile?] <dev-haskell/basic-prelude-0.7:=[profile?]
+	>=dev-haskell/basic-prelude-0.4:=[profile?]
 	dev-haskell/bifunctors:=[profile?]
 	>=dev-haskell/chunked-data-0.3:=[profile?]
 	>=dev-haskell/dlist-0.7:=[profile?]
@@ -50,3 +50,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'basic-prelude                 >= 0.4        && < 0.7' 'basic-prelude                 >= 0.4'
+}
