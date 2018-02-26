@@ -1,0 +1,15 @@
+diff --git a/examples/workreport.hs b/examples/workreport.hs
+index 67ff71b..a0b52f0 100644
+--- a/examples/workreport.hs
++++ b/examples/workreport.hs
+@@ -1 +1,2 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE OverloadedStrings #-}
+@@ -158,3 +159,7 @@ workAttrs =
+     applyAttrMappings itemDefaultAttrs $
++#if MIN_VERSION_brick(0,34,0)
++    setDefaultAttr (white `on` black) $ attrMap defAttr []
++#else
+     setDefault (white `on` black) $ attrMap defAttr []
++#endif
+ 
