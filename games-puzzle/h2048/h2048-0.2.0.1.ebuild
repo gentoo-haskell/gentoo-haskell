@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -30,6 +30,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( >=dev-haskell/hunit-1 <dev-haskell/hunit-2 )
 "
+
+PATCHES=("${FILESDIR}"/${PN}-0.2.0.1-vty-5.18.patch)
 
 pkg_setup() {
 	games_pkg_setup
