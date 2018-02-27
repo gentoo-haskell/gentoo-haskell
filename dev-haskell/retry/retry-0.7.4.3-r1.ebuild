@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
-	>=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/exceptions-0.5:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -30,3 +30,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.11
 		dev-haskell/stm )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps 'exceptions           >= 0.5 && < 0.9' 'exceptions >= 0.5'
+}
