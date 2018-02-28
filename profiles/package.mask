@@ -24,6 +24,7 @@ dev-haskell/webkitgtk3-javascriptcore
 >=dev-haskell/blaze-markup-0.8
 >=dev-haskell/conduit-1.3
 >=dev-haskell/conduit-extra-1.2
+>=dev-haskell/yesod-bin-1.5.2.5
 >=dev-haskell/conduit-combinators-1.3.0
 >=dev-haskell/doctemplates-0.2
 >=dev-haskell/hoauth2-1.6.2
