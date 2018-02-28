@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/async:=
 	>=dev-haskell/blaze-builder-0.2.1.4:= <dev-haskell/blaze-builder-0.5:=
 	>=dev-haskell/cabal-1.18:=
 	>=dev-haskell/conduit-1.2.13:=
-	dev-haskell/conduit-extra:=
+	>=dev-haskell/conduit-extra-1.2.3.2:=
 	dev-haskell/data-default-class:=
 	dev-haskell/file-embed:=
 	>=dev-haskell/fsnotify-0.0:= <dev-haskell/fsnotify-0.3:=
