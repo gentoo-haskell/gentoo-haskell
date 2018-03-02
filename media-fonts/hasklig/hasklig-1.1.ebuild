@@ -7,7 +7,7 @@ inherit font
 MY_PN="Hasklig"
 DESCRIPTION="Hasklig - a Haskell code font with monospaced ligatures"
 HOMEPAGE="https://github.com/i-tu/Hasklig"
-SRC_URI="https://github.com/i-tu/Hasklig/releases/download/$PV/${MY_PN}-$PV.zip"
+SRC_URI="https://github.com/i-tu/Hasklig/releases/download/${PV}/${MY_PN}-${PV}.zip"
 
 LICENSE="OFL-1.1"
 SLOT="0"
@@ -21,4 +21,3 @@ S="${WORKDIR}"
 
 FONT_SUFFIX="otf"
 FONT_S="${S}"
-
