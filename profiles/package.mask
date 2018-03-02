@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (02 Mar 2018)
+# Too many packages in overlay require <exceptions-0.9
+>=dev-haskell/exceptions-0.9
+
 # Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
 # Follow ::gentoo mask bindings for outdated
 #   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
