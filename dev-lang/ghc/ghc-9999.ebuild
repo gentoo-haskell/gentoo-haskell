@@ -493,6 +493,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
+		eapply "${FILESDIR}"/${PN}-9999-no-via-asm.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
