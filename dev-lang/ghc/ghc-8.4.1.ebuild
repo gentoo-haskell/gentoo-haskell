@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
@@ -15,7 +15,7 @@ fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib pax-utils toolchain-funcs versionator prefix
-
+inherit check-reqs
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
 
@@ -25,13 +25,13 @@ arch_binaries=""
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( http://code.haskell.org/~slyfox/ghc-alpha/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( http://code.haskell.org/~slyfox/ghc-arm/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#arch_binaries="$arch_binaries arm64? ( http://code.haskell.org/~slyfox/ghc-arm64/ghc-bin-${PV}-arm64.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( http://code.haskell.org/~slyfox/ghc-amd64/ghc-bin-${PV}-amd64.tbz2 )"
+#arch_binaries="$arch_binaries arm64? ( http://code.haskell.org/~slyfox/ghc-arm64/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( http://code.haskell.org/~slyfox/ghc-ia64/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( http://code.haskell.org/~slyfox/ghc-ppc/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( http://code.haskell.org/~slyfox/ghc-ppc64/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries sparc? ( http://code.haskell.org/~slyfox/ghc-sparc/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( http://code.haskell.org/~slyfox/ghc-x86/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( http://code.haskell.org/~slyfox/ghc-x86-fbsd/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -53,10 +53,10 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-GHC_PV=8.2.0.20170507 # uncomment only for -rc ebuilds
+#GHC_PV=8.4.0.20180224 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
+SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz )"
 S="${WORKDIR}"/${GHC_P}
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
@@ -78,11 +78,21 @@ RDEPEND="
 	!ghcmakebinary? ( virtual/libffi:= )
 "
 
+# This set of dependencies is needed to run
+# prebuilt ghc. We specifically avoid ncurses
+# dependency with:
+#    utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING
 PREBUILT_BINARY_DEPENDS="
+	!prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) )
+"
+# This set of dependencies is needed to install
+# ghc[binary] in system. terminfo package is linked
+# against ncurses.
+PREBUILT_BINARY_RDEPENDS="${PREBUILT_BINARY_DEPENDS}
 	sys-libs/ncurses:0/6
 "
 
-RDEPEND+="binary? ( ${PREBUILT_BINARY_DEPENDS} )"
+RDEPEND+="binary? ( ${PREBUILT_BINARY_RDEPENDS} )"
 
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook-xml-dtd:4.2
@@ -92,7 +102,7 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
-PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
+PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
 
@@ -322,7 +332,25 @@ relocate_ghc() {
 	rm "$gp_back"
 }
 
+ghc-check-reqs() {
+	# These are pessimistic values (slightly bigger than worst-case)
+	# Worst case is UNREG USE=profile ia64. See bug #611866 for some
+	# numbers on various arches.
+	CHECKREQS_DISK_BUILD=8G
+	CHECKREQS_DISK_USR=2G
+	# USE=binary roughly takes
+	use binary && CHECKREQS_DISK_BUILD=4G
+
+	"$@"
+}
+
+pkg_pretend() {
+	ghc-check-reqs check-reqs_pkg_pretend
+}
+
 pkg_setup() {
+	ghc-check-reqs check-reqs_pkg_setup
+
 	# quiet portage about prebuilt binaries
 	use binary && QA_PREBUILT="*"
 
@@ -351,7 +379,7 @@ src_unpack() {
 	# unpacked separately, so prevent them from being unpacked
 	local ONLYA=${A}
 	case ${CHOST} in
-		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.bz2  ;;
+		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
 	unpack ${ONLYA}
 }
@@ -378,6 +406,7 @@ src_prepare() {
 
 		# Move unpacked files to the expected place
 		mv "${WORKDIR}/usr" "${S}"
+		eapply_user
 	else
 		if ! use ghcbootstrap; then
 			case ${CHOST} in
@@ -439,30 +468,27 @@ src_prepare() {
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 			"${S}/ghc/ghc.wrapper"
 
-		cd "${S}" # otherwise epatch will break
+		cd "${S}" # otherwise eapply will break
 
-		epatch "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
-
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-cgen-constify.patch
-		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc2-O2-unreg.patch
+		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
+		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
+		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 
 		# a bunch of crosscompiler patches
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-unphased-cross.patch
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-staged-cross.patch
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-ghci-cross.patch
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-stage2-cross.patch
-		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
+		# needs newer version:
+		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 
-		if use prefix; then
-			# Make configure find docbook-xsl-stylesheets from Prefix
-			sed -e '/^FP_DIR_DOCBOOK_XSL/s:\[.*\]:['"${EPREFIX}"'/usr/share/sgml/docbook/xsl-stylesheets/]:' \
-				-i utils/haddock/doc/configure.ac || die
-		fi
+		# needs a new libffi release
+		eapply "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
+
+		# mingw32 target
+		pushd "${S}/libraries/Win32"
+			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
+		popd
 
 		bump_libs
 
+		eapply_user
 		# as we have changed the build system
 		eautoreconf
 	fi
@@ -489,6 +515,7 @@ src_configure() {
 		# app-text/dblatex is not in portage, can not build PDF or PS
 		echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
 		echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
+		echo "BUILD_MAN = $(usex doc YES NO)" >> mk/build.mk
 
 		# this controls presence on 'xhtml' and 'haddock' in final install
 		echo "HADDOCK_DOCS       = YES" >> mk/build.mk
@@ -545,8 +572,30 @@ src_configure() {
 		econf_args+=(
 			AR=${CTARGET}-ar
 			CC=${CTARGET}-gcc
-			LD=${CTARGET}-ld
+			# these should be inferred by GHC but ghc defaults
+			# to using bundled tools on windows.
+			Windres=${CTARGET}-windres
+			DllWrap=${CTARGET}-dllwrap
+			# we set the linker explicitly below
+			--disable-ld-override
 		)
+		case ${CTARGET} in
+			arm*)
+				# ld.bfd-2.28 does not work for ghc. Force ld.gold
+				# instead. This should be removed once gentoo gets
+				# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
+				econf_args+=(LD=${CTARGET}-ld.gold)
+			;;
+			sparc*)
+				# ld.gold-2.28 does not work for ghc. Force ld.bfd
+				# instead. This should be removed once gentoo gets
+				# a fix for missing --no-relax support bug:
+				# https://sourceware.org/ml/binutils/2017-07/msg00183.html
+				econf_args+=(LD=${CTARGET}-ld.bfd)
+			;;
+			*)
+				econf_args+=(LD=${CTARGET}-ld)
+		esac
 
 		if [[ ${CBUILD} != ${CHOST} ]]; then
 			# GHC bug: ghc claims not to support cross-building.
