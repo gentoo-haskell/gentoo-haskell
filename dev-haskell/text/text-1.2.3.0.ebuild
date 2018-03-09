@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2 )
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.4.1_alpha2 PM:8.4.1_alpha3 PM:8.4.1_rc1"
+CABAL_CORE_LIB_GHC_PV="PM:8.4.1"
 
 src_configure() {
 	haskell-cabal_src_configure \
