@@ -15,6 +15,9 @@
 # example for x86:
 #  path/to/refresh-ghc-bin.bash --target-arch=x86
 #  path/to/refresh-ghc-bin.bash --target-arch=x86 --stage3-url=http://distfiles.gentoo.org/releases/x86/autobuilds/latest-stage3-i686.txt --needed-atom='=dev-lang/ghc-8.2.1_rc1'
+# what I usually use:
+#  path/to/refresh-ghc-bin.bash --target-arch=x86   --temp-tmpfs
+#  path/to/refresh-ghc-bin.bash --target-arch=amd64 --temp-tmpfs
 
 # to make reports more readable
 # en_GB.UTF-8 might be better
@@ -42,7 +45,7 @@ target_arch=
 stage3_url=
 # if you happen to need hardened here
 # you might like to use '--chroot-profile=hardened/linux/amd64'
-chroot_profile=1
+chroot_profile=
 # this peeks latest ghc in ::gentoo
 # you can override version as --needed-atom='=dev-lang/ghc-8.2.1_rc1'
 needed_atom="dev-lang/ghc"
@@ -119,6 +122,7 @@ done
 [[ -z ${target_arch} ]] && target_arch=$(portageq envvar ARCH)
 [[ -z ${autobuild_machine} ]] && autobuild_machine=$(default_autobuild_machine "${target_arch}")
 [[ -z ${stage3_url} ]] && stage3_url=$(autobuild_dir "${target_arch}")/latest-stage3-${autobuild_machine}.txt
+[[ -z ${chroot_profile} ]] && chroot_profile=default/linux/${target_arch}/17.0
 
 i "target ARCH:       ${target_arch}"
 i "autobuild machine: ${autobuild_machine}"
