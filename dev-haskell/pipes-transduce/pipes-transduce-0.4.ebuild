@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,7 +38,14 @@ RDEPEND=">=dev-haskell/bifunctors-5.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/doctest-0.10.1
-		>=dev-haskell/free-4 <dev-haskell/free-5
+		>=dev-haskell/free-4
 		>=dev-haskell/tasty-0.10.1.1
 		>=dev-haskell/tasty-hunit-0.9.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'free          == 4.*' 'free          >= 4.0'
+}
