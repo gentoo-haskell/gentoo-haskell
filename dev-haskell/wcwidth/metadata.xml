@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		Bindings for your system&#39;s native wcwidth and a command line tool to examine
+		Bindings for your system's native wcwidth and a command line tool to examine
 		the widths assigned by it. The command line tool can compile a width table
 		to Haskell code that assigns widths to the Char type.
 	</longdescription>
