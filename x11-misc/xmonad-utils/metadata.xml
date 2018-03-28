@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A small collection of X utilities useful when
+		running XMonad. It includes:
+		
+		* hxsel: which returns the text currently in the X selection;
+		
+		* hxput: sets the value of the X paste buffer;
+		
+		* hslock: a simple X screen lock;
+		
+		* hmanage: an utility to toggle the override-redirect property of any
+		window;
+		
+		* and hhp: a simple utility to hide the pointer, similar
+		to unclutter.
+	</longdescription>
+</pkgmetadata>
