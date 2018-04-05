@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # uses browser
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base-compat-0.8.1:=[profile?] <dev-haskell/base-compat-1:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/colour-2.2:=[profile?] <dev-haskell/colour-3.0:=[profile?]
@@ -47,6 +47,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson              >= 0.7     && < 1.3' 'aeson              >= 0.7' \
 		'base               >= 4.7     && < 4.11' 'base               >= 4.7' \
 		'http-types         >= 0.8     && < 0.12' 'http-types         >= 0.8'
 }

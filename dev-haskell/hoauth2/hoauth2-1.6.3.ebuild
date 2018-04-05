@@ -18,10 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
-	>=dev-haskell/http-types-0.11:=[profile?]
+	>=dev-haskell/http-types-0.11:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/microlens-0.4.0:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.5:=[profile?]
@@ -35,7 +35,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
-		'http-types           >= 0.11   && < 0.12' 'http-types           >= 0.11'
+		'aeson                >= 0.11  && < 1.3' 'aeson                >= 0.11' \
+		'aeson             >= 0.11   && < 1.3' 'aeson             >= 0.11'
 	default
 }
 

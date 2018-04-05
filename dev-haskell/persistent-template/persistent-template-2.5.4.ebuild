@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/aeson-compat-0.3.2.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 	>=dev-haskell/http-api-data-0.2:=[profile?] <dev-haskell/http-api-data-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                    >= 0.7       && < 1.3' 'aeson                    >= 0.7'
+}
