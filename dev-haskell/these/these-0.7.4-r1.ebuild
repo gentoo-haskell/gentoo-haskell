@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?]
 	>=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.5:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/hashable-1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -44,6 +44,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson                    >= 0.7.0.4 && < 1.3' 'aeson                    >= 0.7.0.4' \
 		'quickcheck-instances    >= 0.3.15 && < 0.3.16' 'quickcheck-instances    >= 0.3.15' \
 		'tasty                   >= 0.10   && < 0.12' 'tasty                   >= 0.10'
 }
