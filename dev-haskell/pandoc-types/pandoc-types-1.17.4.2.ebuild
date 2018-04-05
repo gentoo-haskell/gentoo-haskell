@@ -17,9 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/deepseq-generics-0.1:=[profile?]
 	>=dev-haskell/quickcheck-2:2=[profile?]
+	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
