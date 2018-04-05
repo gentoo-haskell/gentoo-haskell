@@ -57,13 +57,13 @@ RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.15:
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	dev-libs/openssl:0=
-	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	network-uri? ( >dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16
+	>=dev-haskell/cabal-1.18
 	dev-haskell/hsx2hs
 "
 
