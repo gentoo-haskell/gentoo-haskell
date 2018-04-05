@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.8:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson >= 0.11 && < 1.3' 'aeson >= 0.11'
+}
