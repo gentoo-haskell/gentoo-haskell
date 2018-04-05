@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.15:=
 	>=dev-haskell/hsx2hs-0.13:=[profile?] <dev-haskell/hsx2hs-0.15:=[profile?]
 	>=dev-haskell/http-conduit-2.1.0:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/ixset-typed-0.3:=[profile?] <dev-haskell/ixset-typed-0.4:=[profile?]
+	>=dev-haskell/ixset-typed-0.3:=[profile?] <dev-haskell/ixset-typed-0.5:=[profile?]
 	>=dev-haskell/jmacro-0.6.11:=[profile?] <dev-haskell/jmacro-0.7:=[profile?]
 	>=dev-haskell/jwt-0.3:=[profile?] <dev-haskell/jwt-0.8:=[profile?]
 	>=dev-haskell/lens-4.2:=[profile?] <dev-haskell/lens-4.17:=[profile?]
@@ -50,8 +50,15 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.15:=
 	>=dev-haskell/web-routes-hsp-0.24:=[profile?] <dev-haskell/web-routes-hsp-0.25:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+	>=dev-haskell/aeson-0.11:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                        (>= 0.4  && < 0.10) || (>= 0.11 && < 1.3)' 'aeson                        >= 0.11'
+}
