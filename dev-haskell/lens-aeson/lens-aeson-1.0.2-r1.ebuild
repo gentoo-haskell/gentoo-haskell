@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/lens-4.4:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/scientific-0.3.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -40,6 +40,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson                >= 0.7.0.5   && < 1.3' 'aeson                >= 0.7.0.5' \
 		'doctest        >= 0.11.1 && < 0.13' 'doctest        >= 0.11.1'
 }
 

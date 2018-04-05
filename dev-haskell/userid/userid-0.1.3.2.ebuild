@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/boomerang-1.4:=[profile?] <dev-haskell/boomerang-1.5:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/safecopy-0.8:=[profile?] <dev-haskell/safecopy-0.10:=[profile?]

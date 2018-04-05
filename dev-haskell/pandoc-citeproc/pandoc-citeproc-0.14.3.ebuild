@@ -21,14 +21,16 @@ IUSE="+bibutils debug embed_data_files static test_citeproc unicode_collation"
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
 RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.2:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
+	>=dev-haskell/base-compat-0.9:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/pandoc-types-1.17.3:=[profile?] <dev-haskell/pandoc-types-1.18:=[profile?]
 	dev-haskell/parsec:=[profile?]
+	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/setenv-0.1:=[profile?] <dev-haskell/setenv-0.2:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
