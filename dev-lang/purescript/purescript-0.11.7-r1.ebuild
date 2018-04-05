@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # needs nodejs, npm and stuff
 
-RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/aeson-better-errors-0.8:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	dev-haskell/ansi-wl-pprint:=[profile?]
@@ -86,5 +86,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson >=1.0 && <1.3' 'aeson >=1.0' \
 		'ansi-terminal >=0.6.2 && <0.7' 'ansi-terminal >=0.6.2'
 }
