@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?]
 	>=dev-haskell/uri-bytestring-0.2:=[profile?] <dev-haskell/uri-bytestring-0.4:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
