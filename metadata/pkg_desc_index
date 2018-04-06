@@ -24,7 +24,7 @@ dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/colour 2.3.3-r1: A model for human colour/color perception
 dev-haskell/comonad 4.2.7.2: Comonads
 dev-haskell/constraints 0.4.1.3: Constraint manipulation
-dev-haskell/contravariant 1.3.3: Contravariant functors
+dev-haskell/contravariant 1.3.3 1.4: Contravariant functors
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.13.2: A generic interface for cryptographic operations
 dev-haskell/crypto-cipher-tests 0.0.11-r1: Generic cryptography cipher tests
