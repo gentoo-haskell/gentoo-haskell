@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/semigroupoids-5.0.0:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/vinyl-0.5.2:=[profile?] <dev-haskell/vinyl-0.8:=[profile?]
+	>=dev-haskell/vinyl-0.5.2:=[profile?]
 	>=dev-haskell/vinyl-utils-0.2.0.1:=[profile?] <dev-haskell/vinyl-utils-0.4:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -46,7 +46,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'QuickCheck      >= 2.8 && < 2.9' 'QuickCheck      >= 2.8' \
-		'lens               >= 4.12    && < 4.16' 'lens               >= 4.12'
+		'lens               >= 4.12    && < 4.16' 'lens               >= 4.12' \
+		'vinyl              >= 0.5.2   && < 0.8' 'vinyl              >= 0.5.2'
 }
 
 src_configure() {
