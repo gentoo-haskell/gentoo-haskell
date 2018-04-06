@@ -18,16 +18,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7.0.4:=[profile?]
-	>=dev-haskell/bifunctors-0.1:=[profile?] <dev-haskell/bifunctors-5.5:=[profile?]
+	>=dev-haskell/bifunctors-0.1:=[profile?]
 	>=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/hashable-1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/keys-3.10:=[profile?] <dev-haskell/keys-3.12:=[profile?]
+	>=dev-haskell/keys-3.10:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/profunctors-3:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
-	>=dev-haskell/quickcheck-2.10:2=[profile?] <dev-haskell/quickcheck-2.11:2=[profile?]
+	>=dev-haskell/quickcheck-2.10:2=[profile?]
 	>=dev-haskell/semigroupoids-1.0:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
-	>=dev-haskell/transformers-compat-0.2:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
+	>=dev-haskell/transformers-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.4:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/vector-instances-3.3.1:=[profile?] <dev-haskell/vector-instances-3.5:=[profile?]
@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/quickcheck-instances-0.3.15 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tasty-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
 src_prepare() {
@@ -45,6 +45,11 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson                    >= 0.7.0.4 && < 1.3' 'aeson                    >= 0.7.0.4' \
+		'base                     >= 4.4     && < 4.11' 'base                     >= 4.4' \
+		'bifunctors               >= 0.1     && < 5.5' 'bifunctors               >= 0.1' \
+		'keys                     >= 3.10    && < 3.12' 'keys                     >= 3.10' \
+		'QuickCheck               >= 2.10    && < 2.11' 'QuickCheck               >= 2.10' \
 		'quickcheck-instances    >= 0.3.15 && < 0.3.16' 'quickcheck-instances    >= 0.3.15' \
-		'tasty                   >= 0.10   && < 0.12' 'tasty                   >= 0.10'
+		'tasty                   >= 0.10   && < 0.12' 'tasty                   >= 0.10' \
+		'transformers-compat      >= 0.2     && < 0.6' 'transformers-compat      >= 0.2'
 }
