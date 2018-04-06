@@ -28,6 +28,13 @@ RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.4
-	test? ( >=dev-haskell/hspec-2.4 <dev-haskell/hspec-2.5
+	test? ( >=dev-haskell/hspec-2.4
 		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.7 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec                      >= 2.4      && <2.5' 'hspec                      >= 2.4'
+}
