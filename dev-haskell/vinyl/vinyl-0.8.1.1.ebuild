@@ -17,15 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test #Ambiguous interface in multiple packages: base type-equality
-
 RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/doctest-0.8
-		>=dev-haskell/hspec-2.2.4 <dev-haskell/hspec-2.5
+		>=dev-haskell/hspec-2.2.4 <dev-haskell/hspec-2.6
 		dev-haskell/lens
+		dev-haskell/microlens
 		>=dev-haskell/should-not-typecheck-2.0 <dev-haskell/should-not-typecheck-2.2
 		>=dev-haskell/singletons-0.10 )
 "
