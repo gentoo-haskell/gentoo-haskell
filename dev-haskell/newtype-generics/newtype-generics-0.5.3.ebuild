@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A typeclass for working with newtypes, with generics support"
-HOMEPAGE="http://hackage.haskell.org/package/newtype-generics"
+HOMEPAGE="https://github.com/sjakobi/bsb-http-chunked"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -21,6 +21,5 @@ RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.5
-		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.7 )
+	test? ( >=dev-haskell/hspec-2.1 )
 "
