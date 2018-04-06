@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,6 +30,14 @@ RDEPEND=">=dev-haskell/gi-gtk-3.0:=[profile?] <dev-haskell/gi-gtk-3.1:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
-	test? ( >=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.5
-		>=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.10 )
+	test? ( >=dev-haskell/hspec-2.2
+		>=dev-haskell/quickcheck-2.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec>=2.2 && <2.5' 'hspec>=2.2' \
+		'QuickCheck>=2.9 && <2.10' 'QuickCheck>=2.9'
+}
