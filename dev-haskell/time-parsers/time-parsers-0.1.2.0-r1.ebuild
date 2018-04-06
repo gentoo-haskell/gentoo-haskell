@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/parsers-0.12.2.1:=[profile?] <dev-haskell/parsers-0.13:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/attoparsec-0.12.1.6 <dev-haskell/attoparsec-0.14
-		>=dev-haskell/bifunctors-4.2.1 <dev-haskell/bifunctors-5.5
+		>=dev-haskell/bifunctors-4.2.1
 		>=dev-haskell/parsec-3.1.9 <dev-haskell/parsec-3.2
 		>=dev-haskell/parsers-0.12.3 <dev-haskell/parsers-0.13
 		>=dev-haskell/tasty-0.10.1.2
@@ -35,6 +35,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'bifunctors    >=4.2.1    && <5.5' 'bifunctors    >=4.2.1' \
 		'tasty         >=0.10.1.2 && <0.12' 'tasty         >=0.10.1.2' \
 		'tasty-hunit   >=0.9.2    && <0.10' 'tasty-hunit   >=0.9.2' \
 		'base             >=4.6      && <4.10' 'base             >=4.6' \
