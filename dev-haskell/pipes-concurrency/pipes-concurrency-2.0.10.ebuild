@@ -20,6 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/async-2.0.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/contravariant-1.3.3:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
+	<dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/stm-2.4.3:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=

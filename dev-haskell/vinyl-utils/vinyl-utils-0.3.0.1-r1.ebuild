@@ -18,12 +18,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE="devel"
 
 RDEPEND=">=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
-	>=dev-haskell/vinyl-0.5:=[profile?] <dev-haskell/vinyl-0.8:=[profile?]
+	>=dev-haskell/vinyl-0.5:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vinyl         >= 0.5 && < 0.8' 'vinyl         >= 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
