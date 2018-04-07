@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
-	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-2.11:2=[profile?]
+	>=dev-haskell/quickcheck-2.4:2=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/test-framework-0.8:=[profile?] <dev-haskell/test-framework-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -27,6 +27,13 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/exte
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck            >= 2.4    && < 2.11' 'QuickCheck            >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
