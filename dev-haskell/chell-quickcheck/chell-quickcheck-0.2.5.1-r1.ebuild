@@ -18,10 +18,17 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/chell-0.3:=[profile?] <dev-haskell/chell-0.5:=[profile?]
-	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.11:2=[profile?]
+	>=dev-haskell/quickcheck-2.3:2=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.3 && < 2.11' 'QuickCheck >= 2.3'
+}
