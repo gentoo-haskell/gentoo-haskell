@@ -24,8 +24,7 @@ RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.6:=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-1.1:=[profile?]
 	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	|| ( ( >=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.9:=[profile?] )
-		( >=dev-haskell/tasty-quickcheck-0.9.1:=[profile?] <dev-haskell/tasty-quickcheck-0.10:=[profile?] ) )
+	>=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.10:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
