@@ -51,5 +51,6 @@ src_prepare() {
 		'QuickCheck               >= 2.10    && < 2.11' 'QuickCheck               >= 2.10' \
 		'quickcheck-instances    >= 0.3.15 && < 0.3.16' 'quickcheck-instances    >= 0.3.15' \
 		'tasty                   >= 0.10   && < 0.12' 'tasty                   >= 0.10' \
+		'tasty-quickcheck        >= 0.8    && < 0.10' 'tasty-quickcheck        >= 0.8' \
 		'transformers-compat      >= 0.2     && < 0.6' 'transformers-compat      >= 0.2'
 }
