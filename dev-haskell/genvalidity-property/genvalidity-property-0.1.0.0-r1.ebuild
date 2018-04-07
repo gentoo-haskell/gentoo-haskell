@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/genvalidity-0.4:=[profile?] <dev-haskell/genvalidity-0.5:=[profile?]
-	>=dev-haskell/hspec-2.1:=[profile?] <dev-haskell/hspec-2.5:=[profile?]
+	>=dev-haskell/hspec-2.1:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-0.4:=[profile?] <dev-haskell/validity-0.5:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -32,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'doctest >=0.9 && <0.12' 'doctest >=0.9'
+		'doctest >=0.9 && <0.12' 'doctest >=0.9' \
+		'hspec >=2.1 && <2.5' 'hspec >=2.1'
 }

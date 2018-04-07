@@ -45,12 +45,19 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		dev-haskell/hunit
 		>=dev-haskell/integer-logarithms-1 <dev-haskell/integer-logarithms-1.1
-		>=dev-haskell/quickcheck-2.10.0.1 <dev-haskell/quickcheck-2.11
+		>=dev-haskell/quickcheck-2.10.0.1
 		>=dev-haskell/quickcheck-instances-0.3.16
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.10.0.1 && < 2.11' 'QuickCheck >= 2.10.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
