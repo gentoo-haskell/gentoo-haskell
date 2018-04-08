@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,4 +31,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 )
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.0.1 PM:8.0.2_rc1 PM:8.0.2_rc2 PM:8.0.2 PM:9999"
+CABAL_CORE_LIB_GHC_PV="PM:8.0.1 PM:8.0.2_rc1 PM:8.0.2_rc2 PM:8.0.2"

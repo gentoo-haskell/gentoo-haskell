@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,7 +14,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-8.2.2
+# keep in sync with ghc-8.2.2 and ghc-8.4.2
 # KEYWORDS="~alpha ~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
@@ -31,4 +31,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3 )
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.2.2"
+CABAL_CORE_LIB_GHC_PV="PM:8.2.2 PM:8.4.2_rc1 PM:9999"
