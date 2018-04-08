@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14
+	test? ( >=dev-haskell/doctest-0.11.1
 		dev-haskell/generic-deriving
 		>=dev-haskell/semigroups-0.9
 		>=dev-haskell/simple-reflect-0.3.1 )
