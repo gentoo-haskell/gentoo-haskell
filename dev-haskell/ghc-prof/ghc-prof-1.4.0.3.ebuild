@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,7 +25,7 @@ RDEPEND="<dev-haskell/attoparsec-0.14:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.14
-		<dev-haskell/tasty-0.13
+		dev-haskell/tasty
 		>=dev-haskell/tasty-hunit-0.9.1
 		dev-haskell/temporary )
 "
@@ -34,7 +34,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty-hunit >= 0.9.1 && < 0.10' 'tasty-hunit >= 0.9.1'
+		'tasty-hunit >= 0.9.1 && < 0.10' 'tasty-hunit >= 0.9.1' \
+		'tasty < 0.13' 'tasty'
 }
 
 src_configure() {
