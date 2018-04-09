@@ -1,0 +1,38 @@
+diff -ru OneTuple-0.2.1.orig/Data/Tuple/OneTuple.hs OneTuple-0.2.1/Data/Tuple/OneTuple.hs
+--- OneTuple-0.2.1.orig/Data/Tuple/OneTuple.hs	2009-03-24 13:25:57.000000000 -0400
++++ OneTuple-0.2.1/Data/Tuple/OneTuple.hs	2018-01-25 13:37:54.729786042 -0500
+@@ -1,4 +1,4 @@
+-
++{-# LANGUAGE CPP #-}
+ -- |OneTuple fills the /tuple gap/ with a singleton tuple.
+ -- 
+ -- OneTuple /does not support/ the usual parenthesized tuple syntax.
+@@ -22,6 +22,9 @@
+ import Data.Foldable
+ import Data.Ix
+ import Data.Monoid
++#if MIN_VERSION_base(4,9,0)
++import Data.Semigroup (Semigroup(..))
++#endif
+ import Data.Traversable
+ 
+ -- |OneTuple is the singleton tuple data type.
+@@ -68,9 +71,18 @@
+     (OneTuple x) >>= f = f x
+     return = OneTuple
+ 
++#if MIN_VERSION_base(4,9,0)
++instance (Semigroup a) => Semigroup (OneTuple a) where
++    OneTuple x <> OneTuple y = OneTuple (x <> y)
++    sconcat = Prelude.foldr1 (<>)
++    stimes n (OneTuple a) = OneTuple (stimes n a)
++#endif
++
+ instance (Monoid a) => Monoid (OneTuple a) where
+     mempty = OneTuple mempty
++#if !(MIN_VERSION_base(4,11,0))
+     mappend (OneTuple x) (OneTuple y) = OneTuple (mappend x y)
++#endif
+     mconcat = Prelude.foldr1 mappend
+ 
+ instance MonadFix OneTuple where
