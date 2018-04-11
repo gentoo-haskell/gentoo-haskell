@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cryptohash-md5-0.11.100:=[profile?] <dev-haskell/cryptohash-md5-0.12:=[profile?]
 	>=dev-haskell/cryptohash-sha1-0.11.100:=[profile?] <dev-haskell/cryptohash-sha1-0.12:=[profile?]
-	>=dev-haskell/entropy-0.3.7:=[profile?] <dev-haskell/entropy-0.4:=[profile?]
+	>=dev-haskell/entropy-0.3.7:=[profile?]
 	>=dev-haskell/network-info-0.2:=[profile?] <dev-haskell/network-info-0.3:=[profile?]
 	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -44,5 +44,6 @@ src_prepare() {
 		'tasty            >= 0.10  && < 0.12' 'tasty            >= 0.10' \
 		'tasty-hunit      == 0.9.*' 'tasty-hunit      >= 0.9' \
 		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
-		'HUnit            >= 1.2   && < 1.4' 'HUnit            >= 1.2'
+		'HUnit            >= 1.2   && < 1.4' 'HUnit            >= 1.2' \
+		'entropy         >= 0.3.7    && < 0.4' 'entropy         >= 0.3.7'
 }
