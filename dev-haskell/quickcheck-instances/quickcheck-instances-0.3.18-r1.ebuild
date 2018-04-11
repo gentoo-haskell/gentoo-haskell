@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-compat-0.9.3:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+RDEPEND=">=dev-haskell/base-compat-0.9.3:=[profile?]
 	>=dev-haskell/case-insensitive-1.2.0.4:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/hashable-1.2.5.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
@@ -41,5 +41,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base       >=4.5  && <4.12' 'base       >=4.5'
+		'base       >=4.5  && <4.12' 'base       >=4.5' \
+		'base-compat          >=0.9.3   && <0.10' 'base-compat          >=0.9.3'
 }
