@@ -23,13 +23,8 @@ RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/hspec-2.2.0
-		>=dev-haskell/hspec-expectations-0.7.2 <dev-haskell/hspec-expectations-0.9 )
+	test? ( >=dev-haskell/hspec-2.2.0 <dev-haskell/hspec-2.6.0
+		dev-haskell/hspec-discover )
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'hspec                >= 2.2.0 && < 2.5' 'hspec                >= 2.2.0'
-}
+PATCHES=("${FILESDIR}"/${P}-ghc-8.4.patch)

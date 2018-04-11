@@ -1,0 +1,275 @@
+commit a2454ff8181d3c5439d719be4eea880d70ee86b0
+Author: Simon Jakobi <simon.jakobi@gmail.com>
+Date:   Thu Mar 29 18:09:43 2018 +0200
+
+    Add hspec-discover to test build-tool-depends
+
+diff --git a/clay.cabal b/clay.cabal
+index e0a9353..588b21b 100644
+--- a/clay.cabal
++++ b/clay.cabal
+@@ -85,4 +85,6 @@ Test-Suite Test-Clay
+     text                 >= 0.11  && < 1.3,
+     hspec-expectations   >= 0.7.2 && < 0.9,
+     hspec                >= 2.2.0 && < 2.5
++  Build-Tool-Depends:
++    hspec-discover:hspec-discover
+   Ghc-Options: -Wall
+
+commit 5cc058dbf26c938169b6076e59252a0fcfbc5310
+Author: Simon Jakobi <simon.jakobi@gmail.com>
+Date:   Thu Mar 29 19:06:55 2018 +0200
+
+    Gain compatibility with GHC-8.4.1
+    
+    * Also restore compatibility with GHC-7.8.
+    * Unconditional Semigroup instances are nicer than conditional ones.
+
+diff --git a/clay.cabal b/clay.cabal
+index 588b21b..c2ca951 100644
+--- a/clay.cabal
++++ b/clay.cabal
+@@ -70,21 +70,29 @@ Library
+ 
+   GHC-Options: -Wall
+   Build-Depends:
+-    base  >= 4.5  && < 5,
++    base  >= 4.7  && < 5,
+     mtl   >= 1    && < 2.3,
+     text  >= 0.11 && < 1.3
++  if impl(ghc < 8.0)
++    Build-Depends:
++      semigroups
++  else
++    GHC-Options: -Wcompat
+ 
+ Test-Suite Test-Clay
+   Type: exitcode-stdio-1.0
+   HS-Source-Dirs: spec, src
+   main-is: Spec.hs
+   Build-Depends:
+-    base                 >= 4.5  && < 5,
+-    base                 >= 4     && < 5,
++    base                 >= 4.7  && < 5,
+     mtl                  >= 1     && < 2.3,
+     text                 >= 0.11  && < 1.3,
+-    hspec-expectations   >= 0.7.2 && < 0.9,
+-    hspec                >= 2.2.0 && < 2.5
++    hspec                >= 2.2.0 && < 2.6
++  if impl(ghc < 8.0)
++    Build-Depends:
++      semigroups
++  else
++    GHC-Options: -Wcompat
+   Build-Tool-Depends:
+     hspec-discover:hspec-discover
+   Ghc-Options: -Wall
+diff --git a/src/Clay/Color.hs b/src/Clay/Color.hs
+index 2ae8655..fd92b4f 100644
+--- a/src/Clay/Color.hs
++++ b/src/Clay/Color.hs
+@@ -4,9 +4,9 @@ module Clay.Color where
+ import Data.Char (isHexDigit)
+ import Data.Monoid
+ import Data.String
+-import Data.Text (Text)
+ import Text.Printf
+ 
++import Data.Text (Text)
+ import qualified Data.Text as Text
+ import Data.Text.Read as Text
+ 
+diff --git a/src/Clay/Comments.hs b/src/Clay/Comments.hs
+index 24f7426..19f02be 100644
+--- a/src/Clay/Comments.hs
++++ b/src/Clay/Comments.hs
+@@ -1,8 +1,10 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE ViewPatterns #-}
+ {-# LANGUAGE PatternSynonyms #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ module Clay.Comments where
+ 
++import Data.Foldable (foldMap)
+ import Data.Monoid ((<>))
+ import Data.Maybe (isNothing)
+ import Data.List (partition)
+@@ -26,5 +28,7 @@ addComment c (Property (PartitionComments xs (Just cs)) k v) = let c1 = Comment
+ addComment c (Property ms k v  ) = Property (Comment c : ms) k v
+ addComment _ r                   = r
+ 
++#if __GLASGOW_HASKELL__ >= 710
+ pattern PartitionComments :: [Modifier] -> Maybe CommentText -> [Modifier]
++#endif
+ pattern PartitionComments xs cs <- (fmap (foldMap _Comment) . partition (isNothing . _Comment) -> (xs, cs))
+diff --git a/src/Clay/List.hs b/src/Clay/List.hs
+index 892eb57..e24cf42 100644
+--- a/src/Clay/List.hs
++++ b/src/Clay/List.hs
+@@ -36,7 +36,7 @@ module Clay.List
+ )
+ where
+ 
+-import Data.Monoid
++import Data.Semigroup
+ import Data.Text (Text)
+ 
+ import Clay.Common
+diff --git a/src/Clay/Mask.hs b/src/Clay/Mask.hs
+index 4c79827..666b795 100644
+--- a/src/Clay/Mask.hs
++++ b/src/Clay/Mask.hs
+@@ -57,7 +57,7 @@ module Clay.Mask
+ )
+ where
+ 
+-import Data.Monoid
++import Data.Semigroup
+ 
+ import Clay.Background
+ import Clay.Common
+diff --git a/src/Clay/Property.hs b/src/Clay/Property.hs
+index 5df494f..dc52384 100644
+--- a/src/Clay/Property.hs
++++ b/src/Clay/Property.hs
+@@ -2,11 +2,11 @@
+ module Clay.Property where
+ 
+ import Control.Arrow (second)
+-import Control.Monad.Writer
+ import Data.Fixed (Fixed, HasResolution (resolution), showFixed)
+ import Data.List (partition, sort)
+ import Data.List.NonEmpty (NonEmpty, toList)
+ import Data.Maybe
++import Data.Semigroup
+ import Data.String
+ import Data.Text (Text, replace)
+ 
+@@ -16,9 +16,12 @@ data Prefixed = Prefixed { unPrefixed :: [(Text, Text)] } | Plain { unPlain :: T
+ instance IsString Prefixed where
+   fromString s = Plain (fromString s)
+ 
++instance Semigroup Prefixed where
++  (<>) = merge
++
+ instance Monoid Prefixed where
+   mempty  = ""
+-  mappend = merge
++  mappend = (<>)
+ 
+ merge :: Prefixed -> Prefixed -> Prefixed
+ merge (Plain    x ) (Plain    y ) = Plain (x <> y)
+@@ -41,7 +44,7 @@ quote t = "\"" <> replace "\"" "\\\"" t <> "\""
+ -------------------------------------------------------------------------------
+ 
+ newtype Key a = Key { unKeys :: Prefixed }
+-  deriving (Show, Monoid, IsString)
++  deriving (Show, Semigroup, Monoid, IsString)
+ 
+ cast :: Key a -> Key ()
+ cast (Key k) = Key k
+@@ -49,7 +52,7 @@ cast (Key k) = Key k
+ -------------------------------------------------------------------------------
+ 
+ newtype Value = Value { unValue :: Prefixed }
+-  deriving (Show, Monoid, IsString, Eq)
++  deriving (Show, Semigroup, Monoid, IsString, Eq)
+ 
+ class Val a where
+   value :: a -> Value
+@@ -58,7 +61,7 @@ instance Val Text where
+   value t = Value (Plain t)
+ 
+ newtype Literal = Literal Text
+-  deriving (Show, Monoid, IsString)
++  deriving (Show, Semigroup, Monoid, IsString)
+ 
+ instance Val Literal where
+   value (Literal t) = Value (Plain (quote t))
+@@ -100,7 +103,7 @@ instance Val a => Val (NonEmpty a) where
+ 
+ intercalate :: Monoid a => a -> [a] -> a
+ intercalate _ []     = mempty
+-intercalate s (x:xs) = foldl (\a b -> a <> s <> b) x xs
++intercalate s (x:xs) = foldl (\a b -> a `mappend` s `mappend` b) x xs
+ 
+ -------------------------------------------------------------------------------
+ 
+diff --git a/src/Clay/Selector.hs b/src/Clay/Selector.hs
+index af51848..7ac4584 100644
+--- a/src/Clay/Selector.hs
++++ b/src/Clay/Selector.hs
+@@ -11,14 +11,9 @@
+ module Clay.Selector where
+ 
+ import Control.Applicative
+-import Data.Monoid
++import Data.Semigroup
+ import Data.String
+ import Data.Text (Text)
+-import Prelude hiding (foldl)
+-
+-#if MIN_VERSION_base(4,9,0)
+-import Data.Semigroup
+-#endif
+ 
+ import qualified Data.Text as Text
+ 
+@@ -157,7 +152,7 @@ data Predicate
+   deriving (Eq, Ord, Show)
+ 
+ newtype Refinement = Refinement { unFilter :: [Predicate] }
+-  deriving (Show, Monoid)
++  deriving (Show, Semigroup, Monoid)
+ 
+ instance IsString Refinement where
+   fromString = refinementFromText . fromString
+@@ -204,12 +199,9 @@ selectorFromText t =
+       -> with star (refinementFromText t)
+     _ -> In $ SelectorF (Refinement []) (Elem t)
+ 
+-#if MIN_VERSION_base(4,9,0)
+ instance Semigroup (Fix SelectorF) where
+-  (<>) = mappend
+-#endif
++  a <> b = In (SelectorF (Refinement []) (Combined a b))
+ 
+ instance Monoid (Fix SelectorF) where
+-  mempty      = error "Selector is a semigroup"
+-  mappend a b = In (SelectorF (Refinement []) (Combined a b))
+-
++  mempty  = error "Selector is a semigroup"
++  mappend = (<>)
+diff --git a/src/Clay/Stylesheet.hs b/src/Clay/Stylesheet.hs
+index 15fb4eb..83897d6 100644
+--- a/src/Clay/Stylesheet.hs
++++ b/src/Clay/Stylesheet.hs
+@@ -6,9 +6,11 @@ module Clay.Stylesheet where
+ 
+ import Control.Applicative
+ import Control.Arrow (second)
+-import Control.Monad.Writer hiding (All)
++import Control.Monad.Writer (Writer, execWriter, tell)
++import Data.Foldable (foldMap)
+ import Data.Maybe (isJust)
+-import Data.Semigroup (Semigroup)
++import Data.Monoid (Monoid(..))
++import Data.Semigroup (Semigroup(..))
+ import Data.String (IsString)
+ import Data.Text (Text)
+ 
+@@ -83,9 +85,12 @@ rule a = S (tell [a])
+ 
+ type Css = StyleM ()
+ 
++instance Semigroup Css where
++  (<>) = liftA2 (<>)
++
+ instance Monoid Css where
+   mempty = pure ()
+-  mappend = liftA2 mappend
++  mappend = (<>)
+ 
+ -- | Add a new style property to the stylesheet with the specified `Key` and
+ -- value. The value can be any type that is in the `Val' typeclass, with other
+
