@@ -45,6 +45,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base                     >=4.6.0.1   && <4.11' 'base                     >=4.6.0.1' \
 		'aeson                    >=0.7.0.6   && <1.3' 'aeson                    >=0.7.0.6' \
 		'QuickCheck           >=2.10     && <2.11' 'QuickCheck           >=2.10' \
 		'tasty                >=0.10.1.2 && <0.12' 'tasty                >=0.10.1.2' \
