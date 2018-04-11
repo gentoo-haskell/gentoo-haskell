@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="+closuresignals"
 
-RDEPEND=">=dev-haskell/cabal-1.24.0.0:=[profile?] <dev-haskell/cabal-2.1:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.24.0.0:=[profile?]
 	dev-haskell/hashtables:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -28,7 +28,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch
+		 "${FILESDIR}"/${PN}-0.13.3.1-ghc-8.4.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
