@@ -20,8 +20,8 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-iso8601-1.0.0.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
-	>=dev-haskell/base-compat-0.6.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
-	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/base-compat-0.6.0:=[profile?]
+	>=dev-haskell/exceptions-0.8:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -47,7 +47,11 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base                     >=4.6  && <4.11' 'base                     >=4.6' \
 		'aeson                    >=0.7.0.6 && <1.3' 'aeson                    >=0.7.0.6' \
+		'base-compat              >=0.6.0 && <0.10' 'base-compat              >=0.6.0' \
+		'base-orphans          >=0.4.5 && <0.7' 'base-orphans          >=0.4.5' \
+		'exceptions               >=0.8  && <0.9' 'exceptions               >=0.8' \
 		'QuickCheck            >=2.10 && <2.11' 'QuickCheck            >=2.10' \
 		'tasty                 >=0.10 && <0.12' 'tasty                 >=0.10' \
 		'tasty-hunit           >=0.9  && <0.10' 'tasty-hunit           >=0.9' \
