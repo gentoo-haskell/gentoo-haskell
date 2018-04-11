@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ IUSE="bench +boundschecks internalchecks +properties unsafechecks"
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/mwc-random:=[profile?]
 	>=dev-haskell/primitive-0.3:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
-	>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,4 +37,11 @@ src_configure() {
 		$(cabal_flag internalchecks internalchecks) \
 		$(cabal_flag properties properties) \
 		$(cabal_flag unsafechecks unsafechecks)
+}
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector >= 0.6 && < 0.12' 'vector >= 0.6'
 }
