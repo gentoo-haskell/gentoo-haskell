@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profil
 	>=dev-haskell/pango-0.12.5:=[profile?] <dev-haskell/pango-0.14:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
-	>=dev-haskell/vector-0.10.0:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.10.0:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -44,5 +44,6 @@ src_prepare() {
 		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13' \
 		'base >= 4.2 && < 4.10' 'base >= 4.2' \
 		'vector >= 0.10.0 && < 0.12' 'vector >= 0.10' \
-		'lens >= 3.8 && < 4.16' 'lens >= 3.8'
+		'lens >= 3.8 && < 4.16' 'lens >= 3.8' \
+		'vector >= 0.10.0 && < 0.12' 'vector >= 0.10.0'
 }
