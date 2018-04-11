@@ -63,6 +63,7 @@ dev-haskell/hslua-module-text
 >=dev-haskell/fb-1.2.0
 >=dev-haskell/html-conduit-1.3
 >=dev-haskell/pandoc-crossref-0.3
+dev-haskell/tree-diff
 >=dev-haskell/yesod-auth-1.6
 >=dev-haskell/yesod-bin-1.6
 >=dev-haskell/yesod-eventsource-1.6
