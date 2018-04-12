@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps \
+		'base             >= 4.5   && < 4.11' 'base             >= 4.5' \
 		'tasty             == 0.11.*' 'tasty             >= 0.11' \
 		'tasty-quickcheck  == 0.8.*' 'tasty-quickcheck  >= 0.8' \
 		'tasty-hunit       == 0.9.*' 'tasty-hunit       >= 0.9'
