@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # Control.Monad.Trans.Free is in free and transformers-free
 
-RDEPEND=">=dev-haskell/free-3.2:=[profile?] <dev-haskell/free-5.1:=[profile?]
+RDEPEND=">=dev-haskell/free-3.2:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-parse-3.0.0:=[profile?] <dev-haskell/pipes-parse-3.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.12 <dev-haskell/doctest-0.13
 		<dev-haskell/lens-family-core-1.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'free         >= 3.2     && < 5.1' 'free         >= 3.2'
+}
