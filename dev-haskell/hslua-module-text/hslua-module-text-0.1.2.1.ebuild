@@ -26,3 +26,9 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-hunit )
 "
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base  >= 4.7 && < 4.11' 'base  >= 4.7'
+}
