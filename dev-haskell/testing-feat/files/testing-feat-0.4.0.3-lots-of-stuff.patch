@@ -1,0 +1,305 @@
+commit 4518ba01d8e2faf055136bfba081319ab4596cbf
+Author: Jonas Duregard <jonas.duregard@chalmers.se>
+Date:   Thu Jul 7 10:48:12 2016 +0200
+
+    Lots of stuff...
+
+diff --git a/Test/Feat.hs b/Test/Feat.hs
+index dc059ee..6f35769 100644
+--- a/Test/Feat.hs
++++ b/Test/Feat.hs
+@@ -1,3 +1,5 @@
++{-# OPTIONS_GHC -fno-warn-warnings-deprecations #-}
++
+ -- | This module contains a (hopefully) manageable subset of the functionality
+ -- of Feat. The rest resides only in the Test.Feat.* modules.
+ module Test.Feat(
+@@ -6,7 +8,7 @@ module Test.Feat(
+   Enumerable(..), datatype, c0, c1, c2, c3, c4, c5, c6, c7,
+ 
+   -- ** Automatic derivation
+---  deriveEnumerable,
++  deriveEnumerable,
+ 
+ 
+   -- * Accessing data
+@@ -38,7 +40,7 @@ import Test.Feat.Access
+ -- import Test.Feat.Class
+ import Test.Feat.Enumerate
+ import Test.Feat.Class
+-import Control.Sized.Enumerable
++import Control.Enumerable
+ 
+ 
+ 
+diff --git a/Test/Feat/Access.hs b/Test/Feat/Access.hs
+index 9ef2693..40fd05e 100644
+--- a/Test/Feat/Access.hs
++++ b/Test/Feat/Access.hs
+@@ -36,7 +36,7 @@ module Test.Feat.Access(
+ 
+ -- testing-feat
+ import Test.Feat.Enumerate 
+-import Control.Sized.Enumerable
++import Control.Enumerable
+ -- base
+ import Data.List
+ import Data.Ratio((%))
+diff --git a/Test/Feat/Class.hs b/Test/Feat/Class.hs
+index e5121fd..e1e207e 100644
+--- a/Test/Feat/Class.hs
++++ b/Test/Feat/Class.hs
+@@ -1,14 +1,15 @@
+ 
+-module Test.Feat.Class 
++module Test.Feat.Class {-# DEPRECATED "Use Control.Sized.Enumerable instead" #-}
+   ( Enumerable(..)
+   , nullary
+   , unary
+   , funcurry
+   , shared
+   , consts
++  , deriveEnumerable
+   ) where
+ 
+-import Control.Sized.Enumerable
++import Control.Enumerable
+ 
+ -- compatability 
+ {-# DEPRECATED nullary "use c0 instead" #-}
+diff --git a/Test/Feat/Enumerate.hs b/Test/Feat/Enumerate.hs
+index 95f4f37..9582b3d 100644
+--- a/Test/Feat/Enumerate.hs
++++ b/Test/Feat/Enumerate.hs
+@@ -28,16 +28,6 @@ module Test.Feat.Enumerate (
+   cartesian,
+   singleton,
+   pay,
+-{-
+-  -- *** Polymorphic sharing
+-  module Data.Typeable,
+-  Tag(Source),
+-  tag,
+-  eShare,
+-  noOptim,
+-  optimise,
+-  irregular
+--}
+   ) where
+ 
+ -- testing-feat
+@@ -83,7 +73,7 @@ instance Sized Enumerate where
+   pay e    = Enumerate (revCons mempty $ revParts e)
+   aconcat  = mconcat
+   pair     = cartesian
+-  -- fin
++  fin k    = fromParts [finFin k]
+ 
+ -- | The @'mappend'@ is (disjoint) @'union'@
+ instance Monoid (Enumerate a) where
+diff --git a/Test/Feat/Finite.hs b/Test/Feat/Finite.hs
+index 8e41941..42dc635 100644
+--- a/Test/Feat/Finite.hs
++++ b/Test/Feat/Finite.hs
+@@ -1,5 +1,5 @@
+ -- | A datatype of finite sequences
+-module Test.Feat.Finite (Finite (..), Index, fromFinite) where
++module Test.Feat.Finite (Finite (..), Index, fromFinite, finFin) where
+ 
+ import Control.Applicative
+ import Data.Monoid
+@@ -62,3 +62,6 @@ fromFinite (Finite c ix) = (c,map ix [0..c-1])
+ instance Show a => Show (Finite a) where
+   show = show . fromFinite
+ 
++finFin :: Integer -> Finite Integer
++finFin k | k <= 0 = finEmpty
++finFin k = Finite k (\i -> i)
+diff --git a/examples/haskell-src-exts/hse.hs b/examples/haskell-src-exts/hse.hs
+index cc95fa9..f620408 100644
+--- a/examples/haskell-src-exts/hse.hs
++++ b/examples/haskell-src-exts/hse.hs
+@@ -1,8 +1,10 @@
+ {-# Language TemplateHaskell #-}
+ import Test.Feat
+-import Test.Feat.Class
++-- import Test.Feat.Class
+ import Test.Feat.Modifiers
+ 
++import Control.Enumerable
++
+ import Language.Haskell.Exts
+ import Language.Haskell.Exts.Syntax
+ 
+@@ -82,8 +84,14 @@ myParse = parseWithMode defaultParseMode{
+   extensions = ge'
+   }
+ 
+-ge' = [ TypeFamilies
+-    ]
++ge' = map EnableExtension
++      [ TypeFamilies
++      , TemplateHaskell
++      , MagicHash
++      , ParallelArrays
++      , LambdaCase
++      , ExplicitNamespaces
++      ]
+ 
+ 
+ sureParse :: Parseable a => String -> a
+@@ -96,8 +104,12 @@ parse_print s = let a = sureParse s in (a,prettyPrint a)
+ 
+ 
+ 
++
++
++
+ -- Uncomment the dExcluding line to enable known bugs
+ (let 
++
+   buggy1 = 
+     dExcluding 'UnboxedSingleCon . 
+     dAll
+@@ -106,23 +118,37 @@ parse_print s = let a = sureParse s in (a,prettyPrint a)
+     dAll
+     
+   buggy3 = 
++    dExcept 'LCase [| c1 (LCase . nonEmpty) |] .
++    dExcept 'Do [| c2 $ \ss e -> Do (ss ++ [Qualifier e]) |] .
++  
+     dExcluding 'XPcdata .
+     dExcluding 'XExpTag .
+     dExcluding 'XChildTag .
+-    dExcept 'XPcdata [| unary $ XPcdata . nonEmpty |] . dAll
++    dExcept 'XPcdata [| c1 $ XPcdata . nonEmpty |] .
++    dExcept 'MultiIf [| c1 $ MultiIf . nonEmpty |] .
++    dAll
+   
++  
++  fixdecs = 
++    dExcept 'InfixDecl [| c4 $ \a b c -> InfixDecl a b c . nonEmpty |] .
++    dAll
++    
++  fixlit = 
++    dExcept 'PrimWord [| c1 (\x -> PrimWord (toInteger (x :: Word))) |] .
++    dAll
++    
+ 
+  in fmap concat $ mapM deriveEnumerable' [
+   dAll ''Module,
+ --  dAll ''SrcLoc,
+-  dExcept 'LanguagePragma [|unary $ funcurry $ \x -> LanguagePragma x . nonEmpty|] 
++  dExcluding 'AnnModulePragma $ dExcluding 'LanguagePragma
++   -- dExcept 'LanguagePragma [|c2 $ \x -> LanguagePragma x . nonEmpty|] 
+     $ dAll ''ModulePragma,
+-  dExcept 'WarnText [|unary $ WarnText . nonEmpty|]
+-    $ dExcept 'DeprText [|unary $ DeprText . nonEmpty|]  
++  dExcept 'WarnText [|c1 $ WarnText . nonEmpty|]
++    $ dExcept 'DeprText [|c1 $ DeprText . nonEmpty|]  
+     $ dAll ''WarningText,
+-  dAll ''ExportSpec,
+   dAll ''ImportDecl,
+-  dAll ''Decl,
++  fixdecs ''Decl,
+   dAll ''Tool,
+   dAll ''QName,
+   dAll ''ImportSpec,
+@@ -165,40 +191,65 @@ parse_print s = let a = sureParse s in (a,prettyPrint a)
+   dAll ''QOp,
+   dAll ''Stmt,
+   dAll ''Alt,
+-  dAll ''Literal,
++  fixlit ''Literal,
+   dAll ''IPName,
+   dAll ''ConDecl,
+   dAll ''RPatOp,
+-  dAll ''GuardedAlts,
++  -- dAll ''GuardedAlts,
+   dAll ''BangType,
+-  dAll ''GuardedAlt
++  -- dAll ''GuardedAlt,
++  dAll ''TypeEqn,
++  dAll ''Sign,
++  dAll ''Role,
++  dAll ''Promoted,
++  dAll ''PatternSynDirection,
++  dAll ''Overlap,
++  dAll ''Namespace,
++  dAll ''BooleanFormula
+   ])
+ 
++instance Enumerable ExportSpec where
++  enumerate = datatype [ c1 $ EVar . nonSpecial
++                       , c2 $ \x -> EAbs x . nonSpecial
++                       -- , c1 $ EThingAll . nonSpecial
++                       -- , c2 $ EThingWith . nonSpecial
++                       , c1 $ EModuleContents
++                       ]
++
++-- newtype Upper = Upper {upper :: QName}
++-- instance Enumerable Upper where
++--  enumerate = datatype [c2 Qual
++
++newtype NonSpecialName = NonSpecialName {nonSpecial :: QName}
++instance Enumerable NonSpecialName where
++  enumerate = datatype [fmap NonSpecialName $ c2 Qual
++                       ,fmap NonSpecialName $ c1 UnQual
++                       ]
+ 
+ 
+ instance Enumerable ModuleName where 
+-  enumerate = consts 
+-    [ nullary $ ModuleName "M"
+-    , nullary $ ModuleName "C.M"
++  enumerate = datatype 
++    [ c0 $ ModuleName "M"
++    , c0 $ ModuleName "C.M"
+     ]
+ 
+ -- Will probably need to be broken into constructor/variable/symbol names
+ instance Enumerable Name where
+-  enumerate = consts 
+-    [ nullary $ Ident "C"
+-    , nullary $ Ident "v"
+-    , nullary $ Symbol "*"
++  enumerate = datatype 
++    [ c0 $ Ident "C"
++    , c0 $ Ident "v"
++--    , c0 $ Symbol "*"
+     ]
+ 
+ instance Enumerable CName where
+-  enumerate = consts
+-    [ nullary $ VarName (Ident "v")
+-    , nullary $ ConName (Ident "C")
++  enumerate = datatype
++    [ c0 $ VarName (Ident "v")
++    , c0 $ ConName (Ident "C")
+     ]
+ 
+ instance Enumerable SrcLoc where
+-  enumerate = consts
+-    [ nullary (SrcLoc "File.hs" 0 0)]
++  enumerate = datatype
++    [ c0 (SrcLoc "File.hs" 0 0)]
+ 
+ 
+ 
+diff --git a/testing-feat.cabal b/testing-feat.cabal
+index 94108ae..8db0b36 100644
+--- a/testing-feat.cabal
++++ b/testing-feat.cabal
+@@ -43,9 +43,9 @@ Library
+     Test.Feat.Class
+   
+   Build-depends: 
+-    base >= 4.5 && <= 4.8,
++    base >= 4.5 && < 4.9,
+     QuickCheck > 2 && < 3,
+-    sized-functors < 0.2,
++    size-based < 0.2,
+     testing-type-modifiers < 0.2
+ 
+   
+\ No newline at end of file

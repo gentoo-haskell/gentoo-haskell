@@ -33,6 +33,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9.0.1 <dev-haskell/doctest-0.14 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'free             >= 4.6.1 && < 5' 'free             >= 4.6.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-herbie

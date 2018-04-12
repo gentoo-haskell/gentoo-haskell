@@ -1,0 +1,52 @@
+--- testing-feat-0.4.0.3-orig/Test/Feat/Enumerate.hs	2016-04-21 16:26:28.000000000 +1000
++++ testing-feat-0.4.0.3/Test/Feat/Enumerate.hs	2018-04-12 16:37:40.087939674 +1000
+@@ -45,6 +45,7 @@
+ import Test.Feat.Internals.Tag(Tag(Source))
+ -- base
+ import Control.Applicative
++import Data.Semigroup
+ import Control.Monad
+ import Data.Function
+ import Data.Monoid
+@@ -80,6 +81,9 @@
+   pure     = singleton
+   f <*> a  = fmap (uncurry ($)) (cartesian f a)
+ 
++instance Semigroup (Enumerate a) where
++  (<>)  = union
++
+ -- | The @'mappend'@ is (disjoint) @'union'@
+ instance Monoid (Enumerate a) where
+   mempty      = Enumerate mempty (return mempty)
+@@ -162,14 +166,17 @@
+ instance Functor RevList where
+   fmap f = toRev . fmap f . fromRev
+ 
++instance Semigroup a => Semigroup (RevList a) where
++  (<>) xs ys  = toRev $ zipMon (fromRev xs) (fromRev ys) where
++    zipMon :: Semigroup a => [a] -> [a] -> [a]
++    zipMon (x:xs) (y:ys) = x <> y : zipMon xs ys
++    zipMon xs ys         = xs ++ ys
++
+ -- Maybe this should be append instead?
+ -- | Padded zip
+ instance Monoid a => Monoid (RevList a) where
+-  mempty         = toRev[]
+-  mappend xs ys  = toRev$ zipMon (fromRev xs) (fromRev ys) where
+-    zipMon :: Monoid a => [a] -> [a] -> [a]
+-    zipMon (x:xs) (y:ys) = x <> y : zipMon xs ys
+-    zipMon xs ys         = xs ++ ys  
++  mempty   = toRev[]
++  mappend  = (<>)
+ 
+ -- | Constructs a "Reverse list" variant of a given list. In a sensible 
+ -- Haskell implementation evaluating any inital segment of 
+@@ -242,6 +249,8 @@
+   pure = finPure
+   a <*> b = fmap (uncurry ($)) (finCart a b)
+   
++instance Semigroup (Finite a) where
++  (<>) = finUnion
+ 
+ instance Monoid (Finite a) where 
+   mempty = finEmpty

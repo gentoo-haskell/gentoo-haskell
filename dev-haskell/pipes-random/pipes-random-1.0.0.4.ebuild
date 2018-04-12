@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/mwc-random-0.13:=[profile?] <dev-haskell/mwc-random-0.14:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.8 && < 4.11' 'base >=4.8'
+}

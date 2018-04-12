@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.2
 		>=dev-haskell/http-types-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                 >= 4.6 && < 4.11' 'base                 >= 4.6'
+}

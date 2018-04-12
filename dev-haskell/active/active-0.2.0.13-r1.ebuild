@@ -34,5 +34,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9' \
-		'lens >= 4.0 && < 4.16' 'lens >= 4.0'
+		'lens >= 4.0 && < 4.16' 'lens >= 4.0' \
+		'base >= 4.0 && < 4.11' 'base >= 4.0'
 }

@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 #KEYWORDS="~alpha ~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="+terminfo"
 
-RDEPEND=">=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+RDEPEND=">=dev-haskell/stm-2.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	terminfo? ( >=dev-haskell/terminfo-0.3.1.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?] )
 "
@@ -27,6 +27,13 @@ DEPEND="${RDEPEND}
 "
 
 CABAL_CORE_LIB_GHC_PV="PM:8.4.2_rc1 PM:9999"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'stm >= 2.4 && < 2.5' 'stm >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

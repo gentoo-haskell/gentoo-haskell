@@ -35,5 +35,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base >= 4.5 && < 4.12' 'base >= 4.5' \
 		'aeson >= 0.4 && < 1.3' 'aeson >= 0.4'
 }

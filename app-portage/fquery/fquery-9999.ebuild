@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -28,4 +28,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's/^Version:.*/&.9999/' -i ${PN}.cabal || die # just to distinct from release install
+
+	# Workaround for Cabal 2.2.0.1 running configure with
+	# ${S}/dist/build set as the current directory.  This changes
+	# the script to prepend ${S}/ to the the paths.  The script
+	# then uses the ${S} environment variable.
+	sed -e 's@\(Adelie/\)@${S}/\1@g' \
+		-i configure || die
 }

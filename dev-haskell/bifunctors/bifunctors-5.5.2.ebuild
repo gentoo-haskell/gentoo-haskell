@@ -20,7 +20,7 @@ IUSE="+semigroups +tagged"
 RDEPEND=">=dev-haskell/base-orphans-0.5.2:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/th-abstraction-0.2.2:=[profile?] <dev-haskell/th-abstraction-0.3:=[profile?]
-	>=dev-haskell/transformers-compat-0.5:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
+	>=dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	semigroups? ( >=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?] )
 	tagged? ( >=dev-haskell/tagged-0.7.3:=[profile?] <dev-haskell/tagged-1:=[profile?] )
@@ -30,6 +30,14 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.8
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell    >= 2.4   && < 2.13' 'template-haskell    >= 2.4' \
+		'transformers-compat >= 0.5   && < 0.6' 'transformers-compat >= 0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

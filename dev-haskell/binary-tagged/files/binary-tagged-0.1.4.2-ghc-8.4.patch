@@ -1,0 +1,30 @@
+--- binary-tagged-0.1.4.2-orig/src/Data/Binary/Tagged.hs	2016-12-05 23:17:12.000000000 +1100
++++ binary-tagged-0.1.4.2/src/Data/Binary/Tagged.hs	2018-04-12 11:27:59.115513113 +1000
+@@ -145,6 +145,10 @@
+ import qualified Data.Aeson as Aeson
+ #endif
+ 
++#if MIN_VERSION_base(4,9,0)
++import Data.Semigroup (Semigroup(..))
++#endif
++
+ -- | 'Binary' serialisable class, which tries to be less error-prone to data structure changes.
+ --
+ -- Values are serialised with header consisting of version @v@ and hash of 'structuralInfo'.
+@@ -201,9 +205,16 @@
+   return = BinaryTagged
+   BinaryTagged m >>= k = k m
+ 
++#if MIN_VERSION_base(4,9,0)
++instance Semigroup a => Semigroup (BinaryTagged v a) where
++  (<>)  = liftA2 (<>)
++#endif  
++
+ instance Monoid.Monoid a => Monoid.Monoid (BinaryTagged v a) where
+   mempty   = pure Monoid.mempty
++#if !(MIN_VERSION_base(4,11,0))
+   mappend  = liftA2 Monoid.mappend
++#endif
+ 
+ -- | Type the semantic version is serialised with.
+ type Version = Word32

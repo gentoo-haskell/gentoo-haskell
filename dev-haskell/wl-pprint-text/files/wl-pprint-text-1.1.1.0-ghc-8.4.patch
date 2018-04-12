@@ -1,0 +1,11 @@
+--- wl-pprint-text-1.1.1.0-orig/Text/PrettyPrint/Leijen/Text/Monadic.hs	2017-01-26 22:56:06.000000000 +1100
++++ wl-pprint-text-1.1.1.0/Text/PrettyPrint/Leijen/Text/Monadic.hs	2018-04-09 10:15:52.148947408 +1000
+@@ -21,7 +21,7 @@
+    Doc, -- putDoc, hPutDoc,
+ 
+    -- * Basic combinators
+-   empty, char, text, textStrict, (<>), nest, line, linebreak, group, softline,
++   empty, char, text, textStrict, (Text.PrettyPrint.Leijen.Text.Monadic.<>), nest, line, linebreak, group, softline,
+    softbreak, spacebreak,
+ 
+    -- * Alignment

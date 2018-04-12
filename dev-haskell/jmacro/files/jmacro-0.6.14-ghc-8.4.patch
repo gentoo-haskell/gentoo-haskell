@@ -1,0 +1,43 @@
+--- jmacro-0.6.14-orig/Language/Javascript/JMacro/Base.hs	2016-05-28 08:08:19.000000000 +1000
++++ jmacro-0.6.14/Language/Javascript/JMacro/Base.hs	2018-04-10 23:56:42.118689779 +1000
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE FlexibleInstances, UndecidableInstances, OverlappingInstances, OverloadedStrings, TypeFamilies, RankNTypes, DeriveDataTypeable, StandaloneDeriving, FlexibleContexts, TypeSynonymInstances, ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE FlexibleInstances, UndecidableInstances, OverlappingInstances, OverloadedStrings, TypeFamilies, RankNTypes, DeriveDataTypeable, StandaloneDeriving, FlexibleContexts, TypeSynonymInstances, ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving, CPP #-}
+ 
+ -----------------------------------------------------------------------------
+ {- |
+@@ -59,6 +59,10 @@
+ 
+ import Language.Javascript.JMacro.Types
+ 
++#if MIN_VERSION_base(4,9,0)
++import Data.Semigroup (Semigroup(..))
++#endif
++
+ -- wl-pprint-text compatibility with pretty
+ infixl 5 $$, $+$
+ ($+$), ($$), ($$$) :: Doc -> Doc -> Doc
+@@ -133,14 +137,22 @@
+ 
+ type JsLabel = String
+ 
++#if MIN_VERSION_base(4,9,0)
++instance Semigroup JStat where
++    (BlockStat xs) <> (BlockStat ys) = BlockStat $ xs ++ ys
++    (BlockStat xs) <> ys = BlockStat $ xs ++ [ys]
++    xs <> (BlockStat ys) = BlockStat $ xs : ys
++    xs <> ys = BlockStat [xs,ys]
++#endif
+ 
+ instance Monoid JStat where
+     mempty = BlockStat []
++#if !(MIN_VERSION_base(4,11,0))
+     mappend (BlockStat xs) (BlockStat ys) = BlockStat $ xs ++ ys
+     mappend (BlockStat xs) ys = BlockStat $ xs ++ [ys]
+     mappend xs (BlockStat ys) = BlockStat $ xs : ys
+     mappend xs ys = BlockStat [xs,ys]
+-
++#endif
+ 
+ -- TODO: annotate expressions with type
+ -- | Expressions

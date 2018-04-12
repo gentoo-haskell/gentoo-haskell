@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,7 @@ RDEPEND="<dev-haskell/base-prelude-2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/free-4.6 <dev-haskell/free-5
+	test? ( >=dev-haskell/free-4.6
 		>=dev-haskell/htf-0.13 <dev-haskell/htf-0.14
 		>=dev-haskell/loch-th-0.2 <dev-haskell/loch-th-0.3
 		>=dev-haskell/mtl-2 <dev-haskell/mtl-3
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-3
 		>=dev-haskell/unordered-containers-0.2 <dev-haskell/unordered-containers-0.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'free >= 4.6 && < 5' 'free >= 4.6'
+}
