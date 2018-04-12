@@ -1,0 +1,74 @@
+--- ixset-1.0.7-orig/src/Data/IxSet.hs	2016-06-08 03:39:26.000000000 +1000
++++ ixset-1.0.7/src/Data/IxSet.hs	2018-04-10 12:22:57.991996660 +1000
+@@ -172,6 +172,13 @@
+ import           Data.Typeable  (Typeable, cast, typeOf)
+ import Language.Haskell.TH      as TH
+ 
++#if MIN_VERSION_base(4,9,0)
++import           Data.Semigroup (Semigroup)
++#endif
++
++#if !MIN_VERSION_base(4,11,0)
++#define SYBWC.Typeable SYBWC.Typeable1
++#endif
+ 
+ -------------------------------------------------
+ -- Type proxies
+@@ -258,7 +265,7 @@
+          , SYBWC.Data ctx [a]
+          , SYBWC.Sat (ctx (IxSet a))
+          , SYBWC.Sat (ctx [a])
+-         , SYBWC.Typeable1 IxSet
++         , SYBWC.Typeable IxSet
+          , Indexable a
+          , Data a
+          , Ord a
+@@ -794,9 +801,18 @@
+ 
+ --}
+ 
++#if MIN_VERSION_base(4,9,0)
++instance (Indexable a, Typeable a, Ord a) => Semigroup (IxSet a) where
++    (<>) = union
++#endif
++
+ instance (Indexable a, Typeable a, Ord a) => Monoid (IxSet a) where
+     mempty = empty
++#if MIN_VERSION_base(4,9,0)
++    mappend = (<>)
++#else
+     mappend = union
++#endif
+ 
+ -- | Statistics about 'IxSet'. This function returns quadruple
+ -- consisting of 1. total number of elements in the set 2. number of
+--- ixset-1.0.7-orig/src/Data/IxSet/Ix.hs	2016-06-08 03:39:26.000000000 +1000
++++ ixset-1.0.7/src/Data/IxSet/Ix.hs	2018-04-10 12:23:10.905040052 +1000
+@@ -1,6 +1,6 @@
+ {-# LANGUAGE UndecidableInstances, OverlappingInstances, FlexibleInstances,
+              MultiParamTypeClasses, TemplateHaskell, PolymorphicComponents,
+-             DeriveDataTypeable,ExistentialQuantification #-}
++             DeriveDataTypeable,ExistentialQuantification,CPP #-}
+ 
+ {- |
+ 
+@@ -27,6 +27,10 @@
+ import           Data.Set   (Set)
+ import qualified Data.Set   as Set
+ 
++#if !MIN_VERSION_base(4,11,0)
++#define SYBWC.Typeable SYBWC.Typeable1
++#endif
++
+ -- the core datatypes
+ 
+ -- | 'Ix' is a 'Map' from some 'Typeable' key to a 'Set' of values for
+@@ -52,7 +56,7 @@
+ ixDataType :: SYBWC.DataType
+ ixDataType = SYBWC.mkDataType "Ix" [ixConstr]
+ 
+-instance (SYBWC.Typeable1 Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
++instance (SYBWC.Typeable Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
+        => SYBWC.Data ctx (Ix a) where
+     gfoldl _ _ _ _ = error "gfoldl Ix" :: w (Ix a)
+     toConstr _ (Ix _ _)    = ixConstr
