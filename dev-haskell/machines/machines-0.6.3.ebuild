@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/adjunctions-4.2:=[profile?] <dev-haskell/adjunctions-5:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14 )
+	test? ( >=dev-haskell/doctest-0.11.1 )
 "
 
 src_prepare() {
