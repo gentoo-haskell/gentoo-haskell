@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
-	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/exceptions-0.8:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/hunit-1.2:=[profile?] <dev-haskell/hunit-1.7:=[profile?]
 	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -36,5 +36,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson >= 0.6 && < 1.3' 'aeson >= 0.6'
+		'aeson >= 0.6 && < 1.3' 'aeson >= 0.6' \
+		'exceptions >=0.8 && <0.9' 'exceptions >=0.8'
 }
