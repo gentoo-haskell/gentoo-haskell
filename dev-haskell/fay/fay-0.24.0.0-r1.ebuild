@@ -19,11 +19,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
-	>=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.8:=[profile?]
 	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/data-lens-light-0.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18.1:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18.1:=[profile?]
 	>=dev-haskell/language-ecmascript-0.15:=[profile?] <dev-haskell/language-ecmascript-0.18:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/mtl-compat-0.1:=[profile?] <dev-haskell/mtl-compat-0.3:=[profile?]
@@ -35,7 +35,7 @@ RDEPEND=">dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/spoon-0.1:=[profile?] <dev-haskell/spoon-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/traverse-with-class-1.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.11:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -51,7 +51,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson > 0.6 && < 1.3' 'aeson > 0.6'
+		'aeson > 0.6 && < 1.3' 'aeson > 0.6' \
+		'haskell-src-exts >= 1.18.1 && < 1.20' 'haskell-src-exts >= 1.18.1' \
+		'base-compat >= 0.8 && < 0.10' 'base-compat >= 0.8' \
+		'transformers-compat >= 0.3 && < 0.6' 'transformers-compat >= 0.3'
 }
 
 src_configure() {
