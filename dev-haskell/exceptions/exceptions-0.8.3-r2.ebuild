@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,14 +20,14 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-3:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
-	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
+	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( >=dev-haskell/quickcheck-2.5
-		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
-		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
+		>=dev-haskell/test-framework-0.8
+		>=dev-haskell/test-framework-quickcheck2-0.3 )
 "
 
 src_prepare() {
@@ -35,5 +35,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'template-haskell           >= 2.2      && < 2.12' 'template-haskell           >= 2.2' \
-		'QuickCheck                 >= 2.5      && < 2.10' 'QuickCheck                 >= 2.5'
+		'transformers-compat        >= 0.3      && < 0.6' 'transformers-compat        >= 0.3' \
+		'QuickCheck                 >= 2.5      && < 2.10' 'QuickCheck                 >= 2.5' \
+		'test-framework             >= 0.8      && < 0.9' 'test-framework             >= 0.8' \
+		'test-framework-quickcheck2 >= 0.3      && < 0.4' 'test-framework-quickcheck2 >= 0.3'
 }
