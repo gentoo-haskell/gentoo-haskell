@@ -21,7 +21,7 @@ IUSE="+comonad +containers +contravariant +distributive +tagged +unordered-conta
 RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-haskell/transformers-compat-0.5:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
+	>=dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	comonad? ( >=dev-haskell/comonad-4.2.6:=[profile?] <dev-haskell/comonad-6:=[profile?] )
 	contravariant? ( >=dev-haskell/contravariant-0.2.0.1:=[profile?] <dev-haskell/contravariant-2:=[profile?] )
@@ -33,8 +33,17 @@ RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14 )
+	test? ( >=dev-haskell/doctest-0.11.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'transformers-compat >= 0.5     && < 0.6' 'transformers-compat >= 0.5' \
+		'doctest   >= 0.11.1 && < 0.14' 'doctest   >= 0.11.1'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
