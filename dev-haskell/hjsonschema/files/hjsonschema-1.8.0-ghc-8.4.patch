@@ -1,0 +1,41 @@
+commit e1bcba426f51b44ede757728334f61d981a164ae
+Author: Dmitry Bushev <bushevdv@gmail.com>
+Date:   Mon Apr 9 21:49:50 2018 +0300
+
+    Add ghc-8.4 support
+
+diff --git a/hjsonschema.cabal b/hjsonschema.cabal
+index 1ecb747..ec39d45 100644
+--- a/hjsonschema.cabal
++++ b/hjsonschema.cabal
+@@ -81,6 +81,8 @@ library
+     , unordered-containers >= 0.2
+     , text                 >= 1.1
+     , vector               >= 0.10
++  if impl(ghc < 8.0)
++    build-depends: semigroups == 0.18.*
+ 
+ test-suite local
+   hs-source-dirs:
+diff --git a/src/JSONSchema/Fetch.hs b/src/JSONSchema/Fetch.hs
+index 41f1bde..cc6e3c7 100644
+--- a/src/JSONSchema/Fetch.hs
++++ b/src/JSONSchema/Fetch.hs
+@@ -7,6 +7,7 @@ import           Control.Monad (foldM)
+ import qualified Data.ByteString as BS
+ import qualified Data.ByteString.Lazy as LBS
+ import qualified Data.HashMap.Strict as HM
++import qualified Data.Semigroup as S
+ import qualified Data.Text as T
+ import qualified Network.HTTP.Client as NC
+ import qualified Network.HTTP.Client.TLS as NCTLS
+@@ -29,7 +30,7 @@ data FetchInfo schema = FetchInfo
+ -- | Keys are URIs (without URI fragments).
+ newtype URISchemaMap schema
+     = URISchemaMap { _unURISchemaMap :: HashMap Text schema }
+-    deriving (Eq, Show, Monoid)
++    deriving (Eq, Show, S.Semigroup, Monoid)
+ 
+ -- | A top-level schema along with its location.
+ data SchemaWithURI schema = SchemaWithURI
+
