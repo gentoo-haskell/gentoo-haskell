@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RDEPEND="<dev-haskell/exceptions-0.9:=[profile?]
+RDEPEND="dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/multipart-0.1.2:=[profile?] <dev-haskell/multipart-0.2:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -40,7 +40,8 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck >= 2.8.1 && < 2.10' 'QuickCheck >= 2.8.1' \
 		'time >= 1.5 && < 1.7' 'time >= 1.5' \
-		'doctest >= 0.8 && < 0.12' 'doctest >= 0.8'
+		'doctest >= 0.8 && < 0.12' 'doctest >= 0.8' \
+		'exceptions < 0.9' 'exceptions'
 }
 
 src_configure() {
