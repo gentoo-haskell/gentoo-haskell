@@ -107,6 +107,7 @@ dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packe
 dev-haskell/pem 0.2.2: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/prelude-extras 0.4.0.3: Higher order versions of Prelude classes
 dev-haskell/preprocessor-tools 1.0.1: A framework for extending Haskell's syntax via quick-and-dirty preprocessors
+dev-haskell/psqueue 1.1-r1: Priority Search Queue
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
 dev-haskell/quickcheck 1.2.0.1-r1: Automatic testing of Haskell programs
