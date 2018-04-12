@@ -1,0 +1,33 @@
+commit 818ee45ce97ef44e2a359214dee15fbb4522cafd
+Merge: 423d05b 5635963
+Author: JonasDuregard <jonas.duregard@gmail.com>
+Date:   Wed May 24 14:07:08 2017 +0200
+
+    Merge pull request #4 from michalpalka/master
+    
+    Fix space leak in ioFeat
+
+commit 56359638a30594a849e07fc883ec01a8c6f87536
+Author: Michał Pałka <michal.palka@chalmers.se>
+Date:   Wed May 24 13:35:34 2017 +0200
+
+    Fix space leak in ioFeat
+    
+    ioFeat contains a call to mapM with a potentially very long list,
+    which leads to a space leak, as the result list is retained
+    until the end of the computation. Replacing mapM with mapM_
+    fixes the problem.
+
+diff --git a/Test/Feat/Access.hs b/Test/Feat/Access.hs
+index daa8b80..fd7a3a6 100644
+--- a/Test/Feat/Access.hs
++++ b/Test/Feat/Access.hs
+@@ -97,7 +97,7 @@ ioFeat :: [(Integer,[a])] -> Report a -> IO ()
+ ioFeat vs f = go vs 0 0 where
+   go ((c,xs):xss) s tot = do
+     putStrLn $ "--- Testing "++show c++" values at size " ++ show s
+-    mapM f xs
++    mapM_ f xs
+     go xss (s+1) (tot + c)
+   go []           s tot = putStrLn $ "--- Done. Tested "++ show tot++" values"
+ 
