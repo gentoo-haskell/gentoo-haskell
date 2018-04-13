@@ -3,6 +3,10 @@
 # * generated automatically using pmaint *
 
 dev-haskell/ansi-wl-pprint:example - Build the example application.
+dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups.
+dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
+dev-haskell/cabal-install:parsec - Use parser written in parsec library.
 dev-haskell/certificate:executable - Build the executable
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/comonad:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
