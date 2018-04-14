@@ -77,6 +77,10 @@ DEPEND="${RDEPEND}
 	embed_data_files? ( dev-haskell/hsb2hs )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-new-pandoc-types.patch
+)
+
 src_prepare() {
 	default
 
