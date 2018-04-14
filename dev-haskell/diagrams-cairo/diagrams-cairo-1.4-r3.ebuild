@@ -44,6 +44,5 @@ src_prepare() {
 		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13' \
 		'base >= 4.2 && < 4.10' 'base >= 4.2' \
 		'vector >= 0.10.0 && < 0.12' 'vector >= 0.10' \
-		'lens >= 3.8 && < 4.16' 'lens >= 3.8' \
-		'vector >= 0.10.0 && < 0.12' 'vector >= 0.10.0'
+		'lens >= 3.8 && < 4.16' 'lens >= 3.8'
 }
