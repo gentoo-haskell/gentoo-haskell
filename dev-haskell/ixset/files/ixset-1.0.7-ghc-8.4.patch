@@ -1,11 +1,11 @@
 --- ixset-1.0.7-orig/src/Data/IxSet.hs	2016-06-08 03:39:26.000000000 +1000
-+++ ixset-1.0.7/src/Data/IxSet.hs	2018-04-10 12:22:57.991996660 +1000
++++ ixset-1.0.7/src/Data/IxSet.hs	2018-04-15 21:43:55.460193580 +1000
 @@ -172,6 +172,13 @@
  import           Data.Typeable  (Typeable, cast, typeOf)
  import Language.Haskell.TH      as TH
  
 +#if MIN_VERSION_base(4,9,0)
-+import           Data.Semigroup (Semigroup)
++import qualified Data.Semigroup as S (Semigroup, (<>))
 +#endif
 +
 +#if !MIN_VERSION_base(4,11,0)
@@ -23,19 +23,20 @@
           , Indexable a
           , Data a
           , Ord a
-@@ -794,9 +801,18 @@
+@@ -794,9 +801,19 @@
  
  --}
  
 +#if MIN_VERSION_base(4,9,0)
-+instance (Indexable a, Typeable a, Ord a) => Semigroup (IxSet a) where
++instance (Indexable a, Typeable a, Ord a) => S.Semigroup (IxSet a) where
 +    (<>) = union
 +#endif
 +
  instance (Indexable a, Typeable a, Ord a) => Monoid (IxSet a) where
      mempty = empty
-+#if MIN_VERSION_base(4,9,0)
-+    mappend = (<>)
++#if MIN_VERSION_base(4,11,0)
++#elif MIN_VERSION_base(4,9,0)
++    mappend = (S.<>)
 +#else
      mappend = union
 +#endif

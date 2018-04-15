@@ -1,11 +1,11 @@
 --- validity-0.4.0.4-orig/src/Data/Validity.hs	2018-02-12 02:59:35.000000000 +1100
-+++ validity-0.4.0.4/src/Data/Validity.hs	2018-04-15 13:25:09.261815526 +1000
++++ validity-0.4.0.4/src/Data/Validity.hs	2018-04-15 22:46:42.587543185 +1000
 @@ -82,6 +82,9 @@
  import GHC.Natural (Natural, isValidNatural)
  #endif
  import GHC.Real (Ratio(..))
 +#if MIN_VERSION_base(4,9,0)
-+import Data.Semigroup ((<>))
++import qualified Data.Semigroup as S (Semigroup(..), (<>))
 +#endif
  
  -- | A class of types that have additional invariants defined upon them
@@ -15,7 +15,7 @@
  instance Validity Validation
  
 +#if MIN_VERSION_base(4,9,0)
-+instance Semigroup Validation where
++instance S.Semigroup Validation where
 +    (Validation v1) <> (Validation v2) = Validation $ v1 ++ v2
 +#endif
 +
@@ -23,7 +23,7 @@
      mempty = Validation []
 +#if MIN_VERSION_base(4,11,0)
 +#elif MIN_VERSION_base(4,9,0)
-+    mappend = (<>)
++    mappend = (S.<>)
 +#else
      mappend (Validation v1) (Validation v2) = Validation $ v1 ++ v2
 +#endif
