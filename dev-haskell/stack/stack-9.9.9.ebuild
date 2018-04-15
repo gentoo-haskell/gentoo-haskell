@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -78,6 +78,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/unix-compat )
 "
 RDEPEND+=" !dev-haskell/stack-bin[symlink]"
+
+pkg_pretend() {
+	eerror "This package version is not intended for installation."
+	eerror "It only serves a placeholder for people who try to bump to"
+	eerror "'latest' hackage version on stack. Please use other version."
+	die "${P} is not supposed to be used."
+}
 
 src_prepare() {
 	# workaround https://ghc.haskell.org/trac/ghc/ticket/10110
