@@ -5,7 +5,7 @@
  #endif
  
 +#if MIN_VERSION_base(4,9,0)
-+import Data.Semigroup (Semigroup(..))
++import qualified Data.Semigroup as S (Semigroup(..))
 +#endif
 +
  -- | 'Binary' serialisable class, which tries to be less error-prone to data structure changes.
@@ -16,8 +16,8 @@
    BinaryTagged m >>= k = k m
  
 +#if MIN_VERSION_base(4,9,0)
-+instance Semigroup a => Semigroup (BinaryTagged v a) where
-+  (<>)  = liftA2 (<>)
++instance S.Semigroup a => S.Semigroup (BinaryTagged v a) where
++  (<>)  = liftA2 (S.<>)
 +#endif  
 +
  instance Monoid.Monoid a => Monoid.Monoid (BinaryTagged v a) where
