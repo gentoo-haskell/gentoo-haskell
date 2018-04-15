@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,6 +17,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT="test" # No instance for (Serial IO clock-0.7.2:System.Clock.TimeSpec)
 
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?]
 	>=dev-haskell/base-orphans-0.4.3:=[profile?]
