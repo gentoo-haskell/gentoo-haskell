@@ -1,0 +1,32 @@
+--- validity-0.4.0.4-orig/src/Data/Validity.hs	2018-02-12 02:59:35.000000000 +1100
++++ validity-0.4.0.4/src/Data/Validity.hs	2018-04-15 13:25:09.261815526 +1000
+@@ -82,6 +82,9 @@
+ import GHC.Natural (Natural, isValidNatural)
+ #endif
+ import GHC.Real (Ratio(..))
++#if MIN_VERSION_base(4,9,0)
++import Data.Semigroup ((<>))
++#endif
+ 
+ -- | A class of types that have additional invariants defined upon them
+ -- that aren't enforced by the type system
+@@ -195,9 +198,19 @@
+ 
+ instance Validity Validation
+ 
++#if MIN_VERSION_base(4,9,0)
++instance Semigroup Validation where
++    (Validation v1) <> (Validation v2) = Validation $ v1 ++ v2
++#endif
++
+ instance Monoid Validation where
+     mempty = Validation []
++#if MIN_VERSION_base(4,11,0)
++#elif MIN_VERSION_base(4,9,0)
++    mappend = (<>)
++#else
+     mappend (Validation v1) (Validation v2) = Validation $ v1 ++ v2
++#endif
+ 
+ -- | Declare any value to be valid.
+ --
