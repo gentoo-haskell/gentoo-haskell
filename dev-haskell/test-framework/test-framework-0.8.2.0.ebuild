@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
+RESTRICT="test" # tests are missing
+
 RDEPEND=">=dev-haskell/ansi-terminal-0.4.0:=[profile?] <dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.5.1:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/base-orphans-0.1:=[profile?]
