@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/semigroupoids-5.2:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
 	>=dev-haskell/temporary-1.2.0.4:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
@@ -27,6 +27,13 @@ RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:
 	>=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/cabal-1.18.1.3:=[profile?]
 	|| ( ( <dev-haskell/cabal-1.26 )
-		( >=dev-haskell/cabal-2.0 <dev-haskell/cabal-2.1 ) )
+		( >=dev-haskell/cabal-2.0 <dev-haskell/cabal-2.3 ) )
 "
 DEPEND="${RDEPEND}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'exceptions       < 0.9  && >= 0.8.3' 'exceptions       < 0.11  && >= 0.8.3'
+}
