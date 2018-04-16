@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/http-client:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?]
-	>=dev-haskell/http-reverse-proxy-0.4.2:=[profile?] <dev-haskell/http-reverse-proxy-0.5:=[profile?]
+	>=dev-haskell/http-reverse-proxy-0.4.2:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/lifted-base:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -59,6 +59,17 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		dev-haskell/hunit )
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.4.patch
+		 "${FILESDIR}"/${P}-http-conduit-2.3.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-reverse-proxy        >= 0.4.2         && < 0.5' 'http-reverse-proxy        >= 0.4.2'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
