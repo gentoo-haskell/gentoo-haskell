@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -27,16 +27,38 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	local tf_arg=()
+	local tf3_arg=()
 
 	if has_version '=dev-haskell/transformers-0.3*'; then
-		tf_arg+=(--flag=three)
+		tf3_arg+=(--flag=three)
 	else
-		tf_arg+=(--flag=-three)
+		tf3_arg+=(--flag=-three)
+	fi
+
+	local tf4_arg=()
+
+	if has_version '=dev-haskell/transformers-0.4*'; then
+		tf4_arg+=(--flag=four)
+	else
+		tf4_arg+=(--flag=-four)
+	fi
+
+	local tf5_arg=()
+
+	if has_version '=dev-haskell/transformers-0.5*'; then
+		if has_version '>dev-haskell/transformers-0.5.3'; then
+			tf5_arg+=(--flag=-five)
+		else
+			tf5_arg+=(--flag=five)
+		fi
+	else
+		tf5_arg+=(--flag=-five)
 	fi
 
 	haskell-cabal_src_configure \
 		--flag=mtl \
 		--flag=-two \
-		${tf_arg[@]}
+		${tf3_arg[@]} \
+		${tf4_arg[@]} \
+		${tf5_arg[@]}
 }
