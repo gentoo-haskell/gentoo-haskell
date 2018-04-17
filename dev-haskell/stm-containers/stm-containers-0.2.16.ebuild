@@ -17,6 +17,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Tests fail to compile with ghc 8.4.2_rc1, quickcheck 2.11.3:
+# No instance for (Data.Functor.Classes.Show1
+#                         (Update.UpdateF TestKey ()))
+#        arising from a use of ‘qcAssertion’
+RESTRICT="test"
+
 RDEPEND="<dev-haskell/base-prelude-2:=[profile?]
 	>=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-0.2:=[profile?]
 	<dev-haskell/hashable-2:=[profile?]

@@ -8,8 +8,8 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="A Haskell pre-processor"
-HOMEPAGE="https://github.com/acowley/hpp"
+DESCRIPTION="Generic Programming using True Sums of Products"
+HOMEPAGE="http://hackage.haskell.org/package/generics-sop"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -17,17 +17,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/bytestring-trie:=[profile?]
-	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+RDEPEND=">=dev-haskell/transformers-compat-0.3:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-1.18.1.3
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >=4.8 && <4.12' 'base >=4.8'
+		'transformers-compat  >= 0.3  && < 0.6' 'transformers-compat  >= 0.3'
 }
