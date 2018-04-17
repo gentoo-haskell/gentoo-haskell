@@ -1,0 +1,109 @@
+commit fb99187b3015a94551ad928451016391ff1a5465
+Author: Tony Day <tonyday567@gmail.com>
+Date:   Wed Mar 21 16:39:47 2018 +1000
+
+    Fixes for ghc-8.4.1
+
+diff --git a/Data/GraphViz/Attributes/Arrows.hs b/Data/GraphViz/Attributes/Arrows.hs
+index 0397695..0aa0fe9 100644
+--- a/Data/GraphViz/Attributes/Arrows.hs
++++ b/Data/GraphViz/Attributes/Arrows.hs
+@@ -16,6 +16,7 @@ import Data.GraphViz.Internal.Util (bool)
+ import Data.GraphViz.Parsing
+ import Data.GraphViz.Printing
+ 
++import Prelude hiding ((<>))
+ import Data.Maybe (isJust)
+ 
+ -- -----------------------------------------------------------------------------
+diff --git a/Data/GraphViz/Attributes/Colors.hs b/Data/GraphViz/Attributes/Colors.hs
+index 505ffd8..f859b54 100644
+--- a/Data/GraphViz/Attributes/Colors.hs
++++ b/Data/GraphViz/Attributes/Colors.hs
+@@ -53,6 +53,7 @@ import Data.Colour.RGBSpace     (uncurryRGB)
+ import Data.Colour.RGBSpace.HSV (hsv)
+ import Data.Colour.SRGB         (Colour, sRGB, sRGB24, toSRGB24)
+ 
++import           Prelude        hiding ((<>))
+ import           Data.Char      (isHexDigit)
+ import           Data.Maybe     (isJust)
+ import qualified Data.Text.Lazy as T
+diff --git a/Data/GraphViz/Attributes/Complete.hs b/Data/GraphViz/Attributes/Complete.hs
+index 3bdda01..1617575 100644
+--- a/Data/GraphViz/Attributes/Complete.hs
++++ b/Data/GraphViz/Attributes/Complete.hs
+@@ -204,6 +204,7 @@ import Data.GraphViz.Internal.Util         (bool, isIDString, keywords,
+ import Data.GraphViz.Parsing
+ import Data.GraphViz.Printing
+ 
++import           Prelude        hiding ((<>))
+ import           Data.List      (partition)
+ import           Data.Maybe     (isNothing)
+ import qualified Data.Set       as S
+diff --git a/Data/GraphViz/Attributes/HTML.hs b/Data/GraphViz/Attributes/HTML.hs
+index ed4a211..dc80f3e 100644
+--- a/Data/GraphViz/Attributes/HTML.hs
++++ b/Data/GraphViz/Attributes/HTML.hs
+@@ -76,6 +76,7 @@ import Data.GraphViz.Internal.Util       (bool)
+ import Data.GraphViz.Parsing
+ import Data.GraphViz.Printing
+ 
++import           Prelude        hiding ((<>))
+ import           Data.Char      (chr, isSpace, ord)
+ import           Data.Function  (on)
+ import           Data.List      (delete)
+diff --git a/Data/GraphViz/Attributes/Internal.hs b/Data/GraphViz/Attributes/Internal.hs
+index cd8f024..f28db4c 100644
+--- a/Data/GraphViz/Attributes/Internal.hs
++++ b/Data/GraphViz/Attributes/Internal.hs
+@@ -25,6 +25,7 @@ module Data.GraphViz.Attributes.Internal
+ import Data.GraphViz.Parsing
+ import Data.GraphViz.Printing
+ 
++import           Prelude        hiding ((<>))
+ import           Data.Map       (Map)
+ import qualified Data.Map       as Map
+ import           Data.Maybe     (isNothing)
+diff --git a/Data/GraphViz/Attributes/Values.hs b/Data/GraphViz/Attributes/Values.hs
+index e29e00e..159ddca 100644
+--- a/Data/GraphViz/Attributes/Values.hs
++++ b/Data/GraphViz/Attributes/Values.hs
+@@ -22,6 +22,7 @@ import           Data.GraphViz.Internal.Util       (bool, stringToInt)
+ import           Data.GraphViz.Parsing
+ import           Data.GraphViz.Printing
+ 
++import           Prelude         hiding ((<>))
+ import           Data.List       (intercalate)
+ import           Data.Maybe      (isJust)
+ import           Data.Text.Lazy  (Text)
+diff --git a/Data/GraphViz/Printing.hs b/Data/GraphViz/Printing.hs
+index c2f00d7..2ba3bca 100644
+--- a/Data/GraphViz/Printing.hs
++++ b/Data/GraphViz/Printing.hs
+@@ -81,13 +81,13 @@ import           Text.PrettyPrint.Leijen.Text.Monadic hiding (Pretty(..),
+                                                        width, (<$>))
+ import qualified Text.PrettyPrint.Leijen.Text.Monadic as PP
+ 
++import           Prelude                   hiding ((<>))
+ import           Control.Monad             (ap, when)
+ import           Control.Monad.Trans.State
+ import           Data.Char                 (toLower)
+ import qualified Data.Set                  as Set
+ import           Data.Version              (Version(..))
+ import           Data.Word                 (Word16, Word8)
+-
+ -- -----------------------------------------------------------------------------
+ 
+ -- | A type alias to indicate what is being produced.
+diff --git a/Data/GraphViz/Types/Internal/Common.hs b/Data/GraphViz/Types/Internal/Common.hs
+index 28a963e..ab3c829 100644
+--- a/Data/GraphViz/Types/Internal/Common.hs
++++ b/Data/GraphViz/Types/Internal/Common.hs
+@@ -42,6 +42,7 @@ import Data.GraphViz.Internal.Util
+ import Data.GraphViz.Parsing
+ import Data.GraphViz.Printing
+ 
++import           Prelude             hiding ((<>))
+ import           Control.Monad       (unless, when)
+ import           Data.Maybe          (isJust)
+ import           Data.Text.Lazy      (Text)
