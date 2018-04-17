@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Provides an orphan GHC.OverloadedLabels.IsLabel instance for lenses from
+		ghc-generics. All effort is taken to play as nicely as possible with other
+		IsLabel instances -- however orphan instances are inherently problematic.
+		Please do not depend on this package from any hackage libraries.
+	</longdescription>
+</pkgmetadata>
