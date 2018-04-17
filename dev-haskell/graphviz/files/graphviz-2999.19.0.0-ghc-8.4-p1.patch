@@ -1,0 +1,48 @@
+commit 8abdf4dc5b8812a437a5ff01cb35b267422320e2
+Merge: 25f9469 a1b93f3
+Author: Ivan Lazar Miljenovic <Ivan.Miljenovic@gmail.com>
+Date:   Mon Nov 20 10:24:58 2017 +1100
+
+    Merge pull request #18 from chris-martin/pr/DotM_Monoid
+    
+    Define the Monoid and Semigroup for DotM
+
+commit a1b93f3a64e33cc619d35a0ca1d340eca2edd8d8
+Author: Chris Martin <ch.martin@gmail.com>
+Date:   Thu Jul 27 15:31:26 2017 -0400
+
+    Define the Monoid and Semigroup for DotM
+
+diff --git a/Data/GraphViz/Types/Monadic.hs b/Data/GraphViz/Types/Monadic.hs
+index f993866..a9beaa1 100644
+--- a/Data/GraphViz/Types/Monadic.hs
++++ b/Data/GraphViz/Types/Monadic.hs
+@@ -85,6 +85,11 @@ import qualified Data.Sequence as Seq
+ 
+ #if !(MIN_VERSION_base (4,8,0))
+ import Control.Applicative (Applicative(..))
++import Data.Monoid (Monoid(..))
++#endif
++
++#if MIN_VERSION_base (4,9,0)
++import Data.Semigroup (Semigroup(..))
+ #endif
+ 
+ -- -----------------------------------------------------------------------------
+@@ -117,6 +122,15 @@ instance Monad (DotM n) where
+                    ~(b,stmts') = runDot $ f a
+                in (b, stmts `DL.append` stmts')
+ 
++#if MIN_VERSION_base (4,9,0)
++instance Semigroup a => Semigroup (DotM n a) where
++  DotM x1 <> DotM x2 = DotM (x1 <> x2)
++#endif
++
++instance Monoid a => Monoid (DotM n a) where
++  mappend (DotM x1) (DotM x2) = DotM (mappend x1 x2)
++  mempty = DotM mempty
++
+ tell :: DotStmts n -> Dot n
+ tell = DotM . (,) ()
+ 
+
