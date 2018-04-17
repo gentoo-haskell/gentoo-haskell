@@ -1,0 +1,32 @@
+commit 9836338542ca40016fb5d401114af09d6a3970c0
+Author: Ryan Scott <ryan.gl.scott@gmail.com>
+Date:   Thu Jan 25 12:19:36 2018 -0500
+
+    Add a Semigroup (Render SVG V2 n) instance
+
+diff --git a/src/Diagrams/Backend/SVG.hs b/src/Diagrams/Backend/SVG.hs
+index 75b1b26..96d292c 100644
+--- a/src/Diagrams/Backend/SVG.hs
++++ b/src/Diagrams/Backend/SVG.hs
+@@ -194,13 +194,18 @@ runRenderM :: SVGFloat n => T.Text -> SvgRenderM n -> Element
+ runRenderM o s = flip evalState initialSvgRenderState
+                $ runReaderT  s (initialEnvironment o)
+ 
+-instance Monoid (Render SVG V2 n) where
+-  mempty = R $ return mempty
+-  R r1 `mappend` R r2_ = R $ do
++instance Semigroup (Render SVG V2 n) where
++  R r1 <> R r2_ = R $ do
+     svg1 <- r1
+     svg2 <- r2_
+     return (svg1 `mappend` svg2)
+ 
++instance Monoid (Render SVG V2 n) where
++  mempty = R $ return mempty
++#if !MIN_VERSION_base(4,11,0)
++  mappend = (<>)
++#endif
++
+ -- Handle clip attributes.
+ --
+ renderSvgWithClipping :: forall n. SVGFloat n
