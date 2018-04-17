@@ -17,9 +17,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
+RDEPEND=">=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'transformers-compat  >= 0.3  && < 0.6' 'transformers-compat  >= 0.3'
+}
