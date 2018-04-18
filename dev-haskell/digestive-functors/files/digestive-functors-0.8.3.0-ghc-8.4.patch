@@ -1,0 +1,49 @@
+--- digestive-functors-0.8.3.0-orig/digestive-functors.cabal	2017-12-27 03:11:24.000000000 +1100
++++ digestive-functors-0.8.3.0/digestive-functors.cabal	2018-04-18 10:34:15.976240303 +1000
+@@ -68,6 +68,8 @@
+     old-locale >= 1.0     && < 1.1,
+     text       >= 0.10    && < 1.3,
+     time       >= 1.4     && < 1.9
++  if !impl(ghc >= 8.0)
++    Build-depends: semigroups >= 0.18
+   Extensions: CPP
+ 
+ Test-suite digestive-functors-tests
+@@ -110,6 +112,8 @@
+     old-locale >= 1.0     && < 1.1,
+     text       >= 0.10    && < 1.3,
+     time       >= 1.4     && < 1.9
++  if !impl(ghc >= 8.0)
++    Build-depends: semigroups >= 0.18
+ 
+ Source-repository head
+   Type:     git
+--- digestive-functors-0.8.3.0-orig/src/Text/Digestive/Form/Encoding.hs	2017-12-27 03:11:24.000000000 +1100
++++ digestive-functors-0.8.3.0/src/Text/Digestive/Form/Encoding.hs	2018-04-18 10:22:11.896476328 +1000
+@@ -13,7 +13,7 @@
+ import           Control.Monad.Identity             (Identity)
+ import           Data.Maybe                         (mapMaybe)
+ import           Data.Monoid                        (Monoid (..), mconcat)
+-
++import qualified Data.Semigroup as S                (Semigroup(..), (<>))
+ 
+ --------------------------------------------------------------------------------
+ import           Text.Digestive.Form.Internal
+@@ -37,12 +37,15 @@
+ 
+ 
+ --------------------------------------------------------------------------------
++instance S.Semigroup FormEncType where
++    UrlEncoded <> x = x
++    MultiPart <> _ = MultiPart
++
+ -- Monoid instance for encoding types: prefer UrlEncoded, but fallback to
+ -- MultiPart when needed
+ instance Monoid FormEncType where
+     mempty               = UrlEncoded
+-    mappend UrlEncoded x = x
+-    mappend MultiPart  _ = MultiPart
++    mappend              = (<>)
+ 
+ 
+ --------------------------------------------------------------------------------
