@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Use the @mvc@ library to distill concurrent programs into pure and
+		single-threaded programs using the @Model@-@View@-@Controller@ pattern.  This
+		transformation lets you:
+		
+		* replay your program deterministically,
+		
+		* do property-based testing of your model (like @QuickCheck@), and:
+		
+		* equationally reason about your pure core.
+	</longdescription>
+</pkgmetadata>
