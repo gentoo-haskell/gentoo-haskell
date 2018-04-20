@@ -47,7 +47,7 @@ DEPEND="${RDEPEND}
 	# 	dev-haskell/tasty-quickcheck
 	# 	>=dev-haskell/tree-diff-0.0.1 <dev-haskell/tree-diff-0.1 )
 
-CABAL_CORE_LIB_GHC_PV="PM:8.4.2_rc1"
+CABAL_CORE_LIB_GHC_PV="PM:8.4.2_rc1 PM:8.4.2"
 
 PATCHES=("${FILESDIR}"/${PN}-2.0.0.2-no-bootstrap.patch)
 
