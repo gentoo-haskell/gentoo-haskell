@@ -7,4 +7,4 @@ LICENSE=GPL-3+ FDL-1.2+
 RDEPEND=virtual/emacs dev-haskell/hasktags >=virtual/emacs-23
 SLOT=0
 _eclasses_=elisp	8a9eaaa38b2345593b1cbc5315dde83c	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	25b08efef07cea6bcd45b8c6dcce2782
-_md5_=2d5ede11b5838993a8047d2f12ab8e36
+_md5_=8e9ffdf89439dd1f6b9581fbf8ac9dde
