@@ -26,12 +26,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-PATCHES=("${FILESDIR}"/${P}-fix-space-leak.patch
-		 "${FILESDIR}"/${P}-ghc-8.4.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-fix-space-leak.patch
+	"${FILESDIR}"/${P}-ghc-8.4.patch
+)
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'base >= 4.5 && <= 4.10' 'base >= 4.5 && < 5' \
 		'template-haskell >= 2.5 && < 2.12' 'template-haskell >= 2.5'
-	default
 }

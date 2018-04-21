@@ -4,7 +4,7 @@
  import Test.Feat.Internals.Tag(Tag(Source))
  -- base
  import Control.Applicative
-+import Data.Semigroup
++import qualified Data.Semigroup as S
  import Control.Monad
  import Data.Function
  import Data.Monoid
@@ -12,7 +12,7 @@
    pure     = singleton
    f <*> a  = fmap (uncurry ($)) (cartesian f a)
  
-+instance Semigroup (Enumerate a) where
++instance S.Semigroup (Enumerate a) where
 +  (<>)  = union
 +
  -- | The @'mappend'@ is (disjoint) @'union'@
@@ -22,10 +22,10 @@
  instance Functor RevList where
    fmap f = toRev . fmap f . fromRev
  
-+instance Semigroup a => Semigroup (RevList a) where
++instance S.Semigroup a => S.Semigroup (RevList a) where
 +  (<>) xs ys  = toRev $ zipMon (fromRev xs) (fromRev ys) where
-+    zipMon :: Semigroup a => [a] -> [a] -> [a]
-+    zipMon (x:xs) (y:ys) = x <> y : zipMon xs ys
++    zipMon :: S.Semigroup a => [a] -> [a] -> [a]
++    zipMon (x:xs) (y:ys) = x S.<> y : zipMon xs ys
 +    zipMon xs ys         = xs ++ ys
 +
  -- Maybe this should be append instead?
@@ -45,7 +45,7 @@
    pure = finPure
    a <*> b = fmap (uncurry ($)) (finCart a b)
    
-+instance Semigroup (Finite a) where
++instance S.Semigroup (Finite a) where
 +  (<>) = finUnion
  
  instance Monoid (Finite a) where 
