@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/case-insensitive-0.2:=[profile?] dev-haskell/http-types:=[profile?] >=dev-haskell/network-2.2.1.5:=[profile?] >=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/websockets-0.9:=[profile?] >=dev-lang/ghc-7.8.2:= examples? ( dev-haskell/file-embed:=[profile?] dev-haskell/text:=[profile?] dev-haskell/wai-app-static:=[profile?] dev-haskell/warp:=[profile?] ) >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Provide a bridge between WAI and the websockets package
+EAPI=6
+HOMEPAGE=https://github.com/yesodweb/wai
+IUSE=+examples doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/case-insensitive-0.2:=[profile?] dev-haskell/http-types:=[profile?] >=dev-haskell/network-2.2.1.5:=[profile?] >=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/websockets-0.9:=[profile?] >=dev-lang/ghc-7.8.2:= examples? ( dev-haskell/file-embed:=[profile?] dev-haskell/text:=[profile?] dev-haskell/wai-app-static:=[profile?] dev-haskell/warp:=[profile?] )
+SLOT=0/3.0.1.2
+SRC_URI=mirror://hackage/packages/archive/wai-websockets/3.0.1.2/wai-websockets-3.0.1.2.tar.gz
+_eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	63392afb034aad67f17fa129019eb4d9	ghc-package	b3a65eea21c73ad40a2d87d1aa95b5a1	haskell-cabal	5901516a7b3f0e3403a890b17801d63b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	ce21313503c41896ebcd7d58b0607e37
+_md5_=2c9e360bd9ff1b87d61852a146548004
