@@ -1,3 +1,10 @@
+# Mark Wright <gienah@gentoo.org> (21 Apr 2018)
+# Since >=dev-haskell/hoogle-5.0.17 is masked because it wants
+# >=dev-haskell/conduit-1.3 we need to mask recent versions of
+# extra for earlier version of hoolge to build
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/699
+>=dev-haskell/extra-1.6.6
+
 # Mark Wright <gienah@gentoo.org> (11 Apr 2018)
 # ghc 8.4.2_rc1 fails to build packages that use unix-compat-5.0.1 with this undefined symbol:
 #    <command line>: can't load .so/.DLL for: /usr/lib64/x86_64-linux-ghc-8.4.1.20180329/libHSunix-compat-0.5.0.1-Cu0VBWUOhjq56kZjKudkQy-ghc8.4.1.20180329.so (/usr/lib64/x86_64-linux-ghc-8.4.1.20180329/libHSunix-compat-0.5.0.1-Cu0VBWUOhjq56kZjKudkQy-ghc8.4.1.20180329.so: undefined symbol: major)
