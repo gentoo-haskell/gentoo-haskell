@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,6 +29,12 @@ src_prepare() {
 	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
 		-e 's/check: clean/check:/' \
 		-i Makefile || die
+}
+
+src_compile() {
+	elisp_src_compile
+	emake haskell-mode-autoloads.el
+	elisp-compile haskell-mode-autoloads.el
 }
 
 src_test() {
