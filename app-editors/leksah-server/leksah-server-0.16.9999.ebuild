@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RESTRICT=test # fails own tests
 
 RDEPEND=">=dev-haskell/aeson-0.11.2.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/attoparsec-0.10.0.3:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9.0:=[profile?]
 	>=dev-haskell/binary-shared-0.8:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
 	>=dev-haskell/cabal-1.10.2.0:=[profile?] <dev-haskell/cabal-1.25:=[profile?]
 	>=dev-haskell/conduit-1.0.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
