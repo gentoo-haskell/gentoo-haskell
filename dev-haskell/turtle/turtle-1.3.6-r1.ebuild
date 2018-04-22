@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # ambiguous package: pulseaudio-0.0.2.0 time-1.6.0.1
 
 RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/async-2.0.0.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
+	>=dev-haskell/async-2.0.0.0:=[profile?]
 	>=dev-haskell/clock-0.4.1.2:=[profile?] <dev-haskell/clock-0.8:=[profile?]
 	>=dev-haskell/foldl-1.1:=[profile?] <dev-haskell/foldl-1.4:=[profile?]
 	<dev-haskell/hostname-1.1:=[profile?]
@@ -41,3 +41,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.7 <dev-haskell/doctest-0.12
 		>=dev-haskell/system-filepath-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'async                >= 2.0.0.0 && < 2.2' 'async                >= 2.0.0.0'
+}
