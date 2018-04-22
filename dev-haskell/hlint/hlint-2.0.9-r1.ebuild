@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
 	>=dev-haskell/cpphs-1.20.1:=[profile?]
 	>=dev-haskell/extra-1.4.9:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/refact-0.3:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]
@@ -36,6 +36,17 @@ DEPEND="${RDEPEND}
 "
 
 SITEFILE="60${PN}-gentoo.el"
+
+PATCHES=(
+	"${FILESDIR}"/${P}-haskell-src-exts-1.20.patch
+)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18'
+}
 
 src_configure() {
 	local threaded_flag=""
