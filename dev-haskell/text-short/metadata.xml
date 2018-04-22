@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="asserts">Enable runtime-checks via 'assert'</flag>
+	</use>
 	<longdescription>
 		This package provides the &#39;ShortText&#39; type which is suitable for keeping many short strings in memory. This is similiar to how &#39;ShortByteString&#39; relates to &#39;ByteString&#39;.
 		
