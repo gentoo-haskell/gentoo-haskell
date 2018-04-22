@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,3 +38,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/ref-tf )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.6.0.1-websockets-0.12.patch
+)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'websockets >=0.9.5.0 && <0.10' 'websockets >=0.9.5.0'
+}
