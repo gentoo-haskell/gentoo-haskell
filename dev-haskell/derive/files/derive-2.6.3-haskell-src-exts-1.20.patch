@@ -1,0 +1,99 @@
+diff --git a/src/Data/Derive/DSL/HSE.hs b/src/Data/Derive/DSL/HSE.hs
+index 28f8fbf..fc900aa 100644
+--- a/src/Data/Derive/DSL/HSE.hs
++++ b/src/Data/Derive/DSL/HSE.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE DeriveDataTypeable #-}
++{-# LANGUAGE CPP #-}
+ 
+@@ -25,3 +26,7 @@ list = Input "List" 1 [Ctor "Nil" 0 0, Ctor "Cons" 1 2]
+ sample :: Input
++#if MIN_VERSION_haskell_src_exts(1,20,0)
++sample = DataDecl () (DataType ()) Nothing (DHApp () (DHead () $ name "Sample") (tyVarBind "a")) ctrs []
++#else
+ sample = DataDecl () (DataType ()) Nothing (DHApp () (DHead () $ name "Sample") (tyVarBind "a")) ctrs Nothing
++#endif
+     where
+diff --git a/src/Data/Derive/UniplateDirect.hs b/src/Data/Derive/UniplateDirect.hs
+index fb152ba..44e8266 100644
+--- a/src/Data/Derive/UniplateDirect.hs
++++ b/src/Data/Derive/UniplateDirect.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE PatternGuards #-}
++{-# LANGUAGE CPP #-}
+ -- NOTE: Cannot be guessed as it relies on type information
+@@ -226,6 +227,14 @@ listCtor = DataDecl ()  (DataType ()) Nothing (DHApp () (DHead () $ Ident () "[]
+     [QualConDecl () Nothing Nothing $ ConDecl () (Ident () "[]") []
++#if MIN_VERSION_haskell_src_exts(1,20,0)
++    ,QualConDecl () Nothing Nothing $ ConDecl () (Ident () "(:)") [tyVar "a", TyList () $ tyVar "a"]] []
++#else
+     ,QualConDecl () Nothing Nothing $ ConDecl () (Ident () "(:)") [tyVar "a", TyList () $ tyVar "a"]] Nothing
++#endif
+ 
+ tupleDefn :: Int -> Decl ()
++#if MIN_VERSION_haskell_src_exts(1,20,0)
++tupleDefn n = DataDecl () (DataType ()) Nothing dhead [QualConDecl () Nothing Nothing $ ConDecl () (Ident () s) (map tyVar vars)] []
++#else
+ tupleDefn n = DataDecl () (DataType ()) Nothing dhead [QualConDecl () Nothing Nothing $ ConDecl () (Ident () s) (map tyVar vars)] Nothing
++#endif
+     where s = "(" ++ replicate (n - 1) ',' ++ ")"
+diff --git a/src/Derive/Derivation.hs b/src/Derive/Derivation.hs
+index fd4dad7..8b8621a 100644
+--- a/src/Derive/Derivation.hs
++++ b/src/Derive/Derivation.hs
+@@ -1,2 +1,3 @@
+ {-# LANGUAGE ViewPatterns #-}
++{-# LANGUAGE CPP #-}
+ 
+@@ -10,2 +11,3 @@ import Control.Monad
+ import Data.List
++import qualified Data.Maybe as M
+ import Derive.Utils
+@@ -35,2 +37,7 @@ moduleDerives = concatMap f . moduleDecls
+     where
++#  if MIN_VERSION_haskell_src_exts(1,20,0)
++        f (DataDecl _ _ _ (fromDeclHead -> (name, vars)) _ deriv) = g name vars (M.listToMaybe deriv)
++        f (GDataDecl _ _ _ (fromDeclHead -> (name, vars)) _ _ deriv) = g name vars (M.listToMaybe deriv)
++        f (DerivDecl _loc Nothing _ (fromIParen -> IRule _ _ _ (fromInstHead -> (name, args)))) = [TyCon () name `tyApps` args]
++#else
+         f (DataDecl _ _ _ (fromDeclHead -> (name, vars)) _ deriv) = g name vars deriv
+@@ -38,5 +45,9 @@ moduleDerives = concatMap f . moduleDecls
+         f (DerivDecl _ _ (fromIParen -> IRule _ _ _ (fromInstHead -> (name, args)))) = [TyCon () name `tyApps` args]
++#endif
+         f _ = []
+-
++#  if MIN_VERSION_haskell_src_exts(1,20,0)
++        g name vars deriv = [TyCon () a `tyApps` (b:bs) | IRule _ _ _ (fromInstHead -> (a,bs)) <- map fromIParen $ maybe [] (\(Deriving _loc Nothing xs) -> xs) deriv]
++#else
+         g name vars deriv = [TyCon () a `tyApps` (b:bs) | IRule _ _ _ (fromInstHead -> (a,bs)) <- map fromIParen $ maybe [] (\(Deriving _ xs) -> xs) deriv]
++#endif
+             where b = TyCon () (UnQual () name) `tyApps` map (tyVar . prettyPrint) vars
+diff --git a/src/Derive/Test.hs b/src/Derive/Test.hs
+index 794f71d..ceb92c6 100644
+--- a/src/Derive/Test.hs
++++ b/src/Derive/Test.hs
+@@ -1,2 +1,2 @@
+-
++{-# LANGUAGE CPP #-}
+ module Derive.Test(test) where
+@@ -36,4 +36,7 @@ listType = DataDecl () (DataType ()) Nothing (DHApp () (DHead () (Ident () "[]")
+         ,TyApp () (TyCon () (UnQual () (Ident () "List"))) (TyVar () (Ident () "a"))])]
++#if MIN_VERSION_haskell_src_exts(1,20,0)
++    []
++#else
+     Nothing
+-
++#endif
+ 
+diff --git a/src/Language/Haskell/Convert.hs b/src/Language/Haskell/Convert.hs
+index 3724555..fe526dc 100644
+--- a/src/Language/Haskell/Convert.hs
++++ b/src/Language/Haskell/Convert.hs
+@@ -46,3 +46,7 @@ instance Convert TH.Dec (HS.Decl ()) where
+             f :: DataOrNew () -> Cxt -> TH.Name -> [TyVarBndr] -> [Con] -> unused -> HS.Decl ()
++#  if MIN_VERSION_haskell_src_exts(1,20,0)
++            f t cxt n vs con _ = DataDecl () t (Just $ c cxt) (dh (c n) (c vs)) (c con) []
++#  else
+             f t cxt n vs con _ = DataDecl () t (Just $ c cxt) (dh (c n) (c vs)) (c con) Nothing
++#  endif
+ #else

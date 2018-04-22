@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cmdargs-0.10.5:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/dyre-0.8:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18.0:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18.0:=[profile?]
 	>=dev-haskell/ilist-0.1:=[profile?] <dev-haskell/ilist-0.4:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -38,5 +38,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty >=0.9.0.1 && <0.12' 'tasty >=0.9.0.1'
+		'tasty >=0.9.0.1 && <0.12' 'tasty >=0.9.0.1' \
+		'haskell-src-exts >=1.18.0 && <1.20' 'haskell-src-exts >=1.18.0'
 }
