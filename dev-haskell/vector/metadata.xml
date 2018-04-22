@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		
 		An efficient implementation of Int-indexed arrays (both mutable
 		and immutable), with a powerful loop optimisation framework .
 		
@@ -62,15 +61,14 @@
 		* 'Show' instances for immutable vectors follow containers conventions
 		
 		* 'Read' instances for all immutable vector types
-		
+
 		* Performance improvements
-		
 	</longdescription>
 	<use>
 		<flag name="boundschecks">Enable bounds checking</flag>
 		<flag name="internalchecks">Enable internal consistency checks at the cost of a
-                significant performance penalty</flag>
+		significant performance penalty</flag>
 		<flag name="unsafechecks">Enable bounds checking in unsafe operations at the cost of a
-                significant performance penalty</flag>
+		significant performance penalty</flag>
 	</use>
 </pkgmetadata>
