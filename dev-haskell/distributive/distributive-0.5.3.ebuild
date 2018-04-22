@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.5:=[profile?] <dev-haskell/base-orphans-1:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.14
+	test? ( >=dev-haskell/doctest-0.11.1
 		>=dev-haskell/generic-deriving-1.11 <dev-haskell/generic-deriving-2
 		>=dev-haskell/hspec-2 <dev-haskell/hspec-3 )
 "
