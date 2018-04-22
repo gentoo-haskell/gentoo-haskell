@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
-	>=dev-haskell/base-compat-0.9.1:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9.1:=[profile?]
 	>=dev-haskell/dlist-0.2:=[profile?]
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/hashable-1.1.2.0:=[profile?]
@@ -49,14 +49,18 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2 )
 "
 
-PATCHES=("${FILESDIR}"/${P}-QC-2.10.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-QC-2.10.patch
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
 		'base-orphans >= 0.5.3 && <0.6' 'base-orphans >= 0.5.3' \
-		'QuickCheck >= 2.7 && <2.9.3' 'QuickCheck >= 2.7'
+		'QuickCheck >= 2.7 && <2.9.3' 'QuickCheck >= 2.7' \
+		'base-compat >= 0.9.1 && < 0.10' 'base-compat >= 0.9.1'
 }
 
 src_configure() {
