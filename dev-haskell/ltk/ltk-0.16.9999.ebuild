@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+RDEPEND=">=dev-haskell/base-compat-0.9.0:=[profile?]
 	>=dev-haskell/cabal-1.6.0:=[profile?] <dev-haskell/cabal-2.1:=[profile?]
 	>=dev-haskell/gi-cairo-1.0.6:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?]
 	>=dev-haskell/gi-gdk-3.0.6:=[profile?] <dev-haskell/gi-gdk-3.1:=[profile?]
