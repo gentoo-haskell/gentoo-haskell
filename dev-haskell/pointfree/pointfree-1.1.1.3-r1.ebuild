@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -31,5 +31,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'QuickCheck >= 2.1 && < 2.10' 'QuickCheck >= 2.1' \
-		'HUnit >= 1.1 && < 1.6' 'HUnit >= 1.1'
+		'HUnit >= 1.1 && < 1.6' 'HUnit >= 1.1' \
+		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18'
 }
