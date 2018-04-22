@@ -4,6 +4,7 @@
 # but 1.3.0 is still masked.
 >=dev-haskell/streaming-commons-0.2
 >=dev-haskell/wai-extra-3.0.22.1
+>=dev-haskell/wai-handler-launch-3.0.2.4
 
 # Mark Wright <gienah@gentoo.org> (21 Apr 2018)
 # Since >=dev-haskell/hoogle-5.0.17 is masked because it wants
