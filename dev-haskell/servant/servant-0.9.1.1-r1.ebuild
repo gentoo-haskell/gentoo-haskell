@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/base-compat-0.9:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/http-api-data-0.3:=[profile?] <dev-haskell/http-api-data-0.4:=[profile?]
 	>=dev-haskell/http-media-0.4:=[profile?] <dev-haskell/http-media-0.7:=[profile?]
@@ -41,3 +41,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck-instances
 		dev-haskell/url )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-compat           >= 0.9  && < 0.10' 'base-compat           >= 0.9'
+}
