@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,10 +23,17 @@ RDEPEND="<dev-haskell/data-fix-0.1:=[profile?]
 	<dev-haskell/neat-interpolation-0.4:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.2:=[profile?]
 	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/trifecta-1.0:=[profile?] <dev-haskell/trifecta-1.7:=[profile?]
+	>=dev-haskell/trifecta-1.0:=[profile?]
 	>=dev-haskell/vector-0.3:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'trifecta         >= 1.0     && < 1.7' 'trifecta         >= 1.0'
+}
