@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.1:=[profil
 	>=dev-haskell/wai-3.0.3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-websockets-3.0.0.6:=[profile?] <dev-haskell/wai-websockets-3.1:=[profile?]
 	>=dev-haskell/warp-3.1.2:=[profile?] <dev-haskell/warp-3.3:=[profile?]
-	>=dev-haskell/websockets-0.9.5.0:=[profile?] <dev-haskell/websockets-0.10:=[profile?]
+	>=dev-haskell/websockets-0.9.5.0:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
