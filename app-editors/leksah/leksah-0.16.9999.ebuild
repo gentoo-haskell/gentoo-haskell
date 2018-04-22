@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="codemirror +dyre loc +network-uri +threaded yi"
 
 RDEPEND=">=app-editors/leksah-server-0.16.2.0:=[profile?] <app-editors/leksah-server-0.17:=[profile?]
-	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9.0:=[profile?]
 	>=dev-haskell/binary-shared-0.8.2:=[profile?] <dev-haskell/binary-shared-0.9:=[profile?]
 	dev-haskell/blaze-html:=[profile?]
 	>=dev-haskell/cabal-1.24.0.0:=[profile?] <dev-haskell/cabal-2.1:=[profile?]
