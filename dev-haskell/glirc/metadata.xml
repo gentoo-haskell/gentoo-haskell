@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="exportcapi">Export C functions used by the extension API (incompatible with GHCi)</flag>
-	</use>
 	<longdescription>
 		Console IRC client
 		
