@@ -25,13 +25,21 @@ RDEPEND=">=dev-haskell/primitive-0.5.0.1:=[profile?] <dev-haskell/primitive-0.7:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.9
 		dev-haskell/random
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2
 		>=dev-haskell/transformers-0.2.0.0 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.5 && < 4.10' 'base >= 4.5' \
+		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

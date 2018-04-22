@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/async-2.0.1:=[profile?] <dev-haskell/async-2.2:=[profile?]
-	>=dev-haskell/lifted-async-0.1:=[profile?] <dev-haskell/lifted-async-0.10:=[profile?]
+RDEPEND=">=dev-haskell/async-2.0.1:=[profile?]
+	>=dev-haskell/lifted-async-0.1:=[profile?]
 	>=dev-haskell/machines-0.5:=[profile?] <dev-haskell/machines-0.7:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -31,6 +31,14 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'async >= 2.0.1 && < 2.2' 'async >= 2.0.1' \
+		'lifted-async >= 0.1 && < 0.10' 'lifted-async >= 0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

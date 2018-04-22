@@ -25,12 +25,12 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/containers-unicode-symbols-0.3.1:=[profile?] <dev-haskell/containers-unicode-symbols-0.4:=[profile?]
 	>=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
 	>=dev-haskell/data-textual-0.3.0:=[profile?] <dev-haskell/data-textual-0.4:=[profile?]
-	>=dev-haskell/dns-2.0.8:=[profile?] <dev-haskell/dns-2.1:=[profile?]
-	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/dns-2.0.8:=[profile?]
+	>=dev-haskell/exceptions-0.8.3:=[profile?]
 	>=dev-haskell/hjsonschema-1.6.2:=[profile?] <dev-haskell/hjsonschema-1.9:=[profile?]
 	>=dev-haskell/lawless-concurrent-machines-0.2.3.3:=[profile?] <dev-haskell/lawless-concurrent-machines-0.5:=[profile?]
 	>=dev-haskell/lens-4.14:=[profile?]
-	>=dev-haskell/lifted-async-0.9.1.1:=[profile?] <dev-haskell/lifted-async-0.10:=[profile?]
+	>=dev-haskell/lifted-async-0.9.1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2.3:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/machines-0.6.1:=[profile?] <dev-haskell/machines-0.7:=[profile?]
 	>=dev-haskell/managed-1.0.5:=[profile?] <dev-haskell/managed-1.1:=[profile?]
@@ -49,7 +49,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/stm-containers-0.2.15:=[profile?] <dev-haskell/stm-containers-0.3:=[profile?]
 	>=dev-haskell/temporary-1.2.0:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/text-printer-0.4:=[profile?] <dev-haskell/text-printer-0.5:=[profile?]
+	>=dev-haskell/text-printer-0.4:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/zippers-0.2.2:=[profile?] <dev-haskell/zippers-0.3:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -62,12 +62,17 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-th )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.26.0-aeson-1.0.0.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.26.0-aeson-1.0.0.patch
+		 "${FILESDIR}"/${PN}-0.26.0-dns-3.0.0.patch)
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
 		'QuickCheck                 >= 2.8 && < 2.10' 'QuickCheck                 >= 2.8' \
-		'lens                       >= 4.14 && < 4.16' 'lens                       >= 4.14'
+		'dns                        >= 2.0.8 && < 2.1' 'dns                        >= 2.0.8' \
+		'exceptions                 >= 0.8.3 && < 0.9' 'exceptions                 >= 0.8.3' \
+		'lens                       >= 4.14 && < 4.16' 'lens                       >= 4.14' \
+		'lifted-async  >= 0.9.1.1 && < 0.10' 'lifted-async  >= 0.9.1.1' \
+		'text-printer               >= 0.4 && < 0.5' 'text-printer               >= 0.4'
 }
