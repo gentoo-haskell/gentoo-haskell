@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 	>=dev-haskell/safecopy-0.8.1:=[profile?] <dev-haskell/safecopy-0.10:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -43,7 +43,8 @@ src_prepare() {
 	cabal_chdeps \
 		'generic-deriving >= 1.4 && < 1.9' 'generic-deriving >= 1.4' \
 		'comonad                   >= 4        && < 5' 'comonad                   >= 4' \
-		'binary                    >= 0.5      && < 0.8' 'binary                    >= 0.5'
+		'binary                    >= 0.5      && < 0.8' 'binary                    >= 0.5' \
+		'vector                    >= 0.9      && < 0.12' 'vector                    >= 0.9'
 }
 
 src_configure() {

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,11 +29,20 @@ RDEPEND="<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/system-filepath-0.3.1:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/text-format-0.4:=[profile?]
-	>=dev-haskell/trifecta-1.6:=[profile?] <dev-haskell/trifecta-1.7:=[profile?]
+	>=dev-haskell/trifecta-1.6:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.11.0.0:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector               >= 0.11.0.0 && < 0.12' 'vector               >= 0.11.0.0' \
+		'trifecta             >= 1.6      && < 1.7' 'trifecta             >= 1.6' \
+		'trifecta         >= 1.6      && < 1.7' 'trifecta         >= 1.6'
+}
