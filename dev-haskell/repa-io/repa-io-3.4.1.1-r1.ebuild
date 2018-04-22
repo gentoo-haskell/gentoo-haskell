@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,9 +21,16 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?
 	>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
 	>=dev-haskell/old-time-1.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/repa-3.4:=[profile?] <dev-haskell/repa-3.5:=[profile?]
-	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.11:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector               == 0.11.*' 'vector               >= 0.11'
+}

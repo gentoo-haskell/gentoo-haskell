@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/vector-0.10.12.3:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+RDEPEND=">=dev-haskell/vector-0.10.12.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
@@ -29,5 +29,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hspec >=2.1.5 && <2.4' 'hspec >=2.1.5'
+		'hspec >=2.1.5 && <2.4' 'hspec >=2.1.5' \
+		'vector >=0.10.12.3 && <0.12' 'vector >=0.10.12.3'
 }
