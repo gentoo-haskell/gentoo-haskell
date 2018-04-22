@@ -30,14 +30,15 @@ RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.9.0.1 <dev-haskell/doctest-0.14 )
+	test? ( >=dev-haskell/doctest-0.9.0.1 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'free             >= 4.6.1 && < 5' 'free             >= 4.6.1'
+		'free             >= 4.6.1 && < 5' 'free             >= 4.6.1' \
+		'doctest >= 0.9.0.1 && < 0.14' 'doctest >= 0.9.0.1'
 }
 
 src_configure() {
