@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/genvalidity-0.4:=[profile?] <dev-haskell/genvalidity-0.5:=[profile?]
 	>=dev-haskell/genvalidity-property-0.1:=[profile?] <dev-haskell/genvalidity-property-0.2:=[profile?]
-	>=dev-haskell/hspec-2.2:=[profile?] <dev-haskell/hspec-2.5:=[profile?]
+	>=dev-haskell/hspec-2.2:=[profile?]
 	dev-haskell/hspec-core:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-0.4:=[profile?] <dev-haskell/validity-0.5:=[profile?]
@@ -30,9 +30,14 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.11 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-hspec-2.5.patch
+)
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'doctest >=0.11 && <0.12' 'doctest >=0.11'
+		'doctest >=0.11 && <0.12' 'doctest >=0.11' \
+		'hspec >=2.2 && <2.5' 'hspec >=2.2'
 }

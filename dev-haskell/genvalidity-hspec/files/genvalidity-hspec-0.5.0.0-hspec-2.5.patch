@@ -1,0 +1,25 @@
+diff --git a/src/Test/Validity/Utils.hs b/src/Test/Validity/Utils.hs
+index 66234d2..f9a698f 100644
+--- a/src/Test/Validity/Utils.hs
++++ b/src/Test/Validity/Utils.hs
+@@ -73,3 +73,7 @@ failsBecause s = mapSpecTree go
+             , itemLocation = Nothing
++#if MIN_VERSION_hspec_core(2,4,0)
++            , itemIsParallelizable = Just False
++#else
+             , itemIsParallelizable = False
++#endif
+             , itemExample =
+@@ -82,3 +86,11 @@ failsBecause s = mapSpecTree go
+             }
+-#if MIN_VERSION_hspec_core(2,4,0)
++
++#if MIN_VERSION_hspec_core(2,5,0)
++produceResult :: Bool -> Test.Hspec.Core.Spec.Result
++produceResult succesful =
++    Test.Hspec.Core.Spec.Result "" $
++    if succesful
++        then Success
++        else Failure Nothing $ Reason "Should have failed but didn't."
++#elif MIN_VERSION_hspec_core(2,4,0)
+ produceResult :: Bool -> Either a Test.Hspec.Core.Spec.Result
