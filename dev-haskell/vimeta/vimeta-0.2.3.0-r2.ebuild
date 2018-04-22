@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="maintainer"
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
-	>=dev-haskell/byline-0.1:=[profile?] <dev-haskell/byline-0.3:=[profile?]
+	>=dev-haskell/byline-0.1:=[profile?]
 	>=dev-haskell/either-4.3:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
@@ -43,7 +43,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'optparse-applicative >= 0.11   && < 0.14' 'optparse-applicative >= 0.11'
+		'optparse-applicative >= 0.11   && < 0.14' 'optparse-applicative >= 0.11' \
+		'byline               >= 0.1    && < 0.3' 'byline               >= 0.1'
 }
 
 src_configure() {
