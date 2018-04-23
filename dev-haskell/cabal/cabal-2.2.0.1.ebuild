@@ -7,6 +7,7 @@ EAPI=6
 #hackport: flags: -bundled-binary-generic
 
 CABAL_FEATURES="lib profile test-suite"
+CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 MY_PN="Cabal"
@@ -29,9 +30,7 @@ RDEPEND=">=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-"
+DEPEND="${RDEPEND}"
 
 	# test? ( >=dev-haskell/base-compat-0.9.3 <dev-haskell/base-compat-0.10
 	# 	>=dev-haskell/base-orphans-0.6 <dev-haskell/base-orphans-0.7
