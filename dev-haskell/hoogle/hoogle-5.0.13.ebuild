@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	dev-haskell/connection:=[profile?]
 	>=dev-haskell/extra-1.4:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/js-flot:=[profile?]
@@ -52,6 +52,17 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-hse-1.20.patch
+)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
