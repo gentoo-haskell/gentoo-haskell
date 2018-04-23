@@ -31,6 +31,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag lib-only lib-only)
