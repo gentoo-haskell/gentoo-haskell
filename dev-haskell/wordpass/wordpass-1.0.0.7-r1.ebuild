@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,9 +22,16 @@ RDEPEND=">=dev-haskell/hflags-0.4:=[profile?] <dev-haskell/hflags-0.5:=[profile?
 	>=dev-haskell/random-source-0.3:=[profile?] <dev-haskell/random-source-0.4:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.4:=[profile?]
 	>=dev-haskell/unix-compat-0.4:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector        >=0.10 && <0.12' 'vector        >=0.10'
+}
