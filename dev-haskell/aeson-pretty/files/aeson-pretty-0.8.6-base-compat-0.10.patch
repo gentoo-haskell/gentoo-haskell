@@ -1,0 +1,9 @@
+diff --git a/Data/Aeson/Encode/Pretty.hs b/Data/Aeson/Encode/Pretty.hs
+index 0ec8755..5813bbb 100644
+--- a/Data/Aeson/Encode/Pretty.hs
++++ b/Data/Aeson/Encode/Pretty.hs
+@@ -72,3 +72,3 @@ import qualified Data.Vector as V (toList)
+ import Prelude ()
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
