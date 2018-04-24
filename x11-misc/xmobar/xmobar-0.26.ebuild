@@ -7,15 +7,15 @@ EAPI=6
 #hackport: flags: -all_extensions,+with_threaded,+with_utf8,with_iwlib:wifi,with_alsa:alsa,with_xft:xft,with_datezone:timezone,with_dbus:dbus,with_mpd:mpd,with_inotify:inotify,with_mpris:mpris,with_xpm:xpm
 
 CABAL_FEATURES="test-suite"
-inherit git-r3 haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A Minimalistic Text Based Status Bar"
-HOMEPAGE="http://projects.haskell.org/xmobar/"
-EGIT_REPO_URI="https://github.com/jaor/xmobar.git"
+HOMEPAGE="http://xmobar.org"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="alsa dbus inotify mpd mpris timezone wifi with_conduit with_uvmeter xft xpm"
 
 RDEPEND=">=dev-haskell/http-4000.2.4:=
