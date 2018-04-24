@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,10 +21,17 @@ RDEPEND=">=dev-haskell/bytestring-builder-0.10:=[profile?] <dev-haskell/bytestri
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.5:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
-	>=dev-haskell/snap-server-1.0:=[profile?] <dev-haskell/snap-server-1.1:=[profile?]
+	>=dev-haskell/snap-server-1.0:=[profile?]
 	>=dev-haskell/websockets-0.9.5:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'snap-server        >= 1.0   && < 1.1' 'snap-server        >= 1.0'
+}
