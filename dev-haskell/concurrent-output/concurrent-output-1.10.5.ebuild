@@ -14,7 +14,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+# unkeyword with ghc-8.2: uses process >=1.6.0
+#KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-terminal-0.9.0:=[profile?]
@@ -23,10 +24,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-termina
 	>=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/terminal-size-0.3.0:=[profile?] <dev-haskell/terminal-size-0.4.0:=[profile?]
 	>=dev-haskell/text-0.11.0:=[profile?] <dev-haskell/text-1.3.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.2.1:=
 "
-#	>=dev-lang/ghc-8.2.1:= <- hackport generated
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-2.0.0.2
 "
-#	>=dev-haskell/cabal-2.0.0.2 <- hackport generated
