@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
-	>=dev-haskell/graphviz-2999.16:=[profile?] <dev-haskell/graphviz-2999.19:=[profile?]
+	>=dev-haskell/graphviz-2999.16:=[profile?]
 	>=dev-haskell/gtk3-0.12:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?] <dev-haskell/polyparse-1.13:=[profile?]
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'graphviz >= 2999.16 && < 2999.19' 'graphviz >= 2999.16'
+}
