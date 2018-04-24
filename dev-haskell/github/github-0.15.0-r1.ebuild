@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
-	>=dev-haskell/base-compat-0.9.1:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/binary-orphans-0.1.0.0:=[profile?] <dev-haskell/binary-orphans-0.2:=[profile?]
 	>=dev-haskell/byteable-0.1.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
@@ -38,8 +38,8 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.1:=[profil
 	>=dev-haskell/tls-1.3.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.4.0.3:=[profile?] <dev-haskell/transformers-compat-0.6:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/vector-0.10.12.3:=[profile?] <dev-haskell/vector-0.12:=[profile?]
-	>=dev-haskell/vector-instances-3.3.0.1:=[profile?] <dev-haskell/vector-instances-3.4:=[profile?]
+	>=dev-haskell/vector-0.10.12.3:=[profile?]
+	>=dev-haskell/vector-instances-3.3.0.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?]
 	>=dev-haskell/aeson-extra-0.2.0.0:=[profile?]
@@ -49,3 +49,12 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/file-embed
 		dev-haskell/hspec )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-compat           >=0.9.1     && <0.10' 'base-compat           >=0.9.1' \
+		'vector                >=0.10.12.3 && <0.12' 'vector                >=0.10.12.3' \
+		'vector-instances      >=3.3.0.1   && <3.4' 'vector-instances      >=3.3.0.1'
+}
