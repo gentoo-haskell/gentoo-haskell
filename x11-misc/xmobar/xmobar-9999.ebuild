@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/http-4000.2.4:=
 	alsa? ( >=dev-haskell/alsa-core-0.5:= <dev-haskell/alsa-core-0.6:=
 		>dev-haskell/alsa-mixer-0.2.0.2:= )
 	dbus? ( >=dev-haskell/dbus-0.10:= )
-	inotify? ( >=dev-haskell/hinotify-0.3:= <dev-haskell/hinotify-0.4:= )
+	inotify? ( >=dev-haskell/hinotify-0.3:= <dev-haskell/hinotify-0.3.10:= )
 	mpd? ( >=dev-haskell/libmpd-0.9:= <dev-haskell/libmpd-0.10:= )
 	mpris? ( >=dev-haskell/dbus-0.10:= )
 	timezone? ( >=dev-haskell/timezone-olson-0.1:= <dev-haskell/timezone-olson-0.2:=
@@ -88,5 +88,5 @@ src_configure() {
 src_install() {
 	cabal_src_install
 
-	dodoc samples/xmobar.config readme.md news.md
+	dodoc samples/xmobar.config readme.md changelog.md
 }
