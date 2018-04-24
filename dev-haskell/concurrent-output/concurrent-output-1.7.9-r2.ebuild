@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?]
-	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.2:=[profile?]
+	>=dev-haskell/async-2.0:=[profile?]
 	>=dev-haskell/exceptions-0.6.0:=[profile?] <dev-haskell/exceptions-0.9.0:=[profile?]
 	>=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/terminal-size-0.3.0:=[profile?] <dev-haskell/terminal-size-0.4.0:=[profile?]
@@ -34,5 +34,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'process (>= 1.1.0 && < 1.5.0)' 'process >= 1.1.0' \
-		'ansi-terminal (>= 0.6.0 && < 0.7.0)' 'ansi-terminal >= 0.6.0'
+		'ansi-terminal (>= 0.6.0 && < 0.7.0)' 'ansi-terminal >= 0.6.0' \
+		'async (>= 2.0 && < 2.2)' 'async >= 2.0'
 }
