@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/ascii-progress-0.3:=[profile?]
 	>=dev-haskell/cabal-1.18:=[profile?] <dev-haskell/cabal-1.25:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
-	>=dev-haskell/either-4.3.0.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
 	>=dev-haskell/hackage-db-1.22:=[profile?] <dev-haskell/hackage-db-2:=[profile?]
 	>=dev-haskell/http-client-0.4:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
 	>=dev-haskell/lens-4.6:=[profile?] <dev-haskell/lens-5:=[profile?]
@@ -39,3 +38,7 @@ RDEPEND=">=dev-haskell/ascii-progress-0.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-either-5.patch
+)
