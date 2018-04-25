@@ -34,7 +34,6 @@ DEPEND="${RDEPEND}
 PATCHES=("${FILESDIR}"/${P}-loosen-deps.patch
 		 "${FILESDIR}"/${P}-ghc-8.4.patch)
 
-
 src_prepare() {
 	default
 
