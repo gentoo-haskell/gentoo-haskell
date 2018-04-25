@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		The goal of this package is to provide a library that can read time
+		zone info files (aka. Olson files), and does time zone conversions
+		in a /pure/ and /efficient/ way.
+		
+		We also provide platform-independent and/or compiled-in access to
+		the standard Time Zone Dabase by the means of the companion @tzdata@
+		package &lt;http://hackage.haskell.org/package/tzdata&gt;.
+		
+		The package is currently in an alpha phase, I&#39;m still experimenting
+		with different ideas wrt. scope\/API\/implementation\/etc. All
+		comments are welcome!
+	</longdescription>
+</pkgmetadata>
