@@ -1,0 +1,54 @@
+--- plugins-auto-0.0.4-orig/plugins-auto.cabal	2011-12-15 11:02:46.000000000 +1100
++++ plugins-auto-0.0.4/plugins-auto.cabal	2018-04-25 21:43:19.733170322 +1000
+@@ -63,6 +63,7 @@
+                        System.Plugins.Auto.LiftName
+ 
+   build-depends:       base >= 3 && < 5,
++                       bytestring,
+                        containers,
+                        filepath,
+                        hinotify >= 0.3.2,
+--- plugins-auto-0.0.4-orig/System/Plugins/Auto/FileSystemWatcher.hs	2011-12-15 11:02:46.000000000 +1100
++++ plugins-auto-0.0.4/System/Plugins/Auto/FileSystemWatcher.hs	2018-04-25 21:45:36.872378477 +1000
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ -- | Api for watching and notifying file changes.
+ -- Currently, this is based on inotify, but people may want to
+ -- provide implementations of this module for non-inotify-supported 
+@@ -17,6 +18,19 @@
+ import qualified Data.Map       as Map
+ import           Data.Map          (Map)
+ 
++#if MIN_VERSION_hinotify(0,3,10)
++import qualified Data.ByteString.Char8 as BS (ByteString, pack, unpack)
++unpack :: BS.ByteString -> String
++unpack = BS.unpack
++pack :: String -> BS.ByteString
++pack = BS.pack
++#else
++unpack :: String -> String
++unpack = id
++pack :: String -> String
++pack = id
++#endif
++
+ -- | A FSWatcher watches several files for changes. If a file is deleted from the
+ -- containing folder, it keeps watching the folder in case the file is added 
+ -- again.
+@@ -59,12 +73,12 @@
+     in modifyMVar fmvar$ \fm ->
+    case Map.lookup d fm of
+      Nothing -> do
+-         wd <- I.addWatch iN [Modify, Move, Delete] d $ \e -> do 
++         wd <- I.addWatch iN [Modify, Move, Delete] (pack d) $ \e -> do 
+                   case e of
+                      Ignored -> return ()
+-                     Deleted { filePath = f' } -> callHandler e d f'
+-                     MovedIn { filePath = f' } -> callHandler e d f'
+-                     Modified { maybeFilePath = Just f' } -> callHandler e d f'
++                     Deleted { filePath = f' } -> callHandler e d (unpack f')
++                     MovedIn { filePath = f' } -> callHandler e d (unpack f')
++                     Modified { maybeFilePath = Just f' } -> callHandler e d (unpack f')
+                      _ -> return ()
+          return ( Map.insert d (wd,Map.singleton f (const hdl)) fm 
+                 , FSWatchDescriptor piN fp 
