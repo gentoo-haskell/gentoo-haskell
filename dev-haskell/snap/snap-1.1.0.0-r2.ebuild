@@ -68,8 +68,6 @@ src_prepare() {
 		'snap-server               >= 1.0      && < 1.1' 'snap-server               >= 1.0' \
 		'heist                     >= 1.0      && < 1.1' 'heist                     >= 1.0' \
 		'map-syntax                >= 0.2      && < 0.3' 'map-syntax                >= 0.2'
-
-
 }
 
 src_configure() {
