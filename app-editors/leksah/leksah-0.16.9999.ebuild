@@ -49,7 +49,7 @@ RDEPEND=">=app-editors/leksah-server-0.16.2.0:=[profile?] <app-editors/leksah-se
 	>=dev-haskell/mtl-1.1.0.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-time-1.0.0.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/parsec-2.1.0.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/pretty-show-1.6.3:=[profile?] <dev-haskell/pretty-show-1.7:=[profile?]
+	>=dev-haskell/pretty-show-1.6.3:=[profile?]
 	>=dev-haskell/quickcheck-2.4.2:2=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
