@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous packages: base-compat-0.10.1 base-compat-batteries-0.10.1
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
@@ -24,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/http-api-data-0.3:=[profile?] <dev-haskell/http-api-data-0.4:=[profile?]
 	>=dev-haskell/http-media-0.4:=[profile?] <dev-haskell/http-media-0.7:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
-	>=dev-haskell/mmorph-1:=[profile?] <dev-haskell/mmorph-1.1:=[profile?]
+	>=dev-haskell/mmorph-1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/string-conversions-0.3:=[profile?] <dev-haskell/string-conversions-0.5:=[profile?]
@@ -46,5 +48,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base-compat           >= 0.9  && < 0.10' 'base-compat           >= 0.9'
+		'base-compat           >= 0.9  && < 0.10' 'base-compat           >= 0.9' \
+		'mmorph                >= 1    && < 1.1' 'mmorph                >= 1'
 }
