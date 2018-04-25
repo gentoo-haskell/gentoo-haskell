@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	<dev-haskell/ansi-terminal-0.7:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	<dev-haskell/async-2.2:=[profile?]
+	dev-haskell/async:=[profile?]
 	<dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	<dev-haskell/terminal-size-0.4:=[profile?]
 	>=dev-haskell/text-1.2.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
-	>=dev-haskell/trifecta-1.6:=[profile?] <dev-haskell/trifecta-1.7:=[profile?]
+	>=dev-haskell/trifecta-1.6:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	<dev-haskell/utf8-string-1.1:=[profile?]
@@ -83,7 +83,9 @@ src_prepare() {
 		'process < 1.5' 'process' \
 		'aeson >= 0.6 && < 1.2' 'aeson >= 0.6' \
 		'safe == 0.3.9' 'safe' \
-		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13'
+		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13' \
+		'trifecta >= 1.6 && < 1.7' 'trifecta >= 1.6' \
+		'async < 2.2' 'async'
 }
 
 src_configure() {
