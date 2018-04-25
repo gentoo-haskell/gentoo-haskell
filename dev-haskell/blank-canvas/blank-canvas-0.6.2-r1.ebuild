@@ -43,6 +43,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/shake-0.13 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
+
 src_prepare() {
 	default
 
