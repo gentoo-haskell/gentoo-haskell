@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=
 	dev-haskell/text:=
 	dev-haskell/unordered-containers:=
 	dev-haskell/utf8-string:=
-	>=dev-haskell/websockets-0.9:= <dev-haskell/websockets-0.10:=
+	>=dev-haskell/websockets-0.9:=
 	>=dev-haskell/websockets-snap-0.8.2.1:=
 	~dev-lang/elm-compiler-${PV}:=
 	dev-lang/elm-package:=
@@ -39,3 +39,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	~dev-lang/elm-make-${PV}
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'websockets >= 0.9 && < 0.10' 'websockets >= 0.9'
+}
