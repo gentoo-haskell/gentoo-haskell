@@ -48,9 +48,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
-# https://github.com/jaor/xmobar/pull/351
-PATCHES=("${FILESDIR}"/${PN}-0.26-hinotify-0.3.10.patch)
-
 src_prepare() {
 	default
 	# xmobar is an idle multithreaded program
