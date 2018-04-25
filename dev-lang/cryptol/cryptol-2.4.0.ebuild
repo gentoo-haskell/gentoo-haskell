@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -56,6 +56,10 @@ DEPEND="${RDEPEND}
 RDEPEND+="
 	sci-mathematics/z3
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
