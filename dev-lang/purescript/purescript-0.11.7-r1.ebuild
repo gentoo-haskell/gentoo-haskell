@@ -82,6 +82,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/silently )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
+
 src_prepare() {
 	default
 
