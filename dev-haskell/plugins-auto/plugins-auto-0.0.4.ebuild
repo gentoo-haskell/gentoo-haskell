@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ghc-7.6.patch
 	epatch "${FILESDIR}"/${P}-ghc-7.10.patch
+	epatch "${FILESDIR}"/${P}-hinotify-0.3.10.patch
 
 	mkdir -p "${S}/Test" || die "Could not create Test directory"
 	cp "${FILESDIR}/Test.hs" "${S}/Test/Test.hs" || die "Could not copy Test.hs"
