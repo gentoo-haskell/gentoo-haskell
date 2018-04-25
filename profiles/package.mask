@@ -83,6 +83,7 @@ dev-haskell/hslua-module-text
 
 # Mark Wright <gienah@gentoo.org> (12 Feb 2018)
 # Mask more revdeps of masked versions
+>=dev-haskell/aws-0.19-r1
 >=dev-haskell/classy-prelude-1.4.0
 >=dev-haskell/classy-prelude-conduit-1.4.0
 >=dev-haskell/config-ini-0.2
