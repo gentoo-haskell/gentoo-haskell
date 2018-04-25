@@ -42,6 +42,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/time-parsers-0.1.0.0 <dev-haskell/time-parsers-0.2 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-base-compat-0.10.patch
+)
+
 src_prepare() {
 	default
 

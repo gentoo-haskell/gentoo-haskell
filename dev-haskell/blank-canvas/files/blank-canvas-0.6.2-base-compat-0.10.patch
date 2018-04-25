@@ -1,0 +1,28 @@
+diff --git a/Graphics/Blank.hs b/Graphics/Blank.hs
+index 2b3dce9..83c658e 100644
+--- a/Graphics/Blank.hs
++++ b/Graphics/Blank.hs
+@@ -205 +205 @@ import           Paths_blank_canvas
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+diff --git a/Graphics/Blank/JavaScript.hs b/Graphics/Blank/JavaScript.hs
+index 2f30755..89a620f 100644
+--- a/Graphics/Blank/JavaScript.hs
++++ b/Graphics/Blank/JavaScript.hs
+@@ -24 +24 @@ import           Graphics.Blank.Parser
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+diff --git a/Graphics/Blank/Types/CSS.hs b/Graphics/Blank/Types/CSS.hs
+index 41b3b84..beb3091 100644
+--- a/Graphics/Blank/Types/CSS.hs
++++ b/Graphics/Blank/Types/CSS.hs
+@@ -13 +13 @@ import           Graphics.Blank.Types
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+diff --git a/Graphics/Blank/Types/Cursor.hs b/Graphics/Blank/Types/Cursor.hs
+index 7c9f421..f456b56 100644
+--- a/Graphics/Blank/Types/Cursor.hs
++++ b/Graphics/Blank/Types/Cursor.hs
+@@ -13 +13 @@ import           Graphics.Blank.Parser (stringCI, unlift)
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
