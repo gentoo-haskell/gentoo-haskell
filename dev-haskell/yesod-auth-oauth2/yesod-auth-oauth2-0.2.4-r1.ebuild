@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.4:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-2.0:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/yesod-auth-1.3:=[profile?] <dev-haskell/yesod-auth-1.5:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.5:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.5:=[profile?]
@@ -42,6 +42,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector                  >= 0.10      && < 0.12' 'vector                  >= 0.10'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
