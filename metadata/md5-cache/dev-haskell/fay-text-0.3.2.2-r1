@@ -1,13 +1,13 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.24:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/fay-0.21.2:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Fay Text type represented as JavaScript strings
 EAPI=5
 HOMEPAGE=https://github.com/faylang/fay-text
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
-RDEPEND=>=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.24:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:=
+RDEPEND=>=dev-haskell/fay-0.21.2:=[profile?] >=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/0.3.2.2
 SRC_URI=mirror://hackage/packages/archive/fay-text/0.3.2.2/fay-text-0.3.2.2.tar.gz
 _eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	epatch	9a5f039771f143195164a15a4faa41a1	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	63392afb034aad67f17fa129019eb4d9	ghc-package	b3a65eea21c73ad40a2d87d1aa95b5a1	haskell-cabal	0d90789abcf419403c7b1055b753b7d6	ltprune	607e058da37aa6dabfa408b7d61da72e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	26ca8a8bd95d6a74122c08ba98a4ee72
-_md5_=296623ebcf0d9b3268e66ef2cf653d27
+_md5_=fad8d7d694e601a18c913b30f05cd870
