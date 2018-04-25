@@ -26,16 +26,16 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/hashable-1.2.0.6:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/heist-1.0:=[profile?] <dev-haskell/heist-1.1:=[profile?]
+	>=dev-haskell/heist-1.0:=[profile?]
 	>=dev-haskell/lens-3.7.6:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
-	>=dev-haskell/map-syntax-0.2:=[profile?] <dev-haskell/map-syntax-0.3:=[profile?]
+	>=dev-haskell/map-syntax-0.2:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/mwc-random-0.8:=[profile?] <dev-haskell/mwc-random-0.14:=[profile?]
 	>=dev-haskell/pwstore-fast-2.2:=[profile?] <dev-haskell/pwstore-fast-2.5:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
-	>=dev-haskell/snap-server-1.0:=[profile?] <dev-haskell/snap-server-1.1:=[profile?]
+	>=dev-haskell/snap-server-1.0:=[profile?]
 	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
@@ -64,7 +64,12 @@ src_prepare() {
 		'aeson                     >= 0.6      && < 1.3' 'aeson                     >= 0.6' \
 		'async                      >= 2.0.1.5  && < 2.2' 'async                      >= 2.0.1.5' \
 		'QuickCheck                 >= 2.4.2    && < 2.11' 'QuickCheck                 >= 2.4.2' \
-		'lens                      >= 3.7.6    && < 4.16' 'lens                      >= 3.7.6'
+		'lens                      >= 3.7.6    && < 4.16' 'lens                      >= 3.7.6' \
+		'snap-server               >= 1.0      && < 1.1' 'snap-server               >= 1.0' \
+		'heist                     >= 1.0      && < 1.1' 'heist                     >= 1.0' \
+		'map-syntax                >= 0.2      && < 0.3' 'map-syntax                >= 0.2'
+
+
 }
 
 src_configure() {
