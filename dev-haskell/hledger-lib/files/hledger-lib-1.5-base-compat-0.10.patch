@@ -1,0 +1,14 @@
+diff --git a/Hledger/Read/Common.hs b/Hledger/Read/Common.hs
+index 85dac54..4c81bb2 100644
+--- a/Hledger/Read/Common.hs
++++ b/Hledger/Read/Common.hs
+@@ -23 +23 @@ import Prelude ()
+-import Prelude.Compat hiding (readFile)
++import Prelude.Compat hiding (readFile, (<>))
+diff --git a/Hledger/Read/JournalReader.hs b/Hledger/Read/JournalReader.hs
+index a66d57b..20e62fa 100644
+--- a/Hledger/Read/JournalReader.hs
++++ b/Hledger/Read/JournalReader.hs
+@@ -76 +76 @@ import Prelude ()
+-import Prelude.Compat hiding (readFile)
++import Prelude.Compat hiding (readFile, (<>))
