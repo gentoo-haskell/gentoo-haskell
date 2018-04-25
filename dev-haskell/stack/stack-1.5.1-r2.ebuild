@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,9 +23,9 @@ RESTRICT=test # installs packages from network
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] <dev-haskell/ansi-terminal-0.7:=[profile?]
-	>=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.2:=[profile?]
+	>=dev-haskell/async-2.0.2:=[profile?]
 	>=dev-haskell/attoparsec-0.12.1.5:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/base-compat-0.6:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.6:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-tagged-0.1.1:=[profile?] <dev-haskell/binary-tagged-0.2:=[profile?]
 	>=dev-haskell/blaze-builder-0.4.0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
@@ -33,10 +33,10 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/clock-0.7.2:=[profile?] <dev-haskell/clock-0.8:=[profile?]
 	>=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.14:=[profile?] <dev-haskell/conduit-extra-1.2:=[profile?]
-	>=dev-haskell/cryptonite-0.19:=[profile?] <dev-haskell/cryptonite-0.24:=[profile?]
+	>=dev-haskell/cryptonite-0.19:=[profile?]
 	>=dev-haskell/cryptonite-conduit-0.1:=[profile?] <dev-haskell/cryptonite-conduit-0.3:=[profile?]
 	>=dev-haskell/echo-0.1.3:=[profile?] <dev-haskell/echo-0.2:=[profile?]
-	>=dev-haskell/either-4.4.1.1:=[profile?] <dev-haskell/either-4.5:=[profile?]
+	>=dev-haskell/either-4.4.1.1:=[profile?]
 	>=dev-haskell/errors-2.1.3:=[profile?] <dev-haskell/errors-2.3:=[profile?]
 	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
 	>=dev-haskell/extra-1.4.10:=[profile?]
@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/http-client-tls-0.3.4:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/http-conduit-2.2.3:=[profile?] <dev-haskell/http-conduit-2.3:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
-	>=dev-haskell/lifted-async-0.9.1.1:=[profile?] <dev-haskell/lifted-async-0.10:=[profile?]
+	>=dev-haskell/lifted-async-0.9.1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2.3.11:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/memory-0.13:=[profile?] <dev-haskell/memory-0.15:=[profile?]
 	>=dev-haskell/microlens-0.3.0.0:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
@@ -68,7 +68,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/open-browser-0.2.1:=[profile?] <dev-haskell/open-browser-0.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/optparse-simple-0.0.3:=[profile?] <dev-haskell/optparse-simple-0.1:=[profile?]
-	>=dev-haskell/path-0.5.8:=[profile?] <dev-haskell/path-0.6:=[profile?]
+	>=dev-haskell/path-0.5.8:=[profile?]
 	>=dev-haskell/path-io-1.1.0:=[profile?] <dev-haskell/path-io-2.0.0:=[profile?]
 	>=dev-haskell/persistent-2.1.2:=[profile?] <dev-haskell/persistent-2.8:=[profile?]
 	>=dev-haskell/persistent-template-2.1.1:=[profile?] <dev-haskell/persistent-template-2.6:=[profile?]
@@ -90,7 +90,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/text-1.2.0.4:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-binary-0.2.1.1:=[profile?] <dev-haskell/text-binary-0.3:=[profile?]
 	>=dev-haskell/text-metrics-0.1:=[profile?] <dev-haskell/text-metrics-0.4:=[profile?]
-	>=dev-haskell/tls-1.3.8:=[profile?] <dev-haskell/tls-1.4:=[profile?]
+	>=dev-haskell/tls-1.3.8:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/unicode-transforms-0.1:=[profile?] <dev-haskell/unicode-transforms-0.4:=[profile?]
 	>=dev-haskell/unix-compat-0.4.1.4:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
@@ -121,14 +121,21 @@ DEPEND="${RDEPEND}
 "
 RDEPEND+=" !dev-haskell/stack-bin[symlink]"
 
-PATCHES=("${FILESDIR}"/${PN}-1.3.2-oa-0.14.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.3.2-oa-0.14.patch
+	"${FILESDIR}"/${PN}-1.5.1-either-5.patch
+)
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
 		'optparse-applicative >= 0.13 && < 0.14' 'optparse-applicative >= 0.13' \
-		'extra >= 1.4.10 && < 1.6' 'extra >= 1.4.10'
+		'extra >= 1.4.10 && < 1.6' 'extra >= 1.4.10' \
+		'base-compat >=0.6 && <0.10' 'base-compat >=0.6' \
+		'async >= 2.0.2 && < 2.2' 'async >= 2.0.2' \
+		'cryptonite >= 0.19 && < 0.24' 'cryptonite >= 0.19' \
+		'path >= 0.5.8 && < 0.6' 'path >= 0.5.8'
 }
 
 src_configure() {

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/parallel-io:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.12:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	dev-haskell/zip-archive:=[profile?]
 	~dev-lang/elm-compiler-${PV}:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -52,5 +52,6 @@ src_prepare() {
 		'HTTP >= 4000.2.5 && < 4000.3' 'HTTP >= 4000.2.5' \
 		'optparse-applicative >= 0.11 && < 0.12' 'optparse-applicative >= 0.11' \
 		'binary >= 0.7 && < 0.8' 'binary >= 0.7' \
-		'http-types >= 0.7 && < 0.9' 'http-types >= 0.7'
+		'http-types >= 0.7 && < 0.9' 'http-types >= 0.7' \
+		'vector >= 0.10 && < 0.12' 'vector >= 0.10'
 }

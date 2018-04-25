@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.24:=[profile?]
+RDEPEND=">=dev-haskell/fay-0.21.2:=[profile?]
 	>=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.24:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'fay      >= 0.21.2 && < 0.24' 'fay      >= 0.21.2'
+}

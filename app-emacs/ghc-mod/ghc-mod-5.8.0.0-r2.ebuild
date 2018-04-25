@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,10 +25,10 @@ RDEPEND=">=dev-haskell/cabal-helper-0.7.3.0:=[profile?] <dev-haskell/cabal-helpe
 	>=dev-haskell/fclabels-2.0:=[profile?] <dev-haskell/fclabels-2.1:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 	>=dev-haskell/ghc-syb-utils-0.2.3:=[profile?] <dev-haskell/ghc-syb-utils-0.3:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/hlint-2.0.8:=[profile?] <dev-haskell/hlint-2.1:=[profile?]
 	>=dev-haskell/monad-control-1:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
-	>=dev-haskell/monad-journal-0.4:=[profile?] <dev-haskell/monad-journal-0.8:=[profile?]
+	>=dev-haskell/monad-journal-0.4:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13.0.0:=[profile?]
@@ -57,7 +57,9 @@ src_prepare() {
 	cabal_chdeps \
 		'syb                  < 0.7  && >= 0.5.1' 'syb                  >= 0.5.1' \
 		'optparse-applicative < 0.14 && >= 0.13.0.0' 'optparse-applicative >= 0.13.0.0' \
-		'extra                < 1.6  && >= 1.4' 'extra                  >= 1.4'
+		'extra                < 1.6  && >= 1.4' 'extra                  >= 1.4' \
+		'haskell-src-exts     < 1.20 && >= 1.18' 'haskell-src-exts      >= 1.18' \
+		'monad-journal        < 0.8  && >= 0.4' 'monad-journal          >= 0.4'
 }
 
 src_compile() {

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,11 +30,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cpphs debug emacs enable-cluster-counting +stdlib"
 
-RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.2:=[profile?]
+RDEPEND=">=dev-haskell/async-2.0.2:=[profile?]
 	>=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
 	>=dev-haskell/data-hash-0.2.0.0:=[profile?] <dev-haskell/data-hash-0.3:=[profile?]
-	>=dev-haskell/edisoncore-1.3.1.1:=[profile?] <dev-haskell/edisoncore-1.3.2:=[profile?]
+	>=dev-haskell/edisoncore-1.3.1.1:=[profile?]
 	>=dev-haskell/edit-distance-0.2.1.2:=[profile?] <dev-haskell/edit-distance-0.3:=[profile?]
 	>=dev-haskell/equivalence-0.3.2:=[profile?] <dev-haskell/equivalence-0.4:=[profile?]
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
@@ -82,6 +82,10 @@ src_prepare() {
 			-i "${S}/${MY_PN}.cabal" \
 			|| die "Could not remove agda-mode from ${MY_PN}.cabal"
 	fi
+
+	cabal_chdeps \
+		'async >= 2.0.2 && < 2.2' 'async >= 2.0.2' \
+		'EdisonCore >= 1.3.1.1 && < 1.3.2' 'EdisonCore >= 1.3.1.1'
 }
 
 src_configure() {
