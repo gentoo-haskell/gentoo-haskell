@@ -5,7 +5,7 @@
 >=dev-haskell/transformers-compat-0.6
 
 # Sergei Trofimovich <slyfox@gentoo.org> (22 Apr 2018)
-# streaming-commons-0.2 rebmoves blaze-builder-like typeclass
+# streaming-commons-0.2 removes blaze-builder-like typeclass
 # used by dev-haskell/conduit-extra-1.17. 1.3.0 has it fixed
 # but 1.3.0 is still masked.
 >=dev-haskell/streaming-commons-0.2
@@ -80,6 +80,7 @@ dev-haskell/hslua-module-text
 >=dev-haskell/persistent-mongodb-2.8
 >=dev-haskell/hakyll-4.11
 >=dev-haskell/cereal-conduit-0.8
+>=dev-haskell/http-reverse-proxy-0.5
 
 # Mark Wright <gienah@gentoo.org> (12 Feb 2018)
 # Mask more revdeps of masked versions

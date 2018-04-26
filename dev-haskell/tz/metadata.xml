@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="template-haskell">Enable and use template haskell support.</flag>
+	</use>
 	<longdescription>
 		The goal of this package is to provide a library that can read time
 		zone info files (aka. Olson files), and does time zone conversions
