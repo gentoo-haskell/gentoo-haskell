@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/case-insensitive-0.4:=[profile?]
-	>=dev-haskell/conduit-1.1:=[profile?]
+	>=dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/http-client-0.3:=[profile?]
