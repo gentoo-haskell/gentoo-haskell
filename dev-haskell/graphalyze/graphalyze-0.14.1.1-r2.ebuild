@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND=">=app-text/pandoc-1.12:=[profile?]
 	>=dev-haskell/bktrees-0.2:=[profile?] <dev-haskell/bktrees-0.4:=[profile?]
 	>=dev-haskell/fgl-5.5:=[profile?] <dev-haskell/fgl-5.6:=[profile?]
-	>=dev-haskell/graphviz-2999.15:=[profile?] <dev-haskell/graphviz-2999.19:=[profile?]
+	>=dev-haskell/graphviz-2999.15:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/text:=[profile?]
@@ -46,5 +46,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'time == 1.5.*' 'time >= 1.5'
+		'time == 1.5.*' 'time >= 1.5' \
+		'graphviz >= 2999.15 && < 2999.19' 'graphviz >= 2999.15'
 }
