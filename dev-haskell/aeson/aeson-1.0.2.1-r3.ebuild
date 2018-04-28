@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/base-orphans-0.5.3
 		dev-haskell/base16-bytestring
-		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.12
+		>=dev-haskell/generic-deriving-1.10
 		>=dev-haskell/hashable-1.2.4.0
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		dev-haskell/hunit
@@ -60,7 +60,8 @@ src_prepare() {
 	cabal_chdeps \
 		'base-orphans >= 0.5.3 && <0.6' 'base-orphans >= 0.5.3' \
 		'QuickCheck >= 2.7 && <2.9.3' 'QuickCheck >= 2.7' \
-		'base-compat >= 0.9.1 && < 0.10' 'base-compat >= 0.9.1'
+		'base-compat >= 0.9.1 && < 0.10' 'base-compat >= 0.9.1' \
+		'generic-deriving >= 1.10 && < 1.12' 'generic-deriving >= 1.10'
 }
 
 src_configure() {

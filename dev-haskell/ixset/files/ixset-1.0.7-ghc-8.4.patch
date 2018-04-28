@@ -9,7 +9,7 @@
 +#endif
 +
 +#if !MIN_VERSION_base(4,11,0)
-+#define SYBWC.Typeable SYBWC.Typeable1
++#define SYBWC_Typeable SYBWC.Typeable1
 +#endif
  
  -------------------------------------------------
@@ -19,7 +19,7 @@
           , SYBWC.Sat (ctx (IxSet a))
           , SYBWC.Sat (ctx [a])
 -         , SYBWC.Typeable1 IxSet
-+         , SYBWC.Typeable IxSet
++         , SYBWC_Typeable IxSet
           , Indexable a
           , Data a
           , Ord a
@@ -58,7 +58,7 @@
  import qualified Data.Set   as Set
  
 +#if !MIN_VERSION_base(4,11,0)
-+#define SYBWC.Typeable SYBWC.Typeable1
++#define SYBWC_Typeable SYBWC.Typeable1
 +#endif
 +
  -- the core datatypes
@@ -69,7 +69,7 @@
  ixDataType = SYBWC.mkDataType "Ix" [ixConstr]
  
 -instance (SYBWC.Typeable1 Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
-+instance (SYBWC.Typeable Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
++instance (SYBWC_Typeable Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
         => SYBWC.Data ctx (Ix a) where
      gfoldl _ _ _ _ = error "gfoldl Ix" :: w (Ix a)
      toConstr _ (Ix _ _)    = ixConstr
