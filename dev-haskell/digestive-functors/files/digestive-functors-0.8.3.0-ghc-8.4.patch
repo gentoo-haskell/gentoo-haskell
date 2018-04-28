@@ -43,7 +43,7 @@
      mempty               = UrlEncoded
 -    mappend UrlEncoded x = x
 -    mappend MultiPart  _ = MultiPart
-+    mappend              = (<>)
++    mappend              = (S.<>)
  
  
  --------------------------------------------------------------------------------
