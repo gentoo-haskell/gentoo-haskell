@@ -1,0 +1,51 @@
+diff --git a/src/Control/Monad/Trans/Crtn/Driver.hs b/src/Control/Monad/Trans/Crtn/Driver.hs
+index 52eaae0..7e1c931 100644
+--- a/src/Control/Monad/Trans/Crtn/Driver.hs
++++ b/src/Control/Monad/Trans/Crtn/Driver.hs
+@@ -11,3 +11,3 @@ module Control.Monad.Trans.Crtn.Driver where
+ import Control.Monad.Reader
+-import Control.Monad.Trans.Either 
++import Control.Monad.Trans.Except
+ import Data.Foldable
+@@ -68,5 +68,5 @@ singleDispatch (Right ev) (logobj,worldobj,evacc) = do
+     r <- 
+-      runEitherT $ do (worldobj1,_)  <- EitherT (worldobj  <==| giveEvent ev)
+-                      (worldobj2,logobj1) <- EitherT (worldobj1 <==| flushLog logobj)
+-                      (worldobj3,events) <- EitherT (worldobj2 <==| flushQueue)
++      runExceptT $ do (worldobj1,_)  <- ExceptT (worldobj  <==| giveEvent ev)
++                      (worldobj2,logobj1) <- ExceptT (worldobj1 <==| flushLog logobj)
++                      (worldobj3,events) <- ExceptT (worldobj2 <==| flushQueue)
+                       return (logobj1,worldobj3,events)
+diff --git a/src/Control/Monad/Trans/Crtn/EventHandler.hs b/src/Control/Monad/Trans/Crtn/EventHandler.hs
+index ae49c92..ff61247 100644
+--- a/src/Control/Monad/Trans/Crtn/EventHandler.hs
++++ b/src/Control/Monad/Trans/Crtn/EventHandler.hs
+@@ -19,3 +19,3 @@ import Control.Monad.State
+ -- import Control.Monad.Error
+-import Control.Monad.Trans.Either
++import Control.Monad.Trans.Except
+ -- from this package 
+@@ -40,3 +40,3 @@ eventHandler evar ev = do
+             act (eventHandler evar) >>= eventHandler evar 
+-  where eaction = runStateT (runEitherT $ fire ev) 
++  where eaction = runStateT (runExceptT $ fire ev) 
+                   
+diff --git a/src/Control/Monad/Trans/Crtn/Object.hs b/src/Control/Monad/Trans/Crtn/Object.hs
+index b8d28b1..29cdff7 100644
+--- a/src/Control/Monad/Trans/Crtn/Object.hs
++++ b/src/Control/Monad/Trans/Crtn/Object.hs
+@@ -21,3 +21,3 @@ import Control.Monad.State
+ -- import Control.Monad.Error 
+-import Control.Monad.Trans.Either 
++import Control.Monad.Trans.Except
+ -- from this package
+@@ -46,3 +46,3 @@ type SObjBT s m = CrtnT (Res s) (Arg s) m
+ -- | convenient error state monad for object  
+-type EStT s m = EitherT CrtnErr (StateT s m)  
++type EStT s m = ExceptT CrtnErr (StateT s m)  
+ 
+@@ -56,3 +56,3 @@ query cli = do
+       r2 = lift result
+-  (qserv',r) <- EitherT r2 
++  (qserv',r) <- ExceptT r2 
+   lift (put qserv')
