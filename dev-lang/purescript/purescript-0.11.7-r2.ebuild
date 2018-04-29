@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/edit-distance:=[profile?]
 	dev-haskell/file-embed:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1:=[profile?]
-	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.9:=[profile?]
+	>=dev-haskell/glob-0.7:=[profile?]
 	>=dev-haskell/haskeline-0.7.0.0:=[profile?]
 	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.6.0:=[profile?]
 	dev-haskell/http-types:=[profile?]
@@ -91,5 +91,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson >=1.0 && <1.3' 'aeson >=1.0' \
-		'ansi-terminal >=0.6.2 && <0.7' 'ansi-terminal >=0.6.2'
+		'ansi-terminal >=0.6.2 && <0.7' 'ansi-terminal >=0.6.2' \
+		'Glob >=0.7 && <0.9' 'Glob >=0.7'
 }
