@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/filelock-0.1.0.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1:=[profile?] <dev-haskell/fsnotify-0.3:=[profile?]
-	>=dev-haskell/generic-deriving-1.10.5:=[profile?] <dev-haskell/generic-deriving-1.12:=[profile?]
+	>=dev-haskell/generic-deriving-1.10.5:=[profile?]
 	>=dev-haskell/gitrev-1.1:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
 	>=dev-haskell/hackage-security-0.5.2.2:=[profile?] <dev-haskell/hackage-security-0.6:=[profile?]
 	>=dev-haskell/hashable-1.2.3.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -135,7 +135,8 @@ src_prepare() {
 		'base-compat >=0.6 && <0.10' 'base-compat >=0.6' \
 		'async >= 2.0.2 && < 2.2' 'async >= 2.0.2' \
 		'cryptonite >= 0.19 && < 0.24' 'cryptonite >= 0.19' \
-		'path >= 0.5.8 && < 0.6' 'path >= 0.5.8'
+		'path >= 0.5.8 && < 0.6' 'path >= 0.5.8' \
+		'generic-deriving >= 1.10.5 && < 1.12' 'generic-deriving >= 1.10.5'
 }
 
 src_configure() {
