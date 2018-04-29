@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/doctest-0.9.1
 		>=dev-haskell/exceptions-0.6.0 <dev-haskell/exceptions-1.0
 		>=dev-haskell/foldl-1.1
-		>=dev-haskell/free-4.2 <dev-haskell/free-5
+		>=dev-haskell/free-4.2
 		>=dev-haskell/lens-family-core-1.1
 		>=dev-haskell/pipes-attoparsec-0.5
 		>=dev-haskell/pipes-group-1.0.1
@@ -48,3 +48,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.9
 		>=dev-haskell/tasty-hunit-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'free >= 4.2 && < 5' 'free >= 4.2'
+}
