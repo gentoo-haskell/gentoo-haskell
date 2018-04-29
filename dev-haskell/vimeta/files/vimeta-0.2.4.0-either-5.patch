@@ -1,0 +1,66 @@
+diff --git a/src/Vimeta/Core/Config.hs b/src/Vimeta/Core/Config.hs
+index 66353ec..193dea6 100644
+--- a/src/Vimeta/Core/Config.hs
++++ b/src/Vimeta/Core/Config.hs
+@@ -29 +29 @@ import Control.Monad.IO.Class
+-import Control.Monad.Trans.Either
++import Control.Monad.Trans.Except
+@@ -95 +95 @@ configFileName = getUserConfigFile "vimeta" "config.yml"
+-readConfig :: (MonadIO m) => EitherT String m Config
++readConfig :: (MonadIO m) => ExceptT String m Config
+@@ -102 +102 @@ readConfig = do
+-    else left $ missingFile filename
++    else throwE $ missingFile filename
+@@ -105 +105 @@ readConfig = do
+-    decodeConfig :: (MonadIO m) => FilePath -> EitherT String m Config
++    decodeConfig :: (MonadIO m) => FilePath -> ExceptT String m Config
+@@ -108 +108 @@ readConfig = do
+-                           Left e  -> left (show e)
++                           Left e  -> throwE (show e)
+@@ -116 +116 @@ readConfig = do
+-writeConfig :: (MonadIO m) => Config -> EitherT String m FilePath
++writeConfig :: (MonadIO m) => Config -> ExceptT String m FilePath
+@@ -123 +123 @@ writeConfig c = do
+-  when exists $ left (existError filename)
++  when exists $ throwE (existError filename)
+diff --git a/src/Vimeta/Core/Vimeta.hs b/src/Vimeta/Core/Vimeta.hs
+index 5a334f2..38f797b 100644
+--- a/src/Vimeta/Core/Vimeta.hs
++++ b/src/Vimeta/Core/Vimeta.hs
+@@ -37 +37 @@ import Control.Monad.Reader
+-import Control.Monad.Trans.Either
++import Control.Monad.Trans.Except
+@@ -67 +67 @@ newtype Vimeta m a =
+-  Vimeta {unV :: ReaderT Context (EitherT String m) a}
++  Vimeta {unV :: ReaderT Context (ExceptT String m) a}
+@@ -73 +73 @@ die :: (Monad m) => String -> Vimeta m a
+-die message = Vimeta $ lift (left message)
++die message = Vimeta $ lift (throwE message)
+@@ -112 +112 @@ verbose msg = do
+-loadTMDBConfig :: (MonadIO m) => Manager -> Key -> EitherT String m TheMovieDB.Configuration
++loadTMDBConfig :: (MonadIO m) => Manager -> Key -> ExceptT String m TheMovieDB.Configuration
+@@ -117 +117 @@ loadTMDBConfig manager key = do
+-    Left e  -> left (show e)
++    Left e  -> throwE (show e)
+@@ -128 +128 @@ execVimetaWithContext context vimeta =
+-  runEitherT $ runReaderT (unV vimeta) context
++  runExceptT $ runReaderT (unV vimeta) context
+@@ -137 +137 @@ execVimeta :: (MonadIO m)
+-execVimeta cf vimeta = runEitherT $ do
++execVimeta cf vimeta = runExceptT $ do
+@@ -141 +141 @@ execVimeta cf vimeta = runEitherT $ do
+-  EitherT $ execVimetaWithContext (Context manager config tc stdout) vimeta
++  ExceptT $ execVimetaWithContext (Context manager config tc stdout) vimeta
+diff --git a/src/Vimeta/UI/CommandLine/Config.hs b/src/Vimeta/UI/CommandLine/Config.hs
+index 23cdc57..2d212a5 100644
+--- a/src/Vimeta/UI/CommandLine/Config.hs
++++ b/src/Vimeta/UI/CommandLine/Config.hs
+@@ -23 +23 @@ import Control.Monad
+-import Control.Monad.Trans.Either
++import Control.Monad.Trans.Except
+@@ -65 +65 @@ run opts = do
+-  result <- runEitherT (app opts config)
++  result <- runExceptT (app opts config)
+@@ -77 +77 @@ run opts = do
+-app :: Options -> Config -> EitherT String IO (Maybe String)
++app :: Options -> Config -> ExceptT String IO (Maybe String)
