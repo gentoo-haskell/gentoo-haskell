@@ -1,0 +1,54 @@
+https://github.com/brendanhay/ede/commit/ea9c0e8b02c11b862d1f0885f69741f1a2ffcc32.patch
+
+From ea9c0e8b02c11b862d1f0885f69741f1a2ffcc32 Mon Sep 17 00:00:00 2001
+From: Naushadh <naushadh@protonmail.com>
+Date: Sat, 24 Mar 2018 14:24:13 -0400
+Subject: [PATCH] Derive `Eq1` for base >= 4.9.0.
+
+---
+ src/Text/EDE/Internal/Types.hs | 17 +++++++++++++++++
+ stack.yaml                     |  4 ++--
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+
+diff --git a/src/Text/EDE/Internal/Types.hs b/src/Text/EDE/Internal/Types.hs
+index 05bf292..29905e0 100644
+--- a/src/Text/EDE/Internal/Types.hs
++++ b/src/Text/EDE/Internal/Types.hs
+@@ -35,6 +35,7 @@ import           Data.Foldable
+ import           Data.HashMap.Strict          (HashMap)
+ import           Data.List.NonEmpty           (NonEmpty (..))
+ import qualified Data.List.NonEmpty           as NonEmpty
++import qualified Data.List                    as List
+ import           Data.Monoid                  (mempty)
+ import           Data.Semigroup
+ import           Data.Text                    (Text)
+@@ -42,6 +43,9 @@ import qualified Data.Text                    as Text
+ import           Text.PrettyPrint.ANSI.Leijen (Doc, Pretty (..))
+ import qualified Text.PrettyPrint.ANSI.Leijen as PP
+ import           Text.Trifecta.Delta
++#if MIN_VERSION_base(4,9,0)
++import qualified Data.Functor.Classes         as FunctorClasses
++#endif
+ 
+ -- | Convenience wrapper for Pretty instances.
+ newtype PP a = PP { unPP :: a }
+@@ -186,6 +190,19 @@ data ExpF a
+     | ELoop !Id !a !a
+     | EIncl !Text
+       deriving (Eq, Show, Functor)
++#if MIN_VERSION_base(4,9,0)
++instance FunctorClasses.Eq1 ExpF where
++    liftEq _ (ELit a) (ELit b) = a == b
++    liftEq _ (EVar a) (EVar b) = a == b
++    liftEq _ (EFun a) (EFun b) = a == b
++    liftEq c (EApp a1 a2) (EApp b1 b2) = a1 `c` b1 && a2 `c` b2
++    liftEq c (ELet a0 a1 a2) (ELet b0 b1 b2) = a0 == b0 && a1 `c` b1 && a2 `c` b2
++    liftEq c (ECase a as) (ECase b bs) = a `c` b && (List.all (uncurry altEq) $ zip as bs)
++        where altEq (pA, a') (pB, b') = pA == pB && a' `c` b'
++    liftEq c (ELoop a0 a1 a2) (ELoop b0 b1 b2) = a0 == b0 && a1 `c` b1 && a2 `c` b2
++    liftEq _ (EIncl a) (EIncl b) = a == b
++    liftEq _ _ _ = False
++#endif
+ 
+ type Exp = Cofree ExpF
+ 

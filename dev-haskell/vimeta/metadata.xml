@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		 <flag name="maintainer">Enable settings for the package maintainer.</flag>
+		<flag name="maintainer">Enable settings for the package maintainer.</flag>
 	</use>
 	<longdescription>
 		Vimeta is a tool to fetch video metadata from the interwebs and
