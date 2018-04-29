@@ -17,7 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-2.1.3:=[profile?] <app-text/pandoc-2.2:=[profile?]
+RESTRICT="test" # 2 out of 24 tests fail with pandoc 2.3
+
+RDEPEND=">=app-text/pandoc-2.1.3:=[profile?]
 	>=dev-haskell/data-accessor-0.2.2.6:=[profile?] <dev-haskell/data-accessor-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-template-0.2.1.12:=[profile?] <dev-haskell/data-accessor-template-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1.6:=[profile?] <dev-haskell/data-accessor-transformers-0.3.0.0:=[profile?]
@@ -37,3 +39,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc >=2.1.3 && <2.2' 'pandoc >=2.1.3'
+}
