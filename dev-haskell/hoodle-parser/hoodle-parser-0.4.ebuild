@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
-	>=dev-haskell/either-3.1:=[profile?]
+	dev-haskell/errors:=[profile?]
 	>=dev-haskell/hoodle-types-0.4:=[profile?]
 	>=dev-haskell/lens-2.5:=[profile?]
 	>dev-haskell/mtl-2:=[profile?]
@@ -30,3 +30,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-either-5.patch
+)
