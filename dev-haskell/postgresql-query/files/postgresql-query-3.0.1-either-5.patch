@@ -1,0 +1,21 @@
+diff --git a/src/Database/PostgreSQL/Query/Types.hs b/src/Database/PostgreSQL/Query/Types.hs
+index 07fe4a0..48f1c9d 100644
+--- a/src/Database/PostgreSQL/Query/Types.hs
++++ b/src/Database/PostgreSQL/Query/Types.hs
+@@ -34,3 +34,2 @@ import Control.Monad.Trans.Cont
+ import Control.Monad.Trans.Control
+-import Control.Monad.Trans.Either
+ import Control.Monad.Trans.Except
+@@ -219,8 +218,2 @@ class (MonadBase IO m) => HasPostgres m where
+ 
+-instance (HasPostgres m) => HasPostgres (EitherT e m) where
+-    withPGConnection action = do
+-        EitherT $ withPGConnection $ \con -> do
+-            runEitherT $ action con
+-    {-# INLINABLE withPGConnection #-}
+-
+ instance (HasPostgres m) => HasPostgres (ExceptT e m) where
+@@ -290,3 +283,2 @@ class TransactionSafe (m :: * -> *)
+ 
+-instance (TransactionSafe m) => TransactionSafe (EitherT e m)
+ instance (TransactionSafe m) => TransactionSafe (ExceptT e m)
