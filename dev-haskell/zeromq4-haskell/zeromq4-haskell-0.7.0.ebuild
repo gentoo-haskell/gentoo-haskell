@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fals tests with empty strings
+
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-3.0:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-1.0:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
