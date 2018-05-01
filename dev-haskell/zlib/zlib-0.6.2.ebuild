@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.6.1.2-fix-w8-tests.patch)
-
 src_prepare() {
 	default
 
