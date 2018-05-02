@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,3 +30,10 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}"/${P}-hse-1.18.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18'
+}
