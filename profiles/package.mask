@@ -88,6 +88,7 @@ dev-haskell/hslua-module-text
 >=dev-haskell/classy-prelude-1.4.0
 >=dev-haskell/classy-prelude-conduit-1.4.0
 >=dev-haskell/config-ini-0.2
+>=dev-haskell/esqueleto-2.6.0_pre20180402
 >=dev-haskell/fb-1.2.0
 >=dev-haskell/hlint-2.1.0
 >=dev-haskell/html-conduit-1.3
