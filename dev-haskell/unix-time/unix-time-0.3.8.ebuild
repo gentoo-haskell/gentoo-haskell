@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # quickcheck finds counterexamples
+
 RDEPEND="dev-haskell/old-time:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
