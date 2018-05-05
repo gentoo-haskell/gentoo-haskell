@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		EasyTest is a simple testing toolkit, meant to replace most uses of QuickCheck, SmallCheck, HUnit, and frameworks like Tasty, etc. Here&#39;s an example usage:
+		
+		&gt; module Main where
+		&gt;
+		&gt; import EasyTest
+		&gt; import Control.Applicative
+		&gt; import Control.Monad
+		&gt;
+		&gt; suite :: Test ()
+		&gt; suite = tests
+		&gt;   [ scope &quot;addition.ex1&quot; $ expect (1 + 1 == 2)
+		&gt;   , scope &quot;addition.ex2&quot; $ expect (2 + 3 == 5)
+		&gt;   , scope &quot;list.reversal&quot; . fork $ do
+		&gt;       -- generate lists from size 0 to 10, of Ints in (0,43)
+		&gt;       -- shorthand: listsOf [0..10] (int&#39; 0 43)
+		&gt;       ns &lt;- [0..10] `forM` \n -&gt; replicateM n (int&#39; 0 43)
+		&gt;       ns `forM_` \ns -&gt; expect (reverse (reverse ns) == ns)
+		&gt;   -- equivalent to `scope &quot;addition.ex3&quot;`
+		&gt;   , scope &quot;addition&quot; . scope &quot;ex3&quot; $ expect (3 + 3 == 6)
+		&gt;   , scope &quot;always passes&quot; $ do
+		&gt;       note &quot;I&#39;m running this test, even though it always passes!&quot;
+		&gt;       ok -- like `pure ()`, but records a success result
+		&gt;   , scope &quot;failing test&quot; $ crash &quot;oh noes!!&quot; ]
+		&gt;
+		&gt; -- NB: `run suite` would run all tests, but we only run
+		&gt; -- tests whose scopes are prefixed by &quot;addition&quot;
+		&gt; main = runOnly &quot;addition&quot; suite
+		
+		This generates the output:
+		
+		&gt; Randomness seed for this run is 5104092164859451056
+		&gt; Raw test output to follow ...
+		&gt; ------------------------------------------------------------
+		&gt; OK addition.ex1
+		&gt; OK addition.ex2
+		&gt; OK addition.ex3
+		&gt; ------------------------------------------------------------
+		&gt;   3 tests passed, no failures! M ‰
+		The idea here is to write tests with ordinary Haskell code, with control flow explicit and under programmer control.
+	</longdescription>
+</pkgmetadata>
