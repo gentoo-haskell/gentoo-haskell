@@ -43,7 +43,7 @@
 		&gt; OK addition.ex2
 		&gt; OK addition.ex3
 		&gt; ------------------------------------------------------------
-		&gt;   3 tests passed, no failures! M ‰
+		&gt; 3 tests passed, no failures!
 		The idea here is to write tests with ordinary Haskell code, with control flow explicit and under programmer control.
 	</longdescription>
 </pkgmetadata>
