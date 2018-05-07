@@ -1,0 +1,34 @@
+diff --git a/TailHandle.hs b/TailHandle.hs
+index acd2f0d..64c6553 100644
+--- a/TailHandle.hs
++++ b/TailHandle.hs
+@@ -36,2 +36,13 @@ import Tail
+ 
++#ifdef INOTIFY
++#if MIN_VERSION_hinotify(0,3,10)
++toIN = BS.pack
++fromIN = BS.unpack
++#else
++toINpath = id
++fromIN = id
++#endif
++#endif
++
++
+ data TailHandle = TailHandle
+@@ -109,6 +120,6 @@ inotifyTail th@TailHandle
+       sig (INotify.MovedSelf {}) = Just SignalReopen
+-      sig (INotify.MovedOut { INotify.filePath = f }) | notdot f = Just $ SignalDelete f
+-      sig (INotify.MovedIn { INotify.filePath = f }) | notdot f = Just $ SignalInsert f False
+-      sig (INotify.Created { INotify.filePath = f }) | notdot f = Just $ SignalInsert f True
+-      sig (INotify.Deleted { INotify.filePath = f }) | notdot f = Just $ SignalDelete f
++      sig (INotify.MovedOut { INotify.filePath = f }) | notdot (fromIN f) = Just $ SignalDelete (fromIN f)
++      sig (INotify.MovedIn { INotify.filePath = f }) | notdot (fromIN f) = Just $ SignalInsert (fromIN f) False
++      sig (INotify.Created { INotify.filePath = f }) | notdot (fromIN f) = Just $ SignalInsert (fromIN f) True
++      sig (INotify.Deleted { INotify.filePath = f }) | notdot (fromIN f) = Just $ SignalDelete (fromIN f)
+       sig _ = Nothing
+@@ -117,3 +128,3 @@ inotifyTail th@TailHandle
+       notdot _ = True
+-      add l = INotify.addWatch inotify l path (mapM_ (throwTo tid) . sig)
++      add l = INotify.addWatch inotify l (toIN path) (mapM_ (throwTo tid) . sig)
+   poll <- justWhen (ipoll && pos >= 0) $
