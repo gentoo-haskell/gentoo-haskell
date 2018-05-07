@@ -1,0 +1,9 @@
+diff --git a/Monky/Examples/Utility.hs b/Monky/Examples/Utility.hs
+index ca22579..bb0e25f 100644
+--- a/Monky/Examples/Utility.hs
++++ b/Monky/Examples/Utility.hs
+@@ -86,3 +86,3 @@ convertUnitT rate step bs ks ms gs
+   | rate < fromIntegral (gf * 1000) = sformat ((left 4 ' ' %. fixed 0) % stext) gv gs
+-  | otherwise = sformat ((left 4 ' ' %. expt 1) % stext) gv gs
++  | otherwise = sformat ((left 4 ' ' %. fixed 1) % stext) gv gs
+   where
