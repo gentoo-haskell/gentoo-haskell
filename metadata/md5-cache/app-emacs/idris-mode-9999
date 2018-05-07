@@ -7,5 +7,5 @@ LICENSE=GPL-3
 RDEPEND=app-emacs/haskell-mode >=virtual/emacs-23
 RESTRICT=test
 SLOT=0
-_eclasses_=elisp	71fc1fea53f2bcc9e39073663574ce4a	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	25b08efef07cea6bcd45b8c6dcce2782
+_eclasses_=elisp	71fc1fea53f2bcc9e39073663574ce4a	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	af51ccfceeb403ab80f1bf9209d372c8
 _md5_=ba35097e94cff9794a0d242235607024
