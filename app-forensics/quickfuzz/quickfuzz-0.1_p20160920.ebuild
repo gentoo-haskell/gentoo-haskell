@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -99,6 +99,7 @@ PATCHES=(
 	"${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
 	"${FILESDIR}"/${P}-directory-1.3.patch
 	"${FILESDIR}"/${P}-derive-2.6.patch
+	"${FILESDIR}"/${P}-dns-3.patch
 )
 
 # $1 - target tarball name (not including extension)
