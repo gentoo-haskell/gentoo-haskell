@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,6 +27,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 SITEFILE="50${PN}-gentoo.el"
+
+PATCHES=(
+	"${FILESDIR}"/${P}-hse-1.20.patch
+)
 
 src_compile() {
 	haskell-cabal_src_compile
