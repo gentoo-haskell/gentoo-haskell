@@ -1,0 +1,19 @@
+diff --git a/Yesod/Fay.hs b/Yesod/Fay.hs
+index 6fdc8ed..7210d72 100644
+--- a/Yesod/Fay.hs
++++ b/Yesod/Fay.hs
+@@ -106,3 +106,3 @@ import           System.Directory           (createDirectoryIfMissing, doesFileE
+ import           System.FilePath            (takeDirectory)
+-import           Fay                        (getRuntime, showCompileError)
++import           Fay                        (readConfigRuntime, showCompileError)
+ import           Fay.Convert                (showToFay)
+@@ -228,3 +228,3 @@ yesodFaySettings moduleName = YesodFaySettings
+ updateRuntime :: FilePath -> IO ()
+-updateRuntime fp = getRuntime >>= \js -> createDirectoryIfMissing True (takeDirectory fp) >> copyFile js fp
++updateRuntime fp = readConfigRuntime config >>= \js -> createDirectoryIfMissing True (takeDirectory fp) >> copyFile js fp
+ 
+@@ -296,3 +296,3 @@ requireFayRuntime settings = do
+         Just (_, exp') -> do
+-            hash <- qRunIO $ getRuntime >>= fmap base64md5 . L.readFile
++            hash <- qRunIO $ readConfigRuntime config >>= fmap base64md5 . L.readFile
+             [| addScript ($(return exp') (StaticRoute ["fay-runtime.js"] [(T.pack hash, "")])) |]
