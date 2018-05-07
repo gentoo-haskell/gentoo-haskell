@@ -22,6 +22,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+PATCHES=("${FILESDIR}"/${PN}-0.4.2.0-majmin.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
