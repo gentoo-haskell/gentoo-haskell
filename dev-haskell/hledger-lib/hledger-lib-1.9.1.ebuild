@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous modules: regex-tdfa-1.2.3 regex-tdfa-rc-1.1.8.3
+
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?]
 	>=dev-haskell/base-compat-0.8.1:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?]
