@@ -28,7 +28,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.4.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.4.patch
+	"${FILESDIR}"/${P}-ghc-8.patch
+)
 
 src_prepare() {
 	default
