@@ -77,13 +77,13 @@ src_prepare() {
 }
 
 src_configure() {
-	# FIXME: use proper eclass to se libs dir
+	# FIXME: use proper eclass to set libs dir
 	append-ldflags -L/usr/$(get_libdir)/qt4
 
 	# inlined version of build-qtwrapper.sh
 	mkdir -p cpp/dist || die
 	pushd cpp/dist || die
-	cmake .. || die
+	PATH="${EPREFIX}/usr/$(get_libdir)/qt4/bin:$PATH" cmake .. || die
 	emake VERBOSE=1
 	popd || die
 
