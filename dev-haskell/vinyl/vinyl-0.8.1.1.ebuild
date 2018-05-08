@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous modules base-4.9.1.0 type-equality-0.1.2
+
 RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
