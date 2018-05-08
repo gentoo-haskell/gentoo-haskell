@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -72,7 +72,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'-optl-s' ' ' \
-		'transformers ==0.2.* || ==0.3.* || ==0.4.*' 'transformers >= 0.2' \
 		'HTTP ==4000.2.*' 'HTTP >=4000.2' \
 		'vector ==0.10.*' 'vector >=0.10'
 }
@@ -82,7 +81,7 @@ src_configure() {
 	append-ldflags -L/usr/$(get_libdir)/qt4
 
 	# inlined version of build-qtwrapper.sh
-	mkdir cpp/dist || die
+	mkdir -p cpp/dist || die
 	pushd cpp/dist || die
 	cmake .. || die
 	emake VERBOSE=1
