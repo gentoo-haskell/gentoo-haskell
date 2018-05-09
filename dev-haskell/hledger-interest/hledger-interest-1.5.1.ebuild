@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/cabal:=
+	dev-haskell/data-default:=
 	dev-haskell/decimal:=
 	>dev-haskell/hledger-lib-1:=
 	dev-haskell/mtl:=
@@ -27,3 +28,7 @@ RDEPEND="dev-haskell/cabal:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-hledger-1.9.patch
+)
