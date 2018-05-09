@@ -501,6 +501,8 @@ src_prepare() {
 		popd
 		eapply "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-allow-cross-bootstrap.patch
+
 		bump_libs
 
 		eapply_user

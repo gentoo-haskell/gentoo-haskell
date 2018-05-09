@@ -1,0 +1,18 @@
+--- a/Main.hs
++++ b/Main.hs
+@@ -8,2 +8,3 @@ import Control.Exception ( bracket )
+ import Control.Monad
++import Data.Default
+ import Data.List
+@@ -90,3 +91,3 @@ main = bracket (return ()) (\() -> hFlush stdout >> hFlush stderr) $ \() -> do
+   when (length args > 1) (commandLineError "only one interest ACCOUNT may be specified\n")
+-  jnl' <- readJournalFile Nothing Nothing False (optInput opts) >>= either fail return
++  jnl' <- readJournalFile def (optInput opts) >>= either fail return
+   let [interestAcc] = args
+--- a/hledger-interest.cabal
++++ b/hledger-interest.cabal
+@@ -116,3 +116,3 @@ Executable hledger-interest
+   Main-is:              Main.hs
+-  Build-depends:        base >= 3 && < 5, hledger-lib > 1, time, mtl, Cabal, Decimal, text
++  Build-depends:        base >= 3 && < 5, hledger-lib > 1, time, mtl, Cabal, Decimal, text, data-default
+   other-modules:        Hledger.Interest
