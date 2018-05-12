@@ -101,10 +101,3 @@ dev-haskell/tree-diff
 >=dev-haskell/yesod-eventsource-1.6
 >=dev-haskell/yesod-static-1.6
 >=dev-haskell/yesod-test-1.6
-
-# Sergei Trofimovich <slyfox@gentoo.org> (19 Nov 2016)
-# Masked as this minor release has too many breakages:
-#  - Strings are still inlined: https://ghc.haskell.org/trac/ghc/ticket/12855
-#  - typechecking fails on vector-algorithms-0.7.0.1 and dependent-sum-0.3.2.2
-=dev-lang/ghc-8.0.2_rc1
-=dev-haskell/ghc-api-8.0.2_rc1
