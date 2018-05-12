@@ -473,6 +473,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
 		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:

@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		Binary and Hashable instances for TypeRep
+		Utilities to inline C++ code into Haskell using inline-c.  See
+		tests for example on how to build.
 	</longdescription>
 </pkgmetadata>
