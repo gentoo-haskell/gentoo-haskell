@@ -121,8 +121,3 @@ dev-haskell/vacuum-cairo
 # Sergei Trofimovich <slyfox@gentoo.org> (03 Oct 2015)
 # Needs a port to template-haskell-2.10 on ghc-7.10
 dev-haskell/agata
-
-# Sergei Trofimovich <slyfox@gentoo.org> (03 Oct 2015)
-# 'Any' changed definition from data-like
-# to typefamily-like in ghc-7.10
-dev-haskell/exists
