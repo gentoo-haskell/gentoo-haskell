@@ -146,8 +146,3 @@ dev-haskell/gtksourceview:3
 dev-haskell/webkit:3
 dev-haskell/webkitgtk-javascriptcore:2
 dev-haskell/webkitgtk-javascriptcore:3
-
-# Sergei Trofimovich <slyfox@gentoo.org> (17 May 2015)
-# Nothing uses it directly, needs porting (or reexporting)
-# to ghc-7.10
-dev-haskell/bitset
