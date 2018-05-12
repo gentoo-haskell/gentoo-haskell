@@ -112,8 +112,3 @@ dev-haskell/tree-diff
 # Sergei Trofimovich <slyfox@gentoo.org> (30 May 2016)
 # Old package is based on handcrafter Typeable building
 dev-haskell/concrete-typerep
-
-# Sergei Trofimovich <slyfox@gentoo.org> (05 May 2016)
-# Uses outdated block/unblock base API. needs port to mask/unmask
-dev-haskell/strict-concurrency
-dev-haskell/vacuum-cairo
