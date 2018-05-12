@@ -126,8 +126,3 @@ dev-haskell/agata
 # 'Any' changed definition from data-like
 # to typefamily-like in ghc-7.10
 dev-haskell/exists
-
-# Sergei Trofimovich <slyfox@gentoo.org> (01 Oct 2015)
-# Broken package, upstream uses C macros heavily, hsc2hs
-# does not understand them
-dev-haskell/bindings-bfd
