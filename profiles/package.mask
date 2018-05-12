@@ -151,9 +151,3 @@ dev-haskell/webkitgtk-javascriptcore:3
 # Nothing uses it directly, needs porting (or reexporting)
 # to ghc-7.10
 dev-haskell/bitset
-
-# Alexander Vershilov <qnikst@gentoo.org> (10 Feb 2014)
-# Yesod platform has rules that doesn't play well with
-# gentoo haskell rules, so it's completely unmaintainable.
-# Consider using @yesod-platform set or fix this package.
-dev-haskell/yesod-platform
