@@ -108,7 +108,3 @@ dev-haskell/tree-diff
 #  - typechecking fails on vector-algorithms-0.7.0.1 and dependent-sum-0.3.2.2
 =dev-lang/ghc-8.0.2_rc1
 =dev-haskell/ghc-api-8.0.2_rc1
-
-# Sergei Trofimovich <slyfox@gentoo.org> (30 May 2016)
-# Old package is based on handcrafter Typeable building
-dev-haskell/concrete-typerep
