@@ -467,6 +467,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-8.0.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+		epatch "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 
 		epatch "${FILESDIR}"/${PN}-8.0.1-limit-jN.patch
 		epatch "${FILESDIR}"/${PN}-8.0.1-ww-args-limit.patch

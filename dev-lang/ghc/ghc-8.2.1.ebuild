@@ -474,6 +474,7 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc1-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
+		epatch "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 
 		epatch "${FILESDIR}"/${PN}-8.2.1_rc2-O2-unreg.patch
 
