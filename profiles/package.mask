@@ -117,7 +117,3 @@ dev-haskell/concrete-typerep
 # Uses outdated block/unblock base API. needs port to mask/unmask
 dev-haskell/strict-concurrency
 dev-haskell/vacuum-cairo
-
-# Sergei Trofimovich <slyfox@gentoo.org> (03 Oct 2015)
-# Needs a port to template-haskell-2.10 on ghc-7.10
-dev-haskell/agata
