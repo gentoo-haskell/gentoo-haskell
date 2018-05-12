@@ -131,18 +131,3 @@ dev-haskell/exists
 # Broken package, upstream uses C macros heavily, hsc2hs
 # does not understand them
 dev-haskell/bindings-bfd
-
-# Sergei Trofimovich <slyfox@gentoo.org> (02 Aug 2015)
-# Packages were moved to reflect package names on hackage:
-#     dev-haskell/gtk:3 -> dev-haskell/gtk3
-#     dev-haskell/gtksourceview:2 -> dev-haskell/gtksourceview2
-#     dev-haskell/gtksourceview:3 -> dev-haskell/gtksourceview3
-#     dev-haskell/webkit:3 -> dev-haskell/webkit3
-#     dev-haskell/webkitgtk-javascriptcore:2 -> dev-haskell/webkit-javascriptcore
-#     dev-haskell/webkitgtk-javascriptcore:3 -> dev-haskell/webkitgtk3-javascriptcore
-dev-haskell/gtk:3
-dev-haskell/gtksourceview:2
-dev-haskell/gtksourceview:3
-dev-haskell/webkit:3
-dev-haskell/webkitgtk-javascriptcore:2
-dev-haskell/webkitgtk-javascriptcore:3
