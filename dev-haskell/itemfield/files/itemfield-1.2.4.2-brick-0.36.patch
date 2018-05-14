@@ -1,0 +1,13 @@
+diff --git a/src/TextUI/ItemField.hs b/src/TextUI/ItemField.hs
+index 080c990..93e5f4b 100644
+--- a/src/TextUI/ItemField.hs
++++ b/src/TextUI/ItemField.hs
+@@ -87,2 +87,3 @@ where
+ import           Brick.AttrMap
++import qualified Brick.BorderMap as BM
+ import           Brick.Main (lookupViewport)
+@@ -137,3 +138,3 @@ fieldImageW field =
+            cursorloc = itemFieldGetPos rdata field
+-       return $ Result newImage [cursor] [VR cursorloc (1,1)] []
++       return $ Result newImage [cursor] [VR cursorloc (1,1)] [] BM.empty
+ 
