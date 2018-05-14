@@ -35,4 +35,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/brick-0.17 )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-1.2.4.2-brick-0.34.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.2.4.2-brick-0.34.patch
+	"${FILESDIR}"/${PN}-1.2.4.2-brick-0.36.patch
+)
