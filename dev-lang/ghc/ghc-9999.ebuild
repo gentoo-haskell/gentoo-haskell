@@ -504,6 +504,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-allow-cross-bootstrap.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-gentoo-gmp-ABI.patch
+
 		bump_libs
 
 		eapply_user
