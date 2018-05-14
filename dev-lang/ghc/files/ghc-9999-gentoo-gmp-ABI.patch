@@ -1,0 +1,17 @@
+diff --git a/libraries/integer-gmp/gmp/ghc.mk b/libraries/integer-gmp/gmp/ghc.mk
+index 2a9f3ebfc0..6c70c9e334 100644
+--- a/libraries/integer-gmp/gmp/ghc.mk
++++ b/libraries/integer-gmp/gmp/ghc.mk
+@@ -126,6 +126,12 @@ libraries/integer-gmp/gmp/libgmp.a libraries/integer-gmp/gmp/gmp.h:
+ 	cd libraries/integer-gmp/gmp && $(PATCH_CMD) -p0 < gmpsrc.patch
+ 	chmod +x libraries/integer-gmp/gmp/ln
+ 
++	# Gentoo hack: change ABI to GMPABI variable to avoid conflict with gentoo's variable
++	$(MV) libraries/integer-gmp/gmp/configure libraries/integer-gmp/gmp/configure.wrapped
++	echo '#!/usr/bin/env sh' > libraries/integer-gmp/gmp/configure
++	echo 'exec env ABI="${GMPABI}" "$0.wrapped" "$@"' >> libraries/integer-gmp/gmp/configure
++	chmod a+rx libraries/integer-gmp/gmp/configure libraries/integer-gmp/gmp/configure.wrapped
++
+ 	# Note: We must pass `TARGETPLATFORM` to the `--host` argument of GMP's
+ 	#       `./configure`, not `HOSTPLATFORM`: the 'host' on which GMP will
+ 	#       run is the 'target' platform of the compiler we're building.
