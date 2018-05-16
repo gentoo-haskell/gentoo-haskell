@@ -12,7 +12,7 @@ diff -ru OneTuple-0.2.1.orig/Data/Tuple/OneTuple.hs OneTuple-0.2.1/Data/Tuple/On
  import Data.Ix
  import Data.Monoid
 +#if MIN_VERSION_base(4,9,0)
-+import Data.Semigroup (Semigroup(..))
++import qualified Data.Semigroup as S (Semigroup(..))
 +#endif
  import Data.Traversable
  
@@ -22,10 +22,10 @@ diff -ru OneTuple-0.2.1.orig/Data/Tuple/OneTuple.hs OneTuple-0.2.1/Data/Tuple/On
      return = OneTuple
  
 +#if MIN_VERSION_base(4,9,0)
-+instance (Semigroup a) => Semigroup (OneTuple a) where
-+    OneTuple x <> OneTuple y = OneTuple (x <> y)
-+    sconcat = Prelude.foldr1 (<>)
-+    stimes n (OneTuple a) = OneTuple (stimes n a)
++instance (S.Semigroup a) => S.Semigroup (OneTuple a) where
++    OneTuple x <> OneTuple y = OneTuple (x S.<> y)
++    sconcat = Prelude.foldr1 (S.<>)
++    stimes n (OneTuple a) = OneTuple (S.stimes n a)
 +#endif
 +
  instance (Monoid a) => Monoid (OneTuple a) where
