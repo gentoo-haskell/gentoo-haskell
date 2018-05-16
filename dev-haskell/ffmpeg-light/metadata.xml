@@ -8,7 +8,9 @@
 	<use>
 		<flag name="builddemo">Build demo executable</flag>
 		<flag name="buildrasterdemo">Build Rasterific demo executable</flag>
-    </use>
+		<flag name="buildvplaydemo">Build video player demo executable</flag>
+		<flag name="buildtranscodedemo">Build transcode demo executable</flag>
+	</use>
 	<longdescription>
 		Stream frames from an encoded video, or stream frames to
 		a video output file. To read the first frame from
