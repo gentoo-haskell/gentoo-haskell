@@ -475,6 +475,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-8.0.2-binutils-2.30.patch
+		eapply "${FILESDIR}"/${PN}-8.4.2-allow-cross-bootstrap.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
