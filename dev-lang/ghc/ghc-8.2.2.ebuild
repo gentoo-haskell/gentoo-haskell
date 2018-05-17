@@ -478,6 +478,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc2-O2-unreg.patch
+		eapply "${FILESDIR}"/${PN}-8.0.2-binutils-2.30.patch
 
 		# a bunch of crosscompiler patches
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-unphased-cross.patch

@@ -475,6 +475,7 @@ src_prepare() {
 		epatch "${FILESDIR}"/${PN}-8.0.2_rc2-old-sphinx.patch
 		epatch "${FILESDIR}"/${PN}-8.0.2-libffi-alpha.patch
 		epatch "${FILESDIR}"/${PN}-8.0.2-O2-unreg.patch
+		epatch "${FILESDIR}"/${PN}-8.0.2-binutils-2.30.patch
 
 		bump_libs
 
