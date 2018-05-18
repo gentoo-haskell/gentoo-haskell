@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:= systemlib? ( >=dev-db/sqlite-3.0 ) !systemlib? ( virtual/libc ) >=dev-haskell/cabal-1.10 test? ( dev-haskell/base16-bytestring dev-haskell/hunit dev-haskell/temporary ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:= systemlib? ( >=dev-db/sqlite-3.0 ) !systemlib? ( virtual/libc ) >=dev-haskell/cabal-1.10 test? ( dev-haskell/base16-bytestring dev-haskell/hunit dev-haskell/temporary ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Low-level binding to SQLite3. Includes UTF8 and BLOB support
 EAPI=6
 HOMEPAGE=https://github.com/IreneKnapp/direct-sqlite
 IUSE=+fulltextsearch +json1 systemlib +urifilenames doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=>=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:= systemlib? ( >=dev-db/sqlite-3.0 ) !systemlib? ( virtual/libc )
-SLOT=0/2.3.21
-SRC_URI=mirror://hackage/packages/archive/direct-sqlite/2.3.21/direct-sqlite-2.3.21.tar.gz
+RDEPEND=>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.4.1:= systemlib? ( >=dev-db/sqlite-3.0 ) !systemlib? ( virtual/libc )
+SLOT=0/2.3.23
+SRC_URI=mirror://hackage/packages/archive/direct-sqlite/2.3.23/direct-sqlite-2.3.23.tar.gz
 _eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	epatch	9a5f039771f143195164a15a4faa41a1	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	63392afb034aad67f17fa129019eb4d9	ghc-package	b3a65eea21c73ad40a2d87d1aa95b5a1	haskell-cabal	0d90789abcf419403c7b1055b753b7d6	ltprune	607e058da37aa6dabfa408b7d61da72e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	fa02994d0beba88681127d93da4411ec	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	26ca8a8bd95d6a74122c08ba98a4ee72
-_md5_=20c7f06c36d24d626194825ae681c150
+_md5_=3986ced37b787d2be7d317093f804fd2
