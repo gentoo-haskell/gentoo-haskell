@@ -120,7 +120,6 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-6.20160114-QC-2.8.2.patch
 	"${FILESDIR}"/${PN}-6.20161210-directory-1.3.patch
 	"${FILESDIR}"/${PN}-6.20170101-crypto-api.patch
-	"${FILESDIR}"/${PN}-6.20180427-hinotify-0.3.10.patch
 	"${FILESDIR}"/${PN}-6.20180427-ghc-8.4.patch
 )
 

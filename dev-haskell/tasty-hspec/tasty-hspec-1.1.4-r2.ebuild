@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.6:=[profile?]
 	>=dev-haskell/hspec-core-2:=[profile?] <dev-haskell/hspec-core-2.6:=[profile?]
 	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.12:2=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
-	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-1.1:=[profile?]
+	>=dev-haskell/tasty-0.8:=[profile?]
 	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/tasty-quickcheck-0.3:=[profile?]
@@ -34,5 +34,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		 'tasty            >=0.8 && <1.1' 'tasty            >=0.8' \
 		'tasty-quickcheck >=0.3 && <0.9 || >=0.9.1 && <0.10' 'tasty-quickcheck >=0.3'
 }

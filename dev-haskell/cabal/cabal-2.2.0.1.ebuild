@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}"
 	# 	>=dev-haskell/quickcheck-2.11.3 <dev-haskell/quickcheck-2.12
 	# 	dev-haskell/tagged
 	# 	>=dev-haskell/tar-0.5.0.3 <dev-haskell/tar-0.6
-	# 	>=dev-haskell/tasty-1.0 <dev-haskell/tasty-1.1
+	# 	>=dev-haskell/tasty-1.0
 	# 	>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
 	# 	dev-haskell/tasty-hunit
 	# 	dev-haskell/tasty-quickcheck
@@ -51,6 +51,13 @@ CABAL_CORE_LIB_GHC_PV="PM:8.4.2_rc1 PM:8.4.2"
 PATCHES=("${FILESDIR}"/${PN}-2.0.0.2-no-bootstrap.patch)
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty >= 1.0 && < 1.1' 'tasty >= 1.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

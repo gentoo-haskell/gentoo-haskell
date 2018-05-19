@@ -24,11 +24,22 @@ RDEPEND=">=dev-haskell/hashable-1.2.6:=[profile?] <dev-haskell/hashable-1.3:=[pr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-instances-0.3.14 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-1.0.0 <dev-haskell/tasty-1.1
-		>=dev-haskell/tasty-hunit-0.10.0 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11 )
+	test? ( >=dev-haskell/quickcheck-instances-0.3.14
+		>=dev-haskell/tasty-1.0.0
+		>=dev-haskell/tasty-hunit-0.10.0
+		>=dev-haskell/tasty-quickcheck-0.10 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base        >= 4.7    && < 4.12' 'base        >= 4.7' \
+		'tasty                >= 1.0.0  && < 1.1' 'tasty                >= 1.0.0' \
+		'tasty-hunit          >= 0.10.0 && < 0.11' 'tasty-hunit          >= 0.10.0' \
+		'tasty-quickcheck     >= 0.10   && < 0.11' 'tasty-quickcheck     >= 0.10' \
+		'quickcheck-instances >= 0.3.14 && < 0.4' 'quickcheck-instances >= 0.3.14'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

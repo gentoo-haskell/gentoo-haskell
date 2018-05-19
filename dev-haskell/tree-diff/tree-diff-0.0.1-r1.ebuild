@@ -17,17 +17,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-1.2.1.0:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-1.2.1.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.8.1:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
-	>=dev-haskell/base-compat-0.9.3:=[profile?] <dev-haskell/base-compat-0.10:=[profile?]
+	>=dev-haskell/base-compat-0.9.3:=[profile?]
 	>=dev-haskell/generics-sop-0.3.1.0:=[profile?] <dev-haskell/generics-sop-0.4:=[profile?]
 	>=dev-haskell/hashable-1.2.6.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/memotrie-0.6.8:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/nats-1.1.1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-haskell/parsec-3.1.11:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/parsers-0.12.7:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
-	>=dev-haskell/quickcheck-2.10.0.1:2=[profile?] <dev-haskell/quickcheck-2.12:2=[profile?]
+	>=dev-haskell/quickcheck-2.10.0.1:2=[profile?]
 	>=dev-haskell/scientific-0.3.5.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.18.3:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/tagged-0.8.5:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
@@ -40,8 +40,22 @@ RDEPEND=">=dev-haskell/aeson-1.2.1.0:=[profile?] <dev-haskell/aeson-1.4:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/tasty-0.11.2.5 <dev-haskell/tasty-1.1
-		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
-		>=dev-haskell/tasty-quickcheck-0.9.1 <dev-haskell/tasty-quickcheck-0.11
-		>=dev-haskell/trifecta-1.7.1.1 <dev-haskell/trifecta-1.8 )
+	test? ( >=dev-haskell/tasty-0.11.2.5
+		>=dev-haskell/tasty-golden-2.3.1.1
+		>=dev-haskell/tasty-quickcheck-0.9.1
+		>=dev-haskell/trifecta-1.7.1.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                >=1.2.1.0  && <1.3' 'aeson                >=1.2.1.0' \
+		'base                 >=4.7      && <4.11' 'base                 >=4.7' \
+		'base-compat          >=0.9.3    && <0.10' 'base-compat          >=0.9.3' \
+		'QuickCheck           >=2.10.0.1 && <2.11' 'QuickCheck           >=2.10.0.1' \
+		'tasty                >=0.11.2.5 && <1.1' 'tasty                >=0.11.2.5' \
+		'tasty-golden         >=2.3.1.1  && <2.4' 'tasty-golden         >=2.3.1.1' \
+		'tasty-quickcheck     >=0.9.1    && <0.10' 'tasty-quickcheck     >=0.9.1' \
+		'trifecta             >=1.7.1.1  && <1.8' 'trifecta             >=1.7.1.1'
+}

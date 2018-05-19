@@ -18,8 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/foldl:=[profile?]
-	dev-haskell/numhask-prelude:=[profile?]
-	dev-haskell/numhask-range:=[profile?]
+	>=dev-haskell/numhask-prelude-0.0.4.0:=[profile?]
+	>=dev-haskell/numhask-range-0.2.2.0:=[profile?]
 	dev-haskell/tdigest:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "

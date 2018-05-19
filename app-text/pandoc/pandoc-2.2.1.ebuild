@@ -52,7 +52,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/tagsoup-0.14.6:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
-	>=dev-haskell/texmath-0.10:=[profile?] <dev-haskell/texmath-0.11:=[profile?]
+	>=dev-haskell/texmath-0.10:=[profile?] <dev-haskell/texmath-0.12:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
@@ -70,14 +70,27 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
-		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.12
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.1
-		>=dev-haskell/tasty-golden-2.3 <dev-haskell/tasty-golden-2.4
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
+	test? ( >=dev-haskell/diff-0.2
+		>=dev-haskell/executable-path-0.0
+		>=dev-haskell/quickcheck-2.4
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-golden-2.3
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Diff >= 0.2 && < 0.4' 'Diff >= 0.2' \
+		'executable-path >= 0.0 && < 0.1' 'executable-path >= 0.0' \
+		'tasty >= 0.11 && < 1.1' 'tasty >= 0.11' \
+		'tasty-hunit >= 0.9 && < 0.11' 'tasty-hunit >= 0.9' \
+		'tasty-quickcheck >= 0.8 && < 0.11' 'tasty-quickcheck >= 0.8' \
+		'tasty-golden >= 2.3 && < 2.4' 'tasty-golden >= 2.3' \
+		'QuickCheck >= 2.4 && < 2.12' 'QuickCheck >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
