@@ -43,7 +43,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/pretty-show-1.6.15
 		>=dev-haskell/quickcheck-2.8.2
 		dev-haskell/tagged
-		>=dev-haskell/tasty-1.0 <dev-haskell/tasty-1.1
+		>=dev-haskell/tasty-1.0
 		>=dev-haskell/tasty-hunit-0.10
 		dev-haskell/tasty-quickcheck )
 "
@@ -58,6 +58,8 @@ src_prepare() {
 	if ! ghc-supports-threaded-runtime; then
 		cabal_chdeps '-threaded' ' '
 	fi
+	cabal_chdeps \
+		'tasty >= 1.0 && <1.1' 'tasty >= 1.0'
 	eapply_user
 }
 
