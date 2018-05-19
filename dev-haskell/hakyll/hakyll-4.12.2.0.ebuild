@@ -52,11 +52,21 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
-	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.12
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.1
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
+	test? ( >=dev-haskell/quickcheck-2.8
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck                 >= 2.8  && < 2.12' 'QuickCheck                 >= 2.8' \
+		'tasty                      >= 0.11 && < 1.1' 'tasty                      >= 0.11' \
+		'tasty-hunit                >= 0.9  && < 0.11' 'tasty-hunit                >= 0.9' \
+		'tasty-quickcheck           >= 0.8  && < 0.11' 'tasty-quickcheck           >= 0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
