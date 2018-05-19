@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?]
 	>=dev-haskell/text-1.1.1.3:=[profile?]
 	>=dev-haskell/text-icu-0.7:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
-	>=dev-haskell/unix-compat-0.1:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
+	>=dev-haskell/unix-compat-0.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/word-trie-0.2.0.4:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2.1:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
@@ -73,7 +73,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >= 2.7 && < 2.9' 'QuickCheck >= 2.7'
+		'QuickCheck >= 2.7 && < 2.9' 'QuickCheck >= 2.7' \
+		'unix-compat >=0.1 && <0.5' 'unix-compat >=0.1'
 }
 
 src_configure() {

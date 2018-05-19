@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/hflags-0.4:=[profile?] <dev-haskell/hflags-0.5:=[profile?
 	>=dev-haskell/random-fu-0.2:=[profile?] <dev-haskell/random-fu-0.3:=[profile?]
 	>=dev-haskell/random-source-0.3:=[profile?] <dev-haskell/random-source-0.4:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.4:=[profile?]
-	>=dev-haskell/unix-compat-0.4:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
+	>=dev-haskell/unix-compat-0.4:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -33,5 +33,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'vector        >=0.10 && <0.12' 'vector        >=0.10'
+		'vector        >=0.10 && <0.12' 'vector        >=0.10' \
+		'unix-compat   >= 0.4 && <0.5' 'unix-compat   >= 0.4'
 }

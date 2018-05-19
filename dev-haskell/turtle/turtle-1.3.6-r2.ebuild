@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprin
 	>=dev-haskell/system-filepath-0.3.1:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	<dev-haskell/temporary-1.3:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/unix-compat-0.4:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
+	>=dev-haskell/unix-compat-0.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -46,5 +46,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'async                >= 2.0.0.0 && < 2.2' 'async                >= 2.0.0.0'
+		'async                >= 2.0.0.0 && < 2.2' 'async                >= 2.0.0.0' \
+		'unix-compat          >= 0.4     && < 0.5' 'unix-compat          >= 0.4'
 }
