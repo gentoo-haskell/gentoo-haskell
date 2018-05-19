@@ -60,8 +60,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.4.patch
-		 "${FILESDIR}"/${P}-http-conduit-2.3.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.4.patch
+	"${FILESDIR}"/${P}-http-conduit-2.3.patch
+)
 
 src_prepare() {
 	default
@@ -70,7 +72,6 @@ src_prepare() {
 		'http-reverse-proxy        >= 0.4.2         && < 0.5' 'http-reverse-proxy        >= 0.4.2' \
 		'unix-compat               >= 0.3           && < 0.5' 'unix-compat               >= 0.3'
 }
-
 
 src_configure() {
 	haskell-cabal_src_configure \
