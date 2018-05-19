@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hsass-0.2.0:=[profile?] <dev-haskell/hsass-0.5.0:=[profile?]
+RDEPEND=">=dev-haskell/hsass-0.2.0:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
 	>=dev-haskell/yesod-1.4.1:=[profile?] <dev-haskell/yesod-1.5.0:=[profile?]
 	>=dev-haskell/yesod-core-1.4.6:=[profile?] <dev-haskell/yesod-core-1.5.0:=[profile?]
@@ -26,3 +26,10 @@ RDEPEND=">=dev-haskell/hsass-0.2.0:=[profile?] <dev-haskell/hsass-0.5.0:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hsass                 >= 0.2.0    && < 0.5.0' 'hsass                 >= 0.2.0'
+}
