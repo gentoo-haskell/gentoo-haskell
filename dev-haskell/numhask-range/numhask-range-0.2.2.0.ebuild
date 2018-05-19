@@ -21,7 +21,7 @@ RESTRICT="test" # Could not find module ‘NumHask.Space’
 
 RDEPEND="dev-haskell/adjunctions:=[profile?]
 	dev-haskell/distributive:=[profile?]
-	>=dev-haskell/numhask-prelude-0.0.1.0:=[profile?]
+	>=dev-haskell/numhask-prelude-0.0.4.0:=[profile?]
 	dev-haskell/protolude:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	dev-haskell/semigroupoids:=[profile?]
