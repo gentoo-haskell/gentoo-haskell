@@ -39,7 +39,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/tls-1.3.4:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-haskell/unix-compat-0.3:=[profile?] <dev-haskell/unix-compat-0.5:=[profile?]
+	>=dev-haskell/unix-compat-0.3:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?]
@@ -67,7 +67,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'http-reverse-proxy        >= 0.4.2         && < 0.5' 'http-reverse-proxy        >= 0.4.2'
+		'http-reverse-proxy        >= 0.4.2         && < 0.5' 'http-reverse-proxy        >= 0.4.2' \
+		'unix-compat               >= 0.3           && < 0.5' 'unix-compat               >= 0.3'
 }
 
 
