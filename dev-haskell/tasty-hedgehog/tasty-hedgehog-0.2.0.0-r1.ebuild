@@ -19,17 +19,19 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hedgehog-0.5:=[profile?] <dev-haskell/hedgehog-0.6:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
-	>=dev-haskell/tasty-0.11:=[profile?] <dev-haskell/tasty-1.1:=[profile?]
+	>=dev-haskell/tasty-0.11:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/tasty-expected-failure-0.11 <dev-haskell/tasty-expected-failure-0.12 )
+	test? ( >=dev-haskell/tasty-expected-failure-0.11 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.8 && <4.11' 'base >= 4.8'
+		'base >= 4.8 && <4.11' 'base >= 4.8' \
+		'tasty >= 0.11 && < 1.1' 'tasty >= 0.11' \
+		'tasty-expected-failure >= 0.11 && < 0.12' 'tasty-expected-failure >= 0.11'
 }
