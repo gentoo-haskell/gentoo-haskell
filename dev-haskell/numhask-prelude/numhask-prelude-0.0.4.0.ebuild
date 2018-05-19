@@ -22,7 +22,7 @@ RESTRICT="test" # tests require numhash-prelude to already be installed
 RDEPEND=">=dev-haskell/numhask-0.2:=[profile?] <dev-haskell/numhask-0.3:=[profile?]
 	>=dev-haskell/protolude-0.1:=[profile?] <dev-haskell/protolude-0.3:=[profile?]
 	>=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
-	>=dev-haskell/tasty-1.0.1.1:=[profile?] <dev-haskell/tasty-1.1:=[profile?]
+	>=dev-haskell/tasty-1.0.1.1:=[profile?]
 	>=dev-haskell/tasty-quickcheck-0.9.2:=[profile?] <dev-haskell/tasty-quickcheck-1.0:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -30,3 +30,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/doctest )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.7 && <4.12' 'base >=4.7' \
+		'tasty >= 1.0.1.1 && <1.1' 'tasty >= 1.0.1.1'
+}
