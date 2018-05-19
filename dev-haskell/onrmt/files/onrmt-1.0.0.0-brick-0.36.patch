@@ -1,0 +1,12 @@
+diff --git a/src/Network/OnRmt/UI/MainScreen.hs b/src/Network/OnRmt/UI/MainScreen.hs
+index 41c2582..8afc7e7 100644
+--- a/src/Network/OnRmt/UI/MainScreen.hs
++++ b/src/Network/OnRmt/UI/MainScreen.hs
+@@ -420,5 +420,5 @@ type InputType = Editor T.Text ScreenElementNames
+ 
+-initialInput = editorText Name_UserInput (str . cs . T.unlines) (Just 8) ""
++initialInput = editorText Name_UserInput (Just 8) ""
+ 
+-drawInput s = withFocusRing (focus s) renderEditor $ inpRgn s
++drawInput s = withFocusRing (focus s) (renderEditor (str . cs . T.unlines)) $ inpRgn s
+ 
