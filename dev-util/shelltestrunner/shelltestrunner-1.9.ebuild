@@ -45,6 +45,7 @@ src_test() {
 	#
 	#   https://github.com/simonmichael/shelltestrunner/issues/13
 	#
+	LANGUAGE=en \
 	PATH="dist/build/shelltest:${PATH}" \
 		shelltest -x .windows -x macros.test tests/ || die 'test suite failed'
 }
