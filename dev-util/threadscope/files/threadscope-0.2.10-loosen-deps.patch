@@ -1,0 +1,22 @@
+commit 1d18ae89e98c6e41e009286109000e8afedb96b8
+Author: Mitsutoshi Aoe <maoe@foldr.in>
+Date:   Wed May 9 21:44:32 2018 +0900
+
+    Relax upper version bounds for template-haskell and temporary
+
+diff --git a/threadscope.cabal b/threadscope.cabal
+index 5cf2e4e..e1767ac 100644
+--- a/threadscope.cabal
++++ b/threadscope.cabal
+@@ -62,8 +62,8 @@ Executable threadscope
+                      time >= 1.1 && < 1.10,
+                      bytestring < 0.11,
+                      file-embed < 0.1,
+-                     template-haskell < 2.13,
+-                     temporary >= 1.1 && < 1.3
++                     template-haskell < 2.14,
++                     temporary >= 1.1 && < 1.4
+   if os(osx)
+     build-depends:   gtk-mac-integration < 0.4
+ 
+

@@ -1,0 +1,170 @@
+commit 8292612d9fcbd61e5ae033f681d288aeb053df94
+Author: Mitsutoshi Aoe <maoe@foldr.in>
+Date:   Wed May 9 21:56:55 2018 +0900
+
+    Fix build failure with gtk-0.14.9
+
+diff --git a/GUI/BookmarkView.hs b/GUI/BookmarkView.hs
+index b3a1643..58f30e4 100644
+--- a/GUI/BookmarkView.hs
++++ b/GUI/BookmarkView.hs
+@@ -13,6 +13,7 @@ module GUI.BookmarkView (
+ import GHC.RTS.Events (Timestamp)
+ 
+ import Graphics.UI.Gtk
++import qualified Graphics.UI.Gtk.ModelView.TreeView.Compat as Compat
+ import Numeric
+ 
+ ---------------------------------------------------------------------------
+@@ -81,7 +82,7 @@ bookmarkViewNew builder BookmarkViewActions{..} = do
+     treeViewAppendColumn bookmarkTreeView columnTs
+     treeViewAppendColumn bookmarkTreeView columnLabel
+ 
+-    treeViewSetModel bookmarkTreeView bookmarkStore
++    Compat.treeViewSetModel bookmarkTreeView (Just bookmarkStore)
+ 
+     cellLayoutSetAttributes columnTs cellTs bookmarkStore $ \(ts,_) ->
+       [ cellText := showFFloat (Just 6) (fromIntegral ts / 1000000) "s" ]
+diff --git a/GUI/KeyView.hs b/GUI/KeyView.hs
+index af69636..68cab2a 100644
+--- a/GUI/KeyView.hs
++++ b/GUI/KeyView.hs
+@@ -7,6 +7,7 @@ import GUI.ViewerColours
+ import GUI.Timeline.Render.Constants
+ 
+ import Graphics.UI.Gtk
++import qualified Graphics.UI.Gtk.ModelView.TreeView.Compat as Compat
+ import qualified Graphics.Rendering.Cairo as C
+ 
+ 
+@@ -40,7 +41,7 @@ keyViewNew builder = do
+ 
+     let tooltipColumn = makeColumnIdString 0
+     customStoreSetColumn keyStore tooltipColumn (\(_,tooltip,_) -> tooltip)
+-    treeViewSetModel keyTreeView keyStore
++    Compat.treeViewSetModel keyTreeView (Just keyStore)
+ 
+     set keyTreeView [ treeViewTooltipColumn := tooltipColumn ]
+ 
+diff --git a/GUI/StartupInfoView.hs b/GUI/StartupInfoView.hs
+index 3009798..1786d57 100644
+--- a/GUI/StartupInfoView.hs
++++ b/GUI/StartupInfoView.hs
+@@ -7,6 +7,7 @@ module GUI.StartupInfoView (
+ import GHC.RTS.Events
+ 
+ import Graphics.UI.Gtk
++import qualified Graphics.UI.Gtk.ModelView.TreeView.Compat as Compat
+ 
+ import Data.Array
+ import Data.List
+@@ -54,7 +55,7 @@ startupInfoViewNew builder = do
+     treeViewColumnPackStart columnArgs cellArgs True
+     treeViewAppendColumn treeviewProgArgs columnArgs
+ 
+-    treeViewSetModel treeviewProgArgs storeProgArgs
++    Compat.treeViewSetModel treeviewProgArgs (Just storeProgArgs)
+ 
+     set cellArgs [ cellTextEditable := True ]
+     cellLayoutSetAttributes columnArgs cellArgs storeProgArgs $ \arg ->
+@@ -71,7 +72,7 @@ startupInfoViewNew builder = do
+     treeViewAppendColumn treeviewProgEnv columnVar
+     treeViewAppendColumn treeviewProgEnv columnValue
+ 
+-    treeViewSetModel treeviewProgEnv storeProgEnv
++    Compat.treeViewSetModel treeviewProgEnv (Just storeProgEnv)
+ 
+     cellLayoutSetAttributes columnVar cellVar storeProgEnv $ \(var,_) ->
+       [ cellText := var ]
+diff --git a/GUI/SummaryView.hs b/GUI/SummaryView.hs
+index 4258cbe..b4b092c 100644
+--- a/GUI/SummaryView.hs
++++ b/GUI/SummaryView.hs
+@@ -10,6 +10,7 @@ import GHC.RTS.Events
+ import GUI.Types
+ 
+ import Graphics.UI.Gtk
++import qualified Graphics.UI.Gtk.ModelView.TreeView.Compat as Compat
+ 
+ import Control.Exception (assert)
+ import Control.Monad
+@@ -95,7 +96,7 @@ summaryViewNew builder = do
+     let summaryView = SummaryView{..}
+ 
+     treeviewGcStats <- getWidget castToTreeView "treeviewGcStats"
+-    treeViewSetModel treeviewGcStats storeGcStats
++    Compat.treeViewSetModel treeviewGcStats (Just storeGcStats)
+     let addGcColumn = addColumn treeviewGcStats storeGcStats
+     addGcColumn "Generation" $ \(GcStatsEntry gen _ _ _ _ _) ->
+       [ cellText := if gen == -1 then "GC Total" else "Gen " ++ show gen ]
+@@ -111,7 +112,7 @@ summaryViewNew builder = do
+       [ cellText := (printf "%3.4fs" maxpause :: String) ]
+ 
+     treeviewSparkStats <- getWidget castToTreeView "treeviewSparkStats"
+-    treeViewSetModel treeviewSparkStats storeSparkStats
++    Compat.treeViewSetModel treeviewSparkStats (Just storeSparkStats)
+     let addSparksColumn = addColumn treeviewSparkStats storeSparkStats
+     addSparksColumn "HEC" $ \(hec, _) ->
+       [ cellText := if hec == -1 then "Total" else "HEC " ++ show hec ]
+diff --git a/GUI/TraceView.hs b/GUI/TraceView.hs
+index 0a8e516..2485e59 100644
+--- a/GUI/TraceView.hs
++++ b/GUI/TraceView.hs
+@@ -10,6 +10,7 @@ import Events.HECs
+ import GUI.Types
+ 
+ import Graphics.UI.Gtk
++import qualified Graphics.UI.Gtk.ModelView.TreeView.Compat as Compat
+ import Data.Tree
+ 
+ 
+@@ -44,7 +45,7 @@ traceViewNew builder actions = do
+     treeViewColumnPackStart traceColumn togglecell False
+     treeViewAppendColumn tracesTreeView traceColumn
+ 
+-    treeViewSetModel tracesTreeView tracesStore
++    Compat.treeViewSetModel tracesTreeView (Just tracesStore)
+ 
+     cellLayoutSetAttributes traceColumn textcell tracesStore $ \(tr, _) ->
+       [ cellText := renderTrace tr ]
+diff --git a/Graphics/UI/Gtk/ModelView/TreeView/Compat.hs b/Graphics/UI/Gtk/ModelView/TreeView/Compat.hs
+new file mode 100644
+index 0000000..b697ded
+--- /dev/null
++++ b/Graphics/UI/Gtk/ModelView/TreeView/Compat.hs
+@@ -0,0 +1,22 @@
++{-# LANGUAGE CPP #-}
++module Graphics.UI.Gtk.ModelView.TreeView.Compat
++    ( treeViewSetModel
++    ) where
++import Graphics.UI.Gtk hiding (treeViewSetModel)
++import qualified Graphics.UI.Gtk.ModelView.TreeView as Gtk
++#if !MIN_VERSION_gtk(0, 14, 9)
++import qualified System.Glib.FFI as Glib
++import qualified Graphics.UI.GtkInternals as Gtk
++#endif
++
++treeViewSetModel
++    :: (TreeViewClass self, TreeModelClass model)
++    => self
++    -> Maybe model
++    -> IO ()
++#if MIN_VERSION_gtk(0, 14, 9)
++treeViewSetModel = Gtk.treeViewSetModel
++#else
++treeViewSetModel self model = Gtk.treeViewSetModel self
++    (maybe (Gtk.TreeModel Glib.nullForeignPtr) toTreeModel model)
++#endif
+diff --git a/threadscope.cabal b/threadscope.cabal
+index e1767ac..5ea4c94 100644
+--- a/threadscope.cabal
++++ b/threadscope.cabal
+@@ -104,6 +104,7 @@ Executable threadscope
+                      GUI.Timeline.Types,
+                      GUI.Timeline.Render.Constants,
+                      GUI.GtkExtras
++                     Graphics.UI.Gtk.ModelView.TreeView.Compat
+                      Paths_threadscope
+ 
+   ghc-options:  -Wall -fwarn-tabs -rtsopts
+
