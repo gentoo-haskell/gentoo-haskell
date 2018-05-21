@@ -24,7 +24,7 @@ RDEPEND="<dev-haskell/cairo-0.14:=
 	>=dev-haskell/gtk-0.12:= <dev-haskell/gtk-0.15:=
 	<dev-haskell/mtl-2.3:=
 	<dev-haskell/pango-0.14:=
-	>=dev-haskell/temporary-1.1:= <dev-haskell/temporary-1.3:=
+	>=dev-haskell/temporary-1.1:= <dev-haskell/temporary-1.4:=
 	<dev-haskell/text-1.3:=
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -32,9 +32,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'template-haskell < 2.13' 'template-haskell'
-}
+PATCHES=("${FILESDIR}"/${P}-loosen-deps.patch
+		 "${FILESDIR}"/${P}-gtk-0.14.9.patch)
