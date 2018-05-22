@@ -24,11 +24,15 @@ HOMEPAGE="http://www.haskell.org/ghc/"
 # we don't have any binaries yet
 arch_binaries=""
 
+BIN_PV=${PV}
+# Make live ebuild look more like release ebuild: use latest binary release
+# to bootstrap GHC. This way we get supported bootstrap base.
+[[ ${PV} = *9999* ]] && BIN_PV=8.4.2
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm.tbz2 )"
 #arch_binaries="$arch_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm64.tbz2 )"
-#arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-amd64.tbz2 )"
+arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${BIN_PV}-x86_64-pc-linux-gnu.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
@@ -44,7 +48,7 @@ yet_binary() {
 		#alpha) return 0 ;;
 		#arm64) return 0 ;;
 		#arm) return 0 ;;
-		#amd64) return 0 ;;
+		amd64) return 0 ;;
 		#ia64) return 0 ;;
 		#ppc) return 0 ;;
 		#ppc64) return 0 ;;
@@ -58,8 +62,14 @@ GHC_PV=${PV}
 #GHC_PV=8.2.0.20170404 # uncomment only for -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_rc/-rc}/${GHC_P}-src.tar.xz )"
+SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz )"
 S="${WORKDIR}"/${GHC_P}
+
+if [[ ${PV} = *9999* ]]; then
+	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
+	# Allow binaries to be collected below
+	SRC_URI=""
+fi
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
@@ -67,15 +77,10 @@ BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 )
 
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
-	unset SRC_URI
-fi
-
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc +ghcbootstrap ghcmakebinary +gmp profile"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp profile"
 IUSE+=" binary"
 
 RDEPEND="
@@ -112,7 +117,6 @@ DEPEND="${RDEPEND}
 PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-[[ ${PV} = *9999* ]] && REQUIRED_USE+=" ghcbootstrap"
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
@@ -289,7 +293,7 @@ relocate_path() {
 # changes hardcoded ghc paths and updates package index
 # $1 - new absolute root path
 relocate_ghc() {
-	local to=$1
+	local to=$1 ghc_v=${BIN_PV}
 
 	# libdir for prebuilt binary and for current system may mismatch
 	# It does for prefix installation for example: bug #476998
@@ -298,8 +302,8 @@ relocate_ghc() {
 	local bin_libdir=${bin_libpath#${bin_ghc_prefix}/}
 
 	# backup original script to use it later after relocation
-	local gp_back="${T}/ghc-pkg-${GHC_PV}-orig"
-	cp "${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
+	local gp_back="${T}/ghc-pkg-${ghc_v}-orig"
+	cp "${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
 
 	if [[ ${bin_libdir} != $(get_libdir) ]]; then
 		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
@@ -309,26 +313,26 @@ relocate_ghc() {
 		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
 
 		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
-			"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/ghc-${ghc_v}" \
+			"${WORKDIR}/usr/bin/ghci-${ghc_v}" \
+			"${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" \
 			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
+			"${WORKDIR}/usr/bin/runghc-${ghc_v}" \
 			"$gp_back" \
-			"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${ghc_v}/package.conf.d/"*
 	fi
 
 	# Relocate from /usr to ${EPREFIX}/usr
 	relocate_path "/usr" "${to}/usr" \
-		"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
-		"${WORKDIR}/usr/bin/haddock-ghc-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/ghc-${ghc_v}" \
+		"${WORKDIR}/usr/bin/ghci-${ghc_v}" \
+		"${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" \
+		"${WORKDIR}/usr/bin/haddock-ghc-${ghc_v}" \
 		"${WORKDIR}/usr/bin/hp2ps" \
 		"${WORKDIR}/usr/bin/hpc" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
-		"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
-		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
+		"${WORKDIR}/usr/bin/runghc-${ghc_v}" \
+		"${WORKDIR}/usr/$(get_libdir)/${PN}-${ghc_v}/package.conf.d/"*
 
 	# this one we will use to regenerate cache
 	# so it should point to current tree location
@@ -383,14 +387,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		EGIT_BRANCH="master"
-		if [[ -n ${GHC_BRANCH} ]]; then
-			EGIT_BRANCH="${GHC_BRANCH}"
-		fi
-
-		git-r3_src_unpack
-	fi
+	[[ ${PV} == *9999* ]] && git-r3_src_unpack
 
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
@@ -401,7 +398,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	[[ ${PV} == *9999* ]] || unpack ${ONLYA}
+	unpack ${ONLYA}
 }
 
 src_prepare() {
@@ -411,12 +408,12 @@ src_prepare() {
 		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${WORKDIR}/usr/bin/ghc-${GHC_PV}"
+			"${WORKDIR}/usr/bin/ghc-${BIN_PV}"
 
 		# allow hardened users use vanilla binary to bootstrap ghc
 		# ghci uses mmap with rwx protection at it implements dynamic
 		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${GHC_P}/bin/ghc"
+		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 	fi
 
 	if use binary; then
