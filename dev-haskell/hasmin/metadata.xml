@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		A CSS minifier which not only aims at reducing the amount of bytes of the
+		output, but also at improving gzip compression. It may be used as a library,
+		or a stand-alone executable. For the library, refer to the Hasmin module
+		documentation. For the program: the output is the minified CSS file, but
+		hasmin allows also its compression into gzip using Google&#39;s Zopfli library.
+		
+		To use it: ./hasmin input.css &gt; output.css
+		
+		By default, most minification techniques are enabled. For a list of
+		available flags, do: ./hasmin --help
+	</longdescription>
+</pkgmetadata>

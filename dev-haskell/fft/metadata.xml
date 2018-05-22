@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Bindings to the FFTW library.
+		
+		Provides high performance discrete fourier transforms in
+		arbitrary dimensions.  Include transforms of complex data,
+		real data, and real to real transforms.
+		
+	</longdescription>
+</pkgmetadata>
