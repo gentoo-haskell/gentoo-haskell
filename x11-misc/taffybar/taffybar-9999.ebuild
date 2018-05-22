@@ -17,35 +17,53 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="+network-uri"
 
-RDEPEND="dev-haskell/cairo:=[profile?]
+RDEPEND=">=dev-haskell/alsa-mixer-0.2.0:=[profile?]
+	dev-haskell/cairo:=[profile?]
 	dev-haskell/configfile:=[profile?]
-	>=dev-haskell/dbus-0.10.7:=[profile?] <dev-haskell/dbus-1.0:=[profile?]
+	>=dev-haskell/dbus-1.0.0:=[profile?] <dev-haskell/dbus-2.0.0:=[profile?]
+	>=dev-haskell/dbus-hslogger-0.1.0.1:=[profile?] <dev-haskell/dbus-hslogger-0.2.0.0:=[profile?]
 	>=dev-haskell/dyre-0.8.6:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
 	>=dev-haskell/either-4.0.0.0:=[profile?]
 	>=dev-haskell/enclosed-exceptions-1.0.0.1:=[profile?]
-	>=dev-haskell/gtk-0.12.1:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
-	>=dev-haskell/gtk-traymanager-0.1.2:=[profile?] <dev-haskell/gtk-traymanager-0.2:=[profile?]
+	dev-haskell/gi-cairo:=[profile?]
+	dev-haskell/gi-gdk:=[profile?]
+	>=dev-haskell/gi-gdkpixbuf-2.0.16:=[profile?]
+	dev-haskell/gi-gdkx11:=[profile?]
+	dev-haskell/gi-glib:=[profile?]
+	dev-haskell/gi-gtk:=[profile?]
+	dev-haskell/glib:=[profile?]
+	>=dev-haskell/gtk-sni-tray-0.1.3.1:=[profile?]
+	>=dev-haskell/gtk-strut-0.1.2.0:=[profile?]
+	>=dev-haskell/gtk-traymanager-1.0.1:=[profile?] <dev-haskell/gtk-traymanager-2.0.0:=[profile?]
+	>=dev-haskell/gtk3-0.14.9:=[profile?]
+	>=dev-haskell/haskell-gi-0.21.2:=[profile?]
+	>=dev-haskell/haskell-gi-base-0.21.1:=[profile?]
+	dev-haskell/hslogger:=[profile?]
 	>=dev-haskell/hstringtemplate-0.8:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
 	dev-haskell/http:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/multimap-1.2.1:=[profile?]
 	dev-haskell/old-locale:=[profile?]
+	dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?]
 	>=dev-haskell/rate-limit-1.1.1:=[profile?]
+	dev-haskell/regex-compat:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-1:=[profile?]
 	>=dev-haskell/split-0.1.4.2:=[profile?]
+	>=dev-haskell/status-notifier-item-0.2.1.0:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/time-units-1.0.0:=[profile?]
+	>=dev-haskell/transformers-base-0.4:=[profile?]
 	>=dev-haskell/tuple-0.3.0.2:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-haskell/x11-1.5.0.1:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
 	dev-haskell/xml:=[profile?]
 	dev-haskell/xml-helpers:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
-	x11-libs/gtk+:2
+	>=dev-lang/ghc-8.2.1:=
+	x11-libs/gtk+:3
 	x11-wm/xmonad:=[profile?]
 	x11-wm/xmonad-contrib:=[profile?]
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3:=[profile?]
@@ -54,7 +72,7 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 			<dev-haskell/network-uri-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-2.0.0.2
 	virtual/pkgconfig
 "
 RDEPEND+=" sys-apps/dbus
