@@ -323,6 +323,9 @@ relocate_ghc() {
 		"${WORKDIR}/usr/bin/ghc-${GHC_PV}" \
 		"${WORKDIR}/usr/bin/ghci-${GHC_PV}" \
 		"${WORKDIR}/usr/bin/ghc-pkg-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/haddock-ghc-${GHC_PV}" \
+		"${WORKDIR}/usr/bin/hp2ps" \
+		"${WORKDIR}/usr/bin/hpc" \
 		"${WORKDIR}/usr/bin/hsc2hs" \
 		"${WORKDIR}/usr/bin/runghc-${GHC_PV}" \
 		"${WORKDIR}/usr/$(get_libdir)/${GHC_P}/package.conf.d/"*
