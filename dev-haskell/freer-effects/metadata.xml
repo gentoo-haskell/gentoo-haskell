@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Implementation of effect system for Haskell, which is based on the work of
+		Oleg Kiselyov et al.:
+		
+		* http://okmij.org/ftp/Haskell/extensible/more.pdf Freer Monads, More Extensible Effects;
+
+		* http://okmij.org/ftp/Haskell/zseq.pdf Reflection without Remorse;
+		
+		* http://okmij.org/ftp/Haskell/extensible/exteff.pdf Extensible Effects;
+		
+		The key features are:
+		
+		* An efficient effect system for Haskell - as a library!
+		
+		* Reimplementations of several common Haskell monad transformers as effects.
+		
+		* Core components for defining your own Effects.
+	</longdescription>
+	<use>
+		<flag name="pedantic">Pass additional warning flags and -Werror to GHC.</flag>
+		<flag name="test-hlint">Enable test suite that checks sources using HLint.</flag>
+	</use>
+</pkgmetadata>
