@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		High level bindings to the LZ4 compression library.
+		
+		Currently based on lz4 r119. C sources are included and no external
+		dependencies are needed other than @cereal@.
+	</longdescription>
+</pkgmetadata>
