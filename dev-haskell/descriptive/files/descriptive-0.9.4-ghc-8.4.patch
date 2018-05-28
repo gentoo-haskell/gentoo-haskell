@@ -1,0 +1,52 @@
+--- a/src/Descriptive.hs
++++ b/src/Descriptive.hs
+@@ -32,4 +32,5 @@ import Control.Monad.State.Strict
+ import Data.Bifunctor
+ import Data.Monoid
++import qualified Data.Semigroup as S
+ 
+ --------------------------------------------------------------------------------
+@@ -75,9 +76,12 @@ data Description a
+   deriving (Show,Eq,Functor)
+ 
++instance Semigroup (Description d) where
++  (<>) None x = x
++  (<>) x None = x
++  (<>) x y = And x y
++
+ instance Monoid (Description d) where
+   mempty = None
+-  mappend None x = x
+-  mappend x None = x
+-  mappend x y = And x y
++  mappend = (S.<>)
+ 
+ -- | The bounds of a many-consumable thing.
+@@ -230,7 +234,6 @@ sequenceHelper minb =
+   where redescribe = Bounded minb UnlimitedBound
+ 
+-instance (Monoid a) => Monoid (Result (Description d) a) where
+-  mempty = Succeeded mempty
+-  mappend x y =
++instance (Semigroup a) => Semigroup (Result (Description d) a) where
++  (<>) x y =
+     case x of
+       Failed e -> Failed e
+@@ -246,9 +249,16 @@ instance (Monoid a) => Monoid (Result (Description d) a) where
+           Succeeded b -> Succeeded (a <> b)
+ 
++instance (Monoid a) => Monoid (Result (Description d) a) where
++  mempty = Succeeded mempty
++  mappend = (S.<>)
++
++instance (Semigroup a, Monad m) => Semigroup (Consumer s d m a) where
++  (<>) = liftA2 (S.<>)
++
+ instance (Monoid a, Monad m) => Monoid (Consumer s d m a) where
+   mempty =
+     consumer (return mempty)
+              (return mempty)
+-  mappend = liftA2 (<>)
++  mappend = (S.<>)
+ 
+ --------------------------------------------------------------------------------
