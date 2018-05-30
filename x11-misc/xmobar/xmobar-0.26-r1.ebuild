@@ -72,6 +72,8 @@ src_prepare() {
 	# cycle).
 	# Be careful when remove it :]
 	HCFLAGS+=" -with-rtsopts=-V0"
+	cabal_chdeps \
+		'build-depends: dbus >= 0.10 && < 1.0' 'build-depends: dbus >= 0.10'
 }
 
 src_configure() {
