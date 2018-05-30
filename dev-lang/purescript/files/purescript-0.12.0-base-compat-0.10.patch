@@ -1,0 +1,524 @@
+diff --git a/app/Command/REPL.hs b/app/Command/REPL.hs
+index 04033b57..3a3a57cb 100644
+--- a/app/Command/REPL.hs
++++ b/app/Command/REPL.hs
+@@ -13,7 +13,7 @@
+ module Command.REPL (command) where
+ 
+ import           Prelude ()
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ import           Control.Applicative (many, (<|>))
+ import           Control.Concurrent (forkIO)
+ import           Control.Concurrent.MVar (MVar, newEmptyMVar, putMVar, takeMVar,
+diff --git a/src/Control/Monad/Supply/Class.hs b/src/Control/Monad/Supply/Class.hs
+index 64038a6a..fe3aeb67 100644
+--- a/src/Control/Monad/Supply/Class.hs
++++ b/src/Control/Monad/Supply/Class.hs
+@@ -7,7 +7,7 @@
+ 
+ module Control.Monad.Supply.Class where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.Supply
+ import Control.Monad.State
+diff --git a/src/Language/PureScript/AST/SourcePos.hs b/src/Language/PureScript/AST/SourcePos.hs
+index 60605d7a..24b53135 100644
+--- a/src/Language/PureScript/AST/SourcePos.hs
++++ b/src/Language/PureScript/AST/SourcePos.hs
+@@ -4,7 +4,7 @@
+ --
+ module Language.PureScript.AST.SourcePos where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.DeepSeq (NFData)
+ import Data.Aeson ((.=), (.:))
+diff --git a/src/Language/PureScript/CodeGen/JS.hs b/src/Language/PureScript/CodeGen/JS.hs
+index 266c5604..a6024cdd 100644
+--- a/src/Language/PureScript/CodeGen/JS.hs
++++ b/src/Language/PureScript/CodeGen/JS.hs
+@@ -6,7 +6,7 @@ module Language.PureScript.CodeGen.JS
+   , moduleToJs
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Arrow ((&&&))
+diff --git a/src/Language/PureScript/CodeGen/JS/Common.hs b/src/Language/PureScript/CodeGen/JS/Common.hs
+index 259cd4af..c16b69c9 100644
+--- a/src/Language/PureScript/CodeGen/JS/Common.hs
++++ b/src/Language/PureScript/CodeGen/JS/Common.hs
+@@ -1,7 +1,7 @@
+ -- | Common code generation utility functions
+ module Language.PureScript.CodeGen.JS.Common where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Data.Char
+ import Data.Monoid ((<>))
+diff --git a/src/Language/PureScript/CodeGen/JS/Printer.hs b/src/Language/PureScript/CodeGen/JS/Printer.hs
+index d8b59dc2..005b08ba 100644
+--- a/src/Language/PureScript/CodeGen/JS/Printer.hs
++++ b/src/Language/PureScript/CodeGen/JS/Printer.hs
+@@ -4,7 +4,7 @@ module Language.PureScript.CodeGen.JS.Printer
+   , prettyPrintJSWithSourceMaps
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow ((<+>))
+ import Control.Monad (forM, mzero)
+diff --git a/src/Language/PureScript/CoreImp/Optimizer/Inliner.hs b/src/Language/PureScript/CoreImp/Optimizer/Inliner.hs
+index 391f9391..6d2d6555 100644
+--- a/src/Language/PureScript/CoreImp/Optimizer/Inliner.hs
++++ b/src/Language/PureScript/CoreImp/Optimizer/Inliner.hs
+@@ -11,7 +11,7 @@ module Language.PureScript.CoreImp.Optimizer.Inliner
+   , evaluateIifes
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.Supply.Class (MonadSupply, freshName)
+ 
+diff --git a/src/Language/PureScript/CoreImp/Optimizer/TCO.hs b/src/Language/PureScript/CoreImp/Optimizer/TCO.hs
+index 0a5d9496..fbe91ade 100644
+--- a/src/Language/PureScript/CoreImp/Optimizer/TCO.hs
++++ b/src/Language/PureScript/CoreImp/Optimizer/TCO.hs
+@@ -1,7 +1,7 @@
+ -- | This module implements tail call elimination.
+ module Language.PureScript.CoreImp.Optimizer.TCO (tco) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Data.Text (Text)
+ import Data.Monoid ((<>))
+diff --git a/src/Language/PureScript/Docs/AsMarkdown.hs b/src/Language/PureScript/Docs/AsMarkdown.hs
+index 6cb3b4e4..1a02de37 100644
+--- a/src/Language/PureScript/Docs/AsMarkdown.hs
++++ b/src/Language/PureScript/Docs/AsMarkdown.hs
+@@ -6,7 +6,7 @@ module Language.PureScript.Docs.AsMarkdown
+   , codeToString
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad (unless, zipWithM_)
+ import Control.Monad.Error.Class (MonadError)
+diff --git a/src/Language/PureScript/Docs/Convert/ReExports.hs b/src/Language/PureScript/Docs/Convert/ReExports.hs
+index 4d48cb14..c0967ffb 100644
+--- a/src/Language/PureScript/Docs/Convert/ReExports.hs
++++ b/src/Language/PureScript/Docs/Convert/ReExports.hs
+@@ -2,7 +2,7 @@ module Language.PureScript.Docs.Convert.ReExports
+   ( updateReExports
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow ((&&&), first, second)
+ import Control.Monad
+diff --git a/src/Language/PureScript/Docs/Prim.hs b/src/Language/PureScript/Docs/Prim.hs
+index ed16e734..8e804a62 100644
+--- a/src/Language/PureScript/Docs/Prim.hs
++++ b/src/Language/PureScript/Docs/Prim.hs
+@@ -6,7 +6,7 @@ module Language.PureScript.Docs.Prim
+   , primModules
+   ) where
+ 
+-import Prelude.Compat hiding (fail)
++import Prelude.Compat hiding (fail, (<>))
+ import Data.Monoid ((<>))
+ import Data.Text (Text)
+ import qualified Data.Text as T
+@@ -480,4 +480,3 @@ aboveDoc = primTypeOf (P.primSubName "TypeError") "Above" $ T.unlines
+   , "For more information, see"
+   , "[the Custom Type Errors guide](https://github.com/purescript/documentation/blob/master/guides/Custom-Type-Errors.md)."
+   ]
+-
+diff --git a/src/Language/PureScript/Docs/Render.hs b/src/Language/PureScript/Docs/Render.hs
+index 57244938..6ff592a1 100644
+--- a/src/Language/PureScript/Docs/Render.hs
++++ b/src/Language/PureScript/Docs/Render.hs
+@@ -9,7 +9,7 @@
+ 
+ module Language.PureScript.Docs.Render where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Data.Maybe (maybeToList)
+ import Data.Monoid ((<>))
+diff --git a/src/Language/PureScript/Docs/RenderedCode/RenderKind.hs b/src/Language/PureScript/Docs/RenderedCode/RenderKind.hs
+index 3539a124..1b82c926 100644
+--- a/src/Language/PureScript/Docs/RenderedCode/RenderKind.hs
++++ b/src/Language/PureScript/Docs/RenderedCode/RenderKind.hs
+@@ -7,7 +7,7 @@ module Language.PureScript.Docs.RenderedCode.RenderKind
+ -- TODO: This is pretty much copied from Language.PureScript.Pretty.Kinds.
+ -- Ideally we would unify the two.
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow (ArrowPlus(..))
+ import Control.PatternArrows as PA
+diff --git a/src/Language/PureScript/Docs/RenderedCode/RenderType.hs b/src/Language/PureScript/Docs/RenderedCode/RenderType.hs
+index 15f51dc9..2aca7f44 100644
+--- a/src/Language/PureScript/Docs/RenderedCode/RenderType.hs
++++ b/src/Language/PureScript/Docs/RenderedCode/RenderType.hs
+@@ -10,7 +10,7 @@ module Language.PureScript.Docs.RenderedCode.RenderType
+   , renderTypeAtomWithOptions
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Data.Maybe (fromMaybe)
+ import Data.Monoid ((<>))
+diff --git a/src/Language/PureScript/Docs/RenderedCode/Types.hs b/src/Language/PureScript/Docs/RenderedCode/Types.hs
+index 0d64e301..1180964c 100644
+--- a/src/Language/PureScript/Docs/RenderedCode/Types.hs
++++ b/src/Language/PureScript/Docs/RenderedCode/Types.hs
+@@ -43,7 +43,7 @@ module Language.PureScript.Docs.RenderedCode.Types
+  , aliasName
+  ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import GHC.Generics (Generic)
+ 
+ import Control.DeepSeq (NFData)
+diff --git a/src/Language/PureScript/Errors.hs b/src/Language/PureScript/Errors.hs
+index 135f98aa..d12f3a5b 100644
+--- a/src/Language/PureScript/Errors.hs
++++ b/src/Language/PureScript/Errors.hs
+@@ -6,7 +6,7 @@ module Language.PureScript.Errors
+   , module Language.PureScript.Errors
+   ) where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ import           Protolude (ordNub)
+ 
+ import           Control.Arrow ((&&&))
+diff --git a/src/Language/PureScript/Errors/JSON.hs b/src/Language/PureScript/Errors/JSON.hs
+index 65f872d2..76a7b919 100644
+--- a/src/Language/PureScript/Errors/JSON.hs
++++ b/src/Language/PureScript/Errors/JSON.hs
+@@ -2,7 +2,7 @@
+ 
+ module Language.PureScript.Errors.JSON where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import qualified Data.Aeson.TH as A
+ import qualified Data.List.NonEmpty as NEL
+diff --git a/src/Language/PureScript/Hierarchy.hs b/src/Language/PureScript/Hierarchy.hs
+index 837fd3a3..61f03900 100644
+--- a/src/Language/PureScript/Hierarchy.hs
++++ b/src/Language/PureScript/Hierarchy.hs
+@@ -15,7 +15,7 @@
+ 
+ module Language.PureScript.Hierarchy where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ import           Protolude (ordNub)
+ 
+ import           Data.List (sort)
+diff --git a/src/Language/PureScript/Interactive.hs b/src/Language/PureScript/Interactive.hs
+index 6fbfc5db..c6fe4a64 100644
+--- a/src/Language/PureScript/Interactive.hs
++++ b/src/Language/PureScript/Interactive.hs
+@@ -10,7 +10,7 @@ module Language.PureScript.Interactive
+   ) where
+ 
+ import           Prelude ()
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ import           Protolude (ordNub)
+ 
+ import           Data.List (sort, find, foldl')
+diff --git a/src/Language/PureScript/Interactive/Printer.hs b/src/Language/PureScript/Interactive/Printer.hs
+index 38022a7d..be618afe 100644
+--- a/src/Language/PureScript/Interactive/Printer.hs
++++ b/src/Language/PureScript/Interactive/Printer.hs
+@@ -1,6 +1,6 @@
+ module Language.PureScript.Interactive.Printer where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ 
+ import           Data.List (intersperse)
+ import qualified Data.Map as M
+diff --git a/src/Language/PureScript/Linter.hs b/src/Language/PureScript/Linter.hs
+index 59f936af..009cbfc0 100644
+--- a/src/Language/PureScript/Linter.hs
++++ b/src/Language/PureScript/Linter.hs
+@@ -3,7 +3,7 @@
+ --
+ module Language.PureScript.Linter (lint, module L) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Monad.Writer.Class
+diff --git a/src/Language/PureScript/Linter/Exhaustive.hs b/src/Language/PureScript/Linter/Exhaustive.hs
+index 19659256..aba48277 100644
+--- a/src/Language/PureScript/Linter/Exhaustive.hs
++++ b/src/Language/PureScript/Linter/Exhaustive.hs
+@@ -8,7 +8,7 @@ module Language.PureScript.Linter.Exhaustive
+   ( checkExhaustiveExpr
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Applicative
+diff --git a/src/Language/PureScript/Make.hs b/src/Language/PureScript/Make.hs
+index 112ddbdf..af22f8ab 100644
+--- a/src/Language/PureScript/Make.hs
++++ b/src/Language/PureScript/Make.hs
+@@ -8,7 +8,7 @@ module Language.PureScript.Make
+   , module Actions
+   ) where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ 
+ import           Control.Concurrent.Lifted as C
+ import           Control.Monad hiding (sequence)
+diff --git a/src/Language/PureScript/Names.hs b/src/Language/PureScript/Names.hs
+index 16f135f2..1b8c5062 100644
+--- a/src/Language/PureScript/Names.hs
++++ b/src/Language/PureScript/Names.hs
+@@ -8,7 +8,7 @@
+ --
+ module Language.PureScript.Names where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.Supply.Class
+ import Control.DeepSeq (NFData)
+diff --git a/src/Language/PureScript/PSString.hs b/src/Language/PureScript/PSString.hs
+index 0dcb3b40..d476e41a 100644
+--- a/src/Language/PureScript/PSString.hs
++++ b/src/Language/PureScript/PSString.hs
+@@ -13,7 +13,7 @@ module Language.PureScript.PSString
+   , mkString
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import GHC.Generics (Generic)
+ import Control.DeepSeq (NFData)
+ import Control.Exception (try, evaluate)
+diff --git a/src/Language/PureScript/Parser/Common.hs b/src/Language/PureScript/Parser/Common.hs
+index 6f21f9f1..e474f864 100644
+--- a/src/Language/PureScript/Parser/Common.hs
++++ b/src/Language/PureScript/Parser/Common.hs
+@@ -1,7 +1,7 @@
+ -- | Useful common functions for building parsers
+ module Language.PureScript.Parser.Common where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ 
+ import           Control.Applicative ((<|>))
+ import           Control.Monad (guard)
+diff --git a/src/Language/PureScript/Parser/Lexer.hs b/src/Language/PureScript/Parser/Lexer.hs
+index 71812e89..ec36aadd 100644
+--- a/src/Language/PureScript/Parser/Lexer.hs
++++ b/src/Language/PureScript/Parser/Lexer.hs
+@@ -64,7 +64,7 @@ module Language.PureScript.Parser.Lexer
+   )
+   where
+ 
+-import Prelude.Compat hiding (lex)
++import Prelude.Compat hiding (lex, (<>))
+ 
+ import Control.Applicative ((<|>))
+ import Control.Monad (void, guard)
+diff --git a/src/Language/PureScript/Pretty/Common.hs b/src/Language/PureScript/Pretty/Common.hs
+index b7280232..25ddbdd0 100644
+--- a/src/Language/PureScript/Pretty/Common.hs
++++ b/src/Language/PureScript/Pretty/Common.hs
+@@ -5,7 +5,7 @@
+ --
+ module Language.PureScript.Pretty.Common where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.State (StateT, modify, get)
+ 
+diff --git a/src/Language/PureScript/Pretty/Kinds.hs b/src/Language/PureScript/Pretty/Kinds.hs
+index 24d4451e..53d21bb1 100644
+--- a/src/Language/PureScript/Pretty/Kinds.hs
++++ b/src/Language/PureScript/Pretty/Kinds.hs
+@@ -5,7 +5,7 @@ module Language.PureScript.Pretty.Kinds
+   ( prettyPrintKind
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow (ArrowPlus(..))
+ import Control.PatternArrows as PA
+diff --git a/src/Language/PureScript/Pretty/Types.hs b/src/Language/PureScript/Pretty/Types.hs
+index bee62db1..40c2956e 100644
+--- a/src/Language/PureScript/Pretty/Types.hs
++++ b/src/Language/PureScript/Pretty/Types.hs
+@@ -14,7 +14,7 @@ module Language.PureScript.Pretty.Types
+   , prettyPrintObjectKey
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow ((<+>))
+ import Control.PatternArrows as PA
+diff --git a/src/Language/PureScript/Pretty/Values.hs b/src/Language/PureScript/Pretty/Values.hs
+index bbabf082..7902526c 100644
+--- a/src/Language/PureScript/Pretty/Values.hs
++++ b/src/Language/PureScript/Pretty/Values.hs
+@@ -7,7 +7,7 @@ module Language.PureScript.Pretty.Values
+   , prettyPrintBinderAtom
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Arrow (second)
+ 
+diff --git a/src/Language/PureScript/Publish/ErrorsWarnings.hs b/src/Language/PureScript/Publish/ErrorsWarnings.hs
+index 80673957..f075320d 100644
+--- a/src/Language/PureScript/Publish/ErrorsWarnings.hs
++++ b/src/Language/PureScript/Publish/ErrorsWarnings.hs
+@@ -13,7 +13,7 @@ module Language.PureScript.Publish.ErrorsWarnings
+   , renderWarnings
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Exception (IOException)
+ 
+diff --git a/src/Language/PureScript/Renamer.hs b/src/Language/PureScript/Renamer.hs
+index b99cd9d2..e1ef966a 100644
+--- a/src/Language/PureScript/Renamer.hs
++++ b/src/Language/PureScript/Renamer.hs
+@@ -3,7 +3,7 @@
+ --
+ module Language.PureScript.Renamer (renameInModules) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.State
+ 
+diff --git a/src/Language/PureScript/Sugar/TypeClasses/Deriving.hs b/src/Language/PureScript/Sugar/TypeClasses/Deriving.hs
+index a91cbe72..68cd6db2 100755
+--- a/src/Language/PureScript/Sugar/TypeClasses/Deriving.hs
++++ b/src/Language/PureScript/Sugar/TypeClasses/Deriving.hs
+@@ -1,7 +1,7 @@
+ -- | This module implements the generic deriving elaboration that takes place during desugaring.
+ module Language.PureScript.Sugar.TypeClasses.Deriving (deriveInstances) where
+ 
+-import           Prelude.Compat
++import           Prelude.Compat hiding ((<>))
+ import           Protolude (ordNub)
+ 
+ import           Control.Arrow (second)
+diff --git a/src/Language/PureScript/TypeChecker.hs b/src/Language/PureScript/TypeChecker.hs
+index 3e293e3f..f61e3dd0 100644
+--- a/src/Language/PureScript/TypeChecker.hs
++++ b/src/Language/PureScript/TypeChecker.hs
+@@ -9,7 +9,7 @@ module Language.PureScript.TypeChecker
+   , checkNewtype
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Monad (when, unless, void, forM)
+diff --git a/src/Language/PureScript/TypeChecker/Entailment.hs b/src/Language/PureScript/TypeChecker/Entailment.hs
+index b11f064f..bce87847 100644
+--- a/src/Language/PureScript/TypeChecker/Entailment.hs
++++ b/src/Language/PureScript/TypeChecker/Entailment.hs
+@@ -11,7 +11,7 @@ module Language.PureScript.TypeChecker.Entailment
+   , entails
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Arrow (second, (&&&))
+diff --git a/src/Language/PureScript/TypeChecker/Skolems.hs b/src/Language/PureScript/TypeChecker/Skolems.hs
+index f80d87e1..8bb2d00f 100644
+--- a/src/Language/PureScript/TypeChecker/Skolems.hs
++++ b/src/Language/PureScript/TypeChecker/Skolems.hs
+@@ -8,7 +8,7 @@ module Language.PureScript.TypeChecker.Skolems
+   , skolemEscapeCheck
+   ) where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import Control.Monad.Error.Class (MonadError(..))
+ import Control.Monad.State.Class (MonadState(..), gets, modify)
+diff --git a/src/Language/PureScript/TypeChecker/Types.hs b/src/Language/PureScript/TypeChecker/Types.hs
+index 920d159a..4e95a264 100644
+--- a/src/Language/PureScript/TypeChecker/Types.hs
++++ b/src/Language/PureScript/TypeChecker/Types.hs
+@@ -24,7 +24,7 @@ module Language.PureScript.TypeChecker.Types
+       Check a function of a given type returns a value of another type when applied to its arguments
+ -}
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Arrow (first, second, (***))
+diff --git a/src/Language/PureScript/TypeClassDictionaries.hs b/src/Language/PureScript/TypeClassDictionaries.hs
+index af002860..34e003b3 100644
+--- a/src/Language/PureScript/TypeClassDictionaries.hs
++++ b/src/Language/PureScript/TypeClassDictionaries.hs
+@@ -3,7 +3,7 @@
+ {-# LANGUAGE DeriveGeneric     #-}
+ module Language.PureScript.TypeClassDictionaries where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ 
+ import GHC.Generics (Generic)
+ import Control.DeepSeq (NFData)
+diff --git a/src/Language/PureScript/Types.hs b/src/Language/PureScript/Types.hs
+index d600bf47..a7af3da2 100644
+--- a/src/Language/PureScript/Types.hs
++++ b/src/Language/PureScript/Types.hs
+@@ -7,7 +7,7 @@
+ --
+ module Language.PureScript.Types where
+ 
+-import Prelude.Compat
++import Prelude.Compat hiding ((<>))
+ import Protolude (ordNub)
+ 
+ import Control.Arrow (first)
