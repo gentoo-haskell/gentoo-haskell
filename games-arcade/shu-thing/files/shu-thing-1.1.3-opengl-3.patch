@@ -1,9 +1,0 @@
-diff --git a/Shu-thing.hs b/Shu-thing.hs
-index eb44541..a0fcca3 100644
---- a/Shu-thing.hs
-+++ b/Shu-thing.hs
-@@ -25,3 +25,3 @@ import qualified Foreign.C.Types
- 
--type NDouble = Foreign.C.Types.CDouble
-+type NDouble = Double
- 
