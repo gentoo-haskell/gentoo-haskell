@@ -82,13 +82,14 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-base-compat-0.10.patch
+	"${FILESDIR}"/${P}-ghc-8.4.patch
 )
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base >=4.8 && <4.11' 'base >= 4.8' \
 		'aeson >=1.0 && <1.3' 'aeson >=1.0'
 }
 
