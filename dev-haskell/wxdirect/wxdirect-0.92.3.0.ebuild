@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,6 +29,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
+
+	cabal_chdeps \
+		'process    >= 1.1   && < 1.5' 'process    >= 1.1'
 
 	sed -e "s@executable wxdirect@executable wxdirect-${WX_GTK_VER}@" \
 		-i "${S}/${PN}.cabal" \
