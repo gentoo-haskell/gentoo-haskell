@@ -59,7 +59,6 @@ dev-haskell/semigroupoids:contravariant - You can disable the use of the `contra
 dev-haskell/semigroupoids:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/semigroupoids:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroupoids:unordered-containers - You can disable the use of the `unordered-containers` package (and also its dependency `hashable`) using `-f-unordered-containers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
 dev-haskell/snap-core:portable - No non-haskell unportable code.
 dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl

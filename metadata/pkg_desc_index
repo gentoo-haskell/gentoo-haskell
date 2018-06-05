@@ -120,7 +120,6 @@ dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/safesemaphore 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sandi 0.3.6: Data encoding library
 dev-haskell/semigroupoids 4.3: Semigroupoids: Category sans id
-dev-haskell/sha 1.6.4.2: Implementations of the SHA suite of message digest functions
 dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing variables
 dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-server 0.9.5.1-r1: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
