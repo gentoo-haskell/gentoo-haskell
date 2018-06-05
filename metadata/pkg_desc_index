@@ -47,7 +47,6 @@ dev-haskell/digest 0.0.1.1 0.0.1.2: Various cryptographic hashes for bytestrings
 dev-haskell/dlist 0.7.1.2: Difference lists
 dev-haskell/doctest 0.10.1: Test interactive Haskell examples
 dev-haskell/drift 2.4.2: Program to derive type class instances
-dev-haskell/easy-file 0.2.1: Cross-platform File handling
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/exceptions 0.6.1: Extensible optionally-pure exceptions
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
