@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,6 +27,10 @@ RDEPEND=">dev-haskell/split-0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.23
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.92.3.0-cabal-2.2.patch
+)
 
 src_prepare() {
 	default
