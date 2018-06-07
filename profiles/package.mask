@@ -71,6 +71,7 @@ dev-haskell/hslua-module-text
 >=dev-haskell/yesod-persistent-1.6
 >=dev-haskell/yesod-core-1.6
 >=dev-haskell/yesod-form-1.6
+>=dev-haskell/yesod-newsfeed-1.6.1.0
 >=dev-haskell/xml-conduit-1.8
 >=dev-haskell/xmlhtml-0.2.5
 >=dev-haskell/persistent-mongodb-2.8
