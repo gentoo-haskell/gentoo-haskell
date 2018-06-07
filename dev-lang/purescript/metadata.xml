@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name='release'>prevents inclusion of extra info e.g. commit SHA in --version outpu</flag>
+	</use>
 	<longdescription>
 		A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to Javascript.
 	</longdescription>

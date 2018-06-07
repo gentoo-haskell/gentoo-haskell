@@ -44,6 +44,7 @@ dev-haskell/webkitgtk3-javascriptcore
 >=app-text/pandoc-2
 >=dev-haskell/aeson-1.2
 >=dev-haskell/ansi-terminal-0.7
+>=dev-lang/purescript-0.12.0
 >=dev-haskell/binary-conduit-1.3
 >=dev-haskell/blaze-html-0.9
 >=dev-haskell/blaze-markup-0.8
