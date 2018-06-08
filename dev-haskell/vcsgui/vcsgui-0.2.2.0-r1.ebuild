@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/gi-gtk-3.0.6:=[profile?] <dev-haskell/gi-gtk-3.1:=[profile?]
 	>=dev-haskell/gi-gtk-hs-0.3.0.0:=[profile?] <dev-haskell/gi-gtk-hs-0.4:=[profile?]
-	>=dev-haskell/haskell-gi-base-0.20:=[profile?] <dev-haskell/haskell-gi-base-0.21:=[profile?]
+	>=dev-haskell/haskell-gi-base-0.20:=[profile?]
 	>=dev-haskell/mtl-2.0.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/vcswrapper-0.1.1:=[profile?] <dev-haskell/vcswrapper-0.2:=[profile?]
@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/gi-gtk-3.0.6:=[profile?] <dev-haskell/gi-gtk-3.1:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-gi-base >=0.20 && <0.21' 'haskell-gi-base >=0.20'
+}
