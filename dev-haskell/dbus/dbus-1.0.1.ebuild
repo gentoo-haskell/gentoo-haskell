@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
+RESTRICT=test # don't allow access to running dbus
+
 RDEPEND="dev-haskell/cereal:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/libxml-sax:=[profile?]
