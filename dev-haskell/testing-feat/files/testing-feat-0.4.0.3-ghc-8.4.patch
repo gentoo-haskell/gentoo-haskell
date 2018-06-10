@@ -30,14 +30,15 @@
 +
  -- Maybe this should be append instead?
  -- | Padded zip
- instance Monoid a => Monoid (RevList a) where
+-instance Monoid a => Monoid (RevList a) where
++instance (S.Semigroup a, Monoid a) => Monoid (RevList a) where
 -  mempty         = toRev[]
 -  mappend xs ys  = toRev$ zipMon (fromRev xs) (fromRev ys) where
 -    zipMon :: Monoid a => [a] -> [a] -> [a]
 -    zipMon (x:xs) (y:ys) = x <> y : zipMon xs ys
 -    zipMon xs ys         = xs ++ ys  
 +  mempty   = toRev[]
-+  mappend  = (<>)
++  mappend  = (S.<>)
  
  -- | Constructs a "Reverse list" variant of a given list. In a sensible 
  -- Haskell implementation evaluating any inital segment of 
