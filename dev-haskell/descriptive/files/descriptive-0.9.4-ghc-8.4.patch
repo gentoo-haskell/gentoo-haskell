@@ -1,12 +1,42 @@
+From 1d826c267d808ebfd9db86463f30f74cdd508850 Mon Sep 17 00:00:00 2001
+From: Kostiantyn Rybnikov <k-bx@k-bx.com>
+Date: Mon, 2 Apr 2018 16:00:58 +0300
+Subject: [PATCH 1/2] Fix build under GHC 8.4
+
+---
+ .gitignore                 |  1 +
+ src/Descriptive.hs         | 30 +++++++++++++++++++++---------
+ src/Descriptive/Char.hs    |  3 +++
+ src/Descriptive/Options.hs |  3 +++
+ stack.yaml                 |  4 ++++
+ 5 files changed, 32 insertions(+), 9 deletions(-)
+ create mode 100644 stack.yaml
+
+diff --git a/src/Descriptive.hs b/src/Descriptive.hs
+index b4db9f5..7abf8f3 100644
 --- a/src/Descriptive.hs
 +++ b/src/Descriptive.hs
-@@ -32,4 +32,5 @@ import Control.Monad.State.Strict
+@@ -6,6 +6,7 @@
+ {-# LANGUAGE FlexibleContexts #-}
+ {-# LANGUAGE FlexibleInstances #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
++{-# LANGUAGE CPP #-}
+ 
+ -- | Descriptive parsers.
+ 
+@@ -30,7 +31,9 @@ import Control.Applicative
+ import Control.Monad.Identity
+ import Control.Monad.State.Strict
  import Data.Bifunctor
- import Data.Monoid
-+import qualified Data.Semigroup as S
+-import Data.Monoid
++#if __GLASGOW_HASKELL__ < 804
++import Data.Semigroup
++#endif
  
  --------------------------------------------------------------------------------
-@@ -75,9 +76,12 @@ data Description a
+ -- Running
+@@ -74,11 +77,14 @@ data Description a
+   | None
    deriving (Show,Eq,Functor)
  
 +instance Semigroup (Description d) where
@@ -19,34 +49,82 @@
 -  mappend None x = x
 -  mappend x None = x
 -  mappend x y = And x y
-+  mappend = (S.<>)
++  mappend = (<>)
  
  -- | The bounds of a many-consumable thing.
-@@ -230,7 +234,6 @@ sequenceHelper minb =
+ data Bound
+@@ -229,9 +235,8 @@ sequenceHelper minb =
+               [])
    where redescribe = Bounded minb UnlimitedBound
  
 -instance (Monoid a) => Monoid (Result (Description d) a) where
 -  mempty = Succeeded mempty
 -  mappend x y =
 +instance (Semigroup a) => Semigroup (Result (Description d) a) where
-+  (<>) x y =
++  x <> y =
      case x of
        Failed e -> Failed e
-@@ -246,9 +249,16 @@ instance (Monoid a) => Monoid (Result (Description d) a) where
+       Continued e ->
+@@ -245,11 +250,18 @@ instance (Monoid a) => Monoid (Result (Description d) a) where
+           Continued e -> Continued e
            Succeeded b -> Succeeded (a <> b)
  
-+instance (Monoid a) => Monoid (Result (Description d) a) where
+-instance (Monoid a, Monad m) => Monoid (Consumer s d m a) where
++instance (Semigroup a, Monoid a) => Monoid (Result (Description d) a) where
 +  mempty = Succeeded mempty
-+  mappend = (S.<>)
++  mappend = (<>)
 +
 +instance (Semigroup a, Monad m) => Semigroup (Consumer s d m a) where
-+  (<>) = liftA2 (S.<>)
++  (<>) = liftA2 (<>)
 +
- instance (Monoid a, Monad m) => Monoid (Consumer s d m a) where
++instance (Semigroup a, Monoid a, Monad m) => Monoid (Consumer s d m a) where
    mempty =
      consumer (return mempty)
               (return mempty)
 -  mappend = liftA2 (<>)
-+  mappend = (S.<>)
++  mappend = (<>)
  
  --------------------------------------------------------------------------------
+ -- Combinators
+diff --git a/src/Descriptive/Char.hs b/src/Descriptive/Char.hs
+index 58843fd..45081b7 100644
+--- a/src/Descriptive/Char.hs
++++ b/src/Descriptive/Char.hs
+@@ -1,12 +1,15 @@
+ {-# LANGUAGE TupleSections #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE FlexibleContexts #-}
++{-# LANGUAGE CPP #-}
+ 
+ -- | Consuming form a list of characters.
+ 
+ module Descriptive.Char where
+ 
++#if __GLASGOW_HASKELL__ < 802
+ import           Data.Traversable
++#endif
+ import           Descriptive
+ 
+ import           Control.Monad.State.Strict
+diff --git a/src/Descriptive/Options.hs b/src/Descriptive/Options.hs
+index b36b175..3522f0b 100644
+--- a/src/Descriptive/Options.hs
++++ b/src/Descriptive/Options.hs
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE BangPatterns #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE FlexibleContexts #-}
++{-# LANGUAGE CPP #-}
+ 
+ -- | Command-line options parser.
+ 
+@@ -29,7 +30,9 @@ import           Control.Applicative
+ import           Control.Monad.State.Strict
+ import           Data.Char
+ import           Data.List
++#if __GLASGOW_HASKELL__ < 804
+ import           Data.Monoid
++#endif
+ import           Data.Text (Text)
+ import qualified Data.Text as T
+ 
