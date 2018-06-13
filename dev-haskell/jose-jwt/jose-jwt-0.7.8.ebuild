@@ -39,6 +39,8 @@ DEPEND="${RDEPEND}
 		doctest? ( >=dev-haskell/doctest-0.9.11 ) )
 "
 
+RESTRICT=test # Ambiguous interface for ‘Data.Vector’: AC-Vector-Fancy-2.4.0 vector-0.12.0.1
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag doctest doctest)
