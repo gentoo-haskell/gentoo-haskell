@@ -14,7 +14,9 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#keep in sunc with ghc-8.2
+#Unsupported extension: DerivingStrategies
+#KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 RDEPEND="dev-haskell/blaze-markup:=[profile?]
@@ -25,7 +27,7 @@ RDEPEND="dev-haskell/blaze-markup:=[profile?]
 	dev-haskell/uri-encode:=[profile?]
 	>=dev-haskell/yesod-core-1.4:=[profile?]
 	>=dev-haskell/yesod-persistent-1.4:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.2:=
 	examples? ( dev-haskell/warp:=[profile?]
 			dev-haskell/yesod:=[profile?] )
 "
