@@ -30,6 +30,13 @@ DEPEND="${RDEPEND}
 	test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.16 ) )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.11.1 && < 0.14' 'doctest >= 0.11.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag containers containers) \
