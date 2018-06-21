@@ -19,6 +19,10 @@ IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
+# hackport can't infer those on it's own
+RDEPEND="${RDEPEND}
+	dev-util/nvidia-cuda-toolkit:=
+"
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs
 	>=dev-haskell/cabal-1.22
