@@ -9,7 +9,7 @@ index 9bc6b3f278..a5c623f26b 100644
 +# HsInstances overflows GOT at least on alpha
 +ifeq "$(GhcUnregisterised)" "NO"
 +else
-+compiler/hsSyn/HsInstances_HC_OPTS   += -fprof-auto
++compiler/hsSyn/HsInstances_HC_OPTS   += -O0
 +endif
 +
  ifeq "$(GhcProfiled)" "YES"
