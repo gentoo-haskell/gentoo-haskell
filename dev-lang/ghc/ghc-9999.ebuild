@@ -506,6 +506,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-gentoo-gmp-ABI.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-unreg-hsinstances.patch
+
 		bump_libs
 
 		eapply_user
