@@ -14,7 +14,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#needs ghc-8.4, uses modern time API
+#KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
 RDEPEND="dev-haskell/cairo:=[profile?]
@@ -61,7 +62,7 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
 	dev-haskell/xml:=[profile?]
 	dev-haskell/xml-helpers:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.4:=
 	x11-libs/gtk+:3
 	x11-wm/xmonad:=[profile?]
 	x11-wm/xmonad-contrib:=[profile?]
