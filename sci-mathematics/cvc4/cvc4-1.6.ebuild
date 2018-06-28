@@ -6,8 +6,8 @@ EAPI=6
 inherit autotools eutils elisp-common
 
 DESCRIPTION="automatic theorem prover for Satisfiability Modulo Theories (SMT) problems"
-HOMEPAGE="http://cvc4.cs.nyu.edu/web"
-SRC_URI="http://cvc4.cs.nyu.edu/builds/src/${P}.tar.gz"
+HOMEPAGE="https://cvc4.cs.stanford.edu/"
+SRC_URI="https://cvc4.cs.stanford.edu/downloads/builds/src/${P}.tar.gz"
 
 LICENSE="BSD MIT HPND"
 SLOT="0/${PV}"
@@ -27,11 +27,6 @@ DEPEND="${RDEPEND}
 	app-shells/bash
 	sys-devel/gcc[cxx]
 "
-
-PATCHES=(
-	"${FILESDIR}"/${P}-gcc-5.patch
-	"${FILESDIR}"/${P}-gcc-6.patch
-)
 
 src_prepare() {
 	default
