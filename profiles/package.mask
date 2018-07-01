@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (01 July 2018)
+# Follow ::gentoo's mask of qt:4
+dev-haskell/clocked
+dev-haskell/qthaskellc
+
 # Sergei Trofimovich <slyfox@gentoo.org> (22 Apr 2018)
 # Many unmacked packages are using <transformers-compat-0.6
 # Examples are resourcet-1.1.9.
