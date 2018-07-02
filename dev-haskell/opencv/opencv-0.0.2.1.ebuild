@@ -14,7 +14,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+# needs inline-c/inline-cpp that require ghc-8.4
+#KEYWORDS="~amd64 ~x86"
 IUSE="internal-documentation"
 
 RDEPEND=">=dev-haskell/aeson-0.9.0.1:=[profile?]

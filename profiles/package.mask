@@ -2,6 +2,7 @@
 # Follow ::gentoo's mask of qt:4
 dev-haskell/clocked
 dev-haskell/qthaskellc
+dev-haskell/qt
 
 # Sergei Trofimovich <slyfox@gentoo.org> (22 Apr 2018)
 # Many unmacked packages are using <transformers-compat-0.6
