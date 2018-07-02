@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/leksah/leksah.git"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="codemirror +dyre loc +network-uri +threaded yi"
 
 RDEPEND=">=app-editors/leksah-server-0.16.2.0:=[profile?] <app-editors/leksah-server-0.17:=[profile?]
