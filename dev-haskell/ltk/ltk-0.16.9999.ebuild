@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/leksah/ltk"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/base-compat-0.9.0:=[profile?]
