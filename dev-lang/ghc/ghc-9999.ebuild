@@ -398,7 +398,8 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	unpack ${ONLYA}
+	# USE=ghcbootstrap live ebuild will contain empty SRC_URI
+	[[ -n ${ONLYA} ]] && unpack ${ONLYA}
 }
 
 src_prepare() {
