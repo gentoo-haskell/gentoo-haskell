@@ -67,6 +67,7 @@ dev-haskell/listenbrainz-client
 dev-haskell/hslua-module-text
 >=dev-haskell/http-conduit-2.3
 >=dev-haskell/http-types-0.11
+dev-haskell/servant-client-core
 >=dev-haskell/megaparsec-6
 >=dev-haskell/persistent-2.8.0
 >=dev-haskell/persistent-mysql-2.8
