@@ -50,6 +50,7 @@ dev-haskell/webkitgtk3-javascriptcore
 >=app-text/pandoc-2
 >=dev-haskell/aeson-1.2
 dev-haskell/servant-client
+dev-haskell/listenbrainz-client
 >=dev-haskell/ansi-terminal-0.7
 >=dev-lang/purescript-0.12.0
 >=dev-haskell/binary-conduit-1.3
