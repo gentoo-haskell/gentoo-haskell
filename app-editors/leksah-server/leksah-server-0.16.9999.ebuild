@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/leksah/leksah-server"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri +threaded"
 
 RESTRICT=test # fails own tests
