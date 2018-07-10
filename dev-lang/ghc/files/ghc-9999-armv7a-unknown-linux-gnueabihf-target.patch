@@ -10,3 +10,7 @@ index 3d222d0755..c2ba09faae 100755
      "aarch64-unknown-linux-gnu" "aarch64-unknown-linux"
      # Linux x86
      "i386-unknown-linux-gnu" "i386-unknown-linux" "x86_64-unknown-linux-gnu" "x86_64-unknown-linux"
+--- a/llvm-targets
++++ b/llvm-targets
+@@ -9,0 +10 @@
++,("armv7a-unknown-linux-gnueabihf", ("e-m:e-p:32:32-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
