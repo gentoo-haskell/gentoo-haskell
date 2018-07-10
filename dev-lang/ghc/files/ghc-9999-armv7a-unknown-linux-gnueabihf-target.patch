@@ -1,0 +1,12 @@
+diff --git a/utils/llvm-targets/gen-data-layout.sh b/utils/llvm-targets/gen-data-layout.sh
+index 3d222d0755..c2ba09faae 100755
+--- a/utils/llvm-targets/gen-data-layout.sh
++++ b/utils/llvm-targets/gen-data-layout.sh
+@@ -24,6 +24,7 @@ TARGETS=(
+     # Linux ARM
+     "arm-unknown-linux-gnueabihf" "armv6-unknown-linux-gnueabihf" "armv6l-unknown-linux-gnueabihf"
+     "armv7-unknown-linux-gnueabihf" "armv7a-unknown-linux-gnueabi" "armv7l-unknown-linux-gnueabihf"
++    "armv7a-unknown-linux-gnueabihf"
+     "aarch64-unknown-linux-gnu" "aarch64-unknown-linux"
+     # Linux x86
+     "i386-unknown-linux-gnu" "i386-unknown-linux" "x86_64-unknown-linux-gnu" "x86_64-unknown-linux"
