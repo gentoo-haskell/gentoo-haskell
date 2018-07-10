@@ -509,6 +509,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-unreg-hsinstances.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
+
 		bump_libs
 
 		eapply_user
