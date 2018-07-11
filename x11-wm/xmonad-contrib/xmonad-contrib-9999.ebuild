@@ -33,6 +33,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
+src_prepare() {
+	epatch_user
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag testing testing) \
