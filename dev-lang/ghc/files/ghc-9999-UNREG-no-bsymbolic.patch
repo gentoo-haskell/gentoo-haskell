@@ -1,0 +1,71 @@
+From a8fe063a4b2c3966f21610afd5022f5a92acc3c9 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Thu, 12 Jul 2018 23:22:30 +0100
+Subject: [PATCH] driver: don't enable -Bsymbolic on unregisterised targets
+ (Trac #15338)
+
+Summary:
+Trac #15338 is yet another example where -Bsymbolic breaks
+semantics of a C program: global variable diplication happens
+and unsafePerformIO creates two stdout copies.
+
+When -Bsymbolic is not used both C compiler and linker agree
+on how global variables are handled. In case of sh4 it consists
+on a few assertions:
+
+1. global variable is exported from shared library
+2. code is referred to this variable via GOT-like mechanism to allow
+   interposition
+3. global variable is present .bss section on an executable
+   (as an R_*_COPY relocation: symbol contents is copied at executable
+   startup time)
+4. and symbol in executable interposes symbol in shared library.
+
+This way both code in shared library and code in executable refer
+to a copy of global variable in .bss section of an executable.
+
+Unfortunately -Bsymbolic option breaks assumption [2.] and generates
+direct references to the symbol. This causes mismatch between
+values seen from executable and values seen from shared library code.
+
+This change disables '-Bsymbolic' for unregisterised targets.
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+
+Test Plan: test 'ghc-pkg --version | cat' still works
+
+Reviewers: simonmar, bgamari, jrtc27
+
+Subscribers: rwbarton, thomie, carter
+
+GHC Trac Issues: #15338
+
+Differential Revision: https://phabricator.haskell.org/D4959
+---
+ compiler/main/SysTools.hs | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/compiler/main/SysTools.hs b/compiler/main/SysTools.hs
+index d987d7dcd0..51c65834c9 100644
+--- a/compiler/main/SysTools.hs
++++ b/compiler/main/SysTools.hs
+@@ -548,9 +548,14 @@ linkDynLib dflags0 o_files dep_packages
+             -------------------------------------------------------------------
+ 
+             let output_fn = case o_file of { Just s -> s; Nothing -> "a.out"; }
++                unregisterised = platformUnregisterised (targetPlatform dflags)
+             let bsymbolicFlag = -- we need symbolic linking to resolve
+-                                -- non-PIC intra-package-relocations
+-                                ["-Wl,-Bsymbolic"]
++                                -- non-PIC intra-package-relocations for
++                                -- performance. Unfortunately -Bsymbolic can
++                                -- break valid C code in various ways (examples:
++                                -- Trac #15338).
++                                -- Don't enable it on via-C targets.
++                                ["-Wl,-Bsymbolic" | not unregisterised]
+ 
+             runLink dflags (
+                     map Option verbFlags
+-- 
+2.18.0
+
