@@ -59,10 +59,13 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-#GHC_PV=8.2.0.20170404 # uncomment only for -rc ebuilds
+GHC_PV=8.6.0.20180627 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="!binary? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz )"
+SRC_URI="!binary? (
+	http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz
+	test? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
+)"
 S="${WORKDIR}"/${GHC_P}
 
 if [[ ${PV} = *9999* ]]; then
@@ -80,7 +83,7 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc ghcbootstrap ghcmakebinary +gmp profile"
+IUSE="doc ghcbootstrap ghcmakebinary +gmp profile test"
 IUSE+=" binary"
 
 RDEPEND="
