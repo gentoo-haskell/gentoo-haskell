@@ -518,6 +518,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-libffi-s390.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-riscv-chost.patch
+
 		bump_libs
 
 		eapply_user
