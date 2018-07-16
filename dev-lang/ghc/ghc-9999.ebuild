@@ -531,8 +531,6 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
 
-		eapply "${FILESDIR}"/${PN}-9999-UNREG-no-bsymbolic.patch
-
 		eapply "${FILESDIR}"/${PN}-9999-riscv-chost.patch
 
 		bump_libs
