@@ -65,6 +65,7 @@ GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 SRC_URI="!binary? (
 	http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz
 	test? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
+	${OVERRIDE_LIBFFI}
 )"
 S="${WORKDIR}"/${GHC_P}
 
@@ -73,6 +74,14 @@ if [[ ${PV} = *9999* ]]; then
 	# Allow binaries to be collected below
 	SRC_URI=""
 fi
+
+# Existing bundled libffi release has a few missing things:
+# - s390 private header
+# - riscv support
+# - a few fixes
+# This tarball is done with 'make dist' on top of vanilla libffi git tree
+OVERRIDE_LIBFFI="https://dev.gentoo.org/~slyfox/distfiles/libffi-3.3-rc0_p20180125.tar.gz"
+SRC_URI+=" !binary? ( ${OVERRIDE_LIBFFI} )"
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
@@ -403,6 +412,14 @@ src_unpack() {
 	esac
 	# USE=ghcbootstrap live ebuild will contain empty SRC_URI
 	[[ -n ${ONLYA} ]] && unpack ${ONLYA}
+
+	if ! use binary; then
+		# Override default tarball.
+		if [[ -n ${OVERRIDE_LIBFFI} ]]; then
+			rm -v "${S}"/libffi-tarballs/libffi-*.tar.gz || die
+			cp -v "${DISTDIR}/${OVERRIDE_LIBFFI##*/}" "${S}"/libffi-tarballs/ || die
+		fi
+	fi
 }
 
 src_prepare() {
@@ -515,8 +532,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-UNREG-no-bsymbolic.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-libffi-s390.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-riscv-chost.patch
 
