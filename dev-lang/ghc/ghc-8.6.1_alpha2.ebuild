@@ -54,7 +54,7 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-GHC_PV=8.6.0.20180627 # uncomment only for -alpha, -beta, -rc ebuilds
+GHC_PV=8.6.0.20180714 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? (
