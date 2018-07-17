@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,28 +37,38 @@ fi
 
 RESTRICT=test # circular deps: cabal -> quickcheck -> cabal
 
-RDEPEND=">=dev-lang/ghc-7.8.1:="
+RDEPEND=">=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
+	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
+"
 DEPEND="${RDEPEND}
-	test? ( dev-haskell/extensible-exceptions
-		dev-haskell/hunit
-		>=dev-haskell/quickcheck-2.1.0.1
-		dev-haskell/regex-posix
-		dev-haskell/test-framework
-		dev-haskell/test-framework-hunit
-		>=dev-haskell/test-framework-quickcheck2-0.2.12 )
+	>=dev-haskell/cabal-1.18.1.3
+	test? ( >=dev-haskell/base-compat-0.9.3 <dev-haskell/base-compat-0.10
+		>=dev-haskell/base-orphans-0.6 <dev-haskell/base-orphans-0.7
+		>=dev-haskell/diff-0.3.4 <dev-haskell/diff-0.4
+		>=dev-haskell/integer-logarithms-1.0.2 <dev-haskell/integer-logarithms-1.1
+		>=dev-haskell/optparse-applicative-0.13.2.0 <dev-haskell/optparse-applicative-0.15
+		>=dev-haskell/quickcheck-2.11.3 <dev-haskell/quickcheck-2.12
+		dev-haskell/tagged
+		>=dev-haskell/tar-0.5.0.3 <dev-haskell/tar-0.6
+		>=dev-haskell/tasty-1.0 <dev-haskell/tasty-1.1
+		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
+		dev-haskell/tasty-hunit
+		dev-haskell/tasty-quickcheck
+		dev-haskell/temporary
+		>=dev-haskell/tree-diff-0.0.1 <dev-haskell/tree-diff-0.1 )
 "
 
 src_prepare() {
+	default
+
 	local cabal_upstream_version=$(sed -n 's/^version: //ip' ${MY_PN}.cabal)
 
 	if [[ -n ${LIVE_EBUILD} ]]; then
 		# one of renaming reasons is to avoid clashing with bundled ghc-cabal
 		CABAL_FILE=${MY_PN}.cabal cabal_chdeps "version: ${cabal_upstream_version}" "version: ${PV}"
 	fi
-	default
-
-	# bootstrap uses full new source of Cabal. Not all extensions are present in .hs file.
-	GHC_BOOTSTRAP_FLAGS="${GHC_BOOTSTRAP_FLAGS} -XRank2Types"
 }
 
 src_configure() {
