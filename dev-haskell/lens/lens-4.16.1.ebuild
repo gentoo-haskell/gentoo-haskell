@@ -51,7 +51,7 @@ DEPEND="${RDEPEND}
 	test? ( test-doctests? ( >=dev-haskell/semigroups-0.9
 					>=dev-haskell/simple-reflect-0.3.1
 					|| ( ( >=dev-haskell/doctest-0.11.4 <dev-haskell/doctest-0.12 )
-					( >=dev-haskell/doctest-0.13 <dev-haskell/doctest-0.16 ) ) )
+					( >=dev-haskell/doctest-0.13 ) ) )
 		>=dev-haskell/hunit-1.2
 		>=dev-haskell/test-framework-0.6
 		>=dev-haskell/test-framework-hunit-0.2
@@ -59,6 +59,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest        >= 0.11.4 && < 0.12 || >= 0.13 && < 0.16' 'doctest        >= 0.11.4 && < 0.12 || >= 0.13'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
