@@ -33,12 +33,19 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?] <dev-haskell/attoparsec-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3 <dev-haskell/cabal-2.3
 	>=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11 <dev-haskell/doctest-0.16
+	test? ( >=dev-haskell/doctest-0.11
 		>=dev-haskell/hspec-2.4.7
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.9
 		>=dev-haskell/quickcheck-instances-0.3.12 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.11 && <0.16' 'doctest >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
