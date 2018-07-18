@@ -9,17 +9,29 @@ travis.ci:
 Quickest start
 ==============
 
-Haskell overlay consists of unstable software, so you'll
-likely need to keyword everything in it::
+First, let's enable the Gentoo Haskell overlay. We can either use the
+eselect-repository method::
 
-    # install layman, if you don't have it yet:
-    emerge layman
-    layman -f
-    echo source /var/lib/layman/make.conf >> /etc/portage/make.conf
-    #
-    # and the overlay configuration itself:
+    # Install eselect-repository if you don't already have it
+    emerge app-eselect/eselect-repository
+    # Fetch and output the list of overlays
+    eselect repository list
+    eselect repository enable haskell
+
+or we can use the layman method::
+  
+    # Add important USE flags for layman to your package.use directory:
+    echo "app-portage/layman sync-plugin-portage git" >> /etc/portage/package.use/layman
+    # Install layman if you don't already have it
+    emerge app-portage/layman
+    # Rebuild layman's repos.conf file:
+    layman-updater -R
+    # Add the Gentoo Haskell overlay:
     layman -a haskell
-    # and unmask unstable versions for your arch:
+
+Finally, we need to unmask the overlay (this does not apply if your system
+is already running on the ~testing branch)::
+    # unmask testing versions for your arch:
     echo "*/*::haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
 
 And here is the trick to speed up metadata resolution a bit.
