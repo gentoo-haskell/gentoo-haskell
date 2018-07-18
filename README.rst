@@ -31,7 +31,7 @@ or we can use the layman method::
 
 Finally, we need to unmask the overlay (this does not apply if your system
 is already running on the ~testing branch)::
-    # unmask testing versions for your arch:
+    # Unmask ~testing versions for your arch:
     echo "*/*::haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
 
 And here is the trick to speed up metadata resolution a bit.
