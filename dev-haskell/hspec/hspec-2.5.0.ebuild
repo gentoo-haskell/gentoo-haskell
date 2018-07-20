@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # has circular dependency: hspec->stringbuilder->hspec
+
 RDEPEND="dev-haskell/call-stack:=[profile?]
 	~dev-haskell/hspec-core-2.5.0:=[profile?]
 	~dev-haskell/hspec-discover-2.5.0:=[profile?]
