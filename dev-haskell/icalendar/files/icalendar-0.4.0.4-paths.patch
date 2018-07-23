@@ -1,0 +1,30 @@
+From 9cd4776952ed145bc2a53e62028c2b4d199b254e Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Mon, 23 Jul 2018 07:34:40 +0100
+Subject: [PATCH] iCalendar.cabal: add missing Paths_iCalendar module
+
+Noticed as a quickfuzz build breakage (http://quickfuzz.org/):
+  can't load .so/.DLL for: .../libHSiCalendar-0.4.0.4-2VZGCUKX8TfFH3xdw7yYla-ghc8.0.2.so
+    (.../libHSiCalendar-0.4.0.4-2VZGCUKX8TfFH3xdw7yYla-ghc8.0.2.so: undefined symbol:
+    iCalendarzm0zi4zi0zi4zm2VZZGCUKX8TfFH3xdw7yYla_PathszuiCalendar_version1_closure)
+
+It's a symbol iCalendar-0.4.0.4-2VZGCUKX8TfFH3xdw7yYla_Paths_iCalendar_version1_closure
+
+This change adds missing module into other-modules.
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ iCalendar.cabal | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/iCalendar.cabal b/iCalendar.cabal
+index cb795a8..ea4f23d 100644
+--- a/iCalendar.cabal
++++ b/iCalendar.cabal
+@@ -36,2 +36,3 @@ library
+                      , Text.ICalendar.Parser.Properties
++                     , Paths_iCalendar
+ 
+-- 
+2.18.0
+

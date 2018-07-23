@@ -40,6 +40,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-paths.patch
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri)
