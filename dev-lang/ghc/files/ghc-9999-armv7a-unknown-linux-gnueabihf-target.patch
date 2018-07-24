@@ -1,5 +1,3 @@
-diff --git a/utils/llvm-targets/gen-data-layout.sh b/utils/llvm-targets/gen-data-layout.sh
-index 3d222d0755..c2ba09faae 100755
 --- a/utils/llvm-targets/gen-data-layout.sh
 +++ b/utils/llvm-targets/gen-data-layout.sh
 @@ -24,6 +24,7 @@ TARGETS=(
