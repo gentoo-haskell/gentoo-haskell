@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,8 +25,6 @@ RDEPEND=">=dev-haskell/haddock-api-2.17:= <dev-haskell/haddock-api-2.18:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/haddock-test
-		dev-haskell/hspec )
 "
 
 src_prepare() {
