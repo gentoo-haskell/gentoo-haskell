@@ -46,5 +46,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                    >=0.7.0.6 && <1.4' 'aeson                    >=0.7.0.6 && <1.5'
+		'aeson                    >=0.7.0.6 && <1.4' 'aeson                    >=0.7.0.6 && <1.5' \
+		'tasty                 >=0.10  && <1.1' 'tasty                 >=0.10'
 }
