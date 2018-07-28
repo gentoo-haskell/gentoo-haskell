@@ -10,10 +10,14 @@
 		to provide a flexible, powerful, and correct editor for haskell hacking.
 	</longdescription>
 	<use>
-		<flag name="vty">Build with Vty frontend</flag>
 		<flag name="profiling">Runtime binary will be compiled with profiling and RTS options enabled.</flag>
 		<flag name="eventlog">Runtime binary will be compiled with eventlog and RTS options enabled.</flag>
 		<flag name="testing">bake-in the self-checks</flag>
 		<flag name="hint">Include hint (haskell interpreter) in yi</flag>
+		<flag name="emacs">Include the emacs keymap</flag>
+                <flag name="gtk">Include the pango (GUI) frontend, this flag is\
+ ignored if compiling with ghc >= 8.2</flag>
+                <flag name="vim">Include the vim keymap</flag>
+                <flag name="vty">Include the vty (CLI) frontend</flag>
 	</use>
 </pkgmetadata>
