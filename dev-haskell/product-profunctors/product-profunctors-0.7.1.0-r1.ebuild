@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/contravariant-0.4:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
+RDEPEND=">=dev-haskell/contravariant-0.4:=[profile?]
 	>=dev-haskell/profunctors-4.0:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
 	>=dev-haskell/tagged-0.0:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/contravariant-0.4:=[profile?] <dev-haskell/contravariant-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'contravariant >= 0.4 && < 1.5' 'contravariant >= 0.4'
+}
