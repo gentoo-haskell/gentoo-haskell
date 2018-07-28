@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # likes to fail under a load
 
 RDEPEND=">=dev-haskell/aeson-0.6.0.0:=[profile?]
-	>=dev-haskell/base-orphans-0.6:=[profile?] <dev-haskell/base-orphans-0.8:=[profile?]
+	>=dev-haskell/base-orphans-0.6:=[profile?]
 	dev-haskell/erf:=[profile?]
 	>=dev-haskell/math-functions-0.1.7:=[profile?]
 	>=dev-haskell/monad-par-0.3.4:=[profile?]
@@ -41,3 +41,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans >= 0.6 && <0.7' 'base-orphans >= 0.6'
+}
