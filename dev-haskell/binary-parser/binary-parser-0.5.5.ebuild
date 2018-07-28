@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/quickcheck-instances-0.3.11 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/rerebase-1 <dev-haskell/rerebase-2
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9 )
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty == 0.11.*' 'tasty >= 0.11' \
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
+		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9'
+}
