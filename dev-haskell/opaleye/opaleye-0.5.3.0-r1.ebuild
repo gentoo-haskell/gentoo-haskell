@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/attoparsec-0.10.3:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
+	>=dev-haskell/contravariant-1.2:=[profile?]
 	>=dev-haskell/postgresql-simple-0.5:=[profile?] <dev-haskell/postgresql-simple-0.6:=[profile?]
 	>=dev-haskell/product-profunctors-0.6.2:=[profile?] <dev-haskell/product-profunctors-0.8:=[profile?]
 	>=dev-haskell/profunctors-4.0:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
@@ -39,3 +39,10 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/multiset
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'contravariant       >= 1.2     && < 1.5' 'contravariant       >= 1.2'
+}
