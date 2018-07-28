@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
-	>=dev-haskell/contravariant-1.3.3:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
+	>=dev-haskell/contravariant-1.3.3:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	<dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/stm-2.4.3:=[profile?] <dev-haskell/stm-2.5:=[profile?]
@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 	test? ( >=dev-haskell/pipes-4.0.0 <dev-haskell/pipes-4.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'contravariant >= 1.3.3   && < 1.5' 'contravariant >= 1.3.3'
+}
