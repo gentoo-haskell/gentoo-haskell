@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # ambiguous package: AC-Vector-Fancy-2.4.0 vector-0.11.0.0
 
-RDEPEND=">=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
+RDEPEND=">=dev-haskell/contravariant-1.2:=[profile?]
 	>=dev-haskell/profunctors-4.0:=[profile?] <dev-haskell/profunctors-5.3:=[profile?]
 	>=dev-haskell/semigroups-0.17:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -30,3 +30,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/doctest )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'contravariant >= 1.2 && < 1.5' 'contravariant >= 1.2'
+}
