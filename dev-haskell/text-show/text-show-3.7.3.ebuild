@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/base-compat-batteries-0.10:=[profile?] <dev-haskell/base-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/base-orphans-0.6 <dev-haskell/base-orphans-0.8
+	test? ( >=dev-haskell/base-orphans-0.6
 		>=dev-haskell/deriving-compat-0.3.4 <dev-haskell/deriving-compat-1
 		>=dev-haskell/hspec-2 <dev-haskell/hspec-3
 		>=dev-haskell/quickcheck-2.10 <dev-haskell/quickcheck-2.12
@@ -43,6 +43,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/semigroups-0.18.3 <dev-haskell/semigroups-1
 		>=dev-haskell/tagged-0.8.3 <dev-haskell/tagged-1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans          >= 0.6    && < 0.8' 'base-orphans          >= 0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

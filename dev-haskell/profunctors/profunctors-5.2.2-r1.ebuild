@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?] <dev-haskell/base-orphans-0.7:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?]
 	>=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/contravariant-1:=[profile?] <dev-haskell/contravariant-2:=[profile?]
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/base-orphans-0.4:=[profile?] <dev-haskell/base-orphans-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans        >= 0.4   && < 0.7' 'base-orphans        >= 0.4'
+}

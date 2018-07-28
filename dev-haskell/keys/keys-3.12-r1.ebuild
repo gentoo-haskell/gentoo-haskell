@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-0.8:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?]
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-6:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -32,3 +32,10 @@ RDEPEND=">=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-orphans >= 0.5.4 && < 0.6' 'base-orphans >= 0.5.4'
+}
