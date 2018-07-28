@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
-	<dev-haskell/contravariant-1.5:=[profile?]
+	dev-haskell/contravariant:=[profile?]
 	>=dev-haskell/foldl-1.1:=[profile?] <dev-haskell/foldl-1.4:=[profile?]
 	<dev-haskell/managed-1.1:=[profile?]
 	>=dev-haskell/mmorph-1.0.2:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
@@ -38,5 +38,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'semigroups == 0.18.*' 'semigroups >= 0.18'
+		'semigroups == 0.18.*' 'semigroups >= 0.18' \
+		'contravariant                   < 1.5' 'contravariant'
 }
