@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/contravariant-1.2 <dev-haskell/contravariant-1.5
+	test? ( >=dev-haskell/contravariant-1.2
 		>=dev-haskell/quickcheck-2.8 )
 "
 
@@ -47,7 +47,8 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck      >= 2.8 && < 2.9' 'QuickCheck      >= 2.8' \
 		'lens               >= 4.12    && < 4.16' 'lens               >= 4.12' \
-		'vinyl              >= 0.5.2   && < 0.8' 'vinyl              >= 0.5.2'
+		'vinyl              >= 0.5.2   && < 0.8' 'vinyl              >= 0.5.2' \
+		'contravariant   >= 1.2 && < 1.5' 'contravariant   >= 1.2'
 }
 
 src_configure() {
