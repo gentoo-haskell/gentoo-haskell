@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="cairo pgf postscript ps rasterific svg"
 
-RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-0.7:=[profile?]
+RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?]
 	>=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/exceptions-0.3:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
@@ -47,7 +47,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'lens >= 4.0 && < 4.16' 'lens >= 4.0'
+		'lens >= 4.0 && < 4.16' 'lens >= 4.0' \
+		'base-orphans >= 0.3 && < 0.7' 'base-orphans >= 0.3'
 }
 src_configure() {
 	haskell-cabal_src_configure \

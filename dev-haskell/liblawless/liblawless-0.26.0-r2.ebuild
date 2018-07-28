@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/base-unicode-symbols-0.2.2:=[profile?] <dev-haskell/base-unicode-symbols-0.3:=[profile?]
 	>=dev-haskell/boomerang-1.4.5.2:=[profile?] <dev-haskell/boomerang-1.5:=[profile?]
 	>=dev-haskell/containers-unicode-symbols-0.3.1:=[profile?] <dev-haskell/containers-unicode-symbols-0.4:=[profile?]
-	>=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.5:=[profile?]
+	>=dev-haskell/contravariant-1.4:=[profile?]
 	>=dev-haskell/data-textual-0.3.0:=[profile?] <dev-haskell/data-textual-0.4:=[profile?]
 	>=dev-haskell/dns-2.0.8:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?]
@@ -74,5 +74,6 @@ src_prepare() {
 		'exceptions                 >= 0.8.3 && < 0.9' 'exceptions                 >= 0.8.3' \
 		'lens                       >= 4.14 && < 4.16' 'lens                       >= 4.14' \
 		'lifted-async  >= 0.9.1.1 && < 0.10' 'lifted-async  >= 0.9.1.1' \
-		'text-printer               >= 0.4 && < 0.5' 'text-printer               >= 0.4'
+		'text-printer               >= 0.4 && < 0.5' 'text-printer               >= 0.4' \
+		'contravariant              >= 1.4 && < 1.5' 'contravariant              >= 1.4'
 }
