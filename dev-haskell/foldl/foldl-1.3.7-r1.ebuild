@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?]
-	<dev-haskell/contravariant-1.5:=[profile?]
+	dev-haskell/contravariant:=[profile?]
 	<dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/mwc-random-0.13.1.0:=[profile?] <dev-haskell/mwc-random-0.14:=[profile?]
 	<dev-haskell/primitive-0.7:=[profile?]
@@ -33,3 +33,10 @@ RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'contravariant               < 1.5' 'contravariant'
+}
