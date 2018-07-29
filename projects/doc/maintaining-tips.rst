@@ -133,12 +133,12 @@ I am using plain ``emerge`` to do it. Here is my setup:
 
 1. create a @haskell set in /etc/portage/sets/haskell
 
-  I usually do it by adding all ``::haskell`` packages I can compile on
-  my machine with help of ``add_to_world.sh`` script: https://github.com/trofi/gentoo-qa/blob/master/add_to_world.sh
+   I usually do it by adding all ``::haskell`` packages I can compile on
+   my machine with help of ``add_to_world.sh`` script: https://github.com/trofi/gentoo-qa/blob/master/add_to_world.sh
 
-  It dumps all already installed haskell packages on your machine.
+   It dumps all already installed haskell packages on your machine.
 
-  Maybe we should have this set in ``::haskell` directly?
+   Maybe we should have this set in ``::haskell` directly?
 
 2. run emerge in ``--pretend`` to check if it can re-install all these
    packages in one run:
