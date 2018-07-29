@@ -101,3 +101,59 @@ and will keep old upper bound.
 .. code-block:: bash
 
     $ git mv cheapskate-0.1.0.5.ebuild cheapskate-0.1.0.5-r1.ebuild
+
+Validating upper bounds are consistent
+======================================
+
+When you add major version of a package (like the
+``dev-haskell/data-default-0.7`` example above) chances are high that
+quite a few ebulds in overlay still rely on older version and still
+contain ``<dev-haskell/data-default-0.7`` in their ``*DEPENDS`` strings.
+
+Try to fix most of users to be compatible with newly added package
+by using ``cabal_chdeps`` or by porting dependent packages to a new
+version. Also send your fixes upstream if possible.
+
+So how to find those outdated packages?
+
+One day repoman will be able to tell us: https://bugs.gentoo.org/555266.
+But that day is not today.
+
+I am using plain ``emerge`` to do it. Here is my setup:
+
+0. enable tests for haskell packages
+
+   ::
+
+       $ cat /etc/portage/env/test.conf
+       FEATURES="${FEATURES} test"
+       $ cat /etc/portage/package.env/test
+       dev-haskell/*            test.conf
+       */*::haskell             test.conf
+
+1. create a @haskell set in /etc/portage/sets/haskell
+
+  I usually do it by adding all ``::haskell`` packages I can compile on
+  my machine with help of ``add_to_world.sh`` script: https://github.com/trofi/gentoo-qa/blob/master/add_to_world.sh
+
+  It dumps all already installed haskell packages on your machine.
+
+  Maybe we should have this set in ``::haskell` directly?
+
+2. run emerge in ``--pretend`` to check if it can re-install all these
+   packages in one run:
+
+   ::
+
+     $ time emerge -pv @haskell --autounmask=n --backtrack=0
+     ...
+     Total: 2109 packages (4 upgrades, 8 new, 2097 reinstalls), Size of downloads: 389 KiB
+     real    1m19,608s
+
+   Success!
+
+   Note: running ``emerge`` does not require you to build anything
+   but just runs portage's resolver.
+
+In case on unresolvable depends you will get conflicts
+similar to ``dev-haskell/data-default-0.7`` case above.
