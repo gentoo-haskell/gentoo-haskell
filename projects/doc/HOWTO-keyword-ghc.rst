@@ -36,22 +36,22 @@ Minimal requirement of keyworded GHC
    I usually run ``more_to_install.sh`` script from https://github.com/trofi/gentoo-qa/blob/master/more_to_install.sh
    to attempt to install most of packages:
 
-   ```
-   $ for p in $(/bound/gentoo-qa/more_to_install.sh); do echo $p; emerge -uv1 $p; done
-   ```
+   ::
+
+       $ for p in $(/bound/gentoo-qa/more_to_install.sh); do echo $p; emerge -uv1 $p; done
 
    And then check how many of them succeeded:
 
-   ```
-   # How many are currently broken:
-   $ /bound/gentoo-qa/more_to_install.sh | wc -l
-   493
-   # How many are installed successfully:
-   ghc-pkg list --simple-output | wc -w
-   1670
-   ```
+   ::
 
-   Looks like we are at ``1670 / (493 + 1670) * 100 = 77%``!
+       # How many are currently broken:
+       $ /bound/gentoo-qa/more_to_install.sh | wc -l
+       493
+       # How many are installed successfully:
+       ghc-pkg list --simple-output | wc -w
+       1670
+
+   Looks like we are at ``1670 / (493 + 1670) * 100 = 77%``! Geady to go!
 
 3. ghc must have a gentoo prebuilt binary for a given architecture.
 
@@ -76,6 +76,6 @@ depend on new ghc. Today's example:
 
 Those usually can be extracted by grepping commented out keywords:
 
-```
-git grep -l '#keep in sync with ghc-8.4'
-```
+::
+
+    git grep -l '#keep in sync with ghc-8.4'
