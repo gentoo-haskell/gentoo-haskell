@@ -68,6 +68,7 @@
 		(A note on naming: in Greek mythology, Aeson was the father of Jason.)
 	</longdescription>
 	<use>
-		<flag name="cffi">Controls whether to include c-ffi bits or pure haskell. Default to False for security.</flag>
+	  <flag name="cffi">Controls whether to include c-ffi bits or pure haskell. Default to False for security.</flag>
+	  <flag name="fast">compile without optimizations</flag>
 	</use>
 </pkgmetadata>
