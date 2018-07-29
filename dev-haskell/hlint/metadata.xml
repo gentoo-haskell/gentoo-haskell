@@ -10,5 +10,6 @@
 	</longdescription>
 <use>
   <flag name="gpl">Use GPL libraries, specifically hscolour.</flag>
+  <flag name="threaded">Build with support for multithreaded execution</flag>
 </use>
 </pkgmetadata>
