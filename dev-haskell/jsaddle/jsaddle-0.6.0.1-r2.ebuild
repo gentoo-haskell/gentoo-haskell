@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
@@ -34,5 +34,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'lens >=3.8.5 && <4.16' 'lens >=3.8.5'
+		'lens >=3.8.5 && <4.16' 'lens >=3.8.5' \
+		'aeson >=0.8.0.2 && <1.1' 'aeson >=0.8.0.2'
 }
