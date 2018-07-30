@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # ambiguous packages: base-compat-0.10.1 base-compat-batteries-0.10.1
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
@@ -49,5 +49,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base-compat           >= 0.9  && < 0.10' 'base-compat           >= 0.9' \
-		'mmorph                >= 1    && < 1.1' 'mmorph                >= 1'
+		'mmorph                >= 1    && < 1.1' 'mmorph                >= 1' \
+		'aeson                 >= 0.7  && < 1.1' 'aeson                 >= 0.7'
 }
