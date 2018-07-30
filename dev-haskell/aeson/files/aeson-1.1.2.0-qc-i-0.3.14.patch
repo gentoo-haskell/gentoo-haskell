@@ -1,0 +1,18 @@
+Fix test build failure against quickcheck-instances-0.3.14+:
+
+tests/Instances.hs:228:10: error:
+    Duplicate instance declarations:
+      instance Arbitrary UUID.UUID
+        -- Defined at tests/Instances.hs:228:10
+      instance Arbitrary UUID.UUID
+        -- Defined in ‘Test.QuickCheck.Instances.UUID’
+
+--- a/tests/Instances.hs
++++ b/tests/Instances.hs
+@@ -227,2 +227,3 @@ instance Arbitrary a => Arbitrary (Identity a) where
+ 
++#if !MIN_VERSION_quickcheck_instances(0,3,14)
+ instance Arbitrary UUID.UUID where
+@@ -233 +234,2 @@ instance Arbitrary UUID.UUID where
+         <*> arbitrary
++#endif
