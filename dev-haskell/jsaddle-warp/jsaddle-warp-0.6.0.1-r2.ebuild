@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # tests are not supposed to be ran by cabal
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
 	>=dev-haskell/jsaddle-0.6.0.0:=[profile?] <dev-haskell/jsaddle-0.7:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
@@ -47,5 +47,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'websockets >=0.9.5.0 && <0.10' 'websockets >=0.9.5.0'
+		'websockets >=0.9.5.0 && <0.10' 'websockets >=0.9.5.0' \
+		'aeson >=0.8.0.2 && <1.1' 'aeson >=0.8.0.2'
 }
