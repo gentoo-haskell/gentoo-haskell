@@ -54,6 +54,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-QC-2.10.patch
 	"${FILESDIR}"/${P}-base-compat-0.10.patch
+	"${FILESDIR}"/${P}-qc-i-0.3.14.patch
 )
 
 src_prepare() {
