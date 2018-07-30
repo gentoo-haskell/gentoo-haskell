@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?]
 	>=dev-haskell/base-compat-0.9.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/binary-orphans-0.1.0.0:=[profile?] <dev-haskell/binary-orphans-0.2:=[profile?]
@@ -56,5 +56,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base-compat           >=0.9.1     && <0.10' 'base-compat           >=0.9.1' \
 		'vector                >=0.10.12.3 && <0.12' 'vector                >=0.10.12.3' \
-		'vector-instances      >=3.3.0.1   && <3.4' 'vector-instances      >=3.3.0.1'
+		'vector-instances      >=3.3.0.1   && <3.4' 'vector-instances      >=3.3.0.1' \
+		'aeson                 >=0.7.0.6   && <1.1' 'aeson                 >=0.7.0.6'
 }
