@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.1:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
@@ -63,5 +63,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base-compat        >= 0.9  && < 0.10' 'base-compat        >= 0.9'
+		'base-compat        >= 0.9  && < 0.10' 'base-compat        >= 0.9' \
+		'aeson              >= 0.7  && < 1.1' 'aeson              >= 0.7'
 }
