@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,11 +38,22 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/conversion-text-1 <dev-haskell/conversion-text-2
 		>=dev-haskell/json-ast-0.3 <dev-haskell/json-ast-0.4
 		>=dev-haskell/postgresql-libpq-0.9 <dev-haskell/postgresql-libpq-0.10
-		>=dev-haskell/quickcheck-2.8.1 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/quickcheck-2.8.1
 		>=dev-haskell/quickcheck-instances-0.3.11 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/rerebase-1.0.2 <dev-haskell/rerebase-2
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.12
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.9
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10
 		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty == 0.11.*' 'tasty >= 0.11' \
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8 && < 0.10' \
+		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9' \
+		'QuickCheck >= 2.8.1 && < 2.10' 'QuickCheck >= 2.8.1'
+
+}
