@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # fails on ghc-8.0.2 due to ambiguous (<>) definition
+
 RDEPEND=">=dev-haskell/blaze-html-0.9:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/colonnade-1.1:=[profile?] <dev-haskell/colonnade-1.3:=[profile?]
