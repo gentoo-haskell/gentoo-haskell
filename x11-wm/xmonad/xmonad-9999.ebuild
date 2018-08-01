@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/setlocale:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-haskell/x11-1.8:=[profile?] <dev-haskell/x11-1.9:=[profile?]
+	>=dev-haskell/x11-1.8:=[profile?] <dev-haskell/x11-1.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
