@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Please see &lt;https://github.com/cdepillabout/pretty-simple#readme README.md&gt;.
+	</longdescription>
+	<use>
+	  <flag name="buildexe">Build a small command line program that pretty-prints anything from stdin.</flag>
+	  <flag name="buildexample">Build a small example program showing how to use the pPrint function</flag>
+	</use>
+</pkgmetadata>
