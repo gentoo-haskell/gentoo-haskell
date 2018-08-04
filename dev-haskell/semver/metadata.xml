@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Representation, manipulation, and de/serialisation of a Version type
+		following the Semantic Versioning specification.
+		
+		For more information see: &lt;http://semver.org&gt;
+	</longdescription>
+</pkgmetadata>
