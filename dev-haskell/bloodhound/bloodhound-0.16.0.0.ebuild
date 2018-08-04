@@ -15,7 +15,9 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="es1 +es5"
+IUSE="-es1 -es5"
+
+RESTRICT=test # tries to access network for testing
 
 RDEPEND=">=dev-haskell/aeson-0.11.1:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
