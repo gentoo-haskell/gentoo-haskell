@@ -1,0 +1,24 @@
+From 1d3d66199577a8804d1a6f62c6813401ff7bfc71 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Sun, 5 Aug 2018 01:21:54 +1000
+Subject: [PATCH] Language.GLSL.Pretty: import Prelude hiding ( (<>) )
+
+---
+ Language/GLSL/Pretty.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Language/GLSL/Pretty.hs b/Language/GLSL/Pretty.hs
+index b33555a..5cde86e 100644
+--- a/Language/GLSL/Pretty.hs
++++ b/Language/GLSL/Pretty.hs
+@@ -1,6 +1,7 @@
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
+ module Language.GLSL.Pretty where
+ 
++import Prelude hiding ( (<>) )
+ import Text.PrettyPrint.HughesPJClass
+ import Text.Printf
+ 
+-- 
+2.18.0
+
