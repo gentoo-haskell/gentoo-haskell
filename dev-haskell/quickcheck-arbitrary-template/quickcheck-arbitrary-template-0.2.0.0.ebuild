@@ -28,3 +28,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >=2.11 && <2.13' 'template-haskell >=2.11 && <2.14'
+}
