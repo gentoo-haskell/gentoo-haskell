@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous packages: AC-Vector-Fancy vector
+
 RDEPEND=">=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=

@@ -6,10 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		ElasticSearch made awesome for Haskell hackers
+		Please see &lt;https://github.com/cdepillabout/pretty-simple#readme README.md&gt;.
 	</longdescription>
 	<use>
-	  <flag name="es1">Run the test suite against an Elasticsearch 1.x server</flag>
-	  <flag name="es5">Run the test suite against an Elasticsearch 5.x server</flag>
+	  <flag name="buildexe">Build a small command line program that pretty-prints anything from stdin.</flag>
+	  <flag name="buildexample">Build a small example program showing how to use the pPrint function</flag>
 	</use>
 </pkgmetadata>
