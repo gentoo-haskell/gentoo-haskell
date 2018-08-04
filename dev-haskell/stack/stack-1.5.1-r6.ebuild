@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.2:=[profile?]
 	>=dev-haskell/echo-0.1.3:=[profile?] <dev-haskell/echo-0.2:=[profile?]
 	>=dev-haskell/either-4.4.1.1:=[profile?]
 	>=dev-haskell/errors-2.1.3:=[profile?] <dev-haskell/errors-2.3:=[profile?]
-	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/exceptions-0.8.0.2:=[profile?]
 	>=dev-haskell/extra-1.4.10:=[profile?]
 	>=dev-haskell/fast-logger-2.3.1:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
@@ -107,7 +107,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/attoparsec-0.13.1.0 <dev-haskell/attoparsec-0.14
 		>=dev-haskell/conduit-extra-1.1.16 <dev-haskell/conduit-extra-1.2
-		>=dev-haskell/exceptions-0.8.3 <dev-haskell/exceptions-0.9
+		>=dev-haskell/exceptions-0.8.3
 		>=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.5
 		>=dev-haskell/monad-logger-0.3.24 <dev-haskell/monad-logger-0.4
 		>=dev-haskell/mono-traversable-0.10.2 <dev-haskell/mono-traversable-1.1
