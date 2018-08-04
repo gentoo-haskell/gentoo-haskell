@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0.1:=[profile?]
-	>=dev-haskell/hinotify-0.3.7:=[profile?]
+	>=dev-haskell/hinotify-0.3.10:=[profile?]
 	>=dev-haskell/text-0.11.0:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
