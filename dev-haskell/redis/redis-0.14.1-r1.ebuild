@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/concurrent-extra:=[profile?]
-	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/exceptions-0.6:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/old-time:=[profile?]
@@ -28,3 +28,10 @@ RDEPEND="dev-haskell/concurrent-extra:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'exceptions >= 0.6 && < 0.9' 'exceptions >= 0.6'
+}

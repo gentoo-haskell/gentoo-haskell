@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?]
 	>=dev-haskell/byteable-0.1.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
 	>=dev-haskell/cryptohash-0.11:=[profile?] <dev-haskell/cryptohash-0.12:=[profile?]
 	>=dev-haskell/deepseq-generics-0.1.1.2:=[profile?] <dev-haskell/deepseq-generics-0.3:=[profile?]
-	>=dev-haskell/exceptions-0.8.0.2:=[profile?] <dev-haskell/exceptions-0.9:=[profile?]
+	>=dev-haskell/exceptions-0.8.0.2:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/http-client-0.4.8.1:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
@@ -54,8 +54,11 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base                  >=4.7       && <4.10' 'base                  >=4.7       && <4.12' \
+		'time                  >=1.4       && <1.7' 'time                  >=1.4       && <1.9' \
 		'base-compat           >=0.9.1     && <0.10' 'base-compat           >=0.9.1' \
 		'vector                >=0.10.12.3 && <0.12' 'vector                >=0.10.12.3' \
 		'vector-instances      >=3.3.0.1   && <3.4' 'vector-instances      >=3.3.0.1' \
-		'aeson                 >=0.7.0.6   && <1.1' 'aeson                 >=0.7.0.6'
+		'aeson                 >=0.7.0.6   && <1.1' 'aeson                 >=0.7.0.6' \
+		'exceptions            >=0.8.0.2   && <0.9' 'exceptions            >=0.8.0.2'
 }
