@@ -6,10 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		ElasticSearch made awesome for Haskell hackers
+		Representation, manipulation, and de/serialisation of a Version type
+		following the Semantic Versioning specification.
+		
+		For more information see: &lt;http://semver.org&gt;
 	</longdescription>
-	<use>
-	  <flag name="es1">Run the test suite against an Elasticsearch 1.x server</flag>
-	  <flag name="es5">Run the test suite against an Elasticsearch 5.x server</flag>
-	</use>
 </pkgmetadata>
