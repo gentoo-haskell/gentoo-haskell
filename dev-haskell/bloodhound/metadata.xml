@@ -8,4 +8,8 @@
 	<longdescription>
 		ElasticSearch made awesome for Haskell hackers
 	</longdescription>
+	<use>
+	  <flag name="es1">Run the test suite against an Elasticsearch 1.x server</flag>
+	  <flag name="es5">Run the test suite against an Elasticsearch 5.x server</flag>
+	</use>
 </pkgmetadata>
