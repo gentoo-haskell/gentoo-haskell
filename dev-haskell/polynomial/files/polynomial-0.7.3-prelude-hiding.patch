@@ -1,0 +1,24 @@
+From 764b9e84f42f41998135f8d502973b398662bd69 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Sun, 5 Aug 2018 21:34:51 +1000
+Subject: [PATCH] hide <> from Prelude
+
+---
+ src/Math/Polynomial/Pretty.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/Math/Polynomial/Pretty.hs b/src/Math/Polynomial/Pretty.hs
+index f250228..aef65fc 100644
+--- a/src/Math/Polynomial/Pretty.hs
++++ b/src/Math/Polynomial/Pretty.hs
+@@ -15,6 +15,7 @@ import Math.Polynomial.Type
+ 
+ import Data.Complex
+ 
++import Prelude hiding ( (<>) )
+ import Text.PrettyPrint
+ import Text.PrettyPrint.HughesPJClass
+ 
+-- 
+2.18.0
+
