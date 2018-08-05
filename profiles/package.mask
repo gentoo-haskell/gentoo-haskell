@@ -25,10 +25,6 @@ dev-haskell/qt
 # https://github.com/gentoo-haskell/gentoo-haskell/issues/699
 >=dev-haskell/extra-1.6.6
 
-# Jack Todaro <jackmtodaro@gmail.com> (04 Aug 2018)
-# Too many packages in overlay require <exceptions-0.11
->=dev-haskell/exceptions-0.11
-
 # Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
 # Follow ::gentoo mask bindings for outdated
 #   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
@@ -66,7 +62,6 @@ dev-haskell/hslua-module-text
 >=dev-haskell/http-conduit-2.3
 >=dev-haskell/http-types-0.11
 dev-haskell/servant-client-core
->=dev-haskell/megaparsec-6
 >=dev-haskell/persistent-2.8.0
 >=dev-haskell/persistent-mysql-2.8
 >=dev-haskell/persistent-postgresql-2.8
