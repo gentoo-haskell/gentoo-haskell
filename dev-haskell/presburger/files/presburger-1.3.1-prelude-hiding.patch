@@ -1,0 +1,24 @@
+From 29c5b56038fe111ed97f0c38dfd2845219c47ff1 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Sun, 5 Aug 2018 22:46:38 +1000
+Subject: [PATCH] Workaround for ghc 8.4
+
+---
+ src/Data/Integer/SAT.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/Data/Integer/SAT.hs b/src/Data/Integer/SAT.hs
+index cfe3950..244ac52 100644
+--- a/src/Data/Integer/SAT.hs
++++ b/src/Data/Integer/SAT.hs
+@@ -50,6 +50,7 @@ import           Data.Maybe(maybeToList,fromMaybe,mapMaybe)
+ import           Control.Applicative(Applicative(..), Alternative(..), (<$>))
+ import           Control.Monad(liftM,ap,MonadPlus(..),guard)
+ import           Text.PrettyPrint
++import           Prelude hiding ((<>))
+ 
+ infixr 2 :||
+ infixr 3 :&&
+-- 
+2.18.0
+
