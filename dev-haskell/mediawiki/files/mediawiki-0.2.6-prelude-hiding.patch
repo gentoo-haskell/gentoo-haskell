@@ -1,0 +1,25 @@
+From 54c70180260289e119b568a11849a4888659bfd3 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Sun, 5 Aug 2018 14:38:15 +1000
+Subject: [PATCH] examples/Util/GetOpts.hs: Hide (<>) from Prelude import
+
+---
+ examples/Util/GetOpts.hs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/examples/Util/GetOpts.hs b/examples/Util/GetOpts.hs
+index 1b059d1..fdae65d 100644
+--- a/examples/Util/GetOpts.hs
++++ b/examples/Util/GetOpts.hs
+@@ -42,7 +42,7 @@ module Util.GetOpts
+ 	                -- -> IO (a, [String])
+     ) where
+ 
+-import Prelude
++import Prelude hiding ( (<>) )
+ import Data.List        ( isPrefixOf )
+ import Text.PrettyPrint
+ import System.Console.GetOpt
+-- 
+2.18.0
+

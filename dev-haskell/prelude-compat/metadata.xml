@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package allows you to write warning-free code
+		that compiles with versions of &#39;base&#39; before and after AMP and FTP,
+		that is, &#39;base&#39; before and beginning with 4.8, respectively,
+		and GHC before and beginning with 7.10, respectively.
+		It serves three purposes:
+		
+		* Prevent you from name clashes of FTP-Prelude
+		with locally defined functions having names like &#39;&lt;*&gt;&#39;, &#39;join&#39;, &#39;foldMap&#39;.
+		
+		* Prevent you from redundant import warnings
+		if you manually import &quot;Data.Monoid&quot; or &quot;Control.Applicative&quot;.
+		
+		* Fix list functions to the list type, contrarily to the aim of the FTP.
+		This way you are saved from @length (2,1) == 1@ and @maximum (2,1) == 1@,
+		until you import @Data.Foldable@.
+		
+		You should add
+		
+		&gt; import Prelude2010
+		&gt; import Prelude ()
+		
+		to your modules.
+		This way, you must change all affected modules.
+		If you want to avoid this you may try the &#39;prelude2010&#39; package
+		or if you already import Prelude explicitly, you may try to add
+		
+		&gt; Default-Extensions: CPP, NoImplicitPrelude
+		&gt; CPP-Options: -DPrelude=Prelude2010
+		
+		to your Cabal file.
+		
+		In my opinion, this is the wrong way round.
+		The presented Prelude2010 module should have been the one for GHC-7.10
+		and the Prelude with added and generalized list functions
+		should have been an additionally PreludeFTP,
+		preferably exported by a separate package
+		like all other alternate Prelude projects.
+		But the purpose of the FTP was to save some import statements
+		at the expense of blowing up the &#39;Foldable&#39; class
+		and prevent simple ways to write code that works
+		with GHC version before and starting with GHC-7.10
+		and that does not provoke warnings.
+		
+		Related packages:
+		
+		* &#39;base-compat&#39;: The opposite approach -
+		Make future function definitions available in older GHC versions.
+		
+		* &#39;haskell2010&#39;: Defines the Prelude for Haskell 2010.
+		Unfortunately, &#39;haskell2010&#39; is not available anymore since GHC-7.10,
+		because of the AMP.
+		
+		* &#39;numeric-prelude&#39;:
+		It is intended to provide a refined numeric class hierarchy
+		but it also provides a non-numeric subset of the Prelude
+		that is more stable than the one of &#39;base&#39;.
+	</longdescription>
+</pkgmetadata>
