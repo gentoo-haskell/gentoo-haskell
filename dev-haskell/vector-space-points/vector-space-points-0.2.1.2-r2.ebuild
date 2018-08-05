@@ -28,5 +28,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'vector-space >=0.7 && < 0.11' 'vector-space >=0.7'
+		'vector-space >=0.7 && < 0.11' 'vector-space >=0.7' \
+		'base >=4.0 && < 4.10' 'base >=4.0'
 }
