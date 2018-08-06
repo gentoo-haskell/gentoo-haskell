@@ -1,3 +1,8 @@
+# Jack Todaro <jackmtodaro@gmail.com> (6 Aug 2018)
+# tagsoup-megaparsec is incompatible with megaparsec-6.0
+# https://github.com/gentoo-haskell/gentoo-haskell/pull/762
+dev-haskell/tagsoup-megaparsec
+
 # Sergei Trofimovich <slyfox@gentoo.org> (01 July 2018)
 # Follow ::gentoo's mask of qt:4
 dev-haskell/clocked
