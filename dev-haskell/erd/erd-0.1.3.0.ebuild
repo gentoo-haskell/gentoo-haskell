@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,4 +26,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.1.3.0.patch)
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base == 4.7.*' 'base >= 4.7'
+}
