@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # QuickCheck finds conterexamples.
+
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/conduit-0.5.5:=[profile?] <dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/conduit-extra-1.1.5:=[profile?]
