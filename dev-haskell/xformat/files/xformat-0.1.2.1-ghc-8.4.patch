@@ -1,0 +1,24 @@
+From f5324c4c1e2ffd8068ca6419122da1332233a3be Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Mon, 6 Aug 2018 08:55:15 +1000
+Subject: [PATCH] Fix compatibility with ghc 8.4
+
+---
+ src/Text/XFormat/Show.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/Text/XFormat/Show.hs b/src/Text/XFormat/Show.hs
+index ed38679..c4cd796 100644
+--- a/src/Text/XFormat/Show.hs
++++ b/src/Text/XFormat/Show.hs
+@@ -82,6 +82,7 @@ module Text.XFormat.Show (
+ 
+ --------------------------------------------------------------------------------
+ 
++import Prelude hiding ((<>))
+ 
+ -- | This class provides the signature for an extensible, type-indexed function
+ -- that uses a format descriptor to print a variable number of well-typed
+-- 
+2.18.0
+
