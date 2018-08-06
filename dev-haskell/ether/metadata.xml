@@ -9,4 +9,7 @@
 		Ether is a Haskell library that extends @mtl@ and @transformers@ with
 		tagged monad transformers and classes in a compatible way.
 	</longdescription>
+	<use>
+	  <flag name="disable-tup-instances">Disable auto-generated HasLens instances for tuples.</flag>
+	</use>
 </pkgmetadata>
