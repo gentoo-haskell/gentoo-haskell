@@ -1,0 +1,24 @@
+From 35ed6f8d74110dcbf5cda674efaaf650ee1e4586 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Mon, 6 Aug 2018 08:47:24 +1000
+Subject: [PATCH] Fix compatibility with ghc 8.4
+
+---
+ Text/PrettyPrint/NCol.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Text/PrettyPrint/NCol.hs b/Text/PrettyPrint/NCol.hs
+index 15565ea..3c557a6 100644
+--- a/Text/PrettyPrint/NCol.hs
++++ b/Text/PrettyPrint/NCol.hs
+@@ -1,6 +1,7 @@
+ module Text.PrettyPrint.NCol (asColumns, asColumnsWithBuff) 
+         where
+ 
++import Prelude hiding ((<>))
+ import Text.PrettyPrint
+ import Data.List
+ 
+-- 
+2.18.0
+
