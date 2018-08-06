@@ -1,0 +1,38 @@
+From fa74bba4197715f6faf88e49ba8c51adee4796de Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Mon, 6 Aug 2018 08:21:07 +1000
+Subject: [PATCH] Fix compatibility with ghc 8.4
+
+---
+ src/System/Console/Shell/Commands.hs | 1 +
+ src/System/Console/Shell/PPrint.hs   | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/System/Console/Shell/Commands.hs b/src/System/Console/Shell/Commands.hs
+index a28c1c8..3a6d946 100644
+--- a/src/System/Console/Shell/Commands.hs
++++ b/src/System/Console/Shell/Commands.hs
+@@ -21,6 +21,7 @@ module System.Console.Shell.Commands
+ , commandsRegex
+ ) where
+ 
++import Prelude hiding ((<>))
+ import System.Console.Shell.Types
+ import System.Console.Shell.PPrint
+ import System.Console.Shell.Regex
+diff --git a/src/System/Console/Shell/PPrint.hs b/src/System/Console/Shell/PPrint.hs
+index e9bb8ee..b3e38ad 100644
+--- a/src/System/Console/Shell/PPrint.hs
++++ b/src/System/Console/Shell/PPrint.hs
+@@ -47,7 +47,7 @@ module System.Console.Shell.PPrint
+         , displayS, displayIO
+         ) where
+ 
+-import Prelude hiding ( (<|>), (<$>) )
++import Prelude hiding ( (<|>), (<$>), (<>) )
+ import System.IO      (Handle,hPutStr,hPutChar,stdout)
+ 
+ infixr 5 </>,<//>,<$>,<$$>
+-- 
+2.18.0
+
