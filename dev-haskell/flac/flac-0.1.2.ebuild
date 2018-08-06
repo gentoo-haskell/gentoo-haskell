@@ -34,6 +34,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/temporary-1.1 <dev-haskell/temporary-1.3 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'exceptions       >= 0.6    && < 0.9' 'exceptions       >= 0.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev
