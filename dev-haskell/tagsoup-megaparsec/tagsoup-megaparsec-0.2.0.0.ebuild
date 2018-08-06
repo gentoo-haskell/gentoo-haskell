@@ -15,9 +15,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# incompatible with >=dev-haskell/megaparsec-6.0, no repo activity since
-# August 2016.
-# KEYWORDS="~amd64 ~x86"
+# incompatible with >=dev-haskell/megaparsec-6.0
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/megaparsec-5.0.1:=[profile?] <dev-haskell/megaparsec-6:=[profile?]
