@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: ghc-package.eclass
@@ -261,8 +261,8 @@ ghc-install-pkg() {
 
 	$(ghc-getghcpkgbin) init "${localpkgconf}" || die "Failed to initialize empty local db"
 	for pkg_config_file in "$@"; do
-		$(ghc-getghcpkgbin) -f "${localpkgconf}" update - --force \
-				< "${pkg_config_file}" || die "failed to register ${pkg}"
+		$(ghc-getghcpkgbin) -f "${localpkgconf}" update --force \
+				"${pkg_config_file}" || die "failed to register ${pkg}"
 	done
 
 	check-for-collisions "${localpkgconf}"
