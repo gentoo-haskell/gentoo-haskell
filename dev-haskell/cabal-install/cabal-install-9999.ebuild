@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-3:=
 	>=dev-haskell/tar-0.5.0.1:= <dev-haskell/tar-0.6:=
 	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.7:=
 	>=dev-lang/ghc-7.4.1:=
-	network-uri? ( >=dev-haskell/network-2.6:= <dev-haskell/network-2.7:=
+	network-uri? ( >=dev-haskell/network-2.6:= <dev-haskell/network-2.8:=
 			>=dev-haskell/network-uri-2.6:= <dev-haskell/network-uri-2.7:= )
 	!network-uri? ( >=dev-haskell/network-2.4:= <dev-haskell/network-2.6:= )
 "

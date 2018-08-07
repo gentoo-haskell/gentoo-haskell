@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-b
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	>=dev-haskell/old-locale-1.0:=[profile?]
-	use-network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	use-network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.8:=[profile?]
 				>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!use-network-uri? ( >=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
@@ -53,7 +53,8 @@ src_prepare() {
 		'tasty-hunit      == 0.10.*' 'tasty-hunit      >= 0.10' \
 		'tasty-quickcheck == 0.10.*' 'tasty-quickcheck >= 0.10' \
 		'QuickCheck       == 2.9.*' 'QuickCheck       >= 2.9' \
-		'temporary        == 1.2.*' 'temporary        >= 1.2'
+		'temporary        == 1.2.*' 'temporary        >= 1.2' \
+		'network     >= 2.6 && < 2.7' 'network     >= 2.6'
 }
 
 src_configure() {

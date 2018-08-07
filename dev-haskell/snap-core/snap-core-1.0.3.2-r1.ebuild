@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.8:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/readable-0.1:=[profile?] <dev-haskell/readable-0.4:=[profile?]
@@ -52,6 +52,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.7 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'network     >= 2.6 && < 2.7' 'network     >= 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
