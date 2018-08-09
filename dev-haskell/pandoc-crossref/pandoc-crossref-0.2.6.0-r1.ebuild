@@ -23,7 +23,7 @@ RDEPEND=">=app-text/pandoc-1.19:=[profile?] <app-text/pandoc-1.20:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1.6:=[profile?] <dev-haskell/data-accessor-transformers-0.3.0.0:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/pandoc-types-1.17:=[profile?] <dev-haskell/pandoc-types-1.18:=[profile?]
+	>=dev-haskell/pandoc-types-1.17:=[profile?] <dev-haskell/pandoc-types-1.17.5:=[profile?]
 	>=dev-haskell/roman-numerals-0.5:=[profile?] <dev-haskell/roman-numerals-0.6:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1.0:=[profile?]
@@ -37,3 +37,10 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-new-pandoc-types.patch
 )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc-types == 1.17.*' 'pandoc-types >= 1.17 && < 1.17.5'
+}
