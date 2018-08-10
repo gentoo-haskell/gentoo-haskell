@@ -51,7 +51,7 @@ dev-haskell/webkitgtk3-javascriptcore
 # Masked as many reverse dependencies depend on older versions.
 # Most of them need to be ported to newer version.
 >=app-text/pandoc-2
->=dev-haskell/aeson-1.2
+>=dev-haskell/aeson-1.3
 dev-haskell/servant-client
 dev-haskell/listenbrainz-client
 >=dev-haskell/ansi-terminal-0.7
