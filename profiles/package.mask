@@ -99,7 +99,6 @@ dev-haskell/servant-client-core
 >=dev-haskell/hpack-0.28.0
 >=dev-haskell/pandoc-crossref-0.3
 >=dev-haskell/stm-conduit-4.0.0
-dev-haskell/tree-diff
 >=dev-haskell/yesod-auth-1.6
 >=dev-haskell/yesod-bin-1.6
 >=dev-haskell/yesod-eventsource-1.6
