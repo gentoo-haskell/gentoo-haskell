@@ -15,8 +15,12 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 # keep in sync with ghc-8.4.3, might not be required but needs porting revdeps
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
+
+# Fixtures test suite fails: 'fixtures/examples: getDirectoryContents:
+# openDirStream: does not exist (No such file or directory)'
+RESTRICT=test
 
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?]
@@ -25,9 +29,18 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
-	test? ( >=dev-haskell/base-compat-0.9.3 <dev-haskell/base-compat-0.10
-		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.5
+	test? ( >=dev-haskell/base-compat-0.9.3
+		>=dev-haskell/hspec-2.4.4
 		>=dev-haskell/optparse-applicative-0.14.0.0 <dev-haskell/optparse-applicative-0.15
 		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12
 		>=dev-haskell/tree-diff-0.0.0.1 <dev-haskell/tree-diff-0.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-compat   ^>= 0.9.3' 'base-compat   >= 0.9.3' \
+		'base-compat           ^>= 0.9.3' 'base-compat           >= 0.9.3' \
+		'hspec         ^>= 2.4.4' 'hspec         >= 2.4.4'
+}
