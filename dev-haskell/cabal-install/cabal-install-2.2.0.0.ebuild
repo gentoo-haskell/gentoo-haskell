@@ -15,8 +15,8 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#needs Cabal-2.2 keywords
-#KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+#needs Cabal-2.2 keywords. Only amd64 and x86 keyworded.
+KEYWORDS="~amd64 ~x86"
 IUSE="+native-dns"
 
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-0.2:=
