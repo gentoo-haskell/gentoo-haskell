@@ -60,7 +60,6 @@ dev-haskell/servant-client-core
 >=dev-haskell/persistent-2.8.0
 >=dev-haskell/persistent-mysql-2.8
 >=dev-haskell/persistent-postgresql-2.8
->=dev-haskell/persistent-sqlite-2.8
 >=dev-haskell/resourcet-1.2
 >=dev-haskell/yesod-1.6
 >=dev-haskell/yesod-persistent-1.6
