@@ -15,8 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# No KEYWORDS as it depends on cabal >= 2.2.0.1 and some masked deps
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RESTRICT=test # installs packages from network
