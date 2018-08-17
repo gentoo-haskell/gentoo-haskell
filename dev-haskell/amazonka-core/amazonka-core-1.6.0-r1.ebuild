@@ -44,7 +44,6 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/xml-conduit-1.7.0.1:=[profile?]
 	>=dev-haskell/xml-types-0.3.4:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	<dev-haskell/http-types-0.11:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
