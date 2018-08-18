@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/boomerang-1.4:=[profile?] <dev-haskell/boomerang-1.5:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/safecopy-0.8:=[profile?] <dev-haskell/safecopy-0.10:=[profile?]
@@ -28,3 +28,11 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base          >= 4.6  && < 4.12' 'base          >= 4.6' \
+		'aeson         >= 0.9  && < 1.4' 'aeson         >= 0.9'
+}
