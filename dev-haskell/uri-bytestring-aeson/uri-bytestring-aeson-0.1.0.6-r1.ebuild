@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?]
 	>=dev-haskell/uri-bytestring-0.2:=[profile?] <dev-haskell/uri-bytestring-0.4:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -25,3 +25,11 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base             >= 4.9   && < 4.12' 'base             >= 4.9' \
+		'aeson            >= 0.11  && < 1.4' 'aeson            >= 0.11'
+}
