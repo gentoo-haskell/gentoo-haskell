@@ -48,4 +48,3 @@ dev-haskell/servant-client
 dev-haskell/listenbrainz-client
 >=dev-lang/purescript-0.12.0
 dev-haskell/servant-client-core
->=dev-haskell/http-reverse-proxy-0.5
