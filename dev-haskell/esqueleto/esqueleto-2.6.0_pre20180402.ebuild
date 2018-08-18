@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tries to access network
+
 RDEPEND="dev-haskell/blaze-html:=[profile?]
 	>=dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
