@@ -21,7 +21,7 @@ IUSE="+bibutils debug embed_data_files static test_citeproc unicode_collation"
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
 RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.3:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
@@ -53,6 +53,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 	test? ( !test_citeproc? ( >=dev-haskell/temporary-1.1 ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson >= 0.7 && < 1.4' 'aeson >= 0.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
