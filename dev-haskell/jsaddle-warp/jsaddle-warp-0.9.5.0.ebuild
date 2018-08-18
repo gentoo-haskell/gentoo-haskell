@@ -44,7 +44,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'http-types >=0.8.6 && <0.10' 'http-types >=0.8.6' \
 		'websockets >=0.9.5.0 && <0.11' 'websockets >=0.9.5.0' \
 		'doctest >=0.10.1 && <0.12' 'doctest >=0.10.1'
 }
