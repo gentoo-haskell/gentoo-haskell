@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="embed_data_files static trypandoc"
 
+RESTRICT=test # fails tests on newer skylighting versions
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
@@ -31,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	<dev-haskell/foundation-0.0.21:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.10:=[profile?]
-	>=dev-haskell/haddock-library-1.6:=[profile?] <dev-haskell/haddock-library-1.7:=[profile?]
+	>=dev-haskell/haddock-library-1.4:=[profile?] <dev-haskell/haddock-library-1.7:=[profile?]
 	>=dev-haskell/hslua-0.9.5:=[profile?] <dev-haskell/hslua-0.9.6:=[profile?]
 	>=dev-haskell/hslua-module-text-0.1.2:=[profile?] <dev-haskell/hslua-module-text-0.2:=[profile?]
 	>=dev-haskell/hsyaml-0.1.1.1:=[profile?] <dev-haskell/hsyaml-0.2:=[profile?]
@@ -68,14 +70,30 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
-	test? ( >=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
-		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.12
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.2
-		>=dev-haskell/tasty-golden-2.3 <dev-haskell/tasty-golden-2.4
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
+	test? ( >=dev-haskell/diff-0.2
+		>=dev-haskell/executable-path-0.0
+		>=dev-haskell/quickcheck-2.4
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-golden-2.3
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-2.2.3.2-haddock-library-1.4.patch )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haddock-library >= 1.6 && < 1.7' 'haddock-library >= 1.4 && < 1.7' \
+		'Diff >= 0.2 && < 0.4' 'Diff >= 0.2' \
+		'executable-path >= 0.0 && < 0.1' 'executable-path >= 0.0' \
+		'tasty >= 0.11 && < 1.2' 'tasty >= 0.11' \
+		'tasty-hunit >= 0.9 && < 0.11' 'tasty-hunit >= 0.9' \
+		'tasty-quickcheck >= 0.8 && < 0.11' 'tasty-quickcheck >= 0.8' \
+		'tasty-golden >= 2.3 && < 2.4' 'tasty-golden >= 2.3' \
+		'QuickCheck >= 2.4 && < 2.12' 'QuickCheck >= 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
