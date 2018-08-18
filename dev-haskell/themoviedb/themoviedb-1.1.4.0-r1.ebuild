@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="maintainer"
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/http-client-0.4.31:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -37,6 +37,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson              >= 0.6    && < 1.4' 'aeson              >= 0.6' \
 		'tasty       >= 0.10 && < 1.1' 'tasty       >= 0.10' \
 		'tasty-hunit >= 0.9  && < 0.11' 'tasty-hunit >= 0.9'
 }
