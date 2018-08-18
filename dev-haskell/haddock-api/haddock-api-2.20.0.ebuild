@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 #keep in sync with ghc-8.4.3
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cabal-2.2.0:=[profile?] <dev-haskell/cabal-2.3:=[profile?]
@@ -27,6 +27,13 @@ RDEPEND=">=dev-haskell/cabal-2.2.0:=[profile?] <dev-haskell/cabal-2.3:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.5
+	test? ( >=dev-haskell/hspec-2.4.4
 		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec           ^>= 2.4.4' 'hspec           >= 2.4.4'
+}
