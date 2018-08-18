@@ -47,38 +47,17 @@ dev-haskell/webkitgtk3-javascriptcore
 dev-haskell/servant-client
 dev-haskell/listenbrainz-client
 >=dev-lang/purescript-0.12.0
->=dev-haskell/binary-conduit-1.3
->=dev-haskell/conduit-1.3
 >=dev-haskell/yesod-bin-1.5.2.5
-<<<<<<< HEAD
->=dev-haskell/conduit-combinators-1.3.0
-=======
->=dev-haskell/hoauth2-1.6.2
->>>>>>> profiles/package.mask: adjust masks
->=dev-haskell/hoogle-5.0.17
-<<<<<<< HEAD
->=dev-haskell/http-conduit-2.3
-=======
->>>>>>> profiles/package.mask: unmask packages for dev-haskell/stack-1.7.1
 dev-haskell/servant-client-core
->=dev-haskell/resourcet-1.2
 >=dev-haskell/yesod-1.6
 >=dev-haskell/yesod-persistent-1.6
 >=dev-haskell/yesod-core-1.6
 >=dev-haskell/yesod-form-1.6
 >=dev-haskell/yesod-newsfeed-1.6.1.0
->=dev-haskell/xml-conduit-1.8
->=dev-haskell/cereal-conduit-0.8
 >=dev-haskell/http-reverse-proxy-0.5
 
 # Mark Wright <gienah@gentoo.org> (12 Feb 2018)
 # Mask more revdeps of masked versions
->=dev-haskell/aws-0.19-r1
->=dev-haskell/classy-prelude-1.4.0
->=dev-haskell/classy-prelude-conduit-1.4.0
->=dev-haskell/esqueleto-2.6.0_pre20180402
->=dev-haskell/hlint-2.1.0
->=dev-haskell/html-conduit-1.3
 >=dev-haskell/yesod-auth-1.6
 >=dev-haskell/yesod-bin-1.6
 >=dev-haskell/yesod-eventsource-1.6
