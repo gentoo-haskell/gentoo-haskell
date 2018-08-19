@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fails own test
+RESTRICT="test" # 2 out of 24 tests fail with pandoc 2.3
 
 RDEPEND=">=app-text/pandoc-2.2:=[profile?] <app-text/pandoc-2.3:=[profile?]
 	>=dev-haskell/data-accessor-0.2.2.6:=[profile?] <dev-haskell/data-accessor-0.3.0.0:=[profile?]
