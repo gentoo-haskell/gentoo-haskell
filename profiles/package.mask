@@ -47,19 +47,4 @@ dev-haskell/webkitgtk3-javascriptcore
 dev-haskell/servant-client
 dev-haskell/listenbrainz-client
 >=dev-lang/purescript-0.12.0
->=dev-haskell/yesod-bin-1.5.2.5
 dev-haskell/servant-client-core
->=dev-haskell/yesod-1.6
->=dev-haskell/yesod-persistent-1.6
->=dev-haskell/yesod-core-1.6
->=dev-haskell/yesod-form-1.6
->=dev-haskell/yesod-newsfeed-1.6.1.0
->=dev-haskell/http-reverse-proxy-0.5
-
-# Mark Wright <gienah@gentoo.org> (12 Feb 2018)
-# Mask more revdeps of masked versions
->=dev-haskell/yesod-auth-1.6
->=dev-haskell/yesod-bin-1.6
->=dev-haskell/yesod-eventsource-1.6
->=dev-haskell/yesod-static-1.6
->=dev-haskell/yesod-test-1.6
