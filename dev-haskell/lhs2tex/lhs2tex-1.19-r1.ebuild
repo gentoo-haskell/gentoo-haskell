@@ -1,10 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 CABAL_FEATURES="bin"
-inherit base haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Preprocessor for typesetting Haskell sources with LaTeX"
 HOMEPAGE="http://www.andres-loeh.de/lhs2tex/"
@@ -30,4 +30,7 @@ DEPEND="${RDEPEND}
 HCFLAGS+=" -ignore-package=regex-compat-tdfa"
 
 # datadir is /usr/share/${PN}/${GHC_VER} so mandir is ${DATADIR}/../../man
-PATCHES=("${FILESDIR}/${PN}-1.18.1-mandir.patch")
+PATCHES=(
+	"${FILESDIR}/${PN}-1.18.1-mandir.patch"
+	"${FILESDIR}/${PN}-1.19-ghc-84.patch"
+)
