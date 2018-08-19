@@ -46,5 +46,4 @@ dev-haskell/webkitgtk3-javascriptcore
 >=dev-haskell/aeson-1.3
 dev-haskell/servant-client
 dev-haskell/listenbrainz-client
->=dev-lang/purescript-0.12.0
 dev-haskell/servant-client-core
