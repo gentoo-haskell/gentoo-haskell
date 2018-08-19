@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,5 +31,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory           >= 1.0     && < 1.3' 'directory           >= 1.0'
+		'directory           >= 1.0     && < 1.3' 'directory           >= 1.0' \
+		'template-haskell    >= 2.2     && < 2.12' 'template-haskell    >= 2.2'
 }
