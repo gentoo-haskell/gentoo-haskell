@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+use-network-uri"
+IUSE="+network-uri"
 
 RESTRICT=test # QC-2.10 finds counterexamples
 
@@ -30,9 +30,9 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-b
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	>=dev-haskell/old-locale-1.0:=[profile?]
-	use-network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.8:=[profile?]
+	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.8:=[profile?]
 				>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
-	!use-network-uri? ( >=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
+	!network-uri? ( >=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.10
 		>=dev-haskell/tasty-quickcheck-0.10
 		>=dev-haskell/temporary-1.2
-		!use-network-uri? ( dev-haskell/network-uri ) )
+		!network-uri? ( dev-haskell/network-uri ) )
 "
 
 src_prepare() {
@@ -59,5 +59,5 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag use-network-uri use-network-uri)
+		$(cabal_flag network-uri use-network-uri)
 }
