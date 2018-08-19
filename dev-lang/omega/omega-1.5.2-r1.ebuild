@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,4 +27,5 @@ PATCHES=(
 	"${FILESDIR}"/${P}-ghc-7.10.patch
 	"${FILESDIR}"/${P}-ghc-8.patch
 	"${FILESDIR}"/${P}-ghc-802.patch
+	"${FILESDIR}"/${P}-ghc-84.patch
 )
