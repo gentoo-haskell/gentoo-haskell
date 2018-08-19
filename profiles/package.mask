@@ -1,3 +1,11 @@
+# Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
+# app-emacs/ghc-mod needs porting to GHC 8.4 and
+# >=dev-haskell/hlint-2.1. Upstream porting is
+# currently underway.
+# https://github.com/DanielG/ghc-mod/issues/931
+app-emacs/ghc-mod
+dev-haskell/hare
+
 # Jack Todaro <jackmtodaro@gmail.com> (6 Aug 2018)
 # tagsoup-megaparsec is incompatible with megaparsec-6.0
 # https://github.com/gentoo-haskell/gentoo-haskell/pull/762
