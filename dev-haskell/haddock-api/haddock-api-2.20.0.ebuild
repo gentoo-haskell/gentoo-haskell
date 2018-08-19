@@ -28,12 +28,13 @@ RDEPEND=">=dev-haskell/cabal-2.2.0:=[profile?] <dev-haskell/cabal-2.3:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hspec-2.4.4
-		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 )
+		>=dev-haskell/quickcheck-2.11 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hspec           ^>= 2.4.4' 'hspec           >= 2.4.4'
+		'hspec           ^>= 2.4.4' 'hspec           >= 2.4.4' \
+		'QuickCheck      ^>= 2.11' 'QuickCheck      >= 2.11'
 }

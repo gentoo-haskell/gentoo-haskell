@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # tests fail with pandoc 2
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -54,6 +54,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson                      >= 0.6     && < 1.4' 'aeson                      >= 0.6' \
 		'base                       >= 4.5     && < 4.12' 'base                       >= 4.5' \
 		'QuickCheck                 >= 2        && < 2.12' 'QuickCheck                 >= 2' \
 		'lens                       >= 4.3      && < 4.17' 'lens                       >= 4.3'

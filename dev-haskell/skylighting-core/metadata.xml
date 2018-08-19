@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Build the skylighting executable.</flag>
+	</use>
 	<longdescription>
 		Skylighting is a syntax highlighting library.
 		It derives its tokenizers from XML syntax
@@ -19,8 +22,4 @@
 		bundles XML parser definitions licensed under the
 		GPL.
 	</longdescription>
-	<use>
-	  <flag name="executable">Build skylighting CLI tools</flag>
-	  <flag name="system-pcre">Use regex-pcre instead of regex-pcre-builtin</flag>
-	</use>
 </pkgmetadata>

@@ -37,3 +37,4 @@ dev-haskell/webkitgtk3-javascriptcore
 # Most of them need to be ported to newer version.
 >=dev-haskell/aeson-1.3
 dev-haskell/listenbrainz-client
+dev-haskell/skylighting-core
