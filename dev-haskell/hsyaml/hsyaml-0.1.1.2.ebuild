@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
+RDEPEND=">=dev-haskell/dlist-0.8.0.4:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/nats-1.1.2:=[profile?] <dev-haskell/nats-1.2:=[profile?]
