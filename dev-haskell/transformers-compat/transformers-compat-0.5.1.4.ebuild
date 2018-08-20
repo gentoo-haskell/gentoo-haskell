@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -7,6 +7,9 @@ EAPI=5
 #hackport: flags: -two,+mtl
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+# break circular dependencies:
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/810
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="A small compatibility shim for dev-haskell/transformers"
@@ -22,9 +25,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8
-"
+DEPEND="${RDEPEND}"
 
 src_configure() {
 	local tf_arg=()

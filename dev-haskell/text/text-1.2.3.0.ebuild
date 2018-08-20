@@ -7,6 +7,9 @@ EAPI=6
 #hackport: flags: -bytestring-builder,-developer
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+# break circular dependencies:
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/810
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="An efficient packed Unicode text type"
@@ -23,7 +26,6 @@ RESTRICT=test # break cyclic dependencies
 RDEPEND=">=dev-lang/ghc-7.8.2:="
 
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.7
 		>=dev-haskell/quickcheck-unicode-1.0.1.0
