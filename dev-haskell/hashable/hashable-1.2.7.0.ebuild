@@ -7,6 +7,9 @@ EAPI=6
 #hackport: flags: sse41:cpu_flags_x86_sse4_1,sse2:cpu_flags_x86_sse2,integer-gmp:gmp
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+# break circular dependencies:
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/810
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="A class for types that can be converted to a hash value"
@@ -24,7 +27,6 @@ RDEPEND=">=dev-haskell/text-0.11.0.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.12
 	test? ( dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.4.0.1
 		>=dev-haskell/random-1.0 <dev-haskell/random-1.2
