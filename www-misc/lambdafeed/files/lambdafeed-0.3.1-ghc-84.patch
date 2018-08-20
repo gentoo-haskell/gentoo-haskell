@@ -1,0 +1,8 @@
+diff --git a/RSS.hs b/RSS.hs
+index b588d9d..e4d4e91 100644
+--- a/RSS.hs
++++ b/RSS.hs
+@@ -28,2 +28,3 @@ import Feed (
+   GUID(..), Source(..))
++import Prelude hiding ((<>))
+ 
