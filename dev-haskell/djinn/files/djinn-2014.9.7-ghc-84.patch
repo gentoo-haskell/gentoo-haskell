@@ -1,0 +1,6 @@
+--- a/src/HTypes.hs
++++ b/src/HTypes.hs
+@@ -16,2 +16,3 @@ import Text.ParserCombinators.ReadP
+ import LJTFormula
++import Prelude hiding ((<>))
+ 
