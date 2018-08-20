@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/io-streams-haproxy-1.0:=[profile?] <dev-haskell/io-streams-haproxy-1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.8:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
@@ -53,6 +53,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/threads-0.5 <dev-haskell/threads-0.6
 		>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.6 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'network                             >= 2.3      && < 2.7' 'network >= 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

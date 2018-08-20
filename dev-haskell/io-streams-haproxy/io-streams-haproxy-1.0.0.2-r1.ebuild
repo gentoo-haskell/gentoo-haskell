@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.7:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.6:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -34,4 +34,5 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base              >= 4.5 && < 4.11' 'base              >= 4.5'
+		'network           >= 2.3 && < 2.7' 'network           >= 2.3'
 }
