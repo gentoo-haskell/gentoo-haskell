@@ -1,0 +1,11 @@
+--- a/imagepaste.cabal
++++ b/imagepaste.cabal
+@@ -34,7 +34,7 @@ Executable imagepaste
+                        Processing,
+                        Proxy,
+                        Runner,
+-                       Tests,
++                       -- Tests,
+                        Tools,
+                        Version
+ 
