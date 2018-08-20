@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,7 +30,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.17.0.1-gentoo-blas.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.17.0.1-gentoo-blas.patch
+	"${FILESDIR}"/${PN}-0.17.0.2-ghc84.patch
+)
 
 src_prepare() {
 	default
