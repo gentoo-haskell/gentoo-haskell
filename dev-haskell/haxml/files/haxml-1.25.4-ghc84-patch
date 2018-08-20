@@ -1,0 +1,102 @@
+--- a/HaXml.cabal
++++ b/HaXml.cabal
+@@ -70,2 +70,4 @@ library
+   build-depends: polyparse >= 1.10, filepath
++  if !impl(ghc >= 8.0)
++    build-depends: semigroups == 0.18.*
+   if flag(splitBase)
+--- a/src/Text/XML/HaXml/ByteStringPP.hs
++++ b/src/Text/XML/HaXml/ByteStringPP.hs
+@@ -22,3 +22,3 @@ module Text.XML.HaXml.ByteStringPP
+ 
+-import Prelude hiding (maybe,either,elem,concat)
++import Prelude hiding (maybe,either,elem,concat,(<>))
+ import Data.Maybe hiding (maybe)
+--- a/src/Text/XML/HaXml/DtdToHaskell/Instance.hs
++++ b/src/Text/XML/HaXml/DtdToHaskell/Instance.hs
+@@ -8,2 +8,3 @@ import Text.XML.HaXml.DtdToHaskell.TypeDef
+ import Text.PrettyPrint.HughesPJ
++import Prelude hiding ((<>))
+ 
+--- a/src/Text/XML/HaXml/DtdToHaskell/TypeDef.hs
++++ b/src/Text/XML/HaXml/DtdToHaskell/TypeDef.hs
+@@ -23,3 +23,3 @@ import Data.List (intersperse)
+ import Text.PrettyPrint.HughesPJ
+-
++import Prelude hiding ((<>))
+ 
+--- a/src/Text/XML/HaXml/Html/Pretty.hs
++++ b/src/Text/XML/HaXml/Html/Pretty.hs
+@@ -10,3 +10,3 @@ module Text.XML.HaXml.Html.Pretty
+ 
+-import Prelude hiding (maybe,either)
++import Prelude hiding (maybe,either,(<>))
+ import Data.Maybe hiding (maybe)
+--- a/src/Text/XML/HaXml/Pretty.hs
++++ b/src/Text/XML/HaXml/Pretty.hs
+@@ -23,3 +23,3 @@ module Text.XML.HaXml.Pretty
+ 
+-import Prelude hiding (maybe,either)
++import Prelude hiding (maybe,either,(<>))
+ import Data.Maybe hiding (maybe)
+--- a/src/Text/XML/HaXml/Schema/PrettyHaskell.hs
++++ b/src/Text/XML/HaXml/Schema/PrettyHaskell.hs
+@@ -21,2 +21,3 @@ import Data.Maybe (isJust,fromJust,fromMaybe,catMaybes)
+ import Data.Char (toLower)
++import Prelude hiding ((<>))
+ 
+--- a/src/Text/XML/HaXml/Schema/PrettyHsBoot.hs
++++ b/src/Text/XML/HaXml/Schema/PrettyHsBoot.hs
+@@ -20,2 +20,3 @@ import Data.List (intersperse,notElem,inits)
+ import Data.Maybe (isJust,fromJust,catMaybes)
++import Prelude hiding ((<>))
+ 
+--- a/src/Text/XML/HaXml/Schema/TypeConversion.hs
++++ b/src/Text/XML/HaXml/Schema/TypeConversion.hs
+@@ -18,2 +18,3 @@ import Data.Maybe (fromMaybe,fromJust,isNothing,isJust)
+ import Data.Monoid
++import qualified Data.Semigroup as Sem
+ 
+@@ -540,2 +541,12 @@ consolidate (Occurs min max) (UnorderedMaxLength,_,n) =
+ 
++instance Sem.Semigroup Occurs where
++    (Occurs Nothing  Nothing)  <> o  = o
++    (Occurs (Just z) Nothing)  <> (Occurs min max)
++                               = Occurs (Just $ maybe z (*z) min) max
++    (Occurs Nothing  (Just x)) <> (Occurs min max)
++                               = Occurs min (Just $ maybe x (*x) max)
++    (Occurs (Just z) (Just x)) <> (Occurs min max)
++                                        = Occurs (Just $ maybe z (*z) min)
++                                                 (Just $ maybe x (*x) max)
++
+ instance Monoid Occurs where
+--- a/src/Text/XML/HaXml/Schema/XSDTypeModel.hs
++++ b/src/Text/XML/HaXml/Schema/XSDTypeModel.hs
+@@ -6,2 +6,3 @@ import Data.Monoid hiding (Any)
+ import Text.XML.HaXml.Types      (Name,Namespace,QName)
++import qualified Data.Semigroup as Sem
+ 
+@@ -293,2 +294,7 @@ type TypeName      = String
+ 
++instance Sem.Semigroup Annotation where
++  (Documentation d) <> (Documentation e) = Documentation (d++"\n"++e)
++  _                 <> (Documentation e) = Documentation e
++  ann               <> _                 = ann
++
+ instance Monoid Annotation where
+@@ -299,2 +305,5 @@ instance Monoid Annotation where
+ 
++instance Sem.Semigroup Schema where
++  s <> t = s{ schema_items = schema_items s ++ schema_items t }
++
+ -- This instance is pretty unsatisfactory, and is useful only for
+@@ -306,2 +315 @@ instance Monoid Schema where
+   s `mappend` t = s{ schema_items = schema_items s ++ schema_items t }
+-
+--- a/src/Text/XML/HaXml/ShowXmlLazy.hs
++++ b/src/Text/XML/HaXml/ShowXmlLazy.hs
+@@ -7,3 +7,3 @@ import Text.XML.HaXml.TypeMapping -- (toHType, toDTD, Tuple(), Defined, showHTyp
+ import qualified Text.XML.HaXml.XmlContent as X
+-import Prelude hiding (maybe,either)
++import Prelude hiding (maybe,either,(<>))
+ import Data.Maybe hiding (maybe)
