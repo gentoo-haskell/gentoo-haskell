@@ -1,0 +1,112 @@
+diff --git a/Data/Vector/Transform/T1.hs b/Data/Vector/Transform/T1.hs
+index bc892a8..ea4afe8 100644
+--- a/Data/Vector/Transform/T1.hs
++++ b/Data/Vector/Transform/T1.hs
+@@ -10,2 +10,3 @@ import Data.Vector.Class
+ import Data.Vector.V1
++import qualified Data.Semigroup as S
+ 
+@@ -23,2 +24,9 @@ data Transform1 =
+ 
++instance S.Semigroup Transform1 where
++  (<>) a b =
++    Transform1
++    {
++      t1_XX = t1_XX a * t1_XX b,
++      t1_1X = t1_1X a * t1_XX b  +  t1_1X b
++    }
+ instance Monoid Transform1 where
+diff --git a/Data/Vector/Transform/T2.hs b/Data/Vector/Transform/T2.hs
+index 1011935..f0fd179 100644
+--- a/Data/Vector/Transform/T2.hs
++++ b/Data/Vector/Transform/T2.hs
+@@ -10,2 +10,3 @@ import Data.Vector.Class
+ import Data.Vector.V2
++import qualified Data.Semigroup as S
+ 
+@@ -24,2 +25,14 @@ data Transform2 =
+ 
++instance S.Semigroup Transform2 where
++  (<>) a b =
++    Transform2
++    {
++      t2_XX = t2_XX a * t2_XX b  +  t2_XY a * t2_YX b,
++      t2_YX = t2_YX a * t2_XX b  +  t2_YY a * t2_YX b,
++      t2_1X = t2_1X a * t2_XX b  +  t2_1Y a * t2_YX b  +  t2_1X b,
++
++      t2_XY = t2_XX a * t2_XY b  +  t2_XY a * t2_YY b,
++      t2_YY = t2_YX a * t2_XY b  +  t2_YY a * t2_YY b,
++      t2_1Y = t2_1X a * t2_XY b  +  t2_1Y a * t2_YY b  +  t2_1Y b
++    }
+ instance Monoid Transform2 where
+diff --git a/Data/Vector/Transform/T3.hs b/Data/Vector/Transform/T3.hs
+index 486eadf..b293dcc 100644
+--- a/Data/Vector/Transform/T3.hs
++++ b/Data/Vector/Transform/T3.hs
+@@ -10,3 +10,3 @@ import Data.Vector.Class
+ import Data.Vector.V3
+-
++import qualified Data.Semigroup as S
+ {- |
+@@ -25,2 +25,21 @@ data Transform3 =
+ 
++instance S.Semigroup Transform3 where
++  (<>) a b =
++    Transform3
++    {
++      t3_XX = t3_XX a * t3_XX b  +  t3_XY a * t3_YX b  +  t3_XZ a * t3_ZX b,
++      t3_YX = t3_YX a * t3_XX b  +  t3_YY a * t3_YX b  +  t3_YZ a * t3_ZX b,
++      t3_ZX = t3_ZX a * t3_XX b  +  t3_ZY a * t3_YX b  +  t3_ZZ a * t3_ZX b,
++      t3_1X = t3_1X a * t3_XX b  +  t3_1Y a * t3_YX b  +  t3_1Z a * t3_ZX b  +  t3_1X b,
++
++      t3_XY = t3_XX a * t3_XY b  +  t3_XY a * t3_YY b  +  t3_XZ a * t3_ZY b,
++      t3_YY = t3_YX a * t3_XY b  +  t3_YY a * t3_YY b  +  t3_YZ a * t3_ZY b,
++      t3_ZY = t3_ZX a * t3_XY b  +  t3_ZY a * t3_YY b  +  t3_ZZ a * t3_ZY b,
++      t3_1Y = t3_1X a * t3_XY b  +  t3_1Y a * t3_YY b  +  t3_1Z a * t3_ZY b  +  t3_1Y b,
++
++      t3_XZ = t3_XX a * t3_XZ b  +  t3_XY a * t3_YZ b  +  t3_XZ a * t3_ZZ b,
++      t3_YZ = t3_YX a * t3_XZ b  +  t3_YY a * t3_YZ b  +  t3_YZ a * t3_ZZ b,
++      t3_ZZ = t3_ZX a * t3_XZ b  +  t3_ZY a * t3_YZ b  +  t3_ZZ a * t3_ZZ b,
++      t3_1Z = t3_1X a * t3_XZ b  +  t3_1Y a * t3_YZ b  +  t3_1Z a * t3_ZZ b  +  t3_1Z b
++    }
+ instance Monoid Transform3 where
+diff --git a/Data/Vector/Transform/T4.hs b/Data/Vector/Transform/T4.hs
+index ec57a08..892f53a 100644
+--- a/Data/Vector/Transform/T4.hs
++++ b/Data/Vector/Transform/T4.hs
+@@ -10,3 +10,3 @@ import Data.Vector.Class
+ import Data.Vector.V4
+-
++import qualified Data.Semigroup as S
+ {- |
+@@ -26,2 +26,30 @@ data Transform4 =
+ 
++instance S.Semigroup Transform4 where
++  (<>) a b =
++    Transform4
++    {
++      t4_XX = t4_XX a * t4_XX b  +  t4_XY a * t4_YX b  +  t4_XZ a * t4_ZX b  +  t4_XW a * t4_WX b,
++      t4_YX = t4_YX a * t4_XX b  +  t4_YY a * t4_YX b  +  t4_YZ a * t4_ZX b  +  t4_YW a * t4_WX b,
++      t4_ZX = t4_ZX a * t4_XX b  +  t4_ZY a * t4_YX b  +  t4_ZZ a * t4_ZX b  +  t4_ZW a * t4_WX b,
++      t4_WX = t4_WX a * t4_XX b  +  t4_WY a * t4_YX b  +  t4_WZ a * t4_ZX b  +  t4_WW a * t4_WX b,
++      t4_1X = t4_1X a * t4_XX b  +  t4_1Y a * t4_YX b  +  t4_1Z a * t4_ZX b  +  t4_1W a * t4_WX b  +  t4_1X b,
++
++      t4_XY = t4_XX a * t4_XY b  +  t4_XY a * t4_YY b  +  t4_XZ a * t4_ZY b  +  t4_XW a * t4_WY b,
++      t4_YY = t4_YX a * t4_XY b  +  t4_YY a * t4_YY b  +  t4_YZ a * t4_ZY b  +  t4_YW a * t4_WY b,
++      t4_ZY = t4_ZX a * t4_XY b  +  t4_ZY a * t4_YY b  +  t4_ZZ a * t4_ZY b  +  t4_ZW a * t4_WY b,
++      t4_WY = t4_WX a * t4_XY b  +  t4_WY a * t4_YY b  +  t4_WZ a * t4_ZY b  +  t4_WW a * t4_WY b,
++      t4_1Y = t4_1X a * t4_XY b  +  t4_1Y a * t4_YY b  +  t4_1Z a * t4_ZY b  +  t4_1W a * t4_WY b  +  t4_1Y b,
++
++      t4_XZ = t4_XX a * t4_XZ b  +  t4_XY a * t4_YZ b  +  t4_XZ a * t4_ZZ b  +  t4_XW a * t4_WZ b,
++      t4_YZ = t4_YX a * t4_XZ b  +  t4_YY a * t4_YZ b  +  t4_YZ a * t4_ZZ b  +  t4_YW a * t4_WZ b,
++      t4_ZZ = t4_ZX a * t4_XZ b  +  t4_ZY a * t4_YZ b  +  t4_ZZ a * t4_ZZ b  +  t4_ZW a * t4_WZ b,
++      t4_WZ = t4_WX a * t4_XZ b  +  t4_WY a * t4_YZ b  +  t4_WZ a * t4_ZZ b  +  t4_WW a * t4_WZ b,
++      t4_1Z = t4_1X a * t4_XZ b  +  t4_1Y a * t4_YZ b  +  t4_1Z a * t4_ZZ b  +  t4_1W a * t4_WZ b  +  t4_1Z b,
++
++      t4_XW = t4_XX a * t4_XW b  +  t4_XY a * t4_YW b  +  t4_XZ a * t4_ZW b  +  t4_XW a * t4_WW b,
++      t4_YW = t4_YX a * t4_XW b  +  t4_YY a * t4_YW b  +  t4_YZ a * t4_ZW b  +  t4_YW a * t4_WW b,
++      t4_ZW = t4_ZX a * t4_XW b  +  t4_ZY a * t4_YW b  +  t4_ZZ a * t4_ZW b  +  t4_ZW a * t4_WW b,
++      t4_WW = t4_WX a * t4_XW b  +  t4_WY a * t4_YW b  +  t4_WZ a * t4_ZW b  +  t4_WW a * t4_WW b,
++      t4_1W = t4_1X a * t4_XW b  +  t4_1Y a * t4_YW b  +  t4_1Z a * t4_ZW b  +  t4_1W a * t4_WW b  +  t4_1W b
++    }
+ instance Monoid Transform4 where
