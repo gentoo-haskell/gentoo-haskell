@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,6 +7,9 @@ EAPI=6
 #hackport: flags: +deepseq,+transformers
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+# break circular dependencies:
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/810
+CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell 98 phantom types to avoid unsafely passing dummy arguments"
@@ -22,9 +25,7 @@ RDEPEND=">=dev-haskell/transformers-0.2:=[profile?] <dev-haskell/transformers-0.
 	>=dev-haskell/transformers-compat-0.5:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
-"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
