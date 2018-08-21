@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,11 +26,15 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.2 )
 "
 
-PATCHES=("${FILESDIR}"/${P}-hunit-1.6.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-hunit-1.6.patch
+	"${FILESDIR}"/${P}-ghc84.patch
+)
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2'
+		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2' \
+		'template-haskell >= 2.7 && < 2.12' 'template-haskell >= 2.7'
 }
