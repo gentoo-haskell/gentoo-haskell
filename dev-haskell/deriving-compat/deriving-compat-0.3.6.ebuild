@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,3 +28,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2 <dev-haskell/quickcheck-3
 		>=dev-haskell/tagged-0.7 <dev-haskell/tagged-1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell    >= 2.11 && < 2.13' 'template-haskell    >= 2.11'
+}
