@@ -1,0 +1,18 @@
+--- a/Algebra/Classes.hs
++++ b/Algebra/Classes.hs
+@@ -13,2 +13,3 @@ import Data.Binary
+ import GHC.Generics
++import qualified Data.Semigroup as S
+ 
+@@ -29,2 +30,5 @@ instance Binary a => Binary (Sum a)
+ 
++instance Additive a => S.Semigroup (Sum a) where
++  (<>) (Sum x) (Sum y) = Sum (x + y)
++
+ instance Additive a => Monoid (Sum a) where
+@@ -35,2 +39,5 @@ newtype Product a = Product {fromProduct :: a}
+ 
++instance Multiplicative a => S.Semigroup (Product a) where
++  (<>) (Product x) (Product y) = Product (x * y)
++
+ instance Multiplicative a => Monoid (Product a) where
