@@ -1,0 +1,9 @@
+diff --git a/System/SimpleArgs.hs b/System/SimpleArgs.hs
+index 085dbb6..08f9d31 100644
+--- a/System/SimpleArgs.hs
++++ b/System/SimpleArgs.hs
+@@ -25,3 +25,3 @@ module System.SimpleArgs (Args, getArgs) where
+ import qualified System.Environment as S (getArgs)
+-import Data.Dynamic (Typeable, typeOf)
++import Data.Typeable (Typeable, typeOf)
+ 
