@@ -1,6 +1,4 @@
-diff --git a/src/System/Console/CmdTheLine/Manpage.hs b/src/System/Console/CmdTheLine/Manpage.hs
-index b3c0d89..b767dc9 100644
---- src/System/Console/CmdTheLine/Manpage.hs
-+++ src/System/Console/CmdTheLine/Manpage.hs
+--- a/src/System/Console/CmdTheLine/Manpage.hs
++++ b/src/System/Console/CmdTheLine/Manpage.hs
 @@ -0,0 +1 @@
 +{-# LANGUAGE FlexibleContexts #-}
