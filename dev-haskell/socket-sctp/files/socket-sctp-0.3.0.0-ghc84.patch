@@ -1,0 +1,28 @@
+--- a/src/System/Socket/Protocol/SCTP/Internal.hsc
++++ b/src/System/Socket/Protocol/SCTP/Internal.hsc
+@@ -75,2 +75,4 @@ import System.Socket.Type.Stream
+ 
++import qualified Data.Semigroup as S
++
+ #if __GLASGOW_HASKELL__ < 800
+@@ -117,2 +119,5 @@ newtype SendmsgFlags
+ 
++instance S.Semigroup SendmsgFlags where
++  (<>) = (.|.)
++
+ instance Monoid SendmsgFlags where
+@@ -344,2 +349,14 @@ data Events
+ 
++instance S.Semigroup Events where
++  (<>) a b = Events
++    (max (dataIOEvent          a) (dataIOEvent          b))
++    (max (associationEvent     a) (associationEvent     b))
++    (max (addressEvent         a) (addressEvent         b))
++    (max (sendFailureEvent     a) (sendFailureEvent     b))
++    (max (peerErrorEvent       a) (peerErrorEvent       b))
++    (max (shutdownEvent        a) (shutdownEvent        b))
++    (max (partialDeliveryEvent a) (partialDeliveryEvent b))
++    (max (adaptationLayerEvent a) (adaptationLayerEvent b))
++    (max (authenticationEvent  a) (authenticationEvent  b))
++
+ instance Monoid Events where
