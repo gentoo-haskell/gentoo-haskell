@@ -1,0 +1,7 @@
+--- a/Data/Compression/Huffman.hs
++++ b/Data/Compression/Huffman.hs
+@@ -14,3 +14,3 @@ import Control.Arrow (first,second)
+ import qualified Data.PriorityQueue.FingerTree as PQ
+-import Data.Sequence as S
++import Data.Sequence as S hiding (Empty)
+ 
