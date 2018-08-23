@@ -1,0 +1,6 @@
+--- a/Data/PPrint.hs
++++ b/Data/PPrint.hs
+@@ -14,2 +14,3 @@ import Text.PrettyPrint.HughesPJ (fsep, nest, text, vcat, (<>), (<+>), ($+$))
+ import Data.Data (Data)
++import Prelude hiding ((<>))
+ 
