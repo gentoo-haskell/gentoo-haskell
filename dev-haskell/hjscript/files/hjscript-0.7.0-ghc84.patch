@@ -1,0 +1,14 @@
+--- a/src/HJScript/Monad.hs
++++ b/src/HJScript/Monad.hs
+@@ -31,2 +31,3 @@ import Control.Monad.State
+ import HSP (XMLGenT, unXMLGenT)
++import qualified Data.Semigroup as S
+ 
+@@ -47,2 +48,7 @@ instance Show (HJScript ()) where
+ 
++instance S.Semigroup (Block ()) where
++  (<>) EmptyBlock b = b
++  (<>) b EmptyBlock = b
++  (<>) b1 (Sequence b2 s) = Sequence (mappend b1 b2) s
++
+ -- | Block as a Monoid
