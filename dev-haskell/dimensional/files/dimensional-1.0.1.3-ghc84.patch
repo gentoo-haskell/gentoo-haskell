@@ -1,0 +1,24 @@
+--- a/src/Numeric/Units/Dimensional/Dimensions/TermLevel.hs
++++ b/src/Numeric/Units/Dimensional/Dimensions/TermLevel.hs
+@@ -33,2 +33,3 @@ import Prelude (id, (+), (-), Int, Show, Eq, Ord)
+ import qualified Prelude as P
++import qualified Data.Semigroup as S
+ 
+@@ -40,2 +41,5 @@ data Dimension' = Dim' !Int !Int !Int !Int !Int !Int !Int
+ 
++
++instance S.Semigroup Dimension' where
++  (<>) = (*)
+ -- | The monoid of dimensions under multiplication.
+--- a/src/Numeric/Units/Dimensional/Internal.hs
++++ b/src/Numeric/Units/Dimensional/Internal.hs
+@@ -51,2 +51,3 @@ import Prelude
+   )
++import qualified Data.Semigroup as S
+ 
+@@ -123,2 +124,5 @@ we will define a monoid instance that adds.
+ 
++
++instance (Num a) => S.Semigroup (Quantity d a) where
++  (<>) = liftQ2 (+)
+ -- | 'Quantity's of a given 'Dimension' form a 'Monoid' under addition.
