@@ -1,0 +1,12 @@
+--- a/src/Control/Applicative/Interleaved.hs
++++ b/src/Control/Applicative/Interleaved.hs
+@@ -34,2 +34,3 @@ import Data.Monoid
+ #endif
++import qualified Data.Semigroup as S
+ 
+@@ -57,2 +58,5 @@ class Splittable f where
+ 
++instance Functor f => S.Semigroup (Gram f (r -> r)) where
++  (<>) p q = (.) <$> p <||> q
++
+ instance Functor f => Monoid (Gram f (r -> r)) where
