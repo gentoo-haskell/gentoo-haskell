@@ -1,0 +1,12 @@
+--- a/src/Control/Varying/Core.hs
++++ b/src/Control/Varying/Core.hs
+@@ -62,2 +62,3 @@ import Data.Monoid
+ #endif
++import qualified Data.Semigroup as S
+ --------------------------------------------------------------------------------
+@@ -154,2 +155,5 @@ instance (Applicative m, Monad m) => Arrow (VarT m) where
+ 
++instance (Applicative m, Monad m, Monoid b) => S.Semigroup (VarT m a b) where
++  (<>) = liftA2 mappend
++
+ -- | Streams can be monoids
