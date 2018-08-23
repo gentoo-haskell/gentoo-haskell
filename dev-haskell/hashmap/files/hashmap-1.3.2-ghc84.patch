@@ -1,0 +1,26 @@
+--- a/Data/HashMap.hs
++++ b/Data/HashMap.hs
+@@ -135,3 +135,3 @@ import qualified Data.Map as M
+ import qualified Data.Set as S
+-
++import qualified Data.Semigroup as S
+ 
+@@ -178,2 +178,5 @@ instance Functor (Map k) where
+ 
++instance Ord k => S.Semigroup (Map k a) where
++  (<>) = union
++
+ instance Ord k => Monoid (Map k a) where
+--- a/Data/HashSet.hs
++++ b/Data/HashSet.hs
+@@ -84,3 +84,3 @@ import qualified Data.IntMap as I
+ import qualified Data.Set as S
+-
++import qualified Data.Semigroup as S
+ 
+@@ -117,2 +117,5 @@ instance NFData a => NFData (Set a) where
+ 
++instance Ord a => S.Semigroup (Set a) where
++  (<>) = union
++
+ instance Ord a => Monoid (Set a) where
