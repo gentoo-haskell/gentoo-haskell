@@ -1,0 +1,19 @@
+--- a/Sound/HTagLib/Setter.hs
++++ b/Sound/HTagLib/Setter.hs
+@@ -34,2 +34,3 @@ import Sound.HTagLib.Type
+ import qualified Sound.HTagLib.Internal as I
++import qualified Data.Semigroup as S
+ 
+@@ -57,2 +58,12 @@ data TagSetter = TagSetter
+ 
++instance S.Semigroup TagSetter where
++  (<>) x y = let f g = g x <|> g y in TagSetter
++    { sdTitle       = f sdTitle
++    , sdArtist      = f sdArtist
++    , sdAlbum       = f sdAlbum
++    , sdComment     = f sdComment
++    , sdGenre       = f sdGenre
++    , sdYear        = f sdYear
++    , sdTrackNumber = f sdTrackNumber }
++
+ instance Monoid TagSetter where
