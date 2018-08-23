@@ -1,0 +1,38 @@
+--- a/src/Control/Monad/Trans/ReaderWriterIO.hs
++++ b/src/Control/Monad/Trans/ReaderWriterIO.hs
+@@ -17,2 +17,3 @@ import Data.IORef
+ import Data.Monoid
++import qualified Data.Semigroup as S
+ 
+@@ -37,2 +38,5 @@ instance MonadTrans (ReaderWriterIOT r w)               where lift = liftR
+ 
++instance (Monad m, a ~ ()) => S.Semigroup (ReaderWriterIOT r w m a) where
++    mx <> my = mx >> my
++
+ instance (Monad m, a ~ ()) => Monoid (ReaderWriterIOT r w m a) where
+--- a/src/Reactive/Banana/Prim/Types.hs
++++ b/src/Reactive/Banana/Prim/Types.hs
+@@ -21,2 +21,4 @@ import Reactive.Banana.Prim.Util
+ 
++import qualified Data.Semigroup as S
++
+ {-----------------------------------------------------------------------------
+@@ -53,2 +55,5 @@ newtype BuildW = BuildW (DependencyBuilder, [Output], Action, Maybe (Build ()))
+ 
++instance S.Semigroup BuildW where
++    (BuildW x) <> (BuildW y) = BuildW (x `mappend` y)
++
+ instance Monoid BuildW where
+@@ -72,2 +77,6 @@ ground = 0
+ newtype Action = Action { doit :: IO () }
++
++instance S.Semigroup Action where
++    (Action x) <> (Action y) = Action (x >> y)
++
+ instance Monoid Action where
+@@ -187,2 +196,5 @@ next (T n) = T (n+1)
+ 
++instance S.Semigroup Time where
++    (<>) (T x) (T y) = T (max x y)
++
+ instance Monoid Time where
