@@ -1,0 +1,16 @@
+--- a/Data/PurePriorityQueue/Internal.hs
++++ b/Data/PurePriorityQueue/Internal.hs
+@@ -26,2 +26,3 @@ import Prelude hiding (filter, null)
+ import qualified Prelude
++import qualified Data.Semigroup as S
+ 
+@@ -179,2 +180,9 @@ instance F.Foldable (MinMaxQueue p) where
+ 
++instance Ord p => S.Semigroup (MinMaxQueue p a) where
++  (<>) q1 q2 = MinMaxQueue $ M.unionWith (++) q1' q2'
++    where
++      q1' = unMinMaxQueue q1
++      q2' = unMinMaxQueue q2
++  {-# INLINE (<>) #-}
++
+ instance Ord p => Monoid (MinMaxQueue p a) where
