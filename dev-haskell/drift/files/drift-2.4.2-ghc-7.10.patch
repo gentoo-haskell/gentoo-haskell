@@ -1,5 +1,3 @@
-diff --git a/src/ParseLib2.hs b/src/ParseLib2.hs
-index 730e4be..a7406fa 100644
 --- a/src/ParseLib2.hs
 +++ b/src/ParseLib2.hs
 @@ -34,2 +34,3 @@ module ParseLib2
