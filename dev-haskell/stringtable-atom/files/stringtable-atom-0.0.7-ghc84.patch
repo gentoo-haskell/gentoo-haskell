@@ -1,0 +1,19 @@
+--- a/src/StringTable/Atom.hsc
++++ b/src/StringTable/Atom.hsc
+@@ -34,2 +34,3 @@ import Data.Bits
+ import Data.Generics (Data)
++import qualified Data.Semigroup as S
+ 
+@@ -113,2 +114,5 @@ instance FromAtom BS.ByteString where
+ 
++instance S.Semigroup Atom where
++    (<>) x y = Unsafe.unsafePerformIO $ atomAppend x y
++
+ instance Monoid Atom where
+--- a/src/StringTable/AtomMap.hs
++++ b/src/StringTable/AtomMap.hs
+@@ -132,3 +132,3 @@ type Key = Atom
+ newtype AtomMap a = MkAtomMap { fromAtomMap :: IM.IntMap a }
+-    deriving (Eq, Ord, Functor, Monoid)
++    deriving (Eq, Ord, Functor, Semigroup, Monoid)
+ 
