@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,4 +26,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.0.2_rc1.patch
+	"${FILESDIR}"/${P}-ghc84.patch
+)
