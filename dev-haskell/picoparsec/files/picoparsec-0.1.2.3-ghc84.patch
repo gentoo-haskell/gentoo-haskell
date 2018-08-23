@@ -1,0 +1,27 @@
+--- a/Data/Picoparsec/Internal/Types.hs
++++ b/Data/Picoparsec/Internal/Types.hs
+@@ -30,3 +30,4 @@ import Data.Monoid -- (Monoid(..), (<>))
+ 
+-import Prelude
++import Prelude hiding ((<>))
++import qualified Data.Semigroup as S
+ 
+@@ -78,2 +79,5 @@ newtype Added t = A {unA :: t}
+ 
++instance Monoid t => S.Semigroup (Input t) where
++    I a <> I b = I (mappend a b)
++
+ instance Monoid t => Monoid (Input t) where
+@@ -82,2 +86,5 @@ instance Monoid t => Monoid (Input t) where
+ 
++instance Monoid t => S.Semigroup (Added t) where
++    A a <> A b = A (mappend a b)
++
+ instance Monoid t => Monoid (Added t) where
+@@ -119,2 +126,6 @@ data More = Complete | Incomplete
+ 
++instance S.Semigroup More where
++    (<>) c@Complete _ = c
++    (<>) _ m          = m
++
+ instance Monoid More where
