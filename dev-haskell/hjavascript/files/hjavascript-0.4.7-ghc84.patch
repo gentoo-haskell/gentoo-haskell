@@ -1,0 +1,6 @@
+--- a/src/Language/HJavaScript/Syntax.hs
++++ b/src/Language/HJavaScript/Syntax.hs
+@@ -74,2 +74,3 @@ import Data.Char
+ import Data.Maybe
++import Prelude hiding ((<>))
+ 

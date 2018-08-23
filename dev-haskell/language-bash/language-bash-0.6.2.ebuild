@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,4 +29,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.6.1-ghc-8.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.6.1-ghc-8.patch
+	"${FILESDIR}"/${PN}-0.6.2-ghc84.patch
+)
