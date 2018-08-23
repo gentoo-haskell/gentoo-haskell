@@ -1,0 +1,22 @@
+--- a/Data/Dates/Types.hs
++++ b/Data/Dates/Types.hs
+@@ -12,2 +12,3 @@ import Data.Char
+ import Data.Generics
++import qualified Data.Semigroup as S
+ 
+@@ -61,2 +62,15 @@ data Time =
+ 
++instance S.Semigroup DateTime where
++  (<>) dt1 dt2 =
++      DateTime (year dt1   `plus` year dt2)
++               (month dt1  `plus` month dt2)
++               (day dt1    `plus` day dt2)
++               (hour dt1   `plus` hour dt2)
++               (minute dt1 `plus` minute dt2)
++               (second dt1 `plus` second dt2)
++    where
++      plus :: Int → Int → Int
++      plus 0 x = x
++      plus x _ = x
++
+ instance Monoid DateTime where
