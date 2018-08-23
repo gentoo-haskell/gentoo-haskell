@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,7 +28,10 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 "
 # Bug #438422, upstream at https://github.com/edwinb/EpiVM/issues/5.
-PATCHES=("${FILESDIR}"/${PN}-0.9.3.3-respect-user-cflags.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.9.3.3-respect-user-cflags.patch
+	"${FILESDIR}"/${PN}-0.9.3.3-ghc84.patch
+)
 
 src_prepare() {
 	default
