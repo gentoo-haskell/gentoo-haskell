@@ -1,0 +1,12 @@
+--- a/Annotations/F/Zipper.hs
++++ b/Annotations/F/Zipper.hs
+@@ -11,2 +11,3 @@ import Control.Monad
+ import Data.Monoid
++import qualified Data.Semigroup as S
+ 
+@@ -24,2 +25,5 @@ newtype Nav = Nav { nav :: forall a. Zipper a -> Maybe (Zipper a) }
+ 
++instance S.Semigroup Nav where
++  (<>) (Nav n1) (Nav n2) = Nav (n1 >=> n2)
++
+ instance Monoid Nav where

@@ -1,0 +1,6 @@
+--- a/src/Language/Lua/Bytecode/Pretty.hs
++++ b/src/Language/Lua/Bytecode/Pretty.hs
+@@ -14,2 +14,3 @@ import qualified Data.Vector as Vector
+ import Numeric (showHex)
++import Prelude hiding ((<>))
+ 

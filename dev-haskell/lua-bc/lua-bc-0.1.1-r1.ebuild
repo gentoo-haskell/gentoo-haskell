@@ -26,9 +26,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'vector                   >=0.10 && <0.12' 'vector                   >=0.10'
+		'vector                   >=0.10 && <0.12' 'vector                   >=0.10' \
+		'base                     >=4.8  && <4.10' 'base                     >=4.8'
 }
