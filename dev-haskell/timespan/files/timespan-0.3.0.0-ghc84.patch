@@ -1,0 +1,12 @@
+--- a/src/Data/Time/TimeSpan.hs
++++ b/src/Data/Time/TimeSpan.hs
+@@ -16,2 +16,3 @@ import System.CPUTime
+ import System.Timeout
++import qualified Data.Semigroup as S
+ 
+@@ -25,2 +26,5 @@ newtype TimeSpan
+ 
++instance S.Semigroup TimeSpan where
++    (<>) (TimeSpan a) (TimeSpan b) = TimeSpan (a + b)
++
+ -- | An empty `TimeSpan` is 0, and `mappend` is defined as addition
