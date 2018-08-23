@@ -1,0 +1,16 @@
+diff --git a/src/Control/Monad/Unify.hs b/src/Control/Monad/Unify.hs
+index 62e3255..8c4cbb1 100644
+--- a/src/Control/Monad/Unify.hs
++++ b/src/Control/Monad/Unify.hs
+@@ -33,2 +33,3 @@ import Control.Monad.Error.Class
+ import Data.HashMap.Strict as M
++import qualified Data.Semigroup as S
+ 
+@@ -59,2 +60,7 @@ data Substitution t = Substitution { runSubstitution :: M.HashMap Int t }
+ 
++instance (Partial t) => S.Semigroup (Substitution t) where
++  s1 <> s2 = Substitution $
++                      M.map (s2 $?) (runSubstitution s1) `M.union`
++                      M.map (s1 $?) (runSubstitution s2)
++
+ instance (Partial t) => Monoid (Substitution t) where

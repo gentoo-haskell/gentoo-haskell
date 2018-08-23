@@ -1,0 +1,12 @@
+--- a/Text/ProtocolBuffers/Basic.hs
++++ b/Text/ProtocolBuffers/Basic.hs
+@@ -30,2 +30,3 @@ import qualified Data.ByteString.Lazy as L(unpack)
+ import Data.ByteString.Lazy.UTF8 as U (toString,fromString)
++import qualified Data.Semigroup as S
+ 
+@@ -53,2 +54,5 @@ instance Show Utf8 where
+ 
++instance S.Semigroup Utf8 where
++  (<>) (Utf8 x) (Utf8 y) = Utf8 (mappend x y)
++
+ instance Monoid Utf8 where
