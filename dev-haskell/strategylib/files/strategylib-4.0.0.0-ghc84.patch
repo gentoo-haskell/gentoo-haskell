@@ -1,0 +1,12 @@
+--- a/library/Data/Generics/Strafunski/StrategyLib/MetricsTheme.hs
++++ b/library/Data/Generics/Strafunski/StrategyLib/MetricsTheme.hs
+@@ -20,2 +20,3 @@ import Data.Generics.Strafunski.StrategyLib.OverloadingTheme
+ import Data.Generics.Strafunski.StrategyLib.FlowTheme
++import qualified Data.Semigroup as S
+ 
+@@ -56,2 +57,5 @@ putMetricLn key (M m) 	=  putStrLn $ key++" = "++show (m key)
+ 
++-- * Metrics as monoids 
++instance S.Semigroup Metrics where
++  (<>) (M m1) (M m2) = M $ \s -> (m1 s) + (m2 s)
+ 
