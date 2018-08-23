@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -32,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'optparse-applicative >= 0.12.0  && < 0.14' 'optparse-applicative >= 0.12.0'
+		'optparse-applicative >= 0.12.0  && < 0.14' 'optparse-applicative >= 0.12.0' \
+		'time                 >= 1.5     && < 1.7' 'time                 >= 1.5'
 }
