@@ -1,0 +1,32 @@
+--- a/src/System/Socket/Internal/AddressInfo.hsc
++++ b/src/System/Socket/Internal/AddressInfo.hsc
+@@ -62,2 +62,3 @@ import System.Socket.Internal.Socket
+ import System.Socket.Internal.Platform
++import qualified Data.Semigroup as S
+ 
+@@ -148,2 +149,6 @@ newtype AddressInfoFlags
+ 
++instance S.Semigroup AddressInfoFlags where
++  (<>) (AddressInfoFlags a) (AddressInfoFlags b)
++    = AddressInfoFlags (a .|. b)
++
+ instance Data.Monoid.Monoid AddressInfoFlags where
+@@ -192,2 +197,6 @@ newtype NameInfoFlags
+ 
++instance S.Semigroup NameInfoFlags where
++  (<>) (NameInfoFlags a) (NameInfoFlags b)
++    = NameInfoFlags (a .|. b)
++
+ instance Monoid NameInfoFlags where
+--- a/src/System/Socket/Internal/Message.hsc
++++ b/src/System/Socket/Internal/Message.hsc
+@@ -26,2 +26,3 @@ import Foreign.C.Types
+ import Foreign.Storable
++import qualified Data.Semigroup as S
+ 
+@@ -42,2 +43,5 @@ data Message a t p
+ 
++instance S.Semigroup MessageFlags where
++  (<>) = (.|.)
++
+ instance Monoid MessageFlags where
