@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,12 @@ IUSE=""
 
 RESTRICT=test # tests are broken: need path to ebuild tree
 
-RDEPEND="|| ( <sys-apps/portage-2.3.0 app-portage/repoman )
+RDEPEND="
+	|| (
+		<sys-apps/portage-2.3.0
+		sys-apps/portage-mgorny
+		app-portage/repoman
+	)
 	dev-haskell/async:=
 	dev-haskell/base16-bytestring:=
 	dev-haskell/base64-bytestring:=
