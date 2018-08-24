@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,6 +26,10 @@ RDEPEND=">=dev-haskell/data-accessor-0.2.2:=[profile?] <dev-haskell/data-accesso
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \

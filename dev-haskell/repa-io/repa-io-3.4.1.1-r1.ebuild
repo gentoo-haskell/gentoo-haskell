@@ -32,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'vector               == 0.11.*' 'vector               >= 0.11'
+		'vector               == 0.11.*' 'vector               >= 0.11' \
+		'base                 >= 4.8 && < 4.10' 'base                 >= 4.8'
 }
