@@ -55,10 +55,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit )
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.5-base-compat-0.10.patch
-)
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-double
