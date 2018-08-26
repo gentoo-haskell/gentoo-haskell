@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,11 +23,15 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-1.25
+	>=dev-haskell/cabal-1.24
 	>=dev-haskell/haxml-1.22 <dev-haskell/haxml-1.26
 	test? ( dev-haskell/hunit
 		dev-haskell/quickcheck )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-cabal22.patch
+)
 
 src_prepare() {
 	default
