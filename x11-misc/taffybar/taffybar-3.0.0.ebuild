@@ -14,8 +14,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#needs ghc-8.4, uses modern time API
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
 RDEPEND="dev-haskell/cairo:=[profile?]
@@ -32,11 +31,10 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 	dev-haskell/gi-glib:=[profile?]
 	dev-haskell/gi-gtk:=[profile?]
 	dev-haskell/gi-gtk-hs:=[profile?]
+	dev-haskell/gi-pango:=[profile?]
 	dev-haskell/glib:=[profile?]
-	>=dev-haskell/gtk-sni-tray-0.1.3.1:=[profile?]
+	>=dev-haskell/gtk-sni-tray-0.1.4.0:=[profile?]
 	>=dev-haskell/gtk-strut-0.1.2.1:=[profile?]
-	>=dev-haskell/gtk-traymanager-1.0.1:=[profile?] <dev-haskell/gtk-traymanager-2.0.0:=[profile?]
-	>=dev-haskell/gtk3-0.14.9:=[profile?]
 	>=dev-haskell/haskell-gi-0.21.2:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.21.1:=[profile?]
 	dev-haskell/hslogger:=[profile?]
@@ -50,7 +48,7 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-1:=[profile?]
 	>=dev-haskell/split-0.1.4.2:=[profile?]
-	>=dev-haskell/status-notifier-item-0.2.2.0:=[profile?]
+	>=dev-haskell/status-notifier-item-0.3.0.0:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
@@ -62,7 +60,7 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
 	dev-haskell/xml:=[profile?]
 	dev-haskell/xml-helpers:=[profile?]
-	>=dev-lang/ghc-8.4:=
+	>=dev-lang/ghc-8.2.1:=
 	x11-libs/gtk+:3
 	x11-wm/xmonad:=[profile?]
 	x11-wm/xmonad-contrib:=[profile?]
@@ -72,7 +70,7 @@ RDEPEND="dev-haskell/cairo:=[profile?]
 			<dev-haskell/network-uri-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-2.0.0.2
 	virtual/pkgconfig
 "
 
