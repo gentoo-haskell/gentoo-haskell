@@ -1,0 +1,12 @@
+--- a/Network/HTTP/QueryString/Internal.hs
++++ b/Network/HTTP/QueryString/Internal.hs
+@@ -10,2 +10,3 @@ import Data.Monoid
+ import qualified Network.HTTP.Types as HTTP
++import qualified Data.Semigroup as S
+ 
+@@ -18,2 +19,5 @@ data QueryString =
+ 
++instance S.Semigroup QueryString where
++    (<>) a b = QueryString $ rawData a `merge` rawData b
++
+ instance Monoid QueryString where
