@@ -32,5 +32,7 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck >= 2.1 && < 2.10' 'QuickCheck >= 2.1' \
 		'HUnit >= 1.1 && < 1.6' 'HUnit >= 1.1' \
-		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18'
+		'haskell-src-exts >= 1.18 && < 1.20' 'haskell-src-exts >= 1.18' \
+		'base >= 4.5 && < 4.10' 'base >= 4.5' \
+		'base >= 4.3 && < 4.10' 'base >= 4.3'
 }
