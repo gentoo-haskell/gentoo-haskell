@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,3 +27,10 @@ RDEPEND=">=dev-haskell/hxt-9.1.2:=[profile?] <dev-haskell/hxt-9.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.0.0.0 && <4.11' 'base >=4.0.0.0'
+}
