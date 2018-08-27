@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?] <dev-haskell/aeson-1.2:=[profil
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/scientific-0.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/sha-1.6:=[profile?] <dev-haskell/sha-1.7:=[profile?]
-	>=dev-haskell/skylighting-0.1.1.4:=[profile?]
+	>=dev-haskell/skylighting-0.1.1.4:=[profile?] <dev-haskell/skylighting-0.6:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?]
 	>=dev-haskell/tagsoup-0.13.7:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
@@ -69,8 +69,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/ansi-terminal-0.5 <dev-haskell/ansi-terminal-0.7
 		>=dev-haskell/diff-0.2 <dev-haskell/diff-0.4
 		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
-		>=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.10
+		>=dev-haskell/hunit-1.2
+		>=dev-haskell/quickcheck-2.4
 		>=dev-haskell/test-framework-0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -85,11 +85,13 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'skylighting >= 0.1.1.5 && < 0.2' 'skylighting >= 0.1.1.5' \
-		'skylighting >= 0.1.1.4 && < 0.2' 'skylighting >= 0.1.1.4' \
-		'skylighting >= 0.1.1.3 && < 0.2' 'skylighting >= 0.1.1.3' \
+		'skylighting >= 0.1.1.5 && < 0.2' 'skylighting >= 0.1.1.5 && < 0.6' \
+		'skylighting >= 0.1.1.4 && < 0.2' 'skylighting >= 0.1.1.4 && < 0.6' \
+		'skylighting >= 0.1.1.3 && < 0.2' 'skylighting >= 0.1.1.3 && < 0.6' \
 		'syb >= 0.1 && < 0.8' 'syb >= 0.1' \
-		'pandoc-types >= 1.17 && < 1.17.1' 'pandoc-types >= 1.17'
+		'pandoc-types >= 1.17 && < 1.17.1' 'pandoc-types >= 1.17' \
+		'QuickCheck >= 2.4 && < 2.11' 'QuickCheck >= 2.4' \
+		'HUnit >= 1.2 && < 1.7' 'HUnit >= 1.2'
 }
 
 src_configure() {
