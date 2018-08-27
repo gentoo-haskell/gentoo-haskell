@@ -37,6 +37,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.9-ghc-8.patch
 	"${FILESDIR}"/${PN}-1.9-vty-5.15.patch
 	"${FILESDIR}"/${PN}-1.9-vty-5.18.patch
+	"${FILESDIR}"/${PN}-1.9-ghc84.patch
 )
 
 src_prepare() {
