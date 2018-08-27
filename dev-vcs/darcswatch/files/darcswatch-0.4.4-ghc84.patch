@@ -1,0 +1,25 @@
+--- a/src/Darcs.hs
++++ b/src/Darcs.hs
+@@ -52,2 +52,3 @@ import Data.List
+ import Darcs.Watch.Data
++import Prelude hiding ((<>))
+ 
+--- a/src/Darcs/Watch/UpdateRepoData.hs
++++ b/src/Darcs/Watch/UpdateRepoData.hs
+@@ -54,4 +54,10 @@ import HTML (normalizeAuthor)
+ 
++import qualified Data.Semigroup as S
++
+ newtype BundleListMap = BundleListMap { unBundleListMap :: M.Map BundleList (S.Set BundleHash) }
+ 
++instance S.Semigroup BundleListMap where
++	(<>) (BundleListMap m1) (BundleListMap m2) =
++		BundleListMap (M.unionWith (S.union) m1 m2)
++
+ instance Monoid BundleListMap where
+--- a/src/Printer.lhs
++++ b/src/Printer.lhs
+@@ -63,2 +63,3 @@ import qualified Data.ByteString as B (ByteString, hPut, concat)
+ import qualified Data.ByteString.Char8 as BC (unpack, pack, singleton)
++import Prelude hiding ((<>))
+ 
