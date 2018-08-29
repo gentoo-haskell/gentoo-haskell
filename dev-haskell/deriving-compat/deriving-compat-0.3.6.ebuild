@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests fail to build
+
 RDEPEND=">=dev-haskell/transformers-compat-0.5:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -33,5 +35,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'template-haskell    >= 2.11 && < 2.13' 'template-haskell    >= 2.11'
+		'template-haskell    >= 2.11 && < 2.13' 'template-haskell    >= 2.11' \
+		'template-haskell    >= 2.5   && < 2.13' 'template-haskell    >= 2.5'
 }
