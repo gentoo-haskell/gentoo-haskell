@@ -43,5 +43,4 @@ dev-haskell/webkitgtk3-javascriptcore
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Jan 2018)
 # Masked as many reverse dependencies depend on older versions.
 # Most of them need to be ported to newer version.
->=dev-haskell/aeson-1.3
 dev-haskell/listenbrainz-client
