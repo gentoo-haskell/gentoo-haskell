@@ -17,9 +17,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RESTRICT=test # fails to find path to jsaddle
+
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/foreign-store-0.2:=[profile?] <dev-haskell/foreign-store-0.3:=[profile?]
-	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.10:=[profile?]
+	>=dev-haskell/http-types-0.8.6:=[profile?]
 	>=dev-haskell/jsaddle-0.9.4.0:=[profile?] <dev-haskell/jsaddle-0.10:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -40,10 +42,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/webdriver-0.8.4 <dev-haskell/webdriver-0.9 )
 "
 
+PATCHES=( ${FILESDIR}/${P}-websockets-0.12.patch )
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson >=0.8.0.2 && <1.3' 'aeson >=0.8.0.2' \
 		'websockets >=0.9.5.0 && <0.11' 'websockets >=0.9.5.0' \
-		'doctest >=0.10.1 && <0.12' 'doctest >=0.10.1'
+		'doctest >=0.10.1 && <0.12' 'doctest >=0.10.1' \
+		'http-types >=0.8.6 && <0.10' 'http-types >=0.8.6'
 }
