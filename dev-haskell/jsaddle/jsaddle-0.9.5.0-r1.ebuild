@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="call-stacks check-unchecked"
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.3:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?]
@@ -42,7 +42,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'exceptions >=0.8 && <0.9' 'exceptions >=0.8'
+		'exceptions >=0.8 && <0.9' 'exceptions >=0.8' \
+		'aeson >=0.8.0.2 && <1.3' 'aeson >=0.8.0.2'
 }
 
 src_configure() {

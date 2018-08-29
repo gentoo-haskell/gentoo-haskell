@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/cborg-0.2:=[profile?] <dev-haskell/cborg-0.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/aeson-0.7 <dev-haskell/aeson-1.3
+	test? ( >=dev-haskell/aeson-0.7
 		>=dev-haskell/base16-bytestring-0.1 <dev-haskell/base16-bytestring-0.2
 		>=dev-haskell/base64-bytestring-1.0 <dev-haskell/base64-bytestring-1.1
 		>=dev-haskell/quickcheck-2.9
@@ -47,5 +47,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck              >= 2.9     && < 2.11' 'QuickCheck              >= 2.9'
+		'QuickCheck              >= 2.9     && < 2.11' 'QuickCheck              >= 2.9' \
+		'aeson                   >= 0.7     && < 1.3' 'aeson                   >= 0.7'
 }
