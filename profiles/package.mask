@@ -1,3 +1,8 @@
+# Jack Todaro <jackmtodaro@gmail.com> (29 Aug 2018)
+# Mask >=dev-haskell/aeson-1.4 as there are still too many
+# packages which require <dev-haskell/aeson-1.4
+>=dev-haskell/aeson-1.4
+
 # Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
 # app-emacs/ghc-mod needs porting to GHC 8.4 and
 # >=dev-haskell/hlint-2.1. Upstream porting is
