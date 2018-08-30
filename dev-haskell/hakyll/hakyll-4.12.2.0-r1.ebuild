@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/yaml-0.8.11:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
+	>=dev-haskell/yaml-0.8.11:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
 	buildwebsite? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.3:=[profile?] )
 	checkexternal? ( >=dev-haskell/http-conduit-2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?] )
@@ -65,7 +65,8 @@ src_prepare() {
 		'QuickCheck                 >= 2.8  && < 2.12' 'QuickCheck                 >= 2.8' \
 		'tasty                      >= 0.11 && < 1.1' 'tasty                      >= 0.11' \
 		'tasty-hunit                >= 0.9  && < 0.11' 'tasty-hunit                >= 0.9' \
-		'tasty-quickcheck           >= 0.8  && < 0.11' 'tasty-quickcheck           >= 0.8'
+		'tasty-quickcheck           >= 0.8  && < 0.11' 'tasty-quickcheck           >= 0.8' \
+		'yaml                 >= 0.8.11   && < 0.9' 'yaml                 >= 0.8.11'
 }
 
 src_configure() {
