@@ -1,0 +1,14 @@
+--- a/CabalMeta.hs
++++ b/CabalMeta.hs
+@@ -34,2 +34,3 @@ import Data.Monoid ((<>),Monoid(..))
+ #endif
++import qualified Data.Semigroup as S
+ 
+@@ -115,2 +116,7 @@ gitPackages psources =
+ 
++instance S.Semigroup PackageSources where
++  (<>) (PackageSources d1 ha1 ht1 g1 da1) (PackageSources d2 ha2 ht2 g2 da2) =
++    PackageSources (mappend d1 d2) (mappend ha1 ha2)
++      (mappend ht1 ht2) (mappend g1 g2) (mappend da1 da2)
++
+ instance Monoid PackageSources where
