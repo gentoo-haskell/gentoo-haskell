@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/themoviedb-1.1:=[profile?] <dev-haskell/themoviedb-1.2:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/xdg-basedir-0.2:=[profile?] <dev-haskell/xdg-basedir-0.3:=[profile?]
-	>=dev-haskell/yaml-0.8:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
+	>=dev-haskell/yaml-0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -40,8 +40,16 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
+	"${FILESDIR}"/${P}-aeson-1.3.patch
 	"${FILESDIR}"/${P}-either-5.patch
 )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'yaml                 >= 0.8    && < 0.9' 'yaml                 >= 0.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
