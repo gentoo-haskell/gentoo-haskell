@@ -1,0 +1,70 @@
+From b8d651da8fbda6be0a5e79548f1a79da27ed2035 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Thu, 30 Aug 2018 13:14:34 +1000
+Subject: [PATCH] allow http-reverse-proxy-0.6
+
+---
+ Keter/Proxy.hs | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/Keter/Proxy.hs b/Keter/Proxy.hs
+index ebc8391..a8027ba 100644
+--- a/Keter/Proxy.hs
++++ b/Keter/Proxy.hs
+@@ -14,7 +14,7 @@ import           Control.Monad.IO.Class            (liftIO)
+ import qualified Data.ByteString                   as S
+ import qualified Data.ByteString.Char8             as S8
+ import qualified Data.CaseInsensitive              as CI
+-import           Data.Default                      (Default (..))
++import           Network.Wai.Middleware.Gzip       (def)
+ import           Data.Monoid                       (mappend, mempty)
+ import           Data.Text.Encoding                (decodeUtf8With, encodeUtf8)
+ import           Data.Text.Encoding.Error          (lenientDecode)
+@@ -26,6 +26,8 @@ import           Network.HTTP.ReverseProxy         (ProxyDest (ProxyDest),
+                                                     SetIpHeader (..),
+                                                     WaiProxyResponse (..),
+                                                     LocalWaiProxySettings,
++                                                    defaultWaiProxySettings,
++                                                    defaultLocalWaiProxySettings,
+                                                     setLpsTimeBound,
+                                                     waiProxyToSettings,
+                                                     wpsSetIpHeader,
+@@ -85,7 +87,7 @@ withClient :: Bool -- ^ is secure?
+ withClient isSecure useHeader bound manager hostLookup =
+     waiProxyToSettings
+        (error "First argument to waiProxyToSettings forced, even thought wpsGetDest provided")
+-       def
++       defaultWaiProxySettings
+         { wpsSetIpHeader =
+             if useHeader
+                 then SIHFromHeader
+@@ -106,7 +108,7 @@ withClient isSecure useHeader bound manager hostLookup =
+     -- leak from occurring.
+ 
+     addjustGlobalBound :: Maybe Int -> LocalWaiProxySettings
+-    addjustGlobalBound to = go `setLpsTimeBound` def
++    addjustGlobalBound to = go `setLpsTimeBound` defaultLocalWaiProxySettings
+       where
+         go = case to <|> Just bound of
+                Just x | x > 0 -> Just x
+@@ -115,7 +117,7 @@ withClient isSecure useHeader bound manager hostLookup =
+     getDest :: Wai.Request -> IO (LocalWaiProxySettings, WaiProxyResponse)
+     getDest req =
+         case Wai.requestHeaderHost req of
+-            Nothing -> return (def, WPRResponse missingHostResponse)
++            Nothing -> return (defaultLocalWaiProxySettings, WPRResponse missingHostResponse)
+             Just host -> processHost req host
+ 
+     processHost :: Wai.Request -> S.ByteString -> IO (LocalWaiProxySettings, WaiProxyResponse)
+@@ -132,7 +134,7 @@ withClient isSecure useHeader bound manager hostLookup =
+                         then return Nothing
+                         else hostLookup host'
+         case mport of
+-            Nothing -> return (def, WPRResponse $ unknownHostResponse host)
++            Nothing -> return (defaultLocalWaiProxySettings, WPRResponse $ unknownHostResponse host)
+             Just ((action, requiresSecure), _)
+                 | requiresSecure && not isSecure -> performHttpsRedirect host req
+                 | otherwise -> performAction req action
+-- 
+2.18.0
+

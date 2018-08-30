@@ -47,7 +47,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/wai-extra-3.0.3:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
 	dev-haskell/warp:=[profile?]
 	>=dev-haskell/warp-tls-3.0.3:=[profile?]
-	>=dev-haskell/yaml-0.8.4:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
+	>=dev-haskell/yaml-0.8.4:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	system-filepath? ( >=dev-haskell/fsnotify-0.1:=[profile?] <dev-haskell/fsnotify-0.2:=[profile?]
@@ -63,6 +63,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc-8.4.patch
 	"${FILESDIR}"/${P}-http-conduit-2.3.patch
+	"${FILESDIR}"/${P}-http-reverse-proxy-0.6.0.patch
 )
 
 src_prepare() {
@@ -70,7 +71,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'http-reverse-proxy        >= 0.4.2         && < 0.5' 'http-reverse-proxy        >= 0.4.2' \
-		'unix-compat               >= 0.3           && < 0.5' 'unix-compat               >= 0.3'
+		'unix-compat               >= 0.3           && < 0.5' 'unix-compat               >= 0.3' \
+		'yaml                      >= 0.8.4         && < 0.9' 'yaml                      >= 0.8.4'
 }
 
 src_configure() {
