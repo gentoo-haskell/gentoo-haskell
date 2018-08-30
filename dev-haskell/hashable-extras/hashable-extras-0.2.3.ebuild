@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -15,7 +15,9 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+test-doctests"
+IUSE=""
+
+RESTRICT=test # needs <Cabal-2 for doctest tests
 
 RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -25,12 +27,18 @@ RDEPEND=">=dev-haskell/bifunctors-4:=[profile?] <dev-haskell/bifunctors-6:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( test-doctests? ( >=dev-haskell/doctest-0.9.1 ) )
 "
 
 PATCHES=("${FILESDIR}"/${P}-hashable-1.2.5.0.patch)
 
+src_prepare() {
+	default
+
+	# Use default setup and avoid tests
+	rm Setup.lhs || die
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag test-doctests test-doctests)
+		-f-test-doctests
 }

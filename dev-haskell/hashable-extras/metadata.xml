@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="test-doctests">Enable the doctest suite when using the enable-tests option for cabal.</flag>
-	</use>
 	<longdescription>
 		This package provides higher rank analogues to the Hashable data type.
 		
