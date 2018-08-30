@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/ascii-progress-0.3:=[profile?]
 	>=dev-haskell/tar-0.4.0.1:=[profile?] <dev-haskell/tar-0.6:=[profile?]
 	>=dev-haskell/text-1.1.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/wreq-0.3.0.1:=[profile?] <dev-haskell/wreq-0.6:=[profile?]
-	>=dev-haskell/yaml-0.8.8.3:=[profile?] <dev-haskell/yaml-0.9:=[profile?]
+	>=dev-haskell/yaml-0.8.8.3:=[profile?]
 	>=dev-haskell/zlib-0.5.4.1:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -42,3 +42,10 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-either-5.patch
 )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'yaml                >= 0.8.8.3    && < 0.9' 'yaml                >= 0.8.8.3'
+}
