@@ -1,35 +1,61 @@
-From b8d651da8fbda6be0a5e79548f1a79da27ed2035 Mon Sep 17 00:00:00 2001
+From 9ad9da2c1c798696c4a599be873478939265eb59 Mon Sep 17 00:00:00 2001
 From: Jack Todaro <jackmtodaro@gmail.com>
 Date: Thu, 30 Aug 2018 13:14:34 +1000
 Subject: [PATCH] allow http-reverse-proxy-0.6
 
 ---
- Keter/Proxy.hs | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
+ Keter/Proxy.hs | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
 
 diff --git a/Keter/Proxy.hs b/Keter/Proxy.hs
-index ebc8391..a8027ba 100644
+index ebc8391..a903000 100644
 --- a/Keter/Proxy.hs
 +++ b/Keter/Proxy.hs
-@@ -14,7 +14,7 @@ import           Control.Monad.IO.Class            (liftIO)
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE RecordWildCards   #-}
+ {-# LANGUAGE TupleSections   #-}
++{-# LANGUAGE CPP #-}
+ -- | A light-weight, minimalistic reverse HTTP proxy.
+ module Keter.Proxy
+     ( reverseProxy
+@@ -14,7 +15,11 @@ import           Control.Monad.IO.Class            (liftIO)
  import qualified Data.ByteString                   as S
  import qualified Data.ByteString.Char8             as S8
  import qualified Data.CaseInsensitive              as CI
--import           Data.Default                      (Default (..))
++#if MIN_VERSION_http_reverse_proxy(0,6,0)
 +import           Network.Wai.Middleware.Gzip       (def)
++#else
+ import           Data.Default                      (Default (..))
++#endif
  import           Data.Monoid                       (mappend, mempty)
  import           Data.Text.Encoding                (decodeUtf8With, encodeUtf8)
  import           Data.Text.Encoding.Error          (lenientDecode)
-@@ -26,6 +26,8 @@ import           Network.HTTP.ReverseProxy         (ProxyDest (ProxyDest),
+@@ -22,6 +27,10 @@ import qualified Data.Vector                       as V
+ import           Keter.Types
+ import           Keter.Types.Middleware
+ import           Network.HTTP.Conduit              (Manager)
++#if MIN_VERSION_http_reverse_proxy(0,6,0)
++import           Network.HTTP.ReverseProxy         (defaultWaiProxySettings,
++                                                    defaultLocalWaiProxySettings)
++#endif
+ import           Network.HTTP.ReverseProxy         (ProxyDest (ProxyDest),
                                                      SetIpHeader (..),
                                                      WaiProxyResponse (..),
-                                                     LocalWaiProxySettings,
-+                                                    defaultWaiProxySettings,
-+                                                    defaultLocalWaiProxySettings,
-                                                     setLpsTimeBound,
-                                                     waiProxyToSettings,
-                                                     wpsSetIpHeader,
-@@ -85,7 +87,7 @@ withClient :: Bool -- ^ is secure?
+@@ -45,6 +54,12 @@ import           Prelude                           hiding (FilePath, (++))
+ import           WaiAppStatic.Listing              (defaultListing)
+ import qualified Network.TLS as TLS
+ 
++#if !MIN_VERSION_http_reverse_proxy(0,6,0)
++defaultWaiProxySettings = def
++defaultLocalWaiProxySettings = def
++#endif
++
++
+ -- | Mapping from virtual hostname to port number.
+ type HostLookup = ByteString -> IO (Maybe (ProxyAction, TLS.Credentials))
+ 
+@@ -85,7 +100,7 @@ withClient :: Bool -- ^ is secure?
  withClient isSecure useHeader bound manager hostLookup =
      waiProxyToSettings
         (error "First argument to waiProxyToSettings forced, even thought wpsGetDest provided")
@@ -38,7 +64,7 @@ index ebc8391..a8027ba 100644
          { wpsSetIpHeader =
              if useHeader
                  then SIHFromHeader
-@@ -106,7 +108,7 @@ withClient isSecure useHeader bound manager hostLookup =
+@@ -106,7 +121,7 @@ withClient isSecure useHeader bound manager hostLookup =
      -- leak from occurring.
  
      addjustGlobalBound :: Maybe Int -> LocalWaiProxySettings
@@ -47,7 +73,7 @@ index ebc8391..a8027ba 100644
        where
          go = case to <|> Just bound of
                 Just x | x > 0 -> Just x
-@@ -115,7 +117,7 @@ withClient isSecure useHeader bound manager hostLookup =
+@@ -115,7 +130,7 @@ withClient isSecure useHeader bound manager hostLookup =
      getDest :: Wai.Request -> IO (LocalWaiProxySettings, WaiProxyResponse)
      getDest req =
          case Wai.requestHeaderHost req of
@@ -56,7 +82,7 @@ index ebc8391..a8027ba 100644
              Just host -> processHost req host
  
      processHost :: Wai.Request -> S.ByteString -> IO (LocalWaiProxySettings, WaiProxyResponse)
-@@ -132,7 +134,7 @@ withClient isSecure useHeader bound manager hostLookup =
+@@ -132,7 +147,7 @@ withClient isSecure useHeader bound manager hostLookup =
                          then return Nothing
                          else hostLookup host'
          case mport of
