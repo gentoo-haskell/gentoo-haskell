@@ -1,0 +1,25 @@
+From 4211d30a0e40e0589628e2a2e822e6e2744c74f9 Mon Sep 17 00:00:00 2001
+From: Jack Todaro <jackmtodaro@gmail.com>
+Date: Thu, 30 Aug 2018 12:20:28 +1000
+Subject: [PATCH] hide encodeFile from Data.Aeson
+
+---
+ src/Vimeta/Core/Config.hs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Vimeta/Core/Config.hs b/src/Vimeta/Core/Config.hs
+index 66353ec..b123f1d 100644
+--- a/src/Vimeta/Core/Config.hs
++++ b/src/Vimeta/Core/Config.hs
+@@ -27,7 +27,7 @@ import Control.Applicative
+ import Control.Monad
+ import Control.Monad.IO.Class
+ import Control.Monad.Trans.Either
+-import Data.Aeson
++import Data.Aeson hiding (encodeFile)
+ import Data.Aeson.Types (typeMismatch)
+ import Data.Text (Text)
+ import Data.Yaml (decodeFileEither, encodeFile)
+-- 
+2.18.0
+
