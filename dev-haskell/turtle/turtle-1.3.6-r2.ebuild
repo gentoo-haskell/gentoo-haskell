@@ -42,6 +42,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/system-filepath-0.4 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
+
 src_prepare() {
 	default
 
