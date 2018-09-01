@@ -1,0 +1,18 @@
+--- a/src/Pipes/Transduce.hs
++++ b/src/Pipes/Transduce.hs
+@@ -92,2 +92,3 @@ import Pipes.Concurrent
+ import Pipes.Safe (SafeT, runSafeT)
++import qualified Data.Semigroup as S
+ 
+@@ -230,2 +231,5 @@ instance Bifunctor (Fold1 b) where
+ 
++instance (Monoid a) => S.Semigroup (Fold1 b e a) where
++   (<>) s1 s2 = (<>) <$> s1 <*> s2
++
+ instance (Monoid a) => Monoid (Fold1 b e a) where
+@@ -606,2 +610,5 @@ instance Applicative (Fold2_ b1 b2 e) where
+ 
++instance (Monoid a) => S.Semigroup (Fold2 b1 b2 e a) where
++   (<>) s1 s2 = (<>) <$> s1 <*> s2
++
+ instance (Monoid a) => Monoid (Fold2 b1 b2 e a) where

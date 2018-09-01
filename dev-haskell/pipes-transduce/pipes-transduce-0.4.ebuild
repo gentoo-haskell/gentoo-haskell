@@ -43,6 +43,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9.2 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
+
 src_prepare() {
 	default
 

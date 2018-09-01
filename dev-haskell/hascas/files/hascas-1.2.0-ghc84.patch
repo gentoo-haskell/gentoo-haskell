@@ -1,0 +1,19 @@
+--- a/src/Common.hs
++++ b/src/Common.hs
+@@ -42,3 +42,3 @@ import           Network
+ import           Text.Printf                    (printf)
+-
++import qualified Data.Semigroup                 as S
+ 
+@@ -55,2 +55,5 @@ data LoggedBatch = LoggedBatch [DBL.ByteString]
+ 
++instance S.Semigroup LoggedBatch where
++  (<>) (LoggedBatch l1) (LoggedBatch l2) = LoggedBatch (l1 <> l2)
++
+ instance Monoid LoggedBatch where
+@@ -162,2 +165,5 @@ class FromCQL a where
+ 
++instance S.Semigroup ShortStr where
++  (<>) (ShortStr s1) (ShortStr s2) = ShortStr (s1 <> s2)
++
+ instance Monoid ShortStr where
