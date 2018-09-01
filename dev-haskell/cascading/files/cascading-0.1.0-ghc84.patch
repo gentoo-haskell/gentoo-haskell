@@ -1,0 +1,14 @@
+--- a/Data/CSS/Types.hs
++++ b/Data/CSS/Types.hs
+@@ -55,3 +55,3 @@ import Data.Text (Text)
+ import Data.Word
+-
++import qualified Data.Semigroup as S
+ 
+@@ -150,2 +150,6 @@ data CSS =
+ 
++instance S.Semigroup CSS where
++    (<>) (CSS is1 ps1) (CSS is2 ps2) =
++        CSS (M.unionWith S.union is1 is2) (M.unionWith (++) ps1 ps2)
++
+ instance Monoid CSS where
