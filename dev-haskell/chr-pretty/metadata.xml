@@ -6,8 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		This package provides higher rank analogues to the Hashable data type.
-		
-		The need for these sometimes arises in the presence of polymorphic recursion.
+		Pretty printing for chr library, a simplified implementation for the pretty printing API from uulib
 	</longdescription>
 </pkgmetadata>
