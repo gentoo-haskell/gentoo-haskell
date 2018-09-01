@@ -1,0 +1,18 @@
+--- a/src/System/Process/Streaming.hs
++++ b/src/System/Process/Streaming.hs
+@@ -91,2 +91,3 @@ import System.Process
+ import System.Exit
++import qualified Data.Semigroup as S
+ 
+@@ -297,2 +298,5 @@ instance Applicative (Feed1_ b e) where
+ 
++instance (Monoid a) => S.Semigroup (Feed1 b e a) where
++   (<>) s1 s2 = (<>) <$> s1 <*> s2
++
+ instance (Monoid a) => Monoid (Feed1 b e a) where
+@@ -471,2 +475,5 @@ instance Applicative (Streams e) where
+ 
++instance (Monoid a) => S.Semigroup (Streams e a) where
++   (<>) s1 s2 = (<>) <$> s1 <*> s2
++
+ instance (Monoid a) => Monoid (Streams e a) where
