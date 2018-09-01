@@ -1,0 +1,67 @@
+--- a/src/Vgrep/Ansi/Type.hs
++++ b/src/Vgrep/Ansi/Type.hs
+@@ -24,2 +24,3 @@ import           Graphics.Vty  (Attr)
+ import           Prelude       hiding (length)
++import qualified Data.Semigroup as S
+ 
+@@ -50,2 +51,5 @@ instance Functor Formatted where
+ 
++instance (Eq attr, Monoid attr) => S.Semigroup (Formatted attr) where
++    (<>) = fuse
++
+ instance (Eq attr, Monoid attr) => Monoid (Formatted attr) where
+--- a/src/Vgrep/Environment/Config/Monoid.hs
++++ b/src/Vgrep/Environment/Config/Monoid.hs
+@@ -13,2 +13,3 @@ import Graphics.Vty.Attributes  (Attr)
+ import Vgrep.KeybindingMap (KeybindingMap (..))
++import qualified Data.Semigroup as S
+ 
+@@ -32,2 +33,5 @@ data ConfigMonoid = ConfigMonoid
+ 
++instance S.Semigroup ConfigMonoid where
++    (<>) = mappenddefault
++
+ instance Monoid ConfigMonoid where
+@@ -60,2 +64,5 @@ data ColorsMonoid = ColorsMonoid
+ 
++instance S.Semigroup ColorsMonoid where
++    (<>) = mappenddefault
++
+ instance Monoid ColorsMonoid where
+@@ -93,2 +100,5 @@ data KeybindingsMonoid = KeybindingsMonoid
+ 
++instance S.Semigroup KeybindingsMonoid where
++    (<>) = mappenddefault
++
+ instance Monoid KeybindingsMonoid where
+--- a/src/Vgrep/Event.hs
++++ b/src/Vgrep/Event.hs
+@@ -43,2 +43,3 @@ import           Data.Map               (Map, fromList)
+ import qualified Data.Map               as M
++import qualified Data.Semigroup         as S
+ 
+@@ -58,2 +59,6 @@ data Next a
+ 
++instance S.Semigroup (Next a) where
++    Skip        <> next       = next
++    next        <> _other     = next
++
+ -- | The first event handler that triggers (i. e. does not return 'Skip')
+@@ -79,2 +84,6 @@ data Redraw
+ 
++instance S.Semigroup Redraw where
++    Unchanged <> Unchanged = Unchanged
++    _         <> _         = Redraw
++
+ instance Monoid Redraw where
+--- a/src/Vgrep/KeybindingMap.hs
++++ b/src/Vgrep/KeybindingMap.hs
+@@ -7,2 +7,3 @@ import           Vgrep.Command
+ import qualified Vgrep.Key       as Key
++import qualified Data.Semigroup as S
+ 
+@@ -10,3 +11,3 @@ import qualified Vgrep.Key       as Key
+ newtype KeybindingMap = KeybindingMap { unKeybindingMap :: Map Key.Chord Command }
+-  deriving (Show, Eq, Monoid)
++  deriving (Show, Eq, S.Semigroup, Monoid)
+ 
