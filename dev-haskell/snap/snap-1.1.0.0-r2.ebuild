@@ -57,6 +57,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-smallcheck-0.2 <dev-haskell/test-framework-smallcheck-0.3 )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
+
 src_prepare() {
 	default
 
@@ -67,7 +71,8 @@ src_prepare() {
 		'lens                      >= 3.7.6    && < 4.16' 'lens                      >= 3.7.6' \
 		'snap-server               >= 1.0      && < 1.1' 'snap-server               >= 1.0' \
 		'heist                     >= 1.0      && < 1.1' 'heist                     >= 1.0' \
-		'map-syntax                >= 0.2      && < 0.3' 'map-syntax                >= 0.2'
+		'map-syntax                >= 0.2      && < 0.3' 'map-syntax                >= 0.2' \
+		'base                      >= 4        && < 4.11' 'base                      >= 4'
 }
 
 src_configure() {
