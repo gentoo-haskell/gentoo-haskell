@@ -1,0 +1,14 @@
+--- a/src/Language/Lua/PrettyPrinter.hs
++++ b/src/Language/Lua/PrettyPrinter.hs
+@@ -16,3 +16,3 @@ module Language.Lua.PrettyPrinter
+ #if MIN_VERSION_base(4,8,0)
+-import           Prelude                 hiding (EQ, GT, LT, (<$>))
++import           Prelude                 hiding (EQ, GT, LT, (<$>), (<>))
+ #else
+--- a/src/Text/PrettyPrint/Leijen.hs
++++ b/src/Text/PrettyPrint/Leijen.hs
+@@ -124,3 +124,3 @@ import System.IO (Handle,hPutStr,hPutChar,stdout)
+ #if MIN_VERSION_base(4,8,0)
+-import Prelude hiding ((<$>))
++import Prelude hiding ((<$>), (<>))
+ #endif
