@@ -1,0 +1,12 @@
+--- a/src/Diagrams/Backend/Canvas.hs
++++ b/src/Diagrams/Backend/Canvas.hs
+@@ -110,2 +110,3 @@ import qualified Graphics.Blank               as BC
+ import qualified Graphics.Blank.Style         as S
++import qualified Data.Semigroup as S
+ 
+@@ -138,2 +139,5 @@ runRenderM = flip SS.evalStateStackT def
+ 
++instance S.Semigroup (Render Canvas V2 Double) where
++  (C c1) <> (C c2) = C (c1 >> c2)
++
+ instance Monoid (Render Canvas V2 Double) where
