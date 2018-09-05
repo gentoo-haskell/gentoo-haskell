@@ -7,7 +7,8 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 RDEPEND=>=dev-haskell/ansi-terminal-0.6.2.3:=[profile?] >=dev-haskell/base-compat-batteries-0.10.1:=[profile?] <dev-haskell/base-compat-batteries-0.11:=[profile?] >=dev-haskell/blaze-markup-0.5.1:=[profile?] >=dev-haskell/cmdargs-0.10:=[profile?] dev-haskell/csv:=[profile?] >=dev-haskell/data-default-0.5:=[profile?] dev-haskell/decimal:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/hashtables-1.2.3.1:=[profile?] dev-haskell/hunit:=[profile?] >=dev-haskell/megaparsec-6.4.1:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/mtl-compat:=[profile?] dev-haskell/old-time:=[profile?] >=dev-haskell/parsec-3:=[profile?] >=dev-haskell/parser-combinators-0.4.0:=[profile?] >=dev-haskell/pretty-show-1.6.4:=[profile?] dev-haskell/regex-tdfa:=[profile?] >=dev-haskell/safe-0.2:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?] >=dev-haskell/split-0.1:=[profile?] >=dev-haskell/tabular-0.2:=[profile?] >=dev-haskell/text-1.2:=[profile?] dev-haskell/uglymemo:=[profile?] >=dev-haskell/utf8-string-0.3.5:=[profile?] >=dev-lang/ghc-7.10.1:=
+RESTRICT=test
 SLOT=0/1.10
 SRC_URI=mirror://hackage/packages/archive/hledger-lib/1.10/hledger-lib-1.10.tar.gz
 _eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	b3a65eea21c73ad40a2d87d1aa95b5a1	haskell-cabal	0d90789abcf419403c7b1055b753b7d6	ltprune	08f9e1d9ee0af8f5d9a7854efbcd8c0e	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	e4a9360924c5ce9f52e61342cde58512	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	2352c3fc97241f6a02042773c8287748
-_md5_=a2c766744f7dd66e86942475d1eed782
+_md5_=35931532b980fae8f966b08eaa4a8eb1
