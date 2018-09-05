@@ -21,6 +21,7 @@ IUSE="roundtrip"
 RESTRICT=test # slow
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
+	>=dev-haskell/free-4.12:=[profile?]
 	roundtrip? ( dev-haskell/diff:=[profile?]
 			dev-haskell/filemanip:=[profile?]
 			>=dev-haskell/ghc-paths-0.1:=[profile?]
