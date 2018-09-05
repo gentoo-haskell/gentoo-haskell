@@ -149,7 +149,7 @@ dev-haskell/regex-tdfa-rc 1.1.8.3: Replaces/Enhances Text.Regex (fork by Roman C
 dev-haskell/rfc5051 0.1.0.3: Simple unicode collation as per RFC5051
 dev-haskell/safesemaphore 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
 dev-haskell/sandi 0.3.6: Data encoding library
-dev-haskell/semigroupoids 4.3 5.1: Semigroupoids: Category sans id
+dev-haskell/semigroupoids 5.1: Semigroupoids: Category sans id
 dev-haskell/shellish 0.1.4: shell-/perl- like (systems) programming in Haskell
 dev-haskell/simple-reflect 0.3.2: Simple reflection of expressions containing variables
 dev-haskell/snap-core 0.9.8.0: Snap: A Haskell Web Framework (core interfaces and types)
