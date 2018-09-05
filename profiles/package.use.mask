@@ -4,3 +4,7 @@
 # Dependencies will need to be ported to
 #   dev-haskell/gi-webkit2 and dev-haskell/gi-javascriptcore
 app-editors/leksah codemirror
+
+# Sergei Trofimovich <slyfox@gentoo.org> (05 Sep 2018)
+# Mask USE=test on packages where testsuites fail to build
+dev-haskell/synthesizer-core test
