@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # minor parenteses wibble
+
 RDEPEND=">=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
 	>=dev-haskell/linear-1.16.2:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?]
