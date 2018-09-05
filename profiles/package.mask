@@ -1,3 +1,7 @@
+# Jack Todaro <jackmtodaro@gmail.com> (5 Sep 2018)
+# Too many packages are incompatible with megaparsec-7
+>=dev-haskell/megaparsec-7
+
 # Jack Todaro <jackmtodaro@gmail.com> (3 Sep 2018)
 # Too many packages depend on <dev-haskell/quickcheck-2.12
 >=dev-haskell/quickcheck-2.12
