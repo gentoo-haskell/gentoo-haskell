@@ -1,8 +1,0 @@
-diff --git a/src/GitHub/Data/Repos.hs b/src/GitHub/Data/Repos.hs
-index 91e9b4d..e2ee51c 100644
---- a/src/GitHub/Data/Repos.hs
-+++ b/src/GitHub/Data/Repos.hs
-@@ -5,2 +5,3 @@
- {-# LANGUAGE OverloadedStrings  #-}
-+{-# LANGUAGE OverlappingInstances  #-}
- #define UNSAFE 1
