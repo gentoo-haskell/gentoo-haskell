@@ -32,12 +32,6 @@ dev-haskell/clocked
 dev-haskell/qthaskellc
 dev-haskell/qt
 
-# Sergei Trofimovich <slyfox@gentoo.org> (22 Apr 2018)
-# Many unmacked packages are using <transformers-compat-0.6
-# Examples are resourcet-1.1.9.
-# https://github.com/gentoo-haskell/gentoo-haskell/issues/700
->=dev-haskell/transformers-compat-0.6
-
 # Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
 # Follow ::gentoo mask bindings for outdated
 #   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
