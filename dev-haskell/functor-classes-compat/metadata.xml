@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="vector">'<pkg>dev-haskell/vector</pkg> >= 0.12'</flag>
+		<flag name="unordered-containers">'<pkg>dev-haskell/unordered-containers</pkg> >= 0.2.8.0</flag>
+	</use>
+	<longdescription>
+		&quot;Data.Functor.Classes&quot; instances for core packages:
+		
+		* containers
+		
+		* vector
+		
+		* unordered-containers
+	</longdescription>
+</pkgmetadata>

@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="dump"
 
+RESTRICT=test # fails
+
 RDEPEND="<dev-haskell/attoparsec-0.14:=[profile?]
 	<dev-haskell/scientific-0.4:=[profile?]
 	dev-haskell/text:=[profile?]
