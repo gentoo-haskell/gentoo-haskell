@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="force-openunion-51">Force usage of OpenUnion51.hs implementation</flag>
+	</use>
 	<longdescription>
 		This package introduces datatypes for typeclass-constrained effects,
 		as an alternative to monad-transformer based (datatype-constrained)
