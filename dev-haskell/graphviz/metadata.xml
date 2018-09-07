@@ -32,4 +32,7 @@
 		* Round-trip support for passing an FGL graph through Graphviz to
 		augment node and edge labels with positional information, etc.
 	</longdescription>
+	<use>
+        <flag name="test-parsing">Build a utility to test parsing of available Dot code.</flag>
+    </use>
 </pkgmetadata>

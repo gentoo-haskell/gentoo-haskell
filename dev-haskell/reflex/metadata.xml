@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system
+	</longdescription>
+	<use>
+		<flag name="reflex-optimizer">Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.</flag>
+		<flag name="template-haskell">Use template haskell to generate lenses</flag>
+		<flag name="debug-trace-events">Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!</flag>
+		<flag name="fast-weak">Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default</flag>
+	</use>
+</pkgmetadata>
