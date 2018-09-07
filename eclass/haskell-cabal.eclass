@@ -604,7 +604,7 @@ cabal_src_install() {
 	# remove EPREFIX
 	dodir ${ghc_confdir_with_prefix#${EPREFIX}}
 	local hint_db="${D}/$(ghc-confdir)"
-	local hint_file="${hint_db}/${PF}.conf"
+	local hint_file="${hint_db}/gentoo-empty-${CATEGORY}-${PF}.conf"
 	mkdir -p "${hint_db}" || die
 	touch "${hint_file}" || die
 }
