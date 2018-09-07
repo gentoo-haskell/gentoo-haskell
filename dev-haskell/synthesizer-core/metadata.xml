@@ -18,4 +18,7 @@
 		Oscillators, Noise generators, Frequency filters,
 		Fast Fourier transform for computation of frequency spectrum
 	</longdescription>
+	<use>
+        <flag name="optimizeadvanced">Enable advanced optimizations. They slow down compilation considerably.</flag>
+    </use>
 </pkgmetadata>
