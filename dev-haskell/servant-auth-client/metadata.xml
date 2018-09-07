@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides instances that allow generating clients from
+		&lt;https://hackage.haskell.org/package/servant servant&gt;
+		APIs that use
+		&lt;https://hackage.haskell.org/package/servant-auth servant-auth&#39;s&gt; @Auth@ combinator.
+		
+		For a quick overview of the usage, see the &lt;http://github.com/haskell-servant/servant-auth#readme README&gt;.
+	</longdescription>
+	<use>
+		<flag name="servant-client-core">Use servant-client-core</flag>
+	</use>
+</pkgmetadata>

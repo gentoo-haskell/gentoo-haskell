@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package allows to read MIDI events
+		and to convert them to audio and control signals.
+		Included is a basic synthesizer that renders MIDI to WAV
+		(or other audio signal formats supported by SoX).
+	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables</flag>
+	</use>
+</pkgmetadata>

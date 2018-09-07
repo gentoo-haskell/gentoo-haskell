@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		
+		An implementation of the Javascript Object Signing and Encryption
+		(JOSE) and JSON Web Token (JWT; RFC 7519) formats.
+		
+		The JSON Web Signature (JWS; RFC 7515) implementation is complete.
+		
+		EdDSA signatures (RFC 8037) are supported (Ed25519 only).
+		
+		JWK Thumbprint (RFC 7638) is supported (requires /aeson/ &gt;= 0.10).
+		
+		JSON Web Encryption (JWE; RFC 7516) is not yet implemented.
+		
+		The __ECDSA implementation is vulnerable to timing attacks__ and
+		should only be used for verification.
+	</longdescription>
+</pkgmetadata>
