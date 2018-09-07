@@ -37,6 +37,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/simple-reflect-0.3.1 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest        >= 0.11.1 && < 0.14' 'doctest        >= 0.11.1'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag ffi ffi) \

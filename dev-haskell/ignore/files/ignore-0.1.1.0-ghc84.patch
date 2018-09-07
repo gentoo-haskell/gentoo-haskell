@@ -1,0 +1,13 @@
+--- a/src/Ignore/Types.hs
++++ b/src/Ignore/Types.hs
+@@ -9,2 +9,3 @@ import Path
+ import qualified Data.Text as T
++import qualified Data.Semigroup as S
+ 
+@@ -29,2 +30,6 @@ newtype FileIgnoredChecker
+ 
++instance S.Semigroup FileIgnoredChecker where
++    (<>) (FileIgnoredChecker a) (FileIgnoredChecker b) =
++        FileIgnoredChecker $ \fp -> a fp || b fp
++
+ instance Monoid FileIgnoredChecker where
