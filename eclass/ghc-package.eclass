@@ -276,8 +276,8 @@ ghc-install-pkg() {
 	mkdir -p "${hint_db}" || die
 	for pkg_config_file in "$@"; do
 		local pkg_name="gentoo-${CATEGORY}-${PF}-"$(basename "${pkg_config_file}")
-		cp "${pkg_config_file}" "${hint_db}/${pkg_name}.conf" || die
-		chmod 0644 "${hint_db}/${pkg_name}.conf" || die
+		cp "${pkg_config_file}" "${hint_db}/${pkg_name}" || die
+		chmod 0644 "${hint_db}/${pkg_name}" || die
 	done
 }
 
