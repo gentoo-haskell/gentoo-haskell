@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Parse and display time according to some RFC&#39;s.
+		
+		Supported:
+		
+		* RFC822 &lt;http://www.ietf.org/rfc/rfc0822.txt&gt;
+		
+		* RFC2822 &lt;http://www.ietf.org/rfc/rfc2822.txt&gt;
+		
+		* RFC3339 &lt;http://www.ietf.org/rfc/rfc3339.txt&gt;
+		
+		Special thanks to Koral for all the suggestions and help in solving some bugs.
+	</longdescription>
+</pkgmetadata>

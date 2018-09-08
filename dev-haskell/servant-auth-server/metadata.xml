@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides the required instances for using the @Auth@ combinator
+		in your &#39;servant&#39; server.
+		
+		Both cookie- and token- (REST API) based authentication is provided.
+		
+		For a quick overview of the usage, see the &lt;http://github.com/haskell-servant/servant-auth#readme README&gt;.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		High-level functions that use physical units and
+		abstract from the sample rate in a statically type safe way.
+	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables</flag>
+		<flag name="optimizeadvanced">Enable advanced optimizations. They slow down compilation considerably.</flag>
+	</use>
+</pkgmetadata>

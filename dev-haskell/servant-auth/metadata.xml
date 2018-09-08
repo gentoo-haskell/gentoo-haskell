@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package provides an @Auth@ combinator for &#39;servant&#39;. This combinator
+		allows using different authentication schemes in a straightforward way,
+		and possibly in conjunction with one another.
+		
+		&#39;servant-auth&#39; additionally provides concrete authentication schemes, such
+		as Basic Access Authentication, JSON Web Tokens, and Cookies.
+		
+		For more details on how to use this, see the &lt;http://github.com/haskell-servant/servant-auth#readme README&gt;.
+	</longdescription>
+</pkgmetadata>
