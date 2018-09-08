@@ -40,4 +40,5 @@ S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc84.patch
+	"${FILESDIR}"/${P}-ghc84-p2.patch
 )
