@@ -17,6 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing file
+
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
