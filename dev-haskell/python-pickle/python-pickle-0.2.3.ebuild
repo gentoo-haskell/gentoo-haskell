@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # missing test depend
+RESTRICT=test # missing test files: tests/pickle-dump.py
 
 RDEPEND=">=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.4
+	test? ( >=dev-haskell/hunit-1.3
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
@@ -36,5 +36,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'directory == 1.2.*' 'directory >= 1.2'
+		'directory == 1.2.*' 'directory >= 1.2' \
+		'process == 1.4.*' 'process >= 1.4' \
+		'HUnit == 1.3.*' 'HUnit >= 1.3'
 }
