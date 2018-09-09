@@ -40,7 +40,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( <dev-haskell/async-2.2
+	test? ( dev-haskell/async
 		>=dev-haskell/hspec-2.2
 		<dev-haskell/wai-app-static-3.2
 		<dev-haskell/warp-3.3 )
