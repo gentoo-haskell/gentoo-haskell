@@ -1,0 +1,9 @@
+--- a/tests/qc.hs
++++ b/tests/qc.hs
+@@ -31,4 +31,4 @@ instance Arbitrary B.ByteString where
+ 
+-instance FromBencode BValue where
+-    fromBencode = Just
++-- instance FromBencode BValue where
++--    fromBencode = Just
+ 
