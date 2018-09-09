@@ -17,12 +17,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # needs a QC-2.10 port
-
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.9 <dev-haskell/doctest-0.16 )
+	>=dev-haskell/cabal-doctest-1
+	test? ( >=dev-haskell/doctest-0.9 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.9 && < 0.14' 'doctest >= 0.9'
+}
