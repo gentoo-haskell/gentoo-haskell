@@ -17,9 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-# tests are broken
-RESTRICT=test
-
 RDEPEND=">=dev-haskell/cborg-0.2:=[profile?] <dev-haskell/cborg-0.3:=[profile?]
 	>=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-2.0:=[profile?]
@@ -38,15 +35,23 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.9
 		>=dev-haskell/quickcheck-instances-0.3.12 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/scientific-0.3 <dev-haskell/scientific-0.4
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-0.13
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.10
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.10 )
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-hunit-0.9
+		>=dev-haskell/tasty-quickcheck-0.8 )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-QC-2.11.patch
+)
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
 		'QuickCheck              >= 2.9     && < 2.11' 'QuickCheck              >= 2.9' \
-		'aeson                   >= 0.7     && < 1.3' 'aeson                   >= 0.7'
+		'aeson                   >= 0.7     && < 1.3' 'aeson                   >= 0.7' \
+		'tasty                   >= 0.11    && < 0.13' 'tasty                   >= 0.11' \
+		'tasty-hunit             >= 0.9     && < 0.10' 'tasty-hunit             >= 0.9' \
+		'tasty-quickcheck        >= 0.8     && < 0.10' 'tasty-quickcheck        >= 0.8'
+
 }
