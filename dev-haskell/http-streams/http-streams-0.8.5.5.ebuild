@@ -45,12 +45,19 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit
 		dev-haskell/lifted-base
 		>=dev-haskell/snap-core-1.0 <dev-haskell/snap-core-1.1
-		>=dev-haskell/snap-server-1.0 <dev-haskell/snap-server-1.1
+		>=dev-haskell/snap-server-1.0
 		>=dev-haskell/system-fileio-0.3.10 <dev-haskell/system-fileio-0.4
 		>=dev-haskell/system-filepath-0.4.1 <dev-haskell/system-filepath-0.5
 		!network-uri? ( >=dev-haskell/network-2.6
 				>=dev-haskell/network-uri-2.6 ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'snap-server     >= 1.0    && < 1.1' 'snap-server     >= 1.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

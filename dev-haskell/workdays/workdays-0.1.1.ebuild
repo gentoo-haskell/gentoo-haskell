@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,6 +23,14 @@ RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/doctest-0.11 <dev-haskell/doctest-0.12
-		>=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.3 )
+	test? ( >=dev-haskell/doctest-0.11
+		>=dev-haskell/hspec-2.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec >= 2.2 && < 2.3' 'hspec >= 2.2' \
+		'doctest >= 0.11 && < 0.12' 'doctest >= 0.11'
+}
