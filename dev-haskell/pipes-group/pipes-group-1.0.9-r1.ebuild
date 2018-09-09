@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/free-3.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/doctest-0.9.12 <dev-haskell/doctest-0.13
+	test? ( >=dev-haskell/doctest-0.9.12
 		<dev-haskell/lens-family-core-1.3 )
 "
 
@@ -34,5 +34,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'free         >= 3.2     && < 5.1' 'free         >= 3.2'
+		'free         >= 3.2     && < 5.1' 'free         >= 3.2' \
+		'doctest          >= 0.9.12 && < 0.13' 'doctest          >= 0.9.12'
 }
