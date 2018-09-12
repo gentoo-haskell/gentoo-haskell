@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,6 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous packages: dns-3.0.2 resolv-0.1.1.1
+
 RDEPEND=""
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
@@ -34,6 +36,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.9
 		>=dev-haskell/filemanip-0.3.6 )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
 
 src_install() {
 	haskell-cabal_src_install
