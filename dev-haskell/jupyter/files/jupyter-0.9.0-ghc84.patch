@@ -1,0 +1,11 @@
+--- a/src/Jupyter/Messages.hs
++++ b/src/Jupyter/Messages.hs
+@@ -138,2 +138,3 @@ import           Jupyter.UUID (UUID)
+ import qualified Jupyter.UUID as UUID
++import qualified Data.Semigroup as S
+ 
+@@ -1306,3 +1307,3 @@ instance ToJSON Comm where
+ newtype DisplayData = DisplayData (Map MimeType Text)
+-  deriving (Eq, Ord, Show, Typeable, Generic, Monoid)
++  deriving (Eq, Ord, Show, Typeable, Generic, S.Semigroup, Monoid)
+ 

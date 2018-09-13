@@ -1,0 +1,6 @@
+--- a/src/Data/Picture.hs
++++ b/src/Data/Picture.hs
+@@ -42,2 +42,3 @@ module Data.Picture ( Picture
+     import Data.List (zipWith4)
++    import Prelude hiding ((<>))
+ 

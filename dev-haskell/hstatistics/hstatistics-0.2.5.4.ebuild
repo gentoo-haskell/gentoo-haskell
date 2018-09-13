@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,3 +26,7 @@ RDEPEND=">=dev-haskell/hmatrix-0.17:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc84.patch
+)
