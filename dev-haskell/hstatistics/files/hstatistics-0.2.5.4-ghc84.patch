@@ -1,0 +1,19 @@
+--- a/lib/Numeric/Statistics.hs
++++ b/lib/Numeric/Statistics.hs
+@@ -46,2 +46,3 @@ import Numeric.GSL.Statistics
+ import Numeric.GSL.Sort(sort)
++import Prelude hiding ((<>))
+ 
+--- a/lib/Numeric/Statistics/ICA.hs
++++ b/lib/Numeric/Statistics/ICA.hs
+@@ -46,2 +46,3 @@ import System.Random
+ 
++import Prelude hiding ((<>))
+ -----------------------------------------------------------------------------
+--- a/lib/Numeric/Statistics/PCA.hs
++++ b/lib/Numeric/Statistics/PCA.hs
+@@ -30,3 +30,3 @@ import Numeric.GSL.Statistics
+ import Numeric.Statistics
+-
++import Prelude hiding ((<>))
+ -----------------------------------------------------------------------------
