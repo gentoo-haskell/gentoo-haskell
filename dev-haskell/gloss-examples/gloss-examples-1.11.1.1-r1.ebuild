@@ -38,7 +38,9 @@ src_prepare() {
 
 	cabal_chdeps \
 		'vector          == 0.11.*' 'vector          >= 0.11' \
-		'vector         == 0.11.*' 'vector         >= 0.11'
+		'vector         == 0.11.*' 'vector         >= 0.11' \
+		'base            >= 4.8 && < 4.10' 'base            >= 4.8' \
+		'base           >= 4.8 && < 4.10' 'base           >= 4.8'
 }
 
 src_configure() {
