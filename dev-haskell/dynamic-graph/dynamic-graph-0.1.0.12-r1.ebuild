@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.13:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	>=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	>=dev-haskell/glfw-b-1.4:=[profile?] <dev-haskell/glfw-b-1.5:=[profile?]
+	>=dev-haskell/glfw-b-1.4:=[profile?]
 	>=dev-haskell/glutil-0.9.1:=[profile?] <dev-haskell/glutil-0.11:=[profile?]
 	>=dev-haskell/opengl-2.9:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-haskell/pango-0.13:=[profile?] <dev-haskell/pango-0.14:=[profile?]
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/cairo-0.13:=[profile?] <dev-haskell/cairo-0.14:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'GLFW-b       >=1.4   && <1.5' 'GLFW-b       >=1.4'
+}
