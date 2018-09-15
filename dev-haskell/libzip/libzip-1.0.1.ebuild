@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,6 +19,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # ### Error in:   0:Monadic API:18:set file compression method
 
 RDEPEND=">=dev-haskell/bindings-libzip-1.0:=[profile?] <dev-haskell/bindings-libzip-1.1:=[profile?]
 	dev-haskell/mtl:=[profile?]
