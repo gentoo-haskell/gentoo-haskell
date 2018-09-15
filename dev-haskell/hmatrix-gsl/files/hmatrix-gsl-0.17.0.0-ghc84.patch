@@ -1,0 +1,13 @@
+--- a/src/Numeric/GSL/Fitting.hs
++++ b/src/Numeric/GSL/Fitting.hs
+@@ -60,2 +60,3 @@ import Foreign.C.Types
+ import System.IO.Unsafe(unsafePerformIO)
++import Prelude hiding ((<>))
+ 
+--- a/src/Numeric/GSL/Random.hs
++++ b/src/Numeric/GSL/Random.hs
+@@ -32,3 +32,3 @@ import Numeric.LinearAlgebra.HMatrix hiding (
+ import System.Random(randomIO)
+-
++import Prelude hiding ((<>))
+ 
