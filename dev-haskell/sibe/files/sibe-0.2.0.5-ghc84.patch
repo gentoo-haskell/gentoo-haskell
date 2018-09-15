@@ -1,0 +1,6 @@
+--- a/src/Numeric/Sibe/Utils.hs
++++ b/src/Numeric/Sibe/Utils.hs
+@@ -10,2 +10,3 @@ module Numeric.Sibe.Utils
+     import Numeric.LinearAlgebra
++    import Prelude hiding ((<>))
+ 
