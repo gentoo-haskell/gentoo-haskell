@@ -33,5 +33,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'haskell-gi-base >=0.20 && <0.21' 'haskell-gi-base >=0.20'
+		'haskell-gi-base >=0.20 && <0.21' 'haskell-gi-base >=0.20' \
+		'base >=4.0.0.0 && <4.11' 'base >=4.0.0.0'
 }
