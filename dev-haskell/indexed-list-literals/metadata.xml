@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This is an incredibly simple library, which makes writing lists where the length is known at compile time a little bit nicer.
+		
+		If you write a function with the signature
+		
+		&gt; vector :: ILL input length output =&gt; input -&gt; Vector length output
+		then
+		
+		&gt; v :: Vector 3 Int
+		&gt; v = vector (1,2,3)
+		&gt;
+		&gt; x :: Vector 0 Double
+		&gt; x = vector $ ZeroTuple @Double
+		&gt;
+		&gt; y :: Vector 1 Double
+		&gt; y = vector (Only 1)
+		&gt;
+		&gt; z :: Vector 2 String
+		&gt; z = vector (&quot;Hello&quot;, &quot;World&quot;)
+		
+		If want matrix literals you can write a function
+		
+		&gt; matrix :: (ILL row width ty, ILL matrix height row) =&gt; matrix -&gt; Matrix width height ty
+		then
+		
+		&gt; a :: Matrix 0 0 Bool
+		&gt; a = matrix $ ZeroTuple @(ZeroTuple Bool)
+		&gt;
+		&gt; b :: Matrix 1 2 String
+		&gt; b = matrix $ Only (&quot;Hello&quot;,&quot;World&quot;)
+		&gt;
+		&gt; c :: Matrix 4 5 Double
+		&gt; c = matrix ((1,2,3,0,0)
+		&gt;            ,(4,5,6,0,0)
+		&gt;            ,(7,8,9,0,0)
+		&gt;            ,(0,0,0,0,0))
+		The full code is in test\/Docs.hs
+		
+		This only supports literals of length up to 20, though that can be easily extended using the code generator in src\/Data\/IndexedListLiterals.hs
+	</longdescription>
+</pkgmetadata>
