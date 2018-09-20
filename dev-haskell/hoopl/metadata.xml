@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Higher-order optimization library
+		
+		See /Norman Ramsey, Joao Dias, and Simon Peyton Jones./
+		&lt;http://research.microsoft.com/en-us/um/people/simonpj/Papers/c--/hoopl-haskell10.pdf &quot;Hoopl: A Modular, Reusable Library for Dataflow Analysis and Transformation&quot;&gt; /(2010)/ for more details.
+	</longdescription>
+</pkgmetadata>
