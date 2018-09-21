@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+# circular dependencies: colour -> ansi-terminal -> test-framework -> colour
+RESTRICT=test
 
 RDEPEND=">=dev-lang/ghc-8.0.1:=
 "
