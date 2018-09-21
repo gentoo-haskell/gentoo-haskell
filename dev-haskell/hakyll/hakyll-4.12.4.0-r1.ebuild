@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/yaml-0.8.11:=[profile?] <dev-haskell/yaml-0.11:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
-	buildwebsite? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.3:=[profile?] )
+	buildwebsite? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.4:=[profile?] )
 	checkexternal? ( >=dev-haskell/http-conduit-2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?] )
 	previewserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?]
 				>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 				>=dev-haskell/warp-3.2:=[profile?] <dev-haskell/warp-3.3:=[profile?] )
 	!previewserver? ( checkexternal? ( >=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.13:=[profile?] )
 				watchserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?] ) )
-	usepandoc? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.3:=[profile?]
+	usepandoc? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.4:=[profile?]
 			>=dev-haskell/pandoc-citeproc-0.14:=[profile?] <dev-haskell/pandoc-citeproc-0.15:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -57,6 +57,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc          >= 2.0.5    && < 2.3' 'pandoc          >= 2.0.5    && < 2.4' \
+		'pandoc    >= 2.0.5 && < 2.3' 'pandoc    >= 2.0.5 && < 2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
