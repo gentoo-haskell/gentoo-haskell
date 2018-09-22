@@ -18,12 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-2.2.0:=[profile?] <dev-haskell/cabal-2.3:=[profile?]
+RDEPEND=">=dev-haskell/cabal-2.2.0:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 	>=dev-haskell/haddock-library-1.6.0:=[profile?] <dev-haskell/haddock-library-1.7:=[profile?]
 	>=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-lang/ghc-8.4.2:=[profile?] <dev-lang/ghc-8.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
@@ -36,5 +35,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'hspec           ^>= 2.4.4' 'hspec           >= 2.4.4' \
-		'QuickCheck      ^>= 2.11' 'QuickCheck      >= 2.11'
+		'QuickCheck      ^>= 2.11' 'QuickCheck      >= 2.11' \
+		'base            ^>= 4.11.0' 'base            >= 4.11.0' \
+		'Cabal           ^>= 2.2.0' 'Cabal           >= 2.2.0' \
+		'ghc             ^>= 8.4.2' 'ghc             >= 8.4.2'
 }
